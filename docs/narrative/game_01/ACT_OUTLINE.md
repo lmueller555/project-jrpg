@@ -1,7 +1,7 @@
 # Game I — Act Outline: The Broken Covenant
 
 **Status:** WORKING NARRATIVE / PROPOSED — **not approved canon**  
-**Version:** 0.1  
+**Version:** 0.2  
 **Scope:** Broad five-act narrative structure only; not a scene list, quest plan, or finalized world design.
 
 ## Authority and boundaries
@@ -26,6 +26,8 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 ## Act I — The Shattered Oath
 
+**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; four mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
+
 **Function:** Establish the protagonist's lived faith, community, political tensions, and personal loss.
 
 - The region has long upheld a covenant preventing excavation beneath ancient sacred sanctuaries.
@@ -36,7 +38,7 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 **Act break:** Faith gives way to doubt; the protagonist chooses truth-seeking over automatic obedience.
 
-**Not yet chosen:** Home community, precise personal loss, opening playable circumstances, first companions, evidence, and the emotional stakes of leaving.
+**Not yet chosen:** Precise personal loss, final character biographies, gameplay details, evidence, and the emotional stakes of leaving. The provisional starting community is **Eldenmere**; its Chapter 1 introductory structure is approved, while geography and supporting details remain under development.
 
 ## Act II — The Divided Land
 
