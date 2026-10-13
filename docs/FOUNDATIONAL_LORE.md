@@ -91,13 +91,13 @@ The ancients did **not** unanimously agree on how to respond.
 
 The majority favored sacrificing their active existence to shield their world from the approaching catastrophe. They chose to contribute their own life-force aether and enter stasis, creating and sustaining a protective barrier around the planet.
 
-A minority refused to participate. They believed that hiding behind a barrier merely delayed the danger and that the true answer was to defeat whatever caused the cosmic catastrophe. They intended to gather sufficient aetheric power to attempt that confrontation.
+Exactly four ancients refused to participate. They believed that hiding behind a barrier merely delayed the danger and that the true answer was to defeat whatever caused the cosmic catastrophe. They intended to gather sufficient aetheric power to attempt that confrontation.
 
 These conflicting strategies—**preservation through sacrifice** versus **resistance through accumulated power**—lie at the heart of the story.
 
 ### Open questions
 
-How the decision was organized, whether each participant's choice was informed and voluntary, how many declined, whether opposition involved violence, and what exactly each faction predicted remain undetermined. Avoid treating either side's historical arguments as proven correct.
+How the decision was organized, whether each participant's choice was informed and voluntary, whether opposition involved violence, and what exactly each faction predicted remain undetermined. Avoid treating either side's historical arguments as proven correct.
 
 ---
 
@@ -188,6 +188,17 @@ At the game's opening, approximately ten millennia after the sacrifice, modern c
 The surviving ancients' long campaign of absorbing energy is destabilizing the planet. This destabilization **leads to the events of the game**.
 
 The opposing claims are morally serious. Modern inhabitants have independent lives and a right to defend their existence. The dissidents believe they must do more than maintain a sanctuary while the deeper cosmic problem remains unresolved. There is no established proof that their plan can work.
+
+### Multi-game structure — established canon
+
+The overarching ancient and cosmic conflict unfolds across **multiple games**. **Exactly four surviving ancients** are behind-the-scenes antagonistic forces during Game I. Game I must feature a comparatively **limited, primarily regional conflict**, and its immediate narrative must reach a satisfying resolution without explaining or resolving the cosmic catastrophe. The full identities, count, ancient origins and ultimate mission of the four remain concealed from Game I's protagonists and players; subtle clues may be planted for later reinterpretation. The total number of installments and ultimate saga ending remain undecided.
+
+### Disclosure boundaries for Game I
+
+- **Visible or potentially visible:** Everyday magicks and aether, modern faith and worship at the ancient temple, regional unrest or instability, and local people's choices and consequences.
+- **Largely concealed:** The temple's sacrificial origin, the atmospheric barrier, the Great Sacrifice, exactly four active survivors and their identity, the distant dying worlds, and the larger cosmic plan.
+- **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
+- **Still to design:** Game I protagonist, immediate antagonist, conflict, stakes, local resolution, and amount of foreshadowing; individual identities and relationships of the four.
 
 ### Working story direction — not locked plot
 
