@@ -1,7 +1,7 @@
 # Project JRPG — Foundational Lore
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.1  
+**Version:** 0.2  
 **Last revised:** 2026-10-13  
 **Scope:** Core cosmology, history before the game's opening, ancient sacrifice, successor life, religion, and the original source of the present crisis.
 
@@ -91,13 +91,13 @@ The ancients did **not** unanimously agree on how to respond.
 
 The majority favored sacrificing their active existence to shield their world from the approaching catastrophe. They chose to contribute their own life-force aether and enter stasis, creating and sustaining a protective barrier around the planet.
 
-A minority refused to participate. They believed that hiding behind a barrier merely delayed the danger and that the true answer was to defeat whatever caused the cosmic catastrophe. They intended to gather sufficient aetheric power to attempt that confrontation.
+Exactly four ancients refused to participate. They believed that hiding behind a barrier merely delayed the danger and that the true answer was to defeat whatever caused the cosmic catastrophe. They intended to gather sufficient aetheric power to attempt that confrontation.
 
 These conflicting strategies—**preservation through sacrifice** versus **resistance through accumulated power**—lie at the heart of the story.
 
 ### Open questions
 
-How the decision was organized, whether each participant's choice was informed and voluntary, how many declined, whether opposition involved violence, and what exactly each faction predicted remain undetermined. Avoid treating either side's historical arguments as proven correct.
+How the decision was organized, whether each participant's choice was informed and voluntary, whether opposition involved violence, and what exactly each faction predicted remain undetermined. Avoid treating either side's historical arguments as proven correct.
 
 ---
 
@@ -163,7 +163,7 @@ Whether a single major religion or many traditions arise; which peoples use the 
 
 ### Established canon
 
-A minority of ancients remained active after the Great Sacrifice.
+Exactly four ancients remained active after the Great Sacrifice.
 
 For thousands of years they sought the power to challenge the unknown cosmic threat. They pursued this by **absorbing and accumulating aether from the life force committed by their sleeping brethren**.
 
@@ -188,6 +188,17 @@ At the game's opening, approximately ten millennia after the sacrifice, modern c
 The surviving ancients' long campaign of absorbing energy is destabilizing the planet. This destabilization **leads to the events of the game**.
 
 The opposing claims are morally serious. Modern inhabitants have independent lives and a right to defend their existence. The dissidents believe they must do more than maintain a sanctuary while the deeper cosmic problem remains unresolved. There is no established proof that their plan can work.
+
+### Multi-game structure — established canon
+
+The overarching ancient and cosmic conflict unfolds across **multiple games**. **Exactly four surviving ancients** are behind-the-scenes antagonistic forces during Game I. Game I must feature a comparatively **limited, primarily regional conflict**, and its immediate narrative must reach a satisfying resolution without explaining or resolving the cosmic catastrophe. The full identities, count, ancient origins and ultimate mission of the four remain concealed from Game I's protagonists and players; subtle clues may be planted for later reinterpretation. The total number of installments and ultimate saga ending remain undecided.
+
+### Disclosure boundaries for Game I
+
+- **Visible or potentially visible:** Everyday magicks and aether, modern faith and worship at the ancient temple, regional unrest or instability, and local people's choices and consequences.
+- **Largely concealed:** The temple's sacrificial origin, the atmospheric barrier, the Great Sacrifice, exactly four active survivors and their identity, the distant dying worlds, and the larger cosmic plan.
+- **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
+- **Still to design:** Game I protagonist, immediate antagonist, conflict, stakes, local resolution, and amount of foreshadowing; individual identities and relationships of the four.
 
 ### Working story direction — not locked plot
 
@@ -231,7 +242,7 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 | High | What does planetary destabilization look like, and what is the opening incident? | Makes the ancient conflict affect the protagonist personally |
 | High | Who is the protagonist, what do they lose or want, and why do they act? | Creates an emotional narrative rather than just lore |
 | High | What could end the conflict and what unavoidable cost remains? | Prevents an effortless last-minute solution |
-| Medium | How many dissenters survive, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
+| Medium | How are the four survivors related, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
 | Medium | Were sacrifices voluntary and informed, and what was stasis meant to achieve? | Defines the moral weight of the original decision |
 | Medium | Are dormant ancients aware, able to speak, or able to awaken? | Shapes the ethics of the survivors' mission |
 | Medium | What exactly is the atmosphere/barrier, and what sustains its equilibrium? | Preserves clear, consistent metaphysics |
