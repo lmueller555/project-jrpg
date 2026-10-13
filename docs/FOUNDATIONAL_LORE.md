@@ -1,7 +1,7 @@
 # Project JRPG — Foundational Lore
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.1  
+**Version:** 0.2  
 **Last revised:** 2026-10-13  
 **Scope:** Core cosmology, history before the game's opening, ancient sacrifice, successor life, religion, and the original source of the present crisis.
 
@@ -163,7 +163,7 @@ Whether a single major religion or many traditions arise; which peoples use the 
 
 ### Established canon
 
-A minority of ancients remained active after the Great Sacrifice.
+Exactly four ancients remained active after the Great Sacrifice.
 
 For thousands of years they sought the power to challenge the unknown cosmic threat. They pursued this by **absorbing and accumulating aether from the life force committed by their sleeping brethren**.
 
@@ -231,7 +231,7 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 | High | What does planetary destabilization look like, and what is the opening incident? | Makes the ancient conflict affect the protagonist personally |
 | High | Who is the protagonist, what do they lose or want, and why do they act? | Creates an emotional narrative rather than just lore |
 | High | What could end the conflict and what unavoidable cost remains? | Prevents an effortless last-minute solution |
-| Medium | How many dissenters survive, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
+| Medium | How are the four survivors related, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
 | Medium | Were sacrifices voluntary and informed, and what was stasis meant to achieve? | Defines the moral weight of the original decision |
 | Medium | Are dormant ancients aware, able to speak, or able to awaken? | Shapes the ethics of the survivors' mission |
 | Medium | What exactly is the atmosphere/barrier, and what sustains its equilibrium? | Preserves clear, consistent metaphysics |
