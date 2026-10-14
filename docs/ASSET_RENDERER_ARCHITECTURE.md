@@ -9,7 +9,7 @@
 
 1. World/maps reference **stable semantic asset IDs**, not atlas cell positions or file-system paths.
 2. Shipped art is inspectable **RGBA PNG** plus versioned JSON metadata. Editable art sources are retained separately; runtime never requires source-file formats.
-3. Default world grid is **16 × 16 logical pixels**; logical viewport **320 × 224**, nearest-neighbor integer presentation; nominal humanoid canvas **16 × 24**. These are inherited baselines; any change needs a documented migration decision.
+3. **Current approved presentation scale (2026-10-14):** world tiles **32 × 32**, humanoids **32 × 48**, presentation canvas **640 × 448**; integer-nearest fullscreen with letterboxing. Existing map JSON and collision continue in the older 16-unit coordinate grid and are mapped 2× to presentation pixels while migration proceeds. The legacy 320×224 environment render pass is transitional, not the target resolution for newly authored PNGs.
 4. Logical position, collision footprint, draw bounds, anchor, and occlusion region are **distinct data**. Art replacement cannot silently change movement rules.
 5. Assets must render deterministically independent of frame rate. Animation time is elapsed simulation time; render frequency only samples its state.
 6. No copyrighted game art is copied or traced. Source and license/provenance records are mandatory.
@@ -50,7 +50,7 @@ tests/fixtures/visual/       # seam sheets, animation strips, reference renders
 
 **Region metadata:** texture atlas path, integer pixel rectangle `[x,y,w,h]`, display dimensions, anchor `[x,y]` in local pixels, intended layer, optional animation ID and material tags. Rectangle must be contained within image dimensions and must not inadvertently overlap another region (intentional shared regions explicitly flagged). A static 16×16 terrain region must be 16×16; multi-tile sprites declare independent dimensions.
 
-**Character atlas:** 16×24 frames with a consistent foot anchor, initially `[8,23]`, across directions and poses. Frame order is explicitly declared, never guessed from rows. Motion uses frame sequences and timing, not naive sprite-sheet scanning.
+**Character atlas:** 16×24 frames with a consistent foot anchor, initially `[16,47]`, across directions and poses. Frame order is explicitly declared, never guessed from rows. Motion uses frame sequences and timing, not naive sprite-sheet scanning.
 
 **Packing:** curate by biome/material/function, not per-map snapshot. Multiple small atlases are allowed. Cache atlas surfaces once and obtain immutable subregions; do not load or crop PNGs for every draw call.
 
@@ -243,3 +243,9 @@ Avoid a bulk conversion of all Eldenmere art before the first complete tile seam
 ## 11. Change control
 
 This is an authoritative **v1** contract for future art and rendering PRs. Changes to identifiers, schemas, time semantics, coordinate origin, layer names, interpolation, or collision rules require: a versioned design change, compatibility/migration plan, regression fixtures, and review. Art Style Guide governs aesthetic conflicts; this technical specification governs export and runtime contracts. Document exceptions in asset metadata, not ad-hoc code branches.
+
+## 12. Approved pixel-scale migration (2026-10-14)
+
+The user approved Caelen's visually larger, detailed 32×48 sprite as the reference scale for **all** future characters, structures, vegetation and terrain. New artwork must use a coherent 32px tile vocabulary, not simply mix 32×48 character images with 16×16 structures. During the interim, the engine enlarges the current 16-unit map/background by 2× while rendering Caelen's 32×48 atlas without resampling; temporary NPC sprites scale from 16×24 to 32×48. The transition **does not** double movement speed, change collision footprints in map units, or rewrite map coordinates. Future atlas migration should render 32px-native terrain/architecture directly in the 640×448 presentation surface and remove the transitional background upscaling only when parity is verified.
+
+Fullscreen is the default, with F11/F toggling a resizable window, a nearest-neighbor integer scale to fit the display, centered letterboxing for aspect mismatch, and a fitted fallback only when the monitor is smaller than the canvas. Preserve all 4 directional Caelen animations at 32×48 and a consistent foot anchor of [16,47].
