@@ -146,54 +146,54 @@
       "rect": [
         0,
         0,
-        16,
-        24
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.down_1": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        16,
+        32,
         0,
-        16,
-        24
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.down_2": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        32,
+        64,
         0,
-        16,
-        24
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.down_3": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        48,
+        96,
         0,
-        16,
-        24
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
@@ -201,55 +201,55 @@
       "atlas": "atlases/characters/caelen.png",
       "rect": [
         0,
-        24,
-        16,
-        24
+        48,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.left_1": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        16,
-        24,
-        16,
-        24
+        32,
+        48,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.left_2": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
+        64,
+        48,
         32,
-        24,
-        16,
-        24
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.left_3": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
+        96,
         48,
-        24,
-        16,
-        24
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
@@ -257,55 +257,55 @@
       "atlas": "atlases/characters/caelen.png",
       "rect": [
         0,
-        48,
-        16,
-        24
+        96,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.right_1": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        16,
-        48,
-        16,
-        24
+        32,
+        96,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.right_2": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
+        64,
+        96,
         32,
-        48,
-        16,
-        24
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.right_3": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        48,
-        48,
-        16,
-        24
+        96,
+        96,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
@@ -313,55 +313,55 @@
       "atlas": "atlases/characters/caelen.png",
       "rect": [
         0,
-        72,
-        16,
-        24
+        144,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.up_1": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        16,
-        72,
-        16,
-        24
+        32,
+        144,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.up_2": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
+        64,
+        144,
         32,
-        72,
-        16,
-        24
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     },
     "character.caelen.up_3": {
       "atlas": "atlases/characters/caelen.png",
       "rect": [
-        48,
-        72,
-        16,
-        24
+        96,
+        144,
+        32,
+        48
       ],
       "anchor": [
-        8,
-        23
+        16,
+        47
       ],
       "layer": "entities"
     }
