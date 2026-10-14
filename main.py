@@ -1,13 +1,14 @@
 """Project JRPG: first explorable Eldenmere vertical slice.
 
 Run with: python -m pip install -r requirements.txt && python main.py
-Only original, temporary, code-drawn art; maps stay editable JSON.
+Original deterministic pixel-art pass; maps stay editable JSON.
 """
 import json
 import math
 from pathlib import Path
 
 import pygame
+from visuals import avatar, draw_object, draw_tile
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -15,24 +16,8 @@ SCALE = 3
 SPEED = 88
 ROOT = Path(__file__).resolve().parent
 
-PALETTE = {
-    "grass": ((72, 125, 78), (89, 144, 87)),
-    "path": ((157, 132, 91), (174, 148, 102)),
-    "farmland": ((105, 98, 59), (124, 110, 67)),
-    "water": ((48, 105, 145), (60, 126, 158)),
-    "bridge": ((149, 139, 121), (170, 157, 134)),
-    "trees": ((30, 80, 61), (44, 100, 65)),
-    "wall": ((61, 62, 76), (78, 79, 93)),
-    "floor": ((130, 111, 88), (151, 128, 99)),
-}
 SOLID_TERRAIN = {"water", "trees", "wall"}
 SOLID_OBJECTS = {"sanctuary", "house", "mill", "well", "shrine", "altar", "table", "bookshelf"}
-COLORS = {
-    "sanctuary": ("#77647e", "#9f8eb3"), "house": ("#ad714f", "#d0a16b"),
-    "mill": ("#8c694b", "#bb935e"), "well": ("#5f6f78", "#b4b8b4"),
-    "shrine": ("#8e8e91", "#d4c7a5"), "altar": ("#928c84", "#e3c88b"),
-    "table": ("#795438", "#ab7951"), "bookshelf": ("#694831", "#997246"),
-}
 FONT_NAME = None
 
 
@@ -46,64 +31,8 @@ def load_map(map_id):
     return data
 
 
-def draw_tile(screen, terrain, x, y, tx, ty):
-    dark, light = PALETTE[terrain]
-    pygame.draw.rect(screen, dark, (x, y, TILE, TILE))
-    if terrain in {"grass", "farmland"}:
-        for ox, oy in [(4, 5), (12, 10)]:
-            if (tx * 7 + ty * 11 + ox) % 4:
-                pygame.draw.rect(screen, light, (x + ox, y + oy, 2, 2))
-    elif terrain == "path":
-        pygame.draw.rect(screen, light, (x + 1, y + 2, 14, 2))
-    elif terrain == "water":
-        pygame.draw.rect(screen, light, (x + 2, y + 5, 8, 2))
-    elif terrain == "trees":
-        pygame.draw.circle(screen, light, (x + 8, y + 7), 6)
-        pygame.draw.rect(screen, "#433f32", (x + 7, y + 10, 3, 5))
-    elif terrain == "bridge":
-        pygame.draw.line(screen, light, (x, y + 4), (x + 15, y + 4), 2)
-        pygame.draw.line(screen, light, (x, y + 12), (x + 15, y + 12), 2)
-    elif terrain == "floor":
-        pygame.draw.line(screen, light, (x, y + 15), (x + 15, y + 15))
-
-
 def object_rect(obj):
     return pygame.Rect(obj["x"] * TILE, obj["y"] * TILE, obj["w"] * TILE, obj["h"] * TILE)
-
-
-def draw_object(screen, obj, ox, oy):
-    kind = obj["kind"]
-    if kind in {"bridge", "plaza", "door"}:
-        if kind == "door":
-            pygame.draw.rect(screen, "#e2bd78", (obj["x"] * TILE - ox,
-                obj["y"] * TILE - oy, obj["w"] * TILE, TILE))
-        return
-    r = object_rect(obj).move(-ox, -oy)
-    if kind in {"house", "mill", "sanctuary"}:
-        pygame.draw.rect(screen, "#4d473e", r.move(2, 3))
-        pygame.draw.rect(screen, "#b7a789", r)
-        roof, trim = COLORS[kind]
-        pygame.draw.rect(screen, roof, (r.x - 2, r.y - 6, r.w + 4, max(8, r.h // 3)))
-        pygame.draw.rect(screen, trim, (r.x + 4, r.y - 4, r.w - 8, 3))
-        pygame.draw.rect(screen, "#594c42", (r.centerx - 6, r.bottom - 17, 12, 17))
-        if kind == "mill":
-            pygame.draw.circle(screen, "#54483c", (r.right - 4, r.centery), 14, 3)
-    else:
-        dark, light = COLORS.get(kind, ("#6e695f", "#c3bca5"))
-        pygame.draw.rect(screen, dark, r)
-        pygame.draw.rect(screen, light, r.inflate(-5, -5), 2)
-
-
-def avatar(screen, x, y, coat, phase=0):
-    # Character stands at x/y foot point. Temporary 16 x 24 code-drawn sprite.
-    left, top = int(x - 8), int(y - 23)
-    pygame.draw.ellipse(screen, "#384c42", (left + 2, y - 4, 12, 4))
-    pygame.draw.rect(screen, "#49382f", (left + 4, top + 17, 3, 6 + phase))
-    pygame.draw.rect(screen, "#49382f", (left + 10, top + 17, 3, 6 - phase))
-    pygame.draw.rect(screen, coat, (left + 3, top + 9, 11, 10))
-    pygame.draw.rect(screen, "#deb78c", (left + 4, top + 2, 9, 9))
-    pygame.draw.rect(screen, "#614a39", (left + 3, top, 11, 4))
-    pygame.draw.rect(screen, "#403b3d", (left + 6, top + 7, 2, 2))
 
 
 class Game:
@@ -115,6 +44,7 @@ class Game:
         self.font = pygame.font.Font(FONT_NAME, 12)
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
+        self.tile_cache = {}
         self.load("sanctuary_room")
         self.message = "Morning in Eldenmere. WASD / Arrows: move   E: interact"
         self.message_timer = 7
@@ -206,7 +136,7 @@ class Game:
         for y in range(min_y, max_y):
             for x in range(min_x, max_x):
                 char = self.world["tiles"][y][x]
-                draw_tile(self.canvas, self.world["legend"][char], x * TILE - ox, y * TILE - oy, x, y)
+                draw_tile(self.canvas, self.tile_cache, self.world["legend"][char], x * TILE - ox, y * TILE - oy, x, y)
         for obj in self.world["objects"]:
             draw_object(self.canvas, obj, ox, oy)
         for npc in self.world.get("npcs", []):
