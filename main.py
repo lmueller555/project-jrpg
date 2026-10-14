@@ -13,7 +13,8 @@ from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
-SCALE = 3
+ART_SCALE = 2  # Legacy 16px tiles render as 32px tiles until native atlases replace them.
+LOGICAL_W, LOGICAL_H = VIEW_W * ART_SCALE, VIEW_H * ART_SCALE
 SPEED = 88
 ROOT = Path(__file__).resolve().parent
 
@@ -40,8 +41,13 @@ class Game:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption("Project JRPG — Eldenmere World Slice")
-        self.window = pygame.display.set_mode((VIEW_W * SCALE, VIEW_H * SCALE))
+        self.fullscreen = True
+        self.windowed_size = (960, 672)
+        self.window = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.canvas = pygame.Surface((VIEW_W, VIEW_H))
+        self.world_canvas = pygame.Surface((LOGICAL_W, LOGICAL_H))
+        self.overlay = pygame.Surface((VIEW_W, VIEW_H), pygame.SRCALPHA)
+        self.npc_sprites = {}
         self.font = pygame.font.Font(FONT_NAME, 12)
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
@@ -156,33 +162,39 @@ class Game:
                         self.assets.draw(self.canvas, self.water_clip.frame(), x * TILE - ox, y * TILE - oy)
                 else:
                     draw_tile(self.canvas, self.tile_cache, kind, x * TILE - ox, y * TILE - oy, x, y)
-        queue = RenderQueue()
         for obj in self.world["objects"]:
-            queue.add("below_entities", obj["y"] * TILE,
-                      lambda o=obj: draw_object(self.canvas, o, ox, oy))
-        for npc in self.world.get("npcs", []):
-            queue.add("entities", (npc["y"] + .9) * TILE,
-                      lambda n=npc: avatar(self.canvas, (n["x"] + .5) * TILE - ox,
-                                          (n["y"] + .9) * TILE - oy, n["color"]))
-        direction = ("right" if self.facing[0] > .3 else
-                     "left" if self.facing[0] < -.3 else
-                     "up" if self.facing[1] < 0 else "down")
-        clip = self.caelen_clips["caelen." + ("walk_" if self.walking else "idle_") + direction]
-        queue.add("entities", self.y,
-                  lambda: self.assets.draw(self.canvas, clip.frame(), self.x - ox, self.y - oy))
-        queue.flush()
+            draw_object(self.canvas, obj, ox, oy)
         if self.world["id"] == "eldenmere":
-            # Small ambient chimney animation near the mill; presentation only.
             mill = next((o for o in self.world["objects"] if o["id"] == "mill"), None)
             if mill:
                 self.assets.draw(self.canvas, self.smoke_clip.frame(),
                                  (mill["x"] + 2) * TILE - ox, (mill["y"] - 1) * TILE - oy)
-        pygame.draw.rect(self.canvas, "#172333", (0, 0, VIEW_W, 17))
+
+        # Temporary bridge: 16px-world graphics become 32px, while the new
+        # Caelen PNG stays at native 32x48. Map coordinates/collision stay
+        # unchanged; all new production maps/assets target the doubled scale.
+        pygame.transform.scale(self.canvas, (LOGICAL_W, LOGICAL_H), self.world_canvas)
+        direction = ("right" if self.facing[0] > .3 else
+                     "left" if self.facing[0] < -.3 else
+                     "up" if self.facing[1] < 0 else "down")
+        clip = self.caelen_clips["caelen." + ("walk_" if self.walking else "idle_") + direction]
+        queue = RenderQueue()
+        for npc in self.world.get("npcs", []):
+            queue.add("entities", (npc["y"] + .9) * TILE,
+                      lambda n=npc: self.draw_npc(n, ox, oy))
+        queue.add("entities", self.y,
+                  lambda: self.assets.draw(self.world_canvas, clip.frame(),
+                                           (self.x - ox) * ART_SCALE,
+                                           (self.y - oy) * ART_SCALE))
+        queue.flush()
+        # Render UI separately at old logical dimensions, then upscale.
+        self.overlay.fill((0, 0, 0, 0))
+        pygame.draw.rect(self.overlay, "#172333", (0, 0, VIEW_W, 17))
         label = self.small.render(self.world["name"] + "  |  E interact  |  ESC quit", False, "#f5e5c9")
-        self.canvas.blit(label, (6, 4))
+        self.overlay.blit(label, (6, 4))
         if self.message_timer:
-            pygame.draw.rect(self.canvas, "#111a29", (4, VIEW_H - 34, VIEW_W - 8, 30))
-            pygame.draw.rect(self.canvas, "#e1c996", (4, VIEW_H - 34, VIEW_W - 8, 30), 1)
+            pygame.draw.rect(self.overlay, "#111a29", (4, VIEW_H - 34, VIEW_W - 8, 30))
+            pygame.draw.rect(self.overlay, "#e1c996", (4, VIEW_H - 34, VIEW_W - 8, 30), 1)
             # Soft wrap rather than dropping text out of viewport.
             words, lines, line = self.message.split(), [], ""
             for word in words:
@@ -194,9 +206,40 @@ class Game:
                     line = proposed
             lines.append(line)
             for i, text in enumerate(lines[:2]):
-                self.canvas.blit(self.small.render(text, False, "#f5e5c9"), (10, VIEW_H - 29 + i * 12))
-        pygame.transform.scale(self.canvas, self.window.get_size(), self.window)
+                self.overlay.blit(self.small.render(text, False, "#f5e5c9"), (10, VIEW_H - 29 + i * 12))
+        self.world_canvas.blit(pygame.transform.scale(self.overlay, (LOGICAL_W, LOGICAL_H)), (0, 0))
+        self.present()
         pygame.display.flip()
+
+    def draw_npc(self, npc, ox, oy):
+        # Temporary NPC art uses the same 32x48 display size as Caelen.
+        key = npc["color"]
+        if key not in self.npc_sprites:
+            sprite = pygame.Surface((16, 24), pygame.SRCALPHA)
+            avatar(sprite, 8, 23, key)
+            self.npc_sprites[key] = pygame.transform.scale(sprite, (32, 48))
+        self.world_canvas.blit(self.npc_sprites[key],
+                              (round(((npc["x"] + .5) * TILE - ox) * ART_SCALE - 16),
+                               round(((npc["y"] + .9) * TILE - oy) * ART_SCALE - 47)))
+
+    def present(self):
+        screen_w, screen_h = self.window.get_size()
+        scale = min(screen_w // LOGICAL_W, screen_h // LOGICAL_H)
+        self.window.fill("#10151d")
+        if scale >= 1:
+            size = (LOGICAL_W * scale, LOGICAL_H * scale)
+        else:
+            # Small displays require a fitted fallback, without cropping.
+            factor = min(screen_w / LOGICAL_W, screen_h / LOGICAL_H)
+            size = (max(1, int(LOGICAL_W * factor)), max(1, int(LOGICAL_H * factor)))
+        rendered = pygame.transform.scale(self.world_canvas, size)
+        self.window.blit(rendered, ((screen_w - size[0]) // 2, (screen_h - size[1]) // 2))
+
+    def toggle_fullscreen(self):
+        self.fullscreen = not self.fullscreen
+        flags = pygame.FULLSCREEN if self.fullscreen else pygame.RESIZABLE
+        size = (0, 0) if self.fullscreen else self.windowed_size
+        self.window = pygame.display.set_mode(size, flags)
 
     def run(self):
         running = True
@@ -205,6 +248,10 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                     running = False
+                elif event.type == pygame.KEYDOWN and event.key in (pygame.K_F11, pygame.K_f):
+                    self.toggle_fullscreen()
+                elif event.type == pygame.VIDEORESIZE and not self.fullscreen:
+                    self.windowed_size = event.size
                 elif event.type == pygame.KEYDOWN and event.key in (pygame.K_e, pygame.K_SPACE):
                     self.interact()
             self.tick(dt)
