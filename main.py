@@ -10,6 +10,7 @@ from pathlib import Path
 import pygame
 from visuals import avatar, draw_object, draw_tile
 from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
+from engine.sanctuary_visuals import draw_room as draw_sanctuary_room
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -57,6 +58,7 @@ class Game:
         self.water_clip = AnimationPlayer(self.assets, 'ambient.water')
         self.smoke_clip = AnimationPlayer(self.assets, 'ambient.smoke')
         self.walking = False
+        self.ambient_time = 0.0
         self.load("sanctuary_room")
         self.message = "Morning in Eldenmere. WASD / Arrows: move   E: interact"
         self.message_timer = 7
@@ -137,6 +139,7 @@ class Game:
             self.phase = (self.phase + dt * 7) % 2
         else:
             self.phase = 0
+        self.ambient_time += dt
         self.message_timer = max(0, self.message_timer - dt)
         for clip in self.caelen_clips.values():
             clip.update(dt * 1000)
@@ -173,7 +176,12 @@ class Game:
         # Temporary bridge: 16px-world graphics become 32px, while the new
         # Caelen PNG stays at native 32x48. Map coordinates/collision stay
         # unchanged; all new production maps/assets target the doubled scale.
-        pygame.transform.scale(self.canvas, (LOGICAL_W, LOGICAL_H), self.world_canvas)
+        if self.world["id"] == "sanctuary_room":
+            self.world_canvas.fill("#242d31")
+            draw_sanctuary_room(self.world_canvas, self.world, self.assets,
+                                ox, oy, self.ambient_time)
+        else:
+            pygame.transform.scale(self.canvas, (LOGICAL_W, LOGICAL_H), self.world_canvas)
         direction = ("right" if self.facing[0] > .3 else
                      "left" if self.facing[0] < -.3 else
                      "up" if self.facing[1] < 0 else "down")
