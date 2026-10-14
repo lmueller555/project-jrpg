@@ -17,14 +17,15 @@ The first playable **environment prototype** launches in Eldenmere Sanctuary. Wa
 
 - **WASD / arrow keys:** walk
 - **E / Space:** interact with nearby NPCs, signs, buildings and doorways
+- **F11 / F:** toggle fullscreen or resizable window
 - **Esc:** close game
 
 Explore the sanctuary, village square, bridge, watermill, the three Quest 1 household locations and a wayside shrine. This is a **world-layout and rendering prototype**, not an implementation of the authored quests or finished character art.
 
 ## Current vertical-slice constraints
 
-- Native gameplay canvas: **320 × 224**; window: **960 × 672** (3× integer nearest-neighbor upscale).
-- **16 × 16** map cells; **16 × 24** temporary humanoid render footprint.
+- Presentation canvas: **640 × 448**; launches **fullscreen** with nearest-neighbor integer scaling and aspect-ratio letterboxing. F11 or F toggles fullscreen/windowed. Legacy world geometry renders at 320×224 and is temporarily doubled; new art will be native 32px-scale.
+- **16 × 16 map-coordinate cells preserved for collision**, displayed as **32 × 32** world tiles; new production humanoids use **32 × 48** frames.
 - Settlement and interior maps are **editable JSON**:
   - `maps/towns/eldenmere.json`
   - `maps/interiors/sanctuary.json`
@@ -65,3 +66,7 @@ This is a **pipeline/proof-of-integration art pass**, not approved final art qua
 ## Caelen approved character-art pass
 
 The Caelen atlas now contains 4 directions (down/left/right/up) × 4 frames (idle + 3 walking), with **32×48 logical-pixel frames** and a common **[16,47] foot anchor**. It was carefully extracted and downsampled from the approved illustrated sheet, with transparent backgrounds and limited-color indexed PNG compression. The source illustration is higher resolution; a 32×48 rendition preserves the recognizable outfit, hair, bag and poses but cannot be mathematically pixel-identical to the original illustration. Caelen is visibly larger than the previous 16×24 placeholder, while collision remains foot-point based and unchanged. The atlas validator accepts both RGBA8 and palette-indexed PNGs carrying alpha via `tRNS`. Before merging, visually inspect the character at runtime for scale, edge halos and movement timing.
+
+### Current visual scaling decision
+
+Caelen's approved 32×48 sprite is now the standard for every future character. Existing 16px terrain/building placeholders are temporarily enlarged 2×, and legacy NPC visuals are upscaled to match his height until replacement. This is a **compatibility visual pass**, not finished 32px production environment art. Collision, interaction distances, map coordinates and movement speeds remain unchanged. Fullscreen defaults on; mismatched aspect ratios are letterboxed rather than stretched.
