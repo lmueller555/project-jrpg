@@ -27,6 +27,30 @@ class SanctuaryArtTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual(validate_png(ROOT / "assets/atlases/interiors" / (name + ".png")), size)
 
+    def test_light_overlay_has_no_dark_matte_and_window_positions_match(self):
+        import os
+        os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+        import pygame
+        from engine.sanctuary_visuals import clean_sunbeam, WINDOW_X
+        pygame.display.init()
+        try:
+            pygame.display.set_mode((1, 1))
+            beam = clean_sunbeam()
+            assert len(WINDOW_X) == 2 and WINDOW_X[0] < WINDOW_X[1]
+            assert WINDOW_X[1] + 64 < 640  # both windows fit the native canvas
+            opaque = 0
+            for y in range(beam.get_height()):
+                for x in range(beam.get_width()):
+                    r, g, b, a = beam.get_at((x, y))
+                    if a:
+                        opaque += 1
+                        self.assertGreater(r, b)
+                        self.assertGreater(g, b)
+            self.assertGreater(opaque, 0)
+            self.assertEqual(beam.get_at((0, 0)).a, 0)
+        finally:
+            pygame.display.quit()
+
     def test_existing_collision_coordinates_intact(self):
         room = json.loads((ROOT / "maps/interiors/sanctuary.json").read_text())
         self.assertEqual(room["tile_size"], 16)
