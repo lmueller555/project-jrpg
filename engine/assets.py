@@ -21,6 +21,7 @@ def validate_png(path):
     if not data.startswith(bytes((137, 80, 78, 71, 13, 10, 26, 10))):
         raise AssetError(f"Invalid PNG signature: {path}")
     pos, ihdr, payload, ended = 8, None, bytearray(), False
+    palette_present, transparency_present = False, False
     try:
         while pos + 12 <= len(data):
             length = struct.unpack_from(">I", data, pos)[0]
@@ -36,6 +37,10 @@ def validate_png(path):
                 if ihdr is not None or length != 13:
                     raise ValueError("Invalid IHDR")
                 ihdr = chunk
+            elif kind == b"PLTE":
+                palette_present = True
+            elif kind == b"tRNS":
+                transparency_present = True
             elif kind == b"IDAT":
                 payload.extend(chunk)
             elif kind == b"IEND":
@@ -47,10 +52,12 @@ def validate_png(path):
         if not ended or ihdr is None or not payload:
             raise ValueError("Missing PNG chunks")
         width, height, depth, color, comp, filt, interlace = struct.unpack(">IIBBBBB", ihdr)
-        if not (width and height and depth == 8 and color == 6 and comp == 0 and filt == 0 and interlace == 0):
-            raise ValueError("Expected non-interlaced RGBA8 PNG")
+        if not (width and height and depth == 8 and color in (3, 6) and comp == 0 and filt == 0 and interlace == 0):
+            raise ValueError("Expected non-interlaced 8-bit RGBA or indexed PNG")
+        if color == 3 and not (palette_present and transparency_present):
+            raise ValueError("Indexed sprite atlas requires PLTE and tRNS transparency")
         raw = zlib.decompress(bytes(payload))
-        stride = width * 4 + 1
+        stride = width * (4 if color == 6 else 1) + 1
         if len(raw) != stride * height:
             raise ValueError("Wrong decompressed image size")
         for y in range(height):
