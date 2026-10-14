@@ -26,18 +26,18 @@ The visual inspiration is **Final Fantasy VI (SNES)**, not an instruction to cop
 | --- | --- | --- |
 | Render style | 2D pixel art | Deliberate hard-edged pixels; no painterly smoothing |
 | Perspective | Top-down / elevated 3-quarter RPG view | Consistent per scene; no isometric rotation |
-| Logical viewport | 320 x 224 pixels | Proposed initial target; modify only by a documented decision |
-| Display enlargement | Integer scaling, typically 3x or 4x | Nearest-neighbor interpolation only |
-| Map grid | 16 x 16 logical pixels | Grid governs collision and tile placement |
-| Standard humanoid frame box | 16 x 24 logical pixels | Nominal baseline, not a fixed anatomy requirement |
+| Logical viewport | 640 x 448 pixels (presentation canvas) | Twice the legacy world viewport in both axes, maintaining the same approximate visible map area |
+| Display enlargement | Fullscreen integer scaling with letterboxing | Windowed fallback and small-screen fit; nearest-neighbor only |
+| Map grid | 32 x 32 presentation pixels | Legacy world coordinates and JSON remain 16-unit cells during migration; drawn at 2× |
+| Standard humanoid frame box | 32 x 48 presentation pixels | Caelen's approved sprite establishes the new production scale |
 | Basic walk animations | Down, left, right, up; 3 frames each | 12 frames minimum for a moving humanoid |
 | Color | Curated per-environment palettes | Prefer reusable ramps; no single absolute global color cap |
 | Asset format | PNG with true alpha | No baked checkerboards; no fuzzy halo edges |
 | Map authoring | Tile layers plus structured metadata | Maps must be editable and reconstructable, not flattened pictures |
 
-**Provisional values:** The logical viewport and nominal sprite dimensions are deliberate starting values that must be tested together in a small playable scene before large-scale production. If changed, revise this guide and any dependent asset contracts. Do not silently mix scales.
+**Decision (2026-10-14):** Caelen's approved 32×48 sprite sets the production character scale. World tiles and architecture target 32×32 presentation pixels. The current 16-cell map coordinate/collision system is intentionally retained and visually magnified 2× as a transitional compatibility layer; new PNGs should be authored at the 32px scale, not fabricated by permanently doubling 16px originals. Presentation viewport is 640×448 and fullscreen uses nearest-neighbor integer scaling with letterboxing. These values require art-level playtesting but are no longer the old nominal 16×24/16×16 target.
 
-A 16 x 24 sprite may overlap more than one map tile. This is intentional: its **foot point** (usually bottom-center at the feet) controls tile position, depth sorting, and interactions. Character visual height is not collision footprint.
+A 32 x 48 sprite may overlap more than one 32px presentation tile. This is intentional: its **foot point** (usually bottom-center at the feet) controls tile position, depth sorting, and interactions. Character visual height is not collision footprint.
 
 ## 4. Pixel-art craftsmanship rules
 
