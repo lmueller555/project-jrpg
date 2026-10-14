@@ -29,7 +29,7 @@ Explore the sanctuary, village square, bridge, watermill, the three Quest 1 hous
   - `maps/towns/eldenmere.json`
   - `maps/interiors/sanctuary.json`
 - Terrain, objects, collisions, NPC placement, labels and map transitions are data-driven.
-- All visible art is currently **procedural placeholder pixel art** drawn in code, not production art, AI images, or copied assets. Future work should replace it with original curated tilesets/sprites consistent with [the art style guide](docs/ART_STYLE_GUIDE.md).
+- The initial visuals have been upgraded to a cohesive, deterministic **original pixel-art first pass** in `visuals.py` (cached native-resolution terrain textures, timber-and-stone architecture, pitched roofs, river highlights, farmland, character silhouettes). These remain **code-authored interim assets**, not final hand-polished production tilesheets or character animation sheets. The next art milestone is curated original PNG atlases with edge variants, intentional layering and directional walk cycles, consistent with [the art style guide](docs/ART_STYLE_GUIDE.md).
 - Collision and doorway behavior are first-pass. The map is a **layout sketch**, not a finalized geography, floorplan or navigation system.
 - Quest dialogue, companions, triggers, battles, save data, menus, final animations, sound and music are **not implemented**.
 
