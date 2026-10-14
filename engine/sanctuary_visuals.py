@@ -17,24 +17,11 @@ def get(name):
     return _CACHE[name]
 
 
-def clean_sunbeam():
-    """Build a transparent light-only overlay, excluding the source image's dark matte."""
-    if "clean_beam" not in _CACHE:
-        source = get("beam")
-        result = pygame.Surface(source.get_size(), pygame.SRCALPHA)
-        width, height = source.get_size()
-        for y in range(height):
-            for x in range(width):
-                r, g, b, a = source.get_at((x, y))
-                # The source is a cutout of a concept sheet with a dark
-                # background: draw only its warm luminous pixels.
-                luminance = (r * 299 + g * 587 + b * 114) // 1000
-                warmth = max(0, min(r - b, g - b))
-                strength = max(0, min(255, (luminance - 78) * 2, warmth * 3))
-                if a > 0 and strength > 0:
-                    result.set_at((x, y), (255, 215, 134, min(a, strength)))
-        _CACHE["clean_beam"] = result
-    return _CACHE["clean_beam"]
+def faded(name, opacity):
+    """Scale authored alpha without replacing its transparent matte."""
+    image = get(name).copy()
+    image.fill((255, 255, 255, round(255 * opacity)), special_flags=pygame.BLEND_RGBA_MULT)
+    return image
 
 
 def draw_room(surface, world, atlas, camera_x, camera_y, seconds):
@@ -71,15 +58,12 @@ def draw_room(surface, world, atlas, camera_x, camera_y, seconds):
     # Preserve the map doorway at x=10..11, y=14..15.
     put("door", 10 * S - 16, 13 * S)
 
-    breathe = 0.20 + 0.035 * math.sin(seconds * 0.55)
+    breathe = 0.88 + 0.08 * math.sin(seconds * 0.55)
     for window_x in WINDOW_X:
-        beam = clean_sunbeam().copy()
-        beam.set_alpha(round(255 * breathe))
+        beam = faded("beam", breathe)
         surface.blit(beam, (round(window_x + 14 - sx), round(103 - sy)))
     for px, py in ((WINDOW_X[0] + 30, 230), (WINDOW_X[1] + 30, 245)):
-        glow = get("glow").copy()
-        glow.set_alpha(round(100 + 12 * math.sin(seconds * 1.3 + px)))
+        glow = faded("glow", (100 + 12 * math.sin(seconds * 1.3 + px)) / 255)
         surface.blit(glow, (round(px - sx), round(py - sy)))
-    motes = get("motes").copy()
-    motes.set_alpha(65)
+    motes = faded("motes", 65 / 255)
     surface.blit(motes, (round(166 - sx), round(154 - sy + 5 * math.sin(seconds * 0.2))))
