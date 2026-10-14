@@ -1,79 +1,63 @@
-"""First native-32px sanctuary art pass, independent of collision and story logic."""
+"""Sanctuary V2 art pass; world collision remains map-based."""
+from pathlib import Path
 import math
+
 import pygame
 
 S = 32
-PREFIX = "interior.sanctuary."
+ASSET_ROOT = Path(__file__).resolve().parents[1] / "assets/atlases/interiors"
+_CACHE = {}
 
 
-def paint_tile(surface, atlas, name, x, y):
-    atlas.draw(surface, PREFIX + name, x, y)
+def get(name):
+    if name not in _CACHE:
+        _CACHE[name] = pygame.image.load(str(ASSET_ROOT / (name + ".png"))).convert_alpha()
+    return _CACHE[name]
 
 
 def draw_room(surface, world, atlas, camera_x, camera_y, seconds):
-    """Draw sanctuary art at 32px/native pixel scale. Camera is legacy 16px coordinates."""
-    sx, sy = camera_x * 2, camera_y * 2
+    """Render authored Sanctuary V2 layers at native 640x448 presentation scale."""
+    sx, sy = round(camera_x * 2), round(camera_y * 2)
+
+    def put(name, x, y):
+        surface.blit(get(name), (round(x - sx), round(y - sy)))
+
     for y, row in enumerate(world["tiles"]):
         for x, cell in enumerate(row):
-            px, py = x * S - sx, y * S - sy
             if cell == "#":
-                paint_tile(surface, atlas, "wall_trim" if y in (1, 13) else "stone_wall", px, py)
+                put("wall_stone" if y < 2 or y > 12 else "wall_dark", x * S, y * S)
             else:
-                paint_tile(surface, atlas, "floor_variant" if (x * 3 + y) % 9 == 0 else "floor", px, py)
+                selector = (x * 13 + y * 7) % 17
+                put("floor_worn" if selector == 0 else
+                    "floor_b" if selector in (3, 11) else "floor_a", x * S, y * S)
 
-    # Architectural details use the same native-resolution atlas as floor.
-    for wx in (5, 16):
-        paint_tile(surface, atlas, "window", wx * S - sx, 2 * S - sy)
-    for xx in range(3, 19):
-        if xx not in (5, 16):
-            paint_tile(surface, atlas, "beam", xx * S - sx, S - sy)
+    for x in (3, 17):
+        put("window_sun", x * S, 8)
+    put("timber", 24, 0)
+    put("timber", 596, 0)
+    put("altar", 225, 15)
+    put("bookshelf", 487, 44)
+    put("bookshelf", 556, 44)
+    put("communal_table", 85, 237)
+    put("bench", 97, 318)
+    put("writing_desk", 451, 252)
+    put("rug_small", 470, 302)
+    put("rug_runner", 320, 170)
+    put("flowers", 55, 159)
+    put("plant", 579, 255)
+    put("banner", 30, 37)
+    # Preserve the map doorway at x=10..11, y=14..15.
+    put("door", 10 * S - 16, 13 * S)
 
-    # Subtle central woven runner and a devotional mosaic.
-    for y in range(6, 11):
-        paint_tile(surface, atlas, "rug", 10 * S - sx, y * S - sy)
-        paint_tile(surface, atlas, "rug", 11 * S - sx, y * S - sy)
-    paint_tile(surface, atlas, "motif", 10 * S - sx, 5 * S - sy)
-
-    props = {"altar": "altar", "table": "table", "bookshelf": "bookshelf", "door": "door"}
-    for obj in world["objects"]:
-        kind = props.get(obj["kind"])
-        if kind is None:
-            continue
-        for dy in range(obj["h"]):
-            for dx in range(obj["w"]):
-                tx = obj["x"] + dx
-                ty = obj["y"] + dy
-                # For large furniture use readable repeated modules, not stretched pixels.
-                paint_tile(surface, atlas, kind, tx * S - sx, ty * S - sy)
-
-    paint_tile(surface, atlas, "candles", 9 * S - sx, 5 * S - sy)
-    paint_tile(surface, atlas, "flowers", 3 * S - sx, 5 * S - sy)
-    paint_tile(surface, atlas, "bench", 6 * S - sx, 11 * S - sy)
-    paint_tile(surface, atlas, "planks", 18 * S - sx, 8 * S - sy)
-    draw_sunlight(surface, sx, sy, seconds)
-
-
-def draw_sunlight(surface, sx, sy, seconds):
-    """Integer-pixel, gently breathing alpha shafts. No smooth upsampling."""
-    light = pygame.Surface(surface.get_size(), pygame.SRCALPHA)
-    # The bright panes are on the northern wall, projecting toward the room.
-    pulse = int(4 * math.sin(seconds * 0.7))
-    for window_x in (5, 16):
-        px = (window_x + .5) * S - sx
-        top = 3 * S - sy
-        # Broad pale gold ambient shaft, then smaller vivid highlight.
-        pygame.draw.polygon(light, (246, 204, 125, 25 + pulse), [
-            (px - 9, top), (px + 12, top),
-            (px + 100, top + 180), (px + 30, top + 180)])
-        pygame.draw.polygon(light, (255, 227, 156, 21 + pulse), [
-            (px - 3, top), (px + 6, top),
-            (px + 77, top + 150), (px + 40, top + 150)])
-        # Glint of sunlight on worn stone, not an opaque white flood.
-        pygame.draw.ellipse(light, (242, 205, 133, 28 + pulse),
-                            (round(px + 35), round(top + 125), 76, 24))
-    # Stable slow motes; coordinates repeat, avoiding frame-to-frame noise.
-    for i in range(10):
-        bx = (i * 67 + 41) % 440 + 65 - sx // 5
-        by = (i * 49 + 83 - int(seconds * (2 + i % 3))) % 215 + 90 - sy // 8
-        pygame.draw.rect(light, (249, 231, 172, 60), (bx, by, 2, 2))
-    surface.blit(light, (0, 0))
+    breathe = 0.20 + 0.035 * math.sin(seconds * 0.55)
+    for window_x in (3 * S + 26, 17 * S + 26):
+        beam = get("beam").copy()
+        beam.set_alpha(round(255 * breathe))
+        surface.blit(beam, (round(window_x - sx), round(102 - sy)))
+    for px, py in ((170, 230), (542, 245)):
+        glow = get("glow").copy()
+        glow.set_alpha(round(100 + 12 * math.sin(seconds * 1.3 + px)))
+        surface.blit(glow, (round(px - sx), round(py - sy)))
+    motes = get("motes").copy()
+    motes.set_alpha(65)
+    surface.blit(motes, (round(166 - sx), round(154 - sy + 5 * math.sin(seconds * 0.2))))

@@ -48,7 +48,7 @@ class AssetTests(unittest.TestCase):
         try:
             pygame.display.set_mode((1, 1))
             for name, dimensions in (
-                ("atlases/characters/caelen.png", (64, 96)),
+                ("atlases/characters/caelen.png", (128, 192)),
                 ("atlases/terrain/environment.png", (96, 32))
             ):
                 with self.subTest(atlas=name):
