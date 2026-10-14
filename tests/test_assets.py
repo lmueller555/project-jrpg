@@ -18,6 +18,12 @@ class AssetTests(unittest.TestCase):
     def test_manifest_pngs_and_bounds(self):
         validate_manifest(self.doc, ASSETS)
 
+    def test_png_signature_is_actual_bytes(self):
+        signature = bytes((137, 80, 78, 71, 13, 10, 26, 10))
+        for name in ("atlases/characters/caelen.png", "atlases/terrain/environment.png"):
+            self.assertEqual((ASSETS / name).read_bytes()[:8], signature)
+            validate_png(ASSETS / name)
+
     def test_all_atlases_decode_fully(self):
         for name in ("atlases/characters/caelen.png", "atlases/terrain/environment.png"):
             with self.subTest(name=name):
