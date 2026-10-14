@@ -61,3 +61,7 @@ python3 main.py
 ```
 
 This is a **pipeline/proof-of-integration art pass**, not approved final art quality, autotiling or full foreground occlusion. The source is new original art, but the tiles and characters remain deliberately small first-pass production-format samples. Validate visually at 1×/3× before scaling up.
+
+## Caelen approved character-art pass
+
+The Caelen atlas now contains 4 directions (down/left/right/up) × 4 frames (idle + 3 walking), with **32×48 logical-pixel frames** and a common **[16,47] foot anchor**. It was carefully extracted and downsampled from the approved illustrated sheet, with transparent backgrounds and limited-color indexed PNG compression. The source illustration is higher resolution; a 32×48 rendition preserves the recognizable outfit, hair, bag and poses but cannot be mathematically pixel-identical to the original illustration. Caelen is visibly larger than the previous 16×24 placeholder, while collision remains foot-point based and unchanged. The atlas validator accepts both RGBA8 and palette-indexed PNGs carrying alpha via `tRNS`. Before merging, visually inspect the character at runtime for scale, edge halos and movement timing.
