@@ -2,8 +2,9 @@
 import json
 import unittest
 from pathlib import Path
+import tempfile
 
-from engine.assets import AssetError, AnimationPlayer, LAYERS, validate_manifest, RenderQueue
+from engine.assets import AssetError, AnimationPlayer, LAYERS, validate_manifest, validate_png, RenderQueue
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
@@ -16,6 +17,22 @@ class AssetTests(unittest.TestCase):
 
     def test_manifest_pngs_and_bounds(self):
         validate_manifest(self.doc, ASSETS)
+
+    def test_all_atlases_decode_fully(self):
+        for name in ("atlases/characters/caelen.png", "atlases/terrain/environment.png"):
+            with self.subTest(name=name):
+                width, height = validate_png(ASSETS / name)
+                self.assertGreater(width, 0)
+                self.assertGreater(height, 0)
+
+    def test_corrupt_png_does_not_pass_header_only(self):
+        source = (ASSETS / "atlases/characters/caelen.png").read_bytes()
+        # A truncated IDAT must be rejected rather than passing its IHDR.
+        with tempfile.TemporaryDirectory() as tempdir:
+            path = Path(tempdir) / "invalid.png"
+            path.write_bytes(source[:45])
+            with self.assertRaises(AssetError):
+                validate_png(path)
 
     def test_required_world_clips(self):
         names = self.doc["animations"]

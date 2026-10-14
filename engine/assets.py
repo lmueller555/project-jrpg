@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 import re
+import struct
+import zlib
 import pygame
 
 ASSET_ID = re.compile(r"^[a-z][a-z0-9]*(?:[._][a-z0-9]+)*$")
@@ -11,6 +13,52 @@ LAYERS = ("ground", "ground_details", "below_entities", "entities",
 
 class AssetError(ValueError):
     pass
+
+
+def validate_png(path):
+    """Decode every RGBA8 PNG scanline and reject corrupt IDAT/filter bytes."""
+    data = path.read_bytes()
+    if not data.startswith(b"\\x89PNG\\r\\n\\x1a\\n"):
+        raise AssetError(f"Invalid PNG signature: {path}")
+    pos, ihdr, payload, ended = 8, None, bytearray(), False
+    try:
+        while pos + 12 <= len(data):
+            length = struct.unpack_from(">I", data, pos)[0]
+            kind = data[pos + 4:pos + 8]
+            stop = pos + 12 + length
+            if stop > len(data):
+                raise ValueError("Truncated chunk")
+            chunk = data[pos + 8:pos + 8 + length]
+            crc = struct.unpack_from(">I", data, pos + 8 + length)[0]
+            if zlib.crc32(kind + chunk) & 0xffffffff != crc:
+                raise ValueError("CRC mismatch")
+            if kind == b"IHDR":
+                if ihdr is not None or length != 13:
+                    raise ValueError("Invalid IHDR")
+                ihdr = chunk
+            elif kind == b"IDAT":
+                payload.extend(chunk)
+            elif kind == b"IEND":
+                ended = True
+                if stop != len(data):
+                    raise ValueError("Trailing data")
+                break
+            pos = stop
+        if not ended or ihdr is None or not payload:
+            raise ValueError("Missing PNG chunks")
+        width, height, depth, color, comp, filt, interlace = struct.unpack(">IIBBBBB", ihdr)
+        if not (width and height and depth == 8 and color == 6 and comp == 0 and filt == 0 and interlace == 0):
+            raise ValueError("Expected non-interlaced RGBA8 PNG")
+        raw = zlib.decompress(bytes(payload))
+        stride = width * 4 + 1
+        if len(raw) != stride * height:
+            raise ValueError("Wrong decompressed image size")
+        for y in range(height):
+            if raw[y * stride] not in (0, 1, 2, 3, 4):
+                raise ValueError(f"Invalid scanline filter at row {y}")
+    except (ValueError, struct.error, zlib.error) as exc:
+        raise AssetError(f"Corrupt PNG {path}: {exc}") from exc
+    return width, height
 
 
 def validate_manifest(doc, asset_root):
@@ -36,14 +84,7 @@ def validate_manifest(doc, asset_root):
         path = asset_root / relative
         if not path.is_file():
             raise AssetError(f"Missing PNG: {path}")
-        # Inspect PNG IHDR directly so validation works without a display.
-        with path.open("rb") as stream:
-            header = stream.read(26)
-        if header[:8] != b"\x89PNG\r\n\x1a\n" or header[12:16] != b"IHDR":
-            raise AssetError(f"Invalid PNG: {path}")
-        width, height = int.from_bytes(header[16:20], "big"), int.from_bytes(header[20:24], "big")
-        if header[25] != 6 or header[24] != 8:
-            raise AssetError(f"PNG must be RGBA8: {path}")
+        width, height = validate_png(path)
         x, y, w, h = rect
         if x + w > width or y + h > height:
             raise AssetError(f"Atlas bounds exceeded: {name}")
