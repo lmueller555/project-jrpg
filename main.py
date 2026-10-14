@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pygame
 from visuals import avatar, draw_object, draw_tile
+from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -45,6 +46,11 @@ class Game:
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
         self.tile_cache = {}
+        self.assets = AtlasRegistry(ROOT / 'assets')
+        self.caelen_clips = {name: AnimationPlayer(self.assets, name) for name in self.assets.manifest['animations'] if name.startswith('caelen.')}
+        self.water_clip = AnimationPlayer(self.assets, 'ambient.water')
+        self.smoke_clip = AnimationPlayer(self.assets, 'ambient.smoke')
+        self.walking = False
         self.load("sanctuary_room")
         self.message = "Morning in Eldenmere. WASD / Arrows: move   E: interact"
         self.message_timer = 7
@@ -55,6 +61,7 @@ class Game:
         self.x, self.y = (sx + 0.5) * TILE, (sy + 0.8) * TILE
         self.facing = (0, 1)
         self.phase = 0
+        self.walking = False
 
     def blocked(self, x, y):
         # The collision footprint lives at the character's feet.
@@ -112,6 +119,7 @@ class Game:
         keys = pygame.key.get_pressed()
         dx = int(keys[pygame.K_d] or keys[pygame.K_RIGHT]) - int(keys[pygame.K_a] or keys[pygame.K_LEFT])
         dy = int(keys[pygame.K_s] or keys[pygame.K_DOWN]) - int(keys[pygame.K_w] or keys[pygame.K_UP])
+        self.walking = bool(dx or dy)
         if dx or dy:
             norm = math.hypot(dx, dy)
             dx, dy = dx / norm, dy / norm
@@ -124,6 +132,10 @@ class Game:
         else:
             self.phase = 0
         self.message_timer = max(0, self.message_timer - dt)
+        for clip in self.caelen_clips.values():
+            clip.update(dt * 1000)
+        self.water_clip.update(dt * 1000)
+        self.smoke_clip.update(dt * 1000)
 
     def render(self):
         w = len(self.world["tiles"][0]) * TILE
@@ -136,12 +148,35 @@ class Game:
         for y in range(min_y, max_y):
             for x in range(min_x, max_x):
                 char = self.world["tiles"][y][x]
-                draw_tile(self.canvas, self.tile_cache, self.world["legend"][char], x * TILE - ox, y * TILE - oy, x, y)
+                kind = self.world["legend"][char]
+                asset_id = "terrain." + kind
+                if asset_id in self.assets.manifest["assets"]:
+                    self.assets.draw(self.canvas, asset_id, x * TILE - ox, y * TILE - oy)
+                    if kind == "water" and (x + y) % 4 == 0:
+                        self.assets.draw(self.canvas, self.water_clip.frame(), x * TILE - ox, y * TILE - oy)
+                else:
+                    draw_tile(self.canvas, self.tile_cache, kind, x * TILE - ox, y * TILE - oy, x, y)
+        queue = RenderQueue()
         for obj in self.world["objects"]:
-            draw_object(self.canvas, obj, ox, oy)
+            queue.add("below_entities", obj["y"] * TILE,
+                      lambda o=obj: draw_object(self.canvas, o, ox, oy))
         for npc in self.world.get("npcs", []):
-            avatar(self.canvas, (npc["x"] + .5) * TILE - ox, (npc["y"] + .9) * TILE - oy, npc["color"])
-        avatar(self.canvas, self.x - ox, self.y - oy, "#637cbb", int(self.phase))
+            queue.add("entities", (npc["y"] + .9) * TILE,
+                      lambda n=npc: avatar(self.canvas, (n["x"] + .5) * TILE - ox,
+                                          (n["y"] + .9) * TILE - oy, n["color"]))
+        direction = ("right" if self.facing[0] > .3 else
+                     "left" if self.facing[0] < -.3 else
+                     "up" if self.facing[1] < 0 else "down")
+        clip = self.caelen_clips["caelen." + ("walk_" if self.walking else "idle_") + direction]
+        queue.add("entities", self.y,
+                  lambda: self.assets.draw(self.canvas, clip.frame(), self.x - ox, self.y - oy))
+        queue.flush()
+        if self.world["id"] == "eldenmere":
+            # Small ambient chimney animation near the mill; presentation only.
+            mill = next((o for o in self.world["objects"] if o["id"] == "mill"), None)
+            if mill:
+                self.assets.draw(self.canvas, self.smoke_clip.frame(),
+                                 (mill["x"] + 2) * TILE - ox, (mill["y"] - 1) * TILE - oy)
         pygame.draw.rect(self.canvas, "#172333", (0, 0, VIEW_W, 17))
         label = self.small.render(self.world["name"] + "  |  E interact  |  ESC quit", False, "#f5e5c9")
         self.canvas.blit(label, (6, 4))
