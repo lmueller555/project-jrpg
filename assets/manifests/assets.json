@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "terrain.grass": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.path": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.water": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        32,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.trees": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        48,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.floor": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        64,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.farmland": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        80,
+        0,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "effect.water_0": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        0,
+        16,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "world_effects"
+    },
+    "effect.water_1": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "world_effects"
+    },
+    "effect.smoke_0": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        32,
+        16,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "world_effects"
+    },
+    "effect.smoke_1": {
+      "atlas": "atlases/terrain/environment.png",
+      "rect": [
+        48,
+        16,
+        16,
+        16
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "world_effects"
+    },
+    "character.caelen.down_0": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        0,
+        0,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.down_1": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        16,
+        0,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.down_2": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        32,
+        0,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.down_3": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        48,
+        0,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.left_0": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        0,
+        24,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.left_1": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        16,
+        24,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.left_2": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        32,
+        24,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.left_3": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        48,
+        24,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.right_0": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        0,
+        48,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.right_1": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        16,
+        48,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.right_2": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        32,
+        48,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.right_3": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        48,
+        48,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.up_0": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        0,
+        72,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.up_1": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        16,
+        72,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.up_2": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        32,
+        72,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    },
+    "character.caelen.up_3": {
+      "atlas": "atlases/characters/caelen.png",
+      "rect": [
+        48,
+        72,
+        16,
+        24
+      ],
+      "anchor": [
+        8,
+        23
+      ],
+      "layer": "entities"
+    }
+  },
+  "animations": {
+    "caelen.idle_down": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.down_0",
+          "duration_ms": 450
+        }
+      ]
+    },
+    "caelen.walk_down": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.down_1",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.down_2",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.down_3",
+          "duration_ms": 130
+        }
+      ]
+    },
+    "caelen.idle_left": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.left_0",
+          "duration_ms": 450
+        }
+      ]
+    },
+    "caelen.walk_left": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.left_1",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.left_2",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.left_3",
+          "duration_ms": 130
+        }
+      ]
+    },
+    "caelen.idle_right": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.right_0",
+          "duration_ms": 450
+        }
+      ]
+    },
+    "caelen.walk_right": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.right_1",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.right_2",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.right_3",
+          "duration_ms": 130
+        }
+      ]
+    },
+    "caelen.idle_up": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.up_0",
+          "duration_ms": 450
+        }
+      ]
+    },
+    "caelen.walk_up": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "character.caelen.up_1",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.up_2",
+          "duration_ms": 130
+        },
+        {
+          "asset": "character.caelen.up_3",
+          "duration_ms": 130
+        }
+      ]
+    },
+    "ambient.water": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "effect.water_0",
+          "duration_ms": 380
+        },
+        {
+          "asset": "effect.water_1",
+          "duration_ms": 380
+        }
+      ]
+    },
+    "ambient.smoke": {
+      "mode": "loop",
+      "frames": [
+        {
+          "asset": "effect.smoke_0",
+          "duration_ms": 450
+        },
+        {
+          "asset": "effect.smoke_1",
+          "duration_ms": 450
+        }
+      ]
+    }
+  }
+}

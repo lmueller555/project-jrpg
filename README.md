@@ -48,3 +48,16 @@ python3 -m unittest discover -s tests
 ## Production art architecture
 
 The authoritative specification for PNG atlases, semantic IDs, palettes, world render layers, collision separation, sprite animation, combat presentation events, weather/ambient effects, and asset validation is [Asset Pipeline, Renderer & Animation Architecture](docs/ASSET_RENDERER_ARCHITECTURE.md). The current procedural renderer is an interim prototype and has not yet been migrated.
+
+## PNG atlas / sprite animation foundation
+
+The first **actual RGBA PNG atlases** are under `assets/atlases/`, indexed by `assets/manifests/assets.json`. The asset registry (`engine/assets.py`) validates semantic IDs, PNG headers, pixel bounds, clip frames and rendering layer names, then caches loaded Pygame surfaces. The first Caelen sprite has down/left/right/up idle and three-frame walking clips. Water and mill smoke have simple looping visual effects. Existing world JSON geometry and collision are unchanged; incomplete architecture assets still use `visuals.py`.
+
+Run validation after installing requirements:
+
+```sh
+python3 -m unittest discover -s tests
+python3 main.py
+```
+
+This is a **pipeline/proof-of-integration art pass**, not approved final art quality, autotiling or full foreground occlusion. The source is new original art, but the tiles and characters remain deliberately small first-pass production-format samples. Validate visually at 1×/3× before scaling up.
