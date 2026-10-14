@@ -364,6 +364,230 @@
         47
       ],
       "layer": "entities"
+    },
+    "interior.sanctuary.floor": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "interior.sanctuary.floor_variant": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        32,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "interior.sanctuary.stone_wall": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        64,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.wall_trim": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        96,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.window": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        128,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.rug": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        160,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "interior.sanctuary.table": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        192,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.bookshelf": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        224,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.altar": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.flowers": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.door": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        64,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.planks": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        96,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "interior.sanctuary.candles": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        128,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.bench": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        160,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.beam": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        192,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "below_entities"
+    },
+    "interior.sanctuary.motif": {
+      "atlas": "atlases/interiors/sanctuary.png",
+      "rect": [
+        224,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
     }
   },
   "animations": {
