@@ -40,6 +40,23 @@ class AssetTests(unittest.TestCase):
             with self.assertRaises(AssetError):
                 validate_png(path)
 
+    def test_pygame_can_load_real_atlas_pixels(self):
+        import os
+        import pygame
+        os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+        pygame.display.init()
+        try:
+            pygame.display.set_mode((1, 1))
+            for name, dimensions in (
+                ("atlases/characters/caelen.png", (64, 96)),
+                ("atlases/terrain/environment.png", (96, 32))
+            ):
+                with self.subTest(atlas=name):
+                    image = pygame.image.load(str(ASSETS / name)).convert_alpha()
+                    self.assertEqual(image.get_size(), dimensions)
+        finally:
+            pygame.display.quit()
+
     def test_required_world_clips(self):
         names = self.doc["animations"]
         for direction in ("down", "left", "right", "up"):
