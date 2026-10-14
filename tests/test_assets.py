@@ -57,6 +57,38 @@ class AssetTests(unittest.TestCase):
         finally:
             pygame.display.quit()
 
+    def test_caelen_sheet_directional_animation_and_alpha(self):
+        import os
+        import pygame
+        os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+        pygame.display.init()
+        try:
+            pygame.display.set_mode((1, 1))
+            from engine.assets import AtlasRegistry
+            reg = AtlasRegistry(ASSETS)
+            sheet = pygame.image.load(str(ASSETS / "atlases/characters/caelen.png")).convert_alpha()
+            self.assertEqual(sheet.get_size(), (128, 192))
+            self.assertEqual(sheet.get_at((0, 0)).a, 0)
+            for row, direction in enumerate(("down", "left", "right", "up")):
+                frames = []
+                for col in range(4):
+                    key = f"character.caelen.{direction}_{col}"
+                    spec = reg.manifest["assets"][key]
+                    self.assertEqual(spec["rect"], [col * 32, row * 48, 32, 48])
+                    self.assertEqual(spec["anchor"], [16, 47])
+                    frame = reg.image(key)
+                    self.assertEqual(frame.get_size(), (32, 48))
+                    self.assertTrue(any(frame.get_at((x, y)).a for y in range(48) for x in range(32)))
+                    frames.append(pygame.image.tostring(frame, "RGBA"))
+                self.assertGreater(len(set(frames)), 1, f"Walking animation is static: {direction}")
+                for state in ("idle", "walk"):
+                    player = AnimationPlayer(reg, f"caelen.{state}_{direction}")
+                    self.assertIn(player.frame(), [f"character.caelen.{direction}_{i}" for i in range(4)])
+                    player.update(260)
+                    self.assertIn(player.frame(), [f"character.caelen.{direction}_{i}" for i in range(4)])
+        finally:
+            pygame.display.quit()
+
     def test_required_world_clips(self):
         names = self.doc["animations"]
         for direction in ("down", "left", "right", "up"):
