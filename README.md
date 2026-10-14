@@ -2,7 +2,7 @@
 
 An original Python pixel-art JRPG inspired by the visual language of 16-bit era classics.
 
-The project's narrative and authoritative art guide live under [docs/](docs/).
+The project's narrative, authoritative art guide, and production asset/renderer architecture live under [docs/](docs/).
 
 ## Run the Eldenmere world slice
 
@@ -44,3 +44,7 @@ python3 -m unittest discover -s tests
 - [Chapter 1](docs/narrative/game_01/CHAPTER_01.md)
 - [Quest 1 narrative specification](docs/narrative/game_01/CH01_MQ01.md)
 - [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md)
+
+## Production art architecture
+
+The authoritative specification for PNG atlases, semantic IDs, palettes, world render layers, collision separation, sprite animation, combat presentation events, weather/ambient effects, and asset validation is [Asset Pipeline, Renderer & Animation Architecture](docs/ASSET_RENDERER_ARCHITECTURE.md). The current procedural renderer is an interim prototype and has not yet been migrated.
