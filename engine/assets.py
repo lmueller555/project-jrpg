@@ -18,7 +18,7 @@ class AssetError(ValueError):
 def validate_png(path):
     """Decode every RGBA8 PNG scanline and reject corrupt IDAT/filter bytes."""
     data = path.read_bytes()
-    if not data.startswith(b"\\x89PNG\\r\\n\\x1a\\n"):
+    if not data.startswith(bytes((137, 80, 78, 71, 13, 10, 26, 10))):
         raise AssetError(f"Invalid PNG signature: {path}")
     pos, ihdr, payload, ended = 8, None, bytearray(), False
     try:
