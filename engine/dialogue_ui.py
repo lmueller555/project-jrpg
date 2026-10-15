@@ -38,13 +38,20 @@ class DialogueBox:
     def __init__(self, assets=None):
         self.assets = Path(assets) if assets else None
         self.fonts = FontManager()
-        self.approved_portraits = {}
+        # Registry entries are identity-reviewed source crops, never generic art.
+        self.approved_portraits = {
+            f'caelen.{mood}': f'portraits/caelen/{mood}.png'
+            for mood in ('neutral', 'happy', 'concerned', 'determined', 'surprised')
+        }
+        self._portrait_cache = {}
         self.message = None
         self.page = 0
 
     def show(self, text, speaker="", mode="narration", portrait=None):
         if mode not in ("character", "narration"):
             raise ValueError("Invalid dialogue mode")
+        if portrait is None and mode == "character" and speaker.strip().lower() == "caelen":
+            portrait = "caelen.neutral"
         self.message = DialogueMessage(text, speaker, mode, portrait)
         self.page = 0
 
@@ -54,10 +61,15 @@ class DialogueBox:
         name = self.approved_portraits.get(self.message.portrait)
         if not name or not self.assets:
             return None
-        result = pygame.image.load(str(self.assets / name)).convert_alpha()
-        if result.get_width() != result.get_height():
-            raise ValueError("Portrait image must be square")
-        return result
+        path = self.assets / name
+        if not path.is_file():
+            return None  # Honest fallback while portrait assets are being installed.
+        if name not in self._portrait_cache:
+            result = pygame.image.load(str(path)).convert_alpha()
+            if result.get_size() != (96, 96):
+                raise ValueError("Approved portrait must be 96x96")
+            self._portrait_cache[name] = result
+        return self._portrait_cache[name]
 
     def _layout(self, size):
         w, h = size
