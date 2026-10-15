@@ -31,21 +31,21 @@ class SanctuaryArtTests(unittest.TestCase):
         import os
         os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
         import pygame
-        from engine.sanctuary_visuals import faded, WINDOW_X
+        from engine.architecture import resolve_architecture
+        from engine.sanctuary_visuals import _sunlight
         pygame.display.init()
         try:
             pygame.display.set_mode((1, 1))
-            beam = faded("beam", 1.0)
-            assert len(WINDOW_X) == 2 and WINDOW_X[0] < WINDOW_X[1]
-            assert WINDOW_X[1] + 64 < 640  # both windows fit the native canvas
-            visible = 0
-            for y in range(beam.get_height()):
-                for x in range(beam.get_width()):
-                    r, g, b, a = beam.get_at((x, y))
-                    if a:
-                            visible += 1
-                self.assertGreater(visible, 0)
-            self.assertEqual(beam.get_at((111, 0)).a, 0)
+            room = json.loads((ROOT / "maps/interiors/sanctuary.json").read_text())
+            layout = resolve_architecture(room)
+            self.assertEqual(len(layout.windows), 2)
+            self.assertLess(layout.windows[0].x, layout.windows[1].x)
+            self.assertLess(layout.windows[1].x + layout.windows[1].width, 640)
+            light = pygame.Surface((640, 448), pygame.SRCALPHA)
+            _sunlight(light, layout, 0, 0, 0.0)
+            alpha = pygame.surfarray.array_alpha(light)
+            self.assertGreater(int((alpha > 0).sum()), 0)
+            self.assertLess(int(alpha.max()), 255)
         finally:
             pygame.display.quit()
 

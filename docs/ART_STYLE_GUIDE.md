@@ -185,3 +185,8 @@ Unresolved choices—exact palette sets, regional architecture, combat presentat
 ## Architecture and seam continuity (2026-10-15)
 
 Reusable architectural geometry, wall/floor material transitions, window/door anchors, and mandatory visual validation are specified in [Architectural Composition](ARCHITECTURAL_COMPOSITION.md). This guidance takes precedence over stale 16px asset examples: production tiles are 32×32 presentation pixels while legacy collision/map cells remain 16 units. The sanctuary migration is a reference implementation, not proof that every transition-art variant already exists.
+
+
+## Native UI text and faithful character portraits (2026-10-15)
+
+The authoritative text panel, font rendering, dialogue pagination, and portrait identity requirements are specified in [Dialogue UI and Portrait Standards](DIALOGUE_UI_AND_PORTRAITS.md). UI glyphs render at final display resolution, not through the low-resolution scaled world. Portraits must match approved character reference art; generic substitutions are forbidden.
