@@ -27,3 +27,7 @@
 
 ## Adoption
 `engine/architecture.py` is the initial pure-data resolver; `engine/sanctuary_visuals.py` is the reference implementation. Future locations should use the same resolver patterns and explicit material/anchor definitions. Do not copy sanctuary pixel offsets into unrelated maps. Later PRs can extend the schema with authored window/opening lists and configurable wall face/corner variants as the corresponding PNG art becomes available.
+
+## First masonry transition atlas
+
+`assets/atlases/interiors/architecture_transitions.png` is a 128×64 native RGBA sprite sheet with eight 32×32 transparent stone-contact overlays. Top row: north/east/south/west wall-foot strips; second row: northwest/northeast/southwest/southeast adjoining-edge corners. Overlays use existing warm stone ramps and should be drawn over floor cells bordering structural wall cells, prior to architecture and actors. This deliberately does not replace authentic cross-material tiles or the future authored masonry corner family. Validate corner joins and contact shadows at native resolution before art sign-off.

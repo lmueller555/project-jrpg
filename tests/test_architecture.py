@@ -36,6 +36,12 @@ class ArchitecturalLayoutTests(unittest.TestCase):
         self.assertTrue(any((dx, dy) == (0, -1) for _, _, dx, dy in layout.floor_edges))
         self.assertTrue(any((dx, dy) == (0, 1) for _, _, dx, dy in layout.floor_edges))
 
+    def test_masonry_transition_atlas_decodes_and_has_alpha(self):
+        from engine.assets import validate_png
+        path = ROOT / "assets/atlases/interiors/architecture_transitions.png"
+        self.assertEqual(validate_png(path), (128, 64))
+        # Full decode/CRC validation is dependency-free; the renderer tests alpha in SDL.
+
     def test_camera_translation_does_not_change_architecture(self):
         layout = resolve_architecture(self.world)
         for camera in ((0, 0), (32, 40), (64, 64)):

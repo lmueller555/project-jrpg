@@ -20,6 +20,13 @@ def _blit(surface, name, x, y, sx, sy):
     surface.blit(get(name), (round(x - sx), round(y - sy)))
 
 
+def get_transition_atlas():
+    if "architecture_transitions" not in _CACHE:
+        _CACHE["architecture_transitions"] = pygame.image.load(
+            str(ASSET_ROOT / "architecture_transitions.png")).convert_alpha()
+    return _CACHE["architecture_transitions"]
+
+
 def _sunlight(surface, layout, sx, sy, seconds):
     """Transparent, bounded, window-anchored light; no opaque beam matte."""
     for opening in layout.windows:
@@ -50,10 +57,25 @@ def draw_room(surface, world, atlas, camera_x, camera_y, seconds):
                         "floor_b" if selector in (3, 11) else "floor_a")
             _blit(surface, name, px, py, sx, sy)
 
-    # Clean continuous wall/baseboard transitions following actual north edge.
-    for x, y, dx, dy in sorted(layout.floor_edges):
-        if (dx, dy) == (0, -1) and y == 2:
-            _blit(surface, "wall_stone", x * S, y * S - 12, sx, sy)
+    # Palette-matched RGBA masonry contact transitions; overlay the floor's
+    # adjoining edge, never replace walkable tiles or collision geometry.
+    overlay = get_transition_atlas()
+    edges_by_cell = {}
+    for x, y, dx, dy in layout.floor_edges:
+        edges_by_cell.setdefault((x, y), set()).add((dx, dy))
+    mapping = {(0, -1): 0, (1, 0): 1, (0, 1): 2, (-1, 0): 3}
+    corners = {
+        frozenset(((0, -1), (-1, 0))): 4,
+        frozenset(((0, -1), (1, 0))): 5,
+        frozenset(((0, 1), (-1, 0))): 6,
+        frozenset(((0, 1), (1, 0))): 7,
+    }
+    for (x, y), adjoining in sorted(edges_by_cell.items()):
+        corner = corners.get(frozenset(adjoining))
+        indices = (corner,) if corner is not None else tuple(mapping[d] for d in sorted(adjoining))
+        for i in indices:
+            source = pygame.Rect((i % 4) * S, (i // 4) * S, S, S)
+            surface.blit(overlay, (x * S - sx, y * S - sy), source)
 
     # Tall windows are architectural alcoves: the rear 64px wall hosts
     # the top section, while the lower section is deliberate wall relief.
