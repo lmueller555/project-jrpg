@@ -11,6 +11,7 @@ import pygame
 from visuals import avatar, draw_object, draw_tile
 from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
 from engine.sanctuary_visuals import draw_room as draw_sanctuary_room
+from engine.dialogue_ui import DialogueBox
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -49,6 +50,7 @@ class Game:
         self.world_canvas = pygame.Surface((LOGICAL_W, LOGICAL_H))
         self.overlay = pygame.Surface((VIEW_W, VIEW_H), pygame.SRCALPHA)
         self.npc_sprites = {}
+        self.dialogue = DialogueBox(ROOT / 'assets')
         self.font = pygame.font.Font(FONT_NAME, 12)
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
@@ -61,7 +63,8 @@ class Game:
         self.ambient_time = 0.0
         self.load("sanctuary_room")
         self.message = "Morning in Eldenmere. WASD / Arrows: move   E: interact"
-        self.message_timer = 7
+        self.message_timer = 0
+        self.say("Morning in Eldenmere. WASD / Arrows: move   E: interact", speaker="Eldenmere Sanctuary")
 
     def load(self, map_id):
         self.world = load_map(map_id)
@@ -101,7 +104,7 @@ class Game:
         for npc in self.world.get("npcs", []):
             nx, ny = (npc["x"] + .5) * TILE, (npc["y"] + .9) * TILE
             if math.hypot(self.x - nx, self.y - ny) < 27:
-                self.say(f'{npc["name"]}: {npc["speech"]}')
+                self.say(npc["speech"], speaker=npc["name"], mode="character")
                 return
         for obj in self.world["objects"]:
             r = object_rect(obj)
@@ -120,8 +123,9 @@ class Game:
             return
         self.say("Nothing unusual here.")
 
-    def say(self, content):
-        self.message, self.message_timer = content, 5
+    def say(self, content, speaker="", mode="narration"):
+        self.dialogue.show(content, speaker=speaker, mode=mode)
+        self.message, self.message_timer = content, 0
 
     def tick(self, dt):
         keys = pygame.key.get_pressed()
@@ -195,28 +199,8 @@ class Game:
                                            (self.x - ox) * ART_SCALE,
                                            (self.y - oy) * ART_SCALE))
         queue.flush()
-        # Render UI separately at old logical dimensions, then upscale.
-        self.overlay.fill((0, 0, 0, 0))
-        pygame.draw.rect(self.overlay, "#172333", (0, 0, VIEW_W, 17))
-        label = self.small.render(self.world["name"] + "  |  E interact  |  ESC quit", False, "#f5e5c9")
-        self.overlay.blit(label, (6, 4))
-        if self.message_timer:
-            pygame.draw.rect(self.overlay, "#111a29", (4, VIEW_H - 34, VIEW_W - 8, 30))
-            pygame.draw.rect(self.overlay, "#e1c996", (4, VIEW_H - 34, VIEW_W - 8, 30), 1)
-            # Soft wrap rather than dropping text out of viewport.
-            words, lines, line = self.message.split(), [], ""
-            for word in words:
-                proposed = (line + " " + word).strip()
-                if self.small.size(proposed)[0] > VIEW_W - 22 and line:
-                    lines.append(line)
-                    line = word
-                else:
-                    line = proposed
-            lines.append(line)
-            for i, text in enumerate(lines[:2]):
-                self.overlay.blit(self.small.render(text, False, "#f5e5c9"), (10, VIEW_H - 29 + i * 12))
-        self.world_canvas.blit(pygame.transform.scale(self.overlay, (LOGICAL_W, LOGICAL_H)), (0, 0))
         self.present()
+        self.dialogue.draw(self.window)
         pygame.display.flip()
 
     def draw_npc(self, npc, ox, oy):
@@ -261,7 +245,8 @@ class Game:
                 elif event.type == pygame.VIDEORESIZE and not self.fullscreen:
                     self.windowed_size = event.size
                 elif event.type == pygame.KEYDOWN and event.key in (pygame.K_e, pygame.K_SPACE):
-                    self.interact()
+                    if not self.dialogue.advance(self.window.get_size()):
+                        self.interact()
             self.tick(dt)
             self.render()
         pygame.quit()
