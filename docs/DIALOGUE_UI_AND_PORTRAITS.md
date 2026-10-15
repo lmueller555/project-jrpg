@@ -27,3 +27,5 @@ The user-approved portrait board defines five expressive Caelen variants. Export
 | caelen.surprised | portraits/caelen/surprised.png | Wide eyes, open mouth |
 
 All five should be square 96×96 RGBA, share framing and identity, and be inspected at UI presentation size. Caelen dialogue defaults to neutral unless a scene selects a different approved expression ID; others never get a Caelen portrait. The source is the approved UI board, not independent image regeneration. If files are unavailable, the UI omits the picture but retains readable text. Do not call an asset-integrated release complete until the actual PNG files exist in the repository and are validated.
+
+The approved delivery is `caelen_approved_portrait_pack.zip` (SHA-256 `dcfc421ffedd05ce264163b82d266660fe2d3c8542fbc3a74ad1c7b7896a1688`), installed as the five paths above. The dialogue regression suite decodes and loads every variant at its native size.

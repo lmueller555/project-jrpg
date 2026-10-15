@@ -1,11 +1,14 @@
 """Dialogue layout, text wrapping and identity safety regression tests."""
 import os
 import unittest
+from pathlib import Path
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 
 from engine.dialogue_ui import DialogueBox, FontManager, wrap
 import pygame
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class DialogueUITests(unittest.TestCase):
@@ -34,30 +37,38 @@ class DialogueUITests(unittest.TestCase):
         self.assertIsNone(panel.message)
 
     def test_unapproved_character_portrait_never_substituted(self):
-        panel = DialogueBox()
+        panel = DialogueBox(ROOT / "assets")
         panel.show("The sanctuary is quiet.", speaker="Caelen",
-                   mode="character", portrait="caelen.neutral")
+                   mode="character", portrait="other.neutral")
         self.assertIsNone(panel._portrait())
         surface = pygame.Surface((960, 672))
         panel.draw(surface)
 
-    def test_caelen_expression_registry_and_safe_missing_files(self):
-        panel = DialogueBox()
+    def test_caelen_expression_registry_and_approved_files(self):
+        panel = DialogueBox(ROOT / "assets")
         self.assertEqual(set(panel.approved_portraits), {
             "caelen.neutral", "caelen.happy", "caelen.concerned",
             "caelen.determined", "caelen.surprised"})
         panel.show("Ready to go.", speaker="Caelen", mode="character")
         self.assertEqual(panel.message.portrait, "caelen.neutral")
-        self.assertIsNone(panel._portrait())
+        self.assertEqual(panel._portrait().get_size(), (96, 96))
+        for portrait_id, relative_path in panel.approved_portraits.items():
+            with self.subTest(portrait_id=portrait_id):
+                self.assertTrue((ROOT / "assets" / relative_path).is_file())
+                panel.show("Ready.", speaker="Caelen", mode="character", portrait=portrait_id)
+                self.assertEqual(panel._portrait().get_size(), (96, 96))
         self.assertIsNone(DialogueBox()._portrait())
 
     def test_narration_and_character_share_panel(self):
-        panel = DialogueBox()
+        panel = DialogueBox(ROOT / "assets")
         surface = pygame.Surface((960, 672))
-        for mode in ("narration", "character"):
-            panel.show("The same styled box.", speaker="Sanctuary", mode=mode)
-            panel.draw(surface)
-            self.assertTrue(panel.advance(surface.get_size()))
+        panel.show("The same styled box.", speaker="Sanctuary", mode="narration")
+        panel.draw(surface)
+        self.assertTrue(panel.advance(surface.get_size()))
+        panel.show("The same styled box.", speaker="Caelen", mode="character")
+        panel.draw(surface)
+        self.assertIsNotNone(panel._portrait())
+        self.assertTrue(panel.advance(surface.get_size()))
 
 
 if __name__ == "__main__":

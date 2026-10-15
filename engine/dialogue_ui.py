@@ -123,5 +123,7 @@ class DialogueBox:
         for line in self._pages(surface.get_size())[self.page]:
             surface.blit(body_font.render(line, True, (248, 239, 222)), (text_x, baseline))
             baseline += body_font.get_linesize() + 4
-        marker = body_font.render("▼", True, (245, 204, 138))
-        surface.blit(marker, (x + w - marker.get_width() - 17, y + h - marker.get_height() - 8))
+        marker_x, marker_y = x + w - 26, y + h - 23
+        pygame.draw.polygon(surface, (245, 204, 138),
+                    ((marker_x, marker_y), (marker_x + 12, marker_y),
+                     (marker_x + 6, marker_y + 8)))

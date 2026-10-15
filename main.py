@@ -123,8 +123,8 @@ class Game:
             return
         self.say("Nothing unusual here.")
 
-    def say(self, content, speaker="", mode="narration"):
-        self.dialogue.show(content, speaker=speaker, mode=mode)
+    def say(self, content, speaker="", mode="narration", portrait=None):
+        self.dialogue.show(content, speaker=speaker, mode=mode, portrait=portrait)
         self.message, self.message_timer = content, 0
 
     def tick(self, dt):
