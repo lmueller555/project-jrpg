@@ -180,3 +180,8 @@ Evaluate the scene at native resolution **and** 3x/4x scale. Reject assets that 
 This document specifies **visual** requirements, not story, combat, classes, progression, audio, or overall game mechanics. Those topics belong in separate authoritative documents.
 
 Unresolved choices—exact palette sets, regional architecture, combat presentation, UI typography, final resolution, and final character frame heights—must be recorded as decisions before large-volume asset production. Propose changes with rationale, impact on existing assets, and updated examples. Never treat a single generated image as permission to silently revise the whole visual standard.
+
+
+## Architecture and seam continuity (2026-10-15)
+
+Reusable architectural geometry, wall/floor material transitions, window/door anchors, and mandatory visual validation are specified in [Architectural Composition](ARCHITECTURAL_COMPOSITION.md). This guidance takes precedence over stale 16px asset examples: production tiles are 32×32 presentation pixels while legacy collision/map cells remain 16 units. The sanctuary migration is a reference implementation, not proof that every transition-art variant already exists.
