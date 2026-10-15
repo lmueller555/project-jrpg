@@ -41,6 +41,16 @@ class DialogueUITests(unittest.TestCase):
         surface = pygame.Surface((960, 672))
         panel.draw(surface)
 
+    def test_caelen_expression_registry_and_safe_missing_files(self):
+        panel = DialogueBox()
+        self.assertEqual(set(panel.approved_portraits), {
+            "caelen.neutral", "caelen.happy", "caelen.concerned",
+            "caelen.determined", "caelen.surprised"})
+        panel.show("Ready to go.", speaker="Caelen", mode="character")
+        self.assertEqual(panel.message.portrait, "caelen.neutral")
+        self.assertIsNone(panel._portrait())
+        self.assertIsNone(DialogueBox()._portrait())
+
     def test_narration_and_character_share_panel(self):
         panel = DialogueBox()
         surface = pygame.Surface((960, 672))
