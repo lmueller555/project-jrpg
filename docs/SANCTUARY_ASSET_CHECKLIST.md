@@ -55,3 +55,8 @@ Two upper wall windows project golden angled beams into the occupied room. Each 
 5. No flicker caused by random per-frame redraw; no soft interpolation.
 6. Existing exterior display and terrain remain unaffected.
 7. A human reviewer examines screenshots at 1× presentation resolution and at fullscreen integer scale before declaring art final.
+
+
+## Architecture and seam continuity (2026-10-15)
+
+Reusable architectural geometry, wall/floor material transitions, window/door anchors, and mandatory visual validation are specified in [Architectural Composition](ARCHITECTURAL_COMPOSITION.md). This guidance takes precedence over stale 16px asset examples: production tiles are 32×32 presentation pixels while legacy collision/map cells remain 16 units. The sanctuary migration is a reference implementation, not proof that every transition-art variant already exists.

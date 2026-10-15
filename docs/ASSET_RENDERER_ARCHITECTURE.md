@@ -249,3 +249,8 @@ This is an authoritative **v1** contract for future art and rendering PRs. Chang
 The user approved Caelen's visually larger, detailed 32×48 sprite as the reference scale for **all** future characters, structures, vegetation and terrain. New artwork must use a coherent 32px tile vocabulary, not simply mix 32×48 character images with 16×16 structures. During the interim, the engine enlarges the current 16-unit map/background by 2× while rendering Caelen's 32×48 atlas without resampling; temporary NPC sprites scale from 16×24 to 32×48. The transition **does not** double movement speed, change collision footprints in map units, or rewrite map coordinates. Future atlas migration should render 32px-native terrain/architecture directly in the 640×448 presentation surface and remove the transitional background upscaling only when parity is verified.
 
 Fullscreen is the default, with F11/F toggling a resizable window, a nearest-neighbor integer scale to fit the display, centered letterboxing for aspect mismatch, and a fitted fallback only when the monitor is smaller than the canvas. Preserve all 4 directional Caelen animations at 32×48 and a consistent foot anchor of [16,47].
+
+
+## Architecture and seam continuity (2026-10-15)
+
+Reusable architectural geometry, wall/floor material transitions, window/door anchors, and mandatory visual validation are specified in [Architectural Composition](ARCHITECTURAL_COMPOSITION.md). This guidance takes precedence over stale 16px asset examples: production tiles are 32×32 presentation pixels while legacy collision/map cells remain 16 units. The sanctuary migration is a reference implementation, not proof that every transition-art variant already exists.
