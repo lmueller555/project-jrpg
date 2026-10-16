@@ -12,6 +12,7 @@ from visuals import avatar, draw_object, draw_tile
 from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
 from engine.sanctuary_visuals import draw_room as draw_sanctuary_room
 from engine.dialogue_ui import DialogueBox
+from engine.title_screen import TitleScreen
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -51,6 +52,8 @@ class Game:
         self.overlay = pygame.Surface((VIEW_W, VIEW_H), pygame.SRCALPHA)
         self.npc_sprites = {}
         self.dialogue = DialogueBox(ROOT / 'assets')
+        self.title_screen = TitleScreen()
+        self.scene = 'title'
         self.font = pygame.font.Font(FONT_NAME, 12)
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
@@ -233,22 +236,40 @@ class Game:
         size = (0, 0) if self.fullscreen else self.windowed_size
         self.window = pygame.display.set_mode(size, flags)
 
+    def start_new_game(self):
+        self.load('sanctuary_room')
+        self.dialogue.message = None
+        self.scene = 'game'
+
     def run(self):
         running = True
         while running:
             dt = min(self.clock.tick(60) / 1000, 1 / 20)
             for event in pygame.event.get():
-                if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+                if event.type == pygame.QUIT:
                     running = False
                 elif event.type == pygame.KEYDOWN and event.key in (pygame.K_F11, pygame.K_f):
                     self.toggle_fullscreen()
                 elif event.type == pygame.VIDEORESIZE and not self.fullscreen:
                     self.windowed_size = event.size
+                elif event.type == pygame.KEYDOWN and self.scene == 'title':
+                    choice = self.title_screen.handle_key(event.key)
+                    if choice == 'start':
+                        self.start_new_game()
+                    elif choice == 'quit':
+                        running = False
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                    running = False
                 elif event.type == pygame.KEYDOWN and event.key in (pygame.K_e, pygame.K_SPACE):
                     if not self.dialogue.advance(self.window.get_size()):
                         self.interact()
-            self.tick(dt)
-            self.render()
+            if self.scene == 'title':
+                self.title_screen.update(dt)
+                self.title_screen.draw(self.window)
+                pygame.display.flip()
+            else:
+                self.tick(dt)
+                self.render()
         pygame.quit()
 
 
