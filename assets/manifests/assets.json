@@ -588,6 +588,888 @@
         0
       ],
       "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_01": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_02": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_03": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_04": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_05": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_06": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_07": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.grass.variant_08": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_01": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_02": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_03": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_04": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_05": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_06": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_07": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.dirt.variant_08": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_01": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_02": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_03": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_04": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_05": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_06": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_07": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_08": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_09": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_10": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_11": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_12": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_13": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_14": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_15": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_16": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_17": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_18": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_19": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_20": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_21": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_22": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_23": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_24": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_25": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_26": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_27": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_28": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_29": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_30": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_31": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_32": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_33": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_34": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_35": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_36": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_37": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_38": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_39": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_40": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        224,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_41": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        0,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_42": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        32,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_43": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        64,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_44": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        96,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_45": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        128,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_46": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        160,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.transition.source_slot_47": {
+      "atlas": "atlases/terrain/grassland_v1.png",
+      "rect": [
+        192,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
     }
   },
   "animations": {
