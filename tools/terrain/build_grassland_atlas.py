@@ -26,7 +26,12 @@ def asset_id(index):
 def build():
     src = Image.open(SOURCE).convert("RGBA")
     if src.size != (1254, 1254):
-        raise ValueError(f"Unexpected source dimensions: {src.size}")
+        raise ValueError(
+            f"Wrong grassland source PNG: expected the 1254x1254 8x8 source sheet, "
+            f"but {SOURCE} is {src.width}x{src.height}. This is a different image; "
+            "do not rescale or bypass the check. Replace blob47_source.png with the "
+            "approved 1254x1254 meadow tileset source image, then rerun CI."
+        )
     canvas = Image.new("RGBA", (256, 256))
     expected = {}
     for index in range(63):
