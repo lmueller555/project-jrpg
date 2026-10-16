@@ -9,7 +9,7 @@ MUTED = (168, 184, 199)
 
 
 class TitleScreen:
-    OPTIONS = ("New Game", "Quit")
+    OPTIONS = ("New Game", "Asset Library", "Quit")
 
     def __init__(self):
         self.selected = 0
@@ -26,7 +26,7 @@ class TitleScreen:
         elif key in (pygame.K_DOWN, pygame.K_s):
             self.selected = (self.selected + 1) % len(self.OPTIONS)
         elif key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE, pygame.K_e):
-            return "start" if self.selected == 0 else "quit"
+            return ("start", "library", "quit")[self.selected]
         elif key == pygame.K_ESCAPE:
             return "quit"
         return None
@@ -76,13 +76,26 @@ class TitleScreen:
         self._center(surface, "A TALE OF ELDENMERE", 181, 15, MUTED)
         pygame.draw.line(surface, GOLD, (202, 196), (438, 196), 1)
         for i, label in enumerate(self.OPTIONS):
-            y = 382 + i * 30
+            y = 352 + i * 28
             color = GOLD if i == self.selected else CREAM
             if i == self.selected:
                 pygame.draw.polygon(surface, GOLD,
                                     [(254, y), (260, y - 4), (260, y + 4)])
             self._center(surface, label, y, 20, color, i == self.selected)
         self._center(surface, "W/S OR ARROWS   ·   ENTER TO SELECT", 443, 11, MUTED)
+
+    def handle_click(self, pos, window_size):
+        from engine.asset_library import window_to_canvas
+        point = window_to_canvas(pos, window_size)
+        if point is None:
+            return None
+        x, y = point
+        if 245 <= x <= 410:
+            for i in range(len(self.OPTIONS)):
+                if abs(y - (352 + i * 28)) <= 13:
+                    self.selected = i
+                    return ("start", "library", "quit")[i]
+        return None
 
     def draw(self, window):
         """Letterbox without changing the world's 640x448 rendering contract."""

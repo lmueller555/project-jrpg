@@ -13,6 +13,7 @@ from engine.assets import AtlasRegistry, AnimationPlayer, RenderQueue
 from engine.sanctuary_visuals import draw_room as draw_sanctuary_room
 from engine.dialogue_ui import DialogueBox
 from engine.title_screen import TitleScreen
+from engine.asset_library import AssetLibrary
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -59,6 +60,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.tile_cache = {}
         self.assets = AtlasRegistry(ROOT / 'assets')
+        self.asset_library = AssetLibrary(self.assets, ROOT / 'assets')
         self.caelen_clips = {name: AnimationPlayer(self.assets, name) for name in self.assets.manifest['animations'] if name.startswith('caelen.')}
         self.water_clip = AnimationPlayer(self.assets, 'ambient.water')
         self.smoke_clip = AnimationPlayer(self.assets, 'ambient.smoke')
@@ -241,6 +243,17 @@ class Game:
         self.dialogue.message = None
         self.scene = 'game'
 
+    def choose_title_action(self, choice):
+        if choice == "start":
+            self.start_new_game()
+        elif choice == "library":
+            self.scene = "library"
+        elif choice == "back":
+            self.scene = "title"
+        elif choice == "quit":
+            return False
+        return True
+
     def run(self):
         running = True
         while running:
@@ -253,11 +266,15 @@ class Game:
                 elif event.type == pygame.VIDEORESIZE and not self.fullscreen:
                     self.windowed_size = event.size
                 elif event.type == pygame.KEYDOWN and self.scene == 'title':
-                    choice = self.title_screen.handle_key(event.key)
-                    if choice == 'start':
-                        self.start_new_game()
-                    elif choice == 'quit':
-                        running = False
+                    running = self.choose_title_action(self.title_screen.handle_key(event.key))
+                elif event.type == pygame.KEYDOWN and self.scene == 'library':
+                    running = self.choose_title_action(self.asset_library.handle_key(event.key))
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and self.scene == 'title':
+                    running = self.choose_title_action(self.title_screen.handle_click(event.pos, self.window.get_size()))
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and self.scene == 'library':
+                    running = self.choose_title_action(self.asset_library.handle_click(event.pos, self.window.get_size()))
+                elif event.type == pygame.MOUSEWHEEL and self.scene == 'library':
+                    self.asset_library.move(-event.y * 4)
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                     running = False
                 elif event.type == pygame.KEYDOWN and event.key in (pygame.K_e, pygame.K_SPACE):
@@ -266,6 +283,9 @@ class Game:
             if self.scene == 'title':
                 self.title_screen.update(dt)
                 self.title_screen.draw(self.window)
+                pygame.display.flip()
+            elif self.scene == 'library':
+                self.asset_library.draw(self.window)
                 pygame.display.flip()
             else:
                 self.tick(dt)

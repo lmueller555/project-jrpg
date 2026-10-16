@@ -25,10 +25,12 @@ class TitleScreenTests(unittest.TestCase):
     def test_navigation_wraps_and_quit(self):
         screen = TitleScreen()
         screen.handle_key(pygame.K_UP)
-        self.assertEqual(screen.selected, 1)
+        self.assertEqual(screen.selected, 2)
         self.assertEqual(screen.handle_key(pygame.K_SPACE), "quit")
         screen.handle_key(pygame.K_DOWN)
         self.assertEqual(screen.selected, 0)
+        screen.handle_key(pygame.K_DOWN)
+        self.assertEqual(screen.handle_key(pygame.K_RETURN), "library")
         self.assertEqual(screen.handle_key(pygame.K_ESCAPE), "quit")
 
     def test_draws_at_game_and_window_resolution(self):
