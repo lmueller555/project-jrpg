@@ -5,6 +5,7 @@ Original deterministic pixel-art pass; maps stay editable JSON.
 """
 import json
 import math
+import os
 from pathlib import Path
 
 import pygame
@@ -14,6 +15,7 @@ from engine.sanctuary_visuals import draw_room as draw_sanctuary_room
 from engine.dialogue_ui import DialogueBox
 from engine.title_screen import TitleScreen
 from engine.asset_library import AssetLibrary
+from engine.eldenmere_ground import ground_sprite_id
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
@@ -59,6 +61,8 @@ class Game:
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
         self.tile_cache = {}
+        # Opt-in preview; preserve legacy visuals until the artwork is approved.
+        self.grassland_preview = os.environ.get('JRPG_GRASSLAND_BLOB47') == '1'
         self.assets = AtlasRegistry(ROOT / 'assets')
         self.asset_library = AssetLibrary(self.assets, ROOT / 'assets')
         self.caelen_clips = {name: AnimationPlayer(self.assets, name) for name in self.assets.manifest['animations'] if name.startswith('caelen.')}
@@ -191,6 +195,8 @@ class Game:
                                 ox, oy, self.ambient_time)
         else:
             pygame.transform.scale(self.canvas, (LOGICAL_W, LOGICAL_H), self.world_canvas)
+            if self.world['id'] == 'eldenmere' and self.grassland_preview:
+                self.draw_grassland_preview(ox, oy, min_x, max_x, min_y, max_y)
         direction = ("right" if self.facing[0] > .3 else
                      "left" if self.facing[0] < -.3 else
                      "up" if self.facing[1] < 0 else "down")
@@ -207,6 +213,32 @@ class Game:
         self.present()
         self.dialogue.draw(self.window)
         pygame.display.flip()
+
+    def draw_grassland_preview(self, ox, oy, min_x, max_x, min_y, max_y):
+        """Render 32px native grass/path over the scaled legacy background.
+
+        Original 16-unit map/objects/collision/camera are not modified.
+        Redraw legacy world objects on a transparent overlay so they aren't
+        hidden by the higher-resolution ground on top of the legacy scene.
+        """
+        for y in range(min_y, max_y):
+            for x in range(min_x, max_x):
+                sprite = ground_sprite_id(self.world["tiles"], x, y)
+                if sprite is not None:
+                    self.assets.draw(self.world_canvas, sprite,
+                                     (x * TILE - ox) * ART_SCALE,
+                                     (y * TILE - oy) * ART_SCALE)
+        objects = pygame.Surface((VIEW_W, VIEW_H), pygame.SRCALPHA)
+        for obj in self.world["objects"]:
+            draw_object(objects, obj, ox, oy)
+        mill = next((obj for obj in self.world["objects"] if obj["id"] == "mill"), None)
+        if mill:
+            self.assets.draw(objects, self.smoke_clip.frame(),
+                             (mill["x"] + 2) * TILE - ox,
+                             (mill["y"] - 1) * TILE - oy)
+        self.world_canvas.blit(
+            pygame.transform.scale(objects, (LOGICAL_W, LOGICAL_H)), (0, 0)
+        )
 
     def draw_npc(self, npc, ox, oy):
         # Temporary NPC art uses the same 32x48 display size as Caelen.
