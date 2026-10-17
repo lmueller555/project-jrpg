@@ -1,7 +1,10 @@
-# Eldenmere grassland preview
+# Eldenmere default grassland terrain
 
-This changes **rendering only**. The original logical map grid is 16 units, and this draws the canonical mask-resolved ground at 2x on the 640x448 presentation canvas. Collision, positions, objects, movement, camera math, dialogue, NPCs, and other terrain materials remain on the original code paths.
+Eldenmere now renders grass and dirt paths using the approved native 32x32 canonical blob47 atlas on the 640x448 presentation canvas. No environment variable or preview toggle is required.
 
-Run `JRPG_GRASSLAND_BLOB47=1 python main.py` on macOS/Linux to enable the **optional** native-grassland preview. Unset the environment variable (or set it to 0) for existing visuals.
+The obsolete 16x16 **grass and path** manifest entries have been removed. The existing environment atlas **must remain** for water, trees, farmland, floor, and the animated water/smoke effects, which do not yet have new production replacements. The older illustrated source-slot grassland atlas stays untouched as historical/source staging while the approved canonical atlas is active.
 
-The new terrain has passed programmatic edge-matching checks, but its artistic style is **not approved** yet. This preview must be evaluated in Eldenmere before switching it on by default. The atlas `assets/atlases/terrain/grassland_blob47.png` and its 63 manifest IDs come from stacked PR #31. The polished atlas is already merged into main via PR #31. Keep preview opt-in pending final user acceptance.
+The existing 16-unit map, collision and movement systems, camera positions, NPCs, interactions, Sanctuary, and other scene materials are unchanged.
+
+Test: `python -m pytest tests/test_eldenmere_default_ground.py tests/test_eldenmere_ground.py tests/test_grassland_blob47.py -q`.
+Capture: `python -m tools.terrain.capture_eldenmere_preview`.

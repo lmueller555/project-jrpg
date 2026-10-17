@@ -1,7 +1,7 @@
-name: Eldenmere grassland preview CI
+name: Eldenmere default grassland CI
 on:
   push:
-    branches: [feat/eldenmere-blob47-preview]
+    branches: [feat/eldenmere-default-grassland]
   pull_request:
     branches: [main]
 permissions:
@@ -18,12 +18,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt Pillow pytest
-      - run: python -m pytest tests/test_grassland_blob47.py tests/test_eldenmere_ground.py tests/test_grassland_autotile.py -q
+      - run: python -m pytest tests/test_grassland_blob47.py tests/test_eldenmere_ground.py tests/test_eldenmere_default_ground.py tests/test_grassland_autotile.py -q
       - name: Capture actual Pygame comparison screens
         run: python -m tools.terrain.capture_eldenmere_preview
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: eldenmere-grassland-pygame-screenshots
+          name: eldenmere-default-grassland-pygame-screenshot
           path: artifacts/eldenmere_grassland/*.png
           if-no-files-found: warn
