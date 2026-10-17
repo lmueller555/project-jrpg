@@ -3,7 +3,7 @@ on:
   push:
     branches: [feat/eldenmere-blob47-preview]
   pull_request:
-    branches: [test/grassland-47-mask-validation]
+    branches: [main]
 permissions:
   contents: read
 jobs:
