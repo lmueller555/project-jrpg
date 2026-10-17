@@ -1,9 +1,9 @@
-# Blob47 replacement atlas (visual review required)
+# Polished blob47 atlas — asset-only Phase 1
 
-The 47 source illustrations could not be assigned to canonical masks by row order. This candidate reconstructs the 47 masks from the approved source's grass and dirt texture samples. It uses explicit symmetric shared-edge rules and masks from engine.grassland_autotile.
+This generator uses the approved 1254×1254 original source sheet, combining source grass and dirt variants inside tiles and applying deterministic, mask-driven frayed organic transitions. Shared boundary texels are fixed and the 47 masks remain canonical. Semantic IDs stay exactly the same (8 grass, 8 dirt, 47 transition IDs).
 
-**Technical gates:** 47 canonical masks and 16 base textures; 63 atlas cells; deterministic generation; strict byte-identical neighbor-edge tests over randomized composed maps; source dimension check; existing map/collision data untouched.
+Run `python -m tools.terrain.build_blob47` and `python -m pytest tests/test_grassland_blob47.py tests/test_grassland_autotile.py tests/test_grassland_seams.py -q`.
 
-**Artistic gate not passed:** the replacement is more repetitive and has simpler transition contours than the illustrated concepts. Do not enable it by default in Eldenmere or merge until native-size and in-game screenshot review accepts the look.
+No Eldenmere renderer, collision, input, map, or gameplay changes belong in this PR. Renderer work remains in stacked PR #32.
 
-Generate: `python -m tools.terrain.build_blob47`. Test: `python -m pytest tests/test_grassland_blob47.py`.
+The previous in-chat polished comparison was a visual prototype; the generated GitHub atlas must undergo byte-level verification and CI seam checks before merging.
