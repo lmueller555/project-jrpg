@@ -5,7 +5,6 @@ Original deterministic pixel-art pass; maps stay editable JSON.
 """
 import json
 import math
-import os
 from pathlib import Path
 
 import pygame
@@ -19,7 +18,7 @@ from engine.eldenmere_ground import ground_sprite_id
 
 TILE = 16
 VIEW_W, VIEW_H = 320, 224
-ART_SCALE = 2  # Legacy 16px tiles render as 32px tiles until native atlases replace them.
+ART_SCALE = 2  # Presentation pixels per 16-unit gameplay pixel.
 LOGICAL_W, LOGICAL_H = VIEW_W * ART_SCALE, VIEW_H * ART_SCALE
 SPEED = 88
 ROOT = Path(__file__).resolve().parent
@@ -61,8 +60,6 @@ class Game:
         self.small = pygame.font.Font(FONT_NAME, 10)
         self.clock = pygame.time.Clock()
         self.tile_cache = {}
-        # Opt-in preview; preserve legacy visuals until the artwork is approved.
-        self.grassland_preview = os.environ.get('JRPG_GRASSLAND_BLOB47') == '1'
         self.assets = AtlasRegistry(ROOT / 'assets')
         self.asset_library = AssetLibrary(self.assets, ROOT / 'assets')
         self.caelen_clips = {name: AnimationPlayer(self.assets, name) for name in self.assets.manifest['animations'] if name.startswith('caelen.')}
@@ -171,6 +168,9 @@ class Game:
             for x in range(min_x, max_x):
                 char = self.world["tiles"][y][x]
                 kind = self.world["legend"][char]
+                if self.world['id'] == 'eldenmere' and kind in ('grass', 'path'):
+                    # The native 32px atlas renders these materials on world_canvas.
+                    continue
                 asset_id = "terrain." + kind
                 if asset_id in self.assets.manifest["assets"]:
                     self.assets.draw(self.canvas, asset_id, x * TILE - ox, y * TILE - oy)
@@ -186,17 +186,16 @@ class Game:
                 self.assets.draw(self.canvas, self.smoke_clip.frame(),
                                  (mill["x"] + 2) * TILE - ox, (mill["y"] - 1) * TILE - oy)
 
-        # Temporary bridge: 16px-world graphics become 32px, while the new
-        # Caelen PNG stays at native 32x48. Map coordinates/collision stay
-        # unchanged; all new production maps/assets target the doubled scale.
+        # Scale remaining legacy non-ground visuals to the presentation canvas.
+        # Grass/path render from native 32px sprites while collision stays 16-unit.
         if self.world["id"] == "sanctuary_room":
             self.world_canvas.fill("#242d31")
             draw_sanctuary_room(self.world_canvas, self.world, self.assets,
                                 ox, oy, self.ambient_time)
         else:
             pygame.transform.scale(self.canvas, (LOGICAL_W, LOGICAL_H), self.world_canvas)
-            if self.world['id'] == 'eldenmere' and self.grassland_preview:
-                self.draw_grassland_preview(ox, oy, min_x, max_x, min_y, max_y)
+            if self.world['id'] == 'eldenmere':
+                self.draw_grassland_ground(ox, oy, min_x, max_x, min_y, max_y)
         direction = ("right" if self.facing[0] > .3 else
                      "left" if self.facing[0] < -.3 else
                      "up" if self.facing[1] < 0 else "down")
@@ -214,12 +213,11 @@ class Game:
         self.dialogue.draw(self.window)
         pygame.display.flip()
 
-    def draw_grassland_preview(self, ox, oy, min_x, max_x, min_y, max_y):
-        """Render 32px native grass/path over the scaled legacy background.
+    def draw_grassland_ground(self, ox, oy, min_x, max_x, min_y, max_y):
+        """Render 32px grass/path assets without changing the 16-unit gameplay grid.
 
-        Original 16-unit map/objects/collision/camera are not modified.
-        Redraw legacy world objects on a transparent overlay so they aren't
-        hidden by the higher-resolution ground on top of the legacy scene.
+        Legacy non-grass terrain still renders underneath; world objects are
+        redrawn above the new ground to preserve scene composition.
         """
         for y in range(min_y, max_y):
             for x in range(min_x, max_x):

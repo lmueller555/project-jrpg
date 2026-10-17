@@ -1,34 +1,6 @@
 {
   "schema_version": 1,
   "assets": {
-    "terrain.grass": {
-      "atlas": "atlases/terrain/environment.png",
-      "rect": [
-        0,
-        0,
-        16,
-        16
-      ],
-      "anchor": [
-        0,
-        0
-      ],
-      "layer": "ground"
-    },
-    "terrain.path": {
-      "atlas": "atlases/terrain/environment.png",
-      "rect": [
-        16,
-        0,
-        16,
-        16
-      ],
-      "anchor": [
-        0,
-        0
-      ],
-      "layer": "ground"
-    },
     "terrain.water": {
       "atlas": "atlases/terrain/environment.png",
       "rect": [
