@@ -1470,6 +1470,888 @@
         0
       ],
       "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_01": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_01": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_02": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_02": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_03": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_03": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_04": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_04": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_05": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_05": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_06": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_06": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_07": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_07": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.grass_08": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        0,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.dirt_08": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        32,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_000": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_001": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_002": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_003": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_004": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_005": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_006": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_007": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        64,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_008": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_009": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_010": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_011": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_012": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_013": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_014": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_015": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        96,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_019": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_023": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_027": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_031": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_038": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_039": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_046": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_047": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        128,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_055": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_063": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_076": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_077": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_078": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_079": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_095": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_110": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        160,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_111": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_127": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_137": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_139": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_141": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_143": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_155": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_159": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        224,
+        192,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_175": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        0,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_191": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        32,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_205": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        64,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_207": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        96,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_223": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        128,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_239": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        160,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
+    },
+    "terrain.grassland.blob.mask_255": {
+      "atlas": "atlases/terrain/grassland_blob47.png",
+      "rect": [
+        192,
+        224,
+        32,
+        32
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "layer": "ground"
     }
   },
   "animations": {

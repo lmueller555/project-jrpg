@@ -1,0 +1,26 @@
+name: Generate and validate grassland blob47
+on:
+  push:
+    branches: [test/grassland-47-mask-validation]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow pytest
+      - run: python -m tools.terrain.build_blob47
+      - run: python -m pytest tests/test_grassland_autotile.py tests/test_grassland_seams.py tests/test_grassland_blob47.py -q
+      - name: Commit atlas and manifest on feature branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/atlases/terrain/grassland_blob47.png assets/manifests/assets.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build: generate seam-validated 47-mask grassland atlas"
+            git push
+          fi
