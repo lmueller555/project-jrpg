@@ -1,9 +1,11 @@
-# Caelen V2 — Downward animation staging
+# Caelen V2 down — finalized native production artwork
 
-The 32×48, five-frame (160×48) **native prototype** is available in ChatGPT Library at `/Project JRPG/Caelen V2/caelen_v2_down.png`. This repository change stages the implementation contract **without replacing the existing runtime**.
+The exact 160×48 RGBA PNG `assets/atlases/characters/caelen_v2_down.png` contains five independently hand-refined native 32×48 frames: idle, walk 1, passing 2, walk 3, passing 4.
 
-**Not yet final:** The more recently approved visual design remains a 2172×724 concept illustration, not an authentic 160×48 transparent sprite atlas. Do not claim the earlier simplified native prototype reflects the refined approved artwork. Pixel-authoring and review are still required before a production image is added.
+Design: brown tousled hair, blue tunic with cream/gold trim, cuffs, belt buckle, dark trousers, complete brown boots. Transparent background and nearest-neighbor presentation. Walking playback target is 140 ms per frame.
 
-Frame slots, left to right: idle; left-forward; passing; right-forward; passing. At 140 ms per walking frame, looping the four walk frames takes 560 ms. Preserve foot baseline, RGBA transparency, nearest-neighbor sampling, and player collision logic.
+The native production file is checked for geometry, transparency, foot baseline and distinct poses. The older `assets/source/characters/caelen/v2/caelen_v2_down_prototype.png` is a historical work-in-progress and **not** the final version.
 
-Proposed output when ready: `assets/atlases/characters/caelen_v2_down.png`; leave `caelen.png` and all active animation manifests intact until all directions are tested.
+**Not wired into the game:** Keep existing `caelen.png` and active animation manifest until all 20 Caelen V2 frames are complete and tested. Do not use the partially completed V2 strip as an incomplete 4-direction runtime atlas.
+
+Check: `python -m pytest tests/test_caelen_v2_down_final.py -q` (Pillow).
