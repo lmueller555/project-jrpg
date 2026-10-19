@@ -18,6 +18,6 @@ def test_production_strip_geometry_alpha_and_clean_bounds():
 def test_distinct_walk_poses_and_consistent_foot_baseline():
     image=Image.open(ASSET)
     frames=[image.crop((i*32,0,(i+1)*32,48)) for i in range(5)]
-    assert all(ImageChops.difference(frames[i],frames[j]).getbbox()
+    assert all(ImageChops.difference(frames[i].convert('RGB'),frames[j].convert('RGB')).getbbox()
                for i in range(5) for j in range(i+1,5))
     assert all(tile.getchannel("A").getbbox()[3]==47 for tile in frames)
