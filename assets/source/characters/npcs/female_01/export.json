@@ -1,0 +1,153 @@
+{
+  "source": "idle_front_concept.png",
+  "alpha_threshold": 128,
+  "source_bounds": [
+    261,
+    62,
+    764,
+    1473
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "occupied_rect": [
+    5,
+    1,
+    14,
+    34
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "resampling": "nearest",
+  "palette": "../../../../characters/npcs/female_01/palette.json",
+  "chin_skin_rect": [
+    10,
+    11,
+    4,
+    3
+  ],
+  "chin_source_red_min_exclusive": 60,
+  "bands": [
+    {
+      "source_y": [
+        62,
+        602
+      ],
+      "native_y": [
+        1,
+        14
+      ],
+      "materials": [
+        "outline",
+        "hair",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        602,
+        780
+      ],
+      "native_y": [
+        14,
+        21
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        780,
+        813
+      ],
+      "native_y": [
+        21,
+        22
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        813,
+        1268
+      ],
+      "native_y": [
+        22,
+        29
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        1268,
+        1333
+      ],
+      "native_y": [
+        29,
+        32
+      ],
+      "materials": [
+        "outline",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        1333,
+        1473
+      ],
+      "native_y": [
+        32,
+        35
+      ],
+      "materials": [
+        "outline",
+        "leather"
+      ]
+    }
+  ],
+  "layers": {
+    "head": {
+      "image": "layers/head.png",
+      "rows": [
+        0,
+        14
+      ]
+    },
+    "bodice_and_arms": {
+      "image": "layers/bodice_and_arms.png",
+      "rows": [
+        14,
+        22
+      ]
+    },
+    "skirt_and_hands": {
+      "image": "layers/skirt_and_hands.png",
+      "rows": [
+        22,
+        29
+      ]
+    },
+    "legs_and_boots": {
+      "image": "layers/legs_and_boots.png",
+      "rows": [
+        29,
+        36
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "character": "npc_female_01",
+  "animation": "idle.front",
+  "variant": 1,
+  "design_status": "draft",
+  "status": "draft",
+  "image": "idle_front.png",
+  "frame_size": [24, 36],
+  "rect": [0, 0, 24, 36],
+  "foot_anchor": [12, 34],
+  "palette": "palette.json",
+  "source": "../../../source/characters/npcs/female_01/idle_front_concept.png",
+  "export_recipe": "../../../source/characters/npcs/female_01/export.json",
+  "eyes": {"top_pixels": [[10, 9], [13, 9]], "height": 2, "color": "#1a0e16"},
+  "dress": {"waist_row": 21, "hem_row": 28},
+  "layers": [
+    "../../../source/characters/npcs/female_01/layers/head.png",
+    "../../../source/characters/npcs/female_01/layers/bodice_and_arms.png",
+    "../../../source/characters/npcs/female_01/layers/skirt_and_hands.png",
+    "../../../source/characters/npcs/female_01/layers/legs_and_boots.png"
+  ],
+  "review": {
+    "image": "idle_front_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  }
+}
