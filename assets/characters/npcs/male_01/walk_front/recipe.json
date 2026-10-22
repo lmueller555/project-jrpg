@@ -14,11 +14,36 @@
     "trousers": "#b99a6d",
     "leather": "#84512e"
   },
-  "head_rect": [0, 0, 24, 14],
-  "shirt_rect": [8, 14, 8, 7],
-  "neckline_rect": [10, 14, 4, 3],
-  "waist_rect": [8, 21, 8, 5],
-  "pouch_rect": [0, 0, 0, 0],
+  "head_rect": [
+    0,
+    0,
+    24,
+    14
+  ],
+  "shirt_rect": [
+    8,
+    14,
+    8,
+    7
+  ],
+  "neckline_rect": [
+    10,
+    14,
+    4,
+    3
+  ],
+  "waist_rect": [
+    8,
+    21,
+    8,
+    5
+  ],
+  "pouch_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
   "preserve_waist": true,
   "shared_leg_costume": false,
   "leg_palette": {
@@ -29,5 +54,5 @@
     "#573422": "#3d2118",
     "#8b5531": "#84512e"
   },
-  "approval_status": "draft"
+  "approval_status": "approved"
 }

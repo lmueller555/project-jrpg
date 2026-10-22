@@ -1,6 +1,6 @@
 # Male NPC 01 — front walk
 
-Status: draft awaiting user review. All four idle designs and their palettes remain approved.
+Status: approved by the user in chat. All four idle designs and their palettes remain approved.
 
 Four 24×36 frames use Caelan's approved front-walk poses, at 140 ms per frame with a looping 560 ms cycle and the shared `[12, 34]` foot anchor. The approved brown-haired head and face are retained exactly. On passing frames 2 and 4, the head, neck, shoulders and upper shirt rise together by one pixel; the belt stays at the same height. Arm motion comes from the shared semantic pose masks.
 
@@ -20,4 +20,4 @@ Rebuild from the repository root with the asset dependencies installed:
 python tools/build_character_walk.py npcs/male_01
 ```
 
-Prepared appearance layers, posed arms and recolored leg layers are retained under `../../../../source/characters/npcs/male_01/walk_front/parts/`. Motion offsets are already baked into the images. The other male palettes and walking directions will follow review of this base cycle.
+Prepared appearance layers, posed arms and recolored leg layers are retained under `../../../../source/characters/npcs/male_01/walk_front/parts/`. Motion offsets are already baked into the images. The other male palettes and walking directions are the next planned assets.
