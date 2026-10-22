@@ -1,0 +1,38 @@
+{
+  "image": "male_idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "columns": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "variants": [
+    {
+      "variant": 1,
+      "row": 0,
+      "metadata": "male_01/idle_directions.json"
+    },
+    {
+      "variant": 2,
+      "row": 1,
+      "metadata": "male_02/idle_directions.json"
+    },
+    {
+      "variant": 3,
+      "row": 2,
+      "metadata": "male_03/idle_directions.json"
+    }
+  ],
+  "review": {
+    "image": "male_idle_directions_review.png",
+    "scale": 12
+  }
+}

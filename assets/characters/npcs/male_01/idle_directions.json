@@ -1,0 +1,62 @@
+{
+  "character": "npc_male_01",
+  "image": "idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": [
+    {
+      "id": "idle.front",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "status": "approved",
+      "metadata": "idle_front.json"
+    },
+    {
+      "id": "idle.left",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "status": "draft",
+      "metadata": "idle_left.json"
+    },
+    {
+      "id": "idle.right",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "status": "draft",
+      "metadata": "idle_right.json"
+    },
+    {
+      "id": "idle.back",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "status": "draft",
+      "metadata": "idle_back.json"
+    }
+  ],
+  "review": {
+    "image": "idle_directions_review.png",
+    "scale": 12
+  }
+}

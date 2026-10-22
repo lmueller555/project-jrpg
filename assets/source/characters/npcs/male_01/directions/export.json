@@ -1,0 +1,206 @@
+{
+  "source": "turnaround_concept.png",
+  "alpha_threshold": 128,
+  "resampling": "nearest",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "../../../../../characters/npcs/male_01/palette.json",
+  "skin_regions": {
+    "left": [
+      [
+        14,
+        18,
+        3,
+        8
+      ]
+    ],
+    "right": [
+      [
+        6,
+        18,
+        3,
+        8
+      ]
+    ],
+    "back": [
+      [
+        5,
+        18,
+        3,
+        8
+      ],
+      [
+        16,
+        18,
+        3,
+        8
+      ]
+    ]
+  },
+  "profile_eye_top": {
+    "left": [
+      10,
+      9
+    ],
+    "right": [
+      14,
+      9
+    ]
+  },
+  "eye_height": 2,
+  "hair_only_rows_before": {
+    "left": 7,
+    "right": 7,
+    "back": 11
+  },
+  "bands": [
+    {
+      "source_y": [
+        96,
+        396
+      ],
+      "native_y": [
+        1,
+        14
+      ],
+      "materials": [
+        "outline",
+        "hair",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        396,
+        576
+      ],
+      "native_y": [
+        14,
+        21
+      ],
+      "materials": [
+        "outline",
+        "shirt",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        576,
+        612
+      ],
+      "native_y": [
+        21,
+        23
+      ],
+      "materials": [
+        "outline",
+        "leather",
+        "buckle",
+        "shirt",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        612,
+        816
+      ],
+      "native_y": [
+        23,
+        30
+      ],
+      "materials": [
+        "outline",
+        "trousers",
+        "skin",
+        "leather"
+      ]
+    },
+    {
+      "source_y": [
+        816,
+        943
+      ],
+      "native_y": [
+        30,
+        35
+      ],
+      "materials": [
+        "outline",
+        "leather"
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "direction": "left",
+      "panel": [
+        0,
+        0,
+        512,
+        1024
+      ],
+      "source_alpha_bounds": [
+        106,
+        96,
+        428,
+        943
+      ],
+      "occupied_rect": [
+        6,
+        1,
+        12,
+        34
+      ]
+    },
+    {
+      "direction": "right",
+      "panel": [
+        512,
+        0,
+        1024,
+        1024
+      ],
+      "source_alpha_bounds": [
+        100,
+        96,
+        423,
+        943
+      ],
+      "occupied_rect": [
+        6,
+        1,
+        12,
+        34
+      ]
+    },
+    {
+      "direction": "back",
+      "panel": [
+        1024,
+        0,
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        82,
+        96,
+        417,
+        943
+      ],
+      "occupied_rect": [
+        5,
+        1,
+        14,
+        34
+      ]
+    }
+  ]
+}

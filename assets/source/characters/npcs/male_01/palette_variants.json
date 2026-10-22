@@ -10,6 +10,11 @@
     "hair": {"shadow": ["#573422"], "base": ["#84512e"], "light": ["#b77740", "#c48b3e"]},
     "trousers": {"shadow": ["#71452c"]}
   },
+  "direction_material_regions": {
+    "left": {"hair": [0, 0, 24, 14]},
+    "right": {"hair": [0, 0, 24, 14]},
+    "back": {"hair": [0, 0, 24, 14]}
+  },
   "variants": [
     {
       "character": "npc_male_02",

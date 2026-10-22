@@ -9,4 +9,10 @@ Black hair, a rust shirt, charcoal trousers and brown boots. This is an exact pa
 - `idle_front.json`: frame, shared `[12, 34]` anchor, source, recipe and review status.
 - `palette.json`: material overrides, regions and shade aliases.
 
-Compare all three in `../male_variants_review.png`. Rebuild with `python tools/build_npc_palette_variants.py` from the repository root. Other directions and walking frames will follow appearance approval.
+Compare all three in `../male_variants_review.png`. Rebuild with `python tools/build_npc_palette_variants.py` from the repository root. Walking frames will follow directional appearance approval.
+
+## Directional idles for review
+
+New `idle_left.png`, `idle_right.png` and `idle_back.png` frames apply this palette to the corresponding base views, preserving their exact silhouettes. Each has matching JSON metadata and a 24× `_review.png` preview. All new directional appearances await review.
+
+`idle_directions.png` is the native 96×36 strip ordered front, left, right, back; `idle_directions.json` records rectangles and frame statuses. `idle_directions_review.png` shows all four at 12× scale. Compare every variant in `../male_idle_directions_review.png`. Rebuild all directions with `python tools/build_npc_palette_variants.py --direction all`.

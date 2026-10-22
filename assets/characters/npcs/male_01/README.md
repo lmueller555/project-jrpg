@@ -1,6 +1,6 @@
 # Town NPC — male variant 01
 
-Status: approved by the user in chat. This is the first of three planned male palette variants.
+Front idle status: approved by the user in chat. The new left, right and back idles await review. This is the first of three male palette variants.
 
 - Short, tidy brown hair and two visible eyes.
 - Plain moss-green work shirt, tan trousers, a simple brown belt and brown boots.
@@ -15,4 +15,14 @@ Status: approved by the user in chat. This is the first of three planned male pa
 - `scale_comparison.png`: Caelan, this NPC and Mira at the same enlarged scale.
 - `palette.json`: named material colors for later variants.
 
-The generated appearance source and export recipe are retained under `../../../source/characters/npcs/male_01/`. The native sprite is approved; walking frames and other facing directions will follow design approval. Future palette variants should retain this base silhouette and use named material colors.
+The generated appearance source and export recipe are retained under `../../../source/characters/npcs/male_01/`. The native front sprite is approved. Walking frames will follow directional appearance approval. Palette variants retain this base silhouette and use named material colors.
+
+## Directional idles for review
+
+- `idle_left.png`, `idle_right.png`, `idle_back.png`: new transparent 24×36 stationary views; direction names indicate facing on screen.
+- Matching `idle_<direction>.json` files record each frame's draft status, anchor and sources; `idle_<direction>_review.png` files are 24× previews.
+- `idle_directions.png`: native 96×36 strip ordered front, left, right, back.
+- `idle_directions.json`: frame rectangles and individual approval statuses.
+- `idle_directions_review.png`: labeled 12× view of all four directions.
+
+The new appearance sources and export settings are under `../../../source/characters/npcs/male_01/directions/`. Compare all three palettes in `../male_idle_directions_review.png`. The front frame remains unchanged.

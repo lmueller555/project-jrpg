@@ -1,0 +1,50 @@
+{
+  "character": "npc_male_03",
+  "animation": "idle.back",
+  "variant": 3,
+  "design_status": "draft",
+  "status": "draft",
+  "image": "idle_back.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "review": {
+    "image": "idle_back_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  },
+  "source": "../male_01/idle_back.png",
+  "recipe": "../../../source/characters/npcs/male_01/palette_variants.json",
+  "material_regions": {
+    "hair": [
+      0,
+      0,
+      24,
+      14
+    ],
+    "shirt": [
+      0,
+      14,
+      24,
+      9
+    ],
+    "trousers": [
+      0,
+      23,
+      24,
+      7
+    ]
+  }
+}
