@@ -1,72 +1,15 @@
 # Project JRPG
 
-An original Python pixel-art JRPG inspired by the visual language of 16-bit era classics.
+The project is starting over from its story. The previous implementation, maps, assets, art specifications, tools, tests, and build workflows have been removed. There is currently no runnable game or dependency installation step.
 
-The project's narrative, authoritative art guide, and production asset/renderer architecture live under [docs/](docs/).
+## Story documents
 
-## Run the Eldenmere world slice
+- [Foundational lore](docs/FOUNDATIONAL_LORE.md): cosmology, ancient history, and established worldbuilding.
+- [Saga bible](docs/narrative/saga/SAGA_BIBLE.md): overarching narrative and multi-game boundaries.
+- [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.
+- [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements and an earlier alternative premise.
+- [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
+- [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
+- [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 
-Python 3.12+ recommended (Pygame must support your installed Python version).
-
-```sh
-python3 -m pip install -r requirements.txt
-python3 main.py
-```
-
-The first playable **environment prototype** launches in Eldenmere Sanctuary. Walk to the doorway along the bottom of the room and press **E** to enter the village.
-
-- **WASD / arrow keys:** walk
-- **E / Space:** interact with nearby NPCs, signs, buildings and doorways
-- **F11 / F:** toggle fullscreen or resizable window
-- **Esc:** close game
-
-Explore the sanctuary, village square, bridge, watermill, the three Quest 1 household locations and a wayside shrine. This is a **world-layout and rendering prototype**, not an implementation of the authored quests or finished character art.
-
-## Current vertical-slice constraints
-
-- Presentation canvas: **640 × 448**; launches **fullscreen** with nearest-neighbor integer scaling and aspect-ratio letterboxing. F11 or F toggles fullscreen/windowed. Legacy world geometry renders at 320×224 and is temporarily doubled; new art will be native 32px-scale.
-- **16 × 16 map-coordinate cells preserved for collision**, displayed as **32 × 32** world tiles; new production humanoids use **32 × 48** frames.
-- Settlement and interior maps are **editable JSON**:
-  - `maps/towns/eldenmere.json`
-  - `maps/interiors/sanctuary.json`
-- Terrain, objects, collisions, NPC placement, labels and map transitions are data-driven.
-- The initial visuals have been upgraded to a cohesive, deterministic **original pixel-art first pass** in `visuals.py` (cached native-resolution terrain textures, timber-and-stone architecture, pitched roofs, river highlights, farmland, character silhouettes). These remain **code-authored interim assets**, not final hand-polished production tilesheets or character animation sheets. The next art milestone is curated original PNG atlases with edge variants, intentional layering and directional walk cycles, consistent with [the art style guide](docs/ART_STYLE_GUIDE.md).
-- Collision and doorway behavior are first-pass. The map is a **layout sketch**, not a finalized geography, floorplan or navigation system.
-- Quest dialogue, companions, triggers, battles, save data, menus, final animations, sound and music are **not implemented**.
-
-To validate map structure without Pygame, run:
-
-```sh
-python3 -m unittest discover -s tests
-```
-
-## Story references
-
-- [Chapter 1](docs/narrative/game_01/CHAPTER_01.md)
-- [Quest 1 narrative specification](docs/narrative/game_01/CH01_MQ01.md)
-- [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md)
-
-## Production art architecture
-
-The authoritative specification for PNG atlases, semantic IDs, palettes, world render layers, collision separation, sprite animation, combat presentation events, weather/ambient effects, and asset validation is [Asset Pipeline, Renderer & Animation Architecture](docs/ASSET_RENDERER_ARCHITECTURE.md). The current procedural renderer is an interim prototype and has not yet been migrated.
-
-## PNG atlas / sprite animation foundation
-
-The first **actual RGBA PNG atlases** are under `assets/atlases/`, indexed by `assets/manifests/assets.json`. The asset registry (`engine/assets.py`) validates semantic IDs, PNG headers, pixel bounds, clip frames and rendering layer names, then caches loaded Pygame surfaces. The first Caelen sprite has down/left/right/up idle and three-frame walking clips. Water and mill smoke have simple looping visual effects. Existing world JSON geometry and collision are unchanged; incomplete architecture assets still use `visuals.py`.
-
-Run validation after installing requirements:
-
-```sh
-python3 -m unittest discover -s tests
-python3 main.py
-```
-
-This is a **pipeline/proof-of-integration art pass**, not approved final art quality, autotiling or full foreground occlusion. The source is new original art, but the tiles and characters remain deliberately small first-pass production-format samples. Validate visually at 1×/3× before scaling up.
-
-## Caelen approved character-art pass
-
-The Caelen atlas now contains 4 directions (down/left/right/up) × 4 frames (idle + 3 walking), with **32×48 logical-pixel frames** and a common **[16,47] foot anchor**. It was carefully extracted and downsampled from the approved illustrated sheet, with transparent backgrounds and limited-color indexed PNG compression. The source illustration is higher resolution; a 32×48 rendition preserves the recognizable outfit, hair, bag and poses but cannot be mathematically pixel-identical to the original illustration. Caelen is visibly larger than the previous 16×24 placeholder, while collision remains foot-point based and unchanged. The atlas validator accepts both RGBA8 and palette-indexed PNGs carrying alpha via `tRNS`. Before merging, visually inspect the character at runtime for scale, edge halos and movement timing.
-
-### Current visual scaling decision
-
-Caelen's approved 32×48 sprite is now the standard for every future character. Existing 16px terrain/building placeholders are temporarily enlarged 2×, and legacy NPC visuals are upscaled to match his height until replacement. This is a **compatibility visual pass**, not finished 32px production environment art. Collision, interaction distances, map coordinates and movement speeds remain unchanged. Fullscreen defaults on; mismatched aspect ratios are letterboxed rather than stretched.
+These documents retain their original status labels. Approved story decisions, proposals, and open questions remain distinct; the reset does not change narrative canon.
