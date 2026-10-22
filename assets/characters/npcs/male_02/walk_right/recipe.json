@@ -1,0 +1,61 @@
+{
+  "character": "npc_male_02",
+  "direction": "right",
+  "idle": "../idle_right.png",
+  "template": "../../../../templates/humanoid_24x36/walk_right/poses.json",
+  "parts_directory": "../../../../source/characters/npcs/male_02/walk_right/parts",
+  "palette": {
+    "outline": "#1a0e16",
+    "fabric_base": "#a65b45",
+    "fabric_light": "#cd8260",
+    "fabric_shadow": "#713d32",
+    "skin_base": "#e8c49d",
+    "skin_shadow": "#eda052",
+    "trousers": "#4b4952",
+    "leather": "#573422"
+  },
+  "head_rect": [
+    0,
+    0,
+    24,
+    14
+  ],
+  "shirt_rect": [
+    10,
+    14,
+    5,
+    7
+  ],
+  "neckline_rect": [
+    10,
+    14,
+    3,
+    1
+  ],
+  "waist_rect": [
+    9,
+    21,
+    6,
+    5
+  ],
+  "pouch_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "preserve_waist": false,
+  "shared_leg_costume": false,
+  "leg_palette": {
+    "#1a0e16": "#1a0e16",
+    "#1a0e17": "#1a0e16",
+    "#2b1715": "#1a0e16",
+    "#645450": "#4b4952",
+    "#573422": "#3d2118",
+    "#8b5531": "#84512e",
+    "#b67644": "#9d6238"
+  },
+  "approval_status": "draft",
+  "base_animation": "../../male_01/walk_right/animation.json",
+  "palette_variant_source": "../../../../source/characters/npcs/male_01/palette_variants.json"
+}

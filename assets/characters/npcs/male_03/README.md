@@ -20,3 +20,11 @@ New `idle_left.png`, `idle_right.png` and `idle_back.png` frames apply this pale
 ## Approved front walk
 
 The [four-frame front walk](walk_front/README.md) applies this approved palette to the approved base cycle. Its stride and coordinated head-and-shoulder bob match the base exactly. Review all three palettes together in `../male_walk_front_variants_review.gif`. This front-walking animation is approved.
+
+## Other walking directions for review
+
+The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles apply this approved palette to the approved base male walks. These three new animations await review; the front walk remains approved.
+
+`walk_directions.png` is the native 96×144 sheet, with front, left, right and back rows and four phases per row. `walk_directions.json` records frame rectangles and per-direction approval status. `walk_directions_review.gif` shows this NPC's four directions together at 12× scale; `_review.png` is its first phase.
+
+Compare every male NPC in `../male_walk_all_variants_review.gif`, with directions as rows and palettes as columns. Rebuild all palette cycles and comparisons with `python tools/build_npc_walk_variants.py --direction all`.

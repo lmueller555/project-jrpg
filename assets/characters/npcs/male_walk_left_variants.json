@@ -1,0 +1,81 @@
+{
+  "animation": "walk.left",
+  "image": "male_walk_left_variants.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "variants": [
+    {
+      "variant": 1,
+      "row": 0,
+      "status": "approved",
+      "animation": "male_01/walk_left/animation.json"
+    },
+    {
+      "variant": 2,
+      "row": 1,
+      "status": "draft",
+      "animation": "male_02/walk_left/animation.json"
+    },
+    {
+      "variant": 3,
+      "row": 2,
+      "status": "draft",
+      "animation": "male_03/walk_left/animation.json"
+    }
+  ],
+  "frames": [
+    {
+      "column": 0,
+      "duration_ms": 140,
+      "phase": "contact_a",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "column": 1,
+      "duration_ms": 140,
+      "phase": "passing_a",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    },
+    {
+      "column": 2,
+      "duration_ms": 140,
+      "phase": "contact_b",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "column": 3,
+      "duration_ms": 140,
+      "phase": "passing_b",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "review": {
+    "gif": "male_walk_left_variants_review.gif",
+    "image": "male_walk_left_variants_review.png",
+    "columns": [
+      1,
+      2,
+      3
+    ],
+    "scale": 16
+  }
+}

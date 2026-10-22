@@ -41,4 +41,4 @@ The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_b
 - `walk_directions.json`: frame rectangles, timing and individual direction statuses.
 - `walk_directions_review.gif`: labeled 12× synchronized four-direction preview; `_review.png` is the first phase.
 
-Rebuild the base's four walks and comparison with `python tools/build_character_walk.py npcs/male_01 --direction all`. The original approved front cycle is unchanged. The existing palette builder will use these approved base directions for matching rust/charcoal and slate/brown cycles.
+Rebuild the base's four walks and comparison with `python tools/build_character_walk.py npcs/male_01 --direction all`. The original approved front cycle is unchanged. Matching rust/charcoal and slate/brown cycles now await review in `../male_walk_all_variants_review.gif`.

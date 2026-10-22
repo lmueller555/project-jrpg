@@ -6,7 +6,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from build_character_walk import build, blank, on_background, read_json, write_json
+from build_character_walk import build, build_direction_board, blank, on_background, read_json, write_json
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,8 +84,58 @@ def build_variants(direction):
     })
 
 
+def build_all_directions_grid():
+    """Compare directions as rows and palettes as columns in a shared loop."""
+    directions = ("front", "left", "right", "back")
+    labels = ("01: Moss / tan", "02: Rust / charcoal", "03: Slate / brown")
+    frames = []
+    sheet = blank((96, 432))
+    records = []
+    for row, direction in enumerate(directions):
+        for col, number in enumerate((1, 2, 3)):
+            pack = NPCS / f"male_{number:02}" / f"walk_{direction}"
+            meta = read_json(pack / "animation.json")
+            sheet.paste(Image.open(pack / "spritesheet.png").convert("RGBA"), (0, (row*3+col)*36))
+            records.append({"direction": direction, "variant": number, "status": meta["status"],
+                            "animation": f"male_{number:02}/walk_{direction}/animation.json",
+                            "frames": [{"rect": [i*24, (row*3+col)*36, 24, 36],
+                                        "duration_ms": frame["duration_ms"]}
+                                       for i, frame in enumerate(meta["frames"])]})
+    for phase in range(1, 5):
+        board = Image.new("RGB", (864, 1952), "#e8edf2")
+        draw = ImageDraw.Draw(board)
+        for row, direction in enumerate(directions):
+            for col, number in enumerate((1, 2, 3)):
+                record = records[row*3+col]
+                pack = NPCS / Path(record["animation"]).parent
+                frame = Image.open(pack / f"frame_{phase:02}.png").convert("RGBA")
+                board.paste(on_background(frame, 12), (col*288, row*488+32))
+                draw.text((col*288+16, row*488+8), labels[col], fill="#1a0e16", font_size=18)
+                draw.text((col*288+16, row*488+468), f"{direction.title()} ({record['status']})",
+                          fill="#455531", font_size=16)
+        frames.append(board)
+    stem = "male_walk_all_variants"
+    durations = [frame["duration_ms"] for frame in read_json(NPCS / "male_01/walk_front/animation.json")["frames"]]
+    sheet.save(NPCS / f"{stem}.png")
+    frames[0].save(NPCS / f"{stem}_review.png")
+    frames[0].save(NPCS / f"{stem}_review.gif", save_all=True, append_images=frames[1:],
+                   duration=durations, loop=0, disposal=2, optimize=False)
+    write_json(NPCS / f"{stem}.json", {
+        "image": f"{stem}.png", "frame_size": [24, 36], "foot_anchor": [12, 34],
+        "loop": True, "animations": records,
+        "review": {"gif": f"{stem}_review.gif", "image": f"{stem}_review.png",
+                   "rows": list(directions), "columns": [1, 2, 3], "scale": 12},
+    })
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--direction", choices=("front", "left", "right", "back"), default="front")
+    parser.add_argument("--direction", choices=("front", "left", "right", "back", "all"), default="front")
     args = parser.parse_args()
-    build_variants(args.direction)
+    directions = ("front", "left", "right", "back") if args.direction == "all" else (args.direction,)
+    for direction in directions:
+        build_variants(direction)
+    if args.direction == "all":
+        for number in (2, 3):
+            build_direction_board(f"npcs/male_{number:02}")
+        build_all_directions_grid()

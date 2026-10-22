@@ -1,0 +1,196 @@
+{
+  "character": "npcs/male_03",
+  "image": "walk_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "directions": [
+    {
+      "direction": "front",
+      "status": "approved",
+      "animation": "walk_front/animation.json",
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "left",
+      "status": "draft",
+      "animation": "walk_left/animation.json",
+      "frames": [
+        {
+          "rect": [
+            0,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "right",
+      "status": "draft",
+      "animation": "walk_right/animation.json",
+      "frames": [
+        {
+          "rect": [
+            0,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "back",
+      "status": "draft",
+      "animation": "walk_back/animation.json",
+      "frames": [
+        {
+          "rect": [
+            0,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    }
+  ],
+  "review": {
+    "gif": "walk_directions_review.gif",
+    "columns": [
+      "front",
+      "left",
+      "right",
+      "back"
+    ],
+    "scale": 12
+  }
+}
