@@ -16,4 +16,4 @@ These documents retain their original status labels. Approved story decisions, p
 
 ## New character art
 
-[Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. The front idle is approved; the other directions are drafts awaiting review.
+[Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. All four directional idle designs are approved.
