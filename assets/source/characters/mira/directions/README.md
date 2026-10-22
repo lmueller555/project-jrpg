@@ -1,6 +1,6 @@
 # Mira — new facing appearance inputs
 
-Status: draft; reviewed as part of the new walking animations.
+Status: approved by the user as part of the directional walking animations.
 
 `turnaround_concept.png` is generated appearance reference art for back, left and right views, using Mira's front design and Caelan's directional scale guide. It is not a walking animation source.
 

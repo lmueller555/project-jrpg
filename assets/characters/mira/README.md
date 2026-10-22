@@ -1,6 +1,6 @@
 # Mira — front idle
 
-Design status: finalized and approved by the user in chat. Front-walk status: approved. The separate front idle remains a draft appearance reference.
+Design status: finalized and approved by the user in chat. All four walking directions and their facing appearances are approved. The separate front idle remains a draft appearance reference.
 
 ## Approved design
 
@@ -33,7 +33,7 @@ Three transparent full-frame assembly layers are retained in `../../source/chara
 
 The [four-frame front walk](walk_front/README.md) is approved, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained under `../../source/characters/mira/walk_front/parts/` and the corresponding new direction folders. The preserved story documents and Caelan artwork are unchanged.
 
-Matching [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles, including their new facing appearances, are drafts awaiting review. The flower remains on anatomical left rather than being mirrored onto the right side.
+Matching [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles, including their new facing appearances, are approved. The flower remains on anatomical left rather than being mirrored onto the right side.
 
 - `walk_directions.png`: native 96×144 sheet with front, left, right and back rows, four frames per row.
 - `walk_directions.json`: frame rectangles, per-direction approval status and animation references.
