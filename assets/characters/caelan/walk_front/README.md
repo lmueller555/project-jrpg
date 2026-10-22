@@ -1,6 +1,6 @@
 # Caelan — front-facing walk cycle
 
-Status: walking design approved; revised upper-body bob awaiting user review. The four approved directional idle designs remain unchanged.
+Status: approved by the user, including the coordinated head-and-shoulder bob. The four approved directional idle designs remain unchanged.
 
 ## Deliverables
 
@@ -18,4 +18,4 @@ The head, neck, shoulders, and upper chest stay at their original height on cont
 
 Source concepts are retained in `../../../source/characters/caelan/walk_front/`. The initial concept repeated the passing pose; `passing_opposite_concept.png` supplies the corrected fourth pose.
 
-The user approved the walking design subject to adding this bob. Review the updated motion before merging or creating other directions. No runtime integration or other walking directions are included.
+Use this approved cycle and its coordinated upper-body bob as references for future walking directions. No runtime integration or other walking directions are included.
