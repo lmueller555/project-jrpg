@@ -15,7 +15,7 @@ All four directional idles and this palette are approved by the user in chat. Th
 - `scale_comparison.png`: Caelan, this NPC and Mira at the same enlarged scale.
 - `palette.json`: named material colors for later variants.
 
-The generated appearance source and export recipe are retained under `../../../source/characters/npcs/male_01/`. The native front sprite is approved. Walking frames are the next planned assets. Palette variants retain this base silhouette and use named material colors.
+The generated appearance source and export recipe are retained under `../../../source/characters/npcs/male_01/`. The native front sprite is approved. The first front-walk draft is linked below. Palette variants retain this base silhouette and use named material colors.
 
 ## Approved directional idles
 
@@ -26,3 +26,7 @@ The generated appearance source and export recipe are retained under `../../../s
 - `idle_directions_review.png`: labeled 12× view of all four directions.
 
 The new appearance sources and export settings are under `../../../source/characters/npcs/male_01/directions/`. Compare all three palettes in `../male_idle_directions_review.png`. The front frame remains unchanged.
+
+## Front walk for review
+
+The [four-frame front walk](walk_front/README.md) is a draft built with the shared pose template. It retains the approved head and belt, recolors the shared leg poses to tan trousers and brown boots, and raises the head and shoulders together on passing frames. See `walk_front/walk_front_preview.gif` for the enlarged looping preview.

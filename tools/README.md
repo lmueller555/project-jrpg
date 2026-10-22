@@ -6,6 +6,7 @@ The walk builder assembles character-specific source parts against retained sema
 python -m pip install -r tools/requirements-assets.txt
 python tools/build_character_walk.py mira
 python tools/build_character_walk.py mira --direction all
+python tools/build_character_walk.py npcs/male_01
 ```
 
 Run these commands from the repository root using Python 3.12. In the current cloud environment, `/workspace/.venvs/project-jrpg/bin/python` already has the dependency installed.
@@ -14,7 +15,9 @@ Use `--refresh-template` to regenerate shared masks before assembling the charac
 
 `--direction` accepts `front`, `left`, `right`, `back`, or `all`. Front remains the default. Each direction has its own appearance input, recipe and material masks. `all` also exports a combined native sheet, metadata, and labeled four-direction comparison GIF. Approval labels come from each recipe.
 
-New characters need a recipe and appropriately prepared appearance parts. Shared semantic arm masks allow clothing recoloring; shared leg art requires matching trousers/boots. Other body proportions or costumes can use additional pose components rather than deforming a flattened idle image.
+New characters need a recipe and appropriately prepared appearance parts. Shared semantic arm masks allow clothing recoloring; shared leg art can retain matching trousers/boots or use an explicit leg-color mapping. Other body proportions or costumes can use additional pose components rather than deforming a flattened idle image.
+
+The base male NPC front walk uses the same arm and leg poses with an explicit `leg_palette` mapping for tan trousers and brown boots. A recipe with `shared_leg_costume: false` must supply that mapping; unmapped source colors are rejected. `preserve_waist: true` retains the original belt/buckle and upper-trouser pixels instead of synthesizing a waist. Both options are opt-in, preserving the existing Mira output. Character directories may use identifier components separated by `/`, such as `npcs/male_01`; absolute paths and traversal components are rejected.
 
 Male NPC front-idle palette variants are rebuilt with `python tools/build_npc_palette_variants.py`. The builder reads the approved native `male_01` frame and the retained `assets/source/characters/npcs/male_01/palette_variants.json` recipe. Exact replacements within material regions preserve the silhouette, shading layout and transparency. Shade aliases include brown hair highlights exported with shared leather colors, while keeping the belt and boots unchanged. It writes variants 02 and 03, their enlarged previews, a native three-frame sheet and a labeled review comparison. Existing approval statuses are preserved on rebuild.
 

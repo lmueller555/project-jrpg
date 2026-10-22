@@ -149,13 +149,16 @@ def character_parts(idle, recipe):
             shirt.putpixel((x, y), color)
     parts["shirt"] = shirt
     waist = blank(idle.size)
-    x0, y0, w, h = recipe["waist_rect"]
-    for y in range(y0, y0 + h):
-        for x in range(x0, x0 + w):
-            color = colors["leather"] if y < y0 + 2 else colors["trousers"]
-            if x in (x0, x0 + w - 1):
-                color = colors["outline"]
-            waist.putpixel((x, y), color)
+    if recipe.get("preserve_waist", False):
+        waist = isolated(idle, recipe["waist_rect"])
+    else:
+        x0, y0, w, h = recipe["waist_rect"]
+        for y in range(y0, y0 + h):
+            for x in range(x0, x0 + w):
+                color = colors["leather"] if y < y0 + 2 else colors["trousers"]
+                if x in (x0, x0 + w - 1):
+                    color = colors["outline"]
+                waist.putpixel((x, y), color)
     parts["waist"] = waist
     parts["pouch"] = isolated(idle, recipe["pouch_rect"])
     # Appearance references are retained independently from the posed masks.
@@ -182,6 +185,20 @@ def shifted(layer, dy):
     return output
 
 
+def recolored_legs(image, replacements):
+    """Keep approved leg silhouettes while applying an explicit costume palette."""
+    lookup = {rgba(source): rgba(target) for source, target in replacements.items()}
+    output = blank(image.size)
+    for y in range(image.height):
+        for x in range(image.width):
+            pixel = image.getpixel((x, y))
+            if pixel[3]:
+                if pixel not in lookup:
+                    raise ValueError(f"Unclassified leg pixel: {pixel}")
+                output.putpixel((x, y), lookup[pixel])
+    return output
+
+
 def on_background(image, scale):
     background = Image.new("RGBA", image.size, (232, 237, 242, 255))
     return Image.alpha_composite(background, image).convert("RGB").resize(
@@ -196,8 +213,8 @@ def build(recipe_path, refresh):
     template = read_json(config_path)
     if refresh:
         extract_template(config_path, template)
-    if not recipe["shared_leg_costume"]:
-        raise ValueError("This recipe requires matching trousers/boots for shared leg art")
+    if not recipe["shared_leg_costume"] and not recipe.get("leg_palette"):
+        raise ValueError("Different trousers/boots require an explicit leg_palette")
     idle = Image.open(recipe_path.parent / recipe["idle"]).convert("RGBA")
     if idle.size != tuple(template["frame_size"]):
         raise ValueError("Character and template frame sizes differ")
@@ -213,6 +230,9 @@ def build(recipe_path, refresh):
         directory = config_path.parent / ("frame_" + frame["id"])
         dy = frame["upper_body_offset"][1]
         output = Image.open(directory / "legs.png").convert("RGBA")
+        if recipe.get("leg_palette"):
+            output = recolored_legs(output, recipe["leg_palette"])
+            output.save(part_dir / ("frame_" + frame["id"] + "_legs.png"))
         output = Image.alpha_composite(output, parts["waist"])
         shirt = blank(idle.size)
         shirt.paste(parts["shirt"].crop((0, 19, 24, 36)), (0, 19))
@@ -303,12 +323,12 @@ def build_direction_board(character):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("character", help="Character asset directory, e.g. mira")
+    parser.add_argument("character", help="Character asset directory, e.g. mira or npcs/male_01")
     parser.add_argument("--refresh-template", action="store_true")
     parser.add_argument("--direction", choices=("front", "left", "right", "back", "all"), default="front")
     args = parser.parse_args()
-    if not args.character.isascii() or not args.character.isidentifier():
-        parser.error("Use an ASCII character directory name without path separators")
+    if not all(part.isascii() and part.isidentifier() for part in args.character.split("/")):
+        parser.error("Use ASCII directory names separated by /, without . or .. components")
     directions = ("front", "left", "right", "back") if args.direction == "all" else (args.direction,)
     recipes = [ROOT / "assets" / "characters" / args.character / f"walk_{d}" / "recipe.json" for d in directions]
     for recipe in recipes:
