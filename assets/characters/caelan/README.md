@@ -1,6 +1,6 @@
 # Caelan — directional idle sprites
 
-All four directional idle designs were explicitly approved by the user in chat. The original front idle pixels remain unchanged. Walking animations have not started.
+All four directional idle designs were explicitly approved by the user in chat. The original idle pixels remain unchanged. A [four-frame front walk cycle](walk_front/README.md) is now available as a draft awaiting review; other walking directions have not started.
 
 ## Files
 
