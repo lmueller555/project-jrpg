@@ -14,7 +14,7 @@ python assets/source/characters/npcs/female_01/export_idle.py
 
 The export also writes a 24× review image, a 16× comparison with male NPC 01 and Mira, and four non-overlapping appearance layers under `layers/`. These layers reconstruct the idle; they are not articulated walking parts. The dress will need dedicated skirt poses later.
 
-This work contains only front-facing idle palettes. Other facing appearances and walking frames are the next planned assets.
+The front-facing idle palettes are approved. Draft left, right and back appearances are retained under `directions/`; see its README for the separate base export. Walking frames remain planned.
 
 The base front idle now uses blue iris pixels below its dark pupils. Eye landmarks/colors are recorded in the frame metadata and export recipe. These explicit feature positions keep eye recoloring separate from outlines. Only those two iris pixels change in the first native sprite.
 

@@ -1,0 +1,210 @@
+{
+  "source": "turnaround_concept.png",
+  "alpha_threshold": 128,
+  "resampling": "nearest",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "../../../../../characters/npcs/female_01/palette.json",
+  "bands": [
+    {
+      "source_y": [
+        124,
+        438
+      ],
+      "native_y": [
+        1,
+        14
+      ],
+      "materials": [
+        "outline",
+        "hair",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        438,
+        558
+      ],
+      "native_y": [
+        14,
+        21
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        558,
+        591
+      ],
+      "native_y": [
+        21,
+        22
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        591,
+        825
+      ],
+      "native_y": [
+        22,
+        29
+      ],
+      "materials": [
+        "outline",
+        "dress",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        825,
+        882
+      ],
+      "native_y": [
+        29,
+        32
+      ],
+      "materials": [
+        "outline",
+        "skin"
+      ]
+    },
+    {
+      "source_y": [
+        882,
+        956
+      ],
+      "native_y": [
+        32,
+        35
+      ],
+      "materials": [
+        "outline",
+        "leather"
+      ]
+    }
+  ],
+  "profile_eye_cleanup_offset_y": -1,
+  "hair_highlights": {
+    "left": [
+      [
+        15,
+        10
+      ]
+    ]
+  },
+  "exports": [
+    {
+      "direction": "left",
+      "panel": [
+        0,
+        0,
+        512,
+        1024
+      ],
+      "source_alpha_bounds": [
+        137,
+        124,
+        433,
+        956
+      ],
+      "occupied_rect": [
+        6,
+        1,
+        12,
+        34
+      ],
+      "eyes": {
+        "top_pixels": [
+          [
+            9,
+            9
+          ]
+        ],
+        "height": 2,
+        "pupil_color": "#1a0e16",
+        "iris_color": "#356c9b",
+        "iris_name": "Blue",
+        "iris_offset_y": 1,
+        "visible": true
+      }
+    },
+    {
+      "direction": "right",
+      "panel": [
+        512,
+        0,
+        1024,
+        1024
+      ],
+      "source_alpha_bounds": [
+        110,
+        124,
+        407,
+        956
+      ],
+      "occupied_rect": [
+        6,
+        1,
+        12,
+        34
+      ],
+      "eyes": {
+        "top_pixels": [
+          [
+            14,
+            9
+          ]
+        ],
+        "height": 2,
+        "pupil_color": "#1a0e16",
+        "iris_color": "#356c9b",
+        "iris_name": "Blue",
+        "iris_offset_y": 1,
+        "visible": true
+      }
+    },
+    {
+      "direction": "back",
+      "panel": [
+        1024,
+        0,
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        79,
+        124,
+        385,
+        956
+      ],
+      "occupied_rect": [
+        5,
+        1,
+        14,
+        34
+      ],
+      "eyes": {
+        "visible": false,
+        "top_pixels": []
+      }
+    }
+  ]
+}

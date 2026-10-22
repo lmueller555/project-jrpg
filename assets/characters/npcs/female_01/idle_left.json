@@ -1,0 +1,54 @@
+{
+  "character": "npc_female_01",
+  "animation": "idle.left",
+  "variant": 1,
+  "design_status": "draft",
+  "status": "draft",
+  "image": "idle_left.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "eyes": {
+    "top_pixels": [
+      [
+        9,
+        9
+      ]
+    ],
+    "height": 2,
+    "pupil_color": "#1a0e16",
+    "iris_color": "#356c9b",
+    "iris_name": "Blue",
+    "iris_offset_y": 1,
+    "visible": true
+  },
+  "dress": {
+    "waist_row": 21,
+    "hem_row": 28
+  },
+  "layers": [
+    "../../../source/characters/npcs/female_01/directions/layers/left/head.png",
+    "../../../source/characters/npcs/female_01/directions/layers/left/bodice_and_arms.png",
+    "../../../source/characters/npcs/female_01/directions/layers/left/skirt_and_hands.png",
+    "../../../source/characters/npcs/female_01/directions/layers/left/legs_and_boots.png"
+  ],
+  "source": "../../../source/characters/npcs/female_01/directions/turnaround_concept.png",
+  "export_recipe": "../../../source/characters/npcs/female_01/directions/export.json",
+  "review": {
+    "image": "idle_left_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  }
+}

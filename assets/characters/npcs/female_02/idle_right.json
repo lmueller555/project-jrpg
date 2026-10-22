@@ -1,0 +1,54 @@
+{
+  "character": "npc_female_02",
+  "animation": "idle.right",
+  "variant": 2,
+  "design_status": "draft",
+  "status": "draft",
+  "image": "idle_right.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "eyes": {
+    "top_pixels": [
+      [
+        14,
+        9
+      ]
+    ],
+    "height": 2,
+    "pupil_color": "#1a0e16",
+    "iris_color": "#3f784b",
+    "iris_name": "Green",
+    "iris_offset_y": 1,
+    "visible": true
+  },
+  "dress": {
+    "waist_row": 21,
+    "hem_row": 28
+  },
+  "layers": [
+    "../../../source/characters/npcs/female_02/directions/layers/right/head.png",
+    "../../../source/characters/npcs/female_02/directions/layers/right/bodice_and_arms.png",
+    "../../../source/characters/npcs/female_02/directions/layers/right/skirt_and_hands.png",
+    "../../../source/characters/npcs/female_02/directions/layers/right/legs_and_boots.png"
+  ],
+  "source": "../female_01/idle_right.png",
+  "review": {
+    "image": "idle_right_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  },
+  "recipe": "../../../source/characters/npcs/female_01/palette_variants.json"
+}

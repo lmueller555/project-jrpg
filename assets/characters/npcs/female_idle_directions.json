@@ -1,0 +1,163 @@
+{
+  "image": "female_idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": [
+    {
+      "direction": "front",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_01/idle_front.json",
+      "status": "approved",
+      "variant": 1
+    },
+    {
+      "direction": "left",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_01/idle_left.json",
+      "status": "draft",
+      "variant": 1
+    },
+    {
+      "direction": "right",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_01/idle_right.json",
+      "status": "draft",
+      "variant": 1
+    },
+    {
+      "direction": "back",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_01/idle_back.json",
+      "status": "draft",
+      "variant": 1
+    },
+    {
+      "direction": "front",
+      "rect": [
+        0,
+        36,
+        24,
+        36
+      ],
+      "metadata": "female_02/idle_front.json",
+      "status": "approved",
+      "variant": 2
+    },
+    {
+      "direction": "left",
+      "rect": [
+        24,
+        36,
+        24,
+        36
+      ],
+      "metadata": "female_02/idle_left.json",
+      "status": "draft",
+      "variant": 2
+    },
+    {
+      "direction": "right",
+      "rect": [
+        48,
+        36,
+        24,
+        36
+      ],
+      "metadata": "female_02/idle_right.json",
+      "status": "draft",
+      "variant": 2
+    },
+    {
+      "direction": "back",
+      "rect": [
+        72,
+        36,
+        24,
+        36
+      ],
+      "metadata": "female_02/idle_back.json",
+      "status": "draft",
+      "variant": 2
+    },
+    {
+      "direction": "front",
+      "rect": [
+        0,
+        72,
+        24,
+        36
+      ],
+      "metadata": "female_03/idle_front.json",
+      "status": "approved",
+      "variant": 3
+    },
+    {
+      "direction": "left",
+      "rect": [
+        24,
+        72,
+        24,
+        36
+      ],
+      "metadata": "female_03/idle_left.json",
+      "status": "draft",
+      "variant": 3
+    },
+    {
+      "direction": "right",
+      "rect": [
+        48,
+        72,
+        24,
+        36
+      ],
+      "metadata": "female_03/idle_right.json",
+      "status": "draft",
+      "variant": 3
+    },
+    {
+      "direction": "back",
+      "rect": [
+        72,
+        72,
+        24,
+        36
+      ],
+      "metadata": "female_03/idle_back.json",
+      "status": "draft",
+      "variant": 3
+    }
+  ],
+  "review": {
+    "image": "female_idle_directions_review.png",
+    "scale": 12,
+    "profile_eyes": "female_profile_eyes_review.png",
+    "eye_scale": 32
+  }
+}

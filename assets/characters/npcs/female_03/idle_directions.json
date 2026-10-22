@@ -1,0 +1,61 @@
+{
+  "image": "idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": [
+    {
+      "direction": "front",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "metadata": "idle_front.json",
+      "status": "approved"
+    },
+    {
+      "direction": "left",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "metadata": "idle_left.json",
+      "status": "draft"
+    },
+    {
+      "direction": "right",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "metadata": "idle_right.json",
+      "status": "draft"
+    },
+    {
+      "direction": "back",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "metadata": "idle_back.json",
+      "status": "draft"
+    }
+  ],
+  "review": {
+    "image": "idle_directions_review.png",
+    "scale": 12
+  }
+}
