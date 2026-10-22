@@ -1,0 +1,81 @@
+{
+  "animation": "walk.front",
+  "image": "female_walk_front_variants.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "variants": [
+    {
+      "variant": 1,
+      "row": 0,
+      "status": "approved",
+      "animation": "female_01/walk_front/animation.json"
+    },
+    {
+      "variant": 2,
+      "row": 1,
+      "status": "draft",
+      "animation": "female_02/walk_front/animation.json"
+    },
+    {
+      "variant": 3,
+      "row": 2,
+      "status": "draft",
+      "animation": "female_03/walk_front/animation.json"
+    }
+  ],
+  "frames": [
+    {
+      "column": 0,
+      "duration_ms": 140,
+      "phase": "screen_left_contact",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "column": 1,
+      "duration_ms": 140,
+      "phase": "screen_left_support_passing",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    },
+    {
+      "column": 2,
+      "duration_ms": 140,
+      "phase": "screen_right_contact",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "column": 3,
+      "duration_ms": 140,
+      "phase": "screen_right_support_passing",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "review": {
+    "gif": "female_walk_front_variants_review.gif",
+    "image": "female_walk_front_variants_review.png",
+    "columns": [
+      1,
+      2,
+      3
+    ],
+    "scale": 16
+  }
+}

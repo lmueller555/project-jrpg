@@ -13,10 +13,18 @@ Both eyes retain a dark upper pupil pixel and have one colored iris pixel beneat
 
 Review all three in `../female_variants_review.png`, with eye close-ups in `../female_eyes_review.png`. Source appearance layers are retained under `../../../source/characters/npcs/female_02/layers/`. Rebuild these variants and the comparison with `python tools/build_female_npc_palette_variants.py`.
 
-The front palette is approved. Left, right and back idles are approved; walking animations remain planned.
+The front palette is approved. Left, right and back idles are approved; all four walking cycles are drafts for review.
 
 ## Approved directional idles
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` add native 24×36 appearances. Each has metadata and a 24× `_review.png`. The low bun is visible from these angles; the waist remains at row 21, hem at row 28, calves at rows 29–31 and boots at rows 32–34. Side profiles have one dark pupil with a green iris pixel beneath it. The back has no eyes or iris pixels.
 
 `idle_directions.png` and its JSON combine front, left, right and back. `idle_directions_review.png` enlarges them 12×; `../female_idle_directions_review.png` compares all three palettes. All four directions are approved by the user in chat. Source appearance layers are retained under `../../../source/characters/npcs/female_02/directions/layers/`. Rebuild using the base directional exporter followed by `python tools/build_female_npc_palette_variants.py --direction all`.
+
+## Walking palette drafts
+
+The front, left, right and back walks use auburn hair, a sage dress and green iris accents. They are exact color variants of the approved blue base cycles: stride, arm swing, coordinated bob, neck height, skirt sway, hem lift, boots and 140 ms timing are unchanged. Fronts show two iris accents, profiles one, and backs none.
+
+`walk_directions_review.gif` shows this palette's four directions. `../female_walk_all_variants_review.gif` compares all three palettes with directions as rows and palettes as columns. Each `walk_<direction>/` contains four native frames, a sheet, metadata, a recipe, a static strip and a 20× looping preview. All eight new palette cycles await user approval; existing idle and palette approvals are unchanged.
+
+Rebuild with `python tools/build_female_npc_walk_variants.py --direction all`.

@@ -1,0 +1,283 @@
+{
+  "character": "npc_female_03",
+  "direction": "back",
+  "approval_status": "draft",
+  "idle": "../idle_back.png",
+  "materials": "../palette.json",
+  "template": "../../../../templates/humanoid_24x36/walk_back/poses.json",
+  "parts_directory": "../../../../source/characters/npcs/female_03/walk_back/parts",
+  "head_rect": [
+    0,
+    0,
+    24,
+    14
+  ],
+  "shirt_rect": [
+    8,
+    14,
+    8,
+    7
+  ],
+  "neckline_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "waist_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "pouch_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "preserve_waist": true,
+  "palette": {
+    "outline": "#1a0e16",
+    "fabric_shadow": "#51364f",
+    "fabric_base": "#805477",
+    "fabric_light": "#ad80a0",
+    "skin_shadow": "#eda052",
+    "skin_base": "#e8c49d"
+  },
+  "costume_poses": [
+    {
+      "id": "01",
+      "skirt_rows": [
+        [
+          21,
+          9,
+          15,
+          0
+        ],
+        [
+          22,
+          8,
+          16,
+          0
+        ],
+        [
+          23,
+          8,
+          16,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          1
+        ],
+        [
+          25,
+          7,
+          17,
+          1
+        ],
+        [
+          26,
+          6,
+          18,
+          1
+        ],
+        [
+          27,
+          5,
+          19,
+          1
+        ],
+        [
+          28,
+          5,
+          19,
+          1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "02",
+      "skirt_rows": [
+        [
+          21,
+          9,
+          15,
+          0
+        ],
+        [
+          22,
+          8,
+          16,
+          0
+        ],
+        [
+          23,
+          8,
+          16,
+          0
+        ],
+        [
+          25,
+          7,
+          17,
+          0
+        ],
+        [
+          26,
+          6,
+          18,
+          0
+        ],
+        [
+          27,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          5,
+          19,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "leg_split_x": 13
+    },
+    {
+      "id": "03",
+      "skirt_rows": [
+        [
+          21,
+          9,
+          15,
+          0
+        ],
+        [
+          22,
+          8,
+          16,
+          0
+        ],
+        [
+          23,
+          8,
+          16,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          -1
+        ],
+        [
+          25,
+          7,
+          17,
+          -1
+        ],
+        [
+          26,
+          6,
+          18,
+          -1
+        ],
+        [
+          27,
+          5,
+          19,
+          -1
+        ],
+        [
+          28,
+          5,
+          19,
+          -1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "04",
+      "skirt_rows": [
+        [
+          21,
+          9,
+          15,
+          0
+        ],
+        [
+          22,
+          8,
+          16,
+          0
+        ],
+        [
+          23,
+          8,
+          16,
+          0
+        ],
+        [
+          25,
+          7,
+          17,
+          0
+        ],
+        [
+          26,
+          6,
+          18,
+          0
+        ],
+        [
+          27,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          5,
+          19,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "leg_split_x": 12
+    }
+  ],
+  "costume_notes": "Skirt rows: [idle_source_y, left_inclusive, right_exclusive, sway_x]. Contact hem 28, passing hem 27. Leg split and per-leg boot tops adapt ankle boots to the shared directional stride.",
+  "base_animation": "../../female_01/walk_back/animation.json",
+  "palette_variant_source": "../../../../source/characters/npcs/female_01/palette_variants.json",
+  "material_replacements": {
+    "#302329": "#88633b",
+    "#4b373c": "#c79f5b",
+    "#70535a": "#ead197",
+    "#304f70": "#51364f",
+    "#4d77a0": "#805477",
+    "#7da5c7": "#ad80a0",
+    "#356c9b": "#98703a"
+  },
+  "build_tool": "tools/build_female_npc_walk_variants.py"
+}
