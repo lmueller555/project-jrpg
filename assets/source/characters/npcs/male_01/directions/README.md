@@ -1,6 +1,6 @@
 # Male NPC — directional idle sources
 
-Status: new left, right and back appearances await user review. The approved front idle is unchanged.
+Status: all three directional appearances and their palette variants are approved by the user in chat. The approved front idle is unchanged.
 
 `turnaround_concept.png` is generated reference art for the same male NPC, ordered left, right, back. The approved brown-haired front design supplies the appearance; Caelan's idle turnaround supplies game scale and standing-pose references. These are stationary idles, not walking frames.
 
