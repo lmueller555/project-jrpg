@@ -1,0 +1,62 @@
+{
+  "id": "humanoid_24x36.walk.right",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "semantic_colors": {
+    "outline": "#202020",
+    "fabric_base": "#404040",
+    "fabric_light": "#606060",
+    "fabric_shadow": "#808080",
+    "skin_base": "#a0a0a0",
+    "skin_shadow": "#c0c0c0"
+  },
+  "frames": [
+    {
+      "id": "01",
+      "reference": "../../../characters/caelan/walk_right/frame_01.png",
+      "phase": "contact_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "02",
+      "reference": "../../../characters/caelan/walk_right/frame_02.png",
+      "phase": "passing_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    },
+    {
+      "id": "03",
+      "reference": "../../../characters/caelan/walk_right/frame_03.png",
+      "phase": "contact_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "04",
+      "reference": "../../../characters/caelan/walk_right/frame_04.png",
+      "phase": "passing_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "direction": "right"
+}

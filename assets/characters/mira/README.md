@@ -31,4 +31,12 @@ Mira shares Caelan's 24×36 frame and `[12, 34]` foot anchor. Her lower-leg/boot
 
 Three transparent full-frame assembly layers are retained in `../../source/characters/mira/layers/`: head, upper body, and legs. Compositing them in that order reconstructs the native sprite. The upper-body layer currently groups the shirt, arms, belt, and pouch; separate articulated limb layers can be developed when preparing the pose templates for Mira's animation.
 
-The [four-frame front walk](walk_front/README.md) is approved, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained in `../../source/characters/mira/walk_front/parts/`. Side and back appearances have not been created yet. The preserved story documents and Caelan artwork are unchanged.
+The [four-frame front walk](walk_front/README.md) is approved, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained under `../../source/characters/mira/walk_front/parts/` and the corresponding new direction folders. The preserved story documents and Caelan artwork are unchanged.
+
+Matching [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles, including their new facing appearances, are drafts awaiting review. The flower remains on anatomical left rather than being mirrored onto the right side.
+
+- `walk_directions.png`: native 96×144 sheet with front, left, right and back rows, four frames per row.
+- `walk_directions.json`: frame rectangles, per-direction approval status and animation references.
+- `walk_directions_review.gif`: labeled 12× comparison of all four directions; `walk_directions_review.png` is its first frame.
+
+Rebuild all directions and the comparison with `python tools/build_character_walk.py mira --direction all`. Add `--refresh-template` to also regenerate the shared material masks.

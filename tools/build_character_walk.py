@@ -1,4 +1,4 @@
-"""Assemble a front walk from shared pose masks and character-specific parts.
+"""Assemble walks from shared pose masks and character-specific parts.
 
 Run with the assets virtualenv: python tools/build_character_walk.py mira
 Add --refresh-template to extract masks from the approved Caelan references.
@@ -7,7 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from PIL import Image, ImageColor
+from PIL import Image, ImageColor, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,8 +33,47 @@ def blank(size):
 def isolated(image, rect):
     x, y, w, h = rect
     layer = blank(image.size)
+    if w == 0 or h == 0:
+        return layer
     layer.paste(image.crop((x, y, x + w, y + h)), (x, y))
     return layer
+
+
+def profile_arm_masks(source, codes):
+    """Retain projected sleeve/hand silhouettes without the source tabard."""
+    materials = {}
+    outlines = {(26, 14, 22), (26, 14, 23), (43, 23, 21)}
+    for y in range(13, 25):
+        for x in range(source.width):
+            c = source.getpixel((x, y))
+            if not c[3]:
+                continue
+            if c[:3] == (251, 238, 208) and y <= 20:
+                materials[x, y] = "fabric_light"
+            elif c[:3] == (232, 196, 157):
+                materials[x, y] = "skin_base"
+            elif c[:3] == (233, 159, 85):
+                materials[x, y] = "skin_shadow"
+            elif c[:3] == (100, 84, 80) and y <= 21:
+                materials[x, y] = "skin_shadow"
+    for x, y in list(materials):
+        for xx, yy in ((x-1, y), (x+1, y), (x, y-1), (x, y+1)):
+            if 0 <= xx < source.width and 13 <= yy < 25 and (xx, yy) not in materials:
+                c = source.getpixel((xx, yy))
+                if c[3] and c[:3] in outlines:
+                    materials[xx, yy] = "outline"
+                elif c[3] and c[:3] == (211, 150, 63) and yy <= 20:
+                    materials[xx, yy] = "fabric_shadow"
+    # Projected arm regions can overlap the torso; their pose is already baked in.
+    masks = {side: blank(source.size) for side in ("left", "right")}
+    for x in range(source.width):
+        ys = [y for (xx, y), material in materials.items() if xx == x and material == "fabric_light"]
+        if len(ys) > 1:
+            materials[x, max(ys)] = "fabric_shadow"
+    for (x, y), material in materials.items():
+        side = "left" if x < source.width // 2 else "right"
+        masks[side].putpixel((x, y), codes[material])
+    return masks
 
 
 def extract_template(config_path, template):
@@ -49,6 +88,11 @@ def extract_template(config_path, template):
             raise ValueError("Pose reference has an unexpected frame size")
         directory = config_path.parent / ("frame_" + frame["id"])
         directory.mkdir(parents=True, exist_ok=True)
+        if template.get("direction") in ("left", "right"):
+            for side, mask in profile_arm_masks(source, codes).items():
+                mask.save(directory / (side + "_arm_mask.png"))
+            isolated(source, [0, 26, 24, 10]).save(directory / "legs.png")
+            continue
         for side in ("left", "right"):
             mask = blank(source.size)
             for y in range(13, 25):
@@ -147,6 +191,7 @@ def on_background(image, scale):
 
 def build(recipe_path, refresh):
     recipe = read_json(recipe_path)
+    direction = recipe.get("direction", "front")
     config_path = (recipe_path.parent / recipe["template"]).resolve()
     template = read_json(config_path)
     if refresh:
@@ -200,28 +245,76 @@ def build(recipe_path, refresh):
     sheet.save(recipe_path.parent / "spritesheet.png")
     on_background(sheet, 12).save(recipe_path.parent / "frames_review.png")
     previews = [on_background(image, 20) for image in frames]
-    previews[0].save(recipe_path.parent / "walk_front_preview.gif", save_all=True,
+    preview_name = f"walk_{direction}_preview.gif"
+    previews[0].save(recipe_path.parent / preview_name, save_all=True,
                      append_images=previews[1:], duration=[f["duration_ms"] for f in template["frames"]],
                      loop=0, disposal=2, optimize=False)
     comparisons[0].save(recipe_path.parent / "shared_motion_comparison.gif", save_all=True,
                          append_images=comparisons[1:], duration=[f["duration_ms"] for f in template["frames"]],
                          loop=0, disposal=2, optimize=False)
     write_json(recipe_path.parent / "animation.json", {
-        "character": recipe["character"], "animation": "walk.front", "status": recipe["approval_status"],
+        "character": recipe["character"], "animation": f"walk.{direction}", "status": recipe["approval_status"],
         "image": "spritesheet.png", "frame_size": template["frame_size"],
         "foot_anchor": template["foot_anchor"], "loop": True, "frames": metadata,
         "template": recipe["template"], "recipe": recipe_path.name,
         "offsets_baked_into_pixels": True,
-        "review": {"gif": "walk_front_preview.gif", "scale": 20, "background": "#e8edf2"}
+        "review": {"gif": preview_name, "scale": 20, "background": "#e8edf2"}
     })
     print(f"Built {recipe['character']}: {len(frames)} frames using {template['id']}")
+
+
+def build_direction_board(character):
+    root = ROOT / "assets" / "characters" / character
+    directions = ("front", "left", "right", "back")
+    sheet = blank((96, 144))
+    board_frames = []
+    records = []
+    font = ImageFont.load_default(size=18)
+    for row, direction in enumerate(directions):
+        pack = root / f"walk_{direction}"
+        meta = read_json(pack / "animation.json")
+        sheet.paste(Image.open(pack / "spritesheet.png").convert("RGBA"), (0, row * 36))
+        records.append({"direction": direction, "status": meta["status"],
+                        "animation": f"walk_{direction}/animation.json",
+                        "frames": [{"rect": [i * 24, row * 36, 24, 36], "duration_ms": 140} for i in range(4)]})
+    for i in range(1, 5):
+        strip = blank((96, 36))
+        for col, direction in enumerate(directions):
+            frame = Image.open(root / f"walk_{direction}" / f"frame_0{i}.png").convert("RGBA")
+            strip.paste(frame, (col * 24, 0))
+        enlarged = on_background(strip, 12)
+        board = Image.new("RGB", (1152, 474), (232, 237, 242))
+        board.paste(enlarged, (0, 0))
+        draw = ImageDraw.Draw(board)
+        for col, record in enumerate(records):
+            label = record["direction"].capitalize() + " (" + record["status"] + ")"
+            draw.text((col * 288 + 144, 453), label, font=font, anchor="mm", fill=(38, 55, 70))
+        board_frames.append(board)
+    sheet.save(root / "walk_directions.png")
+    board_frames[0].save(root / "walk_directions_review.png")
+    board_frames[0].save(root / "walk_directions_review.gif", save_all=True,
+                         append_images=board_frames[1:], duration=140, loop=0, disposal=2, optimize=False)
+    write_json(root / "walk_directions.json", {
+        "character": character, "image": "walk_directions.png", "frame_size": [24, 36],
+        "foot_anchor": [12, 34], "directions": records,
+        "review": {"gif": "walk_directions_review.gif", "columns": list(directions), "scale": 12}
+    })
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("character", help="Character asset directory, e.g. mira")
     parser.add_argument("--refresh-template", action="store_true")
+    parser.add_argument("--direction", choices=("front", "left", "right", "back", "all"), default="front")
     args = parser.parse_args()
     if not args.character.isascii() or not args.character.isidentifier():
         parser.error("Use an ASCII character directory name without path separators")
-    build(ROOT / "assets" / "characters" / args.character / "walk_front" / "recipe.json", args.refresh_template)
+    directions = ("front", "left", "right", "back") if args.direction == "all" else (args.direction,)
+    recipes = [ROOT / "assets" / "characters" / args.character / f"walk_{d}" / "recipe.json" for d in directions]
+    for recipe in recipes:
+        if not recipe.is_file():
+            parser.error(f"Missing character recipe: {recipe}")
+    for recipe in recipes:
+        build(recipe, args.refresh_template)
+    if args.direction == "all":
+        build_direction_board(args.character)

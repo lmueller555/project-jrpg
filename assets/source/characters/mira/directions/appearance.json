@@ -1,0 +1,53 @@
+{
+  "status": "draft",
+  "source": "turnaround_concept.png",
+  "directions": {
+    "back": {
+      "head_rect": [
+        0,
+        0,
+        24,
+        17
+      ],
+      "flower_center": [
+        6,
+        6
+      ],
+      "eyes": []
+    },
+    "left": {
+      "head_rect": [
+        0,
+        0,
+        24,
+        15
+      ],
+      "flower_center": [
+        11,
+        7
+      ],
+      "eyes": [
+        [
+          8,
+          10
+        ]
+      ]
+    },
+    "right": {
+      "head_rect": [
+        0,
+        0,
+        24,
+        15
+      ],
+      "flower_center": null,
+      "eyes": [
+        [
+          15,
+          10
+        ]
+      ]
+    }
+  },
+  "notes": "Flower stays on anatomical left: visible in left profile and on viewer-left in back view; hidden in right profile. Native eyes and five-pixel flower motifs are cleaned up after reducing source art."
+}

@@ -1,0 +1,49 @@
+{
+  "character": "mira",
+  "idle": "../../../source/characters/mira/directions/appearance_right.png",
+  "template": "../../../templates/humanoid_24x36/walk_right/poses.json",
+  "parts_directory": "../../../source/characters/mira/walk_right/parts",
+  "palette": {
+    "outline": "#1a0e16",
+    "fabric_base": "#cc7894",
+    "fabric_light": "#e8a0b2",
+    "fabric_shadow": "#9b4f68",
+    "skin_base": "#e8c49d",
+    "skin_shadow": "#e99f55",
+    "trousers": "#3d3941",
+    "leather": "#573422"
+  },
+  "head_rect": [
+    0,
+    0,
+    24,
+    15
+  ],
+  "shirt_rect": [
+    10,
+    14,
+    5,
+    7
+  ],
+  "neckline_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "waist_rect": [
+    9,
+    21,
+    6,
+    5
+  ],
+  "pouch_rect": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "shared_leg_costume": true,
+  "approval_status": "draft",
+  "direction": "right"
+}
