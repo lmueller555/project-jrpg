@@ -18,7 +18,7 @@ Status: all four directional idles and this palette approved by the user in chat
 
 The source also retains four appearance layers: head, bodice/arms, skirt/hands, and calves/boots. They reconstruct the native idle and are not yet articulated walking components. The dress hem is at row 28, with visible calves at rows 29–31 and ankle boots at rows 32–34.
 
-The generated appearance source and repeatable export are retained under `../../../source/characters/npcs/female_01/`. All three front-facing palettes are approved. Left, right and back idles are approved; the front walk is approved, and left, right and back walks are drafts for review. Each walking direction uses dedicated skirt poses.
+The generated appearance source and repeatable export are retained under `../../../source/characters/npcs/female_01/`. All three front-facing palettes are approved. Left, right and back idles are approved; all four walking cycles are approved. Each walking direction uses dedicated skirt poses.
 
 Compare all three front palettes in `../female_variants_review.png`: dark hair/blue dress/blue eyes, auburn hair/sage dress/green eyes, and blonde hair/plum dress/hazel eyes. The close-up `../female_eyes_review.png` shows both pupils and iris accents at 32× scale. The base design is unchanged apart from the two requested colored iris pixels.
 
@@ -30,4 +30,4 @@ Compare all three front palettes in `../female_variants_review.png`: dark hair/b
 
 The [approved front walk](walk_front/README.md) uses shared stride poses, coordinated head-and-shoulder bob, and dedicated skirt/calf/ankle-boot parts. Review the enlarged loop in `walk_front/walk_front_preview.gif`.
 
-The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) walks are drafts. `walk_directions_review.gif` compares all four base directions, with the approved front walk unchanged. Build them and the combined sheets with `python tools/build_dress_walk.py --direction all`.
+The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) walks are approved. `walk_directions_review.gif` compares all four base directions, with the approved front walk unchanged. Build them and the combined sheets with `python tools/build_dress_walk.py --direction all`.

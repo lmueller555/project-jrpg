@@ -1,6 +1,6 @@
 # Female NPC 01 — left-walk assembly
 
-Status: draft for review.
+Status: approved by the user in chat.
 
 Rebuild with `python tools/build_dress_walk.py --direction left`. The appearance comes from the approved `idle_left.png`; stride silhouettes, arm poses, timing and bob come from the shared left template. The character recipe contains explicit skirt rows, leg split columns and ankle-boot tops for each phase.
 
