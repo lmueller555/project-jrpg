@@ -1,6 +1,6 @@
 # Mira — front walk
 
-Status: draft awaiting visual review. The corrected front idle is the appearance source; no new image-generated walking frames are used.
+Status: approved by the user, including the shared poses, timing and coordinated upper-body bob. The corrected front idle is the appearance source; no new image-generated walking frames are used.
 
 ## Files
 

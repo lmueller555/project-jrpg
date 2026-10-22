@@ -1,6 +1,6 @@
 # Mira — front idle
 
-Design status: finalized and approved by the user in chat. Sprite status: draft awaiting visual review.
+Design status: finalized and approved by the user in chat. Front-walk status: approved. The separate front idle remains a draft appearance reference.
 
 ## Approved design
 
@@ -31,4 +31,4 @@ Mira shares Caelan's 24×36 frame and `[12, 34]` foot anchor. Her lower-leg/boot
 
 Three transparent full-frame assembly layers are retained in `../../source/characters/mira/layers/`: head, upper body, and legs. Compositing them in that order reconstructs the native sprite. The upper-body layer currently groups the shirt, arms, belt, and pouch; separate articulated limb layers can be developed when preparing the pose templates for Mira's animation.
 
-A [four-frame front walk](walk_front/README.md) is available for review, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained in `../../source/characters/mira/walk_front/parts/`. Side and back appearances have not been created yet. The preserved story documents and Caelan artwork are unchanged.
+The [four-frame front walk](walk_front/README.md) is approved, assembled with the reusable pose-and-parts workflow. The corrected idle remains unchanged. Prepared shirt, waist, pouch, arm references, leg references and materialized posed arms are retained in `../../source/characters/mira/walk_front/parts/`. Side and back appearances have not been created yet. The preserved story documents and Caelan artwork are unchanged.

@@ -1,6 +1,6 @@
 # Project JRPG
 
-The project is starting over from its story. The previous implementation, maps, assets, art specifications, tools, tests, and build workflows have been removed. There is currently no runnable game or dependency installation step.
+The project is starting over from its story. The previous implementation, maps, assets, art specifications, tools, tests, and build workflows have been removed. There is currently no runnable game. New asset tooling is documented below.
 
 ## Story documents
 
@@ -24,4 +24,4 @@ Matching [left](assets/characters/caelan/walk_left/README.md), [right](assets/ch
 
 [Mira's design](assets/characters/mira/README.md) is approved: dark brown ponytail, cream flower, pink working shirt, charcoal trousers, boots, and tool pouch. Her front idle sprite is available for review at the same 24×36 scale, with shared pose components and editable assembly layers.
 
-Her [front walking animation](assets/characters/mira/walk_front/README.md) is available for review. It is assembled from character-specific parts and the shared Caelan pose template using the [repeatable asset builder](tools/README.md).
+Her [front walking animation](assets/characters/mira/walk_front/README.md) is approved. It is assembled from character-specific parts and the shared Caelan pose template using the [repeatable asset builder](tools/README.md).
