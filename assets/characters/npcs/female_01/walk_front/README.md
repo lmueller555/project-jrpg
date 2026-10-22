@@ -1,6 +1,6 @@
 # Female NPC 01 — front walk
 
-Status: draft for user review. All four idle designs and palettes remain approved.
+Status: approved by the user in chat. All four idle designs and palettes remain approved.
 
 Four 24×36 frames follow the shared front-walk stride and arm masks, at 140 ms per frame with a looping 560 ms cycle and `[12, 34]` foot anchor. The approved dark-haired face, blue irises and low bun are retained. Passing frames 02/04 raise the head, neck, shoulders and upper bodice together by one pixel, preserving neck height. Offsets are baked into the frames.
 
@@ -20,4 +20,4 @@ Rebuild from the repository root:
 python tools/build_dress_walk.py
 ```
 
-Editable head/bodice appearances and six posed layers per frame are retained under `../../../../source/characters/npcs/female_01/walk_front/parts/`. The other two walking palettes and the remaining walking directions are future work after approval of this base cycle.
+Editable head/bodice appearances and six posed layers per frame are retained under `../../../../source/characters/npcs/female_01/walk_front/parts/`. The other two walking palettes and the remaining walking directions are future work using this approved base cycle.
