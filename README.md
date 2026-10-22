@@ -13,3 +13,7 @@ The project is starting over from its story. The previous implementation, maps, 
 - [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 
 These documents retain their original status labels. Approved story decisions, proposals, and open questions remain distinct; the reset does not change narrative canon.
+
+## New character art
+
+[Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. The front idle is approved; the other directions are drafts awaiting review.

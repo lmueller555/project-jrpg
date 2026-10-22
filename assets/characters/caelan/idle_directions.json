@@ -1,0 +1,12 @@
+{
+  "character": "caelan",
+  "image": "idle_directions.png",
+  "frame_size": [24, 36],
+  "foot_anchor": [12, 34],
+  "frames": [
+    {"id": "idle.front", "rect": [0, 0, 24, 36], "status": "approved"},
+    {"id": "idle.left", "rect": [24, 0, 24, 36], "status": "draft"},
+    {"id": "idle.right", "rect": [48, 0, 24, 36], "status": "draft"},
+    {"id": "idle.back", "rect": [72, 0, 24, 36], "status": "draft"}
+  ]
+}
