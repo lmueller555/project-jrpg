@@ -1,6 +1,6 @@
 # Female NPC — directional idle source
 
-Status: left, right and back appearances are drafts for user review. The front design and all three palettes remain approved.
+Status: left, right and back appearances and all three palettes approved by the user in chat. All twelve directional idle frames are approved.
 
 `turnaround_concept.png` is the generated appearance source, guided by the approved female front and the established male directional scale. Its 512-pixel panels are left, right and back. Each shows the low bun, short-sleeved blue dress, exposed calves and ankle boots. The back has no face or eyes.
 
