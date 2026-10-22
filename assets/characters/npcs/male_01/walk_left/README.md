@@ -1,6 +1,6 @@
 # Male NPC 01 — left-facing walk
 
-Status: draft awaiting user review. The front walk and all directional idle designs remain approved.
+Status: approved by the user in chat. The front walk and all directional idle designs remain approved.
 
 Four 24×36 frames use Caelan's approved left-facing poses and the NPC's approved `../idle_left.png` appearance. Head and face pixels remain intact. The head, neck, shoulders and upper shirt rise together by one pixel on passing frames 2 and 4. All frames use 140 ms timing and the shared `[12, 34]` foot anchor.
 
@@ -20,4 +20,4 @@ Rebuild from the repository root with the asset dependencies installed:
 python tools/build_character_walk.py npcs/male_01 --direction left
 ```
 
-Prepared parts are retained under `../../../../source/characters/npcs/male_01/walk_left/parts/`. Compare all four directions in `../walk_directions_review.gif`. The other two palettes will be applied after approval of these base directional cycles.
+Prepared parts are retained under `../../../../source/characters/npcs/male_01/walk_left/parts/`. Compare all four directions in `../walk_directions_review.gif`. The other two palettes will use these approved base directional cycles.

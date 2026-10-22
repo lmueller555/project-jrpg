@@ -33,12 +33,12 @@ The [four-frame front walk](walk_front/README.md) is approved and built with the
 
 All three male front-walk palettes are approved. Compare all three in `../male_walk_front_variants_review.gif`; the original base walk remains approved and unchanged.
 
-## Other walking directions for review
+## Approved walking directions
 
-The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) walks are drafts, with four 24×36 frames per direction and the same 140 ms phases and coordinated head-and-shoulder bob as the approved front walk.
+The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) walks are approved, with four 24×36 frames per direction and the same 140 ms phases and coordinated head-and-shoulder bob as the approved front walk.
 
 - `walk_directions.png`: native 96×144 sheet; rows are front, left, right, back and columns are playback phases.
 - `walk_directions.json`: frame rectangles, timing and individual direction statuses.
 - `walk_directions_review.gif`: labeled 12× synchronized four-direction preview; `_review.png` is the first phase.
 
-Rebuild the base's four walks and comparison with `python tools/build_character_walk.py npcs/male_01 --direction all`. The original approved front cycle is unchanged. After base direction approval, the existing palette builder will produce matching rust/charcoal and slate/brown cycles.
+Rebuild the base's four walks and comparison with `python tools/build_character_walk.py npcs/male_01 --direction all`. The original approved front cycle is unchanged. The existing palette builder will use these approved base directions for matching rust/charcoal and slate/brown cycles.

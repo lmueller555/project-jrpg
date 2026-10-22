@@ -1,6 +1,6 @@
 # Male NPC 01 — right-walk parts
 
-Status: draft animation awaiting user review.
+Status: walking animation approved by the user in chat.
 
 The approved right idle supplies the head and appearance. The common builder retains its head/face pixels, prepares the torso and waist, materializes the shared posed arms, and recolors the shared leg silhouettes to tan trousers and brown boots. `parts/` contains the appearance layers, limb references, posed arms and recolored legs for all four phases.
 
