@@ -13,6 +13,8 @@ Design status: finalized and approved by the user in chat. Sprite status: draft 
 
 The ponytail is visible on viewer left. The native flower is a simple 3×3 cross with four cream petals and one gold center pixel.
 
+The front face has two dark single-pixel eyes on the same row. A few fringe pixels have been cleared to skin color so both eyes remain separate from the hair and read clearly at native resolution.
+
 ## Files
 
 - `idle_front.png`: transparent native 24×36 sprite.

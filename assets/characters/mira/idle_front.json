@@ -14,5 +14,6 @@
     "../../source/characters/mira/layers/legs.png"
   ],
   "flower": {"side": "anatomical_left", "center": [17, 6], "petals": "#fff6dc", "center_color": "#d3963f"},
+  "eyes": {"centers": [[12, 9], [15, 9]], "color": "#1a0e16"},
   "review": {"image": "idle_front_review.png", "scale": 24, "background": "#e8edf2"}
 }
