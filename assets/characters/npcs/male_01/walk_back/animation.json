@@ -1,0 +1,85 @@
+{
+  "character": "npc_male_01",
+  "animation": "walk.back",
+  "status": "draft",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "contact_a",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "passing_a",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "contact_b",
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "passing_b",
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "template": "../../../../templates/humanoid_24x36/walk_back/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "review": {
+    "gif": "walk_back_preview.gif",
+    "scale": 20,
+    "background": "#e8edf2"
+  }
+}
