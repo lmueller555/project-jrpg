@@ -1,0 +1,63 @@
+{
+  "status": "draft",
+  "materials": {
+    "outline": {
+      "base": "#1a0e16"
+    },
+    "hair": {
+      "shadow": "#4b2928",
+      "base": "#854b39",
+      "light": "#b6754e"
+    },
+    "skin": {
+      "shadow": "#eda052",
+      "base": "#e8c49d"
+    },
+    "dress": {
+      "shadow": "#405b49",
+      "base": "#6e9275",
+      "light": "#a0b9a2"
+    },
+    "leather": {
+      "shadow": "#3d2118",
+      "base": "#84512e",
+      "light": "#9d6238"
+    },
+    "eyes": {
+      "pupil": "#1a0e16",
+      "iris": "#3f784b"
+    }
+  },
+  "source_palette": "../female_01/palette.json",
+  "regions": {
+    "hair": [
+      0,
+      0,
+      24,
+      14
+    ],
+    "dress": [
+      0,
+      14,
+      24,
+      15
+    ]
+  },
+  "eye_feature": {
+    "top_pixels": [
+      [
+        10,
+        9
+      ],
+      [
+        13,
+        9
+      ]
+    ],
+    "height": 2,
+    "pupil_color": "#1a0e16",
+    "iris_color": "#3f784b",
+    "iris_name": "Green",
+    "iris_offset_y": 1
+  }
+}

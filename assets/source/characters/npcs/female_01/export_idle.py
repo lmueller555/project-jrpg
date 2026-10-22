@@ -35,7 +35,10 @@ def rgb(value):
 
 def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    status = json.loads((OUTPUT / "idle_front.json").read_text())["status"]
+    metadata = json.loads((OUTPUT / "idle_front.json").read_text())
+    status = metadata["status"]
+    eyes = metadata["eyes"]
+    PALETTE["eyes"] = {"pupil": eyes["pupil_color"], "iris": eyes["iris_color"]}
     concept = Image.open(SOURCE / "idle_front_concept.png").convert("RGBA")
     alpha = concept.getchannel("A").point(lambda a: 255 if a >= 128 else 0)
     bounds = alpha.getbbox()
@@ -56,6 +59,10 @@ def main():
                         candidates = [rgb(c) for c in PALETTE["skin"].values()]
                     color = min(candidates, key=lambda c: sum((a-b)**2 for a, b in zip(pixel[:3], c)))
                     native.putpixel((x+5, y+y0), (*color, 255))
+    # Explicit eye landmarks keep iris recoloring separate from dark outlines.
+    for x, y in eyes["top_pixels"]:
+        native.putpixel((x, y), (*rgb(eyes["pupil_color"]), 255))
+        native.putpixel((x, y+eyes["iris_offset_y"]), (*rgb(eyes["iris_color"]), 255))
     native.save(OUTPUT / "idle_front.png")
     background = Image.new("RGB", native.size, "#e8edf2")
     background.paste(native, mask=native.getchannel("A"))
@@ -84,6 +91,7 @@ def main():
         "frame_size": [24, 36], "occupied_rect": [5, 1, 14, 34], "foot_anchor": [12, 34],
         "resampling": "nearest", "palette": "../../../../characters/npcs/female_01/palette.json",
         "chin_skin_rect": [10, 11, 4, 3], "chin_source_red_min_exclusive": 60,
+        "eyes": eyes,
         "bands": [{"source_y": [a,b], "native_y": [c,d], "materials": list(groups)}
                   for a,b,c,d,groups in BANDS],
         "layers": {name: {"image": f"layers/{name}.png", "rows": list(rows)} for name,rows in LAYERS.items()},

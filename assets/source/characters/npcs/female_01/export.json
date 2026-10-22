@@ -30,6 +30,23 @@
     3
   ],
   "chin_source_red_min_exclusive": 60,
+  "eyes": {
+    "top_pixels": [
+      [
+        10,
+        9
+      ],
+      [
+        13,
+        9
+      ]
+    ],
+    "height": 2,
+    "pupil_color": "#1a0e16",
+    "iris_color": "#356c9b",
+    "iris_name": "Blue",
+    "iris_offset_y": 1
+  },
   "bands": [
     {
       "source_y": [

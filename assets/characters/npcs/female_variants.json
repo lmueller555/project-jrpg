@@ -1,0 +1,103 @@
+{
+  "image": "female_variants.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "variants": [
+    {
+      "variant": 1,
+      "status": "draft",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_01/idle_front.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "height": 2,
+        "pupil_color": "#1a0e16",
+        "iris_color": "#356c9b",
+        "iris_name": "Blue",
+        "iris_offset_y": 1
+      }
+    },
+    {
+      "variant": 2,
+      "status": "draft",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_02/idle_front.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "height": 2,
+        "pupil_color": "#1a0e16",
+        "iris_color": "#3f784b",
+        "iris_name": "Green",
+        "iris_offset_y": 1
+      }
+    },
+    {
+      "variant": 3,
+      "status": "draft",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "metadata": "female_03/idle_front.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "height": 2,
+        "pupil_color": "#1a0e16",
+        "iris_color": "#98703a",
+        "iris_name": "Hazel",
+        "iris_offset_y": 1
+      }
+    }
+  ],
+  "review": {
+    "image": "female_variants_review.png",
+    "scale": 16,
+    "eyes": "female_eyes_review.png",
+    "eye_scale": 32
+  }
+}

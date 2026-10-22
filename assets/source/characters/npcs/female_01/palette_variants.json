@@ -1,0 +1,34 @@
+{
+  "source": "../../../../characters/npcs/female_01/idle_front.png",
+  "source_palette": "../../../../characters/npcs/female_01/palette.json",
+  "source_metadata": "../../../../characters/npcs/female_01/idle_front.json",
+  "material_regions": {
+    "hair": [0, 0, 24, 14],
+    "dress": [0, 14, 24, 15]
+  },
+  "base_label": "01: Dark hair / blue",
+  "variants": [
+    {
+      "character": "npc_female_02",
+      "variant": 2,
+      "label": "02: Auburn / sage",
+      "eye_name": "Green",
+      "iris_color": "#3f784b",
+      "materials": {
+        "hair": {"shadow": "#4b2928", "base": "#854b39", "light": "#b6754e"},
+        "dress": {"shadow": "#405b49", "base": "#6e9275", "light": "#a0b9a2"}
+      }
+    },
+    {
+      "character": "npc_female_03",
+      "variant": 3,
+      "label": "03: Blonde / plum",
+      "eye_name": "Hazel",
+      "iris_color": "#98703a",
+      "materials": {
+        "hair": {"shadow": "#88633b", "base": "#c79f5b", "light": "#ead197"},
+        "dress": {"shadow": "#51364f", "base": "#805477", "light": "#ad80a0"}
+      }
+    }
+  ]
+}
