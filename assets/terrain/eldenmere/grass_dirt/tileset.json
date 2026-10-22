@@ -1,0 +1,1434 @@
+{
+  "id": "eldenmere.grass_dirt.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "quarter_size": [
+    12,
+    12
+  ],
+  "image": "dirt_blob_47.png",
+  "columns": 8,
+  "count": 47,
+  "spacing": 0,
+  "margin": 0,
+  "neighbor_bits": {
+    "N": 1,
+    "NE": 2,
+    "E": 4,
+    "SE": 8,
+    "S": 16,
+    "SW": 32,
+    "W": 64,
+    "NW": 128
+  },
+  "neighbor_offsets": {
+    "N": [
+      0,
+      -1
+    ],
+    "NE": [
+      1,
+      -1
+    ],
+    "E": [
+      1,
+      0
+    ],
+    "SE": [
+      1,
+      1
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "SW": [
+      -1,
+      1
+    ],
+    "W": [
+      -1,
+      0
+    ],
+    "NW": [
+      -1,
+      -1
+    ]
+  },
+  "diagonal_rule": "Count a diagonal only when both adjoining cardinal neighbors connect",
+  "lookup_256": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    18,
+    19,
+    18,
+    19,
+    20,
+    21,
+    20,
+    22,
+    18,
+    19,
+    18,
+    19,
+    23,
+    24,
+    23,
+    25,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    26,
+    27,
+    26,
+    27,
+    28,
+    29,
+    28,
+    30,
+    26,
+    27,
+    26,
+    27,
+    31,
+    32,
+    31,
+    33,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    18,
+    37,
+    18,
+    37,
+    20,
+    38,
+    20,
+    39,
+    18,
+    37,
+    18,
+    37,
+    23,
+    40,
+    23,
+    41,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    26,
+    42,
+    26,
+    42,
+    28,
+    43,
+    28,
+    44,
+    26,
+    42,
+    26,
+    42,
+    31,
+    45,
+    31,
+    46
+  ],
+  "tiles": [
+    {
+      "index": 0,
+      "mask": 0,
+      "rect": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_000.png",
+      "neighbors": [],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 1,
+      "mask": 1,
+      "rect": [
+        24,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_001.png",
+      "neighbors": [
+        "N"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 2,
+      "mask": 4,
+      "rect": [
+        48,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_004.png",
+      "neighbors": [
+        "E"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 3,
+      "mask": 5,
+      "rect": [
+        72,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_005.png",
+      "neighbors": [
+        "N",
+        "E"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 4,
+      "mask": 7,
+      "rect": [
+        96,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_007.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 5,
+      "mask": 16,
+      "rect": [
+        120,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_016.png",
+      "neighbors": [
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 6,
+      "mask": 17,
+      "rect": [
+        144,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_017.png",
+      "neighbors": [
+        "N",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 7,
+      "mask": 20,
+      "rect": [
+        168,
+        0,
+        24,
+        24
+      ],
+      "image": "dirt/mask_020.png",
+      "neighbors": [
+        "E",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 8,
+      "mask": 21,
+      "rect": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_021.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 9,
+      "mask": 23,
+      "rect": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_023.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 10,
+      "mask": 28,
+      "rect": [
+        48,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_028.png",
+      "neighbors": [
+        "E",
+        "SE",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 11,
+      "mask": 29,
+      "rect": [
+        72,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_029.png",
+      "neighbors": [
+        "N",
+        "E",
+        "SE",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 12,
+      "mask": 31,
+      "rect": [
+        96,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_031.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 13,
+      "mask": 64,
+      "rect": [
+        120,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_064.png",
+      "neighbors": [
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 14,
+      "mask": 65,
+      "rect": [
+        144,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_065.png",
+      "neighbors": [
+        "N",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 15,
+      "mask": 68,
+      "rect": [
+        168,
+        24,
+        24,
+        24
+      ],
+      "image": "dirt/mask_068.png",
+      "neighbors": [
+        "E",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 16,
+      "mask": 69,
+      "rect": [
+        0,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_069.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 17,
+      "mask": 71,
+      "rect": [
+        24,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_071.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 18,
+      "mask": 80,
+      "rect": [
+        48,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_080.png",
+      "neighbors": [
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 19,
+      "mask": 81,
+      "rect": [
+        72,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_081.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 20,
+      "mask": 84,
+      "rect": [
+        96,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_084.png",
+      "neighbors": [
+        "E",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 21,
+      "mask": 85,
+      "rect": [
+        120,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_085.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 22,
+      "mask": 87,
+      "rect": [
+        144,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_087.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 23,
+      "mask": 92,
+      "rect": [
+        168,
+        48,
+        24,
+        24
+      ],
+      "image": "dirt/mask_092.png",
+      "neighbors": [
+        "E",
+        "SE",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 24,
+      "mask": 93,
+      "rect": [
+        0,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_093.png",
+      "neighbors": [
+        "N",
+        "E",
+        "SE",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 25,
+      "mask": 95,
+      "rect": [
+        24,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_095.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 26,
+      "mask": 112,
+      "rect": [
+        48,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_112.png",
+      "neighbors": [
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_outer.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 27,
+      "mask": 113,
+      "rect": [
+        72,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_113.png",
+      "neighbors": [
+        "N",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 28,
+      "mask": 116,
+      "rect": [
+        96,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_116.png",
+      "neighbors": [
+        "E",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 29,
+      "mask": 117,
+      "rect": [
+        120,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_117.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 30,
+      "mask": 119,
+      "rect": [
+        144,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_119.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 31,
+      "mask": 124,
+      "rect": [
+        168,
+        72,
+        24,
+        24
+      ],
+      "image": "dirt/mask_124.png",
+      "neighbors": [
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 32,
+      "mask": 125,
+      "rect": [
+        0,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_125.png",
+      "neighbors": [
+        "N",
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 33,
+      "mask": 127,
+      "rect": [
+        24,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_127.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 34,
+      "mask": 193,
+      "rect": [
+        48,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_193.png",
+      "neighbors": [
+        "N",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_outer.png"
+      ]
+    },
+    {
+      "index": 35,
+      "mask": 197,
+      "rect": [
+        72,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_197.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 36,
+      "mask": 199,
+      "rect": [
+        96,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_199.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_edge_y.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_y.png"
+      ]
+    },
+    {
+      "index": 37,
+      "mask": 209,
+      "rect": [
+        120,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_209.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 38,
+      "mask": 213,
+      "rect": [
+        144,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_213.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 39,
+      "mask": 215,
+      "rect": [
+        168,
+        96,
+        24,
+        24
+      ],
+      "image": "dirt/mask_215.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "S",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 40,
+      "mask": 221,
+      "rect": [
+        0,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_221.png",
+      "neighbors": [
+        "N",
+        "E",
+        "SE",
+        "S",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 41,
+      "mask": 223,
+      "rect": [
+        24,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_223.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 42,
+      "mask": 241,
+      "rect": [
+        48,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_241.png",
+      "neighbors": [
+        "N",
+        "S",
+        "SW",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_edge_x.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_edge_x.png"
+      ]
+    },
+    {
+      "index": 43,
+      "mask": 245,
+      "rect": [
+        72,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_245.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "SW",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 44,
+      "mask": 247,
+      "rect": [
+        96,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_247.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "S",
+        "SW",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_inner.png"
+      ]
+    },
+    {
+      "index": 45,
+      "mask": 253,
+      "rect": [
+        120,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_253.png",
+      "neighbors": [
+        "N",
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_inner.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    },
+    {
+      "index": 46,
+      "mask": 255,
+      "rect": [
+        144,
+        120,
+        24,
+        24
+      ],
+      "image": "dirt/mask_255.png",
+      "neighbors": [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W",
+        "NW"
+      ],
+      "quarters": [
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/nw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/ne_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/sw_full.png",
+        "../../../source/terrain/eldenmere/grass_dirt/quarters/se_full.png"
+      ]
+    }
+  ],
+  "grass": {
+    "image": "grass.png",
+    "count": 4,
+    "images": [
+      "grass_00.png",
+      "grass_01.png",
+      "grass_02.png",
+      "grass_03.png"
+    ]
+  },
+  "dirt_interiors": {
+    "image": "dirt_fill.png",
+    "count": 3,
+    "mask": 255,
+    "images": [
+      "dirt_fill_00.png",
+      "dirt_fill_01.png",
+      "dirt_fill_02.png"
+    ]
+  },
+  "layer_order": [
+    "grass",
+    "dirt_overlay",
+    "characters_or_props"
+  ],
+  "palette": "palette.json",
+  "recipe": "../../../source/terrain/eldenmere/grass_dirt/recipe.json",
+  "review": {
+    "atlas": "blob_47_review.png",
+    "materials": "materials_review.png",
+    "scene": "review_scene.png"
+  }
+}
