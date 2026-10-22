@@ -9,10 +9,14 @@ Gray hair, a slate shirt, brown trousers and brown boots. This is an exact palet
 - `idle_front.json`: frame, shared `[12, 34]` anchor, source, recipe and review status.
 - `palette.json`: material overrides, regions and shade aliases.
 
-Compare all three in `../male_variants_review.png`. Rebuild with `python tools/build_npc_palette_variants.py` from the repository root. Walking frames are the next planned assets.
+Compare all three in `../male_variants_review.png`. Rebuild with `python tools/build_npc_palette_variants.py` from the repository root. The front walk is available for animation review below.
 
 ## Approved directional idles
 
 New `idle_left.png`, `idle_right.png` and `idle_back.png` frames apply this palette to the corresponding base views, preserving their exact silhouettes. Each has matching JSON metadata and a 24× `_review.png` preview. All directional appearances are approved.
 
 `idle_directions.png` is the native 96×36 strip ordered front, left, right, back; `idle_directions.json` records rectangles and frame statuses. `idle_directions_review.png` shows all four at 12× scale. Compare every variant in `../male_idle_directions_review.png`. Rebuild all directions with `python tools/build_npc_palette_variants.py --direction all`.
+
+## Front walk for review
+
+The [four-frame front walk](walk_front/README.md) applies this approved palette to the approved base cycle. Its stride and coordinated head-and-shoulder bob match the base exactly. Review all three palettes together in `../male_walk_front_variants_review.gif`. The new walking animation awaits approval.

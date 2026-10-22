@@ -30,3 +30,5 @@ The new appearance sources and export settings are under `../../../source/charac
 ## Approved front walk
 
 The [four-frame front walk](walk_front/README.md) is approved and built with the shared pose template. It retains the approved head and belt, recolors the shared leg poses to tan trousers and brown boots, and raises the head and shoulders together on passing frames. See `walk_front/walk_front_preview.gif` for the enlarged looping preview.
+
+The other two male front-walk palettes await animation review. Compare all three in `../male_walk_front_variants_review.gif`; the original base walk remains approved and unchanged.
