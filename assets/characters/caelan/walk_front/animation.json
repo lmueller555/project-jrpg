@@ -1,17 +1,17 @@
 {
   "character": "caelan",
   "animation": "walk.front",
-  "status": "pending_head_bob_review",
+  "status": "pending_upper_body_bob_review",
   "design_status": "approved",
   "image": "spritesheet.png",
   "frame_size": [24, 36],
   "foot_anchor": [12, 34],
   "loop": true,
   "frames": [
-    {"file": "frame_01.png", "rect": [0, 0, 24, 36], "duration_ms": 140, "phase": "screen_left_contact", "head_offset": [0, 0]},
-    {"file": "frame_02.png", "rect": [24, 0, 24, 36], "duration_ms": 140, "phase": "screen_left_support_passing", "head_offset": [0, -1]},
-    {"file": "frame_03.png", "rect": [48, 0, 24, 36], "duration_ms": 140, "phase": "screen_right_contact", "head_offset": [0, 0]},
-    {"file": "frame_04.png", "rect": [72, 0, 24, 36], "duration_ms": 140, "phase": "screen_right_support_passing", "head_offset": [0, -1]}
+    {"file": "frame_01.png", "rect": [0, 0, 24, 36], "duration_ms": 140, "phase": "screen_left_contact", "head_offset": [0, 0], "upper_body_offset": [0, 0]},
+    {"file": "frame_02.png", "rect": [24, 0, 24, 36], "duration_ms": 140, "phase": "screen_left_support_passing", "head_offset": [0, -1], "upper_body_offset": [0, -1]},
+    {"file": "frame_03.png", "rect": [48, 0, 24, 36], "duration_ms": 140, "phase": "screen_right_contact", "head_offset": [0, 0], "upper_body_offset": [0, 0]},
+    {"file": "frame_04.png", "rect": [72, 0, 24, 36], "duration_ms": 140, "phase": "screen_right_support_passing", "head_offset": [0, -1], "upper_body_offset": [0, -1]}
   ],
   "review": {
     "gif": "walk_front_preview.gif",
