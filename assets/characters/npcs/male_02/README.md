@@ -1,6 +1,6 @@
 # Town NPC — male variant 02
 
-Status: all four directional idles and this palette are approved by the user in chat.
+Status: this palette, all four directional idles and all four walking cycles are approved by the user in chat.
 
 Black hair, a rust shirt, charcoal trousers and brown boots. This is an exact palette variant of the approved `../male_01/idle_front.png`: the silhouette, pose, skin, eyes and transparency are preserved. Material regions keep hair recoloring separate from brown leather and clothing accents.
 
@@ -21,9 +21,9 @@ New `idle_left.png`, `idle_right.png` and `idle_back.png` frames apply this pale
 
 The [four-frame front walk](walk_front/README.md) applies this approved palette to the approved base cycle. Its stride and coordinated head-and-shoulder bob match the base exactly. Review all three palettes together in `../male_walk_front_variants_review.gif`. This front-walking animation is approved.
 
-## Other walking directions for review
+## Approved walking directions
 
-The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles apply this approved palette to the approved base male walks. These three new animations await review; the front walk remains approved.
+The [left](walk_left/README.md), [right](walk_right/README.md) and [back](walk_back/README.md) cycles apply this approved palette to the approved base male walks. All four walking animations are approved.
 
 `walk_directions.png` is the native 96×144 sheet, with front, left, right and back rows and four phases per row. `walk_directions.json` records frame rectangles and per-direction approval status. `walk_directions_review.gif` shows this NPC's four directions together at 12× scale; `_review.png` is its first phase.
 

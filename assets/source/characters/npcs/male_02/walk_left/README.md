@@ -1,6 +1,6 @@
 # Male NPC 02 — left-walk parts
 
-Status: draft animation awaiting user review.
+Status: walking animation approved by the user in chat.
 
 The approved directional palette idle supplies the head, face where visible and clothing appearance. These parts are assembled against the approved base male left recipe and retained shared pose masks. They preserve the exact arm/leg silhouettes, timing and coordinated head-and-shoulder bob while applying the existing shirt and trouser colors. Skin, belt and boots are preserved.
 

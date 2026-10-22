@@ -189,7 +189,7 @@
     {
       "direction": "left",
       "variant": 2,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_02/walk_left/animation.json",
       "frames": [
         {
@@ -233,7 +233,7 @@
     {
       "direction": "left",
       "variant": 3,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_03/walk_left/animation.json",
       "frames": [
         {
@@ -321,7 +321,7 @@
     {
       "direction": "right",
       "variant": 2,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_02/walk_right/animation.json",
       "frames": [
         {
@@ -365,7 +365,7 @@
     {
       "direction": "right",
       "variant": 3,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_03/walk_right/animation.json",
       "frames": [
         {
@@ -453,7 +453,7 @@
     {
       "direction": "back",
       "variant": 2,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_02/walk_back/animation.json",
       "frames": [
         {
@@ -497,7 +497,7 @@
     {
       "direction": "back",
       "variant": 3,
-      "status": "draft",
+      "status": "approved",
       "animation": "male_03/walk_back/animation.json",
       "frames": [
         {
