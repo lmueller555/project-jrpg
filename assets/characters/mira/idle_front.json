@@ -1,0 +1,18 @@
+{
+  "character": "mira",
+  "animation": "idle.front",
+  "design_status": "approved",
+  "status": "draft",
+  "image": "idle_front.png",
+  "frame_size": [24, 36],
+  "rect": [0, 0, 24, 36],
+  "foot_anchor": [12, 34],
+  "template": "../../templates/humanoid_24x36/idle_front.json",
+  "layers": [
+    "../../source/characters/mira/layers/head.png",
+    "../../source/characters/mira/layers/upper_body.png",
+    "../../source/characters/mira/layers/legs.png"
+  ],
+  "flower": {"side": "anatomical_left", "center": [17, 6], "petals": "#fff6dc", "center_color": "#d3963f"},
+  "review": {"image": "idle_front_review.png", "scale": 24, "background": "#e8edf2"}
+}
