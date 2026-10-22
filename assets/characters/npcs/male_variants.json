@@ -1,0 +1,50 @@
+{
+  "image": "male_variants.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "variants": [
+    {
+      "variant": 1,
+      "status": "approved",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "image": "male_01/idle_front.png"
+    },
+    {
+      "variant": 2,
+      "status": "draft",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "image": "male_02/idle_front.png"
+    },
+    {
+      "variant": 3,
+      "status": "draft",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "image": "male_03/idle_front.png"
+    }
+  ],
+  "review": {
+    "image": "male_variants_review.png",
+    "scale": 16
+  }
+}

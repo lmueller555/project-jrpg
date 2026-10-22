@@ -30,6 +30,7 @@ def rgb(value):
 
 def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    status = json.loads((OUTPUT / "idle_front.json").read_text())["status"]
     concept = Image.open(SOURCE / "idle_front_concept.png").convert("RGBA")
     alpha = concept.getchannel("A").point(lambda a: 255 if a >= 128 else 0)
     bounds = alpha.getbbox()
@@ -55,7 +56,7 @@ def main():
     draw = ImageDraw.Draw(comparison)
     for index, (label, path) in enumerate((
         ("Caelan", ASSETS / "characters/caelan/idle_front.png"),
-        ("Male NPC 01 (draft)", OUTPUT / "idle_front.png"),
+        (f"Male NPC 01 ({status})", OUTPUT / "idle_front.png"),
         ("Mira", ASSETS / "characters/mira/idle_front.png"),
     )):
         sprite = Image.open(path).convert("RGBA").resize((384, 576), Image.Resampling.NEAREST)
@@ -64,7 +65,7 @@ def main():
         draw.text((index*320+36, 596), label, fill="#1a0e16", font_size=20)
     comparison.save(OUTPUT / "scale_comparison.png")
 
-    palette = {"status": "draft", "materials": PALETTE}
+    palette = {"status": status, "materials": PALETTE}
     (OUTPUT / "palette.json").write_text(json.dumps(palette, indent=2) + "\n")
     recipe = {"source": "idle_front_concept.png", "alpha_threshold": 128,
               "source_bounds": bounds, "occupied_rect": [5, 1, 14, 34],

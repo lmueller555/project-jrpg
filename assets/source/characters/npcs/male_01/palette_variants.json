@@ -1,0 +1,35 @@
+{
+  "source": "../../../../characters/npcs/male_01/idle_front.png",
+  "source_palette": "../../../../characters/npcs/male_01/palette.json",
+  "material_regions": {
+    "hair": [0, 0, 24, 13],
+    "shirt": [0, 14, 24, 9],
+    "trousers": [0, 23, 24, 7]
+  },
+  "shade_aliases": {
+    "hair": {"shadow": ["#573422"], "base": ["#84512e"], "light": ["#b77740", "#c48b3e"]},
+    "trousers": {"shadow": ["#71452c"]}
+  },
+  "variants": [
+    {
+      "character": "npc_male_02",
+      "variant": 2,
+      "label": "Black hair / rust / charcoal",
+      "materials": {
+        "hair": {"shadow": "#242027", "base": "#38343d", "light": "#55515b"},
+        "shirt": {"shadow": "#713d32", "base": "#a65b45", "light": "#cd8260"},
+        "trousers": {"shadow": "#35343b", "base": "#4b4952", "light": "#68646e"}
+      }
+    },
+    {
+      "character": "npc_male_03",
+      "variant": 3,
+      "label": "Gray hair / slate / brown",
+      "materials": {
+        "hair": {"shadow": "#666168", "base": "#979199", "light": "#c5bfc5"},
+        "shirt": {"shadow": "#394955", "base": "#596e7d", "light": "#8197a5"},
+        "trousers": {"shadow": "#594334", "base": "#7e6049", "light": "#a58565"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "character": "npc_male_02",
+  "animation": "idle.front",
+  "variant": 2,
+  "design_status": "draft",
+  "status": "draft",
+  "image": "idle_front.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "source": "../male_01/idle_front.png",
+  "recipe": "../../../source/characters/npcs/male_01/palette_variants.json",
+  "review": {
+    "image": "idle_front_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  }
+}

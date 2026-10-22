@@ -1,0 +1,61 @@
+{
+  "status": "draft",
+  "source_palette": "../male_01/palette.json",
+  "material_overrides": {
+    "hair": {
+      "shadow": "#666168",
+      "base": "#979199",
+      "light": "#c5bfc5"
+    },
+    "shirt": {
+      "shadow": "#394955",
+      "base": "#596e7d",
+      "light": "#8197a5"
+    },
+    "trousers": {
+      "shadow": "#594334",
+      "base": "#7e6049",
+      "light": "#a58565"
+    }
+  },
+  "regions": {
+    "hair": [
+      0,
+      0,
+      24,
+      13
+    ],
+    "shirt": [
+      0,
+      14,
+      24,
+      9
+    ],
+    "trousers": [
+      0,
+      23,
+      24,
+      7
+    ]
+  },
+  "shade_aliases": {
+    "hair": {
+      "shadow": [
+        "#573422"
+      ],
+      "base": [
+        "#84512e"
+      ],
+      "light": [
+        "#b77740",
+        "#c48b3e"
+      ]
+    },
+    "trousers": {
+      "shadow": [
+        "#71452c"
+      ]
+    }
+  },
+  "other_pixels": "unchanged from approved male_01"
+}
