@@ -23,3 +23,5 @@ The approved [front-facing walk cycle](assets/characters/caelan/walk_front/READM
 Matching [left](assets/characters/caelan/walk_left/README.md), [right](assets/characters/caelan/walk_right/README.md), and [back](assets/characters/caelan/walk_back/README.md) walking cycles are approved. The [combined looping preview](assets/characters/caelan/walk_directions_review.gif) shows all four approved directions together.
 
 [Mira's design](assets/characters/mira/README.md) is approved: dark brown ponytail, cream flower, pink working shirt, charcoal trousers, boots, and tool pouch. Her front idle sprite is available for review at the same 24×36 scale, with shared pose components and editable assembly layers.
+
+Her [front walking animation](assets/characters/mira/walk_front/README.md) is available for review. It is assembled from character-specific parts and the shared Caelan pose template using the [repeatable asset builder](tools/README.md).

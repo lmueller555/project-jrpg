@@ -1,0 +1,23 @@
+{
+  "character": "mira",
+  "idle": "../idle_front.png",
+  "template": "../../../templates/humanoid_24x36/walk_front/poses.json",
+  "parts_directory": "../../../source/characters/mira/walk_front/parts",
+  "palette": {
+    "outline": "#1a0e16",
+    "fabric_base": "#cc7894",
+    "fabric_light": "#e8a0b2",
+    "fabric_shadow": "#9b4f68",
+    "skin_base": "#e8c49d",
+    "skin_shadow": "#e99f55",
+    "trousers": "#3d3941",
+    "leather": "#573422"
+  },
+  "head_rect": [0, 0, 24, 14],
+  "shirt_rect": [8, 14, 8, 7],
+  "neckline_rect": [10, 14, 4, 3],
+  "waist_rect": [8, 21, 8, 5],
+  "pouch_rect": [14, 21, 3, 4],
+  "shared_leg_costume": true,
+  "approval_status": "draft"
+}
