@@ -1,0 +1,141 @@
+{
+  "character": "npc_female_01",
+  "animation": "walk.back",
+  "status": "draft",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "phase": "contact_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "hem_row": 28,
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_legs.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_skirt.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_bodice.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_left_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_right_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_01_head.png"
+      ],
+      "leg_split_x": 12
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "phase": "passing_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "hem_row": 27,
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_legs.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_skirt.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_bodice.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_left_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_right_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_02_head.png"
+      ],
+      "leg_split_x": 13
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "phase": "contact_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "hem_row": 28,
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_legs.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_skirt.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_bodice.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_left_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_right_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_03_head.png"
+      ],
+      "leg_split_x": 12
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "phase": "passing_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "hem_row": 27,
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_legs.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_skirt.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_bodice.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_left_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_right_arm.png",
+        "assets/source/characters/npcs/female_01/walk_back/parts/frame_04_head.png"
+      ],
+      "leg_split_x": 12
+    }
+  ],
+  "template": "../../../../templates/humanoid_24x36/walk_back/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "review": {
+    "gif": "walk_back_preview.gif",
+    "scale": 20,
+    "background": "#e8edf2"
+  }
+}

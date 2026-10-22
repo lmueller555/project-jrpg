@@ -1,9 +1,11 @@
-"""Assemble the female NPC front walk with shared strides and dress poses."""
+"""Assemble female NPC walks with shared strides and directional dress poses."""
+
+import argparse
 
 from PIL import Image
 
 from build_character_walk import (
-    ROOT, blank, character_parts, isolated, materialize, on_background,
+    ROOT, blank, build_direction_board, character_parts, isolated, materialize, on_background,
     read_json, rgba, shifted, write_json,
 )
 
@@ -30,7 +32,7 @@ def legs_pose(reference, pose, materials):
     output = blank(reference.size)
     outlines = {rgba(c) for c in ("#1a0e16", "#1a0e17", "#2b1715")}
     source_shadows = {rgba("#573422")}
-    known_colors = outlines | source_shadows | {rgba("#645450"), rgba("#8b5531")}
+    known_colors = outlines | source_shadows | {rgba("#645450"), rgba("#8b5531"), rgba("#b67644")}
     for y in range(26, 35):
         for x in range(24):
             pixel = reference.getpixel((x, y))
@@ -38,19 +40,20 @@ def legs_pose(reference, pose, materials):
                 continue
             if pixel not in known_colors:
                 raise ValueError(f"Unclassified shared leg pixel: {pixel}")
-            side = "left" if x < 12 else "right"
+            side = "left" if x < pose.get("leg_split_x", 12) else "right"
             if pixel in outlines:
                 color = materials["outline"]["base"]
             elif y >= pose["boot_top_rows"][side]:
-                color = materials["leather"]["shadow" if pixel in source_shadows else "base"]
+                shade = "shadow" if pixel in source_shadows else "light" if pixel == rgba("#b67644") else "base"
+                color = materials["leather"][shade]
             else:
                 color = materials["skin"]["shadow" if pixel in source_shadows else "base"]
             output.putpixel((x, y), rgba(color))
     return output
 
 
-def build():
-    recipe_path = ROOT / "assets/characters/npcs/female_01/walk_front/recipe.json"
+def build(direction="front"):
+    recipe_path = ROOT / f"assets/characters/npcs/female_01/walk_{direction}/recipe.json"
     recipe = read_json(recipe_path)
     output_dir = recipe_path.parent
     template_path = (output_dir / recipe["template"]).resolve()
@@ -80,7 +83,19 @@ def build():
         layers = {"legs": legs, "skirt": skirt, "bodice": bodice}
         for side in ("left", "right"):
             mask = Image.open(directory / f"{side}_arm_mask.png").convert("RGBA")
+            if "arm_neck_exclusion" in recipe:
+                # Shared profile masks also contain Caelan's longer neck.
+                # The dress costume supplies its own approved neckline.
+                x0, y0, width, height = recipe["arm_neck_exclusion"]
+                skin_codes = {rgba(template["semantic_colors"][key])
+                              for key in ("skin_base", "skin_shadow")}
+                for y in range(y0, y0+height):
+                    for x in range(x0, x0+width):
+                        if mask.getpixel((x, y)) in skin_codes:
+                            mask.putpixel((x, y), (0, 0, 0, 0))
             layers[f"{side}_arm"] = materialize(mask, template, recipe["palette"])
+        if "arm_neck_exclusion" in recipe:
+            layers["neckline"] = shifted(isolated(parts["shirt"], recipe["neckline_rect"]), dy)
         layers["head"] = shifted(parts["head"], dy)
         image = blank(idle.size)
         layer_files = []
@@ -103,6 +118,8 @@ def build():
             "upper_body_offset": phase["upper_body_offset"], "hem_row": 20+len(pose["skirt_rows"]),
             "boot_top_rows": pose["boot_top_rows"], "layers_from_repo_root": layer_files,
         })
+        if "leg_split_x" in pose:
+            records[-1]["leg_split_x"] = pose["leg_split_x"]
     sheet = blank((96, 36))
     for index, image in enumerate(frames):
         sheet.paste(image, (index*24, 0))
@@ -110,20 +127,28 @@ def build():
     on_background(sheet, 12).save(output_dir / "frames_review.png")
     previews = [on_background(image, 20) for image in frames]
     durations = [phase["duration_ms"] for phase in template["frames"]]
-    for name, images in (("walk_front_preview.gif", previews),
+    preview_name = f"walk_{direction}_preview.gif"
+    for name, images in ((preview_name, previews),
                          ("shared_motion_comparison.gif", comparisons)):
         images[0].save(output_dir / name, save_all=True, append_images=images[1:],
                        duration=durations, loop=0, disposal=2, optimize=False)
     write_json(output_dir / "animation.json", {
-        "character": recipe["character"], "animation": "walk.front",
+        "character": recipe["character"], "animation": f"walk.{direction}",
         "status": recipe["approval_status"], "image": "spritesheet.png", "frame_size": [24, 36],
         "foot_anchor": template["foot_anchor"], "loop": True, "frames": records,
         "template": recipe["template"], "recipe": recipe_path.name,
         "offsets_baked_into_pixels": True,
-        "review": {"gif": "walk_front_preview.gif", "scale": 20, "background": "#e8edf2"},
+        "review": {"gif": preview_name, "scale": 20, "background": "#e8edf2"},
     })
-    print("Built female NPC 01: four shared-stride frames with dress-specific skirt and boots")
+    print(f"Built female NPC 01 {direction}: four shared-stride frames with dress-specific skirt and boots")
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--direction", choices=("front", "left", "right", "back", "all"), default="front")
+    args = parser.parse_args()
+    directions = ("front", "left", "right", "back") if args.direction == "all" else (args.direction,)
+    for direction in directions:
+        build(direction)
+    if args.direction == "all":
+        build_direction_board("npcs/female_01")
