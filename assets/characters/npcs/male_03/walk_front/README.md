@@ -1,6 +1,6 @@
 # Male NPC 03 — front walk
 
-Status: draft awaiting user review. This NPC's directional idle designs and palette remain approved.
+Status: approved by the user in chat. This NPC's directional idle designs and palette remain approved.
 
 Gray hair, slate shirt, brown trousers and brown boots. These four 24×36 frames apply the approved palette to the approved base male front-walk recipe. The shared stride, frame timing, silhouette and coordinated head-and-shoulder bob are identical. The approved palette idle supplies the head and waist; the belt, skin and boots retain their original colors.
 

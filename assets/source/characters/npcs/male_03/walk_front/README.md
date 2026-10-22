@@ -1,6 +1,6 @@
 # Male NPC 03 — front-walk parts
 
-Status: draft walking animation awaiting user review.
+Status: front-walking animation approved by the user in chat.
 
 The approved palette idle supplies the head, face and waist. The shared builder creates the posed arms and brown-trouser/brown-boot legs with the approved base male walk's geometry. Parts and all four frames retain the same bob offsets and timing.
 
