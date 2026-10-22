@@ -27,3 +27,5 @@ Matching [left](assets/characters/caelan/walk_left/README.md), [right](assets/ch
 Her [front walking animation](assets/characters/mira/walk_front/README.md) is approved. It is assembled from character-specific parts and the shared Caelan pose template using the [repeatable asset builder](tools/README.md).
 
 Her [left](assets/characters/mira/walk_left/README.md), [right](assets/characters/mira/walk_right/README.md) and [back](assets/characters/mira/walk_back/README.md) walks and new facing appearances are approved. The [combined looping preview](assets/characters/mira/walk_directions_review.gif) shows all four directions together.
+
+The first [generic male NPC](assets/characters/npcs/male_01/README.md) front idle is a draft awaiting review: brown hair, a moss-green shirt, tan trousers and brown boots. It starts the planned set of two NPC base designs with three palette variants each.
