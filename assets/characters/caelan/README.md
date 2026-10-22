@@ -1,6 +1,6 @@
 # Caelan — directional idle sprites
 
-All four directional idle designs and the [four-frame front walk cycle](walk_front/README.md), including its coordinated head-and-shoulder bob, were explicitly approved by the user in chat. The original idle pixels and front walk remain unchanged. Matching [left](walk_left/README.md), [right](walk_right/README.md), and [back](walk_back/README.md) walk cycles are drafts awaiting review.
+All four directional idle designs and the four-frame walking cycles for [front](walk_front/README.md), [left](walk_left/README.md), [right](walk_right/README.md), and [back](walk_back/README.md), including their coordinated head-and-shoulder bob, were explicitly approved by the user in chat.
 
 ## Files
 
@@ -10,7 +10,7 @@ All four directional idle designs and the [four-frame front walk cycle](walk_fro
 - `idle_directions.json`: frame rectangles, foot anchors, and approval status; a standalone asset description, not an engine integration.
 - `idle_directions_review.png`: labeled 12× enlargement on a light background for review, not a runtime texture.
 - `idle_front_preview.png` and `idle_front_review.png`: earlier enlarged front views.
-- `walk_directions.png`: native 96×144 walking sheet, with front, left, right, and back rows; each row contains four 24×36 frames. The front row is approved; the others are drafts.
+- `walk_directions.png`: approved native 96×144 walking sheet, with front, left, right, and back rows; each row contains four 24×36 frames.
 - `walk_directions.json`: row/frame rectangles, approval status, and links to each direction's animation metadata.
 - `walk_directions_review.gif`: labeled 12× comparison loop, ordered front, left, right, back; `walk_directions_review.png` is its first frame for static inspection.
 
