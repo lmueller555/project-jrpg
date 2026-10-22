@@ -1,6 +1,6 @@
 # Eldenmere — first terrain source
 
-Status: draft for user review.
+Status: approved by the user in chat.
 
 `materials_concept.png` is the generated material reference: quiet/denser grass in the top half, compacted stony earth at bottom left, and a grass/dirt fringe reference at bottom right. The approved Caelan and blue female NPC previews supplied character style and scale references only. Those character assets remain unchanged.
 

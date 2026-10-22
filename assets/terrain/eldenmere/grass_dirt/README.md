@@ -1,8 +1,8 @@
 # Eldenmere — grass and dirt terrain
 
-Status: draft for user review. Native tiles are 24×24; characters in the review remain 24×36.
+Status: approved by the user in chat. Native tiles are 24×24; characters in the review remain 24×36.
 
-The first terrain pack proposes a quiet, fresh-green upland-village palette with cooler grass shadows and warm compacted stony earth. It follows the approved opening's watermill, bridge, irrigation and eastern terrace context, and the discussed regional mountain direction. Precise geography, season and town layout remain separate story decisions. This is a grass/dirt foundation; water, terrace stone, buildings and other props follow after art review.
+The first terrain pack establishes an approved quiet, fresh-green upland-village palette with cooler grass shadows and warm compacted stony earth. It follows the approved opening's watermill, bridge, irrigation and eastern terrace context, and the discussed regional mountain direction. Precise geography, season and town layout remain separate story decisions. This is a grass/dirt foundation; water, terrace stone, buildings and other props are future work.
 
 ## Contents and review
 
