@@ -14,4 +14,4 @@ Dedicated blue-dress poses keep a fixed waist, a one-pixel lower-skirt sway on c
 - `shared_motion_comparison.gif`: synchronized 12× Caelan/NPC comparison.
 - `recipe.json`: approved idle/palette references, shared template and authored costume poses.
 
-Rebuild from the repository root with `python tools/build_dress_walk.py --direction back`. Use `--direction all` to rebuild all base directions and `../walk_directions_review.gif`. All four blue base directions are approved; palette walk variants are the next planned work.
+Rebuild from the repository root with `python tools/build_dress_walk.py --direction back`. Use `--direction all` to rebuild all base directions and `../walk_directions_review.gif`. All four blue base directions and all eight sage/plum palette walk cycles are approved.

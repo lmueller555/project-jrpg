@@ -13,7 +13,7 @@ Both eyes retain a dark upper pupil pixel and have one colored iris pixel beneat
 
 Review all three in `../female_variants_review.png`, with eye close-ups in `../female_eyes_review.png`. Source appearance layers are retained under `../../../source/characters/npcs/female_03/layers/`. Rebuild these variants and the comparison with `python tools/build_female_npc_palette_variants.py`.
 
-The front palette is approved. Left, right and back idles are approved; all four walking cycles are drafts for review.
+The front palette is approved. Left, right and back idles are approved; all four walking cycles are approved.
 
 ## Approved directional idles
 
@@ -21,10 +21,10 @@ The front palette is approved. Left, right and back idles are approved; all four
 
 `idle_directions.png` and its JSON combine front, left, right and back. `idle_directions_review.png` enlarges them 12×; `../female_idle_directions_review.png` compares all three palettes. All four directions are approved by the user in chat. Source appearance layers are retained under `../../../source/characters/npcs/female_03/directions/layers/`. Rebuild using the base directional exporter followed by `python tools/build_female_npc_palette_variants.py --direction all`.
 
-## Walking palette drafts
+## Approved walking palettes
 
 The front, left, right and back walks use blonde hair, a plum dress and hazel iris accents. They are exact color variants of the approved blue base cycles: stride, arm swing, coordinated bob, neck height, skirt sway, hem lift, boots and 140 ms timing are unchanged. Fronts show two iris accents, profiles one, and backs none.
 
-`walk_directions_review.gif` shows this palette's four directions. `../female_walk_all_variants_review.gif` compares all three palettes with directions as rows and palettes as columns. Each `walk_<direction>/` contains four native frames, a sheet, metadata, a recipe, a static strip and a 20× looping preview. All eight new palette cycles await user approval; existing idle and palette approvals are unchanged.
+`walk_directions_review.gif` shows this palette's four directions. `../female_walk_all_variants_review.gif` compares all three palettes with directions as rows and palettes as columns. Each `walk_<direction>/` contains four native frames, a sheet, metadata, a recipe, a static strip and a 20× looping preview. All eight sage and plum palette cycles are approved by the user in chat; all twelve female NPC walking cycles are now approved.
 
 Rebuild with `python tools/build_female_npc_walk_variants.py --direction all`.

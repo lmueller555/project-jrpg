@@ -1,6 +1,6 @@
 # Female NPC 02 — front-walk palette parts
 
-Status: draft for user review.
+Status: approved by the user in chat.
 
 `parts/` retains exact recolors of the approved blue base's head/bodice appearances and all posed compositing layers. The frame metadata gives their order and paths from the repository root. Recomposition matches each native frame exactly.
 

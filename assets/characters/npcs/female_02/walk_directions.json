@@ -12,7 +12,7 @@
   "directions": [
     {
       "direction": "front",
-      "status": "draft",
+      "status": "approved",
       "animation": "walk_front/animation.json",
       "frames": [
         {
@@ -55,7 +55,7 @@
     },
     {
       "direction": "left",
-      "status": "draft",
+      "status": "approved",
       "animation": "walk_left/animation.json",
       "frames": [
         {
@@ -98,7 +98,7 @@
     },
     {
       "direction": "right",
-      "status": "draft",
+      "status": "approved",
       "animation": "walk_right/animation.json",
       "frames": [
         {
@@ -141,7 +141,7 @@
     },
     {
       "direction": "back",
-      "status": "draft",
+      "status": "approved",
       "animation": "walk_back/animation.json",
       "frames": [
         {

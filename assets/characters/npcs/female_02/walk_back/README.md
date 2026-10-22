@@ -1,6 +1,6 @@
 # Female NPC 02 — back walk
 
-Status: draft for user review. The palette and directional idle designs are approved.
+Status: approved by the user in chat. The palette and directional idle designs are approved.
 
 Four native 24×36 frames apply auburn hair, a sage dress and green eyes to the approved blue base's back cycle. Exact named-color replacements preserve every pixel position, alpha, shading role, stride, arm swing, coordinated head/neck/shoulder bob and skirt pose. Skin, outlines and brown ankle boots remain identical. Fronts retain two colored irises, profiles one; back views have none.
 
@@ -8,7 +8,7 @@ Playback follows the base at 140 ms per frame, with a 560 ms loop and foot ancho
 
 - `frame_01.png`–`frame_04.png`: native transparent frames.
 - `spritesheet.png`: native 96×36 playback strip.
-- `animation.json`: phases, timing, anchor, eye landmarks, layers and draft status.
+- `animation.json`: phases, timing, anchor, eye landmarks, layers and approval status.
 - `recipe.json`: base recipe, material map, palette source and rebuild tool.
 - `frames_review.png`: all four poses at 12× nearest-neighbor scale.
 - `walk_back_preview.gif`: 20× looping preview on a light background.
