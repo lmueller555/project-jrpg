@@ -18,7 +18,7 @@ Status: all four directional idles and this palette approved by the user in chat
 
 The source also retains four appearance layers: head, bodice/arms, skirt/hands, and calves/boots. They reconstruct the native idle and are not yet articulated walking components. The dress hem is at row 28, with visible calves at rows 29–31 and ankle boots at rows 32–34.
 
-The generated appearance source and repeatable export are retained under `../../../source/characters/npcs/female_01/`. All three front-facing palettes are approved. Left, right and back idles are approved; walking animations remain planned. The dress will need dedicated skirt poses when walking is prepared.
+The generated appearance source and repeatable export are retained under `../../../source/characters/npcs/female_01/`. All three front-facing palettes are approved. Left, right and back idles are approved; the front walk is a draft for review, and other walking directions remain planned. The dress will need dedicated skirt poses when walking is prepared.
 
 Compare all three front palettes in `../female_variants_review.png`: dark hair/blue dress/blue eyes, auburn hair/sage dress/green eyes, and blonde hair/plum dress/hazel eyes. The close-up `../female_eyes_review.png` shows both pupils and iris accents at 32× scale. The base design is unchanged apart from the two requested colored iris pixels.
 
@@ -27,3 +27,5 @@ Compare all three front palettes in `../female_variants_review.png`: dark hair/b
 `idle_left.png`, `idle_right.png` and `idle_back.png` add native 24×36 appearances. Each has metadata and a 24× `_review.png`. The low bun is visible from these angles; the waist remains at row 21, hem at row 28, calves at rows 29–31 and boots at rows 32–34. Side profiles have one dark pupil with a blue iris pixel beneath it. The back has no eyes or iris pixels.
 
 `idle_directions.png` and its JSON combine front, left, right and back. `idle_directions_review.png` enlarges them 12×; `../female_idle_directions_review.png` compares all three palettes. All four directions are approved by the user in chat. Source appearance layers are retained under `../../../source/characters/npcs/female_01/directions/layers/`. Rebuild using the base directional exporter followed by `python tools/build_female_npc_palette_variants.py --direction all`.
+
+The [draft front walk](walk_front/README.md) uses shared stride poses, coordinated head-and-shoulder bob, and dedicated skirt/calf/ankle-boot parts. Review the enlarged loop in `walk_front/walk_front_preview.gif`.
