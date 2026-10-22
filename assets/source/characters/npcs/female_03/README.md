@@ -1,6 +1,6 @@
 # Female NPC 03 — palette-derived layers
 
-Status: draft front idle awaiting review.
+Status: front idle and palette approved by the user in chat.
 
 These four appearance layers are exported from the shared front idle after applying the blonde hair and plum dress palette, plus hazel iris pixels. The silhouette, skin and brown boots remain unchanged. The layers reconstruct the native sprite; they are not articulated walking parts.
 

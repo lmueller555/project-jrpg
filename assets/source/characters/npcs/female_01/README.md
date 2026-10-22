@@ -1,6 +1,6 @@
 # Female NPC 01 — front-idle source
 
-Status: draft appearance awaiting user review.
+Status: front-idle appearance and palette approved by the user in chat.
 
 `idle_front_concept.png` is the generated appearance reference for the first female NPC: dark hair in a low bun, a plain short-sleeved blue dress with a defined waist and flared calf-length skirt, and brown ankle boots. The male NPC and Mira supplied only game style/scale references. The low bun is mostly hidden behind the head in this front view, with small dark nape contours.
 
@@ -14,7 +14,7 @@ python assets/source/characters/npcs/female_01/export_idle.py
 
 The export also writes a 24× review image, a 16× comparison with male NPC 01 and Mira, and four non-overlapping appearance layers under `layers/`. These layers reconstruct the idle; they are not articulated walking parts. The dress will need dedicated skirt poses later.
 
-This work contains only front-facing idle palettes. Other facing appearances and walking frames will follow user approval.
+This work contains only front-facing idle palettes. Other facing appearances and walking frames are the next planned assets.
 
 The base front idle now uses blue iris pixels below its dark pupils. Eye landmarks/colors are recorded in the frame metadata and export recipe. These explicit feature positions keep eye recoloring separate from outlines. Only those two iris pixels change in the first native sprite.
 

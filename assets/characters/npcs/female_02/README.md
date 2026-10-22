@@ -1,6 +1,6 @@
 # Town NPC — female variant 02
 
-Status: draft front-facing idle awaiting user review.
+Status: front-facing idle and this palette approved by the user in chat.
 
 Auburn hair in the shared low bun, a sage calf-length dress with short sleeves, green eyes and brown ankle boots. This is an exact palette variant of `../female_01/idle_front.png`, preserving the silhouette, shading layout, skin, outline and boots.
 
@@ -13,4 +13,4 @@ Both eyes retain a dark upper pupil pixel and have one colored iris pixel beneat
 
 Review all three in `../female_variants_review.png`, with eye close-ups in `../female_eyes_review.png`. Source appearance layers are retained under `../../../source/characters/npcs/female_02/layers/`. Rebuild these variants and the comparison with `python tools/build_female_npc_palette_variants.py`.
 
-This work covers front-facing palette variants only. Other facing designs and walking animations will follow review.
+This work covers front-facing palette variants only. Other facing designs and walking animations are the next planned assets.
