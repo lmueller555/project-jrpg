@@ -1,0 +1,269 @@
+{
+  "id": "eldenmere.cottage.base.24",
+  "status": "draft",
+  "source": "materials_concept.png",
+  "source_crop": [
+    147,
+    248,
+    1108,
+    1011
+  ],
+  "native_size": [
+    120,
+    96
+  ],
+  "prefab_size": [
+    120,
+    144
+  ],
+  "building_offset": [
+    0,
+    48
+  ],
+  "ground_rect": [
+    12,
+    72,
+    96,
+    72
+  ],
+  "door_leaf_rect": [
+    53,
+    63,
+    66,
+    89
+  ],
+  "door_widths": [
+    13,
+    10,
+    6,
+    3,
+    1
+  ],
+  "door_duration_ms": 100,
+  "smoke_origin": [
+    90,
+    47
+  ],
+  "smoke_frame_count": 18,
+  "duration_ms": 200,
+  "scene_position": [
+    24,
+    216
+  ],
+  "path_cells": [
+    [
+      3,
+      14
+    ],
+    [
+      3,
+      15
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      6,
+      15
+    ],
+    [
+      7,
+      15
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      8,
+      14
+    ]
+  ],
+  "path_join_cells": [
+    [
+      8,
+      13
+    ],
+    [
+      9,
+      14
+    ]
+  ],
+  "scene_scale": 3,
+  "closeup_rect": [
+    0,
+    216,
+    240,
+    408
+  ],
+  "closeup_scale": 5,
+  "doorway_foot": [
+    84,
+    358
+  ],
+  "ground_elevation_pixels": 24,
+  "threshold_elevation_pixels": 24,
+  "palette": {
+    "plaster": {
+      "shadow": "#aa9d80",
+      "base": "#d3c6a4",
+      "light": "#e1d6bc"
+    },
+    "lamplight": {
+      "base": "#e4b66b",
+      "light": "#f5d99a"
+    },
+    "smoke": {
+      "shadow": "#aab5ac",
+      "base": "#c5ccc1",
+      "light": "#dce0d2"
+    }
+  },
+  "components": [
+    {
+      "id": "chimney",
+      "rect": [
+        82,
+        0,
+        98,
+        22
+      ],
+      "category": "chimney"
+    },
+    {
+      "id": "flower_box",
+      "rect": [
+        23,
+        76,
+        39,
+        84
+      ],
+      "category": "decoration"
+    },
+    {
+      "id": "lantern",
+      "rect": [
+        68,
+        59,
+        76,
+        73
+      ],
+      "category": "decoration"
+    },
+    {
+      "id": "door_leaf",
+      "rect": [
+        53,
+        63,
+        66,
+        89
+      ],
+      "category": "door"
+    },
+    {
+      "id": "window_left",
+      "rect": [
+        19,
+        61,
+        41,
+        78
+      ],
+      "category": "window"
+    },
+    {
+      "id": "window_right",
+      "rect": [
+        79,
+        61,
+        101,
+        79
+      ],
+      "category": "window"
+    },
+    {
+      "id": "roof_west",
+      "rect": [
+        0,
+        8,
+        24,
+        53
+      ],
+      "category": "roof"
+    },
+    {
+      "id": "roof_middle",
+      "rect": [
+        24,
+        8,
+        96,
+        53
+      ],
+      "category": "roof"
+    },
+    {
+      "id": "roof_east",
+      "rect": [
+        96,
+        8,
+        120,
+        53
+      ],
+      "category": "roof"
+    },
+    {
+      "id": "wall_west",
+      "rect": [
+        0,
+        53,
+        24,
+        96
+      ],
+      "category": "wall"
+    },
+    {
+      "id": "wall_panel_a",
+      "rect": [
+        24,
+        53,
+        48,
+        96
+      ],
+      "category": "wall"
+    },
+    {
+      "id": "wall_doorway",
+      "rect": [
+        48,
+        53,
+        72,
+        96
+      ],
+      "category": "wall"
+    },
+    {
+      "id": "wall_panel_b",
+      "rect": [
+        72,
+        53,
+        96,
+        96
+      ],
+      "category": "wall"
+    },
+    {
+      "id": "wall_east",
+      "rect": [
+        96,
+        53,
+        120,
+        96
+      ],
+      "category": "wall"
+    }
+  ]
+}
