@@ -1,0 +1,561 @@
+{
+  "id": "eldenmere.grass_flowers.starter.24",
+  "status": "review",
+  "source": "materials_concept.png",
+  "tile_size": 24,
+  "frame_count": 9,
+  "duration_ms": 600,
+  "scene_duration_ms": 200,
+  "scene_frame_count": 54,
+  "scene_closeup": [
+    384,
+    864,
+    744,
+    1056
+  ],
+  "scene_closeup_scale": 4,
+  "scene_scale": 2,
+  "palette": {
+    "greens": {
+      "deep": "#304c3e",
+      "shadow": "#405f45",
+      "mid": "#557546",
+      "base": "#6f8b50",
+      "light": "#8fa362",
+      "highlight": "#b2bb77"
+    },
+    "white": {
+      "shadow": "#b5b198",
+      "base": "#ded5b7",
+      "light": "#f0e8cf"
+    },
+    "yellow": {
+      "shadow": "#b49a54",
+      "base": "#d8b85f",
+      "light": "#ecd27e"
+    },
+    "violet": {
+      "shadow": "#796c88",
+      "base": "#a08caf",
+      "light": "#bca5c6"
+    },
+    "centers": {
+      "shadow": "#b18e45",
+      "base": "#cfaa58",
+      "light": "#e2c36f"
+    }
+  },
+  "plants": [
+    {
+      "id": "grass_sparse",
+      "label": "Sparse grass",
+      "material": "greens",
+      "source_crop": [
+        193,
+        253,
+        394,
+        415
+      ],
+      "sample_size": [
+        16,
+        13
+      ],
+      "sample_position": [
+        4,
+        9
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            9,
+            14
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            14,
+            17
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            17,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    },
+    {
+      "id": "grass_splayed",
+      "label": "Splayed grass",
+      "material": "greens",
+      "source_crop": [
+        617,
+        276,
+        909,
+        425
+      ],
+      "sample_size": [
+        22,
+        11
+      ],
+      "sample_position": [
+        1,
+        11
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            11,
+            15
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            15,
+            18
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            18,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    },
+    {
+      "id": "grass_dense",
+      "label": "Dense grass",
+      "material": "greens",
+      "source_crop": [
+        1090,
+        180,
+        1379,
+        437
+      ],
+      "sample_size": [
+        20,
+        18
+      ],
+      "sample_position": [
+        2,
+        4
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            4,
+            11
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            11,
+            17
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            17,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    },
+    {
+      "id": "flowers_white",
+      "label": "White daisies",
+      "material": "white",
+      "source_crop": [
+        170,
+        603,
+        415,
+        869
+      ],
+      "sample_size": [
+        19,
+        20
+      ],
+      "sample_position": [
+        2,
+        2
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            2,
+            16
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            16,
+            18
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            18,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    },
+    {
+      "id": "flowers_yellow",
+      "label": "Yellow wildflowers",
+      "material": "yellow",
+      "source_crop": [
+        631,
+        612,
+        891,
+        869
+      ],
+      "sample_size": [
+        20,
+        20
+      ],
+      "sample_position": [
+        2,
+        2
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            2,
+            16
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            16,
+            18
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            18,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    },
+    {
+      "id": "flowers_violet",
+      "label": "Violet wildflowers",
+      "material": "violet",
+      "source_crop": [
+        1114,
+        603,
+        1365,
+        869
+      ],
+      "sample_size": [
+        19,
+        20
+      ],
+      "sample_position": [
+        2,
+        2
+      ],
+      "fixed_rows_from": 20,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            2,
+            16
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            16,
+            18
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            18,
+            20
+          ]
+        }
+      ],
+      "leaf_rows_from": 16
+    }
+  ],
+  "poses": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "instances": [
+    {
+      "plant": "flowers_white",
+      "position": [
+        144,
+        336
+      ],
+      "phase_offset": 0,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_sparse",
+      "position": [
+        168,
+        312
+      ],
+      "phase_offset": 2,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_white",
+      "position": [
+        144,
+        768
+      ],
+      "phase_offset": 1,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_sparse",
+      "position": [
+        168,
+        744
+      ],
+      "phase_offset": 3,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_yellow",
+      "position": [
+        264,
+        768
+      ],
+      "phase_offset": 4,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_splayed",
+      "position": [
+        408,
+        768
+      ],
+      "phase_offset": 2,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_violet",
+      "position": [
+        672,
+        768
+      ],
+      "phase_offset": 0,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_dense",
+      "position": [
+        696,
+        744
+      ],
+      "phase_offset": 4,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_white",
+      "position": [
+        120,
+        1008
+      ],
+      "phase_offset": 2,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_sparse",
+      "position": [
+        144,
+        984
+      ],
+      "phase_offset": 4,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_yellow",
+      "position": [
+        312,
+        1008
+      ],
+      "phase_offset": 1,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_splayed",
+      "position": [
+        336,
+        984
+      ],
+      "phase_offset": 3,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_white",
+      "position": [
+        388,
+        1008
+      ],
+      "phase_offset": 0,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_violet",
+      "position": [
+        504,
+        984
+      ],
+      "phase_offset": 1,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_dense",
+      "position": [
+        540,
+        1008
+      ],
+      "phase_offset": 2,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_yellow",
+      "position": [
+        564,
+        1008
+      ],
+      "phase_offset": 3,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_violet",
+      "position": [
+        696,
+        1008
+      ],
+      "phase_offset": 1,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_sparse",
+      "position": [
+        696,
+        984
+      ],
+      "phase_offset": 3,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_white",
+      "position": [
+        168,
+        1224
+      ],
+      "phase_offset": 0,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_yellow",
+      "position": [
+        360,
+        1224
+      ],
+      "phase_offset": 2,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "flowers_violet",
+      "position": [
+        552,
+        1224
+      ],
+      "phase_offset": 4,
+      "ground_elevation_pixels": 0
+    },
+    {
+      "plant": "grass_sparse",
+      "position": [
+        744,
+        1200
+      ],
+      "phase_offset": 3,
+      "ground_elevation_pixels": 0
+    }
+  ]
+}

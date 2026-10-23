@@ -1,0 +1,33 @@
+{
+  "status": "review",
+  "materials": {
+    "greens": {
+      "deep": "#304c3e",
+      "shadow": "#405f45",
+      "mid": "#557546",
+      "base": "#6f8b50",
+      "light": "#8fa362",
+      "highlight": "#b2bb77"
+    },
+    "white": {
+      "shadow": "#b5b198",
+      "base": "#ded5b7",
+      "light": "#f0e8cf"
+    },
+    "yellow": {
+      "shadow": "#b49a54",
+      "base": "#d8b85f",
+      "light": "#ecd27e"
+    },
+    "violet": {
+      "shadow": "#796c88",
+      "base": "#a08caf",
+      "light": "#bca5c6"
+    },
+    "centers": {
+      "shadow": "#b18e45",
+      "base": "#cfaa58",
+      "light": "#e2c36f"
+    }
+  }
+}

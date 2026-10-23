@@ -1,0 +1,197 @@
+{
+  "id": "eldenmere.ground_plants.flowers_white.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "frame_size": [
+    24,
+    24
+  ],
+  "ground_rect": [
+    0,
+    0,
+    24,
+    24
+  ],
+  "collision": false,
+  "idle": "idle.png",
+  "sheet": "sheet.png",
+  "fixed_base": "base.png",
+  "fixed_rows_from": 20,
+  "bands": [
+    {
+      "id": "upper",
+      "image": "bands/upper.png",
+      "rows": [
+        2,
+        16
+      ]
+    },
+    {
+      "id": "middle",
+      "image": "bands/middle.png",
+      "rows": [
+        16,
+        18
+      ]
+    },
+    {
+      "id": "lower",
+      "image": "bands/lower.png",
+      "rows": [
+        18,
+        20
+      ]
+    }
+  ],
+  "wind": {
+    "direction": "E",
+    "max_displacement_pixels": [
+      1,
+      0
+    ],
+    "whole_plant_moves": false,
+    "cycle_duration_ms": 5400,
+    "loop": true,
+    "frames": [
+      {
+        "image": "frames/frame_01.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          0,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "image": "frames/frame_02.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          24,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "image": "frames/frame_03.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          48,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "image": "frames/frame_04.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          72,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "image": "frames/frame_05.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          96,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "image": "frames/frame_06.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          120,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "image": "frames/frame_07.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          144,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "image": "frames/frame_08.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          168,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "image": "frames/frame_09.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          192,
+          0,
+          24,
+          24
+        ],
+        "band_offsets_x": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "recipe": "../../../../source/terrain/eldenmere/grass_flowers/recipe.json"
+}

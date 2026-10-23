@@ -1,0 +1,41 @@
+{
+  "id": "eldenmere.grass_flowers.starter.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "plants": [
+    {
+      "id": "grass_sparse",
+      "metadata": "grass_sparse/plant.json"
+    },
+    {
+      "id": "grass_splayed",
+      "metadata": "grass_splayed/plant.json"
+    },
+    {
+      "id": "grass_dense",
+      "metadata": "grass_dense/plant.json"
+    },
+    {
+      "id": "flowers_white",
+      "metadata": "flowers_white/plant.json"
+    },
+    {
+      "id": "flowers_yellow",
+      "metadata": "flowers_yellow/plant.json"
+    },
+    {
+      "id": "flowers_violet",
+      "metadata": "flowers_violet/plant.json"
+    }
+  ],
+  "cycle_duration_ms": 5400,
+  "wind_direction": "E",
+  "review": {
+    "plants": "plants_review.gif",
+    "garden": "garden_closeup.gif",
+    "scene": "review_scene.gif"
+  }
+}
