@@ -6,4 +6,4 @@ Run `python tools/build_serene_idle.py` from the repository root. `export.json` 
 
 Four full-frame transparent layers reconstruct the native image exactly: head, bodice/arms, skirt/hands and legs/boots. These retain separate regions for later animation preparation; no walking animation or other facing direction is included.
 
-The visual design is approved; this new front-idle export awaits review. Existing character appearances, pose templates and narrative files are read only.
+The visual design and front-idle export are approved. Existing character appearances, pose templates and narrative files are read only.
