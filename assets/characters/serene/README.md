@@ -20,6 +20,6 @@ Review images retain their original review labels as a record of the approved ar
 
 Rebuild these views and boards with `python tools/build_serene_directional_idles.py`. It preserves existing approval statuses and reads the approved front and palette without rewriting them.
 
-## Front walk — awaiting review
+## Front walk — approved
 
 `walk_front/` adds the first four-phase walk, assembled from the approved appearance and shared front stride. It includes a 20× looping preview, a 12× frame strip, native sheet, metadata and recipe. The head and shoulder mantle bob together; apron details remain visible through the skirt sway. Run `python tools/build_serene_walk.py` and `python tools/test_serene_walk.py`. Approved idle artwork remains unchanged.

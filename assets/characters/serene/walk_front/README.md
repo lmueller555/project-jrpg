@@ -1,6 +1,6 @@
 # Mother Serene — front walk
 
-**Awaiting review.** Four 24×36 frames, 140 ms each, looping in 560 ms. Foot anchor `[12,34]`; offsets are already baked into the pixels.
+**Approved.** Four 24×36 frames, 140 ms each, looping in 560 ms. Foot anchor `[12,34]`; offsets are already baked into the pixels.
 
 - `walk_front_preview.gif`: opaque 20× nearest-neighbor loop.
 - `frames_review.png`: opaque 12× strip of all four phases.
