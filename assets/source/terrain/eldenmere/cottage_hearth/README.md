@@ -1,4 +1,4 @@
-# Eldenmere animated cottage hearth source — review
+# Eldenmere animated cottage hearth source — approved
 
 A plain warm-gray stone hearth with a narrow chimney breast, rectangular lintel, dark opening, two fixed logs, restrained flames and glowing coals. Its 48×72 frame fits the 24px terrain grid and original 24×36 character scale. Four source-drawn fire poses run for 300ms each (1.2 seconds). Stone and log geometry stay fixed; only fire, coal colors and subtle local lighting change. Smoke travels through the chimney; no indoor smoke sprites are included.
 
@@ -16,4 +16,4 @@ The builder reads all approved packs without rewriting them. The room draws stru
 
 Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_hearth.py`.
 
-Check with the same interpreter and `tools/test_eldenmere_cottage_hearth.py`. The hearth design and animation await review. Collision, extinguishing/lighting interactions and named household layouts remain future work.
+Check with the same interpreter and `tools/test_eldenmere_cottage_hearth.py`. The hearth design and animation are approved. Collision, extinguishing/lighting interactions and named household layouts remain future work.

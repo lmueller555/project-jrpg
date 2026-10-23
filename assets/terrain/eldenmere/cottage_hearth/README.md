@@ -1,4 +1,4 @@
-# Eldenmere animated cottage hearth — review
+# Eldenmere animated cottage hearth — approved
 
 A reusable 48×72 stone hearth with four fire poses, subtly changing embers and soft local firelight. The stonework, logs and chimney stay fixed. Stone and wood reuse the approved interior colors; the fire adds a restrained orange/amber ramp. No indoor smoke is drawn.
 
@@ -20,4 +20,4 @@ Review files:
 
 The hearth occupies the northwest wall beside the left window. Its broader firebox stays below the window; the nearby bed and all approved furnishings remain clear and unchanged. Warm light reaches only the adjacent stone and a small floor patch. The central 72px path stays open. The room retains the existing 5.4-second daylight cycle; the full scene repeats after two daylight cycles and nine fire cycles.
 
-All sprites and overlays use binary alpha. The floor mask's 128 value means half-strength color mixing, not partial runtime alpha. The scene remains an illustrative separate interior art review; collision and interaction are not implemented. Rebuild with `tools/build_eldenmere_cottage_hearth.py`; verify with `tools/test_eldenmere_cottage_hearth.py` in the documented Pillow environment. Source and recipe live under `assets/source/terrain/eldenmere/cottage_hearth/`. This design and animation await approval.
+All sprites and overlays use binary alpha. The floor mask's 128 value means half-strength color mixing, not partial runtime alpha. The scene remains an illustrative separate interior art review; collision and interaction are not implemented. Rebuild with `tools/build_eldenmere_cottage_hearth.py`; verify with `tools/test_eldenmere_cottage_hearth.py` in the documented Pillow environment. Source and recipe live under `assets/source/terrain/eldenmere/cottage_hearth/`. This design and animation are approved for main.
