@@ -1,4 +1,4 @@
-# Eldenmere sanctuary exterior — review
+# Eldenmere sanctuary exterior — approved
 
 Static first appearance review of the agreed sanctuary design, placed at its approved northwest town location. Terrain remains 24×24; Caelan remains 24×36.
 
@@ -14,4 +14,4 @@ The building has cream plaster, timber framing, fieldstone foundations, blue-gra
 
 The footprint and courtyard are preserved. The exported doorway aligns with the existing approach and fits the original full-width actor probe. The town outside the sanctuary drawing bounds is pixel-identical to the approved first frame. Its native art and exported files remain unchanged.
 
-Rebuild with `tools/build_eldenmere_sanctuary.py`; verify with `tools/test_eldenmere_sanctuary.py`. Retained source and export settings live under `assets/source/terrain/eldenmere/sanctuary/`. The exterior awaits review; no sanctuary interaction, interior, engine collision or transition has been implemented.
+Rebuild with `tools/build_eldenmere_sanctuary.py`; verify with `tools/test_eldenmere_sanctuary.py`. Retained source and export settings live under `assets/source/terrain/eldenmere/sanctuary/`. The exterior is approved; original review images remain as the appearance record. The approved `../sanctuary_charm/` pack adds ambient animation and garden dressing. Sanctuary interaction, interiors, engine collision and transitions remain future work.

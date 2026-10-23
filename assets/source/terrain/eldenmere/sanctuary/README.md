@@ -15,4 +15,4 @@ PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_
 PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/test_eldenmere_sanctuary.py
 ```
 
-Animation layers, opening/closing doors, bell cues, smoke, lantern movement and sanctuary interiors follow the appearance review. No new religious emblem, interior assignment, dialogue, engine collision or room transition is introduced. Source palette/crops and this design remain review candidates until the user approves the exported sprite.
+The exterior appearance is approved. The subsequently approved `sanctuary_charm` pack supplies smoke, lantern movement, a separate bell cue and garden dressing while preserving these original static images. Opening/closing doors and sanctuary interiors remain future work. No new religious emblem, interior assignment, dialogue, engine collision or room transition is introduced. Original review images are retained as the appearance record.

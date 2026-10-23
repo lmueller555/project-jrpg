@@ -1,4 +1,4 @@
-# Sanctuary charm — review
+# Sanctuary charm — approved
 
 - `sanctuary_review.gif`: enlarged 4× looping courtyard with Caelan for scale.
 - `sanctuary_review.png`: opaque RGB still of the same scene.
@@ -31,4 +31,6 @@ time of day and sanctuary interior transitions are not implemented.
 
 Build with `tools/build_eldenmere_sanctuary_charm.py`; verify with
 `tools/test_eldenmere_sanctuary_charm.py`. This pack leaves all existing art,
-town geography, story and quests unchanged and awaits user review.
+town geography, story and quests unchanged. The exterior, garden dressing and
+animations are approved for main; original review images remain as the visual
+approval record.

@@ -21,5 +21,6 @@ the lantern bracket stay fixed. The 5.4-second eastward foliage cycle and
 bell is still; its separate nine-pose cue is authored for a single playback.
 The lit lantern insert is a separate art variant, not a time-of-day system.
 
-Status remains `review` until the user approves this charm pass. The previously
-liked sanctuary exterior is reused without modifying its source or exports.
+Status is `approved` following user review. The approved sanctuary exterior is
+reused without modifying its art; its approval metadata is updated separately.
+Original review images remain as the visual approval record.
