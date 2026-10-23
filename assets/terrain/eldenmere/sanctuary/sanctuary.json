@@ -1,0 +1,124 @@
+{
+  "id": "eldenmere.sanctuary.exterior.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    216,
+    216
+  ],
+  "ground_rect": [
+    12,
+    84,
+    192,
+    120
+  ],
+  "ground_tiles": [
+    8,
+    5
+  ],
+  "image": "closed.png",
+  "components": [
+    {
+      "id": "roof_belfry_chimney",
+      "crop": [
+        46,
+        138,
+        1208,
+        748
+      ],
+      "sample_size": [
+        216,
+        120
+      ],
+      "position": [
+        0,
+        24
+      ],
+      "image": "../../../source/terrain/eldenmere/sanctuary/parts/roof_belfry_chimney.png"
+    },
+    {
+      "id": "facade_foundation",
+      "crop": [
+        60,
+        728,
+        1196,
+        1088
+      ],
+      "sample_size": [
+        192,
+        60
+      ],
+      "position": [
+        12,
+        144
+      ],
+      "image": "../../../source/terrain/eldenmere/sanctuary/parts/facade_foundation.png"
+    }
+  ],
+  "door": {
+    "rect": [
+      118,
+      156,
+      32,
+      42
+    ],
+    "clear_width": 32,
+    "state": "closed",
+    "animated": false
+  },
+  "bell": {
+    "state": "still",
+    "animated": false
+  },
+  "lantern": {
+    "lit": false,
+    "animated": false
+  },
+  "chimney_smoke_included": false,
+  "palette": "palette.json",
+  "position": [
+    252,
+    84
+  ],
+  "ground_position": [
+    264,
+    168
+  ],
+  "door_world_rect": [
+    370,
+    240,
+    32,
+    42
+  ],
+  "character": {
+    "image": "assets/characters/caelan/idle_front.png",
+    "foot": [
+      386,
+      304
+    ],
+    "anchor": [
+      12,
+      30
+    ],
+    "probe_size": [
+      24,
+      12
+    ]
+  },
+  "review_crop": [
+    168,
+    48,
+    408,
+    408
+  ],
+  "review_scale": 4,
+  "source_recipe": "../../../source/terrain/eldenmere/sanctuary/recipe.json",
+  "base_town": "assets/maps/eldenmere/terrain_foundation/scene.json",
+  "engine_collision_implemented": false,
+  "door_interaction_implemented": false,
+  "interior_transition_implemented": false,
+  "purpose": "Static closed-door appearance review before adding sanctuary animation layers."
+}

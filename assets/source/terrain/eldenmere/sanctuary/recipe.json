@@ -1,0 +1,29 @@
+{
+  "id": "eldenmere.sanctuary.exterior.24",
+  "status": "review",
+  "source": "exterior_concept.png",
+  "frame_size": [216, 216],
+  "ground_rect": [12, 84, 192, 120],
+  "ground_tiles": [8, 5],
+  "alpha_threshold": 128,
+  "bands": [
+    {"id":"roof_belfry_chimney","crop":[46,138,1208,748],"sample_size":[216,120],"position":[0,24]},
+    {"id":"facade_foundation","crop":[60,728,1196,1088],"sample_size":[192,60],"position":[12,144]}
+  ],
+  "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
+  "outline": "#45382d",
+  "bronze": {"shadow":"#6f5a35","base":"#977c43","light":"#b99b55","worn":"#cfb878"},
+  "source_landmarks": {
+    "bell":[269,307,342,400],
+    "chimney":[1036,291,1155,532],
+    "lantern":[598,811,648,912],
+    "windows":[[227,785,290,937],[434,785,500,938],[989,785,1055,938]]
+  },
+  "door_rect": [118,156,32,42],
+  "town_ground_position": [264,168],
+  "hero_foot": [386,304],
+  "hero_facing": "front",
+  "review_crop": [168,48,408,408],
+  "review_scale": 4,
+  "animation_scope": "First appearance review: closed doors, stationary bell and entrance lantern, no chimney smoke."
+}
