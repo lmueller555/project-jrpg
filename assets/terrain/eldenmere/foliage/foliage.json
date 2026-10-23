@@ -1,0 +1,25 @@
+{
+  "id": "eldenmere.foliage.starter.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "plants": [
+    {
+      "id": "tree",
+      "metadata": "tree/foliage.json"
+    },
+    {
+      "id": "shrub",
+      "metadata": "shrub/foliage.json"
+    }
+  ],
+  "wind_direction": "E",
+  "cycle_duration_ms": 5400,
+  "review": {
+    "plants": "foliage_review.gif",
+    "scene": "review_scene.gif",
+    "garden": "garden_closeup.gif"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "eldenmere.foliage.starter.24",
+  "status": "draft",
+  "source": "materials_concept.png",
+  "tile_size": 24,
+  "frame_count": 9,
+  "duration_ms": 600,
+  "scene_duration_ms": 200,
+  "scene_frame_count": 54,
+  "scene_closeup": [384, 864, 744, 1056],
+  "scene_closeup_scale": 4,
+  "scene_scale": 2,
+  "palette": {
+    "leaves": {"deep": "#304c3e", "shadow": "#405f45", "mid": "#557546", "base": "#6f8b50", "light": "#8fa362", "highlight": "#b2bb77"},
+    "wood": {"shadow": "#654e3c", "base": "#836347", "light": "#a08158", "worn": "#b79a6c"},
+    "shadow": {"base": "#4f7851"}
+  },
+  "plants": [
+    {
+      "id": "tree",
+      "source_crop": [188, 116, 853, 796],
+      "sample_size": [90, 92],
+      "sample_position": [3, 24],
+      "frame_size": [96, 120],
+      "ground_rect": [36, 96, 24, 24],
+      "shadow_top": 110,
+      "clusters": [
+        {"id": "upper", "rect": [41, 29, 57, 43]},
+        {"id": "west", "rect": [18, 48, 34, 61]},
+        {"id": "east", "rect": [70, 59, 85, 72]},
+        {"id": "lower_west", "rect": [14, 76, 30, 88]},
+        {"id": "lower_east", "rect": [66, 82, 82, 94]}
+      ],
+      "poses": [
+        [[0,0],[0,0],[0,0],[0,0],[0,0]],
+        [[1,0],[0,0],[0,0],[0,0],[0,0]],
+        [[1,0],[1,0],[0,0],[0,0],[0,0]],
+        [[1,0],[1,0],[1,0],[1,0],[0,0]],
+        [[1,0],[1,0],[1,-1],[1,0],[1,0]],
+        [[0,0],[1,0],[1,0],[1,0],[1,0]],
+        [[0,0],[0,0],[1,0],[1,0],[1,0]],
+        [[0,0],[0,0],[0,0],[1,0],[1,0]],
+        [[0,0],[0,0],[0,0],[0,0],[1,0]]
+      ]
+    },
+    {
+      "id": "shrub",
+      "source_crop": [1207, 604, 1434, 796],
+      "sample_size": [22, 19],
+      "sample_position": [1, 3],
+      "frame_size": [24, 24],
+      "ground_rect": [0, 0, 24, 24],
+      "shadow_top": 21,
+      "clusters": [
+        {"id": "upper", "rect": [6, 4, 13, 10]},
+        {"id": "east", "rect": [13, 8, 20, 14]},
+        {"id": "west", "rect": [3, 11, 10, 17]}
+      ],
+      "poses": [
+        [[0,0],[0,0],[0,0]],
+        [[1,0],[0,0],[0,0]],
+        [[1,0],[1,0],[0,0]],
+        [[1,0],[1,0],[1,0]],
+        [[1,0],[1,-1],[1,0]],
+        [[0,0],[1,0],[1,0]],
+        [[0,0],[0,0],[1,0]],
+        [[0,0],[0,0],[1,-1]],
+        [[0,0],[0,0],[0,-1]]
+      ]
+    }
+  ],
+  "instances": [
+    {"plant": "tree", "position": [432, 552], "phase_offset": 0, "ground_elevation_pixels": 0},
+    {"plant": "tree", "position": [504, 876], "phase_offset": 2, "ground_elevation_pixels": 0},
+    {"plant": "shrub", "position": [432, 768], "phase_offset": 1, "ground_elevation_pixels": 0},
+    {"plant": "shrub", "position": [516, 1008], "phase_offset": 3, "ground_elevation_pixels": 0},
+    {"plant": "shrub", "position": [576, 984], "phase_offset": 5, "ground_elevation_pixels": 0},
+    {"plant": "shrub", "position": [168, 984], "phase_offset": 0, "ground_elevation_pixels": 0}
+  ]
+}

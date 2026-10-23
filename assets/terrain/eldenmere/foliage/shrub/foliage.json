@@ -1,0 +1,286 @@
+{
+  "id": "eldenmere.foliage.shrub.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "frame_size": [
+    24,
+    24
+  ],
+  "ground_rect": [
+    0,
+    0,
+    24,
+    24
+  ],
+  "idle": "idle.png",
+  "sheet": "sheet.png",
+  "fixed_layers": {
+    "trunk": "trunk.png",
+    "shadow": "shadow.png"
+  },
+  "canopy_backing": "canopy.png",
+  "clusters": [
+    {
+      "id": "upper",
+      "image": "clusters/upper.png",
+      "position": [
+        6,
+        4
+      ]
+    },
+    {
+      "id": "east",
+      "image": "clusters/east.png",
+      "position": [
+        13,
+        8
+      ]
+    },
+    {
+      "id": "west",
+      "image": "clusters/west.png",
+      "position": [
+        3,
+        11
+      ]
+    }
+  ],
+  "draw_order": [
+    "shadow",
+    "canopy_backing",
+    "clusters",
+    "trunk"
+  ],
+  "wind": {
+    "direction": "E",
+    "max_displacement_pixels": [
+      1,
+      1
+    ],
+    "whole_plant_moves": false,
+    "loop": true,
+    "cycle_duration_ms": 5400,
+    "frames": [
+      {
+        "image": "frames/frame_01.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          0,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_02.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          24,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_03.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          48,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_04.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          72,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_05.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          96,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_06.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          120,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_07.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          144,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_08.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          168,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      {
+        "image": "frames/frame_09.png",
+        "duration_ms": 600,
+        "sheet_rect": [
+          192,
+          0,
+          24,
+          24
+        ],
+        "cluster_offsets": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      }
+    ]
+  },
+  "recipe": "../../../../source/terrain/eldenmere/foliage/recipe.json"
+}
