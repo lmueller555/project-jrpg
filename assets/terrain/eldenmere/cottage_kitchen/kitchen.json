@@ -1,0 +1,174 @@
+{
+  "id": "eldenmere.cottage_kitchen.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "palette": {
+    "outline": "#45382d",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "wood_light": "#a08158",
+    "wood_worn": "#b79a6c",
+    "ceramic_shadow": "#d3c6a4",
+    "ceramic_light": "#e1d6bc",
+    "iron_shadow": "#535c5d",
+    "iron_base": "#737e7a",
+    "water_dark": "#34464b",
+    "water_base": "#53696e",
+    "water_light": "#8ab3b0"
+  },
+  "sprites": [
+    {
+      "id": "counter",
+      "crop": [
+        316,
+        307,
+        829,
+        650
+      ],
+      "size": [
+        44,
+        34
+      ],
+      "frame_size": [
+        48,
+        48
+      ],
+      "offset": [
+        2,
+        8
+      ],
+      "position": [
+        192,
+        60
+      ],
+      "floor_rect": [
+        2,
+        20,
+        44,
+        22
+      ],
+      "materials": [
+        "outline",
+        "wood_",
+        "ceramic_",
+        "iron_"
+      ],
+      "iron_sample_rect": [
+        18,
+        18,
+        8,
+        6
+      ],
+      "image": "sprites/counter.png",
+      "atlas_rect": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "animated": false
+    },
+    {
+      "id": "washbasin",
+      "crop": [
+        1008,
+        320,
+        1216,
+        617
+      ],
+      "size": [
+        20,
+        28
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "offset": [
+        2,
+        4
+      ],
+      "position": [
+        240,
+        72
+      ],
+      "floor_rect": [
+        2,
+        14,
+        20,
+        18
+      ],
+      "materials": [
+        "outline",
+        "wood_",
+        "ceramic_",
+        "water_"
+      ],
+      "image": "sprites/washbasin.png",
+      "atlas_rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "animated": false
+    },
+    {
+      "id": "pantry",
+      "crop": [
+        1424,
+        139,
+        1669,
+        650
+      ],
+      "size": [
+        22,
+        44
+      ],
+      "frame_size": [
+        24,
+        48
+      ],
+      "offset": [
+        1,
+        2
+      ],
+      "position": [
+        96,
+        84
+      ],
+      "floor_rect": [
+        1,
+        30,
+        22,
+        16
+      ],
+      "materials": [
+        "outline",
+        "wood_",
+        "ceramic_"
+      ],
+      "image": "sprites/pantry.png",
+      "atlas_rect": [
+        96,
+        0,
+        24,
+        48
+      ],
+      "animated": false
+    }
+  ],
+  "sprite_sheet": "sprite_sheet.png",
+  "atlas_cell_size": [
+    48,
+    48
+  ],
+  "atlas_columns": 3,
+  "source_recipe": "../../../source/terrain/eldenmere/cottage_kitchen/recipe.json",
+  "animation": "Kitchen props and basin water remain static; reuse the approved hearth and daylight clocks.",
+  "collision_implemented": false,
+  "interaction_implemented": false
+}
