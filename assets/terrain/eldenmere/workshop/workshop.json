@@ -1,0 +1,901 @@
+{
+  "id": "eldenmere.workshop.exterior.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    168,
+    168
+  ],
+  "ground_rect": [
+    12,
+    96,
+    120,
+    72
+  ],
+  "ground_tiles": [
+    5,
+    3
+  ],
+  "position": [
+    564,
+    264
+  ],
+  "ground_position": [
+    576,
+    360
+  ],
+  "structure": "structure.png",
+  "closed": "closed.png",
+  "door": {
+    "rect": [
+      58,
+      131,
+      28,
+      35
+    ],
+    "state": "closed",
+    "planned_clear_width": 28,
+    "animated": false
+  },
+  "components": [
+    {
+      "id": "roof_chimney",
+      "crop": [
+        18,
+        354,
+        1228,
+        650
+      ],
+      "size": [
+        144,
+        70
+      ],
+      "position": [
+        0,
+        54
+      ]
+    },
+    {
+      "id": "facade_left",
+      "crop": [
+        82,
+        632,
+        550,
+        950
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "position": [
+        12,
+        124
+      ]
+    },
+    {
+      "id": "facade_door",
+      "crop": [
+        550,
+        632,
+        780,
+        950
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "position": [
+        52,
+        124
+      ]
+    },
+    {
+      "id": "facade_right",
+      "crop": [
+        780,
+        632,
+        1144,
+        950
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "position": [
+        92,
+        124
+      ]
+    },
+    {
+      "id": "sign_bracket",
+      "crop": [
+        1132,
+        661,
+        1242,
+        728
+      ],
+      "size": [
+        14,
+        9
+      ],
+      "position": [
+        129,
+        128
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "workbench",
+      "crop": [
+        64,
+        170,
+        543,
+        460
+      ],
+      "size": [
+        36,
+        26
+      ],
+      "position": [
+        574,
+        418
+      ],
+      "ground_rect": [
+        2,
+        18,
+        32,
+        8
+      ]
+    },
+    {
+      "id": "tool_rack",
+      "crop": [
+        641,
+        202,
+        1054,
+        443
+      ],
+      "size": [
+        32,
+        16
+      ],
+      "position": [
+        656,
+        395
+      ],
+      "mounted": true
+    },
+    {
+      "id": "cog_sign",
+      "crop": [
+        1189,
+        133,
+        1402,
+        413
+      ],
+      "size": [
+        18,
+        20
+      ],
+      "mounted": true
+    },
+    {
+      "id": "timber_rack",
+      "crop": [
+        64,
+        613,
+        481,
+        882
+      ],
+      "size": [
+        24,
+        28
+      ],
+      "position": [
+        548,
+        397
+      ],
+      "ground_rect": [
+        1,
+        19,
+        22,
+        9
+      ]
+    },
+    {
+      "id": "spare_cog_fittings",
+      "crop": [
+        565,
+        619,
+        970,
+        886
+      ],
+      "size": [
+        28,
+        26
+      ],
+      "position": [
+        658,
+        418
+      ],
+      "ground_rect": [
+        2,
+        18,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "stool_watering_can",
+      "crop": [
+        1073,
+        658,
+        1498,
+        874
+      ],
+      "size": [
+        24,
+        20
+      ],
+      "position": [
+        548,
+        430
+      ],
+      "ground_rect": [
+        1,
+        12,
+        22,
+        8
+      ]
+    }
+  ],
+  "grass": [
+    {
+      "id": "west_foundation_grass",
+      "pack": "grass_flowers/grass_sparse",
+      "position": [
+        548,
+        376
+      ],
+      "phase_offset": 1
+    },
+    {
+      "id": "yard_edge_grass",
+      "pack": "grass_flowers/grass_sparse",
+      "position": [
+        532,
+        423
+      ],
+      "phase_offset": 2
+    }
+  ],
+  "apron": {
+    "added_cells": [
+      [
+        23,
+        18
+      ],
+      [
+        24,
+        18
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        28,
+        18
+      ]
+    ],
+    "retiled_cells": [
+      {
+        "cell": [
+          22,
+          19
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          23,
+          18
+        ],
+        "mask": 28
+      },
+      {
+        "cell": [
+          23,
+          19
+        ],
+        "mask": 127
+      },
+      {
+        "cell": [
+          24,
+          18
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          24,
+          19
+        ],
+        "mask": 255
+      },
+      {
+        "cell": [
+          25,
+          18
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          25,
+          19
+        ],
+        "mask": 255
+      },
+      {
+        "cell": [
+          26,
+          18
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          26,
+          19
+        ],
+        "mask": 255
+      },
+      {
+        "cell": [
+          27,
+          18
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          27,
+          19
+        ],
+        "mask": 255
+      },
+      {
+        "cell": [
+          28,
+          18
+        ],
+        "mask": 124
+      },
+      {
+        "cell": [
+          28,
+          19
+        ],
+        "mask": 255
+      },
+      {
+        "cell": [
+          29,
+          17
+        ],
+        "mask": 31
+      },
+      {
+        "cell": [
+          29,
+          18
+        ],
+        "mask": 127
+      },
+      {
+        "cell": [
+          29,
+          19
+        ],
+        "mask": 255
+      }
+    ],
+    "changed_tile_bounds": [
+      [
+        22,
+        17
+      ],
+      [
+        22,
+        18
+      ],
+      [
+        22,
+        19
+      ],
+      [
+        23,
+        17
+      ],
+      [
+        23,
+        18
+      ],
+      [
+        23,
+        19
+      ],
+      [
+        24,
+        17
+      ],
+      [
+        24,
+        18
+      ],
+      [
+        24,
+        19
+      ],
+      [
+        25,
+        17
+      ],
+      [
+        25,
+        18
+      ],
+      [
+        25,
+        19
+      ],
+      [
+        26,
+        17
+      ],
+      [
+        26,
+        18
+      ],
+      [
+        26,
+        19
+      ],
+      [
+        27,
+        17
+      ],
+      [
+        27,
+        18
+      ],
+      [
+        27,
+        19
+      ],
+      [
+        28,
+        17
+      ],
+      [
+        28,
+        18
+      ],
+      [
+        28,
+        19
+      ],
+      [
+        29,
+        17
+      ],
+      [
+        29,
+        18
+      ],
+      [
+        29,
+        19
+      ]
+    ]
+  },
+  "smoke": {
+    "origin": [
+      116,
+      54
+    ],
+    "source": "../cottage/smoke",
+    "source_origin": [
+      90,
+      47
+    ],
+    "cycle_duration_ms": 3600,
+    "frame_count": 18,
+    "frame_duration_ms": 200,
+    "direction": "E"
+  },
+  "sign": {
+    "position": [
+      132,
+      133
+    ],
+    "cycle_duration_ms": 5400,
+    "frame_count": 9,
+    "frame_duration_ms": 600,
+    "offsets": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      -1,
+      -1,
+      0
+    ],
+    "max_displacement_pixels": 1,
+    "bracket_fixed": true,
+    "attachment_ring_fixed": true
+  },
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "sign_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "sign_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "sign_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "sign_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "sign_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "sign_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_37.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_38.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_39.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "sign_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_40.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_41.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_42.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "sign_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_43.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_44.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_45.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "sign_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_46.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_47.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_48.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "sign_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_49.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_50.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_51.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "sign_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_52.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "sign_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_53.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "sign_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_54.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "sign_phase": 8
+    }
+  ],
+  "native_building_frames": "frames",
+  "review_crop": [
+    528,
+    240,
+    432,
+    312
+  ],
+  "review_scale": 4,
+  "hero_foot": [
+    636,
+    444
+  ],
+  "mira_foot": [
+    594,
+    474
+  ],
+  "actor_anchor": [
+    12,
+    30
+  ],
+  "planning_navigation": "navigation/access.json",
+  "sanctuary_pack": "../sanctuary_charm/charm.json",
+  "base_town": "assets/maps/eldenmere/terrain_foundation/scene.json",
+  "source_recipe": "../../../source/terrain/eldenmere/workshop/recipe.json",
+  "engine_interactions_implemented": false,
+  "interior_included": false,
+  "mill_quest_solution_defined": false
+}

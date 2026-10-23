@@ -1,0 +1,199 @@
+{
+  "probe_size": [
+    24,
+    12
+  ],
+  "grid_step": 2,
+  "start": [
+    384,
+    312
+  ],
+  "blockers": [
+    {
+      "id": "workbench",
+      "rect": [
+        576,
+        436,
+        32,
+        8
+      ]
+    },
+    {
+      "id": "timber_rack",
+      "rect": [
+        549,
+        416,
+        22,
+        9
+      ]
+    },
+    {
+      "id": "spare_cog_fittings",
+      "rect": [
+        660,
+        436,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "stool_watering_can",
+      "rect": [
+        549,
+        442,
+        22,
+        8
+      ]
+    }
+  ],
+  "destinations": {
+    "sanctuary": [
+      396,
+      300
+    ],
+    "mill": [
+      972,
+      348
+    ],
+    "halden": [
+      1020,
+      636
+    ],
+    "mira": [
+      636,
+      444
+    ],
+    "elira": [
+      684,
+      972
+    ],
+    "venn": [
+      1260,
+      732
+    ],
+    "home_a": [
+      228,
+      732
+    ],
+    "home_b": [
+      516,
+      684
+    ],
+    "home_c": [
+      276,
+      1092
+    ],
+    "commons": [
+      516,
+      900
+    ],
+    "gate": [
+      1428,
+      660
+    ],
+    "storage": [
+      1068,
+      516
+    ],
+    "southern_exit": [
+      516,
+      1332
+    ],
+    "woodland_exit": [
+      720,
+      6
+    ],
+    "main_hero": [
+      516,
+      900
+    ],
+    "halden_actual_threshold": [
+      1008,
+      636
+    ],
+    "elira_actual_threshold": [
+      672,
+      972
+    ],
+    "venn_actual_threshold": [
+      1248,
+      732
+    ],
+    "home_a_actual_threshold": [
+      216,
+      732
+    ],
+    "home_b_actual_threshold": [
+      504,
+      684
+    ],
+    "home_c_actual_threshold": [
+      264,
+      1092
+    ],
+    "sanctuary_steps": [
+      384,
+      360
+    ],
+    "upper_bridge": [
+      852,
+      480
+    ],
+    "halden_door": [
+      1008,
+      640
+    ],
+    "elira_door": [
+      672,
+      976
+    ],
+    "venn_steps": [
+      1176,
+      876
+    ],
+    "venn_door": [
+      1248,
+      736
+    ],
+    "mill_landing": [
+      960,
+      348
+    ],
+    "main_bridge": [
+      828,
+      1032
+    ],
+    "workshop_door": [
+      636,
+      444
+    ],
+    "workbench": [
+      594,
+      456
+    ],
+    "mira_scale": [
+      594,
+      474
+    ],
+    "conversation_left": [
+      624,
+      456
+    ],
+    "conversation_right": [
+      648,
+      456
+    ],
+    "woodland_lane": [
+      720,
+      420
+    ]
+  },
+  "reachable_centres": 72061,
+  "conversation_rect": [
+    612,
+    438,
+    48,
+    48
+  ],
+  "engine_collision_implemented": false
+}
