@@ -1,0 +1,963 @@
+{
+  "status": "review",
+  "purpose": "Garden fence and gate art review; illustrative layout, not a game level",
+  "base_scene": "../reeds/review_scene.json",
+  "grid_size": [
+    40,
+    54
+  ],
+  "instances": [
+    {
+      "module": "es_b",
+      "cell": [
+        31,
+        39
+      ],
+      "position": [
+        744,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ns_a",
+      "cell": [
+        31,
+        40
+      ],
+      "position": [
+        744,
+        940
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ns_b",
+      "cell": [
+        31,
+        41
+      ],
+      "position": [
+        744,
+        964
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ne_a",
+      "cell": [
+        31,
+        42
+      ],
+      "position": [
+        744,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_a",
+      "cell": [
+        32,
+        39
+      ],
+      "position": [
+        768,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_b",
+      "cell": [
+        32,
+        42
+      ],
+      "position": [
+        768,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_b",
+      "cell": [
+        33,
+        39
+      ],
+      "position": [
+        792,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_a",
+      "cell": [
+        34,
+        39
+      ],
+      "position": [
+        816,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_b",
+      "cell": [
+        34,
+        42
+      ],
+      "position": [
+        816,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_b",
+      "cell": [
+        35,
+        39
+      ],
+      "position": [
+        840,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_a",
+      "cell": [
+        35,
+        42
+      ],
+      "position": [
+        840,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_a",
+      "cell": [
+        36,
+        39
+      ],
+      "position": [
+        864,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ew_b",
+      "cell": [
+        36,
+        42
+      ],
+      "position": [
+        864,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "sw_b",
+      "cell": [
+        37,
+        39
+      ],
+      "position": [
+        888,
+        916
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ns_a",
+      "cell": [
+        37,
+        40
+      ],
+      "position": [
+        888,
+        940
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "ns_b",
+      "cell": [
+        37,
+        41
+      ],
+      "position": [
+        888,
+        964
+      ],
+      "ground_elevation_pixels": 0
+    },
+    {
+      "module": "nw_a",
+      "cell": [
+        37,
+        42
+      ],
+      "position": [
+        888,
+        988
+      ],
+      "ground_elevation_pixels": 0
+    }
+  ],
+  "enclosure_cells": [
+    31,
+    39,
+    37,
+    42
+  ],
+  "gate_position": [
+    780,
+    980
+  ],
+  "gate_cell": [
+    33,
+    42
+  ],
+  "garden_plants": [
+    {
+      "pack": "foliage",
+      "plant": "shrub",
+      "position": [
+        792,
+        948
+      ],
+      "phase_offset": 1
+    },
+    {
+      "pack": "grass_flowers",
+      "plant": "flowers_white",
+      "position": [
+        840,
+        972
+      ],
+      "phase_offset": 2
+    },
+    {
+      "pack": "grass_flowers",
+      "plant": "grass_splayed",
+      "position": [
+        768,
+        972
+      ],
+      "phase_offset": 3
+    }
+  ],
+  "path_cells_added": [
+    [
+      27,
+      43
+    ],
+    [
+      28,
+      43
+    ],
+    [
+      29,
+      43
+    ],
+    [
+      30,
+      43
+    ],
+    [
+      31,
+      43
+    ],
+    [
+      32,
+      43
+    ],
+    [
+      33,
+      43
+    ],
+    [
+      33,
+      42
+    ],
+    [
+      33,
+      41
+    ]
+  ],
+  "path_join_cell": [
+    26,
+    43
+  ],
+  "frames": [
+    {
+      "image": "scene_frames/frame_001.png",
+      "parent_frame": 0,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_002.png",
+      "parent_frame": 0,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_003.png",
+      "parent_frame": 1,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_004.png",
+      "parent_frame": 1,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_005.png",
+      "parent_frame": 2,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_006.png",
+      "parent_frame": 2,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_007.png",
+      "parent_frame": 3,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_008.png",
+      "parent_frame": 3,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_009.png",
+      "parent_frame": 4,
+      "gate_pose": 1,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_010.png",
+      "parent_frame": 4,
+      "gate_pose": 2,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_011.png",
+      "parent_frame": 5,
+      "gate_pose": 3,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_012.png",
+      "parent_frame": 5,
+      "gate_pose": 4,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_013.png",
+      "parent_frame": 6,
+      "gate_pose": 5,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_014.png",
+      "parent_frame": 6,
+      "gate_pose": 6,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_015.png",
+      "parent_frame": 7,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_016.png",
+      "parent_frame": 7,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_017.png",
+      "parent_frame": 8,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_018.png",
+      "parent_frame": 8,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_019.png",
+      "parent_frame": 9,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_020.png",
+      "parent_frame": 9,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_021.png",
+      "parent_frame": 10,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_022.png",
+      "parent_frame": 10,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_023.png",
+      "parent_frame": 11,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_024.png",
+      "parent_frame": 11,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_025.png",
+      "parent_frame": 12,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_026.png",
+      "parent_frame": 12,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_027.png",
+      "parent_frame": 13,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_028.png",
+      "parent_frame": 13,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_029.png",
+      "parent_frame": 14,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_030.png",
+      "parent_frame": 14,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_031.png",
+      "parent_frame": 15,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_032.png",
+      "parent_frame": 15,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_033.png",
+      "parent_frame": 16,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_034.png",
+      "parent_frame": 16,
+      "gate_pose": 4,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_035.png",
+      "parent_frame": 17,
+      "gate_pose": 3,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_036.png",
+      "parent_frame": 17,
+      "gate_pose": 2,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_037.png",
+      "parent_frame": 18,
+      "gate_pose": 1,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_038.png",
+      "parent_frame": 18,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_039.png",
+      "parent_frame": 19,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_040.png",
+      "parent_frame": 19,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_041.png",
+      "parent_frame": 20,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_042.png",
+      "parent_frame": 20,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_043.png",
+      "parent_frame": 21,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_044.png",
+      "parent_frame": 21,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_045.png",
+      "parent_frame": 22,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_046.png",
+      "parent_frame": 22,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_047.png",
+      "parent_frame": 23,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_048.png",
+      "parent_frame": 23,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_049.png",
+      "parent_frame": 24,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_050.png",
+      "parent_frame": 24,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_051.png",
+      "parent_frame": 25,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_052.png",
+      "parent_frame": 25,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_053.png",
+      "parent_frame": 26,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_054.png",
+      "parent_frame": 26,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_055.png",
+      "parent_frame": 27,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_056.png",
+      "parent_frame": 27,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_057.png",
+      "parent_frame": 28,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_058.png",
+      "parent_frame": 28,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_059.png",
+      "parent_frame": 29,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_060.png",
+      "parent_frame": 29,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_061.png",
+      "parent_frame": 30,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_062.png",
+      "parent_frame": 30,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_063.png",
+      "parent_frame": 31,
+      "gate_pose": 1,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_064.png",
+      "parent_frame": 31,
+      "gate_pose": 2,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_065.png",
+      "parent_frame": 32,
+      "gate_pose": 3,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_066.png",
+      "parent_frame": 32,
+      "gate_pose": 4,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_067.png",
+      "parent_frame": 33,
+      "gate_pose": 5,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_068.png",
+      "parent_frame": 33,
+      "gate_pose": 6,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_069.png",
+      "parent_frame": 34,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_070.png",
+      "parent_frame": 34,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_071.png",
+      "parent_frame": 35,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_072.png",
+      "parent_frame": 35,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_073.png",
+      "parent_frame": 36,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_074.png",
+      "parent_frame": 36,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_075.png",
+      "parent_frame": 37,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_076.png",
+      "parent_frame": 37,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_077.png",
+      "parent_frame": 38,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_078.png",
+      "parent_frame": 38,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_079.png",
+      "parent_frame": 39,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_080.png",
+      "parent_frame": 39,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_081.png",
+      "parent_frame": 40,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_082.png",
+      "parent_frame": 40,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_083.png",
+      "parent_frame": 41,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_084.png",
+      "parent_frame": 41,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_085.png",
+      "parent_frame": 42,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_086.png",
+      "parent_frame": 42,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_087.png",
+      "parent_frame": 43,
+      "gate_pose": 7,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_088.png",
+      "parent_frame": 43,
+      "gate_pose": 4,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_089.png",
+      "parent_frame": 44,
+      "gate_pose": 3,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_090.png",
+      "parent_frame": 44,
+      "gate_pose": 2,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_091.png",
+      "parent_frame": 45,
+      "gate_pose": 1,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_092.png",
+      "parent_frame": 45,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_093.png",
+      "parent_frame": 46,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_094.png",
+      "parent_frame": 46,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_095.png",
+      "parent_frame": 47,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_096.png",
+      "parent_frame": 47,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_097.png",
+      "parent_frame": 48,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_098.png",
+      "parent_frame": 48,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_099.png",
+      "parent_frame": 49,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_100.png",
+      "parent_frame": 49,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_101.png",
+      "parent_frame": 50,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_102.png",
+      "parent_frame": 50,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_103.png",
+      "parent_frame": 51,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_104.png",
+      "parent_frame": 51,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_105.png",
+      "parent_frame": 52,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_106.png",
+      "parent_frame": 52,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_107.png",
+      "parent_frame": 53,
+      "gate_pose": 0,
+      "duration_ms": 100
+    },
+    {
+      "image": "scene_frames/frame_108.png",
+      "parent_frame": 53,
+      "gate_pose": 0,
+      "duration_ms": 100
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "gate_use_is_demonstration_only": true,
+  "review": {
+    "scene_scale": 2,
+    "closeup_rect": [
+      576,
+      888,
+      936,
+      1080
+    ],
+    "closeup_scale": 4
+  }
+}
