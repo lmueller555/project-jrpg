@@ -1,0 +1,128 @@
+{
+  "id": "eldenmere.cottage_storage.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "palette": {
+    "outline": "#45382d",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "wood_light": "#a08158",
+    "wood_worn": "#b79a6c",
+    "linen_shadow": "#d3c6a4",
+    "linen_light": "#e1d6bc",
+    "iron_shadow": "#535c5d",
+    "iron_base": "#737e7a",
+    "iron_light": "#a4aaa0",
+    "book_sage_shadow": "#566b50",
+    "book_sage_base": "#7b9065",
+    "book_slate": "#53696e"
+  },
+  "sprites": [
+    {
+      "id": "shelf",
+      "crop": [
+        79,
+        507,
+        625,
+        755
+      ],
+      "size": [
+        40,
+        20
+      ],
+      "frame_size": [
+        48,
+        24
+      ],
+      "offset": [
+        4,
+        2
+      ],
+      "position": [
+        100,
+        44
+      ],
+      "mount": "north_wall",
+      "allowed_materials": [
+        "outline",
+        "wood_",
+        "linen_",
+        "book_"
+      ],
+      "image": "sprites/shelf.png",
+      "atlas_rect": [
+        0,
+        0,
+        48,
+        24
+      ],
+      "animated": false,
+      "status": "review"
+    },
+    {
+      "id": "cupboard",
+      "crop": [
+        707,
+        337,
+        1175,
+        871
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "frame_size": [
+        48,
+        48
+      ],
+      "offset": [
+        4,
+        2
+      ],
+      "position": [
+        204,
+        60
+      ],
+      "floor_rect": [
+        4,
+        30,
+        40,
+        16
+      ],
+      "iron_sample_rect": [
+        16,
+        20,
+        8,
+        7
+      ],
+      "mount": "floor_against_north_wall",
+      "allowed_materials": [
+        "outline",
+        "wood_",
+        "iron_"
+      ],
+      "image": "sprites/cupboard.png",
+      "atlas_rect": [
+        48,
+        0,
+        48,
+        48
+      ],
+      "animated": false,
+      "status": "review"
+    }
+  ],
+  "sprite_sheet": "sprite_sheet.png",
+  "atlas_cell_size": [
+    48,
+    48
+  ],
+  "atlas_columns": 2,
+  "source_recipe": "../../../source/terrain/eldenmere/cottage_storage/recipe.json",
+  "animation": "Static shelf and closed cupboard; retain the approved nine-pose 5.4-second daylight loop.",
+  "collision_implemented": false,
+  "door_interaction_implemented": false
+}

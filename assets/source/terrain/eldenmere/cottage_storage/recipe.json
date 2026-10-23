@@ -1,0 +1,29 @@
+{
+  "id": "eldenmere.cottage_storage.24",
+  "status": "review",
+  "source": "storage_concept.png",
+  "palette": {
+    "outline": "#45382d",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "wood_light": "#a08158",
+    "wood_worn": "#b79a6c",
+    "linen_shadow": "#d3c6a4",
+    "linen_light": "#e1d6bc",
+    "iron_shadow": "#535c5d",
+    "iron_base": "#737e7a",
+    "iron_light": "#a4aaa0",
+    "book_sage_shadow": "#566b50",
+    "book_sage_base": "#7b9065",
+    "book_slate": "#53696e"
+  },
+  "samples": [
+    {"id": "shelf", "crop": [79,507,625,755], "size": [40,20], "frame_size": [48,24], "offset": [4,2], "position": [100,44], "mount": "north_wall", "allowed_materials": ["outline","wood_","linen_","book_"]},
+    {"id": "cupboard", "crop": [707,337,1175,871], "size": [40,44], "frame_size": [48,48], "offset": [4,2], "position": [204,60], "floor_rect": [4,30,40,16], "iron_sample_rect": [16,20,8,7], "mount": "floor_against_north_wall", "allowed_materials": ["outline","wood_","iron_"]}
+  ],
+  "room_source": "../cottage_furniture/room.json",
+  "clear_path_rect": [120,72,72,192],
+  "duration_ms": 600,
+  "review_scale": 4,
+  "animation": "Static shelf and closed cupboard; retain the approved nine-pose 5.4-second daylight loop."
+}
