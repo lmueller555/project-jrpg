@@ -1,0 +1,264 @@
+{
+  "character": "serene",
+  "direction": "left",
+  "approval_status": "review",
+  "idle": "../idle_left.png",
+  "palette": "../palette.json",
+  "template": "../../../templates/humanoid_24x36/walk_left/poses.json",
+  "parts_directory": "../../../source/characters/serene/walk_left/parts",
+  "idle_eye_pixels": [
+    [
+      8,
+      10
+    ]
+  ],
+  "mantle_rect": [
+    0,
+    14,
+    24,
+    5
+  ],
+  "bodice_rect": [
+    8,
+    19,
+    7,
+    2
+  ],
+  "skirt_under_hand_rects": [
+    [
+      10,
+      22,
+      5,
+      3
+    ]
+  ],
+  "costume_poses": [
+    {
+      "id": "01",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          15,
+          0
+        ],
+        [
+          22,
+          7,
+          15,
+          0
+        ],
+        [
+          23,
+          7,
+          15,
+          0
+        ],
+        [
+          24,
+          7,
+          16,
+          1
+        ],
+        [
+          25,
+          6,
+          16,
+          1
+        ],
+        [
+          26,
+          6,
+          17,
+          1
+        ],
+        [
+          27,
+          5,
+          17,
+          1
+        ],
+        [
+          28,
+          6,
+          17,
+          1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 32
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "02",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          15,
+          0
+        ],
+        [
+          22,
+          7,
+          15,
+          0
+        ],
+        [
+          23,
+          7,
+          15,
+          0
+        ],
+        [
+          24,
+          7,
+          16,
+          0
+        ],
+        [
+          25,
+          6,
+          16,
+          0
+        ],
+        [
+          26,
+          6,
+          17,
+          0
+        ],
+        [
+          28,
+          6,
+          17,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 28
+      },
+      "leg_split_x": 13
+    },
+    {
+      "id": "03",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          15,
+          0
+        ],
+        [
+          22,
+          7,
+          15,
+          0
+        ],
+        [
+          23,
+          7,
+          15,
+          0
+        ],
+        [
+          24,
+          7,
+          16,
+          -1
+        ],
+        [
+          25,
+          6,
+          16,
+          -1
+        ],
+        [
+          26,
+          6,
+          17,
+          -1
+        ],
+        [
+          27,
+          5,
+          17,
+          -1
+        ],
+        [
+          28,
+          6,
+          17,
+          -1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 32
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "04",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          15,
+          0
+        ],
+        [
+          22,
+          7,
+          15,
+          0
+        ],
+        [
+          23,
+          7,
+          15,
+          0
+        ],
+        [
+          24,
+          7,
+          16,
+          0
+        ],
+        [
+          25,
+          6,
+          16,
+          0
+        ],
+        [
+          26,
+          6,
+          17,
+          0
+        ],
+        [
+          28,
+          6,
+          17,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 28
+      },
+      "leg_split_x": 13
+    }
+  ],
+  "notes": "Read-only approved directional idle, palette and shared stride. Head and whole mantle bob together on passing poses. Costume rows retain apron and patch in profile, sage dress on back; contact hem 28, passing hem 27. Fill occluded cloth under the idle hands before shared arm poses. Directional calf/boot boundaries follow the approved dress motion template.",
+  "arm_neck_exclusion": [
+    9,
+    13,
+    6,
+    6
+  ]
+}

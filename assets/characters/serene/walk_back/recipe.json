@@ -1,0 +1,246 @@
+{
+  "character": "serene",
+  "direction": "back",
+  "approval_status": "review",
+  "idle": "../idle_back.png",
+  "palette": "../palette.json",
+  "template": "../../../templates/humanoid_24x36/walk_back/poses.json",
+  "parts_directory": "../../../source/characters/serene/walk_back/parts",
+  "idle_eye_pixels": [],
+  "mantle_rect": [
+    0,
+    14,
+    24,
+    6
+  ],
+  "bodice_rect": [
+    8,
+    20,
+    8,
+    1
+  ],
+  "skirt_under_hand_rects": [],
+  "costume_poses": [
+    {
+      "id": "01",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          16,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          1
+        ],
+        [
+          25,
+          6,
+          18,
+          1
+        ],
+        [
+          26,
+          5,
+          19,
+          1
+        ],
+        [
+          27,
+          5,
+          19,
+          1
+        ],
+        [
+          28,
+          5,
+          19,
+          1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "02",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          16,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          0
+        ],
+        [
+          25,
+          6,
+          18,
+          0
+        ],
+        [
+          26,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          5,
+          19,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "leg_split_x": 13
+    },
+    {
+      "id": "03",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          16,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          -1
+        ],
+        [
+          25,
+          6,
+          18,
+          -1
+        ],
+        [
+          26,
+          5,
+          19,
+          -1
+        ],
+        [
+          27,
+          5,
+          19,
+          -1
+        ],
+        [
+          28,
+          5,
+          19,
+          -1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 30
+      },
+      "leg_split_x": 12
+    },
+    {
+      "id": "04",
+      "skirt_rows": [
+        [
+          21,
+          8,
+          16,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          7,
+          17,
+          0
+        ],
+        [
+          25,
+          6,
+          18,
+          0
+        ],
+        [
+          26,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          5,
+          19,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 30,
+        "right": 32
+      },
+      "leg_split_x": 12
+    }
+  ],
+  "notes": "Read-only approved directional idle, palette and shared stride. Head and whole mantle bob together on passing poses. Costume rows retain apron and patch in profile, sage dress on back; contact hem 28, passing hem 27. Fill occluded cloth under the idle hands before shared arm poses. Directional calf/boot boundaries follow the approved dress motion template."
+}

@@ -23,3 +23,11 @@ Rebuild these views and boards with `python tools/build_serene_directional_idles
 ## Front walk — approved
 
 `walk_front/` adds the first four-phase walk, assembled from the approved appearance and shared front stride. It includes a 20× looping preview, a 12× frame strip, native sheet, metadata and recipe. The head and shoulder mantle bob together; apron details remain visible through the skirt sway. Run `python tools/build_serene_walk.py` and `python tools/test_serene_walk.py`. Approved idle artwork remains unchanged.
+
+## Left, right and back walks — awaiting review
+
+`walk_left/`, `walk_right/` and `walk_back/` add four-frame cycles from their approved directional idles. They use the shared directional arm/leg poses at 140 ms per phase, with one-pixel head-and-mantle bob and restrained skirt sway. Profile views retain a brown eye, silver temple and narrow apron with its patch; the back retains the bun and sage skirt without eyes or an apron panel.
+
+Each directory contains a 20× opaque looping GIF, 12× frame strip, native 96×36 sheet, recipe and animation metadata. `walk_directions_review.gif` shows all four directions synchronized at 12×, with independent approval labels. `walk_directions.png` is a 96×144 native sheet: directions as rows, phases as columns. `walk_directions.json` records its rectangles and timing.
+
+Run `python tools/build_serene_walk.py --direction remaining` to rebuild only the new walks and combined board; `--direction all` also rebuilds the approved front without changing its pixels. No other approved art is modified.

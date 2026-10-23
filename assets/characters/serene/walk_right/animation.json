@@ -1,0 +1,194 @@
+{
+  "character": "serene",
+  "animation": "walk.right",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 560,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "phase": "contact_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_mantle_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          16,
+          10
+        ]
+      ],
+      "hem_row": 28,
+      "boot_top_rows": {
+        "left": 32,
+        "right": 32
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/serene/walk_right/parts/frame_01_legs.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_skirt_and_apron.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_bodice.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_left_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_right_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_shoulder_mantle.png",
+        "assets/source/characters/serene/walk_right/parts/frame_01_head.png"
+      ],
+      "leg_split_x": 12
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "phase": "passing_a",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_mantle_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          16,
+          9
+        ]
+      ],
+      "hem_row": 27,
+      "boot_top_rows": {
+        "left": 32,
+        "right": 29
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/serene/walk_right/parts/frame_02_legs.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_skirt_and_apron.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_bodice.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_left_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_right_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_shoulder_mantle.png",
+        "assets/source/characters/serene/walk_right/parts/frame_02_head.png"
+      ],
+      "leg_split_x": 13
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "phase": "contact_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_mantle_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          16,
+          10
+        ]
+      ],
+      "hem_row": 28,
+      "boot_top_rows": {
+        "left": 32,
+        "right": 32
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/serene/walk_right/parts/frame_03_legs.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_skirt_and_apron.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_bodice.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_left_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_right_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_shoulder_mantle.png",
+        "assets/source/characters/serene/walk_right/parts/frame_03_head.png"
+      ],
+      "leg_split_x": 12
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "phase": "passing_b",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_mantle_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          16,
+          9
+        ]
+      ],
+      "hem_row": 27,
+      "boot_top_rows": {
+        "left": 29,
+        "right": 32
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/serene/walk_right/parts/frame_04_legs.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_skirt_and_apron.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_bodice.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_left_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_right_arm.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_shoulder_mantle.png",
+        "assets/source/characters/serene/walk_right/parts/frame_04_head.png"
+      ],
+      "leg_split_x": 11
+    }
+  ],
+  "template": "../../../templates/humanoid_24x36/walk_right/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "review": {
+    "gif": "walk_right_preview.gif",
+    "scale": 20,
+    "background": "#e8edf2"
+  },
+  "comparison": {
+    "gif": "shared_motion_comparison.gif",
+    "scale": 16,
+    "columns": [
+      "caelan",
+      "serene"
+    ]
+  }
+}
