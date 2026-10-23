@@ -1,0 +1,826 @@
+{
+  "id": "eldenmere.cottage.terracotta.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    120,
+    144
+  ],
+  "ground_rect": [
+    12,
+    72,
+    96,
+    72
+  ],
+  "structure": "structure.png",
+  "closed": "closed.png",
+  "open": "open.png",
+  "components": [
+    {
+      "id": "chimney",
+      "rect": [
+        82,
+        0,
+        98,
+        22
+      ],
+      "category": "chimney",
+      "image": "parts/chimney.png",
+      "position": [
+        82,
+        48
+      ]
+    },
+    {
+      "id": "flower_box",
+      "rect": [
+        23,
+        76,
+        39,
+        84
+      ],
+      "category": "decoration",
+      "image": "parts/flower_box.png",
+      "position": [
+        23,
+        124
+      ]
+    },
+    {
+      "id": "lantern",
+      "rect": [
+        68,
+        59,
+        76,
+        73
+      ],
+      "category": "decoration",
+      "image": "parts/lantern.png",
+      "position": [
+        68,
+        107
+      ]
+    },
+    {
+      "id": "door_leaf",
+      "rect": [
+        53,
+        63,
+        66,
+        89
+      ],
+      "category": "door",
+      "image": "parts/door_leaf.png",
+      "position": [
+        53,
+        111
+      ]
+    },
+    {
+      "id": "window_left",
+      "rect": [
+        19,
+        61,
+        41,
+        78
+      ],
+      "category": "window",
+      "image": "parts/window_left.png",
+      "position": [
+        19,
+        109
+      ]
+    },
+    {
+      "id": "window_right",
+      "rect": [
+        79,
+        61,
+        101,
+        79
+      ],
+      "category": "window",
+      "image": "parts/window_right.png",
+      "position": [
+        79,
+        109
+      ]
+    },
+    {
+      "id": "roof_west",
+      "rect": [
+        0,
+        8,
+        24,
+        53
+      ],
+      "category": "roof",
+      "image": "parts/roof_west.png",
+      "position": [
+        0,
+        56
+      ]
+    },
+    {
+      "id": "roof_middle",
+      "rect": [
+        24,
+        8,
+        96,
+        53
+      ],
+      "category": "roof",
+      "image": "parts/roof_middle.png",
+      "position": [
+        24,
+        56
+      ]
+    },
+    {
+      "id": "roof_east",
+      "rect": [
+        96,
+        8,
+        120,
+        53
+      ],
+      "category": "roof",
+      "image": "parts/roof_east.png",
+      "position": [
+        96,
+        56
+      ]
+    },
+    {
+      "id": "wall_west",
+      "rect": [
+        0,
+        53,
+        24,
+        96
+      ],
+      "category": "wall",
+      "image": "parts/wall_west.png",
+      "position": [
+        0,
+        101
+      ]
+    },
+    {
+      "id": "wall_panel_a",
+      "rect": [
+        24,
+        53,
+        48,
+        96
+      ],
+      "category": "wall",
+      "image": "parts/wall_panel_a.png",
+      "position": [
+        24,
+        101
+      ]
+    },
+    {
+      "id": "wall_doorway",
+      "rect": [
+        48,
+        53,
+        72,
+        96
+      ],
+      "category": "wall",
+      "image": "parts/wall_doorway.png",
+      "position": [
+        48,
+        101
+      ]
+    },
+    {
+      "id": "wall_panel_b",
+      "rect": [
+        72,
+        53,
+        96,
+        96
+      ],
+      "category": "wall",
+      "image": "parts/wall_panel_b.png",
+      "position": [
+        72,
+        101
+      ]
+    },
+    {
+      "id": "wall_east",
+      "rect": [
+        96,
+        53,
+        120,
+        96
+      ],
+      "category": "wall",
+      "image": "parts/wall_east.png",
+      "position": [
+        96,
+        101
+      ]
+    }
+  ],
+  "door": {
+    "hinge": "west",
+    "position": [
+      53,
+      111
+    ],
+    "size": [
+      13,
+      26
+    ],
+    "opening": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "closing": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "hold_closed": 0,
+    "hold_open": 4
+  },
+  "smoke": {
+    "optional": true,
+    "direction": "east",
+    "loop": true,
+    "cycle_duration_ms": 3600,
+    "frames": [
+      {
+        "image": "smoke/frame_01.png",
+        "particles": [
+          {
+            "age": 0,
+            "center": [
+              90,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              93,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              96,
+              23
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_02.png",
+        "particles": [
+          {
+            "age": 1,
+            "center": [
+              90,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              93,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              96,
+              21
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_03.png",
+        "particles": [
+          {
+            "age": 2,
+            "center": [
+              91,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              94,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              97,
+              19
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_04.png",
+        "particles": [
+          {
+            "age": 3,
+            "center": [
+              91,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              94,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              97,
+              17
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_05.png",
+        "particles": [
+          {
+            "age": 4,
+            "center": [
+              92,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              95,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              98,
+              15
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_06.png",
+        "particles": [
+          {
+            "age": 5,
+            "center": [
+              92,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              95,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              98,
+              13
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_07.png",
+        "particles": [
+          {
+            "age": 6,
+            "center": [
+              93,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              96,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              90,
+              47
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_08.png",
+        "particles": [
+          {
+            "age": 7,
+            "center": [
+              93,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              96,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              90,
+              45
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_09.png",
+        "particles": [
+          {
+            "age": 8,
+            "center": [
+              94,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              97,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              91,
+              43
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_10.png",
+        "particles": [
+          {
+            "age": 9,
+            "center": [
+              94,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              97,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              91,
+              41
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_11.png",
+        "particles": [
+          {
+            "age": 10,
+            "center": [
+              95,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              98,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              92,
+              39
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_12.png",
+        "particles": [
+          {
+            "age": 11,
+            "center": [
+              95,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              98,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              92,
+              37
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_13.png",
+        "particles": [
+          {
+            "age": 12,
+            "center": [
+              96,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              90,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              93,
+              35
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_14.png",
+        "particles": [
+          {
+            "age": 13,
+            "center": [
+              96,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              90,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              93,
+              33
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_15.png",
+        "particles": [
+          {
+            "age": 14,
+            "center": [
+              97,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              91,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              94,
+              31
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_16.png",
+        "particles": [
+          {
+            "age": 15,
+            "center": [
+              97,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              91,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              94,
+              29
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_17.png",
+        "particles": [
+          {
+            "age": 16,
+            "center": [
+              98,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              92,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              95,
+              27
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_18.png",
+        "particles": [
+          {
+            "age": 17,
+            "center": [
+              98,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              92,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              95,
+              25
+            ]
+          }
+        ],
+        "duration_ms": 200
+      }
+    ]
+  },
+  "lantern": {
+    "max_sway_pixels": 1,
+    "bracket_fixed": true,
+    "frames": [
+      "lantern/frame_01.png",
+      "lantern/frame_02.png",
+      "lantern/frame_03.png",
+      "lantern/frame_04.png",
+      "lantern/frame_05.png",
+      "lantern/frame_06.png",
+      "lantern/frame_07.png",
+      "lantern/frame_08.png",
+      "lantern/frame_09.png",
+      "lantern/frame_10.png",
+      "lantern/frame_11.png",
+      "lantern/frame_12.png",
+      "lantern/frame_13.png",
+      "lantern/frame_14.png",
+      "lantern/frame_15.png",
+      "lantern/frame_16.png",
+      "lantern/frame_17.png",
+      "lantern/frame_18.png"
+    ]
+  },
+  "reusable_inserts": {
+    "roof_repeat": "parts/roof_repeat.png",
+    "wall_blank": "parts/wall_blank.png",
+    "lit_windows": [
+      "parts/window_left_lit.png",
+      "parts/window_right_lit.png"
+    ]
+  },
+  "animations_are_separate_layers": true,
+  "recipe": "../../../../source/terrain/eldenmere/cottage_variants/recipe.json",
+  "palette_name": "Terracotta / ivory / oak",
+  "base_from_repo_root": "assets/terrain/eldenmere/cottage"
+}

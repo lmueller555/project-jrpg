@@ -1,0 +1,13 @@
+# Cottage palette source — draft variants
+
+The original cottage geometry and animations are approved on main at `ae5d4d5b6740b3a7523d134ae481811bffb0a36c`. This source creates three color variants from those approved native exports without regenerating their silhouettes or poses.
+
+`palette_concept.png` retains a generated three-palette study guided by the approved cottage close-up. Its original remains in `/workspace/generated_images/exec-785040a7-36f7-4160-80dc-3a61ae618777.png` in the creation workspace. This study establishes color direction only. Actual asset geometry comes entirely from the approved cottage; the recipe's exact ramps determine final native colors.
+
+`recipe.json` records four-shade roof/wood ramps, three-shade plaster ramps, animation timing, instance positions, courtyard extension seed, ground elevations and path connection. Terracotta/ivory/oak, moss/buff/walnut and heather/pale/ash are appearance names, not canon resident or location assignments.
+
+The builder uses exact named shade substitutions for wood and plaster. `roof_detail` in each exported palette records the derived roof shade aliases; these preserve the dark tile seams and subtle texture contrast. Within the registered roof region, sampled blue/gray colors that were shared with other material ramps retain their relative brightness between the approved roof shades, with a darker joint shade and interpolated detail shades. This prevents uncolored blue stripes in the new roofs. A protected chimney rectangle keeps its original sampled stone/mortar colors; exact glass, iron, foliage and smoke colors stay unchanged outside the roof region. Hanging-lantern silhouettes (including their shifted positions) and white flower highlights are protected. `retained_details` in each exported palette documents original shades preserved in these small details.
+
+All crops retain their original registration, alpha and geometry. The builder exports palette-specific components, reusable inserts, structure, door poses, lantern and smoke layers, static states and native demonstration frames. Composite frames are assembled from their exported layers. Original source/export assets remain read only. The display loop uses the approved door demonstration phases; game opening/closing retain their non-looping tracks.
+
+Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_variants.py` and verify with `tools/test_eldenmere_cottage_variants.py` using the same Python environment. These three new appearances await review separately from the approved base.

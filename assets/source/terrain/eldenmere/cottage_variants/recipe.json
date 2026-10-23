@@ -1,0 +1,49 @@
+{
+  "id": "eldenmere.cottage.palettes.24",
+  "status": "draft",
+  "concept": "palette_concept.png",
+  "base": "assets/terrain/eldenmere/cottage",
+  "frame_count": 18,
+  "duration_ms": 200,
+  "scene_size": [30, 36],
+  "scene_scale": 2,
+  "courtyard_crop": [0, 624, 720, 840],
+  "courtyard_scale": 3,
+  "scene_seed": 823,
+  "ground_elevation_pixels": 0,
+  "threshold_elevation_pixels": 0,
+  "connector_apron": [200, 574, 8, 8],
+  "path_join_cells": [[8, 23]],
+  "variants": [
+    {
+      "id": "terracotta",
+      "name": "Terracotta / ivory / oak",
+      "position": [24, 648],
+      "palette": {
+        "roof": {"shadow": "#704e47", "base": "#946555", "light": "#b3856a", "edge": "#c6a187"},
+        "plaster": {"shadow": "#b2a087", "base": "#ded0ae", "light": "#ece0c5"},
+        "wood": {"shadow": "#504334", "base": "#70553c", "light": "#91704e", "worn": "#ac8d68"}
+      }
+    },
+    {
+      "id": "moss",
+      "name": "Moss / buff / walnut",
+      "position": [288, 648],
+      "palette": {
+        "roof": {"shadow": "#4e5a46", "base": "#6c7b58", "light": "#8f9a75", "edge": "#adb693"},
+        "plaster": {"shadow": "#af956f", "base": "#d4b68b", "light": "#e5d0a8"},
+        "wood": {"shadow": "#56463c", "base": "#745743", "light": "#947655", "worn": "#b49972"}
+      }
+    },
+    {
+      "id": "heather",
+      "name": "Heather / pale / ash",
+      "position": [552, 648],
+      "palette": {
+        "roof": {"shadow": "#57515f", "base": "#787083", "light": "#99909f", "edge": "#b7adb9"},
+        "plaster": {"shadow": "#a9a49b", "base": "#d0cec2", "light": "#e3e1d7"},
+        "wood": {"shadow": "#514b47", "base": "#74685c", "light": "#958876", "worn": "#b5a892"}
+      }
+    }
+  ]
+}
