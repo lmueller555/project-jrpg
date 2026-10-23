@@ -1,7 +1,7 @@
 """Build source-derived foliage with fixed bark/shadows and local leaf-cluster motion."""
 from pathlib import Path
 from PIL import Image, ImageDraw
-from build_eldenmere_stream import read_json, write_json, rgba, enlarged, save_loop
+from build_eldenmere_stream import read_json, write_json, rgba, enlarged
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/terrain/eldenmere/foliage'
@@ -10,6 +10,12 @@ PREVIOUS=OUTPUT.parent/'cottage_shapes'
 
 
 def opened(path):return Image.open(path).convert('RGBA')
+
+
+def save_loop(path,images,recipe):
+    # Keep previous pixels and encode differences; decoded frames remain lossless.
+    images[0].save(path,save_all=True,append_images=images[1:],duration=recipe['duration_ms'],
+                   loop=0,disposal=1,optimize=True)
 
 
 def nearest(pixel,colors):
