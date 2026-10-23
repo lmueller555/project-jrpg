@@ -1,6 +1,6 @@
-# Sized cottage interior layouts — review
+# Sized cottage interior layouts — approved
 
-Three furnished interior arrangements use the user-selected 10×10, 13×10 and 16×10 floor envelopes. Layouts are review candidates, not finalized homes or named household assignments. They retain larger separate room maps, the 24px grid and original 24×36 Caelan. The older 10×8 showroom remains unchanged.
+Three approved furnished interior arrangements use the user-selected 10×10, 13×10 and 16×10 floor envelopes. The size templates and arrangements are approved; named household assignments remain future work. They retain larger separate room maps, the 24px grid and original 24×36 Caelan. The older 10×8 showroom remains unchanged.
 
 This milestone assembles approved native tiles, furnishings, hearth frames and exterior sprites. It creates no new painted art and never resizes source sprites. `recipe.json` retains explicit room dimensions, fixture placements, furniture source references, character positions, interaction approaches and the wide cottage's cutaway divider. Furniture and character scale is identical in every room.
 
@@ -18,7 +18,7 @@ The wide room divider reuses the approved west-side wall's native 12×24 strip s
 
 Each furnishing retains its approved suggested floor rectangle, translated into room coordinates; wall shelves do not block the floor. A conservative **24×12 floor probe** tests character standing space on a two-pixel lattice. Flood fill starts immediately inside the south entry and must reach every recorded furniture approach and Caelan's foot anchor. It accounts for all furniture, the hearth and the partition. This is layout validation and planning data, not implemented engine collision or interaction.
 
-The floor probe can traverse each entire required route, so the check covers doorway clearances rather than only point paths. It is a minimum access test, not a claim that every aisle is 48px wide. The compact keeps a combined living/sleeping arrangement; the larger rooms provide broader separation between activities. Chair approaches may be from the side where seating is tucked under the table. Review furniture density visually before approval.
+The floor probe can traverse each entire required route, so the check covers doorway clearances rather than only point paths. It is a minimum access test, not a claim that every aisle is 48px wide. The compact keeps a combined living/sleeping arrangement; the larger rooms provide broader separation between activities. Chair approaches may be from the side where seating is tucked under the table. Furniture density and arrangements are approved.
 
 ## Animation and exports
 
@@ -28,4 +28,4 @@ Each room exports native structure layers, placement/source metadata, suggested 
 
 Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_layouts.py`.
 
-Check with the same interpreter and `tools/test_eldenmere_cottage_layouts.py`. The builder writes only the new layout pack. Final layout approval, palette-specific household dressing, engine collision and room transitions remain future work.
+Check with the same interpreter and `tools/test_eldenmere_cottage_layouts.py`. The builder writes only the new layout pack. The three layout designs are approved. Palette-specific household dressing, engine collision and room transitions remain future work.

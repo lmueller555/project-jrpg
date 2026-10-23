@@ -1,4 +1,4 @@
-# Furnished cottage interiors — review
+# Furnished cottage interiors — approved
 
 | Cottage | Exterior ground | Interior floor | Native room canvas |
 | --- | --- | --- | --- |
@@ -23,4 +23,4 @@ Entrance centers preserve each exterior door's relative position within one nati
 
 Fire, ember and local glow animations retain the approved 1.2-second clock; daylight retains 5.4 seconds. The combined loop is 10.8 seconds. Exteriors in the comparison are static closed states. This is a layout/scale review, not final household geography or a runnable game. No previous art files or story documents are changed.
 
-Rebuild with `tools/build_eldenmere_cottage_layouts.py`; verify with `tools/test_eldenmere_cottage_layouts.py` in the documented Pillow environment. Source settings live under `assets/source/terrain/eldenmere/cottage_layouts/`. Layouts await approval.
+Rebuild with `tools/build_eldenmere_cottage_layouts.py`; verify with `tools/test_eldenmere_cottage_layouts.py` in the documented Pillow environment. Source settings live under `assets/source/terrain/eldenmere/cottage_layouts/`. The three layouts are approved for main.

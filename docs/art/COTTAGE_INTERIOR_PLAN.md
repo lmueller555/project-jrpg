@@ -1,6 +1,6 @@
-# Cottage interiors — size and layout proposal
+# Cottage interiors — approved size and layout templates
 
-Status: FURNISHED LAYOUTS IN REVIEW. The user requested 10×10, 13×10 and 16×10 furnished examples at a common pixel scale, retaining larger separate room maps. These dimensions are authorized for this review; final arrangements and household assignments await approval. This document does not change narrative canon or define playable engine maps.
+Status: APPROVED SIZE AND LAYOUT TEMPLATES. The user approved 10×10, 13×10 and 16×10 furnished interiors at a common pixel scale, retaining larger separate room maps. The three arrangements are approved; named household assignments remain future work. This document does not change narrative canon or define playable engine maps.
 
 ## Size rule
 
@@ -12,7 +12,7 @@ Use the user-selected 10×10, 13×10 and 16×10 floor envelopes. These replace t
 | Standard | 4×3 | 13×10 | 312×240 | 130 |
 | Wide | 5×3 | 16×10 | 384×240 | 160 |
 
-These dimensions describe the usable floor envelope before furniture or partitions. Projected north-wall height, cutaway walls and surrounding void are additional rendering space. A partition or utility nook consumes this same budget; it does not silently add floor area. The existing 10×8-floor review room remains an asset showroom and is not assigned to a cottage size. Proposed map shells would be new exports, preserving all approved artwork.
+These dimensions describe the usable floor envelope before furniture or partitions. Projected north-wall height, cutaway walls and surrounding void are additional rendering space. A partition or utility nook consumes this same budget; it does not silently add floor area. The existing 10×8-floor review room remains an asset showroom and is not assigned to a cottage size. The approved size templates are separate exports, preserving the original asset showroom and artwork.
 
 ## Layout character
 
@@ -34,4 +34,4 @@ The user selected kitchen counter, washbasin and pantry storage as the next asse
 
 The new 10×8-floor kitchen showroom places counter and basin under the right window and the pantry below the wall shelf. The original cupboard moves beside the bed. Only one dining chair is shown; the other three facing-comparison samples remain in their approved pack. Bed and table keep their positions; all approved sprite files remain unchanged. This illustrative arrangement is not a proposed final cottage floor plan.
 
-The kitchen asset set is approved. The new `assets/terrain/eldenmere/cottage_layouts/` pack implements the three furnished review layouts with a same-scale exterior/interior comparison. All furnishing approaches and Caelan's foot anchor are reachable using a conservative 24×12 floor probe. The wide cottage uses a longer cutaway sleeping/storage divider, one bed and three dining chairs. Existing furnishings are redistributed across the larger floors without resizing their artwork. Review density, access and exterior alignment before finalizing layouts or creating household-specific variants.
+The kitchen asset set is approved. The new `assets/terrain/eldenmere/cottage_layouts/` pack implements the three approved furnished layouts with a same-scale exterior/interior comparison. All furnishing approaches and Caelan's foot anchor are reachable using a conservative 24×12 floor probe. The wide cottage uses a longer cutaway sleeping/storage divider, one bed and three dining chairs. Existing furnishings are redistributed across the larger floors without resizing their artwork. The size, density, access and exterior alignment are approved. Household-specific variants remain future work.
