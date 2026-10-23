@@ -1,0 +1,277 @@
+{
+  "id": "eldenmere.cottage_interior.shell.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "interior_scale": "expanded_separate_room_map",
+  "floor_size_tiles": [
+    10,
+    8
+  ],
+  "tile_sheet": "tile_sheet.png",
+  "atlas_columns": 7,
+  "atlas_cell_size": [
+    24,
+    48
+  ],
+  "tiles": [
+    {
+      "id": "floor_a",
+      "image": "tiles/floor_a.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "floor_b",
+      "image": "tiles/floor_b.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        24,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "floor_c",
+      "image": "tiles/floor_c.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        48,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "north_a",
+      "image": "tiles/north_a.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "atlas_rect": [
+        72,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "north_b",
+      "image": "tiles/north_b.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "atlas_rect": [
+        96,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "northwest_corner",
+      "image": "tiles/northwest_corner.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "atlas_rect": [
+        120,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "northeast_corner",
+      "image": "tiles/northeast_corner.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "atlas_rect": [
+        144,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "west_side",
+      "image": "tiles/west_side.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        0,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "east_side",
+      "image": "tiles/east_side.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        24,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "south_cap",
+      "image": "tiles/south_cap.png",
+      "frame_size": [
+        24,
+        8
+      ],
+      "atlas_rect": [
+        48,
+        48,
+        24,
+        8
+      ]
+    },
+    {
+      "id": "southwest_corner",
+      "image": "tiles/southwest_corner.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        72,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "southeast_corner",
+      "image": "tiles/southeast_corner.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "atlas_rect": [
+        96,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "entry_threshold",
+      "image": "tiles/entry_threshold.png",
+      "frame_size": [
+        24,
+        8
+      ],
+      "atlas_rect": [
+        120,
+        48,
+        24,
+        8
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "floor",
+      "image": "parts/floor.png",
+      "frame_size": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "plaster",
+      "image": "parts/plaster.png",
+      "frame_size": [
+        24,
+        48
+      ]
+    },
+    {
+      "id": "vertical_beam",
+      "image": "parts/vertical_beam.png",
+      "frame_size": [
+        6,
+        48
+      ]
+    },
+    {
+      "id": "horizontal_beam",
+      "image": "parts/horizontal_beam.png",
+      "frame_size": [
+        48,
+        6
+      ]
+    },
+    {
+      "id": "window",
+      "image": "parts/window.png",
+      "frame_size": [
+        24,
+        30
+      ]
+    },
+    {
+      "id": "door",
+      "image": "parts/door.png",
+      "frame_size": [
+        24,
+        36
+      ]
+    },
+    {
+      "id": "floor_b",
+      "image": "parts/floor_b.png",
+      "frame_size": [
+        24,
+        24
+      ]
+    },
+    {
+      "id": "floor_c",
+      "image": "parts/floor_c.png",
+      "frame_size": [
+        24,
+        24
+      ]
+    }
+  ],
+  "structure_moves": false,
+  "daylight_cycle_duration_ms": 5400,
+  "collision_implemented": false,
+  "review": {
+    "room": "room_review.gif",
+    "parts": "components_review.png"
+  },
+  "recipe": "../../../source/terrain/eldenmere/cottage_interior/recipe.json"
+}

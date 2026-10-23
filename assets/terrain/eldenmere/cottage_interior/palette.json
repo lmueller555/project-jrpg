@@ -1,0 +1,55 @@
+{
+  "status": "review",
+  "materials": {
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "plaster": {
+      "shadow": "#aa9d80",
+      "base": "#d3c6a4",
+      "light": "#e1d6bc"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    }
+  },
+  "daylight": [
+    {
+      "shadow": "#6f5946",
+      "base": "#8b6c50",
+      "light": "#a58860",
+      "worn": "#ba9f72"
+    },
+    {
+      "shadow": "#745e4b",
+      "base": "#8e7155",
+      "light": "#a88b64",
+      "worn": "#bca176"
+    },
+    {
+      "shadow": "#796450",
+      "base": "#92755a",
+      "light": "#aa8f68",
+      "worn": "#bea479"
+    }
+  ],
+  "void": "#24302d"
+}

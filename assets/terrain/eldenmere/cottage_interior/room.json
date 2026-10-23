@@ -1,0 +1,422 @@
+{
+  "status": "review",
+  "purpose": "Reusable interior foundation review; unfurnished, not a named household or final level",
+  "room_size": [
+    288,
+    288
+  ],
+  "floor_rect": [
+    24,
+    72,
+    240,
+    192
+  ],
+  "north_wall_rect": [
+    24,
+    24,
+    240,
+    48
+  ],
+  "entry_rect": [
+    144,
+    264,
+    24,
+    8
+  ],
+  "door_position": [
+    144,
+    36
+  ],
+  "door_purpose": "Closed adjoining-room door appearance sample",
+  "window_positions": [
+    [
+      60,
+      30
+    ],
+    [
+      204,
+      30
+    ]
+  ],
+  "hero_position": [
+    144,
+    168
+  ],
+  "wall_tile_placements": [
+    {
+      "tile": "north_a",
+      "position": [
+        24,
+        24
+      ]
+    },
+    {
+      "tile": "north_b",
+      "position": [
+        48,
+        24
+      ]
+    },
+    {
+      "tile": "north_a",
+      "position": [
+        72,
+        24
+      ]
+    },
+    {
+      "tile": "north_b",
+      "position": [
+        96,
+        24
+      ]
+    },
+    {
+      "tile": "north_a",
+      "position": [
+        120,
+        24
+      ]
+    },
+    {
+      "tile": "north_b",
+      "position": [
+        144,
+        24
+      ]
+    },
+    {
+      "tile": "north_a",
+      "position": [
+        168,
+        24
+      ]
+    },
+    {
+      "tile": "north_b",
+      "position": [
+        192,
+        24
+      ]
+    },
+    {
+      "tile": "north_a",
+      "position": [
+        216,
+        24
+      ]
+    },
+    {
+      "tile": "north_b",
+      "position": [
+        240,
+        24
+      ]
+    },
+    {
+      "tile": "northwest_corner",
+      "position": [
+        0,
+        24
+      ]
+    },
+    {
+      "tile": "northeast_corner",
+      "position": [
+        264,
+        24
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        72
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        72
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        96
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        96
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        120
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        120
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        144
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        144
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        168
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        168
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        192
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        192
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        216
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        216
+      ]
+    },
+    {
+      "tile": "west_side",
+      "position": [
+        0,
+        240
+      ]
+    },
+    {
+      "tile": "east_side",
+      "position": [
+        264,
+        240
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        24,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        48,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        72,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        96,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        120,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        168,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        192,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        216,
+        264
+      ]
+    },
+    {
+      "tile": "south_cap",
+      "position": [
+        240,
+        264
+      ]
+    },
+    {
+      "tile": "southwest_corner",
+      "position": [
+        0,
+        264
+      ]
+    },
+    {
+      "tile": "southeast_corner",
+      "position": [
+        264,
+        264
+      ]
+    },
+    {
+      "tile": "entry_threshold",
+      "position": [
+        144,
+        264
+      ]
+    }
+  ],
+  "floor_pattern": [
+    "floor_a",
+    "floor_b",
+    "floor_c"
+  ],
+  "support_positions": [
+    [
+      24,
+      24
+    ],
+    [
+      96,
+      24
+    ],
+    [
+      168,
+      24
+    ],
+    [
+      258,
+      24
+    ]
+  ],
+  "draw_order": [
+    "structure",
+    "daylight",
+    "character"
+  ],
+  "floor_elevation_pixels": 0,
+  "exterior_transition_implemented": false,
+  "furniture_included": false,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "light": "lighting/frame_01.png",
+      "strength": 0,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "light": "lighting/frame_02.png",
+      "strength": 0,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "light": "lighting/frame_03.png",
+      "strength": 1,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "light": "lighting/frame_04.png",
+      "strength": 1,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "light": "lighting/frame_05.png",
+      "strength": 2,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "light": "lighting/frame_06.png",
+      "strength": 2,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "light": "lighting/frame_07.png",
+      "strength": 1,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "light": "lighting/frame_08.png",
+      "strength": 1,
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "light": "lighting/frame_09.png",
+      "strength": 0,
+      "duration_ms": 600
+    }
+  ],
+  "cycle_duration_ms": 5400,
+  "loop": true,
+  "daylight": {
+    "mask": "room/daylight_mask.png",
+    "geometry_moves": false,
+    "source": "Projected window glass panes; mullion gaps remain unlit"
+  },
+  "review_scale": 4
+}

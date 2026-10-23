@@ -1,0 +1,225 @@
+{
+  "id": "eldenmere.cottage_interior.shell.24",
+  "status": "review",
+  "source": "materials_concept.png",
+  "tile_size": [
+    24,
+    24
+  ],
+  "interior_scale": "expanded_separate_room_map",
+  "floor_size_tiles": [
+    10,
+    8
+  ],
+  "room_size": [
+    288,
+    288
+  ],
+  "floor_rect": [
+    24,
+    72,
+    240,
+    192
+  ],
+  "north_wall_rect": [
+    24,
+    24,
+    240,
+    48
+  ],
+  "entry_rect": [
+    144,
+    264,
+    24,
+    8
+  ],
+  "door_position": [
+    144,
+    36
+  ],
+  "window_positions": [
+    [
+      60,
+      30
+    ],
+    [
+      204,
+      30
+    ]
+  ],
+  "hero_position": [
+    144,
+    168
+  ],
+  "source_samples": [
+    {
+      "id": "floor",
+      "crop": [
+        126,
+        193,
+        529,
+        577
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "material": "wood",
+      "source": "materials_quiet.png",
+      "wood_color_rule": "quiet_floor"
+    },
+    {
+      "id": "plaster",
+      "crop": [
+        1749,
+        66,
+        2049,
+        652
+      ],
+      "size": [
+        24,
+        48
+      ],
+      "material": "plaster",
+      "source": "materials_quiet.png"
+    },
+    {
+      "id": "vertical_beam",
+      "crop": [
+        1267,
+        33,
+        1322,
+        500
+      ],
+      "size": [
+        6,
+        48
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "horizontal_beam",
+      "crop": [
+        60,
+        735,
+        623,
+        793
+      ],
+      "size": [
+        48,
+        6
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "window",
+      "crop": [
+        711,
+        602,
+        970,
+        935
+      ],
+      "size": [
+        24,
+        30
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "door",
+      "crop": [
+        1168,
+        583,
+        1414,
+        953
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "floor_b",
+      "source": "materials_quiet.png",
+      "crop": [
+        649,
+        193,
+        1056,
+        577
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "material": "wood",
+      "wood_color_rule": "quiet_floor"
+    },
+    {
+      "id": "floor_c",
+      "source": "materials_quiet.png",
+      "crop": [
+        1175,
+        193,
+        1585,
+        577
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "material": "wood",
+      "wood_color_rule": "quiet_floor"
+    }
+  ],
+  "palette": {
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "plaster": {
+      "shadow": "#aa9d80",
+      "base": "#d3c6a4",
+      "light": "#e1d6bc"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    }
+  },
+  "void_color": "#24302d",
+  "light_strengths": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    0
+  ],
+  "duration_ms": 600,
+  "review_scale": 4,
+  "quiet_floor_red_thresholds": [
+    124,
+    169,
+    194
+  ]
+}
