@@ -1,0 +1,31 @@
+{
+  "source": "idle_front_concept.png",
+  "alpha_threshold": 128,
+  "source_bounds": [274, 121, 751, 1463],
+  "frame_size": [24, 36],
+  "occupied_rect": [4, 1, 16, 34],
+  "foot_anchor": [12, 34],
+  "resampling": "nearest",
+  "palette": "../../../characters/serene/palette.json",
+  "eyes": {"top_pixels": [[9, 10], [14, 10]], "height": 2, "iris_offset_y": 1, "iris_name": "Warm brown"},
+  "bands": [
+    {"source_y": [121, 603], "native_y": [1, 14], "materials": ["outline", "hair", "silver", "skin", "bronze"]},
+    {"source_y": [603, 838], "native_y": [14, 20], "materials": ["outline", "mantle", "sage", "linen", "skin", "bronze"]},
+    {"source_y": [838, 926], "native_y": [20, 22], "materials": ["outline", "sage", "linen", "skin", "bronze"]},
+    {"source_y": [926, 1275], "native_y": [22, 29], "materials": ["outline", "sage", "linen", "skin"]},
+    {"source_y": [1275, 1320], "native_y": [29, 32], "materials": ["outline", "skin"]},
+    {"source_y": [1320, 1463], "native_y": [32, 35], "materials": ["outline", "leather"]}
+  ],
+  "material_windows": [
+    {"rect": [274, 603, 751, 780], "materials": ["outline", "mantle"]},
+    {"rect": [464, 603, 560, 684], "materials": ["outline", "skin", "linen"]},
+    {"rect": [480, 684, 545, 754], "materials": ["outline", "bronze"]},
+    {"rect": [400, 780, 630, 838], "materials": ["outline", "sage"]},
+    {"rect": [400, 838, 630, 1000], "materials": ["outline", "linen"]},
+    {"rect": [430, 828, 463, 864], "materials": ["outline", "bronze"]},
+    {"rect": [565, 828, 596, 864], "materials": ["outline", "bronze"]},
+    {"rect": [370, 1000, 650, 1195], "materials": ["outline", "linen"]},
+    {"rect": [555, 1030, 615, 1110], "materials": ["outline", "mantle"]}
+  ],
+  "layers": {"head": [0, 14], "bodice_and_arms": [14, 22], "skirt_and_hands": [22, 29], "legs_and_boots": [29, 36]}
+}
