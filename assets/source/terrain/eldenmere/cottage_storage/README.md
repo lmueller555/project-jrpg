@@ -1,4 +1,4 @@
-# Eldenmere shelf and cupboard source — review
+# Eldenmere shelf and cupboard source — approved
 
 A wall shelf with three muted books, a cream jug and bowl, plus a closed two-door cupboard with recessed panels, small iron handles and short feet. Both use the approved warm wood palette and the same orthographic top-down camera as the cottage furniture. These props are static; the room retains its approved daylight animation. No hearth is included.
 
@@ -16,4 +16,4 @@ Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tool
 
 Check: use the same interpreter with `tools/test_eldenmere_cottage_storage.py`. The review loop is 4× nearest-neighbor enlargement, nine 600ms source frames, 5.4 seconds total; GIF encoding may combine held poses. The component board is enlarged 8×.
 
-The shelf and cupboard await design review. Door interactions, alternate arrangements, engine collision and the animated hearth remain future work.
+The shelf and cupboard designs are approved. Door interactions, alternate arrangements, engine collision and the animated hearth remain future work.
