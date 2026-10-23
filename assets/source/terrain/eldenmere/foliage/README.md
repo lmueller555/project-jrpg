@@ -1,4 +1,4 @@
-# Eldenmere starter foliage source — draft
+# Eldenmere starter foliage source — approved
 
 `materials_concept.png` retains the original generated one-tree/one-shrub source, guided by the approved cottage-garden scene. Its original remains at `/workspace/generated_images/exec-43e4b083-6dfa-4860-a38e-c3f9eea420c3.png` in the creation workspace. The committed copy is sufficient to rebuild independently of that path.
 
@@ -13,4 +13,4 @@ Nine 600 ms poses produce the 5.4-second wind cycle. The scene retains the appro
 Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_foliage.py`.
 Test: use the same interpreter with `tools/test_eldenmere_foliage.py`.
 
-This review milestone includes exactly one tree design and one shrub design, instantiated a few times. Additional species, palettes, flowers, grass clumps and reeds await later work after appearance/animation review.
+This review milestone includes exactly one tree design and one shrub design, instantiated a few times. The tree and shrub appearances and their animations are approved. Additional species, palettes, flowers, grass clumps and reeds remain future work.

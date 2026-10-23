@@ -1,4 +1,4 @@
-# Eldenmere starter foliage — draft for review
+# Eldenmere starter foliage — approved
 
 One rounded broadleaf tree and one compact shrub begin the foliage kit. Deep green undersides, warmer sunlit leaf tips and the approved brown wood ramp match the village. Their leaves move locally in a restrained eastward breeze, agreeing with cottage chimney smoke; their bark, branches, roots and ground-shadow pixels remain fixed.
 
@@ -20,4 +20,4 @@ Review files:
 
 The full-scene/garden loops run 10.8 seconds to preserve both the new 5.4-second foliage cycle and the approved 3.6-second cottage cycle. Water, doors, smoke and existing characters keep their original frames/timing. Foliage phases are staggered by instance. Plants only cover existing grass; all waterways, paths, buildings, entrances and characters remain clear. Ground placements share the existing lower-ground elevation zero. No older scene or asset file is modified, and the review does not establish final village geography. GIF frame differences reduce download sizes while preserving every decoded pixel and duration.
 
-Rebuild with `python tools/build_eldenmere_foliage.py`; verify with `python tools/test_eldenmere_foliage.py` in the Pillow environment documented in `tools/README.md`. Status comes from `assets/source/terrain/eldenmere/foliage/recipe.json`. Published for review, not merged into main. This first milestone adds no other foliage designs yet.
+Rebuild with `python tools/build_eldenmere_foliage.py`; verify with `python tools/test_eldenmere_foliage.py` in the Pillow environment documented in `tools/README.md`. Status comes from `assets/source/terrain/eldenmere/foliage/recipe.json`. The tree and shrub designs and their animations are approved for main. This first milestone adds no other foliage designs yet.
