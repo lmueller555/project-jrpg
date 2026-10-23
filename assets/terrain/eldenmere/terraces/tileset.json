@@ -1,0 +1,350 @@
+{
+  "id": "eldenmere.terraces.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "image": "terraces.png",
+  "columns": 5,
+  "rows_per_phase": 4,
+  "tiles": [
+    {
+      "id": "wall_front_00",
+      "image": "tiles/wall_front_00.png",
+      "animated": false,
+      "rect": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_front_01",
+      "image": "tiles/wall_front_01.png",
+      "animated": false,
+      "rect": [
+        24,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_front_02",
+      "image": "tiles/wall_front_02.png",
+      "animated": false,
+      "rect": [
+        48,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_outer_left",
+      "image": "tiles/wall_outer_left.png",
+      "animated": false,
+      "rect": [
+        72,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_inner_left",
+      "image": "tiles/wall_inner_left.png",
+      "animated": false,
+      "rect": [
+        96,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_end_left",
+      "image": "tiles/wall_end_left.png",
+      "animated": false,
+      "rect": [
+        0,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_side_left",
+      "image": "tiles/wall_side_left.png",
+      "animated": false,
+      "rect": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_outer_right",
+      "image": "tiles/wall_outer_right.png",
+      "animated": false,
+      "rect": [
+        48,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_inner_right",
+      "image": "tiles/wall_inner_right.png",
+      "animated": false,
+      "rect": [
+        72,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_end_right",
+      "image": "tiles/wall_end_right.png",
+      "animated": false,
+      "rect": [
+        96,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_side_right",
+      "image": "tiles/wall_side_right.png",
+      "animated": false,
+      "rect": [
+        0,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_back",
+      "image": "tiles/wall_back.png",
+      "animated": false,
+      "rect": [
+        24,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_back_left",
+      "image": "tiles/wall_back_left.png",
+      "animated": false,
+      "rect": [
+        48,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "wall_back_right",
+      "image": "tiles/wall_back_right.png",
+      "animated": false,
+      "rect": [
+        72,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "stairs_south_0_0",
+      "image": "tiles/stairs_south_0_0.png",
+      "animated": false,
+      "rect": [
+        96,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "stairs_south_0_1",
+      "image": "tiles/stairs_south_0_1.png",
+      "animated": false,
+      "rect": [
+        0,
+        72,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "stairs_south_1_0",
+      "image": "tiles/stairs_south_1_0.png",
+      "animated": false,
+      "rect": [
+        24,
+        72,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "stairs_south_1_1",
+      "image": "tiles/stairs_south_1_1.png",
+      "animated": false,
+      "rect": [
+        48,
+        72,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "spillway_south_0",
+      "animated": true,
+      "rect": [
+        72,
+        72,
+        24,
+        24
+      ],
+      "prefab_rect": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "spillway_south_1",
+      "animated": true,
+      "rect": [
+        96,
+        72,
+        24,
+        24
+      ],
+      "prefab_rect": [
+        0,
+        24,
+        24,
+        24
+      ]
+    }
+  ],
+  "wall_height_pixels": 24,
+  "frames": [
+    {
+      "image": "frames/frame_01.png",
+      "sheet_rect": [
+        0,
+        0,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_02.png",
+      "sheet_rect": [
+        0,
+        96,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_03.png",
+      "sheet_rect": [
+        0,
+        192,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_04.png",
+      "sheet_rect": [
+        0,
+        288,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_05.png",
+      "sheet_rect": [
+        0,
+        384,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_06.png",
+      "sheet_rect": [
+        0,
+        480,
+        120,
+        96
+      ],
+      "duration_ms": 200
+    }
+  ],
+  "loop": true,
+  "cycle_duration_ms": 1200,
+  "recipe": "../../../source/terrain/eldenmere/terraces/recipe.json",
+  "prefabs": {
+    "stairs_south": {
+      "image": "stairs_south.png",
+      "size": [
+        48,
+        48
+      ],
+      "treads": 4,
+      "walkable_x": [
+        7,
+        41
+      ],
+      "upper_landing": "N",
+      "lower_landing": "S",
+      "elevation_change_pixels": 24
+    },
+    "spillway_south": {
+      "size": [
+        24,
+        48
+      ],
+      "input": "N",
+      "output": "S",
+      "water_width_pixels": 8,
+      "frames": [
+        "spillway/frame_01.png",
+        "spillway/frame_02.png",
+        "spillway/frame_03.png",
+        "spillway/frame_04.png",
+        "spillway/frame_05.png",
+        "spillway/frame_06.png"
+      ],
+      "structure": "../../../source/terrain/eldenmere/terraces/parts/spillway_structure.png",
+      "water_mask": "../../../source/terrain/eldenmere/terraces/parts/spillway_water_mask.png"
+    }
+  },
+  "review": {
+    "scene": "review_scene.gif",
+    "closeup": "terrace_closeup.gif",
+    "modules": "modules_review.gif"
+  }
+}

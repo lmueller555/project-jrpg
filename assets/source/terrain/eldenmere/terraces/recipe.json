@@ -1,0 +1,38 @@
+{
+  "id": "eldenmere.terraces.24",
+  "status": "draft",
+  "design_plan": "approved in chat; artwork pending review",
+  "source": "materials_concept.png",
+  "tile_size": 24,
+  "wall_height": 24,
+  "stair_size": [48, 48],
+  "tread_count": 4,
+  "frame_count": 6,
+  "duration_ms": 200,
+  "wall_crop": [80, 84, 792, 404],
+  "wall_sample_size": [48, 24],
+  "stairs_crop": [83, 473, 812, 965],
+  "fall_glyph_crop": [1135, 658, 1199, 797],
+  "ripple_glyph_crop": [1074, 892, 1251, 924],
+  "glyph_thresholds": {"fall": 144, "ripple": 118},
+  "palette": {
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    }
+  },
+  "scene_size": [20, 26],
+  "scene_scale": 3,
+  "closeup_rect": [96, 360, 432, 600],
+  "closeup_scale": 4,
+  "terrace_bounds_tiles": [5, 16, 12, 5],
+  "stair_position": [192, 480],
+  "spillway_position": [312, 480],
+  "upper_ground_elevation_pixels": 24,
+  "flow_step_pixels": 2,
+  "flow_period_pixels": 12
+}
