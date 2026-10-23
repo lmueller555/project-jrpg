@@ -1,4 +1,4 @@
-# Cottage palettes — draft for review
+# Cottage palettes — approved
 
 Three new palettes accompany the approved slate-roof, cream-plaster cottage:
 
@@ -21,4 +21,4 @@ Review exports:
 
 The earlier scene is preserved except for a dry connection to the existing lower path. Its NPC remains untouched. Additional ground extends the canvas southward. The three cottage thresholds and approach occupy the lower ground at elevation zero; no new waterways or elevation transitions are introduced. The original base cottage retains its original placement. This is an asset review arrangement, not final village geography or a game level.
 
-Rebuild using `python tools/build_eldenmere_cottage_variants.py`; test with `python tools/test_eldenmere_cottage_variants.py` (Pillow environment documented in `tools/README.md`). Status comes from the retained source recipe. The new palettes are published for review and are not approved for main yet.
+Rebuild using `python tools/build_eldenmere_cottage_variants.py`; test with `python tools/test_eldenmere_cottage_variants.py` (Pillow environment documented in `tools/README.md`). Status comes from the retained source recipe. The three palettes and their animations are approved for main.

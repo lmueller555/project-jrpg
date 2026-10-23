@@ -142,7 +142,7 @@ def review_board(recipe,frames):
     boards=[]; base_name='Slate / cream / timber (approved)'
     for phase in range(18):
         board=Image.new('RGB',(2048,720),'#e8edf2'); d=ImageDraw.Draw(board); d.fontmode='1'
-        d.text((20,16),'Eldenmere cottage palettes / synchronized door, lantern and smoke / new colors: draft',fill='#243529',font_size=24)
+        d.text((20,16),f"Eldenmere cottage palettes / synchronized door, lantern and smoke / new colors: {recipe['status']}",fill='#243529',font_size=24)
         for column,(name,images) in enumerate([(base_name,frames['base'])]+[(r['name'],frames[r['id']]) for r in recipe['variants']]):
             x=column*512+16; d.text((x,64),name,fill='#243529',font_size=20)
             tile=Image.new('RGBA',(120,144),'#70935a');tile.alpha_composite(images[phase]);board.paste(enlarged(tile.convert('RGB'),4),(x,104))
@@ -176,6 +176,6 @@ def build():
                       'threshold_elevation_pixels':recipe['threshold_elevation_pixels'],'foot':[r['position'][0]+60,r['position'][1]+142]} for r in recipe['variants']],
         'frames':records,'cycle_duration_ms':3600,'loop':True,'door_use_is_demonstration_only':True,
         'review':{'scene_scale':recipe['scene_scale'],'courtyard_crop':recipe['courtyard_crop'],'courtyard_scale':recipe['courtyard_scale']}})
-    print('Built three draft material palettes, synchronized four-cottage comparison and extended scene')
+    print(f"Built three {recipe['status']} material palettes, synchronized four-cottage comparison and extended scene")
 
 if __name__=='__main__':build()

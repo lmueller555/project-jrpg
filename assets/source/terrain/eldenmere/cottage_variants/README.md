@@ -1,4 +1,4 @@
-# Cottage palette source — draft variants
+# Cottage palette source — approved variants
 
 The original cottage geometry and animations are approved on main at `ae5d4d5b6740b3a7523d134ae481811bffb0a36c`. This source creates three color variants from those approved native exports without regenerating their silhouettes or poses.
 
@@ -10,4 +10,4 @@ The builder uses exact named shade substitutions for wood and plaster. `roof_det
 
 All crops retain their original registration, alpha and geometry. The builder exports palette-specific components, reusable inserts, structure, door poses, lantern and smoke layers, static states and native demonstration frames. Composite frames are assembled from their exported layers. Original source/export assets remain read only. The display loop uses the approved door demonstration phases; game opening/closing retain their non-looping tracks.
 
-Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_variants.py` and verify with `tools/test_eldenmere_cottage_variants.py` using the same Python environment. These three new appearances await review separately from the approved base.
+Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_variants.py` and verify with `tools/test_eldenmere_cottage_variants.py` using the same Python environment. All three appearances and their inherited animations are approved alongside the base.
