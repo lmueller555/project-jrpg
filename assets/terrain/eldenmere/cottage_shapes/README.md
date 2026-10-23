@@ -1,4 +1,4 @@
-# Compact and wider cottage kit — draft for review
+# Compact and wider cottage kit — approved
 
 Two front-facing, single-floor layouts extend the approved cottage in all four palettes: slate/cream, terracotta/ivory, moss/buff and heather/pale.
 
@@ -29,4 +29,4 @@ Review exports:
 
 The existing scene is preserved except for a small dry connection beneath the old courtyard path. New homes occupy the southern extension, with an additional two grass columns at the east edge. Doorsteps and their connected paths all share lower-ground elevation zero. Existing waterways, terrace, mill, bridge, characters and cottages remain in place. This is an illustrative asset review arrangement, not a canonical level or resident assignment.
 
-Rebuild with `python tools/build_eldenmere_cottage_shapes.py`; verify with `python tools/test_eldenmere_cottage_shapes.py` using the Pillow environment in `tools/README.md`. Status comes from the retained source recipe. These new layouts are published for review, not merged into main.
+Rebuild with `python tools/build_eldenmere_cottage_shapes.py`; verify with `python tools/test_eldenmere_cottage_shapes.py` using the Pillow environment in `tools/README.md`. Status comes from the retained source recipe. The compact and wider layouts, all four palette assemblies and their inherited animations are approved for main.

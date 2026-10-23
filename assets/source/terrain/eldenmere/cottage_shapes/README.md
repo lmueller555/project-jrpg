@@ -1,4 +1,4 @@
-# Cottage shape source — draft
+# Cottage shape source — approved
 
 The approved 4×3 cottage and four palettes are retained on main at `4c3a19700ff4c34f93809711a5b93b3a860a426d`. This pack builds 3×3 and 5×3 layouts directly from those native components. The original source and exports are read only.
 
@@ -12,4 +12,4 @@ The approved 4×3 cottage and four palettes are retained on main at `4c3a19700ff
 
 Each palette is assembled from its own approved native parts, including protected flower/light/stone colors and existing roof shading aliases. The source recipe supplies exact registrations, so no color remapping or quantization is needed in this builder. Exported west/east spans, inserts and decorations reconstruct the fixed structure in metadata order. Five door poses, eighteen ambient phases and separate optional smoke remain available as individual layers.
 
-Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_shapes.py` and verify with `tools/test_eldenmere_cottage_shapes.py` using the same interpreter. The new silhouettes await review; the existing base and palette approvals remain intact.
+Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_shapes.py` and verify with `tools/test_eldenmere_cottage_shapes.py` using the same interpreter. Both silhouettes and all four palette assemblies are approved alongside the existing base cottage.
