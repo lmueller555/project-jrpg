@@ -1,6 +1,6 @@
 # Eldenmere — watermill
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 A compact gristmill combines a muted slate roof, timber-framed cream walls, wood-framed windows and a fieldstone foundation. The front-left doorway opens onto a small timber service landing over the race. An eight-spoke, eight-paddle wheel turns on the front-right axle. The roof, windows, masonry and landing stay still; the wheel, restrained splash accents, trailing drops and small downstream ripples animate.
 

@@ -1,6 +1,6 @@
 # Eldenmere — watermill source and assembly
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 `materials_concept.png` retains the generated companion reference: an isolated building without a wheel, an isolated eight-paddle wheel, a working undershot mill and a stopped-supply study. The approved bridge close-up supplied pixel/material guidance. `recipe.json` retains the native sizes, source crops, backdrop extraction rule, roof/glass ramps, wheel angle increment, placement, elevations and review framing.
 
