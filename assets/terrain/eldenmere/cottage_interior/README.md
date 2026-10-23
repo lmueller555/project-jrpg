@@ -1,4 +1,4 @@
-# Eldenmere cottage interior foundations — review
+# Eldenmere cottage interior foundations — approved
 
 Warm plank flooring, cream plaster and exposed timber begin the reusable cottage interior kit. Windows, a closed inside-facing door and the existing stone doorstep match the approved exterior materials. Interiors use expanded, separate room maps; the first review has a 10×8-tile floor. This milestone establishes the room shell before furniture placement.
 
@@ -24,4 +24,4 @@ Review files:
 - `components_review.png`: architecture components at 5×.
 - `scene_frames/`: nine native room frames; GIF encoding may merge held poses while preserving the full timeline.
 
-Rebuild with `python tools/build_eldenmere_cottage_interior.py`; verify with `python tools/test_eldenmere_cottage_interior.py` in the documented Pillow environment. Source/settings live under `assets/source/terrain/eldenmere/cottage_interior/`. The room is an unfurnished art review, not a named residence or final game level; exterior transitions and engine collision/navigation are not implemented. These foundations and their daylight animation await approval.
+Rebuild with `python tools/build_eldenmere_cottage_interior.py`; verify with `python tools/test_eldenmere_cottage_interior.py` in the documented Pillow environment. Source/settings live under `assets/source/terrain/eldenmere/cottage_interior/`. The room is an unfurnished art review, not a named residence or final game level; exterior transitions and engine collision/navigation are not implemented. These foundations and their daylight animation are approved for main.

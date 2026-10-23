@@ -1,4 +1,4 @@
-# Eldenmere cottage interior source — review
+# Eldenmere cottage interior source — approved
 
 `materials_concept.png` retains the generated architectural source for the cottage timber, window and inside-facing door. Its original remains at `/workspace/generated_images/exec-f3f7c32f-62f3-4c18-852b-2774ee5456c7.png`. `materials_quiet.png` supplies three floor appearances and the plaster face; its original remains at `/workspace/generated_images/exec-828a5fcd-12fb-4b35-8153-4af16b51f359.png`. Both committed images make rebuilding independent of those workspace paths. The kit follows the approved cottage wood, cream plaster, stone, iron and muted glass colors.
 
@@ -16,4 +16,4 @@ Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tool
 
 Test: use the same interpreter with `tools/test_eldenmere_cottage_interior.py`.
 
-Architecture, floor scale and daylight await review. Furniture, room identities, working door transitions and engine collision/navigation are separate future work.
+The interior foundations, floor scale and daylight animation are approved. Furniture, room identities, working door transitions and engine collision/navigation remain future work.
