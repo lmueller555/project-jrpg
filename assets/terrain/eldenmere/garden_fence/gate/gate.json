@@ -1,0 +1,190 @@
+{
+  "id": "eldenmere.garden_fence.24.gate",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "frame_size": [
+    48,
+    48
+  ],
+  "ground_rect": [
+    12,
+    24,
+    24,
+    24
+  ],
+  "ground_line": [
+    12,
+    40,
+    24
+  ],
+  "clear_opening_width_pixels": 24,
+  "hinge_axis_x": 11,
+  "opens_toward": "north",
+  "fixed_layers": [
+    "shadow.png",
+    "posts_hinges.png"
+  ],
+  "panel": "panel.png",
+  "latch": "latch.png",
+  "draw_order": [
+    "shadow",
+    "leaf",
+    "posts_hinges"
+  ],
+  "sheet": "sheet.png",
+  "poses": [
+    {
+      "name": "closed",
+      "angle_degrees": 0,
+      "latch_lift": 0,
+      "image": "frames/frame_01.png",
+      "leaf": "leaves/frame_01.png",
+      "sheet_rect": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "released",
+      "angle_degrees": 0,
+      "latch_lift": 1,
+      "image": "frames/frame_02.png",
+      "leaf": "leaves/frame_02.png",
+      "sheet_rect": [
+        48,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "ajar",
+      "angle_degrees": 20,
+      "latch_lift": 1,
+      "image": "frames/frame_03.png",
+      "leaf": "leaves/frame_03.png",
+      "sheet_rect": [
+        96,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "half_open",
+      "angle_degrees": 45,
+      "latch_lift": 1,
+      "image": "frames/frame_04.png",
+      "leaf": "leaves/frame_04.png",
+      "sheet_rect": [
+        144,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "wide",
+      "angle_degrees": 70,
+      "latch_lift": 1,
+      "image": "frames/frame_05.png",
+      "leaf": "leaves/frame_05.png",
+      "sheet_rect": [
+        192,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "at_stop",
+      "angle_degrees": 90,
+      "latch_lift": 1,
+      "image": "frames/frame_06.png",
+      "leaf": "leaves/frame_06.png",
+      "sheet_rect": [
+        240,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "settle",
+      "angle_degrees": 88,
+      "latch_lift": 1,
+      "image": "frames/frame_07.png",
+      "leaf": "leaves/frame_07.png",
+      "sheet_rect": [
+        288,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    },
+    {
+      "name": "open",
+      "angle_degrees": 90,
+      "latch_lift": 1,
+      "image": "frames/frame_08.png",
+      "leaf": "leaves/frame_08.png",
+      "sheet_rect": [
+        336,
+        0,
+        48,
+        48
+      ],
+      "duration_ms": 100
+    }
+  ],
+  "animations": {
+    "closed": {
+      "frames": [
+        0
+      ],
+      "loop": true
+    },
+    "open": {
+      "frames": [
+        7
+      ],
+      "loop": true
+    },
+    "opening": {
+      "frames": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "loop": false
+    },
+    "closing": {
+      "frames": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "loop": false
+    }
+  },
+  "autonomous_open_close": false,
+  "collision_implemented": false
+}

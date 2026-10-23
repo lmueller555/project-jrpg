@@ -1,0 +1,19 @@
+# Eldenmere garden fence source — review
+
+`materials_concept.png` retains the generated two-rail fence, second wear appearance, standalone post and braced gate source, guided by the approved cottage garden. The original remains at `/workspace/generated_images/exec-9b6fc1ae-1734-4171-8541-656d3f474c4c.png` in the creation workspace. The committed copy is sufficient to rebuild elsewhere. The design contains no cloth, ties, ribbons or hanging decorations.
+
+`recipe.json` records exact source crops and native sample sizes, existing wood/iron/moss material ramps, hinge sampling, all gate poses, the garden enclosure, dry path cells and reused plant placements. Nearest-neighbor sampling and explicit magenta removal produce named-color, binary-alpha components. Source hardware is recognized only in hinge/latch landmark regions with a small RGB color spread; post greens use the existing darker foliage shades. Source wood uses the four cottage wood colors. Retained `parts/` include both 24×3 upper/lower rail variations, a 4×18 worn post, the 24×14 gate panel and its separated latch.
+
+Each fence module occupies one 24×24 ground cell. A padded 24×48 drawing frame accommodates northward post/rail overhang. Ground rectangle `[0,20,24,24]` has its post anchor at `[12,32]`. Posts are 18 pixels high; upper/lower rails sit 16/6 pixels above the anchor. Source rail halves form east/west arms; quarter-turn source strips form projected north/south arms. All fifteen nonempty N/E/S/W connection masks have two wear variants: four end posts, two straight runs, four corners, four junctions and one cross per wear appearance. Shadows, rails and posts remain separate so scenes can draw all rails before all posts without obscuring junctions. No fence section moves in the breeze.
+
+The gate has a padded 48×48 frame, fixed 18-pixel posts and hinge pins, and a full 24-pixel clear opening between the inner post faces. The panel retains two rails, end stiles, a diagonal brace and source iron details. Right-side latch pixels lift one pixel before movement. Source panel columns project around the stationary left hinge axis at x=11; far columns draw before near columns. Angles 0, 0, 20, 45, 70, 90, 88, 90 degrees show release, swing, a one-pixel rebound and settling. Open/closed idles hold still; opening is seven 100 ms frames and closing five 100 ms frames, both triggered and nonlooping in metadata. The gate opens north into the garden; its swing area is kept clear.
+
+The review extends the approved reed scene east from 32×54 to 40×54 tiles. A small enclosure beside the heather compact cottage uses seventeen fixed modules and one gate. The cottage road extends with the existing 47-state dirt atlas, including a refreshed connection tile and a short apron through the opening. Reused shrub, flower and grass art retains its 5.4-second breeze and source pixels. The site is dry lower ground at elevation zero. Existing waterways/elevations are inherited; only specified dry path cells and new decoration masks change prior scene pixels. This illustrative extension does not establish village geography or add navigation/collision behavior.
+
+The gate demonstration repeats every 5.4 seconds, while the full scene preserves the parent’s 54×200 ms timeline as 108×100 ms frames. The combined repeat remains 10.8 seconds. Exact-color indexed preview frames keep memory use and download sizes modest; GIF difference encoding can merge identical adjacent holds while preserving all decoded pixels and durations. Native source/component rebuilds are byte-verified.
+
+Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_garden_fence.py`.
+
+Test: use the same interpreter with `tools/test_eldenmere_garden_fence.py`.
+
+Fence and gate designs/animations await review. Additional finishes or damaged sections are later milestones.

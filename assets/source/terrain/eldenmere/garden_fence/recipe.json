@@ -1,0 +1,249 @@
+{
+  "id": "eldenmere.garden_fence.24",
+  "status": "review",
+  "source": "materials_concept.png",
+  "palette": {
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "moss": {
+      "deep": "#304c3e",
+      "shadow": "#405f45",
+      "mid": "#557546"
+    },
+    "shadow": {
+      "base": "#4f7851"
+    }
+  },
+  "samples": [
+    {
+      "id": "upper_a",
+      "crop": [
+        151,
+        202,
+        617,
+        264
+      ],
+      "size": [
+        24,
+        3
+      ]
+    },
+    {
+      "id": "lower_a",
+      "crop": [
+        151,
+        320,
+        617,
+        381
+      ],
+      "size": [
+        24,
+        3
+      ]
+    },
+    {
+      "id": "upper_b",
+      "crop": [
+        918,
+        202,
+        1385,
+        264
+      ],
+      "size": [
+        24,
+        3
+      ]
+    },
+    {
+      "id": "lower_b",
+      "crop": [
+        918,
+        320,
+        1385,
+        381
+      ],
+      "size": [
+        24,
+        3
+      ]
+    },
+    {
+      "id": "post",
+      "crop": [
+        337,
+        588,
+        432,
+        922
+      ],
+      "size": [
+        4,
+        18
+      ]
+    },
+    {
+      "id": "gate_panel",
+      "crop": [
+        888,
+        603,
+        1407,
+        908
+      ],
+      "size": [
+        24,
+        14
+      ]
+    }
+  ],
+  "hinge_sample_crop": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate_poses": [
+    {
+      "name": "closed",
+      "angle_degrees": 0,
+      "latch_lift": 0
+    },
+    {
+      "name": "released",
+      "angle_degrees": 0,
+      "latch_lift": 1
+    },
+    {
+      "name": "ajar",
+      "angle_degrees": 20,
+      "latch_lift": 1
+    },
+    {
+      "name": "half_open",
+      "angle_degrees": 45,
+      "latch_lift": 1
+    },
+    {
+      "name": "wide",
+      "angle_degrees": 70,
+      "latch_lift": 1
+    },
+    {
+      "name": "at_stop",
+      "angle_degrees": 90,
+      "latch_lift": 1
+    },
+    {
+      "name": "settle",
+      "angle_degrees": 88,
+      "latch_lift": 1
+    },
+    {
+      "name": "open",
+      "angle_degrees": 90,
+      "latch_lift": 1
+    }
+  ],
+  "scene_grid_size": [
+    40,
+    54
+  ],
+  "enclosure_cells": [
+    31,
+    39,
+    37,
+    42
+  ],
+  "gate_cell": [
+    33,
+    42
+  ],
+  "gate_position": [
+    780,
+    980
+  ],
+  "path_join_cell": [
+    26,
+    43
+  ],
+  "new_path_cells": [
+    [
+      27,
+      43
+    ],
+    [
+      28,
+      43
+    ],
+    [
+      29,
+      43
+    ],
+    [
+      30,
+      43
+    ],
+    [
+      31,
+      43
+    ],
+    [
+      32,
+      43
+    ],
+    [
+      33,
+      43
+    ],
+    [
+      33,
+      42
+    ],
+    [
+      33,
+      41
+    ]
+  ],
+  "garden_plants": [
+    {
+      "pack": "foliage",
+      "plant": "shrub",
+      "position": [
+        792,
+        948
+      ],
+      "phase_offset": 1
+    },
+    {
+      "pack": "grass_flowers",
+      "plant": "flowers_white",
+      "position": [
+        840,
+        972
+      ],
+      "phase_offset": 2
+    },
+    {
+      "pack": "grass_flowers",
+      "plant": "grass_splayed",
+      "position": [
+        768,
+        972
+      ],
+      "phase_offset": 3
+    }
+  ],
+  "scene_closeup": [
+    576,
+    888,
+    936,
+    1080
+  ]
+}

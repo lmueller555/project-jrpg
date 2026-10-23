@@ -1,0 +1,543 @@
+{
+  "id": "eldenmere.garden_fence.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "frame_size": [
+    24,
+    48
+  ],
+  "ground_rect": [
+    0,
+    20,
+    24,
+    24
+  ],
+  "post_anchor": [
+    12,
+    32
+  ],
+  "post_height_pixels": 18,
+  "rail_heights_pixels": [
+    16,
+    6
+  ],
+  "cloth_details": false,
+  "ambient_motion": false,
+  "ports": {
+    "N": [
+      12,
+      20
+    ],
+    "E": [
+      24,
+      32
+    ],
+    "S": [
+      12,
+      44
+    ],
+    "W": [
+      0,
+      32
+    ]
+  },
+  "sheet": "modules.png",
+  "columns": 10,
+  "modules": [
+    {
+      "id": "n_a",
+      "mask": 1,
+      "wear_variant": "a",
+      "connections": [
+        "N"
+      ],
+      "image": "modules/n_a/module.png",
+      "sheet_rect": [
+        0,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "e_a",
+      "mask": 2,
+      "wear_variant": "a",
+      "connections": [
+        "E"
+      ],
+      "image": "modules/e_a/module.png",
+      "sheet_rect": [
+        24,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ne_a",
+      "mask": 3,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "E"
+      ],
+      "image": "modules/ne_a/module.png",
+      "sheet_rect": [
+        48,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "s_a",
+      "mask": 4,
+      "wear_variant": "a",
+      "connections": [
+        "S"
+      ],
+      "image": "modules/s_a/module.png",
+      "sheet_rect": [
+        72,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ns_a",
+      "mask": 5,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "S"
+      ],
+      "image": "modules/ns_a/module.png",
+      "sheet_rect": [
+        96,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "es_a",
+      "mask": 6,
+      "wear_variant": "a",
+      "connections": [
+        "E",
+        "S"
+      ],
+      "image": "modules/es_a/module.png",
+      "sheet_rect": [
+        120,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nes_a",
+      "mask": 7,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "E",
+        "S"
+      ],
+      "image": "modules/nes_a/module.png",
+      "sheet_rect": [
+        144,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "w_a",
+      "mask": 8,
+      "wear_variant": "a",
+      "connections": [
+        "W"
+      ],
+      "image": "modules/w_a/module.png",
+      "sheet_rect": [
+        168,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nw_a",
+      "mask": 9,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "W"
+      ],
+      "image": "modules/nw_a/module.png",
+      "sheet_rect": [
+        192,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ew_a",
+      "mask": 10,
+      "wear_variant": "a",
+      "connections": [
+        "E",
+        "W"
+      ],
+      "image": "modules/ew_a/module.png",
+      "sheet_rect": [
+        216,
+        0,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "new_a",
+      "mask": 11,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "E",
+        "W"
+      ],
+      "image": "modules/new_a/module.png",
+      "sheet_rect": [
+        0,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "sw_a",
+      "mask": 12,
+      "wear_variant": "a",
+      "connections": [
+        "S",
+        "W"
+      ],
+      "image": "modules/sw_a/module.png",
+      "sheet_rect": [
+        24,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nsw_a",
+      "mask": 13,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "S",
+        "W"
+      ],
+      "image": "modules/nsw_a/module.png",
+      "sheet_rect": [
+        48,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "esw_a",
+      "mask": 14,
+      "wear_variant": "a",
+      "connections": [
+        "E",
+        "S",
+        "W"
+      ],
+      "image": "modules/esw_a/module.png",
+      "sheet_rect": [
+        72,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nesw_a",
+      "mask": 15,
+      "wear_variant": "a",
+      "connections": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "image": "modules/nesw_a/module.png",
+      "sheet_rect": [
+        96,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "n_b",
+      "mask": 1,
+      "wear_variant": "b",
+      "connections": [
+        "N"
+      ],
+      "image": "modules/n_b/module.png",
+      "sheet_rect": [
+        120,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "e_b",
+      "mask": 2,
+      "wear_variant": "b",
+      "connections": [
+        "E"
+      ],
+      "image": "modules/e_b/module.png",
+      "sheet_rect": [
+        144,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ne_b",
+      "mask": 3,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "E"
+      ],
+      "image": "modules/ne_b/module.png",
+      "sheet_rect": [
+        168,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "s_b",
+      "mask": 4,
+      "wear_variant": "b",
+      "connections": [
+        "S"
+      ],
+      "image": "modules/s_b/module.png",
+      "sheet_rect": [
+        192,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ns_b",
+      "mask": 5,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "S"
+      ],
+      "image": "modules/ns_b/module.png",
+      "sheet_rect": [
+        216,
+        48,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "es_b",
+      "mask": 6,
+      "wear_variant": "b",
+      "connections": [
+        "E",
+        "S"
+      ],
+      "image": "modules/es_b/module.png",
+      "sheet_rect": [
+        0,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nes_b",
+      "mask": 7,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "E",
+        "S"
+      ],
+      "image": "modules/nes_b/module.png",
+      "sheet_rect": [
+        24,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "w_b",
+      "mask": 8,
+      "wear_variant": "b",
+      "connections": [
+        "W"
+      ],
+      "image": "modules/w_b/module.png",
+      "sheet_rect": [
+        48,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nw_b",
+      "mask": 9,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "W"
+      ],
+      "image": "modules/nw_b/module.png",
+      "sheet_rect": [
+        72,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "ew_b",
+      "mask": 10,
+      "wear_variant": "b",
+      "connections": [
+        "E",
+        "W"
+      ],
+      "image": "modules/ew_b/module.png",
+      "sheet_rect": [
+        96,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "new_b",
+      "mask": 11,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "E",
+        "W"
+      ],
+      "image": "modules/new_b/module.png",
+      "sheet_rect": [
+        120,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "sw_b",
+      "mask": 12,
+      "wear_variant": "b",
+      "connections": [
+        "S",
+        "W"
+      ],
+      "image": "modules/sw_b/module.png",
+      "sheet_rect": [
+        144,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nsw_b",
+      "mask": 13,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "S",
+        "W"
+      ],
+      "image": "modules/nsw_b/module.png",
+      "sheet_rect": [
+        168,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "esw_b",
+      "mask": 14,
+      "wear_variant": "b",
+      "connections": [
+        "E",
+        "S",
+        "W"
+      ],
+      "image": "modules/esw_b/module.png",
+      "sheet_rect": [
+        192,
+        96,
+        24,
+        48
+      ]
+    },
+    {
+      "id": "nesw_b",
+      "mask": 15,
+      "wear_variant": "b",
+      "connections": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "image": "modules/nesw_b/module.png",
+      "sheet_rect": [
+        216,
+        96,
+        24,
+        48
+      ]
+    }
+  ],
+  "draw_order_across_instances": [
+    "shadow",
+    "rails",
+    "post"
+  ],
+  "gate": "gate/gate.json",
+  "collision_implemented": false,
+  "recipe": "../../../source/terrain/eldenmere/garden_fence/recipe.json"
+}

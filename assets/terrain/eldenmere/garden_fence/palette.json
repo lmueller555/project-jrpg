@@ -1,0 +1,24 @@
+{
+  "status": "review",
+  "materials": {
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "moss": {
+      "deep": "#304c3e",
+      "shadow": "#405f45",
+      "mid": "#557546"
+    },
+    "shadow": {
+      "base": "#4f7851"
+    }
+  }
+}
