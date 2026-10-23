@@ -1,0 +1,54 @@
+{
+  "id": "eldenmere.cottage.shapes.24",
+  "status": "draft",
+  "concept": "shape_concept.png",
+  "tile_size": 24,
+  "duration_ms": 200,
+  "frame_count": 18,
+  "scene_size": [32, 54],
+  "scene_scale": 2,
+  "scene_seed": 924,
+  "courtyard_crop": [0, 864, 768, 1296],
+  "courtyard_scale": 2,
+  "connector_apron": [200, 814, 8, 8],
+  "path_join_cells": [[8, 33]],
+  "ground_elevation_pixels": 0,
+  "palettes": [
+    {"id": "slate", "name": "Slate / cream", "path": "assets/terrain/eldenmere/cottage"},
+    {"id": "terracotta", "name": "Terracotta / ivory", "path": "assets/terrain/eldenmere/cottage_variants/terracotta"},
+    {"id": "moss", "name": "Moss / buff", "path": "assets/terrain/eldenmere/cottage_variants/moss"},
+    {"id": "heather", "name": "Heather / pale", "path": "assets/terrain/eldenmere/cottage_variants/heather"}
+  ],
+  "shapes": [
+    {
+      "id": "compact",
+      "name": "Compact / 3 x 3 tiles",
+      "prefab_size": [96, 144],
+      "ground_rect": [12, 72, 72, 72],
+      "remove_band": [24, 48],
+      "animation_offset": [-24, 0],
+      "remove_left_features_rect": [19, 109, 41, 132],
+      "plaster_sample_rect": [5, 8, 9, 27],
+      "stone_sample_rect": [4, 28, 24, 32],
+      "flower_source_rect": [23, 123, 39, 132],
+      "flower_position": [59, 123],
+      "window_rects": [[55, 109, 22, 18]],
+      "scene_positions": [[24, 888], [216, 888], [408, 888], [600, 888]],
+      "path_row": 43
+    },
+    {
+      "id": "wide",
+      "name": "Wider / 5 x 3 tiles",
+      "prefab_size": [144, 144],
+      "ground_rect": [12, 72, 120, 72],
+      "insert_x": 48,
+      "animation_offset": [24, 0],
+      "roof_insert_position": [48, 56],
+      "wall_insert_position": [48, 101],
+      "extra_window_position": [49, 109],
+      "window_rects": [[19, 109, 22, 17], [49, 109, 22, 18], [103, 109, 22, 18]],
+      "scene_positions": [[24, 1104], [216, 1104], [408, 1104], [600, 1104]],
+      "path_row": 52
+    }
+  ]
+}

@@ -1,0 +1,680 @@
+{
+  "id": "eldenmere.cottage.compact.slate.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    96,
+    144
+  ],
+  "ground_rect": [
+    12,
+    72,
+    72,
+    72
+  ],
+  "structure": "structure.png",
+  "closed": "closed.png",
+  "open": "open.png",
+  "components": [
+    {
+      "id": "west",
+      "image": "parts/west.png",
+      "position": [
+        0,
+        0
+      ],
+      "size": [
+        24,
+        144
+      ]
+    },
+    {
+      "id": "east",
+      "image": "parts/east.png",
+      "position": [
+        24,
+        0
+      ],
+      "size": [
+        72,
+        144
+      ]
+    },
+    {
+      "id": "flower_box",
+      "image": "parts/flower_box.png",
+      "position": [
+        59,
+        123
+      ],
+      "size": [
+        16,
+        9
+      ]
+    }
+  ],
+  "door": {
+    "hinge": "west",
+    "position": [
+      29,
+      111
+    ],
+    "size": [
+      13,
+      26
+    ],
+    "opening": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "closing": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "hold_closed": 0,
+    "hold_open": 4
+  },
+  "smoke": {
+    "optional": true,
+    "direction": "east",
+    "loop": true,
+    "cycle_duration_ms": 3600,
+    "frames": [
+      {
+        "image": "smoke/frame_01.png",
+        "particles": [
+          {
+            "age": 0,
+            "center": [
+              66,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              69,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              72,
+              23
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_02.png",
+        "particles": [
+          {
+            "age": 1,
+            "center": [
+              66,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              69,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              72,
+              21
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_03.png",
+        "particles": [
+          {
+            "age": 2,
+            "center": [
+              67,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              70,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              73,
+              19
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_04.png",
+        "particles": [
+          {
+            "age": 3,
+            "center": [
+              67,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              70,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              73,
+              17
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_05.png",
+        "particles": [
+          {
+            "age": 4,
+            "center": [
+              68,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              71,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              74,
+              15
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_06.png",
+        "particles": [
+          {
+            "age": 5,
+            "center": [
+              68,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              71,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              74,
+              13
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_07.png",
+        "particles": [
+          {
+            "age": 6,
+            "center": [
+              69,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              72,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              66,
+              47
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_08.png",
+        "particles": [
+          {
+            "age": 7,
+            "center": [
+              69,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              72,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              66,
+              45
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_09.png",
+        "particles": [
+          {
+            "age": 8,
+            "center": [
+              70,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              73,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              67,
+              43
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_10.png",
+        "particles": [
+          {
+            "age": 9,
+            "center": [
+              70,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              73,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              67,
+              41
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_11.png",
+        "particles": [
+          {
+            "age": 10,
+            "center": [
+              71,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              74,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              68,
+              39
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_12.png",
+        "particles": [
+          {
+            "age": 11,
+            "center": [
+              71,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              74,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              68,
+              37
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_13.png",
+        "particles": [
+          {
+            "age": 12,
+            "center": [
+              72,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              66,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              69,
+              35
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_14.png",
+        "particles": [
+          {
+            "age": 13,
+            "center": [
+              72,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              66,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              69,
+              33
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_15.png",
+        "particles": [
+          {
+            "age": 14,
+            "center": [
+              73,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              67,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              70,
+              31
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_16.png",
+        "particles": [
+          {
+            "age": 15,
+            "center": [
+              73,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              67,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              70,
+              29
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_17.png",
+        "particles": [
+          {
+            "age": 16,
+            "center": [
+              74,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              68,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              71,
+              27
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_18.png",
+        "particles": [
+          {
+            "age": 17,
+            "center": [
+              74,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              68,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              71,
+              25
+            ]
+          }
+        ],
+        "duration_ms": 200
+      }
+    ]
+  },
+  "lantern": {
+    "max_sway_pixels": 1,
+    "bracket_fixed": true,
+    "frames": [
+      "lantern/frame_01.png",
+      "lantern/frame_02.png",
+      "lantern/frame_03.png",
+      "lantern/frame_04.png",
+      "lantern/frame_05.png",
+      "lantern/frame_06.png",
+      "lantern/frame_07.png",
+      "lantern/frame_08.png",
+      "lantern/frame_09.png",
+      "lantern/frame_10.png",
+      "lantern/frame_11.png",
+      "lantern/frame_12.png",
+      "lantern/frame_13.png",
+      "lantern/frame_14.png",
+      "lantern/frame_15.png",
+      "lantern/frame_16.png",
+      "lantern/frame_17.png",
+      "lantern/frame_18.png"
+    ]
+  },
+  "animations_are_separate_layers": true,
+  "recipe": "../../../../../source/terrain/eldenmere/cottage_shapes/recipe.json",
+  "shape": "compact",
+  "palette_name": "Slate / cream",
+  "window_rects": [
+    [
+      55,
+      109,
+      22,
+      18
+    ]
+  ],
+  "window_count": 1,
+  "source_from_repo_root": "assets/terrain/eldenmere/cottage",
+  "assembly": {
+    "removed_band": [
+      24,
+      48
+    ],
+    "removed_left_features": [
+      19,
+      109,
+      41,
+      132
+    ],
+    "repair_material": "parts/wall_blank.png",
+    "flower_source": {
+      "image": "closed.png",
+      "rect": [
+        23,
+        123,
+        39,
+        132
+      ]
+    }
+  },
+  "animation_offset_from_source": [
+    -24,
+    0
+  ]
+}

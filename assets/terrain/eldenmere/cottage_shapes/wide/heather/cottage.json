@@ -1,0 +1,702 @@
+{
+  "id": "eldenmere.cottage.wide.heather.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    144,
+    144
+  ],
+  "ground_rect": [
+    12,
+    72,
+    120,
+    72
+  ],
+  "structure": "structure.png",
+  "closed": "closed.png",
+  "open": "open.png",
+  "components": [
+    {
+      "id": "west",
+      "image": "parts/west.png",
+      "position": [
+        0,
+        0
+      ],
+      "size": [
+        48,
+        144
+      ]
+    },
+    {
+      "id": "east",
+      "image": "parts/east.png",
+      "position": [
+        72,
+        0
+      ],
+      "size": [
+        72,
+        144
+      ]
+    },
+    {
+      "id": "roof_insert",
+      "image": "parts/roof_insert.png",
+      "position": [
+        48,
+        56
+      ],
+      "size": [
+        24,
+        45
+      ]
+    },
+    {
+      "id": "wall_insert",
+      "image": "parts/wall_insert.png",
+      "position": [
+        48,
+        101
+      ],
+      "size": [
+        24,
+        43
+      ]
+    },
+    {
+      "id": "extra_window",
+      "image": "parts/extra_window.png",
+      "position": [
+        49,
+        109
+      ],
+      "size": [
+        22,
+        18
+      ]
+    }
+  ],
+  "door": {
+    "hinge": "west",
+    "position": [
+      77,
+      111
+    ],
+    "size": [
+      13,
+      26
+    ],
+    "opening": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "closing": {
+      "loop": false,
+      "frames": [
+        {
+          "image": "doors/frame_05.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_04.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_03.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_02.png",
+          "duration_ms": 100
+        },
+        {
+          "image": "doors/frame_01.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "hold_closed": 0,
+    "hold_open": 4
+  },
+  "smoke": {
+    "optional": true,
+    "direction": "east",
+    "loop": true,
+    "cycle_duration_ms": 3600,
+    "frames": [
+      {
+        "image": "smoke/frame_01.png",
+        "particles": [
+          {
+            "age": 0,
+            "center": [
+              114,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              117,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              120,
+              23
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_02.png",
+        "particles": [
+          {
+            "age": 1,
+            "center": [
+              114,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              117,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              120,
+              21
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_03.png",
+        "particles": [
+          {
+            "age": 2,
+            "center": [
+              115,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              118,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              121,
+              19
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_04.png",
+        "particles": [
+          {
+            "age": 3,
+            "center": [
+              115,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              118,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              121,
+              17
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_05.png",
+        "particles": [
+          {
+            "age": 4,
+            "center": [
+              116,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              119,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              122,
+              15
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_06.png",
+        "particles": [
+          {
+            "age": 5,
+            "center": [
+              116,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              119,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              122,
+              13
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_07.png",
+        "particles": [
+          {
+            "age": 6,
+            "center": [
+              117,
+              35
+            ]
+          },
+          {
+            "age": 12,
+            "center": [
+              120,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              114,
+              47
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_08.png",
+        "particles": [
+          {
+            "age": 7,
+            "center": [
+              117,
+              33
+            ]
+          },
+          {
+            "age": 13,
+            "center": [
+              120,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              114,
+              45
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_09.png",
+        "particles": [
+          {
+            "age": 8,
+            "center": [
+              118,
+              31
+            ]
+          },
+          {
+            "age": 14,
+            "center": [
+              121,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              115,
+              43
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_10.png",
+        "particles": [
+          {
+            "age": 9,
+            "center": [
+              118,
+              29
+            ]
+          },
+          {
+            "age": 15,
+            "center": [
+              121,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              115,
+              41
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_11.png",
+        "particles": [
+          {
+            "age": 10,
+            "center": [
+              119,
+              27
+            ]
+          },
+          {
+            "age": 16,
+            "center": [
+              122,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              116,
+              39
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_12.png",
+        "particles": [
+          {
+            "age": 11,
+            "center": [
+              119,
+              25
+            ]
+          },
+          {
+            "age": 17,
+            "center": [
+              122,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              116,
+              37
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_13.png",
+        "particles": [
+          {
+            "age": 12,
+            "center": [
+              120,
+              23
+            ]
+          },
+          {
+            "age": 0,
+            "center": [
+              114,
+              47
+            ]
+          },
+          {
+            "age": 6,
+            "center": [
+              117,
+              35
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_14.png",
+        "particles": [
+          {
+            "age": 13,
+            "center": [
+              120,
+              21
+            ]
+          },
+          {
+            "age": 1,
+            "center": [
+              114,
+              45
+            ]
+          },
+          {
+            "age": 7,
+            "center": [
+              117,
+              33
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_15.png",
+        "particles": [
+          {
+            "age": 14,
+            "center": [
+              121,
+              19
+            ]
+          },
+          {
+            "age": 2,
+            "center": [
+              115,
+              43
+            ]
+          },
+          {
+            "age": 8,
+            "center": [
+              118,
+              31
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_16.png",
+        "particles": [
+          {
+            "age": 15,
+            "center": [
+              121,
+              17
+            ]
+          },
+          {
+            "age": 3,
+            "center": [
+              115,
+              41
+            ]
+          },
+          {
+            "age": 9,
+            "center": [
+              118,
+              29
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_17.png",
+        "particles": [
+          {
+            "age": 16,
+            "center": [
+              122,
+              15
+            ]
+          },
+          {
+            "age": 4,
+            "center": [
+              116,
+              39
+            ]
+          },
+          {
+            "age": 10,
+            "center": [
+              119,
+              27
+            ]
+          }
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "smoke/frame_18.png",
+        "particles": [
+          {
+            "age": 17,
+            "center": [
+              122,
+              13
+            ]
+          },
+          {
+            "age": 5,
+            "center": [
+              116,
+              37
+            ]
+          },
+          {
+            "age": 11,
+            "center": [
+              119,
+              25
+            ]
+          }
+        ],
+        "duration_ms": 200
+      }
+    ]
+  },
+  "lantern": {
+    "max_sway_pixels": 1,
+    "bracket_fixed": true,
+    "frames": [
+      "lantern/frame_01.png",
+      "lantern/frame_02.png",
+      "lantern/frame_03.png",
+      "lantern/frame_04.png",
+      "lantern/frame_05.png",
+      "lantern/frame_06.png",
+      "lantern/frame_07.png",
+      "lantern/frame_08.png",
+      "lantern/frame_09.png",
+      "lantern/frame_10.png",
+      "lantern/frame_11.png",
+      "lantern/frame_12.png",
+      "lantern/frame_13.png",
+      "lantern/frame_14.png",
+      "lantern/frame_15.png",
+      "lantern/frame_16.png",
+      "lantern/frame_17.png",
+      "lantern/frame_18.png"
+    ]
+  },
+  "animations_are_separate_layers": true,
+  "recipe": "../../../../../source/terrain/eldenmere/cottage_shapes/recipe.json",
+  "palette_name": "Heather / pale",
+  "base_from_repo_root": "assets/terrain/eldenmere/cottage",
+  "shape": "wide",
+  "window_rects": [
+    [
+      19,
+      109,
+      22,
+      17
+    ],
+    [
+      49,
+      109,
+      22,
+      18
+    ],
+    [
+      103,
+      109,
+      22,
+      18
+    ]
+  ],
+  "window_count": 3,
+  "source_from_repo_root": "assets/terrain/eldenmere/cottage_variants/heather",
+  "assembly": {
+    "insert_x": 48,
+    "insert_width": 24,
+    "roof_source": "parts/roof_repeat.png",
+    "wall_source": "parts/wall_blank.png",
+    "window_source": "parts/window_right.png"
+  },
+  "animation_offset_from_source": [
+    24,
+    0
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "eldenmere.cottage.shapes.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "shapes": [
+    {
+      "id": "compact",
+      "prefab_size": [
+        96,
+        144
+      ],
+      "ground_rect": [
+        12,
+        72,
+        72,
+        72
+      ],
+      "window_count": 1
+    },
+    {
+      "id": "wide",
+      "prefab_size": [
+        144,
+        144
+      ],
+      "ground_rect": [
+        12,
+        72,
+        120,
+        72
+      ],
+      "window_count": 3
+    }
+  ],
+  "palettes": [
+    "slate",
+    "terracotta",
+    "moss",
+    "heather"
+  ],
+  "instances": [
+    {
+      "shape": "compact",
+      "palette": "slate",
+      "position": [
+        24,
+        888
+      ],
+      "foot": [
+        60,
+        1030
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "compact/slate/cottage.json"
+    },
+    {
+      "shape": "compact",
+      "palette": "terracotta",
+      "position": [
+        216,
+        888
+      ],
+      "foot": [
+        252,
+        1030
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "compact/terracotta/cottage.json"
+    },
+    {
+      "shape": "compact",
+      "palette": "moss",
+      "position": [
+        408,
+        888
+      ],
+      "foot": [
+        444,
+        1030
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "compact/moss/cottage.json"
+    },
+    {
+      "shape": "compact",
+      "palette": "heather",
+      "position": [
+        600,
+        888
+      ],
+      "foot": [
+        636,
+        1030
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "compact/heather/cottage.json"
+    },
+    {
+      "shape": "wide",
+      "palette": "slate",
+      "position": [
+        24,
+        1104
+      ],
+      "foot": [
+        108,
+        1246
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "wide/slate/cottage.json"
+    },
+    {
+      "shape": "wide",
+      "palette": "terracotta",
+      "position": [
+        216,
+        1104
+      ],
+      "foot": [
+        300,
+        1246
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "wide/terracotta/cottage.json"
+    },
+    {
+      "shape": "wide",
+      "palette": "moss",
+      "position": [
+        408,
+        1104
+      ],
+      "foot": [
+        492,
+        1246
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "wide/moss/cottage.json"
+    },
+    {
+      "shape": "wide",
+      "palette": "heather",
+      "position": [
+        600,
+        1104
+      ],
+      "foot": [
+        684,
+        1246
+      ],
+      "ground_elevation_pixels": 0,
+      "threshold_elevation_pixels": 0,
+      "metadata": "wide/heather/cottage.json"
+    }
+  ],
+  "frame_count": 18,
+  "duration_ms": 200,
+  "review": {
+    "sizes": "sizes_review.gif",
+    "palettes": "palettes_review.gif",
+    "scene": "review_scene.gif",
+    "courtyard": "courtyard_closeup.gif"
+  }
+}

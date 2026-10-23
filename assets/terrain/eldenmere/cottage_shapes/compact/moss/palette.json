@@ -1,0 +1,124 @@
+{
+  "status": "draft",
+  "materials": {
+    "grass": {
+      "deep": "#4f7851",
+      "shadow": "#608451",
+      "base": "#70935a",
+      "light": "#85a16a"
+    },
+    "dirt": {
+      "edge": "#8d7253",
+      "shadow": "#987b59",
+      "base": "#b18e68",
+      "light": "#c1a17b",
+      "stone": "#969284"
+    },
+    "water": {
+      "deep": "#4d7582",
+      "base": "#5c8b96",
+      "flow": "#6b9aa2",
+      "reflection": "#8ab3b0",
+      "glint": "#a1c5bc",
+      "shallow": "#719a91"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "wood": {
+      "shadow": "#56463c",
+      "base": "#745743",
+      "light": "#947655",
+      "worn": "#b49972"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "roof": {
+      "shadow": "#4e5a46",
+      "base": "#6c7b58",
+      "light": "#8f9a75",
+      "edge": "#adb693"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    },
+    "plaster": {
+      "shadow": "#af956f",
+      "base": "#d4b68b",
+      "light": "#e5d0a8"
+    },
+    "lamplight": {
+      "base": "#e4b66b",
+      "light": "#f5d99a"
+    },
+    "smoke": {
+      "shadow": "#aab5ac",
+      "base": "#c5ccc1",
+      "light": "#dce0d2"
+    },
+    "retained_details": {
+      "roof_shadow": "#4e5e64",
+      "roof_base": "#657579",
+      "roof_light": "#87948f",
+      "roof_edge": "#a2aaa0",
+      "wood_shadow": "#654e3c",
+      "wood_base": "#836347",
+      "wood_light": "#a08158",
+      "wood_worn": "#b79a6c",
+      "plaster_shadow": "#aa9d80",
+      "plaster_base": "#d3c6a4",
+      "plaster_light": "#e1d6bc"
+    },
+    "roof_detail": {
+      "grass_deep": "#657354",
+      "grass_shadow": "#74825e",
+      "grass_base": "#84916c",
+      "grass_light": "#97a27d",
+      "dirt_edge": "#707f5b",
+      "dirt_shadow": "#7a8864",
+      "dirt_base": "#919c77",
+      "dirt_light": "#aab390",
+      "dirt_stone": "#909b76",
+      "water_deep": "#667554",
+      "water_base": "#7e8b67",
+      "water_flow": "#8f9a75",
+      "water_reflection": "#aeb794",
+      "water_glint": "#b4bd9a",
+      "water_shallow": "#8f9a75",
+      "stone_joint": "#677555",
+      "stone_shadow": "#798662",
+      "stone_base": "#909b76",
+      "stone_light": "#a8b28e",
+      "stone_cap": "#afb895",
+      "stone_highlight": "#b4bd9a",
+      "iron_shadow": "#4d5945",
+      "iron_base": "#778461",
+      "iron_light": "#adb693",
+      "roof_shadow": "#4e5a46",
+      "roof_base": "#6c7b58",
+      "roof_light": "#8f9a75",
+      "roof_edge": "#adb693",
+      "glass_dark": "#35412d",
+      "glass_base": "#5b684e",
+      "glass_reflection": "#aeb794",
+      "plaster_shadow": "#a0aa86",
+      "plaster_base": "#b8c19e",
+      "plaster_light": "#bdc6a3",
+      "lamplight_base": "#b3bc99",
+      "lamplight_light": "#bec7a4",
+      "smoke_shadow": "#b1ba97",
+      "smoke_base": "#b9c29f",
+      "smoke_light": "#bfc8a5"
+    }
+  }
+}
