@@ -1,6 +1,6 @@
 {
   "id": "eldenmere.cottage_furniture.basic.24",
-  "status": "review",
+  "status": "approved",
   "tile_size": [
     24,
     24
@@ -100,7 +100,7 @@
     },
     {
       "id": "chair_down",
-      "status": "review",
+      "status": "approved",
       "direction": "down",
       "source": "chair_directions_concept.png",
       "material": "wood",
@@ -149,7 +149,7 @@
     },
     {
       "id": "chair_up",
-      "status": "review",
+      "status": "approved",
       "direction": "up",
       "source": "chair_directions_concept.png",
       "material": "wood",
@@ -192,7 +192,7 @@
     },
     {
       "id": "chair_left",
-      "status": "review",
+      "status": "approved",
       "direction": "left",
       "source": "chair_directions_concept.png",
       "material": "wood",
@@ -235,7 +235,7 @@
     },
     {
       "id": "chair_right",
-      "status": "review",
+      "status": "approved",
       "direction": "right",
       "mirror_of": "chair_left",
       "size": [

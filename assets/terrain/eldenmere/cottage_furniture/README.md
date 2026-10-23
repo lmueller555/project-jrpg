@@ -1,6 +1,6 @@
-# Eldenmere basic cottage furniture — review
+# Eldenmere basic cottage furniture — approved
 
-An approved wooden bed with a cream pillow and folded sage quilt, an approved worn plank table, and a refined chair in down, up, left and right facings. Bed and table artwork and placements are unchanged. All sprites are static, use binary transparency and retain native pixels. Chairs use only the existing wood ramp and outline.
+An approved wooden bed with a cream pillow and folded sage quilt, an approved worn plank table, and an approved refined chair in down, up, left and right facings. Bed and table artwork and placements are unchanged. All sprites are static, use binary transparency and retain native pixels. Chairs use only the existing wood ramp and outline.
 
 | Asset | Export frame | Sample size | Registration |
 | --- | --- | --- | --- |
@@ -22,4 +22,4 @@ Review files:
 
 The expanded separate room and original Caelan are unchanged. The approved bed and table keep their positions. The up-facing chair sits below the table; the down view sits below the bed; left and right views occupy the lower left for comparison. A clear 72px central corridor connects the open south entry with the north door appearance sample. This remains an illustrative generic art review, not a finished level or assigned residence. Furniture does not move; only the approved floor daylight changes.
 
-Rebuild using `tools/build_eldenmere_cottage_furniture.py` and verify with `tools/test_eldenmere_cottage_furniture.py` in the documented Pillow environment. Source and settings live under `assets/source/terrain/eldenmere/cottage_furniture/`. The bed and table are approved; the refined chair's four directions await approval.
+Rebuild using `tools/build_eldenmere_cottage_furniture.py` and verify with `tools/test_eldenmere_cottage_furniture.py` in the documented Pillow environment. Source and settings live under `assets/source/terrain/eldenmere/cottage_furniture/`. The bed, table and refined chair's four directions are approved for main.

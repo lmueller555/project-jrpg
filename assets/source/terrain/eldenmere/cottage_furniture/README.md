@@ -1,6 +1,6 @@
-# Eldenmere cottage furniture source — review
+# Eldenmere cottage furniture source — approved
 
-The first reusable set contains an approved single bed with a cream pillow and folded sage patchwork quilt, an approved worn plank table, and a refined wooden chair in four directions awaiting review. The bed and table sprites, source samples and room positions remain byte-identical to the approved designs. Their orthographic top-down projection matches the approved cottage interior. Furniture stays fixed while the approved room daylight cycles.
+The first reusable set contains an approved single bed with a cream pillow and folded sage patchwork quilt, an approved worn plank table, and an approved refined wooden chair in four directions. The bed and table sprites, source samples and room positions remain byte-identical to the approved designs. Their orthographic top-down projection matches the approved cottage interior. Furniture stays fixed while the approved room daylight cycles.
 
 `furniture_concept.png` is the generated source sheet, retained independently of its original workspace copy at `/workspace/generated_images/exec-e7940935-c1cb-4640-bdc6-b4e354f3eb31.png`. The approved interior room was supplied as a visual reference. No existing character, story, interior shell or outdoor artwork is modified.
 
@@ -14,4 +14,4 @@ The furnished scene reuses the approved 288×288 expanded separate room, structu
 
 Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_furniture.py`; check with the same interpreter and `tools/test_eldenmere_cottage_furniture.py`. The builder retains native parts both here and in the runtime pack and creates a lossless 4× looping scene plus a 6× component board. The loop retains the approved 5.4-second timing; GIF encoding may combine held frames.
 
-The bed and table are approved. The revised chair and its four facings await review. Sitting/sleeping poses, interactive furniture, household layouts, engine collisions, cupboards, shelves and hearth animation are future milestones.
+The bed, table and refined chair in all four facings are approved. Sitting/sleeping poses, interactive furniture, household layouts, engine collisions, cupboards, shelves and hearth animation are future milestones.
