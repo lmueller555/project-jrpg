@@ -1,4 +1,4 @@
-# Eldenmere grass and wildflowers — review
+# Eldenmere grass and wildflowers — approved
 
 Three grass shapes (sparse, splayed and dense) and three flower clumps (white, yellow and soft violet) extend the approved garden foliage. Greens reuse the tree/shrub ramp; subdued petal colors keep the cottages and characters readable.
 
@@ -15,4 +15,4 @@ Review files:
 
 The scene adds 22 small plant instances to grass around the cottage examples. Phase offsets avoid identical neighboring motion. All previous foliage, smoke, doors, lights and water retain their original pixels and timing. Plants leave paths, entrances, waterways, buildings and characters clear. This is an art-review scene, not a finished level. Lossless difference GIFs keep the enlarged previews small enough to load reliably.
 
-Rebuild with `python tools/build_eldenmere_grass_flowers.py`; verify with `python tools/test_eldenmere_grass_flowers.py` in the Pillow environment documented in `tools/README.md`. Source, sampling and placement settings live under `assets/source/terrain/eldenmere/grass_flowers/`. These new designs await review; reeds follow after approval.
+Rebuild with `python tools/build_eldenmere_grass_flowers.py`; verify with `python tools/test_eldenmere_grass_flowers.py` in the Pillow environment documented in `tools/README.md`. Source, sampling and placement settings live under `assets/source/terrain/eldenmere/grass_flowers/`. The six designs and their animations are approved for main. Reeds are the next foliage milestone.

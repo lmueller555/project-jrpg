@@ -1,4 +1,4 @@
-# Eldenmere grass and wildflower source — review
+# Eldenmere grass and wildflower source — approved
 
 `materials_concept.png` retains the generated six-plant atlas guided by the approved cottage-garden scene. The original remains at `/workspace/generated_images/exec-95e99595-943e-4798-a46e-3aa0b9ca4d78.png` in the creation workspace. The committed copy is sufficient to rebuild elsewhere.
 
@@ -14,4 +14,4 @@ Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tool
 
 Test: use the same interpreter with `tools/test_eldenmere_grass_flowers.py`.
 
-This review includes three grass silhouettes and three flower clumps. Reeds and additional plant species are separate future milestones. Design approval is pending.
+This approved milestone includes three grass silhouettes and three flower clumps. Their designs and animations are approved. Reeds and additional plant species are separate future milestones.
