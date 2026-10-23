@@ -1,6 +1,6 @@
 # Eldenmere — fieldstone terraces, steps and spillway
 
-Status: draft artwork for user review. The design plan is approved; these exported designs await visual approval.
+Status: design and artwork approved following user review.
 
 Warm gray, loosely coursed fieldstone uses the existing terrain stone midtone `#969284`, with a new restrained brown-gray-to-cream stone ramp. Grass, moss, dirt and water reuse the approved material ramps exactly. Source-derived stones have worn corners, sparse chips and small moss patches. Structural pixels stay still throughout playback.
 

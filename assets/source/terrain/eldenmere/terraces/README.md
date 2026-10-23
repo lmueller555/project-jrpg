@@ -1,6 +1,6 @@
 # Eldenmere — terrace materials and assembly source
 
-Status: draft artwork for user review, implementing the design plan approved in chat.
+Status: design and artwork approved following user review.
 
 `materials_concept.png` is the retained generated companion reference for fieldstone walls, a corner, four broad stair treads and a spillway. It uses the approved irrigation close-up for visual style guidance. The original generated image is also retained in the execution workspace. `recipe.json` records source crops, native sizes, named stone colors, water glyph thresholds, phase timing, scene framing and approval state.
 

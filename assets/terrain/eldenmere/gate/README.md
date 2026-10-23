@@ -1,6 +1,6 @@
 # Eldenmere — animated irrigation gate
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 A small hand-lifted wooden sluice fits the approved eight-pixel irrigation channel. Weathered wood posts and a sliding board sit on warm-gray fieldstone footings, with restrained iron bands, a lifting handle and a locking pin. The crooked jammed panel and displaced pin support the Venn family's opening repair quest. The existing terrain/stone palette is reused exactly; new named wood and iron ramps provide the mechanism's materials.
 

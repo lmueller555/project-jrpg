@@ -1,6 +1,6 @@
 # Eldenmere — irrigation gate source
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 `materials_concept.png` retains the generated companion reference for open, closed, jammed and partly raised sluice states. The existing terrace close-up supplied visual material and scale guidance. The gate is a small manually lifted wooden board with two posts, one beam, stone footings, iron bands and a locking pin; it has no powered mechanism.
 
