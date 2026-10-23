@@ -1,0 +1,454 @@
+{
+  "id": "eldenmere.watermill.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "prefab_size": [
+    144,
+    168
+  ],
+  "building": "building.png",
+  "stopped": "stopped.png",
+  "sheet": "mill_sheet.png",
+  "building_ground_rect": [
+    24,
+    60,
+    96,
+    72
+  ],
+  "wheel": {
+    "size": [
+      48,
+      48
+    ],
+    "position": [
+      88,
+      94
+    ],
+    "spokes": 8,
+    "paddles": 8,
+    "direction": "clockwise",
+    "step_degrees": 7.5,
+    "symmetric_repeat_degrees": 45,
+    "implied_full_turn_ms": 9600,
+    "frames": [
+      {
+        "image": "wheel/frame_01.png",
+        "angle_degrees": 0.0,
+        "paddle_centers": [
+          [
+            46.0,
+            23.5
+          ],
+          [
+            39.4099,
+            39.4099
+          ],
+          [
+            23.5,
+            46.0
+          ],
+          [
+            7.5901,
+            39.4099
+          ],
+          [
+            1.0,
+            23.5
+          ],
+          [
+            7.5901,
+            7.5901
+          ],
+          [
+            23.5,
+            1.0
+          ],
+          [
+            39.4099,
+            7.5901
+          ]
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "wheel/frame_02.png",
+        "angle_degrees": 7.5,
+        "paddle_centers": [
+          [
+            45.8075,
+            26.4368
+          ],
+          [
+            37.1971,
+            41.3505
+          ],
+          [
+            20.5632,
+            45.8075
+          ],
+          [
+            5.6495,
+            37.1971
+          ],
+          [
+            1.1925,
+            20.5632
+          ],
+          [
+            9.8029,
+            5.6495
+          ],
+          [
+            26.4368,
+            1.1925
+          ],
+          [
+            41.3505,
+            9.8029
+          ]
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "wheel/frame_03.png",
+        "angle_degrees": 15.0,
+        "paddle_centers": [
+          [
+            45.2333,
+            29.3234
+          ],
+          [
+            34.75,
+            42.9856
+          ],
+          [
+            17.6766,
+            45.2333
+          ],
+          [
+            4.0144,
+            34.75
+          ],
+          [
+            1.7667,
+            17.6766
+          ],
+          [
+            12.25,
+            4.0144
+          ],
+          [
+            29.3234,
+            1.7667
+          ],
+          [
+            42.9856,
+            12.25
+          ]
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "wheel/frame_04.png",
+        "angle_degrees": 22.5,
+        "paddle_centers": [
+          [
+            44.2873,
+            32.1104
+          ],
+          [
+            32.1104,
+            44.2873
+          ],
+          [
+            14.8896,
+            44.2873
+          ],
+          [
+            2.7127,
+            32.1104
+          ],
+          [
+            2.7127,
+            14.8896
+          ],
+          [
+            14.8896,
+            2.7127
+          ],
+          [
+            32.1104,
+            2.7127
+          ],
+          [
+            44.2873,
+            14.8896
+          ]
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "wheel/frame_05.png",
+        "angle_degrees": 30.0,
+        "paddle_centers": [
+          [
+            42.9856,
+            34.75
+          ],
+          [
+            29.3234,
+            45.2333
+          ],
+          [
+            12.25,
+            42.9856
+          ],
+          [
+            1.7667,
+            29.3234
+          ],
+          [
+            4.0144,
+            12.25
+          ],
+          [
+            17.6766,
+            1.7667
+          ],
+          [
+            34.75,
+            4.0144
+          ],
+          [
+            45.2333,
+            17.6766
+          ]
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "wheel/frame_06.png",
+        "angle_degrees": 37.5,
+        "paddle_centers": [
+          [
+            41.3505,
+            37.1971
+          ],
+          [
+            26.4368,
+            45.8075
+          ],
+          [
+            9.8029,
+            41.3505
+          ],
+          [
+            1.1925,
+            26.4368
+          ],
+          [
+            5.6495,
+            9.8029
+          ],
+          [
+            20.5632,
+            1.1925
+          ],
+          [
+            37.1971,
+            5.6495
+          ],
+          [
+            45.8075,
+            20.5632
+          ]
+        ],
+        "duration_ms": 200
+      }
+    ]
+  },
+  "running": {
+    "loop": true,
+    "cycle_duration_ms": 1200,
+    "frames": [
+      {
+        "image": "running/frame_01.png",
+        "effects": "effects/frame_01.png",
+        "sheet_rect": [
+          0,
+          0,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "running/frame_02.png",
+        "effects": "effects/frame_02.png",
+        "sheet_rect": [
+          0,
+          168,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "running/frame_03.png",
+        "effects": "effects/frame_03.png",
+        "sheet_rect": [
+          0,
+          336,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "running/frame_04.png",
+        "effects": "effects/frame_04.png",
+        "sheet_rect": [
+          0,
+          504,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "running/frame_05.png",
+        "effects": "effects/frame_05.png",
+        "sheet_rect": [
+          0,
+          672,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      },
+      {
+        "image": "running/frame_06.png",
+        "effects": "effects/frame_06.png",
+        "sheet_rect": [
+          0,
+          840,
+          144,
+          168
+        ],
+        "duration_ms": 200
+      }
+    ]
+  },
+  "landing_rect": [
+    0,
+    132,
+    48,
+    24
+  ],
+  "elevations": {
+    "bank": 24,
+    "floor_and_landing": 24,
+    "intake_water": 18,
+    "race_water": 17,
+    "return_water": 16,
+    "wheel_axle": 40,
+    "wheel_radius": 24
+  },
+  "race": {
+    "tiles": [
+      {
+        "id": "inlet_e",
+        "rect": [
+          0,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_10_from_w",
+        "rect": [
+          24,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_12_from_w",
+        "rect": [
+          48,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_05_from_n",
+        "rect": [
+          72,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_09_from_n",
+        "rect": [
+          0,
+          24,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_10_from_e",
+        "rect": [
+          24,
+          24,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "return_w",
+        "rect": [
+          48,
+          24,
+          24,
+          24
+        ]
+      }
+    ],
+    "frames": [
+      "race/frame_01.png",
+      "race/frame_02.png",
+      "race/frame_03.png",
+      "race/frame_04.png",
+      "race/frame_05.png",
+      "race/frame_06.png"
+    ],
+    "dry": "race/dry.png",
+    "blocked": "race/blocked.png",
+    "water_width_pixels": 8,
+    "intake_cell": [
+      17,
+      4
+    ],
+    "return_cell": [
+      17,
+      11
+    ],
+    "obstruction_optional": true
+  },
+  "recipe": "../../../source/terrain/eldenmere/watermill/recipe.json",
+  "review": {
+    "scene": "review_scene.gif",
+    "closeup": "mill_closeup.gif",
+    "states": "states_review.gif",
+    "stopped_scene": "stopped_scene.gif"
+  }
+}

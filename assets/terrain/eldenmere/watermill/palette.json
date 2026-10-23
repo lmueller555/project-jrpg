@@ -1,0 +1,56 @@
+{
+  "status": "draft",
+  "materials": {
+    "grass": {
+      "deep": "#4f7851",
+      "shadow": "#608451",
+      "base": "#70935a",
+      "light": "#85a16a"
+    },
+    "dirt": {
+      "edge": "#8d7253",
+      "shadow": "#987b59",
+      "base": "#b18e68",
+      "light": "#c1a17b",
+      "stone": "#969284"
+    },
+    "water": {
+      "deep": "#4d7582",
+      "base": "#5c8b96",
+      "flow": "#6b9aa2",
+      "reflection": "#8ab3b0",
+      "glint": "#a1c5bc",
+      "shallow": "#719a91"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "roof": {
+      "shadow": "#4e5e64",
+      "base": "#657579",
+      "light": "#87948f",
+      "edge": "#a2aaa0"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    }
+  }
+}
