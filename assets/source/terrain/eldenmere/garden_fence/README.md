@@ -1,4 +1,4 @@
-# Eldenmere garden fence source — review
+# Eldenmere garden fence source — approved
 
 `materials_concept.png` retains the generated two-rail fence, second wear appearance, standalone post and braced gate source, guided by the approved cottage garden. The original remains at `/workspace/generated_images/exec-9b6fc1ae-1734-4171-8541-656d3f474c4c.png` in the creation workspace. The committed copy is sufficient to rebuild elsewhere. The design contains no cloth, ties, ribbons or hanging decorations.
 
@@ -16,4 +16,4 @@ Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tool
 
 Test: use the same interpreter with `tools/test_eldenmere_garden_fence.py`.
 
-Fence and gate designs/animations await review. Additional finishes or damaged sections are later milestones.
+The fence and gate designs and animations are approved. Additional finishes or damaged sections remain optional future milestones.

@@ -1,4 +1,4 @@
-# Eldenmere garden fence and gate — review
+# Eldenmere garden fence and gate — approved
 
 A low, weathered two-rail fence uses cottage-brown wood, lighter worn tops, small knots and restrained moss at the post bases. Two subtle rail-wear appearances reduce repetition. There are no cloth ties or hanging details. Fence posts, rails, hardware pins and ground shadows remain fixed.
 
@@ -18,4 +18,4 @@ Review files:
 
 The enclosure sits beside the existing heather cottage in a dry eastward scene extension. Its path connects to the cottage road and continues through the opening; existing plants animate inside the garden, with room left for the gate swing. The full 10.8-second loop retains all previous animation timing and repeats the gate demonstration twice. Native structural layers remain static. GIF holds may merge while retaining exact pixels and timing. This is an asset-review layout rather than a playable or canonical village map.
 
-Rebuild with `python tools/build_eldenmere_garden_fence.py`; verify with `python tools/test_eldenmere_garden_fence.py` in the documented Pillow environment. Source settings live under `assets/source/terrain/eldenmere/garden_fence/`. These designs and animations await approval.
+Rebuild with `python tools/build_eldenmere_garden_fence.py`; verify with `python tools/test_eldenmere_garden_fence.py` in the documented Pillow environment. Source settings live under `assets/source/terrain/eldenmere/garden_fence/`. The fence and garden gate designs and animations are approved for main.
