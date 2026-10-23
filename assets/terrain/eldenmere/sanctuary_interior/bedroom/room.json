@@ -1,0 +1,714 @@
+{
+  "id": "bedroom",
+  "status": "review",
+  "label": "Caelan's bedroom",
+  "theme": "Family, curiosity and an ordinary morning.",
+  "floor_tiles": [
+    10,
+    10
+  ],
+  "room_size": [
+    288,
+    336
+  ],
+  "floor_rect": [
+    24,
+    72,
+    240,
+    240
+  ],
+  "entry_rect": [
+    132,
+    312,
+    24,
+    8
+  ],
+  "objects": [
+    {
+      "id": "bed",
+      "pack": "cottage_furniture",
+      "sprite": "bed",
+      "position": [
+        36,
+        108
+      ],
+      "access": [
+        60,
+        186
+      ],
+      "inspect_key": "Bed after waking",
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        44,
+        126,
+        32,
+        48
+      ],
+      "sort_y": 174,
+      "approved_inspect_text": "Tempting. Serene would notice."
+    },
+    {
+      "id": "reading_chair",
+      "pack": "cottage_furniture",
+      "sprite": "chair_down",
+      "position": [
+        84,
+        132
+      ],
+      "access": [
+        96,
+        184
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        87,
+        150,
+        18,
+        16
+      ],
+      "sort_y": 166
+    },
+    {
+      "id": "desk",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        168,
+        96
+      ],
+      "access": [
+        168,
+        156
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        168,
+        112,
+        48,
+        26
+      ],
+      "sort_y": 138
+    },
+    {
+      "id": "notes",
+      "pack": "sanctuary_interior",
+      "sprite": "desk_notes",
+      "position": [
+        172,
+        94
+      ],
+      "parent": "desk",
+      "inspect_key": "Desk notes",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+      "frame_size": [
+        40,
+        20
+      ],
+      "floor_rect": null,
+      "sort_y": 138,
+      "access": [
+        168,
+        156
+      ],
+      "approved_inspect_text": "Copies of the old local inscriptions. Serene says they're easier to read once I stop adding my own guesses."
+    },
+    {
+      "id": "desk_chair",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        180,
+        144
+      ],
+      "access": [
+        180,
+        192
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        183,
+        162,
+        18,
+        16
+      ],
+      "sort_y": 178
+    },
+    {
+      "id": "wardrobe",
+      "pack": "cottage_storage",
+      "sprite": "cupboard",
+      "position": [
+        204,
+        60
+      ],
+      "access": [
+        228,
+        120
+      ],
+      "inspect_key": "Wardrobe",
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        208,
+        90,
+        40,
+        16
+      ],
+      "sort_y": 106,
+      "approved_inspect_text": "Clean robes. Mostly clean, anyway."
+    },
+    {
+      "id": "books",
+      "pack": "cottage_storage",
+      "sprite": "shelf",
+      "position": [
+        72,
+        38
+      ],
+      "access": [
+        108,
+        90
+      ],
+      "inspect_key": "Bookshelf",
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png",
+      "frame_size": [
+        48,
+        24
+      ],
+      "floor_rect": null,
+      "sort_y": 0,
+      "approved_inspect_text": "Two chapters left. I keep telling myself I'll finish them before festival week."
+    },
+    {
+      "id": "drawing",
+      "pack": "sanctuary_interior",
+      "sprite": "family_drawing",
+      "position": [
+        36,
+        34
+      ],
+      "access": [
+        60,
+        90
+      ],
+      "inspect_key": "Childhood family drawing",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/family_drawing.png",
+      "frame_size": [
+        32,
+        28
+      ],
+      "floor_rect": null,
+      "sort_y": 0,
+      "approved_inspect_text": "Tomas insisted that's me. I'm still not sure why he gave me such enormous ears."
+    },
+    {
+      "id": "rug",
+      "pack": "sanctuary_interior",
+      "sprite": "mended_rug",
+      "position": [
+        108,
+        212
+      ],
+      "ground": true,
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+      "frame_size": [
+        48,
+        36
+      ],
+      "floor_rect": null,
+      "sort_y": 0
+    },
+    {
+      "id": "washbasin",
+      "pack": "cottage_kitchen",
+      "sprite": "washbasin",
+      "position": [
+        36,
+        204
+      ],
+      "access": [
+        72,
+        228
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        38,
+        218,
+        20,
+        18
+      ],
+      "sort_y": 236
+    },
+    {
+      "id": "laundry",
+      "pack": "sanctuary_interior",
+      "sprite": "mending_basket",
+      "position": [
+        36,
+        252
+      ],
+      "access": [
+        72,
+        276
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png",
+      "frame_size": [
+        24,
+        20
+      ],
+      "floor_rect": [
+        38,
+        264,
+        20,
+        8
+      ],
+      "sort_y": 272
+    },
+    {
+      "id": "chest",
+      "pack": "sanctuary_interior",
+      "sprite": "clothes_chest",
+      "position": [
+        84,
+        192
+      ],
+      "access": [
+        96,
+        234
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/clothes_chest.png",
+      "frame_size": [
+        36,
+        24
+      ],
+      "floor_rect": [
+        86,
+        206,
+        32,
+        10
+      ],
+      "sort_y": 216
+    },
+    {
+      "id": "clean_clothes",
+      "pack": "sanctuary_interior",
+      "sprite": "folded_clothes",
+      "position": [
+        90,
+        188
+      ],
+      "parent": "chest",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/folded_clothes.png",
+      "frame_size": [
+        24,
+        16
+      ],
+      "floor_rect": null,
+      "sort_y": 216,
+      "access": [
+        96,
+        234
+      ]
+    },
+    {
+      "id": "plant",
+      "pack": "sanctuary_interior",
+      "sprite": "potted_herb",
+      "position": [
+        228,
+        234
+      ],
+      "access": [
+        216,
+        270
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+      "frame_size": [
+        18,
+        24
+      ],
+      "floor_rect": [
+        232,
+        252,
+        10,
+        6
+      ],
+      "sort_y": 258
+    },
+    {
+      "id": "boots",
+      "pack": "sanctuary_interior",
+      "sprite": "work_boots",
+      "position": [
+        84,
+        264
+      ],
+      "access": [
+        108,
+        288
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png",
+      "frame_size": [
+        14,
+        14
+      ],
+      "floor_rect": [
+        85,
+        274,
+        12,
+        4
+      ],
+      "sort_y": 278
+    }
+  ],
+  "portals": [
+    {
+      "id": "hall",
+      "side": "south",
+      "rect": [
+        132,
+        312,
+        24,
+        8
+      ],
+      "access": [
+        144,
+        300
+      ],
+      "spawn": [
+        144,
+        294
+      ]
+    }
+  ],
+  "story_anchors": [
+    {
+      "id": "drawing",
+      "meaning": "The home and sibling affection already present in S01."
+    },
+    {
+      "id": "notes",
+      "meaning": "Caelan studies local inscriptions and adds his own guesses; curiosity lives beside routine."
+    },
+    {
+      "id": "rug",
+      "meaning": "A small repair and worn household belongings suggest continued care."
+    },
+    {
+      "id": "window",
+      "access": [
+        180,
+        90
+      ],
+      "inspect_key": "Window",
+      "approved_inspect_text": "Eldenmere's already awake. It smells like somebody started baking before sunrise."
+    }
+  ],
+  "hero_foot": [
+    144,
+    276
+  ],
+  "hero_anchor": [
+    12,
+    30
+  ],
+  "actor_probe_size": [
+    24,
+    12
+  ],
+  "navigation_start": [
+    144,
+    306
+  ],
+  "reachable_centres": 9434,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 0,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 0,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 1,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 1,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 2,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 2,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 3,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 3,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 4,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 4,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 5,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 5,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 6,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 6,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 7,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 7,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 8,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 8,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 0,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 0,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 1,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 1,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 2,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 2,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 3,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 3,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 4,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 4,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 5,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 5,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 6,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 6,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 7,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 7,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 8,
+      "steam_phase": null
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "duration_ms": 300,
+      "fire_phase": null,
+      "daylight_phase": 8,
+      "steam_phase": null
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "review_scale": 4,
+  "windows": [
+    [
+      168,
+      32
+    ]
+  ],
+  "hearth_position": null,
+  "steam_origin": null,
+  "engine_interactions_implemented": false,
+  "character_sleep_sit_poses_included": false
+}

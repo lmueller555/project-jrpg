@@ -1,0 +1,436 @@
+{
+  "id": "eldenmere.sanctuary.interiors.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "character_frame_size": [
+    24,
+    36
+  ],
+  "rooms": [
+    {
+      "id": "bedroom",
+      "label": "Caelan's bedroom",
+      "floor_tiles": [
+        10,
+        10
+      ],
+      "room": "bedroom/room.json"
+    },
+    {
+      "id": "hall",
+      "label": "Shared hall and reading nook",
+      "floor_tiles": [
+        12,
+        10
+      ],
+      "room": "hall/room.json"
+    },
+    {
+      "id": "dining",
+      "label": "Communal kitchen and dining",
+      "floor_tiles": [
+        16,
+        10
+      ],
+      "room": "dining/room.json"
+    }
+  ],
+  "props": [
+    {
+      "id": "family_drawing",
+      "source": "story",
+      "crop": [
+        88,
+        159,
+        424,
+        470
+      ],
+      "size": [
+        32,
+        28
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "desk_notes",
+      "source": "story",
+      "crop": [
+        545,
+        144,
+        994,
+        484
+      ],
+      "size": [
+        40,
+        20
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "breakfast",
+      "source": "story",
+      "crop": [
+        1074,
+        206,
+        1470,
+        500
+      ],
+      "size": [
+        40,
+        18
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "mended_rug",
+      "source": "story",
+      "crop": [
+        35,
+        586,
+        544,
+        916
+      ],
+      "size": [
+        48,
+        36
+      ],
+      "material": "textile",
+      "walkable": true
+    },
+    {
+      "id": "bookstand",
+      "source": "story",
+      "crop": [
+        627,
+        539,
+        940,
+        929
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        3,
+        26,
+        18,
+        10
+      ]
+    },
+    {
+      "id": "noticeboard",
+      "source": "story",
+      "crop": [
+        1064,
+        601,
+        1471,
+        888
+      ],
+      "size": [
+        32,
+        24
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "medicine_tray",
+      "source": "care",
+      "crop": [
+        77,
+        202,
+        492,
+        460
+      ],
+      "size": [
+        20,
+        18
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "food_oil_basket",
+      "source": "care",
+      "crop": [
+        557,
+        136,
+        953,
+        473
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "care_basket",
+      "source": "care",
+      "crop": [
+        1013,
+        140,
+        1489,
+        482
+      ],
+      "size": [
+        28,
+        24
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "kettle",
+      "source": "care",
+      "crop": [
+        74,
+        554,
+        425,
+        902
+      ],
+      "size": [
+        16,
+        18
+      ],
+      "material": "iron"
+    },
+    {
+      "id": "breadboard",
+      "source": "care",
+      "crop": [
+        527,
+        673,
+        978,
+        886
+      ],
+      "size": [
+        24,
+        12
+      ],
+      "material": "mixed"
+    },
+    {
+      "id": "mending_basket",
+      "source": "care",
+      "crop": [
+        1040,
+        587,
+        1466,
+        903
+      ],
+      "size": [
+        24,
+        20
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        2,
+        12,
+        20,
+        8
+      ]
+    },
+    {
+      "id": "clothes_chest",
+      "source": "furnishing",
+      "crop": [
+        80,
+        315,
+        508,
+        594
+      ],
+      "size": [
+        36,
+        24
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        2,
+        14,
+        32,
+        10
+      ]
+    },
+    {
+      "id": "bookcase",
+      "source": "furnishing",
+      "crop": [
+        583,
+        37,
+        953,
+        609
+      ],
+      "size": [
+        36,
+        60
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        2,
+        42,
+        32,
+        18
+      ]
+    },
+    {
+      "id": "console",
+      "source": "furnishing",
+      "crop": [
+        1074,
+        335,
+        1441,
+        594
+      ],
+      "size": [
+        36,
+        30
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        2,
+        20,
+        32,
+        10
+      ]
+    },
+    {
+      "id": "potted_herb",
+      "source": "furnishing",
+      "crop": [
+        190,
+        664,
+        419,
+        958
+      ],
+      "size": [
+        18,
+        24
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        4,
+        18,
+        10,
+        6
+      ]
+    },
+    {
+      "id": "folded_clothes",
+      "source": "furnishing",
+      "crop": [
+        602,
+        713,
+        938,
+        943
+      ],
+      "size": [
+        24,
+        16
+      ],
+      "material": "textile"
+    },
+    {
+      "id": "work_boots",
+      "source": "furnishing",
+      "crop": [
+        1128,
+        735,
+        1394,
+        958
+      ],
+      "size": [
+        14,
+        14
+      ],
+      "material": "mixed",
+      "floor_rect": [
+        1,
+        10,
+        12,
+        4
+      ]
+    }
+  ],
+  "links": [
+    {
+      "a": [
+        "bedroom",
+        "hall"
+      ],
+      "b": [
+        "hall",
+        "bedroom"
+      ]
+    },
+    {
+      "a": [
+        "hall",
+        "dining"
+      ],
+      "b": [
+        "dining",
+        "hall"
+      ]
+    },
+    {
+      "a": [
+        "hall",
+        "courtyard"
+      ],
+      "exterior_pack": "assets/terrain/eldenmere/sanctuary_charm/charm.json",
+      "exterior_foot": [
+        386,
+        304
+      ],
+      "door_world_rect": [
+        370,
+        240,
+        32,
+        42
+      ]
+    }
+  ],
+  "review_columns": [
+    {
+      "room": "bedroom",
+      "rect": [
+        24,
+        136,
+        576,
+        672
+      ]
+    },
+    {
+      "room": "hall",
+      "rect": [
+        624,
+        136,
+        672,
+        672
+      ]
+    },
+    {
+      "room": "dining",
+      "rect": [
+        1320,
+        136,
+        864,
+        672
+      ]
+    }
+  ],
+  "comparison_scale": 2,
+  "individual_scale": 4,
+  "cycle_duration_ms": 10800,
+  "duration_ms": 300,
+  "frame_count": 36,
+  "loop": true,
+  "narrative_reference": "docs/narrative/game_01/CH01_MQ01.md",
+  "narrative_files_modified": false,
+  "cast_designs_added": false,
+  "later_revelations_displayed": false,
+  "engine_transfers_implemented": false,
+  "source_recipe": "../../../source/terrain/eldenmere/sanctuary_interior/recipe.json"
+}

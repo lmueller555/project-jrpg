@@ -1,0 +1,853 @@
+{
+  "id": "dining",
+  "status": "review",
+  "label": "Communal kitchen and dining",
+  "theme": "Breakfast together; provisions ready for three homes.",
+  "floor_tiles": [
+    16,
+    10
+  ],
+  "room_size": [
+    432,
+    336
+  ],
+  "floor_rect": [
+    24,
+    72,
+    384,
+    240
+  ],
+  "entry_rect": [
+    204,
+    312,
+    24,
+    8
+  ],
+  "objects": [
+    {
+      "id": "dishes",
+      "pack": "cottage_storage",
+      "sprite": "shelf",
+      "position": [
+        108,
+        36
+      ],
+      "access": [
+        132,
+        90
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png",
+      "frame_size": [
+        48,
+        24
+      ],
+      "floor_rect": null,
+      "sort_y": 0
+    },
+    {
+      "id": "cupboard",
+      "pack": "cottage_storage",
+      "sprite": "cupboard",
+      "position": [
+        36,
+        60
+      ],
+      "access": [
+        60,
+        120
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        40,
+        90,
+        40,
+        16
+      ],
+      "sort_y": 106
+    },
+    {
+      "id": "sideboard",
+      "pack": "sanctuary_interior",
+      "sprite": "console",
+      "position": [
+        84,
+        60
+      ],
+      "access": [
+        108,
+        108
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/console.png",
+      "frame_size": [
+        36,
+        30
+      ],
+      "floor_rect": [
+        86,
+        80,
+        32,
+        10
+      ],
+      "sort_y": 90
+    },
+    {
+      "id": "plant",
+      "pack": "sanctuary_interior",
+      "sprite": "potted_herb",
+      "position": [
+        96,
+        46
+      ],
+      "parent": "sideboard",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+      "frame_size": [
+        18,
+        24
+      ],
+      "floor_rect": null,
+      "sort_y": 90,
+      "access": [
+        108,
+        108
+      ]
+    },
+    {
+      "id": "pantry",
+      "pack": "cottage_kitchen",
+      "sprite": "pantry",
+      "position": [
+        228,
+        60
+      ],
+      "access": [
+        240,
+        120
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "floor_rect": [
+        229,
+        90,
+        22,
+        16
+      ],
+      "sort_y": 106
+    },
+    {
+      "id": "counter",
+      "pack": "cottage_kitchen",
+      "sprite": "counter",
+      "position": [
+        264,
+        60
+      ],
+      "access": [
+        288,
+        116
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        266,
+        80,
+        44,
+        22
+      ],
+      "sort_y": 102
+    },
+    {
+      "id": "kettle",
+      "pack": "sanctuary_interior",
+      "sprite": "kettle",
+      "position": [
+        270,
+        58
+      ],
+      "parent": "counter",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/kettle.png",
+      "frame_size": [
+        16,
+        18
+      ],
+      "floor_rect": null,
+      "sort_y": 102,
+      "access": [
+        288,
+        116
+      ]
+    },
+    {
+      "id": "bread",
+      "pack": "sanctuary_interior",
+      "sprite": "breadboard",
+      "position": [
+        286,
+        72
+      ],
+      "parent": "counter",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png",
+      "frame_size": [
+        24,
+        12
+      ],
+      "floor_rect": null,
+      "sort_y": 102,
+      "access": [
+        288,
+        116
+      ]
+    },
+    {
+      "id": "washbasin",
+      "pack": "cottage_kitchen",
+      "sprite": "washbasin",
+      "position": [
+        324,
+        72
+      ],
+      "access": [
+        336,
+        120
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        326,
+        86,
+        20,
+        18
+      ],
+      "sort_y": 104
+    },
+    {
+      "id": "table",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        144,
+        168
+      ],
+      "access": [
+        168,
+        228
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        144,
+        184,
+        48,
+        26
+      ],
+      "sort_y": 210
+    },
+    {
+      "id": "breakfast",
+      "pack": "sanctuary_interior",
+      "sprite": "breakfast",
+      "position": [
+        148,
+        170
+      ],
+      "parent": "table",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png",
+      "frame_size": [
+        40,
+        18
+      ],
+      "floor_rect": null,
+      "sort_y": 210,
+      "access": [
+        168,
+        228
+      ]
+    },
+    {
+      "id": "chair_north",
+      "pack": "cottage_furniture",
+      "sprite": "chair_down",
+      "position": [
+        156,
+        132
+      ],
+      "access": [
+        132,
+        156
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        159,
+        150,
+        18,
+        16
+      ],
+      "sort_y": 166
+    },
+    {
+      "id": "chair_west",
+      "pack": "cottage_furniture",
+      "sprite": "chair_right",
+      "position": [
+        108,
+        174
+      ],
+      "access": [
+        96,
+        216
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        111,
+        192,
+        18,
+        16
+      ],
+      "sort_y": 208
+    },
+    {
+      "id": "chair_east",
+      "pack": "cottage_furniture",
+      "sprite": "chair_left",
+      "position": [
+        204,
+        174
+      ],
+      "access": [
+        240,
+        216
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        207,
+        192,
+        18,
+        16
+      ],
+      "sort_y": 208
+    },
+    {
+      "id": "supply_table_a",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        264,
+        168
+      ],
+      "access": [
+        288,
+        228
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        264,
+        184,
+        48,
+        26
+      ],
+      "sort_y": 210
+    },
+    {
+      "id": "supply_table_b",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        312,
+        168
+      ],
+      "access": [
+        336,
+        228
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        312,
+        184,
+        48,
+        26
+      ],
+      "sort_y": 210
+    },
+    {
+      "id": "halden_supplies",
+      "pack": "sanctuary_interior",
+      "sprite": "medicine_tray",
+      "position": [
+        268,
+        166
+      ],
+      "parent": "supply_table_a",
+      "household": "halden",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/medicine_tray.png",
+      "frame_size": [
+        20,
+        18
+      ],
+      "floor_rect": null,
+      "sort_y": 210,
+      "access": [
+        288,
+        228
+      ]
+    },
+    {
+      "id": "elira_supplies",
+      "pack": "sanctuary_interior",
+      "sprite": "food_oil_basket",
+      "position": [
+        290,
+        162
+      ],
+      "parent": "supply_table_a",
+      "household": "elira",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/food_oil_basket.png",
+      "frame_size": [
+        24,
+        24
+      ],
+      "floor_rect": null,
+      "sort_y": 210,
+      "access": [
+        288,
+        228
+      ]
+    },
+    {
+      "id": "venn_supplies",
+      "pack": "sanctuary_interior",
+      "sprite": "care_basket",
+      "position": [
+        324,
+        162
+      ],
+      "parent": "supply_table_b",
+      "household": "venn",
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png",
+      "frame_size": [
+        28,
+        24
+      ],
+      "floor_rect": null,
+      "sort_y": 210,
+      "access": [
+        336,
+        228
+      ]
+    },
+    {
+      "id": "spare_bench",
+      "pack": "sanctuary_charm",
+      "sprite": "bench",
+      "position": [
+        36,
+        240
+      ],
+      "access": [
+        60,
+        288
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+      "frame_size": [
+        48,
+        30
+      ],
+      "floor_rect": [
+        40,
+        260,
+        40,
+        10
+      ],
+      "sort_y": 270
+    },
+    {
+      "id": "hearth",
+      "position": [
+        360,
+        24
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        362,
+        72,
+        44,
+        20
+      ],
+      "access": [
+        384,
+        110
+      ],
+      "sort_y": 92,
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png"
+    }
+  ],
+  "portals": [
+    {
+      "id": "hall",
+      "side": "south",
+      "rect": [
+        204,
+        312,
+        24,
+        8
+      ],
+      "access": [
+        216,
+        300
+      ],
+      "spawn": [
+        216,
+        294
+      ]
+    }
+  ],
+  "story_anchors": [
+    {
+      "id": "breakfast",
+      "meaning": "Three settings make the shared family meal visible before the delivery work."
+    },
+    {
+      "id": "halden_supplies",
+      "meaning": "Medicine for Halden, the mandatory first household visit."
+    },
+    {
+      "id": "elira_supplies",
+      "meaning": "Food and lamp oil for Elira."
+    },
+    {
+      "id": "venn_supplies",
+      "meaning": "Produce and folded linens convey practical support for the recovering child's household."
+    }
+  ],
+  "hero_foot": [
+    216,
+    276
+  ],
+  "hero_anchor": [
+    12,
+    30
+  ],
+  "actor_probe_size": [
+    24,
+    12
+  ],
+  "navigation_start": [
+    216,
+    306
+  ],
+  "reachable_centres": 16240,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 0,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 0,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 1,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 1,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 2,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 2,
+      "steam_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 3,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 3,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 4,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 4,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 5,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 5,
+      "steam_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 6,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 6,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 7,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 7,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 8,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 8,
+      "steam_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 0,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 0,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 1,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 1,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 2,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 2,
+      "steam_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 3,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 3,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 4,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 4,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 5,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 5,
+      "steam_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 6,
+      "steam_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 6,
+      "steam_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 7,
+      "steam_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 7,
+      "steam_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 8,
+      "steam_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 8,
+      "steam_phase": 5
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "review_scale": 4,
+  "windows": [
+    [
+      72,
+      32
+    ],
+    [
+      168,
+      32
+    ]
+  ],
+  "hearth_position": [
+    360,
+    24
+  ],
+  "steam_origin": [
+    271,
+    63
+  ],
+  "engine_interactions_implemented": false,
+  "character_sleep_sit_poses_included": false
+}

@@ -1,0 +1,133 @@
+{
+  "id": "eldenmere.sanctuary.interiors.24",
+  "status": "review",
+  "tile_size": 24,
+  "frame_count": 36,
+  "duration_ms": 300,
+  "actor_probe_size": [24, 12],
+  "review_scale": 4,
+  "comparison_scale": 2,
+  "sources": {"story": "story_props_concept.png", "care": "care_props_concept.png", "furnishing":"furnishing_props_concept.png"},
+  "props": [
+    {"id": "family_drawing", "source": "story", "crop": [88,159,424,470], "size": [32,28], "material": "mixed"},
+    {"id": "desk_notes", "source": "story", "crop": [545,144,994,484], "size": [40,20], "material": "mixed"},
+    {"id": "breakfast", "source": "story", "crop": [1074,206,1470,500], "size": [40,18], "material": "mixed"},
+    {"id": "mended_rug", "source": "story", "crop": [35,586,544,916], "size": [48,36], "material": "textile", "walkable": true},
+    {"id": "bookstand", "source": "story", "crop": [627,539,940,929], "size": [24,36], "material": "mixed", "floor_rect": [3,26,18,10]},
+    {"id": "noticeboard", "source": "story", "crop": [1064,601,1471,888], "size": [32,24], "material": "mixed"},
+    {"id": "medicine_tray", "source": "care", "crop": [77,202,492,460], "size": [20,18], "material": "mixed"},
+    {"id": "food_oil_basket", "source": "care", "crop": [557,136,953,473], "size": [24,24], "material": "mixed"},
+    {"id": "care_basket", "source": "care", "crop": [1013,140,1489,482], "size": [28,24], "material": "mixed"},
+    {"id": "kettle", "source": "care", "crop": [74,554,425,902], "size": [16,18], "material": "iron"},
+    {"id": "breadboard", "source": "care", "crop": [527,673,978,886], "size": [24,12], "material": "mixed"},
+    {"id": "mending_basket", "source": "care", "crop": [1040,587,1466,903], "size": [24,20], "material": "mixed", "floor_rect": [2,12,20,8]},
+    {"id":"clothes_chest","source":"furnishing","crop":[80,315,508,594],"size":[36,24],"material":"mixed","floor_rect":[2,14,32,10]},
+    {"id":"bookcase","source":"furnishing","crop":[583,37,953,609],"size":[36,60],"material":"mixed","floor_rect":[2,42,32,18]},
+    {"id":"console","source":"furnishing","crop":[1074,335,1441,594],"size":[36,30],"material":"mixed","floor_rect":[2,20,32,10]},
+    {"id":"potted_herb","source":"furnishing","crop":[190,664,419,958],"size":[18,24],"material":"mixed","floor_rect":[4,18,10,6]},
+    {"id":"folded_clothes","source":"furnishing","crop":[602,713,938,943],"size":[24,16],"material":"textile"},
+    {"id":"work_boots","source":"furnishing","crop":[1128,735,1394,958],"size":[14,14],"material":"mixed","floor_rect":[1,10,12,4]}
+  ],
+  "rooms": [
+    {
+      "id": "bedroom", "label": "Caelan's bedroom", "floor_tiles": [10,10],
+      "theme": "Family, curiosity and an ordinary morning.",
+      "entry": [132,312,24,8], "windows": [[168,32]], "supports": [24,132,240], "hero_foot": [144,276],
+      "portals": [{"id":"hall","side":"south","rect":[132,312,24,8],"access":[144,300],"spawn":[144,294]}],
+      "objects": [
+        {"id":"bed","pack":"cottage_furniture","sprite":"bed","position":[36,108],"access":[60,186],"inspect_key":"Bed after waking"},
+        {"id":"reading_chair","pack":"cottage_furniture","sprite":"chair_down","position":[84,132],"access":[96,184]},
+        {"id":"desk","pack":"cottage_furniture","sprite":"table","position":[168,96],"access":[168,156]},
+        {"id":"notes","pack":"sanctuary_interior","sprite":"desk_notes","position":[172,94],"parent":"desk","inspect_key":"Desk notes"},
+        {"id":"desk_chair","pack":"cottage_furniture","sprite":"chair_up","position":[180,144],"access":[180,192]},
+        {"id":"wardrobe","pack":"cottage_storage","sprite":"cupboard","position":[204,60],"access":[228,120],"inspect_key":"Wardrobe"},
+        {"id":"books","pack":"cottage_storage","sprite":"shelf","position":[72,38],"access":[108,90],"inspect_key":"Bookshelf"},
+        {"id":"drawing","pack":"sanctuary_interior","sprite":"family_drawing","position":[36,34],"access":[60,90],"inspect_key":"Childhood family drawing"},
+        {"id":"rug","pack":"sanctuary_interior","sprite":"mended_rug","position":[108,212],"ground":true},
+        {"id":"washbasin","pack":"cottage_kitchen","sprite":"washbasin","position":[36,204],"access":[72,228]},
+        {"id":"laundry","pack":"sanctuary_interior","sprite":"mending_basket","position":[36,252],"access":[72,276]},
+        {"id":"chest","pack":"sanctuary_interior","sprite":"clothes_chest","position":[84,192],"access":[96,234]},
+        {"id":"clean_clothes","pack":"sanctuary_interior","sprite":"folded_clothes","position":[90,188],"parent":"chest"},
+        {"id":"plant","pack":"sanctuary_interior","sprite":"potted_herb","position":[228,234],"access":[216,270]},
+        {"id":"boots","pack":"sanctuary_interior","sprite":"work_boots","position":[84,264],"access":[108,288]}
+      ],
+      "story_anchors": [
+        {"id":"drawing","meaning":"The home and sibling affection already present in S01."},
+        {"id":"notes","meaning":"Caelan studies local inscriptions and adds his own guesses; curiosity lives beside routine."},
+        {"id":"rug","meaning":"A small repair and worn household belongings suggest continued care."},
+        {"id":"window","access":[180,90],"inspect_key":"Window"}
+      ]
+    },
+    {
+      "id":"hall", "label":"Shared hall and reading nook", "floor_tiles":[12,10],
+      "theme":"Welcome, practical care and shared memory.",
+      "entry":[192,312,32,8], "windows":[[144,30]], "supports":[24,120,228,312], "hero_foot":[208,276],
+      "portals":[
+        {"id":"bedroom","side":"north","door_position":[72,36],"rect":[72,72,24,12],"access":[84,90],"spawn":[84,90]},
+        {"id":"dining","side":"north","door_position":[252,36],"rect":[252,72,24,12],"access":[264,90],"spawn":[264,90]},
+        {"id":"courtyard","side":"south","rect":[192,312,32,8],"access":[208,300],"spawn":[208,294]}
+      ],
+      "objects":[
+        {"id":"notices","pack":"sanctuary_interior","sprite":"noticeboard","position":[32,36],"access":[48,90]},
+        {"id":"bookcase","pack":"sanctuary_interior","sprite":"bookcase","position":[36,60],"access":[60,132]},
+        {"id":"records","pack":"cottage_storage","sprite":"cupboard","position":[180,54],"access":[204,114]},
+        {"id":"herbs","pack":"sanctuary_charm","sprite":"herb_planter","position":[144,60],"access":[156,90]},
+        {"id":"reading_bench","pack":"sanctuary_charm","sprite":"bench","position":[48,156],"access":[72,204]},
+        {"id":"bookstand","pack":"sanctuary_interior","sprite":"bookstand","position":[108,138],"access":[132,186]},
+        {"id":"rug","pack":"sanctuary_interior","sprite":"mended_rug","position":[120,204],"ground":true},
+        {"id":"mending_table","pack":"cottage_furniture","sprite":"table","position":[240,168],"access":[264,228]},
+        {"id":"mending","pack":"sanctuary_interior","sprite":"mending_basket","position":[252,162],"parent":"mending_table"},
+        {"id":"second_bench","pack":"sanctuary_charm","sprite":"bench","position":[48,216],"access":[72,258]},
+        {"id":"washbasin","pack":"cottage_kitchen","sprite":"washbasin","position":[36,264],"access":[72,294]},
+        {"id":"welcome_console","pack":"sanctuary_interior","sprite":"console","position":[240,252],"access":[228,282]},
+        {"id":"plant","pack":"sanctuary_interior","sprite":"potted_herb","position":[248,238],"parent":"welcome_console"},
+        {"id":"boots","pack":"sanctuary_interior","sprite":"work_boots","position":[244,282],"access":[276,294]}
+      ],
+      "story_anchors":[
+        {"id":"reading_bench","meaning":"A place to sit, read or wait: the sanctuary belongs to the village."},
+        {"id":"mending","meaning":"Care appears as repeated ordinary work, alongside quiet reading."},
+        {"id":"records","meaning":"Closed everyday records storage. No warning text or later revelation is displayed."}
+      ]
+    },
+    {
+      "id":"dining", "label":"Communal kitchen and dining", "floor_tiles":[16,10],
+      "theme":"Breakfast together; provisions ready for three homes.",
+      "entry":[204,312,24,8], "windows":[[72,32],[168,32]], "supports":[24,120,216,408], "hero_foot":[216,276],
+      "hearth_position":[360,24], "steam_origin":[271,63],
+      "portals":[{"id":"hall","side":"south","rect":[204,312,24,8],"access":[216,300],"spawn":[216,294]}],
+      "objects":[
+        {"id":"dishes","pack":"cottage_storage","sprite":"shelf","position":[108,36],"access":[132,90]},
+        {"id":"cupboard","pack":"cottage_storage","sprite":"cupboard","position":[36,60],"access":[60,120]},
+        {"id":"sideboard","pack":"sanctuary_interior","sprite":"console","position":[84,60],"access":[108,108]},
+        {"id":"plant","pack":"sanctuary_interior","sprite":"potted_herb","position":[96,46],"parent":"sideboard"},
+        {"id":"pantry","pack":"cottage_kitchen","sprite":"pantry","position":[228,60],"access":[240,120]},
+        {"id":"counter","pack":"cottage_kitchen","sprite":"counter","position":[264,60],"access":[288,116]},
+        {"id":"kettle","pack":"sanctuary_interior","sprite":"kettle","position":[270,58],"parent":"counter"},
+        {"id":"bread","pack":"sanctuary_interior","sprite":"breadboard","position":[286,72],"parent":"counter"},
+        {"id":"washbasin","pack":"cottage_kitchen","sprite":"washbasin","position":[324,72],"access":[336,120]},
+        {"id":"table","pack":"cottage_furniture","sprite":"table","position":[144,168],"access":[168,228]},
+        {"id":"breakfast","pack":"sanctuary_interior","sprite":"breakfast","position":[148,170],"parent":"table"},
+        {"id":"chair_north","pack":"cottage_furniture","sprite":"chair_down","position":[156,132],"access":[132,156]},
+        {"id":"chair_west","pack":"cottage_furniture","sprite":"chair_right","position":[108,174],"access":[96,216]},
+        {"id":"chair_east","pack":"cottage_furniture","sprite":"chair_left","position":[204,174],"access":[240,216]},
+        {"id":"supply_table_a","pack":"cottage_furniture","sprite":"table","position":[264,168],"access":[288,228]},
+        {"id":"supply_table_b","pack":"cottage_furniture","sprite":"table","position":[312,168],"access":[336,228]},
+        {"id":"halden_supplies","pack":"sanctuary_interior","sprite":"medicine_tray","position":[268,166],"parent":"supply_table_a","household":"halden"},
+        {"id":"elira_supplies","pack":"sanctuary_interior","sprite":"food_oil_basket","position":[290,162],"parent":"supply_table_a","household":"elira"},
+        {"id":"venn_supplies","pack":"sanctuary_interior","sprite":"care_basket","position":[324,162],"parent":"supply_table_b","household":"venn"},
+        {"id":"spare_bench","pack":"sanctuary_charm","sprite":"bench","position":[36,240],"access":[60,288]}
+      ],
+      "story_anchors":[
+        {"id":"breakfast","meaning":"Three settings make the shared family meal visible before the delivery work."},
+        {"id":"halden_supplies","meaning":"Medicine for Halden, the mandatory first household visit."},
+        {"id":"elira_supplies","meaning":"Food and lamp oil for Elira."},
+        {"id":"venn_supplies","meaning":"Produce and folded linens convey practical support for the recovering child's household."}
+      ]
+    }
+  ],
+  "links":[
+    {"a":["bedroom","hall"],"b":["hall","bedroom"]},
+    {"a":["hall","dining"],"b":["dining","hall"]},
+    {"a":["hall","courtyard"],"exterior_pack":"assets/terrain/eldenmere/sanctuary_charm/charm.json","exterior_foot":[386,304],"door_world_rect":[370,240,32,42]}
+  ]
+}
