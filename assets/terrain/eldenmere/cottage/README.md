@@ -1,6 +1,6 @@
-# Eldenmere cottage — draft for review
+# Eldenmere cottage — approved base
 
-First front-facing cottage appearance on the 24×24 terrain grid, designed beside the approved mill. Cream plaster, brown structural timber, a low slate roof, fieldstone base, daisies in a flower box, shutters and an iron hanging light give a modest maintained village home. The 120×144 transparent prefab includes headroom for smoke; its ground rectangle is `[12,72,96,72]` (four by three tiles). Character scale remains 24×36. This is an art prefab, not a playable interior or engine collision setup.
+Approved front-facing cottage appearance on the 24×24 terrain grid, designed beside the approved mill. Cream plaster, brown structural timber, a low slate roof, fieldstone base, daisies in a flower box, shutters and an iron hanging light give a modest maintained village home. The 120×144 transparent prefab includes headroom for smoke; its ground rectangle is `[12,72,96,72]` (four by three tiles). Character scale remains 24×36. This is an art prefab, not a playable interior or engine collision setup.
 
 `structure.png` holds the fixed building and dark doorway. Composite one `doors/` frame, one `lantern/` frame and optionally one `smoke/` frame above it. `closed.png` and `open.png` are ready-made static states without smoke. Five door poses compress the source leaf toward a fixed west hinge without moving its top/bottom. Opening and reversed closing play once at 100 ms per pose; hold their endpoint for a persistent state. The review repeats door use only to demonstrate it.
 
@@ -20,4 +20,4 @@ Review files:
 Rebuild: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage.py`.
 Verify: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/test_eldenmere_cottage.py`.
 
-Approval status comes from `assets/source/terrain/eldenmere/cottage/recipe.json`. Published for review, not merged into main.
+Approval status comes from `assets/source/terrain/eldenmere/cottage/recipe.json`. The base design and animations are approved for main. Color variants will be reviewed separately.

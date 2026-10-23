@@ -8,4 +8,4 @@
 
 The tool exports fixed structure, five hinged door poses, eighteen smoke and lantern phases, the components board, native scene frames and lossless nearest-neighbor looping reviews. These animations are explicit separate layers rather than a deformation of the entire building. All outputs are reproducible with the retained source and Pillow dependency from `tools/requirements-assets.txt`.
 
-This is the first draft base cottage. Wider/compact variants, triggered gameplay entry, interiors and resident-specific identities remain future work pending appearance approval.
+This base cottage appearance and its animations are approved. Wider/compact variants, triggered gameplay entry, interiors and resident-specific identities remain future work.
