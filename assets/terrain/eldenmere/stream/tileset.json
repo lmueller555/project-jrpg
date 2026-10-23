@@ -1,0 +1,2535 @@
+{
+  "id": "eldenmere.stream.24",
+  "status": "draft",
+  "design_plan": "approved; first stream-and-bank review milestone",
+  "tile_size": [
+    24,
+    24
+  ],
+  "quarter_size": [
+    12,
+    12
+  ],
+  "count": 47,
+  "columns": 8,
+  "spacing": 0,
+  "margin": 0,
+  "neighbor_bits": {
+    "N": 1,
+    "NE": 2,
+    "E": 4,
+    "SE": 8,
+    "S": 16,
+    "SW": 32,
+    "W": 64,
+    "NW": 128
+  },
+  "neighbor_offsets": {
+    "N": [
+      0,
+      -1
+    ],
+    "NE": [
+      1,
+      -1
+    ],
+    "E": [
+      1,
+      0
+    ],
+    "SE": [
+      1,
+      1
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "SW": [
+      -1,
+      1
+    ],
+    "W": [
+      -1,
+      0
+    ],
+    "NW": [
+      -1,
+      -1
+    ]
+  },
+  "lookup_256": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    18,
+    19,
+    18,
+    19,
+    20,
+    21,
+    20,
+    22,
+    18,
+    19,
+    18,
+    19,
+    23,
+    24,
+    23,
+    25,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    13,
+    14,
+    13,
+    14,
+    15,
+    16,
+    15,
+    17,
+    26,
+    27,
+    26,
+    27,
+    28,
+    29,
+    28,
+    30,
+    26,
+    27,
+    26,
+    27,
+    31,
+    32,
+    31,
+    33,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    0,
+    1,
+    0,
+    1,
+    2,
+    3,
+    2,
+    4,
+    5,
+    6,
+    5,
+    6,
+    7,
+    8,
+    7,
+    9,
+    5,
+    6,
+    5,
+    6,
+    10,
+    11,
+    10,
+    12,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    18,
+    37,
+    18,
+    37,
+    20,
+    38,
+    20,
+    39,
+    18,
+    37,
+    18,
+    37,
+    23,
+    40,
+    23,
+    41,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    13,
+    34,
+    13,
+    34,
+    15,
+    35,
+    15,
+    36,
+    26,
+    42,
+    26,
+    42,
+    28,
+    43,
+    28,
+    44,
+    26,
+    42,
+    26,
+    42,
+    31,
+    45,
+    31,
+    46
+  ],
+  "diagonal_rule": "Count a diagonal only when both adjoining cardinal neighbors connect",
+  "tiles": [
+    {
+      "index": 0,
+      "mask": 0,
+      "rect": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_outer_water.png"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "mask": 1,
+      "rect": [
+        24,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_outer_water.png"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mask": 4,
+      "rect": [
+        48,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mask": 5,
+      "rect": [
+        72,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mask": 7,
+      "rect": [
+        96,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mask": 16,
+      "rect": [
+        120,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mask": 17,
+      "rect": [
+        144,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "mask": 20,
+      "rect": [
+        168,
+        0,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "mask": 21,
+      "rect": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "mask": 23,
+      "rect": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "mask": 28,
+      "rect": [
+        48,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_outer_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "mask": 29,
+      "rect": [
+        72,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "mask": 31,
+      "rect": [
+        96,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_x_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "mask": 64,
+      "rect": [
+        120,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_outer_water.png"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "mask": 65,
+      "rect": [
+        144,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_outer_water.png"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "mask": 68,
+      "rect": [
+        168,
+        24,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "mask": 69,
+      "rect": [
+        0,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "mask": 71,
+      "rect": [
+        24,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "mask": 80,
+      "rect": [
+        48,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "mask": 81,
+      "rect": [
+        72,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "mask": 84,
+      "rect": [
+        96,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "mask": 85,
+      "rect": [
+        120,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "mask": 87,
+      "rect": [
+        144,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "mask": 92,
+      "rect": [
+        168,
+        48,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "mask": 93,
+      "rect": [
+        0,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "mask": 95,
+      "rect": [
+        24,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "mask": 112,
+      "rect": [
+        48,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_outer_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "mask": 113,
+      "rect": [
+        72,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "mask": 116,
+      "rect": [
+        96,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "mask": 117,
+      "rect": [
+        120,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "mask": 119,
+      "rect": [
+        144,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "mask": 124,
+      "rect": [
+        168,
+        72,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_y_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "mask": 125,
+      "rect": [
+        0,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "mask": 127,
+      "rect": [
+        24,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "mask": 193,
+      "rect": [
+        48,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_outer_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_outer_water.png"
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "mask": 197,
+      "rect": [
+        72,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "mask": 199,
+      "rect": [
+        96,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_edge_y_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_y_water.png"
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "mask": 209,
+      "rect": [
+        120,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "mask": 213,
+      "rect": [
+        144,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "mask": 215,
+      "rect": [
+        168,
+        96,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "mask": 221,
+      "rect": [
+        0,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "mask": 223,
+      "rect": [
+        24,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_inner_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "mask": 241,
+      "rect": [
+        48,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_edge_x_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_edge_x_water.png"
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "mask": 245,
+      "rect": [
+        72,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "mask": 247,
+      "rect": [
+        96,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_inner_water.png"
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "mask": 253,
+      "rect": [
+        120,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_inner_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "mask": 255,
+      "rect": [
+        144,
+        120,
+        24,
+        24
+      ],
+      "quarters": [
+        {
+          "position": [
+            0,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/nw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/nw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            0
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/ne_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/ne_full_water.png"
+        },
+        {
+          "position": [
+            0,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/sw_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/sw_full_water.png"
+        },
+        {
+          "position": [
+            12,
+            12
+          ],
+          "bank": "../../../source/terrain/eldenmere/stream/quarters/se_full_bank.png",
+          "water": "../../../source/terrain/eldenmere/stream/quarters/se_full_water.png"
+        }
+      ]
+    }
+  ],
+  "loop": true,
+  "cycle_duration_ms": 1200,
+  "frames": [
+    {
+      "image": "water_47/frame_01.png",
+      "sheet_rect": [
+        0,
+        0,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "water_47/frame_02.png",
+      "sheet_rect": [
+        0,
+        144,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "water_47/frame_03.png",
+      "sheet_rect": [
+        0,
+        288,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "water_47/frame_04.png",
+      "sheet_rect": [
+        0,
+        432,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "water_47/frame_05.png",
+      "sheet_rect": [
+        0,
+        576,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "water_47/frame_06.png",
+      "sheet_rect": [
+        0,
+        720,
+        192,
+        144
+      ],
+      "duration_ms": 200
+    }
+  ],
+  "image": "water_blob_47.png",
+  "banks": "banks_47.png",
+  "water_masks": "water_masks_47.png",
+  "surface": {
+    "image": "water_surface.png",
+    "variants": [
+      {
+        "index": 0,
+        "frames": [
+          {
+            "image": "surface/variant_00_frame_01.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_00_frame_02.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_00_frame_03.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_00_frame_04.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_00_frame_05.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_00_frame_06.png",
+            "duration_ms": 200
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "frames": [
+          {
+            "image": "surface/variant_01_frame_01.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_01_frame_02.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_01_frame_03.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_01_frame_04.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_01_frame_05.png",
+            "duration_ms": 200
+          },
+          {
+            "image": "surface/variant_01_frame_06.png",
+            "duration_ms": 200
+          }
+        ]
+      }
+    ],
+    "composited_atlas_variant": 0
+  },
+  "layer_order": [
+    "ground",
+    "masked_animated_water",
+    "stationary_bank_and_shallows",
+    "characters_or_props"
+  ],
+  "synchronization": "One shared phase for all connected water tiles; offsets are baked into pixels",
+  "palette": "palette.json",
+  "recipe": "../../../source/terrain/eldenmere/stream/recipe.json",
+  "review": {
+    "scene": "review_scene.gif",
+    "atlas": "bank_47_review.png",
+    "cycle": "water_cycle_review.gif"
+  }
+}
