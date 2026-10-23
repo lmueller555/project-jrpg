@@ -1,0 +1,405 @@
+{
+  "id": "eldenmere.cottage_layouts.24",
+  "status": "review",
+  "review_scale": 3,
+  "actor_probe_size": [
+    24,
+    12
+  ],
+  "hero_foot_anchor": [
+    12,
+    30
+  ],
+  "layouts": [
+    {
+      "id": "compact",
+      "label": "Compact",
+      "floor_tiles": [
+        6,
+        6
+      ],
+      "exterior": "cottage_shapes/compact/slate",
+      "window_positions": [
+        [
+          60,
+          30
+        ]
+      ],
+      "supports": [
+        24,
+        96,
+        162
+      ],
+      "hero_position": [
+        60,
+        144
+      ],
+      "partition": null,
+      "objects": [
+        {
+          "id": "bed",
+          "pack": "cottage_furniture",
+          "sprite": "bed",
+          "position": [
+            24,
+            72
+          ],
+          "access": [
+            76,
+            114
+          ]
+        },
+        {
+          "id": "counter",
+          "pack": "cottage_kitchen",
+          "sprite": "counter",
+          "position": [
+            108,
+            96
+          ],
+          "access": [
+            132,
+            150
+          ]
+        },
+        {
+          "id": "pantry",
+          "pack": "cottage_kitchen",
+          "sprite": "pantry",
+          "position": [
+            36,
+            144
+          ],
+          "access": [
+            48,
+            202
+          ]
+        },
+        {
+          "id": "table",
+          "pack": "cottage_furniture",
+          "sprite": "table",
+          "position": [
+            108,
+            156
+          ],
+          "access": [
+            132,
+            160
+          ]
+        },
+        {
+          "id": "chair",
+          "pack": "cottage_furniture",
+          "sprite": "chair_right",
+          "position": [
+            84,
+            168
+          ],
+          "access": [
+            96,
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standard",
+      "label": "Standard",
+      "floor_tiles": [
+        8,
+        6
+      ],
+      "exterior": "cottage",
+      "window_positions": [
+        [
+          48,
+          30
+        ]
+      ],
+      "supports": [
+        24,
+        84,
+        144,
+        210
+      ],
+      "hero_position": [
+        84,
+        120
+      ],
+      "partition": null,
+      "objects": [
+        {
+          "id": "bed",
+          "pack": "cottage_furniture",
+          "sprite": "bed",
+          "position": [
+            24,
+            72
+          ],
+          "access": [
+            76,
+            114
+          ]
+        },
+        {
+          "id": "cupboard",
+          "pack": "cottage_storage",
+          "sprite": "cupboard",
+          "position": [
+            24,
+            144
+          ],
+          "access": [
+            48,
+            202
+          ]
+        },
+        {
+          "id": "shelf",
+          "pack": "cottage_storage",
+          "sprite": "shelf",
+          "position": [
+            96,
+            40
+          ],
+          "access": [
+            120,
+            84
+          ]
+        },
+        {
+          "id": "counter",
+          "pack": "cottage_kitchen",
+          "sprite": "counter",
+          "position": [
+            156,
+            108
+          ],
+          "access": [
+            180,
+            162
+          ]
+        },
+        {
+          "id": "washbasin",
+          "pack": "cottage_kitchen",
+          "sprite": "washbasin",
+          "position": [
+            132,
+            72
+          ],
+          "access": [
+            144,
+            116
+          ]
+        },
+        {
+          "id": "table",
+          "pack": "cottage_furniture",
+          "sprite": "table",
+          "position": [
+            144,
+            156
+          ],
+          "access": [
+            168,
+            160
+          ]
+        },
+        {
+          "id": "chair_west",
+          "pack": "cottage_furniture",
+          "sprite": "chair_right",
+          "position": [
+            120,
+            156
+          ],
+          "access": [
+            132,
+            202
+          ]
+        },
+        {
+          "id": "chair_east",
+          "pack": "cottage_furniture",
+          "sprite": "chair_left",
+          "position": [
+            192,
+            156
+          ],
+          "access": [
+            204,
+            202
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wide",
+      "label": "Wide",
+      "floor_tiles": [
+        10,
+        6
+      ],
+      "exterior": "cottage_shapes/wide/slate",
+      "window_positions": [
+        [
+          36,
+          30
+        ],
+        [
+          168,
+          30
+        ]
+      ],
+      "supports": [
+        24,
+        120,
+        258
+      ],
+      "hero_position": [
+        132,
+        108
+      ],
+      "partition": [
+        120,
+        72,
+        12,
+        72
+      ],
+      "objects": [
+        {
+          "id": "bed",
+          "pack": "cottage_furniture",
+          "sprite": "bed",
+          "position": [
+            24,
+            84
+          ],
+          "access": [
+            76,
+            126
+          ]
+        },
+        {
+          "id": "cupboard",
+          "pack": "cottage_storage",
+          "sprite": "cupboard",
+          "position": [
+            72,
+            60
+          ],
+          "access": [
+            96,
+            118
+          ]
+        },
+        {
+          "id": "shelf",
+          "pack": "cottage_storage",
+          "sprite": "shelf",
+          "position": [
+            72,
+            40
+          ],
+          "access": [
+            96,
+            118
+          ]
+        },
+        {
+          "id": "pantry",
+          "pack": "cottage_kitchen",
+          "sprite": "pantry",
+          "position": [
+            144,
+            60
+          ],
+          "access": [
+            156,
+            118
+          ]
+        },
+        {
+          "id": "counter",
+          "pack": "cottage_kitchen",
+          "sprite": "counter",
+          "position": [
+            204,
+            108
+          ],
+          "access": [
+            228,
+            162
+          ]
+        },
+        {
+          "id": "washbasin",
+          "pack": "cottage_kitchen",
+          "sprite": "washbasin",
+          "position": [
+            180,
+            72
+          ],
+          "access": [
+            192,
+            116
+          ]
+        },
+        {
+          "id": "table",
+          "pack": "cottage_furniture",
+          "sprite": "table",
+          "position": [
+            168,
+            156
+          ],
+          "access": [
+            192,
+            160
+          ]
+        },
+        {
+          "id": "chair_west",
+          "pack": "cottage_furniture",
+          "sprite": "chair_right",
+          "position": [
+            144,
+            156
+          ],
+          "access": [
+            156,
+            202
+          ]
+        },
+        {
+          "id": "chair_east",
+          "pack": "cottage_furniture",
+          "sprite": "chair_left",
+          "position": [
+            216,
+            156
+          ],
+          "access": [
+            228,
+            202
+          ]
+        },
+        {
+          "id": "chair_south",
+          "pack": "cottage_furniture",
+          "sprite": "chair_up",
+          "position": [
+            180,
+            180
+          ],
+          "access": [
+            214,
+            206
+          ]
+        }
+      ]
+    }
+  ]
+}

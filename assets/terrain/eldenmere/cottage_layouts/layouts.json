@@ -1,0 +1,48 @@
+{
+  "id": "eldenmere.cottage_layouts.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "character_frame_size": [
+    24,
+    36
+  ],
+  "layouts": [
+    {
+      "id": "compact",
+      "floor_tiles": [
+        6,
+        6
+      ],
+      "room": "compact/room.json"
+    },
+    {
+      "id": "standard",
+      "floor_tiles": [
+        8,
+        6
+      ],
+      "room": "standard/room.json"
+    },
+    {
+      "id": "wide",
+      "floor_tiles": [
+        10,
+        6
+      ],
+      "room": "wide/room.json"
+    }
+  ],
+  "review_scale": 3,
+  "review_size": [
+    2256,
+    1320
+  ],
+  "cycle_duration_ms": 10800,
+  "frame_duration_ms": 300,
+  "source_recipe": "../../../source/terrain/eldenmere/cottage_layouts/recipe.json",
+  "native_art_rescaled": false,
+  "household_assignments": null
+}

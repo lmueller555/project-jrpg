@@ -1,0 +1,436 @@
+{
+  "id": "compact",
+  "status": "review",
+  "floor_tiles": [
+    6,
+    6
+  ],
+  "room_size": [
+    192,
+    240
+  ],
+  "floor_rect": [
+    24,
+    72,
+    144,
+    144
+  ],
+  "entry_rect": [
+    60,
+    216,
+    24,
+    8
+  ],
+  "exterior": "cottage_shapes/compact/slate",
+  "registration": {
+    "exterior_ground_rect": [
+      12,
+      72,
+      72,
+      72
+    ],
+    "ideal_entry_center_x": 71.0,
+    "entry_center_x": 72,
+    "ideal_chimney_center_x": 132.0,
+    "chimney_center_x": 132,
+    "exterior_front_window_count": 1
+  },
+  "rear_windows": [
+    [
+      60,
+      30
+    ]
+  ],
+  "partition_rect": null,
+  "objects": [
+    {
+      "id": "bed",
+      "pack": "cottage_furniture",
+      "sprite": "bed",
+      "position": [
+        24,
+        72
+      ],
+      "access": [
+        76,
+        114
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        32,
+        90,
+        32,
+        48
+      ],
+      "sort_y": 138
+    },
+    {
+      "id": "counter",
+      "pack": "cottage_kitchen",
+      "sprite": "counter",
+      "position": [
+        108,
+        96
+      ],
+      "access": [
+        132,
+        150
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        110,
+        116,
+        44,
+        22
+      ],
+      "sort_y": 138
+    },
+    {
+      "id": "pantry",
+      "pack": "cottage_kitchen",
+      "sprite": "pantry",
+      "position": [
+        36,
+        144
+      ],
+      "access": [
+        48,
+        202
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "floor_rect": [
+        37,
+        174,
+        22,
+        16
+      ],
+      "sort_y": 190
+    },
+    {
+      "id": "table",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        108,
+        156
+      ],
+      "access": [
+        132,
+        160
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        108,
+        172,
+        48,
+        26
+      ],
+      "sort_y": 198
+    },
+    {
+      "id": "chair",
+      "pack": "cottage_furniture",
+      "sprite": "chair_right",
+      "position": [
+        84,
+        168
+      ],
+      "access": [
+        96,
+        210
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        87,
+        186,
+        18,
+        16
+      ],
+      "sort_y": 202
+    },
+    {
+      "id": "hearth",
+      "floor_rect": [
+        110,
+        72,
+        44,
+        20
+      ],
+      "position": [
+        108,
+        24
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "access": [
+        132,
+        104
+      ],
+      "sort_y": 92
+    }
+  ],
+  "hero_position": [
+    60,
+    144
+  ],
+  "hero_foot_anchor": [
+    12,
+    30
+  ],
+  "actor_probe_size": [
+    24,
+    12
+  ],
+  "navigation_start": [
+    72,
+    210
+  ],
+  "reachable_probe_positions": 1816,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 0
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 1
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 2
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 3
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 4
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 5
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 6
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 7
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 8
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 8
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "review_scale": 4,
+  "engine_collision_implemented": false,
+  "exterior_transition_implemented": false,
+  "purpose": "Furnished size/layout review; no named household assigned",
+  "draw_order": "Structure and local lighting, then furnishings and character by floor-foot baseline"
+}

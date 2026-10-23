@@ -1,6 +1,6 @@
 # Cottage interiors — size and layout proposal
 
-Status: PROPOSAL FOR DISCUSSION. The user wants interiors sized to their corresponding cottage exteriors while retaining larger separate room maps. Exact room sizes and household assignments below are not approved. This document does not change narrative canon or implement maps.
+Status: FURNISHED LAYOUTS IN REVIEW. The user requested 6×6, 8×6 and 10×6 furnished examples at a common pixel scale, retaining larger separate room maps. These dimensions are authorized for this review; final arrangements and household assignments await approval. This document does not change narrative canon or define playable engine maps.
 
 ## Size rule
 
@@ -34,4 +34,4 @@ The user selected kitchen counter, washbasin and pantry storage as the next asse
 
 The new 10×8-floor kitchen showroom places counter and basin under the right window and the pantry below the wall shelf. The original cupboard moves beside the bed. Only one dining chair is shown; the other three facing-comparison samples remain in their approved pack. Bed and table keep their positions; all approved sprite files remain unchanged. This illustrative arrangement is not a proposed final cottage floor plan.
 
-The kitchen asset set is approved. Next, settle the room-size rule and make one furnished layout of each size at the same pixel scale. Verify access and comfortable density before creating household-specific variants.
+The kitchen asset set is approved. The new `assets/terrain/eldenmere/cottage_layouts/` pack implements the three furnished review layouts with a same-scale exterior/interior comparison. All furnishing approaches and Caelan's foot anchor are reachable using a conservative 24×12 floor probe. The wide cottage uses a cutaway sleeping/storage divider, one bed and three dining chairs. Review density, access and exterior alignment before finalizing layouts or creating household-specific variants.
