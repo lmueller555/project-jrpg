@@ -7,3 +7,9 @@ Run `python tools/build_serene_idle.py` from the repository root. `export.json` 
 Four full-frame transparent layers reconstruct the native image exactly: head, bodice/arms, skirt/hands and legs/boots. These retain separate regions for later animation preparation; no walking animation or other facing direction is included.
 
 The visual design and front-idle export are approved. Existing character appearances, pose templates and narrative files are read only.
+
+## Left, right and back turnaround
+
+`idle_turnaround_concept.png` retains the generated three-view appearance plate based on the approved front concept and native review. `turnaround_export.json` records each view's source bounds, native width, nearest-neighbor registration bands, garment material windows and eye landmarks. The profiles are independently sampled from the plate. The back has no eye landmarks and keeps the apron panel/pocket on the front; its narrow waist fastening uses buttons.
+
+Run `python tools/build_serene_directional_idles.py`. Four full-frame layers per new direction are exported to `idle_left_layers/`, `idle_right_layers/` and `idle_back_layers/`; each stack reconstructs its idle exactly. Layers are retained for future pose preparation, without adding any walking frames. Native frames and opaque review boards go to `assets/characters/serene/`. The approved front, its layers, concept and palette remain unchanged. The three new idle exports await review.

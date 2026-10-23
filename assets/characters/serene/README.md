@@ -8,6 +8,14 @@ Front idle **approved**, based on the approved caretaker design.
 - `idle_front_review.png`: opaque RGB preview, enlarged 24× with nearest-neighbor sampling.
 - `scale_comparison.png`: Caelan, Serene and Mira at the same 16× scale and foot baseline.
 
-The source concept and reproducible export recipe are under `assets/source/characters/serene/`. Run `python tools/build_serene_idle.py` from the repository root. The builder preserves an existing approval status when rebuilding. This package adds only one still front-facing pose.
+The source concepts and reproducible export recipes are under `assets/source/characters/serene/`. Run `python tools/build_serene_idle.py` from the repository root to rebuild the front. The builder preserves an existing approval status when rebuilding.
 
 Review images retain their original review labels as a record of the approved artwork.
+
+## Directional idles — awaiting review
+
+`idle_left.png`, `idle_right.png` and `idle_back.png` add three native 24×36 still poses. Each has its own metadata and opaque 24× review PNG. Profiles have one brown eye and a silver temple; the back has no eyes, a visible bun, a short mantle and a sage skirt with a buttoned apron waist fastening. No cloth ties are present.
+
+`idle_turnaround_review.png` shows the three new views at 24×. `idle_all_review.png` compares them with the unchanged approved front at 12×. `idle_all.png` is a 96×36 transparent sheet ordered front, left, right, back; `idle_all.json` records each frame's independent status and rectangle.
+
+Rebuild these views and boards with `python tools/build_serene_directional_idles.py`. It preserves existing approval statuses and reads the approved front and palette without rewriting them. Walking animations are a later milestone.

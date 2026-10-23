@@ -1,0 +1,51 @@
+{
+  "character": "serene",
+  "display_name": "Mother Serene",
+  "animation": "idle.right",
+  "design_status": "approved",
+  "status": "review",
+  "image": "idle_right.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "source": "../../source/characters/serene/idle_turnaround_concept.png",
+  "export_recipe": "../../source/characters/serene/turnaround_export.json",
+  "recipe_view": "right",
+  "layers": [
+    "../../source/characters/serene/idle_right_layers/head.png",
+    "../../source/characters/serene/idle_right_layers/bodice_and_arms.png",
+    "../../source/characters/serene/idle_right_layers/skirt_and_hands.png",
+    "../../source/characters/serene/idle_right_layers/legs_and_boots.png"
+  ],
+  "eyes": {
+    "top_pixels": [
+      [
+        16,
+        10
+      ]
+    ],
+    "height": 2,
+    "pupil_color": "#1a0e16",
+    "iris_color": "#8c603b"
+  },
+  "dress": {
+    "hem_row": 28
+  },
+  "review": {
+    "image": "idle_right_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  }
+}

@@ -2,6 +2,8 @@
 
 Build Mother Serene's front idle with `python tools/build_serene_idle.py`. The retained generated concept and source recipe under `assets/source/characters/serene/` supply nearest-neighbor bands, garment material windows and explicit eye landmarks. The export includes one 24×36 hard-alpha frame, named palette, four reconstructable layers, metadata, an opaque 24× review and a same-scale comparison with Caelan and Mira. Builder assertions check native size/height, palette, alpha, eye colors and layer reconstruction. This review milestone adds no other directions or walking animations and reads approved characters without changing them.
 
+Build her left, right and back idles with `python tools/build_serene_directional_idles.py`. It reads the retained turnaround source and `turnaround_export.json`, reuses the approved palette, and exports three 24×36 frames, per-view metadata, twelve source layers, a native 96×36 four-direction sheet, individual 24× previews, a 24× three-view board and a 12× four-view comparison. The approved front is read only. Assertions cover frame dimensions, hard alpha, palette, foot baseline, layer reconstruction and the absence of brown iris pixels on the back. Existing per-view approval statuses survive rebuilding. This adds still poses only.
+
 The walk builder assembles character-specific source parts against retained semantic pose masks from Caelan's approved cycles.
 
 ```sh

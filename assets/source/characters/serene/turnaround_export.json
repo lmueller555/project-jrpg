@@ -1,0 +1,618 @@
+{
+  "source": "idle_turnaround_concept.png",
+  "alpha_threshold": 128,
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "resampling": "nearest",
+  "palette": "../../../characters/serene/palette.json",
+  "views": {
+    "left": {
+      "source_bounds": [
+        143,
+        52,
+        473,
+        1000
+      ],
+      "native_x": 5,
+      "native_width": 14,
+      "eyes": [
+        [
+          8,
+          10
+        ]
+      ],
+      "bands": [
+        {
+          "source_y": [
+            52,
+            425
+          ],
+          "native_y": [
+            1,
+            14
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "silver",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            425,
+            574
+          ],
+          "native_y": [
+            14,
+            20
+          ],
+          "materials": [
+            "outline",
+            "mantle",
+            "sage",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            574,
+            623
+          ],
+          "native_y": [
+            20,
+            22
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            623,
+            880
+          ],
+          "native_y": [
+            22,
+            29
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            880,
+            914
+          ],
+          "native_y": [
+            29,
+            32
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            914,
+            1000
+          ],
+          "native_y": [
+            32,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            385,
+            96,
+            440,
+            145
+          ],
+          "materials": [
+            "outline",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            190,
+            435,
+            408,
+            552
+          ],
+          "materials": [
+            "outline",
+            "mantle"
+          ]
+        },
+        {
+          "rect": [
+            211,
+            459,
+            238,
+            502
+          ],
+          "materials": [
+            "outline",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            175,
+            594,
+            277,
+            837
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            207,
+            727,
+            245,
+            785
+          ],
+          "materials": [
+            "outline",
+            "mantle"
+          ]
+        },
+        {
+          "rect": [
+            276,
+            566,
+            371,
+            645
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            288,
+            647,
+            360,
+            738
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ]
+    },
+    "right": {
+      "source_bounds": [
+        598,
+        52,
+        927,
+        1000
+      ],
+      "native_x": 5,
+      "native_width": 14,
+      "eyes": [
+        [
+          16,
+          10
+        ]
+      ],
+      "bands": [
+        {
+          "source_y": [
+            52,
+            425
+          ],
+          "native_y": [
+            1,
+            14
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "silver",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            425,
+            574
+          ],
+          "native_y": [
+            14,
+            20
+          ],
+          "materials": [
+            "outline",
+            "mantle",
+            "sage",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            574,
+            623
+          ],
+          "native_y": [
+            20,
+            22
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            623,
+            880
+          ],
+          "native_y": [
+            22,
+            29
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            880,
+            914
+          ],
+          "native_y": [
+            29,
+            32
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            914,
+            1000
+          ],
+          "native_y": [
+            32,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            630,
+            96,
+            680,
+            145
+          ],
+          "materials": [
+            "outline",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            663,
+            435,
+            882,
+            552
+          ],
+          "materials": [
+            "outline",
+            "mantle"
+          ]
+        },
+        {
+          "rect": [
+            834,
+            459,
+            859,
+            502
+          ],
+          "materials": [
+            "outline",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            788,
+            594,
+            891,
+            837
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            815,
+            727,
+            854,
+            785
+          ],
+          "materials": [
+            "outline",
+            "mantle"
+          ]
+        },
+        {
+          "rect": [
+            686,
+            566,
+            780,
+            645
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            696,
+            647,
+            766,
+            738
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ]
+    },
+    "back": {
+      "source_bounds": [
+        1049,
+        52,
+        1382,
+        1000
+      ],
+      "native_x": 4,
+      "native_width": 16,
+      "eyes": [],
+      "bands": [
+        {
+          "source_y": [
+            52,
+            425
+          ],
+          "native_y": [
+            1,
+            14
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "silver",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            425,
+            574
+          ],
+          "native_y": [
+            14,
+            20
+          ],
+          "materials": [
+            "outline",
+            "mantle",
+            "sage",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            574,
+            623
+          ],
+          "native_y": [
+            20,
+            22
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin",
+            "bronze"
+          ]
+        },
+        {
+          "source_y": [
+            623,
+            880
+          ],
+          "native_y": [
+            22,
+            29
+          ],
+          "materials": [
+            "outline",
+            "sage",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            880,
+            914
+          ],
+          "native_y": [
+            29,
+            32
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            914,
+            1000
+          ],
+          "native_y": [
+            32,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            1110,
+            96,
+            1160,
+            145
+          ],
+          "materials": [
+            "outline",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            1055,
+            435,
+            1376,
+            568
+          ],
+          "materials": [
+            "outline",
+            "mantle"
+          ]
+        },
+        {
+          "rect": [
+            1137,
+            574,
+            1296,
+            615
+          ],
+          "materials": [
+            "outline",
+            "linen",
+            "bronze"
+          ]
+        },
+        {
+          "rect": [
+            1110,
+            620,
+            1325,
+            880
+          ],
+          "materials": [
+            "outline",
+            "sage"
+          ]
+        },
+        {
+          "rect": [
+            1059,
+            585,
+            1138,
+            644
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1297,
+            585,
+            1376,
+            644
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1050,
+            648,
+            1125,
+            733
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1305,
+            648,
+            1382,
+            733
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ]
+    }
+  }
+}
