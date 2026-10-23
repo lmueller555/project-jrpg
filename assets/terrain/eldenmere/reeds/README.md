@@ -1,4 +1,4 @@
-# Eldenmere bank reeds — review
+# Eldenmere bank reeds — approved
 
 One tall seeded reed clump and one shorter green variation extend the village foliage. Narrow olive leaves, airy silhouettes and warm brown seedheads use the approved foliage and cottage-wood colors.
 
@@ -18,4 +18,4 @@ Review files:
 
 Four tall and three short instances are placed sparingly on dry grass along existing banks. Instance phases vary without changing wind direction. Full ground anchors are dry; all animated pixels leave the waterline, bridge, gate, mill, paths, characters and previous plants clear. Existing water routes/elevations and every prior animation track are preserved. These are illustrative asset-review placements, not a finished level. GIFs use lossless frame differences, and held poses may merge while retaining exact timing.
 
-Rebuild with `python tools/build_eldenmere_reeds.py`; verify with `python tools/test_eldenmere_reeds.py` in the documented Pillow environment. Source/sampling, animation and placement settings live under `assets/source/terrain/eldenmere/reeds/`. These designs and their animations await approval.
+Rebuild with `python tools/build_eldenmere_reeds.py`; verify with `python tools/test_eldenmere_reeds.py` in the documented Pillow environment. Source/sampling, animation and placement settings live under `assets/source/terrain/eldenmere/reeds/`. Both reed designs and their animations are approved for main.

@@ -1,4 +1,4 @@
-# Eldenmere bank reed source — review
+# Eldenmere bank reed source — approved
 
 `materials_concept.png` retains the generated tall/short reed source, guided by the approved watermill scene. Its original remains at `/workspace/generated_images/exec-f423537d-2391-48e0-96af-4981c4cb1d90.png` in the creation workspace. The committed source is sufficient to rebuild elsewhere.
 
@@ -14,4 +14,4 @@ Build: `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tool
 
 Test: use the same interpreter with `tools/test_eldenmere_reeds.py`.
 
-The two designs and animations await review. Additional reed shapes and denser shoreline planting can follow after approval.
+The tall and short designs and their animations are approved. Additional reed shapes and denser shoreline planting remain optional future work.
