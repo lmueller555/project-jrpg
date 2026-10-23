@@ -1,6 +1,6 @@
 # Mother Serene — right walk
 
-**Awaiting review.** Four native 24×36 frames at 140 ms each (560 ms loop), foot anchor `[12,34]`, offsets baked into pixels.
+**Approved.** Four native 24×36 frames at 140 ms each (560 ms loop), foot anchor `[12,34]`, offsets baked into pixels.
 
 `walk_right_preview.gif` is an opaque 20× nearest-neighbor loop; `frames_review.png` is a 12× strip. `spritesheet.png` is a native 96×36 sheet in playback order. `animation.json` records status, phase rectangles, eye/hem/boot landmarks, timing and layer provenance. `shared_motion_comparison.gif` shows Caelan at left and Serene at right, synchronized at 16×.
 
