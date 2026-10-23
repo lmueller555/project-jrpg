@@ -1,4 +1,5 @@
 """Verify reusable furniture exports, room access, unchanged art and GIF delivery."""
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -31,9 +32,10 @@ class CottageFurnitureTests(unittest.TestCase):
             self.assertEqual(palette['wood_'+shade],approved['wood'][shade])
         self.assertEqual(palette['linen_light'],approved['plaster']['light'])
         colors = {(*bytes.fromhex(c[1:]),255) for c in palette.values()}
-        self.assertEqual({r['id'] for r in self.meta['sprites']},{'bed','table','chair'})
+        self.assertEqual({r['id'] for r in self.meta['sprites']},
+                         {'bed','table','chair_down','chair_up','chair_left','chair_right'})
         atlas = opened(PACK/'sprite_sheet.png')
-        self.assertEqual(atlas.size,(144,72))
+        self.assertEqual(atlas.size,(144,144))
         for record in self.meta['sprites']:
             sprite = opened(PACK/record['image'])
             self.assertEqual(sprite.size,tuple(record['frame_size']))
@@ -44,6 +46,36 @@ class CottageFurnitureTests(unittest.TestCase):
             self.assertEqual(sprite.tobytes(),opened(SOURCE/'parts'/f"{record['id']}.png").tobytes())
             x,y,w,h = record['atlas_rect']
             self.assertEqual(atlas.crop((x,y,x+w,y+h)).tobytes(),sprite.tobytes())
+
+    def test_approved_bed_and_table_preserved_byte_for_byte(self):
+        approved_hashes = {
+            'bed':'7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d',
+            'table':'89e50d63c782d5ccb6dde32763ecb788a863a9c038ead9e8375ca9ecc610104a'}
+        records = {r['id']:r for r in self.meta['sprites']}
+        for name, expected in approved_hashes.items():
+            self.assertEqual(records[name]['status'],'approved')
+            for directory in (PACK/'sprites',SOURCE/'parts'):
+                self.assertEqual(hashlib.sha256((directory/f'{name}.png').read_bytes()).hexdigest(),expected)
+        self.assertEqual(records['bed']['position'],[36,108])
+        self.assertEqual(records['table']['position'],[192,132])
+
+    def test_four_chair_directions_compact_frames_matching_baseline_and_alias(self):
+        records = [r for r in self.meta['sprites'] if r['id'].startswith('chair_')]
+        self.assertEqual({r['direction'] for r in records},{'down','up','left','right'})
+        frames = {r['direction']:opened(PACK/r['image']) for r in records}
+        self.assertEqual(len({f.tobytes() for f in frames.values()}),4)
+        wood = {(*bytes.fromhex(c[1:]),255) for key,c in self.meta['palette'].items()
+                if key == 'outline' or key.startswith('wood_')}
+        for frame in frames.values():
+            self.assertEqual(frame.size,(24,36))
+            x0,y0,x1,y1 = frame.getbbox()
+            self.assertLessEqual(x1-x0,18)
+            self.assertEqual(y1,34)
+            self.assertTrue(all(not p[3] or p in wood for p in frame.get_flattened_data()))
+        self.assertEqual(frames['right'].tobytes(),frames['left'].transpose(Image.Transpose.FLIP_LEFT_RIGHT).tobytes())
+        self.assertEqual(self.meta['aliases'],{'chair':'chair_down'})
+        for directory in (SOURCE/'parts',PACK/'sprites'):
+            self.assertEqual(opened(directory/'chair.png').tobytes(),frames['down'].tobytes())
 
     def test_floor_containment_clear_entry_and_continuous_central_path(self):
         layer = opened(PACK/self.room['furniture_layer'])

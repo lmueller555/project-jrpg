@@ -15,9 +15,12 @@
     "quilt_light": "#a1ae83"
   },
   "samples": [
-    {"id": "bed", "crop": [110,190,442,822], "size": [32,60], "frame_size": [48,72], "offset": [8,6], "floor_rect": [8,18,32,48], "position": [36,108]},
-    {"id": "table", "crop": [602,440,1080,810], "size": [48,38], "frame_size": [48,48], "offset": [0,4], "floor_rect": [0,16,48,26], "position": [192,132]},
-    {"id": "chair", "crop": [1225,440,1415,808], "size": [20,38], "frame_size": [24,48], "offset": [2,4], "floor_rect": [2,16,20,26], "position": [204,174]}
+    {"id": "bed", "status": "approved", "crop": [110,190,442,822], "size": [32,60], "frame_size": [48,72], "offset": [8,6], "floor_rect": [8,18,32,48], "position": [36,108]},
+    {"id": "table", "status": "approved", "crop": [602,440,1080,810], "size": [48,38], "frame_size": [48,48], "offset": [0,4], "floor_rect": [0,16,48,26], "position": [192,132]},
+    {"id": "chair_down", "status": "review", "direction": "down", "source": "chair_directions_concept.png", "material": "wood", "crop": [251,173,476,552], "size": [18,30], "frame_size": [24,36], "offset": [3,4], "floor_rect": [3,18,18,16], "seat_rect": [3,18,18,7], "position": [60,192]},
+    {"id": "chair_up", "status": "review", "direction": "up", "source": "chair_directions_concept.png", "material": "wood", "crop": [747,212,962,552], "size": [18,27], "frame_size": [24,36], "offset": [3,7], "floor_rect": [3,18,18,16], "position": [204,180]},
+    {"id": "chair_left", "status": "review", "direction": "left", "source": "chair_directions_concept.png", "material": "wood", "crop": [1206,163,1424,552], "size": [18,31], "frame_size": [24,36], "offset": [3,3], "floor_rect": [3,18,18,16], "position": [36,228]},
+    {"id": "chair_right", "status": "review", "direction": "right", "mirror_of": "chair_left", "size": [18,31], "frame_size": [24,36], "offset": [3,3], "floor_rect": [3,18,18,16], "position": [84,228]}
   ],
   "clear_path_rect": [120,72,72,192],
   "review_scale": 4,

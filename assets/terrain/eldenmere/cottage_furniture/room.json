@@ -22,10 +22,31 @@
       ]
     },
     {
-      "id": "chair",
+      "id": "chair_down",
+      "position": [
+        60,
+        192
+      ]
+    },
+    {
+      "id": "chair_up",
       "position": [
         204,
-        174
+        180
+      ]
+    },
+    {
+      "id": "chair_left",
+      "position": [
+        36,
+        228
+      ]
+    },
+    {
+      "id": "chair_right",
+      "position": [
+        84,
+        228
       ]
     }
   ],

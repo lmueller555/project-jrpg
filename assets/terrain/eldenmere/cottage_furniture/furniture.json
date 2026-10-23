@@ -20,6 +20,7 @@
   "sprites": [
     {
       "id": "bed",
+      "status": "approved",
       "crop": [
         110,
         190,
@@ -59,6 +60,7 @@
     },
     {
       "id": "table",
+      "status": "approved",
       "crop": [
         602,
         440,
@@ -97,41 +99,173 @@
       "animated": false
     },
     {
-      "id": "chair",
+      "id": "chair_down",
+      "status": "review",
+      "direction": "down",
+      "source": "chair_directions_concept.png",
+      "material": "wood",
       "crop": [
-        1225,
-        440,
-        1415,
-        808
+        251,
+        173,
+        476,
+        552
       ],
       "size": [
-        20,
-        38
+        18,
+        30
       ],
       "frame_size": [
         24,
-        48
+        36
       ],
       "offset": [
-        2,
+        3,
         4
       ],
       "floor_rect": [
-        2,
-        16,
-        20,
-        26
+        3,
+        18,
+        18,
+        16
+      ],
+      "seat_rect": [
+        3,
+        18,
+        18,
+        7
       ],
       "position": [
-        204,
-        174
+        60,
+        192
       ],
-      "image": "sprites/chair.png",
+      "image": "sprites/chair_down.png",
       "atlas_rect": [
         96,
         0,
         24,
-        48
+        36
+      ],
+      "animated": false
+    },
+    {
+      "id": "chair_up",
+      "status": "review",
+      "direction": "up",
+      "source": "chair_directions_concept.png",
+      "material": "wood",
+      "crop": [
+        747,
+        212,
+        962,
+        552
+      ],
+      "size": [
+        18,
+        27
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "offset": [
+        3,
+        7
+      ],
+      "floor_rect": [
+        3,
+        18,
+        18,
+        16
+      ],
+      "position": [
+        204,
+        180
+      ],
+      "image": "sprites/chair_up.png",
+      "atlas_rect": [
+        0,
+        72,
+        24,
+        36
+      ],
+      "animated": false
+    },
+    {
+      "id": "chair_left",
+      "status": "review",
+      "direction": "left",
+      "source": "chair_directions_concept.png",
+      "material": "wood",
+      "crop": [
+        1206,
+        163,
+        1424,
+        552
+      ],
+      "size": [
+        18,
+        31
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "offset": [
+        3,
+        3
+      ],
+      "floor_rect": [
+        3,
+        18,
+        18,
+        16
+      ],
+      "position": [
+        36,
+        228
+      ],
+      "image": "sprites/chair_left.png",
+      "atlas_rect": [
+        48,
+        72,
+        24,
+        36
+      ],
+      "animated": false
+    },
+    {
+      "id": "chair_right",
+      "status": "review",
+      "direction": "right",
+      "mirror_of": "chair_left",
+      "size": [
+        18,
+        31
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "offset": [
+        3,
+        3
+      ],
+      "floor_rect": [
+        3,
+        18,
+        18,
+        16
+      ],
+      "position": [
+        84,
+        228
+      ],
+      "image": "sprites/chair_right.png",
+      "atlas_rect": [
+        96,
+        72,
+        24,
+        36
       ],
       "animated": false
     }
@@ -143,6 +277,10 @@
   ],
   "atlas_columns": 3,
   "source_recipe": "../../../source/terrain/eldenmere/cottage_furniture/recipe.json",
+  "aliases": {
+    "chair": "chair_down"
+  },
+  "direction_convention": "Direction the seated person would face; up shows the back of the chair.",
   "animation": "Furniture remains fixed; reuse the approved nine-pose, 5.4-second daylight loop.",
   "collision_implemented": false
 }
