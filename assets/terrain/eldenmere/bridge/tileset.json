@@ -1,0 +1,170 @@
+{
+  "id": "eldenmere.wooden_bridge.ew.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "orientation": "E-W",
+  "module_size": [
+    24,
+    72
+  ],
+  "prefab_size": [
+    96,
+    72
+  ],
+  "ground_rect": [
+    0,
+    12,
+    96,
+    48
+  ],
+  "clear_deck_width_pixels": 48,
+  "ground_overhang_north_pixels": 12,
+  "modules": [
+    {
+      "id": "west",
+      "size": [
+        24,
+        72
+      ],
+      "base": "modules/west/base.png",
+      "foreground": "modules/west/foreground.png",
+      "assembly_column": 0,
+      "is_bank_end": true,
+      "is_repeatable": false
+    },
+    {
+      "id": "middle_a",
+      "size": [
+        24,
+        72
+      ],
+      "base": "modules/middle_a/base.png",
+      "foreground": "modules/middle_a/foreground.png",
+      "assembly_column": 1,
+      "is_bank_end": false,
+      "is_repeatable": true
+    },
+    {
+      "id": "middle_b",
+      "size": [
+        24,
+        72
+      ],
+      "base": "modules/middle_b/base.png",
+      "foreground": "modules/middle_b/foreground.png",
+      "assembly_column": 2,
+      "is_bank_end": false,
+      "is_repeatable": true
+    },
+    {
+      "id": "east",
+      "size": [
+        24,
+        72
+      ],
+      "base": "modules/east/base.png",
+      "foreground": "modules/east/foreground.png",
+      "assembly_column": 3,
+      "is_bank_end": true,
+      "is_repeatable": false
+    }
+  ],
+  "assembly": [
+    "west",
+    "middle_a",
+    "middle_b",
+    "east"
+  ],
+  "base": "base.png",
+  "foreground": "foreground.png",
+  "image": "bridge.png",
+  "sheet": "bridge_sheet.png",
+  "water_shadow": "water_shadow.png",
+  "frames": [
+    {
+      "image": "frames/frame_01.png",
+      "sheet_rect": [
+        0,
+        0,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_01.png",
+      "water_wakes": "wakes/frame_01.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_02.png",
+      "sheet_rect": [
+        0,
+        72,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_02.png",
+      "water_wakes": "wakes/frame_02.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_03.png",
+      "sheet_rect": [
+        0,
+        144,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_03.png",
+      "water_wakes": "wakes/frame_03.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_04.png",
+      "sheet_rect": [
+        0,
+        216,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_04.png",
+      "water_wakes": "wakes/frame_04.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_05.png",
+      "sheet_rect": [
+        0,
+        288,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_05.png",
+      "water_wakes": "wakes/frame_05.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_06.png",
+      "sheet_rect": [
+        0,
+        360,
+        96,
+        72
+      ],
+      "lanterns": "lanterns/frame_06.png",
+      "water_wakes": "wakes/frame_06.png",
+      "duration_ms": 200
+    }
+  ],
+  "loop": true,
+  "cycle_duration_ms": 1200,
+  "front_rail_draws_after_characters": true,
+  "repeat_rule": "west + one or more middle_a/middle_b columns + east; keep base/foreground/lantern column rectangles aligned",
+  "recipe": "../../../source/terrain/eldenmere/bridge/recipe.json",
+  "review": {
+    "scene": "review_scene.gif",
+    "closeup": "bridge_closeup.gif",
+    "modules": "modules_review.gif"
+  }
+}
