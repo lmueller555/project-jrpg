@@ -162,7 +162,7 @@ def base_map(recipe,geo):
     board=Image.new('RGB',BOARD_SIZE,COLORS['paper'])
     draw=ImageDraw.Draw(board)
     draw.text((72,32),'ELDENMERE',font=font(43,True),fill=COLORS['ink'])
-    draw.text((72,91),'Overhead blockout 01  /  64 x 56 tiles  /  24px grid  /  REVIEW',font=font(23),fill=COLORS['muted'])
+    draw.text((72,91),f"Overhead blockout 01  /  64 x 56 tiles  /  24px grid  /  {recipe['status'].upper()}",font=font(23),fill=COLORS['muted'])
     draw.text((1608,91),'NORTH ↑',font=font(23,True),fill=COLORS['ink'],anchor='ra')
     width,height=recipe['size_tiles']
     for y in range(height):
@@ -283,7 +283,7 @@ def base_map(recipe,geo):
     return board
 
 
-def sidebar(board,quest=False):
+def sidebar(board,quest=False,status='review'):
     draw=ImageDraw.Draw(board);x=1660;y=170
     draw.text((x,y),'QUEST ROUTES' if quest else 'A VILLAGE BUILT FOR DAILY LIFE',font=font(24,True),fill=COLORS['ink']);y+=52
     if quest:
@@ -315,8 +315,10 @@ def sidebar(board,quest=False):
         draw.text((x,y),'ROOMS + FUTURE LANDMARKS',font=font(22,True),fill=COLORS['ink']);y+=40
         y=paragraph(draw,x,y,'Elira 10 x 10 / Halden 13 x 10 / Venn 16 x 10. Sanctuary and workshop shapes are planning placeholders requiring their own art.',size=19)
     draw.rounded_rectangle((1640,1430,2240,1512),radius=10,fill='#e4e3d6')
-    draw.text((1660,1445),'DESIGN REVIEW / NOT A PLAYABLE MAP',font=font(19,True),fill=COLORS['ink'])
-    draw.text((1660,1478),'Geography and precise footprints await review.',font=font(18),fill=COLORS['muted'])
+    heading='APPROVED PLAN / NOT A PLAYABLE MAP' if status=='approved' else 'DESIGN REVIEW / NOT A PLAYABLE MAP'
+    caption='Approved geography; see terrain pass for native-art fitting.' if status=='approved' else 'Geography and precise footprints await review.'
+    draw.text((1660,1445),heading,font=font(19,True),fill=COLORS['ink'])
+    draw.text((1660,1478),caption,font=font(18),fill=COLORS['muted'])
 
 
 def quest_map(base,recipe,geo,routes):
@@ -359,9 +361,9 @@ def build():
     for node,point in geo['nodes'].items():
         route(geo,geo['nodes']['sanctuary'],point)
     base=base_map(recipe,geo)
-    geography=base.copy();sidebar(geography)
+    geography=base.copy();sidebar(geography,status=recipe['status'])
     geography.save(OUTPUT/'overhead_blockout.png')
-    quests=quest_map(base,recipe,geo,routes);sidebar(quests,True)
+    quests=quest_map(base,recipe,geo,routes);sidebar(quests,True,status=recipe['status'])
     quests.save(OUTPUT/'quest_routes.png')
     combined=geography.resize((1152,800),Image.Resampling.LANCZOS)
     combined.save(OUTPUT/'overview_small.png')

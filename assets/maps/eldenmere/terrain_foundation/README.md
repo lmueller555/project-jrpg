@@ -1,6 +1,6 @@
 # Eldenmere — first terrain and building-placement pass
 
-Status: review. This is the first assembled view of the approved town design using existing native artwork. It covers 64×56 tiles at 24px, native 1536×1344. It is a scene composition for layout review, not a runnable game map.
+Status: approved. This is the first assembled view of the approved town design using existing native artwork. It covers 64×56 tiles at 24px, native 1536×1344. The layout and native-art fitting adjustments are approved. This scene composition is not a runnable game map.
 
 ## Review
 
@@ -20,4 +20,4 @@ The original district arrangement is preserved. The eastern approach now uses th
 
 The commons and yards retain open walking/gathering space. Garden/field spaces are cleared earth reserves awaiting later dressing. Trees, shrubs, crops, fencing, festival decorations, final sanctuary/workshop art, new quest props and NPC staging are future passes. Interiors remain separate maps. No engine collision, door transitions, quest triggers, camera or live movement is implemented in this export.
 
-Source assets and the approved blockout are unchanged. This scene awaits user review before merging into main.
+Source artwork and the original blockout geometry are preserved. This scene and its native-art fitting adjustments are approved for main.

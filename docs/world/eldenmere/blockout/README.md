@@ -1,6 +1,6 @@
-# Eldenmere overhead blockout 01 — review
+# Eldenmere overhead blockout 01 — approved
 
-Proposed geography for a 64×56-tile village on the established 24px grid. This is a planning diagram with measured footprints, routes and relative elevations. It is not new terrain/sprite artwork, a decorated level, a collision-ready map or a change to narrative canon. Existing approved assets remain unchanged.
+Approved geographic concept for a 64×56-tile village on the established 24px grid. This is a planning diagram with measured footprints, routes and relative elevations. It is not new terrain/sprite artwork, a decorated level or a collision-ready map. Existing approved assets remain unchanged. The subsequently approved terrain pass records the native-art fitting adjustments under `assets/maps/eldenmere/terrain_foundation/`.
 
 ## Review files
 
@@ -58,4 +58,4 @@ PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/test_e
 
 Uses the existing Pillow environment and system DejaVu Sans fonts. The four checks independently verify dry, disjoint native building footprints; descending water grades and downstream joins; level bridge ends; and graph access to all nine doors, gate, storage, commons and both exits. This is planning validation on 24px cells, not installed game navigation or full sprite/camera clearance.
 
-Narrative references: [approved opening quest](../../../narrative/game_01/CH01_MQ01.md) and [Chapter 1 structure](../../../narrative/game_01/CHAPTER_01.md). Geography and exact staging await user review.
+Narrative references: [approved opening quest](../../../narrative/game_01/CH01_MQ01.md) and [Chapter 1 structure](../../../narrative/game_01/CHAPTER_01.md). The geographic design is approved. Exact interactive scene staging remains future work.

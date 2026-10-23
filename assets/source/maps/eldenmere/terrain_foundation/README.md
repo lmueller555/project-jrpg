@@ -2,7 +2,7 @@
 
 This pass assembles the user-approved 64×56 overhead design from existing approved native assets. It creates a scene for layout review. It introduces no new painted environment art, game engine, doors, quests or character animations. The sanctuary and Mira's workshop remain measured design placeholders.
 
-The approved design is retained at `docs/world/eldenmere/blockout/recipe.json`. Its exported status predates the user's subsequent approval in chat; the terrain recipe records that approval and reads the blockout without modifying it.
+The approved geographic design is retained at `docs/world/eldenmere/blockout/recipe.json`. Both the original blockout and this terrain pass, including its native-art fitting adjustments, are approved. The terrain builder reads the blockout without modifying it.
 
 ## Native assets and registration
 
