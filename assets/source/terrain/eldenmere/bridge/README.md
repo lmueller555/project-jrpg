@@ -1,6 +1,6 @@
 # Eldenmere — bridge source and design
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 `materials_concept.png` retains the generated companion reference for an east–west timber bridge, reusable plank material, rails/post/lantern details and an equal-bank stream crossing. The approved gate close-up supplied palette and style guidance. `recipe.json` records crops, native dimensions, module assembly, lantern poses, placement, elevations, source scene phases and review framing.
 

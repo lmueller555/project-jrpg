@@ -1,6 +1,6 @@
 # Eldenmere — wooden bridge
 
-Status: draft artwork for visual review.
+Status: approved following user review.
 
 The first bridge runs east–west across the stream, with a **48-pixel-wide flat walking deck**, weathered transverse planks, low timber rails, simple iron straps and warm-gray stone abutments. All colors reuse the approved gate/terrain palette exactly. Two small cream-paper lanterns sway by one native pixel; small downstream wakes animate beside the timber support feet. The deck, railings, thresholds and stonework remain stationary.
 
