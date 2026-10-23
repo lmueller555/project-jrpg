@@ -1,0 +1,704 @@
+{
+  "id": "eldenmere.sanctuary.charm.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "building_position": [
+    252,
+    84
+  ],
+  "building_frame_size": [
+    216,
+    216
+  ],
+  "base_sanctuary": "../sanctuary/sanctuary.json",
+  "base_town": "assets/maps/eldenmere/terrain_foundation/scene.json",
+  "props": [
+    {
+      "id": "bench",
+      "crop": [
+        62,
+        259,
+        480,
+        498
+      ],
+      "size": [
+        48,
+        30
+      ],
+      "position": [
+        266,
+        302
+      ],
+      "ground_rect": [
+        4,
+        20,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "herb_planter",
+      "crop": [
+        574,
+        259,
+        856,
+        497
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "positions": [
+        [
+          286,
+          268
+        ],
+        [
+          323,
+          268
+        ]
+      ],
+      "fixed_rows_from": 12
+    },
+    {
+      "id": "provision_basket",
+      "crop": [
+        962,
+        318,
+        1186,
+        498
+      ],
+      "size": [
+        18,
+        18
+      ],
+      "position": [
+        414,
+        286
+      ],
+      "ground_rect": [
+        3,
+        11,
+        12,
+        6
+      ]
+    },
+    {
+      "id": "corner_vine",
+      "crop": [
+        171,
+        633,
+        314,
+        1172
+      ],
+      "size": [
+        16,
+        48
+      ],
+      "position": [
+        265,
+        232
+      ]
+    },
+    {
+      "id": "flagstones",
+      "crop": [
+        498,
+        846,
+        851,
+        1057
+      ],
+      "size": [
+        32,
+        16
+      ],
+      "position": [
+        372,
+        288
+      ],
+      "collision": false
+    }
+  ],
+  "foliage": [
+    {
+      "id": "shade_tree",
+      "pack": "foliage/tree",
+      "position": [
+        194,
+        210
+      ],
+      "phase_offset": 0,
+      "blocker": [
+        232,
+        318,
+        18,
+        10
+      ]
+    },
+    {
+      "id": "west_shrub",
+      "pack": "foliage/shrub",
+      "position": [
+        240,
+        268
+      ],
+      "phase_offset": 1,
+      "blocker": [
+        245,
+        284,
+        12,
+        7
+      ]
+    },
+    {
+      "id": "east_shrub",
+      "pack": "foliage/shrub",
+      "position": [
+        464,
+        268
+      ],
+      "phase_offset": 1,
+      "blocker": [
+        469,
+        284,
+        12,
+        7
+      ]
+    },
+    {
+      "id": "west_flowers",
+      "pack": "grass_flowers/flowers_white",
+      "position": [
+        238,
+        318
+      ],
+      "phase_offset": 2
+    },
+    {
+      "id": "east_flowers",
+      "pack": "grass_flowers/flowers_yellow",
+      "position": [
+        468,
+        313
+      ],
+      "phase_offset": 2
+    },
+    {
+      "id": "southwest_flowers",
+      "pack": "grass_flowers/flowers_violet",
+      "position": [
+        291,
+        330
+      ],
+      "phase_offset": 3
+    },
+    {
+      "id": "southeast_flowers",
+      "pack": "grass_flowers/flowers_white",
+      "position": [
+        444,
+        331
+      ],
+      "phase_offset": 3
+    },
+    {
+      "id": "west_grass",
+      "pack": "grass_flowers/grass_sparse",
+      "position": [
+        211,
+        334
+      ],
+      "phase_offset": 2
+    },
+    {
+      "id": "east_grass",
+      "pack": "grass_flowers/grass_splayed",
+      "position": [
+        484,
+        334
+      ],
+      "phase_offset": 2
+    },
+    {
+      "id": "southwest_grass",
+      "pack": "grass_flowers/grass_sparse",
+      "position": [
+        259,
+        333
+      ],
+      "phase_offset": 3
+    },
+    {
+      "id": "southeast_grass",
+      "pack": "grass_flowers/grass_sparse",
+      "position": [
+        423,
+        335
+      ],
+      "phase_offset": 3
+    }
+  ],
+  "wind": {
+    "direction": "E",
+    "cycle_duration_ms": 5400,
+    "moving_parts": "leaves only",
+    "fixed_parts": [
+      "containers",
+      "roots",
+      "stems",
+      "bench",
+      "basket",
+      "tree trunk",
+      "ground shadows"
+    ]
+  },
+  "smoke": {
+    "source": "../cottage/smoke",
+    "source_origin": [
+      90,
+      47
+    ],
+    "origin": [
+      197,
+      54
+    ],
+    "cycle_duration_ms": 3600
+  },
+  "lantern": {
+    "rect": [
+      104,
+      164,
+      8,
+      11
+    ],
+    "bracket_fixed": true,
+    "max_sway_pixels": 1,
+    "cycle_duration_ms": 3600,
+    "day": "layers/lantern",
+    "warm": "layers/lantern_lit",
+    "ambient_lit": false
+  },
+  "bell": {
+    "ambient": "still",
+    "cue": "layers/bell_cue",
+    "cue_loop": false,
+    "frame_duration_ms": 100,
+    "frame_count": 9,
+    "poses": [
+      0,
+      1,
+      2,
+      1,
+      0,
+      -1,
+      -2,
+      -1,
+      0
+    ],
+    "max_swing_pixels": 2,
+    "pivot": [
+      47,
+      59
+    ]
+  },
+  "door": "closed; approved original pixels",
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "wind_phase": 0,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "wind_phase": 0,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "wind_phase": 0,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "wind_phase": 1,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "wind_phase": 1,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "wind_phase": 1,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "wind_phase": 2,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "wind_phase": 2,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "wind_phase": 2,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "wind_phase": 3,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "wind_phase": 3,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "wind_phase": 3,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "wind_phase": 4,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "wind_phase": 4,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "wind_phase": 4,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "wind_phase": 5,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "wind_phase": 5,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "wind_phase": 5,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "wind_phase": 6,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "wind_phase": 6,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "wind_phase": 6,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "wind_phase": 7,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "wind_phase": 7,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "wind_phase": 7,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "wind_phase": 8,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "wind_phase": 8,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "wind_phase": 8,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "wind_phase": 0,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "wind_phase": 0,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "wind_phase": 0,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "wind_phase": 1,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "wind_phase": 1,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "wind_phase": 1,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "wind_phase": 2,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "wind_phase": 2,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "wind_phase": 2,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_37.png",
+      "duration_ms": 200,
+      "smoke_phase": 0,
+      "wind_phase": 3,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_38.png",
+      "duration_ms": 200,
+      "smoke_phase": 1,
+      "wind_phase": 3,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_39.png",
+      "duration_ms": 200,
+      "smoke_phase": 2,
+      "wind_phase": 3,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_40.png",
+      "duration_ms": 200,
+      "smoke_phase": 3,
+      "wind_phase": 4,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_41.png",
+      "duration_ms": 200,
+      "smoke_phase": 4,
+      "wind_phase": 4,
+      "lantern_offset": 1
+    },
+    {
+      "image": "scene_frames/frame_42.png",
+      "duration_ms": 200,
+      "smoke_phase": 5,
+      "wind_phase": 4,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_43.png",
+      "duration_ms": 200,
+      "smoke_phase": 6,
+      "wind_phase": 5,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_44.png",
+      "duration_ms": 200,
+      "smoke_phase": 7,
+      "wind_phase": 5,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_45.png",
+      "duration_ms": 200,
+      "smoke_phase": 8,
+      "wind_phase": 5,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_46.png",
+      "duration_ms": 200,
+      "smoke_phase": 9,
+      "wind_phase": 6,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_47.png",
+      "duration_ms": 200,
+      "smoke_phase": 10,
+      "wind_phase": 6,
+      "lantern_offset": -1
+    },
+    {
+      "image": "scene_frames/frame_48.png",
+      "duration_ms": 200,
+      "smoke_phase": 11,
+      "wind_phase": 6,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_49.png",
+      "duration_ms": 200,
+      "smoke_phase": 12,
+      "wind_phase": 7,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_50.png",
+      "duration_ms": 200,
+      "smoke_phase": 13,
+      "wind_phase": 7,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_51.png",
+      "duration_ms": 200,
+      "smoke_phase": 14,
+      "wind_phase": 7,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_52.png",
+      "duration_ms": 200,
+      "smoke_phase": 15,
+      "wind_phase": 8,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_53.png",
+      "duration_ms": 200,
+      "smoke_phase": 16,
+      "wind_phase": 8,
+      "lantern_offset": 0
+    },
+    {
+      "image": "scene_frames/frame_54.png",
+      "duration_ms": 200,
+      "smoke_phase": 17,
+      "wind_phase": 8,
+      "lantern_offset": 0
+    }
+  ],
+  "review_crop": [
+    144,
+    48,
+    432,
+    408
+  ],
+  "review_scale": 4,
+  "hero_foot": [
+    386,
+    304
+  ],
+  "planning_navigation": "navigation/access.json",
+  "engine_interactions_implemented": false,
+  "source_recipe": "../../../source/terrain/eldenmere/sanctuary_charm/recipe.json"
+}

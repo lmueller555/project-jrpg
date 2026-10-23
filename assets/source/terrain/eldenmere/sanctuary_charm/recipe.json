@@ -1,0 +1,40 @@
+{
+  "id": "eldenmere.sanctuary.charm.24",
+  "status": "review",
+  "source": "props_concept.png",
+  "alpha_threshold": 128,
+  "tile_size": 24,
+  "building_position": [252, 84],
+  "hero_foot": [386, 304],
+  "review_crop": [144, 48, 432, 408],
+  "review_scale": 4,
+  "frame_count": 54,
+  "duration_ms": 200,
+  "wind_offsets": [0, 1, 1, 1, 1, 1, 0, 0, 0],
+  "lantern_offsets": [0, 0, 1, 1, 1, 0, 0, 0, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0],
+  "lantern_rect": [104, 164, 8, 11],
+  "lantern_pane": [105, 166, 2, 4],
+  "smoke_origin": [197, 54],
+  "bell_polygon": [[45, 60], [49, 60], [52, 63], [52, 65], [54, 68], [55, 71], [51, 71], [49, 72], [49, 75], [46, 75], [46, 72], [42, 72], [42, 69], [43, 66], [44, 65], [44, 61]],
+  "bell_offsets": [0, 1, 2, 1, 0, -1, -2, -1, 0],
+  "props": [
+    {"id": "bench", "crop": [62, 259, 480, 498], "size": [48, 30], "position": [266, 302], "ground_rect": [4, 20, 40, 10]},
+    {"id": "herb_planter", "crop": [574, 259, 856, 497], "size": [24, 18], "positions": [[286, 268], [323, 268]], "fixed_rows_from": 12},
+    {"id": "provision_basket", "crop": [962, 318, 1186, 498], "size": [18, 18], "position": [414, 286], "ground_rect": [3, 11, 12, 6]},
+    {"id": "corner_vine", "crop": [171, 633, 314, 1172], "size": [16, 48], "position": [265, 232]},
+    {"id": "flagstones", "crop": [498, 846, 851, 1057], "size": [32, 16], "position": [372, 288], "collision": false}
+  ],
+  "foliage": [
+    {"id": "shade_tree", "pack": "foliage/tree", "position": [194, 210], "phase_offset": 0, "blocker": [232, 318, 18, 10]},
+    {"id": "west_shrub", "pack": "foliage/shrub", "position": [240, 268], "phase_offset": 1, "blocker": [245, 284, 12, 7]},
+    {"id": "east_shrub", "pack": "foliage/shrub", "position": [464, 268], "phase_offset": 1, "blocker": [469, 284, 12, 7]},
+    {"id": "west_flowers", "pack": "grass_flowers/flowers_white", "position": [238, 318], "phase_offset": 2},
+    {"id": "east_flowers", "pack": "grass_flowers/flowers_yellow", "position": [468, 313], "phase_offset": 2},
+    {"id": "southwest_flowers", "pack": "grass_flowers/flowers_violet", "position": [291, 330], "phase_offset": 3},
+    {"id": "southeast_flowers", "pack": "grass_flowers/flowers_white", "position": [444, 331], "phase_offset": 3},
+    {"id": "west_grass", "pack": "grass_flowers/grass_sparse", "position": [211, 334], "phase_offset": 2},
+    {"id": "east_grass", "pack": "grass_flowers/grass_splayed", "position": [484, 334], "phase_offset": 2},
+    {"id": "southwest_grass", "pack": "grass_flowers/grass_sparse", "position": [259, 333], "phase_offset": 3},
+    {"id": "southeast_grass", "pack": "grass_flowers/grass_sparse", "position": [423, 335], "phase_offset": 3}
+  ]
+}

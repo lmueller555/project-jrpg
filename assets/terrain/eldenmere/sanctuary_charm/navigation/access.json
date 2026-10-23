@@ -1,0 +1,86 @@
+{
+  "blockers": [
+    {
+      "id": "bench",
+      "rect": [
+        270,
+        322,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "provision_basket",
+      "rect": [
+        417,
+        297,
+        12,
+        6
+      ]
+    },
+    {
+      "id": "shade_tree",
+      "rect": [
+        232,
+        318,
+        18,
+        10
+      ]
+    },
+    {
+      "id": "west_shrub",
+      "rect": [
+        245,
+        284,
+        12,
+        7
+      ]
+    },
+    {
+      "id": "east_shrub",
+      "rect": [
+        469,
+        284,
+        12,
+        7
+      ]
+    }
+  ],
+  "probe": [
+    24,
+    12
+  ],
+  "grid_step": 2,
+  "start": [
+    384,
+    312
+  ],
+  "destinations": {
+    "threshold": [
+      386,
+      304
+    ],
+    "stair_landing": [
+      384,
+      348
+    ],
+    "below_stairs": [
+      384,
+      402
+    ],
+    "conversation_west": [
+      344,
+      312
+    ],
+    "conversation_east": [
+      434,
+      324
+    ],
+    "bench_approach": [
+      290,
+      342
+    ]
+  },
+  "reachable_centres": 3197,
+  "engine_collision_implemented": false
+}
