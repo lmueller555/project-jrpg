@@ -1,0 +1,882 @@
+{
+  "id": "eldenmere.irrigation.24",
+  "status": "draft",
+  "tile_size": [
+    24,
+    24
+  ],
+  "route_count": 40,
+  "port_bits": {
+    "N": 1,
+    "E": 2,
+    "S": 4,
+    "W": 8
+  },
+  "port_vectors": {
+    "N": [
+      0,
+      -1
+    ],
+    "E": [
+      1,
+      0
+    ],
+    "S": [
+      0,
+      1
+    ],
+    "W": [
+      -1,
+      0
+    ]
+  },
+  "input_rule": "One input per directed module; junctions split to the other connected ports",
+  "image": "irrigation.png",
+  "columns": 8,
+  "rows_per_phase": 5,
+  "spacing": 0,
+  "margin": 0,
+  "routes": [
+    {
+      "id": "channel_01_from_n",
+      "kind": "channel",
+      "ports": 1,
+      "input": "N",
+      "outputs": [],
+      "index": 0,
+      "rect": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_01_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_01_water.png"
+    },
+    {
+      "id": "channel_02_from_e",
+      "kind": "channel",
+      "ports": 2,
+      "input": "E",
+      "outputs": [],
+      "index": 1,
+      "rect": [
+        24,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_02_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_02_water.png"
+    },
+    {
+      "id": "channel_03_from_n",
+      "kind": "channel",
+      "ports": 3,
+      "input": "N",
+      "outputs": [
+        "E"
+      ],
+      "index": 2,
+      "rect": [
+        48,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_03_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_03_water.png"
+    },
+    {
+      "id": "channel_03_from_e",
+      "kind": "channel",
+      "ports": 3,
+      "input": "E",
+      "outputs": [
+        "N"
+      ],
+      "index": 3,
+      "rect": [
+        72,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_03_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_03_water.png"
+    },
+    {
+      "id": "channel_04_from_s",
+      "kind": "channel",
+      "ports": 4,
+      "input": "S",
+      "outputs": [],
+      "index": 4,
+      "rect": [
+        96,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_04_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_04_water.png"
+    },
+    {
+      "id": "channel_05_from_n",
+      "kind": "channel",
+      "ports": 5,
+      "input": "N",
+      "outputs": [
+        "S"
+      ],
+      "index": 5,
+      "rect": [
+        120,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_05_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_05_water.png"
+    },
+    {
+      "id": "channel_05_from_s",
+      "kind": "channel",
+      "ports": 5,
+      "input": "S",
+      "outputs": [
+        "N"
+      ],
+      "index": 6,
+      "rect": [
+        144,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_05_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_05_water.png"
+    },
+    {
+      "id": "channel_06_from_e",
+      "kind": "channel",
+      "ports": 6,
+      "input": "E",
+      "outputs": [
+        "S"
+      ],
+      "index": 7,
+      "rect": [
+        168,
+        0,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_06_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_06_water.png"
+    },
+    {
+      "id": "channel_06_from_s",
+      "kind": "channel",
+      "ports": 6,
+      "input": "S",
+      "outputs": [
+        "E"
+      ],
+      "index": 8,
+      "rect": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_06_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_06_water.png"
+    },
+    {
+      "id": "channel_07_from_n",
+      "kind": "channel",
+      "ports": 7,
+      "input": "N",
+      "outputs": [
+        "E",
+        "S"
+      ],
+      "index": 9,
+      "rect": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_water.png"
+    },
+    {
+      "id": "channel_07_from_e",
+      "kind": "channel",
+      "ports": 7,
+      "input": "E",
+      "outputs": [
+        "N",
+        "S"
+      ],
+      "index": 10,
+      "rect": [
+        48,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_water.png"
+    },
+    {
+      "id": "channel_07_from_s",
+      "kind": "channel",
+      "ports": 7,
+      "input": "S",
+      "outputs": [
+        "N",
+        "E"
+      ],
+      "index": 11,
+      "rect": [
+        72,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_07_water.png"
+    },
+    {
+      "id": "channel_08_from_w",
+      "kind": "channel",
+      "ports": 8,
+      "input": "W",
+      "outputs": [],
+      "index": 12,
+      "rect": [
+        96,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_08_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_08_water.png"
+    },
+    {
+      "id": "channel_09_from_n",
+      "kind": "channel",
+      "ports": 9,
+      "input": "N",
+      "outputs": [
+        "W"
+      ],
+      "index": 13,
+      "rect": [
+        120,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_09_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_09_water.png"
+    },
+    {
+      "id": "channel_09_from_w",
+      "kind": "channel",
+      "ports": 9,
+      "input": "W",
+      "outputs": [
+        "N"
+      ],
+      "index": 14,
+      "rect": [
+        144,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_09_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_09_water.png"
+    },
+    {
+      "id": "channel_10_from_e",
+      "kind": "channel",
+      "ports": 10,
+      "input": "E",
+      "outputs": [
+        "W"
+      ],
+      "index": 15,
+      "rect": [
+        168,
+        24,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_10_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_10_water.png"
+    },
+    {
+      "id": "channel_10_from_w",
+      "kind": "channel",
+      "ports": 10,
+      "input": "W",
+      "outputs": [
+        "E"
+      ],
+      "index": 16,
+      "rect": [
+        0,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_10_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_10_water.png"
+    },
+    {
+      "id": "channel_11_from_n",
+      "kind": "channel",
+      "ports": 11,
+      "input": "N",
+      "outputs": [
+        "E",
+        "W"
+      ],
+      "index": 17,
+      "rect": [
+        24,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_water.png"
+    },
+    {
+      "id": "channel_11_from_e",
+      "kind": "channel",
+      "ports": 11,
+      "input": "E",
+      "outputs": [
+        "N",
+        "W"
+      ],
+      "index": 18,
+      "rect": [
+        48,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_water.png"
+    },
+    {
+      "id": "channel_11_from_w",
+      "kind": "channel",
+      "ports": 11,
+      "input": "W",
+      "outputs": [
+        "N",
+        "E"
+      ],
+      "index": 19,
+      "rect": [
+        72,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_11_water.png"
+    },
+    {
+      "id": "channel_12_from_s",
+      "kind": "channel",
+      "ports": 12,
+      "input": "S",
+      "outputs": [
+        "W"
+      ],
+      "index": 20,
+      "rect": [
+        96,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_12_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_12_water.png"
+    },
+    {
+      "id": "channel_12_from_w",
+      "kind": "channel",
+      "ports": 12,
+      "input": "W",
+      "outputs": [
+        "S"
+      ],
+      "index": 21,
+      "rect": [
+        120,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_12_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_12_water.png"
+    },
+    {
+      "id": "channel_13_from_n",
+      "kind": "channel",
+      "ports": 13,
+      "input": "N",
+      "outputs": [
+        "S",
+        "W"
+      ],
+      "index": 22,
+      "rect": [
+        144,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_water.png"
+    },
+    {
+      "id": "channel_13_from_s",
+      "kind": "channel",
+      "ports": 13,
+      "input": "S",
+      "outputs": [
+        "N",
+        "W"
+      ],
+      "index": 23,
+      "rect": [
+        168,
+        48,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_water.png"
+    },
+    {
+      "id": "channel_13_from_w",
+      "kind": "channel",
+      "ports": 13,
+      "input": "W",
+      "outputs": [
+        "N",
+        "S"
+      ],
+      "index": 24,
+      "rect": [
+        0,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_13_water.png"
+    },
+    {
+      "id": "channel_14_from_e",
+      "kind": "channel",
+      "ports": 14,
+      "input": "E",
+      "outputs": [
+        "S",
+        "W"
+      ],
+      "index": 25,
+      "rect": [
+        24,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_water.png"
+    },
+    {
+      "id": "channel_14_from_s",
+      "kind": "channel",
+      "ports": 14,
+      "input": "S",
+      "outputs": [
+        "E",
+        "W"
+      ],
+      "index": 26,
+      "rect": [
+        48,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_water.png"
+    },
+    {
+      "id": "channel_14_from_w",
+      "kind": "channel",
+      "ports": 14,
+      "input": "W",
+      "outputs": [
+        "E",
+        "S"
+      ],
+      "index": 27,
+      "rect": [
+        72,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_14_water.png"
+    },
+    {
+      "id": "channel_15_from_n",
+      "kind": "channel",
+      "ports": 15,
+      "input": "N",
+      "outputs": [
+        "E",
+        "S",
+        "W"
+      ],
+      "index": 28,
+      "rect": [
+        96,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_water.png"
+    },
+    {
+      "id": "channel_15_from_e",
+      "kind": "channel",
+      "ports": 15,
+      "input": "E",
+      "outputs": [
+        "N",
+        "S",
+        "W"
+      ],
+      "index": 29,
+      "rect": [
+        120,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_water.png"
+    },
+    {
+      "id": "channel_15_from_s",
+      "kind": "channel",
+      "ports": 15,
+      "input": "S",
+      "outputs": [
+        "N",
+        "E",
+        "W"
+      ],
+      "index": 30,
+      "rect": [
+        144,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_water.png"
+    },
+    {
+      "id": "channel_15_from_w",
+      "kind": "channel",
+      "ports": 15,
+      "input": "W",
+      "outputs": [
+        "N",
+        "E",
+        "S"
+      ],
+      "index": 31,
+      "rect": [
+        168,
+        72,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/shape_15_water.png"
+    },
+    {
+      "id": "inlet_n",
+      "kind": "inlet",
+      "direction": "N",
+      "ports": 1,
+      "input": "stream",
+      "outputs": [
+        "N"
+      ],
+      "index": 32,
+      "rect": [
+        0,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_n_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_n_water.png"
+    },
+    {
+      "id": "inlet_e",
+      "kind": "inlet",
+      "direction": "E",
+      "ports": 2,
+      "input": "stream",
+      "outputs": [
+        "E"
+      ],
+      "index": 33,
+      "rect": [
+        24,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_e_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_e_water.png"
+    },
+    {
+      "id": "inlet_s",
+      "kind": "inlet",
+      "direction": "S",
+      "ports": 4,
+      "input": "stream",
+      "outputs": [
+        "S"
+      ],
+      "index": 34,
+      "rect": [
+        48,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_s_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_s_water.png"
+    },
+    {
+      "id": "inlet_w",
+      "kind": "inlet",
+      "direction": "W",
+      "ports": 8,
+      "input": "stream",
+      "outputs": [
+        "W"
+      ],
+      "index": 35,
+      "rect": [
+        72,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_w_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/inlet_w_water.png"
+    },
+    {
+      "id": "outlet_n",
+      "kind": "outlet",
+      "direction": "N",
+      "ports": 4,
+      "input": "S",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        10,
+        2,
+        4,
+        10
+      ],
+      "index": 36,
+      "rect": [
+        96,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_n_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_n_water.png"
+    },
+    {
+      "id": "outlet_e",
+      "kind": "outlet",
+      "direction": "E",
+      "ports": 8,
+      "input": "W",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        12,
+        10,
+        10,
+        4
+      ],
+      "index": 37,
+      "rect": [
+        120,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_e_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_e_water.png"
+    },
+    {
+      "id": "outlet_s",
+      "kind": "outlet",
+      "direction": "S",
+      "ports": 1,
+      "input": "N",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        10,
+        12,
+        4,
+        10
+      ],
+      "index": 38,
+      "rect": [
+        144,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_s_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_s_water.png"
+    },
+    {
+      "id": "outlet_w",
+      "kind": "outlet",
+      "direction": "W",
+      "ports": 2,
+      "input": "E",
+      "outputs": [
+        "receiver"
+      ],
+      "effect_bounds": [
+        2,
+        10,
+        10,
+        4
+      ],
+      "index": 39,
+      "rect": [
+        168,
+        96,
+        24,
+        24
+      ],
+      "bank": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_w_bank.png",
+      "water_mask": "../../../source/terrain/eldenmere/irrigation/shapes/outlet_w_water.png"
+    }
+  ],
+  "frames": [
+    {
+      "image": "frames/frame_01.png",
+      "sheet_rect": [
+        0,
+        0,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_02.png",
+      "sheet_rect": [
+        0,
+        120,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_03.png",
+      "sheet_rect": [
+        0,
+        240,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_04.png",
+      "sheet_rect": [
+        0,
+        360,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_05.png",
+      "sheet_rect": [
+        0,
+        480,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "frames/frame_06.png",
+      "sheet_rect": [
+        0,
+        600,
+        192,
+        120
+      ],
+      "duration_ms": 200
+    }
+  ],
+  "loop": true,
+  "cycle_duration_ms": 1200,
+  "flow_step_pixels": 2,
+  "flow_period_pixels": 12,
+  "water_width_pixels": 8,
+  "earth_width_pixels": 2,
+  "bank_atlas": "channel_banks.png",
+  "water_mask_atlas": "channel_masks.png",
+  "recipe": "../../../source/terrain/eldenmere/irrigation/recipe.json",
+  "palette": "palette.json",
+  "review": {
+    "scene": "review_scene.gif",
+    "closeup": "channels_closeup.gif",
+    "modules": "modules_review.gif"
+  }
+}

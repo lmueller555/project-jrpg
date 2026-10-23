@@ -1,0 +1,766 @@
+{
+  "status": "draft",
+  "purpose": "Irrigation art/flow review; not a canonical map or playable game",
+  "grid_size": [
+    20,
+    22
+  ],
+  "tile_size": [
+    24,
+    24
+  ],
+  "grass_variants": [
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      1,
+      1,
+      3,
+      2,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      0,
+      2,
+      3,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      2,
+      3,
+      2
+    ],
+    [
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      3,
+      3,
+      1,
+      0,
+      3,
+      1,
+      2,
+      0,
+      0,
+      2,
+      1,
+      2,
+      0,
+      3,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      1,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      2,
+      3,
+      0,
+      2,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      2,
+      1,
+      1,
+      2,
+      1,
+      3,
+      0,
+      1,
+      1,
+      3,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      0,
+      1,
+      2,
+      2,
+      0,
+      1,
+      2,
+      0,
+      2,
+      2,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      3,
+      3,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      1,
+      0,
+      3,
+      1,
+      0,
+      0,
+      3,
+      2,
+      2,
+      0,
+      0,
+      2,
+      3,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      2,
+      3,
+      0,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0,
+      2,
+      1,
+      1,
+      2,
+      0,
+      0,
+      3,
+      0,
+      1
+    ],
+    [
+      3,
+      1,
+      1,
+      0,
+      0,
+      1,
+      2,
+      2,
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      2,
+      1,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      2,
+      0,
+      1,
+      0,
+      3,
+      0,
+      2,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      3,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      2,
+      0,
+      1,
+      3,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      2,
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      3,
+      3
+    ],
+    [
+      2,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      0,
+      1,
+      3,
+      2,
+      2,
+      0,
+      0,
+      2,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      3,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      3,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      1,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      3,
+      2,
+      0,
+      0,
+      1,
+      1,
+      1,
+      3,
+      3,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      3,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "base_scene": "../stream/review_scene.json",
+  "channels": [
+    {
+      "cell": [
+        14,
+        15
+      ],
+      "route": "inlet_s"
+    },
+    {
+      "cell": [
+        14,
+        16
+      ],
+      "route": "channel_05_from_n"
+    },
+    {
+      "cell": [
+        14,
+        17
+      ],
+      "route": "channel_13_from_n"
+    },
+    {
+      "cell": [
+        14,
+        18
+      ],
+      "route": "channel_05_from_n"
+    },
+    {
+      "cell": [
+        14,
+        19
+      ],
+      "route": "channel_09_from_n"
+    },
+    {
+      "cell": [
+        13,
+        17
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        12,
+        17
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        11,
+        17
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        10,
+        17
+      ],
+      "route": "channel_11_from_e"
+    },
+    {
+      "cell": [
+        9,
+        17
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        8,
+        17
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        7,
+        17
+      ],
+      "route": "channel_06_from_e"
+    },
+    {
+      "cell": [
+        7,
+        18
+      ],
+      "route": "channel_05_from_n"
+    },
+    {
+      "cell": [
+        13,
+        19
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        12,
+        19
+      ],
+      "route": "channel_10_from_e"
+    },
+    {
+      "cell": [
+        10,
+        16
+      ],
+      "route": "outlet_n"
+    },
+    {
+      "cell": [
+        7,
+        19
+      ],
+      "route": "outlet_s"
+    },
+    {
+      "cell": [
+        11,
+        19
+      ],
+      "route": "outlet_w"
+    }
+  ],
+  "characters": [
+    {
+      "name": "male_01",
+      "image_from_repo_root": "assets/characters/npcs/male_01/idle_front.png",
+      "position": [
+        96,
+        58
+      ],
+      "foot": [
+        108,
+        92
+      ]
+    },
+    {
+      "name": "male_03",
+      "image_from_repo_root": "assets/characters/npcs/male_03/idle_front.png",
+      "position": [
+        264,
+        82
+      ],
+      "foot": [
+        276,
+        116
+      ]
+    },
+    {
+      "name": "caelan",
+      "image_from_repo_root": "assets/characters/caelan/idle_front.png",
+      "position": [
+        216,
+        178
+      ],
+      "foot": [
+        228,
+        212
+      ]
+    },
+    {
+      "name": "male_02",
+      "image_from_repo_root": "assets/characters/npcs/male_02/idle_front.png",
+      "position": [
+        96,
+        178
+      ],
+      "foot": [
+        108,
+        212
+      ]
+    },
+    {
+      "name": "female_01",
+      "image_from_repo_root": "assets/characters/npcs/female_01/idle_front.png",
+      "position": [
+        312,
+        178
+      ],
+      "foot": [
+        324,
+        212
+      ]
+    },
+    {
+      "name": "female_03",
+      "image_from_repo_root": "assets/characters/npcs/female_03/idle_front.png",
+      "position": [
+        288,
+        274
+      ],
+      "foot": [
+        300,
+        308
+      ]
+    },
+    {
+      "name": "mira",
+      "image_from_repo_root": "assets/characters/mira/idle_front.png",
+      "position": [
+        288,
+        418
+      ],
+      "foot": [
+        300,
+        452
+      ]
+    },
+    {
+      "name": "female_02",
+      "image_from_repo_root": "assets/characters/npcs/female_02/idle_front.png",
+      "position": [
+        192,
+        466
+      ],
+      "foot": [
+        204,
+        500
+      ]
+    }
+  ],
+  "shared_phase": true,
+  "loop": true,
+  "frames": [
+    {
+      "image": "review_scene_frame_01.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "review_scene_frame_02.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "review_scene_frame_03.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "review_scene_frame_04.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "review_scene_frame_05.png",
+      "duration_ms": 200
+    },
+    {
+      "image": "review_scene_frame_06.png",
+      "duration_ms": 200
+    }
+  ],
+  "review": {
+    "gif": "review_scene.gif",
+    "image": "review_scene.png",
+    "scale": 3,
+    "closeup_gif": "channels_closeup.gif",
+    "closeup_rect": [
+      144,
+      360,
+      384,
+      504
+    ],
+    "closeup_scale": 4
+  }
+}
