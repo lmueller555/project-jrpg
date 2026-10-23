@@ -1,6 +1,6 @@
 # Eldenmere — stream material and animation source
 
-Status: draft artwork for review; the stream-and-bank design plan is approved.
+Status: stream-and-bank artwork approved by the user in chat.
 
 `materials_concept.png` is the generated water/shore reference guided by the approved grass/dirt materials. Its top-left panel supplies restrained depth texture, and the top-right supplies source ripple shapes. Lower panels guide the earth/grass/water boundary. The native export keeps the approved ground colors and thinner bank edges, rather than treating the dense reference as a finished tileset.
 

@@ -1,6 +1,6 @@
 # Eldenmere — animated stream and banks
 
-Status: draft artwork for user review; the proposed design plan is approved. This is the first stream-and-bank milestone of the staged water/infrastructure pack.
+Status: stream-and-bank artwork approved by the user in chat. This is the first stream-and-bank milestone of the staged water/infrastructure pack.
 
 Native terrain remains 24×24, with approved 24×36 characters. Muted blue-green water contains small drifting, fading reflection clusters. Banks, the earthy lip and the shallow-water rim remain stationary. There are six phases at 200 ms each: a 1.2-second seamless playback loop. Two compatible surface variations reduce obvious repetition while using one shared phase across connected water.
 
@@ -13,7 +13,7 @@ Native terrain remains 24×24, with approved 24×36 characters. Muted blue-green
 - `water_cycle_review.gif`: a 6× close-up of a small pool, showing the complete water cycle and fixed banks; `_review.png` is its first phase.
 - `bank_47_review.png`: all 47 bank shapes with water over approved grass at 6× scale.
 
-The scene is an art/scale/seam demonstration rather than a canonical Eldenmere map or playable game. Two characters are repositioned onto dry ground to make room for the water. Every character uses the existing approved native sprite unchanged. Irrigation modules, stone terraces, bridge, gate and mill remain later milestones after this visual review.
+The scene is an art/scale/seam demonstration rather than a canonical Eldenmere map or playable game. Two characters are repositioned onto dry ground to make room for the water. Every character uses the existing approved native sprite unchanged. Irrigation modules, stone terraces, bridge, gate and mill remain later milestones following this approved stream milestone.
 
 ## Native exports
 
