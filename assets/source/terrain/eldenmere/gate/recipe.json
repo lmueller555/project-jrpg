@@ -1,0 +1,37 @@
+{
+  "id": "eldenmere.irrigation_gate.24x36",
+  "status": "draft",
+  "source": "materials_concept.png",
+  "sprite_size": [24, 36],
+  "ground_rect": [0, 12, 24, 24],
+  "water_width": 8,
+  "duration_ms": 200,
+  "frame_count": 6,
+  "post_crop": [275, 148, 312, 324],
+  "panel_crop": [335, 216, 478, 285],
+  "beam_crop": [320, 168, 493, 197],
+  "stone_crop": [211, 327, 313, 459],
+  "palette": {
+    "wood": {"shadow": "#654e3c", "base": "#836347", "light": "#a08158", "worn": "#b79a6c"},
+    "iron": {"shadow": "#535c5d", "base": "#737e7a", "light": "#a4aaa0"}
+  },
+  "closed_panel_y": 20,
+  "lift_pixels": [0, 2, 4, 7, 9, 11],
+  "gate_cell": [11, 18],
+  "gate_position": [264, 420],
+  "scene_scale": 3,
+  "closeup_rect": [192, 396, 360, 600],
+  "closeup_scale": 5,
+  "caption_height": 48,
+  "scene_sequence": [
+    {"animation": "idle_jammed", "ticks": 12},
+    {"animation": "repair", "ticks": 6},
+    {"animation": "opening", "ticks": 6},
+    {"animation": "idle_open", "ticks": 24},
+    {"animation": "closing", "ticks": 6},
+    {"animation": "idle_closed", "ticks": 12},
+    {"animation": "jamming", "ticks": 6},
+    {"animation": "idle_jammed", "ticks": 6}
+  ],
+  "water_delay_ticks_per_cell": 2
+}

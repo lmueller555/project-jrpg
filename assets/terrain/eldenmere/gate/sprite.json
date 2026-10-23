@@ -1,0 +1,766 @@
+{
+  "id": "eldenmere.irrigation_gate.24x36",
+  "status": "draft",
+  "image": "gate.png",
+  "sprite_size": [
+    24,
+    36
+  ],
+  "ground_rect": [
+    0,
+    12,
+    24,
+    24
+  ],
+  "anchor": [
+    12,
+    34
+  ],
+  "input": "N",
+  "output": "S",
+  "water_width_pixels": 8,
+  "mechanism": "hand-lifted sliding board and locking pin",
+  "animations": [
+    {
+      "id": "idle_open",
+      "loop": true,
+      "frames": [
+        {
+          "image": "animations/idle_open/frame_01.png",
+          "sheet_rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/idle_open/frame_02.png",
+          "sheet_rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/idle_open/frame_03.png",
+          "sheet_rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/idle_open/frame_04.png",
+          "sheet_rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/idle_open/frame_05.png",
+          "sheet_rect": [
+            96,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/idle_open/frame_06.png",
+          "sheet_rect": [
+            120,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        }
+      ]
+    },
+    {
+      "id": "idle_closed",
+      "loop": true,
+      "frames": [
+        {
+          "image": "animations/idle_closed/frame_01.png",
+          "sheet_rect": [
+            0,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/idle_closed/frame_02.png",
+          "sheet_rect": [
+            24,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/idle_closed/frame_03.png",
+          "sheet_rect": [
+            48,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/idle_closed/frame_04.png",
+          "sheet_rect": [
+            72,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/idle_closed/frame_05.png",
+          "sheet_rect": [
+            96,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/idle_closed/frame_06.png",
+          "sheet_rect": [
+            120,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        }
+      ]
+    },
+    {
+      "id": "idle_jammed",
+      "loop": true,
+      "frames": [
+        {
+          "image": "animations/idle_jammed/frame_01.png",
+          "sheet_rect": [
+            0,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/idle_jammed/frame_02.png",
+          "sheet_rect": [
+            24,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/idle_jammed/frame_03.png",
+          "sheet_rect": [
+            48,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/idle_jammed/frame_04.png",
+          "sheet_rect": [
+            72,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/idle_jammed/frame_05.png",
+          "sheet_rect": [
+            96,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/idle_jammed/frame_06.png",
+          "sheet_rect": [
+            120,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        }
+      ]
+    },
+    {
+      "id": "opening",
+      "loop": false,
+      "frames": [
+        {
+          "image": "animations/opening/frame_01.png",
+          "sheet_rect": [
+            0,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/opening/frame_02.png",
+          "sheet_rect": [
+            24,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 2,
+          "jam": 0,
+          "flow": 0.18181818181818182
+        },
+        {
+          "image": "animations/opening/frame_03.png",
+          "sheet_rect": [
+            48,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 4,
+          "jam": 0,
+          "flow": 0.36363636363636365
+        },
+        {
+          "image": "animations/opening/frame_04.png",
+          "sheet_rect": [
+            72,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 7,
+          "jam": 0,
+          "flow": 0.6363636363636364
+        },
+        {
+          "image": "animations/opening/frame_05.png",
+          "sheet_rect": [
+            96,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 9,
+          "jam": 0,
+          "flow": 0.8181818181818182
+        },
+        {
+          "image": "animations/opening/frame_06.png",
+          "sheet_rect": [
+            120,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "loop": false,
+      "frames": [
+        {
+          "image": "animations/closing/frame_01.png",
+          "sheet_rect": [
+            0,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 11,
+          "jam": 0,
+          "flow": 1.0
+        },
+        {
+          "image": "animations/closing/frame_02.png",
+          "sheet_rect": [
+            24,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 9,
+          "jam": 0,
+          "flow": 0.8181818181818182
+        },
+        {
+          "image": "animations/closing/frame_03.png",
+          "sheet_rect": [
+            48,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 7,
+          "jam": 0,
+          "flow": 0.6363636363636364
+        },
+        {
+          "image": "animations/closing/frame_04.png",
+          "sheet_rect": [
+            72,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 4,
+          "jam": 0,
+          "flow": 0.36363636363636365
+        },
+        {
+          "image": "animations/closing/frame_05.png",
+          "sheet_rect": [
+            96,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 2,
+          "jam": 0,
+          "flow": 0.18181818181818182
+        },
+        {
+          "image": "animations/closing/frame_06.png",
+          "sheet_rect": [
+            120,
+            144,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "loop": false,
+      "frames": [
+        {
+          "image": "animations/repair/frame_01.png",
+          "sheet_rect": [
+            0,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/repair/frame_02.png",
+          "sheet_rect": [
+            24,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/repair/frame_03.png",
+          "sheet_rect": [
+            48,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 0,
+          "jam": 2,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/repair/frame_04.png",
+          "sheet_rect": [
+            72,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 0,
+          "jam": 1,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/repair/frame_05.png",
+          "sheet_rect": [
+            96,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/repair/frame_06.png",
+          "sheet_rect": [
+            120,
+            180,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        }
+      ]
+    },
+    {
+      "id": "jamming",
+      "loop": false,
+      "frames": [
+        {
+          "image": "animations/jamming/frame_01.png",
+          "sheet_rect": [
+            0,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 0,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/jamming/frame_02.png",
+          "sheet_rect": [
+            24,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 1,
+          "lift": 0,
+          "jam": 0,
+          "flow": 0
+        },
+        {
+          "image": "animations/jamming/frame_03.png",
+          "sheet_rect": [
+            48,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 2,
+          "lift": 0,
+          "jam": 1,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/jamming/frame_04.png",
+          "sheet_rect": [
+            72,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 3,
+          "lift": 0,
+          "jam": 2,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/jamming/frame_05.png",
+          "sheet_rect": [
+            96,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 4,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        },
+        {
+          "image": "animations/jamming/frame_06.png",
+          "sheet_rect": [
+            120,
+            216,
+            24,
+            36
+          ],
+          "duration_ms": 200,
+          "phase": 5,
+          "lift": 0,
+          "jam": 3,
+          "flow": 0.15
+        }
+      ]
+    }
+  ],
+  "recipe": "../../../source/terrain/eldenmere/gate/recipe.json",
+  "fixed_structure": "../../../source/terrain/eldenmere/gate/parts/fixed_structure.png",
+  "downstream_responses": {
+    "tiles": [
+      {
+        "id": "channel_03_from_n",
+        "half": 0,
+        "rect": [
+          0,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_10_from_w",
+        "half": 0,
+        "rect": [
+          24,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_12_from_w",
+        "half": 0,
+        "rect": [
+          48,
+          0,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_09_from_n",
+        "half": 0,
+        "rect": [
+          0,
+          24,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_10_from_e",
+        "half": 0,
+        "rect": [
+          24,
+          24,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "channel_06_from_e",
+        "half": 0,
+        "rect": [
+          48,
+          24,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "outlet_s",
+        "half": 0,
+        "rect": [
+          0,
+          48,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "spillway",
+        "half": 0,
+        "rect": [
+          24,
+          48,
+          24,
+          24
+        ]
+      },
+      {
+        "id": "spillway",
+        "half": 1,
+        "rect": [
+          48,
+          48,
+          24,
+          24
+        ]
+      }
+    ],
+    "dry": "downstream/dry_01.png",
+    "trickle": [
+      "downstream/trickle_01.png",
+      "downstream/trickle_02.png",
+      "downstream/trickle_03.png",
+      "downstream/trickle_04.png",
+      "downstream/trickle_05.png",
+      "downstream/trickle_06.png"
+    ],
+    "full": "../irrigation/tileset.json"
+  },
+  "review": {
+    "scene": "review_scene.gif",
+    "closeup": "gate_closeup.gif",
+    "states": "states_review.gif"
+  }
+}

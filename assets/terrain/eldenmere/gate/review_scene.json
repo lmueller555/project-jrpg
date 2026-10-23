@@ -1,0 +1,1454 @@
+{
+  "status": "draft",
+  "base_scene": "../terraces/review_scene.json",
+  "purpose": "Labeled gate-state art demonstration; illustrative layout, not gameplay or a fluid simulation",
+  "gate_position": [
+    264,
+    420
+  ],
+  "gate_cell": [
+    11,
+    18
+  ],
+  "ground_elevation_pixels": 24,
+  "downstream": [
+    {
+      "cell": [
+        11,
+        19
+      ],
+      "route": "channel_03_from_n",
+      "delay": 2,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        12,
+        19
+      ],
+      "route": "channel_10_from_w",
+      "delay": 4,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        13,
+        19
+      ],
+      "route": "channel_12_from_w",
+      "delay": 6,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        13,
+        20
+      ],
+      "prefab": "spillway",
+      "delay": 8,
+      "size": [
+        24,
+        48
+      ]
+    },
+    {
+      "cell": [
+        13,
+        22
+      ],
+      "route": "channel_09_from_n",
+      "delay": 12,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        12,
+        22
+      ],
+      "route": "channel_10_from_e",
+      "delay": 14,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        11,
+        22
+      ],
+      "route": "channel_06_from_e",
+      "delay": 16,
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "cell": [
+        11,
+        23
+      ],
+      "route": "outlet_s",
+      "delay": 18,
+      "size": [
+        24,
+        24
+      ]
+    }
+  ],
+  "elevation_note": "Gate and upper channels are on the same level; the existing southern spillway is the only drop. Earlier terrace layout is retained without alteration.",
+  "frames": [
+    {
+      "image": "scene_frames/frame_001.png",
+      "animation": "idle_jammed",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_002.png",
+      "animation": "idle_jammed",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_003.png",
+      "animation": "idle_jammed",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_004.png",
+      "animation": "idle_jammed",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_005.png",
+      "animation": "idle_jammed",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_006.png",
+      "animation": "idle_jammed",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_007.png",
+      "animation": "idle_jammed",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_008.png",
+      "animation": "idle_jammed",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_009.png",
+      "animation": "idle_jammed",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_010.png",
+      "animation": "idle_jammed",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_011.png",
+      "animation": "idle_jammed",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_012.png",
+      "animation": "idle_jammed",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_013.png",
+      "animation": "repair",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_014.png",
+      "animation": "repair",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_015.png",
+      "animation": "repair",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_016.png",
+      "animation": "repair",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_017.png",
+      "animation": "repair",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_018.png",
+      "animation": "repair",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_019.png",
+      "animation": "opening",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_020.png",
+      "animation": "opening",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_021.png",
+      "animation": "opening",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_022.png",
+      "animation": "opening",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_023.png",
+      "animation": "opening",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_024.png",
+      "animation": "opening",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_025.png",
+      "animation": "idle_open",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "full",
+        "trickle",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_026.png",
+      "animation": "idle_open",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "full",
+        "trickle",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_027.png",
+      "animation": "idle_open",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_028.png",
+      "animation": "idle_open",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "full",
+        "full",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_029.png",
+      "animation": "idle_open",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_030.png",
+      "animation": "idle_open",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_031.png",
+      "animation": "idle_open",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_032.png",
+      "animation": "idle_open",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_033.png",
+      "animation": "idle_open",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "dry",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_034.png",
+      "animation": "idle_open",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "trickle",
+        "dry",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_035.png",
+      "animation": "idle_open",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_036.png",
+      "animation": "idle_open",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "trickle",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_037.png",
+      "animation": "idle_open",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_038.png",
+      "animation": "idle_open",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_039.png",
+      "animation": "idle_open",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_040.png",
+      "animation": "idle_open",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_041.png",
+      "animation": "idle_open",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_042.png",
+      "animation": "idle_open",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_043.png",
+      "animation": "idle_open",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_044.png",
+      "animation": "idle_open",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_045.png",
+      "animation": "idle_open",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_046.png",
+      "animation": "idle_open",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_047.png",
+      "animation": "idle_open",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_048.png",
+      "animation": "idle_open",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_049.png",
+      "animation": "closing",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_050.png",
+      "animation": "closing",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_051.png",
+      "animation": "closing",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_052.png",
+      "animation": "closing",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_053.png",
+      "animation": "closing",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_054.png",
+      "animation": "closing",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_055.png",
+      "animation": "idle_closed",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_056.png",
+      "animation": "idle_closed",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_057.png",
+      "animation": "idle_closed",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "dry",
+        "trickle",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_058.png",
+      "animation": "idle_closed",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_059.png",
+      "animation": "idle_closed",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_060.png",
+      "animation": "idle_closed",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_061.png",
+      "animation": "idle_closed",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_062.png",
+      "animation": "idle_closed",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "full",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_063.png",
+      "animation": "idle_closed",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_064.png",
+      "animation": "idle_closed",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_065.png",
+      "animation": "idle_closed",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_066.png",
+      "animation": "idle_closed",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_067.png",
+      "animation": "jamming",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_068.png",
+      "animation": "jamming",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "full"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_069.png",
+      "animation": "jamming",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_070.png",
+      "animation": "jamming",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_071.png",
+      "animation": "jamming",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "trickle"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_072.png",
+      "animation": "jamming",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_073.png",
+      "animation": "idle_jammed",
+      "animation_frame": 0,
+      "water_phase": 0,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_074.png",
+      "animation": "idle_jammed",
+      "animation_frame": 1,
+      "water_phase": 1,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_075.png",
+      "animation": "idle_jammed",
+      "animation_frame": 2,
+      "water_phase": 2,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_076.png",
+      "animation": "idle_jammed",
+      "animation_frame": 3,
+      "water_phase": 3,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_077.png",
+      "animation": "idle_jammed",
+      "animation_frame": 4,
+      "water_phase": 4,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    },
+    {
+      "image": "scene_frames/frame_078.png",
+      "animation": "idle_jammed",
+      "animation_frame": 5,
+      "water_phase": 5,
+      "downstream_modes": [
+        "trickle",
+        "trickle",
+        "trickle",
+        "trickle",
+        "dry",
+        "dry",
+        "dry",
+        "dry"
+      ],
+      "duration_ms": 200
+    }
+  ],
+  "loop": true,
+  "cycle_duration_ms": 15600,
+  "review": {
+    "scene_scale": 3,
+    "caption_height": 48,
+    "closeup_rect": [
+      192,
+      396,
+      360,
+      600
+    ],
+    "closeup_scale": 5
+  }
+}
