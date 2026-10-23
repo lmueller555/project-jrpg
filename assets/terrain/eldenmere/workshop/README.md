@@ -1,4 +1,4 @@
-# Mira workshop exterior — review
+# Mira workshop exterior — approved
 
 - `workshop_review.gif`: 4× enlarged, 10.8-second looping exterior and upper bridge scene.
 - `workshop_review.png`: opaque RGB still of the same review.
@@ -31,5 +31,7 @@ The source recipe lives under `assets/source/terrain/eldenmere/workshop/`;
 build with `tools/build_eldenmere_workshop.py`, verify with
 `tools/test_eldenmere_workshop.py`.
 
-Status: review. This is exterior art and layout, with no workshop interior,
-engine collision, door interaction, map transfer or MQ02 solution implementation.
+Status: approved. The exterior, repair yard and ambient animations are approved
+for main. Original review images are retained as the visual approval record.
+This is exterior art and layout, with no workshop interior, engine collision,
+door interaction, map transfer or MQ02 solution implementation.

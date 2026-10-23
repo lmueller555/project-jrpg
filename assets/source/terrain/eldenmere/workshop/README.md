@@ -1,4 +1,4 @@
-# Mira workshop exterior source — review
+# Mira workshop exterior source — approved
 
 `exterior_concept.png` and `props_concept.png` retain the original generated
 sources. `recipe.json` records measured crops, native sampling sizes, landmark
@@ -35,4 +35,6 @@ PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/test_e
 
 All earlier art, the approved sanctuary, town foundation and story are read-only.
 The workshop interior, hand-cranked experiment, door interaction, transitions and
-quest implementation remain future work. This exterior awaits user review.
+quest implementation remain future work. The exterior, repair yard and ambient
+animations are approved for main. Original review images are retained as the
+visual approval record.
