@@ -1,6 +1,6 @@
 # Sized cottage interior layouts — review
 
-Three furnished interior arrangements use the user-selected 6×6, 8×6 and 10×6 floor envelopes. Layouts are review candidates, not finalized homes or named household assignments. They retain larger separate room maps, the 24px grid and original 24×36 Caelan. The older 10×8 showroom remains unchanged.
+Three furnished interior arrangements use the user-selected 10×10, 13×10 and 16×10 floor envelopes. Layouts are review candidates, not finalized homes or named household assignments. They retain larger separate room maps, the 24px grid and original 24×36 Caelan. The older 10×8 showroom remains unchanged.
 
 This milestone assembles approved native tiles, furnishings, hearth frames and exterior sprites. It creates no new painted art and never resizes source sprites. `recipe.json` retains explicit room dimensions, fixture placements, furniture source references, character positions, interaction approaches and the wide cottage's cutaway divider. Furniture and character scale is identical in every room.
 
@@ -8,17 +8,17 @@ Compact: one sleeping/living room, a short cooking corner, narrow pantry and one
 
 ## Exterior alignment
 
-The 3×3, 4×3 and 5×3 exterior ground rectangles map to floor rectangles of 144×144, 192×144 and 240×144. Walls and void add rendering space, producing room images of 192×240, 240×240 and 288×240. Floor depth stays six tiles. Door centers are projected proportionally from exterior ground coordinates and snapped to two native pixels, giving interior south-entry centers x=72,120,168 with only one pixel of registration error. The 24px entry may straddle floor tiles; the front cap is cleared exactly at its bounds.
+The 3×3, 4×3 and 5×3 exterior ground rectangles correspond to the user-selected floor rectangles of 240×240, 312×240 and 384×240. Walls and void add rendering space, producing room images of 288×336, 360×336 and 432×336. Floor depth stays ten tiles. These sizes replace the earlier smaller review; furniture counts and native sprite sizes remain unchanged. Door centers are projected proportionally from exterior ground coordinates and snapped to two native pixels, giving interior south-entry centers x=102,178,252 with at most one pixel of registration error. The 24px entry may straddle floor tiles; the front cap is cleared exactly at its bounds.
 
-Chimney centers derive from the approved base chimney position and each exterior's documented ±24px assembly offset. They land at x=132,180,228 inside the room images. The hearth's narrow chimney therefore stays on the same side and relative horizontal position as its exterior flue. All hearths stand on the same floor plane with a 44×20 base. Rear windows are separate from the front windows omitted by the cutaway south wall; no north door is added. Supports and windows are placed to stay clear of each other and the hearth.
+Chimney centers derive from the approved base chimney position and each exterior's documented ±24px assembly offset. They land at x=204,278,350 inside the room images, within half a pixel of their ideal proportional positions. The hearth's narrow chimney therefore stays on the same side and relative horizontal position as its exterior flue. All hearths stand on the same floor plane with a 44×20 base. Rear windows are separate from the front windows omitted by the cutaway south wall; no north door is added. Supports and windows are placed to stay clear of each other and the hearth.
 
-The wide room divider reuses the approved west-side wall's native 12×24 strip three times, forming a 12×72 cutaway partition. It uses the existing floor envelope and leaves a 72px opening at its south end. No new texture or automatic extra floor area is introduced.
+The wide room divider reuses the approved west-side wall's native 12×24 strip six times, forming a 12×144 cutaway partition. It uses the existing floor envelope and leaves a 96px opening at its south end. No new texture or automatic extra floor area is introduced.
 
 ## Access checks
 
 Each furnishing retains its approved suggested floor rectangle, translated into room coordinates; wall shelves do not block the floor. A conservative **24×12 floor probe** tests character standing space on a two-pixel lattice. Flood fill starts immediately inside the south entry and must reach every recorded furniture approach and Caelan's foot anchor. It accounts for all furniture, the hearth and the partition. This is layout validation and planning data, not implemented engine collision or interaction.
 
-The floor probe can traverse each entire required route, so the check covers doorway clearances rather than only point paths. It is a minimum access test, not a claim that every aisle is 48px wide. The compact remains deliberately cozy; the larger rooms provide more shared space. Chair approaches may be from the side where seating is tucked under the table. Review furniture density visually before approval.
+The floor probe can traverse each entire required route, so the check covers doorway clearances rather than only point paths. It is a minimum access test, not a claim that every aisle is 48px wide. The compact keeps a combined living/sleeping arrangement; the larger rooms provide broader separation between activities. Chair approaches may be from the side where seating is tucked under the table. Review furniture density visually before approval.
 
 ## Animation and exports
 

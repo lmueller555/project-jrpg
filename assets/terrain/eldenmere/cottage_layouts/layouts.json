@@ -13,32 +13,91 @@
     {
       "id": "compact",
       "floor_tiles": [
-        6,
-        6
+        10,
+        10
       ],
       "room": "compact/room.json"
     },
     {
       "id": "standard",
       "floor_tiles": [
-        8,
-        6
+        13,
+        10
       ],
       "room": "standard/room.json"
     },
     {
       "id": "wide",
       "floor_tiles": [
-        10,
-        6
+        16,
+        10
       ],
       "room": "wide/room.json"
     }
   ],
   "review_scale": 3,
   "review_size": [
-    2256,
-    1320
+    3336,
+    1608
+  ],
+  "review_columns": [
+    {
+      "id": "compact",
+      "room_rect": [
+        24,
+        594,
+        864,
+        1008
+      ],
+      "exterior_rect": [
+        312,
+        96,
+        288,
+        432
+      ],
+      "exterior_ground_tiles": [
+        3,
+        3
+      ]
+    },
+    {
+      "id": "standard",
+      "room_rect": [
+        912,
+        594,
+        1080,
+        1008
+      ],
+      "exterior_rect": [
+        1272,
+        96,
+        360,
+        432
+      ],
+      "exterior_ground_tiles": [
+        4,
+        3
+      ]
+    },
+    {
+      "id": "wide",
+      "room_rect": [
+        2016,
+        594,
+        1296,
+        1008
+      ],
+      "exterior_rect": [
+        2448,
+        96,
+        432,
+        432
+      ],
+      "exterior_ground_tiles": [
+        5,
+        3
+      ]
+    }
   ],
   "cycle_duration_ms": 10800,
   "frame_duration_ms": 300,

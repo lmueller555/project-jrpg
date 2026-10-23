@@ -41,7 +41,8 @@ def alignment(layout):
     cx=chimney['position'][0]+chimney['rect'][2]-chimney['rect'][0]
     cx-= (chimney['rect'][2]-chimney['rect'][0])/2
     ideal_chimney=24+(cx+offset-gx)/gw*width
-    return exterior,[centre-12,216,24,8],[round(ideal_chimney)-24,24],{
+    south=72+layout['floor_tiles'][1]*24
+    return exterior,[centre-12,south,24,8],[round(ideal_chimney)-24,24],{
         'exterior_ground_rect':exterior['ground_rect'],'ideal_entry_center_x':ideal_entry,
         'entry_center_x':centre,'ideal_chimney_center_x':ideal_chimney,
         'chimney_center_x':round(ideal_chimney),'exterior_front_window_count':exterior.get('window_count',2)}
@@ -49,17 +50,18 @@ def alignment(layout):
 
 def shell(layout,entry):
     w,h=[n*24 for n in layout['floor_tiles']];size=(w+48,h+96)
+    south=72+h
     floor=Image.new('RGBA',size);walls=Image.new('RGBA',size);fixtures=Image.new('RGBA',size)
     for row in range(h//24):
         for col in range(w//24):
             floor.alpha_composite(opened(INTERIOR/'tiles'/f"floor_{'abc'[(col+row*2)%3]}.png"),(24+col*24,72+row*24))
     for col in range(w//24):
         walls.alpha_composite(opened(INTERIOR/'tiles'/f"north_{'a' if col%2==0 else 'b'}.png"),(24+col*24,24))
-        walls.alpha_composite(opened(INTERIOR/'tiles/south_cap.png'),(24+col*24,216))
-    for y in range(72,216,24):
+        walls.alpha_composite(opened(INTERIOR/'tiles/south_cap.png'),(24+col*24,south))
+    for y in range(72,south,24):
         walls.alpha_composite(opened(INTERIOR/'tiles/west_side.png'),(0,y))
         walls.alpha_composite(opened(INTERIOR/'tiles/east_side.png'),(w+24,y))
-    for name,pos in [('northwest_corner',(0,24)),('northeast_corner',(w+24,24)),('southwest_corner',(0,216)),('southeast_corner',(w+24,216))]:
+    for name,pos in [('northwest_corner',(0,24)),('northeast_corner',(w+24,24)),('southwest_corner',(0,south)),('southeast_corner',(w+24,south))]:
         walls.alpha_composite(opened(INTERIOR/'tiles'/f'{name}.png'),pos)
     # The exterior door can land on a half-tile; clear both affected cap pieces.
     walls.paste((0,0,0,0),box(entry));walls.alpha_composite(opened(INTERIOR/'tiles/entry_threshold.png'),tuple(entry[:2]))
@@ -84,7 +86,7 @@ def navigation(size,floor_rect,objects,partition,entry,probe):
     for y in range(y0+ph//2,y0+h-ph//2+1,2):
         for x in range(x0+pw//2,x0+w-pw//2+1,2):
             if not blocked.crop((x-pw//2,y-ph//2,x+pw//2,y+ph//2)).getbbox():centres.putpixel((x,y),255)
-    start=(entry[0]+12,210);reached=set();queue=deque([start])
+    start=(entry[0]+12,entry[1]-ph//2);reached=set();queue=deque([start])
     while queue:
         x,y=queue.popleft()
         if (x,y) in reached or not (0<=x<size[0] and 0<=y<size[1]) or not centres.getpixel((x,y)):continue
@@ -103,7 +105,7 @@ def room_frames(recipe,layout):
     hearth={'id':'hearth','floor_rect':[hx+2,hy+48,44,20],'position':hearth_position,
             'frame_size':[48,72],'access':[hx+24,104],'sort_y':hy+68}
     objects.append(hearth)
-    floor_rect=[24,72,layout['floor_tiles'][0]*24,144]
+    floor_rect=[24,72,*[n*24 for n in layout['floor_tiles']]]
     blocked,centres,reached=navigation(structure.size,floor_rect,objects,layout['partition'],entry,recipe['actor_probe_size'])
     hero=opened(ROOT/'assets/characters/caelan/idle_front.png');hero_position=layout['hero_position']
     anchor=recipe['hero_foot_anchor'];hero_centre=(hero_position[0]+anchor[0],hero_position[1]+anchor[1])
@@ -154,7 +156,7 @@ def room_frames(recipe,layout):
         'room_size':list(structure.size),'floor_rect':floor_rect,'entry_rect':entry,'exterior':layout['exterior'],
         'registration':registration,'rear_windows':layout['window_positions'],'partition_rect':layout['partition'],
         'objects':objects,'hero_position':hero_position,'hero_foot_anchor':anchor,'actor_probe_size':recipe['actor_probe_size'],
-        'navigation_start':[entry[0]+12,210],'reachable_probe_positions':len(reached),
+        'navigation_start':[entry[0]+12,entry[1]-recipe['actor_probe_size'][1]//2],'reachable_probe_positions':len(reached),
         'frames':timeline,'cycle_duration_ms':10800,'loop':True,'review_scale':4,
         'engine_collision_implemented':False,'exterior_transition_implemented':False,
         'purpose':'Furnished size/layout review; no named household assigned','draw_order':'Structure and local lighting, then furnishings and character by floor-foot baseline'})
@@ -165,25 +167,35 @@ def build():
     recipe=read_json(SOURCE/'recipe.json');OUTPUT.mkdir(parents=True,exist_ok=True)
     rendered=[room_frames(recipe,layout) for layout in recipe['layouts']]
     scale=recipe['review_scale'];width=sum(frames[0].width*scale for frames,_ in rendered)+24*4
+    room_y=594;height=room_y+max(frames[0].height for frames,_ in rendered)*scale+6
+    columns=[];x=24
+    for layout,(frames,exterior) in zip(recipe['layouts'],rendered,strict=True):
+        column=frames[0].width*scale
+        ext=read_json(TERRAIN/layout['exterior']/'cottage.json')
+        columns.append({'id':layout['id'],'room_rect':[x,room_y,column,frames[0].height*scale],
+                        'exterior_rect':[x+(column-exterior.width*scale)//2,96,exterior.width*scale,exterior.height*scale],
+                        'exterior_ground_tiles':[n//24 for n in ext['ground_rect'][2:]]})
+        x+=column+24
     boards=[]
     for tick in range(36):
-        board=Image.new('RGB',(width,1320),'#e8edf2');draw=ImageDraw.Draw(board);draw.fontmode='1'
+        board=Image.new('RGB',(width,height),'#e8edf2');draw=ImageDraw.Draw(board);draw.fontmode='1'
         draw.text((24,14),f"Eldenmere cottage interiors / {recipe['status']} / same 3x pixel scale",fill='#243529',font_size=26)
         x=24
-        for layout,(frames,exterior) in zip(recipe['layouts'],rendered,strict=True):
+        for layout,(frames,exterior),column_record in zip(recipe['layouts'],rendered,columns,strict=True):
             column=frames[0].width*scale
-            draw.text((x,66),f"{layout['label']} / outside {layout['floor_tiles'][0]//2} x 3",fill='#243529',font_size=23)
+            ew,eh=column_record['exterior_ground_tiles']
+            draw.text((x,66),f"{layout['label']} / outside {ew} x {eh}",fill='#243529',font_size=23)
             board.paste(enlarged(exterior,scale),(x+(column-exterior.width*scale)//2,96),enlarged(exterior,scale))
-            draw.text((x,554),f"Interior floor {layout['floor_tiles'][0]} x 6 / 24px tiles",fill='#243529',font_size=23)
-            board.paste(enlarged(frames[tick],scale),(x,594));x+=column+24
+            draw.text((x,554),f"Interior floor {layout['floor_tiles'][0]} x {layout['floor_tiles'][1]} / 24px tiles",fill='#243529',font_size=23)
+            board.paste(enlarged(frames[tick],scale),(x,room_y));x+=column+24
         boards.append(board)
     boards[0].save(OUTPUT/'layouts_review.png');save_loop(OUTPUT/'layouts_review.gif',boards,{'duration_ms':300})
     write_json(OUTPUT/'layouts.json',{'id':recipe['id'],'status':recipe['status'],'tile_size':[24,24],
         'character_frame_size':[24,36],'layouts':[{'id':r['id'],'floor_tiles':r['floor_tiles'],'room':f"{r['id']}/room.json"} for r in recipe['layouts']],
-        'review_scale':scale,'review_size':list(boards[0].size),'cycle_duration_ms':10800,'frame_duration_ms':300,
+        'review_scale':scale,'review_size':list(boards[0].size),'review_columns':columns,'cycle_duration_ms':10800,'frame_duration_ms':300,
         'source_recipe':'../../../source/terrain/eldenmere/cottage_layouts/recipe.json',
         'native_art_rescaled':False,'household_assignments':None})
-    print('Built 6x6, 8x6 and 10x6 furnished layouts; all furnishing approaches reachable by a 24x12 floor probe.')
+    print('Built '+', '.join('x'.join(map(str,r['floor_tiles'])) for r in recipe['layouts'])+' furnished layouts; all furnishing approaches reachable by a 24x12 floor probe.')
 
 
 if __name__=='__main__':build()

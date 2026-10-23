@@ -2,22 +2,22 @@
   "id": "compact",
   "status": "review",
   "floor_tiles": [
-    6,
-    6
+    10,
+    10
   ],
   "room_size": [
-    192,
-    240
+    288,
+    336
   ],
   "floor_rect": [
     24,
     72,
-    144,
-    144
+    240,
+    240
   ],
   "entry_rect": [
-    60,
-    216,
+    90,
+    312,
     24,
     8
   ],
@@ -29,15 +29,15 @@
       72,
       72
     ],
-    "ideal_entry_center_x": 71.0,
-    "entry_center_x": 72,
-    "ideal_chimney_center_x": 132.0,
-    "chimney_center_x": 132,
+    "ideal_entry_center_x": 102.33333333333333,
+    "entry_center_x": 102,
+    "ideal_chimney_center_x": 204.0,
+    "chimney_center_x": 204,
     "exterior_front_window_count": 1
   },
   "rear_windows": [
     [
-      60,
+      84,
       30
     ]
   ],
@@ -48,12 +48,12 @@
       "pack": "cottage_furniture",
       "sprite": "bed",
       "position": [
-        24,
-        72
+        36,
+        96
       ],
       "access": [
-        76,
-        114
+        88,
+        138
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
       "frame_size": [
@@ -61,24 +61,24 @@
         72
       ],
       "floor_rect": [
-        32,
-        90,
+        44,
+        114,
         32,
         48
       ],
-      "sort_y": 138
+      "sort_y": 162
     },
     {
       "id": "counter",
       "pack": "cottage_kitchen",
       "sprite": "counter",
       "position": [
-        108,
-        96
+        180,
+        120
       ],
       "access": [
-        132,
-        150
+        204,
+        174
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png",
       "frame_size": [
@@ -86,12 +86,12 @@
         48
       ],
       "floor_rect": [
-        110,
-        116,
+        182,
+        140,
         44,
         22
       ],
-      "sort_y": 138
+      "sort_y": 162
     },
     {
       "id": "pantry",
@@ -99,11 +99,11 @@
       "sprite": "pantry",
       "position": [
         36,
-        144
+        204
       ],
       "access": [
         48,
-        202
+        262
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png",
       "frame_size": [
@@ -112,23 +112,23 @@
       ],
       "floor_rect": [
         37,
-        174,
+        234,
         22,
         16
       ],
-      "sort_y": 190
+      "sort_y": 250
     },
     {
       "id": "table",
       "pack": "cottage_furniture",
       "sprite": "table",
       "position": [
-        108,
-        156
+        156,
+        228
       ],
       "access": [
-        132,
-        160
+        180,
+        216
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
       "frame_size": [
@@ -136,24 +136,24 @@
         48
       ],
       "floor_rect": [
-        108,
-        172,
+        156,
+        244,
         48,
         26
       ],
-      "sort_y": 198
+      "sort_y": 270
     },
     {
       "id": "chair",
       "pack": "cottage_furniture",
       "sprite": "chair_right",
       "position": [
-        84,
-        168
+        132,
+        240
       ],
       "access": [
-        96,
-        210
+        144,
+        286
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
       "frame_size": [
@@ -161,23 +161,23 @@
         36
       ],
       "floor_rect": [
-        87,
-        186,
+        135,
+        258,
         18,
         16
       ],
-      "sort_y": 202
+      "sort_y": 274
     },
     {
       "id": "hearth",
       "floor_rect": [
-        110,
+        182,
         72,
         44,
         20
       ],
       "position": [
-        108,
+        180,
         24
       ],
       "frame_size": [
@@ -185,15 +185,15 @@
         72
       ],
       "access": [
-        132,
+        204,
         104
       ],
       "sort_y": 92
     }
   ],
   "hero_position": [
-    60,
-    144
+    96,
+    192
   ],
   "hero_foot_anchor": [
     12,
@@ -204,10 +204,10 @@
     12
   ],
   "navigation_start": [
-    72,
-    210
+    102,
+    306
   ],
-  "reachable_probe_positions": 1816,
+  "reachable_probe_positions": 9896,
   "frames": [
     {
       "image": "scene_frames/frame_01.png",

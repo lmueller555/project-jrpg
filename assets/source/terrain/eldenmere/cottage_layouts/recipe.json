@@ -15,24 +15,24 @@
       "id": "compact",
       "label": "Compact",
       "floor_tiles": [
-        6,
-        6
+        10,
+        10
       ],
       "exterior": "cottage_shapes/compact/slate",
       "window_positions": [
         [
-          60,
+          84,
           30
         ]
       ],
       "supports": [
         24,
-        96,
-        162
+        144,
+        258
       ],
       "hero_position": [
-        60,
-        144
+        96,
+        192
       ],
       "partition": null,
       "objects": [
@@ -41,12 +41,12 @@
           "pack": "cottage_furniture",
           "sprite": "bed",
           "position": [
-            24,
-            72
+            36,
+            96
           ],
           "access": [
-            76,
-            114
+            88,
+            138
           ]
         },
         {
@@ -54,12 +54,12 @@
           "pack": "cottage_kitchen",
           "sprite": "counter",
           "position": [
-            108,
-            96
+            180,
+            120
           ],
           "access": [
-            132,
-            150
+            204,
+            174
           ]
         },
         {
@@ -68,11 +68,11 @@
           "sprite": "pantry",
           "position": [
             36,
-            144
+            204
           ],
           "access": [
             48,
-            202
+            262
           ]
         },
         {
@@ -80,12 +80,12 @@
           "pack": "cottage_furniture",
           "sprite": "table",
           "position": [
-            108,
-            156
+            156,
+            228
           ],
           "access": [
-            132,
-            160
+            180,
+            216
           ]
         },
         {
@@ -93,12 +93,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_right",
           "position": [
-            84,
-            168
+            132,
+            240
           ],
           "access": [
-            96,
-            210
+            144,
+            286
           ]
         }
       ]
@@ -107,25 +107,25 @@
       "id": "standard",
       "label": "Standard",
       "floor_tiles": [
-        8,
-        6
+        13,
+        10
       ],
       "exterior": "cottage",
       "window_positions": [
         [
-          48,
+          72,
           30
         ]
       ],
       "supports": [
         24,
-        84,
-        144,
-        210
+        132,
+        228,
+        330
       ],
       "hero_position": [
-        84,
-        120
+        132,
+        168
       ],
       "partition": null,
       "objects": [
@@ -134,12 +134,12 @@
           "pack": "cottage_furniture",
           "sprite": "bed",
           "position": [
-            24,
-            72
+            36,
+            96
           ],
           "access": [
-            76,
-            114
+            88,
+            138
           ]
         },
         {
@@ -147,12 +147,12 @@
           "pack": "cottage_storage",
           "sprite": "cupboard",
           "position": [
-            24,
-            144
+            36,
+            216
           ],
           "access": [
-            48,
-            202
+            60,
+            274
           ]
         },
         {
@@ -160,11 +160,11 @@
           "pack": "cottage_storage",
           "sprite": "shelf",
           "position": [
-            96,
+            156,
             40
           ],
           "access": [
-            120,
+            180,
             84
           ]
         },
@@ -173,12 +173,12 @@
           "pack": "cottage_kitchen",
           "sprite": "counter",
           "position": [
-            156,
-            108
+            254,
+            132
           ],
           "access": [
-            180,
-            162
+            278,
+            186
           ]
         },
         {
@@ -186,12 +186,12 @@
           "pack": "cottage_kitchen",
           "sprite": "washbasin",
           "position": [
-            132,
-            72
+            218,
+            84
           ],
           "access": [
-            144,
-            116
+            230,
+            128
           ]
         },
         {
@@ -199,12 +199,12 @@
           "pack": "cottage_furniture",
           "sprite": "table",
           "position": [
-            144,
-            156
+            216,
+            228
           ],
           "access": [
-            168,
-            160
+            240,
+            216
           ]
         },
         {
@@ -212,12 +212,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_right",
           "position": [
-            120,
-            156
+            192,
+            228
           ],
           "access": [
-            132,
-            202
+            204,
+            274
           ]
         },
         {
@@ -225,12 +225,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_left",
           "position": [
-            192,
-            156
+            264,
+            228
           ],
           "access": [
-            204,
-            202
+            276,
+            274
           ]
         }
       ]
@@ -239,34 +239,35 @@
       "id": "wide",
       "label": "Wide",
       "floor_tiles": [
-        10,
-        6
+        16,
+        10
       ],
       "exterior": "cottage_shapes/wide/slate",
       "window_positions": [
         [
-          36,
+          60,
           30
         ],
         [
-          168,
+          252,
           30
         ]
       ],
       "supports": [
         24,
-        120,
-        258
+        168,
+        288,
+        402
       ],
       "hero_position": [
-        132,
-        108
+        204,
+        168
       ],
       "partition": [
-        120,
+        168,
         72,
         12,
-        72
+        144
       ],
       "objects": [
         {
@@ -274,12 +275,12 @@
           "pack": "cottage_furniture",
           "sprite": "bed",
           "position": [
-            24,
-            84
+            36,
+            96
           ],
           "access": [
-            76,
-            126
+            88,
+            138
           ]
         },
         {
@@ -287,11 +288,11 @@
           "pack": "cottage_storage",
           "sprite": "cupboard",
           "position": [
-            72,
+            108,
             60
           ],
           "access": [
-            96,
+            132,
             118
           ]
         },
@@ -300,11 +301,11 @@
           "pack": "cottage_storage",
           "sprite": "shelf",
           "position": [
-            72,
+            108,
             40
           ],
           "access": [
-            96,
+            132,
             118
           ]
         },
@@ -313,11 +314,11 @@
           "pack": "cottage_kitchen",
           "sprite": "pantry",
           "position": [
-            144,
+            204,
             60
           ],
           "access": [
-            156,
+            216,
             118
           ]
         },
@@ -326,12 +327,12 @@
           "pack": "cottage_kitchen",
           "sprite": "counter",
           "position": [
-            204,
-            108
+            326,
+            132
           ],
           "access": [
-            228,
-            162
+            350,
+            186
           ]
         },
         {
@@ -339,12 +340,12 @@
           "pack": "cottage_kitchen",
           "sprite": "washbasin",
           "position": [
-            180,
-            72
+            288,
+            84
           ],
           "access": [
-            192,
-            116
+            300,
+            128
           ]
         },
         {
@@ -352,12 +353,12 @@
           "pack": "cottage_furniture",
           "sprite": "table",
           "position": [
-            168,
-            156
+            270,
+            228
           ],
           "access": [
-            192,
-            160
+            294,
+            216
           ]
         },
         {
@@ -365,12 +366,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_right",
           "position": [
-            144,
-            156
+            246,
+            228
           ],
           "access": [
-            156,
-            202
+            258,
+            274
           ]
         },
         {
@@ -378,12 +379,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_left",
           "position": [
-            216,
-            156
+            318,
+            228
           ],
           "access": [
-            228,
-            202
+            330,
+            274
           ]
         },
         {
@@ -391,12 +392,12 @@
           "pack": "cottage_furniture",
           "sprite": "chair_up",
           "position": [
-            180,
-            180
+            282,
+            252
           ],
           "access": [
-            214,
-            206
+            316,
+            278
           ]
         }
       ]

@@ -24,15 +24,16 @@ class CottageLayoutTests(unittest.TestCase):
         cls.rooms=[load(PACK/r['room']) for r in cls.index['layouts']]
 
     def test_exact_floor_envelopes_and_exterior_door_chimney_registration(self):
-        self.assertEqual([r['floor_tiles'] for r in self.rooms],[[6,6],[8,6],[10,6]])
-        self.assertEqual([r['entry_rect'][0]+12 for r in self.rooms],[72,120,168])
+        self.assertEqual([r['floor_tiles'] for r in self.rooms],[[10,10],[13,10],[16,10]])
+        self.assertEqual([r['entry_rect'][0]+12 for r in self.rooms],[102,178,252])
         base=load(TERRAIN/'cottage/cottage.json')
         chimney=next(r for r in base['components'] if r['id']=='chimney')
         for room in self.rooms:
             pack=PACK/room['id'];ext=load(TERRAIN/room['exterior']/'cottage.json')
-            x,y,w,h=room['floor_rect'];self.assertEqual((x,y,h),(24,72,144))
-            self.assertEqual(room['room_size'],[w+48,240])
-            self.assertEqual([w,h],[ext['ground_rect'][2]*2,ext['ground_rect'][3]*2])
+            x,y,w,h=room['floor_rect'];self.assertEqual((x,y,h),(24,72,240))
+            self.assertEqual(room['room_size'],[w+48,h+96])
+            self.assertEqual([w,h],[n*24 for n in room['floor_tiles']])
+            self.assertEqual(room['entry_rect'][1],y+h)
             floor=opened(pack/'floor.png')
             self.assertEqual(sum(p>0 for p in floor.getchannel('A').get_flattened_data()),w*h)
             gx=ext['ground_rect'][0];width=ext['ground_rect'][2]
@@ -41,7 +42,7 @@ class CottageLayoutTests(unittest.TestCase):
             cx=chimney['position'][0]+(chimney['rect'][2]-chimney['rect'][0])/2
             desired_chimney=24+(cx+ext.get('animation_offset_from_source',[0,0])[0]-gx)/width*w
             hearth=next(r for r in room['objects'] if r['id']=='hearth')
-            self.assertEqual(hearth['position'][0]+24,desired_chimney)
+            self.assertLessEqual(abs(hearth['position'][0]+24-desired_chimney),.5)
             ex,ey,ew,eh=room['entry_rect']
             self.assertEqual(opened(pack/'walls.png').crop((ex,ey,ex+ew,ey+eh)).tobytes(),opened(TERRAIN/'cottage_interior/tiles/entry_threshold.png').tobytes())
 
@@ -64,8 +65,8 @@ class CottageLayoutTests(unittest.TestCase):
             if room['partition_rect']:
                 x,y,w,h=room['partition_rect'];bounds=(x,y,x+w,y+h)
                 self.assertIsNone(occupied.crop(bounds).getbbox());occupied.paste(255,bounds)
-                self.assertEqual((w,h),(12,72))
-                self.assertEqual(216-(y+h),72)
+                self.assertEqual((w,h),(12,144))
+                self.assertEqual(room['floor_rect'][1]+room['floor_rect'][3]-(y+h),96)
             self.assertEqual(occupied.tobytes(),Image.open(pack/'blocking.png').convert('L').tobytes())
 
     def test_full_width_character_probe_reaches_all_furniture_and_hero(self):
@@ -129,16 +130,25 @@ class CottageLayoutTests(unittest.TestCase):
     def test_comparison_preserves_same_pixel_scale_and_exterior_pairing(self):
         tick=0
         with Image.open(PACK/'layouts_review.gif') as gif:
-            self.assertEqual(gif.info['loop'],0);self.assertEqual(gif.size,(2256,1320))
+            self.assertEqual(gif.info['loop'],0);self.assertEqual(gif.size,(3336,1608))
+            self.assertEqual(self.index['review_scale'],3)
             for index in range(gif.n_frames):
                 gif.seek(index);duration=gif.info['duration'];self.assertEqual(duration%300,0)
                 for phase in range(tick,tick+duration//300):
-                    x=24
-                    for room in self.rooms:
+                    for room,column in zip(self.rooms,self.index['review_columns'],strict=True):
+                        self.assertEqual(room['id'],column['id'])
                         frame=opened(PACK/room['id']/room['frames'][phase]['image']).convert('RGB')
                         expected=frame.resize((frame.width*3,frame.height*3),Image.Resampling.NEAREST)
-                        self.assertEqual(gif.convert('RGB').crop((x,594,x+expected.width,594+expected.height)).tobytes(),expected.tobytes())
-                        x+=expected.width+24
+                        x,y,w,h=column['room_rect'];self.assertEqual(expected.size,(w,h))
+                        self.assertEqual(gif.convert('RGB').crop((x,y,x+w,y+h)).tobytes(),expected.tobytes())
+                        if phase==0:
+                            exterior=opened(TERRAIN/room['exterior']/'closed.png')
+                            cell=Image.new('RGBA',exterior.size,'#e8edf2');cell.alpha_composite(exterior)
+                            cell=cell.convert('RGB').resize((exterior.width*3,exterior.height*3),Image.Resampling.NEAREST)
+                            ex,ey,ew,eh=column['exterior_rect'];self.assertEqual(cell.size,(ew,eh))
+                            self.assertEqual(gif.convert('RGB').crop((ex,ey,ex+ew,ey+eh)).tobytes(),cell.tobytes())
+                            ext=load(TERRAIN/room['exterior']/'cottage.json')
+                            self.assertEqual(column['exterior_ground_tiles'],[n//24 for n in ext['ground_rect'][2:]])
                 tick+=duration//300
             self.assertEqual(tick*300,10800)
             gif.seek(0);self.assertEqual(gif.convert('RGB').tobytes(),opened(PACK/'layouts_review.png').convert('RGB').tobytes())
