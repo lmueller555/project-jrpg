@@ -1,0 +1,267 @@
+{
+  "id": "eldenmere.reeds.starter.24",
+  "status": "review",
+  "source": "materials_concept.png",
+  "tile_size": 24,
+  "frame_count": 9,
+  "duration_ms": 600,
+  "scene_duration_ms": 200,
+  "scene_frame_count": 54,
+  "scene_scale": 2,
+  "scene_closeup": [
+    216,
+    0,
+    744,
+    576
+  ],
+  "scene_closeup_scale": 3,
+  "alpha_coverage_threshold": 48,
+  "palette": {
+    "greens": {
+      "deep": "#304c3e",
+      "shadow": "#405f45",
+      "mid": "#557546",
+      "base": "#6f8b50",
+      "light": "#8fa362",
+      "highlight": "#b2bb77"
+    },
+    "seedheads": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    }
+  },
+  "plants": [
+    {
+      "id": "tall",
+      "source_crop": [
+        269,
+        103,
+        753,
+        924
+      ],
+      "sample_size": [
+        20,
+        36
+      ],
+      "sample_position": [
+        2,
+        10
+      ],
+      "frame_size": [
+        24,
+        48
+      ],
+      "ground_rect": [
+        0,
+        24,
+        24,
+        24
+      ],
+      "fixed_rows_from": 44,
+      "seedheads": true,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            10,
+            26
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            26,
+            36
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            36,
+            44
+          ]
+        }
+      ],
+      "seedheads_bottom": 26
+    },
+    {
+      "id": "short",
+      "source_crop": [
+        908,
+        468,
+        1297,
+        925
+      ],
+      "sample_size": [
+        18,
+        21
+      ],
+      "sample_position": [
+        3,
+        1
+      ],
+      "frame_size": [
+        24,
+        24
+      ],
+      "ground_rect": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "fixed_rows_from": 20,
+      "seedheads": false,
+      "bands": [
+        {
+          "id": "upper",
+          "rows": [
+            1,
+            12
+          ]
+        },
+        {
+          "id": "middle",
+          "rows": [
+            12,
+            17
+          ]
+        },
+        {
+          "id": "lower",
+          "rows": [
+            17,
+            20
+          ]
+        }
+      ],
+      "seedheads_bottom": 0
+    }
+  ],
+  "poses": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "instances": [
+    {
+      "plant": "tall",
+      "position": [
+        288,
+        24
+      ],
+      "phase_offset": 0,
+      "bank": "stream",
+      "ground_elevation_pixels": 24,
+      "water_surface_elevation_pixels": 16
+    },
+    {
+      "plant": "tall",
+      "position": [
+        456,
+        120
+      ],
+      "phase_offset": 2,
+      "bank": "stream",
+      "ground_elevation_pixels": 24,
+      "water_surface_elevation_pixels": 16
+    },
+    {
+      "plant": "short",
+      "position": [
+        312,
+        264
+      ],
+      "phase_offset": 1,
+      "bank": "stream",
+      "ground_elevation_pixels": 24,
+      "water_surface_elevation_pixels": 16
+    },
+    {
+      "plant": "short",
+      "position": [
+        384,
+        312
+      ],
+      "phase_offset": 3,
+      "bank": "stream",
+      "ground_elevation_pixels": 24,
+      "water_surface_elevation_pixels": 16
+    },
+    {
+      "plant": "tall",
+      "position": [
+        696,
+        192
+      ],
+      "phase_offset": 4,
+      "bank": "mill_race",
+      "ground_elevation_pixels": 24,
+      "water_surface_elevation_pixels": 17
+    },
+    {
+      "plant": "tall",
+      "position": [
+        336,
+        432
+      ],
+      "phase_offset": 2,
+      "bank": "upper_irrigation",
+      "ground_elevation_pixels": 24
+    },
+    {
+      "plant": "short",
+      "position": [
+        312,
+        432
+      ],
+      "phase_offset": 0,
+      "bank": "upper_irrigation",
+      "ground_elevation_pixels": 24
+    }
+  ]
+}

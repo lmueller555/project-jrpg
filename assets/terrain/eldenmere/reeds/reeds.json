@@ -1,0 +1,25 @@
+{
+  "id": "eldenmere.reeds.starter.24",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "plants": [
+    {
+      "id": "tall",
+      "metadata": "tall/reeds.json"
+    },
+    {
+      "id": "short",
+      "metadata": "short/reeds.json"
+    }
+  ],
+  "cycle_duration_ms": 5400,
+  "wind_direction": "E",
+  "review": {
+    "plants": "reeds_review.gif",
+    "banks": "banks_closeup.gif",
+    "scene": "review_scene.gif"
+  }
+}
