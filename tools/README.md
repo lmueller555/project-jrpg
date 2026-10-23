@@ -4,6 +4,8 @@ Build Mother Serene's front idle with `python tools/build_serene_idle.py`. The r
 
 Build her left, right and back idles with `python tools/build_serene_directional_idles.py`. It reads the retained turnaround source and `turnaround_export.json`, reuses the approved palette, and exports three 24×36 frames, per-view metadata, twelve source layers, a native 96×36 four-direction sheet, individual 24× previews, a 24× three-view board and a 12× four-view comparison. The approved front is read only. Assertions cover frame dimensions, hard alpha, palette, foot baseline, layer reconstruction and the absence of brown iris pixels on the back. Existing per-view approval statuses survive rebuilding. This adds still poses only.
 
+Build Serene's first front walk with `python tools/build_serene_walk.py`. Its recipe in `assets/characters/serene/walk_front/` combines the approved idle and palette with shared front stride/arm masks and the existing dress leg adapter. Costume rows preserve the linen apron, pocket and patch, while the whole shoulder mantle follows the head's passing bob. Outputs include four native frames, a 96×36 sheet, metadata, source layers, a 20× GIF, 12× frame strip and synchronized 16× Caelan comparison. Run `python tools/test_serene_walk.py` to check shared visible leg silhouettes/timing, unchanged head/shoulder/neck appearance, both eyes, patch visibility, palette/hard alpha, layer/sheet reconstruction and pixel-exact opaque GIF playback. Approved idles and templates remain read only.
+
 The walk builder assembles character-specific source parts against retained semantic pose masks from Caelan's approved cycles.
 
 ```sh

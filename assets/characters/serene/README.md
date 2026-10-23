@@ -18,4 +18,8 @@ Review images retain their original review labels as a record of the approved ar
 
 `idle_turnaround_review.png` shows the three new views at 24×. `idle_all_review.png` compares them with the unchanged approved front at 12×. `idle_all.png` is a 96×36 transparent sheet ordered front, left, right, back; `idle_all.json` records each frame's independent status and rectangle.
 
-Rebuild these views and boards with `python tools/build_serene_directional_idles.py`. It preserves existing approval statuses and reads the approved front and palette without rewriting them. Walking animations are a later milestone.
+Rebuild these views and boards with `python tools/build_serene_directional_idles.py`. It preserves existing approval statuses and reads the approved front and palette without rewriting them.
+
+## Front walk — awaiting review
+
+`walk_front/` adds the first four-phase walk, assembled from the approved appearance and shared front stride. It includes a 20× looping preview, a 12× frame strip, native sheet, metadata and recipe. The head and shoulder mantle bob together; apron details remain visible through the skirt sway. Run `python tools/build_serene_walk.py` and `python tools/test_serene_walk.py`. Approved idle artwork remains unchanged.

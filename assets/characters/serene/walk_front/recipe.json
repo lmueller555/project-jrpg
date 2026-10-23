@@ -1,0 +1,238 @@
+{
+  "character": "serene",
+  "direction": "front",
+  "approval_status": "review",
+  "idle": "../idle_front.png",
+  "palette": "../palette.json",
+  "template": "../../../templates/humanoid_24x36/walk_front/poses.json",
+  "parts_directory": "../../../source/characters/serene/walk_front/parts",
+  "idle_eye_pixels": [
+    [
+      9,
+      10
+    ],
+    [
+      14,
+      10
+    ]
+  ],
+  "costume_poses": [
+    {
+      "id": "01",
+      "skirt_rows": [
+        [
+          21,
+          7,
+          17,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          6,
+          18,
+          1
+        ],
+        [
+          25,
+          5,
+          19,
+          1
+        ],
+        [
+          26,
+          5,
+          19,
+          1
+        ],
+        [
+          27,
+          4,
+          20,
+          1
+        ],
+        [
+          28,
+          6,
+          18,
+          1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 28
+      }
+    },
+    {
+      "id": "02",
+      "skirt_rows": [
+        [
+          21,
+          7,
+          17,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          6,
+          18,
+          0
+        ],
+        [
+          25,
+          5,
+          19,
+          0
+        ],
+        [
+          26,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          6,
+          18,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 32,
+        "right": 28
+      }
+    },
+    {
+      "id": "03",
+      "skirt_rows": [
+        [
+          21,
+          7,
+          17,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          6,
+          18,
+          -1
+        ],
+        [
+          25,
+          5,
+          19,
+          -1
+        ],
+        [
+          26,
+          5,
+          19,
+          -1
+        ],
+        [
+          27,
+          4,
+          20,
+          -1
+        ],
+        [
+          28,
+          6,
+          18,
+          -1
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 28,
+        "right": 32
+      }
+    },
+    {
+      "id": "04",
+      "skirt_rows": [
+        [
+          21,
+          7,
+          17,
+          0
+        ],
+        [
+          22,
+          7,
+          17,
+          0
+        ],
+        [
+          23,
+          7,
+          17,
+          0
+        ],
+        [
+          24,
+          6,
+          18,
+          0
+        ],
+        [
+          25,
+          5,
+          19,
+          0
+        ],
+        [
+          26,
+          5,
+          19,
+          0
+        ],
+        [
+          28,
+          6,
+          18,
+          0
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 28,
+        "right": 32
+      }
+    }
+  ],
+  "notes": "Shared Caelan stride and 140 ms phases; head and full shoulder mantle shift together by one pixel on passing poses. Sage sleeves with linen cuffs. Apron/pocket/patch use approved idle pixels. Contact hem at 28, passing at 27; passing rows preserve both patch rows, shortening the green hem instead. No idle or shared template is rewritten."
+}
