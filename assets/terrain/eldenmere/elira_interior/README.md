@@ -1,4 +1,4 @@
-# Elira's bridge cottage — review
+# Elira's bridge cottage — approved
 
 Furnished compact 10×10-floor cottage with memorial festival lantern, high shelf and two-step stool for the opening delivery quest. Native terrain is 24px; Caelan remains 24×36. All approved furnishings, the room envelope, entry, chimney and character placement are preserved.
 
@@ -13,4 +13,4 @@ Furnished compact 10×10-floor cottage with memorial festival lantern, high shel
 
 The lantern occupies a clear space between the approved shelf's books and pottery. After retrieval, the same shelf stays in place and only the lantern disappears. The fixed stool remains beneath it. Existing fire and daylight animate identically in both panels; the lantern is stored unlit. This illustrates quest asset states, not a playable retrieval or climbing animation.
 
-Rebuild with `tools/build_elira_interior.py`; validate with `tools/test_elira_interior.py`. Retained source, palette and crop recipe are under `assets/source/terrain/eldenmere/elira_interior/`. This household dressing awaits review; no changes have been merged into main.
+Rebuild with `tools/build_elira_interior.py`; validate with `tools/test_elira_interior.py`. Retained source, palette and crop recipe are under `assets/source/terrain/eldenmere/elira_interior/`. The lantern, stool and before/after household dressing are approved for main.

@@ -1,6 +1,6 @@
-# Elira's compact cottage — review
+# Elira's compact cottage — approved
 
-The opening quest's bridge cottage uses the approved 10×10 floor template. This pack adds an unlit portable memorial lantern, a small fixed two-step stool and two shelf states. Halden's standard and the Venn family's wide interiors are proposed follow-on work and are not built here.
+The opening quest's bridge cottage uses the approved 10×10 floor template. This approved pack adds an unlit portable memorial lantern, a small fixed two-step stool and two shelf states. Halden's standard and the Venn family's wide interiors are proposed follow-on work and are not built here.
 
 `props_concept.png` is the retained image-generated source. `recipe.json` records the exact transparent source crops, nearest-neighbor sample sizes and material palette; the builder makes sampled alpha binary at a threshold of 128. `parts/` retains native exported props. The lantern is 12×24 with a 10×20 painted silhouette; the stool is 24×24. Exporting does not rescale previous artwork.
 
