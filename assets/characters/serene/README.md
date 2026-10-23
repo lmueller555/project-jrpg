@@ -12,7 +12,7 @@ The source concepts and reproducible export recipes are under `assets/source/cha
 
 Review images retain their original review labels as a record of the approved artwork.
 
-## Directional idles — awaiting review
+## Directional idles — approved
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` add three native 24×36 still poses. Each has its own metadata and opaque 24× review PNG. Profiles have one brown eye and a silver temple; the back has no eyes, a visible bun, a short mantle and a sage skirt with a buttoned apron waist fastening. No cloth ties are present.
 
