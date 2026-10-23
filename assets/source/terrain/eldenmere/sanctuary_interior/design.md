@@ -1,4 +1,4 @@
-# Sanctuary interior design rationale — proposed for review
+# Sanctuary interior design rationale — approved
 
 The source is the approved opening quest, especially S01–S03 and S07. The player
 should see a home before receiving work. Family affection, curiosity, modest
@@ -45,7 +45,7 @@ Kitchen storage, a sideboard, bread, washbasin and a quiet steaming kettle sugge
 an early start to ordinary work. The reused animated hearth sits at the right,
 consistent with the sanctuary exterior's kitchen chimney. Separate preparation
 tables hold medicine for Halden, food and oil for Elira, and produce/linens for
-the Venn household. These are readable visual proposals for the approved supply
+the Venn household. This is approved visual dressing for the existing supply
 abstraction, not new inventory quantities or mandatory pickup mechanics. They
 preserve Halden as the first visit and the subsequent flexible household order.
 
@@ -65,5 +65,6 @@ kettle puffs provide movement without shifting furniture or characters.
 
 The opening remains warm and peaceful. No new religious symbol, divine claim,
 excavation clue, warning text, catastrophe imagery or compulsory side task is
-introduced. Story files remain unchanged; room dressing and new props await
-the user's visual review.
+introduced. Story files remain unchanged. The room dressing, new props,
+connections and ambient animations are approved for main; original review
+images remain as the visual approval record.

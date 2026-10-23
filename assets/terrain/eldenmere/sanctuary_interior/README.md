@@ -1,10 +1,10 @@
-# Sanctuary interiors — review
+# Sanctuary interiors — approved
 
 - `interiors_review.gif` / `.png`: synchronized comparison at the same 2× scale.
 - `bedroom/room_review.gif` / `.png`: 4× bedroom review.
 - `hall/room_review.gif` / `.png`: 4× hall and reading nook review.
 - `dining/room_review.gif` / `.png`: 4× communal kitchen/dining review.
-- `connections_review.png`: proposed room and courtyard connections.
+- `connections_review.png`: approved room and courtyard connections.
 
 The floors are 10×10, 12×10 and 16×10 at 24px. Each native room has a 48px
 north wall above its floor, a cutaway front and an unchanged 24×36 Caelan for
@@ -31,10 +31,12 @@ collision or map-transfer implementations.
 
 Six approved bedroom inspect lines are retained in object metadata. Medicine,
 food/oil and care bundles correspond to Halden, Elira and Venn. Other story
-annotations explain the proposed visual meaning, not new canonical dialogue.
+annotations explain the approved visual meaning, not new canonical dialogue.
 Detailed rationale and retained sources are under
 `assets/source/terrain/eldenmere/sanctuary_interior/`.
 
 Build: `tools/build_eldenmere_sanctuary_interior.py`.
 Verify: `tools/test_eldenmere_sanctuary_interior.py`.
-Status: review; all prior assets and narrative files remain unchanged.
+Status: approved. The furnishings, room layouts, connections and ambient
+animations are approved for main. Original review images remain as the visual
+approval record; all prior assets and narrative files remain unchanged.

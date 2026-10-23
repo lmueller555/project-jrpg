@@ -1,4 +1,4 @@
-# Sanctuary interior source — review
+# Sanctuary interior source — approved
 
 This first sanctuary interior pack supports the approved opening's bedroom,
 breakfast, request and return scenes. Three retained transparent prop atlases
@@ -18,8 +18,8 @@ The separate expanded room maps have 10×10, 12×10 and 16×10-tile floors:
 
 The tone is ordinary warmth, ongoing care, curiosity and family belonging.
 Six bedroom inspection lines are copied verbatim from the approved S01 script
-in `docs/narrative/game_01/CH01_MQ01.md`. New visual interpretations and room
-layouts remain review proposals; they add no required inspection checklist,
+in `docs/narrative/game_01/CH01_MQ01.md`. The visual interpretations and room
+layouts are approved; they add no required inspection checklist,
 named NPC design, religious doctrine, future warning text or plot revelation.
 See `design.md` for the story rationale and staging notes.
 
@@ -36,6 +36,7 @@ PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_
 PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/test_eldenmere_sanctuary_interior.py
 ```
 
-Every prior asset and narrative input remains read-only. This is a furnished
-art/layout review. Room transfers, doors, dialogue triggers, quest state,
+Every prior asset and narrative input remains read-only. The furnishings, room
+layouts, connections and ambient animations are approved for main. Original
+review images remain as the visual approval record. Room transfers, doors, dialogue triggers, quest state,
 sleeping/sitting poses, audio and the remaining cast require game integration.
