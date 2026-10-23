@@ -1,0 +1,27 @@
+{
+  "id": "eldenmere.cottage_furniture.basic.24",
+  "status": "review",
+  "source": "furniture_concept.png",
+  "palette": {
+    "outline": "#45382d",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "wood_light": "#a08158",
+    "wood_worn": "#b79a6c",
+    "linen_shadow": "#d3c6a4",
+    "linen_light": "#e1d6bc",
+    "quilt_shadow": "#566b50",
+    "quilt_base": "#7b9065",
+    "quilt_light": "#a1ae83"
+  },
+  "samples": [
+    {"id": "bed", "crop": [110,190,442,822], "size": [32,60], "frame_size": [48,72], "offset": [8,6], "floor_rect": [8,18,32,48], "position": [36,108]},
+    {"id": "table", "crop": [602,440,1080,810], "size": [48,38], "frame_size": [48,48], "offset": [0,4], "floor_rect": [0,16,48,26], "position": [192,132]},
+    {"id": "chair", "crop": [1225,440,1415,808], "size": [20,38], "frame_size": [24,48], "offset": [2,4], "floor_rect": [2,16,20,26], "position": [204,174]}
+  ],
+  "clear_path_rect": [120,72,72,192],
+  "review_scale": 4,
+  "duration_ms": 600,
+  "room_source": "../cottage_interior/room.json",
+  "animation": "Furniture remains fixed; reuse the approved nine-pose, 5.4-second daylight loop."
+}

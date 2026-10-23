@@ -1,0 +1,114 @@
+{
+  "status": "review",
+  "purpose": "Furniture art review; illustrative generic room, not a final household layout",
+  "room_source": "../cottage_interior/room.json",
+  "room_size": [
+    288,
+    288
+  ],
+  "placements": [
+    {
+      "id": "bed",
+      "position": [
+        36,
+        108
+      ]
+    },
+    {
+      "id": "table",
+      "position": [
+        192,
+        132
+      ]
+    },
+    {
+      "id": "chair",
+      "position": [
+        204,
+        174
+      ]
+    }
+  ],
+  "furniture_layer": "furniture_layer.png",
+  "clear_path_rect": [
+    120,
+    72,
+    72,
+    192
+  ],
+  "floor_rect": [
+    24,
+    72,
+    240,
+    192
+  ],
+  "entry_rect": [
+    144,
+    264,
+    24,
+    8
+  ],
+  "hero_position": [
+    144,
+    168
+  ],
+  "character_source": "../../../characters/caelan/idle_front.png",
+  "draw_order": [
+    "structure",
+    "approved_daylight",
+    "furniture",
+    "character"
+  ],
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "light": "../cottage_interior/lighting/frame_01.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "light": "../cottage_interior/lighting/frame_02.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "light": "../cottage_interior/lighting/frame_03.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "light": "../cottage_interior/lighting/frame_04.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "light": "../cottage_interior/lighting/frame_05.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "light": "../cottage_interior/lighting/frame_06.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "light": "../cottage_interior/lighting/frame_07.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "light": "../cottage_interior/lighting/frame_08.png",
+      "duration_ms": 600
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "light": "../cottage_interior/lighting/frame_09.png",
+      "duration_ms": 600
+    }
+  ],
+  "cycle_duration_ms": 5400,
+  "loop": true,
+  "review_scale": 4,
+  "collision_implemented": false,
+  "exterior_transition_implemented": false
+}
