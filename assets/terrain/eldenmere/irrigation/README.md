@@ -1,6 +1,6 @@
 # Eldenmere — animated irrigation channels
 
-Status: draft artwork for user review. This milestone adds earth-lined channels, directed currents, stream intakes and small outlet trickles beside the approved terrain.
+Status: approved following user review. This milestone adds earth-lined channels, directed currents, stream intakes and small outlet trickles beside the approved terrain.
 
 Tiles remain 24×24. The channels carry eight pixels of water, a one-pixel shallow rim inside the water and two pixels of earth on either side. All colors come from the approved ground/water palette. Six phases at 200 ms each match the stream's 1.2-second loop. Small current marks travel two native pixels per phase; channel walls stay stationary. Outlet droplets and small receiving puddles provide additional motion.
 
@@ -21,7 +21,7 @@ The review layout contains one stream intake, two splitting junctions, bends, st
 - `irrigation.png`: those atlases stacked into a 192×720 sheet: 240 composed tile frames.
 - `channel_banks.png` and `channel_masks.png`: stationary 96×96 atlases indexed by cardinal connection mask. Slot zero is transparent; slots 1–15 cover every connected-port shape.
 - `tileset.json`: module rectangles, directed input/output ports, source bank/mask paths, six frame references and timing.
-- `palette.json`: the reused approved material colors with this pack's independent draft status.
+- `palette.json`: the reused approved material colors with this pack's approved status.
 
 The 40 modules comprise **32 directed routes over 15 connection shapes, four intake orientations and four outlet orientations**. Selecting each possible input for a shape supplies reverse-flow straights/bends and every junction input. Single-port channel modules are closed settling caps; special outlet modules provide the open trickling ends.
 

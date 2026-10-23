@@ -1,6 +1,6 @@
 # Eldenmere — irrigation source and assembly
 
-Status: draft artwork for user review.
+Status: approved following user review.
 
 `materials_concept.png` is the generated companion-art reference for a thin earth-lined straight, bend, junction and trickling outlet. The approved stream close-up supplied color/style guidance. Native exports reuse the exact approved material ramps and the stream's six-phase, 200 ms timing.
 
