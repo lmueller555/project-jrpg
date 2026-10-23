@@ -1,4 +1,4 @@
-# Eldenmere cottage kitchen — review
+# Eldenmere cottage kitchen — approved
 
 Three static reusable kitchen assets matching the approved interior palette:
 
@@ -19,4 +19,4 @@ Three static reusable kitchen assets matching the approved interior palette:
 
 Counter and washbasin sit below the right window; pantry sits below the wall shelf. The original cupboard moves beside the bed and one dining chair is displayed. Bed and table retain their positions; all previously approved artwork and review packs are unchanged. The central 72px route and windows/door stay clear.
 
-This remains a 10×8-floor asset showroom. The proposed cottage-size layouts in `docs/art/COTTAGE_INTERIOR_PLAN.md` are separate discussion work. Rebuild using `tools/build_eldenmere_cottage_kitchen.py`; verify with `tools/test_eldenmere_cottage_kitchen.py` in the documented Pillow environment. Source and settings live under `assets/source/terrain/eldenmere/cottage_kitchen/`. Kitchen designs await approval.
+This remains a 10×8-floor asset showroom. The proposed cottage-size layouts in `docs/art/COTTAGE_INTERIOR_PLAN.md` are separate discussion work. Rebuild using `tools/build_eldenmere_cottage_kitchen.py`; verify with `tools/test_eldenmere_cottage_kitchen.py` in the documented Pillow environment. Source and settings live under `assets/source/terrain/eldenmere/cottage_kitchen/`. Kitchen designs are approved for main.

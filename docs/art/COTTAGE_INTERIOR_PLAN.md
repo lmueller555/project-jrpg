@@ -34,4 +34,4 @@ The user selected kitchen counter, washbasin and pantry storage as the next asse
 
 The new 10×8-floor kitchen showroom places counter and basin under the right window and the pantry below the wall shelf. The original cupboard moves beside the bed. Only one dining chair is shown; the other three facing-comparison samples remain in their approved pack. Bed and table keep their positions; all approved sprite files remain unchanged. This illustrative arrangement is not a proposed final cottage floor plan.
 
-Review this asset set first, then settle the room-size rule and make one furnished layout of each size at the same pixel scale. Verify access and comfortable density before creating household-specific variants.
+The kitchen asset set is approved. Next, settle the room-size rule and make one furnished layout of each size at the same pixel scale. Verify access and comfortable density before creating household-specific variants.

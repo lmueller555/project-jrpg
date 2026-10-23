@@ -1,4 +1,4 @@
-# Eldenmere cottage kitchen source — review
+# Eldenmere cottage kitchen source — approved
 
 The user selected a kitchen counter, washbasin and pantry storage. The static set contains a two-door wooden work counter with a cream cutting board, a ceramic basin of still water on a short wooden stand, and narrow open pantry shelves with jars, a plain basket and bread. No cloth ties, plumbing or additional animations are introduced.
 
@@ -12,4 +12,4 @@ The builder reads and assembles existing room, furniture, storage and hearth exp
 
 Build with `PYTHONDONTWRITEBYTECODE=1 /workspace/.venvs/project-jrpg/bin/python tools/build_eldenmere_cottage_kitchen.py`; verify with the same interpreter and `tools/test_eldenmere_cottage_kitchen.py`. Native source parts are retained both here and in the runtime pack. The 144×48 atlas uses three 48×48 padded cells. Room review is enlarged 4× and component views 8× using nearest-neighbor scaling.
 
-Kitchen designs await review. The separate `docs/art/COTTAGE_INTERIOR_PLAN.md` records a proposal for compact, standard and wide cottage interiors; it does not implement or approve those floor plans.
+Kitchen designs are approved. The separate `docs/art/COTTAGE_INTERIOR_PLAN.md` records a proposal for compact, standard and wide cottage interiors; it does not implement or approve those floor plans.
