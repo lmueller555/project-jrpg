@@ -1,0 +1,107 @@
+{
+  "id": "eldenmere.cottage_hearth.24",
+  "status": "review",
+  "frame_size": [
+    48,
+    72
+  ],
+  "tile_size": [
+    24,
+    24
+  ],
+  "sprite_sheet": "sprite_sheet.png",
+  "palette": {
+    "stone_joint": "#736e60",
+    "stone_shadow": "#827d6e",
+    "stone_base": "#969284",
+    "stone_light": "#aaa492",
+    "stone_cap": "#b5ae9c",
+    "stone_highlight": "#c3bcaa",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "soot_dark": "#342b27",
+    "soot_light": "#45382d",
+    "ember": "#893f2f",
+    "flame_orange": "#c56c36",
+    "flame_gold": "#e5a34d",
+    "flame_light": "#f2cc76"
+  },
+  "frames": [
+    {
+      "image": "frames/frame_01.png",
+      "atlas_rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 300
+    },
+    {
+      "image": "frames/frame_02.png",
+      "atlas_rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 300
+    },
+    {
+      "image": "frames/frame_03.png",
+      "atlas_rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 300
+    },
+    {
+      "image": "frames/frame_04.png",
+      "atlas_rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 300
+    }
+  ],
+  "cycle_duration_ms": 1200,
+  "structure_moves": false,
+  "logs_move": false,
+  "static_base": "structure.png",
+  "ember_colors": [
+    "#893f2f",
+    "#ad5130",
+    "#9b462e",
+    "#b35932"
+  ],
+  "glow_color": "#e5a34d",
+  "flame_position": [
+    17,
+    44
+  ],
+  "opening_rect": [
+    15,
+    43,
+    20,
+    19
+  ],
+  "animation_masks": {
+    "fire": "masks/fire.png",
+    "embers": "masks/embers.png",
+    "rim": "masks/rim.png"
+  },
+  "floor_glow_mask": "masks/floor_glow.png",
+  "glow_strengths": [
+    0.06,
+    0.085,
+    0.07,
+    0.095
+  ],
+  "smoke_included": false,
+  "collision_implemented": false,
+  "source_recipe": "../../../source/terrain/eldenmere/cottage_hearth/recipe.json"
+}

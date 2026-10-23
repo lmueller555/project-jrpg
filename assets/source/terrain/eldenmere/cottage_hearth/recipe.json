@@ -1,0 +1,35 @@
+{
+  "id": "eldenmere.cottage_hearth.24",
+  "status": "review",
+  "source": "hearth_concept.png",
+  "frame_size": [48,72],
+  "position": [28,24],
+  "floor_rect": [2,48,44,20],
+  "opening_rect": [15,43,20,19],
+  "flame_position": [17,44],
+  "palette": {
+    "stone_joint": "#736e60", "stone_shadow": "#827d6e", "stone_base": "#969284",
+    "stone_light": "#aaa492", "stone_cap": "#b5ae9c", "stone_highlight": "#c3bcaa",
+    "wood_shadow": "#654e3c", "wood_base": "#836347",
+    "soot_dark": "#342b27", "soot_light": "#45382d",
+    "ember": "#893f2f", "flame_orange": "#c56c36", "flame_gold": "#e5a34d", "flame_light": "#f2cc76"
+  },
+  "samples": [
+    {"id": "firebox", "crop": [256,241,929,606], "size": [44,32], "position": [2,36], "materials": ["stone_","wood_","soot_","ember"]},
+    {"id": "chimney", "crop": [1065,58,1280,606], "size": [16,36], "position": [16,0], "materials": ["stone_"]},
+    {"id": "flame_01", "crop": [181,770,361,930], "size": [14,14], "materials": ["ember","flame_"]},
+    {"id": "flame_02", "crop": [516,770,696,930], "size": [14,14], "materials": ["ember","flame_"]},
+    {"id": "flame_03", "crop": [865,770,1045,930], "size": [14,14], "materials": ["ember","flame_"]},
+    {"id": "flame_04", "crop": [1188,770,1368,930], "size": [14,14], "materials": ["ember","flame_"]}
+  ],
+  "fire_duration_ms": 300,
+  "ember_colors": ["#893f2f","#ad5130","#9b462e","#b35932"],
+  "glow_strengths": [0.06,0.085,0.07,0.095],
+  "glow_color": "#e5a34d",
+  "rim_rect": [12,41,25,25],
+  "floor_glow_rect": [30,89,46,21],
+  "clear_path_rect": [120,72,72,192],
+  "room_source": "../cottage_storage/room.json",
+  "review_scale": 4,
+  "smoke_included": false
+}

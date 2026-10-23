@@ -1,0 +1,305 @@
+{
+  "status": "review",
+  "purpose": "Hearth art review in the illustrative expanded cottage interior",
+  "room_source": "../cottage_storage/room.json",
+  "room_size": [
+    288,
+    288
+  ],
+  "hearth_position": [
+    28,
+    24
+  ],
+  "hearth_floor_rect": [
+    2,
+    48,
+    44,
+    20
+  ],
+  "clear_path_rect": [
+    120,
+    72,
+    72,
+    192
+  ],
+  "hero_position": [
+    144,
+    168
+  ],
+  "entry_rect": [
+    144,
+    264,
+    24,
+    8
+  ],
+  "draw_order": [
+    "structure",
+    "approved_daylight",
+    "floor_firelight",
+    "approved_furniture",
+    "approved_storage",
+    "hearth",
+    "character"
+  ],
+  "frames": [
+    {
+      "image": "scene_frames/frame_01.png",
+      "floor_glow": "lighting/frame_01.png",
+      "fire_phase": 0,
+      "daylight_phase": 0,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_02.png",
+      "floor_glow": "lighting/frame_02.png",
+      "fire_phase": 1,
+      "daylight_phase": 0,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_03.png",
+      "floor_glow": "lighting/frame_03.png",
+      "fire_phase": 2,
+      "daylight_phase": 1,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_04.png",
+      "floor_glow": "lighting/frame_04.png",
+      "fire_phase": 3,
+      "daylight_phase": 1,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_05.png",
+      "floor_glow": "lighting/frame_05.png",
+      "fire_phase": 0,
+      "daylight_phase": 2,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_06.png",
+      "floor_glow": "lighting/frame_06.png",
+      "fire_phase": 1,
+      "daylight_phase": 2,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_07.png",
+      "floor_glow": "lighting/frame_07.png",
+      "fire_phase": 2,
+      "daylight_phase": 3,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_08.png",
+      "floor_glow": "lighting/frame_08.png",
+      "fire_phase": 3,
+      "daylight_phase": 3,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_09.png",
+      "floor_glow": "lighting/frame_09.png",
+      "fire_phase": 0,
+      "daylight_phase": 4,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_10.png",
+      "floor_glow": "lighting/frame_10.png",
+      "fire_phase": 1,
+      "daylight_phase": 4,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_11.png",
+      "floor_glow": "lighting/frame_11.png",
+      "fire_phase": 2,
+      "daylight_phase": 5,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_12.png",
+      "floor_glow": "lighting/frame_12.png",
+      "fire_phase": 3,
+      "daylight_phase": 5,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_13.png",
+      "floor_glow": "lighting/frame_13.png",
+      "fire_phase": 0,
+      "daylight_phase": 6,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_14.png",
+      "floor_glow": "lighting/frame_14.png",
+      "fire_phase": 1,
+      "daylight_phase": 6,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_15.png",
+      "floor_glow": "lighting/frame_15.png",
+      "fire_phase": 2,
+      "daylight_phase": 7,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_16.png",
+      "floor_glow": "lighting/frame_16.png",
+      "fire_phase": 3,
+      "daylight_phase": 7,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_17.png",
+      "floor_glow": "lighting/frame_17.png",
+      "fire_phase": 0,
+      "daylight_phase": 8,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_18.png",
+      "floor_glow": "lighting/frame_18.png",
+      "fire_phase": 1,
+      "daylight_phase": 8,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_19.png",
+      "floor_glow": "lighting/frame_19.png",
+      "fire_phase": 2,
+      "daylight_phase": 0,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_20.png",
+      "floor_glow": "lighting/frame_20.png",
+      "fire_phase": 3,
+      "daylight_phase": 0,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_21.png",
+      "floor_glow": "lighting/frame_21.png",
+      "fire_phase": 0,
+      "daylight_phase": 1,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_22.png",
+      "floor_glow": "lighting/frame_22.png",
+      "fire_phase": 1,
+      "daylight_phase": 1,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_23.png",
+      "floor_glow": "lighting/frame_23.png",
+      "fire_phase": 2,
+      "daylight_phase": 2,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_24.png",
+      "floor_glow": "lighting/frame_24.png",
+      "fire_phase": 3,
+      "daylight_phase": 2,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_25.png",
+      "floor_glow": "lighting/frame_25.png",
+      "fire_phase": 0,
+      "daylight_phase": 3,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_26.png",
+      "floor_glow": "lighting/frame_26.png",
+      "fire_phase": 1,
+      "daylight_phase": 3,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_27.png",
+      "floor_glow": "lighting/frame_27.png",
+      "fire_phase": 2,
+      "daylight_phase": 4,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_28.png",
+      "floor_glow": "lighting/frame_28.png",
+      "fire_phase": 3,
+      "daylight_phase": 4,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_29.png",
+      "floor_glow": "lighting/frame_29.png",
+      "fire_phase": 0,
+      "daylight_phase": 5,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_30.png",
+      "floor_glow": "lighting/frame_30.png",
+      "fire_phase": 1,
+      "daylight_phase": 5,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_31.png",
+      "floor_glow": "lighting/frame_31.png",
+      "fire_phase": 2,
+      "daylight_phase": 6,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_32.png",
+      "floor_glow": "lighting/frame_32.png",
+      "fire_phase": 3,
+      "daylight_phase": 6,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_33.png",
+      "floor_glow": "lighting/frame_33.png",
+      "fire_phase": 0,
+      "daylight_phase": 7,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_34.png",
+      "floor_glow": "lighting/frame_34.png",
+      "fire_phase": 1,
+      "daylight_phase": 7,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_35.png",
+      "floor_glow": "lighting/frame_35.png",
+      "fire_phase": 2,
+      "daylight_phase": 8,
+      "duration_ms": 300
+    },
+    {
+      "image": "scene_frames/frame_36.png",
+      "floor_glow": "lighting/frame_36.png",
+      "fire_phase": 3,
+      "daylight_phase": 8,
+      "duration_ms": 300
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "review_scale": 4,
+  "fire_cycle_duration_ms": 1200,
+  "daylight_cycle_duration_ms": 5400,
+  "collision_implemented": false,
+  "exterior_transition_implemented": false
+}
