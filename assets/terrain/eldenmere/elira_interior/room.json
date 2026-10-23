@@ -1,0 +1,567 @@
+{
+  "id": "eldenmere.elira_interior.24",
+  "status": "review",
+  "household": "Elira",
+  "story_reference": "docs/narrative/game_01/CH01_MQ01.md#s05--elira-bridge-cottage-order-flexible",
+  "base_room": "assets/terrain/eldenmere/cottage_layouts/compact/room.json",
+  "floor_tiles": [
+    10,
+    10
+  ],
+  "room_size": [
+    288,
+    336
+  ],
+  "floor_rect": [
+    24,
+    72,
+    240,
+    240
+  ],
+  "entry_rect": [
+    90,
+    312,
+    24,
+    8
+  ],
+  "objects": [
+    {
+      "id": "bed",
+      "pack": "cottage_furniture",
+      "sprite": "bed",
+      "position": [
+        36,
+        96
+      ],
+      "access": [
+        88,
+        138
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        44,
+        114,
+        32,
+        48
+      ],
+      "sort_y": 162
+    },
+    {
+      "id": "counter",
+      "pack": "cottage_kitchen",
+      "sprite": "counter",
+      "position": [
+        180,
+        120
+      ],
+      "access": [
+        204,
+        174
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        182,
+        140,
+        44,
+        22
+      ],
+      "sort_y": 162
+    },
+    {
+      "id": "pantry",
+      "pack": "cottage_kitchen",
+      "sprite": "pantry",
+      "position": [
+        36,
+        204
+      ],
+      "access": [
+        48,
+        262
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png",
+      "frame_size": [
+        24,
+        48
+      ],
+      "floor_rect": [
+        37,
+        234,
+        22,
+        16
+      ],
+      "sort_y": 250
+    },
+    {
+      "id": "table",
+      "pack": "cottage_furniture",
+      "sprite": "table",
+      "position": [
+        156,
+        228
+      ],
+      "access": [
+        180,
+        216
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "frame_size": [
+        48,
+        48
+      ],
+      "floor_rect": [
+        156,
+        244,
+        48,
+        26
+      ],
+      "sort_y": 270
+    },
+    {
+      "id": "chair",
+      "pack": "cottage_furniture",
+      "sprite": "chair_right",
+      "position": [
+        132,
+        240
+      ],
+      "access": [
+        144,
+        286
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        135,
+        258,
+        18,
+        16
+      ],
+      "sort_y": 274
+    },
+    {
+      "id": "hearth",
+      "floor_rect": [
+        182,
+        72,
+        44,
+        20
+      ],
+      "position": [
+        180,
+        24
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "access": [
+        204,
+        104
+      ],
+      "sort_y": 92
+    },
+    {
+      "id": "step_stool",
+      "position": [
+        142,
+        80
+      ],
+      "frame_size": [
+        24,
+        24
+      ],
+      "floor_rect": [
+        144,
+        90,
+        20,
+        14
+      ],
+      "access": [
+        154,
+        118
+      ]
+    }
+  ],
+  "shelf_position": [
+    132,
+    22
+  ],
+  "shelf_states": {
+    "before": "sprites/shelf_with_lantern.png",
+    "after": "sprites/shelf_empty.png"
+  },
+  "lantern": {
+    "image": "sprites/lantern_unlit.png",
+    "size": [
+      12,
+      24
+    ],
+    "lit": false,
+    "animated": false
+  },
+  "step_stool": {
+    "image": "sprites/step_stool.png",
+    "size": [
+      24,
+      24
+    ],
+    "position": [
+      142,
+      80
+    ],
+    "floor_rect": [
+      144,
+      90,
+      20,
+      14
+    ],
+    "movable": false
+  },
+  "actor_probe_size": [
+    24,
+    12
+  ],
+  "navigation_start": [
+    102,
+    306
+  ],
+  "interaction_approach": [
+    154,
+    118
+  ],
+  "reachable_probe_positions": 9656,
+  "hero_position": [
+    96,
+    192
+  ],
+  "hero_foot_anchor": [
+    12,
+    30
+  ],
+  "frames": [
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 0,
+      "before": "before/scene_frames/frame_01.png",
+      "after": "after/scene_frames/frame_01.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 0,
+      "before": "before/scene_frames/frame_02.png",
+      "after": "after/scene_frames/frame_02.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 1,
+      "before": "before/scene_frames/frame_03.png",
+      "after": "after/scene_frames/frame_03.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 1,
+      "before": "before/scene_frames/frame_04.png",
+      "after": "after/scene_frames/frame_04.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 2,
+      "before": "before/scene_frames/frame_05.png",
+      "after": "after/scene_frames/frame_05.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 2,
+      "before": "before/scene_frames/frame_06.png",
+      "after": "after/scene_frames/frame_06.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 3,
+      "before": "before/scene_frames/frame_07.png",
+      "after": "after/scene_frames/frame_07.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 3,
+      "before": "before/scene_frames/frame_08.png",
+      "after": "after/scene_frames/frame_08.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 4,
+      "before": "before/scene_frames/frame_09.png",
+      "after": "after/scene_frames/frame_09.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 4,
+      "before": "before/scene_frames/frame_10.png",
+      "after": "after/scene_frames/frame_10.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 5,
+      "before": "before/scene_frames/frame_11.png",
+      "after": "after/scene_frames/frame_11.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 5,
+      "before": "before/scene_frames/frame_12.png",
+      "after": "after/scene_frames/frame_12.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 6,
+      "before": "before/scene_frames/frame_13.png",
+      "after": "after/scene_frames/frame_13.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 6,
+      "before": "before/scene_frames/frame_14.png",
+      "after": "after/scene_frames/frame_14.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 7,
+      "before": "before/scene_frames/frame_15.png",
+      "after": "after/scene_frames/frame_15.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 7,
+      "before": "before/scene_frames/frame_16.png",
+      "after": "after/scene_frames/frame_16.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 8,
+      "before": "before/scene_frames/frame_17.png",
+      "after": "after/scene_frames/frame_17.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 8,
+      "before": "before/scene_frames/frame_18.png",
+      "after": "after/scene_frames/frame_18.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 0,
+      "before": "before/scene_frames/frame_19.png",
+      "after": "after/scene_frames/frame_19.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 0,
+      "before": "before/scene_frames/frame_20.png",
+      "after": "after/scene_frames/frame_20.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 1,
+      "before": "before/scene_frames/frame_21.png",
+      "after": "after/scene_frames/frame_21.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 1,
+      "before": "before/scene_frames/frame_22.png",
+      "after": "after/scene_frames/frame_22.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 2,
+      "before": "before/scene_frames/frame_23.png",
+      "after": "after/scene_frames/frame_23.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 2,
+      "before": "before/scene_frames/frame_24.png",
+      "after": "after/scene_frames/frame_24.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 3,
+      "before": "before/scene_frames/frame_25.png",
+      "after": "after/scene_frames/frame_25.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 3,
+      "before": "before/scene_frames/frame_26.png",
+      "after": "after/scene_frames/frame_26.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 4,
+      "before": "before/scene_frames/frame_27.png",
+      "after": "after/scene_frames/frame_27.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 4,
+      "before": "before/scene_frames/frame_28.png",
+      "after": "after/scene_frames/frame_28.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 5,
+      "before": "before/scene_frames/frame_29.png",
+      "after": "after/scene_frames/frame_29.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 5,
+      "before": "before/scene_frames/frame_30.png",
+      "after": "after/scene_frames/frame_30.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 6,
+      "before": "before/scene_frames/frame_31.png",
+      "after": "after/scene_frames/frame_31.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 6,
+      "before": "before/scene_frames/frame_32.png",
+      "after": "after/scene_frames/frame_32.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 0,
+      "daylight_phase": 7,
+      "before": "before/scene_frames/frame_33.png",
+      "after": "after/scene_frames/frame_33.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 1,
+      "daylight_phase": 7,
+      "before": "before/scene_frames/frame_34.png",
+      "after": "after/scene_frames/frame_34.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 2,
+      "daylight_phase": 8,
+      "before": "before/scene_frames/frame_35.png",
+      "after": "after/scene_frames/frame_35.png"
+    },
+    {
+      "image": null,
+      "duration_ms": 300,
+      "fire_phase": 3,
+      "daylight_phase": 8,
+      "before": "before/scene_frames/frame_36.png",
+      "after": "after/scene_frames/frame_36.png"
+    }
+  ],
+  "cycle_duration_ms": 10800,
+  "loop": true,
+  "review": {
+    "image": "room_states_review.gif",
+    "scale": 3,
+    "size": [
+      1800,
+      1110
+    ],
+    "panel_positions": [
+      [
+        24,
+        94
+      ],
+      [
+        912,
+        94
+      ]
+    ],
+    "states_shown_simultaneously": true
+  },
+  "engine_collision_implemented": false,
+  "quest_interaction_implemented": false,
+  "purpose": "Household art and discrete shelf-state review; retrieval/climbing animation and engine wiring are not implemented."
+}

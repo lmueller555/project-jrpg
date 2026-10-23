@@ -1,0 +1,32 @@
+{
+  "id": "eldenmere.elira_interior.24",
+  "status": "review",
+  "source": "props_concept.png",
+  "base_room": "assets/terrain/eldenmere/cottage_layouts/compact",
+  "shelf_position": [132, 22],
+  "shelf_base_offset": [0, 16],
+  "shelf_frame_size": [48, 40],
+  "lantern_on_shelf": [16, 5],
+  "stool_position": [142, 80],
+  "stool_floor_rect": [2, 10, 20, 14],
+  "interaction_approach": [154, 118],
+  "palette": {
+    "outline": "#45382d",
+    "wood_shadow": "#654e3c",
+    "wood_base": "#836347",
+    "wood_light": "#a08158",
+    "wood_worn": "#b79a6c",
+    "iron_dark": "#3d4140",
+    "iron_shadow": "#535c5d",
+    "iron_base": "#737e7a",
+    "iron_light": "#a4aaa0",
+    "glass_shadow": "#8c6737",
+    "glass_base": "#b18a49",
+    "glass_light": "#d3b56a",
+    "candle": "#e1d6bc"
+  },
+  "samples": [
+    {"id": "lantern_unlit", "crop": [340, 235, 561, 688], "sample_size": [10, 20], "frame_size": [12, 24], "offset": [1, 2]},
+    {"id": "step_stool", "crop": [972, 235, 1553, 761], "sample_size": [24, 22], "frame_size": [24, 24], "offset": [0, 2]}
+  ]
+}
