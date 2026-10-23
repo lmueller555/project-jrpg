@@ -1,0 +1,36 @@
+{
+  "id": "eldenmere.terrain_foundation.01",
+  "status": "review",
+  "approved_layout": "docs/world/eldenmere/blockout/recipe.json",
+  "layout_approval": "User approved the overhead blockout before requesting this terrain pass",
+  "frame_count": 18,
+  "duration_ms": 200,
+  "review_scale": 2,
+  "gate_state": "idle_jammed",
+  "adaptations": [
+    "Use existing south-facing stairs at [48,35,2,2] for the eastern terrace; approach from its southern edge.",
+    "Place the mill return at row 14 and the service landing at [39,14,2,1] to register the approved wheel and porch.",
+    "Keep the headwater brook centered at x=35 through row 10 for two straight tiers of approved spillways.",
+    "Widen and center each cottage doorstep on its exported door centre, including Venn's x=52 approach."
+  ],
+  "mill_race_points": [[43,0,2.8],[43,5,2.6],[43,6,1.9],[43,7,1.35],[43,8,0.8],[43,10,0.79],[45,10,0.78],[45,14,0.75],[34,14,0.74]],
+  "cottage_packs": {
+    "halden": "cottage",
+    "elira": "cottage_shapes/compact/slate",
+    "venn": "cottage_shapes/wide/moss",
+    "home_a": "cottage_variants/terracotta",
+    "home_b": "cottage_variants/heather",
+    "home_c": "cottage_variants/moss"
+  },
+  "main_hero_foot": [516,900],
+  "scale_checks": [
+    {"id":"sanctuary_steps","label":"Sanctuary steps / 34px tread","crop_tiles":[8,6,14,11],"foot":[384,360],"facing":"back"},
+    {"id":"upper_bridge","label":"Upper crossing / level approaches","crop_tiles":[28,14,14,11],"foot":[852,480],"facing":"right"},
+    {"id":"halden_door","label":"Halden / doorway and storage approach","crop_tiles":[36,18,14,11],"foot":[1008,640],"facing":"front"},
+    {"id":"elira_door","label":"Elira / compact cottage by main bridge","crop_tiles":[24,34,14,11],"foot":[672,976],"facing":"front"},
+    {"id":"venn_steps","label":"Eastern terrace / south-facing steps","crop_tiles":[44,30,14,11],"foot":[1176,876],"facing":"back"},
+    {"id":"venn_door","label":"Venn / wide cottage and jammed gate","crop_tiles":[48,23,14,11],"foot":[1248,736],"facing":"front"},
+    {"id":"mill_landing","label":"Mill / source landing and wheel contact","crop_tiles":[37,8,14,11],"foot":[960,348],"facing":"back"},
+    {"id":"main_bridge","label":"Main bridge / two-tile deck","crop_tiles":[28,37,14,11],"foot":[828,1032],"facing":"right"}
+  ]
+}

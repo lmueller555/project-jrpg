@@ -1,0 +1,968 @@
+{
+  "id": "eldenmere.overhead_blockout.01",
+  "status": "review",
+  "size_tiles": [
+    64,
+    56
+  ],
+  "tile_size_px": 24,
+  "base_elevation": 1,
+  "elevations": [
+    {
+      "id": "northern_upland",
+      "rect": [
+        0,
+        0,
+        64,
+        6
+      ],
+      "level": 3
+    },
+    {
+      "id": "sanctuary_terrace",
+      "rect": [
+        5,
+        6,
+        24,
+        9
+      ],
+      "level": 2
+    },
+    {
+      "id": "woodland_approach",
+      "rect": [
+        29,
+        6,
+        4,
+        3
+      ],
+      "level": 2
+    },
+    {
+      "id": "headwater_ledge",
+      "rect": [
+        33,
+        6,
+        6,
+        2
+      ],
+      "level": 2
+    },
+    {
+      "id": "mill_supply_ledge",
+      "rect": [
+        42,
+        6,
+        4,
+        2
+      ],
+      "level": 2
+    },
+    {
+      "id": "eastern_terrace",
+      "rect": [
+        46,
+        6,
+        18,
+        30
+      ],
+      "level": 2
+    }
+  ],
+  "stream_centres": [
+    [
+      0,
+      10,
+      35
+    ],
+    [
+      11,
+      17,
+      34
+    ],
+    [
+      18,
+      29,
+      35
+    ],
+    [
+      30,
+      43,
+      34
+    ],
+    [
+      44,
+      55,
+      35
+    ]
+  ],
+  "stream_levels": [
+    [
+      0,
+      2.8
+    ],
+    [
+      3,
+      2.68
+    ],
+    [
+      5,
+      2.6
+    ],
+    [
+      6,
+      1.9
+    ],
+    [
+      7,
+      1.35
+    ],
+    [
+      8,
+      0.8
+    ],
+    [
+      55,
+      0.33
+    ]
+  ],
+  "water_branches": [
+    {
+      "id": "mill_race",
+      "points": [
+        [
+          43,
+          0,
+          2.8
+        ],
+        [
+          43,
+          5,
+          2.6
+        ],
+        [
+          43,
+          6,
+          1.9
+        ],
+        [
+          43,
+          7,
+          1.35
+        ],
+        [
+          43,
+          8,
+          0.8
+        ],
+        [
+          43,
+          10,
+          0.79
+        ],
+        [
+          45,
+          10,
+          0.78
+        ],
+        [
+          45,
+          14,
+          0.75
+        ],
+        [
+          34,
+          14,
+          0.74
+        ]
+      ]
+    },
+    {
+      "id": "irrigation",
+      "points": [
+        [
+          60,
+          0,
+          2.8
+        ],
+        [
+          60,
+          5,
+          2.55
+        ],
+        [
+          60,
+          6,
+          1.95
+        ],
+        [
+          60,
+          25,
+          1.86
+        ],
+        [
+          60,
+          27,
+          1.85
+        ],
+        [
+          60,
+          35,
+          1.8
+        ],
+        [
+          60,
+          36,
+          0.65
+        ],
+        [
+          60,
+          48,
+          0.5
+        ],
+        [
+          35,
+          48,
+          0.4
+        ]
+      ]
+    }
+  ],
+  "off_map_water_connections": [
+    {
+      "branch": "mill_race",
+      "entry": [
+        43,
+        0
+      ],
+      "source_map": "northern_woodland",
+      "purpose": "Independent mill intake and MQ02 obstruction lie upstream on the separate woodland map"
+    },
+    {
+      "branch": "irrigation",
+      "entry": [
+        60,
+        0
+      ],
+      "source_map": "northern_woodland",
+      "purpose": "Separate headwater intake keeps field supply independent of the mill obstruction"
+    }
+  ],
+  "drops": [
+    {
+      "id": "headwater_descent",
+      "position": [
+        35,
+        6
+      ],
+      "label": "Headwater descent"
+    },
+    {
+      "id": "mill_supply_descent",
+      "position": [
+        43,
+        6
+      ],
+      "label": "Mill supply descent"
+    },
+    {
+      "id": "upper_channel_drop",
+      "position": [
+        60,
+        6
+      ],
+      "label": "Supply drops onto upper terrace"
+    },
+    {
+      "id": "field_spillway",
+      "position": [
+        60,
+        36
+      ],
+      "label": "Field spillway to lower ground"
+    }
+  ],
+  "crossings": [
+    {
+      "id": "upper_bridge",
+      "rect": [
+        32,
+        19,
+        6,
+        2
+      ],
+      "level": 1,
+      "orientation": "east-west",
+      "kind": "stream_bridge"
+    },
+    {
+      "id": "main_bridge",
+      "rect": [
+        31,
+        42,
+        7,
+        2
+      ],
+      "level": 1,
+      "orientation": "east-west",
+      "kind": "stream_bridge"
+    },
+    {
+      "id": "mill_landing",
+      "rect": [
+        39,
+        14,
+        2,
+        1
+      ],
+      "level": 1,
+      "orientation": "north-south",
+      "kind": "mill_service_landing"
+    }
+  ],
+  "stairs": [
+    {
+      "id": "sanctuary_steps",
+      "rect": [
+        15,
+        14,
+        2,
+        2
+      ],
+      "orientation": "north-south"
+    },
+    {
+      "id": "woodland_lower_steps",
+      "rect": [
+        29,
+        8,
+        2,
+        2
+      ],
+      "orientation": "north-south"
+    },
+    {
+      "id": "woodland_upper_steps",
+      "rect": [
+        29,
+        5,
+        2,
+        2
+      ],
+      "orientation": "north-south"
+    },
+    {
+      "id": "eastern_steps",
+      "rect": [
+        48,
+        35,
+        2,
+        2
+      ],
+      "orientation": "north-south"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "sanctuary",
+      "label": "SANCTUARY",
+      "detail": "bedroom / dining / courtyard",
+      "rect": [
+        11,
+        7,
+        8,
+        5
+      ],
+      "door": [
+        16,
+        12
+      ],
+      "kind": "new_landmark"
+    },
+    {
+      "id": "mill",
+      "label": "MILL",
+      "detail": "working yard",
+      "rect": [
+        40,
+        11,
+        4,
+        3
+      ],
+      "door": [
+        40,
+        14
+      ],
+      "kind": "approved_mill"
+    },
+    {
+      "id": "halden",
+      "label": "HALDEN",
+      "detail": "13 x 10 inside",
+      "rect": [
+        40,
+        23,
+        4,
+        3
+      ],
+      "door": [
+        42,
+        26
+      ],
+      "kind": "standard"
+    },
+    {
+      "id": "mira",
+      "label": "MIRA",
+      "detail": "workshop",
+      "rect": [
+        24,
+        15,
+        5,
+        3
+      ],
+      "door": [
+        26,
+        18
+      ],
+      "kind": "new_landmark"
+    },
+    {
+      "id": "elira",
+      "label": "ELIRA",
+      "detail": "10 x 10",
+      "rect": [
+        27,
+        37,
+        3,
+        3
+      ],
+      "door": [
+        28,
+        40
+      ],
+      "kind": "compact"
+    },
+    {
+      "id": "venn",
+      "label": "VENN",
+      "detail": "16 x 10 inside",
+      "rect": [
+        49,
+        27,
+        5,
+        3
+      ],
+      "door": [
+        52,
+        30
+      ],
+      "kind": "wide"
+    },
+    {
+      "id": "home_a",
+      "label": "HOME",
+      "detail": "standard",
+      "rect": [
+        7,
+        27,
+        4,
+        3
+      ],
+      "door": [
+        9,
+        30
+      ],
+      "kind": "standard"
+    },
+    {
+      "id": "home_b",
+      "label": "HOME",
+      "detail": "standard",
+      "rect": [
+        19,
+        25,
+        4,
+        3
+      ],
+      "door": [
+        21,
+        28
+      ],
+      "kind": "standard"
+    },
+    {
+      "id": "home_c",
+      "label": "HOME",
+      "detail": "standard",
+      "rect": [
+        9,
+        42,
+        4,
+        3
+      ],
+      "door": [
+        11,
+        45
+      ],
+      "kind": "standard"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "courtyard",
+      "rect": [
+        10,
+        12,
+        10,
+        3
+      ],
+      "label": "Courtyard",
+      "kind": "yard"
+    },
+    {
+      "id": "commons",
+      "rect": [
+        15,
+        32,
+        12,
+        8
+      ],
+      "label": "VILLAGE COMMONS",
+      "kind": "commons"
+    },
+    {
+      "id": "mill_yard",
+      "rect": [
+        40,
+        20,
+        6,
+        3
+      ],
+      "label": "Storage yard",
+      "kind": "yard"
+    },
+    {
+      "id": "venn_plots",
+      "rect": [
+        54,
+        26,
+        4,
+        7
+      ],
+      "label": "Growing plots",
+      "kind": "plots"
+    },
+    {
+      "id": "elira_garden",
+      "rect": [
+        24,
+        40,
+        3,
+        2
+      ],
+      "label": "Garden",
+      "kind": "garden"
+    },
+    {
+      "id": "home_a_garden",
+      "rect": [
+        7,
+        24,
+        4,
+        2
+      ],
+      "label": "Garden",
+      "kind": "garden"
+    },
+    {
+      "id": "home_c_garden",
+      "rect": [
+        9,
+        39,
+        4,
+        2
+      ],
+      "label": "Garden",
+      "kind": "garden"
+    }
+  ],
+  "roads": [
+    {
+      "id": "sanctuary_lane",
+      "width": 2,
+      "points": [
+        [
+          16,
+          12
+        ],
+        [
+          16,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "upper_lane",
+      "width": 2,
+      "points": [
+        [
+          16,
+          20
+        ],
+        [
+          40,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "western_lane",
+      "width": 3,
+      "points": [
+        [
+          16,
+          20
+        ],
+        [
+          16,
+          43
+        ]
+      ]
+    },
+    {
+      "id": "eastern_lane",
+      "width": 2,
+      "points": [
+        [
+          39,
+          20
+        ],
+        [
+          39,
+          43
+        ]
+      ]
+    },
+    {
+      "id": "lower_lane",
+      "width": 2,
+      "points": [
+        [
+          16,
+          43
+        ],
+        [
+          40,
+          43
+        ]
+      ]
+    },
+    {
+      "id": "southern_road",
+      "width": 3,
+      "points": [
+        [
+          21,
+          43
+        ],
+        [
+          21,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "mill_access",
+      "width": 2,
+      "points": [
+        [
+          40,
+          14
+        ],
+        [
+          40,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "mill_yard_access",
+      "width": 2,
+      "points": [
+        [
+          40,
+          21
+        ],
+        [
+          44,
+          21
+        ]
+      ]
+    },
+    {
+      "id": "halden_access",
+      "width": 2,
+      "points": [
+        [
+          39,
+          27
+        ],
+        [
+          42,
+          27
+        ],
+        [
+          42,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "mira_access",
+      "width": 2,
+      "points": [
+        [
+          26,
+          18
+        ],
+        [
+          26,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "elira_access",
+      "width": 2,
+      "points": [
+        [
+          28,
+          40
+        ],
+        [
+          28,
+          43
+        ]
+      ]
+    },
+    {
+      "id": "venn_access",
+      "width": 2,
+      "points": [
+        [
+          39,
+          38
+        ],
+        [
+          49,
+          38
+        ],
+        [
+          49,
+          34
+        ],
+        [
+          59,
+          34
+        ],
+        [
+          59,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "venn_door",
+      "width": 2,
+      "points": [
+        [
+          52,
+          30
+        ],
+        [
+          52,
+          34
+        ]
+      ]
+    },
+    {
+      "id": "woodland_route",
+      "width": 2,
+      "points": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          20
+        ]
+      ]
+    },
+    {
+      "id": "home_a_access",
+      "width": 2,
+      "points": [
+        [
+          9,
+          30
+        ],
+        [
+          9,
+          32
+        ],
+        [
+          16,
+          32
+        ]
+      ]
+    },
+    {
+      "id": "home_b_access",
+      "width": 2,
+      "points": [
+        [
+          21,
+          28
+        ],
+        [
+          21,
+          30
+        ],
+        [
+          16,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "home_c_access",
+      "width": 2,
+      "points": [
+        [
+          11,
+          45
+        ],
+        [
+          11,
+          47
+        ],
+        [
+          21,
+          47
+        ]
+      ]
+    },
+    {
+      "id": "commons_access",
+      "width": 3,
+      "points": [
+        [
+          16,
+          37
+        ],
+        [
+          24,
+          37
+        ]
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "commons",
+      "position": [
+        21,
+        37
+      ]
+    },
+    {
+      "id": "gate",
+      "position": [
+        60,
+        27
+      ],
+      "approach": [
+        59,
+        27
+      ]
+    },
+    {
+      "id": "storage",
+      "position": [
+        44,
+        21
+      ]
+    },
+    {
+      "id": "southern_exit",
+      "position": [
+        21,
+        55
+      ]
+    },
+    {
+      "id": "woodland_exit",
+      "position": [
+        30,
+        0
+      ]
+    }
+  ],
+  "quest_routes": [
+    {
+      "id": "first_visit",
+      "label": "MQ01 / sanctuary to Halden",
+      "color": "#d16a27",
+      "nodes": [
+        "sanctuary",
+        "halden"
+      ]
+    },
+    {
+      "id": "elira_first",
+      "label": "Choice A / Elira, Venn, return",
+      "color": "#8b468d",
+      "nodes": [
+        "halden",
+        "elira",
+        "venn",
+        "gate",
+        "sanctuary"
+      ]
+    },
+    {
+      "id": "venn_first",
+      "label": "Choice B / Venn, Elira, return",
+      "color": "#167a78",
+      "nodes": [
+        "halden",
+        "venn",
+        "gate",
+        "elira",
+        "sanctuary"
+      ]
+    },
+    {
+      "id": "tomas_return",
+      "label": "Tomas leaves after Halden",
+      "color": "#596477",
+      "nodes": [
+        "halden",
+        "sanctuary"
+      ]
+    },
+    {
+      "id": "mq02",
+      "label": "MQ02 / find Mira, visit mill, head upstream",
+      "color": "#315ba0",
+      "nodes": [
+        "sanctuary",
+        "mira",
+        "mill",
+        "woodland_exit"
+      ]
+    }
+  ]
+}
