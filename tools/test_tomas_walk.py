@@ -110,5 +110,110 @@ class TomasFrontWalk(unittest.TestCase):
                                          expected.resize((384,576),Image.Resampling.NEAREST).tobytes())
 
 
+class TomasDirectionalWalks(unittest.TestCase):
+    def test_directional_contract_stride_neck_and_playback(self):
+        palette=json.loads((OUT/'../palette.json').read_text())
+        allowed={tuple(bytes.fromhex(c[1:]))+(255,) for ramp in palette['materials'].values() for c in ramp}
+        allowed.update(tuple(bytes.fromhex(c[1:]))+(255,) for c in palette['eyes'].values())
+        for direction in ('left','right','back'):
+            with self.subTest(direction=direction):
+                root=OUT.parent/f'walk_{direction}'
+                meta=json.loads((root/'animation.json').read_text())
+                template_path=(root/meta['template']).resolve()
+                template=json.loads(template_path.read_text())
+                idle=Image.open(root/f'../idle_{direction}.png').convert('RGBA')
+                sheet=Image.open(root/'spritesheet.png').convert('RGBA')
+                self.assertEqual(sheet.size,(96,36))
+                self.assertEqual(meta['foot_anchor'],[12,34])
+                self.assertEqual(meta['rest_visible_height_px'],32)
+                self.assertEqual(meta['duration_ms'],560)
+                frames=[]
+                for i,(record,phase) in enumerate(zip(meta['frames'],template['frames'],strict=True)):
+                    image=Image.open(root/record['file']).convert('RGBA');frames.append(image)
+                    reference=Image.open(template_path.parent/phase['reference']).convert('RGBA')
+                    dy=phase['upper_body_offset'][1]
+                    self.assertEqual(image.size,(24,36))
+                    self.assertEqual(image.getbbox()[1::2],(3+dy,35))
+                    self.assertEqual(image.getbbox()[1]-reference.getbbox()[1],2)
+                    self.assertEqual(set(image.getchannel('A').tobytes()),{0,255})
+                    self.assertEqual(record['duration_ms'],140)
+                    self.assertEqual(record['phase'],phase['phase'])
+                    self.assertEqual(record['shoulder_offset'],phase['upper_body_offset'])
+                    self.assertEqual(record['upper_body_offset'],phase['upper_body_offset'])
+                    self.assertEqual(image.getchannel('A').crop((0,26,24,35)).tobytes(),
+                                     reference.getchannel('A').crop((0,26,24,35)).tobytes())
+                    for y in range(36):
+                        for x in range(24):
+                            pixel=image.getpixel((x,y))
+                            if pixel[3]:self.assertIn(pixel,allowed)
+                            approved=idle.getpixel((x,y))
+                            collar={'left':(10,15),'right':(9,14),'back':(9,15)}[direction]
+                            if approved[3] and (y<15 or (15<=y<17 and collar[0]<=x<collar[1])):
+                                self.assertEqual(image.getpixel((x,y+dy)),approved)
+                    self.assertEqual(len(record['eyes']),0 if direction=='back' else 1)
+                    for x,y in record['eyes']:
+                        self.assertEqual(image.getpixel((x,y)),(26,14,22,255))
+                        self.assertEqual(image.getpixel((x,y+1)),(78,121,80,255))
+                    if direction=='back':
+                        self.assertNotIn((78,121,80,255),[image.getpixel((x,y)) for y in range(36) for x in range(24)])
+                    combined=Image.new('RGBA',(24,36))
+                    for path in record['layers_from_repo_root']:
+                        combined.alpha_composite(Image.open(ROOT/path).convert('RGBA'))
+                    self.assertEqual(combined.tobytes(),image.tobytes())
+                    self.assertEqual(sheet.crop((i*24,0,i*24+24,36)).tobytes(),image.tobytes())
+                self.assertEqual(len({f.tobytes() for f in frames}),4)
+                with Image.open(root/meta['review']['gif']) as gif:
+                    self.assertEqual(gif.n_frames,4);self.assertEqual(gif.info['loop'],0)
+                    self.assertEqual(gif.size,(480,720))
+                    for i,image in enumerate(frames):
+                        gif.seek(i);self.assertEqual(gif.info['duration'],140)
+                        expected=Image.new('RGB',(24,36),'#e8edf2');expected.paste(image,(0,0),image)
+                        self.assertEqual(gif.convert('RGB').tobytes(),expected.resize((480,720),Image.Resampling.NEAREST).tobytes())
+                        self.assertEqual(gif.convert('RGBA').getchannel('A').getextrema(),(255,255))
+
+    def test_left_profile_patch_follows_near_leg_and_other_views_hide_it(self):
+        patch=(139,129,113,255)
+        trousers={(53,42,41,255),(81,65,59,255),(116,96,80,255)}
+        for direction in ('left','right','back'):
+            root=OUT.parent/f'walk_{direction}'
+            meta=json.loads((root/'animation.json').read_text())
+            positions=[]
+            for record in meta['frames']:
+                image=Image.open(root/record['file']).convert('RGBA')
+                points={(x,y) for y in range(36) for x in range(24) if image.getpixel((x,y))==patch}
+                self.assertEqual(points,{tuple(p) for p in record['patch_pixels']})
+                if direction!='left':
+                    self.assertFalse(points)
+                    continue
+                self.assertTrue(points)
+                self.assertTrue(all(26<=y<31 for x,y in points))
+                path=next(p for p in record['layers_from_repo_root'] if p.endswith('_legs.png'))
+                legs=Image.open(ROOT/path).convert('RGBA')
+                for point in points:self.assertIn(legs.getpixel(point),trousers)
+                positions.append(frozenset(points))
+            if direction=='left':self.assertEqual(len(set(positions)),4)
+
+    def test_four_direction_sheet_and_synchronized_board(self):
+        root=OUT.parent
+        meta=json.loads((root/'walk_directions.json').read_text())
+        directions=['front','left','right','back']
+        self.assertEqual([r['direction'] for r in meta['directions']],directions)
+        self.assertEqual([r['status'] for r in meta['directions']],
+                         [json.loads((root/f'walk_{d}/animation.json').read_text())['status'] for d in directions])
+        sheet=Image.open(root/meta['image']).convert('RGBA')
+        self.assertEqual(sheet.size,(96,144))
+        with Image.open(root/meta['review']['gif']) as gif:
+            self.assertEqual(gif.n_frames,4);self.assertEqual(gif.info['loop'],0)
+            for phase in range(4):
+                gif.seek(phase);self.assertEqual(gif.info['duration'],140)
+                self.assertEqual(gif.convert('RGBA').getchannel('A').getextrema(),(255,255))
+                for column,direction in enumerate(directions):
+                    image=Image.open(root/f'walk_{direction}/frame_0{phase+1}.png').convert('RGBA')
+                    self.assertEqual(sheet.crop((phase*24,column*36,phase*24+24,column*36+36)).tobytes(),image.tobytes())
+                    expected=Image.new('RGB',(24,36),'#e8edf2');expected.paste(image,(0,0),image)
+                    self.assertEqual(gif.convert('RGB').crop((column*288,0,column*288+288,432)).tobytes(),
+                                     expected.resize((288,432),Image.Resampling.NEAREST).tobytes())
+
+
 if __name__=='__main__':
     unittest.main()

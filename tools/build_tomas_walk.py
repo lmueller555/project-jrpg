@@ -1,13 +1,22 @@
-"""Assemble Tomas's shorter front walk from approved appearance and shared poses."""
+"""Assemble Tomas's shorter walks from approved directional art and shared poses."""
+import argparse
+
 from PIL import Image, ImageDraw
 
-from build_character_walk import ROOT, blank, isolated, materialize, on_background, read_json, rgba, shifted, write_json
+from build_character_walk import ROOT, blank, build_direction_board, isolated, materialize, on_background, read_json, rgba, shifted, write_json
 from build_dress_walk import legs_pose
 from build_serene_idle import font
 
 
-def registered_arm(mask, template, palette, registration):
+def registered_arm(mask, template, palette, registration, neck_exclusion=None):
     # Register the adult arm region to Tomas's narrower, shorter proportions.
+    if neck_exclusion:
+        mask=mask.copy()
+        nx,ny,nw,nh=neck_exclusion
+        skin_codes={rgba(template['semantic_colors'][key]) for key in ('skin_base','skin_shadow')}
+        for y in range(ny,ny+nh):
+            for x in range(nx,nx+nw):
+                if mask.getpixel((x,y)) in skin_codes:mask.putpixel((x,y),(0,0,0,0))
     colored=materialize(mask,template,palette)
     x,y,width,height=registration['source_rect']
     scaled=colored.crop((x,y,x+width,y+height)).resize(tuple(registration['target_size']),Image.Resampling.NEAREST)
@@ -16,8 +25,8 @@ def registered_arm(mask, template, palette, registration):
     return output
 
 
-def build():
-    output=ROOT/'assets/characters/tomas/walk_front'
+def build(direction='front'):
+    output=ROOT/f'assets/characters/tomas/walk_{direction}'
     recipe=read_json(output/'recipe.json')
     template_path=(output/recipe['template']).resolve()
     template=read_json(template_path)
@@ -34,6 +43,8 @@ def build():
     }
     head=isolated(idle,recipe['head_rect'])
     upper=isolated(idle,recipe['upper_body_rect'])
+    if 'neckline_rect' in recipe:
+        upper.alpha_composite(isolated(idle,recipe['neckline_rect']))
     waist=isolated(idle,recipe['waist_rect'])
     hem=isolated(idle,recipe['hem_rect'])
     for name,image in [('head',head),('upper_body',upper),('waist',waist),('tunic_hem',hem)]:
@@ -55,7 +66,7 @@ def build():
         layers={'legs':legs,'left_knee_patch':patch,'waist':waist,'tunic_hem':hem}
         for side in ('left','right'):
             mask=Image.open(directory/f'{side}_arm_mask.png').convert('RGBA')
-            layers[f'{side}_arm']=registered_arm(mask,template,recipe['arm_palette'],recipe['arm_registration'])
+            layers[f'{side}_arm']=registered_arm(mask,template,recipe['arm_palette'],recipe['arm_registration'],recipe.get('arm_neck_exclusion'))
         # The original chest and collar cover any overlap from registered arms.
         layers['upper_body']=torso
         layers['head']=shifted(head,dy)
@@ -92,28 +103,36 @@ def build():
             'boot_top_rows':pose['boot_top_rows'],'patch_pixels':pose['patch_pixels'],
             'layers_from_repo_root':layer_files
         })
+        if 'leg_split_x' in pose:records[-1]['leg_split_x']=pose['leg_split_x']
     sheet=blank((96,36))
     for i,image in enumerate(frames):sheet.paste(image,(i*24,0))
     sheet.save(output/'spritesheet.png')
     on_background(sheet,12).save(output/'frames_review.png')
     durations=[phase['duration_ms'] for phase in template['frames']]
     previews=[on_background(image,20) for image in frames]
-    for name,images in [('walk_front_preview.gif',previews),('shared_motion_comparison.gif',comparisons)]:
+    for name,images in [(f'walk_{direction}_preview.gif',previews),('shared_motion_comparison.gif',comparisons)]:
         images[0].save(output/name,save_all=True,append_images=images[1:],duration=durations,
                        loop=0,disposal=2,optimize=False)
     write_json(output/'animation.json',{
-        'character':'tomas','animation':'walk.front','status':recipe['approval_status'],
+        'character':'tomas','animation':f'walk.{direction}','status':recipe['approval_status'],
         'image':'spritesheet.png','frame_size':[24,36],'foot_anchor':[12,34],
         'rest_visible_height_px':32,'height_difference_from_caelan_px':-2,
         'loop':True,'duration_ms':sum(durations),'frames':records,
         'template':recipe['template'],'recipe':'recipe.json','offsets_baked_into_pixels':True,
         'arm_registration':recipe['arm_registration'],
-        'knee_patch':{'anatomical_side':'left','front_screen_side':'right'},
-        'review':{'gif':'walk_front_preview.gif','scale':20,'background':'#e8edf2'},
+        'knee_patch':({'anatomical_side':'left','front_screen_side':'right'} if direction=='front' else
+                      {'anatomical_side':'left','visible':direction=='left','visibility_reason':
+                       {'left':'near left leg','right':'occluded from right profile','back':'front of knee faces away'}[direction]}),
+        'review':{'gif':f'walk_{direction}_preview.gif','scale':20,'background':'#e8edf2'},
         'comparison':{'gif':'shared_motion_comparison.gif','scale':16,'columns':['caelan','tomas']}
     })
-    print('Built Tomas front walk: four phases, shorter appearance, registered arms and moving left-knee patch.')
+    print(f'Built Tomas {direction} walk: four phases, shorter appearance and directional costume poses.')
 
 
 if __name__=='__main__':
-    build()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--direction',choices=['front','left','right','back','remaining','all'],default='front')
+    args=parser.parse_args()
+    directions=('left','right','back') if args.direction=='remaining' else ('front','left','right','back') if args.direction=='all' else (args.direction,)
+    for direction in directions:build(direction)
+    if args.direction in ('remaining','all'):build_direction_board('tomas')

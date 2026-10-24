@@ -1,0 +1,115 @@
+{
+  "character": "tomas",
+  "direction": "right",
+  "approval_status": "review",
+  "idle": "../idle_right.png",
+  "materials": "../palette.json",
+  "template": "../../../templates/humanoid_24x36/walk_right/poses.json",
+  "parts_directory": "../../../source/characters/tomas/walk_right/parts",
+  "head_rect": [
+    0,
+    0,
+    24,
+    15
+  ],
+  "upper_body_rect": [
+    12,
+    15,
+    3,
+    6
+  ],
+  "waist_rect": [
+    11,
+    21,
+    4,
+    2
+  ],
+  "hem_rect": [
+    10,
+    23,
+    6,
+    3
+  ],
+  "idle_eye_pixels": [
+    [
+      14,
+      11
+    ]
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      13,
+      24,
+      12
+    ],
+    "target_size": [
+      20,
+      11
+    ],
+    "offset": [
+      2,
+      15
+    ],
+    "resampling": "nearest"
+  },
+  "arm_palette": {
+    "outline": "#1a0e16",
+    "fabric_shadow": "#bcae91",
+    "fabric_base": "#ded1ae",
+    "fabric_light": "#fbeed0",
+    "skin_base": "#e8c49d",
+    "skin_shadow": "#eda052"
+  },
+  "costume_poses": [
+    {
+      "id": "01",
+      "boot_top_rows": {
+        "left": 31,
+        "right": 31
+      },
+      "leg_split_x": 12,
+      "patch_pixels": []
+    },
+    {
+      "id": "02",
+      "boot_top_rows": {
+        "left": 31,
+        "right": 28
+      },
+      "leg_split_x": 13,
+      "patch_pixels": []
+    },
+    {
+      "id": "03",
+      "boot_top_rows": {
+        "left": 31,
+        "right": 31
+      },
+      "leg_split_x": 12,
+      "patch_pixels": []
+    },
+    {
+      "id": "04",
+      "boot_top_rows": {
+        "left": 28,
+        "right": 31
+      },
+      "leg_split_x": 11,
+      "patch_pixels": []
+    }
+  ],
+  "notes": "Read-only approved directional appearance and shared stride. Same arm registration and 140ms timing as the approved front. Directional collar is retained and moves with head/shoulders; profile masks exclude the source neck. Patch follows the near left knee only in left profile; right profile and back retain approved hidden-patch appearance. Boot tops adapt to projected leg lengths; offsets baked into frames.",
+  "neckline_rect": [
+    9,
+    15,
+    5,
+    3
+  ],
+  "arm_neck_exclusion": [
+    9,
+    13,
+    6,
+    6
+  ]
+}

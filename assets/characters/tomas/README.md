@@ -28,4 +28,12 @@ Run `python tools/build_tomas_directional_idles.py` to rebuild these views, thei
 
 `walk_front/` adds a four-phase front walk using the shared stride and timing, with arm poses registered to Tomas's proportions. Head and shoulders bob together; the patch follows the left knee rather than staying fixed on the sheet. He remains two pixels shorter than Caelan in matching phases.
 
-The pack includes a 20× looping GIF, 12× frame strip, 16× synchronized Caelan comparison, native 96×36 sheet, recipe and animation metadata. Run `python tools/build_tomas_walk.py` and `python tools/test_tomas_walk.py`. Approved idle artwork is unchanged; other walking directions are future work.
+The pack includes a 20× looping GIF, 12× frame strip, 16× synchronized Caelan comparison, native 96×36 sheet, recipe and animation metadata. Run `python tools/build_tomas_walk.py` and `python tools/test_tomas_walk.py`. Approved idle artwork is unchanged.
+
+## Left, right and back walks — awaiting review
+
+`walk_left/`, `walk_right/` and `walk_back/` add four-frame cycles from their approved idles. They share the directional stride/timing and the front walk's smaller arm registration, with the collar, head and shoulders rising together on passing phases. Tomas stays two pixels shorter than Caelan in matching phases. The patch follows the near left knee in the left profile, stays occluded in the right profile, and faces away in the back.
+
+Each directory includes a 20× opaque looping GIF, 12× strip, 16× Caelan comparison, native sheet, recipe and metadata. `walk_directions_review.gif` shows all four directions synchronized at 12× with independent approval labels. `walk_directions.png` is a native 96×144 sheet, with directions as rows and phases as columns; `walk_directions.json` records rectangles and timing.
+
+Run `python tools/build_tomas_walk.py --direction remaining` to rebuild only the new walks and combined board. `--direction all` also rebuilds the approved front with unchanged pixels; the default remains front-only. Run `python tools/test_tomas_walk.py` after all directions exist. Approved idles, palette and shared templates remain read only.
