@@ -1,0 +1,252 @@
+"""Run the playable Eldenmere town: python main.py."""
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import os
+from pathlib import Path
+
+os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
+try:
+    import pygame
+except ModuleNotFoundError:
+    raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
+
+ROOT=Path(__file__).resolve().parent
+MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
+VIEW_SIZE=(480,320)
+WINDOW_SIZE=(960,640)
+WALK_SPEED=72.0
+RUN_MULTIPLIER=1.5
+
+
+def read_json(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+class World:
+    """Approved town art, animated world objects, and pixel-accurate blockers."""
+    def __init__(self,path=MAP_FILE):
+        self.data=read_json(path)
+        self.size=tuple(self.data['size_pixels'])
+        self._images={}
+        self.ground=[self.image(p,False) for p in self.data['ground_frames']]
+        collision=self.image(self.data['collision'],False)
+        # Collision exports are monochrome, so white pixels block and black
+        # pixels remain walkable. Do not use alpha (the mask is opaque).
+        self.blocked=pygame.mask.from_threshold(collision,(255,255,255,255),(1,1,1,255))
+        self.probe_size=tuple(self.data['player_probe_size'])
+        self.probe=pygame.Mask(self.probe_size,fill=True)
+        self.entities=[]
+        for record in self.data['entities']:
+            frames=[self.image(p) for p in record['frames']]
+            self.entities.append({**record,'surfaces':frames,'rect':frames[0].get_rect(topleft=record['position'])})
+        self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
+        self.overview=self.image(self.data['overview'],False)
+
+    def image(self,path,alpha=True):
+        key=(path,alpha)
+        if key not in self._images:
+            image=pygame.image.load(str(ROOT/path))
+            self._images[key]=image.convert_alpha() if alpha else image.convert()
+        return self._images[key]
+
+    def can_stand(self,position):
+        """Position is the centre of the established 24×12 ground probe."""
+        x=round(position[0])-self.probe_size[0]//2
+        y=round(position[1])-self.probe_size[1]//2
+        if x<0 or y<0 or x+self.probe_size[0]>self.size[0] or y+self.probe_size[1]>self.size[1]:
+            return False
+        return self.blocked.overlap(self.probe,(x,y)) is None
+
+    def location(self,position):
+        nearest=min(self.data['landmarks'],key=lambda p:pygame.Vector2(p['position']).distance_squared_to(position))
+        return nearest['name'] if pygame.Vector2(nearest['position']).distance_to(position)<130 else 'Village paths'
+
+    def draw(self,target,camera,player,elapsed_ms):
+        viewport=pygame.Rect(camera,VIEW_SIZE)
+        phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
+        target.blit(self.ground[phase],(-camera[0],-camera[1]))
+        # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
+        # objects so Caelan can walk in front of and behind the same building.
+        ordered=[(r['sort_y'],False,r) for r in self.entities if r['rect'].colliderect(viewport)]
+        ordered.append((player.position.y+self.probe_size[1]/2,True,player))
+        for _,is_player,record in sorted(ordered,key=lambda r:r[0]):
+            if is_player:
+                anchor=self.data['player_draw_anchor']
+                target.blit(player.sprite(),(round(player.position.x)-anchor[0]-camera[0],
+                                              round(player.position.y)-anchor[1]-camera[1]))
+            else:
+                phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
+                target.blit(record['surfaces'][phase],(record['position'][0]-camera[0],record['position'][1]-camera[1]))
+        # Southern bridge rails occlude actors crossing on the deck.
+        for image,position in self.foreground:
+            target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
+
+
+class Player:
+    def __init__(self,world):
+        self.position=pygame.Vector2(world.data['spawn'])
+        self.facing='front'
+        self.moving=False
+        self.walk_ms=0.0
+        self.idles={d:world.image(f'assets/characters/caelan/idle_{d}.png') for d in ('front','left','right','back')}
+        self.walks={}
+        for direction in self.idles:
+            folder=ROOT/f'assets/characters/caelan/walk_{direction}'
+            metadata=read_json(folder/'animation.json')
+            self.walks[direction]=[(world.image((folder/r['file']).relative_to(ROOT).as_posix()),r['duration_ms'])
+                                   for r in metadata['frames']]
+        if not world.can_stand(self.position):raise ValueError('Player spawn is blocked')
+
+    def update(self,direction,seconds,world,running=False):
+        vector=pygame.Vector2(direction)
+        self.moving=False
+        if not vector.length_squared():
+            self.walk_ms=0
+            return
+        vector=vector.normalize()
+        facing=('right' if vector.x>0 else 'left') if abs(vector.x)>abs(vector.y) else ('front' if vector.y>0 else 'back')
+        if facing!=self.facing:self.walk_ms=0
+        self.facing=facing
+        speed=WALK_SPEED*(RUN_MULTIPLIER if running else 1)
+        displacement=vector*speed*seconds
+        # Small steps prevent tunnelling through thin banks, rails and walls.
+        steps=max(1,math.ceil(max(abs(displacement.x),abs(displacement.y))))
+        delta=displacement/steps
+        start=self.position.copy()
+        for _ in range(steps):
+            candidate=self.position+pygame.Vector2(delta.x,0)
+            if world.can_stand(candidate):self.position.x=candidate.x
+            candidate=self.position+pygame.Vector2(0,delta.y)
+            if world.can_stand(candidate):self.position.y=candidate.y
+        self.moving=self.position.distance_squared_to(start)>1e-8
+        if self.moving:self.walk_ms+=seconds*1000*(RUN_MULTIPLIER if running else 1)
+        else:self.walk_ms=0
+
+    def sprite(self):
+        if not self.moving:return self.idles[self.facing]
+        frames=self.walks[self.facing]
+        time=self.walk_ms%sum(duration for _,duration in frames)
+        for image,duration in frames:
+            if time<duration:return image
+            time-=duration
+        return frames[-1][0]
+
+
+def camera_for(position,world_size,view_size=VIEW_SIZE):
+    return tuple(max(0,min(max(0,size-view),round(value-view/2)))
+                 for value,size,view in zip(position,world_size,view_size))
+
+
+class Game:
+    def __init__(self,window_size=WINDOW_SIZE):
+        pygame.display.init();pygame.font.init()
+        self.window=pygame.display.set_mode(window_size,pygame.RESIZABLE)
+        pygame.display.set_caption('Project JRPG — Eldenmere')
+        self.canvas=pygame.Surface(VIEW_SIZE)
+        self.font=pygame.font.Font(None,16)
+        self.small_font=pygame.font.Font(None,14)
+        self.world=World()
+        self.player=Player(self.world)
+        self.elapsed_ms=0.0
+        self.map_open=False
+        self.fullscreen=False
+        self.windowed_size=window_size
+        self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
+        self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
+
+    def handle_events(self):
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:return False
+            if event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_ESCAPE:
+                    if self.map_open:self.map_open=False
+                    else:return False
+                elif event.key==pygame.K_m:self.map_open=not self.map_open
+                elif event.key==pygame.K_F11:
+                    self.fullscreen=not self.fullscreen
+                    if self.fullscreen:
+                        self.windowed_size=self.window.get_size()
+                        self.window=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+                    else:self.window=pygame.display.set_mode(self.windowed_size,pygame.RESIZABLE)
+            elif event.type==pygame.VIDEORESIZE and not self.fullscreen:
+                self.window=pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
+        return True
+
+    def update(self,seconds,direction=None,running=None):
+        self.elapsed_ms+=seconds*1000
+        if direction is None:
+            keys=pygame.key.get_pressed()
+            direction=(int(keys[pygame.K_d] or keys[pygame.K_RIGHT])-int(keys[pygame.K_a] or keys[pygame.K_LEFT]),
+                       int(keys[pygame.K_s] or keys[pygame.K_DOWN])-int(keys[pygame.K_w] or keys[pygame.K_UP]))
+            running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
+        self.player.update((0,0) if self.map_open else direction,seconds,self.world,bool(running))
+
+    def text(self,text,position,font=None,color='#f7eed5'):
+        self.canvas.blit((font or self.font).render(text,False,color),position)
+
+    def draw_map(self):
+        shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA);shade.fill((12,24,23,210));self.canvas.blit(shade,(0,0))
+        pygame.draw.rect(self.canvas,'#263c35',(12,28,456,266))
+        pygame.draw.rect(self.canvas,'#b7a47b',(12,28,456,266),1)
+        self.text('ELDENMERE',(28,40))
+        origin=(28,66)
+        self.canvas.blit(self.map_image,origin)
+        for i,landmark in enumerate(self.world.data['landmarks'],1):
+            x=origin[0]+round(landmark['position'][0]*self.map_size[0]/self.world.size[0])
+            y=origin[1]+round(landmark['position'][1]*self.map_size[1]/self.world.size[1])
+            pygame.draw.circle(self.canvas,'#2b2924',(x,y),5)
+            self.text(str(i),(x-2,y-4),self.small_font)
+            self.text(f'{i}. {landmark["name"]}',(266,68+(i-1)*23),self.small_font)
+        x=origin[0]+round(self.player.position.x*self.map_size[0]/self.world.size[0])
+        y=origin[1]+round(self.player.position.y*self.map_size[1]/self.world.size[1])
+        pygame.draw.circle(self.canvas,'#15282b',(x,y),4)
+        pygame.draw.circle(self.canvas,'#ffdc71',(x,y),2)
+        self.text('You are here',(266,242),self.small_font,color='#ffdc71')
+        self.text('M or Esc: close map',(28,274),self.small_font)
+
+    def draw(self):
+        camera=camera_for(self.player.position,self.world.size)
+        self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
+        pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
+        self.text('Eldenmere',(15,13))
+        self.text(self.world.location(self.player.position),(88,14),self.small_font)
+        pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
+        self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
+        if self.map_open:self.draw_map()
+        width,height=self.window.get_size()
+        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
+        size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
+        self.window.fill('#101b19')
+        self.window.blit(pygame.transform.scale(self.canvas,size),((width-size[0])//2,(height-size[1])//2))
+        pygame.display.flip()
+
+
+def main(argv=None):
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--headless',action='store_true',help='Run without a visible window for verification')
+    parser.add_argument('--frames',type=int,default=0,help='Exit after this many frames (0: play until quit)')
+    parser.add_argument('--screenshot',type=Path,help='Save the final rendered window as a PNG')
+    args=parser.parse_args(argv)
+    if args.frames<0:parser.error('--frames must be nonnegative')
+    if args.headless:os.environ['SDL_VIDEODRIVER']='dummy'
+    if not MAP_FILE.is_file():raise SystemExit('Playable town data is missing. Restore assets/maps/eldenmere/playable from the repository.')
+    game=Game()
+    clock=pygame.time.Clock()
+    limit=args.frames or (1 if args.headless else 0)
+    count=0
+    try:
+        while game.handle_events():
+            seconds=1/60 if args.headless else min(clock.tick(60)/1000,.1)
+            game.update(seconds);game.draw();count+=1
+            if limit and count>=limit:break
+        if args.screenshot:
+            args.screenshot.parent.mkdir(parents=True,exist_ok=True)
+            pygame.image.save(game.window,str(args.screenshot))
+    finally:pygame.quit()
+    return 0
+
+
+if __name__=='__main__':raise SystemExit(main())

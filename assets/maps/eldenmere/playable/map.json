@@ -1,0 +1,943 @@
+{
+  "id": "eldenmere.playable",
+  "size_tiles": [
+    64,
+    56
+  ],
+  "tile_size": 24,
+  "size_pixels": [
+    1536,
+    1344
+  ],
+  "spawn": [
+    384,
+    312
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/playable/ground/frame_01.png",
+    "assets/maps/eldenmere/playable/ground/frame_02.png",
+    "assets/maps/eldenmere/playable/ground/frame_03.png",
+    "assets/maps/eldenmere/playable/ground/frame_04.png",
+    "assets/maps/eldenmere/playable/ground/frame_05.png",
+    "assets/maps/eldenmere/playable/ground/frame_06.png"
+  ],
+  "ground_frame_duration_ms": 200,
+  "collision": "assets/maps/eldenmere/playable/collision.png",
+  "entities": [
+    {
+      "id": "sanctuary",
+      "position": [
+        252,
+        84
+      ],
+      "sort_y": 288,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_18.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_22.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_23.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_24.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_25.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_26.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_27.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_28.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_29.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_30.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_18.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_37.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_38.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_39.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_28.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_29.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_30.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_49.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_50.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_51.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_52.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_53.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary/frame_54.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "mill",
+      "position": [
+        936,
+        204
+      ],
+      "sort_y": 336,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/mill/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/mill/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/mill/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/mill/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/mill/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/mill/frame_06.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "halden",
+      "position": [
+        948,
+        480
+      ],
+      "sort_y": 624,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/halden/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/halden/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "mira",
+      "position": [
+        564,
+        264
+      ],
+      "sort_y": 432,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/mira/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_18.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_19.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_20.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_21.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_22.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_23.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_24.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_25.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_26.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_27.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_28.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_29.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_30.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_34.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_35.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_36.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_37.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_38.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_39.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_25.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_26.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_27.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_46.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_47.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_48.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_49.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_50.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_51.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/mira/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "elira",
+      "position": [
+        636,
+        816
+      ],
+      "sort_y": 960,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/elira/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/elira/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "venn",
+      "position": [
+        1164,
+        576
+      ],
+      "sort_y": 720,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/venn/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/venn/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "home_a",
+      "position": [
+        156,
+        576
+      ],
+      "sort_y": 720,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/home_a/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/home_a/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "home_b",
+      "position": [
+        444,
+        528
+      ],
+      "sort_y": 672,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/home_b/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/home_b/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "home_c",
+      "position": [
+        204,
+        936
+      ],
+      "sort_y": 1080,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/home_c/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_09.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_10.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_11.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_12.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_13.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_14.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_15.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_16.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_17.png",
+        "assets/maps/eldenmere/playable/entities/home_c/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "sanctuary.bench",
+      "position": [
+        266,
+        302
+      ],
+      "sort_y": 332,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.bench/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "sanctuary.provision_basket",
+      "position": [
+        414,
+        286
+      ],
+      "sort_y": 304,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.provision_basket/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "sanctuary.shade_tree",
+      "position": [
+        194,
+        210
+      ],
+      "sort_y": 330,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.shade_tree/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "sanctuary.west_shrub",
+      "position": [
+        240,
+        268
+      ],
+      "sort_y": 292,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_shrub/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1
+    },
+    {
+      "id": "sanctuary.east_shrub",
+      "position": [
+        464,
+        268
+      ],
+      "sort_y": 292,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_shrub/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1
+    },
+    {
+      "id": "sanctuary.west_flowers",
+      "position": [
+        238,
+        318
+      ],
+      "sort_y": 342,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_flowers/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    },
+    {
+      "id": "sanctuary.east_flowers",
+      "position": [
+        468,
+        313
+      ],
+      "sort_y": 337,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_flowers/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    },
+    {
+      "id": "sanctuary.southwest_flowers",
+      "position": [
+        291,
+        330
+      ],
+      "sort_y": 354,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_flowers/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3
+    },
+    {
+      "id": "sanctuary.southeast_flowers",
+      "position": [
+        444,
+        331
+      ],
+      "sort_y": 355,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_flowers/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3
+    },
+    {
+      "id": "sanctuary.west_grass",
+      "position": [
+        211,
+        334
+      ],
+      "sort_y": 358,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.west_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    },
+    {
+      "id": "sanctuary.east_grass",
+      "position": [
+        484,
+        334
+      ],
+      "sort_y": 358,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.east_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    },
+    {
+      "id": "sanctuary.southwest_grass",
+      "position": [
+        259,
+        333
+      ],
+      "sort_y": 357,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southwest_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3
+    },
+    {
+      "id": "sanctuary.southeast_grass",
+      "position": [
+        423,
+        335
+      ],
+      "sort_y": 359,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/sanctuary.southeast_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 3
+    },
+    {
+      "id": "workshop.workbench",
+      "position": [
+        574,
+        418
+      ],
+      "sort_y": 444,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.workbench/frame_01.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "workshop.timber_rack",
+      "position": [
+        548,
+        397
+      ],
+      "sort_y": 425,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.timber_rack/frame_01.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "workshop.spare_cog_fittings",
+      "position": [
+        658,
+        418
+      ],
+      "sort_y": 444,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.spare_cog_fittings/frame_01.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "workshop.stool_watering_can",
+      "position": [
+        548,
+        430
+      ],
+      "sort_y": 450,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.stool_watering_can/frame_01.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
+    },
+    {
+      "id": "workshop.west_foundation_grass",
+      "position": [
+        548,
+        376
+      ],
+      "sort_y": 400,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/workshop.west_foundation_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 1
+    },
+    {
+      "id": "workshop.yard_edge_grass",
+      "position": [
+        532,
+        423
+      ],
+      "sort_y": 447,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_02.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_03.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_04.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_06.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_07.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_08.png",
+        "assets/maps/eldenmere/playable/entities/workshop.yard_edge_grass/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    }
+  ],
+  "foreground": [
+    {
+      "id": "upper_bridge",
+      "position": [
+        768,
+        444
+      ],
+      "image": "assets/maps/eldenmere/playable/foreground/upper_bridge.png"
+    },
+    {
+      "id": "main_bridge",
+      "position": [
+        744,
+        996
+      ],
+      "image": "assets/maps/eldenmere/playable/foreground/main_bridge.png"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "sanctuary",
+      "name": "Sanctuary",
+      "position": [
+        396,
+        300
+      ]
+    },
+    {
+      "id": "mira",
+      "name": "Mira\u2019s workshop",
+      "position": [
+        636,
+        444
+      ]
+    },
+    {
+      "id": "mill",
+      "name": "Watermill",
+      "position": [
+        972,
+        348
+      ]
+    },
+    {
+      "id": "halden",
+      "name": "Halden\u2019s cottage",
+      "position": [
+        1020,
+        636
+      ]
+    },
+    {
+      "id": "elira",
+      "name": "Elira\u2019s cottage",
+      "position": [
+        684,
+        972
+      ]
+    },
+    {
+      "id": "venn",
+      "name": "Venn family cottage",
+      "position": [
+        1260,
+        732
+      ]
+    },
+    {
+      "id": "commons",
+      "name": "Village commons",
+      "position": [
+        516,
+        900
+      ]
+    }
+  ],
+  "destinations": {
+    "sanctuary": [
+      396,
+      300
+    ],
+    "mill": [
+      972,
+      348
+    ],
+    "halden": [
+      1020,
+      636
+    ],
+    "mira": [
+      636,
+      444
+    ],
+    "elira": [
+      684,
+      972
+    ],
+    "venn": [
+      1260,
+      732
+    ],
+    "home_a": [
+      228,
+      732
+    ],
+    "home_b": [
+      516,
+      684
+    ],
+    "home_c": [
+      276,
+      1092
+    ],
+    "commons": [
+      516,
+      900
+    ],
+    "gate": [
+      1428,
+      660
+    ],
+    "storage": [
+      1068,
+      516
+    ],
+    "southern_exit": [
+      516,
+      1332
+    ],
+    "woodland_exit": [
+      720,
+      6
+    ],
+    "main_hero": [
+      516,
+      900
+    ],
+    "halden_actual_threshold": [
+      1008,
+      636
+    ],
+    "elira_actual_threshold": [
+      672,
+      972
+    ],
+    "venn_actual_threshold": [
+      1248,
+      732
+    ],
+    "home_a_actual_threshold": [
+      216,
+      732
+    ],
+    "home_b_actual_threshold": [
+      504,
+      684
+    ],
+    "home_c_actual_threshold": [
+      264,
+      1092
+    ],
+    "sanctuary_steps": [
+      384,
+      360
+    ],
+    "upper_bridge": [
+      852,
+      480
+    ],
+    "halden_door": [
+      1008,
+      640
+    ],
+    "elira_door": [
+      672,
+      976
+    ],
+    "venn_steps": [
+      1176,
+      876
+    ],
+    "venn_door": [
+      1248,
+      736
+    ],
+    "mill_landing": [
+      960,
+      348
+    ],
+    "main_bridge": [
+      828,
+      1032
+    ],
+    "workshop_door": [
+      636,
+      444
+    ],
+    "workbench": [
+      594,
+      456
+    ],
+    "mira_scale": [
+      594,
+      474
+    ],
+    "conversation_left": [
+      624,
+      456
+    ],
+    "conversation_right": [
+      648,
+      456
+    ],
+    "woodland_lane": [
+      720,
+      420
+    ]
+  },
+  "layout_source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+  "source_art": [
+    "assets/terrain/eldenmere/workshop/workshop.json",
+    "assets/terrain/eldenmere/sanctuary_charm/charm.json"
+  ],
+  "npcs": [],
+  "quests": [],
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}

@@ -1,6 +1,40 @@
 # Project JRPG
 
-The project is starting over from its story. The previous implementation, maps, assets, art specifications, tools, tests, and build workflows have been removed. There is currently no runnable game. New asset tooling is documented below.
+Explore the approved Eldenmere town as Caelan by running `main.py`. The game uses the new 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
+
+## Play Eldenmere
+
+Use Python 3.10 or newer. From the repository folder:
+
+```sh
+python -m pip install -r requirements.txt
+python main.py
+```
+
+In VS Code, select the Python interpreter where you installed the dependency, open `main.py` and choose **Run Python File**, or use the **Play Eldenmere** launch configuration with F5. No asset-building step is required. Paths are resolved relative to `main.py`, so launching from another working directory also works.
+
+| Control | Action |
+| --- | --- |
+| WASD or arrow keys | Move Caelan |
+| Shift | Run |
+| M | Open/close the town map |
+| F11 | Toggle fullscreen |
+| Escape | Close the map, or quit |
+
+The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
+
+This first playable milestone covers the **outdoor town with Caelan only**. Building doors stay closed; NPCs, quests and interior transitions will be added later. The map's north and south roads end at the current town boundary.
+
+Verify the runtime without a display:
+
+```sh
+python -m unittest discover -s tests -v
+python main.py --headless --frames 120 --screenshot screenshots/eldenmere.png
+```
+
+The runtime requires only Pygame. The checked-in [playable map](assets/maps/eldenmere/playable/README.md) is compiled from approved art; rebuilding it is an optional development step requiring the separate Pillow asset environment.
+
+See the [gameplay capture](docs/reviews/playable_eldenmere/gameplay.gif) and [in-game town map](docs/reviews/playable_eldenmere/town_map.png) for a preview from the running game.
 
 ## Story documents
 
