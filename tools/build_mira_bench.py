@@ -118,7 +118,7 @@ def build():
     for step in recipe['sequence']:
         sequence.append({**step, 'file':step['pose']+'.png', 'fitting_file':f"fitting_{step.get('fitting_phase',0)}.png"})
     animation = {
-        'id':'mira.work_bench', 'status':'review', 'frame_size':[24,36],
+        'id':'mira.work_bench', 'status':recipe['status'], 'frame_size':[24,36],
         'foot_anchor':[12,34], 'draw_anchor':[12,30], 'loop':True,
         'duration_ms':sum(s['duration_ms'] for s in sequence),
         'frames':sequence, 'source_recipe':'../../../source/characters/mira/work_bench/recipe.json',

@@ -15,7 +15,7 @@ Ground baselines sort roofs, tree canopies and props against the player; bridge 
 
 `map.json` now includes nine proximity doors and an interior scene registry. Door panels are drawn with their host buildings, so ambient animations and depth sorting continue while doors open. A 30px proximity starts opening; a 38px release radius prevents boundary flicker. Five 100ms poses play forward/reverse without looping or restarting when direction changes. Walking north into the fully open threshold transfers to the corresponding furnished interior; returning through its cutaway south exit places Caelan safely outside the same door. Detailed room/door data are in [building_interiors](../building_interiors/README.md).
 
-The `npcs` registry contains one actor: Mira's [outdoor bench routine](../../../characters/mira/work_bench/README.md), awaiting user review. Its variable-duration poses and bench fitting share the global game clock, so returning from a room does not create another Mira or restart her work. The 8×4 foot blocker leaves both approved yard approach points and the doorway usable. The approved static collision mask and all source scenery remain unchanged.
+The `npcs` registry contains one actor: Mira's [outdoor bench routine](../../../characters/mira/work_bench/README.md), approved by the user. Its variable-duration poses and bench fitting share the global game clock, so returning from a room does not create another Mira or restart her work. The 8×4 foot blocker leaves both approved yard approach points and the doorway usable. The approved static collision mask and all source scenery remain unchanged.
 
 To rebuild in the asset environment:
 

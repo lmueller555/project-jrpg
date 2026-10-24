@@ -1,6 +1,6 @@
 # Mira's outdoor bench routine — review
 
-Status: awaiting user review.
+Status: approved by the user. The previews retain the approved artwork and timing.
 
 - [6× looping close-up](bench_closeup.gif)
 - [3× workshop scene](workshop_scene.gif)

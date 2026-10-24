@@ -27,7 +27,7 @@ The resizable window uses crisp integer pixel scaling. Explore the full approved
 
 All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors. The map's north and south roads currently end at the town boundary.
 
-Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is awaiting design review. She has foot collision and draws at the appropriate depth; the shop entrance remains clear. Other NPCs, travel routines, conversations and quests remain future work.
+Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is approved by the user. She has foot collision and draws at the appropriate depth; the shop entrance remains clear. Other NPCs, travel routines, conversations and quests remain future work.
 
 Verify the runtime without a display:
 
