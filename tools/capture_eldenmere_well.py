@@ -89,7 +89,8 @@ def capture():
     closeups[0].save(OUTPUT/'well_closeup.png')
     gif(OUTPUT/'well_closeup.gif',closeups)
     (OUTPUT/'capture.json').write_text(json.dumps({
-        'status':'review','before_commit':BEFORE_COMMIT,'source_map':game.world.path.relative_to(ROOT).as_posix(),
+        'status':main.read_json(ROOT/'assets/terrain/eldenmere/well/well.json')['status'],
+        'before_commit':BEFORE_COMMIT,'source_map':game.world.path.relative_to(ROOT).as_posix(),
         'well_position':[486,792],'ground_rect':[504,840,48,48],
         'square_rect_tiles':[16,32,10,8],'scene_duration_ms':10800,
         'closeup_duration_ms':1200,'walk_completed':True

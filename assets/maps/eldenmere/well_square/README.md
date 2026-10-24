@@ -1,6 +1,6 @@
 # Eldenmere well square — layout overlay
 
-Status: awaiting user review.
+Status: approved by the user.
 
 `layout.json` records the local changes to the existing commons: a rounded 10×8-tile dirt clearing, reused stone paving, a 2×2-tile well ground footprint and a two-tile-wide southern path connection. Building positions, entrances, terrace heights, bridges and watercourses remain the approved foundation's geometry.
 

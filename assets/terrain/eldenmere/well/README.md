@@ -1,6 +1,6 @@
 # Eldenmere — well and commons square
 
-Status: **awaiting user review**.
+Status: **approved by the user**.
 
 A roofed fieldstone well sits just north of the commons' through path. Slate-colored shingles, brown timber posts, a hand crank, winding spindle, rope and a suspended wooden bucket match the village materials. Six 200ms phases add small water glints inside the shaft; the roof, stone, windlass, rope and bucket stay fixed. Character scale remains 24×36 on 24px terrain.
 
