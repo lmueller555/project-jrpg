@@ -74,6 +74,7 @@
     892
   ],
   "snap_pixels": 0,
+  "handoff_motion": "continuous",
   "phases_ms": {
     "well_attach": 1200,
     "well_hook": 600,
@@ -89,6 +90,5 @@
   },
   "source": "assets/source/terrain/eldenmere/well/parts/native_structure.png",
   "bucket_owner": "gardener",
-  "notes": "One pail; gradual vertical handoff to the winch, rope payout starts at zero and follows bucket depth.",
-  "handoff_motion": "continuous"
+  "notes": "One pail; gradual vertical handoff to the winch, rope payout starts at zero and follows bucket depth."
 }
