@@ -1,0 +1,146 @@
+{
+  "status": "awaiting_user_review",
+  "frame_size": [
+    72,
+    72
+  ],
+  "format": "RGB PNG",
+  "background": "opaque dark green",
+  "portraits": {
+    "caelan": {
+      "name": "Caelan",
+      "expression": "neutral",
+      "file": "caelan_neutral.png",
+      "sprite_root": "assets/characters/caelan",
+      "source": "assets/source/portraits/eldenmere/main_cast_atlas.png",
+      "source_rect": [
+        0,
+        0,
+        627,
+        627
+      ]
+    },
+    "mira": {
+      "name": "Mira",
+      "expression": "neutral",
+      "file": "mira_neutral.png",
+      "sprite_root": "assets/characters/mira",
+      "source": "assets/source/portraits/eldenmere/main_cast_atlas.png",
+      "source_rect": [
+        627,
+        0,
+        1254,
+        627
+      ]
+    },
+    "serene": {
+      "name": "Mother Serene",
+      "expression": "neutral",
+      "file": "serene_neutral.png",
+      "sprite_root": "assets/characters/serene",
+      "source": "assets/source/portraits/eldenmere/main_cast_atlas.png",
+      "source_rect": [
+        0,
+        627,
+        627,
+        1254
+      ]
+    },
+    "tomas": {
+      "name": "Tomas",
+      "expression": "neutral",
+      "file": "tomas_neutral.png",
+      "sprite_root": "assets/characters/tomas",
+      "source": "assets/source/portraits/eldenmere/main_cast_atlas.png",
+      "source_rect": [
+        627,
+        627,
+        1254,
+        1254
+      ]
+    },
+    "male_01": {
+      "name": "Male NPC / moss",
+      "expression": "neutral",
+      "file": "male_01_neutral.png",
+      "sprite_root": "assets/characters/npcs/male_01",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        0,
+        0,
+        512,
+        512
+      ]
+    },
+    "male_02": {
+      "name": "Male NPC / rust",
+      "expression": "neutral",
+      "file": "male_02_neutral.png",
+      "sprite_root": "assets/characters/npcs/male_02",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        512,
+        0,
+        1024,
+        512
+      ]
+    },
+    "male_03": {
+      "name": "Male NPC / slate",
+      "expression": "neutral",
+      "file": "male_03_neutral.png",
+      "sprite_root": "assets/characters/npcs/male_03",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        1024,
+        0,
+        1536,
+        512
+      ]
+    },
+    "female_01": {
+      "name": "Female NPC / blue",
+      "expression": "neutral",
+      "file": "female_01_neutral.png",
+      "sprite_root": "assets/characters/npcs/female_01",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        0,
+        512,
+        512,
+        1024
+      ]
+    },
+    "female_02": {
+      "name": "Gardener / sage",
+      "expression": "neutral",
+      "file": "female_02_neutral.png",
+      "sprite_root": "assets/characters/npcs/female_02",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        512,
+        512,
+        1024,
+        1024
+      ]
+    },
+    "female_03": {
+      "name": "Female NPC / plum",
+      "expression": "neutral",
+      "file": "female_03_neutral.png",
+      "sprite_root": "assets/characters/npcs/female_03",
+      "source": "assets/source/portraits/eldenmere/villagers_atlas.png",
+      "source_rect": [
+        1024,
+        512,
+        1536,
+        1024
+      ]
+    }
+  },
+  "aliases": {
+    "mother_serene": "serene",
+    "sanctuary_gardener": "female_02"
+  },
+  "runtime_integration": false
+}
