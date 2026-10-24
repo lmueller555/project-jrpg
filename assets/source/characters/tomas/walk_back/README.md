@@ -4,4 +4,4 @@
 
 The recipe at `assets/characters/tomas/walk_back/recipe.json` records appearance and shared template paths, directional collar/garment regions, arm registration, leg splits, ankle-boot boundaries and patch coordinates. No new appearance concept or edited idle is introduced. The patch is on the front of the left knee and faces away from the back view; no eyes are visible.
 
-Run `python tools/build_tomas_walk.py --direction back` from the repository root. Inputs remain read only; this animation awaits review.
+Run `python tools/build_tomas_walk.py --direction back` from the repository root. Inputs remain read only; this animation is approved.

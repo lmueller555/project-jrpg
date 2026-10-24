@@ -4,4 +4,4 @@
 
 The recipe at `assets/characters/tomas/walk_right/recipe.json` records appearance and shared template paths, directional collar/garment regions, arm registration, leg splits, ankle-boot boundaries and patch coordinates. No new appearance concept or edited idle is introduced. The anatomical left knee patch remains occluded from the right profile, matching the approved idle.
 
-Run `python tools/build_tomas_walk.py --direction right` from the repository root. Inputs remain read only; this animation awaits review.
+Run `python tools/build_tomas_walk.py --direction right` from the repository root. Inputs remain read only; this animation is approved.

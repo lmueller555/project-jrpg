@@ -30,7 +30,7 @@ Run `python tools/build_tomas_directional_idles.py` to rebuild these views, thei
 
 The pack includes a 20× looping GIF, 12× frame strip, 16× synchronized Caelan comparison, native 96×36 sheet, recipe and animation metadata. Run `python tools/build_tomas_walk.py` and `python tools/test_tomas_walk.py`. Approved idle artwork is unchanged.
 
-## Left, right and back walks — awaiting review
+## Left, right and back walks — approved
 
 `walk_left/`, `walk_right/` and `walk_back/` add four-frame cycles from their approved idles. They share the directional stride/timing and the front walk's smaller arm registration, with the collar, head and shoulders rising together on passing phases. Tomas stays two pixels shorter than Caelan in matching phases. The patch follows the near left knee in the left profile, stays occluded in the right profile, and faces away in the back.
 
