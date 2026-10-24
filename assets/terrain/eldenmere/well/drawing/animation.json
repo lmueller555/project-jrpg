@@ -53,13 +53,18 @@
       44
     ]
   ],
+  "guide_bottom_y": 76,
+  "hook_tip": [
+    40,
+    79
+  ],
   "loading_grip": [
     40,
     82
   ],
   "shaft_grip": [
     40,
-    76
+    79
   ],
   "lowered_bucket_grip": [
     40,
@@ -73,7 +78,7 @@
     526,
     892
   ],
-  "snap_pixels": 6,
+  "snap_pixels": 3,
   "phases_ms": {
     "well_attach": 1200,
     "well_hook": 600,
@@ -89,5 +94,5 @@
   },
   "source": "assets/source/terrain/eldenmere/well/parts/native_structure.png",
   "bucket_owner": "gardener",
-  "notes": "One pail; near-side back-facing handoff. Six-pixel depth snap, zero lateral movement."
+  "notes": "One pail; near-side back-facing handoff. Three-pixel depth snap, zero lateral movement. The pail stays behind her torso while her hands remain visible."
 }

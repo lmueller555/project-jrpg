@@ -246,11 +246,6 @@ class Gardener:
         name,frame,pose,key,xy=self.bucket_placement()
         if frame.get('hidden_bucket') or (self.state.startswith('well_') and 'waypoints' in self.steps[self.step_index]):
             return self.bodies[name]
-        if self.state in ('well_attach','well_hook','well_unhook','well_take'):
-            # One pail, registered to both hands before removing its hook.
-            image=self.bodies[name].copy()
-            image.blit(self.buckets[key],xy)
-            return image
         submerged=frame.get('effect')=='ripple'
         cache_key=(name,key,submerged)
         if cache_key not in self._sprite_cache:

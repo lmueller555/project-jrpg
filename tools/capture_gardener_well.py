@@ -14,13 +14,13 @@ sys.path.insert(0,str(ROOT))
 import main
 from capture_gardener import gif, panel, render
 
-OUTPUT=ROOT/'docs/reviews/gardener_near_side'
+OUTPUT=ROOT/'docs/reviews/gardener_short_guide'
 CAPTIONS={
     'rest':'Resting / next trip in 3-5 minutes',
     'pickup':'Pick up the empty pail',
     'to_well':'Follow the village lane to the well',
-    'well_attach':'Raise her pail to the centered loading guide',
-    'well_hook':'Support the pail and fasten its handle',
+    'well_attach':'Turn away and raise her pail behind her torso',
+    'well_hook':'Fasten its handle to the short centered hook',
     'well_settle':'Release the pail / it settles behind the rim',
     'well_to_crank':'Step up to the crank',
     'well_grip':'Take hold of the crank',
@@ -29,8 +29,8 @@ CAPTIONS={
     'well_raise':'Reverse the crank / lift the full bucket',
     'well_lock':'Secure the windlass',
     'well_to_loading':'Return to the near-side loading guide',
-    'well_catch':'Reach in / the pail settles into both hands',
-    'well_unhook':'Support the pail and release its hook',
+    'well_catch':'Reach in / the pail moves behind her into both hands',
+    'well_unhook':'Shield the pail with her body and release its hook',
     'well_take':'Lower her pail into its carrying pose',
     'return_to_sanctuary':'Carry water up the sanctuary stairs',
     'return_to_rest':'Return with the empty pail',
@@ -102,7 +102,7 @@ def capture():
         'well_excerpt_ms':len(well)*100,
         'watered_beds':actor.watered_beds,'remaining_water_units':actor.water_units,
         'events':events,'well_interval_ms':100,'route_interval_ms':200,
-        'notes':'Travel and actions use real game timing. Most initial rest is omitted. Watering montage cuts only between stops.'
+        'notes':'Travel and actions use real game timing. Most initial rest is omitted. The near-side hook ends three pixels below its capstone guide; the actor-held pail is behind her torso during both handoffs. Watering montage cuts only between stops.'
     }
     (OUTPUT/'capture.json').write_text(json.dumps(metadata,indent=2)+'\n')
     pygame.quit()

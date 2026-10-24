@@ -29,7 +29,8 @@ def build():
     # Only the old exposed crank is cleared, outside the right-hand timber.
     d.rectangle((69,40,83,51),fill=(0,0,0,0))
     # A small iron guide on the central near capstone parks the bare hook at a
-    # reachable height. It does not change the approved well footprint.
+    # reachable height. The separate animated hook ends only three pixels below
+    # this guide; no rope or ironwork runs down the well's front wall.
     d.line((37,75,43,75),fill='#45382d',width=2)
     d.line((38,74,42,74),fill='#a2b4a7',width=1)
     d.point((39,76),fill='#657874');d.point((41,76),fill='#657874')
@@ -49,17 +50,18 @@ def build():
         'fixed':'fixed.png','front_rim':'front_rim.png',
         'shaft_center_x':40,
         'rope_origin':[40,43],'crank_pivot':[69,43],'crank_handles':handles,
-        'loading_grip':[40,82],'shaft_grip':[40,76],
+        'guide_bottom_y':76,'hook_tip':[40,79],
+        'loading_grip':[40,82],'shaft_grip':[40,79],
         'lowered_bucket_grip':[40,92],
         'operator_position':[572,854],'loading_position':[526,892],
-        'snap_pixels':6,
+        'snap_pixels':3,
         'phases_ms':{'well_attach':1200,'well_hook':600,'well_settle':700,
                      'well_grip':500,'well_lower':3200,'well_fill':2000,
                      'well_raise':4000,'well_lock':500,'well_catch':900,
                      'well_unhook':700,'well_take':1200},
         'source':'assets/source/terrain/eldenmere/well/parts/native_structure.png',
         'bucket_owner':'gardener',
-        'notes':'One pail; near-side back-facing handoff. Six-pixel depth snap, zero lateral movement.'
+        'notes':'One pail; near-side back-facing handoff. Three-pixel depth snap, zero lateral movement. The pail stays behind her torso while her hands remain visible.'
     }
     write(OUT/'animation.json',meta)
     source=ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json'
@@ -70,9 +72,9 @@ def build():
               'well_guide_left','well_setdown_left_','well_pickup_left_')
     for name in list(work):
         if name.startswith(obsolete):del work[name]
-    def add(name,direction,arms,grip=(0,18),lean=(0,0)):
+    def add(name,direction,arms,grip=(0,18),lean=(0,0),order='after'):
         work[name]={'direction':direction,'lean':list(lean),'arms':arms,
-                    'grip':list(grip),'order':'after'}
+                    'grip':list(grip),'order':order}
     # Grips are derived from the world crank registration, not eye-estimated
     # hand poses. Preserve the approved head/neck and planted boots.
     for i,(x,y) in enumerate(handles):
@@ -88,26 +90,26 @@ def build():
         t=i/6;grip=lerp((20,24),(12,12),t)
         left=[(8,16),lerp((7,20),(10,14),t),lerp((7,24),(10,12),t)]
         right=[(16,16),lerp((18,20),(14,14),t),grip]
-        add(f'well_attach_back_{i}','back',[left,right],grip)
+        add(f'well_attach_back_{i}','back',[left,right],grip,order='before')
     for i in range(5):
         t=i/4
         left=[(8,16),lerp((10,14),(8,17),t),lerp((10,12),(8,19),t)]
         right=[(16,16),lerp((14,14),(16,17),t),lerp((14,12),(16,19),t)]
-        add(f'well_release_back_{i}','back',[left,right],(12,12))
+        add(f'well_release_back_{i}','back',[left,right],(12,12),order='before')
     for i in range(7):
         # Reach the handle at the same frame as the pail's foreground snap,
         # then hold it steadily until ownership transfers to the actor.
         t=min(1,i/3)
         left=[(8,16),lerp((8,17),(10,14),t),lerp((8,19),(10,12),t)]
         right=[(16,16),lerp((16,17),(14,14),t),lerp((16,19),(14,12),t)]
-        add(f'well_catch_back_{i}','back',[left,right],(12,12))
-    add('well_unhook_back','back',[[[8,16],[10,14],[10,12]],[[16,16],[14,14],[14,12]]],(12,12))
+        add(f'well_catch_back_{i}','back',[left,right],(12,12),order='before')
+    add('well_unhook_back','back',[[[8,16],[10,14],[10,12]],[[16,16],[14,14],[14,12]]],(12,12),order='before')
     full_back=recipe['carry']['full']['back']
     for i in range(7):
         t=i/6;grip=lerp((12,12),full_back['grip'],t)
         left=[(8,16),lerp((10,14),full_back['arms'][0][1],t),lerp((10,12),full_back['arms'][0][2],t)]
         right=[(16,16),lerp((14,14),full_back['arms'][1][1],t),lerp((14,12),full_back['arms'][1][2],t)]
-        add(f'well_take_back_{i}','back',[left,right],grip)
+        add(f'well_take_back_{i}','back',[left,right],grip,order='before')
     if json.loads(source.read_text())!=recipe:write(source,recipe)
     gardener.build()
     # Export the same bucketless idle into terrain/runtime map art, so the map

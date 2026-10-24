@@ -29,16 +29,19 @@ class WellDrawing(unittest.TestCase):
         return (self.actor.position-pygame.Vector2(self.actor.draw_anchor)+xy+
                 pygame.Vector2(bucket['grip']))
 
-    def test_near_side_registration_is_centered_with_one_six_pixel_depth_snap(self):
+    def test_near_side_registration_is_centered_with_one_three_pixel_depth_snap(self):
         data=self.well.data;origin=pygame.Vector2(data['position'])
         self.assertEqual(data['shaft_center_x'],40)
         self.assertEqual(data['rope_origin'][0],40)
+        self.assertEqual(data['hook_tip'][0],40)
         self.assertEqual(data['loading_grip'][0],40)
         self.assertEqual(data['shaft_grip'][0],40)
         self.assertEqual(data['lowered_bucket_grip'][0],40)
         self.assertEqual(origin.x+40,526)
         self.assertEqual(data['loading_position'],[526,892])
-        self.assertEqual(abs(data['loading_grip'][1]-data['shaft_grip'][1]),6)
+        self.assertEqual(data['hook_tip'][1]-data['guide_bottom_y'],3)
+        self.assertEqual(abs(data['loading_grip'][1]-data['shaft_grip'][1]),3)
+        self.assertEqual(data['snap_pixels'],3)
 
         self.until('well_settle')
         self.assertEqual(tuple(self.well.bucket_grip),tuple(data['loading_grip']))
@@ -50,6 +53,45 @@ class WellDrawing(unittest.TestCase):
         self.game.update(.5,(0,0),False)
         self.assertEqual(self.actor.state,'well_catch')
         self.assertEqual(tuple(self.well.bucket_grip),tuple(data['loading_grip']))
+
+    def test_exposed_loading_hook_ends_three_pixels_below_guide(self):
+        data=self.well.data
+        baseline=self.well.fixed.copy();baseline.blit(self.well.rim,(0,0))
+        idle=self.well.sprite(0)
+        bottom=data['guide_bottom_y'];tip=data['hook_tip'][1]
+        self.assertEqual(tip-bottom,3)
+        changed=[]
+        for y in range(bottom+1,tip+1):
+            for x in range(data['hook_tip'][0]-1,data['hook_tip'][0]+4):
+                if idle.get_at((x,y))!=baseline.get_at((x,y)):changed.append((x,y))
+        self.assertTrue(changed)
+        for y in range(tip+1,96):
+            for x in range(data['hook_tip'][0]-3,data['hook_tip'][0]+4):
+                self.assertEqual(idle.get_at((x,y)),baseline.get_at((x,y)),(x,y))
+
+    def test_actor_held_pail_is_behind_torso_and_articulated_arms(self):
+        self.well.owner=self.actor
+        checks=(('well_attach',.99,0),('well_hook',.5,0),
+                ('well_unhook',.5,6),('well_take',.15,6),('well_take',.85,6))
+        for state,progress,water in checks:
+            self.actor.step_index=next(i for i,s in enumerate(self.actor.steps) if s['id']==state)
+            self.actor.state_ms=self.well.data['phases_ms'][state]*progress
+            self.actor.water_units=water
+            name,frame,pose,key,xy=self.actor.bucket_placement()
+            self.assertEqual(pose['order'],'before',name)
+            rendered=self.actor.sprite(0);body=self.actor.bodies[name];bucket=self.actor.buckets[key]
+            arms=self.world.image(f'assets/source/characters/npcs/female_02/gardener/parts/{name}_arms.png')
+            overlap=arm_overlap=0;x0,y0=round(xy.x),round(xy.y)
+            for by in range(bucket.get_height()):
+                for bx in range(bucket.get_width()):
+                    x,y=x0+bx,y0+by
+                    if not (0<=x<rendered.get_width() and 0<=y<rendered.get_height()):continue
+                    if not bucket.get_at((bx,by)).a or not body.get_at((x,y)).a:continue
+                    overlap+=1
+                    self.assertEqual(rendered.get_at((x,y)),body.get_at((x,y)),(name,x,y))
+                    if arms.get_at((x,y)).a:arm_overlap+=1
+            self.assertGreater(overlap,0,name)
+            self.assertGreater(arm_overlap,0,name)
 
     def test_near_side_poses_keep_normal_arm_lengths_and_fixed_body_proportions(self):
         recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')

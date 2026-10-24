@@ -90,7 +90,9 @@ class DrawingWell:
         for x in (29+phase,48-phase):image.set_at((x,69),pygame.Color('#598e9f'))
         grip=self.bucket_grip
         key=f'bucket_0_{self.draw_level}'
-        rope_end=tuple(round(v) for v in grip)
+        # The rope ends at the fixed short hook while the gardener owns the
+        # pail. Once attached, it follows the pail behind the near rim.
+        rope_end=tuple(round(v) for v in (grip if self.bucket_on_rope else self.data['hook_tip']))
         pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
         pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
         xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
@@ -107,14 +109,12 @@ class DrawingWell:
         image.blit(self.rim,(0,0))
         if self.bucket_on_rope and self.bucket_at_loading_guide:
             image.blit(self.pails[key],xy)
-        x,y=map(round,grip)
+        x,y=self.data['hook_tip']
         open_hook=self.state=='well_unhook' and self.progress<.6
-        hook=[(x,y-2),(x-1,y),(x,y+1),(x+2,y),(x+2,y-1-int(open_hook))]
-        # The idle/hand-held hook and the near-side loading handoff sit over the
-        # centered iron guide. Shaft phases remain correctly behind the rim.
+        hook=[(x,y-2),(x,y),(x+2,y),(x+2,y-1-int(open_hook))]
+        # Only the three-pixel iron hook below the capstone is redrawn in front.
+        # Shaft rope and the attached pail stay behind the near rim.
         if not self.bucket_on_rope or self.bucket_at_loading_guide:
-            pygame.draw.line(image,'#735136',(x,y-8),(x,y-2),2)
-            pygame.draw.line(image,'#c69d66',(x,y-8),(x,y-2),1)
             pygame.draw.lines(image,'#a2b4a7',False,hook)
         if self.state=='well_raise' and grip.y<61:
             for n in range(2):

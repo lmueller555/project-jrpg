@@ -1,6 +1,6 @@
 # Gardener — centered near-side well routine
 
-Status: awaiting user review. Implemented in the playable town launched by `main.py`.
+Status: superseded by the [short-guide, body-occluded handoff](../gardener_short_guide/README.md). Retained as a historical review record.
 
 - [6× looping well close-up](well_drawing.gif): approach from the near side, lift and hook her pail, release it behind the rim, operate the crank, then catch, unhook and carry it away.
 - [Full watering trip](full_routine.gif): native-scale overview at actual game speed, with most of the initial 3–5-minute rest omitted.
