@@ -109,5 +109,52 @@ class TitleTests(unittest.TestCase):
         self.assertNotEqual(before,after)
         self.assertEqual(self.game.title.rows[0].centerx,320)
 
+    def test_display_receives_one_opaque_frame_with_visible_scenery(self):
+        class DisplayProbe:
+            def __init__(self,surface):self.surface=surface;self.calls=[]
+            def get_size(self):return self.surface.get_size()
+            def blit(self,source,position):
+                self.calls.append((source,position))
+                return self.surface.blit(source,position)
+
+        display=self.game.window
+        probe=DisplayProbe(display)
+        self.game.window=probe
+        try:
+            self.game.draw()
+            self.assertEqual(len(probe.calls),1)
+            frame,position=probe.calls[0]
+            self.assertEqual(position,(0,0))
+            self.assertIs(frame,self.game.title.frame)
+            self.assertIsNone(frame.get_alpha())
+            self.assertFalse(frame.get_flags() & pygame.SRCALPHA)
+            self.assertEqual(pygame.image.tobytes(display,'RGB'),pygame.image.tobytes(frame,'RGB'))
+            # Empty UI regions must retain the painted scene, not black.
+            for native in ((20,150),(500,180),(420,325)):
+                self.assertEqual(self.game.title.ui.get_at(native).a,0)
+                point=tuple(value*2 for value in native)
+                self.assertEqual(display.get_at(point)[:3],self.game.title.scene.get_at(native)[:3])
+                self.assertNotEqual(display.get_at(point)[:3],(0,0,0))
+        finally:self.game.window=display
+
+    def test_composite_rebuilds_after_resize_and_keeps_background_animation(self):
+        self.game.draw()
+        original=self.game.title.frame
+        for size in ((1024,768),(1920,810),(800,800)):
+            self.game.window=pygame.display.set_mode(size,pygame.RESIZABLE)
+            self.game.draw()
+            frame=self.game.title.frame
+            self.assertEqual(frame.get_size(),size)
+            self.assertIsNot(frame,original)
+            self.assertIsNone(frame.get_alpha())
+            self.assertEqual(self.game.window.get_at((0,0))[:3],frame.get_at((0,0))[:3])
+            self.assertNotEqual(frame.get_at((0,0))[:3],(0,0,0))
+            original=frame
+        before=pygame.image.tobytes(original,'RGB')
+        self.game.update(1.5)
+        self.game.draw()
+        self.assertIs(original,self.game.title.frame)
+        self.assertNotEqual(before,pygame.image.tobytes(original,'RGB'))
+
 
 if __name__=='__main__':unittest.main()

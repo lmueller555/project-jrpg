@@ -14,6 +14,7 @@ class TitleScreen:
         self.scene=pygame.Surface(SIZE)
         self.ui=pygame.Surface(SIZE,pygame.SRCALPHA)
         self.canvas=self.scene
+        self.frame=None
         self.background=game.town.image('assets/ui/title/eldenmere_dawn.png',False)
         wheel=pygame.transform.scale(self.background.subsurface((237,201,26,36)),(36,36)).convert_alpha()
         mask=pygame.Surface((36,36),pygame.SRCALPHA)
@@ -149,10 +150,15 @@ class TitleScreen:
         self.canvas.blit(self.background,(0,0))
         self.atmosphere()
         width,height=self.game.window.get_size()
+        # Composite transparency in software onto an opaque surface, keeping
+        # cleared UI pixels out of fullscreen display-level alpha blending.
+        if self.frame is None or self.frame.get_size()!=(width,height):
+            self.frame=pygame.Surface((width,height)).convert()
+            self.frame.set_alpha(None)
         scale=max(width/SIZE[0],height/SIZE[1])
         size=(math.ceil(SIZE[0]*scale),math.ceil(SIZE[1]*scale))
-        self.game.window.blit(pygame.transform.scale(self.scene,size),
-                              ((width-size[0])//2,(height-size[1])//2))
+        self.frame.blit(pygame.transform.scale(self.scene,size),
+                        ((width-size[0])//2,(height-size[1])//2))
         # The scene covers every aspect ratio; UI fits entirely inside it.
         self.canvas=self.ui
         self.canvas.fill((0,0,0,0))
@@ -190,10 +196,12 @@ class TitleScreen:
         else:self.centered('Click to choose  /  Arrow keys + Enter',self.detail_font,350,'#d2c8a7',False)
         scale=min(width/SIZE[0],height/SIZE[1])
         size=(round(SIZE[0]*scale),round(SIZE[1]*scale))
-        self.game.window.blit(pygame.transform.scale(self.ui,size),
-                              ((width-size[0])//2,(height-size[1])//2))
+        self.frame.blit(pygame.transform.scale(self.ui,size),
+                        ((width-size[0])//2,(height-size[1])//2))
         if self.fade:
             shade=pygame.Surface((width,height),pygame.SRCALPHA)
             shade.fill((11,24,22,min(255,round(self.fade/.65*255))))
-            self.game.window.blit(shade,(0,0))
+            self.frame.blit(shade,(0,0))
+        # Present one complete RGB frame, with no display-level alpha blending.
+        self.game.window.blit(self.frame,(0,0))
         pygame.display.flip()
