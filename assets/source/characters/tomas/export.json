@@ -1,0 +1,31 @@
+{
+  "source": "idle_front_concept.png",
+  "alpha_threshold": 128,
+  "source_bounds": [278, 220, 748, 1412],
+  "frame_size": [24, 36],
+  "occupied_rect": [6, 3, 12, 32],
+  "foot_anchor": [12, 34],
+  "resampling": "nearest",
+  "palette": "../../../characters/tomas/palette.json",
+  "eyes": {"top_pixels": [[10, 11], [13, 11]], "height": 2, "iris_offset_y": 1, "iris_name": "Green"},
+  "bands": [
+    {"source_y": [220, 676], "native_y": [3, 15], "materials": ["outline", "hair", "skin"]},
+    {"source_y": [676, 905], "native_y": [15, 21], "materials": ["outline", "tunic", "linen", "skin"]},
+    {"source_y": [905, 966], "native_y": [21, 23], "materials": ["outline", "leather", "buckle", "linen", "skin"]},
+    {"source_y": [966, 1090], "native_y": [23, 26], "materials": ["outline", "tunic", "skin"]},
+    {"source_y": [1090, 1241], "native_y": [26, 31], "materials": ["outline", "trousers"]},
+    {"source_y": [1241, 1412], "native_y": [31, 35], "materials": ["outline", "leather"]}
+  ],
+  "material_windows": [
+    {"rect": [410, 590, 610, 676], "materials": ["outline", "skin"]},
+    {"rect": [409, 777, 617, 905], "materials": ["outline", "tunic"]},
+    {"rect": [450, 676, 577, 777], "materials": ["outline", "linen", "skin"]},
+    {"rect": [278, 731, 413, 945], "materials": ["outline", "linen"]},
+    {"rect": [615, 731, 748, 945], "materials": ["outline", "linen"]},
+    {"rect": [389, 966, 640, 1090], "materials": ["outline", "tunic"]},
+    {"rect": [278, 945, 389, 1090], "materials": ["outline", "skin"]},
+    {"rect": [640, 945, 748, 1090], "materials": ["outline", "skin"]},
+    {"rect": [560, 1140, 618, 1205], "materials": ["patch"]}
+  ],
+  "layers": {"head": [0, 15], "upper_body": [15, 23], "tunic_hem_and_hands": [23, 26], "legs_and_boots": [26, 36]}
+}
