@@ -50,11 +50,11 @@ class DrawingWell:
     def bucket_grip(self):
         d=self.data;s=self.state;t=self.progress
         loading=d['loading_grip'];shaft=d['shaft_grip'];low=d['lowered_bucket_grip']
-        if s=='well_settle':return pygame.Vector2(loading if t<.55 else shaft)
+        if s=='well_settle':return mix(loading,shaft,t)
         if s=='well_lower':return mix(shaft,low,t)
         if s=='well_fill':return pygame.Vector2(low)
         if s=='well_raise':return mix(low,shaft,t)
-        if s=='well_catch':return pygame.Vector2(shaft if t<.55 else loading)
+        if s=='well_catch':return mix(shaft,loading,t)
         if s in ('well_to_crank','well_grip','well_lock','well_to_loading'):
             return pygame.Vector2(shaft)
         return pygame.Vector2(loading)
@@ -71,8 +71,19 @@ class DrawingWell:
 
     @property
     def bucket_at_loading_guide(self):
-        return ((self.state=='well_settle' and self.progress<.55) or
-                (self.state=='well_catch' and self.progress>=.55))
+        return ((self.state=='well_settle' and self.progress<.35) or
+                (self.state=='well_catch' and self.progress>=.65))
+
+    @property
+    def visible_rope_length(self):
+        """Only the payout beneath the parked bucket is visible.
+
+        In idle and during handoff the rope is wrapped on the winch. Lowering
+        grows the segment from zero; raising retracts the same segment.
+        """
+        if self.state not in ('well_lower','well_fill','well_raise'):
+            return 0
+        return max(0,round(self.bucket_grip.y-self.data['shaft_grip'][1]))
 
     def sprite(self,elapsed_ms):
         image=pygame.Surface(self.data['canvas_size'],pygame.SRCALPHA)
@@ -90,9 +101,14 @@ class DrawingWell:
         for x in (29+phase,48-phase):image.set_at((x,69),pygame.Color('#598e9f'))
         grip=self.bucket_grip
         key=f'bucket_0_{self.draw_level}'
-        rope_end=tuple(round(v) for v in grip)
-        pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
-        pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
+        rope_length=self.visible_rope_length
+        if rope_length:
+            # Rope emerges from beneath the winding drum; never pre-render a
+            # permanent hanging segment before the bucket is lowered.
+            start=(round(grip.x),self.data['shaft_grip'][1])
+            end=(start[0],start[1]+rope_length)
+            pygame.draw.line(image,'#735136',start,end,2)
+            pygame.draw.line(image,'#c69d66',start,end,1)
         xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
         # Inside the shaft, the pail is composited before the near rim. At the
         # loading guide it moves to the foreground at the exact snap frame.
@@ -112,9 +128,9 @@ class DrawingWell:
         hook=[(x,y-2),(x-1,y),(x,y+1),(x+2,y),(x+2,y-1-int(open_hook))]
         # The idle/hand-held hook and the near-side loading handoff sit over the
         # centered iron guide. Shaft phases remain correctly behind the rim.
-        if not self.bucket_on_rope or self.bucket_at_loading_guide:
-            pygame.draw.line(image,'#735136',(x,y-8),(x,y-2),2)
-            pygame.draw.line(image,'#c69d66',(x,y-8),(x,y-2),1)
+        if self.bucket_on_rope and self.bucket_at_loading_guide:
+            # Show the clasp only while the attached pail is handed off. No
+            # unattached idle hook or dangling rope remains in the well.
             pygame.draw.lines(image,'#a2b4a7',False,hook)
         if self.state=='well_raise' and grip.y<61:
             for n in range(2):
