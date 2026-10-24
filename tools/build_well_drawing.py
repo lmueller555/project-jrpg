@@ -49,17 +49,17 @@ def build():
         'fixed':'fixed.png','front_rim':'front_rim.png',
         'shaft_center_x':40,
         'rope_origin':[40,43],'crank_pivot':[69,43],'crank_handles':handles,
-        'loading_grip':[40,82],'shaft_grip':[40,76],
+        'loading_grip':[40,82],'shaft_grip':[40,51],
         'lowered_bucket_grip':[40,92],
         'operator_position':[572,854],'loading_position':[526,892],
-        'snap_pixels':6,
+        'snap_pixels':0,'handoff_motion':'continuous',
         'phases_ms':{'well_attach':1200,'well_hook':600,'well_settle':700,
                      'well_grip':500,'well_lower':3200,'well_fill':2000,
                      'well_raise':4000,'well_lock':500,'well_catch':900,
                      'well_unhook':700,'well_take':1200},
         'source':'assets/source/terrain/eldenmere/well/parts/native_structure.png',
         'bucket_owner':'gardener',
-        'notes':'One pail; near-side back-facing handoff. Six-pixel depth snap, zero lateral movement.'
+        'notes':'One pail; gradual vertical handoff to the winch, rope payout starts at zero and follows bucket depth.'
     }
     write(OUT/'animation.json',meta)
     source=ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json'
