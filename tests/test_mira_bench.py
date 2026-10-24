@@ -75,7 +75,8 @@ class MiraBench(unittest.TestCase):
         self.assertEqual(self.game.world.npcs,[])
         self.game.update(.7,(0,0),False)
         self.game.enter(self.game.world.doors[0])
-        self.assertEqual(self.game.world.npcs,[self.mira])
+        self.assertIs(self.game.world.npcs[0],self.mira)
+        self.assertEqual(len(self.game.world.npcs),2)
         self.assertIs(self.mira.frame(self.game.elapsed_ms)[0],self.mira.frame(3300)[0])
         self.assertEqual(list(self.mira.position),[610,448])
 

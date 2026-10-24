@@ -1,0 +1,16 @@
+{
+  "id":"sanctuary_gardener", "status":"review", "character":"female_02",
+  "rest_position":[322,350], "source_position":[786,408],
+  "source_contact":[799,416], "probe_size":[12,8],
+  "empty_speed":60, "loaded_speed":50, "grid_step":2,
+  "beds":[
+    {"id":"west_flowers","position":[268,340],"root":[250,338],"facing":"left","patch_position":[238,318]},
+    {"id":"southwest_flowers","position":[322,350],"root":[303,350],"facing":"left","patch_position":[291,330]},
+    {"id":"southeast_flowers","position":[438,352],"root":[456,351],"facing":"right","patch_position":[444,331]},
+    {"id":"east_flowers","position":[462,334],"root":[480,333],"facing":"right","patch_position":[468,313]}
+  ],
+  "outbound_waypoints":[[340,336],[384,336],[384,420],[408,472],[744,472],[768,432],[786,408]],
+  "return_waypoints":[[768,432],[744,472],[408,472],[384,420],[384,336]],
+  "garden_crossing":[[340,334],[416,334]],
+  "rest_duration_ms":[10000,12000,8000]
+}

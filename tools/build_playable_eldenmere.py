@@ -99,7 +99,11 @@ def build():
               'npcs':[{'id':'mira_worker','name':'Mira','routine':'bench_work',
                        'position':[610,448],'probe_size':[8,4],
                        'animation':'assets/characters/mira/work_bench/animation.json',
-                       'fitting_position':[594,423],'fitting_sort_y':444}], 'quests':[]}
+                       'fitting_position':[594,423],'fitting_sort_y':444},
+                      {'id':'sanctuary_gardener','name':'Sanctuary gardener','routine':'watering',
+                       'position':[322,350],'probe_size':[12,8],
+                       'animation':'assets/characters/npcs/female_02/gardener/animations.json',
+                       'behavior':'assets/maps/eldenmere/routines/gardener.json'}], 'quests':[]}
     # Clean, actor-free overview used by the in-game map and review.
     overview=town.opened(ROOT/ground[0]).copy()
     for entity in sorted(entities,key=lambda e:e['sort_y']):

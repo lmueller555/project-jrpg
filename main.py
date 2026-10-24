@@ -13,6 +13,8 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
+from npc_routines import Gardener
+
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
 VIEW_SIZE=(480,320)
@@ -69,6 +71,7 @@ class BenchWorker:
         self.position=pygame.Vector2(record['position'])
         path=Path(record['animation'])
         self.animation=read_json(ROOT/path)
+        self.draw_anchor=self.animation['draw_anchor']
         self.frames=[(world.image((path.parent/f['file']).as_posix()),
                       world.image((path.parent/f['fitting_file']).as_posix()),f)
                      for f in self.animation['frames']]
@@ -83,6 +86,8 @@ class BenchWorker:
             if time<frame[2]['duration_ms']:return frame
             time-=frame[2]['duration_ms']
         return self.frames[-1]
+
+    def sprite(self,elapsed_ms):return self.frame(elapsed_ms)[0]
 
 
 class World:
@@ -99,6 +104,7 @@ class World:
         self.blocked=pygame.mask.from_threshold(collision,(255,255,255,255),(1,1,1,255))
         self.probe_size=tuple(self.data['player_probe_size'])
         self.probe=pygame.Mask(self.probe_size,fill=True)
+        self._probes={self.probe_size:self.probe}
         self.entities=[]
         for record in self.data['entities']:
             frames=[self.image(p) for p in record['frames']]
@@ -106,7 +112,10 @@ class World:
         self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
-        self.npcs=[BenchWorker(record,self) for record in self.data.get('npcs',[])]
+        self.npcs=[]
+        for record in self.data.get('npcs',[]):
+            actor=Gardener if record['routine']=='watering' else BenchWorker
+            self.npcs.append(actor(record,self))
 
     def image(self,path,alpha=True):
         key=(path,alpha)
@@ -115,14 +124,20 @@ class World:
             self._images[key]=image.convert_alpha() if alpha else image.convert()
         return self._images[key]
 
-    def can_stand(self,position):
-        """Position is the centre of the established 24×12 ground probe."""
-        x=round(position[0])-self.probe_size[0]//2
-        y=round(position[1])-self.probe_size[1]//2
-        if x<0 or y<0 or x+self.probe_size[0]>self.size[0] or y+self.probe_size[1]>self.size[1]:
+    def probe_rect(self,position,size=None):
+        width,height=self.probe_size if size is None else size
+        return pygame.Rect(round(position[0])-width//2,round(position[1])-height//2,width,height)
+
+    def can_stand(self,position,size=None,ignore_npc=None,player_blocker=None):
+        """Ground-probe centre; player defaults to the established 24×12 size."""
+        size=self.probe_size if size is None else tuple(size)
+        rect=self.probe_rect(position,size);x,y=rect.topleft
+        if x<0 or y<0 or rect.right>self.size[0] or rect.bottom>self.size[1]:
             return False
-        return (self.blocked.overlap(self.probe,(x,y)) is None
-                and not any(npc.blocker.colliderect(pygame.Rect((x,y),self.probe_size)) for npc in self.npcs))
+        if size not in self._probes:self._probes[size]=pygame.Mask(size,fill=True)
+        return (self.blocked.overlap(self._probes[size],(x,y)) is None
+                and not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
+                and (player_blocker is None or not player_blocker.colliderect(rect)))
 
     def location(self,position):
         if self.data.get('kind')=='interior':return self.data['name']
@@ -139,7 +154,7 @@ class World:
         # objects so Caelan can walk in front of and behind the same building.
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
         for npc in self.npcs:
-            ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
+            if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
             ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
         ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
@@ -148,9 +163,9 @@ class World:
                 target.blit(player.sprite(),(round(player.position.x)-anchor[0]-camera[0],
                                               round(player.position.y)-anchor[1]-camera[1]))
             elif kind=='npc':
-                anchor=record.animation['draw_anchor']
-                target.blit(record.frame(elapsed_ms)[0],(round(record.position.x)-anchor[0]-camera[0],
-                                                        round(record.position.y)-anchor[1]-camera[1]))
+                anchor=record.draw_anchor
+                target.blit(record.sprite(elapsed_ms),(round(record.position.x)-anchor[0]-camera[0],
+                                                       round(record.position.y)-anchor[1]-camera[1]))
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
@@ -275,6 +290,10 @@ class Game:
             for door in scene.doors:door.update(self.player.position if scene is self.world else None,seconds)
         direction=(0,0) if self.map_open else direction
         self.player.update(direction,seconds,self.world,bool(running))
+        for scene in self.scenes.values():
+            blocker=scene.probe_rect(self.player.position) if scene is self.world else None
+            for npc in scene.npcs:
+                if isinstance(npc,Gardener):npc.update(seconds,scene,blocker)
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         if not self.map_open and not self.transfer_cooldown:
             for door in self.world.doors:

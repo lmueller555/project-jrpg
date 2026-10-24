@@ -956,6 +956,21 @@
         423
       ],
       "fitting_sort_y": 444
+    },
+    {
+      "id": "sanctuary_gardener",
+      "name": "Sanctuary gardener",
+      "routine": "watering",
+      "position": [
+        322,
+        350
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "animation": "assets/characters/npcs/female_02/gardener/animations.json",
+      "behavior": "assets/maps/eldenmere/routines/gardener.json"
     }
   ],
   "quests": [],

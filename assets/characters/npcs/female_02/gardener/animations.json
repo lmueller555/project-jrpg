@@ -1,0 +1,1037 @@
+{
+  "id": "sanctuary.gardener",
+  "status": "review",
+  "character": "female_02",
+  "body_frame_size": [
+    24,
+    36
+  ],
+  "action_canvas": [
+    48,
+    48
+  ],
+  "body_offset": [
+    12,
+    6
+  ],
+  "draw_anchor": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    24,
+    40
+  ],
+  "poses": {
+    "idle_empty.front": {
+      "body": "idle_empty.front.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.front_01": {
+      "body": "carry_empty.front_01.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.front_02": {
+      "body": "carry_empty.front_02.png",
+      "grip": [
+        4,
+        23
+      ],
+      "order": "after"
+    },
+    "carry_empty.front_03": {
+      "body": "carry_empty.front_03.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.front_04": {
+      "body": "carry_empty.front_04.png",
+      "grip": [
+        4,
+        23
+      ],
+      "order": "after"
+    },
+    "idle_empty.left": {
+      "body": "idle_empty.left.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before"
+    },
+    "carry_empty.left_01": {
+      "body": "carry_empty.left_01.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before"
+    },
+    "carry_empty.left_02": {
+      "body": "carry_empty.left_02.png",
+      "grip": [
+        5,
+        23
+      ],
+      "order": "before"
+    },
+    "carry_empty.left_03": {
+      "body": "carry_empty.left_03.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "before"
+    },
+    "carry_empty.left_04": {
+      "body": "carry_empty.left_04.png",
+      "grip": [
+        5,
+        23
+      ],
+      "order": "before"
+    },
+    "idle_empty.right": {
+      "body": "idle_empty.right.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.right_01": {
+      "body": "carry_empty.right_01.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.right_02": {
+      "body": "carry_empty.right_02.png",
+      "grip": [
+        19,
+        23
+      ],
+      "order": "after"
+    },
+    "carry_empty.right_03": {
+      "body": "carry_empty.right_03.png",
+      "grip": [
+        19,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.right_04": {
+      "body": "carry_empty.right_04.png",
+      "grip": [
+        19,
+        23
+      ],
+      "order": "after"
+    },
+    "idle_empty.back": {
+      "body": "idle_empty.back.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.back_01": {
+      "body": "carry_empty.back_01.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.back_02": {
+      "body": "carry_empty.back_02.png",
+      "grip": [
+        20,
+        23
+      ],
+      "order": "after"
+    },
+    "carry_empty.back_03": {
+      "body": "carry_empty.back_03.png",
+      "grip": [
+        20,
+        24
+      ],
+      "order": "after"
+    },
+    "carry_empty.back_04": {
+      "body": "carry_empty.back_04.png",
+      "grip": [
+        20,
+        23
+      ],
+      "order": "after"
+    },
+    "idle_full.front": {
+      "body": "idle_full.front.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after"
+    },
+    "carry_full.front_01": {
+      "body": "carry_full.front_01.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after"
+    },
+    "carry_full.front_02": {
+      "body": "carry_full.front_02.png",
+      "grip": [
+        12,
+        20
+      ],
+      "order": "after"
+    },
+    "carry_full.front_03": {
+      "body": "carry_full.front_03.png",
+      "grip": [
+        12,
+        21
+      ],
+      "order": "after"
+    },
+    "carry_full.front_04": {
+      "body": "carry_full.front_04.png",
+      "grip": [
+        12,
+        20
+      ],
+      "order": "after"
+    },
+    "idle_full.left": {
+      "body": "idle_full.left.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.left_01": {
+      "body": "carry_full.left_01.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.left_02": {
+      "body": "carry_full.left_02.png",
+      "grip": [
+        5,
+        18
+      ],
+      "order": "after"
+    },
+    "carry_full.left_03": {
+      "body": "carry_full.left_03.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.left_04": {
+      "body": "carry_full.left_04.png",
+      "grip": [
+        5,
+        18
+      ],
+      "order": "after"
+    },
+    "idle_full.right": {
+      "body": "idle_full.right.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.right_01": {
+      "body": "carry_full.right_01.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.right_02": {
+      "body": "carry_full.right_02.png",
+      "grip": [
+        19,
+        18
+      ],
+      "order": "after"
+    },
+    "carry_full.right_03": {
+      "body": "carry_full.right_03.png",
+      "grip": [
+        19,
+        19
+      ],
+      "order": "after"
+    },
+    "carry_full.right_04": {
+      "body": "carry_full.right_04.png",
+      "grip": [
+        19,
+        18
+      ],
+      "order": "after"
+    },
+    "idle_full.back": {
+      "body": "idle_full.back.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before"
+    },
+    "carry_full.back_01": {
+      "body": "carry_full.back_01.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before"
+    },
+    "carry_full.back_02": {
+      "body": "carry_full.back_02.png",
+      "grip": [
+        18,
+        19
+      ],
+      "order": "before"
+    },
+    "carry_full.back_03": {
+      "body": "carry_full.back_03.png",
+      "grip": [
+        18,
+        20
+      ],
+      "order": "before"
+    },
+    "carry_full.back_04": {
+      "body": "carry_full.back_04.png",
+      "grip": [
+        18,
+        19
+      ],
+      "order": "before"
+    },
+    "rest": {
+      "body": "rest.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after"
+    },
+    "pickup_reach": {
+      "body": "pickup_reach.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after"
+    },
+    "pickup_grasp": {
+      "body": "pickup_grasp.png",
+      "grip": [
+        22,
+        24
+      ],
+      "order": "after"
+    },
+    "fill_reach": {
+      "body": "fill_reach.png",
+      "grip": [
+        22,
+        23
+      ],
+      "order": "after"
+    },
+    "fill_lower": {
+      "body": "fill_lower.png",
+      "grip": [
+        25,
+        27
+      ],
+      "order": "after"
+    },
+    "fill_dip": {
+      "body": "fill_dip.png",
+      "grip": [
+        25,
+        28
+      ],
+      "order": "after"
+    },
+    "fill_lift": {
+      "body": "fill_lift.png",
+      "grip": [
+        23,
+        23
+      ],
+      "order": "after"
+    },
+    "raise_left": {
+      "body": "raise_left.png",
+      "grip": [
+        3,
+        17
+      ],
+      "order": "after"
+    },
+    "raise_right": {
+      "body": "raise_right.png",
+      "grip": [
+        21,
+        17
+      ],
+      "order": "after"
+    }
+  },
+  "animations": {
+    "carry_empty.front": [
+      {
+        "pose": "carry_empty.front_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.front_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.left": [
+      {
+        "pose": "carry_empty.left_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.left_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.right": [
+      {
+        "pose": "carry_empty.right_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.right_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_empty.back": [
+      {
+        "pose": "carry_empty.back_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_empty.back_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.front": [
+      {
+        "pose": "carry_full.front_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.front_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.left": [
+      {
+        "pose": "carry_full.left_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.left_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.right": [
+      {
+        "pose": "carry_full.right_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.right_04",
+        "duration_ms": 140
+      }
+    ],
+    "carry_full.back": [
+      {
+        "pose": "carry_full.back_01",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_02",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_03",
+        "duration_ms": 140
+      },
+      {
+        "pose": "carry_full.back_04",
+        "duration_ms": 140
+      }
+    ],
+    "rest": [
+      {
+        "pose": "rest",
+        "duration_ms": 10000,
+        "level": 0
+      }
+    ],
+    "pickup": [
+      {
+        "pose": "pickup_reach",
+        "duration_ms": 250,
+        "level": 0
+      },
+      {
+        "pose": "pickup_grasp",
+        "duration_ms": 300,
+        "level": 0
+      },
+      {
+        "pose": "idle_empty.right",
+        "duration_ms": 250,
+        "level": 0
+      }
+    ],
+    "setdown": [
+      {
+        "pose": "pickup_reach",
+        "duration_ms": 250,
+        "level": 0
+      },
+      {
+        "pose": "pickup_grasp",
+        "duration_ms": 300,
+        "level": 0
+      },
+      {
+        "pose": "rest",
+        "duration_ms": 250,
+        "level": 0
+      }
+    ],
+    "fill": [
+      {
+        "pose": "fill_reach",
+        "duration_ms": 400,
+        "level": 0
+      },
+      {
+        "pose": "fill_lower",
+        "duration_ms": 400,
+        "level": 0
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 800,
+        "level": 0,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 1,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 2,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 3,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
+        "duration_ms": 300,
+        "level": 4,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_lift",
+        "duration_ms": 600,
+        "level": 4,
+        "effect": "drips"
+      },
+      {
+        "pose": "idle_full.right",
+        "duration_ms": 800,
+        "level": 4
+      }
+    ],
+    "inspect.left": [
+      {
+        "pose": "idle_full.left",
+        "duration_ms": 800
+      }
+    ],
+    "pour.left": [
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "raise_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "raise_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_left",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.left",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ],
+    "inspect.right": [
+      {
+        "pose": "idle_full.right",
+        "duration_ms": 800
+      }
+    ],
+    "pour.right": [
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "raise_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "raise_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "raise_right",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.right",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ]
+  },
+  "buckets": {
+    "bucket_-50_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_0.png"
+    },
+    "bucket_-50_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_1.png"
+    },
+    "bucket_-50_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_2.png"
+    },
+    "bucket_-50_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_3.png"
+    },
+    "bucket_-50_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_4.png"
+    },
+    "bucket_-25_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_0.png"
+    },
+    "bucket_-25_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_1.png"
+    },
+    "bucket_-25_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_2.png"
+    },
+    "bucket_-25_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_3.png"
+    },
+    "bucket_-25_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_4.png"
+    },
+    "bucket_0_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_0.png"
+    },
+    "bucket_0_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_1.png"
+    },
+    "bucket_0_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_2.png"
+    },
+    "bucket_0_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_3.png"
+    },
+    "bucket_0_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_4.png"
+    },
+    "bucket_25_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_0.png"
+    },
+    "bucket_25_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_1.png"
+    },
+    "bucket_25_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_2.png"
+    },
+    "bucket_25_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_3.png"
+    },
+    "bucket_25_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_4.png"
+    },
+    "bucket_50_0": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_0.png"
+    },
+    "bucket_50_1": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_1.png"
+    },
+    "bucket_50_2": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_2.png"
+    },
+    "bucket_50_3": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_3.png"
+    },
+    "bucket_50_4": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_4.png"
+    }
+  },
+  "source_recipe": "../../../../source/characters/npcs/female_02/gardener/recipe.json"
+}
