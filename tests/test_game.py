@@ -18,7 +18,7 @@ import main
 class PlayableEldenmere(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.game=main.Game(fullscreen=False)
+        cls.game=main.Game(fullscreen=False,start_on_title=False)
         cls.world=cls.game.world
 
     @classmethod
@@ -207,7 +207,7 @@ class FullscreenLaunch(unittest.TestCase):
                 game.draw()
 
     def test_windowed_override_and_fullscreen_round_trip_preserve_resize(self):
-        game=main.Game(window_size=(1024,768),fullscreen=False)
+        game=main.Game(window_size=(1024,768),fullscreen=False,start_on_title=False)
         self.assertFalse(game.fullscreen)
         self.assertEqual(game.window.get_size(),(1024,768))
         for expected in (True,False):

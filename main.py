@@ -16,6 +16,7 @@ except ModuleNotFoundError:
 from npc_routines import Gardener, RoutineNPC
 from well_routine import DrawingWell
 from social import SocialSystem
+from title_screen import TitleScreen
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -263,7 +264,7 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True):
         pygame.display.init();pygame.font.init()
         self.fullscreen=fullscreen
         self.windowed_size=tuple(window_size)
@@ -288,6 +289,9 @@ class Game:
         self._setup_persistent_npcs()
         self.social=SocialSystem(self)
         self._mouse_held=False
+        self.on_title=start_on_title
+        self.title=TitleScreen(self)
+        self.opening_fade=0.0
 
     def _load_scene(self,path):
         path=Path(path).resolve()
@@ -330,10 +334,26 @@ class Game:
         self._routine_worlds[actor]=destination
         return destination
 
+    def toggle_fullscreen(self):
+        self.fullscreen=not self.fullscreen
+        if self.fullscreen:
+            self.windowed_size=self.window.get_size()
+            self.window=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+        else:self.window=pygame.display.set_mode(self.windowed_size,pygame.RESIZABLE)
+
     def handle_events(self):
         advanced=False
         for event in pygame.event.get():
             if event.type==pygame.QUIT:return False
+            if event.type==pygame.KEYDOWN and event.key==pygame.K_F11:
+                self.toggle_fullscreen()
+                continue
+            if event.type==pygame.VIDEORESIZE and not self.fullscreen:
+                self.window=pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
+                continue
+            if self.on_title:
+                if not self.title.handle_event(event):return False
+                continue
             if event.type==pygame.MOUSEBUTTONUP and event.button==1:self._mouse_held=False
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
                 if not self._mouse_held and not advanced and self.social.active:
@@ -348,17 +368,13 @@ class Game:
                     if self.map_open:self.map_open=False
                     else:return False
                 elif event.key==pygame.K_m:self.map_open=not self.map_open
-                elif event.key==pygame.K_F11:
-                    self.fullscreen=not self.fullscreen
-                    if self.fullscreen:
-                        self.windowed_size=self.window.get_size()
-                        self.window=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
-                    else:self.window=pygame.display.set_mode(self.windowed_size,pygame.RESIZABLE)
-            elif event.type==pygame.VIDEORESIZE and not self.fullscreen:
-                self.window=pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
         return True
 
     def update(self,seconds,direction=None,running=None):
+        if self.on_title:
+            self.title.update(seconds)
+            return
+        self.opening_fade=max(0,self.opening_fade-seconds)
         self.elapsed_ms+=seconds*1000
         if direction is None:
             keys=pygame.key.get_pressed()
@@ -367,7 +383,7 @@ class Game:
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
         for scene in self.scenes.values():
             for door in scene.doors:door.update(self.player.position if scene is self.world else None,seconds)
-        direction=(0,0) if self.map_open or self.social.locked else direction
+        direction=(0,0) if self.map_open or self.social.locked or self.opening_fade else direction
         self.player.update(direction,seconds,self.world,bool(running))
         self.social.update(direction)
         for scene in self.scenes.values():
@@ -432,6 +448,9 @@ class Game:
         self.text('M or Esc: close map',(28,274),self.small_font)
 
     def draw(self):
+        if self.on_title:
+            self.title.draw()
+            return
         # Frame the participants in the unobscured space above the textbox.
         view=(VIEW_SIZE[0],204) if self.social.locked else VIEW_SIZE
         camera=camera_for(self.player.position,self.world.size,view)
@@ -446,6 +465,10 @@ class Game:
             self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
         if self.map_open:self.draw_map()
         self.social.draw(self.canvas,self.elapsed_ms)
+        if self.opening_fade:
+            shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA)
+            shade.fill((11,24,22,round(255*self.opening_fade/.5)))
+            self.canvas.blit(shade,(0,0))
         width,height=self.window.get_size()
         scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
         size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
@@ -465,6 +488,7 @@ def main(argv=None):
     if args.headless:os.environ['SDL_VIDEODRIVER']='dummy'
     if not MAP_FILE.is_file():raise SystemExit('Playable town data is missing. Restore assets/maps/eldenmere/playable from the repository.')
     game=Game(fullscreen=not (args.headless or args.windowed))
+    if not args.headless:game.title.start_music()
     clock=pygame.time.Clock()
     limit=args.frames or (1 if args.headless else 0)
     count=0

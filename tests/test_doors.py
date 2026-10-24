@@ -13,7 +13,7 @@ import main
 
 class BuildingDoors(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):cls.game=main.Game(fullscreen=False)
+    def setUpClass(cls):cls.game=main.Game(fullscreen=False,start_on_title=False)
 
     @classmethod
     def tearDownClass(cls):pygame.quit()

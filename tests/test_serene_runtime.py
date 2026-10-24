@@ -12,7 +12,7 @@ from npc_routines import find_path
 
 class SereneRuntime(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game(fullscreen=False)
+        self.game=main.Game(fullscreen=False,start_on_title=False)
         self.serene=next(n for n in self.game.persistent_npcs if n.data['id']=='mother_serene')
 
     def tearDown(self):pygame.quit()

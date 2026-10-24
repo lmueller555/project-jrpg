@@ -20,6 +20,12 @@ Headless verification stays windowed for consistent screenshots. The internal
 480×320 canvas keeps crisp integer scaling and centered borders where needed
 to preserve the pixel art's proportions.
 
+The game now opens on an animated Eldenmere title screen with a **bottom-center
+menu**. Click New Game to enter the playable town, or use arrows and Enter.
+Settings changes fullscreen/windowed mode and title music; Continue is disabled
+until saving exists. The logo uses **The Broken Covenant** as a working title.
+See the [title screen preview](docs/reviews/title_screen/README.md) for review.
+
 | Control | Action |
 | --- | --- |
 | WASD or arrow keys | Move Caelan |

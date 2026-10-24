@@ -56,7 +56,7 @@ def town_layout(game):
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game(fullscreen=False);game.player.position.update(480,924);game.player.facing='left'
+    game=main.Game(fullscreen=False,start_on_title=False);game.player.position.update(480,924);game.player.facing='left'
     town_layout(game)
     # Drive the real player around all four sides. Remaining footage rests at
     # the starting point so the 10.8s environment clock closes cleanly.

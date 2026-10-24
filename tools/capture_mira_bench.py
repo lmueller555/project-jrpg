@@ -59,7 +59,7 @@ def panel(scene,box,scale,title,subtitle,caption):
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game(fullscreen=False)
+    game=main.Game(fullscreen=False,start_on_title=False)
     game.player.position.update(652,480)
     game.player.facing='back'
     mira=game.world.npcs[0]

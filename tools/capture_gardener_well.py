@@ -57,7 +57,7 @@ def overview(game):
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game(fullscreen=False);game.player.position.update(420,1100)
+    game=main.Game(fullscreen=False,start_on_title=False);game.player.position.update(420,1100)
     actor=main.Gardener(game.town.npcs[1].data,game.town,random.Random(2026))
     game.town.npcs[1]=actor
     initial_rest=actor.rest_duration_ms
