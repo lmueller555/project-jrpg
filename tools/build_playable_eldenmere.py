@@ -96,7 +96,10 @@ def build():
               'layout_source':'assets/maps/eldenmere/terrain_foundation/adapted_plan.json',
               'source_art':['assets/terrain/eldenmere/workshop/workshop.json',
                             'assets/terrain/eldenmere/sanctuary_charm/charm.json'],
-              'npcs':[],'quests':[]}
+              'npcs':[{'id':'mira_worker','name':'Mira','routine':'bench_work',
+                       'position':[610,448],'probe_size':[8,4],
+                       'animation':'assets/characters/mira/work_bench/animation.json',
+                       'fitting_position':[594,423],'fitting_sort_y':444}], 'quests':[]}
     # Clean, actor-free overview used by the in-game map and review.
     overview=town.opened(ROOT/ground[0]).copy()
     for entity in sorted(entities,key=lambda e:e['sort_y']):

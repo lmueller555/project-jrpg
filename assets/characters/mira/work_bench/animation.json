@@ -1,0 +1,180 @@
+{
+  "id": "mira.work_bench",
+  "status": "review",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "loop": true,
+  "duration_ms": 8000,
+  "frames": [
+    {
+      "pose": "rest",
+      "action": "pause",
+      "duration_ms": 1000,
+      "file": "rest.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "inspect",
+      "action": "inspect",
+      "duration_ms": 1000,
+      "file": "inspect.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "reach",
+      "action": "reach",
+      "duration_ms": 300,
+      "file": "reach.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_high",
+      "action": "tighten",
+      "duration_ms": 250,
+      "file": "wrench_high.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120,
+      "file": "wrench_mid.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 300,
+      "file": "wrench_pull.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "reset",
+      "duration_ms": 120,
+      "file": "wrench_mid.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_high",
+      "action": "reset",
+      "duration_ms": 350,
+      "file": "wrench_high.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120,
+      "file": "wrench_mid.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 300,
+      "file": "wrench_pull.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "reset",
+      "duration_ms": 120,
+      "file": "wrench_mid.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_high",
+      "action": "reset",
+      "duration_ms": 350,
+      "file": "wrench_high.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120,
+      "file": "wrench_mid.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 400,
+      "file": "wrench_pull.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "reach",
+      "action": "release",
+      "duration_ms": 250,
+      "file": "reach.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "test_a",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 1,
+      "file": "test_a.png",
+      "fitting_file": "fitting_1.png"
+    },
+    {
+      "pose": "test_b",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 3,
+      "file": "test_b.png",
+      "fitting_file": "fitting_3.png"
+    },
+    {
+      "pose": "test_a",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 1,
+      "file": "test_a.png",
+      "fitting_file": "fitting_1.png"
+    },
+    {
+      "pose": "test_b",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 3,
+      "file": "test_b.png",
+      "fitting_file": "fitting_3.png"
+    },
+    {
+      "pose": "withdraw",
+      "action": "straighten",
+      "duration_ms": 300,
+      "file": "withdraw.png",
+      "fitting_file": "fitting_0.png"
+    },
+    {
+      "pose": "rest",
+      "action": "pause",
+      "duration_ms": 1600,
+      "file": "rest.png",
+      "fitting_file": "fitting_0.png"
+    }
+  ],
+  "source_recipe": "../../../source/characters/mira/work_bench/recipe.json",
+  "station": [
+    610,
+    448
+  ],
+  "fitting_position": [
+    594,
+    423
+  ]
+}

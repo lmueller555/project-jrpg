@@ -1,6 +1,6 @@
 # Eldenmere — playable outdoor map
 
-Run `python main.py` from the repository root. This package turns the approved 64×56 layout (24px tiles, 1536×1344 native pixels) into runtime data, with the finished sanctuary/charm and workshop exteriors in their approved positions. There are no NPCs or quests in this export. Caelan is drawn dynamically by the game, never baked into these images.
+Run `python main.py` from the repository root. This package turns the approved 64×56 layout (24px tiles, 1536×1344 native pixels) into runtime data, with the finished sanctuary/charm and workshop exteriors in their approved positions. Caelan and Mira are drawn dynamically by the game, never baked into these images. Quests remain unimplemented.
 
 - `map.json`: spawn, dimensions, ground clocks, depth-sorted entities, collision path, bridge foreground layers, landmarks and approved navigation destinations.
 - `ground/`: six actor-free, building-free ground phases at 200 ms, retaining paths, masonry, brook/channels, spillways, jammed gate and bridge decks/wakes.
@@ -14,6 +14,8 @@ The player starts at `[384,312]` in the sanctuary courtyard. These coordinates a
 Ground baselines sort roofs, tree canopies and props against the player; bridge foreground rails draw afterward. Player movement is normalized diagonally, subdivided into at most one-pixel steps and resolved per axis to stop tunnelling and allow sliding along walls. The camera clamps to the map boundary. North/south routes remain town boundaries until adjoining maps are implemented.
 
 `map.json` now includes nine proximity doors and an interior scene registry. Door panels are drawn with their host buildings, so ambient animations and depth sorting continue while doors open. A 30px proximity starts opening; a 38px release radius prevents boundary flicker. Five 100ms poses play forward/reverse without looping or restarting when direction changes. Walking north into the fully open threshold transfers to the corresponding furnished interior; returning through its cutaway south exit places Caelan safely outside the same door. Detailed room/door data are in [building_interiors](../building_interiors/README.md).
+
+The `npcs` registry contains one actor: Mira's [outdoor bench routine](../../../characters/mira/work_bench/README.md), awaiting user review. Its variable-duration poses and bench fitting share the global game clock, so returning from a room does not create another Mira or restart her work. The 8×4 foot blocker leaves both approved yard approach points and the doorway usable. The approved static collision mask and all source scenery remain unchanged.
 
 To rebuild in the asset environment:
 

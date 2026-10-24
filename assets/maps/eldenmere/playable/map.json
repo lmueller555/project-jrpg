@@ -937,7 +937,27 @@
     "assets/terrain/eldenmere/workshop/workshop.json",
     "assets/terrain/eldenmere/sanctuary_charm/charm.json"
   ],
-  "npcs": [],
+  "npcs": [
+    {
+      "id": "mira_worker",
+      "name": "Mira",
+      "routine": "bench_work",
+      "position": [
+        610,
+        448
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "animation": "assets/characters/mira/work_bench/animation.json",
+      "fitting_position": [
+        594,
+        423
+      ],
+      "fitting_sort_y": 444
+    }
+  ],
   "quests": [],
   "overview": "assets/maps/eldenmere/playable/overview.png",
   "doors": [

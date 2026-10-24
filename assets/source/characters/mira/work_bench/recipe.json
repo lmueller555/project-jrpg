@@ -1,0 +1,469 @@
+{
+  "id": "mira.work_bench",
+  "status": "review",
+  "head_source": "assets/source/characters/mira/directions/appearance_left.png",
+  "body_source": "assets/source/characters/mira/directions/appearance_back.png",
+  "station": [
+    610,
+    448
+  ],
+  "fitting_position": [
+    594,
+    423
+  ],
+  "poses": {
+    "rest": {
+      "lean": [
+        0,
+        0
+      ],
+      "steady_arm": [
+        [
+          14,
+          18
+        ],
+        [
+          16,
+          21
+        ],
+        [
+          14,
+          23
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          18
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          8,
+          24
+        ]
+      ],
+      "tool_pivot": [
+        7,
+        27
+      ]
+    },
+    "inspect": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          8,
+          24
+        ]
+      ],
+      "tool_pivot": [
+        7,
+        27
+      ]
+    },
+    "reach": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          3,
+          20
+        ]
+      ],
+      "tool_pivot": [
+        2,
+        13
+      ]
+    },
+    "wrench_high": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          8,
+          15
+        ]
+      ],
+      "tool_pivot": [
+        2,
+        10
+      ]
+    },
+    "wrench_mid": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          9,
+          22
+        ],
+        [
+          5,
+          17
+        ]
+      ],
+      "tool_pivot": [
+        2,
+        10
+      ]
+    },
+    "wrench_pull": {
+      "lean": [
+        -2,
+        2
+      ],
+      "steady_arm": [
+        [
+          11,
+          20
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          7,
+          20
+        ],
+        [
+          8,
+          23
+        ],
+        [
+          2,
+          18
+        ]
+      ],
+      "tool_pivot": [
+        2,
+        10
+      ]
+    },
+    "test_a": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          12,
+          19
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          8,
+          24
+        ]
+      ],
+      "tool_pivot": [
+        7,
+        27
+      ]
+    },
+    "test_b": {
+      "lean": [
+        -2,
+        2
+      ],
+      "steady_arm": [
+        [
+          11,
+          20
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          8,
+          24
+        ]
+      ],
+      "tool_pivot": [
+        7,
+        27
+      ]
+    },
+    "withdraw": {
+      "lean": [
+        -1,
+        1
+      ],
+      "steady_arm": [
+        [
+          13,
+          19
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          14,
+          24
+        ]
+      ],
+      "working_arm": [
+        [
+          8,
+          19
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          5,
+          23
+        ]
+      ],
+      "tool_pivot": [
+        3,
+        26
+      ]
+    }
+  },
+  "sequence": [
+    {
+      "pose": "rest",
+      "action": "pause",
+      "duration_ms": 1000
+    },
+    {
+      "pose": "inspect",
+      "action": "inspect",
+      "duration_ms": 1000
+    },
+    {
+      "pose": "reach",
+      "action": "reach",
+      "duration_ms": 300
+    },
+    {
+      "pose": "wrench_high",
+      "action": "tighten",
+      "duration_ms": 250
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 300
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "reset",
+      "duration_ms": 120
+    },
+    {
+      "pose": "wrench_high",
+      "action": "reset",
+      "duration_ms": 350
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 300
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "reset",
+      "duration_ms": 120
+    },
+    {
+      "pose": "wrench_high",
+      "action": "reset",
+      "duration_ms": 350
+    },
+    {
+      "pose": "wrench_mid",
+      "action": "tighten",
+      "duration_ms": 120
+    },
+    {
+      "pose": "wrench_pull",
+      "action": "tighten",
+      "duration_ms": 400
+    },
+    {
+      "pose": "reach",
+      "action": "release",
+      "duration_ms": 250
+    },
+    {
+      "pose": "test_a",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 1
+    },
+    {
+      "pose": "test_b",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 3
+    },
+    {
+      "pose": "test_a",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 1
+    },
+    {
+      "pose": "test_b",
+      "action": "test",
+      "duration_ms": 250,
+      "fitting_phase": 3
+    },
+    {
+      "pose": "withdraw",
+      "action": "straighten",
+      "duration_ms": 300
+    },
+    {
+      "pose": "rest",
+      "action": "pause",
+      "duration_ms": 1600
+    }
+  ]
+}

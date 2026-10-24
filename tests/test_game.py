@@ -30,11 +30,11 @@ class PlayableEldenmere(unittest.TestCase):
         self.game.elapsed_ms=0
         pygame.event.clear()
 
-    def test_approved_town_contract_and_no_npcs(self):
+    def test_approved_town_contract_and_mira_only(self):
         self.assertEqual(self.world.size,(1536,1344))
         self.assertEqual(self.world.data['size_tiles'],[64,56])
         self.assertEqual(self.world.probe_size,(24,12))
-        self.assertEqual(self.world.data['npcs'],[])
+        self.assertEqual([r['id'] for r in self.world.data['npcs']],['mira_worker'])
         self.assertEqual(self.world.data['quests'],[])
         ids={r['id'] for r in self.world.entities}
         self.assertTrue({'sanctuary','mira','mill','halden','elira','venn','home_a','home_b','home_c'}<=ids)

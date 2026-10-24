@@ -62,6 +62,29 @@ class Door:
         self.progress=4.0;self.target_open=True
 
 
+class BenchWorker:
+    """A stationary NPC with variable-duration work poses and a synced fitting."""
+    def __init__(self,record,world):
+        self.data=record
+        self.position=pygame.Vector2(record['position'])
+        path=Path(record['animation'])
+        self.animation=read_json(ROOT/path)
+        self.frames=[(world.image((path.parent/f['file']).as_posix()),
+                      world.image((path.parent/f['fitting_file']).as_posix()),f)
+                     for f in self.animation['frames']]
+        self.duration_ms=sum(frame[2]['duration_ms'] for frame in self.frames)
+        # Ground contact only; hair, arms and tool never become solid walls.
+        width,height=record['probe_size']
+        self.blocker=pygame.Rect(round(self.position.x)-width//2,round(self.position.y)-height//2,width,height)
+
+    def frame(self,elapsed_ms):
+        time=elapsed_ms%self.duration_ms
+        for frame in self.frames:
+            if time<frame[2]['duration_ms']:return frame
+            time-=frame[2]['duration_ms']
+        return self.frames[-1]
+
+
 class World:
     """Approved town art, animated world objects, and pixel-accurate blockers."""
     def __init__(self,path=MAP_FILE,image_cache=None):
@@ -83,6 +106,7 @@ class World:
         self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
+        self.npcs=[BenchWorker(record,self) for record in self.data.get('npcs',[])]
 
     def image(self,path,alpha=True):
         key=(path,alpha)
@@ -97,7 +121,8 @@ class World:
         y=round(position[1])-self.probe_size[1]//2
         if x<0 or y<0 or x+self.probe_size[0]>self.size[0] or y+self.probe_size[1]>self.size[1]:
             return False
-        return self.blocked.overlap(self.probe,(x,y)) is None
+        return (self.blocked.overlap(self.probe,(x,y)) is None
+                and not any(npc.blocker.colliderect(pygame.Rect((x,y),self.probe_size)) for npc in self.npcs))
 
     def location(self,position):
         if self.data.get('kind')=='interior':return self.data['name']
@@ -112,13 +137,23 @@ class World:
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
-        ordered=[(r['sort_y'],r.get('sort_priority',0),False,r) for r in self.entities if r['rect'].colliderect(viewport)]
-        ordered.append((player.position.y+self.probe_size[1]/2,3,True,player))
-        for _,_,is_player,record in sorted(ordered,key=lambda r:(r[0],r[1])):
-            if is_player:
+        ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
+        for npc in self.npcs:
+            ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
+            ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
+        ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
+        for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
+            if kind=='player':
                 anchor=self.data['player_draw_anchor']
                 target.blit(player.sprite(),(round(player.position.x)-anchor[0]-camera[0],
                                               round(player.position.y)-anchor[1]-camera[1]))
+            elif kind=='npc':
+                anchor=record.animation['draw_anchor']
+                target.blit(record.frame(elapsed_ms)[0],(round(record.position.x)-anchor[0]-camera[0],
+                                                        round(record.position.y)-anchor[1]-camera[1]))
+            elif kind=='fitting':
+                x,y=record.data['fitting_position']
+                target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
             else:
                 phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
                 target.blit(record['surfaces'][phase],(record['position'][0]-camera[0],record['position'][1]-camera[1]))
