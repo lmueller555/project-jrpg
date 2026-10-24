@@ -29,24 +29,26 @@ class WellDrawing(unittest.TestCase):
         return (self.actor.position-pygame.Vector2(self.actor.draw_anchor)+xy+
                 pygame.Vector2(bucket['grip']))
 
-    def test_near_side_registration_is_centered_with_one_three_pixel_depth_snap(self):
+    def test_handoffs_snap_between_concealed_hands_and_visible_top_winch(self):
         data=self.well.data;origin=pygame.Vector2(data['position'])
         self.assertEqual(data['shaft_center_x'],40)
         self.assertEqual(data['rope_origin'][0],40)
         self.assertEqual(data['hook_tip'][0],40)
         self.assertEqual(data['loading_grip'][0],40)
-        self.assertEqual(data['shaft_grip'][0],40)
+        self.assertEqual(data['parked_bucket_grip'][0],40)
         self.assertEqual(data['lowered_bucket_grip'][0],40)
         self.assertEqual(origin.x+40,526)
         self.assertEqual(data['loading_position'],[526,892])
         self.assertEqual(data['hook_tip'][1]-data['hook_mount'][1],3)
-        self.assertEqual(abs(data['loading_grip'][1]-data['shaft_grip'][1]),3)
-        self.assertEqual(data['snap_pixels'],3)
+        self.assertEqual(data['parked_bucket_grip'][1]-data['hook_tip'][1],2)
+        self.assertEqual(abs(data['loading_grip'][1]-data['parked_bucket_grip'][1]),31)
+        self.assertEqual(data['snap_pixels'],31)
+        self.assertEqual(data['settle_bounce_pixels'],1)
 
         self.until('well_settle')
-        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['shaft_grip']))
+        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['parked_bucket_grip']))
         self.until('well_catch')
-        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['shaft_grip']))
+        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['parked_bucket_grip']))
         self.game.update(.5,(0,0),False)
         self.assertEqual(self.actor.state,'well_catch')
         self.assertEqual(tuple(self.well.bucket_grip),tuple(data['loading_grip']))
@@ -66,19 +68,20 @@ class WellDrawing(unittest.TestCase):
             for x in range(data['hook_tip'][0]-3,data['hook_tip'][0]+4):
                 self.assertEqual(idle.get_at((x,y)),baseline.get_at((x,y)),(x,y))
 
-    def test_long_rope_exists_only_while_well_owns_attached_pail(self):
+    def test_rope_connector_exists_only_while_well_owns_attached_pail(self):
         baseline=self.well.fixed.copy();baseline.blit(self.well.rim,(0,0))
         def set_state(state,progress=0):
             if state=='idle':
                 self.well.owner=None;return
             self.well.owner=self.actor
             self.actor.step_index=next(i for i,s in enumerate(self.actor.steps) if s['id']==state)
-            self.actor.state_ms=self.well.data['phases_ms'][state]*progress
+            self.actor.state_ms=self.well.data['phases_ms'].get(state,1)*progress
         for state in ('idle','well_attach','well_hook','well_unhook','well_take'):
             set_state(state,.5)
             self.assertFalse(self.well.rope_deployed,state)
             self.assertEqual(self.well.sprite(0).get_at((40,60)),baseline.get_at((40,60)),state)
-        for state in ('well_settle','well_lower','well_fill','well_raise'):
+        for state in ('well_settle','well_to_crank','well_grip','well_lower','well_fill',
+                      'well_raise','well_lock','well_to_loading'):
             set_state(state,.5)
             self.assertTrue(self.well.rope_deployed,state)
             self.assertNotEqual(self.well.sprite(0).get_at((40,60)),baseline.get_at((40,60)),state)
@@ -89,24 +92,48 @@ class WellDrawing(unittest.TestCase):
         self.assertFalse(self.well.rope_deployed)
         self.assertEqual(self.well.sprite(0).get_at((40,60)),baseline.get_at((40,60)))
 
-    def test_rope_feeds_down_and_retracts_without_a_full_length_pop(self):
+    def test_top_pail_settles_one_pixel_then_rope_follows_its_descent_and_ascent(self):
         self.well.owner=self.actor
-        def ends(state,progresses):
+        def grips(state,progresses):
             self.actor.step_index=next(i for i,s in enumerate(self.actor.steps) if s['id']==state)
             duration=self.well.data['phases_ms'][state]
             values=[]
             for progress in progresses:
                 self.actor.state_ms=duration*progress
-                values.append(self.well.rope_end.y)
+                values.append(tuple(self.well.bucket_grip))
+                self.assertEqual(self.well.rope_end,self.well.bucket_grip)
             return values
-        deployed=ends('well_settle',(0,.25,.5,.75,1))
-        self.assertEqual(deployed[0],self.well.data['hook_tip'][1])
-        self.assertEqual(deployed[-1],self.well.data['shaft_grip'][1])
-        self.assertTrue(all(a<b for a,b in zip(deployed,deployed[1:])))
-        retracted=ends('well_catch',(0,.1375,.275,.4125,.55))
-        self.assertEqual(retracted[0],self.well.data['shaft_grip'][1])
-        self.assertEqual(retracted[-1],self.well.data['hook_tip'][1])
-        self.assertTrue(all(a>b for a,b in zip(retracted,retracted[1:])))
+        parked=tuple(self.well.data['parked_bucket_grip']);bounce=(parked[0],parked[1]+1)
+        self.assertEqual(grips('well_settle',(0,.3,.6)),[parked,bounce,parked])
+        lowered=grips('well_lower',(0,.25,.5,.75,1))
+        self.assertEqual(lowered[0],parked)
+        self.assertEqual(lowered[-1],tuple(self.well.data['lowered_bucket_grip']))
+        self.assertTrue(all(a[1]<b[1] for a,b in zip(lowered,lowered[1:])))
+        raised=grips('well_raise',(0,.25,.5,.75,1))
+        self.assertEqual(raised,list(reversed(lowered)))
+
+    def test_parked_pail_is_fully_visible_then_rim_masks_its_descent(self):
+        self.well.owner=self.actor
+        baseline=self.well.fixed.copy();baseline.blit(self.well.rim,(0,0))
+        index=next(i for i,s in enumerate(self.actor.steps) if s['id']=='well_lower')
+        self.actor.step_index=index
+        def visible_pail_pixels(progress):
+            self.actor.state_ms=self.well.data['phases_ms']['well_lower']*progress
+            image=self.well.sprite(0);count=0
+            for y in range(50,72):
+                for x in (*range(34,39),*range(42,47)):
+                    if image.get_at((x,y))!=baseline.get_at((x,y)):count+=1
+            return count
+        top=visible_pail_pixels(0);middle=visible_pail_pixels(.5);bottom=visible_pail_pixels(1)
+        self.assertGreater(top,middle)
+        self.assertGreater(middle,bottom)
+        self.assertEqual(bottom,0)
+        parked=self.well.data['parked_bucket_grip'];bucket=self.well.bucket_data['bucket_0_0']
+        source=self.well.pails['bucket_0_0'];bbox=source.get_bounding_rect()
+        top_y=parked[1]-bucket['grip'][1]+bbox.top
+        bottom_y=parked[1]-bucket['grip'][1]+bbox.bottom
+        self.assertEqual((top_y,bottom_y),(50,64))
+        self.assertLessEqual(bottom_y+self.well.data['settle_bounce_pixels'],72)
 
     def test_actor_held_pail_is_behind_torso_and_articulated_arms(self):
         self.well.owner=self.actor
@@ -154,8 +181,8 @@ class WellDrawing(unittest.TestCase):
         self.assertEqual(self.held_grip(),loading)
         self.until('well_settle')
         self.assertTrue(self.well.bucket_on_rope)
-        self.assertEqual(origin+self.well.bucket_grip,origin+self.well.data['shaft_grip'])
-        self.assertEqual(loading.distance_to(origin+self.well.bucket_grip),3)
+        self.assertEqual(origin+self.well.bucket_grip,origin+self.well.data['parked_bucket_grip'])
+        self.assertEqual(loading.distance_to(origin+self.well.bucket_grip),31)
         self.until('well_catch');self.game.update(.5,(0,0),False)
         name,_=self.actor.pose()
         pose=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')['work_poses'][name]

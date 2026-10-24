@@ -38,7 +38,7 @@
     1324
   ],
   "source_recipe": "../../../source/terrain/eldenmere/well/recipe.json",
-  "animation": "Idle water glints and a retracted center hook; the rope deploys only with the gardener pail attached",
+  "animation": "Idle water glints and a retracted center hook; the gardener pail parks visibly beneath the winch before descending",
   "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
   "draw_water_interaction": true,
   "drawing_animation": "drawing/animation.json",

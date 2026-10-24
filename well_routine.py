@@ -49,14 +49,16 @@ class DrawingWell:
     @property
     def bucket_grip(self):
         d=self.data;s=self.state;t=self.progress
-        loading=d['loading_grip'];shaft=d['shaft_grip'];low=d['lowered_bucket_grip']
-        if s=='well_settle':return pygame.Vector2(shaft)
-        if s=='well_lower':return mix(shaft,low,t)
+        loading=d['loading_grip'];parked=d['parked_bucket_grip'];low=d['lowered_bucket_grip']
+        if s=='well_settle':
+            bounce=d['settle_bounce_pixels'] if .25<=t<.55 else 0
+            return pygame.Vector2(parked)+(0,bounce)
+        if s=='well_lower':return mix(parked,low,t)
         if s=='well_fill':return pygame.Vector2(low)
-        if s=='well_raise':return mix(low,shaft,t)
-        if s=='well_catch':return pygame.Vector2(shaft if t<.55 else loading)
+        if s=='well_raise':return mix(low,parked,t)
+        if s=='well_catch':return pygame.Vector2(parked if t<.55 else loading)
         if s in ('well_to_crank','well_grip','well_lock','well_to_loading'):
-            return pygame.Vector2(shaft)
+            return pygame.Vector2(parked)
         return pygame.Vector2(loading)
 
     @property
@@ -75,17 +77,12 @@ class DrawingWell:
 
     @property
     def rope_deployed(self):
-        # The long line exists only between bucket attachment and the retrieval
-        # transfer. Actor-owned handoff phases show the retracted hook instead.
+        # The connector follows the well-owned pail. It is short while parked
+        # beneath the winch and lengthens only as the pail enters the shaft.
         return self.bucket_on_rope and not self.bucket_at_handoff
 
     @property
     def rope_end(self):
-        d=self.data
-        if self.state=='well_settle':
-            return mix(d['hook_tip'],d['shaft_grip'],self.progress)
-        if self.state=='well_catch':
-            return mix(d['shaft_grip'],d['hook_tip'],self.progress/.55)
         return pygame.Vector2(self.bucket_grip)
 
     def sprite(self,elapsed_ms):

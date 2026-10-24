@@ -65,9 +65,9 @@
     40,
     82
   ],
-  "shaft_grip": [
+  "parked_bucket_grip": [
     40,
-    79
+    51
   ],
   "lowered_bucket_grip": [
     40,
@@ -81,7 +81,8 @@
     526,
     892
   ],
-  "snap_pixels": 3,
+  "snap_pixels": 31,
+  "settle_bounce_pixels": 1,
   "phases_ms": {
     "well_attach": 1200,
     "well_hook": 600,
@@ -97,5 +98,5 @@
   },
   "source": "assets/source/terrain/eldenmere/well/parts/native_structure.png",
   "bucket_owner": "gardener",
-  "notes": "One pail; near-side back-facing handoff. The idle line is fully retracted with a three-pixel hook beneath the windlass. The long rope exists only while the well owns the pail. The pail uses a three-pixel depth snap and stays behind her torso during transfer."
+  "notes": "One pail; near-side back-facing handoff. The idle line is fully retracted with a three-pixel hook beneath the windlass. On transfer the concealed pail snaps to a fully visible parked position below the winch, settles by one pixel, and then descends with the rope. Retrieval reverses the route before the pail snaps behind her torso."
 }
