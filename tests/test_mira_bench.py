@@ -11,7 +11,7 @@ import main
 
 class MiraBench(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game()
+        self.game=main.Game(fullscreen=False)
         self.world=self.game.town
         self.mira=self.world.npcs[0]
 

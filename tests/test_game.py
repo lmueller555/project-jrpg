@@ -18,7 +18,7 @@ import main
 class PlayableEldenmere(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.game=main.Game()
+        cls.game=main.Game(fullscreen=False)
         cls.world=cls.game.world
 
     @classmethod
@@ -183,6 +183,45 @@ class PlayableEldenmere(unittest.TestCase):
         expected=self.game.canvas.get_at((10,10))
         for dx in (0,1):
             for dy in (0,1):self.assertEqual(self.game.window.get_at((52+dx,84+dy)),expected)
+
+
+class FullscreenLaunch(unittest.TestCase):
+    def tearDown(self):pygame.quit()
+
+    def test_default_uses_desktop_fullscreen_and_f11_restores_window_size(self):
+        pygame.display.init()
+        surface=pygame.display.set_mode(main.WINDOW_SIZE,pygame.RESIZABLE)
+        # SDL's dummy backend cannot resize a display first opened fullscreen.
+        # Check the exact mode requests, using a real windowed drawing surface.
+        with patch('main.pygame.display.set_mode',return_value=surface) as mode:
+            game=main.Game()
+            self.assertTrue(game.fullscreen)
+            mode.assert_called_once_with((0,0),pygame.FULLSCREEN)
+            self.assertEqual(game.canvas.get_size(),main.VIEW_SIZE)
+            for expected in (False,True,False):
+                pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_F11))
+                self.assertTrue(game.handle_events())
+                self.assertEqual(game.fullscreen,expected)
+                mode.assert_called_with((0,0) if expected else main.WINDOW_SIZE,
+                                        pygame.FULLSCREEN if expected else pygame.RESIZABLE)
+                game.draw()
+
+    def test_windowed_override_and_fullscreen_round_trip_preserve_resize(self):
+        game=main.Game(window_size=(1024,768),fullscreen=False)
+        self.assertFalse(game.fullscreen)
+        self.assertEqual(game.window.get_size(),(1024,768))
+        for expected in (True,False):
+            pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_F11))
+            game.handle_events()
+            self.assertEqual(game.fullscreen,expected)
+        self.assertEqual(game.window.get_size(),(1024,768))
+
+    def test_entrypoint_defaults_fullscreen_but_headless_and_override_are_windowed(self):
+        for argv,expected in (([],True),(['--windowed'],False),(['--headless'],False)):
+            with self.subTest(argv=argv),patch('main.Game') as constructor:
+                constructor.return_value.handle_events.return_value=False
+                self.assertEqual(main.main(argv),0)
+                constructor.assert_called_once_with(fullscreen=expected)
 
 
 if __name__=='__main__':unittest.main()

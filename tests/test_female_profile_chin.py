@@ -17,7 +17,7 @@ LANDMARKS={'left':{(9,11):(232,196,157,255),(10,11):(237,160,82,255),(10,12):(23
 
 class FemaleProfileChin(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):cls.game=main.Game()
+    def setUpClass(cls):cls.game=main.Game(fullscreen=False)
 
     @classmethod
     def tearDownClass(cls):pygame.quit()

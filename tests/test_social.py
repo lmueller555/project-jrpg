@@ -10,7 +10,7 @@ from social import clear_sight
 
 class SocialTests(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game()
+        self.game=main.Game(fullscreen=False)
         self.actor=self.game.persistent_npcs[0]
         self.game.world=self.game._scene_by_id('sanctuary_dining')
         self.game.player.position.update(288,231)

@@ -263,9 +263,12 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True):
         pygame.display.init();pygame.font.init()
-        self.window=pygame.display.set_mode(window_size,pygame.RESIZABLE)
+        self.fullscreen=fullscreen
+        self.windowed_size=tuple(window_size)
+        self.window=pygame.display.set_mode((0,0) if fullscreen else self.windowed_size,
+                                            pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE)
         pygame.display.set_caption('Project JRPG — Eldenmere')
         self.canvas=pygame.Surface(VIEW_SIZE)
         self.font=pygame.font.Font(None,16)
@@ -280,8 +283,6 @@ class Game:
         self.player=Player(self.world)
         self.elapsed_ms=0.0
         self.map_open=False
-        self.fullscreen=False
-        self.windowed_size=window_size
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
         self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
@@ -456,13 +457,14 @@ class Game:
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--headless',action='store_true',help='Run without a visible window for verification')
+    parser.add_argument('--windowed',action='store_true',help='Launch in a resizable window instead of fullscreen')
     parser.add_argument('--frames',type=int,default=0,help='Exit after this many frames (0: play until quit)')
     parser.add_argument('--screenshot',type=Path,help='Save the final rendered window as a PNG')
     args=parser.parse_args(argv)
     if args.frames<0:parser.error('--frames must be nonnegative')
     if args.headless:os.environ['SDL_VIDEODRIVER']='dummy'
     if not MAP_FILE.is_file():raise SystemExit('Playable town data is missing. Restore assets/maps/eldenmere/playable from the repository.')
-    game=Game()
+    game=Game(fullscreen=not (args.headless or args.windowed))
     clock=pygame.time.Clock()
     limit=args.frames or (1 if args.headless else 0)
     count=0

@@ -10,7 +10,7 @@ import main
 
 class WellDrawing(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game();self.world=self.game.town
+        self.game=main.Game(fullscreen=False);self.world=self.game.town
         self.actor=self.world.npcs[1];self.well=self.world.well
         self.game.player.position.update(480,924)
         self.game.update(self.actor.rest_remaining_ms/1000+1/60,(0,0),False)
@@ -259,7 +259,7 @@ class WellDrawing(unittest.TestCase):
         self.assertEqual(self.actor.water_units,6)
 
     def test_blocked_loading_and_crank_positions_wait_then_resume(self):
-        game=main.Game();actor=game.town.npcs[1];well=game.town.well
+        game=main.Game(fullscreen=False);actor=game.town.npcs[1];well=game.town.well
         game.player.position.update(well.data['loading_position'])
         game.update(actor.rest_remaining_ms/1000+1/60,(0,0),False)
         for _ in range(35*60):

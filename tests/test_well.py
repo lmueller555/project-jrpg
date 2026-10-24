@@ -11,7 +11,7 @@ import main
 
 class WellSquare(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game();self.world=self.game.town
+        self.game=main.Game(fullscreen=False);self.world=self.game.town
         self.well=next(e for e in self.world.entities if e['id']=='well')
         self.meta=main.read_json(main.ROOT/'assets/terrain/eldenmere/well/well.json')
 

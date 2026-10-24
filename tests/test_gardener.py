@@ -12,7 +12,7 @@ import main
 
 class SanctuaryGardener(unittest.TestCase):
     def setUp(self):
-        self.game=main.Game();self.world=self.game.town
+        self.game=main.Game(fullscreen=False);self.world=self.game.town
         self.actor=next(a for a in self.world.npcs if a.data['id']=='sanctuary_gardener')
         self.actor=main.Gardener(self.actor.data,self.world,random.Random(1234))
         self.world.npcs[1]=self.actor
@@ -149,7 +149,7 @@ class SanctuaryGardener(unittest.TestCase):
         # Advance at 10 FPS, then reproduce with independent 60 FPS updates.
         for _ in range(600):self.game.update(.1,(0,0),False)
         expected=(a.state,tuple(a.position),a.water_units,a.state_ms)
-        other=main.Game();other.player.position.update(520,520)
+        other=main.Game(fullscreen=False);other.player.position.update(520,520)
         other.town.npcs[1]=main.Gardener(a.data,other.town,random.Random(1234))
         other.update(other.town.npcs[1].rest_duration_ms/1000+1/60,(0,0),False)
         for _ in range(3600):other.update(1/60,(0,0),False)

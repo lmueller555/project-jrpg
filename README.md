@@ -13,6 +13,13 @@ python main.py
 
 In VS Code, select the Python interpreter where you installed the dependency, open `main.py` and choose **Run Python File**, or use the **Play Eldenmere** launch configuration with F5. No asset-building step is required. Paths are resolved relative to `main.py`, so launching from another working directory also works.
 
+The game launches fullscreen at the desktop display size. Press **F11** to
+switch to a resizable 960×640 window and back; your window size is remembered
+for that session. Use `python main.py --windowed` to launch directly in a window.
+Headless verification stays windowed for consistent screenshots. The internal
+480×320 canvas keeps crisp integer scaling and centered borders where needed
+to preserve the pixel art's proportions.
+
 | Control | Action |
 | --- | --- |
 | WASD or arrow keys | Move Caelan |

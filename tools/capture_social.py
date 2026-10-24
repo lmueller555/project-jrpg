@@ -18,7 +18,7 @@ OUTPUT=ROOT/'docs/reviews/proximity_dialogue'
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game()
+    game=main.Game(fullscreen=False)
     actor=game.persistent_npcs[0]
     game.world=game._scene_by_id('sanctuary_dining')
     actor.select_step('sort_provisions')
