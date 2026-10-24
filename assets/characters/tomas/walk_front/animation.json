@@ -1,0 +1,281 @@
+{
+  "character": "tomas",
+  "animation": "walk.front",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "rest_visible_height_px": 32,
+  "height_difference_from_caelan_px": -2,
+  "loop": true,
+  "duration_ms": 560,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "phase": "screen_left_contact",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "visible_height_px": 32,
+      "eyes": [
+        [
+          10,
+          11
+        ],
+        [
+          13,
+          11
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 31,
+        "right": 28
+      },
+      "patch_pixels": [
+        [
+          14,
+          26
+        ],
+        [
+          15,
+          26
+        ],
+        [
+          15,
+          27
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/tomas/walk_front/parts/frame_01_legs.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_left_knee_patch.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_waist.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_tunic_hem.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_left_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_right_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_upper_body.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_01_head.png"
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "phase": "screen_left_support_passing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "visible_height_px": 33,
+      "eyes": [
+        [
+          10,
+          10
+        ],
+        [
+          13,
+          10
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 31,
+        "right": 27
+      },
+      "patch_pixels": [
+        [
+          15,
+          26
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/tomas/walk_front/parts/frame_02_legs.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_left_knee_patch.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_waist.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_tunic_hem.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_left_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_right_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_upper_body.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_02_head.png"
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "phase": "screen_right_contact",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "visible_height_px": 32,
+      "eyes": [
+        [
+          10,
+          11
+        ],
+        [
+          13,
+          11
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 28,
+        "right": 31
+      },
+      "patch_pixels": [
+        [
+          14,
+          27
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          14,
+          28
+        ],
+        [
+          15,
+          28
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/tomas/walk_front/parts/frame_03_legs.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_left_knee_patch.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_waist.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_tunic_hem.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_left_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_right_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_upper_body.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_03_head.png"
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "phase": "screen_right_support_passing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "visible_height_px": 33,
+      "eyes": [
+        [
+          10,
+          10
+        ],
+        [
+          13,
+          10
+        ]
+      ],
+      "boot_top_rows": {
+        "left": 28,
+        "right": 31
+      },
+      "patch_pixels": [
+        [
+          13,
+          27
+        ],
+        [
+          13,
+          28
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/tomas/walk_front/parts/frame_04_legs.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_left_knee_patch.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_waist.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_tunic_hem.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_left_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_right_arm.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_upper_body.png",
+        "assets/source/characters/tomas/walk_front/parts/frame_04_head.png"
+      ]
+    }
+  ],
+  "template": "../../../templates/humanoid_24x36/walk_front/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "arm_registration": {
+    "source_rect": [
+      0,
+      13,
+      24,
+      12
+    ],
+    "target_size": [
+      20,
+      11
+    ],
+    "offset": [
+      2,
+      15
+    ],
+    "resampling": "nearest"
+  },
+  "knee_patch": {
+    "anatomical_side": "left",
+    "front_screen_side": "right"
+  },
+  "review": {
+    "gif": "walk_front_preview.gif",
+    "scale": 20,
+    "background": "#e8edf2"
+  },
+  "comparison": {
+    "gif": "shared_motion_comparison.gif",
+    "scale": 16,
+    "columns": [
+      "caelan",
+      "tomas"
+    ]
+  }
+}

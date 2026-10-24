@@ -22,4 +22,10 @@ The patch remains on the front of his anatomical left knee. It is visible on the
 
 `idle_turnaround_review.png` shows the three new views at 24×. `idle_all_review.png` compares all four views at 12×, using a shared baseline. `idle_all.png` is a native 96×36 sheet ordered front/left/right/back, with rectangles and per-view status in `idle_all.json`.
 
-Run `python tools/build_tomas_directional_idles.py` to rebuild these views, their twelve source layers and review boards. The approved front, its source/layers and palette remain unchanged. Walking animations are future work.
+Run `python tools/build_tomas_directional_idles.py` to rebuild these views, their twelve source layers and review boards. The approved front, its source/layers and palette remain unchanged.
+
+## Front walk — awaiting review
+
+`walk_front/` adds a four-phase front walk using the shared stride and timing, with arm poses registered to Tomas's proportions. Head and shoulders bob together; the patch follows the left knee rather than staying fixed on the sheet. He remains two pixels shorter than Caelan in matching phases.
+
+The pack includes a 20× looping GIF, 12× frame strip, 16× synchronized Caelan comparison, native 96×36 sheet, recipe and animation metadata. Run `python tools/build_tomas_walk.py` and `python tools/test_tomas_walk.py`. Approved idle artwork is unchanged; other walking directions are future work.

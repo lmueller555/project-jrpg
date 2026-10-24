@@ -1,0 +1,147 @@
+{
+  "character": "tomas",
+  "direction": "front",
+  "approval_status": "review",
+  "idle": "../idle_front.png",
+  "materials": "../palette.json",
+  "template": "../../../templates/humanoid_24x36/walk_front/poses.json",
+  "parts_directory": "../../../source/characters/tomas/walk_front/parts",
+  "head_rect": [
+    0,
+    0,
+    24,
+    15
+  ],
+  "upper_body_rect": [
+    9,
+    15,
+    6,
+    6
+  ],
+  "waist_rect": [
+    9,
+    21,
+    6,
+    2
+  ],
+  "hem_rect": [
+    9,
+    23,
+    6,
+    3
+  ],
+  "idle_eye_pixels": [
+    [
+      10,
+      11
+    ],
+    [
+      13,
+      11
+    ]
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      13,
+      24,
+      12
+    ],
+    "target_size": [
+      20,
+      11
+    ],
+    "offset": [
+      2,
+      15
+    ],
+    "resampling": "nearest"
+  },
+  "arm_palette": {
+    "outline": "#1a0e16",
+    "fabric_shadow": "#bcae91",
+    "fabric_base": "#ded1ae",
+    "fabric_light": "#fbeed0",
+    "skin_base": "#e8c49d",
+    "skin_shadow": "#eda052"
+  },
+  "costume_poses": [
+    {
+      "id": "01",
+      "boot_top_rows": {
+        "left": 31,
+        "right": 28
+      },
+      "patch_pixels": [
+        [
+          14,
+          26
+        ],
+        [
+          15,
+          26
+        ],
+        [
+          15,
+          27
+        ]
+      ]
+    },
+    {
+      "id": "02",
+      "boot_top_rows": {
+        "left": 31,
+        "right": 27
+      },
+      "patch_pixels": [
+        [
+          15,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "03",
+      "boot_top_rows": {
+        "left": 28,
+        "right": 31
+      },
+      "patch_pixels": [
+        [
+          14,
+          27
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          14,
+          28
+        ],
+        [
+          15,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "04",
+      "boot_top_rows": {
+        "left": 28,
+        "right": 31
+      },
+      "patch_pixels": [
+        [
+          13,
+          27
+        ],
+        [
+          13,
+          28
+        ]
+      ]
+    }
+  ],
+  "notes": "Approved 32px rest height retained inside24x36. Shared stride and 140ms timing; head/chest and registered shoulders rise together on passing phases. Arm masks crop the shared24x12 region at[0,13], resize to20x11 with nearest neighbor and place at[2,15], preserving shoulder bob and clearing the knees. Patch is reposed on the front of the anatomical left knee (screen right), compressing when foreshortened, always within trouser cloth. Calf slots in the shared dress leg adapter are mapped to dark trousers; boots use per-leg boundaries. All appearance, palette and template inputs are read only."
+}
