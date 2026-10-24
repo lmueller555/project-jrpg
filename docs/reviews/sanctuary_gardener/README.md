@@ -2,7 +2,7 @@
 
 Status: awaiting user review.
 
-- [Complete collection and watering trip](route.gif): 2× overview of the real runtime, showing the stairs, workshop lane, brook and four flower stops.
+- [Complete collection and watering trip](route.gif): native-scale overview of the real runtime, showing the stairs, workshop lane, brook and four flower stops. Kept compact for direct GitHub image delivery; the action previews below are enlarged.
 - [Collecting water](filling.gif): 6× close-up of lowering, dipping, filling and lifting the bucket.
 - [Watering all four patches](watering.gif): 6× montage of the consecutive inspection and pouring stops.
 - Still images: [route](route.png), [filling](filling.png), [watering](watering.png).

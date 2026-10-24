@@ -103,8 +103,8 @@ def capture():
         overview.paste(left.crop((0,0,480,288)),(0,0))
         overview.paste(right.crop((0,0,192,288)),(480,0))
         text=caption(actor)
-        route.append(panel(overview,2,'Sanctuary gardener / complete watering trip',
-                           'Actual game simulation | 2x scene | travel and work at real speed',text))
+        route.append(panel(overview,1,'Sanctuary gardener / complete watering trip',
+                           'Native overview | actual game simulation | travel and work at real speed',text))
         if state=='fill':
             close=render(game,(738,366)).crop((0,0,96,80))
             filling.append(panel(close,6,'Gardener / collecting water','6x enlargement | bucket contact, filling and lifting',text))
