@@ -53,10 +53,13 @@
       44
     ]
   ],
-  "guide_bottom_y": 76,
+  "hook_mount": [
+    40,
+    46
+  ],
   "hook_tip": [
     40,
-    79
+    49
   ],
   "loading_grip": [
     40,
@@ -94,5 +97,5 @@
   },
   "source": "assets/source/terrain/eldenmere/well/parts/native_structure.png",
   "bucket_owner": "gardener",
-  "notes": "One pail; near-side back-facing handoff. Three-pixel depth snap, zero lateral movement. The pail stays behind her torso while her hands remain visible."
+  "notes": "One pail; near-side back-facing handoff. The idle line is fully retracted with a three-pixel hook beneath the windlass. The long rope exists only while the well owns the pail. The pail uses a three-pixel depth snap and stays behind her torso during transfer."
 }

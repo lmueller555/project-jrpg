@@ -1,4 +1,4 @@
-"""Build the centered near-side loading guide and gardener work poses."""
+"""Build the retracted well rope and centered gardener work poses."""
 import json
 import math
 from pathlib import Path
@@ -28,12 +28,6 @@ def build():
     # The windlass itself is retained; its rope wrap gets an animated texture.
     # Only the old exposed crank is cleared, outside the right-hand timber.
     d.rectangle((69,40,83,51),fill=(0,0,0,0))
-    # A small iron guide on the central near capstone parks the bare hook at a
-    # reachable height. The separate animated hook ends only three pixels below
-    # this guide; no rope or ironwork runs down the well's front wall.
-    d.line((37,75,43,75),fill='#45382d',width=2)
-    d.line((38,74,42,74),fill='#a2b4a7',width=1)
-    d.point((39,76),fill='#657874');d.point((41,76),fill='#657874')
     fixed.save(OUT/'fixed.png')
     rim=Image.new('RGBA',original.size)
     # Front lip hides rope and bucket while they are inside the shaft.
@@ -50,7 +44,7 @@ def build():
         'fixed':'fixed.png','front_rim':'front_rim.png',
         'shaft_center_x':40,
         'rope_origin':[40,43],'crank_pivot':[69,43],'crank_handles':handles,
-        'guide_bottom_y':76,'hook_tip':[40,79],
+        'hook_mount':[40,46],'hook_tip':[40,49],
         'loading_grip':[40,82],'shaft_grip':[40,79],
         'lowered_bucket_grip':[40,92],
         'operator_position':[572,854],'loading_position':[526,892],
@@ -61,7 +55,7 @@ def build():
                      'well_unhook':700,'well_take':1200},
         'source':'assets/source/terrain/eldenmere/well/parts/native_structure.png',
         'bucket_owner':'gardener',
-        'notes':'One pail; near-side back-facing handoff. Three-pixel depth snap, zero lateral movement. The pail stays behind her torso while her hands remain visible.'
+        'notes':'One pail; near-side back-facing handoff. The idle line is fully retracted with a three-pixel hook beneath the windlass. The long rope exists only while the well owns the pail. The pail uses a three-pixel depth snap and stays behind her torso during transfer.'
     }
     write(OUT/'animation.json',meta)
     source=ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json'
@@ -137,7 +131,7 @@ def build():
     background=Image.new('RGBA',idle.size,'#e8edf2');background.alpha_composite(idle)
     background.convert('RGB').resize((504,576),Image.Resampling.NEAREST).save(OUT.parent/'well_review.png')
     well_meta=json.loads((OUT.parent/'well.json').read_text())
-    well_meta.update(status=status,animation='Idle water glints and centered near-side hook; gardener attaches her own pail',bucket_owner='gardener')
+    well_meta.update(status=status,animation='Idle water glints and a retracted center hook; the rope deploys only with the gardener pail attached',bucket_owner='gardener')
     write(OUT.parent/'well.json',well_meta)
     # Authoring registrations are checked in alongside the generated layers.
     write(SOURCE/'drawing_recipe.json',meta)

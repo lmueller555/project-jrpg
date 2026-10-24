@@ -1,6 +1,6 @@
 # Gardener — short-guide near-side handoff
 
-Status: awaiting user review. Implemented in the playable town launched by `main.py`.
+Status: superseded by the [retracted-rope handoff](../gardener_retracted_rope/README.md). Retained as a historical review record.
 
 - [6× looping well close-up](well_drawing.gif): the complete approach, attachment, draw, retrieval and departure sequence.
 - [Full watering trip](full_routine.gif): native-scale overview at actual game speed, with most of the initial 3–5-minute rest omitted.

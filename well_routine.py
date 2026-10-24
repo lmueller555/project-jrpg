@@ -50,7 +50,7 @@ class DrawingWell:
     def bucket_grip(self):
         d=self.data;s=self.state;t=self.progress
         loading=d['loading_grip'];shaft=d['shaft_grip'];low=d['lowered_bucket_grip']
-        if s=='well_settle':return pygame.Vector2(loading if t<.55 else shaft)
+        if s=='well_settle':return pygame.Vector2(shaft)
         if s=='well_lower':return mix(shaft,low,t)
         if s=='well_fill':return pygame.Vector2(low)
         if s=='well_raise':return mix(low,shaft,t)
@@ -70,9 +70,23 @@ class DrawingWell:
             'well_raise','well_lock','well_to_loading','well_catch')
 
     @property
-    def bucket_at_loading_guide(self):
-        return ((self.state=='well_settle' and self.progress<.55) or
-                (self.state=='well_catch' and self.progress>=.55))
+    def bucket_at_handoff(self):
+        return self.state=='well_catch' and self.progress>=.55
+
+    @property
+    def rope_deployed(self):
+        # The long line exists only between bucket attachment and the retrieval
+        # transfer. Actor-owned handoff phases show the retracted hook instead.
+        return self.bucket_on_rope and not self.bucket_at_handoff
+
+    @property
+    def rope_end(self):
+        d=self.data
+        if self.state=='well_settle':
+            return mix(d['hook_tip'],d['shaft_grip'],self.progress)
+        if self.state=='well_catch':
+            return mix(d['shaft_grip'],d['hook_tip'],self.progress/.55)
+        return pygame.Vector2(self.bucket_grip)
 
     def sprite(self,elapsed_ms):
         image=pygame.Surface(self.data['canvas_size'],pygame.SRCALPHA)
@@ -90,15 +104,14 @@ class DrawingWell:
         for x in (29+phase,48-phase):image.set_at((x,69),pygame.Color('#598e9f'))
         grip=self.bucket_grip
         key=f'bucket_0_{self.draw_level}'
-        # The rope ends at the fixed short hook while the gardener owns the
-        # pail. Once attached, it follows the pail behind the near rim.
-        rope_end=tuple(round(v) for v in (grip if self.bucket_on_rope else self.data['hook_tip']))
-        pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
-        pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
+        if self.rope_deployed:
+            rope_end=tuple(round(v) for v in self.rope_end)
+            pygame.draw.line(image,'#735136',self.data['rope_origin'],rope_end,2)
+            pygame.draw.line(image,'#c69d66',self.data['rope_origin'],rope_end,1)
         xy=grip-pygame.Vector2(self.bucket_data[key]['grip'])
         # Inside the shaft, the pail is composited before the near rim. At the
-        # loading guide it moves to the foreground at the exact snap frame.
-        if self.bucket_on_rope and not self.bucket_at_loading_guide:
+        # retrieval transfer it moves forward behind the gardener's body.
+        if self.bucket_on_rope and not self.bucket_at_handoff:
             image.set_clip(pygame.Rect(0,0,self.data['canvas_size'][0],72))
             image.blit(self.pails[key],xy)
             image.set_clip(None)
@@ -107,14 +120,13 @@ class DrawingWell:
             pygame.draw.line(image,'#b9d9d2',(40-radius,70),(36,69))
             pygame.draw.line(image,'#598e9f',(44,69),(40+radius,70))
         image.blit(self.rim,(0,0))
-        if self.bucket_on_rope and self.bucket_at_loading_guide:
+        if self.bucket_on_rope and self.bucket_at_handoff:
             image.blit(self.pails[key],xy)
-        x,y=self.data['hook_tip']
-        open_hook=self.state=='well_unhook' and self.progress<.6
-        hook=[(x,y-2),(x,y),(x+2,y),(x+2,y-1-int(open_hook))]
-        # Only the three-pixel iron hook below the capstone is redrawn in front.
-        # Shaft rope and the attached pail stay behind the near rim.
-        if not self.bucket_on_rope or self.bucket_at_loading_guide:
+        x,y=self.data['hook_tip'];mount_y=self.data['hook_mount'][1]
+        hook=[(x,mount_y),(x,y-1),(x+2,y),(x+2,y-1)]
+        # With no attached pail, only this three-pixel hook hangs beneath the
+        # windlass. No line reaches the rim or the gardener.
+        if not self.rope_deployed:
             pygame.draw.lines(image,'#a2b4a7',False,hook)
         if self.state=='well_raise' and grip.y<61:
             for n in range(2):
