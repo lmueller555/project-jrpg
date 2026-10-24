@@ -15,6 +15,7 @@ except ModuleNotFoundError:
 
 from npc_routines import Gardener, RoutineNPC
 from well_routine import DrawingWell
+from social import SocialSystem
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -284,6 +285,8 @@ class Game:
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
         self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
+        self.social=SocialSystem(self)
+        self._mouse_held=False
 
     def _load_scene(self,path):
         path=Path(path).resolve()
@@ -327,9 +330,19 @@ class Game:
         return destination
 
     def handle_events(self):
+        advanced=False
         for event in pygame.event.get():
             if event.type==pygame.QUIT:return False
+            if event.type==pygame.MOUSEBUTTONUP and event.button==1:self._mouse_held=False
+            if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
+                if not self._mouse_held and not advanced and self.social.active:
+                    self.social.advance();advanced=True
+                self._mouse_held=True
             if event.type==pygame.KEYDOWN:
+                if self.social.locked and event.key!=pygame.K_F11:
+                    if event.key in (pygame.K_SPACE,pygame.K_e) and not getattr(event,'repeat',False) and not advanced:
+                        self.social.advance();advanced=True
+                    continue
                 if event.key==pygame.K_ESCAPE:
                     if self.map_open:self.map_open=False
                     else:return False
@@ -353,8 +366,9 @@ class Game:
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
         for scene in self.scenes.values():
             for door in scene.doors:door.update(self.player.position if scene is self.world else None,seconds)
-        direction=(0,0) if self.map_open else direction
+        direction=(0,0) if self.map_open or self.social.locked else direction
         self.player.update(direction,seconds,self.world,bool(running))
+        self.social.update(direction)
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
@@ -363,14 +377,16 @@ class Game:
             scene=self._routine_worlds[npc]
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             npc.update(seconds,scene,blocker,self._transfer_routine_npc)
+        self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
-        if not self.map_open and not self.transfer_cooldown:
+        if not self.map_open and not self.social.locked and not self.transfer_cooldown:
             for door in self.world.doors:
                 if door.can_enter(self.player.position,direction):
                     self.enter(door)
                     break
 
     def enter(self,door):
+        if self.social.locked:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -415,16 +431,20 @@ class Game:
         self.text('M or Esc: close map',(28,274),self.small_font)
 
     def draw(self):
-        camera=camera_for(self.player.position,self.world.size)
+        # Frame the participants in the unobscured space above the textbox.
+        view=(VIEW_SIZE[0],204) if self.social.locked else VIEW_SIZE
+        camera=camera_for(self.player.position,self.world.size,view)
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
         pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
         if self.world is self.town:
             self.text('Eldenmere',(15,13))
             self.text(self.world.location(self.player.position),(88,14),self.small_font)
         else:self.text(self.world.data['name'],(15,13))
-        pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
-        self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
+        if not self.social.locked:
+            pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
+            self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
         if self.map_open:self.draw_map()
+        self.social.draw(self.canvas,self.elapsed_ms)
         width,height=self.window.get_size()
         scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
         size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)

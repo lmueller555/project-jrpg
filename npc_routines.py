@@ -96,6 +96,27 @@ class RoutineNPC:
         self.events=deque(maxlen=64)
         self._accumulator=0.0
 
+        self.conversation_requested=False
+        self.conversation_ready=False
+        self.conversation_facing=None
+
+    def _conversation_safe(self):
+        if self.step['type']=='transfer':return False
+        if not self.action_id:return True
+        # The hearth tool has no surface handoff. Finish that short action
+        # before turning; other work pauses only with its loose prop set down.
+        return self.current_action_record.get('prop_owner')=='surface'
+
+    def request_conversation(self,facing):
+        self.conversation_requested=True
+        self.conversation_facing=facing
+        self.conversation_ready=self._conversation_safe()
+
+    def end_conversation(self):
+        self.conversation_requested=False
+        self.conversation_ready=False
+        self.conversation_facing=None
+
     def _asset_path(self,raw,folder=None):
         """Return an image path relative to ROOT, accepting either JSON style."""
         raw=Path(raw)
@@ -305,10 +326,18 @@ class RoutineNPC:
     def update(self,seconds,world,player_blocker=None,transfer=None):
         """Advance the schedule; return True only when a transfer succeeds."""
         if seconds<0:raise ValueError('Routine update seconds must be nonnegative')
+        if self.conversation_requested and self._conversation_safe():
+            self.conversation_ready=True
+        if self.conversation_ready:return False
         self._accumulator+=seconds
         count=int((self._accumulator+1e-9)*60)
         self._accumulator-=count/60
         for index in range(count):
+            if self.conversation_requested and self._conversation_safe():
+                self.conversation_ready=True
+                # Discard elapsed wall time while talking; never catch up.
+                self._accumulator=0.0
+                return False
             if self._tick(1/60,world,player_blocker,transfer):
                 # Remaining ticks belong to the destination world.  Keep them
                 # for the next call instead of simulating there with this world.
@@ -387,6 +416,7 @@ class RoutineNPC:
         return len(frames)-1
 
     def sprite(self,elapsed_ms):
+        if self.conversation_ready:return self.idles[self.conversation_facing]
         if self.action_id:
             frames=self.actions[self.action_id]
             return frames[self._frame_index(frames,self.state_ms)][0]

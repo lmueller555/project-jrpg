@@ -1,0 +1,33 @@
+{
+  "source": "main.Game, real update/draw and posted mouse events",
+  "fps": 10,
+  "scale": 2,
+  "events": [
+    {
+      "at_ms": 883,
+      "event": "proximity requested conversation"
+    },
+    {
+      "at_ms": 1283,
+      "event": "jar safely returned; dialogue opened"
+    },
+    {
+      "at_ms": 3783,
+      "input": "left click at window corner",
+      "conversation_open": true,
+      "page": 1
+    },
+    {
+      "at_ms": 6283,
+      "input": "left click at window corner",
+      "conversation_open": true,
+      "page": 2
+    },
+    {
+      "at_ms": 8783,
+      "input": "left click at window corner",
+      "conversation_open": false,
+      "page": 3
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "status": "review",
+  "trigger_radius": 24,
+  "foot_gap": 6,
+  "release_radius": 36,
+  "speakers": {
+    "serene": {"name": "Mother Serene", "portrait": "serene"},
+    "caelan": {"name": "Caelan", "portrait": "caelan"}
+  },
+  "characters": {
+    "mother_serene": {
+      "conversations": [
+        {
+          "id": "serene_repeat",
+          "requires": ["serene_greeted"],
+          "lines": [
+            {"speaker": "serene", "text": "And Caelan? Eat something before you go."},
+            {"speaker": "caelan", "text": "I did."},
+            {"speaker": "serene", "text": "Half a slice of bread is not a meal."}
+          ]
+        },
+        {
+          "id": "serene_greeting",
+          "sets": ["serene_greeted"],
+          "lines": [
+            {"speaker": "serene", "text": "Sit and eat. There'll be plenty to do before the festival."},
+            {"speaker": "caelan", "text": "You said that yesterday."},
+            {"speaker": "serene", "text": "And it was true yesterday."}
+          ]
+        }
+      ]
+    }
+  },
+  "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
+  "note": "Social-system review uses approved breakfast dialogue; no quest is started. Spelling follows the approved Caelan sprite identity. Flags persist for the running session."
+}

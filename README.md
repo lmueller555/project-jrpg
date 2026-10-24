@@ -18,6 +18,7 @@ In VS Code, select the Python interpreter where you installed the dependency, op
 | WASD or arrow keys | Move Caelan |
 | Shift | Run |
 | M | Open/close the town map |
+| Left click anywhere / Space / E | Advance an open conversation |
 | F11 | Toggle fullscreen |
 | Escape | Close the map, or quit |
 
@@ -33,7 +34,16 @@ Mother Serene now follows one continuous sanctuary schedule. She sorts the house
 
 Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is approved by the user. She has foot collision and draws at the appropriate depth; the shop entrance remains clear.
 
-The auburn-haired gardener in the sage dress draws water from the commons well using her own pail. At the near side, she turns away and raises the pail behind her torso while only a three-pixel iron hook hangs beneath the windlass. The concealed pail then snaps to a fully visible parked position directly beneath the spindle and settles by one pixel. It descends with the rope, disappears progressively behind the front rim, fills, and returns visibly to the same top position. During retrieval it snaps behind her torso before emerging at her side. She waters four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. She yields to Caelan, takes safe detours where possible and keeps her work/rest and well progress while you visit interiors. The [new enlarged loop and full routine](docs/reviews/gardener_top_winch_bucket/README.md) are approved; earlier versions remain historical review records. Other villagers, conversations and quests remain future work.
+The auburn-haired gardener in the sage dress draws water from the commons well using her own pail. At the near side, she turns away and raises the pail behind her torso while only a three-pixel iron hook hangs beneath the windlass. The concealed pail then snaps to a fully visible parked position directly beneath the spindle and settles by one pixel. It descends with the rope, disappears progressively behind the front rim, fills, and returns visibly to the same top position. During retrieval it snaps behind her torso before emerging at her side. She waters four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. She yields to Caelan, takes safe detours where possible and keeps her work/rest and well progress while you visit interiors. The [new enlarged loop and full routine](docs/reviews/gardener_top_winch_bucket/README.md) are approved; earlier versions remain historical review records. Other villagers and quests remain future work.
+
+**Proximity dialogue with Serene is available for review.** Walk close while
+facing her in the sanctuary hall or dining room. She safely sets down her work,
+turns and pauses. The textbox uses the current speaker's approved portrait;
+click anywhere in the window to advance. Caelan cannot move during dialogue,
+while the rest of the world continues. Walk away beyond the release radius
+before approaching again for repeat lines. Conversation flags last for the
+current session. See the [running-game preview](docs/reviews/proximity_dialogue/README.md).
+Mira/gardener conversations and quest progression will follow after this review.
 
 Verify the runtime without a display:
 
