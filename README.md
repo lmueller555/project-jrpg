@@ -23,7 +23,9 @@ In VS Code, select the Python interpreter where you installed the dependency, op
 
 The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
 
-This first playable milestone covers the **outdoor town with Caelan only**. Building doors stay closed; NPCs, quests and interior transitions will be added later. The map's north and south roads end at the current town boundary.
+**Building doors open automatically when you approach.** They stay open nearby and close as you move away. Walk into an open doorway to enter; walk down through the interior's entrance threshold to return outside. No action key is required. The sanctuary hall also connects to Caelan's bedroom and the dining room through its northern doors.
+
+All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors. NPCs and quests remain for a later milestone. The map's north and south roads currently end at the town boundary.
 
 Verify the runtime without a display:
 
@@ -35,6 +37,8 @@ python main.py --headless --frames 120 --screenshot screenshots/eldenmere.png
 The runtime requires only Pygame. The checked-in [playable map](assets/maps/eldenmere/playable/README.md) is compiled from approved art; rebuilding it is an optional development step requiring the separate Pillow asset environment.
 
 See the [gameplay capture](docs/reviews/playable_eldenmere/gameplay.gif) and [in-game town map](docs/reviews/playable_eldenmere/town_map.png) for a preview from the running game.
+
+The [door and interior preview](docs/reviews/building_doors/doors_and_interior.gif) demonstrates automatic opening/closing and a sanctuary entry/exit in the running game.
 
 ## Story documents
 

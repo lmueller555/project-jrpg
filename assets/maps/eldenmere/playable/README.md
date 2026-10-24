@@ -11,7 +11,9 @@ Run `python main.py` from the repository root. This package turns the approved 6
 
 The player starts at `[384,312]` in the sanctuary courtyard. These coordinates are the **centre of the ground collision probe**. Drawing uses the existing town registration `[12,30]` within Caelan's 24×36 frame; the artwork's bottom-foot anchor remains `[12,34]`. This distinction preserves the approved stair/bridge/doorway clearance measurements and sprite placement.
 
-Ground baselines sort roofs, tree canopies and props against the player; bridge foreground rails draw afterward. Player movement is normalized diagonally, subdivided into at most one-pixel steps and resolved per axis to stop tunnelling and allow sliding along walls. The camera clamps to the map boundary. North/south routes remain town boundaries until adjoining maps are implemented. Doors remain closed in this outdoor milestone.
+Ground baselines sort roofs, tree canopies and props against the player; bridge foreground rails draw afterward. Player movement is normalized diagonally, subdivided into at most one-pixel steps and resolved per axis to stop tunnelling and allow sliding along walls. The camera clamps to the map boundary. North/south routes remain town boundaries until adjoining maps are implemented.
+
+`map.json` now includes nine proximity doors and an interior scene registry. Door panels are drawn with their host buildings, so ambient animations and depth sorting continue while doors open. A 30px proximity starts opening; a 38px release radius prevents boundary flicker. Five 100ms poses play forward/reverse without looping or restarting when direction changes. Walking north into the fully open threshold transfers to the corresponding furnished interior; returning through its cutaway south exit places Caelan safely outside the same door. Detailed room/door data are in [building_interiors](../building_interiors/README.md).
 
 To rebuild in the asset environment:
 
@@ -20,4 +22,4 @@ python -m pip install -r tools/requirements-assets.txt
 python tools/build_playable_eldenmere.py
 ```
 
-The compiler reads approved layout/art and their assembly helpers without invoking asset exports or changing the source packs. There are no placeholder sanctuary/workshop buildings and no scale-review characters in the runtime map. Gameplay and planned route connectivity are checked with `python -m unittest discover -s tests -v`.
+The compiler reads approved layout/art and their assembly helpers without invoking asset exports or changing the source packs. It also calls `tools/build_building_interiors.py` to compile room/door data. There are no placeholder sanctuary/workshop buildings and no scale-review characters in the runtime map. Gameplay, door round trips and planned route connectivity are checked with `python -m unittest discover -s tests -v`.

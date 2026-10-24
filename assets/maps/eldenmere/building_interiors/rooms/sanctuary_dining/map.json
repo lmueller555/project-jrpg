@@ -1,0 +1,511 @@
+{
+  "size_pixels": [
+    432,
+    336
+  ],
+  "size_tiles": [
+    16,
+    10
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    384,
+    240
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/ground/frame_04.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "dishes",
+      "position": [
+        108,
+        36
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "cupboard",
+      "position": [
+        36,
+        60
+      ],
+      "sort_y": 106,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "sideboard",
+      "position": [
+        84,
+        60
+      ],
+      "sort_y": 90,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/console.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "plant",
+      "position": [
+        96,
+        46
+      ],
+      "sort_y": 90,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pantry",
+      "position": [
+        228,
+        60
+      ],
+      "sort_y": 106,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "counter",
+      "position": [
+        264,
+        60
+      ],
+      "sort_y": 102,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "kettle",
+      "position": [
+        270,
+        58
+      ],
+      "sort_y": 102,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/kettle.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "bread",
+      "position": [
+        286,
+        72
+      ],
+      "sort_y": 102,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "washbasin",
+      "position": [
+        324,
+        72
+      ],
+      "sort_y": 104,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "table",
+      "position": [
+        144,
+        168
+      ],
+      "sort_y": 210,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "breakfast",
+      "position": [
+        148,
+        170
+      ],
+      "sort_y": 210,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_north",
+      "position": [
+        156,
+        132
+      ],
+      "sort_y": 166,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_west",
+      "position": [
+        108,
+        174
+      ],
+      "sort_y": 208,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_east",
+      "position": [
+        204,
+        174
+      ],
+      "sort_y": 208,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "supply_table_a",
+      "position": [
+        264,
+        168
+      ],
+      "sort_y": 210,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "supply_table_b",
+      "position": [
+        312,
+        168
+      ],
+      "sort_y": 210,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "halden_supplies",
+      "position": [
+        268,
+        166
+      ],
+      "sort_y": 210,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/medicine_tray.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "elira_supplies",
+      "position": [
+        290,
+        162
+      ],
+      "sort_y": 210,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/food_oil_basket.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "venn_supplies",
+      "position": [
+        324,
+        162
+      ],
+      "sort_y": 210,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "spare_bench",
+      "position": [
+        36,
+        240
+      ],
+      "sort_y": 270,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "hearth",
+      "position": [
+        360,
+        24
+      ],
+      "sort_y": 92,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "kettle_steam",
+      "position": [
+        0,
+        0
+      ],
+      "sort_y": 102,
+      "sort_priority": 2,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_01.png",
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_02.png",
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_03.png",
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_04.png",
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_05.png",
+        "assets/terrain/eldenmere/sanctuary_interior/dining/steam/frame_06.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "hall",
+      "anchor": [
+        216.0,
+        306
+      ],
+      "entry_y": 306,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+      "spawn": [
+        264,
+        90
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "dining"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "dishes": [
+      132,
+      90
+    ],
+    "cupboard": [
+      60,
+      120
+    ],
+    "sideboard": [
+      108,
+      108
+    ],
+    "plant": [
+      108,
+      108
+    ],
+    "pantry": [
+      240,
+      120
+    ],
+    "counter": [
+      288,
+      116
+    ],
+    "kettle": [
+      288,
+      116
+    ],
+    "bread": [
+      288,
+      116
+    ],
+    "washbasin": [
+      336,
+      120
+    ],
+    "table": [
+      168,
+      228
+    ],
+    "breakfast": [
+      168,
+      228
+    ],
+    "chair_north": [
+      132,
+      156
+    ],
+    "chair_west": [
+      96,
+      216
+    ],
+    "chair_east": [
+      240,
+      216
+    ],
+    "supply_table_a": [
+      288,
+      228
+    ],
+    "supply_table_b": [
+      336,
+      228
+    ],
+    "halden_supplies": [
+      288,
+      228
+    ],
+    "elira_supplies": [
+      288,
+      228
+    ],
+    "venn_supplies": [
+      336,
+      228
+    ],
+    "spare_bench": [
+      60,
+      288
+    ],
+    "hearth": [
+      384,
+      110
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/sanctuary_interior/dining/room.json",
+  "spawn": [
+    216,
+    294
+  ],
+  "id": "sanctuary_dining",
+  "name": "Sanctuary dining room",
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}

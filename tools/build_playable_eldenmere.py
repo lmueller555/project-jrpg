@@ -104,6 +104,8 @@ def build():
     for layer in foreground:overview.alpha_composite(town.opened(ROOT/layer['image']),tuple(layer['position']))
     manifest['overview']=save(OUTPUT/'overview.png',overview.convert('RGB'))
     write_json(OUTPUT/'map.json',manifest)
+    from build_building_interiors import build as build_interiors
+    build_interiors()
     print(f'Compiled playable Eldenmere: {base.size}, {len(entities)} depth-sorted objects, six ground phases, no baked actors.')
 
 

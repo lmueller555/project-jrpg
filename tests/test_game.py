@@ -129,7 +129,7 @@ class PlayableEldenmere(unittest.TestCase):
     def test_camera_edges_and_world_bounds(self):
         self.assertEqual(main.camera_for((0,0),self.world.size),(0,0))
         self.assertEqual(main.camera_for(self.world.size,self.world.size),(1056,1024))
-        self.assertEqual(main.camera_for((20,20),(100,100)),(0,0))
+        self.assertEqual(main.camera_for((20,20),(100,100)),(-190,-110))
         for p in [(0,0),(-1,400),(1536,500),(400,1344)]:self.assertFalse(self.world.can_stand(p))
 
     def test_roofs_occlude_from_behind_and_player_draws_in_front(self):

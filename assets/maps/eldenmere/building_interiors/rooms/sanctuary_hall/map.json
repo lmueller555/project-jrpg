@@ -1,0 +1,425 @@
+{
+  "size_pixels": [
+    336,
+    336
+  ],
+  "size_tiles": [
+    12,
+    10
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    288,
+    240
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/ground/frame_01.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "notices",
+      "position": [
+        32,
+        36
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "bookcase",
+      "position": [
+        36,
+        60
+      ],
+      "sort_y": 120,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "records",
+      "position": [
+        180,
+        54
+      ],
+      "sort_y": 100,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "herbs",
+      "position": [
+        144,
+        60
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "reading_bench",
+      "position": [
+        48,
+        156
+      ],
+      "sort_y": 186,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "bookstand",
+      "position": [
+        108,
+        138
+      ],
+      "sort_y": 174,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "rug",
+      "position": [
+        120,
+        204
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "mending_table",
+      "position": [
+        240,
+        168
+      ],
+      "sort_y": 210,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "mending",
+      "position": [
+        252,
+        162
+      ],
+      "sort_y": 210,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/mending_basket.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "second_bench",
+      "position": [
+        48,
+        216
+      ],
+      "sort_y": 246,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "washbasin",
+      "position": [
+        36,
+        264
+      ],
+      "sort_y": 296,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "welcome_console",
+      "position": [
+        240,
+        252
+      ],
+      "sort_y": 282,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/console.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "plant",
+      "position": [
+        248,
+        238
+      ],
+      "sort_y": 282,
+      "sort_priority": 1,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "boots",
+      "position": [
+        244,
+        282
+      ],
+      "sort_y": 296,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/work_boots.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "courtyard",
+      "anchor": [
+        208,
+        306
+      ],
+      "entry_y": 306,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        386.0,
+        306
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "sanctuary"
+    },
+    {
+      "id": "bedroom",
+      "anchor": [
+        84,
+        78
+      ],
+      "entry_y": 78,
+      "entry_side": "north",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_bedroom/frame_05.png"
+      ],
+      "position": [
+        72,
+        36
+      ],
+      "host": null,
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+      "spawn": [
+        144,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "hall"
+    },
+    {
+      "id": "dining",
+      "anchor": [
+        264,
+        78
+      ],
+      "entry_y": 78,
+      "entry_side": "north",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary_dining/frame_05.png"
+      ],
+      "position": [
+        252,
+        36
+      ],
+      "host": null,
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/map.json",
+      "spawn": [
+        216,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "hall"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "notices": [
+      48,
+      90
+    ],
+    "bookcase": [
+      60,
+      132
+    ],
+    "records": [
+      204,
+      114
+    ],
+    "herbs": [
+      156,
+      90
+    ],
+    "reading_bench": [
+      72,
+      204
+    ],
+    "bookstand": [
+      132,
+      186
+    ],
+    "mending_table": [
+      264,
+      228
+    ],
+    "mending": [
+      264,
+      228
+    ],
+    "second_bench": [
+      72,
+      258
+    ],
+    "washbasin": [
+      72,
+      294
+    ],
+    "welcome_console": [
+      228,
+      282
+    ],
+    "plant": [
+      228,
+      282
+    ],
+    "boots": [
+      276,
+      294
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/sanctuary_interior/hall/room.json",
+  "spawn": [
+    208,
+    294
+  ],
+  "id": "sanctuary_hall",
+  "name": "Sanctuary hall",
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}

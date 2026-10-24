@@ -939,5 +939,317 @@
   ],
   "npcs": [],
   "quests": [],
-  "overview": "assets/maps/eldenmere/playable/overview.png"
+  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "doors": [
+    {
+      "id": "sanctuary",
+      "anchor": [
+        386.0,
+        294
+      ],
+      "entry_y": 294,
+      "entry_side": "north",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/sanctuary/frame_05.png"
+      ],
+      "position": [
+        370,
+        240
+      ],
+      "host": "sanctuary",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+      "spawn": [
+        208,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "mira",
+      "anchor": [
+        636.0,
+        438
+      ],
+      "entry_y": 438,
+      "entry_side": "north",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/mira/frame_05.png"
+      ],
+      "position": [
+        622,
+        395
+      ],
+      "host": "mira",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "mill",
+      "anchor": [
+        971.0,
+        342
+      ],
+      "entry_y": 342,
+      "entry_side": "north",
+      "entry_half_width": 9.0,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/mill/frame_05.png"
+      ],
+      "position": [
+        962,
+        311
+      ],
+      "host": "mill",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "halden",
+      "anchor": [
+        1007.5,
+        630
+      ],
+      "entry_y": 630,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/halden/frame_05.png"
+      ],
+      "position": [
+        1001,
+        591
+      ],
+      "host": "halden",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/halden/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "elira",
+      "anchor": [
+        671.5,
+        966
+      ],
+      "entry_y": 966,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/elira/frame_05.png"
+      ],
+      "position": [
+        665,
+        927
+      ],
+      "host": "elira",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/elira/map.json",
+      "spawn": [
+        102,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "venn",
+      "anchor": [
+        1247.5,
+        726
+      ],
+      "entry_y": 726,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/venn/frame_05.png"
+      ],
+      "position": [
+        1241,
+        687
+      ],
+      "host": "venn",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/venn/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "home_a",
+      "anchor": [
+        215.5,
+        726
+      ],
+      "entry_y": 726,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_a/frame_05.png"
+      ],
+      "position": [
+        209,
+        687
+      ],
+      "host": "home_a",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_a/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "home_b",
+      "anchor": [
+        503.5,
+        678
+      ],
+      "entry_y": 678,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_b/frame_05.png"
+      ],
+      "position": [
+        497,
+        639
+      ],
+      "host": "home_b",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_b/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    },
+    {
+      "id": "home_c",
+      "anchor": [
+        263.5,
+        1086
+      ],
+      "entry_y": 1086,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_01.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_02.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_03.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_04.png",
+        "assets/maps/eldenmere/building_interiors/doors/home_c/frame_05.png"
+      ],
+      "position": [
+        257,
+        1047
+      ],
+      "host": "home_c",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
+      "spawn": [
+        178,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
+    }
+  ],
+  "interior_scenes": {
+    "sanctuary_hall": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_hall/map.json",
+    "sanctuary_bedroom": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_bedroom/map.json",
+    "sanctuary_dining": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/map.json",
+    "halden": "assets/maps/eldenmere/building_interiors/rooms/halden/map.json",
+    "elira": "assets/maps/eldenmere/building_interiors/rooms/elira/map.json",
+    "venn": "assets/maps/eldenmere/building_interiors/rooms/venn/map.json",
+    "home_a": "assets/maps/eldenmere/building_interiors/rooms/home_a/map.json",
+    "home_b": "assets/maps/eldenmere/building_interiors/rooms/home_b/map.json",
+    "home_c": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
+    "mira": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
+    "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json"
+  }
 }

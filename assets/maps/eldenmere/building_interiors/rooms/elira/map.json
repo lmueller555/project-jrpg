@@ -1,0 +1,253 @@
+{
+  "size_pixels": [
+    288,
+    336
+  ],
+  "size_tiles": [
+    10,
+    10
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    240,
+    240
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/elira/ground/frame_04.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "bed",
+      "position": [
+        36,
+        96
+      ],
+      "sort_y": 162,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "counter",
+      "position": [
+        180,
+        120
+      ],
+      "sort_y": 162,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pantry",
+      "position": [
+        36,
+        204
+      ],
+      "sort_y": 250,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "table",
+      "position": [
+        156,
+        228
+      ],
+      "sort_y": 270,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair",
+      "position": [
+        132,
+        240
+      ],
+      "sort_y": 274,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "hearth",
+      "position": [
+        180,
+        24
+      ],
+      "sort_y": 92,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "step_stool",
+      "position": [
+        142,
+        80
+      ],
+      "sort_y": 104,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/elira_interior/sprites/step_stool.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "lantern_shelf",
+      "position": [
+        132,
+        22
+      ],
+      "sort_y": 0,
+      "frames": [
+        "assets/terrain/eldenmere/elira_interior/sprites/shelf_with_lantern.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/elira/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "courtyard",
+      "anchor": [
+        102.0,
+        306
+      ],
+      "entry_y": 306,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        671.5,
+        978
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "elira"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "bed": [
+      88,
+      138
+    ],
+    "counter": [
+      204,
+      174
+    ],
+    "pantry": [
+      48,
+      262
+    ],
+    "table": [
+      180,
+      216
+    ],
+    "chair": [
+      144,
+      286
+    ],
+    "hearth": [
+      204,
+      104
+    ],
+    "step_stool": [
+      154,
+      118
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/cottage_layouts/compact/room.json",
+  "spawn": [
+    102,
+    294
+  ],
+  "id": "elira",
+  "name": "Elira's cottage",
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}

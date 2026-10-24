@@ -25,12 +25,50 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+class Door:
+    """A reversible proximity animation and directional doorway contact sensor."""
+    def __init__(self,record,world):
+        self.data=record
+        self.frames=[world.image(p) for p in record['frames']]
+        self.progress=0.0
+        self.target_open=False
+
+    @property
+    def state(self):
+        if self.target_open:return 'open' if self.progress>=4 else 'opening'
+        return 'closed' if self.progress<=0 else 'closing'
+
+    def update(self,position,seconds):
+        if position is None:self.target_open=False
+        else:
+            delta=pygame.Vector2(position)-self.data['anchor']
+            front=delta.y>=-4 if self.data['entry_side']=='north' else delta.y<=4
+            radius=self.data['close_radius'] if self.target_open else self.data['open_radius']
+            self.target_open=front and delta.length_squared()<=radius*radius
+        step=seconds*1000/self.data['frame_duration_ms']
+        self.progress=max(0.0,min(4.0,self.progress+(step if self.target_open else -step)))
+
+    def image(self):
+        return self.frames[min(4,int(self.progress+1e-7))] if self.frames else None
+
+    def can_enter(self,position,direction):
+        if self.data['requires_open'] and self.state!='open':return False
+        north=self.data['entry_side']=='north'
+        if (direction[1]>=0 if north else direction[1]<=0):return False
+        return (abs(position[0]-self.data['anchor'][0])<=self.data['entry_half_width']
+                and abs(position[1]-self.data['entry_y'])<=1.5)
+
+    def force_open(self):
+        self.progress=4.0;self.target_open=True
+
+
 class World:
     """Approved town art, animated world objects, and pixel-accurate blockers."""
-    def __init__(self,path=MAP_FILE):
+    def __init__(self,path=MAP_FILE,image_cache=None):
+        self.path=Path(path).resolve()
         self.data=read_json(path)
         self.size=tuple(self.data['size_pixels'])
-        self._images={}
+        self._images={} if image_cache is None else image_cache
         self.ground=[self.image(p,False) for p in self.data['ground_frames']]
         collision=self.image(self.data['collision'],False)
         # Collision exports are monochrome, so white pixels block and black
@@ -44,6 +82,7 @@ class World:
             self.entities.append({**record,'surfaces':frames,'rect':frames[0].get_rect(topleft=record['position'])})
         self.foreground=[(self.image(r['image']),tuple(r['position'])) for r in self.data['foreground']]
         self.overview=self.image(self.data['overview'],False)
+        self.doors=[Door(record,self) for record in self.data.get('doors',[])]
 
     def image(self,path,alpha=True):
         key=(path,alpha)
@@ -61,18 +100,21 @@ class World:
         return self.blocked.overlap(self.probe,(x,y)) is None
 
     def location(self,position):
+        if self.data.get('kind')=='interior':return self.data['name']
         nearest=min(self.data['landmarks'],key=lambda p:pygame.Vector2(p['position']).distance_squared_to(position))
         return nearest['name'] if pygame.Vector2(nearest['position']).distance_to(position)<130 else 'Village paths'
 
     def draw(self,target,camera,player,elapsed_ms):
+        target.fill('#24302d')
         viewport=pygame.Rect(camera,VIEW_SIZE)
         phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
         target.blit(self.ground[phase],(-camera[0],-camera[1]))
+        self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
-        ordered=[(r['sort_y'],False,r) for r in self.entities if r['rect'].colliderect(viewport)]
-        ordered.append((player.position.y+self.probe_size[1]/2,True,player))
-        for _,is_player,record in sorted(ordered,key=lambda r:r[0]):
+        ordered=[(r['sort_y'],r.get('sort_priority',0),False,r) for r in self.entities if r['rect'].colliderect(viewport)]
+        ordered.append((player.position.y+self.probe_size[1]/2,3,True,player))
+        for _,_,is_player,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if is_player:
                 anchor=self.data['player_draw_anchor']
                 target.blit(player.sprite(),(round(player.position.x)-anchor[0]-camera[0],
@@ -80,9 +122,17 @@ class World:
             else:
                 phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
                 target.blit(record['surfaces'][phase],(record['position'][0]-camera[0],record['position'][1]-camera[1]))
+                self.draw_doors(target,camera,record['id'])
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
             target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
+
+    def draw_doors(self,target,camera,host):
+        for door in self.doors:
+            if door.data['host']!=host:continue
+            image=door.image()
+            if image is not None:
+                x,y=door.data['position'];target.blit(image,(x-camera[0],y-camera[1]))
 
 
 class Player:
@@ -136,7 +186,7 @@ class Player:
 
 
 def camera_for(position,world_size,view_size=VIEW_SIZE):
-    return tuple(max(0,min(max(0,size-view),round(value-view/2)))
+    return tuple((size-view)//2 if size<view else max(0,min(size-view,round(value-view/2)))
                  for value,size,view in zip(position,world_size,view_size))
 
 
@@ -149,6 +199,10 @@ class Game:
         self.font=pygame.font.Font(None,16)
         self.small_font=pygame.font.Font(None,14)
         self.world=World()
+        self.town=self.world
+        self.scenes={self.world.path:self.world}
+        self.exterior_position=pygame.Vector2(self.world.data['spawn'])
+        self.transfer_cooldown=0.0
         self.player=Player(self.world)
         self.elapsed_ms=0.0
         self.map_open=False
@@ -182,7 +236,31 @@ class Game:
             direction=(int(keys[pygame.K_d] or keys[pygame.K_RIGHT])-int(keys[pygame.K_a] or keys[pygame.K_LEFT]),
                        int(keys[pygame.K_s] or keys[pygame.K_DOWN])-int(keys[pygame.K_w] or keys[pygame.K_UP]))
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
-        self.player.update((0,0) if self.map_open else direction,seconds,self.world,bool(running))
+        for scene in self.scenes.values():
+            for door in scene.doors:door.update(self.player.position if scene is self.world else None,seconds)
+        direction=(0,0) if self.map_open else direction
+        self.player.update(direction,seconds,self.world,bool(running))
+        self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
+        if not self.map_open and not self.transfer_cooldown:
+            for door in self.world.doors:
+                if door.can_enter(self.player.position,direction):
+                    self.enter(door)
+                    break
+
+    def enter(self,door):
+        path=(ROOT/door.data['destination']).resolve()
+        if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
+        destination=self.scenes[path]
+        spawn=door.data['spawn']
+        if not destination.can_stand(spawn):raise ValueError(f'Blocked arrival for {door.data["id"]}: {spawn}')
+        if self.world is self.town:self.exterior_position.update(door.data['anchor'])
+        self.world=destination
+        self.player.position.update(spawn)
+        self.player.facing=door.data['arrival_facing']
+        self.player.moving=False;self.player.walk_ms=0
+        self.transfer_cooldown=.25
+        arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
+        if arrival:arrival.force_open()
 
     def text(self,text,position,font=None,color='#f7eed5'):
         self.canvas.blit((font or self.font).render(text,False,color),position)
@@ -194,14 +272,15 @@ class Game:
         self.text('ELDENMERE',(28,40))
         origin=(28,66)
         self.canvas.blit(self.map_image,origin)
-        for i,landmark in enumerate(self.world.data['landmarks'],1):
-            x=origin[0]+round(landmark['position'][0]*self.map_size[0]/self.world.size[0])
-            y=origin[1]+round(landmark['position'][1]*self.map_size[1]/self.world.size[1])
+        for i,landmark in enumerate(self.town.data['landmarks'],1):
+            x=origin[0]+round(landmark['position'][0]*self.map_size[0]/self.town.size[0])
+            y=origin[1]+round(landmark['position'][1]*self.map_size[1]/self.town.size[1])
             pygame.draw.circle(self.canvas,'#2b2924',(x,y),5)
             self.text(str(i),(x-2,y-4),self.small_font)
             self.text(f'{i}. {landmark["name"]}',(266,68+(i-1)*23),self.small_font)
-        x=origin[0]+round(self.player.position.x*self.map_size[0]/self.world.size[0])
-        y=origin[1]+round(self.player.position.y*self.map_size[1]/self.world.size[1])
+        position=self.player.position if self.world is self.town else self.exterior_position
+        x=origin[0]+round(position.x*self.map_size[0]/self.town.size[0])
+        y=origin[1]+round(position.y*self.map_size[1]/self.town.size[1])
         pygame.draw.circle(self.canvas,'#15282b',(x,y),4)
         pygame.draw.circle(self.canvas,'#ffdc71',(x,y),2)
         self.text('You are here',(266,242),self.small_font,color='#ffdc71')
@@ -211,8 +290,10 @@ class Game:
         camera=camera_for(self.player.position,self.world.size)
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
         pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
-        self.text('Eldenmere',(15,13))
-        self.text(self.world.location(self.player.position),(88,14),self.small_font)
+        if self.world is self.town:
+            self.text('Eldenmere',(15,13))
+            self.text(self.world.location(self.player.position),(88,14),self.small_font)
+        else:self.text(self.world.data['name'],(15,13))
         pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
         self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
         if self.map_open:self.draw_map()

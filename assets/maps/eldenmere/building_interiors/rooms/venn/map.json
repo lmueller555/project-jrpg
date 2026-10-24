@@ -1,0 +1,312 @@
+{
+  "size_pixels": [
+    432,
+    336
+  ],
+  "size_tiles": [
+    16,
+    10
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    384,
+    240
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/wide/ground/frame_04.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "bed",
+      "position": [
+        36,
+        96
+      ],
+      "sort_y": 162,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "cupboard",
+      "position": [
+        108,
+        60
+      ],
+      "sort_y": 106,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "shelf",
+      "position": [
+        108,
+        40
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pantry",
+      "position": [
+        204,
+        60
+      ],
+      "sort_y": 106,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/pantry.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "counter",
+      "position": [
+        326,
+        132
+      ],
+      "sort_y": 174,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/counter.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "washbasin",
+      "position": [
+        288,
+        84
+      ],
+      "sort_y": 116,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "table",
+      "position": [
+        270,
+        228
+      ],
+      "sort_y": 270,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_west",
+      "position": [
+        246,
+        228
+      ],
+      "sort_y": 262,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_east",
+      "position": [
+        318,
+        228
+      ],
+      "sort_y": 262,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "chair_south",
+      "position": [
+        282,
+        252
+      ],
+      "sort_y": 286,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "hearth",
+      "position": [
+        326,
+        24
+      ],
+      "sort_y": 92,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/wide/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "courtyard",
+      "anchor": [
+        252.0,
+        306
+      ],
+      "entry_y": 306,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        1247.5,
+        738
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "venn"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "bed": [
+      88,
+      138
+    ],
+    "cupboard": [
+      132,
+      118
+    ],
+    "shelf": [
+      132,
+      118
+    ],
+    "pantry": [
+      216,
+      118
+    ],
+    "counter": [
+      350,
+      186
+    ],
+    "washbasin": [
+      300,
+      128
+    ],
+    "table": [
+      294,
+      216
+    ],
+    "chair_west": [
+      258,
+      274
+    ],
+    "chair_east": [
+      330,
+      274
+    ],
+    "chair_south": [
+      316,
+      278
+    ],
+    "hearth": [
+      350,
+      104
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/cottage_layouts/wide/room.json",
+  "spawn": [
+    252,
+    294
+  ],
+  "id": "venn",
+  "name": "Venn family cottage",
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}

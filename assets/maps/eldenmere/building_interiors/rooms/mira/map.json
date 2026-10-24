@@ -1,0 +1,218 @@
+{
+  "size_pixels": [
+    360,
+    336
+  ],
+  "size_tiles": [
+    13,
+    10
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    312,
+    240
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/mira/ground/frame_04.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "cupboard",
+      "position": [
+        36,
+        216
+      ],
+      "sort_y": 262,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/cupboard.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "shelf",
+      "position": [
+        156,
+        40
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_storage/sprites/shelf.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "washbasin",
+      "position": [
+        218,
+        84
+      ],
+      "sort_y": 116,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_kitchen/sprites/washbasin.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "hearth",
+      "position": [
+        254,
+        24
+      ],
+      "sort_y": 92,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "repair_table",
+      "position": [
+        228,
+        156
+      ],
+      "sort_y": 198,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "workbench",
+      "position": [
+        72,
+        132
+      ],
+      "sort_y": 158,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/workshop/props/workbench.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/mira/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "courtyard",
+      "anchor": [
+        178.0,
+        306
+      ],
+      "entry_y": 306,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        636.0,
+        450
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "mira"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "cupboard": [
+      60,
+      274
+    ],
+    "shelf": [
+      180,
+      84
+    ],
+    "washbasin": [
+      230,
+      128
+    ],
+    "hearth": [
+      278,
+      104
+    ],
+    "repair_table": [
+      252,
+      210
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/cottage_layouts/standard/room.json",
+  "spawn": [
+    178,
+    294
+  ],
+  "id": "mira",
+  "name": "Mira's workshop",
+  "overview": "assets/maps/eldenmere/playable/overview.png"
+}
