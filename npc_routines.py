@@ -54,6 +54,286 @@ def find_path(world,start,goal,size,actor,avoid=None):
     return None
 
 
+class RoutineNPC:
+    """A data-driven actor that can keep one schedule across several rooms.
+
+    The game owns scene membership.  A transfer step asks the supplied callback
+    to move this same object to the destination world, and advances only after
+    that callback succeeds.  This keeps schedules independent of ``Game`` while
+    ensuring an actor is never cloned or reset at a doorway.
+    """
+    DIRECTIONS=('front','left','right','back')
+    STEP_TYPES=frozenset(('move','action','wait','transfer'))
+
+    def __init__(self,record,world,scene_id=None):
+        self.data=record
+        self.behavior=read_json(ROOT/record['behavior'])
+        self.animation=read_json(ROOT/record['animation'])
+        self.steps=self.behavior['steps']
+        if not self.steps:raise ValueError(f'Routine {record["id"]!r} has no steps')
+        self.scene_id=scene_id or record.get('scene') or self.behavior['start_scene']
+        self.position=pygame.Vector2(record.get('position',self.behavior['start_position']))
+        self.probe_size=tuple(record.get('probe_size',self.behavior.get('probe_size',(12,8))))
+        self.speed=float(self.behavior.get('speed',48))
+        if self.speed<=0:raise ValueError(f'Routine {record["id"]!r} speed must be positive')
+
+        self.canvas_size=tuple(self.animation.get('action_canvas',
+                                                  self.animation.get('frame_size',(48,48))))
+        base_anchor=tuple(record.get('draw_anchor',(12,34)))
+        self.draw_anchor=tuple(self.animation.get('draw_anchor',base_anchor))
+        self.body_offset=tuple(self.animation.get(
+            'body_offset',(self.draw_anchor[0]-base_anchor[0],
+                           self.draw_anchor[1]-base_anchor[1])))
+
+        self.idles={};self.walks={};self.actions={};self.action_metadata={}
+        self._load_images(world)
+        self._validate_steps()
+        self.step_index=0;self.state_ms=0.0;self.walk_ms=0.0
+        self.facing=self.steps[0].get('facing','front')
+        self.moving=False;self.waiting=False;self.completed_cycles=0
+        self.path=None;self.waypoint_index=0;self.blocked_seconds=0.0;self.retry_seconds=0.0
+        self.events=deque(maxlen=64)
+        self._accumulator=0.0
+
+    def _asset_path(self,raw,folder=None):
+        """Return an image path relative to ROOT, accepting either JSON style."""
+        raw=Path(raw)
+        if raw.is_absolute():candidates=(raw,)
+        elif raw.parts[:1]==('assets',):candidates=(ROOT/raw,)
+        else:candidates=((folder/raw) if folder is not None else ROOT/raw,ROOT/raw)
+        path=next((candidate for candidate in candidates if candidate.is_file()),candidates[0])
+        try:return path.relative_to(ROOT).as_posix()
+        except ValueError:return path.as_posix()
+
+    def _load_images(self,world):
+        metadata_path=ROOT/self.data['animation']
+        metadata_folder=metadata_path.parent
+        sprite_root=Path(self.animation.get('sprite_root',self.data['sprite_root']))
+        if not sprite_root.is_absolute():sprite_root=ROOT/sprite_root
+
+        for direction in self.DIRECTIONS:
+            idle=world.image((sprite_root/f'idle_{direction}.png').relative_to(ROOT).as_posix())
+            self.idles[direction]=self._padded(idle)
+            walk_folder=sprite_root/f'walk_{direction}'
+            walk_data=read_json(walk_folder/'animation.json')
+            frames=[]
+            for frame in walk_data['frames']:
+                image=world.image((walk_folder/frame['file']).relative_to(ROOT).as_posix())
+                frames.append((self._padded(image),int(frame['duration_ms'])))
+            self.walks[direction]=frames
+
+        # Early drafts used ``actions: {key: [frames]}``; the richer approved
+        # export uses ``animations: {key: {frames, facing, duration_ms}}``.
+        # Normalizing both here keeps the runtime and review export decoupled.
+        raw_actions=self.animation.get('animations',self.animation.get('actions',{}))
+        for name,specification in raw_actions.items():
+            metadata=specification if isinstance(specification,dict) else {}
+            records=metadata.get('frames',[]) if metadata else specification
+            frames=[]
+            for frame in records:
+                path=self._asset_path(frame['file'],metadata_folder)
+                image=world.image(path)
+                frame_duration=int(frame['duration_ms'])
+                if frame_duration<=0:
+                    raise ValueError(f'Routine action {name!r} has a nonpositive frame duration')
+                frames.append((self._padded(image),frame_duration))
+            if not frames:raise ValueError(f'Routine action {name!r} has no frames')
+            duration=sum(frame[1] for frame in frames)
+            declared=int(metadata.get('duration_ms',duration))
+            if declared!=duration:
+                raise ValueError(f'Routine action {name!r} duration is {declared}, frames total {duration}')
+            self.actions[name]=frames
+            self.action_metadata[name]=metadata
+
+    def _padded(self,image):
+        if image.get_size()==self.canvas_size:return image
+        canvas=pygame.Surface(self.canvas_size,pygame.SRCALPHA)
+        canvas.blit(image,self.body_offset)
+        return canvas
+
+    def _validate_steps(self):
+        seen=set()
+        for index,step in enumerate(self.steps):
+            label=f'Routine step {index}'
+            if not isinstance(step,dict):raise ValueError(f'{label} must be an object')
+            if not step.get('id'):raise ValueError(f'{label} needs an id')
+            if step['id'] in seen:raise ValueError(f'Duplicate routine step id {step["id"]!r}')
+            seen.add(step['id'])
+            kind=step.get('type')
+            if kind not in self.STEP_TYPES:raise ValueError(f'{label} has unknown type {kind!r}')
+            if kind=='move' and not step.get('waypoints'):
+                raise ValueError(f'Move step {step["id"]!r} needs waypoints')
+            if kind=='action' and step.get('animation') not in self.actions:
+                raise ValueError(f'Action step {step["id"]!r} names a missing animation')
+            if 'duration_ms' in step and int(step['duration_ms'])<=0:
+                raise ValueError(f'Step {step["id"]!r} has a nonpositive duration_ms')
+            if kind=='wait' and int(step.get('duration_ms',0))<=0:
+                raise ValueError(f'Wait step {step["id"]!r} needs a positive duration_ms')
+            if kind=='transfer' and ('scene' not in step or 'position' not in step):
+                raise ValueError(f'Transfer step {step["id"]!r} needs scene and position')
+            if 'facing' in step and step['facing'] not in self.DIRECTIONS:
+                raise ValueError(f'Step {step["id"]!r} has invalid facing {step["facing"]!r}')
+
+    @property
+    def blocker(self):
+        width,height=self.probe_size
+        return pygame.Rect(round(self.position.x)-width//2,round(self.position.y)-height//2,
+                           width,height)
+
+    @property
+    def state(self):return self.steps[self.step_index]['id']
+
+    @property
+    def step(self):return self.steps[self.step_index]
+
+    @property
+    def action_id(self):return self.step.get('animation') if self.step['type']=='action' else None
+
+    @property
+    def frame_index(self):
+        if self.action_id:return self._frame_index(self.actions[self.action_id],self.state_ms)
+        if self.moving:return self._frame_index(self.walks[self.facing],self.walk_ms)
+        return 0
+
+    def _duration(self,step=None):
+        step=self.step if step is None else step
+        if 'duration_ms' in step:return int(step['duration_ms'])
+        if step['type']=='action':return sum(duration for _,duration in self.actions[step['animation']])
+        return 0
+
+    def _step_facing(self,step,default):
+        if 'facing' in step:return step['facing']
+        if step['type']=='action':return self.action_metadata[step['animation']].get('facing',default)
+        return default
+
+    def _advance(self):
+        old=self.step
+        self.step_index=(self.step_index+1)%len(self.steps)
+        if self.step_index==0:
+            self.completed_cycles+=1
+            self.events.append({'type':'cycle','cycle':self.completed_cycles})
+        self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
+        self.blocked_seconds=0.0;self.retry_seconds=0.0;self.moving=False;self.waiting=False
+        self.facing=self._step_facing(self.step,self.facing)
+        self.events.append({'type':'step','from':old['id'],'to':self.state})
+
+    def select_step(self,step_id,position=None,scene_id=None,facing=None):
+        """Select one named step for deterministic review and focused tests.
+
+        Review coordinates from the behavior file are used when available.
+        Scene membership remains the caller's responsibility, just as it is for
+        a normal transfer callback.
+        """
+        try:index=next(i for i,step in enumerate(self.steps) if step['id']==step_id)
+        except StopIteration as error:raise KeyError(f'Unknown routine step {step_id!r}') from error
+        review=self.behavior.get('review',{}).get(step_id,{})
+        if position is None:position=review.get('station')
+        if scene_id is None:scene_id=review.get('scene')
+        self.step_index=index
+        if position is not None:self.position.update(position)
+        if scene_id is not None:self.scene_id=scene_id
+        self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
+        self.blocked_seconds=0.0;self.retry_seconds=0.0;self.moving=False;self.waiting=False
+        self._accumulator=0.0
+        default_facing=self._step_facing(self.step,self.facing)
+        self.facing=facing or default_facing
+        if self.facing not in self.DIRECTIONS:raise ValueError(f'Invalid facing {self.facing!r}')
+        return self
+
+    def update(self,seconds,world,player_blocker=None,transfer=None):
+        """Advance the schedule; return True only when a transfer succeeds."""
+        if seconds<0:raise ValueError('Routine update seconds must be nonnegative')
+        self._accumulator+=seconds
+        count=int((self._accumulator+1e-9)*60)
+        self._accumulator-=count/60
+        for index in range(count):
+            if self._tick(1/60,world,player_blocker,transfer):
+                # Remaining ticks belong to the destination world.  Keep them
+                # for the next call instead of simulating there with this world.
+                self._accumulator+=(count-index-1)/60
+                return True
+        return False
+
+    def _tick(self,seconds,world,player_blocker,transfer):
+        step=self.step;kind=step['type']
+        if kind=='move':
+            self._move(seconds,world,player_blocker)
+            return False
+        self.moving=False;self.waiting=False
+        self.facing=self._step_facing(step,self.facing)
+        if kind=='transfer':
+            if transfer is None or not transfer(self,step):
+                self.waiting=True
+                return False
+            self.scene_id=step['scene'];self.position.update(step['position'])
+            self.events.append({'type':'transfer','scene':self.scene_id,
+                                'position':tuple(self.position)})
+            self._advance()
+            return True
+        self.state_ms+=seconds*1000
+        if self.state_ms+1e-7>=self._duration(step):self._advance()
+        return False
+
+    def _move(self,seconds,world,player):
+        step=self.step;waypoints=step['waypoints']
+        self.moving=False;self.waiting=False
+        if self.waypoint_index>=len(waypoints):self._advance();return
+        goal=waypoints[self.waypoint_index]
+        if self.position.distance_squared_to(goal)<1e-8:
+            self.waypoint_index+=1;self.path=None
+            if self.waypoint_index>=len(waypoints):self._advance()
+            return
+        if self.path is None:
+            self.retry_seconds=max(0.0,self.retry_seconds-seconds)
+            if self.retry_seconds>1e-8:self.waiting=True;return
+            self.path=find_path(world,self.position,goal,self.probe_size,self,player)
+            if self.path is None:self.retry_seconds=.5;self.waiting=True;return
+        speed=float(step.get('speed',self.speed))
+        if speed<=0:raise ValueError(f'Move step {step["id"]!r} speed must be positive')
+        budget=speed*seconds
+        while budget>1e-7 and self.path:
+            target=pygame.Vector2(self.path[0]);delta=target-self.position;distance=delta.length()
+            if distance<1e-7:self.path.popleft();continue
+            direction=delta/distance;travel=min(1.0,budget,distance)
+            candidate=self.position+direction*travel
+            if not world.can_stand(candidate,self.probe_size,self,player):
+                self.waiting=True;self.blocked_seconds+=seconds
+                if self.blocked_seconds>=.8:
+                    alternate=find_path(world,self.position,goal,self.probe_size,self,player)
+                    if alternate is not None:self.path=alternate
+                    self.blocked_seconds=0.0
+                return
+            self.position.update(candidate);budget-=travel
+            self.walk_ms+=travel/speed*1000
+            self.facing=(('right' if direction.x>0 else 'left') if abs(direction.x)>abs(direction.y)
+                         else ('front' if direction.y>0 else 'back'))
+            self.moving=True;self.blocked_seconds=0.0
+            if travel+1e-7>=distance:self.path.popleft()
+        if not self.path:
+            self.path=None
+            if self.position.distance_squared_to(goal)<1e-8:
+                self.waypoint_index+=1
+                if self.waypoint_index>=len(waypoints):self._advance()
+
+    @staticmethod
+    def _frame_index(frames,time_ms):
+        duration=sum(duration for _,duration in frames)
+        cursor=time_ms%duration
+        for index,(_,frame_duration) in enumerate(frames):
+            if cursor<frame_duration:return index
+            cursor-=frame_duration
+        return len(frames)-1
+
+    def sprite(self,elapsed_ms):
+        if self.action_id:
+            frames=self.actions[self.action_id]
+            return frames[self._frame_index(frames,self.state_ms)][0]
+        if self.moving:
+            frames=self.walks[self.facing]
+            return frames[self._frame_index(frames,self.walk_ms)][0]
+        return self.idles[self.facing]
+
+
 class Gardener:
     """A persistent fill/carry/pour cycle, with collision-aware task progress."""
     def __init__(self,record,world,rng=None):

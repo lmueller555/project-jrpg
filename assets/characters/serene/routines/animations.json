@@ -1,0 +1,1303 @@
+{
+  "id": "serene.sanctuary_routines",
+  "status": "review",
+  "character": "serene",
+  "frame_size": [
+    48,
+    48
+  ],
+  "action_canvas": [
+    48,
+    48
+  ],
+  "body_frame_size": [
+    24,
+    36
+  ],
+  "body_offset": [
+    12,
+    6
+  ],
+  "draw_anchor": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    24,
+    40
+  ],
+  "actions": {
+    "sort_provisions": [
+      {
+        "file": "sort_provisions/frame_01.png",
+        "duration_ms": 700
+      },
+      {
+        "file": "sort_provisions/frame_02.png",
+        "duration_ms": 280
+      },
+      {
+        "file": "sort_provisions/frame_03.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "sort_provisions/frame_04.png",
+        "duration_ms": 480
+      },
+      {
+        "file": "sort_provisions/frame_05.png",
+        "duration_ms": 320
+      },
+      {
+        "file": "sort_provisions/frame_06.png",
+        "duration_ms": 280
+      },
+      {
+        "file": "sort_provisions/frame_07.png",
+        "duration_ms": 400
+      },
+      {
+        "file": "sort_provisions/frame_08.png",
+        "duration_ms": 280
+      },
+      {
+        "file": "sort_provisions/frame_09.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "sort_provisions/frame_10.png",
+        "duration_ms": 480
+      },
+      {
+        "file": "sort_provisions/frame_11.png",
+        "duration_ms": 320
+      },
+      {
+        "file": "sort_provisions/frame_12.png",
+        "duration_ms": 700
+      }
+    ],
+    "consult_list": [
+      {
+        "file": "consult_list/frame_01.png",
+        "duration_ms": 650
+      },
+      {
+        "file": "consult_list/frame_02.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "consult_list/frame_03.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "consult_list/frame_04.png",
+        "duration_ms": 340
+      },
+      {
+        "file": "consult_list/frame_05.png",
+        "duration_ms": 820
+      },
+      {
+        "file": "consult_list/frame_06.png",
+        "duration_ms": 360
+      },
+      {
+        "file": "consult_list/frame_07.png",
+        "duration_ms": 650
+      },
+      {
+        "file": "consult_list/frame_08.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "consult_list/frame_09.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "consult_list/frame_10.png",
+        "duration_ms": 650
+      }
+    ],
+    "tend_hearth": [
+      {
+        "file": "tend_hearth/frame_01.png",
+        "duration_ms": 650
+      },
+      {
+        "file": "tend_hearth/frame_02.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "tend_hearth/frame_03.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "tend_hearth/frame_04.png",
+        "duration_ms": 360
+      },
+      {
+        "file": "tend_hearth/frame_05.png",
+        "duration_ms": 420
+      },
+      {
+        "file": "tend_hearth/frame_06.png",
+        "duration_ms": 420
+      },
+      {
+        "file": "tend_hearth/frame_07.png",
+        "duration_ms": 360
+      },
+      {
+        "file": "tend_hearth/frame_08.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "tend_hearth/frame_09.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "tend_hearth/frame_10.png",
+        "duration_ms": 650
+      }
+    ],
+    "arrange_hall": [
+      {
+        "file": "arrange_hall/frame_01.png",
+        "duration_ms": 650
+      },
+      {
+        "file": "arrange_hall/frame_02.png",
+        "duration_ms": 280
+      },
+      {
+        "file": "arrange_hall/frame_03.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "arrange_hall/frame_04.png",
+        "duration_ms": 340
+      },
+      {
+        "file": "arrange_hall/frame_05.png",
+        "duration_ms": 420
+      },
+      {
+        "file": "arrange_hall/frame_06.png",
+        "duration_ms": 360
+      },
+      {
+        "file": "arrange_hall/frame_07.png",
+        "duration_ms": 360
+      },
+      {
+        "file": "arrange_hall/frame_08.png",
+        "duration_ms": 340
+      },
+      {
+        "file": "arrange_hall/frame_09.png",
+        "duration_ms": 300
+      },
+      {
+        "file": "arrange_hall/frame_10.png",
+        "duration_ms": 280
+      },
+      {
+        "file": "arrange_hall/frame_11.png",
+        "duration_ms": 650
+      }
+    ]
+  },
+  "animations": {
+    "sort_provisions": {
+      "facing": "back",
+      "loop": true,
+      "duration_ms": 4840,
+      "description": "Serene transfers a sealed provision jar across the work surface, inspects its label, then returns it for a seamless sorting loop.",
+      "frames": [
+        {
+          "file": "sort_provisions/frame_01.png",
+          "duration_ms": 700,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              0,
+              11
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_02.png",
+          "duration_ms": 280,
+          "phase": "reach_left_surface",
+          "hands": [
+            [
+              2,
+              13
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              0,
+              11
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_03.png",
+          "duration_ms": 300,
+          "phase": "lift_left",
+          "hands": [
+            [
+              3,
+              15
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              1,
+              13
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_04.png",
+          "duration_ms": 480,
+          "phase": "inspect_label",
+          "hands": [
+            [
+              16,
+              18
+            ],
+            [
+              19,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              17,
+              14
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_05.png",
+          "duration_ms": 320,
+          "phase": "carry_to_right_surface",
+          "hands": [
+            [
+              16,
+              18
+            ],
+            [
+              20,
+              14
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              19,
+              12
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_06.png",
+          "duration_ms": 280,
+          "phase": "lower_right_surface",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              19,
+              11
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_07.png",
+          "duration_ms": 400,
+          "phase": "release_right_surface",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              19,
+              11
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_08.png",
+          "duration_ms": 280,
+          "phase": "reach_right_surface",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              21,
+              13
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              19,
+              11
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_09.png",
+          "duration_ms": 300,
+          "phase": "lift_right",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              16
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              17,
+              14
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_10.png",
+          "duration_ms": 480,
+          "phase": "confirm_label",
+          "hands": [
+            [
+              16,
+              18
+            ],
+            [
+              19,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              17,
+              14
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_11.png",
+          "duration_ms": 320,
+          "phase": "return_left_surface",
+          "hands": [
+            [
+              3,
+              15
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              1,
+              13
+            ]
+          }
+        },
+        {
+          "file": "sort_provisions/frame_12.png",
+          "duration_ms": 700,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "provision_jar",
+            "anchor": [
+              0,
+              11
+            ]
+          }
+        }
+      ],
+      "review": {
+        "gif": "sort_provisions/preview.gif",
+        "sheet": "sort_provisions/frames_review.png",
+        "scale": 8,
+        "background": "#e8edf2"
+      }
+    },
+    "consult_list": {
+      "facing": "back",
+      "loop": true,
+      "duration_ms": 4590,
+      "description": "Serene lifts the sanctuary preparation list, pauses to read it, checks an item and returns it to the work surface.",
+      "frames": [
+        {
+          "file": "consult_list/frame_01.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              11
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_02.png",
+          "duration_ms": 260,
+          "phase": "reach_list_surface",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              20,
+              13
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              11
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_03.png",
+          "duration_ms": 300,
+          "phase": "lift_list",
+          "hands": [
+            [
+              15,
+              18
+            ],
+            [
+              19,
+              15
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              12
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_04.png",
+          "duration_ms": 340,
+          "phase": "raise_to_read",
+          "hands": [
+            [
+              16,
+              18
+            ],
+            [
+              20,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              16,
+              14
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_05.png",
+          "duration_ms": 820,
+          "phase": "read",
+          "hands": [
+            [
+              16,
+              17
+            ],
+            [
+              20,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              14
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_06.png",
+          "duration_ms": 360,
+          "phase": "check_item",
+          "hands": [
+            [
+              18,
+              16
+            ],
+            [
+              20,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              16,
+              14
+            ],
+            "state": "checked"
+          }
+        },
+        {
+          "file": "consult_list/frame_07.png",
+          "duration_ms": 650,
+          "phase": "confirm",
+          "hands": [
+            [
+              16,
+              18
+            ],
+            [
+              20,
+              17
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              14
+            ],
+            "state": "checked"
+          }
+        },
+        {
+          "file": "consult_list/frame_08.png",
+          "duration_ms": 300,
+          "phase": "lower_list",
+          "hands": [
+            [
+              15,
+              18
+            ],
+            [
+              19,
+              15
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              12
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_09.png",
+          "duration_ms": 260,
+          "phase": "return_list_surface",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              20,
+              13
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              11
+            ],
+            "state": "plain"
+          }
+        },
+        {
+          "file": "consult_list/frame_10.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              17,
+              11
+            ],
+            "state": "plain"
+          }
+        }
+      ],
+      "review": {
+        "gif": "consult_list/preview.gif",
+        "sheet": "consult_list/frames_review.png",
+        "scale": 8,
+        "background": "#e8edf2"
+      }
+    },
+    "tend_hearth": {
+      "facing": "back",
+      "loop": true,
+      "duration_ms": 3980,
+      "description": "Facing the fireplace, Serene raises a short poker over her right shoulder, stirs the lower firebox and returns it to her side.",
+      "frames": [
+        {
+          "file": "tend_hearth/frame_01.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              19,
+              23
+            ],
+            "tip": [
+              23,
+              13
+            ],
+            "sparks": 0
+          }
+        },
+        {
+          "file": "tend_hearth/frame_02.png",
+          "duration_ms": 260,
+          "phase": "take_poker",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              19,
+              23
+            ],
+            "tip": [
+              23,
+              13
+            ],
+            "sparks": 0
+          }
+        },
+        {
+          "file": "tend_hearth/frame_03.png",
+          "duration_ms": 300,
+          "phase": "raise_poker",
+          "hands": [
+            [
+              13,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              17,
+              21
+            ],
+            "tip": [
+              23,
+              8
+            ],
+            "sparks": 0
+          }
+        },
+        {
+          "file": "tend_hearth/frame_04.png",
+          "duration_ms": 360,
+          "phase": "enter_firebox",
+          "hands": [
+            [
+              13,
+              21
+            ],
+            [
+              15,
+              20
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              15,
+              20
+            ],
+            "tip": [
+              23,
+              5
+            ],
+            "sparks": 1
+          }
+        },
+        {
+          "file": "tend_hearth/frame_05.png",
+          "duration_ms": 420,
+          "phase": "stir_left",
+          "hands": [
+            [
+              12,
+              21
+            ],
+            [
+              14,
+              20
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              14,
+              20
+            ],
+            "tip": [
+              20,
+              5
+            ],
+            "sparks": 2
+          }
+        },
+        {
+          "file": "tend_hearth/frame_06.png",
+          "duration_ms": 420,
+          "phase": "stir_right",
+          "hands": [
+            [
+              13,
+              21
+            ],
+            [
+              15,
+              20
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              15,
+              20
+            ],
+            "tip": [
+              24,
+              6
+            ],
+            "sparks": 2
+          }
+        },
+        {
+          "file": "tend_hearth/frame_07.png",
+          "duration_ms": 360,
+          "phase": "rake_coals",
+          "hands": [
+            [
+              14,
+              22
+            ],
+            [
+              16,
+              21
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              16,
+              21
+            ],
+            "tip": [
+              22,
+              7
+            ],
+            "sparks": 1
+          }
+        },
+        {
+          "file": "tend_hearth/frame_08.png",
+          "duration_ms": 300,
+          "phase": "withdraw_poker",
+          "hands": [
+            [
+              13,
+              21
+            ],
+            [
+              17,
+              21
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              17,
+              21
+            ],
+            "tip": [
+              23,
+              8
+            ],
+            "sparks": 0
+          }
+        },
+        {
+          "file": "tend_hearth/frame_09.png",
+          "duration_ms": 260,
+          "phase": "lower_poker",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              19,
+              23
+            ],
+            "tip": [
+              23,
+              13
+            ],
+            "sparks": 0
+          }
+        },
+        {
+          "file": "tend_hearth/frame_10.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "poker",
+            "grip": [
+              19,
+              23
+            ],
+            "tip": [
+              23,
+              13
+            ],
+            "sparks": 0
+          }
+        }
+      ],
+      "review": {
+        "gif": "tend_hearth/preview.gif",
+        "sheet": "tend_hearth/frames_review.png",
+        "scale": 8,
+        "background": "#e8edf2"
+      }
+    },
+    "arrange_hall": {
+      "facing": "back",
+      "loop": true,
+      "duration_ms": 4280,
+      "description": "Serene lifts a folded sanctuary linen, opens it, smooths both sides and folds it back into a neat square.",
+      "frames": [
+        {
+          "file": "arrange_hall/frame_01.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              1,
+              11
+            ],
+            "state": "folded"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_02.png",
+          "duration_ms": 280,
+          "phase": "reach_linen_surface",
+          "hands": [
+            [
+              3,
+              13
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              1,
+              11
+            ],
+            "state": "folded"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_03.png",
+          "duration_ms": 300,
+          "phase": "lift_linen",
+          "hands": [
+            [
+              3,
+              15
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              2,
+              14
+            ],
+            "state": "folded"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_04.png",
+          "duration_ms": 340,
+          "phase": "open_half",
+          "hands": [
+            [
+              4,
+              18
+            ],
+            [
+              11,
+              18
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              3,
+              17
+            ],
+            "state": "half"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_05.png",
+          "duration_ms": 420,
+          "phase": "spread_full",
+          "hands": [
+            [
+              6,
+              20
+            ],
+            [
+              18,
+              20
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              5,
+              19
+            ],
+            "state": "open"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_06.png",
+          "duration_ms": 360,
+          "phase": "smooth_left",
+          "hands": [
+            [
+              9,
+              21
+            ],
+            [
+              18,
+              20
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              5,
+              19
+            ],
+            "state": "open"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_07.png",
+          "duration_ms": 360,
+          "phase": "smooth_right",
+          "hands": [
+            [
+              6,
+              20
+            ],
+            [
+              15,
+              21
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              5,
+              19
+            ],
+            "state": "open"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_08.png",
+          "duration_ms": 340,
+          "phase": "fold_half",
+          "hands": [
+            [
+              4,
+              18
+            ],
+            [
+              11,
+              18
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              3,
+              17
+            ],
+            "state": "half"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_09.png",
+          "duration_ms": 300,
+          "phase": "fold_square",
+          "hands": [
+            [
+              3,
+              15
+            ],
+            [
+              6,
+              16
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              2,
+              14
+            ],
+            "state": "folded"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_10.png",
+          "duration_ms": 280,
+          "phase": "return_linen_surface",
+          "hands": [
+            [
+              3,
+              13
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              1,
+              11
+            ],
+            "state": "folded"
+          }
+        },
+        {
+          "file": "arrange_hall/frame_11.png",
+          "duration_ms": 650,
+          "phase": "settle",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              1,
+              11
+            ],
+            "state": "folded"
+          }
+        }
+      ],
+      "review": {
+        "gif": "arrange_hall/preview.gif",
+        "sheet": "arrange_hall/frames_review.png",
+        "scale": 8,
+        "background": "#e8edf2"
+      }
+    }
+  },
+  "source_recipe": "../../../source/characters/serene/routines/recipe.json",
+  "approved_inputs": {
+    "palette": "assets/characters/serene/palette.json",
+    "back_parts": "assets/source/characters/serene/walk_back/parts",
+    "back_idle_layers": "assets/source/characters/serene/idle_back_layers"
+  },
+  "review": {
+    "image": "routines_review.png",
+    "columns": [
+      "sort_provisions",
+      "consult_list",
+      "tend_hearth",
+      "arrange_hall"
+    ],
+    "scale": 8,
+    "background": "#e8edf2"
+  }
+}

@@ -31,3 +31,9 @@ Rebuild these views and boards with `python tools/build_serene_directional_idles
 Each directory contains a 20× opaque looping GIF, 12× frame strip, native 96×36 sheet, recipe and animation metadata. `walk_directions_review.gif` shows all four directions synchronized at 12×, with independent approval labels. `walk_directions.png` is a 96×144 native sheet: directions as rows, phases as columns. `walk_directions.json` records its rectangles and timing.
 
 Run `python tools/build_serene_walk.py --direction remaining` to rebuild only the new walks and combined board; `--direction all` also rebuilds the approved front without changing its pixels. No other approved art is modified.
+
+## Sanctuary work routines — awaiting review
+
+`routines/` contains four 48×48 planted work loops derived from Serene's approved appearance: sorting provisions, consulting a preparation list, tending the hearth and folding hall linens. The larger canvas gives her hands and small props room while preserving the normal in-game registration, head, mantle and feet. Runtime metadata includes exact frame timing and the four action keys used by her persistent dining-room-to-hall schedule.
+
+The [in-room review](../../../docs/reviews/serene_sanctuary_routines/README.md) shows every loop through the actual game renderer. Rebuild the native frames and isolated art previews with `python tools/build_serene_routines.py`; rebuild the room previews with `python tools/capture_serene_routines.py`.

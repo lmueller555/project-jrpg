@@ -112,7 +112,14 @@ def build():
                       {'id':'sanctuary_gardener','name':'Sanctuary gardener','routine':'watering',
                        'position':[322,350],'probe_size':[12,8],
                        'animation':'assets/characters/npcs/female_02/gardener/animations.json',
-                       'behavior':'assets/maps/eldenmere/routines/gardener.json'}], 'quests':[]}
+                       'behavior':'assets/maps/eldenmere/routines/gardener.json'}],
+              'persistent_npcs':[
+                  {'id':'mother_serene','name':'Mother Serene','routine':'sanctuary_schedule',
+                   'scene':'sanctuary_dining','position':[288,228],'probe_size':[12,8],
+                   'draw_anchor':[12,30],'sprite_root':'assets/characters/serene',
+                   'animation':'assets/characters/serene/routines/animations.json',
+                   'behavior':'assets/maps/eldenmere/routines/serene.json'}],
+              'quests':[]}
     # Clean, actor-free overview used by the in-game map and review.
     overview=town.opened(ROOT/ground[0]).copy()
     for entity in sorted(entities,key=lambda e:e['sort_y']):

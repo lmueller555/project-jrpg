@@ -1014,6 +1014,29 @@
       "behavior": "assets/maps/eldenmere/routines/gardener.json"
     }
   ],
+  "persistent_npcs": [
+    {
+      "id": "mother_serene",
+      "name": "Mother Serene",
+      "routine": "sanctuary_schedule",
+      "scene": "sanctuary_dining",
+      "position": [
+        288,
+        228
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite_root": "assets/characters/serene",
+      "animation": "assets/characters/serene/routines/animations.json",
+      "behavior": "assets/maps/eldenmere/routines/serene.json"
+    }
+  ],
   "quests": [],
   "overview": "assets/maps/eldenmere/playable/overview.png",
   "doors": [

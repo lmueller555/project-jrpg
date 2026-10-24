@@ -13,7 +13,7 @@ try:
 except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
-from npc_routines import Gardener
+from npc_routines import Gardener, RoutineNPC
 from well_routine import DrawingWell
 
 ROOT=Path(__file__).resolve().parent
@@ -254,6 +254,8 @@ class Game:
         self.world=World()
         self.town=self.world
         self.scenes={self.world.path:self.world}
+        self.persistent_npcs=[]
+        self._routine_worlds={}
         self.exterior_position=pygame.Vector2(self.world.data['spawn'])
         self.transfer_cooldown=0.0
         self.player=Player(self.world)
@@ -263,6 +265,44 @@ class Game:
         self.windowed_size=window_size
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
         self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
+        self._setup_persistent_npcs()
+
+    def _load_scene(self,path):
+        path=Path(path).resolve()
+        if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
+        return self.scenes[path]
+
+    def _scene_by_id(self,scene_id):
+        if scene_id==self.town.data['id']:return self.town
+        try:path=self.town.data['interior_scenes'][scene_id]
+        except KeyError as error:raise ValueError(f'Unknown routine scene: {scene_id}') from error
+        return self._load_scene(ROOT/path)
+
+    def _setup_persistent_npcs(self):
+        """Create each cross-room actor once and attach it to its initial room."""
+        for record in self.town.data.get('persistent_npcs',[]):
+            scene_id=record['scene']
+            world=self._scene_by_id(scene_id)
+            actor=RoutineNPC(record,world,scene_id)
+            if not world.can_stand(actor.position,actor.probe_size,actor):
+                raise ValueError(f'Blocked persistent NPC spawn for {record["id"]}: {tuple(actor.position)}')
+            world.npcs.append(actor)
+            self.persistent_npcs.append(actor)
+            self._routine_worlds[actor]=world
+
+    def _transfer_routine_npc(self,actor,step):
+        """Move one persistent actor between rooms without cloning or resetting it."""
+        destination=self._scene_by_id(step['scene'])
+        position=step['position']
+        player_blocker=destination.probe_rect(self.player.position) if destination is self.world else None
+        if not destination.can_stand(position,actor.probe_size,actor,player_blocker):return None
+        origin=self._routine_worlds[actor]
+        if actor in origin.npcs:origin.npcs.remove(actor)
+        actor.position.update(position)
+        actor.scene_id=step['scene']
+        if actor not in destination.npcs:destination.npcs.append(actor)
+        self._routine_worlds[actor]=destination
+        return destination
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -297,6 +337,10 @@ class Game:
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
                 if isinstance(npc,Gardener):npc.update(seconds,scene,blocker)
+        for npc in self.persistent_npcs:
+            scene=self._routine_worlds[npc]
+            blocker=scene.probe_rect(self.player.position) if scene is self.world else None
+            npc.update(seconds,scene,blocker,self._transfer_routine_npc)
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         if not self.map_open and not self.transfer_cooldown:
             for door in self.world.doors:
@@ -306,10 +350,14 @@ class Game:
 
     def enter(self,door):
         path=(ROOT/door.data['destination']).resolve()
-        if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
-        destination=self.scenes[path]
+        destination=self._load_scene(path)
         spawn=door.data['spawn']
-        if not destination.can_stand(spawn):raise ValueError(f'Blocked arrival for {door.data["id"]}: {spawn}')
+        # A moving resident can cross a doorway. Keep the transition armed and
+        # let the next update enter as soon as the landing is clear.
+        if not destination.can_stand(spawn):
+            arrival_probe=destination.probe_rect(spawn)
+            if any(npc.blocker.colliderect(arrival_probe) for npc in destination.npcs):return False
+            raise ValueError(f'Blocked arrival for {door.data["id"]}: {spawn}')
         if self.world is self.town:self.exterior_position.update(door.data['anchor'])
         self.world=destination
         self.player.position.update(spawn)
@@ -318,6 +366,7 @@ class Game:
         self.transfer_cooldown=.25
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
+        return True
 
     def text(self,text,position,font=None,color='#f7eed5'):
         self.canvas.blit((font or self.font).render(text,False,color),position)
