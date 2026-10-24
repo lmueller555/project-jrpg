@@ -5,3 +5,9 @@
 `export.json` records alpha threshold, source bounds, nearest-neighbor source bands, named garment windows, two eye landmarks and layer rows. Source bands register a 32-pixel visible character inside the shared 24×36 frame: head starts at row 3 and feet end at row 34. Garment windows preserve pale sleeves, rust fabric and the single knee patch; pupil/iris landmarks keep both eyes distinct after reduction. The retained source is a concept, while the native PNG is the approved game asset.
 
 Run `python tools/build_tomas_idle.py`. It writes four full-frame RGBA layers (`head`, `upper_body`, `tunic_hem_and_hands`, `legs_and_boots`) that reconstruct the idle exactly, native metadata/palette references and two opaque enlarged review images. Existing approved cast sprites, templates, environment assets and narrative files are read only. No walking poses or other directions are introduced.
+
+## Turnaround source
+
+`idle_turnaround_concept.png` retains the generated left, right and back source plate based on both approved front references. `turnaround_export.json` records per-view bounds, material windows, eye landmarks and registration bands. Each view samples into 32 visible rows (3–34) inside a 24×36 frame using the approved palette. The left profile alone exposes the patch on the front of his left knee; the right profile occludes it and the back faces it away.
+
+`python tools/build_tomas_directional_idles.py` reuses the front export's band-sampling helper without rewriting front assets. Four full-frame layers per new view are retained in `idle_left_layers/`, `idle_right_layers/` and `idle_back_layers/` for exact reconstruction and later animation preparation. Pupil/iris landmarks retain a readable eye in each profile; the back has none. Source garment windows separate blond highlights, skin, linen cuffs and rust fabric, with a dedicated patch window restricted to the left-profile knee. All three new exports await review; no walking poses are added.

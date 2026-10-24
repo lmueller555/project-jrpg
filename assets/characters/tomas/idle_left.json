@@ -1,0 +1,60 @@
+{
+  "character": "tomas",
+  "animation": "idle.left",
+  "design_status": "approved",
+  "status": "review",
+  "image": "idle_left.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "occupied_rect": [
+    6,
+    3,
+    12,
+    32
+  ],
+  "visible_height_px": 32,
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "source": "../../source/characters/tomas/idle_turnaround_concept.png",
+  "export_recipe": "../../source/characters/tomas/turnaround_export.json",
+  "recipe_view": "left",
+  "layers": [
+    "../../source/characters/tomas/idle_left_layers/head.png",
+    "../../source/characters/tomas/idle_left_layers/upper_body.png",
+    "../../source/characters/tomas/idle_left_layers/tunic_hem_and_hands.png",
+    "../../source/characters/tomas/idle_left_layers/legs_and_boots.png"
+  ],
+  "eyes": {
+    "top_pixels": [
+      [
+        10,
+        11
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1,
+    "iris_name": "Green"
+  },
+  "knee_patch": {
+    "anatomical_side": "left",
+    "placement": "front_of_knee",
+    "visible": true,
+    "visibility_reason": "near left leg"
+  },
+  "review": {
+    "image": "idle_left_review.png",
+    "scale": 24,
+    "background": "#e8edf2"
+  }
+}

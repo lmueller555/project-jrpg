@@ -1,0 +1,705 @@
+{
+  "source": "idle_turnaround_concept.png",
+  "palette": "../../../characters/tomas/palette.json",
+  "resampling": "nearest",
+  "views": {
+    "left": {
+      "source_bounds": [
+        160,
+        94,
+        491,
+        949
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_rect": [
+        6,
+        3,
+        12,
+        32
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            11
+          ]
+        ],
+        "height": 2,
+        "iris_offset_y": 1,
+        "iris_name": "Green"
+      },
+      "bands": [
+        {
+          "source_y": [
+            94,
+            437
+          ],
+          "native_y": [
+            3,
+            15
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            437,
+            590
+          ],
+          "native_y": [
+            15,
+            21
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            590,
+            632
+          ],
+          "native_y": [
+            21,
+            23
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle",
+            "linen"
+          ]
+        },
+        {
+          "source_y": [
+            632,
+            727
+          ],
+          "native_y": [
+            23,
+            26
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            727,
+            825
+          ],
+          "native_y": [
+            26,
+            31
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            825,
+            949
+          ],
+          "native_y": [
+            31,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            160,
+            94,
+            491,
+            285
+          ],
+          "materials": [
+            "outline",
+            "hair"
+          ]
+        },
+        {
+          "rect": [
+            245,
+            373,
+            347,
+            437
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            348,
+            474,
+            447,
+            627
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            245,
+            505,
+            348,
+            586
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            257,
+            590,
+            351,
+            632
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle"
+          ]
+        },
+        {
+          "rect": [
+            244,
+            632,
+            371,
+            708
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            373,
+            628,
+            445,
+            732
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            318,
+            752,
+            363,
+            792
+          ],
+          "materials": [
+            "patch"
+          ]
+        }
+      ]
+    },
+    "right": {
+      "source_bounds": [
+        607,
+        95,
+        933,
+        949
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_rect": [
+        6,
+        3,
+        12,
+        32
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "eyes": {
+        "top_pixels": [
+          [
+            14,
+            11
+          ]
+        ],
+        "height": 2,
+        "iris_offset_y": 1,
+        "iris_name": "Green"
+      },
+      "bands": [
+        {
+          "source_y": [
+            95,
+            437
+          ],
+          "native_y": [
+            3,
+            15
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            437,
+            590
+          ],
+          "native_y": [
+            15,
+            21
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            590,
+            632
+          ],
+          "native_y": [
+            21,
+            23
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle",
+            "linen"
+          ]
+        },
+        {
+          "source_y": [
+            632,
+            727
+          ],
+          "native_y": [
+            23,
+            26
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            727,
+            825
+          ],
+          "native_y": [
+            26,
+            31
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            825,
+            949
+          ],
+          "native_y": [
+            31,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            607,
+            95,
+            933,
+            285
+          ],
+          "materials": [
+            "outline",
+            "hair"
+          ]
+        },
+        {
+          "rect": [
+            750,
+            373,
+            861,
+            437
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            650,
+            474,
+            750,
+            627
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            750,
+            505,
+            853,
+            586
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            748,
+            590,
+            844,
+            632
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle"
+          ]
+        },
+        {
+          "rect": [
+            733,
+            632,
+            859,
+            708
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            650,
+            628,
+            730,
+            732
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ]
+    },
+    "back": {
+      "source_bounds": [
+        1052,
+        94,
+        1380,
+        949
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "occupied_rect": [
+        6,
+        3,
+        12,
+        32
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "eyes": {
+        "top_pixels": [],
+        "height": 0,
+        "iris_offset_y": 1,
+        "iris_name": null
+      },
+      "bands": [
+        {
+          "source_y": [
+            94,
+            437
+          ],
+          "native_y": [
+            3,
+            15
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            437,
+            590
+          ],
+          "native_y": [
+            15,
+            21
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            590,
+            632
+          ],
+          "native_y": [
+            21,
+            23
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle",
+            "linen"
+          ]
+        },
+        {
+          "source_y": [
+            632,
+            727
+          ],
+          "native_y": [
+            23,
+            26
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            727,
+            825
+          ],
+          "native_y": [
+            26,
+            31
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            825,
+            949
+          ],
+          "native_y": [
+            31,
+            35
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            1052,
+            94,
+            1380,
+            437
+          ],
+          "materials": [
+            "outline",
+            "hair"
+          ]
+        },
+        {
+          "rect": [
+            1107,
+            350,
+            1137,
+            389
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1296,
+            350,
+            1329,
+            389
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1148,
+            458,
+            1286,
+            590
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            1070,
+            475,
+            1148,
+            632
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1286,
+            475,
+            1365,
+            632
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1148,
+            590,
+            1286,
+            638
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        },
+        {
+          "rect": [
+            1135,
+            638,
+            1300,
+            718
+          ],
+          "materials": [
+            "outline",
+            "tunic"
+          ]
+        },
+        {
+          "rect": [
+            1060,
+            638,
+            1135,
+            736
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1300,
+            638,
+            1380,
+            736
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ]
+    }
+  },
+  "layers": {
+    "head": [
+      0,
+      15
+    ],
+    "upper_body": [
+      15,
+      23
+    ],
+    "tunic_hem_and_hands": [
+      23,
+      26
+    ],
+    "legs_and_boots": [
+      26,
+      36
+    ]
+  }
+}

@@ -11,10 +11,8 @@ SOURCE = ROOT/'assets/source/characters/tomas'
 OUT = ROOT/'assets/characters/tomas'
 
 
-def build():
-    recipe=json.loads((SOURCE/'export.json').read_text())
-    palette=json.loads((OUT/'palette.json').read_text())
-    source=Image.open(SOURCE/recipe['source']).convert('RGBA')
+def sample_source(source,recipe,palette):
+    """Sample registered material bands and preserve explicit eye landmarks."""
     native=Image.new('RGBA',tuple(recipe['frame_size']))
     left,_,right,_=recipe['source_bounds']
     offset,_,width,_=recipe['occupied_rect']
@@ -40,6 +38,14 @@ def build():
     for x,y in recipe['eyes']['top_pixels']:
         native.putpixel((x,y),(*rgb(palette['eyes']['pupil']),255))
         native.putpixel((x,y+1),(*rgb(palette['eyes']['iris']),255))
+    return native
+
+
+def build():
+    recipe=json.loads((SOURCE/'export.json').read_text())
+    palette=json.loads((OUT/'palette.json').read_text())
+    source=Image.open(SOURCE/recipe['source']).convert('RGBA')
+    native=sample_source(source,recipe,palette)
     assert native.size==(24,36)
     assert native.getbbox()==(6,3,18,35), 'Expected 12×32 visible bounds, baseline 34'
     assert set(native.getchannel('A').tobytes())=={0,255}

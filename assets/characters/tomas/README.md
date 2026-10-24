@@ -12,4 +12,14 @@ The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short 
 
 Tomas is visibly 32 pixels tall, two pixels shorter than Caelan's 34, and narrower (12 versus 14 pixels across the full occupied bounds). All use 24×36 frames and `[12,34]` foot anchors. Transparent rows above Tomas accommodate the height difference. The patch is a small native accent; fine source details simplify at this resolution.
 
-Rebuild with `python tools/build_tomas_idle.py` from the repository root. Retained concept, recipe and four reconstructable full-frame layers are under `assets/source/characters/tomas/`. This milestone includes one still front pose; directional views and walking animations are future work. Preview images retain their original review labels as a record of the approved artwork.
+Rebuild the front with `python tools/build_tomas_idle.py` from the repository root. Retained concept, recipe and four reconstructable full-frame layers are under `assets/source/characters/tomas/`. Preview images retain their original review labels as a record of the approved artwork.
+
+## Left, right and back idles — awaiting review
+
+`idle_left.png`, `idle_right.png` and `idle_back.png` add three still 24×36 views, each 32 visible pixels tall with foot anchor `[12,34]`. Each has independent status/landmarks in its JSON metadata and an opaque 24× review PNG. The cowlick, rust tunic, pale sleeves and dark trousers follow the approved front. Each profile shows one green eye; the back has no eyes.
+
+The patch remains on the front of his anatomical left knee. It is visible on the near leg in the left-facing profile, occluded by the nearer right leg in the right-facing profile, and faces away in the back view. It is never mirrored onto the other leg.
+
+`idle_turnaround_review.png` shows the three new views at 24×. `idle_all_review.png` compares all four views at 12×, using a shared baseline. `idle_all.png` is a native 96×36 sheet ordered front/left/right/back, with rectangles and per-view status in `idle_all.json`.
+
+Run `python tools/build_tomas_directional_idles.py` to rebuild these views, their twelve source layers and review boards. The approved front, its source/layers and palette remain unchanged. Walking animations are future work.
