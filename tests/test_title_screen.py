@@ -76,6 +76,35 @@ class TitleTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_RETURN))
         self.assertFalse(self.game.handle_events())
 
+    def test_both_enter_keys_activate_the_highlighted_title_option(self):
+        for key in (pygame.K_RETURN,pygame.K_KP_ENTER):
+            for selected in range(4):
+                with self.subTest(key=key,selected=selected):
+                    self.game.title.selected=selected
+                    self.game.title.settings=False
+                    self.game.title.fade=0
+                    pygame.event.clear()
+                    pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=key))
+                    running=self.game.handle_events()
+                    self.assertEqual(running,selected!=3)
+                    self.assertEqual(self.game.title.fade>0,selected==0)
+                    self.assertEqual(self.game.title.settings,selected==2)
+
+    def test_keypad_enter_works_in_settings_and_repeat_does_not_reactivate(self):
+        self.game.title.settings=True
+        self.game.title.selected=0
+        with patch.object(self.game,'toggle_fullscreen') as toggle:
+            pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER))
+            self.game.handle_events()
+            toggle.assert_called_once_with()
+        self.game.title.selected=2
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER,repeat=True))
+        self.game.handle_events()
+        self.assertTrue(self.game.title.settings)
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER))
+        self.game.handle_events()
+        self.assertFalse(self.game.title.settings)
+
     def test_music_setting_toggles_and_missing_audio_device_is_nonfatal(self):
         self.click(self.game.title.rows[2])
         self.click(self.game.title.settings_rows[1])

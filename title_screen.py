@@ -84,7 +84,7 @@ class TitleScreen:
                 count=3 if self.settings else 4
                 self.selected=(self.selected+step)%count
                 if not self.settings and self.selected==1:self.selected=(self.selected+step)%count
-            elif event.key in (pygame.K_RETURN,pygame.K_SPACE):return self.activate()
+            elif event.key in (pygame.K_RETURN,pygame.K_KP_ENTER,pygame.K_SPACE):return self.activate()
             elif event.key==pygame.K_ESCAPE:
                 if self.settings:self.settings=False;self.selected=2
         return True
