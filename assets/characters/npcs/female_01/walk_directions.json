@@ -55,7 +55,7 @@
     },
     {
       "direction": "left",
-      "status": "review",
+      "status": "approved",
       "animation": "walk_left/animation.json",
       "frames": [
         {
@@ -98,7 +98,7 @@
     },
     {
       "direction": "right",
-      "status": "review",
+      "status": "approved",
       "animation": "walk_right/animation.json",
       "frames": [
         {

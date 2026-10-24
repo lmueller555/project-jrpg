@@ -74,7 +74,9 @@ def build():
         frames.append(board)
     save_loop(OUTPUT/'gardener_carry_profiles.gif',frames,[140]*4)
     (OUTPUT/'comparison.json').write_text(json.dumps({
-        'status':'review','before_commit':'8c8daed83dc959e171c6c8d59af89fb6429d163f',
+        'status':'approved' if all(json.loads((NPCS/f'female_{n:02}/walk_{d}/animation.json').read_text())['status']=='approved'
+                                  for n in (1,2,3) for d in ('left','right')) else 'review',
+        'before_commit':'8c8daed83dc959e171c6c8d59af89fb6429d163f',
         'native_frame_size':[24,36],'walk_frame_duration_ms':140,
         'change':'Three dark chin pixels per profile replaced with existing skin shades',
         'variants':[1,2,3],'directions':['left','right']

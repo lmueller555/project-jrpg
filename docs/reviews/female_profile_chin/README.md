@@ -1,6 +1,6 @@
 # Female NPC profile chin cleanup
 
-Status: awaiting user review.
+Status: approved by the user. The comparison images retain the approved artwork and their original review labels.
 
 - [Enlarged before/after face comparison](faces_before_after.png): all three palettes, both profiles. Each before face is immediately followed by its after face.
 - [Left walking comparison](walk_left_before_after.gif): synchronized before/after pairs for blue, sage and plum.
@@ -21,11 +21,11 @@ python tools/build_female_npc_palette_variants.py --direction left
 python tools/build_female_npc_palette_variants.py --direction right
 python tools/build_dress_walk.py --direction left
 python tools/build_dress_walk.py --direction right
-python tools/build_female_npc_walk_variants.py --direction left --allow-review-base
-python tools/build_female_npc_walk_variants.py --direction right --allow-review-base
+python tools/build_female_npc_walk_variants.py --direction left
+python tools/build_female_npc_walk_variants.py --direction right
 python tools/build_gardener.py
 ```
 
-The explicit review flag lets the palette builder derive comparison previews from the revised base while its appearance awaits approval. Ordinary generation still requires an approved base. Aggregate direction boards can be refreshed through the existing `build_direction_sheets`, `build_direction_board` and `build_grid` helpers without regenerating front/back sprites.
+During appearance reviews, `--allow-review-base` lets the palette builder derive comparison previews before approval. This revision is now approved, so the normal commands above work without that flag. Aggregate direction boards can be refreshed through the existing `build_direction_sheets`, `build_direction_board` and `build_grid` helpers without regenerating front/back sprites.
 
 `python -m unittest discover -s tests -v` checks that each idle and walking phase changes only those three pixels, that alpha/eyes/stride stay intact, and that the gardener's visible profile heads use the same correction, alongside the game and routine checks.

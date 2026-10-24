@@ -1,6 +1,6 @@
 # Female NPC 02 — left walk
 
-Status: stride and body motion approved. The revised profile-chin shading is awaiting user review.
+Status: stride and body motion approved. The revised profile-chin shading is approved by the user.
 
 Four native 24×36 frames apply auburn hair, a sage dress and green eyes to the approved blue base's left cycle. Exact named-color replacements preserve every pixel position, alpha, shading role, stride, arm swing, coordinated head/neck/shoulder bob and skirt pose. Skin, outlines and brown ankle boots remain identical. Fronts retain two colored irises, profiles one; back views have none.
 

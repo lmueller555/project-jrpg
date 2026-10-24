@@ -1,6 +1,6 @@
 # Sanctuary gardener — bucket routine
 
-Status: **routine and body motion approved by the user**. The shared left/right profile-jaw cleanup is awaiting review. The gardener's auburn hair, green eyes and sage dress retain their approved design; her rebuilt carrying and work poses use the corrected female_02 heads.
+Status: **routine and body motion approved by the user**. The shared left/right profile-jaw cleanup is approved by the user. The gardener's auburn hair, green eyes and sage dress retain their approved design; her rebuilt carrying and work poses use the corrected female_02 heads.
 
 She rests beside the sanctuary's southwest flowers, picks up her empty wooden bucket, descends the stairs, follows the lane south of Mira's doorway and collects from the main brook's west bank north of the upper bridge. She returns up the stairs and waters west white, southwest violet, southeast white and east yellow flowers, followed by both window troughs. For the troughs she stands between them, turning left and right and lifting the bucket above their soil level. Each target gets two small pours. She sets down the empty bucket and rests again. An unobstructed working trip takes approximately 68 seconds, followed by a **random 3–5-minute rest**.
 

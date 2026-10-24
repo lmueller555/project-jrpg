@@ -1,6 +1,6 @@
 # Town NPC — female variant 03
 
-Status: base palette and original directional appearances approved. The left/right profile-jaw cleanup is awaiting user review.
+Status: base palette and original directional appearances approved. The left/right profile-jaw cleanup is approved by the user.
 
 Blonde hair in the shared low bun, a plum calf-length dress with short sleeves, hazel eyes and brown ankle boots. This is an exact palette variant of `../female_01/idle_front.png`, preserving the silhouette, shading layout, skin, outline and boots.
 

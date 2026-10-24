@@ -82,7 +82,7 @@ The base male NPC's [left](assets/characters/npcs/male_01/walk_left/README.md), 
 
 The rust/charcoal and slate/brown left, right and back walks are approved. The [complete synchronized grid](assets/characters/npcs/male_walk_all_variants_review.gif) shows directions as rows and palettes as columns. Enlarged comparisons are also available for [left](assets/characters/npcs/male_walk_left_variants_review.gif), [right](assets/characters/npcs/male_walk_right_variants_review.gif) and [back](assets/characters/npcs/male_walk_back_variants_review.gif). All twelve male NPC walking cycles are approved.
 
-The female NPC left/right profile-jaw cleanup is awaiting review. [Before/after comparisons](docs/reviews/female_profile_chin/README.md) show the three-pixel skin-shading correction across all palettes and the gardener; approved stride and body motion are preserved.
+The female NPC left/right profile-jaw cleanup is approved by the user. [Before/after comparisons](docs/reviews/female_profile_chin/README.md) show the three-pixel skin-shading correction across all palettes and the gardener; approved stride and body motion are preserved.
 
 The first [female NPC front idle](assets/characters/npcs/female_01/README.md) is approved: dark hair in a low bun, a blue calf-length dress with short sleeves and brown ankle boots, at the same 24×36 scale. The [enlarged preview](assets/characters/npcs/female_01/idle_front_review.png) and [scale comparison](assets/characters/npcs/female_01/scale_comparison.png) show the approved design. All four directional idles and all four blue base walking cycles are approved.
 

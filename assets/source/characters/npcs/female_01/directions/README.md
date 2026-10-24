@@ -1,6 +1,6 @@
 # Female NPC — directional idle source
 
-Status: original appearances and palettes approved by the user. The left/right profile-jaw cleanup is awaiting review; back appearances retain their approval.
+Status: original appearances and palettes approved by the user. The left/right profile-jaw cleanup and back appearances are approved by the user.
 
 `turnaround_concept.png` is the generated appearance source, guided by the approved female front and the established male directional scale. Its 512-pixel panels are left, right and back. Each shows the low bun, short-sleeved blue dress, exposed calves and ankle boots. The back has no face or eyes.
 

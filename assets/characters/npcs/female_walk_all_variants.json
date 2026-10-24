@@ -145,7 +145,7 @@
     {
       "direction": "left",
       "variant": 1,
-      "status": "review",
+      "status": "approved",
       "animation": "female_01/walk_left/animation.json",
       "frames": [
         {
@@ -189,7 +189,7 @@
     {
       "direction": "left",
       "variant": 2,
-      "status": "review",
+      "status": "approved",
       "animation": "female_02/walk_left/animation.json",
       "frames": [
         {
@@ -233,7 +233,7 @@
     {
       "direction": "left",
       "variant": 3,
-      "status": "review",
+      "status": "approved",
       "animation": "female_03/walk_left/animation.json",
       "frames": [
         {
@@ -277,7 +277,7 @@
     {
       "direction": "right",
       "variant": 1,
-      "status": "review",
+      "status": "approved",
       "animation": "female_01/walk_right/animation.json",
       "frames": [
         {
@@ -321,7 +321,7 @@
     {
       "direction": "right",
       "variant": 2,
-      "status": "review",
+      "status": "approved",
       "animation": "female_02/walk_right/animation.json",
       "frames": [
         {
@@ -365,7 +365,7 @@
     {
       "direction": "right",
       "variant": 3,
-      "status": "review",
+      "status": "approved",
       "animation": "female_03/walk_right/animation.json",
       "frames": [
         {

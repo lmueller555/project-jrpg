@@ -1,6 +1,6 @@
 # Female NPC 01 — left walk
 
-Status: stride and body motion approved. The revised profile-chin shading is awaiting user review.
+Status: stride and body motion approved. The revised profile-chin shading is approved by the user.
 
 Four 24×36 frames use the shared left stride at 140 ms per frame, looping in 560 ms with foot anchor `[12, 34]`. The head retains one blue iris and the approved profile bun. The head, neck, shoulders and upper bodice rise together by one pixel on passing frames 02/04. Profile arm masks exclude the shared character's neck pixels, and the approved neckline is restored above the arms before compositing the head. All motion offsets are baked into the frame pixels.
 
