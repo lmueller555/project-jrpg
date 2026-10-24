@@ -9,9 +9,9 @@ Status: awaiting user review. Implemented in the playable town launched by `main
 
 The loading guide, rope and pail share local x=40, world x=526: the true horizontal center of the well shaft. The gardener stands at `[526,892]`, immediately south of the existing solid footprint, and faces away from the camera. Her roof never needs a cutaway.
 
-Her upper arms and forearms remain at most seven native pixels per segment. The pail follows her registered hand grip while she raises or lowers it. On release it changes from the near loading grip to the shaft grip by one six-pixel vertical depth snap, with no horizontal movement; the foreground rim masks the transition. Retrieval reverses those same registrations after both hands reach the handle. While attached, the pail stays at x=40 and moves only vertically.
+Her upper arms and forearms remain at most seven native pixels per segment. The pail follows her registered hand grip while she raises or lowers it. On release it changes from the near loading grip to the shaft grip by one continuous vertical travel up to the winding spindle, with no horizontal movement; the foreground rim hides the depth transition. Retrieval follows the same vertical registrations in reverse after both hands reach the handle. While attached, the pail stays at x=40 and moves only vertically. When lowering starts, the hanging rope starts at zero length and grows only as the bucket descends; during lifting it shortens to zero again.
 
-There is one pail. Ownership changes from actor to well after the hook-and-release pose and returns to the actor after the catch-and-unhook pose. The idle well retains a bare centered hook and a small iron loading guide on the near capstone. The existing roof, posts, stone footprint and town elevation remain unchanged.
+There is one pail. Ownership changes from actor to well after the hook-and-release pose and returns to the actor after the catch-and-unhook pose. The idle well keeps its rope completely wound onto the winch with no hanging line or hook. A small iron loading guide remains on the near capstone. The existing roof, posts, stone footprint and town elevation remain unchanged.
 
 The approved crank motion, progressively filling water, slower loaded walk, all six watering targets, collision/yield behavior, room-transition persistence and random rest timing remain. `capture.json` records the runtime states, positions, water quantities and preview timings.
 
@@ -24,4 +24,4 @@ python tools/capture_gardener_well.py
 python -m unittest discover -s tests -v
 ```
 
-The close-up uses 100 ms captures and nearest-neighbor enlargement. The route uses 200 ms captures. Tests cover arm lengths, exact centered registrations, six-pixel depth snaps, exclusive pail ownership, rim masking, unchanged roof pixels, vertical-only suspension, crank-hand alignment, occupied stations, scene persistence, water accounting and the complete watering trip.
+The close-up uses 100 ms captures and nearest-neighbor enlargement. The route uses 200 ms captures. Tests cover arm lengths, exact centered registrations, smooth handoff travel, a zero-length idle rope, monotonic payout/retraction, exclusive pail ownership, rim masking, unchanged roof pixels, vertical-only suspension, crank-hand alignment, occupied stations, scene persistence, water accounting and the complete watering trip.
