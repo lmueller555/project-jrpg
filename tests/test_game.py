@@ -47,13 +47,15 @@ class PlayableEldenmere(unittest.TestCase):
         for entity in self.world.entities:
             if entity['id'] in expected:self.assertEqual(entity['position'],expected[entity['id']])
         approved=pygame.image.load(str(main.ROOT/'assets/terrain/eldenmere/workshop/navigation/blocking.png')).convert()
+        well=main.read_json(main.ROOT/'assets/terrain/eldenmere/well/well.json')
+        pygame.draw.rect(approved,'white',well['ground_rect'])
         compiled=self.world.image(self.world.data['collision'],False)
         self.assertEqual(pygame.image.tobytes(approved,'RGB'),pygame.image.tobytes(compiled,'RGB'))
 
     def test_every_approved_route_destination_is_reachable(self):
         # Restrict this search to the original intended routes, though the
         # game also permits walking on unblocked grass outside these routes.
-        allowed=pygame.image.load(str(main.ROOT/'assets/terrain/eldenmere/workshop/navigation/allowed_routes.png'))
+        allowed=pygame.image.load(str(main.ROOT/self.world.data['navigation_allowed']))
         start=tuple(self.world.data['spawn']);queue=deque([start]);visited={start}
         destinations={tuple(p) for p in self.world.data['destinations'].values()}
         remaining=set(destinations)
@@ -100,14 +102,16 @@ class PlayableEldenmere(unittest.TestCase):
             self.assertAlmostEqual(player.position.y,start[1]+86.4,places=5)
 
     def test_wasd_arrow_controls_speed_run_and_diagonal_normalization(self):
+        # Keep the input/speed fixture in open ground south of the new well.
+        control_start=(456,936)
         for key,axis,sign in [(pygame.K_d,0,1),(pygame.K_RIGHT,0,1),(pygame.K_a,0,-1),(pygame.K_LEFT,0,-1),
                               (pygame.K_w,1,-1),(pygame.K_UP,1,-1),(pygame.K_s,1,1),(pygame.K_DOWN,1,1)]:
-            self.game.player.position.update(516,900)
+            self.game.player.position.update(control_start)
             keys=defaultdict(bool,{key:True})
             with patch('main.pygame.key.get_pressed',return_value=keys):self.game.update(.1)
-            self.assertAlmostEqual(self.game.player.position[axis]-(516,900)[axis],sign*7.2,places=5)
+            self.assertAlmostEqual(self.game.player.position[axis]-control_start[axis],sign*7.2,places=5)
         player=self.game.player
-        start=pygame.Vector2(516,900)
+        start=pygame.Vector2(control_start)
         player.position.update(start);player.update((1,1),.2,self.world)
         self.assertAlmostEqual(player.position.distance_to(start),14.4,places=5)
         player.position.update(start);player.update((1,0),.2,self.world,True)

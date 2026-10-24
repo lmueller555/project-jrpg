@@ -712,6 +712,24 @@
       ],
       "frame_duration_ms": 600,
       "phase_offset": 2
+    },
+    {
+      "id": "well",
+      "position": [
+        486,
+        792
+      ],
+      "sort_y": 888,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/well/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/well/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/well/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/well/frame_01.png",
+        "assets/maps/eldenmere/playable/entities/well/frame_05.png",
+        "assets/maps/eldenmere/playable/entities/well/frame_06.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
     }
   ],
   "foreground": [
@@ -783,7 +801,7 @@
     },
     {
       "id": "commons",
-      "name": "Village commons",
+      "name": "Well square",
       "position": [
         516,
         900
@@ -930,12 +948,35 @@
     "woodland_lane": [
       720,
       420
+    ],
+    "well_north": [
+      528,
+      828
+    ],
+    "well_south": [
+      528,
+      900
+    ],
+    "well_west": [
+      492,
+      864
+    ],
+    "well_east": [
+      564,
+      864
+    ],
+    "well_square_south": [
+      528,
+      984
     ]
   },
-  "layout_source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+  "layout_source": "assets/maps/eldenmere/well_square/layout.json",
+  "original_layout_source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
+  "navigation_allowed": "assets/maps/eldenmere/well_square/allowed_routes.png",
   "source_art": [
     "assets/terrain/eldenmere/workshop/workshop.json",
-    "assets/terrain/eldenmere/sanctuary_charm/charm.json"
+    "assets/terrain/eldenmere/sanctuary_charm/charm.json",
+    "assets/terrain/eldenmere/well/well.json"
   ],
   "npcs": [
     {

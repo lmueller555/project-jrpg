@@ -23,6 +23,8 @@ In VS Code, select the Python interpreter where you installed the dependency, op
 
 The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
 
+The commons now contains a roofed stone well, a rounded dirt-and-stone square and a southern path connection. The well has solid collision, roof occlusion and subtle water glints; the map labels this area **Well square**. The [updated town layout and in-game previews](docs/reviews/eldenmere_well/README.md) are awaiting review.
+
 **Building doors open automatically when you approach.** They stay open nearby and close as you move away. Walk into an open doorway to enter; walk down through the interior's entrance threshold to return outside. No action key is required. The sanctuary hall also connects to Caelan's bedroom and the dining room through its northern doors.
 
 All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors. The map's north and south roads currently end at the town boundary.

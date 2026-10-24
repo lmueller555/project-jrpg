@@ -10,6 +10,7 @@ from PIL import Image
 
 import build_eldenmere_town as town
 import build_eldenmere_workshop as workshop
+import build_eldenmere_well as well
 from build_eldenmere_blockout import geometry
 from build_eldenmere_stream import read_json, write_json
 
@@ -55,6 +56,7 @@ def build():
     base,_=workshop.apron(recipe,base,grass)
     flagstones=next(p for p in sanctuary['props'] if p['id']=='flagstones')
     base.alpha_composite(town.opened(TERRAIN/'sanctuary_charm/props/flagstones.png'),tuple(flagstones['position']))
+    base=well.apply_square(base,grass)
     ground=[]
     geo=geometry(plan);water,tiles=town.stream_tiles(geo)
     channels=town.channels(plan,geo);bridges=town.bridge_assets(plan)
@@ -76,26 +78,33 @@ def build():
         spec={**p,'frames':[town.opened(pack/f['image']) for f in meta['wind']['frames']],
               'sort_y':p['position'][1]+24}
         entities.append(export_entity(spec,'workshop.',600))
+    entities.append(export_entity(well.entity()))
     foreground=[]
     for bridge in bridges:
         foreground.append({'id':bridge['id'],'position':bridge['position'],
                            'image':save(OUTPUT/f"foreground/{bridge['id']}.png",bridge['foreground'])})
     collision=town.opened(TERRAIN/'workshop/navigation/blocking.png').convert('L')
+    collision=well.collision_and_routes(collision)
     collision_path=save(OUTPUT/'collision.png',collision)
     access=read_json(TERRAIN/'workshop/navigation/access.json')
+    well_recipe=read_json(ROOT/'assets/source/terrain/eldenmere/well/recipe.json')
+    destinations={**access['destinations'],**well_recipe['approaches']}
     landmarks=[]
     names={'sanctuary':'Sanctuary','mira':"Mira’s workshop",'mill':'Watermill',
            'halden':"Halden’s cottage",'elira':"Elira’s cottage",'venn':'Venn family cottage',
-           'commons':'Village commons'}
+           'commons':'Well square'}
     for key,name in names.items():landmarks.append({'id':key,'name':name,'position':access['destinations'][key]})
     manifest={'id':'eldenmere.playable','size_tiles':plan['size_tiles'],'tile_size':24,
               'size_pixels':list(base.size),'spawn':[384,312],'player_probe_size':[24,12],
               'player_draw_anchor':[12,30],'ground_frames':ground,'ground_frame_duration_ms':200,
               'collision':collision_path,'entities':entities,'foreground':foreground,
-              'landmarks':landmarks,'destinations':access['destinations'],
-              'layout_source':'assets/maps/eldenmere/terrain_foundation/adapted_plan.json',
+              'landmarks':landmarks,'destinations':destinations,
+              'layout_source':'assets/maps/eldenmere/well_square/layout.json',
+              'original_layout_source':'assets/maps/eldenmere/terrain_foundation/adapted_plan.json',
+              'navigation_allowed':'assets/maps/eldenmere/well_square/allowed_routes.png',
               'source_art':['assets/terrain/eldenmere/workshop/workshop.json',
-                            'assets/terrain/eldenmere/sanctuary_charm/charm.json'],
+                            'assets/terrain/eldenmere/sanctuary_charm/charm.json',
+                            'assets/terrain/eldenmere/well/well.json'],
               'npcs':[{'id':'mira_worker','name':'Mira','routine':'bench_work',
                        'position':[610,448],'probe_size':[8,4],
                        'animation':'assets/characters/mira/work_bench/animation.json',

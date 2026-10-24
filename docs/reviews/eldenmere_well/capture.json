@@ -1,0 +1,24 @@
+{
+  "status": "review",
+  "before_commit": "1ae774a5c8901b7f15cc4af8163fde8c1377e869",
+  "source_map": "assets/maps/eldenmere/playable/map.json",
+  "well_position": [
+    486,
+    792
+  ],
+  "ground_rect": [
+    504,
+    840,
+    48,
+    48
+  ],
+  "square_rect_tiles": [
+    16,
+    32,
+    10,
+    8
+  ],
+  "scene_duration_ms": 10800,
+  "closeup_duration_ms": 1200,
+  "walk_completed": true
+}

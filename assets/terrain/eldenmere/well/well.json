@@ -1,0 +1,44 @@
+{
+  "id": "eldenmere.well.square.24",
+  "status": "review",
+  "tile_size": 24,
+  "frame_size": [
+    84,
+    96
+  ],
+  "position": [
+    486,
+    792
+  ],
+  "ground_rect": [
+    504,
+    840,
+    48,
+    48
+  ],
+  "sort_y": 888,
+  "frames": [
+    "frames/frame_01.png",
+    "frames/frame_02.png",
+    "frames/frame_03.png",
+    "frames/frame_04.png",
+    "frames/frame_05.png",
+    "frames/frame_06.png"
+  ],
+  "frame_duration_ms": 200,
+  "cycle_duration_ms": 1200,
+  "drawing_position": [
+    564,
+    864
+  ],
+  "source_crop": [
+    109,
+    57,
+    1118,
+    1324
+  ],
+  "source_recipe": "../../../source/terrain/eldenmere/well/recipe.json",
+  "animation": "gentle water glints inside the shaft; structure and windlass fixed",
+  "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
+  "draw_water_interaction": false
+}

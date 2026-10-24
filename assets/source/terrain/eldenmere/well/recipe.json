@@ -1,0 +1,17 @@
+{
+  "id":"eldenmere.well.square.24", "status":"review", "source":"concept.png",
+  "tile_size":24, "alpha_threshold":128,
+  "frame_size":[84,96], "native_size":[72,90], "native_offset":[6,6],
+  "position":[486,792], "ground_rect":[504,840,48,48], "sort_y":888,
+  "water_duration_ms":200, "water_frame_count":6,
+  "water_sample_rect":[20,58,45,26],
+  "plaza_rect_tiles":[16,32,10,8],
+  "plaza_row_insets":[2,1,0,0,0,0,1,2],
+  "south_connector_tiles":[21,39,2,5],
+  "paving_source":"assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png",
+  "paving_positions":[[480,824],[512,816],[544,824],[472,848],[552,848],[472,872],[552,872],[480,896],[512,904],[544,896]],
+  "approaches":{"well_north":[528,828],"well_south":[528,900],"well_west":[492,864],"well_east":[564,864],"well_square_south":[528,984]},
+  "drawing_position":[564,864],
+  "gathering_rect":[420,792,72,144],
+  "palette_source":"assets/terrain/eldenmere/cottage/palette.json"
+}

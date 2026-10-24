@@ -6,7 +6,7 @@ Run `python main.py` from the repository root. This package turns the approved 6
 - `ground/`: six actor-free, building-free ground phases at 200 ms, retaining paths, masonry, brook/channels, spillways, jammed gate and bridge decks/wakes.
 - `entities/`: native building and prop frames, deduplicated within each entity. Cottages/smoke/lanterns, the mill, sanctuary and workshop retain their existing animation phases; foliage uses 600 ms frames.
 - `foreground/`: southern bridge rails, drawn over crossing actors.
-- `collision.png`: the approved final exterior's solid geometry, used by the live 24×12 player probe. Roads are not the only walkable surfaces: unblocked grass is explorable too.
+- `collision.png`: the approved final exterior's solid geometry plus the well's 48×48 footprint, used by the live 24×12 player probe. Roads are not the only walkable surfaces: unblocked grass is explorable too.
 - `overview.png`: actor-free in-game town map.
 
 The player starts at `[384,312]` in the sanctuary courtyard. These coordinates are the **centre of the ground collision probe**. Drawing uses the existing town registration `[12,30]` within Caelan's 24×36 frame; the artwork's bottom-foot anchor remains `[12,34]`. This distinction preserves the approved stair/bridge/doorway clearance measurements and sprite placement.
@@ -17,12 +17,15 @@ Ground baselines sort roofs, tree canopies and props against the player; bridge 
 
 The `npcs` registry contains two actors. Mira's [outdoor bench routine](../../../characters/mira/work_bench/README.md) is approved by the user. Its variable-duration poses and bench fitting share the global game clock, so returning from a room does not create another Mira or restart her work. Her 8×4 foot blocker leaves both approved yard approach points and the doorway usable.
 
-The [sanctuary gardener](../../../characters/npcs/female_02/gardener/README.md) uses a persistent moving routine and a 12×8 foot probe. Task waypoints, flower-root targets and rest bounds live in `../routines/gardener.json`. She follows the terrace stairs and the lower part of the workshop lane, fills at dry-bank position `[786,408]`, and waters the four approved courtyard patches plus both raised window troughs. She reaches the troughs via the gap east of the bench and turns between them from `[316,294]`, leaving the doorway clear. Each trip is followed by a uniformly random 180–300-second rest, sampled once on entering rest; the initial rest uses the same bounds. Safe movement is checked against the existing mask, other NPCs and Caelan. Occupied stations cause waiting; sustained obstructions can trigger a local detour. Task state, bucket contents and the rest countdown continue across room visits. This routine is approved by the user. The approved static collision mask and all source scenery remain unchanged.
+The [sanctuary gardener](../../../characters/npcs/female_02/gardener/README.md) uses a persistent moving routine and a 12×8 foot probe. Task waypoints, flower-root targets and rest bounds live in `../routines/gardener.json`. She follows the terrace stairs and the lower part of the workshop lane, fills at dry-bank position `[786,408]`, and waters the four approved courtyard patches plus both raised window troughs. She reaches the troughs via the gap east of the bench and turns between them from `[316,294]`, leaving the doorway clear. Each trip is followed by a uniformly random 180–300-second rest, sampled once on entering rest; the initial rest uses the same bounds. Safe movement is checked against the existing mask, other NPCs and Caelan. Occupied stations cause waiting; sustained obstructions can trigger a local detour. Task state, bucket contents and the rest countdown continue across room visits. This routine is approved by the user.
+
+The [well square overlay](../well_square/README.md), awaiting review, adds a 10×8-tile commons clearing, reused stone paving and a southern path connection. The well is one additional animated depth-sorted entity. Only its 2×2-tile ground footprint becomes solid; its roof can overhang walkable ground. `navigation_allowed` points to the extended route mask; `destinations` includes its four approaches and southern connector. All original destinations and building positions remain intact. The original approved foundation stays recorded in `original_layout_source`.
 
 To rebuild in the asset environment:
 
 ```sh
 python -m pip install -r tools/requirements-assets.txt
+python tools/build_eldenmere_well.py
 python tools/build_playable_eldenmere.py
 ```
 
