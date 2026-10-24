@@ -244,6 +244,11 @@ def capture_one(spec: ReviewSpec, review: dict, actor_record: dict,
     actor.select_step(spec.action, position=review["station"], scene_id=review["scene"])
     if actor.action_id != spec.action:
         raise ValueError(f"Runtime selected {actor.action_id!r}, expected {spec.action!r}")
+    # Register the same room-owned workstation props used by the playable
+    # game. Their visibility follows the selected action frame's explicit
+    # surface/actor ownership flag, so every handoff in the review is the
+    # actual runtime handoff rather than a capture-only approximation.
+    world.attach_routine_props(actor)
     world.npcs.append(actor)
 
     timeline = boundaries(records, world)

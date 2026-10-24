@@ -6,14 +6,17 @@ ambient animation.
 
 - [Sorting provisions](provisions.gif) at the two care-supply tables in the
   sanctuary dining room.
-- [Checking the preparation list](preparation_list.gif) at the dining-room counter.
+- [Checking the preparation list](preparation_list.gif) at the hall bookstand.
 - [Tending the hearth](hearth.gif) beside the dining-room fire.
 - [Arranging hall linens](hall_linens.gif) at the sanctuary mending table.
 
 Each GIF enlarges a native scene by 4× with nearest-neighbor scaling. Serene is
 registered from the sanctuary schedule's review coordinates, selected through
 the runtime `RoutineNPC` API, and passed through the normal `World` renderer,
-including entity depth order. Every character pixel comes directly from
+including the persistent workstation props and entity depth order. Each loose
+object stays on its furniture until its authored frame transfers ownership to
+Serene's hands, then returns to the surface before the loop closes. Every
+character pixel comes directly from
 `assets/characters/serene/routines/animations.json` and its referenced PNG
 frames; the capture script does not draw, mutate or substitute sprites.
 

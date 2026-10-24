@@ -116,6 +116,10 @@
       },
       {
         "file": "consult_list/frame_10.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "consult_list/frame_11.png",
         "duration_ms": 650
       }
     ],
@@ -213,7 +217,7 @@
       "facing": "back",
       "loop": true,
       "duration_ms": 4840,
-      "description": "Serene transfers a sealed provision jar across the work surface, inspects its label, then returns it for a seamless sorting loop.",
+      "description": "Serene lifts a sealed provision jar from the work surface, checks and turns it, then returns it for a seamless sorting loop.",
       "frames": [
         {
           "file": "sort_provisions/frame_01.png",
@@ -232,54 +236,57 @@
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              0,
-              11
+              10,
+              2
             ]
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "sort_provisions/frame_02.png",
           "duration_ms": 280,
-          "phase": "reach_left_surface",
+          "phase": "reach_surface",
           "hands": [
             [
-              2,
-              13
+              5,
+              23
             ],
             [
-              19,
-              23
+              14,
+              7
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              0,
-              11
+              10,
+              2
             ]
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "sort_provisions/frame_03.png",
           "duration_ms": 300,
-          "phase": "lift_left",
+          "phase": "lift_jar",
           "hands": [
             [
-              3,
-              15
+              5,
+              23
             ],
             [
-              19,
-              23
+              14,
+              8
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              1,
-              13
+              10,
+              3
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_04.png",
@@ -287,70 +294,73 @@
           "phase": "inspect_label",
           "hands": [
             [
-              16,
-              18
+              14,
+              17
             ],
             [
-              19,
+              18,
               17
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              17,
-              14
+              14,
+              12
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_05.png",
           "duration_ms": 320,
-          "phase": "carry_to_right_surface",
+          "phase": "turn_jar",
           "hands": [
             [
-              16,
-              18
+              13,
+              13
             ],
             [
-              20,
-              14
+              16,
+              12
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              19,
-              12
+              12,
+              7
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_06.png",
           "duration_ms": 280,
-          "phase": "lower_right_surface",
+          "phase": "lower_jar",
           "hands": [
             [
               5,
               23
             ],
             [
-              21,
-              13
+              14,
+              8
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              19,
-              11
+              10,
+              3
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_07.png",
           "duration_ms": 400,
-          "phase": "release_right_surface",
+          "phase": "release_jar",
           "hands": [
             [
               5,
@@ -364,54 +374,57 @@
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              19,
-              11
+              10,
+              2
             ]
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "sort_provisions/frame_08.png",
           "duration_ms": 280,
-          "phase": "reach_right_surface",
+          "phase": "reach_again",
           "hands": [
             [
-              5,
-              23
+              10,
+              7
             ],
             [
-              21,
-              13
+              19,
+              23
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              19,
-              11
+              10,
+              2
             ]
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "sort_provisions/frame_09.png",
           "duration_ms": 300,
-          "phase": "lift_right",
+          "phase": "lift_again",
           "hands": [
             [
-              5,
-              23
+              10,
+              8
             ],
             [
               19,
-              16
+              23
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              17,
-              14
+              10,
+              3
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_10.png",
@@ -419,30 +432,31 @@
           "phase": "confirm_label",
           "hands": [
             [
-              16,
-              18
+              14,
+              17
             ],
             [
-              19,
+              18,
               17
             ]
           ],
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              17,
-              14
+              14,
+              12
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_11.png",
           "duration_ms": 320,
-          "phase": "return_left_surface",
+          "phase": "return_jar",
           "hands": [
             [
-              3,
-              15
+              10,
+              8
             ],
             [
               19,
@@ -452,10 +466,11 @@
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              1,
-              13
+              10,
+              3
             ]
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "sort_provisions/frame_12.png",
@@ -474,10 +489,11 @@
           "prop": {
             "kind": "provision_jar",
             "anchor": [
-              0,
-              11
+              10,
+              2
             ]
-          }
+          },
+          "prop_owner": "surface"
         }
       ],
       "review": {
@@ -490,7 +506,7 @@
     "consult_list": {
       "facing": "back",
       "loop": true,
-      "duration_ms": 4590,
+      "duration_ms": 4850,
       "description": "Serene lifts the sanctuary preparation list, pauses to read it, checks an item and returns it to the work surface.",
       "frames": [
         {
@@ -510,11 +526,12 @@
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              11
+              9,
+              -7
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "consult_list/frame_02.png",
@@ -526,18 +543,19 @@
               23
             ],
             [
-              20,
-              13
+              16,
+              3
             ]
           ],
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              11
+              9,
+              -7
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "consult_list/frame_03.png",
@@ -545,22 +563,23 @@
           "phase": "lift_list",
           "hands": [
             [
-              15,
-              18
+              5,
+              23
             ],
             [
-              19,
-              15
+              16,
+              3
             ]
           ],
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              12
+              9,
+              -5
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_04.png",
@@ -568,22 +587,23 @@
           "phase": "raise_to_read",
           "hands": [
             [
-              16,
-              18
+              13,
+              10
             ],
             [
-              20,
-              17
+              19,
+              10
             ]
           ],
           "prop": {
             "kind": "list",
             "anchor": [
-              16,
-              14
+              13,
+              2
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_05.png",
@@ -603,10 +623,11 @@
             "kind": "list",
             "anchor": [
               17,
-              14
+              10
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_06.png",
@@ -626,10 +647,11 @@
             "kind": "list",
             "anchor": [
               16,
-              14
+              10
             ],
             "state": "checked"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_07.png",
@@ -649,10 +671,11 @@
             "kind": "list",
             "anchor": [
               17,
-              14
+              10
             ],
             "state": "checked"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_08.png",
@@ -660,25 +683,50 @@
           "phase": "lower_list",
           "hands": [
             [
-              15,
-              18
+              13,
+              10
             ],
             [
               19,
-              15
+              10
             ]
           ],
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              12
+              13,
+              2
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "consult_list/frame_09.png",
+          "duration_ms": 260,
+          "phase": "place_list",
+          "hands": [
+            [
+              5,
+              23
+            ],
+            [
+              16,
+              3
+            ]
+          ],
+          "prop": {
+            "kind": "list",
+            "anchor": [
+              9,
+              -5
+            ],
+            "state": "plain"
+          },
+          "prop_owner": "actor"
+        },
+        {
+          "file": "consult_list/frame_10.png",
           "duration_ms": 260,
           "phase": "return_list_surface",
           "hands": [
@@ -687,21 +735,22 @@
               23
             ],
             [
-              20,
-              13
+              16,
+              3
             ]
           ],
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              11
+              9,
+              -7
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "surface"
         },
         {
-          "file": "consult_list/frame_10.png",
+          "file": "consult_list/frame_11.png",
           "duration_ms": 650,
           "phase": "settle",
           "hands": [
@@ -717,11 +766,12 @@
           "prop": {
             "kind": "list",
             "anchor": [
-              17,
-              11
+              9,
+              -7
             ],
             "state": "plain"
-          }
+          },
+          "prop_owner": "surface"
         }
       ],
       "review": {
@@ -1038,11 +1088,12 @@
           "prop": {
             "kind": "linen",
             "anchor": [
-              1,
-              11
+              -6,
+              1
             ],
             "state": "folded"
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "arrange_hall/frame_02.png",
@@ -1050,8 +1101,8 @@
           "phase": "reach_linen_surface",
           "hands": [
             [
-              3,
-              13
+              -2,
+              6
             ],
             [
               19,
@@ -1061,11 +1112,12 @@
           "prop": {
             "kind": "linen",
             "anchor": [
-              1,
-              11
+              -6,
+              1
             ],
             "state": "folded"
-          }
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "arrange_hall/frame_03.png",
@@ -1073,8 +1125,8 @@
           "phase": "lift_linen",
           "hands": [
             [
-              3,
-              15
+              -2,
+              7
             ],
             [
               19,
@@ -1084,11 +1136,12 @@
           "prop": {
             "kind": "linen",
             "anchor": [
-              2,
-              14
+              -6,
+              2
             ],
             "state": "folded"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_04.png",
@@ -1096,22 +1149,23 @@
           "phase": "open_half",
           "hands": [
             [
-              4,
-              18
+              1,
+              12
             ],
             [
-              11,
-              18
+              9,
+              12
             ]
           ],
           "prop": {
             "kind": "linen",
             "anchor": [
-              3,
-              17
+              0,
+              8
             ],
             "state": "half"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_05.png",
@@ -1131,10 +1185,11 @@
             "kind": "linen",
             "anchor": [
               5,
-              19
+              15
             ],
             "state": "open"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_06.png",
@@ -1143,7 +1198,7 @@
           "hands": [
             [
               9,
-              21
+              20
             ],
             [
               18,
@@ -1154,10 +1209,11 @@
             "kind": "linen",
             "anchor": [
               5,
-              19
+              15
             ],
             "state": "open"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_07.png",
@@ -1170,17 +1226,18 @@
             ],
             [
               15,
-              21
+              20
             ]
           ],
           "prop": {
             "kind": "linen",
             "anchor": [
               5,
-              19
+              15
             ],
             "state": "open"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_08.png",
@@ -1188,22 +1245,23 @@
           "phase": "fold_half",
           "hands": [
             [
-              4,
-              18
+              1,
+              12
             ],
             [
-              11,
-              18
+              9,
+              12
             ]
           ],
           "prop": {
             "kind": "linen",
             "anchor": [
-              3,
-              17
+              0,
+              8
             ],
             "state": "half"
-          }
+          },
+          "prop_owner": "actor"
         },
         {
           "file": "arrange_hall/frame_09.png",
@@ -1211,31 +1269,8 @@
           "phase": "fold_square",
           "hands": [
             [
-              3,
-              15
-            ],
-            [
-              6,
-              16
-            ]
-          ],
-          "prop": {
-            "kind": "linen",
-            "anchor": [
-              2,
-              14
-            ],
-            "state": "folded"
-          }
-        },
-        {
-          "file": "arrange_hall/frame_10.png",
-          "duration_ms": 280,
-          "phase": "return_linen_surface",
-          "hands": [
-            [
-              3,
-              13
+              -2,
+              7
             ],
             [
               19,
@@ -1245,11 +1280,36 @@
           "prop": {
             "kind": "linen",
             "anchor": [
-              1,
-              11
+              -6,
+              2
             ],
             "state": "folded"
-          }
+          },
+          "prop_owner": "actor"
+        },
+        {
+          "file": "arrange_hall/frame_10.png",
+          "duration_ms": 280,
+          "phase": "return_linen_surface",
+          "hands": [
+            [
+              -2,
+              6
+            ],
+            [
+              19,
+              23
+            ]
+          ],
+          "prop": {
+            "kind": "linen",
+            "anchor": [
+              -6,
+              1
+            ],
+            "state": "folded"
+          },
+          "prop_owner": "surface"
         },
         {
           "file": "arrange_hall/frame_11.png",
@@ -1268,11 +1328,12 @@
           "prop": {
             "kind": "linen",
             "anchor": [
-              1,
-              11
+              -6,
+              1
             ],
             "state": "folded"
-          }
+          },
+          "prop_owner": "surface"
         }
       ],
       "review": {
@@ -1281,6 +1342,32 @@
         "scale": 8,
         "background": "#e8edf2"
       }
+    }
+  },
+  "surface_props": {
+    "provision_jar": {
+      "file": "props/provision_jar.png",
+      "size": [
+        5,
+        6
+      ],
+      "kind": "provision_jar"
+    },
+    "preparation_list": {
+      "file": "props/preparation_list.png",
+      "size": [
+        7,
+        8
+      ],
+      "kind": "list"
+    },
+    "folded_linen": {
+      "file": "props/folded_linen.png",
+      "size": [
+        5,
+        4
+      ],
+      "kind": "linen"
     }
   },
   "source_recipe": "../../../source/characters/serene/routines/recipe.json",

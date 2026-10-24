@@ -115,9 +115,18 @@ class World:
         self.doors=[Door(record,self) for record in self.data.get('doors',[])]
         self.well=DrawingWell(self) if any(r['id']=='well' for r in self.entities) else None
         self.npcs=[]
+        self.routine_props=[]
         for record in self.data.get('npcs',[]):
             actor=Gardener if record['routine']=='watering' else BenchWorker
             self.npcs.append(actor(record,self))
+
+    def attach_routine_props(self,actor):
+        """Permanently register one actor's nonblocking props for this room."""
+        registered={(id(owner),prop['id']) for owner,prop in self.routine_props}
+        for prop in actor.surface_props:
+            key=(id(actor),prop['id'])
+            if prop['scene']==self.data['id'] and key not in registered:
+                self.routine_props.append((actor,prop));registered.add(key)
 
     def image(self,path,alpha=True):
         key=(path,alpha)
@@ -155,6 +164,12 @@ class World:
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
+        for owner,prop in self.routine_props:
+            if not owner.surface_prop_visible(prop):continue
+            surface=prop['surface'];rect=surface.get_rect(topleft=prop['position'])
+            if rect.colliderect(viewport):
+                ordered.append((prop.get('sort_y',rect.bottom),prop.get('sort_priority',1.5),
+                                'routine_prop',(surface,prop['position'])))
         for npc in self.npcs:
             if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
             ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
@@ -171,6 +186,9 @@ class World:
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
+            elif kind=='routine_prop':
+                surface,position=record
+                target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
             else:
                 phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
@@ -289,6 +307,10 @@ class Game:
             world.npcs.append(actor)
             self.persistent_npcs.append(actor)
             self._routine_worlds[actor]=world
+            # Register props with every referenced room once. They stay on the
+            # furniture when the persistent actor transfers to another room.
+            for scene_id in {prop['scene'] for prop in actor.surface_props}:
+                self._scene_by_id(scene_id).attach_routine_props(actor)
 
     def _transfer_routine_npc(self,actor,step):
         """Move one persistent actor between rooms without cloning or resetting it."""

@@ -86,6 +86,7 @@ class RoutineNPC:
                            self.draw_anchor[1]-base_anchor[1])))
 
         self.idles={};self.walks={};self.actions={};self.action_metadata={}
+        self.action_records={};self.surface_props=[]
         self._load_images(world)
         self._validate_steps()
         self.step_index=0;self.state_ms=0.0;self.walk_ms=0.0
@@ -144,6 +145,19 @@ class RoutineNPC:
                 raise ValueError(f'Routine action {name!r} duration is {declared}, frames total {duration}')
             self.actions[name]=frames
             self.action_metadata[name]=metadata
+            self.action_records[name]=records
+
+        # Workstation props belong to their rooms rather than Serene's body
+        # sprite.  Keeping their data on the persistent actor lets every room
+        # ask the same schedule which copy is currently visible.
+        behavior_folder=(ROOT/self.data['behavior']).parent
+        for record in self.behavior.get('surface_props',[]):
+            image_path=record.get('file',record.get('image'))
+            if not image_path:
+                raise ValueError(f'Surface prop {record.get("id", "<unknown>")!r} needs a file')
+            prop=dict(record)
+            prop['surface']=world.image(self._asset_path(image_path,behavior_folder))
+            self.surface_props.append(prop)
 
     def _padded(self,image):
         if image.get_size()==self.canvas_size:return image
@@ -174,6 +188,21 @@ class RoutineNPC:
             if 'facing' in step and step['facing'] not in self.DIRECTIONS:
                 raise ValueError(f'Step {step["id"]!r} has invalid facing {step["facing"]!r}')
 
+        prop_ids=set()
+        step_types={step['id']:step['type'] for step in self.steps}
+        for prop in self.surface_props:
+            label=f'Surface prop {prop.get("id", "<unknown>")!r}'
+            if not prop.get('id'):raise ValueError('Surface prop needs an id')
+            if prop['id'] in prop_ids:raise ValueError(f'Duplicate surface prop id {prop["id"]!r}')
+            prop_ids.add(prop['id'])
+            if not prop.get('scene'):raise ValueError(f'{label} needs a scene')
+            if len(prop.get('position',()))!=2:raise ValueError(f'{label} needs a two-value position')
+            action_steps=self._surface_prop_steps(prop)
+            unknown=set(action_steps)-set(step_types)
+            if unknown:raise ValueError(f'{label} names unknown action steps {sorted(unknown)!r}')
+            if any(step_types[step_id]!='action' for step_id in action_steps):
+                raise ValueError(f'{label} may only name action steps')
+
     @property
     def blocker(self):
         width,height=self.probe_size
@@ -194,6 +223,39 @@ class RoutineNPC:
         if self.action_id:return self._frame_index(self.actions[self.action_id],self.state_ms)
         if self.moving:return self._frame_index(self.walks[self.facing],self.walk_ms)
         return 0
+
+    @property
+    def current_action_record(self):
+        """Authored metadata for the action image currently on screen."""
+        if not self.action_id:return {}
+        return self.action_records[self.action_id][self.frame_index]
+
+    @property
+    def current_action_frame_metadata(self):
+        """Compatibility name for inspection and focused runtime tests."""
+        return self.current_action_record
+
+    @staticmethod
+    def _surface_prop_steps(prop):
+        action_steps=prop.get('action_steps',prop.get('action_step',()))
+        if isinstance(action_steps,str):action_steps=(action_steps,)
+        return tuple(action_steps)
+
+    def surface_prop_visible(self,prop):
+        """Whether a room-owned prop should be drawn in the current frame.
+
+        The prop stays on its furniture for the whole schedule. During its own
+        action, one authored frame flag atomically moves ownership between the
+        surface sprite and actor sprite, preventing duplicates and blank gaps.
+        """
+        action_steps=self._surface_prop_steps(prop)
+        if self.state not in action_steps or not self.action_id:return True
+        return self.current_action_record.get('prop_owner','surface')!='actor'
+
+    def visible_surface_props(self,scene_id):
+        """Visible, nonblocking workstation props in one scene."""
+        return [prop for prop in self.surface_props
+                if prop['scene']==scene_id and self.surface_prop_visible(prop)]
 
     def _duration(self,step=None):
         step=self.step if step is None else step

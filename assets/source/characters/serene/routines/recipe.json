@@ -25,36 +25,37 @@
   "actions": {
     "sort_provisions": {
       "facing": "back",
-      "description": "Serene transfers a sealed provision jar across the work surface, inspects its label, then returns it for a seamless sorting loop.",
+      "description": "Serene lifts a sealed provision jar from the work surface, checks and turns it, then returns it for a seamless sorting loop.",
       "frames": [
-        {"phase": "settle", "duration_ms": 700, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [0,11]}},
-        {"phase": "reach_left_surface", "duration_ms": 280, "arms": [[[6,16],[4,14],[2,13]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [0,11]}},
-        {"phase": "lift_left", "duration_ms": 300, "arms": [[[6,16],[4,15],[3,15]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [1,13]}},
-        {"phase": "inspect_label", "duration_ms": 480, "arms": [[[6,16],[11,17],[16,18]], [[18,16],[19,16],[19,17]]], "prop": {"kind": "provision_jar", "anchor": [17,14]}},
-        {"phase": "carry_to_right_surface", "duration_ms": 320, "arms": [[[6,16],[11,17],[16,18]], [[18,16],[20,15],[20,14]]], "prop": {"kind": "provision_jar", "anchor": [19,12]}},
-        {"phase": "lower_right_surface", "duration_ms": 280, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[20,14],[21,13]]], "prop": {"kind": "provision_jar", "anchor": [19,11]}},
-        {"phase": "release_right_surface", "duration_ms": 400, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [19,11]}},
-        {"phase": "reach_right_surface", "duration_ms": 280, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[20,14],[21,13]]], "prop": {"kind": "provision_jar", "anchor": [19,11]}},
-        {"phase": "lift_right", "duration_ms": 300, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,15],[19,16]]], "prop": {"kind": "provision_jar", "anchor": [17,14]}},
-        {"phase": "confirm_label", "duration_ms": 480, "arms": [[[6,16],[11,17],[16,18]], [[18,16],[19,16],[19,17]]], "prop": {"kind": "provision_jar", "anchor": [17,14]}},
-        {"phase": "return_left_surface", "duration_ms": 320, "arms": [[[6,16],[4,15],[3,15]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [1,13]}},
-        {"phase": "settle", "duration_ms": 700, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [0,11]}}
+        {"phase": "settle", "duration_ms": 700, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,2]}, "prop_owner": "surface"},
+        {"phase": "reach_surface", "duration_ms": 280, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,10],[14,7]]], "prop": {"kind": "provision_jar", "anchor": [10,2]}, "prop_owner": "surface"},
+        {"phase": "lift_jar", "duration_ms": 300, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,11],[14,8]]], "prop": {"kind": "provision_jar", "anchor": [10,3]}, "prop_owner": "actor"},
+        {"phase": "inspect_label", "duration_ms": 480, "arms": [[[6,16],[10,17],[14,17]], [[18,16],[19,16],[18,17]]], "prop": {"kind": "provision_jar", "anchor": [14,12]}, "prop_owner": "actor"},
+        {"phase": "turn_jar", "duration_ms": 320, "arms": [[[6,16],[10,16],[13,13]], [[18,16],[18,13],[16,12]]], "prop": {"kind": "provision_jar", "anchor": [12,7]}, "prop_owner": "actor"},
+        {"phase": "lower_jar", "duration_ms": 280, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,11],[14,8]]], "prop": {"kind": "provision_jar", "anchor": [10,3]}, "prop_owner": "actor"},
+        {"phase": "release_jar", "duration_ms": 400, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,2]}, "prop_owner": "surface"},
+        {"phase": "reach_again", "duration_ms": 280, "arms": [[[6,16],[7,10],[10,7]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,2]}, "prop_owner": "surface"},
+        {"phase": "lift_again", "duration_ms": 300, "arms": [[[6,16],[7,11],[10,8]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,3]}, "prop_owner": "actor"},
+        {"phase": "confirm_label", "duration_ms": 480, "arms": [[[6,16],[10,17],[14,17]], [[18,16],[19,16],[18,17]]], "prop": {"kind": "provision_jar", "anchor": [14,12]}, "prop_owner": "actor"},
+        {"phase": "return_jar", "duration_ms": 320, "arms": [[[6,16],[7,11],[10,8]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,3]}, "prop_owner": "actor"},
+        {"phase": "settle", "duration_ms": 700, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "provision_jar", "anchor": [10,2]}, "prop_owner": "surface"}
       ]
     },
     "consult_list": {
       "facing": "back",
       "description": "Serene lifts the sanctuary preparation list, pauses to read it, checks an item and returns it to the work surface.",
       "frames": [
-        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "list", "anchor": [17,11], "state": "plain"}},
-        {"phase": "reach_list_surface", "duration_ms": 260, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,14],[20,13]]], "prop": {"kind": "list", "anchor": [17,11], "state": "plain"}},
-        {"phase": "lift_list", "duration_ms": 300, "arms": [[[6,16],[9,17],[15,18]], [[18,16],[19,15],[19,15]]], "prop": {"kind": "list", "anchor": [17,12], "state": "plain"}},
-        {"phase": "raise_to_read", "duration_ms": 340, "arms": [[[6,16],[10,17],[16,18]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [16,14], "state": "plain"}},
-        {"phase": "read", "duration_ms": 820, "arms": [[[6,16],[10,17],[16,17]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [17,14], "state": "plain"}},
-        {"phase": "check_item", "duration_ms": 360, "arms": [[[6,16],[12,16],[18,16]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [16,14], "state": "checked"}},
-        {"phase": "confirm", "duration_ms": 650, "arms": [[[6,16],[10,17],[16,18]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [17,14], "state": "checked"}},
-        {"phase": "lower_list", "duration_ms": 300, "arms": [[[6,16],[9,17],[15,18]], [[18,16],[19,15],[19,15]]], "prop": {"kind": "list", "anchor": [17,12], "state": "plain"}},
-        {"phase": "return_list_surface", "duration_ms": 260, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,14],[20,13]]], "prop": {"kind": "list", "anchor": [17,11], "state": "plain"}},
-        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "list", "anchor": [17,11], "state": "plain"}}
+        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "list", "anchor": [9,-7], "state": "plain"}, "prop_owner": "surface"},
+        {"phase": "reach_list_surface", "duration_ms": 260, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,9],[16,3]]], "prop": {"kind": "list", "anchor": [9,-7], "state": "plain"}, "prop_owner": "surface"},
+        {"phase": "lift_list", "duration_ms": 300, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,9],[16,3]]], "prop": {"kind": "list", "anchor": [9,-5], "state": "plain"}, "prop_owner": "actor"},
+        {"phase": "raise_to_read", "duration_ms": 340, "arms": [[[6,16],[9,12],[13,10]], [[18,16],[19,12],[19,10]]], "prop": {"kind": "list", "anchor": [13,2], "state": "plain"}, "prop_owner": "actor"},
+        {"phase": "read", "duration_ms": 820, "arms": [[[6,16],[10,17],[16,17]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [17,10], "state": "plain"}, "prop_owner": "actor"},
+        {"phase": "check_item", "duration_ms": 360, "arms": [[[6,16],[12,16],[18,16]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [16,10], "state": "checked"}, "prop_owner": "actor"},
+        {"phase": "confirm", "duration_ms": 650, "arms": [[[6,16],[10,17],[16,18]], [[18,16],[20,16],[20,17]]], "prop": {"kind": "list", "anchor": [17,10], "state": "checked"}, "prop_owner": "actor"},
+        {"phase": "lower_list", "duration_ms": 300, "arms": [[[6,16],[9,12],[13,10]], [[18,16],[19,12],[19,10]]], "prop": {"kind": "list", "anchor": [13,2], "state": "plain"}, "prop_owner": "actor"},
+        {"phase": "place_list", "duration_ms": 260, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,9],[16,3]]], "prop": {"kind": "list", "anchor": [9,-5], "state": "plain"}, "prop_owner": "actor"},
+        {"phase": "return_list_surface", "duration_ms": 260, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[18,9],[16,3]]], "prop": {"kind": "list", "anchor": [9,-7], "state": "plain"}, "prop_owner": "surface"},
+        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "list", "anchor": [9,-7], "state": "plain"}, "prop_owner": "surface"}
       ]
     },
     "tend_hearth": {
@@ -77,17 +78,17 @@
       "facing": "back",
       "description": "Serene lifts a folded sanctuary linen, opens it, smooths both sides and folds it back into a neat square.",
       "frames": [
-        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [1,11], "state": "folded"}},
-        {"phase": "reach_linen_surface", "duration_ms": 280, "arms": [[[6,16],[4,14],[3,13]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [1,11], "state": "folded"}},
-        {"phase": "lift_linen", "duration_ms": 300, "arms": [[[6,16],[5,15],[3,15]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [2,14], "state": "folded"}},
-        {"phase": "open_half", "duration_ms": 340, "arms": [[[6,16],[5,17],[4,18]], [[18,16],[15,17],[11,18]]], "prop": {"kind": "linen", "anchor": [3,17], "state": "half"}},
-        {"phase": "spread_full", "duration_ms": 420, "arms": [[[6,16],[7,18],[6,20]], [[18,16],[17,18],[18,20]]], "prop": {"kind": "linen", "anchor": [5,19], "state": "open"}},
-        {"phase": "smooth_left", "duration_ms": 360, "arms": [[[6,16],[8,18],[9,21]], [[18,16],[17,18],[18,20]]], "prop": {"kind": "linen", "anchor": [5,19], "state": "open"}},
-        {"phase": "smooth_right", "duration_ms": 360, "arms": [[[6,16],[7,18],[6,20]], [[18,16],[16,18],[15,21]]], "prop": {"kind": "linen", "anchor": [5,19], "state": "open"}},
-        {"phase": "fold_half", "duration_ms": 340, "arms": [[[6,16],[5,17],[4,18]], [[18,16],[15,17],[11,18]]], "prop": {"kind": "linen", "anchor": [3,17], "state": "half"}},
-        {"phase": "fold_square", "duration_ms": 300, "arms": [[[6,16],[5,15],[3,15]], [[18,16],[12,17],[6,16]]], "prop": {"kind": "linen", "anchor": [2,14], "state": "folded"}},
-        {"phase": "return_linen_surface", "duration_ms": 280, "arms": [[[6,16],[4,14],[3,13]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [1,11], "state": "folded"}},
-        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [1,11], "state": "folded"}}
+        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,1], "state": "folded"}, "prop_owner": "surface"},
+        {"phase": "reach_linen_surface", "duration_ms": 280, "arms": [[[6,16],[2,11],[-2,6]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,1], "state": "folded"}, "prop_owner": "surface"},
+        {"phase": "lift_linen", "duration_ms": 300, "arms": [[[6,16],[2,12],[-2,7]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,2], "state": "folded"}, "prop_owner": "actor"},
+        {"phase": "open_half", "duration_ms": 340, "arms": [[[6,16],[4,13],[1,12]], [[18,16],[14,13],[9,12]]], "prop": {"kind": "linen", "anchor": [0,8], "state": "half"}, "prop_owner": "actor"},
+        {"phase": "spread_full", "duration_ms": 420, "arms": [[[6,16],[7,18],[6,20]], [[18,16],[17,18],[18,20]]], "prop": {"kind": "linen", "anchor": [5,15], "state": "open"}, "prop_owner": "actor"},
+        {"phase": "smooth_left", "duration_ms": 360, "arms": [[[6,16],[8,18],[9,20]], [[18,16],[17,18],[18,20]]], "prop": {"kind": "linen", "anchor": [5,15], "state": "open"}, "prop_owner": "actor"},
+        {"phase": "smooth_right", "duration_ms": 360, "arms": [[[6,16],[7,18],[6,20]], [[18,16],[16,18],[15,20]]], "prop": {"kind": "linen", "anchor": [5,15], "state": "open"}, "prop_owner": "actor"},
+        {"phase": "fold_half", "duration_ms": 340, "arms": [[[6,16],[4,13],[1,12]], [[18,16],[14,13],[9,12]]], "prop": {"kind": "linen", "anchor": [0,8], "state": "half"}, "prop_owner": "actor"},
+        {"phase": "fold_square", "duration_ms": 300, "arms": [[[6,16],[2,12],[-2,7]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,2], "state": "folded"}, "prop_owner": "actor"},
+        {"phase": "return_linen_surface", "duration_ms": 280, "arms": [[[6,16],[2,11],[-2,6]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,1], "state": "folded"}, "prop_owner": "surface"},
+        {"phase": "settle", "duration_ms": 650, "arms": [[[6,16],[5,20],[5,23]], [[18,16],[19,20],[19,23]]], "prop": {"kind": "linen", "anchor": [-6,1], "state": "folded"}, "prop_owner": "surface"}
       ]
     }
   }

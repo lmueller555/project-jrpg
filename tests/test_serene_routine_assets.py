@@ -17,6 +17,20 @@ SERENE_SOURCE = ROOT / "assets/source/characters/serene"
 SERENE_OUTPUT = ROOT / "assets/characters/serene"
 ACTIONS = ("sort_provisions", "consult_list", "tend_hearth", "arrange_hall")
 BODY_OFFSET = (12, 6)
+PROP_OWNERSHIP = {
+    "sort_provisions": (
+        "surface", "surface", "actor", "actor", "actor", "actor",
+        "surface", "surface", "actor", "actor", "actor", "surface",
+    ),
+    "consult_list": (
+        "surface", "surface", "actor", "actor", "actor",
+        "actor", "actor", "actor", "actor", "surface", "surface",
+    ),
+    "arrange_hall": (
+        "surface", "surface", "actor", "actor", "actor", "actor",
+        "actor", "actor", "actor", "surface", "surface",
+    ),
+}
 
 
 def opened(path: Path) -> Image.Image:
@@ -62,6 +76,32 @@ class TestSereneRoutineAssets(unittest.TestCase):
             assert rich["duration_ms"] == sum(frame["duration_ms"] for frame in runtime)
             assert rich["facing"] == self.recipe["actions"][name]["facing"]
             assert rich["loop"] is True
+
+    def test_props_have_one_explicit_owner_at_every_handoff(self) -> None:
+        for name, expected in PROP_OWNERSHIP.items():
+            recipe_frames = self.recipe["actions"][name]["frames"]
+            review_frames = self.manifest["animations"][name]["frames"]
+            assert tuple(frame["prop_owner"] for frame in recipe_frames) == expected
+            assert tuple(frame["prop_owner"] for frame in review_frames) == expected
+            assert expected[0] == expected[-1] == "surface"
+            assert set(expected) == {"surface", "actor"}
+
+    def test_surface_props_are_small_hard_alpha_runtime_sprites(self) -> None:
+        expected = {
+            "provision_jar": ("props/provision_jar.png", (5, 6)),
+            "preparation_list": ("props/preparation_list.png", (7, 8)),
+            "folded_linen": ("props/folded_linen.png", (5, 4)),
+        }
+        assert set(self.manifest["surface_props"]) == set(expected)
+        for name, (relative, size) in expected.items():
+            record = self.manifest["surface_props"][name]
+            assert record["file"] == relative
+            assert tuple(record["size"]) == size
+            image = opened(OUTPUT / relative)
+            assert image.size == size
+            assert image.getbbox() == (0, 0, *size)
+            assert set(image.getchannel("A").tobytes()) <= {0, 255}
+            assert 255 in set(image.getchannel("A").tobytes())
 
     def test_frames_use_hard_alpha_approved_colors_and_close_cleanly(self) -> None:
         palette_colors = {
@@ -116,17 +156,36 @@ class TestSereneRoutineAssets(unittest.TestCase):
                     assert math.dist(shoulder, elbow) <= 7.0, (name, frame["phase"])
                     assert math.dist(elbow, hand) <= 7.0, (name, frame["phase"])
                     assert 4 <= shoulder[0] <= 20 and 14 <= shoulder[1] <= 18
-                    assert 2 <= hand[0] <= 21 and 13 <= hand[1] <= 24
+                    assert -2 <= hand[0] <= 21 and 2 <= hand[1] <= 24
 
     def test_table_actions_begin_on_the_north_surface_and_reach_to_contact(self) -> None:
-        for name in ("sort_provisions", "consult_list", "arrange_hall"):
+        expected = {
+            "sort_provisions": ("provision_jar", (10, 2)),
+            "consult_list": ("preparation_list", (9, -7)),
+            "arrange_hall": ("folded_linen", (-6, 1)),
+        }
+        for name, (surface_key, anchor) in expected.items():
             frames = self.recipe["actions"][name]["frames"]
             assert frames[0]["prop"] == frames[-1]["prop"]
-            assert frames[0]["prop"]["anchor"][1] == 11
-            reaching = [frame for frame in frames if "surface" in frame["phase"]]
-            assert reaching
-            assert min(hand[1] for frame in reaching for hand in (arm[-1] for arm in frame["arms"])) <= 13
-            assert max(frame["prop"]["anchor"][1] for frame in frames) >= 14
+            assert tuple(frames[0]["prop"]["anchor"]) == anchor
+
+            # The last surface-owned reach must touch, or come within the
+            # two-pixel native arm width of, the loose prop's opaque bounds.
+            reaching = next(frame for frame in frames[1:] if "surface" in frame["phase"])
+            width, height = self.manifest["surface_props"][surface_key]["size"]
+            left, top = anchor
+            right, bottom = left + width - 1, top + height - 1
+            distances = []
+            for arm in reaching["arms"]:
+                x, y = arm[-1]
+                dx = max(left - x, 0, x - right)
+                dy = max(top - y, 0, y - bottom)
+                distances.append(math.hypot(dx, dy))
+            assert min(distances) <= 3.25, (name, distances)
+
+            first_held = next(frame for frame in frames if frame["prop_owner"] == "actor")
+            held_x, held_y = first_held["prop"]["anchor"]
+            assert math.dist((held_x, held_y), anchor) <= 2.0, name
 
     def test_hearth_action_faces_north_and_reaches_the_real_firebox(self) -> None:
         hearth = self.recipe["actions"]["tend_hearth"]

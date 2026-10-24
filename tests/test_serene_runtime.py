@@ -36,7 +36,7 @@ class SereneRuntime(unittest.TestCase):
         dining=self.scene('sanctuary_dining');hall=self.scene('sanctuary_hall')
         self.assertEqual(len([n for n in self.game.persistent_npcs if n.data['id']=='mother_serene']),1)
         self.assertEqual(self.serene.scene_id,'sanctuary_dining')
-        self.assertEqual(tuple(self.serene.position),(288,228))
+        self.assertEqual(tuple(self.serene.position),(288,214))
         self.assertEqual(self.memberships(),[(dining,1)])
         self.assertNotIn(self.serene,self.game.town.npcs)
         self.assertNotIn(self.serene,hall.npcs)
@@ -48,7 +48,7 @@ class SereneRuntime(unittest.TestCase):
         self.assertIs(self.game._routine_worlds[self.serene],dining)
 
     def test_game_advances_persistent_action_once_per_frame(self):
-        self.place('sort_provisions','sanctuary_dining',(288,228),'back')
+        self.place('sort_provisions','sanctuary_dining',(288,214),'back')
         self.assertEqual(self.serene.state_ms,0)
         self.game.world=self.game.town
         self.game.update(.1,(0,0),False)
@@ -63,7 +63,7 @@ class SereneRuntime(unittest.TestCase):
         self.game.update(1/60,(0,0),False)
         self.assertEqual(self.serene.scene_id,'sanctuary_hall')
         self.assertEqual(tuple(self.serene.position),(264,90))
-        self.assertEqual(self.serene.state,'move_to_hall_table')
+        self.assertEqual(self.serene.state,'move_to_preparation_list')
         self.assertNotIn(self.serene,dining.npcs)
         self.assertEqual(self.memberships(),[(hall,1)])
 
@@ -102,7 +102,7 @@ class SereneRuntime(unittest.TestCase):
             (record['scene'],tuple(record['station']))
             for record in behavior['review'].values()
         }
-        station_positions.add(('sanctuary_dining',(336,228)))
+        station_positions.add(('sanctuary_dining',(336,214)))
         for station_scene,station in station_positions:
             world=self.scene(station_scene)
             self.assertTrue(world.can_stand(station,self.serene.probe_size,self.serene),
@@ -131,11 +131,11 @@ class SereneRuntime(unittest.TestCase):
 
     def test_select_step_chooses_each_authored_action_and_its_sprite(self):
         choices=(
-            ('sort_provisions','sort_provisions','sanctuary_dining',(288,228),'back'),
-            ('sort_second_provision_table','sort_provisions','sanctuary_dining',(336,228),'back'),
-            ('consult_list','consult_list','sanctuary_dining',(288,116),'back'),
+            ('sort_provisions','sort_provisions','sanctuary_dining',(288,214),'back'),
+            ('sort_second_provision_table','sort_provisions','sanctuary_dining',(336,214),'back'),
+            ('consult_list','consult_list','sanctuary_hall',(120,178),'back'),
             ('tend_hearth','tend_hearth','sanctuary_dining',(384,110),'back'),
-            ('arrange_hall','arrange_hall','sanctuary_hall',(264,228),'back'),
+            ('arrange_hall','arrange_hall','sanctuary_hall',(264,214),'back'),
         )
         for step_id,action_id,scene_id,position,facing in choices:
             with self.subTest(action=action_id,step=step_id):
@@ -146,6 +146,80 @@ class SereneRuntime(unittest.TestCase):
                 self.assertEqual(self.serene.facing,facing)
                 self.assertEqual(self.serene.state_ms,0)
                 self.assertEqual(self.serene.sprite(0).get_size(),(48,48))
+
+    def test_surface_prop_ownership_is_exclusive_on_every_action_frame(self):
+        expected_owners={
+            'sort_provisions':
+                ['surface','surface','actor','actor','actor','actor',
+                 'surface','surface','actor','actor','actor','surface'],
+            'consult_list':
+                ['surface','surface','actor','actor','actor','actor',
+                 'actor','actor','actor','surface','surface'],
+            'arrange_hall':
+                ['surface','surface','actor','actor','actor','actor',
+                 'actor','actor','actor','surface','surface'],
+        }
+        action_steps={
+            'sort_provisions': ('sort_provisions','sanctuary_dining',(288,214)),
+            'consult_list': ('consult_list','sanctuary_hall',(120,178)),
+            'arrange_hall': ('arrange_hall','sanctuary_hall',(264,214)),
+        }
+        props={record['action_step']:record for record in self.serene.surface_props}
+        for action,(step_id,scene_id,position) in action_steps.items():
+            with self.subTest(action=action):
+                self.place(step_id,scene_id,position,'back')
+                frames=self.serene.action_metadata[action]['frames']
+                self.assertEqual([frame.get('prop_owner') for frame in frames],
+                                 expected_owners[action])
+                active=props[step_id]
+                elapsed=0
+                for index,frame in enumerate(frames):
+                    self.serene.state_ms=elapsed+frame['duration_ms']/2
+                    current=self.serene.current_action_frame_metadata
+                    self.assertIs(current,frames[index])
+                    owner=current['prop_owner']
+                    surface_visible=self.serene.surface_prop_visible(active)
+                    self.assertEqual(surface_visible,owner=='surface')
+                    self.assertNotEqual(surface_visible,owner=='actor')
+                    visible=self.serene.visible_surface_props(scene_id)
+                    self.assertEqual(active in visible,owner=='surface')
+                    for other in self.serene.surface_props:
+                        if other is not active and other['scene']==scene_id:
+                            self.assertIn(other,visible)
+                    elapsed+=frame['duration_ms']
+
+    def test_surface_props_persist_in_both_rooms_while_serene_travels(self):
+        expected={
+            'sanctuary_dining': {'provision_jar_a','provision_jar_b'},
+            'sanctuary_hall': {'preparation_list','folded_linen'},
+        }
+        self.place('move_to_hall_door','sanctuary_dining',(384,110),'front')
+        for scene_id,ids in expected.items():
+            self.assertEqual({record['id'] for record in
+                              self.serene.visible_surface_props(scene_id)},ids)
+            registered={(owner.data['id'],record['id'])
+                        for owner,record in self.scene(scene_id).routine_props}
+            self.assertEqual(registered,{('mother_serene',prop_id) for prop_id in ids})
+
+        self.place('enter_sanctuary_hall','sanctuary_dining',(216,294),'back')
+        self.game.world=self.game.town
+        self.game.update(1/60,(0,0),False)
+        self.assertEqual(self.serene.scene_id,'sanctuary_hall')
+        for scene_id,ids in expected.items():
+            self.assertEqual({record['id'] for record in
+                              self.serene.visible_surface_props(scene_id)},ids)
+
+    def test_full_schedule_completes_and_returns_to_its_start(self):
+        self.game.world=self.game.town
+        for _ in range(7200):
+            self.game.update(1/60,(0,0),False)
+            if self.serene.completed_cycles:
+                break
+        self.assertEqual(self.serene.completed_cycles,1)
+        self.assertEqual(self.serene.state,'sort_provisions')
+        self.assertEqual(self.serene.scene_id,'sanctuary_dining')
+        self.assertEqual(tuple(self.serene.position),(288,214))
+        self.assertEqual(self.memberships(),[(self.scene('sanctuary_dining'),1)])
 
 
 if __name__=='__main__':unittest.main()

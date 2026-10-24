@@ -4,7 +4,7 @@
   "start_scene": "sanctuary_dining",
   "start_position": [
     288,
-    228
+    214
   ],
   "probe_size": [
     12,
@@ -24,7 +24,7 @@
       "waypoints": [
         [
           336,
-          228
+          214
         ]
       ]
     },
@@ -35,44 +35,20 @@
       "facing": "back"
     },
     {
-      "id": "move_to_preparation_list",
-      "type": "move",
-      "waypoints": [
-        [
-          366,
-          228
-        ],
-        [
-          366,
-          180
-        ],
-        [
-          288,
-          180
-        ],
-        [
-          288,
-          116
-        ]
-      ]
-    },
-    {
-      "id": "consult_list",
-      "type": "action",
-      "animation": "consult_list",
-      "facing": "back"
-    },
-    {
       "id": "move_to_hearth",
       "type": "move",
       "waypoints": [
         [
-          336,
-          116
+          366,
+          214
+        ],
+        [
+          366,
+          180
         ],
         [
           384,
-          116
+          180
         ],
         [
           384,
@@ -123,28 +99,48 @@
       "facing": "front"
     },
     {
+      "id": "move_to_preparation_list",
+      "type": "move",
+      "waypoints": [
+        [
+          264,
+          120
+        ],
+        [
+          216,
+          120
+        ],
+        [
+          216,
+          178
+        ],
+        [
+          120,
+          178
+        ]
+      ]
+    },
+    {
+      "id": "consult_list",
+      "type": "action",
+      "animation": "consult_list",
+      "facing": "back"
+    },
+    {
       "id": "move_to_hall_table",
       "type": "move",
       "waypoints": [
         [
-          294,
-          90
+          216,
+          178
         ],
         [
-          294,
-          180
-        ],
-        [
-          264,
-          180
-        ],
-        [
-          264,
+          216,
           214
         ],
         [
           264,
-          228
+          214
         ]
       ]
     },
@@ -158,10 +154,6 @@
       "id": "return_to_dining_door",
       "type": "move",
       "waypoints": [
-        [
-          264,
-          214
-        ],
         [
           294,
           214
@@ -200,9 +192,59 @@
         ],
         [
           288,
-          228
+          214
         ]
       ]
+    }
+  ],
+  "surface_props": [
+    {
+      "id": "provision_jar_a",
+      "scene": "sanctuary_dining",
+      "position": [
+        286,
+        186
+      ],
+      "sort_y": 210,
+      "sort_priority": 2,
+      "image": "assets/characters/serene/routines/props/provision_jar.png",
+      "action_step": "sort_provisions"
+    },
+    {
+      "id": "provision_jar_b",
+      "scene": "sanctuary_dining",
+      "position": [
+        334,
+        186
+      ],
+      "sort_y": 210,
+      "sort_priority": 2,
+      "image": "assets/characters/serene/routines/props/provision_jar.png",
+      "action_step": "sort_second_provision_table"
+    },
+    {
+      "id": "preparation_list",
+      "scene": "sanctuary_hall",
+      "position": [
+        117,
+        141
+      ],
+      "sort_y": 174,
+      "sort_priority": 1,
+      "image": "assets/characters/serene/routines/props/preparation_list.png",
+      "action_step": "consult_list"
+    },
+    {
+      "id": "folded_linen",
+      "scene": "sanctuary_hall",
+      "position": [
+        246,
+        185
+      ],
+      "sort_y": 210,
+      "sort_priority": 2,
+      "image": "assets/characters/serene/routines/props/folded_linen.png",
+      "action_step": "arrange_hall"
     }
   ],
   "review": {
@@ -210,7 +252,7 @@
       "scene": "sanctuary_dining",
       "station": [
         288,
-        228
+        214
       ],
       "camera": [
         252,
@@ -237,14 +279,14 @@
       ]
     },
     "consult_list": {
-      "scene": "sanctuary_dining",
+      "scene": "sanctuary_hall",
       "station": [
-        288,
-        116
+        120,
+        178
       ],
       "camera": [
-        228,
-        48
+        72,
+        96
       ],
       "size": [
         120,
@@ -255,7 +297,7 @@
       "scene": "sanctuary_hall",
       "station": [
         264,
-        228
+        214
       ],
       "camera": [
         216,

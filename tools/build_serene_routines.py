@@ -163,6 +163,43 @@ PROP_DRAWERS = {
 }
 
 
+SURFACE_PROP_SPECS = {
+    "provision_jar": {
+        "file": "props/provision_jar.png",
+        "prop": {"kind": "provision_jar", "anchor": [0, 0]},
+    },
+    "preparation_list": {
+        "file": "props/preparation_list.png",
+        "prop": {"kind": "list", "anchor": [0, 0], "state": "plain"},
+    },
+    "folded_linen": {
+        "file": "props/folded_linen.png",
+        "prop": {"kind": "linen", "anchor": [0, 0], "state": "folded"},
+    },
+}
+
+
+def export_surface_props(materials: dict, prop_colors: dict) -> dict[str, dict]:
+    """Export the props that remain on furniture while Serene is elsewhere."""
+    prop_root = OUTPUT / "props"
+    prop_root.mkdir(parents=True, exist_ok=True)
+    records: dict[str, dict] = {}
+    for name, spec in SURFACE_PROP_SPECS.items():
+        canvas = blank()
+        PROP_DRAWERS[spec["prop"]["kind"]](canvas, spec["prop"], prop_colors, materials)
+        bbox = canvas.getbbox()
+        if bbox is None:
+            raise AssertionError(f"{name} surface prop is empty")
+        sprite = canvas.crop(bbox)
+        sprite.save(OUTPUT / spec["file"])
+        records[name] = {
+            "file": spec["file"],
+            "size": list(sprite.size),
+            "kind": spec["prop"]["kind"],
+        }
+    return records
+
+
 def render_frame(
     direction: str,
     frame_spec: dict,
@@ -173,10 +210,11 @@ def render_frame(
     image = blank()
     image.alpha_composite(lower, BODY_OFFSET)
 
-    prop_layer = blank()
     prop = frame_spec["prop"]
-    PROP_DRAWERS[prop["kind"]](prop_layer, prop, prop_colors, materials)
-    image.alpha_composite(prop_layer)
+    if frame_spec.get("prop_owner", "actor") == "actor":
+        prop_layer = blank()
+        PROP_DRAWERS[prop["kind"]](prop_layer, prop, prop_colors, materials)
+        image.alpha_composite(prop_layer)
 
     arm_layer = blank()
     for points in frame_spec["arms"]:
@@ -219,15 +257,16 @@ def export_action(
         filename = f"frame_{index:02}.png"
         frame.save(action_root / filename)
         frames.append(frame)
-        records.append(
-            {
-                "file": f"{name}/{filename}",
-                "duration_ms": frame_spec["duration_ms"],
-                "phase": frame_spec["phase"],
-                "hands": [arm[-1] for arm in frame_spec["arms"]],
-                "prop": frame_spec["prop"],
-            }
-        )
+        record = {
+            "file": f"{name}/{filename}",
+            "duration_ms": frame_spec["duration_ms"],
+            "phase": frame_spec["phase"],
+            "hands": [arm[-1] for arm in frame_spec["arms"]],
+            "prop": frame_spec["prop"],
+        }
+        if "prop_owner" in frame_spec:
+            record["prop_owner"] = frame_spec["prop_owner"]
+        records.append(record)
 
     # The first and final settle frames deliberately match for a clean loop.
     if frames[0].tobytes() != frames[-1].tobytes():
@@ -286,6 +325,7 @@ def build() -> None:
     palette = read_json(SERENE_OUTPUT / "palette.json")
     materials = palette["materials"]
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    surface_props = export_surface_props(materials, recipe["prop_palette"])
 
     runtime_actions: dict[str, list[dict]] = {}
     animations: dict[str, dict] = {}
@@ -323,6 +363,7 @@ def build() -> None:
         "foot_anchor": recipe["foot_anchor"],
         "actions": runtime_actions,
         "animations": animations,
+        "surface_props": surface_props,
         "source_recipe": "../../../source/characters/serene/routines/recipe.json",
         "approved_inputs": {
             "palette": "assets/characters/serene/palette.json",

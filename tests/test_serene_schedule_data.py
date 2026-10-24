@@ -78,6 +78,48 @@ class SereneScheduleData(unittest.TestCase):
         self.assertEqual(record["draw_anchor"], [12, 30])
         self.assertNotIn("mother_serene", {record["id"] for record in self.town["npcs"]})
 
+    def test_surface_props_are_bound_to_one_station_and_rest_on_furniture(self):
+        """Loose work objects use world-space furniture tops, not Serene's feet."""
+        props = {record["id"]: record for record in self.routine["surface_props"]}
+        expected = {
+            "provision_jar_a": ("sanctuary_dining", "sort_provisions",
+                                [286, 186], 210, 2, (264, 172, 48, 27)),
+            "provision_jar_b": ("sanctuary_dining", "sort_second_provision_table",
+                                [334, 186], 210, 2, (312, 172, 48, 27)),
+            "preparation_list": ("sanctuary_hall", "consult_list",
+                                 [117, 141], 174, 1, (108, 138, 24, 16)),
+            "folded_linen": ("sanctuary_hall", "arrange_hall",
+                             [246, 185], 210, 2, (240, 172, 48, 27)),
+        }
+        self.assertEqual(set(props), set(expected))
+        for prop_id, (scene, action_step, position, sort_y, priority, top) in expected.items():
+            with self.subTest(prop=prop_id):
+                prop = props[prop_id]
+                self.assertEqual(prop["scene"], scene)
+                self.assertEqual(prop["action_step"], action_step)
+                self.assertEqual(prop["position"], position)
+                self.assertEqual(prop["sort_y"], sort_y)
+                self.assertEqual(prop["sort_priority"], priority)
+
+                path = ROOT / prop["image"]
+                self.assertTrue(path.is_file(), path)
+                image = Image.open(path).convert("RGBA")
+                alpha_box = image.getchannel("A").getbbox()
+                self.assertIsNotNone(alpha_box, path)
+                left = prop["position"][0] + alpha_box[0]
+                top_y = prop["position"][1] + alpha_box[1]
+                right = prop["position"][0] + alpha_box[2]
+                bottom = prop["position"][1] + alpha_box[3]
+                surface_left, surface_top, surface_width, surface_height = top
+                self.assertGreaterEqual(left, surface_left)
+                self.assertGreaterEqual(top_y, surface_top)
+                self.assertLessEqual(right, surface_left + surface_width)
+                self.assertLessEqual(bottom, surface_top + surface_height)
+
+        action_ids = {step["id"] for step in self.routine["steps"]
+                      if step["type"] == "action" and step["animation"] != "tend_hearth"}
+        self.assertEqual({record["action_step"] for record in props.values()}, action_ids)
+
     def test_actions_and_review_stations_share_the_runtime_contract(self):
         actions = [step for step in self.routine["steps"] if step["type"] == "action"]
         self.assertEqual({step["animation"] for step in actions},
@@ -117,6 +159,25 @@ class SereneScheduleData(unittest.TestCase):
         ])
         self.assertEqual((scene, position),
                          (self.routine["start_scene"], self.routine["start_position"]))
+
+    def test_revised_work_stations_match_their_furniture(self):
+        action_stations = {}
+        scene = self.routine["start_scene"]
+        position = self.routine["start_position"]
+        for step in self.routine["steps"]:
+            if step["type"] == "move":
+                position = step["waypoints"][-1]
+            elif step["type"] == "transfer":
+                scene, position = step["scene"], step["position"]
+            elif step["type"] == "action":
+                action_stations[step["id"]] = (scene, tuple(position))
+        self.assertEqual(action_stations, {
+            "sort_provisions": ("sanctuary_dining", (288, 214)),
+            "sort_second_provision_table": ("sanctuary_dining", (336, 214)),
+            "tend_hearth": ("sanctuary_dining", (384, 110)),
+            "consult_list": ("sanctuary_hall", (120, 178)),
+            "arrange_hall": ("sanctuary_hall", (264, 214)),
+        })
 
 
 if __name__ == "__main__":
