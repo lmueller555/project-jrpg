@@ -14,7 +14,7 @@ Tomas is visibly 32 pixels tall, two pixels shorter than Caelan's 34, and narrow
 
 Rebuild the front with `python tools/build_tomas_idle.py` from the repository root. Retained concept, recipe and four reconstructable full-frame layers are under `assets/source/characters/tomas/`. Preview images retain their original review labels as a record of the approved artwork.
 
-## Left, right and back idles — awaiting review
+## Left, right and back idles — approved
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` add three still 24×36 views, each 32 visible pixels tall with foot anchor `[12,34]`. Each has independent status/landmarks in its JSON metadata and an opaque 24× review PNG. The cowlick, rust tunic, pale sleeves and dark trousers follow the approved front. Each profile shows one green eye; the back has no eyes.
 
