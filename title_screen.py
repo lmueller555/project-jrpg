@@ -3,6 +3,7 @@ import math
 from pathlib import Path
 
 import pygame
+from title_water import TitleWater
 
 ROOT=Path(__file__).resolve().parent
 SIZE=(640,360)
@@ -16,6 +17,7 @@ class TitleScreen:
         self.canvas=self.scene
         self.frame=None
         self.background=game.town.image('assets/ui/title/eldenmere_dawn.png',False)
+        self.water=TitleWater(game.town)
         wheel=pygame.transform.scale(self.background.subsurface((237,201,26,36)),(36,36)).convert_alpha()
         mask=pygame.Surface((36,36),pygame.SRCALPHA)
         pygame.draw.ellipse(mask,'white',(0,0,36,36))
@@ -48,7 +50,7 @@ class TitleScreen:
         if not self.music_enabled:return
         try:
             if not pygame.mixer.get_init():pygame.mixer.init()
-            pygame.mixer.music.load(str(ROOT/'assets/ui/title/eldenmere_theme.wav'))
+            pygame.mixer.music.load(str(ROOT/'assets/ui/title/eldenmere_theme.ogg'))
             pygame.mixer.music.set_volume(.45)
             pygame.mixer.music.play(-1,fade_ms=900)
             self.music_started=True
@@ -124,11 +126,7 @@ class TitleScreen:
         # Rotate the painted wheel within its elliptical perspective footprint.
         self.canvas.blit(self.wheel_frames[int(t*3)%48],(237,201))
         layer=pygame.Surface(SIZE,pygame.SRCALPHA)
-        # Anchors are authored on the painted water, chimney and lantern.
-        for i,(x,y) in enumerate(((230,235),(266,257),(300,274),(117,332),(183,345),(245,352))):
-            phase=(t*.45+i*.31)%1
-            alpha=round(45*math.sin(phase*math.pi))
-            pygame.draw.line(layer,(235,240,204,alpha),(x+phase*4,y),(x+phase*4+3,y))
+        # Water has complete, independently authored surface and cascade layers.
         for x,y in ((278,142),(615,69)):
             for i in range(3):
                 p=(t/5.4+i/3)%1
@@ -148,6 +146,7 @@ class TitleScreen:
     def draw(self):
         self.canvas=self.scene
         self.canvas.blit(self.background,(0,0))
+        self.water.draw(self.canvas,self.elapsed)
         self.atmosphere()
         width,height=self.game.window.get_size()
         # Composite transparency in software onto an opaque surface, keeping

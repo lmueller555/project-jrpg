@@ -16,23 +16,30 @@ displays. Mouse positions use the inverse UI transform. Gameplay retains its
 existing 480×320 canvas and integer scaling.
 
 Runtime animations include the painted wheel rotating in its elliptical
-footprint, localized water glints, chimney wisps, lantern light and occasional
-distant birds. The original scenery remains a single master image.
+footprint, complete registered water regions, chimney wisps, lantern light and
+occasional distant birds. Twenty-four water overlay frames animate the full
+course with faster falls and slower surface motion. The original scenery
+remains a single master image.
 
-`eldenmere_theme.wav` is an original 24-second synthesized harp/flute-style
-melody in D major, generated without external recordings or sample libraries.
-It loops quietly on the title screen, can be muted in Settings, and fades out
-when New Game is selected. No audio device is required for play. Headless
-verification does not initialize music. The review GIF has no sound.
+`eldenmere_theme.wav` is the lossless master of an original 88.89-second stereo
+theme; `eldenmere_theme.ogg` is the smaller runtime export. It moves through
+Home, Curiosity, Fragility and Return in 6/8 at dotted-quarter = 54, with D-major
+and B-minor treatments of a recurring motif. Flute, harp, warm strings, pizzicato
+answers, bass and sparse bells use expressive envelopes and stereo reverb.
+`music_score.json` preserves the arrangement and note events. It uses no external
+recordings or sample libraries. The music loops, can be muted in Settings, and
+fades out on New Game. Headless verification does not initialize music.
 
 The two bundled DejaVu fonts have their license and attribution in
 `assets/ui/fonts/LICENSE-DejaVu.txt`. Only Pygame is required by the game;
-Pillow is used to export artwork and capture review images.
+Pillow and NumPy are used to build artwork/audio and capture review images;
+FFmpeg encodes the runtime Ogg and review video.
 
 Reproduce assets:
 
 ```sh
 python tools/export_title_art.py
+python tools/build_title_water.py
 python tools/build_title_music.py
 ```
 

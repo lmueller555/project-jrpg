@@ -26,6 +26,11 @@ Settings changes fullscreen/windowed mode and title music; Continue is disabled
 until saving exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 
+The title water now animates throughout the brook, pools, mill discharge and
+foreground cascades. Its expanded 89-second stereo theme develops four passages:
+Home, Curiosity, Fragility and Return. See the [updated video with music and
+water close-up](docs/reviews/title_water_music/README.md).
+
 | Control | Action |
 | --- | --- |
 | WASD or arrow keys | Move Caelan |
