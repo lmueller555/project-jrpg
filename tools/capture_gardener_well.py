@@ -14,25 +14,23 @@ sys.path.insert(0,str(ROOT))
 import main
 from capture_gardener import gif, panel, render
 
-OUTPUT=ROOT/'docs/reviews/gardener_well'
+OUTPUT=ROOT/'docs/reviews/gardener_single_bucket'
 CAPTIONS={
     'rest':'Resting / next trip in 3-5 minutes',
     'pickup':'Pick up the empty pail',
     'to_well':'Follow the village lane to the well',
-    'well_setdown':'Set the empty pail beside the well',
+    'well_attach':'Lift her pail onto the rope hook',
+    'well_secure':'Fasten the hook through its handle',
     'well_to_crank':'Step up to the crank',
     'well_grip':'Take hold of the crank',
-    'well_lower':'Turn the crank / lower the well bucket',
-    'well_fill':'Dip and fill the well bucket',
+    'well_lower':'Turn the crank / lower her pail',
+    'well_fill':'Her pail fills in the shaft',
     'well_raise':'Reverse the crank / lift the full bucket',
     'well_lock':'Secure the windlass',
-    'well_to_pour':'Step around to the waiting pail',
-    'well_guide':'Guide the bucket clear of the rim',
-    'well_pour':'Pour into the portable pail',
-    'well_back_to_crank':'Return to the windlass',
-    'well_reset':'Guide back and park the empty bucket',
-    'well_back_to_pail':'Return to the full pail',
-    'well_pickup':'Lift the full pail',
+    'well_to_hook':'Return to her suspended pail',
+    'well_take_hold':'Grasp the handle with both hands',
+    'well_unhook':'Support the pail and release its hook',
+    'well_take':'Lower her pail into its carrying pose',
     'return_to_sanctuary':'Carry water up the sanctuary stairs',
     'return_to_rest':'Return with the empty pail',
     'setdown':'Set down the empty pail and rest'
@@ -58,7 +56,7 @@ def overview(game):
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game();game.player.position.update(480,924)
+    game=main.Game();game.player.position.update(576,900)
     actor=main.Gardener(game.town.npcs[1].data,game.town,random.Random(2026))
     game.town.npcs[1]=actor
     initial_rest=actor.rest_duration_ms
@@ -73,11 +71,12 @@ def capture():
         if i%2==0:
             route.append(panel(overview(game),1,'Gardener / full watering trip',
                                'Real-time trip | long rests omitted',text))
-        if state.startswith('well_'):
+        near_hook=actor.position.distance_to(game.town.well.data['hook_position'])<44
+        if state.startswith('well_') or (near_hook and state in ('to_well','return_to_sanctuary')):
             scene=render(game,(474,786)).crop((0,0,120,120))
             well.append(panel(scene,6,'Sanctuary gardener / drawing water',
                               '6x native pixels | actual game animation',text))
-            if state=='well_pour' and .4<=game.town.well.progress<=.6:well_still=well[-1]
+            if state=='well_unhook' and .4<=game.town.well.progress<=.6:well_still=well[-1]
         if state.startswith(('inspect_','water_')):
             camera=(round(actor.position.x)-60,round(actor.position.y)-54)
             scene=render(game,camera).crop((0,0,120,80))

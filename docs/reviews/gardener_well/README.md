@@ -2,6 +2,8 @@
 
 Status: awaiting user review. Implemented in the playable town launched by `main.py`.
 
+Superseded by the [single-pail revision](../gardener_single_bucket/README.md). The user liked the well operation but requested removing the unsupported lateral bucket transfer. These captures retain the earlier two-bucket proposal for comparison; the live game and capture command now use the revised routine.
+
 - [Drawing water, 6× looping close-up](well_drawing.gif): set down her empty pail, approach the crank, lower the well bucket, dip/fill, reverse the crank to raise it, secure the windlass, guide the bucket over the front opening, transfer the water, reset and pick up her full pail.
 - [Full watering trip](full_routine.gif): native-scale overview of the actual lane, sanctuary stairs and well. Travel and work run at game speed; only the long initial rest is shortened. This overview is captured at 5 FPS; action close-ups use 10 FPS.
 - [All six watering stops, 6×](watering.gif): four flower patches and both raised window troughs. This montage cuts between consecutive stops; the full-trip preview includes the walks between them.

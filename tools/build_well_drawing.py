@@ -1,7 +1,7 @@
 """Register moving well parts and gardener poses against the approved artwork.
 
-The original well exports remain intact. This adds an interaction rig; the
-runtime shares its phase clock with the gardener rather than looping a GIF.
+The approved source remains intact. The idle well now has a bare rope hook;
+one gardener-owned pail moves between her hands and that hook.
 """
 import json
 import math
@@ -19,7 +19,7 @@ def write(path,data):path.write_text(json.dumps(data,indent=2)+'\n')
 
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
-    original=Image.open(OUT.parent/'structure.png').convert('RGBA')
+    original=Image.open(SOURCE/'parts/native_structure.png').convert('RGBA')
     fixed=original.copy();d=ImageDraw.Draw(fixed)
     # Remove the old rope and pail within the shaft only. Reconstruct the dark
     # shaft and its water from registered neighboring material pixels.
@@ -46,17 +46,16 @@ def build():
     meta={
         'status':status,'position':[486,792],'canvas_size':[112,112],
         'fixed':'fixed.png','front_rim':'front_rim.png',
-        'rope_origin':[40,43],'crank_pivot':[69,43],'crank_handles':handles,
-        'idle_bucket_grip':[40,49],'lowered_bucket_grip':[40,73],
-        'raised_bucket_grip':[40,43],'pour_bucket_grip':[73,73],
-        'pail_grip_world':[563,878], 'operator_position':[572,854],
-        'pail_position':[576,884],
-        'phases_ms':{'well_setdown':1000,'well_grip':500,'well_lower':3200,
-                     'well_fill':2000,'well_raise':4000,'well_lock':500,
-                     'well_guide':1500,'well_pour':3000,'well_reset':2000,
-                     'well_pickup':1000},
-        'source':'assets/terrain/eldenmere/well/structure.png',
-        'notes':'Two buckets; portable pail fills only during the transfer. Shared actor clock.'
+        'rope_origin':[54,43],'crank_pivot':[69,43],'crank_handles':handles,
+        'hook_grip':[54,50],'lowered_bucket_grip':[54,74],
+        'operator_position':[572,854],'hook_position':[558,862],
+        'phases_ms':{'well_attach':1800,'well_secure':600,'well_grip':500,
+                     'well_lower':3200,'well_fill':2000,'well_raise':4000,
+                     'well_lock':500,'well_take_hold':1400,
+                     'well_unhook':700,'well_take':1400},
+        'source':'assets/source/terrain/eldenmere/well/parts/native_structure.png',
+        'bucket_owner':'gardener',
+        'notes':'One pail. Held throughout attaching/removing; rope moves vertically only. No lateral bucket transfer.'
     }
     write(OUT/'animation.json',meta)
     source=ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json'
@@ -72,14 +71,42 @@ def build():
         add(f'well_crank_left_{i}',[[[11,16],[6,18],hand],[[13,16],[10,21],[6,20]]],hand)
         dy=int(i in (1,2,3,5,6,7))
         add(f'well_heavy_left_{i}',[[[11,16+dy],[6,19],hand],[[13,16+dy],[10,22],[6,21]]],hand,(-dy,dy))
-    add('well_guide_left',[[[11,16],[5,16],[-5,12]],[[13,16],[8,21],[3,18]]])
-    for i in range(5):
-        x=round(5-6*i/4)
-        add(f'well_setdown_left_{i}',[[[11,16],[6,21],[x,24]],[[13,16],[11,22],[7,24]]],(x,24),(-int(i>1),int(i>1)))
-        x=round(-1+6*i/4);y=round(24-5*i/4)
-        add(f'well_pickup_left_{i}',[[[11,16],[7,20],[x,y]],[[13,16],[11,22],[x+2,y+2]]],(x,y),(-int(i<2),int(i<2)))
+    # Local grip at the parked hook: world hook minus body top-left. Both hands
+    # meet the handle before detaching; the bucket then follows those hands.
+    hook=[meta['position'][i]+meta['hook_grip'][i]-meta['hook_position'][i]+(12,30)[i] for i in range(2)]
+    for mode,start,end in (('attach',(5,24),hook),('reach',(5,24),hook),('take',hook,(5,19))):
+        for i in range(7):
+            t=i/6;x=round(start[0]+(end[0]-start[0])*t);y=round(start[1]+(end[1]-start[1])*t)
+            add(f'well_{mode}_left_{i}',[[[11,16],[4,17],[x,y]],[[13,16],[7,20],[x+2,y+2]]],(x,y))
     if json.loads(source.read_text())!=recipe:write(source,recipe)
     gardener.build()
+    # Export the same bucketless idle into terrain/runtime map art, so the map
+    # and compiler cannot reintroduce a second, permanent bucket.
+    import os,sys
+    os.environ.setdefault('SDL_VIDEODRIVER','dummy')
+    os.environ.setdefault('SDL_AUDIODRIVER','dummy')
+    os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
+    sys.path.insert(0,str(ROOT))
+    import pygame
+    from well_routine import DrawingWell
+    pygame.init();pygame.display.set_mode((1,1))
+    class Art:
+        def image(self,path):return pygame.image.load(str(ROOT/path)).convert_alpha()
+    rig=DrawingWell(Art())
+    for phase in range(6):
+        surface=rig.sprite(phase*200).subsurface((0,0,84,96))
+        pygame.image.save(surface,str(OUT.parent/f'frames/frame_{phase+1:02}.png'))
+        if phase==0:pygame.image.save(surface,str(OUT.parent/'structure.png'))
+    pygame.quit()
+    water_mask=Image.new('L',(84,96))
+    for x in (*range(29,35),*range(43,49)):water_mask.putpixel((x,69),255)
+    water_mask.save(SOURCE/'parts/water_mask.png')
+    idle=Image.open(OUT.parent/'structure.png').convert('RGBA')
+    background=Image.new('RGBA',idle.size,'#e8edf2');background.alpha_composite(idle)
+    background.convert('RGB').resize((504,576),Image.Resampling.NEAREST).save(OUT.parent/'well_review.png')
+    well_meta=json.loads((OUT.parent/'well.json').read_text())
+    well_meta.update(status=status,animation='Idle water glints and bare hook; gardener attaches her own pail when drawing water',bucket_owner='gardener')
+    write(OUT.parent/'well.json',well_meta)
     # Authoring registrations are checked in alongside the generated layers.
     write(SOURCE/'drawing_recipe.json',meta)
     print('Built well drawing rig and eight registered crank poses.')

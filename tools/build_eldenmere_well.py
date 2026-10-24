@@ -82,6 +82,9 @@ def export_art():
     background=Image.new('RGBA',sprite.size,'#e8edf2');background.alpha_composite(sprite)
     save(OUTPUT/'well_review.png',background.convert('RGB').resize((504,576),Image.Resampling.NEAREST))
     print(f'Exported well: {sprite.size}, {len(pixels)} water pixels, six 200ms phases')
+    if (SOURCE/'drawing_recipe.json').exists():
+        from build_well_drawing import build as build_drawing
+        build_drawing()
 
 
 def plaza_cells(recipe):

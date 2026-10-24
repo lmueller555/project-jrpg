@@ -53,12 +53,12 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.position,pygame.Vector2(a.behavior['rest_position']))
         watered=[e for e in a.events if e['type']=='watered']
         self.assertEqual([e['units'] for e in watered],[5,4,3,2,1,0])
-        self.assertTrue({'well_lower','well_fill','well_raise','well_pour','pickup','setdown'}<=states)
+        self.assertTrue({'well_lower','well_fill','well_raise','well_attach','well_unhook','pickup','setdown'}<=states)
         self.assertGreater(self.game.elapsed_ms-started,60000)
         self.assertLess(self.game.elapsed_ms-started,100000)
 
     def test_waits_when_collection_point_is_occupied_and_resumes(self):
-        self.game.player.position.update(576,884)
+        self.game.player.position.update(564,862)
         self.assertTrue(self.world.can_stand(self.game.player.position))
         self.until(lambda:self.actor.state=='to_well' and self.actor.waiting,limit=30)
         position=self.actor.position.copy()
@@ -85,23 +85,21 @@ class SanctuaryGardener(unittest.TestCase):
         self.game.update(.5,(0,0),False)
         self.assertGreater(self.actor.position.distance_to(position),1)
 
-    def test_water_transfers_only_during_pour_and_pours_descend_to_roots(self):
+    def test_one_pail_fills_in_shaft_and_pours_descend_to_roots(self):
         a=self.actor;well=self.world.well
         self.until(lambda:a.state=='well_lower')
         self.assertEqual(a.water_units,0)
         self.until(lambda:a.state=='well_fill',limit=5)
         self.assertEqual(a.water_units,0)
         self.game.update(1,(0,0),False)
-        self.assertGreater(well.draw_level,0)
-        self.assertEqual(a.water_units,0)
-        self.until(lambda:a.state=='well_pour',limit=15)
-        self.assertEqual(a.water_units,0)
-        self.assertEqual(well.draw_level,6)
-        self.game.update(1.5,(0,0),False)
         self.assertGreater(a.water_units,0)
-        self.assertLess(a.water_units,6)
-        self.assertEqual(a.water_units+well.draw_level,6)
-        self.assertEqual(a.position,pygame.Vector2(well.data['pail_position']))
+        self.assertEqual(a.water_units,well.draw_level)
+        self.until(lambda:a.state=='well_raise',limit=3)
+        self.assertEqual(a.water_units,6)
+        self.until(lambda:a.state=='well_unhook',limit=15)
+        self.assertEqual(a.water_units,6)
+        self.assertFalse(well.bucket_on_rope)
+        self.assertEqual(a.position,pygame.Vector2(well.data['hook_position']))
         self.assertIsNone(self.world.blocked.overlap(self.world._probes[a.probe_size],a.blocker.topleft))
         for bed in a.behavior['beds']:
             self.until(lambda:a.state=='water_'+bed['id'] and a.pose()[1].get('effect')=='pour')

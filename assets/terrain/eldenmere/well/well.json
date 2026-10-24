@@ -1,6 +1,6 @@
 {
   "id": "eldenmere.well.square.24",
-  "status": "approved",
+  "status": "review",
   "tile_size": 24,
   "frame_size": [
     84,
@@ -38,8 +38,9 @@
     1324
   ],
   "source_recipe": "../../../source/terrain/eldenmere/well/recipe.json",
-  "animation": "gentle water glints inside the shaft; structure and windlass fixed",
+  "animation": "Idle water glints and bare hook; gardener attaches her own pail when drawing water",
   "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
   "draw_water_interaction": true,
-  "drawing_animation": "drawing/animation.json"
+  "drawing_animation": "drawing/animation.json",
+  "bucket_owner": "gardener"
 }

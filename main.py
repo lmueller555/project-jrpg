@@ -139,7 +139,6 @@ class World:
         if size not in self._probes:self._probes[size]=pygame.Mask(size,fill=True)
         return (self.blocked.overlap(self._probes[size],(x,y)) is None
                 and not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
-                and not (self.well and self.well.portable_visible and self.well.pail_blocker.colliderect(rect))
                 and (player_blocker is None or not player_blocker.colliderect(rect)))
 
     def location(self,position):
@@ -158,9 +157,10 @@ class World:
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
         for npc in self.npcs:
             if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
-            ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
-        if self.well and self.well.portable_visible:
-            ordered.append((self.well.data['pail_grip_world'][1]+14,1,'well_pail',self.well))
+            baseline=npc.position.y+self.probe_size[1]/2
+            if isinstance(npc,Gardener) and npc.state in ('well_attach','well_secure','well_take_hold','well_unhook','well_take'):
+                baseline=max(baseline,next(e['sort_y'] for e in self.entities if e['id']=='well')+1)
+            ordered.append((baseline,2,'npc',npc))
         ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':
@@ -174,9 +174,6 @@ class World:
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
-            elif kind=='well_pail':
-                x,y=record.data['pail_grip_world']
-                target.blit(record.portable_sprite(),(x-12-camera[0],y-6-camera[1]))
             else:
                 phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
