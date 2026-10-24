@@ -42,12 +42,13 @@ def save_loop(path, images, durations):
                    duration=durations, loop=0, disposal=2, optimize=False)
 
 
-def build_variants(direction):
+def build_variants(direction, allow_review_base=False):
     base_pack = NPCS / "female_01" / f"walk_{direction}"
     base_recipe = read_json(base_pack / "recipe.json")
     base_meta = read_json(base_pack / "animation.json")
-    if base_recipe["approval_status"] != "approved" or base_meta["status"] != "approved":
-        raise ValueError("The base walk must be approved before deriving palette variants")
+    allowed = {"approved", "review"} if allow_review_base else {"approved"}
+    if base_recipe["approval_status"] not in allowed or base_meta["status"] not in allowed:
+        raise ValueError("The base walk must be approved (or explicitly enabled for appearance review)")
     config = read_json(SOURCE / "palette_variants.json")
     palette = read_json(NPCS / "female_01/palette.json")["materials"]
     for variant in config["variants"]:
@@ -185,9 +186,11 @@ def build_grid():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--direction", choices=(*DIRECTIONS, "all"), default="front")
+    parser.add_argument("--allow-review-base", action="store_true",
+                        help="Derive palette previews from a base appearance awaiting user review")
     args = parser.parse_args()
     for direction in DIRECTIONS if args.direction == "all" else (args.direction,):
-        build_variants(direction)
+        build_variants(direction, args.allow_review_base)
     if args.direction == "all":
         for number in (2, 3):
             build_direction_board(f"npcs/female_{number:02}")

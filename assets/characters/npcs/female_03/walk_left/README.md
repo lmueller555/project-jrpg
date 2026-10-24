@@ -1,6 +1,6 @@
 # Female NPC 03 — left walk
 
-Status: approved by the user in chat. The palette and directional idle designs are approved.
+Status: stride and body motion approved. The revised profile-chin shading is awaiting user review.
 
 Four native 24×36 frames apply blonde hair, a plum dress and hazel eyes to the approved blue base's left cycle. Exact named-color replacements preserve every pixel position, alpha, shading role, stride, arm swing, coordinated head/neck/shoulder bob and skirt pose. Skin, outlines and brown ankle boots remain identical. Fronts retain two colored irises, profiles one; back views have none.
 

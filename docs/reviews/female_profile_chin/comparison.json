@@ -1,0 +1,19 @@
+{
+  "status": "review",
+  "before_commit": "8c8daed83dc959e171c6c8d59af89fb6429d163f",
+  "native_frame_size": [
+    24,
+    36
+  ],
+  "walk_frame_duration_ms": 140,
+  "change": "Three dark chin pixels per profile replaced with existing skin shades",
+  "variants": [
+    1,
+    2,
+    3
+  ],
+  "directions": [
+    "left",
+    "right"
+  ]
+}

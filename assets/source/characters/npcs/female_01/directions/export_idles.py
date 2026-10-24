@@ -19,6 +19,10 @@ BANDS = [
 ]
 EYES = {"left": [9, 9], "right": [14, 9]}
 HAIR_HIGHLIGHTS = {"left": [[15, 10]]}
+PROFILE_JAW_CLEANUP = {
+    "left": [[9, 11, "base"], [10, 11, "shadow"], [10, 12, "shadow"]],
+    "right": [[14, 11, "base"], [13, 11, "shadow"], [13, 12, "shadow"]],
+}
 
 
 def write_json(path, value):
@@ -66,6 +70,14 @@ def main():
             native.putpixel((x, y), (*rgb(front["eyes"]["pupil_color"]), 255))
             native.putpixel((x, y+1), (*rgb(front["eyes"]["iris_color"]), 255))
             eyes = dict(front["eyes"], visible=True, top_pixels=[[x, y]])
+        # A three-pixel outline cluster below the iris read as a gaping mouth.
+        # Close the jaw with existing skin shades; retain pupil/iris, hair and
+        # the remaining outer silhouette exactly. Palette variants inherit it.
+        for x, y, shade in PROFILE_JAW_CLEANUP.get(direction, []):
+            expected = (*rgb(palette["outline"]["base"]), 255)
+            if native.getpixel((x, y)) != expected:
+                raise ValueError(f"Jaw source landmark changed: {direction} {(x,y)}")
+            native.putpixel((x, y), (*rgb(palette["skin"][shade]), 255))
         native.save(OUTPUT / f"idle_{direction}.png")
         background = Image.new("RGB", (24, 36), "#e8edf2")
         background.paste(native, mask=native.getchannel("A"))
@@ -99,6 +111,7 @@ def main():
         "bands": [{"source_y": [a,b], "native_y": [c,d], "materials": list(groups)}
                   for a,b,c,d,groups in BANDS],
         "profile_eye_cleanup_offset_y": -1, "hair_highlights": HAIR_HIGHLIGHTS,
+        "profile_jaw_cleanup": PROFILE_JAW_CLEANUP,
         "exports": exports,
     })
 

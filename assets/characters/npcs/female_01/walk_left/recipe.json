@@ -1,7 +1,7 @@
 {
   "character": "npc_female_01",
   "direction": "left",
-  "approval_status": "approved",
+  "approval_status": "review",
   "idle": "../idle_left.png",
   "materials": "../palette.json",
   "template": "../../../../templates/humanoid_24x36/walk_left/poses.json",

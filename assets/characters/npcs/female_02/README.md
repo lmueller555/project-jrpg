@@ -1,6 +1,6 @@
 # Town NPC — female variant 02
 
-Status: all four directional idles and this palette approved by the user in chat.
+Status: base palette and original directional appearances approved. The left/right profile-jaw cleanup is awaiting user review.
 
 Auburn hair in the shared low bun, a sage calf-length dress with short sleeves, green eyes and brown ankle boots. This is an exact palette variant of `../female_01/idle_front.png`, preserving the silhouette, shading layout, skin, outline and boots.
 

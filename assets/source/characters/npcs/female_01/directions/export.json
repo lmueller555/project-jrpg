@@ -110,6 +110,42 @@
       ]
     ]
   },
+  "profile_jaw_cleanup": {
+    "left": [
+      [
+        9,
+        11,
+        "base"
+      ],
+      [
+        10,
+        11,
+        "shadow"
+      ],
+      [
+        10,
+        12,
+        "shadow"
+      ]
+    ],
+    "right": [
+      [
+        14,
+        11,
+        "base"
+      ],
+      [
+        13,
+        11,
+        "shadow"
+      ],
+      [
+        13,
+        12,
+        "shadow"
+      ]
+    ]
+  },
   "exports": [
     {
       "direction": "left",

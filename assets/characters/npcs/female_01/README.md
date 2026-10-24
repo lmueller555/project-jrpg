@@ -1,6 +1,6 @@
 # Town NPC — female variant 01
 
-Status: all four directional idles and this palette approved by the user in chat.
+Status: base palette and original directional appearances approved. The left/right profile-jaw cleanup is awaiting user review.
 
 - Dark hair gathered into a low bun, with a tidy fringe and two visible blue eyes.
 - Simple blue calf-length dress with short sleeves, a defined waist and a gently flared skirt.
