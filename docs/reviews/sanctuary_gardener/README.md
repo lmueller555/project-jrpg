@@ -1,6 +1,6 @@
 # Sanctuary gardener — runtime review
 
-Status: awaiting user review.
+Status: approved by the user. The previews preserve the approved artwork and timing.
 
 - [Complete collection and watering trip](route.gif): native-scale overview of the real runtime, showing the stairs, workshop lane, brook, four flower patches and both window troughs. Kept compact for direct GitHub image delivery; the action previews below are enlarged.
 - [Collecting water](filling.gif): 6× close-up of lowering, dipping, filling and lifting the bucket.

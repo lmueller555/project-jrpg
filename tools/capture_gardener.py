@@ -136,7 +136,7 @@ def capture():
     gif(OUTPUT/'troughs.gif',troughs)
     gif(OUTPUT/'route.gif',route)
     (OUTPUT/'capture.json').write_text(json.dumps({
-        'status':'review','capture_start_ms':capture_start,'first_cycle_complete_ms':round(first_cycle),
+        'status':actor.animation['status'],'capture_start_ms':capture_start,'first_cycle_complete_ms':round(first_cycle),
         'active_trip_duration_ms':round(first_cycle-initial_rest),
         'initial_rest_duration_ms':initial_rest,'next_rest_duration_ms':actor.rest_duration_ms,
         'rest_range_ms':actor.behavior['rest_range_ms'],
