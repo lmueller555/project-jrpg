@@ -1,6 +1,6 @@
 # Tomas — front idle
 
-Visual design approved in conversation; this native front idle **awaits review**.
+Visual design and native front idle **approved** in conversation.
 
 The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short rust-red tunic over an ivory shirt with rolled cuffs, dark brown trousers, a repaired patch on his anatomical left knee (viewer right), and worn brown ankle boots. His hands are empty. No cloth ties, tools, weapons or religious symbols are included. His exact age remains unspecified.
 
@@ -12,4 +12,4 @@ The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short 
 
 Tomas is visibly 32 pixels tall, two pixels shorter than Caelan's 34, and narrower (12 versus 14 pixels across the full occupied bounds). All use 24×36 frames and `[12,34]` foot anchors. Transparent rows above Tomas accommodate the height difference. The patch is a small native accent; fine source details simplify at this resolution.
 
-Rebuild with `python tools/build_tomas_idle.py` from the repository root. Retained concept, recipe and four reconstructable full-frame layers are under `assets/source/characters/tomas/`. This milestone includes one still front pose; directional views and walking animations will follow review.
+Rebuild with `python tools/build_tomas_idle.py` from the repository root. Retained concept, recipe and four reconstructable full-frame layers are under `assets/source/characters/tomas/`. This milestone includes one still front pose; directional views and walking animations are future work. Preview images retain their original review labels as a record of the approved artwork.
