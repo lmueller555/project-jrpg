@@ -10,6 +10,6 @@ Status: approved by the user. The previews retain the approved artwork and layou
 
 Run `python main.py` and head south from the sanctuary along the western lane to the commons. The in-game map labels it **Well square**. The new well, paving, rounded dirt edges and southern path are installed in the playable town. Existing houses, quest destinations, bridges and descending water routes retain their placement. The west side of the square remains available for future gatherings.
 
-These approved previews show the original ambient water glints. The current game also includes a [gardener-operated water-drawing sequence](../gardener_well/README.md), awaiting review. The windlass stays still when unoccupied; there is no unattended bucket-lifting cycle.
+These approved previews show the original ambient water glints. The current game also includes a [centered near-side gardener sequence](../gardener_near_side/README.md), awaiting review. The windlass stays still when unoccupied; there is no unattended bucket-lifting cycle.
 
 `tools/capture_eldenmere_well.py` reproduces these captures with the runtime renderer. `before_overview.png` retains the prior town overview from commit `1ae774a5c8901b7f15cc4af8163fde8c1377e869`. `capture.json` records the new registrations and completed walk. GIF colors/timing are verified against source captures. Tests cover collision from each side, a full walking ring, the southern connector, drawing approaches, roof occlusion, water-only animation, gathering clearance, all existing route destinations and building door round trips.

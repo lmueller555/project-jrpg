@@ -157,10 +157,7 @@ class World:
         ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
         for npc in self.npcs:
             if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
-            baseline=npc.position.y+self.probe_size[1]/2
-            if isinstance(npc,Gardener) and npc.state in ('well_attach','well_secure','well_take_hold','well_unhook','well_take'):
-                baseline=max(baseline,next(e['sort_y'] for e in self.entities if e['id']=='well')+1)
-            ordered.append((baseline,2,'npc',npc))
+            ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
         ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':

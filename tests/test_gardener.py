@@ -58,7 +58,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertLess(self.game.elapsed_ms-started,100000)
 
     def test_waits_when_collection_point_is_occupied_and_resumes(self):
-        self.game.player.position.update(564,862)
+        self.game.player.position.update(526,898)
         self.assertTrue(self.world.can_stand(self.game.player.position))
         self.until(lambda:self.actor.state=='to_well' and self.actor.waiting,limit=30)
         position=self.actor.position.copy()
@@ -99,7 +99,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.until(lambda:a.state=='well_unhook',limit=15)
         self.assertEqual(a.water_units,6)
         self.assertFalse(well.bucket_on_rope)
-        self.assertEqual(a.position,pygame.Vector2(well.data['hook_position']))
+        self.assertEqual(a.position,pygame.Vector2(well.data['loading_position']))
         self.assertIsNone(self.world.blocked.overlap(self.world._probes[a.probe_size],a.blocker.topleft))
         for bed in a.behavior['beds']:
             self.until(lambda:a.state=='water_'+bed['id'] and a.pose()[1].get('effect')=='pour')

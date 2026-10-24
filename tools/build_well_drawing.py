@@ -1,8 +1,4 @@
-"""Register moving well parts and gardener poses against the approved artwork.
-
-The approved source remains intact. The idle well now has a bare rope hook;
-one gardener-owned pail moves between her hands and that hook.
-"""
+"""Build the centered near-side loading guide and gardener work poses."""
 import json
 import math
 from pathlib import Path
@@ -32,6 +28,11 @@ def build():
     # The windlass itself is retained; its rope wrap gets an animated texture.
     # Only the old exposed crank is cleared, outside the right-hand timber.
     d.rectangle((69,40,83,51),fill=(0,0,0,0))
+    # A small iron guide on the central near capstone parks the bare hook at a
+    # reachable height. It does not change the approved well footprint.
+    d.line((37,75,43,75),fill='#45382d',width=2)
+    d.line((38,74,42,74),fill='#a2b4a7',width=1)
+    d.point((39,76),fill='#657874');d.point((41,76),fill='#657874')
     fixed.save(OUT/'fixed.png')
     rim=Image.new('RGBA',original.size)
     # Front lip hides rope and bucket while they are inside the shaft.
@@ -46,38 +47,67 @@ def build():
     meta={
         'status':status,'position':[486,792],'canvas_size':[112,112],
         'fixed':'fixed.png','front_rim':'front_rim.png',
-        'rope_origin':[54,43],'crank_pivot':[69,43],'crank_handles':handles,
-        'hook_grip':[54,50],'lowered_bucket_grip':[54,74],
-        'operator_position':[572,854],'hook_position':[558,862],
-        'phases_ms':{'well_attach':1800,'well_secure':600,'well_grip':500,
-                     'well_lower':3200,'well_fill':2000,'well_raise':4000,
-                     'well_lock':500,'well_take_hold':1400,
-                     'well_unhook':700,'well_take':1400},
+        'shaft_center_x':40,
+        'rope_origin':[40,43],'crank_pivot':[69,43],'crank_handles':handles,
+        'loading_grip':[40,82],'shaft_grip':[40,76],
+        'lowered_bucket_grip':[40,92],
+        'operator_position':[572,854],'loading_position':[526,892],
+        'snap_pixels':6,
+        'phases_ms':{'well_attach':1200,'well_hook':600,'well_settle':700,
+                     'well_grip':500,'well_lower':3200,'well_fill':2000,
+                     'well_raise':4000,'well_lock':500,'well_catch':900,
+                     'well_unhook':700,'well_take':1200},
         'source':'assets/source/terrain/eldenmere/well/parts/native_structure.png',
         'bucket_owner':'gardener',
-        'notes':'One pail. Held throughout attaching/removing; rope moves vertically only. No lateral bucket transfer.'
+        'notes':'One pail; near-side back-facing handoff. Six-pixel depth snap, zero lateral movement.'
     }
     write(OUT/'animation.json',meta)
     source=ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json'
     recipe=json.loads(source.read_text())
     if 'well_crank_left_0' not in recipe['work_poses']:recipe['status']='review'
     work=recipe['work_poses']
-    def add(name,arms,grip=(0,18),lean=(0,0)):
-        work[name]={'direction':'left','lean':list(lean),'arms':arms,'grip':list(grip),'order':'after'}
+    obsolete=('well_attach_left_','well_reach_left_','well_take_left_',
+              'well_guide_left','well_setdown_left_','well_pickup_left_')
+    for name in list(work):
+        if name.startswith(obsolete):del work[name]
+    def add(name,direction,arms,grip=(0,18),lean=(0,0)):
+        work[name]={'direction':direction,'lean':list(lean),'arms':arms,
+                    'grip':list(grip),'order':'after'}
     # Grips are derived from the world crank registration, not eye-estimated
     # hand poses. Preserve the approved head/neck and planted boots.
     for i,(x,y) in enumerate(handles):
         hand=[486+x-560,792+y-824]
-        add(f'well_crank_left_{i}',[[[11,16],[6,18],hand],[[13,16],[10,21],[6,20]]],hand)
+        add(f'well_crank_left_{i}','left',[[[11,16],[6,18],hand],[[13,16],[10,21],[6,20]]],hand)
         dy=int(i in (1,2,3,5,6,7))
-        add(f'well_heavy_left_{i}',[[[11,16+dy],[6,19],hand],[[13,16+dy],[10,22],[6,21]]],hand,(-dy,dy))
-    # Local grip at the parked hook: world hook minus body top-left. Both hands
-    # meet the handle before detaching; the bucket then follows those hands.
-    hook=[meta['position'][i]+meta['hook_grip'][i]-meta['hook_position'][i]+(12,30)[i] for i in range(2)]
-    for mode,start,end in (('attach',(5,24),hook),('reach',(5,24),hook),('take',hook,(5,19))):
-        for i in range(7):
-            t=i/6;x=round(start[0]+(end[0]-start[0])*t);y=round(start[1]+(end[1]-start[1])*t)
-            add(f'well_{mode}_left_{i}',[[[11,16],[4,17],[x,y]],[[13,16],[7,20],[x+2,y+2]]],(x,y))
+        add(f'well_heavy_left_{i}','left',[[[11,16+dy],[6,19],hand],[[13,16+dy],[10,22],[6,21]]],hand,(-dy,dy))
+
+    def lerp(a,b,t):return [round(a[0]+(b[0]-a[0])*t),round(a[1]+(b[1]-a[1])*t)]
+    # Near-side work is back-facing. Each upper/forearm segment stays within
+    # seven pixels; shoulders and the approved head/body proportions stay fixed.
+    for i in range(7):
+        t=i/6;grip=lerp((20,24),(12,12),t)
+        left=[(8,16),lerp((7,20),(10,14),t),lerp((7,24),(10,12),t)]
+        right=[(16,16),lerp((18,20),(14,14),t),grip]
+        add(f'well_attach_back_{i}','back',[left,right],grip)
+    for i in range(5):
+        t=i/4
+        left=[(8,16),lerp((10,14),(8,17),t),lerp((10,12),(8,19),t)]
+        right=[(16,16),lerp((14,14),(16,17),t),lerp((14,12),(16,19),t)]
+        add(f'well_release_back_{i}','back',[left,right],(12,12))
+    for i in range(7):
+        # Reach the handle at the same frame as the pail's foreground snap,
+        # then hold it steadily until ownership transfers to the actor.
+        t=min(1,i/3)
+        left=[(8,16),lerp((8,17),(10,14),t),lerp((8,19),(10,12),t)]
+        right=[(16,16),lerp((16,17),(14,14),t),lerp((16,19),(14,12),t)]
+        add(f'well_catch_back_{i}','back',[left,right],(12,12))
+    add('well_unhook_back','back',[[[8,16],[10,14],[10,12]],[[16,16],[14,14],[14,12]]],(12,12))
+    full_back=recipe['carry']['full']['back']
+    for i in range(7):
+        t=i/6;grip=lerp((12,12),full_back['grip'],t)
+        left=[(8,16),lerp((10,14),full_back['arms'][0][1],t),lerp((10,12),full_back['arms'][0][2],t)]
+        right=[(16,16),lerp((14,14),full_back['arms'][1][1],t),lerp((14,12),full_back['arms'][1][2],t)]
+        add(f'well_take_back_{i}','back',[left,right],grip)
     if json.loads(source.read_text())!=recipe:write(source,recipe)
     gardener.build()
     # Export the same bucketless idle into terrain/runtime map art, so the map
@@ -105,7 +135,7 @@ def build():
     background=Image.new('RGBA',idle.size,'#e8edf2');background.alpha_composite(idle)
     background.convert('RGB').resize((504,576),Image.Resampling.NEAREST).save(OUT.parent/'well_review.png')
     well_meta=json.loads((OUT.parent/'well.json').read_text())
-    well_meta.update(status=status,animation='Idle water glints and bare hook; gardener attaches her own pail when drawing water',bucket_owner='gardener')
+    well_meta.update(status=status,animation='Idle water glints and centered near-side hook; gardener attaches her own pail',bucket_owner='gardener')
     write(OUT.parent/'well.json',well_meta)
     # Authoring registrations are checked in alongside the generated layers.
     write(SOURCE/'drawing_recipe.json',meta)

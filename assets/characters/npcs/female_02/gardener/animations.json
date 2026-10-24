@@ -592,171 +592,219 @@
       ],
       "order": "after"
     },
-    "well_attach_left_0": {
-      "body": "well_attach_left_0.png",
+    "well_attach_back_0": {
+      "body": "well_attach_back_0.png",
       "grip": [
-        5,
+        20,
         24
       ],
       "order": "after"
     },
-    "well_attach_left_1": {
-      "body": "well_attach_left_1.png",
+    "well_attach_back_1": {
+      "body": "well_attach_back_1.png",
       "grip": [
-        3,
+        19,
         22
       ],
       "order": "after"
     },
-    "well_attach_left_2": {
-      "body": "well_attach_left_2.png",
+    "well_attach_back_2": {
+      "body": "well_attach_back_2.png",
       "grip": [
-        1,
-        19
+        17,
+        20
       ],
       "order": "after"
     },
-    "well_attach_left_3": {
-      "body": "well_attach_left_3.png",
+    "well_attach_back_3": {
+      "body": "well_attach_back_3.png",
       "grip": [
-        0,
-        17
-      ],
-      "order": "after"
-    },
-    "well_attach_left_4": {
-      "body": "well_attach_left_4.png",
-      "grip": [
-        -2,
-        15
-      ],
-      "order": "after"
-    },
-    "well_attach_left_5": {
-      "body": "well_attach_left_5.png",
-      "grip": [
-        -4,
-        12
-      ],
-      "order": "after"
-    },
-    "well_attach_left_6": {
-      "body": "well_attach_left_6.png",
-      "grip": [
-        -6,
-        10
-      ],
-      "order": "after"
-    },
-    "well_reach_left_0": {
-      "body": "well_reach_left_0.png",
-      "grip": [
-        5,
-        24
-      ],
-      "order": "after"
-    },
-    "well_reach_left_1": {
-      "body": "well_reach_left_1.png",
-      "grip": [
-        3,
-        22
-      ],
-      "order": "after"
-    },
-    "well_reach_left_2": {
-      "body": "well_reach_left_2.png",
-      "grip": [
-        1,
-        19
-      ],
-      "order": "after"
-    },
-    "well_reach_left_3": {
-      "body": "well_reach_left_3.png",
-      "grip": [
-        0,
-        17
-      ],
-      "order": "after"
-    },
-    "well_reach_left_4": {
-      "body": "well_reach_left_4.png",
-      "grip": [
-        -2,
-        15
-      ],
-      "order": "after"
-    },
-    "well_reach_left_5": {
-      "body": "well_reach_left_5.png",
-      "grip": [
-        -4,
-        12
-      ],
-      "order": "after"
-    },
-    "well_reach_left_6": {
-      "body": "well_reach_left_6.png",
-      "grip": [
-        -6,
-        10
-      ],
-      "order": "after"
-    },
-    "well_take_left_0": {
-      "body": "well_take_left_0.png",
-      "grip": [
-        -6,
-        10
-      ],
-      "order": "after"
-    },
-    "well_take_left_1": {
-      "body": "well_take_left_1.png",
-      "grip": [
-        -4,
-        12
-      ],
-      "order": "after"
-    },
-    "well_take_left_2": {
-      "body": "well_take_left_2.png",
-      "grip": [
-        -2,
-        13
-      ],
-      "order": "after"
-    },
-    "well_take_left_3": {
-      "body": "well_take_left_3.png",
-      "grip": [
-        0,
-        14
-      ],
-      "order": "after"
-    },
-    "well_take_left_4": {
-      "body": "well_take_left_4.png",
-      "grip": [
-        1,
-        16
-      ],
-      "order": "after"
-    },
-    "well_take_left_5": {
-      "body": "well_take_left_5.png",
-      "grip": [
-        3,
+        16,
         18
       ],
       "order": "after"
     },
-    "well_take_left_6": {
-      "body": "well_take_left_6.png",
+    "well_attach_back_4": {
+      "body": "well_attach_back_4.png",
       "grip": [
-        5,
+        15,
+        16
+      ],
+      "order": "after"
+    },
+    "well_attach_back_5": {
+      "body": "well_attach_back_5.png",
+      "grip": [
+        13,
+        14
+      ],
+      "order": "after"
+    },
+    "well_attach_back_6": {
+      "body": "well_attach_back_6.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_release_back_0": {
+      "body": "well_release_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_release_back_1": {
+      "body": "well_release_back_1.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_release_back_2": {
+      "body": "well_release_back_2.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_release_back_3": {
+      "body": "well_release_back_3.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_release_back_4": {
+      "body": "well_release_back_4.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_0": {
+      "body": "well_catch_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_1": {
+      "body": "well_catch_back_1.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_2": {
+      "body": "well_catch_back_2.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_3": {
+      "body": "well_catch_back_3.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_4": {
+      "body": "well_catch_back_4.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_5": {
+      "body": "well_catch_back_5.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_catch_back_6": {
+      "body": "well_catch_back_6.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_unhook_back": {
+      "body": "well_unhook_back.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_take_back_0": {
+      "body": "well_take_back_0.png",
+      "grip": [
+        12,
+        12
+      ],
+      "order": "after"
+    },
+    "well_take_back_1": {
+      "body": "well_take_back_1.png",
+      "grip": [
+        13,
+        13
+      ],
+      "order": "after"
+    },
+    "well_take_back_2": {
+      "body": "well_take_back_2.png",
+      "grip": [
+        14,
+        15
+      ],
+      "order": "after"
+    },
+    "well_take_back_3": {
+      "body": "well_take_back_3.png",
+      "grip": [
+        15,
+        16
+      ],
+      "order": "after"
+    },
+    "well_take_back_4": {
+      "body": "well_take_back_4.png",
+      "grip": [
+        16,
+        17
+      ],
+      "order": "after"
+    },
+    "well_take_back_5": {
+      "body": "well_take_back_5.png",
+      "grip": [
+        17,
         19
+      ],
+      "order": "after"
+    },
+    "well_take_back_6": {
+      "body": "well_take_back_6.png",
+      "grip": [
+        18,
+        20
       ],
       "order": "after"
     }

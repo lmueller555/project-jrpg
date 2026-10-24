@@ -2,6 +2,8 @@
 
 Status: awaiting user review. Implemented in `main.py`; supersedes the two-bucket transfer.
 
+Superseded by the [centered near-side revision](../gardener_near_side/README.md). The user rejected this version because the side pose stretched her arms and placed the rope too far toward the well’s edge. These files remain the historical comparison; the live game and capture command now use the near-side routine.
+
 - [6× looping well close-up](well_drawing.gif): arrive with her pail, raise it in both hands, fasten its handle to the hook, lower/fill/raise it, return to grasp the handle, unhook it and lower it into her carrying pose. Includes arrival and departure so the empty hook is visible between visits.
 - [Full routine](full_routine.gif): native-scale route overview, at real game speed. Most of the initial random rest is omitted.
 - [6× watering montage](watering.gif): all four flower patches and both raised window troughs, with cuts between stops.

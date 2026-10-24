@@ -38,7 +38,7 @@
     1324
   ],
   "source_recipe": "../../../source/terrain/eldenmere/well/recipe.json",
-  "animation": "Idle water glints and bare hook; gardener attaches her own pail when drawing water",
+  "animation": "Idle water glints and centered near-side hook; gardener attaches her own pail",
   "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
   "draw_water_interaction": true,
   "drawing_animation": "drawing/animation.json",

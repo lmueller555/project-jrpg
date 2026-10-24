@@ -97,18 +97,19 @@ class Gardener:
         steps=[{'id':'rest','animation':'rest','facing':'right'},
                {'id':'pickup','animation':'pickup','facing':'right'},
                {'id':'to_well','waypoints':b['outbound_waypoints']},
-               {'id':'well_attach','facing':'left'},
-               {'id':'well_secure','facing':'left'},
+               {'id':'well_attach','facing':'back'},
+               {'id':'well_hook','facing':'back'},
+               {'id':'well_settle','facing':'back'},
                {'id':'well_to_crank','waypoints':[self.well.data['operator_position']]},
                {'id':'well_grip','facing':'left'},
                {'id':'well_lower','facing':'left'},
                {'id':'well_fill','facing':'left'},
                {'id':'well_raise','facing':'left'},
                {'id':'well_lock','facing':'left'},
-               {'id':'well_to_hook','waypoints':[self.well.data['hook_position']]},
-               {'id':'well_take_hold','facing':'left'},
-               {'id':'well_unhook','facing':'left'},
-               {'id':'well_take','facing':'left'},
+               {'id':'well_to_loading','waypoints':[self.well.data['loading_position']]},
+               {'id':'well_catch','facing':'back'},
+               {'id':'well_unhook','facing':'back'},
+               {'id':'well_take','facing':'back'},
                {'id':'return_to_sanctuary','waypoints':b['return_waypoints']}]
         for index,bed in enumerate(b['beds']):
             via=[bed['position']]
@@ -206,12 +207,18 @@ class Gardener:
     def pose(self):
         step=self.steps[self.step_index]
         if self.state.startswith('well_') and 'waypoints' not in step:
-            if self.state in ('well_attach','well_take_hold','well_take'):
-                mode={'well_attach':'attach','well_take_hold':'reach','well_take':'take'}[self.state]
-                index=min(6,int(self.well.progress*(9 if self.state=='well_attach' else 7)))
-                return f'well_{mode}_left_{index}',{'level':self.water_units,'hidden_bucket':self.state=='well_take_hold'}
-            if self.state in ('well_secure','well_unhook'):
-                return 'well_attach_left_6',{'level':self.water_units,'hidden_bucket':self.state=='well_secure'}
+            if self.state=='well_attach':
+                return f'well_attach_back_{min(6,int(self.well.progress*7))}',{'level':self.water_units}
+            if self.state=='well_hook':
+                return 'well_attach_back_6',{'level':self.water_units}
+            if self.state=='well_settle':
+                return f'well_release_back_{min(4,int(self.well.progress*5))}',{'hidden_bucket':True}
+            if self.state=='well_catch':
+                return f'well_catch_back_{min(6,int(self.well.progress*7))}',{'hidden_bucket':True}
+            if self.state=='well_unhook':
+                return 'well_unhook_back',{'level':self.water_units}
+            if self.state=='well_take':
+                return f'well_take_back_{min(6,int(self.well.progress*7))}',{'level':self.water_units}
             if self.state in ('well_grip','well_lower','well_fill','well_raise','well_lock'):
                 prefix='well_heavy_left_' if self.state=='well_raise' else 'well_crank_left_'
                 return prefix+str(self.well.crank_index),{'hidden_bucket':True}
@@ -239,7 +246,7 @@ class Gardener:
         name,frame,pose,key,xy=self.bucket_placement()
         if frame.get('hidden_bucket') or (self.state.startswith('well_') and 'waypoints' in self.steps[self.step_index]):
             return self.bodies[name]
-        if self.state in ('well_attach','well_unhook','well_take'):
+        if self.state in ('well_attach','well_hook','well_unhook','well_take'):
             # One pail, registered to both hands before removing its hook.
             image=self.bodies[name].copy()
             image.blit(self.buckets[key],xy)

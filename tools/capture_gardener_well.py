@@ -14,21 +14,22 @@ sys.path.insert(0,str(ROOT))
 import main
 from capture_gardener import gif, panel, render
 
-OUTPUT=ROOT/'docs/reviews/gardener_single_bucket'
+OUTPUT=ROOT/'docs/reviews/gardener_near_side'
 CAPTIONS={
     'rest':'Resting / next trip in 3-5 minutes',
     'pickup':'Pick up the empty pail',
     'to_well':'Follow the village lane to the well',
-    'well_attach':'Lift her pail onto the rope hook',
-    'well_secure':'Fasten the hook through its handle',
+    'well_attach':'Raise her pail to the centered loading guide',
+    'well_hook':'Support the pail and fasten its handle',
+    'well_settle':'Release the pail / it settles behind the rim',
     'well_to_crank':'Step up to the crank',
     'well_grip':'Take hold of the crank',
     'well_lower':'Turn the crank / lower her pail',
     'well_fill':'Her pail fills in the shaft',
     'well_raise':'Reverse the crank / lift the full bucket',
     'well_lock':'Secure the windlass',
-    'well_to_hook':'Return to her suspended pail',
-    'well_take_hold':'Grasp the handle with both hands',
+    'well_to_loading':'Return to the near-side loading guide',
+    'well_catch':'Reach in / the pail settles into both hands',
     'well_unhook':'Support the pail and release its hook',
     'well_take':'Lower her pail into its carrying pose',
     'return_to_sanctuary':'Carry water up the sanctuary stairs',
@@ -56,7 +57,7 @@ def overview(game):
 
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game();game.player.position.update(576,900)
+    game=main.Game();game.player.position.update(420,1100)
     actor=main.Gardener(game.town.npcs[1].data,game.town,random.Random(2026))
     game.town.npcs[1]=actor
     initial_rest=actor.rest_duration_ms
@@ -71,12 +72,12 @@ def capture():
         if i%2==0:
             route.append(panel(overview(game),1,'Gardener / full watering trip',
                                'Real-time trip | long rests omitted',text))
-        near_hook=actor.position.distance_to(game.town.well.data['hook_position'])<44
-        if state.startswith('well_') or (near_hook and state in ('to_well','return_to_sanctuary')):
+        near_loading=actor.position.distance_to(game.town.well.data['loading_position'])<44
+        if state.startswith('well_') or (near_loading and state in ('to_well','return_to_sanctuary')):
             scene=render(game,(474,786)).crop((0,0,120,120))
             well.append(panel(scene,6,'Sanctuary gardener / drawing water',
                               '6x native pixels | actual game animation',text))
-            if state=='well_unhook' and .4<=game.town.well.progress<=.6:well_still=well[-1]
+            if state=='well_unhook' and .35<=game.town.well.progress<=.55:well_still=well[-1]
         if state.startswith(('inspect_','water_')):
             camera=(round(actor.position.x)-60,round(actor.position.y)-54)
             scene=render(game,camera).crop((0,0,120,80))

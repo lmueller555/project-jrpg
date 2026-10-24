@@ -2,7 +2,7 @@
 
 Status: approved by the user. The previews preserve the approved artwork and timing.
 
-Historical record: the current game uses the [new well collection routine](../gardener_well/README.md), awaiting review. These brook previews remain unchanged. `python tools/capture_gardener.py` now captures the current well routine into its separate review folder.
+Historical record: the current game uses the [centered near-side well routine](../gardener_near_side/README.md), awaiting review. These brook previews remain unchanged. `python tools/capture_gardener.py` now captures the current well routine into its separate review folder.
 
 - [Complete collection and watering trip](route.gif): native-scale overview of the real runtime, showing the stairs, workshop lane, brook, four flower patches and both window troughs. Kept compact for direct GitHub image delivery; the action previews below are enlarged.
 - [Collecting water](filling.gif): 6× close-up of lowering, dipping, filling and lifting the bucket.

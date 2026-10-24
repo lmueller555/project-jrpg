@@ -10,8 +10,9 @@
   ],
   "fixed": "fixed.png",
   "front_rim": "front_rim.png",
+  "shaft_center_x": 40,
   "rope_origin": [
-    54,
+    40,
     43
   ],
   "crank_pivot": [
@@ -52,35 +53,41 @@
       44
     ]
   ],
-  "hook_grip": [
-    54,
-    50
+  "loading_grip": [
+    40,
+    82
+  ],
+  "shaft_grip": [
+    40,
+    76
   ],
   "lowered_bucket_grip": [
-    54,
-    74
+    40,
+    92
   ],
   "operator_position": [
     572,
     854
   ],
-  "hook_position": [
-    558,
-    862
+  "loading_position": [
+    526,
+    892
   ],
+  "snap_pixels": 6,
   "phases_ms": {
-    "well_attach": 1800,
-    "well_secure": 600,
+    "well_attach": 1200,
+    "well_hook": 600,
+    "well_settle": 700,
     "well_grip": 500,
     "well_lower": 3200,
     "well_fill": 2000,
     "well_raise": 4000,
     "well_lock": 500,
-    "well_take_hold": 1400,
+    "well_catch": 900,
     "well_unhook": 700,
-    "well_take": 1400
+    "well_take": 1200
   },
   "source": "assets/source/terrain/eldenmere/well/parts/native_structure.png",
   "bucket_owner": "gardener",
-  "notes": "One pail. Held throughout attaching/removing; rope moves vertically only. No lateral bucket transfer."
+  "notes": "One pail; near-side back-facing handoff. Six-pixel depth snap, zero lateral movement."
 }
