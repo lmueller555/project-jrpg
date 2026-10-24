@@ -29,7 +29,7 @@ class WellDrawing(unittest.TestCase):
         return (self.actor.position-pygame.Vector2(self.actor.draw_anchor)+xy+
                 pygame.Vector2(bucket['grip']))
 
-    def test_near_side_registration_is_centered_with_one_six_pixel_depth_snap(self):
+    def test_centered_handoff_moves_smoothly_up_to_winch(self):
         data=self.well.data;origin=pygame.Vector2(data['position'])
         self.assertEqual(data['shaft_center_x'],40)
         self.assertEqual(data['rope_origin'][0],40)
@@ -38,18 +38,22 @@ class WellDrawing(unittest.TestCase):
         self.assertEqual(data['lowered_bucket_grip'][0],40)
         self.assertEqual(origin.x+40,526)
         self.assertEqual(data['loading_position'],[526,892])
-        self.assertEqual(abs(data['loading_grip'][1]-data['shaft_grip'][1]),6)
+        self.assertEqual(data['shaft_grip'][1],51)
+        self.assertEqual(data['handoff_motion'],'continuous')
 
         self.until('well_settle')
         self.assertEqual(tuple(self.well.bucket_grip),tuple(data['loading_grip']))
         self.game.update(.4,(0,0),False)
         self.assertEqual(self.actor.state,'well_settle')
-        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['shaft_grip']))
+        self.assertEqual(self.well.bucket_grip.x,40)
+        self.assertGreater(self.well.bucket_grip.y,data['shaft_grip'][1])
+        self.assertLess(self.well.bucket_grip.y,data['loading_grip'][1])
         self.until('well_catch')
         self.assertEqual(tuple(self.well.bucket_grip),tuple(data['shaft_grip']))
         self.game.update(.5,(0,0),False)
         self.assertEqual(self.actor.state,'well_catch')
-        self.assertEqual(tuple(self.well.bucket_grip),tuple(data['loading_grip']))
+        self.assertGreater(self.well.bucket_grip.y,data['shaft_grip'][1])
+        self.assertLess(self.well.bucket_grip.y,data['loading_grip'][1])
 
     def test_near_side_poses_keep_normal_arm_lengths_and_fixed_body_proportions(self):
         recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')
@@ -90,18 +94,31 @@ class WellDrawing(unittest.TestCase):
             previous=current;self.game.update(1/60,(0,0),False)
 
     def test_suspended_pail_stays_centered_and_moves_only_vertically(self):
+        self.assertEqual(self.well.visible_rope_length,0)  # idle / bucket not attached
+        self.until('well_attach');self.assertEqual(self.well.visible_rope_length,0)
+        self.until('well_settle');self.assertEqual(self.well.visible_rope_length,0)
+        self.until('well_grip');self.assertEqual(self.well.visible_rope_length,0)
         self.until('well_lower');last=self.well.bucket_grip.y
+        self.assertEqual(self.well.visible_rope_length,0)
+        last_rope=0
         while self.actor.state=='well_lower':
             self.assertEqual(self.well.bucket_grip.x,40)
             self.assertGreaterEqual(self.well.bucket_grip.y,last)
+            self.assertGreaterEqual(self.well.visible_rope_length,last_rope)
             self.assertTrue(self.well.bucket_on_rope)
+            last_rope=self.well.visible_rope_length
             last=self.well.bucket_grip.y;self.game.update(.1,(0,0),False)
+        self.assertGreater(last_rope,0)
         self.until('well_raise');last=self.well.bucket_grip.y
+        last_rope=self.well.visible_rope_length
         while self.actor.state=='well_raise':
             self.assertEqual(self.well.bucket_grip.x,40)
             self.assertLessEqual(self.well.bucket_grip.y,last)
+            self.assertLessEqual(self.well.visible_rope_length,last_rope)
             self.assertTrue(self.well.bucket_on_rope)
+            last_rope=self.well.visible_rope_length
             last=self.well.bucket_grip.y;self.game.update(.1,(0,0),False)
+        self.assertEqual(self.well.visible_rope_length,0)
 
     def test_crank_hand_alignment_and_loaded_reverse_rotation(self):
         self.until('well_lower');seen=[]
