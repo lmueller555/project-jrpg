@@ -24,7 +24,7 @@ The patch remains on the front of his anatomical left knee. It is visible on the
 
 Run `python tools/build_tomas_directional_idles.py` to rebuild these views, their twelve source layers and review boards. The approved front, its source/layers and palette remain unchanged.
 
-## Front walk — awaiting review
+## Front walk — approved
 
 `walk_front/` adds a four-phase front walk using the shared stride and timing, with arm poses registered to Tomas's proportions. Head and shoulders bob together; the patch follows the left knee rather than staying fixed on the sheet. He remains two pixels shorter than Caelan in matching phases.
 

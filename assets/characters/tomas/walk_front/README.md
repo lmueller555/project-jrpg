@@ -1,6 +1,6 @@
 # Tomas — front walk
 
-**Awaiting review.** Four native 24×36 frames, 140 ms each (560 ms loop), foot anchor `[12,34]`. Motion offsets are baked into the pixels.
+**Approved.** Four native 24×36 frames, 140 ms each (560 ms loop), foot anchor `[12,34]`. Motion offsets are baked into the pixels.
 
 - `walk_front_preview.gif`: opaque 20× nearest-neighbor looping review.
 - `shared_motion_comparison.gif`: synchronized 16× Caelan/Tomas comparison with a shared foot baseline.
