@@ -21,26 +21,28 @@ occasional distant birds. Twenty-four water overlay frames animate the full
 course with faster falls and slower surface motion. The original scenery
 remains a single master image.
 
-`eldenmere_theme.wav` is the lossless master of an original 88.89-second stereo
-theme; `eldenmere_theme.ogg` is the smaller runtime export. It moves through
-Home, Curiosity, Fragility and Return in 6/8 at dotted-quarter = 54, with D-major
-and B-minor treatments of a recurring motif. Flute, harp, warm strings, pizzicato
-answers, bass and sparse bells use expressive envelopes and stereo reverb.
-`music_score.json` preserves the arrangement and note events. It uses no external
-recordings or sample libraries. The music loops, can be muted in Settings, and
-fades out on New Game. Headless verification does not initialize music.
+`eldenmere_theme.wav` and `eldenmere_theme.ogg` now contain the replacement
+93.33-second sampled piano/cello score, **A Place to Return To**. The former
+flute/harp track is discarded. The new piece uses 4/4 at a fixed 72 BPM, with
+quarter-grid entrances/releases and calibrated sample attacks. Its G-major
+melody receives a cello answer and restrained strings before a quiet return.
+`music_score.json` records note events, sample-clock timing and attack offsets.
+See `assets/source/audio/title_piano_cello/` for the GeneralUser GS sample
+license/provenance, and `docs/reviews/title_piano_cello/` for clean and metronome
+excerpts. Music still loops, mutes in Settings and fades out on New Game.
 
 The two bundled DejaVu fonts have their license and attribution in
 `assets/ui/fonts/LICENSE-DejaVu.txt`. Only Pygame is required by the game;
 Pillow and NumPy are used to build artwork/audio and capture review images;
-FFmpeg encodes the runtime Ogg and review video.
+FFmpeg encodes the runtime Ogg and review video. FluidSynth and the documented
+GeneralUser GS 2.0.3 SoundFont are needed to rebuild the sampled music.
 
 Reproduce assets:
 
 ```sh
 python tools/export_title_art.py
 python tools/build_title_water.py
-python tools/build_title_music.py
+python tools/build_title_music.py --soundfont /path/to/GeneralUser-GS.sf2
 ```
 
 The theme does not change gameplay music, which is not implemented yet.

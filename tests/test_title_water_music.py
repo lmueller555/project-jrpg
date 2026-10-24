@@ -65,14 +65,15 @@ class TitleWaterArt(unittest.TestCase):
 class TitleMusic(unittest.TestCase):
     def test_theme_is_full_length_stereo_unclipped_and_continuous(self):
         score=json.loads((ROOT/'assets/ui/title/music_score.json').read_text())
-        self.assertEqual(score['meter'],'6/8')
-        self.assertEqual([s['name'] for s in score['sections']],['Home','Curiosity','Fragility','Return'])
-        self.assertEqual(score['motif_midi'],[74,76,78,81])
-        self.assertGreaterEqual(len(score['instruments']),6)
+        self.assertEqual(score['meter'],'4/4')
+        self.assertEqual(score['quarter_bpm'],72)
+        self.assertEqual([s['name'] for s in score['sections']],['Piano','Cello answer','Together','Quiet return'])
+        self.assertEqual(score['motif_midi'],[62,67,69,71,67])
+        self.assertEqual(set(score['instruments']),{'piano','cello','strings','bell'})
         with wave.open(str(ROOT/'assets/ui/title/eldenmere_theme.wav')) as audio:
             self.assertEqual((audio.getnchannels(),audio.getsampwidth(),audio.getframerate()),(2,2,44100))
             duration=audio.getnframes()/audio.getframerate()
-            self.assertTrue(85<duration<95)
+            self.assertTrue(90<duration<110)
             self.assertAlmostEqual(duration,score['duration_seconds'])
             pcm=array('h',audio.readframes(audio.getnframes()))
         self.assertLess(max(abs(v) for v in pcm),30000)
@@ -85,7 +86,7 @@ class TitleMusic(unittest.TestCase):
         pygame.display.init();pygame.display.set_mode((1,1));pygame.mixer.init()
         try:
             sound=pygame.mixer.Sound(str(ROOT/'assets/ui/title/eldenmere_theme.ogg'))
-            self.assertTrue(85<sound.get_length()<95)
+            self.assertTrue(90<sound.get_length()<110)
             game=main.Game(fullscreen=False)
             game.title.start_music()
             self.assertTrue(game.title.music_started)
@@ -94,6 +95,29 @@ class TitleMusic(unittest.TestCase):
             game.title.activate()
             self.assertFalse(pygame.mixer.music.get_busy())
         finally:pygame.quit()
+
+    def test_every_written_entrance_and_release_is_on_the_same_beat_grid(self):
+        score=json.loads((ROOT/'assets/ui/title/music_score.json').read_text())
+        samples=score['sample_rate']*60//score['quarter_bpm']
+        self.assertEqual(samples,score['beat_samples'])
+        for event in score['events']:
+            self.assertIsInstance(event['beat'],int)
+            self.assertIn(event['duration_beats'],(1,2,3,4))
+            self.assertEqual(event['start_sample'],event['beat']*samples)
+            self.assertEqual(event['duration_samples'],event['duration_beats']*samples)
+            self.assertGreaterEqual(event['attack_advance_samples'],0)
+            self.assertLess(event['attack_advance_samples'],int(.2*score['sample_rate']))
+
+    def test_rendered_instrument_entrances_match_click_reference(self):
+        report=json.loads((ROOT/'docs/reviews/title_piano_cello/timing_audit.json').read_text())
+        master=ROOT/'assets/ui/title/eldenmere_theme.wav'
+        self.assertEqual(report['audio_sha256'],hashlib.sha256(master.read_bytes()).hexdigest())
+        self.assertEqual({r['instrument'] for r in report['measured_instruments']},{'piano','cello','strings','bell'})
+        for probe in report['measured_instruments']:
+            self.assertLessEqual(abs(probe['error_ms']),report['tolerance_ms'])
+            self.assertEqual(probe['expected_sample']%report['beat_samples'],0)
+        for name in ('sketch.ogg','sketch_with_click.ogg'):
+            self.assertTrue((ROOT/'docs/reviews/title_piano_cello'/name).is_file())
 
 
 if __name__=='__main__':unittest.main()

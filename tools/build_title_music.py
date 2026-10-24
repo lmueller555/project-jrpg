@@ -1,141 +1,277 @@
-"""Original 6/8 title theme: Home, Curiosity, Fragility, Return.
+"""New sampled piano/cello title score, quantized to one 72-BPM quarter grid.
 
-Offline NumPy synthesis of breath-shaped flute, voiced harp, slow strings,
-pizzicato replies and sparse bells. FFmpeg creates the runtime Ogg file.
+Build dependencies: NumPy, libfluidsynth, FFmpeg, GeneralUser GS 2.0.3.
+The game only plays the exported Ogg and does not require these dependencies.
 """
+import argparse
+import ctypes as c
+import ctypes.util
+import hashlib
 import json
 import math
 from pathlib import Path
+import struct
 import subprocess
 import wave
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
 RATE=44100
-TEMPO=54 # dotted-quarter beats/minute; two per 6/8 bar
-BAR=120/TEMPO
-EIGHTH=BAR/6
-SECTIONS=('Home','Curiosity','Fragility','Return')
-D=(50,54,57,62);G=(43,50,57,59);EM=(52,55,59,62)
-A=(45,52,57,61);ASUS=(45,52,57,62);BM=(47,54,59,62)
-PROGRESSIONS=(
-    (D,G,EM,ASUS,(42,50,57,62),BM,G,A,EM,(45,52,57,59)),
-    (D,G,(42,50,57,62),BM,EM,ASUS,A,D,EM,(45,52,57,59)),
-    (BM,G,EM,(42,49,54,59),(42,49,54,58),BM,(43,50,58,62),EM,ASUS,A),
-    (D,G,(42,50,57,62),BM,EM,ASUS,D,G,EM,(45,52,57,59)),
+TEMPO=72
+BEAT_FRAMES=RATE*60//TEMPO # exactly 36,750 samples per quarter note
+BARS=28
+COUNT=BARS*4*BEAT_FRAMES
+SOUNDFONT_SHA='9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe'
+PROGRAMS={'piano':0,'cello':42,'strings':48,'bell':14}
+CHANNELS={name:index for index,name in enumerate(PROGRAMS)}
+G=(43,50,55,59);DF=(42,50,57);EM=(40,47,55,59)
+CMAJ=(48,55,59);CMIN=(48,51,55,57);GD=(38,50,55,59);DSUS=(50,57,60)
+CHORDS=(G,DF,EM,DSUS,CMAJ,CMIN,GD,DSUS)
+PIANO=(
+ ((0,1,62),(1,2,67),(3,1,69)),
+ ((0,2,71),(2,1,69),(3,1,67)),
+ ((0,2,66),(2,1,64),(3,1,62)),
+ ((0,2,69),(2,2,67)),
+ ((0,1,64),(1,1,67),(2,2,71)),
+ ((0,2,69),(2,1,67),(3,1,63)),
+ ((0,2,67),(2,1,66),(3,1,64)),
+ ((0,3,62),),
 )
-PHRASES=(
-    ((0,1.35,74),(1.5,.45,76),(2,.9,78),(3,2.6,81)),
-    ((.5,1.7,78),(2.5,.8,76),(4,1.6,74)),
-    ((0,1.35,76),(1.5,.45,78),(2,.9,79),(3,2.6,83)),
-    ((0,1.7,81),(2,.8,79),(3,1,78),(4.5,1,76)),
-    ((.5,1.35,78),(2,.8,81),(3,1.3,83),(4.5,1,81)),
-    ((0,1.7,78),(2.5,.8,76),(4,1.6,74)),
-    ((.5,.8,76),(1.5,.8,78),(3,1.3,81),(4.5,1,79)),
-    ((0,1.7,78),(2.5,.8,76),(4,1.6,74)),
-    ((.5,1.3,76),(2,1.3,79),(3.5,.8,78),(4.5,1,76)),
-    ((0,1.3,76),(2,.8,73),(3,1.3,76),(4.5,1,81)),
+CELLO=(
+ ((0,2,55),(2,1,57),(3,1,59)),
+ ((0,2,62),(2,2,59)),
+ ((0,2,64),(2,1,62),(3,1,59)),
+ ((0,3,57),),
+ ((0,2,55),(2,2,60)),
+ ((0,2,63),(2,1,62),(3,1,60)),
+ ((0,2,59),(2,1,57),(3,1,55)),
+ ((0,3,54),),
 )
+
+
+class SampleRenderer:
+    def __init__(self,soundfont):
+        name=ctypes.util.find_library('fluidsynth')
+        if not name:raise RuntimeError('libfluidsynth is required to render the source score')
+        self.lib=c.CDLL(name)
+        def bind(name,args,result):
+            f=getattr(self.lib,name);f.argtypes=args;f.restype=result;return f
+        P=c.c_void_p;I=c.c_int;S=c.c_char_p
+        self.new_settings=bind('new_fluid_settings',[],P)
+        self.num=bind('fluid_settings_setnum',[P,S,c.c_double],I)
+        self.integer=bind('fluid_settings_setint',[P,S,I],I)
+        self.new_synth=bind('new_fluid_synth',[P],P)
+        self.load=bind('fluid_synth_sfload',[P,S,I],I)
+        self.program=bind('fluid_synth_program_select',[P,I,I,I,I],I)
+        self.on=bind('fluid_synth_noteon',[P,I,I,I],I)
+        self.off=bind('fluid_synth_noteoff',[P,I,I],I)
+        self.silence=bind('fluid_synth_all_sounds_off',[P,I],I)
+        self.cc=bind('fluid_synth_cc',[P,I,I,I],I)
+        self.write=bind('fluid_synth_write_float',[P,I,P,I,I,P,I,I],I)
+        self.delete=bind('delete_fluid_synth',[P],None)
+        self.delete_settings=bind('delete_fluid_settings',[P],None)
+        self.settings=self.new_settings()
+        self.num(self.settings,b'synth.sample-rate',RATE)
+        self.num(self.settings,b'synth.gain',.6)
+        self.integer(self.settings,b'synth.reverb.active',0)
+        self.integer(self.settings,b'synth.chorus.active',0)
+        self.integer(self.settings,b'synth.min-note-length',0)
+        self.synth=self.new_synth(self.settings)
+        sf=self.load(self.synth,str(soundfont).encode(),0)
+        if sf<0:raise RuntimeError('Could not load the licensed SoundFont')
+        for name,preset in PROGRAMS.items():
+            channel=CHANNELS[name]
+            self.program(self.synth,channel,sf,0,preset)
+            self.cc(self.synth,channel,10,{'piano':52,'cello':76,'strings':64,'bell':40}[name])
+            self.cc(self.synth,channel,7,{'piano':100,'cello':90,'strings':48,'bell':35}[name])
+            self.cc(self.synth,channel,74,60 if name=='piano' else 80)
+
+    def render(self,count):
+        left=np.empty(count,'float32');right=np.empty(count,'float32')
+        self.write(self.synth,count,left.ctypes.data,0,1,right.ctypes.data,0,1)
+        return np.stack((left,right),axis=1)
+
+    def clear(self):
+        for channel in CHANNELS.values():self.silence(self.synth,channel)
+        # FluidSynth retains a short output block after a voice is stopped.
+        self.render(256)
+
+    def close(self):
+        self.delete(self.synth);self.delete_settings(self.settings)
+
+    def attack_frames(self,name,pitch,velocity):
+        self.clear();channel=CHANNELS[name]
+        self.on(self.synth,channel,pitch,velocity)
+        audio=self.render(RATE//2)
+        energy=np.mean(audio.astype('float64')**2,axis=1)
+        window=220 # 5 ms RMS window, consistently used for calibration/checks
+        rms=np.sqrt(np.convolve(energy,np.ones(window)/window,mode='full')[:len(energy)])
+        peak=float(np.max(rms))
+        if peak<1e-7:raise RuntimeError(f'Inaudible sample: {name} {pitch}')
+        onset=int(np.argmax(rms>=peak*.12))
+        self.clear()
+        return onset
+
+    def verify_alignment(self,calibration):
+        results=[]
+        for name,pitch,velocity in (('piano',67,65),('cello',55,64),('strings',55,44),('bell',67,31)):
+            self.clear()
+            key=(name,pitch,velocity)
+            advance=calibration.get(key)
+            if advance is None:advance=self.attack_frames(*key)
+            expected=BEAT_FRAMES*2
+            prefix=self.render(expected-advance)
+            self.on(self.synth,CHANNELS[name],pitch,velocity)
+            probe=np.concatenate((prefix,self.render(RATE//2)))
+            energy=np.mean(probe.astype('float64')**2,axis=1)
+            rms=np.sqrt(np.convolve(energy,np.ones(220)/220,mode='full')[:len(energy)])
+            actual=int(np.argmax(rms>=np.max(rms)*.12))
+            error=actual-expected
+            results.append({'instrument':name,'midi':pitch,'expected_sample':expected,
+                            'audible_onset_sample':actual,'error_samples':error,
+                            'error_ms':error/RATE*1000,'attack_advance_samples':advance})
+            if abs(error)>round(RATE*.004):raise AssertionError(f'{name}: audible onset error {error/RATE*1000:.2f}ms')
+        self.clear()
+        return results
 
 
 def compose():
     events=[]
-    rng=np.random.default_rng(2255)
-    def add(bar,eighth,length,pitch,instrument,gain,pan):
-        events.append({'start':bar*BAR+eighth*EIGHTH,'length':length*EIGHTH,
-                       'midi':pitch,'instrument':instrument,'gain':gain,'pan':pan})
-    for section,progression in enumerate(PROGRESSIONS):
-        for local,chord in enumerate(progression):
-            bar=section*10+local
-            strength=(.66,.83,.65,.94)[section]
-            add(bar,0,6.8,chord[0]-12,'bass',.11*strength,-.08)
-            for beat in range(6):
-                pitch=chord[(0,2,1,3,2,1)[beat]]+12
-                add(bar,beat+float(rng.uniform(-.015,.015)),4.1,pitch,'harp',
-                    (.095 if beat in (0,3) else .065)*strength,float(rng.uniform(-.52,.1)))
-            if section or local>=4:
-                for index,pitch in enumerate(chord[1:]):
-                    add(bar,.15,7.5,pitch,'strings',(.028 if section==2 else .022)*strength,
-                        (-.52,0,.5)[index])
-            for note_index,(eighth,length,pitch) in enumerate(PHRASES[local]):
-                if section==2:
-                    pitch={74:71,76:73,78:74,79:76,81:78,83:79,73:70}[pitch]
-                    if local==4:pitch=(73,78,82,78)[note_index]
-                    if local==6:pitch=(74,72,70,69)[note_index]
-                add(bar,eighth,length,pitch,'flute',.14*strength,.18)
-            if section in (1,3) and local%2:
-                for beat,pitch in zip((1,2.5,4,5),(chord[1]+12,chord[2]+12,chord[3]+12,chord[2]+12)):
-                    add(bar,beat,2.2,pitch,'pizzicato',.043*strength,.48)
-            if local in (0,7) and section!=2:
-                add(bar,0,9,74 if local==0 else 81,'bell',.018,-.45)
+    def add(bar,beat,length,pitch,instrument,velocity,role):
+        start=bar*4+beat
+        assert isinstance(start,int) and isinstance(length,int)
+        events.append({'beat':start,'duration_beats':length,'midi':pitch,
+                       'instrument':instrument,'velocity':velocity,'role':role,
+                       'start_sample':start*BEAT_FRAMES,'duration_samples':length*BEAT_FRAMES})
+    for bar in range(BARS):
+        local=bar%8
+        chord=CHORDS[local] if bar<24 else (G,CMIN,GD,DSUS)[bar-24]
+        quiet=bar>=24
+        accompaniment=37 if quiet else (40 if bar<8 else 43)
+        # Whole-note bass and half-note block chords, all on beats one/three.
+        add(bar,0,4,chord[0]-12,'piano',accompaniment+3,'bass')
+        for beat in (0,2):
+            for pitch in chord[1:]:add(bar,beat,2,pitch,'piano',accompaniment,'harmony')
+        if bar<8 or 16<=bar<24:
+            for beat,length,pitch in PIANO[local]:
+                add(bar,beat,length,pitch,'piano',65 if bar<8 else 69,'melody')
+        elif 8<=bar<16:
+            for beat,length,pitch in CELLO[local]:add(bar,beat,length,pitch,'cello',64,'melody')
+        else:
+            phrase=(((0,2,67),(2,2,69)),((0,2,67),(2,2,63)),
+                    ((0,2,67),(2,2,64)),((0,2,66),(2,1,62)))[bar-24]
+            for beat,length,pitch in phrase:add(bar,beat,length,pitch,'piano',57,'melody')
+        if 16<=bar<24:
+            # Cello supplies a complementary sustained answer beneath the piano.
+            for beat,length,pitch in CELLO[local][:2]:
+                add(bar,beat,length,pitch,'cello',58,'answer')
+            for pitch in chord[1:]:add(bar,0,4,pitch,'strings',44,'support')
+        if bar in (0,18,24):add(bar,0,4,67 if bar!=18 else 74,'bell',31,'accent')
     return events
 
 
-def instrument(event,rng):
-    length=event['length'];t=np.arange(round((length+.08)*RATE))/RATE
-    frequency=440*2**((event['midi']-69)/12);kind=event['instrument']
-    release=np.minimum(1,np.maximum(0,(length-t)/(.25 if kind=='flute' else .4)))
-    if kind=='flute':
-        depth=.0018*np.minimum(1,t/.7)
-        phase=np.cumsum(frequency*(1+depth*np.sin(math.tau*4.7*t)))*math.tau/RATE
-        value=np.sin(phase)+.12*np.sin(2*phase+.2)+.035*np.sin(3*phase)
-        breath=np.convolve(rng.normal(0,1,len(t)),np.ones(11)/11,mode='same')
-        value+=.055*breath
-        value*=np.minimum(1,t/.16)**.8*release*(.97+.03*np.sin(math.tau*.8*t))
-    elif kind=='strings':
-        value=np.zeros(len(t))
-        for detune in (-.002,0,.0022):
-            phase=math.tau*frequency*(1+detune)*t+float(rng.uniform(0,math.tau))
-            for harmonic in range(1,6):value+=np.sin(harmonic*phase)/(3*harmonic**1.7)
-        value*=np.minimum(1,t/.65)*np.minimum(1,np.maximum(0,(length-t)/.8))
-    elif kind=='bass':
-        phase=math.tau*frequency*t
-        value=(np.sin(phase)+.13*np.sin(2*phase))*(1-np.exp(-t*28))*np.exp(-t*.8)*release
-    elif kind=='bell':
-        value=np.zeros(len(t))
-        for ratio,gain in ((1,1),(2.76,.3),(5.4,.08)):
-            value+=gain*np.sin(math.tau*frequency*ratio*t)*np.exp(-t*(1.2+ratio*.3))
-        value*=(1-np.exp(-t*120))*release
-    else:
-        value=np.zeros(len(t))
-        for harmonic in range(1,9):
-            phase=math.tau*frequency*harmonic*(1+.00008*harmonic**2)*t
-            value+=np.sin(phase+float(rng.uniform(-.05,.05)))*np.exp(-t*(1.1+harmonic*.25))/harmonic**1.6
-        value*=(1-np.exp(-t*150))*release
-        if kind=='pizzicato':value*=np.exp(-t*2)
-    return (value*event['gain']).astype('float32')
+def render(events,soundfont):
+    engine=SampleRenderer(soundfont)
+    try:
+        calibration={}
+        for e in events:
+            key=(e['instrument'],e['midi'],e['velocity'])
+            if key not in calibration:calibration[key]=engine.attack_frames(*key)
+            e['attack_advance_samples']=calibration[key]
+        audit=engine.verify_alignment(calibration)
+        engine.clear()
+        schedule=[]
+        for e in events:
+            channel=CHANNELS[e['instrument']]
+            start=(e['start_sample']-e['attack_advance_samples'])%COUNT
+            end=(e['start_sample']+e['duration_samples']-e['attack_advance_samples'])%COUNT
+            schedule.extend(((start,1,channel,e['midi'],e['velocity']),
+                             (end,0,channel,e['midi'],0)))
+        schedule.sort()
+        # Warm up one complete cycle so the exported seam includes release tails.
+        output=None
+        for cycle in range(2):
+            audio=np.zeros((COUNT,2),'float32');cursor=0
+            for sample,on,channel,pitch,velocity in schedule:
+                if sample>cursor:audio[cursor:sample]=engine.render(sample-cursor);cursor=sample
+                if on:engine.on(engine.synth,channel,pitch,velocity)
+                else:engine.off(engine.synth,channel,pitch)
+            if cursor<COUNT:audio[cursor:]=engine.render(COUNT-cursor)
+            output=audio
+        # Short diffuse stereo room; no separate rhythmic delay echoes.
+        rng=np.random.default_rng(72)
+        for channel in (0,1):
+            t=np.arange(round(.7*RATE))/RATE
+            impulse=rng.normal(0,1,len(t))*np.exp(-t*8)
+            impulse=np.convolve(impulse,np.ones(21)/21,mode='same')
+            impulse[:round(.012*RATE)]=0
+            impulse/=np.linalg.norm(impulse)
+            wet=np.fft.irfft(np.fft.rfft(output[:,channel])*np.fft.rfft(impulse,n=COUNT),n=COUNT)
+            audio[:,channel]=output[:,channel]+.12*wet
+        audio-=np.mean(audio,axis=0)
+        audio*=.68/float(np.max(np.abs(audio)))
+        # Remove the sample discontinuity at the loop splice without moving
+        # notes or inserting silence; only the final 10 ms receive correction.
+        seam=audio[0]-audio[-1]
+        amount=RATE//100
+        audio[-amount:]+=(np.linspace(0,1,amount)**3)[:,None]*seam
+        return audio,calibration,audit
+    finally:engine.close()
 
 
-def build():
-    duration=40*BAR;count=round(duration*RATE)
-    audio=np.zeros((count,2),dtype='float32')
-    rng=np.random.default_rng(555);events=compose()
-    for event in events:
-        note=instrument(event,rng);first=round(event['start']*RATE)%count
-        positions=(np.arange(len(note))+first)%count
-        pan=event['pan']
-        audio[positions,0]+=note*math.cos((pan+1)*math.pi/4)
-        audio[positions,1]+=note*math.sin((pan+1)*math.pi/4)
-    # Circular delay tails wrap across the seam, preserving the final resonance.
-    dry=audio.copy()
-    for delay,gain in ((.071,.13),(.113,.11),(.181,.095),(.293,.065),(.431,.04)):
-        audio[:,0]+=np.roll(dry[:,1],round(delay*RATE))*gain
-        audio[:,1]+=np.roll(dry[:,0],round((delay+.017)*RATE))*gain
-    audio-=np.mean(audio,axis=0)
-    audio=np.tanh(audio);audio*=.7/float(np.max(np.abs(audio)))
-    pcm=np.round(audio*32767).astype('<i2');folder=ROOT/'assets/ui/title'
-    with wave.open(str(folder/'eldenmere_theme.wav'),'wb') as output:
-        output.setparams((2,2,RATE,0,'NONE','not compressed'));output.writeframes(pcm.tobytes())
-    subprocess.run(['ffmpeg','-y','-loglevel','error','-i',str(folder/'eldenmere_theme.wav'),
-                    '-c:a','libvorbis','-q:a','5',str(folder/'eldenmere_theme.ogg')],check=True)
-    score={'title':'Eldenmere — Home and the Road Beyond','meter':'6/8',
-           'dotted_quarter_bpm':TEMPO,'tonal_center':'D major / relative B minor',
-           'motif_midi':[74,76,78,81],'duration_seconds':count/RATE,'sample_rate':RATE,
-           'channels':2,'loop':'Circular instrument/reverb tails; no inserted silence',
-           'sections':[{'name':name,'start_seconds':i*10*BAR,'bars':10} for i,name in enumerate(SECTIONS)],
-           'instruments':['harp','flute','strings','pizzicato','bass','bell'],'events':events}
+def write_wav(path,audio):
+    with wave.open(str(path),'wb') as output:
+        output.setparams((2,2,RATE,0,'NONE','not compressed'))
+        output.writeframes(np.round(np.clip(audio,-1,1)*32767).astype('<i2').tobytes())
+
+
+def ogg(source,target):
+    subprocess.run(['ffmpeg','-y','-loglevel','error','-i',str(source),'-c:a','libvorbis','-q:a','5',str(target)],check=True)
+
+
+def build(soundfont):
+    if hashlib.sha256(soundfont.read_bytes()).hexdigest()!=SOUNDFONT_SHA:
+        raise ValueError('Use the documented GeneralUser GS 2.0.3 SoundFont for reproducible rendering')
+    events=compose();audio,calibration,audit=render(events,soundfont)
+    folder=ROOT/'assets/ui/title';review=ROOT/'docs/reviews/title_piano_cello'
+    review.mkdir(parents=True,exist_ok=True)
+    write_wav(folder/'eldenmere_theme.wav',audio);ogg(folder/'eldenmere_theme.wav',folder/'eldenmere_theme.ogg')
+    excerpt=audio[:48*BEAT_FRAMES].copy() # 12 bars / 40 seconds, includes cello answer
+    excerpt[-RATE//4:]*=np.linspace(1,0,RATE//4)[:,None]
+    write_wav(review/'sketch.wav',excerpt);ogg(review/'sketch.wav',review/'sketch.ogg')
+    (review/'sketch.wav').unlink()
+    reference=excerpt.copy()
+    for beat in range(48):
+        t=np.arange(round(.035*RATE))/RATE
+        click=np.sin(math.tau*(1500 if beat%4==0 else 1050)*t)*np.exp(-t*160)
+        start=beat*BEAT_FRAMES
+        reference[start:start+len(click)]+=click[:,None]*(.11 if beat%4==0 else .075)
+    write_wav(review/'sketch_with_click.wav',reference)
+    ogg(review/'sketch_with_click.wav',review/'sketch_with_click.ogg')
+    (review/'sketch_with_click.wav').unlink()
+    (review/'timing_audit.json').write_text(json.dumps({
+        'method':'Causal 5 ms RMS window at 12% of each isolated note peak',
+        'audio_sha256':hashlib.sha256((folder/'eldenmere_theme.wav').read_bytes()).hexdigest(),
+        'tempo_bpm':TEMPO,'beat_samples':BEAT_FRAMES,'tolerance_ms':4,
+        'all_score_starts_and_durations_are_integer_beats':True,'measured_instruments':audit},indent=2)+'\n')
+    score={'title':'Eldenmere — A Place to Return To','status':'replacement_for_discarded_score',
+           'meter':'4/4','quarter_bpm':TEMPO,'tonal_center':'G major, E-minor shading and borrowed C minor',
+           'duration_seconds':COUNT/RATE,'sample_rate':RATE,'channels':2,'beat_samples':BEAT_FRAMES,
+           'motif_midi':[62,67,69,71,67],'instruments':list(PROGRAMS),'programs':PROGRAMS,
+           'timing':'Integer quarter-note beats only; no timing jitter or syncopated note starts',
+           'rendering':'Sampled GeneralUser GS 2.0.3 via FluidSynth; per-note attack compensation',
+           'soundfont_sha256':SOUNDFONT_SHA,'loop':'One-cycle preroll and circular room tail',
+           'sections':[{'name':name,'start_beat':bar*4,'start_seconds':bar*4*60/TEMPO}
+                       for name,bar in (('Piano',0),('Cello answer',8),('Together',16),('Quiet return',24))],
+           'attack_calibration':[{'instrument':key[0],'midi':key[1],'velocity':key[2],
+                                  'advance_samples':value,'advance_ms':value/RATE*1000}
+                                 for key,value in calibration.items()], 'events':events}
     (folder/'music_score.json').write_text(json.dumps(score,indent=2)+'\n')
-    print(f'Built {duration:.2f}s stereo title theme; {len(events)} notes; four connected passages.',flush=True)
+    print(f'Replaced title score: {COUNT/RATE:.2f}s, 4/4, {TEMPO} BPM; {len(events)} beat-locked sampled notes.')
+    print('Clean and click-reference excerpts: docs/reviews/title_piano_cello/')
 
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--soundfont',type=Path,required=True,help='GeneralUser GS 2.0.3 .sf2 file')
+    build(parser.parse_args().soundfont)

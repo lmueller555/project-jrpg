@@ -1,0 +1,46 @@
+{
+  "method": "Causal 5 ms RMS window at 12% of each isolated note peak",
+  "audio_sha256": "874eaa37c11eca08aedd77e20d671052a4af9b85614d62bbafed32db9ff2801f",
+  "tempo_bpm": 72,
+  "beat_samples": 36750,
+  "tolerance_ms": 4,
+  "all_score_starts_and_durations_are_integer_beats": true,
+  "measured_instruments": [
+    {
+      "instrument": "piano",
+      "midi": 67,
+      "expected_sample": 73500,
+      "audible_onset_sample": 73534,
+      "error_samples": 34,
+      "error_ms": 0.7709750566893424,
+      "attack_advance_samples": 86
+    },
+    {
+      "instrument": "cello",
+      "midi": 55,
+      "expected_sample": 73500,
+      "audible_onset_sample": 73504,
+      "error_samples": 4,
+      "error_ms": 0.09070294784580499,
+      "attack_advance_samples": 1656
+    },
+    {
+      "instrument": "strings",
+      "midi": 55,
+      "expected_sample": 73500,
+      "audible_onset_sample": 73476,
+      "error_samples": -24,
+      "error_ms": -0.5442176870748299,
+      "attack_advance_samples": 3412
+    },
+    {
+      "instrument": "bell",
+      "midi": 67,
+      "expected_sample": 73500,
+      "audible_onset_sample": 73511,
+      "error_samples": 11,
+      "error_ms": 0.24943310657596374,
+      "attack_advance_samples": 275
+    }
+  ]
+}

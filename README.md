@@ -26,10 +26,11 @@ Settings changes fullscreen/windowed mode and title music; Continue is disabled
 until saving exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 
-The title water now animates throughout the brook, pools, mill discharge and
-foreground cascades. Its expanded 89-second stereo theme develops four passages:
-Home, Curiosity, Fragility and Return. See the [updated video with music and
-water close-up](docs/reviews/title_water_music/README.md).
+The title water animates throughout the brook, pools, mill discharge and
+foreground cascades. The soundtrack is now a new 93-second sampled piano/cello
+theme in 4/4 at 72 BPM, with strict beat alignment. The earlier flute/harp track
+has been replaced. Listen to the [clean and metronome-reference excerpts](docs/reviews/title_piano_cello/README.md)
+or watch the [title video and water close-up](docs/reviews/title_water_music/README.md).
 
 | Control | Action |
 | --- | --- |

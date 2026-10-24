@@ -11,7 +11,7 @@ presentation remain in place.
 - [Lossless WAV music master](../../../assets/ui/title/eldenmere_theme.wav)
 
 The video records the actual `main.Game` renderer at 640×360 and 10 fps for the
-whole 88.89-second composition. It contains the newly shipped music encoded as
+whole 93.33-second composition. It contains the newly shipped music encoded as
 AAC. The water GIF isolates the shipped water layer over the original art for
 inspection, at 3× nearest-neighbor scale with one shared palette. It is silent.
 
@@ -30,33 +30,24 @@ same registered region. The buildings, characters, banks, bridge and rocks stay
 in the approved background; water layers cannot displace them. The rotating
 mill wheel, chimney wisps and lantern animation remain separate.
 
-## Music
+## Music replacement
 
-The original theme is now about 89 seconds, in 6/8 at dotted-quarter = 54,
-with the rising D–E–F♯–A motif recurring across four connected passages:
+The earlier 89-second flute/harp composition was discarded at the user's
+request. All shipped title audio and this page's video now use the replacement
+93.33-second sampled piano/cello score, **A Place to Return To**.
 
-| Passage | Begins | Musical treatment |
-| --- | --- | --- |
-| Home | 0:00 | D major, lilting harp, warm flute and open harmony |
-| Curiosity | 0:22 | More active pizzicato answers and supporting strings |
-| Fragility | 0:44 | B-minor setting, lower melodic register, suspensions and a brief borrowed minor chord |
-| Return | 1:07 | D-major return with fuller, hopeful accompaniment |
+See [the new music review](../title_piano_cello/README.md) for a clean excerpt,
+metronome reference, composition notes, sample licensing and the measured
+onset-alignment report. Every written entrance/release follows one fixed
+72-BPM quarter-note grid in 4/4. The piano leads, the cello answers, restrained
+strings join, then the arrangement recedes into a quiet closing phrase.
 
-Harp attacks and tuning vary slightly; flute phrases have breath noise, delayed
-vibrato and shaped releases. Strings enter slowly with detuned voices. Sparse
-bell notes and stereo reverberation add space. Note and reverb tails wrap across
-the loop boundary rather than being cut off or separated by an inserted pause.
-The score and synthesis are original; no external recordings are used.
-
-The lossless master is stereo 44.1 kHz/16-bit PCM, with approximately -3.1 dBFS
-peak headroom. The game streams the smaller Ogg version and retains Settings
-music on/off and the New Game fade-out. All title sound remains instrumental.
-
-Reproduce using the asset environment (Pillow, NumPy and FFmpeg):
+Reproduce using Pillow, NumPy, FFmpeg, libfluidsynth and the documented
+GeneralUser GS 2.0.3 SoundFont:
 
 ```sh
 python tools/build_title_water.py
-python tools/build_title_music.py
+python tools/build_title_music.py --soundfont /path/to/GeneralUser-GS.sf2
 python tools/capture_title_water_music.py
 ```
 
