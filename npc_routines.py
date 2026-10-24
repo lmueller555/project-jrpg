@@ -3,6 +3,7 @@ from collections import deque
 import heapq
 import itertools
 import json
+import random
 from pathlib import Path
 
 import pygame
@@ -55,10 +56,13 @@ def find_path(world,start,goal,size,actor,avoid=None):
 
 class Gardener:
     """A persistent fill/carry/pour cycle, with collision-aware task progress."""
-    def __init__(self,record,world):
+    def __init__(self,record,world,rng=None):
         self.data=record
         self.behavior=read_json(ROOT/record['behavior'])
         self.animation=read_json(ROOT/record['animation'])
+        self.water_capacity=self.animation['water_capacity']
+        self._rng=rng if rng is not None else random.Random()
+        self.rest_duration_ms=self._new_rest_duration()
         self.draw_anchor=self.animation['draw_anchor']
         self.position=pygame.Vector2(record['position'])
         self.probe_size=tuple(record['probe_size'])
@@ -82,6 +86,11 @@ class Gardener:
     @property
     def state(self):return self.steps[self.step_index]['id']
 
+    @property
+    def rest_remaining_ms(self):return max(0,self.rest_duration_ms-self.state_ms) if self.state=='rest' else 0
+
+    def _new_rest_duration(self):return self._rng.randint(*self.behavior['rest_range_ms'])
+
     def _steps(self):
         b=self.behavior
         steps=[{'id':'rest','animation':'rest','facing':'right'},
@@ -93,20 +102,21 @@ class Gardener:
             via=[bed['position']]
             if index==0:via=[[340,334],bed['position']]
             if index==2:via=[*b['garden_crossing'],bed['position']]
+            if 'via' in bed:via=[*bed['via'],bed['position']]
             steps.extend([
                 {'id':'approach_'+bed['id'],'waypoints':via},
                 {'id':'inspect_'+bed['id'],'animation':'inspect.'+bed['facing'],'facing':bed['facing'],'bed':bed},
-                {'id':'water_'+bed['id'],'animation':'pour.'+bed['facing'],'facing':bed['facing'],'bed':bed},
+                {'id':'water_'+bed['id'],'animation':bed.get('pour_animation','pour.'+bed['facing']),'facing':bed['facing'],'bed':bed},
             ])
-        steps.extend([{'id':'return_to_rest','waypoints':[[416,334],[340,334],b['rest_position']]},
+        steps.extend([{'id':'return_to_rest','waypoints':b['rest_waypoints']},
                       {'id':'setdown','animation':'setdown','facing':'right'}])
         return steps
 
     def _advance(self):
         old=self.steps[self.step_index]
         if old['id']=='fill':
-            self.water_units=4
-            self.events.append({'type':'filled','position':tuple(self.position),'units':4})
+            self.water_units=self.water_capacity
+            self.events.append({'type':'filled','position':tuple(self.position),'units':self.water_capacity})
         if old['id'].startswith('water_'):
             self.water_units=max(0,self.water_units-1)
             self.watered_beds.append(old['bed']['id'])
@@ -114,7 +124,8 @@ class Gardener:
         self.step_index=(self.step_index+1)%len(self.steps)
         if self.step_index==0:
             self.completed_cycles+=1
-            self.events.append({'type':'cycle','cycle':self.completed_cycles})
+            self.rest_duration_ms=self._new_rest_duration()
+            self.events.append({'type':'cycle','cycle':self.completed_cycles,'rest_duration_ms':self.rest_duration_ms})
         if self.state=='pickup':self.watered_beds=[]
         self.state_ms=0;self.walk_ms=0;self.path=None;self.waypoint_index=0
         self.blocked_seconds=0;self.retry_seconds=0;self.moving=False;self.waiting=False
@@ -134,8 +145,7 @@ class Gardener:
                 self.state_ms+=dt*1000
                 if self.state=='fill':self.water_units=self.pose()[1].get('level',self.water_units)
                 duration=sum(f['duration_ms'] for f in self.animation['animations'][step['animation']])
-                if self.state=='rest':
-                    pauses=self.behavior['rest_duration_ms'];duration=pauses[self.completed_cycles%len(pauses)]
+                if self.state=='rest':duration=self.rest_duration_ms
                 if self.state_ms+1e-7>=duration:self._advance()
 
     def _move(self,seconds,world,player):

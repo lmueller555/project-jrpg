@@ -1,17 +1,26 @@
 {
   "status": "review",
-  "capture_start_ms": 7500,
-  "first_cycle_complete_ms": 66900,
+  "capture_start_ms": 193613,
+  "first_cycle_complete_ms": 263413,
+  "active_trip_duration_ms": 67800,
+  "initial_rest_duration_ms": 195613,
+  "next_rest_duration_ms": 221875,
+  "rest_range_ms": [
+    180000,
+    300000
+  ],
   "watered_beds": [
     "west_flowers",
     "southwest_flowers",
     "southeast_flowers",
-    "east_flowers"
+    "east_flowers",
+    "west_window_trough",
+    "east_window_trough"
   ],
   "final_water_units": 0,
   "events": [
     {
-      "time_ms": 7500,
+      "time_ms": 193613,
       "state": "rest",
       "position": [
         322.0,
@@ -20,7 +29,7 @@
       "water_units": 0
     },
     {
-      "time_ms": 10000,
+      "time_ms": 195713,
       "state": "pickup",
       "position": [
         322.0,
@@ -29,16 +38,16 @@
       "water_units": 0
     },
     {
-      "time_ms": 10800,
+      "time_ms": 196513,
       "state": "to_brook",
       "position": [
-        322.0,
+        327.0,
         350.0
       ],
       "water_units": 0
     },
     {
-      "time_ms": 22400,
+      "time_ms": 208013,
       "state": "fill",
       "position": [
         786.0,
@@ -47,133 +56,178 @@
       "water_units": 0
     },
     {
-      "time_ms": 27200,
+      "time_ms": 212813,
       "state": "return_to_sanctuary",
       "position": [
-        784.3333333333333,
+        785.1666666666666,
         408.0
       ],
-      "water_units": 4
+      "water_units": 6
     },
     {
-      "time_ms": 39400,
+      "time_ms": 225013,
       "state": "approach_west_flowers",
       "position": [
-        381.50000000000006,
+        382.33333333333337,
         336.0
       ],
-      "water_units": 4
+      "water_units": 6
     },
     {
-      "time_ms": 42000,
+      "time_ms": 227613,
       "state": "inspect_west_flowers",
       "position": [
         268.0,
         340.0
       ],
-      "water_units": 4
+      "water_units": 6
     },
     {
-      "time_ms": 42800,
+      "time_ms": 228413,
       "state": "water_west_flowers",
       "position": [
         268.0,
         340.0
       ],
-      "water_units": 4
+      "water_units": 6
     },
     {
-      "time_ms": 46000,
+      "time_ms": 231613,
       "state": "approach_southwest_flowers",
       "position": [
-        269.66666666666663,
+        268.8333333333333,
         340.0
       ],
-      "water_units": 3
+      "water_units": 5
     },
     {
-      "time_ms": 47300,
+      "time_ms": 232913,
       "state": "inspect_southwest_flowers",
       "position": [
         322.0,
         350.0
       ],
-      "water_units": 3
+      "water_units": 5
     },
     {
-      "time_ms": 48100,
+      "time_ms": 233713,
       "state": "water_southwest_flowers",
       "position": [
         322.0,
         350.0
       ],
-      "water_units": 3
+      "water_units": 5
     },
     {
-      "time_ms": 51300,
+      "time_ms": 236913,
       "state": "approach_southeast_flowers",
       "position": [
-        322.8333333333333,
+        322.0,
         350.0
       ],
-      "water_units": 2
+      "water_units": 4
     },
     {
-      "time_ms": 54500,
+      "time_ms": 240113,
       "state": "inspect_southeast_flowers",
       "position": [
         438.0,
         351.9999999999991
       ],
-      "water_units": 2
+      "water_units": 4
     },
     {
-      "time_ms": 55300,
+      "time_ms": 240913,
       "state": "water_southeast_flowers",
       "position": [
         438.0,
         351.9999999999991
       ],
-      "water_units": 2
+      "water_units": 4
     },
     {
-      "time_ms": 58500,
+      "time_ms": 244113,
       "state": "approach_east_flowers",
       "position": [
-        441.33333333333326,
+        440.49999999999994,
         352.0
       ],
-      "water_units": 1
+      "water_units": 3
     },
     {
-      "time_ms": 59400,
+      "time_ms": 245013,
       "state": "inspect_east_flowers",
       "position": [
         462.0,
         334.0
       ],
-      "water_units": 1
+      "water_units": 3
     },
     {
-      "time_ms": 60200,
+      "time_ms": 245813,
       "state": "water_east_flowers",
       "position": [
         462.0,
         334.0
       ],
+      "water_units": 3
+    },
+    {
+      "time_ms": 249013,
+      "state": "approach_west_window_trough",
+      "position": [
+        458.66666666666674,
+        334.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 252913,
+      "state": "inspect_west_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 253713,
+      "state": "water_west_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 256913,
+      "state": "inspect_east_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
       "water_units": 1
     },
     {
-      "time_ms": 63400,
+      "time_ms": 257713,
+      "state": "water_east_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 1
+    },
+    {
+      "time_ms": 260913,
       "state": "return_to_rest",
       "position": [
-        457.0,
-        334.0
+        318.0,
+        294.0
       ],
       "water_units": 0
     },
     {
-      "time_ms": 66100,
+      "time_ms": 262613,
       "state": "setdown",
       "position": [
         322.0,
@@ -182,7 +236,7 @@
       "water_units": 0
     },
     {
-      "time_ms": 66900,
+      "time_ms": 263413,
       "state": "rest",
       "position": [
         322.0,
@@ -192,5 +246,5 @@
     }
   ],
   "capture_interval_ms": 100,
-  "route_frames": 605
+  "route_frames": 709
 }

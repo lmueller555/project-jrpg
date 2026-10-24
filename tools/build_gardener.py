@@ -90,9 +90,11 @@ def bucket(angle,level,palette):
     polygon([(3,6),(10,6),(9,8),(4,8)],'wood_dark')
     if level:
         # Filling levels expose progressively more of the blue surface.
-        left=6 if level==1 else 5 if level==2 else 4
+        left=7-min(6,level*2)//2
         line([(left,7),(13-left,7)],'water')
-        if level==4:line([(4,6),(9,6)],'water')
+        if level>3:
+            upper_left=7-(level*2-6)//2
+            line([(upper_left,6),(13-upper_left,6)],'water')
         if level>1:line([(5,7),(6,7)],'water_light')
     line([(2,5),(10,5)],'iron_light')
     line([(2,6),(3,8),(10,8),(11,6)],'iron_light')
@@ -130,13 +132,17 @@ def build():
             name=f"raise_{direction}" if frame['pose']=='raise' else f'idle_full.{direction}'
             angle=frame['angle']*(-1 if direction=='left' else 1)
             animations[f'pour.{direction}'].append({**frame,'pose':name,'angle':angle})
+    animations['pour_trough.right']=recipe['trough_pour_sequence']
+    animations['pour_trough.left']=[{**f,'pose':f['pose'].replace('right','left'),'angle':-f['angle']}
+                                   for f in recipe['trough_pour_sequence']]
     for angle in (-50,-25,0,25,50):
-        for level in range(5):
+        for level in range(recipe['water_capacity']+1):
             image,data=bucket(angle,level,recipe['bucket_palette'])
             name=f'bucket_{angle}_{level}'
             image.save(OUTPUT/(name+'.png'));buckets[name]={**data,'file':name+'.png'}
     write(OUTPUT/'animations.json',{
         'id':recipe['id'],'status':recipe['status'],'character':recipe['character'],
+        'water_capacity':recipe['water_capacity'],
         'body_frame_size':[24,36],'action_canvas':[48,48],'body_offset':[12,6],
         'draw_anchor':[24,36],'foot_anchor':[24,40],
         'poses':poses,'animations':animations,'buckets':buckets,
@@ -144,12 +150,12 @@ def build():
     })
     # Contact sheet includes body plus the actual bucket attachment.
     selected=['idle_empty.front','idle_full.front','idle_full.left','idle_full.right',
-              'idle_full.back','fill_dip','raise_left','raise_right']
+              'idle_full.back','fill_dip','raise_left','raise_right','raise_trough_right']
     sheet=Image.new('RGB',(48*len(selected),48),'#e8edf2')
     for i,name in enumerate(selected):
         spec=poses[name];body_image=opened(OUTPUT/spec['body'])
-        angle=-50 if name=='raise_left' else 50 if name=='raise_right' else 0
-        pail=opened(OUTPUT/f'bucket_{angle}_4.png')
+        angle=-50 if name=='raise_left' else 50 if name in ('raise_right','raise_trough_right') else 0
+        pail=opened(OUTPUT/f"bucket_{angle}_{recipe['water_capacity']}.png")
         scene=blank((48,48));pos=(12+spec['grip'][0]-12,6+spec['grip'][1]-6)
         if spec['order']=='before':scene.alpha_composite(pail,pos)
         scene.alpha_composite(body_image)

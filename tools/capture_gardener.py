@@ -4,6 +4,7 @@ os.environ['SDL_VIDEODRIVER']='dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT']='1'
 
 import json
+import random
 from pathlib import Path
 import sys
 from PIL import Image, ImageDraw, ImageFont, ImageSequence
@@ -69,14 +70,15 @@ def render(game,camera):
 
 def caption(actor):
     state=actor.state
-    if state=='rest':return 'Resting beside the flowers / empty bucket'
+    if state=='rest':return f'Rest / next trip in {round(actor.rest_remaining_ms/1000)}s (3-5 minute break)'
     if state=='pickup':return 'Pick up the empty bucket'
     if state=='to_brook':return 'Walk down the stairs and along the lane to the brook'
-    if state=='fill':return f'Lower, fill and lift the bucket / water {actor.water_units} of 4'
+    if state=='fill':return f'Lower, fill and lift the bucket / water {actor.water_units} of {actor.water_capacity}'
     if state=='return_to_sanctuary':return 'Carry the full bucket back up the sanctuary stairs'
     if state=='return_to_rest':return 'Return with the empty bucket'
     if state=='setdown':return 'Set down the empty bucket'
-    bed=state.split('_',1)[1].replace('_',' ')
+    step=actor.steps[actor.step_index]
+    bed=step.get('bed',{}).get('label',state.split('_',1)[1].replace('_',' '))
     if state.startswith('water_'):return f'Water {bed} / two small pours'
     if state.startswith('inspect_'):return f'Inspect {bed}'
     return 'Carry water to the next flower patch'
@@ -85,12 +87,16 @@ def caption(actor):
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
     game=main.Game();game.player.position.update(516,900)
-    actor=game.town.npcs[1]
-    # Trim only the beginning of the initial rest. All travel and work are 1x.
-    game.update(7.5,(0,0),False)
-    route=[];filling=[];watering=[];events=[];previous=None
+    # Seed only this capture's actor for reproducibility; live games use entropy.
+    actor=main.Gardener(game.town.npcs[1].data,game.town,random.Random(2026))
+    game.town.npcs[1]=actor
+    initial_rest=actor.rest_duration_ms
+    capture_start=initial_rest-2000
+    # Omit most of the genuine 3-5 minute wait. Travel/work stay at real speed.
+    game.update(capture_start/1000,(0,0),False)
+    route=[];filling=[];watering=[];troughs=[];events=[];previous=None
     first_cycle=None
-    for index in range(750):
+    for index in range(1000):
         state=actor.state
         if state!=previous:
             events.append({'time_ms':round(game.elapsed_ms),'state':state,'position':list(actor.position),'water_units':actor.water_units})
@@ -104,15 +110,18 @@ def capture():
         overview.paste(right.crop((0,0,192,288)),(480,0))
         text=caption(actor)
         route.append(panel(overview,1,'Sanctuary gardener / complete watering trip',
-                           'Native overview | actual game simulation | travel and work at real speed',text))
+                           'Real-time trip | four flower patches and two troughs | long rests omitted',text))
         if state=='fill':
             close=render(game,(738,366)).crop((0,0,96,80))
             filling.append(panel(close,6,'Gardener / collecting water','6x enlargement | bucket contact, filling and lifting',text))
         if state.startswith(('inspect_','water_')):
             camera=(round(actor.position.x)-60,round(actor.position.y)-54)
             close=render(game,camera).crop((0,0,120,80))
-            watering.append(panel(close,6,'Gardener / four flower patches',
+            watering.append(panel(close,6,'Gardener / flowers and window troughs',
                                   '6x enlargement | consecutive stops shown as a review montage',text))
+            if 'window_trough' in state:
+                troughs.append(panel(close,6,'Gardener / sanctuary window troughs',
+                                    '6x enlargement | lifting the bucket to each raised trough',text))
         if actor.completed_cycles and first_cycle is None:first_cycle=game.elapsed_ms
         if first_cycle is not None and game.elapsed_ms-first_cycle>=1000:break
         game.update(.1,(0,0),False)
@@ -120,12 +129,17 @@ def capture():
     if not actor.completed_cycles:raise RuntimeError('Gardener did not complete her trip')
     filling[len(filling)//2].save(OUTPUT/'filling.png')
     watering[16].save(OUTPUT/'watering.png')
+    troughs[16].save(OUTPUT/'troughs.png')
     route[-12].save(OUTPUT/'route.png')
     gif(OUTPUT/'filling.gif',filling)
     gif(OUTPUT/'watering.gif',watering)
+    gif(OUTPUT/'troughs.gif',troughs)
     gif(OUTPUT/'route.gif',route)
     (OUTPUT/'capture.json').write_text(json.dumps({
-        'status':'review','capture_start_ms':7500,'first_cycle_complete_ms':round(first_cycle),
+        'status':'review','capture_start_ms':capture_start,'first_cycle_complete_ms':round(first_cycle),
+        'active_trip_duration_ms':round(first_cycle-initial_rest),
+        'initial_rest_duration_ms':initial_rest,'next_rest_duration_ms':actor.rest_duration_ms,
+        'rest_range_ms':actor.behavior['rest_range_ms'],
         'watered_beds':actor.watered_beds,'final_water_units':actor.water_units,
         'events':events,'capture_interval_ms':100,'route_frames':len(route)
     },indent=2)+'\n')

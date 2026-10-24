@@ -1,5 +1,5 @@
 {
-  "id":"sanctuary.gardener", "status":"review", "character":"female_02",
+  "id":"sanctuary.gardener", "status":"review", "character":"female_02", "water_capacity":6,
   "body_frame_size":[24,36], "draw_anchor":[24,36], "body_offset":[12,6], "action_canvas":[48,48],
   "bucket_palette":{"outline":"#342b28","wood_dark":"#735136","wood":"#a37b4c","wood_light":"#c69d66","iron":"#657874","iron_light":"#a2b4a7","water":"#598e9f","water_light":"#b9d9d2"},
   "carry":{
@@ -25,7 +25,13 @@
     "fill_dip":{"direction":"right","lean":[2,2],"arms":[[[15,18],[20,24],[25,28]],[[13,18],[18,24],[23,28]]],"grip":[25,28]},
     "fill_lift":{"direction":"right","lean":[1,1],"arms":[[[14,17],[18,21],[23,23]],[[12,17],[16,21],[21,25]]],"grip":[23,23]},
     "raise_left":{"direction":"left","lean":[-1,1],"arms":[[[10,17],[7,19],[3,17]],[[12,17],[14,21],[11,24]]],"grip":[3,17]},
-    "raise_right":{"direction":"right","lean":[1,1],"arms":[[[14,17],[17,19],[21,17]],[[12,17],[10,21],[13,24]]],"grip":[21,17]}
+    "raise_right":{"direction":"right","lean":[1,1],"arms":[[[14,17],[17,19],[21,17]],[[12,17],[10,21],[13,24]]],"grip":[21,17]},
+    "lift_trough_right":{"direction":"right","lean":[1,0],"arms":[[[14,16],[18,18],[21,14]],[[12,16],[14,20],[18,23]]],"grip":[21,14]},
+    "half_trough_right":{"direction":"right","lean":[1,0],"arms":[[[14,16],[20,15],[24,10]],[[12,16],[13,18],[18,18]]],"grip":[24,10]},
+    "raise_trough_right":{"direction":"right","lean":[1,0],"arms":[[[14,16],[21,13],[25,7]],[[12,16],[11,18],[14,13]]],"grip":[25,7]},
+    "lift_trough_left":{"direction":"left","lean":[-1,0],"arms":[[[10,16],[6,18],[3,14]],[[12,16],[10,20],[6,23]]],"grip":[3,14]},
+    "half_trough_left":{"direction":"left","lean":[-1,0],"arms":[[[10,16],[4,15],[0,10]],[[12,16],[11,18],[6,18]]],"grip":[0,10]},
+    "raise_trough_left":{"direction":"left","lean":[-1,0],"arms":[[[10,16],[3,13],[-1,7]],[[12,16],[13,18],[10,13]]],"grip":[-1,7]}
   },
   "animations":{
     "rest":[{"pose":"rest","duration_ms":10000,"level":0}],
@@ -35,12 +41,12 @@
       {"pose":"fill_reach","duration_ms":400,"level":0},
       {"pose":"fill_lower","duration_ms":400,"level":0},
       {"pose":"fill_dip","duration_ms":800,"level":0,"effect":"ripple"},
-      {"pose":"fill_dip","duration_ms":500,"level":1,"effect":"ripple"},
       {"pose":"fill_dip","duration_ms":500,"level":2,"effect":"ripple"},
       {"pose":"fill_dip","duration_ms":500,"level":3,"effect":"ripple"},
-      {"pose":"fill_dip","duration_ms":300,"level":4,"effect":"ripple"},
-      {"pose":"fill_lift","duration_ms":600,"level":4,"effect":"drips"},
-      {"pose":"idle_full.right","duration_ms":800,"level":4}
+      {"pose":"fill_dip","duration_ms":500,"level":5,"effect":"ripple"},
+      {"pose":"fill_dip","duration_ms":300,"level":6,"effect":"ripple"},
+      {"pose":"fill_lift","duration_ms":600,"level":6,"effect":"drips"},
+      {"pose":"idle_full.right","duration_ms":800,"level":6}
     ]
   },
   "pour_sequence":[
@@ -52,5 +58,15 @@
     {"pose":"raise","angle":50,"duration_ms":650,"effect":"pour"},
     {"pose":"raise","angle":0,"duration_ms":300},
     {"pose":"idle_full","angle":0,"duration_ms":500}
+  ],
+  "trough_pour_sequence":[
+    {"pose":"lift_trough_right","angle":0,"duration_ms":400},
+    {"pose":"half_trough_right","angle":25,"duration_ms":250},
+    {"pose":"raise_trough_right","angle":50,"duration_ms":650,"effect":"pour"},
+    {"pose":"lift_trough_right","angle":0,"duration_ms":200},
+    {"pose":"half_trough_right","angle":25,"duration_ms":250},
+    {"pose":"raise_trough_right","angle":50,"duration_ms":650,"effect":"pour"},
+    {"pose":"lift_trough_right","angle":0,"duration_ms":300},
+    {"pose":"idle_full.right","angle":0,"duration_ms":500}
   ]
 }

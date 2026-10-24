@@ -2,6 +2,7 @@
   "id": "sanctuary.gardener",
   "status": "review",
   "character": "female_02",
+  "water_capacity": 6,
   "body_frame_size": [
     24,
     36
@@ -414,6 +415,54 @@
         17
       ],
       "order": "after"
+    },
+    "lift_trough_right": {
+      "body": "lift_trough_right.png",
+      "grip": [
+        21,
+        14
+      ],
+      "order": "after"
+    },
+    "half_trough_right": {
+      "body": "half_trough_right.png",
+      "grip": [
+        24,
+        10
+      ],
+      "order": "after"
+    },
+    "raise_trough_right": {
+      "body": "raise_trough_right.png",
+      "grip": [
+        25,
+        7
+      ],
+      "order": "after"
+    },
+    "lift_trough_left": {
+      "body": "lift_trough_left.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after"
+    },
+    "half_trough_left": {
+      "body": "half_trough_left.png",
+      "grip": [
+        0,
+        10
+      ],
+      "order": "after"
+    },
+    "raise_trough_left": {
+      "body": "raise_trough_left.png",
+      "grip": [
+        -1,
+        7
+      ],
+      "order": "after"
     }
   },
   "animations": {
@@ -622,12 +671,6 @@
       {
         "pose": "fill_dip",
         "duration_ms": 500,
-        "level": 1,
-        "effect": "ripple"
-      },
-      {
-        "pose": "fill_dip",
-        "duration_ms": 500,
         "level": 2,
         "effect": "ripple"
       },
@@ -639,20 +682,26 @@
       },
       {
         "pose": "fill_dip",
+        "duration_ms": 500,
+        "level": 5,
+        "effect": "ripple"
+      },
+      {
+        "pose": "fill_dip",
         "duration_ms": 300,
-        "level": 4,
+        "level": 6,
         "effect": "ripple"
       },
       {
         "pose": "fill_lift",
         "duration_ms": 600,
-        "level": 4,
+        "level": 6,
         "effect": "drips"
       },
       {
         "pose": "idle_full.right",
         "duration_ms": 800,
-        "level": 4
+        "level": 6
       }
     ],
     "inspect.left": [
@@ -754,6 +803,94 @@
         "angle": 0,
         "duration_ms": 500
       }
+    ],
+    "pour_trough.right": [
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "half_trough_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "half_trough_right",
+        "angle": 25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_right",
+        "angle": 50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_right",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.right",
+        "angle": 0,
+        "duration_ms": 500
+      }
+    ],
+    "pour_trough.left": [
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 400
+      },
+      {
+        "pose": "half_trough_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 200
+      },
+      {
+        "pose": "half_trough_left",
+        "angle": -25,
+        "duration_ms": 250
+      },
+      {
+        "pose": "raise_trough_left",
+        "angle": -50,
+        "duration_ms": 650,
+        "effect": "pour"
+      },
+      {
+        "pose": "lift_trough_left",
+        "angle": 0,
+        "duration_ms": 300
+      },
+      {
+        "pose": "idle_full.left",
+        "angle": 0,
+        "duration_ms": 500
+      }
     ]
   },
   "buckets": {
@@ -812,6 +949,28 @@
       ],
       "file": "bucket_-50_4.png"
     },
+    "bucket_-50_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_5.png"
+    },
+    "bucket_-50_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        13,
+        13
+      ],
+      "file": "bucket_-50_6.png"
+    },
     "bucket_-25_0": {
       "grip": [
         12,
@@ -866,6 +1025,28 @@
         13
       ],
       "file": "bucket_-25_4.png"
+    },
+    "bucket_-25_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_5.png"
+    },
+    "bucket_-25_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        10,
+        13
+      ],
+      "file": "bucket_-25_6.png"
     },
     "bucket_0_0": {
       "grip": [
@@ -922,6 +1103,28 @@
       ],
       "file": "bucket_0_4.png"
     },
+    "bucket_0_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_5.png"
+    },
+    "bucket_0_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        16,
+        11
+      ],
+      "file": "bucket_0_6.png"
+    },
     "bucket_25_0": {
       "grip": [
         12,
@@ -977,6 +1180,28 @@
       ],
       "file": "bucket_25_4.png"
     },
+    "bucket_25_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_5.png"
+    },
+    "bucket_25_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        14,
+        12
+      ],
+      "file": "bucket_25_6.png"
+    },
     "bucket_50_0": {
       "grip": [
         12,
@@ -1031,6 +1256,28 @@
         12
       ],
       "file": "bucket_50_4.png"
+    },
+    "bucket_50_5": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_5.png"
+    },
+    "bucket_50_6": {
+      "grip": [
+        12,
+        6
+      ],
+      "spout": [
+        11,
+        12
+      ],
+      "file": "bucket_50_6.png"
     }
   },
   "source_recipe": "../../../../source/characters/npcs/female_02/gardener/recipe.json"

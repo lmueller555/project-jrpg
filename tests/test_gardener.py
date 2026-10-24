@@ -4,7 +4,8 @@ os.environ['SDL_VIDEODRIVER']='dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT']='1'
 
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
+import random
 import pygame
 import main
 
@@ -13,19 +14,27 @@ class SanctuaryGardener(unittest.TestCase):
     def setUp(self):
         self.game=main.Game();self.world=self.game.town
         self.actor=next(a for a in self.world.npcs if a.data['id']=='sanctuary_gardener')
+        self.actor=main.Gardener(self.actor.data,self.world,random.Random(1234))
+        self.world.npcs[1]=self.actor
         self.game.player.position.update(520,520)
 
     def tearDown(self):pygame.quit()
 
     def until(self,predicate,limit=80,dt=1/30):
+        if self.actor.state=='rest' and self.actor.completed_cycles==0:
+            self.start_trip()
         for _ in range(round(limit/dt)):
             if predicate():return
             self.game.update(dt,(0,0),False)
         self.fail(f'Timed out in {self.actor.state} at {tuple(self.actor.position)}')
 
-    def test_complete_cycle_uses_dry_routes_stairs_and_all_four_beds(self):
+    def start_trip(self):
+        self.game.update(self.actor.rest_remaining_ms/1000+1/60,(0,0),False)
+
+    def test_complete_cycle_uses_dry_routes_stairs_and_all_six_targets(self):
         a=self.actor;stairs=set();states=set();footmask=pygame.Mask(a.probe_size,fill=True)
-        for _ in range(2200):
+        self.start_trip();started=self.game.elapsed_ms
+        for _ in range(3000):
             self.game.update(1/30,(0,0),False);states.add(a.state)
             self.assertIsNone(self.world.blocked.overlap(footmask,a.blocker.topleft))
             self.assertFalse(a.blocker.colliderect(self.world.npcs[0].blocker))
@@ -43,10 +52,10 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.water_units,0)
         self.assertEqual(a.position,pygame.Vector2(a.behavior['rest_position']))
         watered=[e for e in a.events if e['type']=='watered']
-        self.assertEqual([e['units'] for e in watered],[3,2,1,0])
+        self.assertEqual([e['units'] for e in watered],[5,4,3,2,1,0])
         self.assertTrue({'fill','pickup','setdown'}<=states)
-        self.assertGreater(self.game.elapsed_ms,60000)
-        self.assertLess(self.game.elapsed_ms,72000)
+        self.assertGreater(self.game.elapsed_ms-started,60000)
+        self.assertLess(self.game.elapsed_ms-started,80000)
 
     def test_waits_when_collection_point_is_occupied_and_resumes(self):
         self.game.player.position.update(780,408)
@@ -60,7 +69,7 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertFalse(self.actor.blocker.colliderect(self.world.probe_rect(self.game.player.position)))
         self.game.player.position.update(520,520)
         self.until(lambda:self.actor.state=='return_to_sanctuary',limit=10)
-        self.assertEqual(self.actor.water_units,4)
+        self.assertEqual(self.actor.water_units,6)
 
     def test_brief_player_obstruction_pauses_movement_then_continues(self):
         self.until(lambda:self.actor.state=='to_brook' and self.actor.waypoint_index==2 and self.actor.position.y>=348)
@@ -97,9 +106,12 @@ class SanctuaryGardener(unittest.TestCase):
             _,frame,_,key,xy=a.bucket_placement()
             spout=a.position-pygame.Vector2(a.draw_anchor)+xy+a.animation['buckets'][key]['spout']
             self.assertLess(spout.y,bed['root'][1])
-            patch=pygame.Rect(bed['patch_position'],(24,24))
+            patch=pygame.Rect(bed['patch_position'],bed.get('patch_size',(24,24)))
             self.assertTrue(patch.collidepoint(bed['root']))
             self.assertNotEqual(frame['angle'],0)
+            if 'window_trough' in bed['id']:
+                self.assertTrue(a.pose()[0].startswith('raise_trough_'))
+                self.assertLess(a.animation['poses'][a.pose()[0]]['grip'][1],10)
 
     def test_sustained_obstruction_gets_a_safe_detour_on_the_open_lane(self):
         a=self.actor
@@ -123,20 +135,23 @@ class SanctuaryGardener(unittest.TestCase):
         self.game.enter(door)
         self.assertEqual(self.game.world.npcs,[])
         self.game.update(3,(0,0),False)
-        self.assertEqual(a.water_units,4)
+        self.assertEqual(a.water_units,6)
         self.assertNotEqual(a.position,before)
         self.game.enter(self.game.world.doors[0])
         self.assertIs(self.game.world,self.world)
         self.assertIs(self.game.world.npcs[1],a)
         self.assertEqual(len(self.game.world.npcs),2)
-        self.assertEqual(a.water_units,4)
+        self.assertEqual(a.water_units,6)
 
     def test_fixed_simulation_matches_different_frame_rates(self):
         a=self.actor
+        self.start_trip()
         # Advance at 10 FPS, then reproduce with independent 60 FPS updates.
         for _ in range(600):self.game.update(.1,(0,0),False)
         expected=(a.state,tuple(a.position),a.water_units,a.state_ms)
         other=main.Game();other.player.position.update(520,520)
+        other.town.npcs[1]=main.Gardener(a.data,other.town,random.Random(1234))
+        other.update(other.town.npcs[1].rest_duration_ms/1000+1/60,(0,0),False)
         for _ in range(3600):other.update(1/60,(0,0),False)
         b=other.town.npcs[1]
         self.assertEqual((b.state,tuple(b.position),b.water_units,b.state_ms),expected)
@@ -183,11 +198,44 @@ class SanctuaryGardener(unittest.TestCase):
                     self.assertEqual(pygame.image.tobytes(body.subsurface((12,36,24,6)),'RGBA'),expected)
         water_colors={(89,142,159),(185,217,210)}
         counts=[]
-        for level in range(5):
+        for level in range(a.water_capacity+1):
             bucket=a.buckets[f'bucket_0_{level}']
             counts.append(sum(bucket.get_at((x,y))[:3] in water_colors for x in range(32) for y in range(32)))
         self.assertEqual(counts[0],0)
         self.assertTrue(all(a<b for a,b in zip(counts,counts[1:])),counts)
+
+    def test_random_rest_is_sampled_once_and_lasts_three_to_five_minutes(self):
+        rng=Mock();rng.randint.side_effect=[180000,300000,240000]
+        a=main.Gardener(self.actor.data,self.world,rng);self.actor=a;self.world.npcs[1]=a
+        self.assertEqual(a.rest_duration_ms,180000)
+        rng.randint.assert_called_once_with(180000,300000)
+        self.game.update(179,(0,0),False)
+        self.assertEqual(a.state,'rest');self.assertAlmostEqual(a.rest_remaining_ms,1000,places=5)
+        self.assertEqual(rng.randint.call_count,1)
+        self.game.update(1,(0,0),False)
+        self.assertEqual(a.state,'pickup')
+        self.until(lambda:a.completed_cycles==1,limit=90)
+        self.assertEqual(a.state,'rest');self.assertEqual(a.rest_duration_ms,300000)
+        self.assertEqual(rng.randint.call_count,2)
+        self.game.update(299,(0,0),False)
+        self.assertEqual(a.state,'rest');self.assertEqual(a.water_units,0)
+        self.game.update(1,(0,0),False)
+        self.assertEqual(a.state,'pickup');self.assertEqual(rng.randint.call_count,2)
+        self.until(lambda:a.completed_cycles==2,limit=90)
+        self.assertEqual(a.rest_duration_ms,240000);self.assertEqual(rng.randint.call_count,3)
+
+    def test_rest_countdown_survives_room_visits_and_rendering(self):
+        a=self.actor;duration=a.rest_duration_ms
+        self.assertTrue(180000<=duration<=300000)
+        self.game.update(20,(0,0),False)
+        before=a.rest_remaining_ms
+        door=next(d for d in self.world.doors if d.data['id']=='home_a')
+        self.game.enter(door);self.game.update(12,(0,0),False)
+        self.game.enter(self.game.world.doors[0])
+        self.assertEqual(a.rest_duration_ms,duration)
+        self.assertAlmostEqual(a.rest_remaining_ms,before-12000,places=4)
+        for _ in range(10):a.sprite(self.game.elapsed_ms)
+        self.assertEqual(a.rest_duration_ms,duration)
 
 
 if __name__=='__main__':unittest.main()
