@@ -40,5 +40,6 @@
   "source_recipe": "../../../source/terrain/eldenmere/well/recipe.json",
   "animation": "gentle water glints inside the shaft; structure and windlass fixed",
   "palette_source": "assets/terrain/eldenmere/cottage/palette.json",
-  "draw_water_interaction": false
+  "draw_water_interaction": true,
+  "drawing_animation": "drawing/animation.json"
 }

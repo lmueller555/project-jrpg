@@ -61,6 +61,7 @@ class Gardener:
         self.behavior=read_json(ROOT/record['behavior'])
         self.animation=read_json(ROOT/record['animation'])
         self.water_capacity=self.animation['water_capacity']
+        self.well=world.well
         self._rng=rng if rng is not None else random.Random()
         self.rest_duration_ms=self._new_rest_duration()
         self.draw_anchor=self.animation['draw_anchor']
@@ -95,8 +96,21 @@ class Gardener:
         b=self.behavior
         steps=[{'id':'rest','animation':'rest','facing':'right'},
                {'id':'pickup','animation':'pickup','facing':'right'},
-               {'id':'to_brook','waypoints':b['outbound_waypoints']},
-               {'id':'fill','animation':'fill','facing':'right'},
+               {'id':'to_well','waypoints':b['outbound_waypoints']},
+               {'id':'well_setdown','facing':'left'},
+               {'id':'well_to_crank','waypoints':[self.well.data['operator_position']]},
+               {'id':'well_grip','facing':'left'},
+               {'id':'well_lower','facing':'left'},
+               {'id':'well_fill','facing':'left'},
+               {'id':'well_raise','facing':'left'},
+               {'id':'well_lock','facing':'left'},
+               {'id':'well_to_pour','waypoints':[self.well.data['pail_position']]},
+               {'id':'well_guide','facing':'left'},
+               {'id':'well_pour','facing':'left'},
+               {'id':'well_back_to_crank','waypoints':[self.well.data['operator_position']]},
+               {'id':'well_reset','facing':'left'},
+               {'id':'well_back_to_pail','waypoints':[self.well.data['pail_position']]},
+               {'id':'well_pickup','facing':'left'},
                {'id':'return_to_sanctuary','waypoints':b['return_waypoints']}]
         for index,bed in enumerate(b['beds']):
             via=[bed['position']]
@@ -114,9 +128,10 @@ class Gardener:
 
     def _advance(self):
         old=self.steps[self.step_index]
-        if old['id']=='fill':
+        if old['id']=='well_pour':
             self.water_units=self.water_capacity
             self.events.append({'type':'filled','position':tuple(self.position),'units':self.water_capacity})
+        if old['id']=='well_pickup':self.well.release(self)
         if old['id'].startswith('water_'):
             self.water_units=max(0,self.water_units-1)
             self.watered_beds.append(old['bed']['id'])
@@ -142,8 +157,14 @@ class Gardener:
             if 'waypoints' in step:self._move(dt,world,player_blocker)
             else:
                 self.moving=False;self.waiting=False
+                if self.state.startswith('well_'):
+                    if not self.well.reserve(self):self.waiting=True;continue
+                    self.state_ms+=dt*1000
+                    if self.state=='well_pour':
+                        self.water_units=min(6,max(0,int((self.well.progress-.12)/.76*6)))
+                    if self.state_ms+1e-7>=self.well.data['phases_ms'][self.state]:self._advance()
+                    continue
                 self.state_ms+=dt*1000
-                if self.state=='fill':self.water_units=self.pose()[1].get('level',self.water_units)
                 duration=sum(f['duration_ms'] for f in self.animation['animations'][step['animation']])
                 if self.state=='rest':duration=self.rest_duration_ms
                 if self.state_ms+1e-7>=duration:self._advance()
@@ -160,7 +181,8 @@ class Gardener:
             if self.retry_seconds:self.waiting=True;return
             self.path=find_path(world,self.position,goal,self.probe_size,self)
             if self.path is None:self.retry_seconds=1;self.waiting=True;return
-        speed=self.behavior['loaded_speed'] if self.water_units else self.behavior['empty_speed']
+        loaded=self.water_units and not self.state.startswith('well_')
+        speed=self.behavior['loaded_speed'] if loaded else self.behavior['empty_speed']
         budget=speed*seconds
         while budget>1e-7 and self.path:
             delta=pygame.Vector2(self.path[0])-self.position
@@ -185,8 +207,18 @@ class Gardener:
 
     def pose(self):
         step=self.steps[self.step_index]
+        if self.state.startswith('well_') and 'waypoints' not in step:
+            if self.state in ('well_setdown','well_pickup'):
+                name='well_setdown_left_' if self.state=='well_setdown' else 'well_pickup_left_'
+                return name+str(min(4,int(self.well.progress*5))),{'level':self.water_units}
+            if self.state in ('well_grip','well_lower','well_fill','well_raise','well_lock'):
+                prefix='well_heavy_left_' if self.state=='well_raise' else 'well_crank_left_'
+                return prefix+str(self.well.crank_index),{'hidden_bucket':True}
+            if self.state=='well_reset' and self.state_ms>=1200:
+                return f'well_crank_left_{self.well.crank_index}',{'hidden_bucket':True}
+            return 'well_guide_left',{'hidden_bucket':True}
         if 'waypoints' in step:
-            mode='full' if self.water_units else 'empty'
+            mode='full' if self.water_units and not self.state.startswith('well_') else 'empty'
             key=(f'carry_{mode}.' if self.moving else f'idle_{mode}.')+self.facing
             if not self.moving:return key,{}
             frames=self.animation['animations'][key];time=self.walk_ms%560
@@ -207,6 +239,14 @@ class Gardener:
 
     def sprite(self,elapsed_ms):
         name,frame,pose,key,xy=self.bucket_placement()
+        if frame.get('hidden_bucket') or (self.state.startswith('well_') and self.state not in ('well_setdown','well_pickup')):
+            return self.bodies[name]
+        if self.state in ('well_setdown','well_pickup'):
+            # Hand and pail share a fixed registered grip while she sets it
+            # down/picks it up; subsequent work renders the pail as a world prop.
+            image=self.bodies[name].copy()
+            image.blit(self.buckets[key],xy)
+            return image
         submerged=frame.get('effect')=='ripple'
         cache_key=(name,key,submerged)
         if cache_key not in self._sprite_cache:

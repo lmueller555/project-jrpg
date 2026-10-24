@@ -20,7 +20,7 @@ class SanctuaryGardener(unittest.TestCase):
 
     def tearDown(self):pygame.quit()
 
-    def until(self,predicate,limit=80,dt=1/30):
+    def until(self,predicate,limit=120,dt=1/30):
         if self.actor.state=='rest' and self.actor.completed_cycles==0:
             self.start_trip()
         for _ in range(round(limit/dt)):
@@ -53,53 +53,55 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(a.position,pygame.Vector2(a.behavior['rest_position']))
         watered=[e for e in a.events if e['type']=='watered']
         self.assertEqual([e['units'] for e in watered],[5,4,3,2,1,0])
-        self.assertTrue({'fill','pickup','setdown'}<=states)
+        self.assertTrue({'well_lower','well_fill','well_raise','well_pour','pickup','setdown'}<=states)
         self.assertGreater(self.game.elapsed_ms-started,60000)
-        self.assertLess(self.game.elapsed_ms-started,80000)
+        self.assertLess(self.game.elapsed_ms-started,100000)
 
     def test_waits_when_collection_point_is_occupied_and_resumes(self):
-        self.game.player.position.update(780,408)
+        self.game.player.position.update(576,884)
         self.assertTrue(self.world.can_stand(self.game.player.position))
-        self.until(lambda:self.actor.state=='to_brook' and self.actor.waiting,limit=30)
+        self.until(lambda:self.actor.state=='to_well' and self.actor.waiting,limit=30)
         position=self.actor.position.copy()
         self.game.update(3,(0,0),False)
-        self.assertEqual(self.actor.state,'to_brook')
+        self.assertEqual(self.actor.state,'to_well')
         self.assertEqual(self.actor.water_units,0)
         self.assertEqual(self.actor.position,position)
         self.assertFalse(self.actor.blocker.colliderect(self.world.probe_rect(self.game.player.position)))
         self.game.player.position.update(520,520)
-        self.until(lambda:self.actor.state=='return_to_sanctuary',limit=10)
+        self.until(lambda:self.actor.state=='return_to_sanctuary',limit=40)
         self.assertEqual(self.actor.water_units,6)
 
     def test_brief_player_obstruction_pauses_movement_then_continues(self):
-        self.until(lambda:self.actor.state=='to_brook' and self.actor.waypoint_index==2 and self.actor.position.y>=348)
+        self.until(lambda:self.actor.state=='to_well' and self.actor.waypoint_index==2 and self.actor.position.y>=348)
         self.game.player.position.update(384,370)
         self.until(lambda:self.actor.waiting,limit=2,dt=1/60)
         position=self.actor.position.copy();units=self.actor.water_units
         self.game.update(.35,(0,0),False)
         self.assertEqual(self.actor.position,position)
         self.assertEqual(self.actor.water_units,units)
-        self.assertEqual(self.actor.state,'to_brook')
+        self.assertEqual(self.actor.state,'to_well')
         self.assertFalse(self.actor.blocker.colliderect(self.world.probe_rect(self.game.player.position)))
         self.game.player.position.update(520,520)
         self.game.update(.5,(0,0),False)
         self.assertGreater(self.actor.position.distance_to(position),1)
 
-    def test_water_only_appears_after_dipping_and_pours_descend_to_roots(self):
-        a=self.actor
-        self.until(lambda:a.state=='fill')
+    def test_water_transfers_only_during_pour_and_pours_descend_to_roots(self):
+        a=self.actor;well=self.world.well
+        self.until(lambda:a.state=='well_lower')
         self.assertEqual(a.water_units,0)
-        self.game.update(.8,(0,0),False)
+        self.until(lambda:a.state=='well_fill',limit=5)
         self.assertEqual(a.water_units,0)
-        self.until(lambda:a.water_units>0,limit=2)
-        self.assertEqual(a.pose()[1].get('effect'),'ripple')
-        self.assertEqual(a.position,pygame.Vector2(a.behavior['source_position']))
-        # The dip contact lies in the main brook's tile band, independently of
-        # the mill race. Feet are outside its solid water mask.
-        x,y=a.behavior['source_contact']
-        scene=main.read_json(main.ROOT/'assets/maps/eldenmere/terrain_foundation/adapted_plan.json')
-        span=next(s for s in scene['stream_centres'] if s[0]<=y//24<=s[1])
-        self.assertLessEqual(abs(x//24-span[2]),1)
+        self.game.update(1,(0,0),False)
+        self.assertGreater(well.draw_level,0)
+        self.assertEqual(a.water_units,0)
+        self.until(lambda:a.state=='well_pour',limit=15)
+        self.assertEqual(a.water_units,0)
+        self.assertEqual(well.draw_level,6)
+        self.game.update(1.5,(0,0),False)
+        self.assertGreater(a.water_units,0)
+        self.assertLess(a.water_units,6)
+        self.assertEqual(a.water_units+well.draw_level,6)
+        self.assertEqual(a.position,pygame.Vector2(well.data['pail_position']))
         self.assertIsNone(self.world.blocked.overlap(self.world._probes[a.probe_size],a.blocker.topleft))
         for bed in a.behavior['beds']:
             self.until(lambda:a.state=='water_'+bed['id'] and a.pose()[1].get('effect')=='pour')
@@ -115,16 +117,16 @@ class SanctuaryGardener(unittest.TestCase):
 
     def test_sustained_obstruction_gets_a_safe_detour_on_the_open_lane(self):
         a=self.actor
-        self.until(lambda:a.state=='to_brook' and a.waypoint_index==4 and a.position.x>=500)
-        self.game.player.position.update(540,472)
+        self.until(lambda:a.state=='to_well' and a.waypoint_index==5 and a.position.x>=490)
+        self.game.player.position.update(528,816)
         deviated=False
         for _ in range(180):
             self.game.update(1/30,(0,0),False)
             self.assertFalse(a.blocker.colliderect(self.world.probe_rect(self.game.player.position)))
-            deviated=deviated or abs(a.position.y-472)>1
-            if a.position.x>560:break
+            deviated=deviated or abs(a.position.y-816)>1
+            if a.position.x>548:break
         self.assertTrue(deviated)
-        self.assertGreater(a.position.x,560)
+        self.assertGreater(a.position.x,548)
         self.assertEqual(a.water_units,0)
 
     def test_room_visit_preserves_actor_bucket_and_progress(self):
@@ -168,9 +170,11 @@ class SanctuaryGardener(unittest.TestCase):
 
     def test_static_action_feet_and_player_depth_order(self):
         a=self.actor
+        recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')
         for name,spec in a.animation['poses'].items():
             if name.startswith('carry_'):continue
             direction='left' if name.endswith('left') else 'right' if name in ('rest',) or name.startswith(('pickup','fill')) or name.endswith('right') else 'front' if name.endswith('front') else 'back'
+            if name in recipe['work_poses']:direction=recipe['work_poses'][name]['direction']
             original=self.world.image(f'assets/characters/npcs/female_02/idle_{direction}.png')
             feet=original.subsurface((0,30,24,6));bounds=feet.get_bounding_rect()
             expected=pygame.image.tobytes(feet.subsurface(bounds),'RGBA')
@@ -214,14 +218,14 @@ class SanctuaryGardener(unittest.TestCase):
         self.assertEqual(rng.randint.call_count,1)
         self.game.update(1,(0,0),False)
         self.assertEqual(a.state,'pickup')
-        self.until(lambda:a.completed_cycles==1,limit=90)
+        self.until(lambda:a.completed_cycles==1,limit=120)
         self.assertEqual(a.state,'rest');self.assertEqual(a.rest_duration_ms,300000)
         self.assertEqual(rng.randint.call_count,2)
         self.game.update(299,(0,0),False)
         self.assertEqual(a.state,'rest');self.assertEqual(a.water_units,0)
         self.game.update(1,(0,0),False)
         self.assertEqual(a.state,'pickup');self.assertEqual(rng.randint.call_count,2)
-        self.until(lambda:a.completed_cycles==2,limit=90)
+        self.until(lambda:a.completed_cycles==2,limit=120)
         self.assertEqual(a.rest_duration_ms,240000);self.assertEqual(rng.randint.call_count,3)
 
     def test_rest_countdown_survives_room_visits_and_rendering(self):

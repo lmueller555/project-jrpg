@@ -1,0 +1,376 @@
+{
+  "status": "review",
+  "initial_rest_duration_ms": 195613,
+  "next_rest_duration_ms": 221875,
+  "rest_range_ms": [
+    180000,
+    300000
+  ],
+  "active_trip_ms": 89200,
+  "well_excerpt_ms": 21100,
+  "watered_beds": [
+    "west_flowers",
+    "southwest_flowers",
+    "southeast_flowers",
+    "east_flowers",
+    "west_window_trough",
+    "east_window_trough"
+  ],
+  "remaining_water_units": 0,
+  "events": [
+    {
+      "time_ms": 194613,
+      "state": "rest",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 195713,
+      "state": "pickup",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 196513,
+      "state": "to_well",
+      "position": [
+        327.0,
+        350.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 210313,
+      "state": "well_setdown",
+      "position": [
+        576.0,
+        884.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 211313,
+      "state": "well_to_crank",
+      "position": [
+        575.0,
+        884.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 211913,
+      "state": "well_grip",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 212413,
+      "state": "well_lower",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 215613,
+      "state": "well_fill",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 217613,
+      "state": "well_raise",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 221613,
+      "state": "well_lock",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 222113,
+      "state": "well_to_pour",
+      "position": [
+        573.0,
+        854.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 222713,
+      "state": "well_guide",
+      "position": [
+        576.0,
+        884.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 224213,
+      "state": "well_pour",
+      "position": [
+        576.0,
+        884.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 227213,
+      "state": "well_back_to_crank",
+      "position": [
+        575.0,
+        884.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 227813,
+      "state": "well_reset",
+      "position": [
+        572.0,
+        854.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 229813,
+      "state": "well_back_to_pail",
+      "position": [
+        573.0,
+        854.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 230413,
+      "state": "well_pickup",
+      "position": [
+        576.0,
+        884.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 231413,
+      "state": "return_to_sanctuary",
+      "position": [
+        576.0,
+        883.1666666666666
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 246413,
+      "state": "approach_west_flowers",
+      "position": [
+        379.8333333333334,
+        336.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 249013,
+      "state": "inspect_west_flowers",
+      "position": [
+        268.0,
+        340.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 249813,
+      "state": "water_west_flowers",
+      "position": [
+        268.0,
+        340.0
+      ],
+      "water_units": 6
+    },
+    {
+      "time_ms": 253013,
+      "state": "approach_southwest_flowers",
+      "position": [
+        271.33333333333326,
+        340.0
+      ],
+      "water_units": 5
+    },
+    {
+      "time_ms": 254313,
+      "state": "inspect_southwest_flowers",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 5
+    },
+    {
+      "time_ms": 255113,
+      "state": "water_southwest_flowers",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 5
+    },
+    {
+      "time_ms": 258313,
+      "state": "approach_southeast_flowers",
+      "position": [
+        324.49999999999994,
+        350.0
+      ],
+      "water_units": 4
+    },
+    {
+      "time_ms": 261413,
+      "state": "inspect_southeast_flowers",
+      "position": [
+        438.0,
+        351.9999999999991
+      ],
+      "water_units": 4
+    },
+    {
+      "time_ms": 262213,
+      "state": "water_southeast_flowers",
+      "position": [
+        438.0,
+        351.9999999999991
+      ],
+      "water_units": 4
+    },
+    {
+      "time_ms": 265413,
+      "state": "approach_east_flowers",
+      "position": [
+        438.0,
+        351.9999999999991
+      ],
+      "water_units": 3
+    },
+    {
+      "time_ms": 266313,
+      "state": "inspect_east_flowers",
+      "position": [
+        462.0,
+        334.0
+      ],
+      "water_units": 3
+    },
+    {
+      "time_ms": 267113,
+      "state": "water_east_flowers",
+      "position": [
+        462.0,
+        334.0
+      ],
+      "water_units": 3
+    },
+    {
+      "time_ms": 270313,
+      "state": "approach_west_window_trough",
+      "position": [
+        461.1666666666667,
+        334.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 274213,
+      "state": "inspect_west_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 275013,
+      "state": "water_west_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 2
+    },
+    {
+      "time_ms": 278213,
+      "state": "approach_east_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 1
+    },
+    {
+      "time_ms": 278313,
+      "state": "inspect_east_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 1
+    },
+    {
+      "time_ms": 279113,
+      "state": "water_east_window_trough",
+      "position": [
+        316.0,
+        294.0
+      ],
+      "water_units": 1
+    },
+    {
+      "time_ms": 282313,
+      "state": "return_to_rest",
+      "position": [
+        321.0,
+        294.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 284013,
+      "state": "setdown",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 0
+    },
+    {
+      "time_ms": 284813,
+      "state": "rest",
+      "position": [
+        322.0,
+        350.0
+      ],
+      "water_units": 0
+    }
+  ],
+  "well_interval_ms": 100,
+  "route_interval_ms": 200,
+  "notes": "Travel and actions use real game timing. Most initial rest is omitted. Watering montage cuts only between stops."
+}

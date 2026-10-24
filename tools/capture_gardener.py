@@ -30,7 +30,7 @@ def panel(scene,scale,title,subtitle,caption):
     return image
 
 
-def gif(path,frames):
+def gif(path,frames,duration_ms=100):
     colors=set()
     for frame in frames:
         counts=frame.getcolors(256)
@@ -50,17 +50,17 @@ def gif(path,frames):
         item=local.point(table);item.putpalette(rgb)
         if item.convert('RGB').tobytes()!=frame.tobytes():raise ValueError('Review color changed during encoding')
         indexed.append(item)
-    indexed[0].save(path,save_all=True,append_images=indexed[1:],duration=100,
-                    loop=0,disposal=1,optimize=False)
+    indexed[0].save(path,save_all=True,append_images=indexed[1:],duration=duration_ms,
+                    loop=0,disposal=1,optimize=True)
     cursor=0
     with Image.open(path) as exported:
         for actual in ImageSequence.Iterator(exported):
             pixels=actual.convert('RGB').tobytes()
-            for _ in range(actual.info['duration']//100):
+            for _ in range(actual.info['duration']//duration_ms):
                 if frames[cursor].tobytes()!=pixels:raise ValueError('Encoded GIF differs from the runtime capture')
                 cursor+=1
     if cursor!=len(frames):raise ValueError('Encoded GIF timing changed')
-    print(f'{path.name}: {len(frames)} captures, {len(frames)/10:.1f}s, {len(colors)} exact colors',flush=True)
+    print(f'{path.name}: {len(frames)} captures, {len(frames)*duration_ms/1000:.1f}s, {len(colors)} exact colors',flush=True)
 
 
 def render(game,camera):
@@ -68,82 +68,10 @@ def render(game,camera):
     return Image.frombytes('RGB',main.VIEW_SIZE,pygame.image.tobytes(game.canvas,'RGB'))
 
 
-def caption(actor):
-    state=actor.state
-    if state=='rest':return f'Rest / next trip in {round(actor.rest_remaining_ms/1000)}s (3-5 minute break)'
-    if state=='pickup':return 'Pick up the empty bucket'
-    if state=='to_brook':return 'Walk down the stairs and along the lane to the brook'
-    if state=='fill':return f'Lower, fill and lift the bucket / water {actor.water_units} of {actor.water_capacity}'
-    if state=='return_to_sanctuary':return 'Carry the full bucket back up the sanctuary stairs'
-    if state=='return_to_rest':return 'Return with the empty bucket'
-    if state=='setdown':return 'Set down the empty bucket'
-    step=actor.steps[actor.step_index]
-    bed=step.get('bed',{}).get('label',state.split('_',1)[1].replace('_',' '))
-    if state.startswith('water_'):return f'Water {bed} / two small pours'
-    if state.startswith('inspect_'):return f'Inspect {bed}'
-    return 'Carry water to the next flower patch'
-
-
 def capture():
-    OUTPUT.mkdir(parents=True,exist_ok=True)
-    game=main.Game();game.player.position.update(516,900)
-    # Seed only this capture's actor for reproducibility; live games use entropy.
-    actor=main.Gardener(game.town.npcs[1].data,game.town,random.Random(2026))
-    game.town.npcs[1]=actor
-    initial_rest=actor.rest_duration_ms
-    capture_start=initial_rest-2000
-    # Omit most of the genuine 3-5 minute wait. Travel/work stay at real speed.
-    game.update(capture_start/1000,(0,0),False)
-    route=[];filling=[];watering=[];troughs=[];events=[];previous=None
-    first_cycle=None
-    for index in range(1000):
-        state=actor.state
-        if state!=previous:
-            events.append({'time_ms':round(game.elapsed_ms),'state':state,'position':list(actor.position),'water_units':actor.water_units})
-            previous=state
-        # Two adjacent runtime views form the wider route overview; actor and
-        # scenery depth/collision/animation all come from the game's renderer.
-        left=render(game,(192,240))
-        right=render(game,(672,240))
-        overview=Image.new('RGB',(672,288))
-        overview.paste(left.crop((0,0,480,288)),(0,0))
-        overview.paste(right.crop((0,0,192,288)),(480,0))
-        text=caption(actor)
-        route.append(panel(overview,1,'Sanctuary gardener / complete watering trip',
-                           'Real-time trip | four flower patches and two troughs | long rests omitted',text))
-        if state=='fill':
-            close=render(game,(738,366)).crop((0,0,96,80))
-            filling.append(panel(close,6,'Gardener / collecting water','6x enlargement | bucket contact, filling and lifting',text))
-        if state.startswith(('inspect_','water_')):
-            camera=(round(actor.position.x)-60,round(actor.position.y)-54)
-            close=render(game,camera).crop((0,0,120,80))
-            watering.append(panel(close,6,'Gardener / flowers and window troughs',
-                                  '6x enlargement | consecutive stops shown as a review montage',text))
-            if 'window_trough' in state:
-                troughs.append(panel(close,6,'Gardener / sanctuary window troughs',
-                                    '6x enlargement | lifting the bucket to each raised trough',text))
-        if actor.completed_cycles and first_cycle is None:first_cycle=game.elapsed_ms
-        if first_cycle is not None and game.elapsed_ms-first_cycle>=1000:break
-        game.update(.1,(0,0),False)
-        if index%150==0:print(f'Captured {index/10:.0f}s / {actor.state}',flush=True)
-    if not actor.completed_cycles:raise RuntimeError('Gardener did not complete her trip')
-    filling[len(filling)//2].save(OUTPUT/'filling.png')
-    watering[16].save(OUTPUT/'watering.png')
-    troughs[16].save(OUTPUT/'troughs.png')
-    route[-12].save(OUTPUT/'route.png')
-    gif(OUTPUT/'filling.gif',filling)
-    gif(OUTPUT/'watering.gif',watering)
-    gif(OUTPUT/'troughs.gif',troughs)
-    gif(OUTPUT/'route.gif',route)
-    (OUTPUT/'capture.json').write_text(json.dumps({
-        'status':actor.animation['status'],'capture_start_ms':capture_start,'first_cycle_complete_ms':round(first_cycle),
-        'active_trip_duration_ms':round(first_cycle-initial_rest),
-        'initial_rest_duration_ms':initial_rest,'next_rest_duration_ms':actor.rest_duration_ms,
-        'rest_range_ms':actor.behavior['rest_range_ms'],
-        'watered_beds':actor.watered_beds,'final_water_units':actor.water_units,
-        'events':events,'capture_interval_ms':100,'route_frames':len(route)
-    },indent=2)+'\n')
-    pygame.quit()
+    # Keep the original command useful; historical brook captures are retained.
+    from capture_gardener_well import capture as current_capture
+    current_capture()
 
 
 if __name__=='__main__':capture()

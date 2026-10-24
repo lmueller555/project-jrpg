@@ -75,7 +75,9 @@ def export_art():
         'drawing_position':recipe['drawing_position'],'source_crop':crop,
         'source_recipe':'../../../source/terrain/eldenmere/well/recipe.json',
         'animation':'gentle water glints inside the shaft; structure and windlass fixed',
-        'palette_source':recipe['palette_source'],'draw_water_interaction':False
+        'palette_source':recipe['palette_source'],
+        'draw_water_interaction':(OUTPUT/'drawing/animation.json').exists(),
+        'drawing_animation':'drawing/animation.json'
     })
     background=Image.new('RGBA',sprite.size,'#e8edf2');background.alpha_composite(sprite)
     save(OUTPUT/'well_review.png',background.convert('RGB').resize((504,576),Image.Resampling.NEAREST))

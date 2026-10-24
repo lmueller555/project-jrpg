@@ -31,7 +31,7 @@ All nine buildings have separate furnished interiors. Cottages use the approved 
 
 Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is approved by the user. She has foot collision and draws at the appropriate depth; the shop entrance remains clear.
 
-The auburn-haired gardener in the sage dress collects water from the main brook, carries it up the sanctuary stairs, waters its four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. Her bucket fills at the water and empties across the six targets. She yields to Caelan, takes safe detours where possible and keeps her work/rest progress while you visit interiors. The [route and enlarged action previews](docs/reviews/sanctuary_gardener/README.md) omit most of the long rests and are approved by the user. Other villagers, conversations and quests remain future work.
+The auburn-haired gardener in the sage dress now draws water from the commons well. She sets down her pail, lowers and fills the well bucket, cranks it back up, transfers the water and carries her pail up the sanctuary stairs. She waters four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. She yields to Caelan, takes safe detours where possible and keeps her work/rest and well progress while you visit interiors. The [new well routine and enlarged previews](docs/reviews/gardener_well/README.md) await review; the [previous brook routine](docs/reviews/sanctuary_gardener/README.md) remains a historical approval record. Other villagers, conversations and quests remain future work.
 
 Verify the runtime without a display:
 

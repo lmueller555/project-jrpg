@@ -1,6 +1,6 @@
 {
   "id": "sanctuary.gardener",
-  "status": "approved",
+  "status": "review",
   "character": "female_02",
   "water_capacity": 6,
   "body_frame_size": [
@@ -343,6 +343,222 @@
         19
       ],
       "order": "before"
+    },
+    "well_crank_left_0": {
+      "body": "well_crank_left_0.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after"
+    },
+    "well_crank_left_1": {
+      "body": "well_crank_left_1.png",
+      "grip": [
+        2,
+        16
+      ],
+      "order": "after"
+    },
+    "well_crank_left_2": {
+      "body": "well_crank_left_2.png",
+      "grip": [
+        0,
+        17
+      ],
+      "order": "after"
+    },
+    "well_crank_left_3": {
+      "body": "well_crank_left_3.png",
+      "grip": [
+        -2,
+        16
+      ],
+      "order": "after"
+    },
+    "well_crank_left_4": {
+      "body": "well_crank_left_4.png",
+      "grip": [
+        -3,
+        14
+      ],
+      "order": "after"
+    },
+    "well_crank_left_5": {
+      "body": "well_crank_left_5.png",
+      "grip": [
+        -2,
+        12
+      ],
+      "order": "after"
+    },
+    "well_crank_left_6": {
+      "body": "well_crank_left_6.png",
+      "grip": [
+        0,
+        11
+      ],
+      "order": "after"
+    },
+    "well_crank_left_7": {
+      "body": "well_crank_left_7.png",
+      "grip": [
+        2,
+        12
+      ],
+      "order": "after"
+    },
+    "well_guide_left": {
+      "body": "well_guide_left.png",
+      "grip": [
+        0,
+        18
+      ],
+      "order": "after"
+    },
+    "well_setdown_left_0": {
+      "body": "well_setdown_left_0.png",
+      "grip": [
+        5,
+        24
+      ],
+      "order": "after"
+    },
+    "well_pickup_left_0": {
+      "body": "well_pickup_left_0.png",
+      "grip": [
+        -1,
+        24
+      ],
+      "order": "after"
+    },
+    "well_setdown_left_1": {
+      "body": "well_setdown_left_1.png",
+      "grip": [
+        4,
+        24
+      ],
+      "order": "after"
+    },
+    "well_pickup_left_1": {
+      "body": "well_pickup_left_1.png",
+      "grip": [
+        0,
+        23
+      ],
+      "order": "after"
+    },
+    "well_setdown_left_2": {
+      "body": "well_setdown_left_2.png",
+      "grip": [
+        2,
+        24
+      ],
+      "order": "after"
+    },
+    "well_pickup_left_2": {
+      "body": "well_pickup_left_2.png",
+      "grip": [
+        2,
+        22
+      ],
+      "order": "after"
+    },
+    "well_setdown_left_3": {
+      "body": "well_setdown_left_3.png",
+      "grip": [
+        0,
+        24
+      ],
+      "order": "after"
+    },
+    "well_pickup_left_3": {
+      "body": "well_pickup_left_3.png",
+      "grip": [
+        4,
+        20
+      ],
+      "order": "after"
+    },
+    "well_setdown_left_4": {
+      "body": "well_setdown_left_4.png",
+      "grip": [
+        -1,
+        24
+      ],
+      "order": "after"
+    },
+    "well_pickup_left_4": {
+      "body": "well_pickup_left_4.png",
+      "grip": [
+        5,
+        19
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_0": {
+      "body": "well_heavy_left_0.png",
+      "grip": [
+        3,
+        14
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_1": {
+      "body": "well_heavy_left_1.png",
+      "grip": [
+        2,
+        16
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_2": {
+      "body": "well_heavy_left_2.png",
+      "grip": [
+        0,
+        17
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_3": {
+      "body": "well_heavy_left_3.png",
+      "grip": [
+        -2,
+        16
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_4": {
+      "body": "well_heavy_left_4.png",
+      "grip": [
+        -3,
+        14
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_5": {
+      "body": "well_heavy_left_5.png",
+      "grip": [
+        -2,
+        12
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_6": {
+      "body": "well_heavy_left_6.png",
+      "grip": [
+        0,
+        11
+      ],
+      "order": "after"
+    },
+    "well_heavy_left_7": {
+      "body": "well_heavy_left_7.png",
+      "grip": [
+        2,
+        12
+      ],
+      "order": "after"
     },
     "rest": {
       "body": "rest.png",

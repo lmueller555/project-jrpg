@@ -1,0 +1,97 @@
+{
+  "status": "review",
+  "position": [
+    486,
+    792
+  ],
+  "canvas_size": [
+    112,
+    112
+  ],
+  "fixed": "fixed.png",
+  "front_rim": "front_rim.png",
+  "rope_origin": [
+    40,
+    43
+  ],
+  "crank_pivot": [
+    69,
+    43
+  ],
+  "crank_handles": [
+    [
+      77,
+      46
+    ],
+    [
+      76,
+      48
+    ],
+    [
+      74,
+      49
+    ],
+    [
+      72,
+      48
+    ],
+    [
+      71,
+      46
+    ],
+    [
+      72,
+      44
+    ],
+    [
+      74,
+      43
+    ],
+    [
+      76,
+      44
+    ]
+  ],
+  "idle_bucket_grip": [
+    40,
+    49
+  ],
+  "lowered_bucket_grip": [
+    40,
+    73
+  ],
+  "raised_bucket_grip": [
+    40,
+    43
+  ],
+  "pour_bucket_grip": [
+    73,
+    73
+  ],
+  "pail_grip_world": [
+    563,
+    878
+  ],
+  "operator_position": [
+    572,
+    854
+  ],
+  "pail_position": [
+    576,
+    884
+  ],
+  "phases_ms": {
+    "well_setdown": 1000,
+    "well_grip": 500,
+    "well_lower": 3200,
+    "well_fill": 2000,
+    "well_raise": 4000,
+    "well_lock": 500,
+    "well_guide": 1500,
+    "well_pour": 3000,
+    "well_reset": 2000,
+    "well_pickup": 1000
+  },
+  "source": "assets/terrain/eldenmere/well/structure.png",
+  "notes": "Two buckets; portable pail fills only during the transfer. Shared actor clock."
+}
