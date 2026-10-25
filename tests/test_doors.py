@@ -126,7 +126,7 @@ class BuildingDoors(unittest.TestCase):
         for name,path in scenes.items():
             with self.subTest(room=name):
                 world=main.World(main.ROOT/path,self.game.town._images)
-                self.assertTrue(all(n['kind'] in ('stationary','daisy_routine') for n in world.data['npcs']))
+                self.assertTrue(all(n['kind'] in ('stationary','daisy_routine','play_actor') for n in world.data['npcs']))
                 self.assertEqual(world.data['quests'],[])
                 start=tuple(world.data['spawn']);self.assertTrue(world.can_stand(start))
                 targets={tuple(d.data['anchor']) for d in world.doors}

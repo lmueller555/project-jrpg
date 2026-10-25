@@ -32,10 +32,11 @@ class LiamHouseholdTests(unittest.TestCase):
         self.game.player.position.update(self.room.data['spawn'])
         self.game.map_open=False;self.game.transfer_cooldown=0
 
-    def test_exactly_four_residents_load_once_and_humans_remain_stationary(self):
+    def test_exactly_four_residents_load_once_and_parents_remain_stationary(self):
         actors=self.room.npcs
         self.assertEqual([n.data['id'] for n in actors],['liam','liam_mother','liam_father','daisy'])
-        self.assertTrue(all(isinstance(n,main.StationaryNPC) for n in actors[:3]))
+        self.assertTrue(all(isinstance(n,main.StationaryNPC) for n in actors[1:3]))
+        self.assertIsInstance(actors[0],main.PlayActor)
         self.assertIsInstance(actors[3],main.DaisyRoutine)
         self.assertIs(self.game._scene_by_id('liam_house'),self.room)
         self.assertEqual([n.data['id'] for n in self.game.persistent_npcs],['mother_serene','tomas'])
@@ -48,7 +49,7 @@ class LiamHouseholdTests(unittest.TestCase):
 
     def test_no_routines_dialogue_or_conversation_lock(self):
         for actor in self.room.npcs:
-            if actor.data['id']!='daisy':self.assertFalse({'routine','behavior','animation'}&actor.data.keys())
+            if actor.data['id'] not in ('liam','daisy'):self.assertFalse({'routine','behavior','animation'}&actor.data.keys())
             self.assertFalse(hasattr(actor,'request_conversation'))
             self.assertNotIn(actor.data['id'],self.game.social.profiles)
             # At a close facing approach, proximity cannot request dialogue.

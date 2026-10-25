@@ -109,6 +109,7 @@ def interior(recipe,data,entry):
         room['destinations']['daisy_rest_space']=rug['access']
     else:room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
     room['npcs']=recipe.get('residents',[])
+    if recipe.get('play_routine'):room['play_routine']=recipe['play_routine']
     if recipe.get('bowls'):
         pack_path='assets/terrain/eldenmere/liam_home/bowls/bowls.json'
         pack=read_json(ROOT/pack_path)
@@ -159,6 +160,9 @@ def build():
     if any(n.get('kind')=='daisy_routine' for n in recipe.get('residents',[])):
         from build_daisy_routines import build as build_daisy_actions
         build_daisy_actions()
+    if recipe.get('play_routine'):
+        from build_liam_daisy_play import build as build_play_actions
+        build_play_actions()
     entity,frames,position,entry,width=exterior(recipe)
     data['entities']=[e for e in data['entities'] if e['id']!=recipe['id']]+[entity]
     extend_paths(data,recipe)

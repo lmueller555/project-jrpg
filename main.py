@@ -15,6 +15,7 @@ except ModuleNotFoundError:
 
 from npc_routines import Gardener, RoutineNPC
 from daisy_routine import DaisyRoutine
+from liam_daisy_play import PlayActor, LiamDaisyPlay
 from well_routine import DrawingWell
 from social import SocialSystem
 from title_screen import TitleScreen
@@ -139,6 +140,7 @@ class World:
         self.routine_props=[]
         for record in self.data.get('npcs',[]):
             actor=(StationaryNPC if record.get('kind')=='stationary' else
+                   PlayActor if record.get('kind')=='play_actor' else
                    DaisyRoutine if record.get('kind')=='daisy_routine' else
                    Gardener if record.get('routine')=='watering' else BenchWorker)
             self.npcs.append(actor(record,self))
@@ -208,7 +210,8 @@ class World:
                                 'routine_prop',(surface,prop['position'])))
         for npc in self.npcs:
             if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
-            ordered.append((npc.position.y+self.probe_size[1]/2,2,'npc',npc))
+            sort_y=getattr(npc,'sort_y',None)
+            ordered.append((npc.position.y+self.probe_size[1]/2 if sort_y is None else sort_y,2,'npc',npc))
         ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':
@@ -235,6 +238,7 @@ class World:
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
             target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
+        for routine in getattr(self,'play_routines',[]):routine.draw(target,camera,self)
 
     def draw_doors(self,target,camera,host):
         for door in self.doors:
@@ -324,6 +328,11 @@ class Game:
         self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
         for scene_id in self.town.data.get('ambient_scenes',[]):self._scene_by_id(scene_id)
+        self.play_routines=[]
+        for scene in list(self.scenes.values()):
+            if scene.data.get('play_routine'):
+                routine=LiamDaisyPlay(self,scene,scene.data['play_routine']);self.play_routines.append(routine)
+                scene.play_routines=[routine];self.town.play_routines=[routine]
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -425,7 +434,7 @@ class Game:
         for scene in self.scenes.values():
             for door in scene.doors:
                 door.update(self.player.position if scene is self.world else None,seconds,
-                            (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC)))
+                            (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
         direction=(0,0) if self.map_open or self.social.locked or self.opening_fade else direction
         self.player.update(direction,seconds,self.world,bool(running))
         self.social.update(direction)
@@ -437,6 +446,7 @@ class Game:
             scene=self._routine_worlds[npc]
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             npc.update(seconds,scene,blocker,self._transfer_routine_npc)
+        for routine in self.play_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         if not self.map_open and not self.social.locked and not self.transfer_cooldown:

@@ -42,6 +42,7 @@ class DaisyRoutine:
         self.path=None;self.goal=None;self.role=None;self.retry_ms=0;self.blocked_ms=0
         self.active_bowl=None;self.activity=None;self.wander_elapsed=0;self.stops=0
         self._accumulator=0;self.consumed=False
+        self.play_owned=False;self.play_pose=None
 
     def _pad(self,image,offset=None):
         if image.get_size()==tuple(self.animation['canvas_size']):return image
@@ -110,6 +111,7 @@ class DaisyRoutine:
 
     def update(self,seconds,world,player_blocker=None):
         if seconds<0:raise ValueError('Negative routine time')
+        if self.play_owned:return
         self._accumulator+=seconds
         count=int((self._accumulator+1e-9)*60);self._accumulator-=count/60
         for _ in range(count):self._tick(1000/60,world,player_blocker)
@@ -219,6 +221,7 @@ class DaisyRoutine:
         return self.animation['actions'][self.action_id]['frames'][self.frame_index] if self.action_id else {}
 
     def sprite(self,elapsed_ms):
+        if self.play_pose is not None:return self.play_pose.sprite(elapsed_ms)
         if self.state=='rest':return self.lying
         if self.action_id:return self.actions[self.action_id][self.frame_index][0]
         if self.moving:return self.walks[self.facing][self.frame_index][0]
@@ -228,6 +231,10 @@ class DaisyRoutine:
         return self.active_bowl is not None and (self.state.startswith(('lower_','raise_')) or self.state in ('eat','drink','inspect'))
 
     def draw_background(self,target,camera):
+        if self.play_pose is not None:
+            if self.play_pose.action and self.play_pose.action.startswith('hop_'):
+                pygame.draw.ellipse(target,'#665c45',(round(self.position.x)-8-camera[0],round(self.position.y)+2-camera[1],16,3))
+            return
         if not self._at_bowl() or self.state!='drink':return
         bowl=self.bowls[self.active_bowl];mask=self.water_masks.get(bowl['state'])
         if mask is None:return
@@ -238,6 +245,7 @@ class DaisyRoutine:
         target.blit(ripple,(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))
 
     def draw_foreground(self,target,camera):
+        if self.play_pose is not None:return
         if self._at_bowl():
             bowl=self.bowls[self.active_bowl]
             target.blit(self.lip,(bowl['position'][0]-camera[0],bowl['position'][1]-camera[1]))

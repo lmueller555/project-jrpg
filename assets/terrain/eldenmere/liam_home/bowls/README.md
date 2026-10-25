@@ -24,7 +24,7 @@ Caregiver approaches are registered in the room's `destinations`.
 Daisy consumes one level per visit: full → half-full → empty. Empty bowls get
 a brief inspection without eating or drinking. `World.set_entity_state` updates
 the runtime image/state together and respects `reserved_by`, held through each
-visit until Daisy steps clear. Bowls never refill automatically. Liam and his
+visit until Daisy steps clear. Bowls never refill automatically. Liam can invite Daisy outside to play and she may drink on returning. His
 parents remain stationary, without dialogue or action routines.
 
 `front_overlay.png` contains the fixed front wood outside the content mask.

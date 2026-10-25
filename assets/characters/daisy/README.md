@@ -68,3 +68,13 @@ drinking actions. Approved idles, walks, runs and lying art are unchanged.
 Daisy walks indoors at 36 px/s, rests on her rug, and consumes one fill level
 per bowl visit. See the [routine pack](house_routines/README.md) and
 [in-game previews](../../../docs/reviews/daisy_house_routines/README.md).
+
+## Playtime with Liam — awaiting review
+
+A shared controller temporarily pauses Daisy's normal routine for Liam's
+invitation, two excited hops and a tail wag, three running laps in front of
+their cottage, and a return-home nap. She chooses once, with equal probability,
+between drinking first and going directly to her rug. All travel reuses her
+approved walks and runs. See the
+[shared action pack](../liam_family/play_routine/README.md) and
+[runtime review](../../../docs/reviews/liam_daisy_play/README.md).

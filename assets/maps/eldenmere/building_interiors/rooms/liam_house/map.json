@@ -362,7 +362,7 @@
     {
       "id": "liam",
       "name": "Liam",
-      "kind": "stationary",
+      "kind": "play_actor",
       "position": [
         120,
         234
@@ -372,10 +372,10 @@
         6
       ],
       "draw_anchor": [
-        12,
-        30
+        64,
+        66
       ],
-      "sprite": "assets/characters/liam/idle_front.png"
+      "animation": "assets/characters/liam_family/play_routine/animations.json"
     },
     {
       "id": "liam_mother",
@@ -502,6 +502,7 @@
     ]
   },
   "source_room": "assets/terrain/eldenmere/cottage_layouts/wide/room.json",
+  "play_routine": "assets/maps/eldenmere/routines/liam_daisy_play.json",
   "id": "liam_house",
   "name": "Liam's family cottage",
   "spawn": [

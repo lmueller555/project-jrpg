@@ -39,6 +39,12 @@ A new wide cottage south of the sanctuary is assigned to Liam, his parents and
 Daisy. It has a connecting path, animated proximity door, map label and separate
 16×10 furnished room. See the [house source and build instructions](../liam_house/README.md)
 and [review captures](../../../../docs/reviews/liam_family_home/README.md).
-Liam and his parents remain stationary and silent. Daisy rests on her woven
+Liam's parents remain stationary and silent. Daisy rests on her woven
 rug, wanders around the room, and visits her food and water bowls. The room is
 preloaded as an ambient scene; her routine also advances while offscreen.
+
+Liam and Daisy's shared play routine (awaiting review) transfers both actors
+through their cottage door for three running laps on clear lower ground in
+front of the house, then returns them to their bed/rug resting spots. No town
+terrain or building positions are changed. See the
+[routine review](../../../../docs/reviews/liam_daisy_play/README.md).
