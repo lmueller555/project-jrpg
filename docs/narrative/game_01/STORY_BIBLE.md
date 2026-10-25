@@ -10,6 +10,13 @@ Game I is the **first self-contained installment** in a multi-game saga. It tell
 
 Its setting is fantasy incorporating possibilities for developing technology and ancient-cataclysm legacy, but exact geography, nations, time period of industrialization, religion details, and playable systems are unapproved.
 
+## Approved character facts (CANON)
+
+At the beginning of Game I, **Caelan is 18 years old** and **Tomas is 14 years
+old**. They are foster brothers, with Caelan the older brother. These ages were
+approved by the author on 2026-10-25. See [approved character facts](CHARACTERS.md)
+for the shared reference and the earlier Caelen spelling used in scene drafts.
+
 ## Working premise — THE HOLLOW HARVEST (PROPOSED ONLY)
 
 A fertile valley once faced famine. A celebrated ruler saved it by activating an ancient aetheric mechanism that dramatically improved agriculture. Years later, parts of the valley begin to fail. A provincial surveyor whose community suffers from the damage discovers that the machine has been redirecting aether from the local ecology. The ruler, terrified that shutting it down will cause renewed starvation, suppresses evidence and sacrifices outlying communities to preserve the center. The protagonist must expose the cost of prosperity and avert further collapse. The mechanism is disabled, but the valley faces a difficult recovery rather than an instant cure.

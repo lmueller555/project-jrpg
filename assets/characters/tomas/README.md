@@ -2,7 +2,7 @@
 
 Visual design and native front idle **approved** in conversation.
 
-The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short rust-red tunic over an ivory shirt with rolled cuffs, dark brown trousers, a repaired patch on his anatomical left knee (viewer right), and worn brown ankle boots. His hands are empty. No cloth ties, tools, weapons or religious symbols are included. His exact age remains unspecified.
+The sprite has tousled honey-blond hair with a cowlick, two green eyes, a short rust-red tunic over an ivory shirt with rolled cuffs, dark brown trousers, a repaired patch on his anatomical left knee (viewer right), and worn brown ankle boots. His hands are empty. No cloth ties, tools, weapons or religious symbols are included. Tomas is **14 years old** at the beginning of Game I, four years younger than his foster brother Caelan; see [approved character facts](../../../docs/narrative/game_01/CHARACTERS.md).
 
 - `idle_front.png`: RGBA 24×36 frame, hard alpha; occupied bounds `[6,3,12,32]` (x, y, width, height).
 - `idle_front.json`: frame, height comparison, eye/patch landmarks, palette/source paths and independent sprite approval status.

@@ -83,15 +83,17 @@ Serene is shaken but shares only that the conflict with the regent is becoming m
 
 Her precise knowledge is limited: she does not know the cosmic catastrophe, the Great Sacrifice's full truth, or the identities of the four survivors.
 
-## Character introductions — narrative functions, biographies OPEN
+## Character introductions — approved ages, other biography details OPEN
 
-- **Caelen:** Local sanctuary acolyte/record keeper (working role); service-oriented and trusting, but observant. Give him agency beyond carrying documents.
+- **Caelen (Caelan):** **18 years old** at the game opening; Tomas's older foster brother. Local sanctuary acolyte/record keeper (working role); service-oriented and trusting, but observant. Give him agency beyond carrying documents.
 - **Serene:** Loving guardian and community caretaker; sincere faith and a plausible reason for preserving limited warnings.
 - **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
-- **Tomas:** Younger foster brother, restless and inventive; an autonomous person, not simply a future tragedy.
+- **Tomas:** **14 years old** at the game opening; Caelan's younger foster brother, restless and inventive; an autonomous person, not simply a future tragedy.
 - **Aldric:** Respected ruler who has tangibly helped the region; his later moral failure should not erase his authentic achievements.
 
-All proper names, ages, precise shared history, and personal defining incidents remain **working proposals pending character approval**.
+Caelan's age of **18** and Tomas's age of **14** are approved canon; see
+[approved character facts](CHARACTERS.md). Other ages and biography details
+remain **working proposals pending character approval** unless separately approved.
 
 ## Chapter pacing and prerequisites
 

@@ -1,5 +1,8 @@
 # Caelan — directional idle sprites
 
+Caelan is **18 years old** at the beginning of Game I and is Tomas's older
+foster brother; see [approved character facts](../../../docs/narrative/game_01/CHARACTERS.md).
+
 All four directional idle designs and the four-frame walking cycles for [front](walk_front/README.md), [left](walk_left/README.md), [right](walk_right/README.md), and [back](walk_back/README.md), including their coordinated head-and-shoulder bob, were explicitly approved by the user in chat.
 
 ## Files
