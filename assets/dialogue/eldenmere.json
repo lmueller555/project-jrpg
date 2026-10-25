@@ -86,25 +86,47 @@
         },
         {
           "id": "tomas_greeting",
+          "status": "approved",
+          "script_reference": "docs/narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md",
           "sets": [
             "tomas_greeted"
           ],
           "lines": [
             {
               "speaker": "tomas",
-              "text": "Look! The wheel turns the little crank. Mostly. It catches if I rush it."
+              "text": "Caelan, can you look at this?"
             },
             {
               "speaker": "caelan",
-              "text": "And the bundles?"
+              "text": "What's wrong?"
             },
             {
               "speaker": "tomas",
-              "text": "Already carried one over. I can help and have a good idea in the same morning."
+              "text": "It turns most of the way, then it sticks. I can't see what's catching."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Is the pin bent?"
             },
             {
               "speaker": "tomas",
-              "text": "I wonder what Mira would change. She would spot it straight away."
+              "text": "I thought so, but it looks straight."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Have you shown Mira?"
+            },
+            {
+              "speaker": "tomas",
+              "text": "Not yet. I wanted to get it working myself."
+            },
+            {
+              "speaker": "caelan",
+              "text": "You can still ask her."
+            },
+            {
+              "speaker": "tomas",
+              "text": "I know. I will if I can't find it."
             }
           ]
         }
@@ -112,5 +134,5 @@
     }
   },
   "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
-  "note": "Serene breakfast dialogue and proposed ambient Tomas dialogue; no quest starts. Flags persist for the running session."
+  "note": "Serene breakfast dialogue, approved Tomas opening exchange and existing repeat dialogue; no quest starts. Flags persist for the running session."
 }

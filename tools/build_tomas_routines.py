@@ -300,11 +300,19 @@ def register():
         {'id':'tomas_repeat','requires':['tomas_greeted'],'lines':[
             line('tomas','One more adjustment. Then I really am getting back to the preparations.'),
             line('caelan','Should I tell Mother Serene that?'),line('tomas','Tell her the preparations are progressing. That covers both things.')]},
-        {'id':'tomas_greeting','sets':['tomas_greeted'],'lines':[
-            line('tomas','Look! The wheel turns the little crank. Mostly. It catches if I rush it.'),
-            line('caelan','And the bundles?'),line('tomas','Already carried one over. I can help and have a good idea in the same morning.'),
-            line('tomas','I wonder what Mira would change. She would spot it straight away.')]}]}
-    data['note']='Serene breakfast dialogue and proposed ambient Tomas dialogue; no quest starts. Flags persist for the running session.'
+        {'id':'tomas_greeting','status':'approved',
+         'script_reference':'docs/narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md',
+         'sets':['tomas_greeted'],'lines':[
+            line('tomas','Caelan, can you look at this?'),
+            line('caelan',"What's wrong?"),
+            line('tomas',"It turns most of the way, then it sticks. I can't see what's catching."),
+            line('caelan','Is the pin bent?'),
+            line('tomas','I thought so, but it looks straight.'),
+            line('caelan','Have you shown Mira?'),
+            line('tomas','Not yet. I wanted to get it working myself.'),
+            line('caelan','You can still ask her.'),
+            line('tomas',"I know. I will if I can't find it.")]}]}
+    data['note']='Serene breakfast dialogue, approved Tomas opening exchange and existing repeat dialogue; no quest starts. Flags persist for the running session.'
     write(path,data)
 
 

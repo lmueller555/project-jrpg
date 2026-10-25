@@ -1,7 +1,7 @@
 # Tomas — sanctuary routines for review
 
-Implemented on `tomas-sanctuary-routines`; awaiting art/routine approval before
-merging into `main`.
+The sanctuary routines are approved and merged into `main`. Tomas and Caelan's
+opening exchange is also approved; see the [dialogue script](../../narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md).
 
 - [Full continuous in-game cycle](full_routine.mp4)
 - [Prepare, lift, carry and store a bundle](preparations.gif)
@@ -42,9 +42,9 @@ Approaching Tomas closely uses the existing portrait dialogue system. If he is
 carrying, he finishes the short delivery and releases the bundle before turning
 to speak. If the player blocks that delivery, he can speak while holding the
 bundle, keeping it in his hands throughout the conversation. Work resumes at
-the paused phase when dialogue ends. Ambient lines
-are proposed for this review; the scripted opening quest and follower segment
-remain separate future work.
+the paused phase when dialogue ends. The first conversation uses the approved
+wheel exchange; repeat dialogue retains its existing text. The scripted opening
+quest and follower segment remain separate future work.
 
 ## Reproduce and verify
 
