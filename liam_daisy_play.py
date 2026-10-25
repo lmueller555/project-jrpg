@@ -57,9 +57,13 @@ class PlayActor(PlayPose):
         super().__init__(world,record['id']);self.data=record
         self.position=pygame.Vector2(record['position']);self.probe_size=tuple(record['probe_size'])
         self.sort_y=None
+        self.work_renderer=None
 
     @property
     def blocker(self):return pygame.Rect(round(self.position.x)-self.probe_size[0]//2,round(self.position.y)-self.probe_size[1]//2,*self.probe_size)
+
+    def draw_foreground(self,target,camera):
+        if self.work_renderer is not None:self.work_renderer.draw_held(target,camera)
 
 
 class LiamDaisyPlay:
@@ -74,6 +78,7 @@ class LiamDaisyPlay:
         self.track=[(round((296+62*math.cos(-math.pi/2+i*math.pi/12))/2)*2,
                      round((590+30*math.sin(-math.pi/2+i*math.pi/12))/2)*2) for i in range(24)]
         self.liam_index=1;self.daisy_index=-1;self.last_index=self.config['laps']*24
+        self.liam_owner=None
 
     @property
     def active(self):return self.state!='cooldown'
@@ -135,7 +140,8 @@ class LiamDaisyPlay:
         return True
 
     def _available(self):
-        return (self.worlds[self.daisy] is self.home and self.daisy.active_bowl is None
+        return (self.liam_owner is None and not self.daisy.play_owned
+                and self.worlds[self.daisy] is self.home and self.daisy.active_bowl is None
                 and self.daisy.state in ('rest','pause'))
 
     def _start(self):

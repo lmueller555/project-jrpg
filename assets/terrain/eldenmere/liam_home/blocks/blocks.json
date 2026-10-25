@@ -1,0 +1,155 @@
+{
+  "id": "liam.wooden_blocks",
+  "status": "approved",
+  "box_frame_size": [
+    32,
+    24
+  ],
+  "box_position": [
+    44,
+    180
+  ],
+  "box_access": [
+    80,
+    200
+  ],
+  "box_contact": [
+    70,
+    191
+  ],
+  "floor_rect": [
+    2,
+    15,
+    28,
+    8
+  ],
+  "box_states": {
+    "0": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_0.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_0_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_0_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_0_box_front.png"
+      ]
+    },
+    "1": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_1.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_1_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_1_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_1_box_front.png"
+      ]
+    },
+    "2": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_2.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_2_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_2_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_2_box_front.png"
+      ]
+    },
+    "3": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_3.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_3_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_3_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_3_box_front.png"
+      ]
+    },
+    "4": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_4.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_4_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_4_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_4_box_front.png"
+      ]
+    },
+    "5": {
+      "image": "assets/terrain/eldenmere/liam_home/blocks/box_5.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_5_box_back.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_5_blocks_inside.png",
+        "assets/source/terrain/eldenmere/liam_home/blocks/box_5_box_front.png"
+      ]
+    }
+  },
+  "blocks": [
+    {
+      "id": "block_1",
+      "image": "assets/terrain/eldenmere/liam_home/blocks/block_1.png",
+      "frame_size": [
+        5,
+        5
+      ],
+      "draw_anchor": [
+        2,
+        2
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/block_1_wood.png"
+      ]
+    },
+    {
+      "id": "block_2",
+      "image": "assets/terrain/eldenmere/liam_home/blocks/block_2.png",
+      "frame_size": [
+        5,
+        5
+      ],
+      "draw_anchor": [
+        2,
+        2
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/block_2_wood.png"
+      ]
+    },
+    {
+      "id": "block_3",
+      "image": "assets/terrain/eldenmere/liam_home/blocks/block_3.png",
+      "frame_size": [
+        5,
+        5
+      ],
+      "draw_anchor": [
+        2,
+        2
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/block_3_wood.png"
+      ]
+    },
+    {
+      "id": "block_4",
+      "image": "assets/terrain/eldenmere/liam_home/blocks/block_4.png",
+      "frame_size": [
+        5,
+        5
+      ],
+      "draw_anchor": [
+        2,
+        2
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/block_4_wood.png"
+      ]
+    },
+    {
+      "id": "block_5",
+      "image": "assets/terrain/eldenmere/liam_home/blocks/block_5.png",
+      "frame_size": [
+        16,
+        4
+      ],
+      "draw_anchor": [
+        8,
+        2
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/blocks/block_5_wood.png"
+      ]
+    }
+  ],
+  "front_overlay": "assets/terrain/eldenmere/liam_home/blocks/front_overlay.png",
+  "palette_source": "assets/terrain/eldenmere/cottage_furniture/furniture.json"
+}

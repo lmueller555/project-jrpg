@@ -17,8 +17,10 @@ requested NPC family; their surname and quest association are unassigned.
 Their home is the new wide cottage in western Eldenmere, directly south of
 the sanctuary. His parents remain stationary residents without dialogue or
 action routines. Liam and Daisy share an ambient invitation, chase and nap
-routine. Daisy also has her woven rug and indoor wandering, eating and
-drinking routines. Their front, left, right and back idle sprite designs are approved.
+routine. Liam also builds with five wooden blocks from a toy box between the
+beds, sometimes leaving one out. Daisy can accidentally knock over his creation
+and be sent to her rug. Daisy also has indoor wandering, eating and drinking
+routines. Their front, left, right and back idle sprite designs are approved.
 
 **Daisy** is Liam's family's female dog. She has gray fur with white and black
 spots, floppy gray ears and a fluffy tail, and is slightly smaller than Liam.

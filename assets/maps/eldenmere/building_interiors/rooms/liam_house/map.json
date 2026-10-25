@@ -262,6 +262,29 @@
       "phase_offset": 0
     },
     {
+      "id": "liam_block_box",
+      "position": [
+        44,
+        180
+      ],
+      "sort_y": 203,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/liam_home/blocks/box_5.png"
+      ],
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "state": "5",
+      "state_images": {
+        "0": "assets/terrain/eldenmere/liam_home/blocks/box_0.png",
+        "1": "assets/terrain/eldenmere/liam_home/blocks/box_1.png",
+        "2": "assets/terrain/eldenmere/liam_home/blocks/box_2.png",
+        "3": "assets/terrain/eldenmere/liam_home/blocks/box_3.png",
+        "4": "assets/terrain/eldenmere/liam_home/blocks/box_4.png",
+        "5": "assets/terrain/eldenmere/liam_home/blocks/box_5.png"
+      }
+    },
+    {
       "id": "daisy_food_bowl",
       "position": [
         152,
@@ -492,6 +515,10 @@
       144,
       282
     ],
+    "liam_block_box": [
+      90,
+      212
+    ],
     "daisy_food_bowl": [
       164,
       294
@@ -503,6 +530,7 @@
   },
   "source_room": "assets/terrain/eldenmere/cottage_layouts/wide/room.json",
   "play_routine": "assets/maps/eldenmere/routines/liam_daisy_play.json",
+  "block_routine": "assets/maps/eldenmere/routines/liam_blocks.json",
   "id": "liam_house",
   "name": "Liam's family cottage",
   "spawn": [

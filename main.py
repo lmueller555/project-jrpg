@@ -16,6 +16,7 @@ except ModuleNotFoundError:
 from npc_routines import Gardener, RoutineNPC
 from daisy_routine import DaisyRoutine
 from liam_daisy_play import PlayActor, LiamDaisyPlay
+from liam_blocks import LiamBlocks
 from well_routine import DrawingWell
 from social import SocialSystem
 from title_screen import TitleScreen
@@ -333,6 +334,11 @@ class Game:
             if scene.data.get('play_routine'):
                 routine=LiamDaisyPlay(self,scene,scene.data['play_routine']);self.play_routines.append(routine)
                 scene.play_routines=[routine];self.town.play_routines=[routine]
+        self.block_routines=[]
+        for shared in self.play_routines:
+            if shared.home.data.get('block_routine'):
+                routine=LiamBlocks(self,shared.home,shared,shared.home.data['block_routine'])
+                self.block_routines.append(routine);shared.home.play_routines.append(routine)
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -447,6 +453,7 @@ class Game:
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             npc.update(seconds,scene,blocker,self._transfer_routine_npc)
         for routine in self.play_routines:routine.update(seconds)
+        for routine in self.block_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         if not self.map_open and not self.social.locked and not self.transfer_cooldown:
