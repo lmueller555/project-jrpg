@@ -1,0 +1,26 @@
+{
+  "source_idle": "../idle_left.png",
+  "head_rect": [
+    0,
+    0,
+    24,
+    21
+  ],
+  "torso_rect": [
+    10,
+    21,
+    5,
+    4
+  ],
+  "hem_rect": [
+    9,
+    25,
+    6,
+    3
+  ],
+  "notes": "Authored bent-elbow and folded-knee run joints; original head, neck, collar and tunic pixels. Two alternating support poses and two flights.",
+  "character": "liam",
+  "status": "review",
+  "template": "assets/templates/child_24x36/run_left/poses.json",
+  "approved_idle_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142"
+}

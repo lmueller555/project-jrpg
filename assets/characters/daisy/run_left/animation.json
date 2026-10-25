@@ -1,0 +1,426 @@
+{
+  "character": "daisy",
+  "animation": "run.left",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    40,
+    36
+  ],
+  "foot_anchor": [
+    20,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 400,
+  "template": "assets/templates/quadruped_40x36/run_left/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "frames": [
+    {
+      "id": "01",
+      "phase": "forepaw_landing",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        0
+      ],
+      "shoulder_offset": [
+        4,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "fore_left",
+        "fore_right"
+      ],
+      "body_width_delta": 1,
+      "legs": {
+        "fore_left": [
+          [
+            13,
+            26
+          ],
+          [
+            12,
+            30
+          ],
+          [
+            10,
+            34
+          ]
+        ],
+        "fore_right": [
+          [
+            15,
+            26
+          ],
+          [
+            14,
+            29
+          ],
+          [
+            12,
+            32
+          ]
+        ],
+        "hind_left": [
+          [
+            27,
+            26
+          ],
+          [
+            24,
+            30
+          ],
+          [
+            23,
+            28
+          ]
+        ],
+        "hind_right": [
+          [
+            25,
+            26
+          ],
+          [
+            22,
+            29
+          ],
+          [
+            22,
+            27
+          ]
+        ]
+      },
+      "tail_tip_offset": [
+        -1,
+        -1
+      ],
+      "ear_tip_offset": [
+        0,
+        1
+      ],
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        40,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/run_left/parts/frame_01_tail.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_fore_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_hind_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_body.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_fore_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_hind_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_head.png",
+        "assets/source/characters/daisy/run_left/parts/frame_01_ear.png"
+      ]
+    },
+    {
+      "id": "02",
+      "phase": "gather_and_hind_loading",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        1
+      ],
+      "shoulder_offset": [
+        4,
+        1
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "hind_left",
+        "hind_right"
+      ],
+      "body_width_delta": -1,
+      "legs": {
+        "fore_left": [
+          [
+            13,
+            27
+          ],
+          [
+            16,
+            30
+          ],
+          [
+            17,
+            29
+          ]
+        ],
+        "fore_right": [
+          [
+            15,
+            27
+          ],
+          [
+            18,
+            29
+          ],
+          [
+            19,
+            28
+          ]
+        ],
+        "hind_left": [
+          [
+            25,
+            27
+          ],
+          [
+            22,
+            30
+          ],
+          [
+            22,
+            34
+          ]
+        ],
+        "hind_right": [
+          [
+            23,
+            27
+          ],
+          [
+            21,
+            29
+          ],
+          [
+            24,
+            32
+          ]
+        ]
+      },
+      "tail_tip_offset": [
+        2,
+        -1
+      ],
+      "ear_tip_offset": [
+        0,
+        2
+      ],
+      "file": "frame_02.png",
+      "rect": [
+        40,
+        0,
+        40,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/run_left/parts/frame_02_tail.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_fore_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_hind_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_body.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_fore_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_hind_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_head.png",
+        "assets/source/characters/daisy/run_left/parts/frame_02_ear.png"
+      ]
+    },
+    {
+      "id": "03",
+      "phase": "hind_push_off",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        0
+      ],
+      "shoulder_offset": [
+        4,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "hind_left",
+        "hind_right"
+      ],
+      "body_width_delta": 1,
+      "legs": {
+        "fore_left": [
+          [
+            13,
+            26
+          ],
+          [
+            10,
+            28
+          ],
+          [
+            9,
+            30
+          ]
+        ],
+        "fore_right": [
+          [
+            15,
+            26
+          ],
+          [
+            12,
+            27
+          ],
+          [
+            11,
+            29
+          ]
+        ],
+        "hind_left": [
+          [
+            27,
+            26
+          ],
+          [
+            29,
+            30
+          ],
+          [
+            30,
+            34
+          ]
+        ],
+        "hind_right": [
+          [
+            25,
+            26
+          ],
+          [
+            28,
+            28
+          ],
+          [
+            30,
+            32
+          ]
+        ]
+      },
+      "tail_tip_offset": [
+        2,
+        0
+      ],
+      "ear_tip_offset": [
+        1,
+        0
+      ],
+      "file": "frame_03.png",
+      "rect": [
+        80,
+        0,
+        40,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/run_left/parts/frame_03_tail.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_fore_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_hind_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_body.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_fore_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_hind_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_head.png",
+        "assets/source/characters/daisy/run_left/parts/frame_03_ear.png"
+      ]
+    },
+    {
+      "id": "04",
+      "phase": "extended_flight",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        -2
+      ],
+      "shoulder_offset": [
+        4,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "body_width_delta": 2,
+      "legs": {
+        "fore_left": [
+          [
+            13,
+            24
+          ],
+          [
+            10,
+            27
+          ],
+          [
+            8,
+            31
+          ]
+        ],
+        "fore_right": [
+          [
+            15,
+            24
+          ],
+          [
+            12,
+            25
+          ],
+          [
+            10,
+            29
+          ]
+        ],
+        "hind_left": [
+          [
+            28,
+            24
+          ],
+          [
+            31,
+            26
+          ],
+          [
+            33,
+            30
+          ]
+        ],
+        "hind_right": [
+          [
+            26,
+            24
+          ],
+          [
+            29,
+            25
+          ],
+          [
+            31,
+            28
+          ]
+        ]
+      },
+      "tail_tip_offset": [
+        0,
+        -2
+      ],
+      "ear_tip_offset": [
+        1,
+        -2
+      ],
+      "file": "frame_04.png",
+      "rect": [
+        120,
+        0,
+        40,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/run_left/parts/frame_04_tail.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_fore_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_hind_right.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_body.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_fore_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_hind_left.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_head.png",
+        "assets/source/characters/daisy/run_left/parts/frame_04_ear.png"
+      ]
+    }
+  ]
+}

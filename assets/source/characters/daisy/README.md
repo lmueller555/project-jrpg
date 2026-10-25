@@ -44,3 +44,11 @@ behind the body, near legs in front, with a connected tail root and ear lag.
 Native frames, recipes and layer paths are in the matching character animation
 metadata. The [directional walk review](../../../../docs/reviews/liam_family_directional_walks/README.md)
 contains synchronized looping comparisons. All four walking directions are approved.
+
+## Four-frame left run — prototype source
+
+`tools/build_liam_daisy_run_prototypes.py` composes approved native appearance
+parts with new four-pose running joints. Per-frame layers are retained under
+`run_left/parts/`. The animation recipes link source input hashes and pose templates.
+See the [run prototype review](../../../../docs/reviews/liam_daisy_run_prototypes/README.md).
+The left run awaits approval; no approved idle or walk is rewritten.

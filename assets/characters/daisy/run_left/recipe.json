@@ -1,0 +1,40 @@
+{
+  "source_idle": "../idle_left.png",
+  "source_padding": [
+    4,
+    0
+  ],
+  "ear_pivot_native": [
+    10,
+    16
+  ],
+  "tail_pivot_native": [
+    23,
+    24
+  ],
+  "body_rect_native": [
+    4,
+    18,
+    24,
+    28
+  ],
+  "paw_rects_native": {
+    "fore": [
+      7,
+      27,
+      5,
+      8
+    ],
+    "hind": [
+      20,
+      27,
+      5,
+      8
+    ]
+  },
+  "notes": "Four-pose gallop, native face/paws/fur, gently compressed/extended torso, hinged gray ear and fluffy tail; 40px canvas adds padding without scaling the dog.",
+  "character": "daisy",
+  "status": "review",
+  "template": "assets/templates/quadruped_40x36/run_left/poses.json",
+  "approved_idle_sha256": "872ac7a70c5fa299850d133660762dd80e51da5c173df4d38fcc77123948c312"
+}
