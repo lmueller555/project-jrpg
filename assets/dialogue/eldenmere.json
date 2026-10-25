@@ -21,6 +21,166 @@
     "mother_serene": {
       "conversations": [
         {
+          "id": "serene_quest_offer",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "available",
+            "action": "offer"
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "I promised to look in on three households, but there's more here than I can leave unattended."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Who needs us?"
+            },
+            {
+              "speaker": "serene",
+              "text": "Halden by the mill needs medicine. Elira needs food and lamp oil. And the Venn family could use supplies while their youngest recovers."
+            }
+          ],
+          "sets": [
+            "serene_greeted"
+          ]
+        },
+        {
+          "id": "serene_quest_report",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "ready",
+            "action": "turn_in"
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "There you are. How is everyone?"
+            },
+            {
+              "speaker": "caelan",
+              "text": "Halden finally accepted the medicine. Elira's bringing her lantern. The Venns have their irrigation running again."
+            },
+            {
+              "speaker": "serene",
+              "text": "And how are they, aside from what you fixed?"
+            },
+            {
+              "speaker": "caelan",
+              "text": "Halden's doing more than his joints can bear. Elira misses her husband. And the Venns worry what next season will cost them."
+            },
+            {
+              "speaker": "serene",
+              "text": "It's easy to think our work is finished when the baskets are empty."
+            },
+            {
+              "speaker": "caelan",
+              "text": "You don't think we helped?"
+            },
+            {
+              "speaker": "serene",
+              "text": "Of course we did. But tomorrow they'll still be carrying the things we couldn't take from them today."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Then I suppose we keep showing up."
+            },
+            {
+              "speaker": "serene",
+              "text": "That's a good place to begin."
+            }
+          ]
+        },
+        {
+          "id": "serene_quest_thanks",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "completed"
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "Thank you for looking in on everyone, Caelan. Kindness means more when we make time for it."
+            }
+          ]
+        },
+        {
+          "id": "serene_quest_halden",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "active",
+            "incomplete": [
+              "halden"
+            ]
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "Halden by the mill needs his medicine. Take Tomas there first—he's been asking to help."
+            }
+          ]
+        },
+        {
+          "id": "serene_quest_elira",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "active",
+            "completed": [
+              "halden",
+              "venn"
+            ],
+            "incomplete": [
+              "elira"
+            ]
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "Elira still needs the food and lamp oil. She lives by the bridge."
+            }
+          ]
+        },
+        {
+          "id": "serene_quest_venn",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "active",
+            "completed": [
+              "halden",
+              "elira"
+            ],
+            "incomplete": [
+              "venn"
+            ]
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "The Venn family is still waiting for their supplies. Their youngest is recovering."
+            }
+          ]
+        },
+        {
+          "id": "serene_quest_remaining",
+          "quest": {
+            "id": "CH01_MQ01",
+            "status": "active",
+            "completed": [
+              "halden"
+            ],
+            "incomplete": [
+              "elira",
+              "venn"
+            ]
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "Elira still needs the food and lamp oil, and the Venn family could use those supplies. You can visit either one next."
+            }
+          ]
+        },
+        {
           "id": "serene_repeat",
           "requires": [
             "serene_greeted"
@@ -134,5 +294,5 @@
     }
   },
   "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
-  "note": "Serene breakfast dialogue, approved Tomas opening exchange and existing repeat dialogue; no quest starts. Flags persist for the running session."
+  "note": "Serene offers the opening quest through an explicit clicked choice and responds to its saved progress. Tomas retains his approved ambient conversation. Actual household task gameplay is implemented separately; entering a room never completes an errand."
 }

@@ -28,8 +28,26 @@ class SocialTests(unittest.TestCase):
             pygame.event.post(pygame.event.Event(kind,button=1,pos=position))
         self.assertTrue(self.game.handle_events())
 
+    def canvas_click(self,position):
+        width,height=self.game.window.get_size()
+        scale=max(1,min(width//480,height//320))
+        self.click((round((width-480*scale)/2+position[0]*scale),
+                    round((height-320*scale)/2+position[1]*scale)))
+
+    def reach_choice(self):
+        for _ in range(40):
+            if self.game.social.choosing:return
+            self.assertTrue(self.game.social.active)
+            self.click()
+        self.fail('Quest offer never reached its deliberate choice')
+
     def finish(self):
-        while self.game.social.active:self.click()
+        for _ in range(40):
+            if not self.game.social.active:return
+            if self.game.social.choosing:
+                self.canvas_click(self.game.social.choice_rects[1].center)
+            else:self.click()
+        self.fail('Conversation did not finish')
 
     def test_approach_opens_correct_speaker_and_locks_only_participants(self):
         self.approach()
@@ -62,6 +80,7 @@ class SocialTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONUP,button=1,pos=(1,1)))
         self.game.handle_events()
         self.click()
+        self.finish()
         self.assertFalse(self.game.social.locked)
 
     def test_exit_requires_leaving_radius_then_repeat_lines(self):
@@ -74,7 +93,83 @@ class SocialTests(unittest.TestCase):
         self.assertNotIn(self.actor,self.game.social.blocked)
         self.game.player.position.update(288,231)
         self.approach()
-        self.assertEqual(self.game.social.conversation['id'],'serene_repeat')
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_offer')
+
+    def test_acceptance_requires_a_deliberate_choice_not_more_advancing(self):
+        self.approach();self.reach_choice()
+        self.assertEqual(self.game.quests.status('CH01_MQ01'),'available')
+        self.assertEqual(self.game.quests.marker_for('mother_serene'),'!')
+        page=self.game.social.page_index
+        for key in (pygame.K_SPACE,pygame.K_e):
+            pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=key,repeat=False))
+            self.game.handle_events()
+        self.click((1,1))
+        self.assertTrue(self.game.social.choosing)
+        self.assertEqual(self.game.social.page_index,page)
+        self.assertEqual(self.game.quests.status('CH01_MQ01'),'available')
+        self.game.draw()
+        self.canvas_click(self.game.social.choice_rects[0].center)
+        self.assertFalse(self.game.social.locked)
+        self.assertEqual(self.game.quests.status('CH01_MQ01'),'active')
+        self.assertIsNone(self.game.quests.marker_for('mother_serene'))
+
+    def test_decline_releases_serene_and_reoffers_after_leaving(self):
+        self.approach();self.reach_choice()
+        self.canvas_click(self.game.social.choice_rects[1].center)
+        self.assertFalse(self.game.social.locked)
+        self.assertEqual(self.game.quests.status('CH01_MQ01'),'available')
+        self.assertIn(self.actor,self.game.social.blocked)
+        self.game.player.position.update(288,270)
+        self.game.social.update((0,0))
+        self.assertNotIn(self.actor,self.game.social.blocked)
+        self.game.player.position.update(288,231)
+        self.approach()
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_offer')
+
+    def test_serene_reminders_follow_objectives_without_completing_them(self):
+        quest='CH01_MQ01'
+        self.game.quests.accept(quest)
+        self.game.social.start(self.actor)
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_halden')
+        self.finish()
+        self.assertEqual(self.game.quests.objective_status(quest,'halden'),'active')
+        self.game.quests.complete_objective(quest,'halden')
+        self.game.social.start(self.actor)
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_remaining')
+        self.finish()
+        self.game.quests.complete_objective(quest,'venn')
+        self.game.social.start(self.actor)
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_elira')
+        self.finish()
+        self.assertEqual(self.game.quests.status(quest),'active')
+
+    def test_ready_quest_completes_only_after_final_report_page(self):
+        quest='CH01_MQ01'
+        self.game.quests.accept(quest)
+        for objective in ('halden','elira','venn'):
+            self.game.quests.complete_objective(quest,objective)
+        self.assertEqual(self.game.quests.marker_for('mother_serene'),'?')
+        self.game.social.start(self.actor)
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_report')
+        self.click()
+        self.assertEqual(self.game.quests.status(quest),'ready')
+        self.finish()
+        self.assertEqual(self.game.quests.status(quest),'completed')
+        self.assertIsNone(self.game.quests.marker_for('mother_serene'))
+        self.game.social.start(self.actor)
+        self.assertEqual(self.game.social.conversation['id'],'serene_quest_thanks')
+        self.assertFalse(self.game.social.choosing)
+
+    def test_choice_hitboxes_follow_integer_scaled_letterboxed_canvas(self):
+        self.approach();self.reach_choice()
+        for size in ((1100,750),(1440,810),(800,800)):
+            self.game.window=pygame.display.set_mode(size)
+            self.game.draw()
+            self.click((0,0))
+            self.assertTrue(self.game.social.choosing)
+            self.assertEqual(self.game.quests.status('CH01_MQ01'),'available')
+        self.canvas_click(self.game.social.choice_rects[0].center)
+        self.assertEqual(self.game.quests.status('CH01_MQ01'),'active')
 
     def test_no_trigger_from_stationary_player_facing_away_or_map(self):
         self.game.player.position.update(288,229)

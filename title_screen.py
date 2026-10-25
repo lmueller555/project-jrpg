@@ -40,6 +40,7 @@ class TitleScreen:
         self.settings=False
         self.elapsed=0.0
         self.fade=0.0
+        self.continuing=False
         self.music_enabled=True
         self.music_started=False
         self.options=('New Game','Continue','Settings','Quit')
@@ -83,7 +84,8 @@ class TitleScreen:
                 step=-1 if event.key in (pygame.K_UP,pygame.K_w) else 1
                 count=3 if self.settings else 4
                 self.selected=(self.selected+step)%count
-                if not self.settings and self.selected==1:self.selected=(self.selected+step)%count
+                if not self.settings and self.selected==1 and not self.game.has_saved_journey:
+                    self.selected=(self.selected+step)%count
             elif event.key in (pygame.K_RETURN,pygame.K_KP_ENTER,pygame.K_SPACE):return self.activate()
             elif event.key==pygame.K_ESCAPE:
                 if self.settings:self.settings=False;self.selected=2
@@ -98,6 +100,11 @@ class TitleScreen:
                 elif self.music_started:pygame.mixer.music.stop();self.music_started=False
             else:self.settings=False;self.selected=2
         elif self.selected==0:
+            self.continuing=False
+            self.fade=.001
+            if self.music_started:pygame.mixer.music.fadeout(650)
+        elif self.selected==1 and self.game.has_saved_journey:
+            self.continuing=True
             self.fade=.001
             if self.music_started:pygame.mixer.music.fadeout(650)
         elif self.selected==2:self.settings=True;self.selected=0
@@ -109,10 +116,7 @@ class TitleScreen:
         if self.fade:
             self.fade+=seconds
             if self.fade>=.65:
-                self.game.on_title=False
-                self.game.opening_fade=.5
-                self.game.player.moving=False
-                self.game._mouse_held=False
+                self.game.begin_journey(self.continuing)
 
     def centered(self,text,font,y,color='#f7eed5',shadow=True):
         rendered=font.render(text,False,color)
@@ -180,7 +184,7 @@ class TitleScreen:
         rows=self.settings_rows if self.settings else self.rows
         if self.settings:self.centered('Settings',self.menu_font,243)
         for i,(label,row) in enumerate(zip(labels,rows)):
-            disabled=not self.settings and i==1
+            disabled=not self.settings and i==1 and not self.game.has_saved_journey
             active=i==self.selected
             if active and not disabled:
                 pygame.draw.rect(self.canvas,'#344e3e',row)
@@ -190,8 +194,9 @@ class TitleScreen:
                 self.canvas.set_at((row.left+10,row.centery),(255,218,132))
             color='#7f8d7d' if disabled else ('#ffe1a0' if active else '#eee2c0')
             self.centered(label,self.menu_font,row.y+1,color,False)
-        if not self.settings and self.selected==1:
-            self.centered('No saved journey yet',self.detail_font,350,'#d2c8a7',False)
+        if not self.settings and self.selected==1 and not self.game.has_saved_journey:
+            hint='Saved journey unavailable' if self.game.save_error else 'No saved journey yet'
+            self.centered(hint,self.detail_font,350,'#d2c8a7',False)
         else:self.centered('Click to choose  /  Arrow keys + Enter',self.detail_font,350,'#d2c8a7',False)
         scale=min(width/SIZE[0],height/SIZE[1])
         size=(round(SIZE[0]*scale),round(SIZE[1]*scale))

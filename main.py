@@ -21,6 +21,9 @@ from daisy_bone import DaisyBone
 from well_routine import DrawingWell
 from social import SocialSystem
 from title_screen import TitleScreen
+from quests import QuestLog
+from quest_ui import QuestUI
+from save_game import SaveStore
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -306,7 +309,7 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None):
         pygame.display.init();pygame.font.init()
         self.fullscreen=fullscreen
         self.windowed_size=tuple(window_size)
@@ -344,11 +347,117 @@ class Game:
         for shared in self.play_routines:
             if shared.home.data.get('bone_routine'):
                 self.bone_routines.append(DaisyBone(self,shared.home,shared,shared.home.data['bone_routine']))
+        self.quests=QuestLog()
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
         self.title=TitleScreen(self)
+        self.quest_ui=QuestUI(self)
+        self.save_store=SaveStore(save_path)
+        self.save_error=None
+        self.saved_journey=self._read_saved_journey()
+        self._saved_progress=self._progress_signature()
+        self._save_retry_seconds=0.0
         self.opening_fade=0.0
+
+    def _progress_signature(self):
+        return json.dumps({'quests':self.quests.to_dict(),
+                           'dialogue_flags':sorted(self.social.flags)},sort_keys=True)
+
+    def _read_saved_journey(self):
+        """Validate a save without mutating the fresh world behind the title."""
+        data=self.save_store.load()
+        if data is None:
+            self.save_error=self.save_store.error
+            return None
+        def point(value):
+            return (isinstance(value,list) and len(value)==2 and
+                    all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
+        scene_ids={self.town.data['id'],*self.town.data.get('interior_scenes',{})}
+        player=data.get('player')
+        valid=(type(data.get('version')) is int and data['version']==1 and
+               isinstance(player,dict) and isinstance(player.get('scene'),str) and
+               player['scene'] in scene_ids and point(player.get('position')) and
+               player.get('facing') in ('front','back','left','right') and
+               point(data.get('exterior_position')) and
+               isinstance(data.get('dialogue_flags'),list) and
+               len(data['dialogue_flags'])<=256 and
+               all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
+               QuestLog().restore(data.get('quests')))
+        if not valid:
+            self.save_error='The saved journey could not be read.'
+            return None
+        return data
+
+    @property
+    def has_saved_journey(self):return self.saved_journey is not None
+
+    def begin_journey(self,continue_saved=False):
+        """Continue quest facts, not an interrupted conversation or NPC action."""
+        data=self.saved_journey if continue_saved else None
+        if continue_saved and data is None:return False
+        if data is None:
+            self.quests.restore(QuestLog().to_dict())
+            self.social.flags.clear()
+            self.world=self.town
+            position=self.town.data['spawn']
+            self.player.facing='front'
+            self.exterior_position.update(position)
+        else:
+            self.quests.restore(data['quests'])
+            self.social.flags=set(data['dialogue_flags'])
+            self.world=self._scene_by_id(data['player']['scene'])
+            position=data['player']['position']
+            self.player.facing=data['player']['facing']
+            self.exterior_position.update(data['exterior_position'])
+        # Residents resume their own routines on launch. A saved standing spot
+        # can now be occupied, so use a clear nearby landing or the room entry.
+        if not self.world.can_stand(position):
+            candidates=[self.world.data['spawn']]
+            for radius in range(4,49,4):
+                for dx,dy in ((0,radius),(radius,0),(0,-radius),(-radius,0)):
+                    candidates.append((position[0]+dx,position[1]+dy))
+            position=next((p for p in candidates if self.world.can_stand(p)),None)
+            if position is None:
+                self.world=self.town
+                position=self.town.data['spawn']
+        self.player.position.update(position)
+        self.player.moving=False;self.player.walk_ms=0
+        self.social.blocked.clear()
+        self.map_open=False
+        self.quest_ui.reset()
+        self.transfer_cooldown=.25
+        self.on_title=False
+        self.opening_fade=.5
+        self._mouse_held=False
+        self.save_progress()
+        return True
+
+    def save_progress(self):
+        """Checkpoint on story changes, conversations, door transfers and quit."""
+        if self.on_title or not self.save_store.enabled:return False
+        data={'version':1,'quests':self.quests.to_dict(),
+              'dialogue_flags':sorted(self.social.flags),
+              'player':{'scene':self.world.data['id'],
+                        'position':list(self.player.position),'facing':self.player.facing},
+              'exterior_position':list(self.exterior_position)}
+        if not self.save_store.write(data):
+            self.save_error=self.save_store.error
+            self._save_retry_seconds=10.0
+            return False
+        self.saved_journey=data
+        self.save_error=None
+        self._save_retry_seconds=0.0
+        self._saved_progress=self._progress_signature()
+        return True
+
+    def to_canvas(self,point):
+        """Match draw's integer scaling, including fullscreen letterboxing."""
+        width,height=self.window.get_size()
+        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
+        x=(point[0]-(width-VIEW_SIZE[0]*scale)//2)/scale
+        y=(point[1]-(height-VIEW_SIZE[1]*scale)//2)/scale
+        return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
 
     def _load_scene(self,path):
         path=Path(path).resolve()
@@ -405,7 +514,9 @@ class Game:
     def handle_events(self):
         advanced=False
         for event in pygame.event.get():
-            if event.type==pygame.QUIT:return False
+            if event.type==pygame.QUIT:
+                self.save_progress()
+                return False
             if event.type==pygame.KEYDOWN and event.key==pygame.K_F11:
                 self.toggle_fullscreen()
                 continue
@@ -416,9 +527,12 @@ class Game:
                 if not self.title.handle_event(event):return False
                 continue
             if event.type==pygame.MOUSEBUTTONUP and event.button==1:self._mouse_held=False
+            if self.quest_ui.journal_open:
+                self.quest_ui.handle_event(event)
+                continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
                 if not self._mouse_held and not advanced and self.social.active:
-                    self.social.advance();advanced=True
+                    self.social.click(self.to_canvas(event.pos));advanced=True
                 self._mouse_held=True
             if event.type==pygame.KEYDOWN:
                 if self.social.locked and event.key!=pygame.K_F11:
@@ -427,8 +541,13 @@ class Game:
                     continue
                 if event.key==pygame.K_ESCAPE:
                     if self.map_open:self.map_open=False
-                    else:return False
+                    else:
+                        self.save_progress()
+                        return False
                 elif event.key==pygame.K_m:self.map_open=not self.map_open
+                elif event.key==pygame.K_j and not getattr(event,'repeat',False):
+                    self.map_open=False
+                    self.quest_ui.toggle_journal()
         return True
 
     def update(self,seconds,direction=None,running=None):
@@ -446,9 +565,9 @@ class Game:
             for door in scene.doors:
                 door.update(self.player.position if scene is self.world else None,seconds,
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
-        direction=(0,0) if self.map_open or self.social.locked or self.opening_fade else direction
+        direction=(0,0) if self.map_open or self.quest_ui.journal_open or self.social.locked or self.opening_fade else direction
         self.player.update(direction,seconds,self.world,bool(running))
-        self.social.update(direction)
+        if not self.quest_ui.journal_open:self.social.update(direction)
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
@@ -462,14 +581,19 @@ class Game:
         for routine in self.bone_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
-        if not self.map_open and not self.social.locked and not self.transfer_cooldown:
+        if not self.map_open and not self.quest_ui.journal_open and not self.social.locked and not self.transfer_cooldown:
             for door in self.world.doors:
                 if door.can_enter(self.player.position,direction):
                     self.enter(door)
                     break
+        self.quest_ui.update(seconds)
+        self._save_retry_seconds=max(0.0,self._save_retry_seconds-seconds)
+        if (self.save_store.enabled and not self._save_retry_seconds and
+                self._progress_signature()!=self._saved_progress):
+            self.save_progress()
 
     def enter(self,door):
-        if self.social.locked:return False
+        if self.social.locked or self.quest_ui.journal_open:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -487,6 +611,7 @@ class Game:
         self.transfer_cooldown=.25
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
+        self.save_progress()
         return True
 
     def text(self,text,position,font=None,color='#f7eed5'):
@@ -510,6 +635,7 @@ class Game:
         y=origin[1]+round(position.y*self.map_size[1]/self.town.size[1])
         pygame.draw.circle(self.canvas,'#15282b',(x,y),4)
         pygame.draw.circle(self.canvas,'#ffdc71',(x,y),2)
+        self.quest_ui.draw_map_markers(self.canvas,origin,self.map_size)
         self.text('You are here',(266,242),self.small_font,color='#ffdc71')
         self.text('M or Esc: close map',(28,274),self.small_font)
 
@@ -521,6 +647,7 @@ class Game:
         view=(VIEW_SIZE[0],204) if self.social.locked else VIEW_SIZE
         camera=camera_for(self.player.position,self.world.size,view)
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
+        self.quest_ui.draw_markers(self.canvas,camera)
         pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
         if self.world is self.town:
             self.text('Eldenmere',(15,13))
@@ -528,9 +655,15 @@ class Game:
         else:self.text(self.world.data['name'],(15,13))
         if not self.social.locked:
             pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
-            self.text('WASD / arrows: move   Shift: run   M: map   F11: fullscreen   Esc: quit',(8,307),self.small_font)
+            self.text('WASD/arrows: move   Shift: run   M: map   J: journal   F11: screen   Esc: quit',(8,307),self.small_font)
+        self.quest_ui.draw_tracker(self.canvas)
         if self.map_open:self.draw_map()
         self.social.draw(self.canvas,self.elapsed_ms)
+        self.quest_ui.draw_notifications(self.canvas)
+        self.quest_ui.draw_journal(self.canvas)
+        if self.save_error and not self.quest_ui.journal_open:
+            pygame.draw.rect(self.canvas,'#263c35',(8,283,260,17))
+            self.text('Progress could not be saved. Check the saves folder.',(12,287),self.small_font,color='#ffdc71')
         if self.opening_fade:
             shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA)
             shade.fill((11,24,22,round(255*self.opening_fade/.5)))
@@ -553,7 +686,7 @@ def main(argv=None):
     if args.frames<0:parser.error('--frames must be nonnegative')
     if args.headless:os.environ['SDL_VIDEODRIVER']='dummy'
     if not MAP_FILE.is_file():raise SystemExit('Playable town data is missing. Restore assets/maps/eldenmere/playable from the repository.')
-    game=Game(fullscreen=not (args.headless or args.windowed))
+    game=Game(fullscreen=not (args.headless or args.windowed),save_path=ROOT/'saves/journey.json')
     if not args.headless:game.title.start_music()
     clock=pygame.time.Clock()
     limit=args.frames or (1 if args.headless else 0)
@@ -566,7 +699,9 @@ def main(argv=None):
         if args.screenshot:
             args.screenshot.parent.mkdir(parents=True,exist_ok=True)
             pygame.image.save(game.window,str(args.screenshot))
-    finally:pygame.quit()
+    finally:
+        game.save_progress()
+        pygame.quit()
     return 0
 
 
