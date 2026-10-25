@@ -40,6 +40,16 @@ def bundle():
     return im
 
 
+def crank_grip(angle):
+    """Handle on the model's near/left side, within Tomas's bent-arm reach."""
+    return 1+round(math.cos(angle)),9+round(3*math.sin(angle))
+
+
+def crank_arm(angle):
+    x,y=crank_grip(angle)
+    return [[(13,17),(15,18+round(math.sin(angle))),(16+x,10+y)]]
+
+
 def mechanism(angle=0):
     """A tiny fixed-base model: only its wheel, peg and crank move."""
     im=Image.new('RGBA',(13,17));d=ImageDraw.Draw(im)
@@ -57,8 +67,8 @@ def mechanism(angle=0):
     peg=(6+round(4*math.cos(angle)),7+round(4*math.sin(angle)))
     d.rectangle((peg[0],peg[1],peg[0]+1,peg[1]+1),fill=M['buckle'][0])
     # A lower crank makes the hand movement distinct from the wheel spokes.
-    crank=(11+round(math.cos(angle)),9+round(3*math.sin(angle)))
-    d.line((9,9,*crank),fill=dark,width=2)
+    crank=crank_grip(angle)
+    d.line((3,9,*crank),fill=dark,width=2)
     d.point(crank,fill=light)
     return im
 
@@ -169,15 +179,14 @@ def build():
     for turn in range(2):
         for n in range(8):
             a=n*math.pi/4
-            # Model sits just left of the station's hand; use a small profile
-            # reach, never scale or stretch the approved body.
-            tink.append(s('turn_crank',150,[[(13,17),(20,18),(27+round(math.cos(a)),19+round(3*math.sin(a))) ]],
+            # The hand shares the handle's exact coordinates on the near side.
+            tink.append(s('turn_crank',150,crank_arm(a),
                           'actor',(mechanism(a),(16,10))))
-    tink += [s('wheel_catches',500,[[(13,17),(20,18),(28,19)]],'actor',(mechanism(0),(16,10)),(1,1)),
-             s('lean_in_to_adjust',400,[[(13,17),(21,17),(27,14)]],'actor',(mechanism(0),(16,10)),(1,1))]
+    tink += [s('wheel_catches',500,crank_arm(0),'actor',(mechanism(0),(16,10)),(1,1)),
+             s('lean_in_to_adjust',400,[[(13,17),(15,16),(18,15)]],'actor',(mechanism(0),(16,10)),(1,1))]
     for n in range(8):
         a=n*math.pi/4
-        tink.append(s('try_again',140,[[(13,17),(20,18),(27+round(math.cos(a)),19+round(3*math.sin(a)))]],
+        tink.append(s('try_again',140,crank_arm(a),
                       'actor',(mechanism(a),(16,10))))
     tink += [s('stop_and_inspect',500,REST_R,'actor',(mechanism(0),(16,10))),s('leave_model_on_bench',650,REST_R)]
     export('tinker','right',tink)

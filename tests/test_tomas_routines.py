@@ -149,10 +149,13 @@ class TomasRoutines(unittest.TestCase):
         # No action changes Tomas's approved visible height or stretches his
         # body; only sleeve joints, small props and a one-pixel lean are new.
         source=json.loads((ROOT/'assets/source/characters/tomas/routines/poses.json').read_text())
-        for specs in source['actions'].values():
+        for action,specs in source['actions'].items():
             for record in specs:
                 for shoulder,elbow,hand in record['arms']:
                     self.assertLessEqual(abs(shoulder[0]-hand[0]),16)
+                    if action=='tinker':
+                        self.assertLessEqual(abs(shoulder[0]-hand[0]),6,
+                                             'Tomas should reach the near-side crank with a bent arm')
 
     def test_random_break_is_sampled_once_and_stays_in_range(self):
         a=self.actor;world=self.place('courtyard_break',(418,406),'eldenmere.playable')

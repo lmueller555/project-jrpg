@@ -1,7 +1,11 @@
 # Tomas — sanctuary routines for review
 
-Implemented on `tomas-sanctuary-routines`; awaiting art/routine approval before
-merging into `main`.
+The base sanctuary routine is approved and merged into `main`. The current
+crank correction is on `fix-tomas-crank-reach` for review.
+
+The current tinkering revision moves the crank to the wheel's left side, next
+to Tomas. His hand follows the handle directly with a short bent-arm motion;
+the adjustment pose also uses the near side of the wheel.
 
 - [Full continuous in-game cycle](full_routine.mp4)
 - [Prepare, lift, carry and store a bundle](preparations.gif)
