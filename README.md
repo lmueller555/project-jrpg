@@ -17,14 +17,19 @@ The game launches fullscreen at the desktop display size. Press **F11** to
 switch to a resizable 960×640 window and back; your window size is remembered
 for that session. Use `python main.py --windowed` to launch directly in a window.
 Headless verification stays windowed for consistent screenshots. The internal
-480×320 canvas keeps crisp integer scaling and centered borders where needed
-to preserve the pixel art's proportions.
+480×320 world canvas keeps crisp integer scaling and centered borders where
+needed to preserve the pixel art's proportions. Interface text is rendered
+separately at display resolution with the bundled Atkinson Hyperlegible fonts,
+so letters have smooth, readable edges instead of enlarged bitmap shapes.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
 menu**. Click New Game to begin Caelan's opening morning, or use arrows and Enter.
-Settings changes fullscreen/windowed mode and independent music/effects levels. Continue resumes a saved
-journey when one exists. The logo uses **The Broken Covenant** as a working title.
+Settings changes fullscreen/windowed mode, independent music/effects levels,
+text size, reduced interface motion and objective visibility. Continue resumes
+a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
+The current green-and-brass menus, parchment ledger/map and text-rendering
+rules are documented in [UI design](docs/UI_DESIGN.md).
 
 Tomas now helps with preparations and tinkers in the sanctuary dining room,
 then takes a courtyard break. He uses the portrait dialogue system and safely
@@ -40,8 +45,8 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | --- | --- |
 | WASD or arrow keys | Move Caelan |
 | Shift | Run |
-| M | Open/close the town map |
-| J | Open/close the quest journal; wheel/arrows scroll |
+| M | Open/close the town map; click landmarks to inspect them |
+| J | Open/close the quest journal; select a quest and scroll its details |
 | Left click anywhere / Space / E | Advance an open conversation |
 | E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
@@ -79,7 +84,8 @@ in the sanctuary and on the town map. Approach her to hear the opening request;
 after advancing the dialogue, click **I'll help** or **Not just yet**. Clicking
 elsewhere or pressing the dialogue-advance keys cannot choose for you. Accepted
 quests show a titled banner, a short chime, a current-objective tracker and a
-scrollable **J** journal. Objective updates, a `?` ready-to-report marker, and
+scrollable **J** ledger with separate quest selection and details. Objective
+updates, a `?` ready-to-report marker, and
 completion feedback share the same quest state. Effects settings control quest
 chimes independently of music. The journal pauses player movement and doorway entry.
 
@@ -104,11 +110,18 @@ Getting out of bed and the guided sitting/meal/standing actions still control
 Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
-**Escape** opens a modal
-pause menu during exploration, dialogue or actions; Resume, Settings and Quit
-are deliberate menu choices. Pausing holds NPC, action, camera and ambience
-clocks. Music and effects can be adjusted separately with left/right, +/- or
-clicking their menu rows; levels persist in `saves/settings.json`.
+**Escape** opens a modal pause menu during exploration, dialogue or actions.
+Journal, Map and Settings are available there alongside Resume and Quit; the
+controls reference is inside Settings. Pausing holds NPC, action, camera and
+ambience clocks. Music and effects have separate sliders with percentage displays,
+mouse adjustment and
+left/right or +/- keys. Settings also provides 100%, 125% or 150% text, reduced
+interface motion and objective-tracker visibility. Preferences persist in
+`saves/settings.json` independently of the journey.
+
+Exploration uses a brief location plaque and nearby interaction prompts instead
+of a permanent controls strip. Dialogue choices show hover/pressed feedback,
+and menus use the same lantern selection mark, spacing and panel treatment.
 
 Continue preserves the opening checkpoint without replaying finished scenes.
 Saves from before this opening was added keep their existing location/progress;

@@ -22,8 +22,12 @@ class TitleTests(unittest.TestCase):
         return (round((width-640*scale)/2+x*scale),round((height-360*scale)/2+y*scale))
 
     def click(self,row):
-        pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=self.position(row)))
-        return self.game.handle_events()
+        point=self.position(row)
+        pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=point))
+        running=self.game.handle_events()
+        pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONUP,button=1,pos=point))
+        self.game.handle_events()
+        return running
 
     def test_launch_shows_title_and_world_does_not_run_behind_menu(self):
         actor=self.game.persistent_npcs[0]
@@ -110,7 +114,7 @@ class TitleTests(unittest.TestCase):
             pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER))
             self.game.handle_events()
             toggle.assert_called_once_with()
-        self.game.title.selected=3
+        self.game.title.selected=7
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER,repeat=True))
         self.game.handle_events()
         self.assertTrue(self.game.title.settings)
@@ -126,7 +130,7 @@ class TitleTests(unittest.TestCase):
         self.assertAlmostEqual(self.game.audio.music_volume,.9)
         self.assertEqual(self.game.audio.effects_volume,1)
         row=self.game.title.settings_rows[2]
-        native=(row.left+10,row.centery)
+        native=(self.game.title.slider_rects[2].left-14,row.centery)
         width,height=self.game.window.get_size()
         scale=min(width/640,height/360)
         point=(round((width-640*scale)/2+native[0]*scale),
@@ -135,17 +139,20 @@ class TitleTests(unittest.TestCase):
         self.game.handle_events()
         self.assertAlmostEqual(self.game.audio.effects_volume,.9)
         self.assertAlmostEqual(self.game.audio.music_volume,.9)
-        self.game.title.selected=3
+        self.game.title.selected=7
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_RETURN))
         self.game.handle_events()
         self.assertFalse(self.game.title.settings)
 
     def test_music_setting_toggles_and_missing_audio_device_is_nonfatal(self):
         self.click(self.game.title.rows[2])
-        self.click(self.game.title.settings_rows[1])
+        row=self.game.title.settings_rows[1]
+        point=(row.left+30,row.centery)
+        target=pygame.Rect(point[0]-1,point[1]-1,2,2)
+        self.click(target)
         self.assertFalse(self.game.title.music_enabled)
         with patch.object(self.game.title,'start_music') as start:
-            self.click(self.game.title.settings_rows[1])
+            self.click(target)
             self.assertTrue(self.game.title.music_enabled)
             start.assert_called_once_with()
         with patch('pygame.mixer.get_init',return_value=None),patch('pygame.mixer.init',side_effect=pygame.error('No audio device')):
@@ -195,7 +202,7 @@ class TitleTests(unittest.TestCase):
             self.assertEqual(pygame.image.tobytes(display,'RGB'),pygame.image.tobytes(frame,'RGB'))
             # Empty UI regions must retain the painted scene, not black.
             for native in ((20,150),(500,180),(420,325)):
-                self.assertEqual(self.game.title.ui.get_at(native).a,0)
+                self.assertEqual(self.game.title.ui.get_at(tuple(value*2 for value in native)).a,0)
                 point=tuple(value*2 for value in native)
                 self.assertEqual(display.get_at(point)[:3],self.game.title.scene.get_at(native)[:3])
                 self.assertNotEqual(display.get_at(point)[:3],(0,0,0))
@@ -219,6 +226,34 @@ class TitleTests(unittest.TestCase):
         self.game.draw()
         self.assertIs(original,self.game.title.frame)
         self.assertNotEqual(before,pygame.image.tobytes(original,'RGB'))
+
+    def test_minimum_title_with_large_text_keeps_menu_and_settings_accessible(self):
+        self.game.window=pygame.display.set_mode((480,320))
+        self.game.audio.set_text_scale(1.5)
+        self.game.draw()
+        self.assertEqual(self.game.title.ui.get_size(),(480,270))
+        for first,second in zip(self.game.title.rows,self.game.title.rows[1:]):
+            self.assertLess(first.bottom,second.top)
+        self.click(self.game.title.rows[2])
+        self.game.draw()
+        self.game.title.selected=7
+        self.game.draw()
+        panel=self.game.title.settings_panel
+        self.assertTrue(panel.viewport.contains(self.game.title.settings_rows[7]))
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_RETURN))
+        self.game.handle_events()
+        self.assertFalse(self.game.title.settings)
+
+    def test_title_plus_and_minus_shortcuts_change_selected_audio_only(self):
+        self.click(self.game.title.rows[2])
+        self.game.title.selected=2
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_MINUS))
+        self.game.handle_events()
+        self.assertAlmostEqual(self.game.audio.effects_volume,.9)
+        self.assertEqual(self.game.audio.music_volume,1)
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_PLUS))
+        self.game.handle_events()
+        self.assertEqual(self.game.audio.effects_volume,1)
 
 
 if __name__=='__main__':unittest.main()

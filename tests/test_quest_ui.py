@@ -4,6 +4,7 @@ os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 from collections import deque
+from copy import deepcopy
 from pathlib import Path
 from types import SimpleNamespace
 import unittest
@@ -118,8 +119,8 @@ class QuestUITests(unittest.TestCase):
         self.assertGreater(self.ui.max_scroll, 0)
         text = ' '.join(row[0] for row in self.ui._journal_rows())
         self.assertIn('IN PROGRESS', text)
-        self.assertIn('[ ]', text)
-        self.assertIn('[-]', text)
+        self.assertIn('Next:', text)
+        self.assertIn('Later:', text)
         self.assertIn('after Halden', text)
         self.assertTrue(self.ui.handle_event(pygame.event.Event(pygame.MOUSEWHEEL, y=-2)))
         self.assertEqual(self.ui.scroll, 64)
@@ -144,6 +145,16 @@ class QuestUITests(unittest.TestCase):
             self.assertEqual(symbol.call_args.args[1], '?')
         self.game.town.npcs.append(self.actor)
         self.assertEqual(self.ui._map_position(self.actor), (80, 80))
+
+    def test_coincident_map_quest_badge_moves_aside_of_player_without_loading_rooms(self):
+        before = dict(self.game.scenes)
+        player = (42, 77)
+        with patch.object(self.ui, '_symbol') as symbol:
+            self.ui.draw_map_markers(self.canvas, (28, 66), (220, 192), avoid_point=player)
+            center = symbol.call_args.args[2]
+            self.assertGreaterEqual(abs(center[0]-player[0]), 14)
+        self.assertEqual(self.game.scenes, before)
+        self.assertEqual(self.ui._map_position(self.actor), (100, 80))
 
     def test_rendering_contains_text_and_hides_hud_behind_modal_views(self):
         self.canvas.fill('black')
@@ -173,6 +184,17 @@ class QuestUITests(unittest.TestCase):
         self.assertEqual(headings, ['Objective completed'])
         self.assertEqual(body, ['Medicine delivered to Halden.'])
 
+    def test_announcement_headings_wrap_using_the_actual_bold_face_at_large_sizes(self):
+        self.game.audio = SimpleNamespace(text_scale=1.5, effects_volume=0)
+        event = {'kind': 'accepted', 'title': 'A Day Like Any Other',
+                 'text': 'Your objectives are in the journal.'}
+        for size in ((480, 320), (960, 640), (1440, 960)):
+            self.ui._painter(pygame.Surface(size))
+            headings, body = self.ui._notification_content(event)
+            self.assertEqual(' '.join(headings), 'Quest accepted: A Day Like Any Other')
+            self.assertTrue(all(self.ui.small_bold_font.size(line)[0] <= 300 for line in headings))
+            self.assertTrue(all(self.ui.font.size(line)[0] <= 308 for line in body))
+
     def test_no_audio_device_is_nonfatal_and_disabled_music_mutes_chimes(self):
         with patch('pygame.mixer.get_init', return_value=None), patch('pygame.mixer.init', side_effect=pygame.error('No audio')):
             self.game.title.music_enabled = True
@@ -181,6 +203,71 @@ class QuestUITests(unittest.TestCase):
         with patch('pygame.mixer.init') as init:
             self.ui._chime('completed')
             init.assert_not_called()
+
+    def test_journal_quest_selection_changes_details_without_mutating_progress(self):
+        self.game.quests.definitions['second'] = deepcopy(self.game.quests.definitions['q'])
+        self.game.quests.definitions['second']['title'] = 'An Errand by the Bridge'
+        self.game.quests.definitions['second']['summary'] = 'Visit the bridge before sunset.'
+        self.game.quests.states['second'] = {'status': 'available', 'completed_objectives': []}
+        before = deepcopy(self.game.quests.states)
+        self.ui.toggle_journal()
+        self.ui.draw_journal(self.canvas)
+        self.ui.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                              pos=self.ui.quest_rects['second'].center))
+        self.assertEqual(self.ui.selected_quest, 'second')
+        self.assertIn('An Errand by the Bridge', ' '.join(row[0] for row in self.ui._journal_rows()))
+        self.assertEqual(self.game.quests.states, before)
+        self.ui.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_UP))
+        self.assertEqual(self.ui.selected_quest, 'q')
+        self.assertEqual(self.game.quests.states, before)
+
+    def test_readable_scrollbar_drag_reaches_bottom_and_close_is_scaled_correctly(self):
+        self.game.quests.definitions['q']['objectives'] *= 20
+        self.game.to_canvas = lambda point: (point[0]/2, point[1]/2)
+        self.ui.toggle_journal()
+        self.ui.draw_journal(pygame.Surface((960, 640)))
+        self.assertGreaterEqual(self.ui.scrollbar_rect.width, 8)
+        thumb = self.ui.scrollbar_thumb
+        self.ui.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                              pos=(thumb.centerx*2, thumb.centery*2)))
+        self.ui.handle_event(pygame.event.Event(pygame.MOUSEMOTION,
+                                              pos=(thumb.centerx*2, self.ui.scrollbar_rect.bottom*2)))
+        self.assertEqual(self.ui.scroll, self.ui.max_scroll)
+        self.ui.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=(0, 0)))
+        self.assertFalse(self.ui._dragging)
+        self.ui.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                              pos=tuple(value*2 for value in self.ui.close_rect.center)))
+        self.assertFalse(self.ui.journal_open)
+
+    def test_large_text_wraps_ledger_content_and_keeps_navigation_visible(self):
+        self.game.audio = SimpleNamespace(text_scale=1.5, effects_volume=0)
+        self.ui.toggle_journal()
+        canvas = pygame.Surface((1440, 960))
+        self.ui.draw_journal(canvas)
+        for text, color, font, indent in self.ui._journal_rows():
+            self.assertLessEqual(font.size(text)[0], self.ui.detail_viewport.width-indent)
+        self.assertTrue(pygame.Rect(0, 0, 480, 320).contains(self.ui.close_rect))
+        self.assertTrue(pygame.Rect(0, 0, 480, 320).contains(self.ui.scrollbar_rect))
+        self.assertGreater(self.ui.font.actual.get_height(), self.ui.font.get_height())
+
+    def test_tracker_collapses_and_expands_through_shared_persisted_preference(self):
+        class Settings:
+            effects_volume = 0
+            text_scale = 1
+            tracker_visible = True
+            def set_tracker_visible(self, value):
+                self.tracker_visible = value
+        self.game.audio = Settings()
+        self.ui.draw_tracker(self.canvas)
+        self.assertTrue(self.ui.handle_hud_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                                                  pos=self.ui.tracker_toggle_rect.center)))
+        self.assertFalse(self.game.audio.tracker_visible)
+        self.ui.draw_tracker(self.canvas)
+        self.assertLess(self.ui.tracker_rect.width, 40)
+        self.ui.handle_hud_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=(0, 0)))
+        self.ui.handle_hud_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                                  pos=self.ui.tracker_toggle_rect.center))
+        self.assertTrue(self.game.audio.tracker_visible)
 
 
 if __name__ == '__main__':

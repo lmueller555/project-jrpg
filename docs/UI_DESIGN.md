@@ -1,0 +1,57 @@
+# Eldenmere interface
+
+The interface uses deep forest green, warm ivory, muted brass and a small lantern
+selection mark. Parchment surfaces distinguish the quest ledger and town map.
+Frames, spacing and button feedback share the same renderer in `ui_style.py`.
+
+## Readable text and crisp art
+
+The world remains a 480×320 image with integer-scaled 24×24 terrain and 24×36
+character frames. Interface text is drawn separately at the actual output
+resolution with antialiasing. Enlarging the world never enlarges a small bitmap
+of its lettering.
+
+Atkinson Hyperlegible Regular and Bold are bundled with the game. Their distinct
+letter shapes and punctuation are used for dialogue, objectives, menus and the
+journal; the approved serif game logo remains on the title screen. Font origin
+and redistribution terms are recorded in `assets/ui/fonts/README.md` and the
+adjacent license file.
+
+Settings offers 100%, 125% and 150% text size. Text is remeasured when readability
+or display size changes; layouts wrap, scroll or paginate instead of shrinking
+the text to fit. Reduced interface motion and objective-tracker visibility are
+saved alongside independent music and effects levels in `saves/settings.json`.
+Existing audio-only settings retain their levels and receive the default UI
+preferences. Journey saves remain separate.
+
+## During exploration
+
+Location plaques appear briefly on entering an area, while nearby interaction
+prompts appear only when relevant. The permanent full-controls strip has been
+removed. Controls remain available from the pause interface. The current
+objective can be hidden without altering quest progress.
+
+Dialogue remains part of the running world. Portrait bubbles follow the current
+speaker, protect participants' faces and keep their response buttons inside the
+viewport. Clicks advance prose; explicit response buttons handle quest choices.
+Walking away closes unfinished dialogue without accepting an offer or completing
+a report. Camera, world animation and other NPC routines continue normally.
+
+## Menus and navigation
+
+The title keeps its approved animated scene and bottom-center menu. Pause,
+settings, buttons and selections use the shared green-and-brass treatment.
+Volume controls display percentages and accept mouse adjustment and keyboard
+left/right or plus/minus. Readability settings apply to both title and gameplay.
+At larger text sizes, settings can scroll; wheel navigation and keyboard
+selection keep the selected entry visible. The controls reference is available
+inside Settings on both the title screen and pause menu.
+
+The journal presents quests separately from the selected quest's details and
+objectives. The map preserves Eldenmere's geography with simplified cartography,
+selectable landmarks and a dedicated player legend. Both have visible close
+controls in addition to their existing keyboard shortcuts.
+
+Navigation, confirmation and back sounds are quiet and follow the effects
+volume. UI animation does not delay input, and reduced-motion mode preserves
+immediate interaction.

@@ -14,6 +14,50 @@ from audio_settings import AudioSettings
 
 
 class AudioSettingsTests(unittest.TestCase):
+    def test_older_volume_only_settings_keep_interface_defaults(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'settings.json'
+            path.write_text(json.dumps({'version': 1, 'music_volume': .4,
+                                        'effects_volume': .7, 'last_music': .4,
+                                        'last_effects': .7}))
+            settings = AudioSettings(path)
+            self.assertEqual((settings.music_volume, settings.effects_volume), (.4, .7))
+            self.assertEqual((settings.text_scale, settings.reduced_motion,
+                              settings.tracker_visible), (1, False, True))
+            self.assertIsNone(settings.error)
+
+    def test_interface_preferences_roundtrip_with_volumes_and_reject_invalid_values(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'settings.json'
+            settings = AudioSettings(path)
+            settings.set_music(.6)
+            self.assertTrue(settings.set_text_scale(1.5))
+            self.assertTrue(settings.set_reduced_motion(True))
+            self.assertTrue(settings.set_tracker_visible(False))
+            for invalid in (True, 0, -1, 1.2, float('nan'), float('inf'), 'large'):
+                self.assertFalse(settings.set_text_scale(invalid))
+            self.assertFalse(settings.set_reduced_motion(1))
+            self.assertFalse(settings.set_tracker_visible('yes'))
+            loaded = AudioSettings(path)
+            self.assertEqual((loaded.music_volume, loaded.text_scale,
+                              loaded.reduced_motion, loaded.tracker_visible), (.6, 1.5, True, False))
+            loaded.toggle_reduced_motion()
+            loaded.toggle_tracker()
+            restored = AudioSettings(path)
+            self.assertEqual((restored.reduced_motion, restored.tracker_visible), (False, True))
+
+    def test_malformed_optional_preferences_do_not_discard_valid_audio(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory)/'settings.json'
+            data = AudioSettings().to_dict()
+            data.update(music_volume=.3, effects_volume=.2, text_scale=True,
+                        reduced_motion='yes', tracker_visible=0)
+            path.write_text(json.dumps(data))
+            loaded = AudioSettings(path)
+            self.assertEqual((loaded.music_volume, loaded.effects_volume), (.3, .2))
+            self.assertEqual((loaded.text_scale, loaded.reduced_motion,
+                              loaded.tracker_visible), (1, False, True))
+
     def test_levels_are_independent_clamped_and_retain_mute_level(self):
         settings = AudioSettings()
         settings.set_music(.6)

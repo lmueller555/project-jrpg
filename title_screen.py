@@ -5,15 +5,19 @@ from pathlib import Path
 import pygame
 from title_water import TitleWater
 from audio_settings import AudioSettings
+from pause_menu import SettingsPanel
+from ui_style import UIStyle, GOLD, IVORY, BRASS, MUTED, DISABLED
 
 ROOT=Path(__file__).resolve().parent
 SIZE=(640,360)
 
 
 class TitleScreen:
+    settings_index = 2
     def __init__(self,game):
         self.game=game
         if not hasattr(game,'audio'):game.audio=AudioSettings()
+        if not hasattr(game,'ui'):game.ui=UIStyle(game)
         self.scene=pygame.Surface(SIZE)
         self.ui=pygame.Surface(SIZE,pygame.SRCALPHA)
         self.canvas=self.scene
@@ -32,12 +36,6 @@ class TitleScreen:
             frame.blit(mask,(0,0),special_flags=pygame.BLEND_RGBA_MULT)
             self.wheel_frames.append(pygame.transform.scale(frame,(26,36)))
         self.serif=lambda size:pygame.font.Font(str(ROOT/'assets/ui/fonts/DejaVuSerif.ttf'),size)
-        self.sans=lambda size:pygame.font.Font(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),size)
-        self.logo_small=self.serif(30)
-        self.logo_large=self.serif(43)
-        self.menu_font=self.serif(16)
-        self.detail_font=self.sans(8)
-        self.heading_font=self.serif(21)
         self.selected=0
         self.settings=False
         self.elapsed=0.0
@@ -45,8 +43,13 @@ class TitleScreen:
         self.continuing=False
         self.music_started=False
         self.options=('New Game','Continue','Settings','Quit')
-        self.rows=[pygame.Rect(250,247+i*21,140,21) for i in range(4)]
-        self.settings_rows=[pygame.Rect(226,264+i*20,188,20) for i in range(4)]
+        self.rows=[pygame.Rect(235,243+i*24,170,22) for i in range(4)]
+        self.settings_panel=SettingsPanel(self,SIZE)
+        self.settings_rows=self.settings_panel.rows
+        self.slider_rects=self.settings_panel.slider_rects
+        self._mouse_held=False
+        self._pressed=None
+        self._logo_fonts={}
 
     @property
     def music_enabled(self):return self.game.audio.music_volume>0
@@ -62,11 +65,7 @@ class TitleScreen:
             self.start_music()
 
     def _adjust_volume(self,direction):
-        if self.selected==1:
-            self.game.audio.set_music(self.game.audio.music_volume+direction*.1)
-            self._sync_music()
-        elif self.selected==2:
-            self.game.audio.set_effects(self.game.audio.effects_volume+direction*.1)
+        return self.settings_panel._adjust(direction)
 
     def start_music(self):
         if not self.music_enabled:return
@@ -92,66 +91,55 @@ class TitleScreen:
 
     def handle_event(self,event):
         if self.fade:return True
-        if event.type==pygame.MOUSEMOTION:
+        if self.settings:return self.settings_panel.handle_event(event)
+        if event.type==pygame.MOUSEBUTTONUP and event.button==1:
+            self._mouse_held=False;self._pressed=None
+        elif event.type==pygame.MOUSEMOTION:
             row=self._row_at(self.to_canvas(event.pos))
-            if row is not None:self.selected=row
-        if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
-            point=self.to_canvas(event.pos)
-            row=self._row_at(point)
+            if row is not None and row!=self.selected:
+                self.selected=row;self.game.ui.sound('move')
+        elif event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
+            if self._mouse_held:return True
+            self._mouse_held=True
+            row=self._row_at(self.to_canvas(event.pos))
             if row is not None:
-                self.selected=row
-                if self.settings and row in (1,2):
-                    rect=self.settings_rows[row]
-                    if point.x<rect.left+25:self._adjust_volume(-1);return True
-                    if point.x>=rect.right-25:self._adjust_volume(1);return True
+                self.selected=self._pressed=row
                 return self.activate()
-        if event.type==pygame.KEYDOWN and not getattr(event,'repeat',False):
+        elif event.type==pygame.KEYDOWN and not getattr(event,'repeat',False):
             if event.key in (pygame.K_UP,pygame.K_w,pygame.K_DOWN,pygame.K_s):
                 step=-1 if event.key in (pygame.K_UP,pygame.K_w) else 1
-                count=4
-                self.selected=(self.selected+step)%count
-                if not self.settings and self.selected==1 and not self.game.has_saved_journey:
-                    self.selected=(self.selected+step)%count
-            elif event.key in (pygame.K_LEFT,pygame.K_a,pygame.K_RIGHT,pygame.K_d):
-                if self.settings:self._adjust_volume(-1 if event.key in (pygame.K_LEFT,pygame.K_a) else 1)
+                self.selected=(self.selected+step)%len(self.options)
+                if self.selected==1 and not self.game.has_saved_journey:
+                    self.selected=(self.selected+step)%len(self.options)
+                self.game.ui.sound('move')
             elif event.key in (pygame.K_RETURN,pygame.K_KP_ENTER,pygame.K_SPACE):return self.activate()
-            elif event.key==pygame.K_ESCAPE:
-                if self.settings:self.settings=False;self.selected=2
         return True
 
     def activate(self):
-        if self.settings:
-            if self.selected==0:self.game.toggle_fullscreen()
-            elif self.selected==1:
-                self.game.audio.toggle_music()
-                self._sync_music()
-            elif self.selected==2:self.game.audio.toggle_effects()
-            else:self.settings=False;self.selected=2
-        elif self.selected==0:
+        if self.settings:return self.settings_panel.activate()
+        if self.selected==0:
             self.continuing=False
             self.fade=.001
-            if self.music_started:pygame.mixer.music.fadeout(650)
+            self.game.ui.sound('confirm')
+            if self.music_started:pygame.mixer.music.fadeout(0 if getattr(self.game.audio,'reduced_motion',False) else 650)
         elif self.selected==1 and self.game.has_saved_journey:
             self.continuing=True
             self.fade=.001
-            if self.music_started:pygame.mixer.music.fadeout(650)
-        elif self.selected==2:self.settings=True;self.selected=0
-        elif self.selected==3:return False
+            self.game.ui.sound('confirm')
+            if self.music_started:pygame.mixer.music.fadeout(0 if getattr(self.game.audio,'reduced_motion',False) else 650)
+        elif self.selected==2:
+            self.settings=True;self.selected=0;self.settings_panel.reset()
+            self.game.ui.sound('confirm')
+        elif self.selected==3:
+            self.game.ui.sound('confirm');return False
         return True
 
     def update(self,seconds):
         self.elapsed+=seconds
         if self.fade:
             self.fade+=seconds
-            if self.fade>=.65:
+            if self.fade>=(.01 if getattr(self.game.audio,'reduced_motion',False) else .65):
                 self.game.begin_journey(self.continuing)
-
-    def centered(self,text,font,y,color='#f7eed5',shadow=True):
-        rendered=font.render(text,False,color)
-        x=(SIZE[0]-rendered.get_width())//2
-        if shadow:
-            self.canvas.blit(font.render(text,False,'#263c35'),(x+1,y+2))
-        self.canvas.blit(rendered,(x,y))
 
     def atmosphere(self):
         t=self.elapsed
@@ -175,72 +163,71 @@ class TitleScreen:
                 pygame.draw.lines(layer,(72,89,94,160),False,[(x-2,y),(x,y+1),(x+2,y)])
         self.canvas.blit(layer,(0,0))
 
+    def _layout_menu(self,painter):
+        row_height=max(22,painter.font('body').get_height()+4)
+        stride=row_height+2
+        footer=painter.font('small').get_height()+22
+        panel=pygame.Rect(225,358-(stride*4+footer),190,stride*4+footer)
+        self.rows[:]=[pygame.Rect(235,panel.top+7+index*stride,170,row_height)
+                      for index in range(4)]
+        return panel
+
+    def _logo(self,painter,text,base_size,y):
+        # Logo lettering is rasterized directly at the display's resolution.
+        size=max(1,round(base_size*painter.scale))
+        if size not in self._logo_fonts:self._logo_fonts[size]=self.serif(size)
+        font=self._logo_fonts[size]
+        center=painter.point((320,y))
+        shadow=font.render(text,True,'#263c35')
+        image=font.render(text,True,IVORY)
+        self.ui.blit(shadow,shadow.get_rect(midtop=(center[0]+round(painter.scale),center[1]+round(painter.scale*2))))
+        self.ui.blit(image,image.get_rect(midtop=center))
+
     def draw(self):
         self.canvas=self.scene
         self.canvas.blit(self.background,(0,0))
         self.water.draw(self.canvas,self.elapsed)
         self.atmosphere()
         width,height=self.game.window.get_size()
-        # Composite transparency in software onto an opaque surface, keeping
-        # cleared UI pixels out of fullscreen display-level alpha blending.
         if self.frame is None or self.frame.get_size()!=(width,height):
             self.frame=pygame.Surface((width,height)).convert()
             self.frame.set_alpha(None)
-        scale=max(width/SIZE[0],height/SIZE[1])
-        size=(math.ceil(SIZE[0]*scale),math.ceil(SIZE[1]*scale))
+        cover=max(width/SIZE[0],height/SIZE[1])
+        size=(math.ceil(SIZE[0]*cover),math.ceil(SIZE[1]*cover))
         self.frame.blit(pygame.transform.scale(self.scene,size),
                         ((width-size[0])//2,(height-size[1])//2))
-        # The scene covers every aspect ratio; UI fits entirely inside it.
-        self.canvas=self.ui
-        self.canvas.fill((0,0,0,0))
-        # Shadow and fine gold rules keep the logo readable over the sky.
-        self.centered('THE BROKEN',self.logo_small,22)
-        self.centered('COVENANT',self.logo_large,53)
-        pygame.draw.line(self.canvas,'#c9b67b',(257,108),(299,108))
-        pygame.draw.line(self.canvas,'#c9b67b',(341,108),(383,108))
-        pygame.draw.polygon(self.canvas,'#f1d68f',[(320,104),(324,108),(320,112),(316,108)])
-        self.centered('E L D E N M E R E',self.detail_font,119,'#f7eed5')
-
-        panel=pygame.Surface((190,106),pygame.SRCALPHA)
-        panel.fill((18,39,32,220))
-        self.canvas.blit(panel,(225,241))
-        pygame.draw.line(self.canvas,'#9b9a70',(242,241),(398,241))
-        pygame.draw.line(self.canvas,'#9b9a70',(242,346),(398,346))
-        labels=(('Display: '+('Fullscreen' if self.game.fullscreen else 'Windowed'),
-                 f'Music: {round(self.game.audio.music_volume*100)}%',
-                 f'Effects: {round(self.game.audio.effects_volume*100)}%','Back')
-                if self.settings else self.options)
-        rows=self.settings_rows if self.settings else self.rows
-        if self.settings:self.centered('Settings',self.menu_font,243)
-        for i,(label,row) in enumerate(zip(labels,rows)):
-            disabled=not self.settings and i==1 and not self.game.has_saved_journey
-            active=i==self.selected
-            if active and not disabled:
-                pygame.draw.rect(self.canvas,'#344e3e',row)
-                if not self.settings or i not in (1,2):
-                    # The volume rows use their own minus/plus hit targets.
-                    pygame.draw.rect(self.canvas,'#ceb676',(row.left+8,row.centery-3,5,7),1)
-                    pygame.draw.line(self.canvas,'#ceb676',(row.left+9,row.centery-5),(row.left+11,row.centery-5))
-                    self.canvas.set_at((row.left+10,row.centery),(255,218,132))
-            color='#7f8d7d' if disabled else ('#ffe1a0' if active else '#eee2c0')
-            self.centered(label,self.menu_font,row.y+1,color,False)
-            if self.settings and i in (1,2):
-                for symbol,x in (('-',row.left+9),('+',row.right-18)):
-                    self.canvas.blit(self.menu_font.render(symbol,False,'#ffe1a0'),(x,row.y+1))
-        if not self.settings and self.selected==1 and not self.game.has_saved_journey:
-            hint='Saved journey unavailable' if self.game.save_error else 'No saved journey yet'
-            self.centered(hint,self.detail_font,350,'#d2c8a7',False)
+        # This transparent layer already has its final display dimensions:
+        # neither Atkinson body text nor serif logo pixels are enlarged later.
+        fit=min(width/SIZE[0],height/SIZE[1])
+        ui_size=(round(SIZE[0]*fit),round(SIZE[1]*fit))
+        if self.ui.get_size()!=ui_size:self.ui=pygame.Surface(ui_size,pygame.SRCALPHA)
+        self.ui.fill((0,0,0,0))
+        painter=self.game.ui.painter(self.ui,SIZE)
+        if self.settings:
+            painter.veil(165)
+            self.settings_panel.draw(painter)
         else:
-            hint='Left/right or +/-: volume   Enter: mute / choose' if self.settings else 'Click to choose  /  Arrow keys + Enter'
-            self.centered(hint,self.detail_font,350,'#d2c8a7',False)
-        scale=min(width/SIZE[0],height/SIZE[1])
-        size=(round(SIZE[0]*scale),round(SIZE[1]*scale))
-        self.frame.blit(pygame.transform.scale(self.ui,size),
-                        ((width-size[0])//2,(height-size[1])//2))
+            self._logo(painter,'THE BROKEN',30,22)
+            self._logo(painter,'COVENANT',43,53)
+            painter.line(BRASS,(257,108),(299,108))
+            painter.line(BRASS,(341,108),(383,108))
+            painter.lantern((320,108),size=9)
+            painter.text('E L D E N M E R E',(320,120),role='small',anchor='midtop')
+            menu_panel=self._layout_menu(painter)
+            painter.panel(menu_panel)
+            for index,(label,row) in enumerate(zip(self.options,self.rows)):
+                disabled=index==1 and not self.game.has_saved_journey
+                painter.button(row,label,selected=index==self.selected,
+                               pressed=self._pressed==index and self._mouse_held,disabled=disabled)
+            hint=('Saved journey unavailable' if self.game.save_error else 'No saved journey yet') if self.selected==1 and not self.game.has_saved_journey else 'Click or arrows + Enter'
+            if painter.font('small').size(hint)[0]>menu_panel.width-16:
+                hint=('Save unavailable' if self.game.save_error else 'No saved game') if self.selected==1 and not self.game.has_saved_journey else 'Arrows + Enter'
+            painter.text(hint,(320,menu_panel.bottom-6),role='small',color=MUTED,anchor='midbottom')
+        self.frame.blit(self.ui,((width-ui_size[0])//2,(height-ui_size[1])//2))
         if self.fade:
+            duration=.01 if getattr(self.game.audio,'reduced_motion',False) else .65
             shade=pygame.Surface((width,height),pygame.SRCALPHA)
-            shade.fill((11,24,22,min(255,round(self.fade/.65*255))))
+            shade.fill((11,24,22,min(255,round(self.fade/duration*255))))
             self.frame.blit(shade,(0,0))
-        # Present one complete RGB frame, with no display-level alpha blending.
         self.game.window.blit(self.frame,(0,0))
         pygame.display.flip()

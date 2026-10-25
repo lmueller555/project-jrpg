@@ -10,6 +10,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
 
 from speech_bubble import MAX_LINES, TEXT_WIDTH, SpeechBubble
+from ui_style import FOREST
 
 
 class SpeechBubbleTests(unittest.TestCase):
@@ -140,7 +141,7 @@ class SpeechBubbleTests(unittest.TestCase):
         self.assertFalse(left.colliderect(right))
         self.assertEqual(left.top, right.top)
         for rect in layout.choice_rects:
-            self.assertEqual(self.canvas.get_at((rect.x+3, rect.y+3))[:3], (52, 78, 62))
+            self.assertEqual(self.canvas.get_at((rect.x+3, rect.y+3))[:3], pygame.Color(FOREST)[:3])
         self.assertLessEqual(right.right, layout.panel.right-8)
 
     def test_three_answers_expand_vertically_within_bubble(self):
@@ -189,6 +190,42 @@ class SpeechBubbleTests(unittest.TestCase):
         self.bubble.draw(self.canvas)
         self.assertEqual(source.get_size(), (72, 72))
         self.assertEqual(pygame.image.tobytes(source, 'RGB'), before)
+
+    def test_short_reply_has_less_empty_space_than_three_line_reply(self):
+        self.social.page['lines'] = ['Thank you.']
+        short = self.bubble.layout()
+        self.social.page['lines'] = ['There is still much to do.',
+                                     'Halden needs his medicine.',
+                                     'Take Tomas along with you.']
+        longer = self.bubble.layout()
+        self.assertLess(short.panel.height, longer.panel.height)
+        self.assertTrue(short.panel.contains(short.portrait))
+
+    def test_high_resolution_portrait_and_choices_keep_world_coordinate_hitboxes(self):
+        self.social.choosing = True
+        canvas = pygame.Surface((1440, 960))
+        layout = self.bubble.draw(canvas)
+        self.assertEqual(layout.anchor, self.anchor)
+        self.assertTrue(pygame.Rect(0, 0, 480, 320).contains(layout.panel))
+        self.assertEqual(canvas.get_at((layout.portrait.centerx*3, layout.portrait.centery*3))[:3],
+                         (84, 155, 104))
+        for rect in layout.choice_rects:
+            self.assertTrue(layout.panel.contains(rect))
+
+    def test_choice_hover_and_press_have_distinct_visible_states(self):
+        self.social.choosing = True
+        layout = self.bubble.draw(self.canvas)
+        rect = layout.choice_rects[0]
+        sample = (rect.right-4, rect.top+4)
+        normal = self.canvas.get_at(sample)
+        self.social.pointer_position = rect.center
+        self.bubble.draw(self.canvas)
+        hover = self.canvas.get_at(sample)
+        self.social.pointer_pressed = True
+        self.bubble.draw(self.canvas)
+        pressed = self.canvas.get_at(sample)
+        self.assertNotEqual(normal, hover)
+        self.assertNotEqual(hover, pressed)
 
 
 if __name__ == '__main__':unittest.main()

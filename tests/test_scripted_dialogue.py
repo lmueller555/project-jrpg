@@ -128,6 +128,40 @@ class ScriptedDialogueTests(unittest.TestCase):
             for line in page['lines']:
                 self.assertLessEqual(self.social.font.size(line)[0], 224)
 
+    def test_text_size_change_reflows_current_passage_and_retains_stable_cue_identity(self):
+        text = ' '.join(['breakfast']*70)
+        self.social.start_script([{'speaker': 'tomas', 'cue': 'push_plate', 'text': text},
+                                  {'speaker': 'caelan', 'text': 'I am coming.'}])
+        self.social.advance()
+        before = dict(self.social.page)
+        self.game.audio = SimpleNamespace(text_scale=1.5, effects_volume=0)
+        after = self.social.page
+        self.assertEqual(after['source_line'], before['source_line'])
+        self.assertLessEqual(after['offset'], before['offset'])
+        self.assertGreater(after['end'], before['offset'])
+        self.assertTrue(all(self.social.font.size(line)[0] <= 224 for line in after['lines']))
+        cue_pages = [page for page in self.social.pages if 'cue' in page]
+        self.assertEqual(len(cue_pages), 1)
+        self.assertEqual(cue_pages[0]['source_line'], 0)
+
+    def test_reflow_keeps_explicit_quest_choice_pending(self):
+        import main
+        game = main.Game(fullscreen=False, start_on_title=False)
+        game.world = game._scene_by_id('sanctuary_dining')
+        game.player.position.update(288, 231)
+        actor = next(actor for actor in game.persistent_npcs if actor.data['id'] == 'mother_serene')
+        game.social.start(actor)
+        for _ in range(60):
+            if game.social.choosing:break
+            game.social.advance()
+        self.assertTrue(game.social.choosing)
+        game.audio.set_text_scale(1.5)
+        game.social.refresh_layout()
+        self.assertTrue(game.social.choosing)
+        self.assertEqual(game.social.page_index, len(game.social.pages)-1)
+        self.assertEqual(game.quests.status('CH01_MQ01'), 'available')
+        self.assertEqual(len(game.social.choice_rects), 2)
+
     def test_real_event_batch_cannot_advance_both_scenes_or_skip_with_held_click(self):
         import main
         game = main.Game(fullscreen=False, start_on_title=False)
