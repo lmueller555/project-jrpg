@@ -1,0 +1,1347 @@
+{
+  "status": "review",
+  "initial_wait_skipped": true,
+  "review_decisions_selected": true,
+  "actual_speed": true,
+  "captures": {
+    "normal_cleanup": {
+      "accident": false,
+      "forgotten_id": null,
+      "box_count": 5,
+      "elapsed_ms": 81300,
+      "frames": 814,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "cooldown",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "admire",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "leave_play_area",
+        "cooldown"
+      ],
+      "events": [
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_1"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_1"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_2"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_2"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_3"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_3"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_4"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_4"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_5"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_5"
+        },
+        {
+          "state": "admire"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_5"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_5"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_4"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_4"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_3"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_3"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_2"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_2"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_1"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_1"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "leave_play_area"
+        },
+        {
+          "state": "cooldown"
+        }
+      ],
+      "final_blocks": [
+        {
+          "id": "block_1",
+          "state": "box",
+          "center": [
+            104.0,
+            201.0
+          ]
+        },
+        {
+          "id": "block_2",
+          "state": "box",
+          "center": [
+            116.0,
+            201.0
+          ]
+        },
+        {
+          "id": "block_3",
+          "state": "box",
+          "center": [
+            104.0,
+            197.0
+          ]
+        },
+        {
+          "id": "block_4",
+          "state": "box",
+          "center": [
+            116.0,
+            197.0
+          ]
+        },
+        {
+          "id": "block_5",
+          "state": "box",
+          "center": [
+            110.0,
+            193.0
+          ]
+        }
+      ],
+      "liam_position": [
+        120.0,
+        234.0
+      ],
+      "daisy_position": [
+        124.79999999999984,
+        282.0
+      ],
+      "daisy_state": "walk",
+      "nearby_walk_guided": false
+    },
+    "forgotten_block": {
+      "accident": false,
+      "forgotten_id": "block_2",
+      "box_count": 4,
+      "elapsed_ms": 73900,
+      "frames": 740,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "cooldown",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "admire",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "leave_play_area",
+        "cooldown"
+      ],
+      "events": [
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_1"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_1"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_2"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_2"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_3"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_3"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_4"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_4"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_5"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_5"
+        },
+        {
+          "state": "admire"
+        },
+        {
+          "forgotten": "block_2"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_5"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_5"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_4"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_4"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_3"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_3"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_1"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_1"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "leave_play_area"
+        },
+        {
+          "state": "cooldown"
+        }
+      ],
+      "final_blocks": [
+        {
+          "id": "block_1",
+          "state": "box",
+          "center": [
+            104.0,
+            201.0
+          ]
+        },
+        {
+          "id": "block_2",
+          "state": "forgotten",
+          "center": [
+            116.0,
+            201.0
+          ]
+        },
+        {
+          "id": "block_3",
+          "state": "box",
+          "center": [
+            104.0,
+            197.0
+          ]
+        },
+        {
+          "id": "block_4",
+          "state": "box",
+          "center": [
+            116.0,
+            197.0
+          ]
+        },
+        {
+          "id": "block_5",
+          "state": "box",
+          "center": [
+            110.0,
+            193.0
+          ]
+        }
+      ],
+      "liam_position": [
+        120.0,
+        234.0
+      ],
+      "daisy_position": [
+        108.0,
+        282.0
+      ],
+      "daisy_state": "rest",
+      "nearby_walk_guided": false
+    },
+    "daisy_accident": {
+      "accident": true,
+      "forgotten_id": null,
+      "box_count": 5,
+      "elapsed_ms": 84400,
+      "frames": 845,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "cooldown",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "rise_for_box",
+        "approach_box",
+        "kneel_box",
+        "take",
+        "rise_with_block",
+        "carry_to_build",
+        "kneel_build",
+        "place",
+        "daisy_approach",
+        "bump",
+        "react",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "approach_loose",
+        "kneel_loose",
+        "collect",
+        "rise_loose",
+        "carry_to_box",
+        "kneel_return",
+        "return_block",
+        "rise_return",
+        "leave_play_area",
+        "cooldown"
+      ],
+      "events": [
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_1"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_1"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_2"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_2"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_3"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_3"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "accident_roll": true
+        },
+        {
+          "take": "block_4"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_4"
+        },
+        {
+          "state": "rise_for_box"
+        },
+        {
+          "state": "approach_box"
+        },
+        {
+          "state": "kneel_box"
+        },
+        {
+          "state": "take"
+        },
+        {
+          "take": "block_5"
+        },
+        {
+          "state": "rise_with_block"
+        },
+        {
+          "state": "carry_to_build"
+        },
+        {
+          "state": "kneel_build"
+        },
+        {
+          "state": "place"
+        },
+        {
+          "place": "block_5"
+        },
+        {
+          "state": "admire"
+        },
+        {
+          "state": "daisy_approach"
+        },
+        {
+          "state": "bump"
+        },
+        {
+          "knockdown": true
+        },
+        {
+          "state": "react"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_5"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_5"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_4"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_4"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_3"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_3"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_2"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_2"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "approach_loose"
+        },
+        {
+          "state": "kneel_loose"
+        },
+        {
+          "state": "collect"
+        },
+        {
+          "collect": "block_1"
+        },
+        {
+          "state": "rise_loose"
+        },
+        {
+          "state": "carry_to_box"
+        },
+        {
+          "state": "kneel_return"
+        },
+        {
+          "state": "return_block"
+        },
+        {
+          "return": "block_1"
+        },
+        {
+          "state": "rise_return"
+        },
+        {
+          "state": "leave_play_area"
+        },
+        {
+          "state": "cooldown"
+        }
+      ],
+      "final_blocks": [
+        {
+          "id": "block_1",
+          "state": "box",
+          "center": [
+            100.0,
+            205.0
+          ]
+        },
+        {
+          "id": "block_2",
+          "state": "box",
+          "center": [
+            118.0,
+            211.0
+          ]
+        },
+        {
+          "id": "block_3",
+          "state": "box",
+          "center": [
+            108.0,
+            211.0
+          ]
+        },
+        {
+          "id": "block_4",
+          "state": "box",
+          "center": [
+            122.0,
+            201.0
+          ]
+        },
+        {
+          "id": "block_5",
+          "state": "box",
+          "center": [
+            110.0,
+            219.0
+          ]
+        }
+      ],
+      "liam_position": [
+        120.0,
+        234.0
+      ],
+      "daisy_position": [
+        108.0,
+        282.0
+      ],
+      "daisy_state": "rest",
+      "nearby_walk_guided": true
+    }
+  }
+}

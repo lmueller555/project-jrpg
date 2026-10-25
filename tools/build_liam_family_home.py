@@ -110,6 +110,16 @@ def interior(recipe,data,entry):
     else:room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
     room['npcs']=recipe.get('residents',[])
     if recipe.get('play_routine'):room['play_routine']=recipe['play_routine']
+    if recipe.get('block_routine'):
+        room['block_routine']=recipe['block_routine']
+        pack=read_json(ROOT/'assets/terrain/eldenmere/liam_home/blocks/blocks.json')
+        x,y=pack['box_position'];fx,fy,fw,fh=pack['floor_rect']
+        room['entities'].append({'id':'liam_block_box','position':[x,y],'sort_y':y+fy+fh,
+            'sort_priority':0,'frames':[pack['box_states']['5']['image']],
+            'frame_duration_ms':1000,'phase_offset':0,'state':'5',
+            'state_images':{count:r['image'] for count,r in pack['box_states'].items()}})
+        blocked.paste(255,rect_box([x+fx,y+fy,fw,fh]))
+        room['destinations']['liam_block_box']=[90,212]
     if recipe.get('bowls'):
         pack_path='assets/terrain/eldenmere/liam_home/bowls/bowls.json'
         pack=read_json(ROOT/pack_path)
@@ -163,6 +173,9 @@ def build():
     if recipe.get('play_routine'):
         from build_liam_daisy_play import build as build_play_actions
         build_play_actions()
+    if recipe.get('block_routine'):
+        from build_liam_blocks import build as build_blocks
+        build_blocks()
     entity,frames,position,entry,width=exterior(recipe)
     data['entities']=[e for e in data['entities'] if e['id']!=recipe['id']]+[entity]
     extend_paths(data,recipe)

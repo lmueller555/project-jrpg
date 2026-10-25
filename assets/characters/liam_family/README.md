@@ -38,3 +38,10 @@ and drinks. Family refill routines remain future work. See the [home layout](../
 
 See [playtime sprites](play_routine/README.md) and
 [the full running/return-home previews](../../../docs/reviews/liam_daisy_play/README.md).
+
+## Wooden-block play — awaiting review
+
+Liam has four-frame kneeling, handling, rising and upset/pointing actions for
+building with five wooden toys beside his bed. The new box and props reuse the
+cottage furniture wood palette. See the [action pack](block_play/README.md) and
+[three runtime outcomes](../../../docs/reviews/liam_blocks/README.md).

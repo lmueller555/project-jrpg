@@ -1,0 +1,79 @@
+{
+  "id": "liam.blocks",
+  "status": "review",
+  "initial_delay_ms": [
+    90000,
+    150000
+  ],
+  "cooldown_ms": [
+    180000,
+    300000
+  ],
+  "admire_ms": [
+    8000,
+    12000
+  ],
+  "dog_rest_ms": [
+    45000,
+    90000
+  ],
+  "accident_probability": 0.1,
+  "forget_probability": 0.5,
+  "nearby_radius": 48,
+  "building_center": [
+    110,
+    200
+  ],
+  "block_centers": [
+    [
+      104,
+      201
+    ],
+    [
+      116,
+      201
+    ],
+    [
+      104,
+      197
+    ],
+    [
+      116,
+      197
+    ],
+    [
+      110,
+      193
+    ]
+  ],
+  "scatter_centers": [
+    [
+      100,
+      205
+    ],
+    [
+      118,
+      211
+    ],
+    [
+      108,
+      211
+    ],
+    [
+      122,
+      201
+    ],
+    [
+      110,
+      219
+    ]
+  ],
+  "dog_contact_station": [
+    130,
+    204
+  ],
+  "idle_position": [
+    120,
+    234
+  ]
+}

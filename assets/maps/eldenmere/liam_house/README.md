@@ -73,3 +73,26 @@ visiting her water bowl first. Existing meals finish before the invitation.
 The controller temporarily owns Daisy and restores her normal behavior after
 the nap; both actors retain their identity across scenes. See the
 [complete review](../../../../docs/reviews/liam_daisy_play/README.md).
+
+## Wooden-block play — awaiting review
+
+`block_routine` references `../routines/liam_blocks.json`. An open wooden toy box
+fits against the west wall in the gap between the two beds. Its six fill states
+represent zero through five blocks. The box has a small fixed foot blocker;
+player access is [90,212], distinct from Liam's closer [80,200] handoff position.
+
+Liam removes five identified blocks and builds a two-support bridge, admires it,
+then returns the pieces individually. A single 50% cleanup roll leaves one piece
+on the floor; the next session collects that same piece before starting again.
+Floor pieces are decorative and cannot block paths. No extra toys are spawned.
+
+When Daisy first comes within two tiles after at least three pieces are placed,
+one 10% roll can select a curious visit. She remains free to move until Liam has
+finished all five pieces, and finishes a bowl visit before being borrowed. Her
+nose touches the beam before the four-stage collapse. Liam reacts with ambient
+speech, sends her to her rug, then tidies up. She rests 45–90 seconds afterward.
+
+This activity and the outdoor chase share Liam's ownership. Both continue in the
+cached room offscreen; neither can start while the other owns Liam. The initial
+block-play delay is 90–150 seconds and repeat cooldown 3–5 minutes. See the
+[review clips](../../../../docs/reviews/liam_blocks/README.md).

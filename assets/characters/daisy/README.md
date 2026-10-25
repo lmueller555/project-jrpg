@@ -78,3 +78,12 @@ between drinking first and going directly to her rug. All travel reuses her
 approved walks and runs. See the
 [shared action pack](../liam_family/play_routine/README.md) and
 [runtime review](../../../docs/reviews/liam_daisy_play/README.md).
+
+## Curious visit to Liam's blocks — awaiting review
+
+A nearby Daisy has one 10% chance per eligible building session of approaching
+Liam's finished creation. A four-pose sniff makes nose contact before the blocks
+fall. Liam tells her to lie down; she walks to her rug and uses her existing
+settling pose, then rests 45–90 seconds. The block controller waits for any bowl
+visit to finish, and restores her normal routine afterward. See
+[the accident preview](../../../docs/reviews/liam_blocks/daisy_accident.gif).
