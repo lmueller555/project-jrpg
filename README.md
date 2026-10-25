@@ -21,7 +21,7 @@ Headless verification stays windowed for consistent screenshots. The internal
 to preserve the pixel art's proportions.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
-menu**. Click New Game to enter the playable town, or use arrows and Enter.
+menu**. Click New Game to begin Caelan's opening morning, or use arrows and Enter.
 Settings changes fullscreen/windowed mode and music. Continue resumes a saved
 journey when one exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
@@ -43,6 +43,7 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | M | Open/close the town map |
 | J | Open/close the quest journal; wheel/arrows scroll |
 | Left click anywhere / Space / E | Advance an open conversation |
+| E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
 | F11 | Toggle fullscreen |
 | Escape | Close the journal/map, or save and quit |
@@ -79,10 +80,22 @@ scrollable **J** journal. Objective updates, a `?` ready-to-report marker, and
 completion feedback share the same quest state. Music settings also mute quest
 chimes. The journal pauses player movement and doorway entry.
 
-The opening assignment is connected to this system. The actual Halden sack,
-Elira lantern and Venn gate tasks, Tomas's temporary following segment and the
-scripted bedroom/breakfast opening remain the next story implementation. Visiting
-their houses never marks those tasks complete. See [quest integration](docs/QUEST_SYSTEM.md).
+**The sanctuary opening is playable from New Game.** Caelan wakes to Tomas's
+knock in his bedroom. After their exchange, explore freely and use E to inspect
+nearby furnishings, then walk through the hall to breakfast in the northeast
+room. Caelan walks to the table; Tomas nudges his plate while Serene sorts supplies.
+After breakfast, approach Serene for her request and click an explicit response.
+Acceptance continues into the approved exchange about Tomas helping and Caelan
+eating enough, then leaves the quest tracked in the journal. The morning includes
+quiet bells, knocks, birds and stream sounds that obey the music setting.
+
+Continue preserves the opening checkpoint without replaying finished scenes.
+Saves from before this opening was added keep their existing location/progress;
+choose **New Game** to experience the new beginning. See [story implementation](docs/STORY_IMPLEMENTATION.md).
+
+The actual Halden sack, Elira lantern and Venn gate tasks, and Tomas's temporary
+following segment remain the next story implementation. Visiting their houses
+never marks those tasks complete. See [quest integration](docs/QUEST_SYSTEM.md).
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored

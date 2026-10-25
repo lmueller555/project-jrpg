@@ -157,11 +157,17 @@ class QuestUI:
             canvas.set_at((max(0, min(canvas.get_width()-1, point[0]+image.get_width())),
                            max(0, min(canvas.get_height()-1, point[1]))), '#fff5c6')
 
+    def _marker_for(self, npc_id):
+        opening = getattr(self.game, 'opening', None)
+        if opening is not None and not opening.can_speak(npc_id):
+            return None
+        return self.game.quests.marker_for(npc_id)
+
     def draw_markers(self, canvas, camera):
         if self._hidden() or self.game.social.locked:
             return
         for actor in self.game.world.npcs:
-            symbol = self.game.quests.marker_for(actor.data['id'])
+            symbol = self._marker_for(actor.data['id'])
             if symbol is None:
                 continue
             image = actor.sprite(self.game.elapsed_ms)
@@ -174,7 +180,8 @@ class QuestUI:
     def draw_tracker(self, canvas):
         if self._hidden() or self.game.social.locked:
             return
-        text = self.game.quests.tracker_text()
+        opening = getattr(self.game, 'opening', None)
+        text = (opening.hint_text() if opening is not None else '') or self.game.quests.tracker_text()
         if not text:
             return
         rect = pygame.Rect(246, 8, 226, 49)
@@ -225,6 +232,9 @@ class QuestUI:
         for identifier, definition in self.game.quests.definitions.items():
             state = self.game.quests.states[identifier]
             status = state['status']
+            opening = getattr(self.game, 'opening', None)
+            if status == 'available' and opening is not None and not opening.can_speak(definition['giver']):
+                continue
             rows.append((labels.get(status, status.upper()), GOLD, self.small_font, 0))
             for line in self.wrap(definition['title'], self.heading_font, 396):
                 rows.append((line, PAPER, self.heading_font, 0))
@@ -266,7 +276,11 @@ class QuestUI:
         canvas.set_clip(viewport)
         y = viewport.y-self.scroll
         if not rows:
-            canvas.blit(self.font.render('No quests discovered yet.', False, MUTED), (28, y))
+            opening = getattr(self.game, 'opening', None)
+            hint = (opening.hint_text() if opening is not None else '') or 'No quests discovered yet.'
+            for line in self.wrap(hint, self.font, viewport.width):
+                canvas.blit(self.font.render(line, False, MUTED), (28, y))
+                y += 16
         for (text, color, font, indent), height in zip(rows, heights):
             canvas.blit(font.render(text, False, color), (viewport.x+indent, y))
             y += height
@@ -329,7 +343,7 @@ class QuestUI:
             if id(actor) in seen:
                 continue
             seen.add(id(actor))
-            symbol = self.game.quests.marker_for(actor.data['id'])
+            symbol = self._marker_for(actor.data['id'])
             if symbol is None:
                 continue
             position = self._map_position(actor)

@@ -24,6 +24,8 @@ from title_screen import TitleScreen
 from quests import QuestLog
 from quest_ui import QuestUI
 from save_game import SaveStore
+from opening import OpeningSequence
+from opening_audio import MorningAudio
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -214,20 +216,27 @@ class World:
                 ordered.append((prop.get('sort_y',rect.bottom),prop.get('sort_priority',1.5),
                                 'routine_prop',(surface,prop['position'])))
         for npc in self.npcs:
+            if not getattr(npc,'story_visible',True):continue
             if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
             sort_y=getattr(npc,'sort_y',None)
+            if getattr(npc,'story_sort_y',None) is not None:sort_y=npc.story_sort_y
             ordered.append((npc.position.y+self.probe_size[1]/2 if sort_y is None else sort_y,2,'npc',npc))
-        ordered.append((player.position.y+self.probe_size[1]/2,3,'player',player))
+        if getattr(player,'story_visible',True):
+            ordered.append((getattr(player,'story_sort_y',None) or player.position.y+self.probe_size[1]/2,3,'player',player))
         for _,_,kind,record in sorted(ordered,key=lambda r:(r[0],r[1])):
             if kind=='player':
-                anchor=self.data['player_draw_anchor']
-                target.blit(player.sprite(),(round(player.position.x)-anchor[0]-camera[0],
-                                              round(player.position.y)-anchor[1]-camera[1]))
+                anchor=getattr(player,'story_draw_anchor',None) or self.data['player_draw_anchor']
+                position=getattr(player,'story_position',None) or player.position
+                target.blit(player.sprite(),(round(position[0])-anchor[0]-camera[0],
+                                              round(position[1])-anchor[1]-camera[1]))
             elif kind=='npc':
-                anchor=record.draw_anchor
+                anchor=getattr(record,'story_draw_anchor',None) or record.draw_anchor
+                position=getattr(record,'story_position',None) or record.position
+                surface=getattr(record,'story_sprite',None)
+                if surface is None:surface=record.sprite(elapsed_ms)
                 if hasattr(record,'draw_background'):record.draw_background(target,camera)
-                target.blit(record.sprite(elapsed_ms),(round(record.position.x)-anchor[0]-camera[0],
-                                                       round(record.position.y)-anchor[1]-camera[1]))
+                target.blit(surface,(round(position[0])-anchor[0]-camera[0],
+                                     round(position[1])-anchor[1]-camera[1]))
                 if hasattr(record,'draw_foreground'):record.draw_foreground(target,camera)
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
@@ -294,6 +303,7 @@ class Player:
         else:self.walk_ms=0
 
     def sprite(self):
+        if getattr(self,'story_sprite',None) is not None:return self.story_sprite
         if not self.moving:return self.idles[self.facing]
         frames=self.walks[self.facing]
         time=self.walk_ms%sum(duration for _,duration in frames)
@@ -353,6 +363,8 @@ class Game:
         self.on_title=start_on_title
         self.title=TitleScreen(self)
         self.quest_ui=QuestUI(self)
+        self.opening=OpeningSequence(self)
+        self.opening_audio=MorningAudio(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -362,7 +374,8 @@ class Game:
 
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
-                           'dialogue_flags':sorted(self.social.flags)},sort_keys=True)
+                           'dialogue_flags':sorted(self.social.flags),
+                           'opening':self.opening.to_dict()},sort_keys=True)
 
     def _read_saved_journey(self):
         """Validate a save without mutating the fresh world behind the title."""
@@ -383,7 +396,8 @@ class Game:
                isinstance(data.get('dialogue_flags'),list) and
                len(data['dialogue_flags'])<=256 and
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
-               QuestLog().restore(data.get('quests')))
+               QuestLog().restore(data.get('quests')) and
+               ('opening' not in data or self.opening.valid_snapshot(data['opening'])))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -430,13 +444,16 @@ class Game:
         self.on_title=False
         self.opening_fade=.5
         self._mouse_held=False
+        if data is None:self.opening.start_new_game()
+        else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
+        self.opening_audio.reset()
         self.save_progress()
         return True
 
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
         if self.on_title or not self.save_store.enabled:return False
-        data={'version':1,'quests':self.quests.to_dict(),
+        data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},
@@ -539,6 +556,7 @@ class Game:
                     if event.key in (pygame.K_SPACE,pygame.K_e) and not getattr(event,'repeat',False) and not advanced:
                         self.social.advance();advanced=True
                     continue
+                if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j):continue
                 if event.key==pygame.K_ESCAPE:
                     if self.map_open:self.map_open=False
                     else:
@@ -548,6 +566,9 @@ class Game:
                 elif event.key==pygame.K_j and not getattr(event,'repeat',False):
                     self.map_open=False
                     self.quest_ui.toggle_journal()
+                elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
+                      not self.map_open and not self.quest_ui.journal_open):
+                    self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
@@ -556,6 +577,8 @@ class Game:
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
         self.elapsed_ms+=seconds*1000
+        self.opening.update(seconds)
+        self.opening_audio.update(seconds)
         if direction is None:
             keys=pygame.key.get_pressed()
             direction=(int(keys[pygame.K_d] or keys[pygame.K_RIGHT])-int(keys[pygame.K_a] or keys[pygame.K_LEFT]),
@@ -565,14 +588,17 @@ class Game:
             for door in scene.doors:
                 door.update(self.player.position if scene is self.world else None,seconds,
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
-        direction=(0,0) if self.map_open or self.quest_ui.journal_open or self.social.locked or self.opening_fade else direction
-        self.player.update(direction,seconds,self.world,bool(running))
+        direction=(0,0) if (self.map_open or self.quest_ui.journal_open or self.social.locked or
+                           self.opening.locks_player or self.opening_fade) else direction
+        if not self.opening.controls_player:
+            self.player.update(direction,seconds,self.world,bool(running))
         if not self.quest_ui.journal_open:self.social.update(direction)
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
                 if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
         for npc in self.persistent_npcs:
+            if getattr(npc,'story_paused',False):continue
             scene=self._routine_worlds[npc]
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             npc.update(seconds,scene,blocker,self._transfer_routine_npc)
@@ -581,7 +607,8 @@ class Game:
         for routine in self.bone_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
-        if not self.map_open and not self.quest_ui.journal_open and not self.social.locked and not self.transfer_cooldown:
+        if (not self.map_open and not self.quest_ui.journal_open and not self.social.locked and
+                not self.opening.locks_player and not self.transfer_cooldown):
             for door in self.world.doors:
                 if door.can_enter(self.player.position,direction):
                     self.enter(door)
@@ -593,7 +620,7 @@ class Game:
             self.save_progress()
 
     def enter(self,door):
-        if self.social.locked or self.quest_ui.journal_open:return False
+        if self.social.locked or self.quest_ui.journal_open or self.opening.locks_player:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -611,6 +638,7 @@ class Game:
         self.transfer_cooldown=.25
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
+        self.opening.on_enter_scene()
         self.save_progress()
         return True
 
@@ -647,6 +675,7 @@ class Game:
         view=(VIEW_SIZE[0],204) if self.social.locked else VIEW_SIZE
         camera=camera_for(self.player.position,self.world.size,view)
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
+        self.opening.draw_world(self.canvas,camera)
         self.quest_ui.draw_markers(self.canvas,camera)
         pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
         if self.world is self.town:
@@ -657,6 +686,11 @@ class Game:
             pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
             self.text('WASD/arrows: move   Shift: run   M: map   J: journal   F11: screen   Esc: quit',(8,307),self.small_font)
         self.quest_ui.draw_tracker(self.canvas)
+        if not self.social.locked and not self.map_open and not self.quest_ui.journal_open:
+            hint=self.opening.interaction_hint()
+            if hint:
+                pygame.draw.rect(self.canvas,'#263c35',(8,281,250,18))
+                self.text(hint,(14,286),self.small_font,color='#ffdc71')
         if self.map_open:self.draw_map()
         self.social.draw(self.canvas,self.elapsed_ms)
         self.quest_ui.draw_notifications(self.canvas)

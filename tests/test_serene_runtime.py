@@ -212,21 +212,26 @@ class SereneRuntime(unittest.TestCase):
                               self.serene.visible_surface_props(scene_id)},ids)
 
     def test_full_schedule_completes_and_returns_to_its_start(self):
-        self.game.world=self.game.town
-        # Keep both residents live, with reproducible Tomas pause durations.
-        # Their independent schedules can meet at the same narrow door waypoint;
-        # this checks Serene's complete cycle at a fixed wait timing.
-        wait_rng=random.Random(0)
-        with patch('npc_routines.random.randint',side_effect=wait_rng.randint):
-            for _ in range(7200):
-                self.game.update(1/60,(0,0),False)
-                if self.serene.completed_cycles:
-                    break
-        self.assertEqual(self.serene.completed_cycles,1)
-        self.assertEqual(self.serene.state,'sort_provisions')
-        self.assertEqual(self.serene.scene_id,'sanctuary_dining')
-        self.assertEqual(tuple(self.serene.position),(288,214))
-        self.assertEqual(self.memberships(),[(self.scene('sanctuary_dining'),1)])
+        # Seed 2 previously deadlocked the two residents at the dining doorway.
+        # Keep both schedules live and require the real collision-safe recovery.
+        for seed in (0,2):
+            with self.subTest(wait_seed=seed):
+                if seed:
+                    self.game=main.Game(fullscreen=False,start_on_title=False)
+                    self.serene=next(n for n in self.game.persistent_npcs
+                                     if n.data['id']=='mother_serene')
+                self.game.world=self.game.town
+                wait_rng=random.Random(seed)
+                with patch('npc_routines.random.randint',side_effect=wait_rng.randint):
+                    for _ in range(7200):
+                        self.game.update(1/60,(0,0),False)
+                        if self.serene.completed_cycles:
+                            break
+                self.assertEqual(self.serene.completed_cycles,1)
+                self.assertEqual(self.serene.state,'sort_provisions')
+                self.assertEqual(self.serene.scene_id,'sanctuary_dining')
+                self.assertEqual(tuple(self.serene.position),(288,214))
+                self.assertEqual(self.memberships(),[(self.scene('sanctuary_dining'),1)])
 
 
 if __name__=='__main__':unittest.main()

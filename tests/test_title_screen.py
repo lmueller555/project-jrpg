@@ -40,11 +40,22 @@ class TitleTests(unittest.TestCase):
         self.assertTrue(self.game.on_title)
         self.game.update(.4)
         self.assertFalse(self.game.on_title)
+        self.assertEqual(self.game.world.data['id'],'sanctuary_bedroom')
+        self.assertEqual(self.game.opening.stage,'wake')
+        self.assertTrue(self.game.social.scripted)
         self.game.draw()
-        self.game.update(.6,(0,0),False)
-        self.game.player.position.update(456,936)
-        self.game.update(.1,(1,0),False)
-        self.assertGreater(self.game.player.position.x,456)
+        initial=self.game.player.position.copy()
+        self.game.update(.6,(1,0),False)
+        self.assertEqual(self.game.player.position,initial)
+        for _ in range(30):
+            if not self.game.social.scripted:break
+            pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False))
+            self.assertTrue(self.game.handle_events())
+        self.assertFalse(self.game.social.locked)
+        self.assertEqual(self.game.opening.stage,'explore')
+        self.game.update(.05,(1,0),False)
+        self.assertGreater(self.game.player.position.x,initial.x)
+        self.assertTrue(self.game.world.can_stand(self.game.player.position))
 
     def test_continue_disabled_and_keyboard_skips_it(self):
         self.assertTrue(self.click(self.game.title.rows[1]))

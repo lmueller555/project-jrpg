@@ -43,6 +43,9 @@ class SocialSystem:
         self.page_index = 0
         self.conversation = None
         self._choosing = False
+        self._scripted = False
+        self._script_callback = None
+        self.script_identifier = None
         self.choice_rects = [pygame.Rect(122, 263, 154, 23),
                              pygame.Rect(286, 263, 166, 23)]
         self.font = pygame.font.Font(None, 18)
@@ -56,7 +59,10 @@ class SocialSystem:
             self.portraits[key] = game.town.image('assets/portraits/eldenmere/'+record['file'])
 
     @property
-    def locked(self):return self.actor is not None
+    def locked(self):return self.actor is not None or self._scripted
+
+    @property
+    def scripted(self):return self._scripted
 
     @property
     def active(self):return self.locked and not self.pending
@@ -86,15 +92,17 @@ class SocialSystem:
             if actor not in game.world.npcs or game.player.position.distance_to(actor.position) > self.data['release_radius']:
                 self.blocked.remove(actor)
         if self.locked:
-            if self.pending and self.actor.conversation_ready:
+            if self.pending and self.actor is not None and self.actor.conversation_ready:
                 self.pending = False
             return
         if (game.map_open or getattr(getattr(game, 'quest_ui', None), 'journal_open', False)
                 or game.transfer_cooldown or not pygame.Vector2(direction).length_squared()):return
         forward = pygame.Vector2(FACING[game.player.facing])
         candidates = []
+        opening = getattr(game, 'opening', None)
         for actor in game.world.npcs:
             if actor in self.blocked or actor.data['id'] not in self.profiles:continue
+            if opening is not None and not opening.can_speak(actor.data['id']):continue
             delta = actor.position-game.player.position
             distance = delta.length()
             if distance == 0 or distance > self.data['trigger_radius']:continue
@@ -107,14 +115,13 @@ class SocialSystem:
             self.start(min(candidates, key=lambda item:item[:2])[2])
 
     def start(self, actor):
+        if self.locked:return False
+        opening = getattr(self.game, 'opening', None)
+        if opening is not None and not opening.can_speak(actor.data['id']):return False
         profile = self.profiles[actor.data['id']]
         conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
         if conversation is None:return False
-        self.pages = []
-        for line in conversation['lines']:
-            wrapped = self.wrap(line['text'], 332)
-            for offset in range(0, len(wrapped), 3):
-                self.pages.append({'speaker': line['speaker'], 'lines': wrapped[offset:offset+3]})
+        self.pages = self._make_pages(conversation['lines'])
         self.actor = actor
         self.conversation = conversation
         self._choosing = False
@@ -125,6 +132,59 @@ class SocialSystem:
         self.pending = not actor.conversation_ready
         self.game.player.moving = False
         self.game.player.walk_ms = 0
+        return True
+
+    def _make_pages(self, lines):
+        pages = []
+        for line in lines:
+            wrapped = self.wrap(line['text'], 332)
+            for offset in range(0, len(wrapped), 3):
+                page = {'speaker': line['speaker'], 'lines': wrapped[offset:offset+3]}
+                # Scene actions belong to the line's first page, so wrapping
+                # cannot accidentally repeat a handoff or other story cue.
+                if offset == 0 and 'cue' in line:page['cue'] = line['cue']
+                pages.append(page)
+        return pages
+
+    def start_script(self, lines, on_complete=None, identifier=None):
+        """Read a scene's dialogue without impersonating an ambient NPC.
+
+        The caller owns scene staging and progression. The callback runs once,
+        after the dialogue lock is cleared, and can safely start another scene.
+        """
+        if self.locked or not isinstance(lines, (list, tuple)) or not lines:return False
+        if on_complete is not None and not callable(on_complete):return False
+        if any(not isinstance(line, dict) or not isinstance(line.get('speaker'), str)
+               or line['speaker'] not in self.data['speakers']
+               or not isinstance(line.get('text'), str) or not line['text'].strip()
+               or ('cue' in line and not isinstance(line['cue'], str)) for line in lines):
+            return False
+        pages = self._make_pages(lines)
+        self.actor = None
+        self.pages = pages
+        self.page_index = 0
+        self.pending = False
+        self.conversation = {'id': identifier or 'scripted_scene', 'scripted': True}
+        self._choosing = False
+        self._scripted = True
+        self._script_callback = on_complete
+        self.script_identifier = identifier
+        self.game.player.moving = False
+        self.game.player.walk_ms = 0
+        return True
+
+    def cancel_script(self):
+        """Discard a scene dialogue without advancing its story checkpoint."""
+        if not self.scripted:return False
+        self.actor = None
+        self.pages = []
+        self.page_index = 0
+        self.pending = False
+        self.conversation = None
+        self._choosing = False
+        self._scripted = False
+        self._script_callback = None
+        self.script_identifier = None
         return True
 
     def wrap(self, text, width):
@@ -158,12 +218,18 @@ class SocialSystem:
         if point is None:return False
         choice = next((i for i, rect in enumerate(self.choice_rects) if rect.collidepoint(point)), None)
         if choice is None:return False
-        if choice == 0:
-            self.game.quests.accept(self.conversation['quest']['id'])
-        self._finish()
+        accepted = None
+        if choice == 0 and self.game.quests.accept(self.conversation['quest']['id']):
+            accepted = self.conversation['quest']['id']
+        self._finish(accepted)
         return True
 
-    def _finish(self):
+    def _finish(self, accepted_quest=None):
+        if self.scripted:
+            callback = self._script_callback
+            self.cancel_script()
+            if callback is not None:callback()
+            return
         condition = self.conversation.get('quest', {})
         if condition.get('action') == 'turn_in':
             self.game.quests.turn_in(condition['id'], self.actor.data['id'])
@@ -174,6 +240,9 @@ class SocialSystem:
         self.pages = []
         self.conversation = None
         self._choosing = False
+        opening = getattr(self.game, 'opening', None)
+        if accepted_quest is not None and opening is not None:
+            opening.on_quest_accepted(accepted_quest)
         save = getattr(self.game, 'save_progress', None)
         if save is not None:save()
 

@@ -1,0 +1,154 @@
+{
+  "id": "CH01_OPENING",
+  "version": 1,
+  "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
+  "bedroom_position": [
+    60,
+    186
+  ],
+  "sleep_head_origin": [
+    48,
+    123
+  ],
+  "caelan_breakfast_floor": [
+    132,
+    228
+  ],
+  "tomas_breakfast_floor": [
+    216,
+    228
+  ],
+  "caelan_seated_position": [
+    138,
+    200
+  ],
+  "tomas_seated_position": [
+    198,
+    200
+  ],
+  "plate_origin": [
+    184,
+    191
+  ],
+  "plate_push_offsets": [
+    0,
+    -1,
+    -2,
+    -2
+  ],
+  "pose_duration_ms": 180,
+  "wake": [
+    {
+      "speaker": "tomas",
+      "text": "Caelan? You're awake, aren't you?"
+    },
+    {
+      "speaker": "tomas",
+      "text": "Mother Serene says if you're still in bed when the last bell rings, you're helping me clean the courtyard."
+    },
+    {
+      "speaker": "caelan",
+      "text": "She didn't say that."
+    },
+    {
+      "speaker": "tomas",
+      "text": "No. But she might, once I suggest it."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'm getting up.",
+      "cue": "wake_up"
+    },
+    {
+      "speaker": "tomas",
+      "text": "Breakfast won't wait forever!"
+    }
+  ],
+  "breakfast": [
+    {
+      "speaker": "tomas",
+      "text": "There he is. I was beginning to think we'd have to send a search party."
+    },
+    {
+      "speaker": "caelan",
+      "text": "You'd have eaten my breakfast before they found me."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I considered it. But Mother Serene has eyes everywhere."
+    },
+    {
+      "speaker": "serene",
+      "text": "Only where they're needed.",
+      "cue": "push_plate"
+    },
+    {
+      "speaker": "serene",
+      "text": "Sit and eat. There'll be plenty to do before the festival."
+    },
+    {
+      "speaker": "caelan",
+      "text": "You said that yesterday."
+    },
+    {
+      "speaker": "serene",
+      "text": "And it was true yesterday."
+    }
+  ],
+  "inspections": {
+    "books": {
+      "label": "bookshelf",
+      "text": "Two chapters left. I keep telling myself I'll finish them before festival week."
+    },
+    "notes": {
+      "label": "desk notes",
+      "text": "Copies of the old local inscriptions. Serene says they're easier to read once I stop adding my own guesses."
+    },
+    "drawing": {
+      "label": "family drawing",
+      "text": "Tomas insisted that's me. I'm still not sure why he gave me such enormous ears."
+    },
+    "window": {
+      "label": "window",
+      "text": "Eldenmere's already awake. It smells like somebody started baking before sunrise."
+    },
+    "wardrobe": {
+      "label": "wardrobe",
+      "text": "Clean robes. Mostly clean, anyway."
+    },
+    "bed": {
+      "label": "bed",
+      "text": "Tempting. Serene would notice."
+    }
+  },
+  "acceptance": [
+    {
+      "speaker": "caelan",
+      "text": "I'll see to them."
+    },
+    {
+      "speaker": "serene",
+      "text": "Thank you. Take Tomas to Halden first—he's been asking to help."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I have been asking to do something interesting."
+    },
+    {
+      "speaker": "serene",
+      "text": "Then start by helping someone who needs you."
+    },
+    {
+      "speaker": "serene",
+      "text": "And Caelan? Eat something before you go."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I did."
+    },
+    {
+      "speaker": "serene",
+      "text": "Half a slice of bread is not a meal."
+    }
+  ]
+}
