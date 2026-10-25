@@ -14,7 +14,7 @@
 Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
 requested NPC family; their surname, home and quest association are unassigned.
-Their front-facing idle sprite designs are also approved.
+Their front, left, right and back idle sprite designs are also approved.
 
 **Daisy** is Liam's family's female dog. She has gray fur with white and black
 spots, floppy gray ears and a fluffy tail, and is slightly smaller than Liam.

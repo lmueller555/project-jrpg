@@ -1,7 +1,7 @@
 # Liam's family — left, right and back idle review
 
-Nine new 24×36 idles on `liam-family-directional-idles`, awaiting user review.
-The existing approved fronts are included in the turnarounds for comparison.
+All nine left, right and back 24×36 idle designs are approved by the user and
+merged into `main`. Their approved fronts are included for comparison.
 
 ![Family turnaround](family_turnaround.png)
 
@@ -40,7 +40,7 @@ The builder checks frame/height/baseline registration, palette membership,
 hard alpha, eye counts, closed chins, layer reconstruction and preservation of
 the approved fronts and palettes. Native individual sheets are 96×36; the
 family sheet is 96×108, with mother/Liam/father rows and front/left/right/back
-columns. New metadata remains `review`; front metadata remains `approved`.
+columns. All directional metadata is marked `approved`.
 
 This is idle artwork only. Walking cycles, routines, dialogue and world placement
 remain future work for this family.

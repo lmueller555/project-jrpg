@@ -33,5 +33,5 @@ windows, eye landmarks and layer ranges for the new views.
 Run `python tools/build_liam_family_turnarounds.py`. It reads the approved
 palettes and front files without rewriting them. Each new view has four layers
 under `CHARACTER/idle_DIRECTION_layers/`. Liam stays 26 visible pixels tall,
-and both parents 34, inside 24×36 frames with baseline row 34. New directions
-are awaiting review separately from the approved front designs.
+and both parents 34, inside 24×36 frames with baseline row 34. All left, right
+and back designs are approved, alongside the existing approved fronts.

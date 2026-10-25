@@ -1,4 +1,4 @@
-# Liam's father — approved front idle
+# Liam's father — approved directional idles
 
 Liam's father is in his **mid-30s**; his name is unassigned. The approved design
 uses dark brown hair, a short beard, two hazel eyes, a clay-red tunic over ivory
@@ -12,7 +12,7 @@ Build using `python tools/build_liam_family_idles.py`. See the family pack at
 `../liam_family/README.md`. The front idle is approved; no world placement, walks
 or dialogue have been added.
 
-## Left, right and back — review
+## Left, right and back — approved
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` retain the approved dark
 hair, short beard, clay-red tunic, ivory undersleeves, dark trousers and boots.

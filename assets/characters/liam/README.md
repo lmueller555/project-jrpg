@@ -1,4 +1,4 @@
-# Liam — approved front idle
+# Liam — approved directional idles
 
 Liam is **8 years old**. The approved design uses tousled chestnut hair, two
 green eyes, an ochre tunic with green collar, brown breeches and small boots.
@@ -12,7 +12,7 @@ Build using `python tools/build_liam_family_idles.py`. His parents and the
 enlarged comparison are linked in `../liam_family/README.md`. The front idle is
 approved; no world placement, walks or dialogue have been added.
 
-## Left, right and back — review
+## Left, right and back — approved
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` retain Liam's 26 visible
 pixels and 24×36 frame, green collar, ochre tunic, breeches and boots. Profiles

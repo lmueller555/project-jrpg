@@ -165,11 +165,13 @@ def build():
         sheet.save(output/'idle_all.png')
         write(output/'idle_all.json',{'character':identity,'image':'idle_all.png','frame_size':[24,36],
               'foot_anchor':[12,34],'visible_height_px':spec['height'],'frames':records})
+        approved=all(record['status']=='approved' for record in records)
+        note='All four directions approved' if approved else 'Approved front with new left, right and back'
         board(REVIEW/f'{identity}_turnaround.png',[
               (f"{d.title()} / {records[i]['status']}",sprites[d]) for i,d in enumerate(DIRECTIONS)],12,
-              f"{spec['label']} / directional idle sprites",'Approved front with new left, right and back | 24x36 frames | shared 12x scale')
+              f"{spec['label']} / directional idle sprites",f'{note} | 24x36 frames | shared 12x scale')
         board(REVIEW/f'{identity}_new_views.png',[(d.title(),sprites[d]) for d in ('left','right','back')],20,
-              f"{spec['label']} / left, right and back",'New directional designs for review | 20x native pixels')
+              f"{spec['label']} / left, right and back",f'{"Approved directional idles" if approved else "New directional designs for review"} | 20x native pixels')
         family_sprites[identity]=sprites;family_records.append({'character':identity,'label':spec['label'],
             'sprite_root':f'assets/characters/{identity}','visible_height_px':spec['height'],'frames':records})
     write(SOURCE/'turnaround_export.json',{'source':'turnaround_concepts.png','characters':recipes})
@@ -184,7 +186,8 @@ def build():
         'row_order':list(SPECS),'column_order':list(DIRECTIONS),'members':family_records})
     image=Image.new('RGB',(1024,1140),BACKGROUND);draw=ImageDraw.Draw(image);draw.fontmode='1'
     draw.text((24,16),'Liam and his parents / idle turnarounds',font=font(28),fill='#26343e')
-    draw.text((24,55),'Shared 8x scale | front approved; new directions for review',font=font(19),fill='#52616c')
+    note='all directions approved' if status=='approved' else 'front approved; new directions for review'
+    draw.text((24,55),f'Shared 8x scale | {note}',font=font(19),fill='#52616c')
     for column,direction in enumerate(DIRECTIONS):
         draw.text((144+column*216,92),direction.title(),font=font(20),fill='#26343e')
     for row,(identity,spec) in enumerate(SPECS.items()):

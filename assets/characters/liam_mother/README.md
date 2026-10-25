@@ -1,4 +1,4 @@
-# Liam's mother — approved front idle
+# Liam's mother — approved directional idles
 
 Liam's mother is in her **mid-30s**; her name is unassigned. The approved design
 uses a chestnut braid, two green eyes, a blue-green dress, cream apron and brown
@@ -12,7 +12,7 @@ Build using `python tools/build_liam_family_idles.py`. See the family pack at
 `../liam_family/README.md`. The front idle is approved; no world placement, walks
 or dialogue have been added.
 
-## Left, right and back — review
+## Left, right and back — approved
 
 `idle_left.png`, `idle_right.png` and `idle_back.png` retain the approved dress,
 apron, chestnut hair, boots and 34-pixel visible height in 24×36 frames. The
