@@ -308,12 +308,12 @@
       "pack": "cottage_furniture",
       "sprite": "chair_right",
       "position": [
-        108,
+        120,
         174
       ],
       "access": [
-        96,
-        216
+        108,
+        200
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_right.png",
       "frame_size": [
@@ -321,7 +321,7 @@
         36
       ],
       "floor_rect": [
-        111,
+        123,
         192,
         18,
         16
@@ -333,12 +333,12 @@
       "pack": "cottage_furniture",
       "sprite": "chair_left",
       "position": [
-        204,
+        192,
         174
       ],
       "access": [
-        240,
-        216
+        228,
+        200
       ],
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_left.png",
       "frame_size": [
@@ -346,7 +346,7 @@
         36
       ],
       "floor_rect": [
-        207,
+        195,
         192,
         18,
         16

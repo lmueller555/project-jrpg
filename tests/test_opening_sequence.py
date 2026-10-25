@@ -52,8 +52,10 @@ class World:
         self.probe_size = (24, 12)
         self.npcs = []
         self.entities = [
-            {'id': 'chair_west', 'position': [108, 174], 'rect': pygame.Rect(108, 174, 24, 36)},
-            {'id': 'chair_east', 'position': [204, 174], 'rect': pygame.Rect(204, 174, 24, 36)}]
+            {'id': 'chair_west', 'position': [120, 174], 'rect': pygame.Rect(120, 174, 24, 36)},
+            {'id': 'chair_east', 'position': [192, 174], 'rect': pygame.Rect(192, 174, 24, 36)},
+            {'id': 'bed', 'position': [36, 108], 'rect': pygame.Rect(36, 108, 48, 72),
+             'surfaces': [pygame.Surface((48, 72), pygame.SRCALPHA)]}]
         self.data = {'id': identifier, 'spawn': [216, 294], 'destinations': {
             'bed': [60, 186], 'books': [108, 90], 'notes': [168, 156],
             'drawing': [60, 90], 'wardrobe': [228, 120]}}
@@ -130,17 +132,29 @@ class OpeningSequenceTests(unittest.TestCase):
             self.opening.update(0)
         self.fail('Script did not finish')
 
+    def finish_until(self, stage, limit=1500):
+        for _ in range(limit):
+            if self.opening.stage == stage:
+                return
+            if self.game.social.active:
+                self.game.social.advance()
+            self.opening.update(1/60)
+        self.fail(('Scene stalled', self.opening.stage, self.opening._phase,
+                   self.opening.action_name))
+
     def reach_breakfast(self):
         self.opening.start_new_game()
-        self.finish_dialogue()
+        self.finish_until('explore')
         self.game.world = self.game._scene_by_id('sanctuary_dining')
         self.game.player.position.update(self.game.world.data['spawn'])
         self.opening.on_enter_scene()
+        self.assertEqual(self.game.social.script_identifier, 'opening_greeting')
+        self.finish_dialogue()
         for _ in range(600):
             self.opening.update(1/60)
-            if self.game.social.scripted:
+            if self.game.social.script_identifier == 'opening_breakfast':
                 return
-        self.fail('Breakfast walk did not finish')
+        self.fail('Breakfast arrival/sit did not finish')
 
     def test_default_is_ambient_and_snapshot_validation_is_atomic(self):
         self.assertEqual(self.opening.stage, 'disabled')
@@ -166,7 +180,7 @@ class OpeningSequenceTests(unittest.TestCase):
         for actor in original:
             self.assertEqual(sum(scene.npcs.count(actor) for scene in self.game.scenes.values()), 1)
             self.assertTrue(actor.story_paused)
-        self.finish_dialogue()
+        self.finish_until('explore')
         self.assertEqual(self.opening.stage, 'explore')
         self.assertFalse(self.opening.locks_player)
         self.assertFalse(hasattr(self.game.player, 'story_visible'))
@@ -174,44 +188,120 @@ class OpeningSequenceTests(unittest.TestCase):
         self.assertEqual(tomas.scene_id, 'sanctuary_dining')
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
 
-    def test_breakfast_walk_then_scene_then_assignment_restores_chairs_and_feet(self):
+    def test_wake_keeps_pillow_head_fixed_and_quilt_below_the_face(self):
+        self.opening.start_new_game()
+        self.finish_dialogue()
+        saw_mask = False
+        for _ in range(120):
+            self.opening.update(1/120)
+            if self.opening.action_name != 'wake_up':
+                break
+            _, record = self.opening._frame('wake_up', self.opening._action_time)
+            position = self.game.player.story_position
+            if record['kind'] == 'pillow_head':
+                self.assertEqual(tuple(position), (60, 153))
+            if self.opening._bed_occlusion:
+                saw_mask = True
+                chin = position[1]-record['draw_anchor'][1]+record['head_bottom']
+                self.assertGreater(self.opening._bed_occlusion[1], chin)
+                self.assertLessEqual(self.opening._bed_occlusion[1]+self.opening._bed_occlusion[3], 180)
+        self.assertTrue(saw_mask)
+        self.assertEqual(self.opening.stage, 'explore')
+        self.assertEqual(tuple(self.game.player.position), (90, 186))
+        self.assertFalse(hasattr(self.game.player, 'story_position'))
+
+    def test_breakfast_invites_before_walk_and_chairs_never_move(self):
+        chairs = [list(entity['position']) for entity in self.game.scenes['sanctuary_dining'].entities]
         self.reach_breakfast()
         self.assertEqual(self.opening.stage, 'breakfast')
-        self.assertEqual(tuple(self.game.player.position), (132, 228))
-        self.assertEqual(self.game.player.story_position, [138, 200])
-        self.assertEqual(self.game.world.entities[0]['position'], [120, 174])
-        self.assertEqual(self.game.world.entities[1]['position'], [192, 174])
-        self.finish_dialogue()
-        self.assertEqual(self.opening.stage, 'breakfast')
-        self.opening.update(.9)
-        self.assertEqual(self.opening.stage, 'assignment')
-        self.assertTrue(self.opening.can_speak('mother_serene'))
-        self.assertFalse(hasattr(self.game.player, 'story_sprite'))
-        self.assertEqual(self.game.world.entities[0]['position'], [108, 174])
-        self.assertEqual(self.game.world.entities[1]['position'], [204, 174])
+        self.assertEqual(tuple(self.game.player.position), (108, 200))
+        self.assertEqual(tuple(self.game.player.story_position), (138, 200))
+        self.assertEqual([entity['position'] for entity in self.game.world.entities], chairs)
+        self.finish_until('assignment')
+        self.assertEqual([entity['position'] for entity in self.game.world.entities], chairs)
         self.assertTrue(self.game.world.can_stand(self.game.player.position))
-        self.assertTrue(all(actor.story_paused for actor in self.game.persistent_npcs))
+        self.assertEqual(tuple(self.game.player.position), (108, 200))
+        self.assertFalse(hasattr(self.game.player, 'story_sprite'))
+        self.assertTrue(self.opening.can_speak('mother_serene'))
         self.assertFalse(self.opening.can_speak('tomas'))
+        self.assertTrue(all(actor.story_paused for actor in self.game.persistent_npcs))
+        self.assertTrue(self.opening._cup_placed)
+        self.assertEqual(tuple(self.opening._cup_position), (146, 189))
         self.game.quests.accept(OPENING_QUEST)
         self.opening.update(0)
         self.assertEqual(self.opening.stage, 'acceptance')
         self.assertEqual(self.game.social.script_identifier, 'opening_acceptance')
-        for actor in self.game.persistent_npcs:
-            self.assertIs(actor.story_sprite, actor.idles['left'])
         self.finish_dialogue()
         self.assertEqual(self.opening.stage, 'done')
-        self.assertFalse(self.opening.active)
         self.assertTrue(all(not actor.story_paused for actor in self.game.persistent_npcs))
         self.assertTrue(all(not hasattr(actor, 'story_sprite') for actor in self.game.persistent_npcs))
 
-    def test_blocked_arrival_waits_instead_of_teleporting(self):
+    def test_fast_dialogue_cannot_skip_required_actions_or_sound_beats(self):
         self.opening.start_new_game()
         self.finish_dialogue()
+        self.assertEqual(self.opening.stage, 'wake')
+        self.assertTrue(self.opening.in_action)
+        self.opening.update(.2)
+        self.assertTrue(hasattr(self.game.player, 'story_sprite'))
+        self.assertEqual(self.opening.stage, 'wake')
+        self.finish_until('explore')
+        self.assertIn('bedsheet', self.opening.drain_sound_events())
+        self.game.world = self.game._scene_by_id('sanctuary_dining')
+        self.game.player.position.update(216, 294)
+        self.opening.on_enter_scene()
+        observed = set()
+        sounds = []
+        for _ in range(1500):
+            if self.opening.action_name:
+                observed.add(self.opening.action_name)
+            self.finish_dialogue()
+            self.opening.update(1/60)
+            sounds.extend(self.opening.drain_sound_events())
+            if self.opening.stage == 'assignment':
+                break
+        self.assertEqual(self.opening.stage, 'assignment')
+        self.assertTrue({'walk_to_breakfast', 'sit', 'plate', 'eat', 'cup', 'stand'} <= observed)
+        self.assertTrue({'footstep', 'chair', 'plate', 'bite', 'cup'} <= set(sounds))
+        self.assertEqual(sounds.count('plate'), 1)
+        self.assertEqual(sounds.count('cup'), 1)
+        self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
+        self.assertEqual(self.opening.drain_sound_events(), [])
+
+    def test_scene_camera_focus_is_stable_across_breakfast_dialogue_and_motion(self):
+        self.opening.start_new_game()
+        self.assertEqual(self.opening.camera_focus(), (74, 150))
+        self.finish_until('explore')
+        self.assertIsNone(self.opening.camera_focus())
+
+        self.game.world = self.game._scene_by_id('sanctuary_dining')
+        self.game.player.position.update(216, 294)
+        self.opening.on_enter_scene()
+        for _ in range(1500):
+            self.assertEqual(self.opening.camera_focus(), (210, 185))
+            self.finish_dialogue()
+            self.opening.update(1/60)
+            if self.opening.stage == 'assignment':
+                break
+        self.assertIsNone(self.opening.camera_focus())
+
+    def test_wood_steps_match_two_contacts_per_walk_cycle_and_stop_when_idle(self):
+        for _ in range(28):
+            self.opening.record_footsteps(72/50)
+        self.assertEqual(self.opening.drain_sound_events(), ['footstep', 'footstep'])
+        self.opening.record_footsteps(10)
+        self.opening.record_footsteps(0)
+        self.opening.record_footsteps(11)
+        self.assertEqual(self.opening.drain_sound_events(), [])
+
+    def test_blocked_arrival_waits_instead_of_teleporting(self):
+        self.opening.start_new_game()
+        self.finish_until('explore')
         self.game.world = self.game._scene_by_id('sanctuary_dining')
         self.game.player.position.update(self.game.world.data['spawn'])
         before = self.game.player.position.copy()
         self.opening.on_enter_scene()
         with patch('opening.find_path', return_value=None):
+            self.finish_dialogue()
             for _ in range(120):
                 self.opening.update(1/60)
         self.assertEqual(self.game.player.position, before)
@@ -225,7 +315,8 @@ class OpeningSequenceTests(unittest.TestCase):
         self.assertEqual(self.game.social.script_identifier, 'opening_wake')
         self.finish_dialogue()
         self.assertTrue(self.opening.restore({'version': 1, 'stage': 'breakfast'}))
-        self.assertTrue(self.opening.controls_player)
+        self.assertFalse(self.opening.controls_player)
+        self.assertEqual(self.game.social.script_identifier, 'opening_greeting')
         self.assertEqual(tuple(self.game.player.position), (216, 294))
         self.game.quests.accept(OPENING_QUEST)
         self.assertTrue(self.opening.restore({'version': 1, 'stage': 'wake'}))
@@ -237,13 +328,13 @@ class OpeningSequenceTests(unittest.TestCase):
     def test_inspection_is_optional_and_requires_nearby_free_bedroom_control(self):
         self.opening.start_new_game()
         self.assertFalse(self.opening.inspect_nearby())
-        self.finish_dialogue()
+        self.finish_until('explore')
         self.game.player.position.update(108, 90)
         self.assertEqual(self.opening.interaction_hint(), 'E: inspect bookshelf')
         self.assertTrue(self.opening.inspect_nearby())
         self.assertEqual(self.game.social.script_identifier, 'bedroom_inspect_books')
         self.assertEqual(self.game.social.page['speaker'], 'caelan')
-        self.finish_dialogue()
+        self.finish_until('explore')
         self.assertEqual(self.opening.stage, 'explore')
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
         self.game.player.position.update(300, 280)

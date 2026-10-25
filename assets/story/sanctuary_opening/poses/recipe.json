@@ -7,7 +7,8 @@
     "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
     "assets/characters/tomas/idle_left.png": "f6808a69db9a00afdeff443bf72381ad3df2a784d644651d36df7ffda5ad99fa",
     "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png": "0c5bbe8607c11734ddf08d48f50ab700687006646466d22b98e31b59f82344ce",
-    "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d"
+    "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d",
+    "assets/characters/tomas/idle_front.png": "e7fdc37eeb440e5fb422d37c7abc25f8295c33ddf76b32f040774f3013a18033"
   },
   "frame_size": [
     24,
@@ -149,5 +150,50 @@
       191
     ]
   },
-  "notes": "Approved design pixels and palettes retained. No original PNG is changed. The scene owns the temporary seating and table depth."
+  "cup": {
+    "file": "cup.png",
+    "frame_size": [
+      6,
+      6
+    ],
+    "table_position": [
+      146,
+      189
+    ]
+  },
+  "actions": {
+    "wake_up": "wake_up/animation.json",
+    "caelan_sit": "caelan_sit/animation.json",
+    "caelan_stand": "caelan_stand/animation.json",
+    "caelan_eat": "caelan_eat/animation.json",
+    "tomas_sit": "tomas_sit/animation.json",
+    "tomas_stand": "tomas_stand/animation.json",
+    "tomas_eat": "tomas_eat/animation.json",
+    "caelan_seated_cup": "caelan_seated_cup/animation.json"
+  },
+  "fixed_furniture": {
+    "west_chair": [
+      120,
+      174
+    ],
+    "east_chair": [
+      192,
+      174
+    ],
+    "table": [
+      144,
+      168
+    ]
+  },
+  "standing_positions": {
+    "caelan": [
+      108,
+      200
+    ],
+    "tomas": [
+      228,
+      200
+    ]
+  },
+  "notes": "Approved design pixels and palettes retained. No original PNG is changed. Furniture registration stays fixed throughout the polished scene."
 }

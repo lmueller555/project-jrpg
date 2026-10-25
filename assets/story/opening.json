@@ -3,7 +3,7 @@
   "version": 1,
   "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
   "bedroom_position": [
-    60,
+    90,
     186
   ],
   "sleep_head_origin": [
@@ -11,12 +11,12 @@
     123
   ],
   "caelan_breakfast_floor": [
-    132,
-    228
+    108,
+    200
   ],
   "tomas_breakfast_floor": [
-    216,
-    228
+    228,
+    200
   ],
   "caelan_seated_position": [
     138,
@@ -66,27 +66,6 @@
   ],
   "breakfast": [
     {
-      "speaker": "tomas",
-      "text": "There he is. I was beginning to think we'd have to send a search party."
-    },
-    {
-      "speaker": "caelan",
-      "text": "You'd have eaten my breakfast before they found me."
-    },
-    {
-      "speaker": "tomas",
-      "text": "I considered it. But Mother Serene has eyes everywhere."
-    },
-    {
-      "speaker": "serene",
-      "text": "Only where they're needed.",
-      "cue": "push_plate"
-    },
-    {
-      "speaker": "serene",
-      "text": "Sit and eat. There'll be plenty to do before the festival."
-    },
-    {
       "speaker": "caelan",
       "text": "You said that yesterday."
     },
@@ -128,7 +107,7 @@
     },
     {
       "speaker": "serene",
-      "text": "Thank you. Take Tomas to Halden first—he's been asking to help."
+      "text": "Thank you. Take Tomas to Halden first\u2014he's been asking to help."
     },
     {
       "speaker": "tomas",
@@ -149,6 +128,38 @@
     {
       "speaker": "serene",
       "text": "Half a slice of bread is not a meal."
+    }
+  ],
+  "cup_position": [
+    146,
+    189
+  ],
+  "breakfast_greeting": [
+    {
+      "speaker": "tomas",
+      "text": "There you are. I saved you some bread."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Mother Serene wouldn't let me eat it."
+    },
+    {
+      "speaker": "serene",
+      "text": "Sit and eat. There'll be plenty to do before the festival."
+    }
+  ],
+  "kindness": [
+    {
+      "speaker": "caelan",
+      "text": "Your cup's here, Mother."
+    },
+    {
+      "speaker": "serene",
+      "text": "Thank you, Caelan."
     }
   ]
 }

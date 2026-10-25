@@ -28,6 +28,7 @@ class QuestGameplayTests(unittest.TestCase):
         game = main.Game(fullscreen=False, start_on_title=title,
                          save_path=self.path if saved else None)
         game.title.music_enabled = False
+        game.audio.set_effects(0)
         pygame.event.clear()
         return game
 

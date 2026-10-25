@@ -17,8 +17,11 @@ approved story order remains in `narrative/game_01/CH01_MQ01.md`.
   checkmarks, queued ones stay distinct, and `?` replaces `!` when reporting is
   available. Reading Serene's final report page completes a ready quest.
 - Acceptance and completion banners include the quest title; objective notices
-  name the work finished. Chimes obey the title screen's music setting and
+  name the work finished. Chimes obey the independent effects setting and
   missing audio hardware does not prevent play.
+- Escape opens a modal pause menu outside the journal/map. Resume preserves
+  the exact scene/page/action; Settings shares music/effects levels with the
+  title screen. Quit is an explicit menu choice that checkpoints the journey.
 
 ## Runtime boundaries
 

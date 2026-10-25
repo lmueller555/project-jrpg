@@ -8,15 +8,18 @@ three-household quest; the practical household tasks are the next stage.
 
 1. The title fades into Caelan's bedroom. His closed-eye head is visible on the
    existing pillow, with his body beneath the quilt. Tomas speaks from outside
-   the bedroom doorway. Click, Space or E advances the approved exchange.
+   the bedroom doorway. Click, Space or E advances the approved exchange. Four
+   registered wake poses show him waking, sitting at the edge and standing;
+   quilt occlusion stays below his face. He leaves through the clear bedside.
 2. Control returns beside the bed. E inspects nearby books, notes, the family
    drawing, wardrobe or bed using the approved optional lines. The tracker points
    to breakfast; players can explore without a timer or required inspection list.
-3. Walking through the hall's northeast door starts breakfast. The production
-   player mover walks Caelan from the doorway to the table with full collision.
-   Seated poses and a four-pose short reach register Tomas's plate nudge on the
-   tabletop. Serene continues sorting provisions in the background.
-4. The breakfast conversation and brief shared meal finish, then the player can
+3. Walking through the hall's northeast door starts the greeting and invitation.
+   The production player mover then walks Caelan to his chair with full collision.
+   Four-pose sitting, eating, cup placement and standing actions provide the
+   visible meal. Tomas nudges his plate and eats more enthusiastically; Caelan
+   takes a small bite and sets out a cup for Serene. She sorts provisions nearby.
+4. The breakfast conversation and shared meal finish, then the player can
    approach Serene. Her gold availability marker and journal entry become visible
    at this point. Tomas waits nearby while she works.
 5. Refusing the request leaves it available after walking away and returning.
@@ -25,8 +28,12 @@ three-household quest; the practical household tasks are the next stage.
    exchange, then return to their ambient schedules. The household objectives
    remain incomplete until their real task controllers are implemented.
 
-Morning sounds are quiet diegetic bell, knock, bird and stream cues, independent
-of the title score and muted by its music setting. Missing audio hardware is safe.
+Morning sounds are quiet diegetic bell, knock, bird and stream cues, with cloth,
+footstep, chair, plate, bite and cup effects emitted at actual action beats.
+Music and effects levels are independent and persist separately from the journey.
+PCM is prepared before the launcher's first visible title frame. Missing audio
+hardware is safe. Pause freezes only owned audio channels and restores them
+without interrupting unrelated sound effects.
 
 ## Runtime and art
 
@@ -34,13 +41,24 @@ of the title score and muted by its music setting. Missing audio hardware is saf
 instances. `social.py` supports actorless scripted dialogue as well as ordinary
 proximity conversations. Main's story pose overrides are visual only: logical
 feet stay on valid floor, and normal rendering returns when the scene releases
-control. The temporary seated chair positions are restored after breakfast.
+control. Both chairs use permanent positions in the source room, runtime map
+and collision masks; no scene action moves furniture. Action queues and dialogue
+completion barriers prevent quick reading from omitting a required gesture.
+
+`camera_director.py` holds authored scene compositions and eases focus changes
+over approximately 0.35 seconds. A receding matte hides short-room bounds during
+the return to exploration. Bedroom inspections hold a useful existing shot.
+`pause_menu.py` stops gameplay during dialogue and actions as well as exploration;
+Escape resumes without advancing dialogue or choosing a quest response. Its
+Settings menu and the title use `audio_settings.py` and `saves/settings.json`.
 
 The script and staging coordinates live in `assets/story/opening.json`. The
 seated poses, sleep head, plate and reach frames live beneath
 `assets/story/sanctuary_opening/poses`, with source hashes and registration notes.
 `tools/build_sanctuary_opening_poses.py` rebuilds these native pixel exports from
-the existing approved character art. The original character PNGs are unchanged.
+the existing approved character art. Each short action has four native 24×36
+key poses, registered display anchors and timing. The original character PNGs
+are unchanged.
 
 ## Saved progress
 

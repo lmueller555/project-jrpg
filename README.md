@@ -22,7 +22,7 @@ to preserve the pixel art's proportions.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
 menu**. Click New Game to begin Caelan's opening morning, or use arrows and Enter.
-Settings changes fullscreen/windowed mode and music. Continue resumes a saved
+Settings changes fullscreen/windowed mode and independent music/effects levels. Continue resumes a saved
 journey when one exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 
@@ -46,7 +46,7 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
 | F11 | Toggle fullscreen |
-| Escape | Close the journal/map, or save and quit |
+| Escape | Close the journal/map, or pause/resume |
 
 The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
 
@@ -77,17 +77,28 @@ after advancing the dialogue, click **I'll help** or **Not just yet**. Clicking
 elsewhere or pressing the dialogue-advance keys cannot choose for you. Accepted
 quests show a titled banner, a short chime, a current-objective tracker and a
 scrollable **J** journal. Objective updates, a `?` ready-to-report marker, and
-completion feedback share the same quest state. Music settings also mute quest
-chimes. The journal pauses player movement and doorway entry.
+completion feedback share the same quest state. Effects settings control quest
+chimes independently of music. The journal pauses player movement and doorway entry.
 
 **The sanctuary opening is playable from New Game.** Caelan wakes to Tomas's
 knock in his bedroom. After their exchange, explore freely and use E to inspect
 nearby furnishings, then walk through the hall to breakfast in the northeast
-room. Caelan walks to the table; Tomas nudges his plate while Serene sorts supplies.
+room. The family greets him at the entrance, then he walks to his chair, sits,
+eats a small bite and sets out Serene's cup before standing. Tomas nudges his
+plate and eats while Serene sorts supplies. Furniture and collision stay fixed.
 After breakfast, approach Serene for her request and click an explicit response.
 Acceptance continues into the approved exchange about Tomas helping and Caelan
 eating enough, then leaves the quest tracked in the journal. The morning includes
-quiet bells, knocks, birds and stream sounds that obey the music setting.
+quiet bells, knocks, birds and stream ambience, plus synchronized cloth, chair,
+footstep, plate and cup sounds controlled by the effects level.
+
+The scene camera holds its composition through dialogue and action beats, then
+eases back to exploration. Four-pose actions finish even when prose is advanced
+quickly. Movement prompts appear when control returns. **Escape** opens a modal
+pause menu during exploration, dialogue or actions; Resume, Settings and Quit
+are deliberate menu choices. Pausing holds NPC, action, camera and ambience
+clocks. Music and effects can be adjusted separately with left/right, +/- or
+clicking their menu rows; levels persist in `saves/settings.json`.
 
 Continue preserves the opening checkpoint without replaying finished scenes.
 Saves from before this opening was added keep their existing location/progress;
