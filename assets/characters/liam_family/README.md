@@ -26,3 +26,11 @@ These four-frame packs are approved alongside their directional idles.
 Left, right and back walking packs are now [approved](../../../docs/reviews/liam_family_directional_walks/README.md),
 with synchronized previews for Liam, both parents and Daisy. All four
 walking directions are approved; existing front loops and all idles are unchanged.
+
+## Family home
+
+Liam, his mother, his father and Daisy live in the new wide cottage immediately
+south of the sanctuary in western Eldenmere. The 16×10 interior has a shared
+parents' bed, Liam's bed, four dining seats and clear floor space for Daisy.
+The house is distinct from the eastern Venn family cottage. Their NPC placement
+and routines remain future work. See the [home layout](../../maps/eldenmere/liam_house/README.md).

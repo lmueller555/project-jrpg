@@ -13,7 +13,9 @@
 
 Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
-requested NPC family; their surname, home and quest association are unassigned.
+requested NPC family; their surname and quest association are unassigned.
+Their home is the new wide cottage in western Eldenmere, directly south of
+the sanctuary.
 Their front, left, right and back idle sprite designs are also approved.
 
 **Daisy** is Liam's family's female dog. She has gray fur with white and black

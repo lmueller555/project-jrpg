@@ -190,9 +190,14 @@ def build():
     sheet.save(folder/'front_idles.png')
     members=[{**record,'sprite_root':f"assets/characters/{record['character']}",
               'sheet_rect':[i*24,0,24,36]} for i,record in enumerate(records)]
-    write(folder/'family.json',{'status':STATUS,'members':members,'sheet':'front_idles.png',
+    family={'status':STATUS,'members':members,'sheet':'front_idles.png',
           'column_order':list(SPECS),'frame_size':[24,36],'parents_names':'unassigned',
-          'quest_association':'unassigned'})
+          'quest_association':'unassigned'}
+    # Appearance rebuilds retain the household's assigned game-world home.
+    if (folder/'family.json').exists():
+        home=json.loads((folder/'family.json').read_text()).get('home')
+        if home:family['home']=home
+    write(folder/'family.json',family)
     board(REVIEW/'family_front_idles.png',[
         ('Mother / mid-30s',sprites['liam_mother']),('Liam / 8',sprites['liam']),
         ('Father / mid-30s',sprites['liam_father'])],16,

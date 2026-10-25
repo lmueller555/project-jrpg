@@ -219,7 +219,13 @@ def build():
         write_json(path,data)
     town_map['interior_scenes']=room_files
     write_json(TOWN,town_map)
-    print(f'Compiled {len(town_map["doors"])} exterior doors, {len(rooms)} furnished scenes and sanctuary room links.')
+    print(f'Compiled {len(town_map["doors"])} base exterior doors, {len(rooms)} furnished scenes and sanctuary room links.')
+    # Apply the household extension after base rooms/doors are rebuilt.
+    # The standalone extension also supports local edits without rewriting
+    # existing rooms or their persistent NPC assignments.
+    if (ROOT/'assets/maps/eldenmere/liam_house/house.json').is_file():
+        from build_liam_family_home import build as build_family_home
+        build_family_home()
 
 
 if __name__=='__main__':build()

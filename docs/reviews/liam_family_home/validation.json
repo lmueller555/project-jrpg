@@ -1,0 +1,62 @@
+{
+  "focused_tests": {
+    "run": 22,
+    "passed": 22
+  },
+  "full_suite": {
+    "run": 157,
+    "passed": 156,
+    "failed": [
+      "test_serene_runtime.SereneRuntime.test_full_schedule_completes_and_returns_to_its_start"
+    ]
+  },
+  "known_failure": {
+    "baseline_commit": "e86be03ac85c3ab4c216134b6a3b5a1a88cb2cc9",
+    "reason": "Pre-existing random NPC timing can block Serene near the dining-room doorway; same seeded results before and after the house addition.",
+    "identical_seeded_results": [
+      {
+        "seed": 0,
+        "cycles": 1,
+        "state": "sort_provisions",
+        "position": [
+          288.0,
+          214.0
+        ],
+        "ticks": 3081
+      },
+      {
+        "seed": 1,
+        "cycles": 1,
+        "state": "sort_provisions",
+        "position": [
+          288.0,
+          214.0
+        ],
+        "ticks": 3031
+      },
+      {
+        "seed": 2,
+        "cycles": 0,
+        "state": "move_to_hall_door",
+        "position": [
+          216.0,
+          292.80000000000115
+        ],
+        "ticks": 7199
+      },
+      {
+        "seed": 3,
+        "cycles": 1,
+        "state": "sort_provisions",
+        "position": [
+          288.0,
+          214.0
+        ],
+        "ticks": 3031
+      }
+    ]
+  },
+  "rebuild_checked_files": 149,
+  "rebuild_byte_identical": true,
+  "existing_interior_files_unchanged": 98
+}

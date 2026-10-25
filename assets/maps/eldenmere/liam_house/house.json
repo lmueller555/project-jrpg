@@ -1,0 +1,78 @@
+{
+  "id": "liam_house",
+  "name": "Liam's family cottage",
+  "status": "review",
+  "household": [
+    "liam",
+    "liam_mother",
+    "liam_father",
+    "daisy"
+  ],
+  "exterior_pack": "assets/terrain/eldenmere/cottage_shapes/wide/terracotta",
+  "position": [
+    204,
+    384
+  ],
+  "ground_rect": [
+    216,
+    456,
+    120,
+    72
+  ],
+  "path_rect_tiles": [
+    9,
+    22,
+    7,
+    2
+  ],
+  "landmark_position": [
+    288,
+    552
+  ],
+  "approach": [
+    288,
+    546
+  ],
+  "interior_source": "assets/terrain/eldenmere/cottage_layouts/wide",
+  "floor_tiles": [
+    16,
+    10
+  ],
+  "table_access": [
+    262,
+    234
+  ],
+  "extra_furniture": [
+    {
+      "id": "liam_bed",
+      "pack": "cottage_furniture",
+      "sprite": "bed",
+      "position": [
+        36,
+        204
+      ],
+      "access": [
+        88,
+        246
+      ]
+    },
+    {
+      "id": "chair_north",
+      "pack": "cottage_furniture",
+      "sprite": "chair_down",
+      "position": [
+        282,
+        204
+      ],
+      "access": [
+        320,
+        216
+      ]
+    }
+  ],
+  "daisy_rest_space": [
+    108,
+    282
+  ],
+  "placement": "Lower ground immediately south of the sanctuary, west of the main lane; no changes to terrace elevations or water routes."
+}

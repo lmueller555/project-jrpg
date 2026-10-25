@@ -6,7 +6,8 @@ existing approved cast. The native game exports are in the individual `liam`,
 `liam_mother` and `liam_father` character folders.
 
 The requested story facts are Liam's age of **8** and both parents being in
-their **mid-30s**. Parent names, surname, home and quest association are unassigned.
+their **mid-30s**. Parent names, surname and quest association are unassigned. The family lives in
+the wide cottage south of the sanctuary in western Eldenmere.
 The front-facing idle designs, including clothing, palettes, hair and visible
 heights, are approved by the user.
 

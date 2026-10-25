@@ -730,6 +730,36 @@
       ],
       "frame_duration_ms": 200,
       "phase_offset": 0
+    },
+    {
+      "id": "liam_house",
+      "position": [
+        204,
+        384
+      ],
+      "sort_y": 528,
+      "frames": [
+        "assets/maps/eldenmere/liam_house/exterior/frame_01.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_02.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_03.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_04.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_05.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_06.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_07.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_08.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_09.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_10.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_11.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_12.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_13.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_14.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_15.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_16.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_17.png",
+        "assets/maps/eldenmere/liam_house/exterior/frame_18.png"
+      ],
+      "frame_duration_ms": 200,
+      "phase_offset": 0
     }
   ],
   "foreground": [
@@ -805,6 +835,14 @@
       "position": [
         516,
         900
+      ]
+    },
+    {
+      "id": "liam_house",
+      "name": "Liam's family cottage",
+      "position": [
+        288,
+        552
       ]
     }
   ],
@@ -968,11 +1006,15 @@
     "well_square_south": [
       528,
       984
+    ],
+    "liam_house": [
+      288,
+      546
     ]
   },
   "layout_source": "assets/maps/eldenmere/well_square/layout.json",
   "original_layout_source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
-  "navigation_allowed": "assets/maps/eldenmere/well_square/allowed_routes.png",
+  "navigation_allowed": "assets/maps/eldenmere/liam_house/allowed_routes.png",
   "source_art": [
     "assets/terrain/eldenmere/workshop/workshop.json",
     "assets/terrain/eldenmere/sanctuary_charm/charm.json",
@@ -1357,6 +1399,39 @@
       ],
       "arrival_facing": "back",
       "arrival_door": "courtyard"
+    },
+    {
+      "id": "liam_house",
+      "anchor": [
+        287.5,
+        534
+      ],
+      "entry_y": 534,
+      "entry_side": "north",
+      "entry_half_width": 6.5,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/maps/eldenmere/liam_house/doors/frame_01.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_02.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_03.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_04.png",
+        "assets/maps/eldenmere/liam_house/doors/frame_05.png"
+      ],
+      "position": [
+        281,
+        495
+      ],
+      "host": "liam_house",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
+      "spawn": [
+        252,
+        294
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
     }
   ],
   "interior_scenes": {
@@ -1370,6 +1445,10 @@
     "home_b": "assets/maps/eldenmere/building_interiors/rooms/home_b/map.json",
     "home_c": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
     "mira": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
-    "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json"
-  }
+    "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
+    "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json"
+  },
+  "layout_additions": [
+    "assets/maps/eldenmere/liam_house/house.json"
+  ]
 }

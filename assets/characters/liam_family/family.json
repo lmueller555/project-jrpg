@@ -199,5 +199,11 @@
     36
   ],
   "parents_names": "unassigned",
-  "quest_association": "unassigned"
+  "quest_association": "unassigned",
+  "home": {
+    "scene": "liam_house",
+    "town": "eldenmere.playable",
+    "exterior_id": "liam_house",
+    "layout": "assets/maps/eldenmere/liam_house/house.json"
+  }
 }

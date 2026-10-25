@@ -37,7 +37,7 @@ class PlayableEldenmere(unittest.TestCase):
         self.assertEqual([r['id'] for r in self.world.data['npcs']],['mira_worker','sanctuary_gardener'])
         self.assertEqual(self.world.data['quests'],[])
         ids={r['id'] for r in self.world.entities}
-        self.assertTrue({'sanctuary','mira','mill','halden','elira','venn','home_a','home_b','home_c'}<=ids)
+        self.assertTrue({'sanctuary','mira','mill','halden','elira','venn','home_a','home_b','home_c','liam_house'}<=ids)
         self.assertEqual(len(self.world.foreground),2)
         self.assertTrue(self.world.can_stand(self.game.player.position))
         original=main.read_json(main.ROOT/'assets/maps/eldenmere/terrain_foundation/scene.json')
@@ -49,6 +49,8 @@ class PlayableEldenmere(unittest.TestCase):
         approved=pygame.image.load(str(main.ROOT/'assets/terrain/eldenmere/workshop/navigation/blocking.png')).convert()
         well=main.read_json(main.ROOT/'assets/terrain/eldenmere/well/well.json')
         pygame.draw.rect(approved,'white',well['ground_rect'])
+        home=main.read_json(main.ROOT/'assets/maps/eldenmere/liam_house/house.json')
+        pygame.draw.rect(approved,'white',home['ground_rect'])
         compiled=self.world.image(self.world.data['collision'],False)
         self.assertEqual(pygame.image.tobytes(approved,'RGB'),pygame.image.tobytes(compiled,'RGB'))
 

@@ -1,0 +1,74 @@
+{
+  "source_room": "assets/terrain/eldenmere/cottage_layouts/wide/room.json",
+  "household": [
+    "liam",
+    "liam_mother",
+    "liam_father",
+    "daisy"
+  ],
+  "floor_tiles": [
+    16,
+    10
+  ],
+  "extra_objects": [
+    {
+      "id": "liam_bed",
+      "pack": "cottage_furniture",
+      "sprite": "bed",
+      "position": [
+        36,
+        204
+      ],
+      "access": [
+        88,
+        246
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        44,
+        222,
+        32,
+        48
+      ],
+      "sort_y": 270
+    },
+    {
+      "id": "chair_north",
+      "pack": "cottage_furniture",
+      "sprite": "chair_down",
+      "position": [
+        282,
+        204
+      ],
+      "access": [
+        320,
+        216
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        285,
+        222,
+        18,
+        16
+      ],
+      "sort_y": 238
+    }
+  ],
+  "parents_bed": "bed",
+  "table_access": [
+    262,
+    234
+  ],
+  "daisy_rest_space": [
+    108,
+    282
+  ]
+}

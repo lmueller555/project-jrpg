@@ -32,3 +32,11 @@ python tools/build_playable_eldenmere.py
 ```
 
 The compiler reads approved layout/art and their assembly helpers without invoking asset exports or changing the source packs. It also calls `tools/build_building_interiors.py` to compile room/door data. There are no placeholder sanctuary/workshop buildings and no scale-review characters in the runtime map. Gameplay, door round trips and planned route connectivity are checked with `python -m unittest discover -s tests -v`.
+
+## Liam's family cottage — review pending
+
+A new wide cottage south of the sanctuary is assigned to Liam, his parents and
+Daisy. It has a connecting path, animated proximity door, map label and separate
+16×10 furnished room. See the [house source and build instructions](../liam_house/README.md)
+and [review captures](../../../../docs/reviews/liam_family_home/README.md).
+Family NPC placement and routines remain a later step.
