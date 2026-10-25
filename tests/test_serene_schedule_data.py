@@ -65,7 +65,7 @@ class SereneScheduleData(unittest.TestCase):
         return False
 
     def test_manifest_registers_one_persistent_serene(self):
-        records = self.town["persistent_npcs"]
+        records = [r for r in self.town["persistent_npcs"] if r['id']=='mother_serene']
         self.assertEqual(len(records), 1)
         record = records[0]
         self.assertEqual(record["id"], "mother_serene")

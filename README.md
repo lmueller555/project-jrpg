@@ -26,6 +26,10 @@ Settings changes fullscreen/windowed mode and title music; Continue is disabled
 until saving exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 
+Tomas now helps with preparations and tinkers in the sanctuary dining room,
+then takes a courtyard break. He uses the portrait dialogue system and safely
+sets down carried work before speaking. See his [routine previews](docs/reviews/tomas_routines/README.md).
+
 The title water animates throughout the brook, pools, mill discharge and
 foreground cascades. The soundtrack is now a new 93-second sampled piano/cello
 theme in 4/4 at 72 BPM, with strict beat alignment. The earlier flute/harp track

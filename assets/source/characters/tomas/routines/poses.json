@@ -1,0 +1,1522 @@
+{
+  "body_offset": [
+    20,
+    6
+  ],
+  "frame_size": [
+    64,
+    48
+  ],
+  "actions": {
+    "prepare": [
+      {
+        "phase": "check_stack",
+        "duration_ms": 700,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "reach_to_neaten",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "straighten_bundle",
+        "duration_ms": 350,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          16
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "press_fold",
+        "duration_ms": 350,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              19
+            ],
+            [
+              5,
+              20
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          17
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "align_with_stack",
+        "duration_ms": 350,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          16
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "release_on_table",
+        "duration_ms": 400,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "check_work",
+        "duration_ms": 600,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "reach_for_delivery",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "lift_from_table",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          14
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "bring_to_chest",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              3,
+              20
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -2,
+          17
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      }
+    ],
+    "store_bundle": [
+      {
+        "phase": "hold_at_storage",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              3,
+              20
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -2,
+          17
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "reach_over_box",
+        "duration_ms": 300,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -3,
+          9
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "lower_to_box",
+        "duration_ms": 300,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -3,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "release_to_storage",
+        "duration_ms": 350,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "hands_clear",
+        "duration_ms": 500,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      }
+    ],
+    "fetch_bundle": [
+      {
+        "phase": "check_next_bundle",
+        "duration_ms": 400,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "reach_storage",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "lift_from_box",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              5,
+              15
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -3,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "hold_for_return",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              3,
+              20
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -2,
+          17
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      }
+    ],
+    "return_bundle": [
+      {
+        "phase": "hold_at_table",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              6,
+              20
+            ],
+            [
+              3,
+              20
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -2,
+          17
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "reach_table",
+        "duration_ms": 300,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          14
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "lower_to_stack",
+        "duration_ms": 250,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          -1,
+          16
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "release_to_table",
+        "duration_ms": 350,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              5,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "hands_clear",
+        "duration_ms": 450,
+        "arms": [
+          [
+            [
+              11,
+              17
+            ],
+            [
+              12,
+              21
+            ],
+            [
+              12,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      }
+    ],
+    "tinker": [
+      {
+        "phase": "consider_the_model",
+        "duration_ms": 700,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              13,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              22
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              16
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              22
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              16
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "turn_crank",
+        "duration_ms": 150,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "wheel_catches",
+        "duration_ms": 500,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          1,
+          1
+        ]
+      },
+      {
+        "phase": "lean_in_to_adjust",
+        "duration_ms": 400,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              21,
+              17
+            ],
+            [
+              27,
+              14
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          1,
+          1
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              22
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              21
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              19
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              26,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              27,
+              16
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "try_again",
+        "duration_ms": 140,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              20,
+              18
+            ],
+            [
+              28,
+              17
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "stop_and_inspect",
+        "duration_ms": 500,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              13,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "actor",
+        "prop_anchor": [
+          16,
+          10
+        ],
+        "head_offset": [
+          0,
+          0
+        ]
+      },
+      {
+        "phase": "leave_model_on_bench",
+        "duration_ms": 650,
+        "arms": [
+          [
+            [
+              13,
+              17
+            ],
+            [
+              13,
+              21
+            ],
+            [
+              13,
+              24
+            ]
+          ]
+        ],
+        "prop_owner": "surface",
+        "prop_anchor": null,
+        "head_offset": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "approved_inputs": "assets/source/characters/tomas/walk_DIRECTION/parts",
+  "notes": "Authored three-joint sleeve poses; approved head, torso, legs, palette and walk timing retained."
+}

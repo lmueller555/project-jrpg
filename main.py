@@ -43,13 +43,17 @@ class Door:
         if self.target_open:return 'open' if self.progress>=4 else 'opening'
         return 'closed' if self.progress<=0 else 'closing'
 
-    def update(self,position,seconds):
-        if position is None:self.target_open=False
-        else:
-            delta=pygame.Vector2(position)-self.data['anchor']
+    def update(self,position,seconds,other_positions=()):
+        positions=list(other_positions)
+        if position is not None:positions.append(position)
+        radius=self.data['close_radius'] if self.target_open else self.data['open_radius']
+        self.target_open=False
+        for candidate in positions:
+            delta=pygame.Vector2(candidate)-self.data['anchor']
             front=delta.y>=-4 if self.data['entry_side']=='north' else delta.y<=4
-            radius=self.data['close_radius'] if self.target_open else self.data['open_radius']
-            self.target_open=front and delta.length_squared()<=radius*radius
+            if front and delta.length_squared()<=radius*radius:
+                self.target_open=True
+                break
         step=seconds*1000/self.data['frame_duration_ms']
         self.progress=max(0.0,min(4.0,self.progress+(step if self.target_open else -step)))
 
@@ -322,16 +326,20 @@ class Game:
 
     def _transfer_routine_npc(self,actor,step):
         """Move one persistent actor between rooms without cloning or resetting it."""
+        origin=self._routine_worlds[actor]
+        departure=next((d for d in origin.doors if d.data['id']==step.get('departure_door')),None)
+        if departure and departure.data['requires_open'] and departure.state!='open':return None
         destination=self._scene_by_id(step['scene'])
         position=step['position']
         player_blocker=destination.probe_rect(self.player.position) if destination is self.world else None
         if not destination.can_stand(position,actor.probe_size,actor,player_blocker):return None
-        origin=self._routine_worlds[actor]
         if actor in origin.npcs:origin.npcs.remove(actor)
         actor.position.update(position)
         actor.scene_id=step['scene']
         if actor not in destination.npcs:destination.npcs.append(actor)
         self._routine_worlds[actor]=destination
+        arrival=next((d for d in destination.doors if d.data['id']==step.get('arrival_door')),None)
+        if arrival:arrival.force_open()
         return destination
 
     def toggle_fullscreen(self):
@@ -382,7 +390,9 @@ class Game:
                        int(keys[pygame.K_s] or keys[pygame.K_DOWN])-int(keys[pygame.K_w] or keys[pygame.K_UP]))
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
         for scene in self.scenes.values():
-            for door in scene.doors:door.update(self.player.position if scene is self.world else None,seconds)
+            for door in scene.doors:
+                door.update(self.player.position if scene is self.world else None,seconds,
+                            (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC)))
         direction=(0,0) if self.map_open or self.social.locked or self.opening_fade else direction
         self.player.update(direction,seconds,self.world,bool(running))
         self.social.update(direction)

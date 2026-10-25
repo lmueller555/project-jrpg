@@ -89,6 +89,7 @@ class RoutineNPC:
         self.action_records={};self.surface_props=[]
         self._load_images(world)
         self._validate_steps()
+        self.wait_duration_ms=random.randint(*self.steps[0]['duration_range_ms']) if 'duration_range_ms' in self.steps[0] else 0
         self.step_index=0;self.state_ms=0.0;self.walk_ms=0.0
         self.facing=self.steps[0].get('facing','front')
         self.moving=False;self.waiting=False;self.completed_cycles=0
@@ -102,6 +103,13 @@ class RoutineNPC:
 
     def _conversation_safe(self):
         if self.step['type']=='transfer':return False
+        # Finish the short delivery before turning so a carried bundle is
+        # actually set down, rather than disappearing when the idle is shown.
+        if self.step.get('walk_set'):
+            # A player can occupy the delivery landing. Speak while holding
+            # the bundle in that case, so locking the player cannot deadlock
+            # the delivery. Clear routes still finish the normal set-down.
+            return self.waiting
         if not self.action_id:return True
         # The hearth tool has no surface handoff. Finish that short action
         # before turning; other work pauses only with its loose prop set down.
@@ -168,6 +176,18 @@ class RoutineNPC:
             self.action_metadata[name]=metadata
             self.action_records[name]=records
 
+        self.walk_sets={}
+        for name,directions in self.animation.get('walk_sets',{}).items():
+            self.walk_sets[name]={direction:[
+                (self._padded(world.image(self._asset_path(frame['file'],metadata_folder))),
+                 int(frame['duration_ms'])) for frame in frames]
+                for direction,frames in directions.items()}
+            if set(self.walk_sets[name])!=set(self.DIRECTIONS):
+                raise ValueError(f'Walk set {name!r} needs all four directions')
+            if any(not frames or any(duration<=0 for _,duration in frames)
+                   for frames in self.walk_sets[name].values()):
+                raise ValueError(f'Walk set {name!r} needs positive frame durations')
+
         # Workstation props belong to their rooms rather than Serene's body
         # sprite.  Keeping their data on the persistent actor lets every room
         # ask the same schedule which copy is currently visible.
@@ -198,11 +218,17 @@ class RoutineNPC:
             if kind not in self.STEP_TYPES:raise ValueError(f'{label} has unknown type {kind!r}')
             if kind=='move' and not step.get('waypoints'):
                 raise ValueError(f'Move step {step["id"]!r} needs waypoints')
+            if step.get('walk_set') and step['walk_set'] not in self.walk_sets:
+                raise ValueError(f'Step {step["id"]!r} names a missing walk set')
             if kind=='action' and step.get('animation') not in self.actions:
                 raise ValueError(f'Action step {step["id"]!r} names a missing animation')
             if 'duration_ms' in step and int(step['duration_ms'])<=0:
                 raise ValueError(f'Step {step["id"]!r} has a nonpositive duration_ms')
-            if kind=='wait' and int(step.get('duration_ms',0))<=0:
+            if 'duration_range_ms' in step:
+                bounds=step['duration_range_ms']
+                if kind!='wait' or len(bounds)!=2 or not 0<bounds[0]<=bounds[1]:
+                    raise ValueError(f'Step {step["id"]!r} has invalid wait range')
+            if kind=='wait' and 'duration_range_ms' not in step and int(step.get('duration_ms',0))<=0:
                 raise ValueError(f'Wait step {step["id"]!r} needs a positive duration_ms')
             if kind=='transfer' and ('scene' not in step or 'position' not in step):
                 raise ValueError(f'Transfer step {step["id"]!r} needs scene and position')
@@ -269,6 +295,8 @@ class RoutineNPC:
         action, one authored frame flag atomically moves ownership between the
         surface sprite and actor sprite, preventing duplicates and blank gaps.
         """
+        if prop['id'] in self.step.get('surface_visibility',{}):
+            if not self.step['surface_visibility'][prop['id']]:return False
         action_steps=self._surface_prop_steps(prop)
         if self.state not in action_steps or not self.action_id:return True
         return self.current_action_record.get('prop_owner','surface')!='actor'
@@ -280,6 +308,7 @@ class RoutineNPC:
 
     def _duration(self,step=None):
         step=self.step if step is None else step
+        if 'duration_range_ms' in step:return self.wait_duration_ms
         if 'duration_ms' in step:return int(step['duration_ms'])
         if step['type']=='action':return sum(duration for _,duration in self.actions[step['animation']])
         return 0
@@ -298,6 +327,8 @@ class RoutineNPC:
         self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
         self.blocked_seconds=0.0;self.retry_seconds=0.0;self.moving=False;self.waiting=False
         self.facing=self._step_facing(self.step,self.facing)
+        if 'duration_range_ms' in self.step:
+            self.wait_duration_ms=random.randint(*self.step['duration_range_ms'])
         self.events.append({'type':'step','from':old['id'],'to':self.state})
 
     def select_step(self,step_id,position=None,scene_id=None,facing=None):
@@ -313,6 +344,8 @@ class RoutineNPC:
         if position is None:position=review.get('station')
         if scene_id is None:scene_id=review.get('scene')
         self.step_index=index
+        if 'duration_range_ms' in self.step:
+            self.wait_duration_ms=random.randint(*self.step['duration_range_ms'])
         if position is not None:self.position.update(position)
         if scene_id is not None:self.scene_id=scene_id
         self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
@@ -416,12 +449,15 @@ class RoutineNPC:
         return len(frames)-1
 
     def sprite(self,elapsed_ms):
-        if self.conversation_ready:return self.idles[self.conversation_facing]
+        if self.conversation_ready:
+            if self.step.get('walk_set'):
+                return self.walk_sets[self.step['walk_set']][self.conversation_facing][0][0]
+            return self.idles[self.conversation_facing]
         if self.action_id:
             frames=self.actions[self.action_id]
             return frames[self._frame_index(frames,self.state_ms)][0]
-        if self.moving:
-            frames=self.walks[self.facing]
+        if self.moving or self.step.get('walk_set'):
+            frames=self.walk_sets[self.step['walk_set']][self.facing] if self.step.get('walk_set') else self.walks[self.facing]
             return frames[self._frame_index(frames,self.walk_ms)][0]
         return self.idles[self.facing]
 

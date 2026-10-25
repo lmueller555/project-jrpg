@@ -4,33 +4,113 @@
   "foot_gap": 6,
   "release_radius": 36,
   "speakers": {
-    "serene": {"name": "Mother Serene", "portrait": "serene"},
-    "caelan": {"name": "Caelan", "portrait": "caelan"}
+    "serene": {
+      "name": "Mother Serene",
+      "portrait": "serene"
+    },
+    "caelan": {
+      "name": "Caelan",
+      "portrait": "caelan"
+    },
+    "tomas": {
+      "name": "Tomas",
+      "portrait": "tomas"
+    }
   },
   "characters": {
     "mother_serene": {
       "conversations": [
         {
           "id": "serene_repeat",
-          "requires": ["serene_greeted"],
+          "requires": [
+            "serene_greeted"
+          ],
           "lines": [
-            {"speaker": "serene", "text": "And Caelan? Eat something before you go."},
-            {"speaker": "caelan", "text": "I did."},
-            {"speaker": "serene", "text": "Half a slice of bread is not a meal."}
+            {
+              "speaker": "serene",
+              "text": "And Caelan? Eat something before you go."
+            },
+            {
+              "speaker": "caelan",
+              "text": "I did."
+            },
+            {
+              "speaker": "serene",
+              "text": "Half a slice of bread is not a meal."
+            }
           ]
         },
         {
           "id": "serene_greeting",
-          "sets": ["serene_greeted"],
+          "sets": [
+            "serene_greeted"
+          ],
           "lines": [
-            {"speaker": "serene", "text": "Sit and eat. There'll be plenty to do before the festival."},
-            {"speaker": "caelan", "text": "You said that yesterday."},
-            {"speaker": "serene", "text": "And it was true yesterday."}
+            {
+              "speaker": "serene",
+              "text": "Sit and eat. There'll be plenty to do before the festival."
+            },
+            {
+              "speaker": "caelan",
+              "text": "You said that yesterday."
+            },
+            {
+              "speaker": "serene",
+              "text": "And it was true yesterday."
+            }
+          ]
+        }
+      ]
+    },
+    "tomas": {
+      "conversations": [
+        {
+          "id": "tomas_repeat",
+          "requires": [
+            "tomas_greeted"
+          ],
+          "lines": [
+            {
+              "speaker": "tomas",
+              "text": "One more adjustment. Then I really am getting back to the preparations."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Should I tell Mother Serene that?"
+            },
+            {
+              "speaker": "tomas",
+              "text": "Tell her the preparations are progressing. That covers both things."
+            }
+          ]
+        },
+        {
+          "id": "tomas_greeting",
+          "sets": [
+            "tomas_greeted"
+          ],
+          "lines": [
+            {
+              "speaker": "tomas",
+              "text": "Look! The wheel turns the little crank. Mostly. It catches if I rush it."
+            },
+            {
+              "speaker": "caelan",
+              "text": "And the bundles?"
+            },
+            {
+              "speaker": "tomas",
+              "text": "Already carried one over. I can help and have a good idea in the same morning."
+            },
+            {
+              "speaker": "tomas",
+              "text": "I wonder what Mira would change. She would spot it straight away."
+            }
           ]
         }
       ]
     }
   },
   "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
-  "note": "Social-system review uses approved breakfast dialogue; no quest is started. Spelling follows the approved Caelan sprite identity. Flags persist for the running session."
+  "note": "Serene breakfast dialogue and proposed ambient Tomas dialogue; no quest starts. Flags persist for the running session."
 }

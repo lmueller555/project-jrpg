@@ -1,0 +1,479 @@
+{
+  "status": "review",
+  "character": "tomas",
+  "frame_size": [
+    64,
+    48
+  ],
+  "body_offset": [
+    20,
+    6
+  ],
+  "draw_anchor": [
+    32,
+    36
+  ],
+  "sprite_root": "assets/characters/tomas",
+  "animations": {
+    "prepare": {
+      "facing": "left",
+      "duration_ms": 3750,
+      "frames": [
+        {
+          "file": "prepare/frame_01.png",
+          "phase": "check_stack",
+          "duration_ms": 700,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "prepare/frame_02.png",
+          "phase": "reach_to_neaten",
+          "duration_ms": 250,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "prepare/frame_03.png",
+          "phase": "straighten_bundle",
+          "duration_ms": 350,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "prepare/frame_04.png",
+          "phase": "press_fold",
+          "duration_ms": 350,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "prepare/frame_05.png",
+          "phase": "align_with_stack",
+          "duration_ms": 350,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "prepare/frame_06.png",
+          "phase": "release_on_table",
+          "duration_ms": 400,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "prepare/frame_07.png",
+          "phase": "check_work",
+          "duration_ms": 600,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "prepare/frame_08.png",
+          "phase": "reach_for_delivery",
+          "duration_ms": 250,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "prepare/frame_09.png",
+          "phase": "lift_from_table",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "prepare/frame_10.png",
+          "phase": "bring_to_chest",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        }
+      ]
+    },
+    "store_bundle": {
+      "facing": "left",
+      "duration_ms": 1700,
+      "frames": [
+        {
+          "file": "store_bundle/frame_01.png",
+          "phase": "hold_at_storage",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "store_bundle/frame_02.png",
+          "phase": "reach_over_box",
+          "duration_ms": 300,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "store_bundle/frame_03.png",
+          "phase": "lower_to_box",
+          "duration_ms": 300,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "store_bundle/frame_04.png",
+          "phase": "release_to_storage",
+          "duration_ms": 350,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "store_bundle/frame_05.png",
+          "phase": "hands_clear",
+          "duration_ms": 500,
+          "prop_owner": "surface"
+        }
+      ]
+    },
+    "fetch_bundle": {
+      "facing": "left",
+      "duration_ms": 1150,
+      "frames": [
+        {
+          "file": "fetch_bundle/frame_01.png",
+          "phase": "check_next_bundle",
+          "duration_ms": 400,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "fetch_bundle/frame_02.png",
+          "phase": "reach_storage",
+          "duration_ms": 250,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "fetch_bundle/frame_03.png",
+          "phase": "lift_from_box",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "fetch_bundle/frame_04.png",
+          "phase": "hold_for_return",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        }
+      ]
+    },
+    "return_bundle": {
+      "facing": "left",
+      "duration_ms": 1600,
+      "frames": [
+        {
+          "file": "return_bundle/frame_01.png",
+          "phase": "hold_at_table",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "return_bundle/frame_02.png",
+          "phase": "reach_table",
+          "duration_ms": 300,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "return_bundle/frame_03.png",
+          "phase": "lower_to_stack",
+          "duration_ms": 250,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "return_bundle/frame_04.png",
+          "phase": "release_to_table",
+          "duration_ms": 350,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "return_bundle/frame_05.png",
+          "phase": "hands_clear",
+          "duration_ms": 450,
+          "prop_owner": "surface"
+        }
+      ]
+    },
+    "tinker": {
+      "facing": "right",
+      "duration_ms": 6270,
+      "frames": [
+        {
+          "file": "tinker/frame_01.png",
+          "phase": "consider_the_model",
+          "duration_ms": 700,
+          "prop_owner": "surface"
+        },
+        {
+          "file": "tinker/frame_02.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_03.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_04.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_05.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_06.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_07.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_08.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_09.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_10.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_11.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_12.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_13.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_14.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_15.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_16.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_17.png",
+          "phase": "turn_crank",
+          "duration_ms": 150,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_18.png",
+          "phase": "wheel_catches",
+          "duration_ms": 500,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_19.png",
+          "phase": "lean_in_to_adjust",
+          "duration_ms": 400,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_20.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_21.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_22.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_23.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_24.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_25.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_26.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_27.png",
+          "phase": "try_again",
+          "duration_ms": 140,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_28.png",
+          "phase": "stop_and_inspect",
+          "duration_ms": 500,
+          "prop_owner": "actor"
+        },
+        {
+          "file": "tinker/frame_29.png",
+          "phase": "leave_model_on_bench",
+          "duration_ms": 650,
+          "prop_owner": "surface"
+        }
+      ]
+    },
+    "courtyard_look": {
+      "facing": "front",
+      "duration_ms": 4100,
+      "frames": [
+        {
+          "file": "courtyard_look/frame_01.png",
+          "duration_ms": 700,
+          "phase": "take_in_the_courtyard",
+          "prop_owner": "surface"
+        },
+        {
+          "file": "courtyard_look/frame_02.png",
+          "duration_ms": 1100,
+          "phase": "look_toward_the_workshop",
+          "prop_owner": "surface"
+        },
+        {
+          "file": "courtyard_look/frame_03.png",
+          "duration_ms": 700,
+          "phase": "pause",
+          "prop_owner": "surface"
+        },
+        {
+          "file": "courtyard_look/frame_04.png",
+          "duration_ms": 900,
+          "phase": "watch_the_village_path",
+          "prop_owner": "surface"
+        },
+        {
+          "file": "courtyard_look/frame_05.png",
+          "duration_ms": 700,
+          "phase": "settle",
+          "prop_owner": "surface"
+        }
+      ]
+    }
+  },
+  "walk_sets": {
+    "bundle": {
+      "front": [
+        {
+          "file": "carry_front/frame_01.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_front/frame_02.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_front/frame_03.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_front/frame_04.png",
+          "duration_ms": 140
+        }
+      ],
+      "left": [
+        {
+          "file": "carry_left/frame_01.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_left/frame_02.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_left/frame_03.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_left/frame_04.png",
+          "duration_ms": 140
+        }
+      ],
+      "right": [
+        {
+          "file": "carry_right/frame_01.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_right/frame_02.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_right/frame_03.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_right/frame_04.png",
+          "duration_ms": 140
+        }
+      ],
+      "back": [
+        {
+          "file": "carry_back/frame_01.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_back/frame_02.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_back/frame_03.png",
+          "duration_ms": 140
+        },
+        {
+          "file": "carry_back/frame_04.png",
+          "duration_ms": 140
+        }
+      ]
+    }
+  }
+}

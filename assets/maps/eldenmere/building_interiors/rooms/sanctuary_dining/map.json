@@ -377,9 +377,37 @@
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0
+    },
+    {
+      "id": "tomas_work_table",
+      "position": [
+        108,
+        240
+      ],
+      "sort_y": 260,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "tomas_storage_box",
+      "position": [
+        174,
+        228
+      ],
+      "sort_y": 252,
+      "sort_priority": 0,
+      "frames": [
+        "assets/characters/tomas/routines/props/storage_box.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
     }
   ],
-  "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/collision.png",
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/sanctuary_dining/collision_with_tomas.png",
   "foreground": [],
   "landmarks": [],
   "doors": [

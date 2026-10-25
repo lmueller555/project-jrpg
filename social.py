@@ -130,7 +130,8 @@ class SocialSystem:
 
     def draw(self, canvas, elapsed_ms):
         if self.pending:
-            image = self.hint_font.render('Serene is setting her work down...', False, '#f7eed5')
+            name = self.actor.data.get('name', 'Your companion')
+            image = self.hint_font.render(f'{name} is setting their work down...', False, '#f7eed5')
             rect = image.get_rect(midbottom=(240, 292)).inflate(16, 10)
             pygame.draw.rect(canvas, '#263c35', rect)
             canvas.blit(image, image.get_rect(center=rect.center))

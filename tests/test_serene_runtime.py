@@ -198,7 +198,7 @@ class SereneRuntime(unittest.TestCase):
             self.assertEqual({record['id'] for record in
                               self.serene.visible_surface_props(scene_id)},ids)
             registered={(owner.data['id'],record['id'])
-                        for owner,record in self.scene(scene_id).routine_props}
+                        for owner,record in self.scene(scene_id).routine_props if owner is self.serene}
             self.assertEqual(registered,{('mother_serene',prop_id) for prop_id in ids})
 
         self.place('enter_sanctuary_hall','sanctuary_dining',(216,294),'back')

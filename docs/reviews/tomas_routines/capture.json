@@ -1,0 +1,184 @@
+{
+  "fps": 10,
+  "frames": 737,
+  "duration_seconds": 73.7,
+  "completed_cycles": 1,
+  "phases": [
+    {
+      "time_seconds": 0.0,
+      "step": "prepare",
+      "scene": "sanctuary_dining",
+      "position": [
+        160.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 3.8,
+      "step": "carry_to_storage",
+      "scene": "sanctuary_dining",
+      "position": [
+        161.79999999999998,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 5.1,
+      "step": "store_bundle",
+      "scene": "sanctuary_dining",
+      "position": [
+        200.0,
+        256.0
+      ]
+    },
+    {
+      "time_seconds": 6.8,
+      "step": "walk_to_model",
+      "scene": "sanctuary_dining",
+      "position": [
+        200.0,
+        258.9333333333334
+      ]
+    },
+    {
+      "time_seconds": 10.9,
+      "step": "tinker",
+      "scene": "sanctuary_dining",
+      "position": [
+        104.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 17.2,
+      "step": "think_about_model",
+      "scene": "sanctuary_dining",
+      "position": [
+        104.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 19.9,
+      "step": "walk_to_hall",
+      "scene": "sanctuary_dining",
+      "position": [
+        104.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 23.6,
+      "step": "cross_hall",
+      "scene": "sanctuary_hall",
+      "position": [
+        264.0,
+        90.0
+      ]
+    },
+    {
+      "time_seconds": 29.6,
+      "step": "walk_to_courtyard_pause",
+      "scene": "eldenmere.playable",
+      "position": [
+        386.0,
+        306.0
+      ]
+    },
+    {
+      "time_seconds": 32.6,
+      "step": "courtyard_look",
+      "scene": "eldenmere.playable",
+      "position": [
+        418.0,
+        406.0
+      ]
+    },
+    {
+      "time_seconds": 36.7,
+      "step": "courtyard_break",
+      "scene": "eldenmere.playable",
+      "position": [
+        418.0,
+        406.0
+      ]
+    },
+    {
+      "time_seconds": 53.7,
+      "step": "return_to_sanctuary",
+      "scene": "eldenmere.playable",
+      "position": [
+        418.0,
+        406.0
+      ]
+    },
+    {
+      "time_seconds": 56.8,
+      "step": "return_through_hall",
+      "scene": "sanctuary_hall",
+      "position": [
+        208.0,
+        294.0
+      ]
+    },
+    {
+      "time_seconds": 62.7,
+      "step": "walk_to_storage",
+      "scene": "sanctuary_dining",
+      "position": [
+        216.0,
+        294.0
+      ]
+    },
+    {
+      "time_seconds": 64.2,
+      "step": "fetch_bundle",
+      "scene": "sanctuary_dining",
+      "position": [
+        200.0,
+        256.0
+      ]
+    },
+    {
+      "time_seconds": 65.4,
+      "step": "carry_to_table",
+      "scene": "sanctuary_dining",
+      "position": [
+        200.0,
+        257.80000000000007
+      ]
+    },
+    {
+      "time_seconds": 68.9,
+      "step": "return_bundle",
+      "scene": "sanctuary_dining",
+      "position": [
+        160.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 70.5,
+      "step": "check_preparations",
+      "scene": "sanctuary_dining",
+      "position": [
+        160.0,
+        262.0
+      ]
+    },
+    {
+      "time_seconds": 73.7,
+      "step": "prepare",
+      "scene": "sanctuary_dining",
+      "position": [
+        160.0,
+        262.0
+      ]
+    }
+  ],
+  "preview_frames": {
+    "preparations": 68,
+    "tinkering": 90,
+    "courtyard": 272
+  }
+}

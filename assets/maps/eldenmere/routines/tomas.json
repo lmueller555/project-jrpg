@@ -1,0 +1,462 @@
+{
+  "id": "tomas_sanctuary_schedule",
+  "status": "review",
+  "start_scene": "sanctuary_dining",
+  "start_position": [
+    160,
+    262
+  ],
+  "probe_size": [
+    10,
+    6
+  ],
+  "speed": 44,
+  "steps": [
+    {
+      "id": "prepare",
+      "type": "action",
+      "animation": "prepare",
+      "facing": "left",
+      "surface_visibility": {
+        "table_bundle": true,
+        "stored_bundle": false
+      }
+    },
+    {
+      "id": "carry_to_storage",
+      "type": "move",
+      "waypoints": [
+        [
+          200,
+          262
+        ],
+        [
+          200,
+          256
+        ]
+      ],
+      "walk_set": "bundle",
+      "speed": 36,
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": false
+      }
+    },
+    {
+      "id": "store_bundle",
+      "type": "action",
+      "animation": "store_bundle",
+      "facing": "left",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "walk_to_model",
+      "type": "move",
+      "waypoints": [
+        [
+          200,
+          300
+        ],
+        [
+          104,
+          300
+        ],
+        [
+          104,
+          262
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "tinker",
+      "type": "action",
+      "animation": "tinker",
+      "facing": "right",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "think_about_model",
+      "type": "wait",
+      "facing": "right",
+      "duration_range_ms": [
+        2500,
+        4500
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "walk_to_hall",
+      "type": "move",
+      "waypoints": [
+        [
+          104,
+          300
+        ],
+        [
+          216,
+          300
+        ],
+        [
+          216,
+          294
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "enter_hall",
+      "type": "transfer",
+      "scene": "sanctuary_hall",
+      "position": [
+        264,
+        90
+      ],
+      "facing": "front",
+      "departure_door": "hall",
+      "arrival_door": "dining",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "cross_hall",
+      "type": "move",
+      "waypoints": [
+        [
+          264,
+          120
+        ],
+        [
+          216,
+          120
+        ],
+        [
+          216,
+          294
+        ],
+        [
+          208,
+          294
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "enter_courtyard",
+      "type": "transfer",
+      "scene": "eldenmere.playable",
+      "position": [
+        386,
+        306
+      ],
+      "facing": "front",
+      "departure_door": "courtyard",
+      "arrival_door": "sanctuary",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "walk_to_courtyard_pause",
+      "type": "move",
+      "waypoints": [
+        [
+          386,
+          406
+        ],
+        [
+          418,
+          406
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "courtyard_look",
+      "type": "action",
+      "animation": "courtyard_look",
+      "facing": "front",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "courtyard_break",
+      "type": "wait",
+      "facing": "front",
+      "duration_range_ms": [
+        12000,
+        20000
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "return_to_sanctuary",
+      "type": "move",
+      "waypoints": [
+        [
+          386,
+          406
+        ],
+        [
+          386,
+          306
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "return_to_hall",
+      "type": "transfer",
+      "scene": "sanctuary_hall",
+      "position": [
+        208,
+        294
+      ],
+      "facing": "back",
+      "departure_door": "sanctuary",
+      "arrival_door": "courtyard",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "return_through_hall",
+      "type": "move",
+      "waypoints": [
+        [
+          216,
+          294
+        ],
+        [
+          216,
+          120
+        ],
+        [
+          264,
+          120
+        ],
+        [
+          264,
+          90
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "return_to_dining",
+      "type": "transfer",
+      "scene": "sanctuary_dining",
+      "position": [
+        216,
+        294
+      ],
+      "facing": "back",
+      "departure_door": "dining",
+      "arrival_door": "hall",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "walk_to_storage",
+      "type": "move",
+      "waypoints": [
+        [
+          216,
+          300
+        ],
+        [
+          200,
+          300
+        ],
+        [
+          200,
+          256
+        ]
+      ],
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "fetch_bundle",
+      "type": "action",
+      "animation": "fetch_bundle",
+      "facing": "left",
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": true
+      }
+    },
+    {
+      "id": "carry_to_table",
+      "type": "move",
+      "waypoints": [
+        [
+          200,
+          300
+        ],
+        [
+          160,
+          300
+        ],
+        [
+          160,
+          262
+        ]
+      ],
+      "walk_set": "bundle",
+      "speed": 36,
+      "surface_visibility": {
+        "table_bundle": false,
+        "stored_bundle": false
+      }
+    },
+    {
+      "id": "return_bundle",
+      "type": "action",
+      "animation": "return_bundle",
+      "facing": "left",
+      "surface_visibility": {
+        "table_bundle": true,
+        "stored_bundle": false
+      }
+    },
+    {
+      "id": "check_preparations",
+      "type": "wait",
+      "facing": "left",
+      "duration_range_ms": [
+        1800,
+        3200
+      ],
+      "surface_visibility": {
+        "table_bundle": true,
+        "stored_bundle": false
+      }
+    }
+  ],
+  "surface_props": [
+    {
+      "id": "table_bundle",
+      "position": [
+        147,
+        248
+      ],
+      "action_steps": [
+        "prepare",
+        "return_bundle"
+      ],
+      "image": "assets/characters/tomas/routines/props/bundle.png",
+      "scene": "sanctuary_dining",
+      "sort_y": 260,
+      "sort_priority": 1.5
+    },
+    {
+      "id": "stored_bundle",
+      "position": [
+        185,
+        236
+      ],
+      "action_steps": [
+        "store_bundle",
+        "fetch_bundle"
+      ],
+      "image": "assets/characters/tomas/routines/props/bundle.png",
+      "scene": "sanctuary_dining",
+      "sort_y": 260,
+      "sort_priority": 1.5
+    },
+    {
+      "id": "model",
+      "position": [
+        108,
+        242
+      ],
+      "action_step": "tinker",
+      "image": "assets/characters/tomas/routines/props/mechanism.png",
+      "scene": "sanctuary_dining",
+      "sort_y": 260,
+      "sort_priority": 1.5
+    },
+    {
+      "id": "spare_stack",
+      "position": [
+        131,
+        246
+      ],
+      "image": "assets/characters/tomas/routines/props/stack.png",
+      "scene": "sanctuary_dining",
+      "sort_y": 260,
+      "sort_priority": 1.5
+    }
+  ],
+  "review": {
+    "prepare": {
+      "scene": "sanctuary_dining",
+      "station": [
+        160,
+        262
+      ]
+    },
+    "store_bundle": {
+      "scene": "sanctuary_dining",
+      "station": [
+        200,
+        256
+      ]
+    },
+    "tinker": {
+      "scene": "sanctuary_dining",
+      "station": [
+        104,
+        262
+      ]
+    },
+    "courtyard_look": {
+      "scene": "eldenmere.playable",
+      "station": [
+        418,
+        406
+      ]
+    }
+  }
+}
