@@ -1,4 +1,4 @@
-# Liam's wooden-block action sprites — awaiting review
+# Liam's wooden-block action sprites — approved
 
 Each action contains four distinct transparent poses. Liam uses a 96×96 canvas,
 anchor [64,66], and approved native offset [52,36]. `kneel_left/right` and

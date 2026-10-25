@@ -1,4 +1,4 @@
-# Liam's wooden-block play routine — awaiting review
+# Liam's wooden-block play routine — approved
 
 - [Build all five blocks and put all five away](normal_cleanup.gif)
 - [Build and tidy up, forgetting one block](forgotten_block.gif)
@@ -31,4 +31,4 @@ remain unchanged.
 Reproduce with `python tools/build_liam_family_home.py`, then
 `python tools/capture_liam_blocks.py`. `captures.json` records the actual state
 sequence, selected outcomes, block states, positions and controller events.
-This branch is published for review and has not been merged into main.
+The user approved this routine on 2026-10-25 for merging into main.

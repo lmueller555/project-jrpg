@@ -74,7 +74,7 @@ The controller temporarily owns Daisy and restores her normal behavior after
 the nap; both actors retain their identity across scenes. See the
 [complete review](../../../../docs/reviews/liam_daisy_play/README.md).
 
-## Wooden-block play — awaiting review
+## Wooden-block play — approved
 
 `block_routine` references `../routines/liam_blocks.json`. An open wooden toy box
 fits against the west wall in the gap between the two beds. Its six fill states

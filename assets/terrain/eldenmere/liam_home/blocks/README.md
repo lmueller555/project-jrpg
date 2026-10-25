@@ -1,4 +1,4 @@
-# Wooden block box and five building blocks — awaiting review
+# Wooden block box and five building blocks — approved
 
 The open wooden box uses the approved cottage furniture palette. Six 32×24
 states show zero through five blocks inside; the box exterior stays fixed.
