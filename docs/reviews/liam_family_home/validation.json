@@ -58,5 +58,6 @@
   },
   "rebuild_checked_files": 149,
   "rebuild_byte_identical": true,
-  "existing_interior_files_unchanged": 98
+  "existing_interior_files_unchanged": 98,
+  "door_test_fixture": "Persistent NPCs are excluded from doorway-only checks to keep portal landings clear; routine tests cover NPC collision and yielding."
 }

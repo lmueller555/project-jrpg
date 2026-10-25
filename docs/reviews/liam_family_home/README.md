@@ -1,4 +1,4 @@
-# Liam's new family home — review pending
+# Liam's new family home — approved
 
 A new wide cottage now stands in **western Eldenmere, immediately south of the
 sanctuary**, with a front path connecting it to the main village lane.
@@ -25,8 +25,8 @@ collision include the new building and path. The eastern Venn family cottage
 retains its identity and room. Existing residents and routines are preserved.
 
 The family characters have not been spawned yet; this change establishes their
-home before their NPC placement and action routines. It is on the review branch
-and has not been merged into `main`.
+home before their NPC placement and action routines. The cottage and furnished
+interior are approved and merged into `main`.
 
 ```sh
 python tools/build_liam_family_home.py
@@ -46,3 +46,8 @@ results on unchanged `main` (`e86be03`) and this branch, including the seed-2
 failure. No scheduling code was changed. See [recorded validation](validation.json).
 The local rebuild also reproduced all 149 checked runtime/source files byte
 for byte, and all 98 prior interior files remain unchanged.
+
+Doorway-only tests isolate moving NPC schedules so an occupied sanctuary
+landing cannot make the door/room assertions intermittent. NPC collision and
+yielding remain covered by the existing routine tests. All 22 focused checks
+pass with this fixture.

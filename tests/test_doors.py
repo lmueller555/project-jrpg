@@ -24,7 +24,13 @@ class BuildingDoors(unittest.TestCase):
         self.game.transfer_cooldown=0
         self.game.elapsed_ms=0
         self.game.map_open=False
+        # Door geometry/transfer checks need empty landings. Persistent NPC
+        # schedules otherwise continue between tests and can occupy a doorway
+        # as more buildings are exercised. Routine tests cover NPC yielding.
+        self.game.persistent_npcs.clear()
+        self.game._routine_worlds.clear()
         for scene in self.game.scenes.values():
+            scene.npcs.clear()
             for door in scene.doors:door.progress=0;door.target_open=False
         pygame.event.clear()
 

@@ -1,4 +1,4 @@
-# Liam's family cottage — review pending
+# Liam's family cottage — approved
 
 The new **wide terracotta-roofed cottage** is on lower ground immediately south
 of the sanctuary, west of the village's main lane. Its ground footprint is
