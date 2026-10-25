@@ -102,7 +102,7 @@ class OpeningAudioTests(unittest.TestCase):
         self.assertNotIn(('bell', 22050, 2), audio._sounds)
 
     def test_pcm_is_stereo_int16_and_cues_have_soft_boundaries(self):
-        for name in ('bell', 'knock', 'birds', 'stream'):
+        for name in MorningAudio.LEVELS:
             pcm = MorningAudio._samples(name, 8000, 2)
             self.assertIsInstance(pcm, array)
             self.assertEqual(pcm.typecode, 'h')
@@ -113,6 +113,113 @@ class OpeningAudioTests(unittest.TestCase):
             else:
                 self.assertEqual(pcm[0], 0)
                 self.assertLess(abs(pcm[-2]), 30)
+
+    def test_effects_volume_is_independent_of_music_and_updates_live_sounds(self):
+        self.mixer()
+        game = self.game(music=False)
+        game.audio = SimpleNamespace(music_volume=0.0, effects_volume=.4)
+        audio = MorningAudio(game)
+        audio.update(.1)
+        stream = audio._sounds[('stream', 22050, 2)]
+        stream.set_volume.assert_called_with(MorningAudio.LEVELS['stream']*.4)
+        self.assertEqual(len(audio._sounds[('knock', 22050, 2)].options), 1)
+        game.audio.effects_volume = .8
+        audio.update(.1)
+        stream.set_volume.assert_called_with(MorningAudio.LEVELS['stream']*.8)
+        game.audio.effects_volume = 0
+        audio.update(.1)
+        stream.channels[0].fadeout.assert_called_once_with(250)
+
+    def test_action_events_sound_once_and_muted_events_are_not_replayed(self):
+        self.mixer()
+        game = self.game('breakfast')
+        game.audio = SimpleNamespace(effects_volume=1.0)
+        events = ['bedsheet', 'footstep', 'chair', 'plate', 'bite', 'cup', 'unknown']
+        def drain():
+            result = events[:]
+            events.clear()
+            return result
+        game.opening.drain_sound_events = drain
+        audio = MorningAudio(game)
+        audio.update(.1)
+        audio.update(.1)
+        for name in ('bedsheet', 'footstep', 'chair', 'plate', 'bite', 'cup'):
+            self.assertEqual(len(audio._sounds[(name, 22050, 2)].options), 1)
+        game.audio.effects_volume = 0
+        events.extend(('chair', 'plate'))
+        audio.update(.1)
+        self.assertEqual(events, [])
+        game.audio.effects_volume = 1
+        audio.update(.1)
+        self.assertEqual(len(audio._sounds[('plate', 22050, 2)].options), 1)
+
+    def test_prepare_caches_all_pcm_without_playing_and_later_update_reuses_it(self):
+        self.mixer()
+        game = self.game()
+        game.on_title = True
+        audio = MorningAudio(game)
+        self.assertTrue(audio.prepare())
+        self.assertEqual({key[0] for key in audio._sounds}, set(MorningAudio.LEVELS))
+        self.assertTrue(all(not sound.options for sound in audio._sounds.values()))
+        game.on_title = False
+        with patch.object(audio, '_samples', side_effect=AssertionError('PCM should be warm')):
+            audio.update(.1)
+        self.assertEqual(len(audio._sounds[('knock', 22050, 2)].options), 1)
+
+    def test_pause_freezes_clock_and_events_without_touching_reused_channels(self):
+        self.mixer()
+        game = self.game()
+        game.audio = SimpleNamespace(effects_volume=1.0)
+        events = []
+        def drain():
+            result = events[:]
+            events.clear()
+            return result
+        game.opening.drain_sound_events = drain
+        audio = MorningAudio(game)
+        audio.update(.1)
+        stream = audio._sounds[('stream', 22050, 2)]
+        bell = audio._sounds[('bell', 22050, 2)]
+        bell.channels[0].get_sound.return_value = object()
+        elapsed = audio._elapsed
+        with patch('opening_audio.pygame.mixer.pause') as global_pause, \
+             patch('opening_audio.pygame.mixer.unpause') as global_resume:
+            audio.set_paused(True)
+            events.append('plate')
+            audio.update(12)
+            self.assertEqual(audio._elapsed, elapsed)
+            self.assertEqual(events, ['plate'])
+            stream.channels[0].pause.assert_called_once_with()
+            bell.channels[0].pause.assert_not_called()
+            game.audio.effects_volume = .25
+            audio.set_paused(True)
+            stream.set_volume.assert_called_with(MorningAudio.LEVELS['stream']*.25)
+            audio.set_paused(False)
+            stream.channels[0].unpause.assert_called_once_with()
+            bell.channels[0].unpause.assert_not_called()
+            global_pause.assert_not_called();global_resume.assert_not_called()
+        audio.update(.1)
+        self.assertEqual(events, [])
+        self.assertEqual(len(audio._sounds[('plate', 22050, 2)].options), 1)
+
+    def test_last_action_sound_can_finish_after_ambient_stage_ends(self):
+        self.mixer()
+        game = self.game('breakfast')
+        events = []
+        def drain():
+            result = events[:]
+            events.clear()
+            return result
+        game.opening.drain_sound_events = drain
+        audio = MorningAudio(game)
+        audio.update(.1)
+        game.opening.stage = 'assignment'
+        events.append('cup')
+        audio.update(.1)
+        cup = audio._sounds[('cup', 22050, 2)]
+        self.assertEqual(len(cup.channels), 1)
+        audio.update(.1)
+        cup.channels[0].fadeout.assert_not_called()
 
 
 if __name__ == '__main__':unittest.main()

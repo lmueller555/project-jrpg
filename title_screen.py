@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pygame
 from title_water import TitleWater
+from audio_settings import AudioSettings
 
 ROOT=Path(__file__).resolve().parent
 SIZE=(640,360)
@@ -12,6 +13,7 @@ SIZE=(640,360)
 class TitleScreen:
     def __init__(self,game):
         self.game=game
+        if not hasattr(game,'audio'):game.audio=AudioSettings()
         self.scene=pygame.Surface(SIZE)
         self.ui=pygame.Surface(SIZE,pygame.SRCALPHA)
         self.canvas=self.scene
@@ -41,18 +43,37 @@ class TitleScreen:
         self.elapsed=0.0
         self.fade=0.0
         self.continuing=False
-        self.music_enabled=True
         self.music_started=False
         self.options=('New Game','Continue','Settings','Quit')
         self.rows=[pygame.Rect(250,247+i*21,140,21) for i in range(4)]
-        self.settings_rows=[pygame.Rect(226,265+i*25,188,23) for i in range(3)]
+        self.settings_rows=[pygame.Rect(226,264+i*20,188,20) for i in range(4)]
+
+    @property
+    def music_enabled(self):return self.game.audio.music_volume>0
+
+    @music_enabled.setter
+    def music_enabled(self, enabled):
+        if bool(enabled) != self.music_enabled:self.game.audio.toggle_music()
+
+    def _sync_music(self):
+        if not self.music_enabled:
+            if self.music_started:pygame.mixer.music.stop();self.music_started=False
+        elif not self.music_started and getattr(self.game,'on_title',True):
+            self.start_music()
+
+    def _adjust_volume(self,direction):
+        if self.selected==1:
+            self.game.audio.set_music(self.game.audio.music_volume+direction*.1)
+            self._sync_music()
+        elif self.selected==2:
+            self.game.audio.set_effects(self.game.audio.effects_volume+direction*.1)
 
     def start_music(self):
         if not self.music_enabled:return
         try:
             if not pygame.mixer.get_init():pygame.mixer.init()
             pygame.mixer.music.load(str(ROOT/'assets/ui/title/eldenmere_theme.ogg'))
-            pygame.mixer.music.set_volume(.45)
+            pygame.mixer.music.set_volume(.45*self.game.audio.music_volume)
             pygame.mixer.music.play(-1,fade_ms=900)
             self.music_started=True
         except pygame.error:
@@ -75,17 +96,24 @@ class TitleScreen:
             row=self._row_at(self.to_canvas(event.pos))
             if row is not None:self.selected=row
         if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
-            row=self._row_at(self.to_canvas(event.pos))
+            point=self.to_canvas(event.pos)
+            row=self._row_at(point)
             if row is not None:
                 self.selected=row
+                if self.settings and row in (1,2):
+                    rect=self.settings_rows[row]
+                    if point.x<rect.left+25:self._adjust_volume(-1);return True
+                    if point.x>=rect.right-25:self._adjust_volume(1);return True
                 return self.activate()
         if event.type==pygame.KEYDOWN and not getattr(event,'repeat',False):
             if event.key in (pygame.K_UP,pygame.K_w,pygame.K_DOWN,pygame.K_s):
                 step=-1 if event.key in (pygame.K_UP,pygame.K_w) else 1
-                count=3 if self.settings else 4
+                count=4
                 self.selected=(self.selected+step)%count
                 if not self.settings and self.selected==1 and not self.game.has_saved_journey:
                     self.selected=(self.selected+step)%count
+            elif event.key in (pygame.K_LEFT,pygame.K_a,pygame.K_RIGHT,pygame.K_d):
+                if self.settings:self._adjust_volume(-1 if event.key in (pygame.K_LEFT,pygame.K_a) else 1)
             elif event.key in (pygame.K_RETURN,pygame.K_KP_ENTER,pygame.K_SPACE):return self.activate()
             elif event.key==pygame.K_ESCAPE:
                 if self.settings:self.settings=False;self.selected=2
@@ -95,9 +123,9 @@ class TitleScreen:
         if self.settings:
             if self.selected==0:self.game.toggle_fullscreen()
             elif self.selected==1:
-                self.music_enabled=not self.music_enabled
-                if self.music_enabled:self.start_music()
-                elif self.music_started:pygame.mixer.music.stop();self.music_started=False
+                self.game.audio.toggle_music()
+                self._sync_music()
+            elif self.selected==2:self.game.audio.toggle_effects()
             else:self.settings=False;self.selected=2
         elif self.selected==0:
             self.continuing=False
@@ -179,7 +207,8 @@ class TitleScreen:
         pygame.draw.line(self.canvas,'#9b9a70',(242,241),(398,241))
         pygame.draw.line(self.canvas,'#9b9a70',(242,346),(398,346))
         labels=(('Display: '+('Fullscreen' if self.game.fullscreen else 'Windowed'),
-                 'Music: '+('On' if self.music_enabled else 'Off'),'Back')
+                 f'Music: {round(self.game.audio.music_volume*100)}%',
+                 f'Effects: {round(self.game.audio.effects_volume*100)}%','Back')
                 if self.settings else self.options)
         rows=self.settings_rows if self.settings else self.rows
         if self.settings:self.centered('Settings',self.menu_font,243)
@@ -188,16 +217,22 @@ class TitleScreen:
             active=i==self.selected
             if active and not disabled:
                 pygame.draw.rect(self.canvas,'#344e3e',row)
-                # Small lantern selection marker.
-                pygame.draw.rect(self.canvas,'#ceb676',(row.left+8,row.centery-3,5,7),1)
-                pygame.draw.line(self.canvas,'#ceb676',(row.left+9,row.centery-5),(row.left+11,row.centery-5))
-                self.canvas.set_at((row.left+10,row.centery),(255,218,132))
+                if not self.settings or i not in (1,2):
+                    # The volume rows use their own minus/plus hit targets.
+                    pygame.draw.rect(self.canvas,'#ceb676',(row.left+8,row.centery-3,5,7),1)
+                    pygame.draw.line(self.canvas,'#ceb676',(row.left+9,row.centery-5),(row.left+11,row.centery-5))
+                    self.canvas.set_at((row.left+10,row.centery),(255,218,132))
             color='#7f8d7d' if disabled else ('#ffe1a0' if active else '#eee2c0')
             self.centered(label,self.menu_font,row.y+1,color,False)
+            if self.settings and i in (1,2):
+                for symbol,x in (('-',row.left+9),('+',row.right-18)):
+                    self.canvas.blit(self.menu_font.render(symbol,False,'#ffe1a0'),(x,row.y+1))
         if not self.settings and self.selected==1 and not self.game.has_saved_journey:
             hint='Saved journey unavailable' if self.game.save_error else 'No saved journey yet'
             self.centered(hint,self.detail_font,350,'#d2c8a7',False)
-        else:self.centered('Click to choose  /  Arrow keys + Enter',self.detail_font,350,'#d2c8a7',False)
+        else:
+            hint='Left/right or +/-: volume   Enter: mute / choose' if self.settings else 'Click to choose  /  Arrow keys + Enter'
+            self.centered(hint,self.detail_font,350,'#d2c8a7',False)
         scale=min(width/SIZE[0],height/SIZE[1])
         size=(round(SIZE[0]*scale),round(SIZE[1]*scale))
         self.frame.blit(pygame.transform.scale(self.ui,size),

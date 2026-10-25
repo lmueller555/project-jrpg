@@ -227,7 +227,8 @@ class FullscreenLaunch(unittest.TestCase):
                 constructor.return_value.handle_events.return_value=False
                 self.assertEqual(main.main(argv),0)
                 constructor.assert_called_once_with(fullscreen=expected,
-                                                    save_path=main.ROOT/'saves/journey.json')
+                                                    save_path=main.ROOT/'saves/journey.json',
+                                                    settings_path=main.ROOT/'saves/settings.json')
                 constructor.return_value.save_progress.assert_called_once_with()
 
 

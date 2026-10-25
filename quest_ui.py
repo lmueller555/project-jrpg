@@ -92,7 +92,9 @@ class QuestUI:
             self._chime(kind)
 
     def _chime(self, kind):
-        if not getattr(getattr(self.game, 'title', None), 'music_enabled', True):
+        audio = getattr(self.game, 'audio', None)
+        volume = audio.effects_volume if audio is not None else float(getattr(getattr(self.game, 'title', None), 'music_enabled', True))
+        if volume <= 0:
             return
         try:
             if not pygame.mixer.get_init():
@@ -116,6 +118,7 @@ class QuestUI:
                 if not samples:
                     return
                 self._sounds[key] = pygame.mixer.Sound(buffer=samples)
+            self._sounds[key].set_volume(volume)
             self._sounds[key].play()
         except (pygame.error, OSError):
             # Quest text and symbols remain fully usable without audio hardware.
@@ -178,7 +181,9 @@ class QuestUI:
                 self._symbol(canvas, symbol, point, self.game.elapsed_ms)
 
     def draw_tracker(self, canvas):
-        if self._hidden() or self.game.social.locked:
+        if (self._hidden() or self.game.social.locked or
+                getattr(getattr(self.game, 'opening', None), 'locks_player', False) or
+                getattr(getattr(self.game, 'pause', None), 'is_open', False)):
             return
         opening = getattr(self.game, 'opening', None)
         text = (opening.hint_text() if opening is not None else '') or self.game.quests.tracker_text()

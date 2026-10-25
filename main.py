@@ -26,6 +26,9 @@ from quest_ui import QuestUI
 from save_game import SaveStore
 from opening import OpeningSequence
 from opening_audio import MorningAudio
+from audio_settings import AudioSettings
+from pause_menu import PauseMenu
+from camera_director import CameraDirector
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -319,7 +322,7 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None,settings_path=None):
         pygame.display.init();pygame.font.init()
         self.fullscreen=fullscreen
         self.windowed_size=tuple(window_size)
@@ -361,10 +364,13 @@ class Game:
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
+        self.audio=AudioSettings(settings_path)
         self.title=TitleScreen(self)
         self.quest_ui=QuestUI(self)
         self.opening=OpeningSequence(self)
         self.opening_audio=MorningAudio(self)
+        self.camera=CameraDirector(self)
+        self.pause=PauseMenu(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -447,6 +453,8 @@ class Game:
         if data is None:self.opening.start_new_game()
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
         self.opening_audio.reset()
+        self.pause.close()
+        self.camera.reset()
         self.save_progress()
         return True
 
@@ -530,6 +538,7 @@ class Game:
 
     def handle_events(self):
         advanced=False
+        resumed=False
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 self.save_progress()
@@ -544,8 +553,20 @@ class Game:
                 if not self.title.handle_event(event):return False
                 continue
             if event.type==pygame.MOUSEBUTTONUP and event.button==1:self._mouse_held=False
+            if resumed:continue
+            if self.pause.is_open:
+                if not self.pause.handle_event(event):
+                    self.save_progress()
+                    return False
+                resumed=not self.pause.is_open
+                continue
             if self.quest_ui.journal_open:
                 self.quest_ui.handle_event(event)
+                continue
+            if event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
+                if getattr(event,'repeat',False):continue
+                if self.map_open:self.map_open=False
+                else:self.pause.open()
                 continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
                 if not self._mouse_held and not advanced and self.social.active:
@@ -557,12 +578,7 @@ class Game:
                         self.social.advance();advanced=True
                     continue
                 if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j):continue
-                if event.key==pygame.K_ESCAPE:
-                    if self.map_open:self.map_open=False
-                    else:
-                        self.save_progress()
-                        return False
-                elif event.key==pygame.K_m:self.map_open=not self.map_open
+                if event.key==pygame.K_m:self.map_open=not self.map_open
                 elif event.key==pygame.K_j and not getattr(event,'repeat',False):
                     self.map_open=False
                     self.quest_ui.toggle_journal()
@@ -574,6 +590,10 @@ class Game:
     def update(self,seconds,direction=None,running=None):
         if self.on_title:
             self.title.update(seconds)
+            return
+        self.opening_audio.set_paused(self.pause.is_open)
+        if self.pause.is_open:
+            self.opening_audio.update(0)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
         self.elapsed_ms+=seconds*1000
@@ -591,7 +611,10 @@ class Game:
         direction=(0,0) if (self.map_open or self.quest_ui.journal_open or self.social.locked or
                            self.opening.locks_player or self.opening_fade) else direction
         if not self.opening.controls_player:
+            previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
+            if self.world.data.get('kind')=='interior' and self.opening.stage in ('explore','assignment','done'):
+                self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
@@ -618,9 +641,10 @@ class Game:
         if (self.save_store.enabled and not self._save_retry_seconds and
                 self._progress_signature()!=self._saved_progress):
             self.save_progress()
+        self.camera.update(seconds)
 
     def enter(self,door):
-        if self.social.locked or self.quest_ui.journal_open or self.opening.locks_player:return False
+        if self.pause.is_open or self.social.locked or self.quest_ui.journal_open or self.opening.locks_player:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -671,20 +695,21 @@ class Game:
         if self.on_title:
             self.title.draw()
             return
-        # Frame the participants in the unobscured space above the textbox.
-        view=(VIEW_SIZE[0],204) if self.social.locked else VIEW_SIZE
-        camera=camera_for(self.player.position,self.world.size,view)
+        camera=self.camera.position()
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
         self.opening.draw_world(self.canvas,camera)
         self.quest_ui.draw_markers(self.canvas,camera)
-        pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
-        if self.world is self.town:
-            self.text('Eldenmere',(15,13))
-            self.text(self.world.location(self.player.position),(88,14),self.small_font)
-        else:self.text(self.world.data['name'],(15,13))
-        if not self.social.locked:
+        matte=max(0,min(116,round(VIEW_SIZE[1]-self.camera.framing_height)))
+        if matte and not self.social.locked:
+            pygame.draw.rect(self.canvas,'#101b19',(0,VIEW_SIZE[1]-matte,VIEW_SIZE[0],matte))
+        if not self.pause.is_open and not self.social.locked and not self.opening.locks_player:
+            pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
+            if self.world is self.town:
+                self.text('Eldenmere',(15,13))
+                self.text(self.world.location(self.player.position),(88,14),self.small_font)
+            else:self.text(self.world.data['name'],(15,13))
             pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
-            self.text('WASD/arrows: move   Shift: run   M: map   J: journal   F11: screen   Esc: quit',(8,307),self.small_font)
+            self.text('WASD/arrows: move   Shift: run   M: map   J: journal   F11: screen   Esc: pause',(8,307),self.small_font)
         self.quest_ui.draw_tracker(self.canvas)
         if not self.social.locked and not self.map_open and not self.quest_ui.journal_open:
             hint=self.opening.interaction_hint()
@@ -702,6 +727,7 @@ class Game:
             shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA)
             shade.fill((11,24,22,round(255*self.opening_fade/.5)))
             self.canvas.blit(shade,(0,0))
+        self.pause.draw(self.canvas)
         width,height=self.window.get_size()
         scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
         size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
@@ -720,8 +746,11 @@ def main(argv=None):
     if args.frames<0:parser.error('--frames must be nonnegative')
     if args.headless:os.environ['SDL_VIDEODRIVER']='dummy'
     if not MAP_FILE.is_file():raise SystemExit('Playable town data is missing. Restore assets/maps/eldenmere/playable from the repository.')
-    game=Game(fullscreen=not (args.headless or args.windowed),save_path=ROOT/'saves/journey.json')
-    if not args.headless:game.title.start_music()
+    game=Game(fullscreen=not (args.headless or args.windowed),save_path=ROOT/'saves/journey.json',
+              settings_path=ROOT/'saves/settings.json')
+    if not args.headless:
+        game.opening_audio.prepare()
+        game.title.start_music()
     clock=pygame.time.Clock()
     limit=args.frames or (1 if args.headless else 0)
     count=0
@@ -735,6 +764,7 @@ def main(argv=None):
             pygame.image.save(game.window,str(args.screenshot))
     finally:
         game.save_progress()
+        game.opening_audio.reset()
         pygame.quit()
     return 0
 

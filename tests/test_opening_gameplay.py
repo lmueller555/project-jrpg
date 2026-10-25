@@ -27,6 +27,7 @@ class OpeningGameplayTests(unittest.TestCase):
     def game(self, title=True):
         game = main.Game(fullscreen=False, start_on_title=title, save_path=self.path)
         game.title.music_enabled = False
+        game.audio.set_effects(0)
         pygame.event.clear()
         return game
 
@@ -54,13 +55,17 @@ class OpeningGameplayTests(unittest.TestCase):
         return game
 
     def finish_script(self, game):
-        for _ in range(50):
-            if not game.social.scripted:
+        # Advance prose as fast as real input permits, while allowing required
+        # wake-up poses to finish before returning exploration control.
+        for _ in range(600):
+            if game.social.scripted:
+                self.key(game, pygame.K_SPACE)
+            elif game.opening.stage != 'wake':
                 break
-            self.key(game, pygame.K_SPACE)
             game.update(1/60, (0, 0), False)
         self.assertFalse(game.social.scripted)
         self.assertFalse(game.social.locked)
+        self.assertNotEqual(game.opening.stage, 'wake')
 
     def walk_to(self, game, target, *, new_scene=None, allow_dialogue=False):
         world = game.world
@@ -112,12 +117,18 @@ class OpeningGameplayTests(unittest.TestCase):
                 break
             game.update(1/60, (0, 0), False)
         self.assertTrue(game.social.scripted)
-        self.assertEqual(game.social.script_identifier, 'opening_breakfast')
+        # The invitation is spoken at the entrance before walking or sitting.
+        self.assertEqual(game.social.script_identifier, 'opening_greeting')
 
     def finish_breakfast(self, game):
-        self.finish_script(game)
-        game.update(.85, (0, 0), False)
+        for _ in range(2400):
+            if game.opening.stage == 'assignment':
+                break
+            if game.social.scripted:
+                self.key(game, pygame.K_SPACE)
+            game.update(1/60, (0, 0), False)
         self.assertEqual(game.opening.stage, 'assignment')
+        self.assertFalse(game.social.locked)
         self.assertTrue(game.world.can_stand(game.player.position))
 
     def approach_serene(self, game):
@@ -241,6 +252,9 @@ class OpeningGameplayTests(unittest.TestCase):
         game = self.new_game()
         self.finish_script(game)
         game.update(.6, (0, 0), False)
+        # Caelan steps onto the clear right bedside; inspect from the bed's
+        # authored access point rather than requiring a wide trigger radius.
+        self.walk_to(game, game.world.data['destinations']['bed'])
         self.assertIn('E:', game.opening.interaction_hint())
         progress = game.quests.to_dict()
         position = game.player.position.copy()
@@ -272,7 +286,7 @@ class OpeningGameplayTests(unittest.TestCase):
         self.assertEqual(breakfast.world.data['id'], 'sanctuary_dining')
         self.wait_for_breakfast_dialogue(breakfast)
         self.assertEqual(breakfast.social.page_index, 0)
-        self.assertEqual(breakfast.social.script_identifier, 'opening_breakfast')
+        self.assertEqual(breakfast.social.script_identifier, 'opening_greeting')
         self.assert_single_cast(breakfast)
         self.assertIsNone(breakfast.quest_ui.current_notice)
         self.finish_breakfast(breakfast)

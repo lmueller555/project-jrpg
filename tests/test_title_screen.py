@@ -47,10 +47,12 @@ class TitleTests(unittest.TestCase):
         initial=self.game.player.position.copy()
         self.game.update(.6,(1,0),False)
         self.assertEqual(self.game.player.position,initial)
-        for _ in range(30):
-            if not self.game.social.scripted:break
-            pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False))
-            self.assertTrue(self.game.handle_events())
+        for _ in range(300):
+            if self.game.social.scripted:
+                pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False))
+                self.assertTrue(self.game.handle_events())
+            self.game.update(1/60,(0,0),False)
+            if self.game.opening.stage=='explore':break
         self.assertFalse(self.game.social.locked)
         self.assertEqual(self.game.opening.stage,'explore')
         self.game.update(.05,(1,0),False)
@@ -108,11 +110,33 @@ class TitleTests(unittest.TestCase):
             pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER))
             self.game.handle_events()
             toggle.assert_called_once_with()
-        self.game.title.selected=2
+        self.game.title.selected=3
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER,repeat=True))
         self.game.handle_events()
         self.assertTrue(self.game.title.settings)
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_KP_ENTER))
+        self.game.handle_events()
+        self.assertFalse(self.game.title.settings)
+
+    def test_music_and_effects_levels_have_independent_keyboard_and_mouse_controls(self):
+        self.click(self.game.title.rows[2])
+        self.game.title.selected=1
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_LEFT))
+        self.game.handle_events()
+        self.assertAlmostEqual(self.game.audio.music_volume,.9)
+        self.assertEqual(self.game.audio.effects_volume,1)
+        row=self.game.title.settings_rows[2]
+        native=(row.left+10,row.centery)
+        width,height=self.game.window.get_size()
+        scale=min(width/640,height/360)
+        point=(round((width-640*scale)/2+native[0]*scale),
+               round((height-360*scale)/2+native[1]*scale))
+        pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=point))
+        self.game.handle_events()
+        self.assertAlmostEqual(self.game.audio.effects_volume,.9)
+        self.assertAlmostEqual(self.game.audio.music_volume,.9)
+        self.game.title.selected=3
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_RETURN))
         self.game.handle_events()
         self.assertFalse(self.game.title.settings)
 
