@@ -1,0 +1,33 @@
+{
+  "source_idle": "../idle_front.png",
+  "head_rect": [
+    0,
+    0,
+    24,
+    21
+  ],
+  "torso_rect": [
+    9,
+    21,
+    6,
+    4
+  ],
+  "collar_rect": [
+    9,
+    21,
+    6,
+    2
+  ],
+  "hem_rect": [
+    9,
+    25,
+    6,
+    3
+  ],
+  "notes": "Approved four-pose human run cadence, paired head/shoulder bob, bent elbows, opposite steps and two flights. Each view retains its own approved appearance.",
+  "character": "liam",
+  "direction": "front",
+  "status": "review",
+  "template": "assets/templates/child_24x36/run_front/poses.json",
+  "approved_idle_sha256": "df54b20a7f8a2e6dd1031f104ae63180760f742e3a8039b70bf1772c918046d8"
+}

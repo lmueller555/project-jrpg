@@ -1,0 +1,319 @@
+{
+  "id": "child_24x36.run.right",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "direction": "right",
+  "proportions": "Liam, age 8; 26-pixel resting height",
+  "frames": [
+    {
+      "id": "01",
+      "phase": "contact_near",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        1,
+        0
+      ],
+      "shoulder_offset": [
+        1,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "near"
+      ],
+      "legs": {
+        "near": [
+          [
+            11,
+            27
+          ],
+          [
+            14,
+            30
+          ],
+          [
+            16,
+            34
+          ]
+        ],
+        "far": [
+          [
+            10,
+            27
+          ],
+          [
+            7,
+            30
+          ],
+          [
+            6,
+            28
+          ]
+        ]
+      },
+      "arms": {
+        "near": [
+          [
+            11,
+            23
+          ],
+          [
+            8,
+            25
+          ],
+          [
+            7,
+            23
+          ]
+        ],
+        "far": [
+          [
+            12,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            16,
+            23
+          ]
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "phase": "flight_near",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        1,
+        -2
+      ],
+      "shoulder_offset": [
+        1,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "near": [
+          [
+            11,
+            25
+          ],
+          [
+            8,
+            28
+          ],
+          [
+            6,
+            31
+          ]
+        ],
+        "far": [
+          [
+            10,
+            25
+          ],
+          [
+            14,
+            26
+          ],
+          [
+            13,
+            29
+          ]
+        ]
+      },
+      "arms": {
+        "near": [
+          [
+            11,
+            21
+          ],
+          [
+            10,
+            23
+          ],
+          [
+            12,
+            22
+          ]
+        ],
+        "far": [
+          [
+            12,
+            21
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            21
+          ]
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "phase": "contact_far",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        1,
+        0
+      ],
+      "shoulder_offset": [
+        1,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "far"
+      ],
+      "legs": {
+        "near": [
+          [
+            11,
+            27
+          ],
+          [
+            7,
+            30
+          ],
+          [
+            6,
+            28
+          ]
+        ],
+        "far": [
+          [
+            10,
+            27
+          ],
+          [
+            14,
+            30
+          ],
+          [
+            16,
+            34
+          ]
+        ]
+      },
+      "arms": {
+        "near": [
+          [
+            11,
+            23
+          ],
+          [
+            14,
+            25
+          ],
+          [
+            16,
+            23
+          ]
+        ],
+        "far": [
+          [
+            12,
+            23
+          ],
+          [
+            9,
+            25
+          ],
+          [
+            7,
+            23
+          ]
+        ]
+      }
+    },
+    {
+      "id": "04",
+      "phase": "flight_far",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        1,
+        -2
+      ],
+      "shoulder_offset": [
+        1,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "near": [
+          [
+            11,
+            25
+          ],
+          [
+            14,
+            26
+          ],
+          [
+            13,
+            29
+          ]
+        ],
+        "far": [
+          [
+            10,
+            25
+          ],
+          [
+            8,
+            28
+          ],
+          [
+            6,
+            31
+          ]
+        ]
+      },
+      "arms": {
+        "near": [
+          [
+            11,
+            21
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            21
+          ]
+        ],
+        "far": [
+          [
+            12,
+            21
+          ],
+          [
+            10,
+            23
+          ],
+          [
+            9,
+            21
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "id": "child_24x36.run.front",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "direction": "front",
+  "proportions": "Liam, age 8; 26-pixel resting height",
+  "frames": [
+    {
+      "id": "01",
+      "phase": "contact_left",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "left"
+      ],
+      "legs": {
+        "left": [
+          [
+            10,
+            27
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            34
+          ]
+        ],
+        "right": [
+          [
+            14,
+            27
+          ],
+          [
+            15,
+            28
+          ],
+          [
+            15,
+            30
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            23
+          ],
+          [
+            7,
+            25
+          ],
+          [
+            8,
+            26
+          ]
+        ],
+        "right": [
+          [
+            14,
+            23
+          ],
+          [
+            16,
+            25
+          ],
+          [
+            13,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "phase": "flight_left",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "left": [
+          [
+            10,
+            25
+          ],
+          [
+            9,
+            27
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "right": [
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            26
+          ],
+          [
+            15,
+            31
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            9,
+            24
+          ]
+        ],
+        "right": [
+          [
+            14,
+            21
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            14,
+            22
+          ]
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "phase": "contact_right",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "right"
+      ],
+      "legs": {
+        "left": [
+          [
+            9,
+            27
+          ],
+          [
+            8,
+            28
+          ],
+          [
+            8,
+            30
+          ]
+        ],
+        "right": [
+          [
+            13,
+            27
+          ],
+          [
+            14,
+            30
+          ],
+          [
+            15,
+            34
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            23
+          ],
+          [
+            7,
+            25
+          ],
+          [
+            10,
+            24
+          ]
+        ],
+        "right": [
+          [
+            14,
+            23
+          ],
+          [
+            16,
+            25
+          ],
+          [
+            15,
+            26
+          ]
+        ]
+      }
+    },
+    {
+      "id": "04",
+      "phase": "flight_right",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "left": [
+          [
+            9,
+            25
+          ],
+          [
+            8,
+            26
+          ],
+          [
+            8,
+            31
+          ]
+        ],
+        "right": [
+          [
+            13,
+            25
+          ],
+          [
+            14,
+            27
+          ],
+          [
+            13,
+            30
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            9,
+            22
+          ]
+        ],
+        "right": [
+          [
+            14,
+            21
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            14,
+            24
+          ]
+        ]
+      }
+    }
+  ]
+}

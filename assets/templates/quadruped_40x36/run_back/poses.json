@@ -1,0 +1,416 @@
+{
+  "id": "quadruped_40x36.run.back",
+  "frame_size": [
+    40,
+    36
+  ],
+  "foot_anchor": [
+    20,
+    34
+  ],
+  "direction": "back",
+  "gait": "four-pose gallop",
+  "frames": [
+    {
+      "id": "01",
+      "phase": "forepaw_landing",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        0
+      ],
+      "shoulder_offset": [
+        4,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "fore_left",
+        "fore_right"
+      ],
+      "tail_tip_offset": [
+        -1,
+        -1
+      ],
+      "ear_tip_offset": [
+        0,
+        1
+      ],
+      "legs": {
+        "fore_left": [
+          [
+            15,
+            26
+          ],
+          [
+            14,
+            29
+          ],
+          [
+            14,
+            32
+          ]
+        ],
+        "fore_right": [
+          [
+            23,
+            26
+          ],
+          [
+            24,
+            29
+          ],
+          [
+            24,
+            32
+          ]
+        ],
+        "hind_left": [
+          [
+            14,
+            27
+          ],
+          [
+            15,
+            30
+          ],
+          [
+            16,
+            30
+          ]
+        ],
+        "hind_right": [
+          [
+            22,
+            27
+          ],
+          [
+            21,
+            30
+          ],
+          [
+            20,
+            30
+          ]
+        ]
+      },
+      "contact_rows": {
+        "fore_left": 32,
+        "fore_right": 32,
+        "hind_left": 34,
+        "hind_right": 34
+      },
+      "body_height_delta": 0,
+      "ear_tip_offsets": {
+        "left": [
+          0,
+          1
+        ],
+        "right": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "phase": "gather_and_hind_loading",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        1
+      ],
+      "shoulder_offset": [
+        4,
+        1
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "hind_left",
+        "hind_right"
+      ],
+      "tail_tip_offset": [
+        2,
+        -1
+      ],
+      "ear_tip_offset": [
+        0,
+        2
+      ],
+      "legs": {
+        "fore_left": [
+          [
+            15,
+            27
+          ],
+          [
+            16,
+            30
+          ],
+          [
+            17,
+            29
+          ]
+        ],
+        "fore_right": [
+          [
+            23,
+            27
+          ],
+          [
+            22,
+            30
+          ],
+          [
+            21,
+            29
+          ]
+        ],
+        "hind_left": [
+          [
+            14,
+            28
+          ],
+          [
+            13,
+            31
+          ],
+          [
+            13,
+            34
+          ]
+        ],
+        "hind_right": [
+          [
+            22,
+            28
+          ],
+          [
+            23,
+            31
+          ],
+          [
+            23,
+            34
+          ]
+        ]
+      },
+      "contact_rows": {
+        "fore_left": 32,
+        "fore_right": 32,
+        "hind_left": 34,
+        "hind_right": 34
+      },
+      "body_height_delta": -1,
+      "ear_tip_offsets": {
+        "left": [
+          0,
+          2
+        ],
+        "right": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "phase": "hind_push_off",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        0
+      ],
+      "shoulder_offset": [
+        4,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "hind_left",
+        "hind_right"
+      ],
+      "tail_tip_offset": [
+        2,
+        0
+      ],
+      "ear_tip_offset": [
+        1,
+        0
+      ],
+      "legs": {
+        "fore_left": [
+          [
+            15,
+            26
+          ],
+          [
+            14,
+            28
+          ],
+          [
+            14,
+            29
+          ]
+        ],
+        "fore_right": [
+          [
+            23,
+            26
+          ],
+          [
+            24,
+            28
+          ],
+          [
+            24,
+            29
+          ]
+        ],
+        "hind_left": [
+          [
+            14,
+            27
+          ],
+          [
+            13,
+            30
+          ],
+          [
+            13,
+            34
+          ]
+        ],
+        "hind_right": [
+          [
+            22,
+            27
+          ],
+          [
+            23,
+            30
+          ],
+          [
+            23,
+            34
+          ]
+        ]
+      },
+      "contact_rows": {
+        "fore_left": 32,
+        "fore_right": 32,
+        "hind_left": 34,
+        "hind_right": 34
+      },
+      "body_height_delta": 0,
+      "ear_tip_offsets": {
+        "left": [
+          -1,
+          0
+        ],
+        "right": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "id": "04",
+      "phase": "extended_flight",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        4,
+        -2
+      ],
+      "shoulder_offset": [
+        4,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "tail_tip_offset": [
+        0,
+        -2
+      ],
+      "ear_tip_offset": [
+        1,
+        -2
+      ],
+      "legs": {
+        "fore_left": [
+          [
+            15,
+            24
+          ],
+          [
+            14,
+            26
+          ],
+          [
+            14,
+            29
+          ]
+        ],
+        "fore_right": [
+          [
+            23,
+            24
+          ],
+          [
+            24,
+            26
+          ],
+          [
+            24,
+            29
+          ]
+        ],
+        "hind_left": [
+          [
+            14,
+            25
+          ],
+          [
+            13,
+            28
+          ],
+          [
+            13,
+            31
+          ]
+        ],
+        "hind_right": [
+          [
+            22,
+            25
+          ],
+          [
+            23,
+            28
+          ],
+          [
+            23,
+            31
+          ]
+        ]
+      },
+      "contact_rows": {
+        "fore_left": 32,
+        "fore_right": 32,
+        "hind_left": 34,
+        "hind_right": 34
+      },
+      "body_height_delta": 1,
+      "ear_tip_offsets": {
+        "left": [
+          -1,
+          -2
+        ],
+        "right": [
+          1,
+          -2
+        ]
+      }
+    }
+  ]
+}

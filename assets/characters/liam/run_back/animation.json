@@ -1,0 +1,393 @@
+{
+  "character": "liam",
+  "animation": "run.back",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 400,
+  "template": "assets/templates/child_24x36/run_back/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "frames": [
+    {
+      "id": "01",
+      "phase": "contact_left",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "left"
+      ],
+      "legs": {
+        "left": [
+          [
+            10,
+            27
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            34
+          ]
+        ],
+        "right": [
+          [
+            14,
+            27
+          ],
+          [
+            15,
+            28
+          ],
+          [
+            15,
+            30
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            23
+          ],
+          [
+            7,
+            25
+          ],
+          [
+            8,
+            26
+          ]
+        ],
+        "right": [
+          [
+            14,
+            23
+          ],
+          [
+            16,
+            25
+          ],
+          [
+            13,
+            24
+          ]
+        ]
+      },
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_right_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_left_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_far_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_tunic_hem.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_chest.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_near_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_collar.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_01_head.png"
+      ]
+    },
+    {
+      "id": "02",
+      "phase": "flight_left",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "left": [
+          [
+            10,
+            25
+          ],
+          [
+            9,
+            27
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "right": [
+          [
+            14,
+            25
+          ],
+          [
+            15,
+            26
+          ],
+          [
+            15,
+            31
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            9,
+            24
+          ]
+        ],
+        "right": [
+          [
+            14,
+            21
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            14,
+            22
+          ]
+        ]
+      },
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_right_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_left_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_far_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_tunic_hem.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_chest.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_near_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_collar.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_02_head.png"
+      ]
+    },
+    {
+      "id": "03",
+      "phase": "contact_right",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "supporting_legs": [
+        "right"
+      ],
+      "legs": {
+        "left": [
+          [
+            9,
+            27
+          ],
+          [
+            8,
+            28
+          ],
+          [
+            8,
+            30
+          ]
+        ],
+        "right": [
+          [
+            13,
+            27
+          ],
+          [
+            14,
+            30
+          ],
+          [
+            15,
+            34
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            23
+          ],
+          [
+            7,
+            25
+          ],
+          [
+            10,
+            24
+          ]
+        ],
+        "right": [
+          [
+            14,
+            23
+          ],
+          [
+            16,
+            25
+          ],
+          [
+            15,
+            26
+          ]
+        ]
+      },
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_left_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_right_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_far_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_tunic_hem.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_chest.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_near_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_collar.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_03_head.png"
+      ]
+    },
+    {
+      "id": "04",
+      "phase": "flight_right",
+      "duration_ms": 100,
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "supporting_legs": [],
+      "legs": {
+        "left": [
+          [
+            9,
+            25
+          ],
+          [
+            8,
+            26
+          ],
+          [
+            8,
+            31
+          ]
+        ],
+        "right": [
+          [
+            13,
+            25
+          ],
+          [
+            14,
+            27
+          ],
+          [
+            13,
+            30
+          ]
+        ]
+      },
+      "arms": {
+        "left": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            9,
+            22
+          ]
+        ],
+        "right": [
+          [
+            14,
+            21
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            14,
+            24
+          ]
+        ]
+      },
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_left_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_right_leg.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_far_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_tunic_hem.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_chest.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_near_arm.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_collar.png",
+        "assets/source/characters/liam_family/liam/run_back/parts/frame_04_head.png"
+      ]
+    }
+  ]
+}

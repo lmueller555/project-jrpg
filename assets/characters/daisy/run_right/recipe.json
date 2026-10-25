@@ -1,0 +1,43 @@
+{
+  "source_idle": "../idle_right.png",
+  "source_padding": [
+    4,
+    0
+  ],
+  "tail_pivot_native": [
+    8,
+    24
+  ],
+  "ear_pivots_native": {
+    "right": [
+      21,
+      16
+    ]
+  },
+  "body_rect_native": [
+    7,
+    18,
+    28,
+    28
+  ],
+  "paw_rects_native": {
+    "fore": [
+      20,
+      27,
+      25,
+      35
+    ],
+    "hind": [
+      6,
+      27,
+      11,
+      35
+    ]
+  },
+  "notes": "Approved four-pose gallop and 400ms cadence. Own directional face, coat and paw pixels; hinged ear tips and tail, stable roots, one extended flight.",
+  "character": "daisy",
+  "direction": "right",
+  "status": "review",
+  "template": "assets/templates/quadruped_40x36/run_right/poses.json",
+  "approved_idle_sha256": "a2708d9ae313defe461b182aa4ee8d19f39df9903a4bb8c51922d2a22b228e97"
+}
