@@ -1,0 +1,203 @@
+{
+  "status": "review",
+  "members": [
+    {
+      "character": "liam_mother",
+      "display_label": "Mother",
+      "family": "liam_family",
+      "role": "mother",
+      "age_range": "mid-30s",
+      "status": "review",
+      "animation": "idle.front",
+      "image": "idle_front.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "occupied_rect": [
+        5,
+        1,
+        14,
+        34
+      ],
+      "visible_height_px": 34,
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "palette": "palette.json",
+      "source": "assets/source/characters/liam_family/front_idle_concepts.png",
+      "export_recipe": "assets/source/characters/liam_family/export.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_mother/layers/head.png",
+        "assets/source/characters/liam_family/liam_mother/layers/bodice_and_arms.png",
+        "assets/source/characters/liam_family/liam_mother/layers/skirt_and_hands.png",
+        "assets/source/characters/liam_family/liam_mother/layers/boots.png"
+      ],
+      "design": "Chestnut braid, green eyes, blue-green dress, cream apron and brown boots.",
+      "sprite_root": "assets/characters/liam_mother",
+      "sheet_rect": [
+        0,
+        0,
+        24,
+        36
+      ]
+    },
+    {
+      "character": "liam",
+      "display_label": "Liam",
+      "family": "liam_family",
+      "role": "child",
+      "age_years": 8,
+      "status": "review",
+      "animation": "idle.front",
+      "image": "idle_front.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "occupied_rect": [
+        6,
+        9,
+        12,
+        26
+      ],
+      "visible_height_px": 26,
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "palette": "palette.json",
+      "source": "assets/source/characters/liam_family/front_idle_concepts.png",
+      "export_recipe": "assets/source/characters/liam_family/export.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            17
+          ],
+          [
+            13,
+            17
+          ]
+        ],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam/layers/head.png",
+        "assets/source/characters/liam_family/liam/layers/upper_body.png",
+        "assets/source/characters/liam_family/liam/layers/tunic_and_hands.png",
+        "assets/source/characters/liam_family/liam/layers/legs_and_boots.png"
+      ],
+      "design": "Tousled chestnut hair, green eyes, ochre tunic, green collar, brown breeches and small boots.",
+      "sprite_root": "assets/characters/liam",
+      "sheet_rect": [
+        24,
+        0,
+        24,
+        36
+      ]
+    },
+    {
+      "character": "liam_father",
+      "display_label": "Father",
+      "family": "liam_family",
+      "role": "father",
+      "age_range": "mid-30s",
+      "status": "review",
+      "animation": "idle.front",
+      "image": "idle_front.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "occupied_rect": [
+        4,
+        1,
+        16,
+        34
+      ],
+      "visible_height_px": 34,
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "palette": "palette.json",
+      "source": "assets/source/characters/liam_family/front_idle_concepts.png",
+      "export_recipe": "assets/source/characters/liam_family/export.json",
+      "eyes": {
+        "top_pixels": [
+          [
+            10,
+            9
+          ],
+          [
+            13,
+            9
+          ]
+        ],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_father/layers/head.png",
+        "assets/source/characters/liam_family/liam_father/layers/upper_body.png",
+        "assets/source/characters/liam_family/liam_father/layers/tunic_and_hands.png",
+        "assets/source/characters/liam_family/liam_father/layers/legs_and_boots.png"
+      ],
+      "design": "Dark brown hair and short beard, hazel eyes, clay-red tunic, ivory sleeves and dark trousers.",
+      "sprite_root": "assets/characters/liam_father",
+      "sheet_rect": [
+        48,
+        0,
+        24,
+        36
+      ]
+    }
+  ],
+  "sheet": "front_idles.png",
+  "column_order": [
+    "liam_mother",
+    "liam",
+    "liam_father"
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "parents_names": "unassigned",
+  "quest_association": "unassigned"
+}

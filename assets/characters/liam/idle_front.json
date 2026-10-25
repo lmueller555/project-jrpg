@@ -1,0 +1,55 @@
+{
+  "character": "liam",
+  "display_label": "Liam",
+  "family": "liam_family",
+  "role": "child",
+  "age_years": 8,
+  "status": "review",
+  "animation": "idle.front",
+  "image": "idle_front.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "occupied_rect": [
+    6,
+    9,
+    12,
+    26
+  ],
+  "visible_height_px": 26,
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "source": "assets/source/characters/liam_family/front_idle_concepts.png",
+  "export_recipe": "assets/source/characters/liam_family/export.json",
+  "eyes": {
+    "top_pixels": [
+      [
+        10,
+        17
+      ],
+      [
+        13,
+        17
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/liam_family/liam/layers/head.png",
+    "assets/source/characters/liam_family/liam/layers/upper_body.png",
+    "assets/source/characters/liam_family/liam/layers/tunic_and_hands.png",
+    "assets/source/characters/liam_family/liam/layers/legs_and_boots.png"
+  ],
+  "design": "Tousled chestnut hair, green eyes, ochre tunic, green collar, brown breeches and small boots."
+}
