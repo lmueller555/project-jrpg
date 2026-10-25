@@ -24,7 +24,7 @@ Build with `python tools/build_daisy_idles.py`. See
 [enlarged views and the Liam comparison](../../../docs/reviews/daisy/README.md).
 World placement, remaining walking directions and pet routines remain future work.
 
-## Front walk — review
+## Front walk — approved
 
 `walk_front/` now adds four 140 ms quadruped walking phases. One paw swings at
 a time, with three supporting paws, small ear-tip follow-through and connected

@@ -29,5 +29,5 @@ with the correct anatomical side.
 legs, head and ear-tip layers. The approved front idle supplies face, markings,
 fur and paw pixels. A four-beat quadruped template records paw joints and
 support states; a short filled root keeps the tail connected through its sway.
-Build using `python tools/build_liam_family_front_walks.py`. This walk is for
-review; no approved idle or palette is rewritten.
+Build using `python tools/build_liam_family_front_walks.py`. This front walk
+is approved; no approved idle or palette is rewritten.

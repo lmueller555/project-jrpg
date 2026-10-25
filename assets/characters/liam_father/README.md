@@ -24,7 +24,7 @@ approval status.
 Build with `python tools/build_liam_family_turnarounds.py`; see the
 [turnaround review](../../../docs/reviews/liam_family_turnaround/README.md).
 
-## Front walk — review
+## Front walk — approved
 
 `walk_front/` adds four shared-stride phases at 140 ms each. It retains the
 approved face, beard, tunic and belt, with ivory undersleeves, alternating boots

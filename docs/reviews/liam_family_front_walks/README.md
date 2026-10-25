@@ -1,7 +1,8 @@
 # Liam, his parents and Daisy — front walking review
 
-Four new front-facing walk loops on `liam-family-front-walks`, awaiting user
-review before merging. All approved idles and palettes remain unchanged.
+All four front-facing walk loops are approved by the user and merged into
+`main`. Approved idles and palettes remain unchanged. The preview images
+retain their original review labels as a record of the approved animations.
 
 ![Synchronized front walks](all_front_walks.gif)
 
@@ -67,5 +68,5 @@ and timing. Building also checks that approved idle PNGs and palettes are
 byte-for-byte unchanged. The builder preserves each walk's recorded approval
 status on later rebuilds.
 
-These are animation packs for review. No family members or pet routines have
+These animation packs are approved. No family members or pet routines have
 been placed in the playable world by this change.

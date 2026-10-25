@@ -25,7 +25,7 @@ remain unchanged. `idle_all.png`/`idle_all.json` combine all four views.
 Build with `python tools/build_liam_family_turnarounds.py`; see the
 [turnaround review](../../../docs/reviews/liam_family_turnaround/README.md).
 
-## Front walk — review
+## Front walk — approved
 
 `walk_front/` adds four shared-stride phases at 140 ms each. Head, shoulders and
 braid rise together; the apron/skirt sways subtly, with both boots visible in

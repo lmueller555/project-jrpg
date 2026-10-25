@@ -43,4 +43,4 @@ to the approved front idles. Per-frame body, arms, legs and clothing layers
 are retained under `CHARACTER/walk_front/parts/`. Runtime recipes record the
 source idle hash, template, arm registration, body regions, boot projections
 and combined head/shoulder bob. The mother's apron is posed with the dress.
-The new walks are awaiting review; approved idles and palettes are read-only.
+The front walks are approved; approved idles and palettes are read-only.
