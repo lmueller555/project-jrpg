@@ -29,6 +29,8 @@ from opening_audio import MorningAudio
 from audio_settings import AudioSettings
 from pause_menu import PauseMenu
 from camera_director import CameraDirector
+from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
+from map_ui import MapUI
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -203,7 +205,7 @@ class World:
         raw.update(state=state,frames=[path])
         return True
 
-    def draw(self,target,camera,player,elapsed_ms):
+    def draw(self,target,camera,player,elapsed_ms,include_ui=True):
         target.fill('#24302d')
         viewport=pygame.Rect(camera,VIEW_SIZE)
         phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
@@ -255,7 +257,8 @@ class World:
         # Southern bridge rails occlude actors crossing on the deck.
         for image,position in self.foreground:
             target.blit(image,(position[0]-camera[0],position[1]-camera[1]))
-        for routine in getattr(self,'play_routines',[]):routine.draw(target,camera,self)
+        if include_ui:
+            for routine in getattr(self,'play_routines',[]):routine.draw(target,camera,self)
 
     def draw_doors(self,target,camera,host):
         for door in self.doors:
@@ -330,8 +333,12 @@ class Game:
                                             pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE)
         pygame.display.set_caption('Project JRPG — Eldenmere')
         self.canvas=pygame.Surface(VIEW_SIZE)
-        self.font=pygame.font.Font(None,16)
-        self.small_font=pygame.font.Font(None,14)
+        self.audio=AudioSettings(settings_path)
+        self.ui=UIStyle(self)
+        self.ui_surface=None
+        self._ensure_ui_surface()
+        self.location_label=None
+        self.location_seconds=3.5
         self.world=World()
         self.town=self.world
         self.scenes={self.world.path:self.world}
@@ -364,9 +371,9 @@ class Game:
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
-        self.audio=AudioSettings(settings_path)
         self.title=TitleScreen(self)
         self.quest_ui=QuestUI(self)
+        self.map_ui=MapUI(self)
         self.opening=OpeningSequence(self)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
@@ -497,6 +504,15 @@ class Game:
         y=(point[1]-(height-VIEW_SIZE[1]*scale)//2)/scale
         return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
 
+    def _ensure_ui_surface(self):
+        """UI pixels follow the display; world pixels retain integer scaling."""
+        width,height=self.window.get_size()
+        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
+        size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
+        if self.ui_surface is None or self.ui_surface.get_size()!=size:
+            self.ui_surface=pygame.Surface(size)
+        return scale,size,((width-size[0])//2,(height-size[1])//2)
+
     def _load_scene(self,path):
         path=Path(path).resolve()
         if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
@@ -548,6 +564,7 @@ class Game:
             self.windowed_size=self.window.get_size()
             self.window=pygame.display.set_mode((0,0),pygame.FULLSCREEN)
         else:self.window=pygame.display.set_mode(self.windowed_size,pygame.RESIZABLE)
+        self._ensure_ui_surface()
 
     def handle_events(self):
         advanced=False
@@ -561,27 +578,55 @@ class Game:
                 continue
             if event.type==pygame.VIDEORESIZE and not self.fullscreen:
                 self.window=pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
+                self._ensure_ui_surface()
                 continue
             if self.on_title:
                 if not self.title.handle_event(event):return False
                 continue
-            if event.type==pygame.MOUSEBUTTONUP and event.button==1:self._mouse_held=False
+            if event.type==pygame.MOUSEBUTTONUP and event.button==1:
+                self._mouse_held=False
+                self.social.pointer(self.to_canvas(getattr(event,'pos',pygame.mouse.get_pos())),pressed=False)
+                self.quest_ui.handle_hud_event(event)
             if resumed:continue
             if self.pause.is_open:
+                overlay=getattr(self.pause,'overlay',None)
                 if not self.pause.handle_event(event):
                     self.save_progress()
                     return False
-                resumed=not self.pause.is_open
+                resumed=not self.pause.is_open or (overlay is not None and self.pause.overlay is None)
                 continue
             if self.quest_ui.journal_open:
                 self.quest_ui.handle_event(event)
+                resumed=not self.quest_ui.journal_open
+                self.social.clear_pointer()
+                continue
+            if self.map_open:
+                if (event.type==pygame.KEYDOWN and event.key==pygame.K_j
+                        and not getattr(event,'repeat',False)):
+                    self.map_open=False
+                    self.quest_ui.toggle_journal()
+                else:self.map_ui.handle_event(event)
+                resumed=not self.map_open
+                self.social.clear_pointer()
                 continue
             if event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
                 if getattr(event,'repeat',False):continue
-                if self.map_open:self.map_open=False
-                else:self.pause.open()
+                self.social.clear_pointer()
+                self.pause.open()
                 continue
+            if event.type==pygame.MOUSEMOTION:
+                self.social.pointer(self.to_canvas(event.pos),pressed=self._mouse_held)
+            if (not self.social.locked and not self.opening.locks_player
+                    and event.type==pygame.MOUSEBUTTONDOWN and event.button==1
+                    and self.to_canvas(event.pos) is not None and
+                    self._hud_menu_rect().collidepoint(self.to_canvas(event.pos))):
+                self.social.clear_pointer()
+                self.pause.open()
+                self.ui.sound('confirm')
+                continue
+            if not self.social.locked and self.quest_ui.handle_hud_event(event):continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
+                self.social.pointer(self.to_canvas(event.pos),pressed=True)
                 if (not self._mouse_held and not advanced and self.social.active
                         and not self.map_open):
                     self.social.click(self.to_canvas(event.pos));advanced=True
@@ -593,10 +638,15 @@ class Game:
                         self.social.advance();advanced=True
                     continue
                 if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j):continue
-                if event.key==pygame.K_m:self.map_open=not self.map_open
+                if event.key==pygame.K_m:
+                    self.map_open=True
+                    self.map_ui.reset()
+                    self.social.clear_pointer()
+                    self.ui.sound('confirm')
                 elif event.key==pygame.K_j and not getattr(event,'repeat',False):
                     self.map_open=False
                     self.quest_ui.toggle_journal()
+                    self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
                     self.opening.inspect_nearby()
@@ -612,6 +662,7 @@ class Game:
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
         self.elapsed_ms+=seconds*1000
+        self.location_seconds=max(0.0,self.location_seconds-seconds)
         self.opening.update(seconds)
         self.opening_audio.update(seconds)
         if direction is None:
@@ -659,6 +710,11 @@ class Game:
                 self._progress_signature()!=self._saved_progress):
             self.save_progress()
         self.camera.update(seconds)
+        location=(self.world.data['name'] if self.world is not self.town
+                  else self.world.location(self.player.position))
+        if location!=self.location_label:
+            self.location_label=location
+            self.location_seconds=3.5
 
     def enter(self,door):
         if self.pause.is_open or self.quest_ui.journal_open or self.opening.locks_player:return False
@@ -686,71 +742,101 @@ class Game:
         self.save_progress()
         return True
 
-    def text(self,text,position,font=None,color='#f7eed5'):
-        self.canvas.blit((font or self.font).render(text,False,color),position)
+    def text(self,text,position,font=None,color=IVORY):
+        """Compatibility helper for captures; gameplay text uses display pixels."""
+        return self.ui.painter(self.ui_surface).text(text,position,color=color)
 
     def draw_map(self):
-        shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA);shade.fill((12,24,23,210));self.canvas.blit(shade,(0,0))
-        pygame.draw.rect(self.canvas,'#263c35',(12,28,456,266))
-        pygame.draw.rect(self.canvas,'#b7a47b',(12,28,456,266),1)
-        self.text('ELDENMERE',(28,40))
-        origin=(28,66)
-        self.canvas.blit(self.map_image,origin)
-        for i,landmark in enumerate(self.town.data['landmarks'],1):
-            x=origin[0]+round(landmark['position'][0]*self.map_size[0]/self.town.size[0])
-            y=origin[1]+round(landmark['position'][1]*self.map_size[1]/self.town.size[1])
-            pygame.draw.circle(self.canvas,'#2b2924',(x,y),5)
-            self.text(str(i),(x-2,y-4),self.small_font)
-            self.text(f'{i}. {landmark["name"]}',(266,68+(i-1)*23),self.small_font)
-        position=self.player.position if self.world is self.town else self.exterior_position
-        x=origin[0]+round(position.x*self.map_size[0]/self.town.size[0])
-        y=origin[1]+round(position.y*self.map_size[1]/self.town.size[1])
-        pygame.draw.circle(self.canvas,'#15282b',(x,y),4)
-        pygame.draw.circle(self.canvas,'#ffdc71',(x,y),2)
-        self.quest_ui.draw_map_markers(self.canvas,origin,self.map_size)
-        self.text('You are here',(266,242),self.small_font,color='#ffdc71')
-        self.text('M or Esc: close map',(28,274),self.small_font)
+        self.map_ui.draw(self.ui_surface)
+
+    def _hud_menu_rect(self):
+        painter=self.ui.painter(self.ui_surface)
+        font=painter.font()
+        width=max(64,font.size('Menu')[0]+30)
+        height=max(22,font.get_height()+8)
+        self.menu_rect=pygame.Rect(VIEW_SIZE[0]-12-width,VIEW_SIZE[1]-12-height,width,height)
+        return self.menu_rect
+
+    def draw_hud(self,canvas):
+        if (self.pause.is_open or self.social.locked or self.opening.locks_player
+                or self.map_open or self.quest_ui.journal_open):return
+        painter=self.ui.painter(canvas)
+        menu=self._hud_menu_rect()
+        pointer=self.to_canvas(pygame.mouse.get_pos())
+        painter.button(menu,'Menu',selected=pointer is not None and menu.collidepoint(pointer),
+                       pressed=self._mouse_held and pointer is not None and menu.collidepoint(pointer))
+        if self.location_seconds>0:
+            fade=1.0 if self.audio.reduced_motion else min(1.0,self.location_seconds/.45)
+            layer=canvas if fade>=1 else pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
+            plaque=self.ui.painter(layer)
+            title='Eldenmere' if self.world is self.town else self.world.data['name']
+            subtitle=self.world.location(self.player.position) if self.world is self.town else ''
+            title_lines=plaque.wrap(title,180,role='name',bold=True)
+            subtitle_lines=plaque.wrap(subtitle,180,role='small') if subtitle else []
+            title_height=plaque.font('name',bold=True).get_linesize()
+            small_height=plaque.font('small').get_linesize()
+            height=16+len(title_lines)*title_height+len(subtitle_lines)*small_height
+            widths=([plaque.font('name',bold=True).size(line)[0]+40 for line in title_lines]+
+                    [plaque.font('small').size(line)[0]+40 for line in subtitle_lines])
+            width=max(118,min(220,max(widths or [118])))
+            plaque.panel((12,12,width,height))
+            plaque.lantern((24,23),size=8)
+            y=19
+            for line in title_lines:
+                plaque.text(line,(35,y),role='name',bold=True)
+                y+=title_height
+            for line in subtitle_lines:
+                plaque.text(line,(35,y),role='small',color=MUTED)
+                y+=small_height
+            if layer is not canvas:
+                layer.set_alpha(round(fade*255))
+                canvas.blit(layer,(0,0))
+        hint=self.opening.interaction_hint()
+        if hint:
+            hint=hint.replace(': ',' — ',1)
+            available=menu.left-24
+            lines=painter.wrap(hint,available-18,role='body')
+            line_height=painter.font().get_linesize()
+            rect=pygame.Rect(12,VIEW_SIZE[1]-12-(len(lines)*line_height+14),
+                             min(available,max(painter.font().size(line)[0] for line in lines)+18),
+                             len(lines)*line_height+14)
+            painter.panel(rect)
+            for index,line in enumerate(lines):
+                painter.text(line,(rect.x+9,rect.y+7+index*line_height),color=GOLD)
 
     def draw(self):
         if self.on_title:
             self.title.draw()
             return
         camera=self.camera.position()
-        self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
+        self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.opening.draw_world(self.canvas,camera)
-        self.quest_ui.draw_markers(self.canvas,camera)
-        if not self.pause.is_open and not self.opening.locks_player:
-            pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
-            if self.world is self.town:
-                self.text('Eldenmere',(15,13))
-                self.text(self.world.location(self.player.position),(88,14),self.small_font)
-            else:self.text(self.world.data['name'],(15,13))
-            pygame.draw.rect(self.canvas,'#263c35',(0,302,480,18))
-            self.text('WASD/arrows: move   Shift: run   M: map   J: journal   F11: screen   Esc: pause',(8,307),self.small_font)
-        self.quest_ui.draw_tracker(self.canvas)
-        if not self.social.locked and not self.map_open and not self.quest_ui.journal_open:
-            hint=self.opening.interaction_hint()
-            if hint:
-                pygame.draw.rect(self.canvas,'#263c35',(8,281,250,18))
-                self.text(hint,(14,286),self.small_font,color='#ffdc71')
-        if self.map_open:self.draw_map()
+        _,size,origin=self._ensure_ui_surface()
+        pygame.transform.scale(self.canvas,size,self.ui_surface)
+        for routine in getattr(self.world,'play_routines',[]):
+            routine.draw(self.ui_surface,camera,self.world)
+        self.quest_ui.draw_markers(self.ui_surface,camera)
+        self.draw_hud(self.ui_surface)
+        self.quest_ui.draw_tracker(self.ui_surface)
         if not self.map_open and not self.quest_ui.journal_open:
-            self.social.draw(self.canvas,self.elapsed_ms,camera=camera)
-        self.quest_ui.draw_notifications(self.canvas)
-        self.quest_ui.draw_journal(self.canvas)
+            self.social.draw(self.ui_surface,self.elapsed_ms,camera=camera)
+        self.quest_ui.draw_notifications(self.ui_surface)
         if self.save_error and not self.quest_ui.journal_open:
-            pygame.draw.rect(self.canvas,'#263c35',(8,283,260,17))
-            self.text('Progress could not be saved. Check the saves folder.',(12,287),self.small_font,color='#ffdc71')
-        if self.opening_fade:
-            shade=pygame.Surface(VIEW_SIZE,pygame.SRCALPHA)
-            shade.fill((11,24,22,round(255*self.opening_fade/.5)))
-            self.canvas.blit(shade,(0,0))
-        self.pause.draw(self.canvas)
-        width,height=self.window.get_size()
-        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
-        size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
+            painter=self.ui.painter(self.ui_surface)
+            lines=painter.wrap('Progress could not be saved. Check the saves folder.',436,role='small')
+            height=len(lines)*painter.font('small').get_linesize()+14
+            y=VIEW_SIZE[1]-self._hud_menu_rect().height-22-height
+            painter.panel((12,y,456,height))
+            for index,line in enumerate(lines):
+                painter.text(line,(22,y+7+index*painter.font('small').get_linesize()),
+                             role='small',color=ERROR)
+        if self.opening_fade and not self.audio.reduced_motion:
+            self.ui.painter(self.ui_surface).veil(round(255*self.opening_fade/.5))
+        self.pause.draw(self.ui_surface)
+        if self.map_open:self.draw_map()
+        self.quest_ui.draw_journal(self.ui_surface)
         self.window.fill('#101b19')
-        self.window.blit(pygame.transform.scale(self.canvas,size),((width-size[0])//2,(height-size[1])//2))
+        self.window.blit(self.ui_surface,origin)
         pygame.display.flip()
 
 

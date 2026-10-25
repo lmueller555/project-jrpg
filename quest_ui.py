@@ -1,4 +1,4 @@
-"""Quest feedback drawn in the game's native pixel coordinates."""
+"""Eldenmere's readable quest ledger, quiet tracker and world markers."""
 from __future__ import annotations
 
 from array import array
@@ -9,92 +9,209 @@ from pathlib import Path
 
 import pygame
 
-INK = '#263c35'
-PAPER = '#f7eed5'
-GOLD = '#ffdc71'
-EDGE = '#b7a47b'
-MUTED = '#c9c9b5'
+from ui_style import UIStyle, FOREST, FOREST_LIGHT, FOREST_DARK, IVORY, BRASS, GOLD, INK, PARCHMENT, PARCHMENT_DARK, MUTED
+
+PAPER = IVORY
+EDGE = BRASS
 
 
 class QuestUI:
     def __init__(self, game):
         self.game = game
+        self.style = getattr(game, 'ui', None) or UIStyle(game)
         self.journal_open = False
         self.scroll = 0
         self.max_scroll = 0
-        self.font = pygame.font.Font(None, 16)
-        self.small_font = pygame.font.Font(None, 14)
-        self.heading_font = pygame.font.Font(None, 21)
-        self.marker_font = pygame.font.Font(None, 20)
+        self.list_scroll = 0
+        self.selected_quest = None
+        self.focus = 'details'
         self.notices = deque()
         self.current_notice = None
         self.notice_seconds = 0.0
         self._sounds = {}
         self._map_entrances = {}
+        self._dragging = False
+        self._drag_offset = 0
+        self._hover = None
+        self._tracker_held = False
+        self.close_rect = pygame.Rect(438, 20, 22, 22)
+        self.list_viewport = pygame.Rect(24, 64, 126, 214)
+        self.detail_viewport = pygame.Rect(171, 64, 264, 214)
+        self.scrollbar_rect = pygame.Rect(442, 64, 10, 214)
+        self.scrollbar_thumb = self.scrollbar_rect.copy()
+        self.quest_rects = {}
+        self._quest_content = {}
+        self.tracker_rect = pygame.Rect(286, 8, 186, 48)
+        self.tracker_toggle_rect = pygame.Rect(451, 10, 17, 18)
+        self._painter(pygame.Surface((480, 320)))
+
+    def _painter(self, canvas=None):
+        if canvas is None:
+            canvas = getattr(self.game, 'ui_surface', None)
+            if canvas is None:canvas = pygame.Surface((480, 320))
+        painter = self.style.painter(canvas)
+        self.font = painter.font('body')
+        self.small_font = painter.font('small')
+        self.small_bold_font = painter.font('small', bold=True)
+        self.heading_font = painter.font('name', bold=True)
+        self.marker_font = painter.font('name', bold=True)
+        return painter
+
+    def _point(self, point):
+        converter = getattr(self.game, 'to_canvas', None)
+        return converter(point) if converter is not None else point
+
+    def _visible_quests(self):
+        result = []
+        opening = getattr(self.game, 'opening', None)
+        for identifier, definition in self.game.quests.definitions.items():
+            status = self.game.quests.status(identifier) if hasattr(self.game.quests, 'status') else self.game.quests.states[identifier]['status']
+            if status == 'available' and opening is not None and not opening.can_speak(definition['giver']):continue
+            result.append(identifier)
+        return result
+
+    def _ensure_selection(self):
+        choices = self._visible_quests()
+        if self.selected_quest not in choices:
+            self.selected_quest = choices[0] if choices else None
+            self.scroll = 0
+        return choices
 
     def toggle_journal(self):
         self.journal_open = not self.journal_open
+        self._dragging = False
         if self.journal_open:
-            self.scroll = 0
+            self.scroll = self.list_scroll = 0
+            self._ensure_selection()
+            self.style.sound('confirm')
+        else:self.style.sound('back')
 
     def close_journal(self):
         self.journal_open = False
+        self._dragging = False
 
     def reset(self):
-        """Restoring a save starts quietly, without replaying old announcements."""
+        """Restoring a journey never replays earlier progress announcements."""
         self.close_journal()
-        self.scroll = 0
+        self.scroll = self.list_scroll = 0
+        self.selected_quest = None
         self.notices.clear()
         self.current_notice = None
         self.notice_seconds = 0.0
 
+    def _select(self, identifier):
+        if identifier not in self._visible_quests():return
+        if self.selected_quest != identifier:
+            self.selected_quest = identifier
+            self.scroll = 0
+            self.style.sound('move')
+
+    def _next_quest(self, direction):
+        choices = self._ensure_selection()
+        if choices:
+            index = choices.index(self.selected_quest)
+            self._select(choices[(index+direction) % len(choices)])
+            # Keep keyboard selection visible in a longer quest list.
+            content = self._quest_content.get(self.selected_quest)
+            if content is not None:
+                top, height = content
+                if top < self.list_scroll:self.list_scroll = top
+                elif top+height > self.list_scroll+self.list_viewport.height:
+                    self.list_scroll = top+height-self.list_viewport.height
+
     def handle_event(self, event):
-        if not self.journal_open:
-            return False
+        if not self.journal_open:return False
         if event.type == pygame.KEYDOWN:
             if event.key in (pygame.K_j, pygame.K_ESCAPE):
                 if not getattr(event, 'repeat', False):
-                    self.close_journal()
-            elif event.key in (pygame.K_UP, pygame.K_w):
-                self.scroll = max(0, self.scroll-24)
-            elif event.key in (pygame.K_DOWN, pygame.K_s):
-                self.scroll = min(self.max_scroll, self.scroll+24)
-            elif event.key == pygame.K_PAGEUP:
-                self.scroll = max(0, self.scroll-160)
-            elif event.key == pygame.K_PAGEDOWN:
-                self.scroll = min(self.max_scroll, self.scroll+160)
-            elif event.key == pygame.K_HOME:
-                self.scroll = 0
-            elif event.key == pygame.K_END:
-                self.scroll = self.max_scroll
+                    self.close_journal();self.style.sound('back')
+            elif event.key in (pygame.K_TAB, pygame.K_LEFT, pygame.K_RIGHT):
+                self.focus = ('list' if event.key == pygame.K_LEFT else 'details' if event.key == pygame.K_RIGHT
+                              else 'details' if self.focus == 'list' else 'list')
+            elif event.key in (pygame.K_UP, pygame.K_w, pygame.K_DOWN, pygame.K_s):
+                direction = -1 if event.key in (pygame.K_UP, pygame.K_w) else 1
+                if self.focus == 'list':self._next_quest(direction)
+                else:self.scroll = max(0, min(self.max_scroll, self.scroll+direction*24))
+            elif event.key == pygame.K_PAGEUP:self.scroll = max(0, self.scroll-160)
+            elif event.key == pygame.K_PAGEDOWN:self.scroll = min(self.max_scroll, self.scroll+160)
+            elif event.key == pygame.K_HOME:self.scroll = 0
+            elif event.key == pygame.K_END:self.scroll = self.max_scroll
             return True
         if event.type == pygame.MOUSEWHEEL:
-            self.scroll = max(0, min(self.max_scroll, self.scroll-event.y*32))
+            point = self._point(pygame.mouse.get_pos())
+            if point is not None and self.list_viewport.collidepoint(point):
+                self.list_scroll = max(0, self.list_scroll-event.y*32)
+            else:self.scroll = max(0, min(self.max_scroll, self.scroll-event.y*32))
             return True
-        return event.type in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP,
-                              pygame.MOUSEMOTION, pygame.KEYUP)
+        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            self._dragging = False
+            return True
+        if event.type == pygame.MOUSEMOTION:
+            point = self._point(event.pos)
+            self._hover = point
+            if self._dragging and point is not None and self.max_scroll:
+                travel = self.scrollbar_rect.height-self.scrollbar_thumb.height
+                ratio = (point[1]-self.scrollbar_rect.top-self._drag_offset)/max(1, travel)
+                self.scroll = round(max(0, min(1, ratio))*self.max_scroll)
+            return True
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            point = self._point(event.pos)
+            if point is None:return True
+            if self.close_rect.collidepoint(point):
+                self.close_journal();self.style.sound('back');return True
+            for identifier, rect in self.quest_rects.items():
+                if rect.collidepoint(point):
+                    self._select(identifier);self.focus = 'list';return True
+            if self.max_scroll and self.scrollbar_rect.collidepoint(point):
+                if self.scrollbar_thumb.collidepoint(point):
+                    self._dragging = True
+                    self._drag_offset = point[1]-self.scrollbar_thumb.top
+                else:
+                    self.scroll = max(0, min(self.max_scroll, self.scroll+(160 if point[1] > self.scrollbar_thumb.bottom else -160)))
+            return True
+        return event.type in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP, pygame.KEYUP)
 
-    def _hidden(self):
-        return self.journal_open or self.game.map_open
+    def _hidden(self):return self.journal_open or self.game.map_open
 
     def _notices_hidden(self):
-        # Speech can occupy any world-space region now. Queue feedback until
-        # the exchange ends so a quest toast never covers its next answer.
         return self._hidden() or self.game.social.locked
+
+    def _tracker_hidden(self):
+        return (self._hidden() or self.game.social.locked or
+                getattr(getattr(self.game, 'opening', None), 'locks_player', False) or
+                getattr(getattr(self.game, 'pause', None), 'is_open', False))
+
+    def _toggle_tracker(self):
+        audio = getattr(self.game, 'audio', None)
+        if audio is None:return
+        visible = not getattr(audio, 'tracker_visible', True)
+        setter = getattr(audio, 'set_tracker_visible', None)
+        if setter is not None:setter(visible)
+        else:audio.tracker_visible = visible
+        self.style.sound('confirm')
+
+    def handle_hud_event(self, event):
+        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            self._tracker_held = False
+        if self._tracker_hidden() or not self._tracker_text():return False
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+            point = self._point(event.pos)
+            if point is not None and self.tracker_toggle_rect.collidepoint(point):
+                if not self._tracker_held:self._toggle_tracker()
+                self._tracker_held = True
+                return True
+        return False
 
     def update(self, seconds):
         self.notices.extend(self.game.quests.drain_events())
-        if self._notices_hidden():
-            return
+        if self._notices_hidden():return
         if self.current_notice is not None:
             self.notice_seconds -= max(0, seconds)
-            if self.notice_seconds <= 0:
-                self.current_notice = None
+            if self.notice_seconds <= 0:self.current_notice = None
         if self.current_notice is None and self.notices:
             self.current_notice = self.notices.popleft()
-            kind = self.current_notice['kind']
-            self.notice_seconds = 4.0 if kind == 'completed' else 3.2
-            self._chime(kind)
+            self.notice_seconds = 4.0 if self.current_notice['kind'] == 'completed' else 3.2
+            self._chime(self.current_notice['kind'])
 
     def _chime(self, kind):
         audio = getattr(self.game, 'audio', None)
@@ -154,153 +271,205 @@ class QuestUI:
         return lines or ['']
 
     def _symbol(self, canvas, symbol, center, elapsed_ms=0):
-        image = self.marker_font.render(symbol, False, GOLD)
-        outline = self.marker_font.render(symbol, False, '#15221f')
-        point = image.get_rect(center=(round(center[0]), round(center[1]))).topleft
-        for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1)):
-            canvas.blit(outline, (point[0]+dx, point[1]+dy))
-        canvas.blit(image, point)
-        # A single restrained glint, rather than a constantly bouncing marker.
-        if int(elapsed_ms) % 5400 < 180:
-            canvas.set_at((max(0, min(canvas.get_width()-1, point[0]+image.get_width())),
-                           max(0, min(canvas.get_height()-1, point[1]))), '#fff5c6')
+        painter = self._painter(canvas)
+        x, y = center
+        plate = pygame.Rect(round(x)-7, round(y)-11, 14, 22)
+        painter.rect(FOREST_DARK, plate)
+        painter.rect(BRASS, plate, 1)
+        painter.text(symbol, (x, y-1), role='name', color=GOLD, anchor='center', bold=True)
+        reduced = getattr(getattr(self.game, 'audio', None), 'reduced_motion', False)
+        if not reduced and int(elapsed_ms) % 5400 < 180:
+            painter.rect(IVORY, (plate.right-2, plate.top+1, 1, 1))
 
     def _marker_for(self, npc_id):
         opening = getattr(self.game, 'opening', None)
-        if opening is not None and not opening.can_speak(npc_id):
-            return None
+        if opening is not None and not opening.can_speak(npc_id):return None
         return self.game.quests.marker_for(npc_id)
 
     def draw_markers(self, canvas, camera):
-        if self._hidden() or self.game.social.locked:
-            return
+        if self._hidden() or self.game.social.locked:return
         for actor in self.game.world.npcs:
             symbol = self._marker_for(actor.data['id'])
-            if symbol is None:
-                continue
+            if symbol is None:continue
             image = actor.sprite(self.game.elapsed_ms)
             top = image.get_bounding_rect().top
-            point = (actor.position.x-camera[0],
-                     actor.position.y-actor.draw_anchor[1]+top-camera[1]-9)
-            if 3 <= point[0] < canvas.get_width()-3 and 4 <= point[1] < canvas.get_height()-4:
+            point = (actor.position.x-camera[0], actor.position.y-actor.draw_anchor[1]+top-camera[1]-12)
+            if 8 <= point[0] < 472 and 12 <= point[1] < 308:
                 self._symbol(canvas, symbol, point, self.game.elapsed_ms)
 
-    def draw_tracker(self, canvas):
-        if (self._hidden() or self.game.social.locked or
-                getattr(getattr(self.game, 'opening', None), 'locks_player', False) or
-                getattr(getattr(self.game, 'pause', None), 'is_open', False)):
-            return
+    def _tracker_text(self):
         opening = getattr(self.game, 'opening', None)
-        text = (opening.hint_text() if opening is not None else '') or self.game.quests.tracker_text()
-        if not text:
+        return (opening.hint_text() if opening is not None else '') or self.game.quests.tracker_text()
+
+    def draw_tracker(self, canvas):
+        if self._tracker_hidden():return
+        text = self._tracker_text()
+        if not text:return
+        painter = self._painter(canvas)
+        visible = getattr(getattr(self.game, 'audio', None), 'tracker_visible', True)
+        if not visible:
+            self.tracker_rect = pygame.Rect(444, 8, 28, 24)
+            self.tracker_toggle_rect = self.tracker_rect.copy()
+            painter.panel(self.tracker_rect)
+            painter.lantern(self.tracker_rect.center, size=10)
             return
-        rect = pygame.Rect(246, 8, 226, 49)
-        pygame.draw.rect(canvas, INK, rect)
-        pygame.draw.rect(canvas, EDGE, rect, 1)
-        canvas.blit(self.small_font.render('CURRENT OBJECTIVE', False, GOLD), (253, 13))
-        hint = self.small_font.render('J: journal', False, MUTED)
-        canvas.blit(hint, (rect.right-7-hint.get_width(), 13))
-        lines = self.wrap(text, self.small_font, 212)
-        if len(lines) > 2:
-            lines = lines[:2]
-            lines[-1] = lines[-1].rstrip('.')+'...'
-            while self.small_font.size(lines[-1])[0] > 212:
-                lines[-1] = lines[-1][:-4]+'...'
-        for i, line in enumerate(lines):
-            canvas.blit(self.small_font.render(line, False, PAPER), (253, 26+i*11))
+        lines = painter.wrap(text, 166, role='small')
+        line_height = painter.font('small').get_linesize()+1
+        height = 26+min(3, len(lines))*line_height+(line_height+2 if len(lines) > 3 else 0)
+        self.tracker_rect = pygame.Rect(286, 8, 186, height)
+        self.tracker_toggle_rect = pygame.Rect(451, 10, 17, 18)
+        painter.panel(self.tracker_rect)
+        painter.lantern((298, 20), size=8)
+        painter.text('Current errand', (308, 13), role='small', color=GOLD, bold=True)
+        painter.text('−', self.tracker_toggle_rect.center, role='body', color=GOLD, anchor='center')
+        for index, line in enumerate(lines[:3]):
+            painter.text(line, (296, 30+index*line_height), role='small', color=IVORY)
+        if len(lines) > 3:
+            painter.text('…  J: journal', (462, self.tracker_rect.bottom-3), role='small', color=MUTED, anchor='bottomright')
 
     def _notification_content(self, event):
         labels = {'accepted': 'Quest accepted', 'objective': 'Objective completed',
                   'ready': 'Ready to report', 'completed': 'Quest completed'}
         label = labels.get(event['kind'], 'Quest updated')
-        if event['kind'] in ('accepted', 'completed') and event.get('title'):
-            label += ': '+event['title']
-        text = event.get('text') or event.get('title', '')
-        return (self.wrap(label, self.small_font, 338),
-                self.wrap(text, self.font, 338))
+        if event['kind'] in ('accepted', 'completed') and event.get('title'):label += ': '+event['title']
+        return (self.wrap(label, self.small_bold_font, 300), self.wrap(event.get('text') or event.get('title', ''), self.font, 308))
 
     def draw_notifications(self, canvas):
-        if self._notices_hidden() or self.current_notice is None:
-            return
+        if self._notices_hidden() or self.current_notice is None:return
+        painter = self._painter(canvas)
         labels, lines = self._notification_content(self.current_notice)
-        body_offset = 9+len(labels)*11
-        height = body_offset+len(lines)*13+4
-        y = 66
-        rect = pygame.Rect(62, y, 356, height)
-        pygame.draw.rect(canvas, '#101b19', rect.move(2, 2))
-        pygame.draw.rect(canvas, INK, rect)
-        pygame.draw.rect(canvas, EDGE, rect, 1)
-        for i, line in enumerate(labels):
-            canvas.blit(self.small_font.render(line, False, GOLD), (71, y+6+i*11))
-        for i, line in enumerate(lines):
-            canvas.blit(self.font.render(line, False, PAPER), (71, y+body_offset+i*13))
+        small_h = max(self.small_font.get_linesize(), self.small_bold_font.get_linesize())+1
+        body_h = painter.font('body').get_linesize()+2
+        height = 18+len(labels)*small_h+len(lines)*body_h
+        rect = pygame.Rect(72, 76, 336, height)
+        painter.panel(rect)
+        painter.lantern((85, rect.top+15), size=9)
+        for index, line in enumerate(labels):
+            painter.text(line, (96, rect.top+8+index*small_h), role='small', color=GOLD, bold=True)
+        for index, line in enumerate(lines):
+            painter.text(line, (86, rect.top+12+len(labels)*small_h+index*body_h), role='body', color=IVORY)
 
     def _journal_rows(self):
-        rows = []
-        labels = {'available': 'AVAILABLE', 'active': 'IN PROGRESS',
-                  'ready': 'READY TO REPORT', 'completed': 'COMPLETED'}
-        for identifier, definition in self.game.quests.definitions.items():
-            state = self.game.quests.states[identifier]
-            status = state['status']
-            opening = getattr(self.game, 'opening', None)
-            if status == 'available' and opening is not None and not opening.can_speak(definition['giver']):
-                continue
-            rows.append((labels.get(status, status.upper()), GOLD, self.small_font, 0))
-            for line in self.wrap(definition['title'], self.heading_font, 396):
-                rows.append((line, PAPER, self.heading_font, 0))
-            for line in self.wrap(definition.get('summary', ''), self.font, 396):
-                rows.append((line, MUTED, self.font, 0))
-            if status == 'available':
-                rows.append(('Look for ! to speak with the quest giver.', MUTED, self.font, 0))
-            else:
-                for objective in definition['objectives']:
-                    objective_status = self.game.quests.objective_status(identifier, objective['id'])
-                    prefix = '[x] ' if objective_status == 'completed' else '[-] ' if objective_status == 'queued' else '[ ] '
-                    text = objective['text']
-                    if objective_status == 'queued':
-                        text += ' (after Halden)' if objective.get('requires') == ['halden'] else ' (queued)'
-                    for i, line in enumerate(self.wrap(text, self.font, 369)):
-                        rows.append(((prefix if i == 0 else '    ')+line,
-                                     MUTED if objective_status == 'queued' else PAPER, self.font, 8))
-                if status == 'ready':
-                    rows.append(('? Return to the quest giver to finish.', GOLD, self.font, 8))
-            rows.append(('', PAPER, self.font, 0))
+        self._ensure_selection()
+        identifier = self.selected_quest
+        if identifier is None:return []
+        definition = self.game.quests.definitions[identifier]
+        status = self.game.quests.states[identifier]['status']
+        labels = {'available': 'AVAILABLE', 'active': 'IN PROGRESS', 'ready': 'READY TO REPORT', 'completed': 'COMPLETED'}
+        rows = [(labels.get(status, status.upper()), FOREST, self.small_font, 0)]
+        for line in self.wrap(definition['title'], self.heading_font, self.detail_viewport.width):
+            rows.append((line, INK, self.heading_font, 0))
+        rows.append(('', INK, self.small_font, 0))
+        for line in self.wrap(definition.get('summary', ''), self.font, self.detail_viewport.width):
+            rows.append((line, INK, self.font, 0))
+        rows.append(('', INK, self.small_font, 0))
+        if status == 'available':
+            for line in self.wrap('Find the ! marker to hear this request.', self.font, self.detail_viewport.width):
+                rows.append((line, FOREST, self.font, 0))
+        else:
+            rows.append(('Your errands', FOREST, self.heading_font, 0))
+            for objective in definition['objectives']:
+                progress = self.game.quests.objective_status(identifier, objective['id'])
+                prefix = {'active': 'Next: ', 'queued': 'Later: ', 'completed': 'Done: '}.get(progress, '')
+                text = prefix+objective['text']
+                if progress == 'queued' and objective.get('requires'):
+                    # Keep the opening's approved prerequisite wording concise.
+                    text += ' (after Halden)' if objective.get('requires') == ['halden'] else ' (after earlier errands)'
+                color = '#655c48' if progress in ('queued', 'completed') else INK
+                for line in self.wrap(text, self.font, self.detail_viewport.width-14):
+                    rows.append((line, color, self.font, 14))
+                rows.append(('', INK, self.small_font, 0))
+            if status == 'ready':
+                for line in self.wrap('Return to the ? marker to report back.', self.font, self.detail_viewport.width):
+                    rows.append((line, FOREST, self.font, 0))
+        while rows and not rows[-1][0]:rows.pop()
         return rows
 
+    def _row_height(self, font):return font.get_linesize()+2
+
+    def _journal_list(self, painter):
+        choices = self._ensure_selection()
+        font = painter.font('body')
+        small = painter.font('small')
+        records = []
+        total = 0
+        for identifier in choices:
+            lines = painter.wrap(self.game.quests.definitions[identifier]['title'], self.list_viewport.width-16)
+            height = max(48, 18+len(lines)*font.get_linesize()+small.get_linesize())
+            records.append((identifier, lines, height))
+            total += height+5
+        self.list_scroll = max(0, min(self.list_scroll, max(0, total-self.list_viewport.height)))
+        self.quest_rects = {}
+        self._quest_content = {}
+        painter.clip(self.list_viewport)
+        y = self.list_viewport.top-self.list_scroll
+        labels = {'available': 'Available', 'active': 'In progress', 'ready': 'Report back', 'completed': 'Completed'}
+        for identifier, lines, height in records:
+            self._quest_content[identifier] = (y-self.list_viewport.top+self.list_scroll, height)
+            row = pygame.Rect(self.list_viewport.left, y, self.list_viewport.width, height)
+            clipped = row.clip(self.list_viewport)
+            if clipped.height:
+                self.quest_rects[identifier] = clipped
+                selected = identifier == self.selected_quest
+                hovered = self._hover is not None and clipped.collidepoint(self._hover)
+                painter.rect(FOREST if selected else ('#dfd0aa' if hovered else PARCHMENT_DARK), row)
+                if selected:painter.rect(BRASS, row, 1)
+                color = IVORY if selected else INK
+                for index, line in enumerate(lines):
+                    painter.text(line, (row.left+8, row.top+7+index*font.get_linesize()), color=color)
+                state = self.game.quests.states[identifier]['status']
+                painter.text(labels.get(state, state), (row.left+8, row.bottom-7), role='small', color=GOLD if selected else FOREST, anchor='bottomleft')
+            y += height+5
+        painter.clip(None)
+
     def draw_journal(self, canvas):
-        if not self.journal_open:
-            return
-        shade = pygame.Surface(canvas.get_size(), pygame.SRCALPHA)
-        shade.fill((12, 24, 23, 225))
-        canvas.blit(shade, (0, 0))
-        pygame.draw.rect(canvas, INK, (12, 14, 456, 292))
-        pygame.draw.rect(canvas, EDGE, (12, 14, 456, 292), 2)
-        canvas.blit(self.heading_font.render('QUEST JOURNAL', False, GOLD), (28, 25))
-        pygame.draw.line(canvas, EDGE, (28, 47), (452, 47))
-        viewport = pygame.Rect(28, 57, 414, 219)
+        if not self.journal_open:return
+        painter = self._painter(canvas)
+        painter.veil(205)
+        painter.panel((12, 12, 456, 296), parchment=True)
+        painter.lantern((32, 34), color=FOREST, size=13)
+        painter.text("Caelan's journal", (48, 20), role='heading', color=FOREST, bold=True)
+        painter.button(self.close_rect, '×', selected=self._hover is not None and self.close_rect.collidepoint(self._hover))
+        painter.line(BRASS, (24, 53), (456, 53))
+        painter.line(BRASS, (159, 63), (159, 279))
+        self._journal_list(painter)
         rows = self._journal_rows()
-        heights = [max(14, font.get_height()+2) for _, _, font, _ in rows]
-        self.max_scroll = max(0, sum(heights)-viewport.height)
+        heights = [self._row_height(font) for _, _, font, _ in rows]
+        self.max_scroll = max(0, sum(heights)-self.detail_viewport.height)
         self.scroll = max(0, min(self.max_scroll, self.scroll))
-        previous_clip = canvas.get_clip()
-        canvas.set_clip(viewport)
-        y = viewport.y-self.scroll
+        painter.clip(self.detail_viewport)
+        y = self.detail_viewport.top-self.scroll
         if not rows:
             opening = getattr(self.game, 'opening', None)
-            hint = (opening.hint_text() if opening is not None else '') or 'No quests discovered yet.'
-            for line in self.wrap(hint, self.font, viewport.width):
-                canvas.blit(self.font.render(line, False, MUTED), (28, y))
-                y += 16
+            hint = (opening.hint_text() if opening is not None else '') or 'Your journal is quiet for now. Requests will appear here as you discover them.'
+            for line in painter.wrap(hint, self.detail_viewport.width):
+                painter.text(line, (self.detail_viewport.left, y), color=INK)
+                y += painter.font('body').get_linesize()+3
         for (text, color, font, indent), height in zip(rows, heights):
-            canvas.blit(font.render(text, False, color), (viewport.x+indent, y))
+            role = 'name' if font is self.heading_font else 'small' if font is self.small_font else 'body'
+            if text.startswith(('Next:', 'Later:', 'Done:')):
+                x = self.detail_viewport.left+4
+                center = y+min(height//2, 8)
+                if text.startswith('Next:'):painter.lantern((x, center), color=FOREST, size=7)
+                elif text.startswith('Done:'):
+                    painter.line(FOREST, (x-3, center), (x-1, center+2))
+                    painter.line(FOREST, (x-1, center+2), (x+4, center-3))
+                else:
+                    painter.rect('#8e8062', (x-3, center-3, 6, 6), 1)
+                    painter.line('#8e8062', (x, center-1), (x, center+2))
+            painter.text(text, (self.detail_viewport.left+indent, y), role=role, color=color, bold=font is self.heading_font)
             y += height
-        canvas.set_clip(previous_clip)
+        painter.clip(None)
+        self.scrollbar_thumb = self.scrollbar_rect.copy()
         if self.max_scroll:
-            pygame.draw.rect(canvas, '#526761', (450, 57, 3, 219))
-            thumb = max(12, round(219*219/(self.max_scroll+219)))
-            offset = round((219-thumb)*self.scroll/self.max_scroll)
-            pygame.draw.rect(canvas, GOLD, (450, 57+offset, 3, thumb))
-        canvas.blit(self.small_font.render('J / Esc: close    Wheel / arrows: scroll', False, MUTED), (28, 288))
+            painter.rect(PARCHMENT_DARK, self.scrollbar_rect)
+            thumb = max(22, round(self.scrollbar_rect.height*self.detail_viewport.height/(self.max_scroll+self.detail_viewport.height)))
+            offset = round((self.scrollbar_rect.height-thumb)*self.scroll/self.max_scroll)
+            self.scrollbar_thumb = pygame.Rect(self.scrollbar_rect.x, self.scrollbar_rect.y+offset, self.scrollbar_rect.width, thumb)
+            painter.rect(FOREST_LIGHT if self._dragging else BRASS, self.scrollbar_thumb)
+        footer = 'J / Esc: close   •   Wheel / arrows: read   •   Tab: quest list'
+        if painter.font('small').size(footer)[0] > 428:footer = 'J / Esc: close   •   Wheel: read   •   Tab: list'
+        painter.text(footer, (26, 291), role='small', color=INK)
 
     def _map_position(self, actor):
         """Project an indoor giver through doorway links to its town entrance."""
@@ -344,7 +513,7 @@ class QuestUI:
                     pending.append((path, anchor))
         return None
 
-    def draw_map_markers(self, canvas, origin, map_size):
+    def draw_map_markers(self, canvas, origin, map_size, avoid_point=None):
         actors = list(self.game.town.npcs)+list(getattr(self.game, 'persistent_npcs', []))
         seen = set()
         for scene in self.game.scenes.values():
@@ -361,4 +530,11 @@ class QuestUI:
                 continue
             center = (origin[0]+round(position[0]*map_size[0]/self.game.town.size[0]),
                       origin[1]+round(position[1]*map_size[1]/self.game.town.size[1]))
+            if avoid_point is not None and pygame.Vector2(center).distance_to(avoid_point) < 18:
+                # A quest giver and player can share an exterior doorway.
+                # Keep both symbols visible without changing their world anchor.
+                x = center[0]+16
+                if x > origin[0]+map_size[0]-8:x = center[0]-16
+                center = (max(origin[0]+8, min(origin[0]+map_size[0]-8, x)),
+                          max(origin[1]+12, min(origin[1]+map_size[1]-12, center[1]-8)))
             self._symbol(canvas, symbol, center, self.game.elapsed_ms)

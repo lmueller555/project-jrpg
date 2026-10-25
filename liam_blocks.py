@@ -3,6 +3,7 @@ from collections import deque
 import random
 import pygame
 from liam_daisy_play import read
+from ui_style import draw_ambient_speech
 
 META='assets/characters/liam_family/block_play/animations.json'
 PACK='assets/terrain/eldenmere/liam_home/blocks/blocks.json'
@@ -266,9 +267,4 @@ class LiamBlocks:
         if self.state!='react' or world is not self.home:return
         # Ambient speech never locks the player or opens click-to-advance dialogue.
         lines=['Daisy! You knocked it down.','Go lie down.']
-        font=self.game.small_font;surfaces=[font.render(line,False,'#45382d') for line in lines]
-        x=round(self.liam.position.x)-camera[0];y=round(self.liam.position.y)-camera[1]-38
-        rect=pygame.Rect(0,0,max(s.get_width() for s in surfaces)+12,34);rect.midbottom=(x,y)
-        pygame.draw.rect(target,'#fff1cc',rect);pygame.draw.rect(target,'#6e573f',rect,1)
-        pygame.draw.polygon(target,'#fff1cc',[(x-3,rect.bottom-1),(x+3,rect.bottom-1),(x,rect.bottom+4)])
-        for i,surface in enumerate(surfaces):target.blit(surface,(rect.x+6,rect.y+4+i*13))
+        draw_ambient_speech(self.game,target,camera,self.liam,lines)

@@ -1,4 +1,8 @@
-"""Independent, persisted music and effects levels shared by both menus."""
+"""Persisted audio and interface preferences shared by both menus.
+
+The original class name remains public so older callers and settings files keep
+working. Interface options live in the same atomic document as volume settings.
+"""
 from __future__ import annotations
 
 import math
@@ -15,6 +19,9 @@ class AudioSettings:
         self.effects_volume = 1.0
         self._last_music = 1.0
         self._last_effects = 1.0
+        self.text_scale = 1.0
+        self.reduced_motion = False
+        self.tracker_visible = True
         self.error = None
         saved = self.store.load()
         if saved is not None:
@@ -26,6 +33,12 @@ class AudioSettings:
                 self.effects_volume = float(saved['effects_volume'])
                 self._last_music = float(saved['last_music'])
                 self._last_effects = float(saved['last_effects'])
+                if saved.get('text_scale', 1.0) in (1.0, 1.25, 1.5) and type(saved.get('text_scale', 1.0)) in (int, float):
+                    self.text_scale = float(saved.get('text_scale', 1.0))
+                if type(saved.get('reduced_motion', False)) is bool:
+                    self.reduced_motion = saved.get('reduced_motion', False)
+                if type(saved.get('tracker_visible', True)) is bool:
+                    self.tracker_visible = saved.get('tracker_visible', True)
             else:
                 self.error = 'Audio settings could not be read.'
         elif self.store.error:
@@ -38,7 +51,34 @@ class AudioSettings:
     def to_dict(self):
         return {'version': 1, 'music_volume': self.music_volume,
                 'effects_volume': self.effects_volume,
-                'last_music': self._last_music, 'last_effects': self._last_effects}
+                'last_music': self._last_music, 'last_effects': self._last_effects,
+                'text_scale': self.text_scale, 'reduced_motion': self.reduced_motion,
+                'tracker_visible': self.tracker_visible}
+
+    def set_text_scale(self, value):
+        if type(value) not in (int, float) or value not in (1, 1.25, 1.5) or value == self.text_scale:
+            return False
+        self.text_scale = float(value)
+        self._save()
+        return True
+
+    def set_reduced_motion(self, value):
+        if type(value) is not bool or value == self.reduced_motion:return False
+        self.reduced_motion = value
+        self._save()
+        return True
+
+    def set_tracker_visible(self, value):
+        if type(value) is not bool or value == self.tracker_visible:return False
+        self.tracker_visible = value
+        self._save()
+        return True
+
+    def toggle_reduced_motion(self):
+        return self.set_reduced_motion(not self.reduced_motion)
+
+    def toggle_tracker(self):
+        return self.set_tracker_visible(not self.tracker_visible)
 
     def _save(self):
         if self.store.enabled:

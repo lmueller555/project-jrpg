@@ -7,6 +7,7 @@ import random
 
 import pygame
 from npc_routines import find_path
+from ui_style import draw_ambient_speech
 
 ROOT=Path(__file__).resolve().parent
 META='assets/characters/liam_family/play_routine/animations.json'
@@ -257,9 +258,4 @@ class LiamDaisyPlay:
 
     def draw(self,target,camera,world):
         if self.state!='invite' or self.worlds[self.liam] is not world:return
-        font=self.game.small_font;text=font.render('Want to play, Daisy?',False,'#45382d')
-        x=round(self.liam.position.x)-camera[0];y=round(self.liam.position.y)-camera[1]-43
-        rect=text.get_rect(midbottom=(x,y)).inflate(10,8)
-        pygame.draw.rect(target,'#fff1cc',rect);pygame.draw.rect(target,'#6e573f',rect,1)
-        pygame.draw.polygon(target,'#fff1cc',[(x-3,rect.bottom-1),(x+3,rect.bottom-1),(x,rect.bottom+4)])
-        target.blit(text,text.get_rect(center=rect.center))
+        draw_ambient_speech(self.game,target,camera,self.liam,['Want to play, Daisy?'])

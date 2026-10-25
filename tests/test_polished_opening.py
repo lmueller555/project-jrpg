@@ -198,8 +198,10 @@ class PolishedOpeningTests(unittest.TestCase):
         self.assertFalse(game.pause.is_open)
         self.assertEqual(game.social.page_index, page)
         self.h.key(game, pygame.K_ESCAPE)
-        self.h.key(game, pygame.K_DOWN)
-        self.h.key(game, pygame.K_DOWN)
+        # Journal and Map are now available before Settings and Quit. Navigate
+        # to the explicit Quit entry rather than relying on the old row count.
+        for _ in range(game.pause.options.index('Quit')):
+            self.h.key(game, pygame.K_DOWN)
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_RETURN, repeat=False))
         self.assertFalse(game.handle_events())
         saved = json.loads(self.h.path.read_text())

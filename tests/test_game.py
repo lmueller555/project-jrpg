@@ -184,10 +184,12 @@ class PlayableEldenmere(unittest.TestCase):
         self.assertTrue(self.game.handle_events());self.game.draw()
         self.assertEqual(self.game.window.get_size(),(1024,768))
         self.assertEqual(self.game.window.get_at((0,0))[:3],(16,27,25))
-        # A native HUD pixel becomes an exact 2×2 block, with a (32,64) inset.
-        expected=self.game.canvas.get_at((10,10))
+        # A native world pixel remains an exact 2×2 block, with a (32,64)
+        # inset. UI lettering is drawn independently at display resolution;
+        # sample clear ground outside HUD panels instead of the old HUD pixel.
+        expected=self.game.canvas.get_at((12,240))
         for dx in (0,1):
-            for dy in (0,1):self.assertEqual(self.game.window.get_at((52+dx,84+dy)),expected)
+            for dy in (0,1):self.assertEqual(self.game.window.get_at((56+dx,544+dy)),expected)
 
 
 class FullscreenLaunch(unittest.TestCase):

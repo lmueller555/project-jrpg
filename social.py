@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pygame
 from speech_bubble import SpeechBubble, TEXT_WIDTH, MAX_LINES
+from ui_style import UIStyle
 
 ROOT = Path(__file__).resolve().parent
 FACING = {'front': (0, 1), 'back': (0, -1), 'left': (-1, 0), 'right': (1, 0)}
@@ -49,9 +50,13 @@ class SocialSystem:
         self._script_origin = None
         self._conversation_world = None
         self.script_identifier = None
-        self.font = pygame.font.Font(None, 18)
-        self.name_font = pygame.font.Font(None, 20)
-        self.hint_font = pygame.font.Font(None, 14)
+        self._source_lines = []
+        self._layout_signature = None
+        self._fallback_surface = None
+        self._active_canvas = None
+        self.pointer_position = None
+        self.pointer_pressed = False
+        self._hovered_choice = None
         self.portraits = {}
         manifest = json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())
         for speaker in self.data['speakers'].values():
@@ -59,6 +64,45 @@ class SocialSystem:
             record = manifest['portraits'][key]
             self.portraits[key] = game.town.image('assets/portraits/eldenmere/'+record['file'])
         self.bubble = SpeechBubble(self)
+
+    def painter(self, canvas=None):
+        """Measure and draw using the same display-resolution font metrics."""
+        if not hasattr(self.game, 'ui'):self.game.ui = UIStyle(self.game)
+        if canvas is None and self._active_canvas is not None:canvas = self._active_canvas
+        if canvas is None:
+            window = getattr(self.game, 'window', None)
+            size = window.get_size() if window is not None else (480, 320)
+            scale = max(1, min(size[0]//480, size[1]//320))
+            target_size = (480*scale, 320*scale)
+            canvas = getattr(self.game, 'ui_surface', None)
+            if canvas is None or canvas.get_size() != target_size:
+                if self._fallback_surface is None or self._fallback_surface.get_size() != target_size:
+                    self._fallback_surface = pygame.Surface(target_size, pygame.SRCALPHA)
+                canvas = self._fallback_surface
+        return self.game.ui.painter(canvas)
+
+    @property
+    def font(self):return self.painter().font('body')
+
+    @property
+    def name_font(self):return self.painter().font('name', bold=True)
+
+    @property
+    def hint_font(self):return self.painter().font('small')
+
+    def pointer(self, point, pressed=None):
+        self.pointer_position = point
+        if pressed is not None:self.pointer_pressed = bool(pressed)
+        hovered = next((i for i, rect in enumerate(self.choice_rects)
+                        if point is not None and rect.collidepoint(point)), None)
+        if hovered is not None and hovered != self._hovered_choice:
+            self.game.ui.sound('move')
+        self._hovered_choice = hovered
+
+    def clear_pointer(self):
+        self.pointer_position = None
+        self.pointer_pressed = False
+        self._hovered_choice = None
 
     @property
     def locked(self):
@@ -72,7 +116,9 @@ class SocialSystem:
     def active(self):return self.locked and not self.pending
 
     @property
-    def page(self):return self.pages[self.page_index] if self.active else None
+    def page(self):
+        self.refresh_layout()
+        return self.pages[self.page_index] if self.active else None
 
     @property
     def choosing(self):return self.active and self._choosing
@@ -91,6 +137,7 @@ class SocialSystem:
     @property
     def choice_rects(self):
         if not self.choosing:return []
+        self.refresh_layout()
         return self.bubble.layout().choice_rects
 
     def resolve_speaker(self):
@@ -194,7 +241,7 @@ class SocialSystem:
         profile = self.profiles[actor.data['id']]
         conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
         if conversation is None:return False
-        self.pages = self._make_pages(conversation['lines'])
+        self._set_lines(conversation['lines'])
         self.actor = actor
         self.conversation = conversation
         self._choosing = False
@@ -208,15 +255,51 @@ class SocialSystem:
 
     def _make_pages(self, lines):
         pages = []
-        for line in lines:
-            wrapped = self.wrap(line['text'], TEXT_WIDTH)
+        for source_index, line in enumerate(lines):
+            text = ' '.join(line['text'].split())
+            wrapped = self.wrap(text, TEXT_WIDTH)
+            starts, ends, cursor = [], [], 0
+            for fragment in wrapped:
+                start = text.find(fragment, cursor)
+                if start < 0:start = cursor
+                starts.append(start);ends.append(start+len(fragment))
+                cursor = start+len(fragment)
             for offset in range(0, len(wrapped), MAX_LINES):
-                page = {'speaker': line['speaker'], 'lines': wrapped[offset:offset+MAX_LINES]}
+                last = min(offset+MAX_LINES, len(wrapped))-1
+                page = {'speaker': line['speaker'], 'lines': wrapped[offset:offset+MAX_LINES],
+                        'source_line': source_index, 'offset': starts[offset], 'end': ends[last]}
                 # Scene actions belong to the line's first page, so wrapping
                 # cannot accidentally repeat a handoff or other story cue.
                 if offset == 0 and 'cue' in line:page['cue'] = line['cue']
                 pages.append(page)
         return pages
+
+    def _signature(self):
+        font = self.font
+        return (font.size('Il1 O0 rn m — “Kindness”'), font.get_linesize(),
+                getattr(getattr(self.game, 'audio', None), 'text_scale', 1.0))
+
+    def _set_lines(self, lines):
+        self._source_lines = [dict(line) for line in lines]
+        self._layout_signature = self._signature()
+        self.pages = self._make_pages(self._source_lines)
+        self.page_index = 0
+        self.clear_pointer()
+
+    def refresh_layout(self):
+        """Reflow at the same source passage after text-size/display changes."""
+        if not self._source_lines or not self.pages:return
+        signature = self._signature()
+        if signature == self._layout_signature:return
+        current = self.pages[self.page_index]
+        source, offset = current['source_line'], current['offset']
+        self.pages = self._make_pages(self._source_lines)
+        if self._choosing:self.page_index = len(self.pages)-1
+        else:
+            matches = [(index, page) for index, page in enumerate(self.pages)
+                       if page['source_line'] == source and page['offset'] <= offset]
+            self.page_index = matches[-1][0] if matches else 0
+        self._layout_signature = signature
 
     def start_script(self, lines, on_complete=None, identifier=None):
         """Read a scene's dialogue without impersonating an ambient NPC.
@@ -231,10 +314,8 @@ class SocialSystem:
                or not isinstance(line.get('text'), str) or not line['text'].strip()
                or ('cue' in line and not isinstance(line['cue'], str)) for line in lines):
             return False
-        pages = self._make_pages(lines)
         self.actor = None
-        self.pages = pages
-        self.page_index = 0
+        self._set_lines(lines)
         self.pending = False
         self.conversation = {'id': identifier or 'scripted_scene', 'scripted': True}
         self._choosing = False
@@ -250,6 +331,8 @@ class SocialSystem:
         if not self.scripted:return False
         self.actor = None
         self.pages = []
+        self._source_lines = []
+        self.clear_pointer()
         self.page_index = 0
         self.pending = False
         self.conversation = None
@@ -274,6 +357,8 @@ class SocialSystem:
             self.actor.end_conversation()
             self.actor = None
             self.pages = []
+            self._source_lines = []
+            self.clear_pointer()
             self.page_index = 0
             self.pending = False
             self.conversation = None
@@ -301,6 +386,7 @@ class SocialSystem:
         return lines or ['']
 
     def advance(self):
+        self.refresh_layout()
         if not self.active or self.choosing:return
         if self.page_index + 1 < len(self.pages):
             self.page_index += 1
@@ -327,6 +413,7 @@ class SocialSystem:
             if not self.game.quests.accept(self.conversation['quest']['id']):return False
             accepted = self.conversation['quest']['id']
         self._finish(accepted)
+        self.game.ui.sound('confirm')
         return True
 
     def _finish(self, accepted_quest=None):
@@ -343,6 +430,8 @@ class SocialSystem:
         self.actor.end_conversation()
         self.actor = None
         self.pages = []
+        self._source_lines = []
+        self.clear_pointer()
         self.page_index = 0
         self.pending = False
         self._conversation_world = None
@@ -355,4 +444,8 @@ class SocialSystem:
         if save is not None:save()
 
     def draw(self, canvas, elapsed_ms, camera=None):
-        return self.bubble.draw(canvas, camera=camera, elapsed_ms=elapsed_ms)
+        self._active_canvas = canvas
+        try:
+            self.refresh_layout()
+            return self.bubble.draw(canvas, camera=camera, elapsed_ms=elapsed_ms)
+        finally:self._active_canvas = None

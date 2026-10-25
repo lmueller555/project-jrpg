@@ -543,7 +543,7 @@ class OpeningSequence:
                 self._serene_glance = True
         page = self.game.social.page
         if self.stage == 'wake' and self.game.social.scripted and page is not None:
-            key = (self.game.social.script_identifier, self.game.social.page_index)
+            key = (self.game.social.script_identifier, page.get('source_line', self.game.social.page_index))
             if key not in self._seen_cue_pages:
                 self._seen_cue_pages.add(key)
                 if page.get('cue') == 'wake_up':self._queue_wake()
