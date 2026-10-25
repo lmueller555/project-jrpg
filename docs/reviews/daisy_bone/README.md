@@ -1,4 +1,4 @@
-# Daisy's play bone — awaiting review
+# Daisy's play bone — approved
 
 - [Bring the bone to the rug, bow, shake and chew](rug_play.gif)
 - [Drop it elsewhere, then find and retrieve the same bone](drop_and_retrieve.gif)
@@ -29,5 +29,5 @@ contact details. `bone_left_elsewhere.png` shows the persistent dropped location
 verified single object identity across both sessions.
 
 Reproduce with `python tools/build_liam_family_home.py`, then
-`python tools/capture_daisy_bone.py`. This branch is published for review and has
-not been merged into main.
+`python tools/capture_daisy_bone.py`. The user approved this routine on
+2026-10-25 for merging into main.

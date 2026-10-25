@@ -97,7 +97,7 @@ cached room offscreen; neither can start while the other owns Liam. The initial
 block-play delay is 90–150 seconds and repeat cooldown 3–5 minutes. See the
 [review clips](../../../../docs/reviews/liam_blocks/README.md).
 
-## Daisy's movable play bone — awaiting review
+## Daisy's movable play bone — approved
 
 `bone_routine` references `../routines/daisy_bone.json`. One nonblocking ivory
 bone starts at [138,259], clear of Daisy's body and the two bowls. The controller

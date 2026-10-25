@@ -46,7 +46,7 @@ building with five wooden toys beside his bed. The new box and props reuse the
 cottage furniture wood palette. See the [action pack](block_play/README.md) and
 [three runtime outcomes](../../../docs/reviews/liam_blocks/README.md).
 
-## Daisy's bone — awaiting review
+## Daisy's bone — approved
 
 Daisy now has a single movable play bone inside the family cottage. Liam's
 invitation and block activities wait for her to put it down safely before

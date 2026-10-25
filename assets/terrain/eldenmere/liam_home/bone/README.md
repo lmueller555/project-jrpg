@@ -1,4 +1,4 @@
-# Daisy's single play bone — awaiting review
+# Daisy's single play bone — approved
 
 A warm ivory 8×4 horizontal bone with rounded ends, restrained shading, and
 vertical/diagonal variants. The new four-color palette is local to this prop;

@@ -1,4 +1,4 @@
-# Daisy's bone-play actions — awaiting review
+# Daisy's bone-play actions — approved
 
 All action bodies are transparent 64×48 frames with draw anchor [32,42].
 The approved 32×36 walk/idle pixels are padded at [16,12]; lying art is padded

@@ -88,7 +88,7 @@ settling pose, then rests 45–90 seconds. The block controller waits for any bo
 visit to finish, and restores her normal routine afterward. See
 [the accident preview](../../../docs/reviews/liam_blocks/daisy_accident.gif).
 
-## Play bone — awaiting review
+## Play bone — approved
 
 `bone_play/` adds four-frame floor pickup/drop, play bow, head shake, settling,
 lying chew, paw release and nose nudge actions. Carrying reuses all four approved
