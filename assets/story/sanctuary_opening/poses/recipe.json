@@ -1,0 +1,153 @@
+{
+  "id": "sanctuary_opening_poses",
+  "status": "implemented",
+  "builder": "tools/build_sanctuary_opening_poses.py",
+  "source_png_sha256": {
+    "assets/characters/caelan/idle_right.png": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+    "assets/characters/tomas/idle_left.png": "f6808a69db9a00afdeff443bf72381ad3df2a784d644651d36df7ffda5ad99fa",
+    "assets/terrain/eldenmere/sanctuary_interior/props/breakfast.png": "0c5bbe8607c11734ddf08d48f50ab700687006646466d22b98e31b59f82344ce",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d"
+  },
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_baseline": 34,
+  "seated": {
+    "caelan": {
+      "file": "caelan_seated.png",
+      "facing": "right",
+      "wrist": [
+        16,
+        25
+      ]
+    },
+    "tomas": {
+      "file": "tomas_seated.png",
+      "facing": "left",
+      "wrist": [
+        7,
+        25
+      ]
+    },
+    "head_and_shoulders_drop_px": 3,
+    "suggested_positions": {
+      "caelan": [
+        138,
+        200
+      ],
+      "tomas": [
+        198,
+        200
+      ]
+    }
+  },
+  "sleep": {
+    "file": "caelan_sleep_head.png",
+    "occupied_bbox_xyxy": [
+      6,
+      1,
+      18,
+      13
+    ],
+    "occupied_rect": [
+      6,
+      1,
+      12,
+      12
+    ],
+    "suggested_image_position": [
+      48,
+      123
+    ],
+    "bed_position": [
+      36,
+      108
+    ],
+    "eyes": "closed; body is covered by the existing quilt"
+  },
+  "plate_push": {
+    "frames": [
+      "tomas_plate_push/frame_01.png",
+      "tomas_plate_push/frame_02.png",
+      "tomas_plate_push/frame_03.png",
+      "tomas_plate_push/frame_04.png"
+    ],
+    "frame_duration_ms": 180,
+    "wrists": [
+      [
+        7,
+        25
+      ],
+      [
+        6,
+        25
+      ],
+      [
+        5,
+        25
+      ],
+      [
+        7,
+        26
+      ]
+    ],
+    "elbows": [
+      [
+        13,
+        25
+      ],
+      [
+        12,
+        25
+      ],
+      [
+        11,
+        24
+      ],
+      [
+        13,
+        25
+      ]
+    ],
+    "arm_segment_lengths_px": {
+      "upper": "4-5",
+      "forearm": "6-7"
+    },
+    "plate_offsets_px": [
+      [
+        0,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -2,
+        0
+      ]
+    ]
+  },
+  "plate": {
+    "file": "plate.png",
+    "frame_size": [
+      8,
+      4
+    ],
+    "suggested_position": [
+      185,
+      191
+    ]
+  },
+  "notes": "Approved design pixels and palettes retained. No original PNG is changed. The scene owns the temporary seating and table depth."
+}

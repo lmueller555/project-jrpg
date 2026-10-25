@@ -212,11 +212,14 @@ class QuestGameplayTests(unittest.TestCase):
         self.assertFalse(restored.on_title)
         self.assertEqual(restored.quests.status(OPENING_QUEST), 'available')
         self.assertEqual(restored.social.flags, set())
-        self.assertIs(restored.world, restored.town)
-        self.assertEqual(list(restored.player.position), restored.town.data['spawn'])
+        self.assertEqual(restored.world.data['id'], 'sanctuary_bedroom')
+        self.assertEqual(restored.opening.stage, 'wake')
+        self.assertTrue(restored.social.scripted)
+        self.assertTrue(restored.world.can_stand(restored.player.position))
         saved = json.loads(self.path.read_text())
         self.assertEqual(saved['quests'], restored.quests.to_dict())
         self.assertEqual(saved['dialogue_flags'], [])
+        self.assertEqual(saved['opening'], {'version': 1, 'stage': 'wake'})
 
     def test_invalid_saves_disable_continue_without_overwriting_the_file(self):
         game = self.game(saved=True)

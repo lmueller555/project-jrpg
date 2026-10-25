@@ -94,6 +94,7 @@ class RoutineNPC:
         self.facing=self.steps[0].get('facing','front')
         self.moving=False;self.waiting=False;self.completed_cycles=0
         self.path=None;self.waypoint_index=0;self.blocked_seconds=0.0;self.retry_seconds=0.0
+        self._yield_target=None;self._yield_peer=None;self._yield_step=None
         self.events=deque(maxlen=64)
         self._accumulator=0.0
 
@@ -326,6 +327,7 @@ class RoutineNPC:
             self.events.append({'type':'cycle','cycle':self.completed_cycles})
         self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
         self.blocked_seconds=0.0;self.retry_seconds=0.0;self.moving=False;self.waiting=False
+        self._clear_yield()
         self.facing=self._step_facing(self.step,self.facing)
         if 'duration_range_ms' in self.step:
             self.wait_duration_ms=random.randint(*self.step['duration_range_ms'])
@@ -350,6 +352,7 @@ class RoutineNPC:
         if scene_id is not None:self.scene_id=scene_id
         self.state_ms=0.0;self.walk_ms=0.0;self.path=None;self.waypoint_index=0
         self.blocked_seconds=0.0;self.retry_seconds=0.0;self.moving=False;self.waiting=False
+        self._clear_yield()
         self._accumulator=0.0
         default_facing=self._step_facing(self.step,self.facing)
         self.facing=facing or default_facing
@@ -398,11 +401,76 @@ class RoutineNPC:
         if self.state_ms+1e-7>=self._duration(step):self._advance()
         return False
 
+    def _clear_yield(self):
+        self._yield_target=None;self._yield_peer=None;self._yield_step=None
+
+    @staticmethod
+    def _traffic_priority(actor):
+        """The nearer actor clears a shared landing first; ties have one winner."""
+        step=actor.step
+        if step['type']=='transfer':return (0,0,actor.data['id'])
+        waypoints=step.get('waypoints',[])
+        distance=(actor.position.distance_squared_to(waypoints[actor.waypoint_index])
+                  if actor.waypoint_index<len(waypoints) else float('inf'))
+        return (1,distance,actor.data['id'])
+
+    def _try_yield(self,world,goal,player,blocked_at=None):
+        """Walk to a nearby waiting point instead of holding another actor's goal.
+
+        Yielding never edits authored waypoints or advances a task. Its route
+        uses the same collision mask, NPC feet and player blocker as normal
+        movement. The winner can then reach the landing and leave through its
+        ordinary transfer callback.
+        """
+        if self._yield_target is not None:return False
+        blocked=world.probe_rect(goal if blocked_at is None else blocked_at,self.probe_size)
+        peers=[actor for actor in world.npcs
+               if isinstance(actor,RoutineNPC) and actor is not self
+               and actor.step['type'] in ('move','transfer')
+               and blocked.colliderect(actor.blocker)]
+        if not peers:return False
+        winner=min([self,*peers],key=self._traffic_priority)
+        if winner is self:return False
+        # Step aside perpendicular to the short approach to this goal. Keeping
+        # the landing itself clear also lets the winner finish its final pixel.
+        delta=pygame.Vector2(goal)-self.position
+        horizontal=abs(delta.y)>=abs(delta.x)
+        landing=world.probe_rect(goal,self.probe_size).inflate(6,6)
+        candidates=[]
+        for distance in (8,12,16,20,24,32):
+            for sign in (1,-1):
+                point=(round(self.position.x/2)*2+(sign*distance if horizontal else 0),
+                       round(self.position.y/2)*2+(0 if horizontal else sign*distance))
+                if landing.colliderect(world.probe_rect(point,self.probe_size)):continue
+                if not world.can_stand(point,self.probe_size,self,player):continue
+                route=find_path(world,self.position,point,self.probe_size,self,player)
+                if route is None:continue
+                cursor=self.position;length=0
+                for corner in route:
+                    length+=pygame.Vector2(cursor).distance_to(corner);cursor=corner
+                if length<=48:candidates.append((length,point,route))
+        if not candidates:return False
+        _,self._yield_target,self.path=min(candidates,key=lambda value:value[:2])
+        self._yield_peer=winner;self._yield_step=winner.step_index
+        self.retry_seconds=0.0;self.blocked_seconds=0.0
+        self.events.append({'type':'yield','for':winner.data['id'],
+                            'position':self._yield_target})
+        return True
+
     def _move(self,seconds,world,player):
         step=self.step;waypoints=step['waypoints']
         self.moving=False;self.waiting=False
         if self.waypoint_index>=len(waypoints):self._advance();return
         goal=waypoints[self.waypoint_index]
+        if self._yield_target is not None:
+            if self.position.distance_squared_to(self._yield_target)<1e-8:
+                peer=self._yield_peer
+                if (peer in world.npcs and peer.step_index==self._yield_step and
+                        self.position.distance_squared_to(peer.position)<48**2):
+                    self.waiting=True
+                    return
+                self._clear_yield();self.path=None;self.retry_seconds=0.0
+            else:goal=self._yield_target
         if self.position.distance_squared_to(goal)<1e-8:
             self.waypoint_index+=1;self.path=None
             if self.waypoint_index>=len(waypoints):self._advance()
@@ -411,7 +479,10 @@ class RoutineNPC:
             self.retry_seconds=max(0.0,self.retry_seconds-seconds)
             if self.retry_seconds>1e-8:self.waiting=True;return
             self.path=find_path(world,self.position,goal,self.probe_size,self,player)
-            if self.path is None:self.retry_seconds=.5;self.waiting=True;return
+            if self.path is None:
+                if not self._try_yield(world,goal,player):
+                    self.retry_seconds=.5;self.waiting=True;return
+                goal=self._yield_target
         speed=float(step.get('speed',self.speed))
         if speed<=0:raise ValueError(f'Move step {step["id"]!r} speed must be positive')
         budget=speed*seconds
@@ -425,6 +496,7 @@ class RoutineNPC:
                 if self.blocked_seconds>=.8:
                     alternate=find_path(world,self.position,goal,self.probe_size,self,player)
                     if alternate is not None:self.path=alternate
+                    else:self._try_yield(world,goal,player,candidate)
                     self.blocked_seconds=0.0
                 return
             self.position.update(candidate);budget-=travel
@@ -435,6 +507,9 @@ class RoutineNPC:
             if travel+1e-7>=distance:self.path.popleft()
         if not self.path:
             self.path=None
+            if self._yield_target is not None:
+                self.waiting=True
+                return
             if self.position.distance_squared_to(goal)<1e-8:
                 self.waypoint_index+=1
                 if self.waypoint_index>=len(waypoints):self._advance()

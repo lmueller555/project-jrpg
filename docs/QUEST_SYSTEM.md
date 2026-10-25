@@ -2,7 +2,7 @@
 
 The quest layer provides availability, explicit acceptance, objective updates,
 ready-to-report state and completion. The opening assignment is available from
-Mother Serene; its household task implementations remain future work. The
+Mother Serene after the opening breakfast; its household task implementations remain future work. The
 approved story order remains in `narrative/game_01/CH01_MQ01.md`.
 
 ## Player controls
@@ -31,9 +31,15 @@ operation from finishing the last household.
 
 `social.py` selects Serene's offer, reminders, report and thanks from the saved
 state. Her work remains paused through the acceptance choice and resumes after
-acceptance or refusal. The existing proximity release distance prevents immediate
+the opening's follow-up exchange. Refusal leaves her sorting provisions until
+the request is accepted. The existing proximity release distance prevents immediate
 retriggering. `quest_ui.py` projects interior quest givers onto exterior map
 entrances without instantiating rooms or NPCs.
+
+`opening.py` gates the offer, its marker and its journal listing until breakfast
+has finished. The available-quest tracker instead gives local breakfast guidance
+before then. The accepted click checkpoints the follow-up scene before the next
+frame, so exiting immediately cannot skip that conversation on Continue.
 
 Future household controllers must call the following hook only after their
 delivery, practical task and required scene have actually finished:
@@ -58,7 +64,7 @@ scene will be attached when MQ01's full story flow is implemented.
 The launcher passes `saves/journey.json` to `Game`. `SaveStore` writes bounded,
 versioned JSON through an atomic replacement; a failed write preserves the old
 checkpoint. Save data records quest progress, conversation flags, player scene,
-facing and position, and the exterior map position. Quest snapshots are fully
+facing and position, the exterior map position, and the opening scene checkpoint. Quest snapshots are fully
 validated before replacement; malformed state and unknown scene IDs cannot
 partially load. A saved standing spot occupied by a restarted NPC falls back to
 a clear entry/nearby landing.
@@ -77,9 +83,8 @@ full suite. The focused quest tests cover lifecycle/order/idempotence, journal
 rendering and scrolling, deliberate response hitboxes, routine resumption,
 progress-sensitive dialogue, atomic save failures and title Continue behavior.
 
-The existing Serene full-cycle test fixes Tomas's random wait timing locally so
-it measures a repeatable schedule with both actors present. Independent of the
-quest system, some wait timings can leave Serene and Tomas waiting for the same
-narrow dining-room doorway waypoint (reproduced with random seed 2). That shared
-route scheduling issue remains separate; quest input and room-visit tests do
-not bypass collision or complete tasks to work around it.
+Shared-waypoint traffic now makes the lower-priority moving resident walk to a
+nearby clear waiting point, let the other resident pass, and resume the same
+authored task. The Serene full-cycle test exercises both ordinary timing and the
+previously deadlocking random seed 2 with both actors present. Physical traffic
+tests retain wall, NPC and player collision checks and unchanged task progress.
