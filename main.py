@@ -452,6 +452,19 @@ class Game:
         self._mouse_held=False
         if data is None:self.opening.start_new_game()
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
+        # Story staging can reserve a different NPC station than an older
+        # checkpoint used. Recheck after those actors have been positioned.
+        if not self.world.can_stand(self.player.position):
+            entry=self.world.data['spawn']
+            candidates=[entry]
+            for radius in range(4,49,4):
+                for dx,dy in ((0,radius),(radius,0),(0,-radius),(-radius,0)):
+                    candidates.append((entry[0]+dx,entry[1]+dy))
+            landing=next((p for p in candidates if self.world.can_stand(p)),None)
+            if landing is None:
+                self.world=self.town
+                landing=self.town.data['spawn']
+            self.player.position.update(landing)
         self.opening_audio.reset()
         self.pause.close()
         self.camera.reset()

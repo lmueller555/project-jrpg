@@ -233,6 +233,28 @@ class PolishedOpeningTests(unittest.TestCase):
         game.quest_ui.draw_tracker(canvas)
         self.assertEqual(pygame.image.tobytes(canvas, 'RGB'), blank)
 
+    def test_legacy_assignment_landing_is_rechecked_after_cast_staging(self):
+        game = self.h.game(title=False)
+        game.world = game._scene_by_id('sanctuary_dining')
+        # This floor point was clear in the preceding layout/schedule. The
+        # revised breakfast staging reserves it for Tomas after restore.
+        game.player.position.update(238, 200)
+        self.assertTrue(game.world.can_stand(game.player.position))
+        self.assertTrue(game.save_progress())
+        snapshot = json.loads(self.h.path.read_text())
+        snapshot['opening'] = {'version': 1, 'stage': 'assignment'}
+        self.h.path.write_text(json.dumps(snapshot))
+        restored = self.h.continue_game()
+        self.assertEqual(restored.world.data['id'], 'sanctuary_dining')
+        self.assertEqual(restored.opening.stage, 'assignment')
+        self.assertEqual(restored.quests.status(OPENING_QUEST), 'available')
+        self.assertTrue(restored.world.can_stand(restored.player.position))
+        self.assertNotEqual(tuple(restored.player.position), (238, 200))
+        self.h.assert_single_cast(restored)
+        checkpoint = json.loads(self.h.path.read_text())
+        self.assertEqual(checkpoint['player']['position'], list(restored.player.position))
+        self.assertEqual(checkpoint['opening']['stage'], 'assignment')
+
     def test_launcher_settings_persist_independently_from_story_checkpoint(self):
         settings = Path(self.h.directory.name)/'settings.json'
         game = main.Game(fullscreen=False, start_on_title=False, settings_path=settings)
