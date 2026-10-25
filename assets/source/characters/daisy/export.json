@@ -1,0 +1,162 @@
+{
+  "source": "idle_turnaround_concepts.png",
+  "alpha_threshold": 128,
+  "resampling": "nearest",
+  "frame_size": [
+    32,
+    36
+  ],
+  "foot_anchor": [
+    16,
+    34
+  ],
+  "views": {
+    "front": {
+      "source_bounds": [
+        141,
+        62,
+        541,
+        560
+      ],
+      "occupied_rect": [
+        9,
+        11,
+        20,
+        24
+      ],
+      "eyes": [
+        [
+          14,
+          16
+        ],
+        [
+          18,
+          16
+        ]
+      ],
+      "nose": [
+        16,
+        18
+      ],
+      "layers": {
+        "head_and_ears": [
+          0,
+          21
+        ],
+        "body_and_tail": [
+          21,
+          30
+        ],
+        "paws": [
+          30,
+          36
+        ]
+      }
+    },
+    "left": {
+      "source_bounds": [
+        619,
+        66,
+        1282,
+        560
+      ],
+      "occupied_rect": [
+        1,
+        12,
+        30,
+        23
+      ],
+      "eyes": [
+        [
+          5,
+          17
+        ]
+      ],
+      "nose": [
+        1,
+        18
+      ],
+      "layers": {
+        "upper_silhouette": [
+          0,
+          21
+        ],
+        "body_and_tail": [
+          21,
+          29
+        ],
+        "paws": [
+          29,
+          36
+        ]
+      }
+    },
+    "right": {
+      "source_bounds": [
+        47,
+        635,
+        689,
+        1131
+      ],
+      "occupied_rect": [
+        1,
+        12,
+        30,
+        23
+      ],
+      "eyes": [
+        [
+          27,
+          17
+        ]
+      ],
+      "nose": [
+        30,
+        18
+      ],
+      "layers": {
+        "upper_silhouette": [
+          0,
+          21
+        ],
+        "body_and_tail": [
+          21,
+          29
+        ],
+        "paws": [
+          29,
+          36
+        ]
+      }
+    },
+    "back": {
+      "source_bounds": [
+        843,
+        635,
+        1279,
+        1139
+      ],
+      "occupied_rect": [
+        5,
+        11,
+        22,
+        24
+      ],
+      "eyes": [],
+      "layers": {
+        "head_and_ears": [
+          0,
+          21
+        ],
+        "body_and_tail": [
+          21,
+          29
+        ],
+        "paws": [
+          29,
+          36
+        ]
+      }
+    }
+  }
+}

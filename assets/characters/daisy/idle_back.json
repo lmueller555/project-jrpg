@@ -1,0 +1,44 @@
+{
+  "character": "daisy",
+  "display_name": "Daisy",
+  "species": "dog",
+  "sex": "female",
+  "family": "liam_family",
+  "status": "review",
+  "animation": "idle.back",
+  "image": "idle_back.png",
+  "frame_size": [
+    32,
+    36
+  ],
+  "rect": [
+    0,
+    0,
+    32,
+    36
+  ],
+  "occupied_rect": [
+    5,
+    11,
+    22,
+    24
+  ],
+  "visible_height_px": 24,
+  "foot_anchor": [
+    16,
+    34
+  ],
+  "palette": "palette.json",
+  "eyes": {
+    "top_pixels": [],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "source": "assets/source/characters/daisy/idle_turnaround_concepts.png",
+  "export_recipe": "assets/source/characters/daisy/export.json",
+  "layers_from_repo_root": [
+    "assets/source/characters/daisy/idle_back_layers/head_and_ears.png",
+    "assets/source/characters/daisy/idle_back_layers/body_and_tail.png",
+    "assets/source/characters/daisy/idle_back_layers/paws.png"
+  ]
+}
