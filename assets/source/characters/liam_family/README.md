@@ -7,7 +7,8 @@ existing approved cast. The native game exports are in the individual `liam`,
 
 The requested story facts are Liam's age of **8** and both parents being in
 their **mid-30s**. Parent names, surname, home and quest association are unassigned.
-Clothing, palettes, hair and visible heights are initial designs for review.
+The front-facing idle designs, including clothing, palettes, hair and visible
+heights, are approved by the user.
 
 Run `python tools/build_liam_family_idles.py` to reproduce the native sprites.
 The builder uses the existing Tomas band-sampling/material-mapping helper,

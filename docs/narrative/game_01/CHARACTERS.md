@@ -14,7 +14,7 @@
 Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
 requested NPC family; their surname, home and quest association are unassigned.
-Their initial sprite designs are being reviewed separately from these age facts.
+Their front-facing idle sprite designs are also approved.
 
 Earlier narrative drafts spell Caelan's name **Caelen**; both spellings refer
 to the same protagonist, whose current game and asset identity is **Caelan**.

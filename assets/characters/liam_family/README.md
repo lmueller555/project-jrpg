@@ -1,4 +1,4 @@
-# Liam's family — front idles for review
+# Liam's family — approved front idles
 
 `front_idles.png` is a native transparent 72×36 sheet: mother, Liam, father.
 `family.json` links individual sprites, palettes, source layers and metadata.
@@ -9,7 +9,7 @@ Mother and Liam share chestnut hair and green eyes. Father has darker brown
 hair, a short beard and hazel eyes. All have empty hands and front-facing idles.
 
 Individual assets live in `../liam/`, `../liam_mother/` and `../liam_father/`.
-These are initial designs awaiting review. Walking sprites, portraits, routines
+These front-facing idle designs are approved. Walking sprites, portraits, routines
 and placement in the playable world are not yet part of this pack.
 
 See [the enlarged review](../../../docs/reviews/liam_family/README.md).

@@ -16,6 +16,7 @@ SOURCE=ROOT/'assets/source/characters/liam_family'
 REVIEW=ROOT/'docs/reviews/liam_family'
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BACKGROUND='#e8edf2'
+STATUS='approved'
 COMMON={
     'outline':['#1a0e16'],
     'skin':['#e8c49d','#eda052'],
@@ -139,7 +140,7 @@ def build():
     for identity,spec in SPECS.items():
         output=ROOT/f'assets/characters/{identity}';output.mkdir(parents=True,exist_ok=True)
         age={k:spec[k] for k in ('age_years','age_range') if k in spec}
-        palette={'status':'review','materials':{**COMMON,**spec['materials']},
+        palette={'status':STATUS,'materials':{**COMMON,**spec['materials']},
                  'eyes':{'pupil':'#1a0e16','iris':spec['iris']}}
         write(output/'palette.json',palette)
         recipe={'source':'front_idle_concepts.png','alpha_threshold':128,
@@ -175,7 +176,7 @@ def build():
         d.text((28,990),'Design for review',font=font(22),fill='#52616c')
         review.save(REVIEW/f'{identity}.png')
         metadata={'character':identity,'display_label':spec['label'],'family':'liam_family',
-                  'role':spec['role'],**age,'status':'review','animation':'idle.front',
+                  'role':spec['role'],**age,'status':STATUS,'animation':'idle.front',
                   'image':'idle_front.png','frame_size':[24,36],'rect':[0,0,24,36],
                   'occupied_rect':spec['occupied'],'visible_height_px':h,'foot_anchor':[12,34],
                   'palette':'palette.json','source':'assets/source/characters/liam_family/front_idle_concepts.png',
@@ -189,7 +190,7 @@ def build():
     sheet.save(folder/'front_idles.png')
     members=[{**record,'sprite_root':f"assets/characters/{record['character']}",
               'sheet_rect':[i*24,0,24,36]} for i,record in enumerate(records)]
-    write(folder/'family.json',{'status':'review','members':members,'sheet':'front_idles.png',
+    write(folder/'family.json',{'status':STATUS,'members':members,'sheet':'front_idles.png',
           'column_order':list(SPECS),'frame_size':[24,36],'parents_names':'unassigned',
           'quest_association':'unassigned'})
     board(REVIEW/'family_front_idles.png',[

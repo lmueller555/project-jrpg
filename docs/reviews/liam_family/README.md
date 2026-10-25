@@ -1,6 +1,7 @@
 # Liam and his parents — front idle review
 
-Initial designs on `liam-family-front-idles`, awaiting user review before merging.
+Front-facing idle designs approved by the user and merged into `main`.
+The images retain their original review labels as a record of the approved designs.
 
 ![Family front idles at a shared scale](family_front_idles.png)
 

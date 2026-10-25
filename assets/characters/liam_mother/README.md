@@ -1,6 +1,6 @@
-# Liam's mother — front idle for review
+# Liam's mother — approved front idle
 
-Liam's mother is in her **mid-30s**; her name is unassigned. The proposed design
+Liam's mother is in her **mid-30s**; her name is unassigned. The approved design
 uses a chestnut braid, two green eyes, a blue-green dress, cream apron and brown
 boots, with empty hands. Hair and eye colors provide resemblance to Liam.
 
@@ -9,5 +9,5 @@ foot anchor `[12,34]`. `idle_front.json` records the design, source layers,
 eyes and frame registration; `palette.json` records the limited colors.
 
 Build using `python tools/build_liam_family_idles.py`. See the family pack at
-`../liam_family/README.md`. Design awaiting review; no world placement, walks
+`../liam_family/README.md`. The front idle is approved; no world placement, walks
 or dialogue have been added.
