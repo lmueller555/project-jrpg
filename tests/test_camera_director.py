@@ -1,4 +1,4 @@
-"""Scene framing, reversible dialogue transitions and deterministic easing."""
+"""Live dialogue preserves full-world player tracking and deterministic easing."""
 import math
 from types import SimpleNamespace
 import unittest
@@ -15,30 +15,27 @@ class CameraDirectorTests(unittest.TestCase):
             player=SimpleNamespace(position=point), opening=opening,
             social=SimpleNamespace(locked=False, actor=None, script_identifier=None))
 
-    def test_authored_breakfast_shot_does_not_change_when_textbox_toggles(self):
+    def test_authored_scene_and_text_do_not_change_world_framing(self):
         game = self.game(stage='breakfast', focus=(210, 185))
         camera = CameraDirector(game)
         camera.reset()
-        self.assertEqual(camera.position(), (-24, 83))
+        self.assertEqual(camera.position(), (-24, 16))
         for locked in (True, False, True, False):
             game.social.locked = locked
             camera.update(.2)
-            self.assertEqual(camera.position(), (-24, 83))
-            self.assertEqual(camera.framing_height, 204)
+            self.assertEqual(camera.position(), (-24, 16))
+            self.assertEqual(camera.framing_height, 320)
         self.assertTrue(camera.settled)
 
-    def test_wake_to_free_control_eases_without_a_camera_cut(self):
+    def test_wake_to_free_control_uses_same_player_tracking(self):
         game = self.game(size=(288, 336), point=(60, 186), stage='wake', focus=(74, 150))
         camera = CameraDirector(game)
         camera.reset()
-        self.assertEqual(camera.position(), (-96, 48))
+        self.assertEqual(camera.position(), (-96, 16))
         game.opening.stage, game.opening.focus = 'explore', None
         camera.update(1/60)
-        self.assertTrue(16 < camera.position()[1] < 48)
-        self.assertTrue(204 < camera.framing_height < 320)
-        for _ in range(24):
-            camera.update(1/60)
         self.assertEqual(camera.position(), (-96, 16))
+        self.assertEqual(camera.framing_height, 320)
         self.assertTrue(camera.settled)
 
     def test_ease_is_frame_partition_independent_and_never_overshoots(self):
@@ -63,9 +60,9 @@ class CameraDirectorTests(unittest.TestCase):
         game.world = SimpleNamespace(size=(288, 336))
         game.player.position = (60, 186)
         game.opening.stage, game.opening.focus = 'wake', (74, 150)
-        self.assertEqual(camera.position(), (-96, 48))
+        self.assertEqual(camera.position(), (-96, 16))
         camera.update(.2)
-        self.assertEqual(camera.position(), (-96, 48))
+        self.assertEqual(camera.position(), (-96, 16))
 
     def test_small_world_centering_and_both_axis_bounds(self):
         game = self.game(size=(200, 160), point=(10, 10))
@@ -107,42 +104,46 @@ class CameraDirectorTests(unittest.TestCase):
         self.assertEqual(camera.position(), before)
         self.assertEqual(camera.framing_height, 320)
 
-    def test_inspection_exposes_a_player_previously_below_the_textbox(self):
+    def test_inspection_keeps_full_view_for_a_player_near_the_bottom(self):
         game = self.game(size=(432, 336), point=(216, 300))
         camera = CameraDirector(game)
         camera.reset()
-        self.assertEqual(camera.position(), (-24, 16))
+        before = camera.position()
         game.social.locked = True
         game.social.script_identifier = 'bedroom_inspect_test'
-        camera.update(1/60)
-        self.assertTrue(16 < camera.position()[1] < 110)
         camera.update(.4)
-        self.assertLessEqual(game.player.position[1]-camera.position()[1], 191)
+        self.assertEqual(camera.position(), before)
+        self.assertEqual(camera.framing_height, 320)
 
-    def test_assignment_free_roaming_does_not_stay_fixed_on_serene(self):
+    def test_quest_offer_does_not_center_on_serene(self):
         game = self.game(stage='assignment', focus=(228, 198))
         camera = CameraDirector(game)
         camera.reset()
-        self.assertEqual(camera.position(), (-24, 16))
+        before = camera.position()
         game.social.locked = True
         camera.update(.4)
-        self.assertEqual(camera.position(), (-24, 96))
+        self.assertEqual(camera.position(), before)
+        self.assertEqual(camera.framing_height, 320)
 
-    def test_conversation_centers_participants_and_eases_both_directions(self):
-        game = self.game(point=(288, 231))
+    def test_camera_follows_player_movement_during_conversation(self):
+        game = self.game(size=(1536, 1344), point=(384, 312))
         camera = CameraDirector(game)
         camera.reset()
         game.social.locked = True
-        game.social.actor = SimpleNamespace(position=(288, 214))
+        game.social.actor = SimpleNamespace(position=(384, 295))
+        game.player.position = (584, 412)
         camera.update(1/60)
-        self.assertTrue(16 < camera.position()[1] < 108)
-        camera.update(.4)
+        self.assertTrue(144 < camera.position()[0] < 344)
+        self.assertTrue(152 < camera.position()[1] < 252)
+        camera.update(.5)
         self.assertTrue(camera.settled)
+        self.assertEqual(camera.framing_height, 320)
+        self.assertEqual(camera.position(), (344, 252))
+        # Closing speech does not change the shot at either end.
         game.social.locked = False
         game.social.actor = None
-        previous = camera.position()[1]
-        camera.update(1/60)
-        self.assertTrue(16 < camera.position()[1] < previous)
+        camera.update(.4)
+        self.assertEqual(camera.position(), (344, 252))
 
     def test_resize_is_not_part_of_camera_coordinates_and_invalid_dt_is_rejected(self):
         game = self.game(stage='breakfast', focus=(210, 185))
@@ -151,7 +152,7 @@ class CameraDirectorTests(unittest.TestCase):
         for size in ((960, 640), (1920, 1080), (800, 800)):
             game.window = SimpleNamespace(size=size)
             camera.update(.1)
-            self.assertEqual(camera.position(), (-24, 83))
+            self.assertEqual(camera.position(), (-24, 16))
         for value in (-1, math.nan, math.inf):
             with self.assertRaises(ValueError):
                 camera.update(value)

@@ -79,7 +79,12 @@ class TomasRoutines(unittest.TestCase):
             self.assertIn(expected,[list(p) for p in anchors],step)
 
     def test_conversation_waits_until_carried_bundle_is_released_then_resumes(self):
-        a=self.actor;self.place('carry_to_storage')
+        a=self.actor;self.game.world=self.place('carry_to_storage')
+        # Stay near the short delivery route in the same room. Live dialogue
+        # correctly ends when either participant is in another room or leaves
+        # the release radius, including while a handoff is pending.
+        self.game.player.position.update(180,280)
+        self.assertTrue(self.game.world.can_stand(self.game.player.position))
         self.game.social.start(a)
         self.assertTrue(self.game.social.pending)
         for _ in range(600):

@@ -15,6 +15,9 @@ three-household quest; the practical household tasks are the next stage.
    drawing, wardrobe or bed using the approved optional lines. The tracker points
    to breakfast; players can explore without a timer or required inspection list.
 3. Walking through the hall's northeast door starts the greeting and invitation.
+   This exchange allows movement; leaving it unfinished postpones the meal.
+   Returning through the doorway or using **E: join breakfast** near the table
+   starts the invitation again.
    The production player mover then walks Caelan to his chair with full collision.
    Four-pose sitting, eating, cup placement and standing actions provide the
    visible meal. Tomas nudges his plate and eats more enthusiastically; Caelan
@@ -25,7 +28,9 @@ three-household quest; the practical household tasks are the next stage.
 5. Refusing the request leaves it available after walking away and returning.
    Clicking **I'll help** accepts exactly once, updates the quest UI, and plays
    the remaining approved request dialogue. Both actors face Caelan for this
-   exchange, then return to their ambient schedules. The household objectives
+   exchange, then return to their ambient schedules. Caelan can move throughout
+   the offer and follow-up. Leaving the follow-up releases the actors while
+   preserving the explicitly accepted quest. The household objectives
    remain incomplete until their real task controllers are implemented.
 
 Morning sounds are quiet diegetic bell, knock, bird and stream cues, with cloth,
@@ -39,15 +44,25 @@ without interrupting unrelated sound effects.
 
 `opening.py` controls scene checkpoints, borrowing the original Serene and Tomas
 instances. `social.py` supports actorless scripted dialogue as well as ordinary
-proximity conversations. Main's story pose overrides are visual only: logical
+proximity conversations. `speech_bubble.py` lays out portrait speech bubbles
+above the actual speaker, including Caelan's replies, and clamps them to the
+viewport. Rendering and clicked response hitboxes share that layout. A pending
+NPC handoff has its own small anchored hint; only that participant pauses after
+putting the item down. Normal conversations do not own movement or camera control.
+Walking away cancels unfinished prose without applying flags or quest effects.
+Main's story pose overrides are visual only: logical
 feet stay on valid floor, and normal rendering returns when the scene releases
 control. Both chairs use permanent positions in the source room, runtime map
 and collision masks; no scene action moves furniture. Action queues and dialogue
 completion barriers prevent quick reading from omitting a required gesture.
 
-`camera_director.py` holds authored scene compositions and eases focus changes
-over approximately 0.35 seconds. A receding matte hides short-room bounds during
-the return to exploration. Bedroom inspections hold a useful existing shot.
+`camera_director.py` follows Caelan with the full 480×320 world viewport, including
+through dialogue, and eases tracking over approximately 0.35 seconds. Opening a
+bubble does not change the shot or reserve a separate text-panel area. Bedroom
+inspections, the breakfast invitation and the accepted-quest exchange are live;
+the authored bed, guided walk and chair/meal actions still control his body.
+Steering during the meal latches a request to leave: the remaining gestures and
+standing action finish safely, dismissing unread meal prose without extra clicks.
 `pause_menu.py` stops gameplay during dialogue and actions as well as exploration;
 Escape resumes without advancing dialogue or choosing a quest response. Its
 Settings menu and the title use `audio_settings.py` and `saves/settings.json`.
@@ -68,6 +83,8 @@ with its own version and stage. Stages are `disabled`, `wake`, `explore`,
 boundaries and acceptance. Continuing unfinished wake/breakfast/acceptance scenes
 restarts that short scene from a safe point; finished scenes do not replay.
 Quests and dialogue flags retain their existing validation and persistence.
+Leaving an offer or report unread never accepts or completes it. An accepted
+quest stays accepted if the player walks away from its follow-up conversation.
 
 Older saves without this field restore in `disabled` mode and keep their prior
 story progress and location. They do not insert the new morning retroactively.

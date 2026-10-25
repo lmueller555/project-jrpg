@@ -11,6 +11,12 @@ approved story order remains in `narrative/game_01/CH01_MQ01.md`.
   at the sanctuary entrance on the town map, including when she moves rooms.
 - Advance prose by clicking anywhere, Space or E. At the response prompt only
   clicking **I'll help** accepts; **Not just yet** leaves the quest available.
+- Conversations use portrait speech bubbles above the current speaker, including
+  Caelan's replies. Movement, camera tracking and other NPC routines continue.
+  Walking away or entering another room closes unfinished dialogue without
+  accepting an offer, completing a report or setting conversation flags.
+  Response buttons follow the bubble and remain clickable after camera movement
+  or window resizing; advance keys and clicks outside them never choose for you.
 - Use **J** for the journal. J or Escape closes it; wheel, arrows and Page Up/Down
   scroll. Movement, dialogue triggers and room entry are suspended while open.
 - The tracker follows the next eligible objective. Completed objectives gain
@@ -33,16 +39,22 @@ Elira and Venn then become eligible in either order. Reporting is a separate
 operation from finishing the last household.
 
 `social.py` selects Serene's offer, reminders, report and thanks from the saved
-state. Her work remains paused through the acceptance choice and resumes after
+state. `speech_bubble.py` shares world-anchored bubble layout between drawing and
+choice hit testing. Her work remains paused through the acceptance choice and resumes after
 the opening's follow-up exchange. Refusal leaves her sorting provisions until
 the request is accepted. The existing proximity release distance prevents immediate
 retriggering. `quest_ui.py` projects interior quest givers onto exterior map
 entrances without instantiating rooms or NPCs.
+Quest notifications wait until the conversation ends, preserving their reading
+time and keeping response buttons unobscured.
 
 `opening.py` gates the offer, its marker and its journal listing until breakfast
 has finished. The available-quest tracker instead gives local breakfast guidance
 before then. The accepted click checkpoints the follow-up scene before the next
-frame, so exiting immediately cannot skip that conversation on Continue.
+frame, so exiting immediately cannot skip that conversation on Continue. Walking
+away from the live follow-up ends it and releases the actors while preserving
+the accepted quest. Cancelling an offer or report uses a separate path from
+finishing it, so unread pages never apply quest or conversation effects.
 
 Future household controllers must call the following hook only after their
 delivery, practical task and required scene have actually finished:

@@ -6,7 +6,8 @@
   "speakers": {
     "serene": {
       "name": "Mother Serene",
-      "portrait": "serene"
+      "portrait": "serene",
+      "actor_id": "mother_serene"
     },
     "caelan": {
       "name": "Caelan",
@@ -14,7 +15,8 @@
     },
     "tomas": {
       "name": "Tomas",
-      "portrait": "tomas"
+      "portrait": "tomas",
+      "actor_id": "tomas"
     }
   },
   "characters": {
@@ -43,6 +45,17 @@
           ],
           "sets": [
             "serene_greeted"
+          ],
+          "choice_prompt": "Will you help?",
+          "choices": [
+            {
+              "text": "I'll help",
+              "action": "accept"
+            },
+            {
+              "text": "Not just yet",
+              "action": "decline"
+            }
           ]
         },
         {

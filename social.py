@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 
 import pygame
+from speech_bubble import SpeechBubble, TEXT_WIDTH, MAX_LINES
 
 ROOT = Path(__file__).resolve().parent
 FACING = {'front': (0, 1), 'back': (0, -1), 'left': (-1, 0), 'right': (1, 0)}
@@ -45,9 +46,9 @@ class SocialSystem:
         self._choosing = False
         self._scripted = False
         self._script_callback = None
+        self._script_origin = None
+        self._conversation_world = None
         self.script_identifier = None
-        self.choice_rects = [pygame.Rect(122, 263, 154, 23),
-                             pygame.Rect(286, 263, 166, 23)]
         self.font = pygame.font.Font(None, 18)
         self.name_font = pygame.font.Font(None, 20)
         self.hint_font = pygame.font.Font(None, 14)
@@ -57,9 +58,12 @@ class SocialSystem:
             key = speaker['portrait']
             record = manifest['portraits'][key]
             self.portraits[key] = game.town.image('assets/portraits/eldenmere/'+record['file'])
+        self.bubble = SpeechBubble(self)
 
     @property
-    def locked(self):return self.actor is not None or self._scripted
+    def locked(self):
+        """Legacy busy flag: reserves one exchange, never movement or camera."""
+        return self.actor is not None or self._scripted
 
     @property
     def scripted(self):return self._scripted
@@ -72,6 +76,64 @@ class SocialSystem:
 
     @property
     def choosing(self):return self.active and self._choosing
+
+    @property
+    def choice_options(self):
+        if not self.choosing:return []
+        return self.conversation.get('choices', [
+            {'text': "I'll help", 'action': 'accept'},
+            {'text': 'Not just yet', 'action': 'decline'}])
+
+    @property
+    def choice_prompt(self):
+        return (self.conversation or {}).get('choice_prompt', 'Will you help?')
+
+    @property
+    def choice_rects(self):
+        if not self.choosing:return []
+        return self.bubble.layout().choice_rects
+
+    def resolve_speaker(self):
+        """Resolve the page's speaker in this room, rather than the initiator."""
+        if self.pending:return self.actor
+        if self.page is None:return None
+        speaker = self.page['speaker']
+        if speaker == 'caelan':return self.game.player
+        identifier = self.data['speakers'][speaker].get('actor_id', speaker)
+        return next((actor for actor in self.game.world.npcs
+                     if actor.data['id'] == identifier), None)
+
+    def anchor_position(self):
+        """World-space opaque head position, including authored action poses."""
+        actor = self.resolve_speaker()
+        if actor is None:
+            # A voice through a doorway belongs at that doorway, never above
+            # another person's body. The portrait still identifies the voice.
+            speaker = self.page['speaker'] if self.page else None
+            identifier = self.data['speakers'].get(speaker, {}).get('actor_id', speaker)
+            remote = next((npc for npc in getattr(self.game, 'persistent_npcs', [])
+                           if npc.data['id'] == identifier), None)
+            for door in getattr(self.game.world, 'doors', []):
+                destination = door.data.get('destination', '')
+                if remote is not None and remote.scene_id in Path(destination).parts:
+                    x, y = door.data['anchor']
+                    return (x, y-24)
+            actor = self.game.player
+        opening = getattr(self.game, 'opening', None)
+        if actor is self.game.player and getattr(opening, '_sleeping', False):
+            x, y = opening.data['sleep_head_origin']
+            return (x+12, y)
+        position = getattr(actor, 'story_position', None) or actor.position
+        anchor = getattr(actor, 'story_draw_anchor', None)
+        if anchor is None:
+            anchor = (getattr(self.game.world, 'data', {}).get('player_draw_anchor', (12, 30))
+                      if actor is self.game.player else getattr(actor, 'draw_anchor', (12, 30)))
+        image = getattr(actor, 'story_sprite', None)
+        if image is None and hasattr(actor, 'sprite'):
+            image = (actor.sprite() if actor is self.game.player
+                     else actor.sprite(getattr(self.game, 'elapsed_ms', 0)))
+        top = image.get_bounding_rect().top if isinstance(image, pygame.Surface) else 0
+        return (position[0], position[1]-anchor[1]+top)
 
     def _eligible(self, conversation):
         if not set(conversation.get('requires', [])) <= self.flags:return False
@@ -92,8 +154,19 @@ class SocialSystem:
             if actor not in game.world.npcs or game.player.position.distance_to(actor.position) > self.data['release_radius']:
                 self.blocked.remove(actor)
         if self.locked:
+            departed = self._conversation_world is not None and self._conversation_world is not game.world
+            if self.actor is not None:
+                departed = (departed or self.actor not in game.world.npcs or
+                            game.player.position.distance_to(self.actor.position) > self.data['release_radius'])
+            elif self._script_origin is not None:
+                departed = departed or game.player.position.distance_to(self._script_origin) > self.data['release_radius']
+            if departed:
+                self.cancel()
+                return
             if self.pending and self.actor is not None and self.actor.conversation_ready:
                 self.pending = False
+            if self.actor is not None:
+                self.actor.conversation_facing = facing_toward(game.player.position-self.actor.position)
             return
         if (game.map_open or getattr(getattr(game, 'quest_ui', None), 'journal_open', False)
                 or game.transfer_cooldown or not pygame.Vector2(direction).length_squared()):return
@@ -127,19 +200,18 @@ class SocialSystem:
         self._choosing = False
         self.page_index = 0
         self.pending = True
+        self._conversation_world = self.game.world
         delta = self.game.player.position-actor.position
         actor.request_conversation(facing_toward(delta))
         self.pending = not actor.conversation_ready
-        self.game.player.moving = False
-        self.game.player.walk_ms = 0
         return True
 
     def _make_pages(self, lines):
         pages = []
         for line in lines:
-            wrapped = self.wrap(line['text'], 332)
-            for offset in range(0, len(wrapped), 3):
-                page = {'speaker': line['speaker'], 'lines': wrapped[offset:offset+3]}
+            wrapped = self.wrap(line['text'], TEXT_WIDTH)
+            for offset in range(0, len(wrapped), MAX_LINES):
+                page = {'speaker': line['speaker'], 'lines': wrapped[offset:offset+MAX_LINES]}
                 # Scene actions belong to the line's first page, so wrapping
                 # cannot accidentally repeat a handoff or other story cue.
                 if offset == 0 and 'cue' in line:page['cue'] = line['cue']
@@ -150,7 +222,7 @@ class SocialSystem:
         """Read a scene's dialogue without impersonating an ambient NPC.
 
         The caller owns scene staging and progression. The callback runs once,
-        after the dialogue lock is cleared, and can safely start another scene.
+        after the conversation is cleared, and can safely start another scene.
         """
         if self.locked or not isinstance(lines, (list, tuple)) or not lines:return False
         if on_complete is not None and not callable(on_complete):return False
@@ -168,9 +240,9 @@ class SocialSystem:
         self._choosing = False
         self._scripted = True
         self._script_callback = on_complete
+        self._script_origin = tuple(self.game.player.position)
+        self._conversation_world = self.game.world
         self.script_identifier = identifier
-        self.game.player.moving = False
-        self.game.player.walk_ms = 0
         return True
 
     def cancel_script(self):
@@ -184,7 +256,29 @@ class SocialSystem:
         self._choosing = False
         self._scripted = False
         self._script_callback = None
+        self._script_origin = None
+        self._conversation_world = None
         self.script_identifier = None
+        return True
+
+    def cancel(self):
+        """Walk away without applying flags, choices or a quest turn-in."""
+        if not self.locked:return False
+        if self.scripted:
+            identifier = self.script_identifier
+            self.cancel_script()
+            hook = getattr(getattr(self.game, 'opening', None), 'on_dialogue_cancelled', None)
+            if hook is not None:hook(identifier)
+        else:
+            self.blocked.add(self.actor)
+            self.actor.end_conversation()
+            self.actor = None
+            self.pages = []
+            self.page_index = 0
+            self.pending = False
+            self.conversation = None
+            self._choosing = False
+            self._conversation_world = None
         return True
 
     def wrap(self, text, width):
@@ -196,6 +290,13 @@ class SocialSystem:
                 lines.append(current)
                 current = word
             else:current = candidate
+            # Long names or unspaced text must not escape the bubble column.
+            while self.font.size(current)[0] > width and len(current) > 1:
+                end = 1
+                while end < len(current) and self.font.size(current[:end+1])[0] <= width:
+                    end += 1
+                lines.append(current[:end])
+                current = current[end:]
         if current:lines.append(current)
         return lines or ['']
 
@@ -211,6 +312,8 @@ class SocialSystem:
 
     def click(self, point):
         """Advance prose anywhere; answer a quest only by clicking its button."""
+        # A camera/position change between frames must not accept a stale offer.
+        if self.locked:self.update((0, 0))
         if not self.active:return False
         if not self.choosing:
             self.advance()
@@ -219,7 +322,9 @@ class SocialSystem:
         choice = next((i for i, rect in enumerate(self.choice_rects) if rect.collidepoint(point)), None)
         if choice is None:return False
         accepted = None
-        if choice == 0 and self.game.quests.accept(self.conversation['quest']['id']):
+        option = self.choice_options[choice]
+        if option.get('action') == 'accept':
+            if not self.game.quests.accept(self.conversation['quest']['id']):return False
             accepted = self.conversation['quest']['id']
         self._finish(accepted)
         return True
@@ -238,6 +343,9 @@ class SocialSystem:
         self.actor.end_conversation()
         self.actor = None
         self.pages = []
+        self.page_index = 0
+        self.pending = False
+        self._conversation_world = None
         self.conversation = None
         self._choosing = False
         opening = getattr(self.game, 'opening', None)
@@ -246,35 +354,5 @@ class SocialSystem:
         save = getattr(self.game, 'save_progress', None)
         if save is not None:save()
 
-    def draw(self, canvas, elapsed_ms):
-        if self.pending:
-            name = self.actor.data.get('name', 'Your companion')
-            image = self.hint_font.render(f'{name} is setting their work down...', False, '#f7eed5')
-            rect = image.get_rect(midbottom=(240, 292)).inflate(16, 10)
-            pygame.draw.rect(canvas, '#263c35', rect)
-            canvas.blit(image, image.get_rect(center=rect.center))
-        if not self.active:return
-        panel = pygame.Rect(12, 204, 456, 104)
-        pygame.draw.rect(canvas, '#101b19', panel.move(2, 3))
-        pygame.draw.rect(canvas, '#263c35', panel)
-        pygame.draw.rect(canvas, '#b7a47b', panel, 2)
-        pygame.draw.rect(canvas, '#526761', panel.inflate(-6, -6), 1)
-        pygame.draw.rect(canvas, '#b7a47b', (20, 214, 84, 84), 1)
-        speaker = self.data['speakers'][self.page['speaker']]
-        canvas.blit(self.portraits[speaker['portrait']], (26, 220))
-        pygame.draw.line(canvas, '#526761', (112, 215), (112, 296))
-        canvas.blit(self.name_font.render(speaker['name'], False, '#ffdc71'), (122, 216))
-        if self.choosing:
-            canvas.blit(self.font.render('Will you help?', False, '#f7eed5'), (122, 240))
-            for text, rect in zip(("I'll help", 'Not just yet'), self.choice_rects):
-                pygame.draw.rect(canvas, '#344e3e', rect)
-                pygame.draw.rect(canvas, '#b7a47b', rect, 1)
-                label = self.font.render(text, False, '#ffdc71')
-                canvas.blit(label, label.get_rect(center=rect.center))
-        else:
-            for index, line in enumerate(self.page['lines']):
-                canvas.blit(self.font.render(line, False, '#f7eed5'), (122, 240+index*17))
-        hint = 'Click a choice to answer' if self.choosing else 'Click anywhere  /  Space'
-        canvas.blit(self.hint_font.render(hint, False, '#c9c9b5'), (122, 289))
-        if not self.choosing and int(elapsed_ms//450) % 2 == 0:
-            pygame.draw.polygon(canvas, '#ffdc71', [(446, 289), (454, 289), (450, 294)])
+    def draw(self, canvas, elapsed_ms, camera=None):
+        return self.bubble.draw(canvas, camera=camera, elapsed_ms=elapsed_ms)

@@ -62,12 +62,15 @@ Mira now works at the bench outside her shop: she inspects a fitting, makes thre
 
 The auburn-haired gardener in the sage dress draws water from the commons well using her own pail. At the near side, she turns away and raises the pail behind her torso while only a three-pixel iron hook hangs beneath the windlass. The concealed pail then snaps to a fully visible parked position directly beneath the spindle and settles by one pixel. It descends with the rope, disappears progressively behind the front rim, fills, and returns visibly to the same top position. During retrieval it snaps behind her torso before emerging at her side. She waters four flower patches and both window troughs, then rests for a randomly chosen 3–5 minutes. She yields to Caelan, takes safe detours where possible and keeps her work/rest and well progress while you visit interiors. The [new enlarged loop and full routine](docs/reviews/gardener_top_winch_bucket/README.md) are approved; earlier versions remain historical review records. Other villagers and quests remain future work.
 
-**Proximity dialogue with Serene is available for review.** Walk close while
-facing her in the sanctuary hall or dining room. She safely sets down her work,
-turns and pauses. The textbox uses the current speaker's approved portrait;
-click anywhere in the window to advance. Caelan cannot move during dialogue,
-while the rest of the world continues. Walk away beyond the release radius
-before approaching again. Conversation flags and quest progress are saved.
+**Dialogue happens in the running world.** Walk close while
+facing Mother Serene in the sanctuary hall or dining room. She safely sets down her work,
+turns and pauses. A compact speech bubble above the current speaker contains
+their approved portrait; Caelan's replies follow him. Click anywhere in the
+window, Space or E to advance. Caelan can keep moving, the camera keeps following
+him, and other NPC routines and scenery continue. Walking away or changing rooms
+closes unfinished dialogue without setting conversation flags, accepting a quest
+or completing a report. Step away before approaching again after a completed
+conversation. Completed conversation flags and quest progress are saved.
 See the [earlier dialogue preview](docs/reviews/proximity_dialogue/README.md).
 Mira/gardener conversations remain future work.
 
@@ -92,9 +95,16 @@ eating enough, then leaves the quest tracked in the journal. The morning include
 quiet bells, knocks, birds and stream ambience, plus synchronized cloth, chair,
 footstep, plate and cup sounds controlled by the effects level.
 
-The scene camera holds its composition through dialogue and action beats, then
-eases back to exploration. Four-pose actions finish even when prose is advanced
-quickly. Movement prompts appear when control returns. **Escape** opens a modal
+The camera keeps the full world viewport throughout dialogue and actions.
+Portrait bubbles stay within the screen and their response buttons move with
+them. The breakfast invitation, inspections and accepted-quest conversation
+allow free movement. Walking away from the invitation leaves breakfast available
+through **E: join breakfast** near the table or a later dining-room visit.
+Getting out of bed and the guided sitting/meal/standing actions still control
+Caelan's body; four-pose actions finish even when prose is advanced quickly.
+Pressing a movement key while seated finishes the gestures and stands him up,
+so unread dialogue never holds him at the table.
+**Escape** opens a modal
 pause menu during exploration, dialogue or actions; Resume, Settings and Quit
 are deliberate menu choices. Pausing holds NPC, action, camera and ambience
 clocks. Music and effects can be adjusted separately with left/right, +/- or
