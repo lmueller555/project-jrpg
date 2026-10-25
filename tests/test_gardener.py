@@ -42,7 +42,9 @@ class SanctuaryGardener(unittest.TestCase):
             # Moving work must never occupy a building's arrival point.
             for door in self.world.doors:
                 point=pygame.Vector2(door.data['anchor'])+(0,12)
-                self.assertTrue(self.world.can_stand(point),door.data['id'])
+                arrival=self.world.probe_rect(point)
+                self.assertIsNone(self.world.blocked.overlap(self.world.probe,arrival.topleft),door.data['id'])
+                self.assertFalse(a.blocker.colliderect(arrival),door.data['id'])
             if 350<a.position.y<400 and 360<a.position.x<408:
                 stairs.add('loaded' if a.water_units else 'empty')
             if a.completed_cycles:break
@@ -133,7 +135,7 @@ class SanctuaryGardener(unittest.TestCase):
         before=a.position.copy()
         door=next(d for d in self.world.doors if d.data['id']=='home_a')
         self.game.enter(door)
-        self.assertEqual([n.data['id'] for n in self.game.world.npcs],['villager_male_01'])
+        self.assertEqual([n.data['id'] for n in self.game.world.npcs],['villager_male_01','tessa','finn'])
         self.assertNotIn(a,self.game.world.npcs)
         self.game.update(3,(0,0),False)
         self.assertEqual(a.water_units,6)

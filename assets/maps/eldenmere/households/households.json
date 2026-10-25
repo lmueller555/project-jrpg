@@ -1,7 +1,13 @@
 {
   "status": "approved",
   "names": "unassigned",
-  "children": "unassigned",
+  "children": [
+    "tessa",
+    "finn",
+    "rowan",
+    "ada",
+    "pippa"
+  ],
   "households": [
     {
       "id": "gardener_family",
@@ -21,7 +27,53 @@
         ],
         "facing": "front",
         "label": "Gardener's partner"
-      }
+      },
+      "children": [
+        {
+          "id": "tessa",
+          "name": "Tessa",
+          "age_years": 10,
+          "sprite_root": "assets/characters/tessa",
+          "position": [
+            110,
+            208
+          ],
+          "status": "approved",
+          "bed": {
+            "position": [
+              96,
+              96
+            ],
+            "variant": "sage",
+            "access": [
+              112,
+              154
+            ]
+          }
+        },
+        {
+          "id": "finn",
+          "name": "Finn",
+          "age_years": 6,
+          "sprite_root": "assets/characters/finn",
+          "position": [
+            158,
+            212
+          ],
+          "status": "approved",
+          "bed": {
+            "position": [
+              132,
+              96
+            ],
+            "variant": "sage",
+            "access": [
+              148,
+              154
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "blue_rust_family",
@@ -46,7 +98,53 @@
         ],
         "facing": "front",
         "label": "Village cottage father"
-      }
+      },
+      "children": [
+        {
+          "id": "rowan",
+          "name": "Rowan",
+          "age_years": 9,
+          "sprite_root": "assets/characters/rowan",
+          "position": [
+            110,
+            208
+          ],
+          "status": "approved",
+          "bed": {
+            "position": [
+              96,
+              96
+            ],
+            "variant": "blue",
+            "access": [
+              112,
+              154
+            ]
+          }
+        },
+        {
+          "id": "ada",
+          "name": "Ada",
+          "age_years": 7,
+          "sprite_root": "assets/characters/ada",
+          "position": [
+            158,
+            212
+          ],
+          "status": "approved",
+          "bed": {
+            "position": [
+              132,
+              96
+            ],
+            "variant": "blue",
+            "access": [
+              148,
+              154
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "plum_slate_family",
@@ -71,7 +169,31 @@
         ],
         "facing": "front",
         "label": "South cottage father"
-      }
+      },
+      "children": [
+        {
+          "id": "pippa",
+          "name": "Pippa",
+          "age_years": 8,
+          "sprite_root": "assets/characters/pippa",
+          "position": [
+            154,
+            208
+          ],
+          "status": "approved",
+          "bed": {
+            "position": [
+              108,
+              96
+            ],
+            "variant": "plum",
+            "access": [
+              124,
+              154
+            ]
+          }
+        }
+      ]
     }
   ]
 }

@@ -190,9 +190,53 @@
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0
+    },
+    {
+      "id": "tessa_bed",
+      "owner_child": "tessa",
+      "position": [
+        96,
+        96
+      ],
+      "sort_y": 140,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/child_beds/sage.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "floor_rect": [
+        100,
+        108,
+        24,
+        32
+      ],
+      "bed_variant": "sage"
+    },
+    {
+      "id": "finn_bed",
+      "owner_child": "finn",
+      "position": [
+        132,
+        96
+      ],
+      "sort_y": 140,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/child_beds/sage.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "floor_rect": [
+        136,
+        108,
+        24,
+        32
+      ],
+      "bed_variant": "sage"
     }
   ],
-  "collision": "assets/maps/eldenmere/building_interiors/rooms/standard/collision.png",
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/home_a/collision.png",
   "foreground": [],
   "landmarks": [],
   "doors": [
@@ -246,6 +290,60 @@
       "household_id": "gardener_family",
       "family_role": "father",
       "partner_id": "sanctuary_gardener"
+    },
+    {
+      "id": "tessa",
+      "name": "Tessa",
+      "kind": "stationary",
+      "position": [
+        110,
+        208
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/tessa/idle_front.png",
+      "sprite_root": "assets/characters/tessa",
+      "age_years": 10,
+      "parents": [
+        "sanctuary_gardener",
+        "villager_male_01"
+      ],
+      "family_role": "child",
+      "home_scene": "home_a",
+      "household_id": "gardener_family"
+    },
+    {
+      "id": "finn",
+      "name": "Finn",
+      "kind": "stationary",
+      "position": [
+        158,
+        212
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/finn/idle_front.png",
+      "sprite_root": "assets/characters/finn",
+      "age_years": 6,
+      "parents": [
+        "sanctuary_gardener",
+        "villager_male_01"
+      ],
+      "family_role": "child",
+      "home_scene": "home_a",
+      "household_id": "gardener_family"
     }
   ],
   "quests": [],
@@ -286,6 +384,14 @@
     "hearth": [
       278,
       104
+    ],
+    "tessa_bed": [
+      112,
+      154
+    ],
+    "finn_bed": [
+      148,
+      154
     ]
   },
   "source_room": "assets/terrain/eldenmere/cottage_layouts/standard/room.json",
@@ -298,7 +404,9 @@
   "overview": "assets/maps/eldenmere/playable/overview.png",
   "household": [
     "sanctuary_gardener",
-    "villager_male_01"
+    "villager_male_01",
+    "tessa",
+    "finn"
   ],
   "household_id": "gardener_family",
   "household_registry": "assets/maps/eldenmere/households/households.json"

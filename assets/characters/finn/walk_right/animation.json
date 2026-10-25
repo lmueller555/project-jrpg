@@ -1,0 +1,123 @@
+{
+  "character": "finn",
+  "animation": "walk.right",
+  "status": "approved",
+  "frame_count": 4,
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 560,
+  "image": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 140,
+      "phase": "contact_a",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          13,
+          20
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/finn/walk_right/frame_01_registered_body.png",
+        "assets/source/characters/finn/walk_right/frame_01_hair_and_costume.png",
+        "assets/source/characters/finn/walk_right/frame_01_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 140,
+      "phase": "passing_a",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          13,
+          19
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/finn/walk_right/frame_02_registered_body.png",
+        "assets/source/characters/finn/walk_right/frame_02_hair_and_costume.png",
+        "assets/source/characters/finn/walk_right/frame_02_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 140,
+      "phase": "contact_b",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          13,
+          20
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/finn/walk_right/frame_03_registered_body.png",
+        "assets/source/characters/finn/walk_right/frame_03_hair_and_costume.png",
+        "assets/source/characters/finn/walk_right/frame_03_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 140,
+      "phase": "passing_b",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          13,
+          19
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/finn/walk_right/frame_04_registered_body.png",
+        "assets/source/characters/finn/walk_right/frame_04_hair_and_costume.png",
+        "assets/source/characters/finn/walk_right/frame_04_eyes.png"
+      ]
+    }
+  ]
+}

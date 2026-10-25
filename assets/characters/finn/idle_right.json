@@ -1,0 +1,41 @@
+{
+  "character": "finn",
+  "status": "approved",
+  "animation": "idle.right",
+  "image": "idle_right.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "visible_height_px": 22,
+  "occupied_rect": [
+    7,
+    13,
+    10,
+    22
+  ],
+  "eyes": {
+    "top_pixels": [
+      [
+        13,
+        20
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/finn/idle_right/idle_registered_body.png",
+    "assets/source/characters/finn/idle_right/idle_hair_and_costume.png",
+    "assets/source/characters/finn/idle_right/idle_eyes.png"
+  ],
+  "palette": "palette.json"
+}

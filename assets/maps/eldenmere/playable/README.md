@@ -63,5 +63,8 @@ attendance and teaching routines will follow the building review. See the
 Three parent pairs now belong to home_a, home_b and home_c. Five adults are
 placed inside those cottages; the existing gardener remains outdoors and is
 assigned to home_a with the olive-shirted father. See the
-[registry and build instructions](../households/README.md). Names, children and
-additional schedules remain for a later stage.
+[registry and build instructions](../households/README.md). The five children Tessa, Finn, Rowan, Ada and Pippa are now assigned to these
+homes with compact twin beds. Adult names and additional schedules remain for a
+later stage.
+
+See [the five children's sprite and furnished-home review](../../../../docs/reviews/village_children/README.md).

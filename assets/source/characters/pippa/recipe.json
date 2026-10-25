@@ -1,0 +1,38 @@
+{
+  "name": "Pippa",
+  "age_years": 8,
+  "height": 26,
+  "home": "home_c",
+  "style": "ponytail",
+  "eyes": "#98703a",
+  "hair": [
+    "#88633b",
+    "#c79f5b",
+    "#ead197"
+  ],
+  "dress": [
+    "#51364f",
+    "#805477",
+    "#ad80a0"
+  ],
+  "trim": [
+    "#394955",
+    "#596e7d",
+    "#8197a5"
+  ],
+  "design": "Sandy-blonde ponytail, plum dress and blue-gray ribbon.",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "shared_motion": "Four phases, 140ms walk / 100ms run; native coordinated head/shoulder translation.",
+  "builder": "tools/build_schoolgirls.py"
+}

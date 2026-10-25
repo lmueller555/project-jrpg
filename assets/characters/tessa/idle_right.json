@@ -1,0 +1,38 @@
+{
+  "character": "tessa",
+  "status": "approved",
+  "animation": "idle.right",
+  "image": "idle_right.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "visible_height_px": 28,
+  "eyes": {
+    "top_pixels": [
+      [
+        13,
+        13
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/tessa/idle_right/frame_01_hair_back.png",
+    "assets/source/characters/tessa/idle_right/frame_01_legs_and_boots.png",
+    "assets/source/characters/tessa/idle_right/frame_01_dress_body.png",
+    "assets/source/characters/tessa/idle_right/frame_01_skirt.png",
+    "assets/source/characters/tessa/idle_right/frame_01_arms.png",
+    "assets/source/characters/tessa/idle_right/frame_01_head.png",
+    "assets/source/characters/tessa/idle_right/frame_01_hair_accessory.png"
+  ]
+}

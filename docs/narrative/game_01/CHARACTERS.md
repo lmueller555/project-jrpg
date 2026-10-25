@@ -40,5 +40,21 @@ with a furnished classroom for six children. Her personal name remains open.
 
 The six generic adult villager appearances form three parent pairs: the sanctuary
 gardener (female_02) and male_01 in home_a; female_01 and male_02 in home_b;
-female_03 and male_03 in home_c. Their personal names, ages and children remain
-unassigned. Halden's, Elira's and the Venn family's story homes are retained.
+female_03 and male_03 in home_c. The adults' personal names and ages remain unassigned. Halden's, Elira's and the Venn family's story homes are retained.
+
+## Additional village children
+
+| Child | Age at opening | Household |
+| --- | --- | --- |
+| Tessa | 10 | Daughter of the sanctuary gardener and male_01; home_a |
+| Finn | 6 | Son of the sanctuary gardener and male_01; home_a |
+| Rowan | 9 | Son of female_01 and male_02; home_b |
+| Ada | 7 | Daughter of female_01 and male_02; home_b |
+| Pippa | 8 | Daughter of female_03 and male_03; home_c |
+
+Tessa has an auburn braid and sage pinafore; Finn wears a tan shirt and olive
+vest; Rowan wears rust and charcoal; Ada has a dark bob and blue dress; Pippa
+has a sandy ponytail, plum dress and blue-gray ribbon. They and eight-year-old
+Liam form the six-child classroom group. Visual designs and animation packs
+are approved. Children are placed in their homes with individual compact
+twin beds; attendance and other daily routines are a later stage.

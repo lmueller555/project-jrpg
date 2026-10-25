@@ -1,0 +1,209 @@
+{
+  "status": "approved",
+  "sprite_previews_are_asset_loops": true,
+  "children_currently_stationary_at_home": true,
+  "gardener_stays_outdoors": true,
+  "animation_timing": {
+    "walks": {
+      "frame_count": 4,
+      "duration_ms": 140,
+      "slow_duration_ms": 420,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "characters": [
+        "tessa",
+        "finn",
+        "rowan",
+        "ada",
+        "pippa"
+      ]
+    },
+    "runs": {
+      "frame_count": 4,
+      "duration_ms": 100,
+      "slow_duration_ms": 300,
+      "directions": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "characters": [
+        "tessa",
+        "finn",
+        "rowan",
+        "ada",
+        "pippa"
+      ]
+    }
+  },
+  "homes": {
+    "home_a": {
+      "members": [
+        "sanctuary_gardener",
+        "villager_male_01",
+        "tessa",
+        "finn"
+      ],
+      "present": [
+        "villager_male_01",
+        "tessa",
+        "finn"
+      ],
+      "children": [
+        "tessa",
+        "finn"
+      ],
+      "beds": [
+        {
+          "id": "tessa_bed",
+          "owner_child": "tessa",
+          "position": [
+            96,
+            96
+          ],
+          "floor_rect": [
+            100,
+            108,
+            24,
+            32
+          ]
+        },
+        {
+          "id": "finn_bed",
+          "owner_child": "finn",
+          "position": [
+            132,
+            96
+          ],
+          "floor_rect": [
+            136,
+            108,
+            24,
+            32
+          ]
+        }
+      ]
+    },
+    "home_b": {
+      "members": [
+        "villager_female_01",
+        "villager_male_02",
+        "rowan",
+        "ada"
+      ],
+      "present": [
+        "villager_female_01",
+        "villager_male_02",
+        "rowan",
+        "ada"
+      ],
+      "children": [
+        "rowan",
+        "ada"
+      ],
+      "beds": [
+        {
+          "id": "rowan_bed",
+          "owner_child": "rowan",
+          "position": [
+            96,
+            96
+          ],
+          "floor_rect": [
+            100,
+            108,
+            24,
+            32
+          ]
+        },
+        {
+          "id": "ada_bed",
+          "owner_child": "ada",
+          "position": [
+            132,
+            96
+          ],
+          "floor_rect": [
+            136,
+            108,
+            24,
+            32
+          ]
+        }
+      ]
+    },
+    "home_c": {
+      "members": [
+        "villager_female_03",
+        "villager_male_03",
+        "pippa"
+      ],
+      "present": [
+        "villager_female_03",
+        "villager_male_03",
+        "pippa"
+      ],
+      "children": [
+        "pippa"
+      ],
+      "beds": [
+        {
+          "id": "pippa_bed",
+          "owner_child": "pippa",
+          "position": [
+            108,
+            96
+          ],
+          "floor_rect": [
+            112,
+            108,
+            24,
+            32
+          ]
+        }
+      ]
+    }
+  },
+  "gifs": {
+    "home_a.gif": {
+      "frames": 36,
+      "duration_ms": 10800,
+      "bytes": 142074
+    },
+    "home_b.gif": {
+      "frames": 36,
+      "duration_ms": 10800,
+      "bytes": 142824
+    },
+    "home_c.gif": {
+      "frames": 36,
+      "duration_ms": 10800,
+      "bytes": 140431
+    },
+    "runs.gif": {
+      "frames": 4,
+      "duration_ms": 400,
+      "bytes": 107685
+    },
+    "runs_slow.gif": {
+      "frames": 4,
+      "duration_ms": 1200,
+      "bytes": 108025
+    },
+    "walks.gif": {
+      "frames": 4,
+      "duration_ms": 560,
+      "bytes": 106409
+    },
+    "walks_slow.gif": {
+      "frames": 4,
+      "duration_ms": 1680,
+      "bytes": 106676
+    }
+  }
+}

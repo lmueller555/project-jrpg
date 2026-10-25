@@ -1,0 +1,71 @@
+{
+  "status": "approved",
+  "base_commit": "7fc5a659253524902515a586be74f1b601ed29de",
+  "full_suite": {
+    "tests": 219,
+    "passed": 219,
+    "duration_seconds": 164.297,
+    "failures": []
+  },
+  "focused_child_tests": {
+    "passed": 6,
+    "file": "tests/test_village_children.py"
+  },
+  "rebuild": {
+    "deterministic": true,
+    "unchanged_files": 1335
+  },
+  "checks": [
+    "Five named children have their correct ages, parents and homes",
+    "Twenty directional idles and 160 walking/running frames at 140/100 ms",
+    "Every animation has four distinct poses with source reconstruction and limited hard-alpha palette",
+    "Front/profile/back eyes and idle heights verified against Liam",
+    "Coordinated upper-body bob, distinct run stride and hair follow-through visually reviewed independently",
+    "Five individually owned compact twin beds with private home collision masks",
+    "All furnishings, beds and exits reachable using the full Caelan ground probe",
+    "Cached NPC identity, household counts and the existing single gardener retained",
+    "Original character and adult-bed PNG hashes unchanged",
+    "All final GIFs decode, loop and retain exact palette pixels"
+  ],
+  "previews": {
+    "home_a.gif": {
+      "bytes": 142074,
+      "frames": 36,
+      "duration_ms": 10800
+    },
+    "home_b.gif": {
+      "bytes": 142824,
+      "frames": 36,
+      "duration_ms": 10800
+    },
+    "home_c.gif": {
+      "bytes": 140431,
+      "frames": 36,
+      "duration_ms": 10800
+    },
+    "runs.gif": {
+      "bytes": 107685,
+      "frames": 4,
+      "duration_ms": 400
+    },
+    "runs_slow.gif": {
+      "bytes": 108025,
+      "frames": 4,
+      "duration_ms": 1200
+    },
+    "walks.gif": {
+      "bytes": 106409,
+      "frames": 4,
+      "duration_ms": 560
+    },
+    "walks_slow.gif": {
+      "bytes": 106676,
+      "frames": 4,
+      "duration_ms": 1680
+    }
+  },
+  "scope": [
+    "Children are initially stationary at home with complete movement sprite packs",
+    "School attendance and new daily action routines are a later stage"
+  ]
+}

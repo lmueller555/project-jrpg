@@ -1,0 +1,139 @@
+{
+  "character": "rowan",
+  "animation": "run.front",
+  "status": "approved",
+  "frame_count": 4,
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 400,
+  "image": "spritesheet.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 100,
+      "phase": "contact_left",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          10,
+          16
+        ],
+        [
+          13,
+          16
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/rowan/run_front/frame_01_registered_body.png",
+        "assets/source/characters/rowan/run_front/frame_01_hair_and_costume.png",
+        "assets/source/characters/rowan/run_front/frame_01_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 100,
+      "phase": "flight_left",
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "eyes": [
+        [
+          10,
+          14
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/rowan/run_front/frame_02_registered_body.png",
+        "assets/source/characters/rowan/run_front/frame_02_hair_and_costume.png",
+        "assets/source/characters/rowan/run_front/frame_02_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 100,
+      "phase": "contact_right",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "airborne": false,
+      "eyes": [
+        [
+          10,
+          16
+        ],
+        [
+          13,
+          16
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/rowan/run_front/frame_03_registered_body.png",
+        "assets/source/characters/rowan/run_front/frame_03_hair_and_costume.png",
+        "assets/source/characters/rowan/run_front/frame_03_eyes.png"
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 100,
+      "phase": "flight_right",
+      "upper_body_offset": [
+        0,
+        -2
+      ],
+      "shoulder_offset": [
+        0,
+        -2
+      ],
+      "airborne": true,
+      "eyes": [
+        [
+          10,
+          14
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "layers_from_repo_root": [
+        "assets/source/characters/rowan/run_front/frame_04_registered_body.png",
+        "assets/source/characters/rowan/run_front/frame_04_hair_and_costume.png",
+        "assets/source/characters/rowan/run_front/frame_04_eyes.png"
+      ]
+    }
+  ]
+}

@@ -26,6 +26,9 @@ def build():
     town['household_registry']=REGISTRY.relative_to(ROOT).as_posix()
     write_json(TOWN,town)
     print('Assigned three parent pairs to home_a, home_b, home_c; placed five adults; existing gardener retained.')
+    if isinstance(registry.get('children'),list):
+        from build_village_children import build as build_children
+        build_children()
 
 
 if __name__=='__main__':build()

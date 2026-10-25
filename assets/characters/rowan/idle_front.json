@@ -1,0 +1,45 @@
+{
+  "character": "rowan",
+  "status": "approved",
+  "animation": "idle.front",
+  "image": "idle_front.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "visible_height_px": 27,
+  "occupied_rect": [
+    6,
+    8,
+    12,
+    27
+  ],
+  "eyes": {
+    "top_pixels": [
+      [
+        10,
+        16
+      ],
+      [
+        13,
+        16
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/rowan/idle_front/idle_registered_body.png",
+    "assets/source/characters/rowan/idle_front/idle_hair_and_costume.png",
+    "assets/source/characters/rowan/idle_front/idle_eyes.png"
+  ],
+  "palette": "palette.json"
+}

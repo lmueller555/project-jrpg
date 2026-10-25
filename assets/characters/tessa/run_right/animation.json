@@ -1,0 +1,133 @@
+{
+  "character": "tessa",
+  "status": "approved",
+  "animation": "run.right",
+  "frame_size": [
+    24,
+    36
+  ],
+  "frame_count": 4,
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 100,
+      "layers_from_repo_root": [
+        "assets/source/characters/tessa/run_right/frame_01_hair_back.png",
+        "assets/source/characters/tessa/run_right/frame_01_legs_and_boots.png",
+        "assets/source/characters/tessa/run_right/frame_01_dress_body.png",
+        "assets/source/characters/tessa/run_right/frame_01_skirt.png",
+        "assets/source/characters/tessa/run_right/frame_01_arms.png",
+        "assets/source/characters/tessa/run_right/frame_01_head.png",
+        "assets/source/characters/tessa/run_right/frame_01_hair_accessory.png"
+      ],
+      "upper_body_offset": [
+        1,
+        0
+      ],
+      "shoulder_offset": [
+        1,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          13
+        ]
+      ],
+      "phase": "contact_near"
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 100,
+      "layers_from_repo_root": [
+        "assets/source/characters/tessa/run_right/frame_02_hair_back.png",
+        "assets/source/characters/tessa/run_right/frame_02_legs_and_boots.png",
+        "assets/source/characters/tessa/run_right/frame_02_dress_body.png",
+        "assets/source/characters/tessa/run_right/frame_02_skirt.png",
+        "assets/source/characters/tessa/run_right/frame_02_arms.png",
+        "assets/source/characters/tessa/run_right/frame_02_head.png",
+        "assets/source/characters/tessa/run_right/frame_02_hair_accessory.png"
+      ],
+      "upper_body_offset": [
+        1,
+        -2
+      ],
+      "shoulder_offset": [
+        1,
+        -2
+      ],
+      "eyes": [
+        [
+          14,
+          11
+        ]
+      ],
+      "phase": "flight_near"
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 100,
+      "layers_from_repo_root": [
+        "assets/source/characters/tessa/run_right/frame_03_hair_back.png",
+        "assets/source/characters/tessa/run_right/frame_03_legs_and_boots.png",
+        "assets/source/characters/tessa/run_right/frame_03_dress_body.png",
+        "assets/source/characters/tessa/run_right/frame_03_skirt.png",
+        "assets/source/characters/tessa/run_right/frame_03_arms.png",
+        "assets/source/characters/tessa/run_right/frame_03_head.png",
+        "assets/source/characters/tessa/run_right/frame_03_hair_accessory.png"
+      ],
+      "upper_body_offset": [
+        1,
+        0
+      ],
+      "shoulder_offset": [
+        1,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          13
+        ]
+      ],
+      "phase": "contact_far"
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 100,
+      "layers_from_repo_root": [
+        "assets/source/characters/tessa/run_right/frame_04_hair_back.png",
+        "assets/source/characters/tessa/run_right/frame_04_legs_and_boots.png",
+        "assets/source/characters/tessa/run_right/frame_04_dress_body.png",
+        "assets/source/characters/tessa/run_right/frame_04_skirt.png",
+        "assets/source/characters/tessa/run_right/frame_04_arms.png",
+        "assets/source/characters/tessa/run_right/frame_04_head.png",
+        "assets/source/characters/tessa/run_right/frame_04_hair_accessory.png"
+      ],
+      "upper_body_offset": [
+        1,
+        -2
+      ],
+      "shoulder_offset": [
+        1,
+        -2
+      ],
+      "eyes": [
+        [
+          14,
+          11
+        ]
+      ],
+      "phase": "flight_far"
+    }
+  ],
+  "loop": true
+}
