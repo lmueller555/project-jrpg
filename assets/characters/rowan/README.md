@@ -1,4 +1,4 @@
-# Rowan — review
+# Rowan — approved
 
 9 years old; 27 visible pixels in a 24×36 frame.
 Short cropped black hair, rust tunic, charcoal trousers and brown boots. Home: `home_b`.

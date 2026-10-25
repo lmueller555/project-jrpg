@@ -1,4 +1,4 @@
-# Five village children — awaiting review
+# Five village children — approved
 
 - [Liam and the five new children at the same scale](height_comparison.png).
 - [All four idle directions](idle_directions.png).
@@ -33,5 +33,5 @@ this review. The same placed child objects persist on cached room re-entry.
 
 Reproduce with `python tools/build_villager_households.py`, then
 `python tools/capture_village_children.py`. `captures.json` records timing,
-actual room membership and bed registration. This branch is for review and
-has not been merged into main.
+actual room membership and bed registration. The user approved the complete
+sprite packs, compact twin beds and household placements for merging into main.

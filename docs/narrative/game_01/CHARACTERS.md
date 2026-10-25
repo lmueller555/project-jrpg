@@ -56,5 +56,5 @@ Tessa has an auburn braid and sage pinafore; Finn wears a tan shirt and olive
 vest; Rowan wears rust and charcoal; Ada has a dark bob and blue dress; Pippa
 has a sandy ponytail, plum dress and blue-gray ribbon. They and eight-year-old
 Liam form the six-child classroom group. Visual designs and animation packs
-are awaiting review. Children are placed in their homes with individual compact
+are approved. Children are placed in their homes with individual compact
 twin beds; attendance and other daily routines are a later stage.

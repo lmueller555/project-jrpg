@@ -21,7 +21,7 @@ compiler reapplies this extension after the family home and school. Re-entering
 a cached home preserves its residents. New dialogue and daily schedules are not assigned at this stage. See the
 [three room previews and parent reference](../../../../docs/reviews/villager_households/README.md).
 
-## Five children and compact twin beds — awaiting review
+## Five children and compact twin beds — approved
 
 | Home | Children | Beds |
 | --- | --- | --- |

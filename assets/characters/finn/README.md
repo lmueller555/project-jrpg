@@ -1,4 +1,4 @@
-# Finn — review
+# Finn — approved
 
 6 years old; 22 visible pixels in a 24×36 frame.
 Tousled brown hair, tan shirt, olive vest, brown trousers and boots. Home: `home_a`.

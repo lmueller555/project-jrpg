@@ -1,4 +1,4 @@
-# Compact children's twin beds — awaiting review
+# Compact children's twin beds — approved
 
 Three single-level 32×48 bed sprites provide sage, blue and plum quilts for the
 new children's households. Their visible 24×42 frames register the approved
