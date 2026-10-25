@@ -133,14 +133,16 @@ class SanctuaryGardener(unittest.TestCase):
         before=a.position.copy()
         door=next(d for d in self.world.doors if d.data['id']=='home_a')
         self.game.enter(door)
-        self.assertEqual(self.game.world.npcs,[])
+        self.assertEqual([n.data['id'] for n in self.game.world.npcs],['villager_male_01'])
+        self.assertNotIn(a,self.game.world.npcs)
         self.game.update(3,(0,0),False)
         self.assertEqual(a.water_units,6)
         self.assertNotEqual(a.position,before)
         self.game.enter(self.game.world.doors[0])
         self.assertIs(self.game.world,self.world)
         self.assertIs(self.game.world.npcs[1],a)
-        self.assertEqual(len(self.game.world.npcs),2)
+        self.assertEqual(sum(n is a for n in self.game.world.npcs),1)
+        self.assertIn('mira_worker',[n.data['id'] for n in self.game.world.npcs])
         self.assertEqual(a.water_units,6)
 
     def test_fixed_simulation_matches_different_frame_rates(self):

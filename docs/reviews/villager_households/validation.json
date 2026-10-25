@@ -1,0 +1,36 @@
+{
+  "status": "review",
+  "base_commit": "f409c9809273ee8c6177a81fb2d4276b8e7b1fb1",
+  "includes_pending_school": true,
+  "full_suite": {
+    "tests": 213,
+    "passed": 213,
+    "pre_existing_failures": [],
+    "duration_seconds": 132.424,
+    "command": "SDL_AUDIODRIVER=dummy .venv/bin/python -m unittest discover -s tests -q"
+  },
+  "focused_tests": 5,
+  "deterministic_rebuild": true,
+  "checks": [
+    "Three linked parent pairs with stable home, role and partner IDs",
+    "Exactly five new indoor adults and one original outdoor gardener",
+    "All furniture access and exits remain reachable",
+    "Cached home re-entry retains actor identity",
+    "Story and Liam household assignments preserved",
+    "Approved character sprites reused without edits"
+  ],
+  "previews": {
+    "home_a.gif": {
+      "bytes": 136256,
+      "duration_ms": 10800
+    },
+    "home_b.gif": {
+      "bytes": 136894,
+      "duration_ms": 10800
+    },
+    "home_c.gif": {
+      "bytes": 136823,
+      "duration_ms": 10800
+    }
+  }
+}

@@ -224,7 +224,52 @@
       "arrival_door": "home_c"
     }
   ],
-  "npcs": [],
+  "npcs": [
+    {
+      "id": "villager_female_03",
+      "name": "South cottage mother",
+      "kind": "stationary",
+      "position": [
+        122,
+        180
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/npcs/female_03/idle_front.png",
+      "home_scene": "home_c",
+      "household_id": "plum_slate_family",
+      "family_role": "mother",
+      "partner_id": "villager_male_03"
+    },
+    {
+      "id": "villager_male_03",
+      "name": "South cottage father",
+      "kind": "stationary",
+      "position": [
+        202,
+        168
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/npcs/male_03/idle_front.png",
+      "home_scene": "home_c",
+      "household_id": "plum_slate_family",
+      "family_role": "father",
+      "partner_id": "villager_female_03"
+    }
+  ],
   "quests": [],
   "kind": "interior",
   "destinations": {
@@ -272,5 +317,11 @@
   ],
   "id": "home_c",
   "name": "South cottage",
-  "overview": "assets/maps/eldenmere/playable/overview.png"
+  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "household": [
+    "villager_female_03",
+    "villager_male_03"
+  ],
+  "household_id": "plum_slate_family",
+  "household_registry": "assets/maps/eldenmere/households/households.json"
 }

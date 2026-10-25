@@ -1,0 +1,36 @@
+{
+  "status": "review",
+  "reports": {
+    "home_a": {
+      "household": [
+        "sanctuary_gardener",
+        "villager_male_01"
+      ],
+      "present": [
+        "villager_male_01"
+      ]
+    },
+    "home_b": {
+      "household": [
+        "villager_female_01",
+        "villager_male_02"
+      ],
+      "present": [
+        "villager_female_01",
+        "villager_male_02"
+      ]
+    },
+    "home_c": {
+      "household": [
+        "villager_female_03",
+        "villager_male_03"
+      ],
+      "present": [
+        "villager_female_03",
+        "villager_male_03"
+      ]
+    }
+  },
+  "gardener_stays_in_town": true,
+  "pair_board_uses_approved_reference_sprites": true
+}

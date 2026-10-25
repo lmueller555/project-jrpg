@@ -224,7 +224,52 @@
       "arrival_door": "home_b"
     }
   ],
-  "npcs": [],
+  "npcs": [
+    {
+      "id": "villager_female_01",
+      "name": "Village cottage mother",
+      "kind": "stationary",
+      "position": [
+        122,
+        180
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/npcs/female_01/idle_front.png",
+      "home_scene": "home_b",
+      "household_id": "blue_rust_family",
+      "family_role": "mother",
+      "partner_id": "villager_male_02"
+    },
+    {
+      "id": "villager_male_02",
+      "name": "Village cottage father",
+      "kind": "stationary",
+      "position": [
+        202,
+        168
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/npcs/male_02/idle_front.png",
+      "home_scene": "home_b",
+      "household_id": "blue_rust_family",
+      "family_role": "father",
+      "partner_id": "villager_female_01"
+    }
+  ],
   "quests": [],
   "kind": "interior",
   "destinations": {
@@ -272,5 +317,11 @@
   ],
   "id": "home_b",
   "name": "Village cottage",
-  "overview": "assets/maps/eldenmere/playable/overview.png"
+  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "household": [
+    "villager_female_01",
+    "villager_male_02"
+  ],
+  "household_id": "blue_rust_family",
+  "household_registry": "assets/maps/eldenmere/households/households.json"
 }

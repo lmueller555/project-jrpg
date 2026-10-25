@@ -1196,7 +1196,11 @@
         8
       ],
       "animation": "assets/characters/npcs/female_02/gardener/animations.json",
-      "behavior": "assets/maps/eldenmere/routines/gardener.json"
+      "behavior": "assets/maps/eldenmere/routines/gardener.json",
+      "home_scene": "home_a",
+      "household_id": "gardener_family",
+      "family_role": "mother",
+      "partner_id": "villager_male_01"
     }
   ],
   "persistent_npcs": [
@@ -1631,5 +1635,6 @@
   ],
   "ambient_scenes": [
     "liam_house"
-  ]
+  ],
+  "household_registry": "assets/maps/eldenmere/households/households.json"
 }

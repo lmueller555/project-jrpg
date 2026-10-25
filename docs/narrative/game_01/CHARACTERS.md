@@ -37,3 +37,8 @@ relationships and scene context.
 Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,
 with a furnished classroom for six children. Her personal name remains open.
+
+The six generic adult villager appearances form three parent pairs: the sanctuary
+gardener (female_02) and male_01 in home_a; female_01 and male_02 in home_b;
+female_03 and male_03 in home_c. Their personal names, ages and children remain
+unassigned. Halden's, Elira's and the Venn family's story homes are retained.
