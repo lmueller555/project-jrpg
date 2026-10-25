@@ -1,0 +1,11 @@
+{
+  "character": "daisy",
+  "status": "review",
+  "idle": "../idle_front.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/quadruped_32x36/walk_front/poses.json",
+  "rest_visible_height_px": 24,
+  "gait": "four-beat lateral-sequence walk",
+  "notes": "Approved head, torso spots and tail retained; one paw swings, three support; hinged plume and ear-tip follow-through.",
+  "approved_idle_sha256": "8a3f89121c2642f5c1b49e781ee5b82578f4d1a5387a2419b77d2308c29c3b42"
+}

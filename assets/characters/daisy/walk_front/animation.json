@@ -1,0 +1,478 @@
+{
+  "character": "daisy",
+  "animation": "walk.front",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    32,
+    36
+  ],
+  "foot_anchor": [
+    16,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 560,
+  "rest_visible_height_px": 24,
+  "template": "assets/templates/quadruped_32x36/walk_front/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "frames": [
+    {
+      "phase": "hind_left_swing",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "tail_offset": [
+        -1,
+        0
+      ],
+      "ear_tip_offsets": {
+        "left": 1,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            26
+          ],
+          "knee": [
+            10,
+            28
+          ],
+          "toe": [
+            10,
+            30
+          ],
+          "width": 3,
+          "planted": false
+        },
+        "fore_left": {
+          "root": [
+            13,
+            27
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            26
+          ],
+          "knee": [
+            22,
+            29
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            27
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      },
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          16
+        ],
+        [
+          18,
+          16
+        ]
+      ],
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        32,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/walk_front/parts/frame_01_tail.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_hind_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_hind_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_body.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_fore_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_fore_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_head.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_left_ear_tip.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_01_right_ear_tip.png"
+      ]
+    },
+    {
+      "phase": "fore_left_swing",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "tail_offset": [
+        0,
+        -1
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            25
+          ],
+          "knee": [
+            11,
+            28
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            26
+          ],
+          "knee": [
+            12,
+            29
+          ],
+          "toe": [
+            13,
+            32
+          ],
+          "width": 4,
+          "planted": false
+        },
+        "hind_right": {
+          "root": [
+            21,
+            25
+          ],
+          "knee": [
+            22,
+            28
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            26
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      },
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          14,
+          15
+        ],
+        [
+          18,
+          15
+        ]
+      ],
+      "file": "frame_02.png",
+      "rect": [
+        32,
+        0,
+        32,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/walk_front/parts/frame_02_tail.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_hind_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_hind_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_body.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_fore_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_fore_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_head.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_left_ear_tip.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_02_right_ear_tip.png"
+      ]
+    },
+    {
+      "phase": "hind_right_swing",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "tail_offset": [
+        1,
+        0
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 1
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            26
+          ],
+          "knee": [
+            11,
+            29
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            27
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            26
+          ],
+          "knee": [
+            23,
+            28
+          ],
+          "toe": [
+            23,
+            30
+          ],
+          "width": 3,
+          "planted": false
+        },
+        "fore_right": {
+          "root": [
+            19,
+            27
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      },
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          16
+        ],
+        [
+          18,
+          16
+        ]
+      ],
+      "file": "frame_03.png",
+      "rect": [
+        64,
+        0,
+        32,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/walk_front/parts/frame_03_tail.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_hind_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_hind_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_body.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_fore_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_fore_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_head.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_left_ear_tip.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_03_right_ear_tip.png"
+      ]
+    },
+    {
+      "phase": "fore_right_swing",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "tail_offset": [
+        0,
+        -1
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            25
+          ],
+          "knee": [
+            11,
+            28
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            26
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            25
+          ],
+          "knee": [
+            22,
+            28
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            26
+          ],
+          "knee": [
+            20,
+            29
+          ],
+          "toe": [
+            19,
+            32
+          ],
+          "width": 4,
+          "planted": false
+        }
+      },
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          14,
+          15
+        ],
+        [
+          18,
+          15
+        ]
+      ],
+      "file": "frame_04.png",
+      "rect": [
+        96,
+        0,
+        32,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/daisy/walk_front/parts/frame_04_tail.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_hind_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_hind_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_body.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_fore_left.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_fore_right.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_head.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_left_ear_tip.png",
+        "assets/source/characters/daisy/walk_front/parts/frame_04_right_ear_tip.png"
+      ]
+    }
+  ]
+}

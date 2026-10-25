@@ -1,0 +1,17 @@
+{
+  "status": "review",
+  "frame_duration_ms": 140,
+  "cycle_duration_ms": 560,
+  "order": [
+    "liam",
+    "liam_mother",
+    "liam_father",
+    "daisy"
+  ],
+  "animations": {
+    "liam": "assets/characters/liam/walk_front/animation.json",
+    "liam_mother": "assets/characters/liam_mother/walk_front/animation.json",
+    "liam_father": "assets/characters/liam_father/walk_front/animation.json",
+    "daisy": "assets/characters/daisy/walk_front/animation.json"
+  }
+}

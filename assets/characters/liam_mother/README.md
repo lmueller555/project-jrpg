@@ -9,8 +9,8 @@ foot anchor `[12,34]`. `idle_front.json` records the design, source layers,
 eyes and frame registration; `palette.json` records the limited colors.
 
 Build using `python tools/build_liam_family_idles.py`. See the family pack at
-`../liam_family/README.md`. The front idle is approved; no world placement, walks
-or dialogue have been added.
+`../liam_family/README.md`. The front idle is approved; no world placement or
+dialogue has been added.
 
 ## Left, right and back — approved
 
@@ -24,3 +24,9 @@ remain unchanged. `idle_all.png`/`idle_all.json` combine all four views.
 
 Build with `python tools/build_liam_family_turnarounds.py`; see the
 [turnaround review](../../../docs/reviews/liam_family_turnaround/README.md).
+
+## Front walk — review
+
+`walk_front/` adds four shared-stride phases at 140 ms each. Head, shoulders and
+braid rise together; the apron/skirt sways subtly, with both boots visible in
+all phases. See the [looping review](../../../docs/reviews/liam_family_front_walks/README.md).

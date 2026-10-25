@@ -13,8 +13,13 @@ All front, left, right and back idle designs are approved and available in each
 member's folder. `idle_directions.png` is a 96×108
 sheet with mother/Liam/father rows and front/left/right/back columns;
 `idle_directions.json` records approval for all views.
-Walking sprites, portraits, routines and world placement remain future work.
+Front walking sprites are available for review as linked below; portraits,
+routines and world placement remain future work.
 
 See [the enlarged review](../../../docs/reviews/liam_family/README.md).
 The [directional idle review](../../../docs/reviews/liam_family_turnaround/README.md)
 includes all nine new views alongside the approved fronts.
+
+Liam, both parents and Daisy also have [front walk loops for review](../../../docs/reviews/liam_family_front_walks/README.md).
+These are four-frame packs with independent pending approval, separate from
+the already approved idles.

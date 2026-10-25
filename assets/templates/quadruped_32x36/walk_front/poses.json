@@ -1,0 +1,352 @@
+{
+  "id": "quadruped_32x36.walk.front",
+  "frame_size": [
+    32,
+    36
+  ],
+  "foot_anchor": [
+    16,
+    34
+  ],
+  "gait": "four-beat lateral-sequence walk",
+  "order": [
+    "hind_left",
+    "fore_left",
+    "hind_right",
+    "fore_right"
+  ],
+  "frames": [
+    {
+      "id": "01",
+      "phase": "hind_left_swing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "tail_offset": [
+        -1,
+        0
+      ],
+      "ear_tip_offsets": {
+        "left": 1,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            26
+          ],
+          "knee": [
+            10,
+            28
+          ],
+          "toe": [
+            10,
+            30
+          ],
+          "width": 3,
+          "planted": false
+        },
+        "fore_left": {
+          "root": [
+            13,
+            27
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            26
+          ],
+          "knee": [
+            22,
+            29
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            27
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      }
+    },
+    {
+      "id": "02",
+      "phase": "fore_left_swing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "tail_offset": [
+        0,
+        -1
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            25
+          ],
+          "knee": [
+            11,
+            28
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            26
+          ],
+          "knee": [
+            12,
+            29
+          ],
+          "toe": [
+            13,
+            32
+          ],
+          "width": 4,
+          "planted": false
+        },
+        "hind_right": {
+          "root": [
+            21,
+            25
+          ],
+          "knee": [
+            22,
+            28
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            26
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      }
+    },
+    {
+      "id": "03",
+      "phase": "hind_right_swing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "tail_offset": [
+        1,
+        0
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 1
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            26
+          ],
+          "knee": [
+            11,
+            29
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            27
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            26
+          ],
+          "knee": [
+            23,
+            28
+          ],
+          "toe": [
+            23,
+            30
+          ],
+          "width": 3,
+          "planted": false
+        },
+        "fore_right": {
+          "root": [
+            19,
+            27
+          ],
+          "knee": [
+            19,
+            30
+          ],
+          "toe": [
+            19,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        }
+      }
+    },
+    {
+      "id": "04",
+      "phase": "fore_right_swing",
+      "duration_ms": 140,
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "tail_offset": [
+        0,
+        -1
+      ],
+      "ear_tip_offsets": {
+        "left": 0,
+        "right": 0
+      },
+      "legs": {
+        "hind_left": {
+          "root": [
+            12,
+            25
+          ],
+          "knee": [
+            11,
+            28
+          ],
+          "toe": [
+            10,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_left": {
+          "root": [
+            13,
+            26
+          ],
+          "knee": [
+            13,
+            30
+          ],
+          "toe": [
+            13,
+            34
+          ],
+          "width": 4,
+          "planted": true
+        },
+        "hind_right": {
+          "root": [
+            21,
+            25
+          ],
+          "knee": [
+            22,
+            28
+          ],
+          "toe": [
+            23,
+            32
+          ],
+          "width": 3,
+          "planted": true
+        },
+        "fore_right": {
+          "root": [
+            19,
+            26
+          ],
+          "knee": [
+            20,
+            29
+          ],
+          "toe": [
+            19,
+            32
+          ],
+          "width": 4,
+          "planted": false
+        }
+      }
+    }
+  ]
+}

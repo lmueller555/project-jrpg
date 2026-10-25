@@ -35,3 +35,12 @@ palettes and front files without rewriting them. Each new view has four layers
 under `CHARACTER/idle_DIRECTION_layers/`. Liam stays 26 visible pixels tall,
 and both parents 34, inside 24×36 frames with baseline row 34. All left, right
 and back designs are approved, alongside the existing approved fronts.
+
+## Front walking source
+
+`tools/build_liam_family_front_walks.py` registers the shared humanoid template
+to the approved front idles. Per-frame body, arms, legs and clothing layers
+are retained under `CHARACTER/walk_front/parts/`. Runtime recipes record the
+source idle hash, template, arm registration, body regions, boot projections
+and combined head/shoulder bob. The mother's apron is posed with the dress.
+The new walks are awaiting review; approved idles and palettes are read-only.

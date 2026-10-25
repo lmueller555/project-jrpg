@@ -22,3 +22,12 @@ coat with white/black spots, fluffy tail, floppy gray ears, and size slightly
 smaller than Liam. Specific spot placement and all four idle designs are
 approved by the user. Left/right spots are intentionally asymmetric and stay associated
 with the correct anatomical side.
+
+## Front walking source
+
+`walk_front/parts/` retains four complete sets of tail, hind legs, torso, fore
+legs, head and ear-tip layers. The approved front idle supplies face, markings,
+fur and paw pixels. A four-beat quadruped template records paw joints and
+support states; a short filled root keeps the tail connected through its sway.
+Build using `python tools/build_liam_family_front_walks.py`. This walk is for
+review; no approved idle or palette is rewritten.

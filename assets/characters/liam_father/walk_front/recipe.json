@@ -1,0 +1,43 @@
+{
+  "character": "liam_father",
+  "status": "review",
+  "idle": "../idle_front.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/humanoid_24x36/walk_front/poses.json",
+  "head_rows": [
+    0,
+    14
+  ],
+  "torso_rect": [
+    7,
+    14,
+    10,
+    8
+  ],
+  "hem_rect": [
+    8,
+    22,
+    8,
+    6
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      14,
+      24,
+      13
+    ],
+    "target_size": [
+      24,
+      12
+    ],
+    "offset": [
+      0,
+      14
+    ],
+    "normalize_source_bob": true
+  },
+  "rest_visible_height_px": 34,
+  "notes": "Read-only approved appearance; shared stride registered to proportions, exact head/shoulder bob.",
+  "approved_idle_sha256": "19ff5bcd2540f678ecc06d210de0d892024285f88c9d989d2133424e28d6c9f2"
+}

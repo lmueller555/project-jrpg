@@ -22,4 +22,12 @@ asymmetric markings; no mirrored duplicate is used. The back has no visible eyes
 
 Build with `python tools/build_daisy_idles.py`. See
 [enlarged views and the Liam comparison](../../../docs/reviews/daisy/README.md).
-World placement, walking cycles and pet routines can follow design approval.
+World placement, remaining walking directions and pet routines remain future work.
+
+## Front walk — review
+
+`walk_front/` now adds four 140 ms quadruped walking phases. One paw swings at
+a time, with three supporting paws, small ear-tip follow-through and connected
+fluffy-tail sway. Approved face, fur palette and spots are retained. The native
+32×36 frame and two-pixel height difference from Liam remain intact. See the
+[family front-walk review](../../../docs/reviews/liam_family_front_walks/README.md).
