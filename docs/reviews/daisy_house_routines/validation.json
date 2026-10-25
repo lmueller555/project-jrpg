@@ -1,0 +1,65 @@
+{
+  "status": "approved",
+  "base_commit": "12e07d77a0ef11e20fbd4728da225f569e799037",
+  "focused_tests": {
+    "passed": 55,
+    "command": "SDL_AUDIODRIVER=dummy .venv/bin/python -m unittest discover -s tests -p 'test_*.py' -k BuildingDoors -k PlayableEldenmere -k LiamFamilyHomeTests -k LiamHouseholdTests -k Social -k DaisyBowlTests -k DaisyRoutineTests -q"
+  },
+  "full_suite": {
+    "passed": 180,
+    "duration_seconds": 101.618,
+    "command": "SDL_AUDIODRIVER=dummy .venv/bin/python -m unittest discover -s tests -q"
+  },
+  "rebuild": {
+    "deterministic": true,
+    "unchanged_files": 570,
+    "command": ".venv/bin/python tools/build_liam_family_home.py"
+  },
+  "visual_checks": [
+    "Actual runtime wandering, feeding, drinking, and empty-bowl visits return to rug",
+    "Food and water muzzle landmarks contact full and half-full contents masks",
+    "Front wood covers lowered muzzle; water ripples clipped to fill",
+    "Four distinct poses per action; source layers reconstruct exports",
+    "Approved pre-existing Daisy PNG SHA-256 hashes unchanged"
+  ],
+  "limitations": [
+    "Room state persists during the current game session; save/load is not introduced",
+    "No household refill routines or dialogue added"
+  ],
+  "previews": {
+    "lossless_delta_encoding": true,
+    "pixels_and_timing_verified_before_after": true,
+    "files": {
+      "drinking.gif": {
+        "bytes": 410479,
+        "frames": 132,
+        "duration_ms": 15300
+      },
+      "drinking_slow.gif": {
+        "bytes": 22014,
+        "frames": 4,
+        "duration_ms": 1200
+      },
+      "eating.gif": {
+        "bytes": 280772,
+        "frames": 90,
+        "duration_ms": 14300
+      },
+      "eating_slow.gif": {
+        "bytes": 20953,
+        "frames": 4,
+        "duration_ms": 2160
+      },
+      "empty_bowl.gif": {
+        "bytes": 190638,
+        "frames": 50,
+        "duration_ms": 8000
+      },
+      "wandering.gif": {
+        "bytes": 1238422,
+        "frames": 252,
+        "duration_ms": 31600
+      }
+    }
+  }
+}

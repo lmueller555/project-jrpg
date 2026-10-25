@@ -32,10 +32,11 @@ class LiamHouseholdTests(unittest.TestCase):
         self.game.player.position.update(self.room.data['spawn'])
         self.game.map_open=False;self.game.transfer_cooldown=0
 
-    def test_exactly_four_stationary_residents_load_once_and_stay_home(self):
+    def test_exactly_four_residents_load_once_and_humans_remain_stationary(self):
         actors=self.room.npcs
         self.assertEqual([n.data['id'] for n in actors],['liam','liam_mother','liam_father','daisy'])
-        self.assertTrue(all(isinstance(n,main.StationaryNPC) for n in actors))
+        self.assertTrue(all(isinstance(n,main.StationaryNPC) for n in actors[:3]))
+        self.assertIsInstance(actors[3],main.DaisyRoutine)
         self.assertIs(self.game._scene_by_id('liam_house'),self.room)
         self.assertEqual([n.data['id'] for n in self.game.persistent_npcs],['mother_serene','tomas'])
         before=[(id(n),tuple(n.position),n.sprite(0)) for n in actors]
@@ -47,7 +48,7 @@ class LiamHouseholdTests(unittest.TestCase):
 
     def test_no_routines_dialogue_or_conversation_lock(self):
         for actor in self.room.npcs:
-            self.assertFalse({'routine','behavior','animation'}&actor.data.keys())
+            if actor.data['id']!='daisy':self.assertFalse({'routine','behavior','animation'}&actor.data.keys())
             self.assertFalse(hasattr(actor,'request_conversation'))
             self.assertNotIn(actor.data['id'],self.game.social.profiles)
             # At a close facing approach, proximity cannot request dialogue.
@@ -93,7 +94,7 @@ class LiamHouseholdTests(unittest.TestCase):
         target=pygame.Surface(main.VIEW_SIZE)
         camera=(-24,16);self.room.draw(target,camera,self.game.player,0)
         # This white native forepaw must be drawn above the woven rug.
-        native=(8,34);pixel=daisy.sprite(0).get_at(native)
+        native=(8+daisy.draw_anchor[0]-20,34+daisy.draw_anchor[1]-30);pixel=daisy.sprite(0).get_at(native)
         self.assertEqual(pixel.a,255)
         world=origin+native
         self.assertEqual(target.get_at((round(world.x)-camera[0],round(world.y)-camera[1])),pixel)

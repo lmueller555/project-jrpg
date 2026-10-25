@@ -37,8 +37,8 @@ routes, collision and map overview are checked into the runtime assets.
 
 See the [marked town layout, in-game exterior loop and interior](../../../../docs/reviews/liam_family_home/README.md).
 The house is playable by running `main.py`. Liam, his mother, his father and
-Daisy are stationary residents inside. Daisy has a still lying pose on a flat
-woven rug. No dialogue, portraits, actions or movement routines are assigned.
+Daisy live inside. Liam and both parents are stationary and silent. Daisy rests
+on her woven rug, wanders, eats and drinks; she has no dialogue.
 `house.json` now also records the four resident sprites, positions, foot probes
 and rug registration; rebuilding preserves this placement.
 See the [household review](../../../../docs/reviews/liam_household/README.md).
@@ -49,6 +49,16 @@ Two matching wooden bowls sit side by side to the right of the rug. Both start
 full. `bowls` records in `house.json` select each initial state, position and
 caregiver approach. Full, half-full and empty sprites share fixed rims, drawing
 registration and footprints. The room's entity `state_images` maps are retained
-for later feeding/drinking/refill routines; the bowls are static for now. See
+for state changes. Daisy consumes one fill level per visit; refill routines
+remain future work. See
 the [bowl pack](../../../terrain/eldenmere/liam_home/bowls/README.md) and
 [in-game captures](../../../../docs/reviews/daisy_bowls/README.md).
+
+## Daisy's indoor routine — approved
+
+`../routines/daisy.json` defines her calm walking speed, wander points, rug rest,
+food/water cooldowns and separate bowl approach/clear points. The town's
+`ambient_scenes` preloads this room so Daisy progresses while it is offscreen.
+The cached room preserves her position, cooldowns and bowl states on re-entry.
+Bowl reservations prevent future caregivers changing a bowl during a visit.
+See the [complete routine previews](../../../../docs/reviews/daisy_house_routines/README.md).

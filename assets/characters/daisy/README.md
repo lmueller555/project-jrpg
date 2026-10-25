@@ -22,7 +22,7 @@ asymmetric markings; no mirrored duplicate is used. The back has no visible eyes
 
 Build with `python tools/build_daisy_idles.py`. See
 [enlarged views and the Liam comparison](../../../docs/reviews/daisy/README.md).
-Daisy is now placed in the family cottage; pet routines remain future work.
+Daisy is placed in the family cottage; see her house routines below.
 
 ## Front walk — approved
 
@@ -38,7 +38,7 @@ fluffy-tail sway. Approved face, fur palette and spots are retained. The native
 frames, a native strip, animation metadata and a reproducible pose recipe.
 Approved directional appearances, palettes and front walks remain unchanged.
 See the [enlarged synchronized previews](../../../docs/reviews/liam_family_directional_walks/README.md).
-All four walking directions are approved; no world placement is added.
+All four walking directions are approved and used by her indoor wandering.
 
 ## Left-facing run — approved
 
@@ -58,5 +58,13 @@ All four running directions are approved and merged into `main`; the left run is
 `lying_left/pose.png` is a single 40×36 still pose, composed from the approved
 left-facing head, coat, floppy ear, paw pixels and fluffy tail. Her legs fold
 under her lowered chest and the plume rests alongside her body. She is placed
-on the woven rug in Liam's house without a routine, movement or dialogue.
+on the woven rug in Liam's house between her wandering and bowl visits.
 See the [in-game household and rug close-up](../../../docs/reviews/liam_household/README.md).
+
+## House routines — approved
+
+`house_routines/` adds four-pose stand/settle, head-lowering/raising, eating and
+drinking actions. Approved idles, walks, runs and lying art are unchanged.
+Daisy walks indoors at 36 px/s, rests on her rug, and consumes one fill level
+per bowl visit. See the [routine pack](house_routines/README.md) and
+[in-game previews](../../../docs/reviews/daisy_house_routines/README.md).

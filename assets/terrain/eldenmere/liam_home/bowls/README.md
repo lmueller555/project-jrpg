@@ -21,9 +21,15 @@ Placement and the selected state are recorded in
 sprite in `frames`, all three alternatives in `state_images`, a `bowl_kind`,
 `bowl_pack`, fixed collision rectangle and world-space `content_target`.
 Caregiver approaches are registered in the room's `destinations`.
-The state map is ready for later feeding/drinking/refill code; sprites do not
-cycle, drain, refill or trigger interactions on their own. Family NPCs remain
-stationary, without dialogue or action routines.
+Daisy consumes one level per visit: full → half-full → empty. Empty bowls get
+a brief inspection without eating or drinking. `World.set_entity_state` updates
+the runtime image/state together and respects `reserved_by`, held through each
+visit until Daisy steps clear. Bowls never refill automatically. Liam and his
+parents remain stationary, without dialogue or action routines.
+
+`front_overlay.png` contains the fixed front wood outside the content mask.
+It draws over Daisy's lowered muzzle; drinking ripples draw only inside the
+current fill mask behind her. All six approved base sprites remain unchanged.
 
 ```sh
 python tools/build_daisy_bowls.py
