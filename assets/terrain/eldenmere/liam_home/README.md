@@ -1,4 +1,4 @@
-# Daisy's woven rug — review pending
+# Daisy's woven rug — approved
 
 `rug.png` is a transparent 64×36 floor sprite at the game's native pixel scale.
 Its teal weave, ivory border/fringe and small terracotta diamonds use six colors

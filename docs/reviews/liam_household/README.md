@@ -1,4 +1,4 @@
-# Liam's household and Daisy's rug — review pending
+# Liam's household and Daisy's rug — approved
 
 Liam, his mother, his father and Daisy are now inside their cottage in western
 Eldenmere. All four use **stationary poses, with no dialogue or action routines**.
@@ -49,8 +49,8 @@ Seven household checks cover placement, absence of behavior/dialogue, stable
 poses over time, player collision, exit/re-entry, reachable furniture with the
 residents present, rug depth/nonblocking geometry, and native art/source-layer
 reconstruction. Existing home, door, town and social checks are also exercised.
-The new placement and rug are published for review and not yet merged into
-`main`.
+The household placement, Daisy lying pose and woven rug are approved and merged
+into `main`. The previews retain their original review labels.
 
 Validation: **39 focused home/door/town/social checks pass**, including all seven
 household checks. The full suite passed 163 of 164; the existing Tomas schedule

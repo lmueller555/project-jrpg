@@ -1,4 +1,4 @@
-# Daisy — still lying pose, review pending
+# Daisy — still lying pose, approved
 
 `pose.png` is a single 40×36 RGBA sprite with draw anchor `[20,30]`. It preserves
 the approved left-facing face, coat colors, black flank patch, floppy gray ear

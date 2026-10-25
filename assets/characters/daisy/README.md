@@ -53,7 +53,7 @@ The left run is approved; approved idles and walks are unchanged.
 directional idle's appearance. See the [all-direction normal/slow loops](../../../docs/reviews/liam_daisy_directional_runs/README.md).
 All four running directions are approved and merged into `main`; the left run is unchanged.
 
-## Lying pose and rug — review pending
+## Lying pose and rug — approved
 
 `lying_left/pose.png` is a single 40×36 still pose, composed from the approved
 left-facing head, coat, floppy ear, paw pixels and fluffy tail. Her legs fold
