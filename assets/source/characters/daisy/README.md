@@ -19,6 +19,6 @@ bounds, hard alpha, palette membership, eyes, baseline and layer reconstruction.
 
 Requested facts are Daisy's name, family association, female pronouns, gray
 coat with white/black spots, fluffy tail, floppy gray ears, and size slightly
-smaller than Liam. Specific spot placement and these idle designs are proposed
-for review. Left/right spots are intentionally asymmetric and stay associated
+smaller than Liam. Specific spot placement and all four idle designs are
+approved by the user. Left/right spots are intentionally asymmetric and stay associated
 with the correct anatomical side.

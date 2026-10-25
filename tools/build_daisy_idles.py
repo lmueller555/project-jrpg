@@ -15,6 +15,7 @@ REVIEW=ROOT/'docs/reviews/daisy'
 FRAME=(32,36)
 ANCHOR=(16,34)
 BACKGROUND='#e8edf2'
+STATUS='approved'
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 PALETTE={
     'outline':['#1a0e16'],
@@ -88,7 +89,7 @@ def board(path,items,scale,title,subtitle):
 def build():
     OUT.mkdir(parents=True,exist_ok=True);REVIEW.mkdir(parents=True,exist_ok=True)
     source=Image.open(SOURCE/'idle_turnaround_concepts.png').convert('RGBA')
-    palette={'status':'review','materials':PALETTE,'eyes':EYES}
+    palette={'status':STATUS,'materials':PALETTE,'eyes':EYES}
     write(OUT/'palette.json',palette)
     sprites={};records=[]
     allowed={rgba(color) for shades in PALETTE.values() for color in shades}
@@ -112,7 +113,7 @@ def build():
             layer.save(path);combined.alpha_composite(layer);layers.append(path.relative_to(ROOT).as_posix())
         assert combined.tobytes()==native.tobytes()
         record={'character':'daisy','display_name':'Daisy','species':'dog','sex':'female',
-                'family':'liam_family','status':'review','animation':f'idle.{direction}',
+                'family':'liam_family','status':STATUS,'animation':f'idle.{direction}',
                 'image':f'idle_{direction}.png','frame_size':list(FRAME),'rect':[0,0,32,36],
                 'occupied_rect':spec['occupied_rect'],'visible_height_px':h,'foot_anchor':list(ANCHOR),
                 'palette':'palette.json','eyes':{'top_pixels':spec['eyes'],'height':2,'iris_offset_y':1},
@@ -128,7 +129,7 @@ def build():
     sheet=Image.new('RGBA',(128,36))
     for i,direction in enumerate(VIEWS):sheet.alpha_composite(sprites[direction],(i*32,0))
     sheet.save(OUT/'idle_directions.png')
-    write(OUT/'idle_directions.json',{'character':'daisy','status':'review','image':'idle_directions.png',
+    write(OUT/'idle_directions.json',{'character':'daisy','status':STATUS,'image':'idle_directions.png',
           'frame_size':list(FRAME),'foot_anchor':list(ANCHOR),
           'frames':[{**record,'rect':[i*32,0,32,36]} for i,record in enumerate(records)],
           'spot_continuity':{'left_flank':'larger black patch',

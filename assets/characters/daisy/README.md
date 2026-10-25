@@ -1,8 +1,8 @@
-# Daisy — directional dog idles for review
+# Daisy — approved directional dog idles
 
 Daisy is Liam's family's female dog: predominantly gray, with white and black
 patches, floppy gray ears and a fluffy light-tipped tail. Her age is unspecified.
-The initial front, left, right and back idle designs are awaiting review.
+The front, left, right and back idle designs are approved by the user.
 
 - `idle_front.png`, `idle_left.png`, `idle_right.png`, `idle_back.png`: transparent
   **32×36** frames, hard alpha and one shared limited palette.

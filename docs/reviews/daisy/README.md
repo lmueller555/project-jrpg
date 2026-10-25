@@ -1,6 +1,7 @@
 # Daisy — four directional idle designs
 
-Initial sprite designs on `daisy-directional-idles`, awaiting user review.
+All four directional idle designs are approved by the user and merged into `main`.
+The images retain their original review labels as a record of the approved designs.
 
 ![Front, left, right and back idles](idle_directions.png)
 
