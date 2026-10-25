@@ -1,0 +1,36 @@
+{
+  "character": "liam_father",
+  "direction": "back",
+  "status": "review",
+  "idle": "../idle_back.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/humanoid_24x36/walk_back/poses.json",
+  "head_end": 14,
+  "torso_rect": [
+    8,
+    14,
+    8,
+    9
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      14,
+      24,
+      13
+    ],
+    "target_size": [
+      24,
+      12
+    ],
+    "offset": [
+      0,
+      14
+    ],
+    "normalize_source_bob": true
+  },
+  "costume_reference": "assets/characters/npcs/female_01/walk_back/recipe.json",
+  "rest_visible_height_px": 34,
+  "notes": "Shared stride and native head/shoulder bob; approved directional face, collar, braid and costume retained.",
+  "approved_idle_sha256": "3cd5c22dbe3c896f2d0d0af9e356915c82f28908fd26fa955c8d8c61522ef92a"
+}

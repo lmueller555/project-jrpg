@@ -1,0 +1,174 @@
+{
+  "character": "liam_mother",
+  "animation": "walk.right",
+  "status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 560,
+  "rest_visible_height_px": 34,
+  "template": "assets/templates/humanoid_24x36/walk_right/poses.json",
+  "recipe": "recipe.json",
+  "offsets_baked_into_pixels": true,
+  "frames": [
+    {
+      "phase": "contact_a",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          9
+        ]
+      ],
+      "leg_toe_rows": {
+        "left": 34,
+        "right": 34
+      },
+      "leg_source": "assets/templates/humanoid_24x36/walk_right/frame_01/legs.png",
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_legs.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_skirt_and_apron.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_left_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_right_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_upper_body.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_01_head.png"
+      ]
+    },
+    {
+      "phase": "passing_a",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          14,
+          8
+        ]
+      ],
+      "leg_toe_rows": {
+        "left": 34,
+        "right": 34
+      },
+      "leg_source": "assets/templates/humanoid_24x36/walk_right/frame_02/legs.png",
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_legs.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_skirt_and_apron.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_left_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_right_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_upper_body.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_02_head.png"
+      ]
+    },
+    {
+      "phase": "contact_b",
+      "upper_body_offset": [
+        0,
+        0
+      ],
+      "shoulder_offset": [
+        0,
+        0
+      ],
+      "eyes": [
+        [
+          14,
+          9
+        ]
+      ],
+      "leg_toe_rows": {
+        "left": 34,
+        "right": 34
+      },
+      "leg_source": "assets/templates/humanoid_24x36/walk_right/frame_03/legs.png",
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_legs.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_skirt_and_apron.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_left_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_right_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_upper_body.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_03_head.png"
+      ]
+    },
+    {
+      "phase": "passing_b",
+      "upper_body_offset": [
+        0,
+        -1
+      ],
+      "shoulder_offset": [
+        0,
+        -1
+      ],
+      "eyes": [
+        [
+          14,
+          8
+        ]
+      ],
+      "leg_toe_rows": {
+        "left": 33,
+        "right": 34
+      },
+      "leg_source": "assets/templates/humanoid_24x36/walk_right/frame_04/legs.png",
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "layers_from_repo_root": [
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_legs.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_skirt_and_apron.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_left_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_right_arm.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_upper_body.png",
+        "assets/source/characters/liam_family/liam_mother/walk_right/parts/frame_04_head.png"
+      ]
+    }
+  ]
+}

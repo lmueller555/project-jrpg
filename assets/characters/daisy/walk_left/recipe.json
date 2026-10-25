@@ -1,0 +1,26 @@
+{
+  "character": "daisy",
+  "direction": "left",
+  "status": "review",
+  "idle": "../idle_left.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/quadruped_32x36/walk_left/poses.json",
+  "rest_visible_height_px": 23,
+  "gait": "four-beat lateral-sequence walk",
+  "leg_source_rects": {
+    "fore": [
+      7,
+      27,
+      12,
+      35
+    ],
+    "hind": [
+      20,
+      27,
+      25,
+      35
+    ]
+  },
+  "notes": "Each view uses its own approved fur markings, not a mirrored body. Paw tips, floppy ears and hinged fluffy tail retain native pixels.",
+  "approved_idle_sha256": "872ac7a70c5fa299850d133660762dd80e51da5c173df4d38fcc77123948c312"
+}

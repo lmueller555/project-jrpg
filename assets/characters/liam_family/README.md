@@ -22,3 +22,7 @@ includes all nine new views alongside the approved fronts.
 
 Liam, both parents and Daisy also have [approved front walk loops](../../../docs/reviews/liam_family_front_walks/README.md).
 These four-frame packs are approved alongside their directional idles.
+
+Left, right and back walking packs are now [ready for review](../../../docs/reviews/liam_family_directional_walks/README.md),
+with synchronized previews for Liam, both parents and Daisy. These new
+directions are not yet approved; existing front loops and all idles are unchanged.

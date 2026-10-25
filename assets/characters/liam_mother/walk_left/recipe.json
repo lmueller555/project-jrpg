@@ -1,0 +1,36 @@
+{
+  "character": "liam_mother",
+  "direction": "left",
+  "status": "review",
+  "idle": "../idle_left.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/humanoid_24x36/walk_left/poses.json",
+  "head_end": 14,
+  "torso_rect": [
+    10,
+    14,
+    5,
+    7
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      14,
+      24,
+      13
+    ],
+    "target_size": [
+      22,
+      11
+    ],
+    "offset": [
+      1,
+      14
+    ],
+    "normalize_source_bob": true
+  },
+  "costume_reference": "assets/characters/npcs/female_01/walk_left/recipe.json",
+  "rest_visible_height_px": 34,
+  "notes": "Shared stride and native head/shoulder bob; approved directional face, collar, braid and costume retained.",
+  "approved_idle_sha256": "7da9dc50fbdfac8a16f4b755b500286ad23bfcbc3427499ef2e2dfe507cf1daa"
+}

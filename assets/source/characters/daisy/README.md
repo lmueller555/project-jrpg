@@ -31,3 +31,16 @@ fur and paw pixels. A four-beat quadruped template records paw joints and
 support states; a short filled root keeps the tail connected through its sway.
 Build using `python tools/build_liam_family_front_walks.py`. This front walk
 is approved; no approved idle or palette is rewritten.
+
+## Left, right and back walking source — review pending
+
+`tools/build_liam_family_directional_walks.py` reposes each approved directional
+idle without rewriting it. New per-phase layers live under
+`walk_DIRECTION/parts/`. Each view retains its own asymmetrical coat markings.
+Three new 32×36 quadruped templates record the four-beat paw joints and support
+states; paw shapes come from approved native pixels. Far legs are layered
+behind the body, near legs in front, with a connected tail root and ear lag.
+
+Native frames, recipes and layer paths are in the matching character animation
+metadata. The [directional walk review](../../../../docs/reviews/liam_family_directional_walks/README.md)
+contains synchronized looping comparisons. These new walks await approval.

@@ -1,0 +1,36 @@
+{
+  "character": "liam",
+  "direction": "right",
+  "status": "review",
+  "idle": "../idle_right.png",
+  "palette": "../palette.json",
+  "template": "assets/templates/humanoid_24x36/walk_right/poses.json",
+  "head_end": 21,
+  "torso_rect": [
+    9,
+    21,
+    5,
+    7
+  ],
+  "arm_registration": {
+    "source_rect": [
+      0,
+      14,
+      24,
+      13
+    ],
+    "target_size": [
+      18,
+      7
+    ],
+    "offset": [
+      3,
+      21
+    ],
+    "normalize_source_bob": true
+  },
+  "costume_reference": "assets/characters/npcs/female_01/walk_right/recipe.json",
+  "rest_visible_height_px": 26,
+  "notes": "Shared stride and native head/shoulder bob; approved directional face, collar, braid and costume retained.",
+  "approved_idle_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b"
+}
