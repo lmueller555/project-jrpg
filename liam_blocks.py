@@ -90,6 +90,11 @@ class LiamBlocks:
     def _maybe_accident(self):
         if self.accident_rolled or sum(b['state']=='placed' for b in self.blocks)<3:return
         d=self.daisy
+        if d.position.distance_to(self.config['building_center'])>self.config['nearby_radius']:return
+        bone=getattr(d,'bone_routine',None)
+        if bone is not None and bone.active:
+            bone.request_release();return
+        if d.rest_protected:return
         if (self.shared.worlds[d] is not self.home or d.play_owned or d.active_bowl is not None
                 or d.state not in ('rest','pause','walk') or d.activity in ('food','water')):return
         if d.position.distance_to(self.config['building_center'])>self.config['nearby_radius']:return
@@ -100,6 +105,10 @@ class LiamBlocks:
         # An early probability decision must not freeze Daisy on a future
         # placement point. Borrow her only once all five blocks are finished.
         d=self.daisy
+        bone=getattr(d,'bone_routine',None)
+        if bone is not None and bone.active:
+            bone.request_release();return False
+        if d.rest_protected:return False
         if (d.play_owned or d.active_bowl is not None or self.shared.worlds[d] is not self.home
                 or d.state not in ('rest','pause','walk') or d.activity in ('food','water')):return False
         self.was_lying=d.state=='rest'
@@ -153,6 +162,7 @@ class LiamBlocks:
                 d._tick(ms,self.home,self.shared.player(self.home))
                 if d.state=='rest':
                     d.duration_ms=self._rng.randint(*self.config['dog_rest_ms']);d.play_owned=False;d.play_pose=None
+                    d.rest_protected=True
                     self.dog_owned=False;self.dog_returning=False
             else:
                 for key in d.cooldowns:d.cooldowns[key]-=ms

@@ -1,0 +1,60 @@
+{
+  "id": "daisy.play_bone",
+  "status": "review",
+  "palette": {
+    "edge": "#a89b7e",
+    "shadow": "#c6b893",
+    "base": "#e2d3ad",
+    "light": "#f5e8c6"
+  },
+  "variants": {
+    "horizontal": {
+      "image": "assets/terrain/eldenmere/liam_home/bone/horizontal.png",
+      "draw_anchor": [
+        4,
+        2
+      ],
+      "frame_size": [
+        8,
+        4
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/bone/horizontal_bone.png"
+      ]
+    },
+    "vertical": {
+      "image": "assets/terrain/eldenmere/liam_home/bone/vertical.png",
+      "draw_anchor": [
+        2,
+        4
+      ],
+      "frame_size": [
+        4,
+        8
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/bone/vertical_bone.png"
+      ]
+    },
+    "diagonal": {
+      "image": "assets/terrain/eldenmere/liam_home/bone/diagonal.png",
+      "draw_anchor": [
+        5,
+        4
+      ],
+      "frame_size": [
+        10,
+        8
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/liam_home/bone/diagonal_bone.png"
+      ]
+    }
+  },
+  "initial_center": [
+    138,
+    259
+  ],
+  "solid": false,
+  "quantity": 1
+}

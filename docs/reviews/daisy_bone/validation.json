@@ -1,0 +1,47 @@
+{
+  "status": "review",
+  "base_commit": "bf4c6bcad268bd9a1ad44d1de2f8d7aad5c2a2a6",
+  "full_suite": {
+    "passed": 202,
+    "duration_seconds": 171.217,
+    "command": "SDL_AUDIODRIVER=dummy .venv/bin/python -m unittest discover -s tests -q"
+  },
+  "focused_bone_tests": {
+    "passed": 9,
+    "file": "tests/test_daisy_bone.py"
+  },
+  "rebuild": {
+    "deterministic": true,
+    "unchanged_files": 959,
+    "command": ".venv/bin/python tools/build_liam_family_home.py"
+  },
+  "checks": [
+    "One stable bone identity across ground, mouth and paw ownership; floor prop hidden while owned",
+    "Authored pickup/drop/paw contacts occur on the correct frame without duplicate props",
+    "All four approved walking bodies retained; mouth-following overlays and hidden back-facing bone",
+    "Floor positions snapped to native pixel registration for reliable later retrieval",
+    "Automatic relocation moves at least one terrain tile and can be retrieved again",
+    "Furniture, bowl, door, player and Liam block exclusions checked for drop selection",
+    "Liam invitation waits for safe release; feeding is never interrupted",
+    "Food becoming due during the last nudge causes a rise and safe yield instead of another long rest",
+    "Blocked routes wait without teleporting; room re-entry preserves identity and position",
+    "Four distinct poses per action; source layers reconstruct bodies and overlays; old PNG hashes unchanged",
+    "Runtime GIFs visually inspected; loop, timing and exact palette rendering verified"
+  ],
+  "previews": {
+    "drop_and_retrieve.gif": {
+      "bytes": 846557,
+      "frames": 316,
+      "duration_ms": 50000
+    },
+    "rug_play.gif": {
+      "bytes": 392030,
+      "frames": 153,
+      "duration_ms": 29900
+    }
+  },
+  "limitations": [
+    "Runtime state persists across rooms during the current session; no save/load changes",
+    "Review skips initial waits and selects variations; unrelated NPC and meal timers are deferred for capture"
+  ]
+}

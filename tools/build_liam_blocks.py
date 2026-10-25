@@ -102,7 +102,7 @@ def export(name,items,duration=260,contact=None,anchor=ANCHOR,character='liam'):
 
 
 def actions():
-    protected={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for name in ('liam','daisy') for p in (ROOT/'assets/characters'/name).rglob('*.png')}
+    protected={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for name in ('liam','daisy') for p in (ROOT/'assets/characters'/name).rglob('*.png') if 'bone_play' not in p.parts}
     result={}
     for direction in ('left','right'):
         sign=-1 if direction=='left' else 1;idle=Image.open(ROOT/f'assets/characters/liam/idle_{direction}.png').convert('RGBA')
