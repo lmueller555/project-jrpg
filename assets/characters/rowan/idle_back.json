@@ -1,0 +1,36 @@
+{
+  "character": "rowan",
+  "status": "review",
+  "animation": "idle.back",
+  "image": "idle_back.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "visible_height_px": 27,
+  "occupied_rect": [
+    6,
+    8,
+    12,
+    27
+  ],
+  "eyes": {
+    "top_pixels": [],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/rowan/idle_back/idle_registered_body.png",
+    "assets/source/characters/rowan/idle_back/idle_hair_and_costume.png",
+    "assets/source/characters/rowan/idle_back/idle_eyes.png"
+  ],
+  "palette": "palette.json"
+}

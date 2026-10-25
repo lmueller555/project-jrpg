@@ -23,7 +23,7 @@ class VillagerHouseholdTests(unittest.TestCase):
         placed=[]
         for family in self.registry['households']:
             room=self.rooms[family['home']]
-            self.assertEqual(room.data['household'],[family['mother']['id'],family['father']['id']])
+            self.assertEqual(room.data['household'],[family['mother']['id'],family['father']['id']]+[c['id'] for c in family.get('children',[])])
             for role in ('mother','father'):
                 m=family[role]
                 actors=self.game.town.npcs if m.get('placement') else room.npcs
@@ -79,7 +79,7 @@ class VillagerHouseholdTests(unittest.TestCase):
             self.assertEqual(room.data.get('household',[]),[]);self.assertEqual(room.data['npcs'],[])
         room=self.game._scene_by_id('liam_house')
         self.assertEqual(room.data['household'],['liam','liam_mother','liam_father','daisy'])
-        self.assertEqual(self.registry['children'],'unassigned')
+        self.assertEqual(self.registry['children'],['tessa','finn','rowan','ada','pippa'])
 
 
 if __name__=='__main__':unittest.main()

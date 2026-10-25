@@ -190,9 +190,53 @@
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0
+    },
+    {
+      "id": "rowan_bed",
+      "owner_child": "rowan",
+      "position": [
+        96,
+        96
+      ],
+      "sort_y": 140,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/child_beds/blue.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "floor_rect": [
+        100,
+        108,
+        24,
+        32
+      ],
+      "bed_variant": "blue"
+    },
+    {
+      "id": "ada_bed",
+      "owner_child": "ada",
+      "position": [
+        132,
+        96
+      ],
+      "sort_y": 140,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/child_beds/blue.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "floor_rect": [
+        136,
+        108,
+        24,
+        32
+      ],
+      "bed_variant": "blue"
     }
   ],
-  "collision": "assets/maps/eldenmere/building_interiors/rooms/standard/collision.png",
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/home_b/collision.png",
   "foreground": [],
   "landmarks": [],
   "doors": [
@@ -268,6 +312,60 @@
       "household_id": "blue_rust_family",
       "family_role": "father",
       "partner_id": "villager_female_01"
+    },
+    {
+      "id": "rowan",
+      "name": "Rowan",
+      "kind": "stationary",
+      "position": [
+        110,
+        208
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/rowan/idle_front.png",
+      "sprite_root": "assets/characters/rowan",
+      "age_years": 9,
+      "parents": [
+        "villager_female_01",
+        "villager_male_02"
+      ],
+      "family_role": "child",
+      "home_scene": "home_b",
+      "household_id": "blue_rust_family"
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "kind": "stationary",
+      "position": [
+        158,
+        212
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/ada/idle_front.png",
+      "sprite_root": "assets/characters/ada",
+      "age_years": 7,
+      "parents": [
+        "villager_female_01",
+        "villager_male_02"
+      ],
+      "family_role": "child",
+      "home_scene": "home_b",
+      "household_id": "blue_rust_family"
     }
   ],
   "quests": [],
@@ -308,6 +406,14 @@
     "hearth": [
       278,
       104
+    ],
+    "rowan_bed": [
+      112,
+      154
+    ],
+    "ada_bed": [
+      148,
+      154
     ]
   },
   "source_room": "assets/terrain/eldenmere/cottage_layouts/standard/room.json",
@@ -320,7 +426,9 @@
   "overview": "assets/maps/eldenmere/playable/overview.png",
   "household": [
     "villager_female_01",
-    "villager_male_02"
+    "villager_male_02",
+    "rowan",
+    "ada"
   ],
   "household_id": "blue_rust_family",
   "household_registry": "assets/maps/eldenmere/households/households.json"

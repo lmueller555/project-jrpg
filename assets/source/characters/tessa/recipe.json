@@ -1,0 +1,38 @@
+{
+  "name": "Tessa",
+  "age_years": 10,
+  "height": 28,
+  "home": "home_a",
+  "style": "braid",
+  "eyes": "#3f784b",
+  "hair": [
+    "#4b2928",
+    "#854b39",
+    "#b6754e"
+  ],
+  "dress": [
+    "#405b49",
+    "#6e9275",
+    "#a0b9a2"
+  ],
+  "trim": [
+    "#bcae91",
+    "#ded1ae",
+    "#fbeed0"
+  ],
+  "design": "Auburn braid, cream blouse and sage pinafore.",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "shared_motion": "Four phases, 140ms walk / 100ms run; native coordinated head/shoulder translation.",
+  "builder": "tools/build_schoolgirls.py"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "eldenmere.compact_child_twin_beds",
+  "status": "review",
+  "source_image": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+  "approved_source_sha256": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d",
+  "source_crop": [
+    8,
+    6,
+    32,
+    60
+  ],
+  "registered_size": [
+    24,
+    42
+  ],
+  "registration_offset": [
+    4,
+    3
+  ],
+  "frame_size": [
+    32,
+    48
+  ],
+  "floor_rect": [
+    4,
+    12,
+    24,
+    32
+  ],
+  "quilt_source": [
+    "#566b50",
+    "#7b9065",
+    "#a1ae83"
+  ],
+  "quilt_variants": {
+    "sage": [
+      "#405b49",
+      "#6e9275",
+      "#a0b9a2"
+    ],
+    "blue": [
+      "#304f70",
+      "#4d77a0",
+      "#7da5c7"
+    ],
+    "plum": [
+      "#51364f",
+      "#805477",
+      "#ad80a0"
+    ]
+  },
+  "resampling": "nearest",
+  "layer_order": [
+    "wood_frame",
+    "pillow_and_linen",
+    "folded_quilt"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "eldenmere.compact_child_twin_beds",
+  "status": "review",
+  "tile_size": 24,
+  "frame_size": [
+    32,
+    48
+  ],
+  "occupied_rect": [
+    4,
+    3,
+    24,
+    42
+  ],
+  "floor_rect": [
+    4,
+    12,
+    24,
+    32
+  ],
+  "sort_y_offset": 44,
+  "variants": {
+    "sage": {
+      "image": "assets/terrain/eldenmere/child_beds/sage.png",
+      "frame_size": [
+        32,
+        48
+      ],
+      "floor_rect": [
+        4,
+        12,
+        24,
+        32
+      ],
+      "sort_y_offset": 44,
+      "quilt_palette": [
+        "#405b49",
+        "#6e9275",
+        "#a0b9a2"
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/child_beds/sage/wood_frame.png",
+        "assets/source/terrain/eldenmere/child_beds/sage/pillow_and_linen.png",
+        "assets/source/terrain/eldenmere/child_beds/sage/folded_quilt.png"
+      ]
+    },
+    "blue": {
+      "image": "assets/terrain/eldenmere/child_beds/blue.png",
+      "frame_size": [
+        32,
+        48
+      ],
+      "floor_rect": [
+        4,
+        12,
+        24,
+        32
+      ],
+      "sort_y_offset": 44,
+      "quilt_palette": [
+        "#304f70",
+        "#4d77a0",
+        "#7da5c7"
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/child_beds/blue/wood_frame.png",
+        "assets/source/terrain/eldenmere/child_beds/blue/pillow_and_linen.png",
+        "assets/source/terrain/eldenmere/child_beds/blue/folded_quilt.png"
+      ]
+    },
+    "plum": {
+      "image": "assets/terrain/eldenmere/child_beds/plum.png",
+      "frame_size": [
+        32,
+        48
+      ],
+      "floor_rect": [
+        4,
+        12,
+        24,
+        32
+      ],
+      "sort_y_offset": 44,
+      "quilt_palette": [
+        "#51364f",
+        "#805477",
+        "#ad80a0"
+      ],
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/child_beds/plum/wood_frame.png",
+        "assets/source/terrain/eldenmere/child_beds/plum/pillow_and_linen.png",
+        "assets/source/terrain/eldenmere/child_beds/plum/folded_quilt.png"
+      ]
+    }
+  },
+  "source_image": "assets/terrain/eldenmere/cottage_furniture/sprites/bed.png",
+  "approved_source_sha256": "7bd844ed1bf6b9c715c59f0f8e0adeab780da79313ca579451031fa907db237d",
+  "source_crop": [
+    8,
+    6,
+    32,
+    60
+  ],
+  "registered_size": [
+    24,
+    42
+  ],
+  "registration_offset": [
+    4,
+    3
+  ],
+  "source_recipe": "assets/source/terrain/eldenmere/child_beds/recipe.json",
+  "suggested_placement": {
+    "two_beds": [
+      [
+        96,
+        96
+      ],
+      [
+        132,
+        96
+      ]
+    ],
+    "access_points": [
+      [
+        112,
+        154
+      ],
+      [
+        148,
+        154
+      ]
+    ],
+    "single_bed": [
+      96,
+      96
+    ]
+  },
+  "notes": "Single-level compact twin beds; unchanged approved wood and linen colors, family quilt palettes."
+}
