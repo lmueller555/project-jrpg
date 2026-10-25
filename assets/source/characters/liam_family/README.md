@@ -65,7 +65,7 @@ parts with new four-pose running joints. Per-frame layers are retained under
 See the [run prototype review](../../../../docs/reviews/liam_daisy_run_prototypes/README.md).
 The left run is approved; no approved idle or walk is rewritten.
 
-## Remaining running directions — review pending
+## Remaining running directions — approved
 
 `tools/build_liam_daisy_directional_runs.py` builds four-frame front, right and
 back runs from each approved directional idle and authored joint poses. New
@@ -73,4 +73,4 @@ per-phase layers are retained under
 `liam/run_DIRECTION/parts/`. Recipes record native input hashes
 and template paths. The approved left-run assets and source layers are protected.
 See the [directional run previews](../../../../docs/reviews/liam_daisy_directional_runs/README.md).
-These new directions await user approval.
+All four running directions are approved and merged into `main`.

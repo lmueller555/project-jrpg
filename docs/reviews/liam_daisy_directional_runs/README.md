@@ -1,8 +1,8 @@
 # Liam and Daisy — remaining running directions
 
-**Front, right and back runs are ready for review.** The left runs are approved
-and included as references. These running assets have not yet been merged into
-`main`.
+**All four running directions for Liam and Daisy are approved and merged
+into `main`.** The previews retain their original review labels as a record
+of the approved animations.
 
 ## Enlarged looping previews
 
@@ -82,5 +82,5 @@ The previews use opaque light backgrounds, nearest-neighbor enlargement, exact
 GIF colors, full-frame disposal and infinite looping. The thin horizontal guide
 lies on row 35, below the native sprite pixels.
 
-This change completes the running art for review. It does not add running
+This change completes the approved running art. It does not add running
 controls, movement speed, character placement or NPC behavior to the game.

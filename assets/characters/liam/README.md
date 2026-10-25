@@ -44,9 +44,9 @@ All four walking directions are approved; no world placement is added.
 [normal-speed, slow-motion and walk/run comparisons](../../../docs/reviews/liam_daisy_run_prototypes/README.md).
 The left run is approved; approved idles and walks are unchanged.
 
-## Front, right and back runs — review pending
+## Front, right and back runs — approved
 
 `run_front/`, `run_right/` and `run_back/` each contain four running poses at
 100 ms per frame. They continue the approved left run and use each approved
 directional idle's appearance. See the [all-direction normal/slow loops](../../../docs/reviews/liam_daisy_directional_runs/README.md).
-The new directions await approval; the approved left run is unchanged.
+All four running directions are approved and merged into `main`; the left run is unchanged.
