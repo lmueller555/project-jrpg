@@ -63,7 +63,7 @@ The cached room preserves her position, cooldowns and bowl states on re-entry.
 Bowl reservations prevent future caregivers changing a bowl during a visit.
 See the [complete routine previews](../../../../docs/reviews/daisy_house_routines/README.md).
 
-## Shared play routine — awaiting review
+## Shared play routine — approved
 
 `play_routine` references `../routines/liam_daisy_play.json`. Liam is a
 `play_actor` while his parents remain stationary. The game coordinates Liam and

@@ -43,7 +43,7 @@ Liam's parents remain stationary and silent. Daisy rests on her woven
 rug, wanders around the room, and visits her food and water bowls. The room is
 preloaded as an ambient scene; her routine also advances while offscreen.
 
-Liam and Daisy's shared play routine (awaiting review) transfers both actors
+Liam and Daisy's shared play routine (approved) transfers both actors
 through their cottage door for three running laps on clear lower ground in
 front of the house, then returns them to their bed/rug resting spots. No town
 terrain or building positions are changed. See the

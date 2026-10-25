@@ -69,7 +69,7 @@ Daisy walks indoors at 36 px/s, rests on her rug, and consumes one fill level
 per bowl visit. See the [routine pack](house_routines/README.md) and
 [in-game previews](../../../docs/reviews/daisy_house_routines/README.md).
 
-## Playtime with Liam — awaiting review
+## Playtime with Liam — approved
 
 A shared controller temporarily pauses Daisy's normal routine for Liam's
 invitation, two excited hops and a tail wag, three running laps in front of

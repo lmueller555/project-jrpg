@@ -1,4 +1,4 @@
-# Liam and Daisy's shared play routine — awaiting review
+# Liam and Daisy's shared play routine — approved
 
 - [Full cycle, including the drinking outcome](full_cycle.gif)
 - [Invitation, two hops and excited wag](invitation.gif)
@@ -36,4 +36,4 @@ routines are introduced.
 Reproduce with `python tools/build_liam_family_home.py`, then
 `python tools/capture_liam_daisy_play.py`. `captures.json` records both outcomes,
 scene transfers and final positions; `validation.json` records checks.
-This work is published for review and has not been merged into main.
+The user approved this routine on 2026-10-25 for merging into main.

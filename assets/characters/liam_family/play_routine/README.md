@@ -1,4 +1,4 @@
-# Liam and Daisy — playtime actions (awaiting review)
+# Liam and Daisy — playtime actions (approved)
 
 Four unique hard-alpha poses per action, using the approved character palettes:
 
