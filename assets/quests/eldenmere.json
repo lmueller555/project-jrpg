@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
+  "quests": [
+    {
+      "id": "CH01_MQ01",
+      "title": "A Day Like Any Other",
+      "giver": "mother_serene",
+      "summary": "Serene has asked me to check on Halden, Elira, and the Venn family. Tomas is coming along to Halden's place first.",
+      "accept_text": "Serene's three visits have been added to your journal.",
+      "parallel_tracker_text": "Visit Elira and the Venn family.",
+      "report_text": "Return to Mother Serene.",
+      "completion_text": "Serene's three households have been helped.",
+      "implementation_note": "Availability and acceptance are connected to Serene. Household task gameplay will call the objective hooks when implemented; entering their homes never completes a task.",
+      "objectives": [
+        {
+          "id": "halden",
+          "text": "Bring Halden his medicine, move three grain sacks with Tomas, then see Tomas back to his preparations.",
+          "tracker_text": "Visit Halden with Tomas.",
+          "completion_text": "Halden has his medicine. Tomas has returned to his preparations.",
+          "requires": []
+        },
+        {
+          "id": "elira",
+          "text": "Deliver Elira's food and lamp oil, and retrieve her memorial lantern from the high shelf.",
+          "tracker_text": "Visit Elira.",
+          "completion_text": "Elira has her supplies and her memorial lantern.",
+          "requires": [
+            "halden"
+          ]
+        },
+        {
+          "id": "venn",
+          "text": "Bring recovery supplies to the Venn family and repair their irrigation gate.",
+          "tracker_text": "Visit the Venn family.",
+          "completion_text": "The Venn family has its supplies and the irrigation channel is working again.",
+          "requires": [
+            "halden"
+          ]
+        }
+      ]
+    }
+  ]
+}

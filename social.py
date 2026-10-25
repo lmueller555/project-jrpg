@@ -42,6 +42,9 @@ class SocialSystem:
         self.pages = []
         self.page_index = 0
         self.conversation = None
+        self._choosing = False
+        self.choice_rects = [pygame.Rect(122, 263, 154, 23),
+                             pygame.Rect(286, 263, 166, 23)]
         self.font = pygame.font.Font(None, 18)
         self.name_font = pygame.font.Font(None, 20)
         self.hint_font = pygame.font.Font(None, 14)
@@ -61,6 +64,22 @@ class SocialSystem:
     @property
     def page(self):return self.pages[self.page_index] if self.active else None
 
+    @property
+    def choosing(self):return self.active and self._choosing
+
+    def _eligible(self, conversation):
+        if not set(conversation.get('requires', [])) <= self.flags:return False
+        condition = conversation.get('quest')
+        if condition is None:return True
+        quests = getattr(self.game, 'quests', None)
+        if quests is None:return False
+        if quests.status(condition['id']) != condition['status']:return False
+        for identifier in condition.get('completed', []):
+            if quests.objective_status(condition['id'], identifier) != 'completed':return False
+        for identifier in condition.get('incomplete', []):
+            if quests.objective_status(condition['id'], identifier) == 'completed':return False
+        return True
+
     def update(self, direction):
         game = self.game
         for actor in tuple(self.blocked):
@@ -70,7 +89,8 @@ class SocialSystem:
             if self.pending and self.actor.conversation_ready:
                 self.pending = False
             return
-        if game.map_open or game.transfer_cooldown or not pygame.Vector2(direction).length_squared():return
+        if (game.map_open or getattr(getattr(game, 'quest_ui', None), 'journal_open', False)
+                or game.transfer_cooldown or not pygame.Vector2(direction).length_squared()):return
         forward = pygame.Vector2(FACING[game.player.facing])
         candidates = []
         for actor in game.world.npcs:
@@ -88,8 +108,8 @@ class SocialSystem:
 
     def start(self, actor):
         profile = self.profiles[actor.data['id']]
-        conversation = next(c for c in profile['conversations']
-                            if set(c.get('requires', [])) <= self.flags)
+        conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
+        if conversation is None:return False
         self.pages = []
         for line in conversation['lines']:
             wrapped = self.wrap(line['text'], 332)
@@ -97,6 +117,7 @@ class SocialSystem:
                 self.pages.append({'speaker': line['speaker'], 'lines': wrapped[offset:offset+3]})
         self.actor = actor
         self.conversation = conversation
+        self._choosing = False
         self.page_index = 0
         self.pending = True
         delta = self.game.player.position-actor.position
@@ -104,6 +125,7 @@ class SocialSystem:
         self.pending = not actor.conversation_ready
         self.game.player.moving = False
         self.game.player.walk_ms = 0
+        return True
 
     def wrap(self, text, width):
         lines = []
@@ -118,15 +140,42 @@ class SocialSystem:
         return lines or ['']
 
     def advance(self):
-        if not self.active:return
-        self.page_index += 1
-        if self.page_index < len(self.pages):return
+        if not self.active or self.choosing:return
+        if self.page_index + 1 < len(self.pages):
+            self.page_index += 1
+            return
+        if self.conversation.get('quest', {}).get('action') == 'offer':
+            self._choosing = True
+            return
+        self._finish()
+
+    def click(self, point):
+        """Advance prose anywhere; answer a quest only by clicking its button."""
+        if not self.active:return False
+        if not self.choosing:
+            self.advance()
+            return True
+        if point is None:return False
+        choice = next((i for i, rect in enumerate(self.choice_rects) if rect.collidepoint(point)), None)
+        if choice is None:return False
+        if choice == 0:
+            self.game.quests.accept(self.conversation['quest']['id'])
+        self._finish()
+        return True
+
+    def _finish(self):
+        condition = self.conversation.get('quest', {})
+        if condition.get('action') == 'turn_in':
+            self.game.quests.turn_in(condition['id'], self.actor.data['id'])
         self.flags.update(self.conversation.get('sets', []))
         self.blocked.add(self.actor)
         self.actor.end_conversation()
         self.actor = None
         self.pages = []
         self.conversation = None
+        self._choosing = False
+        save = getattr(self.game, 'save_progress', None)
+        if save is not None:save()
 
     def draw(self, canvas, elapsed_ms):
         if self.pending:
@@ -146,9 +195,17 @@ class SocialSystem:
         canvas.blit(self.portraits[speaker['portrait']], (26, 220))
         pygame.draw.line(canvas, '#526761', (112, 215), (112, 296))
         canvas.blit(self.name_font.render(speaker['name'], False, '#ffdc71'), (122, 216))
-        for index, line in enumerate(self.page['lines']):
-            canvas.blit(self.font.render(line, False, '#f7eed5'), (122, 240+index*17))
-        hint = 'Click anywhere  /  Space'
+        if self.choosing:
+            canvas.blit(self.font.render('Will you help?', False, '#f7eed5'), (122, 240))
+            for text, rect in zip(("I'll help", 'Not just yet'), self.choice_rects):
+                pygame.draw.rect(canvas, '#344e3e', rect)
+                pygame.draw.rect(canvas, '#b7a47b', rect, 1)
+                label = self.font.render(text, False, '#ffdc71')
+                canvas.blit(label, label.get_rect(center=rect.center))
+        else:
+            for index, line in enumerate(self.page['lines']):
+                canvas.blit(self.font.render(line, False, '#f7eed5'), (122, 240+index*17))
+        hint = 'Click a choice to answer' if self.choosing else 'Click anywhere  /  Space'
         canvas.blit(self.hint_font.render(hint, False, '#c9c9b5'), (122, 289))
-        if int(elapsed_ms//450) % 2 == 0:
+        if not self.choosing and int(elapsed_ms//450) % 2 == 0:
             pygame.draw.polygon(canvas, '#ffdc71', [(446, 289), (454, 289), (450, 294)])

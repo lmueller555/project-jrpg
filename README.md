@@ -22,8 +22,8 @@ to preserve the pixel art's proportions.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
 menu**. Click New Game to enter the playable town, or use arrows and Enter.
-Settings changes fullscreen/windowed mode and title music; Continue is disabled
-until saving exists. The logo uses **The Broken Covenant** as a working title.
+Settings changes fullscreen/windowed mode and music. Continue resumes a saved
+journey when one exists. The logo uses **The Broken Covenant** as a working title.
 See the [title screen preview](docs/reviews/title_screen/README.md) for review.
 
 Tomas now helps with preparations and tinkers in the sanctuary dining room,
@@ -41,9 +41,11 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | WASD or arrow keys | Move Caelan |
 | Shift | Run |
 | M | Open/close the town map |
+| J | Open/close the quest journal; wheel/arrows scroll |
 | Left click anywhere / Space / E | Advance an open conversation |
+| Click a response button | Accept a quest or leave it for later |
 | F11 | Toggle fullscreen |
-| Escape | Close the map, or quit |
+| Escape | Close the journal/map, or save and quit |
 
 The resizable window uses crisp integer pixel scaling. Explore the full approved 64×56-tile layout, both brook bridges, the sanctuary and eastern terrace stairs, all six cottages, the watermill, workshop and commons. Buildings, water, terrace walls and solid props block movement; roofs, trees and bridge rails draw at the appropriate depth. Water, the mill wheel, chimney smoke, lanterns and existing vegetation animate.
 
@@ -64,9 +66,31 @@ facing her in the sanctuary hall or dining room. She safely sets down her work,
 turns and pauses. The textbox uses the current speaker's approved portrait;
 click anywhere in the window to advance. Caelan cannot move during dialogue,
 while the rest of the world continues. Walk away beyond the release radius
-before approaching again for repeat lines. Conversation flags last for the
-current session. See the [running-game preview](docs/reviews/proximity_dialogue/README.md).
-Mira/gardener conversations and quest progression will follow after this review.
+before approaching again. Conversation flags and quest progress are saved.
+See the [earlier dialogue preview](docs/reviews/proximity_dialogue/README.md).
+Mira/gardener conversations remain future work.
+
+**Quest feedback is available in-game.** Mother Serene has an outlined gold `!`
+in the sanctuary and on the town map. Approach her to hear the opening request;
+after advancing the dialogue, click **I'll help** or **Not just yet**. Clicking
+elsewhere or pressing the dialogue-advance keys cannot choose for you. Accepted
+quests show a titled banner, a short chime, a current-objective tracker and a
+scrollable **J** journal. Objective updates, a `?` ready-to-report marker, and
+completion feedback share the same quest state. Music settings also mute quest
+chimes. The journal pauses player movement and doorway entry.
+
+The opening assignment is connected to this system. The actual Halden sack,
+Elira lantern and Venn gate tasks, Tomas's temporary following segment and the
+scripted bedroom/breakfast opening remain the next story implementation. Visiting
+their houses never marks those tasks complete. See [quest integration](docs/QUEST_SYSTEM.md).
+
+The launcher automatically checkpoints quest/conversation changes, room transfers,
+and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored
+by Git. **Continue** restores quest facts, dialogue history and player location
+without replaying old notifications. Ambient NPC routines restart on launch;
+their moment-to-moment action clocks are not part of this save. **New Game** starts
+a fresh journey and replaces that checkpoint. A missing or unreadable save leaves
+Continue unavailable. Tests construct `Game(save_path=None)` to stay in memory.
 
 Verify the runtime without a display:
 

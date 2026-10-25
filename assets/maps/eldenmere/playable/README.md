@@ -1,6 +1,6 @@
 # Eldenmere — playable outdoor map
 
-Run `python main.py` from the repository root. This package turns the approved 64×56 layout (24px tiles, 1536×1344 native pixels) into runtime data, with the finished sanctuary/charm and workshop exteriors in their approved positions. Caelan and Mira are drawn dynamically by the game, never baked into these images. Quests remain unimplemented.
+Run `python main.py` from the repository root. This package turns the approved 64×56 layout (24px tiles, 1536×1344 native pixels) into runtime data, with the finished sanctuary/charm and workshop exteriors in their approved positions. Caelan and Mira are drawn dynamically by the game, never baked into these images. Quest feedback and Serene's opening assignment are connected; the household task gameplay remains the next story stage. See [quest integration](../../../../docs/QUEST_SYSTEM.md).
 
 - `map.json`: spawn, dimensions, ground clocks, depth-sorted entities, collision path, bridge foreground layers, landmarks and approved navigation destinations.
 - `ground/`: six actor-free, building-free ground phases at 200 ms, retaining paths, masonry, brook/channels, spillways, jammed gate and bridge decks/wakes.

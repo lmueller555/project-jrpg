@@ -226,7 +226,9 @@ class FullscreenLaunch(unittest.TestCase):
             with self.subTest(argv=argv),patch('main.Game') as constructor:
                 constructor.return_value.handle_events.return_value=False
                 self.assertEqual(main.main(argv),0)
-                constructor.assert_called_once_with(fullscreen=expected)
+                constructor.assert_called_once_with(fullscreen=expected,
+                                                    save_path=main.ROOT/'saves/journey.json')
+                constructor.return_value.save_progress.assert_called_once_with()
 
 
 if __name__=='__main__':unittest.main()
