@@ -96,3 +96,28 @@ This activity and the outdoor chase share Liam's ownership. Both continue in the
 cached room offscreen; neither can start while the other owns Liam. The initial
 block-play delay is 90–150 seconds and repeat cooldown 3–5 minutes. See the
 [review clips](../../../../docs/reviews/liam_blocks/README.md).
+
+## Daisy's movable play bone — approved
+
+`bone_routine` references `../routines/daisy_bone.json`. One nonblocking ivory
+bone starts at [138,259], clear of Daisy's body and the two bowls. The controller
+registers the same persistent floor prop with the cached room, transferring it
+to her mouth or paws only on authored contact frames. It is never cloned for
+carrying, chewing or dropping. Back-facing carrying hides the overlay correctly.
+
+After a 2–4-minute cooldown, an available Daisy either brings the bone to her
+rug for 15–25 seconds of chewing or carries it to another clear floor location.
+The playful rug variation adds a bow, two short head shakes and a two-pixel
+nose nudge. Dropped positions remain until she retrieves the toy in a later
+session. The player can leave and re-enter without resetting it.
+
+Drop selection checks the whole toy and approach footprint against furniture,
+bowls, doors, the player, Liam's active building area and loose blocks. Floor
+centers are snapped to their native pixel registration, preserving future
+pickup paths. Liam's invitation and block routine ask for a safe release first;
+Daisy finishes the current transfer and puts the bone down before yielding.
+Food or water becoming due also requests a safe release. Her rest after being
+sent to her rug by Liam is protected until its timer ends.
+
+See the [runtime previews](../../../../docs/reviews/daisy_bone/README.md) and
+[action pack](../../../characters/daisy/bone_play/README.md).

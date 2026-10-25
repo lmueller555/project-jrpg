@@ -121,7 +121,7 @@ def export(name,items,duration,direction,loop=False):
 
 def build():
     OUT.mkdir(parents=True,exist_ok=True)
-    protected=[p for p in (ROOT/'assets/characters/daisy').rglob('*.png') if 'house_routines' not in p.parts]
+    protected=[p for p in (ROOT/'assets/characters/daisy').rglob('*.png') if 'house_routines' not in p.parts and 'bone_play' not in p.parts]
     hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in protected}
     actions={};rise=rising()
     actions['stand_up']=export('stand_up',[(im,parts,{'phase':phase}) for (im,parts),phase in zip(rise,('rest','lift_chest','raise_hips','stand'))],180,'left')

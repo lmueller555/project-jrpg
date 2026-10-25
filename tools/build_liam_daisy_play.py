@@ -24,7 +24,7 @@ def export(name,frames,duration,anchor,landmarks=None):
 
 def build():
     protected={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
-               for name in ('liam','daisy') for p in (ROOT/'assets/characters'/name).rglob('*.png')}
+               for name in ('liam','daisy') for p in (ROOT/'assets/characters'/name).rglob('*.png') if 'bone_play' not in p.parts}
     actions={};size=(96,96)
     for direction in ('left','right'):
         idle=Image.open(ROOT/f'assets/characters/liam/idle_{direction}.png').convert('RGBA')

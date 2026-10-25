@@ -43,6 +43,11 @@ class DaisyRoutine:
         self.active_bowl=None;self.activity=None;self.wander_elapsed=0;self.stops=0
         self._accumulator=0;self.consumed=False
         self.play_owned=False;self.play_pose=None
+        self.rest_protected=False
+
+    def available_for_activity(self):
+        return (not self.play_owned and not self.rest_protected and self.active_bowl is None
+                and self.state in ('rest','pause','walk') and self.activity not in ('food','water'))
 
     def _pad(self,image,offset=None):
         if image.get_size()==tuple(self.animation['canvas_size']):return image
@@ -122,7 +127,8 @@ class DaisyRoutine:
         if self.activity=='wander':self.wander_elapsed+=ms
         self.moving=False
         if self.state=='rest':
-            if self.state_ms>=self.duration_ms:self.begin_activity(self._due(),world)
+            if self.state_ms>=self.duration_ms:
+                self.rest_protected=False;self.begin_activity(self._due(),world)
         elif self.state=='stand_up':
             if self.state_ms>=self.duration_ms:self._start_activity(world,player)
         elif self.state=='walk':self._move(ms,world,player)

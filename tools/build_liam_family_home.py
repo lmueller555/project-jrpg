@@ -110,6 +110,7 @@ def interior(recipe,data,entry):
     else:room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
     room['npcs']=recipe.get('residents',[])
     if recipe.get('play_routine'):room['play_routine']=recipe['play_routine']
+    if recipe.get('bone_routine'):room['bone_routine']=recipe['bone_routine']
     if recipe.get('block_routine'):
         room['block_routine']=recipe['block_routine']
         pack=read_json(ROOT/'assets/terrain/eldenmere/liam_home/blocks/blocks.json')
@@ -176,6 +177,9 @@ def build():
     if recipe.get('block_routine'):
         from build_liam_blocks import build as build_blocks
         build_blocks()
+    if recipe.get('bone_routine'):
+        from build_daisy_bone import build as build_bone
+        build_bone()
     entity,frames,position,entry,width=exterior(recipe)
     data['entities']=[e for e in data['entities'] if e['id']!=recipe['id']]+[entity]
     extend_paths(data,recipe)

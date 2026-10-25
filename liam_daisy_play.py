@@ -140,7 +140,12 @@ class LiamDaisyPlay:
         return True
 
     def _available(self):
+        if self.liam_owner is not None:return False
+        bone=getattr(self.daisy,'bone_routine',None)
+        if bone is not None and bone.active:
+            bone.request_release();return False
         return (self.liam_owner is None and not self.daisy.play_owned
+                and not self.daisy.rest_protected
                 and self.worlds[self.daisy] is self.home and self.daisy.active_bowl is None
                 and self.daisy.state in ('rest','pause'))
 

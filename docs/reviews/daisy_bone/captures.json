@@ -1,0 +1,262 @@
+{
+  "status": "approved",
+  "actual_speed": true,
+  "initial_wait_and_repeat_cooldown_skipped": true,
+  "one_bone_identity_throughout": true,
+  "rug_play": {
+    "kind": "rug",
+    "playful": true,
+    "frames": 299,
+    "frame_duration_ms": 100,
+    "elapsed_ms": 29800,
+    "states_seen": [
+      "stand",
+      "approach",
+      "pickup",
+      "carry",
+      "bow",
+      "shake",
+      "settle",
+      "chew",
+      "release_paws",
+      "nudge",
+      "cooldown"
+    ],
+    "bone_id": "daisy_bone",
+    "final_bone_state": "ground",
+    "final_bone_position": [
+      94.0,
+      285.0
+    ],
+    "daisy_position": [
+      108.0,
+      282.0
+    ],
+    "events": [
+      {
+        "state": "approach"
+      },
+      {
+        "state": "pickup"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "ground",
+        "to": "mouth",
+        "position": [
+          138.0,
+          259.0
+        ]
+      },
+      {
+        "state": "carry"
+      },
+      {
+        "state": "bow"
+      },
+      {
+        "state": "shake"
+      },
+      {
+        "state": "settle"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "mouth",
+        "to": "paws",
+        "position": [
+          96.0,
+          285.0
+        ]
+      },
+      {
+        "state": "chew"
+      },
+      {
+        "state": "release_paws"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "paws",
+        "to": "ground",
+        "position": [
+          96.0,
+          285.0
+        ]
+      },
+      {
+        "state": "nudge"
+      },
+      {
+        "state": "rest_done"
+      },
+      {
+        "state": "cooldown"
+      }
+    ]
+  },
+  "relocation": {
+    "kind": "relocate",
+    "playful": false,
+    "frames": 148,
+    "frame_duration_ms": 100,
+    "elapsed_ms": 14700,
+    "states_seen": [
+      "stand",
+      "approach",
+      "pickup",
+      "carry",
+      "drop",
+      "wag_after_drop",
+      "return_home",
+      "settle_empty",
+      "cooldown"
+    ],
+    "bone_id": "daisy_bone",
+    "final_bone_state": "ground",
+    "final_bone_position": [
+      214.0,
+      239.0
+    ],
+    "daisy_position": [
+      108.0,
+      282.0
+    ],
+    "events": [
+      {
+        "state": "approach"
+      },
+      {
+        "state": "pickup"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "ground",
+        "to": "mouth",
+        "position": [
+          94.0,
+          285.0
+        ]
+      },
+      {
+        "state": "carry"
+      },
+      {
+        "state": "drop"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "mouth",
+        "to": "ground",
+        "position": [
+          214.0,
+          239.0
+        ]
+      },
+      {
+        "state": "wag_after_drop"
+      },
+      {
+        "state": "return_home"
+      },
+      {
+        "state": "settle_empty"
+      },
+      {
+        "state": "cooldown"
+      }
+    ]
+  },
+  "retrieval": {
+    "kind": "rug",
+    "playful": false,
+    "frames": 352,
+    "frame_duration_ms": 100,
+    "elapsed_ms": 35100,
+    "states_seen": [
+      "stand",
+      "approach",
+      "pickup",
+      "carry",
+      "settle",
+      "chew",
+      "release_paws",
+      "cooldown"
+    ],
+    "bone_id": "daisy_bone",
+    "final_bone_state": "ground",
+    "final_bone_position": [
+      96.0,
+      285.0
+    ],
+    "daisy_position": [
+      108.0,
+      282.0
+    ],
+    "events": [
+      {
+        "state": "approach"
+      },
+      {
+        "state": "pickup"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "ground",
+        "to": "mouth",
+        "position": [
+          214.0,
+          239.0
+        ]
+      },
+      {
+        "state": "carry"
+      },
+      {
+        "state": "settle"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "mouth",
+        "to": "paws",
+        "position": [
+          96.0,
+          285.0
+        ]
+      },
+      {
+        "state": "chew"
+      },
+      {
+        "state": "release_paws"
+      },
+      {
+        "transfer": "daisy_bone",
+        "from": "paws",
+        "to": "ground",
+        "position": [
+          96.0,
+          285.0
+        ]
+      },
+      {
+        "state": "rest_done"
+      },
+      {
+        "state": "cooldown"
+      }
+    ]
+  },
+  "previews": {
+    "rug_play.gif": {
+      "bytes": 392030,
+      "frames": 153,
+      "duration_ms": 29900
+    },
+    "drop_and_retrieve.gif": {
+      "bytes": 846557,
+      "frames": 316,
+      "duration_ms": 50000
+    }
+  }
+}

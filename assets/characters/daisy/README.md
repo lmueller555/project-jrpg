@@ -87,3 +87,12 @@ fall. Liam tells her to lie down; she walks to her rug and uses her existing
 settling pose, then rests 45–90 seconds. The block controller waits for any bowl
 visit to finish, and restores her normal routine afterward. See
 [the accident preview](../../../docs/reviews/liam_blocks/daisy_accident.gif).
+
+## Play bone — approved
+
+`bone_play/` adds four-frame floor pickup/drop, play bow, head shake, settling,
+lying chew, paw release and nose nudge actions. Carrying reuses all four approved
+walks without changing their body pixels, with separate mouth-following overlays
+and fully hidden back-facing bone. The same toy persists across floor, mouth and
+paw ownership. See the [pack](bone_play/README.md) and
+[rug play and persistent retrieval previews](../../../docs/reviews/daisy_bone/README.md).
