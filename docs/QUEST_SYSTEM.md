@@ -76,3 +76,10 @@ Run `SDL_AUDIODRIVER=dummy python -m unittest discover -s tests -q` for the
 full suite. The focused quest tests cover lifecycle/order/idempotence, journal
 rendering and scrolling, deliberate response hitboxes, routine resumption,
 progress-sensitive dialogue, atomic save failures and title Continue behavior.
+
+The existing Serene full-cycle test fixes Tomas's random wait timing locally so
+it measures a repeatable schedule with both actors present. Independent of the
+quest system, some wait timings can leave Serene and Tomas waiting for the same
+narrow dining-room doorway waypoint (reproduced with random seed 2). That shared
+route scheduling issue remains separate; quest input and room-visit tests do
+not bypass collision or complete tasks to work around it.
