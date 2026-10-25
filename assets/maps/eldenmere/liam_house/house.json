@@ -96,7 +96,7 @@
     {
       "id": "liam",
       "name": "Liam",
-      "kind": "stationary",
+      "kind": "play_actor",
       "position": [
         120,
         234
@@ -106,10 +106,10 @@
         6
       ],
       "draw_anchor": [
-        12,
-        30
+        64,
+        66
       ],
-      "sprite": "assets/characters/liam/idle_front.png"
+      "animation": "assets/characters/liam_family/play_routine/animations.json"
     },
     {
       "id": "liam_mother",
@@ -195,5 +195,6 @@
         294
       ]
     }
-  ]
+  ],
+  "play_routine": "assets/maps/eldenmere/routines/liam_daisy_play.json"
 }

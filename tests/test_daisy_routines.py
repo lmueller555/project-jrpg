@@ -50,7 +50,7 @@ class DaisyRoutineTests(unittest.TestCase):
             self.assertEqual(b[key],bounds)
         for point in b['wander_points']+[v['station'] for v in b['bowls'].values()]+[v['clear'] for v in b['bowls'].values()]:
             self.assertIsNotNone(find_path(self.world,a.position,point,a.probe_size,a),point)
-        self.assertTrue(all(n.data['kind']=='stationary' for n in self.world.npcs if n is not a))
+        self.assertTrue(all(n.data['kind']=='stationary' for n in self.world.npcs if n.data['id'] not in ('liam','daisy')))
         self.assertNotIn('daisy',self.game.social.profiles)
 
     def test_wander_stands_walks_pauses_and_settles_without_leaving_room(self):

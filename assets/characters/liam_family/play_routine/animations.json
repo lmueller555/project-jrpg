@@ -1,0 +1,545 @@
+{
+  "status": "approved",
+  "actions": {
+    "invite_left": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 2000,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_left/frame_01.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_01_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_left/frame_02.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_02_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_left/frame_03.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_03_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_left/frame_04.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_left/frame_04_hand_gesture.png"
+          ]
+        }
+      ],
+      "landmarks": {}
+    },
+    "invite_right": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 2000,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_right/frame_01.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_01_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_right/frame_02.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_02_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_right/frame_03.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_03_hand_gesture.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/invite_right/frame_04.png",
+          "duration_ms": 500,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/invite_right/frame_04_hand_gesture.png"
+          ]
+        }
+      ],
+      "landmarks": {}
+    },
+    "hop_left": {
+      "frame_count": 4,
+      "draw_anchor": [
+        32,
+        42
+      ],
+      "duration_ms": 560,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_left/frame_01.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_01_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_01_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_01_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_left/frame_02.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_02_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_02_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_02_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_left/frame_03.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_03_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_03_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_03_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_left/frame_04.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_04_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_04_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_left/frame_04_ear.png"
+          ]
+        }
+      ],
+      "landmarks": {
+        "body_lift_px": [
+          0,
+          2,
+          4,
+          0
+        ]
+      }
+    },
+    "wag_left": {
+      "frame_count": 4,
+      "draw_anchor": [
+        32,
+        42
+      ],
+      "duration_ms": 720,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_left/frame_01.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_01_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_01_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_01_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_left/frame_02.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_02_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_02_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_02_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_left/frame_03.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_03_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_03_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_03_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_left/frame_04.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_04_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_04_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_left/frame_04_ear.png"
+          ]
+        }
+      ],
+      "landmarks": {
+        "body_lift_px": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "hop_right": {
+      "frame_count": 4,
+      "draw_anchor": [
+        32,
+        42
+      ],
+      "duration_ms": 560,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_right/frame_01.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_01_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_01_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_01_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_right/frame_02.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_02_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_02_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_02_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_right/frame_03.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_03_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_03_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_03_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/hop_right/frame_04.png",
+          "duration_ms": 140,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_04_tail.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_04_head.png",
+            "assets/source/characters/liam_family/play_routine/hop_right/frame_04_ear.png"
+          ]
+        }
+      ],
+      "landmarks": {
+        "body_lift_px": [
+          0,
+          2,
+          4,
+          0
+        ]
+      }
+    },
+    "wag_right": {
+      "frame_count": 4,
+      "draw_anchor": [
+        32,
+        42
+      ],
+      "duration_ms": 720,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_right/frame_01.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_01_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_01_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_01_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_01_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_right/frame_02.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_02_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_02_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_02_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_right/frame_03.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_03_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_03_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_03_ear.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/wag_right/frame_04.png",
+          "duration_ms": 180,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_04_tail.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_04_body.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_04_head.png",
+            "assets/source/characters/liam_family/play_routine/wag_right/frame_04_ear.png"
+          ]
+        }
+      ],
+      "landmarks": {
+        "body_lift_px": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "settle_bed": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 1200,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/settle_bed/frame_01.png",
+          "duration_ms": 300,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_01_body.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/settle_bed/frame_02.png",
+          "duration_ms": 300,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_02_body.png",
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_02_quilt_and_frame.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/settle_bed/frame_03.png",
+          "duration_ms": 300,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_03_head_on_pillow.png",
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_03_quilt_and_frame.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/settle_bed/frame_04.png",
+          "duration_ms": 300,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_04_head_on_pillow.png",
+            "assets/source/characters/liam_family/play_routine/settle_bed/frame_04_quilt_and_frame.png"
+          ]
+        }
+      ],
+      "landmarks": {
+        "bed_position": [
+          36,
+          204
+        ],
+        "bedside": [
+          88,
+          246
+        ],
+        "head_on_pillow_world": [
+          60,
+          225
+        ]
+      }
+    },
+    "leave_bed": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 880,
+      "frames": [
+        {
+          "file": "assets/characters/liam_family/play_routine/leave_bed/frame_01.png",
+          "duration_ms": 220,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_01_head_on_pillow.png",
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_01_quilt_and_frame.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/leave_bed/frame_02.png",
+          "duration_ms": 220,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_02_head_on_pillow.png",
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_02_quilt_and_frame.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/leave_bed/frame_03.png",
+          "duration_ms": 220,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_03_body.png",
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_03_quilt_and_frame.png"
+          ]
+        },
+        {
+          "file": "assets/characters/liam_family/play_routine/leave_bed/frame_04.png",
+          "duration_ms": 220,
+          "layers_from_repo_root": [
+            "assets/source/characters/liam_family/play_routine/leave_bed/frame_04_body.png"
+          ]
+        }
+      ],
+      "landmarks": {}
+    }
+  },
+  "approved_png_sha256": {
+    "assets/characters/liam/idle_left.png": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+    "assets/characters/liam/idle_front.png": "df54b20a7f8a2e6dd1031f104ae63180760f742e3a8039b70bf1772c918046d8",
+    "assets/characters/liam/idle_back.png": "f8bbf9ec4de29cf26aff9cc7d73868486ce622635db22e64d5f61b61685f5006",
+    "assets/characters/liam/idle_right.png": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+    "assets/characters/liam/idle_all.png": "1e472741dac401b8846ff636a19b663c6c2ca1676856d5a67725581f0949c624",
+    "assets/characters/liam/walk_left/frame_04.png": "f4ce972b0292449e4807fa41259886ea13c10e73353b0cb2ff02bed619d3e786",
+    "assets/characters/liam/walk_left/frame_03.png": "c36bce5376182e3af46635d4e825b9901308cc11ced3a6cf0864e37e2f7f4141",
+    "assets/characters/liam/walk_left/frame_02.png": "3195df29c346e4600e1aa61e0d9625e2d430394713561b0a91132e04cc62be1a",
+    "assets/characters/liam/walk_left/frame_01.png": "578ed501799dcf0164e9a5bb19c9c7d796368a726f115aab1563fa65c698eeb1",
+    "assets/characters/liam/walk_left/spritesheet.png": "d8aee43caa101a3592a9b4bac66fb7d814af5c4afaa9d1692ecf8a27c8f1ccd7",
+    "assets/characters/liam/walk_right/frame_04.png": "b6651977603bf9df69b159d6abd8ca7e4ab9e1ef8e51fbc4bc3900b8bc175da6",
+    "assets/characters/liam/walk_right/frame_03.png": "f14e97121d7904376a735cdb20f31fd516c53b0cd156577fd41bcbbc83a2a4a7",
+    "assets/characters/liam/walk_right/frame_02.png": "cde9d78dc303d773fe68a20315cfe3a127fc4391e6d74eef293fb091cda8dde8",
+    "assets/characters/liam/walk_right/frame_01.png": "ebed2194901d9bc2b7af16b1090dcedd0923aa557b5dab2f60e9dc8accb764fa",
+    "assets/characters/liam/walk_right/spritesheet.png": "47685c5a5943ba6164e94322dadb92dd1eeb3efdad0dd9c98c3befede535ef60",
+    "assets/characters/liam/run_front/frame_04.png": "d08d297b9f0caaa1be24da6a979f6db84c2977a0aa9f538939943ad993a8b041",
+    "assets/characters/liam/run_front/frame_03.png": "8f40ff2973dd00f5f7433faee83a2c92bb80148444491f28b1e129ea6db445b8",
+    "assets/characters/liam/run_front/frame_02.png": "20c1ed77ae292cc3f84fce9beb06ad1da2a8c16ce3c0eded46f956e6ddc723f4",
+    "assets/characters/liam/run_front/frame_01.png": "39d4101dee936bf800972b188c64d8f9eb402d2dd572ec5544b55bc8ebd0ce33",
+    "assets/characters/liam/run_front/spritesheet.png": "248257908b6b8c6889e9d55c6e04a87d5fa6c47bf2d8e6312b6215542ad2efbf",
+    "assets/characters/liam/run_back/frame_04.png": "d7371b377f2194e3bc202b3d9a43586552c3811a01e20bba0aee97f1d2037a66",
+    "assets/characters/liam/run_back/frame_03.png": "6d961ede674154f38179dd4061dd3e6d0ee670f82358b06e0612c13aa6bac0c7",
+    "assets/characters/liam/run_back/frame_02.png": "f1ac90866c521de3b645277590744b3503543e83ce5d551e2a6750355489ba44",
+    "assets/characters/liam/run_back/frame_01.png": "082c1ce74bf5a128f383f256eb84fe7eecc4664e8ff96a5ae07d911425b31abc",
+    "assets/characters/liam/run_back/spritesheet.png": "f5b57e3662ef35ea6a5fe5945f674caaaf04e8596deea12385086a2b089968d9",
+    "assets/characters/liam/run_right/frame_04.png": "06ab37a171f87d277964b263f6fd330eeac5c4ac39b220b054467fb0fb397cb6",
+    "assets/characters/liam/run_right/frame_03.png": "5e0a9822ec602a15b46e5d82ccaddcbf92d2f20e2fbe75183221e19950333343",
+    "assets/characters/liam/run_right/frame_02.png": "bbe4043fdbe5aebef4990c0a843e846cdde7cfc7fe8ffab2c6c5d4b7ce6d2a8b",
+    "assets/characters/liam/run_right/frame_01.png": "80a91e3e9b06baf979f72be3a52b184c3a578cc0d71b69e292215027dfbb64a8",
+    "assets/characters/liam/run_right/spritesheet.png": "c567f67779c13f25fbb159169375bf76cf6b56cf736f1d6bcf577ccf0ae301bd",
+    "assets/characters/liam/walk_front/frame_04.png": "697505bb54d2dc5ab54d9c99a847f110a765df60e98ff204cdd002c4650857ae",
+    "assets/characters/liam/walk_front/frame_03.png": "b7684d45b4da0bf5faf382b8baf5875f8dd27cfe97213617048ff53dbd3540f9",
+    "assets/characters/liam/walk_front/frame_02.png": "c3653e1250b3f6ebf31df1b2437ea886e736533362aa8575fbdc6965478a0d28",
+    "assets/characters/liam/walk_front/frame_01.png": "4caabbc340c27b31040e2173763dc0b8565cc18bc7fde57e08a1ab4c7f7e5a31",
+    "assets/characters/liam/walk_front/spritesheet.png": "0c82466c1dbd7589a148aa5dcc989a6f599bda066bfebe9c154e93bb2b85286e",
+    "assets/characters/liam/run_left/frame_04.png": "9b6b668e12bdbaf114baed9de898d55a6f56c2bcbb7b766e703478e49ba1dc56",
+    "assets/characters/liam/run_left/frame_03.png": "f44ff3600c8b8da1ef05a886a91e7cf3c917b3c62afce3f50c7c31edc30a2087",
+    "assets/characters/liam/run_left/frame_02.png": "111a97dd8e260561e81c3189ae8e05d0925f5b60d46bf6028e3ba814b8d25cd1",
+    "assets/characters/liam/run_left/frame_01.png": "79339d8f3fa30c40a4143243683cc8830aed7cbed07b657eb9c9e2a93780875e",
+    "assets/characters/liam/run_left/spritesheet.png": "1b797171b0616effbffc91b4be3534a4934ea332a1f6a842a4d4a5361a32abf1",
+    "assets/characters/liam/walk_back/frame_04.png": "0dd04254e680e1cc35b69f3c0d0d817f1d79a795ff551d7353987c0272434a99",
+    "assets/characters/liam/walk_back/frame_03.png": "98282aea52ea41b25b4de2a3c8d4d426574f90f499568f760ffab99ee5af8c86",
+    "assets/characters/liam/walk_back/frame_02.png": "ba3c40961586f5afd10fec1b36ed0d1a5708f2ff8e8edbb38a055aa966149396",
+    "assets/characters/liam/walk_back/frame_01.png": "1df91a729424c9ffd6307dc346c7f387db8dd48a07d79b250a203454da152484",
+    "assets/characters/liam/walk_back/spritesheet.png": "905674f276b160a0a7e4591ea3b9fc3ae4bc225efb165a1455f34ac25c7f576b",
+    "assets/characters/daisy/idle_left.png": "872ac7a70c5fa299850d133660762dd80e51da5c173df4d38fcc77123948c312",
+    "assets/characters/daisy/idle_front.png": "8a3f89121c2642f5c1b49e781ee5b82578f4d1a5387a2419b77d2308c29c3b42",
+    "assets/characters/daisy/idle_back.png": "057a7a5fc3282b8da415ef6b19456c78fe6ea6e1c368cd363d5eecea5f41425b",
+    "assets/characters/daisy/idle_right.png": "a2708d9ae313defe461b182aa4ee8d19f39df9903a4bb8c51922d2a22b228e97",
+    "assets/characters/daisy/idle_directions.png": "740c2db1a560b0c1510468543f8ce9c24e38a058a7e3be6304ebf90aea666162",
+    "assets/characters/daisy/walk_left/frame_04.png": "8e2248786f8d28f17f109c660143b4f132c0b7cbb05ee7f69fb82d18c3c83b05",
+    "assets/characters/daisy/walk_left/frame_03.png": "ec0b6ed53977822f7c597068af4254b07ab682cd5e7c0ee2da27b725c2f4c208",
+    "assets/characters/daisy/walk_left/frame_02.png": "f93f53f75719b140af06e1e9f5944316eab9580caff26eddbe1b0bc31b3f7c2d",
+    "assets/characters/daisy/walk_left/frame_01.png": "270e42b7b71317ee050c496d0cb6cabceabdff32eb79f6c2d030fa1a683407d3",
+    "assets/characters/daisy/walk_left/spritesheet.png": "fb498f848ffea8383d936f7a6e21549f1543eb536e6aa0bd5620f25f898322c8",
+    "assets/characters/daisy/walk_right/frame_04.png": "f84a0e7eb2054514956f464440e1fdbabb6451f217ebb305e6ccda568d84921a",
+    "assets/characters/daisy/walk_right/frame_03.png": "f4ba14bb7665e72895efba0947887a563c7f4d3d5da3626bd6e19386be9f6b01",
+    "assets/characters/daisy/walk_right/frame_02.png": "1d33c16f1fa0cb29ff5a6637288c2006163f57ac010fca2973d7b9d8129e2305",
+    "assets/characters/daisy/walk_right/frame_01.png": "e2ff5a84a2a6ffc8a56ec337bd6334bd25cb748c24f75299268bfc43486496f2",
+    "assets/characters/daisy/walk_right/spritesheet.png": "f02c1cdf5b59fc6f5698dc969215725290bb5557586446a2007f03524677c709",
+    "assets/characters/daisy/run_front/frame_04.png": "99400ae21d1ad421e16dffa627a5dbc532a336c2989f25e1e6433dc927907748",
+    "assets/characters/daisy/run_front/frame_03.png": "5e1783e12c9f01948fce906db050477e0a1423f6dcfc1d9500e304961e19d55a",
+    "assets/characters/daisy/run_front/frame_02.png": "ce7778bdf9459cf977b83279ca116ea7dc44e751a7491b8668518bcbbb156fe0",
+    "assets/characters/daisy/run_front/frame_01.png": "7a7bb88117d39bc84124eb03667b7d3fb99970b513eb303479af127dcf53b099",
+    "assets/characters/daisy/run_front/spritesheet.png": "14c2b99aec01d36261b8a35784552601f234b1d69aaf6893cf4d8697a565fe79",
+    "assets/characters/daisy/run_back/frame_04.png": "83c996b35d6a99aebcec2f05c433ef38aef9e760d578f721efd88634ab59a949",
+    "assets/characters/daisy/run_back/frame_03.png": "a5743a27de744d7c73eec9c3a38ad9b42f0cfce2c59910a92d4cdb0cdc640321",
+    "assets/characters/daisy/run_back/frame_02.png": "38764888860aa93c5d51c66dbef291225fb50613a9556a94e91a48ae4a6fc9d7",
+    "assets/characters/daisy/run_back/frame_01.png": "33123befa441d59982dd953c8b7c037422caab027111e2011b344f95c8e11ee9",
+    "assets/characters/daisy/run_back/spritesheet.png": "3d52909568bb5837a0661c8c67fc0db9abe68728aef3c9620d6a7af3a55b9711",
+    "assets/characters/daisy/run_right/frame_04.png": "7f3f922961329fc7dc13a9e8aac68716424ce9997a4e376626ab0ff67e1321c0",
+    "assets/characters/daisy/run_right/frame_03.png": "0e944fe706899686ebae9d449e27c2cea6b6149a95db11a8adbc50f57b000bc4",
+    "assets/characters/daisy/run_right/frame_02.png": "fbf5fd43f13564552550330d8b5f370fe961bb389f6b123c8602296af76be96e",
+    "assets/characters/daisy/run_right/frame_01.png": "c7a1049b40b4b74edbb64be53b3ca961600951f324d3a6a80aedf3f1d9430810",
+    "assets/characters/daisy/run_right/spritesheet.png": "fff37429f149caff7f0cb21399fd74d69a9ed4c4d3d71348494259827b0359bd",
+    "assets/characters/daisy/lying_left/pose.png": "aed43d627cee464e853fee182c5b9a0b19300e63d49d3133b0b07598489ac772",
+    "assets/characters/daisy/walk_front/frame_04.png": "8f6f07a25476cd194424aec771d377ee34fc88e2cfb1e514c737864217583f3d",
+    "assets/characters/daisy/walk_front/frame_03.png": "81d898f52c70926a66a847a2d74c72cde40b068e50f13bbf124c255294048c28",
+    "assets/characters/daisy/walk_front/frame_02.png": "2ce85149f8c1734f024ed033c8806d28fc2cb299da042b271888466286f52089",
+    "assets/characters/daisy/walk_front/frame_01.png": "d1a6cf9863169a6b116a1efc572a2a85cda16506236f6a0ebce5447c15e2e12e",
+    "assets/characters/daisy/walk_front/spritesheet.png": "6d668540d06420ea48e05d11e31f5aef6e7e554b3a2b3c721536789d385956a4",
+    "assets/characters/daisy/run_left/frame_04.png": "6409b51c25fa72c503cfb7e45ca761906ad77f13b645a77af8f1614111e33c31",
+    "assets/characters/daisy/run_left/frame_03.png": "619b825d139e7d235a6b72f9def7b084ec5df8938b07665b3bd3f6feb8aa30c2",
+    "assets/characters/daisy/run_left/frame_02.png": "c0d698c4da7d249a1b394cb32298e1e6cd86381e0731da79f203b279414ac40c",
+    "assets/characters/daisy/run_left/frame_01.png": "2d6ef17b9532c696816ce51e3d11c9e26f00d73a0fbab347d1ce729c447fdb01",
+    "assets/characters/daisy/run_left/spritesheet.png": "0359de7b9f801af989852002cbe71494745c81e0807678f75b186f57175068a4",
+    "assets/characters/daisy/walk_back/frame_04.png": "93c9c1817d4250a662a9bd1e82cb8f51bd6609c4ecfd5b690f359e73d0d6ef92",
+    "assets/characters/daisy/walk_back/frame_03.png": "b155f28899c50c6305f68bfbec6264a33bbd3a42e89f7e5595f49ccfc6cc9292",
+    "assets/characters/daisy/walk_back/frame_02.png": "dd52dca3ecf2e6fb8f7e1202fac5ebd0f60532a77f8ba8f8e31853beedd3c273",
+    "assets/characters/daisy/walk_back/frame_01.png": "c57e5645e8b63b8bdb428f32b7e21c306ad18142606dc5d397003d2736605ef2",
+    "assets/characters/daisy/walk_back/spritesheet.png": "d074ba874da5e91f8e64c58643dc0afe1d1e3c0ffeb14c87e382da16c34b1de6",
+    "assets/characters/daisy/house_routines/stand_up/frame_04.png": "6044b7ba039334f5bfccaee9f6dddd72642a6c1071f0934545e551506b5d213c",
+    "assets/characters/daisy/house_routines/stand_up/frame_03.png": "c6de77d2825ec3b6857643d0e23d96ed22a32278b148650d995e62b3ee1c9311",
+    "assets/characters/daisy/house_routines/stand_up/frame_02.png": "13c9992423113b11a7d4fa9f3d46c01ff9cdc61f4c91c6f41d8caf88f9b1f3cd",
+    "assets/characters/daisy/house_routines/stand_up/frame_01.png": "bafad616f19c1f309c41e852e2971041e95de2713a933b586fc330dec37a2e05",
+    "assets/characters/daisy/house_routines/eat/frame_04.png": "26b85ea0372526e20fcc42cb05883e9e46a0d4be0b0f05b1b796daeffdc1b20b",
+    "assets/characters/daisy/house_routines/eat/frame_03.png": "ca157050a64861b18981b80e09020f2e141cb6b683aab3ae37e2a444b05059b0",
+    "assets/characters/daisy/house_routines/eat/frame_02.png": "013638789c6ba4abaa22b9516dd415c070ded0a0c158c614246747c5637492d8",
+    "assets/characters/daisy/house_routines/eat/frame_01.png": "1be37413e00c2694c4158f43247feeb197582636855e1263b27fa0f35c95eefc",
+    "assets/characters/daisy/house_routines/settle_down/frame_04.png": "bafad616f19c1f309c41e852e2971041e95de2713a933b586fc330dec37a2e05",
+    "assets/characters/daisy/house_routines/settle_down/frame_03.png": "13c9992423113b11a7d4fa9f3d46c01ff9cdc61f4c91c6f41d8caf88f9b1f3cd",
+    "assets/characters/daisy/house_routines/settle_down/frame_02.png": "c6de77d2825ec3b6857643d0e23d96ed22a32278b148650d995e62b3ee1c9311",
+    "assets/characters/daisy/house_routines/settle_down/frame_01.png": "6044b7ba039334f5bfccaee9f6dddd72642a6c1071f0934545e551506b5d213c",
+    "assets/characters/daisy/house_routines/raise_water/frame_04.png": "6044b7ba039334f5bfccaee9f6dddd72642a6c1071f0934545e551506b5d213c",
+    "assets/characters/daisy/house_routines/raise_water/frame_03.png": "d8e72e4ee9f9e5b8f768d44fa34f6c8ab70b9fd045d570fa1676250759ce55f2",
+    "assets/characters/daisy/house_routines/raise_water/frame_02.png": "fc354c4cfa0f6c882a0b0c78431239b09788f842572b7ff8d487a23e7f4958ad",
+    "assets/characters/daisy/house_routines/raise_water/frame_01.png": "cef9524e9424c4cc9516b51831e25779ff9235763dee0391e623e2e2e7326716",
+    "assets/characters/daisy/house_routines/lower_food/frame_04.png": "75274cafdff3155679665263a57682efd81d4aa2cd56433f492a473fe8aa31b5",
+    "assets/characters/daisy/house_routines/lower_food/frame_03.png": "f1ee2357361c491b49131407c53b504c3726a0dbeeaa01c9a11137a3110b90c8",
+    "assets/characters/daisy/house_routines/lower_food/frame_02.png": "2df01c906fcb1a11b3eb00cb53d72e39f5062d6ade9059847f560e36d7e81df3",
+    "assets/characters/daisy/house_routines/lower_food/frame_01.png": "eef464d2c1abd2f298299a284b604fac4f5b41397cd997896e5aca93d8463e70",
+    "assets/characters/daisy/house_routines/raise_food/frame_04.png": "eef464d2c1abd2f298299a284b604fac4f5b41397cd997896e5aca93d8463e70",
+    "assets/characters/daisy/house_routines/raise_food/frame_03.png": "2df01c906fcb1a11b3eb00cb53d72e39f5062d6ade9059847f560e36d7e81df3",
+    "assets/characters/daisy/house_routines/raise_food/frame_02.png": "f1ee2357361c491b49131407c53b504c3726a0dbeeaa01c9a11137a3110b90c8",
+    "assets/characters/daisy/house_routines/raise_food/frame_01.png": "75274cafdff3155679665263a57682efd81d4aa2cd56433f492a473fe8aa31b5",
+    "assets/characters/daisy/house_routines/drink/frame_04.png": "20b1133e890c5384e7b63574209a105730cd1ba70b74fefe0142ef40b4318c73",
+    "assets/characters/daisy/house_routines/drink/frame_03.png": "fc354c4cfa0f6c882a0b0c78431239b09788f842572b7ff8d487a23e7f4958ad",
+    "assets/characters/daisy/house_routines/drink/frame_02.png": "fdedb3fd1d962c98e8e6e0117e35fa211df49a3519d077222f4fcdcaf4fbd783",
+    "assets/characters/daisy/house_routines/drink/frame_01.png": "d49f32595c5075560a72ff6435fe3f5ee1af2f1233a31bc20de2121ecd0043fc",
+    "assets/characters/daisy/house_routines/lower_water/frame_04.png": "cef9524e9424c4cc9516b51831e25779ff9235763dee0391e623e2e2e7326716",
+    "assets/characters/daisy/house_routines/lower_water/frame_03.png": "fc354c4cfa0f6c882a0b0c78431239b09788f842572b7ff8d487a23e7f4958ad",
+    "assets/characters/daisy/house_routines/lower_water/frame_02.png": "d8e72e4ee9f9e5b8f768d44fa34f6c8ab70b9fd045d570fa1676250759ce55f2",
+    "assets/characters/daisy/house_routines/lower_water/frame_01.png": "6044b7ba039334f5bfccaee9f6dddd72642a6c1071f0934545e551506b5d213c"
+  }
+}

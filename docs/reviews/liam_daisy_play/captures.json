@@ -1,0 +1,184 @@
+{
+  "status": "approved",
+  "initial_wait_skipped_only": true,
+  "captures": {
+    "drink_first": {
+      "outcome": true,
+      "states_seen": [
+        "cooldown",
+        "find_daisy",
+        "stand_daisy",
+        "invite",
+        "hop",
+        "wag",
+        "exit_liam",
+        "exit_daisy",
+        "line_up",
+        "chase",
+        "return_liam",
+        "return_daisy",
+        "daisy_return",
+        "nap"
+      ],
+      "elapsed_ms": 46500,
+      "water_state": "half_full",
+      "liam_position": [
+        88.0,
+        246.00000000000125
+      ],
+      "daisy_position": [
+        108.0,
+        282.00000000000017
+      ],
+      "events": [
+        {
+          "state": "find_daisy"
+        },
+        {
+          "state": "stand_daisy"
+        },
+        {
+          "state": "invite"
+        },
+        {
+          "state": "hop"
+        },
+        {
+          "state": "wag"
+        },
+        {
+          "state": "exit_liam"
+        },
+        {
+          "transfer": "liam",
+          "scene": "eldenmere.playable"
+        },
+        {
+          "state": "exit_daisy"
+        },
+        {
+          "transfer": "daisy",
+          "scene": "eldenmere.playable"
+        },
+        {
+          "state": "line_up"
+        },
+        {
+          "state": "chase"
+        },
+        {
+          "state": "return_liam"
+        },
+        {
+          "transfer": "liam",
+          "scene": "liam_house"
+        },
+        {
+          "state": "return_daisy"
+        },
+        {
+          "transfer": "daisy",
+          "scene": "liam_house"
+        },
+        {
+          "drink_choice": true
+        },
+        {
+          "state": "daisy_return"
+        },
+        {
+          "state": "nap"
+        }
+      ]
+    },
+    "skip_drink": {
+      "outcome": false,
+      "states_seen": [
+        "cooldown",
+        "find_daisy",
+        "stand_daisy",
+        "invite",
+        "hop",
+        "wag",
+        "exit_liam",
+        "exit_daisy",
+        "line_up",
+        "chase",
+        "return_liam",
+        "return_daisy",
+        "daisy_return",
+        "nap"
+      ],
+      "elapsed_ms": 38700,
+      "water_state": "full",
+      "liam_position": [
+        88.0,
+        246.00000000000125
+      ],
+      "daisy_position": [
+        108.0,
+        282.0
+      ],
+      "events": [
+        {
+          "state": "find_daisy"
+        },
+        {
+          "state": "stand_daisy"
+        },
+        {
+          "state": "invite"
+        },
+        {
+          "state": "hop"
+        },
+        {
+          "state": "wag"
+        },
+        {
+          "state": "exit_liam"
+        },
+        {
+          "transfer": "liam",
+          "scene": "eldenmere.playable"
+        },
+        {
+          "state": "exit_daisy"
+        },
+        {
+          "transfer": "daisy",
+          "scene": "eldenmere.playable"
+        },
+        {
+          "state": "line_up"
+        },
+        {
+          "state": "chase"
+        },
+        {
+          "state": "return_liam"
+        },
+        {
+          "transfer": "liam",
+          "scene": "liam_house"
+        },
+        {
+          "state": "return_daisy"
+        },
+        {
+          "transfer": "daisy",
+          "scene": "liam_house"
+        },
+        {
+          "drink_choice": false
+        },
+        {
+          "state": "daisy_return"
+        },
+        {
+          "state": "nap"
+        }
+      ]
+    }
+  }
+}

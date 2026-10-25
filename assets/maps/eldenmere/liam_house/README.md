@@ -37,7 +37,7 @@ routes, collision and map overview are checked into the runtime assets.
 
 See the [marked town layout, in-game exterior loop and interior](../../../../docs/reviews/liam_family_home/README.md).
 The house is playable by running `main.py`. Liam, his mother, his father and
-Daisy live inside. Liam and both parents are stationary and silent. Daisy rests
+Daisy live inside. Both parents are stationary and silent. Daisy rests
 on her woven rug, wanders, eats and drinks; she has no dialogue.
 `house.json` now also records the four resident sprites, positions, foot probes
 and rug registration; rebuilding preserves this placement.
@@ -62,3 +62,14 @@ food/water cooldowns and separate bowl approach/clear points. The town's
 The cached room preserves her position, cooldowns and bowl states on re-entry.
 Bowl reservations prevent future caregivers changing a bowl during a visit.
 See the [complete routine previews](../../../../docs/reviews/daisy_house_routines/README.md).
+
+## Shared play routine — approved
+
+`play_routine` references `../routines/liam_daisy_play.json`. Liam is a
+`play_actor` while his parents remain stationary. The game coordinates Liam and
+Daisy through an invitation, excited hops/wag, individual door transfers, three
+front-yard running laps, and a return-home nap. Daisy has a 50% chance of
+visiting her water bowl first. Existing meals finish before the invitation.
+The controller temporarily owns Daisy and restores her normal behavior after
+the nap; both actors retain their identity across scenes. See the
+[complete review](../../../../docs/reviews/liam_daisy_play/README.md).

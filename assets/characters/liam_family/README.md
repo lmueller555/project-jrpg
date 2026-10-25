@@ -32,6 +32,9 @@ walking directions are approved; existing front loops and all idles are unchange
 Liam, his mother, his father and Daisy live in the new wide cottage immediately
 south of the sanctuary in western Eldenmere. The 16×10 interior has a shared
 parents' bed, Liam's bed, four dining seats and clear floor space for Daisy.
-The house is distinct from the eastern Venn family cottage. Liam and his parents
-remain stationary without dialogue. Daisy rests on her rug, wanders, eats and
-drinks; family refill routines remain future work. See the [home layout](../../maps/eldenmere/liam_house/README.md).
+The house is distinct from the eastern Venn family cottage. His parents remain stationary without dialogue. Liam and Daisy now have a
+shared playtime routine approved; Daisy otherwise rests, wanders, eats
+and drinks. Family refill routines remain future work. See the [home layout](../../maps/eldenmere/liam_house/README.md).
+
+See [playtime sprites](play_routine/README.md) and
+[the full running/return-home previews](../../../docs/reviews/liam_daisy_play/README.md).

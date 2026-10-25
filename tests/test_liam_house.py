@@ -37,7 +37,7 @@ class LiamFamilyHomeTests(unittest.TestCase):
         expected=['liam','liam_mother','liam_father','daisy']
         self.assertEqual(self.room.data['household'],expected)
         self.assertEqual([n['id'] for n in self.room.data['npcs']],expected)
-        self.assertEqual([n['kind'] for n in self.room.data['npcs']],['stationary']*3+['daisy_routine'])
+        self.assertEqual([n['kind'] for n in self.room.data['npcs']],['play_actor','stationary','stationary','daisy_routine'])
         self.assertEqual(self.room.data['quests'],[])
         family=main.read_json(main.ROOT/'assets/characters/liam_family/family.json')
         self.assertEqual(family['home']['scene'],'liam_house')
