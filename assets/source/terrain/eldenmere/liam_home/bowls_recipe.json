@@ -1,0 +1,13 @@
+{
+  "id": "daisy_wooden_bowls",
+  "status": "implemented",
+  "frame_size": [24, 24],
+  "foot_anchor": [12, 18],
+  "floor_rect": [6, 15, 12, 4],
+  "content_target": [12, 12],
+  "states": {"full": 1.0, "half_full": 0.5, "empty": 0.0},
+  "wood_palette_source": "assets/source/terrain/eldenmere/cottage_furniture/recipe.json",
+  "water_palette_source": "assets/terrain/eldenmere/cottage_kitchen/kitchen.json",
+  "food_palette": {"shadow": "#65412d", "base": "#95542f", "light": "#ba754b", "crumb": "#ded1ae"},
+  "purpose": "Two matching shallow wooden pet bowls, with static interchangeable fill states for future feeding and refill routines."
+}

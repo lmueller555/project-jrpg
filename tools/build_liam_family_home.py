@@ -109,6 +109,22 @@ def interior(recipe,data,entry):
         room['destinations']['daisy_rest_space']=rug['access']
     else:room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
     room['npcs']=recipe.get('residents',[])
+    if recipe.get('bowls'):
+        pack_path='assets/terrain/eldenmere/liam_home/bowls/bowls.json'
+        pack=read_json(ROOT/pack_path)
+        for bowl in recipe['bowls']:
+            states=pack['bowls'][bowl['kind']]['states']
+            x,y=bowl['position'];fx,fy,fw,fh=pack['floor_rect']
+            floor_rect=[x+fx,y+fy,fw,fh]
+            room['entities'].append({'id':bowl['id'],'position':bowl['position'],
+                'sort_y':y+fy+fh,'sort_priority':0,
+                'frames':[states[bowl['state']]['image_from_repo_root']],
+                'frame_duration_ms':1000,'phase_offset':0,'state':bowl['state'],
+                'state_images':{name:record['image_from_repo_root'] for name,record in states.items()},
+                'bowl_kind':bowl['kind'],'bowl_pack':pack_path,'floor_rect':floor_rect,
+                'content_target':[x+pack['content_target'][0],y+pack['content_target'][1]]})
+            blocked.paste(255,rect_box(floor_rect))
+            room['destinations'][bowl['id']]=bowl['access']
     room['collision']=save(ROOT/room['collision'],blocked)
     spawn=room_spawn(meta,blocked);outside=[entry[0],entry[1]+12]
     threshold=meta['entry_rect'];centre=threshold[0]+threshold[2]/2
@@ -120,7 +136,8 @@ def interior(recipe,data,entry):
     write_json(AREA/'interior_layout.json',{'source_room':room['source_room'],'household':recipe['household'],
                 'floor_tiles':recipe['floor_tiles'],'extra_objects':extras,'parents_bed':'bed',
                 'table_access':recipe['table_access'],'daisy_rest_space':recipe['daisy_rest_space'],
-                'rug':recipe.get('rug'),'residents':recipe.get('residents',[])})
+                'rug':recipe.get('rug'),'residents':recipe.get('residents',[]),
+                'bowls':recipe.get('bowls',[])})
     return spawn
 
 

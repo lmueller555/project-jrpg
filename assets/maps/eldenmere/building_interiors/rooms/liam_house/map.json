@@ -260,6 +260,70 @@
       ],
       "frame_duration_ms": 1000,
       "phase_offset": 0
+    },
+    {
+      "id": "daisy_food_bowl",
+      "position": [
+        152,
+        258
+      ],
+      "sort_y": 277,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/liam_home/bowls/food_full.png"
+      ],
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "state": "full",
+      "state_images": {
+        "full": "assets/terrain/eldenmere/liam_home/bowls/food_full.png",
+        "half_full": "assets/terrain/eldenmere/liam_home/bowls/food_half_full.png",
+        "empty": "assets/terrain/eldenmere/liam_home/bowls/food_empty.png"
+      },
+      "bowl_kind": "food",
+      "bowl_pack": "assets/terrain/eldenmere/liam_home/bowls/bowls.json",
+      "floor_rect": [
+        158,
+        273,
+        12,
+        4
+      ],
+      "content_target": [
+        164,
+        270
+      ]
+    },
+    {
+      "id": "daisy_water_bowl",
+      "position": [
+        172,
+        258
+      ],
+      "sort_y": 277,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/liam_home/bowls/water_full.png"
+      ],
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "state": "full",
+      "state_images": {
+        "full": "assets/terrain/eldenmere/liam_home/bowls/water_full.png",
+        "half_full": "assets/terrain/eldenmere/liam_home/bowls/water_half_full.png",
+        "empty": "assets/terrain/eldenmere/liam_home/bowls/water_empty.png"
+      },
+      "bowl_kind": "water",
+      "bowl_pack": "assets/terrain/eldenmere/liam_home/bowls/bowls.json",
+      "floor_rect": [
+        178,
+        273,
+        12,
+        4
+      ],
+      "content_target": [
+        184,
+        270
+      ]
     }
   ],
   "collision": "assets/maps/eldenmere/building_interiors/rooms/liam_house/collision.png",
@@ -426,6 +490,14 @@
     "daisy_rest_space": [
       144,
       282
+    ],
+    "daisy_food_bowl": [
+      164,
+      294
+    ],
+    "daisy_water_bowl": [
+      184,
+      294
     ]
   },
   "source_room": "assets/terrain/eldenmere/cottage_layouts/wide/room.json",

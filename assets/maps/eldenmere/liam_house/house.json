@@ -166,5 +166,33 @@
       "sprite": "assets/characters/daisy/lying_left/pose.png"
     }
   ],
-  "residents_status": "approved"
+  "residents_status": "approved",
+  "bowls": [
+    {
+      "id": "daisy_food_bowl",
+      "kind": "food",
+      "position": [
+        152,
+        258
+      ],
+      "state": "full",
+      "access": [
+        164,
+        294
+      ]
+    },
+    {
+      "id": "daisy_water_bowl",
+      "kind": "water",
+      "position": [
+        172,
+        258
+      ],
+      "state": "full",
+      "access": [
+        184,
+        294
+      ]
+    }
+  ]
 }

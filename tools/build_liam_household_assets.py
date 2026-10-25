@@ -98,6 +98,9 @@ def daisy_rest():
 
 def build():
     rug();daisy_rest()
+    if (RUG_SOURCE/'bowls_recipe.json').exists():
+        from build_daisy_bowls import build as build_bowls
+        build_bowls()
     print('Built one nonblocking woven rug and one static Daisy lying pose.')
 
 

@@ -42,3 +42,13 @@ woven rug. No dialogue, portraits, actions or movement routines are assigned.
 `house.json` now also records the four resident sprites, positions, foot probes
 and rug registration; rebuilding preserves this placement.
 See the [household review](../../../../docs/reviews/liam_household/README.md).
+
+## Daisy's food and water bowls
+
+Two matching wooden bowls sit side by side to the right of the rug. Both start
+full. `bowls` records in `house.json` select each initial state, position and
+caregiver approach. Full, half-full and empty sprites share fixed rims, drawing
+registration and footprints. The room's entity `state_images` maps are retained
+for later feeding/drinking/refill routines; the bowls are static for now. See
+the [bowl pack](../../../terrain/eldenmere/liam_home/bowls/README.md) and
+[in-game captures](../../../../docs/reviews/daisy_bowls/README.md).

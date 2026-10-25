@@ -1,0 +1,122 @@
+{
+  "id": "daisy_wooden_bowls",
+  "status": "implemented",
+  "frame_size": [
+    24,
+    24
+  ],
+  "foot_anchor": [
+    12,
+    18
+  ],
+  "floor_rect": [
+    6,
+    15,
+    12,
+    4
+  ],
+  "content_target": [
+    12,
+    12
+  ],
+  "states": {
+    "full": 1.0,
+    "half_full": 0.5,
+    "empty": 0.0
+  },
+  "wood_palette_source": "assets/source/terrain/eldenmere/cottage_furniture/recipe.json",
+  "water_palette_source": "assets/terrain/eldenmere/cottage_kitchen/kitchen.json",
+  "food_palette": {
+    "shadow": "#65412d",
+    "base": "#95542f",
+    "light": "#ba754b",
+    "crumb": "#ded1ae"
+  },
+  "purpose": "Two matching shallow wooden pet bowls, with static interchangeable fill states for future feeding and refill routines.",
+  "bowls": {
+    "food": {
+      "states": {
+        "full": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/food_full.png",
+          "fill_fraction": 1.0,
+          "content_pixels": 32,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/food_full_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        },
+        "half_full": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/food_half_full.png",
+          "fill_fraction": 0.5,
+          "content_pixels": 14,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/food_half_full_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        },
+        "empty": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/food_empty.png",
+          "fill_fraction": 0.0,
+          "content_pixels": 0,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/food_empty_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        }
+      },
+      "default_state": "full"
+    },
+    "water": {
+      "states": {
+        "full": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/water_full.png",
+          "fill_fraction": 1.0,
+          "content_pixels": 32,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/water_full_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        },
+        "half_full": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/water_half_full.png",
+          "fill_fraction": 0.5,
+          "content_pixels": 14,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/water_half_full_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        },
+        "empty": {
+          "image_from_repo_root": "assets/terrain/eldenmere/liam_home/bowls/water_empty.png",
+          "fill_fraction": 0.0,
+          "content_pixels": 0,
+          "layers_from_repo_root": [
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/wooden_body.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/water_empty_contents.png",
+            "assets/source/terrain/eldenmere/liam_home/bowls_parts/front_rim.png"
+          ]
+        }
+      },
+      "default_state": "full"
+    }
+  },
+  "sheet": "spritesheet.png",
+  "sheet_rows": [
+    "food",
+    "water"
+  ],
+  "sheet_columns": [
+    "full",
+    "half_full",
+    "empty"
+  ],
+  "animated": false,
+  "content_mask": "content_mask.png",
+  "half_content_mask": "half_content_mask.png",
+  "source_recipe": "assets/source/terrain/eldenmere/liam_home/bowls_recipe.json"
+}
