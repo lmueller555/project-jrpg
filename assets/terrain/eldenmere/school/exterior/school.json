@@ -1,0 +1,466 @@
+{
+  "id": "eldenmere.school.exterior",
+  "status": "review",
+  "tile_size": [
+    24,
+    24
+  ],
+  "frame_size": [
+    192,
+    192
+  ],
+  "ground_rect": [
+    24,
+    96,
+    144,
+    96
+  ],
+  "structure": "assets/terrain/eldenmere/school/exterior/structure.png",
+  "frames": [
+    "assets/terrain/eldenmere/school/exterior/frames/frame_01.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_02.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_03.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_04.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_05.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_06.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_07.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_08.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_09.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_10.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_11.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_12.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_13.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_14.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_15.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_16.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_17.png",
+    "assets/terrain/eldenmere/school/exterior/frames/frame_18.png"
+  ],
+  "frame_duration_ms": 300,
+  "cycle_duration_ms": 5400,
+  "door": {
+    "position": [
+      86,
+      150
+    ],
+    "size": [
+      20,
+      34
+    ],
+    "frames": [
+      "assets/terrain/eldenmere/school/exterior/doors/frame_01.png",
+      "assets/terrain/eldenmere/school/exterior/doors/frame_02.png",
+      "assets/terrain/eldenmere/school/exterior/doors/frame_03.png",
+      "assets/terrain/eldenmere/school/exterior/doors/frame_04.png",
+      "assets/terrain/eldenmere/school/exterior/doors/frame_05.png"
+    ],
+    "frame_duration_ms": 100
+  },
+  "animated_layers": [
+    "smoke",
+    "lantern",
+    "book_sign"
+  ],
+  "static_bell": true,
+  "source_frames": [
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_01.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_01.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_01.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_01.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_02.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_02.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_02.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_02.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_03.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_03.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_03.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_03.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_04.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_04.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_04.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_04.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_05.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_05.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_05.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_05.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_06.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_06.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_06.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_06.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_07.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_07.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_07.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_07.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_08.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_08.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_08.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_08.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_09.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_09.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_09.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_09.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_10.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_10.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_10.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_10.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_11.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_11.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_11.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_11.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_12.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_12.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_12.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_12.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_13.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_13.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_13.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_13.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_14.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_14.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_14.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_14.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_15.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_15.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_15.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_15.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_16.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_16.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_16.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_16.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_17.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_17.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_17.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_17.png"
+      ]
+    },
+    {
+      "file": "assets/terrain/eldenmere/school/exterior/frames/frame_18.png",
+      "layers_from_repo_root": [
+        "assets/source/terrain/eldenmere/school/exterior/layers/ground_shadow.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/chimney.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/walls.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/foundation.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/timber.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/windows.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/roof.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/porch.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/bell.png",
+        "assets/source/terrain/eldenmere/school/exterior/layers/door.png",
+        "assets/source/terrain/eldenmere/school/exterior/smoke/frame_18.png",
+        "assets/source/terrain/eldenmere/school/exterior/lantern/frame_18.png",
+        "assets/source/terrain/eldenmere/school/exterior/book_sign/frame_18.png"
+      ]
+    }
+  ],
+  "palette": {
+    "grass": {
+      "deep": "#4f7851",
+      "shadow": "#608451",
+      "base": "#70935a",
+      "light": "#85a16a"
+    },
+    "dirt": {
+      "edge": "#8d7253",
+      "shadow": "#987b59",
+      "base": "#b18e68",
+      "light": "#c1a17b",
+      "stone": "#969284"
+    },
+    "water": {
+      "deep": "#4d7582",
+      "base": "#5c8b96",
+      "flow": "#6b9aa2",
+      "reflection": "#8ab3b0",
+      "glint": "#a1c5bc",
+      "shallow": "#719a91"
+    },
+    "stone": {
+      "joint": "#736e60",
+      "shadow": "#827d6e",
+      "base": "#969284",
+      "light": "#aaa492",
+      "cap": "#b5ae9c",
+      "highlight": "#c3bcaa"
+    },
+    "wood": {
+      "shadow": "#654e3c",
+      "base": "#836347",
+      "light": "#a08158",
+      "worn": "#b79a6c"
+    },
+    "iron": {
+      "shadow": "#535c5d",
+      "base": "#737e7a",
+      "light": "#a4aaa0"
+    },
+    "roof": {
+      "shadow": "#465c60",
+      "base": "#5d7476",
+      "light": "#809590",
+      "edge": "#a0afa1"
+    },
+    "glass": {
+      "dark": "#34464b",
+      "base": "#53696e",
+      "reflection": "#8ab3b0"
+    },
+    "plaster": {
+      "shadow": "#aa9d80",
+      "base": "#d3c6a4",
+      "light": "#e1d6bc"
+    },
+    "lamplight": {
+      "base": "#e4b66b",
+      "light": "#f5d99a"
+    },
+    "smoke": {
+      "shadow": "#aab5ac",
+      "base": "#c5ccc1",
+      "light": "#dce0d2"
+    },
+    "outline": {
+      "base": "#45382d"
+    },
+    "bronze": {
+      "shadow": "#6f5a35",
+      "base": "#977c43",
+      "light": "#cfb878"
+    }
+  }
+}

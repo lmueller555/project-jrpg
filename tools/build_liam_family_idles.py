@@ -25,7 +25,7 @@ COMMON={
 }
 SPECS={
     'liam_mother':{
-        'label':'Mother','age_range':'mid-30s','role':'mother',
+        'label':'Mother','age_range':'mid-30s','role':'mother','occupation':'teacher',
         'bounds':[156,125,488,958],'occupied':[5,1,14,34],'eyes':[[10,9],[13,9]],
         'iris':'#4e7950',
         'materials':{'hair':['#3d2118','#71452c','#a47545'],
@@ -190,6 +190,9 @@ def build():
     sheet.save(folder/'front_idles.png')
     members=[{**record,'sprite_root':f"assets/characters/{record['character']}",
               'sheet_rect':[i*24,0,24,36]} for i,record in enumerate(records)]
+    for member in members:
+        occupation=SPECS[member['character']].get('occupation')
+        if occupation:member['occupation']=occupation
     family={'status':STATUS,'members':members,'sheet':'front_idles.png',
           'column_order':list(SPECS),'frame_size':[24,36],'parents_names':'unassigned',
           'quest_association':'unassigned'}

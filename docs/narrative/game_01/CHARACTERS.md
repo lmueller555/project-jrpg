@@ -8,7 +8,7 @@
 | Caelan | 18 years old | Tomas's older foster brother |
 | Tomas | 14 years old | Caelan's younger foster brother |
 | Liam | 8 years old | Child of Liam's mother and father |
-| Liam's mother | Mid-30s | Liam's mother; name unassigned |
+| Liam's mother | Mid-30s | Liam's mother; Eldenmere's teacher; name unassigned |
 | Liam's father | Mid-30s | Liam's father; name unassigned |
 
 Caelan and Tomas are four years apart. These ages guide future dialogue,
@@ -33,3 +33,7 @@ to the same protagonist, whose current game and asset identity is **Caelan**.
 Other characters' ages and unapproved biography details remain open. See
 [Chapter 1](CHAPTER_01.md) and the [opening quest](CH01_MQ01.md) for established
 relationships and scene context.
+
+Liam's mother is Eldenmere's schoolteacher, as established by the author on
+2026-10-25. The school is a separate public building northeast of the well square,
+with a furnished classroom for six children. Her personal name remains open.

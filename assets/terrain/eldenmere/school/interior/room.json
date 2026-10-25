@@ -1,0 +1,472 @@
+{
+  "id": "school",
+  "name": "Eldenmere schoolroom",
+  "status": "review",
+  "floor_tiles": [
+    16,
+    12
+  ],
+  "room_size": [
+    432,
+    384
+  ],
+  "floor_rect": [
+    24,
+    72,
+    384,
+    288
+  ],
+  "entry_rect": [
+    204,
+    360,
+    24,
+    8
+  ],
+  "partition_rect": null,
+  "objects": [
+    {
+      "id": "writing_board",
+      "position": [
+        144,
+        27
+      ],
+      "frame_size": [
+        144,
+        48
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/writing_board.png",
+      "floor_rect": null,
+      "sort_y": 0,
+      "access": [
+        216,
+        100
+      ]
+    },
+    {
+      "id": "village_map",
+      "position": [
+        96,
+        28
+      ],
+      "frame_size": [
+        42,
+        40
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/village_map.png",
+      "floor_rect": null,
+      "sort_y": 0,
+      "access": [
+        108,
+        94
+      ]
+    },
+    {
+      "id": "teacher_desk",
+      "position": [
+        104,
+        102
+      ],
+      "frame_size": [
+        72,
+        48
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/teacher_desk.png",
+      "floor_rect": [
+        106,
+        124,
+        68,
+        18
+      ],
+      "sort_y": 142,
+      "access": [
+        140,
+        154
+      ]
+    },
+    {
+      "id": "teacher_chair",
+      "pack": "cottage_furniture",
+      "sprite": "chair_down",
+      "position": [
+        128,
+        72
+      ],
+      "access": [
+        184,
+        108
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        131,
+        90,
+        18,
+        16
+      ],
+      "sort_y": 106
+    },
+    {
+      "id": "pupil_desk_1",
+      "position": [
+        76,
+        164
+      ],
+      "frame_size": [
+        64,
+        40
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png",
+      "floor_rect": [
+        78,
+        182,
+        60,
+        20
+      ],
+      "sort_y": 202,
+      "access": [
+        108,
+        152
+      ]
+    },
+    {
+      "id": "pupil_chair_1",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        80,
+        190
+      ],
+      "access": [
+        66,
+        222
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        83,
+        208,
+        18,
+        16
+      ],
+      "sort_y": 224
+    },
+    {
+      "id": "pupil_chair_2",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        112,
+        190
+      ],
+      "access": [
+        154,
+        222
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        115,
+        208,
+        18,
+        16
+      ],
+      "sort_y": 224
+    },
+    {
+      "id": "pupil_desk_2",
+      "position": [
+        280,
+        164
+      ],
+      "frame_size": [
+        64,
+        40
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png",
+      "floor_rect": [
+        282,
+        182,
+        60,
+        20
+      ],
+      "sort_y": 202,
+      "access": [
+        312,
+        152
+      ]
+    },
+    {
+      "id": "pupil_chair_3",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        284,
+        190
+      ],
+      "access": [
+        270,
+        222
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        287,
+        208,
+        18,
+        16
+      ],
+      "sort_y": 224
+    },
+    {
+      "id": "pupil_chair_4",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        316,
+        190
+      ],
+      "access": [
+        358,
+        222
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        319,
+        208,
+        18,
+        16
+      ],
+      "sort_y": 224
+    },
+    {
+      "id": "pupil_desk_3",
+      "position": [
+        76,
+        256
+      ],
+      "frame_size": [
+        64,
+        40
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png",
+      "floor_rect": [
+        78,
+        274,
+        60,
+        20
+      ],
+      "sort_y": 294,
+      "access": [
+        108,
+        244
+      ]
+    },
+    {
+      "id": "pupil_chair_5",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        80,
+        282
+      ],
+      "access": [
+        66,
+        314
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        83,
+        300,
+        18,
+        16
+      ],
+      "sort_y": 316
+    },
+    {
+      "id": "pupil_chair_6",
+      "pack": "cottage_furniture",
+      "sprite": "chair_up",
+      "position": [
+        112,
+        282
+      ],
+      "access": [
+        154,
+        314
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "frame_size": [
+        24,
+        36
+      ],
+      "floor_rect": [
+        115,
+        300,
+        18,
+        16
+      ],
+      "sort_y": 316
+    },
+    {
+      "id": "bookshelf",
+      "position": [
+        352,
+        108
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/bookshelf.png",
+      "floor_rect": [
+        356,
+        166,
+        40,
+        16
+      ],
+      "sort_y": 182,
+      "access": [
+        374,
+        194
+      ]
+    },
+    {
+      "id": "festival_corner",
+      "position": [
+        286,
+        260
+      ],
+      "frame_size": [
+        64,
+        40
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/festival_corner.png",
+      "floor_rect": [
+        288,
+        278,
+        60,
+        20
+      ],
+      "sort_y": 298,
+      "access": [
+        318,
+        246
+      ]
+    },
+    {
+      "id": "reading_bench",
+      "position": [
+        286,
+        312
+      ],
+      "frame_size": [
+        72,
+        32
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/reading_bench.png",
+      "floor_rect": [
+        292,
+        329,
+        60,
+        10
+      ],
+      "sort_y": 339,
+      "access": [
+        320,
+        350
+      ]
+    },
+    {
+      "id": "coat_pegs",
+      "position": [
+        20,
+        270
+      ],
+      "frame_size": [
+        24,
+        48
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/coat_pegs.png",
+      "floor_rect": null,
+      "sort_y": 0,
+      "access": [
+        48,
+        298
+      ]
+    },
+    {
+      "id": "child_drawings",
+      "position": [
+        336,
+        35
+      ],
+      "frame_size": [
+        16,
+        30
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/school/interior/sprites/child_drawings.png",
+      "floor_rect": null,
+      "sort_y": 0,
+      "access": [
+        346,
+        110
+      ]
+    },
+    {
+      "id": "hearth",
+      "position": [
+        350,
+        24
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "floor_rect": [
+        352,
+        72,
+        44,
+        20
+      ],
+      "sort_y": 92,
+      "access": [
+        374,
+        104
+      ],
+      "image_from_repo_root": "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png"
+    }
+  ],
+  "teacher_role": "liam_mother",
+  "seat_count": 6,
+  "pupil_desk_count": 3,
+  "central_aisle": [
+    192,
+    96,
+    60,
+    258
+  ],
+  "lighting_frame_count": 36,
+  "lighting_frame_duration_ms": 300,
+  "npcs": [],
+  "notes": "Welcoming school with room for six children. Teacher and pupil action schedules are a later stage."
+}

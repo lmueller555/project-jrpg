@@ -1,0 +1,65 @@
+{
+  "id": "school",
+  "status": "review",
+  "position": [
+    576,
+    528
+  ],
+  "ground_rect": [
+    600,
+    624,
+    144,
+    96
+  ],
+  "approach": [
+    672,
+    738
+  ],
+  "path_rects_tiles": [
+    [
+      25,
+      30,
+      6,
+      2
+    ],
+    [
+      25,
+      31,
+      2,
+      4
+    ],
+    [
+      24,
+      33,
+      2,
+      2
+    ]
+  ],
+  "floor_tiles": [
+    16,
+    12
+  ],
+  "teacher": "liam_mother",
+  "placement": "Lower ground northeast of the well square, south of Mira's workshop and west of the stream.",
+  "scope": "Playable school building and furnished interior. Teaching and pupil routines follow later.",
+  "yard_blockers": [
+    [
+      572,
+      744,
+      24,
+      24
+    ],
+    [
+      746,
+      718,
+      24,
+      24
+    ],
+    [
+      700,
+      760,
+      48,
+      6
+    ]
+  ]
+}
