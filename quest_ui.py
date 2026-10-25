@@ -77,9 +77,14 @@ class QuestUI:
     def _hidden(self):
         return self.journal_open or self.game.map_open
 
+    def _notices_hidden(self):
+        # Speech can occupy any world-space region now. Queue feedback until
+        # the exchange ends so a quest toast never covers its next answer.
+        return self._hidden() or self.game.social.locked
+
     def update(self, seconds):
         self.notices.extend(self.game.quests.drain_events())
-        if self._hidden():
+        if self._notices_hidden():
             return
         if self.current_notice is not None:
             self.notice_seconds -= max(0, seconds)
@@ -215,12 +220,12 @@ class QuestUI:
                 self.wrap(text, self.font, 338))
 
     def draw_notifications(self, canvas):
-        if self._hidden() or self.current_notice is None:
+        if self._notices_hidden() or self.current_notice is None:
             return
         labels, lines = self._notification_content(self.current_notice)
         body_offset = 9+len(labels)*11
         height = body_offset+len(lines)*13+4
-        y = 199-height if self.game.social.locked else 66
+        y = 66
         rect = pygame.Rect(62, y, 356, height)
         pygame.draw.rect(canvas, '#101b19', rect.move(2, 2))
         pygame.draw.rect(canvas, INK, rect)

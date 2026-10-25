@@ -90,6 +90,27 @@ class QuestUITests(unittest.TestCase):
         self.assertIsNone(self.ui.current_notice)
         self.assertFalse(self.ui.notices)
 
+    def test_live_dialogue_defers_quest_notices_without_consuming_reading_time(self):
+        self.game.social.locked = True
+        self.game.quests.events = [{'kind': 'accepted', 'quest_id': 'q',
+                                   'title': 'Quest', 'text': 'Find the mill.'}]
+        with patch.object(self.ui, '_chime') as sound:
+            self.ui.update(30)
+            self.assertIsNone(self.ui.current_notice)
+            self.assertEqual(len(self.ui.notices), 1)
+            sound.assert_not_called()
+            self.game.social.locked = False
+            self.ui.update(0)
+            self.assertEqual(self.ui.current_notice['kind'], 'accepted')
+            self.assertEqual(sound.call_count, 1)
+            initial = self.ui.notice_seconds
+            self.game.social.locked = True
+            self.ui.update(30)
+            self.assertEqual(self.ui.notice_seconds, initial)
+            self.canvas.fill('#112233')
+            self.ui.draw_notifications(self.canvas)
+            self.assertEqual(self.canvas.get_at((70, 70))[:3], (17, 34, 51))
+
     def test_journal_lists_distinct_queued_and_completed_states_and_scrolls(self):
         self.game.quests.definitions['q']['objectives'] *= 20
         self.ui.toggle_journal()

@@ -94,11 +94,10 @@ class PolishedOpeningTests(unittest.TestCase):
         self.assertEqual(game.quests.status(OPENING_QUEST), 'available')
         self.assertEqual(game.quests.states[OPENING_QUEST]['completed_objectives'], [])
 
-    def test_camera_holds_breakfast_framing_when_prose_finishes_before_actions(self):
+    def test_camera_keeps_full_world_view_when_prose_finishes_before_actions(self):
         game = self.h.new_game()
         self.h.enter_breakfast(game)
         game.update(.4, (0, 0), False)
-        expected = game.camera.position()
         self.tick_until(game, lambda: game.opening.action_name == 'eat')
         # Finish the short seated lines before the visible eating motion ends.
         while game.social.scripted:
@@ -107,14 +106,56 @@ class PolishedOpeningTests(unittest.TestCase):
         self.assertTrue(game.opening.locks_player)
         self.assertFalse(game.social.locked)
         game.update(1/60, (0, 0), False)
-        self.assertEqual(game.camera.position(), expected)
-        self.assertEqual(game.camera.framing_height, 204)
+        # Camera follows the physical player pose rather than reserving a
+        # lower panel; dialogue completion itself cannot change the viewport.
+        self.assertEqual(game.camera.framing_height, 320)
         self.h.finish_breakfast(game)
         previous = game.camera.position()
         game.update(1/60, (0, 0), False)
         self.assertLessEqual(abs(game.camera.position()[1]-previous[1]), 20)
         game.update(.5, (0, 0), False)
         self.assertGreater(game.camera.framing_height, 310)
+
+    def test_steering_leaves_unread_breakfast_after_cup_and_stand_without_clicks(self):
+        game = self.h.new_game()
+        self.h.enter_breakfast(game)
+        self.tick_until(game, lambda: game.social.script_identifier == 'opening_breakfast')
+        # Leave both meal and cup prose unread. Held movement must complete
+        # physical gestures and restore normal walking without further clicks.
+        actions = set()
+        displayed = set()
+        previous = pygame.Vector2(getattr(game.player, 'story_position', None) or game.player.position)
+        for _ in range(600):
+            actions.add(game.opening.action_name)
+            displayed.add(game.social.script_identifier)
+            game.update(1/60, (0, 1), False)
+            current = pygame.Vector2(getattr(game.player, 'story_position', None) or game.player.position)
+            self.assertLessEqual(current.distance_to(previous), 4.0)
+            previous = current
+            if game.opening.stage == 'assignment' and game.player.moving:
+                break
+        else:
+            self.fail('Unread seated dialogue trapped player movement')
+        self.assertTrue({'plate', 'eat', 'cup', 'stand'} <= actions)
+        self.assertTrue({'opening_breakfast', 'opening_kindness'} <= displayed)
+        self.assertFalse(game.social.locked)
+        self.assertFalse(game.opening.locks_player)
+        self.assertTrue(game.world.can_stand(game.player.position))
+        self.assertEqual(game.quests.status(OPENING_QUEST), 'available')
+
+    def test_single_movement_tap_also_finishes_standing_after_unread_breakfast(self):
+        game = self.h.new_game()
+        self.h.enter_breakfast(game)
+        self.tick_until(game, lambda: game.social.script_identifier == 'opening_breakfast')
+        game.update(1/60, (0, 1), False)
+        for _ in range(600):
+            if game.opening.stage == 'assignment':break
+            game.update(1/60, (0, 0), False)
+        self.assertEqual(game.opening.stage, 'assignment')
+        self.assertFalse(game.social.locked)
+        self.assertFalse(game.opening.locks_player)
+        self.assertFalse(hasattr(game.player, 'story_position'))
+        self.assertTrue(game.world.can_stand(game.player.position))
 
     def test_pause_freezes_getup_sitting_and_eating_and_resume_does_not_advance(self):
         game = self.h.new_game()

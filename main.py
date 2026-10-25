@@ -582,12 +582,14 @@ class Game:
                 else:self.pause.open()
                 continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
-                if not self._mouse_held and not advanced and self.social.active:
+                if (not self._mouse_held and not advanced and self.social.active
+                        and not self.map_open):
                     self.social.click(self.to_canvas(event.pos));advanced=True
                 self._mouse_held=True
             if event.type==pygame.KEYDOWN:
-                if self.social.locked and event.key!=pygame.K_F11:
-                    if event.key in (pygame.K_SPACE,pygame.K_e) and not getattr(event,'repeat',False) and not advanced:
+                if (self.social.active and not self.map_open and
+                        event.key in (pygame.K_SPACE,pygame.K_e)):
+                    if not getattr(event,'repeat',False) and not advanced:
                         self.social.advance();advanced=True
                     continue
                 if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j):continue
@@ -617,11 +619,13 @@ class Game:
             direction=(int(keys[pygame.K_d] or keys[pygame.K_RIGHT])-int(keys[pygame.K_a] or keys[pygame.K_LEFT]),
                        int(keys[pygame.K_s] or keys[pygame.K_DOWN])-int(keys[pygame.K_w] or keys[pygame.K_UP]))
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
+        if not self.map_open and not self.quest_ui.journal_open:
+            self.opening.request_movement(direction)
         for scene in self.scenes.values():
             for door in scene.doors:
                 door.update(self.player.position if scene is self.world else None,seconds,
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
-        direction=(0,0) if (self.map_open or self.quest_ui.journal_open or self.social.locked or
+        direction=(0,0) if (self.map_open or self.quest_ui.journal_open or
                            self.opening.locks_player or self.opening_fade) else direction
         if not self.opening.controls_player:
             previous=self.player.position.copy()
@@ -643,7 +647,7 @@ class Game:
         for routine in self.bone_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
-        if (not self.map_open and not self.quest_ui.journal_open and not self.social.locked and
+        if (not self.map_open and not self.quest_ui.journal_open and
                 not self.opening.locks_player and not self.transfer_cooldown):
             for door in self.world.doors:
                 if door.can_enter(self.player.position,direction):
@@ -657,7 +661,7 @@ class Game:
         self.camera.update(seconds)
 
     def enter(self,door):
-        if self.pause.is_open or self.social.locked or self.quest_ui.journal_open or self.opening.locks_player:return False
+        if self.pause.is_open or self.quest_ui.journal_open or self.opening.locks_player:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -667,6 +671,9 @@ class Game:
             arrival_probe=destination.probe_rect(spawn)
             if any(npc.blocker.colliderect(arrival_probe) for npc in destination.npcs):return False
             raise ValueError(f'Blocked arrival for {door.data["id"]}: {spawn}')
+        # A valid transfer ends live speech without accepting choices or
+        # completing prose that the player left unread.
+        if self.social.locked:self.social.cancel()
         if self.world is self.town:self.exterior_position.update(door.data['anchor'])
         self.world=destination
         self.player.position.update(spawn)
@@ -712,10 +719,7 @@ class Game:
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms)
         self.opening.draw_world(self.canvas,camera)
         self.quest_ui.draw_markers(self.canvas,camera)
-        matte=max(0,min(116,round(VIEW_SIZE[1]-self.camera.framing_height)))
-        if matte and not self.social.locked:
-            pygame.draw.rect(self.canvas,'#101b19',(0,VIEW_SIZE[1]-matte,VIEW_SIZE[0],matte))
-        if not self.pause.is_open and not self.social.locked and not self.opening.locks_player:
+        if not self.pause.is_open and not self.opening.locks_player:
             pygame.draw.rect(self.canvas,'#263c35',(8,8,190,21))
             if self.world is self.town:
                 self.text('Eldenmere',(15,13))
@@ -730,7 +734,8 @@ class Game:
                 pygame.draw.rect(self.canvas,'#263c35',(8,281,250,18))
                 self.text(hint,(14,286),self.small_font,color='#ffdc71')
         if self.map_open:self.draw_map()
-        self.social.draw(self.canvas,self.elapsed_ms)
+        if not self.map_open and not self.quest_ui.journal_open:
+            self.social.draw(self.canvas,self.elapsed_ms,camera=camera)
         self.quest_ui.draw_notifications(self.canvas)
         self.quest_ui.draw_journal(self.canvas)
         if self.save_error and not self.quest_ui.journal_open:

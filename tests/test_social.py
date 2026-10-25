@@ -49,7 +49,7 @@ class SocialTests(unittest.TestCase):
             else:self.click()
         self.fail('Conversation did not finish')
 
-    def test_approach_opens_correct_speaker_and_locks_only_participants(self):
+    def test_approach_opens_correct_speaker_and_pauses_only_the_npc(self):
         self.approach()
         self.assertTrue(self.game.social.active)
         self.assertEqual(self.game.social.page['speaker'],'serene')
@@ -58,8 +58,11 @@ class SocialTests(unittest.TestCase):
         gardener=self.game.town.npcs[1]
         gardener_clock=gardener.state_ms
         elapsed=self.game.elapsed_ms
-        for _ in range(60):self.game.update(1/60,(1,0),True)
-        self.assertEqual(self.game.player.position,position)
+        # Stay within speaking distance while proving the player retains
+        # control. A longer retreat intentionally ends the conversation.
+        for _ in range(6):self.game.update(1/60,(1,0),False)
+        self.assertGreater(self.game.player.position.x,position.x)
+        self.assertTrue(self.game.social.active)
         self.assertEqual(self.actor.state_ms,clock)
         self.assertGreater(self.game.elapsed_ms,elapsed)
         self.assertNotEqual(gardener.state_ms,gardener_clock)
@@ -243,13 +246,13 @@ class SocialTests(unittest.TestCase):
         self.game.handle_events()
         self.assertEqual(self.game.social.page_index,0)
 
-    def test_portrait_box_wraps_within_three_lines_and_resize_accepts_clicks(self):
+    def test_portrait_bubble_wraps_within_three_lines_and_resize_accepts_clicks(self):
         self.approach()
         self.game.window=pygame.display.set_mode((1100,750))
         self.game.draw()
         for page in self.game.social.pages:
             self.assertLessEqual(len(page['lines']),3)
-            for line in page['lines']:self.assertLessEqual(self.game.social.font.size(line)[0],332)
+            for line in page['lines']:self.assertLessEqual(self.game.social.font.size(line)[0],224)
         self.click((1099,749))
         self.assertEqual(self.game.social.page_index,1)
 

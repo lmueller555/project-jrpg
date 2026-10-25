@@ -42,6 +42,7 @@ class OpeningSequence:
         self._wake_started = self._wake_finished = self._wake_dialogue_done = False
         self._meal_finished = self._meal_dialogue_done = False
         self._cup_finished = self._cup_dialogue_done = False
+        self._leaving_breakfast = False
         self._plate_index = 0
         self._cup_position = None
         self._cup_placed = False
@@ -51,7 +52,12 @@ class OpeningSequence:
     def active(self):return self.stage not in ('disabled', 'done')
 
     @property
-    def locks_player(self):return self.stage in ('wake', 'breakfast', 'acceptance')
+    def locks_player(self):
+        # Physical bed/chair poses constrain the body; merely displaying speech
+        # does not. In particular the invitation and accepted quest follow-up
+        # remain ordinary live conversations.
+        return ((self.stage == 'wake' and (self._sleeping or self.in_action)) or
+                (self.stage == 'breakfast' and self._phase != 'greeting'))
 
     @property
     def player_visible(self):return not self._sleeping
@@ -68,6 +74,17 @@ class OpeningSequence:
         if self._action is not None:return self._action['name']
         return self._actions[0]['name'] if self._actions else None
 
+    def request_movement(self, direction):
+        """A steering gesture asks a seated player to finish up and stand.
+
+        Required prop and chair motions finish before movement resumes, even
+        after a short tap. Unread prose cannot keep the player seated forever.
+        """
+        if (self.stage == 'breakfast' and self._phase in ('meal', 'cup') and
+                pygame.Vector2(direction).length_squared()):
+            self._leaving_breakfast = True
+            self._check_progress()
+
     def drain_sound_events(self):
         result, self._sound_events = self._sound_events, []
         return result
@@ -83,12 +100,23 @@ class OpeningSequence:
             self._footstep_distance -= 20.16
 
     def camera_focus(self):
-        scene = self.game.world.data['id']
-        if self.stage == 'wake' and scene == 'sanctuary_bedroom':return (74, 150)
-        if self.stage == 'breakfast' and scene == 'sanctuary_dining':return (210, 185)
-        if (self.stage in ('assignment', 'acceptance') and scene == 'sanctuary_dining'
-                and self.game.social.locked):return (228, 198)
+        """Retain the scene hook without taking over live player tracking."""
         return None
+
+    def on_dialogue_cancelled(self, identifier):
+        """Settle a live exchange without treating unread prose as completed."""
+        if identifier == 'opening_wake' and self.stage == 'wake':
+            self._wake_dialogue_done = True
+            self._queue_wake();self._check_progress()
+        elif identifier == 'opening_greeting' and self.stage == 'breakfast':
+            # The invitation can be heard again on the next dining-room visit;
+            # walking away must not start a guided walk from another room.
+            self.stage = 'explore';self._phase = None
+            self._save()
+        elif identifier == 'opening_acceptance' and self.stage == 'acceptance':
+            # Acceptance was already explicit and saved. The remaining banter
+            # can be left freely without leaving either actor story-paused.
+            self._finish_acceptance()
 
     def can_speak(self, npc_id):
         if npc_id not in ('mother_serene', 'tomas'):return True
@@ -112,11 +140,21 @@ class OpeningSequence:
                   and self.game.player.position.distance_squared_to(destinations[key]) <= 22*22]
         return min(nearby)[1] if nearby else None
 
+    def _can_join_breakfast(self):
+        return (self.stage == 'explore' and
+                self.game.world.data['id'] == 'sanctuary_dining' and
+                not self.game.social.locked and not self.game.map_open and
+                not self.game.quest_ui.journal_open and
+                min(self.game.player.position.distance_squared_to(self.data[key])
+                    for key in ('caelan_breakfast_floor', 'tomas_breakfast_floor')) <= 40*40)
+
     def interaction_hint(self):
+        if self._can_join_breakfast():return 'E: join breakfast'
         key = self._inspect_target()
         return f"E: inspect {self.data['inspections'][key]['label']}" if key else ''
 
     def inspect_nearby(self):
+        if self._can_join_breakfast():return self._start_breakfast()
         key = self._inspect_target()
         if key is None:return False
         return self.game.social.start_script(
@@ -203,6 +241,7 @@ class OpeningSequence:
         self._wake_started = self._wake_finished = self._wake_dialogue_done = False
         self._meal_finished = self._meal_dialogue_done = False
         self._cup_finished = self._cup_dialogue_done = False
+        self._leaving_breakfast = False
         self._plate_index = 0;self._cup_position = None;self._cup_placed = False
         self._serene_glance = False
 
@@ -449,6 +488,14 @@ class OpeningSequence:
         self._save()
 
     def _check_progress(self):
+        if self.stage == 'breakfast' and self._leaving_breakfast and not self.in_action:
+            social = self.game.social
+            if self._phase == 'meal' and self._meal_finished:
+                if social.script_identifier == 'opening_breakfast':social.cancel_script()
+                self._meal_dialogue_done = True
+            elif self._phase == 'cup' and self._cup_finished:
+                if social.script_identifier == 'opening_kindness':social.cancel_script()
+                self._cup_dialogue_done = True
         if self.stage == 'wake' and self._wake_dialogue_done and self._wake_finished and not self.in_action:self._finish_wake()
         elif self.stage == 'breakfast' and self._phase == 'meal' and self._meal_dialogue_done and self._meal_finished and not self.in_action:self._start_cup()
         elif self.stage == 'breakfast' and self._phase == 'cup' and self._cup_dialogue_done and self._cup_finished and not self.in_action:self._start_standing()

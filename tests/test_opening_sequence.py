@@ -267,22 +267,60 @@ class OpeningSequenceTests(unittest.TestCase):
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
         self.assertEqual(self.opening.drain_sound_events(), [])
 
-    def test_scene_camera_focus_is_stable_across_breakfast_dialogue_and_motion(self):
+    def test_opening_dialogue_never_requests_a_cinematic_camera_focus(self):
         self.opening.start_new_game()
-        self.assertEqual(self.opening.camera_focus(), (74, 150))
+        self.assertIsNone(self.opening.camera_focus())
         self.finish_until('explore')
         self.assertIsNone(self.opening.camera_focus())
-
-        self.game.world = self.game._scene_by_id('sanctuary_dining')
-        self.game.player.position.update(216, 294)
-        self.opening.on_enter_scene()
-        for _ in range(1500):
-            self.assertEqual(self.opening.camera_focus(), (210, 185))
-            self.finish_dialogue()
-            self.opening.update(1/60)
-            if self.opening.stage == 'assignment':
-                break
+        self.reach_breakfast()
         self.assertIsNone(self.opening.camera_focus())
+        self.finish_until('assignment')
+        self.assertIsNone(self.opening.camera_focus())
+
+    def test_cancelled_invitation_can_resume_near_table_without_leaving_room(self):
+        self.opening.start_new_game()
+        self.finish_until('explore')
+        self.game.world = self.game._scene_by_id('sanctuary_dining')
+        self.game.player.position.update(self.game.world.data['spawn'])
+        self.opening.on_enter_scene()
+        self.assertFalse(self.opening.locks_player)
+        self.game.social.cancel_script()
+        self.opening.on_dialogue_cancelled('opening_greeting')
+        self.assertEqual(self.opening.stage, 'explore')
+        self.assertFalse(self.opening.in_action)
+        self.game.player.position.update(108, 228)
+        before = self.game.player.position.copy()
+        self.assertEqual(self.opening.interaction_hint(), 'E: join breakfast')
+        self.assertTrue(self.opening.inspect_nearby())
+        self.assertEqual(self.game.social.script_identifier, 'opening_greeting')
+        self.assertEqual(self.game.player.position, before)
+        self.assertFalse(self.opening.locks_player)
+
+    def test_finished_wake_motion_allows_leaving_remaining_speech(self):
+        self.opening.start_new_game()
+        while self.game.social.page.get('cue') != 'wake_up':
+            self.game.social.advance()
+        self.opening.update(3)
+        self.assertEqual(self.opening.stage, 'wake')
+        self.assertTrue(self.opening._wake_finished)
+        self.assertFalse(self.opening.locks_player)
+        self.game.social.cancel_script()
+        self.opening.on_dialogue_cancelled('opening_wake')
+        self.assertEqual(self.opening.stage, 'explore')
+        self.assertFalse(self.opening.locks_player)
+        self.assertFalse(hasattr(self.game.player, 'story_position'))
+
+    def test_leaving_acceptance_banter_releases_cast_and_keeps_accepted_quest(self):
+        self.game.quests.accept(OPENING_QUEST)
+        self.opening.restore({'version': 1, 'stage': 'assignment'})
+        self.assertEqual(self.opening.stage, 'acceptance')
+        self.assertFalse(self.opening.locks_player)
+        self.game.social.cancel_script()
+        self.opening.on_dialogue_cancelled('opening_acceptance')
+        self.assertEqual(self.opening.stage, 'done')
+        self.assertEqual(self.game.quests.status(OPENING_QUEST), 'active')
+        self.assertTrue(all(not actor.story_paused for actor in self.game.persistent_npcs))
+        self.assertEqual(self.game.quests.states[OPENING_QUEST]['completed_objectives'], [])
 
     def test_wood_steps_match_two_contacts_per_walk_cycle_and_stop_when_idle(self):
         for _ in range(28):

@@ -1,4 +1,4 @@
-"""Actorless story pages preserve input locks without owning ambient routines."""
+"""Story pages own conversation progression without freezing player controls."""
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
@@ -30,7 +30,7 @@ class ScriptedDialogueTests(unittest.TestCase):
 
     def tearDown(self):pygame.quit()
 
-    def test_script_owns_dialogue_lock_without_requesting_an_ambient_actor(self):
+    def test_script_owns_conversation_without_stopping_player_or_ambient_actor(self):
         lines = [{'speaker': 'tomas', 'text': "Caelan? You're awake, aren't you?"},
                  {'speaker': 'caelan', 'text': "I'm getting up."}]
         self.assertTrue(self.social.start_script(lines, identifier='morning_knock'))
@@ -41,8 +41,8 @@ class ScriptedDialogueTests(unittest.TestCase):
         self.assertFalse(self.social.choosing)
         self.assertEqual(self.social.script_identifier, 'morning_knock')
         self.assertEqual(self.social.page['speaker'], 'tomas')
-        self.assertFalse(self.game.player.moving)
-        self.assertEqual(self.game.player.walk_ms, 0)
+        self.assertTrue(self.game.player.moving)
+        self.assertEqual(self.game.player.walk_ms, 350)
         self.social.update((0, -1))
         self.actor.request_conversation.assert_not_called()
         self.assertFalse(self.social.start(self.actor))
@@ -126,7 +126,7 @@ class ScriptedDialogueTests(unittest.TestCase):
         for page in self.social.pages:
             self.assertLessEqual(len(page['lines']), 3)
             for line in page['lines']:
-                self.assertLessEqual(self.social.font.size(line)[0], 332)
+                self.assertLessEqual(self.social.font.size(line)[0], 224)
 
     def test_real_event_batch_cannot_advance_both_scenes_or_skip_with_held_click(self):
         import main
