@@ -1,0 +1,92 @@
+{
+  "status": "review",
+  "initial_wait_skipped_only": true,
+  "reports": {
+    "wandering": {
+      "frames": 316,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "stand_up",
+        "walk",
+        "pause",
+        "walk",
+        "pause",
+        "walk",
+        "pause",
+        "walk",
+        "settle_down"
+      ],
+      "final_bowls": {
+        "food": "full",
+        "water": "full"
+      },
+      "final_position": [
+        108.0,
+        282.0
+      ]
+    },
+    "eating": {
+      "frames": 143,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "stand_up",
+        "walk",
+        "lower_food",
+        "eat",
+        "raise_food",
+        "walk",
+        "settle_down"
+      ],
+      "final_bowls": {
+        "food": "half_full",
+        "water": "full"
+      },
+      "final_position": [
+        108.0,
+        282.0
+      ]
+    },
+    "drinking": {
+      "frames": 153,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "stand_up",
+        "walk",
+        "lower_water",
+        "drink",
+        "raise_water",
+        "walk",
+        "settle_down"
+      ],
+      "final_bowls": {
+        "food": "full",
+        "water": "half_full"
+      },
+      "final_position": [
+        108.0,
+        282.00000000000017
+      ]
+    },
+    "empty_bowl": {
+      "frames": 80,
+      "frame_duration_ms": 100,
+      "states_seen": [
+        "stand_up",
+        "walk",
+        "lower_food",
+        "inspect",
+        "raise_food",
+        "walk",
+        "settle_down"
+      ],
+      "final_bowls": {
+        "food": "empty",
+        "water": "full"
+      },
+      "final_position": [
+        108.0,
+        282.0
+      ]
+    }
+  }
+}

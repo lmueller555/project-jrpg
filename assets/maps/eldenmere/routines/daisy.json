@@ -1,0 +1,23 @@
+{
+  "id": "daisy.house",
+  "status": "review",
+  "scene": "liam_house",
+  "speed": 36,
+  "probe_size": [20, 6],
+  "home": [108, 282],
+  "rest_ms": [45000, 90000],
+  "wander_ms": [20000, 40000],
+  "pause_ms": [2000, 5000],
+  "wander_stops": [2, 3],
+  "food_cooldown_ms": [120000, 240000],
+  "water_cooldown_ms": [90000, 180000],
+  "eat_ms": 7200,
+  "drink_ms": 4800,
+  "inspect_ms": 900,
+  "wander_points": [[120, 170], [212, 240], [234, 180], [276, 144], [354, 284]],
+  "door_clear_radius": 32,
+  "bowls": {
+    "food": {"id": "daisy_food_bowl", "station": [148, 278], "clear": [132, 300], "facing": "right"},
+    "water": {"id": "daisy_water_bowl", "station": [200, 278], "clear": [208, 302], "facing": "left"}
+  }
+}

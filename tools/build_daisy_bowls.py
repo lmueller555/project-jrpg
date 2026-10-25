@@ -37,6 +37,11 @@ def build():
     half=Image.new('L',size);ImageDraw.Draw(half).ellipse((8,12,15,13),fill=255)
     half=ImageChops.multiply(half,mask)
     common=blank(size);common.alpha_composite(outer);common.alpha_composite(rim)
+    front=blank(size)
+    for y in range(13,24):
+        for x in range(24):
+            if not mask.getpixel((x,y)):front.putpixel((x,y),common.getpixel((x,y)))
+    store(OUT/'front_overlay.png',front)
     store(SOURCE/'bowls_parts/wooden_body.png',outer)
     store(SOURCE/'bowls_parts/front_rim.png',rim)
     store(OUT/'content_mask.png',mask)
@@ -73,6 +78,7 @@ def build():
         records[kind]={'states':states,'default_state':'full'}
     store(OUT/'spritesheet.png',sheet)
     metadata={**recipe,'bowls':records,'sheet':'spritesheet.png','sheet_rows':['food','water'],
+              'front_overlay':'front_overlay.png',
               'sheet_columns':list(recipe['states']),'animated':False,
               'content_mask':'content_mask.png','half_content_mask':'half_content_mask.png',
               'source_recipe':(SOURCE/'bowls_recipe.json').relative_to(ROOT).as_posix()}

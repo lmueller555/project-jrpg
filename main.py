@@ -14,6 +14,7 @@ except ModuleNotFoundError:
     raise SystemExit('Install the game dependencies first: python -m pip install -r requirements.txt')
 
 from npc_routines import Gardener, RoutineNPC
+from daisy_routine import DaisyRoutine
 from well_routine import DrawingWell
 from social import SocialSystem
 from title_screen import TitleScreen
@@ -138,6 +139,7 @@ class World:
         self.routine_props=[]
         for record in self.data.get('npcs',[]):
             actor=(StationaryNPC if record.get('kind')=='stationary' else
+                   DaisyRoutine if record.get('kind')=='daisy_routine' else
                    Gardener if record.get('routine')=='watering' else BenchWorker)
             self.npcs.append(actor(record,self))
 
@@ -176,6 +178,19 @@ class World:
         nearest=min(self.data['landmarks'],key=lambda p:pygame.Vector2(p['position']).distance_squared_to(position))
         return nearest['name'] if pygame.Vector2(nearest['position']).distance_to(position)<130 else 'Village paths'
 
+    def set_entity_state(self,identifier,state,owner=None):
+        """Change a registered prop image in this cached scene, without moving it."""
+        entity=next((e for e in self.entities if e['id']==identifier),None)
+        if entity is None:raise KeyError(identifier)
+        if state not in entity.get('state_images',{}):raise ValueError(f'Unknown state {state!r} for {identifier}')
+        if entity.get('reserved_by') not in (None,owner):return False
+        path=entity['state_images'][state];surface=self.image(path)
+        if surface.get_size()!=entity['surfaces'][0].get_size():raise ValueError('Prop states must share frame dimensions')
+        entity.update(state=state,frames=[path],surfaces=[surface])
+        raw=next(e for e in self.data['entities'] if e['id']==identifier)
+        raw.update(state=state,frames=[path])
+        return True
+
     def draw(self,target,camera,player,elapsed_ms):
         target.fill('#24302d')
         viewport=pygame.Rect(camera,VIEW_SIZE)
@@ -202,8 +217,10 @@ class World:
                                               round(player.position.y)-anchor[1]-camera[1]))
             elif kind=='npc':
                 anchor=record.draw_anchor
+                if hasattr(record,'draw_background'):record.draw_background(target,camera)
                 target.blit(record.sprite(elapsed_ms),(round(record.position.x)-anchor[0]-camera[0],
                                                        round(record.position.y)-anchor[1]-camera[1]))
+                if hasattr(record,'draw_foreground'):record.draw_foreground(target,camera)
             elif kind=='fitting':
                 x,y=record.data['fitting_position']
                 target.blit(record.frame(elapsed_ms)[1],(x-camera[0],y-camera[1]))
@@ -306,6 +323,7 @@ class Game:
         self.map_size=(220,round(220*self.world.size[1]/self.world.size[0]))
         self.map_image=pygame.transform.scale(self.world.overview,self.map_size)
         self._setup_persistent_npcs()
+        for scene_id in self.town.data.get('ambient_scenes',[]):self._scene_by_id(scene_id)
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -414,7 +432,7 @@ class Game:
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
-                if isinstance(npc,Gardener):npc.update(seconds,scene,blocker)
+                if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
         for npc in self.persistent_npcs:
             scene=self._routine_worlds[npc]
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None

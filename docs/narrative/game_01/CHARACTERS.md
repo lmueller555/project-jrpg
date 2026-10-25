@@ -15,9 +15,9 @@ Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
 requested NPC family; their surname and quest association are unassigned.
 Their home is the new wide cottage in western Eldenmere, directly south of
-the sanctuary. The family, including Daisy, is placed there as stationary
-residents without dialogue or action routines. Daisy has a woven rug as her
-lying spot. Their front, left, right and back idle sprite designs are approved.
+the sanctuary. Liam and his parents are stationary residents without dialogue
+or action routines. Daisy has a woven rug as her lying spot and indoor
+wandering, eating and drinking routines. Their front, left, right and back idle sprite designs are approved.
 
 **Daisy** is Liam's family's female dog. She has gray fur with white and black
 spots, floppy gray ears and a fluffy tail, and is slightly smaller than Liam.

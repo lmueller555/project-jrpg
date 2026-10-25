@@ -156,6 +156,9 @@ def build():
     if recipe.get('rug'):
         from build_liam_household_assets import build as build_household_assets
         build_household_assets()
+    if any(n.get('kind')=='daisy_routine' for n in recipe.get('residents',[])):
+        from build_daisy_routines import build as build_daisy_actions
+        build_daisy_actions()
     entity,frames,position,entry,width=exterior(recipe)
     data['entities']=[e for e in data['entities'] if e['id']!=recipe['id']]+[entity]
     extend_paths(data,recipe)
@@ -163,6 +166,8 @@ def build():
     door=portal(recipe['id'],entry,'north',ROOM.relative_to(ROOT).as_posix(),spawn,'courtyard',frames,position,recipe['id'],width)
     data['doors']=[d for d in data['doors'] if d['id']!=recipe['id']]+[door]
     data['interior_scenes'][recipe['id']]=ROOM.relative_to(ROOT).as_posix()
+    if any(n.get('kind')=='daisy_routine' for n in recipe.get('residents',[])):
+        data['ambient_scenes']=list(dict.fromkeys(data.get('ambient_scenes',[])+[recipe['id']]))
     data['landmarks']=[p for p in data['landmarks'] if p['id']!=recipe['id']]+[
         {'id':recipe['id'],'name':recipe['name'],'position':recipe['landmark_position']}]
     data['destinations'][recipe['id']]=recipe['approach']
