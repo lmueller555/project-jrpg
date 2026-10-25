@@ -1,7 +1,12 @@
 # Tomas — sanctuary routines for review
 
-The sanctuary routines are approved and merged into `main`. Tomas and Caelan's
-opening exchange is also approved; see the [dialogue script](../../narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md).
+The sanctuary routines and left-side crank correction are approved and merged
+into `main`. Tomas and Caelan's opening exchange is also approved; see the
+[dialogue script](../../narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md).
+
+The current tinkering revision moves the crank to the wheel's left side, next
+to Tomas. His hand follows the handle directly with a short bent-arm motion;
+the adjustment pose also uses the near side of the wheel.
 
 - [Full continuous in-game cycle](full_routine.mp4)
 - [Prepare, lift, carry and store a bundle](preparations.gif)
