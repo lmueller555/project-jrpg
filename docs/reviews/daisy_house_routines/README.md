@@ -1,4 +1,4 @@
-# Daisy's house routines — awaiting review
+# Daisy's house routines — approved
 
 Captured from the actual `main.py` room renderer and state machine. Only the
 initial long rug wait is skipped; approach/return travel and actions run at real
@@ -25,5 +25,4 @@ within the same game session. No family dialogue or refill routines are added.
 
 Reproduce with `python tools/build_liam_family_home.py` and
 `python tools/capture_daisy_routines.py`. See `captures.json` for visited states
-and final positions, and `validation.json` for checks. This branch is for review
-and has not been merged into main.
+and final positions, and `validation.json` for checks. The routines were approved by the user on 2026-10-25 for merging into main.

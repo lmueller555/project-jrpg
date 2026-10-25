@@ -54,7 +54,7 @@ remain future work. See
 the [bowl pack](../../../terrain/eldenmere/liam_home/bowls/README.md) and
 [in-game captures](../../../../docs/reviews/daisy_bowls/README.md).
 
-## Daisy's indoor routine — awaiting review
+## Daisy's indoor routine — approved
 
 `../routines/daisy.json` defines her calm walking speed, wander points, rug rest,
 food/water cooldowns and separate bowl approach/clear points. The town's

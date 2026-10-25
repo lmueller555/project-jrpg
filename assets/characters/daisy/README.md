@@ -61,7 +61,7 @@ under her lowered chest and the plume rests alongside her body. She is placed
 on the woven rug in Liam's house between her wandering and bowl visits.
 See the [in-game household and rug close-up](../../../docs/reviews/liam_household/README.md).
 
-## House routines — awaiting review
+## House routines — approved
 
 `house_routines/` adds four-pose stand/settle, head-lowering/raising, eating and
 drinking actions. Approved idles, walks, runs and lying art are unchanged.

@@ -1,4 +1,4 @@
-# Daisy's indoor action poses — awaiting review
+# Daisy's indoor action poses — approved
 
 Eight actions each contain four unique, transparent 64×48 pixel frames:
 stand_up, settle_down, lower_food, raise_food, eat, lower_water, raise_water,
