@@ -32,10 +32,10 @@ fluffy-tail sway. Approved face, fur palette and spots are retained. The native
 32×36 frame and two-pixel height difference from Liam remain intact. See the
 [family front-walk review](../../../docs/reviews/liam_family_front_walks/README.md).
 
-## Left, right and back walks — review pending
+## Left, right and back walks — approved
 
 `walk_left/`, `walk_right/` and `walk_back/` each contain four 140 ms walking
 frames, a native strip, animation metadata and a reproducible pose recipe.
 Approved directional appearances, palettes and front walks remain unchanged.
 See the [enlarged synchronized previews](../../../docs/reviews/liam_family_directional_walks/README.md).
-These new directions await user approval; no world placement is added.
+All four walking directions are approved; no world placement is added.

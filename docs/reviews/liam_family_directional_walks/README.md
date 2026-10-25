@@ -1,7 +1,9 @@
 # Liam, his parents and Daisy — remaining walk directions
 
-**Left, right and back walks are ready for user review; not yet approved or
-merged.** The existing front walks are approved reference animations.
+**All left, right and back walks are approved by the user and merged into
+`main`.** All four walking directions are now approved for Liam, both parents
+and Daisy. The previews retain their original review labels as a record of the
+approved animations.
 
 ## Enlarged looping comparisons
 

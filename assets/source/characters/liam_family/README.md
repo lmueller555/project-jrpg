@@ -45,7 +45,7 @@ source idle hash, template, arm registration, body regions, boot projections
 and combined head/shoulder bob. The mother's apron is posed with the dress.
 The front walks are approved; approved idles and palettes are read-only.
 
-## Left, right and back walking source — review pending
+## Left, right and back walking source — approved
 
 `tools/build_liam_family_directional_walks.py` reposes each approved directional
 idle without rewriting it. New per-phase layers live under
@@ -55,4 +55,4 @@ the approved character proportions.
 
 Native frames, recipes and layer paths are in the matching character animation
 metadata. The [directional walk review](../../../../docs/reviews/liam_family_directional_walks/README.md)
-contains synchronized looping comparisons. These new walks await approval.
+contains synchronized looping comparisons. All four walking directions are approved.
