@@ -63,4 +63,4 @@ contains synchronized looping comparisons. All four walking directions are appro
 parts with new four-pose running joints. Per-frame layers are retained under
 `liam/run_left/parts/`. The animation recipes link source input hashes and pose templates.
 See the [run prototype review](../../../../docs/reviews/liam_daisy_run_prototypes/README.md).
-The left run awaits approval; no approved idle or walk is rewritten.
+The left run is approved; no approved idle or walk is rewritten.

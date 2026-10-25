@@ -1,6 +1,8 @@
 # Liam and Daisy — four-frame running prototypes
 
-**Two left-facing prototypes for user review. Not approved or merged.**
+**Both left-facing running animations are approved by the user.**
+The previews retain their original prototype labels. These assets have not yet
+been merged into `main`.
 Each uses exactly **four frames**, matching the walk packs' frame count.
 The run cadence is **100 ms per frame / 400 ms per cycle**, compared with the
 approved walk's 140 ms per frame / 560 ms cycle.

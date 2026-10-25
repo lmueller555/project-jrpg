@@ -40,8 +40,8 @@ Approved directional appearances, palettes and front walks remain unchanged.
 See the [enlarged synchronized previews](../../../docs/reviews/liam_family_directional_walks/README.md).
 All four walking directions are approved; no world placement is added.
 
-## Left-facing run — prototype for review
+## Left-facing run — approved
 
 `run_left/` adds a four-frame run prototype at 100 ms per frame. See the
 [normal-speed, slow-motion and walk/run comparisons](../../../docs/reviews/liam_daisy_run_prototypes/README.md).
-This prototype awaits approval; approved idles and walks are unchanged.
+The left run is approved; approved idles and walks are unchanged.
