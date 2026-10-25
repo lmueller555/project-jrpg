@@ -22,3 +22,16 @@ from row 9, mother 14×34 from row 1, and father 16×34 from row 1. The child's
 shorter body and legs and larger relative head preserve his younger proportions.
 The builder verifies silhouette bounds, opaque/transparent alpha, palette
 membership, eye colors and exact reconstruction from the four source layers.
+
+## Directional idle source
+
+`turnaround_concepts.png` retains the generated nine-view continuation of the
+approved front designs. Rows are mother, Liam, father; columns are left, right,
+back. `turnaround_export.json` records crops, material bands, face/collar/braid
+windows, eye landmarks and layer ranges for the new views.
+
+Run `python tools/build_liam_family_turnarounds.py`. It reads the approved
+palettes and front files without rewriting them. Each new view has four layers
+under `CHARACTER/idle_DIRECTION_layers/`. Liam stays 26 visible pixels tall,
+and both parents 34, inside 24×36 frames with baseline row 34. New directions
+are awaiting review separately from the approved front designs.

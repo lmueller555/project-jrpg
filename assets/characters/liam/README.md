@@ -11,3 +11,14 @@ eyes and frame registration; `palette.json` records the limited colors.
 Build using `python tools/build_liam_family_idles.py`. His parents and the
 enlarged comparison are linked in `../liam_family/README.md`. The front idle is
 approved; no world placement, walks or dialogue have been added.
+
+## Left, right and back — review
+
+`idle_left.png`, `idle_right.png` and `idle_back.png` retain Liam's 26 visible
+pixels and 24×36 frame, green collar, ochre tunic, breeches and boots. Profiles
+have one green eye and skin-colored chins; back has no visible eyes. The
+approved front and palette are unchanged. `idle_all.png`/`idle_all.json` combine
+front, left, right and back with independent approval status.
+
+Build with `python tools/build_liam_family_turnarounds.py`; see the
+[turnaround review](../../../docs/reviews/liam_family_turnaround/README.md).

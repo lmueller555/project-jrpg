@@ -9,7 +9,12 @@ Mother and Liam share chestnut hair and green eyes. Father has darker brown
 hair, a short beard and hazel eyes. All have empty hands and front-facing idles.
 
 Individual assets live in `../liam/`, `../liam_mother/` and `../liam_father/`.
-These front-facing idle designs are approved. Walking sprites, portraits, routines
-and placement in the playable world are not yet part of this pack.
+These front-facing idle designs are approved. New left, right and back idles are
+available for review in each member's folder. `idle_directions.png` is a 96×108
+sheet with mother/Liam/father rows and front/left/right/back columns;
+`idle_directions.json` records the mixed front-approved/new-review status.
+Walking sprites, portraits, routines and world placement remain future work.
 
 See [the enlarged review](../../../docs/reviews/liam_family/README.md).
+The [directional idle review](../../../docs/reviews/liam_family_turnaround/README.md)
+includes all nine new views alongside the approved fronts.

@@ -1,0 +1,59 @@
+{
+  "character": "liam",
+  "image": "idle_all.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "visible_height_px": 26,
+  "frames": [
+    {
+      "direction": "front",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "status": "approved",
+      "metadata": "idle_front.json"
+    },
+    {
+      "direction": "left",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "status": "review",
+      "metadata": "idle_left.json"
+    },
+    {
+      "direction": "right",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "status": "review",
+      "metadata": "idle_right.json"
+    },
+    {
+      "direction": "back",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "status": "review",
+      "metadata": "idle_back.json"
+    }
+  ]
+}

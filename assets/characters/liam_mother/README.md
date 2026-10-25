@@ -11,3 +11,16 @@ eyes and frame registration; `palette.json` records the limited colors.
 Build using `python tools/build_liam_family_idles.py`. See the family pack at
 `../liam_family/README.md`. The front idle is approved; no world placement, walks
 or dialogue have been added.
+
+## Left, right and back — review
+
+`idle_left.png`, `idle_right.png` and `idle_back.png` retain the approved dress,
+apron, chestnut hair, boots and 34-pixel visible height in 24×36 frames. The
+braid follows her anatomical right shoulder: near in right profile, largely
+obscured in left profile and toward the right in back. Back has a cream apron
+waistband over the blue-green dress, with no bow. Profiles have one green eye
+and skin-colored chins; back has no visible eyes. Approved front and palette
+remain unchanged. `idle_all.png`/`idle_all.json` combine all four views.
+
+Build with `python tools/build_liam_family_turnarounds.py`; see the
+[turnaround review](../../../docs/reviews/liam_family_turnaround/README.md).

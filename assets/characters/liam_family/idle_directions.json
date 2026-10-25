@@ -1,0 +1,181 @@
+{
+  "status": "review",
+  "image": "idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "row_order": [
+    "liam_mother",
+    "liam",
+    "liam_father"
+  ],
+  "column_order": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "members": [
+    {
+      "character": "liam_mother",
+      "label": "Mother",
+      "sprite_root": "assets/characters/liam_mother",
+      "visible_height_px": 34,
+      "frames": [
+        {
+          "direction": "front",
+          "rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "status": "approved",
+          "metadata": "idle_front.json"
+        },
+        {
+          "direction": "left",
+          "rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_left.json"
+        },
+        {
+          "direction": "right",
+          "rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_right.json"
+        },
+        {
+          "direction": "back",
+          "rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_back.json"
+        }
+      ]
+    },
+    {
+      "character": "liam",
+      "label": "Liam",
+      "sprite_root": "assets/characters/liam",
+      "visible_height_px": 26,
+      "frames": [
+        {
+          "direction": "front",
+          "rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "status": "approved",
+          "metadata": "idle_front.json"
+        },
+        {
+          "direction": "left",
+          "rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_left.json"
+        },
+        {
+          "direction": "right",
+          "rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_right.json"
+        },
+        {
+          "direction": "back",
+          "rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_back.json"
+        }
+      ]
+    },
+    {
+      "character": "liam_father",
+      "label": "Father",
+      "sprite_root": "assets/characters/liam_father",
+      "visible_height_px": 34,
+      "frames": [
+        {
+          "direction": "front",
+          "rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "status": "approved",
+          "metadata": "idle_front.json"
+        },
+        {
+          "direction": "left",
+          "rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_left.json"
+        },
+        {
+          "direction": "right",
+          "rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_right.json"
+        },
+        {
+          "direction": "back",
+          "rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "status": "review",
+          "metadata": "idle_back.json"
+        }
+      ]
+    }
+  ]
+}

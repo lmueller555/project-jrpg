@@ -1,0 +1,48 @@
+{
+  "character": "liam",
+  "family": "liam_family",
+  "animation": "idle.left",
+  "status": "review",
+  "approved_front_reference": "idle_front.json",
+  "image": "idle_left.png",
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "occupied_rect": [
+    7,
+    9,
+    10,
+    26
+  ],
+  "visible_height_px": 26,
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "eyes": {
+    "top_pixels": [
+      [
+        10,
+        17
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "source": "assets/source/characters/liam_family/turnaround_concepts.png",
+  "export_recipe": "assets/source/characters/liam_family/turnaround_export.json",
+  "layers_from_repo_root": [
+    "assets/source/characters/liam_family/liam/idle_left_layers/head.png",
+    "assets/source/characters/liam_family/liam/idle_left_layers/upper_body.png",
+    "assets/source/characters/liam_family/liam/idle_left_layers/tunic_and_hands.png",
+    "assets/source/characters/liam_family/liam/idle_left_layers/legs_and_boots.png"
+  ]
+}

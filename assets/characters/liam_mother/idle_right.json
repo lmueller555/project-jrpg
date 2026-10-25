@@ -1,0 +1,52 @@
+{
+  "character": "liam_mother",
+  "family": "liam_family",
+  "animation": "idle.right",
+  "status": "review",
+  "approved_front_reference": "idle_front.json",
+  "image": "idle_right.png",
+  "rect": [
+    0,
+    0,
+    24,
+    36
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "occupied_rect": [
+    6,
+    1,
+    12,
+    34
+  ],
+  "visible_height_px": 34,
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "palette": "palette.json",
+  "eyes": {
+    "top_pixels": [
+      [
+        14,
+        9
+      ]
+    ],
+    "height": 2,
+    "iris_offset_y": 1
+  },
+  "source": "assets/source/characters/liam_family/turnaround_concepts.png",
+  "export_recipe": "assets/source/characters/liam_family/turnaround_export.json",
+  "layers_from_repo_root": [
+    "assets/source/characters/liam_family/liam_mother/idle_right_layers/head.png",
+    "assets/source/characters/liam_family/liam_mother/idle_right_layers/bodice_and_arms.png",
+    "assets/source/characters/liam_family/liam_mother/idle_right_layers/skirt_and_hands.png",
+    "assets/source/characters/liam_family/liam_mother/idle_right_layers/boots.png"
+  ],
+  "braid": {
+    "anatomical_side": "right",
+    "visibility": "near shoulder"
+  }
+}
