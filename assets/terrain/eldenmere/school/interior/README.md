@@ -1,4 +1,4 @@
-# Eldenmere schoolroom — awaiting review
+# Eldenmere schoolroom — approved
 
 One bright classroom with a **16×12-tile floor** at native 24-pixel terrain scale.
 The 432×384 canvas has floor rectangle [24,72,384,288], south threshold

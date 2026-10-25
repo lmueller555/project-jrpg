@@ -1,4 +1,4 @@
-# Eldenmere school — awaiting review
+# Eldenmere school — approved
 
 - [School exterior and shaded yard](exterior.gif)
 - [Whole furnished classroom](interior.gif)
@@ -26,5 +26,5 @@ a later stage. No teacher or children have been moved from existing routines.
 
 Reproduce with `python tools/build_eldenmere_school.py`, then
 `python tools/capture_eldenmere_school.py`. `captures.json` records scene and
-door evidence, GIF timing, and scope. This branch is published for review and
-has not been merged into main.
+door evidence, GIF timing, and scope. The user approved this school and the
+subsequent household addition on 2026-10-25 for merging into main.

@@ -1,4 +1,4 @@
-# Eldenmere schoolhouse exterior — awaiting review
+# Eldenmere schoolhouse exterior — approved
 
 Native 192×192 transparent pixel-art frames, matching 24×24 terrain and the
 approved character scale. Ground registration is [24,96,144,96], a six-by-four

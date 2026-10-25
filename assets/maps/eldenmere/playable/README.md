@@ -49,7 +49,7 @@ front of the house, then returns them to their bed/rug resting spots. No town
 terrain or building positions are changed. See the
 [routine review](../../../../docs/reviews/liam_daisy_play/README.md).
 
-## Village school — awaiting review
+## Village school — approved
 
 An enterable schoolhouse now stands northeast of the well square on the lower
 western bank, with a shaded forecourt and a path into the square. Its separate
@@ -58,7 +58,7 @@ attendance and teaching routines will follow the building review. See the
 [school placement and build instructions](../school/README.md) and
 [exterior, classroom and door previews](../../../../docs/reviews/eldenmere_school/README.md).
 
-## Generic villager households — awaiting review
+## Generic villager households — approved
 
 Three parent pairs now belong to home_a, home_b and home_c. Five adults are
 placed inside those cottages; the existing gardener remains outdoors and is

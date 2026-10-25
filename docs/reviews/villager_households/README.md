@@ -1,4 +1,4 @@
-# Villager parents and assigned homes — awaiting review
+# Villager parents and assigned homes — approved
 
 - [All three parent pairs](parent_pairs.png) — approved sprite reference board.
 - [Gardener's home / home_a](home_a.gif) — father inside; mother working outside.
@@ -19,5 +19,5 @@ open. All three 13×10 homes retain clear entrances and furnishing access.
 Reproduce with `python tools/build_villager_households.py`, then
 `python tools/capture_villager_households.py`. `captures.json` records home
 membership and actual actor presence; `validation.json` records verification.
-This review branch builds on the pending school addition and is not merged
-into main.
+The user approved the households and included school addition on 2026-10-25
+for merging into main.

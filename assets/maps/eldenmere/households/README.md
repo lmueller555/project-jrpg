@@ -1,4 +1,4 @@
-# Three villager households — awaiting review
+# Three villager households — approved
 
 `households.json` assigns the six approved generic adult appearances:
 

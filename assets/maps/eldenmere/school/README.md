@@ -1,4 +1,4 @@
-# Eldenmere school — awaiting review
+# Eldenmere school — approved
 
 The school is on lower ground northeast of the well square, south of Mira's
 workshop and west of the stream. Its native exterior origin is [576,528], with
@@ -23,7 +23,7 @@ and collision registration.
 Liam's mother is the teacher, recorded in the room and family metadata. This
 stage adds the building and furnished interior. Teaching, pupil attendance and
 commuting schedules are not assigned yet; the existing household routines
-continue while these assets are reviewed.
+continue until teaching and attendance schedules are implemented.
 
 ```sh
 python tools/build_eldenmere_school.py
