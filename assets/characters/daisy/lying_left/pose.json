@@ -1,0 +1,50 @@
+{
+  "character": "daisy",
+  "pose": "lying.left",
+  "status": "review",
+  "image": "pose.png",
+  "frame_size": [
+    40,
+    36
+  ],
+  "draw_anchor": [
+    20,
+    30
+  ],
+  "foot_anchor": [
+    20,
+    34
+  ],
+  "source_idle": "../idle_left.png",
+  "approved_idle_sha256": "872ac7a70c5fa299850d133660762dd80e51da5c173df4d38fcc77123948c312",
+  "head_offset": [
+    4,
+    6
+  ],
+  "body_offset": [
+    4,
+    5
+  ],
+  "tail_rotation_clockwise_degrees": 90,
+  "eyes": {
+    "top_pixels": [
+      [
+        9,
+        23
+      ]
+    ],
+    "iris_offset_y": 1
+  },
+  "layers_from_repo_root": [
+    "assets/source/characters/daisy/lying_left/parts/tail.png",
+    "assets/source/characters/daisy/lying_left/parts/far_forepaw.png",
+    "assets/source/characters/daisy/lying_left/parts/body.png",
+    "assets/source/characters/daisy/lying_left/parts/folded_hind_leg.png",
+    "assets/source/characters/daisy/lying_left/parts/folded_foreleg.png",
+    "assets/source/characters/daisy/lying_left/parts/head.png",
+    "assets/source/characters/daisy/lying_left/parts/ear.png"
+  ],
+  "palette": "../palette.json",
+  "source_recipe": "assets/source/characters/daisy/lying_left/recipe.json",
+  "notes": "A single awake resting pose with folded legs, lowered chest, original face and floppy ear, large left flank spot and fluffy tail laid beside her. No animation or routine."
+}

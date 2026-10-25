@@ -1,0 +1,59 @@
+{
+  "source_idle": "assets/characters/daisy/idle_left.png",
+  "approved_idle_sha256": "872ac7a70c5fa299850d133660762dd80e51da5c173df4d38fcc77123948c312",
+  "head_offset": [
+    4,
+    6
+  ],
+  "body_offset": [
+    4,
+    5
+  ],
+  "tail_source_pivot": [
+    23,
+    24
+  ],
+  "tail_offset": [
+    4,
+    3
+  ],
+  "tail_rotation_clockwise_degrees": 90,
+  "pose_output": "assets/characters/daisy/lying_left/pose.png",
+  "folded_foreleg": [
+    [
+      16,
+      29
+    ],
+    [
+      13,
+      32
+    ],
+    [
+      9,
+      33
+    ]
+  ],
+  "folded_hind_leg": [
+    [
+      26,
+      29
+    ],
+    [
+      28,
+      31
+    ],
+    [
+      25,
+      32
+    ]
+  ],
+  "layers_from_repo_root": [
+    "assets/source/characters/daisy/lying_left/parts/tail.png",
+    "assets/source/characters/daisy/lying_left/parts/far_forepaw.png",
+    "assets/source/characters/daisy/lying_left/parts/body.png",
+    "assets/source/characters/daisy/lying_left/parts/folded_hind_leg.png",
+    "assets/source/characters/daisy/lying_left/parts/folded_foreleg.png",
+    "assets/source/characters/daisy/lying_left/parts/head.png",
+    "assets/source/characters/daisy/lying_left/parts/ear.png"
+  ]
+}

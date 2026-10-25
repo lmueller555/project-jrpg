@@ -1,0 +1,64 @@
+{
+  "focused_checks": {
+    "run": 39,
+    "passed": 39
+  },
+  "household_checks": {
+    "run": 7,
+    "passed": 7
+  },
+  "full_suite": {
+    "run": 164,
+    "passed": 163,
+    "failed": [
+      "test_tomas_routines.TomasRoutines.test_full_schedule_completes_with_other_npcs_and_preserves_identity"
+    ]
+  },
+  "baseline_comparison": {
+    "commit": "412225f0da2c787b66733213e7ee43904d20554e",
+    "same_seeded_results_before_and_after": true,
+    "results": [
+      {
+        "seed": 0,
+        "cycles": 0,
+        "state": "walk_to_hall",
+        "position": [
+          216.0,
+          294.86666666666656
+        ],
+        "ticks": 1599
+      },
+      {
+        "seed": 1,
+        "cycles": 1,
+        "state": "prepare",
+        "position": [
+          160.0,
+          262.0
+        ],
+        "ticks": 720
+      },
+      {
+        "seed": 2,
+        "cycles": 0,
+        "state": "walk_to_hall",
+        "position": [
+          216.0,
+          300.0
+        ],
+        "ticks": 1599
+      },
+      {
+        "seed": 3,
+        "cycles": 1,
+        "state": "prepare",
+        "position": [
+          160.0,
+          262.0
+        ],
+        "ticks": 734
+      }
+    ]
+  },
+  "byte_identical_rebuild_files": 62
+}

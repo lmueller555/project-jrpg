@@ -22,7 +22,7 @@ asymmetric markings; no mirrored duplicate is used. The back has no visible eyes
 
 Build with `python tools/build_daisy_idles.py`. See
 [enlarged views and the Liam comparison](../../../docs/reviews/daisy/README.md).
-World placement and pet routines remain future work.
+Daisy is now placed in the family cottage; pet routines remain future work.
 
 ## Front walk — approved
 
@@ -52,3 +52,11 @@ The left run is approved; approved idles and walks are unchanged.
 100 ms per frame. They continue the approved left run and use each approved
 directional idle's appearance. See the [all-direction normal/slow loops](../../../docs/reviews/liam_daisy_directional_runs/README.md).
 All four running directions are approved and merged into `main`; the left run is unchanged.
+
+## Lying pose and rug — review pending
+
+`lying_left/pose.png` is a single 40×36 still pose, composed from the approved
+left-facing head, coat, floppy ear, paw pixels and fluffy tail. Her legs fold
+under her lowered chest and the plume rests alongside her body. She is placed
+on the woven rug in Liam's house without a routine, movement or dialogue.
+See the [in-game household and rug close-up](../../../docs/reviews/liam_household/README.md).

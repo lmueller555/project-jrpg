@@ -70,5 +70,96 @@
   "daisy_rest_space": [
     108,
     282
+  ],
+  "rug": {
+    "id": "daisy_rug",
+    "image": "assets/terrain/eldenmere/liam_home/rug.png",
+    "position": [
+      80,
+      258
+    ],
+    "frame_size": [
+      64,
+      36
+    ],
+    "access": [
+      144,
+      282
+    ],
+    "solid": false
+  },
+  "residents": [
+    {
+      "id": "liam",
+      "name": "Liam",
+      "kind": "stationary",
+      "position": [
+        120,
+        234
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam/idle_front.png"
+    },
+    {
+      "id": "liam_mother",
+      "name": "Liam's mother",
+      "kind": "stationary",
+      "position": [
+        302,
+        170
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam_mother/idle_right.png"
+    },
+    {
+      "id": "liam_father",
+      "name": "Liam's father",
+      "kind": "stationary",
+      "position": [
+        366,
+        234
+      ],
+      "probe_size": [
+        14,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam_father/idle_left.png"
+    },
+    {
+      "id": "daisy",
+      "name": "Daisy",
+      "kind": "stationary",
+      "position": [
+        108,
+        282
+      ],
+      "probe_size": [
+        28,
+        8
+      ],
+      "draw_anchor": [
+        20,
+        30
+      ],
+      "sprite": "assets/characters/daisy/lying_left/pose.png"
+    }
   ]
 }

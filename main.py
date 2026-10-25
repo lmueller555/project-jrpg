@@ -97,6 +97,20 @@ class BenchWorker:
     def sprite(self,elapsed_ms):return self.frame(elapsed_ms)[0]
 
 
+class StationaryNPC:
+    """One fixed pose with a foot blocker and no behavior or social hooks."""
+    def __init__(self,record,world):
+        self.data=record
+        self.position=pygame.Vector2(record['position'])
+        self.draw_anchor=record['draw_anchor']
+        self._sprite=world.image(record['sprite'])
+        width,height=record['probe_size']
+        self.blocker=pygame.Rect(round(self.position.x)-width//2,
+                                 round(self.position.y)-height//2,width,height)
+
+    def sprite(self,elapsed_ms):return self._sprite
+
+
 class World:
     """Approved town art, animated world objects, and pixel-accurate blockers."""
     def __init__(self,path=MAP_FILE,image_cache=None):
@@ -123,7 +137,8 @@ class World:
         self.npcs=[]
         self.routine_props=[]
         for record in self.data.get('npcs',[]):
-            actor=Gardener if record['routine']=='watering' else BenchWorker
+            actor=(StationaryNPC if record.get('kind')=='stationary' else
+                   Gardener if record.get('routine')=='watering' else BenchWorker)
             self.npcs.append(actor(record,self))
 
     def attach_routine_props(self,actor):

@@ -246,6 +246,20 @@
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0
+    },
+    {
+      "id": "daisy_rug",
+      "position": [
+        80,
+        258
+      ],
+      "sort_y": -1,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/liam_home/rug.png"
+      ],
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
     }
   ],
   "collision": "assets/maps/eldenmere/building_interiors/rooms/liam_house/collision.png",
@@ -280,7 +294,80 @@
       "arrival_door": "liam_house"
     }
   ],
-  "npcs": [],
+  "npcs": [
+    {
+      "id": "liam",
+      "name": "Liam",
+      "kind": "stationary",
+      "position": [
+        120,
+        234
+      ],
+      "probe_size": [
+        10,
+        6
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam/idle_front.png"
+    },
+    {
+      "id": "liam_mother",
+      "name": "Liam's mother",
+      "kind": "stationary",
+      "position": [
+        302,
+        170
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam_mother/idle_right.png"
+    },
+    {
+      "id": "liam_father",
+      "name": "Liam's father",
+      "kind": "stationary",
+      "position": [
+        366,
+        234
+      ],
+      "probe_size": [
+        14,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/liam_father/idle_left.png"
+    },
+    {
+      "id": "daisy",
+      "name": "Daisy",
+      "kind": "stationary",
+      "position": [
+        108,
+        282
+      ],
+      "probe_size": [
+        28,
+        8
+      ],
+      "draw_anchor": [
+        20,
+        30
+      ],
+      "sprite": "assets/characters/daisy/lying_left/pose.png"
+    }
+  ],
   "quests": [],
   "kind": "interior",
   "destinations": {
@@ -337,7 +424,7 @@
       216
     ],
     "daisy_rest_space": [
-      108,
+      144,
       282
     ]
   },

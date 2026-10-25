@@ -36,5 +36,9 @@ extension automatically, including when called by the full town compiler.
 routes, collision and map overview are checked into the runtime assets.
 
 See the [marked town layout, in-game exterior loop and interior](../../../../docs/reviews/liam_family_home/README.md).
-The house is playable by running `main.py` from this branch. Family NPC placement,
-dialogue and routines are the next stage; no new residents are spawned here yet.
+The house is playable by running `main.py`. Liam, his mother, his father and
+Daisy are stationary residents inside. Daisy has a still lying pose on a flat
+woven rug. No dialogue, portraits, actions or movement routines are assigned.
+`house.json` now also records the four resident sprites, positions, foot probes
+and rug registration; rebuilding preserves this placement.
+See the [household review](../../../../docs/reviews/liam_household/README.md).

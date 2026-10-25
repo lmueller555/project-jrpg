@@ -99,7 +99,16 @@ def interior(recipe,data,entry):
                                 'frame_duration_ms':300,'phase_offset':0})
         if obj.get('floor_rect'):blocked.paste(255,rect_box(obj['floor_rect']))
         room['destinations'][obj['id']]=obj['access']
-    room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
+    if recipe.get('rug'):
+        rug=recipe['rug']
+        room['entities'].append({'id':rug['id'],'position':rug['position'],'sort_y':-1,
+                                'sort_priority':0,'frames':[rug['image']],
+                                'frame_duration_ms':1000,'phase_offset':0})
+        # The rug is walkable. Daisy's foot blocker remains an actor blocker,
+        # and the access point is beside her rather than inside her body.
+        room['destinations']['daisy_rest_space']=rug['access']
+    else:room['destinations']['daisy_rest_space']=recipe['daisy_rest_space']
+    room['npcs']=recipe.get('residents',[])
     room['collision']=save(ROOT/room['collision'],blocked)
     spawn=room_spawn(meta,blocked);outside=[entry[0],entry[1]+12]
     threshold=meta['entry_rect'];centre=threshold[0]+threshold[2]/2
@@ -110,7 +119,8 @@ def interior(recipe,data,entry):
     write_json(ROOM,room)
     write_json(AREA/'interior_layout.json',{'source_room':room['source_room'],'household':recipe['household'],
                 'floor_tiles':recipe['floor_tiles'],'extra_objects':extras,'parents_bed':'bed',
-                'table_access':recipe['table_access'],'daisy_rest_space':recipe['daisy_rest_space']})
+                'table_access':recipe['table_access'],'daisy_rest_space':recipe['daisy_rest_space'],
+                'rug':recipe.get('rug'),'residents':recipe.get('residents',[])})
     return spawn
 
 
@@ -126,6 +136,9 @@ def overview(data):
 
 def build():
     recipe=read_json(AREA/'house.json');data=read_json(TOWN)
+    if recipe.get('rug'):
+        from build_liam_household_assets import build as build_household_assets
+        build_household_assets()
     entity,frames,position,entry,width=exterior(recipe)
     data['entities']=[e for e in data['entities'] if e['id']!=recipe['id']]+[entity]
     extend_paths(data,recipe)

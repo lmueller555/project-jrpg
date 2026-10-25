@@ -33,10 +33,11 @@ class LiamFamilyHomeTests(unittest.TestCase):
         for x in range(288,385,2):self.assertTrue(world.can_stand((x,546)),x)
         self.assertIn('liam_house',{x['id'] for x in world.data['landmarks']})
 
-    def test_family_assignment_does_not_replace_venn_or_place_npcs_early(self):
+    def test_family_assignment_does_not_replace_venn(self):
         expected=['liam','liam_mother','liam_father','daisy']
         self.assertEqual(self.room.data['household'],expected)
-        self.assertEqual(self.room.data['npcs'],[])
+        self.assertEqual([n['id'] for n in self.room.data['npcs']],expected)
+        self.assertTrue(all(n['kind']=='stationary' for n in self.room.data['npcs']))
         self.assertEqual(self.room.data['quests'],[])
         family=main.read_json(main.ROOT/'assets/characters/liam_family/family.json')
         self.assertEqual(family['home']['scene'],'liam_house')
@@ -55,7 +56,8 @@ class LiamFamilyHomeTests(unittest.TestCase):
         self.assertTrue(world.can_stand(world.data['spawn']))
         self.assertFalse(world.can_stand((60,240)))  # Liam's bed footprint.
         self.assertFalse(world.can_stand((174,150)))  # Retained partition.
-        self.assertTrue(world.can_stand(self.recipe['daisy_rest_space'],(12,8)))
+        daisy=next(n for n in world.npcs if n.data['id']=='daisy')
+        self.assertTrue(world.can_stand(self.recipe['daisy_rest_space'],(12,8),ignore_npc=daisy))
 
     def test_native_animated_exterior_and_matching_door(self):
         entity=next(x for x in self.game.town.entities if x['id']=='liam_house')

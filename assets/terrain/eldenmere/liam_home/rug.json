@@ -1,0 +1,51 @@
+{
+  "id": "daisy_woven_rug",
+  "status": "review",
+  "frame_size": [
+    64,
+    36
+  ],
+  "palette": {
+    "edge": "#45382d",
+    "shadow": "#304f52",
+    "base": "#426d6c",
+    "light": "#6e9590",
+    "linen": "#ded1ae",
+    "accent": "#a35d45"
+  },
+  "body_rect": [
+    4,
+    3,
+    56,
+    30
+  ],
+  "inset_rect": [
+    9,
+    8,
+    46,
+    20
+  ],
+  "motif_centres": [
+    [
+      18,
+      18
+    ],
+    [
+      32,
+      18
+    ],
+    [
+      46,
+      18
+    ]
+  ],
+  "solid": false,
+  "purpose": "A flat woven teal-and-cream rug with terracotta accents for Daisy's lying spot.",
+  "image": "rug.png",
+  "layers_from_repo_root": [
+    "assets/source/terrain/eldenmere/liam_home/parts/woven_base.png",
+    "assets/source/terrain/eldenmere/liam_home/parts/border_and_motifs.png",
+    "assets/source/terrain/eldenmere/liam_home/parts/fringe.png"
+  ],
+  "source_recipe": "assets/source/terrain/eldenmere/liam_home/rug_recipe.json"
+}
