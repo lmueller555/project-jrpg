@@ -760,6 +760,137 @@
       ],
       "frame_duration_ms": 200,
       "phase_offset": 0
+    },
+    {
+      "id": "school",
+      "position": [
+        576,
+        528
+      ],
+      "sort_y": 720,
+      "frames": [
+        "assets/terrain/eldenmere/school/exterior/frames/frame_01.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_02.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_03.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_04.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_05.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_06.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_07.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_08.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_09.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_10.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_11.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_12.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_13.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_14.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_15.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_16.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_17.png",
+        "assets/terrain/eldenmere/school/exterior/frames/frame_18.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "school.shade_tree",
+      "position": [
+        536,
+        648
+      ],
+      "sort_y": 768,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_03.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_04.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_05.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_06.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_07.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_08.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "school.east_shrub",
+      "position": [
+        746,
+        718
+      ],
+      "sort_y": 742,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_01.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_02.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_03.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_04.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_05.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_06.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_07.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_08.png",
+        "assets/terrain/eldenmere/foliage/shrub/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "school.west_flowers",
+      "position": [
+        604,
+        734
+      ],
+      "sort_y": 758,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_01.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_02.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_03.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_04.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_05.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_06.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_07.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_08.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_yellow/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "school.east_flowers",
+      "position": [
+        726,
+        734
+      ],
+      "sort_y": 758,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_01.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_02.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_03.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_04.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_05.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_06.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_07.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_08.png",
+        "assets/terrain/eldenmere/grass_flowers/flowers_violet/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "school.bench",
+      "position": [
+        698,
+        742
+      ],
+      "sort_y": 772,
+      "frames": [
+        "assets/maps/eldenmere/playable/entities/sanctuary.bench/frame_01.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
     }
   ],
   "foreground": [
@@ -843,6 +974,14 @@
       "position": [
         288,
         552
+      ]
+    },
+    {
+      "id": "school",
+      "name": "Village school",
+      "position": [
+        672,
+        738
       ]
     }
   ],
@@ -1010,11 +1149,15 @@
     "liam_house": [
       288,
       546
+    ],
+    "school": [
+      672,
+      738
     ]
   },
   "layout_source": "assets/maps/eldenmere/well_square/layout.json",
   "original_layout_source": "assets/maps/eldenmere/terrain_foundation/adapted_plan.json",
-  "navigation_allowed": "assets/maps/eldenmere/liam_house/allowed_routes.png",
+  "navigation_allowed": "assets/maps/eldenmere/school/allowed_routes.png",
   "source_art": [
     "assets/terrain/eldenmere/workshop/workshop.json",
     "assets/terrain/eldenmere/sanctuary_charm/charm.json",
@@ -1053,7 +1196,11 @@
         8
       ],
       "animation": "assets/characters/npcs/female_02/gardener/animations.json",
-      "behavior": "assets/maps/eldenmere/routines/gardener.json"
+      "behavior": "assets/maps/eldenmere/routines/gardener.json",
+      "home_scene": "home_a",
+      "household_id": "gardener_family",
+      "family_role": "mother",
+      "partner_id": "villager_male_01"
     }
   ],
   "persistent_npcs": [
@@ -1432,6 +1579,39 @@
       ],
       "arrival_facing": "back",
       "arrival_door": "courtyard"
+    },
+    {
+      "id": "school",
+      "anchor": [
+        672.0,
+        726
+      ],
+      "entry_y": 726,
+      "entry_side": "north",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [
+        "assets/terrain/eldenmere/school/exterior/doors/frame_01.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_02.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_03.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_04.png",
+        "assets/terrain/eldenmere/school/exterior/doors/frame_05.png"
+      ],
+      "position": [
+        662,
+        678
+      ],
+      "host": "school",
+      "requires_open": true,
+      "destination": "assets/maps/eldenmere/building_interiors/rooms/school/map.json",
+      "spawn": [
+        216,
+        342
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "courtyard"
     }
   ],
   "interior_scenes": {
@@ -1446,12 +1626,15 @@
     "home_c": "assets/maps/eldenmere/building_interiors/rooms/home_c/map.json",
     "mira": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
     "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
-    "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json"
+    "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
+    "school": "assets/maps/eldenmere/building_interiors/rooms/school/map.json"
   },
   "layout_additions": [
-    "assets/maps/eldenmere/liam_house/house.json"
+    "assets/maps/eldenmere/liam_house/house.json",
+    "assets/maps/eldenmere/school/layout.json"
   ],
   "ambient_scenes": [
     "liam_house"
-  ]
+  ],
+  "household_registry": "assets/maps/eldenmere/households/households.json"
 }

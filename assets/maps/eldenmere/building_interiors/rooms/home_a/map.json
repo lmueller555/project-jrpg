@@ -224,7 +224,30 @@
       "arrival_door": "home_a"
     }
   ],
-  "npcs": [],
+  "npcs": [
+    {
+      "id": "villager_male_01",
+      "name": "Gardener's partner",
+      "kind": "stationary",
+      "position": [
+        122,
+        180
+      ],
+      "probe_size": [
+        12,
+        8
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "sprite": "assets/characters/npcs/male_01/idle_front.png",
+      "home_scene": "home_a",
+      "household_id": "gardener_family",
+      "family_role": "father",
+      "partner_id": "sanctuary_gardener"
+    }
+  ],
   "quests": [],
   "kind": "interior",
   "destinations": {
@@ -272,5 +295,11 @@
   ],
   "id": "home_a",
   "name": "West cottage",
-  "overview": "assets/maps/eldenmere/playable/overview.png"
+  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "household": [
+    "sanctuary_gardener",
+    "villager_male_01"
+  ],
+  "household_id": "gardener_family",
+  "household_registry": "assets/maps/eldenmere/households/households.json"
 }

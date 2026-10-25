@@ -1,0 +1,458 @@
+{
+  "size_pixels": [
+    432,
+    384
+  ],
+  "size_tiles": [
+    16,
+    12
+  ],
+  "tile_size": 24,
+  "floor_rect": [
+    24,
+    72,
+    384,
+    288
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_04.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_01.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_02.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_11.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_12.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_09.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_10.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_07.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_08.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_05.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_06.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_03.png",
+    "assets/maps/eldenmere/building_interiors/rooms/school/ground/frame_04.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "entities": [
+    {
+      "id": "writing_board",
+      "position": [
+        144,
+        27
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/writing_board.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "village_map",
+      "position": [
+        96,
+        28
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/village_map.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "teacher_desk",
+      "position": [
+        104,
+        102
+      ],
+      "sort_y": 142,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/teacher_desk.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "teacher_chair",
+      "position": [
+        128,
+        72
+      ],
+      "sort_y": 106,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_desk_1",
+      "position": [
+        76,
+        164
+      ],
+      "sort_y": 202,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_1",
+      "position": [
+        80,
+        190
+      ],
+      "sort_y": 224,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_2",
+      "position": [
+        112,
+        190
+      ],
+      "sort_y": 224,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_desk_2",
+      "position": [
+        280,
+        164
+      ],
+      "sort_y": 202,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_3",
+      "position": [
+        284,
+        190
+      ],
+      "sort_y": 224,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_4",
+      "position": [
+        316,
+        190
+      ],
+      "sort_y": 224,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_desk_3",
+      "position": [
+        76,
+        256
+      ],
+      "sort_y": 294,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/pupil_desk.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_5",
+      "position": [
+        80,
+        282
+      ],
+      "sort_y": 316,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "pupil_chair_6",
+      "position": [
+        112,
+        282
+      ],
+      "sort_y": 316,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "bookshelf",
+      "position": [
+        352,
+        108
+      ],
+      "sort_y": 182,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/bookshelf.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "festival_corner",
+      "position": [
+        286,
+        260
+      ],
+      "sort_y": 298,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/festival_corner.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "reading_bench",
+      "position": [
+        286,
+        312
+      ],
+      "sort_y": 339,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/reading_bench.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "coat_pegs",
+      "position": [
+        20,
+        270
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/coat_pegs.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "child_drawings",
+      "position": [
+        336,
+        35
+      ],
+      "sort_y": 0,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/school/interior/sprites/child_drawings.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "hearth",
+      "position": [
+        350,
+        24
+      ],
+      "sort_y": 92,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_02.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_03.png",
+        "assets/terrain/eldenmere/cottage_hearth/frames/frame_04.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "collision": "assets/maps/eldenmere/building_interiors/rooms/school/collision.png",
+  "foreground": [],
+  "landmarks": [],
+  "doors": [
+    {
+      "id": "courtyard",
+      "anchor": [
+        216.0,
+        354
+      ],
+      "entry_y": 354,
+      "entry_side": "south",
+      "entry_half_width": 10,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        672,
+        738
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "school"
+    }
+  ],
+  "npcs": [],
+  "quests": [],
+  "kind": "interior",
+  "destinations": {
+    "writing_board": [
+      216,
+      100
+    ],
+    "village_map": [
+      108,
+      94
+    ],
+    "teacher_desk": [
+      140,
+      154
+    ],
+    "teacher_chair": [
+      184,
+      108
+    ],
+    "pupil_desk_1": [
+      108,
+      152
+    ],
+    "pupil_chair_1": [
+      66,
+      222
+    ],
+    "pupil_chair_2": [
+      154,
+      222
+    ],
+    "pupil_desk_2": [
+      312,
+      152
+    ],
+    "pupil_chair_3": [
+      270,
+      222
+    ],
+    "pupil_chair_4": [
+      358,
+      222
+    ],
+    "pupil_desk_3": [
+      108,
+      244
+    ],
+    "pupil_chair_5": [
+      66,
+      314
+    ],
+    "pupil_chair_6": [
+      154,
+      314
+    ],
+    "bookshelf": [
+      374,
+      194
+    ],
+    "festival_corner": [
+      318,
+      246
+    ],
+    "reading_bench": [
+      320,
+      350
+    ],
+    "coat_pegs": [
+      48,
+      298
+    ],
+    "child_drawings": [
+      346,
+      110
+    ],
+    "hearth": [
+      374,
+      104
+    ]
+  },
+  "source_room": "assets/terrain/eldenmere/school/interior/room.json",
+  "id": "school",
+  "name": "Eldenmere school",
+  "spawn": [
+    216,
+    342
+  ],
+  "teacher": "liam_mother",
+  "overview": "assets/maps/eldenmere/playable/overview.png",
+  "school_layout": "assets/maps/eldenmere/school/layout.json"
+}

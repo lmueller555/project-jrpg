@@ -52,3 +52,10 @@ Daisy now has a single movable play bone inside the family cottage. Liam's
 invitation and block activities wait for her to put it down safely before
 borrowing her, and the bone stays in the house while they go outside.
 See [bone play and carrying](../../../docs/reviews/daisy_bone/README.md).
+
+## Liam's mother — village teacher
+
+Her occupation is now `teacher` in `family.json` and in the front-idle builder's
+source specification. Her approved appearance is retained. The new school has
+an explorable classroom; teaching and commuting schedules will be added after
+its design review. See the [school](../../maps/eldenmere/school/README.md).

@@ -1,0 +1,77 @@
+{
+  "status": "approved",
+  "names": "unassigned",
+  "children": "unassigned",
+  "households": [
+    {
+      "id": "gardener_family",
+      "home": "home_a",
+      "label": "Gardener's household",
+      "mother": {
+        "id": "sanctuary_gardener",
+        "sprite_root": "assets/characters/npcs/female_02",
+        "placement": "existing_town_routine"
+      },
+      "father": {
+        "id": "villager_male_01",
+        "sprite_root": "assets/characters/npcs/male_01",
+        "position": [
+          122,
+          180
+        ],
+        "facing": "front",
+        "label": "Gardener's partner"
+      }
+    },
+    {
+      "id": "blue_rust_family",
+      "home": "home_b",
+      "label": "Village cottage household",
+      "mother": {
+        "id": "villager_female_01",
+        "sprite_root": "assets/characters/npcs/female_01",
+        "position": [
+          122,
+          180
+        ],
+        "facing": "front",
+        "label": "Village cottage mother"
+      },
+      "father": {
+        "id": "villager_male_02",
+        "sprite_root": "assets/characters/npcs/male_02",
+        "position": [
+          202,
+          168
+        ],
+        "facing": "front",
+        "label": "Village cottage father"
+      }
+    },
+    {
+      "id": "plum_slate_family",
+      "home": "home_c",
+      "label": "South cottage household",
+      "mother": {
+        "id": "villager_female_03",
+        "sprite_root": "assets/characters/npcs/female_03",
+        "position": [
+          122,
+          180
+        ],
+        "facing": "front",
+        "label": "South cottage mother"
+      },
+      "father": {
+        "id": "villager_male_03",
+        "sprite_root": "assets/characters/npcs/male_03",
+        "position": [
+          202,
+          168
+        ],
+        "facing": "front",
+        "label": "South cottage father"
+      }
+    }
+  ]
+}

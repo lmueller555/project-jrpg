@@ -226,6 +226,12 @@ def build():
     if (ROOT/'assets/maps/eldenmere/liam_house/house.json').is_file():
         from build_liam_family_home import build as build_family_home
         build_family_home()
+    if (ROOT/'assets/maps/eldenmere/school/layout.json').is_file():
+        from build_eldenmere_school import build as build_school
+        build_school()
+    if (ROOT/'assets/maps/eldenmere/households/households.json').is_file():
+        from build_villager_households import build as build_households
+        build_households()
 
 
 if __name__=='__main__':build()

@@ -47,8 +47,8 @@ class BuildingDoors(unittest.TestCase):
             if self.game.world is not before:return
         self.fail(f'Walk-in did not transfer through {door.data["id"]}')
 
-    def test_all_ten_doors_animate_hold_close_and_reverse(self):
-        self.assertEqual(len(self.game.town.doors),10)
+    def test_all_eleven_doors_animate_hold_close_and_reverse(self):
+        self.assertEqual(len(self.game.town.doors),11)
         for door in self.game.town.doors:
             with self.subTest(door=door.data['id']):
                 self.assertEqual(len(door.frames),5)
@@ -123,9 +123,9 @@ class BuildingDoors(unittest.TestCase):
             self.assertIs(self.game.world,hall)
             self.assertEqual(self.game.player.facing,'front')
 
-    def test_all_twelve_rooms_have_reachable_exits_and_furnishings(self):
+    def test_all_thirteen_rooms_have_reachable_exits_and_furnishings(self):
         scenes=self.game.town.data['interior_scenes']
-        self.assertEqual(len(scenes),12)
+        self.assertEqual(len(scenes),13)
         for name,path in scenes.items():
             with self.subTest(room=name):
                 world=main.World(main.ROOT/path,self.game.town._images)

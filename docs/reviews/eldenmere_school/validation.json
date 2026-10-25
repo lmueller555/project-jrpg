@@ -1,0 +1,50 @@
+{
+  "status": "approved",
+  "base_commit": "45441e6a31a7feba7fea6abbac3c58df09e79e31",
+  "full_suite": {
+    "passed": 208,
+    "duration_seconds": 175.719,
+    "command": "SDL_AUDIODRIVER=dummy .venv/bin/python -m unittest discover -s tests -q"
+  },
+  "focused_school_tests": {
+    "passed": 6,
+    "file": "tests/test_school.py"
+  },
+  "rebuild": {
+    "deterministic": true,
+    "unchanged_files": 533,
+    "command": ".venv/bin/python tools/build_eldenmere_school.py"
+  },
+  "checks": [
+    "Existing entity registrations retained; new footprint is on lower ground west of the stream",
+    "Exact town collision comparison includes school and yard additions while preserving original blockers",
+    "Well square to school route, all nineteen classroom furnishing approaches and center aisle are reachable",
+    "Actual walk-in doorway opens, holds, closes and transfers town to school and back",
+    "Five door poses align with closed exterior crops; school and classroom lighting animate",
+    "Three shared desks and six pupil chairs have real collision footprints",
+    "Teacher occupation recorded for Liam mother in family data and maintained by the character builder",
+    "Canonical interior compiler reapplies the school extension after the family home",
+    "Actual runtime GIFs visually inspected; looping, timing and exact palette colors verified"
+  ],
+  "previews": {
+    "door_walkthrough.gif": {
+      "bytes": 1936287,
+      "frames": 76,
+      "duration_ms": 8900
+    },
+    "exterior.gif": {
+      "bytes": 642580,
+      "frames": 18,
+      "duration_ms": 5400
+    },
+    "interior.gif": {
+      "bytes": 166120,
+      "frames": 36,
+      "duration_ms": 10800
+    }
+  },
+  "scope": [
+    "Playable schoolhouse, schoolyard, path connection and furnished classroom",
+    "Teacher and pupil action routines and attendance schedules are a later stage"
+  ]
+}

@@ -51,6 +51,9 @@ class PlayableEldenmere(unittest.TestCase):
         pygame.draw.rect(approved,'white',well['ground_rect'])
         home=main.read_json(main.ROOT/'assets/maps/eldenmere/liam_house/house.json')
         pygame.draw.rect(approved,'white',home['ground_rect'])
+        school=main.read_json(main.ROOT/'assets/maps/eldenmere/school/layout.json')
+        for rect in [school['ground_rect'],*school['yard_blockers']]:
+            pygame.draw.rect(approved,'white',rect)
         compiled=self.world.image(self.world.data['collision'],False)
         self.assertEqual(pygame.image.tobytes(approved,'RGB'),pygame.image.tobytes(compiled,'RGB'))
 

@@ -1,0 +1,38 @@
+{
+  "status": "approved",
+  "actual_renderer": true,
+  "captures": {
+    "exterior": {
+      "file": "exterior.gif",
+      "frames": 18,
+      "duration_ms": 5400,
+      "bytes": 642580
+    },
+    "interior": {
+      "file": "interior.gif",
+      "frames": 36,
+      "duration_ms": 10800,
+      "bytes": 166120
+    },
+    "door_walkthrough": {
+      "file": "door_walkthrough.gif",
+      "frames": 76,
+      "duration_ms": 8900,
+      "bytes": 1936287
+    }
+  },
+  "door_scenes_seen": [
+    "eldenmere.playable",
+    "school",
+    "eldenmere.playable"
+  ],
+  "door_states_seen": [
+    "closed",
+    "closing",
+    "open",
+    "opening"
+  ],
+  "teacher": "liam_mother",
+  "classroom_npcs": 0,
+  "scope": "Playable exterior and furnished interior; teaching and pupil routines are a later stage."
+}
