@@ -1,0 +1,532 @@
+{
+  "canvas": [
+    40,
+    48
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "source_idle_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+  "water_origin": [
+    1448,
+    620
+  ],
+  "water_size": [
+    8,
+    56
+  ],
+  "water_colors": [
+    "#4d7582",
+    "#5c8b96",
+    "#6b9aa2",
+    "#8ab3b0",
+    "#a1c5bc",
+    "#719a91"
+  ],
+  "sequence": [
+    "raise_hand",
+    "ease_water",
+    "hold_water",
+    "work_pin",
+    "open",
+    "release_water",
+    "finish"
+  ],
+  "animations": {
+    "raise_hand": {
+      "duration_ms": 650,
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            40,
+            48
+          ],
+          "casting_hand": [
+            27,
+            28
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            40,
+            0,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            25
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            80,
+            0,
+            40,
+            48
+          ],
+          "casting_hand": [
+            31,
+            22
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            120,
+            0,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    },
+    "ease_water": {
+      "duration_ms": 1100,
+      "frames": [
+        {
+          "rect": [
+            0,
+            48,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            40,
+            48,
+            40,
+            48
+          ],
+          "casting_hand": [
+            32,
+            19
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            80,
+            48,
+            40,
+            48
+          ],
+          "casting_hand": [
+            32,
+            18
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            120,
+            48,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    },
+    "hold_water": {
+      "duration_ms": 400,
+      "frames": [
+        {
+          "rect": [
+            0,
+            96,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    },
+    "work_pin": {
+      "duration_ms": 1600,
+      "frames": [
+        {
+          "rect": [
+            0,
+            144,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            28,
+            27
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            40,
+            144,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            28
+          ],
+          "kneel_offset": 2
+        },
+        {
+          "rect": [
+            80,
+            144,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            27
+          ],
+          "kneel_offset": 4
+        },
+        {
+          "rect": [
+            120,
+            144,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            27
+          ],
+          "kneel_offset": 4
+        }
+      ]
+    },
+    "open": {
+      "duration_ms": 1200,
+      "frames": [
+        {
+          "rect": [
+            0,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            27
+          ],
+          "kneel_offset": 4
+        },
+        {
+          "rect": [
+            40,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            26
+          ],
+          "kneel_offset": 3
+        },
+        {
+          "rect": [
+            80,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            24
+          ],
+          "kneel_offset": 2
+        },
+        {
+          "rect": [
+            120,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            22
+          ],
+          "kneel_offset": 1
+        },
+        {
+          "rect": [
+            160,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            21
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            200,
+            192,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            34,
+            20
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    },
+    "release_water": {
+      "duration_ms": 1150,
+      "frames": [
+        {
+          "rect": [
+            0,
+            240,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            20
+          ],
+          "working_hand": [
+            26,
+            29
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            40,
+            240,
+            40,
+            48
+          ],
+          "casting_hand": [
+            29,
+            23
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            80,
+            240,
+            40,
+            48
+          ],
+          "casting_hand": [
+            27,
+            26
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            120,
+            240,
+            40,
+            48
+          ],
+          "casting_hand": [
+            25,
+            29
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    },
+    "finish": {
+      "duration_ms": 450,
+      "frames": [
+        {
+          "rect": [
+            0,
+            288,
+            40,
+            48
+          ],
+          "casting_hand": [
+            25,
+            29
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            40,
+            288,
+            40,
+            48
+          ],
+          "casting_hand": [
+            25,
+            29
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            80,
+            288,
+            40,
+            48
+          ],
+          "casting_hand": [
+            25,
+            29
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        },
+        {
+          "rect": [
+            120,
+            288,
+            40,
+            48
+          ],
+          "casting_hand": [
+            25,
+            29
+          ],
+          "working_hand": [
+            25,
+            30
+          ],
+          "kneel_offset": 0
+        }
+      ]
+    }
+  }
+}
