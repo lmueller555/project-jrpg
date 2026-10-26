@@ -60,7 +60,7 @@
   "choice": [
     {
       "speaker": "caelan",
-      "text": "I can free the pin with their tools, or ease the water aside and set it by hand."
+      "text": "I could use their tools. Or perhaps I can push the water back long enough to free the pin."
     }
   ],
   "after": [
@@ -73,6 +73,12 @@
     {
       "speaker": "caelan",
       "text": "I should set Elira's lantern down safely before I take anything else in hand."
+    }
+  ],
+  "magicks_failed": [
+    {
+      "speaker": "caelan",
+      "text": "I can't move it. I'll need the tools."
     }
   ]
 }
