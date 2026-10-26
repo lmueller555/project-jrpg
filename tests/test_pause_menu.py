@@ -43,7 +43,7 @@ class PauseMenuTests(unittest.TestCase):
         self.assertTrue(self.menu.is_open)
         self.assertFalse(self.game._mouse_held)
         self.game.save_progress.assert_called_once_with()
-        for _ in range(3):self.assertTrue(self.key(pygame.K_DOWN))
+        for _ in range(self.menu.settings_index):self.assertTrue(self.key(pygame.K_DOWN))
         self.assertTrue(self.key(pygame.K_RETURN))
         self.assertTrue(self.menu.settings)
         self.assertTrue(self.key(pygame.K_ESCAPE))
@@ -54,7 +54,7 @@ class PauseMenuTests(unittest.TestCase):
 
     def test_quit_requires_deliberate_selection_and_repeat_does_not_activate(self):
         self.menu.open()
-        self.menu.selected=4
+        self.menu.selected=self.menu.options.index('Quit')
         self.assertTrue(self.key(pygame.K_RETURN, repeat=True))
         self.assertTrue(self.menu.is_open)
         self.assertFalse(self.key(pygame.K_RETURN))
@@ -63,7 +63,7 @@ class PauseMenuTests(unittest.TestCase):
         self.assertFalse(self.menu.is_open)
 
     def test_keyboard_and_mouse_volume_controls_are_independent(self):
-        self.menu.open();self.menu.selected=3;self.key(pygame.K_RETURN)
+        self.menu.open();self.menu.selected=self.menu.settings_index;self.key(pygame.K_RETURN)
         self.menu.selected=1
         self.key(pygame.K_LEFT)
         self.assertAlmostEqual(self.game.audio.music_volume,.9)
@@ -88,7 +88,7 @@ class PauseMenuTests(unittest.TestCase):
                 self.menu.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=(0,0)))
                 self.menu.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP,button=1,pos=(0,0)))
                 self.assertTrue(self.menu.is_open)
-                self.assertTrue(self.click(self.menu.rows[3].center))
+                self.assertTrue(self.click(self.menu.rows[self.menu.settings_index].center))
                 self.assertTrue(self.menu.settings)
                 canvas=pygame.Surface((480,320))
                 self.menu.draw(canvas)
@@ -100,7 +100,7 @@ class PauseMenuTests(unittest.TestCase):
 
     def test_held_click_does_not_reactivate_underlying_menu(self):
         self.menu.open()
-        point=self.point(self.menu.rows[3].center)
+        point=self.point(self.menu.rows[self.menu.settings_index].center)
         down=pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=point)
         self.assertTrue(self.menu.handle_event(down))
         self.assertTrue(self.menu.settings)
@@ -109,7 +109,7 @@ class PauseMenuTests(unittest.TestCase):
         self.assertEqual(self.game.audio.music_volume,1)
 
     def test_plus_minus_and_drag_sliders_adjust_the_correct_channel(self):
-        self.menu.open();self.menu.selected=3;self.key(pygame.K_RETURN)
+        self.menu.open();self.menu.selected=self.menu.settings_index;self.key(pygame.K_RETURN)
         self.menu.selected=1
         self.key(pygame.K_MINUS)
         self.assertAlmostEqual(self.game.audio.music_volume,.9)
@@ -129,7 +129,7 @@ class PauseMenuTests(unittest.TestCase):
 
     def test_text_preferences_and_controls_remain_reachable_at_minimum_size(self):
         self.game.window=pygame.display.set_mode((480,320))
-        self.menu.open();self.menu.selected=3;self.key(pygame.K_RETURN)
+        self.menu.open();self.menu.selected=self.menu.settings_index;self.key(pygame.K_RETURN)
         self.menu.selected=3
         self.key(pygame.K_RIGHT);self.key(pygame.K_RIGHT)
         self.assertEqual(self.game.audio.text_scale,1.5)

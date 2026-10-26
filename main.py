@@ -31,6 +31,8 @@ from pause_menu import PauseMenu
 from camera_director import CameraDirector
 from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
+from inventory import Inventory
+from inventory_ui import InventoryUI
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -368,12 +370,14 @@ class Game:
             if shared.home.data.get('bone_routine'):
                 self.bone_routines.append(DaisyBone(self,shared.home,shared,shared.home.data['bone_routine']))
         self.quests=QuestLog()
+        self.inventory=Inventory()
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
         self.title=TitleScreen(self)
         self.quest_ui=QuestUI(self)
         self.map_ui=MapUI(self)
+        self.inventory_ui=InventoryUI(self)
         self.opening=OpeningSequence(self)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
@@ -388,7 +392,40 @@ class Game:
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
+                           'inventory':self.inventory.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
+
+    def _sync_inventory(self):
+        """Grant entrusted supplies once; reconcile older quest-only journeys."""
+        for quest in self.inventory.grants:
+            if self.quests.status(quest) in ('active','ready','completed'):
+                self.inventory.grant_quest(quest)
+        for delivery in self.inventory.deliveries.values():
+            quest,objective=delivery['quest'],delivery['objective']
+            if self.quests.objective_status(quest,objective)=='completed':
+                self.inventory.deliver(quest,objective,delivery['recipient'])
+
+    def accept_quest(self,identifier):
+        """Update quest and supplies together, before the scene checkpoints."""
+        if self.quests.status(identifier)!='available':return False
+        prior=self.inventory.to_dict()
+        if identifier in self.inventory.grants and not self.inventory.was_granted(identifier):
+            if not self.inventory.grant_quest(identifier):return False
+        if self.quests.accept(identifier):return True
+        self.inventory.restore(prior)
+        return False
+
+    def deliver_quest_item(self,quest,objective,recipient):
+        """Called by a successful NPC handoff, never by entering its room.
+
+        A delivered medicine does not finish Halden's remaining sack task.
+        Receipts survive reloads so the handoff cannot consume a second item.
+        """
+        if self.quests.objective_status(quest,objective)!='active':return False
+        self._sync_inventory()
+        if not self.inventory.deliver(quest,objective,recipient):return False
+        self.save_progress()
+        return True
 
     def _read_saved_journey(self):
         """Validate a save without mutating the fresh world behind the title."""
@@ -410,11 +447,30 @@ class Game:
                len(data['dialogue_flags'])<=256 and
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
+               ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
         return data
+
+    @staticmethod
+    def _valid_inventory_snapshot(data):
+        inventory=Inventory()
+        quests=QuestLog()
+        if not inventory.restore(data['inventory']) or not quests.restore(data.get('quests')):return False
+        for quest,bundle in inventory.grants.items():
+            accepted=quests.status(quest) in ('active','ready','completed')
+            if inventory.was_granted(quest)!=accepted:return False
+            if not accepted:continue
+            outstanding=dict(bundle)
+            for key in inventory.to_dict()['deliveries']:
+                delivery=inventory.deliveries[key]
+                if delivery['quest']!=quest:continue
+                if quests.objective_status(quest,delivery['objective'])=='queued':return False
+                for item,amount in delivery['items'].items():outstanding[item]=outstanding.get(item,0)-amount
+            if any(inventory.quantity(item)<amount for item,amount in outstanding.items()):return False
+        return True
 
     @property
     def has_saved_journey(self):return self.saved_journey is not None
@@ -425,6 +481,7 @@ class Game:
         if continue_saved and data is None:return False
         if data is None:
             self.quests.restore(QuestLog().to_dict())
+            self.inventory=Inventory()
             self.social.flags.clear()
             self.world=self.town
             position=self.town.data['spawn']
@@ -432,6 +489,8 @@ class Game:
             self.exterior_position.update(position)
         else:
             self.quests.restore(data['quests'])
+            self.inventory=Inventory()
+            if 'inventory' in data:self.inventory.restore(data['inventory'])
             self.social.flags=set(data['dialogue_flags'])
             self.world=self._scene_by_id(data['player']['scene'])
             position=data['player']['position']
@@ -453,6 +512,8 @@ class Game:
         self.social.blocked.clear()
         self.map_open=False
         self.quest_ui.reset()
+        self.inventory_ui.reset()
+        self._sync_inventory()
         self.transfer_cooldown=.25
         self.on_title=False
         self.opening_fade=.5
@@ -481,7 +542,9 @@ class Game:
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
         if self.on_title or not self.save_store.enabled:return False
+        self._sync_inventory()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
+              'inventory':self.inventory.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},
@@ -595,6 +658,11 @@ class Game:
                     return False
                 resumed=not self.pause.is_open or (overlay is not None and self.pause.overlay is None)
                 continue
+            if self.inventory_ui.is_open:
+                self.inventory_ui.handle_event(event)
+                resumed=not self.inventory_ui.is_open
+                self.social.clear_pointer()
+                continue
             if self.quest_ui.journal_open:
                 self.quest_ui.handle_event(event)
                 resumed=not self.quest_ui.journal_open
@@ -637,7 +705,10 @@ class Game:
                     if not getattr(event,'repeat',False) and not advanced:
                         self.social.advance();advanced=True
                     continue
-                if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j):continue
+                if self.opening.locks_player and event.key in (pygame.K_m,pygame.K_j,pygame.K_i):continue
+                if event.key==pygame.K_i and not getattr(event,'repeat',False):
+                    self.inventory_ui.open()
+                    self.social.clear_pointer()
                 if event.key==pygame.K_m:
                     self.map_open=True
                     self.map_ui.reset()
@@ -656,8 +727,8 @@ class Game:
         if self.on_title:
             self.title.update(seconds)
             return
-        self.opening_audio.set_paused(self.pause.is_open)
-        if self.pause.is_open:
+        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open)
+        if self.pause.is_open or self.inventory_ui.is_open:
             self.opening_audio.update(0)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
@@ -705,6 +776,7 @@ class Game:
                     self.enter(door)
                     break
         self.quest_ui.update(seconds)
+        self._sync_inventory()
         self._save_retry_seconds=max(0.0,self._save_retry_seconds-seconds)
         if (self.save_store.enabled and not self._save_retry_seconds and
                 self._progress_signature()!=self._saved_progress):
@@ -717,7 +789,7 @@ class Game:
             self.location_seconds=3.5
 
     def enter(self,door):
-        if self.pause.is_open or self.quest_ui.journal_open or self.opening.locks_player:return False
+        if self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or self.opening.locks_player:return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -759,7 +831,7 @@ class Game:
 
     def draw_hud(self,canvas):
         if (self.pause.is_open or self.social.locked or self.opening.locks_player
-                or self.map_open or self.quest_ui.journal_open):return
+                or self.map_open or self.quest_ui.journal_open or self.inventory_ui.is_open):return
         painter=self.ui.painter(canvas)
         menu=self._hud_menu_rect()
         pointer=self.to_canvas(pygame.mouse.get_pos())
@@ -835,6 +907,7 @@ class Game:
         self.pause.draw(self.ui_surface)
         if self.map_open:self.draw_map()
         self.quest_ui.draw_journal(self.ui_surface)
+        self.inventory_ui.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
         pygame.display.flip()

@@ -47,6 +47,7 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | Shift | Run |
 | M | Open/close the town map; click landmarks to inspect them |
 | J | Open/close the quest journal; select a quest and scroll its details |
+| I | Open/close the inventory; Tab or left/right switches categories |
 | Left click anywhere / Space / E | Advance an open conversation |
 | E near a bedroom furnishing | Inspect it when the prompt appears |
 | Click a response button | Accept a quest or leave it for later |
@@ -130,6 +131,15 @@ choose **New Game** to experience the new beginning. See [story implementation](
 The actual Halden sack, Elira lantern and Venn gate tasks, and Tomas's temporary
 following segment remain the next story implementation. Visiting their houses
 never marks those tasks complete. See [quest integration](docs/QUEST_SYSTEM.md).
+
+**Caelan's satchel is available with I or Pause → Inventory.** Weapons, Armor,
+Items and Key Items have separate categories, quantity counts and readable item
+details. Accepting Serene's request grants the three household supply bundles
+once, including Halden's medicine. Key Items are protected from ordinary removal;
+successful quest handoffs consume them and save a delivery receipt. The delivery
+API is ready for the upcoming household scenes; entering a house never consumes
+supplies. Older journeys receive only outstanding supplies, and New Game starts
+with an empty satchel. See [inventory design and integration](docs/INVENTORY.md).
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored
