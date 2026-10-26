@@ -12,3 +12,8 @@ the game-sized exports are reproducible through `tools/export_dialogue_portraits
 Portraits are new detailed head-and-shoulder art. The approved world sprite
 files are unchanged. Neutral expressions are the initial set; additional
 expression sheets are not included in this milestone.
+
+
+`aldric_master.png` is the generated head-and-shoulders master for Regent Aldric,
+matched to his MQ03 slate/navy traveling coat, pale neckcloth and brown-gray
+hair. The 72×72 export is included in `tools/export_dialogue_portraits.py`.

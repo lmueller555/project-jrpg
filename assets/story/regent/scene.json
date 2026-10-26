@@ -1,0 +1,548 @@
+{
+  "preparations": [
+    {
+      "speaker": "caelan",
+      "text": "Was something wrong with the chair over there?"
+    },
+    {
+      "speaker": "tomas",
+      "text": "It was facing the sun."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Now it's facing the wall."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Yes, I noticed."
+    },
+    {
+      "speaker": "serene",
+      "text": "Caelan, would you meet our visitors by the brook? Bring them here when they're ready. I'd rather not leave all this unattended."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Of course. How many are coming?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Four, according to the letter. I've prepared for six."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Do we have to bow when he gets here?"
+    },
+    {
+      "speaker": "serene",
+      "text": "A greeting is enough."
+    },
+    {
+      "speaker": "tomas",
+      "text": "(relieved) Good. I didn't want to be the only one doing it."
+    },
+    {
+      "speaker": "serene",
+      "text": "Tomas, leave the chair there for now. Help me with these cups."
+    }
+  ],
+  "arrival": [
+    {
+      "speaker": "caelan",
+      "text": "Regent Aldric? Mother Serene sent me."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Ah. Thank you. Have we kept her waiting?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "She's still getting everything ready."
+    },
+    {
+      "speaker": "aldric",
+      "text": "(with a small, relieved laugh) Then perhaps our timing isn't quite as bad as I feared."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'm Caelan. I'll show you the way."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Thank you, Caelan. I heard Halden was having trouble with his mill."
+    },
+    {
+      "speaker": "caelan",
+      "text": "We've just got it working again."
+    },
+    {
+      "speaker": "aldric",
+      "text": "You were helping him?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "With Mira. There was a limb caught at the intake."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Any damage?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Nothing serious."
+    },
+    {
+      "speaker": "aldric",
+      "text": "(his concern easing) Good. He'll have enough work before the festival without that."
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "We're ready here, my lord."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Then let's not keep our hosts waiting."
+    }
+  ],
+  "dispute": [
+    {
+      "speaker": "venn_father",
+      "text": "No. Listen to me. I agreed to a day."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "We spent half of it waiting for the stone."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "I know. I was here."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "Then you know why we haven't finished."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "(his temper rising) And you know why I need my cart back!"
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "My lord. I hadn't seen you there."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Please, go on. What was agreed?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "The cart for yesterday. Back by evening."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "For the stone haul. The delivery was delayed."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Was there an agreement to keep it longer?"
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "No. I expected we'd be finished before he needed it."
+    },
+    {
+      "speaker": "regent_clerk",
+      "text": "The hire note gives yesterday. There isn't an extension."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "My grain's ready. I've already lost time waiting for the mill."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Is it taking deliveries again?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yes. Halden's working through what was waiting."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Which is why I'd like to get there before everyone else does."
+    },
+    {
+      "speaker": "aldric",
+      "text": "The hire has ended. Return the cart."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "Then I'll need another hire, or another day. The men still need paying while they wait."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Put the additional cost in the road account."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "That leaves less for the upper section."
+    },
+    {
+      "speaker": "aldric",
+      "text": "(rubbing his brow) I understand. Send me the revised figures. We'll deal with that separately."
+    },
+    {
+      "speaker": "aldric",
+      "text": "What can the crew do while you arrange the transport?"
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "We can prepare the bedding along the lower stretch. It changes the order of the work, but we can start there."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Then do that. Mr. Venn, would you consider another hire once your delivery is finished?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Perhaps. I've other things waiting."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Then it will need another agreement."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Thank you. And—well. I wasn't trying to hold up the road."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I didn't think you were."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "(exhaling) Right. Can I take it now?"
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "Yes. We'll clear the way."
+    }
+  ],
+  "welcome": [
+    {
+      "speaker": "serene",
+      "text": "There you are. Sit down before it all goes cold."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I'm sorry. We stopped at the road crew."
+    },
+    {
+      "speaker": "serene",
+      "text": "Is everything all right?"
+    },
+    {
+      "speaker": "aldric",
+      "text": "It should be now. There'll be another account for me to read tomorrow."
+    },
+    {
+      "speaker": "serene",
+      "text": "Eat something first. You can worry about tomorrow afterward."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Did you come all the way over the ridge in that wagon?"
+    },
+    {
+      "speaker": "aldric",
+      "text": "Most of the way."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Most?"
+    },
+    {
+      "speaker": "aldric",
+      "text": "I walked the steep part."
+    },
+    {
+      "speaker": "tomas",
+      "text": "(surprised) You walked?"
+    },
+    {
+      "speaker": "aldric",
+      "text": "(laughing) After sitting in it all morning, I was glad to."
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "He made better time than we did, too."
+    },
+    {
+      "speaker": "serene",
+      "text": "Have some bread. All of you. Caelan, would you pass that plate?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Here you are."
+    }
+  ],
+  "discussion": [
+    {
+      "speaker": "aldric",
+      "text": "I've looked at the survey again. The proposed cuts are well clear of the sanctuary buildings."
+    },
+    {
+      "speaker": "serene",
+      "text": "They're still inside the protected boundary."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I know. That is why I'm asking."
+    },
+    {
+      "speaker": "serene",
+      "text": "And I'm trying to explain why the distance from the buildings doesn't settle it. The covenant protects the ground beneath them too."
+    },
+    {
+      "speaker": "aldric",
+      "text": "The stone the crew was waiting for comes from three days away. There is a nearer seam on the survey."
+    },
+    {
+      "speaker": "serene",
+      "text": "Within that boundary."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Yes. I need someone to explain what it protects."
+    },
+    {
+      "speaker": "serene",
+      "text": "I can tell you what the covenant requires. I can't give you a complete account of why every boundary was drawn."
+    },
+    {
+      "speaker": "aldric",
+      "text": "That is what I keep being told."
+    },
+    {
+      "speaker": "serene",
+      "text": "I know."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Meanwhile, every additional journey costs money that could have repaired something else."
+    },
+    {
+      "speaker": "serene",
+      "text": "I understand that it's costing more."
+    },
+    {
+      "speaker": "aldric",
+      "text": "More money. More time. Work left unfinished elsewhere."
+    },
+    {
+      "speaker": "serene",
+      "text": "Yes."
+    },
+    {
+      "speaker": "aldric",
+      "text": "(frustration showing) Then I need more than another letter telling me to wait."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I'm sorry. You have answered my letters."
+    },
+    {
+      "speaker": "serene",
+      "text": "(quietly) I'm frustrated too. I would like to give you something more useful."
+    },
+    {
+      "speaker": "caelan",
+      "text": "May I ask what the work would involve?"
+    },
+    {
+      "speaker": "aldric",
+      "text": "A preliminary excavation to examine the seam. The surveyors propose working in the ridge, clear of the buildings."
+    },
+    {
+      "speaker": "serene",
+      "text": "But within the protected ground. That is the part we still disagree about."
+    },
+    {
+      "speaker": "serene",
+      "text": "I will request the relevant records and ask for a joint review. Your surveyors should be able to put their questions directly to the order."
+    },
+    {
+      "speaker": "aldric",
+      "text": "How soon could that happen?"
+    },
+    {
+      "speaker": "serene",
+      "text": "I can send the request today. I can't promise when they'll answer."
+    },
+    {
+      "speaker": "aldric",
+      "text": "(wearily) Everyone needs more time."
+    },
+    {
+      "speaker": "serene",
+      "text": "I know you're tired of hearing it."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Please send it. And let me know when you have a reply."
+    },
+    {
+      "speaker": "serene",
+      "text": "I will. I am still not endorsing excavation on what we know today."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I understand your answer. Thank you for hearing me out."
+    }
+  ],
+  "aftermath": [
+    {
+      "speaker": "caelan",
+      "text": "Was he angry with you?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Some of it, I think."
+    },
+    {
+      "speaker": "caelan",
+      "text": "He didn't seem angry earlier."
+    },
+    {
+      "speaker": "serene",
+      "text": "He had an answer he could give Mr. Venn."
+    },
+    {
+      "speaker": "caelan",
+      "text": "And you couldn't give him one."
+    },
+    {
+      "speaker": "serene",
+      "text": "(after a moment) Not the one he wanted. I still owe him the answer I promised."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I liked him."
+    },
+    {
+      "speaker": "serene",
+      "text": "So do I."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Caelan? Can you come and look at the lanterns?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Go and help him. We still have a festival to get ready for."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'm coming."
+    }
+  ],
+  "preparations_after": [
+    {
+      "speaker": "serene",
+      "text": "The food will be ready when you bring the visitors."
+    }
+  ],
+  "arrival_reminder": [
+    {
+      "speaker": "aldric",
+      "text": "Lead the way, Caelan. I'll follow you."
+    }
+  ],
+  "dispute_after_venn": [
+    {
+      "speaker": "venn_father",
+      "text": "I'm sorry you had to stand through that."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I was only bringing him to lunch."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Then I hope you get yours. I'd better get this grain to Halden."
+    }
+  ],
+  "dispute_after_foreman": [
+    {
+      "speaker": "road_foreman",
+      "text": "We'll start on the bedding. I still have to find another cart for the stone."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I hope you can."
+    },
+    {
+      "speaker": "road_foreman",
+      "text": "So do I. Mind the tools as you pass."
+    }
+  ],
+  "hospitality_after": [
+    {
+      "speaker": "tomas",
+      "text": "I thought he'd have someone carry everything for him."
+    },
+    {
+      "speaker": "caelan",
+      "text": "He still has to sit in the wagon."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I suppose. I'd like to see that ridge road for myself."
+    }
+  ],
+  "aldric_after": [
+    {
+      "speaker": "aldric",
+      "text": "Thank you for bringing us here, Caelan. I'll see you at the festival."
+    }
+  ],
+  "serene_after": [
+    {
+      "speaker": "serene",
+      "text": "I have a letter to write. Tomas could use your help with the lanterns."
+    }
+  ],
+  "driver_after": [
+    {
+      "speaker": "regent_driver",
+      "text": "If you're looking at the brake, keep your fingers clear of the catch. It closes harder than it looks."
+    }
+  ],
+  "clerk_after": [
+    {
+      "speaker": "regent_clerk",
+      "text": "I'll send the revised hire terms to the foreman."
+    }
+  ],
+  "venn_waiting": [
+    {
+      "speaker": "venn_father",
+      "text": "I agreed to a day. I need my cart back."
+    }
+  ],
+  "foreman_waiting": [
+    {
+      "speaker": "road_foreman",
+      "text": "I need to speak with the regent when he has a moment."
+    }
+  ],
+  "clerk_waiting": [
+    {
+      "speaker": "regent_clerk",
+      "text": "We've still to reach the sanctuary. Is Serene expecting us?"
+    }
+  ],
+  "tomas_waiting": [
+    {
+      "speaker": "tomas",
+      "text": "I'm trying to get these chairs ready before everyone arrives."
+    }
+  ]
+}

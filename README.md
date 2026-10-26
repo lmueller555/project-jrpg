@@ -89,6 +89,16 @@ The same Mira actor follows through doors and trail links; progress survives
 leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
 [in-game previews](docs/reviews/mill_quest/README.md).
 
+**The Regent’s Road is playable after the mill quest.** Meet Serene and Tomas
+in the sanctuary courtyard, greet Aldric’s visitors by the brook, and guide them
+through the village. Aldric and his clerk handle the road crew’s cart dispute;
+Caelan contributes only what he knows about the working mill. The released cart
+leaves with Mr. Venn, and the party continues to the sanctuary for a welcome,
+a measured excavation discussion and a private exchange with Serene. Dialogue
+includes occasional emotional cues and remains live and cancelable. The visit
+does not authorize excavation or start the festival quest. See the
+[quest guide](docs/REGENT_QUEST.md) and [scene review](docs/reviews/regent_quest/README.md).
+
 **Quest feedback is available in-game.** Mother Serene has an outlined gold `!`
 in the sanctuary and on the town map. Approach her to hear the opening request;
 after advancing the dialogue, click **I'll help** or **Not just yet**. Clicking

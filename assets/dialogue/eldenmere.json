@@ -47,6 +47,26 @@
       "name": "Mira",
       "portrait": "mira",
       "actor_id": "mira_worker"
+    },
+    "aldric": {
+      "name": "Regent Aldric",
+      "portrait": "aldric",
+      "actor_id": "aldric"
+    },
+    "road_foreman": {
+      "name": "Road foreman",
+      "portrait": "male_02",
+      "actor_id": "road_foreman"
+    },
+    "regent_clerk": {
+      "name": "Clerk",
+      "portrait": "male_03",
+      "actor_id": "regent_clerk"
+    },
+    "regent_driver": {
+      "name": "Driver",
+      "portrait": "male_01",
+      "actor_id": "regent_driver"
     }
   },
   "characters": {
@@ -412,6 +432,66 @@
             {
               "speaker": "mira",
               "text": "Nearly there. This fitting has other ideas."
+            }
+          ]
+        }
+      ]
+    },
+    "aldric": {
+      "conversations": [
+        {
+          "id": "aldric_ambient",
+          "lines": [
+            {
+              "speaker": "aldric",
+              "text": "Thank you for bringing us here, Caelan. I'll see you at the festival."
+            }
+          ]
+        }
+      ]
+    },
+    "road_foreman": {
+      "conversations": [
+        {
+          "id": "road_foreman_ambient",
+          "lines": [
+            {
+              "speaker": "road_foreman",
+              "text": "We'll start on the bedding. I still have to find another cart for the stone."
+            },
+            {
+              "speaker": "caelan",
+              "text": "I hope you can."
+            },
+            {
+              "speaker": "road_foreman",
+              "text": "So do I. Mind the tools as you pass."
+            }
+          ]
+        }
+      ]
+    },
+    "regent_clerk": {
+      "conversations": [
+        {
+          "id": "regent_clerk_ambient",
+          "lines": [
+            {
+              "speaker": "regent_clerk",
+              "text": "I'll send the revised hire terms to the foreman."
+            }
+          ]
+        }
+      ]
+    },
+    "regent_driver": {
+      "conversations": [
+        {
+          "id": "regent_driver_ambient",
+          "lines": [
+            {
+              "speaker": "regent_driver",
+              "text": "If you're looking at the brake, keep your fingers clear of the catch. It closes harder than it looks."
             }
           ]
         }

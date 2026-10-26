@@ -12,7 +12,7 @@ import pygame
 
 from halden_visit import point, town_path
 from npc_routines import find_path
-from quests import MILL_QUEST, QuestLog
+from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from social import facing_toward
 
 ROOT = Path(__file__).resolve().parent
@@ -308,6 +308,7 @@ class MillQuest:
         self._complete('report')
         if not self.game.quests.turn_in(MILL_QUEST, 'mira_worker'):return
         self.resolved = True;self.game.social.flags.add('CH01_MQ02_COMPLETE')
+        self.game.quests.unlock(REGENT_QUEST)
         self.mira.end_conversation();self.mira.story_following = True;self._returning = True
         self._save()
 
