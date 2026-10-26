@@ -1,0 +1,419 @@
+{
+  "id": "upstream",
+  "name": "Upper Millrace",
+  "kind": "exterior",
+  "size_tiles": [
+    32,
+    24
+  ],
+  "tile_size": 24,
+  "size_pixels": [
+    768,
+    576
+  ],
+  "spawn": [
+    168,
+    516
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/maps/eldenmere/upstream/ground/frame_01.png",
+    "assets/maps/eldenmere/upstream/ground/frame_02.png",
+    "assets/maps/eldenmere/upstream/ground/frame_03.png",
+    "assets/maps/eldenmere/upstream/ground/frame_04.png",
+    "assets/maps/eldenmere/upstream/ground/frame_05.png",
+    "assets/maps/eldenmere/upstream/ground/frame_06.png"
+  ],
+  "ground_frame_duration_ms": 200,
+  "collision": "assets/maps/eldenmere/upstream/collision.png",
+  "entities": [
+    {
+      "id": "upstream_tree_0",
+      "position": [
+        -24,
+        -40
+      ],
+      "sort_y": 72,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_1",
+      "position": [
+        48,
+        -42
+      ],
+      "sort_y": 70,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_2",
+      "position": [
+        134,
+        -50
+      ],
+      "sort_y": 62,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_3",
+      "position": [
+        228,
+        -36
+      ],
+      "sort_y": 76,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_4",
+      "position": [
+        322,
+        -48
+      ],
+      "sort_y": 64,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_5",
+      "position": [
+        420,
+        -44
+      ],
+      "sort_y": 68,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_6",
+      "position": [
+        522,
+        -44
+      ],
+      "sort_y": 68,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_7",
+      "position": [
+        620,
+        -46
+      ],
+      "sort_y": 66,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_8",
+      "position": [
+        708,
+        -42
+      ],
+      "sort_y": 70,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_9",
+      "position": [
+        -38,
+        142
+      ],
+      "sort_y": 254,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_10",
+      "position": [
+        -22,
+        260
+      ],
+      "sort_y": 372,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_11",
+      "position": [
+        -28,
+        376
+      ],
+      "sort_y": 488,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_12",
+      "position": [
+        10,
+        470
+      ],
+      "sort_y": 582,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_13",
+      "position": [
+        80,
+        410
+      ],
+      "sort_y": 522,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_14",
+      "position": [
+        242,
+        424
+      ],
+      "sort_y": 536,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_15",
+      "position": [
+        300,
+        410
+      ],
+      "sort_y": 522,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_16",
+      "position": [
+        600,
+        164
+      ],
+      "sort_y": 276,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_17",
+      "position": [
+        660,
+        202
+      ],
+      "sort_y": 314,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_18",
+      "position": [
+        624,
+        326
+      ],
+      "sort_y": 438,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_19",
+      "position": [
+        684,
+        414
+      ],
+      "sort_y": 526,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_20",
+      "position": [
+        550,
+        458
+      ],
+      "sort_y": 570,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_21",
+      "position": [
+        36,
+        300
+      ],
+      "sort_y": 412,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_22",
+      "position": [
+        28,
+        396
+      ],
+      "sort_y": 508,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_23",
+      "position": [
+        350,
+        446
+      ],
+      "sort_y": 558,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_24",
+      "position": [
+        430,
+        438
+      ],
+      "sort_y": 550,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_25",
+      "position": [
+        654,
+        440
+      ],
+      "sort_y": 552,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "upstream_tree_26",
+      "position": [
+        706,
+        454
+      ],
+      "sort_y": 566,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/idle.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    }
+  ],
+  "foreground": [],
+  "npcs": [],
+  "landmarks": [
+    {
+      "id": "intake",
+      "name": "Millrace intake",
+      "position": [
+        480,
+        288
+      ]
+    }
+  ],
+  "overview": "assets/maps/eldenmere/upstream/overview.png",
+  "world_links": [
+    {
+      "id": "upstream_to_town",
+      "position": [
+        168,
+        516
+      ],
+      "destination": "assets/maps/eldenmere/playable/map.json",
+      "spawn": [
+        720,
+        192
+      ],
+      "arrival_facing": "front",
+      "label": "Return to Eldenmere",
+      "radius": 22
+    }
+  ]
+}

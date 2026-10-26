@@ -78,7 +78,16 @@ closes unfinished dialogue without setting conversation flags, accepting a quest
 or completing a report. Step away before approaching again after a completed
 conversation. Completed conversation flags and quest progress are saved.
 See the [earlier dialogue preview](docs/reviews/proximity_dialogue/README.md).
-Mira/gardener conversations remain future work.
+Mira’s main-scenario conversations are playable in MQ02; gardener conversations remain future work.
+
+**Mira’s mill quest is playable after MQ01.** Meet her at the outdoor workbench,
+inspect the stopped mill together, then use **E** at the marked upstream trail.
+Help her unload the intake, move a small pocket of still water with magicks,
+and finish their encouragement exchange. Free the intake together with the
+lever and haul rope, return to the visibly running mill, and speak with Halden.
+The same Mira actor follows through doors and trail links; progress survives
+leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
+[in-game previews](docs/reviews/mill_quest/README.md).
 
 **Quest feedback is available in-game.** Mother Serene has an outlined gold `!`
 in the sanctuary and on the town map. Approach her to hear the opening request;

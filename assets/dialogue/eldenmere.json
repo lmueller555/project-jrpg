@@ -42,6 +42,11 @@
       "name": "Venn child",
       "portrait": "venn_child",
       "actor_id": "venn_child"
+    },
+    "mira": {
+      "name": "Mira",
+      "portrait": "mira",
+      "actor_id": "mira_worker"
     }
   },
   "characters": {
@@ -154,7 +159,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Halden by the mill needs his medicine. Take Tomas there first—he's been asking to help."
+              "text": "Halden by the mill needs his medicine. Take Tomas there first\u2014he's been asking to help."
             }
           ]
         },
@@ -394,6 +399,19 @@
             {
               "speaker": "caelan",
               "text": "Good. Rest a little longer."
+            }
+          ]
+        }
+      ]
+    },
+    "mira_worker": {
+      "conversations": [
+        {
+          "id": "mira_working",
+          "lines": [
+            {
+              "speaker": "mira",
+              "text": "Nearly there. This fitting has other ideas."
             }
           ]
         }

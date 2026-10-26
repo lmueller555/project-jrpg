@@ -68,10 +68,10 @@ Elira's memorial-lantern visit, and the Venn family's recovery-supply/gate visit
     consumes their bundle once. **E** inspects both the pin and the channel at
     the existing irrigation gate east of their home. After reading both, **E**
     at the pin offers two clicked responses. Tools reseat the pin, move Caelan
-    along the dry bank to pull debris clear, then lift the board. Modest magicks
-    curl the existing upstream water aside, allow him to set the pin by hand,
-    then flush the debris as the board rises. Both restore animated downstream
-    flow over the existing spillway. Return through the cottage door and finish
+    along the dry bank to pull debris clear, then lift the board. Trying magicks
+    produces a weak blue spark that fails to move the water. Caelan acknowledges
+    the failure and uses the borrowed tools. Only that physical repair restores
+    animated downstream flow over the existing spillway. Return through the cottage door and finish
     the approved family conversation to complete the objective. Elira and Venn
     can be played in either order; the last household makes the quest ready for
     Serene's existing report dialogue.
@@ -173,10 +173,13 @@ the real sanctuary door and approaches Serene. The player remains free to move.
 
 Approach Serene in the hall to hear the approved stopped-wheel exchange. Only
 its final line completes MQ01 and makes **A Little Trouble at the Mill** available,
-with the tracker pointing toward Mira's workshop. It does not accept MQ02 or add
-Mira's quest conversation, escort, woodland route or repair adventure yet.
-The mill entity holds a still frame after the report, while stream animation
-continues; the map description reflects the stopped wheel.
+with the tracker pointing toward Mira's workshop. Speaking with Mira at her
+outdoor workbench now accepts the complete MQ02 adventure: mill diagnosis,
+upstream intake preparation, Caelan's smaller successful spell, encouragement,
+cooperative repair and return to Halden. The mill holds a still frame after the
+MQ01 report and resumes only when the intake is physically restored. Stream
+animation continues throughout. See [Mira's mill quest](MILL_QUEST.md) and its
+[in-game review](reviews/mill_quest/README.md).
 
 `opening_conclusion.py` owns optional version-one stages `idle`, `arrival`,
 `waiting` and `done`. Leaving unread report prose records nothing. Leaving the

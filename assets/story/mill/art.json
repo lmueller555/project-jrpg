@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "palette_sources": [
+    "assets/terrain/eldenmere/irrigation/palette.json",
+    "assets/terrain/eldenmere/gate/palette.json"
+  ],
+  "props": [
+    {
+      "id": "intake_screen",
+      "scene": "upstream",
+      "position": [
+        492,
+        184
+      ],
+      "sort_y": 264,
+      "states": {
+        "blocked": "assets/story/mill/props/intake_screen_blocked.png",
+        "prepared": "assets/story/mill/props/intake_screen_prepared.png",
+        "cleared": "assets/story/mill/props/intake_screen_cleared.png",
+        "restored": "assets/story/mill/props/intake_screen_restored.png"
+      },
+      "moving_frames": [
+        "assets/story/mill/props/intake_move_0.png",
+        "assets/story/mill/props/intake_move_1.png",
+        "assets/story/mill/props/intake_move_2.png",
+        "assets/story/mill/props/intake_move_3.png",
+        "assets/story/mill/props/intake_move_4.png",
+        "assets/story/mill/props/intake_move_5.png"
+      ]
+    },
+    {
+      "id": "bypass",
+      "scene": "upstream",
+      "position": [
+        482,
+        260
+      ],
+      "sort_y": 298,
+      "states": {
+        "blocked": "assets/story/mill/props/bypass_blocked.png",
+        "prepared": "assets/story/mill/props/bypass_prepared.png",
+        "cleared": "assets/story/mill/props/bypass_cleared.png",
+        "restored": "assets/story/mill/props/bypass_restored.png"
+      }
+    },
+    {
+      "id": "inspection_pool",
+      "scene": "upstream",
+      "position": [
+        494,
+        316
+      ],
+      "sort_y": 350,
+      "states": {
+        "blocked": "assets/story/mill/props/inspection_pool_blocked.png",
+        "prepared": "assets/story/mill/props/inspection_pool_prepared.png",
+        "cleared": "assets/story/mill/props/inspection_pool_cleared.png",
+        "restored": "assets/story/mill/props/inspection_pool_restored.png"
+      },
+      "animation": [
+        "assets/story/mill/props/pool_spell_0.png",
+        "assets/story/mill/props/pool_spell_1.png",
+        "assets/story/mill/props/pool_spell_2.png",
+        "assets/story/mill/props/pool_spell_3.png",
+        "assets/story/mill/props/pool_spell_4.png",
+        "assets/story/mill/props/pool_spell_5.png"
+      ]
+    },
+    {
+      "id": "lever",
+      "scene": "upstream",
+      "position": [
+        486,
+        358
+      ],
+      "sort_y": 399,
+      "states": {
+        "blocked": "assets/story/mill/props/lever_blocked.png",
+        "prepared": "assets/story/mill/props/lever_prepared.png",
+        "cleared": "assets/story/mill/props/lever_cleared.png",
+        "restored": "assets/story/mill/props/lever_restored.png"
+      }
+    },
+    {
+      "id": "millrace_flow",
+      "scene": "upstream",
+      "position": [
+        528,
+        168
+      ],
+      "sort_y": -9999,
+      "states": {
+        "blocked": "assets/story/mill/props/millrace_flow_blocked.png",
+        "prepared": "assets/story/mill/props/millrace_flow_prepared.png",
+        "cleared": "assets/story/mill/props/millrace_flow_cleared.png",
+        "restored": "assets/story/mill/props/millrace_flow_restored.png"
+      },
+      "restored_frames": [
+        "assets/story/mill/props/race_flow_0.png",
+        "assets/story/mill/props/race_flow_1.png",
+        "assets/story/mill/props/race_flow_2.png",
+        "assets/story/mill/props/race_flow_3.png",
+        "assets/story/mill/props/race_flow_4.png",
+        "assets/story/mill/props/race_flow_5.png"
+      ]
+    }
+  ],
+  "water_conservation": "Residual inspection water moves into the adjacent drain; the main stream continues to flow."
+}

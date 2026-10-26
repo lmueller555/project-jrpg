@@ -381,5 +381,5 @@ class MapUI:
         painter.text('You are here', (331, 236), role='small', color=INK, bold=True)
         if self.game.world is not self.game.town:
             y = 236+painter.font('small', bold=True).get_linesize()+5
-            painter.text('Indoors', (314, y), role='small', color=SOFT_INK)
+            painter.text('Indoors' if self.game.world.data.get('kind')=='interior' else 'Upstream trail', (314, y), role='small', color=SOFT_INK)
         # The dedicated location legend never competes with landmark rows.
