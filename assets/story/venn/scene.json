@@ -1,0 +1,78 @@
+{
+  "arrival": [
+    {
+      "speaker": "venn_mother",
+      "text": "Please thank Serene. The little one's finally keeping food down."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Now if only the channel would cooperate."
+    },
+    {
+      "speaker": "caelan",
+      "text": "May I take a look?"
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "Please do. Our tools aren't much, but they're yours to borrow."
+    }
+  ],
+  "resolution": [
+    {
+      "speaker": "venn_father",
+      "text": "They've got pumps in the capital that could fill these channels in half the time."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "And payments that would take twice as long to finish."
+    },
+    {
+      "speaker": "caelan",
+      "text": "For today, at least, we've got the water moving again."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "You've done us a kindness. Let Serene know we'll be all right."
+    }
+  ],
+  "reminder": [
+    {
+      "speaker": "venn_father",
+      "text": "The gate is east of the cottage. Have a look at the pin and the channel below it."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "Borrow what you need from the tool box."
+    }
+  ],
+  "pin": [
+    {
+      "speaker": "caelan",
+      "text": "The pin's caught at an angle. I'll need to take the pressure off before I set it straight."
+    }
+  ],
+  "channel": [
+    {
+      "speaker": "caelan",
+      "text": "Twigs have collected below the gate. Even a little water would carry them clear."
+    }
+  ],
+  "choice": [
+    {
+      "speaker": "caelan",
+      "text": "I can free the pin with their tools, or ease the water aside and set it by hand."
+    }
+  ],
+  "after": [
+    {
+      "speaker": "venn_mother",
+      "text": "Please let Serene know we'll be all right. Thank you, Caelan."
+    }
+  ],
+  "hands_full": [
+    {
+      "speaker": "caelan",
+      "text": "I should set Elira's lantern down safely before I take anything else in hand."
+    }
+  ]
+}

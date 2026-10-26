@@ -50,7 +50,10 @@ goodbye. No debug delivery is exposed through the satchel UI. `elira_visit.py`
 likewise consumes the food/oil bundle at the actual handoff beat, after Halden
 unlocks the visit. The borrowed lantern is a visible quest prop with a saved
 location (shelf, Caelan's hands, or table); it is not an extra supply bundle or
-loot item.
+loot item. `venn_visit.py` consumes the recovery bundle at the family handoff,
+independently of its inspections, repair choice and closing conversation. The
+gate tools are borrowed work props, not extra inventory rewards. Caelan must put
+Elira's carried lantern safely on her table before handling supplies or tools.
 
 ## Saves
 

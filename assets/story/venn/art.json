@@ -1,0 +1,112 @@
+{
+  "source_hashes": {
+    "assets/characters/npcs/female_01/idle_front.png": "30a7132736154a2455fab777b525c075c3cf036e41d5fae5b7ef853e47fee0c8",
+    "assets/characters/npcs/male_01/idle_front.png": "96eb053dc5736e986c53b206098d9ab625c6bda80ed4d96651199be500d36cfe",
+    "assets/characters/liam/idle_front.png": "df54b20a7f8a2e6dd1031f104ae63180760f742e3a8039b70bf1772c918046d8",
+    "assets/characters/npcs/female_01/idle_left.png": "59061b909ed627c639dc4b90de4a4c358d0496dcfc4ed98f0396c45f04571221",
+    "assets/characters/npcs/male_01/idle_left.png": "161c5e0fc611319088af72d759bc13ff4755d207e1c6e89d4477f78264ae5108",
+    "assets/characters/liam/idle_left.png": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+    "assets/characters/npcs/female_01/idle_right.png": "99cd6362bd4385af3352b2f201bbaf6c8168934a0f6309d45927c229c8a9b40e",
+    "assets/characters/npcs/male_01/idle_right.png": "b4404051ac3663cbdb517eb5249ce75f563b04dafc544eaf22058bb316796510",
+    "assets/characters/liam/idle_right.png": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+    "assets/characters/npcs/female_01/idle_back.png": "a1b6d2b946859797dcab1e5ccfae5e9c9119b6d9c92125d0592de80f449b85a1",
+    "assets/characters/npcs/male_01/idle_back.png": "dabbf61bb9ac491e1be7ddde6e812a9dd2454991e521511494d1a95b029a423a",
+    "assets/characters/liam/idle_back.png": "f8bbf9ec4de29cf26aff9cc7d73868486ce622635db22e64d5f61b61685f5006"
+  },
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "repair_canvas": [
+    40,
+    48
+  ],
+  "repair_anchor": [
+    20,
+    38
+  ],
+  "gate_position": [
+    1440,
+    636
+  ],
+  "pin_contact": [
+    1442,
+    659
+  ],
+  "repair_approach": [
+    1428,
+    670
+  ],
+  "child": "26 visible pixels, resting on the existing pillow; full directional idles retained",
+  "names": "Parents and child are identified by family role; given names remain open",
+  "animations": {
+    "idle_open": [
+      "assets/story/venn/gate/idle_open_0.png",
+      "assets/story/venn/gate/idle_open_1.png",
+      "assets/story/venn/gate/idle_open_2.png",
+      "assets/story/venn/gate/idle_open_3.png",
+      "assets/story/venn/gate/idle_open_4.png",
+      "assets/story/venn/gate/idle_open_5.png"
+    ],
+    "idle_closed": [
+      "assets/story/venn/gate/idle_closed_0.png",
+      "assets/story/venn/gate/idle_closed_1.png",
+      "assets/story/venn/gate/idle_closed_2.png",
+      "assets/story/venn/gate/idle_closed_3.png",
+      "assets/story/venn/gate/idle_closed_4.png",
+      "assets/story/venn/gate/idle_closed_5.png"
+    ],
+    "idle_jammed": [
+      "assets/story/venn/gate/idle_jammed_0.png",
+      "assets/story/venn/gate/idle_jammed_1.png",
+      "assets/story/venn/gate/idle_jammed_2.png",
+      "assets/story/venn/gate/idle_jammed_3.png",
+      "assets/story/venn/gate/idle_jammed_4.png",
+      "assets/story/venn/gate/idle_jammed_5.png"
+    ],
+    "opening": [
+      "assets/story/venn/gate/opening_0.png",
+      "assets/story/venn/gate/opening_1.png",
+      "assets/story/venn/gate/opening_2.png",
+      "assets/story/venn/gate/opening_3.png",
+      "assets/story/venn/gate/opening_4.png",
+      "assets/story/venn/gate/opening_5.png"
+    ],
+    "closing": [
+      "assets/story/venn/gate/closing_0.png",
+      "assets/story/venn/gate/closing_1.png",
+      "assets/story/venn/gate/closing_2.png",
+      "assets/story/venn/gate/closing_3.png",
+      "assets/story/venn/gate/closing_4.png",
+      "assets/story/venn/gate/closing_5.png"
+    ],
+    "repair": [
+      "assets/story/venn/gate/repair_0.png",
+      "assets/story/venn/gate/repair_1.png",
+      "assets/story/venn/gate/repair_2.png",
+      "assets/story/venn/gate/repair_3.png",
+      "assets/story/venn/gate/repair_4.png",
+      "assets/story/venn/gate/repair_5.png"
+    ],
+    "jamming": [
+      "assets/story/venn/gate/jamming_0.png",
+      "assets/story/venn/gate/jamming_1.png",
+      "assets/story/venn/gate/jamming_2.png",
+      "assets/story/venn/gate/jamming_3.png",
+      "assets/story/venn/gate/jamming_4.png",
+      "assets/story/venn/gate/jamming_5.png"
+    ]
+  },
+  "backgrounds": [
+    "assets/story/venn/gate/background_0.png",
+    "assets/story/venn/gate/background_1.png",
+    "assets/story/venn/gate/background_2.png",
+    "assets/story/venn/gate/background_3.png",
+    "assets/story/venn/gate/background_4.png",
+    "assets/story/venn/gate/background_5.png"
+  ]
+}

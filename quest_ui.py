@@ -382,6 +382,9 @@ class QuestUI:
                 visit = getattr(self.game, 'elira_visit', None)
                 if objective['id'] == 'elira' and progress == 'active' and visit is not None:
                     text += ' '+visit.journal_detail()
+                visit = getattr(self.game, 'venn_visit', None)
+                if objective['id'] == 'venn' and progress == 'active' and visit is not None:
+                    text += ' '+visit.journal_detail()
                 if progress == 'queued' and objective.get('requires'):
                     # Keep the opening's approved prerequisite wording concise.
                     text += ' (after Halden)' if objective.get('requires') == ['halden'] else ' (after earlier errands)'

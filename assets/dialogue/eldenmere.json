@@ -27,6 +27,21 @@
       "name": "Elira",
       "portrait": "elira",
       "actor_id": "elira"
+    },
+    "venn_mother": {
+      "name": "Mrs. Venn",
+      "portrait": "venn_mother",
+      "actor_id": "venn_mother"
+    },
+    "venn_father": {
+      "name": "Mr. Venn",
+      "portrait": "venn_father",
+      "actor_id": "venn_father"
+    },
+    "venn_child": {
+      "name": "Venn child",
+      "portrait": "venn_child",
+      "actor_id": "venn_child"
     }
   },
   "characters": {
@@ -336,6 +351,49 @@
             {
               "speaker": "elira",
               "text": "Mind that stool. I keep telling myself I'll put it away."
+            }
+          ]
+        }
+      ]
+    },
+    "venn_mother": {
+      "conversations": [
+        {
+          "id": "venn_mother_ambient",
+          "lines": [
+            {
+              "speaker": "venn_mother",
+              "text": "It's been a quiet morning, thankfully."
+            }
+          ]
+        }
+      ]
+    },
+    "venn_father": {
+      "conversations": [
+        {
+          "id": "venn_father_ambient",
+          "lines": [
+            {
+              "speaker": "venn_father",
+              "text": "I ought to see to that channel before the afternoon."
+            }
+          ]
+        }
+      ]
+    },
+    "venn_child": {
+      "conversations": [
+        {
+          "id": "venn_child_rest",
+          "lines": [
+            {
+              "speaker": "venn_child",
+              "text": "I had a whole bowl today."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Good. Rest a little longer."
             }
           ]
         }

@@ -15,7 +15,7 @@ stands in the route. Caelan and Tomas can carry their respective sacks at once.
 After 3/3, approach Halden for the approved completion exchange. Then approach
 Tomas for his goodbye. Halden's objective finishes when Tomas actually leaves
 through the cottage doorway. Elira and the Venn family become available in
-either order. Their practical errands remain future work. Tomas walks back to
+either order. Their practical errands are now playable. Tomas walks back to
 the sanctuary and resumes preparations.
 
 ## Runtime ownership

@@ -47,6 +47,7 @@ class SocialSystem:
         self._choosing = False
         self._scripted = False
         self._script_callback = None
+        self._choice_callback = None
         self._script_origin = None
         self._conversation_world = None
         self.script_identifier = None
@@ -327,9 +328,27 @@ class SocialSystem:
         self._choosing = False
         self._scripted = True
         self._script_callback = on_complete
+        self._choice_callback = None
         self._script_origin = tuple(self.game.player.position)
         self._conversation_world = self.game.world
         self.script_identifier = identifier
+        return True
+
+    def start_choice(self, lines, choices, on_select, identifier=None, prompt='How will you help?'):
+        """A live scripted choice; only clicking an answer invokes its callback.
+
+        Cancellation clears the callback, and keyboard prose advancement cannot
+        silently pick an option. Script choices never impersonate quest offers.
+        """
+        if (not callable(on_select) or not isinstance(choices, (list, tuple)) or not 2<=len(choices)<=4
+                or not isinstance(prompt, str) or not prompt.strip()
+                or any(not isinstance(c, dict) or any(not isinstance(c.get(k), str) or not c[k].strip()
+                                                     for k in ('text', 'action')) for c in choices)):
+            return False
+        if len({c['action'] for c in choices})!=len(choices):return False
+        if not self.start_script(lines, identifier=identifier):return False
+        self.conversation.update(choices=[dict(c) for c in choices], choice_prompt=prompt, scripted_choice=True)
+        self._choice_callback = on_select
         return True
 
     def cancel_script(self):
@@ -345,6 +364,7 @@ class SocialSystem:
         self._choosing = False
         self._scripted = False
         self._script_callback = None
+        self._choice_callback = None
         self._script_origin = None
         self._conversation_world = None
         self.script_identifier = None
@@ -399,7 +419,7 @@ class SocialSystem:
         if self.page_index + 1 < len(self.pages):
             self.page_index += 1
             return
-        if self.conversation.get('quest', {}).get('action') == 'offer':
+        if self.conversation.get('quest', {}).get('action') == 'offer' or self.conversation.get('scripted_choice'):
             self._choosing = True
             return
         self._finish()
@@ -417,6 +437,12 @@ class SocialSystem:
         if choice is None:return False
         accepted = None
         option = self.choice_options[choice]
+        if self.scripted and self.conversation.get('scripted_choice'):
+            callback = self._choice_callback
+            self.cancel_script()
+            if callback is not None:callback(option['action'])
+            self.game.ui.sound('confirm')
+            return True
         if option.get('action') == 'accept':
             accept=getattr(self.game,'accept_quest',self.game.quests.accept)
             if not accept(self.conversation['quest']['id']):return False
