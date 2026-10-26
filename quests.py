@@ -188,6 +188,11 @@ class QuestLog:
                 return False
             status = state['status']
             done = state['completed_objectives']
+            # The former MQ02 placeholder could end after only meeting Mira.
+            # Preserve that meeting, but expose the newly implemented adventure.
+            legacy = record.get('legacy_objectives')
+            if legacy and status in ('ready','completed') and done == legacy and len(record['objectives']) > len(legacy):
+                status = 'active'
             if not isinstance(status, str) or status not in STATUSES:
                 return False
             if not isinstance(done, list) or not all(isinstance(value, str) for value in done):

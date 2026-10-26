@@ -11,7 +11,7 @@
       "parallel_tracker_text": "Visit Elira and the Venn family.",
       "report_text": "Return to Mother Serene.",
       "completion_text": "Serene's three households have been helped.",
-      "implementation_note": "All three households, the report, Halden’s arrival and the Mira handoff are playable. MQ01 completes after the mill exchange.",
+      "implementation_note": "All three households, the report, Halden\u2019s arrival and the Mira handoff are playable. MQ01 completes after the mill exchange.",
       "objectives": [
         {
           "id": "halden",
@@ -48,15 +48,77 @@
       "requires_quests": [
         "CH01_MQ01"
       ],
-      "summary": "Halden’s mill wheel has stopped. Find Mira at her workshop to ask for her help.",
+      "summary": "Help Mira investigate Halden's stopped mill, restore its upstream intake and get the wheel turning again.",
       "available_tracker_text": "Find Mira at her workshop.",
       "objectives": [
         {
           "id": "meet_mira",
-          "text": "Find Mira at her workshop.",
-          "tracker_text": "Find Mira at her workshop.",
+          "text": "Ask Mira to help with the stopped mill.",
+          "tracker_text": "Find Mira at her workbench.",
           "requires": []
+        },
+        {
+          "id": "diagnose_mill",
+          "text": "Inspect the mill mechanism and its water supply with Mira.",
+          "tracker_text": "Inspect the mechanism and millrace.",
+          "requires": [
+            "meet_mira"
+          ]
+        },
+        {
+          "id": "reach_intake",
+          "text": "Follow the millrace upstream and examine the intake.",
+          "tracker_text": "Follow the trail upstream with Mira.",
+          "requires": [
+            "diagnose_mill"
+          ]
+        },
+        {
+          "id": "prepare_intake",
+          "text": "Help Mira relieve the intake pressure.",
+          "tracker_text": "Secure the intake bypass.",
+          "requires": [
+            "reach_intake"
+          ]
+        },
+        {
+          "id": "small_spell",
+          "text": "Clear the trapped still water from the inspection recess.",
+          "tracker_text": "Use a small spell to clear the inspection recess.",
+          "requires": [
+            "prepare_intake"
+          ]
+        },
+        {
+          "id": "repair_intake",
+          "text": "Help Mira free the intake screen and shift the fallen limb.",
+          "tracker_text": "Work with Mira to restore the intake.",
+          "requires": [
+            "small_spell"
+          ]
+        },
+        {
+          "id": "verify_mill",
+          "text": "Return and verify that the mill wheel is turning.",
+          "tracker_text": "Return to the mill and check the wheel.",
+          "requires": [
+            "repair_intake"
+          ]
+        },
+        {
+          "id": "report",
+          "text": "Finish the exchange with Mira and Halden.",
+          "tracker_text": "Speak with Mira and Halden at the mill.",
+          "requires": [
+            "verify_mill"
+          ]
         }
+      ],
+      "accept_text": "Mira is coming with you. Inspect the stopped mill together.",
+      "report_text": "Speak with Mira and Halden at the working mill.",
+      "completion_text": "Halden's mill is running again. You and Mira restored its intake together.",
+      "legacy_objectives": [
+        "meet_mira"
       ]
     }
   ]

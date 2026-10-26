@@ -37,6 +37,7 @@ from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
 from opening_conclusion import OpeningConclusion
+from mill_quest import MillQuest
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -103,18 +104,42 @@ class BenchWorker:
                       world.image((path.parent/f['fitting_file']).as_posix()),f)
                      for f in self.animation['frames']]
         self.duration_ms=sum(frame[2]['duration_ms'] for frame in self.frames)
-        # Ground contact only; hair, arms and tool never become solid walls.
-        width,height=record['probe_size']
-        self.blocker=pygame.Rect(round(self.position.x)-width//2,round(self.position.y)-height//2,width,height)
+        self.probe_size = tuple(record['probe_size'])
+        self.quest_mode = False;self.moving = False;self.facing = 'front';self.walk_ms = 0.
+        self.scene_id = world.data['id'];self.opens_doors = True
+        self.conversation_ready = False;self.conversation_facing = 'front'
+        self.idles = {};self.walks = {}
+        if record['id'] == 'mira_worker':
+            for direction in ('front', 'left', 'right', 'back'):
+                self.idles[direction] = world.image(f'assets/characters/mira/idle_{direction}.png')
+                meta = read_json(ROOT/f'assets/characters/mira/walk_{direction}/animation.json')
+                self.walks[direction] = [world.image(f'assets/characters/mira/walk_{direction}/'+f['file']) for f in meta['frames']]
+
+    @property
+    def blocker(self):
+        width,height = self.probe_size
+        return pygame.Rect(round(self.position.x)-width//2,round(self.position.y)-height//2,width,height)
+
+    def request_conversation(self, facing):
+        self.conversation_ready = True;self.conversation_facing = facing
+
+    def end_conversation(self):self.conversation_ready = False
 
     def frame(self,elapsed_ms):
+        if self.quest_mode or self.conversation_ready:return self.frames[0]
         time=elapsed_ms%self.duration_ms
         for frame in self.frames:
             if time<frame[2]['duration_ms']:return frame
             time-=frame[2]['duration_ms']
         return self.frames[-1]
 
-    def sprite(self,elapsed_ms):return self.frame(elapsed_ms)[0]
+    def sprite(self,elapsed_ms):
+        if self.quest_mode or self.conversation_ready:
+            facing = self.conversation_facing if self.conversation_ready else self.facing
+            if self.moving and not self.conversation_ready:
+                return self.walks[facing][int(self.walk_ms//140)%len(self.walks[facing])]
+            return self.idles[facing]
+        return self.frame(elapsed_ms)[0]
 
 
 class StationaryNPC:
@@ -162,6 +187,8 @@ class World:
                    DaisyRoutine if record.get('kind')=='daisy_routine' else
                    Gardener if record.get('routine')=='watering' else BenchWorker)
             self.npcs.append(actor(record,self))
+        # Bench fittings belong to this world even when their worker leaves.
+        self.work_fittings=[npc for npc in self.npcs if 'fitting_sort_y' in npc.data]
 
     def attach_routine_props(self,actor):
         """Permanently register one actor's nonblocking props for this room."""
@@ -228,9 +255,10 @@ class World:
             if rect.colliderect(viewport):
                 ordered.append((prop.get('sort_y',rect.bottom),prop.get('sort_priority',1.5),
                                 'routine_prop',(surface,prop['position'])))
+        for worker in self.work_fittings:
+            ordered.append((worker.data['fitting_sort_y'],1,'fitting',worker))
         for npc in self.npcs:
             if not getattr(npc,'story_visible',True):continue
-            if 'fitting_sort_y' in npc.data:ordered.append((npc.data['fitting_sort_y'],1,'fitting',npc))
             sort_y=getattr(npc,'sort_y',None)
             if getattr(npc,'story_sort_y',None) is not None:sort_y=npc.story_sort_y
             ordered.append((npc.position.y+self.probe_size[1]/2 if sort_y is None else sort_y,2,'npc',npc))
@@ -394,7 +422,8 @@ class Game:
         self.elira_visit=EliraVisit(self)
         self.venn_visit=VennVisit(self)
         self.opening_conclusion=OpeningConclusion(self)
-        self.household_visits=(self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
+        self.mill_quest=MillQuest(self)
+        self.household_visits=(self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -413,6 +442,7 @@ class Game:
                            'elira_visit':self.elira_visit.to_dict(),
                            'venn_visit':self.venn_visit.to_dict(),
               'opening_conclusion':self.opening_conclusion.to_dict(),
+                           'mill_quest':self.mill_quest.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
@@ -459,7 +489,7 @@ class Game:
         def point(value):
             return (isinstance(value,list) and len(value)==2 and
                     all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
-        scene_ids={self.town.data['id'],*self.town.data.get('interior_scenes',{})}
+        scene_ids={self.town.data['id'],*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
         player=data.get('player')
         valid=(type(data.get('version')) is int and data['version']==1 and
                isinstance(player,dict) and isinstance(player.get('scene'),str) and
@@ -476,6 +506,8 @@ class Game:
                ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
                ('venn_visit' not in data or VennVisit.valid_journey(data)) and
                ('opening_conclusion' not in data or OpeningConclusion.valid_journey(data)) and
+               (MillQuest.valid_journey(data) if 'mill_quest' in data else
+                set(data['quests']['quests'].get('CH01_MQ02',{}).get('completed_objectives',[])) <= {'meet_mira'}) and
                ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked'))
         if not valid:
             self.save_error='The saved journey could not be read.'
@@ -527,6 +559,7 @@ class Game:
         if continue_saved and data is None:return False
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
+        self.mill_quest.release_pose()
         if data is None:
             self.quests.restore(QuestLog().to_dict())
             self.inventory=Inventory()
@@ -572,6 +605,7 @@ class Game:
         self.elira_visit.restore(data.get('elira_visit') if data else None)
         self.venn_visit.restore(data.get('venn_visit') if data else None)
         self.opening_conclusion.restore(data.get('opening_conclusion') if data else {'version':1,'stage':'idle'})
+        self.mill_quest.restore(data.get('mill_quest') if data else None)
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -601,6 +635,7 @@ class Game:
               'elira_visit':self.elira_visit.to_dict(),
               'venn_visit':self.venn_visit.to_dict(),
               'opening_conclusion':self.opening_conclusion.to_dict(),
+                           'mill_quest':self.mill_quest.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},
@@ -639,7 +674,7 @@ class Game:
 
     def _scene_by_id(self,scene_id):
         if scene_id==self.town.data['id']:return self.town
-        try:path=self.town.data['interior_scenes'][scene_id]
+        try:path={**self.town.data.get('interior_scenes',{}),**self.town.data.get('exterior_scenes',{})}[scene_id]
         except KeyError as error:raise ValueError(f'Unknown routine scene: {scene_id}') from error
         return self._load_scene(ROOT/path)
 
@@ -776,7 +811,7 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
-                    if not any(visit.interact() for visit in self.household_visits):self.opening.inspect_nearby()
+                    if not any(visit.interact() for visit in self.household_visits) and not self.try_world_link():self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
@@ -861,6 +896,7 @@ class Game:
         # completing prose that the player left unread.
         if self.social.locked:self.social.cancel()
         if self.world is self.town:self.exterior_position.update(door.data['anchor'])
+        origin=self.world
         self.world=destination
         self.player.position.update(spawn)
         self.player.facing=door.data['arrival_facing']
@@ -869,8 +905,36 @@ class Game:
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
         self.opening.on_enter_scene()
+        hook=getattr(self.mill_quest,'on_enter_scene',None)
+        if hook is not None:hook(origin,door.data)
         self.save_progress()
         return True
+
+    def nearby_world_link(self):
+        if self.social.locked or self.household_action or self.opening.locks_player:return None
+        return next((link for link in self.world.data.get('world_links',[])
+                     if self.player.position.distance_to(link['position'])<=link.get('radius',20)),None)
+
+    def try_world_link(self):
+        link=self.nearby_world_link()
+        return self.travel_link(link) if link is not None else False
+
+    def travel_link(self,link):
+        """Use an authored outdoor trail with the same safe checkpoint as doors."""
+        if (not isinstance(link,dict) or link not in self.world.data.get('world_links',[]) or
+                self.player.position.distance_to(link['position'])>link.get('radius',20) or
+                self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
+                self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
+        destination=self._load_scene(ROOT/link['destination']);spawn=link['spawn']
+        if not destination.can_stand(spawn):return False
+        origin=self.world
+        if origin is self.town:self.exterior_position.update(self.player.position)
+        self.world=destination;self.player.position.update(spawn)
+        self.player.facing=link.get('arrival_facing','front');self.player.moving=False;self.player.walk_ms=0
+        self.transfer_cooldown=.3
+        hook=getattr(self.mill_quest,'on_enter_scene',None)
+        if hook is not None:hook(origin,link)
+        self.camera.reset();self.save_progress();return True
 
     def text(self,text,position,font=None,color=IVORY):
         """Compatibility helper for captures; gameplay text uses display pixels."""
@@ -923,6 +987,9 @@ class Game:
                 canvas.blit(layer,(0,0))
         hint=self.opening.interaction_hint() or next((hint for visit in self.household_visits
                                                      if (hint:=visit.interaction_hint())), '')
+        if not hint:
+            link=self.nearby_world_link()
+            if link is not None:hint='E: '+link.get('label','Follow the trail')
         if hint:
             hint=hint.replace(': ',' — ',1)
             available=menu.left-24

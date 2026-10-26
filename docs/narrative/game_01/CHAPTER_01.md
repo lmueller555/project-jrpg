@@ -35,7 +35,7 @@ Approximate pacing **targets**, not commitments: 60–90 minutes main narrative,
 
 **Premise:** Caelen reunites with his childhood friend Mira after the watermill fails; together they investigate an obstructed channel outside the village and restore its operation.
 
-**Purpose:** Provide a small, complete adventure; demonstrate Mira's engineering knowledge and Caelen's learned magicks; develop affectionate, credible differences over technological progress and inherited restrictions.
+**Purpose:** Provide a small, complete adventure through Mira's engineering knowledge and Caelan's practical help and limited learned magicks. After pressure is relieved mechanically, he successfully clears a small pocket of still water; this remains below the force required to push back the Venns' flowing channel. Mira encourages his pleasure in that modest success, with a conditional acknowledgment of the earlier failed attempt. Develop their affectionate, credible differences over technological progress and inherited restrictions through their work together. See the [implemented quest script](CH01_MQ02.md).
 
 **Proposed staging:** A short woodland route, a mechanical/environmental obstacle, and optional low-threat encounters. The exact cause, solution, difficulty, and combat use are OPEN.
 

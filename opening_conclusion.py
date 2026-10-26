@@ -25,7 +25,9 @@ class OpeningConclusion:
     @property
     def locks_player(self):return False
     @property
-    def mill_stopped(self):return self.stage!='idle'
+    def mill_stopped(self):
+        quest=getattr(self.game,'mill_quest',None)
+        return self.stage!='idle' and not (quest is not None and quest.mill_restored)
     def to_dict(self):return {'version':1,'stage':self.stage}
     @staticmethod
     def valid_journey(data):

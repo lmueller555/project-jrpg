@@ -289,6 +289,10 @@ class QuestUI:
         if opening is not None and not opening.can_speak(npc_id):return None
         conclusion = getattr(self.game, 'opening_conclusion', None)
         if conclusion is not None and not conclusion.can_speak(npc_id):return None
+        mill=getattr(self.game,'mill_quest',None)
+        if mill is not None:
+            result=mill.marker_for(npc_id)
+            if result is not NotImplemented:return result
         return self.game.quests.marker_for(npc_id)
 
     def draw_markers(self, canvas, camera):

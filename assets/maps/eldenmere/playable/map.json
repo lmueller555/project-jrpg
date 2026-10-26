@@ -1636,5 +1636,25 @@
   "ambient_scenes": [
     "liam_house"
   ],
-  "household_registry": "assets/maps/eldenmere/households/households.json"
+  "household_registry": "assets/maps/eldenmere/households/households.json",
+  "exterior_scenes": {
+    "upstream": "assets/maps/eldenmere/upstream/map.json"
+  },
+  "world_links": [
+    {
+      "id": "town_to_upstream",
+      "position": [
+        720,
+        168
+      ],
+      "destination": "assets/maps/eldenmere/upstream/map.json",
+      "spawn": [
+        168,
+        492
+      ],
+      "arrival_facing": "back",
+      "label": "Follow the millrace upstream",
+      "radius": 22
+    }
+  ]
 }
