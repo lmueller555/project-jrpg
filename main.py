@@ -280,25 +280,28 @@ class Player:
         self.position=pygame.Vector2(world.data['spawn'])
         self.facing='front'
         self.moving=False
+        self.running=False
         self.walk_ms=0.0
         self.idles={d:world.image(f'assets/characters/caelan/idle_{d}.png') for d in ('front','left','right','back')}
-        self.walks={}
-        for direction in self.idles:
-            folder=ROOT/f'assets/characters/caelan/walk_{direction}'
-            metadata=read_json(folder/'animation.json')
-            self.walks[direction]=[(world.image((folder/r['file']).relative_to(ROOT).as_posix()),r['duration_ms'])
-                                   for r in metadata['frames']]
+        self.walks={};self.runs={}
+        for gait,animations in (('walk',self.walks),('run',self.runs)):
+            for direction in self.idles:
+                folder=ROOT/f'assets/characters/caelan/{gait}_{direction}'
+                metadata=read_json(folder/'animation.json')
+                animations[direction]=[(world.image((folder/r['file']).relative_to(ROOT).as_posix()),r['duration_ms'])
+                                       for r in metadata['frames']]
         if not world.can_stand(self.position):raise ValueError('Player spawn is blocked')
 
     def update(self,direction,seconds,world,running=False):
         vector=pygame.Vector2(direction)
         self.moving=False
         if not vector.length_squared():
+            self.running=False
             self.walk_ms=0
             return
         vector=vector.normalize()
         facing=('right' if vector.x>0 else 'left') if abs(vector.x)>abs(vector.y) else ('front' if vector.y>0 else 'back')
-        if facing!=self.facing:self.walk_ms=0
+        if facing!=self.facing or bool(running)!=self.running:self.walk_ms=0
         self.facing=facing
         speed=WALK_SPEED*(RUN_MULTIPLIER if running else 1)
         displacement=vector*speed*seconds
@@ -312,13 +315,15 @@ class Player:
             candidate=self.position+pygame.Vector2(0,delta.y)
             if world.can_stand(candidate):self.position.y=candidate.y
         self.moving=self.position.distance_squared_to(start)>1e-8
-        if self.moving:self.walk_ms+=seconds*1000*(RUN_MULTIPLIER if running else 1)
+        self.running=self.moving and bool(running)
+        # Each gait uses its authored frame durations, independent of travel speed.
+        if self.moving:self.walk_ms+=seconds*1000
         else:self.walk_ms=0
 
     def sprite(self):
         if getattr(self,'story_sprite',None) is not None:return self.story_sprite
         if not self.moving:return self.idles[self.facing]
-        frames=self.walks[self.facing]
+        frames=(self.runs if self.running else self.walks)[self.facing]
         time=self.walk_ms%sum(duration for _,duration in frames)
         for image,duration in frames:
             if time<duration:return image

@@ -44,7 +44,7 @@ or watch the [title video and water close-up](docs/reviews/title_water_music/REA
 | Control | Action |
 | --- | --- |
 | WASD or arrow keys | Move Caelan |
-| Shift | Run |
+| Shift | Run with Caelan’s approved four-direction running animations |
 | M | Open/close the town map; click landmarks to inspect them |
 | J | Open/close the quest journal; select a quest and scroll its details |
 | I | Open/close the inventory; Tab or left/right switches categories |
