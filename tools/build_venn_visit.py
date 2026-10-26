@@ -133,7 +133,9 @@ def gate_assets():
 
 def build():
     hashes = family()
-    for mode in ('tools', 'hands', 'magicks'):
+    # Superseded generic casting frames are replaced by the held-water atlas.
+    for i in range(4):(OUT/f'caelan/magicks_{i}.png').unlink(missing_ok=True)
+    for mode in ('tools', 'hands'):
         for i in range(4):save(Path(f'caelan/{mode}_{i}.png'), body_pose(i, mode))
     for direction in ('front', 'back', 'left', 'right'):
         im = Image.new('RGBA', SIZE);im.alpha_composite(load(f'assets/characters/caelan/idle_{direction}.png'), OFFSET)
@@ -159,4 +161,7 @@ def build():
     (OUT/'art.json').write_text(json.dumps(meta, indent=2)+'\n')
 
 
-if __name__ == '__main__':build()
+if __name__ == '__main__':
+    build()
+    from build_venn_magicks import build as build_magicks
+    build_magicks()

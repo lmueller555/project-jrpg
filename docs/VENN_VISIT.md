@@ -15,9 +15,11 @@ observations, then return to the pin and press **E** to choose:
 
 - **Use borrowed tools:** Caelan kneels, reseats the pin with the mallet, walks
   south along the dry bank, pulls the debris out, returns and raises the board.
-- **Use modest magicks:** restrained ripples curl within the existing upstream
-  water. Caelan relieves pressure, sets the pin by hand and raises the board;
-  the released water carries the debris south.
+- **Use modest magicks:** Caelan raises an open casting hand, draws the existing
+  water upstream into a visibly held crescent, and keeps that hand steady while
+  crouching to straighten the pin with his other hand. He holds the water aside
+  while lifting the gate, then lowers the casting hand. Released flow visibly
+  carries the twigs south before normal control returns.
 
 Both succeed without combat, a timer, a failure roll, resource costs or a major
 branching consequence. Full flow propagates down the existing irrigation route
@@ -42,9 +44,13 @@ An empty bedside foot rectangle still permits normal proximity conversation.
 The working pin is on the west, accessible bank. The quest gate frames use the
 approved mechanism with that pin relocated; the shared gate generator keeps
 its original right-pin default. A small opaque background removes the old baked
-board/pin before the quest gate is drawn. Repair poses pivot normal-length arms
-and keep logical feet on valid dry ground. Tools and debris have visible contact
-beats. The water effects stay within the existing water footprint.
+board/pin before the quest gate is drawn. Repair poses keep logical feet on valid dry ground. The magick branch has
+independent casting and working arms, with hand contact registered to the pin
+through repair and opening. Its held-water overlay replaces only water-colored
+gate pixels, so the opaque gate patch no longer hides the effect and wood, iron
+and stone still occlude it correctly. Water remains in the existing eight-pixel
+channel. Downstream flow and debris movement begin on release, not while casting.
+The tools branch retains its original work poses and timings.
 
 Water overlays reuse the approved channel and spillway frames, beneath actors.
 They never mutate cached town ground, the collision mask, elevations, buildings
@@ -78,3 +84,20 @@ tests in `tests/test_venn_visit.py` exercise real doors, proximity dialogue,
 inventory contact, two inspections, both clicked methods, both household orders,
 water/collision preservation, interruption/reload, old saves, large text and
 letterboxing, pause and unfinished closing prose.
+
+
+## Magick repair animation
+
+`venn_magicks.py` loads the explicit pose sequence, source-layer atlas and water
+levels from `assets/story/venn/magicks/`. Rebuild them with
+`python tools/build_venn_magicks.py` (Pillow). The old four generic
+`caelan/magicks_N.png` frames and ripple renderer are removed. The general Venn
+builder no longer regenerates them and invokes the new builder instead.
+
+The stages are raise hand, ease water, hold water, work pin, open, release water
+and finish. Interrupted casts retain the chosen method and inspection facts but
+restart safely with the gate jammed; completed older magick repairs stay repaired
+without replaying the new animation. Pause and inventory freeze all pose/water
+clocks. The family's closing conversation still completes the objective.
+
+See the [in-game close-up](reviews/venn_magicks/README.md).
