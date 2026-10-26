@@ -1,4 +1,4 @@
-"""Play both repairs, live response buttons, family dialogue and safe checkpoints."""
+"""Play direct tools and failed-magick fallback, with live dialogue and saves."""
 import copy
 import hashlib
 import json
@@ -85,6 +85,7 @@ class VennGameplayTests(unittest.TestCase):
     def finish_repair(self):
         states = set()
         for _ in range(900):
+            if self.game.social.script_identifier=='venn_magicks_failed':self.read_dialogue()
             if self.visit.action is None:break
             states.add(self.visit.phase);self.game.update(1/60, (0, 0), False)
             self.assertTrue(self.game.town.can_stand(self.game.player.position))
@@ -220,7 +221,10 @@ class VennGameplayTests(unittest.TestCase):
                 self.deliver();self.inspect('pin');self.inspect('channel');self.choose(method)
                 states = self.finish_repair()
                 self.assertIn('work_pin', states);self.assertIn('open', states)
-                self.assertIn('clear_channel' if method=='tools' else 'ease_water', states)
+                self.assertIn('clear_channel', states)
+                if method=='magicks':
+                    self.assertIn('attempt',states);self.assertIn('fizzle',states)
+                    self.assertTrue(self.visit.magicks_failed)
                 self.assertEqual(self.game.quests.objective_status(QUEST, 'elira'), 'active')
                 self.return_and_resolve()
                 self.assertEqual(self.game.quests.status(QUEST), 'active')
@@ -237,7 +241,7 @@ class VennGameplayTests(unittest.TestCase):
         self.assertTrue(all(self.visit.surface_prop_visible(p) for p in self.visit.water_props))
         self.assertEqual(self.visit._gate_frame(0)[0], 'idle_open')
         self.assertFalse(self.visit.surface_prop_visible(self.visit.surface_props[3]))
-        self.assertFalse(self.visit.surface_prop_visible(self.visit.surface_props[4]))
+        self.assertFalse(any(self.visit.surface_prop_visible(p) for p in self.visit.surface_props if p['id']=='venn_held_water'))
         self.assertIn('venn_spillway', {p['id'] for p in self.visit.water_props})
 
     def test_choice_and_repair_pause_safely_under_inventory(self):

@@ -7,31 +7,46 @@
     20,
     38
   ],
-  "source_idle_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
-  "water_origin": [
-    1448,
-    620
+  "source_canvas": [
+    24,
+    36
   ],
-  "water_size": [
+  "source_offset": [
     8,
-    56
+    8
   ],
-  "water_colors": [
-    "#4d7582",
-    "#5c8b96",
-    "#6b9aa2",
-    "#8ab3b0",
-    "#a1c5bc",
-    "#719a91"
+  "source_body": "source_body.png",
+  "source_idle_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+  "layer_order": [
+    "body",
+    "casting_arm",
+    "energy"
   ],
+  "arm_lengths": [
+    4,
+    4
+  ],
+  "preserved_source_regions": {
+    "head": [
+      0,
+      0,
+      24,
+      14
+    ],
+    "lower_body": [
+      0,
+      25,
+      24,
+      36
+    ]
+  },
+  "outcome": "failed",
+  "water_displacement": false,
   "sequence": [
     "raise_hand",
-    "ease_water",
-    "hold_water",
-    "work_pin",
-    "open",
-    "release_water",
-    "finish"
+    "attempt",
+    "fizzle",
+    "recover"
   ],
   "animations": {
     "raise_hand": {
@@ -44,15 +59,28 @@
             40,
             48
           ],
+          "angle_degrees": 90,
+          "energy_level": 0,
           "casting_hand": [
-            27,
-            28
+            18,
+            32
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                18.0,
+                32.0
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -61,15 +89,28 @@
             40,
             48
           ],
+          "angle_degrees": 65,
+          "energy_level": 0,
           "casting_hand": [
-            29,
-            25
+            20,
+            32
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                19.690473046962797,
+                31.6252311481466
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -78,15 +119,28 @@
             40,
             48
           ],
+          "angle_degrees": 40,
+          "energy_level": 0,
           "casting_hand": [
-            31,
-            22
+            21,
+            31
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.06417777247591,
+                30.57115043874616
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -95,19 +149,62 @@
             40,
             48
           ],
+          "angle_degrees": 15,
+          "energy_level": 0,
           "casting_hand": [
-            29,
-            20
+            22,
+            29
           ],
-          "working_hand": [
-            25,
-            30
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.86370330515627,
+                29.035276180410083
+              ]
+            ]
+          }
+        },
+        {
+          "rect": [
+            160,
+            0,
+            40,
+            48
           ],
-          "kneel_offset": 0
+          "angle_degrees": -14,
+          "energy_level": 0,
+          "casting_hand": [
+            22,
+            27
+          ],
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         }
       ]
     },
-    "ease_water": {
+    "attempt": {
       "duration_ms": 1100,
       "frames": [
         {
@@ -117,15 +214,28 @@
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 1,
           "casting_hand": [
-            29,
-            20
+            22,
+            27
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -134,15 +244,28 @@
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 2,
           "casting_hand": [
-            32,
-            19
+            22,
+            27
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -151,15 +274,28 @@
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 1,
           "casting_hand": [
-            32,
-            18
+            22,
+            27
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
@@ -168,20 +304,93 @@
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 3,
           "casting_hand": [
-            29,
-            20
+            22,
+            27
           ],
-          "working_hand": [
-            25,
-            30
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
+        },
+        {
+          "rect": [
+            160,
+            48,
+            40,
+            48
           ],
-          "kneel_offset": 0
+          "angle_degrees": -14,
+          "energy_level": 1,
+          "casting_hand": [
+            22,
+            27
+          ],
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
+        },
+        {
+          "rect": [
+            200,
+            48,
+            40,
+            48
+          ],
+          "angle_degrees": -14,
+          "energy_level": 3,
+          "casting_hand": [
+            22,
+            27
+          ],
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         }
       ]
     },
-    "hold_water": {
-      "duration_ms": 400,
+    "fizzle": {
+      "duration_ms": 600,
       "frames": [
         {
           "rect": [
@@ -190,341 +399,303 @@
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 3,
           "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
-        }
-      ]
-    },
-    "work_pin": {
-      "duration_ms": 1600,
-      "frames": [
-        {
-          "rect": [
-            0,
-            144,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            28,
+            22,
             27
           ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
             40,
-            144,
+            96,
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 1,
           "casting_hand": [
-            29,
-            20
+            22,
+            27
           ],
-          "working_hand": [
-            34,
-            28
-          ],
-          "kneel_offset": 2
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
             80,
-            144,
+            96,
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 4,
           "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
+            22,
             27
           ],
-          "kneel_offset": 4
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
             120,
-            144,
+            96,
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 4,
           "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
+            22,
             27
           ],
-          "kneel_offset": 4
-        }
-      ]
-    },
-    "open": {
-      "duration_ms": 1200,
-      "frames": [
-        {
-          "rect": [
-            0,
-            192,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
-            27
-          ],
-          "kneel_offset": 4
-        },
-        {
-          "rect": [
-            40,
-            192,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
-            26
-          ],
-          "kneel_offset": 3
-        },
-        {
-          "rect": [
-            80,
-            192,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
-            24
-          ],
-          "kneel_offset": 2
-        },
-        {
-          "rect": [
-            120,
-            192,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
-            22
-          ],
-          "kneel_offset": 1
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
             160,
-            192,
+            96,
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 0,
           "casting_hand": [
-            29,
-            20
+            22,
+            27
           ],
-          "working_hand": [
-            34,
-            21
-          ],
-          "kneel_offset": 0
-        },
-        {
-          "rect": [
-            200,
-            192,
-            40,
-            48
-          ],
-          "casting_hand": [
-            29,
-            20
-          ],
-          "working_hand": [
-            34,
-            20
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         }
       ]
     },
-    "release_water": {
-      "duration_ms": 1150,
+    "recover": {
+      "duration_ms": 650,
       "frames": [
         {
           "rect": [
             0,
-            240,
+            144,
             40,
             48
           ],
+          "angle_degrees": -14,
+          "energy_level": 0,
           "casting_hand": [
-            29,
-            20
+            22,
+            27
           ],
-          "working_hand": [
-            26,
-            29
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.881182905103984,
+                27.03231241760133
+              ]
+            ]
+          }
         },
         {
           "rect": [
             40,
-            240,
+            144,
             40,
             48
           ],
+          "angle_degrees": 15,
+          "energy_level": 0,
           "casting_hand": [
-            29,
-            23
-          ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
-        },
-        {
-          "rect": [
-            80,
-            240,
-            40,
-            48
-          ],
-          "casting_hand": [
-            27,
-            26
-          ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
-        },
-        {
-          "rect": [
-            120,
-            240,
-            40,
-            48
-          ],
-          "casting_hand": [
-            25,
+            22,
             29
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
-        }
-      ]
-    },
-    "finish": {
-      "duration_ms": 450,
-      "frames": [
-        {
-          "rect": [
-            0,
-            288,
-            40,
-            48
-          ],
-          "casting_hand": [
-            25,
-            29
-          ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
-        },
-        {
-          "rect": [
-            40,
-            288,
-            40,
-            48
-          ],
-          "casting_hand": [
-            25,
-            29
-          ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.86370330515627,
+                29.035276180410083
+              ]
+            ]
+          }
         },
         {
           "rect": [
             80,
-            288,
+            144,
             40,
             48
           ],
+          "angle_degrees": 40,
+          "energy_level": 0,
           "casting_hand": [
-            25,
-            29
+            21,
+            31
           ],
-          "working_hand": [
-            25,
-            30
-          ],
-          "kneel_offset": 0
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                21.06417777247591,
+                30.57115043874616
+              ]
+            ]
+          }
         },
         {
           "rect": [
             120,
-            288,
+            144,
             40,
             48
           ],
+          "angle_degrees": 65,
+          "energy_level": 0,
           "casting_hand": [
-            25,
-            29
+            20,
+            32
           ],
-          "working_hand": [
-            25,
-            30
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                19.690473046962797,
+                31.6252311481466
+              ]
+            ]
+          }
+        },
+        {
+          "rect": [
+            160,
+            144,
+            40,
+            48
           ],
-          "kneel_offset": 0
+          "angle_degrees": 90,
+          "energy_level": 0,
+          "casting_hand": [
+            18,
+            32
+          ],
+          "joints": {
+            "casting": [
+              [
+                18,
+                24
+              ],
+              [
+                18,
+                28
+              ],
+              [
+                18.0,
+                32.0
+              ]
+            ]
+          }
         }
       ]
     }

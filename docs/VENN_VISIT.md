@@ -13,24 +13,29 @@ The existing gate is east of the cottage. **E** at its pin inspects the skewed
 mechanism; **E** a little farther south inspects the blocked channel. Read both
 observations, then return to the pin and press **E** to choose:
 
-- **Use borrowed tools:** Caelan kneels, reseats the pin with the mallet, walks
-  south along the dry bank, pulls the debris out, returns and raises the board.
-- **Use modest magicks:** Caelan raises an open casting hand, draws the existing
-  water upstream into a visibly held crescent, and keeps that hand steady while
-  crouching to straighten the pin with his other hand. He holds the water aside
-  while lifting the gate, then lowers the casting hand. Released flow visibly
-  carries the twigs south before normal control returns.
+- **Use borrowed tools:** Caelan stands on the dry bank, reseats the pin with a
+  mallet, walks south to clear the debris with a hook, then returns and raises
+  the gate with the hook. The tool provides the reach while his body stays balanced.
+- **Try magicks:** Caelan raises a bent arm and gathers a small blue-white spark.
+  The energy wavers and fizzles. The three-second attempt does not push the water
+  back or move the gate, pin or debris. He lowers his hand and says, "I can't move
+  it. I'll need the tools." Acknowledging the line starts the practical repair.
 
-Both succeed without combat, a timer, a failure roll, resource costs or a major
-branching consequence. Full flow propagates down the existing irrigation route
-and over its south-facing spillway. No water moves uphill across a terrace.
-Return through the cottage door and approach either parent for the approved
-conversation about pumps, payments and the restored channel. Only finishing that
-conversation completes the Venn objective.
+The failed spell establishes Caelan's limited strength: he can produce a trace
+of magical energy, but cannot yet exert enough force to move this water. The
+outcome is fixed, with no retry roll, resource cost or penalty. After failure,
+returning to the gate offers only the borrowed tools. Choosing tools directly
+skips the spell attempt.
+
+Only the tool repair restores the channel. Full flow propagates down the existing
+irrigation route and over its south-facing spillway. No water moves uphill across
+a terrace. Return through the cottage door and approach either parent for the
+approved conversation about pumps, payments and the restored channel. Only
+finishing that conversation completes the Venn objective.
 
 The last of the two order-flexible households makes MQ01 ready for Serene's
-existing report/turn-in dialogue. This feature does not add the staged mill
-failure or MQ02 handoff.
+report. The existing opening conclusion then stages Halden's arrival about the
+stopped mill, completes MQ01 and unlocks the Mira/MQ02 handoff.
 
 ## Visual and interaction ownership
 
@@ -44,60 +49,72 @@ An empty bedside foot rectangle still permits normal proximity conversation.
 The working pin is on the west, accessible bank. The quest gate frames use the
 approved mechanism with that pin relocated; the shared gate generator keeps
 its original right-pin default. A small opaque background removes the old baked
-board/pin before the quest gate is drawn. Repair poses keep logical feet on valid dry ground. The magick branch has
-independent casting and working arms, with hand contact registered to the pin
-through repair and opening. Its held-water overlay replaces only water-colored
-gate pixels, so the opaque gate patch no longer hides the effect and wood, iron
-and stone still occlude it correctly. Water remains in the existing eight-pixel
-channel. Downstream flow and debris movement begin on release, not while casting.
-The tools branch retains its original work poses and timings.
+board/pin before the quest gate is drawn.
+
+The failed cast uses the approved standing pose study. Its head, hips, legs and
+boots keep their normal idle positions and proportions; only the near forearm
+rotates, with a small spark beyond the palm. The last frame returns to the exact
+idle sprite. There is no forward torso translation, patched trouser shape,
+crouch, gate contact or held-water overlay. The practical repair also uses
+grounded standing poses, with a mallet and hook making the physical work readable.
 
 Water overlays reuse the approved channel and spillway frames, beneath actors.
 They never mutate cached town ground, the collision mask, elevations, buildings
-or the mill race. Elira's lantern remains in her saved ownership model: if still
-carried, Caelan asks to set it down safely before taking supplies or tools in hand.
+or the mill race. Casting leaves the existing water and debris state unchanged.
+Elira's lantern remains in her saved ownership model: if still carried, Caelan
+asks to set it down safely before taking supplies or tools in hand.
 
 Only short physical actions control Caelan's body. Dialogue/choices stay live,
 with the existing portrait bubbles and fonts. Click a response to select a method;
 Space/E and clicks outside its buttons cannot choose. Walking away discards an
-unfinished inspection, conversation or choice callback. Pause and inventory
-freeze actions, and resize/text-size changes keep response hitboxes aligned.
+unfinished inspection, conversation or choice callback. If Caelan leaves before
+acknowledging the failure line, the tools-needed checkpoint remains available at
+the gate. Pause and inventory freeze actions, and resize/text-size changes keep
+response hitboxes aligned.
 
 ## Durable progress
 
-The optional version-one `venn_visit` journey record stores the completed
-inspection IDs, `tools`/`magicks` method and repaired flag. Inventory separately
-stores the recovery-supply receipt. Impossible progress before unlocking or
-without the receipt is rejected before loading. A finished repair and unread
-closing conversation survive room changes and reloads. Repeated visits never
-consume a second bundle or repeat completion.
+The optional version-two `venn_visit` journey record stores the completed
+inspection IDs, original `tools`/`magicks` choice, repaired flag and
+`magicks_failed` milestone. Inventory separately stores the recovery-supply
+receipt. The original choice remains `magicks` when the failed spell is followed
+by a successful tool repair; it does not imply a magical success. The failure is
+also recorded as `CH01_MQ01_VENN_MAGICKS_FAILED`.
 
-An interrupted gesture resumes on dry ground with the inspections/method retained
-and the gate jammed; the player can choose again. No borrowed tool is lost or
-consumable spent. Restoring a completed older objective opens the gate without
-inventing which method was chosen. New Game resets the gate, supplies, inspection
-facts, method and actor pose.
+Impossible progress before unlocking or without the receipt is rejected before
+loading. A finished repair and unread closing conversation survive room changes
+and reloads. Repeated visits never consume a second bundle or repeat completion.
 
-`tools/build_venn_visit.py` rebuilds the family, poses and gate overlays.
+An interrupted cast before the failure checkpoint returns safely to idle with
+the inspections and choice retained; the player can choose again. Once failure
+has been recorded, walking away or reloading preserves the tools-needed state
+and does not replay the cast. No borrowed tool is lost or consumable spent.
+Version-one records remain accepted. Previously repaired saves, including older
+successful magick repairs, stay repaired without inventing a failed attempt.
+Restoring a completed older objective opens the gate without inventing which
+method was chosen. New Game resets the gate, supplies, inspection facts, choice,
+failure milestone and actor pose.
+
+`tools/build_venn_visit.py` rebuilds the family, tools poses and gate overlays.
 `tools/export_dialogue_portraits.py` exports all three portraits. Integration
-tests in `tests/test_venn_visit.py` exercise real doors, proximity dialogue,
-inventory contact, two inspections, both clicked methods, both household orders,
-water/collision preservation, interruption/reload, old saves, large text and
-letterboxing, pause and unfinished closing prose.
+tests in `tests/test_venn_visit.py` and `tests/test_venn_magicks.py` exercise
+proximity dialogue, two inspections, both choices, unchanged water/gate/debris
+during casting, tools fallback, failure/reload progress, source-pose preservation,
+old saves, pause and the family's closing conversation.
 
+## Failed magick animation
 
-## Magick repair animation
+`venn_magicks.py` loads the explicit pose sequence from
+`assets/story/venn/magicks/`. Rebuild it with
+`python tools/build_venn_magicks.py` (Pillow). Its source layers are body,
+casting arm and energy; `source_body.png` preserves the original idle reference.
+The old generic casting frames, successful held-water effect and magick-specific
+gate-opening atlas are removed. The general Venn builder invokes the new builder
+and does not regenerate those superseded assets.
 
-`venn_magicks.py` loads the explicit pose sequence, source-layer atlas and water
-levels from `assets/story/venn/magicks/`. Rebuild them with
-`python tools/build_venn_magicks.py` (Pillow). The old four generic
-`caelan/magicks_N.png` frames and ripple renderer are removed. The general Venn
-builder no longer regenerates them and invokes the new builder instead.
+The stages are raise hand (650 ms), attempt (1100 ms), fizzle (600 ms) and recover
+(650 ms). The first and last poses match idle on the existing town draw anchor.
+The family's closing conversation still completes the objective after the tools
+have restored the water.
 
-The stages are raise hand, ease water, hold water, work pin, open, release water
-and finish. Interrupted casts retain the chosen method and inspection facts but
-restart safely with the gate jammed; completed older magick repairs stay repaired
-without replaying the new animation. Pause and inventory freeze all pose/water
-clocks. The family's closing conversation still completes the objective.
-
-See the [in-game close-up](reviews/venn_magicks/README.md).
+See the [in-game scene preview](reviews/venn_magicks/README.md).

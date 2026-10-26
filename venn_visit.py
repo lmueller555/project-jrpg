@@ -1,4 +1,4 @@
-"""The Venn delivery, two inspections and two equivalent, visible gate repairs."""
+"""The Venn delivery, two inspections and a failed spell attempt and a practical gate repair."""
 import json
 from pathlib import Path
 
@@ -60,6 +60,7 @@ class VennVisit:
             self.home.npcs.append(actor);self.family[role] = actor
         self.lines = read(ART+'scene.json');self.art = read(ART+'art.json')
         self.inspected = set();self.method = None;self.repaired = False
+        self.magicks_failed = False;self.action_method = None
         self.action = None;self.phase = None;self.phase_time = 0.;self.contact = False
         self.walk_ms = 0.;self.blocked_seconds = 0.;self.dialogue = None;self.partner = None
         self.debris_cleared = False;self.flow_seconds = 0.;self._pose_owned = False
@@ -67,7 +68,6 @@ class VennVisit:
         self.gates = {name: [self.town.image(path) for path in frames] for name, frames in self.art['animations'].items()}
         self.backgrounds = [self.town.image(path, False) for path in self.art['backgrounds']]
         self.magick_art = VennMagicks(self.town)
-        self.gates['magick_opening'] = self.magick_art.opening
         self.surface_props = [
             {'id': 'venn_supplies', 'scene': 'venn', 'surface': self.home.image(ART+'provisions.png'),
              'position': [338, 128], 'sort_y': 175},
@@ -76,9 +76,7 @@ class VennVisit:
             {'id': 'venn_gate', 'scene': self.town.data['id'], 'surface': self.backgrounds[0].copy(),
              'position': list(GATE_POSITION), 'sort_y': 672},
             {'id': 'venn_debris', 'scene': self.town.data['id'], 'surface': self.town.image(ART+'debris.png'),
-             'position': [1446, 680], 'sort_y': -9998},
-            {'id': 'venn_held_water', 'scene': self.town.data['id'], 'surface': pygame.Surface((8, 56), pygame.SRCALPHA),
-             'position': [1448, 620], 'sort_y': 671}]
+             'position': [1446, 680], 'sort_y': -9998}]
         meta = read('assets/terrain/eldenmere/irrigation/tileset.json')
         routes = {r['id']: r for r in meta['routes']}
         atlases = [self.town.image('assets/terrain/eldenmere/irrigation/'+f['image']) for f in meta['frames']]
@@ -111,7 +109,7 @@ class VennVisit:
 
     @property
     def flowing(self):
-        return self.repaired or (self.action=='repair' and self.method=='magicks' and self.phase=='release_water')
+        return self.repaired
 
     @property
     def locks_player(self):return self.action is not None
@@ -120,21 +118,31 @@ class VennVisit:
     def hands_full(self):return getattr(getattr(self.game, 'elira_visit', None), 'lantern', None)=='carried'
 
     def to_dict(self):
-        if self.completed:
-            return {'version': 1, 'inspected': ['pin', 'channel'], 'method': self.method, 'repaired': True}
-        if not self.active:return {'version': 1, 'inspected': [], 'method': None, 'repaired': False}
-        return {'version': 1, 'inspected': [k for k in ('pin', 'channel') if k in self.inspected],
-                'method': self.method, 'repaired': self.repaired}
+        if not self.active and not self.completed:
+            return {'version': 2, 'inspected': [], 'method': None,
+                    'repaired': False, 'magicks_failed': False}
+        return {'version': 2,
+                'inspected': ['pin', 'channel'] if self.completed else [k for k in ('pin', 'channel') if k in self.inspected],
+                'method': self.method, 'repaired': self.repaired or self.completed,
+                'magicks_failed': self.magicks_failed}
 
     @staticmethod
     def valid_snapshot(data):
-        if not isinstance(data, dict) or set(data) != {'version', 'inspected', 'method', 'repaired'}:return False
+        if not isinstance(data, dict):return False
+        version = data.get('version')
+        if type(version) is not int or version not in (1, 2):return False
+        keys = {'version', 'inspected', 'method', 'repaired'}
+        if version == 2:keys.add('magicks_failed')
+        if set(data) != keys:return False
         inspected = data['inspected'];method = data['method']
-        return (type(data['version']) is int and data['version']==1 and isinstance(inspected, list) and
+        failed = data.get('magicks_failed', False)
+        return (isinstance(inspected, list) and
                 all(isinstance(v, str) and v in ('pin', 'channel') for v in inspected) and
-                len(set(inspected))==len(inspected) and type(data['repaired']) is bool and
+                len(set(inspected)) == len(inspected) and type(data['repaired']) is bool and
+                type(failed) is bool and
                 (method is None or isinstance(method, str) and method in METHODS) and
-                (method is None and not data['repaired'] or set(inspected)=={'pin', 'channel'}))
+                (method is None and not data['repaired'] or set(inspected) == {'pin', 'channel'}) and
+                (not failed or method == 'magicks' and set(inspected) == {'pin', 'channel'}))
 
     @staticmethod
     def valid_journey(data):
@@ -155,10 +163,13 @@ class VennVisit:
 
     def restore(self, data=None):
         if data is not None and not self.valid_snapshot(data):return False
-        self.release_pose();self.action = None;self.phase = None;self.phase_time = 0.
+        self.release_pose();self.action = None;self.action_method = None;self.phase = None;self.phase_time = 0.
         self.contact = False;self.dialogue = None;self.partner = None
         self.inspected = set(data['inspected']) if data else {'pin', 'channel'} if self.completed else set()
         self.method = data['method'] if data else None
+        self.magicks_failed = data.get('magicks_failed', False) if data else False
+        if self.magicks_failed:self.game.social.flags.add('CH01_MQ01_VENN_MAGICKS_FAILED')
+        else:self.game.social.flags.discard('CH01_MQ01_VENN_MAGICKS_FAILED')
         self.repaired = data['repaired'] if data else self.completed
         self.debris_cleared = self.repaired;self.flow_seconds = 100. if self.repaired else 0.
         for actor in self.family.values():actor.end_conversation();actor.facing = 'front'
@@ -171,7 +182,6 @@ class VennVisit:
         if name == 'venn_tools':return True
         if name == 'venn_gate':return True
         if name == 'venn_debris':return not self.repaired and not self.debris_cleared
-        if name == 'venn_held_water':return self.action=='repair' and self.method=='magicks' and self.phase in self.magick_art.poses
         return self.flowing and self.flow_seconds>=prop['delay']
 
     def can_speak(self, identifier):return not (identifier.startswith('venn_') and self.action)
@@ -214,7 +224,8 @@ class VennVisit:
         if not self.active or not self.delivered or self.repaired or self.action or self.game.world is not self.town:return None
         if self._near(PIN_APPROACH):
             if 'pin' not in self.inspected:return 'pin', 'E: Inspect the gate pin'
-            if self.inspected=={'pin', 'channel'}:return 'choice', 'E: Choose how to repair the gate'
+            if self.inspected=={'pin', 'channel'}:
+                return ('tools', 'E: Repair the gate with borrowed tools') if self.magicks_failed else ('choice', 'E: Choose how to repair the gate')
         if self._near(CHANNEL_APPROACH) and 'channel' not in self.inspected:
             return 'channel', 'E: Inspect the blocked water channel'
         return None
@@ -227,10 +238,11 @@ class VennVisit:
             key = target[0]
             return self._speak(key, lambda: self._record_inspection(key))
         if self.hands_full:return self._speak('hands_full')
+        if self.magicks_failed:return self._start_tools()
         self.dialogue = 'choice'
         return self.game.social.start_choice(self.lines['choice'], [
             {'text': 'Use borrowed tools', 'action': 'tools'},
-            {'text': 'Use modest magicks', 'action': 'magicks'}], self._select_method,
+            {'text': 'Try magicks', 'action': 'magicks'}], self._select_method,
             identifier='venn_choice', prompt='How will you free the gate?')
 
     def _record_inspection(self, key):
@@ -238,15 +250,24 @@ class VennVisit:
 
     def _select_method(self, method):
         self.dialogue = None
-        if (method not in METHODS or self.hands_full or not self.active or not self.delivered or self.repaired or
+        if (method not in METHODS or self.magicks_failed or self.hands_full or not self.active or not self.delivered or self.repaired or
                 self.inspected!={'pin', 'channel'} or self.game.world is not self.town or not self._near(PIN_APPROACH)):
             return False
-        self.method = method;self.action = 'repair';self.debris_cleared = False
+        self.method = method;self.action_method = method;self.action = 'repair';self.debris_cleared = False
+        self._phase('align_pin');self._save();return True
+
+    def _start_tools(self):
+        # The original choice remains recorded; actual repair is always practical.
+        if (self.game.social.locked or self.action or self.hands_full or not self.active or
+                not self.delivered or self.repaired or self.inspected != {'pin', 'channel'} or
+                self.game.world is not self.town or not self._near(PIN_APPROACH)):
+            return False
+        self.action_method = 'tools';self.action = 'repair';self.debris_cleared = False
         self._phase('align_pin');self._save();return True
 
     def _phase(self, name):
         self.release_pose();self.phase = name;self.phase_time = 0.;self.walk_ms = 0.;self.blocked_seconds = 0.
-        if self.method=='magicks' and self.action=='repair' and name in self.magick_art.poses:self._magick_pose()
+        if self.action_method=='magicks' and self.action=='repair' and name in self.magick_art.poses:self._magick_pose()
 
     def _save(self):self.game.save_progress()
 
@@ -266,6 +287,7 @@ class VennVisit:
             return 'Approach either parent with the recovery supplies.' if not self.delivered else 'Speak with the family.' if self.repaired else 'The irrigation gate is east of the cottage. E: inspect.'
         if self.game.world is self.town and self.delivered:
             if self.repaired:return 'Return to the Venn family.'
+            if self.magicks_failed:return 'Return to the gate pin and use the borrowed tools.'
             if self.inspected=={'pin', 'channel'}:return 'Return to the gate pin to choose a repair.'
             return 'Inspect the gate pin and the channel just downstream.'
         return ''
@@ -273,16 +295,17 @@ class VennVisit:
     def tracker_text(self):
         if not self.active:return ''
         if self.hands_full and not self.repaired:return 'Set Elira’s lantern safely on her table first.'
-        if self.action=='repair':return 'Freeing the irrigation gate…'
+        if self.action=='repair':return 'Trying to push the water back…' if self.action_method=='magicks' else 'Freeing the irrigation gate…'
         if self.game.world is self.home and not self.delivered:return 'Give the Venn family their supplies.'
         if not self.delivered:return ''
         if self.repaired:return 'Return to the Venn family.'
+        if self.magicks_failed:return 'Use the borrowed tools at the gate. E: interact.'
         return f'Inspect the gate and channel: {len(self.inspected)}/2.' if len(self.inspected)<2 else 'Choose a repair at the gate. E: interact.'
 
     def journal_detail(self):
         if not self.active:return ''
         if not self.delivered:return 'Recovery supplies are in the satchel.'
-        return 'Recovery supplies delivered. '+('Water is flowing again; speak with the family.' if self.repaired else f'Gate/channel inspections: {len(self.inspected)}/2.')
+        return 'Recovery supplies delivered. '+('Water is flowing again; speak with the family.' if self.repaired else 'The spell failed to move the water. Use the borrowed tools.' if self.magicks_failed else f'Gate/channel inspections: {len(self.inspected)}/2.')
 
     def release_pose(self):
         if not self._pose_owned:return
@@ -301,7 +324,7 @@ class VennVisit:
         self.walk_ms += seconds*1000;p.walk_ms = self.walk_ms
         self.blocked_seconds = self.blocked_seconds+seconds if before==p.position else 0.
         if self.blocked_seconds>=1:
-            self.action = None;self.phase = None;self._last_art = None
+            self.action = None;self.action_method = None;self.phase = None;self._last_art = None
         return False
 
     def update(self, seconds):
@@ -317,7 +340,7 @@ class VennVisit:
         self._update_art()
 
     def _repair(self, seconds):
-        if self.method=='magicks':return self._repair_magicks(seconds)
+        if self.action_method=='magicks':return self._repair_magicks(seconds)
         phase = self.phase
         if phase in ('align_pin', 'align_channel', 'return_pin'):
             goal = CHANNEL_APPROACH if phase=='align_channel' else PIN_APPROACH
@@ -338,7 +361,7 @@ class VennVisit:
                 self.repaired = True;self.debris_cleared = True;self.flow_seconds = 0.
                 self._phase('finish');self._save()
         elif phase=='finish':
-            if t>=.4:self.action = None;self.phase = None;self.release_pose();self._save()
+            if t>=.4:self.action = None;self.action_method = None;self.phase = None;self.release_pose();self._save()
 
     def _magick_pose(self):
         self.game.player.story_sprite=self.magick_art.pose(self.phase,self.phase_time)
@@ -353,19 +376,17 @@ class VennVisit:
         self._magick_pose()
         if self.phase_time<self.magick_art.duration(self.phase):return
         sequence=self.magick_art.sequence;index=sequence.index(self.phase)
-        if self.phase=='open':self.flow_seconds=0.
-        if self.phase=='release_water':
-            self.repaired=True;self.debris_cleared=True;self._save()
         if index+1<len(sequence):self._phase(sequence[index+1])
         else:
-            self.action=None;self.phase=None;self.release_pose();self._save()
+            self.action = None;self.action_method = None;self.phase = None;self.release_pose()
+            self.magicks_failed = True
+            self.game.social.flags.add('CH01_MQ01_VENN_MAGICKS_FAILED')
+            self._save()
+            self._speak('magicks_failed', self._start_tools)
 
     def _gate_frame(self, phase):
         if self.action=='repair':
-            if self.method=='magicks':
-                if self.phase=='open':return 'magick_opening', self.magick_art.index('open',self.phase_time)
-                if self.phase in ('release_water','finish'):return 'idle_open',phase
-                if self.phase=='work_pin':return 'repair', min(5,max(0,int((self.phase_time-.45)/.2)))
+            if self.action_method=='magicks':return 'idle_jammed', phase
             if self.phase=='work_pin':return 'repair', min(5, int(self.phase_time/.2))
             if self.phase=='open':return 'opening', min(5, int(self.phase_time/.2))
             if self.phase in ('align_channel', 'clear_channel', 'return_pin'):return 'idle_closed', phase
@@ -374,14 +395,11 @@ class VennVisit:
     def _update_art(self, force=False):
         if not force and self.game.world is not self.town:return
         phase = int(self.game.elapsed_ms//200)%6;animation, frame = self._gate_frame(phase)
-        magic = self.action=='repair' and self.method=='magicks' and self.phase in self.magick_art.poses
+        magic = self.action=='repair' and self.action_method=='magicks' and self.phase in self.magick_art.poses
         signature = (phase, animation, frame, self.phase, int(self.phase_time*30) if magic else 0, self.debris_cleared, int(self.flow_seconds/.16) if self.flowing and self.flow_seconds<12 else 100)
         if signature==self._last_art and not force:return
         self._last_art = signature
         gate = self.backgrounds[phase].copy();gate.blit(self.gates[animation][frame], (0, 0))
-        if magic:
-            amount=self.magick_art.amount(self.phase,self.phase_time)
-            self.surface_props[4]['surface']=self.magick_art.overlay_gate(gate,amount,phase)
         self.surface_props[2]['surface'] = gate
         debris = self.surface_props[3]
         debris['position'] = [1446, 680]
@@ -389,8 +407,6 @@ class VennVisit:
             if self.phase=='clear_channel':
                 fraction = min(1., self.phase_time/.8)
                 debris['position'] = [1446-round(6*fraction), 680-round(fraction)]
-            elif self.phase=='release_water' and self.method=='magicks':
-                debris['position'] = [1446, 680+round(48*min(1., self.phase_time/self.magick_art.duration('release_water')))]
         for i, prop in enumerate(self.water_props):
             if not self.surface_prop_visible(prop):continue
             key = (i, phase)
