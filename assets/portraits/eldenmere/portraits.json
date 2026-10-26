@@ -201,6 +201,19 @@
         1254,
         1254
       ]
+    },
+    "aldric": {
+      "name": "Regent Aldric",
+      "expression": "neutral",
+      "file": "aldric_neutral.png",
+      "sprite_root": "assets/story/regent/actors/aldric",
+      "source": "assets/source/portraits/eldenmere/aldric_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
     }
   },
   "aliases": {

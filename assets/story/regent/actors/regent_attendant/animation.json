@@ -1,0 +1,42 @@
+{
+  "idles": {
+    "front": "assets/characters/npcs/male_01/idle_front.png",
+    "left": "assets/characters/npcs/male_01/idle_left.png",
+    "right": "assets/characters/npcs/male_01/idle_right.png",
+    "back": "assets/characters/npcs/male_01/idle_back.png"
+  },
+  "walks": {
+    "front": [
+      "assets/characters/npcs/male_01/walk_front/frame_01.png",
+      "assets/characters/npcs/male_01/walk_front/frame_02.png",
+      "assets/characters/npcs/male_01/walk_front/frame_03.png",
+      "assets/characters/npcs/male_01/walk_front/frame_04.png"
+    ],
+    "left": [
+      "assets/characters/npcs/male_01/walk_left/frame_01.png",
+      "assets/characters/npcs/male_01/walk_left/frame_02.png",
+      "assets/characters/npcs/male_01/walk_left/frame_03.png",
+      "assets/characters/npcs/male_01/walk_left/frame_04.png"
+    ],
+    "right": [
+      "assets/characters/npcs/male_01/walk_right/frame_01.png",
+      "assets/characters/npcs/male_01/walk_right/frame_02.png",
+      "assets/characters/npcs/male_01/walk_right/frame_03.png",
+      "assets/characters/npcs/male_01/walk_right/frame_04.png"
+    ],
+    "back": [
+      "assets/characters/npcs/male_01/walk_back/frame_01.png",
+      "assets/characters/npcs/male_01/walk_back/frame_02.png",
+      "assets/characters/npcs/male_01/walk_back/frame_03.png",
+      "assets/characters/npcs/male_01/walk_back/frame_04.png"
+    ]
+  },
+  "canvas": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ]
+}

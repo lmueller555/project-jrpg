@@ -1,0 +1,209 @@
+{
+  "arrival": [
+    744,
+    480
+  ],
+  "road": [
+    610,
+    520
+  ],
+  "cart_start": [
+    625,
+    522
+  ],
+  "cart_end": [
+    955,
+    390
+  ],
+  "cart_actor_offset": [
+    5,
+    -30
+  ],
+  "venn_start": [
+    620,
+    552
+  ],
+  "venn_end": [
+    950,
+    420
+  ],
+  "courtyard": [
+    386,
+    318
+  ],
+  "serene": [
+    364,
+    326
+  ],
+  "tomas": [
+    420,
+    348
+  ],
+  "aldric_courtyard": [
+    400,
+    326
+  ],
+  "aldric_aside": [
+    442,
+    304
+  ],
+  "clerk_courtyard": [
+    444,
+    350
+  ],
+  "driver_courtyard": [
+    444,
+    328
+  ],
+  "attendant_courtyard": [
+    324,
+    340
+  ],
+  "aldric_road": [
+    610,
+    512
+  ],
+  "clerk_road": [
+    582,
+    524
+  ],
+  "driver_road": [
+    724,
+    520
+  ],
+  "attendant_road": [
+    566,
+    548
+  ],
+  "foreman": [
+    700,
+    548
+  ],
+  "crew_resume": [
+    660,
+    576
+  ],
+  "preparations": [
+    386,
+    326
+  ],
+  "welcome": [
+    386,
+    318
+  ],
+  "discussion": [
+    386,
+    318
+  ],
+  "aftermath": [
+    386,
+    326
+  ],
+  "venn_cart_path": [
+    [
+      620,
+      552
+    ],
+    [
+      720,
+      552
+    ],
+    [
+      744,
+      480
+    ],
+    [
+      936,
+      480
+    ],
+    [
+      972,
+      408
+    ],
+    [
+      950,
+      420
+    ]
+  ],
+  "aldric_route": [
+    [
+      726,
+      456
+    ],
+    [
+      720,
+      480
+    ],
+    [
+      610,
+      512
+    ],
+    [
+      480,
+      480
+    ],
+    [
+      384,
+      384
+    ],
+    [
+      400,
+      326
+    ]
+  ],
+  "scene_id": "eldenmere.playable",
+  "aldric_arrival": [
+    726,
+    456
+  ],
+  "clerk_arrival": [
+    702,
+    456
+  ],
+  "driver_arrival": [
+    750,
+    456
+  ],
+  "attendant_arrival": [
+    678,
+    456
+  ],
+  "venn_road": [
+    620,
+    552
+  ],
+  "foreman_road": [
+    700,
+    548
+  ],
+  "venn_delivery": [
+    950,
+    420
+  ],
+  "cart_route": [
+    [
+      620,
+      552
+    ],
+    [
+      720,
+      552
+    ],
+    [
+      744,
+      480
+    ],
+    [
+      936,
+      480
+    ],
+    [
+      972,
+      408
+    ],
+    [
+      950,
+      420
+    ]
+  ]
+}

@@ -120,6 +120,53 @@
       "legacy_objectives": [
         "meet_mira"
       ]
+    },
+    {
+      "id": "CH01_MQ03",
+      "title": "The Regent's Road",
+      "giver": "mother_serene",
+      "initially_locked": true,
+      "requires_quests": [
+        "CH01_MQ02"
+      ],
+      "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to the sanctuary.",
+      "available_tracker_text": "Speak with Mother Serene about the visiting regent.",
+      "accept_text": "Meet Aldric\u2019s party by the brook.",
+      "report_text": "Speak with Mother Serene after the visit.",
+      "completion_text": "Aldric's visit has ended. Festival preparations continue.",
+      "script_reference": "docs/narrative/game_01/CH01_MQ03.md",
+      "objectives": [
+        {
+          "id": "meet_visitors",
+          "text": "Meet Aldric's party by the brook.",
+          "tracker_text": "Meet the visitors by the brook.",
+          "requires": []
+        },
+        {
+          "id": "accompany_visit",
+          "text": "Accompany Aldric through the village to the sanctuary.",
+          "tracker_text": "Accompany Aldric to the sanctuary.",
+          "requires": [
+            "meet_visitors"
+          ]
+        },
+        {
+          "id": "welcome_party",
+          "text": "Help welcome the visitors and hear Aldric and Serene's conversation.",
+          "tracker_text": "Join the visitors in the sanctuary courtyard.",
+          "requires": [
+            "accompany_visit"
+          ]
+        },
+        {
+          "id": "speak_serene",
+          "text": "Speak with Serene after her conversation with Aldric.",
+          "tracker_text": "Speak with Mother Serene after the visit.",
+          "requires": [
+            "welcome_party"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,202 @@
+{
+  "canvas": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "sheet": "assets/story/regent/actors/aldric/poses.png",
+  "idles": {
+    "front": [
+      0,
+      0,
+      24,
+      36
+    ],
+    "left": [
+      0,
+      36,
+      24,
+      36
+    ],
+    "right": [
+      0,
+      72,
+      24,
+      36
+    ],
+    "back": [
+      0,
+      108,
+      24,
+      36
+    ]
+  },
+  "walks": {
+    "front": [
+      {
+        "rect": [
+          24,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          48,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          72,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          96,
+          0,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      }
+    ],
+    "left": [
+      {
+        "rect": [
+          24,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          48,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          72,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          96,
+          36,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      }
+    ],
+    "right": [
+      {
+        "rect": [
+          24,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          48,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          72,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          96,
+          72,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      }
+    ],
+    "back": [
+      {
+        "rect": [
+          24,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          48,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          72,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      },
+      {
+        "rect": [
+          96,
+          108,
+          24,
+          36
+        ],
+        "duration_ms": 140
+      }
+    ]
+  },
+  "source_hashes": {
+    "assets/characters/npcs/male_03/idle_front.png": "a1ae24db1b5e32f89c5d1ddbb1ae6f5f1a93b04bae6184d9dd4401aacbcb77c4",
+    "assets/characters/npcs/male_03/idle_left.png": "2a61cbda18ce01a3921595796810a1d77ea6ad0215ad3f7bee2a75a1469fa623",
+    "assets/characters/npcs/male_03/idle_right.png": "6130e357d061c91de350034ed03ba96adaaf7726cf00106d358999597fa3dc4d",
+    "assets/characters/npcs/male_03/idle_back.png": "096e2c9a703c389f8e8313566b6b6dafde9dc11e9d4ff2ad272f1fb13fc0a7c9"
+  },
+  "design": "practical travelling clothing; no crown or armour"
+}

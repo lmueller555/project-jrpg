@@ -1,0 +1,157 @@
+{
+  "actors": [
+    {
+      "id": "aldric",
+      "name": "Regent Aldric",
+      "position": [
+        726,
+        456
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent/actors/aldric/animation.json",
+      "facing": "front"
+    },
+    {
+      "id": "road_foreman",
+      "name": "Road foreman",
+      "position": [
+        700,
+        548
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent/actors/road_foreman/animation.json",
+      "facing": "front"
+    },
+    {
+      "id": "regent_clerk",
+      "name": "Clerk",
+      "position": [
+        702,
+        456
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent/actors/regent_clerk/animation.json",
+      "facing": "front"
+    },
+    {
+      "id": "regent_driver",
+      "name": "Driver",
+      "position": [
+        750,
+        456
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent/actors/regent_driver/animation.json",
+      "facing": "front"
+    },
+    {
+      "id": "regent_attendant",
+      "name": "Traveling attendant",
+      "position": [
+        678,
+        456
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent/actors/regent_attendant/animation.json",
+      "facing": "front"
+    }
+  ],
+  "existing_actors": {
+    "venn_father": {
+      "art": "assets/story/regent/actors/venn_father/animation.json"
+    }
+  },
+  "props": [
+    {
+      "id": "venn_cart",
+      "scene": "eldenmere.playable",
+      "position": [
+        625,
+        522
+      ],
+      "sort_y": 558,
+      "states": {
+        "waiting": "assets/story/regent/props/venn_cart.png",
+        "released": "assets/story/regent/props/venn_cart.png",
+        "settled": "assets/story/regent/props/venn_cart.png"
+      }
+    },
+    {
+      "id": "regent_wagon",
+      "scene": "eldenmere.playable",
+      "position": [
+        694,
+        400
+      ],
+      "sort_y": 444,
+      "states": {
+        "waiting": "assets/story/regent/props/regent_wagon.png",
+        "released": "assets/story/regent/props/regent_wagon.png",
+        "settled": "assets/story/regent/props/regent_wagon.png"
+      }
+    },
+    {
+      "id": "road_stone",
+      "scene": "eldenmere.playable",
+      "position": [
+        650,
+        588
+      ],
+      "sort_y": 608,
+      "states": {
+        "waiting": "assets/story/regent/props/road_stone.png",
+        "released": "assets/story/regent/props/road_stone.png",
+        "settled": "assets/story/regent/props/road_stone.png"
+      }
+    },
+    {
+      "id": "courtyard_refreshments",
+      "scene": "eldenmere.playable",
+      "position": [
+        350,
+        293
+      ],
+      "sort_y": 311,
+      "states": {
+        "waiting": "assets/story/regent/props/courtyard_refreshments.png",
+        "welcoming": "assets/story/regent/props/courtyard_refreshments.png",
+        "settled": "assets/story/regent/props/courtyard_refreshments.png"
+      }
+    }
+  ]
+}

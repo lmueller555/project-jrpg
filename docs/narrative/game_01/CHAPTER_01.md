@@ -47,7 +47,7 @@ Approximate pacing **targets**, not commitments: 60–90 minutes main narrative,
 
 **Purpose:** Establish why Caelen and the villagers admire Aldric; give both government development and religious protection a legitimate argument; introduce the covenant without lore dumping.
 
-**Proposed staging:** Aldric resolves a small local dispute, acknowledges Caelen personally, and speaks privately or publicly with Serene. The exact dispute and the history between Caelen and Aldric are OPEN.
+**Implemented staging:** Caelan welcomes and guides Aldric's party, witnesses the regent settle the road crew's expired hire of Mr. Venn's cart, and helps host the visitors at the sanctuary. Aldric's clerk checks the agreement; Caelan supplies only firsthand news that the mill is working. The later excavation discussion remains unresolved. See the [approved revised MQ03 script](CH01_MQ03.md). No old mentorship or precise personal history with Aldric is established.
 
 **Emotional result:** The future antagonist's character feels sincerely admirable in the present.
 

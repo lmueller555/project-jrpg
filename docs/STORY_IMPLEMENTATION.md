@@ -192,3 +192,31 @@ missing mill hook. New Game resets the hook, actors and wheel. New locked quest
 records may be absent in older quest snapshots and migrate without announcements.
 See the [runtime capture and testing notes](reviews/opening_conclusion/README.md).
 
+
+
+## MQ03 — The Regent’s Road
+
+After the completed mill quest, MQ03 becomes available from Serene in the
+sanctuary courtyard. The complete visit is playable: preparations with Tomas,
+meeting Aldric’s party by the brook, witnessing the road crew’s cart dispute,
+a visible release and delivery of Mr. Venn’s cart, the sanctuary welcome,
+Aldric and Serene’s unresolved excavation discussion, and Caelan’s private
+reflection with Serene. The four objectives concern meeting, accompanying,
+welcoming and speaking; no player objective inspects the hire receipt or
+adjudicates the dispute. The clerk handles the terms, and Aldric authorizes the
+road project’s additional cost.
+
+`regent_quest.py` owns a version-one stage checkpoint and one instance of each
+visitor. It borrows the actual Venn father actor for the cart delivery, pauses
+Serene and Tomas at their courtyard stations, and leaves them there for the
+festival preparations after the quest. New Game returns their ordinary opening
+routines and Mr. Venn’s household placement. Leaving dialogue never accepts
+unread prose; load restores safe staging without repeating finished exchanges.
+Older completed MQ02 saves gain the visit without replaying the mill quest.
+
+The dispute, welcome and private conversation use the portrait bubbles and
+occasional visible textual emotional cues. Ordinary movement remains available,
+while pause/inventory/map/journal defer staging. Formal excavation permission is
+not granted here; that remains the post-festival story beat. See the
+[implementation guide](REGENT_QUEST.md), [full narrative script](narrative/game_01/CH01_MQ03.md)
+and [production-game preview](reviews/regent_quest/README.md).
