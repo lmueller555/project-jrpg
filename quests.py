@@ -10,8 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 OPENING_QUEST = 'CH01_MQ01'
+MILL_QUEST = 'CH01_MQ02'
 SAVE_VERSION = 1
-STATUSES = frozenset(('available', 'active', 'ready', 'completed'))
+STATUSES = frozenset(('locked', 'available', 'active', 'ready', 'completed'))
 
 
 class QuestLog:
@@ -23,8 +24,8 @@ class QuestLog:
             definitions = {record['id']: record for record in data['quests']}
         self.definitions = deepcopy(definitions)
         self._validate_definitions()
-        self.states = {identifier: {'status': 'available', 'completed_objectives': []}
-                       for identifier in self.definitions}
+        self.states = {identifier: {'status': 'locked' if record.get('initially_locked') else 'available', 'completed_objectives': []}
+                       for identifier, record in self.definitions.items()}
         self._events = []
 
     def _validate_definitions(self):
@@ -66,6 +67,14 @@ class QuestLog:
     def _event(self, kind, identifier, text):
         self._events.append({'kind': kind, 'quest_id': identifier,
                              'title': self.definitions[identifier]['title'], 'text': text})
+
+    def unlock(self, identifier):
+        if identifier not in self.definitions or self.status(identifier) != 'locked':return False
+        record = self.definitions[identifier]
+        if any(self.status(q) != 'completed' for q in record.get('requires_quests', [])):return False
+        self.states[identifier]['status'] = 'available'
+        self._event('unlocked', identifier, record.get('available_tracker_text', 'A new request is available.'))
+        return True
 
     def accept(self, identifier):
         if self.status(identifier) != 'available':
@@ -143,6 +152,9 @@ class QuestLog:
                 return record.get('parallel_tracker_text', 'Complete the remaining objectives.')
             if active:
                 return active[0].get('tracker_text', active[0]['text'])
+        for identifier, record in self.definitions.items():
+            if self.status(identifier) == 'available' and record.get('available_tracker_text'):
+                return record['available_tracker_text']
         return ''
 
     def drain_events(self):
@@ -163,8 +175,12 @@ class QuestLog:
         if data['version'] != SAVE_VERSION or set(data) != {'version', 'quests'}:
             return False
         states = data.get('quests')
-        if not isinstance(states, dict) or set(states) != set(self.definitions):
-            return False
+        if not isinstance(states, dict) or not set(states) <= set(self.definitions):return False
+        states = deepcopy(states)
+        for identifier in set(self.definitions)-set(states):
+            # New gated quests may be absent from older version-one saves.
+            if not self.definitions[identifier].get('initially_locked'):return False
+            states[identifier] = {'status': 'locked', 'completed_objectives': []}
         restored = {}
         for identifier, record in self.definitions.items():
             state = states[identifier]
@@ -183,7 +199,9 @@ class QuestLog:
             if any(item['id'] in done_set and not set(item.get('requires', [])) <= done_set
                    for item in record['objectives']):
                 return False
-            if status == 'available' and done:
+            if status == 'locked' and not record.get('initially_locked'):return False
+            if status != 'locked' and any(states.get(q, {}).get('status') != 'completed' for q in record.get('requires_quests', [])):return False
+            if status in ('locked', 'available') and done:
                 return False
             if status == 'active' and done_set == ids:
                 return False

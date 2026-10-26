@@ -164,6 +164,28 @@ without completing unread family dialogue. Old completed visits migrate to a
 working gate without inventing a repair choice. The family uses role titles;
 given names and exact ages remain open. See [Venn's visit](VENN_VISIT.md).
 
-The three household tasks are playable. Serene's existing report/turn-in dialogue
-is available when all are complete. Authored report staging, Halden's mill-failure
-arrival and the MQ02 transition remain the next story milestone.
+The three household tasks and the MQ01 conclusion are playable. After the last
+household, approach Serene for the approved report. Finishing its final line
+records the report without completing MQ01. If she is in the dining room, she
+walks through the existing doorway into the sanctuary hall. Halden's trip from
+home occurs offscreen; the same miller actor then walks from the courtyard through
+the real sanctuary door and approaches Serene. The player remains free to move.
+
+Approach Serene in the hall to hear the approved stopped-wheel exchange. Only
+its final line completes MQ01 and makes **A Little Trouble at the Mill** available,
+with the tracker pointing toward Mira's workshop. It does not accept MQ02 or add
+Mira's quest conversation, escort, woodland route or repair adventure yet.
+The mill entity holds a still frame after the report, while stream animation
+continues; the map description reflects the stopped wheel.
+
+`opening_conclusion.py` owns optional version-one stages `idle`, `arrival`,
+`waiting` and `done`. Leaving unread report prose records nothing. Leaving the
+arrival dialogue keeps the actors waiting and MQ02 locked; returning permits the
+exchange again. A saved `arrival` resumes safely from the courtyard; `waiting`
+restores the hall actors without replaying their entrance; `done` replays neither
+scene nor notifications. Pause/inventory freeze the staging and map/journal defer
+it. Older completed turn-ins retain their completed quest and receive only the
+missing mill hook. New Game resets the hook, actors and wheel. New locked quest
+records may be absent in older quest snapshots and migrate without announcements.
+See the [runtime capture and testing notes](reviews/opening_conclusion/README.md).
+

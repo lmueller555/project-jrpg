@@ -36,6 +36,7 @@ from inventory_ui import InventoryUI
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
+from opening_conclusion import OpeningConclusion
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -257,7 +258,7 @@ class World:
                 surface,position=record
                 target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
             else:
-                phase=(int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
+                phase=0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
                 target.blit(surface,(record['position'][0]-camera[0],record['position'][1]-camera[1]))
                 self.draw_doors(target,camera,record['id'])
@@ -392,7 +393,8 @@ class Game:
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
         self.venn_visit=VennVisit(self)
-        self.household_visits=(self.halden_visit,self.elira_visit,self.venn_visit)
+        self.opening_conclusion=OpeningConclusion(self)
+        self.household_visits=(self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -410,6 +412,7 @@ class Game:
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
                            'venn_visit':self.venn_visit.to_dict(),
+              'opening_conclusion':self.opening_conclusion.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
@@ -471,7 +474,9 @@ class Game:
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
                ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
-               ('venn_visit' not in data or VennVisit.valid_journey(data)))
+               ('venn_visit' not in data or VennVisit.valid_journey(data)) and
+               ('opening_conclusion' not in data or OpeningConclusion.valid_journey(data)) and
+               ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked'))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -566,6 +571,7 @@ class Game:
         self.halden_visit.restore(data.get('halden_visit') if data else None)
         self.elira_visit.restore(data.get('elira_visit') if data else None)
         self.venn_visit.restore(data.get('venn_visit') if data else None)
+        self.opening_conclusion.restore(data.get('opening_conclusion') if data else {'version':1,'stage':'idle'})
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -594,6 +600,7 @@ class Game:
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
               'venn_visit':self.venn_visit.to_dict(),
+              'opening_conclusion':self.opening_conclusion.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},

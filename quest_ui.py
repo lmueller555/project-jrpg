@@ -66,6 +66,7 @@ class QuestUI:
         opening = getattr(self.game, 'opening', None)
         for identifier, definition in self.game.quests.definitions.items():
             status = self.game.quests.status(identifier) if hasattr(self.game.quests, 'status') else self.game.quests.states[identifier]['status']
+            if status == 'locked':continue
             if status == 'available' and opening is not None and not opening.can_speak(definition['giver']):continue
             result.append(identifier)
         return result
@@ -286,6 +287,8 @@ class QuestUI:
     def _marker_for(self, npc_id):
         opening = getattr(self.game, 'opening', None)
         if opening is not None and not opening.can_speak(npc_id):return None
+        conclusion = getattr(self.game, 'opening_conclusion', None)
+        if conclusion is not None and not conclusion.can_speak(npc_id):return None
         return self.game.quests.marker_for(npc_id)
 
     def draw_markers(self, canvas, camera):
@@ -333,9 +336,9 @@ class QuestUI:
 
     def _notification_content(self, event):
         labels = {'accepted': 'Quest accepted', 'objective': 'Objective completed',
-                  'ready': 'Ready to report', 'completed': 'Quest completed'}
+                  'ready': 'Ready to report', 'completed': 'Quest completed', 'unlocked': 'New request available'}
         label = labels.get(event['kind'], 'Quest updated')
-        if event['kind'] in ('accepted', 'completed') and event.get('title'):label += ': '+event['title']
+        if event['kind'] in ('accepted', 'completed', 'unlocked') and event.get('title'):label += ': '+event['title']
         return (self.wrap(label, self.small_bold_font, 300), self.wrap(event.get('text') or event.get('title', ''), self.font, 308))
 
     def draw_notifications(self, canvas):

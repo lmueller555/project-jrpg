@@ -350,6 +350,9 @@ class MapUI:
         else:
             name = record['name']
             description = DESCRIPTIONS.get(record['id'], 'A home in Eldenmere.')
+            conclusion = getattr(self.game, 'opening_conclusion', None)
+            if record['id']=='mill' and conclusion is not None and conclusion.mill_stopped:
+                description = 'The mill wheel has stopped. Halden needs Mira’s help.'
         name_lines = painter.wrap(name, 130, role='name', bold=True)
         name_height = painter.font('name', bold=True).get_linesize()
         body_height = painter.font('body').get_linesize()

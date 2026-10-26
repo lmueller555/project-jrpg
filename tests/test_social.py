@@ -146,7 +146,7 @@ class SocialTests(unittest.TestCase):
         self.finish()
         self.assertEqual(self.game.quests.status(quest),'active')
 
-    def test_ready_quest_completes_only_after_final_report_page(self):
+    def test_final_report_page_starts_arrival_without_early_completion(self):
         quest='CH01_MQ01'
         self.game.quests.accept(quest)
         for objective in ('halden','elira','venn'):
@@ -157,10 +157,10 @@ class SocialTests(unittest.TestCase):
         self.click()
         self.assertEqual(self.game.quests.status(quest),'ready')
         self.finish()
-        self.assertEqual(self.game.quests.status(quest),'completed')
-        self.assertIsNone(self.game.quests.marker_for('mother_serene'))
-        self.game.social.start(self.actor)
-        self.assertEqual(self.game.social.conversation['id'],'serene_quest_thanks')
+        self.assertEqual(self.game.quests.status(quest),'ready')
+        self.assertEqual(self.game.opening_conclusion.stage,'arrival')
+        self.assertIsNone(self.game.quest_ui._marker_for('mother_serene'))
+        self.assertFalse(self.game.social.start(self.actor))
         self.assertFalse(self.game.social.choosing)
 
     def test_choice_hitboxes_follow_integer_scaled_letterboxed_canvas(self):

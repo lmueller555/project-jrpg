@@ -141,6 +141,14 @@ tools and modest magicks restore the flow. Return to the family to finish the
 visit. Visiting a house never completes a task.
 See [Halden](docs/HALDEN_VISIT.md), [Elira](docs/ELIRA_VISIT.md) and [Venn](docs/VENN_VISIT.md).
 
+After all three visits, report to Serene. She returns to the sanctuary hall,
+where Halden arrives through the courtyard door with news that the mill wheel
+has stopped. Finish their exchange to complete the errand and reveal
+**A Little Trouble at the Mill**, with an objective pointing to Mira's workshop.
+The current playable story ends at that handoff. Older saves that already turned
+in the errands receive the missing arrival without repeating the household work.
+See the [conclusion preview](docs/reviews/opening_conclusion/README.md).
+
 **Caelan's satchel is available with I or Pause → Inventory.** Weapons, Armor,
 Items and Key Items have separate categories, quantity counts and readable item
 details. Accepting Serene's request grants the three household supply bundles
