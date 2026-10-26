@@ -22,6 +22,11 @@
       "name": "Master Halden",
       "portrait": "halden",
       "actor_id": "halden"
+    },
+    "elira": {
+      "name": "Elira",
+      "portrait": "elira",
+      "actor_id": "elira"
     }
   },
   "characters": {
@@ -318,6 +323,19 @@
             {
               "speaker": "halden",
               "text": "Mind the sacks by the door. The mill doesn't give my knees a day off."
+            }
+          ]
+        }
+      ]
+    },
+    "elira": {
+      "conversations": [
+        {
+          "id": "elira_ambient",
+          "lines": [
+            {
+              "speaker": "elira",
+              "text": "Mind that stool. I keep telling myself I'll put it away."
             }
           ]
         }

@@ -132,16 +132,18 @@ Tomas now joins Caelan after acceptance and follows through town and doors.
 Approach Halden in his cottage to deliver the medicine, then use **E** to move
 three sacks from the entry to the dry pallet; Tomas carries the middle sack.
 After Halden's closing conversation and Tomas's goodbye, Tomas walks out and
-returns to his preparations. Elira and Venn unlock in either order; their lantern
-and gate tasks remain future work. Visiting a house never completes a task.
-See [the first household](docs/HALDEN_VISIT.md).
+returns to his preparations. Elira and Venn unlock in either order. Elira's visit
+is playable: deliver her supplies, use **E** at the stool to retrieve her memorial
+lantern, set it on her table with **E**, then speak with her. The Venn gate task
+remains future work. Visiting a house never completes a task.
+See [the first household](docs/HALDEN_VISIT.md) and [Elira's visit](docs/ELIRA_VISIT.md).
 
 **Caelan's satchel is available with I or Pause → Inventory.** Weapons, Armor,
 Items and Key Items have separate categories, quantity counts and readable item
 details. Accepting Serene's request grants the three household supply bundles
 once, including Halden's medicine. Key Items are protected from ordinary removal;
 successful quest handoffs consume them and save a delivery receipt. The delivery
-API now handles Halden's medicine; entering a house never consumes
+API now handles Halden's medicine and Elira's food/oil; entering a house never consumes
 supplies. Older journeys receive only outstanding supplies, and New Game starts
 with an empty satchel. See [inventory design and integration](docs/INVENTORY.md).
 

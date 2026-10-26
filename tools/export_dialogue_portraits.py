@@ -68,13 +68,14 @@ def build():
                 'source_rect': list(box),
             }
         board.save(REVIEW / preview)
-    halden = SOURCE/'halden_master.png'
-    if halden.exists():
-        master = Image.open(halden).convert('RGB')
-        master.resize((SIZE, SIZE), Image.Resampling.NEAREST).save(OUTPUT/'halden_neutral.png')
-        records['halden'] = {'name': 'Master Halden', 'expression': 'neutral',
-            'file': 'halden_neutral.png', 'sprite_root': 'assets/story/halden',
-            'source': halden.relative_to(ROOT).as_posix(), 'source_rect': [0, 0, *master.size]}
+    for key, name in (('halden', 'Master Halden'), ('elira', 'Elira')):
+        source = SOURCE/f'{key}_master.png'
+        if source.exists():
+            master = Image.open(source).convert('RGB')
+            master.resize((SIZE, SIZE), Image.Resampling.NEAREST).save(OUTPUT/f'{key}_neutral.png')
+            records[key] = {'name': name, 'expression': 'neutral',
+                'file': f'{key}_neutral.png', 'sprite_root': f'assets/story/{key}',
+                'source': source.relative_to(ROOT).as_posix(), 'source_rect': [0, 0, *master.size]}
     manifest = {
         'status': 'awaiting_user_review', 'frame_size': [SIZE, SIZE],
         'format': 'RGB PNG', 'background': 'opaque dark green',
