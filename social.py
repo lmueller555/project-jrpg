@@ -220,9 +220,11 @@ class SocialSystem:
         forward = pygame.Vector2(FACING[game.player.facing])
         candidates = []
         opening = getattr(game, 'opening', None)
+        visit = getattr(game, 'halden_visit', None)
         for actor in game.world.npcs:
             if actor in self.blocked or actor.data['id'] not in self.profiles:continue
             if opening is not None and not opening.can_speak(actor.data['id']):continue
+            if visit is not None and not visit.can_speak(actor.data['id']):continue
             delta = actor.position-game.player.position
             distance = delta.length()
             if distance == 0 or distance > self.data['trigger_radius']:continue
@@ -238,6 +240,11 @@ class SocialSystem:
         if self.locked:return False
         opening = getattr(self.game, 'opening', None)
         if opening is not None and not opening.can_speak(actor.data['id']):return False
+        visit = getattr(self.game, 'halden_visit', None)
+        if visit is not None:
+            if not visit.can_speak(actor.data['id']):return False
+            result = visit.try_conversation(actor)
+            if result is not None:return result
         profile = self.profiles[actor.data['id']]
         conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
         if conversation is None:return False
@@ -352,6 +359,8 @@ class SocialSystem:
             self.cancel_script()
             hook = getattr(getattr(self.game, 'opening', None), 'on_dialogue_cancelled', None)
             if hook is not None:hook(identifier)
+            visit = getattr(self.game, 'halden_visit', None)
+            if visit is not None:visit.on_dialogue_cancelled(identifier)
         else:
             self.blocked.add(self.actor)
             self.actor.end_conversation()

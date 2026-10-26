@@ -68,10 +68,12 @@ game.quests.complete_objective(OPENING_QUEST, 'elira')
 game.quests.complete_objective(OPENING_QUEST, 'venn')
 ```
 
-Halden's hook includes Tomas's departure. Room entry never calls these hooks.
+Halden's hook is now called by `halden_visit.py` only after medicine, three sacks,
+the closing exchange, Tomas's goodbye and his actual departure through the door.
+Room entry never calls these hooks.
 There is no debug completion action in the player UI. The ready/report and
 completion paths are exercised by lifecycle, social and gameplay tests while
-the actual task controllers are still pending. The later mill arrival/unlock
+Elira's and Venn's task controllers are still pending. The later mill arrival/unlock
 scene will be attached when MQ01's full story flow is implemented.
 
 ## Persistence

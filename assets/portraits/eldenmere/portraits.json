@@ -136,6 +136,19 @@
         1536,
         1024
       ]
+    },
+    "halden": {
+      "name": "Master Halden",
+      "expression": "neutral",
+      "file": "halden_neutral.png",
+      "sprite_root": "assets/story/halden",
+      "source": "assets/source/portraits/eldenmere/halden_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
     }
   },
   "aliases": {

@@ -44,9 +44,9 @@ Wrong recipients, queued objectives or missing items change nothing.
 Medicine delivery does **not** complete Halden's objective: his three grain sacks
 and Tomas's departure remain separate required tasks. The controller can query
 `inventory.was_delivered(quest, objective)` to resume that visit after a reload.
-Room entry never delivers an item. Halden's actual actor, interaction and task
-controller remain the next main-scenario milestone; no debug delivery is exposed
-through the satchel UI.
+Room entry never delivers an item. `halden_visit.py` now invokes this API at
+Halden's actual handoff beat, then separately tracks the three sacks and Tomas's
+goodbye. No debug delivery is exposed through the satchel UI.
 
 ## Saves
 
