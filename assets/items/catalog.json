@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "items": {
+    "halden_medicine": {
+      "name": "Halden’s medicine",
+      "category": "key_items",
+      "description": "Medicine prepared by Mother Serene for Master Halden’s aching joints.",
+      "recipient_name": "Master Halden"
+    },
+    "elira_supplies": {
+      "name": "Elira’s supplies",
+      "category": "key_items",
+      "description": "A bundle of food and lamp oil from the sanctuary, set aside for Elira.",
+      "recipient_name": "Elira"
+    },
+    "venn_supplies": {
+      "name": "Venn family supplies",
+      "category": "key_items",
+      "description": "Recovery supplies for the Venn family while their youngest gets well.",
+      "recipient_name": "The Venn family"
+    }
+  },
+  "quest_grants": {
+    "CH01_MQ01": {"halden_medicine": 1, "elira_supplies": 1, "venn_supplies": 1}
+  },
+  "deliveries": {
+    "CH01_MQ01/halden": {"quest": "CH01_MQ01", "objective": "halden", "recipient": "halden", "items": {"halden_medicine": 1}},
+    "CH01_MQ01/elira": {"quest": "CH01_MQ01", "objective": "elira", "recipient": "elira", "items": {"elira_supplies": 1}},
+    "CH01_MQ01/venn": {"quest": "CH01_MQ01", "objective": "venn", "recipient": "venn", "items": {"venn_supplies": 1}}
+  }
+}

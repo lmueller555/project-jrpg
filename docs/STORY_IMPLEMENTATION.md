@@ -93,6 +93,11 @@ focused room, asset and routine tests can run independently of the opening.
 
 ## Remaining first-quest work
 
+The inventory foundation now grants and saves Serene's supplies on acceptance.
+Its guarded handoff API consumes medicine and records a delivery without
+completing the grain-sack task. See [inventory](INVENTORY.md). Household controllers
+still need to invoke that API after their actual NPC handoffs.
+
 Halden, Elira and the Venn family still need their character packs, portraits
 and placement. Tomas's temporary following segment, grain-sack carrying,
 lantern retrieval, gate repair, the final report and the staged mill-failure

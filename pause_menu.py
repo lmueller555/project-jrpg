@@ -183,7 +183,7 @@ class SettingsPanel:
         if self.controls:
             controls = [('Move', 'WASD / arrow keys'), ('Run', 'Hold Shift'),
                         ('Read dialogue', 'Left click / Space / E'), ('Choose an answer', 'Click its button'),
-                        ('Map / Journal', 'M / J'), ('Inspect / Join meal', 'E near the prompt'),
+                        ('Map / Journal / Satchel', 'M / J / I'), ('Inspect / Join meal', 'E near the prompt'),
                         ('Pause / Close', 'Escape'), ('Screen mode', 'F11')]
             spacing = min(25, max(20, (self.controls_back.top-self.viewport.top-8)//len(controls)))
             for index, (label, keys) in enumerate(controls):
@@ -232,8 +232,8 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    settings_index = 3
-    options = ('Resume', 'Journal', 'Map', 'Settings', 'Quit')
+    settings_index = 4
+    options = ('Resume', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
 
     def __init__(self, game):
         self.game = game
@@ -242,7 +242,7 @@ class PauseMenu:
         self.settings = False
         self.selected = 0
         self.overlay = None
-        self.rows = [pygame.Rect(146, 85+index*33, 188, 28) for index in range(len(self.options))]
+        self.rows = [pygame.Rect(146, 78+index*31, 188, 26) for index in range(len(self.options))]
         self.settings_panel = SettingsPanel(self)
         self.settings_rows = self.settings_panel.rows
         self.slider_rects = self.settings_panel.slider_rects
@@ -289,26 +289,33 @@ class PauseMenu:
 
     def activate(self):
         if self.settings:return self.settings_panel.activate()
-        if self.selected == 0:self.close()
-        elif self.selected == 1:
+        label=self.options[self.selected]
+        if label == 'Resume':self.close()
+        elif label == 'Inventory':
+            self.overlay = 'inventory'
+            self.game.inventory_ui.open()
+        elif label == 'Journal':
             self.overlay = 'journal'
             self.game.quest_ui.journal_open = True
             self.game.ui.sound('confirm')
-        elif self.selected == 2:
+        elif label == 'Map':
             self.overlay = 'map'
             self.game.map_open = True
             self.game.ui.sound('confirm')
-        elif self.selected == 3:
+        elif label == 'Settings':
             self.settings = True;self.selected = 0;self.settings_panel.reset()
             self.game.ui.sound('confirm')
-        elif self.selected == 4:
+        elif label == 'Quit':
             self.game.ui.sound('confirm');return False
         return True
 
     def handle_event(self, event):
         if not self.is_open:return True
         if self.overlay is not None:
-            if self.overlay == 'journal':
+            if self.overlay == 'inventory':
+                self.game.inventory_ui.handle_event(event)
+                closed = not self.game.inventory_ui.is_open
+            elif self.overlay == 'journal':
                 self.game.quest_ui.handle_event(event)
                 closed = not self.game.quest_ui.journal_open
             else:
@@ -353,10 +360,10 @@ class PauseMenu:
         if self.settings:
             self.settings_panel.draw(painter)
             return
-        panel = pygame.Rect(126, 36, 228, 248)
+        panel = pygame.Rect(126, 24, 228, 282)
         painter.panel(panel)
         painter.lantern((panel.left+23, panel.top+25), size=10)
-        painter.text('Paused', (240, 48), role='heading', color=GOLD, anchor='midtop', bold=True)
+        painter.text('Paused', (240, 36), role='heading', color=GOLD, anchor='midtop', bold=True)
         for index, (label, row) in enumerate(zip(self.options, self.rows)):
             painter.button(row, label, selected=index == self.selected,
                            pressed=self._pressed == index and self._mouse_held)

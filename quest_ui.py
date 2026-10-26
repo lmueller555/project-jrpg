@@ -171,7 +171,9 @@ class QuestUI:
             return True
         return event.type in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP, pygame.KEYUP)
 
-    def _hidden(self):return self.journal_open or self.game.map_open
+    def _hidden(self):
+        return (self.journal_open or self.game.map_open or
+                getattr(getattr(self.game, 'inventory_ui', None), 'is_open', False))
 
     def _notices_hidden(self):
         return self._hidden() or self.game.social.locked

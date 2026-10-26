@@ -410,7 +410,8 @@ class SocialSystem:
         accepted = None
         option = self.choice_options[choice]
         if option.get('action') == 'accept':
-            if not self.game.quests.accept(self.conversation['quest']['id']):return False
+            accept=getattr(self.game,'accept_quest',self.game.quests.accept)
+            if not accept(self.conversation['quest']['id']):return False
             accepted = self.conversation['quest']['id']
         self._finish(accepted)
         self.game.ui.sound('confirm')
