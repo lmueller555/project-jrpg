@@ -68,6 +68,7 @@ class Halden:
         self.position = pygame.Vector2(192, 176)
         self.probe_size = (12, 8);self.draw_anchor = (12, 30)
         self.idles = {d: world.image(ART+f'idle_{d}.png') for d in ('front', 'back', 'left', 'right')}
+        self.moving = False;self.walk_ms = 0.;self.opens_doors = True
         self.facing = 'front';self.conversation_ready = False
         self.conversation_facing = 'front'
 
@@ -75,6 +76,8 @@ class Halden:
     def blocker(self):return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
     def sprite(self, elapsed_ms):
+        if self.moving and not self.conversation_ready and hasattr(self, 'walks'):
+            return self.walks[self.facing][int(self.walk_ms//140)%4]
         return self.idles[self.conversation_facing if self.conversation_ready else self.facing]
 
     def request_conversation(self, facing):

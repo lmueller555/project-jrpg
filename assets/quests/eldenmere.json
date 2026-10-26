@@ -11,7 +11,7 @@
       "parallel_tracker_text": "Visit Elira and the Venn family.",
       "report_text": "Return to Mother Serene.",
       "completion_text": "Serene's three households have been helped.",
-      "implementation_note": "Serene's acceptance and all three household visits are playable. Venn requires supplies, both inspections, either repair and the closing family exchange. Staged report/mill-arrival gameplay remains next. Entering a home never completes a task.",
+      "implementation_note": "All three households, the report, Halden’s arrival and the Mira handoff are playable. MQ01 completes after the mill exchange.",
       "objectives": [
         {
           "id": "halden",
@@ -37,6 +37,25 @@
           "requires": [
             "halden"
           ]
+        }
+      ]
+    },
+    {
+      "id": "CH01_MQ02",
+      "title": "A Little Trouble at the Mill",
+      "giver": "mira_worker",
+      "initially_locked": true,
+      "requires_quests": [
+        "CH01_MQ01"
+      ],
+      "summary": "Halden’s mill wheel has stopped. Find Mira at her workshop to ask for her help.",
+      "available_tracker_text": "Find Mira at her workshop.",
+      "objectives": [
+        {
+          "id": "meet_mira",
+          "text": "Find Mira at her workshop.",
+          "tracker_text": "Find Mira at her workshop.",
+          "requires": []
         }
       ]
     }

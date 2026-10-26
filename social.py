@@ -458,6 +458,7 @@ class SocialSystem:
             if callback is not None:callback()
             return
         condition = self.conversation.get('quest', {})
+        report = condition.get('action') == 'report' and condition.get('id') == 'CH01_MQ01'
         if condition.get('action') == 'turn_in':
             self.game.quests.turn_in(condition['id'], self.actor.data['id'])
         self.flags.update(self.conversation.get('sets', []))
@@ -475,6 +476,10 @@ class SocialSystem:
         opening = getattr(self.game, 'opening', None)
         if accepted_quest is not None and opening is not None:
             opening.on_quest_accepted(accepted_quest)
+        if report:
+            conclusion = getattr(self.game, 'opening_conclusion', None)
+            if conclusion is not None:conclusion.reported()
+            else:self.game.quests.turn_in(condition['id'], 'mother_serene')
         save = getattr(self.game, 'save_progress', None)
         if save is not None:save()
 
