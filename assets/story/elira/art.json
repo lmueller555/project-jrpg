@@ -1,0 +1,41 @@
+{
+  "character": "elira",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "pose_canvas": [
+    40,
+    64
+  ],
+  "pose_anchor": [
+    20,
+    54
+  ],
+  "source_hashes": {
+    "assets/characters/npcs/female_01/idle_front.png": "30a7132736154a2455fab777b525c075c3cf036e41d5fae5b7ef853e47fee0c8",
+    "assets/characters/npcs/female_01/idle_left.png": "59061b909ed627c639dc4b90de4a4c358d0496dcfc4ed98f0396c45f04571221",
+    "assets/characters/npcs/female_01/idle_right.png": "99cd6362bd4385af3352b2f201bbaf6c8168934a0f6309d45927c229c8a9b40e",
+    "assets/characters/npcs/female_01/idle_back.png": "a1b6d2b946859797dcab1e5ccfae5e9c9119b6d9c92125d0592de80f449b85a1"
+  },
+  "arm_segment_length": 6,
+  "lantern": "assets/terrain/eldenmere/elira_interior/sprites/lantern_unlit.png",
+  "contact": {
+    "player_visual_feet": [
+      154,
+      76
+    ],
+    "lantern_world_origin": [
+      148,
+      27
+    ],
+    "take_frame": 0,
+    "shelf_frame": "shelf_with_lantern.png"
+  },
+  "design": "Silver-streaked low bun, hazel eyes, mulberry dress, oatmeal apron, sage shawl",
+  "stride_source": "Approved Caelan four-frame walking animations, with coordinated bob"
+}

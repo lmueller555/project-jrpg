@@ -11,7 +11,7 @@
       "parallel_tracker_text": "Visit Elira and the Venn family.",
       "report_text": "Return to Mother Serene.",
       "completion_text": "Serene's three households have been helped.",
-      "implementation_note": "Serene's acceptance and the full Halden visit are playable. Halden completes after medicine, three sacks and Tomas leaving through the door. Elira and Venn task controllers remain pending; entering a home never completes a task.",
+      "implementation_note": "Serene's acceptance, the full Halden visit and Elira's supply/lantern visit are playable. Venn's task controller remains pending. Each objective completes after its actual tasks and closing exchange; entering a home never completes a task.",
       "objectives": [
         {
           "id": "halden",

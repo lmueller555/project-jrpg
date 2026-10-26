@@ -46,7 +46,11 @@ and Tomas's departure remain separate required tasks. The controller can query
 `inventory.was_delivered(quest, objective)` to resume that visit after a reload.
 Room entry never delivers an item. `halden_visit.py` now invokes this API at
 Halden's actual handoff beat, then separately tracks the three sacks and Tomas's
-goodbye. No debug delivery is exposed through the satchel UI.
+goodbye. No debug delivery is exposed through the satchel UI. `elira_visit.py`
+likewise consumes the food/oil bundle at the actual handoff beat, after Halden
+unlocks the visit. The borrowed lantern is a visible quest prop with a saved
+location (shelf, Caelan's hands, or table); it is not an extra supply bundle or
+loot item.
 
 ## Saves
 

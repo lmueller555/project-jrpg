@@ -2,7 +2,8 @@
 
 New Game now stages the approved bedroom, breakfast and request scenes from
 `narrative/game_01/CH01_MQ01.md`. The playable opening now continues through
-Tomas's temporary escort and the complete first household visit to Halden.
+Tomas's temporary escort, the complete first household visit to Halden, and
+Elira's supply delivery and memorial-lantern visit.
 
 ## Playable sequence
 
@@ -52,6 +53,15 @@ Tomas's temporary escort and the complete first household visit to Halden.
    He walks out through the cottage door before the Halden objective completes
    and Elira/Venn unlock in either order. Tomas then physically walks back to
    the sanctuary and resumes his preparation schedule, without following Caelan.
+10. Elira's visit unlocks after Halden, independently of Venn. Approach her in the
+    bridge cottage for the approved food/oil exchange. The short handoff consumes
+    only her supply bundle. **E** near the stool aligns Caelan on clear floor,
+    steps him onto the stool, raises his arms, lifts the unlit lantern from its
+    registered shelf pixels, lowers it carefully and steps down. The shelf changes
+    to the approved empty state exactly when his hands take ownership. Carry it
+    to the north side of her table and press **E** to set it down. Approach Elira
+    again for the approved conversation about her husband and the festival. Only
+    reading its final line completes the objective. Ordinary dialogue stays live.
 
 Morning sounds are quiet diegetic bell, knock, bird and stream cues, with cloth,
 footstep, chair, plate, bite and cup effects emitted at actual action beats.
@@ -115,8 +125,8 @@ focused room, asset and routine tests can run independently of the opening.
 
 The inventory foundation now grants and saves Serene's supplies on acceptance.
 Its guarded handoff API consumes medicine and records a delivery without
-completing the grain-sack task. See [inventory](INVENTORY.md). Household controllers
-still need to invoke that API after their actual NPC handoffs.
+completing the grain-sack task. Halden and Elira now invoke that API at their
+actual handoffs; Venn's controller remains to be added. See [inventory](INVENTORY.md).
 
 `halden_visit.py` now owns the first household. Its optional version-one
 `halden_visit` journey record saves each stored sack, Caelan's carried sack,
@@ -127,7 +137,13 @@ Caelan; completed visits never rejoin or replay supplies. Old accepted saves
 can begin the Halden visit, and old completed objectives migrate as completed.
 See [the first household](HALDEN_VISIT.md) for controls and validation.
 
-Elira and the Venn family still need their named character packs, portraits
-and placement. Lantern retrieval, gate repair, the final report and the staged
-mill-failure arrival still need their gameplay controllers. Their markers and
-quest lifecycle are ready; unlocking those errands does not complete them.
+`elira_visit.py` owns the order-flexible lantern visit. Inventory owns the food/oil
+receipt; its optional version-one `elira_visit` record saves the lantern's single
+location. Interrupted gestures resume on valid floor with the lantern either
+still on its shelf or in Caelan's hands. A placed lantern and unread closing
+conversation survive leaving and reloading. Older saves reconstruct outstanding
+or completed visits without duplicating supplies. See [Elira's visit](ELIRA_VISIT.md).
+
+The Venn family still needs named character packs, portraits and placement.
+Gate repair, the final report and the staged mill-failure arrival remain the
+next gameplay controllers. Unlocking an errand does not complete its task.

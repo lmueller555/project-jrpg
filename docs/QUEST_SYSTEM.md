@@ -71,9 +71,12 @@ game.quests.complete_objective(OPENING_QUEST, 'venn')
 Halden's hook is now called by `halden_visit.py` only after medicine, three sacks,
 the closing exchange, Tomas's goodbye and his actual departure through the door.
 Room entry never calls these hooks.
-There is no debug completion action in the player UI. The ready/report and
-completion paths are exercised by lifecycle, social and gameplay tests while
-Elira's and Venn's task controllers are still pending. The later mill arrival/unlock
+There is no debug completion action in the player UI. Lifecycle, social and
+gameplay tests exercise the ready/report and completion paths.
+Elira's controller now delivers her food/oil, retrieves the lantern using the
+stool, places it on her table and waits for the approved closing conversation
+before completing her objective. Its local state and supply receipt persist
+independently. Venn's task controller is still pending. The later mill arrival/unlock
 scene will be attached when MQ01's full story flow is implemented.
 
 ## Persistence
