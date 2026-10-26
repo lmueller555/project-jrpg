@@ -15,7 +15,7 @@ The Elira objective completes only after its last line has been read.
 
 Venn remains independently available. If Venn was already completed, the quest
 becomes ready for Serene's report, without automatically reporting or turning in.
-The Venn repair and the staged end of MQ01 remain future gameplay work.
+The Venn repair is now playable; the staged mill-failure end of MQ01 remains next.
 
 ## Ownership and animation
 

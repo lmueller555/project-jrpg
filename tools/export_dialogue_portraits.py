@@ -68,13 +68,14 @@ def build():
                 'source_rect': list(box),
             }
         board.save(REVIEW / preview)
-    for key, name in (('halden', 'Master Halden'), ('elira', 'Elira')):
+    for key, name in (('halden', 'Master Halden'), ('elira', 'Elira'),
+                      ('venn_mother', 'Mrs. Venn'), ('venn_father', 'Mr. Venn'), ('venn_child', 'Venn child')):
         source = SOURCE/f'{key}_master.png'
         if source.exists():
             master = Image.open(source).convert('RGB')
             master.resize((SIZE, SIZE), Image.Resampling.NEAREST).save(OUTPUT/f'{key}_neutral.png')
             records[key] = {'name': name, 'expression': 'neutral',
-                'file': f'{key}_neutral.png', 'sprite_root': f'assets/story/{key}',
+                'file': f'{key}_neutral.png', 'sprite_root': ('assets/story/venn/'+key[5:] if key.startswith('venn_') else f'assets/story/{key}'),
                 'source': source.relative_to(ROOT).as_posix(), 'source_rect': [0, 0, *master.size]}
     manifest = {
         'status': 'awaiting_user_review', 'frame_size': [SIZE, SIZE],

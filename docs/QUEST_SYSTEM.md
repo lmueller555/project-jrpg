@@ -76,7 +76,10 @@ gameplay tests exercise the ready/report and completion paths.
 Elira's controller now delivers her food/oil, retrieves the lantern using the
 stool, places it on her table and waits for the approved closing conversation
 before completing her objective. Its local state and supply receipt persist
-independently. Venn's task controller is still pending. The later mill arrival/unlock
+independently. Venn now delivers the recovery supplies, records both inspections,
+offers two clicked repair choices and restores the gate/water before the closing
+conversation completes the objective. Neither method affects major outcomes.
+The later mill arrival/unlock
 scene will be attached when MQ01's full story flow is implemented.
 
 ## Persistence

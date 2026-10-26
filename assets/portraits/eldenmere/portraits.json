@@ -162,6 +162,45 @@
         1254,
         1254
       ]
+    },
+    "venn_mother": {
+      "name": "Mrs. Venn",
+      "expression": "neutral",
+      "file": "venn_mother_neutral.png",
+      "sprite_root": "assets/story/venn/mother",
+      "source": "assets/source/portraits/eldenmere/venn_mother_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    },
+    "venn_father": {
+      "name": "Mr. Venn",
+      "expression": "neutral",
+      "file": "venn_father_neutral.png",
+      "sprite_root": "assets/story/venn/father",
+      "source": "assets/source/portraits/eldenmere/venn_father_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    },
+    "venn_child": {
+      "name": "Venn child",
+      "expression": "neutral",
+      "file": "venn_child_neutral.png",
+      "sprite_root": "assets/story/venn/child",
+      "source": "assets/source/portraits/eldenmere/venn_child_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
     }
   },
   "aliases": {

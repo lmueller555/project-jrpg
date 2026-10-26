@@ -35,6 +35,7 @@ from inventory import Inventory
 from inventory_ui import InventoryUI
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
+from venn_visit import VennVisit
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -385,7 +386,8 @@ class Game:
         self.opening=OpeningSequence(self)
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
-        self.household_visits=(self.halden_visit,self.elira_visit)
+        self.venn_visit=VennVisit(self)
+        self.household_visits=(self.halden_visit,self.elira_visit,self.venn_visit)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -402,6 +404,7 @@ class Game:
                            'inventory':self.inventory.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
+                           'venn_visit':self.venn_visit.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
@@ -462,7 +465,8 @@ class Game:
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
-               ('elira_visit' not in data or EliraVisit.valid_journey(data)))
+               ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
+               ('venn_visit' not in data or VennVisit.valid_journey(data)))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -512,6 +516,7 @@ class Game:
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
         self.elira_visit.release_pose()
+        self.venn_visit.release_pose()
         if data is None:
             self.quests.restore(QuestLog().to_dict())
             self.inventory=Inventory()
@@ -555,6 +560,7 @@ class Game:
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
         self.halden_visit.restore(data.get('halden_visit') if data else None)
         self.elira_visit.restore(data.get('elira_visit') if data else None)
+        self.venn_visit.restore(data.get('venn_visit') if data else None)
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -582,6 +588,7 @@ class Game:
               'inventory':self.inventory.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
+              'venn_visit':self.venn_visit.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},

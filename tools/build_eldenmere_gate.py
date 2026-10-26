@@ -128,7 +128,7 @@ def spillway_response(frame,mode,phase,palette):
     return image
 
 
-def gate_frame(pose,parts,structure,channel_tiles,palette,recipe):
+def gate_frame(pose,parts,structure,channel_tiles,palette,recipe,pin_side='right'):
     phase=pose['phase']; image=Image.new('RGBA',(24,36))
     tile=channel_tiles[phase].copy(); water=palette['water']
     for y in range(24):
@@ -160,8 +160,9 @@ def gate_frame(pose,parts,structure,channel_tiles,palette,recipe):
     image.alpha_composite(moving); image.alpha_composite(structure)
     d=ImageDraw.Draw(image)
     pin_y=15 if pose['lift']>=9 else 23
-    d.line((19,pin_y,21,pin_y+(1 if pose['jam'] else 0)),fill=palette['iron']['base'])
-    d.point((21,pin_y+(2 if pose['jam'] else 0)),fill=palette['iron']['light'])
+    a,b=(19,21) if pin_side=='right' else (4,2)
+    d.line((a,pin_y,b,pin_y+(1 if pose['jam'] else 0)),fill=palette['iron']['base'])
+    d.point((b,pin_y+(2 if pose['jam'] else 0)),fill=palette['iron']['light'])
     return image
 
 

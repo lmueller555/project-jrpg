@@ -3,7 +3,7 @@
 New Game now stages the approved bedroom, breakfast and request scenes from
 `narrative/game_01/CH01_MQ01.md`. The playable opening now continues through
 Tomas's temporary escort, the complete first household visit to Halden, and
-Elira's supply delivery and memorial-lantern visit.
+Elira's memorial-lantern visit, and the Venn family's recovery-supply/gate visit.
 
 ## Playable sequence
 
@@ -62,6 +62,19 @@ Elira's supply delivery and memorial-lantern visit.
     to the north side of her table and press **E** to set it down. Approach Elira
     again for the approved conversation about her husband and the festival. Only
     reading its final line completes the objective. Ordinary dialogue stays live.
+11. The Venn parents and recovering child occupy the wide eastern cottage. The
+    child rests on the existing pillow and can be spoken to from the bedside.
+    Approach either parent for the approved recovery-supply exchange; the handoff
+    consumes their bundle once. **E** inspects both the pin and the channel at
+    the existing irrigation gate east of their home. After reading both, **E**
+    at the pin offers two clicked responses. Tools reseat the pin, move Caelan
+    along the dry bank to pull debris clear, then lift the board. Modest magicks
+    curl the existing upstream water aside, allow him to set the pin by hand,
+    then flush the debris as the board rises. Both restore animated downstream
+    flow over the existing spillway. Return through the cottage door and finish
+    the approved family conversation to complete the objective. Elira and Venn
+    can be played in either order; the last household makes the quest ready for
+    Serene's existing report dialogue.
 
 Morning sounds are quiet diegetic bell, knock, bird and stream cues, with cloth,
 footstep, chair, plate, bite and cup effects emitted at actual action beats.
@@ -125,8 +138,8 @@ focused room, asset and routine tests can run independently of the opening.
 
 The inventory foundation now grants and saves Serene's supplies on acceptance.
 Its guarded handoff API consumes medicine and records a delivery without
-completing the grain-sack task. Halden and Elira now invoke that API at their
-actual handoffs; Venn's controller remains to be added. See [inventory](INVENTORY.md).
+completing the grain-sack task. All three household controllers now invoke that
+API at their actual handoffs. See [inventory](INVENTORY.md).
 
 `halden_visit.py` now owns the first household. Its optional version-one
 `halden_visit` journey record saves each stored sack, Caelan's carried sack,
@@ -144,6 +157,13 @@ still on its shelf or in Caelan's hands. A placed lantern and unread closing
 conversation survive leaving and reloading. Older saves reconstruct outstanding
 or completed visits without duplicating supplies. See [Elira's visit](ELIRA_VISIT.md).
 
-The Venn family still needs named character packs, portraits and placement.
-Gate repair, the final report and the staged mill-failure arrival remain the
-next gameplay controllers. Unlocking an errand does not complete its task.
+`venn_visit.py` saves the two completed inspections, chosen method and repaired
+gate. Inventory owns the recovery-supply receipt. Interrupted repair gestures
+restart safely from the bank with the gate jammed; finished repairs persist
+without completing unread family dialogue. Old completed visits migrate to a
+working gate without inventing a repair choice. The family uses role titles;
+given names and exact ages remain open. See [Venn's visit](VENN_VISIT.md).
+
+The three household tasks are playable. Serene's existing report/turn-in dialogue
+is available when all are complete. Authored report staging, Halden's mill-failure
+arrival and the MQ02 transition remain the next story milestone.
