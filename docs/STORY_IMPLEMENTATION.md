@@ -1,8 +1,8 @@
 # Sanctuary opening
 
 New Game now stages the approved bedroom, breakfast and request scenes from
-`narrative/game_01/CH01_MQ01.md`. This milestone ends with accepting Serene's
-three-household quest; the practical household tasks are the next stage.
+`narrative/game_01/CH01_MQ01.md`. The playable opening now continues through
+Tomas's temporary escort and the complete first household visit to Halden.
 
 ## Playable sequence
 
@@ -28,10 +28,30 @@ three-household quest; the practical household tasks are the next stage.
 5. Refusing the request leaves it available after walking away and returning.
    Clicking **I'll help** accepts exactly once, updates the quest UI, and plays
    the remaining approved request dialogue. Both actors face Caelan for this
-   exchange, then return to their ambient schedules. Caelan can move throughout
+   exchange. Serene resumes her schedule; Tomas joins Caelan. Caelan can move throughout
    the offer and follow-up. Leaving the follow-up releases the actors while
    preserving the explicitly accepted quest. The household objectives
-   remain incomplete until their real task controllers are implemented.
+   remain incomplete until their actual deliveries and practical tasks finish.
+6. Tomas follows through town and building doors using the real collision mask.
+   He trails Caelan, catches up during longer walks, and yields in tight spaces.
+   His feet never prevent Caelan passing through a doorway. He accompanies only
+   the Halden segment; other NPCs retain their normal schedules.
+7. Approach Master Halden inside his mill-side cottage. Finish the approved
+   exchange to pass him Serene's medicine. The handoff removes it from inventory
+   once, without completing the remaining work. Leaving unread dialogue keeps
+   the medicine in Caelan's satchel.
+8. Three real sacks stand by the entry; a raised wooden pallet marks dry storage
+   near the north wall. **E** lifts a sack and sets it on its matching pallet
+   space. The context prompt identifies the location. Caelan carries the outer
+   sacks. **E** by the middle sack asks Tomas to carry it: he walks to it, lifts,
+   carries and sets it down with the approved stride and coordinated bob.
+   There is no timer or failure penalty. Movement and the camera remain live
+   except for the short handoff, lift and set-down gestures.
+9. After all three sacks are stored, approach Halden for the closing exchange
+   about his joints and the noisy mill. Then approach Tomas for his goodbye.
+   He walks out through the cottage door before the Halden objective completes
+   and Elira/Venn unlock in either order. Tomas then physically walks back to
+   the sanctuary and resumes his preparation schedule, without following Caelan.
 
 Morning sounds are quiet diegetic bell, knock, bird and stream cues, with cloth,
 footstep, chair, plate, bite and cup effects emitted at actual action beats.
@@ -98,8 +118,16 @@ Its guarded handoff API consumes medicine and records a delivery without
 completing the grain-sack task. See [inventory](INVENTORY.md). Household controllers
 still need to invoke that API after their actual NPC handoffs.
 
-Halden, Elira and the Venn family still need their character packs, portraits
-and placement. Tomas's temporary following segment, grain-sack carrying,
-lantern retrieval, gate repair, the final report and the staged mill-failure
-arrival still need their gameplay controllers. The quest feedback layer is
-ready for those events; room visits never stand in for completing their tasks.
+`halden_visit.py` now owns the first household. Its optional version-one
+`halden_visit` journey record saves each stored sack, Caelan's carried sack,
+the closing exchange and Tomas's goodbye. Inventory owns the medicine receipt.
+An interrupted Tomas lift/carry safely returns that sack to its entry position;
+stored sacks stay stored. Continuing an escort restores the same Tomas beside
+Caelan; completed visits never rejoin or replay supplies. Old accepted saves
+can begin the Halden visit, and old completed objectives migrate as completed.
+See [the first household](HALDEN_VISIT.md) for controls and validation.
+
+Elira and the Venn family still need their named character packs, portraits
+and placement. Lantern retrieval, gate repair, the final report and the staged
+mill-failure arrival still need their gameplay controllers. Their markers and
+quest lifecycle are ready; unlocking those errands does not complete them.

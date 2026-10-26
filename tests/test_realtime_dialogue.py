@@ -293,7 +293,7 @@ class RealtimeDialogueTests(unittest.TestCase):
         self.assertEqual(self.game.player.position, position)
         self.assertFalse(self.game.opening.locks_player)
 
-    def test_leaving_accepted_quest_banter_releases_cast_and_preserves_acceptance(self):
+    def test_leaving_accepted_banter_releases_serene_starts_escort_and_preserves_acceptance(self):
         self.assertTrue(self.game.opening.restore({'version': 1, 'stage': 'assignment'}))
         self.game.player.position.update(288, 231)
         self.game.player.facing = 'back'
@@ -309,7 +309,12 @@ class RealtimeDialogueTests(unittest.TestCase):
         cast = [actor for actor in self.game.persistent_npcs
                 if actor.data['id'] in ('mother_serene', 'tomas')]
         self.assertEqual(len(cast), 2)
-        self.assertTrue(all(not actor.story_paused for actor in cast))
+        serene = next(actor for actor in cast if actor.data['id'] == 'mother_serene')
+        tomas = next(actor for actor in cast if actor.data['id'] == 'tomas')
+        self.assertFalse(serene.story_paused)
+        self.assertTrue(self.game.halden_visit.owns_tomas)
+        self.assertTrue(tomas.story_paused)  # His escort replaces the ambient work schedule.
+        self.assertTrue(tomas.story_following)
         before = [(actor.state, actor.state_ms, tuple(actor.position)) for actor in cast]
         for _ in range(12):
             self.game.update(1/60, (0, 0), False)

@@ -301,7 +301,9 @@ class QuestUI:
 
     def _tracker_text(self):
         opening = getattr(self.game, 'opening', None)
-        return (opening.hint_text() if opening is not None else '') or self.game.quests.tracker_text()
+        visit = getattr(self.game, 'halden_visit', None)
+        return ((opening.hint_text() if opening is not None else '') or
+                (visit.tracker_text() if visit is not None else '') or self.game.quests.tracker_text())
 
     def draw_tracker(self, canvas):
         if self._tracker_hidden():return
@@ -374,6 +376,9 @@ class QuestUI:
                 progress = self.game.quests.objective_status(identifier, objective['id'])
                 prefix = {'active': 'Next: ', 'queued': 'Later: ', 'completed': 'Done: '}.get(progress, '')
                 text = prefix+objective['text']
+                visit = getattr(self.game, 'halden_visit', None)
+                if objective['id'] == 'halden' and progress == 'active' and visit is not None:
+                    text += ' '+visit.journal_detail()
                 if progress == 'queued' and objective.get('requires'):
                     # Keep the opening's approved prerequisite wording concise.
                     text += ' (after Halden)' if objective.get('requires') == ['halden'] else ' (after earlier errands)'

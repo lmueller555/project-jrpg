@@ -33,6 +33,7 @@ from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
 from inventory import Inventory
 from inventory_ui import InventoryUI
+from halden_visit import HaldenVisit
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -186,7 +187,9 @@ class World:
             return False
         if size not in self._probes:self._probes[size]=pygame.Mask(size,fill=True)
         return (self.blocked.overlap(self._probes[size],(x,y)) is None
-                and not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
+                and not any(npc is not ignore_npc and not getattr(npc,'story_following',False)
+                            and npc.blocker.colliderect(rect) for npc in self.npcs)
+                and not any(block.colliderect(rect) for block in getattr(self,'task_blockers',lambda:())())
                 and (player_blocker is None or not player_blocker.colliderect(rect)))
 
     def location(self,position):
@@ -379,6 +382,7 @@ class Game:
         self.map_ui=MapUI(self)
         self.inventory_ui=InventoryUI(self)
         self.opening=OpeningSequence(self)
+        self.halden_visit=HaldenVisit(self)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -393,6 +397,7 @@ class Game:
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
+                           'halden_visit':self.halden_visit.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     def _sync_inventory(self):
@@ -448,7 +453,8 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
-               ('opening' not in data or self.opening.valid_snapshot(data['opening'])))
+               ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
+               ('halden_visit' not in data or self._valid_halden_snapshot(data)))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -474,6 +480,24 @@ class Game:
 
     @property
     def has_saved_journey(self):return self.saved_journey is not None
+
+    @staticmethod
+    def _valid_halden_snapshot(data):
+        record=data['halden_visit']
+        if not HaldenVisit.valid_snapshot(record):return False
+        quests=QuestLog();quests.restore(data['quests'])
+        accepted=quests.status('CH01_MQ01')!='available'
+        completed=quests.objective_status('CH01_MQ01','halden')=='completed'
+        has_progress=bool(record['stored_sacks'] or record['carried_sack'] is not None or record['concluded'] or record['departed'])
+        if has_progress and not accepted:return False
+        if has_progress:
+            inventory=Inventory()
+            if 'inventory' in data:
+                if not inventory.restore(data['inventory']) or not inventory.was_delivered('CH01_MQ01','halden'):return False
+            elif not completed:return False
+        if completed:
+            return record['stored_sacks']==[0,1,2] and record['departed']
+        return True
 
     def begin_journey(self,continue_saved=False):
         """Continue quest facts, not an interrupted conversation or NPC action."""
@@ -520,6 +544,7 @@ class Game:
         self._mouse_held=False
         if data is None:self.opening.start_new_game()
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
+        self.halden_visit.restore(data.get('halden_visit') if data else None)
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -545,6 +570,7 @@ class Game:
         self._sync_inventory()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
+              'halden_visit':self.halden_visit.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},
@@ -720,7 +746,7 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
-                    self.opening.inspect_nearby()
+                    if not self.halden_visit.interact():self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
@@ -748,13 +774,14 @@ class Game:
                 door.update(self.player.position if scene is self.world else None,seconds,
                             (npc.position for npc in scene.npcs if isinstance(npc,RoutineNPC) or getattr(npc,'opens_doors',False)))
         direction=(0,0) if (self.map_open or self.quest_ui.journal_open or
-                           self.opening.locks_player or self.opening_fade) else direction
+                           self.opening.locks_player or self.halden_visit.locks_player or self.opening_fade) else direction
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
             if self.world.data.get('kind')=='interior' and self.opening.stage in ('explore','assignment','done'):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
+        self.halden_visit.update(seconds)
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:
@@ -770,7 +797,7 @@ class Game:
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         if (not self.map_open and not self.quest_ui.journal_open and
-                not self.opening.locks_player and not self.transfer_cooldown):
+                not self.opening.locks_player and not self.halden_visit.locks_player and not self.transfer_cooldown):
             for door in self.world.doors:
                 if door.can_enter(self.player.position,direction):
                     self.enter(door)
@@ -789,7 +816,8 @@ class Game:
             self.location_seconds=3.5
 
     def enter(self,door):
-        if self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or self.opening.locks_player:return False
+        if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
+                self.opening.locks_player or self.halden_visit.locks_player):return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -863,7 +891,7 @@ class Game:
             if layer is not canvas:
                 layer.set_alpha(round(fade*255))
                 canvas.blit(layer,(0,0))
-        hint=self.opening.interaction_hint()
+        hint=self.opening.interaction_hint() or self.halden_visit.interaction_hint()
         if hint:
             hint=hint.replace(': ',' — ',1)
             available=menu.left-24
@@ -883,6 +911,7 @@ class Game:
         camera=self.camera.position()
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.opening.draw_world(self.canvas,camera)
+        self.halden_visit.draw_world(self.canvas,camera)
         _,size,origin=self._ensure_ui_surface()
         pygame.transform.scale(self.canvas,size,self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):

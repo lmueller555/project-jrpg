@@ -17,6 +17,11 @@
       "name": "Tomas",
       "portrait": "tomas",
       "actor_id": "tomas"
+    },
+    "halden": {
+      "name": "Master Halden",
+      "portrait": "halden",
+      "actor_id": "halden"
     }
   },
   "characters": {
@@ -129,7 +134,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Halden by the mill needs his medicine. Take Tomas there first—he's been asking to help."
+              "text": "Halden by the mill needs his medicine. Take Tomas there first\u2014he's been asking to help."
             }
           ]
         },
@@ -300,6 +305,19 @@
             {
               "speaker": "tomas",
               "text": "I know. I will if I can't find it."
+            }
+          ]
+        }
+      ]
+    },
+    "halden": {
+      "conversations": [
+        {
+          "id": "halden_ambient",
+          "lines": [
+            {
+              "speaker": "halden",
+              "text": "Mind the sacks by the door. The mill doesn't give my knees a day off."
             }
           ]
         }
