@@ -29,7 +29,7 @@ class LiamBlocks:
         self.events=deque(maxlen=256);self.forgotten_id=None;self.current=None;self.held=None
         self.accident_rolled=False;self.accident_selected=False;self.dog_owned=False;self.dog_returning=False
         self.forget_selected=False;self._forced_accident=None;self._forced_forget=None
-        self._contact_done=False;self.mode='build';self.index=0
+        self._contact_done=False;self.mode='build';self.index=0;self.release_requested=False
         self.box=next(e for e in home.entities if e['id']=='liam_block_box')
         self.lip=home.image(self.pack['front_overlay'])
         self._sync_props()
@@ -37,9 +37,50 @@ class LiamBlocks:
     @property
     def active(self):return self.state!='cooldown'
 
+    def request_release(self):
+        """Finish any current contact, then put every loose block away."""
+        self.release_requested=True
+        if self.active and self.mode=='cleanup':
+            queued={id(block) for block in self.queue}
+            extra=[block for block in self.blocks
+                   if block['state'] in ('placed','scattered','forgotten') and
+                   block is not self.current and id(block) not in queued]
+            self.queue.extend(extra)
+            if extra and self.state=='leave_play_area':self._next_loose()
+        if not self.active and any(b['state']!='box' for b in self.blocks):
+            self.shared.liam_owner=self;self.liam.work_renderer=self
+            self._begin_release()
+
+    def _begin_release(self):
+        self.mode='cleanup';self.accident_selected=False;self.forget_selected=False
+        self._forced_accident=None;self._forced_forget=None
+        self.queue=[b for b in reversed(self.blocks) if b['state'] in ('placed','scattered','forgotten')]
+        if self.dog_owned and not self.dog_returning:
+            self.daisy.play_pose=None;self.daisy.state='play';self.daisy.activity=None
+            self.daisy._return_home();self.dog_returning=True
+        kneeling=bool(self.liam.action and self.liam.action.startswith(('kneel_','take_','place_','collect_','return_')))
+        if self.held is not None:
+            self.current=self.held
+            self._state('yield_rise' if kneeling else 'carry_to_box')
+        elif kneeling:self._state('yield_rise')
+        else:self._next_loose()
+
+    def reset_for_story(self):
+        """Restore the unpersisted toy activity for New Game/Continue staging."""
+        for block,center in zip(self.blocks,self.config['block_centers']):
+            block['state']='box';block['center'].update(center)
+        self.current=None;self.held=None;self.forgotten_id=None;self.queue=[]
+        if self.dog_owned:
+            self.daisy.play_owned=False;self.daisy.play_pose=None
+            self.daisy.activity=None;self.daisy._return_home()
+        self.dog_owned=False;self.dog_returning=False;self.release_requested=False
+        self.liam.work_renderer=None;self.liam.action=None;self.liam.sort_y=None
+        if self.shared.liam_owner is self:self.shared.liam_owner=None
+        self.cooldown_ms=self._rng.randint(*self.config['cooldown_ms']);self._state('cooldown');self._sync_props()
+
     def begin(self,accident=None,forget=None):
         """Request a normal session; optional decisions are for review and tests."""
-        if self.active or self.shared.active or self.shared.liam_owner is not None:return False
+        if self.active or self.shared.active or self.shared.liam_owner is not None or self.shared.pending_liam_owner is not None:return False
         self._forced_accident=accident;self._forced_forget=forget;self.cooldown_ms=0;return True
 
     def surface_prop_visible(self,prop):
@@ -79,10 +120,12 @@ class LiamBlocks:
     def _move(self,goal):return self.shared._move(self.liam,goal,36)
 
     def _available(self):
-        return not self.shared.active and self.shared.liam_owner is None and self.shared.worlds[self.liam] is self.home
+        return (not self.shared.active and self.shared.liam_owner is None and
+                self.shared.pending_liam_owner is None and self.shared.worlds[self.liam] is self.home)
 
     def _start(self):
         self.shared.liam_owner=self;self.liam.work_renderer=self
+        self.release_requested=False
         self.mode='recover' if self.forgotten_id else 'build';self.index=0
         self.accident_rolled=False;self.accident_selected=False;self.dog_owned=False;self.dog_returning=False
         self.current=next((b for b in self.blocks if b['id']==self.forgotten_id),self.blocks[0])
@@ -156,7 +199,9 @@ class LiamBlocks:
             self.cooldown_ms-=ms
             if self.cooldown_ms<=0 and self._available():self._start()
             return
-        if self.state in ('take','carry_to_build','kneel_build','place','admire'):self._maybe_accident()
+        if self.release_requested and self.mode!='cleanup' and self.state not in ('take','place','bump','collect','return_block'):
+            self._begin_release()
+        if not self.release_requested and self.state in ('take','carry_to_build','kneel_build','place','admire'):self._maybe_accident()
         d=self.daisy;l=self.liam
         if self.dog_owned:
             if self.dog_returning:
@@ -168,7 +213,12 @@ class LiamBlocks:
             else:
                 for key in d.cooldowns:d.cooldowns[key]-=ms
                 self.shared.dog_pose.moving=False
-        if self.state=='approach_box':
+        if self.state=='yield_rise':
+            self._action('rise_left' if self.liam.facing=='left' else 'rise_right')
+            if self.state_ms>=720:
+                if self.held is not None:self._state('carry_to_box')
+                else:self._next_loose()
+        elif self.state=='approach_box':
             if self._move(self.pack['box_access']):self._state('kneel_box')
         elif self.state=='kneel_box':
             self._action('kneel_left')
@@ -249,6 +299,7 @@ class LiamBlocks:
         elif self.state=='leave_play_area':
             if self._move(self.config['idle_position']) and not self.dog_owned:
                 self.completed_cycles+=1;self.shared.liam_owner=None;l.work_renderer=None;l.action=None;l.facing='front'
+                self.release_requested=False
                 self.cooldown_ms=self._rng.randint(*self.config['cooldown_ms']);self._state('cooldown')
 
     def draw_held(self,target,camera):

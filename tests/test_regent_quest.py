@@ -271,7 +271,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertFalse(next(e for e in self.g.town.entities if e['id']=='mill')['animation_stopped'])
         self.assertFalse(any('AUTHORIZ' in flag.upper() or 'EXCAVATION_STARTED' in flag.upper()
                              for flag in self.g.social.flags))
-        self.assertNotIn('CH01_MQ04',self.g.quests.definitions)
+        self.assertEqual(self.g.quests.status('CH01_MQ04'),'available')
         self.reload();self.assertEqual(self.g.quests.status(REGENT),'completed')
         self.assertTrue(self.g.mill_quest.mill_restored)
 

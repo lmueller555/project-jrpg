@@ -214,6 +214,97 @@
         1254,
         1254
       ]
+    },
+    "liam": {
+      "name": "Liam",
+      "expression": "neutral",
+      "file": "liam_neutral.png",
+      "sprite_root": "assets/characters/liam",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        0,
+        0,
+        418,
+        418
+      ]
+    },
+    "liam_mother": {
+      "name": "Liam's mother",
+      "expression": "neutral",
+      "file": "liam_mother_neutral.png",
+      "sprite_root": "assets/characters/liam_mother",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        418,
+        0,
+        836,
+        418
+      ]
+    },
+    "tessa": {
+      "name": "Tessa",
+      "expression": "neutral",
+      "file": "tessa_neutral.png",
+      "sprite_root": "assets/characters/tessa",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        836,
+        0,
+        1254,
+        418
+      ]
+    },
+    "finn": {
+      "name": "Finn",
+      "expression": "neutral",
+      "file": "finn_neutral.png",
+      "sprite_root": "assets/characters/finn",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        0,
+        418,
+        418,
+        836
+      ]
+    },
+    "rowan": {
+      "name": "Rowan",
+      "expression": "neutral",
+      "file": "rowan_neutral.png",
+      "sprite_root": "assets/characters/rowan",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        418,
+        418,
+        836,
+        836
+      ]
+    },
+    "ada": {
+      "name": "Ada",
+      "expression": "neutral",
+      "file": "ada_neutral.png",
+      "sprite_root": "assets/characters/ada",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        836,
+        418,
+        1254,
+        836
+      ]
+    },
+    "pippa": {
+      "name": "Pippa",
+      "expression": "neutral",
+      "file": "pippa_neutral.png",
+      "sprite_root": "assets/characters/pippa",
+      "source": "assets/source/portraits/eldenmere/lantern_atlas.png",
+      "source_rect": [
+        0,
+        836,
+        418,
+        1254
+      ]
     }
   },
   "aliases": {

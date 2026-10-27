@@ -67,6 +67,41 @@
       "name": "Driver",
       "portrait": "male_01",
       "actor_id": "regent_driver"
+    },
+    "liam": {
+      "name": "Liam",
+      "portrait": "liam",
+      "actor_id": "liam"
+    },
+    "liam_mother": {
+      "name": "Liam’s mother",
+      "portrait": "liam_mother",
+      "actor_id": "liam_mother"
+    },
+    "tessa": {
+      "name": "Tessa",
+      "portrait": "tessa",
+      "actor_id": "tessa"
+    },
+    "finn": {
+      "name": "Finn",
+      "portrait": "finn",
+      "actor_id": "finn"
+    },
+    "rowan": {
+      "name": "Rowan",
+      "portrait": "rowan",
+      "actor_id": "rowan"
+    },
+    "ada": {
+      "name": "Ada",
+      "portrait": "ada",
+      "actor_id": "ada"
+    },
+    "pippa": {
+      "name": "Pippa",
+      "portrait": "pippa",
+      "actor_id": "pippa"
     }
   },
   "characters": {
@@ -179,7 +214,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Halden by the mill needs his medicine. Take Tomas there first\u2014he's been asking to help."
+              "text": "Halden by the mill needs his medicine. Take Tomas there first—he's been asking to help."
             }
           ]
         },

@@ -8,6 +8,11 @@ the game-sized exports are reproducible through `tools/export_dialogue_portraits
   Tomas in reading order.
 - `villagers_atlas.png`: 3×2 equal square cells; the first row is male palettes
   01–03, and the second row is female palettes 01–03.
+- `lantern_atlas.png`: 3×3 equal square cells, ordered Liam, Liam's mother,
+  Tessa / Finn, Rowan, Ada / Pippa, empty, empty. Generated from their approved
+  world sprites for the MQ04 preparation session. Child faces retain their
+  opening ages; the teacher retains her teal dress and cream apron. The last
+  two cells are unused dark-green background.
 
 Portraits are new detailed head-and-shoulder art. The approved world sprite
 files are unchanged. Neutral expressions are the initial set; additional

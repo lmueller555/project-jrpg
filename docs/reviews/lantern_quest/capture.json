@@ -1,0 +1,50 @@
+{
+  "quest_id": "CH01_MQ04",
+  "stage": "frame_ready",
+  "quest_completed": false,
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame"
+  ],
+  "dialogue_pages": 170,
+  "main_scenes": [
+    "invitation",
+    "classroom",
+    "design",
+    "permission",
+    "workshop",
+    "test_shape",
+    "assemble",
+    "lift",
+    "frame_ready"
+  ],
+  "optional_dialogue": [
+    "lantern_invitation_waiting",
+    "lantern_workshop_waiting",
+    "mill_after"
+  ],
+  "overview_frames": 179,
+  "construction_frames": 51,
+  "overview_size": [
+    300,
+    215
+  ],
+  "seeded": "completed MQ01/MQ02/MQ03 prerequisites and starting player station only",
+  "mill_running": true,
+  "festival_started": false,
+  "stills": [
+    "assemble.png",
+    "assembled_frame.png",
+    "assembly_contact.png",
+    "classroom.png",
+    "design.png",
+    "frame_ready.png",
+    "frame_ready_world.png",
+    "invitation.png",
+    "lift.png",
+    "lifting_support.png",
+    "permission.png",
+    "test_shape.png",
+    "workshop.png"
+  ]
+}

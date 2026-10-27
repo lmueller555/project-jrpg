@@ -220,3 +220,9 @@ while pause/inventory/map/journal defer staging. Formal excavation permission is
 not granted here; that remains the post-festival story beat. See the
 [implementation guide](REGENT_QUEST.md), [full narrative script](narrative/game_01/CH01_MQ03.md)
 and [production-game preview](reviews/regent_quest/README.md).
+
+## MQ04 — A Light of His Own, opening segment
+
+MQ03 unlocks the first of four segments of MQ04. Tomas’s courtyard invitation leads into a school preparation session with the existing teacher and six children, a parent-approved outing, and collaborative frame construction at Mira’s workshop. One quest record stores committed scenes; the full eight-objective chain is stable from this first segment. The endpoint `frame_ready` completes only the first two objectives and keeps MQ04 active, with a truthful checkpoint in the journal and tracker.
+
+Quest-scoped attendance borrows the actual home residents. Liam’s existing play and block routines yield safely, Tomas’s MQ03 staging hands off explicitly, and Mira’s post-mill return no longer competes with her workshop scene. New Game releases borrowed actors; old completed-MQ03 saves gain the newly gated quest without replaying earlier visits. See [the implementation guide](LANTERN_QUEST.md), [script](narrative/game_01/CH01_MQ04.md), and [review artifacts](reviews/lantern_quest/README.md).

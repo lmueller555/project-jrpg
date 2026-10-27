@@ -79,14 +79,105 @@ class LiamDaisyPlay:
         self.track=[(round((296+62*math.cos(-math.pi/2+i*math.pi/12))/2)*2,
                      round((590+30*math.sin(-math.pi/2+i*math.pi/12))/2)*2) for i in range(24)]
         self.liam_index=1;self.daisy_index=-1;self.last_index=self.config['laps']*24
-        self.liam_owner=None
+        self.liam_owner=None;self.pending_liam_owner=None
+        self._liam_home_position=tuple(self.liam.position)
 
     @property
     def active(self):return self.state!='cooldown'
 
+    def request_liam(self,owner):
+        """Reserve Liam after his current household activity safely yields.
+
+        The caller polls this while its own arrival scene waits. Existing block
+        contacts finish, play returns through the real door, and Daisy's separate
+        bone routine is never interrupted merely because Liam has an outing.
+        """
+        if owner is None:raise ValueError('Liam needs an explicit owner')
+        if self.liam_owner is owner:return True
+        if self.liam_owner is not None and not any(self.liam_owner is routine for routine in getattr(self.game,'block_routines',())):return False
+        if self.pending_liam_owner not in (None,owner):return False
+        self.pending_liam_owner=owner
+        if self.active:
+            if self.state not in ('yield_return','wake_liam'):
+                if self.state in ('nap','daisy_return') and self.worlds[self.liam] is self.home:
+                    self._state('wake_liam')
+                else:self._state('yield_return')
+            return False
+        for routine in getattr(self.game,'block_routines',()):
+            if routine.shared is self:
+                routine.request_release()
+                if routine.active:return False
+        if self.liam_owner is not None:return False
+        self.liam_owner=owner;self.pending_liam_owner=None
+        self.routes.pop(self.liam,None)
+        self.liam.action=None;self.liam.action_ms=0;self.liam.sort_y=None
+        self.liam.moving=False;self.liam.running=False
+        return True
+
+    def release_liam(self,owner,reset=False):
+        """Release an outing; reset also restores its borrowed child at home."""
+        if self.liam_owner is not owner and self.pending_liam_owner is not owner:return False
+        if self.pending_liam_owner is owner:self.pending_liam_owner=None
+        if self.liam_owner is owner:self.liam_owner=None
+        if reset:
+            for routine in getattr(self.game,'block_routines',()):
+                if routine.shared is self:routine.reset_for_story()
+            if self.active:
+                # Reset/Continue establishes a fresh ambient household, just as
+                # its unpersisted clocks do. Never touch an independently held bone.
+                for actor in (self.liam,self.daisy):
+                    for world in self.game.scenes.values():
+                        if actor in world.npcs:world.npcs.remove(actor)
+                    self.home.npcs.append(actor);self.worlds[actor]=self.home
+                self.daisy.position.update(self.daisy.behavior['home'])
+                self.daisy._release();self.daisy.activity=None
+                self.daisy._transition('rest',self.daisy._sample('rest_ms'))
+                self._finish_yield()
+            for world in self.game.scenes.values():
+                if self.liam in world.npcs:world.npcs.remove(self.liam)
+            self.home.npcs.append(self.liam);self.worlds[self.liam]=self.home
+            self.liam.position.update(self._liam_home_position)
+            self.liam.work_renderer=None
+        self.routes.pop(self.liam,None)
+        self.liam.action=None;self.liam.action_ms=0;self.liam.sort_y=None
+        self.liam.moving=False;self.liam.running=False;self.liam.story_following=False
+        self.cooldown_ms=max(self.cooldown_ms,5000)
+        return True
+
+    def _finish_yield(self):
+        d=self.daisy;l=self.liam
+        l.sort_y=None;l.action=None;l.moving=False;l.running=False
+        d.play_owned=False;d.play_pose=None;d.opens_doors=False
+        if d.active_bowl is None and (d.state!='rest' or d.position.distance_to(d.behavior['home'])>1):
+            d.activity=None;d._return_home()
+        self.routes.clear();self.cooldown_ms=self._rng.randint(*self.config['cooldown_ms'])
+        self.events.append({'yielded_liam':True});self._state('cooldown')
+
+    def _yield_home(self):
+        l=self.liam
+        if l.position.distance_to((252,306))>24:return True
+        for point in ((224,286),(284,286),(224,266),(284,266),(200,286)):
+            if (self.home.can_stand(point,l.probe_size,l,self.player(self.home)) and
+                    find_path(self.home,l.position,point,l.probe_size,l,self.player(self.home)) is not None):
+                return self._move(l,point,44)
+        return False
+
+    def _yield_tick(self):
+        """Return whichever participant is outdoors, then release their poses."""
+        l=self.liam;d=self.daisy
+        if self.worlds[l] is self.town:
+            if self.worlds[d] is self.town:self._move(d,(314,558))
+            if self._move(l,(288,534),44):self._transfer(l,'liam_house')
+            return
+        if self.worlds[d] is self.town:
+            self._yield_home()
+            if self._move(d,(288,534)):self._transfer(d,'liam_house')
+            return
+        if self._yield_home():self._finish_yield()
+
     def begin(self,drink=None):
         """Request an ordinary cycle; optional outcome selection is for review/tests."""
-        if self.active:return False
+        if self.active or self.pending_liam_owner is not None or self.liam_owner is not None:return False
         self._forced_choice=drink;self.cooldown_ms=0;return True
 
     def pose(self,actor):return self.liam if actor is self.liam else self.dog_pose
@@ -141,12 +232,13 @@ class LiamDaisyPlay:
         return True
 
     def _available(self):
-        if self.liam_owner is not None:return False
+        if self.liam_owner is not None or self.pending_liam_owner is not None:return False
         bone=getattr(self.daisy,'bone_routine',None)
         if bone is not None and bone.active:
             bone.request_release();return False
         return (self.liam_owner is None and not self.daisy.play_owned
                 and not self.daisy.rest_protected
+                and self.worlds[self.liam] is self.home
                 and self.worlds[self.daisy] is self.home and self.daisy.active_bowl is None
                 and self.daisy.state in ('rest','pause'))
 
@@ -175,7 +267,9 @@ class LiamDaisyPlay:
         if self.state!='daisy_return':
             for kind in d.cooldowns:d.cooldowns[kind]-=ms
         for pose in (l,self.dog_pose):pose.moving=False
-        if self.state=='find_daisy':
+        if self.state=='yield_return':
+            self._yield_tick()
+        elif self.state=='find_daisy':
             if self._move(l,self.invite_spot,44):self._state('stand_daisy' if self.was_lying else 'invite')
         elif self.state=='stand_daisy':
             d.play_pose=self.dog_pose;self._action(d,'stand_up',self.state_ms)
@@ -238,6 +332,8 @@ class LiamDaisyPlay:
         elif self.state=='wake_liam':
             self._action(l,'leave_bed',self.state_ms)
             if self.state_ms>=880:
+                if self.pending_liam_owner is not None:
+                    self._finish_yield();return
                 l.sort_y=None;l.action=None;l.facing='front'
                 d.play_owned=False;d.play_pose=None;d.opens_doors=False;d.activity=None
                 d._transition('rest',d._sample('rest_ms'))

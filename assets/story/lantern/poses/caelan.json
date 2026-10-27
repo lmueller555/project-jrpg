@@ -1,0 +1,341 @@
+{
+  "canvas": [
+    40,
+    48
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "source_offset": [
+    8,
+    8
+  ],
+  "source_canvas": [
+    24,
+    36
+  ],
+  "source": "assets/story/lantern/poses/caelan_source.png",
+  "source_idle": "assets/characters/caelan/idle_right.png",
+  "source_sha256": "3741ce76b9fccd4ba2c60a65bc722ed2ac65ca0556bbb0193cc8550289d2def6",
+  "sheet": "assets/story/lantern/poses/caelan.png",
+  "actions": {
+    "work": [
+      {
+        "rect": [
+          0,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            11.962731490302513,
+            21.01242283656583
+          ],
+          [
+            16.0,
+            23.0
+          ]
+        ],
+        "hand": [
+          24,
+          31
+        ],
+        "native_wrist": [
+          16.0,
+          23.0
+        ]
+      },
+      {
+        "rect": [
+          40,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.736397403708233,
+            21.439337660486277
+          ],
+          [
+            19.0,
+            20.0
+          ]
+        ],
+        "hand": [
+          27,
+          28
+        ],
+        "native_wrist": [
+          19.0,
+          20.0
+        ]
+      },
+      {
+        "rect": [
+          80,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            17.751930530821582,
+            19.484555753427337
+          ],
+          [
+            22.0,
+            18.0
+          ]
+        ],
+        "hand": [
+          30,
+          26
+        ],
+        "native_wrist": [
+          22.0,
+          18.0
+        ]
+      },
+      {
+        "rect": [
+          120,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            17.751930530821582,
+            19.484555753427337
+          ],
+          [
+            22.0,
+            18.0
+          ]
+        ],
+        "hand": [
+          30,
+          26
+        ],
+        "native_wrist": [
+          22.0,
+          18.0
+        ]
+      },
+      {
+        "rect": [
+          160,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.736397403708233,
+            21.439337660486277
+          ],
+          [
+            19.0,
+            20.0
+          ]
+        ],
+        "hand": [
+          27,
+          28
+        ],
+        "native_wrist": [
+          19.0,
+          20.0
+        ]
+      }
+    ],
+    "support": [
+      {
+        "rect": [
+          0,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            11.962731490302513,
+            21.01242283656583
+          ],
+          [
+            16.0,
+            23.0
+          ]
+        ],
+        "hand": [
+          24,
+          31
+        ],
+        "native_wrist": [
+          16.0,
+          23.0
+        ]
+      },
+      {
+        "rect": [
+          40,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            14.531498031497048,
+            21.468501968502952
+          ],
+          [
+            19.0,
+            22.0
+          ]
+        ],
+        "hand": [
+          27,
+          30
+        ],
+        "native_wrist": [
+          19.0,
+          22.0
+        ]
+      },
+      {
+        "rect": [
+          80,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            16.50772212328633,
+            20.73648628424892
+          ],
+          [
+            21.0,
+            21.0
+          ]
+        ],
+        "hand": [
+          29,
+          29
+        ],
+        "native_wrist": [
+          21.0,
+          21.0
+        ]
+      },
+      {
+        "rect": [
+          120,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "joints": [
+          [
+            14.0,
+            17.0
+          ],
+          [
+            16.50772212328633,
+            20.73648628424892
+          ],
+          [
+            21.0,
+            21.0
+          ]
+        ],
+        "hand": [
+          29,
+          29
+        ],
+        "native_wrist": [
+          21.0,
+          21.0
+        ]
+      }
+    ]
+  },
+  "layers": {
+    "body": "assets/story/lantern/poses/caelan_body.png",
+    "working_arm": "assets/story/lantern/poses/caelan_working_arm.png",
+    "frame": "assets/story/lantern/poses/caelan_frame.png"
+  },
+  "arm_lengths": [
+    4.5,
+    4.5
+  ],
+  "head_pixels_preserved_above_y": 14,
+  "lower_body_preserved_from_y": 25,
+  "facing": "right",
+  "world_work_hand": [
+    636,
+    488
+  ],
+  "world_support_hand": [
+    649,
+    505
+  ],
+  "work_station": [
+    626,
+    500
+  ],
+  "support_station": [
+    640,
+    514
+  ],
+  "working_arm": "far",
+  "frame_handle": [
+    5,
+    1
+  ],
+  "lift_height_pixels": 0
+}
