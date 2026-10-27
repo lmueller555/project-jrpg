@@ -238,3 +238,14 @@ Continue the saved `frame_ready` checkpoint by speaking with Mira. Liam and Toma
 Continue `elira_visited` outside the cottage. Return to Mira, collect the frame and papers, and take a break at Liam’s home. The existing father hosts the snack; Liam tries a loose paper panel while Caelan and Tomas reflect on Elira. Take his questions to Serene in the sanctuary hall. The quest remains active at `serene_heard`, with the first six existing objectives complete. The final purpose, covering and showing mother belong to the concluding segment.
 
 `lantern_rest.py` extends version-one committed checkpoints. Liam’s frame has one stage-derived location: workshop, carried, then home. Its carry animation follows his actual direction/gait. Paper work remains visibly story-owned during the brothers’ dialogue; ambient block/chase routines stay suppressed and Daisy keeps her independent behavior. Serene’s explicit MQ03 handoff prevents earlier staging from reclaiming her. Old village preparations and repairs remain visible. See [the PR3 script](narrative/game_01/CH01_MQ04_PR3.md) and [review](reviews/lantern_rest/README.md).
+
+
+## MQ04 — final purpose, covering and homecoming
+
+Continue the shipped `serene_heard` save, choose Liam’s authored personal intention, draw the final stairs/window panel, dry-fit and fasten it with his father, then let Liam lift the finished unlit lantern. Walk together to the actual school teacher, let Liam explain his own work and purpose, then return home and put it away before the farewell completes MQ04.
+
+`lantern_finish.py` extends the same version-one committed-stage save. One stage-derived object changes from bare frame to papered lantern, is carried in all four directions, and returns to its persistent home display. Drawing and practice paper stay home; Mira’s old craft surface stays empty. Interrupted dialogue/actions restore the last committed object and objective prefix. `QuestLog.complete_and_turn_in` commits the last objective and completed status with one notice and one save; there is no ready-to-report checkpoint or fictional report to Tomas.
+
+Completion releases Liam to household play at his actual home. Tomas walks back to the sanctuary, Serene keeps her afternoon station, and Mother continues the school workshop. Completed saves reconstruct those stations without borrowing Liam again or replaying completion. Prior repairs and village preparations persist. New Game releases the final cast and removes the finished prop. MQ05 is not registered and the day does not advance automatically.
+
+See [the attributed PR4 script](narrative/game_01/CH01_MQ04_PR4.md), [production-game captures](reviews/lantern_finish/README.md), and `tools/verify_lantern_full_quest.py` for the uninterrupted full four-part route.

@@ -1,0 +1,177 @@
+{
+  "quest_id": "CH01_MQ04",
+  "stage": "done",
+  "quest_completed": true,
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame",
+    "visit_neighbours",
+    "visit_elira",
+    "take_break",
+    "speak_serene",
+    "finish_lantern",
+    "show_mother"
+  ],
+  "dialogue_pages": 208,
+  "main_scenes": [
+    "finish_invitation",
+    "home_return",
+    "purpose",
+    "final_panel",
+    "dry_fit",
+    "fasten_covering",
+    "finished_lantern",
+    "school_welcome",
+    "show_mother",
+    "homeward",
+    "put_away",
+    "farewell"
+  ],
+  "optional_dialogue": [
+    "lantern_finish_tomas_waiting",
+    "lantern_serene_finish_waiting"
+  ],
+  "overview_frames": 224,
+  "overview_size": [
+    320,
+    229
+  ],
+  "actual_door_transitions": [
+    [
+      "sanctuary_hall",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "school"
+    ],
+    [
+      "school",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "liam_house"
+    ]
+  ],
+  "companion_door_transitions": [
+    [
+      "liam",
+      "sanctuary_hall",
+      "eldenmere.playable"
+    ],
+    [
+      "tomas",
+      "sanctuary_hall",
+      "eldenmere.playable"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "liam",
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "liam",
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "tomas",
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "eldenmere.playable",
+      "school"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "school"
+    ],
+    [
+      "tomas",
+      "school",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "school",
+      "eldenmere.playable"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "liam",
+      "eldenmere.playable",
+      "liam_house"
+    ]
+  ],
+  "frame_ownership_changes": [
+    [
+      "home",
+      "held"
+    ],
+    [
+      "held",
+      "home"
+    ]
+  ],
+  "observed_carry_directions": [
+    "back",
+    "front",
+    "left",
+    "right"
+  ],
+  "seeded": "completed MQ01\u2013MQ03 and shipped MQ04 PR3 serene_heard checkpoint only",
+  "mill_running": true,
+  "festival_started": false,
+  "frame_location": "home",
+  "frame_form": "finished",
+  "frame_is_lit": false,
+  "mother_location": "school",
+  "other_children_at_school": 5,
+  "elira_lantern": "table",
+  "stills": [
+    "carry_back.png",
+    "carry_front.png",
+    "carry_left.png",
+    "carry_right.png",
+    "covered_world.png",
+    "dry_fit.png",
+    "dry_fit_world.png",
+    "endpoint_world.png",
+    "farewell.png",
+    "fasten_covering.png",
+    "father_detail.png",
+    "final_panel.png",
+    "finish_invitation.png",
+    "finished_lantern.png",
+    "home_return.png",
+    "homeward.png",
+    "mother_detail.png",
+    "purpose.png",
+    "put_away.png",
+    "school_welcome.png",
+    "school_world.png",
+    "show_mother.png",
+    "stored_world.png"
+  ]
+}
