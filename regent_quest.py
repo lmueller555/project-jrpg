@@ -51,6 +51,7 @@ class RegentQuest:
         self.stage = 'idle';self.dialogue = None;self.action = None
         self.paths = {};self.retries = {};self._owned = False;self._setup = False
         self._tomas_handed_off = False
+        self._serene_handed_off = False
         self._preps_ready = False;self._group_ready = False;self._aside_ready = False
         self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
         self.trail = deque(maxlen=1024);self.last_scene = None
@@ -124,6 +125,7 @@ class RegentQuest:
     def release_pose(self):
         if not self._owned:return
         for actor in (self.serene, self.tomas, self.venn):
+            if self._handed_off(actor):continue
             for key in ('story_sprite', 'story_draw_anchor'):
                 if hasattr(actor, key):delattr(actor, key)
             actor.story_following = False
@@ -131,10 +133,14 @@ class RegentQuest:
             actor.end_conversation()
         self._owned = False
 
+    def _handed_off(self, actor):
+        return ((actor is self.serene and self._serene_handed_off) or
+                (actor is self.tomas and self._tomas_handed_off))
+
     def _claim(self):
         self._owned = True
         for actor in (self.serene, self.tomas):
-            if actor is self.tomas and self._tomas_handed_off:continue
+            if self._handed_off(actor):continue
             actor.story_paused = True;actor.story_following = False
             actor.end_conversation()
         for actor in self.party:actor.story_following = True
@@ -144,6 +150,7 @@ class RegentQuest:
         if data is not None and not self.valid_snapshot(data):return False
         self.release_pose();self.dialogue = None;self.action = None
         self._tomas_handed_off = False
+        self._serene_handed_off = False
         self.paths.clear();self.retries.clear();self.trail.clear();self.last_scene = None
         self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
         self._preps_ready = False;self._group_ready = False;self._setup = False
@@ -181,7 +188,7 @@ class RegentQuest:
 
     def _setup_stage(self, force=False):
         self._claim()
-        ready = [self._stage_routine(self.serene, self.points['serene'], force),
+        ready = [True if self._serene_handed_off else self._stage_routine(self.serene, self.points['serene'], force),
                  True if self._tomas_handed_off else self._stage_routine(self.tomas, self.points['tomas'], force)]
         self._preps_ready = all(ready)
         if self.stage == 'idle':
@@ -227,23 +234,26 @@ class RegentQuest:
 
     def _speak(self, kind, callback=None):
         if self.game.social.locked:return False
-        for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman):
+        actors = tuple(actor for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman)
+                       if not self._handed_off(actor))
+        for actor in actors:
             if self._world(actor) is self.game.world:
                 actor.moving = False;actor.facing = facing_toward(self.game.player.position-actor.position)
                 actor.end_conversation()
         def finished():
             self.dialogue = None
-            for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman):actor.end_conversation()
+            for actor in actors:actor.end_conversation()
             if callback is not None:callback()
         result = self.game.social.start_script(self.lines[kind], finished, 'regent_'+kind)
         self.dialogue = kind if result else None
-        if result:self.game.social.blocked.update((*self.party, self.serene, self.tomas, self.venn, self.foreman))
+        if result:self.game.social.blocked.update(actors)
         return result
 
     def on_dialogue_cancelled(self, identifier):
         if identifier and identifier.startswith('regent_'):
             self.dialogue = None
-            for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman):actor.end_conversation()
+            for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman):
+                if not self._handed_off(actor):actor.end_conversation()
 
     def can_speak(self, identifier):
         if identifier in self.actors:return self.actors[identifier].story_visible
@@ -252,6 +262,7 @@ class RegentQuest:
     def marker_for(self, identifier):
         if not self.eligible:return NotImplemented
         if identifier == 'mother_serene':
+            if self._serene_handed_off:return NotImplemented
             return '!' if self.stage == 'idle' else '?' if self.stage == 'discussion' and self._aside_ready else None
         if identifier == 'aldric':return '?' if self.stage in ('assigned', 'dispute', 'welcome', 'hosted') else None
         if identifier in ('road_foreman', 'regent_clerk', 'regent_driver', 'regent_attendant'):return None
@@ -261,6 +272,7 @@ class RegentQuest:
 
     def try_conversation(self, actor):
         if not self.eligible:return None
+        if self._handed_off(actor):return None
         if actor is self.serene:
             if self.stage == 'idle':return self._speak('preparations', self._accept) if self._preps_ready else False
             if self.stage == 'discussion':
@@ -339,12 +351,21 @@ class RegentQuest:
         self._transition('done')
 
     def handoff_tomas(self):
-        """MQ04 borrows the actual brother; this controller keeps Serene/cart."""
+        """MQ04 borrows the actual brother without moving the visit's party."""
         if self._tomas_handed_off:return
         self._tomas_handed_off = True
         self.paths.pop(self.tomas, None);self.tomas.end_conversation()
         for key in ('story_sprite', 'story_draw_anchor'):
             if hasattr(self.tomas, key):delattr(self.tomas, key)
+
+    def handoff_serene(self):
+        """A later scene borrows Serene without this visit reclaiming her."""
+        if self._serene_handed_off:return
+        self._serene_handed_off = True
+        self.paths.pop(self.serene, None);self.retries.pop(self.serene, None)
+        self.serene.end_conversation()
+        for key in ('story_sprite', 'story_draw_anchor'):
+            if hasattr(self.serene, key):delattr(self.serene, key)
 
     def interaction_hint(self):
         if self.stage == 'discussion' and not self._aside_ready:return 'Let Aldric step aside before speaking with Serene.'
@@ -478,7 +499,7 @@ class RegentQuest:
 
     def _pose_owned(self):
         for actor in (self.serene, self.tomas, self.venn):
-            if actor is self.tomas and self._tomas_handed_off:continue
+            if self._handed_off(actor):continue
             if actor is self.venn and (self._venn_returned or self.stage == 'idle'):continue
             if not self._owned or actor not in self._world(actor).npcs:continue
             direction = actor.facing
@@ -535,7 +556,7 @@ class RegentQuest:
             self._setup_stage(force=False)
         if not self._setup:return
         for actor in (*self.party, self.foreman, self.venn, self.serene, self.tomas):
-            if actor is not self.tomas or not self._tomas_handed_off:actor.moving = False
+            if not self._handed_off(actor):actor.moving = False
         if not self.dialogue:
             if self.stage == 'met':
                 self._follow_party(seconds)

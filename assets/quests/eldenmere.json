@@ -182,7 +182,7 @@
       "report_text": "Let Liam show his mother his finished lantern.",
       "completion_text": "Liam is ready to carry his own lantern at the festival.",
       "script_reference": "docs/narrative/game_01/CH01_MQ04.md",
-      "implementation_note": "The school, workshop and village preparation visits are playable through Elira’s remembrance scene and the outside conversation. MQ04 stays active with its first four objectives complete.",
+      "implementation_note": "The school, workshop, village visits, home break and sanctuary conversation are playable. MQ04 stays active at serene_heard with its first six objectives complete; final purpose, covering and return to mother follow separately.",
       "objectives": [
         {
           "id": "join_preparations",

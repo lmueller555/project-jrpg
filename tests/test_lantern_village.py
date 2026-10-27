@@ -231,8 +231,9 @@ class LanternVillageTests(unittest.TestCase):
         self.assertEqual(list(self.c.journal_objectives()), FIRST_FOUR)
         self.g.quest_ui.selected_quest = LANTERN
         self.assertFalse(any(text.startswith(('Next:', 'Later:')) for text, *_ in self.g.quest_ui._journal_rows()))
-        for identifier in ('mira_worker', 'halden', 'venn_mother', 'venn_father', 'elira', 'liam', 'tomas'):
+        for identifier in ('mira_worker', 'halden', 'venn_mother', 'venn_father', 'elira', 'tomas'):
             self.assertNotIn(self.c.marker_for(identifier), ('!', '?'))
+        self.assertEqual(self.c.marker_for('liam'), '?')
 
     def test_reloading_each_visit_preserves_the_committed_story_not_the_page(self):
         steps = (('departure', 'departure', 'eldenmere.playable', 'outing'),

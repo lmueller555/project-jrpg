@@ -1,0 +1,2441 @@
+{
+  "canvas": [
+    40,
+    48
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "native_offset": [
+    8,
+    8
+  ],
+  "source_canvas": [
+    24,
+    36
+  ],
+  "sheet": "assets/story/lantern/rest_poses/liam.png",
+  "body_sheet": "assets/story/lantern/rest_poses/liam_body.png",
+  "frame_sheet": "assets/story/lantern/rest_poses/liam_frame.png",
+  "source_sheet": "assets/story/lantern/rest_poses/liam_source.png",
+  "layers": {
+    "body": "assets/story/lantern/rest_poses/liam_body.png",
+    "frame": "assets/story/lantern/rest_poses/liam_frame.png",
+    "extras": "assets/story/lantern/rest_poses/liam_extras.png",
+    "source": "assets/story/lantern/rest_poses/liam_source.png"
+  },
+  "carry": {
+    "front": {
+      "idle": {
+        "rect": [
+          0,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_front.png",
+        "source_sha256": "df54b20a7f8a2e6dd1031f104ae63180760f742e3a8039b70bf1772c918046d8",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            22.0
+          ],
+          [
+            14.801500938673708,
+            25.097998748435053
+          ],
+          [
+            18.0,
+            25.0
+          ]
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "native_wrist": [
+          18.0,
+          25.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_front/frame_01.png",
+          "source_sha256": "4caabbc340c27b31040e2173763dc0b8565cc18bc7fde57e08a1ab4c7f7e5a31",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.801500938673708,
+              25.097998748435053
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 0
+        },
+        {
+          "rect": [
+            80,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_front/frame_02.png",
+          "source_sha256": "c3653e1250b3f6ebf31df1b2437ea886e736533362aa8575fbdc6965478a0d28",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              21.0
+            ],
+            [
+              14.801500938673708,
+              24.097998748435053
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 1
+        },
+        {
+          "rect": [
+            120,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_front/frame_03.png",
+          "source_sha256": "b7684d45b4da0bf5faf382b8baf5875f8dd27cfe97213617048ff53dbd3540f9",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.801500938673708,
+              25.097998748435053
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 2
+        },
+        {
+          "rect": [
+            160,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_front/frame_04.png",
+          "source_sha256": "697505bb54d2dc5ab54d9c99a847f110a765df60e98ff204cdd002c4650857ae",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              21.0
+            ],
+            [
+              14.801500938673708,
+              24.097998748435053
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 3
+        }
+      ]
+    },
+    "left": {
+      "idle": {
+        "rect": [
+          0,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.142194513448572,
+            25.60548628362143
+          ],
+          [
+            5.0,
+            25.0
+          ]
+        ],
+        "hand": [
+          13,
+          33
+        ],
+        "native_wrist": [
+          5.0,
+          25.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          8,
+          18,
+          16,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_left/frame_01.png",
+          "source_sha256": "578ed501799dcf0164e9a5bb19c9c7d796368a726f115aab1563fa65c698eeb1",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              10.0,
+              23.0
+            ],
+            [
+              8.142194513448572,
+              25.60548628362143
+            ],
+            [
+              5.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            13,
+            33
+          ],
+          "native_wrist": [
+            5.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            18,
+            16,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 0
+        },
+        {
+          "rect": [
+            80,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_left/frame_02.png",
+          "source_sha256": "3195df29c346e4600e1aa61e0d9625e2d430394713561b0a91132e04cc62be1a",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              10.0,
+              22.0
+            ],
+            [
+              8.142194513448572,
+              24.60548628362143
+            ],
+            [
+              5.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            13,
+            32
+          ],
+          "native_wrist": [
+            5.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            17,
+            16,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 1
+        },
+        {
+          "rect": [
+            120,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_left/frame_03.png",
+          "source_sha256": "c36bce5376182e3af46635d4e825b9901308cc11ced3a6cf0864e37e2f7f4141",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              10.0,
+              23.0
+            ],
+            [
+              8.142194513448572,
+              25.60548628362143
+            ],
+            [
+              5.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            13,
+            33
+          ],
+          "native_wrist": [
+            5.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            18,
+            16,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 2
+        },
+        {
+          "rect": [
+            160,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_left/frame_04.png",
+          "source_sha256": "f4ce972b0292449e4807fa41259886ea13c10e73353b0cb2ff02bed619d3e786",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              10.0,
+              22.0
+            ],
+            [
+              8.142194513448572,
+              24.60548628362143
+            ],
+            [
+              5.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            13,
+            32
+          ],
+          "native_wrist": [
+            5.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            17,
+            16,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 3
+        }
+      ]
+    },
+    "right": {
+      "idle": {
+        "rect": [
+          0,
+          96,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            14.976281288634421,
+            26.047437422731157
+          ],
+          [
+            18.0,
+            25.0
+          ]
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "native_wrist": [
+          18.0,
+          25.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_right/frame_01.png",
+          "source_sha256": "ebed2194901d9bc2b7af16b1090dcedd0923aa557b5dab2f60e9dc8accb764fa",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              23.0
+            ],
+            [
+              14.976281288634421,
+              26.047437422731157
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 0
+        },
+        {
+          "rect": [
+            80,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_right/frame_02.png",
+          "source_sha256": "cde9d78dc303d773fe68a20315cfe3a127fc4391e6d74eef293fb091cda8dde8",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.976281288634421,
+              25.047437422731157
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 1
+        },
+        {
+          "rect": [
+            120,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_right/frame_03.png",
+          "source_sha256": "f14e97121d7904376a735cdb20f31fd516c53b0cd156577fd41bcbbc83a2a4a7",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              23.0
+            ],
+            [
+              14.976281288634421,
+              26.047437422731157
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 2
+        },
+        {
+          "rect": [
+            160,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_right/frame_04.png",
+          "source_sha256": "b6651977603bf9df69b159d6abd8ca7e4ab9e1ef8e51fbc4bc3900b8bc175da6",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.976281288634421,
+              25.047437422731157
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 3
+        }
+      ]
+    },
+    "back": {
+      "idle": {
+        "rect": [
+          0,
+          144,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_back.png",
+        "source_sha256": "f8bbf9ec4de29cf26aff9cc7d73868486ce622635db22e64d5f61b61685f5006",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            22.0
+          ],
+          [
+            14.801500938673708,
+            25.097998748435053
+          ],
+          [
+            18.0,
+            25.0
+          ]
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "native_wrist": [
+          18.0,
+          25.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_back/frame_01.png",
+          "source_sha256": "1df91a729424c9ffd6307dc346c7f387db8dd48a07d79b250a203454da152484",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.801500938673708,
+              25.097998748435053
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 0
+        },
+        {
+          "rect": [
+            80,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_back/frame_02.png",
+          "source_sha256": "ba3c40961586f5afd10fec1b36ed0d1a5708f2ff8e8edbb38a055aa966149396",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              21.0
+            ],
+            [
+              14.801500938673708,
+              24.097998748435053
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 1
+        },
+        {
+          "rect": [
+            120,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_back/frame_03.png",
+          "source_sha256": "98282aea52ea41b25b4de2a3c8d4d426574f90f499568f760ffab99ee5af8c86",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              22.0
+            ],
+            [
+              14.801500938673708,
+              25.097998748435053
+            ],
+            [
+              18.0,
+              25.0
+            ]
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "native_wrist": [
+            18.0,
+            25.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_walk_frame": 2
+        },
+        {
+          "rect": [
+            160,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "source_path": "assets/characters/liam/walk_back/frame_04.png",
+          "source_sha256": "0dd04254e680e1cc35b69f3c0d0d817f1d79a795ff551d7353987c0272434a99",
+          "native_offset": [
+            8,
+            8
+          ],
+          "preserved_regions": [
+            [
+              0,
+              0,
+              24,
+              21
+            ],
+            [
+              0,
+              28,
+              24,
+              8
+            ]
+          ],
+          "joints": [
+            [
+              14.0,
+              21.0
+            ],
+            [
+              14.801500938673708,
+              24.097998748435053
+            ],
+            [
+              18.0,
+              24.0
+            ]
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "native_wrist": [
+            18.0,
+            24.0
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_walk_frame": 3
+        }
+      ]
+    }
+  },
+  "actions": {
+    "pickup": [
+      {
+        "rect": [
+          0,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            13.659104776651061,
+            26.181790446697878
+          ],
+          [
+            16.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          24,
+          32
+        ],
+        "native_wrist": [
+          16.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          40,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.966550111918863,
+            24.199825167878295
+          ],
+          [
+            17.0,
+            21.0
+          ]
+        ],
+        "hand": [
+          25,
+          29
+        ],
+        "native_wrist": [
+          17.0,
+          21.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          80,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            17.058300524425835,
+            22.058300524425835
+          ],
+          [
+            18.0,
+            19.0
+          ]
+        ],
+        "hand": [
+          26,
+          27
+        ],
+        "native_wrist": [
+          18.0,
+          19.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          120,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.379772697916913,
+            25.13931809375073
+          ],
+          [
+            17.0,
+            22.0
+          ]
+        ],
+        "hand": [
+          25,
+          30
+        ],
+        "native_wrist": [
+          17.0,
+          22.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          160,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            14.976281288634421,
+            26.047437422731157
+          ],
+          [
+            18.0,
+            25.0
+          ]
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "native_wrist": [
+          18.0,
+          25.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      }
+    ],
+    "place": [
+      {
+        "rect": [
+          0,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.317490696391447,
+            25.721977671339474
+          ],
+          [
+            5.2,
+            25.0
+          ]
+        ],
+        "hand": [
+          13,
+          33
+        ],
+        "native_wrist": [
+          5.2,
+          25.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          8,
+          18,
+          16,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          40,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.38901590023014,
+            25.76491052844187
+          ],
+          [
+            5.2,
+            25.5
+          ]
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "native_wrist": [
+          5.2,
+          25.5
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          3,
+          20,
+          15,
+          37
+        ],
+        "ground_clearance_pixels": 6,
+        "frame_angle": 22.5
+      },
+      {
+        "rect": [
+          80,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.391457196809798,
+            25.766331514895676
+          ],
+          [
+            5.2,
+            26.0
+          ]
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "native_wrist": [
+          5.2,
+          26.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          23,
+          16,
+          38
+        ],
+        "ground_clearance_pixels": 5,
+        "frame_angle": 45
+      },
+      {
+        "rect": [
+          120,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.301461353606577,
+            25.712004142089018
+          ],
+          [
+            5.2,
+            26.5
+          ]
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "native_wrist": [
+          5.2,
+          26.5
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          28,
+          15,
+          39
+        ],
+        "ground_clearance_pixels": 4,
+        "frame_angle": 67.5
+      },
+      {
+        "rect": [
+          160,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_left.png",
+        "source_sha256": "80a5769adaa4545f4d832729c98ccb788ef7f2f7dd3155a8e0f94d589f5c9142",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            10.0,
+            23.0
+          ],
+          [
+            8.043532762572745,
+            25.532239315087292
+          ],
+          [
+            5.2,
+            27.0
+          ]
+        ],
+        "hand": [
+          13,
+          35
+        ],
+        "native_wrist": [
+          5.2,
+          27.0
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          34,
+          15,
+          40
+        ],
+        "ground_clearance_pixels": 3,
+        "frame_angle": 90
+      }
+    ],
+    "work": [
+      {
+        "rect": [
+          0,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            15.4064067544383,
+            25.874372982246793
+          ],
+          [
+            18.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "native_wrist": [
+          18.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          40,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.836425072958118,
+            24.48144956225129
+          ],
+          [
+            20.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "native_wrist": [
+          20.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          80,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            17.0,
+            24.113552872566004
+          ],
+          [
+            20.0,
+            23.0
+          ]
+        ],
+        "hand": [
+          28,
+          31
+        ],
+        "native_wrist": [
+          20.0,
+          23.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          120,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.836425072958118,
+            24.48144956225129
+          ],
+          [
+            20.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "native_wrist": [
+          20.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          160,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            15.4064067544383,
+            25.874372982246793
+          ],
+          [
+            18.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "native_wrist": [
+          18.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      }
+    ],
+    "snack": [
+      {
+        "rect": [
+          0,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            13.659104776651061,
+            26.181790446697878
+          ],
+          [
+            16.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          24,
+          32
+        ],
+        "native_wrist": [
+          16.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          40,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.340895223348937,
+            25.181790446697878
+          ],
+          [
+            16.0,
+            22.0
+          ]
+        ],
+        "hand": [
+          24,
+          30
+        ],
+        "native_wrist": [
+          16.0,
+          22.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          80,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            17.029778313018443,
+            24.029778313018443
+          ],
+          [
+            16.0,
+            21.0
+          ]
+        ],
+        "hand": [
+          24,
+          29
+        ],
+        "native_wrist": [
+          16.0,
+          21.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          120,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            16.340895223348937,
+            25.181790446697878
+          ],
+          [
+            16.0,
+            22.0
+          ]
+        ],
+        "hand": [
+          24,
+          30
+        ],
+        "native_wrist": [
+          16.0,
+          22.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      },
+      {
+        "rect": [
+          160,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "source_path": "assets/characters/liam/idle_right.png",
+        "source_sha256": "1ebe3b81efe81b050bfb6f4ca01ea5fe6c0c088dc96fde11f3f45e267fa2f50b",
+        "native_offset": [
+          8,
+          8
+        ],
+        "preserved_regions": [
+          [
+            0,
+            0,
+            24,
+            21
+          ],
+          [
+            0,
+            28,
+            24,
+            8
+          ]
+        ],
+        "joints": [
+          [
+            14.0,
+            23.0
+          ],
+          [
+            13.659104776651061,
+            26.181790446697878
+          ],
+          [
+            16.0,
+            24.0
+          ]
+        ],
+        "hand": [
+          24,
+          32
+        ],
+        "native_wrist": [
+          16.0,
+          24.0
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0
+      }
+    ]
+  },
+  "arm_lengths": [
+    3.2,
+    3.2
+  ],
+  "preserved_regions": [
+    [
+      0,
+      0,
+      24,
+      21
+    ],
+    [
+      0,
+      28,
+      24,
+      8
+    ]
+  ],
+  "source_head_legs_preserved": true,
+  "frame_source": "assets/story/lantern/props/frame.png",
+  "carry_style": "Palm under the base beside the body, with the face and all feet unobscured.",
+  "pickup_has_held_frame": false,
+  "place_has_held_frame": true,
+  "action_facing": {
+    "pickup": "right",
+    "place": "left",
+    "work": "right",
+    "snack": "right"
+  },
+  "world_contacts": {
+    "pickup": [
+      668,
+      489
+    ],
+    "place": [
+      315,
+      231
+    ],
+    "work": [
+      270,
+      228
+    ]
+  },
+  "work_foreground_sort_y": 271
+}

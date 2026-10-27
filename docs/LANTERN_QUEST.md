@@ -1,6 +1,6 @@
-# Liam’s lantern quest — PR1 and PR2
+# Liam’s lantern quest — PR1 through PR3
 
-`CH01_MQ04`, **A Light of His Own**, follows completion of The Regent’s Road. Its first two of four implementation segments cover the school preparation session, Mira’s workshop, the village preparations and Elira’s remembrance scene. The quest stays active after the visit. The domestic break, sanctuary discussion, personal purpose and return to Liam’s mother follow in the remaining segments.
+`CH01_MQ04`, **A Light of His Own**, follows completion of The Regent’s Road. Its first three of four implementation segments cover the school preparation session, Mira’s workshop, the village visits, a domestic break and Liam’s sanctuary questions. The quest stays active after speaking with Serene, with its first six objectives complete. Liam’s chosen purpose, final covering and return to his mother belong to the concluding segment.
 
 ## Playing the opening segment
 
@@ -18,7 +18,19 @@ Follow the authored route from the workshop to Halden at the working mill, then 
 
 At Elira’s, let Liam talk about his tower before noticing her existing memorial lantern. She recalls her husband’s confidently incorrect singing, laughs, then has a quieter moment. Liam asks an immediate, childlike question; Caelan offers company and Tomas offers practical help. Elira will carry her own lantern. Leave through the actual cottage door and finish the short conversation outside.
 
-The second segment completes only `visit_neighbours` and `visit_elira`. Together with PR1’s objectives, that leaves the first four MQ04 objectives complete and the quest **active**. The endpoint describes the completed visit, without an unimplemented instruction to start the break or sanctuary scene. PR3 must explicitly collect the craft materials before using them at home; the frame does not silently change hands here.
+The second segment completes only `visit_neighbours` and `visit_elira`. Together with PR1’s objectives, that leaves the first four MQ04 objectives complete and the quest **active**. The endpoint describes the completed visit, without an unimplemented instruction to start the break or sanctuary scene. PR3 explicitly collects the craft materials before using them at home; the frame does not silently change hands during PR2.
+
+## Playing the break and sanctuary visit
+
+Continue after the conversation outside Elira’s cottage. Liam asks to go home for a while; collect the frame and papers from Mira on the way. She has secured the handle. Liam carries the small frame, while Caelan keeps the drawing and loose sheets flat in his satchel. The workshop’s resting frame and drawing leave only at the actual handoff. Mira remains at her own work rather than accompanying the group.
+
+At home, Liam’s existing father welcomes all three and offers bread and something to drink. Put the frame and papers safely on the table before the snack. His mother is still occupied at the school. Ordinary conversation, a rest and Daisy’s independent household behavior give the visit room before Liam tries a loose practice panel for his stairs. He struggles to fit the steps and window, receives help he agrees to, and makes a small adjustment. The real covering remains unattached and the frame unlit.
+
+While Liam stays visibly occupied, the brothers speak quietly about Tomas’s offer to carry Elira’s lantern. The exchange follows the actual visit and leaves the festival’s later wider-world conversation intact. Liam then asks about remembrance and returning life. Caelan and Tomas already know the tradition and give its basic belief; Liam asks to speak with Serene. Leave the frame, drawing and practice paper together at home before the sanctuary visit.
+
+Serene sets her papers aside to listen. The conversation takes time over the village’s belief that life returns to the gods, Elira’s remembrance, missing someone and being together at the festival. It presents sincere faith, not proof of the concealed cosmology or the mechanics of personal consciousness. The lantern is explained as an act of remembrance, not a vessel containing the dead. Liam becomes more comfortable participating, but does not choose his lantern’s purpose here.
+
+This segment completes only `take_break` and `speak_serene`. MQ04 remains **active** with the first six objectives complete. The endpoint records the conversation without pointing at an unimplemented finishing interaction. PR4 owns the chosen purpose, attaching and finishing the covering, and showing the result to Liam’s mother.
 
 ## Character and narrative boundaries
 
@@ -30,7 +42,7 @@ The tower design develops Liam’s existing love of building blocks. Mira takes 
 
 There is no magical task in these segments. Caelan’s useful small success at the mill and failed forceful attempt at the Venn channel remain unchanged. Elira already has her retrieved memorial lantern, and PR2 builds on that fact. Liam’s lantern purpose stays open here. The proposed lantern custom for someone without a person to carry one remains later design work.
 
-The shared food tables and homebound portions are Eldenmere’s ordinary festival arrangements. The Venn decoration is a household choice, not a universal religious requirement. Their child remains recovering; no sudden cure, fixed age, personal name or invented mortality scare is established. Elira’s memory adds personal specificity to the already established fact that her husband could not sing. Detailed theology stays with Serene’s later scene.
+The shared food tables and homebound portions are Eldenmere’s ordinary festival arrangements. The Venn decoration is a household choice, not a universal religious requirement. Their child remains recovering; no sudden cure, fixed age, personal name or invented mortality scare is established. Elira’s memory adds personal specificity to the already established fact that her husband could not sing. PR3 presents the local festival belief through Serene’s sincere explanation, without establishing hidden history or certainty about souls, consciousness or resurrection.
 
 ## Dialogue and presentation
 
@@ -40,6 +52,8 @@ The complete speaker-attributed transcript is [CH01_MQ04](narrative/game_01/CH01
 
 `assets/story/lantern/village_scene.json` adds eleven main exchanges: `departure`, `mill_arrival`, `mill_flour`, `venn_arrival`, `venn_preparations`, `elira_welcome`, `elira_lantern`, `elira_memory`, `elira_company`, `elira_goodbye` and `reflection`. The [PR2 transcript](narrative/game_01/CH01_MQ04_PR2.md) includes every speaker-attributed line and optional reply. Walking conversations after the mill and Venns are optional, and earlier visits use replies that do not reveal later events.
 
+`assets/story/lantern/rest_scene.json` adds eleven main exchanges: `break_invitation`, `collect_frame`, `home_welcome`, `snack`, `paper_practice`, `brothers`, `liam_questions`, `sanctuary_welcome`, `returning_life`, `remembering` and `sanctuary_close`. The [PR3 transcript](narrative/game_01/CH01_MQ04_PR3.md) includes all speaker-attributed dialogue and repeat replies. The father uses his existing family identity and appearance; his personal name remains unassigned. Optional replies respect the materials’ current location and do not complete an objective.
+
 The drawing, material pieces, partial frame and finished frame make the work visible. One lantern state follows the work; a held and resting copy must not appear simultaneously. Craft poses preserve the approved idle bodies and believable limb lengths, with contact points registered to the materials. The frame is tested for balance without fire.
 
 ## Progress and save continuity
@@ -47,6 +61,8 @@ The drawing, material pieces, partial frame and finished frame make the work vis
 The quest definition establishes the full objective sequence from PR1, so later segments can extend the same active quest without migrating an already completed short placeholder. MQ03 completion makes it available; reading the invitation accepts it. Finishing PR1 commits `frame_ready` while keeping later objectives outstanding.
 
 PR2 extends the committed scene stages along one authored route. Existing PR1 saves continue at their saved checkpoint without replaying the school or frame work. Reaching a location does not complete its conversation; `visit_neighbours` waits for the completed Venn preparation exchange, and `visit_elira` waits for the farewell and outside reflection. The saved world continues to show the unlit frame and drawing at Mira’s table, the working mill, repaired irrigation and Elira’s same memorial lantern.
+
+PR3 adds explicit pickup, home and sanctuary checkpoints rather than falling back to workshop staging. Material ownership follows the committed sequence: workshop → carried → home. Reloading an interrupted handoff or placement restores the last committed ownership, with one frame and drawing. Carry art follows Liam’s actual direction and movement; a fixed lift pose must not slide through travel. The home practice uses a separate loose sheet while preserving the real frame for the final segment.
 
 `lantern_quest` stores versioned committed story progress. Dialogue cursors, partial animation clocks and path caches are transient. Restore reconstructs the appropriate actors, props and safe scene checkpoint. A newly gated MQ04 may be absent from older saves; completed MQ03 saves gain access without replaying the regent’s visit or its announcements. An active MQ04 requires matching valid story facts. New Game releases quest ownership and restores the ordinary opening routines.
 
@@ -59,6 +75,8 @@ Verify the complete segment using normal interactions, collision-aware movement 
 Review captures should show the actual game’s classroom, outing, workshop and visible frame, with readable dialogue stills. The complete game suite is required because character ownership, story handoffs and saves cross existing systems. Recorded test and capture results belong with the review artifacts, not as unverified claims in this guide.
 
 For PR2, additionally verify continuation from a real PR1 save; scene cancellation and reload at every new checkpoint; original resident identities; companion passage through both cottages; Mira’s return to her registered workbench; no duplicate drawing or lantern; and the active four-objective endpoint. Capture the route from the actual frame checkpoint through the normal mill path, cottage doors and final outside exchange.
+
+For PR3, additionally verify continuation from the real PR2 endpoint; every conversation and object handoff across cancel/reload; one material set in workshop, transit and home; four-direction carry registration; safe placement; Liam’s visible paper activity during the brothers’ dialogue; Daisy’s eating, resting and held-bone states; and Serene’s explicit handoff from MQ03. Earlier flour, decoration and repair states must persist beyond the village section. New Game releases the borrowed family and sanctuary staging. Review the actual route, home and sanctuary scenes alongside the carry/craft pose study.
 
 ## Chapter continuity
 

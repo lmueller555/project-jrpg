@@ -1,0 +1,62 @@
+{
+  "poses": {
+    "liam": "assets/story/lantern/rest_poses/liam.json"
+  },
+  "props": [
+    {
+      "id": "home_frame",
+      "scene": "liam_house",
+      "position": [
+        300,
+        229
+      ],
+      "sort_y": 271,
+      "states": {
+        "ready": "assets/story/lantern/rest_props/home_frame.png"
+      }
+    },
+    {
+      "id": "home_drawing",
+      "scene": "liam_house",
+      "position": [
+        288,
+        238
+      ],
+      "sort_y": 271,
+      "states": {
+        "ready": "assets/story/lantern/rest_props/home_drawing.png"
+      }
+    },
+    {
+      "id": "home_papers",
+      "scene": "liam_house",
+      "position": [
+        270,
+        226
+      ],
+      "sort_y": 271,
+      "states": {
+        "clean": "assets/story/lantern/rest_props/paper_clean.png",
+        "smudged": "assets/story/lantern/rest_props/paper_smudged.png",
+        "revised": "assets/story/lantern/rest_props/paper_revised.png"
+      }
+    },
+    {
+      "id": "home_snack",
+      "scene": "liam_house",
+      "position": [
+        270,
+        230
+      ],
+      "sort_y": 271,
+      "states": {
+        "ready": "assets/story/lantern/rest_props/snack_ready.png",
+        "used": "assets/story/lantern/rest_props/snack_used.png"
+      }
+    }
+  ],
+  "workshop_collected": "assets/story/lantern/rest_props/workshop_collected.png",
+  "frame_source": "assets/story/lantern/props/frame.png",
+  "frame_is_lit": false,
+  "final_covering_attached": false
+}

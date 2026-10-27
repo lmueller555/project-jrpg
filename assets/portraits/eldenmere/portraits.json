@@ -305,6 +305,19 @@
         418,
         1254
       ]
+    },
+    "liam_father": {
+      "name": "Liam's father",
+      "expression": "neutral",
+      "file": "liam_father_neutral.png",
+      "sprite_root": "assets/characters/liam_father",
+      "source": "assets/source/portraits/eldenmere/liam_father_master.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
     }
   },
   "aliases": {
