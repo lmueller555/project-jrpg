@@ -248,7 +248,12 @@ class SocialSystem:
         profile = self.profiles[actor.data['id']]
         conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
         if conversation is None:return False
-        self._set_lines(conversation['lines'])
+        lines = conversation['lines']
+        present = {npc.data['id'] for npc in self.game.world.npcs}
+        for identifier, alternative in conversation.get('absent_actor_lines', {}).items():
+            if identifier not in present:
+                lines = alternative;break
+        self._set_lines(lines)
         self.actor = actor
         self.conversation = conversation
         self._choosing = False

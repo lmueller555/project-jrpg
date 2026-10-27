@@ -1,0 +1,2772 @@
+{
+  "start": "actual New Game; no MQ01/MQ02 progress, actor positions or household receipts seeded",
+  "input": "real walking, animated doors, proximity conversations, E and Space key events, explicit choices",
+  "household_order": [
+    "elira",
+    "venn"
+  ],
+  "venn_approach": "magicks",
+  "mq01_completed": true,
+  "mq02_completed": true,
+  "main_scenes": [
+    "opening_wake",
+    "opening_greeting",
+    "opening_breakfast",
+    "opening_kindness",
+    "serene_quest_offer",
+    "opening_acceptance",
+    "halden_arrival",
+    "halden_conclusion",
+    "halden_goodbye",
+    "elira_arrival",
+    "elira_resolution",
+    "venn_arrival",
+    "venn_pin",
+    "venn_channel",
+    "venn_choice",
+    "venn_magicks_failed",
+    "venn_resolution",
+    "serene_quest_report",
+    "opening_mill_arrival",
+    "mill_reunion",
+    "mill_mechanism",
+    "mill_race",
+    "mill_diagnosis",
+    "mill_intake",
+    "mill_prepare",
+    "mill_prepare_done",
+    "mill_spell_intro",
+    "mill_encouragement_failed",
+    "mill_repair",
+    "mill_repair_done",
+    "mill_verify",
+    "mill_resolution"
+  ],
+  "observed_scenes": [
+    "opening_wake",
+    "opening_greeting",
+    "opening_breakfast",
+    "opening_kindness",
+    "serene_quest_offer",
+    "opening_acceptance",
+    "mira_working",
+    "halden_arrival",
+    "halden_conclusion",
+    "halden_goodbye",
+    "elira_arrival",
+    "elira_resolution",
+    "venn_arrival",
+    "venn_pin",
+    "venn_channel",
+    "venn_choice",
+    "venn_magicks_failed",
+    "venn_resolution",
+    "tomas_greeting",
+    "tomas_repeat",
+    "serene_quest_report",
+    "opening_mill_arrival",
+    "mill_reunion",
+    "mill_mechanism",
+    "mill_race",
+    "mill_diagnosis",
+    "mill_reminder_intake",
+    "mill_intake",
+    "mill_prepare",
+    "mill_prepare_done",
+    "mill_spell_intro",
+    "mill_encouragement_failed",
+    "mill_repair",
+    "mill_repair_done",
+    "mill_reminder_verify",
+    "mill_halden_waiting",
+    "mill_verify",
+    "mill_resolution"
+  ],
+  "dialogue_pages": 277,
+  "pages": [
+    {
+      "scene": "opening_wake",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "sanctuary_bedroom",
+      "text": "Caelan? You're awake, aren't you?"
+    },
+    {
+      "scene": "opening_wake",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "tomas",
+      "room": "sanctuary_bedroom",
+      "text": "Mother Serene says if you're still in bed when the last bell rings, you're helping me clean the courtyard."
+    },
+    {
+      "scene": "opening_wake",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "sanctuary_bedroom",
+      "text": "She didn't say that."
+    },
+    {
+      "scene": "opening_wake",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "tomas",
+      "room": "sanctuary_bedroom",
+      "text": "No. But she might, once I suggest it."
+    },
+    {
+      "scene": "opening_wake",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "sanctuary_bedroom",
+      "text": "I'm getting up."
+    },
+    {
+      "scene": "opening_wake",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "tomas",
+      "room": "sanctuary_bedroom",
+      "text": "Breakfast won't wait forever!"
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "There you are. I saved you some bread."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "You did?"
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "*grins* Mother Serene wouldn’t let me eat it."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Sit down, Caelan. Before your brother decides you aren’t coming."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "Have you been up long?"
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Long enough to wish there were another pair of hands in the kitchen."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "I offered."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "You offered to taste things."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "Someone ought to."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "*smiles* Very public-spirited of you."
+    },
+    {
+      "scene": "opening_greeting",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "Thank you."
+    },
+    {
+      "scene": "opening_breakfast",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Enjoy a quiet breakfast while you can. Tomorrow we’ll have everyone coming and going for the Festival of Light."
+    },
+    {
+      "scene": "opening_breakfast",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "And today?"
+    },
+    {
+      "scene": "opening_breakfast",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Today we make sure everything—and everyone—is ready for it."
+    },
+    {
+      "scene": "opening_breakfast",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "That sounds like rather more work."
+    },
+    {
+      "scene": "opening_breakfast",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "*with a small smile* It usually is."
+    },
+    {
+      "scene": "opening_kindness",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "Your cup’s here, Mother."
+    },
+    {
+      "scene": "opening_kindness",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Thank you, Caelan. Now, could you both spare me a little time?"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "I promised to look in on three households this morning, but there’s more here than I can leave unattended."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "Who needs us?"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "*with concern* Halden first. This is his medicine. His joints have been troubling him again."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "He’ll tell us they’re perfectly well."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "He probably will. He’s milling flour for the Festival of Light, and I suspect he’s trying to carry every sack himself."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "Is there much left to do?"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Enough to keep the village kitchens waiting if he overworks himself. He should be at his cottage, just south of the mill."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "Across the upper bridge?"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Yes. Go with Caelan and see whether he needs a hand."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "I’ll call on her."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "She should be at home, by the southern bridge. Please ask how she’s doing while you’re there."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "Of course."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 13,
+      "source_line": 13,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "And these supplies are for the Venns, up on the eastern terrace. Their little one’s still recovering."
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 14,
+      "source_line": 14,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "*more quietly* Any better?"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "page": 15,
+      "source_line": 15,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "A little, last I heard. They’ve had their hands full between that and the plot."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "I’ll see to them."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Thank you. Halden first, then visit the other two in whichever order suits you."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "Shall I come for all three?"
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Come back after Halden. I’ll need your help with the sanctuary preparations."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "tomas",
+      "room": "sanctuary_dining",
+      "text": "I was hoping for something interesting."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "serene",
+      "room": "sanctuary_dining",
+      "text": "Then start by helping someone who needs you."
+    },
+    {
+      "scene": "opening_acceptance",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "caelan",
+      "room": "sanctuary_dining",
+      "text": "*to Tomas* Come on. You can decide how interesting it was afterward."
+    },
+    {
+      "scene": "mira_working",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Nearly there. This fitting has other ideas."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "*grumbles* Serene sent you? I’m not so frail that I need someone counting my aches."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "She sent the medicine you asked about last week."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "I said I’d think about asking."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "*grins* That’s practically a yes, for you."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "Hmph. And which one of you came to do actual work?"
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "What needs moving?"
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "Those three sacks of flour by the door. Onto the dry pallet. I’ve more coming through the mill and nowhere sensible to put it."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "All this for tomorrow?"
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "People want their flour before they start baking for the Festival of Light. They’ve been very particular about telling me that."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "We’ll make some room."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "One sack at a time. They’re heavier than they look."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "I’ll take the middle one."
+    },
+    {
+      "scene": "halden_arrival",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "You’ll wait until your brother’s ready."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "There. That’s better."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "You can actually get through the doorway now."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "I could get through it before."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "Carrying one of those?"
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "*after a pause* …I spent forty years carrying these myself."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "Then perhaps you’ve earned the right to let someone else carry a few."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "Hmph. Tell Serene I’ll take the medicine."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "She’ll be pleased."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "And if she asks, the wheel’s been making a dreadful racket. I’ll have it looked at."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "Ask Mira. If anyone can repair it, she can."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "She’s got her own repairs to finish."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "One more reason to ask before it becomes a bigger job."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "halden",
+      "room": "halden",
+      "text": "You’ve been listening to Serene."
+    },
+    {
+      "scene": "halden_conclusion",
+      "page": 13,
+      "source_line": 13,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "*with a small smile* Both of us have. It’s difficult not to."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "I’d better get back. Mother needs help with the preparations."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "Go on. I’ve still got Elira by the southern bridge and the Venns up on the eastern terrace."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "You’ll be back before we’ve finished, then?"
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "That depends how much you get done."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "*rolls his eyes* Oh, very good."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "halden",
+      "text": "And try not to turn the courtyard into a workshop."
+    },
+    {
+      "scene": "halden_goodbye",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "tomas",
+      "room": "halden",
+      "text": "*grins* No promises."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*with a wry smile* A delivery from Serene? I swear she thinks I live on bread and stubbornness."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "She mentioned lamp oil, too."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "Sensible woman. I was nearly out. Come in, Caelan."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "Getting ready for tomorrow?"
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*sighs* Trying to. I put the lantern safely out of the way, and now I can’t reach the wretched thing."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "Up there?"
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "Yes. The stool’s beneath the shelf. Would you fetch it for me?"
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "Of course."
+    },
+    {
+      "scene": "elira_arrival",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "Gently, mind. I’ve got enough to mend without giving myself another job."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*looks over the lantern* Thank you. I can clean it here."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "You’re carrying this one for your husband again?"
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "I am. He used to say he only came to the Festival of Light to hear me sing."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "Did he?"
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*laughs* The old liar couldn’t carry a tune himself. Never stopped him joining in."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "Will tomorrow be difficult?"
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*her smile softens* Parts of it, perhaps. I still turn to tell him things. Then I remember."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "*after a quiet moment* But remembering him isn’t the same as losing him again. There’s plenty I’m glad to remember."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "I’m glad you’re coming."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "So am I. And you’ll be there?"
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "I wouldn’t miss it."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "elira",
+      "room": "elira",
+      "text": "Good. Tell Serene I’ll bring the lantern myself. She’s done enough carrying things for me today."
+    },
+    {
+      "scene": "elira_resolution",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "caelan",
+      "room": "elira",
+      "text": "I’ll tell her."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "Caelan. Is that from the sanctuary?"
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "Serene asked me to bring these round. How’s the little one?"
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "*with relief* Finally keeping food down. We’ve had a quieter morning, thank the gods."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "That’s good to hear."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "Please thank Serene for us. I meant to come down myself, but—"
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "*gently* You’ve had enough to manage."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "If this channel would cooperate, we might get a few things finished."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "What’s happened now?"
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "*sighs* The gate’s caught. There’s water in the brook and hardly any reaching the far end of our plot. I can’t keep carrying buckets across all afternoon."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "May I take a look?"
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "Please. It’s east of the cottage. Look at the pin, then the channel below it."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "Borrow what you need from the tool box."
+    },
+    {
+      "scene": "venn_arrival",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "I’ll see what I can do."
+    },
+    {
+      "scene": "venn_pin",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "The pin’s caught at an angle. I’ll need to take the pressure off before I set it straight."
+    },
+    {
+      "scene": "venn_channel",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Twigs have collected below the gate. I’ll need to clear those, too."
+    },
+    {
+      "scene": "venn_choice",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "I could use their tools. Or perhaps I can push the water back long enough to free the pin."
+    },
+    {
+      "scene": "venn_magicks_failed",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "*quietly* I can’t move it. I’ll need the tools."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "There it goes. That should reach the far end now."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "One less thing to worry about."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "Has it been catching often?"
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "Often enough. They’ve got pumps in the capital that could fill these channels in half the time."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "And payments that would take twice as long to finish."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "*defensively* I know. I’m only saying it would be useful."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "For today, at least, you’ve got the water moving again."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "You’ve done us a kindness. Let Serene know we’ll be all right."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "I will. I hope we see you at the festival."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "We’ll see how the little one feels. I’d like that."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "venn_father",
+      "room": "venn",
+      "text": "And if we do get there, I intend to sit down for a while."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "venn_mother",
+      "room": "venn",
+      "text": "*with a small laugh* You say that now."
+    },
+    {
+      "scene": "venn_resolution",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "caelan",
+      "room": "venn",
+      "text": "I’ll leave you to it. Take care."
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "eldenmere.playable",
+      "text": "Caelan, can you look at this?"
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "What's wrong?"
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "eldenmere.playable",
+      "text": "It turns most of the way, then it sticks. I can't see what's catching."
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Is the pin bent?"
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "tomas",
+      "room": "eldenmere.playable",
+      "text": "I thought so, but it looks straight."
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Have you shown Mira?"
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "tomas",
+      "room": "eldenmere.playable",
+      "text": "Not yet. I wanted to get it working myself."
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "You can still ask her."
+    },
+    {
+      "scene": "tomas_greeting",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "tomas",
+      "room": "eldenmere.playable",
+      "text": "I know. I will if I can't find it."
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "sanctuary_hall",
+      "text": "One more adjustment. Then I really am getting back to the preparations."
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Should I tell Mother Serene that?"
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "sanctuary_hall",
+      "text": "Tell her the preparations are progressing. That covers both things."
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "tomas",
+      "room": "sanctuary_hall",
+      "text": "One more adjustment. Then I really am getting back to the preparations."
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Should I tell Mother Serene that?"
+    },
+    {
+      "scene": "tomas_repeat",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "tomas",
+      "room": "sanctuary_hall",
+      "text": "Tell her the preparations are progressing. That covers both things."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "There you are. How is everyone?"
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Halden finally accepted the medicine. We moved his flour sacks into the dry."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "Did he let you help without an argument?"
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Not entirely."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "*smiles* I’d have worried if he had."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Elira has the bread and oil. She’s bringing her husband’s lantern tomorrow."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "Good. I’m glad she wants to come."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "And the Venns have their supplies. The little one’s keeping food down. Their irrigation gate was caught, so I got the channel running again."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "You’ve had a busy morning."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "A useful one, I think."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "You have. And how were they, aside from what needed fixing?"
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Halden’s doing more than his joints can bear. Elira misses her husband. The Venns are tired—and worried about what next season will cost them."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "I’m glad you stayed long enough to hear that."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 13,
+      "source_line": 13,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "You knew I’d find more than deliveries."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 14,
+      "source_line": 14,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "I hoped you’d have time for people. It’s easy to think our work is finished when the baskets are empty."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 15,
+      "source_line": 15,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "Then I suppose we keep showing up."
+    },
+    {
+      "scene": "serene_quest_report",
+      "page": 16,
+      "source_line": 16,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "*warmly* That’s a good place to begin."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "sanctuary_hall",
+      "text": "Caelan! That dreadful wheel’s finally stopped altogether."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "You said it was making a noise."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "halden",
+      "room": "sanctuary_hall",
+      "text": "And now it isn’t making any noise. That’s worse!"
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "Did you ask Mira to look at it?"
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "halden",
+      "room": "sanctuary_hall",
+      "text": "That’s why I’m here. I could use her help—and another pair of hands, if you can spare him."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "I’ll go with her."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "halden",
+      "room": "sanctuary_hall",
+      "text": "There are kitchens waiting on that flour. I’d rather they didn’t all come asking me about it at once."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "Mira should be at her workbench, outside the workshop before the upper bridge."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "caelan",
+      "room": "sanctuary_hall",
+      "text": "I’ll stop there on my way to the mill."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "halden",
+      "room": "sanctuary_hall",
+      "text": "*with relief* Thank you."
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "serene",
+      "room": "sanctuary_hall",
+      "text": "And be careful along the channel. Both of you."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "*sets the fitting aside* You have the look of someone bringing me another job."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Could that wait a little?"
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "That depends. Is someone hurt?"
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "No. Halden’s mill has stopped."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Ah. I wondered when he’d ask me about that noise."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "He came to the sanctuary himself."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Then it must be serious."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "He needs the flour ready for the Festival of Light. I think he’s already imagining everyone asking where their bread is."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "He’ll have plenty to say if they ask him at once."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "He had plenty to say when it was only me."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "*laughs* Some things keep working."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Will you take a look?"
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Of course. Let me leave this somewhere I can find it again."
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 13,
+      "source_line": 13,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Shall I carry anything?"
+    },
+    {
+      "scene": "mill_reunion",
+      "page": 14,
+      "source_line": 14,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "I’ve got my tools. Come on—we’ll see what the wheel’s doing before he takes anything apart."
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "*studies the axle* The axle’s still seated. I can’t see anything caught in the wheel."
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Neither can I. And nothing’s shifted out of place."
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "So we leave it together?"
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "For now, yes."
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Halden will be pleased."
+    },
+    {
+      "scene": "mill_mechanism",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Let’s give him a working mill before we tell him how pleased to be."
+    },
+    {
+      "scene": "mill_race",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "*frowns at the trickle* The brook’s moving, but there’s hardly anything coming down this channel."
+    },
+    {
+      "scene": "mill_race",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "There should be a steady flow reaching the wheel."
+    },
+    {
+      "scene": "mill_race",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Just a trickle. That won’t drive it."
+    },
+    {
+      "scene": "mill_race",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "No. We’ll need to look further upstream."
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "The wheel isn’t getting enough water to turn under load. Something’s restricting the intake."
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "A branch, perhaps?"
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Could be. We’ll know when we see it."
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "We’ll need the upper path."
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Back over the upper bridge, then north past the sanctuary steps. Take the road out of the village—the intake’s along that trail."
+    },
+    {
+      "scene": "mill_diagnosis",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "All right. Let’s see what’s caught there."
+    },
+    {
+      "scene": "mill_reminder_intake",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "We need the north road, past the sanctuary steps. The intake’s along the trail beyond the village."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "*points to the limb* There. That limb’s wedged across the screen."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Look how the water’s pressing it into the bars."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "We won’t pull it clear like that."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "No. We’ll take the pressure off first."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "And the catch?"
+    },
+    {
+      "scene": "mill_intake",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Under the water in that little stone recess. We’ll deal with it once the intake’s isolated."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Tell me where you need me."
+    },
+    {
+      "scene": "mill_intake",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "I’ll set the bypass below the screen. Keep clear while I turn it."
+    },
+    {
+      "scene": "mill_prepare",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Here?"
+    },
+    {
+      "scene": "mill_prepare",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "*checks Caelan is clear* That’s fine. Give me a moment."
+    },
+    {
+      "scene": "mill_prepare_done",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "The pressure’s easing."
+    },
+    {
+      "scene": "mill_prepare_done",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Good. We’ve still got water trapped around the catch, but the main flow’s off it now."
+    },
+    {
+      "scene": "mill_spell_intro",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "I could move that into the drain."
+    },
+    {
+      "scene": "mill_spell_intro",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Just the water in the recess?"
+    },
+    {
+      "scene": "mill_spell_intro",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Yes. There’s nowhere for more to come through now."
+    },
+    {
+      "scene": "mill_spell_intro",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "All right. I’ll keep clear."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "There. It worked."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "It did. I can reach the catch now."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "*a small smile* I thought it would."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "You sound surprised."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Pleased. Mostly."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "And the rest?"
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "*his smile fades a little* I couldn’t do it at the Venns’. I wanted to spare them the trouble, and I still ended up borrowing their tools."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "You were fighting a current there. This was a smaller job."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "I know. I just wish I’d managed both."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "You got their water running again, didn’t you?"
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Yes."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "*gently* And you’ve cleared this catch for me. Give yourself that much."
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "All right. I’ll try."
+    },
+    {
+      "scene": "mill_repair",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "I’ll release the catch. Take the rope and keep it steady."
+    },
+    {
+      "scene": "mill_repair",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "Ready."
+    },
+    {
+      "scene": "mill_repair",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Wait until I say. We want the limb clear of the screen."
+    },
+    {
+      "scene": "mill_repair",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "*nods* I’ve got it."
+    },
+    {
+      "scene": "mill_repair",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "Now. Pull."
+    },
+    {
+      "scene": "mill_repair_done",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "*with relief* There. Hold it a moment… Good. You can let go."
+    },
+    {
+      "scene": "mill_repair_done",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "upstream",
+      "text": "That’s the water coming through."
+    },
+    {
+      "scene": "mill_repair_done",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "mira",
+      "room": "upstream",
+      "text": "It is. Let’s go back and see what the wheel makes of it."
+    },
+    {
+      "scene": "mill_reminder_verify",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Let’s get back to the wheel and check it’s taking the load. Then we can give Halden some good news."
+    },
+    {
+      "scene": "mill_halden_waiting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    },
+    {
+      "scene": "mill_halden_waiting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    },
+    {
+      "scene": "mill_halden_waiting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    },
+    {
+      "scene": "mill_halden_waiting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    },
+    {
+      "scene": "mill_halden_waiting",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    },
+    {
+      "scene": "mill_verify",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "*smiles* That sounds more like it."
+    },
+    {
+      "scene": "mill_verify",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "The wheel’s taking the load."
+    },
+    {
+      "scene": "mill_verify",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Halden’s dreadful racket."
+    },
+    {
+      "scene": "mill_verify",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "He’ll be calling it a lovely sound by now."
+    },
+    {
+      "scene": "mill_verify",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Should we let him enjoy it?"
+    },
+    {
+      "scene": "mill_verify",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "After we tell him what happened. I want him to know which bits he doesn’t need to take apart."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 0,
+      "source_line": 0,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "*listens to the wheel* There it is. I was beginning to miss that dreadful racket."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 1,
+      "source_line": 1,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Mira said you would."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 2,
+      "source_line": 2,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "A limb had jammed the intake screen. We freed it and reset the catch."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 3,
+      "source_line": 3,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "*raises an eyebrow* We?"
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 4,
+      "source_line": 4,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "Caelan cleared the water from the inspection recess. And did his share of the pulling."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 5,
+      "source_line": 5,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Mira knew what we were looking at."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 6,
+      "source_line": 6,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "And you listened. That helps."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 7,
+      "source_line": 7,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "The wheel itself was sound. You can leave it together."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 8,
+      "source_line": 8,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "I hadn’t started."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 9,
+      "source_line": 9,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "We thought we’d best hurry."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 10,
+      "source_line": 10,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "Hmph. You can both laugh when the flour’s finished."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 11,
+      "source_line": 11,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "How much have you got left?"
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 12,
+      "source_line": 12,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "Enough that I’d rather hear the wheel than the two of you. There are people waiting to start their festival baking."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 13,
+      "source_line": 13,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "We’ll leave you to it, then."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 14,
+      "source_line": 14,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "Caelan."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 15,
+      "source_line": 15,
+      "speaker": "caelan",
+      "room": "eldenmere.playable",
+      "text": "Yes?"
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 16,
+      "source_line": 16,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "*more quietly* My thanks. To both of you."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 17,
+      "source_line": 17,
+      "speaker": "mira",
+      "room": "eldenmere.playable",
+      "text": "You’re welcome."
+    },
+    {
+      "scene": "mill_resolution",
+      "page": 18,
+      "source_line": 18,
+      "speaker": "halden",
+      "room": "eldenmere.playable",
+      "text": "There’ll be flour for the Festival of Light. You can tell Serene that."
+    }
+  ],
+  "door_and_trail_transitions": [
+    [
+      "eldenmere.playable",
+      "sanctuary_bedroom"
+    ],
+    [
+      "sanctuary_bedroom",
+      "sanctuary_hall"
+    ],
+    [
+      "sanctuary_hall",
+      "sanctuary_dining"
+    ],
+    [
+      "sanctuary_dining",
+      "sanctuary_hall"
+    ],
+    [
+      "sanctuary_hall",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "halden"
+    ],
+    [
+      "halden",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "elira"
+    ],
+    [
+      "elira",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "venn"
+    ],
+    [
+      "venn",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "venn"
+    ],
+    [
+      "venn",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "sanctuary_hall"
+    ],
+    [
+      "sanctuary_hall",
+      "sanctuary_dining"
+    ],
+    [
+      "sanctuary_dining",
+      "sanctuary_hall"
+    ],
+    [
+      "sanctuary_hall",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "upstream"
+    ],
+    [
+      "upstream",
+      "eldenmere.playable"
+    ]
+  ],
+  "single_actor_speaker_checks": 169,
+  "layout_checks": [
+    {
+      "scene": "opening_greeting",
+      "scale": 1.0,
+      "panel": [
+        73,
+        78,
+        298,
+        72
+      ],
+      "speaker": "tomas"
+    },
+    {
+      "scene": "opening_greeting",
+      "scale": 1.5,
+      "panel": [
+        73,
+        48,
+        298,
+        102
+      ],
+      "speaker": "tomas"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "scale": 1.0,
+      "panel": [
+        163,
+        66,
+        298,
+        81
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "serene_quest_offer",
+      "scale": 1.5,
+      "panel": [
+        163,
+        26,
+        298,
+        121
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "halden_arrival",
+      "scale": 1.0,
+      "panel": [
+        103,
+        26,
+        298,
+        95
+      ],
+      "speaker": "halden"
+    },
+    {
+      "scene": "halden_arrival",
+      "scale": 1.5,
+      "panel": [
+        103,
+        6,
+        298,
+        121
+      ],
+      "speaker": "halden"
+    },
+    {
+      "scene": "halden_goodbye",
+      "scale": 1.0,
+      "panel": [
+        85,
+        41,
+        298,
+        81
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "halden_goodbye",
+      "scale": 1.5,
+      "panel": [
+        85,
+        6,
+        298,
+        121
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "elira_resolution",
+      "scale": 1.0,
+      "panel": [
+        157,
+        75,
+        298,
+        72
+      ],
+      "speaker": "elira"
+    },
+    {
+      "scene": "elira_resolution",
+      "scale": 1.5,
+      "panel": [
+        157,
+        45,
+        298,
+        102
+      ],
+      "speaker": "elira"
+    },
+    {
+      "scene": "venn_arrival",
+      "scale": 1.0,
+      "panel": [
+        175,
+        42,
+        298,
+        81
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "venn_arrival",
+      "scale": 1.5,
+      "panel": [
+        175,
+        21,
+        298,
+        102
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "serene_quest_report",
+      "scale": 1.0,
+      "panel": [
+        176,
+        87,
+        298,
+        72
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "serene_quest_report",
+      "scale": 1.5,
+      "panel": [
+        176,
+        76,
+        298,
+        83
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "scale": 1.0,
+      "panel": [
+        107,
+        93,
+        298,
+        81
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "opening_mill_arrival",
+      "scale": 1.5,
+      "panel": [
+        107,
+        53,
+        298,
+        121
+      ],
+      "speaker": "serene"
+    },
+    {
+      "scene": "mill_reunion",
+      "scale": 1.0,
+      "panel": [
+        114,
+        32,
+        298,
+        81
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_reunion",
+      "scale": 1.5,
+      "panel": [
+        114,
+        172,
+        298,
+        121
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_diagnosis",
+      "scale": 1.0,
+      "panel": [
+        54,
+        32,
+        298,
+        95
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_diagnosis",
+      "scale": 1.5,
+      "panel": [
+        54,
+        6,
+        298,
+        121
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_prepare_done",
+      "scale": 1.0,
+      "panel": [
+        91,
+        49,
+        298,
+        72
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "mill_prepare_done",
+      "scale": 1.5,
+      "panel": [
+        91,
+        38,
+        298,
+        83
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "scale": 1.0,
+      "panel": [
+        91,
+        49,
+        298,
+        72
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "mill_encouragement_failed",
+      "scale": 1.5,
+      "panel": [
+        91,
+        38,
+        298,
+        83
+      ],
+      "speaker": "caelan"
+    },
+    {
+      "scene": "mill_repair_done",
+      "scale": 1.0,
+      "panel": [
+        127,
+        40,
+        298,
+        81
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_repair_done",
+      "scale": 1.5,
+      "panel": [
+        127,
+        19,
+        298,
+        102
+      ],
+      "speaker": "mira"
+    },
+    {
+      "scene": "mill_resolution",
+      "scale": 1.0,
+      "panel": [
+        103,
+        37,
+        298,
+        81
+      ],
+      "speaker": "halden"
+    },
+    {
+      "scene": "mill_resolution",
+      "scale": 1.5,
+      "panel": [
+        103,
+        16,
+        298,
+        102
+      ],
+      "speaker": "halden"
+    }
+  ],
+  "stills": [
+    "breakfast.png",
+    "breakfast_large.png",
+    "household_briefing.png",
+    "household_briefing_large.png",
+    "halden_flour.png",
+    "halden_flour_large.png",
+    "remaining_visits.png",
+    "remaining_visits_large.png",
+    "elira_remembrance.png",
+    "elira_remembrance_large.png",
+    "venn_family.png",
+    "venn_family_large.png",
+    "serene_report.png",
+    "serene_report_large.png",
+    "mira_whereabouts.png",
+    "mira_whereabouts_large.png",
+    "mira_reunion.png",
+    "mira_reunion_large.png",
+    "north_road.png",
+    "north_road_large.png",
+    "bypass_after_action.png",
+    "bypass_after_action_large.png",
+    "small_success.png",
+    "small_success_large.png",
+    "repair_after_action.png",
+    "repair_after_action_large.png",
+    "festival_flour.png",
+    "festival_flour_large.png"
+  ],
+  "quest_snapshots": {
+    "opening": {
+      "version": 1,
+      "stage": "done"
+    },
+    "halden": {
+      "version": 1,
+      "stored_sacks": [
+        0,
+        1,
+        2
+      ],
+      "carried_sack": null,
+      "concluded": true,
+      "departed": true
+    },
+    "elira": {
+      "version": 1,
+      "lantern": "table"
+    },
+    "venn": {
+      "version": 2,
+      "inspected": [
+        "pin",
+        "channel"
+      ],
+      "method": "magicks",
+      "repaired": true,
+      "magicks_failed": true
+    },
+    "opening_conclusion": {
+      "version": 1,
+      "stage": "done"
+    },
+    "mill": {
+      "version": 1,
+      "inspected": [
+        "mechanism",
+        "race",
+        "intake"
+      ],
+      "prepared": true,
+      "spell_done": true,
+      "encouraged": true,
+      "restored": true,
+      "verified": true,
+      "resolved": true
+    }
+  }
+}

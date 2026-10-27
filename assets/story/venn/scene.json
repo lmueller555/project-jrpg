@@ -2,37 +2,109 @@
   "arrival": [
     {
       "speaker": "venn_mother",
-      "text": "Please thank Serene. The little one's finally keeping food down."
+      "text": "Caelan. Is that from the sanctuary?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Serene asked me to bring these round. How’s the little one?"
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "*with relief* Finally keeping food down. We’ve had a quieter morning, thank the gods."
+    },
+    {
+      "speaker": "caelan",
+      "text": "That’s good to hear."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "Please thank Serene for us. I meant to come down myself, but—"
+    },
+    {
+      "speaker": "caelan",
+      "text": "*gently* You’ve had enough to manage."
     },
     {
       "speaker": "venn_father",
-      "text": "Now if only the channel would cooperate."
+      "text": "If this channel would cooperate, we might get a few things finished."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "What’s happened now?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "*sighs* The gate’s caught. There’s water in the brook and hardly any reaching the far end of our plot. I can’t keep carrying buckets across all afternoon."
     },
     {
       "speaker": "caelan",
       "text": "May I take a look?"
     },
     {
+      "speaker": "venn_father",
+      "text": "Please. It’s east of the cottage. Look at the pin, then the channel below it."
+    },
+    {
       "speaker": "venn_mother",
-      "text": "Please do. Our tools aren't much, but they're yours to borrow."
+      "text": "Borrow what you need from the tool box."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’ll see what I can do."
     }
   ],
   "resolution": [
     {
       "speaker": "venn_father",
-      "text": "They've got pumps in the capital that could fill these channels in half the time."
+      "text": "There it goes. That should reach the far end now."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "One less thing to worry about."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Has it been catching often?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Often enough. They’ve got pumps in the capital that could fill these channels in half the time."
     },
     {
       "speaker": "venn_mother",
       "text": "And payments that would take twice as long to finish."
     },
     {
+      "speaker": "venn_father",
+      "text": "*defensively* I know. I’m only saying it would be useful."
+    },
+    {
       "speaker": "caelan",
-      "text": "For today, at least, we've got the water moving again."
+      "text": "For today, at least, you’ve got the water moving again."
     },
     {
       "speaker": "venn_mother",
-      "text": "You've done us a kindness. Let Serene know we'll be all right."
+      "text": "You’ve done us a kindness. Let Serene know we’ll be all right."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I will. I hope we see you at the festival."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "We’ll see how the little one feels. I’d like that."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "And if we do get there, I intend to sit down for a while."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "*with a small laugh* You say that now."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’ll leave you to it. Take care."
     }
   ],
   "reminder": [
@@ -48,13 +120,13 @@
   "pin": [
     {
       "speaker": "caelan",
-      "text": "The pin's caught at an angle. I'll need to take the pressure off before I set it straight."
+      "text": "The pin’s caught at an angle. I’ll need to take the pressure off before I set it straight."
     }
   ],
   "channel": [
     {
       "speaker": "caelan",
-      "text": "Twigs have collected below the gate. Even a little water would carry them clear."
+      "text": "Twigs have collected below the gate. I’ll need to clear those, too."
     }
   ],
   "choice": [
@@ -66,19 +138,19 @@
   "after": [
     {
       "speaker": "venn_mother",
-      "text": "Please let Serene know we'll be all right. Thank you, Caelan."
+      "text": "Please let Serene know we’ll be all right. Thank you, Caelan."
     }
   ],
   "hands_full": [
     {
       "speaker": "caelan",
-      "text": "I should set Elira's lantern down safely before I take anything else in hand."
+      "text": "I should set Elira’s lantern down safely before I take anything else in hand."
     }
   ],
   "magicks_failed": [
     {
       "speaker": "caelan",
-      "text": "I can't move it. I'll need the tools."
+      "text": "*quietly* I can’t move it. I’ll need the tools."
     }
   ]
 }

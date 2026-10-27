@@ -148,6 +148,11 @@ Continue preserves the opening checkpoint without replaying finished scenes.
 Saves from before this opening was added keep their existing location/progress;
 choose **New Game** to experience the new beginning. See [story implementation](docs/STORY_IMPLEMENTATION.md).
 
+The opening dialogue introduces the household names, their work and needs,
+and the bridges or terrace that lead to them. Festival of Light preparations
+connect the deliveries, Halden’s flour and Mira’s repair work. Spoken reminders
+repeat the destinations, and brief emotional cues appear as literal `*emotes*`.
+
 Tomas now joins Caelan after acceptance and follows through town and doors.
 Approach Halden in his cottage to deliver the medicine, then use **E** to move
 three sacks from the entry to the dry pallet; Tomas carries the middle sack.
@@ -156,16 +161,17 @@ returns to his preparations. Elira and Venn unlock in either order. Elira's visi
 is playable: deliver her supplies, use **E** at the stool to retrieve her memorial
 lantern, set it on her table with **E**, then speak with her. At the Venn cottage,
 deliver the recovery supplies to either parent. Use **E** to inspect the gate pin
-and blocked channel east of their house, then click a repair choice. Both borrowed
-tools and modest magicks restore the flow. Return to the family to finish the
-visit. Visiting a house never completes a task.
+and blocked channel east of their house, then click a repair choice. Borrowed
+tools restore the flow. A magick attempt produces a trace of energy but fails
+to move the current; Caelan then completes the repair with tools. Return to the
+family to finish the visit. Visiting a house never completes a task.
 See [Halden](docs/HALDEN_VISIT.md), [Elira](docs/ELIRA_VISIT.md) and [Venn](docs/VENN_VISIT.md).
 
 After all three visits, report to Serene. She returns to the sanctuary hall,
 where Halden arrives through the courtyard door with news that the mill wheel
 has stopped. Finish their exchange to complete the errand and reveal
 **A Little Trouble at the Mill**, with an objective pointing to Mira's workshop.
-The current playable story ends at that handoff. Older saves that already turned
+The mill quest continues from that handoff. Older saves that already turned
 in the errands receive the missing arrival without repeating the household work.
 See the [conclusion preview](docs/reviews/opening_conclusion/README.md).
 

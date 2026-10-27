@@ -249,3 +249,12 @@ Continue the shipped `serene_heard` save, choose Liam’s authored personal inte
 Completion releases Liam to household play at his actual home. Tomas walks back to the sanctuary, Serene keeps her afternoon station, and Mother continues the school workshop. Completed saves reconstruct those stations without borrowing Liam again or replaying completion. Prior repairs and village preparations persist. New Game releases the final cast and removes the finished prop. MQ05 is not registered and the day does not advance automatically.
 
 See [the attributed PR4 script](narrative/game_01/CH01_MQ04_PR4.md), [production-game captures](reviews/lantern_finish/README.md), and `tools/verify_lantern_full_quest.py` for the uninterrupted full four-part route.
+
+
+## Opening dialogue through MQ02
+
+The playable breakfast, Serene briefing and report, household scenes, mill handoff and complete MQ02 dialogue now establish the people and Festival of Light preparations on the main route. Serene names each household and its need, distinguishes the upper and southern bridges, and identifies the eastern terrace. Halden’s flour supports tomorrow’s baking; Mira’s repair work and workshop are established before her first encounter. Literal asterisk-wrapped emotes add selective expressions without changing the approved sprites or animation contacts.
+
+Serene’s available-MQ02 reminder points to Mira’s workbench; MQ02 reminders follow the current investigation, intake control, repair or return stage. The longer Serene offer has an actor-presence alternative for older journeys where Tomas is elsewhere, retaining all essential directions without an offscreen speaker. Its conversation ID, explicit acceptance, supplies and quest prerequisites remain the same.
+
+`prepare_done` and `repair_done` play after the actual mill actions commit. Canceling or loading during those follow-up exchanges preserves the completed work; the current stage reminder provides any onward direction again. All existing version-one quest snapshots and the conditional Venn failure/limited mill success remain intact. See the [opening script](narrative/game_01/CH01_MQ01.md), [mill script](narrative/game_01/CH01_MQ02.md) and `tools/verify_opening_dialogue_pass.py` for fresh-game verification through both quests.

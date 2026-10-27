@@ -10,7 +10,7 @@ Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Player
 
 - **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, the sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
-- **The Festival of Returning Light** is the emotional high point of the opening.
+- **The Festival of Light** is the emotional high point of the opening.
 - **Aldric receives a credible, sympathetic introduction**; he must earn the admiration he will later jeopardize.
 - **Chapter end:** Serene learns that excavation near an ancient sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
 - **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
@@ -74,7 +74,7 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 
 **Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. Carrying his lantern for someone without anybody there is his personal intention, not a newly established universal custom or religious rule. His finished lantern keeps the chosen tower shape and an imperfect step. All four preparation segments now conclude within MQ04; tomorrow’s festival remains separate.
 
-### MQ05 — The Festival of Returning Light
+### MQ05 — The Festival of Light
 
 **Premise:** The village gathers for an observance of the belief that life force returns to the gods, paying off the people and preparations encountered in MQ04.
 

@@ -129,7 +129,7 @@ class Route(MillTriggerGeometryTests):
             self.assertEqual(self.transitions, [['eldenmere.playable', 'upstream'],
                                                 ['upstream', 'eldenmere.playable']])
             main = ('reunion', 'mechanism', 'race', 'diagnosis', 'intake', 'prepare',
-                    'spell_intro', 'encouragement', 'repair', 'verify', 'resolution')
+                    'prepare_done', 'spell_intro', 'encouragement', 'repair', 'repair_done', 'verify', 'resolution')
             for kind in main:
                 identifier = 'mill_'+kind
                 expected = len(self.g.social._make_pages(self.c.lines[kind]))

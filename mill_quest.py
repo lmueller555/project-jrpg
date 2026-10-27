@@ -209,6 +209,7 @@ class MillQuest:
             self.mira.request_conversation(self.mira.facing)
         def finished():
             self.dialogue = None;self.mira.end_conversation()
+            if kind == 'repair_done':self.release_pose()
             if callback is not None:callback()
         result = self.game.social.start_script(self.lines[kind], finished, 'mill_'+kind)
         self.dialogue = kind if result else None
@@ -218,6 +219,7 @@ class MillQuest:
     def on_dialogue_cancelled(self, identifier):
         if identifier and identifier.startswith('mill_'):
             self.dialogue = None;self.mira.end_conversation()
+            if identifier == 'mill_repair_done':self.release_pose()
 
     def can_speak(self, identifier):
         if identifier in ('mira_worker', 'halden') and self.action:return False
@@ -236,7 +238,11 @@ class MillQuest:
             if self.active:
                 if self.spell_done and not self.encouraged and self.game.world is self.upstream:
                     return self._encouragement()
-                return self._speak('reminder')
+                reminder = {'diagnose': 'diagnose', 'reach_intake': 'intake',
+                            'prepare_intake': 'prepare', 'small_spell': 'spell',
+                            'repair_intake': 'repair', 'return_mill': 'verify',
+                            'report': 'report'}.get(self.stage)
+                return self._speak('reminder_'+reminder if reminder else 'reminder')
             if self.resolved:return self._speak('after')
             return None
         if actor is self.halden:
@@ -525,7 +531,9 @@ class MillQuest:
         duration = (sum(r['duration_ms'] for r in self.cast['animations'].values())/1000 if kind == 'spell' else 1.2 if kind == 'prepare' else 2.4)
         self._sync_props()
         if time<duration:return
-        self.action = None;self.release_pose();self.mira.moving = False
+        self.action = None
+        if kind != 'repair':self.release_pose()
+        self.mira.moving = False
         if kind == 'prepare':self.prepared = True;self._complete('prepare_intake')
         elif kind == 'spell':
             self.spell_done = True;self._complete('small_spell')
@@ -535,6 +543,14 @@ class MillQuest:
             self.game.social.flags.add('CH01_MQ02_MILL_RESTORED');self._stage_halden()
         self._save()
         if kind == 'spell':self._encouragement()
+        elif kind == 'prepare':self._speak('prepare_done')
+        elif not self._speak('repair_done'):self.release_pose()
+
+    def _holding_repair_pose(self):
+        return (self.dialogue == 'repair_done' and self._player_pose and
+                self.game.world is self.upstream and not self.game.player.moving and
+                self.game.player.position.distance_to(self.layout['action_positions']['repair'])<.2 and
+                self.game.social.active and self.game.social.page['source_line'] == 0)
 
     def _align_player(self, goal, seconds):
         """Walk around the recess and controls from any valid nearby approach."""
@@ -564,6 +580,7 @@ class MillQuest:
 
     def update(self, seconds):
         if self.game.map_open or self.game.quest_ui.journal_open:return
+        if self.dialogue == 'repair_done' and not self._holding_repair_pose():self.release_pose()
         if self.active:
             self.mira.quest_mode = True;self.mira.story_following = True
             if self.action:self._action_update(seconds)
@@ -580,7 +597,8 @@ class MillQuest:
         self._sync_props()
 
     def draw_world(self, canvas, camera):
-        if self.action != 'repair' or self.action_time <= 0 or self.game.world is not self.upstream:return
+        repairing = self.action == 'repair' and self.action_time>0
+        if (not repairing and not self._holding_repair_pose()) or self.game.world is not self.upstream:return
         # Rope joins the approved chest-height grip to the lever Mira holds.
         hand = self.game.player.position+pygame.Vector2(2, -11)
         grip = self.layout.get('lever_grip', [498, 374])
