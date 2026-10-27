@@ -131,6 +131,26 @@ class QuestLog:
                     record.get('completion_text', 'Your work here is complete.'))
         return True
 
+    def complete_and_turn_in(self, identifier, objective_id, giver_id=None):
+        """Finish the last task and its authored closing scene together.
+
+        A closing scene can both finish an objective and receive its report.
+        Check everything before mutation, and emit only the completed notice:
+        no saved or visible ready-to-report state can interrupt that ending.
+        Omitting the giver follows ``turn_in``'s scripted-report convention.
+        """
+        if self.objective_status(identifier, objective_id) != 'active':return False
+        record = self.definitions[identifier]
+        if giver_id is not None and giver_id != record['giver']:return False
+        state = self.states[identifier]
+        objectives = [item['id'] for item in record['objectives']]
+        if set(objectives)-set(state['completed_objectives']) != {objective_id}:return False
+        state['completed_objectives'] = objectives
+        state['status'] = 'completed'
+        self._event('completed', identifier,
+                    record.get('completion_text', 'Your work here is complete.'))
+        return True
+
     def marker_for(self, npc_id):
         statuses = [self.status(identifier) for identifier, record in self.definitions.items()
                     if record['giver'] == npc_id]

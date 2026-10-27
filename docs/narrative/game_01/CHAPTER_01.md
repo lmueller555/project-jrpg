@@ -70,7 +70,9 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 
 **PR3 staging:** Collect the frame and drawing explicitly from Mira, then return to Liam’s home for food, rest and a loose paper-panel trial. His father hosts while his mother remains at the school; the existing Daisy keeps her independent household behavior. A quiet brother exchange grows from Tomas’s offer to carry Elira’s lantern. Liam’s questions lead to Serene, who explains returning life and remembrance as sincere local faith, without exposing hidden cosmology or settling consciousness. The frame and papers stay at home, unlit and unfinished. MQ04 remains active with its first six objectives complete. See the [PR3 implementation script](CH01_MQ04_PR3.md).
 
-**Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. The proposed custom of carrying a lantern for someone without a person to carry one remains a proposal for the concluding segment, not established doctrine in PR1.
+**PR4 staging:** Return from Serene’s hall to Liam’s home, where his father has kept the materials safe. Liam chooses to carry his lantern for someone without anybody there to carry a light for them. Use his larger practice stairs and window to finish the same unlit tower, with adult help fastening the covering. After its careful lift and inspection, take only the lantern to his mother at the actual school. Liam explains the workmanship before his personal purpose. His mother remains to finish school work while the three return home and safely put the lantern away. The acknowledged farewell completes MQ04; Liam stays home, Tomas returns to sanctuary preparations and MQ05 does not begin automatically. See the [PR4 implementation script](CH01_MQ04_PR4.md).
+
+**Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. Carrying his lantern for someone without anybody there is his personal intention, not a newly established universal custom or religious rule. His finished lantern keeps the chosen tower shape and an imperfect step. All four preparation segments now conclude within MQ04; tomorrow’s festival remains separate.
 
 ### MQ05 — The Festival of Returning Light
 
@@ -134,7 +136,7 @@ Mechanisms and magicks must obey conservation of aether. The festival's beliefs 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
 2. Determine the introductory gameplay systems and whether any combat is appropriate this early.
 3. Identify the exact local dispute resolved by Aldric and why Caelen admires him.
-4. Develop MQ04’s remaining approved segments, the festival’s precise religious practice, the personal scene between Caelan and Tomas, and MQ05’s inciting event.
+4. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
 5. Establish Serene's legitimate basis for caution, without giving her forbidden saga knowledge.
 6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
 7. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

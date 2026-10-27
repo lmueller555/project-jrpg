@@ -179,10 +179,10 @@
       "summary": "Help Liam make his first lantern of his own and discover what the Festival of Returning Light means to his neighbours.",
       "available_tracker_text": "Meet Tomas by the sanctuary lantern supplies.",
       "accept_text": "Join the school’s festival preparations with Tomas.",
-      "report_text": "Let Liam show his mother his finished lantern.",
+      "report_text": "Show Mother the lantern, then put it away safely at home.",
       "completion_text": "Liam is ready to carry his own lantern at the festival.",
       "script_reference": "docs/narrative/game_01/CH01_MQ04.md",
-      "implementation_note": "The school, workshop, village visits, home break and sanctuary conversation are playable. MQ04 stays active at serene_heard with its first six objectives complete; final purpose, covering and return to mother follow separately.",
+      "implementation_note": "The full four-part quest is playable: school and workshop, village visits, home break and sanctuary conversation, personal purpose and covering, a school visit to Mother, and safe storage at home. MQ04 completes at done with all eight objectives. The unlit lantern persists; the festival starts in a later quest.",
       "objectives": [
         {
           "id": "join_preparations",
@@ -240,8 +240,8 @@
         },
         {
           "id": "show_mother",
-          "text": "Let Liam show his mother what he has made.",
-          "tracker_text": "Return to Liam’s mother together.",
+          "text": "Let Liam show his mother what he made, then put the lantern away safely at home.",
+          "tracker_text": "Show Mother the lantern and return it safely home.",
           "requires": [
             "finish_lantern"
           ]

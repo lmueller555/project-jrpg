@@ -120,29 +120,31 @@ class LiamDaisyPlay:
         if self.pending_liam_owner is owner:self.pending_liam_owner=None
         if self.liam_owner is owner:self.liam_owner=None
         if reset:
-            for routine in getattr(self.game,'block_routines',()):
-                if routine.shared is self:routine.reset_for_story()
-            if self.active:
-                # Reset/Continue establishes a fresh ambient household, just as
-                # its unpersisted clocks do. Never touch an independently held bone.
-                for actor in (self.liam,self.daisy):
-                    for world in self.game.scenes.values():
-                        if actor in world.npcs:world.npcs.remove(actor)
-                    self.home.npcs.append(actor);self.worlds[actor]=self.home
-                self.daisy.position.update(self.daisy.behavior['home'])
-                self.daisy._release();self.daisy.activity=None
-                self.daisy._transition('rest',self.daisy._sample('rest_ms'))
-                self._finish_yield()
-            for world in self.game.scenes.values():
-                if self.liam in world.npcs:world.npcs.remove(self.liam)
-            self.home.npcs.append(self.liam);self.worlds[self.liam]=self.home
-            self.liam.position.update(self._liam_home_position)
-            self.liam.work_renderer=None
+            self.reset_household()
         self.routes.pop(self.liam,None)
         self.liam.action=None;self.liam.action_ms=0;self.liam.sort_y=None
         self.liam.moving=False;self.liam.running=False;self.liam.story_following=False
         self.cooldown_ms=max(self.cooldown_ms,5000)
         return True
+
+    def reset_household(self):
+        """Reset a journey after an outing has already released the child."""
+        for routine in getattr(self.game,'block_routines',()):
+            if routine.shared is self:routine.reset_for_story()
+        if self.active:
+            # Do not touch Daisy's independent bone ownership.
+            for actor in (self.liam,self.daisy):
+                for world in self.game.scenes.values():
+                    if actor in world.npcs:world.npcs.remove(actor)
+                self.home.npcs.append(actor);self.worlds[actor]=self.home
+            self.daisy.position.update(self.daisy.behavior['home'])
+            self.daisy._release();self.daisy.activity=None
+            self.daisy._transition('rest',self.daisy._sample('rest_ms'))
+            self._finish_yield()
+        for world in self.game.scenes.values():
+            if self.liam in world.npcs:world.npcs.remove(self.liam)
+        self.home.npcs.append(self.liam);self.worlds[self.liam]=self.home
+        self.liam.position.update(self._liam_home_position);self.liam.work_renderer=None
 
     def _finish_yield(self):
         d=self.daisy;l=self.liam

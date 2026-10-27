@@ -63,11 +63,14 @@ class LanternRest:
 
     @property
     def frame_location(self):
+        if hasattr(self.c, 'finish_part') and self.c.finish_part.active:return self.c.finish_part.frame_location
         if self.c.stage not in REST_STAGES or self.c.stage == 'collecting_route':return 'workshop'
         return 'held' if self.c.stage == 'materials_collected' else 'home'
 
     @property
-    def paper_location(self):return 'satchel' if self.frame_location == 'held' else self.frame_location
+    def paper_location(self):
+        if hasattr(self.c, 'finish_part') and self.c.finish_part.active:return 'home'
+        return 'satchel' if self.frame_location == 'held' else self.frame_location
 
     def reset(self):self.zone = None;self.work_time = 0.
 
@@ -282,13 +285,20 @@ class LanternRest:
         self._clear_liam_pose()
 
     def surface_prop_visible(self, prop):
-        if not self.c.eligible or self.frame_location != 'home':return False
+        if not self.c.eligible:return False
+        finish = getattr(self.c, 'finish_part', None)
+        if finish and finish.active:
+            if prop['id'] in ('home_frame', 'home_snack'):return False
+            if prop['id'] == 'home_papers' and any(p['id'] == 'final_panel' and finish.surface_prop_visible(p) for p in finish.surface_props):return False
+            return self.paper_location == 'home'
+        if self.frame_location != 'home':return False
         if prop['id'] == 'home_snack':return self.c.stage == 'materials_home'
         if prop['id'] == 'home_papers':return self.c.stage != 'materials_home'
         return True
 
     def sync_props(self):
-        tried = self.c.stage in REST_STAGES and REST_STAGES.index(self.c.stage)>=REST_STAGES.index('paper_tried')
+        tried = ((self.c.stage in REST_STAGES and REST_STAGES.index(self.c.stage)>=REST_STAGES.index('paper_tried'))
+                 or (hasattr(self.c, 'finish_part') and self.c.finish_part.active))
         for prop in self.surface_props:
             states = prop['states'];key = 'revised' if tried else 'smudged' if self.c.action == 'rest_draft' or self.c.dialogue == 'paper_practice' else 'clean'
             if prop['id'] == 'home_snack':key = 'used' if self.c.stage not in ('materials_collected', 'materials_home') else 'ready'

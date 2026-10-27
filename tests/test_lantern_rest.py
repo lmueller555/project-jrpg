@@ -313,6 +313,7 @@ class LanternRestTests(unittest.TestCase):
         self.g.quest_ui.selected_quest = LANTERN
         self.assertFalse(any(text.startswith(('Next:', 'Later:')) for text, *_ in self.g.quest_ui._journal_rows()))
         self.assertNotIn(self.c.marker_for('mother_serene'), ('!', '?'))
+        self.assertEqual(self.c.marker_for('liam'), '?')
 
     def test_reloading_each_committed_checkpoint_restores_material_location_and_scene(self):
         steps = (('break_invitation', 'break_invitation', 'eldenmere.playable', 'collecting_route', 'workshop'),
