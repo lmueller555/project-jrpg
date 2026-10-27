@@ -21,7 +21,7 @@ from daisy_bone import DaisyBone
 from well_routine import DrawingWell
 from social import SocialSystem
 from title_screen import TitleScreen
-from quests import QuestLog, MILL_QUEST, REGENT_QUEST
+from quests import QuestLog, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
 from quest_ui import QuestUI
 from save_game import SaveStore
 from opening import OpeningSequence
@@ -39,6 +39,7 @@ from venn_visit import VennVisit
 from opening_conclusion import OpeningConclusion
 from mill_quest import MillQuest
 from regent_quest import RegentQuest
+from lantern_quest import LanternQuest
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -425,7 +426,8 @@ class Game:
         self.opening_conclusion=OpeningConclusion(self)
         self.mill_quest=MillQuest(self)
         self.regent_quest=RegentQuest(self)
-        self.household_visits=(self.regent_quest,self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
+        self.lantern_quest=LanternQuest(self)
+        self.household_visits=(self.lantern_quest,self.regent_quest,self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -446,6 +448,7 @@ class Game:
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
+                           'lantern_quest':self.lantern_quest.to_dict(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
@@ -513,7 +516,9 @@ class Game:
                 set(data['quests']['quests'].get('CH01_MQ02',{}).get('completed_objectives',[])) <= {'meet_mira'}) and
                ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked') and
                (RegentQuest.valid_journey(data) if 'regent_quest' in data else
-                data['quests']['quests'].get(REGENT_QUEST,{}).get('status','locked') in ('locked','available')))
+                data['quests']['quests'].get(REGENT_QUEST,{}).get('status','locked') in ('locked','available')) and
+               (LanternQuest.valid_journey(data) if 'lantern_quest' in data else
+                data['quests']['quests'].get(LANTERN_QUEST,{}).get('status','locked') in ('locked','available')))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -566,6 +571,7 @@ class Game:
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
         self.regent_quest.release_pose()
+        self.lantern_quest.release_pose()
         if data is None:
             self.quests.restore(QuestLog().to_dict())
             self.inventory=Inventory()
@@ -616,6 +622,9 @@ class Game:
         if self.quests.status(MILL_QUEST)=='completed' and self.quests.status(REGENT_QUEST)=='locked':
             self.quests.unlock(REGENT_QUEST);self.quests.drain_events()
         self.regent_quest.restore(data.get('regent_quest') if data else None)
+        if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
+            self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()
+        self.lantern_quest.restore(data.get('lantern_quest') if data else None)
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -647,6 +656,7 @@ class Game:
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
+                           'lantern_quest':self.lantern_quest.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(self.player.position),'facing':self.player.facing},
@@ -916,7 +926,7 @@ class Game:
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
         self.opening.on_enter_scene()
-        for owner in (self.mill_quest,self.regent_quest):
+        for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
             hook=getattr(owner,'on_enter_scene',None)
             if hook is not None:hook(origin,door.data)
         self.save_progress()
@@ -944,7 +954,7 @@ class Game:
         self.world=destination;self.player.position.update(spawn)
         self.player.facing=link.get('arrival_facing','front');self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.3
-        for owner in (self.mill_quest,self.regent_quest):
+        for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
             hook=getattr(owner,'on_enter_scene',None)
             if hook is not None:hook(origin,link)
         self.camera.reset();self.save_progress();return True

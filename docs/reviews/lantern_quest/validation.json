@@ -1,0 +1,22 @@
+{
+  "full_suite": {
+    "tests": 568,
+    "result": "passed"
+  },
+  "mq04_integration_tests": 23,
+  "actor_handoff_tests": 11,
+  "main_scenes": 9,
+  "dialogue_pages": 170,
+  "construction_frames": 51,
+  "endpoint": "frame_ready",
+  "mq04_status": "active",
+  "objectives_completed": [
+    "join_preparations",
+    "build_frame"
+  ],
+  "uses_actual_game": true,
+  "normal_walking_and_school_doors": true,
+  "unlit_frame": true,
+  "normal_head_legs_feet_preserved": true,
+  "mill_running": true
+}

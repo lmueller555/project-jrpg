@@ -1,0 +1,64 @@
+{
+  "poses": {
+    "liam": "assets/story/lantern/poses/liam.json",
+    "mira": "assets/story/lantern/poses/mira.json",
+    "caelan": "assets/story/lantern/poses/caelan.json"
+  },
+  "props": [
+    {
+      "id": "craft_table",
+      "scene": "eldenmere.playable",
+      "position": [
+        636,
+        478
+      ],
+      "sort_y": 497,
+      "states": {
+        "rest": "assets/story/lantern/props/table.png"
+      },
+      "footprint": [
+        638,
+        491,
+        60,
+        6
+      ]
+    },
+    {
+      "id": "craft_surface",
+      "scene": "eldenmere.playable",
+      "position": [
+        636,
+        454
+      ],
+      "sort_y": 497,
+      "states": {
+        "drawing": "assets/story/lantern/props/drawing.png",
+        "materials": "assets/story/lantern/props/materials.png",
+        "test": "assets/story/lantern/props/test.png",
+        "partial": "assets/story/lantern/props/partial.png",
+        "frame": "assets/story/lantern/props/frame.png",
+        "lifted": "assets/story/lantern/props/lifted.png",
+        "ready": "assets/story/lantern/props/ready.png"
+      }
+    },
+    {
+      "id": "school_drawing",
+      "scene": "school",
+      "position": [
+        305,
+        262
+      ],
+      "sort_y": 280,
+      "states": {
+        "drawing": "assets/story/lantern/props/school_drawing.png"
+      }
+    }
+  ],
+  "frame": "assets/story/lantern/props/frame.png",
+  "frame_handle": [
+    5,
+    1
+  ],
+  "frame_is_lit": false,
+  "design": "Liam's small, vented tower frame; no paper or flame yet."
+}

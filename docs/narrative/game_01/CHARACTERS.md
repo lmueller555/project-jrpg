@@ -15,8 +15,8 @@ Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
 requested NPC family; their surname and quest association are unassigned.
 Their home is the new wide cottage in western Eldenmere, directly south of
-the sanctuary. His parents remain stationary residents without dialogue or
-action routines. Liam and Daisy share an ambient invitation, chase and nap
+the sanctuary. His parents remain stationary home residents during ordinary life. MQ04
+borrows his mother for the school preparation session and its dialogue. Liam and Daisy share an ambient invitation, chase and nap
 routine. Liam also builds with five wooden blocks from a toy box between the
 beds, sometimes leaving one out. Daisy can accidentally knock over his creation
 and be sent to her rug. Daisy also has indoor wandering, eating, drinking and
@@ -57,4 +57,9 @@ vest; Rowan wears rust and charcoal; Ada has a dark bob and blue dress; Pippa
 has a sandy ponytail, plum dress and blue-gray ribbon. They and eight-year-old
 Liam form the six-child classroom group. Visual designs and animation packs
 are approved. Children are placed in their homes with individual compact
-twin beds; attendance and other daily routines are a later stage.
+twin beds; ordinary attendance and other daily routines are a later stage. The MQ04
+preparation session provides quest-scoped attendance.
+
+## Festival preparation session
+
+In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning remains open until later quest segments.

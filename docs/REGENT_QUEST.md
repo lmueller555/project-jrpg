@@ -24,11 +24,11 @@ The ordered objectives are `meet_visitors`, `accompany_visit`, `welcome_party` a
 
 The stage identifies the last completed dialogue/staging transition. Dialogue pages, action clocks and path caches are transient. Leaving unread preparations cannot accept the quest, and leaving an unread political conversation cannot endorse excavation. A completed settlement is checkpointed separately from the visible cart release. Old saves with MQ02 finished become eligible for the new visit; New Game resets it.
 
-The same Mr. Venn actor participates, with his prior household progress intact. Serene and Tomas are staged for the visit without duplicating their actors. After MQ03, the controller keeps them at their courtyard festival-preparation stations until the future MQ04 implementation takes ownership; their ordinary routines remain paused during that staging. New Game releases this ownership and restores the ordinary sanctuary opening. The mill remains restored after MQ02.
+The same Mr. Venn actor participates, with his prior household progress intact. Serene and Tomas are staged for the visit without duplicating their actors. After MQ03, the controller keeps them at their courtyard festival-preparation stations until MQ04 takes ownership of Tomas for its school preparation session; their ordinary routines remain paused during that staging. The explicit Tomas handoff prevents this controller from moving or posing him after MQ04 borrows him; Serene retains her courtyard responsibilities. New Game releases this ownership and restores the ordinary sanctuary opening. The mill remains restored after MQ02.
 
 ## Chapter boundary
 
-This quest does not issue formal excavation authorization. That remains the chapter-closing event after the Festival of Returning Light. Serene does not reveal the inherited warning, and no buried mechanism or ancient identity is established here. MQ04 is the next distinct main-scenario implementation.
+This quest does not issue formal excavation authorization. That remains the chapter-closing event after the Festival of Returning Light. Serene does not reveal the inherited warning, and no buried mechanism or ancient identity is established here. MQ04 now begins with Tomas’s lantern invitation, the school preparation session and Liam’s workshop outing.
 
 ## Design rule
 

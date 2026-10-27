@@ -11,7 +11,7 @@
       "parallel_tracker_text": "Visit Elira and the Venn family.",
       "report_text": "Return to Mother Serene.",
       "completion_text": "Serene's three households have been helped.",
-      "implementation_note": "All three households, the report, Halden\u2019s arrival and the Mira handoff are playable. MQ01 completes after the mill exchange.",
+      "implementation_note": "All three households, the report, Halden’s arrival and the Mira handoff are playable. MQ01 completes after the mill exchange.",
       "objectives": [
         {
           "id": "halden",
@@ -131,7 +131,7 @@
       ],
       "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to the sanctuary.",
       "available_tracker_text": "Speak with Mother Serene about the visiting regent.",
-      "accept_text": "Meet Aldric\u2019s party by the brook.",
+      "accept_text": "Meet Aldric’s party by the brook.",
       "report_text": "Speak with Mother Serene after the visit.",
       "completion_text": "Aldric's visit has ended. Festival preparations continue.",
       "script_reference": "docs/narrative/game_01/CH01_MQ03.md",
@@ -164,6 +164,86 @@
           "tracker_text": "Speak with Mother Serene after the visit.",
           "requires": [
             "welcome_party"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CH01_MQ04",
+      "title": "A Light of His Own",
+      "giver": "tomas",
+      "initially_locked": true,
+      "requires_quests": [
+        "CH01_MQ03"
+      ],
+      "summary": "Help Liam make his first lantern of his own and discover what the Festival of Returning Light means to his neighbours.",
+      "available_tracker_text": "Meet Tomas by the sanctuary lantern supplies.",
+      "accept_text": "Join the school’s festival preparations with Tomas.",
+      "report_text": "Let Liam show his mother his finished lantern.",
+      "completion_text": "Liam is ready to carry his own lantern at the festival.",
+      "script_reference": "docs/narrative/game_01/CH01_MQ04.md",
+      "implementation_note": "The school and workshop opening is playable through the completed unlit frame. MQ04 stays active for the remaining preparation scenes.",
+      "objectives": [
+        {
+          "id": "join_preparations",
+          "text": "Join the school preparation session and agree on Liam’s outing.",
+          "tracker_text": "Join the lantern preparations at the village school.",
+          "requires": []
+        },
+        {
+          "id": "build_frame",
+          "text": "Help Liam and Mira construct his tower-shaped lantern frame.",
+          "tracker_text": "Help Liam build his lantern frame with Mira.",
+          "requires": [
+            "join_preparations"
+          ]
+        },
+        {
+          "id": "visit_neighbours",
+          "text": "See how the village is preparing its festival contributions.",
+          "tracker_text": "Visit the village preparations with Liam.",
+          "requires": [
+            "build_frame"
+          ]
+        },
+        {
+          "id": "visit_elira",
+          "text": "Spend time with Elira and her memorial lantern.",
+          "tracker_text": "Visit Elira with Liam.",
+          "requires": [
+            "visit_neighbours"
+          ]
+        },
+        {
+          "id": "take_break",
+          "text": "Take a break from the preparations with Liam and Tomas.",
+          "tracker_text": "Take a break with Liam and Tomas.",
+          "requires": [
+            "visit_elira"
+          ]
+        },
+        {
+          "id": "speak_serene",
+          "text": "Bring Liam’s questions to Mother Serene.",
+          "tracker_text": "Speak with Mother Serene.",
+          "requires": [
+            "take_break"
+          ]
+        },
+        {
+          "id": "finish_lantern",
+          "text": "Help Liam choose his lantern’s purpose and finish it.",
+          "tracker_text": "Finish Liam’s lantern together.",
+          "requires": [
+            "speak_serene"
+          ]
+        },
+        {
+          "id": "show_mother",
+          "text": "Let Liam show his mother what he has made.",
+          "tracker_text": "Return to Liam’s mother together.",
+          "requires": [
+            "finish_lantern"
           ]
         }
       ]

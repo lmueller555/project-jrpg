@@ -28,6 +28,15 @@ GROUPS = (
         ('female_02', 'Gardener / sage', 'npcs/female_02'),
         ('female_03', 'Female NPC / plum', 'npcs/female_03'),
     )),
+    ('lantern_atlas.png', 3, 3, 'lantern_children.png', (
+        ('liam', 'Liam', 'liam'),
+        ('liam_mother', "Liam's mother", 'liam_mother'),
+        ('tessa', 'Tessa', 'tessa'),
+        ('finn', 'Finn', 'finn'),
+        ('rowan', 'Rowan', 'rowan'),
+        ('ada', 'Ada', 'ada'),
+        ('pippa', 'Pippa', 'pippa'),
+    )),
 )
 
 

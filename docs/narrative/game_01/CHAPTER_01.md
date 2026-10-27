@@ -1,21 +1,21 @@
 # Game I — Chapter 1: Life in Eldenmere
 
 **Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.  
-**Version:** 1.0 (structure)  
+**Version:** 1.1 (festival preparation split)  
 **Parent:** [Act Outline](ACT_OUTLINE.md) · [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
 
 ## Approved chapter structure
 
 Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Players spend time living in **Eldenmere**, building attachment to the community and Caelen's relationships before the inciting catastrophe. The excavation disaster occurs in **Act I, Chapter 3**, not in Chapter 1.
 
-- **Four mandatory main quests**, introducing Caelen, Serene, Tomas, Mira, Aldric, the sanctuary, everyday faith, practical magicks and technology, and the political dispute.
+- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, the sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Returning Light** is the emotional high point of the opening.
 - **Aldric receives a credible, sympathetic introduction**; he must earn the admiration he will later jeopardize.
 - **Chapter end:** Serene learns that excavation near an ancient sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
 - **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
 
-Approximate pacing **targets**, not commitments: 60–90 minutes main narrative, with 30–60 minutes optional exploration/activities. Do not pad the game merely to meet a duration.
+The earlier 60–90-minute main-narrative estimate predates the approved longer festival preparation quest and is being reassessed. MQ04 now targets roughly **45–60 minutes** at a comfortable first-playthrough pace, across four implementation PRs. Duration is a playtest target, not a requirement to pad the game; the complete chapter timing remains OPEN.
 
 **Authority note:** Approving this chapter structure does not approve the precise character biographies, dialogue, town map, quest mechanics, story timings, or details of the coming disaster. The game's existing overarching restrictions still apply.
 
@@ -51,15 +51,32 @@ Approximate pacing **targets**, not commitments: 60–90 minutes main narrative,
 
 **Emotional result:** The future antagonist's character feels sincerely admirable in the present.
 
-### MQ04 — The Festival of Returning Light
+### MQ04 — A Light of His Own
 
-**Premise:** The village gathers for an observance of the belief that life force returns to the gods. Caelen helps Serene with preparations and shares a quiet moment with Tomas.
+**Premise:** On the day before the festival, Caelan and Tomas help eight-year-old Liam make his first lantern of his own. Liam has attended earlier festivals; this year he is learning their meaning consciously and taking responsibility for his own contribution. Caelan, 18, and Tomas, 14, already know the annual tradition.
 
-**Purpose:** Present faith through comforting everyday practice, celebrate community, and make the main relationships emotionally resonant.
+**Purpose:** Let the player learn through a child’s genuine curiosity, ordinary village preparations and substantial character scenes. Caelan’s involvement follows his sanctuary responsibilities, family relationships and an outing explicitly agreed with Liam’s mother, the village teacher.
 
-**Proposed staging:** Lanterns, songs, games and local conversations. Tomas shares a desire to see the wider world; Caelen expresses contentment in Eldenmere. Exact symbols, festival doctrine, lines, and interactive activities are OPEN.
+**Approved four-PR implementation sequence:**
 
-**Emotional result:** A warm, memorable high point before the conflict deepens.
+1. School preparation session, Liam’s ambitious tower drawing, agreed outing and Mira’s workshop. End with a finished unlit frame and MQ04 still active.
+2. A few substantial village preparation encounters and a remembrance scene with Elira, building on the lantern already retrieved in MQ01.
+3. A domestic break, craft frustration, quieter brother conversation and Liam’s sanctuary questions with Serene.
+4. Liam chooses his purpose, finishes the lantern and explains it to his mother. Complete MQ04 and prepare the festival handoff.
+
+**PR1 staging:** The same teacher and six children attend a special school preparation session; no general attendance schedule is established. Mira collaborates with Liam to preserve his tower design while solving practical balance, weight and ventilation problems. Tomas contributes ideas and Caelan learns to assist when asked. See the [PR1 implementation script](CH01_MQ04.md).
+
+**Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. The proposed custom of carrying a lantern for someone without a person to carry one remains a proposal for the concluding segment, not established doctrine in PR1.
+
+### MQ05 — The Festival of Returning Light
+
+**Premise:** The village gathers for an observance of the belief that life force returns to the gods, paying off the people and preparations encountered in MQ04.
+
+**Purpose:** Celebrate community, present faith through comforting everyday practice and make the main relationships emotionally resonant. Include an inciting event that motivates the narrative to move beyond Eldenmere; its exact form remains PROPOSED.
+
+**Proposed staging:** Lanterns, songs, games and local conversations. Liam carries his finished lantern. Tomas shares a desire to see the wider world; Caelan expresses contentment in Eldenmere. Detailed festival activities, dialogue and the first journey outside the village remain OPEN. The formal excavation authorization remains the current planned chapter-closing escalation; the Chapter 3 catastrophe is a separate later event.
+
+**Emotional result:** A warm, memorable high point followed by a credible reason to look beyond home.
 
 ## Optional community quests — proposed catalog
 
@@ -97,7 +114,7 @@ remain **working proposals pending character approval** unless separately approv
 
 ## Chapter pacing and prerequisites
 
-- **Mandatory spine:** MQ01 → MQ02 → MQ03 → MQ04 → closing scene.
+- **Mandatory spine:** MQ01 → MQ02 → MQ03 → MQ04 preparations → MQ05 festival → closing scene. MQ04 occurs on the preparation day; MQ05 follows the next day. PR1 ends within MQ04, without advancing time to the festival.
 - **Optional activities:** Become available naturally as the village opens up; ideally remain available through the festival where continuity permits.
 - **Player agency:** Free exploration and low-pressure activities between main sequences; avoid long mandatory exposition.
 - **No catastrophe in Chapter 1:** First a meaningful ordinary life, then Chapter 2 warnings and exploration, then Chapter 3 disaster and departure.
@@ -113,7 +130,7 @@ Mechanisms and magicks must obey conservation of aether. The festival's beliefs 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
 2. Determine the introductory gameplay systems and whether any combat is appropriate this early.
 3. Identify the exact local dispute resolved by Aldric and why Caelen admires him.
-4. Decide the festival's religious practice and the personal scene between Caelen and Tomas.
+4. Develop MQ04’s remaining approved segments, the festival’s precise religious practice, the personal scene between Caelan and Tomas, and MQ05’s inciting event.
 5. Establish Serene's legitimate basis for caution, without giving her forbidden saga knowledge.
 6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
 7. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

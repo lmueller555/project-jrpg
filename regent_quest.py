@@ -12,7 +12,7 @@ import pygame
 
 from halden_visit import point, town_path
 from npc_routines import find_path
-from quests import REGENT_QUEST, MILL_QUEST, QuestLog
+from quests import REGENT_QUEST, MILL_QUEST, LANTERN_QUEST, QuestLog
 from regent_actors import StoryActor
 from social import facing_toward
 
@@ -50,6 +50,7 @@ class RegentQuest:
         self._venn_haul_walks = self._load_venn_art(art['existing_actors']['venn_father']['art'], 'haul_walks')
         self.stage = 'idle';self.dialogue = None;self.action = None
         self.paths = {};self.retries = {};self._owned = False;self._setup = False
+        self._tomas_handed_off = False
         self._preps_ready = False;self._group_ready = False;self._aside_ready = False
         self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
         self.trail = deque(maxlen=1024);self.last_scene = None
@@ -133,6 +134,7 @@ class RegentQuest:
     def _claim(self):
         self._owned = True
         for actor in (self.serene, self.tomas):
+            if actor is self.tomas and self._tomas_handed_off:continue
             actor.story_paused = True;actor.story_following = False
             actor.end_conversation()
         for actor in self.party:actor.story_following = True
@@ -141,6 +143,7 @@ class RegentQuest:
     def restore(self, data=None):
         if data is not None and not self.valid_snapshot(data):return False
         self.release_pose();self.dialogue = None;self.action = None
+        self._tomas_handed_off = False
         self.paths.clear();self.retries.clear();self.trail.clear();self.last_scene = None
         self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
         self._preps_ready = False;self._group_ready = False;self._setup = False
@@ -179,7 +182,7 @@ class RegentQuest:
     def _setup_stage(self, force=False):
         self._claim()
         ready = [self._stage_routine(self.serene, self.points['serene'], force),
-                 self._stage_routine(self.tomas, self.points['tomas'], force)]
+                 True if self._tomas_handed_off else self._stage_routine(self.tomas, self.points['tomas'], force)]
         self._preps_ready = all(ready)
         if self.stage == 'idle':
             self._setup = self._preps_ready
@@ -332,7 +335,16 @@ class RegentQuest:
         self._complete('speak_serene')
         if not self.game.quests.turn_in(REGENT_QUEST, 'mother_serene'):return
         self.game.social.flags.add('CH01_MQ03_COMPLETE')
+        self.game.quests.unlock(LANTERN_QUEST)
         self._transition('done')
+
+    def handoff_tomas(self):
+        """MQ04 borrows the actual brother; this controller keeps Serene/cart."""
+        if self._tomas_handed_off:return
+        self._tomas_handed_off = True
+        self.paths.pop(self.tomas, None);self.tomas.end_conversation()
+        for key in ('story_sprite', 'story_draw_anchor'):
+            if hasattr(self.tomas, key):delattr(self.tomas, key)
 
     def interaction_hint(self):
         if self.stage == 'discussion' and not self._aside_ready:return 'Let Aldric step aside before speaking with Serene.'
@@ -466,6 +478,7 @@ class RegentQuest:
 
     def _pose_owned(self):
         for actor in (self.serene, self.tomas, self.venn):
+            if actor is self.tomas and self._tomas_handed_off:continue
             if actor is self.venn and (self._venn_returned or self.stage == 'idle'):continue
             if not self._owned or actor not in self._world(actor).npcs:continue
             direction = actor.facing
@@ -521,7 +534,8 @@ class RegentQuest:
         if not self._setup:
             self._setup_stage(force=False)
         if not self._setup:return
-        for actor in (*self.party, self.foreman, self.venn, self.serene, self.tomas):actor.moving = False
+        for actor in (*self.party, self.foreman, self.venn, self.serene, self.tomas):
+            if actor is not self.tomas or not self._tomas_handed_off:actor.moving = False
         if not self.dialogue:
             if self.stage == 'met':
                 self._follow_party(seconds)

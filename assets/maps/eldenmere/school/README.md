@@ -21,9 +21,11 @@ Daylight and hearth light animate; classroom objects retain their own depth
 and collision registration.
 
 Liam's mother is the teacher, recorded in the room and family metadata. This
-stage adds the building and furnished interior. Teaching, pupil attendance and
-commuting schedules are not assigned yet; the existing household routines
-continue until teaching and attendance schedules are implemented.
+stage adds the building and furnished interior. Ordinary teaching, pupil attendance and
+commuting schedules remain unassigned. MQ04 temporarily borrows the existing
+teacher and six children for a festival preparation session, then takes Liam
+and Tomas on their agreed workshop outing. This quest attendance does not
+install a general school-day simulation. See [the quest guide](../../../../docs/LANTERN_QUEST.md).
 
 ```sh
 python tools/build_eldenmere_school.py

@@ -289,6 +289,10 @@ class QuestUI:
         if opening is not None and not opening.can_speak(npc_id):return None
         conclusion = getattr(self.game, 'opening_conclusion', None)
         if conclusion is not None and not conclusion.can_speak(npc_id):return None
+        lantern=getattr(self.game,'lantern_quest',None)
+        if lantern is not None:
+            result=lantern.marker_for(npc_id)
+            if result is not NotImplemented:return result
         regent=getattr(self.game,'regent_quest',None)
         if regent is not None:
             result=regent.marker_for(npc_id)
@@ -383,7 +387,9 @@ class QuestUI:
                 rows.append((line, FOREST, self.font, 0))
         else:
             rows.append(('Your errands', FOREST, self.heading_font, 0))
+            lantern = getattr(self.game, 'lantern_quest', None) if identifier == 'CH01_MQ04' else None
             for objective in definition['objectives']:
+                if lantern is not None and objective['id'] not in lantern.journal_objectives():continue
                 progress = self.game.quests.objective_status(identifier, objective['id'])
                 prefix = {'active': 'Next: ', 'queued': 'Later: ', 'completed': 'Done: '}.get(progress, '')
                 text = prefix+objective['text']
@@ -403,6 +409,9 @@ class QuestUI:
                 for line in self.wrap(text, self.font, self.detail_viewport.width-14):
                     rows.append((line, color, self.font, 14))
                 rows.append(('', INK, self.small_font, 0))
+            if lantern is not None:
+                for line in self.wrap(lantern.journal_detail(), self.font, self.detail_viewport.width):
+                    rows.append((line, FOREST, self.font, 0))
             if status == 'ready':
                 for line in self.wrap('Return to the ? marker to report back.', self.font, self.detail_viewport.width):
                     rows.append((line, FOREST, self.font, 0))
