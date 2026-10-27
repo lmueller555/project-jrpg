@@ -1,0 +1,128 @@
+{
+  "quest_id": "CH01_MQ04",
+  "stage": "serene_heard",
+  "quest_completed": false,
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame",
+    "visit_neighbours",
+    "visit_elira",
+    "take_break",
+    "speak_serene"
+  ],
+  "dialogue_pages": 228,
+  "main_scenes": [
+    "break_invitation",
+    "collect_frame",
+    "home_welcome",
+    "snack",
+    "paper_practice",
+    "brothers",
+    "liam_questions",
+    "sanctuary_welcome",
+    "returning_life",
+    "remembering",
+    "sanctuary_close"
+  ],
+  "optional_dialogue": [],
+  "overview_frames": 240,
+  "overview_size": [
+    320,
+    229
+  ],
+  "actual_door_transitions": [
+    [
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "sanctuary_hall"
+    ]
+  ],
+  "companion_door_transitions": [
+    [
+      "liam",
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "liam_house"
+    ],
+    [
+      "mother_serene",
+      "eldenmere.playable",
+      "sanctuary_hall"
+    ],
+    [
+      "liam",
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "tomas",
+      "liam_house",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "eldenmere.playable",
+      "sanctuary_hall"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "sanctuary_hall"
+    ]
+  ],
+  "frame_ownership_changes": [
+    [
+      "workshop",
+      "held"
+    ],
+    [
+      "held",
+      "home"
+    ]
+  ],
+  "observed_carry_directions": [
+    "back",
+    "front",
+    "left",
+    "right"
+  ],
+  "seeded": "completed MQ01\u2013MQ03 and shipped MQ04 PR2 elira_visited checkpoint only",
+  "mill_running": true,
+  "festival_started": false,
+  "frame_location": "home",
+  "elira_lantern": "table",
+  "stills": [
+    "break_invitation.png",
+    "brothers.png",
+    "brothers_background.png",
+    "carrying.png",
+    "collect_frame.png",
+    "endpoint_world.png",
+    "home_welcome.png",
+    "home_world.png",
+    "liam_questions.png",
+    "materials_collected.png",
+    "materials_home.png",
+    "paper_practice.png",
+    "practice_world.png",
+    "remembering.png",
+    "returning_life.png",
+    "sanctuary_close.png",
+    "sanctuary_welcome.png",
+    "serene_belief.png",
+    "serene_remembrance.png",
+    "snack.png"
+  ],
+  "pose_board": "pose_board.png"
+}

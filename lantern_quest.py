@@ -12,6 +12,7 @@ import pygame
 from halden_visit import point, town_path
 from lantern_actors import ResidentPose
 from lantern_village import LanternVillage, VILLAGE_STAGES, VILLAGE_PREFIX
+from lantern_rest import LanternRest, REST_STAGES, REST_PREFIX
 from npc_routines import find_path
 from quests import LANTERN_QUEST, REGENT_QUEST, QuestLog
 from social import facing_toward
@@ -19,11 +20,12 @@ from social import facing_toward
 ROOT = Path(__file__).resolve().parent
 ART = ROOT/'assets/story/lantern'
 STAGES = ('idle', 'invited', 'classroom', 'designed', 'permitted', 'workshop',
-          'tested', 'assembled', 'lifted', 'frame_ready') + VILLAGE_STAGES
+          'tested', 'assembled', 'lifted', 'frame_ready') + VILLAGE_STAGES + REST_STAGES
 OBJECTIVES = ('join_preparations', 'build_frame', 'visit_neighbours', 'visit_elira',
               'take_break', 'speak_serene', 'finish_lantern', 'show_mother')
 PREFIX = {s: (2 if s == 'frame_ready' else 1 if STAGES.index(s) >= 4 else 0) for s in STAGES}
 PREFIX.update(VILLAGE_PREFIX)
+PREFIX.update(REST_PREFIX)
 
 
 class LanternQuest:
@@ -35,6 +37,7 @@ class LanternQuest:
         self.art = json.loads((ART/'art.json').read_text())
         self.shared = game.play_routines[0];self.liam = self.shared.liam
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
+        self.serene = next(a for a in game.persistent_npcs if a.data['id'] == 'mother_serene')
         self.mira = game.mill_quest.mira
         self.residents = {};self._homes = {};self._worlds = {};self.resident_poses = {}
         for scene_id, identifiers in (('liam_house', ('liam_mother',)),
@@ -72,6 +75,9 @@ class LanternQuest:
         self.lines.update(self.village.lines)
         self.halden = self.village.halden;self.venn_family = self.village.family
         self.venn_home = self.village.venn_home;self.elira_home = self.village.elira_home;self.elira = self.village.elira
+        self.rest = LanternRest(self)
+        self.rest_points = self.rest.points;self.rest_lines = self.rest.lines;self.lines.update(self.rest.lines)
+        self.liam_home = self.rest.home;self.father = self.rest.father;self.sanctuary = self.rest.sanctuary
 
     @property
     def eligible(self):return self.game.quests.status(LANTERN_QUEST) != 'locked'
@@ -100,7 +106,7 @@ class LanternQuest:
         return status == 'active' and quests.status(REGENT_QUEST) == 'completed'
 
     def _world(self, actor):
-        if actor is self.tomas:return self.game._routine_worlds[actor]
+        if actor in (self.tomas, self.serene):return self.game._routine_worlds[actor]
         if actor is self.liam:return self.shared.worlds[actor]
         if actor is self.mira:return self.game.mill_quest._mira_world
         if actor in self._worlds:return self._worlds[actor]
@@ -111,7 +117,7 @@ class LanternQuest:
             if actor in scene.npcs:scene.npcs.remove(actor)
         world.npcs.append(actor);actor.position.update(position)
         actor.scene_id = world.data['id'];actor.moving = False
-        if actor is self.tomas:self.game._routine_worlds[actor] = world
+        if actor in (self.tomas, self.serene):self.game._routine_worlds[actor] = world
         elif actor is self.liam:self.shared.worlds[actor] = world
         elif actor is self.mira:self.game.mill_quest._mira_world = world
         else:self._worlds[actor] = world
@@ -134,6 +140,7 @@ class LanternQuest:
         self._pose_actors.clear()
 
     def release_pose(self):
+        if hasattr(self, 'rest'):self.rest.release()
         self._clear_action_pose()
         if not self._owned:return
         self.shared.release_liam(self, reset=True)
@@ -178,8 +185,11 @@ class LanternQuest:
         self._player_route = None;self._player_goal = None
         self.paths.clear();self.retries.clear()
         self.village.reset()
+        self.rest.reset()
         self._ready = False;self._class_ready = False;self._gathering = False
-        self.stage = data['stage'] if data else ('elira_visited' if self.game.quests.objective_status(LANTERN_QUEST, 'visit_elira') == 'completed'
+        self.stage = data['stage'] if data else ('serene_heard' if self.game.quests.objective_status(LANTERN_QUEST, 'speak_serene') == 'completed'
+                                              else 'home_break_done' if self.game.quests.objective_status(LANTERN_QUEST, 'take_break') == 'completed'
+                                              else 'elira_visited' if self.game.quests.objective_status(LANTERN_QUEST, 'visit_elira') == 'completed'
                                               else 'neighbours_visited' if self.game.quests.objective_status(LANTERN_QUEST, 'visit_neighbours') == 'completed'
                                               else 'frame_ready' if self.game.quests.objective_status(LANTERN_QUEST, 'build_frame') == 'completed'
                                               else 'permitted' if self.game.quests.objective_status(LANTERN_QUEST, 'join_preparations') == 'completed'
@@ -203,6 +213,8 @@ class LanternQuest:
             for actor, offset in ((self.liam, (-28, 18)), (self.tomas, (28, 18))):
                 if actor is not self.liam or self._liam_claimed:
                     self._restore_station(actor, self.game.world, self.game.player.position+offset)
+        elif self.stage in REST_STAGES or self.stage == 'elira_visited':
+            self.rest.restore()
         elif self.stage in VILLAGE_STAGES:
             self.village.restore()
         else:
@@ -216,7 +228,7 @@ class LanternQuest:
         if landing is None:return False
         self._place(actor, world, landing);return True
 
-    def _save(self):self._sync_props();self.village.sync_props();self.game.save_progress()
+    def _save(self):self._sync_props();self.village.sync_props();self.rest.sync_props();self.game.save_progress()
 
     def _transition(self, stage, objective=None):
         if stage == 'frame_ready':self._clear_action_pose()
@@ -225,7 +237,7 @@ class LanternQuest:
 
     def _speak(self, kind, callback=None):
         if self.game.social.locked:return False
-        actors = (self.tomas, self.liam, self.mira, *self.residents.values(), *self.village.actors)
+        actors = (self.tomas, self.liam, self.mira, self.serene, self.father, *self.residents.values(), *self.village.actors)
         for actor in actors:
             if self._world(actor) is self.game.world:
                 actor.moving = False
@@ -250,6 +262,7 @@ class LanternQuest:
 
     def _target(self):
         if not self.eligible or self.action or not self._ready:return None
+        if self.rest.active:return self.rest.target()
         if self.stage == 'frame_ready' or self.stage in VILLAGE_STAGES:return self.village.target()
         if self.stage == 'idle':
             return 'invitation' if self.game.world is self.town and self._near(self.points['invitation'], 62) else None
@@ -268,6 +281,7 @@ class LanternQuest:
         return self._speak(target, lambda: self._finished(target))
 
     def _finished(self, kind):
+        if self.rest.finish(kind):return
         if self.village.finish(kind):return
         if kind == 'invitation':
             if self.stage != 'idle' or not self.game.accept_quest(LANTERN_QUEST):return
@@ -287,6 +301,8 @@ class LanternQuest:
 
     def try_conversation(self, actor):
         if not self.eligible:return None
+        result = self.rest.try_conversation(actor)
+        if result is not None:return result
         result = self.village.try_conversation(actor)
         if result is not None:return result
         target = self._target()
@@ -313,6 +329,8 @@ class LanternQuest:
 
     def marker_for(self, identifier):
         if not self.eligible:return NotImplemented
+        result = self.rest.marker_for(identifier)
+        if result is not NotImplemented:return result
         result = self.village.marker_for(identifier)
         if result is not NotImplemented:return result
         if identifier == 'tomas':return '!' if self.stage == 'idle' else None
@@ -323,6 +341,7 @@ class LanternQuest:
 
     def tracker_text(self):
         if not self.eligible:return ''
+        if self.rest.active:return self.rest.tracker_text()
         if self.stage in VILLAGE_STAGES:return self.village.tracker_text()
         return {'idle': 'Meet Tomas by the sanctuary lantern supplies.',
                 'invited': 'Join the lantern preparations at the village school.',
@@ -337,9 +356,11 @@ class LanternQuest:
 
     def journal_detail(self):return self.tracker_text()
 
-    def journal_objectives(self):return OBJECTIVES[:4] if self.stage in VILLAGE_STAGES else OBJECTIVES[:2]
+    def journal_objectives(self):
+        return OBJECTIVES[:6] if self.stage in REST_STAGES else OBJECTIVES[:4] if self.stage in VILLAGE_STAGES else OBJECTIVES[:2]
 
     def interaction_hint(self):
+        if self.rest.active:return self.rest.interaction_hint(self._target())
         if self.action:return 'Assembling the frame…' if self.action == 'assemble' else 'Trying the lantern’s balance…'
         if self.stage == 'frame_ready' or self.stage in VILLAGE_STAGES:return self.village.interaction_hint(self._target())
         return {'invitation': 'E: Help Tomas with the lantern preparations',
@@ -483,14 +504,16 @@ class LanternQuest:
         return self._gathering or STAGES.index(self.stage)>=5
 
     def _sync_props(self):
-        state = ('ready' if self.stage == 'frame_ready' or self.stage in VILLAGE_STAGES else
+        state = ('ready' if self.stage == 'frame_ready' or self.stage in VILLAGE_STAGES or self.stage in REST_STAGES else
                  'lifted' if self.stage == 'lifted' else
                  'lifted' if self.action == 'lift' and self.action_time > 0 else
                  'partial' if self.action == 'assemble' and self.action_time > 0 else
                  'frame' if STAGES.index(self.stage)>=7 else 'test' if self.stage == 'tested' else
                  'materials' if self.stage == 'workshop' else 'drawing')
         for prop in self.surface_props:
-            prop['surface'] = prop['states'].get(state, next(iter(prop['states'].values())))
+            if prop['id'] == 'craft_surface' and hasattr(self, 'rest') and self.rest.frame_location != 'workshop':
+                prop['surface'] = self.rest.workshop_empty
+            else:prop['surface'] = prop['states'].get(state, next(iter(prop['states'].values())))
 
     def _task_blockers(self):
         result = list(self._prior_blockers())
@@ -504,7 +527,7 @@ class LanternQuest:
         return tuple(result)
 
     def on_enter_scene(self, origin, transition):
-        self.paths.clear();self.retries.clear();self.village.reset()
+        self.paths.clear();self.retries.clear();self.village.reset();self.rest.reset()
 
     def update(self, seconds):
         if self.game.map_open or self.game.quest_ui.journal_open:return
@@ -512,6 +535,8 @@ class LanternQuest:
         self._claim()
         for actor in (self.tomas, self.liam, *self.residents.values()):actor.moving = False
         if self._mira_owned:self.mira.moving = False
+        if self.rest.active:
+            self.rest.update(seconds);self._sync_residents();self._sync_props();return
         if self.stage in VILLAGE_STAGES:
             self.village.update(seconds);self._sync_residents();self._sync_props();return
         if self.action:self._action_update(seconds)

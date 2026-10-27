@@ -1,0 +1,41 @@
+{
+  "full_suite": {
+    "tests": 612,
+    "result": "passed"
+  },
+  "rest_integration_tests": 22,
+  "serene_handoff_tests": 5,
+  "main_scenes": 11,
+  "dialogue_pages": 228,
+  "carry_directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "frame_handoffs": [
+    [
+      "workshop",
+      "held"
+    ],
+    [
+      "held",
+      "home"
+    ]
+  ],
+  "endpoint": "serene_heard",
+  "mq04_status": "active",
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame",
+    "visit_neighbours",
+    "visit_elira",
+    "take_break",
+    "speak_serene"
+  ],
+  "uses_actual_game": true,
+  "mill_running": true,
+  "frame_location": "home",
+  "covering_attached": false,
+  "festival_started": false
+}

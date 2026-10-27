@@ -186,10 +186,11 @@ class LanternVillage:
         self.gathered = self.c._ready = all(ready)
         self.sync_props()
 
-    def surface_prop_visible(self, prop):return self.c.eligible and self.active
+    def surface_prop_visible(self, prop):
+        return self.c.eligible and (self.active or self.game.quests.objective_status('CH01_MQ04', 'visit_elira') == 'completed')
 
     def sync_props(self):
-        prepared = self.c.stage in VILLAGE_STAGES and VILLAGE_PREFIX[self.c.stage] >= 3
+        prepared = self.game.quests.objective_status('CH01_MQ04', 'visit_neighbours') == 'completed'
         for prop in self.surface_props:
             states = prop['states'];key = 'selected' if prepared else 'unselected'
             prop['surface'] = states.get(key, next(iter(states.values())))

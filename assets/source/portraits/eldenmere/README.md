@@ -22,3 +22,9 @@ expression sheets are not included in this milestone.
 `aldric_master.png` is the generated head-and-shoulders master for Regent Aldric,
 matched to his MQ03 slate/navy traveling coat, pale neckcloth and brown-gray
 hair. The 72×72 export is included in `tools/export_dialogue_portraits.py`.
+
+`liam_father_master.png` is the generated head-and-shoulders master for Liam's
+father, introduced in the MQ04 home break. It follows his approved mid-thirties
+sprite identity: dark brown hair, short beard, hazel eyes, clay-red tunic and
+ivory sleeves. His personal name remains unassigned. The original square master
+is retained, and the 72×72 RGB export is reproducible with the portrait exporter.
