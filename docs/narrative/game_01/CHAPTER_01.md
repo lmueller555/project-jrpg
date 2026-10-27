@@ -66,6 +66,8 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 
 **PR1 staging:** The same teacher and six children attend a special school preparation session; no general attendance schedule is established. Mira collaborates with Liam to preserve his tower design while solving practical balance, weight and ventilation problems. Tomas contributes ideas and Caelan learns to assist when asked. See the [PR1 implementation script](CH01_MQ04.md).
 
+**PR2 staging:** Liam’s frame and drawing stay with Mira while Caelan and Tomas accompany him along the village preparation route: Halden’s working mill, the Venn family’s cottage and Elira’s cottage. Shared food tables and homebound portions show ordinary cooperation. The recovering Venn child chooses decoration colors while a parent handles the ties; tomorrow’s attendance remains uncertain. Elira’s remembrance builds on the same lantern retrieved in MQ01 and a specific memory of her husband’s poor singing. The farewell and outside reflection leave MQ04 active with its first four objectives complete. See the [PR2 implementation script](CH01_MQ04_PR2.md).
+
 **Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. The proposed custom of carrying a lantern for someone without a person to carry one remains a proposal for the concluding segment, not established doctrine in PR1.
 
 ### MQ05 — The Festival of Returning Light

@@ -243,7 +243,8 @@ class LanternQuestTests(unittest.TestCase):
         self.g.quest_ui.selected_quest = LANTERN
         rows = self.g.quest_ui._journal_rows()
         self.assertFalse(any(text.startswith(('Next:', 'Later:')) for text, *_ in rows))
-        self.assertIsNone(self.c.marker_for('mira_worker'))
+        self.assertEqual(self.c.marker_for('mira_worker'),'?')
+        self.until(lambda: self.c._target() == 'departure')
 
     def test_old_completed_regent_save_gains_mq04_without_replaying_earlier_quests(self):
         self.g.save_progress();data = json.loads(self.path.read_text())

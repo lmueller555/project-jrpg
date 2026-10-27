@@ -512,6 +512,14 @@ class MillQuest:
         self._save()
         if kind == 'spell':self._encouragement()
 
+    def return_mira_to_bench(self):
+        """Resume the existing worker's real walk home after a later scene."""
+        if self.active or not self.resolved:return False
+        self.mira.end_conversation();self.paths.clear();self.retry.clear()
+        self.mira.quest_mode = True;self.mira.story_following = True
+        self._returning = True
+        return True
+
     def update(self, seconds):
         if self.game.map_open or self.game.quest_ui.journal_open:return
         if self.active:

@@ -1,0 +1,24 @@
+{
+  "full_suite": {
+    "tests": 585,
+    "result": "passed"
+  },
+  "new_village_tests": 17,
+  "opening_regression_tests": 23,
+  "main_scenes": 11,
+  "dialogue_pages": 227,
+  "companion_door_transfers": 8,
+  "endpoint": "elira_visited",
+  "mq04_status": "active",
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame",
+    "visit_neighbours",
+    "visit_elira"
+  ],
+  "uses_actual_game": true,
+  "mill_running": true,
+  "elira_lantern": "table",
+  "frame_and_drawing": "Mira craft table",
+  "festival_started": false
+}

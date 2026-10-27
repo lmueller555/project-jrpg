@@ -1,0 +1,116 @@
+{
+  "mill": [
+    1006,
+    432
+  ],
+  "mill_liam": [
+    1024,
+    430
+  ],
+  "mill_tomas": [
+    1050,
+    430
+  ],
+  "mill_halden": [
+    1032,
+    408
+  ],
+  "venn": [
+    136,
+    212
+  ],
+  "venn_liam": [
+    126,
+    156
+  ],
+  "venn_tomas": [
+    158,
+    178
+  ],
+  "venn_mother": [
+    104,
+    178
+  ],
+  "venn_father": [
+    300,
+    202
+  ],
+  "venn_child": [
+    88,
+    138
+  ],
+  "elira": [
+    170,
+    196
+  ],
+  "elira_liam": [
+    190,
+    184
+  ],
+  "elira_tomas": [
+    230,
+    224
+  ],
+  "elira_resident": [
+    210,
+    202
+  ],
+  "reflection": [
+    672,
+    1000
+  ],
+  "reflection_liam": [
+    696,
+    1000
+  ],
+  "reflection_tomas": [
+    718,
+    1014
+  ],
+  "venn_approach": [
+    1248,
+    750
+  ],
+  "venn_door": [
+    1247.5,
+    726
+  ],
+  "venn_entry": [
+    252,
+    294
+  ],
+  "venn_exit": [
+    252,
+    306
+  ],
+  "elira_approach": [
+    672,
+    990
+  ],
+  "elira_door": [
+    671.5,
+    966
+  ],
+  "elira_entry": [
+    102,
+    294
+  ],
+  "elira_exit": [
+    102,
+    306
+  ],
+  "route": [
+    "workshop",
+    "mill",
+    "venn",
+    "elira",
+    "reflection"
+  ],
+  "scene_ids": {
+    "mill": "eldenmere.playable",
+    "venn": "venn",
+    "elira": "elira",
+    "reflection": "eldenmere.playable"
+  },
+  "registration": "Player stations use the ordinary 24x12 probe; companion stations use each existing actor probe."
+}

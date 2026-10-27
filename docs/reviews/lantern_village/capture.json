@@ -1,0 +1,119 @@
+{
+  "quest_id": "CH01_MQ04",
+  "stage": "elira_visited",
+  "quest_completed": false,
+  "completed_objectives": [
+    "join_preparations",
+    "build_frame",
+    "visit_neighbours",
+    "visit_elira"
+  ],
+  "dialogue_pages": 227,
+  "main_scenes": [
+    "departure",
+    "mill_arrival",
+    "mill_flour",
+    "venn_arrival",
+    "venn_preparations",
+    "elira_welcome",
+    "elira_lantern",
+    "elira_memory",
+    "elira_company",
+    "elira_goodbye",
+    "reflection"
+  ],
+  "optional_dialogue": [
+    "lantern_departure_after",
+    "lantern_village_tomas_waiting",
+    "lantern_walk_after_mill"
+  ],
+  "overview_frames": 242,
+  "overview_size": [
+    300,
+    215
+  ],
+  "actual_door_transitions": [
+    [
+      "eldenmere.playable",
+      "venn"
+    ],
+    [
+      "venn",
+      "eldenmere.playable"
+    ],
+    [
+      "eldenmere.playable",
+      "elira"
+    ],
+    [
+      "elira",
+      "eldenmere.playable"
+    ]
+  ],
+  "companion_door_transitions": [
+    [
+      "liam",
+      "eldenmere.playable",
+      "venn"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "venn"
+    ],
+    [
+      "tomas",
+      "venn",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "venn",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "eldenmere.playable",
+      "elira"
+    ],
+    [
+      "tomas",
+      "eldenmere.playable",
+      "elira"
+    ],
+    [
+      "tomas",
+      "elira",
+      "eldenmere.playable"
+    ],
+    [
+      "liam",
+      "elira",
+      "eldenmere.playable"
+    ]
+  ],
+  "seeded": "completed MQ01\u2013MQ03 and shipped MQ04 PR1 frame_ready checkpoint only",
+  "mill_running": true,
+  "festival_started": false,
+  "elira_lantern": "table",
+  "stills": [
+    "departure.png",
+    "elira_company.png",
+    "elira_goodbye.png",
+    "elira_lantern.png",
+    "elira_laughter.png",
+    "elira_memory.png",
+    "elira_memory_detail.png",
+    "elira_quiet.png",
+    "elira_welcome.png",
+    "elira_world.png",
+    "endpoint_world.png",
+    "mill_arrival.png",
+    "mill_flour.png",
+    "mill_world.png",
+    "reflection.png",
+    "venn_arrival.png",
+    "venn_preparations.png",
+    "venn_world.png"
+  ]
+}
