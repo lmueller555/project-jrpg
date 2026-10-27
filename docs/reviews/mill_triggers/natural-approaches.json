@@ -1,0 +1,78 @@
+{
+  "intake": {
+    "bounds": [
+      497,
+      186,
+      66,
+      63
+    ],
+    "accessible_trigger_points": 182,
+    "xrange": [
+      468,
+      520
+    ],
+    "yrange": [
+      176,
+      272
+    ],
+    "unreachable_terrain_samples": 193,
+    "bad_action_alignment_samples": []
+  },
+  "bypass": {
+    "bounds": [
+      492,
+      260,
+      36,
+      38
+    ],
+    "accessible_trigger_points": 211,
+    "xrange": [
+      460,
+      520
+    ],
+    "yrange": [
+      236,
+      324
+    ],
+    "unreachable_terrain_samples": 9,
+    "bad_action_alignment_samples": []
+  },
+  "spell": {
+    "bounds": [
+      494,
+      316,
+      54,
+      32
+    ],
+    "accessible_trigger_points": 159,
+    "xrange": [
+      464,
+      520
+    ],
+    "yrange": [
+      292,
+      372
+    ],
+    "unreachable_terrain_samples": 110,
+    "bad_action_alignment_samples": []
+  },
+  "lever": {
+    "bounds": [
+      496,
+      358,
+      44,
+      39
+    ],
+    "accessible_trigger_points": 215,
+    "xrange": [
+      464,
+      520
+    ],
+    "yrange": [
+      336,
+      420
+    ],
+    "unreachable_terrain_samples": 75,
+    "bad_action_alignment_samples": []
+  }
+}

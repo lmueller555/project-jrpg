@@ -170,6 +170,7 @@ class Capture:
         link=next(link for link in self.g.world.data['world_links']
                   if json.loads((ROOT/link['destination']).read_text())['id']==destination)
         self.walk(link['position']);self.companion()
+        if self.g.social.active:self.read()
         self.wait(lambda:self.g.transfer_cooldown==0)
         assert self.g.travel_link(link)
         self.companion();self.g.camera.reset();self.frame(300)

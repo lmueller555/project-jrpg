@@ -12,8 +12,8 @@
     576
   ],
   "spawn": [
-    168,
-    516
+    180,
+    510
   ],
   "player_probe_size": [
     24,
@@ -403,17 +403,17 @@
     {
       "id": "upstream_to_town",
       "position": [
-        168,
-        516
+        180,
+        546
       ],
       "destination": "assets/maps/eldenmere/playable/map.json",
       "spawn": [
         720,
-        192
+        60
       ],
       "arrival_facing": "front",
       "label": "Return to Eldenmere",
-      "radius": 22
+      "radius": 24
     }
   ]
 }

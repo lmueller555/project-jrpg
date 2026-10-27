@@ -12,7 +12,7 @@ has no timer, casting roll or resource charge.
 ## Playing through
 
 Speak with Mira after MQ01. Inspect the mill mechanism and its race, then finish
-the diagnosis conversation. Follow the millrace upstream and inspect the limb
+the diagnosis conversation. Take the north road to the end of the map and use **E** to continue to the upper millrace. Inspect the limb
 jammed across its intake screen. Mira sets the bypass to unload the mechanism
 while Caelan stands clear in his normal idle stance. Once the pressure is off, clear the still water trapped in the inspection recess with
 Caelan's modest spell. Only the inspection pocket clears at this point; the
@@ -30,6 +30,14 @@ The encouragement exchange branches on `venn_visit.magicks_failed`. A player
 who witnessed that failure hears Caelan's pleasure mixed with disappointment
 and Mira's grounded encouragement. A player who chose tools receives a short
 exchange about the success without an invented previous attempt.
+
+## Finding the interactions
+
+The town trail prompt sits at the northern road boundary, beyond the terrace stairs. The return prompt sits at the southern end of the upper millrace road. Both arrivals leave Caelan and Mira on clear ground outside the reverse prompt.
+
+Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. Recruitment remains beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
+
+Object interactions measure the gap between Caelan’s ground footprint and the object’s visible bounds, within 20 native pixels. The wheel reads its approved artwork metadata; intake controls read their rendered alpha bounds. Work stations are separate from interaction areas: Caelan walks around solid props into the existing action positions, preserving Mira’s hand contacts and the rope alignment. The corrected layout and both trail endpoints are reproduced by `tools/build_mill_quest.py`.
 
 ## Ownership
 
@@ -95,3 +103,5 @@ The runtime review should show the small success and encouragement close up,
 as well as the full repair route and the working mill afterward. Reaching a
 location or displaying a blue spark alone is insufficient evidence of a
 completed task.
+
+See the [interaction placement audit and native scene previews](reviews/mill_triggers/README.md) for the corrected road ends, object approaches and real-input route verification.

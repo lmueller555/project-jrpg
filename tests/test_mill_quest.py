@@ -88,7 +88,7 @@ class MillQuestTests(unittest.TestCase):
         origin=self.g.world
         link=next(l for l in origin.data['world_links']
                   if json.loads((ROOT/l['destination']).read_text())['id']==scene_id)
-        self.walk(link['position']);self.g.transfer_cooldown=0
+        self.walk(link['position']);self.read_all();self.g.transfer_cooldown=0
         self.assertTrue(self.g.travel_link(link))
         self.assertEqual(self.g.world.data['id'],scene_id)
         self.until(lambda:self.c.mira in self.g.world.npcs)

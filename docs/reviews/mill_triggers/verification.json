@@ -1,0 +1,469 @@
+{
+  "quest_id": "CH01_MQ02",
+  "completed": true,
+  "seeded": "MQ01 completed and MQ02 available only",
+  "input": "normal walking, E key events, acknowledged dialogue and production action clocks",
+  "events": [
+    {
+      "kind": "mechanism",
+      "scene": "eldenmere.playable",
+      "player": [
+        1020.0,
+        370.0
+      ],
+      "mira": [
+        1020.0,
+        408.0
+      ],
+      "hint": "E: Inspect the mill mechanism",
+      "object_bounds": [
+        1024,
+        298,
+        48,
+        48
+      ]
+    },
+    {
+      "kind": "race",
+      "scene": "eldenmere.playable",
+      "player": [
+        1080.0,
+        370.0
+      ],
+      "mira": [
+        1040.4421161347402,
+        375.6129672143394
+      ],
+      "hint": "E: Inspect the millrace",
+      "object_bounds": [
+        1056,
+        336,
+        48,
+        24
+      ]
+    },
+    {
+      "kind": "intake",
+      "scene": "upstream",
+      "player": [
+        480.0,
+        240.0
+      ],
+      "mira": [
+        480.0,
+        276.3888888888818
+      ],
+      "hint": "E: Inspect the blocked intake",
+      "object_bounds": [
+        497,
+        186,
+        66,
+        63
+      ]
+    },
+    {
+      "kind": "prepare",
+      "scene": "upstream",
+      "player": [
+        480.0,
+        288.00000000000006
+      ],
+      "mira": [
+        480.0,
+        309.188888888882
+      ],
+      "hint": "E: Set the bypass with Mira",
+      "object_bounds": [
+        492,
+        260,
+        36,
+        38
+      ]
+    },
+    {
+      "kind": "spell_intro",
+      "scene": "upstream",
+      "player": [
+        504.0,
+        354.0
+      ],
+      "mira": [
+        482.0,
+        328.20000000000005
+      ],
+      "hint": "E: Clear the inspection recess with magicks",
+      "object_bounds": [
+        494,
+        316,
+        54,
+        32
+      ]
+    },
+    {
+      "kind": "repair",
+      "scene": "upstream",
+      "player": [
+        480.0,
+        383.99999999999994
+      ],
+      "mira": [
+        483.9353663182294,
+        354.0
+      ],
+      "hint": "E: Help Mira free the intake screen",
+      "object_bounds": [
+        496,
+        358,
+        44,
+        39
+      ]
+    },
+    {
+      "kind": "verify",
+      "scene": "eldenmere.playable",
+      "player": [
+        1020.0,
+        369.99999999999994
+      ],
+      "mira": [
+        1014.0,
+        420.3115186623807
+      ],
+      "hint": "E: Watch the working mill with Mira",
+      "object_bounds": [
+        1024,
+        298,
+        48,
+        48
+      ]
+    },
+    {
+      "kind": "resolution",
+      "scene": "eldenmere.playable",
+      "player": [
+        1020.0,
+        369.99999999999994
+      ],
+      "mira": [
+        1014.0,
+        420.3115186623807
+      ],
+      "hint": "E: Speak with Halden and Mira",
+      "object_bounds": null
+    }
+  ],
+  "dialogue_pages": 44,
+  "main_scenes": [
+    "reunion",
+    "mechanism",
+    "race",
+    "diagnosis",
+    "intake",
+    "prepare",
+    "spell_intro",
+    "encouragement",
+    "repair",
+    "verify",
+    "resolution"
+  ],
+  "pages": [
+    {
+      "script": "mill_reunion",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_reunion",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_reunion",
+      "page": 2,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_reunion",
+      "page": 3,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_reunion",
+      "page": 4,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_reunion",
+      "page": 5,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_mechanism",
+      "page": 0,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_mechanism",
+      "page": 1,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_race",
+      "page": 0,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_race",
+      "page": 1,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_diagnosis",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_diagnosis",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_diagnosis",
+      "page": 2,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_diagnosis",
+      "page": 3,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_reminder",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_intake",
+      "page": 0,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_intake",
+      "page": 1,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_prepare",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_prepare",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_prepare",
+      "page": 2,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_reminder",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_spell_intro",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_spell_intro",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_encouragement",
+      "page": 0,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_encouragement",
+      "page": 1,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_encouragement",
+      "page": 2,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_encouragement",
+      "page": 3,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_repair",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_repair",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_repair",
+      "page": 2,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_reminder",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_halden_waiting",
+      "page": 0,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_halden_waiting",
+      "page": 0,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_halden_waiting",
+      "page": 0,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_halden_waiting",
+      "page": 0,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_verify",
+      "page": 0,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_verify",
+      "page": 1,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_verify",
+      "page": 2,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 0,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 1,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 2,
+      "speaker": "halden"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 3,
+      "speaker": "mira"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 4,
+      "speaker": "caelan"
+    },
+    {
+      "script": "mill_resolution",
+      "page": 5,
+      "speaker": "halden"
+    }
+  ],
+  "world_transitions": [
+    [
+      "eldenmere.playable",
+      "upstream"
+    ],
+    [
+      "upstream",
+      "eldenmere.playable"
+    ]
+  ],
+  "safe_action_alignment_samples": 51,
+  "single_mira_checks": 11,
+  "continued_saves": [
+    {
+      "name": "legacy_town_station",
+      "scene": "eldenmere.playable",
+      "position": [
+        720.0,
+        168.0
+      ],
+      "mill_progress_preserved": true
+    },
+    {
+      "name": "legacy_intake_station",
+      "scene": "upstream",
+      "position": [
+        456.0,
+        240.0
+      ],
+      "mill_progress_preserved": true
+    },
+    {
+      "name": "completed",
+      "scene": "eldenmere.playable",
+      "position": [
+        1020.0,
+        369.99999999999994
+      ],
+      "mill_progress_preserved": true
+    }
+  ],
+  "completed_objectives": [
+    "meet_mira",
+    "diagnose_mill",
+    "reach_intake",
+    "prepare_intake",
+    "small_spell",
+    "repair_intake",
+    "verify_mill",
+    "report"
+  ],
+  "quest_snapshot": {
+    "version": 1,
+    "inspected": [
+      "mechanism",
+      "race",
+      "intake"
+    ],
+    "prepared": true,
+    "spell_done": true,
+    "encouraged": true,
+    "restored": true,
+    "verified": true,
+    "resolved": true
+  },
+  "stills": [
+    "mechanism_prompt.png",
+    "race_prompt.png",
+    "town_boundary.png",
+    "intake_prompt.png",
+    "prepare_prompt.png",
+    "spell_intro_prompt.png",
+    "repair_prompt.png",
+    "upstream_boundary.png",
+    "verify_prompt.png",
+    "resolution_prompt.png",
+    "completed.png"
+  ]
+}

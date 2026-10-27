@@ -81,7 +81,8 @@ See the [earlier dialogue preview](docs/reviews/proximity_dialogue/README.md).
 Mira’s main-scenario conversations are playable in MQ02; gardener conversations remain future work.
 
 **Mira’s mill quest is playable after MQ01.** Meet her at the outdoor workbench,
-inspect the stopped mill together, then use **E** at the marked upstream trail.
+inspect the stopped mill beside its wheel and channel, then follow the north road
+to the map boundary and use **E** to reach the upper millrace.
 Help her unload the intake, move a small pocket of still water with magicks,
 and finish their encouragement exchange. Free the intake together with the
 lever and haul rope, return to the visibly running mill, and speak with Halden.
