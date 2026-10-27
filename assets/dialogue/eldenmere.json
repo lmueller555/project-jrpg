@@ -122,7 +122,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "I promised to look in on three households, but there's more here than I can leave unattended."
+              "text": "I promised to look in on three households this morning, but there’s more here than I can leave unattended."
             },
             {
               "speaker": "caelan",
@@ -130,7 +130,59 @@
             },
             {
               "speaker": "serene",
-              "text": "Halden by the mill needs medicine. Elira needs food and lamp oil. And the Venn family could use supplies while their youngest recovers."
+              "text": "*with concern* Halden first. This is his medicine. His joints have been troubling him again."
+            },
+            {
+              "speaker": "tomas",
+              "text": "He’ll tell us they’re perfectly well."
+            },
+            {
+              "speaker": "serene",
+              "text": "He probably will. He’s milling flour for the Festival of Light, and I suspect he’s trying to carry every sack himself."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Is there much left to do?"
+            },
+            {
+              "speaker": "serene",
+              "text": "Enough to keep the village kitchens waiting if he overworks himself. He should be at his cottage, just south of the mill."
+            },
+            {
+              "speaker": "tomas",
+              "text": "Across the upper bridge?"
+            },
+            {
+              "speaker": "serene",
+              "text": "Yes. Go with Caelan and see whether he needs a hand."
+            },
+            {
+              "speaker": "serene",
+              "text": "There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light."
+            },
+            {
+              "speaker": "caelan",
+              "text": "I’ll call on her."
+            },
+            {
+              "speaker": "serene",
+              "text": "She should be at home, by the southern bridge. Please ask how she’s doing while you’re there."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Of course."
+            },
+            {
+              "speaker": "serene",
+              "text": "And these supplies are for the Venns, up on the eastern terrace. Their little one’s still recovering."
+            },
+            {
+              "speaker": "tomas",
+              "text": "*more quietly* Any better?"
+            },
+            {
+              "speaker": "serene",
+              "text": "A little, last I heard. They’ve had their hands full between that and the plot."
             }
           ],
           "sets": [
@@ -146,7 +198,59 @@
               "text": "Not just yet",
               "action": "decline"
             }
-          ]
+          ],
+          "absent_actor_lines": {
+            "tomas": [
+              {
+                "speaker": "serene",
+                "text": "I promised to look in on three households this morning, but there’s more here than I can leave unattended."
+              },
+              {
+                "speaker": "caelan",
+                "text": "Who needs us?"
+              },
+              {
+                "speaker": "serene",
+                "text": "*with concern* Halden first. This is his medicine. His joints have been troubling him again."
+              },
+              {
+                "speaker": "serene",
+                "text": "He’s milling flour for the Festival of Light, and I suspect he’s trying to carry every sack himself."
+              },
+              {
+                "speaker": "caelan",
+                "text": "Is there much left to do?"
+              },
+              {
+                "speaker": "serene",
+                "text": "Enough to keep the village kitchens waiting if he overworks himself. He should be at his cottage, just south of the mill, across the upper bridge."
+              },
+              {
+                "speaker": "serene",
+                "text": "There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light."
+              },
+              {
+                "speaker": "caelan",
+                "text": "I’ll call on her."
+              },
+              {
+                "speaker": "serene",
+                "text": "She should be at home, by the southern bridge. Please ask how she’s doing while you’re there."
+              },
+              {
+                "speaker": "caelan",
+                "text": "Of course."
+              },
+              {
+                "speaker": "serene",
+                "text": "And these supplies are for the Venns, up on the eastern terrace. Their little one’s still recovering."
+              },
+              {
+                "speaker": "serene",
+                "text": "They’ve had their hands full between that and the plot."
+              }
+            ]
+          }
         },
         {
           "id": "serene_quest_report",
@@ -162,27 +266,59 @@
             },
             {
               "speaker": "caelan",
-              "text": "Halden finally accepted the medicine. Elira's bringing her lantern. The Venns have their irrigation running again."
+              "text": "Halden finally accepted the medicine. We moved his flour sacks into the dry."
             },
             {
               "speaker": "serene",
-              "text": "And how are they, aside from what you fixed?"
+              "text": "Did he let you help without an argument?"
             },
             {
               "speaker": "caelan",
-              "text": "Halden's doing more than his joints can bear. Elira misses her husband. And the Venns worry what next season will cost them."
+              "text": "Not entirely."
             },
             {
               "speaker": "serene",
-              "text": "It's easy to think our work is finished when the baskets are empty."
+              "text": "*smiles* I’d have worried if he had."
             },
             {
               "speaker": "caelan",
-              "text": "You don't think we helped?"
+              "text": "Elira has the bread and oil. She’s bringing her husband’s lantern tomorrow."
             },
             {
               "speaker": "serene",
-              "text": "Of course we did. But tomorrow they'll still be carrying the things we couldn't take from them today."
+              "text": "Good. I’m glad she wants to come."
+            },
+            {
+              "speaker": "caelan",
+              "text": "And the Venns have their supplies. The little one’s keeping food down. Their irrigation gate was caught, so I got the channel running again."
+            },
+            {
+              "speaker": "serene",
+              "text": "You’ve had a busy morning."
+            },
+            {
+              "speaker": "caelan",
+              "text": "A useful one, I think."
+            },
+            {
+              "speaker": "serene",
+              "text": "You have. And how were they, aside from what needed fixing?"
+            },
+            {
+              "speaker": "caelan",
+              "text": "Halden’s doing more than his joints can bear. Elira misses her husband. The Venns are tired—and worried about what next season will cost them."
+            },
+            {
+              "speaker": "serene",
+              "text": "I’m glad you stayed long enough to hear that."
+            },
+            {
+              "speaker": "caelan",
+              "text": "You knew I’d find more than deliveries."
+            },
+            {
+              "speaker": "serene",
+              "text": "I hoped you’d have time for people. It’s easy to think our work is finished when the baskets are empty."
             },
             {
               "speaker": "caelan",
@@ -190,7 +326,20 @@
             },
             {
               "speaker": "serene",
-              "text": "That's a good place to begin."
+              "text": "*warmly* That’s a good place to begin."
+            }
+          ]
+        },
+        {
+          "id": "serene_mira_direction",
+          "quest": {
+            "id": "CH01_MQ02",
+            "status": "available"
+          },
+          "lines": [
+            {
+              "speaker": "serene",
+              "text": "Try Mira’s workbench outside her workshop, before the upper bridge. Halden needs that mill running for tomorrow’s baking."
             }
           ]
         },
@@ -219,7 +368,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Halden by the mill needs his medicine. Take Tomas there first—he's been asking to help."
+              "text": "Halden should be at his cottage, south of the mill. Take the medicine over the upper bridge, and let Tomas help with any carrying."
             }
           ]
         },
@@ -239,7 +388,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Elira still needs the food and lamp oil. She lives by the bridge."
+              "text": "Elira still needs her bread and lamp oil. Her cottage is by the southern bridge."
             }
           ]
         },
@@ -259,7 +408,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "The Venn family is still waiting for their supplies. Their youngest is recovering."
+              "text": "The Venns are up on the eastern terrace, by their plot. Please take those supplies and ask after the little one."
             }
           ]
         },
@@ -279,7 +428,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Elira still needs the food and lamp oil, and the Venn family could use those supplies. You can visit either one next."
+              "text": "Elira still needs her bread and lamp oil, by the southern bridge. The Venns are up on the eastern terrace, by their plot. You can visit either one next."
             }
           ]
         },

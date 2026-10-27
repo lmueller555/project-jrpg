@@ -4,6 +4,8 @@
 to Mira at her existing outdoor workbench. Finishing the reunion accepts the
 quest and lets the same actor accompany Caelan.
 
+The dialogue connects Halden’s festival flour to the Festival of Light, introduces Mira’s work and friendship before the investigation, and gives the actual north-road route in speech. Stage-specific reminders repeat the next destination or control. Brief emotional cues use literal asterisks.
+
 The complete route is workbench, mill diagnosis, upstream intake, pressure
 relief, a small successful spell, encouragement, cooperative repair, verification
 of the working mill, and Halden's closing exchange. The quest is noncombat and
@@ -79,6 +81,8 @@ The optional version-one `mill_quest` journey record stores `inspected` (from
 `encouraged`, `restored`, `verified` and `resolved`. Quest state and these facts
 are validated together. Transient poses, dialogue pointers, movement paths and
 action clocks are rebuilt safely rather than serialized.
+
+The pressure-easing and water-returning dialogue follows the actual bypass and repair actions. These follow-ups do not undo completed work if canceled or interrupted.
 
 The successful spell is checkpointed before the encouragement. Leaving that
 exchange unread preserves it without replaying the spell. Completed repairs

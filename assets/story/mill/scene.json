@@ -2,99 +2,205 @@
   "reunion": [
     {
       "speaker": "mira",
-      "text": "You have the look of someone bringing me another job."
+      "text": "*sets the fitting aside* You have the look of someone bringing me another job."
     },
     {
       "speaker": "caelan",
-      "text": "Halden's wheel has stopped."
+      "text": "Could that wait a little?"
     },
     {
       "speaker": "mira",
-      "text": "That would do it. Did he say what happened?"
+      "text": "That depends. Is someone hurt?"
     },
     {
       "speaker": "caelan",
-      "text": "It was making a noise. Now it isn't."
+      "text": "No. Halden’s mill has stopped."
     },
     {
       "speaker": "mira",
-      "text": "He'll want that noise back, then. Let me put this down and we'll go."
+      "text": "Ah. I wondered when he’d ask me about that noise."
     },
     {
       "speaker": "caelan",
-      "text": "I'll come with you."
+      "text": "He came to the sanctuary himself."
+    },
+    {
+      "speaker": "mira",
+      "text": "Then it must be serious."
+    },
+    {
+      "speaker": "caelan",
+      "text": "He needs the flour ready for the Festival of Light. I think he’s already imagining everyone asking where their bread is."
+    },
+    {
+      "speaker": "mira",
+      "text": "He’ll have plenty to say if they ask him at once."
+    },
+    {
+      "speaker": "caelan",
+      "text": "He had plenty to say when it was only me."
+    },
+    {
+      "speaker": "mira",
+      "text": "*laughs* Some things keep working."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Will you take a look?"
+    },
+    {
+      "speaker": "mira",
+      "text": "Of course. Let me leave this somewhere I can find it again."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Shall I carry anything?"
+    },
+    {
+      "speaker": "mira",
+      "text": "I’ve got my tools. Come on—we’ll see what the wheel’s doing before he takes anything apart."
     }
   ],
   "mechanism": [
     {
       "speaker": "caelan",
-      "text": "The axle's still seated. I can't see anything caught in the wheel."
+      "text": "*studies the axle* The axle’s still seated. I can’t see anything caught in the wheel."
     },
     {
       "speaker": "mira",
-      "text": "Nothing here explains it stopping. Let's look at the water reaching it."
+      "text": "Neither can I. And nothing’s shifted out of place."
+    },
+    {
+      "speaker": "caelan",
+      "text": "So we leave it together?"
+    },
+    {
+      "speaker": "mira",
+      "text": "For now, yes."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Halden will be pleased."
+    },
+    {
+      "speaker": "mira",
+      "text": "Let’s give him a working mill before we tell him how pleased to be."
     }
   ],
   "race": [
     {
       "speaker": "caelan",
-      "text": "The stream's moving, but there's hardly anything coming down the millrace."
+      "text": "*frowns at the trickle* The brook’s moving, but there’s hardly anything coming down this channel."
     },
     {
       "speaker": "mira",
-      "text": "Then we'll follow the race back to its intake."
+      "text": "There should be a steady flow reaching the wheel."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Just a trickle. That won’t drive it."
+    },
+    {
+      "speaker": "mira",
+      "text": "No. We’ll need to look further upstream."
     }
   ],
   "diagnosis": [
     {
       "speaker": "mira",
-      "text": "The wheel isn't getting enough water to turn under load."
+      "text": "The wheel isn’t getting enough water to turn under load. Something’s restricting the intake."
     },
     {
       "speaker": "caelan",
-      "text": "Something's blocking the intake?"
+      "text": "A branch, perhaps?"
     },
     {
       "speaker": "mira",
-      "text": "That's where I'd look first. The path follows the race upstream."
+      "text": "Could be. We’ll know when we see it."
     },
     {
       "speaker": "caelan",
-      "text": "Let's see what's caught there."
+      "text": "We’ll need the upper path."
+    },
+    {
+      "speaker": "mira",
+      "text": "Back over the upper bridge, then north past the sanctuary steps. Take the road out of the village—the intake’s along that trail."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. Let’s see what’s caught there."
     }
   ],
   "intake": [
     {
       "speaker": "caelan",
-      "text": "That limb's wedged across the screen."
+      "text": "*points to the limb* There. That limb’s wedged across the screen."
     },
     {
       "speaker": "mira",
-      "text": "And the catch is under that trapped water. We'll take the pressure off before we touch it."
+      "text": "Look how the water’s pressing it into the bars."
+    },
+    {
+      "speaker": "caelan",
+      "text": "We won’t pull it clear like that."
+    },
+    {
+      "speaker": "mira",
+      "text": "No. We’ll take the pressure off first."
+    },
+    {
+      "speaker": "caelan",
+      "text": "And the catch?"
+    },
+    {
+      "speaker": "mira",
+      "text": "Under the water in that little stone recess. We’ll deal with it once the intake’s isolated."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Tell me where you need me."
+    },
+    {
+      "speaker": "mira",
+      "text": "I’ll set the bypass below the screen. Keep clear while I turn it."
     }
   ],
   "prepare": [
     {
-      "speaker": "mira",
-      "text": "I'll set the bypass first. Stand clear of the screen."
+      "speaker": "caelan",
+      "text": "Here?"
     },
+    {
+      "speaker": "mira",
+      "text": "*checks Caelan is clear* That’s fine. Give me a moment."
+    }
+  ],
+  "prepare_done": [
     {
       "speaker": "caelan",
-      "text": "Then we can get at the catch?"
+      "text": "The pressure’s easing."
     },
     {
       "speaker": "mira",
-      "text": "Once we clear the water left in its recess."
+      "text": "Good. We’ve still got water trapped around the catch, but the main flow’s off it now."
     }
   ],
   "spell_intro": [
     {
+      "speaker": "caelan",
+      "text": "I could move that into the drain."
+    },
+    {
       "speaker": "mira",
-      "text": "The pressure's off. There's just water trapped in this recess."
+      "text": "Just the water in the recess?"
     },
     {
       "speaker": "caelan",
-      "text": "I can try clearing it."
+      "text": "Yes. There’s nowhere for more to come through now."
+    },
+    {
+      "speaker": "mira",
+      "text": "All right. I’ll keep clear."
     }
   ],
   "encouragement_failed": [
@@ -104,11 +210,27 @@
     },
     {
       "speaker": "mira",
-      "text": "You did it. I can reach the catch now."
+      "text": "It did. I can reach the catch now."
     },
     {
       "speaker": "caelan",
-      "text": "I just wish it had worked at the Venns'."
+      "text": "*a small smile* I thought it would."
+    },
+    {
+      "speaker": "mira",
+      "text": "You sound surprised."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Pleased. Mostly."
+    },
+    {
+      "speaker": "mira",
+      "text": "And the rest?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "*his smile fades a little* I couldn’t do it at the Venns’. I wanted to spare them the trouble, and I still ended up borrowing their tools."
     },
     {
       "speaker": "mira",
@@ -116,21 +238,33 @@
     },
     {
       "speaker": "caelan",
-      "text": "Still would've been useful."
+      "text": "I know. I just wish I’d managed both."
     },
     {
       "speaker": "mira",
-      "text": "And this was useful. Give yourself that much."
+      "text": "You got their water running again, didn’t you?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yes."
+    },
+    {
+      "speaker": "mira",
+      "text": "*gently* And you’ve cleared this catch for me. Give yourself that much."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. I’ll try."
     }
   ],
   "encouragement": [
     {
       "speaker": "caelan",
-      "text": "There. It worked."
+      "text": "*smiles* There. It worked."
     },
     {
       "speaker": "mira",
-      "text": "You did it. I can reach the catch now."
+      "text": "It did. I can reach the catch now."
     },
     {
       "speaker": "caelan",
@@ -138,13 +272,25 @@
     },
     {
       "speaker": "mira",
-      "text": "Exactly where we needed it. I'll take that."
+      "text": "Exactly where we needed it."
+    },
+    {
+      "speaker": "caelan",
+      "text": "You make it sound very impressive."
+    },
+    {
+      "speaker": "mira",
+      "text": "I make it sound useful. I was going to have to scoop that out."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*laughs* Then I’m glad to have saved you the trouble."
     }
   ],
   "repair": [
     {
       "speaker": "mira",
-      "text": "I'll release the catch. Keep the rope steady, then pull when I say."
+      "text": "I’ll release the catch. Take the rope and keep it steady."
     },
     {
       "speaker": "caelan",
@@ -152,27 +298,65 @@
     },
     {
       "speaker": "mira",
-      "text": "Now."
+      "text": "Wait until I say. We want the limb clear of the screen."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*nods* I’ve got it."
+    },
+    {
+      "speaker": "mira",
+      "text": "Now. Pull."
+    }
+  ],
+  "repair_done": [
+    {
+      "speaker": "mira",
+      "text": "*with relief* There. Hold it a moment… Good. You can let go."
+    },
+    {
+      "speaker": "caelan",
+      "text": "That’s the water coming through."
+    },
+    {
+      "speaker": "mira",
+      "text": "It is. Let’s go back and see what the wheel makes of it."
     }
   ],
   "verify": [
     {
+      "speaker": "caelan",
+      "text": "*smiles* That sounds more like it."
+    },
+    {
       "speaker": "mira",
-      "text": "That's the wheel taking the load."
+      "text": "The wheel’s taking the load."
     },
     {
       "speaker": "caelan",
-      "text": "Sounds like Halden's noise is back."
+      "text": "Halden’s dreadful racket."
     },
     {
       "speaker": "mira",
-      "text": "Let's tell him before he decides to take it apart himself."
+      "text": "He’ll be calling it a lovely sound by now."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Should we let him enjoy it?"
+    },
+    {
+      "speaker": "mira",
+      "text": "After we tell him what happened. I want him to know which bits he doesn’t need to take apart."
     }
   ],
   "resolution": [
     {
       "speaker": "halden",
-      "text": "There it is. I was beginning to miss that dreadful racket."
+      "text": "*listens to the wheel* There it is. I was beginning to miss that dreadful racket."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Mira said you would."
     },
     {
       "speaker": "mira",
@@ -180,11 +364,11 @@
     },
     {
       "speaker": "halden",
-      "text": "We?"
+      "text": "*raises an eyebrow* We?"
     },
     {
       "speaker": "mira",
-      "text": "Caelan cleared the inspection recess for me. And did his share of the pulling."
+      "text": "Caelan cleared the water from the inspection recess. And did his share of the pulling."
     },
     {
       "speaker": "caelan",
@@ -192,7 +376,55 @@
     },
     {
       "speaker": "halden",
-      "text": "Then my thanks to both of you. Now I can get on with the festival flour."
+      "text": "And you listened. That helps."
+    },
+    {
+      "speaker": "mira",
+      "text": "The wheel itself was sound. You can leave it together."
+    },
+    {
+      "speaker": "halden",
+      "text": "I hadn’t started."
+    },
+    {
+      "speaker": "caelan",
+      "text": "We thought we’d best hurry."
+    },
+    {
+      "speaker": "halden",
+      "text": "Hmph. You can both laugh when the flour’s finished."
+    },
+    {
+      "speaker": "mira",
+      "text": "How much have you got left?"
+    },
+    {
+      "speaker": "halden",
+      "text": "Enough that I’d rather hear the wheel than the two of you. There are people waiting to start their festival baking."
+    },
+    {
+      "speaker": "caelan",
+      "text": "We’ll leave you to it, then."
+    },
+    {
+      "speaker": "halden",
+      "text": "Caelan."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yes?"
+    },
+    {
+      "speaker": "halden",
+      "text": "*more quietly* My thanks. To both of you."
+    },
+    {
+      "speaker": "mira",
+      "text": "You’re welcome."
+    },
+    {
+      "speaker": "halden",
+      "text": "There’ll be flour for the Festival of Light. You can tell Serene that."
     }
   ],
   "after": [
@@ -202,25 +434,67 @@
     },
     {
       "speaker": "mira",
-      "text": "It hasn't learned to finish itself."
+      "text": "*smiles* It hasn’t learned to finish itself."
     }
   ],
   "halden_after": [
     {
       "speaker": "halden",
-      "text": "Listen to that. I'll take a working mill over a quiet one."
+      "text": "*with a satisfied grunt* Listen to that. I’ll take a working mill over a quiet one."
     }
   ],
   "reminder": [
     {
       "speaker": "mira",
-      "text": "Show me what you've found."
+      "text": "We’ll work through it together. Show me what you’ve found."
     }
   ],
   "halden_waiting": [
     {
       "speaker": "halden",
-      "text": "I'll leave the checking to you and Mira."
+      "text": "I’ll leave the checking to you and Mira. There’s plenty of festival flour still to grind."
+    }
+  ],
+  "reminder_diagnose": [
+    {
+      "speaker": "mira",
+      "text": "Let’s look at the wheel and the channel beside it. We’ll know more once we’ve checked both."
+    }
+  ],
+  "reminder_intake": [
+    {
+      "speaker": "mira",
+      "text": "We need the north road, past the sanctuary steps. The intake’s along the trail beyond the village."
+    }
+  ],
+  "reminder_prepare": [
+    {
+      "speaker": "mira",
+      "text": "The bypass is below the screen. I’ll set it once you’re standing clear."
+    }
+  ],
+  "reminder_spell": [
+    {
+      "speaker": "mira",
+      "text": "The pressure’s off now. It’s just the water in that stone recess, with the drain beside it."
+    }
+  ],
+  "reminder_repair": [
+    {
+      "speaker": "mira",
+      "text": "We can reach the catch now. Take the rope by the lever when you’re ready, and I’ll release it."
+    }
+  ],
+  "reminder_verify": [
+    {
+      "speaker": "mira",
+      "text": "Let’s get back to the wheel and check it’s taking the load. Then we can give Halden some good news."
+    }
+  ],
+  "reminder_report": [
+    {
+      "speaker": "mira",
+      "text": "Halden’s by the mill. Let’s tell him what we found before he starts taking anything apart."
     }
   ]
 }

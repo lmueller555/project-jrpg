@@ -66,12 +66,24 @@
   ],
   "breakfast": [
     {
+      "speaker": "serene",
+      "text": "Enjoy a quiet breakfast while you can. Tomorrow we’ll have everyone coming and going for the Festival of Light."
+    },
+    {
       "speaker": "caelan",
-      "text": "You said that yesterday."
+      "text": "And today?"
     },
     {
       "speaker": "serene",
-      "text": "And it was true yesterday."
+      "text": "Today we make sure everything—and everyone—is ready for it."
+    },
+    {
+      "speaker": "tomas",
+      "text": "That sounds like rather more work."
+    },
+    {
+      "speaker": "serene",
+      "text": "*with a small smile* It usually is."
     }
   ],
   "inspections": {
@@ -103,31 +115,31 @@
   "acceptance": [
     {
       "speaker": "caelan",
-      "text": "I'll see to them."
+      "text": "I’ll see to them."
     },
     {
       "speaker": "serene",
-      "text": "Thank you. Take Tomas to Halden first\u2014he's been asking to help."
+      "text": "Thank you. Halden first, then visit the other two in whichever order suits you."
     },
     {
       "speaker": "tomas",
-      "text": "I have been asking to do something interesting."
+      "text": "Shall I come for all three?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Come back after Halden. I’ll need your help with the sanctuary preparations."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I was hoping for something interesting."
     },
     {
       "speaker": "serene",
       "text": "Then start by helping someone who needs you."
     },
     {
-      "speaker": "serene",
-      "text": "And Caelan? Eat something before you go."
-    },
-    {
       "speaker": "caelan",
-      "text": "I did."
-    },
-    {
-      "speaker": "serene",
-      "text": "Half a slice of bread is not a meal."
+      "text": "*to Tomas* Come on. You can decide how interesting it was afterward."
     }
   ],
   "cup_position": [
@@ -141,25 +153,53 @@
     },
     {
       "speaker": "caelan",
-      "text": "Thank you."
+      "text": "You did?"
     },
     {
       "speaker": "tomas",
-      "text": "Mother Serene wouldn't let me eat it."
+      "text": "*grins* Mother Serene wouldn’t let me eat it."
     },
     {
       "speaker": "serene",
-      "text": "Sit and eat. There'll be plenty to do before the festival."
+      "text": "Sit down, Caelan. Before your brother decides you aren’t coming."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Have you been up long?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Long enough to wish there were another pair of hands in the kitchen."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I offered."
+    },
+    {
+      "speaker": "serene",
+      "text": "You offered to taste things."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Someone ought to."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*smiles* Very public-spirited of you."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Thank you."
     }
   ],
   "kindness": [
     {
       "speaker": "caelan",
-      "text": "Your cup's here, Mother."
+      "text": "Your cup’s here, Mother."
     },
     {
       "speaker": "serene",
-      "text": "Thank you, Caelan."
+      "text": "Thank you, Caelan. Now, could you both spare me a little time?"
     }
   ]
 }

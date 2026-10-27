@@ -2,7 +2,7 @@
   "arrival": [
     {
       "speaker": "elira",
-      "text": "A delivery from Serene? I swear she thinks I live on bread and stubbornness."
+      "text": "*with a wry smile* A delivery from Serene? I swear she thinks I live on bread and stubbornness."
     },
     {
       "speaker": "caelan",
@@ -10,37 +10,85 @@
     },
     {
       "speaker": "elira",
-      "text": "Good. There's a lantern up there, if you'd be kind enough."
+      "text": "Sensible woman. I was nearly out. Come in, Caelan."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Getting ready for tomorrow?"
+    },
+    {
+      "speaker": "elira",
+      "text": "*sighs* Trying to. I put the lantern safely out of the way, and now I can’t reach the wretched thing."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Up there?"
+    },
+    {
+      "speaker": "elira",
+      "text": "Yes. The stool’s beneath the shelf. Would you fetch it for me?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Of course."
+    },
+    {
+      "speaker": "elira",
+      "text": "Gently, mind. I’ve got enough to mend without giving myself another job."
     }
   ],
   "resolution": [
     {
-      "speaker": "caelan",
-      "text": "Is this the one for your husband?"
-    },
-    {
       "speaker": "elira",
-      "text": "It is. He used to say he'd only come to hear me sing. The old liar couldn't carry a tune himself."
+      "text": "*looks over the lantern* Thank you. I can clean it here."
     },
     {
       "speaker": "caelan",
-      "text": "Does preparing it make you sad?"
+      "text": "You’re carrying this one for your husband again?"
     },
     {
       "speaker": "elira",
-      "text": "Some days. But remembering him isn't the same as losing him again."
-    },
-    {
-      "speaker": "elira",
-      "text": "You will come to the festival, won't you?"
+      "text": "I am. He used to say he only came to the Festival of Light to hear me sing."
     },
     {
       "speaker": "caelan",
-      "text": "I wouldn't miss it."
+      "text": "Did he?"
     },
     {
       "speaker": "elira",
-      "text": "Good. Tell Serene I'll bring the lantern myself."
+      "text": "*laughs* The old liar couldn’t carry a tune himself. Never stopped him joining in."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Will tomorrow be difficult?"
+    },
+    {
+      "speaker": "elira",
+      "text": "*her smile softens* Parts of it, perhaps. I still turn to tell him things. Then I remember."
+    },
+    {
+      "speaker": "elira",
+      "text": "*after a quiet moment* But remembering him isn’t the same as losing him again. There’s plenty I’m glad to remember."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’m glad you’re coming."
+    },
+    {
+      "speaker": "elira",
+      "text": "So am I. And you’ll be there?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "I wouldn’t miss it."
+    },
+    {
+      "speaker": "elira",
+      "text": "Good. Tell Serene I’ll bring the lantern myself. She’s done enough carrying things for me today."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’ll tell her."
     }
   ],
   "reminder": [
@@ -58,7 +106,7 @@
   "after": [
     {
       "speaker": "elira",
-      "text": "I'll bring the lantern myself. Thank Serene for me, won't you?"
+      "text": "I’ll bring the lantern myself. Thank Serene for me, won’t you?"
     }
   ]
 }

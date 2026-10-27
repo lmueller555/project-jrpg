@@ -28,7 +28,7 @@ The same Mr. Venn actor participates, with his prior household progress intact. 
 
 ## Chapter boundary
 
-This quest does not issue formal excavation authorization. That remains the chapter-closing event after the Festival of Returning Light. Serene does not reveal the inherited warning, and no buried mechanism or ancient identity is established here. MQ04 now begins with Tomas’s lantern invitation, the school preparation session and Liam’s workshop outing.
+This quest does not issue formal excavation authorization. That remains the chapter-closing event after the Festival of Light. Serene does not reveal the inherited warning, and no buried mechanism or ancient identity is established here. MQ04 now begins with Tomas’s lantern invitation, the school preparation session and Liam’s workshop outing.
 
 ## Design rule
 
