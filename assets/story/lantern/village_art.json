@@ -1,0 +1,43 @@
+{
+  "props": [
+    {
+      "id": "festival_flour",
+      "scene": "eldenmere.playable",
+      "position": [
+        1066,
+        380
+      ],
+      "sort_y": 410,
+      "states": {
+        "ready": "assets/story/lantern/village_props/festival_flour.png"
+      },
+      "footprint": [
+        1067,
+        400,
+        27,
+        8
+      ]
+    },
+    {
+      "id": "venn_festival_papers",
+      "scene": "venn",
+      "position": [
+        54,
+        164
+      ],
+      "sort_y": 183,
+      "states": {
+        "unselected": "assets/story/lantern/village_props/venn_papers_unselected.png",
+        "selected": "assets/story/lantern/village_props/venn_papers_selected.png"
+      }
+    }
+  ],
+  "source_sack": "assets/story/halden/sack.png",
+  "source_sack_sha256": "97e5a52bc5263b5b4df8817efa1b50ac3d432afc71d72cd997f13bfa22064302",
+  "scope": "Two small preparation props; no new residents, bodily poses or memorial lantern.",
+  "paper_colors": {
+    "yellow": "#d8ba67",
+    "blue": "#7195a8"
+  },
+  "paper_selected_after": "neighbours_visited"
+}

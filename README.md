@@ -268,4 +268,4 @@ The [watermill](assets/terrain/eldenmere/watermill/README.md) is approved follow
 
 ### Liam’s first lantern — MQ04 opening
 
-After Aldric’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. The first segment ends with his unlit tower frame ready; MQ04 remains in progress. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [complete opening dialogue](docs/narrative/game_01/CH01_MQ04.md).
+After Aldric’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. The village section ends after leaving Elira’s cottage together; MQ04 remains in progress, with Liam’s unlit frame and drawing safe at Mira’s table. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [complete opening dialogue](docs/narrative/game_01/CH01_MQ04.md).
