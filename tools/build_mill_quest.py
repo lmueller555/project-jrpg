@@ -204,25 +204,27 @@ def build_scene():
     for e in entities:overview.paste(tree,tuple(e['position']),tree)
     overviewpath=save(overview,MAP/'overview.png')
     destination='assets/maps/eldenmere/playable/map.json'
-    record={'id':'upstream','name':'Upper Millrace','kind':'exterior','size_tiles':[32,24],'tile_size':24,'size_pixels':list(SIZE),'spawn':[168,516],
+    record={'id':'upstream','name':'Upper Millrace','kind':'exterior','size_tiles':[32,24],'tile_size':24,'size_pixels':list(SIZE),'spawn':[180,510],
             'player_probe_size':[24,12],'player_draw_anchor':[12,30],'ground_frames':frames,'ground_frame_duration_ms':200,'collision':collisionpath,
             'entities':entities,'foreground':[],'npcs':[],'landmarks':[{'id':'intake','name':'Millrace intake','position':[480,288]}],
-            'overview':overviewpath,'world_links':[{'id':'upstream_to_town','position':[168,516],'destination':destination,'spawn':[720,192],'arrival_facing':'front','label':'Return to Eldenmere','radius':22}]}
+            'overview':overviewpath,'world_links':[{'id':'upstream_to_town','position':[180,546],'destination':destination,'spawn':[720,60],'arrival_facing':'front','label':'Return to Eldenmere','radius':24}]}
     write(MAP/'map.json',record)
     townpath=ROOT/'assets/maps/eldenmere/playable/map.json';town=json.loads(townpath.read_text())
     town.setdefault('exterior_scenes',{})['upstream']=rel(MAP/'map.json')
     links=town.setdefault('world_links',[]);links[:]=[l for l in links if l.get('id')!='town_to_upstream']
-    links.append({'id':'town_to_upstream','position':[720,168],'destination':rel(MAP/'map.json'),'spawn':[168,492],'arrival_facing':'back','label':'Follow the millrace upstream','radius':22})
+    links.append({'id':'town_to_upstream','position':[720,12],'destination':rel(MAP/'map.json'),'spawn':[180,510],'arrival_facing':'back','label':'Follow the millrace upstream','radius':24})
     write(townpath,town)
 
 
 def build():
     build_scene()
     props=native_props()
-    layout={'scene_id':'upstream','town_trail':[720,168],'mill_mechanism':[960,384],'mill_race':[1080,384],
-            'entrance':[168,516],'intake':[456,240],'bypass':[456,288],'spell':[480,336],'lever':[456,384],
+    layout={'scene_id':'upstream','town_trail':[720,12],'mill_mechanism':[1020,370],'mill_race':[1080,370],
+            'entrance':[180,546],'intake':[480,240],'bypass':[480,288],'spell':[480,336],'lever':[480,384],
             'mira_intake':[492,240],'mira_bypass':[492,288],'mira_spell':[492,352],'mira_lever':[492,384],
-            'mill_return':[984,408],'halden_resolution':[1032,408],
+            'mill_return':[1020,370],'halden_resolution':[1032,408],
+            'race_bounds_offset':[120,132,48,24],
+            'action_positions':{'prepare':[456,288],'spell':[480,336],'repair':[456,384]},
             'pool_rect':[494,316,54,36],'catch':[502,340],'bypass_handle':[498,278],'lever_grip':[498,374]}
     write(ART/'layout.json',layout)
     write(ART/'art.json',{'version':1,'palette_sources':['assets/terrain/eldenmere/irrigation/palette.json','assets/terrain/eldenmere/gate/palette.json'],

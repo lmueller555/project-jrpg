@@ -48,6 +48,12 @@ class MillQuest:
         sheet = self.town.image(ART+'poses/poses.png')
         self.cast_poses = {name: [sheet.subsurface(f['rect']).copy() for f in rec['frames']]
                            for name, rec in self.cast['animations'].items()}
+        self._player_route = None
+        self._approach_walk_ms = 0.
+        mill = next(e for e in self.town.data['entities'] if e['id'] == 'mill')
+        wheel = json.loads((ROOT/'assets/terrain/eldenmere/watermill/mill.json').read_text())['wheel']
+        self._wheel_bounds = pygame.Rect(wheel['position'], wheel['size']).move(mill['position'])
+        self._race_bounds = pygame.Rect(self.layout['race_bounds_offset']).move(mill['position'])
         self.surface_props = []
         art = read('art.json')
         for record in (art if isinstance(art, list) else art.get('props', [])):
@@ -124,6 +130,7 @@ class MillQuest:
         if data is not None and not self.valid_snapshot(data):return False
         self.release_pose();self.action = None;self.action_time = 0.;self.align_time = 0.
         self.dialogue = None;self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
+        self._player_route = None
         self.inspected = set(data['inspected']) if data else set()
         if data:
             for fact in FACTS:setattr(self, fact, data[fact])
@@ -172,6 +179,24 @@ class MillQuest:
 
     def _near(self, position, radius=18):
         return self.game.player.position.distance_to(position) <= radius
+
+    def interaction_bounds(self, kind):
+        """Use the actual object, independently of the actor's work station."""
+        if kind in ('mechanism', 'verify'):return self._wheel_bounds.copy()
+        if kind == 'race':return self._race_bounds.copy()
+        identifier = {'intake': 'intake_screen', 'prepare': 'bypass',
+                      'spell_intro': 'inspection_pool', 'repair': 'lever'}[kind]
+        prop = next(p for p in self.surface_props if p['id'] == identifier)
+        return prop['surface'].get_bounding_rect().move(prop['position'])
+
+    def _object_distance(self, kind):
+        target = self.interaction_bounds(kind)
+        player = self.game.world.probe_rect(self.game.player.position)
+        dx = max(target.left-player.right, player.left-target.right, 0)
+        dy = max(target.top-player.bottom, player.top-target.bottom, 0)
+        return pygame.Vector2(dx, dy).length()
+
+    def _near_object(self, kind):return self._object_distance(kind) <= 20
 
     def _with_mira(self, radius=84):
         return self._mira_world is self.game.world and self.mira.position.distance_to(self.game.player.position) <= radius
@@ -230,22 +255,22 @@ class MillQuest:
         if self.action or not self.active:return None
         if self.game.world is self.town:
             if not self._done('diagnose_mill'):
-                candidates = [('mechanism', self.points['mechanism'], 'E: Inspect the mill mechanism'),
-                              ('race', self.points['race'], 'E: Inspect the millrace')]
-                for kind, pos, hint in candidates:
-                    if self._near(pos, 25):
-                        if {'mechanism', 'race'} <= self.inspected:return 'diagnosis', 'E: Discuss the mill with Mira'
-                        return kind, hint
-            if self.restored and not self.verified and self._near(self.points['mill_station'], 44):
+                candidates = [kind for kind in ('mechanism', 'race') if self._near_object(kind)]
+                if candidates:
+                    if {'mechanism', 'race'} <= self.inspected:return 'diagnosis', 'E: Discuss the mill with Mira'
+                    pending = [kind for kind in candidates if kind not in self.inspected]
+                    kind = min(pending or candidates, key=self._object_distance)
+                    return kind, 'E: Inspect the mill mechanism' if kind == 'mechanism' else 'E: Inspect the millrace'
+            if self.restored and not self.verified and self._near_object('verify'):
                 return 'verify', 'E: Watch the working mill with Mira'
             if self.verified and self._near(self.halden.position, 44) and self.halden in self.town.npcs:
                 return 'resolution', 'E: Speak with Halden and Mira'
         if self.game.world is self.upstream and self._done('diagnose_mill'):
-            if 'intake' not in self.inspected and self._near(self.points['intake'], 25):return 'intake', 'E: Inspect the blocked intake'
-            if 'intake' in self.inspected and not self.prepared and self._near(self.points['bypass'], 25):return 'prepare', 'E: Set the bypass with Mira'
-            if self.prepared and not self.spell_done and self._near(self.points['spell'], 25):return 'spell_intro', 'E: Clear the inspection recess with magicks'
-            if self.spell_done and not self.encouraged and self._near(self.points['spell'], 36):return 'encouragement', 'E: Speak with Mira'
-            if self.encouraged and not self.restored and self._near(self.points['lever'], 25):return 'repair', 'E: Help Mira free the intake screen'
+            if 'intake' not in self.inspected and self._near_object('intake'):return 'intake', 'E: Inspect the blocked intake'
+            if 'intake' in self.inspected and not self.prepared and self._near_object('prepare'):return 'prepare', 'E: Set the bypass with Mira'
+            if self.prepared and not self.spell_done and self._near_object('spell_intro'):return 'spell_intro', 'E: Clear the inspection recess with magicks'
+            if self.spell_done and not self.encouraged and self._near(self.mira.position, 44) and self._with_mira():return 'encouragement', 'E: Speak with Mira'
+            if self.encouraged and not self.restored and self._near_object('repair'):return 'repair', 'E: Help Mira free the intake screen'
         return None
 
     def interact(self):
@@ -287,9 +312,9 @@ class MillQuest:
                          'spell': self.prepared and not self.spell_done,
                          'repair': self.encouraged and not self.restored}
         if not prerequisites.get(kind):return False
-        position = self.points[{'prepare': 'bypass', 'spell': 'spell', 'repair': 'lever'}[kind]]
-        if not self._near(position, 30):return False
+        if not self._near_object({'prepare': 'prepare', 'spell': 'spell_intro', 'repair': 'repair'}[kind]):return False
         self.action = kind;self.action_time = 0.;self.align_time = 0.;self.mira.end_conversation()
+        self._player_route = None;self._approach_walk_ms = self.game.player.walk_ms
         self.paths.pop(self.mira, None);return True
 
     def _encouragement(self):
@@ -323,7 +348,7 @@ class MillQuest:
         if not self.active:return ''
         if self.action:return self.interaction_hint()
         return {'diagnose': 'Inspect the mill mechanism and millrace with Mira.',
-                'reach_intake': 'Follow the millrace upstream with Mira. Inspect the intake.',
+                'reach_intake': 'Take the north road to the upper millrace with Mira. Inspect the intake.',
                 'prepare_intake': 'Set the bypass with Mira.',
                 'small_spell': 'Clear the trapped water from the inspection recess.',
                 'encouragement': 'Speak with Mira about the successful spell.',
@@ -475,11 +500,10 @@ class MillQuest:
 
     def _action_update(self, seconds):
         kind = self.action;key = {'prepare': 'bypass', 'spell': 'spell', 'repair': 'lever'}[kind]
-        player = self.game.player;goal = pygame.Vector2(self.points[key])
-        delta = goal-player.position
-        player_ready = delta.length()<.2
+        player = self.game.player;goal = pygame.Vector2(self.layout['action_positions'][kind])
+        player_ready = player.position.distance_to(goal)<.2
         if not player_ready:
-            player.update(delta, min(seconds, delta.length()/72), self.upstream)
+            self._align_player(goal, seconds)
         else:
             player.position.update(goal);player.moving = False;player.facing = 'right'
         mira_ready = self._move(self.layout['mira_'+key], seconds)
@@ -511,6 +535,24 @@ class MillQuest:
             self.game.social.flags.add('CH01_MQ02_MILL_RESTORED');self._stage_halden()
         self._save()
         if kind == 'spell':self._encouragement()
+
+    def _align_player(self, goal, seconds):
+        """Walk around the recess and controls from any valid nearby approach."""
+        player = self.game.player
+        if self._player_route is None:
+            route = find_path(self.upstream, player.position, goal, self.upstream.probe_size, None)
+            if route is None:return
+            self._player_route = deque(route)
+        budget = seconds
+        while self._player_route and budget>1e-7:
+            delta = pygame.Vector2(self._player_route[0])-player.position
+            if delta.length()<.04:self._player_route.popleft();continue
+            duration = min(budget, delta.length()/72)
+            player.walk_ms = self._approach_walk_ms
+            before = player.position.copy();player.update(delta, duration, self.upstream)
+            self._approach_walk_ms = player.walk_ms
+            if player.position == before:self._player_route = None;return
+            budget -= duration
 
     def return_mira_to_bench(self):
         """Resume the existing worker's real walk home after a later scene."""

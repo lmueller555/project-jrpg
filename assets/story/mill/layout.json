@@ -2,26 +2,26 @@
   "scene_id": "upstream",
   "town_trail": [
     720,
-    168
+    12
   ],
   "mill_mechanism": [
-    960,
-    384
+    1020,
+    370
   ],
   "mill_race": [
     1080,
-    384
+    370
   ],
   "entrance": [
-    168,
-    516
+    180,
+    546
   ],
   "intake": [
-    456,
+    480,
     240
   ],
   "bypass": [
-    456,
+    480,
     288
   ],
   "spell": [
@@ -29,7 +29,7 @@
     336
   ],
   "lever": [
-    456,
+    480,
     384
   ],
   "mira_intake": [
@@ -49,13 +49,33 @@
     384
   ],
   "mill_return": [
-    984,
-    408
+    1020,
+    370
   ],
   "halden_resolution": [
     1032,
     408
   ],
+  "race_bounds_offset": [
+    120,
+    132,
+    48,
+    24
+  ],
+  "action_positions": {
+    "prepare": [
+      456,
+      288
+    ],
+    "spell": [
+      480,
+      336
+    ],
+    "repair": [
+      456,
+      384
+    ]
+  },
   "pool_rect": [
     494,
     316,

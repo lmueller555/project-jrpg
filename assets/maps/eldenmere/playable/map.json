@@ -1645,16 +1645,16 @@
       "id": "town_to_upstream",
       "position": [
         720,
-        168
+        12
       ],
       "destination": "assets/maps/eldenmere/upstream/map.json",
       "spawn": [
-        168,
-        492
+        180,
+        510
       ],
       "arrival_facing": "back",
       "label": "Follow the millrace upstream",
-      "radius": 22
+      "radius": 24
     }
   ]
 }
