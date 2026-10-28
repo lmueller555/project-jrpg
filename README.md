@@ -132,7 +132,7 @@ Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
 **Escape** opens a modal pause menu during exploration, dialogue or actions.
-Characters, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
+Characters, Aether Lattice, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
 controls reference is inside Settings. Pausing holds NPC, action, camera and
 ambience clocks. Music and effects have separate sliders with percentage displays,
 mouse adjustment and
@@ -193,11 +193,29 @@ Current HP/MP and all attributes persist with the journey. Older saves without
 attributes receive the starting profile; the original 300-HP profile migrates
 to 140 HP while preserving its health proportion. New Game resets the profile. See
 [attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
-Combat formulas and Sphere Grid development remain future work.
+Characters also shows Attunement and RP progress. Combat formulas remain future work.
+
+**Pause → Aether Lattice** opens the connected progression board. Battle-earned
+Resonance Points increase Attunement Rank; each gained rank awards one Lattice
+Step. Every connection crossed costs one Step, including blank nodes and
+backtracking. Reaching a stat or ability node makes it available for activation
+with the matching Aether Crystal. Movement and activation are separate actions;
+unactivated nodes remain traversable. The 30-node starter board includes two
+side branches, rank gates, all eleven attributes and Brace/Mend ability nodes.
+Node bonuses persist without being applied again on Continue. HP/MP nodes raise
+capacity without refilling current resources. See the
+[Aether Lattice reference](docs/AETHER_LATTICE.md).
+
+The battle-reward interface is ready for future combat. Normal journeys begin
+at Attunement 1 with zero RP, zero Steps and no crystals; opening quests do not
+grant sample rewards. Review the system immediately in an isolated temporary
+journey with `python tools/preview_aether_lattice.py`, or use
+`--rp 500 --crystals 10` for a richer preview. The ordinary player save and
+settings are kept separate from that preview.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored
-by Git. **Continue** restores quest facts, dialogue history, attributes and player location
+by Git. **Continue** restores quest facts, dialogue history, attributes, lattice progress and player location
 without replaying old notifications. Ambient NPC routines restart on launch;
 their moment-to-moment action clocks are not part of this save. **New Game** starts
 a fresh journey and replaces that checkpoint. A missing or unreadable save leaves

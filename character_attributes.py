@@ -1,7 +1,9 @@
 """Persistent character attributes, independent of combat and presentation.
 
 HP and MP attributes are maxima; their current resource values are separate.
-All other attributes are ratings, not percentages. This foundation supplies no
+Saved attributes are preserved base values. Effective values add named modifier
+sources rebuilt from their canonical owners, such as activated lattice nodes.
+All other attributes are ratings, not percentages. This supplies no combat
 damage, healing, hit, evasion, critical-hit or turn-timing formulas.
 """
 from copy import deepcopy
@@ -13,7 +15,7 @@ ATTRIBUTE_IDS = ('hp', 'mp', 'str', 'mag', 'spr', 'def', 'm_def',
                  'speed', 'acc', 'eva', 'lck')
 # A bound on stored integers, not an approved combat or progression cap.
 MAX_ATTRIBUTE_VALUE = 999999
-SNAPSHOT_VERSION = 2
+SNAPSHOT_VERSION = 3
 CATALOG_PATH = Path(__file__).parent/'assets/characters/attributes.json'
 
 
@@ -25,6 +27,17 @@ def _valid_attributes(values):
     return (isinstance(values, dict) and set(values) == set(ATTRIBUTE_IDS)
             and all(_integer(value, 1 if identifier == 'hp' else 0)
                     for identifier, value in values.items()))
+
+
+def _valid_bonuses(values):
+    return (isinstance(values, dict) and set(values) <= set(ATTRIBUTE_IDS)
+            and all(_integer(value) for value in values.values()))
+
+
+def _effective_values(base, sources):
+    return {identifier: base[identifier]+sum(values.get(identifier, 0)
+                                           for values in sources.values())
+            for identifier in ATTRIBUTE_IDS}
 
 
 class CharacterAttributes:
@@ -79,12 +92,38 @@ class CharacterAttributes:
         return self._current_mp
 
     def value(self, identifier):
-        """Return a rating, or maximum capacity for HP and MP."""
+        """Return an effective rating, or maximum capacity for HP and MP."""
+        return self._attributes[identifier]+sum(values.get(identifier, 0)
+                                                for values in self._modifiers.values())
+
+    def base_value(self, identifier):
+        """Return preserved growth before lattice or other named modifiers."""
         return self._attributes[identifier]
+
+    def set_modifiers(self, source, bonuses):
+        """Replace one source atomically without changing base or current resources.
+
+        An empty mapping removes that source. Recomputing the same lattice
+        bonuses therefore never stacks them. A replacement that would leave a
+        current resource above its new maximum is rejected rather than clamped.
+        """
+        if (not isinstance(source, str) or not source.strip() or len(source) > 64
+                or not _valid_bonuses(bonuses)):
+            return False
+        sources = {name: dict(values) for name, values in self._modifiers.items()
+                   if name != source}
+        if bonuses:sources[source] = dict(bonuses)
+        effective = _effective_values(self._attributes, sources)
+        if (not _valid_attributes(effective)
+                or self.current_hp > effective['hp'] or self.current_mp > effective['mp']):
+            return False
+        self._modifiers = sources
+        return True
 
     def reset(self):
         """Restore this character's starting profile with full resources."""
         self._attributes = deepcopy(self._starting)
+        self._modifiers = {}
         self._current_hp = self.value('hp')
         self._current_mp = self.value('mp')
 
@@ -99,37 +138,52 @@ class CharacterAttributes:
         return True
 
     def to_dict(self):
+        # Bonuses are stored by their owner, not copied into the base record.
         return {'version': SNAPSHOT_VERSION, 'character_id': self.character_id,
                 'attributes': dict(self._attributes),
                 'current_hp': self._current_hp, 'current_mp': self._current_mp}
 
     @classmethod
-    def valid_snapshot(cls, data, character_id='caelan'):
-        """Validate a complete record without constructing or mutating a model."""
+    def valid_snapshot(cls, data, character_id='caelan', lattice_bonuses=None):
+        """Validate base and current resources against externally derived bonuses.
+
+        Versions one and two contain pre-lattice aggregate growth. Their values
+        become the preserved base, so supplying nonzero lattice growth for an
+        older record is rejected instead of counting its growth twice.
+        """
         if (not isinstance(data, dict)
                 or set(data) != {'version', 'character_id', 'attributes',
                                  'current_hp', 'current_mp'}
-                or type(data['version']) is not int or data['version'] not in (1, SNAPSHOT_VERSION)
+                or type(data['version']) is not int or data['version'] not in (1, 2, SNAPSHOT_VERSION)
                 or not isinstance(character_id, str) or not character_id
                 or data['character_id'] != character_id
                 or not _valid_attributes(data['attributes'])):
             return False
+        bonuses = {} if lattice_bonuses is None else lattice_bonuses
+        if not _valid_bonuses(bonuses):return False
+        if data['version'] < SNAPSHOT_VERSION and any(bonuses.values()):return False
+        effective = _effective_values(data['attributes'], {'lattice': bonuses})
+        if not _valid_attributes(effective):return False
         return (all(_integer(data['current_'+resource])
-                    and data['current_'+resource] <= data['attributes'][resource]
+                    and data['current_'+resource] <= effective[resource]
                     for resource in ('hp', 'mp')))
 
-    def restore(self, data):
+    def restore(self, data, lattice_bonuses=None):
         """Restore a valid complete record; malformed records leave all state intact."""
-        if not self.valid_snapshot(data, self.character_id):
+        if not self.valid_snapshot(data, self.character_id, lattice_bonuses):
             return False
-        self._attributes = dict(data['attributes'])
-        self._current_hp = data['current_hp']
-        self._current_mp = data['current_mp']
+        attributes = dict(data['attributes'])
+        current_hp = data['current_hp']
         # Version one shipped Caelan with 300 starting HP before progression
         # existed. Retune that baseline once; retain other saved growth and MP.
-        if data['version'] == 1 and self.character_id == 'caelan' and self.value('hp') == 300:
+        if data['version'] == 1 and self.character_id == 'caelan' and attributes['hp'] == 300:
             maximum = self._starting['hp']
-            scaled = (self._current_hp*maximum+150)//300
-            self._attributes['hp'] = maximum
-            self._current_hp = max(1, scaled) if self._current_hp else 0
+            scaled = (current_hp*maximum+150)//300
+            attributes['hp'] = maximum
+            current_hp = max(1, scaled) if current_hp else 0
+        bonuses = {} if lattice_bonuses is None else dict(lattice_bonuses)
+        self._attributes = attributes
+        self._current_hp = current_hp
+        self._current_mp = data['current_mp']
+        self._modifiers = {'lattice': bonuses} if bonuses else {}
         return True

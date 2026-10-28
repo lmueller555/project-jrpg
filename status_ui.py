@@ -26,11 +26,11 @@ class StatusUI:
                            'mp': pygame.Rect(344, 23, 92, 57)}
         for index, identifier in enumerate(ATTRIBUTE_IDS[2:]):
             self.stat_rects[identifier] = pygame.Rect(26+(index % 3)*144,
-                                                     94+(index//3)*39, 132, 32)
-        self.detail_view = pygame.Rect(27, 221, 412, 52)
+                                                     106+(index//3)*39, 132, 32)
+        self.detail_view = pygame.Rect(27, 233, 412, 40)
         self.tooltip_bounds = pygame.Rect(20, 48, 440, 226)
         self.icon_rects = {}
-        self.detail_track = pygame.Rect(445, 221, 5, 52)
+        self.detail_track = pygame.Rect(445, 233, 5, 40)
         self.detail_thumb = None
         self.dragging = False
         self.drag_offset = 0
@@ -168,10 +168,16 @@ class StatusUI:
         attributes = self.game.attributes
         painter.veil(210)
         painter.panel((12, 12, 456, 296), parchment=True)
-        painter.image(self.portrait, (26, 24, 50, 50))
-        painter.rect(BRASS, (26, 24, 50, 50), 1)
-        painter.text('Characters', (88, 24), role='small', color=INK)
-        painter.text(attributes.name, (88, 44), role='heading', color=FOREST, bold=True)
+        painter.image(self.portrait, (26, 36, 50, 50))
+        painter.rect(BRASS, (26, 36, 50, 50), 1)
+        painter.text('Characters', (26, 15), role='small', color=INK)
+        painter.text(attributes.name, (88, 24), role='heading', color=FOREST, bold=True)
+        lattice = getattr(self.game, 'lattice', None)
+        if lattice is not None:
+            progress, needed = lattice.rp_progress(attributes.character_id)
+            painter.text('Attunement '+str(lattice.rank(attributes.character_id)),
+                         (88, 60), role='small', color=INK)
+            painter.text('RP '+str(progress)+' / '+str(needed), (88, 79), role='small', color=FOREST)
         painter.button(self.close_rect, '×')
         for identifier, rect in self.stat_rects.items():
             selected = identifier == self.selected
@@ -196,7 +202,7 @@ class StatusUI:
                 painter.text(label, (icon.right+6, rect.centery), color=color, anchor='midleft', bold=selected)
                 painter.text(str(attributes.value(identifier)), (rect.right-9, rect.centery),
                              color=GOLD if selected else FOREST, anchor='midright', bold=True)
-        painter.line(BRASS, (26, 211), (450, 211))
+        painter.line(BRASS, (26, 223), (450, 223))
         painter.clip(self.detail_view)
         for index, line in enumerate(lines):
             painter.text(line, (self.detail_view.x, self.detail_view.y+index*line_height-self.detail_scroll), color=INK)

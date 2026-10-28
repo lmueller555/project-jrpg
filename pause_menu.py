@@ -232,7 +232,7 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    options = ('Resume', 'Characters', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    options = ('Resume', 'Characters', 'Aether Lattice', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
     settings_index = options.index('Settings')
 
     def __init__(self, game):
@@ -242,7 +242,7 @@ class PauseMenu:
         self.settings = False
         self.selected = 0
         self.overlay = None
-        self.rows = [pygame.Rect(146, 76+index*28, 188, 26) for index in range(len(self.options))]
+        self.rows = [pygame.Rect(146, 72+index*26, 188, 24) for index in range(len(self.options))]
         self.settings_panel = SettingsPanel(self)
         self.settings_rows = self.settings_panel.rows
         self.slider_rects = self.settings_panel.slider_rects
@@ -294,6 +294,9 @@ class PauseMenu:
         elif label == 'Characters':
             self.overlay = 'status'
             self.game.status_ui.open()
+        elif label == 'Aether Lattice':
+            self.overlay = 'lattice'
+            self.game.lattice_ui.open()
         elif label == 'Inventory':
             self.overlay = 'inventory'
             self.game.inventory_ui.open()
@@ -315,7 +318,10 @@ class PauseMenu:
     def handle_event(self, event):
         if not self.is_open:return True
         if self.overlay is not None:
-            if self.overlay == 'status':
+            if self.overlay == 'lattice':
+                self.game.lattice_ui.handle_event(event)
+                closed = not self.game.lattice_ui.is_open
+            elif self.overlay == 'status':
                 self.game.status_ui.handle_event(event)
                 closed = not self.game.status_ui.is_open
             elif self.overlay == 'inventory':

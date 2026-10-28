@@ -35,6 +35,9 @@ from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
 from status_ui import StatusUI
+from aether_lattice import AetherLattice
+from lattice_progression import LatticeProgression
+from lattice_ui import LatticeUI
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
@@ -415,6 +418,8 @@ class Game:
         self.quests=QuestLog()
         self.inventory=Inventory()
         self.attributes=CharacterAttributes('caelan')
+        self.lattice=AetherLattice()
+        self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -423,6 +428,7 @@ class Game:
         self.map_ui=MapUI(self)
         self.inventory_ui=InventoryUI(self)
         self.status_ui=StatusUI(self)
+        self.lattice_ui=LatticeUI(self)
         self.opening=OpeningSequence(self)
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
@@ -447,6 +453,7 @@ class Game:
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
+                           'aether_lattice':self.lattice.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
                            'venn_visit':self.venn_visit.to_dict(),
@@ -512,8 +519,7 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
-               ('character_attributes' not in data or
-                CharacterAttributes.valid_snapshot(data['character_attributes'], character_id='caelan')) and
+               LatticeProgression.valid_journey(data) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
                ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
@@ -574,9 +580,12 @@ class Game:
         """Continue quest facts, not an interrupted conversation or NPC action."""
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
+        self.lattice=AetherLattice()
+        if data is not None and 'aether_lattice' in data:
+            self.lattice.restore(data['aether_lattice'])
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
-            self.attributes.restore(data['character_attributes'])
+            self.attributes.restore(data['character_attributes'],lattice_bonuses=self.lattice.bonuses())
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
@@ -599,6 +608,7 @@ class Game:
             position=data['player']['position']
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
+        self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -617,6 +627,7 @@ class Game:
         self.quest_ui.reset()
         self.inventory_ui.reset()
         self.status_ui.reset()
+        self.lattice_ui.reset()
         self._sync_inventory()
         self.transfer_cooldown=.25
         self.on_title=False
@@ -662,6 +673,7 @@ class Game:
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
+              'aether_lattice':self.lattice.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
               'venn_visit':self.venn_visit.to_dict(),
@@ -690,6 +702,25 @@ class Game:
         x=(point[0]-(width-VIEW_SIZE[0]*scale)//2)/scale
         y=(point[1]-(height-VIEW_SIZE[1]*scale)//2)/scale
         return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
+
+    def lattice_move_reason(self,target):return self.lattice_progression.move_reason(target)
+
+    def lattice_activation_reason(self,target):return self.lattice_progression.activation_reason(target)
+
+    def move_lattice(self,target):
+        if not self.lattice_progression.move(target):return False
+        self.save_progress()
+        return True
+
+    def activate_lattice(self,target):
+        if not self.lattice_progression.activate(target):return False
+        self.save_progress()
+        return True
+
+    def award_battle_rewards(self,receipt_id,awards,drops):
+        if not self.lattice_progression.award_battle_rewards(receipt_id,awards,drops):return False
+        self.save_progress()
+        return True
 
     def _ensure_ui_surface(self):
         """UI pixels follow the display; world pixels retain integer scaling."""
@@ -1071,6 +1102,7 @@ class Game:
         self.quest_ui.draw_journal(self.ui_surface)
         self.inventory_ui.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
+        self.lattice_ui.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
         pygame.display.flip()

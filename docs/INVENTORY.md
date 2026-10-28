@@ -15,12 +15,38 @@ There is no weight or slot limit that could block a quest delivery. Identical
 items are counted together, including spare weapons and armor. Distinct equipment
 variants can have separate catalog IDs. Optional `equipment_slot` and `stats`
 metadata is supported in the details pane; equipping, combat and consumable
-effects belong to their future gameplay systems. The live catalog contains only
-the opening quest's three real supply bundles, not starter equipment or sample loot.
+effects belong to their future gameplay systems. The live catalog defines the
+opening quest's three supply bundles and seven Aether Crystals. Normal New Game
+starts with an empty satchel; crystal definitions do not grant sample loot.
 
-`add`, `add_many`, `quantity`, `entries` and `remove` are the ownership API.
-Bundles validate fully before mutation. Key Items cannot be removed through
-ordinary use, selling or disposal. Registered quest handoffs use a separate API.
+`add`, `add_many`, `quantity`, `entries`, `remove` and `consume_bundle` are the
+ownership API. Bundles validate fully before mutation. `consume_bundle` rejects
+unknown items, invalid quantities, insufficient stock and protected Key Items
+before removing anything. Key Items cannot be removed through ordinary use,
+selling or disposal. Registered quest handoffs use a separate API.
+
+## Aether Crystals
+
+Crystals appear in **Items** and activate nodes through
+**Pause → Aether Lattice**. Viewing a crystal in the satchel does not consume it
+or grant a stat bonus. A successful activation consumes the complete required
+bundle and records the activated node with the character's progression.
+
+| Item ID | Name | Nodes |
+| --- | --- | --- |
+| `aether_emerald` | Aether Emerald | HP |
+| `aether_sapphire` | Aether Sapphire | MP |
+| `aether_ruby` | Aether Ruby | Str and Def |
+| `aether_amethyst` | Aether Amethyst | Mag and M. Def |
+| `aether_opal` | Aether Opal | Spr |
+| `aether_topaz` | Aether Topaz | Speed, Acc, Eva and Lck |
+| `aether_diamond` | Aether Diamond | Spells and abilities |
+
+The future battle-reward interface grants shared crystal drops and individual
+RP awards in one receipt-backed operation. Replaying the same completion does
+not duplicate its rewards. The isolated lattice preview supplies test rewards
+only to its temporary journey; opening quests and ordinary New Game grants
+remain unchanged. See [Aether Lattice](AETHER_LATTICE.md).
 
 ## Serene's request and delivery
 
@@ -50,10 +76,7 @@ goodbye. No debug delivery is exposed through the satchel UI. `elira_visit.py`
 likewise consumes the food/oil bundle at the actual handoff beat, after Halden
 unlocks the visit. The borrowed lantern is a visible quest prop with a saved
 location (shelf, Caelan's hands, or table); it is not an extra supply bundle or
-loot item. `venn_visit.py` consumes the recovery bundle at the family handoff,
-independently of its inspections, repair choice and closing conversation. The
-gate tools are borrowed work props, not extra inventory rewards. Caelan must put
-Elira's carried lantern safely on her table before handling supplies or tools.
+loot item.
 
 ## Saves
 
