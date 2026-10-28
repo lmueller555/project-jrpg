@@ -7,6 +7,7 @@ settings file is read or written by this tool.
 from __future__ import annotations
 
 import argparse
+import math
 import os
 from pathlib import Path
 import sys
@@ -64,6 +65,15 @@ class LatticePreview:
                                             rel=(0, 0), buttons=(0, 0, 0)))
         if not self.game.handle_events():raise RuntimeError('The preview was closed during input.')
 
+    def advance(self, seconds=.25, draw=True):
+        """Advance the real paused-menu update loop at deterministic 60 Hz."""
+        if seconds < 0:raise ValueError('Preview time must be nonnegative.')
+        count = max(1, math.ceil(seconds*60))
+        for _ in range(count):
+            if not self.game.handle_events():raise RuntimeError('The preview was closed during animation.')
+            self.game.update(seconds/count)
+            if draw:self.game.draw()
+
     def open_menu(self, label):
         for _ in range(3):
             if self.game.pause.overlay is None:break
@@ -80,7 +90,9 @@ class LatticePreview:
         """Move the real UI cursor with Tab, without spending lattice Steps."""
         if identifier not in self.game.lattice.board.nodes:raise ValueError('Unknown preview node.')
         for _ in range(len(self.game.lattice.board.nodes)+1):
-            if self.game.lattice_ui.selected == identifier:return
+            if self.game.lattice_ui.selected == identifier:
+                self.advance()
+                return
             self.key(pygame.K_TAB)
         raise RuntimeError('The lattice cursor could not reach the selected node.')
 

@@ -1,5 +1,6 @@
 """Lattice inspection, explicit transaction confirmation and accessible layout."""
 import os
+import math
 from types import SimpleNamespace
 import unittest
 
@@ -58,6 +59,24 @@ class LatticeUITests(unittest.TestCase):
     def key(self, key, **extra):
         self.screen.handle_event(pygame.event.Event(pygame.KEYDOWN, key=key, repeat=False, **extra))
 
+    def release(self, key):
+        self.screen.handle_event(pygame.event.Event(pygame.KEYUP, key=key))
+
+    def advance(self, seconds):
+        for _ in range(math.floor(seconds*60)):
+            self.screen.update(1/60)
+        remainder = seconds-math.floor(seconds*60)/60
+        if remainder > 0:self.screen.update(remainder)
+
+    def navigate(self, keys, seconds):
+        for key in keys:self.key(key)
+        self.advance(seconds)
+        for key in keys:self.release(key)
+
+    def select_first_hp(self):
+        self.navigate((pygame.K_RIGHT,), 72*self.screen.zoom/self.screen.CURSOR_SPEED)
+        self.advance(self.screen.CAMERA_DURATION)
+
     def click(self, logical):
         point = self.point(logical)
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=point))
@@ -68,7 +87,7 @@ class LatticeUITests(unittest.TestCase):
 
     def test_inspection_and_cursor_navigation_never_move_or_spend(self):
         before = self.snapshots()
-        self.key(pygame.K_RIGHT)
+        self.select_first_hp()
         self.assertEqual(self.screen.selected, 'hp_01')
         self.assertEqual(self.game.lattice.state()['position'], 'origin')
         for _ in self.game.lattice.board.nodes:self.key(pygame.K_TAB)
@@ -80,7 +99,7 @@ class LatticeUITests(unittest.TestCase):
 
     def test_move_and_activation_require_confirm_and_show_exact_costs(self):
         self.assertTrue(self.progression.award_battle_rewards('ui-battle', {'caelan': 20}, {'aether_emerald': 1}))
-        self.key(pygame.K_RIGHT)
+        self.select_first_hp()
         before = self.snapshots()
         self.key(pygame.K_m)
         self.assertEqual(self.screen.pending, ('move', 'hp_01'))
@@ -143,6 +162,7 @@ class LatticeUITests(unittest.TestCase):
         end = (point[0]+30, point[1]+10)
         pan = self.screen.pan.copy()
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEMOTION, pos=end, rel=(30, 10), buttons=(1, 0, 0)))
+        self.advance(.04)
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=end))
         self.assertNotEqual(self.screen.pan, pan)
         old = self.screen.zoom
@@ -154,6 +174,160 @@ class LatticeUITests(unittest.TestCase):
         self.assertFalse(self.screen.help_open)
         self.assertTrue(self.screen.is_open)
         self.assertEqual(self.snapshots(), before)
+
+    def test_free_cursor_snaps_to_nearest_node_then_eases_camera(self):
+        before = self.snapshots()
+        self.key(pygame.K_RIGHT)
+        self.advance(.4)
+        self.assertTrue(self.screen.navigating)
+        cursor = self.screen.cursor_position.copy()
+        nearest = min(self.screen.board.nodes, key=lambda identifier:
+                      pygame.Vector2(self.screen.board.nodes[identifier]['position']).distance_squared_to(cursor))
+        self.assertEqual(nearest, 'hp_01')
+        pan = self.screen.pan.copy()
+        self.release(pygame.K_RIGHT)
+        self.assertFalse(self.screen.navigating)
+        self.assertEqual(self.screen.selected, nearest)
+        self.assertEqual(self.screen.cursor_position,
+                         pygame.Vector2(self.screen.board.nodes[nearest]['position']))
+        self.assertEqual(self.screen.pan, pan)
+        target = pygame.Vector2(self.screen.board.nodes[nearest]['position'])
+        initial_distance = pan.distance_to(target)
+        self.assertGreater(initial_distance, 0)
+        self.screen.update(self.screen.CAMERA_DURATION/3)
+        self.assertLess(self.screen.pan.distance_to(target), initial_distance)
+        self.assertGreater(self.screen.pan.distance_to(target), 0)
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position(nearest).distance_to(self.screen.map_rect.center), .001)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_keyboard_can_explore_distant_rank_locked_nodes_without_travel(self):
+        before = self.snapshots()
+        target = pygame.Vector2(self.screen.board.nodes['lck_02']['position'])
+        duration = target.length()*self.screen.zoom/self.screen.CURSOR_SPEED
+        self.navigate((pygame.K_RIGHT, pygame.K_UP), duration)
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertEqual(self.screen.selected, 'lck_02')
+        self.assertIn('8', self.game.lattice_move_reason('lck_02'))
+        self.assertEqual(self.game.lattice.state()['position'], 'origin')
+        self.assertEqual(self.game.lattice.steps(), 0)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_opposite_keys_and_partial_release_do_not_stick_or_accelerate(self):
+        start = self.screen.cursor_position.copy()
+        self.key(pygame.K_RIGHT);self.key(pygame.K_LEFT)
+        self.advance(.15)
+        self.assertEqual(self.screen.cursor_position, start)
+        self.release(pygame.K_LEFT)
+        self.advance(.15)
+        self.assertGreater(self.screen.cursor_position.x, start.x)
+        self.assertTrue(self.screen.navigating)
+        self.release(pygame.K_UP)
+        self.assertTrue(self.screen.navigating)
+        self.release(pygame.K_RIGHT)
+        self.assertFalse(self.screen.navigating)
+        selected = self.screen.selected
+        self.advance(.4)
+        self.assertEqual(self.screen.selected, selected)
+
+    def test_diagonal_cursor_speed_matches_cardinal_and_ignores_key_repeat(self):
+        start = self.screen.cursor_position.copy()
+        self.key(pygame.K_RIGHT)
+        self.screen.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_RIGHT, repeat=True))
+        self.advance(.2)
+        horizontal = self.screen.cursor_position.distance_to(start)
+        self.release(pygame.K_RIGHT)
+        self.screen.close();self.screen.open()
+        start = self.screen.cursor_position.copy()
+        self.key(pygame.K_RIGHT);self.key(pygame.K_UP)
+        self.advance(.2)
+        diagonal = self.screen.cursor_position.distance_to(start)
+        self.assertAlmostEqual(diagonal, horizontal, places=5)
+        self.release(pygame.K_RIGHT);self.release(pygame.K_UP)
+
+    def test_click_and_tab_redirect_an_in_progress_camera_without_a_jump(self):
+        self.screen.fit_board()
+        self.click(self.screen.node_position('mp_01'))
+        initial = self.screen.pan.copy()
+        target = pygame.Vector2(self.screen.board.nodes['mp_01']['position'])
+        self.assertEqual(self.screen.selected, 'mp_01')
+        self.assertNotEqual(initial, target)
+        self.screen.update(.04)
+        self.assertLess(self.screen.pan.distance_to(target), initial.distance_to(target))
+        intermediate = self.screen.pan.copy()
+        self.key(pygame.K_TAB)
+        self.assertEqual(self.screen.pan, intermediate)
+        self.assertEqual(self.screen.selected, 'def_01')
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position('def_01').distance_to(self.screen.map_rect.center), .001)
+
+    def test_drag_release_uses_nearest_cursor_node_in_letterboxed_window(self):
+        before = self.snapshots()
+        self.game.window = pygame.display.set_mode((1440, 810))
+        self.game.ui_surface = pygame.Surface((960, 640))
+        self.screen.draw(self.game.ui_surface)
+        start = self.point(self.screen.map_rect.center)
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=start))
+        end = (start[0]-100, start[1]+30)
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEMOTION, pos=end, rel=(-100, 30), buttons=(1, 0, 0)))
+        self.assertTrue(self.screen.navigating)
+        cursor = self.screen.cursor_position.copy()
+        nearest = min(self.screen.board.nodes, key=lambda identifier:
+                      pygame.Vector2(self.screen.board.nodes[identifier]['position']).distance_squared_to(cursor))
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=end))
+        self.assertEqual(self.screen.selected, nearest)
+        self.assertFalse(self.screen.navigating)
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position(nearest).distance_to(self.screen.map_rect.center), .001)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_focus_help_confirmation_and_close_clear_navigation(self):
+        self.key(pygame.K_RIGHT);self.advance(.2)
+        self.screen.handle_event(pygame.event.Event(pygame.WINDOWFOCUSLOST))
+        self.assertFalse(self.screen.navigating)
+        cursor = self.screen.cursor_position.copy()
+        self.advance(.3)
+        self.assertEqual(self.screen.cursor_position, cursor)
+        self.key(pygame.K_RIGHT);self.key(pygame.K_F1)
+        self.assertTrue(self.screen.help_open)
+        self.assertFalse(self.screen.navigating)
+        self.key(pygame.K_DOWN);self.key(pygame.K_ESCAPE)
+        self.assertFalse(self.screen.help_open)
+        self.assertFalse(self.screen.navigating)
+        self.assertTrue(self.progression.award_battle_rewards('modal-keys', {'caelan': 20}, {}))
+        self.screen._select('hp_01', center=True)
+        self.key(pygame.K_m)
+        self.assertIsNotNone(self.screen.pending)
+        self.key(pygame.K_RIGHT)
+        self.assertFalse(self.screen.navigating)
+        self.key(pygame.K_ESCAPE)
+        self.assertFalse(self.screen.navigating)
+        self.key(pygame.K_RIGHT);self.screen.close()
+        self.assertFalse(self.screen.navigating)
+        self.screen.open();self.advance(.4)
+        self.assertEqual(self.screen.selected, 'origin')
+        self.assertEqual(self.screen.cursor_position, pygame.Vector2(0, 0))
+
+    def test_selected_node_pulses_and_reduced_motion_uses_static_emphasis(self):
+        self.advance(self.screen.CAMERA_DURATION)
+        self.screen.draw(self.game.ui_surface)
+        center = self.screen.node_position(self.screen.selected)*2
+        region = pygame.Rect(0, 0, 72, 72);region.center = center
+        first = pygame.image.tobytes(self.game.ui_surface.subsurface(region), 'RGB')
+        self.advance(.25)
+        self.screen.draw(self.game.ui_surface)
+        second = pygame.image.tobytes(self.game.ui_surface.subsurface(region), 'RGB')
+        self.assertNotEqual(first, second)
+        self.game.audio.set_reduced_motion(True)
+        self.screen.draw(self.game.ui_surface)
+        first = pygame.image.tobytes(self.game.ui_surface.subsurface(region), 'RGB')
+        self.advance(.4)
+        self.screen.draw(self.game.ui_surface)
+        second = pygame.image.tobytes(self.game.ui_surface.subsurface(region), 'RGB')
+        self.assertEqual(first, second)
+        self.screen._select('hp_01', center=True)
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position('hp_01').distance_to(self.screen.map_rect.center), .001)
 
     def test_details_confirmations_and_pause_rows_fit_all_text_sizes(self):
         self.assertTrue(self.progression.award_battle_rewards('layout-test', {'caelan': 20}, {'aether_emerald': 1}))

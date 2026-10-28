@@ -1,0 +1,1976 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_untouched": true,
+  "fixture": {
+    "rank": 1,
+    "rp": 0,
+    "steps": 0,
+    "crystals": 0
+  },
+  "progression_unchanged": true,
+  "world_unchanged": true,
+  "keyboard_selection_checks": [
+    {
+      "stage": "main route",
+      "free_cursor_at_release": [
+        123.75,
+        0.0
+      ],
+      "nearest_node": "blank_01",
+      "camera_at_release": [
+        116.1253461787706,
+        0.0
+      ],
+      "camera_after_100ms": [
+        141.55284246288247,
+        0.0
+      ],
+      "centered_camera": [
+        144.0,
+        0.0
+      ]
+    },
+    {
+      "stage": "locked side branch",
+      "free_cursor_at_release": [
+        144.0,
+        247.5
+      ],
+      "nearest_node": "spr_02",
+      "camera_at_release": [
+        144.0,
+        239.87533206857708
+      ],
+      "camera_after_100ms": [
+        144.0,
+        218.0960511006707
+      ],
+      "centered_camera": [
+        144.0,
+        216.0
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "file": "gold_cursor_exploring.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "origin",
+      "navigating": true,
+      "cursor": [
+        123.75,
+        0.0
+      ],
+      "camera": [
+        116.1253461787706,
+        0.0
+      ],
+      "pulse": 0.3706
+    },
+    {
+      "file": "selected_node_pulsing.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "spr_02",
+      "navigating": false,
+      "cursor": [
+        144.0,
+        216.0
+      ],
+      "camera": [
+        144.0,
+        216.0
+      ],
+      "pulse": 0.0
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "selected": "mend_01",
+      "navigating": false,
+      "cursor": [
+        144.0,
+        288.0
+      ],
+      "camera": [
+        144.0,
+        288.0
+      ],
+      "pulse": 0.3706
+    }
+  ],
+  "mouse_selection_check": {
+    "free_cursor_at_release": [
+      144.0,
+      284.75
+    ],
+    "nearest_node": "mend_01"
+  },
+  "animation": {
+    "file": "navigation.gif",
+    "frames": 123,
+    "fps": 30,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.9981
+      },
+      {
+        "frame": 1,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.983
+      },
+      {
+        "frame": 2,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.9532
+      },
+      {
+        "frame": 3,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.9096
+      },
+      {
+        "frame": 4,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.8536
+      },
+      {
+        "frame": 5,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.7868
+      },
+      {
+        "frame": 6,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.7113
+      },
+      {
+        "frame": 7,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.6294
+      },
+      {
+        "frame": 8,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.5436
+      },
+      {
+        "frame": 9,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.4564
+      },
+      {
+        "frame": 10,
+        "stage": "opening pulse",
+        "selected": "origin",
+        "navigating": false,
+        "cursor": [
+          0.0,
+          0.0
+        ],
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 11,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          7.5,
+          0.0
+        ],
+        "camera": [
+          3.3013162119267716,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 12,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          15.0,
+          0.0
+        ],
+        "camera": [
+          8.914725974776056,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 13,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          22.5,
+          0.0
+        ],
+        "camera": [
+          15.567026337803462,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 14,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          30.0,
+          0.0
+        ],
+        "camera": [
+          22.68613033804002,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 15,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          37.5,
+          0.0
+        ],
+        "camera": [
+          30.01498273302992,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 16,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          45.0,
+          0.0
+        ],
+        "camera": [
+          37.43808115695959,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 17,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          52.5,
+          0.0
+        ],
+        "camera": [
+          44.903527051444925,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 18,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          60.0,
+          0.0
+        ],
+        "camera": [
+          52.38800089100802,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 19,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          67.5,
+          0.0
+        ],
+        "camera": [
+          59.88102453742219,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 20,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          75.0,
+          0.0
+        ],
+        "camera": [
+          67.37788985969216,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 21,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          82.5,
+          0.0
+        ],
+        "camera": [
+          74.87648135819488,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 22,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          90.0,
+          0.0
+        ],
+        "camera": [
+          82.37584847767614,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 23,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          97.5,
+          0.0
+        ],
+        "camera": [
+          89.87556410612825,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 24,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          105.0,
+          0.0
+        ],
+        "camera": [
+          97.37543632975522,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 25,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          112.5,
+          0.0
+        ],
+        "camera": [
+          104.87537891612989,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 26,
+        "stage": "main route \u2014 explore",
+        "selected": "origin",
+        "navigating": true,
+        "cursor": [
+          120.0,
+          0.0
+        ],
+        "camera": [
+          112.37535311852508,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 27,
+        "stage": "main route \u2014 center",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          123.1734926877647,
+          0.0
+        ],
+        "pulse": 0.9981
+      },
+      {
+        "frame": 28,
+        "stage": "main route \u2014 center",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          133.49920877139215,
+          0.0
+        ],
+        "pulse": 0.983
+      },
+      {
+        "frame": 29,
+        "stage": "main route \u2014 center",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          139.68260089896125,
+          0.0
+        ],
+        "pulse": 0.9532
+      },
+      {
+        "frame": 30,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          142.7858034181793,
+          0.0
+        ],
+        "pulse": 0.9096
+      },
+      {
+        "frame": 31,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          143.87095067675358,
+          0.0
+        ],
+        "pulse": 0.8536
+      },
+      {
+        "frame": 32,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.7868
+      },
+      {
+        "frame": 33,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.7113
+      },
+      {
+        "frame": 34,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.6294
+      },
+      {
+        "frame": 35,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.5436
+      },
+      {
+        "frame": 36,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.4564
+      },
+      {
+        "frame": 37,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 38,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.2887
+      },
+      {
+        "frame": 39,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.2132
+      },
+      {
+        "frame": 40,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.1464
+      },
+      {
+        "frame": 41,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.0904
+      },
+      {
+        "frame": 42,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.0468
+      },
+      {
+        "frame": 43,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.017
+      },
+      {
+        "frame": 44,
+        "stage": "main route \u2014 selected pulse",
+        "selected": "blank_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          0.0
+        ],
+        "camera": [
+          144.0,
+          0.0
+        ],
+        "pulse": 0.0019
+      },
+      {
+        "frame": 45,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          3.75
+        ],
+        "camera": [
+          144.0,
+          1.2362998273663526
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 46,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          11.25
+        ],
+        "camera": [
+          144.0,
+          5.921837917256013
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 47,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          18.75
+        ],
+        "camera": [
+          144.0,
+          12.157218662638758
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 48,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          26.25
+        ],
+        "camera": [
+          144.0,
+          19.088988602958892
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 49,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          33.75
+        ],
+        "camera": [
+          144.0,
+          26.333666378862674
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 50,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          41.25
+        ],
+        "camera": [
+          144.0,
+          33.71894270839341
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 51,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          48.75
+        ],
+        "camera": [
+          144.0,
+          41.16739404038174
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 52,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          56.25
+        ],
+        "camera": [
+          144.0,
+          48.64423173078242
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 53,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          63.75
+        ],
+        "camera": [
+          144.0,
+          56.1338242342036
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 54,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          71.25
+        ],
+        "camera": [
+          144.0,
+          63.62914784454679
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 55,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          78.75
+        ],
+        "camera": [
+          144.0,
+          71.12704660722649
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 56,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          86.25
+        ],
+        "camera": [
+          144.0,
+          78.62610246043799
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 57,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          93.75
+        ],
+        "camera": [
+          144.0,
+          86.12567822793953
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 58,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          101.25
+        ],
+        "camera": [
+          144.0,
+          93.62548760799046
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 59,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          108.75
+        ],
+        "camera": [
+          144.0,
+          101.12540195692621
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 60,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          116.25
+        ],
+        "camera": [
+          144.0,
+          108.62536347142223
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 61,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          123.75
+        ],
+        "camera": [
+          144.0,
+          116.1253461787706
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 62,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          131.25
+        ],
+        "camera": [
+          144.0,
+          123.62533840868134
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 63,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          138.75
+        ],
+        "camera": [
+          144.0,
+          131.1253349173552
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 64,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          146.25
+        ],
+        "camera": [
+          144.0,
+          138.62533334860123
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 65,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          153.75
+        ],
+        "camera": [
+          144.0,
+          146.12533264371464
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 66,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          161.25
+        ],
+        "camera": [
+          144.0,
+          153.62533232698868
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 67,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          168.75
+        ],
+        "camera": [
+          144.0,
+          161.12533218467453
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 68,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          176.25
+        ],
+        "camera": [
+          144.0,
+          168.62533212072864
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 69,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          183.75
+        ],
+        "camera": [
+          144.0,
+          176.12533209199592
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 70,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          191.25
+        ],
+        "camera": [
+          144.0,
+          183.62533207908547
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 71,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          198.75
+        ],
+        "camera": [
+          144.0,
+          191.12533207328443
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 72,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          206.25
+        ],
+        "camera": [
+          144.0,
+          198.62533207067787
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 73,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          213.75
+        ],
+        "camera": [
+          144.0,
+          206.12533206950667
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 74,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          221.25
+        ],
+        "camera": [
+          144.0,
+          213.62533206898038
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 75,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          228.75
+        ],
+        "camera": [
+          144.0,
+          221.12533206874392
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 76,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          236.25
+        ],
+        "camera": [
+          144.0,
+          228.62533206863768
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 77,
+        "stage": "locked side branch \u2014 explore",
+        "selected": "blank_01",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          243.75
+        ],
+        "camera": [
+          144.0,
+          236.12533206858993
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 78,
+        "stage": "locked side branch \u2014 center",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          233.83841984539976
+        ],
+        "pulse": 0.9981
+      },
+      {
+        "frame": 79,
+        "stage": "locked side branch \u2014 center",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          224.9941880237764
+        ],
+        "pulse": 0.983
+      },
+      {
+        "frame": 80,
+        "stage": "locked side branch \u2014 center",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          219.6979593673508
+        ],
+        "pulse": 0.9532
+      },
+      {
+        "frame": 81,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          217.03998947479025
+        ],
+        "pulse": 0.9096
+      },
+      {
+        "frame": 82,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.11053394476193
+        ],
+        "pulse": 0.8536
+      },
+      {
+        "frame": 83,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.7868
+      },
+      {
+        "frame": 84,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.7113
+      },
+      {
+        "frame": 85,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.6294
+      },
+      {
+        "frame": 86,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.5436
+      },
+      {
+        "frame": 87,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.4564
+      },
+      {
+        "frame": 88,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 89,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.2887
+      },
+      {
+        "frame": 90,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.2132
+      },
+      {
+        "frame": 91,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.1464
+      },
+      {
+        "frame": 92,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.0904
+      },
+      {
+        "frame": 93,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.0468
+      },
+      {
+        "frame": 94,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.017
+      },
+      {
+        "frame": 95,
+        "stage": "locked side branch \u2014 selected pulse",
+        "selected": "spr_02",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          216.0
+        ],
+        "camera": [
+          144.0,
+          216.0
+        ],
+        "pulse": 0.0019
+      },
+      {
+        "frame": 96,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          219.75
+        ],
+        "camera": [
+          144.0,
+          217.23629982736637
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 97,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          227.25
+        ],
+        "camera": [
+          144.0,
+          221.92183791725603
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 98,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          235.375
+        ],
+        "camera": [
+          144.0,
+          228.36326863386648
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 99,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          242.875
+        ],
+        "camera": [
+          144.0,
+          235.52574222051376
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 100,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          250.375
+        ],
+        "camera": [
+          144.0,
+          242.87408182683978
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 101,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          257.875
+        ],
+        "camera": [
+          144.0,
+          250.30593641925265
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 102,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          265.375
+        ],
+        "camera": [
+          144.0,
+          257.7753167138522
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 103,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          273.5
+        ],
+        "camera": [
+          144.0,
+          265.6057277907698
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 104,
+        "stage": "mouse drag \u2014 explore",
+        "selected": "spr_02",
+        "navigating": true,
+        "cursor": [
+          144.0,
+          281.0
+        ],
+        "camera": [
+          144.0,
+          273.25419105769396
+        ],
+        "pulse": 0.0
+      },
+      {
+        "frame": 105,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          279.81433668401667
+        ],
+        "pulse": 0.9981
+      },
+      {
+        "frame": 106,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          283.87276252037145
+        ],
+        "pulse": 0.983
+      },
+      {
+        "frame": 107,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          286.3030867868531
+        ],
+        "pulse": 0.9532
+      },
+      {
+        "frame": 108,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          287.5227714244547
+        ],
+        "pulse": 0.9096
+      },
+      {
+        "frame": 109,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          287.94927837416935
+        ],
+        "pulse": 0.8536
+      },
+      {
+        "frame": 110,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.7868
+      },
+      {
+        "frame": 111,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.7113
+      },
+      {
+        "frame": 112,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.6294
+      },
+      {
+        "frame": 113,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.5436
+      },
+      {
+        "frame": 114,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.4564
+      },
+      {
+        "frame": 115,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.3706
+      },
+      {
+        "frame": 116,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.2887
+      },
+      {
+        "frame": 117,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.2132
+      },
+      {
+        "frame": 118,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.1464
+      },
+      {
+        "frame": 119,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.0904
+      },
+      {
+        "frame": 120,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.0468
+      },
+      {
+        "frame": 121,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.017
+      },
+      {
+        "frame": 122,
+        "stage": "mouse release \u2014 selected pulse",
+        "selected": "mend_01",
+        "navigating": false,
+        "cursor": [
+          144.0,
+          288.0
+        ],
+        "camera": [
+          144.0,
+          288.0
+        ],
+        "pulse": 0.0019
+      }
+    ]
+  }
+}
