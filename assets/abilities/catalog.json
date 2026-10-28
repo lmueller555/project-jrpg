@@ -15,6 +15,96 @@
       "name": "Mend",
       "description": "A restorative spell whose healing power is governed by Spirit.",
       "kind": "spell"
+    },
+    "focused_strike": {
+      "name": "Focused Strike",
+      "description": "A deliberate physical technique focused on one opponent.",
+      "kind": "technique"
+    },
+    "sweeping_strike": {
+      "name": "Sweeping Strike",
+      "description": "A broad physical technique intended to reach nearby opponents.",
+      "kind": "technique"
+    },
+    "guarded_strike": {
+      "name": "Guarded Strike",
+      "description": "A measured physical attack made from a guarded stance.",
+      "kind": "technique"
+    },
+    "piercing_strike": {
+      "name": "Piercing Strike",
+      "description": "A precise physical technique for finding an opening in a sturdy defense.",
+      "kind": "technique"
+    },
+    "rally": {
+      "name": "Rally",
+      "description": "A supportive technique for helping an ally regain their composure.",
+      "kind": "technique"
+    },
+    "intercept": {
+      "name": "Intercept",
+      "description": "A protective technique for stepping into the path of an attack aimed at an ally.",
+      "kind": "technique"
+    },
+    "riposte": {
+      "name": "Riposte",
+      "description": "A physical response made after meeting an attack with a guard.",
+      "kind": "technique"
+    },
+    "aether_dart": {
+      "name": "Aether Dart",
+      "description": "A small, focused damaging spell whose power is governed by Magick.",
+      "kind": "spell"
+    },
+    "aether_arc": {
+      "name": "Aether Arc",
+      "description": "An arcing damaging spell intended to reach several opponents; power is governed by Magick.",
+      "kind": "spell"
+    },
+    "aether_lance": {
+      "name": "Aether Lance",
+      "description": "A concentrated damaging spell directed at one opponent; power is governed by Magick.",
+      "kind": "spell"
+    },
+    "aether_burst": {
+      "name": "Aether Burst",
+      "description": "A broader release of damaging magicks whose power is governed by Magick.",
+      "kind": "spell"
+    },
+    "greater_mend": {
+      "name": "Greater Mend",
+      "description": "A stronger restorative spell whose healing power is governed by Spirit.",
+      "kind": "spell"
+    },
+    "renew": {
+      "name": "Renew",
+      "description": "A sustained restorative working whose healing power is governed by Spirit.",
+      "kind": "spell"
+    },
+    "cleanse": {
+      "name": "Cleanse",
+      "description": "A restorative working intended to remove a harmful affliction.",
+      "kind": "spell"
+    },
+    "ward": {
+      "name": "Ward",
+      "description": "A protective working intended to soften incoming magicks.",
+      "kind": "spell"
+    },
+    "dispel": {
+      "name": "Dispel",
+      "description": "A controlled working for unraveling an existing magical effect.",
+      "kind": "spell"
+    },
+    "channel": {
+      "name": "Channel",
+      "description": "A concentration technique for managing the effort of sustained casting.",
+      "kind": "technique"
+    },
+    "steadfast": {
+      "name": "Steadfast",
+      "description": "A defensive technique for maintaining a steady position under pressure.",
+      "kind": "technique"
     }
   }
 }

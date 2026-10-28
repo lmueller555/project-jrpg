@@ -95,15 +95,21 @@ def main(argv=None):
                                'centered_camera': list(ui.pan)})
 
         run(.35, 'opening pulse')
-        explore(pygame.K_RIGHT, .55, 'main route')
-        explore(pygame.K_DOWN, 1.1, 'locked side branch')
+        explore(pygame.K_RIGHT, .55, 'free exploration right')
+        explore(pygame.K_DOWN, 1.1, 'free exploration down')
         record('selected_node_pulsing')
-        # Dragging the map explores with the same centered gold cursor. The
-        # locked Mend node remains inspectable at rank 1 with zero Steps.
+        # Start from Mend's authored neighbor so this input exercise remains
+        # meaningful when the lattice layout changes. The locked ability is
+        # inspectable at rank 1 with zero Steps.
+        preview.select_node('spr_02')
+        preview.key(pygame.K_0);preview.advance(.25)
+        displacement = pygame.Vector2(ui.board.nodes['mend_01']['position'])-ui.pan
+        while displacement.length()*ui.zoom > min(ui.map_rect.size)*.3:
+            preview.key(pygame.K_MINUS);preview.advance(.25)
         drag_start = pygame.Vector2(ui.map_rect.center)
         event(pygame.MOUSEBUTTONDOWN, button=1, pos=preview.point(drag_start))
         for index in range(1, 19):
-            point = drag_start+pygame.Vector2(0, -55*index/18)
+            point = drag_start-displacement*ui.zoom*index/18
             event(pygame.MOUSEMOTION, pos=preview.point(point), rel=(0, -3), buttons=(1, 0, 0))
             run(1/60, 'mouse drag — explore')
         mouse_cursor = ui.cursor_position.copy()

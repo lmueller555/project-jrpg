@@ -37,13 +37,16 @@ Attunement, so spending movement cannot close a previously opened path.
 
 ## Nodes and crystals
 
-The starter board contains 30 nodes: one blank origin, 20 stat nodes, seven
-additional blank nodes and two ability nodes. The 20-node main route has
-four-node and six-node side branches, with dead-end rewards and connections
-requiring Attunement 5 and 8. All eleven attributes are represented.
+Caelan's section contains 200 nodes: 130 attribute nodes, 20 ability nodes and
+50 empty nodes, including the origin. Large and small circular formations use
+curved internal paths, with junctions and onward routes through their centers.
+Connections between formations and the nodes outside them use straight lines.
+See the [section guide](CAELAN_LATTICE.md) for the layout and complete growth
+budget. All eleven attributes are represented.
 
-Stat nodes grant HP +20, MP +2 or another attribute +1. The board data defines
-the effect and crystal cost for each node.
+Early stat nodes grant HP +20, MP +2 or another attribute +1. Deeper nodes
+provide larger authored bonuses. The board data defines the effect and crystal
+cost for each individual node.
 
 | Crystal | Color | Activates |
 | --- | --- | --- |
@@ -70,7 +73,7 @@ An HP or MP node raises maximum capacity without refilling the current
 resource. For example, activating HP +20 at 140/140 produces 140/160. A new
 rank has no additional hidden stat growth.
 
-Brace and Mend are the two new learnable abilities in the starter board.
+Brace and Mend are among the twenty learnable abilities in Caelan's section.
 Caelan retains his established basic magick capability separately. The lattice
 records and displays learned techniques; casting and resolving their effects
 will be connected to the future battle system. Opening quest spell outcomes
@@ -101,7 +104,7 @@ Cancellation leaves Steps, crystals and node ownership unchanged. The menu holds
 the world and any conversation beneath it until the player resumes. Camera
 centering takes about 180 milliseconds and redirects smoothly if another node
 is selected during the transition. Zoom transitions use the same short easing,
-with a range of 18% to 200% and a visible percentage in the map toolbar. Repeated
+with a range of 5% to 200% and a visible percentage in the map toolbar. Repeated
 zoom inputs adjust the destination without jumping the current view. Zooming
 does not select a different node or spend progression resources. Outside the
 map, the wheel scrolls node details. Help and confirmation dialogs use the
@@ -113,7 +116,9 @@ changes.
 
 [`assets/progression/aether_lattice.json`](../assets/progression/aether_lattice.json)
 defines stable node IDs, positions, effects, costs, connected edges, starting
-positions and rank gates. Ability descriptions are defined in
+positions and rank gates. Formation membership and quadratic curve controls
+describe the visual layout; each connection still costs exactly one Step.
+Ability descriptions are defined in
 [`assets/abilities/catalog.json`](../assets/abilities/catalog.json).
 
 [`aether_lattice.py`](../aether_lattice.py) owns the graph and per-character
@@ -163,6 +168,12 @@ Journey checkpoints contain an independently versioned `aether_lattice`
 record alongside character attributes and inventory. Loading the title
 validates these records without changing the fresh world or saved journey.
 Continue restores them together and recomputes node bonuses once.
+
+The 200-node layout is board version two. Version-one lattice records are
+validated against the archived 30-node board before upgrading. Existing node
+IDs, effects and crystal costs remain intact, as do RP, spent Steps, position,
+visited and activated nodes, and reward receipts. Layout changes do not refund
+Steps or grant new bonuses.
 
 Attribute version-three snapshots preserve base values under `attributes` and
 store current HP/MP separately. Existing version-one and version-two attribute

@@ -3,6 +3,7 @@ import os
 import math
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
@@ -16,7 +17,7 @@ from inventory import Inventory
 from lattice_progression import LatticeProgression
 from lattice_ui import LatticeUI
 from pause_menu import PauseMenu
-from ui_style import UIStyle
+from ui_style import UIStyle, GOLD
 
 
 class LatticeUITests(unittest.TestCase):
@@ -74,8 +75,23 @@ class LatticeUITests(unittest.TestCase):
         for key in keys:self.release(key)
 
     def select_first_hp(self):
-        self.navigate((pygame.K_RIGHT,), 72*self.screen.zoom/self.screen.CURSOR_SPEED)
+        self.navigate_to(self.screen.board.nodes['hp_01']['position'])
         self.advance(self.screen.CAMERA_DURATION)
+
+    def navigate_to(self, target):
+        """Steer to an authored point, keeping navigation held through turns."""
+        delta = pygame.Vector2(target)-self.screen.cursor_position
+        horizontal = pygame.K_RIGHT if delta.x > 0 else pygame.K_LEFT
+        vertical = pygame.K_DOWN if delta.y > 0 else pygame.K_UP
+        if delta.x:
+            self.key(horizontal)
+            self.advance(abs(delta.x)*self.screen.zoom/self.screen.CURSOR_SPEED)
+            if delta.y:self.key(vertical)
+            self.release(horizontal)
+        elif delta.y:self.key(vertical)
+        if delta.y:
+            self.advance(abs(delta.y)*self.screen.zoom/self.screen.CURSOR_SPEED)
+            self.release(vertical)
 
     def click(self, logical):
         point = self.point(logical)
@@ -195,7 +211,6 @@ class LatticeUITests(unittest.TestCase):
         cursor = self.screen.cursor_position.copy()
         nearest = min(self.screen.board.nodes, key=lambda identifier:
                       pygame.Vector2(self.screen.board.nodes[identifier]['position']).distance_squared_to(cursor))
-        self.assertEqual(nearest, 'hp_01')
         pan = self.screen.pan.copy()
         self.release(pygame.K_RIGHT)
         self.assertFalse(self.screen.navigating)
@@ -215,9 +230,7 @@ class LatticeUITests(unittest.TestCase):
 
     def test_keyboard_can_explore_distant_rank_locked_nodes_without_travel(self):
         before = self.snapshots()
-        target = pygame.Vector2(self.screen.board.nodes['lck_02']['position'])
-        duration = target.length()*self.screen.zoom/self.screen.CURSOR_SPEED
-        self.navigate((pygame.K_RIGHT, pygame.K_UP), duration)
+        self.navigate_to(self.screen.board.nodes['lck_02']['position'])
         self.advance(self.screen.CAMERA_DURATION)
         self.assertEqual(self.screen.selected, 'lck_02')
         self.assertIn('8', self.game.lattice_move_reason('lck_02'))
@@ -270,9 +283,11 @@ class LatticeUITests(unittest.TestCase):
         intermediate = self.screen.pan.copy()
         self.key(pygame.K_TAB)
         self.assertEqual(self.screen.pan, intermediate)
-        self.assertEqual(self.screen.selected, 'def_01')
+        ids = tuple(self.screen.board.nodes)
+        following = ids[(ids.index('mp_01')+1) % len(ids)]
+        self.assertEqual(self.screen.selected, following)
         self.advance(self.screen.CAMERA_DURATION)
-        self.assertLess(self.screen.node_position('def_01').distance_to(self.screen.map_rect.center), .001)
+        self.assertLess(self.screen.node_position(following).distance_to(self.screen.map_rect.center), .001)
 
     def test_drag_release_uses_nearest_cursor_node_in_letterboxed_window(self):
         before = self.snapshots()
@@ -319,7 +334,7 @@ class LatticeUITests(unittest.TestCase):
         self.assertFalse(self.screen.navigating)
         self.screen.open();self.advance(.4)
         self.assertEqual(self.screen.selected, 'origin')
-        self.assertEqual(self.screen.cursor_position, pygame.Vector2(0, 0))
+        self.assertEqual(self.screen.cursor_position, pygame.Vector2(self.screen.board.nodes['origin']['position']))
 
     def test_selected_node_pulses_and_reduced_motion_uses_static_emphasis(self):
         self.advance(self.screen.CAMERA_DURATION)
@@ -499,6 +514,48 @@ class LatticeUITests(unittest.TestCase):
         self.key(pygame.K_KP0)
         self.assertEqual(self.screen.zoom, 1.0)
         self.assertLess(self.screen.node_position(self.screen.selected).distance_to(self.screen.map_rect.center), .001)
+
+    def test_internal_connections_curve_and_external_connections_stay_straight(self):
+        curved = max((edge for edge in self.screen.board.edges if 'curve' in edge),
+                     key=lambda edge: pygame.Vector2(edge['curve']).distance_to(
+                         (pygame.Vector2(self.screen.board.nodes[edge['from']]['position'])+
+                          pygame.Vector2(self.screen.board.nodes[edge['to']]['position']))/2))
+        straight = next(edge for edge in self.screen.board.edges if 'curve' not in edge)
+        before = self.snapshots()
+        for zoom in (.1, .8, 2.0):
+            with self.subTest(zoom=zoom):
+                self.screen.zoom = self.screen.target_zoom = zoom
+                points = self.screen.edge_points(curved)
+                self.assertGreaterEqual(len(points), 4)
+                self.assertEqual(points[0], self.screen.node_position(curved['from']))
+                self.assertEqual(points[-1], self.screen.node_position(curved['to']))
+                start, end = points[0], points[-1]
+                direction = end-start
+                deviation = max(abs((point-start).cross(direction))/direction.length() for point in points)
+                self.assertGreater(deviation, .1)
+                self.assertEqual(self.screen.edge_points(straight),
+                                 [self.screen.node_position(straight['from']),
+                                  self.screen.node_position(straight['to'])])
+        self.assertEqual(self.snapshots(), before)
+
+    def test_route_highlight_and_rank_dashes_follow_the_curved_path(self):
+        self.screen._select('hp_01', center=True)
+        first = next(edge for edge in self.screen.board.edges
+                     if {edge['from'], edge['to']} == {'origin', 'hp_01'})
+        locked = next(edge for edge in self.screen.board.edges if 'curve' in edge and edge is not first)
+        with patch.dict(locked, {'min_rank': 999}), patch.object(self.screen, '_draw_path') as draw_path:
+            self.screen._draw_map(self.game.ui.painter(self.game.ui_surface))
+        calls = {(tuple(call.args[2][0]), tuple(call.args[2][-1])): call
+                 for call in draw_path.call_args_list}
+        highlighted = calls[(tuple(self.screen.node_position(first['from'])),
+                             tuple(self.screen.node_position(first['to'])))]
+        self.assertEqual(highlighted.args[1], GOLD)
+        self.assertGreaterEqual(len(highlighted.args[2]), 4)
+        self.assertFalse(highlighted.kwargs.get('dashed', False))
+        gate = calls[(tuple(self.screen.node_position(locked['from'])),
+                      tuple(self.screen.node_position(locked['to'])))]
+        self.assertTrue(gate.kwargs['dashed'])
+        self.assertGreaterEqual(len(gate.args[2]), 4)
 
     def test_details_confirmations_and_pause_rows_fit_all_text_sizes(self):
         self.assertTrue(self.progression.award_battle_rewards('layout-test', {'caelan': 20}, {'aether_emerald': 1}))

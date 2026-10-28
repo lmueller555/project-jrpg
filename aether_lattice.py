@@ -17,6 +17,7 @@ from character_attributes import ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE
 
 ROOT = Path(__file__).resolve().parent
 BOARD_PATH = ROOT/'assets/progression/aether_lattice.json'
+LEGACY_BOARD_PATH = ROOT/'assets/progression/aether_lattice_v1.json'
 ABILITY_PATH = ROOT/'assets/abilities/catalog.json'
 MAX_RP = 999999999
 MAX_RECEIPTS = 4096
@@ -30,6 +31,41 @@ def _identifier(value):
 
 def _integer(value, minimum=0, maximum=MAX_RP):
     return type(value) is int and minimum <= value <= maximum
+
+
+def _point(value):
+    return (isinstance(value, list) and len(value) == 2
+            and all(type(n) is int and abs(n) <= 100000 for n in value))
+
+
+def _has_center_route(adjacency, center, entry, exit_node):
+    """Two vertex-disjoint center paths join entry to exit without retracing."""
+    residual = {}
+
+    def connect(a, b, capacity):
+        residual.setdefault(a, {})[b] = capacity
+        residual.setdefault(b, {}).setdefault(a, 0)
+
+    sink = ('sink',)
+    for node, neighbors in adjacency.items():
+        connect((node, 'in'), (node, 'out'), 2 if node == center else 1)
+        for other in neighbors:connect((node, 'out'), (other, 'in'), 2)
+    for node in (entry, exit_node):connect((node, 'out'), sink, 1)
+    source = (center, 'out')
+    for _ in range(2):
+        queue = deque([source]);parents = {source: None}
+        while queue and sink not in parents:
+            node = queue.popleft()
+            for other, capacity in residual[node].items():
+                if capacity and other not in parents:
+                    parents[other] = node;queue.append(other)
+        if sink not in parents:return False
+        node = sink
+        while parents[node] is not None:
+            previous = parents[node]
+            residual[previous][node] -= 1;residual[node][previous] += 1
+            node = previous
+    return True
 
 
 class LatticeBoard:
@@ -47,6 +83,9 @@ class LatticeBoard:
         self.description = self.data['description']
         self.nodes = self.data['nodes']
         self.edges = self.data['edges']
+        self.formations = self.data.get('formations', {})
+        self.node_formations = {node: identifier for identifier, formation in self.formations.items()
+                                for node in formation['nodes']}
         self.starts = self.data['starts']
         self.starting_abilities = self.data['starting_abilities']
         self.crystals = self.data['crystals']
@@ -61,7 +100,7 @@ class LatticeBoard:
         data = self.data
         required = {'version', 'id', 'name', 'description', 'rank_curve', 'starts',
                     'starting_abilities', 'crystals', 'nodes', 'edges'}
-        if (not isinstance(data, dict) or set(data) != required
+        if (not isinstance(data, dict) or not required <= set(data) or set(data)-required-{'formations'}
                 or not _integer(data['version'], 1, 999999) or not _identifier(data['id'])
                 or any(not isinstance(data[key], str) or not data[key].strip()
                        for key in ('name', 'description'))):
@@ -106,8 +145,7 @@ class LatticeBoard:
             if (kind not in ('blank', 'stat', 'ability') or set(node) != expected
                     or any(not isinstance(node[key], str) or not node[key].strip()
                            for key in ('name', 'description'))
-                    or not isinstance(node['position'], list) or len(node['position']) != 2
-                    or any(type(n) is not int or abs(n) > 100000 for n in node['position'])
+                    or not _point(node['position'])
                     or not isinstance(node['cost'], dict)):
                 raise ValueError('Invalid lattice node fields')
             if kind == 'blank':
@@ -140,10 +178,12 @@ class LatticeBoard:
             raise ValueError('Invalid lattice connections')
         pairs = set();adjacency = {key: set() for key in nodes}
         for edge in edges:
-            if (not isinstance(edge, dict) or set(edge) != {'from', 'to', 'min_rank'}
+            if (not isinstance(edge, dict) or set(edge) not in
+                    ({'from', 'to', 'min_rank'}, {'from', 'to', 'min_rank', 'curve'})
                     or not isinstance(edge['from'], str) or edge['from'] not in nodes
                     or not isinstance(edge['to'], str) or edge['to'] not in nodes
-                    or edge['from'] == edge['to'] or not _integer(edge['min_rank'], 1, 999999)):
+                    or edge['from'] == edge['to'] or not _integer(edge['min_rank'], 1, 999999)
+                    or ('curve' in edge and not _point(edge['curve']))):
                 raise ValueError('Invalid lattice connection')
             pair = frozenset((edge['from'], edge['to']))
             if pair in pairs:raise ValueError('Duplicate lattice connection')
@@ -154,6 +194,51 @@ class LatticeBoard:
             for other in adjacency[queue.popleft()]-reached:
                 reached.add(other);queue.append(other)
         if reached != set(nodes):raise ValueError('Unreachable lattice content')
+        self._validate_formations(adjacency)
+
+    def _validate_formations(self, adjacency):
+        if 'formations' not in self.data:
+            if any('curve' in edge for edge in self.data['edges']):
+                raise ValueError('Curved paths require formation metadata')
+            return
+        formations = self.data['formations']
+        if not isinstance(formations, dict) or not formations or len(formations) > MAX_NODES:
+            raise ValueError('Invalid lattice formations')
+        membership = {}
+        fields = {'name', 'center', 'radius', 'size', 'nodes', 'center_node', 'entry', 'exit'}
+        for identifier, formation in formations.items():
+            if (not _identifier(identifier) or not isinstance(formation, dict) or set(formation) != fields
+                    or not isinstance(formation['name'], str) or not formation['name'].strip()
+                    or not _point(formation['center']) or not _integer(formation['radius'], 1, 100000)
+                    or formation['size'] not in ('large', 'small')
+                    or not isinstance(formation['nodes'], list) or not 3 <= len(formation['nodes']) <= MAX_NODES
+                    or any(not isinstance(node, str) or node not in self.data['nodes'] for node in formation['nodes'])
+                    or len(formation['nodes']) != len(set(formation['nodes']))):
+                raise ValueError('Invalid lattice formation fields')
+            members = set(formation['nodes'])
+            endpoints = (formation['center_node'], formation['entry'], formation['exit'])
+            if (any(not isinstance(node, str) or node not in members for node in endpoints)
+                    or len(set(endpoints)) != 3 or members & set(membership)
+                    or self.data['nodes'][formation['center_node']]['position'] != formation['center']):
+                raise ValueError('Invalid lattice formation membership')
+            cx, cy = formation['center'];radius = formation['radius']+1
+            if any((self.data['nodes'][node]['position'][0]-cx)**2
+                   +(self.data['nodes'][node]['position'][1]-cy)**2 > radius*radius for node in members):
+                raise ValueError('Formation node lies outside its bounds')
+            inner = {node: adjacency[node] & members for node in members}
+            reached = {formation['entry']};queue = deque(reached)
+            while queue:
+                for other in inner[queue.popleft()]-reached:
+                    reached.add(other);queue.append(other)
+            if (reached != members or not _has_center_route(inner, formation['center_node'],
+                                                          formation['entry'], formation['exit'])):
+                raise ValueError('Formation center needs a continuing entry-to-exit route')
+            membership.update(dict.fromkeys(members, identifier))
+        for edge in self.data['edges']:
+            group = membership.get(edge['from'])
+            internal = group is not None and group == membership.get(edge['to'])
+            if internal != ('curve' in edge):
+                raise ValueError('Formation paths curve; external paths must be straight')
 
     def rank_for_rp(self, rp):
         if not _integer(rp):raise ValueError('Invalid Resonance Points')
@@ -309,7 +394,41 @@ class AetherLattice:
                 'characters': {key: self.state(key) for key in sorted(self._characters)},
                 'receipts': sorted(self._receipts)}
 
+    def _normalized_snapshot(self, data):
+        """Validate the archived rules before upgrading a known old ledger."""
+        if (not isinstance(data, dict) or self.board.id != 'caelan_starter' or self.board.version != 2
+                or data.get('board_id') != self.board.id or type(data.get('board_version')) is not int
+                or data['board_version'] != 1):
+            return data
+        try:
+            legacy = LatticeBoard(json.loads(LEGACY_BOARD_PATH.read_text(encoding='utf-8')),
+                                  self.board.ability_catalog)
+            if (legacy.id != self.board.id or legacy.version != 1
+                    or legacy.rank_curve != self.board.rank_curve
+                    or legacy.starts != self.board.starts or self.starts != legacy.starts
+                    or legacy.starting_abilities != self.board.starting_abilities):
+                return None
+            # Cosmetic layout changes and new routes may not rewrite an earned
+            # bonus, crystal payment or old gated connection during migration.
+            for identifier, node in legacy.nodes.items():
+                current = self.board.nodes.get(identifier)
+                if current is None or any(current.get(key) != value for key, value in node.items()
+                                          if key not in ('position', 'name', 'description')):
+                    return None
+            if any(self.board.edge_rank(edge['from'], edge['to']) != edge['min_rank']
+                   for edge in legacy.edges):
+                return None
+            if not AetherLattice(legacy, self.starts)._valid_current_snapshot(data):return None
+        except (OSError, ValueError, TypeError):
+            return None
+        normalized = deepcopy(data)
+        normalized['board_version'] = self.board.version
+        return normalized
+
     def _valid_snapshot(self, data):
+        return self._valid_current_snapshot(self._normalized_snapshot(data))
+
+    def _valid_current_snapshot(self, data):
         if (not isinstance(data, dict)
                 or set(data) != {'version', 'board_id', 'board_version', 'characters', 'receipts'}
                 or type(data['version']) is not int or data['version'] != 1
@@ -337,15 +456,21 @@ class AetherLattice:
                     or any(self.board.nodes[node]['kind'] == 'blank' for node in activated)):
                 return False
             start = self.starts[identifier]
-            reached = {start};distances = {start: 0};queue = deque(reached)
+            reached = {start};distances = {start: 0};queue = deque(reached);bipartite = True
             while queue:
                 node = queue.popleft()
                 for other, required in self.board.adjacency[node]:
-                    if other in visited and other not in reached and required <= rank:
+                    if other not in visited or required > rank:continue
+                    if other not in reached:
                         reached.add(other);distances[other] = distances[node]+1;queue.append(other)
+                    elif (distances[node]-distances[other]) % 2 == 0:bipartite = False
             if reached != visited:return False
             distance = distances[state['position']]
-            if state['spent_steps'] < distance:return False
+            if (state['spent_steps'] < distance
+                    or (state['position'] == start and len(visited) > 1
+                        and state['spent_steps'] < len(visited))
+                    or (bipartite and (state['spent_steps']-distance) % 2)):
+                return False
             edges = sum(1 for node in visited for other, required in self.board.adjacency[node]
                         if other in visited and required <= rank)//2
             if edges == len(visited)-1:
@@ -353,8 +478,7 @@ class AetherLattice:
                 # path where the character currently stands. Repeated moves
                 # add pairs of traversals; spending cannot invent a return.
                 minimum = 2*edges-distance
-                if (state['spent_steps'] < minimum or (state['spent_steps']-distance) % 2
-                        or (not edges and state['spent_steps'])):
+                if state['spent_steps'] < minimum or (not edges and state['spent_steps']):
                     return False
         return True
 
@@ -363,7 +487,8 @@ class AetherLattice:
         return cls(board, starts)._valid_snapshot(data)
 
     def restore(self, data):
-        if not self._valid_snapshot(data):return False
+        data = self._normalized_snapshot(data)
+        if not self._valid_current_snapshot(data):return False
         self._characters = {key: {**deepcopy(value), 'visited': set(value['visited']),
                                   'activated': set(value['activated'])}
                             for key, value in data['characters'].items()}

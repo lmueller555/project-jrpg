@@ -12,6 +12,8 @@ os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
+from aether_lattice import AetherLattice, LatticeBoard
+from lattice_progression import LatticeProgression
 from main import Game
 from quests import OPENING_QUEST
 
@@ -121,6 +123,44 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertEqual(restored.attributes.value('hp'), 160)
         self.assertEqual(restored.attributes.current_hp, 155)
         self.assertEqual(restored.attributes.current_mp, 12)
+
+    def test_continue_migrates_a_real_starter_journey_without_losing_growth_or_resources(self):
+        game = self.game()
+        legacy_path = Path(__file__).resolve().parents[1]/'assets/progression/aether_lattice_v1.json'
+        legacy = AetherLattice(LatticeBoard(json.loads(legacy_path.read_text())))
+        progression = LatticeProgression(legacy, game.inventory, {'caelan': game.attributes})
+        self.assertTrue(progression.award_battle_rewards('legacy_battle', {'caelan': 2000},
+                                                       {'aether_emerald': 2, 'aether_diamond': 2}))
+        for identifier in ('hp_01', 'mend_01', 'brace_01'):
+            self.assertTrue(progression.move(identifier))
+            self.assertTrue(progression.activate(identifier))
+        self.assertTrue(game.attributes.set_current(hp=155, mp=12))
+        game.lattice, game.lattice_progression = legacy, progression
+        self.assertTrue(game.save_progress())
+        original_bytes = self.path.read_bytes()
+        expected_lattice = copy.deepcopy(legacy.to_dict())
+        self.assertEqual(expected_lattice['board_version'], 1)
+        expected_lattice['board_version'] = 2
+        expected_attributes, expected_inventory = game.attributes.to_dict(), game.inventory.to_dict()
+        expected_steps, expected_rank = legacy.steps(), legacy.rank()
+        for _ in range(2):
+            restored = self.game(title=True)
+            self.assertTrue(restored.has_saved_journey)
+            self.assertEqual(self.path.read_bytes(), original_bytes)
+            self.assertTrue(restored.begin_journey(True))
+            self.assertEqual(restored.lattice.to_dict(), expected_lattice)
+            self.assertEqual(restored.attributes.to_dict(), expected_attributes)
+            self.assertEqual(restored.inventory.to_dict(), expected_inventory)
+            self.assertEqual(restored.lattice.steps(), expected_steps)
+            self.assertEqual(restored.lattice.rank(), expected_rank)
+            self.assertEqual(restored.lattice.learned_abilities(), ['basic_magicks', 'brace', 'mend'])
+            self.assertEqual((restored.attributes.value('hp'), restored.attributes.current_hp,
+                              restored.attributes.current_mp), (160, 155, 12))
+            self.assertFalse(restored.award_battle_rewards('legacy_battle', {'caelan': 2000},
+                                                          {'aether_emerald': 2}))
+            self.assertTrue(restored.save_progress())
+            original_bytes = self.path.read_bytes()
+            self.assertEqual(json.loads(original_bytes)['aether_lattice']['board_version'], 2)
 
     def test_multi_rank_rewards_are_idempotent_but_new_battle_attempts_are_valid(self):
         game = self.game()
@@ -282,15 +322,17 @@ class LatticeGameplayTests(unittest.TestCase):
         for _ in range(24):game.update(1/60, (1, 0), True)
         self.assertTrue(screen.navigating)
         self.assertGreater(screen.cursor_position.x, cursor.x)
+        selected = min(screen.board.nodes, key=lambda identifier:
+                       pygame.Vector2(screen.board.nodes[identifier]['position']).distance_squared_to(screen.cursor_position))
         pygame.event.post(pygame.event.Event(pygame.KEYUP, key=pygame.K_RIGHT))
         self.assertTrue(game.handle_events())
         self.assertFalse(screen.navigating)
-        self.assertEqual(screen.selected, 'hp_01')
+        self.assertEqual(screen.selected, selected)
         pan = screen.pan.copy()
         game.update(.04, (1, 0), True)
         self.assertNotEqual(screen.pan, pan)
         for _ in range(12):game.update(1/60, (1, 0), True)
-        self.assertLess(screen.node_position('hp_01').distance_to(screen.map_rect.center), .001)
+        self.assertLess(screen.node_position(selected).distance_to(screen.map_rect.center), .001)
         strength = screen.pulse_strength
         game.update(.2, (1, 0), True)
         self.assertNotAlmostEqual(screen.pulse_strength, strength)
@@ -357,7 +399,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertTrue(screen.is_open)
         self.assertFalse(screen.navigating)
         self.assertEqual(screen.selected, 'origin')
-        self.assertEqual(screen.cursor_position, pygame.Vector2(0, 0))
+        self.assertEqual(screen.cursor_position, pygame.Vector2(screen.board.nodes['origin']['position']))
 
 
 if __name__ == '__main__':unittest.main()
