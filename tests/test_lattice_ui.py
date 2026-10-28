@@ -82,6 +82,14 @@ class LatticeUITests(unittest.TestCase):
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=point))
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=point))
 
+    def wheel(self, logical, amount):
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEMOTION, pos=self.point(logical),
+                                                    rel=(0, 0), buttons=(0, 0, 0)))
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEWHEEL, y=amount, x=0))
+
+    def world_at(self, logical):
+        return self.screen.pan+(pygame.Vector2(logical)-pygame.Vector2(self.screen.map_rect.center))/self.screen.zoom
+
     def snapshots(self):
         return (self.game.lattice.to_dict(), self.game.inventory.to_dict(), self.game.attributes.to_dict())
 
@@ -93,6 +101,7 @@ class LatticeUITests(unittest.TestCase):
         for _ in self.game.lattice.board.nodes:self.key(pygame.K_TAB)
         self.assertEqual(self.screen.selected, 'hp_01')
         self.screen.fit_board()
+        self.advance(self.screen.ZOOM_DURATION)
         self.click(self.screen.node_position('mp_01'))
         self.assertEqual(self.screen.selected, 'mp_01')
         self.assertEqual(self.snapshots(), before)
@@ -151,10 +160,12 @@ class LatticeUITests(unittest.TestCase):
     def test_pan_zoom_fit_and_help_do_not_modify_progress(self):
         before = self.snapshots()
         self.screen.fit_board()
+        self.advance(self.screen.ZOOM_DURATION)
         for identifier in self.game.lattice.board.nodes:
             self.assertTrue(self.screen.map_rect.contains(pygame.Rect(*self.screen.node_position(identifier), 1, 1)))
         old = self.screen.zoom
         self.key(pygame.K_PLUS)
+        self.advance(self.screen.ZOOM_DURATION)
         self.assertGreater(self.screen.zoom, old)
         start = self.screen.map_rect.center
         point = self.point(start)
@@ -167,6 +178,7 @@ class LatticeUITests(unittest.TestCase):
         self.assertNotEqual(self.screen.pan, pan)
         old = self.screen.zoom
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEWHEEL, y=1, x=0))
+        self.advance(self.screen.ZOOM_DURATION)
         self.assertGreater(self.screen.zoom, old)
         self.key(pygame.K_F1)
         self.assertTrue(self.screen.help_open)
@@ -247,6 +259,7 @@ class LatticeUITests(unittest.TestCase):
 
     def test_click_and_tab_redirect_an_in_progress_camera_without_a_jump(self):
         self.screen.fit_board()
+        self.advance(self.screen.ZOOM_DURATION)
         self.click(self.screen.node_position('mp_01'))
         initial = self.screen.pan.copy()
         target = pygame.Vector2(self.screen.board.nodes['mp_01']['position'])
@@ -328,6 +341,164 @@ class LatticeUITests(unittest.TestCase):
         self.screen._select('hp_01', center=True)
         self.advance(self.screen.CAMERA_DURATION)
         self.assertLess(self.screen.node_position('hp_01').distance_to(self.screen.map_rect.center), .001)
+
+    def test_keyboard_zoom_is_smooth_and_keeps_selected_node_centered(self):
+        before = self.snapshots()
+        self.select_first_hp()
+        start = self.screen.zoom
+        self.key(pygame.K_PLUS)
+        target = self.screen.target_zoom
+        self.assertGreater(target, start)
+        self.assertEqual(self.screen.zoom, start)
+        self.advance(self.screen.ZOOM_DURATION/3)
+        self.assertGreater(self.screen.zoom, start)
+        self.assertLess(self.screen.zoom, target)
+        self.assertLess(self.screen.node_position('hp_01').distance_to(self.screen.map_rect.center), .001)
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, target)
+        self.click(self.screen.zoom_out_rect.center)
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, start)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_rapid_zoom_retargets_from_rendered_scale_and_accumulates_requests(self):
+        start = self.screen.zoom
+        self.key(pygame.K_PLUS);self.key(pygame.K_PLUS)
+        self.assertAlmostEqual(self.screen.target_zoom, start*1.2*1.2)
+        self.assertEqual(self.screen.zoom, start)
+        self.advance(.04)
+        intermediate = self.screen.zoom
+        self.key(pygame.K_MINUS)
+        target = self.screen.target_zoom
+        self.assertAlmostEqual(target, start*1.2)
+        self.assertEqual(self.screen.zoom, intermediate)
+        self.advance(.04)
+        self.assertLess(abs(self.screen.zoom-target), abs(intermediate-target))
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, target)
+
+    def test_wheel_zoom_preserves_point_under_pointer_in_scaled_letterboxed_windows(self):
+        before = self.snapshots()
+        for size in ((960, 640), (1440, 810), (800, 800)):
+            with self.subTest(size=size):
+                self.game.window = pygame.display.set_mode(size)
+                scale = max(1, min(size[0]//480, size[1]//320))
+                self.game.ui_surface = pygame.Surface((480*scale, 320*scale))
+                self.screen.reset();self.screen.open();self.screen.draw(self.game.ui_surface)
+                pointer = (self.screen.map_rect.left+48, self.screen.map_rect.top+44)
+                world = self.world_at(pointer)
+                initial = self.screen.zoom
+                self.wheel(pointer, 2)
+                self.assertEqual(self.screen.zoom, initial)
+                for _ in range(12):
+                    self.screen.update(1/60)
+                    self.assertLess(self.world_at(pointer).distance_to(world), .001)
+                self.assertGreater(self.screen.zoom, initial)
+                self.assertEqual(self.screen.selected, 'origin')
+        self.assertEqual(self.snapshots(), before)
+
+    def test_zoom_limits_do_not_drift_or_change_progression(self):
+        before = self.snapshots()
+        for _ in range(40):self.key(pygame.K_PLUS)
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, self.screen.MAX_ZOOM)
+        pan = self.screen.pan.copy()
+        self.key(pygame.K_PLUS);self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, self.screen.MAX_ZOOM)
+        self.assertEqual(self.screen.pan, pan)
+        for _ in range(40):self.key(pygame.K_MINUS)
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, self.screen.MIN_ZOOM)
+        pan = self.screen.pan.copy()
+        self.key(pygame.K_MINUS);self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, self.screen.MIN_ZOOM)
+        self.assertEqual(self.screen.pan, pan)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_fit_and_reset_animate_to_overview_and_selected_detail(self):
+        before = self.snapshots()
+        self.select_first_hp()
+        start_zoom, start_pan = self.screen.zoom, self.screen.pan.copy()
+        self.key(pygame.K_f)
+        self.assertEqual(self.screen.zoom, start_zoom)
+        self.assertEqual(self.screen.pan, start_pan)
+        self.advance(self.screen.ZOOM_DURATION/3)
+        self.assertLess(self.screen.zoom, start_zoom)
+        self.assertNotEqual(self.screen.pan, start_pan)
+        self.advance(self.screen.ZOOM_DURATION)
+        for identifier in self.screen.board.nodes:
+            self.assertTrue(self.screen.map_rect.collidepoint(self.screen.node_position(identifier)), identifier)
+        self.key(pygame.K_0)
+        self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, 1.0)
+        self.assertLess(self.screen.node_position('hp_01').distance_to(self.screen.map_rect.center), .001)
+        self.click(self.screen.zoom_out_rect.center);self.advance(self.screen.ZOOM_DURATION)
+        self.click(self.screen.reset_zoom_rect.center);self.advance(self.screen.ZOOM_DURATION)
+        self.assertAlmostEqual(self.screen.zoom, 1.0)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_wheel_routes_to_details_help_and_confirmation_without_zooming(self):
+        self.screen._select('mend_01', center=True)
+        self.screen.draw(self.game.ui_surface)
+        target = self.screen.target_zoom
+        self.wheel(self.screen.detail_view.center, -2)
+        self.assertGreater(self.screen.detail_scroll, 0)
+        self.assertEqual(self.screen.target_zoom, target)
+        self.key(pygame.K_F1)
+        self.wheel(self.screen.map_rect.center, -2)
+        self.key(pygame.K_PLUS)
+        self.assertEqual(self.screen.target_zoom, target)
+        self.key(pygame.K_ESCAPE)
+        self.assertTrue(self.progression.award_battle_rewards('zoom-confirm', {'caelan': 20}, {}))
+        self.screen._select('hp_01', center=True);self.key(pygame.K_m)
+        self.assertIsNotNone(self.screen.pending)
+        before = self.snapshots()
+        self.wheel(self.screen.map_rect.center, 3)
+        self.key(pygame.K_PLUS);self.key(pygame.K_0);self.key(pygame.K_f)
+        self.assertEqual(self.screen.target_zoom, target)
+        self.assertEqual(self.screen.pending, ('move', 'hp_01'))
+        self.assertEqual(self.snapshots(), before)
+
+    def test_selection_and_free_cursor_override_pointer_zoom_anchor(self):
+        before = self.snapshots()
+        pointer = (self.screen.map_rect.left+42, self.screen.map_rect.top+42)
+        self.wheel(pointer, 2);self.advance(.04)
+        pan = self.screen.pan.copy()
+        self.key(pygame.K_TAB)
+        self.assertEqual(self.screen.pan, pan)
+        self.advance(max(self.screen.CAMERA_DURATION, self.screen.ZOOM_DURATION))
+        self.assertEqual(self.screen.selected, 'hp_01')
+        self.assertLess(self.screen.node_position('hp_01').distance_to(self.screen.map_rect.center), .001)
+        self.wheel(pointer, -2);self.advance(.04)
+        self.key(pygame.K_RIGHT);self.advance(.25)
+        self.assertTrue(self.screen.navigating)
+        cursor = self.screen.cursor_position.copy()
+        nearest = min(self.screen.board.nodes, key=lambda identifier:
+                      pygame.Vector2(self.screen.board.nodes[identifier]['position']).distance_squared_to(cursor))
+        self.release(pygame.K_RIGHT)
+        self.advance(max(self.screen.CAMERA_DURATION, self.screen.ZOOM_DURATION))
+        self.assertEqual(self.screen.selected, nearest)
+        self.assertLess(self.screen.node_position(nearest).distance_to(self.screen.map_rect.center), .001)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_zoom_toolbar_fits_large_text_and_reduced_motion_finishes_immediately(self):
+        self.game.window = pygame.display.set_mode((480, 320))
+        self.game.ui_surface = pygame.Surface((480, 320))
+        self.game.audio.set_text_scale(1.5)
+        self.game.audio.set_reduced_motion(True)
+        self.screen.draw(self.game.ui_surface)
+        controls = (self.screen.zoom_out_rect, self.screen.zoom_in_rect,
+                    self.screen.fit_rect, self.screen.reset_zoom_rect)
+        for rect in controls:self.assertTrue(self.screen.map_rect.contains(rect))
+        for index, rect in enumerate(controls):
+            self.assertTrue(all(not rect.colliderect(other) for other in controls[index+1:]))
+        self.key(pygame.K_PLUS)
+        self.assertEqual(self.screen.zoom, self.screen.target_zoom)
+        self.key(pygame.K_f)
+        self.assertEqual(self.screen.zoom, self.screen.target_zoom)
+        self.key(pygame.K_KP0)
+        self.assertEqual(self.screen.zoom, 1.0)
+        self.assertLess(self.screen.node_position(self.screen.selected).distance_to(self.screen.map_rect.center), .001)
 
     def test_details_confirmations_and_pause_rows_fit_all_text_sizes(self):
         self.assertTrue(self.progression.award_battle_rewards('layout-test', {'caelan': 20}, {'aether_emerald': 1}))

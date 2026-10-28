@@ -11,6 +11,7 @@ class LatticeUI:
     MIN_ZOOM = .18
     MAX_ZOOM = 2.0
     CAMERA_DURATION = .18
+    ZOOM_DURATION = .18
     CURSOR_SPEED = 180.0
     PULSE_PERIOD = 1.2
     DIRECTIONS = {pygame.K_LEFT: (-1, 0), pygame.K_RIGHT: (1, 0),
@@ -31,7 +32,9 @@ class LatticeUI:
         self.detail_track = pygame.Rect(458, 85, 4, 157)
         self.zoom_out_rect = pygame.Rect(24, 275, 24, 22)
         self.zoom_in_rect = pygame.Rect(52, 275, 24, 22)
-        self.fit_rect = pygame.Rect(80, 275, 32, 22)
+        self.zoom_readout_rect = pygame.Rect(82, 275, 50, 22)
+        self.fit_rect = pygame.Rect(138, 275, 48, 22)
+        self.reset_zoom_rect = pygame.Rect(192, 275, 82, 22)
         self.help_panel = pygame.Rect(32, 40, 416, 248)
         self.help_view = pygame.Rect(46, 80, 386, 188)
         self.help_close_rect = pygame.Rect(410, 47, 24, 24)
@@ -56,6 +59,10 @@ class LatticeUI:
         self.hovered = None
         self.pointer = None
         self.zoom = .8
+        self.target_zoom = self.zoom
+        self._zoom_start = self.zoom
+        self._zoom_elapsed = self.ZOOM_DURATION
+        self._zoom_anchor = None
         self.pan = pygame.Vector2(0, 0)
         self.cursor_position = pygame.Vector2(0, 0)
         self._keys = set()
@@ -103,10 +110,12 @@ class LatticeUI:
         self.help_open = False
         self._held = self.dragging = self.drag_detail = False
         self._keys.clear()
+        self._cancel_zoom()
         self.game.ui.sound('back')
 
     def _select(self, identifier, center=False):
         if identifier not in self.board.nodes:return
+        self._zoom_anchor = None
         self.cursor_position.update(self.board.nodes[identifier]['position'])
         self._pulse_elapsed = 0.0
         if identifier != self.selected:
@@ -126,6 +135,7 @@ class LatticeUI:
         return .5+.5*math.cos(self._pulse_elapsed*math.tau/self.PULSE_PERIOD)
 
     def _camera_to(self, position, immediate=False):
+        self._zoom_anchor = None
         target = pygame.Vector2(position)
         if immediate or getattr(self.game.audio, 'reduced_motion', False):
             self.pan.update(target)
@@ -169,6 +179,13 @@ class LatticeUI:
         dt = max(0.0, min(float(dt), .25))
         if self.pending is not None or self.help_open:
             self._stop_navigation()
+        if self._zoom_elapsed < self.ZOOM_DURATION:
+            self._zoom_elapsed = min(self.ZOOM_DURATION, self._zoom_elapsed+dt)
+            t = self._zoom_elapsed/self.ZOOM_DURATION
+            eased = 1-(1-t)**3
+            self.zoom = (self.target_zoom if self._zoom_elapsed >= self.ZOOM_DURATION
+                         or getattr(self.game.audio, 'reduced_motion', False)
+                         else self._zoom_start+(self.target_zoom-self._zoom_start)*eased)
         if self._keys and not self.dragging:
             direction = sum((pygame.Vector2(self.DIRECTIONS[key]) for key in self._keys), pygame.Vector2())
             if direction.length_squared():
@@ -176,12 +193,17 @@ class LatticeUI:
                 self.cursor_position += direction*self.CURSOR_SPEED*dt/self.zoom
                 self._clamp_cursor()
         if self.navigating:
+            self._zoom_anchor = None
             if getattr(self.game.audio, 'reduced_motion', False):self.pan.update(self.cursor_position)
             else:
                 # Exponential following stays fluid when direction changes during a hold.
                 self.pan += (self.cursor_position-self.pan)*(1-math.exp(-24*dt))
             self._camera_target = self.pan.copy()
             self._camera_elapsed = self.CAMERA_DURATION
+        elif self._zoom_anchor is not None:
+            world, offset = self._zoom_anchor
+            self.pan.update(world-offset/self.zoom)
+            if self._zoom_elapsed >= self.ZOOM_DURATION:self._zoom_anchor = None
         elif self._camera_elapsed < self.CAMERA_DURATION:
             if getattr(self.game.audio, 'reduced_motion', False):
                 self._camera_to(self._camera_target, immediate=True)
@@ -199,15 +221,45 @@ class LatticeUI:
         points = [pygame.Vector2(node['position']) for node in self.board.nodes.values()]
         left, right = min(p.x for p in points), max(p.x for p in points)
         top, bottom = min(p.y for p in points), max(p.y for p in points)
-        self.pan.update((left+right)/2, (top+bottom)/2)
         self._stop_navigation(settle=False)
-        self._camera_to(self.pan, immediate=True)
-        self.zoom = max(self.MIN_ZOOM, min(self.MAX_ZOOM,
-                        (self.map_rect.width-44)/max(1, right-left),
-                        (self.map_rect.height-74)/max(1, bottom-top)))
+        target = min((self.map_rect.width-44)/max(1, right-left),
+                     (self.map_rect.height-74)/max(1, bottom-top))
+        self._zoom_to(target, focus=((left+right)/2, (top+bottom)/2))
 
-    def _zoom(self, factor):
-        self.zoom = max(self.MIN_ZOOM, min(self.MAX_ZOOM, self.zoom*factor))
+    def reset_zoom(self):
+        self._stop_navigation()
+        self._zoom_to(1.0, focus=self.board.nodes[self.selected]['position'])
+
+    def _cancel_zoom(self):
+        self.target_zoom = self._zoom_start = self.zoom
+        self._zoom_elapsed = self.ZOOM_DURATION
+        self._zoom_anchor = None
+
+    def _zoom_to(self, amount, focus=None, anchor=None):
+        """Retarget from the rendered view, preserving a wheel's world anchor."""
+        self.target_zoom = max(self.MIN_ZOOM, min(self.MAX_ZOOM, amount))
+        self._zoom_start = self.zoom
+        self._zoom_elapsed = 0.0
+        if anchor is not None and not self.navigating:
+            offset = pygame.Vector2(anchor)-pygame.Vector2(self.map_rect.center)
+            self._zoom_anchor = (self.pan+offset/self.zoom, offset)
+            self._camera_elapsed = self.CAMERA_DURATION
+        else:
+            self._zoom_anchor = None
+            if focus is not None:self._camera_to(focus)
+        if getattr(self.game.audio, 'reduced_motion', False):
+            self.zoom = self.target_zoom
+            self._zoom_elapsed = self.ZOOM_DURATION
+            if self._zoom_anchor is not None:
+                world, offset = self._zoom_anchor
+                self.pan.update(world-offset/self.zoom)
+                self._zoom_anchor = None
+
+    def _zoom(self, factor, anchor=None):
+        target = max(self.MIN_ZOOM, min(self.MAX_ZOOM, self.target_zoom*factor))
+        if math.isclose(target, self.target_zoom):return
+        focus = self.cursor_position if self.navigating else self.board.nodes[self.selected]['position']
+        self._zoom_to(target, focus=focus, anchor=anchor)
 
     def _node_at(self, point):
         if point is None or not self.map_rect.collidepoint(point):return None
@@ -347,7 +399,9 @@ class LatticeUI:
         self.detail_track = pygame.Rect(458, self.detail_view.top, 4, self.detail_view.height)
         self.zoom_out_rect = pygame.Rect(24, self.map_rect.bottom-29, 24, 22)
         self.zoom_in_rect = pygame.Rect(52, self.map_rect.bottom-29, 24, 22)
-        self.fit_rect = pygame.Rect(80, self.map_rect.bottom-29, 32, 22)
+        self.zoom_readout_rect = pygame.Rect(82, self.map_rect.bottom-29, 50, 22)
+        self.fit_rect = pygame.Rect(138, self.map_rect.bottom-29, 48, 22)
+        self.reset_zoom_rect = pygame.Rect(192, self.map_rect.bottom-29, 82, 22)
         wrapped = []
         for text in self.detail_text():
             wrapped.extend(painter.wrap(text, self.detail_view.width, role='small'))
@@ -374,7 +428,9 @@ class LatticeUI:
                 'M prepares travel. A prepares activation. Press Enter or click the same action again to confirm. '
                 'Esc cancels a prepared action, then returns to Pause.\n'
                 'Drag the map to explore, then release to center the nearest node. '
-                'Use the wheel, + or - to zoom. F fits the entire lattice.\n'
+                'Use + / - or the buttons to zoom around the selected node. The map wheel zooms at the pointer. '
+                'F / Fit shows the entire lattice. 0 / 100% returns to a readable close-up. '
+                'The percentage shows the current camera zoom.\n'
                 'Page Up / Page Down scroll node details. Home / End reach their beginning or end. '
                 'The detail scrollbar can also be dragged.\n'
                 'Each connection costs one Step, including return travel and blank nodes. '
@@ -412,6 +468,7 @@ class LatticeUI:
             self.pointer = None
             self._held = self.drag_detail = False
             self._stop_navigation()
+            self._cancel_zoom()
             return True
         if self.help_open:
             self._help_lines(painter)
@@ -441,7 +498,7 @@ class LatticeUI:
                 else:self.confirm_scroll = self.confirm_max_scroll
                 return True
             if event.type == pygame.KEYDOWN and (event.key in self.DIRECTIONS or event.key in
-                    (pygame.K_TAB, pygame.K_f, pygame.K_F1, pygame.K_QUESTION,
+                    (pygame.K_TAB, pygame.K_f, pygame.K_0, pygame.K_KP0, pygame.K_F1, pygame.K_QUESTION,
                      pygame.K_EQUALS, pygame.K_PLUS, pygame.K_KP_PLUS,
                      pygame.K_MINUS, pygame.K_KP_MINUS)):
                 return True
@@ -452,6 +509,7 @@ class LatticeUI:
                 if self.pending is not None:self.pending = None;self.message = ''
                 else:self.close()
             elif event.key in self.DIRECTIONS:
+                self._zoom_anchor = None
                 self._keys.add(event.key)
                 self.hovered = None
             elif event.key == pygame.K_TAB:
@@ -462,6 +520,7 @@ class LatticeUI:
             elif event.key in (pygame.K_EQUALS, pygame.K_PLUS, pygame.K_KP_PLUS):self._zoom(1.2)
             elif event.key in (pygame.K_MINUS, pygame.K_KP_MINUS):self._zoom(1/1.2)
             elif event.key == pygame.K_f:self.fit_board()
+            elif event.key in (pygame.K_0, pygame.K_KP0):self.reset_zoom()
             elif event.key == pygame.K_m and not getattr(event, 'repeat', False):self._action('move')
             elif event.key == pygame.K_a and not getattr(event, 'repeat', False):self._action('activate')
             elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER) and not getattr(event, 'repeat', False):self._commit()
@@ -475,7 +534,8 @@ class LatticeUI:
         elif event.type == pygame.MOUSEWHEEL:
             pointer = self.pointer
             if pointer is None:pointer = self.game.to_canvas(pygame.mouse.get_pos())
-            if pointer is not None and self.map_rect.collidepoint(pointer):self._zoom(1.2**event.y)
+            if pointer is not None and self.map_rect.collidepoint(pointer):
+                self._zoom(1.2**max(-10, min(10, event.y)), anchor=pointer)
             else:self._scroll(-event.y*24)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if self._held:return True
@@ -490,9 +550,11 @@ class LatticeUI:
             elif self.zoom_out_rect.collidepoint(point):self._zoom(1/1.2)
             elif self.zoom_in_rect.collidepoint(point):self._zoom(1.2)
             elif self.fit_rect.collidepoint(point):self.fit_board()
+            elif self.reset_zoom_rect.collidepoint(point):self.reset_zoom()
             elif self.detail_thumb is not None and self.detail_track.inflate(10, 0).collidepoint(point):
                 self.drag_detail = True
             elif self.map_rect.collidepoint(point):
+                self._zoom_anchor = None
                 self._keys.clear()
                 self.dragging = True
                 self.drag_origin = pygame.Vector2(point)
@@ -574,9 +636,12 @@ class LatticeUI:
             self._circle(painter, FOREST_DARK, center, radius+2)
             self._circle(painter, GOLD, center, radius)
         painter.clip()
-        for rect, label in ((self.zoom_out_rect, '−'), (self.zoom_in_rect, '+'), (self.fit_rect, 'F')):
-            painter.button(rect, label)
-        painter.text('Drag: explore', (self.fit_rect.right+8, self.fit_rect.centery), role='small', color=MUTED, anchor='midleft')
+        painter.button(self.zoom_out_rect, '−', disabled=self.target_zoom <= self.MIN_ZOOM)
+        painter.button(self.zoom_in_rect, '+', disabled=self.target_zoom >= self.MAX_ZOOM)
+        painter.text(str(round(self.zoom*100))+'%', self.zoom_readout_rect.center,
+                     role='small', color=GOLD, anchor='center')
+        painter.button(self.fit_rect, 'Fit')
+        painter.button(self.reset_zoom_rect, '100%')
         if self.hovered:
             text = self.board.nodes[self.hovered].get('name', self.hovered)
             lines = painter.wrap(text, self.map_rect.width-16, role='small')

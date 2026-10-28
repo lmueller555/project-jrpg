@@ -22,6 +22,7 @@ def main():
     captures, operations = [], []
 
     def record(preview, name):
+        preview.advance(.25)
         game = preview.game
         game.draw()
         if game.lattice_ui.is_open:
