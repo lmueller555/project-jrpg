@@ -39,6 +39,70 @@ class InventoryTests(unittest.TestCase):
         self.assertFalse(inv.remove('tonic', 6))
         self.assertEqual(inv.to_dict(), before)
 
+    def test_crystal_catalog_is_available_without_granting_starting_items(self):
+        inv = Inventory()
+        expected = {
+            'aether_emerald': ('Aether Emerald', 'HP'),
+            'aether_sapphire': ('Aether Sapphire', 'MP'),
+            'aether_ruby': ('Aether Ruby', 'Strength and Defense'),
+            'aether_amethyst': ('Aether Amethyst', 'Magick and Magick Defense'),
+            'aether_opal': ('Aether Opal', 'Spirit'),
+            'aether_topaz': ('Aether Topaz', 'Speed, Accuracy, Evasion and Luck'),
+            'aether_diamond': ('Aether Diamond', 'spell and ability'),
+        }
+        for identifier, (name, purpose) in expected.items():
+            with self.subTest(identifier=identifier):
+                record = inv.definitions[identifier]
+                self.assertEqual(record['name'], name)
+                self.assertEqual(record['category'], 'items')
+                self.assertEqual(record['use_context'], 'aether_lattice')
+                self.assertIn(purpose, record['description'])
+                self.assertEqual(inv.quantity(identifier), 0)
+        self.assertEqual(inv.entries(), [])
+        self.assertTrue(inv.grant_quest('CH01_MQ01'))
+        self.assertEqual(inv.entries('items'), [])
+        self.assertEqual(len(inv.entries('key_items')), 3)
+
+    def test_crystal_bundle_consumes_every_cost_once_and_round_trips(self):
+        inv = Inventory()
+        self.assertTrue(inv.add_many({'aether_emerald': 3, 'aether_diamond': 1}))
+        self.assertTrue(inv.consume_bundle({'aether_emerald': 2, 'aether_diamond': 1}))
+        self.assertEqual(inv.quantity('aether_emerald'), 1)
+        self.assertEqual(inv.quantity('aether_diamond'), 0)
+        before = inv.to_dict()
+        self.assertFalse(inv.consume_bundle({'aether_emerald': 2, 'aether_diamond': 1}))
+        self.assertEqual(inv.to_dict(), before)
+        restored = Inventory()
+        self.assertTrue(restored.restore(before))
+        self.assertEqual(restored.to_dict(), before)
+
+    def test_bundle_rejects_missing_unknown_and_protected_items_atomically(self):
+        inv = Inventory()
+        self.assertTrue(inv.grant_quest('CH01_MQ01'))
+        self.assertTrue(inv.add('aether_emerald', 3))
+        before = inv.to_dict()
+        for cost in ({'aether_emerald': 1, 'aether_diamond': 1},
+                     {'aether_emerald': 1, 'missing': 1},
+                     {'aether_emerald': 1, 'halden_medicine': 1},
+                     {'halden_medicine': 1}):
+            with self.subTest(cost=cost):
+                self.assertFalse(inv.consume_bundle(cost))
+                self.assertEqual(inv.to_dict(), before)
+        self.assertTrue(inv.deliver('CH01_MQ01', 'halden', 'halden'))
+        self.assertEqual(inv.quantity('aether_emerald'), 3)
+
+    def test_bundle_requires_nonempty_mapping_and_strict_positive_quantities(self):
+        inv = Inventory()
+        self.assertTrue(inv.add_many({'aether_emerald': 3, 'aether_diamond': 2}))
+        before = inv.to_dict()
+        costs = [None, [], (), True, {}, 'aether_emerald']
+        costs += [{'aether_emerald': 1, 'aether_diamond': value}
+                  for value in (True, False, 0, -1, 1.0, '1', None, MAX_QUANTITY+1)]
+        for cost in costs:
+            with self.subTest(cost=cost):
+                self.assertFalse(inv.consume_bundle(cost))
+                self.assertEqual(inv.to_dict(), before)
+
     def test_supply_grants_are_exactly_once(self):
         inv = Inventory()
         self.assertTrue(inv.grant_quest('CH01_MQ01'))

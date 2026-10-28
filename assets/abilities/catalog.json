@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "abilities": {
+    "basic_magicks": {
+      "name": "Basic Magicks",
+      "description": "Caelan can already produce small, controlled magical effects. Sustained force against a strong current remains beyond his present strength.",
+      "kind": "capability"
+    },
+    "brace": {
+      "name": "Brace",
+      "description": "A defensive technique for steadying yourself against an incoming attack.",
+      "kind": "technique"
+    },
+    "mend": {
+      "name": "Mend",
+      "description": "A restorative spell whose healing power is governed by Spirit.",
+      "kind": "spell"
+    }
+  }
+}

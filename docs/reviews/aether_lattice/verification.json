@@ -1,0 +1,1829 @@
+{
+  "isolated_temporary_journeys": true,
+  "continue_round_trips": 2,
+  "normal_new_game": {
+    "rank": 1,
+    "rp": 0,
+    "steps": 0,
+    "crystals": 0
+  },
+  "review_fixtures": [
+    {
+      "rp": 0,
+      "crystals": 0
+    },
+    {
+      "rp": 20,
+      "aether_emerald": 1
+    },
+    {
+      "rp": 2000,
+      "each_crystal": 3
+    }
+  ],
+  "operations": [
+    {
+      "action": "move",
+      "target": "hp_01",
+      "rank": 2,
+      "steps": 0,
+      "position": "hp_01"
+    },
+    {
+      "action": "activate",
+      "target": "hp_01",
+      "rank": 2,
+      "steps": 0,
+      "position": "hp_01"
+    },
+    {
+      "action": "move",
+      "target": "blank_01",
+      "rank": 26,
+      "steps": 23,
+      "position": "blank_01"
+    },
+    {
+      "action": "move",
+      "target": "mend_01",
+      "rank": 26,
+      "steps": 19,
+      "position": "mend_01"
+    },
+    {
+      "action": "activate",
+      "target": "mend_01",
+      "rank": 26,
+      "steps": 19,
+      "position": "mend_01"
+    },
+    {
+      "action": "move",
+      "target": "brace_01",
+      "rank": 26,
+      "steps": 3,
+      "position": "brace_01"
+    },
+    {
+      "action": "activate",
+      "target": "brace_01",
+      "rank": 26,
+      "steps": 3,
+      "position": "brace_01"
+    }
+  ],
+  "captures": [
+    {
+      "capture": "lattice_start_closeup",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "origin",
+      "pending": null,
+      "rank": 1,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        20
+      ],
+      "lattice": {
+        "rp": 0,
+        "spent_steps": 0,
+        "position": "origin",
+        "visited": [
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Origin",
+        "Current position",
+        "Visited",
+        "Blank node: travel only.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Starting position on the Aether Lattice. This blank node grants no bonus.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_initial",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "origin",
+      "pending": null,
+      "rank": 1,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        20
+      ],
+      "lattice": {
+        "rp": 0,
+        "spent_steps": 0,
+        "position": "origin",
+        "visited": [
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Origin",
+        "Current position",
+        "Visited",
+        "Blank node: travel only.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Starting position on the Aether Lattice. This blank node grants no bonus.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_rank_gate",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "blank_05",
+      "pending": null,
+      "rank": 1,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        20
+      ],
+      "lattice": {
+        "rp": 0,
+        "spent_steps": 0,
+        "position": "origin",
+        "visited": [
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Requires Attunement 5.",
+        "Blank Node",
+        "Blank node: travel only.",
+        "No open route at this Attunement.",
+        "Requires Attunement 5.",
+        "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_move_confirmation",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "pending": [
+        "move",
+        "hp_01"
+      ],
+      "rank": 2,
+      "steps": 1,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 0,
+        "position": "origin",
+        "visited": [
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 1,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [
+        "Move to HP +20",
+        "Spend 1 Step (1 available).",
+        "Return along this path also costs 1 Step.",
+        "No crystals are spent.",
+        "Attunement remains 2."
+      ],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Confirm travel below.",
+        "HP +20",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 1 Step",
+        "Return along this route: 1 Step",
+        "Activation cost",
+        "Aether Emerald \u00d71 (1 owned)",
+        "Move to this node to activate it.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Enter confirms. Esc cancels.",
+        "Aether Crystals",
+        "Aether Emerald: 1",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_activation_confirmation",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "pending": [
+        "activate",
+        "hp_01"
+      ],
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 1,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [
+        "HP: 140 \u2192 160",
+        "Current HP remains 140.",
+        "Aether Emerald \u00d71 (1 owned).",
+        "This node can activate once for Caelan."
+      ],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Confirm crystal use below.",
+        "HP +20",
+        "Current position",
+        "Visited",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (1 owned)",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Enter confirms. Esc cancels.",
+        "Aether Crystals",
+        "Aether Emerald: 1",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_activation_confirmation_small_large",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_01",
+      "pending": [
+        "activate",
+        "hp_01"
+      ],
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 1,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [
+        "HP: 140 \u2192 160",
+        "Current HP remains 140.",
+        "Aether Emerald \u00d71 (1 owned).",
+        "This node can activate once for Caelan."
+      ],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Confirm crystal use below.",
+        "HP +20",
+        "Current position",
+        "Visited",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (1 owned)",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Enter confirms. Esc cancels.",
+        "Aether Crystals",
+        "Aether Emerald: 1",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_hp_activated",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "pending": null,
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": [
+          "hp_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 160,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Node activated.",
+        "HP +20",
+        "Current position",
+        "Activated",
+        "HP +20",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (0 owned)",
+        "Already activated.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "characters_lattice_bonus",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "pending": null,
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": [
+          "hp_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 160,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Node activated.",
+        "HP +20",
+        "Current position",
+        "Activated",
+        "HP +20",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (0 owned)",
+        "Already activated.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "characters_lattice_bonus_large",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_01",
+      "pending": null,
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": [
+          "hp_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 160,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Node activated.",
+        "HP +20",
+        "Current position",
+        "Activated",
+        "HP +20",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (0 owned)",
+        "Already activated.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_after_continue",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_01",
+      "pending": null,
+      "rank": 2,
+      "steps": 0,
+      "rp_progress": [
+        0,
+        25
+      ],
+      "lattice": {
+        "rp": 20,
+        "spent_steps": 1,
+        "position": "hp_01",
+        "visited": [
+          "hp_01",
+          "origin"
+        ],
+        "activated": [
+          "hp_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 160,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 0,
+        "aether_sapphire": 0,
+        "aether_ruby": 0,
+        "aether_amethyst": 0,
+        "aether_opal": 0,
+        "aether_topaz": 0,
+        "aether_diamond": 0
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "HP +20",
+        "Current position",
+        "Activated",
+        "HP +20",
+        "Current HP stays unchanged.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (0 owned)",
+        "Already activated.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 0",
+        "Aether Sapphire: 0",
+        "Aether Ruby: 0",
+        "Aether Amethyst: 0",
+        "Aether Opal: 0",
+        "Aether Topaz: 0",
+        "Aether Diamond: 0",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_blank_travel",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "blank_01",
+      "pending": null,
+      "rank": 26,
+      "steps": 23,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 2,
+        "position": "blank_01",
+        "visited": [
+          "blank_01",
+          "hp_01",
+          "origin"
+        ],
+        "activated": []
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 3
+      },
+      "known_abilities": [
+        "basic_magicks"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Travel complete.",
+        "Blank Node",
+        "Current position",
+        "Visited",
+        "Blank node: travel only.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 3",
+        "Known abilities",
+        "Basic Magicks"
+      ]
+    },
+    {
+      "capture": "lattice_mend_learned",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "mend_01",
+      "pending": null,
+      "rank": 26,
+      "steps": 19,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 6,
+        "position": "mend_01",
+        "visited": [
+          "blank_01",
+          "blank_05",
+          "def_02",
+          "hp_01",
+          "mend_01",
+          "origin",
+          "spr_02"
+        ],
+        "activated": [
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 2
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "mend"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Node activated.",
+        "Mend",
+        "Current position",
+        "Activated",
+        "Mend",
+        "A restorative spell whose healing power is governed by Spirit.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Diamond \u00d71 (2 owned)",
+        "Already activated.",
+        "Learn Mend.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 2",
+        "Known abilities",
+        "Basic Magicks",
+        "Mend"
+      ]
+    },
+    {
+      "capture": "lattice_known_abilities_and_crystals",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "brace_01",
+      "pending": null,
+      "rank": 26,
+      "steps": 3,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 22,
+        "position": "brace_01",
+        "visited": [
+          "acc_01",
+          "blank_01",
+          "blank_02",
+          "blank_03",
+          "blank_05",
+          "brace_01",
+          "def_01",
+          "def_02",
+          "eva_01",
+          "hp_01",
+          "m_def_01",
+          "mag_01",
+          "mend_01",
+          "mp_01",
+          "origin",
+          "speed_01",
+          "spr_01",
+          "spr_02",
+          "str_01"
+        ],
+        "activated": [
+          "brace_01",
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 1
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "brace",
+        "mend"
+      ],
+      "zoom": 0.8,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 414,
+      "detail_text": [
+        "Node activated.",
+        "Brace",
+        "Current position",
+        "Activated",
+        "Brace",
+        "A defensive technique for steadying yourself against an incoming attack.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Diamond \u00d71 (1 owned)",
+        "Already activated.",
+        "Learn Brace.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 1",
+        "Known abilities",
+        "Basic Magicks",
+        "Brace",
+        "Mend"
+      ]
+    },
+    {
+      "capture": "lattice_explored_overview",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "brace_01",
+      "pending": null,
+      "rank": 26,
+      "steps": 3,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 22,
+        "position": "brace_01",
+        "visited": [
+          "acc_01",
+          "blank_01",
+          "blank_02",
+          "blank_03",
+          "blank_05",
+          "brace_01",
+          "def_01",
+          "def_02",
+          "eva_01",
+          "hp_01",
+          "m_def_01",
+          "mag_01",
+          "mend_01",
+          "mp_01",
+          "origin",
+          "speed_01",
+          "spr_01",
+          "spr_02",
+          "str_01"
+        ],
+        "activated": [
+          "brace_01",
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 1
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "brace",
+        "mend"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "Node activated.",
+        "Brace",
+        "Current position",
+        "Activated",
+        "Brace",
+        "A defensive technique for steadying yourself against an incoming attack.",
+        "Travel: 0 Steps",
+        "Already standing on this node.",
+        "Activation cost",
+        "Aether Diamond \u00d71 (1 owned)",
+        "Already activated.",
+        "Learn Brace.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 1",
+        "Known abilities",
+        "Basic Magicks",
+        "Brace",
+        "Mend"
+      ]
+    },
+    {
+      "capture": "lattice_large_text",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_03",
+      "pending": null,
+      "rank": 26,
+      "steps": 3,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 22,
+        "position": "brace_01",
+        "visited": [
+          "acc_01",
+          "blank_01",
+          "blank_02",
+          "blank_03",
+          "blank_05",
+          "brace_01",
+          "def_01",
+          "def_02",
+          "eva_01",
+          "hp_01",
+          "m_def_01",
+          "mag_01",
+          "mend_01",
+          "mp_01",
+          "origin",
+          "speed_01",
+          "spr_01",
+          "spr_02",
+          "str_01"
+        ],
+        "activated": [
+          "brace_01",
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 1
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "brace",
+        "mend"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "HP +20",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 13 Steps",
+        "Return along this route: 13 Steps",
+        "Requires 13 Lattice Steps; 3 available.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (3 owned)",
+        "Move to this node to activate it.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 1",
+        "Known abilities",
+        "Basic Magicks",
+        "Brace",
+        "Mend"
+      ]
+    },
+    {
+      "capture": "lattice_small_large_text",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_03",
+      "pending": null,
+      "rank": 26,
+      "steps": 3,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 22,
+        "position": "brace_01",
+        "visited": [
+          "acc_01",
+          "blank_01",
+          "blank_02",
+          "blank_03",
+          "blank_05",
+          "brace_01",
+          "def_01",
+          "def_02",
+          "eva_01",
+          "hp_01",
+          "m_def_01",
+          "mag_01",
+          "mend_01",
+          "mp_01",
+          "origin",
+          "speed_01",
+          "spr_01",
+          "spr_02",
+          "str_01"
+        ],
+        "activated": [
+          "brace_01",
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 1
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "brace",
+        "mend"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "HP +20",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 13 Steps",
+        "Return along this route: 13 Steps",
+        "Requires 13 Lattice Steps; 3 available.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (3 owned)",
+        "Move to this node to activate it.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 1",
+        "Known abilities",
+        "Basic Magicks",
+        "Brace",
+        "Mend"
+      ]
+    },
+    {
+      "capture": "lattice_controls_small_large",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_03",
+      "pending": null,
+      "rank": 26,
+      "steps": 3,
+      "rp_progress": [
+        0,
+        145
+      ],
+      "lattice": {
+        "rp": 2000,
+        "spent_steps": 22,
+        "position": "brace_01",
+        "visited": [
+          "acc_01",
+          "blank_01",
+          "blank_02",
+          "blank_03",
+          "blank_05",
+          "brace_01",
+          "def_01",
+          "def_02",
+          "eva_01",
+          "hp_01",
+          "m_def_01",
+          "mag_01",
+          "mend_01",
+          "mp_01",
+          "origin",
+          "speed_01",
+          "spr_01",
+          "spr_02",
+          "str_01"
+        ],
+        "activated": [
+          "brace_01",
+          "mend_01"
+        ]
+      },
+      "base_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "effective_attributes": {
+        "hp": 140,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      },
+      "current_hp": 140,
+      "current_mp": 30,
+      "crystals": {
+        "aether_emerald": 3,
+        "aether_sapphire": 3,
+        "aether_ruby": 3,
+        "aether_amethyst": 3,
+        "aether_opal": 3,
+        "aether_topaz": 3,
+        "aether_diamond": 1
+      },
+      "known_abilities": [
+        "basic_magicks",
+        "brace",
+        "mend"
+      ],
+      "zoom": 0.18,
+      "confirmation_text": [],
+      "confirmation_scroll": 0,
+      "confirmation_max_scroll": 0,
+      "detail_scroll": 0,
+      "detail_text": [
+        "HP +20",
+        "HP +20",
+        "After activation: 140 \u2192 160",
+        "Current HP stays unchanged.",
+        "Travel: 13 Steps",
+        "Return along this route: 13 Steps",
+        "Requires 13 Lattice Steps; 3 available.",
+        "Activation cost",
+        "Aether Emerald \u00d71 (3 owned)",
+        "Move to this node to activate it.",
+        "Increase maximum HP by 20. Current HP is unchanged.",
+        "Aether Crystals",
+        "Aether Emerald: 3",
+        "Aether Sapphire: 3",
+        "Aether Ruby: 3",
+        "Aether Amethyst: 3",
+        "Aether Opal: 3",
+        "Aether Topaz: 3",
+        "Aether Diamond: 1",
+        "Known abilities",
+        "Basic Magicks",
+        "Brace",
+        "Mend"
+      ]
+    }
+  ]
+}

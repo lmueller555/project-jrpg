@@ -51,8 +51,9 @@ the Characters interface. Each instance has its own state.
 
 The game initializes Caelan's profile when it starts. New Game restores the
 starting values and fills both resources. The read-only Characters screen shows
-Caelan's portrait, name and live values; opening, inspecting or closing it does
-not alter them. Caelan is the currently available character.
+Caelan's portrait, name, live values, Attunement and RP progress; opening,
+inspecting or closing it does not alter them. Caelan is the currently available
+character.
 
 [`attribute_icons.py`](../attribute_icons.py) draws eleven distinct icons with
 the shared interface painter. The icon shapes remain readable on parchment and
@@ -61,10 +62,13 @@ coordinates, including letterboxed windows and enlarged text.
 
 ## Journey compatibility
 
-Journey checkpoints include a version-two `character_attributes` record
-containing the character identity, attribute values and current HP and MP.
-Validation rejects malformed or out-of-range values before replacing live
-state. Resources must remain within their saved maxima.
+Journey checkpoints include a version-three `character_attributes` record
+containing the character identity, preserved base values under `attributes`,
+and current HP and MP. Lattice modifiers are derived from activated node IDs
+in the separate progression record. Effective values are the preserved base
+plus those modifiers, so Continue does not apply bonuses twice. Validation
+rejects malformed or out-of-range values before replacing live state. Current
+resources must remain within their effective maxima.
 
 Older journeys without the record receive Caelan's starting profile when
 continued. Their quest facts, dialogue history and location are preserved.
@@ -75,19 +79,24 @@ Version-one records with Caelan's original 300 maximum HP migrate to the
 the old maximum, rounded to the nearest integer. Zero HP remains zero; a
 previously positive value remains at least one. MP and every other attribute
 are preserved. Version-one records with a different maximum HP retain that
-value, preserving saved growth. Version-two records restore all saved values
-exactly, including current resources, rather than automatically refilling them.
+value, preserving saved growth. Version-two saved ratings become the preserved
+base without changing their values. Version-three records restore that base
+and recompute lattice bonuses from progression. Current resources remain saved
+values and are not automatically refilled.
 
 Loading the title screen validates a save without changing it. Migration is
 committed only when the player continues the journey.
 
 ## Scope and story continuity
 
-This foundation adds the attribute definitions, starting profile, state
-persistence and a Characters screen. Battle rules, equipment modifiers, damage and
-healing formulas, ability costs and Sphere Grid progression remain future
-work. The attributes do not assign jobs or establish additional playable party
-members.
+The [Aether Lattice](AETHER_LATTICE.md) adds growth through activated stat nodes.
+HP nodes add 20 maximum HP, MP nodes add 2 maximum MP and other starter stat
+nodes add 1 to their attribute. Increasing maximum HP or MP leaves the current
+resource unchanged. Rank gains award movement, without hidden stat growth.
+
+Battle rules, equipment behavior, damage and healing formulas, and ability
+execution remain future work. The attributes do not assign jobs or establish
+additional playable party members.
 
 Opening quest magicks remain authored actions. Caelan's inability to apply
 sustained force against the irrigation current and his small success at the

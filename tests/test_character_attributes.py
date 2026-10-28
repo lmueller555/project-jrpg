@@ -88,7 +88,7 @@ class CharacterAttributeTests(unittest.TestCase):
             missing = deepcopy(before)
             missing.pop(field)
             records.append(missing)
-        for value in (0, 3, True, 1.0, '1', None):
+        for value in (0, 4, True, 1.0, '1', None):
             records.append({**deepcopy(before), 'version': value})
         records.append({**deepcopy(before), 'extra': 1})
         for value in ('mira', '', None, 10, True, []):
@@ -149,7 +149,7 @@ class CharacterAttributeTests(unittest.TestCase):
                 self.assertEqual(self.attributes.value('spr'), 17)
                 self.assertEqual(original, untouched)
                 migrated = self.attributes.to_dict()
-                self.assertEqual(migrated['version'], 2)
+                self.assertEqual(migrated['version'], 3)
                 self.assertTrue(self.attributes.restore(migrated))
                 self.assertEqual(self.attributes.to_dict(), migrated)
 

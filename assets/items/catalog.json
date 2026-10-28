@@ -18,6 +18,48 @@
       "category": "key_items",
       "description": "Recovery supplies for the Venn family while their youngest gets well.",
       "recipient_name": "The Venn family"
+    },
+    "aether_emerald": {
+      "name": "Aether Emerald",
+      "category": "items",
+      "description": "Green crystallized aether. Consumed to activate HP nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_sapphire": {
+      "name": "Aether Sapphire",
+      "category": "items",
+      "description": "Blue crystallized aether. Consumed to activate MP nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_ruby": {
+      "name": "Aether Ruby",
+      "category": "items",
+      "description": "Red crystallized aether. Consumed to activate Strength and Defense nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_amethyst": {
+      "name": "Aether Amethyst",
+      "category": "items",
+      "description": "Violet crystallized aether. Consumed to activate Magick and Magick Defense nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_opal": {
+      "name": "Aether Opal",
+      "category": "items",
+      "description": "White crystallized aether. Consumed to activate Spirit nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_topaz": {
+      "name": "Aether Topaz",
+      "category": "items",
+      "description": "Gold crystallized aether. Consumed to activate Speed, Accuracy, Evasion and Luck nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
+    },
+    "aether_diamond": {
+      "name": "Aether Diamond",
+      "category": "items",
+      "description": "Prismatic crystallized aether. Consumed to activate spell and ability nodes on the Aether Lattice.",
+      "use_context": "aether_lattice"
     }
   },
   "quest_grants": {

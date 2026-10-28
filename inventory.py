@@ -79,6 +79,16 @@ class Inventory:
             else:self._items.pop(key)
         return True
 
+    def consume_bundle(self, bundle):
+        """Consume a complete ordinary-item cost, leaving quest items protected.
+
+        Validate every item and quantity before removing anything. Lattice
+        activation can therefore charge several crystals as one transaction.
+        """
+        if not self._valid_bundle(bundle):return False
+        if any(self.definitions[key]['category'] == 'key_items' for key in bundle):return False
+        return self._take(bundle)
+
     def remove(self, identifier, quantity=1):
         """Ordinary use/sale/removal cannot consume protected quest items."""
         if not isinstance(identifier,str):return False

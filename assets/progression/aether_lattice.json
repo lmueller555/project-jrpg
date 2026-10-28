@@ -1,0 +1,583 @@
+{
+  "version": 1,
+  "id": "caelan_starter",
+  "name": "Aether Lattice",
+  "description": "Follow connected paths, spend earned Lattice Steps and awaken nodes with Aether Crystals.",
+  "rank_curve": {
+    "first": 20,
+    "increment": 5
+  },
+  "starts": {
+    "caelan": "origin"
+  },
+  "starting_abilities": {
+    "caelan": [
+      "basic_magicks"
+    ]
+  },
+  "crystals": {
+    "aether_emerald": {
+      "name": "Aether Emerald",
+      "color": "#60b279"
+    },
+    "aether_sapphire": {
+      "name": "Aether Sapphire",
+      "color": "#6f9fe2"
+    },
+    "aether_ruby": {
+      "name": "Aether Ruby",
+      "color": "#d66b63"
+    },
+    "aether_amethyst": {
+      "name": "Aether Amethyst",
+      "color": "#a17bcd"
+    },
+    "aether_opal": {
+      "name": "Aether Opal",
+      "color": "#e7e6d0"
+    },
+    "aether_topaz": {
+      "name": "Aether Topaz",
+      "color": "#e1bb64"
+    },
+    "aether_diamond": {
+      "name": "Aether Diamond",
+      "color": "#8acfc7"
+    }
+  },
+  "nodes": {
+    "origin": {
+      "kind": "blank",
+      "name": "Origin",
+      "description": "Starting position on the Aether Lattice. This blank node grants no bonus.",
+      "position": [
+        0,
+        0
+      ],
+      "cost": {}
+    },
+    "hp_01": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        72,
+        0
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "blank_01": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        144,
+        0
+      ],
+      "cost": {}
+    },
+    "str_01": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        216,
+        0
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "mp_01": {
+      "kind": "stat",
+      "name": "MP +2",
+      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "position": [
+        288,
+        0
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 2
+    },
+    "def_01": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        360,
+        0
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "blank_02": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        432,
+        0
+      ],
+      "cost": {}
+    },
+    "mag_01": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        504,
+        0
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "spr_01": {
+      "kind": "stat",
+      "name": "Spr +1",
+      "description": "Increase Spirit by 1.",
+      "position": [
+        576,
+        0
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 1
+    },
+    "blank_03": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        648,
+        0
+      ],
+      "cost": {}
+    },
+    "speed_01": {
+      "kind": "stat",
+      "name": "Speed +1",
+      "description": "Increase Speed by 1.",
+      "position": [
+        720,
+        0
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 1
+    },
+    "acc_01": {
+      "kind": "stat",
+      "name": "Acc +1",
+      "description": "Increase Accuracy by 1.",
+      "position": [
+        792,
+        0
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 1
+    },
+    "eva_01": {
+      "kind": "stat",
+      "name": "Eva +1",
+      "description": "Increase Evasion by 1.",
+      "position": [
+        864,
+        0
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "eva",
+      "amount": 1
+    },
+    "m_def_01": {
+      "kind": "stat",
+      "name": "M. Def +1",
+      "description": "Increase Magick Defense by 1.",
+      "position": [
+        936,
+        0
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 1
+    },
+    "brace_01": {
+      "kind": "ability",
+      "name": "Brace",
+      "description": "Learn Brace.",
+      "position": [
+        1008,
+        0
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "brace"
+    },
+    "hp_02": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        1080,
+        0
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "blank_04": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1152,
+        0
+      ],
+      "cost": {}
+    },
+    "lck_01": {
+      "kind": "stat",
+      "name": "Lck +1",
+      "description": "Increase Luck by 1.",
+      "position": [
+        1224,
+        0
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 1
+    },
+    "str_02": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        1296,
+        0
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "mag_02": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        1368,
+        0
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "blank_05": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        144,
+        72
+      ],
+      "cost": {}
+    },
+    "def_02": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        144,
+        144
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "spr_02": {
+      "kind": "stat",
+      "name": "Spr +1",
+      "description": "Increase Spirit by 1.",
+      "position": [
+        144,
+        216
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 1
+    },
+    "mend_01": {
+      "kind": "ability",
+      "name": "Mend",
+      "description": "Learn Mend.",
+      "position": [
+        144,
+        288
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "mend"
+    },
+    "blank_06": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        432,
+        -72
+      ],
+      "cost": {}
+    },
+    "mp_02": {
+      "kind": "stat",
+      "name": "MP +2",
+      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "position": [
+        432,
+        -144
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 2
+    },
+    "m_def_02": {
+      "kind": "stat",
+      "name": "M. Def +1",
+      "description": "Increase Magick Defense by 1.",
+      "position": [
+        432,
+        -216
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 1
+    },
+    "blank_07": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        432,
+        -288
+      ],
+      "cost": {}
+    },
+    "hp_03": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        432,
+        -360
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "lck_02": {
+      "kind": "stat",
+      "name": "Lck +1",
+      "description": "Increase Luck by 1.",
+      "position": [
+        432,
+        -432
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "origin",
+      "to": "hp_01",
+      "min_rank": 1
+    },
+    {
+      "from": "hp_01",
+      "to": "blank_01",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_01",
+      "to": "str_01",
+      "min_rank": 1
+    },
+    {
+      "from": "str_01",
+      "to": "mp_01",
+      "min_rank": 1
+    },
+    {
+      "from": "mp_01",
+      "to": "def_01",
+      "min_rank": 1
+    },
+    {
+      "from": "def_01",
+      "to": "blank_02",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_02",
+      "to": "mag_01",
+      "min_rank": 1
+    },
+    {
+      "from": "mag_01",
+      "to": "spr_01",
+      "min_rank": 1
+    },
+    {
+      "from": "spr_01",
+      "to": "blank_03",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_03",
+      "to": "speed_01",
+      "min_rank": 1
+    },
+    {
+      "from": "speed_01",
+      "to": "acc_01",
+      "min_rank": 1
+    },
+    {
+      "from": "acc_01",
+      "to": "eva_01",
+      "min_rank": 1
+    },
+    {
+      "from": "eva_01",
+      "to": "m_def_01",
+      "min_rank": 1
+    },
+    {
+      "from": "m_def_01",
+      "to": "brace_01",
+      "min_rank": 1
+    },
+    {
+      "from": "brace_01",
+      "to": "hp_02",
+      "min_rank": 1
+    },
+    {
+      "from": "hp_02",
+      "to": "blank_04",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_04",
+      "to": "lck_01",
+      "min_rank": 1
+    },
+    {
+      "from": "lck_01",
+      "to": "str_02",
+      "min_rank": 1
+    },
+    {
+      "from": "str_02",
+      "to": "mag_02",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_01",
+      "to": "blank_05",
+      "min_rank": 5
+    },
+    {
+      "from": "blank_05",
+      "to": "def_02",
+      "min_rank": 1
+    },
+    {
+      "from": "def_02",
+      "to": "spr_02",
+      "min_rank": 1
+    },
+    {
+      "from": "spr_02",
+      "to": "mend_01",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_02",
+      "to": "blank_06",
+      "min_rank": 8
+    },
+    {
+      "from": "blank_06",
+      "to": "mp_02",
+      "min_rank": 1
+    },
+    {
+      "from": "mp_02",
+      "to": "m_def_02",
+      "min_rank": 1
+    },
+    {
+      "from": "m_def_02",
+      "to": "blank_07",
+      "min_rank": 1
+    },
+    {
+      "from": "blank_07",
+      "to": "hp_03",
+      "min_rank": 1
+    },
+    {
+      "from": "hp_03",
+      "to": "lck_02",
+      "min_rank": 1
+    }
+  ]
+}

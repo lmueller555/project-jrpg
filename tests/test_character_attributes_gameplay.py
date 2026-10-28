@@ -158,7 +158,7 @@ class CharacterAttributesGameplayTests(unittest.TestCase):
         self.assertEqual(restored.inventory.to_dict(), original['inventory'])
         self.assertEqual(sorted(restored.social.flags), original['dialogue_flags'])
         migrated = json.loads(self.path.read_text())['character_attributes']
-        self.assertEqual(migrated['version'], 2)
+        self.assertEqual(migrated['version'], 3)
         second = self.game(title=True)
         self.assertTrue(second.begin_journey(True))
         self.assertEqual(second.attributes.to_dict(), migrated)
