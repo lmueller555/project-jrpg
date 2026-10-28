@@ -132,7 +132,7 @@ Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
 **Escape** opens a modal pause menu during exploration, dialogue or actions.
-Journal, Map and Settings are available there alongside Resume and Quit; the
+Status, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
 controls reference is inside Settings. Pausing holds NPC, action, camera and
 ambience clocks. Music and effects have separate sliders with percentage displays,
 mouse adjustment and
@@ -184,9 +184,17 @@ API handles all three households' supplies; entering a house never consumes
 them. Older journeys receive only outstanding supplies, and New Game starts
 with an empty satchel. See [inventory design and integration](docs/INVENTORY.md).
 
+**Caelan's attributes are available through Pause → Status.** He begins as a
+balanced all-rounder with 300 HP, 30 MP and 10 each in Str, Mag, Spr, Def,
+M. Def, Speed, Acc, Eva and Lck. Mag powers damaging spells; Spr powers healing
+spells. The screen explains each attribute, and current HP/MP and all attributes
+persist with the journey. Older saves receive the starting profile; New Game
+resets it. See [attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
+Combat formulas and Sphere Grid development remain future work.
+
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored
-by Git. **Continue** restores quest facts, dialogue history and player location
+by Git. **Continue** restores quest facts, dialogue history, attributes and player location
 without replaying old notifications. Ambient NPC routines restart on launch;
 their moment-to-moment action clocks are not part of this save. **New Game** starts
 a fresh journey and replaces that checkpoint. A missing or unreadable save leaves

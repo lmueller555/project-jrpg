@@ -175,17 +175,27 @@ class OpeningDialogueDriver:
         raise AssertionError(('Too many doors', identifier))
 
     def actor(self, actor, expected):
-        if expected in self.sources:return
+        if expected in self.sources:return True
         assert actor in self.g.world.npcs
-        for offset in ((0, 24), (0, 28), (24, 0), (-24, 0), (0, -24)):
-            goal = pygame.Vector2(*(round(value/2)*2 for value in actor.position+offset))
-            if not self.g.world.can_stand(goal):continue
-            if self.g.world is not self.g.town and find_path(self.g.world, self.g.player.position, goal, self.g.world.probe_size, None) is None:continue
-            self.walk(goal)
-            if expected in self.sources:return
-            if self.g.social.locked:self.read()
-            if self.g.social.start(actor):
-                self.read();assert expected in self.sources, (expected, self.scenes[-1]);return
+        for _ in range(8):
+            for offset in ((0, 24), (0, 28), (24, 0), (-24, 0), (0, -24)):
+                if actor not in self.g.world.npcs:return False
+                goal = pygame.Vector2(*(round(value/2)*2 for value in actor.position+offset))
+                if not self.g.world.can_stand(goal):continue
+                if self.g.world is not self.g.town and find_path(self.g.world, self.g.player.position, goal, self.g.world.probe_size, None) is None:continue
+                self.walk(goal)
+                if expected in self.sources:return True
+                if self.g.social.locked:self.read()
+                if expected in self.sources:return True
+                if actor not in self.g.world.npcs:return False
+                # Residents can move while incidental dialogue is read. Replan
+                # against their live position instead of starting out of range.
+                if self.g.player.position.distance_to(actor.position)>self.g.social.data['release_radius']:continue
+                if self.g.social.start(actor):
+                    self.read()
+                    # A pending request can be cancelled while the resident
+                    # finishes a delivery. Only recorded prose counts as read.
+                    if expected in self.sources:return True
         raise AssertionError(('Could not approach actor', actor.data['id'], expected))
 
     def breakfast(self):
@@ -251,7 +261,7 @@ class OpeningDialogueDriver:
         for _ in range(8):
             self.travel(self.g._routine_worlds[serene].data['id'])
             if serene in self.g.world.npcs:
-                self.actor(serene, 'serene_quest_report');break
+                if self.actor(serene, 'serene_quest_report'):break
         else:raise AssertionError('Could not meet Serene on her sanctuary rounds')
         self.travel('sanctuary_hall');self.walk((184, 258))
         self.until(lambda: self.g.opening_conclusion.stage == 'done')
@@ -300,6 +310,43 @@ class OpeningDialogueDriver:
         self.report();self.mill();self.g.save_progress()
         assert self.g.quests.status(OPENING_QUEST) == self.g.quests.status(MILL_QUEST) == 'completed'
         return self
+
+
+class OpeningDialogueDriverTimingTests(unittest.TestCase):
+    def test_approach_replans_moving_target_and_retries_cancelled_pending_request(self):
+        for interruption in ('moving_target', 'pending_cancelled'):
+            with self.subTest(interruption=interruption):
+                expected = 'serene_quest_report'
+                actor = SimpleNamespace(data={'id': 'mother_serene'}, position=pygame.Vector2(100, 100))
+                world = SimpleNamespace(npcs=[actor], can_stand=lambda point: True)
+                social = SimpleNamespace(locked=False, data={'release_radius': 36})
+                driver = object.__new__(OpeningDialogueDriver)
+                driver.g = SimpleNamespace(world=world, town=world, social=social,
+                                           player=SimpleNamespace(position=pygame.Vector2(0, 0)))
+                driver.sources = {};driver.scenes = ['tomas_repeat']
+                walks = [];starts = [];reads = []
+
+                def walk(goal):
+                    walks.append(tuple(goal));driver.g.player.position.update(goal)
+                    if interruption == 'moving_target' and len(walks) == 1:
+                        actor.position.x += 100
+
+                def start(target):
+                    self.assertIs(target, actor)
+                    self.assertLessEqual(driver.g.player.position.distance_to(actor.position), 36)
+                    starts.append(target)
+                    return True
+
+                def read():
+                    reads.append(True)
+                    if interruption == 'pending_cancelled' and len(reads) == 1:return
+                    driver.sources[expected] = [{'speaker': 'serene', 'text': 'There you are.'}]
+
+                driver.walk = walk;driver.read = read;social.start = start
+                self.assertTrue(driver.actor(actor, expected))
+                self.assertIn(expected, driver.sources)
+                self.assertGreaterEqual(len(walks), 2)
+                self.assertEqual(len(starts), 1 if interruption == 'moving_target' else 2)
 
 
 class OpeningDialoguePassTests(unittest.TestCase):

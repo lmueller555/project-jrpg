@@ -232,8 +232,8 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    settings_index = 4
-    options = ('Resume', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    options = ('Resume', 'Status', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    settings_index = options.index('Settings')
 
     def __init__(self, game):
         self.game = game
@@ -242,7 +242,7 @@ class PauseMenu:
         self.settings = False
         self.selected = 0
         self.overlay = None
-        self.rows = [pygame.Rect(146, 78+index*31, 188, 26) for index in range(len(self.options))]
+        self.rows = [pygame.Rect(146, 76+index*28, 188, 26) for index in range(len(self.options))]
         self.settings_panel = SettingsPanel(self)
         self.settings_rows = self.settings_panel.rows
         self.slider_rects = self.settings_panel.slider_rects
@@ -291,6 +291,9 @@ class PauseMenu:
         if self.settings:return self.settings_panel.activate()
         label=self.options[self.selected]
         if label == 'Resume':self.close()
+        elif label == 'Status':
+            self.overlay = 'status'
+            self.game.status_ui.open()
         elif label == 'Inventory':
             self.overlay = 'inventory'
             self.game.inventory_ui.open()
@@ -312,7 +315,10 @@ class PauseMenu:
     def handle_event(self, event):
         if not self.is_open:return True
         if self.overlay is not None:
-            if self.overlay == 'inventory':
+            if self.overlay == 'status':
+                self.game.status_ui.handle_event(event)
+                closed = not self.game.status_ui.is_open
+            elif self.overlay == 'inventory':
                 self.game.inventory_ui.handle_event(event)
                 closed = not self.game.inventory_ui.is_open
             elif self.overlay == 'journal':
