@@ -135,10 +135,10 @@ class UIIntegrationTests(unittest.TestCase):
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')
         self.assertFalse(self.game.social.active)
 
-    def test_pause_journal_and_map_return_without_clickthrough_or_world_progress(self):
+    def test_pause_overlays_return_without_clickthrough_or_world_progress(self):
         self.offer()
         page = self.game.social.page_index
-        for label, flag in (('Journal', 'journal'), ('Map', 'map')):
+        for label, flag in (('Status', 'status'), ('Journal', 'journal'), ('Map', 'map')):
             with self.subTest(overlay=label):
                 self.key(pygame.K_ESCAPE)
                 row = self.game.pause.options.index(label)

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "attributes": {
+    "hp": {
+      "label": "HP",
+      "name": "Health",
+      "description": "Maximum health before incapacitation. Current HP can fall without reducing this maximum."
+    },
+    "mp": {
+      "label": "MP",
+      "name": "Magick Points",
+      "description": "Maximum energy available for abilities that cost MP. More MP supports more casting, without increasing spell power."
+    },
+    "str": {
+      "label": "Str",
+      "name": "Strength",
+      "description": "Increases the power of physical attacks and strength-based techniques."
+    },
+    "mag": {
+      "label": "Mag",
+      "name": "Magick",
+      "description": "Increases the power of damaging spells. Healing spell power comes from Spirit."
+    },
+    "spr": {
+      "label": "Spr",
+      "name": "Spirit",
+      "description": "Increases the power of healing spells. Damaging spell power comes from Magick."
+    },
+    "def": {
+      "label": "Def",
+      "name": "Defense",
+      "description": "Reduces incoming physical damage."
+    },
+    "m_def": {
+      "label": "M. Def",
+      "name": "Magick Defense",
+      "description": "Reduces incoming magical damage. Specific status resistances are separate properties."
+    },
+    "speed": {
+      "label": "Speed",
+      "name": "Speed",
+      "description": "Determines when a character acts in combat. It does not change exploration walking or running speed."
+    },
+    "acc": {
+      "label": "Acc",
+      "name": "Accuracy",
+      "description": "Improves the chance to land attacks that check accuracy. This rating is not a hit percentage."
+    },
+    "eva": {
+      "label": "Eva",
+      "name": "Evasion",
+      "description": "Improves the chance to avoid attacks that can be evaded. This rating is not an evasion percentage."
+    },
+    "lck": {
+      "label": "Lck",
+      "name": "Luck",
+      "description": "Improves critical-hit chance for attacks that can critically hit. This rating is not a critical-hit percentage."
+    }
+  },
+  "characters": {
+    "caelan": {
+      "name": "Caelan",
+      "attributes": {
+        "hp": 300,
+        "mp": 30,
+        "str": 10,
+        "mag": 10,
+        "spr": 10,
+        "def": 10,
+        "m_def": 10,
+        "speed": 10,
+        "acc": 10,
+        "eva": 10,
+        "lck": 10
+      }
+    }
+  }
+}

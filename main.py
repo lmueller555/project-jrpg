@@ -33,6 +33,8 @@ from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
 from inventory import Inventory
 from inventory_ui import InventoryUI
+from character_attributes import CharacterAttributes
+from status_ui import StatusUI
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
@@ -412,6 +414,7 @@ class Game:
                 self.bone_routines.append(DaisyBone(self,shared.home,shared,shared.home.data['bone_routine']))
         self.quests=QuestLog()
         self.inventory=Inventory()
+        self.attributes=CharacterAttributes('caelan')
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -419,6 +422,7 @@ class Game:
         self.quest_ui=QuestUI(self)
         self.map_ui=MapUI(self)
         self.inventory_ui=InventoryUI(self)
+        self.status_ui=StatusUI(self)
         self.opening=OpeningSequence(self)
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
@@ -442,6 +446,7 @@ class Game:
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
+                           'character_attributes':self.attributes.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
                            'venn_visit':self.venn_visit.to_dict(),
@@ -507,6 +512,8 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
+               ('character_attributes' not in data or
+                CharacterAttributes.valid_snapshot(data['character_attributes'], character_id='caelan')) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
                ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
@@ -567,6 +574,9 @@ class Game:
         """Continue quest facts, not an interrupted conversation or NPC action."""
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
+        self.attributes.reset()
+        if data is not None and 'character_attributes' in data:
+            self.attributes.restore(data['character_attributes'])
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
@@ -606,6 +616,7 @@ class Game:
         self.map_open=False
         self.quest_ui.reset()
         self.inventory_ui.reset()
+        self.status_ui.reset()
         self._sync_inventory()
         self.transfer_cooldown=.25
         self.on_title=False
@@ -650,6 +661,7 @@ class Game:
         self._sync_inventory()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
+              'character_attributes':self.attributes.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
               'venn_visit':self.venn_visit.to_dict(),
@@ -1058,6 +1070,7 @@ class Game:
         if self.map_open:self.draw_map()
         self.quest_ui.draw_journal(self.ui_surface)
         self.inventory_ui.draw(self.ui_surface)
+        self.status_ui.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
         pygame.display.flip()

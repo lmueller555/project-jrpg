@@ -63,3 +63,21 @@ preparation session provides quest-scoped attendance.
 ## Festival preparation session
 
 In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning remains open until later quest segments.
+
+## Caelan's starting gameplay attributes
+
+The approved attribute set is **HP, MP, Str, Mag, Spr, Def, M. Def, Speed, Acc,
+Eva and Lck**. Mag increases damaging-spell power; Spr increases healing-spell
+power. Caelan begins as a balanced all-rounder:
+
+| HP | MP | Str | Mag | Spr | Def | M. Def | Speed | Acc | Eva | Lck |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 300 | 30 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |
+
+HP and MP are maximum values; current resources start full. The remaining
+numbers are ratings, including Acc, Eva and Lck, rather than percentages.
+Starting numbers are a tunable gameplay baseline. They do not assign Caelan a
+job, define a battle format or change his established magical limitations.
+The Sphere Grid will be developed separately. See
+[character attributes](../../CHARACTER_ATTRIBUTES.md) for the definitions,
+runtime integration and save compatibility.
