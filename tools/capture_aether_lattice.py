@@ -27,7 +27,8 @@ def main():
         game.draw()
         if game.lattice_ui.is_open:
             ui = game.lattice_ui
-            for rect in (ui.map_rect, ui.detail_view, ui.move_rect, ui.activate_rect, ui.close_rect):
+            for rect in (ui.map_rect, ui.close_rect, ui.help_rect, ui.zoom_out_rect,
+                         ui.zoom_in_rect, ui.fit_rect, ui.reset_zoom_rect):
                 assert pygame.Rect(0, 0, 480, 320).contains(rect), (name, rect)
             assert game.ui_surface.get_clip() == game.ui_surface.get_rect()
         pygame.image.save(game.window, str(output/(name+'.png')))
@@ -50,14 +51,12 @@ def main():
                          'confirmation_text': game.lattice_ui.confirmation_text(),
                          'confirmation_scroll': game.lattice_ui.confirm_scroll,
                          'confirmation_max_scroll': game.lattice_ui.confirm_max_scroll,
-                         'detail_scroll': game.lattice_ui.detail_scroll,
                          'detail_text': game.lattice_ui.detail_text()})
 
     def prepare(preview, action, target):
         game = preview.game;preview.select_node(target);game.draw()
         before = game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict()
-        rect = game.lattice_ui.move_rect if action == 'move' else game.lattice_ui.activate_rect
-        preview.click(rect.center)
+        preview.key(pygame.K_m if action == 'move' else pygame.K_a)
         assert game.lattice_ui.pending == (action, target), (action, target, game.lattice_ui.message)
         assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())
 
@@ -130,9 +129,8 @@ def main():
         prepare(preview, 'move', 'brace_01');confirm(preview, 'move', 'brace_01')
         prepare(preview, 'activate', 'brace_01');confirm(preview, 'activate', 'brace_01')
         assert 'brace' in game.lattice.learned_abilities()
-        preview.key(pygame.K_END)
         record(preview, 'lattice_known_abilities_and_crystals')
-        preview.key(pygame.K_HOME);preview.key(pygame.K_f)
+        preview.key(pygame.K_f)
         record(preview, 'lattice_explored_overview')
         preview.resize((960, 640), 1.5)
         preview.select_node('hp_03')

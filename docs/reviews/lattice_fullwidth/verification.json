@@ -1,0 +1,728 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_untouched": true,
+  "fixture": {
+    "rp": 0,
+    "rank": 1,
+    "steps": 0,
+    "crystals": 0
+  },
+  "progression_unchanged": true,
+  "world_unchanged": true,
+  "permanent_node_details_panel": false,
+  "permanent_move_activate_controls": false,
+  "new_guidance_cues_added": false,
+  "checks": [
+    {
+      "stage": "former sidebar supports dragging",
+      "nearest_node": "hp_02",
+      "selected": "hp_02",
+      "cursor_at_release": [
+        160.41599999999994,
+        176.0
+      ]
+    },
+    {
+      "stage": "former action-button space selects only",
+      "logical_point": [
+        382,
+        264
+      ],
+      "selected": "blank_14"
+    },
+    {
+      "stage": "former action-button space selects only",
+      "logical_point": [
+        382,
+        292
+      ],
+      "selected": "mag_13"
+    }
+  ],
+  "captures": [
+    {
+      "file": "fullwidth_overview.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "map_rect": [
+        16,
+        68,
+        448,
+        236
+      ],
+      "zoom": 0.13477537437603992,
+      "selected": "origin",
+      "camera": [
+        981.0,
+        275.0
+      ]
+    },
+    {
+      "file": "fullwidth_closeup.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "map_rect": [
+        16,
+        68,
+        448,
+        236
+      ],
+      "zoom": 0.48225308641975323,
+      "selected": "brace_01",
+      "camera": [
+        36.0,
+        176.0
+      ]
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "map_rect": [
+        16,
+        103,
+        448,
+        201
+      ],
+      "zoom": 0.10565723793677205,
+      "selected": "blank_45",
+      "camera": [
+        981.0,
+        275.0
+      ]
+    }
+  ],
+  "animation": {
+    "file": "fullwidth.gif",
+    "rendered_frames": 36,
+    "encoded_frames": 36,
+    "fps": 15,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "full-width lattice",
+        "zoom": 0.8,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 1,
+        "stage": "full-width lattice",
+        "zoom": 0.8,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 2,
+        "stage": "whole section across full content width",
+        "zoom": 0.3853752547765613,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          611.4429012345679,
+          171.403463648834
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 3,
+        "stage": "whole section across full content width",
+        "zoom": 0.1637520020951042,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          938.2684613625971,
+          263.0212302494538
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 4,
+        "stage": "whole section across full content width",
+        "zoom": 0.13477537437603992,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          981.0,
+          275.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 5,
+        "stage": "whole section across full content width",
+        "zoom": 0.13477537437603992,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          981.0,
+          275.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 6,
+        "stage": "whole section across full content width",
+        "zoom": 0.13477537437603992,
+        "selected": "origin",
+        "navigating": false,
+        "camera": [
+          981.0,
+          275.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 7,
+        "stage": "selected center with no information sidebar",
+        "zoom": 0.2942765240135419,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 8,
+        "stage": "selected center with no information sidebar",
+        "zoom": 0.45174749853114193,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 9,
+        "stage": "selected center with no information sidebar",
+        "zoom": 0.48211185684619484,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 10,
+        "stage": "selected center with no information sidebar",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 11,
+        "stage": "selected center with no information sidebar",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 12,
+        "stage": "former sidebar is clear map space",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 13,
+        "stage": "former sidebar is clear map space",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 14,
+        "stage": "former sidebar is clear map space",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": false,
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 15,
+        "stage": "drag through former sidebar",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": true,
+        "camera": [
+          71.0785759924017,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 16,
+        "stage": "drag through former sidebar",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": true,
+        "camera": [
+          109.85873565776319,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 17,
+        "stage": "drag through former sidebar",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "navigating": true,
+        "camera": [
+          147.12010889835562,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 18,
+        "stage": "nearest node centered after right-side drag",
+        "zoom": 0.48225308641975323,
+        "selected": "hp_02",
+        "navigating": false,
+        "camera": [
+          135.02368008015145,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 19,
+        "stage": "nearest node centered after right-side drag",
+        "zoom": 0.48225308641975323,
+        "selected": "hp_02",
+        "navigating": false,
+        "camera": [
+          131.2809123280057,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 20,
+        "stage": "nearest node centered after right-side drag",
+        "zoom": 0.48225308641975323,
+        "selected": "hp_02",
+        "navigating": false,
+        "camera": [
+          131.0,
+          176.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 21,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_14",
+        "navigating": false,
+        "camera": [
+          215.70523421226437,
+          215.4448254839201
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 22,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_14",
+        "navigating": false,
+        "camera": [
+          414.11312426967436,
+          307.83775339125134
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 23,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_14",
+        "navigating": false,
+        "camera": [
+          464.4490740740741,
+          331.27777777777777
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 24,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": false,
+        "camera": [
+          528.2014555707972,
+          401.28129604226996
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 25,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": false,
+        "camera": [
+          673.8979957323579,
+          563.5611822384799
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 26,
+        "stage": "former action-button space is navigable map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": false,
+        "camera": [
+          710.8611111111111,
+          604.7314814814815
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 27,
+        "stage": "gold cursor exploring the wider map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": true,
+        "camera": [
+          714.0508730576215,
+          606.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 28,
+        "stage": "gold cursor exploring the wider map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": true,
+        "camera": [
+          732.1673668950783,
+          606.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 29,
+        "stage": "gold cursor exploring the wider map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": true,
+        "camera": [
+          755.6843924825681,
+          606.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 30,
+        "stage": "gold cursor exploring the wider map",
+        "zoom": 0.48225308641975323,
+        "selected": "mag_13",
+        "navigating": true,
+        "camera": [
+          780.2917666257091,
+          606.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 31,
+        "stage": "selected node centered and pulsing",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_45",
+        "navigating": false,
+        "camera": [
+          790.9988698108093,
+          647.3122999542752
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 32,
+        "stage": "selected node centered and pulsing",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_45",
+        "navigating": false,
+        "camera": [
+          789.3243845823702,
+          688.0987654320987
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 33,
+        "stage": "selected node centered and pulsing",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_45",
+        "navigating": false,
+        "camera": [
+          789.001501780474,
+          695.9634202103338
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 34,
+        "stage": "selected node centered and pulsing",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_45",
+        "navigating": false,
+        "camera": [
+          789.0,
+          696.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      },
+      {
+        "frame": 35,
+        "stage": "selected node centered and pulsing",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_45",
+        "navigating": false,
+        "camera": [
+          789.0,
+          696.0
+        ],
+        "map_rect": [
+          16,
+          68,
+          448,
+          236
+        ]
+      }
+    ]
+  }
+}

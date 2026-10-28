@@ -107,7 +107,12 @@ def main(argv=None):
                        'world_anchor': list(world_anchor), 'max_anchor_error_logical_pixels': max(errors),
                        'settled_zoom': ui.zoom})
         run(.15, 'pointer anchored zoom — settled')
-        preview.hover(ui.detail_view.center)
+        preview.hover((ui.map_rect.left+8, ui.map_rect.top-8))
+        old_zoom, old_target = ui.zoom, ui.target_zoom
+        event(pygame.MOUSEWHEEL, x=0, y=-2)
+        preview.advance(.25)
+        assert math.isclose(ui.zoom, old_zoom) and math.isclose(ui.target_zoom, old_target)
+        checks.append({'stage': 'wheel outside the map leaves zoom unchanged', 'zoom': ui.zoom})
 
         zoom_transition('fit entire board', lambda: preview.click(ui.fit_rect.center))
         for identifier in ui.board.nodes:

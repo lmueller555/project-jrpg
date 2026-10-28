@@ -1,4 +1,4 @@
-"""Aether Lattice exploration, explicit purchases and accessible node details."""
+"""Full-width Aether Lattice exploration and explicit purchases."""
 import math
 import pygame
 
@@ -25,11 +25,7 @@ class LatticeUI:
         self.character_id = getattr(game.attributes, 'character_id', 'caelan')
         self.close_rect = pygame.Rect(438, 14, 24, 24)
         self.help_rect = pygame.Rect(410, 14, 22, 24)
-        self.move_rect = pygame.Rect(300, 252, 164, 24)
-        self.activate_rect = pygame.Rect(300, 280, 164, 24)
-        self.map_rect = pygame.Rect(16, 78, 274, 226)
-        self.detail_view = pygame.Rect(307, 85, 147, 157)
-        self.detail_track = pygame.Rect(458, 85, 4, 157)
+        self.map_rect = pygame.Rect(16, 78, 448, 226)
         self.zoom_out_rect = pygame.Rect(24, 275, 24, 22)
         self.zoom_in_rect = pygame.Rect(52, 275, 24, 22)
         self.zoom_readout_rect = pygame.Rect(82, 275, 50, 22)
@@ -75,12 +71,10 @@ class LatticeUI:
         self._click_world = None
         self.pending = None
         self.message = ''
-        self.detail_scroll = 0
-        self.detail_max_scroll = 0
-        self.detail_thumb = None
+        self.notice_open = False
+        self.notice_title = ''
         self._held = False
         self.dragging = False
-        self.drag_detail = False
         self.drag_origin = None
         self.help_open = False
         self.help_scroll = 0
@@ -92,10 +86,11 @@ class LatticeUI:
         self.is_open = True
         self.pending = None
         self.message = ''
+        self.notice_open = False
         self.hovered = None
         self.pointer = None
         self.help_open = False
-        self._held = self.dragging = self.drag_detail = False
+        self._held = self.dragging = False
         self._keys.clear()
         self._pulse_elapsed = 0.0
         self._select(self.lattice.state(self.character_id)['position'], center=True)
@@ -105,10 +100,11 @@ class LatticeUI:
     def close(self):
         self.is_open = False
         self.pending = None
+        self.notice_open = False
         self.hovered = None
         self.pointer = None
         self.help_open = False
-        self._held = self.dragging = self.drag_detail = False
+        self._held = self.dragging = False
         self._keys.clear()
         self._cancel_zoom()
         self.game.ui.sound('back')
@@ -120,8 +116,8 @@ class LatticeUI:
         self._pulse_elapsed = 0.0
         if identifier != self.selected:
             self.selected = identifier
-            self.detail_scroll = 0
             self.pending = None
+            self.notice_open = False
             self.message = ''
             self.game.ui.sound('move')
         if center:self.center_on(identifier)
@@ -177,7 +173,7 @@ class LatticeUI:
         """Advance exploration and selection feedback while the world is paused."""
         if not self.is_open:return
         dt = max(0.0, min(float(dt), .25))
-        if self.pending is not None or self.help_open:
+        if self.pending is not None or self.help_open or self.notice_open:
             self._stop_navigation()
         if self._zoom_elapsed < self.ZOOM_DURATION:
             self._zoom_elapsed = min(self.ZOOM_DURATION, self._zoom_elapsed+dt)
@@ -326,16 +322,28 @@ class LatticeUI:
         self._stop_navigation()
         reason = self._move_reason() if action == 'move' else self._activation_reason()
         if reason:
-            self.message = reason
-            self.pending = None
-            self.detail_scroll = 0
+            self._show_notice(action, reason)
             return False
         self.pending = (action, self.selected)
+        self.notice_open = False
         self.confirm_scroll = 0
-        self.message = 'Confirm travel below.' if action == 'move' else 'Confirm crystal use below.'
-        self.detail_scroll = 0
+        self.message = ''
         self.game.ui.sound('confirm')
         return True
+
+    def _show_notice(self, action, reason):
+        self._stop_navigation()
+        self.pending = None
+        self.message = reason
+        self.notice_title = 'Cannot travel' if action == 'move' else 'Cannot activate'
+        self.notice_open = True
+        self.confirm_scroll = 0
+
+    def _dismiss_notice(self):
+        self.notice_open = False
+        self.message = ''
+        self.confirm_scroll = 0
+        self.game.ui.sound('back')
 
     def _commit(self):
         if self.pending is None:return False
@@ -348,8 +356,9 @@ class LatticeUI:
             self.message = 'Travel complete.' if action == 'move' else 'Node activated.'
             if action == 'move':self.center_on(identifier)
             self.game.ui.sound('confirm')
-        else:self.message = self._move_reason() if action == 'move' else self._activation_reason()
-        self.detail_scroll = 0
+        else:
+            reason = self._move_reason() if action == 'move' else self._activation_reason()
+            self._show_notice(action, reason or 'This action is unavailable.')
         return success
 
     def _action(self, action):
@@ -431,7 +440,8 @@ class LatticeUI:
 
     def _confirmation_layout(self, painter):
         lines = []
-        for text in self.confirmation_text():lines.extend(painter.wrap(text, self.confirm_view.width, role='small'))
+        text_lines = [self.message] if self.notice_open else self.confirmation_text()
+        for text in text_lines:lines.extend(painter.wrap(text, self.confirm_view.width, role='small'))
         height = painter.font('small').get_linesize()+3
         self.confirm_max_scroll = max(0, len(lines)*height-self.confirm_view.height)
         self.confirm_scroll = max(0, min(self.confirm_scroll, self.confirm_max_scroll))
@@ -441,47 +451,27 @@ class LatticeUI:
         heading_height = painter.font('heading', bold=True).get_linesize()
         small_height = painter.font('small').get_linesize()
         top = 16+heading_height+5+small_height*2+10
-        self.map_rect = pygame.Rect(16, top, 274, 304-top)
-        self.detail_view = pygame.Rect(307, top+8, 147, max(35, 242-top))
-        self.detail_track = pygame.Rect(458, self.detail_view.top, 4, self.detail_view.height)
+        self.map_rect = pygame.Rect(16, top, 448, 304-top)
         self.zoom_out_rect = pygame.Rect(24, self.map_rect.bottom-29, 24, 22)
         self.zoom_in_rect = pygame.Rect(52, self.map_rect.bottom-29, 24, 22)
         self.zoom_readout_rect = pygame.Rect(82, self.map_rect.bottom-29, 50, 22)
         self.fit_rect = pygame.Rect(138, self.map_rect.bottom-29, 48, 22)
         self.reset_zoom_rect = pygame.Rect(192, self.map_rect.bottom-29, 82, 22)
-        wrapped = []
-        for text in self.detail_text():
-            wrapped.extend(painter.wrap(text, self.detail_view.width, role='small'))
-            wrapped.append('')
-        line_height = painter.font('small').get_linesize()+2
-        self.detail_max_scroll = max(0, len(wrapped)*line_height-self.detail_view.height)
-        self.detail_scroll = max(0, min(self.detail_scroll, self.detail_max_scroll))
-        self.detail_thumb = None
-        if self.detail_max_scroll:
-            height = max(14, round(self.detail_track.height*self.detail_view.height/
-                                   (self.detail_max_scroll+self.detail_view.height)))
-            offset = round((self.detail_track.height-height)*self.detail_scroll/self.detail_max_scroll)
-            self.detail_thumb = pygame.Rect(self.detail_track.left, self.detail_track.top+offset,
-                                           self.detail_track.width, height)
-        return wrapped, line_height, heading_height, small_height
-
-    def _scroll(self, amount):
-        self.detail_scroll = max(0, min(self.detail_max_scroll, self.detail_scroll+amount))
+        return heading_height, small_height
 
     def _help_lines(self, painter):
         text = ('Hold the arrow keys to explore with the gold cursor. Release to select the nearest node. '
                 'Click the map to inspect its nearest node, or use Tab / Shift+Tab to cycle nodes. '
                 'Exploration never spends Steps or crystals.\n'
-                'M prepares travel. A prepares activation. Press Enter or click the same action again to confirm. '
+                'M prepares travel. A prepares activation. Press Enter or click Confirm to proceed. '
                 'Esc cancels a prepared action, then returns to Pause.\n'
                 'Drag the map to explore, then release to center the nearest node. '
                 'Use + / - or the buttons to zoom around the selected node. The map wheel zooms at the pointer. '
                 'F / Fit shows the entire lattice. 0 / 100% returns to a readable close-up. '
                 'The percentage shows the current camera zoom.\n'
-                'Page Up / Page Down scroll node details. Home / End reach their beginning or end. '
-                'The detail scrollbar can also be dragged.\n'
+                'Page Up / Page Down and Home / End read longer confirmation messages.\n'
                 'Each connection costs one Step, including return travel and blank nodes. '
-                'Activation uses the crystals listed for your current node. Rank is never spent.')
+                'Activation uses the crystals shown in its confirmation. Rank is never spent.')
         lines = painter.wrap(text, self.help_view.width, role='small')
         height = painter.font('small').get_linesize()+2
         self.help_max_scroll = max(0, len(lines)*height-self.help_view.height)
@@ -505,7 +495,7 @@ class LatticeUI:
             if self.dragging and not self._drag_moved and self._click_world is not None:
                 self.cursor_position.update(self._click_world)
             was_dragging = self.dragging
-            self._held = self.dragging = self.drag_detail = False
+            self._held = self.dragging = False
             self.drag_origin = self._drag_start = self._click_world = None
             self._drag_moved = False
             if was_dragging and not self._keys:self._settle_cursor()
@@ -513,9 +503,25 @@ class LatticeUI:
         if event.type in (pygame.WINDOWLEAVE, pygame.WINDOWFOCUSLOST):
             self.hovered = None
             self.pointer = None
-            self._held = self.drag_detail = False
+            self._held = False
             self._stop_navigation()
             self._cancel_zoom()
+            return True
+        if self.notice_open:
+            self._confirmation_layout(painter)
+            if event.type == pygame.KEYDOWN:
+                if event.key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
+                    if not getattr(event, 'repeat', False):self._dismiss_notice()
+                elif event.key == pygame.K_PAGEUP:self.confirm_scroll = max(0, self.confirm_scroll-self.confirm_view.height)
+                elif event.key == pygame.K_PAGEDOWN:self.confirm_scroll = min(self.confirm_max_scroll, self.confirm_scroll+self.confirm_view.height)
+                elif event.key == pygame.K_HOME:self.confirm_scroll = 0
+                elif event.key == pygame.K_END:self.confirm_scroll = self.confirm_max_scroll
+            elif event.type == pygame.MOUSEWHEEL:
+                self.confirm_scroll = max(0, min(self.confirm_max_scroll, self.confirm_scroll-event.y*24))
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and point is not None:
+                if self._held:return True
+                self._held = True
+                if self.cancel_rect.collidepoint(point):self._dismiss_notice()
             return True
         if self.help_open:
             self._help_lines(painter)
@@ -535,6 +541,8 @@ class LatticeUI:
                 self.confirm_scroll = max(0, min(self.confirm_max_scroll, self.confirm_scroll-event.y*24))
                 return True
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and point is not None:
+                if self._held:return True
+                self._held = True
                 if self.confirm_rect.collidepoint(point):self._commit();return True
                 if self.cancel_rect.collidepoint(point):self.pending = None;self.message = '';return True
                 if self.confirm_panel.collidepoint(point):return True
@@ -571,10 +579,6 @@ class LatticeUI:
             elif event.key == pygame.K_m and not getattr(event, 'repeat', False):self._action('move')
             elif event.key == pygame.K_a and not getattr(event, 'repeat', False):self._action('activate')
             elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER) and not getattr(event, 'repeat', False):self._commit()
-            elif event.key == pygame.K_PAGEUP:self._scroll(-self.detail_view.height)
-            elif event.key == pygame.K_PAGEDOWN:self._scroll(self.detail_view.height)
-            elif event.key == pygame.K_HOME:self.detail_scroll = 0
-            elif event.key == pygame.K_END:self.detail_scroll = self.detail_max_scroll
             elif event.key in (pygame.K_F1, pygame.K_QUESTION):
                 self._stop_navigation()
                 self.help_open = True
@@ -583,7 +587,6 @@ class LatticeUI:
             if pointer is None:pointer = self.game.to_canvas(pygame.mouse.get_pos())
             if pointer is not None and self.map_rect.collidepoint(pointer):
                 self._zoom(1.2**max(-10, min(10, event.y)), anchor=pointer)
-            else:self._scroll(-event.y*24)
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if self._held:return True
             self._held = True
@@ -592,14 +595,10 @@ class LatticeUI:
             elif self.help_rect.collidepoint(point):
                 self._stop_navigation()
                 self.help_open = True
-            elif self.move_rect.collidepoint(point):self._action('move')
-            elif self.activate_rect.collidepoint(point):self._action('activate')
             elif self.zoom_out_rect.collidepoint(point):self._zoom(1/1.2)
             elif self.zoom_in_rect.collidepoint(point):self._zoom(1.2)
             elif self.fit_rect.collidepoint(point):self.fit_board()
             elif self.reset_zoom_rect.collidepoint(point):self.reset_zoom()
-            elif self.detail_thumb is not None and self.detail_track.inflate(10, 0).collidepoint(point):
-                self.drag_detail = True
             elif self.map_rect.collidepoint(point):
                 self._zoom_anchor = None
                 self._keys.clear()
@@ -620,10 +619,6 @@ class LatticeUI:
                 self.drag_origin = pygame.Vector2(point)
                 self.hovered = None
             elif self.dragging and point is None:self._stop_navigation()
-            elif self.drag_detail and point is not None and self.detail_thumb is not None:
-                travel = self.detail_track.height-self.detail_thumb.height
-                fraction = (point[1]-self.detail_track.top-self.detail_thumb.height/2)/max(1, travel)
-                self.detail_scroll = round(max(0, min(1, fraction))*self.detail_max_scroll)
         return True
 
     def _circle(self, painter, color, center, radius, width=0):
@@ -699,18 +694,11 @@ class LatticeUI:
                      role='small', color=GOLD, anchor='center')
         painter.button(self.fit_rect, 'Fit')
         painter.button(self.reset_zoom_rect, '100%')
-        if self.hovered:
-            text = self.board.nodes[self.hovered].get('name', self.hovered)
-            lines = painter.wrap(text, self.map_rect.width-16, role='small')
-            height = len(lines)*painter.font('small').get_linesize()+10
-            painter.panel((self.map_rect.left+5, self.map_rect.top+5, self.map_rect.width-10, height))
-            for index, line in enumerate(lines):
-                painter.text(line, (self.map_rect.left+10, self.map_rect.top+10+index*painter.font('small').get_linesize()), role='small', color=GOLD)
 
     def draw(self, canvas):
         if not self.is_open:return
         painter = self._painter(canvas)
-        lines, line_height, heading_height, small_height = self._layout(painter)
+        heading_height, small_height = self._layout(painter)
         painter.veil(215)
         painter.panel((8, 8, 464, 304))
         painter.text('Aether Lattice', (20, 16), role='heading', color=GOLD, bold=True)
@@ -723,23 +711,12 @@ class LatticeUI:
         painter.button(self.help_rect, '?')
         painter.button(self.close_rect, '×')
         self._draw_map(painter)
-        painter.panel((300, self.map_rect.top, 164, 246-self.map_rect.top))
-        painter.clip(self.detail_view)
-        for index, line in enumerate(lines):
-            painter.text(line, (self.detail_view.left, self.detail_view.top+index*line_height-self.detail_scroll),
-                         role='small', color=IVORY)
-        painter.clip()
-        if self.detail_thumb is not None:
-            painter.rect(FOREST_DARK, self.detail_track)
-            painter.rect(BRASS, self.detail_thumb)
         move_pending = self.pending == ('move', self.selected)
-        activation_pending = self.pending == ('activate', self.selected)
-        painter.button(self.move_rect, 'Confirm Move' if move_pending else 'M: Move', disabled=bool(self._move_reason()))
-        painter.button(self.activate_rect, 'Confirm Activate' if activation_pending else 'A: Activate', disabled=bool(self._activation_reason()))
-        if self.pending is not None:
+        if self.pending is not None or self.notice_open:
             painter.veil(80)
             painter.panel(self.confirm_panel)
-            painter.text('Confirm travel' if move_pending else 'Confirm activation',
+            painter.text(self.notice_title if self.notice_open else
+                         'Confirm travel' if move_pending else 'Confirm activation',
                          (42, 67), color=GOLD, bold=True)
             confirm_lines, height = self._confirmation_layout(painter)
             painter.clip(self.confirm_view)
@@ -748,9 +725,9 @@ class LatticeUI:
             painter.clip()
             if self.confirm_max_scroll:
                 painter.text('PgUp / PgDn: read', (42, 226), role='small', color=MUTED, anchor='midleft')
-            else:painter.text('Enter confirms', (42, 226), role='small', color=MUTED, anchor='midleft')
-            painter.button(self.confirm_rect, 'Confirm')
-            painter.button(self.cancel_rect, 'Cancel')
+            elif not self.notice_open:painter.text('Enter confirms', (42, 226), role='small', color=MUTED, anchor='midleft')
+            if not self.notice_open:painter.button(self.confirm_rect, 'Confirm')
+            painter.button(self.cancel_rect, 'Close' if self.notice_open else 'Cancel')
         if self.help_open:
             painter.veil(100)
             painter.panel(self.help_panel)
