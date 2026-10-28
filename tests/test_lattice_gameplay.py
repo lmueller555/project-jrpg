@@ -300,6 +300,37 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertEqual(self.snapshot(game), before)
         self.assertEqual(self.path.read_bytes(), saved)
 
+    def test_real_paused_zoom_changes_camera_without_changing_world_or_journey(self):
+        game = self.game()
+        self.open_lattice(game)
+        screen = game.lattice_ui
+        before = self.snapshot(game)
+        saved = self.path.read_bytes()
+        world_time, player = game.elapsed_ms, game.player.position.copy()
+        npcs = [npc.position.copy() for npc in game.world.npcs]
+        initial = screen.zoom
+        self.key(game, pygame.K_PLUS)
+        target = screen.target_zoom
+        self.assertGreater(target, initial)
+        self.assertEqual(screen.zoom, initial)
+        game.update(screen.ZOOM_DURATION/3, (1, 0), True)
+        self.assertGreater(screen.zoom, initial)
+        self.assertLess(screen.zoom, target)
+        for _ in range(12):game.update(1/60, (1, 0), True)
+        self.assertAlmostEqual(screen.zoom, target)
+        self.key(game, pygame.K_f)
+        for _ in range(12):game.update(1/60)
+        self.assertLess(screen.zoom, initial)
+        self.key(game, pygame.K_0)
+        for _ in range(12):game.update(1/60)
+        self.assertEqual(screen.zoom, 1.0)
+        self.assertEqual(screen.selected, 'origin')
+        self.assertEqual(game.elapsed_ms, world_time)
+        self.assertEqual(game.player.position, player)
+        self.assertEqual([npc.position for npc in game.world.npcs], npcs)
+        self.assertEqual(self.snapshot(game), before)
+        self.assertEqual(self.path.read_bytes(), saved)
+
     def test_navigation_does_not_resume_after_focus_loss_or_closing_overlay(self):
         game = self.game()
         self.open_lattice(game)

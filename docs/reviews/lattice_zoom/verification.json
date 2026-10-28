@@ -1,0 +1,1383 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_untouched": true,
+  "fixture": {
+    "rank": 1,
+    "rp": 0,
+    "steps": 0,
+    "crystals": 0
+  },
+  "progression_unchanged": true,
+  "world_unchanged": true,
+  "checks": [
+    {
+      "stage": "keyboard zoom out",
+      "start_zoom": 0.8,
+      "target_zoom": 0.4629629629629631,
+      "zoom_after_83ms": 0.5151653476114941,
+      "settled_zoom": 0.4629629629629631
+    },
+    {
+      "stage": "button zoom in",
+      "start_zoom": 0.4629629629629631,
+      "target_zoom": 1.1520000000000001,
+      "zoom_after_83ms": 1.0452776742855747,
+      "settled_zoom": 1.1520000000000001
+    },
+    {
+      "stage": "pointer anchored wheel zoom",
+      "logical_pointer": [
+        216.0,
+        151.0
+      ],
+      "world_anchor": [
+        54.68749999999999,
+        -30.381944444444443
+      ],
+      "max_anchor_error_logical_pixels": 0.0,
+      "settled_zoom": 0.8000000000000002
+    },
+    {
+      "stage": "fit entire board",
+      "start_zoom": 0.8000000000000002,
+      "target_zoom": 0.18,
+      "zoom_after_83ms": 0.27602944165015497,
+      "settled_zoom": 0.18
+    },
+    {
+      "stage": "100% reset",
+      "start_zoom": 0.18,
+      "target_zoom": 1.0,
+      "zoom_after_83ms": 0.8729933191078596,
+      "settled_zoom": 1.0
+    },
+    {
+      "stage": "navigation after zoom",
+      "nearest_node": "hp_01",
+      "cursor_at_release": [
+        72.0,
+        0.0
+      ],
+      "selected": "hp_01"
+    }
+  ],
+  "captures": [
+    {
+      "file": "zoomed_in.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 1.1520000000000001,
+      "target_zoom": 1.1520000000000001,
+      "camera": [
+        0.0,
+        0.0
+      ],
+      "selected": "origin"
+    },
+    {
+      "file": "whole_lattice_overview.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 0.18,
+      "target_zoom": 0.18,
+      "camera": [
+        684.0,
+        -72.0
+      ],
+      "selected": "origin"
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "zoom": 1.0,
+      "target_zoom": 1.0,
+      "camera": [
+        72.0,
+        0.0
+      ],
+      "selected": "hp_01"
+    }
+  ],
+  "animation": {
+    "file": "zoom.gif",
+    "rendered_frames": 105,
+    "encoded_frames": 102,
+    "fps": 30,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 1,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 2,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 3,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 4,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 5,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 6,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 7,
+        "stage": "selected node at 80%",
+        "zoom": 0.8,
+        "target_zoom": 0.8,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 8,
+        "stage": "keyboard zoom out \u2014 easing",
+        "zoom": 0.6452913870025083,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 9,
+        "stage": "keyboard zoom out \u2014 easing",
+        "zoom": 0.547089516992479,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 10,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.49255194838185246,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 11,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.468836239582569,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 12,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.46309994900656903,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 13,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.4629629629629631,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 14,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.4629629629629631,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 15,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.4629629629629631,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 16,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.4629629629629631,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 17,
+        "stage": "keyboard zoom out \u2014 settled",
+        "zoom": 0.4629629629629631,
+        "target_zoom": 0.4629629629629631,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 18,
+        "stage": "button zoom in \u2014 easing",
+        "zoom": 0.779248571337176,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 19,
+        "stage": "button zoom in \u2014 easing",
+        "zoom": 0.9800120427291084,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 20,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.091508408271097,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 21,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1399926990954783,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 22,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1517199463345886,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 23,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1520000000000001,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 24,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1520000000000001,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 25,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1520000000000001,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 26,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1520000000000001,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 27,
+        "stage": "button zoom in \u2014 settled",
+        "zoom": 1.1520000000000001,
+        "target_zoom": 1.1520000000000001,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 28,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.9904230046232791,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -8.921684869411337,
+          4.956491594117409
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 29,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8878614032413759,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -16.26952073544546,
+          9.038622630803026
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 30,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8309026063100139,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -21.13366065296635,
+          11.740922584981298
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 31,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.806134024284916,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -23.46327654845839,
+          13.03515363803244
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 32,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8001430676218058,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.048419299094,
+          13.360232943941106
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 33,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 34,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 35,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 36,
+        "stage": "wheel zoom \u2014 anchored to pointer",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 37,
+        "stage": "pointer anchored zoom \u2014 settled",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 38,
+        "stage": "pointer anchored zoom \u2014 settled",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 39,
+        "stage": "pointer anchored zoom \u2014 settled",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 40,
+        "stage": "pointer anchored zoom \u2014 settled",
+        "zoom": 0.8000000000000002,
+        "target_zoom": 0.8000000000000002,
+        "camera": [
+          -24.062499999999993,
+          13.36805555555555
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 41,
+        "stage": "fit entire board \u2014 easing",
+        "zoom": 0.6432321038459586,
+        "target_zoom": 0.18,
+        "camera": [
+          154.97212656543712,
+          -8.217380683486027
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 42,
+        "stage": "fit entire board \u2014 easing",
+        "zoom": 0.41356310013717434,
+        "target_zoom": 0.18,
+        "camera": [
+          417.26246356310014,
+          -39.84060047058375
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 43,
+        "stage": "fit entire board \u2014 easing",
+        "zoom": 0.27602944165015497,
+        "target_zoom": 0.18,
+        "camera": [
+          574.3308926961083,
+          -58.777666597162245
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 44,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.20700668089214047,
+        "target_zoom": 0.18,
+        "camera": [
+          653.1573903400142,
+          -68.28143897617515
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 45,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18287037037037046,
+        "target_zoom": 0.18,
+        "camera": [
+          680.7219328703704,
+          -71.60477752057614
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 46,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 47,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 48,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 49,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 50,
+        "stage": "fit entire board \u2014 settled",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 51,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 52,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 53,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 54,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 55,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 56,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 57,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 58,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 59,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 60,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 61,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 62,
+        "stage": "whole lattice overview",
+        "zoom": 0.18,
+        "target_zoom": 0.18,
+        "camera": [
+          684.0,
+          -72.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 63,
+        "stage": "100% reset \u2014 easing",
+        "zoom": 0.3873381852359904,
+        "target_zoom": 1.0,
+        "camera": [
+          511.04961133973484,
+          -53.794695930498406
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 64,
+        "stage": "100% reset \u2014 easing",
+        "zoom": 0.6910939643347052,
+        "target_zoom": 1.0,
+        "camera": [
+          257.67283950617286,
+          -27.123456790123463
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 65,
+        "stage": "100% reset \u2014 easing",
+        "zoom": 0.8729933191078596,
+        "target_zoom": 1.0,
+        "camera": [
+          105.94215820759025,
+          -11.151806127114764
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 66,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 0.964281486562008,
+        "target_zoom": 1.0,
+        "camera": [
+          29.794467306812983,
+          -3.13625971650663
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 67,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 0.9962037037037037,
+        "target_zoom": 1.0,
+        "camera": [
+          3.1666666666666807,
+          -0.3333333333333348
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 68,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 69,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 70,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 71,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 72,
+        "stage": "100% reset \u2014 settled",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 73,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 74,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 75,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 76,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 77,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 78,
+        "stage": "selected node centered at 100%",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.0,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": false
+      },
+      {
+        "frame": 79,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          0.989039861893082,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 80,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          4.7374703338048105,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 81,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          9.725774930111006,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 82,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          15.271190882367115,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 83,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          21.06693310309014,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 84,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          26.97515416671473,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 85,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          32.93391523230539,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 86,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          38.91538538462594,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 87,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          44.907059387362885,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 88,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          50.90331827563743,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 89,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          56.90163728578119,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 90,
+        "stage": "gold cursor exploration after zoom",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          62.90088196835039,
+          0.0
+        ],
+        "selected": "origin",
+        "navigating": true
+      },
+      {
+        "frame": 91,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          67.4429009680949,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 92,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          69.70229617358771,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 93,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          71.0552993371033,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 94,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          71.73431867453326,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 95,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          71.97176240176918,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 96,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 97,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 98,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 99,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 100,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 101,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 102,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 103,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      },
+      {
+        "frame": 104,
+        "stage": "nearest selected node \u2014 centered and pulsing",
+        "zoom": 1.0,
+        "target_zoom": 1.0,
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "selected": "hp_01",
+        "navigating": false
+      }
+    ]
+  }
+}
