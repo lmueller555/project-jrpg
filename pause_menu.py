@@ -315,6 +315,10 @@ class PauseMenu:
             self.game.ui.sound('confirm');return False
         return True
 
+    def update(self, seconds):
+        if self.is_open and self.overlay == 'lattice':
+            self.game.lattice_ui.update(seconds)
+
     def handle_event(self, event):
         if not self.is_open:return True
         if self.overlay is not None:

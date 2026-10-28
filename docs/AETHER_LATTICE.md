@@ -27,10 +27,13 @@ still costs movement but grants no bonus, RP or resource. A character may pass
 through an unactivated stat or ability node. Missing crystals prevent its
 activation without blocking travel along otherwise open connections.
 
-Selecting a node changes the interface cursor. Moving the character requires
-the explicit Move action. The route preview shows the path and its total Step
-cost. Connections with a rank requirement use permanent Attunement, so spending
-movement cannot close a previously opened path.
+The gold exploration cursor can browse the entire board, including branches
+that the character cannot yet reach. Releasing the navigation controls selects
+the nearest node and smoothly centers the camera on it. A pulsing circular halo
+marks that selection. Moving the character requires the explicit Move action;
+browsing never spends Steps, crystals or RP. The route preview shows the path
+and its total Step cost. Connections with a rank requirement use permanent
+Attunement, so spending movement cannot close a previously opened path.
 
 ## Nodes and crystals
 
@@ -77,13 +80,15 @@ remain authored scenes.
 
 | Input | Action |
 | --- | --- |
-| Arrows or Tab | Select a node without spending movement. |
+| Hold arrow keys | Steer the gold cursor freely; release to select the nearest node. |
+| Tab / Shift+Tab | Inspect the next / previous node and smoothly center it. |
+| Click the map | Select the node nearest the pointer and smoothly center it. |
 | M or Move button | Prepare travel and inspect its cost. |
 | A or Activate button | Prepare activation and inspect its cost. |
 | Enter or the prepared action button | Confirm the prepared action. |
 | Escape | Cancel a prepared action; otherwise return to Pause. |
 | + / − or mouse wheel over the map | Zoom. |
-| Drag the map | Pan. |
+| Drag the map | Explore with the gold cursor; release to select the nearest node. |
 | F | Fit the board to the viewport. |
 | Page Up / Page Down, Home / End | Read longer node details. |
 | F1 or the ? button | Open the controls help. |
@@ -91,7 +96,10 @@ remain authored scenes.
 Node details show the effect or ability, owned and required crystal quantities,
 travel and return costs, gate requirements, crystal stocks and learned abilities.
 Cancellation leaves Steps, crystals and node ownership unchanged. The menu holds
-the world and any conversation beneath it until the player resumes.
+the world and any conversation beneath it until the player resumes. Camera
+centering takes about 180 milliseconds and redirects smoothly if another node
+is selected during the transition. Reduced Motion uses a steady selection halo
+and immediate centering.
 
 ## Runtime and authored data
 

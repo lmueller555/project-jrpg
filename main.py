@@ -884,6 +884,7 @@ class Game:
             return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open)
         if self.pause.is_open or self.inventory_ui.is_open:
+            if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)

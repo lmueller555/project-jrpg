@@ -1,4 +1,5 @@
-"""Aether Lattice navigation, explicit purchases and accessible node details."""
+"""Aether Lattice exploration, explicit purchases and accessible node details."""
+import math
 import pygame
 
 from attribute_icons import draw_attribute_icon
@@ -9,6 +10,11 @@ from ui_style import (FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS,
 class LatticeUI:
     MIN_ZOOM = .18
     MAX_ZOOM = 2.0
+    CAMERA_DURATION = .18
+    CURSOR_SPEED = 180.0
+    PULSE_PERIOD = 1.2
+    DIRECTIONS = {pygame.K_LEFT: (-1, 0), pygame.K_RIGHT: (1, 0),
+                  pygame.K_UP: (0, -1), pygame.K_DOWN: (0, 1)}
 
     @staticmethod
     def _steps_label(amount):return str(amount)+' Step'+('' if amount == 1 else 's')
@@ -51,6 +57,15 @@ class LatticeUI:
         self.pointer = None
         self.zoom = .8
         self.pan = pygame.Vector2(0, 0)
+        self.cursor_position = pygame.Vector2(0, 0)
+        self._keys = set()
+        self._camera_start = self.pan.copy()
+        self._camera_target = self.pan.copy()
+        self._camera_elapsed = self.CAMERA_DURATION
+        self._pulse_elapsed = 0.0
+        self._drag_moved = False
+        self._drag_start = None
+        self._click_world = None
         self.pending = None
         self.message = ''
         self.detail_scroll = 0
@@ -74,7 +89,10 @@ class LatticeUI:
         self.pointer = None
         self.help_open = False
         self._held = self.dragging = self.drag_detail = False
+        self._keys.clear()
+        self._pulse_elapsed = 0.0
         self._select(self.lattice.state(self.character_id)['position'], center=True)
+        self.center_on(self.selected, immediate=True)
         self.game.ui.sound('confirm')
 
     def close(self):
@@ -84,10 +102,13 @@ class LatticeUI:
         self.pointer = None
         self.help_open = False
         self._held = self.dragging = self.drag_detail = False
+        self._keys.clear()
         self.game.ui.sound('back')
 
     def _select(self, identifier, center=False):
         if identifier not in self.board.nodes:return
+        self.cursor_position.update(self.board.nodes[identifier]['position'])
+        self._pulse_elapsed = 0.0
         if identifier != self.selected:
             self.selected = identifier
             self.detail_scroll = 0
@@ -96,8 +117,79 @@ class LatticeUI:
             self.game.ui.sound('move')
         if center:self.center_on(identifier)
 
-    def center_on(self, identifier):
-        if identifier in self.board.nodes:self.pan.update(self.board.nodes[identifier]['position'])
+    @property
+    def navigating(self):return bool(self._keys) or self.dragging
+
+    @property
+    def pulse_strength(self):
+        if getattr(self.game.audio, 'reduced_motion', False):return 1.0
+        return .5+.5*math.cos(self._pulse_elapsed*math.tau/self.PULSE_PERIOD)
+
+    def _camera_to(self, position, immediate=False):
+        target = pygame.Vector2(position)
+        if immediate or getattr(self.game.audio, 'reduced_motion', False):
+            self.pan.update(target)
+            self._camera_elapsed = self.CAMERA_DURATION
+        else:
+            self._camera_start = self.pan.copy()
+            self._camera_elapsed = 0.0
+        self._camera_target = target
+
+    def center_on(self, identifier, immediate=False):
+        if identifier in self.board.nodes:
+            self._camera_to(self.board.nodes[identifier]['position'], immediate)
+
+    def _nearest_node(self, position):
+        point = pygame.Vector2(position)
+        return min(self.board.nodes, key=lambda identifier:
+                   (point.distance_squared_to(self.board.nodes[identifier]['position']), identifier))
+
+    def _clamp_cursor(self):
+        points = [node['position'] for node in self.board.nodes.values()]
+        padding = 48
+        self.cursor_position.x = max(min(p[0] for p in points)-padding,
+                                     min(max(p[0] for p in points)+padding, self.cursor_position.x))
+        self.cursor_position.y = max(min(p[1] for p in points)-padding,
+                                     min(max(p[1] for p in points)+padding, self.cursor_position.y))
+
+    def _settle_cursor(self):
+        self._select(self._nearest_node(self.cursor_position), center=True)
+
+    def _stop_navigation(self, settle=True):
+        was_navigating = self.navigating
+        self._keys.clear()
+        self.dragging = False
+        self.drag_origin = self._drag_start = self._click_world = None
+        self._drag_moved = False
+        if settle and was_navigating:self._settle_cursor()
+
+    def update(self, dt):
+        """Advance exploration and selection feedback while the world is paused."""
+        if not self.is_open:return
+        dt = max(0.0, min(float(dt), .25))
+        if self.pending is not None or self.help_open:
+            self._stop_navigation()
+        if self._keys and not self.dragging:
+            direction = sum((pygame.Vector2(self.DIRECTIONS[key]) for key in self._keys), pygame.Vector2())
+            if direction.length_squared():
+                direction.normalize_ip()
+                self.cursor_position += direction*self.CURSOR_SPEED*dt/self.zoom
+                self._clamp_cursor()
+        if self.navigating:
+            if getattr(self.game.audio, 'reduced_motion', False):self.pan.update(self.cursor_position)
+            else:
+                # Exponential following stays fluid when direction changes during a hold.
+                self.pan += (self.cursor_position-self.pan)*(1-math.exp(-24*dt))
+            self._camera_target = self.pan.copy()
+            self._camera_elapsed = self.CAMERA_DURATION
+        elif self._camera_elapsed < self.CAMERA_DURATION:
+            if getattr(self.game.audio, 'reduced_motion', False):
+                self._camera_to(self._camera_target, immediate=True)
+            self._camera_elapsed = min(self.CAMERA_DURATION, self._camera_elapsed+dt)
+            t = self._camera_elapsed/self.CAMERA_DURATION
+            eased = 1-(1-t)**3
+            self.pan.update(self._camera_start.lerp(self._camera_target, eased))
+        if not self.navigating:self._pulse_elapsed = (self._pulse_elapsed+dt) % self.PULSE_PERIOD
 
     def node_position(self, identifier):
         point = pygame.Vector2(self.board.nodes[identifier]['position'])
@@ -108,6 +200,8 @@ class LatticeUI:
         left, right = min(p.x for p in points), max(p.x for p in points)
         top, bottom = min(p.y for p in points), max(p.y for p in points)
         self.pan.update((left+right)/2, (top+bottom)/2)
+        self._stop_navigation(settle=False)
+        self._camera_to(self.pan, immediate=True)
         self.zoom = max(self.MIN_ZOOM, min(self.MAX_ZOOM,
                         (self.map_rect.width-44)/max(1, right-left),
                         (self.map_rect.height-74)/max(1, bottom-top)))
@@ -123,24 +217,6 @@ class LatticeUI:
         distance, identifier = min(nodes)
         return identifier if distance <= radius*radius else None
 
-    def _direction(self, direction):
-        if self.selected not in self.board.nodes:return
-        origin = pygame.Vector2(self.board.nodes[self.selected]['position'])
-        forward = pygame.Vector2(direction)
-        neighbors = set()
-        for edge in self.board.edges:
-            if edge['from'] == self.selected:neighbors.add(edge['to'])
-            if edge['to'] == self.selected:neighbors.add(edge['from'])
-        candidates = []
-        for identifier, node in self.board.nodes.items():
-            delta = pygame.Vector2(node['position'])-origin
-            dot = delta.dot(forward)
-            if dot <= 0:continue
-            perpendicular = abs(delta.cross(forward))
-            candidates.append((identifier not in neighbors, perpendicular/max(1, dot),
-                               delta.length_squared(), identifier))
-        if candidates:self._select(min(candidates)[-1], center=True)
-
     def _move_reason(self):
         return self.game.lattice_move_reason(self.selected)
 
@@ -148,6 +224,7 @@ class LatticeUI:
         return self.game.lattice_activation_reason(self.selected)
 
     def _prepare(self, action):
+        self._stop_navigation()
         reason = self._move_reason() if action == 'move' else self._activation_reason()
         if reason:
             self.message = reason
@@ -291,10 +368,13 @@ class LatticeUI:
         self.detail_scroll = max(0, min(self.detail_max_scroll, self.detail_scroll+amount))
 
     def _help_lines(self, painter):
-        text = ('Select a node with the arrow keys, Tab or a click. Selection never spends Steps or crystals.\n'
+        text = ('Hold the arrow keys to explore with the gold cursor. Release to select the nearest node. '
+                'Click the map to inspect its nearest node, or use Tab / Shift+Tab to cycle nodes. '
+                'Exploration never spends Steps or crystals.\n'
                 'M prepares travel. A prepares activation. Press Enter or click the same action again to confirm. '
                 'Esc cancels a prepared action, then returns to Pause.\n'
-                'Drag the map to pan. Use the wheel, + or - to zoom. F fits the entire lattice.\n'
+                'Drag the map to explore, then release to center the nearest node. '
+                'Use the wheel, + or - to zoom. F fits the entire lattice.\n'
                 'Page Up / Page Down scroll node details. Home / End reach their beginning or end. '
                 'The detail scrollbar can also be dragged.\n'
                 'Each connection costs one Step, including return travel and blank nodes. '
@@ -312,6 +392,27 @@ class LatticeUI:
         point = self.game.to_canvas(event.pos) if hasattr(event, 'pos') else None
         if event.type in (pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
             self.pointer = point
+        # Release/focus events must clear input even when a modal owns the keyboard.
+        if event.type == pygame.KEYUP and event.key in self.DIRECTIONS:
+            held = event.key in self._keys
+            self._keys.discard(event.key)
+            if held and not self.navigating:self._settle_cursor()
+            return True
+        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            if self.dragging and not self._drag_moved and self._click_world is not None:
+                self.cursor_position.update(self._click_world)
+            was_dragging = self.dragging
+            self._held = self.dragging = self.drag_detail = False
+            self.drag_origin = self._drag_start = self._click_world = None
+            self._drag_moved = False
+            if was_dragging and not self._keys:self._settle_cursor()
+            return True
+        if event.type in (pygame.WINDOWLEAVE, pygame.WINDOWFOCUSLOST):
+            self.hovered = None
+            self.pointer = None
+            self._held = self.drag_detail = False
+            self._stop_navigation()
+            return True
         if self.help_open:
             self._help_lines(painter)
             if event.type == pygame.KEYDOWN:
@@ -339,13 +440,22 @@ class LatticeUI:
                 elif event.key == pygame.K_HOME:self.confirm_scroll = 0
                 else:self.confirm_scroll = self.confirm_max_scroll
                 return True
+            if event.type == pygame.KEYDOWN and (event.key in self.DIRECTIONS or event.key in
+                    (pygame.K_TAB, pygame.K_f, pygame.K_F1, pygame.K_QUESTION,
+                     pygame.K_EQUALS, pygame.K_PLUS, pygame.K_KP_PLUS,
+                     pygame.K_MINUS, pygame.K_KP_MINUS)):
+                return True
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                return True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE and not getattr(event, 'repeat', False):
                 if self.pending is not None:self.pending = None;self.message = ''
                 else:self.close()
-            elif event.key in (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN):
-                self._direction({pygame.K_LEFT: (-1, 0), pygame.K_RIGHT: (1, 0), pygame.K_UP: (0, -1), pygame.K_DOWN: (0, 1)}[event.key])
+            elif event.key in self.DIRECTIONS:
+                self._keys.add(event.key)
+                self.hovered = None
             elif event.key == pygame.K_TAB:
+                self._stop_navigation(settle=False)
                 ids = tuple(self.board.nodes)
                 backwards = bool(getattr(event, 'mod', 0)&pygame.KMOD_SHIFT)
                 self._select(ids[(ids.index(self.selected)+(-1 if backwards else 1)) % len(ids)], center=True)
@@ -359,7 +469,9 @@ class LatticeUI:
             elif event.key == pygame.K_PAGEDOWN:self._scroll(self.detail_view.height)
             elif event.key == pygame.K_HOME:self.detail_scroll = 0
             elif event.key == pygame.K_END:self.detail_scroll = self.detail_max_scroll
-            elif event.key in (pygame.K_F1, pygame.K_QUESTION):self.help_open = True
+            elif event.key in (pygame.K_F1, pygame.K_QUESTION):
+                self._stop_navigation()
+                self.help_open = True
         elif event.type == pygame.MOUSEWHEEL:
             pointer = self.pointer
             if pointer is None:pointer = self.game.to_canvas(pygame.mouse.get_pos())
@@ -370,7 +482,9 @@ class LatticeUI:
             self._held = True
             if point is None:return True
             if self.close_rect.collidepoint(point):self.close()
-            elif self.help_rect.collidepoint(point):self.help_open = True
+            elif self.help_rect.collidepoint(point):
+                self._stop_navigation()
+                self.help_open = True
             elif self.move_rect.collidepoint(point):self._action('move')
             elif self.activate_rect.collidepoint(point):self._action('activate')
             elif self.zoom_out_rect.collidepoint(point):self._zoom(1/1.2)
@@ -379,26 +493,28 @@ class LatticeUI:
             elif self.detail_thumb is not None and self.detail_track.inflate(10, 0).collidepoint(point):
                 self.drag_detail = True
             elif self.map_rect.collidepoint(point):
-                node = self._node_at(point)
-                if node is not None:self._select(node)
+                self._keys.clear()
                 self.dragging = True
                 self.drag_origin = pygame.Vector2(point)
-        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-            self._held = self.dragging = self.drag_detail = False
+                self._drag_start = self.drag_origin.copy()
+                self._click_world = self.pan+(pygame.Vector2(point)-pygame.Vector2(self.map_rect.center))/self.zoom
+                self._drag_moved = False
+                self.cursor_position.update(self.pan)
         elif event.type == pygame.MOUSEMOTION:
             self.hovered = self._node_at(point)
             if self.dragging and point is not None and self.drag_origin is not None:
                 delta = pygame.Vector2(point)-self.drag_origin
-                self.pan -= delta/self.zoom
+                if self._drag_moved or pygame.Vector2(point).distance_to(self._drag_start) >= 3:
+                    self._drag_moved = True
+                    self.cursor_position -= delta/self.zoom
+                    self._clamp_cursor()
                 self.drag_origin = pygame.Vector2(point)
+                self.hovered = None
+            elif self.dragging and point is None:self._stop_navigation()
             elif self.drag_detail and point is not None and self.detail_thumb is not None:
                 travel = self.detail_track.height-self.detail_thumb.height
                 fraction = (point[1]-self.detail_track.top-self.detail_thumb.height/2)/max(1, travel)
                 self.detail_scroll = round(max(0, min(1, fraction))*self.detail_max_scroll)
-        elif event.type in (pygame.WINDOWLEAVE, pygame.WINDOWFOCUSLOST):
-            self.hovered = None
-            self.pointer = None
-            self._held = self.dragging = self.drag_detail = False
         return True
 
     def _circle(self, painter, color, center, radius, width=0):
@@ -433,7 +549,14 @@ class LatticeUI:
             crystal = next(iter(node['cost']), None)
             color = self.board.crystals[crystal]['color'] if crystal else BRASS
             active = identifier in state['activated']
-            self._circle(painter, color if active else FOREST_DARK, center, radius)
+            selected = identifier == self.selected and not self.navigating
+            fill = pygame.Color(color if active else FOREST_DARK)
+            if selected:
+                strength = self.pulse_strength
+                glow = pygame.Color(FOREST_DARK).lerp(pygame.Color(GOLD), .35+.5*strength)
+                self._circle(painter, glow, center, radius+5+round(strength*2), 2)
+                fill = fill.lerp(pygame.Color(GOLD), .12+.18*strength)
+            self._circle(painter, fill, center, radius)
             self._circle(painter, IVORY if identifier in state['visited'] else color, center, radius, 1)
             if self.zoom >= .65 and node['kind'] == 'stat':
                 icon = pygame.Rect(0, 0, max(9, radius*1.3), max(9, radius*1.3));icon.center = center
@@ -443,14 +566,17 @@ class LatticeUI:
             if identifier == state['position']:
                 self._circle(painter, GOLD, center, radius+4, 2)
                 painter.line(GOLD, center+(0, -radius-9), center+(0, -radius-5), 2)
-            if identifier == self.selected:
-                box = pygame.Rect(0, 0, radius*2+14, radius*2+14);box.center = center
-                painter.rect(IVORY, box, 1)
-            elif identifier == self.hovered:self._circle(painter, IVORY, center, radius+3, 1)
+            if not selected and identifier == self.hovered:
+                self._circle(painter, IVORY, center, radius+3, 1)
+        if self.navigating:
+            center = pygame.Vector2(self.map_rect.center)+(self.cursor_position-self.pan)*self.zoom
+            radius = max(4, round(10*self.zoom))
+            self._circle(painter, FOREST_DARK, center, radius+2)
+            self._circle(painter, GOLD, center, radius)
         painter.clip()
         for rect, label in ((self.zoom_out_rect, '−'), (self.zoom_in_rect, '+'), (self.fit_rect, 'F')):
             painter.button(rect, label)
-        painter.text('Drag: pan', (self.fit_rect.right+8, self.fit_rect.centery), role='small', color=MUTED, anchor='midleft')
+        painter.text('Drag: explore', (self.fit_rect.right+8, self.fit_rect.centery), role='small', color=MUTED, anchor='midleft')
         if self.hovered:
             text = self.board.nodes[self.hovered].get('name', self.hovered)
             lines = painter.wrap(text, self.map_rect.width-16, role='small')
