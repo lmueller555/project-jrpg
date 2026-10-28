@@ -6,6 +6,8 @@ import re
 import tempfile
 import unittest
 from types import SimpleNamespace
+from collections import deque
+from unittest.mock import patch
 
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
@@ -119,14 +121,21 @@ class OpeningDialogueDriver:
             self.record_page();self.key(pygame.K_SPACE)
         raise AssertionError(('Unread conversation', self.identifier()))
 
-    def walk(self, goal, destination=None, read=True):
+    def walk(self, goal, destination=None, read=True, *, return_if_blocked=False):
         world = self.g.world;goal = pygame.Vector2(*(round(value/2)*2 for value in goal))
         # Replan only when an independently moving resident crosses the path.
         for attempt in range(8):
             route = find_path(world, self.g.player.position, goal, world.probe_size, None)
             if route is None and world is self.g.town:
                 route = town_path(world, self.g.player.position, goal, SimpleNamespace(probe_size=world.probe_size), None)
-            assert route is not None, ('No route', world.data['id'], tuple(self.g.player.position), tuple(goal))
+            if route is None:
+                # A resident may occupy the next approach during a replan.
+                # Actor callers choose another live offset; fixed destinations
+                # wait briefly, still failing if the route remains blocked.
+                if return_if_blocked:return False
+                if read and self.g.social.locked:self.read()
+                self.tick(.2)
+                continue
             stalled = False
             for corner in route:
                 for _ in range(900):
@@ -158,6 +167,7 @@ class OpeningDialogueDriver:
                 self.tick(1/30, direction)
             raise AssertionError(('Door did not transfer', world.data['id'], destination))
         if read and self.g.social.locked:self.read()
+        return True
 
     def travel(self, identifier):
         destination = self.g._scene_by_id(identifier)
@@ -183,8 +193,9 @@ class OpeningDialogueDriver:
                 goal = pygame.Vector2(*(round(value/2)*2 for value in actor.position+offset))
                 if not self.g.world.can_stand(goal):continue
                 if self.g.world is not self.g.town and find_path(self.g.world, self.g.player.position, goal, self.g.world.probe_size, None) is None:continue
-                self.walk(goal)
+                approached = self.walk(goal, return_if_blocked=True)
                 if expected in self.sources:return True
+                if approached is False:continue
                 if self.g.social.locked:self.read()
                 if expected in self.sources:return True
                 if actor not in self.g.world.npcs:return False
@@ -196,6 +207,7 @@ class OpeningDialogueDriver:
                     # A pending request can be cancelled while the resident
                     # finishes a delivery. Only recorded prose counts as read.
                     if expected in self.sources:return True
+            self.tick(.2)
         raise AssertionError(('Could not approach actor', actor.data['id'], expected))
 
     def breakfast(self):
@@ -314,7 +326,7 @@ class OpeningDialogueDriver:
 
 class OpeningDialogueDriverTimingTests(unittest.TestCase):
     def test_approach_replans_moving_target_and_retries_cancelled_pending_request(self):
-        for interruption in ('moving_target', 'pending_cancelled'):
+        for interruption in ('moving_target', 'pending_cancelled', 'blocked_approach'):
             with self.subTest(interruption=interruption):
                 expected = 'serene_quest_report'
                 actor = SimpleNamespace(data={'id': 'mother_serene'}, position=pygame.Vector2(100, 100))
@@ -326,8 +338,11 @@ class OpeningDialogueDriverTimingTests(unittest.TestCase):
                 driver.sources = {};driver.scenes = ['tomas_repeat']
                 walks = [];starts = [];reads = []
 
-                def walk(goal):
+                def walk(goal, *, return_if_blocked=False):
                     walks.append(tuple(goal));driver.g.player.position.update(goal)
+                    if interruption == 'blocked_approach' and len(walks) == 1:
+                        self.assertTrue(return_if_blocked)
+                        return False
                     if interruption == 'moving_target' and len(walks) == 1:
                         actor.position.x += 100
 
@@ -346,7 +361,31 @@ class OpeningDialogueDriverTimingTests(unittest.TestCase):
                 self.assertTrue(driver.actor(actor, expected))
                 self.assertIn(expected, driver.sources)
                 self.assertGreaterEqual(len(walks), 2)
-                self.assertEqual(len(starts), 1 if interruption == 'moving_target' else 2)
+                self.assertEqual(len(starts), 2 if interruption == 'pending_cancelled' else 1)
+
+    def test_walk_waits_for_transient_resident_and_fails_if_route_stays_blocked(self):
+        driver = object.__new__(OpeningDialogueDriver)
+        world = SimpleNamespace(data={'id': 'hall'}, probe_size=(8, 4), can_stand=lambda point: True)
+        driver.g = SimpleNamespace(world=world, town=object(), household_action=False,
+                                   player=SimpleNamespace(position=pygame.Vector2(0, 0)),
+                                   social=SimpleNamespace(locked=False))
+        waits = []
+
+        def tick(seconds=.05, direction=(0, 0)):
+            vector = pygame.Vector2(direction)
+            if vector.length_squared():driver.g.player.position += vector.normalize()*72*seconds
+            else:waits.append(seconds)
+
+        driver.tick = tick
+        with patch(__name__+'.find_path', side_effect=(None, deque([(4, 0)]))):
+            self.assertTrue(driver.walk((4, 0)))
+        self.assertEqual(driver.g.player.position, (4, 0))
+        self.assertEqual(waits, [.2])
+        with patch(__name__+'.find_path', return_value=None):
+            self.assertFalse(driver.walk((8, 0), return_if_blocked=True))
+            with self.assertRaisesRegex(AssertionError, 'Residents blocked route'):
+                driver.walk((8, 0))
+        self.assertEqual(driver.g.player.position, (4, 0))
 
 
 class OpeningDialoguePassTests(unittest.TestCase):

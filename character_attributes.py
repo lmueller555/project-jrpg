@@ -13,6 +13,7 @@ ATTRIBUTE_IDS = ('hp', 'mp', 'str', 'mag', 'spr', 'def', 'm_def',
                  'speed', 'acc', 'eva', 'lck')
 # A bound on stored integers, not an approved combat or progression cap.
 MAX_ATTRIBUTE_VALUE = 999999
+SNAPSHOT_VERSION = 2
 CATALOG_PATH = Path(__file__).parent/'assets/characters/attributes.json'
 
 
@@ -98,7 +99,7 @@ class CharacterAttributes:
         return True
 
     def to_dict(self):
-        return {'version': 1, 'character_id': self.character_id,
+        return {'version': SNAPSHOT_VERSION, 'character_id': self.character_id,
                 'attributes': dict(self._attributes),
                 'current_hp': self._current_hp, 'current_mp': self._current_mp}
 
@@ -108,7 +109,7 @@ class CharacterAttributes:
         if (not isinstance(data, dict)
                 or set(data) != {'version', 'character_id', 'attributes',
                                  'current_hp', 'current_mp'}
-                or type(data['version']) is not int or data['version'] != 1
+                or type(data['version']) is not int or data['version'] not in (1, SNAPSHOT_VERSION)
                 or not isinstance(character_id, str) or not character_id
                 or data['character_id'] != character_id
                 or not _valid_attributes(data['attributes'])):
@@ -124,4 +125,11 @@ class CharacterAttributes:
         self._attributes = dict(data['attributes'])
         self._current_hp = data['current_hp']
         self._current_mp = data['current_mp']
+        # Version one shipped Caelan with 300 starting HP before progression
+        # existed. Retune that baseline once; retain other saved growth and MP.
+        if data['version'] == 1 and self.character_id == 'caelan' and self.value('hp') == 300:
+            maximum = self._starting['hp']
+            scaled = (self._current_hp*maximum+150)//300
+            self._attributes['hp'] = maximum
+            self._current_hp = max(1, scaled) if self._current_hp else 0
         return True

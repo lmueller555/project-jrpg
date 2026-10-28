@@ -1,8 +1,10 @@
 # Character attributes
 
-Caelan's attributes are available through **Pause → Status**. Select an
-attribute to read its description. The screen uses the shared interface style
-and text-size settings and returns to the pause menu when closed.
+Caelan's attributes are available through **Pause → Characters**. Every
+attribute has its own icon. Hover an icon or stat card to see a tooltip naming
+the attribute and explaining its effect. Keyboard selection provides the same
+information in the description panel. The screen uses the shared interface
+style and text-size settings and returns to the pause menu when closed.
 
 ## Attribute definitions and starting values
 
@@ -12,7 +14,7 @@ attributes.
 
 | ID | Display | Caelan starts with | Role |
 | --- | --- | --- | --- |
-| `hp` | HP | 300 | Maximum health before incapacitation. |
+| `hp` | HP | 140 | Maximum health before incapacitation. |
 | `mp` | MP | 30 | Maximum energy available for abilities that consume MP. |
 | `str` | Str | 10 | Power of physical attacks and techniques. |
 | `mag` | Mag | 10 | Power of damaging spells. |
@@ -29,7 +31,7 @@ will receive explicit rules when their abilities are designed. The attribute
 set does not assign those effects to either stat by implication.
 
 HP and MP values in the attribute record are maxima. Current HP and MP are
-separate resources and begin at 300/300 and 30/30. Incapacitation is a gameplay
+separate resources and begin at 140/140 and 30/30. Incapacitation is a gameplay
 condition; it does not establish that ordinary combat recovery resurrects the
 dead.
 
@@ -45,29 +47,44 @@ are a tunable baseline for the all-rounder profile.
 contains the ordered definitions, display labels, descriptions and Caelan's
 starting profile. [`character_attributes.py`](../character_attributes.py)
 owns the character's attribute values and current resources independently of
-the status interface. Each instance has its own state.
+the Characters interface. Each instance has its own state.
 
 The game initializes Caelan's profile when it starts. New Game restores the
-starting values and fills both resources. The read-only status screen shows
-the live values; opening or closing it does not alter them.
+starting values and fills both resources. The read-only Characters screen shows
+Caelan's portrait, name and live values; opening, inspecting or closing it does
+not alter them. Caelan is the currently available character.
+
+[`attribute_icons.py`](../attribute_icons.py) draws eleven distinct icons with
+the shared interface painter. The icon shapes remain readable on parchment and
+on the selected stat card. Tooltip placement follows the logical interface
+coordinates, including letterboxed windows and enlarged text.
 
 ## Journey compatibility
 
-Journey checkpoints include an independently versioned
-`character_attributes` record containing the character identity, attribute
-values and current HP and MP. Validation rejects malformed or out-of-range
-values before replacing live state. Resources must remain within their saved
-maxima.
+Journey checkpoints include a version-two `character_attributes` record
+containing the character identity, attribute values and current HP and MP.
+Validation rejects malformed or out-of-range values before replacing live
+state. Resources must remain within their saved maxima.
 
 Older journeys without the record receive Caelan's starting profile when
 continued. Their quest facts, dialogue history and location are preserved.
-Subsequent checkpoints include the new record. Continue restores saved
-resources rather than automatically refilling them.
+Subsequent checkpoints include the new record.
+
+Version-one records with Caelan's original 300 maximum HP migrate to the
+140-HP starting baseline when continued. Current HP retains its proportion of
+the old maximum, rounded to the nearest integer. Zero HP remains zero; a
+previously positive value remains at least one. MP and every other attribute
+are preserved. Version-one records with a different maximum HP retain that
+value, preserving saved growth. Version-two records restore all saved values
+exactly, including current resources, rather than automatically refilling them.
+
+Loading the title screen validates a save without changing it. Migration is
+committed only when the player continues the journey.
 
 ## Scope and story continuity
 
 This foundation adds the attribute definitions, starting profile, state
-persistence and a status screen. Battle rules, equipment modifiers, damage and
+persistence and a Characters screen. Battle rules, equipment modifiers, damage and
 healing formulas, ability costs and Sphere Grid progression remain future
 work. The attributes do not assign jobs or establish additional playable party
 members.

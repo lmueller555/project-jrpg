@@ -72,12 +72,13 @@ power. Caelan begins as a balanced all-rounder:
 
 | HP | MP | Str | Mag | Spr | Def | M. Def | Speed | Acc | Eva | Lck |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 300 | 30 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |
+| 140 | 30 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |
 
 HP and MP are maximum values; current resources start full. The remaining
 numbers are ratings, including Acc, Eva and Lck, rather than percentages.
 Starting numbers are a tunable gameplay baseline. They do not assign Caelan a
 job, define a battle format or change his established magical limitations.
-The Sphere Grid will be developed separately. See
+The values are visible through **Pause → Characters**, with attribute icons and
+hover explanations. The Sphere Grid will be developed separately. See
 [character attributes](../../CHARACTER_ATTRIBUTES.md) for the definitions,
 runtime integration and save compatibility.

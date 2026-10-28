@@ -51,6 +51,10 @@ class StatusUITests(unittest.TestCase):
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=point))
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=point))
 
+    def hover(self, logical):
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEMOTION,
+                                                   pos=self.point(logical), rel=(0, 0), buttons=(0, 0, 0)))
+
     def test_keyboard_and_mouse_inspect_all_attributes_without_mutating_values(self):
         before = self.game.attributes.to_dict()
         self.screen.open()
@@ -109,13 +113,13 @@ class StatusUITests(unittest.TestCase):
                             self.assertLessEqual(painter.font(bold=True).get_height()+painter.font('small').get_height()+11, rect.height)
                         else:
                             width = painter.font().size(label)[0]+painter.font(bold=True).size('10')[0]
-                            self.assertLessEqual(width+18, rect.width)
+                            self.assertLessEqual(width+35, rect.width)
                             self.assertLessEqual(painter.font().get_height(), rect.height)
                     self.assertEqual(self.game.ui_surface.get_clip(), self.game.ui_surface.get_rect())
 
     def test_pause_status_returns_to_pause_with_selection_and_no_clickthrough(self):
         self.pause.open()
-        index = self.pause.options.index('Status')
+        index = self.pause.options.index('Characters')
         self.pause.selected = index
         self.assertTrue(self.pause.activate())
         self.assertEqual(self.pause.overlay, 'status')
@@ -125,6 +129,64 @@ class StatusUITests(unittest.TestCase):
         self.assertTrue(self.pause.is_open)
         self.assertIsNone(self.pause.overlay)
         self.assertEqual(self.pause.selected, index)
+
+    def test_hovering_every_icon_shows_complete_bounded_tooltip_without_clicking(self):
+        self.screen.open()
+        before = self.game.attributes.to_dict()
+        for size in ((480, 320), (960, 640), (1440, 810)):
+            self.game.window = pygame.display.set_mode(size)
+            scale = max(1, min(size[0]//480, size[1]//320))
+            self.game.ui_surface = pygame.Surface((480*scale, 320*scale))
+            for text_scale in (1.0, 1.25, 1.5):
+                self.game.audio.set_text_scale(text_scale)
+                self.screen.draw(self.game.ui_surface)
+                painter = self.game.ui.painter(self.game.ui_surface)
+                for identifier in ATTRIBUTE_IDS:
+                    with self.subTest(size=size, text_scale=text_scale, attribute=identifier):
+                        self.hover(self.screen.icon_rects[identifier].center)
+                        tooltip = self.screen.tooltip_layout(painter)
+                        self.assertEqual(tooltip['attribute'], identifier)
+                        metadata = self.game.attributes.definitions[identifier]
+                        self.assertEqual(' '.join(tooltip['lines']), metadata['description'])
+                        self.assertIn(metadata['name'], tooltip['title'])
+                        self.assertTrue(self.screen.tooltip_bounds.contains(tooltip['rect']))
+                        self.assertFalse(tooltip['rect'].colliderect(self.screen.close_rect))
+                        self.assertLessEqual(tooltip['rect'].bottom, 274)
+                        content_height = (len(tooltip['title_lines'])*tooltip['title_height']+
+                                          len(tooltip['lines'])*tooltip['line_height']+24)
+                        self.assertLessEqual(content_height, tooltip['rect'].height)
+                        self.screen.draw(self.game.ui_surface)
+        self.assertEqual(self.screen.selected, 'hp')
+        self.assertEqual(self.game.attributes.to_dict(), before)
+
+    def test_tooltip_clears_on_pointer_leave_close_and_window_focus_loss(self):
+        self.screen.open();self.screen.draw(self.game.ui_surface)
+        self.hover(self.screen.icon_rects['spr'].center)
+        self.assertEqual(self.screen.tooltip_layout()['attribute'], 'spr')
+        self.hover((15, 290))
+        self.assertIsNone(self.screen.tooltip_layout())
+        self.hover(self.screen.icon_rects['mag'].center)
+        self.screen.handle_event(pygame.event.Event(pygame.WINDOWLEAVE))
+        self.assertIsNone(self.screen.tooltip_layout())
+        self.hover(self.screen.icon_rects['hp'].center)
+        self.screen.close()
+        self.assertIsNone(self.screen.tooltip_layout())
+        self.screen.open()
+        self.assertIsNone(self.screen.tooltip_layout())
+
+    def test_keyboard_focus_exposes_the_same_explanation_as_hover(self):
+        self.screen.open()
+        for identifier in ATTRIBUTE_IDS[1:]:
+            self.key(pygame.K_TAB)
+            tooltip = self.screen.tooltip_layout()
+            self.assertEqual(tooltip['attribute'], identifier)
+            expected = self.game.attributes.definitions[identifier]['description']
+            self.assertEqual(' '.join(tooltip['lines']), expected)
+        self.screen.draw(self.game.ui_surface)
+        self.hover(self.screen.icon_rects['spr'].center)
+        self.assertEqual(self.screen.tooltip_layout()['attribute'], 'spr')
+        self.key(pygame.K_RIGHT)
+        self.assertEqual(self.screen.tooltip_layout()['attribute'], 'hp')
 
     def test_letterboxed_mouse_ignores_borders_and_close_is_reachable(self):
         for size in ((1100, 750), (800, 800)):
