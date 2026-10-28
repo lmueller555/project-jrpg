@@ -1,0 +1,1015 @@
+{
+  "isolated_temporary_journeys": true,
+  "normal_journey_untouched": true,
+  "normal_new_game": {
+    "rp": 0,
+    "rank": 1,
+    "steps": 0,
+    "crystals": 0
+  },
+  "travel_fixture": {
+    "rp": 58110,
+    "rank": 150,
+    "crystals": 0
+  },
+  "board_version": 2,
+  "node_counts": {
+    "blank": 50,
+    "stat": 130,
+    "ability": 20
+  },
+  "formation_sizes": {
+    "large": 7,
+    "small": 5
+  },
+  "curved_internal_edges": 221,
+  "straight_external_edges": 33,
+  "large_formation": "first_light",
+  "small_formation": "gentle_current",
+  "straight_bridge_node": "blank_34",
+  "entry_center_exit_route": [
+    "origin",
+    "acc_01",
+    "eva_01",
+    "m_def_01",
+    "brace_01",
+    "hp_02",
+    "mp_01"
+  ],
+  "center": "brace_01",
+  "no_retraced_edges": true,
+  "all_formation_default_routes": {
+    "first_light": [
+      "origin",
+      "acc_01",
+      "eva_01",
+      "m_def_01",
+      "brace_01",
+      "hp_02",
+      "mp_01"
+    ],
+    "gentle_current": [
+      "blank_05",
+      "def_02",
+      "spr_02",
+      "mend_01",
+      "blank_11"
+    ],
+    "quiet_reserve": [
+      "blank_06",
+      "mp_02",
+      "m_def_02",
+      "blank_07",
+      "hp_03",
+      "lck_02"
+    ],
+    "steady_hand": [
+      "hp_04",
+      "def_04",
+      "aether_dart_01",
+      "hp_06",
+      "sweeping_strike_01"
+    ],
+    "clear_water": [
+      "blank_16",
+      "hp_08",
+      "cleanse_01",
+      "spr_04"
+    ],
+    "clear_intent": [
+      "hp_09",
+      "blank_19",
+      "focused_strike_01",
+      "lck_03",
+      "hp_10"
+    ],
+    "gathered_light": [
+      "m_def_06",
+      "blank_20",
+      "aether_burst_01",
+      "spr_06"
+    ],
+    "shared_strength": [
+      "speed_04",
+      "speed_05",
+      "greater_mend_01",
+      "blank_22",
+      "mag_08",
+      "def_08",
+      "m_def_07"
+    ],
+    "crossing_paths": [
+      "blank_24",
+      "blank_12",
+      "hp_18",
+      "str_09"
+    ],
+    "shelter": [
+      "m_def_08",
+      "str_11",
+      "blank_26",
+      "ward_01",
+      "hp_22",
+      "def_09"
+    ],
+    "far_reach": [
+      "renew_01",
+      "str_12",
+      "aether_lance_01",
+      "eva_04",
+      "mag_11"
+    ],
+    "steadfast_heart": [
+      "def_13",
+      "mp_12",
+      "steadfast_01",
+      "blank_33",
+      "spr_11"
+    ]
+  },
+  "movement_operations": [
+    {
+      "to": "brace_01",
+      "steps": 4,
+      "remaining_steps": 145
+    },
+    {
+      "to": "mp_01",
+      "steps": 2,
+      "remaining_steps": 143
+    }
+  ],
+  "movement_never_activated_nodes": true,
+  "world_unchanged": true,
+  "continue_round_trips": 2,
+  "captures": [
+    {
+      "file": "whole_lattice_overview.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 0.10167992926613616,
+      "selected": "origin",
+      "position": "origin",
+      "camera": [
+        981.0,
+        275.0
+      ]
+    },
+    {
+      "file": "large_formation.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 0.4372050843501325,
+      "selected": "brace_01",
+      "position": "origin",
+      "camera": [
+        36.0,
+        176.0
+      ]
+    },
+    {
+      "file": "small_formation.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 0.8333333333333334,
+      "selected": "mend_01",
+      "position": "origin",
+      "camera": [
+        300.0,
+        -135.0
+      ]
+    },
+    {
+      "file": "straight_bridge.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "zoom": 0.48225308641975323,
+      "selected": "blank_34",
+      "position": "origin",
+      "camera": [
+        266.0,
+        204.0
+      ]
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "zoom": 0.5787037037037038,
+      "selected": "mend_01",
+      "position": "mp_01",
+      "camera": [
+        300.0,
+        -135.0
+      ]
+    }
+  ],
+  "animation": {
+    "file": "formations.gif",
+    "rendered_frames": 71,
+    "encoded_frames": 70,
+    "fps": 15,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.6234287607563076,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          248.0472679469592,
+          69.5341474876797
+        ]
+      },
+      {
+        "frame": 1,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.20984006875915162,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          829.0566415180614,
+          232.40629604227
+        ]
+      },
+      {
+        "frame": 2,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.10491289255657066,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          976.4583333333333,
+          273.72685185185185
+        ]
+      },
+      {
+        "frame": 3,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 4,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 5,
+        "stage": "whole section \u2014 large and small formations",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 6,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 7,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 8,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 9,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 10,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 11,
+        "stage": "whole section \u2014 settled overview",
+        "zoom": 0.10167992926613616,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          981.0,
+          275.0
+        ]
+      },
+      {
+        "frame": 12,
+        "stage": "large formation \u2014 curved internal paths",
+        "zoom": 0.3534559055192798,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          271.87791495198894,
+          200.71101966163693
+        ]
+      },
+      {
+        "frame": 13,
+        "stage": "large formation \u2014 curved internal paths",
+        "zoom": 0.4313581540959126,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          52.46776406035661,
+          177.7251943301326
+        ]
+      },
+      {
+        "frame": 14,
+        "stage": "large formation \u2014 curved internal paths",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 15,
+        "stage": "large formation \u2014 curved internal paths",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 16,
+        "stage": "large formation \u2014 curved internal paths",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 17,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 18,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 19,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 20,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 21,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 22,
+        "stage": "large formation \u2014 selected center pulse",
+        "zoom": 0.4372050843501325,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 23,
+        "stage": "small formation \u2014 through-center route",
+        "zoom": 0.6841060077132901,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          200.54732510288062,
+          -17.84173525377227
+        ]
+      },
+      {
+        "frame": 24,
+        "stage": "small formation \u2014 through-center route",
+        "zoom": 0.8160783184742177,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          288.5003810394757,
+          -121.45310039120054
+        ]
+      },
+      {
+        "frame": 25,
+        "stage": "small formation \u2014 through-center route",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 26,
+        "stage": "small formation \u2014 through-center route",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 27,
+        "stage": "small formation \u2014 through-center route",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 28,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 29,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 30,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 31,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 32,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 33,
+        "stage": "small formation \u2014 selected center pulse",
+        "zoom": 0.8333333333333334,
+        "selected": "mend_01",
+        "position": "origin",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      },
+      {
+        "frame": 34,
+        "stage": "straight bridge between circular formations",
+        "zoom": 0.6721785281276129,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          284.3931311283849,
+          20.609663161103512
+        ]
+      },
+      {
+        "frame": 35,
+        "stage": "straight bridge between circular formations",
+        "zoom": 0.5130749462310964,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          268.9849108367627,
+          174.23868312757202
+        ]
+      },
+      {
+        "frame": 36,
+        "stage": "straight bridge between circular formations",
+        "zoom": 0.48239578021517615,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0138190316517,
+          203.8622161255906
+        ]
+      },
+      {
+        "frame": 37,
+        "stage": "straight bridge between circular formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 38,
+        "stage": "straight bridge between circular formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 39,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 40,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 41,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 42,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 43,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 44,
+        "stage": "straight connector between formations",
+        "zoom": 0.48225308641975323,
+        "selected": "blank_34",
+        "position": "origin",
+        "camera": [
+          266.0,
+          204.0
+        ]
+      },
+      {
+        "frame": 45,
+        "stage": "enter large formation",
+        "zoom": 0.48225308641975323,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          66.39526494944874,
+          50.9196768785246
+        ]
+      },
+      {
+        "frame": 46,
+        "stage": "enter large formation",
+        "zoom": 0.48225308641975323,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          4.635370624396674,
+          3.5549458923944415
+        ]
+      },
+      {
+        "frame": 47,
+        "stage": "enter large formation",
+        "zoom": 0.48225308641975323,
+        "selected": "origin",
+        "position": "origin",
+        "camera": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "frame": 48,
+        "stage": "preview onward route \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          9.102652034750797,
+          44.50185439211501
+        ]
+      },
+      {
+        "frame": 49,
+        "stage": "preview onward route \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          30.424096936442616,
+          148.7400294670528
+        ]
+      },
+      {
+        "frame": 50,
+        "stage": "preview onward route \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "origin",
+        "camera": [
+          35.833333333333336,
+          175.1851851851852
+        ]
+      },
+      {
+        "frame": 51,
+        "stage": "travel through center \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "brace_01",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 52,
+        "stage": "travel through center \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "brace_01",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 53,
+        "stage": "travel through center \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "brace_01",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 54,
+        "stage": "travel through center \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "brace_01",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 55,
+        "stage": "travel through center \u2014 brace_01",
+        "zoom": 0.48225308641975323,
+        "selected": "brace_01",
+        "position": "brace_01",
+        "camera": [
+          36.0,
+          176.0
+        ]
+      },
+      {
+        "frame": 56,
+        "stage": "preview onward route \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "brace_01",
+        "camera": [
+          167.31890463852056,
+          207.51653711324494
+        ]
+      },
+      {
+        "frame": 57,
+        "stage": "preview onward route \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "brace_01",
+        "camera": [
+          207.95041406289693,
+          217.26809937509526
+        ]
+      },
+      {
+        "frame": 58,
+        "stage": "travel through center \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 59,
+        "stage": "travel through center \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 60,
+        "stage": "travel through center \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 61,
+        "stage": "travel through center \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 62,
+        "stage": "travel through center \u2014 mp_01",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 63,
+        "stage": "center reached and onward exit \u2014 no retraced edge",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 64,
+        "stage": "center reached and onward exit \u2014 no retraced edge",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 65,
+        "stage": "center reached and onward exit \u2014 no retraced edge",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 66,
+        "stage": "center reached and onward exit \u2014 no retraced edge",
+        "zoom": 0.48225308641975323,
+        "selected": "mp_01",
+        "position": "mp_01",
+        "camera": [
+          211.0,
+          218.0
+        ]
+      },
+      {
+        "frame": 67,
+        "stage": "small formation after travel",
+        "zoom": 0.5066407644106622,
+        "selected": "mend_01",
+        "position": "mp_01",
+        "camera": [
+          233.50377864146725,
+          128.74343977036025
+        ]
+      },
+      {
+        "frame": 68,
+        "stage": "small formation after travel",
+        "zoom": 0.5637648344704933,
+        "selected": "mend_01",
+        "position": "mp_01",
+        "camera": [
+          286.21512853731645,
+          -80.32517273789567
+        ]
+      },
+      {
+        "frame": 69,
+        "stage": "small formation after travel",
+        "zoom": 0.57825717306813,
+        "selected": "mend_01",
+        "position": "mp_01",
+        "camera": [
+          299.58796296296293,
+          -133.36574074074073
+        ]
+      },
+      {
+        "frame": 70,
+        "stage": "small formation after travel",
+        "zoom": 0.5787037037037038,
+        "selected": "mend_01",
+        "position": "mp_01",
+        "camera": [
+          300.0,
+          -135.0
+        ]
+      }
+    ]
+  }
+}

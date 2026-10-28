@@ -8,7 +8,7 @@ from ui_style import (FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS,
 
 
 class LatticeUI:
-    MIN_ZOOM = .18
+    MIN_ZOOM = .05
     MAX_ZOOM = 2.0
     CAMERA_DURATION = .18
     ZOOM_DURATION = .18
@@ -214,11 +214,58 @@ class LatticeUI:
         if not self.navigating:self._pulse_elapsed = (self._pulse_elapsed+dt) % self.PULSE_PERIOD
 
     def node_position(self, identifier):
-        point = pygame.Vector2(self.board.nodes[identifier]['position'])
-        return pygame.Vector2(self.map_rect.center)+(point-self.pan)*self.zoom
+        return self._map_position(self.board.nodes[identifier]['position'])
+
+    def _map_position(self, position):
+        return pygame.Vector2(self.map_rect.center)+(pygame.Vector2(position)-self.pan)*self.zoom
+
+    def edge_points(self, edge):
+        """Sample an authored curve; an ordinary connection stays one straight line."""
+        start, end = (pygame.Vector2(self.board.nodes[edge[key]]['position'])
+                      for key in ('from', 'to'))
+        if 'curve' not in edge:return [self._map_position(start), self._map_position(end)]
+        control = pygame.Vector2(edge['curve'])
+        length = (start.distance_to(control)+control.distance_to(end))*self.zoom
+        segments = max(3, min(64, math.ceil(length/7)))
+        return [self._map_position(start*(1-t)**2+control*(2*(1-t)*t)+end*t*t)
+                for t in (index/segments for index in range(segments+1))]
+
+    def _edge_midpoint(self, edge):
+        start, end = (pygame.Vector2(self.board.nodes[edge[key]]['position'])
+                      for key in ('from', 'to'))
+        point = ((start+end)/2 if 'curve' not in edge else
+                 start*.25+pygame.Vector2(edge['curve'])*.5+end*.25)
+        return self._map_position(point)
+
+    @staticmethod
+    def _draw_path(painter, color, points, width=1, dashed=False):
+        if not dashed:
+            pygame.draw.lines(painter.canvas, color, False,
+                              [painter.point(point) for point in points],
+                              max(1, round(width*painter.scale)))
+            return
+        # Keep dash lengths continuous across the sampled curve's segments.
+        drawing, remaining = True, 5.0
+        for start, end in zip(points, points[1:]):
+            delta = end-start
+            length = delta.length()
+            if not length:continue
+            direction = delta/length
+            cursor = start.copy()
+            while length > 1e-7:
+                step = min(length, remaining)
+                target = cursor+direction*step
+                if drawing:painter.line(color, cursor, target, width)
+                cursor = target
+                length -= step
+                remaining -= step
+                if remaining <= 1e-7:
+                    drawing = not drawing
+                    remaining = 5.0 if drawing else 4.0
 
     def fit_board(self):
         points = [pygame.Vector2(node['position']) for node in self.board.nodes.values()]
+        points.extend(pygame.Vector2(edge['curve']) for edge in self.board.edges if 'curve' in edge)
         left, right = min(p.x for p in points), max(p.x for p in points)
         top, bottom = min(p.y for p in points), max(p.y for p in points)
         self._stop_navigation(settle=False)
@@ -583,6 +630,16 @@ class LatticeUI:
         pygame.draw.circle(painter.canvas, color, painter.point(center), max(1, round(radius*painter.scale)),
                            max(1, round(width*painter.scale)) if width else 0)
 
+    def _node_radius(self, identifier, node):
+        radius = max(1.5, 10*self.zoom)
+        formation_id = getattr(self.board, 'node_formations', {}).get(identifier)
+        formation = getattr(self.board, 'formations', {}).get(formation_id)
+        if formation and formation['center_node'] == identifier:
+            baseline = {'hp': 20, 'mp': 2}.get(node.get('stat'), 1)
+            if node['kind'] == 'ability' or (node['kind'] == 'stat' and node['amount'] > baseline):
+                radius *= 1.25
+        return radius
+
     def _draw_map(self, painter):
         painter.panel(self.map_rect)
         painter.clip(self.map_rect.inflate(-3, -3))
@@ -591,22 +648,19 @@ class LatticeUI:
         route = self.lattice.route(self.selected, self.character_id) or []
         pairs = {frozenset((a, b)) for a, b in zip(route, route[1:])}
         for edge in self.board.edges:
-            a, b = self.node_position(edge['from']), self.node_position(edge['to'])
+            points = self.edge_points(edge)
             required = edge.get('min_rank', 1)
             color = GOLD if frozenset((edge['from'], edge['to'])) in pairs else BRASS
             if rank < required:
                 color = DISABLED
-                delta = b-a
-                pieces = max(2, int(delta.length()/8))
-                for index in range(0, pieces, 2):
-                    painter.line(color, a+delta*index/pieces, a+delta*min(pieces, index+1)/pieces)
-                middle = (a+b)/2
-                if self.map_rect.inflate(-30, -30).collidepoint(middle):
+                self._draw_path(painter, color, points, dashed=True)
+                middle = self._edge_midpoint(edge)
+                if self.zoom >= .35 and self.map_rect.inflate(-30, -30).collidepoint(middle):
                     painter.text('Rank '+str(required), middle+(0, -13), role='small', color=MUTED, anchor='midbottom')
-            else:painter.line(color, a, b, 2 if color == GOLD else 1)
+            else:self._draw_path(painter, color, points, 2 if color == GOLD else 1)
         for identifier, node in self.board.nodes.items():
             center = self.node_position(identifier)
-            radius = max(4, round(10*self.zoom))
+            radius = self._node_radius(identifier, node)
             if not self.map_rect.inflate(radius*2, radius*2).collidepoint(center):continue
             crystal = next(iter(node['cost']), None)
             color = self.board.crystals[crystal]['color'] if crystal else BRASS
@@ -616,24 +670,27 @@ class LatticeUI:
             if selected:
                 strength = self.pulse_strength
                 glow = pygame.Color(FOREST_DARK).lerp(pygame.Color(GOLD), .35+.5*strength)
-                self._circle(painter, glow, center, radius+5+round(strength*2), 2)
+                halo = max(1.25, 5*self.zoom)+strength*max(.5, 2*self.zoom)
+                self._circle(painter, glow, center, radius+halo, max(.7, 2*self.zoom))
                 fill = fill.lerp(pygame.Color(GOLD), .12+.18*strength)
             self._circle(painter, fill, center, radius)
             self._circle(painter, IVORY if identifier in state['visited'] else color, center, radius, 1)
             if self.zoom >= .65 and node['kind'] == 'stat':
                 icon = pygame.Rect(0, 0, max(9, radius*1.3), max(9, radius*1.3));icon.center = center
                 draw_attribute_icon(painter, node['stat'], icon, FOREST_DARK if active else color)
-            elif node['kind'] == 'ability':
-                painter.lantern(center, color=FOREST_DARK if active else color, size=max(5, radius))
+            elif self.zoom >= .4 and node['kind'] == 'ability':
+                painter.lantern(center, color=FOREST_DARK if active else color, size=radius*.8)
             if identifier == state['position']:
-                self._circle(painter, GOLD, center, radius+4, 2)
-                painter.line(GOLD, center+(0, -radius-9), center+(0, -radius-5), 2)
+                gap = max(1.0, 4*self.zoom)
+                self._circle(painter, GOLD, center, radius+gap, max(.7, 2*self.zoom))
+                painter.line(GOLD, center+(0, -radius-gap-max(1, 5*self.zoom)),
+                             center+(0, -radius-gap-max(.5, self.zoom)), max(.7, 2*self.zoom))
             if not selected and identifier == self.hovered:
-                self._circle(painter, IVORY, center, radius+3, 1)
+                self._circle(painter, IVORY, center, radius+max(1.0, 3*self.zoom), 1)
         if self.navigating:
             center = pygame.Vector2(self.map_rect.center)+(self.cursor_position-self.pan)*self.zoom
-            radius = max(4, round(10*self.zoom))
-            self._circle(painter, FOREST_DARK, center, radius+2)
+            radius = max(1.5, 10*self.zoom)
+            self._circle(painter, FOREST_DARK, center, radius+max(1, 2*self.zoom))
             self._circle(painter, GOLD, center, radius)
         painter.clip()
         painter.button(self.zoom_out_rect, '−', disabled=self.target_zoom <= self.MIN_ZOOM)

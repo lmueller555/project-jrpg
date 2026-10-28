@@ -90,9 +90,11 @@ committed only when the player continues the journey.
 ## Scope and story continuity
 
 The [Aether Lattice](AETHER_LATTICE.md) adds growth through activated stat nodes.
-HP nodes add 20 maximum HP, MP nodes add 2 maximum MP and other starter stat
-nodes add 1 to their attribute. Increasing maximum HP or MP leaves the current
-resource unchanged. Rank gains award movement, without hidden stat growth.
+Early HP nodes add 20 maximum HP, early MP nodes add 2 maximum MP and other
+starter stat nodes add 1 to their attribute. Caelan's expanded section includes
+larger bonuses deeper in the lattice; see the [section growth budget](CAELAN_LATTICE.md).
+Increasing maximum HP or MP leaves the current resource unchanged. Rank gains
+award movement, without hidden stat growth.
 
 Battle rules, equipment behavior, damage and healing formulas, and ability
 execution remain future work. The attributes do not assign jobs or establish

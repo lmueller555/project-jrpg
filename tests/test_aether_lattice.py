@@ -15,11 +15,11 @@ class AetherLatticeTests(unittest.TestCase):
     def earn(self, amount, receipt='battle:1'):
         self.assertTrue(self.lattice.award_rewards(receipt, {'caelan': amount}))
 
-    def test_starter_layout_has_complete_approved_node_mix_and_crystal_families(self):
-        self.assertEqual(len(self.board.nodes), 30)
+    def test_caelan_layout_has_complete_approved_node_mix_and_crystal_families(self):
+        self.assertEqual(len(self.board.nodes), 200)
         self.assertEqual(Counter(node['kind'] for node in self.board.nodes.values()),
-                         {'blank': 8, 'stat': 20, 'ability': 2})
-        self.assertEqual(len(self.board.edges), 29)
+                         {'blank': 50, 'stat': 130, 'ability': 20})
+        self.assertGreater(len(self.board.edges), len(self.board.nodes)-1)
         self.assertEqual({node['stat'] for node in self.board.nodes.values()
                           if node['kind'] == 'stat'}, set(ATTRIBUTE_IDS))
         self.assertEqual(self.board.nodes['hp_01']['cost'], {'aether_emerald': 1})
