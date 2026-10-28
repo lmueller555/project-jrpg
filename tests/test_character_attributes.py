@@ -17,8 +17,8 @@ class CharacterAttributeTests(unittest.TestCase):
                          ['HP', 'MP', 'Str', 'Mag', 'Spr', 'Def', 'M. Def',
                           'Speed', 'Acc', 'Eva', 'Lck'])
         self.assertEqual([attributes.value(key) for key in ATTRIBUTE_IDS],
-                         [300, 30, *([10]*9)])
-        self.assertEqual((attributes.current_hp, attributes.current_mp), (300, 30))
+                         [140, 30, *([10]*9)])
+        self.assertEqual((attributes.current_hp, attributes.current_mp), (140, 30))
 
     def test_metadata_separates_healing_damage_and_resource_capacity(self):
         definitions = self.attributes.definitions
@@ -48,7 +48,7 @@ class CharacterAttributeTests(unittest.TestCase):
                     update = {'hp': 100, 'mp': 5, field: bad}
                     self.assertFalse(self.attributes.set_current(**update))
                     self.assertEqual(self.attributes.to_dict(), before)
-        self.assertFalse(self.attributes.set_current(hp=301, mp=3))
+        self.assertFalse(self.attributes.set_current(hp=141, mp=3))
         self.assertFalse(self.attributes.set_current(hp=10, mp=31))
         self.assertEqual(self.attributes.to_dict(), before)
 
@@ -88,7 +88,7 @@ class CharacterAttributeTests(unittest.TestCase):
             missing = deepcopy(before)
             missing.pop(field)
             records.append(missing)
-        for value in (0, 2, True, 1.0, '1', None):
+        for value in (0, 3, True, 1.0, '1', None):
             records.append({**deepcopy(before), 'version': value})
         records.append({**deepcopy(before), 'extra': 1})
         for value in ('mira', '', None, 10, True, []):
@@ -120,7 +120,7 @@ class CharacterAttributeTests(unittest.TestCase):
         for field in ('current_hp', 'current_mp'):
             for bad in (-1, True, 1.0, '10', None, MAX_ATTRIBUTE_VALUE+1):
                 records.append({**deepcopy(before), field: bad})
-        records.extend([{**deepcopy(before), 'current_hp': 301},
+        records.extend([{**deepcopy(before), 'current_hp': 141},
                         {**deepcopy(before), 'current_mp': 31}])
         for record in records:
             with self.subTest(record=record):
@@ -131,6 +131,37 @@ class CharacterAttributeTests(unittest.TestCase):
         maximum['attributes'] = dict.fromkeys(ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE)
         maximum.update(current_hp=MAX_ATTRIBUTE_VALUE, current_mp=MAX_ATTRIBUTE_VALUE)
         self.assertTrue(self.attributes.restore(maximum))
+
+    def test_original_caelan_health_migrates_once_and_preserves_other_ratings(self):
+        for current, expected in ((0, 0), (1, 1), (150, 70), (213, 99), (300, 140)):
+            with self.subTest(current=current):
+                original = self.attributes.to_dict()
+                original['version'] = 1
+                original['attributes'].update(hp=300, mag=13, spr=17)
+                original.update(current_hp=current, current_mp=9)
+                untouched = deepcopy(original)
+                self.assertTrue(CharacterAttributes.valid_snapshot(original))
+                self.assertTrue(self.attributes.restore(original))
+                self.assertEqual(self.attributes.value('hp'), 140)
+                self.assertEqual(self.attributes.current_hp, expected)
+                self.assertEqual(self.attributes.current_mp, 9)
+                self.assertEqual(self.attributes.value('mag'), 13)
+                self.assertEqual(self.attributes.value('spr'), 17)
+                self.assertEqual(original, untouched)
+                migrated = self.attributes.to_dict()
+                self.assertEqual(migrated['version'], 2)
+                self.assertTrue(self.attributes.restore(migrated))
+                self.assertEqual(self.attributes.to_dict(), migrated)
+
+    def test_saved_growth_and_version_two_300_hp_are_not_retuned(self):
+        for version, maximum, current in ((1, 400, 213), (1, 140, 98), (2, 300, 213)):
+            with self.subTest(version=version, maximum=maximum):
+                data = self.attributes.to_dict()
+                data.update(version=version, current_hp=current)
+                data['attributes']['hp'] = maximum
+                self.assertTrue(self.attributes.restore(data))
+                self.assertEqual(self.attributes.value('hp'), maximum)
+                self.assertEqual(self.attributes.current_hp, current)
 
     def test_catalog_errors_fail_early_and_do_not_change_input(self):
         catalog = deepcopy(self.attributes.catalog)

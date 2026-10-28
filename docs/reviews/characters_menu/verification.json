@@ -1,0 +1,130 @@
+{
+  "attributes": {
+    "version": 2,
+    "character_id": "caelan",
+    "attributes": {
+      "hp": 140,
+      "mp": 30,
+      "str": 10,
+      "mag": 10,
+      "spr": 10,
+      "def": 10,
+      "m_def": 10,
+      "speed": 10,
+      "acc": 10,
+      "eva": 10,
+      "lck": 10
+    },
+    "current_hp": 140,
+    "current_mp": 30
+  },
+  "captures": [
+    {
+      "capture": "characters_normal",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "hovered": null,
+      "tooltip_rect": null,
+      "tooltip_text": null
+    },
+    {
+      "capture": "characters_hover_spr",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "hovered": "spr",
+      "tooltip_rect": [
+        46,
+        131,
+        414,
+        50
+      ],
+      "tooltip_text": "Increases the power of healing spells. Damaging spell power comes from Magick."
+    },
+    {
+      "capture": "characters_hover_mag",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "hovered": "mag",
+      "tooltip_rect": [
+        46,
+        131,
+        414,
+        50
+      ],
+      "tooltip_text": "Increases the power of damaging spells. Healing spell power comes from Spirit."
+    },
+    {
+      "capture": "characters_hover_hp",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "hovered": "hp",
+      "tooltip_rect": [
+        46,
+        85,
+        414,
+        50
+      ],
+      "tooltip_text": "Maximum health before incapacitation. Current HP can fall without reducing this maximum."
+    },
+    {
+      "capture": "characters_hover_spr_large",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.5,
+      "hovered": "spr",
+      "tooltip_rect": [
+        46,
+        131,
+        414,
+        78
+      ],
+      "tooltip_text": "Increases the power of healing spells. Damaging spell power comes from Magick."
+    },
+    {
+      "capture": "characters_hover_lck_large",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.5,
+      "hovered": "lck",
+      "tooltip_rect": [
+        46,
+        89,
+        414,
+        78
+      ],
+      "tooltip_text": "Improves critical-hit chance for attacks that can critically hit. This rating is not a critical-hit percentage."
+    },
+    {
+      "capture": "characters_hover_mp_small_large",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "hovered": "mp",
+      "tooltip_rect": [
+        46,
+        85,
+        414,
+        120
+      ],
+      "tooltip_text": "Maximum energy available for abilities that cost MP. More MP supports more casting, without increasing spell power."
+    }
+  ]
+}

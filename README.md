@@ -132,7 +132,7 @@ Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
 **Escape** opens a modal pause menu during exploration, dialogue or actions.
-Status, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
+Characters, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
 controls reference is inside Settings. Pausing holds NPC, action, camera and
 ambience clocks. Music and effects have separate sliders with percentage displays,
 mouse adjustment and
@@ -184,12 +184,15 @@ API handles all three households' supplies; entering a house never consumes
 them. Older journeys receive only outstanding supplies, and New Game starts
 with an empty satchel. See [inventory design and integration](docs/INVENTORY.md).
 
-**Caelan's attributes are available through Pause → Status.** He begins as a
-balanced all-rounder with 300 HP, 30 MP and 10 each in Str, Mag, Spr, Def,
+**Caelan's attributes are available through Pause → Characters.** He begins as a
+balanced all-rounder with 140 HP, 30 MP and 10 each in Str, Mag, Spr, Def,
 M. Def, Speed, Acc, Eva and Lck. Mag powers damaging spells; Spr powers healing
-spells. The screen explains each attribute, and current HP/MP and all attributes
-persist with the journey. Older saves receive the starting profile; New Game
-resets it. See [attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
+spells. Each attribute has its own icon; hover an icon or stat card to read its
+tooltip, or use the keyboard to select an attribute and read its description.
+Current HP/MP and all attributes persist with the journey. Older saves without
+attributes receive the starting profile; the original 300-HP profile migrates
+to 140 HP while preserving its health proportion. New Game resets the profile. See
+[attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
 Combat formulas and Sphere Grid development remain future work.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,

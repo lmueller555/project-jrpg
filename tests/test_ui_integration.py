@@ -138,7 +138,7 @@ class UIIntegrationTests(unittest.TestCase):
     def test_pause_overlays_return_without_clickthrough_or_world_progress(self):
         self.offer()
         page = self.game.social.page_index
-        for label, flag in (('Status', 'status'), ('Journal', 'journal'), ('Map', 'map')):
+        for label, flag in (('Characters', 'status'), ('Journal', 'journal'), ('Map', 'map')):
             with self.subTest(overlay=label):
                 self.key(pygame.K_ESCAPE)
                 row = self.game.pause.options.index(label)
