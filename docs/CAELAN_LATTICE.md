@@ -18,7 +18,8 @@ between formations, and every connection involving a node outside them, use
 straight lines. A curve changes the appearance of an edge, not its Step cost.
 The gold route highlight and locked-path dashes follow the same geometry.
 
-Fit shows the complete section. The camera supports 5–200% zoom, with smaller
+The lattice uses the full content width beneath the character header. Fit shows
+the complete section. The camera supports 5–200% zoom, with smaller
 node markers at overview scales and attribute icons at closer scales. The gold
 exploration cursor, nearest-node selection and pulsing selection remain the
 navigation controls; inspection does not move the character or spend resources.

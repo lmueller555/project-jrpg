@@ -86,29 +86,29 @@ remain authored scenes.
 | Hold arrow keys | Steer the gold cursor freely; release to select the nearest node. |
 | Tab / Shift+Tab | Inspect the next / previous node and smoothly center it. |
 | Click the map | Select the node nearest the pointer and smoothly center it. |
-| M or Move button | Prepare travel and inspect its cost. |
-| A or Activate button | Prepare activation and inspect its cost. |
-| Enter or the prepared action button | Confirm the prepared action. |
+| M | Prepare travel and inspect its cost. |
+| A | Prepare activation and inspect its cost. |
+| Enter or the confirmation dialog's Confirm button | Confirm the prepared action. |
 | Escape | Cancel a prepared action; otherwise return to Pause. |
 | + / − or the zoom buttons | Smoothly zoom toward the selected node. |
 | Mouse wheel over the map | Smoothly zoom around the point beneath the pointer. |
 | Drag the map | Explore with the gold cursor; release to select the nearest node. |
 | F or Fit button | Smoothly fit the whole board to the viewport. |
 | 0 or 100% button | Return to 100% zoom and center the selected node. |
-| Page Up / Page Down, Home / End | Read longer node details. |
+| Page Up / Page Down | Scroll an open help or confirmation dialog. |
 | F1 or the ? button | Open the controls help. |
 
-Node details show the effect or ability, owned and required crystal quantities,
-travel and return costs, gate requirements, crystal stocks and learned abilities.
-Cancellation leaves Steps, crystals and node ownership unchanged. The menu holds
+The lattice fills the full content width beneath the compact character header.
+Travel and activation show their costs and effects in confirmation dialogs when
+requested. Unavailable actions show a dismissible explanation. Cancellation
+leaves Steps, crystals and node ownership unchanged. The menu holds
 the world and any conversation beneath it until the player resumes. Camera
 centering takes about 180 milliseconds and redirects smoothly if another node
 is selected during the transition. Zoom transitions use the same short easing,
 with a range of 5% to 200% and a visible percentage in the map toolbar. Repeated
 zoom inputs adjust the destination without jumping the current view. Zooming
-does not select a different node or spend progression resources. Outside the
-map, the wheel scrolls node details. Help and confirmation dialogs use the
-wheel to scroll their own text.
+does not select a different node or spend progression resources. Wheel zoom is
+limited to the map; help and confirmation dialogs scroll their own text.
 Reduced Motion uses a steady selection halo and immediate camera and zoom
 changes.
 

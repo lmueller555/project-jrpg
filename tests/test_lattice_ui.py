@@ -17,7 +17,7 @@ from inventory import Inventory
 from lattice_progression import LatticeProgression
 from lattice_ui import LatticeUI
 from pause_menu import PauseMenu
-from ui_style import UIStyle, GOLD
+from ui_style import UIStyle, Painter, GOLD
 
 
 class LatticeUITests(unittest.TestCase):
@@ -158,9 +158,13 @@ class LatticeUITests(unittest.TestCase):
     def test_unavailable_actions_and_blank_nodes_remain_inspectable(self):
         before = self.snapshots()
         self.screen._select('hp_01')
-        self.click(self.screen.move_rect.center)
+        self.key(pygame.K_m)
         self.assertIsNone(self.screen.pending)
         self.assertIn('Step', self.screen.message)
+        self.assertTrue(self.screen.notice_open)
+        self.key(pygame.K_ESCAPE)
+        self.assertFalse(self.screen.notice_open)
+        self.assertTrue(self.screen.is_open)
         self.screen._select('mend_01')
         self.assertIn('5', self.game.lattice_move_reason('mend_01'))
         self.assertIn('Mend', ' '.join(self.screen.detail_text()))
@@ -452,12 +456,11 @@ class LatticeUITests(unittest.TestCase):
         self.assertAlmostEqual(self.screen.zoom, 1.0)
         self.assertEqual(self.snapshots(), before)
 
-    def test_wheel_routes_to_details_help_and_confirmation_without_zooming(self):
+    def test_wheel_outside_map_and_in_help_or_confirmation_does_not_zoom(self):
         self.screen._select('mend_01', center=True)
         self.screen.draw(self.game.ui_surface)
         target = self.screen.target_zoom
-        self.wheel(self.screen.detail_view.center, -2)
-        self.assertGreater(self.screen.detail_scroll, 0)
+        self.wheel((20, self.screen.map_rect.top-8), -2)
         self.assertEqual(self.screen.target_zoom, target)
         self.key(pygame.K_F1)
         self.wheel(self.screen.map_rect.center, -2)
@@ -557,7 +560,7 @@ class LatticeUITests(unittest.TestCase):
         self.assertTrue(gate.kwargs['dashed'])
         self.assertGreaterEqual(len(gate.args[2]), 4)
 
-    def test_details_confirmations_and_pause_rows_fit_all_text_sizes(self):
+    def test_confirmations_and_pause_rows_fit_all_text_sizes(self):
         self.assertTrue(self.progression.award_battle_rewards('layout-test', {'caelan': 20}, {'aether_emerald': 1}))
         self.screen._select('hp_01');self.key(pygame.K_m);self.key(pygame.K_RETURN);self.key(pygame.K_a)
         for size in ((480, 320), (960, 640), (1440, 810)):
@@ -570,7 +573,9 @@ class LatticeUITests(unittest.TestCase):
                     painter = self.game.ui.painter(self.game.ui_surface)
                     self.screen.draw(self.game.ui_surface)
                     self.assertFalse(self.screen.confirm_panel.colliderect(self.screen.close_rect))
-                    self.assertLess(self.screen.confirm_panel.bottom, self.screen.move_rect.top)
+                    self.assertTrue(pygame.Rect(8, 8, 464, 304).contains(self.screen.confirm_panel))
+                    self.assertTrue(self.screen.confirm_panel.contains(self.screen.confirm_rect))
+                    self.assertTrue(self.screen.confirm_panel.contains(self.screen.cancel_rect))
                     for line in self.screen._confirmation_layout(painter)[0]:
                         self.assertLessEqual(painter.font('small').size(line)[0], self.screen.confirm_view.width)
                     self.key(pygame.K_END)
@@ -579,6 +584,68 @@ class LatticeUITests(unittest.TestCase):
                     for row in self.pause.rows:
                         self.assertTrue(pygame.Rect(126, 24, 228, 282).contains(row))
                         self.assertLess(row.bottom, 288)
+
+    def test_full_width_map_and_hover_leave_the_lattice_unobstructed(self):
+        before = self.snapshots()
+        original_text = Painter.text
+        for size in ((480, 320), (960, 640), (1440, 810)):
+            self.game.window = pygame.display.set_mode(size)
+            scale = max(1, min(size[0]//480, size[1]//320))
+            self.game.ui_surface = pygame.Surface((480*scale, 320*scale))
+            for text_scale in (1.0, 1.5):
+                with self.subTest(size=size, text_scale=text_scale):
+                    self.game.audio.set_text_scale(text_scale)
+                    self.screen.draw(self.game.ui_surface)
+                    self.assertTrue(self.screen.map_rect.collidepoint((440, 230)))
+                    self.assertTrue(self.screen.map_rect.collidepoint((32, 230)))
+                    self.assertGreater(self.screen.map_rect.width, 480*.9)
+                    self.assertTrue(pygame.Rect(8, 8, 464, 304).contains(self.screen.map_rect))
+                    self.screen.fit_board();self.advance(self.screen.ZOOM_DURATION)
+                    for identifier in self.screen.board.nodes:
+                        self.assertTrue(self.screen.map_rect.collidepoint(self.screen.node_position(identifier)))
+                    self.screen._select('mend_01', center=True)
+                    self.advance(self.screen.CAMERA_DURATION)
+                    self.screen.handle_event(pygame.event.Event(
+                        pygame.MOUSEMOTION, pos=self.point(self.screen.node_position('mend_01')),
+                        rel=(0, 0), buttons=(0, 0, 0)))
+                    with patch.object(Painter, 'text', autospec=True, side_effect=original_text) as draw_text:
+                        self.screen.draw(self.game.ui_surface)
+                    rendered = [call.args[1] for call in draw_text.call_args_list]
+                    self.assertNotIn('Mend', rendered)
+                    self.assertNotIn('M: Move', rendered)
+                    self.assertNotIn('A: Activate', rendered)
+                    self.assertEqual(self.game.ui_surface.get_clip(), self.game.ui_surface.get_rect())
+        self.assertEqual(self.snapshots(), before)
+
+    def test_former_action_button_space_is_read_only_map_for_clicks_and_drags(self):
+        self.assertTrue(self.progression.award_battle_rewards(
+            'reclaimed-map-space', {'caelan': 10000}, {'aether_emerald': 1}))
+        for index, point in enumerate(((382, 264), (382, 292))):
+            with self.subTest(former_button=index):
+                if index:self.assertTrue(self.progression.move('hp_01'))
+                self.screen._select('hp_01', center=True)
+                self.advance(self.screen.CAMERA_DURATION)
+                before = self.snapshots()
+                world = self.world_at(point)
+                nearest = min(self.screen.board.nodes, key=lambda identifier:
+                              pygame.Vector2(self.screen.board.nodes[identifier]['position']).distance_squared_to(world))
+                self.click(point)
+                self.assertEqual(self.screen.selected, nearest)
+                self.assertIsNone(self.screen.pending)
+                self.assertFalse(self.screen.notice_open)
+                self.assertEqual(self.snapshots(), before)
+        before = self.snapshots()
+        start, end = self.point((382, 264)), self.point((425, 225))
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=start))
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEMOTION, pos=end,
+                                                    rel=(end[0]-start[0], end[1]-start[1]), buttons=(1, 0, 0)))
+        self.assertTrue(self.screen.navigating)
+        self.advance(.04)
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=end))
+        self.assertFalse(self.screen.navigating)
+        self.assertIsNone(self.screen.pending)
+        self.assertFalse(self.screen.notice_open)
+        self.assertEqual(self.snapshots(), before)
 
     def test_pause_overlay_cancels_pending_then_returns_without_spending(self):
         self.pause.open();self.pause.selected = self.pause.options.index('Aether Lattice')
