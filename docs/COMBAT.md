@@ -54,9 +54,17 @@ Large updates and smaller time steps follow the same readiness boundaries.
 
 ## Battle controls and interface
 
-The bottom panel shows Caelan's name, current/max HP and MP, and ATB. Commands
-appear when he is ready. Mouse clicks select a command directly; arrow keys
-and Enter/Space provide keyboard access. Only supported learned abilities appear.
+The bottom panel places party status on the right, matching the party's side
+of the battlefield. A compact yellow ATB gauge sits to the left of Caelan's
+name. HP and MP bars appear beneath his name, with current/max numbers and
+resource labels kept visible. HP is green above 50%, yellow above 25% through
+50%, and red at 25% or below. MP is blue; the ATB fill stays yellow while
+charging and when ready.
+
+Commands and results occupy the left side. Commands appear when Caelan is
+ready. Mouse clicks select a command directly; arrow keys and Enter/Space
+provide keyboard access. Only supported learned abilities appear. See the
+[party status UI preview](reviews/battle_status/README.md).
 
 | Input | Action |
 | --- | --- |
