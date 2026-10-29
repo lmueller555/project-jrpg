@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch
 
 from aether_lattice import AetherLattice, MAX_RP
-from character_attributes import CharacterAttributes, MAX_ATTRIBUTE_VALUE
+from character_attributes import ATTRIBUTE_CAPS, CharacterAttributes
 from inventory import Inventory, MAX_QUANTITY
 from lattice_progression import LatticeProgression
 
@@ -84,7 +84,7 @@ class LatticeTransactionTests(unittest.TestCase):
 
     def test_attribute_limit_failure_keeps_crystal_and_node_unactivated(self):
         record = self.attributes.to_dict()
-        record['attributes']['hp'] = MAX_ATTRIBUTE_VALUE
+        record['attributes']['hp'] = ATTRIBUTE_CAPS['hp']
         self.assertTrue(self.attributes.restore(record))
         self.assertTrue(self.progression.award_battle_rewards('limit', {'caelan': 20}, {'aether_emerald': 1}))
         self.assertTrue(self.progression.move('hp_01'))

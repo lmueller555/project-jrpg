@@ -36,10 +36,35 @@ condition; it does not establish that ordinary combat recovery resurrects the
 dead.
 
 The other values are ratings. For example, Acc 10, Eva 10 and Lck 10 do not mean
-10% accuracy, evasion or critical chance. Numerical formulas, balance caps and
+10% accuracy, evasion or critical chance. Numerical formulas and
 the effect of Speed on turn frequency remain part of future combat design.
 Speed does not change exploration walking or running. These starting numbers
 are a tunable baseline for the all-rounder profile.
+
+## Attribute caps
+
+| Attribute | Maximum effective value |
+| --- | ---: |
+| HP | 9,999 |
+| MP | 999 |
+| Str, Mag, Spr, Def, M. Def, Speed, Acc, Eva, Lck | 255 |
+
+The backend applies these limits to the sum of base attributes and all named
+modifier sources. A gain that crosses a limit stops at that limit. For example,
+254 Str plus a +4 reward produces 255 Str. Earned bonuses remain recorded by
+their owners, so rebuilding modifiers or continuing a journey never stacks or
+discards those grants.
+
+A lattice node cannot consume crystals when its attribute is already capped.
+A valid purchase below the cap may use only the remaining room, for its normal
+crystal cost; the preview shows the resulting capped value. HP/MP increases
+still leave current resources unchanged. Removing a modifier that would leave
+current HP or MP above its new effective maximum is rejected atomically.
+
+Base profiles and saved base values must fit their attribute-specific limits.
+Invalid records and current-resource writes are rejected without changing live
+state. The separate 999,999 integer bound remains a storage-validation limit
+for raw bonuses and sums, rather than a gameplay maximum.
 
 ## Runtime and data
 
@@ -66,7 +91,7 @@ Journey checkpoints include a version-three `character_attributes` record
 containing the character identity, preserved base values under `attributes`,
 and current HP and MP. Lattice modifiers are derived from activated node IDs
 in the separate progression record. Effective values are the preserved base
-plus those modifiers, so Continue does not apply bonuses twice. Validation
+plus those modifiers, limited by the caps above, so Continue does not apply bonuses twice. Validation
 rejects malformed or out-of-range values before replacing live state. Current
 resources must remain within their effective maxima.
 
@@ -90,7 +115,7 @@ committed only when the player continues the journey.
 ## Scope and story continuity
 
 The [Aether Lattice](AETHER_LATTICE.md) adds growth through activated stat nodes.
-Early HP nodes add 20 maximum HP, early MP nodes add 2 maximum MP and other
+Early HP nodes add 100 maximum HP, early MP nodes add 5 maximum MP and other
 starter stat nodes add 1 to their attribute. Caelan's expanded section includes
 larger bonuses deeper in the lattice; see the [section growth budget](CAELAN_LATTICE.md).
 Increasing maximum HP or MP leaves the current resource unchanged. Rank gains

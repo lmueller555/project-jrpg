@@ -194,6 +194,24 @@ class LatticeUITests(unittest.TestCase):
         self.assertIsNone(self.screen.action_preview())
         self.assertIsNone(self.screen.action_rect)
 
+    def test_activation_preview_matches_capped_gain_and_capped_nodes_offer_no_purchase(self):
+        record = self.game.attributes.to_dict()
+        record['attributes']['hp'] = 9950
+        self.assertTrue(self.game.attributes.restore(record))
+        self.reward(10000, {'aether_emerald': 2})
+        self.select('hp_01');self.click_action('move')
+        self.assertIn('HP: 9950 → 9999', self.screen.action_preview()['lines'])
+        self.assertIn('After activation: 9950 → 9999', self.screen.detail_text())
+        self.click_action('activate')
+        self.assertEqual(self.game.attributes.value('hp'), 9999)
+        self.assertEqual(self.game.attributes.current_hp, 140)
+        self.assertEqual(self.game.inventory.quantity('aether_emerald'), 1)
+        self.select('hp_02');self.click_action('move')
+        self.assertIsNone(self.screen.action_preview())
+        self.assertIsNone(self.screen.action_rect)
+        self.assertEqual(self.game.inventory.quantity('aether_emerald'), 1)
+        self.assertNotIn('hp_02', self.game.lattice.state()['activated'])
+
     def test_activation_displays_and_consumes_the_entire_crystal_bundle(self):
         node = self.screen.board.nodes['hp_01']
         with patch.dict(node['cost'], {'aether_emerald': 2, 'aether_sapphire': 1}, clear=True):
