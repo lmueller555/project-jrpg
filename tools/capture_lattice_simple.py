@@ -130,13 +130,13 @@ def main(argv=None):
         offer = ui.action_preview()
         assert offer and offer['action'] == 'activate'
         assert any('Emerald' in line for line in offer['lines'])
-        assert any('140' in line and '160' in line for line in offer['lines'])
+        assert any('140' in line and '240' in line for line in offer['lines'])
         record('activation_preview')
         run(.5, 'eligible current node shows effect, crystal cost and Activate')
         old_action = ui.action_rect.copy()
         preview.perform_action('activate', 'hp_01')
         run(.3, 'node activated once and contextual command disappears')
-        assert game.attributes.value('hp') == 160 and game.attributes.current_hp == 140
+        assert game.attributes.value('hp') == 240 and game.attributes.current_hp == 140
         assert game.attributes.base_value('hp') == 140
         assert game.inventory.quantity('aether_emerald') == 0
         assert ui.action_preview() is None and ui.action_rect is None

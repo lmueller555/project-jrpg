@@ -68,7 +68,7 @@ class LatticeTransactionTests(unittest.TestCase):
         self.assertTrue(self.progression.move('hp_01'))
         self.assertTrue(self.progression.activate('hp_01'))
         self.assertEqual(self.attributes.base_value('hp'), 140)
-        self.assertEqual((self.attributes.current_hp, self.attributes.value('hp')), (140, 160))
+        self.assertEqual((self.attributes.current_hp, self.attributes.value('hp')), (140, 240))
         self.assertEqual(self.inventory.quantity('aether_emerald'), 1)
         before = self.snapshot()
         self.assertFalse(self.progression.activate('hp_01'))
@@ -104,7 +104,7 @@ class LatticeTransactionTests(unittest.TestCase):
         self.assertTrue(progression.move('hp_01', 'guest'))
         self.assertTrue(progression.activate('hp_01', 'caelan'))
         self.assertFalse(progression.activate('hp_01', 'guest'))
-        self.assertEqual((self.attributes.value('hp'), guest.value('hp')), (160, 140))
+        self.assertEqual((self.attributes.value('hp'), guest.value('hp')), (240, 140))
         self.assertEqual(lattice.state('guest')['activated'], [])
 
     def test_inventory_commit_rejection_rolls_back_reward_ledger(self):
@@ -118,12 +118,12 @@ class LatticeTransactionTests(unittest.TestCase):
         self.assertTrue(self.progression.award_battle_rewards('grow', {'caelan': 20}, {'aether_emerald': 1}))
         self.assertTrue(self.progression.move('hp_01'))
         self.assertTrue(self.progression.activate('hp_01'))
-        self.assertTrue(self.attributes.set_current(hp=160))
+        self.assertTrue(self.attributes.set_current(hp=240))
         record = {'aether_lattice': self.lattice.to_dict(), 'character_attributes': self.attributes.to_dict()}
         self.assertTrue(LatticeProgression.valid_journey(record))
         self.assertFalse(LatticeProgression.valid_journey({'character_attributes': record['character_attributes']}))
         self.assertFalse(LatticeProgression.valid_journey({'aether_lattice': record['aether_lattice']}))
-        bad = deepcopy(record);bad['character_attributes']['current_hp'] = 161
+        bad = deepcopy(record);bad['character_attributes']['current_hp'] = 241
         self.assertFalse(LatticeProgression.valid_journey(bad))
 
 

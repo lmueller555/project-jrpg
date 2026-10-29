@@ -34,7 +34,8 @@ class AetherLatticeTests(unittest.TestCase):
         self.assertEqual(self.lattice.steps(), 0)
         self.assertEqual(self.lattice.rp_progress(), (0, 20))
         self.assertEqual(self.lattice.state(), {'rp': 0, 'spent_steps': 0,
-                         'position': 'origin', 'visited': ['origin'], 'activated': []})
+                         'position': 'origin', 'visited': ['origin'], 'activated': [],
+                         'legacy_activated': []})
         self.assertFalse(any(self.lattice.bonuses().values()))
         self.assertFalse(self.lattice.move('hp_01'))
         self.assertFalse(self.lattice.activate('origin'))
@@ -65,7 +66,7 @@ class AetherLatticeTests(unittest.TestCase):
         self.assertTrue(self.lattice.move('hp_01'))
         self.assertEqual(self.lattice.steps(), 0)
         self.assertTrue(self.lattice.activate('hp_01'))
-        self.assertEqual(self.lattice.bonuses()['hp'], 20)
+        self.assertEqual(self.lattice.bonuses()['hp'], 100)
         self.assertEqual(self.lattice.rank(), 4)
         self.assertFalse(self.lattice.activate('hp_01'))
         self.assertFalse(self.lattice.move('origin'))
@@ -149,7 +150,7 @@ class AetherLatticeTests(unittest.TestCase):
         records = [None, [], {}, True]
         for key in before:
             bad = deepcopy(before);bad.pop(key);records.append(bad)
-        for key, value in (('version', True), ('version', 2), ('board_id', 'wrong'),
+        for key, value in (('version', True), ('version', 3), ('board_id', 'wrong'),
                            ('board_version', True), ('receipts', ['battle:1', 'battle:1']),
                            ('receipts', [[]]), ('characters', {})):
             bad = deepcopy(before);bad[key] = value;records.append(bad)
@@ -200,7 +201,7 @@ class AetherLatticeTests(unittest.TestCase):
         self.assertTrue(AetherLattice.valid_snapshot(round_trip))
         self.assertTrue(self.lattice.restore(round_trip))
         self.assertEqual(self.lattice.steps(), 0)
-        self.assertEqual(self.lattice.bonuses()['hp'], 20)
+        self.assertEqual(self.lattice.bonuses()['hp'], 100)
         self.assertEqual(self.lattice.state()['position'], 'origin')
 
     def test_malformed_board_data_fails_before_mutating_inputs(self):

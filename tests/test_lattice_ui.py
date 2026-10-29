@@ -1,6 +1,8 @@
 """Lattice node clicks, contextual purchases and unobstructed exploration."""
 import os
 import math
+import json
+from pathlib import Path
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -10,7 +12,7 @@ os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
-from aether_lattice import AetherLattice
+from aether_lattice import AetherLattice, LatticeBoard
 from audio_settings import AudioSettings
 from character_attributes import CharacterAttributes
 from inventory import Inventory
@@ -183,10 +185,10 @@ class LatticeUITests(unittest.TestCase):
         self.assertEqual(preview['button'], 'Activate')
         text = ' '.join(preview['lines'])
         self.assertIn('140', text)
-        self.assertIn('160', text)
+        self.assertIn('240', text)
         self.assertIn('Aether Emerald', text)
         self.click_action('activate')
-        self.assertEqual(self.game.attributes.value('hp'), 160)
+        self.assertEqual(self.game.attributes.value('hp'), 240)
         self.assertEqual(self.game.attributes.current_hp, 140)
         self.assertEqual(self.game.inventory.quantity('aether_emerald'), 0)
         self.assertIsNone(self.screen.action_preview())
@@ -204,7 +206,7 @@ class LatticeUITests(unittest.TestCase):
             self.click_action('activate')
             self.assertEqual(self.game.inventory.quantity('aether_emerald'), 0)
             self.assertEqual(self.game.inventory.quantity('aether_sapphire'), 0)
-            self.assertEqual(self.game.attributes.value('hp'), 160)
+            self.assertEqual(self.game.attributes.value('hp'), 240)
 
     def test_ability_activation_uses_the_context_button(self):
         self.reward(10000, {'aether_diamond': 10})
@@ -216,6 +218,47 @@ class LatticeUITests(unittest.TestCase):
         self.click_action('activate')
         self.assertIn('mend', self.game.lattice.learned_abilities())
         self.assertIsNone(self.screen.action_preview())
+
+    def test_migrated_converted_node_displays_its_preserved_earned_hp_reward(self):
+        def selected_icon():
+            with patch('lattice_ui.draw_attribute_icon') as draw_icon:
+                self.screen.draw(self.game.ui_surface)
+            center = self.screen.node_position('hp_05')
+            return [call.args[1] for call in draw_icon.call_args_list
+                    if pygame.Vector2(call.args[2].center).distance_to(center) < 1]
+
+        self.select('hp_05')
+        self.assertEqual(self.screen.board.nodes['hp_05']['stat'], 'mp')
+        self.assertEqual(selected_icon(), ['mp'])
+        path = Path(__file__).resolve().parents[1]/'assets/progression/aether_lattice_v2.json'
+        old = AetherLattice(LatticeBoard(json.loads(path.read_text())))
+        progression = LatticeProgression(old, self.game.inventory, {'caelan': self.game.attributes})
+        self.assertTrue(progression.award_battle_rewards(
+            'converted_node_legacy', {'caelan': 10000}, {'aether_emerald': 1}))
+        self.assertTrue(progression.move('hp_05'))
+        self.assertTrue(progression.activate('hp_05'))
+        earned = old.board.nodes['hp_05']['amount']
+        maximum = 140+earned
+        self.assertTrue(self.game.attributes.set_current(hp=maximum-7))
+        attributes = self.game.attributes.to_dict()
+        current = AetherLattice()
+        self.assertTrue(current.restore(old.to_dict()))
+        self.assertTrue(self.game.attributes.restore(attributes, lattice_bonuses=current.bonuses()))
+        self.game.lattice = current
+        self.progression = LatticeProgression(current, self.game.inventory, {'caelan': self.game.attributes})
+        self.game.move_lattice = self.progression.move
+        self.game.activate_lattice = self.progression.activate
+        self.game.lattice_move_reason = self.progression.move_reason
+        self.game.lattice_activation_reason = self.progression.activation_reason
+        self.select('hp_05')
+        before = self.snapshots()
+        self.assertEqual(selected_icon(), ['hp'])
+        self.assertIn('HP +'+str(earned), self.screen.detail_text())
+        self.assertNotIn('MP +'+str(self.screen.board.nodes['hp_05']['amount']), self.screen.detail_text())
+        self.assertEqual((self.game.attributes.value('hp'), self.game.attributes.current_hp),
+                         (maximum, maximum-7))
+        self.assertIsNone(self.screen.action_preview())
+        self.assertEqual(self.snapshots(), before)
 
     def test_unaffordable_locked_and_current_blank_nodes_have_no_action(self):
         before = self.snapshots()
@@ -268,7 +311,7 @@ class LatticeUITests(unittest.TestCase):
         self.assertEqual(self.game.attributes.value('hp'), 140)
         self.screen.draw(self.game.ui_surface)
         self.click_action('activate')
-        self.assertEqual(self.game.attributes.value('hp'), 160)
+        self.assertEqual(self.game.attributes.value('hp'), 240)
 
     def test_stale_move_button_cannot_use_a_changed_route_cost(self):
         self.reward(10000)
@@ -330,7 +373,7 @@ class LatticeUITests(unittest.TestCase):
         self.assertEqual(self.game.inventory.quantity('aether_emerald'), 1)
         self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=point))
         self.click_action('activate')
-        self.assertEqual(self.game.attributes.value('hp'), 160)
+        self.assertEqual(self.game.attributes.value('hp'), 240)
 
     def test_context_hides_during_navigation_and_help(self):
         self.reward(drops={'aether_emerald': 1})
@@ -596,7 +639,7 @@ class LatticeUITests(unittest.TestCase):
                                  self.screen.action_rect.top)
             self.assertFalse(self.screen.context_rect.collidepoint(self.screen.node_position('hp_01')))
             self.click_action('activate')
-            self.assertEqual(self.game.attributes.value('hp'), 160)
+            self.assertEqual(self.game.attributes.value('hp'), 240)
             self.assertEqual(self.game.inventory.quantity('aether_emerald'), 0)
             self.assertEqual(self.game.inventory.quantity('aether_sapphire'), 0)
 

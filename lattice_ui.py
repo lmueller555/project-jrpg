@@ -409,8 +409,9 @@ class LatticeUI:
 
     def detail_text(self):
         if self.selected not in self.board.nodes:return []
-        node = self.board.nodes[self.selected]
         state = self.lattice.state(self.character_id)
+        node = (self.lattice.reward_node(self.selected, self.character_id)
+                if self.selected in state['activated'] else self.board.nodes[self.selected])
         lines = [node.get('name', self.selected)]
         if self.selected == state['position']:lines.append('Current position')
         if self.selected in state['activated']:lines.append('Activated')
@@ -586,7 +587,7 @@ class LatticeUI:
         formation_id = getattr(self.board, 'node_formations', {}).get(identifier)
         formation = getattr(self.board, 'formations', {}).get(formation_id)
         if formation and formation['center_node'] == identifier:
-            baseline = {'hp': 20, 'mp': 2}.get(node.get('stat'), 1)
+            baseline = {'hp': 100, 'mp': 5}.get(node.get('stat'), 1)
             if node['kind'] == 'ability' or (node['kind'] == 'stat' and node['amount'] > baseline):
                 radius *= 1.25
         return radius
@@ -612,6 +613,8 @@ class LatticeUI:
                     painter.text('Rank '+str(required), middle+(0, -13), role='small', color=MUTED, anchor='midbottom')
             else:self._draw_path(painter, color, points, 2 if color == GOLD else 1)
         for identifier, node in self.board.nodes.items():
+            if identifier in state['activated']:
+                node = self.lattice.reward_node(identifier, self.character_id)
             center = self.node_position(identifier)
             radius = self._node_radius(identifier, node)
             if not self.map_rect.inflate(radius*2, radius*2).collidepoint(center):continue

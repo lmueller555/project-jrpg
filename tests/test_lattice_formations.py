@@ -1,6 +1,5 @@
 """Caelan's authored section: growth budget, readable paths and onward routes."""
 from collections import Counter, deque
-from copy import deepcopy
 import json
 from pathlib import Path
 import unittest
@@ -9,12 +8,12 @@ from aether_lattice import AetherLattice, LatticeBoard, MAX_RP
 from character_attributes import CharacterAttributes
 
 
-COUNTS = {'hp': 30, 'mp': 12, 'str': 14, 'mag': 14, 'spr': 12, 'def': 14,
+COUNTS = {'hp': 20, 'mp': 17, 'str': 14, 'mag': 19, 'spr': 12, 'def': 14,
           'm_def': 12, 'speed': 8, 'acc': 6, 'eva': 4, 'lck': 4}
-GAINS = {'hp': 3000, 'mp': 180, 'str': 45, 'mag': 45, 'spr': 40, 'def': 45,
-         'm_def': 40, 'speed': 30, 'acc': 30, 'eva': 20, 'lck': 10}
-FINAL = {'hp': 3140, 'mp': 210, 'str': 55, 'mag': 55, 'spr': 50, 'def': 55,
-         'm_def': 50, 'speed': 40, 'acc': 40, 'eva': 30, 'lck': 20}
+GAINS = {'hp': 4700, 'mp': 260, 'str': 33, 'mag': 46, 'spr': 28, 'def': 33,
+         'm_def': 28, 'speed': 17, 'acc': 12, 'eva': 8, 'lck': 7}
+FINAL = {'hp': 4840, 'mp': 290, 'str': 43, 'mag': 56, 'spr': 38, 'def': 43,
+         'm_def': 38, 'speed': 27, 'acc': 22, 'eva': 18, 'lck': 17}
 
 
 def _points(board, edge):
@@ -69,14 +68,16 @@ class LatticeFormationTests(unittest.TestCase):
         self.assertEqual(len(set(abilities)), 20)
         self.assertNotIn('basic_magicks', abilities)
 
-    def test_existing_node_effects_crystal_costs_and_starter_travel_remain_intact(self):
+    def test_existing_node_ids_ability_costs_and_starter_travel_remain_intact(self):
         path = Path(__file__).resolve().parents[1]/'assets/progression/aether_lattice_v1.json'
         legacy = LatticeBoard(json.loads(path.read_text()))
         for identifier, original in legacy.nodes.items():
             with self.subTest(node=identifier):
-                expected, actual = deepcopy(original), deepcopy(self.board.nodes[identifier])
-                expected.pop('position');actual.pop('position')
-                self.assertEqual(actual, expected)
+                actual = self.board.nodes[identifier]
+                self.assertEqual(actual['kind'], original['kind'])
+                if original['kind'] != 'stat':
+                    for key in ('ability_id', 'cost'):
+                        self.assertEqual(actual.get(key), original.get(key))
         for edge in legacy.edges:
             self.assertEqual(self.board.edge_rank(edge['from'], edge['to']), edge['min_rank'])
         self.assertEqual(self.lattice.route('hp_01'), ['origin', 'hp_01'])
@@ -84,6 +85,15 @@ class LatticeFormationTests(unittest.TestCase):
         self.assertEqual(len(self.lattice.route('str_01'))-1, 3)
         self.assertEqual(self.lattice.required_rank('mend_01'), 5)
         self.assertEqual(self.lattice.required_rank('hp_03'), 8)
+
+    def test_rebalance_preserves_all_circular_geometry_and_connections(self):
+        path = Path(__file__).resolve().parents[1]/'assets/progression/aether_lattice_v2.json'
+        archived = LatticeBoard(json.loads(path.read_text()))
+        self.assertEqual(set(self.board.nodes), set(archived.nodes))
+        self.assertEqual({key: node['position'] for key, node in self.board.nodes.items()},
+                         {key: node['position'] for key, node in archived.nodes.items()})
+        self.assertEqual(self.board.edges, archived.edges)
+        self.assertEqual(self.board.formations, archived.formations)
 
     def test_small_and_large_formations_use_curves_and_all_other_links_are_straight(self):
         formations = self.board.formations
