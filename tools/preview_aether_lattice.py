@@ -65,6 +65,24 @@ class LatticePreview:
                                             rel=(0, 0), buttons=(0, 0, 0)))
         if not self.game.handle_events():raise RuntimeError('The preview was closed during input.')
 
+    def wheel(self, logical, amount):
+        """Use the production pointer-anchored map zoom input."""
+        self.hover(logical)
+        pygame.event.post(pygame.event.Event(pygame.MOUSEWHEEL, x=0, y=amount))
+        if not self.game.handle_events():raise RuntimeError('The preview was closed during zoom.')
+
+    def zoom_to(self, amount):
+        """Approach a review scale using only mouse-wheel input."""
+        ui = self.game.lattice_ui
+        amount = max(ui.MIN_ZOOM, min(ui.MAX_ZOOM, amount))
+        difference = round(math.log(amount/ui.target_zoom)/math.log(1.2))
+        remaining = abs(difference)
+        while remaining:
+            ticks = min(remaining, 10)*(1 if difference > 0 else -1)
+            self.wheel(ui.map_rect.center, ticks)
+            remaining -= abs(ticks)
+        self.advance()
+
     def advance(self, seconds=.25, draw=True):
         """Advance the real paused-menu update loop at deterministic 60 Hz."""
         if seconds < 0:raise ValueError('Preview time must be nonnegative.')
@@ -87,14 +105,30 @@ class LatticePreview:
         self.key(pygame.K_RETURN)
 
     def select_node(self, identifier):
-        """Move the real UI cursor with Tab, without spending lattice Steps."""
+        """Frame a review target, then select it using a real node click.
+
+        Camera positioning is fixture setup, not an additional player control.
+        Selection itself goes through the production map's mouse handler.
+        """
         if identifier not in self.game.lattice.board.nodes:raise ValueError('Unknown preview node.')
-        for _ in range(len(self.game.lattice.board.nodes)+1):
-            if self.game.lattice_ui.selected == identifier:
-                self.advance()
-                return
-            self.key(pygame.K_TAB)
-        raise RuntimeError('The lattice cursor could not reach the selected node.')
+        ui = self.game.lattice_ui
+        ui.center_on(identifier, immediate=True)
+        ui._cancel_zoom()
+        self.game.draw()
+        self.click(ui.node_position(identifier))
+        if ui.selected != identifier:raise RuntimeError('The node click could not select '+identifier)
+        self.advance()
+
+    def perform_action(self, action, identifier=None):
+        """Click the displayed contextual command, with model validation intact."""
+        if identifier is not None:self.select_node(identifier)
+        self.game.draw()
+        ui = self.game.lattice_ui
+        offer = ui.action_preview()
+        if not offer or offer['action'] != action or (identifier is not None and offer['node'] != identifier):
+            raise RuntimeError('The contextual '+action+' command is unavailable.')
+        if ui.action_rect is None:raise RuntimeError('The contextual command has no hit area.')
+        self.click(ui.action_rect.center)
 
     def resize(self, size, text_scale=1.0):
         self.game.windowed_size = tuple(size)

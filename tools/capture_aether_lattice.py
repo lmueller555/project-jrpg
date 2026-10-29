@@ -27,15 +27,17 @@ def main():
         game.draw()
         if game.lattice_ui.is_open:
             ui = game.lattice_ui
-            for rect in (ui.map_rect, ui.close_rect, ui.help_rect, ui.zoom_out_rect,
-                         ui.zoom_in_rect, ui.fit_rect, ui.reset_zoom_rect):
+            for rect in (ui.map_rect, ui.close_rect, ui.help_rect):
                 assert pygame.Rect(0, 0, 480, 320).contains(rect), (name, rect)
+            if ui.context_rect is not None:
+                assert ui.map_rect.contains(ui.context_rect)
+                assert ui.context_rect.contains(ui.action_rect)
             assert game.ui_surface.get_clip() == game.ui_surface.get_rect()
         pygame.image.save(game.window, str(output/(name+'.png')))
         captures.append({'capture': name, 'window': list(game.window.get_size()),
                          'text_scale': game.audio.text_scale,
                          'selected': game.lattice_ui.selected,
-                         'pending': game.lattice_ui.pending,
+                         'action_preview': game.lattice_ui.action_preview(),
                          'rank': game.lattice.rank(), 'steps': game.lattice.steps(),
                          'rp_progress': game.lattice.rp_progress(),
                          'lattice': game.lattice.state(),
@@ -48,22 +50,18 @@ def main():
                                       for key in game.lattice.board.crystals},
                          'known_abilities': game.lattice.learned_abilities(),
                          'zoom': game.lattice_ui.zoom,
-                         'confirmation_text': game.lattice_ui.confirmation_text(),
-                         'confirmation_scroll': game.lattice_ui.confirm_scroll,
-                         'confirmation_max_scroll': game.lattice_ui.confirm_max_scroll,
                          'detail_text': game.lattice_ui.detail_text()})
 
     def prepare(preview, action, target):
         game = preview.game;preview.select_node(target);game.draw()
         before = game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict()
-        preview.key(pygame.K_m if action == 'move' else pygame.K_a)
-        assert game.lattice_ui.pending == (action, target), (action, target, game.lattice_ui.message)
+        offer = game.lattice_ui.action_preview()
+        assert offer is not None and (offer['action'], offer['node']) == (action, target), (action, target, offer)
         assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())
 
     def confirm(preview, action, target):
-        preview.key(pygame.K_RETURN)
+        preview.perform_action(action, target)
         game = preview.game
-        assert game.lattice_ui.pending is None
         if action == 'move':assert game.lattice.state()['position'] == target
         else:assert target in game.lattice.state()['activated']
         operations.append({'action': action, 'target': target, 'rank': game.lattice.rank(),
@@ -71,11 +69,11 @@ def main():
 
     with LatticePreview(rp=0, crystals=0) as preview:
         record(preview, 'lattice_start_closeup')
-        preview.key(pygame.K_f)
+        preview.game.lattice_ui.fit_board()
         record(preview, 'lattice_initial')
         preview.select_node('blank_05')
-        preview.key(pygame.K_m)
-        assert 'Attunement 5' in preview.game.lattice_ui.message
+        assert preview.game.lattice_ui.action_preview() is None
+        assert 'Attunement 5' in preview.game.lattice_move_reason('blank_05')
         record(preview, 'lattice_rank_gate')
         assert preview.game.lattice.rank() == 1
         assert preview.game.lattice.steps() == 0
@@ -83,16 +81,16 @@ def main():
     with LatticePreview() as preview:
         game = preview.game
         prepare(preview, 'move', 'hp_01')
-        record(preview, 'lattice_move_confirmation')
+        record(preview, 'lattice_move_preview')
         confirm(preview, 'move', 'hp_01')
         prepare(preview, 'activate', 'hp_01')
-        record(preview, 'lattice_activation_confirmation')
+        record(preview, 'lattice_activation_preview')
         preview.resize((480, 320), 1.5)
-        record(preview, 'lattice_activation_confirmation_small_large')
-        confirmation = preview.game.lattice_ui.confirmation_text()
+        record(preview, 'lattice_activation_preview_small_large')
+        confirmation = preview.game.lattice_ui.action_preview()['lines']
         assert any('140' in line and '160' in line for line in confirmation)
-        assert any('Emerald' in line and '1 owned' in line for line in confirmation)
-        assert preview.game.lattice_ui.confirm_max_scroll == 0
+        assert any('Emerald' in line for line in confirmation)
+        assert preview.game.lattice_ui.map_rect.contains(preview.game.lattice_ui.context_rect)
         preview.resize((960, 640), 1.0)
         confirm(preview, 'activate', 'hp_01')
         assert game.attributes.value('hp') == 160
@@ -130,7 +128,7 @@ def main():
         prepare(preview, 'activate', 'brace_01');confirm(preview, 'activate', 'brace_01')
         assert 'brace' in game.lattice.learned_abilities()
         record(preview, 'lattice_known_abilities_and_crystals')
-        preview.key(pygame.K_f)
+        preview.game.lattice_ui.fit_board()
         record(preview, 'lattice_explored_overview')
         preview.resize((960, 640), 1.5)
         preview.select_node('hp_03')
