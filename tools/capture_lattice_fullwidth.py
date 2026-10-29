@@ -71,12 +71,12 @@ def main(argv=None):
 
         run(.1, 'full-width lattice')
         assert_map_uses_previous_sidebar()
-        preview.key(pygame.K_f);run(.35, 'whole section across full content width')
+        ui.fit_board();run(.35, 'whole section fixture across full content width')
         assert all(ui.map_rect.inflate(-8, -8).collidepoint(ui.node_position(key)) for key in ui.board.nodes)
         record('fullwidth_overview')
         preview.select_node('brace_01')
-        preview.key(pygame.K_0)
-        for _ in range(4):preview.key(pygame.K_MINUS)
+        ui.reset_zoom();preview.advance(.25)
+        preview.wheel(ui.map_rect.center, -4)
         run(.35, 'selected center with no information sidebar')
         preview.hover((382, 180));run(.15, 'former sidebar is clear map space')
         record('fullwidth_closeup')
@@ -92,13 +92,13 @@ def main(argv=None):
                       pygame.Vector2(ui.board.nodes[key]['position']).distance_squared_to(cursor))
         event(pygame.MOUSEBUTTONUP, button=1, pos=preview.point(end))
         run(.25, 'nearest node centered after right-side drag')
-        assert ui.selected == nearest and ui.pending is None
+        assert ui.selected == nearest and ui.action_preview() is None
         checks.append({'stage': 'former sidebar supports dragging', 'nearest_node': nearest,
                        'selected': ui.selected, 'cursor_at_release': list(cursor)})
 
         for point in ((382, 264), (382, 292)):
             preview.click(point);run(.2, 'former action-button space is navigable map')
-            assert ui.pending is None and not getattr(ui, 'notice_open', False)
+            assert ui.action_preview() is None
             assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())
             checks.append({'stage': 'former action-button space selects only', 'logical_point': point,
                            'selected': ui.selected})
@@ -109,7 +109,7 @@ def main(argv=None):
         run(.35, 'selected node centered and pulsing')
         assert ui.node_position(ui.selected).distance_to(ui.map_rect.center) < .001
         preview.resize((480, 320), 1.5)
-        preview.key(pygame.K_f);preview.advance(.3)
+        ui.fit_board();preview.advance(.3)
         assert_map_uses_previous_sidebar()
         record('minimum_window_large_text')
         assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())

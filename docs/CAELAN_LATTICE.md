@@ -18,11 +18,19 @@ between formations, and every connection involving a node outside them, use
 straight lines. A curve changes the appearance of an edge, not its Step cost.
 The gold route highlight and locked-path dashes follow the same geometry.
 
-The lattice uses the full content width beneath the character header. Fit shows
-the complete section. The camera supports 5–200% zoom, with smaller
-node markers at overview scales and attribute icons at closer scales. The gold
-exploration cursor, nearest-node selection and pulsing selection remain the
-navigation controls; inspection does not move the character or spend resources.
+The lattice uses the full content width beneath the character header. The mouse
+wheel controls 5–200% zoom, with smaller node markers at overview scales and
+attribute icons at closer scales. Click a node to select it, drag to pan the
+camera, or steer the gold cursor with the arrow keys. Releasing a drag or the
+arrow keys selects the node nearest the cursor and smoothly centers it with a
+pulsing halo. Inspection does not move the character or spend resources.
+
+An affordable, reachable destination offers a contextual Step-cost preview and
+Move button beside the selection. An eligible current node offers its effect,
+crystal cost and Activate button when the required crystals are available.
+These commands execute when clicked and disappear while navigating or reading
+help. There is no permanent action panel or zoom toolbar. See the
+[controls guide](AETHER_LATTICE.md#menu-controls) for all inputs.
 
 ## Growth budget
 

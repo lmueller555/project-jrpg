@@ -102,10 +102,11 @@ def main(argv=None):
         # meaningful when the lattice layout changes. The locked ability is
         # inspectable at rank 1 with zero Steps.
         preview.select_node('spr_02')
-        preview.key(pygame.K_0);preview.advance(.25)
+        # Establish a readable fixture without reintroducing a player shortcut.
+        ui.reset_zoom();preview.advance(.25)
         displacement = pygame.Vector2(ui.board.nodes['mend_01']['position'])-ui.pan
         while displacement.length()*ui.zoom > min(ui.map_rect.size)*.3:
-            preview.key(pygame.K_MINUS);preview.advance(.25)
+            preview.wheel(ui.map_rect.center, -1);preview.advance(.25)
         drag_start = pygame.Vector2(ui.map_rect.center)
         event(pygame.MOUSEBUTTONDOWN, button=1, pos=preview.point(drag_start))
         for index in range(1, 19):

@@ -1,0 +1,636 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_untouched": true,
+  "initial_fixture": {
+    "rank": 1,
+    "rp": 0,
+    "steps": 0,
+    "crystals": 0
+  },
+  "review_reward": {
+    "rp": 20,
+    "aether_emerald": 1
+  },
+  "world_unchanged": true,
+  "checks": [
+    {
+      "stage": "unaffordable and rank-locked nodes remain inspectable",
+      "travel_offer": false,
+      "progression_unchanged": true
+    },
+    {
+      "stage": "mouse-wheel zoom and direct camera dragging",
+      "maximum_wheel_anchor_error": 0.0,
+      "release_selected": "mend_01",
+      "progression_unchanged": true
+    },
+    {
+      "stage": "contextual commands execute directly",
+      "travel_steps_spent": 1,
+      "rank_after_travel": 2,
+      "activation_emeralds_spent": 1,
+      "effective_hp": 160,
+      "current_hp": 140,
+      "repeat_activation_prevented": true,
+      "removed_shortcuts_inert": true
+    }
+  ],
+  "captures": [
+    {
+      "file": "unaffordable_selection.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "offer": null,
+      "context_rect": null
+    },
+    {
+      "file": "travel_preview.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "offer": {
+        "action": "move",
+        "node": "hp_01",
+        "button": "Move",
+        "lines": [
+          "HP +20",
+          "Travel: 1 Step",
+          "1 Step available"
+        ]
+      },
+      "context_rect": [
+        260,
+        145,
+        196,
+        82
+      ]
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "selected": "hp_01",
+      "offer": {
+        "action": "move",
+        "node": "hp_01",
+        "button": "Move",
+        "lines": [
+          "HP +20",
+          "Travel: 1 Step",
+          "1 Step available"
+        ]
+      },
+      "context_rect": [
+        260,
+        143,
+        196,
+        120
+      ]
+    },
+    {
+      "file": "activation_preview.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "offer": {
+        "action": "activate",
+        "node": "hp_01",
+        "button": "Activate",
+        "lines": [
+          "HP: 140 \u2192 160",
+          "Current HP stays 140.",
+          "Aether Emerald \u00d71"
+        ]
+      },
+      "context_rect": [
+        260,
+        145,
+        196,
+        82
+      ]
+    },
+    {
+      "file": "activated_node.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "selected": "hp_01",
+      "offer": null,
+      "context_rect": null
+    }
+  ],
+  "animation": {
+    "file": "contextual_controls.gif",
+    "fps": 12,
+    "rendered_frames": 32,
+    "encoded_frames": 32,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "selected node without an affordable command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8,
+        "offer": null
+      },
+      {
+        "frame": 1,
+        "stage": "selected node without an affordable command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8,
+        "offer": null
+      },
+      {
+        "frame": 2,
+        "stage": "selected node without an affordable command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8,
+        "offer": null
+      },
+      {
+        "frame": 3,
+        "stage": "selected node without an affordable command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8,
+        "offer": null
+      },
+      {
+        "frame": 4,
+        "stage": "mouse-wheel zoom around the pointer",
+        "selected": "mend_01",
+        "camera": [
+          288.23742255849663,
+          -131.471226767549
+        ],
+        "zoom": 0.647641365645481,
+        "offer": null
+      },
+      {
+        "frame": 5,
+        "stage": "mouse-wheel zoom around the pointer",
+        "selected": "mend_01",
+        "camera": [
+          278.5478614414095,
+          -128.56435843242284
+        ],
+        "zoom": 0.5598152946423028,
+        "offer": null
+      },
+      {
+        "frame": 6,
+        "stage": "direct camera drag",
+        "selected": "mend_01",
+        "camera": [
+          285.2,
+          -131.1
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 7,
+        "stage": "direct camera drag",
+        "selected": "mend_01",
+        "camera": [
+          299.6,
+          -136.5
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 8,
+        "stage": "direct camera drag",
+        "selected": "mend_01",
+        "camera": [
+          321.2,
+          -144.6
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 9,
+        "stage": "direct camera drag",
+        "selected": "mend_01",
+        "camera": [
+          335.59999999999997,
+          -150.0
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 10,
+        "stage": "release selects and centers nearest node",
+        "selected": "mend_01",
+        "camera": [
+          305.5139485850734,
+          -137.3232929431489
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 11,
+        "stage": "release selects and centers nearest node",
+        "selected": "mend_01",
+        "camera": [
+          300.01446933902355,
+          -135.00609663161103
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 12,
+        "stage": "release selects and centers nearest node",
+        "selected": "mend_01",
+        "camera": [
+          300.0,
+          -135.0
+        ],
+        "zoom": 0.5555555555555557,
+        "offer": null
+      },
+      {
+        "frame": 13,
+        "stage": "affordable travel preview and Move button",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 14,
+        "stage": "affordable travel preview and Move button",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 15,
+        "stage": "ready to move with one Step",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 16,
+        "stage": "ready to move with one Step",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 17,
+        "stage": "ready to move with one Step",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 18,
+        "stage": "ready to move with one Step",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "move",
+          "node": "hp_01",
+          "button": "Move",
+          "lines": [
+            "HP +20",
+            "Travel: 1 Step",
+            "1 Step available"
+          ]
+        }
+      },
+      {
+        "frame": 19,
+        "stage": "movement executed through contextual Move command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 20,
+        "stage": "movement executed through contextual Move command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 21,
+        "stage": "movement executed through contextual Move command",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 22,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 23,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 24,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 25,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 26,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 27,
+        "stage": "eligible current node shows effect, crystal cost and Activate",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": {
+          "action": "activate",
+          "node": "hp_01",
+          "button": "Activate",
+          "lines": [
+            "HP: 140 \u2192 160",
+            "Current HP stays 140.",
+            "Aether Emerald \u00d71"
+          ]
+        }
+      },
+      {
+        "frame": 28,
+        "stage": "node activated once and contextual command disappears",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": null
+      },
+      {
+        "frame": 29,
+        "stage": "node activated once and contextual command disappears",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": null
+      },
+      {
+        "frame": 30,
+        "stage": "node activated once and contextual command disappears",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": null
+      },
+      {
+        "frame": 31,
+        "stage": "node activated once and contextual command disappears",
+        "selected": "hp_01",
+        "camera": [
+          72.0,
+          0.0
+        ],
+        "zoom": 0.8000000000000002,
+        "offer": null
+      }
+    ]
+  }
+}

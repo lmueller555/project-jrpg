@@ -80,15 +80,16 @@ def main(argv=None):
             checks.append({'stage': stage, 'start_zoom': old_zoom, 'target_zoom': target,
                            'zoom_after_83ms': intermediate, 'settled_zoom': ui.zoom})
 
-        def repeated_key(key, count):
-            for _ in range(count):preview.key(key)
-
-        def repeated_click(rect, count):
-            for _ in range(count):preview.click(rect.center)
+        def wheel(amount):
+            preview.hover(ui.map_rect.center)
+            while amount:
+                turn = max(-10, min(10, amount))
+                event(pygame.MOUSEWHEEL, x=0, y=turn)
+                amount -= turn
 
         run(.25, 'selected node at 80%')
-        zoom_transition('keyboard zoom out', lambda: repeated_key(pygame.K_MINUS, 3))
-        zoom_transition('button zoom in', lambda: repeated_click(ui.zoom_in_rect, 5))
+        zoom_transition('wheel zoom out', lambda: wheel(-3))
+        zoom_transition('wheel zoom in', lambda: wheel(5))
         record('zoomed_in')
 
         pointer = pygame.Vector2(ui.map_rect.center)+(63, -35)
@@ -114,16 +115,26 @@ def main(argv=None):
         assert math.isclose(ui.zoom, old_zoom) and math.isclose(ui.target_zoom, old_target)
         checks.append({'stage': 'wheel outside the map leaves zoom unchanged', 'zoom': ui.zoom})
 
-        zoom_transition('fit entire board', lambda: preview.click(ui.fit_rect.center))
+        # Frame the board's center for the review, then use the actual wheel
+        # input to zoom out until every authored node fits. This camera setup
+        # is a capture fixture; there is no Fit button or keyboard shortcut.
+        ui.fit_board()
+        desired = ui.target_zoom
+        ui._cancel_zoom()
+        preview.advance(.25)
+        steps = math.floor(math.log(desired/ui.zoom)/math.log(1.2))
+        zoom_transition('wheel out to whole-board overview', lambda: wheel(steps))
         for identifier in ui.board.nodes:
             point = ui.node_position(identifier)
             assert ui.map_rect.inflate(-8, -8).collidepoint(point), (identifier, point)
         record('whole_lattice_overview')
         run(.4, 'whole lattice overview')
-        zoom_transition('100% reset', lambda: preview.key(pygame.K_0))
-        assert math.isclose(ui.zoom, 1.0)
+        preview.select_node(ui.selected)
+        closeup_steps = math.ceil(math.log(.8/ui.zoom)/math.log(1.2))
+        zoom_transition('wheel back to close-up', lambda: wheel(closeup_steps))
+        assert ui.zoom > .65
         assert ui.node_position(ui.selected).distance_to(ui.map_rect.center) < 1e-5
-        run(.2, 'selected node centered at 100%')
+        run(.2, 'selected node centered in close-up')
 
         event(pygame.KEYDOWN, key=pygame.K_RIGHT, repeat=False)
         run(.4, 'gold cursor exploration after zoom')
@@ -140,9 +151,8 @@ def main(argv=None):
         preview.resize((480, 320), 1.5)
         preview.advance(.25)
         record('minimum_window_large_text')
-        toolbar = (ui.zoom_out_rect, ui.zoom_in_rect, ui.fit_rect, ui.reset_zoom_rect)
-        assert all(ui.map_rect.contains(rect) for rect in toolbar)
-        assert all(not a.colliderect(b) for index, a in enumerate(toolbar) for b in toolbar[index+1:])
+        assert all(not hasattr(ui, name) for name in
+                   ('zoom_out_rect', 'zoom_in_rect', 'fit_rect', 'reset_zoom_rect'))
         assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())
         assert game.lattice.state()['position'] == 'origin'
         assert world_before == {'elapsed_ms': game.elapsed_ms, 'player': list(game.player.position)}

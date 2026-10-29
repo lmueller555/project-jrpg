@@ -27,13 +27,18 @@ still costs movement but grants no bonus, RP or resource. A character may pass
 through an unactivated stat or ability node. Missing crystals prevent its
 activation without blocking travel along otherwise open connections.
 
-The gold exploration cursor can browse the entire board, including branches
-that the character cannot yet reach. Releasing the navigation controls selects
-the nearest node and smoothly centers the camera on it. A pulsing circular halo
-marks that selection. Moving the character requires the explicit Move action;
-browsing never spends Steps, crystals or RP. The route preview shows the path
-and its total Step cost. Connections with a rank requirement use permanent
-Attunement, so spending movement cannot close a previously opened path.
+Clicking a node selects it and smoothly centers the camera on it. The gold
+exploration cursor can also browse the entire board, including branches that
+the character cannot yet reach. Releasing the arrow keys or a camera drag
+selects the node nearest that cursor. A pulsing circular halo marks the
+selection; browsing never spends Steps, crystals or RP.
+
+A reachable selected destination shows its route, Step cost and a **Move**
+button only when the character has enough Steps and meets the route's rank
+requirements. Clicking Move executes the travel. The current node and
+unavailable destinations have no travel preview or Move button. Connections
+with a rank requirement use permanent Attunement, so spending movement cannot
+close a previously opened path.
 
 ## Nodes and crystals
 
@@ -63,11 +68,11 @@ inventory items, and related attributes share a crystal family. Starter nodes
 require one matching crystal; costs remain data so other quantities can be
 authored later.
 
-Activation requires standing on the selected node, owning its required
-crystals and using the Activate action. It consumes the cost and grants the
-benefit once per character. Blank nodes cannot be activated. Insufficient
-Steps, rank, crystals or an already activated node leave progression and
-inventory unchanged.
+An eligible, unactivated node at the character's current position shows its
+effect, full crystal cost and an **Activate** button when the required crystals
+are available. Clicking Activate consumes the cost and grants the benefit once
+per character. Blank nodes cannot be activated. Insufficient Steps, rank,
+crystals or an already activated node leave progression and inventory unchanged.
 
 An HP or MP node raises maximum capacity without refilling the current
 resource. For example, activating HP +20 at 140/140 produces 140/160. A new
@@ -83,40 +88,36 @@ remain authored scenes.
 
 | Input | Action |
 | --- | --- |
+| Click a node | Select it, smoothly center the camera and pulse the selection. |
 | Hold arrow keys | Steer the gold cursor freely; release to select the nearest node. |
-| Tab / Shift+Tab | Inspect the next / previous node and smoothly center it. |
-| Click the map | Select the node nearest the pointer and smoothly center it. |
-| M | Prepare travel and inspect its cost. |
-| A | Prepare activation and inspect its cost. |
-| Enter / keypad Enter, the same M or A key again, or the dialog's Confirm button | Confirm the prepared action. |
-| Escape | Cancel a prepared action; otherwise return to Pause. |
-| + / − or the zoom buttons | Smoothly zoom toward the selected node. |
 | Mouse wheel over the map | Smoothly zoom around the point beneath the pointer. |
 | Hold left mouse button and drag the map | Pan the camera directly; release to select and center the node nearest the gold cursor. |
-| F or Fit button | Smoothly fit the whole board to the viewport. |
-| 0 or 100% button | Return to 100% zoom and center the selected node. |
-| Mouse wheel / Page Up / Page Down | Scroll an open help, confirmation or unavailable-action dialog. |
-| Home / End | Jump to the beginning / end of an action dialog. |
+| Click Move | Travel to the selected destination for the displayed Step cost. |
+| Click Activate | Activate the current node for the displayed crystal cost. |
+| Escape / × | Close help or return to Pause. |
+| Mouse wheel / Page Up / Page Down / Up / Down in help | Scroll the controls help. |
 | F1 or the ? button | Open the controls help. |
 
 The lattice fills the full content width beneath the compact character header.
-Travel and activation show their costs and effects in confirmation dialogs when
-requested. Unavailable actions show a dismissible explanation. Cancellation
-leaves Steps, crystals and node ownership unchanged. The menu holds
-the world and any conversation beneath it until the player resumes. Camera
-centering takes about 180 milliseconds and redirects smoothly if another node
-is selected during the transition. Zoom transitions use the same short easing,
-with a range of 5% to 200% and a visible percentage in the map toolbar. Repeated
-zoom inputs adjust the destination without jumping the current view. Zooming
-does not select a different node or spend progression resources. Wheel zoom is
-limited to the map; help and confirmation dialogs scroll their own text.
+The small action preview sits beside the selected node when its requirements
+are met and disappears while navigating or reading help. It is not a permanent
+panel. Clicking a node only selects it; clicking its displayed command executes
+the action without a separate confirmation dialog. Empty map clicks do not
+select a nearby node. The menu holds the world and any conversation beneath it
+until the player resumes.
+
+Camera centering takes about 180 milliseconds and redirects smoothly if another
+node is selected during the transition. The mouse wheel is the only zoom
+control, with a range of 5% to 200%. Zoom transitions use the same short easing;
+repeated wheel inputs adjust the destination without jumping the current view.
+Zooming does not select a different node or spend progression resources. The
+wheel scrolls help while it is open.
 
 Dragging grabs the map beneath the pointer: its contents track the mouse
 directly at every zoom and window scale. A three-pixel tolerance keeps small
 hand movements from turning a click into a drag. The camera and zoom stop their
-current transition when a grab begins. Wheel and + / − inputs are ignored while
-dragging; F and 0 end the grab and apply their camera actions. The gold cursor
-stays at the camera center while dragging;
+current transition when a grab begins. Wheel inputs are ignored while dragging.
+The gold cursor stays at the camera center while dragging;
 release selects its nearest node and eases to that node over 180 milliseconds.
 Dragging and selection never move the character or spend resources.
 

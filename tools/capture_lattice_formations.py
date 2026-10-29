@@ -52,7 +52,7 @@ def main(argv=None):
     frame_number = 0
 
     with LatticePreview(rp=0, crystals=0) as zero:
-        zero.key(pygame.K_f);zero.advance(.3)
+        zero.game.lattice_ui.fit_board();zero.advance(.3)
         pygame.image.save(zero.game.window, str(output/'new_game_overview.png'))
         assert zero.game.lattice.state()['position'] == 'origin'
         assert zero.game.lattice.rank() == 1 and zero.game.lattice.steps() == 0
@@ -89,15 +89,10 @@ def main(argv=None):
                 frame_number += 1
 
         def select(identifier):
-            for _ in range(len(board.nodes)+1):
-                if ui.selected == identifier:return
-                preview.key(pygame.K_TAB)
-            raise AssertionError('The production cursor could not reach '+identifier)
+            preview.select_node(identifier)
 
         def scale(desired):
-            difference = round(math.log(desired/ui.target_zoom)/math.log(1.2))
-            for _ in range(abs(difference)):
-                preview.key(pygame.K_PLUS if difference > 0 else pygame.K_MINUS)
+            preview.zoom_to(desired)
 
         def record(name):
             game.draw();pygame.image.save(game.window, str(output/(name+'.png')))
@@ -114,9 +109,9 @@ def main(argv=None):
             cost = len(game.lattice.route(identifier))-1
             old_steps = game.lattice.steps()
             inventory, attributes = game.inventory.to_dict(), game.attributes.to_dict()
-            preview.key(pygame.K_m)
-            assert ui.pending == ('move', identifier), ui.message
-            preview.key(pygame.K_RETURN)
+            offer = ui.action_preview()
+            assert offer is not None and (offer['action'], offer['node']) == ('move', identifier)
+            preview.perform_action('move', identifier)
             assert game.lattice.state()['position'] == identifier
             assert game.lattice.steps() == old_steps-cost
             assert game.inventory.to_dict() == inventory and game.attributes.to_dict() == attributes
@@ -124,14 +119,14 @@ def main(argv=None):
             operations.append({'to': identifier, 'steps': cost, 'remaining_steps': game.lattice.steps()})
             run(.3, 'travel through center — '+identifier)
 
-        preview.key(pygame.K_f);run(.35, 'whole section — large and small formations')
+        ui.fit_board();run(.35, 'whole section — large and small formations')
         assert all(ui.map_rect.inflate(-6, -6).collidepoint(ui.node_position(key)) for key in board.nodes)
         record('whole_lattice_overview')
         run(.4, 'whole section — settled overview')
         select(large['center_node']);scale(.46);run(.35, 'large formation — curved internal paths')
         record('large_formation')
         run(.4, 'large formation — selected center pulse')
-        select(small['center_node']);preview.key(pygame.K_0);preview.key(pygame.K_MINUS)
+        select(small['center_node']);scale(.83)
         run(.35, 'small formation — through-center route')
         record('small_formation')
         run(.4, 'small formation — selected center pulse')

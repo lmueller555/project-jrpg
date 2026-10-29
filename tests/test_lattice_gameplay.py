@@ -1,4 +1,4 @@
-"""Lattice rewards, crystal purchases, saves and actual modal game input."""
+"""Lattice rewards, crystal purchases, saves and actual paused-game input."""
 import copy
 import json
 import os
@@ -66,10 +66,13 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertEqual(game.pause.overlay, 'lattice')
 
     def select(self, game, identifier):
-        for _ in range(len(game.lattice.board.nodes)+1):
-            if game.lattice_ui.selected == identifier:return
-            self.key(game, pygame.K_TAB)
-        self.fail('The keyboard cursor could not select '+identifier)
+        # Camera placement is fixture setup; selection itself uses real input.
+        game.lattice_ui.center_on(identifier, immediate=True)
+        game.draw()
+        self.click(game, game.lattice_ui.node_position(identifier))
+        self.assertEqual(game.lattice_ui.selected, identifier)
+        for _ in range(12):game.update(1/60)
+        game.draw()
 
     def test_real_new_game_has_no_sample_rewards_and_resets_preview_progress(self):
         game = self.game()
@@ -271,7 +274,7 @@ class LatticeGameplayTests(unittest.TestCase):
                 self.assertEqual(restored.attributes.value('hp'), 140)
                 self.assertEqual(restored.lattice.rank(), 1)
 
-    def test_real_menu_confirms_actions_and_preserves_modal_world_and_queued_clicks(self):
+    def test_real_menu_clicks_context_actions_and_preserves_world_and_queued_clicks(self):
         game = self.game()
         self.assertTrue(game.award_battle_rewards('menu_test', {'caelan': 20}, {'aether_emerald': 1}))
         self.open_lattice(game)
@@ -282,22 +285,39 @@ class LatticeGameplayTests(unittest.TestCase):
         game.update(2, (1, 0), True)
         self.assertEqual(game.elapsed_ms, clock)
         self.assertEqual(game.player.position, position)
-        self.key(game, pygame.K_m)
-        self.assertIsNotNone(game.lattice_ui.pending)
+        ui = game.lattice_ui
+        preview = ui.action_preview()
+        self.assertEqual((preview['action'], preview['node']), ('move', 'hp_01'))
+        self.assertIn('1 Step', ' '.join(preview['lines']))
+        saved = self.path.read_bytes()
+        for key in (pygame.K_m, pygame.K_a, pygame.K_RETURN, pygame.K_KP_ENTER,
+                    pygame.K_TAB, pygame.K_PLUS, pygame.K_MINUS, pygame.K_f, pygame.K_0):
+            self.key(game, key)
         self.assertEqual(self.snapshot(game), before)
-        self.key(game, pygame.K_ESCAPE)
-        self.assertIsNone(game.lattice_ui.pending)
-        self.assertTrue(game.lattice_ui.is_open)
-        self.assertEqual(self.snapshot(game), before)
-        self.key(game, pygame.K_m)
-        self.key(game, pygame.K_RETURN)
+        self.assertEqual(self.path.read_bytes(), saved)
+        self.assertEqual(ui.selected, 'hp_01')
+        point = self.point(game, ui.action_rect.center)
+        # Repeated downs from a held button must not activate the new current node.
+        for _ in range(3):
+            pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=point))
+        pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=point))
+        self.assertTrue(game.handle_events())
         self.assertEqual(game.lattice.state()['position'], 'hp_01')
         self.assertEqual(game.lattice.steps(), 0)
+        self.assertEqual(game.attributes.value('hp'), 140)
+        self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
+        game.draw()
         after_move = self.snapshot(game)
-        self.key(game, pygame.K_a)
-        self.assertIsNotNone(game.lattice_ui.pending)
-        self.key(game, pygame.K_ESCAPE)
+        self.assertEqual(ui.action_preview()['action'], 'activate')
+        self.key(game, pygame.K_a);self.key(game, pygame.K_RETURN)
         self.assertEqual(self.snapshot(game), after_move)
+        self.click(game, ui.action_rect.center)
+        self.assertEqual(game.attributes.value('hp'), 160)
+        self.assertEqual(game.attributes.current_hp, 140)
+        self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
+        self.assertIsNone(ui.action_preview())
+        after_activation = self.snapshot(game)
+        self.assertEqual(json.loads(self.path.read_text())['aether_lattice'], game.lattice.to_dict())
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False))
         point = self.point(game, game.pause.rows[0].center)
         for kind in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
@@ -306,7 +326,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertFalse(game.lattice_ui.is_open)
         self.assertTrue(game.pause.is_open)
         self.assertIsNone(game.pause.overlay)
-        self.assertEqual(self.snapshot(game), after_move)
+        self.assertEqual(self.snapshot(game), after_activation)
 
     def test_paused_game_updates_cursor_camera_and_pulse_without_advancing_world(self):
         game = self.game()
@@ -351,7 +371,10 @@ class LatticeGameplayTests(unittest.TestCase):
         world_time, player = game.elapsed_ms, game.player.position.copy()
         npcs = [npc.position.copy() for npc in game.world.npcs]
         initial = screen.zoom
-        self.key(game, pygame.K_PLUS)
+        point = self.point(game, screen.map_rect.center)
+        pygame.event.post(pygame.event.Event(pygame.MOUSEMOTION, pos=point, rel=(0, 0), buttons=(0, 0, 0)))
+        pygame.event.post(pygame.event.Event(pygame.MOUSEWHEEL, x=0, y=1))
+        self.assertTrue(game.handle_events())
         target = screen.target_zoom
         self.assertGreater(target, initial)
         self.assertEqual(screen.zoom, initial)
@@ -360,12 +383,17 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertLess(screen.zoom, target)
         for _ in range(12):game.update(1/60, (1, 0), True)
         self.assertAlmostEqual(screen.zoom, target)
-        self.key(game, pygame.K_f)
+        pygame.event.post(pygame.event.Event(pygame.MOUSEWHEEL, x=0, y=-3))
+        self.assertTrue(game.handle_events())
         for _ in range(12):game.update(1/60)
         self.assertLess(screen.zoom, initial)
-        self.key(game, pygame.K_0)
+        zoom, pan = screen.zoom, screen.pan.copy()
+        for key in (pygame.K_PLUS, pygame.K_MINUS, pygame.K_EQUALS,
+                    pygame.K_KP_PLUS, pygame.K_KP_MINUS, pygame.K_f,
+                    pygame.K_0, pygame.K_KP0):self.key(game, key)
         for _ in range(12):game.update(1/60)
-        self.assertEqual(screen.zoom, 1.0)
+        self.assertEqual(screen.zoom, zoom)
+        self.assertEqual(screen.pan, pan)
         self.assertEqual(screen.selected, 'origin')
         self.assertEqual(game.elapsed_ms, world_time)
         self.assertEqual(game.player.position, player)

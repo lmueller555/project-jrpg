@@ -104,8 +104,8 @@ def main(argv=None):
                            'centered_node': nearest, 'centered_camera': list(ui.pan)})
 
         preview.select_node('brace_01')
-        preview.key(pygame.K_0)
-        for _ in range(3):preview.key(pygame.K_MINUS)
+        ui.reset_zoom();preview.advance(.25)
+        preview.wheel(ui.map_rect.center, -3)
         run(.3, 'before dragging')
         record('before_drag')
         drag((-72, 24), 'normal window left and down', save=True)
@@ -113,10 +113,10 @@ def main(argv=None):
         drag((60, -24), 'normal window right and up')
 
         preview.resize((1440, 810))
-        preview.key(pygame.K_0);preview.advance(.25)
+        ui.reset_zoom();preview.advance(.25)
         drag((-48, -12), 'letterboxed window at 100 percent', animate=False)
         preview.resize((480, 320), 1.5)
-        preview.key(pygame.K_f);preview.advance(.25)
+        ui.fit_board();preview.advance(.25)
         drag((24, 12), 'minimum window with large text', animate=False)
         record('minimum_window_large_text')
         assert before == (game.lattice.to_dict(), game.inventory.to_dict(), game.attributes.to_dict())
