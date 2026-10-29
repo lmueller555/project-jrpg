@@ -1,0 +1,562 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_untouched": true,
+  "fixture": {
+    "rank": 1,
+    "rp": 0,
+    "steps": 0,
+    "crystals": 0
+  },
+  "progression_unchanged": true,
+  "world_unchanged": true,
+  "checks": [
+    {
+      "stage": "normal window left and down",
+      "window": [
+        960,
+        640
+      ],
+      "zoom": 0.5787037037037038,
+      "logical_displacement": [
+        -72.0,
+        24.0
+      ],
+      "grabbed_world": [
+        118.94399999999997,
+        162.17600000000002
+      ],
+      "maximum_anchor_error": 3.1776437161565096e-14,
+      "stationary_hold_camera_unchanged": true,
+      "camera_at_release": [
+        160.41599999999997,
+        134.52800000000002
+      ],
+      "camera_after_100ms": [
+        203.82252949245543,
+        124.01206035665295
+      ],
+      "centered_node": "str_01",
+      "centered_camera": [
+        208.0,
+        123.0
+      ]
+    },
+    {
+      "stage": "normal window right and up",
+      "window": [
+        960,
+        640
+      ],
+      "zoom": 0.5787037037037038,
+      "logical_displacement": [
+        60.0,
+        -24.0
+      ],
+      "grabbed_world": [
+        290.94399999999996,
+        109.176
+      ],
+      "maximum_anchor_error": 1.4210854715202004e-14,
+      "stationary_hold_camera_unchanged": true,
+      "camera_at_release": [
+        104.32000000000002,
+        164.47199999999998
+      ],
+      "camera_after_100ms": [
+        128.65772290809326,
+        174.98793964334706
+      ],
+      "centered_node": "hp_02",
+      "centered_camera": [
+        131.0,
+        176.0
+      ]
+    },
+    {
+      "stage": "letterboxed window at 100 percent",
+      "window": [
+        1440,
+        810
+      ],
+      "zoom": 1.0,
+      "logical_displacement": [
+        -48.0,
+        -12.0
+      ],
+      "grabbed_world": [
+        179.0,
+        168.0
+      ],
+      "maximum_anchor_error": 0.0,
+      "stationary_hold_camera_unchanged": true,
+      "camera_at_release": [
+        179.0,
+        188.0
+      ],
+      "camera_after_100ms": [
+        208.1906721536351,
+        215.36625514403292
+      ],
+      "centered_node": "mp_01",
+      "centered_camera": [
+        211.0,
+        218.0
+      ]
+    },
+    {
+      "stage": "minimum window with large text",
+      "window": [
+        480,
+        320
+      ],
+      "zoom": 0.10565723793677205,
+      "logical_displacement": [
+        24.0,
+        12.0
+      ],
+      "grabbed_world": [
+        1435.2992125984251,
+        199.28346456692913
+      ],
+      "maximum_anchor_error": 2.842170943040401e-14,
+      "stationary_hold_camera_unchanged": true,
+      "camera_at_release": [
+        753.8503937007874,
+        161.42519685039372
+      ],
+      "camera_after_100ms": [
+        737.5671127528813,
+        174.72045623926638
+      ],
+      "centered_node": "sweeping_strike_01",
+      "centered_camera": [
+        736.0,
+        176.0
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "file": "before_drag.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "map_rect": [
+        16,
+        68,
+        448,
+        236
+      ],
+      "camera": [
+        36.0,
+        176.0
+      ],
+      "zoom": 0.5787037037037038,
+      "selected": "brace_01"
+    },
+    {
+      "file": "during_drag.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "map_rect": [
+        16,
+        68,
+        448,
+        236
+      ],
+      "camera": [
+        160.41599999999997,
+        134.52800000000002
+      ],
+      "zoom": 0.5787037037037038,
+      "selected": "brace_01"
+    },
+    {
+      "file": "after_release.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "map_rect": [
+        16,
+        68,
+        448,
+        236
+      ],
+      "camera": [
+        208.0,
+        123.0
+      ],
+      "zoom": 0.5787037037037038,
+      "selected": "str_01"
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "map_rect": [
+        16,
+        103,
+        448,
+        201
+      ],
+      "camera": [
+        736.0,
+        176.0
+      ],
+      "zoom": 0.10565723793677205,
+      "selected": "sweeping_strike_01"
+    }
+  ],
+  "animation": {
+    "file": "camera_drag.gif",
+    "fps": 12,
+    "logical_size": [
+      480,
+      320
+    ],
+    "rendered_frames": 30,
+    "encoded_frames": 27,
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "before dragging",
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "zoom": 0.7440449116176585,
+        "selected": "brace_01",
+        "dragging": false
+      },
+      {
+        "frame": 1,
+        "stage": "before dragging",
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "zoom": 0.5981316364375351,
+        "selected": "brace_01",
+        "dragging": false
+      },
+      {
+        "frame": 2,
+        "stage": "before dragging",
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": false
+      },
+      {
+        "frame": 3,
+        "stage": "before dragging",
+        "camera": [
+          36.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": false
+      },
+      {
+        "frame": 4,
+        "stage": "normal window left and down \u2014 direct drag",
+        "camera": [
+          56.73599999999999,
+          169.088
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 5,
+        "stage": "normal window left and down \u2014 direct drag",
+        "camera": [
+          77.47199999999998,
+          162.17600000000002
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 6,
+        "stage": "normal window left and down \u2014 direct drag",
+        "camera": [
+          108.57599999999998,
+          151.808
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 7,
+        "stage": "normal window left and down \u2014 direct drag",
+        "camera": [
+          129.31199999999995,
+          144.89600000000002
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 8,
+        "stage": "normal window left and down \u2014 direct drag",
+        "camera": [
+          160.41599999999997,
+          134.52800000000002
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 9,
+        "stage": "normal window left and down \u2014 stationary hold",
+        "camera": [
+          160.41599999999997,
+          134.52800000000002
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 10,
+        "stage": "normal window left and down \u2014 stationary hold",
+        "camera": [
+          160.41599999999997,
+          134.52800000000002
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "brace_01",
+        "dragging": true
+      },
+      {
+        "frame": 11,
+        "stage": "normal window left and down \u2014 smooth release centering",
+        "camera": [
+          200.6298952395468,
+          124.78552806990804
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 12,
+        "stage": "normal window left and down \u2014 selected pulse",
+        "camera": [
+          207.98065985876136,
+          123.00468546461413
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 13,
+        "stage": "normal window left and down \u2014 selected pulse",
+        "camera": [
+          208.0,
+          123.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 14,
+        "stage": "normal window left and down \u2014 selected pulse",
+        "camera": [
+          208.0,
+          123.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 15,
+        "stage": "normal window left and down \u2014 selected pulse",
+        "camera": [
+          208.0,
+          123.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 16,
+        "stage": "normal window left and down \u2014 selected pulse",
+        "camera": [
+          208.0,
+          123.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": false
+      },
+      {
+        "frame": 17,
+        "stage": "normal window right and up \u2014 direct drag",
+        "camera": [
+          199.36,
+          126.456
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 18,
+        "stage": "normal window right and up \u2014 direct drag",
+        "camera": [
+          173.44,
+          136.82399999999998
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 19,
+        "stage": "normal window right and up \u2014 direct drag",
+        "camera": [
+          156.16000000000003,
+          143.736
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 20,
+        "stage": "normal window right and up \u2014 direct drag",
+        "camera": [
+          130.24,
+          154.10399999999998
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 21,
+        "stage": "normal window right and up \u2014 direct drag",
+        "camera": [
+          112.96000000000002,
+          161.016
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 22,
+        "stage": "normal window right and up \u2014 stationary hold",
+        "camera": [
+          104.32000000000002,
+          164.47199999999998
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 23,
+        "stage": "normal window right and up \u2014 stationary hold",
+        "camera": [
+          104.32000000000002,
+          164.47199999999998
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "str_01",
+        "dragging": true
+      },
+      {
+        "frame": 24,
+        "stage": "normal window right and up \u2014 smooth release centering",
+        "camera": [
+          124.34050500431846,
+          173.12253904384494
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      },
+      {
+        "frame": 25,
+        "stage": "normal window right and up \u2014 selected pulse",
+        "camera": [
+          130.87648148148148,
+          175.94662962962963
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      },
+      {
+        "frame": 26,
+        "stage": "normal window right and up \u2014 selected pulse",
+        "camera": [
+          131.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      },
+      {
+        "frame": 27,
+        "stage": "normal window right and up \u2014 selected pulse",
+        "camera": [
+          131.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      },
+      {
+        "frame": 28,
+        "stage": "normal window right and up \u2014 selected pulse",
+        "camera": [
+          131.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      },
+      {
+        "frame": 29,
+        "stage": "normal window right and up \u2014 selected pulse",
+        "camera": [
+          131.0,
+          176.0
+        ],
+        "zoom": 0.5787037037037038,
+        "selected": "hp_02",
+        "dragging": false
+      }
+    ]
+  }
+}

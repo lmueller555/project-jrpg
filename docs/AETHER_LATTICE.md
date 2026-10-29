@@ -88,14 +88,15 @@ remain authored scenes.
 | Click the map | Select the node nearest the pointer and smoothly center it. |
 | M | Prepare travel and inspect its cost. |
 | A | Prepare activation and inspect its cost. |
-| Enter or the confirmation dialog's Confirm button | Confirm the prepared action. |
+| Enter / keypad Enter, the same M or A key again, or the dialog's Confirm button | Confirm the prepared action. |
 | Escape | Cancel a prepared action; otherwise return to Pause. |
 | + / − or the zoom buttons | Smoothly zoom toward the selected node. |
 | Mouse wheel over the map | Smoothly zoom around the point beneath the pointer. |
-| Drag the map | Explore with the gold cursor; release to select the nearest node. |
+| Hold left mouse button and drag the map | Pan the camera directly; release to select and center the node nearest the gold cursor. |
 | F or Fit button | Smoothly fit the whole board to the viewport. |
 | 0 or 100% button | Return to 100% zoom and center the selected node. |
-| Page Up / Page Down | Scroll an open help or confirmation dialog. |
+| Mouse wheel / Page Up / Page Down | Scroll an open help, confirmation or unavailable-action dialog. |
+| Home / End | Jump to the beginning / end of an action dialog. |
 | F1 or the ? button | Open the controls help. |
 
 The lattice fills the full content width beneath the compact character header.
@@ -109,6 +110,16 @@ with a range of 5% to 200% and a visible percentage in the map toolbar. Repeated
 zoom inputs adjust the destination without jumping the current view. Zooming
 does not select a different node or spend progression resources. Wheel zoom is
 limited to the map; help and confirmation dialogs scroll their own text.
+
+Dragging grabs the map beneath the pointer: its contents track the mouse
+directly at every zoom and window scale. A three-pixel tolerance keeps small
+hand movements from turning a click into a drag. The camera and zoom stop their
+current transition when a grab begins. Wheel and + / − inputs are ignored while
+dragging; F and 0 end the grab and apply their camera actions. The gold cursor
+stays at the camera center while dragging;
+release selects its nearest node and eases to that node over 180 milliseconds.
+Dragging and selection never move the character or spend resources.
+
 Reduced Motion uses a steady selection halo and immediate camera and zoom
 changes.
 
