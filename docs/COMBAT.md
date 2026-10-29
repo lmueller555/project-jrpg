@@ -54,17 +54,25 @@ Large updates and smaller time steps follow the same readiness boundaries.
 
 ## Battle controls and interface
 
-The bottom panel places party status on the right, matching the party's side
-of the battlefield. A compact yellow ATB gauge sits to the left of Caelan's
-name. HP and MP bars appear beneath his name, with current/max numbers and
-resource labels kept visible. HP is green above 50%, yellow above 25% through
-50%, and red at 25% or below. MP is blue; the ATB fill stays yellow while
-charging and when ready.
+The compact bottom panel places a party table on the right, with shared
+**ATB, NAME, HP, MP** column headings. Each participating character occupies
+one horizontal row. A small yellow ATB gauge sits to the left of the name;
+HP and MP show current/max numbers with thin bars beneath them in their own
+columns. The current encounter has Caelan's row. HP is green above 50%, yellow
+above 25% through 50%, and red at 25% or below. MP is blue; the ATB fill stays
+yellow while charging and when ready.
 
-Commands and results occupy the left side. Commands appear when Caelan is
-ready. Mouse clicks select a command directly; arrow keys and Enter/Space
-provide keyboard access. Only supported learned abilities appear. See the
-[party status UI preview](reviews/battle_status/README.md).
+At standard text size the panel is 80 logical pixels tall, down from 108
+(about 26% shorter). Larger text can expand it to preserve readable labels
+and controls. The table shows participating characters rather than the sketch's
+illustrative future-party placeholders.
+
+Commands form a compact vertical list on the left when Caelan is ready.
+Mouse clicks select a command directly; arrow keys and Enter/Space provide
+keyboard access. Only supported learned abilities appear. Result titles and
+Continue remain on the left; action messages, rewards and retry details use
+the space beneath the party row. See the
+[compact table preview](reviews/compact_battle/README.md).
 
 | Input | Action |
 | --- | --- |

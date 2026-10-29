@@ -90,14 +90,17 @@ class BattleScene:
         self._popups = []
         self._last_phase = model.phase
         self._notice = ''
-        self.panel_rect = pygame.Rect(8, 204, 464, 108)
+        self.panel_rect = pygame.Rect(8, 232, 464, 80)
         self.command_rects = {}
-        self.continue_rect = pygame.Rect(20, 273, 206, 29)
+        self.continue_rect = pygame.Rect(20, 286, 110, 20)
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
-        self.name_rect = pygame.Rect(420, 212, 40, 15)
-        self.atb_rect = pygame.Rect(354, 216, 56, 7)
-        self.hp_rect = pygame.Rect(254, 243, 206, 7)
-        self.mp_rect = pygame.Rect(254, 268, 206, 7)
+        self.name_rect = pygame.Rect(220, 252, 40, 15)
+        self.atb_rect = pygame.Rect(156, 256, 50, 6)
+        self.hp_rect = pygame.Rect(294, 266, 86, 5)
+        self.mp_rect = pygame.Rect(390, 266, 70, 5)
+        self.party_row_rect = pygame.Rect(152, 250, 308, 24)
+        self.header_rects = {}
+        self._detail_lines = []
         self._background = self._make_background()
         self._grass = self._make_grass()
         self._shadows = self._make_shadows()
@@ -150,21 +153,51 @@ class BattleScene:
     def _layout(self, painter):
         small = painter.font('small').get_linesize()
         name = painter.font('name', bold=True).get_linesize()
-        height = max(108, name+small*3+24)
+        self._detail_lines = painter.wrap(self._detail_text(), 308, role='small')
+        row_height = max(name, small+6)+3
+        command_height = max(14, small)
+        content_offset = small+8
+        # The ordinary panel is 26% shorter. Font enlargement gets real space,
+        # rather than clipped labels or vertically compressed typography.
+        height = max(80, content_offset+max(
+            len(self.model.available_actions())*command_height+3,
+            row_height+5+len(self._detail_lines)*small+3))
         self.panel_rect = pygame.Rect(8, 312-height, 464, height)
         top = self.panel_rect.top
+        row_top = top+content_offset
         name_width, name_height = painter.font('name', bold=True).size(self.model.player.name)
-        self.name_rect = pygame.Rect(460-name_width, top+8, name_width, name_height)
-        self.atb_rect = pygame.Rect(self.name_rect.left-66, self.name_rect.centery-3, 56, 7)
-        self.hp_rect = pygame.Rect(254, top+name+small+11, 206, 7)
-        self.mp_rect = pygame.Rect(254, self.hp_rect.bottom+small+5, 206, 7)
-        self.continue_rect = pygame.Rect(20, self.panel_rect.bottom-39, 206, 29)
+        self.name_rect = pygame.Rect(220, row_top, name_width, name_height)
+        self.atb_rect = pygame.Rect(156, self.name_rect.centery-3, 50, 6)
+        self.hp_rect = pygame.Rect(294, row_top+small+1, 86, 5)
+        self.mp_rect = pygame.Rect(390, row_top+small+1, 70, 5)
+        self.party_row_rect = pygame.Rect(152, row_top-1, 308, row_height)
+        self._detail_top = self.party_row_rect.bottom+5
+        continue_height = max(20, painter.font().get_height()+4)
+        self.continue_rect = pygame.Rect(20, self.panel_rect.bottom-continue_height-5,
+                                         110, continue_height)
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
         self.command_rects = {}
         for index, identifier in enumerate(self.model.available_actions()):
-            self.command_rects[identifier] = pygame.Rect(20+(index % 2)*106,
-                                                        top+29+(index//2)*35, 100, 30)
+            self.command_rects[identifier] = pygame.Rect(20, row_top+index*command_height,
+                                                        110, command_height)
         return small, name
+
+    def _detail_text(self):
+        """Full messages flow beneath the occupied party row, never over values."""
+        model = self.model
+        if model.phase in RESULTS:
+            if self.result_error:return self.result_error
+            if model.phase == 'victory':
+                rewards = model.enemy_definition['rewards']
+                text = str(rewards['rp'])+' RP'
+                definitions = getattr(getattr(self.game, 'inventory', None), 'definitions', {})
+                for identifier, quantity in rewards['drops'].items():
+                    label = definitions.get(identifier, {}).get('name', identifier.replace('_', ' ').title())
+                    text += ' · '+label+' ×'+str(quantity)
+                return text
+            return 'Return to Eldenmere.' if model.phase == 'defeat' else ''
+        if model.phase == 'ready':return ''
+        return model.message if model.phase == 'acting' else 'Preparing the next action.'
 
     def _sound(self, kind):self.game.ui.sound(kind)
 
@@ -348,51 +381,47 @@ class BattleScene:
             painter.text(popup['text'], (x, y), role='name', color=GOLD, anchor='center', bold=True)
         painter.panel(self.panel_rect)
         top = self.panel_rect.top
+        heading = ({'victory': 'VICTORY', 'defeat': 'DEFEATED', 'fled': 'ESCAPED'}[model.phase]
+                   if model.phase in RESULTS else 'COMMANDS')
+        painter.text(heading, (20, top+5), role='small', color=GOLD, bold=True)
+        self.header_rects = {}
+        for label, center in (('ATB', 181), ('NAME', 254), ('HP', 337), ('MP', 425)):
+            self.header_rects[label] = painter.text(label, (center, top+5), role='small',
+                                                   color=GOLD, anchor='midtop', bold=True)
+        if model.phase == 'ready':painter.rect(FOREST_LIGHT, self.party_row_rect)
+        painter.line(BRASS, (152, top+small+7), (460, top+small+7))
         painter.text(player.name, self.name_rect.topleft, role='name', color=GOLD, bold=True)
-        painter.text('HP '+str(player.hp)+' / '+str(player.value('hp')),
-                     (254, top+name+10), role='small')
+        painter.text(str(player.hp)+'/'+str(player.max_hp),
+                     (self.hp_rect.left, self.name_rect.top), role='small')
         self._bar(painter, self.hp_rect, player.hp/player.max_hp,
                   self._health_color(player.hp, player.max_hp))
-        painter.text('MP '+str(player.mp)+' / '+str(player.value('mp')),
-                     (254, self.hp_rect.bottom+4), role='small')
+        painter.text(str(player.mp)+'/'+str(player.max_mp),
+                     (self.mp_rect.left, self.name_rect.top), role='small')
         self._bar(painter, self.mp_rect, player.mp/player.max_mp if player.max_mp else 0, MP_BLUE)
-        painter.text('ATB', (self.atb_rect.left-6, self.atb_rect.centery),
-                     role='small', color=GOLD, anchor='midright')
         self._bar(painter, self.atb_rect, player.atb, ATB_YELLOW)
-        painter.line(FOREST_LIGHT, (240, top+10), (240, self.panel_rect.bottom-10))
+        painter.line(FOREST_LIGHT, (142, top+5), (142, self.panel_rect.bottom-5))
+        for x in (214, 288, 384):
+            painter.line(FOREST_LIGHT, (x, top+5), (x, self.party_row_rect.bottom))
+        painter.line(FOREST_LIGHT, (152, self.party_row_rect.bottom),
+                     (460, self.party_row_rect.bottom))
+        for index, line in enumerate(self._detail_lines):
+            painter.text(line, (152, self._detail_top+index*small), role='small',
+                         color=MUTED if self.result_error else IVORY)
         if model.phase in RESULTS:
-            title = {'victory': 'Victory', 'defeat': 'Defeated', 'fled': 'Escaped'}[model.phase]
-            painter.text(title, (20, top+9), color=GOLD, bold=True)
-            if self.result_error:
-                for index, line in enumerate(painter.wrap(self.result_error, 198, role='small')[:2]):
-                    painter.text(line, (20, top+31+index*small), role='small', color=MUTED)
-            elif model.phase == 'victory':
-                rewards = model.enemy_definition['rewards']
-                reward_text = str(rewards['rp'])+' RP'
-                definitions = getattr(getattr(self.game, 'inventory', None), 'definitions', {})
-                for identifier, quantity in rewards['drops'].items():
-                    name = definitions.get(identifier, {}).get('name', identifier.replace('_', ' ').title())
-                    reward_text += ' · '+name+' ×'+str(quantity)
-                for index, line in enumerate(painter.wrap(reward_text, 198, role='small')[:2]):
-                    painter.text(line, (20, top+31+index*small), role='small')
-            elif model.phase == 'defeat':
-                painter.text('Return to Eldenmere.', (20, top+34), role='small')
             painter.button(self.continue_rect, 'Try again' if self.result_error else 'Continue')
         elif model.phase == 'ready':
-            painter.text('Choose action', (20, top+8), role='small', color=GOLD)
             for index, (identifier, rect) in enumerate(self.command_rects.items()):
                 disabled = bool(model.action_reason(identifier))
-                painter.button(rect, ACTION_LABELS.get(identifier, identifier), disabled=disabled)
+                painter.rect(FOREST, rect)
+                painter.text(ACTION_LABELS.get(identifier, identifier), rect.center,
+                             role='small', anchor='center', color=MUTED if disabled else IVORY)
                 if index == self.selected and not disabled:painter.rect(GOLD, rect, 1)
             if self._notice:
                 painter.text(self._notice, (240, self.panel_rect.top-6),
                              role='small', color=GOLD, anchor='midbottom')
         else:
             painter.text('Waiting' if model.phase == 'charging' else 'Acting',
-                         (20, top+10), color=MUTED)
-            text = model.message if model.phase == 'acting' else 'Preparing the next action.'
-            for index, line in enumerate(painter.wrap(text, 198, role='small')[:2]):
-                painter.text(line, (20, top+38+index*small), role='small')
+                         (20, self.name_rect.top), role='small', color=MUTED)
         if self.paused:
             painter.veil(150)
             painter.panel((124, 111, 232, 100))

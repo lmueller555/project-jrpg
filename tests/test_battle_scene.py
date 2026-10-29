@@ -214,16 +214,25 @@ class BattleSceneTests(unittest.TestCase):
             for text_scale in (1.0, 1.5):
                 with self.subTest(size=size, text_scale=text_scale):
                     self.game.audio.set_text_scale(text_scale)
-                    self.draw()
+                    labels = {}
+                    original = Painter.text
+
+                    def capture(painter, text, *args, **kwargs):
+                        bounds = original(painter, text, *args, **kwargs)
+                        labels.setdefault(str(text), []).append(bounds)
+                        return bounds
+
+                    with patch.object(Painter, 'text', capture):
+                        self.draw()
                     for rect in (*self.scene.command_rects.values(), self.scene.atb_rect,
                                  self.scene.continue_rect):
                         self.assertTrue(self.scene.panel_rect.contains(rect))
-                    painter = self.game.ui.painter(self.game.ui_surface)
                     for identifier, rect in self.scene.command_rects.items():
                         label = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                                  'aether_dart': 'Dart · 4 MP'}[identifier]
-                        self.assertLessEqual(painter.font().size(label)[0], rect.width-4)
-                        self.assertLessEqual(painter.font().get_height(), rect.height)
+                        self.assertEqual(len(labels[label]), 1)
+                        self.assertTrue(rect.contains(labels[label][0]),
+                                        (label, rect, labels[label][0]))
                     self.assertEqual(self.game.ui_surface.get_clip(), self.game.ui_surface.get_rect())
         self.click(self.scene.command_rects['flee'].center);self.scene.update(1);self.draw()
         self.assertEqual(self.model.phase, 'fled')
