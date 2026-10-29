@@ -2,7 +2,8 @@
 from copy import deepcopy
 import unittest
 
-from character_attributes import ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE, CharacterAttributes
+from character_attributes import (ATTRIBUTE_IDS, ATTRIBUTE_CAPS, MAX_ATTRIBUTE_VALUE,
+                                  CharacterAttributes)
 
 
 class CharacterAttributeTests(unittest.TestCase):
@@ -128,8 +129,8 @@ class CharacterAttributeTests(unittest.TestCase):
                 self.assertFalse(self.attributes.restore(record))
                 self.assertEqual(self.attributes.to_dict(), before)
         maximum = deepcopy(before)
-        maximum['attributes'] = dict.fromkeys(ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE)
-        maximum.update(current_hp=MAX_ATTRIBUTE_VALUE, current_mp=MAX_ATTRIBUTE_VALUE)
+        maximum['attributes'] = dict(ATTRIBUTE_CAPS)
+        maximum.update(current_hp=ATTRIBUTE_CAPS['hp'], current_mp=ATTRIBUTE_CAPS['mp'])
         self.assertTrue(self.attributes.restore(maximum))
 
     def test_original_caelan_health_migrates_once_and_preserves_other_ratings(self):

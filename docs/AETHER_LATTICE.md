@@ -82,6 +82,12 @@ An HP or MP node raises maximum capacity without refilling the current
 resource. For example, activating HP +100 at 140/140 produces 140/240. A new
 rank has no additional hidden stat growth.
 
+Effective attributes stop at 9,999 HP, 999 MP and 255 for the other nine ratings.
+When a node crosses a cap, its effective gain fills the remaining room; its
+normal crystal cost applies. A node for an already capped attribute has no
+Activate command and cannot consume crystals. Earned node bonuses remain
+canonical, and continuing a journey recomputes their capped result once.
+
 Brace and Mend are among the twenty learnable abilities in Caelan's section.
 Caelan retains his established basic magick capability separately. The lattice
 records and displays learned techniques; casting and resolving their effects

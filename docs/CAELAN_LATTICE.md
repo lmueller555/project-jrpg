@@ -144,3 +144,110 @@ To inspect the production menu using disposable journey and settings files:
 ```sh
 python tools/preview_aether_lattice.py --rp 0 --crystals 0
 ```
+
+## Proposed expansion — awaiting design review
+
+The following is a proposal. The implemented board remains the 200-node section
+documented above; no additional formations, rewards or abilities are enabled.
+
+### Size and composition
+
+| Content | Current | Add | Proposed |
+| --- | ---: | ---: | ---: |
+| Attribute nodes | 130 | 100 | 230 |
+| Ability nodes | 20 | 15 | 35 |
+| Empty nodes | 50 | 35 | 85 |
+| **Total** | **200** | **150** | **350** |
+
+Five new large formations of 22 nodes, four new small formations of six nodes,
+and sixteen exterior waypoints supply the added 150. The complete layout would
+have twelve large circles, nine small circles and 32 exterior nodes. Nineteen
+of the added empty nodes sit inside circles; the other sixteen provide straight
+connections. Most connecting stretches should contain only one or two empty
+nodes, with rewards and branch decisions between longer journeys.
+
+### Main route
+
+Use three rows of four large formations, following a serpentine route. Working
+names for new regions are marked with an asterisk; these names imply no new
+story canon.
+
+```text
+First Light → Steady Hand → Rooted Steps* → Clear Intent
+                                               ↓
+Shelter ← Measured Force* ← Shared Strength ← Gathering Current*
+   ↓
+Open Horizon* → Far Reach → Steadfast Heart → Lasting Resolve*
+```
+
+First Light and Steady Hand keep Caelan's opening tools close together.
+Rooted Steps adds physical reliability, defenses and capacity. Gathering Current
+offers MP, Mag and Spr choices near spell development. Measured Force combines
+physical offense, magicks and protection. Open Horizon emphasizes Speed,
+Accuracy and broader options. Lasting Resolve becomes the final region with
+several rare maximum rewards and a capstone candidate.
+
+| Parent region | Small formations |
+| --- | --- |
+| First Light | Gentle Current; Quiet Reserve |
+| Steady Hand | Clear Water |
+| Rooted Steps | Sure Footing* |
+| Clear Intent | Gathered Light |
+| Gathering Current | Quiet Focus* |
+| Shared Strength | Crossing Paths |
+| Measured Force | Helping Hand* |
+| Open Horizon | Inner Reserve* |
+
+Each small branch leaves and rejoins its parent through different connections.
+Routes through circular centers continue to separate exits without retracing.
+Internal connections remain curved and exterior connections remain straight.
+The final return route runs around the map perimeter. Its unlock condition must
+prevent the existing Quiet Reserve shortcut from bypassing new late regions.
+
+### Attribute choices and reward pacing
+
+| Attribute | Current | Proposed |
+| --- | ---: | ---: |
+| HP | 20 | 34 |
+| MP | 17 | 31 |
+| Str | 14 | 25 |
+| Mag | 19 | 33 |
+| Spr | 12 | 22 |
+| Def | 14 | 25 |
+| M. Def | 12 | 22 |
+| Speed | 8 | 14 |
+| Acc | 6 | 10 |
+| Eva | 4 | 7 |
+| Lck | 4 | 7 |
+| **Total** | **130** | **230** |
+
+This preserves broad competence, slightly greater opportunity for damaging
+magicks, and separate support growth through Spirit. The proposed fifteen
+ability slots reserve four physical, four damaging-magick, four healing or
+protective, and three utility roles. Their exact abilities need separate review.
+
+Redistribute tiers across the entire enlarged board, including existing late
+formations that become middle regions. Keep the approved HP, MP and rating
+tiers, with maximum-tier rewards on approximately seven percent of stat nodes.
+A provisional distribution is:
+
+| Phase | Stat nodes | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Foundation | 40 | 30 | 9 | 0 | 1 |
+| Developing options | 50 | 20 | 25 | 5 | 0 |
+| Greater control | 50 | 5 | 30 | 14 | 1 |
+| Advanced application | 50 | 0 | 15 | 30 | 5 |
+| Section mastery | 40 | 0 | 6 | 25 | 9 |
+| **Total** | **230** | **55** | **85** | **74** | **16** |
+
+Quiet Reserve retains the early HP +400 landmark. A second exceptional maximum
+could reward a middle-region center, while fourteen maximum rewards sit in the
+final two phases. Previously purchased rewards would retain their grants under
+the migration principle already used by the current board.
+
+Exact node assignments and total gains remain review decisions. They must leave
+useful progression space below the implemented caps of 9,999 HP, 999 MP and 255
+for each rating. Rank gates also remain provisional until actual routes are
+audited: visiting 350 distinct nodes requires at least 349 paid Steps before
+backtracking. Access to the final region and completion of every optional node
+are different milestones. RP and battle-reward pacing require a later pass.

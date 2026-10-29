@@ -3,6 +3,7 @@ import math
 import pygame
 
 from attribute_icons import draw_attribute_icon
+from character_attributes import ATTRIBUTE_CAPS
 from ui_style import FOREST_DARK, IVORY, GOLD, BRASS, MUTED, DISABLED
 
 
@@ -339,7 +340,8 @@ class LatticeUI:
         if node['kind'] == 'stat':
             label = self.game.attributes.definitions[node['stat']]['label']
             value = self.game.attributes.value(node['stat'])
-            lines.append(label+': '+str(value)+' → '+str(value+node['amount']))
+            after = min(ATTRIBUTE_CAPS[node['stat']], value+node['amount'])
+            lines.append(label+': '+str(value)+' → '+str(after))
             if node['stat'] in ('hp', 'mp'):
                 current = (self.game.attributes.current_hp if node['stat'] == 'hp'
                            else self.game.attributes.current_mp)
@@ -421,7 +423,8 @@ class LatticeUI:
             value = self.game.attributes.value(node['stat'])
             lines.append(label+' +'+str(node['amount']))
             if self.selected not in state['activated']:
-                lines.append('After activation: '+str(value)+' → '+str(value+node['amount']))
+                after = min(ATTRIBUTE_CAPS[node['stat']], value+node['amount'])
+                lines.append('After activation: '+str(value)+' → '+str(after))
             if node['stat'] in ('hp', 'mp'):lines.append('Current '+label+' stays unchanged.')
         elif node['kind'] == 'ability':
             ability = self.board.abilities[node['ability_id']]

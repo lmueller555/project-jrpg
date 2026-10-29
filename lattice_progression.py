@@ -53,7 +53,10 @@ class LatticeProgression:
                 name = self.inventory.definitions[identifier]['name']
                 return f'Requires {quantity} {name} ({self.inventory.quantity(identifier)} owned).'
         if node['kind'] == 'stat':
-            if self.attributes[character_id].value(node['stat'])+node['amount'] > MAX_ATTRIBUTE_VALUE:
+            attributes = self.attributes[character_id]
+            if attributes.value(node['stat']) >= attributes.cap(node['stat']):
+                return 'This attribute is already at its cap.'
+            if attributes.value(node['stat'])+node['amount'] > MAX_ATTRIBUTE_VALUE:
                 return 'This attribute cannot be increased further.'
         return ''
 

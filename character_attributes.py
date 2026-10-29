@@ -2,7 +2,8 @@
 
 HP and MP attributes are maxima; their current resource values are separate.
 Saved attributes are preserved base values. Effective values add named modifier
-sources rebuilt from their canonical owners, such as activated lattice nodes.
+sources rebuilt from their canonical owners, such as activated lattice nodes,
+then stop at each attribute's gameplay cap. Earned modifiers remain canonical.
 All other attributes are ratings, not percentages. This supplies no combat
 damage, healing, hit, evasion, critical-hit or turn-timing formulas.
 """
@@ -13,8 +14,11 @@ from pathlib import Path
 
 ATTRIBUTE_IDS = ('hp', 'mp', 'str', 'mag', 'spr', 'def', 'm_def',
                  'speed', 'acc', 'eva', 'lck')
-# A bound on stored integers, not an approved combat or progression cap.
+# Storage bounds also validate raw growth; gameplay caps bound effective values.
 MAX_ATTRIBUTE_VALUE = 999999
+ATTRIBUTE_CAPS = {identifier: 9999 if identifier == 'hp' else
+                  999 if identifier == 'mp' else 255
+                  for identifier in ATTRIBUTE_IDS}
 SNAPSHOT_VERSION = 3
 CATALOG_PATH = Path(__file__).parent/'assets/characters/attributes.json'
 
@@ -23,9 +27,10 @@ def _integer(value, minimum=0):
     return type(value) is int and minimum <= value <= MAX_ATTRIBUTE_VALUE
 
 
-def _valid_attributes(values):
+def _valid_attributes(values, capped=True):
     return (isinstance(values, dict) and set(values) == set(ATTRIBUTE_IDS)
             and all(_integer(value, 1 if identifier == 'hp' else 0)
+                    and (not capped or value <= ATTRIBUTE_CAPS[identifier])
                     for identifier, value in values.items()))
 
 
@@ -34,10 +39,15 @@ def _valid_bonuses(values):
             and all(_integer(value) for value in values.values()))
 
 
-def _effective_values(base, sources):
+def _attribute_totals(base, sources):
     return {identifier: base[identifier]+sum(values.get(identifier, 0)
                                            for values in sources.values())
             for identifier in ATTRIBUTE_IDS}
+
+
+def _capped_values(totals):
+    return {identifier: min(value, ATTRIBUTE_CAPS[identifier])
+            for identifier, value in totals.items()}
 
 
 class CharacterAttributes:
@@ -91,10 +101,16 @@ class CharacterAttributes:
     def current_mp(self):
         return self._current_mp
 
+    @staticmethod
+    def cap(identifier):
+        """Return the shared gameplay maximum for an attribute."""
+        return ATTRIBUTE_CAPS[identifier]
+
     def value(self, identifier):
-        """Return an effective rating, or maximum capacity for HP and MP."""
-        return self._attributes[identifier]+sum(values.get(identifier, 0)
+        """Return a capped effective rating, or maximum capacity for HP and MP."""
+        total = self._attributes[identifier]+sum(values.get(identifier, 0)
                                                 for values in self._modifiers.values())
+        return min(total, self.cap(identifier))
 
     def base_value(self, identifier):
         """Return preserved growth before lattice or other named modifiers."""
@@ -104,8 +120,9 @@ class CharacterAttributes:
         """Replace one source atomically without changing base or current resources.
 
         An empty mapping removes that source. Recomputing the same lattice
-        bonuses therefore never stacks them. A replacement that would leave a
-        current resource above its new maximum is rejected rather than clamped.
+        bonuses therefore never stacks them. Raw earned growth is preserved
+        when its effective value reaches a gameplay cap. A replacement that
+        would leave a current resource above its new maximum is rejected.
         """
         if (not isinstance(source, str) or not source.strip() or len(source) > 64
                 or not _valid_bonuses(bonuses)):
@@ -113,8 +130,9 @@ class CharacterAttributes:
         sources = {name: dict(values) for name, values in self._modifiers.items()
                    if name != source}
         if bonuses:sources[source] = dict(bonuses)
-        effective = _effective_values(self._attributes, sources)
-        if (not _valid_attributes(effective)
+        totals = _attribute_totals(self._attributes, sources)
+        effective = _capped_values(totals)
+        if (not _valid_attributes(totals, capped=False)
                 or self.current_hp > effective['hp'] or self.current_mp > effective['mp']):
             return False
         self._modifiers = sources
@@ -162,8 +180,9 @@ class CharacterAttributes:
         bonuses = {} if lattice_bonuses is None else lattice_bonuses
         if not _valid_bonuses(bonuses):return False
         if data['version'] < SNAPSHOT_VERSION and any(bonuses.values()):return False
-        effective = _effective_values(data['attributes'], {'lattice': bonuses})
-        if not _valid_attributes(effective):return False
+        totals = _attribute_totals(data['attributes'], {'lattice': bonuses})
+        if not _valid_attributes(totals, capped=False):return False
+        effective = _capped_values(totals)
         return (all(_integer(data['current_'+resource])
                     and data['current_'+resource] <= effective[resource]
                     for resource in ('hp', 'mp')))
