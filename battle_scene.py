@@ -91,28 +91,53 @@ class BattleScene:
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
         self.atb_rect = pygame.Rect(56, 290, 174, 10)
         self._background = self._make_background()
+        self._grass = self._make_grass()
+        self._shadows = self._make_shadows()
 
     @staticmethod
-    def _make_background():
-        """An original, quiet clearing; it does not advance the exploration world."""
-        image = pygame.Surface((480, 320))
-        image.fill(FOREST_DARK)
-        pygame.draw.rect(image, '#3b5a4a', (0, 0, 480, 80))
-        for band, color in ((25, '#294a3d'), (44, '#345943'), (66, '#42694b')):
-            for x in range(-18, 500, 36):
-                top = band-(x//36 % 3)*6
-                pygame.draw.polygon(image, color, ((x, 100), (x+19, top), (x+40, 100)))
-        pygame.draw.rect(image, '#55794d', (0, 88, 480, 120))
-        pygame.draw.ellipse(image, '#68834f', (-60, 101, 610, 174))
-        pygame.draw.ellipse(image, '#758956', (34, 142, 412, 111))
-        # Stable grass flecks are native pixels, not time-based noise.
-        for index in range(75):
-            x = (index*67+19) % 480
-            y = 95+(index*37) % 112
-            color = '#496d45' if index % 3 else '#83935b'
-            pygame.draw.line(image, color, (x, y), (x+2, y-2), 1)
-        pygame.draw.rect(image, FOREST_DARK, (0, 204, 480, 116))
-        return image
+    def _make_background(path=COMBAT_ART/'eldenmere/background.png'):
+        """Load the authored well-side clearing once at its native pixel size."""
+        image = pygame.image.load(str(path))
+        if image.get_size() != (480, 320):
+            raise ValueError('Eldenmere battlefield must be 480 by 320 pixels')
+        return image.convert()
+
+    @staticmethod
+    def _make_grass(path=COMBAT_ART/'eldenmere/grass.png'):
+        """Cache a few native-pixel breeze poses of the authored foreground tuft."""
+        image = pygame.image.load(str(path)).convert_alpha()
+        if image.get_size() != (24, 12):
+            raise ValueError('Eldenmere foreground grass must be 24 by 12 pixels')
+        return tuple(pygame.transform.rotate(image, angle) for angle in (-4, 0, 4))
+
+    def _draw_foreground(self, canvas):
+        for x, y, phase in ((32, 198, 0), (456, 197, 1.8)):
+            sway = 0 if self.reduced_motion else math.sin(self._elapsed*1.4+phase)
+            image = self._grass[0 if sway < -.4 else 2 if sway > .4 else 1]
+            canvas.blit(image, image.get_rect(midbottom=(x, y)))
+
+    @staticmethod
+    def _make_shadows():
+        """Small translucent ground projections keep the painted grass visible."""
+        shadows = {}
+        for key, size, opacity in (('player', (34, 7), 65),
+                                   ('enemy_low', (30, 7), 48),
+                                   ('enemy_high', (24, 5), 34)):
+            image = pygame.Surface(size, pygame.SRCALPHA)
+            pygame.draw.ellipse(image, (31, 43, 29, opacity//2), image.get_rect())
+            pygame.draw.ellipse(image, (31, 43, 29, opacity), image.get_rect().inflate(-8, -2))
+            shadows[key] = image
+        return shadows
+
+    def _draw_shadow(self, canvas, actor, point):
+        if actor == 'player':
+            image, ground_y = self._shadows['player'], round(point.y)
+        else:
+            # The Bat moves above the same ground plane, including its idle bob.
+            ground_y = 184
+            image = self._shadows['enemy_low' if point.y > 177 else 'enemy_high']
+        canvas.blit(image, (round(point.x)-image.get_width()//2,
+                            ground_y-image.get_height()//2))
 
     def _layout(self, painter):
         small = painter.font('small').get_linesize()
@@ -262,7 +287,7 @@ class BattleScene:
         positions = self._positions()
         for actor in ('enemy', 'player'):
             point = positions[actor]
-            pygame.draw.ellipse(canvas, '#496044', (round(point.x)-20, 181, 40, 8))
+            self._draw_shadow(canvas, actor, point)
             state, time = self._pose(actor)
             image, anchor = self.sprites.frame('caelan' if actor == 'player' else 'bat', state, time)
             canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
@@ -276,6 +301,7 @@ class BattleScene:
             for index, radius in enumerate((5, 3, 1)):
                 color = ('#376ea2', '#72c8f0', '#d8f7ff')[index]
                 pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
+        self._draw_foreground(canvas)
 
     @staticmethod
     def _bar(painter, rect, fraction, color):
@@ -291,9 +317,11 @@ class BattleScene:
         painter = self.game.ui.painter(ui_surface)
         small, name = self._layout(painter)
         model, player, enemy = self.model, self.model.player, self.model.enemy
+        painter.text(enemy.name, (127, 44), role='name', color=FOREST_DARK, anchor='center', bold=True)
         painter.text(enemy.name, (126, 43), role='name', anchor='center', bold=True)
         self._bar(painter, pygame.Rect(86, 57, 80, 6), enemy.hp/enemy.value('hp'), '#9ab46b')
         caption = model.current_action.name if model.current_action is not None else 'Eldenmere'
+        painter.text(caption, (241, 16), color=FOREST_DARK, anchor='midtop')
         painter.text(caption, (240, 15), color=GOLD, anchor='midtop')
         for popup in self._popups:
             x = 354 if popup['target'] == 'player' else 126

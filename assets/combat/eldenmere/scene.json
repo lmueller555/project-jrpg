@@ -1,0 +1,46 @@
+{
+  "id": "eldenmere_well_green",
+  "canvas": [
+    480,
+    320
+  ],
+  "background": "background.png",
+  "grass": "grass.png",
+  "grass_size": [
+    24,
+    12
+  ],
+  "sources": {
+    "background": {
+      "file": "assets/source/combat/eldenmere_background_generated.png",
+      "sha256": "236ef1b606388e5428b9de444a6e6cc050951082c0d1dda23784cda6c0f5bbe9",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    "grass": {
+      "file": "assets/source/combat/eldenmere_grass_generated.png",
+      "sha256": "2fc02da0d785b7b1623b2ac0505e049c570bcc3d089b0c4c104890be13d5ffa1",
+      "dimensions": [
+        1774,
+        887
+      ]
+    }
+  },
+  "exporter": "tools/build_eldenmere_battlefield.py",
+  "world_map": "eldenmere.playable",
+  "encounter_position": [
+    336,
+    900
+  ],
+  "well_position": [
+    528,
+    864
+  ],
+  "notes": [
+    "View across the village green west of Eldenmere's well.",
+    "Quiet central fighting lane; foreground accents stay at the outer edges.",
+    "No festival-state props, river or mill in this local view."
+  ]
+}
