@@ -1,0 +1,60 @@
+{
+  "isolated_temporary_journey": true,
+  "normal_journey_and_settings_untouched": true,
+  "resource_values_are_display_fixtures": true,
+  "health_states": [
+    {
+      "hp": 140,
+      "mp": 30,
+      "color": "green"
+    },
+    {
+      "hp": 70,
+      "mp": 15,
+      "color": "yellow"
+    },
+    {
+      "hp": 35,
+      "mp": 0,
+      "color": "red"
+    }
+  ],
+  "captures": [
+    {
+      "file": "battle_ready.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "hp": 140,
+      "max_hp": 140,
+      "mp": 30,
+      "max_mp": 30
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "hp": 140,
+      "max_hp": 140,
+      "mp": 30,
+      "max_mp": 30
+    },
+    {
+      "file": "maximum_resources_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "hp": 9999,
+      "max_hp": 9999,
+      "mp": 999,
+      "max_mp": 999
+    }
+  ]
+}
