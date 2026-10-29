@@ -2,6 +2,11 @@
 
 Explore the approved Eldenmere town as Caelan by running `main.py`. The game uses the new 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
 
+## Music files
+
+Add your music files to [`assets/music/`](assets/music/). The folder's README
+covers formats, filenames and optional track notes.
+
 ## Play Eldenmere
 
 Use Python 3.10 or newer. From the repository folder:
