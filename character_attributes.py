@@ -4,8 +4,9 @@ HP and MP attributes are maxima; their current resource values are separate.
 Saved attributes are preserved base values. Effective values add named modifier
 sources rebuilt from their canonical owners, such as activated lattice nodes,
 then stop at each attribute's gameplay cap. Earned modifiers remain canonical.
-All other attributes are ratings, not percentages. This supplies no combat
-damage, healing, hit, evasion, critical-hit or turn-timing formulas.
+All other attributes are ratings, not percentages. Combat damage is calculated
+by combat_damage.py; healing, hit, evasion, critical-chance and turn-timing
+formulas remain separate concerns.
 """
 from copy import deepcopy
 import json

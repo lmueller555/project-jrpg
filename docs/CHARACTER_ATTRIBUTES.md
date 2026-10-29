@@ -121,9 +121,15 @@ larger bonuses deeper in the lattice; see the [section growth budget](CAELAN_LAT
 Increasing maximum HP or MP leaves the current resource unchanged. Rank gains
 award movement, without hidden stat growth.
 
-Battle rules, equipment behavior, damage and healing formulas, and ability
-execution remain future work. The attributes do not assign jobs or establish
-additional playable party members.
+The approved [damage formula](DAMAGE_FORMULA.md) is implemented in
+[`combat_damage.py`](../combat_damage.py). Physical attacks use Str/Def and
+damaging magicks use Mag/M. Def, with per-hit limits of 9,999 or 99,999 when
+cap-breaking is enabled. The calculator reads effective capped attributes and
+does not change the character or their resources.
+
+The battle controller, enemy profiles, equipment behavior, healing, hit/evasion
+and critical-chance formulas, and ability execution remain future work. The
+attributes do not assign jobs or establish additional playable party members.
 
 Opening quest magicks remain authored actions. Caelan's inability to apply
 sustained force against the irrigation current and his small success at the

@@ -193,7 +193,11 @@ Current HP/MP and all attributes persist with the journey. Older saves without
 attributes receive the starting profile; the original 300-HP profile migrates
 to 140 HP while preserving its health proportion. New Game resets the profile. See
 [attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
-Characters also shows Attunement and RP progress. Combat formulas remain future work.
+Characters also shows Attunement and RP progress. The approved
+[per-hit damage formula](docs/DAMAGE_FORMULA.md) is implemented in
+`combat_damage.py`, with physical/magical attribute pairs and 9,999/99,999
+damage limits. The battle controller, enemy balancing and ability execution
+remain future work.
 
 **Pause → Aether Lattice** opens the connected progression board. Battle-earned
 Resonance Points increase Attunement Rank; each gained rank awards one Lattice
