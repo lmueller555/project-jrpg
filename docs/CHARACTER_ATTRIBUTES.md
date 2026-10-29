@@ -36,8 +36,9 @@ condition; it does not establish that ordinary combat recovery resurrects the
 dead.
 
 The other values are ratings. For example, Acc 10, Eva 10 and Lck 10 do not mean
-10% accuracy, evasion or critical chance. Numerical formulas and
-the effect of Speed on turn frequency remain part of future combat design.
+10% accuracy, evasion or critical chance. Accuracy, evasion and critical-chance
+formulas remain future work. Speed now controls the
+[ATB gauge's charging rate](COMBAT.md#timing-and-decisions).
 Speed does not change exploration walking or running. These starting numbers
 are a tunable baseline for the all-rounder profile.
 
@@ -127,8 +128,10 @@ damaging magicks use Mag/M. Def, with per-hit limits of 9,999 or 99,999 when
 cap-breaking is enabled. The calculator reads effective capped attributes and
 does not change the character or their resources.
 
-The battle controller, enemy profiles, equipment behavior, healing, hit/evasion
-and critical-chance formulas, and ability execution remain future work. The
+The first [Bat encounter](COMBAT.md) implements charging, turns and a small set
+of actions using this backend. Wider enemy profiles, equipment behavior, healing,
+hit/evasion and critical-chance formulas, and the remaining abilities await later
+passes. The
 attributes do not assign jobs or establish additional playable party members.
 
 Opening quest magicks remain authored actions. Caelan's inability to apply

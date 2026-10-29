@@ -120,6 +120,7 @@ number of hits.
 
 The module supplies damage mathematics only. It does not start battles, spend
 MP, select targets, remove HP, roll accuracy or critical chance, unlock the
-damage-limit break, or assign enemy values. Those callers will use this shared
-calculator when combat and abilities are implemented. Healing remains separate
+damage-limit break, or assign enemy values. The first [ATB battle](COMBAT.md)
+now uses this shared calculator for Attack, Aether Dart and the Bat's abilities.
+Other combat actions will use the same backend. Healing remains separate
 and will use Spirit. Existing opening-quest spell outcomes remain authored scenes.
