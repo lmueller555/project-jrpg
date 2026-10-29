@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "actor": "caelan",
+  "canvas": [
+    48,
+    48
+  ],
+  "anchor": [
+    24,
+    42
+  ],
+  "facing": "left",
+  "source_sheet": "assets/source/combat/caelan_generated_sheet.png",
+  "source_sha256": "92c3ab02e6a3d77db738fe0003a0893920a4a1075e1fe0cf50fd31a80cc81f4a",
+  "sheet": "spritesheet.png",
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 260,
+          "source_cell": 0
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 260,
+          "source_cell": 1
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 180,
+          "source_cell": 2
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 240,
+          "source_cell": 3
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300,
+          "source_cell": 4
+        }
+      ]
+    },
+    "cast": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cast_01.png",
+          "duration_ms": 250,
+          "source_cell": 5
+        },
+        {
+          "file": "cast_02.png",
+          "duration_ms": 330,
+          "source_cell": 6
+        },
+        {
+          "file": "cast_03.png",
+          "duration_ms": 320,
+          "source_cell": 7
+        }
+      ]
+    },
+    "guard": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "guard_01.png",
+          "duration_ms": 240,
+          "source_cell": 8
+        },
+        {
+          "file": "guard_02.png",
+          "duration_ms": 240,
+          "source_cell": 9
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 160,
+          "source_cell": 10
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 240,
+          "source_cell": 11
+        }
+      ]
+    },
+    "victory": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "victory_01.png",
+          "duration_ms": 340,
+          "source_cell": 12
+        },
+        {
+          "file": "victory_02.png",
+          "duration_ms": 340,
+          "source_cell": 13
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 260,
+          "source_cell": 14
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 420,
+          "source_cell": 15
+        }
+      ]
+    }
+  }
+}

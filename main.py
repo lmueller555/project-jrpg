@@ -45,6 +45,7 @@ from opening_conclusion import OpeningConclusion
 from mill_quest import MillQuest
 from regent_quest import RegentQuest
 from lantern_quest import LanternQuest
+from world_encounters import CombatEncounters
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -441,6 +442,7 @@ class Game:
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
+        self.combat=CombatEncounters(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -580,6 +582,7 @@ class Game:
         """Continue quest facts, not an interrupted conversation or NPC action."""
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
+        self.combat.reset()
         self.lattice=AetherLattice()
         if data is not None and 'aether_lattice' in data:
             self.lattice.restore(data['aether_lattice'])
@@ -801,6 +804,11 @@ class Game:
             if self.on_title:
                 if not self.title.handle_event(event):return False
                 continue
+            if resumed:continue
+            if self.combat.active:
+                self.combat.handle_event(event)
+                resumed=not self.combat.active
+                continue
             if event.type==pygame.MOUSEBUTTONUP and event.button==1:
                 self._mouse_held=False
                 self.social.pointer(self.to_canvas(getattr(event,'pos',pygame.mouse.get_pos())),pressed=False)
@@ -875,12 +883,17 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
-                    if not any(visit.interact() for visit in self.household_visits) and not self.try_world_link():self.opening.inspect_nearby()
+                    if not any(visit.interact() for visit in self.household_visits):
+                        if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
         if self.on_title:
             self.title.update(seconds)
+            return
+        if self.combat.active:
+            self.opening_audio.set_paused(True)
+            self.combat.update(seconds)
             return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open)
         if self.pause.is_open or self.inventory_ui.is_open:
@@ -888,6 +901,7 @@ class Game:
             self.opening_audio.update(0)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
+        self.combat.tick_world(seconds)
         self.elapsed_ms+=seconds*1000
         self.location_seconds=max(0.0,self.location_seconds-seconds)
         self.opening.update(seconds)
@@ -1054,6 +1068,7 @@ class Game:
                 canvas.blit(layer,(0,0))
         hint=self.opening.interaction_hint() or next((hint for visit in self.household_visits
                                                      if (hint:=visit.interaction_hint())), '')
+        if not hint:hint=self.combat.interaction_hint()
         if not hint:
             link=self.nearby_world_link()
             if link is not None:hint='E: '+link.get('label','Follow the trail')
@@ -1073,8 +1088,16 @@ class Game:
         if self.on_title:
             self.title.draw()
             return
+        if self.combat.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.combat.scene.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19')
+            self.window.blit(self.ui_surface,origin)
+            pygame.display.flip()
+            return
         camera=self.camera.position()
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
+        self.combat.draw_world(self.canvas,camera)
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
         _,size,origin=self._ensure_ui_surface()

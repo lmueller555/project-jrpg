@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "actions": {
+    "attack": {"name": "Attack", "kind": "physical", "potency": 1, "mp_cost": 0, "duration": 0.72, "impact_at": 0.36, "animation": "attack", "target": "opponent"},
+    "guard": {"name": "Guard", "kind": "guard", "potency": 0, "mp_cost": 0, "duration": 0.5, "impact_at": 0.2, "animation": "guard", "target": "self"},
+    "flee": {"name": "Flee", "kind": "flee", "potency": 0, "mp_cost": 0, "duration": 0.7, "impact_at": 0.35, "animation": "flee", "target": "none"},
+    "aether_dart": {"name": "Aether Dart", "kind": "magical", "potency": 2, "mp_cost": 4, "duration": 0.9, "impact_at": 0.5, "animation": "cast", "target": "opponent"},
+    "bite": {"name": "Bite", "kind": "physical", "potency": 1, "mp_cost": 0, "duration": 0.72, "impact_at": 0.36, "animation": "bite", "target": "opponent"},
+    "wing_gust": {"name": "Wing Gust", "kind": "magical", "potency": 1.5, "mp_cost": 2, "duration": 0.85, "impact_at": 0.45, "animation": "gust", "target": "opponent"}
+  }
+}

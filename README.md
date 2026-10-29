@@ -196,21 +196,25 @@ to 140 HP while preserving its health proportion. New Game resets the profile. S
 Characters also shows Attunement and RP progress. The approved
 [per-hit damage formula](docs/DAMAGE_FORMULA.md) is implemented in
 `combat_damage.py`, with physical/magical attribute pairs and 9,999/99,999
-damage limits. The battle controller, enemy balancing and ability execution
-remain future work.
+damage limits. The first [wait-ATB battle](docs/COMBAT.md) is playable against
+a visible Bat on the grass west of the well. Approach and press **E** when
+**Engage Bat** appears. The separate battle scene includes Caelan's combat
+animations, Attack, Guard, Flee and learned Aether Dart, plus the bottom HP/MP/ATB
+panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
+[combat preview](docs/reviews/atb_combat/README.md).
 
 **Pause → Aether Lattice** opens the connected progression board. Battle-earned
 Resonance Points increase Attunement Rank; each gained rank awards one Lattice
 Step. Every connection crossed costs one Step, including blank nodes and
 backtracking. Reaching a stat or ability node makes it available for activation
 with the matching Aether Crystal. Movement and activation are separate actions;
-unactivated nodes remain traversable. The 30-node starter board includes two
-side branches, rank gates, all eleven attributes and Brace/Mend ability nodes.
+unactivated nodes remain traversable. The 200-node section includes large and
+small circular formations, rank gates, all eleven attributes and twenty ability nodes.
 Node bonuses persist without being applied again on Continue. HP/MP nodes raise
 capacity without refilling current resources. See the
 [Aether Lattice reference](docs/AETHER_LATTICE.md).
 
-The battle-reward interface is ready for future combat. Normal journeys begin
+Bat victories use the battle-reward interface. Normal journeys begin
 at Attunement 1 with zero RP, zero Steps and no crystals; opening quests do not
 grant sample rewards. Review the system immediately in an isolated temporary
 journey with `python tools/preview_aether_lattice.py`, or use

@@ -165,7 +165,7 @@ operations are `move_lattice`, `activate_lattice` and `award_battle_rewards`.
 
 ## Battle rewards
 
-The current game has no battle controller. The integration boundary is:
+The first [Bat encounter](COMBAT.md) uses this reward integration boundary:
 
 ```python
 game.award_battle_rewards(

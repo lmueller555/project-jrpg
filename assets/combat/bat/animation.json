@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "actor": "bat",
+  "canvas": [
+    48,
+    48
+  ],
+  "anchor": [
+    24,
+    42
+  ],
+  "facing": "right",
+  "source_sheet": "assets/source/combat/bat_generated_sheet.png",
+  "source_sha256": "abd3169598a8c5c938ea4ceeb577ed66fe1ba3881f8c33c2956fd8d870e518ee",
+  "sheet": "spritesheet.png",
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 120,
+          "source_cell": 0
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 120,
+          "source_cell": 1
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 120,
+          "source_cell": 2
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 120,
+          "source_cell": 3
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 180,
+          "source_cell": 4
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 240,
+          "source_cell": 5
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300,
+          "source_cell": 6
+        }
+      ]
+    },
+    "cast": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cast_01.png",
+          "duration_ms": 200,
+          "source_cell": 7
+        },
+        {
+          "file": "cast_02.png",
+          "duration_ms": 330,
+          "source_cell": 8
+        },
+        {
+          "file": "cast_03.png",
+          "duration_ms": 320,
+          "source_cell": 9
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 150,
+          "source_cell": 10
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 220,
+          "source_cell": 11
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 150,
+          "source_cell": 12
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 180,
+          "source_cell": 13
+        },
+        {
+          "file": "defeat_03.png",
+          "duration_ms": 200,
+          "source_cell": 14
+        },
+        {
+          "file": "defeat_04.png",
+          "duration_ms": 350,
+          "source_cell": 15
+        }
+      ]
+    },
+    "fly": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 120,
+          "source_cell": 0
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 120,
+          "source_cell": 1
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 120,
+          "source_cell": 2
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 120,
+          "source_cell": 3
+        }
+      ]
+    },
+    "bite": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 180,
+          "source_cell": 4
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 240,
+          "source_cell": 5
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300,
+          "source_cell": 6
+        }
+      ]
+    },
+    "wing_gust": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cast_01.png",
+          "duration_ms": 200,
+          "source_cell": 7
+        },
+        {
+          "file": "cast_02.png",
+          "duration_ms": 330,
+          "source_cell": 8
+        },
+        {
+          "file": "cast_03.png",
+          "duration_ms": 320,
+          "source_cell": 9
+        }
+      ]
+    }
+  }
+}

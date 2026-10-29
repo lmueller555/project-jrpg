@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "enemies": {
+    "bat": {
+      "name": "Bat",
+      "attributes": {"hp": 72, "mp": 4, "str": 7, "mag": 6, "spr": 3, "def": 6, "m_def": 5, "speed": 8, "acc": 10, "eva": 12, "lck": 4},
+      "abilities": ["bite", "wing_gust"],
+      "rewards": {"rp": 20, "drops": {"aether_emerald": 1}}
+    }
+  }
+}
