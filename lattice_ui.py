@@ -68,6 +68,7 @@ class LatticeUI:
         self._pulse_elapsed = 0.0
         self._drag_moved = False
         self._drag_start = None
+        self._drag_pan = None
         self._click_world = None
         self.pending = None
         self.message = ''
@@ -75,7 +76,6 @@ class LatticeUI:
         self.notice_title = ''
         self._held = False
         self.dragging = False
-        self.drag_origin = None
         self.help_open = False
         self.help_scroll = 0
         self.help_max_scroll = 0
@@ -165,9 +165,20 @@ class LatticeUI:
         was_navigating = self.navigating
         self._keys.clear()
         self.dragging = False
-        self.drag_origin = self._drag_start = self._click_world = None
+        self._drag_pan = self._drag_start = self._click_world = None
         self._drag_moved = False
         if settle and was_navigating:self._settle_cursor()
+
+    def _drag_to(self, point):
+        """Keep the grabbed map point under the pointer, without camera lag."""
+        if not self.dragging or point is None:return
+        delta = pygame.Vector2(point)-self._drag_start
+        if not self._drag_moved and delta.length_squared() < 9:return
+        self._drag_moved = True
+        self.pan.update(self._drag_pan-delta/self.zoom)
+        self.cursor_position.update(self.pan)
+        self._camera_target = self.pan.copy()
+        self._camera_elapsed = self.CAMERA_DURATION
 
     def update(self, dt):
         """Advance exploration and selection feedback while the world is paused."""
@@ -190,10 +201,10 @@ class LatticeUI:
                 self._clamp_cursor()
         if self.navigating:
             self._zoom_anchor = None
-            if getattr(self.game.audio, 'reduced_motion', False):self.pan.update(self.cursor_position)
-            else:
-                # Exponential following stays fluid when direction changes during a hold.
-                self.pan += (self.cursor_position-self.pan)*(1-math.exp(-24*dt))
+            # Drag events position the camera directly; keyboard exploration follows.
+            if not self.dragging:
+                if getattr(self.game.audio, 'reduced_motion', False):self.pan.update(self.cursor_position)
+                else:self.pan += (self.cursor_position-self.pan)*(1-math.exp(-24*dt))
             self._camera_target = self.pan.copy()
             self._camera_elapsed = self.CAMERA_DURATION
         elif self._zoom_anchor is not None:
@@ -299,6 +310,7 @@ class LatticeUI:
                 self._zoom_anchor = None
 
     def _zoom(self, factor, anchor=None):
+        if self.dragging:return
         target = max(self.MIN_ZOOM, min(self.MAX_ZOOM, self.target_zoom*factor))
         if math.isclose(target, self.target_zoom):return
         focus = self.cursor_position if self.navigating else self.board.nodes[self.selected]['position']
@@ -465,7 +477,7 @@ class LatticeUI:
                 'Exploration never spends Steps or crystals.\n'
                 'M prepares travel. A prepares activation. Press Enter or click Confirm to proceed. '
                 'Esc cancels a prepared action, then returns to Pause.\n'
-                'Drag the map to explore, then release to center the nearest node. '
+                'Hold the left mouse button and drag to pan the camera. Release to center the node nearest the gold cursor. '
                 'Use + / - or the buttons to zoom around the selected node. The map wheel zooms at the pointer. '
                 'F / Fit shows the entire lattice. 0 / 100% returns to a readable close-up. '
                 'The percentage shows the current camera zoom.\n'
@@ -492,11 +504,12 @@ class LatticeUI:
             if held and not self.navigating:self._settle_cursor()
             return True
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            self._drag_to(point)
             if self.dragging and not self._drag_moved and self._click_world is not None:
                 self.cursor_position.update(self._click_world)
             was_dragging = self.dragging
             self._held = self.dragging = False
-            self.drag_origin = self._drag_start = self._click_world = None
+            self._drag_pan = self._drag_start = self._click_world = None
             self._drag_moved = False
             if was_dragging and not self._keys:self._settle_cursor()
             return True
@@ -564,6 +577,7 @@ class LatticeUI:
                 if self.pending is not None:self.pending = None;self.message = ''
                 else:self.close()
             elif event.key in self.DIRECTIONS:
+                if self.dragging:return True
                 self._zoom_anchor = None
                 self._keys.add(event.key)
                 self.hovered = None
@@ -600,23 +614,20 @@ class LatticeUI:
             elif self.fit_rect.collidepoint(point):self.fit_board()
             elif self.reset_zoom_rect.collidepoint(point):self.reset_zoom()
             elif self.map_rect.collidepoint(point):
-                self._zoom_anchor = None
+                self._cancel_zoom()
                 self._keys.clear()
                 self.dragging = True
-                self.drag_origin = pygame.Vector2(point)
-                self._drag_start = self.drag_origin.copy()
+                self._drag_start = pygame.Vector2(point)
+                self._drag_pan = self.pan.copy()
+                self._camera_target = self.pan.copy()
+                self._camera_elapsed = self.CAMERA_DURATION
                 self._click_world = self.pan+(pygame.Vector2(point)-pygame.Vector2(self.map_rect.center))/self.zoom
                 self._drag_moved = False
                 self.cursor_position.update(self.pan)
         elif event.type == pygame.MOUSEMOTION:
             self.hovered = self._node_at(point)
-            if self.dragging and point is not None and self.drag_origin is not None:
-                delta = pygame.Vector2(point)-self.drag_origin
-                if self._drag_moved or pygame.Vector2(point).distance_to(self._drag_start) >= 3:
-                    self._drag_moved = True
-                    self.cursor_position -= delta/self.zoom
-                    self._clamp_cursor()
-                self.drag_origin = pygame.Vector2(point)
+            if self.dragging and point is not None:
+                self._drag_to(point)
                 self.hovered = None
             elif self.dragging and point is None:self._stop_navigation()
         return True

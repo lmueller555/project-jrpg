@@ -313,6 +313,173 @@ class LatticeUITests(unittest.TestCase):
         self.assertLess(self.screen.node_position(nearest).distance_to(self.screen.map_rect.center), .001)
         self.assertEqual(self.snapshots(), before)
 
+    def test_camera_grab_keeps_world_under_pointer_at_each_scale_and_zoom(self):
+        before = self.snapshots()
+        for size in ((480, 320), (960, 640), (1440, 810), (800, 800)):
+            self.game.window = pygame.display.set_mode(size)
+            scale = max(1, min(size[0]//480, size[1]//320))
+            self.game.ui_surface = pygame.Surface((480*scale, 320*scale))
+            for zoom in (.12, .8, 2.0):
+                with self.subTest(size=size, zoom=zoom):
+                    self.screen.reset();self.screen.open()
+                    self.screen._select('focused_strike_01', center=True)
+                    self.screen._zoom_to(zoom)
+                    self.advance(self.screen.ZOOM_DURATION)
+                    self.screen.draw(self.game.ui_surface)
+                    start = pygame.Vector2(self.screen.map_rect.center)+(40, -24)
+                    end = start+(-12, 6)
+                    world = self.world_at(start)
+                    pan = self.screen.pan.copy()
+                    self.screen.handle_event(pygame.event.Event(
+                        pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+                    self.assertEqual(self.screen.pan, pan)
+                    self.screen.handle_event(pygame.event.Event(
+                        pygame.MOUSEMOTION, pos=self.point(end), rel=(0, 0), buttons=(1, 0, 0)))
+                    self.assertLess(self.world_at(end).distance_to(world), .001)
+                    self.assertGreater(self.screen.pan.distance_to(pan), 0)
+                    held_pan = self.screen.pan.copy()
+                    self.advance(.4)
+                    self.assertEqual(self.screen.pan, held_pan)
+                    self.assertLess(self.world_at(end).distance_to(world), .001)
+                    self.screen.handle_event(pygame.event.Event(
+                        pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+        self.assertEqual(self.snapshots(), before)
+
+    def test_drag_threshold_preserves_the_entire_pointer_displacement(self):
+        self.screen._select('focused_strike_01', center=True)
+        self.advance(self.screen.CAMERA_DURATION)
+        start = pygame.Vector2(self.screen.map_rect.center)+(32, -20)
+        world, pan = self.world_at(start), self.screen.pan.copy()
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+        for distance in (1, 2):
+            self.screen.handle_event(pygame.event.Event(
+                pygame.MOUSEMOTION, pos=self.point(start+(distance, 0)),
+                rel=(2, 0), buttons=(1, 0, 0)))
+            self.advance(.05)
+            self.assertEqual(self.screen.pan, pan)
+        end = start+(3, 0)
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEMOTION, pos=self.point(end), rel=(2, 0), buttons=(1, 0, 0)))
+        self.assertLess(self.world_at(end).distance_to(world), .001)
+        self.assertNotEqual(self.screen.pan, pan)
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+
+    def test_slight_pointer_jitter_is_a_click_without_camera_motion_while_held(self):
+        self.screen.fit_board();self.advance(self.screen.ZOOM_DURATION)
+        start = pygame.Vector2(self.point(self.screen.node_position('mp_01')))
+        pan = self.screen.pan.copy()
+        before = self.snapshots()
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1, pos=start))
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEMOTION, pos=start+(2, 0), rel=(2, 0), buttons=(1, 0, 0)))
+        self.advance(.3)
+        self.assertEqual(self.screen.pan, pan)
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=start+(2, 0)))
+        self.assertEqual(self.screen.selected, 'mp_01')
+        self.assertEqual(self.screen.pan, pan)
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position('mp_01').distance_to(self.screen.map_rect.center), .001)
+        self.assertEqual(self.snapshots(), before)
+
+    def test_camera_drag_release_selects_center_nearest_and_eases_without_a_jump(self):
+        self.screen._select('focused_strike_01', center=True)
+        self.advance(self.screen.CAMERA_DURATION)
+        start = pygame.Vector2(self.screen.map_rect.center)+(50, -30)
+        end = start+(-24, 12)
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEMOTION, pos=self.point(end), rel=(0, 0), buttons=(1, 0, 0)))
+        pan = self.screen.pan.copy()
+        nearest = min(self.screen.board.nodes, key=lambda identifier:
+                      (pan.distance_squared_to(self.screen.board.nodes[identifier]['position']), identifier))
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+        self.assertFalse(self.screen.navigating)
+        self.assertEqual(self.screen.selected, nearest)
+        self.assertEqual(self.screen.pan, pan)
+        target = pygame.Vector2(self.screen.board.nodes[nearest]['position'])
+        self.assertGreater(pan.distance_to(target), .001)
+        self.advance(self.screen.CAMERA_DURATION/3)
+        self.assertGreater(self.screen.pan.distance_to(target), .001)
+        self.assertLess(self.screen.pan.distance_to(target), pan.distance_to(target))
+        self.advance(self.screen.CAMERA_DURATION)
+        self.assertLess(self.screen.node_position(nearest).distance_to(self.screen.map_rect.center), .001)
+
+    def test_camera_grab_freezes_existing_motion_and_ignores_zoom_until_release(self):
+        self.screen._select('hp_01', center=True)
+        self.key(pygame.K_PLUS);self.advance(.04)
+        start = pygame.Vector2(self.screen.map_rect.center)+(42, -18)
+        pan, zoom = self.screen.pan.copy(), self.screen.zoom
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+        self.advance(.3)
+        self.assertEqual(self.screen.pan, pan)
+        self.assertEqual(self.screen.zoom, zoom)
+        end = start+(-20, 8)
+        world = self.world_at(start)
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEMOTION, pos=self.point(end), rel=(0, 0), buttons=(1, 0, 0)))
+        self.screen.handle_event(pygame.event.Event(pygame.MOUSEWHEEL, y=2, x=0))
+        self.key(pygame.K_PLUS);self.key(pygame.K_MINUS)
+        self.advance(.3)
+        self.assertEqual(self.screen.zoom, zoom)
+        self.assertLess(self.world_at(end).distance_to(world), .001)
+        self.screen.handle_event(pygame.event.Event(
+            pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+        self.key(pygame.K_PLUS);self.advance(self.screen.ZOOM_DURATION)
+        self.assertGreater(self.screen.zoom, zoom)
+
+    def test_focus_help_and_close_stop_camera_drag_without_stale_mouse_motion(self):
+        before = self.snapshots()
+        for interruption in ('focus', 'help', 'close'):
+            with self.subTest(interruption=interruption):
+                self.screen.close();self.screen.open()
+                start = pygame.Vector2(self.screen.map_rect.center)
+                end = start+(-30, 12)
+                self.screen.handle_event(pygame.event.Event(
+                    pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+                self.screen.handle_event(pygame.event.Event(
+                    pygame.MOUSEMOTION, pos=self.point(end), rel=(0, 0), buttons=(1, 0, 0)))
+                if interruption == 'focus':
+                    self.screen.handle_event(pygame.event.Event(pygame.WINDOWFOCUSLOST))
+                elif interruption == 'help':self.key(pygame.K_F1)
+                else:self.screen.close()
+                self.assertFalse(self.screen.navigating)
+                self.advance(.3)
+                pan = self.screen.pan.copy()
+                self.screen.handle_event(pygame.event.Event(
+                    pygame.MOUSEMOTION, pos=self.point(end+(-60, 30)), rel=(0, 0), buttons=(1, 0, 0)))
+                self.advance(.3)
+                self.assertEqual(self.screen.pan, pan)
+                if self.screen.help_open:self.key(pygame.K_ESCAPE)
+                self.screen.handle_event(pygame.event.Event(
+                    pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+        self.assertEqual(self.snapshots(), before)
+
+    def test_camera_drags_with_owned_resources_do_not_prepare_or_commit_progression(self):
+        self.assertTrue(self.progression.award_battle_rewards(
+            'camera-grab-resources', {'caelan': 10000}, {'aether_emerald': 5}))
+        self.assertTrue(self.progression.move('hp_01'))
+        self.screen._select('hp_01', center=True);self.advance(self.screen.CAMERA_DURATION)
+        before = self.snapshots()
+        for delta in ((-36, -20), (30, 16)):
+            start = pygame.Vector2(self.screen.map_rect.center)+(36, -24)
+            end = start+delta
+            self.screen.handle_event(pygame.event.Event(
+                pygame.MOUSEBUTTONDOWN, button=1, pos=self.point(start)))
+            self.screen.handle_event(pygame.event.Event(
+                pygame.MOUSEMOTION, pos=self.point(end), rel=(0, 0), buttons=(1, 0, 0)))
+            self.advance(.2)
+            self.screen.handle_event(pygame.event.Event(
+                pygame.MOUSEBUTTONUP, button=1, pos=self.point(end)))
+            self.advance(self.screen.CAMERA_DURATION)
+            self.assertIsNone(self.screen.pending)
+            self.assertFalse(self.screen.notice_open)
+            self.assertEqual(self.snapshots(), before)
+
     def test_focus_help_confirmation_and_close_clear_navigation(self):
         self.key(pygame.K_RIGHT);self.advance(.2)
         self.screen.handle_event(pygame.event.Event(pygame.WINDOWFOCUSLOST))
