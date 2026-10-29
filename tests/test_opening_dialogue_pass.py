@@ -20,6 +20,7 @@ from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST
 from speech_bubble import MAX_LINES, TEXT_WIDTH
 from venn_visit import PIN_APPROACH, CHANNEL_APPROACH
+from test_mill_battle_gameplay import finish_mill_battle
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ('assets/story/opening.json', 'assets/story/halden/scene.json',
@@ -83,6 +84,8 @@ class OpeningDialogueDriver:
     def until(self, predicate, seconds=100, read=True):
         for _ in range(round(seconds/.05)):
             if predicate():return
+            if getattr(getattr(self.g, 'combat', None), 'active', False):
+                finish_mill_battle(self.g, read_aftermath=False)
             if read and self.g.social.locked:self.read()
             self.tick()
         raise AssertionError(('Timeout', self.g.world.data['id'], tuple(self.g.player.position),
@@ -139,6 +142,8 @@ class OpeningDialogueDriver:
             stalled = False
             for corner in route:
                 for _ in range(900):
+                    if getattr(getattr(self.g, 'combat', None), 'active', False):
+                        finish_mill_battle(self.g, read_aftermath=False)
                     if self.g.world is not world:
                         assert self.g.world.data['id'] == destination
                         return

@@ -27,16 +27,41 @@ import pygame
 from PIL import Image
 from main import Game
 from ui_style import Painter
+from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST
+
+
+def seed_completed_mill(game):
+    """Review fixture: a legacy completed mill journey, with no battle rewards."""
+    assert game.accept_quest(OPENING_QUEST)
+    for objective in ('halden', 'elira', 'venn'):
+        assert game.quests.complete_objective(OPENING_QUEST, objective)
+    game._sync_inventory()
+    game.halden_visit.restore();game.elira_visit.restore();game.venn_visit.restore()
+    assert game.quests.turn_in(OPENING_QUEST, 'mother_serene')
+    assert game.quests.unlock(MILL_QUEST) and game.accept_quest(MILL_QUEST)
+    for objective in game.quests.definitions[MILL_QUEST]['objectives']:
+        assert game.quests.complete_objective(MILL_QUEST, objective['id'])
+    assert game.quests.turn_in(MILL_QUEST, 'mira_worker')
+    assert game.mill_quest.restore({'version': 1,
+        'inspected': ['mechanism', 'race', 'intake'], 'prepared': True,
+        'spell_done': True, 'encouraged': True, 'restored': True,
+        'verified': True, 'resolved': True})
+    game.opening_conclusion.restore({'version': 1, 'stage': 'done'})
+    game.opening.restore({'version': 1, 'stage': 'disabled'})
+    assert game.quests.unlock(REGENT_QUEST)
+    game.regent_quest.restore(None)
+    game.social.blocked.clear();game.quests.drain_events();game.quest_ui.reset()
 
 
 @contextmanager
-def fixture():
+def fixture(*, unlocked_bat=True):
     with tempfile.TemporaryDirectory(prefix='atb-combat-capture-') as directory:
         path = Path(directory)
         game = Game(window_size=(960, 640), fullscreen=False, start_on_title=False,
                     save_path=path/'journey.json', settings_path=path/'settings.json')
         game.audio.set_music(0);game.audio.set_effects(0)
         pygame.event.clear()
+        if unlocked_bat:seed_completed_mill(game)
         try:yield game
         finally:
             game.opening_audio.reset()

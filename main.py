@@ -673,6 +673,11 @@ class Game:
         """Checkpoint on story changes, conversations, door transfers and quit."""
         if self.on_title or not self.save_store.enabled:return False
         self._sync_inventory()
+        saved_position=self.player.position
+        if self.combat.active and self.combat.kind=='mill':
+            # An interrupted story fight resumes at the safe approach. HP/MP
+            # are still the pre-battle live values until complete settlement.
+            saved_position=self.mill_quest.upstream.data['spawn']
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
@@ -686,7 +691,7 @@ class Game:
                            'lantern_quest':self.lantern_quest.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
-                        'position':list(self.player.position),'facing':self.player.facing},
+                        'position':list(saved_position),'facing':self.player.facing},
               'exterior_position':list(self.exterior_position)}
         if not self.save_store.write(data):
             self.save_error=self.save_store.error
@@ -1005,6 +1010,7 @@ class Game:
                 self.player.position.distance_to(link['position'])>link.get('radius',20) or
                 self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
                 self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
+        if link.get('id')=='town_to_upstream' and not self.mill_quest.can_enter_upstream():return False
         destination=self._load_scene(ROOT/link['destination']);spawn=link['spawn']
         if not destination.can_stand(spawn):return False
         origin=self.world

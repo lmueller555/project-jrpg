@@ -6,15 +6,34 @@ quest and lets the same actor accompany Caelan.
 
 The dialogue connects Halden’s festival flour to the Festival of Light, introduces Mira’s work and friendship before the investigation, and gives the actual north-road route in speech. Stage-specific reminders repeat the next destination or control. Brief emotional cues use literal asterisks.
 
-The complete route is workbench, mill diagnosis, upstream intake, pressure
-relief, a small successful spell, encouragement, cooperative repair, verification
-of the working mill, and Halden's closing exchange. The quest is noncombat and
-has no timer, casting roll or resource charge.
+The complete route is workbench, mill diagnosis, Mira's practical warning and
+armed departure, the riverbank encounter, a linear aftermath, upstream intake,
+pressure relief, a small successful spell, encouragement, cooperative repair,
+verification of the working mill, and Halden's closing exchange. The first
+battle introduces player-controlled party combat. The repair has no timer,
+casting roll or resource charge.
 
 ## Playing through
 
 Speak with Mira after MQ01. Inspect the mill mechanism and its race, then finish
-the diagnosis conversation. Take the north road to the end of the map and use **E** to continue to the upper millrace. Inspect the limb
+the diagnosis conversation and Mira's warning. She brings the short trail spear mentioned at her workbench;
+unarmed Caelan carries the tools. Take the north road to the end of the map and
+use **E** to continue to the upper millrace. Beyond the safe arrival and return
+prompt, the visible damaged bank and ridgeback tusker introduce the encounter.
+Mira's stronger spear attacks, Caelan's useful defense and the creature's
+separate preparation/charge turns teach the basics through cooperation. Every
+gauge pauses when either party member is ready.
+
+Victory commits the encounter and reward once. The post-fight dialogue proceeds
+linearly, without a continue/rest choice; unread aftermath remains available.
+Withdrawal leaves the encounter pending and defeat returns to a viable safe
+checkpoint. The same Mira continues as the existing world companion.
+
+An incapacitated Caelan receives a linear first-aid exchange instead of the
+ordinary checks. The spear is set beside the intake screen while Mira uses
+the bypass and tools, then carried again on the return walk.
+
+After the exchange, inspect the limb
 jammed across its intake screen. Mira sets the bypass to unload the mechanism
 while Caelan stands clear in his normal idle stance. Once the pressure is off, clear the still water trapped in the inspection recess with
 Caelan's modest spell. Only the inspection pocket clears at this point; the
@@ -62,6 +81,9 @@ and repair actions remain physically connected to the mechanism.
 A single durable mill-restored fact controls the repaired intake, adequate race
 flow, turning wheel and map description. The MQ01 conclusion's stopped-wheel
 rule yields to that restoration. The main stream continues moving throughout.
+The encounter's defeat does not free the intake. Tree damage explains how the
+limb reached it, and Halden acknowledges the monster and warns the carriers
+when the encounter actually occurred.
 
 ## Objectives and durable milestones
 
@@ -69,6 +91,8 @@ rule yields to that restoration. The main stream continues moving throughout.
 | --- | --- |
 | `meet_mira` | Reading the reunion and accepting MQ02 |
 | `diagnose_mill` | Reading both inspections and the diagnosis |
+| `prepare_journey` | Fully reading Mira's warning before departure |
+| `secure_trail` | Winning the riverbank encounter, settled once with rewards |
 | `reach_intake` | Reading the upstream intake inspection |
 | `prepare_intake` | Completing the bypass action |
 | `small_spell` | Completing the successful water movement |
@@ -76,9 +100,10 @@ rule yields to that restoration. The main stream continues moving throughout.
 | `verify_mill` | Observing the working mill and finishing its exchange |
 | `report` | Finishing the closing exchange with Halden and Mira |
 
-The optional version-one `mill_quest` journey record stores `inspected` (from
+The optional version-two `mill_quest` journey record stores `inspected` (from
 `mechanism`, `race`, `intake`) and the boolean facts `prepared`, `spell_done`,
-`encouraged`, `restored`, `verified` and `resolved`. Quest state and these facts
+`encouraged`, `restored`, `verified`, `resolved`, `warned`, `encounter_cleared`,
+`aftermath_done` and `legacy_bypass`. Quest state and these facts
 are validated together. Transient poses, dialogue pointers, movement paths and
 action clocks are rebuilt safely rather than serialized.
 
@@ -91,9 +116,13 @@ from a safe unfinished stage. Pause and inventory freeze action clocks; ordinary
 dialogue remains live and cancelable. New Game resets Mira and all mill facts.
 
 Older saves at the available Mira handoff remain valid. Earlier placeholder
-MQ02 objective records require explicit migration when expanding the objective
-list; they must not become invented completed repairs. A saved upstream scene
-is accepted as a valid exterior location.
+MQ02 objective records preserve only their meeting. Version-one journeys at
+or beyond the intake gain an explicit route bypass: repair progress and the
+two route prerequisites are preserved, without invented combat, warnings,
+aftermath, monster reports or rewards. An old upstream checkpoint before the
+intake rejoins the safe arrival and follows the new route. A saved upstream
+scene remains a valid exterior location. Normal town Bat encounters unlock
+after the riverbank encounter or that explicit older-route bypass.
 
 ## Verification and review
 

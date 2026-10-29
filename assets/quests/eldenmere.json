@@ -48,7 +48,7 @@
       "requires_quests": [
         "CH01_MQ01"
       ],
-      "summary": "Help Mira investigate Halden's stopped mill, restore its upstream intake and get the wheel turning again.",
+      "summary": "Help Mira investigate Halden's stopped mill, face the danger on the river path together, and restore the upstream intake.",
       "available_tracker_text": "Find Mira at her workshop.",
       "objectives": [
         {
@@ -66,11 +66,27 @@
           ]
         },
         {
+          "id": "prepare_journey",
+          "text": "Hear Mira’s warning and prepare to leave the village together.",
+          "tracker_text": "Speak with Mira before taking the north road.",
+          "requires": [
+            "diagnose_mill"
+          ]
+        },
+        {
+          "id": "secure_trail",
+          "text": "Face the riverbank monster with Mira and make the intake trail safe.",
+          "tracker_text": "Follow the north trail with Mira. Stay together by the riverbank.",
+          "requires": [
+            "prepare_journey"
+          ]
+        },
+        {
           "id": "reach_intake",
           "text": "Follow the millrace upstream and examine the intake.",
           "tracker_text": "Follow the trail upstream with Mira.",
           "requires": [
-            "diagnose_mill"
+            "secure_trail"
           ]
         },
         {
@@ -119,6 +135,10 @@
       "completion_text": "Halden's mill is running again. You and Mira restored its intake together.",
       "legacy_objectives": [
         "meet_mira"
+      ],
+      "legacy_route_objectives": [
+        "prepare_journey",
+        "secure_trail"
       ]
     },
     {

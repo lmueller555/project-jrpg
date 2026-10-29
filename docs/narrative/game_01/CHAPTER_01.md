@@ -37,7 +37,7 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 
 **Purpose:** Provide a small, complete adventure through Mira's engineering knowledge and Caelan's practical help and limited learned magicks. After pressure is relieved mechanically, he successfully clears a small pocket of still water; this remains below the force required to push back the Venns' flowing channel. Mira encourages his pleasure in that modest success, with a conditional acknowledgment of the earlier failed attempt. Develop their affectionate, credible differences over technological progress and inherited restrictions through their work together. See the [implemented quest script](CH01_MQ02.md).
 
-**Proposed staging:** A short woodland route, a mechanical/environmental obstacle, and optional low-threat encounters. The exact cause, solution, difficulty, and combat use are OPEN.
+**Current staging:** After the mill diagnosis, Mira warns about riverbank monsters and brings her short spear. A ridgeback tusker on the northern trail introduces player-controlled party combat; its damage explains the tree whose broken limb jams the intake. Victory is followed by a linear character exchange, then the established bypass, small spell and cooperative repair. The encounter is mandatory on a new route, with explicit migration for older journeys already beyond the intake.
 
 **Emotional result:** Mira and Caelen succeed through complementary strengths rather than one worldview defeating the other.
 

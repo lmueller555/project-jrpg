@@ -34,6 +34,16 @@ Other characters' ages and unapproved biography details remain open. See
 [Chapter 1](CHAPTER_01.md) and the [opening quest](CH01_MQ01.md) for established
 relationships and scene context.
 
+## Mira's millrace outing
+
+Mira is Caelan's childhood friend and a capable mechanical problem-solver.
+For MQ02 she brings a short travel spear from her workbench. She is a stronger,
+more experienced combatant than unarmed Caelan and joins him as a temporary,
+player-controlled guest against the Ridgeback Tusker outside Eldenmere. Her
+weapon handling and practical guidance establish this competence without
+assigning a military background or an age. Their later intake repair preserves
+Caelan's useful, modest magical success and their complementary skills.
+
 Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,
 with a furnished classroom for six children. Her personal name remains open.

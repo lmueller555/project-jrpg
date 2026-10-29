@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    54
+  ],
+  "facing": "left",
+  "source_sheet": "assets/source/combat/mq02_mira_generated_sheet.png",
+  "source_sha256": "e22d2091cb9d11c8ca6d1845cecfbfd480e87a9d3f9e84ae6e76eb4efa58a04b",
+  "sheet": "spritesheet.png",
+  "extraction": "connected-alpha sprites; fixed native scale",
+  "native_scale": 0.137,
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 260,
+          "source_cell": 0,
+          "source_bounds": [
+            43,
+            45,
+            312,
+            307
+          ]
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 260,
+          "source_cell": 1,
+          "source_bounds": [
+            344,
+            45,
+            609,
+            308
+          ]
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 200,
+          "source_cell": 2,
+          "source_bounds": [
+            661,
+            62,
+            954,
+            308
+          ]
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 280,
+          "source_cell": 3,
+          "source_bounds": [
+            881,
+            86,
+            1239,
+            308
+          ]
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 320,
+          "source_cell": 4,
+          "source_bounds": [
+            29,
+            350,
+            318,
+            608
+          ]
+        }
+      ]
+    },
+    "guard": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "guard_01.png",
+          "duration_ms": 240,
+          "source_cell": 5,
+          "source_bounds": [
+            373,
+            353,
+            635,
+            608
+          ]
+        },
+        {
+          "file": "guard_02.png",
+          "duration_ms": 240,
+          "source_cell": 6,
+          "source_bounds": [
+            688,
+            353,
+            940,
+            608
+          ]
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 160,
+          "source_cell": 7,
+          "source_bounds": [
+            1025,
+            349,
+            1229,
+            608
+          ]
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 240,
+          "source_cell": 8,
+          "source_bounds": [
+            76,
+            678,
+            334,
+            922
+          ]
+        }
+      ]
+    },
+    "victory": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "victory_01.png",
+          "duration_ms": 340,
+          "source_cell": 9,
+          "source_bounds": [
+            370,
+            658,
+            605,
+            926
+          ]
+        },
+        {
+          "file": "victory_02.png",
+          "duration_ms": 340,
+          "source_cell": 10,
+          "source_bounds": [
+            728,
+            651,
+            904,
+            926
+          ]
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 260,
+          "source_cell": 11,
+          "source_bounds": [
+            1047,
+            695,
+            1231,
+            922
+          ]
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 420,
+          "source_cell": 12,
+          "source_bounds": [
+            29,
+            1040,
+            315,
+            1211
+          ]
+        }
+      ]
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_01.png",
+          "duration_ms": 140,
+          "source_cell": 13,
+          "source_bounds": [
+            348,
+            970,
+            588,
+            1218
+          ]
+        },
+        {
+          "file": "walk_02.png",
+          "duration_ms": 140,
+          "source_cell": 14,
+          "source_bounds": [
+            637,
+            970,
+            859,
+            1218
+          ]
+        },
+        {
+          "file": "walk_03.png",
+          "duration_ms": 140,
+          "source_cell": 15,
+          "source_bounds": [
+            948,
+            968,
+            1198,
+            1218
+          ]
+        }
+      ]
+    },
+    "spear_thrust": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 200,
+          "source_cell": 2,
+          "source_bounds": [
+            661,
+            62,
+            954,
+            308
+          ]
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 280,
+          "source_cell": 3,
+          "source_bounds": [
+            881,
+            86,
+            1239,
+            308
+          ]
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 320,
+          "source_cell": 4,
+          "source_bounds": [
+            29,
+            350,
+            318,
+            608
+          ]
+        }
+      ]
+    },
+    "flee": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_01.png",
+          "duration_ms": 140,
+          "source_cell": 13,
+          "source_bounds": [
+            348,
+            970,
+            588,
+            1218
+          ]
+        },
+        {
+          "file": "walk_02.png",
+          "duration_ms": 140,
+          "source_cell": 14,
+          "source_bounds": [
+            637,
+            970,
+            859,
+            1218
+          ]
+        },
+        {
+          "file": "walk_03.png",
+          "duration_ms": 140,
+          "source_cell": 15,
+          "source_bounds": [
+            948,
+            968,
+            1198,
+            1218
+          ]
+        }
+      ]
+    }
+  }
+}

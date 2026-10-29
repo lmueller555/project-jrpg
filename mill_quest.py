@@ -1,4 +1,4 @@
-"""Mira's mill investigation, a modest successful spell and practical repair.
+"""Mira's river-path encounter, modest successful spell and practical repair.
 
 Durable facts never contain animation clocks or partially read dialogue. One
 existing Mira actor accompanies the player; repair props and the wheel read the
@@ -17,8 +17,10 @@ from social import facing_toward
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/mill/'
-FACTS = ('prepared', 'spell_done', 'encouraged', 'restored', 'verified', 'resolved')
-OBJECTIVES = ('meet_mira', 'diagnose_mill', 'reach_intake', 'prepare_intake',
+REPAIR_FACTS = ('prepared', 'spell_done', 'encouraged', 'restored', 'verified', 'resolved')
+ENCOUNTER_FACTS = ('warned', 'encounter_cleared', 'aftermath_done', 'legacy_bypass')
+FACTS = (*REPAIR_FACTS, *ENCOUNTER_FACTS)
+OBJECTIVES = ('meet_mira', 'diagnose_mill', 'prepare_journey', 'secure_trail', 'reach_intake', 'prepare_intake',
               'small_spell', 'repair_intake', 'verify_mill', 'report')
 
 
@@ -34,7 +36,8 @@ class MillQuest:
         self.points = {**self.layout,
                        'mechanism': self.layout['mill_mechanism'],
                        'race': self.layout['mill_race'],
-                       'mill_station': self.layout['mill_return']}
+                       'mill_station': self.layout['mill_return'],
+                       'combat_position': self.layout.get('combat_position', [360, 312])}
         self.upstream = game._scene_by_id(self.layout['scene_id'])
         self.bench_position = tuple(self.mira.position)
         self.inspected = set()
@@ -44,6 +47,9 @@ class MillQuest:
         self.trail = deque(maxlen=1024);self.last_scene = None
         self._mira_world = self.town;self._player_pose = False;self._mira_pose = False
         self._returning = False
+        self._return_dialogue = None
+        self._encounter_callback = None
+        self._aftermath_recovered = False
         self.cast = read('poses/animation.json')
         sheet = self.town.image(ART+'poses/poses.png')
         self.cast_poses = {name: [sheet.subsurface(f['rect']).copy() for f in rec['frames']]
@@ -72,12 +78,46 @@ class MillQuest:
     @property
     def locks_player(self):return self.action is not None
     @property
+    def combat_unlocked(self):return self.encounter_cleared or self.legacy_bypass
+    @property
+    def mira_armed(self):
+        return ((self.active or self._returning) and self._done('meet_mira')
+                and not self.legacy_bypass
+                and ('intake' not in self.inspected or self.restored))
+    @property
+    def mira_spear_stowed(self):
+        return (self.active and self._done('meet_mira') and not self.legacy_bypass
+                and 'intake' in self.inspected and not self.restored)
+    @property
+    def encounter_pending(self):
+        return (self.active and self._done('diagnose_mill') and self.warned
+                and not self.combat_unlocked)
+    def _at_encounter_approach(self):
+        # The bank is open ground, so both the road and the direct eastern
+        # approach must encounter the threat before reaching the intake.
+        return pygame.Rect(self.layout.get('combat_trigger', (16, 16, 516, 368))).collidepoint(
+            self.game.player.position)
+    @property
+    def encounter_ready(self):
+        game = self.game
+        return (self.encounter_pending and game.world is self.upstream
+                and self._at_encounter_approach() and self._with_mira()
+                and not self.action and not game.social.locked and not self.dialogue
+                and not game.pause.is_open and not game.inventory_ui.is_open
+                and not game.quest_ui.journal_open and not game.map_open
+                and not game.opening.locks_player and not game.opening_fade
+                and not game.transfer_cooldown
+                and not getattr(getattr(game, 'combat', None), 'active', False))
+    @property
     def stage(self):
         if self.resolved:return 'completed'
         if not self.active:return self.game.quests.status(MILL_QUEST)
         if self.verified:return 'report'
         if self.restored:return 'return_mill'
         if not self._done('diagnose_mill'):return 'diagnose'
+        if not self.warned and not self.legacy_bypass:return 'warning'
+        if not self.combat_unlocked:return 'encounter'
+        if self.encounter_cleared and not self.aftermath_done:return 'aftermath'
         if 'intake' not in self.inspected:return 'reach_intake'
         if not self.prepared:return 'prepare_intake'
         if not self.spell_done:return 'small_spell'
@@ -88,28 +128,58 @@ class MillQuest:
     def _complete(self, objective):return self.game.quests.complete_objective(MILL_QUEST, objective)
 
     def to_dict(self):
-        return {'version': 1, 'inspected': [key for key in ('mechanism', 'race', 'intake') if key in self.inspected],
+        return {'version': 2, 'inspected': [key for key in ('mechanism', 'race', 'intake') if key in self.inspected],
                 **{key: bool(getattr(self, key)) for key in FACTS}}
 
     @staticmethod
+    def migrate_snapshot(data):
+        """Translate the old completed route without inventing a battle victory."""
+        if not isinstance(data, dict):return data
+        result = dict(data)
+        if (type(result.get('version')) is int and result['version'] == 1
+                and set(result) == {'version', 'inspected', *REPAIR_FACTS}
+                and isinstance(result['inspected'], list)):
+            result.update(version=2, warned=False, encounter_cleared=False,
+                          aftermath_done=False, legacy_bypass='intake' in result['inspected'])
+        return result
+
+    @staticmethod
     def valid_snapshot(data):
+        if not isinstance(data, dict):return False
+        # Validate the legacy shape before migration, including the inspection
+        # type, so malformed old records cannot become accepted new facts.
+        if data.get('version') == 1:
+            if (set(data) != {'version', 'inspected', *REPAIR_FACTS}
+                    or type(data['version']) is not int
+                    or not isinstance(data.get('inspected'), list)):
+                return False
+            data = MillQuest.migrate_snapshot(data)
         if (not isinstance(data, dict) or set(data) != {'version', 'inspected', *FACTS} or
-                type(data['version']) is not int or data['version'] != 1 or
+                type(data['version']) is not int or data['version'] != 2 or
                 not isinstance(data['inspected'], list) or
                 any(not isinstance(i, str) or i not in ('mechanism', 'race', 'intake') for i in data['inspected']) or
                 len(set(data['inspected'])) != len(data['inspected']) or
                 any(type(data[key]) is not bool for key in FACTS)):
             return False
         previous = 'intake' in data['inspected']
-        for key in FACTS:
+        for key in REPAIR_FACTS:
             if data[key] and not previous:return False
             previous = data[key]
-        return not ('intake' in data['inspected']) or {'mechanism', 'race'} <= set(data['inspected'])
+        diagnosed = {'mechanism', 'race'} <= set(data['inspected'])
+        if 'intake' in data['inspected'] and not diagnosed:return False
+        if data['legacy_bypass']:
+            return ('intake' in data['inspected']
+                    and not any(data[key] for key in ('warned', 'encounter_cleared', 'aftermath_done')))
+        if data['warned'] and not diagnosed:return False
+        if data['encounter_cleared'] and not data['warned']:return False
+        if data['aftermath_done'] and not data['encounter_cleared']:return False
+        return 'intake' not in data['inspected'] or data['aftermath_done']
 
     @staticmethod
     def valid_journey(data):
         record = data['mill_quest']
         if not MillQuest.valid_snapshot(record):return False
+        record = MillQuest.migrate_snapshot(record)
         quests = QuestLog()
         if not quests.restore(data.get('quests')):return False
         status = quests.status(MILL_QUEST)
@@ -118,6 +188,8 @@ class MillQuest:
         if progress and status not in ('active', 'ready', 'completed'):return False
         if status in ('active', 'ready', 'completed') and not done('meet_mira'):return False
         if 'intake' in record['inspected'] and not done('diagnose_mill'):return False
+        if done('prepare_journey') != (record['warned'] or record['legacy_bypass']):return False
+        if done('secure_trail') != (record['encounter_cleared'] or record['legacy_bypass']):return False
         pairs = [('prepared', 'prepare_intake'), ('spell_done', 'small_spell'),
                  ('restored', 'repair_intake'), ('verified', 'verify_mill'), ('resolved', 'report')]
         if any(record[fact] != done(objective) for fact, objective in pairs):return False
@@ -128,22 +200,35 @@ class MillQuest:
 
     def restore(self, data=None):
         if data is not None and not self.valid_snapshot(data):return False
+        old_upstream = (data is not None and data.get('version') == 1
+                        and 'intake' not in data['inspected']
+                        and self.active and self.game.world is self.upstream)
+        data = self.migrate_snapshot(data) if data is not None else None
         self.release_pose();self.action = None;self.action_time = 0.;self.align_time = 0.
         self.dialogue = None;self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
         self._player_route = None
+        self._return_dialogue = None;self._encounter_callback = None
+        self._aftermath_recovered = False
         self.inspected = set(data['inspected']) if data else set()
         if data:
             for fact in FACTS:setattr(self, fact, data[fact])
         else:
             inferred = {'prepared': self._done('prepare_intake'), 'spell_done': self._done('small_spell'),
                         'encouraged': self._done('repair_intake'), 'restored': self._done('repair_intake'),
-                        'verified': self._done('verify_mill'), 'resolved': self.game.quests.status(MILL_QUEST) == 'completed'}
+                        'verified': self._done('verify_mill'), 'resolved': self.game.quests.status(MILL_QUEST) == 'completed',
+                        'warned': False, 'encounter_cleared': False, 'aftermath_done': False,
+                        'legacy_bypass': self._done('reach_intake')}
             for fact in FACTS:setattr(self, fact, inferred[fact])
             if self._done('diagnose_mill'):self.inspected.update(('mechanism', 'race'))
             if self._done('reach_intake'):self.inspected.add('intake')
         self.mira.end_conversation();self.mira.quest_mode = self.active
         self.mira.story_following = self.active;self.mira.moving = False
         self._returning = False
+        if old_upstream:
+            # Old pre-intake checkpoints may stand beyond the new approach.
+            # Rejoin that safe approach rather than strand the new objective.
+            self.game.player.position.update(self.upstream.data['spawn'])
+            self.game.player.facing = 'back'
         if self.active:
             landing = self._near_player()
             if landing is not None:self._place_mira(self.game.world, landing)
@@ -211,7 +296,9 @@ class MillQuest:
             self.dialogue = None;self.mira.end_conversation()
             if kind == 'repair_done':self.release_pose()
             if callback is not None:callback()
-        result = self.game.social.start_script(self.lines[kind], finished, 'mill_'+kind)
+        source = ('aftermath_recovered' if kind == 'aftermath' and self._aftermath_recovered else
+                  kind+'_combat' if self.encounter_cleared and kind+'_combat' in self.lines else kind)
+        result = self.game.social.start_script(self.lines[source], finished, 'mill_'+kind)
         self.dialogue = kind if result else None
         if result:self.game.social.blocked.add(self.mira)
         return result
@@ -220,6 +307,7 @@ class MillQuest:
         if identifier and identifier.startswith('mill_'):
             self.dialogue = None;self.mira.end_conversation()
             if identifier == 'mill_repair_done':self.release_pose()
+            if identifier == 'mill_encounter_intro':self._encounter_callback = None
 
     def can_speak(self, identifier):
         if identifier in ('mira_worker', 'halden') and self.action:return False
@@ -236,9 +324,15 @@ class MillQuest:
             status = self.game.quests.status(MILL_QUEST)
             if status == 'available':return self._speak('reunion', self._recruit)
             if self.active:
+                if self.stage == 'warning':return self._speak('warning', self._warned)
+                if self.stage == 'aftermath':return self._speak('aftermath', self._aftermath_finished)
+                if (self.stage == 'encounter' and self.game.world is self.upstream
+                        and self._at_encounter_approach()):
+                    return self.begin_encounter(getattr(getattr(self.game, 'combat', None), 'start_mill', None))
                 if self.spell_done and not self.encouraged and self.game.world is self.upstream:
                     return self._encouragement()
                 reminder = {'diagnose': 'diagnose', 'reach_intake': 'intake',
+                            'warning': 'warning', 'encounter': 'encounter',
                             'prepare_intake': 'prepare', 'small_spell': 'spell',
                             'repair_intake': 'repair', 'return_mill': 'verify',
                             'report': 'report'}.get(self.stage)
@@ -259,6 +353,10 @@ class MillQuest:
 
     def _target(self):
         if self.action or not self.active:return None
+        if self.stage == 'warning' and self._near(self.mira.position, 84):
+            return 'warning', 'E: Hear Mira before leaving town'
+        if self.stage == 'aftermath' and self._near(self.mira.position, 84):
+            return 'aftermath', 'E: Speak with Mira after the encounter'
         if self.game.world is self.town:
             if not self._done('diagnose_mill'):
                 candidates = [kind for kind in ('mechanism', 'race') if self._near_object(kind)]
@@ -272,6 +370,11 @@ class MillQuest:
             if self.verified and self._near(self.halden.position, 44) and self.halden in self.town.npcs:
                 return 'resolution', 'E: Speak with Halden and Mira'
         if self.game.world is self.upstream and self._done('diagnose_mill'):
+            if not self.combat_unlocked:
+                if self.encounter_pending and self._at_encounter_approach():
+                    return 'encounter', 'E: Face the riverbank monster with Mira'
+                return None
+            if self.encounter_cleared and not self.aftermath_done:return None
             if 'intake' not in self.inspected and self._near_object('intake'):return 'intake', 'E: Inspect the blocked intake'
             if 'intake' in self.inspected and not self.prepared and self._near_object('prepare'):return 'prepare', 'E: Set the bypass with Mira'
             if self.prepared and not self.spell_done and self._near_object('spell_intro'):return 'spell_intro', 'E: Clear the inspection recess with magicks'
@@ -289,6 +392,10 @@ class MillQuest:
             return False
         if not self._with_mira():return False
         kind = target[0]
+        if kind == 'warning':return self._speak('warning', self._warned)
+        if kind == 'aftermath':return self._speak('aftermath', self._aftermath_finished)
+        if kind == 'encounter':
+            return self.begin_encounter(getattr(getattr(self.game, 'combat', None), 'start_mill', None))
         if kind in ('mechanism', 'race', 'intake'):
             return self._speak(kind, lambda: self._record_inspection(kind))
         if kind == 'diagnosis':return self._speak('diagnosis', self._diagnose)
@@ -302,6 +409,8 @@ class MillQuest:
 
     def _record_inspection(self, kind):
         if not self.active:return
+        if kind == 'intake' and (not self.combat_unlocked or
+                                self.encounter_cleared and not self.aftermath_done):return
         self.inspected.add(kind)
         if kind == 'intake':self._complete('reach_intake')
         self._save()
@@ -311,6 +420,68 @@ class MillQuest:
     def _diagnose(self):
         if self.active and {'mechanism', 'race'} <= self.inspected:
             self._complete('diagnose_mill');self._save()
+            if not self.warned and not self.legacy_bypass:self._speak('warning', self._warned)
+
+    def _warned(self):
+        if not self.active or not self._done('diagnose_mill') or self.warned:return False
+        if not self._complete('prepare_journey'):return False
+        self.warned = True;self._save()
+        return True
+
+    def can_enter_upstream(self):
+        """The first departure follows the fully read practical warning."""
+        return not self.active or self.warned or self.legacy_bypass
+
+    def begin_encounter(self, on_finished):
+        """Read the approach before the owning encounter controller starts battle."""
+        if (not self.encounter_pending or self.game.world is not self.upstream
+                or not self._at_encounter_approach()
+                or not self._with_mira() or not callable(on_finished)):
+            return False
+        self._encounter_callback = on_finished
+        def finished():
+            callback, self._encounter_callback = self._encounter_callback, None
+            if self.encounter_pending and callback is not None:callback()
+        if self._speak('encounter_intro', finished):return True
+        self._encounter_callback = None
+        return False
+
+    def battle_won(self):
+        """Commit the encounter fact; its owner saves this with resources/rewards."""
+        if (not self.encounter_pending or
+                self.game.quests.objective_status(MILL_QUEST, 'secure_trail') != 'active'):
+            return False
+        if not self._complete('secure_trail'):return False
+        self.encounter_cleared = True
+        self.game.social.flags.add('CH01_MQ02_ENCOUNTER_CLEARED')
+        return True
+
+    def battle_returned(self, outcome, recovered=False):
+        """Resume one linear aftermath; no continue/rest choice is introduced."""
+        if not self.active:return False
+        if not self._with_mira():
+            landing = self._near_player()
+            if landing is not None:self._place_mira(self.game.world, landing)
+        self.mira.moving = False;self.paths.clear();self.trail.clear()
+        if outcome == 'victory' and self.encounter_cleared and not self.aftermath_done:
+            # The encounter owner already applied first aid to an incapacitated
+            # Caelan. This transient prose branch describes that recovery only;
+            # it grants no resources and resumes as neutral checks after reload.
+            self._aftermath_recovered = bool(recovered)
+            self._return_dialogue = 'aftermath'
+            result = self._speak('aftermath', self._aftermath_finished)
+        elif outcome in ('fled', 'defeat') and self.encounter_pending:
+            self._return_dialogue = 'withdrawal' if outcome == 'fled' else 'retry'
+            result = self._speak(self._return_dialogue, self._return_finished)
+        else:return False
+        return result
+
+    def _return_finished(self):self._return_dialogue = None
+
+    def _aftermath_finished(self):
+        if not self.encounter_cleared or self.aftermath_done:return False
+        self.aftermath_done = True;self._return_dialogue = None;self._save()
+        return True
 
     def _start_action(self, kind):
         if not self.active or self.action or self.game.world is not self.upstream or not self._with_mira():return False
@@ -354,6 +525,9 @@ class MillQuest:
         if not self.active:return ''
         if self.action:return self.interaction_hint()
         return {'diagnose': 'Inspect the mill mechanism and millrace with Mira.',
+                'warning': 'Speak with Mira before taking the north road.',
+                'encounter': 'Follow the north trail with Mira. Stay together near the riverbank.',
+                'aftermath': 'Speak with Mira, then continue to the intake.',
                 'reach_intake': 'Take the north road to the upper millrace with Mira. Inspect the intake.',
                 'prepare_intake': 'Set the bypass with Mira.',
                 'small_spell': 'Clear the trapped water from the inspection recess.',
@@ -587,6 +761,13 @@ class MillQuest:
             elif self.dialogue or self.game.social.resolve_speaker() is self.mira:self.mira.moving = False
             else:self._follow(seconds)
             if self.restored:self._stage_halden()
+            if (not self.action and not self.dialogue and not self.game.social.locked
+                    and self._with_mira() and not getattr(getattr(self.game, 'combat', None), 'active', False)):
+                if self.stage == 'aftermath':self._speak('aftermath', self._aftermath_finished)
+                elif self.stage == 'warning' and self.game.world is self.upstream:
+                    self._speak('warning', self._warned)
+                elif self._return_dialogue:
+                    self._speak(self._return_dialogue, self._return_finished)
         elif self._returning:
             if self.dialogue or self.game.social.resolve_speaker() is self.mira:
                 self.mira.moving = False

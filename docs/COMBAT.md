@@ -1,6 +1,13 @@
-# Eldenmere wait-ATB combat
+# Wait-ATB combat
 
-The first combat slice is a repeatable encounter with one Bat and Caelan.
+MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
+fight a Ridgeback Tusker together before inspecting the blocked mill intake.
+Mira is a temporary, player-controlled guest with a short spear, her own
+attributes, commands, HP/MP and ATB. The warning, encounter and linear
+aftermath lead into the quest's existing small spell and mechanical repair.
+
+The repeatable Bat encounter unlocks after that fight, or for migrated older
+journeys that already passed the intake investigation. It contains one Bat and Caelan.
 The Bat hovers on the grass west of the well, at world position **336, 900**.
 Approach within 32 pixels and press **E** when **Engage Bat** appears. The Bat
 does not attack automatically and cannot interrupt a conversation, household
@@ -42,10 +49,13 @@ At starting Speed 10, Caelan fills an empty gauge in 6.25 charging seconds.
 The Bat has Speed 8 and needs approximately 6.58 charging seconds. These are
 the initial tuning values; animation time is separate.
 
-When Caelan becomes ready, **every gauge stops at that exact boundary** while
-the player chooses. Enemy gauges exist in the model but are never displayed.
+When any participating character becomes ready, **every gauge stops at that
+exact boundary** while the player chooses. The active party row is highlighted;
+click another ready row or press Tab to choose between ready characters.
+Commands and MP costs belong to the selected character. Enemy gauges exist
+in the model but are never displayed.
 The Bat automatically chooses an affordable action when its gauge fills.
-If both become ready simultaneously, Caelan receives the choice first.
+Party readiness wins a simultaneous boundary with the enemy.
 
 All gauges also pause during action resolution, result screens and explicit
 pause. Commands spend their ATB and MP once when committed; damage occurs once
@@ -58,7 +68,8 @@ The compact bottom panel places a party table on the right, with shared
 **ATB, NAME, HP, MP** column headings. Each participating character occupies
 one horizontal row. A small yellow ATB gauge sits to the left of the name;
 HP and MP show current/max numbers with thin bars beneath them in their own
-columns. The current encounter has Caelan's row. HP is green above 50%, yellow
+columns. The millrace has Caelan and Mira's rows; the Bat has Caelan's row.
+HP is green above 50%, yellow
 above 25% through 50%, and red at 25% or below. MP is blue; the ATB fill stays
 yellow while charging and when ready.
 
@@ -67,7 +78,7 @@ At standard text size the panel is 80 logical pixels tall, down from 108
 and controls. The table shows participating characters rather than the sketch's
 illustrative future-party placeholders.
 
-Commands form a compact vertical list on the left when Caelan is ready.
+Commands form a compact vertical list on the left when a party member is ready.
 Mouse clicks select a command directly; arrow keys and Enter/Space provide
 keyboard access. Only supported learned abilities appear. Result titles and
 Continue remain on the left; action messages, rewards and retry details use
@@ -76,10 +87,11 @@ the space beneath the party row. See the
 
 | Input | Action |
 | --- | --- |
-| Click a command | Commit that action when Caelan is ready |
+| Click a command | Commit that action for the selected ready character |
+| Click a ready row / Tab | Select another ready party member |
 | Arrows + Enter/Space | Select and commit a command |
 | Escape | Pause/resume the battle |
-| Continue on a result | Return to the same Eldenmere position |
+| Continue on a result | Return to exploration; failed mill attempts return to the safe approach |
 | F11 | Toggle fullscreen |
 
 Losing window focus pauses battle time and input. Regaining focus leaves it
@@ -105,6 +117,44 @@ This slice uses the [approved per-hit damage backend](DAMAGE_FORMULA.md), with
 independent 95–105% variance from the battle's own RNG. Attack accuracy is
 currently guaranteed and critical hits are disabled while those probability
 rules await design. No damage-limit break is granted by the encounter.
+
+## Millrace tutorial
+
+The Ridgeback Tusker has 450 HP, Str 16, Def 18 and Speed 8. It alternates a
+normal tusk strike, a separate preparation turn and a heavy charge. Preparation
+deals no damage and identifies the charge target. The next enemy turn delivers
+the charge, leaving the target a genuine opportunity to choose Guard. Guard
+halves the next incoming hit against that character and survives the harmless
+preparation turn.
+
+Mira has HP 300, MP 30, Str 20, Mag 12, Spr 12, Def 18, M. Def 14, Speed 12, Acc 16,
+Eva 12 and Lck 10. Her Attack resolves to Spear Thrust at potency 1.5. Against
+the Tusker, Caelan's punch deals 16–17 and her spear deals 96–106. A Tusker
+charge deals 66–73 against Caelan, or 33–36 when guarded. These values use the
+approved formula and 95–105% per-hit variance.
+
+The encounter's natural Mira guidance follows readiness, her first turn,
+the targeted charge tell and the resulting hit. Short interface hints explain
+the exact controls. Guidance is player-paced, freezes combat clocks, and
+consumes acknowledgement input so it cannot also commit a command. The player
+can choose other actions; the creature is never held at artificial minimum HP.
+
+The new battlefield looks south/southwest toward distant Eldenmere, with the
+river along the near left bank, reeds, exposed roots and freshly broken timber.
+A visible Tusker and damaged tree mark the actual upstream approach. Mira
+carries her spear from the workbench, sets it aside during intake work and
+takes it up for the return. See the [actual MQ02 review](reviews/mill_combat/README.md).
+
+Victory grants Caelan 30 RP and one Aether Emerald once, and commits the cleared
+trail with remaining resources before the linear aftermath. The intake remains
+blocked until the existing repair. If Mira wins while Caelan is incapacitated,
+first aid restores him to 25% maximum HP before the recovery exchange. Flee
+returns to the safe approach without rewards or encounter completion. Defeat
+returns there with full Caelan HP and pre-battle MP for a viable retry.
+Interrupted battles save the unfinished encounter at the safe approach; no
+partial ATB, guest resources or dialogue cursor is serialized. Older completed
+intake/repair saves preserve their progress through an explicit legacy bypass
+and receive no invented battle or reward.
 
 ## Test Bat
 

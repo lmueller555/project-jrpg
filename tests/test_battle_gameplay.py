@@ -15,6 +15,7 @@ import pygame
 from aether_lattice import MAX_RP
 from inventory import MAX_QUANTITY
 from main import Game
+from test_mill_battle_gameplay import seed_completed_mill
 
 
 class BattleGameplayTests(unittest.TestCase):
@@ -32,6 +33,7 @@ class BattleGameplayTests(unittest.TestCase):
                     settings_path=self.directory/'settings.json')
         game.audio.set_music(0);game.audio.set_effects(0)
         pygame.event.clear()
+        if not title:seed_completed_mill(game)
         return game
 
     def key(self, game, key):

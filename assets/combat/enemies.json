@@ -6,6 +6,12 @@
       "attributes": {"hp": 72, "mp": 4, "str": 7, "mag": 6, "spr": 3, "def": 6, "m_def": 5, "speed": 8, "acc": 10, "eva": 12, "lck": 4},
       "abilities": ["bite", "wing_gust"],
       "rewards": {"rp": 20, "drops": {"aether_emerald": 1}}
+    },
+    "ridgeback_tusker": {
+      "name": "Ridgeback Tusker",
+      "attributes": {"hp": 450, "mp": 0, "str": 16, "mag": 4, "spr": 4, "def": 18, "m_def": 12, "speed": 8, "acc": 12, "eva": 6, "lck": 4},
+      "abilities": ["tusk_strike", "prepare_charge", "tusker_charge"],
+      "rewards": {"rp": 30, "drops": {"aether_emerald": 1}}
     }
   }
 }
