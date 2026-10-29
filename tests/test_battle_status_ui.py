@@ -1,4 +1,4 @@
-"""Battle status placement, resource readability and rendered gauge behavior."""
+"""Compact battle table, resource readability and rendered gauge behavior."""
 import os
 import random
 from types import SimpleNamespace
@@ -131,7 +131,32 @@ class BattleStatusUITests(unittest.TestCase):
                 self.assertLessEqual(self.scene.atb_rect.right, self.scene.name_rect.left)
                 self.assertLessEqual(abs(self.scene.atb_rect.centery-self.scene.name_rect.centery), 1)
 
-    def test_status_and_maximum_resource_labels_fit_on_right_at_every_scale(self):
+    def test_shared_headers_and_compact_height_show_only_actual_party_members(self):
+        for learned in ((), ('aether_dart',)):
+            self.model = BattleModel(self.game.attributes, learned, rng=random.Random(4))
+            self.scene = BattleScene(self.game, self.model, sprites=EmptySprites())
+            self.scene.update(20)
+            for size in ((480, 320), (960, 640)):
+                self.game.window = pygame.display.set_mode(size)
+                self.game.ui_surface = pygame.Surface(size)
+                self.game.audio.set_text_scale(1.0)
+                with self.subTest(learned=learned, size=size):
+                    records = self.text_bounds()
+                    labels = [text for text, _ in records]
+                    self.assertLessEqual(self.scene.panel_rect.height, 80)
+                    self.assertGreaterEqual(self.scene.panel_rect.top, 232)
+                    headers = []
+                    for heading in ('ATB', 'NAME', 'HP', 'MP'):
+                        matching = [rect for text, rect in records if text == heading]
+                        self.assertEqual(len(matching), 1, heading)
+                        headers.append(matching[0])
+                    self.assertEqual(headers, sorted(headers, key=lambda rect: rect.left))
+                    self.assertEqual(labels.count('Caelan'), 1)
+                    self.assertFalse(any('ally' in text.lower() or text.upper() in ('BARRIER', 'LIMIT')
+                                         for text in labels))
+                    self.assertEqual(len(self.scene.command_rects), 4 if learned else 3)
+
+    def test_status_and_maximum_resources_fit_table_columns_at_every_scale(self):
         self.assertTrue(self.game.attributes.set_modifiers('ui-test', {'hp': 9999, 'mp': 999}))
         self.assertTrue(self.game.attributes.set_current(hp=9999, mp=999))
         self.make_scene()
@@ -145,26 +170,39 @@ class BattleStatusUITests(unittest.TestCase):
                     self.game.audio.set_text_scale(text_scale)
                     records = self.text_bounds()
                     name = next(rect for text, rect in records if text == 'Caelan')
-                    labels = [(text, rect) for text, rect in records
-                              if text.startswith(('HP ', 'MP '))]
-                    self.assertEqual(len(labels), 2)
-                    self.assertTrue(any('9999' in text for text, _ in labels))
-                    self.assertTrue(any('999' in text for text, _ in labels))
-                    for rect in (name, *(rect for _, rect in labels), self.scene.hp_rect,
+                    hp = next(rect for text, rect in records
+                              if text.replace(' ', '') == '9999/9999')
+                    mp = next(rect for text, rect in records
+                              if text.replace(' ', '') == '999/999')
+                    headers = {text: rect for text, rect in records
+                               if text in ('ATB', 'NAME', 'HP', 'MP')}
+                    for rect in (name, hp, mp, self.scene.hp_rect,
                                  self.scene.mp_rect, self.scene.atb_rect):
-                        self.assertGreaterEqual(rect.left, 240)
                         self.assertTrue(self.scene.panel_rect.contains(rect))
                         for command in self.scene.command_rects.values():
                             self.assertFalse(command.colliderect(rect))
-                    self.assertLessEqual(name.bottom, self.scene.hp_rect.top)
-                    self.assertLessEqual(self.scene.hp_rect.bottom, self.scene.mp_rect.top)
-                    for text, rect in labels:
-                        self.assertGreaterEqual(rect.top, name.bottom)
-                        for bar in (self.scene.hp_rect, self.scene.mp_rect):
-                            self.assertFalse(rect.colliderect(bar))
-                    for command in self.scene.command_rects.values():
-                        self.assertLessEqual(command.right, 240)
+                    self.assertLessEqual(self.scene.atb_rect.right, name.left)
+                    self.assertLessEqual(name.right, hp.left)
+                    self.assertLessEqual(hp.right, mp.left)
+                    self.assertEqual(self.scene.hp_rect.top, self.scene.mp_rect.top)
+                    for heading, value, bar in (('HP', hp, self.scene.hp_rect),
+                                                ('MP', mp, self.scene.mp_rect)):
+                        self.assertLessEqual(headers[heading].bottom, value.top)
+                        self.assertLessEqual(value.bottom, bar.top)
+                        self.assertGreaterEqual(value.left, bar.left)
+                        self.assertLessEqual(value.right, bar.right)
+                    commands = list(self.scene.command_rects.items())
+                    for index, (identifier, command) in enumerate(commands):
                         self.assertTrue(self.scene.panel_rect.contains(command))
+                        self.assertLess(command.right, self.scene.atb_rect.left)
+                        if index:
+                            self.assertEqual(command.left, commands[index-1][1].left)
+                            self.assertGreaterEqual(command.top, commands[index-1][1].bottom)
+                        label = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
+                                 'aether_dart': 'Dart · 4 MP'}[identifier]
+                        label_bounds = next(rect for text, rect in records if text == label)
+                        self.assertTrue(command.contains(label_bounds),
+                                        (label, command, label_bounds))
 
     def test_result_and_retry_actions_remain_on_left_with_status_visible(self):
         self.game.audio.set_text_scale(1.5)
@@ -177,14 +215,33 @@ class BattleStatusUITests(unittest.TestCase):
             records = self.text_bounds()
             self.assertLessEqual(self.scene.continue_rect.right, 240)
             self.assertTrue(self.scene.panel_rect.contains(self.scene.continue_rect))
+            status = (self.scene.name_rect, self.scene.atb_rect,
+                      self.scene.hp_rect, self.scene.mp_rect)
             for text, rect in records:
-                if text in ('Escaped', 'Continue', 'Try again') or text.startswith('Rewards '):
-                    self.assertLessEqual(rect.right, 240)
+                if text.upper() in ('ESCAPED', 'VICTORY', 'DEFEATED') or text in ('Continue', 'Try again'):
+                    self.assertLess(rect.right, self.scene.atb_rect.left)
                     self.assertTrue(self.scene.panel_rect.contains(rect))
-                elif text == 'Caelan':
-                    self.assertGreater(rect.left, 240)
+                elif text.startswith('Rewards '):
+                    self.assertTrue(self.canvas.get_rect().contains(rect))
+                    self.assertTrue(all(not rect.colliderect(value) for value in status))
             self.assertFalse(self.scene.continue_rect.colliderect(self.scene.hp_rect))
             self.assertFalse(self.scene.continue_rect.colliderect(self.scene.mp_rect))
+
+        # A compact result block must still show the complete reward, including
+        # the crystal name and quantity, rather than clipping wrapped lines.
+        self.make_scene()
+        self.scene.update(20)
+        self.model.enemy.hp = 1
+        self.assertTrue(self.model.choose_action('attack'))
+        self.scene.update(1)
+        self.assertEqual(self.model.phase, 'victory')
+        records = self.text_bounds()
+        visible = ' '.join(text for text, _ in records)
+        for word in ('20', 'RP', 'Aether', 'Emerald'):
+            self.assertIn(word, visible)
+        self.assertRegex(visible, r'×\s*1')
+        for text, rect in records:
+            self.assertTrue(self.canvas.get_rect().contains(rect), (text, rect))
 
 
 if __name__ == '__main__':

@@ -33,7 +33,12 @@ def main(argv=None):
         captures.append({'file': filename, 'window': list(game.window.get_size()),
                          'text_scale': game.audio.text_scale,
                          'hp': member.hp, 'max_hp': member.max_hp,
-                         'mp': member.mp, 'max_mp': member.max_mp})
+                         'mp': member.mp, 'max_mp': member.max_mp,
+                         'panel_rect': list(game.combat.scene.panel_rect),
+                         'height_reduction_from_108_percent': round(
+                             100*(1-game.combat.scene.panel_rect.height/108), 1),
+                         'columns': ['ATB', 'NAME', 'HP', 'MP'],
+                         'commands': list(game.combat.scene.command_rects)})
 
     with fixture() as game:
         game.world = game.town

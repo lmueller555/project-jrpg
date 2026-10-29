@@ -1,0 +1,1155 @@
+{
+  "isolated_temporary_journeys": true,
+  "normal_journey_and_settings_untouched": true,
+  "world_bat_position": [
+    336,
+    900
+  ],
+  "trigger": "E within 32 world pixels",
+  "fixtures": [
+    {
+      "name": "starter",
+      "starting_hp": 140,
+      "starting_mp": 30,
+      "rp": 0,
+      "crystals": 0
+    },
+    {
+      "name": "learned Dart",
+      "training_rp": 6860,
+      "training_crystal": {
+        "aether_diamond": 1
+      },
+      "ability_activated_through_lattice": "aether_dart_01"
+    }
+  ],
+  "enemy_atb_visible": false,
+  "checks": [
+    {
+      "stage": "ready decision pauses all gauges",
+      "wait_seconds": 3,
+      "before": [
+        1.0,
+        0.9500000000000034
+      ],
+      "after": [
+        1.0,
+        0.9500000000000034
+      ],
+      "live_journey_unchanged": true,
+      "visible_atb_labels": 1
+    },
+    {
+      "stage": "victory settles once",
+      "rp": 20,
+      "rank": 2,
+      "steps": 1,
+      "aether_emerald": 1,
+      "current_hp": 109,
+      "current_mp": 30,
+      "world_unchanged_during_battle": true,
+      "durable_checkpoint": true,
+      "duplicate_settlement_unchanged": true
+    },
+    {
+      "stage": "learned Dart and flee",
+      "training_fixture_rp": 6860,
+      "learned_via_real_lattice": true,
+      "dart_mp_cost": 4,
+      "flee_awarded_no_rewards": true,
+      "minimum_window": [
+        480,
+        320
+      ],
+      "large_text_scale": 1.5,
+      "minimum_window_guard_click": true,
+      "letterboxed_window": [
+        1440,
+        810
+      ],
+      "letterboxed_dart_click": true
+    }
+  ],
+  "actions": [
+    {
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard",
+      "kind": "guard",
+      "animation": "guard",
+      "duration": 0.5,
+      "impact_at": 0.2,
+      "elapsed": 0.5,
+      "damage": 0,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite",
+      "kind": "physical",
+      "animation": "bite",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 4,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack",
+      "kind": "physical",
+      "animation": "attack",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 18,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "name": "Wing Gust",
+      "kind": "magical",
+      "animation": "gust",
+      "duration": 0.85,
+      "impact_at": 0.45,
+      "elapsed": 0.85,
+      "damage": 9,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack",
+      "kind": "physical",
+      "animation": "attack",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 19,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite",
+      "kind": "physical",
+      "animation": "bite",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 8,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack",
+      "kind": "physical",
+      "animation": "attack",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 18,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "name": "Wing Gust",
+      "kind": "magical",
+      "animation": "gust",
+      "duration": 0.85,
+      "impact_at": 0.45,
+      "elapsed": 0.85,
+      "damage": 10,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack",
+      "kind": "physical",
+      "animation": "attack",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 18,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard",
+      "kind": "guard",
+      "animation": "guard",
+      "duration": 0.5,
+      "impact_at": 0.2,
+      "elapsed": 0.5,
+      "damage": 0,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite",
+      "kind": "physical",
+      "animation": "bite",
+      "duration": 0.72,
+      "impact_at": 0.36,
+      "elapsed": 0.72,
+      "damage": 4,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "aether_dart",
+      "target": "enemy",
+      "name": "Aether Dart",
+      "kind": "magical",
+      "animation": "cast",
+      "duration": 0.9,
+      "impact_at": 0.5,
+      "elapsed": 0.9,
+      "damage": 36,
+      "resolved": true
+    },
+    {
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "name": "Wing Gust",
+      "kind": "magical",
+      "animation": "gust",
+      "duration": 0.85,
+      "impact_at": 0.45,
+      "elapsed": 0.85,
+      "damage": 9,
+      "resolved": true
+    },
+    {
+      "actor": "player",
+      "action": "flee",
+      "target": null,
+      "name": "Flee",
+      "kind": "flee",
+      "animation": "flee",
+      "duration": 0.7,
+      "impact_at": 0.35,
+      "elapsed": 0.7,
+      "damage": 0,
+      "resolved": true
+    }
+  ],
+  "captures": [
+    {
+      "file": "eldenmere_bat.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "exploration",
+      "player_hp": 140,
+      "player_mp": 30,
+      "player_atb": null,
+      "enemy_atb_for_verification_only": null
+    },
+    {
+      "file": "battle_charging.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "charging",
+      "player_hp": 140,
+      "player_mp": 30,
+      "player_atb": 0.07999999999999997,
+      "enemy_atb_for_verification_only": 0.07599999999999997
+    },
+    {
+      "file": "battle_ready.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "ready",
+      "player_hp": 140,
+      "player_mp": 30,
+      "player_atb": 1.0,
+      "enemy_atb_for_verification_only": 0.9500000000000034
+    },
+    {
+      "file": "caelan_guard.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "player_hp": 140,
+      "player_mp": 30,
+      "player_atb": 0.0,
+      "enemy_atb_for_verification_only": 0.9500000000000034
+    },
+    {
+      "file": "bat_bite.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "player_hp": 136,
+      "player_mp": 30,
+      "player_atb": 0.052631578947363755,
+      "enemy_atb_for_verification_only": 0.0
+    },
+    {
+      "file": "caelan_attack.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "player_hp": 136,
+      "player_mp": 30,
+      "player_atb": 0.0,
+      "enemy_atb_for_verification_only": 0.9000000000000067
+    },
+    {
+      "file": "bat_wing_gust.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "player_hp": 136,
+      "player_mp": 30,
+      "player_atb": 0.10526315789472754,
+      "enemy_atb_for_verification_only": 0.0
+    },
+    {
+      "file": "battle_victory.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "victory",
+      "player_hp": 109,
+      "player_mp": 30,
+      "player_atb": 0.0,
+      "enemy_atb_for_verification_only": 0.7500000000000163
+    },
+    {
+      "file": "return_to_eldenmere.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "exploration",
+      "player_hp": 109,
+      "player_mp": 30,
+      "player_atb": null,
+      "enemy_atb_for_verification_only": null
+    },
+    {
+      "file": "minimum_window_large_text.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "phase": "ready",
+      "player_hp": 140,
+      "player_mp": 30,
+      "player_atb": 1.0,
+      "enemy_atb_for_verification_only": 0.9500000000000034
+    },
+    {
+      "file": "letterboxed_ready.png",
+      "window": [
+        1440,
+        810
+      ],
+      "text_scale": 1.0,
+      "phase": "ready",
+      "player_hp": 136,
+      "player_mp": 30,
+      "player_atb": 1.0,
+      "enemy_atb_for_verification_only": 0.9000000000000067
+    },
+    {
+      "file": "caelan_cast.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "phase": "acting",
+      "player_hp": 136,
+      "player_mp": 26,
+      "player_atb": 0.0,
+      "enemy_atb_for_verification_only": 0.9000000000000067
+    }
+  ],
+  "animation": {
+    "file": "combat.gif",
+    "fps": 10,
+    "rendered_frames": 91,
+    "encoded_frames": 86,
+    "logical_size": [
+      480,
+      320
+    ],
+    "timeline": [
+      {
+        "frame": 0,
+        "stage": "visible Bat west of the well",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 1,
+        "stage": "visible Bat west of the well",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 2,
+        "stage": "visible Bat west of the well",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 3,
+        "stage": "battle scene and charging ATB",
+        "phase": "charging",
+        "player_atb": 0.0026666666666666666,
+        "enemy_atb": 0.002533333333333333,
+        "action": null
+      },
+      {
+        "frame": 4,
+        "stage": "battle scene and charging ATB",
+        "phase": "charging",
+        "player_atb": 0.018666666666666668,
+        "enemy_atb": 0.017733333333333334,
+        "action": null
+      },
+      {
+        "frame": 5,
+        "stage": "battle scene and charging ATB",
+        "phase": "charging",
+        "player_atb": 0.03466666666666667,
+        "enemy_atb": 0.03293333333333333,
+        "action": null
+      },
+      {
+        "frame": 6,
+        "stage": "battle scene and charging ATB",
+        "phase": "charging",
+        "player_atb": 0.05066666666666666,
+        "enemy_atb": 0.04813333333333332,
+        "action": null
+      },
+      {
+        "frame": 7,
+        "stage": "battle scene and charging ATB",
+        "phase": "charging",
+        "player_atb": 0.06666666666666665,
+        "enemy_atb": 0.06333333333333331,
+        "action": null
+      },
+      {
+        "frame": 8,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 9,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 10,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 11,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 12,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 13,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 14,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 15,
+        "stage": "player chooses while every gauge waits",
+        "phase": "ready",
+        "player_atb": 1.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": null
+      },
+      {
+        "frame": 16,
+        "stage": "Caelan guards",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": "guard"
+      },
+      {
+        "frame": 17,
+        "stage": "Caelan guards",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": "guard"
+      },
+      {
+        "frame": 18,
+        "stage": "Caelan guards",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9500000000000034,
+        "action": "guard"
+      },
+      {
+        "frame": 19,
+        "stage": "Bat Bite and guarded hit",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 20,
+        "stage": "Bat Bite and guarded hit",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 21,
+        "stage": "Bat Bite and guarded hit",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 22,
+        "stage": "Bat Bite and guarded hit",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 23,
+        "stage": "Bite recovery",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 24,
+        "stage": "Bite recovery",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 25,
+        "stage": "Bite recovery",
+        "phase": "acting",
+        "player_atb": 0.052631578947363755,
+        "enemy_atb": 0.0,
+        "action": "bite"
+      },
+      {
+        "frame": 26,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 27,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 28,
+        "stage": "Attack impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 29,
+        "stage": "Attack impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 30,
+        "stage": "Attack impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 31,
+        "stage": "Attack impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 32,
+        "stage": "Attack impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "attack"
+      },
+      {
+        "frame": 33,
+        "stage": "Bat Wing Gust",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 34,
+        "stage": "Bat Wing Gust",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 35,
+        "stage": "Bat Wing Gust",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 36,
+        "stage": "Wing Gust impact",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 37,
+        "stage": "Wing Gust impact",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 38,
+        "stage": "Wing Gust impact",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 39,
+        "stage": "Wing Gust impact",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 40,
+        "stage": "Wing Gust impact",
+        "phase": "acting",
+        "player_atb": 0.10526315789472754,
+        "enemy_atb": 0.0,
+        "action": "wing_gust"
+      },
+      {
+        "frame": 41,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 42,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 43,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 44,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 45,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 46,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 47,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.8500000000000099,
+        "action": "attack"
+      },
+      {
+        "frame": 48,
+        "stage": "Caelan attacks",
+        "phase": "charging",
+        "player_atb": 0.0021333333333334275,
+        "enemy_atb": 0.8520266666666766,
+        "action": null
+      },
+      {
+        "frame": 49,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 50,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 51,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 52,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 53,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 54,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 55,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.800000000000013,
+        "action": "attack"
+      },
+      {
+        "frame": 56,
+        "stage": "Caelan attacks",
+        "phase": "charging",
+        "player_atb": 0.0021333333333334275,
+        "enemy_atb": 0.8020266666666798,
+        "action": null
+      },
+      {
+        "frame": 57,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 58,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 59,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 60,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 61,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 62,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 63,
+        "stage": "Caelan attacks",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": "attack"
+      },
+      {
+        "frame": 64,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 65,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 66,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 67,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 68,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 69,
+        "stage": "victory and battle rewards",
+        "phase": "victory",
+        "player_atb": 0.0,
+        "enemy_atb": 0.7500000000000163,
+        "action": null
+      },
+      {
+        "frame": 70,
+        "stage": "back in Eldenmere",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 71,
+        "stage": "back in Eldenmere",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 72,
+        "stage": "back in Eldenmere",
+        "phase": "exploration",
+        "player_atb": null,
+        "enemy_atb": null,
+        "action": null
+      },
+      {
+        "frame": 73,
+        "stage": "Caelan casts learned Aether Dart",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 74,
+        "stage": "Caelan casts learned Aether Dart",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 75,
+        "stage": "Caelan casts learned Aether Dart",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 76,
+        "stage": "Caelan casts learned Aether Dart",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 77,
+        "stage": "Dart impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 78,
+        "stage": "Dart impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 79,
+        "stage": "Dart impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 80,
+        "stage": "Dart impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 81,
+        "stage": "Dart impact and recovery",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.9000000000000067,
+        "action": "aether_dart"
+      },
+      {
+        "frame": 82,
+        "stage": "Dart impact and recovery",
+        "phase": "charging",
+        "player_atb": 0.0010666666666668784,
+        "enemy_atb": 0.9010133333333402,
+        "action": null
+      },
+      {
+        "frame": 83,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 84,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 85,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 86,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 87,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 88,
+        "stage": "Flee returns safely",
+        "phase": "acting",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": "flee"
+      },
+      {
+        "frame": 89,
+        "stage": "Flee returns safely",
+        "phase": "fled",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": null
+      },
+      {
+        "frame": 90,
+        "stage": "Flee returns safely",
+        "phase": "fled",
+        "player_atb": 0.0,
+        "enemy_atb": 0.85000000000001,
+        "action": null
+      }
+    ]
+  }
+}
