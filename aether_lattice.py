@@ -18,6 +18,7 @@ from character_attributes import ATTRIBUTE_IDS, MAX_ATTRIBUTE_VALUE
 ROOT = Path(__file__).resolve().parent
 BOARD_PATH = ROOT/'assets/progression/aether_lattice.json'
 LEGACY_BOARD_PATH = ROOT/'assets/progression/aether_lattice_v1.json'
+PRE_TIER_BOARD_PATH = ROOT/'assets/progression/aether_lattice_v2.json'
 ABILITY_PATH = ROOT/'assets/abilities/catalog.json'
 MAX_RP = 999999999
 MAX_RECEIPTS = 4096
@@ -269,17 +270,26 @@ class AetherLattice:
                        for key, value in self.starts.items())):
             raise ValueError('Invalid lattice character starts')
         self.character_ids = tuple(self.starts)
+        self._pre_tier_board = None
         self.reset()
 
     def reset(self):
         self._characters = {identifier: {'rp': 0, 'spent_steps': 0, 'position': node,
                                         'visited': {node}, 'activated': set()}
                             for identifier, node in self.starts.items()}
+        if self._tiered_rewards:
+            for state in self._characters.values():state['legacy_activated'] = set()
         self._receipts = set()
+
+    @property
+    def _tiered_rewards(self):
+        return self.board.id == 'caelan_starter' and self.board.version == 3
 
     def state(self, character_id='caelan'):
         state = self._characters[character_id]
-        return {**state, 'visited': sorted(state['visited']), 'activated': sorted(state['activated'])}
+        result = {**state, 'visited': sorted(state['visited']), 'activated': sorted(state['activated'])}
+        if self._tiered_rewards:result['legacy_activated'] = sorted(state['legacy_activated'])
+        return result
 
     def rank(self, character_id='caelan'):
         return self.board.rank_for_rp(self._characters[character_id]['rp'])
@@ -364,9 +374,20 @@ class AetherLattice:
     def bonuses(self, character_id='caelan'):
         result = dict.fromkeys(ATTRIBUTE_IDS, 0)
         for identifier in self._characters[character_id]['activated']:
-            node = self.board.nodes[identifier]
+            node = self.reward_node(identifier, character_id)
             if node['kind'] == 'stat':result[node['stat']] += node['amount']
         return result
+
+    def reward_node(self, identifier, character_id='caelan'):
+        """Return the canonical earned reward, preserving pre-tier activations.
+
+        Node IDs remain stable when an unactivated HP node becomes MP or Mag.
+        An old activation keeps its paid reward and cannot activate a second time.
+        """
+        state = self._characters[character_id]
+        if identifier in state.get('legacy_activated', ()):
+            return self._pre_tier_archive().nodes[identifier]
+        return self.board.nodes[identifier]
 
     def learned_abilities(self, character_id='caelan'):
         known = set(self.board.starting_abilities.get(character_id, ()))
@@ -390,12 +411,52 @@ class AetherLattice:
         return True
 
     def to_dict(self):
-        return {'version': 1, 'board_id': self.board.id, 'board_version': self.board.version,
+        return {'version': 2 if self._tiered_rewards else 1,
+                'board_id': self.board.id, 'board_version': self.board.version,
                 'characters': {key: self.state(key) for key in sorted(self._characters)},
                 'receipts': sorted(self._receipts)}
 
+    def _pre_tier_archive(self):
+        """Load canonical paid rewards after checking the rebalance's lineage."""
+        if self._pre_tier_board is not None:return self._pre_tier_board
+        archived = LatticeBoard(json.loads(PRE_TIER_BOARD_PATH.read_text(encoding='utf-8')),
+                                self.board.ability_catalog)
+        if (not self._tiered_rewards or archived.id != self.board.id or archived.version != 2
+                or archived.rank_curve != self.board.rank_curve
+                or archived.starts != self.board.starts or self.starts != archived.starts
+                or archived.starting_abilities != self.board.starting_abilities
+                or set(archived.nodes) != set(self.board.nodes)
+                or archived.edges != self.board.edges
+                or archived.formations != self.board.formations):
+            raise ValueError('Invalid tiered lattice lineage')
+        for identifier, old in archived.nodes.items():
+            current = self.board.nodes[identifier]
+            if (old['kind'] != current['kind']
+                    or any(current.get(key) != value for key, value in old.items()
+                           if key not in ('name', 'description', 'stat', 'amount', 'cost'))
+                    or old['kind'] != 'stat' and current != old):
+                raise ValueError('Rebalancing cannot change paid abilities or travel nodes')
+        self._pre_tier_board = archived
+        return archived
+
     def _normalized_snapshot(self, data):
         """Validate the archived rules before upgrading a known old ledger."""
+        if (self._tiered_rewards and isinstance(data, dict)
+                and data.get('board_id') == self.board.id
+                and type(data.get('board_version')) is int and data['board_version'] in (1, 2)):
+            try:
+                archived = self._pre_tier_archive()
+                # Version-one records first pass their original tree rules and
+                # the established v1-to-v2 validation, before the tier upgrade.
+                previous = AetherLattice(archived, self.starts)
+                if not previous.restore(data):return None
+            except (OSError, ValueError, TypeError):
+                return None
+            normalized = previous.to_dict()
+            normalized.update(version=2, board_version=3)
+            for state in normalized['characters'].values():
+                state['legacy_activated'] = list(state['activated'])
+            return normalized
         if (not isinstance(data, dict) or self.board.id != 'caelan_starter' or self.board.version != 2
                 or data.get('board_id') != self.board.id or type(data.get('board_version')) is not int
                 or data['board_version'] != 1):
@@ -431,7 +492,8 @@ class AetherLattice:
     def _valid_current_snapshot(self, data):
         if (not isinstance(data, dict)
                 or set(data) != {'version', 'board_id', 'board_version', 'characters', 'receipts'}
-                or type(data['version']) is not int or data['version'] != 1
+                or type(data['version']) is not int
+                or data['version'] != (2 if self._tiered_rewards else 1)
                 or data['board_id'] != self.board.id
                 or type(data['board_version']) is not int or data['board_version'] != self.board.version
                 or not isinstance(data['characters'], dict) or set(data['characters']) != set(self.starts)
@@ -439,15 +501,30 @@ class AetherLattice:
                 or any(not _identifier(key) for key in data['receipts'])
                 or len(data['receipts']) != len(set(data['receipts']))):
             return False
+        fields = {'rp', 'spent_steps', 'position', 'visited', 'activated'}
+        if self._tiered_rewards:fields.add('legacy_activated')
         for identifier, state in data['characters'].items():
             if (not isinstance(state, dict)
-                    or set(state) != {'rp', 'spent_steps', 'position', 'visited', 'activated'}
+                    or set(state) != fields
                     or not _integer(state['rp']) or not _integer(state['spent_steps'])
                     or not isinstance(state['position'], str) or state['position'] not in self.board.nodes
                     or any(not isinstance(state[key], list) or len(state[key]) > len(self.board.nodes)
                            or any(not isinstance(node, str) or node not in self.board.nodes for node in state[key])
                            or len(state[key]) != len(set(state[key])) for key in ('visited', 'activated'))):
                 return False
+            if self._tiered_rewards:
+                legacy = state['legacy_activated']
+                if (not isinstance(legacy, list) or len(legacy) > len(self.board.nodes)
+                        or any(not isinstance(node, str) or node not in state['activated'] for node in legacy)
+                        or len(legacy) != len(set(legacy))):
+                    return False
+                if legacy:
+                    try:
+                        archived = self._pre_tier_archive()
+                        if any(node not in archived.nodes or archived.nodes[node]['kind'] == 'blank'
+                               for node in legacy):return False
+                    except (OSError, ValueError, TypeError):
+                        return False
             rank = self.board.rank_for_rp(state['rp'])
             visited, activated = set(state['visited']), set(state['activated'])
             if (state['spent_steps'] > rank-1 or len(visited) > state['spent_steps']+1
@@ -492,5 +569,7 @@ class AetherLattice:
         self._characters = {key: {**deepcopy(value), 'visited': set(value['visited']),
                                   'activated': set(value['activated'])}
                             for key, value in data['characters'].items()}
+        if self._tiered_rewards:
+            for state in self._characters.values():state['legacy_activated'] = set(state['legacy_activated'])
         self._receipts = set(data['receipts'])
         return True

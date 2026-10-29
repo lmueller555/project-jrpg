@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "id": "caelan_starter",
   "name": "Aether Lattice",
   "description": "Caelan's connected circles combine broad formations, smaller loops and straight connecting paths. Reach a center reward and continue onward.",
@@ -58,8 +58,8 @@
     },
     "hp_01": {
       "kind": "stat",
-      "name": "HP +20",
-      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "name": "HP +100",
+      "description": "Increase maximum HP by 100. Current HP is unchanged.",
       "position": [
         72,
         0
@@ -68,7 +68,7 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 20
+      "amount": 100
     },
     "blank_01": {
       "kind": "blank",
@@ -96,8 +96,8 @@
     },
     "mp_01": {
       "kind": "stat",
-      "name": "MP +2",
-      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "name": "MP +5",
+      "description": "Increase maximum MP by 5. Current MP is unchanged.",
       "position": [
         211,
         218
@@ -106,7 +106,7 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 2
+      "amount": 5
     },
     "def_01": {
       "kind": "stat",
@@ -241,8 +241,8 @@
     },
     "hp_02": {
       "kind": "stat",
-      "name": "HP +20",
-      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "name": "HP +100",
+      "description": "Increase maximum HP by 100. Current HP is unchanged.",
       "position": [
         131,
         176
@@ -251,7 +251,7 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 20
+      "amount": 100
     },
     "blank_04": {
       "kind": "blank",
@@ -368,8 +368,8 @@
     },
     "mp_02": {
       "kind": "stat",
-      "name": "MP +2",
-      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         123,
         646
@@ -378,7 +378,7 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 2
+      "amount": 10
     },
     "m_def_02": {
       "kind": "stat",
@@ -406,8 +406,8 @@
     },
     "hp_03": {
       "kind": "stat",
-      "name": "HP +20",
-      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "name": "HP +400",
+      "description": "Increase maximum HP by 400. Current HP is unchanged.",
       "position": [
         36,
         696
@@ -416,7 +416,7 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 20
+      "amount": 400
     },
     "lck_02": {
       "kind": "stat",
@@ -854,8 +854,8 @@
     },
     "hp_04": {
       "kind": "stat",
-      "name": "HP +20",
-      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "name": "HP +100",
+      "description": "Increase maximum HP by 100. Current HP is unchanged.",
       "position": [
         376,
         176
@@ -864,26 +864,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 20
+      "amount": 100
     },
     "hp_05": {
       "kind": "stat",
-      "name": "HP +30",
-      "description": "Increase maximum HP by 30. Current HP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         556,
         356
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_sapphire": 1
       },
-      "stat": "hp",
-      "amount": 30
+      "stat": "mp",
+      "amount": 10
     },
     "hp_06": {
       "kind": "stat",
-      "name": "HP +30",
-      "description": "Increase maximum HP by 30. Current HP is unchanged.",
+      "name": "HP +100",
+      "description": "Increase maximum HP by 100. Current HP is unchanged.",
       "position": [
         651,
         176
@@ -892,26 +892,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 30
+      "amount": 100
     },
     "hp_07": {
       "kind": "stat",
-      "name": "HP +40",
-      "description": "Increase maximum HP by 40. Current HP is unchanged.",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
       "position": [
         483,
         115
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_amethyst": 1
       },
-      "stat": "hp",
-      "amount": 40
+      "stat": "mag",
+      "amount": 2
     },
     "hp_08": {
       "kind": "stat",
-      "name": "HP +50",
-      "description": "Increase maximum HP by 50. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         487,
         -282
@@ -920,12 +920,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 50
+      "amount": 200
     },
     "hp_09": {
       "kind": "stat",
-      "name": "HP +50",
-      "description": "Increase maximum HP by 50. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         896,
         176
@@ -934,26 +934,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 50
+      "amount": 200
     },
     "hp_10": {
       "kind": "stat",
-      "name": "HP +60",
-      "description": "Increase maximum HP by 60. Current HP is unchanged.",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
       "position": [
         1256,
         176
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_sapphire": 1
       },
-      "stat": "hp",
-      "amount": 60
+      "stat": "mp",
+      "amount": 20
     },
     "hp_11": {
       "kind": "stat",
-      "name": "HP +70",
-      "description": "Increase maximum HP by 70. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         1149,
         237
@@ -962,40 +962,40 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 70
+      "amount": 200
     },
     "hp_12": {
       "kind": "stat",
-      "name": "HP +70",
-      "description": "Increase maximum HP by 70. Current HP is unchanged.",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
       "position": [
         1060,
         82
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_amethyst": 1
       },
-      "stat": "hp",
-      "amount": 70
+      "stat": "mag",
+      "amount": 2
     },
     "hp_13": {
       "kind": "stat",
-      "name": "HP +80",
-      "description": "Increase maximum HP by 80. Current HP is unchanged.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1107,
         -309
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_amethyst": 1
       },
-      "stat": "hp",
-      "amount": 80
+      "stat": "mag",
+      "amount": 3
     },
     "hp_14": {
       "kind": "stat",
-      "name": "HP +80",
-      "description": "Increase maximum HP by 80. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         1686,
         20
@@ -1004,12 +1004,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 80
+      "amount": 200
     },
     "hp_15": {
       "kind": "stat",
-      "name": "HP +90",
-      "description": "Increase maximum HP by 90. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         1776,
         176
@@ -1018,26 +1018,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 90
+      "amount": 200
     },
     "hp_16": {
       "kind": "stat",
-      "name": "HP +100",
-      "description": "Increase maximum HP by 100. Current HP is unchanged.",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
       "position": [
         1548,
         258
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_sapphire": 1
       },
-      "stat": "hp",
-      "amount": 100
+      "stat": "mp",
+      "amount": 20
     },
     "hp_17": {
       "kind": "stat",
-      "name": "HP +110",
-      "description": "Increase maximum HP by 110. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         1507,
         208
@@ -1046,12 +1046,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 110
+      "amount": 200
     },
     "hp_18": {
       "kind": "stat",
-      "name": "HP +120",
-      "description": "Increase maximum HP by 120. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         2074,
         221
@@ -1060,12 +1060,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 120
+      "amount": 300
     },
     "hp_19": {
       "kind": "stat",
-      "name": "HP +130",
-      "description": "Increase maximum HP by 130. Current HP is unchanged.",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
       "position": [
         1686,
         540
@@ -1074,26 +1074,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 130
+      "amount": 200
     },
     "hp_20": {
       "kind": "stat",
-      "name": "HP +130",
-      "description": "Increase maximum HP by 130. Current HP is unchanged.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1776,
         696
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_amethyst": 1
       },
-      "stat": "hp",
-      "amount": 130
+      "stat": "mag",
+      "amount": 3
     },
     "hp_21": {
       "kind": "stat",
-      "name": "HP +140",
-      "description": "Increase maximum HP by 140. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         1440,
         786
@@ -1102,12 +1102,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 140
+      "amount": 300
     },
     "hp_22": {
       "kind": "stat",
-      "name": "HP +150",
-      "description": "Increase maximum HP by 150. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         1501,
         696
@@ -1116,12 +1116,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 150
+      "amount": 300
     },
     "hp_23": {
       "kind": "stat",
-      "name": "HP +150",
-      "description": "Increase maximum HP by 150. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         986,
         540
@@ -1130,26 +1130,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 150
+      "amount": 300
     },
     "hp_24": {
       "kind": "stat",
-      "name": "HP +160",
-      "description": "Increase maximum HP by 160. Current HP is unchanged.",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
       "position": [
         1076,
         876
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_sapphire": 1
       },
-      "stat": "hp",
-      "amount": 160
+      "stat": "mp",
+      "amount": 20
     },
     "hp_25": {
       "kind": "stat",
-      "name": "HP +160",
-      "description": "Increase maximum HP by 160. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         1028,
         778
@@ -1158,26 +1158,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 160
+      "amount": 300
     },
     "hp_26": {
       "kind": "stat",
-      "name": "HP +170",
-      "description": "Increase maximum HP by 170. Current HP is unchanged.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         987,
         728
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_amethyst": 1
       },
-      "stat": "hp",
-      "amount": 170
+      "stat": "mag",
+      "amount": 3
     },
     "hp_27": {
       "kind": "stat",
-      "name": "HP +180",
-      "description": "Increase maximum HP by 180. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         466,
         540
@@ -1186,26 +1186,26 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 180
+      "amount": 300
     },
     "hp_28": {
       "kind": "stat",
-      "name": "HP +180",
-      "description": "Increase maximum HP by 180. Current HP is unchanged.",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
       "position": [
         646,
         852
       ],
       "cost": {
-        "aether_emerald": 1
+        "aether_sapphire": 1
       },
-      "stat": "hp",
-      "amount": 180
+      "stat": "mp",
+      "amount": 20
     },
     "hp_29": {
       "kind": "stat",
-      "name": "HP +190",
-      "description": "Increase maximum HP by 190. Current HP is unchanged.",
+      "name": "HP +300",
+      "description": "Increase maximum HP by 300. Current HP is unchanged.",
       "position": [
         400,
         786
@@ -1214,12 +1214,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 190
+      "amount": 300
     },
     "hp_30": {
       "kind": "stat",
-      "name": "HP +200",
-      "description": "Increase maximum HP by 200. Current HP is unchanged.",
+      "name": "HP +400",
+      "description": "Increase maximum HP by 400. Current HP is unchanged.",
       "position": [
         604,
         614
@@ -1228,12 +1228,12 @@
         "aether_emerald": 1
       },
       "stat": "hp",
-      "amount": 200
+      "amount": 400
     },
     "mp_03": {
       "kind": "stat",
-      "name": "MP +4",
-      "description": "Increase maximum MP by 4. Current MP is unchanged.",
+      "name": "MP +5",
+      "description": "Increase maximum MP by 5. Current MP is unchanged.",
       "position": [
         712,
         86
@@ -1242,12 +1242,12 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 4
+      "amount": 5
     },
     "mp_04": {
       "kind": "stat",
-      "name": "MP +6",
-      "description": "Increase maximum MP by 6. Current MP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         540,
         82
@@ -1256,7 +1256,7 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 6
+      "amount": 10
     },
     "mp_05": {
       "kind": "stat",
@@ -1274,8 +1274,8 @@
     },
     "mp_06": {
       "kind": "stat",
-      "name": "MP +12",
-      "description": "Increase maximum MP by 12. Current MP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         1124,
         94
@@ -1284,12 +1284,12 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 12
+      "amount": 10
     },
     "mp_07": {
       "kind": "stat",
-      "name": "MP +16",
-      "description": "Increase maximum MP by 16. Current MP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         1752,
         266
@@ -1298,7 +1298,7 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 16
+      "amount": 10
     },
     "mp_08": {
       "kind": "stat",
@@ -1316,8 +1316,8 @@
     },
     "mp_09": {
       "kind": "stat",
-      "name": "MP +22",
-      "description": "Increase maximum MP by 22. Current MP is unchanged.",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
       "position": [
         1612,
         790
@@ -1326,12 +1326,12 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 22
+      "amount": 10
     },
     "mp_10": {
       "kind": "stat",
-      "name": "MP +26",
-      "description": "Increase maximum MP by 26. Current MP is unchanged.",
+      "name": "MP +30",
+      "description": "Increase maximum MP by 30. Current MP is unchanged.",
       "position": [
         1076,
         516
@@ -1340,12 +1340,12 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 26
+      "amount": 30
     },
     "mp_11": {
       "kind": "stat",
-      "name": "MP +28",
-      "description": "Increase maximum MP by 28. Current MP is unchanged.",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
       "position": [
         1060,
         602
@@ -1354,12 +1354,12 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 28
+      "amount": 20
     },
     "mp_12": {
       "kind": "stat",
-      "name": "MP +32",
-      "description": "Increase maximum MP by 32. Current MP is unchanged.",
+      "name": "MP +30",
+      "description": "Increase maximum MP by 30. Current MP is unchanged.",
       "position": [
         651,
         696
@@ -1368,7 +1368,7 @@
         "aether_sapphire": 1
       },
       "stat": "mp",
-      "amount": 32
+      "amount": 30
     },
     "str_03": {
       "kind": "stat",
@@ -1386,8 +1386,8 @@
     },
     "str_04": {
       "kind": "stat",
-      "name": "Str +1",
-      "description": "Increase Strength by 1.",
+      "name": "Str +2",
+      "description": "Increase Strength by 2.",
       "position": [
         572,
         270
@@ -1396,7 +1396,7 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 1
+      "amount": 2
     },
     "str_05": {
       "kind": "stat",
@@ -1442,8 +1442,8 @@
     },
     "str_08": {
       "kind": "stat",
-      "name": "Str +4",
-      "description": "Increase Strength by 4.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         1440,
         266
@@ -1452,12 +1452,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 4
+      "amount": 3
     },
     "str_09": {
       "kind": "stat",
-      "name": "Str +4",
-      "description": "Increase Strength by 4.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         1980,
         265
@@ -1466,12 +1466,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 4
+      "amount": 3
     },
     "str_10": {
       "kind": "stat",
-      "name": "Str +5",
-      "description": "Increase Strength by 5.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         1752,
         786
@@ -1480,12 +1480,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 5
+      "amount": 3
     },
     "str_11": {
       "kind": "stat",
-      "name": "Str +5",
-      "description": "Increase Strength by 5.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         1644,
         614
@@ -1494,12 +1494,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 5
+      "amount": 3
     },
     "str_12": {
       "kind": "stat",
-      "name": "Str +5",
-      "description": "Increase Strength by 5.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         1171,
         696
@@ -1508,12 +1508,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 5
+      "amount": 3
     },
     "str_13": {
       "kind": "stat",
-      "name": "Str +6",
-      "description": "Increase Strength by 6.",
+      "name": "Str +4",
+      "description": "Increase Strength by 4.",
       "position": [
         556,
         516
@@ -1522,12 +1522,12 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 6
+      "amount": 4
     },
     "str_14": {
       "kind": "stat",
-      "name": "Str +6",
-      "description": "Increase Strength by 6.",
+      "name": "Str +3",
+      "description": "Increase Strength by 3.",
       "position": [
         467,
         728
@@ -1536,7 +1536,7 @@
         "aether_ruby": 1
       },
       "stat": "str",
-      "amount": 6
+      "amount": 3
     },
     "mag_03": {
       "kind": "stat",
@@ -1554,8 +1554,8 @@
     },
     "mag_04": {
       "kind": "stat",
-      "name": "Mag +1",
-      "description": "Increase Magick by 1.",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
       "position": [
         508,
         258
@@ -1564,7 +1564,7 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 1
+      "amount": 2
     },
     "mag_05": {
       "kind": "stat",
@@ -1610,8 +1610,8 @@
     },
     "mag_08": {
       "kind": "stat",
-      "name": "Mag +4",
-      "description": "Increase Magick by 4.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1669,
         237
@@ -1620,12 +1620,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 4
+      "amount": 3
     },
     "mag_09": {
       "kind": "stat",
-      "name": "Mag +4",
-      "description": "Increase Magick by 4.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1918,
         221
@@ -1634,12 +1634,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 4
+      "amount": 3
     },
     "mag_10": {
       "kind": "stat",
-      "name": "Mag +5",
-      "description": "Increase Magick by 5.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1686,
         852
@@ -1648,12 +1648,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 5
+      "amount": 3
     },
     "mag_11": {
       "kind": "stat",
-      "name": "Mag +5",
-      "description": "Increase Magick by 5.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         896,
         696
@@ -1662,12 +1662,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 5
+      "amount": 3
     },
     "mag_12": {
       "kind": "stat",
-      "name": "Mag +5",
-      "description": "Increase Magick by 5.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         1149,
         757
@@ -1676,12 +1676,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 5
+      "amount": 3
     },
     "mag_13": {
       "kind": "stat",
-      "name": "Mag +6",
-      "description": "Increase Magick by 6.",
+      "name": "Mag +4",
+      "description": "Increase Magick by 4.",
       "position": [
         712,
         606
@@ -1690,12 +1690,12 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 6
+      "amount": 4
     },
     "mag_14": {
       "kind": "stat",
-      "name": "Mag +6",
-      "description": "Increase Magick by 6.",
+      "name": "Mag +3",
+      "description": "Increase Magick by 3.",
       "position": [
         483,
         635
@@ -1704,7 +1704,7 @@
         "aether_amethyst": 1
       },
       "stat": "mag",
-      "amount": 6
+      "amount": 3
     },
     "spr_03": {
       "kind": "stat",
@@ -1750,8 +1750,8 @@
     },
     "spr_06": {
       "kind": "stat",
-      "name": "Spr +3",
-      "description": "Increase Spirit by 3.",
+      "name": "Spr +2",
+      "description": "Increase Spirit by 2.",
       "position": [
         1154,
         -179
@@ -1760,7 +1760,7 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 3
+      "amount": 2
     },
     "spr_07": {
       "kind": "stat",
@@ -1778,8 +1778,8 @@
     },
     "spr_08": {
       "kind": "stat",
-      "name": "Spr +4",
-      "description": "Increase Spirit by 4.",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
       "position": [
         1506,
         540
@@ -1788,12 +1788,12 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 4
+      "amount": 3
     },
     "spr_09": {
       "kind": "stat",
-      "name": "Spr +4",
-      "description": "Increase Spirit by 4.",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
       "position": [
         1548,
         778
@@ -1802,12 +1802,12 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 4
+      "amount": 3
     },
     "spr_10": {
       "kind": "stat",
-      "name": "Spr +6",
-      "description": "Increase Spirit by 6.",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
       "position": [
         1232,
         606
@@ -1816,12 +1816,12 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 6
+      "amount": 3
     },
     "spr_11": {
       "kind": "stat",
-      "name": "Spr +6",
-      "description": "Increase Spirit by 6.",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
       "position": [
         376,
         696
@@ -1830,12 +1830,12 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 6
+      "amount": 3
     },
     "spr_12": {
       "kind": "stat",
-      "name": "Spr +7",
-      "description": "Increase Spirit by 7.",
+      "name": "Spr +4",
+      "description": "Increase Spirit by 4.",
       "position": [
         572,
         790
@@ -1844,7 +1844,7 @@
         "aether_opal": 1
       },
       "stat": "spr",
-      "amount": 7
+      "amount": 4
     },
     "def_03": {
       "kind": "stat",
@@ -1862,8 +1862,8 @@
     },
     "def_04": {
       "kind": "stat",
-      "name": "Def +1",
-      "description": "Increase Defense by 1.",
+      "name": "Def +2",
+      "description": "Increase Defense by 2.",
       "position": [
         461,
         176
@@ -1872,7 +1872,7 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 1
+      "amount": 2
     },
     "def_05": {
       "kind": "stat",
@@ -1918,8 +1918,8 @@
     },
     "def_08": {
       "kind": "stat",
-      "name": "Def +4",
-      "description": "Increase Defense by 4.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         1612,
         270
@@ -1928,12 +1928,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 4
+      "amount": 3
     },
     "def_09": {
       "kind": "stat",
-      "name": "Def +4",
-      "description": "Increase Defense by 4.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         1416,
         696
@@ -1942,12 +1942,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 4
+      "amount": 3
     },
     "def_10": {
       "kind": "stat",
-      "name": "Def +5",
-      "description": "Increase Defense by 5.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         1596,
         876
@@ -1956,12 +1956,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 5
+      "amount": 3
     },
     "def_11": {
       "kind": "stat",
-      "name": "Def +5",
-      "description": "Increase Defense by 5.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         920,
         606
@@ -1970,12 +1970,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 5
+      "amount": 3
     },
     "def_12": {
       "kind": "stat",
-      "name": "Def +5",
-      "description": "Increase Defense by 5.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         1092,
         790
@@ -1984,12 +1984,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 5
+      "amount": 3
     },
     "def_13": {
       "kind": "stat",
-      "name": "Def +6",
-      "description": "Increase Defense by 6.",
+      "name": "Def +3",
+      "description": "Increase Defense by 3.",
       "position": [
         736,
         696
@@ -1998,12 +1998,12 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 6
+      "amount": 3
     },
     "def_14": {
       "kind": "stat",
-      "name": "Def +6",
-      "description": "Increase Defense by 6.",
+      "name": "Def +4",
+      "description": "Increase Defense by 4.",
       "position": [
         540,
         602
@@ -2012,7 +2012,7 @@
         "aether_ruby": 1
       },
       "stat": "def",
-      "amount": 6
+      "amount": 4
     },
     "m_def_03": {
       "kind": "stat",
@@ -2058,8 +2058,8 @@
     },
     "m_def_06": {
       "kind": "stat",
-      "name": "M. Def +3",
-      "description": "Increase Magick Defense by 3.",
+      "name": "M. Def +2",
+      "description": "Increase Magick Defense by 2.",
       "position": [
         998,
         -179
@@ -2068,7 +2068,7 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 3
+      "amount": 2
     },
     "m_def_07": {
       "kind": "stat",
@@ -2086,8 +2086,8 @@
     },
     "m_def_08": {
       "kind": "stat",
-      "name": "M. Def +4",
-      "description": "Increase Magick Defense by 4.",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
       "position": [
         1596,
         516
@@ -2096,12 +2096,12 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 4
+      "amount": 3
     },
     "m_def_09": {
       "kind": "stat",
-      "name": "M. Def +4",
-      "description": "Increase Magick Defense by 4.",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
       "position": [
         1507,
         728
@@ -2110,12 +2110,12 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 4
+      "amount": 3
     },
     "m_def_10": {
       "kind": "stat",
-      "name": "M. Def +6",
-      "description": "Increase Magick Defense by 6.",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
       "position": [
         1232,
         786
@@ -2124,12 +2124,12 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 6
+      "amount": 3
     },
     "m_def_11": {
       "kind": "stat",
-      "name": "M. Def +6",
-      "description": "Increase Magick Defense by 6.",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
       "position": [
         400,
         606
@@ -2138,12 +2138,12 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 6
+      "amount": 3
     },
     "m_def_12": {
       "kind": "stat",
-      "name": "M. Def +7",
-      "description": "Increase Magick Defense by 7.",
+      "name": "M. Def +4",
+      "description": "Increase Magick Defense by 4.",
       "position": [
         508,
         778
@@ -2152,7 +2152,7 @@
         "aether_amethyst": 1
       },
       "stat": "m_def",
-      "amount": 7
+      "amount": 4
     },
     "speed_02": {
       "kind": "stat",
@@ -2184,8 +2184,8 @@
     },
     "speed_04": {
       "kind": "stat",
-      "name": "Speed +3",
-      "description": "Increase Speed by 3.",
+      "name": "Speed +2",
+      "description": "Increase Speed by 2.",
       "position": [
         1416,
         176
@@ -2194,12 +2194,12 @@
         "aether_topaz": 1
       },
       "stat": "speed",
-      "amount": 3
+      "amount": 2
     },
     "speed_05": {
       "kind": "stat",
-      "name": "Speed +5",
-      "description": "Increase Speed by 5.",
+      "name": "Speed +2",
+      "description": "Increase Speed by 2.",
       "position": [
         1501,
         176
@@ -2208,12 +2208,12 @@
         "aether_topaz": 1
       },
       "stat": "speed",
-      "amount": 5
+      "amount": 2
     },
     "speed_06": {
       "kind": "stat",
-      "name": "Speed +5",
-      "description": "Increase Speed by 5.",
+      "name": "Speed +3",
+      "description": "Increase Speed by 3.",
       "position": [
         1506,
         852
@@ -2222,12 +2222,12 @@
         "aether_topaz": 1
       },
       "stat": "speed",
-      "amount": 5
+      "amount": 3
     },
     "speed_07": {
       "kind": "stat",
-      "name": "Speed +6",
-      "description": "Increase Speed by 6.",
+      "name": "Speed +3",
+      "description": "Increase Speed by 3.",
       "position": [
         986,
         852
@@ -2236,12 +2236,12 @@
         "aether_topaz": 1
       },
       "stat": "speed",
-      "amount": 6
+      "amount": 3
     },
     "speed_08": {
       "kind": "stat",
-      "name": "Speed +7",
-      "description": "Increase Speed by 7.",
+      "name": "Speed +3",
+      "description": "Increase Speed by 3.",
       "position": [
         556,
         876
@@ -2250,12 +2250,12 @@
         "aether_topaz": 1
       },
       "stat": "speed",
-      "amount": 7
+      "amount": 3
     },
     "acc_02": {
       "kind": "stat",
-      "name": "Acc +2",
-      "description": "Increase Accuracy by 2.",
+      "name": "Acc +1",
+      "description": "Increase Accuracy by 1.",
       "position": [
         629,
         237
@@ -2264,12 +2264,12 @@
         "aether_topaz": 1
       },
       "stat": "acc",
-      "amount": 2
+      "amount": 1
     },
     "acc_03": {
       "kind": "stat",
-      "name": "Acc +4",
-      "description": "Increase Accuracy by 4.",
+      "name": "Acc +2",
+      "description": "Increase Accuracy by 2.",
       "position": [
         1003,
         115
@@ -2278,12 +2278,12 @@
         "aether_topaz": 1
       },
       "stat": "acc",
-      "amount": 4
+      "amount": 2
     },
     "acc_04": {
       "kind": "stat",
-      "name": "Acc +5",
-      "description": "Increase Accuracy by 5.",
+      "name": "Acc +2",
+      "description": "Increase Accuracy by 2.",
       "position": [
         1580,
         82
@@ -2292,12 +2292,12 @@
         "aether_topaz": 1
       },
       "stat": "acc",
-      "amount": 5
+      "amount": 2
     },
     "acc_05": {
       "kind": "stat",
-      "name": "Acc +8",
-      "description": "Increase Accuracy by 8.",
+      "name": "Acc +3",
+      "description": "Increase Accuracy by 3.",
       "position": [
         1523,
         635
@@ -2306,12 +2306,12 @@
         "aether_topaz": 1
       },
       "stat": "acc",
-      "amount": 8
+      "amount": 3
     },
     "acc_06": {
       "kind": "stat",
-      "name": "Acc +10",
-      "description": "Increase Accuracy by 10.",
+      "name": "Acc +3",
+      "description": "Increase Accuracy by 3.",
       "position": [
         712,
         786
@@ -2320,12 +2320,12 @@
         "aether_topaz": 1
       },
       "stat": "acc",
-      "amount": 10
+      "amount": 3
     },
     "eva_02": {
       "kind": "stat",
-      "name": "Eva +3",
-      "description": "Increase Evasion by 3.",
+      "name": "Eva +2",
+      "description": "Increase Evasion by 2.",
       "position": [
         587,
         -309
@@ -2334,12 +2334,12 @@
         "aether_topaz": 1
       },
       "stat": "eva",
-      "amount": 3
+      "amount": 2
     },
     "eva_03": {
       "kind": "stat",
-      "name": "Eva +6",
-      "description": "Increase Evasion by 6.",
+      "name": "Eva +2",
+      "description": "Increase Evasion by 2.",
       "position": [
         1644,
         94
@@ -2348,12 +2348,12 @@
         "aether_topaz": 1
       },
       "stat": "eva",
-      "amount": 6
+      "amount": 2
     },
     "eva_04": {
       "kind": "stat",
-      "name": "Eva +10",
-      "description": "Increase Evasion by 10.",
+      "name": "Eva +3",
+      "description": "Increase Evasion by 3.",
       "position": [
         981,
         696
@@ -2362,12 +2362,12 @@
         "aether_topaz": 1
       },
       "stat": "eva",
-      "amount": 10
+      "amount": 3
     },
     "lck_03": {
       "kind": "stat",
-      "name": "Lck +3",
-      "description": "Increase Luck by 3.",
+      "name": "Lck +2",
+      "description": "Increase Luck by 2.",
       "position": [
         1171,
         176
@@ -2376,12 +2376,12 @@
         "aether_topaz": 1
       },
       "stat": "lck",
-      "amount": 3
+      "amount": 2
     },
     "lck_04": {
       "kind": "stat",
-      "name": "Lck +5",
-      "description": "Increase Luck by 5.",
+      "name": "Lck +3",
+      "description": "Increase Luck by 3.",
       "position": [
         1166,
         852
@@ -2390,7 +2390,7 @@
         "aether_topaz": 1
       },
       "stat": "lck",
-      "amount": 5
+      "amount": 3
     },
     "focused_strike_01": {
       "kind": "ability",

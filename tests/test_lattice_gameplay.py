@@ -77,7 +77,7 @@ class LatticeGameplayTests(unittest.TestCase):
     def test_real_new_game_has_no_sample_rewards_and_resets_preview_progress(self):
         game = self.game()
         self.first_hp(game)
-        self.assertEqual(game.attributes.value('hp'), 160)
+        self.assertEqual(game.attributes.value('hp'), 240)
         self.assertTrue(game.begin_journey())
         self.assertEqual(game.lattice.rank(), 1)
         self.assertEqual(game.lattice.steps(), 0)
@@ -98,7 +98,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertEqual((game.lattice.rank(), game.lattice.steps()), (2, 0))
         self.assertEqual(game.attributes.value('hp'), 140)
         self.assertTrue(game.activate_lattice('hp_01'))
-        self.assertEqual(game.attributes.value('hp'), 160)
+        self.assertEqual(game.attributes.value('hp'), 240)
         self.assertEqual(game.attributes.base_value('hp'), 140)
         self.assertEqual(game.attributes.current_hp, 140)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
@@ -123,7 +123,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertTrue(restored.has_saved_journey)
         self.assertTrue(restored.begin_journey(True))
         self.assertEqual(restored.attributes.base_value('hp'), 140)
-        self.assertEqual(restored.attributes.value('hp'), 160)
+        self.assertEqual(restored.attributes.value('hp'), 240)
         self.assertEqual(restored.attributes.current_hp, 155)
         self.assertEqual(restored.attributes.current_mp, 12)
 
@@ -143,7 +143,10 @@ class LatticeGameplayTests(unittest.TestCase):
         original_bytes = self.path.read_bytes()
         expected_lattice = copy.deepcopy(legacy.to_dict())
         self.assertEqual(expected_lattice['board_version'], 1)
-        expected_lattice['board_version'] = 2
+        expected_lattice['board_version'] = 3
+        expected_lattice['version'] = 2
+        for state in expected_lattice['characters'].values():
+            state['legacy_activated'] = list(state['activated'])
         expected_attributes, expected_inventory = game.attributes.to_dict(), game.inventory.to_dict()
         expected_steps, expected_rank = legacy.steps(), legacy.rank()
         for _ in range(2):
@@ -163,7 +166,7 @@ class LatticeGameplayTests(unittest.TestCase):
                                                           {'aether_emerald': 2}))
             self.assertTrue(restored.save_progress())
             original_bytes = self.path.read_bytes()
-            self.assertEqual(json.loads(original_bytes)['aether_lattice']['board_version'], 2)
+            self.assertEqual(json.loads(original_bytes)['aether_lattice']['board_version'], 3)
 
     def test_multi_rank_rewards_are_idempotent_but_new_battle_attempts_are_valid(self):
         game = self.game()
@@ -200,7 +203,7 @@ class LatticeGameplayTests(unittest.TestCase):
         saved_before = self.path.read_bytes()
         with patch('save_game.os.replace', side_effect=OSError('disk unavailable')):
             self.assertTrue(game.activate_lattice('hp_01'))
-        self.assertEqual(game.attributes.value('hp'), 160)
+        self.assertEqual(game.attributes.value('hp'), 240)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
         self.assertIn('hp_01', game.lattice.state()['activated'])
         self.assertEqual(self.path.read_bytes(), saved_before)
@@ -263,7 +266,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.assertTrue(game.save_progress())
         saved = json.loads(self.path.read_text())
         missing = copy.deepcopy(saved);missing.pop('aether_lattice')
-        overfull = copy.deepcopy(saved);overfull['character_attributes']['current_hp'] = 161
+        overfull = copy.deepcopy(saved);overfull['character_attributes']['current_hp'] = 241
         for bad in (missing, overfull):
             with self.subTest(missing='aether_lattice' not in bad):
                 raw = json.dumps(bad);self.path.write_text(raw)
@@ -312,7 +315,7 @@ class LatticeGameplayTests(unittest.TestCase):
         self.key(game, pygame.K_a);self.key(game, pygame.K_RETURN)
         self.assertEqual(self.snapshot(game), after_move)
         self.click(game, ui.action_rect.center)
-        self.assertEqual(game.attributes.value('hp'), 160)
+        self.assertEqual(game.attributes.value('hp'), 240)
         self.assertEqual(game.attributes.current_hp, 140)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
         self.assertIsNone(ui.action_preview())

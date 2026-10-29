@@ -1,7 +1,8 @@
 """Build Caelan's authored circular Aether Lattice from its preserved v1 seed.
 
-The output is committed game data, not a runtime random layout.  Stable seed
-IDs, effects, costs and connections remain intact for saved journeys.
+The output is committed game data, not a runtime random layout. Node identities,
+positions and connections remain stable. Version-three bonuses are authored
+explicitly below; saved grants migrate through their archived rule versions.
 """
 from __future__ import annotations
 
@@ -16,11 +17,77 @@ SEED = ROOT/'assets/progression/aether_lattice_v1.json'
 OUTPUT = ROOT/'assets/progression/aether_lattice.json'
 ABILITIES = ROOT/'assets/abilities/catalog.json'
 
-BUDGET = {
-    'hp': (30, 3000), 'mp': (12, 180), 'str': (14, 45), 'mag': (14, 45),
-    'spr': (12, 40), 'def': (14, 45), 'm_def': (12, 40), 'speed': (8, 30),
-    'acc': (6, 30), 'eva': (4, 20), 'lck': (4, 10),
+# These original pool sizes reproduce version two's node identities and layout.
+# Conversions happen after geometry is built, without reallocating any positions.
+LAYOUT_COUNTS = {
+    'hp': 30, 'mp': 12, 'str': 14, 'mag': 14, 'spr': 12, 'def': 14,
+    'm_def': 12, 'speed': 8, 'acc': 6, 'eva': 4, 'lck': 4,
 }
+CONVERSIONS = {
+    'mp': ('hp_05', 'hp_10', 'hp_16', 'hp_24', 'hp_28'),
+    'mag': ('hp_07', 'hp_12', 'hp_13', 'hp_20', 'hp_26'),
+}
+# Stable IDs describe ownership, not necessarily the node's current stat. Each
+# list is an intentional placement, not a random distribution or suffix rule.
+# The route audit considers both gate rank and Steps from the origin. In
+# particular, the rank-110 return shortcut must never make late nodes look early.
+# Rank 1–24 is mostly tier one, 25–64 mostly tier two, and 65+ mostly tier three.
+# Nine of 130 stat nodes use tier four: the early Quiet Reserve center and eight
+# rewards behind rank-85/110 gates. Utility ratings deliberately stop at +3 here.
+BONUS_PLAN = {
+    'hp': {
+        100: 'hp_01 hp_02 hp_04 hp_06'.split(),
+        200: 'hp_08 hp_09 hp_11 hp_14 hp_15 hp_17 hp_19'.split(),
+        300: 'hp_18 hp_21 hp_22 hp_23 hp_25 hp_27 hp_29'.split(),
+        400: 'hp_03 hp_30'.split(),
+    },
+    'mp': {
+        5: 'mp_01 mp_03'.split(),
+        10: 'mp_02 mp_04 hp_05 mp_05 mp_06 mp_07 mp_09'.split(),
+        20: 'hp_10 hp_16 mp_08 hp_24 mp_11 hp_28'.split(),
+        30: 'mp_10 mp_12'.split(),
+    },
+    'str': {
+        1: 'str_01 str_02 str_03'.split(),
+        2: 'str_04 str_05 str_06 str_07'.split(),
+        3: 'str_08 str_09 str_10 str_11 str_12 str_14'.split(),
+        4: ['str_13'],
+    },
+    'mag': {
+        1: 'mag_01 mag_02 mag_03'.split(),
+        2: 'mag_04 hp_07 mag_05 mag_06 hp_12 mag_07'.split(),
+        3: 'hp_13 mag_08 mag_09 mag_10 hp_20 mag_11 mag_12 hp_26 mag_14'.split(),
+        4: ['mag_13'],
+    },
+    'spr': {
+        1: 'spr_01 spr_02 spr_03'.split(),
+        2: 'spr_04 spr_05 spr_06'.split(),
+        3: 'spr_07 spr_08 spr_09 spr_10 spr_11'.split(),
+        4: ['spr_12'],
+    },
+    'def': {
+        1: 'def_01 def_02 def_03'.split(),
+        2: 'def_04 def_05 def_06 def_07'.split(),
+        3: 'def_08 def_09 def_10 def_11 def_12 def_13'.split(),
+        4: ['def_14'],
+    },
+    'm_def': {
+        1: 'm_def_01 m_def_02 m_def_03'.split(),
+        2: 'm_def_04 m_def_05 m_def_06'.split(),
+        3: 'm_def_07 m_def_08 m_def_09 m_def_10 m_def_11'.split(),
+        4: ['m_def_12'],
+    },
+    'speed': {1: 'speed_01 speed_02'.split(),
+              2: 'speed_03 speed_04 speed_05'.split(),
+              3: 'speed_06 speed_07 speed_08'.split()},
+    'acc': {1: 'acc_01 acc_02'.split(), 2: 'acc_03 acc_04'.split(),
+            3: 'acc_05 acc_06'.split()},
+    'eva': {1: ['eva_01'], 2: 'eva_02 eva_03'.split(), 3: ['eva_04']},
+    'lck': {1: 'lck_01 lck_02'.split(), 2: ['lck_03'], 3: ['lck_04']},
+}
+BONUS_TIERS = {stat: (100, 200, 300, 400) if stat == 'hp' else
+              (5, 10, 20, 30) if stat == 'mp' else (1, 2, 3, 4)
+              for stat in LAYOUT_COUNTS}
 LABELS = {'hp': 'HP', 'mp': 'MP', 'str': 'Str', 'mag': 'Mag', 'spr': 'Spr',
           'def': 'Def', 'm_def': 'M. Def', 'speed': 'Speed', 'acc': 'Acc',
           'eva': 'Eva', 'lck': 'Lck'}
@@ -57,23 +124,43 @@ NEW_ABILITIES = {
 }
 
 
-def divided_gains(total, count, minimum, unit=1):
-    """Ascending, integral node values with an exact section total."""
-    assert total % unit == 0 and minimum % unit == 0
-    remaining = total//unit-count*(minimum//unit)
-    assert remaining >= 0
-    weights = count*(count+1)//2
-    extras = [remaining*(i+1)//weights for i in range(count)]
-    for i in range(remaining-sum(extras)):extras[count-1-i % count] += 1
-    values = [minimum+unit*x for x in extras]
-    assert sum(values) == total
-    return values
+def apply_bonus_plan(data):
+    """Apply the reviewed tier placements after stable geometry is constructed.
+
+    The optional Gathered Light detour gains Mag alongside Aether Burst. Far
+    Reach adds both MP and Mag beside Aether Lance. Shared Strength, Shelter
+    and Steadfast Heart retain three HP nodes each, while the other broad
+    formations retain two. Quiet Reserve's HP center is the single early
+    maximum; every other maximum is gated at Attunement 85 or 110.
+    """
+    nodes = data['nodes']
+    for stat, identifiers in CONVERSIONS.items():
+        for identifier in identifiers:
+            assert nodes[identifier]['stat'] == 'hp'
+            nodes[identifier]['stat'] = stat
+    assigned = set()
+    for stat, tiers in BONUS_PLAN.items():
+        for amount, identifiers in tiers.items():
+            assert amount in BONUS_TIERS[stat]
+            for identifier in identifiers:
+                assert identifier not in assigned
+                node = nodes[identifier]
+                assert node['kind'] == 'stat' and node['stat'] == stat
+                assigned.add(identifier)
+                description = 'Increase '+NAMES[stat]+' by '+str(amount)+'.'
+                if stat in ('hp', 'mp'):description += ' Current '+LABELS[stat]+' is unchanged.'
+                node.update(name=LABELS[stat]+' +'+str(amount),
+                            description=description, amount=amount,
+                            cost={CRYSTALS[stat]: 1})
+    assert assigned == {key for key, node in nodes.items() if node['kind'] == 'stat'}
+    expected = dict(LAYOUT_COUNTS, hp=20, mp=17, mag=19)
+    assert Counter(nodes[key]['stat'] for key in assigned) == expected
 
 
 def build():
     seed = json.loads(SEED.read_text())
     data = deepcopy(seed)
-    data['version'] = 2
+    data['version'] = 3
     data['description'] = ('Caelan\'s connected circles combine broad formations, smaller loops and '
                            'straight connecting paths. Reach a center reward and continue onward.')
     nodes = data['nodes']
@@ -92,16 +179,14 @@ def build():
         blank_ids.append(identifier)
     internal_blanks, outside_blanks = deque(blank_ids[:26]), deque(blank_ids[26:])
 
-    # Spread all attributes through the section, keeping each type's later
-    # authored gains larger without changing the initial thirty nodes.
+    # Reproduce the original pool ordering so the tier pass cannot move nodes
+    # or alter circular membership, route lengths, gates or connections.
     stat_pool = []
-    for order, (stat, (count, total)) in enumerate(BUDGET.items()):
+    for order, (stat, count) in enumerate(LAYOUT_COUNTS.items()):
         existing = [node for node in seed['nodes'].values() if node['kind'] == 'stat' and node['stat'] == stat]
         rest = count-len(existing)
-        values = divided_gains(total-sum(n['amount'] for n in existing), rest,
-                               20 if stat == 'hp' else 2 if stat == 'mp' else 1,
-                               10 if stat == 'hp' else 2 if stat == 'mp' else 1)
-        for index, amount in enumerate(values):
+        for index in range(rest):
+            amount = BONUS_TIERS[stat][0]
             identifier = stat+'_'+str(len(existing)+index+1).zfill(2)
             description = 'Increase '+NAMES[stat]+' by '+str(amount)+'.'
             if stat in ('hp', 'mp'):description += ' Current '+LABELS[stat]+' is unchanged.'
@@ -295,12 +380,13 @@ def build():
     assert len(nodes) == 200
     assert Counter(node['kind'] for node in nodes.values()) == {'stat': 130, 'ability': 20, 'blank': 50}
     assert len({tuple(node['position']) for node in nodes.values()}) == len(nodes)
-    for stat, (count, gain) in BUDGET.items():
-        records = [node for node in nodes.values() if node['kind'] == 'stat' and node['stat'] == stat]
-        assert (len(records), sum(node['amount'] for node in records)) == (count, gain)
+    apply_bonus_plan(data)
     for identifier, original in seed['nodes'].items():
-        assert {key: value for key, value in nodes[identifier].items() if key != 'position'} == {
-            key: value for key, value in original.items() if key != 'position'}
+        current = nodes[identifier]
+        assert current['kind'] == original['kind']
+        assert current['cost'] == original['cost']
+        if original['kind'] == 'ability':
+            assert current['ability_id'] == original['ability_id']
     for original in seed['edges']:
         current = edge_pairs[frozenset((original['from'], original['to']))]
         assert all(current[key] == value for key, value in original.items())

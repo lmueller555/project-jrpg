@@ -49,9 +49,13 @@ Connections between formations and the nodes outside them use straight lines.
 See the [section guide](CAELAN_LATTICE.md) for the layout and complete growth
 budget. All eleven attributes are represented.
 
-Early stat nodes grant HP +20, MP +2 or another attribute +1. Deeper nodes
-provide larger authored bonuses. The board data defines the effect and crystal
-cost for each individual node.
+HP nodes grant +100, +200, +300 or +400; MP nodes grant +5, +10, +20 or +30.
+Every other attribute node grants +1, +2, +3 or +4. Lower tiers dominate early
+progression and higher tiers become common deeper into the route. Maximum-tier
+rewards remain rare, usually behind late rank gates, with Quiet Reserve's
+central HP +400 as an early landmark. See the
+[pacing and growth guide](CAELAN_LATTICE.md#reward-tiers-and-pacing) for the
+authored distribution. Board data defines each individual effect and cost.
 
 | Crystal | Color | Activates |
 | --- | --- | --- |
@@ -75,7 +79,7 @@ per character. Blank nodes cannot be activated. Insufficient Steps, rank,
 crystals or an already activated node leave progression and inventory unchanged.
 
 An HP or MP node raises maximum capacity without refilling the current
-resource. For example, activating HP +20 at 140/140 produces 140/160. A new
+resource. For example, activating HP +100 at 140/140 produces 140/240. A new
 rank has no additional hidden stat growth.
 
 Brace and Mend are among the twenty learnable abilities in Caelan's section.
@@ -181,11 +185,20 @@ record alongside character attributes and inventory. Loading the title
 validates these records without changing the fresh world or saved journey.
 Continue restores them together and recomputes node bonuses once.
 
-The 200-node layout is board version two. Version-one lattice records are
-validated against the archived 30-node board before upgrading. Existing node
-IDs, effects and crystal costs remain intact, as do RP, spent Steps, position,
-visited and activated nodes, and reward receipts. Layout changes do not refund
-Steps or grant new bonuses.
+The authored section is board version three. Version-one and version-two
+records are validated against their archived rules before upgrading. Existing
+node IDs remain intact. This reward pass preserves version-two geometry and
+retains RP, spent Steps, position, visited
+and activated nodes, receipts and inventory. Previously activated nodes retain
+their original paid bonuses; unactivated nodes use the current attribute,
+bonus tier and crystal family. An old activation cannot collect its replacement
+reward a second time.
+
+Lattice ledger schema version two adds per-character `legacy_activated` provenance.
+It identifies old grants whose amounts and attributes are derived from the
+canonical version-two board archive. Fresh journeys have no legacy grants.
+Loading rebuilds the combined old and new bonuses once, preserving base
+attributes and current HP/MP without stacking gains or refilling resources.
 
 Attribute version-three snapshots preserve base values under `attributes` and
 store current HP/MP separately. Existing version-one and version-two attribute

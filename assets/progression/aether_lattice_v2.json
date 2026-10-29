@@ -1,0 +1,5140 @@
+{
+  "version": 2,
+  "id": "caelan_starter",
+  "name": "Aether Lattice",
+  "description": "Caelan's connected circles combine broad formations, smaller loops and straight connecting paths. Reach a center reward and continue onward.",
+  "rank_curve": {
+    "first": 20,
+    "increment": 5
+  },
+  "starts": {
+    "caelan": "origin"
+  },
+  "starting_abilities": {
+    "caelan": [
+      "basic_magicks"
+    ]
+  },
+  "crystals": {
+    "aether_emerald": {
+      "name": "Aether Emerald",
+      "color": "#60b279"
+    },
+    "aether_sapphire": {
+      "name": "Aether Sapphire",
+      "color": "#6f9fe2"
+    },
+    "aether_ruby": {
+      "name": "Aether Ruby",
+      "color": "#d66b63"
+    },
+    "aether_amethyst": {
+      "name": "Aether Amethyst",
+      "color": "#a17bcd"
+    },
+    "aether_opal": {
+      "name": "Aether Opal",
+      "color": "#e7e6d0"
+    },
+    "aether_topaz": {
+      "name": "Aether Topaz",
+      "color": "#e1bb64"
+    },
+    "aether_diamond": {
+      "name": "Aether Diamond",
+      "color": "#8acfc7"
+    }
+  },
+  "nodes": {
+    "origin": {
+      "kind": "blank",
+      "name": "Origin",
+      "description": "Starting position on the Aether Lattice. This blank node grants no bonus.",
+      "position": [
+        0,
+        0
+      ],
+      "cost": {}
+    },
+    "hp_01": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        72,
+        0
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "blank_01": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        157,
+        43
+      ],
+      "cost": {}
+    },
+    "str_01": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        208,
+        123
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "mp_01": {
+      "kind": "stat",
+      "name": "MP +2",
+      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "position": [
+        211,
+        218
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 2
+    },
+    "def_01": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        165,
+        301
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "blank_02": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        84,
+        350
+      ],
+      "cost": {}
+    },
+    "mag_01": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        -12,
+        350
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "spr_01": {
+      "kind": "stat",
+      "name": "Spr +1",
+      "description": "Increase Spirit by 1.",
+      "position": [
+        -93,
+        301
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 1
+    },
+    "blank_03": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        -139,
+        218
+      ],
+      "cost": {}
+    },
+    "speed_01": {
+      "kind": "stat",
+      "name": "Speed +1",
+      "description": "Increase Speed by 1.",
+      "position": [
+        -136,
+        123
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 1
+    },
+    "acc_01": {
+      "kind": "stat",
+      "name": "Acc +1",
+      "description": "Increase Accuracy by 1.",
+      "position": [
+        -85,
+        43
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 1
+    },
+    "eva_01": {
+      "kind": "stat",
+      "name": "Eva +1",
+      "description": "Increase Evasion by 1.",
+      "position": [
+        -42,
+        122
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "eva",
+      "amount": 1
+    },
+    "m_def_01": {
+      "kind": "stat",
+      "name": "M. Def +1",
+      "description": "Increase Magick Defense by 1.",
+      "position": [
+        -59,
+        176
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 1
+    },
+    "brace_01": {
+      "kind": "ability",
+      "name": "Brace",
+      "description": "Learn Brace.",
+      "position": [
+        36,
+        176
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "brace"
+    },
+    "hp_02": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        131,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "blank_04": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        109,
+        237
+      ],
+      "cost": {}
+    },
+    "lck_01": {
+      "kind": "stat",
+      "name": "Lck +1",
+      "description": "Increase Luck by 1.",
+      "position": [
+        52,
+        270
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 1
+    },
+    "str_02": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        -11,
+        258
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "mag_02": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        -53,
+        208
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "blank_05": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        229,
+        -64
+      ],
+      "cost": {}
+    },
+    "def_02": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        209,
+        -177
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "spr_02": {
+      "kind": "stat",
+      "name": "Spr +1",
+      "description": "Increase Spirit by 1.",
+      "position": [
+        309,
+        -235
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 1
+    },
+    "mend_01": {
+      "kind": "ability",
+      "name": "Mend",
+      "description": "Learn Mend.",
+      "position": [
+        300,
+        -135
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "mend"
+    },
+    "blank_06": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        36,
+        596
+      ],
+      "cost": {}
+    },
+    "mp_02": {
+      "kind": "stat",
+      "name": "MP +2",
+      "description": "Increase maximum MP by 2. Current MP is unchanged.",
+      "position": [
+        123,
+        646
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 2
+    },
+    "m_def_02": {
+      "kind": "stat",
+      "name": "M. Def +1",
+      "description": "Increase Magick Defense by 1.",
+      "position": [
+        123,
+        746
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 1
+    },
+    "blank_07": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        36,
+        796
+      ],
+      "cost": {}
+    },
+    "hp_03": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        36,
+        696
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "lck_02": {
+      "kind": "stat",
+      "name": "Lck +1",
+      "description": "Increase Luck by 1.",
+      "position": [
+        -51,
+        646
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 1
+    },
+    "blank_08": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        4,
+        87
+      ],
+      "cost": {}
+    },
+    "blank_09": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        84,
+        94
+      ],
+      "cost": {}
+    },
+    "blank_10": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        397,
+        -161
+      ],
+      "cost": {}
+    },
+    "blank_11": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        357,
+        -53
+      ],
+      "cost": {}
+    },
+    "blank_12": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1996,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_13": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        556,
+        -4
+      ],
+      "cost": {}
+    },
+    "blank_14": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        466,
+        332
+      ],
+      "cost": {}
+    },
+    "blank_15": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        467,
+        208
+      ],
+      "cost": {}
+    },
+    "blank_16": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        478,
+        -179
+      ],
+      "cost": {}
+    },
+    "blank_17": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1166,
+        20
+      ],
+      "cost": {}
+    },
+    "blank_18": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        920,
+        266
+      ],
+      "cost": {}
+    },
+    "blank_19": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        981,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_20": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1007,
+        -282
+      ],
+      "cost": {}
+    },
+    "blank_21": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1752,
+        86
+      ],
+      "cost": {}
+    },
+    "blank_22": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1691,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_23": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1523,
+        115
+      ],
+      "cost": {}
+    },
+    "blank_24": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1918,
+        131
+      ],
+      "cost": {}
+    },
+    "blank_25": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1752,
+        606
+      ],
+      "cost": {}
+    },
+    "blank_26": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1691,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_27": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1580,
+        602
+      ],
+      "cost": {}
+    },
+    "blank_28": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1166,
+        540
+      ],
+      "cost": {}
+    },
+    "blank_29": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        920,
+        786
+      ],
+      "cost": {}
+    },
+    "blank_30": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1003,
+        635
+      ],
+      "cost": {}
+    },
+    "blank_31": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        646,
+        540
+      ],
+      "cost": {}
+    },
+    "blank_32": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        466,
+        852
+      ],
+      "cost": {}
+    },
+    "blank_33": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        461,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_34": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        266,
+        204
+      ],
+      "cost": {}
+    },
+    "blank_35": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        321,
+        190
+      ],
+      "cost": {}
+    },
+    "blank_36": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        789,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_37": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        843,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_38": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1309,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_39": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1363,
+        176
+      ],
+      "cost": {}
+    },
+    "blank_40": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1596,
+        409
+      ],
+      "cost": {}
+    },
+    "blank_41": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1596,
+        463
+      ],
+      "cost": {}
+    },
+    "blank_42": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1363,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_43": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1309,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_44": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        843,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_45": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        789,
+        696
+      ],
+      "cost": {}
+    },
+    "blank_46": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        472,
+        -80
+      ],
+      "cost": {}
+    },
+    "blank_47": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        992,
+        -80
+      ],
+      "cost": {}
+    },
+    "blank_48": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        1835,
+        108
+      ],
+      "cost": {}
+    },
+    "blank_49": {
+      "kind": "blank",
+      "name": "Blank Node",
+      "description": "A connecting node with no bonus. Crossing one connection costs one Lattice Step.",
+      "position": [
+        -32,
+        498
+      ],
+      "cost": {}
+    },
+    "hp_04": {
+      "kind": "stat",
+      "name": "HP +20",
+      "description": "Increase maximum HP by 20. Current HP is unchanged.",
+      "position": [
+        376,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 20
+    },
+    "hp_05": {
+      "kind": "stat",
+      "name": "HP +30",
+      "description": "Increase maximum HP by 30. Current HP is unchanged.",
+      "position": [
+        556,
+        356
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 30
+    },
+    "hp_06": {
+      "kind": "stat",
+      "name": "HP +30",
+      "description": "Increase maximum HP by 30. Current HP is unchanged.",
+      "position": [
+        651,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 30
+    },
+    "hp_07": {
+      "kind": "stat",
+      "name": "HP +40",
+      "description": "Increase maximum HP by 40. Current HP is unchanged.",
+      "position": [
+        483,
+        115
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 40
+    },
+    "hp_08": {
+      "kind": "stat",
+      "name": "HP +50",
+      "description": "Increase maximum HP by 50. Current HP is unchanged.",
+      "position": [
+        487,
+        -282
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 50
+    },
+    "hp_09": {
+      "kind": "stat",
+      "name": "HP +50",
+      "description": "Increase maximum HP by 50. Current HP is unchanged.",
+      "position": [
+        896,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 50
+    },
+    "hp_10": {
+      "kind": "stat",
+      "name": "HP +60",
+      "description": "Increase maximum HP by 60. Current HP is unchanged.",
+      "position": [
+        1256,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 60
+    },
+    "hp_11": {
+      "kind": "stat",
+      "name": "HP +70",
+      "description": "Increase maximum HP by 70. Current HP is unchanged.",
+      "position": [
+        1149,
+        237
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 70
+    },
+    "hp_12": {
+      "kind": "stat",
+      "name": "HP +70",
+      "description": "Increase maximum HP by 70. Current HP is unchanged.",
+      "position": [
+        1060,
+        82
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 70
+    },
+    "hp_13": {
+      "kind": "stat",
+      "name": "HP +80",
+      "description": "Increase maximum HP by 80. Current HP is unchanged.",
+      "position": [
+        1107,
+        -309
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 80
+    },
+    "hp_14": {
+      "kind": "stat",
+      "name": "HP +80",
+      "description": "Increase maximum HP by 80. Current HP is unchanged.",
+      "position": [
+        1686,
+        20
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 80
+    },
+    "hp_15": {
+      "kind": "stat",
+      "name": "HP +90",
+      "description": "Increase maximum HP by 90. Current HP is unchanged.",
+      "position": [
+        1776,
+        176
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 90
+    },
+    "hp_16": {
+      "kind": "stat",
+      "name": "HP +100",
+      "description": "Increase maximum HP by 100. Current HP is unchanged.",
+      "position": [
+        1548,
+        258
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 100
+    },
+    "hp_17": {
+      "kind": "stat",
+      "name": "HP +110",
+      "description": "Increase maximum HP by 110. Current HP is unchanged.",
+      "position": [
+        1507,
+        208
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 110
+    },
+    "hp_18": {
+      "kind": "stat",
+      "name": "HP +120",
+      "description": "Increase maximum HP by 120. Current HP is unchanged.",
+      "position": [
+        2074,
+        221
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 120
+    },
+    "hp_19": {
+      "kind": "stat",
+      "name": "HP +130",
+      "description": "Increase maximum HP by 130. Current HP is unchanged.",
+      "position": [
+        1686,
+        540
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 130
+    },
+    "hp_20": {
+      "kind": "stat",
+      "name": "HP +130",
+      "description": "Increase maximum HP by 130. Current HP is unchanged.",
+      "position": [
+        1776,
+        696
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 130
+    },
+    "hp_21": {
+      "kind": "stat",
+      "name": "HP +140",
+      "description": "Increase maximum HP by 140. Current HP is unchanged.",
+      "position": [
+        1440,
+        786
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 140
+    },
+    "hp_22": {
+      "kind": "stat",
+      "name": "HP +150",
+      "description": "Increase maximum HP by 150. Current HP is unchanged.",
+      "position": [
+        1501,
+        696
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 150
+    },
+    "hp_23": {
+      "kind": "stat",
+      "name": "HP +150",
+      "description": "Increase maximum HP by 150. Current HP is unchanged.",
+      "position": [
+        986,
+        540
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 150
+    },
+    "hp_24": {
+      "kind": "stat",
+      "name": "HP +160",
+      "description": "Increase maximum HP by 160. Current HP is unchanged.",
+      "position": [
+        1076,
+        876
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 160
+    },
+    "hp_25": {
+      "kind": "stat",
+      "name": "HP +160",
+      "description": "Increase maximum HP by 160. Current HP is unchanged.",
+      "position": [
+        1028,
+        778
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 160
+    },
+    "hp_26": {
+      "kind": "stat",
+      "name": "HP +170",
+      "description": "Increase maximum HP by 170. Current HP is unchanged.",
+      "position": [
+        987,
+        728
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 170
+    },
+    "hp_27": {
+      "kind": "stat",
+      "name": "HP +180",
+      "description": "Increase maximum HP by 180. Current HP is unchanged.",
+      "position": [
+        466,
+        540
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 180
+    },
+    "hp_28": {
+      "kind": "stat",
+      "name": "HP +180",
+      "description": "Increase maximum HP by 180. Current HP is unchanged.",
+      "position": [
+        646,
+        852
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 180
+    },
+    "hp_29": {
+      "kind": "stat",
+      "name": "HP +190",
+      "description": "Increase maximum HP by 190. Current HP is unchanged.",
+      "position": [
+        400,
+        786
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 190
+    },
+    "hp_30": {
+      "kind": "stat",
+      "name": "HP +200",
+      "description": "Increase maximum HP by 200. Current HP is unchanged.",
+      "position": [
+        604,
+        614
+      ],
+      "cost": {
+        "aether_emerald": 1
+      },
+      "stat": "hp",
+      "amount": 200
+    },
+    "mp_03": {
+      "kind": "stat",
+      "name": "MP +4",
+      "description": "Increase maximum MP by 4. Current MP is unchanged.",
+      "position": [
+        712,
+        86
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 4
+    },
+    "mp_04": {
+      "kind": "stat",
+      "name": "MP +6",
+      "description": "Increase maximum MP by 6. Current MP is unchanged.",
+      "position": [
+        540,
+        82
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 6
+    },
+    "mp_05": {
+      "kind": "stat",
+      "name": "MP +10",
+      "description": "Increase maximum MP by 10. Current MP is unchanged.",
+      "position": [
+        1232,
+        266
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 10
+    },
+    "mp_06": {
+      "kind": "stat",
+      "name": "MP +12",
+      "description": "Increase maximum MP by 12. Current MP is unchanged.",
+      "position": [
+        1124,
+        94
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 12
+    },
+    "mp_07": {
+      "kind": "stat",
+      "name": "MP +16",
+      "description": "Increase maximum MP by 16. Current MP is unchanged.",
+      "position": [
+        1752,
+        266
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 16
+    },
+    "mp_08": {
+      "kind": "stat",
+      "name": "MP +20",
+      "description": "Increase maximum MP by 20. Current MP is unchanged.",
+      "position": [
+        1440,
+        606
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 20
+    },
+    "mp_09": {
+      "kind": "stat",
+      "name": "MP +22",
+      "description": "Increase maximum MP by 22. Current MP is unchanged.",
+      "position": [
+        1612,
+        790
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 22
+    },
+    "mp_10": {
+      "kind": "stat",
+      "name": "MP +26",
+      "description": "Increase maximum MP by 26. Current MP is unchanged.",
+      "position": [
+        1076,
+        516
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 26
+    },
+    "mp_11": {
+      "kind": "stat",
+      "name": "MP +28",
+      "description": "Increase maximum MP by 28. Current MP is unchanged.",
+      "position": [
+        1060,
+        602
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 28
+    },
+    "mp_12": {
+      "kind": "stat",
+      "name": "MP +32",
+      "description": "Increase maximum MP by 32. Current MP is unchanged.",
+      "position": [
+        651,
+        696
+      ],
+      "cost": {
+        "aether_sapphire": 1
+      },
+      "stat": "mp",
+      "amount": 32
+    },
+    "str_03": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        400,
+        86
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "str_04": {
+      "kind": "stat",
+      "name": "Str +1",
+      "description": "Increase Strength by 1.",
+      "position": [
+        572,
+        270
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 1
+    },
+    "str_05": {
+      "kind": "stat",
+      "name": "Str +2",
+      "description": "Increase Strength by 2.",
+      "position": [
+        920,
+        86
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 2
+    },
+    "str_06": {
+      "kind": "stat",
+      "name": "Str +2",
+      "description": "Increase Strength by 2.",
+      "position": [
+        1092,
+        270
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 2
+    },
+    "str_07": {
+      "kind": "stat",
+      "name": "Str +2",
+      "description": "Increase Strength by 2.",
+      "position": [
+        1440,
+        86
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 2
+    },
+    "str_08": {
+      "kind": "stat",
+      "name": "Str +4",
+      "description": "Increase Strength by 4.",
+      "position": [
+        1440,
+        266
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 4
+    },
+    "str_09": {
+      "kind": "stat",
+      "name": "Str +4",
+      "description": "Increase Strength by 4.",
+      "position": [
+        1980,
+        265
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 4
+    },
+    "str_10": {
+      "kind": "stat",
+      "name": "Str +5",
+      "description": "Increase Strength by 5.",
+      "position": [
+        1752,
+        786
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 5
+    },
+    "str_11": {
+      "kind": "stat",
+      "name": "Str +5",
+      "description": "Increase Strength by 5.",
+      "position": [
+        1644,
+        614
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 5
+    },
+    "str_12": {
+      "kind": "stat",
+      "name": "Str +5",
+      "description": "Increase Strength by 5.",
+      "position": [
+        1171,
+        696
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 5
+    },
+    "str_13": {
+      "kind": "stat",
+      "name": "Str +6",
+      "description": "Increase Strength by 6.",
+      "position": [
+        556,
+        516
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 6
+    },
+    "str_14": {
+      "kind": "stat",
+      "name": "Str +6",
+      "description": "Increase Strength by 6.",
+      "position": [
+        467,
+        728
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "str",
+      "amount": 6
+    },
+    "mag_03": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        466,
+        20
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "mag_04": {
+      "kind": "stat",
+      "name": "Mag +1",
+      "description": "Increase Magick by 1.",
+      "position": [
+        508,
+        258
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 1
+    },
+    "mag_05": {
+      "kind": "stat",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
+      "position": [
+        986,
+        20
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 2
+    },
+    "mag_06": {
+      "kind": "stat",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
+      "position": [
+        1028,
+        258
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 2
+    },
+    "mag_07": {
+      "kind": "stat",
+      "name": "Mag +2",
+      "description": "Increase Magick by 2.",
+      "position": [
+        1506,
+        20
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 2
+    },
+    "mag_08": {
+      "kind": "stat",
+      "name": "Mag +4",
+      "description": "Increase Magick by 4.",
+      "position": [
+        1669,
+        237
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 4
+    },
+    "mag_09": {
+      "kind": "stat",
+      "name": "Mag +4",
+      "description": "Increase Magick by 4.",
+      "position": [
+        1918,
+        221
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 4
+    },
+    "mag_10": {
+      "kind": "stat",
+      "name": "Mag +5",
+      "description": "Increase Magick by 5.",
+      "position": [
+        1686,
+        852
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 5
+    },
+    "mag_11": {
+      "kind": "stat",
+      "name": "Mag +5",
+      "description": "Increase Magick by 5.",
+      "position": [
+        896,
+        696
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 5
+    },
+    "mag_12": {
+      "kind": "stat",
+      "name": "Mag +5",
+      "description": "Increase Magick by 5.",
+      "position": [
+        1149,
+        757
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 5
+    },
+    "mag_13": {
+      "kind": "stat",
+      "name": "Mag +6",
+      "description": "Increase Magick by 6.",
+      "position": [
+        712,
+        606
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 6
+    },
+    "mag_14": {
+      "kind": "stat",
+      "name": "Mag +6",
+      "description": "Increase Magick by 6.",
+      "position": [
+        483,
+        635
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "mag",
+      "amount": 6
+    },
+    "spr_03": {
+      "kind": "stat",
+      "name": "Spr +1",
+      "description": "Increase Spirit by 1.",
+      "position": [
+        712,
+        266
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 1
+    },
+    "spr_04": {
+      "kind": "stat",
+      "name": "Spr +2",
+      "description": "Increase Spirit by 2.",
+      "position": [
+        634,
+        -179
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 2
+    },
+    "spr_05": {
+      "kind": "stat",
+      "name": "Spr +2",
+      "description": "Increase Spirit by 2.",
+      "position": [
+        1076,
+        356
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 2
+    },
+    "spr_06": {
+      "kind": "stat",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
+      "position": [
+        1154,
+        -179
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 3
+    },
+    "spr_07": {
+      "kind": "stat",
+      "name": "Spr +3",
+      "description": "Increase Spirit by 3.",
+      "position": [
+        1686,
+        332
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 3
+    },
+    "spr_08": {
+      "kind": "stat",
+      "name": "Spr +4",
+      "description": "Increase Spirit by 4.",
+      "position": [
+        1506,
+        540
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 4
+    },
+    "spr_09": {
+      "kind": "stat",
+      "name": "Spr +4",
+      "description": "Increase Spirit by 4.",
+      "position": [
+        1548,
+        778
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 4
+    },
+    "spr_10": {
+      "kind": "stat",
+      "name": "Spr +6",
+      "description": "Increase Spirit by 6.",
+      "position": [
+        1232,
+        606
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 6
+    },
+    "spr_11": {
+      "kind": "stat",
+      "name": "Spr +6",
+      "description": "Increase Spirit by 6.",
+      "position": [
+        376,
+        696
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 6
+    },
+    "spr_12": {
+      "kind": "stat",
+      "name": "Spr +7",
+      "description": "Increase Spirit by 7.",
+      "position": [
+        572,
+        790
+      ],
+      "cost": {
+        "aether_opal": 1
+      },
+      "stat": "spr",
+      "amount": 7
+    },
+    "def_03": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        646,
+        20
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "def_04": {
+      "kind": "stat",
+      "name": "Def +1",
+      "description": "Increase Defense by 1.",
+      "position": [
+        461,
+        176
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 1
+    },
+    "def_05": {
+      "kind": "stat",
+      "name": "Def +2",
+      "description": "Increase Defense by 2.",
+      "position": [
+        1076,
+        -4
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 2
+    },
+    "def_06": {
+      "kind": "stat",
+      "name": "Def +2",
+      "description": "Increase Defense by 2.",
+      "position": [
+        987,
+        208
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 2
+    },
+    "def_07": {
+      "kind": "stat",
+      "name": "Def +2",
+      "description": "Increase Defense by 2.",
+      "position": [
+        1596,
+        -4
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 2
+    },
+    "def_08": {
+      "kind": "stat",
+      "name": "Def +4",
+      "description": "Increase Defense by 4.",
+      "position": [
+        1612,
+        270
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 4
+    },
+    "def_09": {
+      "kind": "stat",
+      "name": "Def +4",
+      "description": "Increase Defense by 4.",
+      "position": [
+        1416,
+        696
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 4
+    },
+    "def_10": {
+      "kind": "stat",
+      "name": "Def +5",
+      "description": "Increase Defense by 5.",
+      "position": [
+        1596,
+        876
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 5
+    },
+    "def_11": {
+      "kind": "stat",
+      "name": "Def +5",
+      "description": "Increase Defense by 5.",
+      "position": [
+        920,
+        606
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 5
+    },
+    "def_12": {
+      "kind": "stat",
+      "name": "Def +5",
+      "description": "Increase Defense by 5.",
+      "position": [
+        1092,
+        790
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 5
+    },
+    "def_13": {
+      "kind": "stat",
+      "name": "Def +6",
+      "description": "Increase Defense by 6.",
+      "position": [
+        736,
+        696
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 6
+    },
+    "def_14": {
+      "kind": "stat",
+      "name": "Def +6",
+      "description": "Increase Defense by 6.",
+      "position": [
+        540,
+        602
+      ],
+      "cost": {
+        "aether_ruby": 1
+      },
+      "stat": "def",
+      "amount": 6
+    },
+    "m_def_03": {
+      "kind": "stat",
+      "name": "M. Def +1",
+      "description": "Increase Magick Defense by 1.",
+      "position": [
+        646,
+        332
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 1
+    },
+    "m_def_04": {
+      "kind": "stat",
+      "name": "M. Def +2",
+      "description": "Increase Magick Defense by 2.",
+      "position": [
+        540,
+        -135
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 2
+    },
+    "m_def_05": {
+      "kind": "stat",
+      "name": "M. Def +2",
+      "description": "Increase Magick Defense by 2.",
+      "position": [
+        986,
+        332
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 2
+    },
+    "m_def_06": {
+      "kind": "stat",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
+      "position": [
+        998,
+        -179
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 3
+    },
+    "m_def_07": {
+      "kind": "stat",
+      "name": "M. Def +3",
+      "description": "Increase Magick Defense by 3.",
+      "position": [
+        1596,
+        356
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 3
+    },
+    "m_def_08": {
+      "kind": "stat",
+      "name": "M. Def +4",
+      "description": "Increase Magick Defense by 4.",
+      "position": [
+        1596,
+        516
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 4
+    },
+    "m_def_09": {
+      "kind": "stat",
+      "name": "M. Def +4",
+      "description": "Increase Magick Defense by 4.",
+      "position": [
+        1507,
+        728
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 4
+    },
+    "m_def_10": {
+      "kind": "stat",
+      "name": "M. Def +6",
+      "description": "Increase Magick Defense by 6.",
+      "position": [
+        1232,
+        786
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 6
+    },
+    "m_def_11": {
+      "kind": "stat",
+      "name": "M. Def +6",
+      "description": "Increase Magick Defense by 6.",
+      "position": [
+        400,
+        606
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 6
+    },
+    "m_def_12": {
+      "kind": "stat",
+      "name": "M. Def +7",
+      "description": "Increase Magick Defense by 7.",
+      "position": [
+        508,
+        778
+      ],
+      "cost": {
+        "aether_amethyst": 1
+      },
+      "stat": "m_def",
+      "amount": 7
+    },
+    "speed_02": {
+      "kind": "stat",
+      "name": "Speed +1",
+      "description": "Increase Speed by 1.",
+      "position": [
+        400,
+        266
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 1
+    },
+    "speed_03": {
+      "kind": "stat",
+      "name": "Speed +2",
+      "description": "Increase Speed by 2.",
+      "position": [
+        1232,
+        86
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 2
+    },
+    "speed_04": {
+      "kind": "stat",
+      "name": "Speed +3",
+      "description": "Increase Speed by 3.",
+      "position": [
+        1416,
+        176
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 3
+    },
+    "speed_05": {
+      "kind": "stat",
+      "name": "Speed +5",
+      "description": "Increase Speed by 5.",
+      "position": [
+        1501,
+        176
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 5
+    },
+    "speed_06": {
+      "kind": "stat",
+      "name": "Speed +5",
+      "description": "Increase Speed by 5.",
+      "position": [
+        1506,
+        852
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 5
+    },
+    "speed_07": {
+      "kind": "stat",
+      "name": "Speed +6",
+      "description": "Increase Speed by 6.",
+      "position": [
+        986,
+        852
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 6
+    },
+    "speed_08": {
+      "kind": "stat",
+      "name": "Speed +7",
+      "description": "Increase Speed by 7.",
+      "position": [
+        556,
+        876
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "speed",
+      "amount": 7
+    },
+    "acc_02": {
+      "kind": "stat",
+      "name": "Acc +2",
+      "description": "Increase Accuracy by 2.",
+      "position": [
+        629,
+        237
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 2
+    },
+    "acc_03": {
+      "kind": "stat",
+      "name": "Acc +4",
+      "description": "Increase Accuracy by 4.",
+      "position": [
+        1003,
+        115
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 4
+    },
+    "acc_04": {
+      "kind": "stat",
+      "name": "Acc +5",
+      "description": "Increase Accuracy by 5.",
+      "position": [
+        1580,
+        82
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 5
+    },
+    "acc_05": {
+      "kind": "stat",
+      "name": "Acc +8",
+      "description": "Increase Accuracy by 8.",
+      "position": [
+        1523,
+        635
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 8
+    },
+    "acc_06": {
+      "kind": "stat",
+      "name": "Acc +10",
+      "description": "Increase Accuracy by 10.",
+      "position": [
+        712,
+        786
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "acc",
+      "amount": 10
+    },
+    "eva_02": {
+      "kind": "stat",
+      "name": "Eva +3",
+      "description": "Increase Evasion by 3.",
+      "position": [
+        587,
+        -309
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "eva",
+      "amount": 3
+    },
+    "eva_03": {
+      "kind": "stat",
+      "name": "Eva +6",
+      "description": "Increase Evasion by 6.",
+      "position": [
+        1644,
+        94
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "eva",
+      "amount": 6
+    },
+    "eva_04": {
+      "kind": "stat",
+      "name": "Eva +10",
+      "description": "Increase Evasion by 10.",
+      "position": [
+        981,
+        696
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "eva",
+      "amount": 10
+    },
+    "lck_03": {
+      "kind": "stat",
+      "name": "Lck +3",
+      "description": "Increase Luck by 3.",
+      "position": [
+        1171,
+        176
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 3
+    },
+    "lck_04": {
+      "kind": "stat",
+      "name": "Lck +5",
+      "description": "Increase Luck by 5.",
+      "position": [
+        1166,
+        852
+      ],
+      "cost": {
+        "aether_topaz": 1
+      },
+      "stat": "lck",
+      "amount": 5
+    },
+    "focused_strike_01": {
+      "kind": "ability",
+      "name": "Focused Strike",
+      "description": "Learn Focused Strike.",
+      "position": [
+        1076,
+        176
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "focused_strike"
+    },
+    "sweeping_strike_01": {
+      "kind": "ability",
+      "name": "Sweeping Strike",
+      "description": "Learn Sweeping Strike.",
+      "position": [
+        736,
+        176
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "sweeping_strike"
+    },
+    "guarded_strike_01": {
+      "kind": "ability",
+      "name": "Guarded Strike",
+      "description": "Learn Guarded Strike.",
+      "position": [
+        604,
+        94
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "guarded_strike"
+    },
+    "piercing_strike_01": {
+      "kind": "ability",
+      "name": "Piercing Strike",
+      "description": "Learn Piercing Strike.",
+      "position": [
+        1166,
+        332
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "piercing_strike"
+    },
+    "rally_01": {
+      "kind": "ability",
+      "name": "Rally",
+      "description": "Learn Rally.",
+      "position": [
+        1060,
+        -135
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "rally"
+    },
+    "intercept_01": {
+      "kind": "ability",
+      "name": "Intercept",
+      "description": "Learn Intercept.",
+      "position": [
+        1506,
+        332
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "intercept"
+    },
+    "riposte_01": {
+      "kind": "ability",
+      "name": "Riposte",
+      "description": "Learn Riposte.",
+      "position": [
+        2027,
+        91
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "riposte"
+    },
+    "aether_dart_01": {
+      "kind": "ability",
+      "name": "Aether Dart",
+      "description": "Learn Aether Dart.",
+      "position": [
+        556,
+        176
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "aether_dart"
+    },
+    "aether_arc_01": {
+      "kind": "ability",
+      "name": "Aether Arc",
+      "description": "Learn Aether Arc.",
+      "position": [
+        1669,
+        757
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "aether_arc"
+    },
+    "aether_lance_01": {
+      "kind": "ability",
+      "name": "Aether Lance",
+      "description": "Learn Aether Lance.",
+      "position": [
+        1076,
+        696
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "aether_lance"
+    },
+    "aether_burst_01": {
+      "kind": "ability",
+      "name": "Aether Burst",
+      "description": "Learn Aether Burst.",
+      "position": [
+        1076,
+        -224
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "aether_burst"
+    },
+    "greater_mend_01": {
+      "kind": "ability",
+      "name": "Greater Mend",
+      "description": "Learn Greater Mend.",
+      "position": [
+        1596,
+        176
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "greater_mend"
+    },
+    "renew_01": {
+      "kind": "ability",
+      "name": "Renew",
+      "description": "Learn Renew.",
+      "position": [
+        1256,
+        696
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "renew"
+    },
+    "cleanse_01": {
+      "kind": "ability",
+      "name": "Cleanse",
+      "description": "Learn Cleanse.",
+      "position": [
+        556,
+        -224
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "cleanse"
+    },
+    "ward_01": {
+      "kind": "ability",
+      "name": "Ward",
+      "description": "Learn Ward.",
+      "position": [
+        1596,
+        696
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "ward"
+    },
+    "dispel_01": {
+      "kind": "ability",
+      "name": "Dispel",
+      "description": "Learn Dispel.",
+      "position": [
+        1124,
+        614
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "dispel"
+    },
+    "channel_01": {
+      "kind": "ability",
+      "name": "Channel",
+      "description": "Learn Channel.",
+      "position": [
+        629,
+        757
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "channel"
+    },
+    "steadfast_01": {
+      "kind": "ability",
+      "name": "Steadfast",
+      "description": "Learn Steadfast.",
+      "position": [
+        556,
+        696
+      ],
+      "cost": {
+        "aether_diamond": 1
+      },
+      "ability_id": "steadfast"
+    }
+  },
+  "edges": [
+    {
+      "from": "origin",
+      "to": "hp_01",
+      "min_rank": 1,
+      "curve": [
+        36,
+        -8
+      ]
+    },
+    {
+      "from": "hp_01",
+      "to": "blank_01",
+      "min_rank": 1,
+      "curve": [
+        120,
+        8
+      ]
+    },
+    {
+      "from": "blank_01",
+      "to": "str_01",
+      "min_rank": 1,
+      "curve": [
+        194,
+        75
+      ]
+    },
+    {
+      "from": "str_01",
+      "to": "mp_01",
+      "min_rank": 1,
+      "curve": [
+        222,
+        170
+      ]
+    },
+    {
+      "from": "mp_01",
+      "to": "def_01",
+      "min_rank": 1,
+      "curve": [
+        200,
+        266
+      ]
+    },
+    {
+      "from": "def_01",
+      "to": "blank_02",
+      "min_rank": 1,
+      "curve": [
+        132,
+        336
+      ]
+    },
+    {
+      "from": "blank_02",
+      "to": "mag_01",
+      "min_rank": 1,
+      "curve": [
+        36,
+        362
+      ]
+    },
+    {
+      "from": "mag_01",
+      "to": "spr_01",
+      "min_rank": 1,
+      "curve": [
+        -60,
+        336
+      ]
+    },
+    {
+      "from": "spr_01",
+      "to": "blank_03",
+      "min_rank": 1,
+      "curve": [
+        -128,
+        266
+      ]
+    },
+    {
+      "from": "blank_03",
+      "to": "speed_01",
+      "min_rank": 1,
+      "curve": [
+        -150,
+        170
+      ]
+    },
+    {
+      "from": "speed_01",
+      "to": "acc_01",
+      "min_rank": 1,
+      "curve": [
+        -122,
+        75
+      ]
+    },
+    {
+      "from": "acc_01",
+      "to": "eva_01",
+      "min_rank": 1,
+      "curve": [
+        -70,
+        86
+      ]
+    },
+    {
+      "from": "eva_01",
+      "to": "m_def_01",
+      "min_rank": 1,
+      "curve": [
+        -60,
+        145
+      ]
+    },
+    {
+      "from": "m_def_01",
+      "to": "brace_01",
+      "min_rank": 1,
+      "curve": [
+        -12,
+        184
+      ]
+    },
+    {
+      "from": "brace_01",
+      "to": "hp_02",
+      "min_rank": 1,
+      "curve": [
+        84,
+        184
+      ]
+    },
+    {
+      "from": "hp_02",
+      "to": "blank_04",
+      "min_rank": 1,
+      "curve": [
+        130,
+        210
+      ]
+    },
+    {
+      "from": "blank_04",
+      "to": "lck_01",
+      "min_rank": 1,
+      "curve": [
+        88,
+        262
+      ]
+    },
+    {
+      "from": "lck_01",
+      "to": "str_02",
+      "min_rank": 1,
+      "curve": [
+        20,
+        276
+      ]
+    },
+    {
+      "from": "str_02",
+      "to": "mag_02",
+      "min_rank": 1,
+      "curve": [
+        -42,
+        241
+      ]
+    },
+    {
+      "from": "blank_01",
+      "to": "blank_05",
+      "min_rank": 5
+    },
+    {
+      "from": "blank_05",
+      "to": "def_02",
+      "min_rank": 1,
+      "curve": [
+        185,
+        -116
+      ]
+    },
+    {
+      "from": "def_02",
+      "to": "spr_02",
+      "min_rank": 1,
+      "curve": [
+        241,
+        -238
+      ]
+    },
+    {
+      "from": "spr_02",
+      "to": "mend_01",
+      "min_rank": 1,
+      "curve": [
+        296,
+        -186
+      ]
+    },
+    {
+      "from": "blank_02",
+      "to": "blank_06",
+      "min_rank": 8
+    },
+    {
+      "from": "blank_06",
+      "to": "mp_02",
+      "min_rank": 1,
+      "curve": [
+        92,
+        597
+      ]
+    },
+    {
+      "from": "mp_02",
+      "to": "m_def_02",
+      "min_rank": 1,
+      "curve": [
+        149,
+        696
+      ]
+    },
+    {
+      "from": "m_def_02",
+      "to": "blank_07",
+      "min_rank": 1,
+      "curve": [
+        92,
+        795
+      ]
+    },
+    {
+      "from": "blank_07",
+      "to": "hp_03",
+      "min_rank": 1,
+      "curve": [
+        44,
+        746
+      ]
+    },
+    {
+      "from": "hp_03",
+      "to": "lck_02",
+      "min_rank": 1,
+      "curve": [
+        -4,
+        664
+      ]
+    },
+    {
+      "from": "acc_01",
+      "to": "origin",
+      "min_rank": 1,
+      "curve": [
+        -48,
+        8
+      ]
+    },
+    {
+      "from": "mag_02",
+      "to": "m_def_01",
+      "min_rank": 1,
+      "curve": [
+        -60,
+        192
+      ]
+    },
+    {
+      "from": "eva_01",
+      "to": "blank_08",
+      "min_rank": 1,
+      "curve": [
+        -25,
+        98
+      ]
+    },
+    {
+      "from": "blank_08",
+      "to": "blank_09",
+      "min_rank": 1,
+      "curve": [
+        44,
+        72
+      ]
+    },
+    {
+      "from": "blank_09",
+      "to": "hp_02",
+      "min_rank": 1,
+      "curve": [
+        128,
+        121
+      ]
+    },
+    {
+      "from": "mp_01",
+      "to": "hp_02",
+      "min_rank": 1,
+      "curve": [
+        174,
+        191
+      ]
+    },
+    {
+      "from": "def_01",
+      "to": "blank_04",
+      "min_rank": 1,
+      "curve": [
+        142,
+        265
+      ]
+    },
+    {
+      "from": "spr_02",
+      "to": "blank_10",
+      "min_rank": 1,
+      "curve": [
+        375,
+        -226
+      ]
+    },
+    {
+      "from": "blank_10",
+      "to": "blank_11",
+      "min_rank": 1,
+      "curve": [
+        411,
+        -95
+      ]
+    },
+    {
+      "from": "mend_01",
+      "to": "blank_11",
+      "min_rank": 1,
+      "curve": [
+        322,
+        -89
+      ]
+    },
+    {
+      "from": "blank_11",
+      "to": "str_01",
+      "min_rank": 5
+    },
+    {
+      "from": "blank_07",
+      "to": "lck_02",
+      "min_rank": 1,
+      "curve": [
+        -94,
+        771
+      ]
+    },
+    {
+      "from": "hp_04",
+      "to": "str_03",
+      "min_rank": 1,
+      "curve": [
+        376,
+        127
+      ]
+    },
+    {
+      "from": "str_03",
+      "to": "mag_03",
+      "min_rank": 1,
+      "curve": [
+        425,
+        45
+      ]
+    },
+    {
+      "from": "mag_03",
+      "to": "blank_13",
+      "min_rank": 1,
+      "curve": [
+        507,
+        -4
+      ]
+    },
+    {
+      "from": "blank_13",
+      "to": "def_03",
+      "min_rank": 1,
+      "curve": [
+        605,
+        -4
+      ]
+    },
+    {
+      "from": "def_03",
+      "to": "mp_03",
+      "min_rank": 1,
+      "curve": [
+        687,
+        45
+      ]
+    },
+    {
+      "from": "mp_03",
+      "to": "sweeping_strike_01",
+      "min_rank": 1,
+      "curve": [
+        736,
+        127
+      ]
+    },
+    {
+      "from": "sweeping_strike_01",
+      "to": "spr_03",
+      "min_rank": 1,
+      "curve": [
+        736,
+        225
+      ]
+    },
+    {
+      "from": "spr_03",
+      "to": "m_def_03",
+      "min_rank": 1,
+      "curve": [
+        687,
+        307
+      ]
+    },
+    {
+      "from": "m_def_03",
+      "to": "hp_05",
+      "min_rank": 1,
+      "curve": [
+        605,
+        356
+      ]
+    },
+    {
+      "from": "hp_05",
+      "to": "blank_14",
+      "min_rank": 1,
+      "curve": [
+        507,
+        356
+      ]
+    },
+    {
+      "from": "blank_14",
+      "to": "speed_02",
+      "min_rank": 1,
+      "curve": [
+        425,
+        307
+      ]
+    },
+    {
+      "from": "speed_02",
+      "to": "hp_04",
+      "min_rank": 1,
+      "curve": [
+        376,
+        225
+      ]
+    },
+    {
+      "from": "hp_06",
+      "to": "acc_02",
+      "min_rank": 1,
+      "curve": [
+        650,
+        210
+      ]
+    },
+    {
+      "from": "acc_02",
+      "to": "str_04",
+      "min_rank": 1,
+      "curve": [
+        608,
+        262
+      ]
+    },
+    {
+      "from": "str_04",
+      "to": "mag_04",
+      "min_rank": 1,
+      "curve": [
+        540,
+        276
+      ]
+    },
+    {
+      "from": "mag_04",
+      "to": "blank_15",
+      "min_rank": 1,
+      "curve": [
+        478,
+        241
+      ]
+    },
+    {
+      "from": "blank_15",
+      "to": "def_04",
+      "min_rank": 1,
+      "curve": [
+        460,
+        192
+      ]
+    },
+    {
+      "from": "def_04",
+      "to": "hp_07",
+      "min_rank": 1,
+      "curve": [
+        462,
+        142
+      ]
+    },
+    {
+      "from": "hp_07",
+      "to": "mp_04",
+      "min_rank": 1,
+      "curve": [
+        504,
+        90
+      ]
+    },
+    {
+      "from": "mp_04",
+      "to": "guarded_strike_01",
+      "min_rank": 1,
+      "curve": [
+        572,
+        76
+      ]
+    },
+    {
+      "from": "guarded_strike_01",
+      "to": "hp_06",
+      "min_rank": 1,
+      "curve": [
+        648,
+        121
+      ]
+    },
+    {
+      "from": "hp_04",
+      "to": "def_04",
+      "min_rank": 1,
+      "curve": [
+        418,
+        183
+      ]
+    },
+    {
+      "from": "blank_13",
+      "to": "mp_04",
+      "min_rank": 1,
+      "curve": [
+        541,
+        38
+      ]
+    },
+    {
+      "from": "sweeping_strike_01",
+      "to": "hp_06",
+      "min_rank": 1,
+      "curve": [
+        694,
+        169
+      ]
+    },
+    {
+      "from": "hp_05",
+      "to": "str_04",
+      "min_rank": 1,
+      "curve": [
+        571,
+        314
+      ]
+    },
+    {
+      "from": "def_04",
+      "to": "aether_dart_01",
+      "min_rank": 1,
+      "curve": [
+        508,
+        184
+      ]
+    },
+    {
+      "from": "aether_dart_01",
+      "to": "hp_06",
+      "min_rank": 1,
+      "curve": [
+        604,
+        184
+      ]
+    },
+    {
+      "from": "spr_04",
+      "to": "m_def_04",
+      "min_rank": 1,
+      "curve": [
+        601,
+        -127
+      ]
+    },
+    {
+      "from": "m_def_04",
+      "to": "blank_16",
+      "min_rank": 1,
+      "curve": [
+        499,
+        -143
+      ]
+    },
+    {
+      "from": "blank_16",
+      "to": "hp_08",
+      "min_rank": 1,
+      "curve": [
+        450,
+        -234
+      ]
+    },
+    {
+      "from": "hp_08",
+      "to": "eva_02",
+      "min_rank": 1,
+      "curve": [
+        529,
+        -326
+      ]
+    },
+    {
+      "from": "eva_02",
+      "to": "spr_04",
+      "min_rank": 1,
+      "curve": [
+        672,
+        -266
+      ]
+    },
+    {
+      "from": "hp_08",
+      "to": "cleanse_01",
+      "min_rank": 1,
+      "curve": [
+        517,
+        -247
+      ]
+    },
+    {
+      "from": "cleanse_01",
+      "to": "spr_04",
+      "min_rank": 1,
+      "curve": [
+        591,
+        -195
+      ]
+    },
+    {
+      "from": "hp_09",
+      "to": "str_05",
+      "min_rank": 1,
+      "curve": [
+        896,
+        127
+      ]
+    },
+    {
+      "from": "str_05",
+      "to": "mag_05",
+      "min_rank": 1,
+      "curve": [
+        945,
+        45
+      ]
+    },
+    {
+      "from": "mag_05",
+      "to": "def_05",
+      "min_rank": 1,
+      "curve": [
+        1027,
+        -4
+      ]
+    },
+    {
+      "from": "def_05",
+      "to": "blank_17",
+      "min_rank": 1,
+      "curve": [
+        1125,
+        -4
+      ]
+    },
+    {
+      "from": "blank_17",
+      "to": "speed_03",
+      "min_rank": 1,
+      "curve": [
+        1207,
+        45
+      ]
+    },
+    {
+      "from": "speed_03",
+      "to": "hp_10",
+      "min_rank": 1,
+      "curve": [
+        1256,
+        127
+      ]
+    },
+    {
+      "from": "hp_10",
+      "to": "mp_05",
+      "min_rank": 1,
+      "curve": [
+        1256,
+        225
+      ]
+    },
+    {
+      "from": "mp_05",
+      "to": "piercing_strike_01",
+      "min_rank": 1,
+      "curve": [
+        1207,
+        307
+      ]
+    },
+    {
+      "from": "piercing_strike_01",
+      "to": "spr_05",
+      "min_rank": 1,
+      "curve": [
+        1125,
+        356
+      ]
+    },
+    {
+      "from": "spr_05",
+      "to": "m_def_05",
+      "min_rank": 1,
+      "curve": [
+        1027,
+        356
+      ]
+    },
+    {
+      "from": "m_def_05",
+      "to": "blank_18",
+      "min_rank": 1,
+      "curve": [
+        945,
+        307
+      ]
+    },
+    {
+      "from": "blank_18",
+      "to": "hp_09",
+      "min_rank": 1,
+      "curve": [
+        896,
+        225
+      ]
+    },
+    {
+      "from": "lck_03",
+      "to": "hp_11",
+      "min_rank": 1,
+      "curve": [
+        1170,
+        210
+      ]
+    },
+    {
+      "from": "hp_11",
+      "to": "str_06",
+      "min_rank": 1,
+      "curve": [
+        1128,
+        262
+      ]
+    },
+    {
+      "from": "str_06",
+      "to": "mag_06",
+      "min_rank": 1,
+      "curve": [
+        1060,
+        276
+      ]
+    },
+    {
+      "from": "mag_06",
+      "to": "def_06",
+      "min_rank": 1,
+      "curve": [
+        998,
+        241
+      ]
+    },
+    {
+      "from": "def_06",
+      "to": "blank_19",
+      "min_rank": 1,
+      "curve": [
+        980,
+        192
+      ]
+    },
+    {
+      "from": "blank_19",
+      "to": "acc_03",
+      "min_rank": 1,
+      "curve": [
+        982,
+        142
+      ]
+    },
+    {
+      "from": "acc_03",
+      "to": "hp_12",
+      "min_rank": 1,
+      "curve": [
+        1024,
+        90
+      ]
+    },
+    {
+      "from": "hp_12",
+      "to": "mp_06",
+      "min_rank": 1,
+      "curve": [
+        1092,
+        76
+      ]
+    },
+    {
+      "from": "mp_06",
+      "to": "lck_03",
+      "min_rank": 1,
+      "curve": [
+        1168,
+        121
+      ]
+    },
+    {
+      "from": "hp_09",
+      "to": "blank_19",
+      "min_rank": 1,
+      "curve": [
+        938,
+        183
+      ]
+    },
+    {
+      "from": "def_05",
+      "to": "hp_12",
+      "min_rank": 1,
+      "curve": [
+        1061,
+        38
+      ]
+    },
+    {
+      "from": "hp_10",
+      "to": "lck_03",
+      "min_rank": 1,
+      "curve": [
+        1214,
+        169
+      ]
+    },
+    {
+      "from": "spr_05",
+      "to": "str_06",
+      "min_rank": 1,
+      "curve": [
+        1091,
+        314
+      ]
+    },
+    {
+      "from": "blank_19",
+      "to": "focused_strike_01",
+      "min_rank": 1,
+      "curve": [
+        1028,
+        184
+      ]
+    },
+    {
+      "from": "focused_strike_01",
+      "to": "lck_03",
+      "min_rank": 1,
+      "curve": [
+        1124,
+        184
+      ]
+    },
+    {
+      "from": "spr_06",
+      "to": "rally_01",
+      "min_rank": 1,
+      "curve": [
+        1121,
+        -127
+      ]
+    },
+    {
+      "from": "rally_01",
+      "to": "m_def_06",
+      "min_rank": 1,
+      "curve": [
+        1019,
+        -143
+      ]
+    },
+    {
+      "from": "m_def_06",
+      "to": "blank_20",
+      "min_rank": 1,
+      "curve": [
+        970,
+        -234
+      ]
+    },
+    {
+      "from": "blank_20",
+      "to": "hp_13",
+      "min_rank": 1,
+      "curve": [
+        1049,
+        -326
+      ]
+    },
+    {
+      "from": "hp_13",
+      "to": "spr_06",
+      "min_rank": 1,
+      "curve": [
+        1192,
+        -266
+      ]
+    },
+    {
+      "from": "blank_20",
+      "to": "aether_burst_01",
+      "min_rank": 1,
+      "curve": [
+        1037,
+        -247
+      ]
+    },
+    {
+      "from": "aether_burst_01",
+      "to": "spr_06",
+      "min_rank": 1,
+      "curve": [
+        1111,
+        -195
+      ]
+    },
+    {
+      "from": "speed_04",
+      "to": "str_07",
+      "min_rank": 1,
+      "curve": [
+        1416,
+        127
+      ]
+    },
+    {
+      "from": "str_07",
+      "to": "mag_07",
+      "min_rank": 1,
+      "curve": [
+        1465,
+        45
+      ]
+    },
+    {
+      "from": "mag_07",
+      "to": "def_07",
+      "min_rank": 1,
+      "curve": [
+        1547,
+        -4
+      ]
+    },
+    {
+      "from": "def_07",
+      "to": "hp_14",
+      "min_rank": 1,
+      "curve": [
+        1645,
+        -4
+      ]
+    },
+    {
+      "from": "hp_14",
+      "to": "blank_21",
+      "min_rank": 1,
+      "curve": [
+        1727,
+        45
+      ]
+    },
+    {
+      "from": "blank_21",
+      "to": "hp_15",
+      "min_rank": 1,
+      "curve": [
+        1776,
+        127
+      ]
+    },
+    {
+      "from": "hp_15",
+      "to": "mp_07",
+      "min_rank": 1,
+      "curve": [
+        1776,
+        225
+      ]
+    },
+    {
+      "from": "mp_07",
+      "to": "spr_07",
+      "min_rank": 1,
+      "curve": [
+        1727,
+        307
+      ]
+    },
+    {
+      "from": "spr_07",
+      "to": "m_def_07",
+      "min_rank": 1,
+      "curve": [
+        1645,
+        356
+      ]
+    },
+    {
+      "from": "m_def_07",
+      "to": "intercept_01",
+      "min_rank": 1,
+      "curve": [
+        1547,
+        356
+      ]
+    },
+    {
+      "from": "intercept_01",
+      "to": "str_08",
+      "min_rank": 1,
+      "curve": [
+        1465,
+        307
+      ]
+    },
+    {
+      "from": "str_08",
+      "to": "speed_04",
+      "min_rank": 1,
+      "curve": [
+        1416,
+        225
+      ]
+    },
+    {
+      "from": "blank_22",
+      "to": "mag_08",
+      "min_rank": 1,
+      "curve": [
+        1690,
+        210
+      ]
+    },
+    {
+      "from": "mag_08",
+      "to": "def_08",
+      "min_rank": 1,
+      "curve": [
+        1648,
+        262
+      ]
+    },
+    {
+      "from": "def_08",
+      "to": "hp_16",
+      "min_rank": 1,
+      "curve": [
+        1580,
+        276
+      ]
+    },
+    {
+      "from": "hp_16",
+      "to": "hp_17",
+      "min_rank": 1,
+      "curve": [
+        1518,
+        241
+      ]
+    },
+    {
+      "from": "hp_17",
+      "to": "speed_05",
+      "min_rank": 1,
+      "curve": [
+        1500,
+        192
+      ]
+    },
+    {
+      "from": "speed_05",
+      "to": "blank_23",
+      "min_rank": 1,
+      "curve": [
+        1502,
+        142
+      ]
+    },
+    {
+      "from": "blank_23",
+      "to": "acc_04",
+      "min_rank": 1,
+      "curve": [
+        1544,
+        90
+      ]
+    },
+    {
+      "from": "acc_04",
+      "to": "eva_03",
+      "min_rank": 1,
+      "curve": [
+        1612,
+        76
+      ]
+    },
+    {
+      "from": "eva_03",
+      "to": "blank_22",
+      "min_rank": 1,
+      "curve": [
+        1688,
+        121
+      ]
+    },
+    {
+      "from": "speed_04",
+      "to": "speed_05",
+      "min_rank": 1,
+      "curve": [
+        1458,
+        183
+      ]
+    },
+    {
+      "from": "def_07",
+      "to": "acc_04",
+      "min_rank": 1,
+      "curve": [
+        1581,
+        38
+      ]
+    },
+    {
+      "from": "hp_15",
+      "to": "blank_22",
+      "min_rank": 1,
+      "curve": [
+        1734,
+        169
+      ]
+    },
+    {
+      "from": "m_def_07",
+      "to": "def_08",
+      "min_rank": 1,
+      "curve": [
+        1611,
+        314
+      ]
+    },
+    {
+      "from": "speed_05",
+      "to": "greater_mend_01",
+      "min_rank": 1,
+      "curve": [
+        1548,
+        184
+      ]
+    },
+    {
+      "from": "greater_mend_01",
+      "to": "blank_22",
+      "min_rank": 1,
+      "curve": [
+        1644,
+        184
+      ]
+    },
+    {
+      "from": "hp_18",
+      "to": "str_09",
+      "min_rank": 1,
+      "curve": [
+        2041,
+        273
+      ]
+    },
+    {
+      "from": "str_09",
+      "to": "mag_09",
+      "min_rank": 1,
+      "curve": [
+        1939,
+        257
+      ]
+    },
+    {
+      "from": "mag_09",
+      "to": "blank_24",
+      "min_rank": 1,
+      "curve": [
+        1894,
+        176
+      ]
+    },
+    {
+      "from": "blank_24",
+      "to": "riposte_01",
+      "min_rank": 1,
+      "curve": [
+        1958,
+        71
+      ]
+    },
+    {
+      "from": "riposte_01",
+      "to": "hp_18",
+      "min_rank": 1,
+      "curve": [
+        2112,
+        134
+      ]
+    },
+    {
+      "from": "blank_24",
+      "to": "blank_12",
+      "min_rank": 1,
+      "curve": [
+        1953,
+        160
+      ]
+    },
+    {
+      "from": "blank_12",
+      "to": "hp_18",
+      "min_rank": 1,
+      "curve": [
+        2031,
+        205
+      ]
+    },
+    {
+      "from": "def_09",
+      "to": "mp_08",
+      "min_rank": 1,
+      "curve": [
+        1416,
+        647
+      ]
+    },
+    {
+      "from": "mp_08",
+      "to": "spr_08",
+      "min_rank": 1,
+      "curve": [
+        1465,
+        565
+      ]
+    },
+    {
+      "from": "spr_08",
+      "to": "m_def_08",
+      "min_rank": 1,
+      "curve": [
+        1547,
+        516
+      ]
+    },
+    {
+      "from": "m_def_08",
+      "to": "hp_19",
+      "min_rank": 1,
+      "curve": [
+        1645,
+        516
+      ]
+    },
+    {
+      "from": "hp_19",
+      "to": "blank_25",
+      "min_rank": 1,
+      "curve": [
+        1727,
+        565
+      ]
+    },
+    {
+      "from": "blank_25",
+      "to": "hp_20",
+      "min_rank": 1,
+      "curve": [
+        1776,
+        647
+      ]
+    },
+    {
+      "from": "hp_20",
+      "to": "str_10",
+      "min_rank": 1,
+      "curve": [
+        1776,
+        745
+      ]
+    },
+    {
+      "from": "str_10",
+      "to": "mag_10",
+      "min_rank": 1,
+      "curve": [
+        1727,
+        827
+      ]
+    },
+    {
+      "from": "mag_10",
+      "to": "def_10",
+      "min_rank": 1,
+      "curve": [
+        1645,
+        876
+      ]
+    },
+    {
+      "from": "def_10",
+      "to": "speed_06",
+      "min_rank": 1,
+      "curve": [
+        1547,
+        876
+      ]
+    },
+    {
+      "from": "speed_06",
+      "to": "hp_21",
+      "min_rank": 1,
+      "curve": [
+        1465,
+        827
+      ]
+    },
+    {
+      "from": "hp_21",
+      "to": "def_09",
+      "min_rank": 1,
+      "curve": [
+        1416,
+        745
+      ]
+    },
+    {
+      "from": "blank_26",
+      "to": "aether_arc_01",
+      "min_rank": 1,
+      "curve": [
+        1690,
+        730
+      ]
+    },
+    {
+      "from": "aether_arc_01",
+      "to": "mp_09",
+      "min_rank": 1,
+      "curve": [
+        1648,
+        782
+      ]
+    },
+    {
+      "from": "mp_09",
+      "to": "spr_09",
+      "min_rank": 1,
+      "curve": [
+        1580,
+        796
+      ]
+    },
+    {
+      "from": "spr_09",
+      "to": "m_def_09",
+      "min_rank": 1,
+      "curve": [
+        1518,
+        761
+      ]
+    },
+    {
+      "from": "m_def_09",
+      "to": "hp_22",
+      "min_rank": 1,
+      "curve": [
+        1500,
+        712
+      ]
+    },
+    {
+      "from": "hp_22",
+      "to": "acc_05",
+      "min_rank": 1,
+      "curve": [
+        1502,
+        662
+      ]
+    },
+    {
+      "from": "acc_05",
+      "to": "blank_27",
+      "min_rank": 1,
+      "curve": [
+        1544,
+        610
+      ]
+    },
+    {
+      "from": "blank_27",
+      "to": "str_11",
+      "min_rank": 1,
+      "curve": [
+        1612,
+        596
+      ]
+    },
+    {
+      "from": "str_11",
+      "to": "blank_26",
+      "min_rank": 1,
+      "curve": [
+        1688,
+        641
+      ]
+    },
+    {
+      "from": "def_09",
+      "to": "hp_22",
+      "min_rank": 1,
+      "curve": [
+        1458,
+        703
+      ]
+    },
+    {
+      "from": "m_def_08",
+      "to": "str_11",
+      "min_rank": 1,
+      "curve": [
+        1612,
+        569
+      ]
+    },
+    {
+      "from": "hp_20",
+      "to": "blank_26",
+      "min_rank": 1,
+      "curve": [
+        1734,
+        689
+      ]
+    },
+    {
+      "from": "def_10",
+      "to": "mp_09",
+      "min_rank": 1,
+      "curve": [
+        1611,
+        834
+      ]
+    },
+    {
+      "from": "hp_22",
+      "to": "ward_01",
+      "min_rank": 1,
+      "curve": [
+        1548,
+        704
+      ]
+    },
+    {
+      "from": "ward_01",
+      "to": "blank_26",
+      "min_rank": 1,
+      "curve": [
+        1644,
+        704
+      ]
+    },
+    {
+      "from": "mag_11",
+      "to": "def_11",
+      "min_rank": 1,
+      "curve": [
+        896,
+        647
+      ]
+    },
+    {
+      "from": "def_11",
+      "to": "hp_23",
+      "min_rank": 1,
+      "curve": [
+        945,
+        565
+      ]
+    },
+    {
+      "from": "hp_23",
+      "to": "mp_10",
+      "min_rank": 1,
+      "curve": [
+        1027,
+        516
+      ]
+    },
+    {
+      "from": "mp_10",
+      "to": "blank_28",
+      "min_rank": 1,
+      "curve": [
+        1125,
+        516
+      ]
+    },
+    {
+      "from": "blank_28",
+      "to": "spr_10",
+      "min_rank": 1,
+      "curve": [
+        1207,
+        565
+      ]
+    },
+    {
+      "from": "spr_10",
+      "to": "renew_01",
+      "min_rank": 1,
+      "curve": [
+        1256,
+        647
+      ]
+    },
+    {
+      "from": "renew_01",
+      "to": "m_def_10",
+      "min_rank": 1,
+      "curve": [
+        1256,
+        745
+      ]
+    },
+    {
+      "from": "m_def_10",
+      "to": "lck_04",
+      "min_rank": 1,
+      "curve": [
+        1207,
+        827
+      ]
+    },
+    {
+      "from": "lck_04",
+      "to": "hp_24",
+      "min_rank": 1,
+      "curve": [
+        1125,
+        876
+      ]
+    },
+    {
+      "from": "hp_24",
+      "to": "speed_07",
+      "min_rank": 1,
+      "curve": [
+        1027,
+        876
+      ]
+    },
+    {
+      "from": "speed_07",
+      "to": "blank_29",
+      "min_rank": 1,
+      "curve": [
+        945,
+        827
+      ]
+    },
+    {
+      "from": "blank_29",
+      "to": "mag_11",
+      "min_rank": 1,
+      "curve": [
+        896,
+        745
+      ]
+    },
+    {
+      "from": "str_12",
+      "to": "mag_12",
+      "min_rank": 1,
+      "curve": [
+        1170,
+        730
+      ]
+    },
+    {
+      "from": "mag_12",
+      "to": "def_12",
+      "min_rank": 1,
+      "curve": [
+        1128,
+        782
+      ]
+    },
+    {
+      "from": "def_12",
+      "to": "hp_25",
+      "min_rank": 1,
+      "curve": [
+        1060,
+        796
+      ]
+    },
+    {
+      "from": "hp_25",
+      "to": "hp_26",
+      "min_rank": 1,
+      "curve": [
+        998,
+        761
+      ]
+    },
+    {
+      "from": "hp_26",
+      "to": "eva_04",
+      "min_rank": 1,
+      "curve": [
+        980,
+        712
+      ]
+    },
+    {
+      "from": "eva_04",
+      "to": "blank_30",
+      "min_rank": 1,
+      "curve": [
+        982,
+        662
+      ]
+    },
+    {
+      "from": "blank_30",
+      "to": "mp_11",
+      "min_rank": 1,
+      "curve": [
+        1024,
+        610
+      ]
+    },
+    {
+      "from": "mp_11",
+      "to": "dispel_01",
+      "min_rank": 1,
+      "curve": [
+        1092,
+        596
+      ]
+    },
+    {
+      "from": "dispel_01",
+      "to": "str_12",
+      "min_rank": 1,
+      "curve": [
+        1168,
+        641
+      ]
+    },
+    {
+      "from": "mag_11",
+      "to": "eva_04",
+      "min_rank": 1,
+      "curve": [
+        938,
+        703
+      ]
+    },
+    {
+      "from": "mp_10",
+      "to": "mp_11",
+      "min_rank": 1,
+      "curve": [
+        1061,
+        558
+      ]
+    },
+    {
+      "from": "renew_01",
+      "to": "str_12",
+      "min_rank": 1,
+      "curve": [
+        1214,
+        689
+      ]
+    },
+    {
+      "from": "hp_24",
+      "to": "def_12",
+      "min_rank": 1,
+      "curve": [
+        1091,
+        834
+      ]
+    },
+    {
+      "from": "eva_04",
+      "to": "aether_lance_01",
+      "min_rank": 1,
+      "curve": [
+        1028,
+        704
+      ]
+    },
+    {
+      "from": "aether_lance_01",
+      "to": "str_12",
+      "min_rank": 1,
+      "curve": [
+        1124,
+        704
+      ]
+    },
+    {
+      "from": "spr_11",
+      "to": "m_def_11",
+      "min_rank": 1,
+      "curve": [
+        376,
+        647
+      ]
+    },
+    {
+      "from": "m_def_11",
+      "to": "hp_27",
+      "min_rank": 1,
+      "curve": [
+        425,
+        565
+      ]
+    },
+    {
+      "from": "hp_27",
+      "to": "str_13",
+      "min_rank": 1,
+      "curve": [
+        507,
+        516
+      ]
+    },
+    {
+      "from": "str_13",
+      "to": "blank_31",
+      "min_rank": 1,
+      "curve": [
+        605,
+        516
+      ]
+    },
+    {
+      "from": "blank_31",
+      "to": "mag_13",
+      "min_rank": 1,
+      "curve": [
+        687,
+        565
+      ]
+    },
+    {
+      "from": "mag_13",
+      "to": "def_13",
+      "min_rank": 1,
+      "curve": [
+        736,
+        647
+      ]
+    },
+    {
+      "from": "def_13",
+      "to": "acc_06",
+      "min_rank": 1,
+      "curve": [
+        736,
+        745
+      ]
+    },
+    {
+      "from": "acc_06",
+      "to": "hp_28",
+      "min_rank": 1,
+      "curve": [
+        687,
+        827
+      ]
+    },
+    {
+      "from": "hp_28",
+      "to": "speed_08",
+      "min_rank": 1,
+      "curve": [
+        605,
+        876
+      ]
+    },
+    {
+      "from": "speed_08",
+      "to": "blank_32",
+      "min_rank": 1,
+      "curve": [
+        507,
+        876
+      ]
+    },
+    {
+      "from": "blank_32",
+      "to": "hp_29",
+      "min_rank": 1,
+      "curve": [
+        425,
+        827
+      ]
+    },
+    {
+      "from": "hp_29",
+      "to": "spr_11",
+      "min_rank": 1,
+      "curve": [
+        376,
+        745
+      ]
+    },
+    {
+      "from": "mp_12",
+      "to": "channel_01",
+      "min_rank": 1,
+      "curve": [
+        650,
+        730
+      ]
+    },
+    {
+      "from": "channel_01",
+      "to": "spr_12",
+      "min_rank": 1,
+      "curve": [
+        608,
+        782
+      ]
+    },
+    {
+      "from": "spr_12",
+      "to": "m_def_12",
+      "min_rank": 1,
+      "curve": [
+        540,
+        796
+      ]
+    },
+    {
+      "from": "m_def_12",
+      "to": "str_14",
+      "min_rank": 1,
+      "curve": [
+        478,
+        761
+      ]
+    },
+    {
+      "from": "str_14",
+      "to": "blank_33",
+      "min_rank": 1,
+      "curve": [
+        460,
+        712
+      ]
+    },
+    {
+      "from": "blank_33",
+      "to": "mag_14",
+      "min_rank": 1,
+      "curve": [
+        462,
+        662
+      ]
+    },
+    {
+      "from": "mag_14",
+      "to": "def_14",
+      "min_rank": 1,
+      "curve": [
+        504,
+        610
+      ]
+    },
+    {
+      "from": "def_14",
+      "to": "hp_30",
+      "min_rank": 1,
+      "curve": [
+        572,
+        596
+      ]
+    },
+    {
+      "from": "hp_30",
+      "to": "mp_12",
+      "min_rank": 1,
+      "curve": [
+        648,
+        641
+      ]
+    },
+    {
+      "from": "spr_11",
+      "to": "blank_33",
+      "min_rank": 1,
+      "curve": [
+        418,
+        703
+      ]
+    },
+    {
+      "from": "str_13",
+      "to": "def_14",
+      "min_rank": 1,
+      "curve": [
+        541,
+        558
+      ]
+    },
+    {
+      "from": "def_13",
+      "to": "mp_12",
+      "min_rank": 1,
+      "curve": [
+        694,
+        689
+      ]
+    },
+    {
+      "from": "speed_08",
+      "to": "spr_12",
+      "min_rank": 1,
+      "curve": [
+        571,
+        834
+      ]
+    },
+    {
+      "from": "blank_33",
+      "to": "steadfast_01",
+      "min_rank": 1,
+      "curve": [
+        508,
+        704
+      ]
+    },
+    {
+      "from": "steadfast_01",
+      "to": "mp_12",
+      "min_rank": 1,
+      "curve": [
+        604,
+        704
+      ]
+    },
+    {
+      "from": "mp_01",
+      "to": "blank_34",
+      "min_rank": 12
+    },
+    {
+      "from": "blank_34",
+      "to": "blank_35",
+      "min_rank": 12
+    },
+    {
+      "from": "blank_35",
+      "to": "hp_04",
+      "min_rank": 12
+    },
+    {
+      "from": "sweeping_strike_01",
+      "to": "blank_36",
+      "min_rank": 25
+    },
+    {
+      "from": "blank_36",
+      "to": "blank_37",
+      "min_rank": 25
+    },
+    {
+      "from": "blank_37",
+      "to": "hp_09",
+      "min_rank": 25
+    },
+    {
+      "from": "hp_10",
+      "to": "blank_38",
+      "min_rank": 45
+    },
+    {
+      "from": "blank_38",
+      "to": "blank_39",
+      "min_rank": 45
+    },
+    {
+      "from": "blank_39",
+      "to": "speed_04",
+      "min_rank": 45
+    },
+    {
+      "from": "m_def_07",
+      "to": "blank_40",
+      "min_rank": 65
+    },
+    {
+      "from": "blank_40",
+      "to": "blank_41",
+      "min_rank": 65
+    },
+    {
+      "from": "blank_41",
+      "to": "m_def_08",
+      "min_rank": 65
+    },
+    {
+      "from": "def_09",
+      "to": "blank_42",
+      "min_rank": 85
+    },
+    {
+      "from": "blank_42",
+      "to": "blank_43",
+      "min_rank": 85
+    },
+    {
+      "from": "blank_43",
+      "to": "renew_01",
+      "min_rank": 85
+    },
+    {
+      "from": "mag_11",
+      "to": "blank_44",
+      "min_rank": 110
+    },
+    {
+      "from": "blank_44",
+      "to": "blank_45",
+      "min_rank": 110
+    },
+    {
+      "from": "blank_45",
+      "to": "def_13",
+      "min_rank": 110
+    },
+    {
+      "from": "mag_03",
+      "to": "blank_46",
+      "min_rank": 20
+    },
+    {
+      "from": "blank_46",
+      "to": "blank_16",
+      "min_rank": 20
+    },
+    {
+      "from": "spr_04",
+      "to": "def_03",
+      "min_rank": 20
+    },
+    {
+      "from": "mag_05",
+      "to": "blank_47",
+      "min_rank": 35
+    },
+    {
+      "from": "blank_47",
+      "to": "m_def_06",
+      "min_rank": 35
+    },
+    {
+      "from": "spr_06",
+      "to": "blank_17",
+      "min_rank": 35
+    },
+    {
+      "from": "blank_21",
+      "to": "blank_48",
+      "min_rank": 55
+    },
+    {
+      "from": "blank_48",
+      "to": "blank_24",
+      "min_rank": 55
+    },
+    {
+      "from": "str_09",
+      "to": "mp_07",
+      "min_rank": 55
+    },
+    {
+      "from": "lck_02",
+      "to": "blank_49",
+      "min_rank": 8
+    },
+    {
+      "from": "blank_49",
+      "to": "mag_01",
+      "min_rank": 8
+    },
+    {
+      "from": "spr_11",
+      "to": "m_def_02",
+      "min_rank": 110
+    }
+  ],
+  "formations": {
+    "first_light": {
+      "name": "First Light",
+      "center": [
+        36,
+        176
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "origin",
+        "hp_01",
+        "blank_01",
+        "str_01",
+        "mp_01",
+        "def_01",
+        "blank_02",
+        "mag_01",
+        "spr_01",
+        "blank_03",
+        "speed_01",
+        "acc_01",
+        "eva_01",
+        "m_def_01",
+        "brace_01",
+        "hp_02",
+        "blank_04",
+        "lck_01",
+        "str_02",
+        "mag_02",
+        "blank_08",
+        "blank_09"
+      ],
+      "center_node": "brace_01",
+      "entry": "origin",
+      "exit": "mp_01"
+    },
+    "gentle_current": {
+      "name": "Gentle Current",
+      "center": [
+        300,
+        -135
+      ],
+      "radius": 100,
+      "size": "small",
+      "nodes": [
+        "blank_05",
+        "def_02",
+        "spr_02",
+        "blank_10",
+        "blank_11",
+        "mend_01"
+      ],
+      "center_node": "mend_01",
+      "entry": "blank_05",
+      "exit": "blank_11"
+    },
+    "quiet_reserve": {
+      "name": "Quiet Reserve",
+      "center": [
+        36,
+        696
+      ],
+      "radius": 100,
+      "size": "small",
+      "nodes": [
+        "blank_06",
+        "mp_02",
+        "m_def_02",
+        "blank_07",
+        "lck_02",
+        "hp_03"
+      ],
+      "center_node": "hp_03",
+      "entry": "blank_06",
+      "exit": "lck_02"
+    },
+    "steady_hand": {
+      "name": "Steady Hand",
+      "center": [
+        556,
+        176
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "hp_04",
+        "str_03",
+        "mag_03",
+        "blank_13",
+        "def_03",
+        "mp_03",
+        "sweeping_strike_01",
+        "spr_03",
+        "m_def_03",
+        "hp_05",
+        "blank_14",
+        "speed_02",
+        "hp_06",
+        "acc_02",
+        "str_04",
+        "mag_04",
+        "blank_15",
+        "def_04",
+        "hp_07",
+        "mp_04",
+        "guarded_strike_01",
+        "aether_dart_01"
+      ],
+      "center_node": "aether_dart_01",
+      "entry": "hp_04",
+      "exit": "sweeping_strike_01"
+    },
+    "clear_water": {
+      "name": "Clear Water",
+      "center": [
+        556,
+        -224
+      ],
+      "radius": 90,
+      "size": "small",
+      "nodes": [
+        "spr_04",
+        "m_def_04",
+        "blank_16",
+        "hp_08",
+        "eva_02",
+        "cleanse_01"
+      ],
+      "center_node": "cleanse_01",
+      "entry": "blank_16",
+      "exit": "spr_04"
+    },
+    "clear_intent": {
+      "name": "Clear Intent",
+      "center": [
+        1076,
+        176
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "hp_09",
+        "str_05",
+        "mag_05",
+        "def_05",
+        "blank_17",
+        "speed_03",
+        "hp_10",
+        "mp_05",
+        "piercing_strike_01",
+        "spr_05",
+        "m_def_05",
+        "blank_18",
+        "lck_03",
+        "hp_11",
+        "str_06",
+        "mag_06",
+        "def_06",
+        "blank_19",
+        "acc_03",
+        "hp_12",
+        "mp_06",
+        "focused_strike_01"
+      ],
+      "center_node": "focused_strike_01",
+      "entry": "hp_09",
+      "exit": "hp_10"
+    },
+    "gathered_light": {
+      "name": "Gathered Light",
+      "center": [
+        1076,
+        -224
+      ],
+      "radius": 90,
+      "size": "small",
+      "nodes": [
+        "spr_06",
+        "rally_01",
+        "m_def_06",
+        "blank_20",
+        "hp_13",
+        "aether_burst_01"
+      ],
+      "center_node": "aether_burst_01",
+      "entry": "m_def_06",
+      "exit": "spr_06"
+    },
+    "shared_strength": {
+      "name": "Shared Strength",
+      "center": [
+        1596,
+        176
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "speed_04",
+        "str_07",
+        "mag_07",
+        "def_07",
+        "hp_14",
+        "blank_21",
+        "hp_15",
+        "mp_07",
+        "spr_07",
+        "m_def_07",
+        "intercept_01",
+        "str_08",
+        "blank_22",
+        "mag_08",
+        "def_08",
+        "hp_16",
+        "hp_17",
+        "speed_05",
+        "blank_23",
+        "acc_04",
+        "eva_03",
+        "greater_mend_01"
+      ],
+      "center_node": "greater_mend_01",
+      "entry": "speed_04",
+      "exit": "m_def_07"
+    },
+    "crossing_paths": {
+      "name": "Crossing Paths",
+      "center": [
+        1996,
+        176
+      ],
+      "radius": 90,
+      "size": "small",
+      "nodes": [
+        "hp_18",
+        "str_09",
+        "mag_09",
+        "blank_24",
+        "riposte_01",
+        "blank_12"
+      ],
+      "center_node": "blank_12",
+      "entry": "blank_24",
+      "exit": "str_09"
+    },
+    "shelter": {
+      "name": "Shelter",
+      "center": [
+        1596,
+        696
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "def_09",
+        "mp_08",
+        "spr_08",
+        "m_def_08",
+        "hp_19",
+        "blank_25",
+        "hp_20",
+        "str_10",
+        "mag_10",
+        "def_10",
+        "speed_06",
+        "hp_21",
+        "blank_26",
+        "aether_arc_01",
+        "mp_09",
+        "spr_09",
+        "m_def_09",
+        "hp_22",
+        "acc_05",
+        "blank_27",
+        "str_11",
+        "ward_01"
+      ],
+      "center_node": "ward_01",
+      "entry": "m_def_08",
+      "exit": "def_09"
+    },
+    "far_reach": {
+      "name": "Far Reach",
+      "center": [
+        1076,
+        696
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "mag_11",
+        "def_11",
+        "hp_23",
+        "mp_10",
+        "blank_28",
+        "spr_10",
+        "renew_01",
+        "m_def_10",
+        "lck_04",
+        "hp_24",
+        "speed_07",
+        "blank_29",
+        "str_12",
+        "mag_12",
+        "def_12",
+        "hp_25",
+        "hp_26",
+        "eva_04",
+        "blank_30",
+        "mp_11",
+        "dispel_01",
+        "aether_lance_01"
+      ],
+      "center_node": "aether_lance_01",
+      "entry": "renew_01",
+      "exit": "mag_11"
+    },
+    "steadfast_heart": {
+      "name": "Steadfast Heart",
+      "center": [
+        556,
+        696
+      ],
+      "radius": 180,
+      "size": "large",
+      "nodes": [
+        "spr_11",
+        "m_def_11",
+        "hp_27",
+        "str_13",
+        "blank_31",
+        "mag_13",
+        "def_13",
+        "acc_06",
+        "hp_28",
+        "speed_08",
+        "blank_32",
+        "hp_29",
+        "mp_12",
+        "channel_01",
+        "spr_12",
+        "m_def_12",
+        "str_14",
+        "blank_33",
+        "mag_14",
+        "def_14",
+        "hp_30",
+        "steadfast_01"
+      ],
+      "center_node": "steadfast_01",
+      "entry": "def_13",
+      "exit": "spr_11"
+    }
+  }
+}

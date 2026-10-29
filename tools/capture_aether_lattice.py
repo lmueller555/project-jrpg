@@ -88,12 +88,12 @@ def main():
         preview.resize((480, 320), 1.5)
         record(preview, 'lattice_activation_preview_small_large')
         confirmation = preview.game.lattice_ui.action_preview()['lines']
-        assert any('140' in line and '160' in line for line in confirmation)
+        assert any('140' in line and '240' in line for line in confirmation)
         assert any('Emerald' in line for line in confirmation)
         assert preview.game.lattice_ui.map_rect.contains(preview.game.lattice_ui.context_rect)
         preview.resize((960, 640), 1.0)
         confirm(preview, 'activate', 'hp_01')
-        assert game.attributes.value('hp') == 160
+        assert game.attributes.value('hp') == 240
         assert game.attributes.current_hp == 140
         assert game.attributes.base_value('hp') == 140
         assert game.inventory.quantity('aether_emerald') == 0
@@ -110,7 +110,7 @@ def main():
             restored.audio.set_music(0);restored.audio.set_effects(0)
             assert restored.has_saved_journey and restored.begin_journey(True)
             assert checkpoint == (restored.lattice.to_dict(), restored.inventory.to_dict(), restored.attributes.to_dict())
-            assert restored.attributes.value('hp') == 160
+            assert restored.attributes.value('hp') == 240
             preview.game = restored
         preview.open_menu('Aether Lattice')
         record(preview, 'lattice_after_continue')
