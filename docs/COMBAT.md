@@ -6,10 +6,29 @@ Approach within 32 pixels and press **E** when **Engage Bat** appears. The Bat
 does not attack automatically and cannot interrupt a conversation, household
 action, opening cutscene, menu or room transition.
 
-The encounter opens a separate clearing with combat sprites and a bottom
-interface. The exploration world, player position, villagers and quest clocks
-remain paused until the encounter ends. See the
-[actual-game preview](reviews/atb_combat/README.md).
+The encounter opens a separate view of Eldenmere's well clearing, with combat
+sprites and a bottom interface. The exploration world, player position,
+villagers and quest clocks remain paused until the encounter ends. See the
+[current battlefield preview](reviews/eldenmere_battlefield/README.md) and the
+[initial combat implementation preview](reviews/atb_combat/README.md).
+
+## Eldenmere battlefield
+
+The battle camera looks across the grass west of the village well. The roofed
+stone well sits behind and to the right of the fighting ground; timber and
+plaster cottages, garden fences, firewood and trees establish the surrounding
+village. The brook and mill are farther east and are outside this view.
+
+The foreground has larger grass, clover, white flowers, partly buried stones
+and exposed earth at the corners. Shorter, worn grass and footpaths leave the
+middle open for attacks and spell effects. Warm daylight and contact shadows
+keep both combatants connected to the ground while preserving the Bat's
+hovering height. Scenery does not advance the exploration world or introduce
+festival decorations independently of the story.
+
+Two small foreground grass tufts sway at the outer corners. Reduced Motion
+keeps them still, and pausing the battle freezes their animation. Background
+art, grass poses and contact shadows are loaded or prepared once per encounter.
 
 ## Timing and decisions
 
@@ -124,6 +143,10 @@ retry and error notice; it does not apply rewards again.
   copied resources, AI and outcomes.
 - [`battle_scene.py`](../battle_scene.py): separate field, sprites, UI, input,
   focus handling, damage popups and action animation.
+- [`assets/combat/eldenmere`](../assets/combat/eldenmere): native battlefield
+  panorama, transparent grass accent and source metadata. The retained
+  [generated artwork](../assets/source/combat/eldenmere_README.md) is exported
+  by [`tools/build_eldenmere_battlefield.py`](../tools/build_eldenmere_battlefield.py).
 - [`world_encounters.py`](../world_encounters.py): visible Bat, entry guards,
   resource/reward settlement, return and cooldown.
 - [`assets/combat/actions.json`](../assets/combat/actions.json) and

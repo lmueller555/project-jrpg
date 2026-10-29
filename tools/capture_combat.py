@@ -277,8 +277,15 @@ def main(argv=None):
                        'letterboxed_window': [1440, 810], 'letterboxed_dart_click': True})
 
     for action in action_objects:actions.append(asdict(action))
-    frames[0].save(output/'combat.gif', save_all=True, append_images=frames[1:],
-                   duration=100, loop=0, optimize=True, disposal=1)
+    # One palette keeps static scenery identical across GIF frames. Independent
+    # frame palettes turn a detailed backdrop into flickering full-frame deltas.
+    samples = Image.new('RGB', (120*len(frames), 80))
+    for index, frame in enumerate(frames):
+        samples.paste(frame.resize((120, 80), Image.Resampling.NEAREST), (index*120, 0))
+    palette = samples.quantize(colors=256, dither=Image.Dither.NONE)
+    gif_frames = [frame.quantize(palette=palette, dither=Image.Dither.NONE) for frame in frames]
+    gif_frames[0].save(output/'combat.gif', save_all=True, append_images=gif_frames[1:],
+                       duration=100, loop=0, optimize=False, disposal=1)
     with Image.open(output/'combat.gif') as animation:encoded_frames = animation.n_frames
     sheet = Image.new('RGB', (480*3, 320*2))
     labels = ('battle_ready', 'caelan_guard', 'caelan_attack', 'bat_bite', 'bat_wing_gust', 'caelan_cast')
