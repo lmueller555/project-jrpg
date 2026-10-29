@@ -17,6 +17,7 @@ import pygame
 import main
 from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST
+from test_mill_battle_gameplay import finish_mill_battle
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -58,7 +59,9 @@ class MillTriggerGeometryTests(unittest.TestCase):
         self.assertIsNotNone(route, (world.data['id'], tuple(self.g.player.position), tuple(goal)))
         for corner in route:
             for _ in range(700):
+                if self.g.combat.active:finish_mill_battle(self.g)
                 if self.g.social.active:self.read()
+                if self.g.combat.active:finish_mill_battle(self.g)
                 delta = pygame.Vector2(corner)-self.g.player.position
                 if delta.length()<.04:break
                 self.tick(min(.05, delta.length()/72), delta)

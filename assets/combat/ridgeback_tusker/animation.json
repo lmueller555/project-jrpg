@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "actor": "ridgeback_tusker",
+  "canvas": [
+    96,
+    72
+  ],
+  "anchor": [
+    48,
+    62
+  ],
+  "facing": "right",
+  "source_sheet": "assets/source/combat/mq02_tusker_generated_sheet.png",
+  "source_sha256": "eb97f27a9524162e2fbdc78a95ed75ab7b25221cfe6d477f72dfcd6c41dd1c6a",
+  "sheet": "spritesheet.png",
+  "extraction": "connected-alpha sprites; fixed native scale",
+  "native_scale": 0.205,
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 240,
+          "source_cell": 0,
+          "source_bounds": [
+            14,
+            34,
+            351,
+            268
+          ]
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 240,
+          "source_cell": 1,
+          "source_bounds": [
+            378,
+            36,
+            716,
+            268
+          ]
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 240,
+          "source_cell": 2,
+          "source_bounds": [
+            747,
+            42,
+            1072,
+            268
+          ]
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 240,
+          "source_cell": 3,
+          "source_bounds": [
+            1098,
+            45,
+            1434,
+            267
+          ]
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 250,
+          "source_cell": 4,
+          "source_bounds": [
+            16,
+            309,
+            350,
+            538
+          ]
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 350,
+          "source_cell": 5,
+          "source_bounds": [
+            354,
+            323,
+            746,
+            538
+          ]
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300,
+          "source_cell": 6,
+          "source_bounds": [
+            751,
+            325,
+            1074,
+            538
+          ]
+        }
+      ]
+    },
+    "prepare": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "prepare_01.png",
+          "duration_ms": 400,
+          "source_cell": 7,
+          "source_bounds": [
+            1091,
+            337,
+            1440,
+            543
+          ]
+        },
+        {
+          "file": "prepare_02.png",
+          "duration_ms": 400,
+          "source_cell": 8,
+          "source_bounds": [
+            15,
+            597,
+            355,
+            799
+          ]
+        }
+      ]
+    },
+    "charge": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "charge_01.png",
+          "duration_ms": 250,
+          "source_cell": 9,
+          "source_bounds": [
+            366,
+            600,
+            714,
+            800
+          ]
+        },
+        {
+          "file": "charge_02.png",
+          "duration_ms": 400,
+          "source_cell": 10,
+          "source_bounds": [
+            725,
+            568,
+            1112,
+            776
+          ]
+        },
+        {
+          "file": "charge_03.png",
+          "duration_ms": 350,
+          "source_cell": 11,
+          "source_bounds": [
+            1113,
+            583,
+            1440,
+            800
+          ]
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 180,
+          "source_cell": 12,
+          "source_bounds": [
+            14,
+            822,
+            330,
+            1059
+          ]
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 240,
+          "source_cell": 13,
+          "source_bounds": [
+            365,
+            845,
+            701,
+            1059
+          ]
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 300,
+          "source_cell": 14,
+          "source_bounds": [
+            731,
+            868,
+            1068,
+            1059
+          ]
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 500,
+          "source_cell": 15,
+          "source_bounds": [
+            1084,
+            916,
+            1438,
+            1059
+          ]
+        }
+      ]
+    },
+    "tusk_strike": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 250,
+          "source_cell": 4,
+          "source_bounds": [
+            16,
+            309,
+            350,
+            538
+          ]
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 350,
+          "source_cell": 5,
+          "source_bounds": [
+            354,
+            323,
+            746,
+            538
+          ]
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300,
+          "source_cell": 6,
+          "source_bounds": [
+            751,
+            325,
+            1074,
+            538
+          ]
+        }
+      ]
+    },
+    "prepare_charge": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "prepare_01.png",
+          "duration_ms": 400,
+          "source_cell": 7,
+          "source_bounds": [
+            1091,
+            337,
+            1440,
+            543
+          ]
+        },
+        {
+          "file": "prepare_02.png",
+          "duration_ms": 400,
+          "source_cell": 8,
+          "source_bounds": [
+            15,
+            597,
+            355,
+            799
+          ]
+        }
+      ]
+    },
+    "tusker_charge": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "charge_01.png",
+          "duration_ms": 250,
+          "source_cell": 9,
+          "source_bounds": [
+            366,
+            600,
+            714,
+            800
+          ]
+        },
+        {
+          "file": "charge_02.png",
+          "duration_ms": 400,
+          "source_cell": 10,
+          "source_bounds": [
+            725,
+            568,
+            1112,
+            776
+          ]
+        },
+        {
+          "file": "charge_03.png",
+          "duration_ms": 350,
+          "source_cell": 11,
+          "source_bounds": [
+            1113,
+            583,
+            1440,
+            800
+          ]
+        }
+      ]
+    }
+  }
+}

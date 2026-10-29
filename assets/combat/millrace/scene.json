@@ -1,0 +1,26 @@
+{
+  "id": "upper_millrace_riverbank",
+  "canvas": [
+    480,
+    320
+  ],
+  "background": "background.png",
+  "world_map": "upstream",
+  "camera_facing": "south-southwest toward Eldenmere",
+  "river": "near left edge, curving alongside the bank",
+  "source": {
+    "file": "assets/source/combat/millrace_background_generated.png",
+    "sha256": "aac5f45ea2c2c456e17f7308462ecfefca7e05e19c723f4be7cc50c65586d6ed",
+    "dimensions": [
+      1536,
+      1024
+    ]
+  },
+  "exporter": "tools/build_mill_battlefield.py",
+  "notes": [
+    "Dry central riverbank leaves room for the Tusker and two party members.",
+    "Distant northern cottages and the slate-roofed sanctuary identify Eldenmere.",
+    "Freshly broken wood connects the encounter to the fallen intake limb.",
+    "No actors, interface, festival props or actor shadows are baked into the art."
+  ]
+}

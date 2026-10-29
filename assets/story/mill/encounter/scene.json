@@ -1,0 +1,39 @@
+{
+  "id": "millrace_fallen_tree",
+  "world_map": "upstream",
+  "image": "tree_evidence.png",
+  "canvas": [
+    128,
+    96
+  ],
+  "draw_anchor": [
+    0,
+    0
+  ],
+  "position": [
+    224,
+    184
+  ],
+  "sort_y": 280,
+  "opaque_bounds": [
+    4,
+    7,
+    124,
+    89
+  ],
+  "collision": false,
+  "source": {
+    "file": "assets/source/combat/millrace_fallen_tree_generated.png",
+    "sha256": "85a5352e9bcd7200495244db08a520e2bbdcce80f0e072a01d601ef98098a7f3",
+    "dimensions": [
+      1448,
+      1086
+    ]
+  },
+  "exporter": "tools/build_mill_battlefield.py",
+  "notes": [
+    "Visual evidence beside the path; does not introduce an invisible blocker.",
+    "The snapped bank-side tree has tusk gouges and a missing broken limb.",
+    "The established intake-screen limb remains the actual repair obstruction."
+  ]
+}

@@ -12,6 +12,7 @@ import pygame
 import main
 from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST, QuestLog
+from test_mill_battle_gameplay import finish_mill_battle
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -99,6 +100,12 @@ class MillQuestTests(unittest.TestCase):
         self.assertIsNotNone(route,(world.data['id'],tuple(self.g.player.position),goal))
         for corner in route:
             for _ in range(600):
+                if self.g.combat.active:
+                    finish_mill_battle(self.g)
+                elif (self.g.social.active and
+                      str(self.g.social.script_identifier).startswith('mill_encounter')):
+                    self.read_all()
+                    if self.g.combat.active:finish_mill_battle(self.g)
                 if self.g.world is not world:
                     self.assertEqual(self.g.world.data['id'],new_scene);return
                 delta=pygame.Vector2(corner)-self.g.player.position
@@ -137,6 +144,8 @@ class MillQuestTests(unittest.TestCase):
         self.assertEqual(self.g.social.script_identifier,'mill_diagnosis')
         self.read_current()
         self.assertEqual(self.g.quests.objective_status(MILL_QUEST,'diagnose_mill'),'completed')
+        self.read_all()
+        self.assertTrue(self.c.warned)
 
     def prepare(self):
         self.diagnose();self.inspect('intake',True)

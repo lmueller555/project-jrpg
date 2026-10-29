@@ -219,6 +219,13 @@ class QuestLog:
                 return False
             if not isinstance(done, list) or not all(isinstance(value, str) for value in done):
                 return False
+            # Old mill journeys already beyond the intake keep their completed
+            # route. MillQuest's versioned record separately marks that as a
+            # legacy bypass, never as a won battle or an earned reward.
+            route = record.get('legacy_route_objectives', [])
+            if identifier == MILL_QUEST and route and 'reach_intake' in done:
+                if not any(key in done for key in route):
+                    done = [*done, *route]
             done_set = set(done)
             ids = {item['id'] for item in record['objectives']}
             if len(done_set) != len(done) or not done_set <= ids:

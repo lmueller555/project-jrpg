@@ -1,7 +1,7 @@
 """Deterministic wait-ATB battle rules, independent of rendering and saves.
 
 Gauge fill is 0.12 + 0.004 * Speed per charging second. Every gauge pauses at
-the exact player-ready boundary and throughout action animations or results.
+the exact party-ready boundary and throughout action animations or results.
 Only this battle's copied resources change; the owning game settles outcomes.
 """
 from __future__ import annotations
@@ -20,6 +20,7 @@ from combat_damage import magical_damage, physical_damage, roll_variance
 ROOT = Path(__file__).resolve().parent
 ACTION_PATH = ROOT/'assets/combat/actions.json'
 ENEMY_PATH = ROOT/'assets/combat/enemies.json'
+GUEST_PATH = ROOT/'assets/combat/guests.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
@@ -49,7 +50,7 @@ def load_actions(data=None):
                 or not isinstance(action, dict) or set(action) != fields
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare')
                 or action['target'] not in ('opponent', 'self', 'none')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
@@ -60,7 +61,7 @@ def load_actions(data=None):
             if action['potency'] <= 0 or action['target'] != 'opponent':
                 raise ValueError('Invalid damaging action')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
-              or action['target'] != ('self' if action['kind'] == 'guard' else 'none')):
+              or action['target'] != ('self' if action['kind'] in ('guard', 'prepare') else 'none')):
             raise ValueError('Invalid utility action')
     if not set(PLAYER_ACTIONS+SUPPORTED_LEARNED_ACTIONS) <= set(data['actions']):
         raise ValueError('Missing player battle action')
@@ -85,11 +86,13 @@ def load_enemies(actions, data=None):
                        for key, value in enemy['attributes'].items())
                 or not isinstance(enemy['abilities'], list) or not enemy['abilities']
                 or any(not isinstance(key, str) or key not in actions
-                       or actions[key]['kind'] not in ('physical', 'magical')
+                       or actions[key]['kind'] not in ('physical', 'magical', 'prepare')
                        for key in enemy['abilities'])
                 or len(enemy['abilities']) != len(set(enemy['abilities']))):
             raise ValueError('Invalid enemy definition')
-        if not any(actions[key]['mp_cost'] == 0 for key in enemy['abilities']):
+        if not any(actions[key]['mp_cost'] == 0 and
+                   actions[key]['kind'] in ('physical', 'magical')
+                   for key in enemy['abilities']):
             raise ValueError('Enemy requires a free fallback action')
         rewards = enemy['rewards']
         if (not isinstance(rewards, dict) or set(rewards) != {'rp', 'drops'}
@@ -98,6 +101,28 @@ def load_enemies(actions, data=None):
                        for key, value in rewards['drops'].items())):
             raise ValueError('Invalid enemy reward')
     return deepcopy(data['enemies'])
+
+
+def load_guests(actions, data=None):
+    """A guest owns a fixed combat profile, not the player's saved growth."""
+    if data is None:data = json.loads(GUEST_PATH.read_text(encoding='utf-8'))
+    if (not isinstance(data, dict) or set(data) != {'version', 'guests'}
+            or type(data['version']) is not int or data['version'] != 1
+            or not isinstance(data['guests'], dict) or not data['guests']):
+        raise ValueError('Invalid guest catalog')
+    for identifier, guest in data['guests'].items():
+        if (not isinstance(identifier, str) or not identifier
+                or identifier in ('player', 'enemy') or not isinstance(guest, dict)
+                or set(guest) != {'name', 'attributes', 'attack'}
+                or not isinstance(guest['name'], str) or not guest['name'].strip()
+                or not isinstance(guest['attributes'], dict)
+                or set(guest['attributes']) != set(ATTRIBUTE_IDS)
+                or any(not _integer(value, 1 if key == 'hp' else 0, ATTRIBUTE_CAPS[key])
+                       for key, value in guest['attributes'].items())
+                or not isinstance(guest['attack'], str) or guest['attack'] not in actions
+                or actions[guest['attack']]['kind'] not in ('physical', 'magical')):
+            raise ValueError('Invalid guest definition')
+    return deepcopy(data['guests'])
 
 
 @dataclass
@@ -135,10 +160,15 @@ class BattleAction:
 
 
 class BattleModel:
-    """One player against one test enemy, with player-first simultaneous readiness."""
+    """Player-commanded party against one enemy, with party-first readiness ties.
+
+    ``player`` remains Caelan for save settlement and existing callers. Commands
+    default to ``active_player``; any living, full-gauge member can be selected
+    while the model waits. Guest resources belong only to this encounter.
+    """
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
-                 *, action_data=None, enemy_data=None):
+                 *, guest_id=None, action_data=None, enemy_data=None, guest_data=None):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -156,6 +186,21 @@ class BattleModel:
         name = getattr(player_attributes, 'name', 'Caelan')
         if not isinstance(name, str) or not name.strip():raise ValueError('Invalid player name')
         self.player = Combatant('player', name, dict(values), hp, mp)
+        self.guest_definitions = {}
+        members = [self.player]
+        if guest_id is not None:
+            guests = load_guests(self.actions, guest_data)
+            if not isinstance(guest_id, str) or guest_id not in guests:
+                raise ValueError('Unknown battle guest')
+            guest = guests[guest_id]
+            members.append(Combatant(guest_id, guest['name'], dict(guest['attributes']),
+                                     guest['attributes']['hp'], guest['attributes']['mp']))
+            self.guest_definitions[guest_id] = guest
+        elif guest_data is not None:
+            # An explicitly supplied catalog must be valid even without a guest.
+            load_guests(self.actions, guest_data)
+        self.party = tuple(members)
+        self._active_actor = 'player'
         self.enemy_id = enemy_id
         self.enemy_definition = deepcopy(enemies[enemy_id])
         enemy = self.enemy_definition
@@ -165,12 +210,13 @@ class BattleModel:
         self.rng = random.Random() if rng is None else rng
         if not callable(getattr(self.rng, 'randint', None)):
             raise TypeError('Battle RNG must expose randint')
-        self.phase = 'charging' if self.player.hp else 'defeat'
+        self.phase = 'charging' if any(member.hp for member in self.party) else 'defeat'
         self.current_action = self.last_action = None
         self.events = []
         self.message = 'A Bat approaches!' if enemy_id == 'bat' else self.enemy.name+' approaches!'
         self._pending_outcome = None
         self._enemy_action_index = 0
+        self.telegraphed_target = None
         if self.phase == 'defeat':self._result('defeat')
 
     @property
@@ -182,32 +228,84 @@ class BattleModel:
     @staticmethod
     def atb_rate(combatant):return .12+.004*combatant.value('speed')
 
-    def available_actions(self):
+    def combatant(self, identifier):
+        if identifier == 'enemy':return self.enemy
+        return next((member for member in self.party if member.identifier == identifier), None)
+
+    @property
+    def active_player(self):
+        return self.combatant(self._active_actor)
+
+    @property
+    def ready_actor(self):
+        return self._active_actor if self.waiting_for_player else None
+
+    @property
+    def ready_members(self):
+        return tuple(member.identifier for member in self.party
+                     if member.hp and member.atb+EPSILON >= 1)
+
+    def select_ready(self, identifier):
+        if (not self.waiting_for_player or not isinstance(identifier, str)
+                or identifier not in self.ready_members):return False
+        self._active_actor = identifier
+        return True
+
+    def _party_actor(self, actor_id=None):
+        if actor_id is None:actor_id = self._active_actor
+        return next((member for member in self.party if member.identifier == actor_id), None)
+
+    def available_actions(self, actor_id=None):
+        actor = self._party_actor(actor_id)
+        if actor is None:return []
+        if actor.identifier != 'player':return list(PLAYER_ACTIONS)
         return list(PLAYER_ACTIONS)+[key for key in SUPPORTED_LEARNED_ACTIONS
                                     if key in self.learned_abilities]
 
-    def action_reason(self, identifier):
-        if not isinstance(identifier, str) or identifier not in self.available_actions():
+    def _action_id(self, command, actor):
+        if command == 'attack' and actor.identifier in self.guest_definitions:
+            return self.guest_definitions[actor.identifier]['attack']
+        return command
+
+    def action_reason(self, identifier, actor_id=None):
+        actor = self._party_actor(actor_id)
+        if (actor is None or not isinstance(identifier, str)
+                or identifier not in self.available_actions(actor.identifier)):
             return 'This action is not available.'
-        if self.phase != 'ready':return 'Caelan is not ready.'
-        if self.player.mp < self.actions[identifier]['mp_cost']:return 'Not enough MP.'
+        if (self.phase != 'ready' or not actor.hp
+                or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if actor.mp < self.actions[self._action_id(identifier, actor)]['mp_cost']:
+            return 'Not enough MP.'
         return ''
 
-    def choose_action(self, identifier):
-        if self.action_reason(identifier):return False
-        self._start_action('player', identifier)
+    def choose_action(self, identifier, actor_id=None):
+        if self.action_reason(identifier, actor_id):return False
+        actor = self._party_actor(actor_id)
+        self._active_actor = actor.identifier
+        self._start_action(actor.identifier, self._action_id(identifier, actor))
         return True
 
     def drain_events(self):
         result, self.events = self.events, []
         return result
 
+    def _enemy_target(self, identifier):
+        living = [member for member in self.party if member.hp]
+        if not living:return None
+        if identifier == 'tusker_charge' and self.telegraphed_target:
+            target = self.combatant(self.telegraphed_target)
+            if target is not None and target.hp:return target.identifier
+        if self.enemy_id == 'ridgeback_tusker' and identifier == 'tusk_strike':
+            mira = self.combatant('mira')
+            if mira is not None and mira.hp:return 'mira'
+        return living[0].identifier
+
     def _start_action(self, actor_id, identifier):
-        actor = self.player if actor_id == 'player' else self.enemy
+        actor = self.combatant(actor_id)
         record = self.actions[identifier]
         actor.mp -= record['mp_cost']
         actor.atb = 0.0
-        target = ('enemy' if actor_id == 'player' else 'player')
+        target = 'enemy' if actor_id != 'enemy' else self._enemy_target(identifier)
         if record['target'] == 'self':target = actor_id
         elif record['target'] == 'none':target = None
         self.current_action = BattleAction(actor_id, identifier, target, record['name'],
@@ -223,12 +321,13 @@ class BattleModel:
         identifier = choices[self._enemy_action_index % len(choices)]
         self._enemy_action_index += 1
         if self.enemy.mp < self.actions[identifier]['mp_cost']:
-            identifier = next(key for key in choices if self.actions[key]['mp_cost'] == 0)
+            identifier = next(key for key in choices if self.actions[key]['mp_cost'] == 0
+                              and self.actions[key]['kind'] in ('physical', 'magical'))
         self._start_action('enemy', identifier)
 
     def _resolve_action(self):
         action = self.current_action
-        actor = self.player if action.actor == 'player' else self.enemy
+        actor = self.combatant(action.actor)
         if action.kind == 'guard':
             actor.guarded = True
             self.message = actor.name+' braces for the next attack.'
@@ -236,8 +335,15 @@ class BattleModel:
         elif action.kind == 'flee':
             self._pending_outcome = 'fled'
             self.message = actor.name+' gets away safely.'
+        elif action.kind == 'prepare':
+            target = self._enemy_target('tusker_charge')
+            self.telegraphed_target = target
+            member = self.combatant(target)
+            self.message = actor.name+' lowers its head toward '+member.name+'.'
+            self.events.append({'type': 'telegraph', 'actor': action.actor,
+                                'action': action.action, 'target': target})
         else:
-            target = self.player if action.target == 'player' else self.enemy
+            target = self.combatant(action.target)
             protected = target.guarded
             calculator = physical_damage if action.kind == 'physical' else magical_damage
             action.damage = calculator(actor, target, self.actions[action.action]['potency'],
@@ -248,19 +354,25 @@ class BattleModel:
             self.events.append({'type': 'impact', 'actor': action.actor, 'action': action.action,
                                 'target': action.target, 'damage': action.damage,
                                 'remaining_hp': target.hp, 'guarded': protected})
+            if action.action == 'tusker_charge':self.telegraphed_target = None
             if not target.hp:
-                self._pending_outcome = 'defeat' if action.target == 'player' else 'victory'
+                target.atb = 0.0
+                if action.target == 'enemy':self._pending_outcome = 'victory'
+                elif not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
         action.resolved = True
 
     def _result(self, outcome):
         self.phase = outcome
-        self.message = {'victory': 'Victory!', 'defeat': 'Caelan has fallen.',
+        defeat = ('The party has fallen.' if len(self.party) > 1
+                  else self.player.name+' has fallen.')
+        self.message = {'victory': 'Victory!', 'defeat': defeat,
                         'fled': 'Escaped safely.'}[outcome]
         self.events.append({'type': 'result', 'outcome': outcome})
 
     def _advance_gauges(self, seconds):
-        for combatant in (self.player, self.enemy):
-            combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*seconds)
+        for combatant in (*self.party, self.enemy):
+            if combatant.hp:
+                combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*seconds)
 
     def update(self, seconds):
         """Consume time through exact gauge/impact boundaries; choice time is free."""
@@ -270,7 +382,12 @@ class BattleModel:
         while True:
             if self.ended or self.waiting_for_player:return
             if self.phase == 'charging':
-                player_time = max(0.0, (1-self.player.atb)/self.atb_rate(self.player))
+                living = [member for member in self.party if member.hp]
+                if not living:
+                    self._result('defeat')
+                    return
+                member = min(living, key=lambda actor: max(0.0, (1-actor.atb)/self.atb_rate(actor)))
+                player_time = max(0.0, (1-member.atb)/self.atb_rate(member))
                 enemy_time = max(0.0, (1-self.enemy.atb)/self.atb_rate(self.enemy))
                 player_first = player_time <= enemy_time+EPSILON
                 boundary = player_time if player_first else enemy_time
@@ -280,10 +397,11 @@ class BattleModel:
                 self._advance_gauges(boundary)
                 remaining = max(0.0, remaining-boundary)
                 if player_first:
-                    self.player.atb = 1.0
+                    member.atb = 1.0
+                    self._active_actor = member.identifier
                     self.phase = 'ready'
                     self.message = 'Choose an action.'
-                    self.events.append({'type': 'player_ready'})
+                    self.events.append({'type': 'player_ready', 'actor': member.identifier})
                     return
                 self.enemy.atb = 1.0
                 self._start_enemy_action()

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "guests": {
+    "mira": {
+      "name": "Mira",
+      "attributes": {"hp": 300, "mp": 30, "str": 20, "mag": 12, "spr": 12, "def": 18, "m_def": 14, "speed": 12, "acc": 16, "eva": 12, "lck": 10},
+      "attack": "spear_thrust"
+    }
+  }
+}
