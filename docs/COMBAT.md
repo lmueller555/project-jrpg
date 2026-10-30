@@ -50,11 +50,23 @@ art, grass poses and contact shadows are loaded or prepared once per encounter.
 The user-provided **Eldenmere Theme** plays on the title screen, throughout
 Eldenmere and its interiors, and along the millrace. A shared streamed-music
 controller preserves playback across New Game, Continue and those area changes.
-Every encounter uses the user-provided **Kindled Courage**. In MQ02 it is cued
-on the first displayed page of Mira's “Easy, Caelan. Back slowly. Keep your feet
-under you” line, while the player is still in the world. Text reflow and repeated
-updates do not restart it. Canceling that encounter conversation returns to the
-Eldenmere theme; an unfinished encounter reloads with the world theme.
+Every encounter uses the user-provided **Kindled Courage**. MQ02 stages its
+first millrace arrival as a cutscene: Caelan stops while Mira follows through
+the real trail link, both face the boar, and the camera pans over to hold it
+through their conversation. A bottom portrait panel keeps the creature visible.
+Mira's final “Caelan, come back to me. Slowly. Keep your feet under you” line
+requests the return pan, with its panel above the party. Battle music starts
+only after the camera has arrived and the player has acknowledged the warning.
+Fast reading cannot skip the pan; slower reading holds the returned party shot.
+The score then continues into battle without restarting.
+
+Pause or focus loss freezes staging and the camera. Movement and unrelated
+menu inputs cannot move the actors or advance a pan. Reduced Motion uses static
+shot changes. Canceling releases the camera and actors; an unfinished scene
+reloads at the safe arrival and restarts without granting progress. A Flee or
+defeat return waits for an explicit retry or a new area entry. Completed and
+legacy-bypassed encounters do not replay. Ordinary dialogue still follows the
+player with the full viewport. See the [millrace cutscene review](reviews/millrace_cutscene/README.md).
 
 Battle entry freezes a freshly rendered world frame, closes a dark diagonal
 curtain, briefly covers the screen and reveals the battlefield in 0.72 seconds.

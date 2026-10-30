@@ -17,7 +17,7 @@ import pygame
 import main
 from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST
-from test_mill_battle_gameplay import finish_mill_battle
+from test_mill_battle_gameplay import finish_mill_battle, read_social
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -60,7 +60,7 @@ class MillTriggerGeometryTests(unittest.TestCase):
         for corner in route:
             for _ in range(700):
                 if self.g.combat.active:finish_mill_battle(self.g)
-                if self.g.social.active:self.read()
+                if self.g.social.active or getattr(self.c, 'encounter_cutscene_active', False):self.read()
                 if self.g.combat.active:finish_mill_battle(self.g)
                 delta = pygame.Vector2(corner)-self.g.player.position
                 if delta.length()<.04:break
@@ -74,10 +74,7 @@ class MillTriggerGeometryTests(unittest.TestCase):
         self.assertTrue(self.g.handle_events())
 
     def read(self):
-        for _ in range(160):
-            if not self.g.social.active:return
-            self.g.social.advance()
-        self.fail('Dialogue did not end')
+        read_social(self.g)
 
     def approach(self, position):
         self.walk(position)

@@ -167,19 +167,12 @@ class Capture:
         self.game.update(0, (0, 0), False)
 
     def walk_to_encounter(self):
+        # Entry owns the actors and camera now; wait through actual staging.
         game = self.game
-        route = find_path(game.world, game.player.position, (180, 374), game.world.probe_size, None)
-        assert route is not None
-        for corner in route:
-            for _ in range(1000):
-                if game.social.script_identifier == 'mill_encounter_intro':return
-                delta = pygame.Vector2(corner)-game.player.position
-                if delta.length() < .04:break
-                game.update(min(.05, delta.length()/72), delta, False)
-        for _ in range(300):
+        for _ in range(600):
             if game.social.script_identifier == 'mill_encounter_intro':return
             game.update(.05, (0, 0), False)
-        raise AssertionError('Real upstream approach did not start the encounter dialogue')
+        raise AssertionError('Millrace arrival did not reach the boar conversation')
 
     def record(self):
         game = self.game
@@ -197,12 +190,12 @@ class Capture:
         cue_seen = False
         while game.social.script_identifier == 'mill_encounter_intro':
             page = game.social.page
-            cue = page.get('cue') == 'mill_battle_music'
+            cue = page.get('cue') == 'mill_return_to_party'
             if cue:
                 assert not cue_seen
-                assert game.music.desired_track == 'battle'
+                assert game.music.desired_track == 'eldenmere'
                 cue_seen = True;self.cue_seconds = self.seconds
-                self.mark('mira_back_away_music_cue', text=' '.join(page['lines']))
+                self.mark('mira_return_pan_cue', text=' '.join(page['lines']))
                 self.snapshot('mira_music_cue.png')
             elif not cue_seen:
                 assert game.music.desired_track == 'eldenmere'
@@ -210,6 +203,7 @@ class Capture:
             self.hold(3.1 if cue else 2.2 if page['source_line'] == 5 else 1.7)
             self.advance()
         assert cue_seen and game.combat.active and game.combat.transitioning
+        assert game.camera.settled and game.music.desired_track == 'battle'
         self.mark('transition_started')
         game.combat.model.rng = random.Random(7)
         transition_phases = set()
@@ -299,7 +293,7 @@ class Capture:
                 screenshots=self.screenshots, phases=self.phases, mixer_initial_state=self.trace.initial,
                 music_requests=self.request_log, mixer_events=self.trace.events,
                 battle_track_play_count=len(battle_plays), transition_frozen_clock_checks=self.freeze_checks,
-                music_selected_at_mira_page=True, music_not_restarted_on_battle_entry=True,
+                music_waited_for_return_and_acknowledgement=True, music_not_restarted_on_battle_entry=True,
                 soundtrack='Offline reconstruction from exact supplied OGG streams and production mixer commands; not hardware loopback. Effects muted for music review.',
                 source_audio={str(Path(p).relative_to(ROOT)):hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in self.trace.samples},
                 outcome='Flee: safe approach, no quest completion or rewards', game_integration=True)
@@ -308,9 +302,10 @@ class Capture:
 
 [Watch the recorded scene with music](battle_music_transition.mp4).
 
-The production game shows Mira's warning, starts the supplied **Kindled Courage**
-track on “Easy, Caelan. Back slowly. Keep your feet under you,” then closes a
-brief curtain over the actual world before revealing the riverbank battle.
+The production game holds the boar during the conversation, returns to the
+party on Mira's “come back to me” warning, and starts **Kindled Courage** only
+after the camera settles and the warning is acknowledged. A brief curtain then
+covers the actual world before revealing the riverbank battle.
 The same music stream continues through entry, ATB decisions and guidance.
 Mira demonstrates a spear thrust; Caelan withdraws through the real Flee command,
 returning to the safe approach and the supplied **Eldenmere Theme**.
@@ -327,14 +322,14 @@ duck levels; effects are muted so the music can be reviewed clearly.
 
 The disposable journey seeds completed MQ01 through public quest APIs. Existing
 test helpers place actors at the prelude interaction stations, play MQ02's
-reunion, diagnosis and departure, and then walk the actual upstream approach.
+reunion, diagnosis and departure, and then stage the actual millrace arrival.
 Captured dialogue, commands, transition, battle clocks and return are production
 behavior. No ordinary journey or settings file is used.
 
 The [verification record](verification.json) includes the cue time, music and
 mixer events, per-frame frozen-clock checks, source hashes and safe withdrawal.
-It verifies that the battle track starts once on Mira's page and does not
-restart when the battle opens.
+It verifies that the battle track waits for the return shot and acknowledgement,
+then starts once and does not restart when the battle opens.
 
 Reproduce with:
 

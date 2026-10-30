@@ -231,7 +231,7 @@ class CombatEncounters:
         approach = self.game.world is quest.upstream and quest._at_encounter_approach()
         if not quest.encounter_pending or not approach:
             self._mill_intro_started = False
-        elif quest.encounter_ready and self._world_available() and not self._mill_intro_started:
+        elif quest.encounter_ready and not self._mill_intro_started:
             self._mill_intro_started = bool(quest.begin_encounter(self.start_mill))
 
     def update(self, seconds):

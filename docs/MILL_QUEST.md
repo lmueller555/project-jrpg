@@ -142,18 +142,29 @@ completed task.
 
 See the [interaction placement audit and native scene previews](reviews/mill_triggers/README.md) for the corrected road ends, object approaches and real-input route verification.
 
-## Encounter music and transition
+## Millrace arrival cutscene, music and transition
 
-The Eldenmere Theme continues between the town, interiors and the millrace.
-Kindled Courage begins on Mira's displayed “Easy, Caelan. Back slowly. Keep your
-feet under you” line in the encounter introduction. It continues through the
-rest of the exchange, the world-to-battle curtain and the fight. Leaving the
-conversation before battle restores the world theme; loading an unfinished
-approach starts with world music and waits for the cue again.
+After the warned departure, entering the millrace stops Caelan at the real trail
+arrival while Mira joins him through the existing link. Both then stand and
+notice the large boar. The camera pans to the creature and holds through the
+pre-fight conversation, with portraits and prose in a fixed bottom panel.
 
-The entry transition freezes the actual world view and all battle gauges until
-the battlefield is revealed. Reduced Motion uses a short uniform fade. Music
-keeps playing while the player decides actions, lowers during tutorial guidance,
-and returns to the Eldenmere Theme after Spoils Continue (or a non-victory return).
-The victory fanfare plays once, followed by silence while Spoils stays open. This cue adds no
-saved quest fact or new dialogue choice.
+Mira's final “Caelan, come back to me. Slowly. Keep your feet under you” line
+starts a return pan. Its panel moves above the party so both remain visible.
+The existing Eldenmere Theme continues until the camera has returned and the
+warning has been acknowledged. Only then does Kindled Courage begin and the
+existing world-to-battle transition start. Fast acknowledgements cannot skip
+the return; slow reading keeps the party shot held.
+
+Movement and unrelated menu inputs are held during staging; Escape, the pause
+menu, display changes and prose advancement remain available. Focus loss pauses
+the scene. Reduced Motion uses static shots. Canceling releases the shot and
+actors. Flee and defeat do not force an immediate repeat; an explicit retry or
+leaving and entering the area can stage it again.
+
+Camera clocks, dialogue position and staging are not saved. An unfinished
+cutscene reloads at the safe arrival; completed encounters, legacy bypasses and
+saved Spoils do not replay it. No new quest fact or choice is added. Victory's
+fanfare, Spoils, once-only rewards and linear aftermath remain the same.
+
+See the [actual millrace cutscene review](reviews/millrace_cutscene/README.md).

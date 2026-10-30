@@ -34,11 +34,16 @@ def click(game, logical):
 
 
 def read_social(game):
+    """Read player-paced prose and allow production cutscene pans to settle."""
     for _ in range(1000):
-        if not game.social.active:return
-        assert not game.social.choosing, 'MQ02 has a linear aftermath, not a continue/rest choice'
-        key(game, pygame.K_SPACE)
-    raise AssertionError('MQ02 dialogue did not finish')
+        if game.combat.active:return
+        cutscene = getattr(game.mill_quest, 'encounter_cutscene_active', False)
+        if game.social.active:
+            assert not game.social.choosing, 'MQ02 has a linear aftermath, not a continue/rest choice'
+            key(game, pygame.K_SPACE)
+        elif not cutscene:return
+        if cutscene:game.update(.05, (0, 0), False)
+    raise AssertionError('MQ02 dialogue or cutscene did not finish')
 
 
 def seed_mill_handoff(game):
@@ -200,25 +205,16 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def start(self, approach=None):
         self.diagnose();c = self.enter_path();game = self.game
-        # Approach along the visible western bank rather than using the
-        # controller's own trigger centre as evidence of good placement.
-        target = approach if approach is not None else (180, 374)
-        route = find_path(game.world, game.player.position, target, game.world.probe_size, None)
-        self.assertIsNotNone(route)
-        for corner in route:
-            for _ in range(1000):
-                if game.combat.active:break
-                if game.social.active:read_social(game)
-                if game.combat.active:break
-                delta = pygame.Vector2(corner)-game.player.position
-                if delta.length()<.04:break
-                game.update(min(.05, delta.length()/72), delta, False)
-            if game.combat.active:break
+        arrival = tuple(game.player.position)
+        # The encounter now stages on entry; reaching the old northward or
+        # eastern approach must not be required to discover the creature.
         for _ in range(500):
             if game.combat.active:break
-            if game.social.active:read_social(game)
-            game.update(.05, (0, 0), False)
+            if game.social.active or getattr(c, 'encounter_cutscene_active', False):
+                read_social(game)
+            else:game.update(.05, (0, 0), False)
         self.assertTrue(game.combat.active)
+        self.assertEqual(tuple(game.player.position), arrival)
         self.assertEqual(game.combat.model.enemy_id, 'ridgeback_tusker')
         game.combat.model.rng = random.Random(7)
         return game.combat.scene
@@ -267,10 +263,9 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.assertNotIn('intake', c.inspected)
         self.assertFalse(c.mill_restored)
 
-    def test_direct_eastern_approach_to_intake_still_encounters_the_monster(self):
-        # The open bank permits a real route east along y500 before turning
-        # north. It must not strand the player at a gated intake simply because
-        # the first authored trigger covered only the western trail.
+    def test_entry_encounter_precedes_any_eastern_route_to_the_intake(self):
+        # Entry staging catches the encounter before either open-bank route,
+        # so no distant invisible trigger or intake arrival is needed.
         self.start(approach=(480, 240))
         self.assertNotIn('intake', self.game.mill_quest.inspected)
         self.assertFalse(self.game.mill_quest.encounter_cleared)

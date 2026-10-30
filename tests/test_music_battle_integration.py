@@ -58,22 +58,24 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         record.update(inspected=['mechanism', 'race'], warned=True)
         self.assertTrue(quest.restore(record))
         game.world = quest.upstream
-        game.player.position.update(180, 374)
-        quest._place_mira(quest.upstream, (156, 374))
+        game.player.position.update(quest.upstream.data['spawn'])
+        quest._place_mira(quest.upstream, game.player.position+(-24, 0))
         self.assertTrue(game.world.can_stand(game.player.position))
         game.opening_fade = game.transfer_cooldown = 0
         game.camera.reset()
         self.frame(game)
-        # The normal trigger may already start the approach on this frame.
-        if not game.social.active:
+        if not getattr(quest, 'encounter_cutscene_active', False):
             self.assertTrue(quest.begin_encounter(game.combat.start_mill))
+        for _ in range(100):
+            if game.social.active:break
+            self.frame(game, .05)
         self.assertEqual(game.social.script_identifier, 'mill_encounter_intro')
         return quest
 
     def reach_cue(self, game):
         for _ in range(100):
             page = game.social.page
-            if page.get('cue') == 'mill_battle_music':
+            if page and page.get('cue') == 'mill_return_to_party':
                 self.frame(game)
                 return page
             self.assertEqual(game.music.desired_track, 'eldenmere')
@@ -141,18 +143,27 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertFalse(game.combat.active)
         self.assertEqual(game.music.desired_track, 'eldenmere')
 
-    def test_mill_music_starts_when_miras_back_away_line_is_presented(self):
+    def test_mill_music_waits_for_the_return_pan_and_miras_acknowledged_warning(self):
         game = self.game();self.seed_encounter(game)
         page = self.reach_cue(game)
-        self.assertIn('Back slowly', ' '.join(page['lines']))
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertIn('come back to me', ' '.join(page['lines']))
+        self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertFalse(game.combat.active)
-        # Allow the nonblocking music fade to finish while the player reads.
-        self.frame(game, .6)
-        battle_loads = self.backend.load.call_count
-        read_social(game)
+        self.frame(game, .1)
+        self.assertFalse(game.camera.settled)
+        key(game, pygame.K_SPACE)  # Fast acknowledgement cannot cut the pan.
+        self.frame(game, .1)
+        self.assertFalse(game.combat.active)
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        for _ in range(100):
+            if game.combat.active:break
+            self.frame(game, .05)
         self.assertTrue(game.combat.active)
         self.assertTrue(game.combat.transitioning)
+        self.assertTrue(game.camera.settled)
+        self.assertEqual(game.music.desired_track, 'battle')
+        self.frame(game, .6)
+        battle_loads = self.backend.load.call_count
         self.finish_transition(game)
         self.assertEqual(game.music.desired_track, 'battle')
         self.assertEqual(self.backend.load.call_count, battle_loads)
@@ -202,32 +213,35 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertGreater(self.backend.set_volume.call_args.args[0], ducked_volume)
         self.assertEqual(self.backend.play.call_count, starts)
 
-    def test_walking_away_after_the_cue_restores_music_and_retry_replays_the_cue(self):
+    def test_canceling_the_return_pan_releases_camera_and_retry_waits_for_a_new_warning(self):
         game = self.game();quest = self.seed_encounter(game)
         self.reach_cue(game)
-        self.assertEqual(game.music.desired_track, 'battle')
-        game.player.position.update(180, 510)
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        self.assertTrue(game.social.cancel())
         self.frame(game)
-        self.assertFalse(game.social.active)
+        self.assertFalse(quest.encounter_cutscene_active)
+        self.assertFalse(game.camera.scripted)
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertTrue(quest.encounter_pending)
         self.assertFalse(game.combat.active)
-        game.player.position.update(180, 374)
-        quest._place_mira(quest.upstream, (156, 374))
         self.assertTrue(quest.begin_encounter(game.combat.start_mill))
-        self.frame(game)
-        self.assertEqual(game.music.desired_track, 'eldenmere')
+        for _ in range(100):
+            if game.social.active:break
+            self.frame(game, .05)
         self.reach_cue(game)
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        read_social(game)
+        self.assertTrue(game.combat.active)
         self.assertEqual(game.music.desired_track, 'battle')
 
-    def test_quit_during_the_music_cue_restores_a_fresh_exploration_score(self):
+    def test_quit_during_the_return_pan_restores_a_fresh_exploration_score(self):
         game = self.game();self.seed_encounter(game);self.reach_cue(game)
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track, 'eldenmere')
         pygame.event.post(pygame.event.Event(pygame.QUIT))
         self.assertFalse(game.handle_events())
         saved = json.loads(self.path.read_text())
         self.assertNotIn('music', saved)
-        self.assertNotIn('mill_battle_music', json.dumps(saved))
+        self.assertNotIn('mill_return_to_party', json.dumps(saved))
         restored = self.game(title=True)
         self.assertTrue(restored.has_saved_journey)
         self.assertTrue(restored.begin_journey(True))

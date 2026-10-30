@@ -56,6 +56,14 @@ class SpeechBubble:
         point = self.social.anchor_position()
         return (round(point[0]-camera[0]), round(point[1]-camera[1]))
 
+    def _cutscene_phase(self):
+        """Only the staged mill encounter uses deliberate off-speaker framing."""
+        quest = getattr(self.social.game, 'mill_quest', None)
+        if (getattr(quest, 'encounter_cutscene_active', False)
+                and getattr(self.social, 'script_identifier', None) == 'mill_encounter_intro'):
+            return getattr(quest, 'encounter_cutscene_phase', 'conversation')
+        return None
+
     def _choice_content(self, choices, painter):
         half_width = (TEXT_WIDTH-6)//2
         columns = (2 if len(choices) == 2 and all(
@@ -143,6 +151,7 @@ class SpeechBubble:
         offscreen = (actor is None or not (getattr(actor, 'story_visible', True) or visible_sleeping_player) or
                      not pygame.Rect((0, 0), (480, 320)).collidepoint(anchor))
         pending = social.pending
+        cutscene_phase = self._cutscene_phase() if not pending else None
         choices = list(social.choice_options) if social.choosing else []
         prompt_lines, option_lines, name_lines = (), (), ()
         line_height = painter.font().get_linesize()+2
@@ -156,7 +165,7 @@ class SpeechBubble:
             text_top = 8
         else:
             speaker = social.data['speakers'][social.page['speaker']]
-            name = speaker['name']+(' · nearby' if offscreen else '')
+            name = speaker['name']+(' · nearby' if offscreen and not cutscene_phase else '')
             name_lines = tuple(painter.wrap(name, TEXT_WIDTH, role='name', bold=True))
             text_top = 10+len(name_lines)*(painter.font('name', bold=True).get_linesize()+1)+4
             width = PANEL_WIDTH
@@ -169,8 +178,15 @@ class SpeechBubble:
         # Reserve only a small safe margin; speech no longer competes with a
         # permanent keyboard-help strip at the bottom of the game world.
         bounds = pygame.Rect(6, 6, 468, 304)
-        panel = self._place(anchor, (width, math.ceil(height)), bounds,
-                            self._protected_heads(anchor, camera))
+        if cutscene_phase:
+            # Keep the creature in the upper part of the shot while its
+            # off-screen observers speak. On the return shot the party stands
+            # near the southern map bound, so the panel moves to the top instead.
+            top = bounds.top if cutscene_phase == 'pan_back' else bounds.bottom-math.ceil(height)
+            panel = pygame.Rect(bounds.centerx-width//2, top, width, math.ceil(height))
+        else:
+            panel = self._place(anchor, (width, math.ceil(height)), bounds,
+                                self._protected_heads(anchor, camera))
         portrait = None if pending else pygame.Rect(panel.x+PADDING, panel.y+12,
                                                      PORTRAIT_SIZE, PORTRAIT_SIZE)
         choice_rects = []
@@ -183,7 +199,7 @@ class SpeechBubble:
         speaker = social.data['speakers'][social.page['speaker']] if not pending else None
         return BubbleLayout(panel, portrait, (panel.x+TEXT_OFFSET, panel.y+text_top),
                             tuple(choice_rects), anchor,
-                            self._tail_side(panel, anchor, offscreen), offscreen, pending,
+                            None if cutscene_phase else self._tail_side(panel, anchor, offscreen), offscreen, pending,
                             speaker['portrait'] if speaker is not None else None,
                             prompt_lines, option_lines, name_lines, line_height)
 

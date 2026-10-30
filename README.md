@@ -50,9 +50,11 @@ sets down carried work before speaking. See his [routine previews](docs/reviews/
 The title water animates throughout the brook, pools, mill discharge and
 foreground cascades. Your **Eldenmere Theme** now loops on the title screen and
 through Eldenmere, its interiors and the millrace, continuing across New Game,
-Continue and area transfers. **Kindled Courage** plays in battles. During MQ02,
-it starts when Mira says “Easy, Caelan. Back slowly. Keep your feet under you,”
-then continues through a brief world-to-battle curtain and reveal. Reduced
+Continue and area transfers. **Kindled Courage** plays in battles. MQ02 now
+stages a cutscene on millrace arrival: Caelan and Mira stop, the camera pans to
+the boar for their conversation, then returns on Mira's “come back to me” warning.
+The score and fight begin only after the camera is back and the warning is read,
+continuing through the world-to-battle curtain and reveal. Reduced
 Motion uses a short plain fade. Victories play **Triumphal Fanfare** once and
 show a victory banner before opening **Spoils of Battle**, where RP and items
 are awarded. After the fanfare ends, Spoils stays silent until Continue returns
@@ -143,6 +145,9 @@ quiet bells, knocks, birds and stream ambience, plus synchronized cloth, chair,
 footstep, plate and cup sounds controlled by the effects level.
 
 The camera keeps the full world viewport throughout dialogue and actions.
+MQ02’s millrace introduction briefly owns movement and the camera for its staged
+boar/party shots; ordinary conversations remain live. See the
+[millrace cutscene preview](docs/reviews/millrace_cutscene/README.md).
 Portrait bubbles stay within the screen and their response buttons move with
 them. The breakfast invitation, inspections and accepted-quest conversation
 allow free movement. Walking away from the invitation leaves breakfast available

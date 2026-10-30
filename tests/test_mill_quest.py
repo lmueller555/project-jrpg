@@ -12,7 +12,7 @@ import pygame
 import main
 from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST, QuestLog
-from test_mill_battle_gameplay import finish_mill_battle
+from test_mill_battle_gameplay import finish_mill_battle, read_social
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -63,10 +63,7 @@ class MillQuestTests(unittest.TestCase):
         self.fail('Unfinished '+str(identifier))
 
     def read_all(self):
-        for _ in range(100):
-            if not self.g.social.active:return
-            self.g.social.advance()
-        self.fail('Unfinished dialogue chain')
+        read_social(self.g)
 
     def clear_position(self,world,point):
         point=pygame.Vector2(point)
@@ -102,8 +99,9 @@ class MillQuestTests(unittest.TestCase):
             for _ in range(600):
                 if self.g.combat.active:
                     finish_mill_battle(self.g)
-                elif (self.g.social.active and
-                      str(self.g.social.script_identifier).startswith('mill_encounter')):
+                elif (getattr(self.c, 'encounter_cutscene_active', False) or
+                      (self.g.social.active and
+                       str(self.g.social.script_identifier).startswith('mill_encounter'))):
                     self.read_all()
                     if self.g.combat.active:finish_mill_battle(self.g)
                 if self.g.world is not world:
