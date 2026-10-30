@@ -191,6 +191,23 @@ class OpeningCinematicGameplayTests(unittest.TestCase):
         self.click_skip(game)
         self.assert_bedroom(game)
 
+    def test_sky_and_helmet_shots_skip_through_the_real_event_handoff(self):
+        for event in ('flare_burst', 'helmet_zoom_start'):
+            with self.subTest(event=event):
+                game = self.game()
+                scene = self.start(game)
+                scene.elapsed = scene.data['events'][event]+.1
+                game.draw()
+                self.key(game, pygame.K_ESCAPE)
+                self.assertTrue(scene.paused)
+                self.assertTrue(game.music.paused)
+                self.click_skip(game, following=(pygame.event.Event(
+                    pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False),))
+                self.assert_bedroom(game)
+                saved = json.loads(self.path.read_text())
+                self.assertNotIn('opening_cinematic', saved)
+                self.assertEqual(saved['opening'], {'version': 1, 'stage': 'wake'})
+
     def test_skip_hit_testing_tracks_resize_and_letterboxing(self):
         game = self.game()
         self.start(game)

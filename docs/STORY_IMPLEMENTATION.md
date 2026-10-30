@@ -6,6 +6,13 @@ then stages the bedroom, breakfast and request scenes from
 Tomas's temporary escort, the complete first household visit to Halden, and
 Elira's memorial-lantern visit, and the Venn family's recovery-supply/gate visit.
 
+The cinematic preserves the author's latest dialogue. Its visual sequence now
+places the cup on the bench, holds both hands for Mira's reassurance, restores
+the lamp in stages and follows Caelan's blue signal into the sky. A returned
+camera gates Mira's final repair. The pair then leave behind a foreground sword
+and bloody helmet; the camera stays with it for the final zoom and fade. This
+future frame grants no gameplay facts or resources to the opening morning.
+
 ## Playable sequence
 
 1. After the cinematic finishes or is skipped, the title's New Game path enters

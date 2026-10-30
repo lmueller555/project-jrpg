@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "exporter": "tools/build_beacon_props.py",
+  "sources": [
+    {
+      "file": "assets/source/cinematics/beacon_props/upper_sky_generated.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "228cbe92d5ff29a646ef075531669f021d966f3ead3934b5af32999bd6e255c6"
+    },
+    {
+      "file": "assets/source/cinematics/beacon_props/lamp_stages_generated.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "10de0f4c0619b4d2b6bb5ce888231650c29465792086e95faf64ce950e8e2d60"
+    },
+    {
+      "file": "assets/source/cinematics/beacon_props/sword_helmet_generated.png",
+      "size": [
+        992,
+        1586
+      ],
+      "sha256": "6e55bf50b9a4610010bb16a4e176737343124a6ea56b10f9b351483dd56b86b5"
+    }
+  ],
+  "exports": [
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/lamp_0.png",
+      "size": [
+        18,
+        30
+      ],
+      "sha256": "727be9c7d9f98a0b12a88e8d1ef9f4e5039a75fe3a349ce659d53afbea34247a"
+    },
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/lamp_1.png",
+      "size": [
+        18,
+        30
+      ],
+      "sha256": "1be1c00b71480cf7ab4fc1f81990f0b5c35203f946df23efe3a442f5cd1888be"
+    },
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/lamp_2.png",
+      "size": [
+        18,
+        30
+      ],
+      "sha256": "d413a775b596939a6e3809e2670c319220c1815c8aad9ef491255c79762447ae"
+    },
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/lamp_3.png",
+      "size": [
+        18,
+        30
+      ],
+      "sha256": "06aae595c349039b129cbea45b162df53caa882a3bfdb4689b48020a7e6bbff6"
+    },
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/cup.png",
+      "size": [
+        6,
+        7
+      ],
+      "sha256": "3d169bc56cd32d6b20167b7754e25020f306a642e5e47c302f4c4a016cfaa1cf"
+    },
+    {
+      "file": "assets/story/opening_cinematic/beacon_props/sword_helmet.png",
+      "size": [
+        100,
+        160
+      ],
+      "sha256": "0180f2774cbbbab5ef1490b265e45604d47b79e68f2dac90a706f84bf320e460"
+    },
+    {
+      "file": "assets/story/opening_cinematic/upper_sky.png",
+      "size": [
+        960,
+        960
+      ],
+      "sha256": "8851968dec0a40911289ed523ccf69d7d42d2dfd703d7229f173e3b5256b4f3b"
+    }
+  ],
+  "extraction": {
+    "lamp_0.png": {
+      "bounds": [
+        71,
+        100,
+        411,
+        646
+      ],
+      "opaque_source_pixels": 133601,
+      "native_scale": 0.052941176470588235
+    },
+    "lamp_1.png": {
+      "bounds": [
+        520,
+        99,
+        843,
+        647
+      ],
+      "opaque_source_pixels": 122018,
+      "native_scale": 0.052941176470588235
+    },
+    "lamp_2.png": {
+      "bounds": [
+        961,
+        99,
+        1283,
+        647
+      ],
+      "opaque_source_pixels": 131130,
+      "native_scale": 0.052941176470588235
+    },
+    "lamp_3.png": {
+      "bounds": [
+        1389,
+        94,
+        1719,
+        650
+      ],
+      "opaque_source_pixels": 134593,
+      "native_scale": 0.052941176470588235
+    },
+    "cup.png": {
+      "bounds": [
+        785,
+        645,
+        999,
+        855
+      ],
+      "opaque_source_pixels": 35244
+    },
+    "sword_helmet.png": {
+      "source_bounds": [
+        119,
+        47,
+        873,
+        1543
+      ]
+    }
+  },
+  "registration": {
+    "lamp_size": [
+      18,
+      30
+    ],
+    "lamp_top_left": [
+      615,
+      345
+    ],
+    "lamp_floor_anchor": [
+      9,
+      30
+    ],
+    "lamp_flame_world": [
+      624,
+      363
+    ],
+    "cup_size": [
+      6,
+      7
+    ],
+    "cup_anchor": [
+      3,
+      7
+    ],
+    "cup_world": [
+      648,
+      357
+    ],
+    "memorial_size": [
+      100,
+      160
+    ],
+    "memorial_anchor": [
+      50,
+      160
+    ],
+    "memorial_world": [
+      395,
+      430
+    ],
+    "helmet_focus_world": [
+      395,
+      295
+    ],
+    "upper_sky_size": [
+      960,
+      960
+    ],
+    "upper_sky_origin": [
+      0,
+      -640
+    ]
+  },
+  "notes": [
+    "Four unlit authored lamp bodies show damage, frame repair, glass fitting and completion.",
+    "The runtime supplies flame and glow independently of the repair-stage artwork.",
+    "The anonymous steel helmet has dried blood stains; no owner or casualty identity is assigned.",
+    "The sword is physically embedded in its stone base and belongs to the foreground plane.",
+    "Upper sky contains only clouds and stars; no hidden cosmology is established.",
+    "Alpha component extraction avoids including the nearby cup in a lamp cell."
+  ]
+}

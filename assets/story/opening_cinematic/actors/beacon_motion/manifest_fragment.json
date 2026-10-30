@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "canvas": [
+    96,
+    112
+  ],
+  "anchor": [
+    48,
+    104
+  ],
+  "exporter": "tools/build_beacon_motion.py",
+  "actors": {
+    "caelan": {
+      "poses": {
+        "beacon_walk_left_01": "../beacon_motion/caelan/walk_left_01.png",
+        "beacon_walk_left_02": "../beacon_motion/caelan/walk_left_02.png",
+        "beacon_walk_left_03": "../beacon_motion/caelan/walk_left_03.png",
+        "beacon_walk_left_04": "../beacon_motion/caelan/walk_left_04.png",
+        "walk_left": "../beacon_motion/caelan/walk_left_01.png"
+      },
+      "loops": {
+        "walk_left": [
+          {
+            "file": "../beacon_motion/caelan/walk_left_01.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/caelan/walk_left_02.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/caelan/walk_left_03.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/caelan/walk_left_04.png",
+            "duration_ms": 180
+          }
+        ]
+      },
+      "transitions": {},
+      "extraction": {
+        "beacon_walk_left_01": {
+          "source_bounds": [
+            78,
+            70,
+            317,
+            501
+          ],
+          "physical_scale": 0.18561484918793503,
+          "offset": [
+            27,
+            24
+          ],
+          "bounds": [
+            27,
+            24,
+            71,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
+        },
+        "beacon_walk_left_02": {
+          "source_bounds": [
+            467,
+            69,
+            630,
+            500
+          ],
+          "physical_scale": 0.18561484918793503,
+          "offset": [
+            29,
+            24
+          ],
+          "bounds": [
+            29,
+            24,
+            59,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
+        },
+        "beacon_walk_left_03": {
+          "source_bounds": [
+            793,
+            69,
+            1030,
+            501
+          ],
+          "physical_scale": 0.18561484918793503,
+          "offset": [
+            26,
+            24
+          ],
+          "bounds": [
+            26,
+            24,
+            70,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
+        },
+        "beacon_walk_left_04": {
+          "source_bounds": [
+            1203,
+            70,
+            1369,
+            501
+          ],
+          "physical_scale": 0.18561484918793503,
+          "offset": [
+            28,
+            24
+          ],
+          "bounds": [
+            28,
+            24,
+            59,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+        }
+      },
+      "sources": [
+        {
+          "path": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "c2d4b6b9bd0ab647a57cf71b42314ffde029be8f2c2d5fa7e72de45b10bf3891",
+          "native_scale": 0.18561484918793503
+        }
+      ]
+    },
+    "mira": {
+      "poses": {
+        "beacon_walk_left_01": "../beacon_motion/mira/walk_left_01.png",
+        "beacon_walk_left_02": "../beacon_motion/mira/walk_left_02.png",
+        "beacon_walk_left_03": "../beacon_motion/mira/walk_left_03.png",
+        "beacon_walk_left_04": "../beacon_motion/mira/walk_left_04.png",
+        "walk_left": "../beacon_motion/mira/walk_left_01.png",
+        "beacon_stand_right": "../beacon_motion/mira/stand_right.png",
+        "beacon_repair_lower": "../beacon_motion/mira/repair_lower.png",
+        "beacon_repair_prepare": "../beacon_motion/mira/repair_prepare.png",
+        "beacon_repair_work_01": "../beacon_motion/mira/repair_work_01.png",
+        "beacon_repair_work_02": "../beacon_motion/mira/repair_work_02.png",
+        "beacon_repair_finish": "../beacon_motion/mira/repair_finish.png",
+        "repair": "../beacon_motion/mira/repair_work_01.png"
+      },
+      "loops": {
+        "walk_left": [
+          {
+            "file": "../beacon_motion/mira/walk_left_01.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/mira/walk_left_02.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/mira/walk_left_03.png",
+            "duration_ms": 180
+          },
+          {
+            "file": "../beacon_motion/mira/walk_left_04.png",
+            "duration_ms": 180
+          }
+        ],
+        "repair": [
+          {
+            "file": "../beacon_motion/mira/repair_work_01.png",
+            "duration_ms": 240
+          },
+          {
+            "file": "../beacon_motion/mira/repair_work_02.png",
+            "duration_ms": 240
+          },
+          {
+            "file": "../beacon_motion/mira/repair_work_01.png",
+            "duration_ms": 240
+          },
+          {
+            "file": "../beacon_motion/mira/repair_prepare.png",
+            "duration_ms": 180
+          }
+        ]
+      },
+      "transitions": {
+        "walk_left:repair": [
+          {
+            "file": "../beacon_motion/mira/stand_right.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "../beacon_motion/mira/repair_lower.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "../beacon_motion/mira/repair_prepare.png",
+            "duration_ms": 180
+          }
+        ],
+        "stand:repair": [
+          {
+            "file": "../beacon_motion/mira/stand_right.png",
+            "duration_ms": 140
+          },
+          {
+            "file": "../beacon_motion/mira/repair_lower.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "../beacon_motion/mira/repair_prepare.png",
+            "duration_ms": 180
+          }
+        ],
+        "repair:stand": [
+          {
+            "file": "../beacon_motion/mira/repair_finish.png",
+            "duration_ms": 200
+          },
+          {
+            "file": "../beacon_motion/mira/repair_lower.png",
+            "duration_ms": 220
+          },
+          {
+            "file": "../beacon_motion/mira/stand_right.png",
+            "duration_ms": 180
+          }
+        ]
+      },
+      "extraction": {
+        "beacon_walk_left_01": {
+          "source_bounds": [
+            77,
+            592,
+            317,
+            1008
+          ],
+          "physical_scale": 0.19184652278177458,
+          "offset": [
+            25,
+            24
+          ],
+          "bounds": [
+            25,
+            24,
+            71,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "6bc430a717d0504666f320e03bc6591da6ae58f92ccb299acf50a168000dac74"
+        },
+        "beacon_walk_left_02": {
+          "source_bounds": [
+            470,
+            592,
+            650,
+            1008
+          ],
+          "physical_scale": 0.19184652278177458,
+          "offset": [
+            29,
+            24
+          ],
+          "bounds": [
+            29,
+            24,
+            64,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "840103c2c551887d4286d4e1bdd982ded96d156eabc62f953f079be2e1a9d9d7"
+        },
+        "beacon_walk_left_03": {
+          "source_bounds": [
+            784,
+            592,
+            1033,
+            1007
+          ],
+          "physical_scale": 0.19184652278177458,
+          "offset": [
+            25,
+            24
+          ],
+          "bounds": [
+            25,
+            24,
+            73,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "b25a271c617bc2ddbab0873542a5c899f9bbfff437292ac82d4f19d82e928500"
+        },
+        "beacon_walk_left_04": {
+          "source_bounds": [
+            1203,
+            592,
+            1384,
+            1008
+          ],
+          "physical_scale": 0.19184652278177458,
+          "offset": [
+            29,
+            24
+          ],
+          "bounds": [
+            29,
+            24,
+            64,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "c3ff33c47f62c0b9e124467f03597eed8454ea1a417416ece1fde65cb57c5fad"
+        },
+        "beacon_stand_right": {
+          "source_bounds": [
+            138,
+            55,
+            343,
+            540
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            31,
+            24
+          ],
+          "bounds": [
+            31,
+            24,
+            65,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "3e85585e9016e912abd6e2ce90b1b68dbe445c2a639059c673f71a53ed9061c0"
+        },
+        "beacon_repair_lower": {
+          "source_bounds": [
+            626,
+            155,
+            883,
+            536
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            27,
+            41
+          ],
+          "bounds": [
+            27,
+            41,
+            69,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "17fd266457b361cdc314806eadeb9204f4d76a15a396f3f1c3b859e25556d14d"
+        },
+        "beacon_repair_prepare": {
+          "source_bounds": [
+            1129,
+            163,
+            1387,
+            538
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            28,
+            42
+          ],
+          "bounds": [
+            28,
+            42,
+            71,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "e81a8073d742f2623cb833309e5ccbed8a0cee864146f4c3ee824b8f45f03d77"
+        },
+        "beacon_repair_work_01": {
+          "source_bounds": [
+            102,
+            616,
+            440,
+            968
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            28,
+            46
+          ],
+          "bounds": [
+            28,
+            46,
+            84,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "b962e869cf0145fcc26c60da05f6fb2f9f30ae6bfe11fac94a3adb5ea6e28b5f"
+        },
+        "beacon_repair_work_02": {
+          "source_bounds": [
+            609,
+            624,
+            939,
+            971
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            28,
+            47
+          ],
+          "bounds": [
+            28,
+            47,
+            82,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "7ec19f676ae021cdaeea23311c2a0b63421d8f2d864ba691fe8db211d59a032f"
+        },
+        "beacon_repair_finish": {
+          "source_bounds": [
+            1136,
+            602,
+            1374,
+            978
+          ],
+          "physical_scale": 0.16494845360824742,
+          "offset": [
+            28,
+            42
+          ],
+          "bounds": [
+            28,
+            42,
+            67,
+            104
+          ],
+          "source": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "062b2203844e04f79f9c931eea3c566dce7d2c27596921a42fdde475aae6990b"
+        }
+      },
+      "sources": [
+        {
+          "path": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+          "sha256": "c2d4b6b9bd0ab647a57cf71b42314ffde029be8f2c2d5fa7e72de45b10bf3891",
+          "native_scale": 0.19184652278177458
+        },
+        {
+          "path": "assets/source/cinematics/beacon_motion/mira_repair_generated.png",
+          "sha256": "42d05f8ccb48c3bc28f9249dee563149b41208dca607203017bcb592d4ed31ac",
+          "native_scale": 0.16494845360824742
+        }
+      ]
+    }
+  }
+}

@@ -24,7 +24,8 @@ new scenery. Original source bytes remain unchanged.
 
 The sky is the farthest opaque coverage plate and intentionally retains distant
 terrain beneath the separately moving alpha valley. Near architecture contains
-the precisely placed bench and unlit lamp body. The last 30 rows provide a
+the precisely placed bench. The former baked lamp is now omitted; four separate
+lamp-state sprites from the beacon-props exporter permit incremental repair. The last 30 rows provide a
 shallow foreground rubble layer, with the painted floor retained underneath to
 avoid gaps. The actors, lamp flame and other motion are drawn separately by the
 cinematic renderer.

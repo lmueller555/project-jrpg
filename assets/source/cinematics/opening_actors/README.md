@@ -58,3 +58,42 @@ Caelan acting and every Mira pose are unchanged. The source export uses a
 single `.134` scale across all six drinking drawings, matching the existing
 64-pixel seated body height and `[48, 104]` floor anchor. Review files are
 `work/cinematic-drinking-contact.png` and `work/cinematic-drinking-preview.gif`.
+
+## Handholding, cup placement and controlled casting
+
+The later beacon sequence adds these preserved source studies:
+
+- `beacon_caelan_actions_generated.png`: reaching left with the cup, empty
+  standing, calm preparation and raised open-palmed casting. The seated study
+  whose detached cup did not register cleanly is deliberately not exported.
+- `beacon_cup_setdown_generated.png`: the closer authored leftward cup placement
+  and supporting hand, registered as a complete body at the same floor anchor.
+- `beacon_handhold_generated.png`: four paired reach, meet, hold and release
+  compositions. Mira takes both Caelan's hands. The paired artwork includes a
+  small inward adjustment on the bench; it does not extend their limb lengths.
+- `beacon_empty_rise_generated.png`: two rising poses with empty hands. These
+  replace cup-holding rising frames for the departure after the cup is set down.
+
+Rebuild these additional actions and merge the separately authored walking and
+repair fragment with:
+
+```sh
+python tools/build_beacon_actor_actions.py
+```
+
+This selective builder preserves every original pose and the corrected drinking
+action. It imports the motion fragment from
+`assets/story/opening_cinematic/actors/beacon_motion/manifest_fragment.json`.
+Both builders resolve transition filenames through the pose mapping, including
+aliases such as `cast_recover` and `repair_finish`. A base-actor rebuild retains
+these added manifest records and motion loops.
+
+The handholding source is exported at a single common scale into a registered
+pair, then divided at their shared hand-contact seam. Drawing the two native
+96×112 frames at the original scene anchors reconstructs the authored shared
+contact exactly. This avoids detached hands, duplicated fingers and procedural
+arm stretching. Body shifts within the canvases retain the authored small bench
+adjustment; standing and casting remain grounded.
+
+Additional review artifacts are `work/beacon-actor-contact.png`,
+`work/beacon-handhold-preview.gif`, and `work/beacon-handhold-geometry.json`.

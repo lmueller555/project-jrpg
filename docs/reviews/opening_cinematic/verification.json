@@ -1,10 +1,10 @@
 {
-  "frames": 6125,
+  "frames": 7818,
   "fps": 30,
-  "seconds": 204.16666666666666,
-  "scene_duration_seconds": 198.7,
+  "seconds": 260.6,
+  "scene_duration_seconds": 255.15,
   "route": "Unmodified production title New Game; natural cinematic completion",
-  "world_freeze_checks": 6022,
+  "world_freeze_checks": 7715,
   "escape_pause_preserves_position": true,
   "no_checkpoint_until_bedroom": true,
   "leitmotif_plays": 1,
@@ -13,20 +13,20 @@
     {
       "time": 1.4,
       "event": "cinematic_started",
-      "duration": 198.7
-    },
-    {
-      "time": 86.3667,
-      "event": "escape_paused",
-      "elapsed": 84.93333333333108
-    },
-    {
-      "time": 88.4,
-      "event": "escape_resumed",
-      "elapsed": 84.96666666666441
+      "duration": 255.15
     },
     {
       "time": 202.1667,
+      "event": "escape_paused",
+      "elapsed": 200.7333333333245
+    },
+    {
+      "time": 204.2,
+      "event": "escape_resumed",
+      "elapsed": 200.76666666665784
+    },
+    {
+      "time": 258.6,
       "event": "bedroom_started",
       "first_line": "Caelan? You're awake, aren't you?"
     }
@@ -49,30 +49,31 @@
       "start": 0.0
     },
     {
-      "time": 86.333333,
+      "time": 202.133333,
       "event": "pause"
     },
     {
-      "time": 88.366667,
+      "time": 204.166667,
       "event": "unpause"
     },
     {
-      "time": 202.6,
+      "time": 259.033333,
       "event": "stop"
     },
     {
-      "time": 202.6,
+      "time": 259.033333,
       "event": "load",
       "file": "assets/music/runtime/eldenmere_theme.ogg"
     },
     {
-      "time": 202.6,
+      "time": 259.033333,
       "event": "play",
       "file": "assets/music/runtime/eldenmere_theme.ogg",
       "loops": -1,
       "start": 0.0
     }
   ],
+  "reconstructed_motif_wraps": 1,
   "dialogue_lines": 30,
   "observed_dialogue": [
     {
@@ -81,239 +82,239 @@
       "speaker": "Mira",
       "text": "Here. While it\u2019s warm.",
       "first_seen": 24.0,
-      "last_seen": 27.9667
+      "last_seen": 27.1667
     },
     {
       "index": 1,
       "id": "thanks",
       "speaker": "Caelan",
-      "text": "Thank you.",
-      "first_seen": 29.0,
-      "last_seen": 31.1667
+      "text": "Thanks, Mira",
+      "first_seen": 28.2,
+      "last_seen": 30.7667
     },
     {
       "index": 2,
       "id": "shaking_hands",
       "speaker": "Mira",
-      "text": "Your hands are still shaking.",
-      "first_seen": 32.2,
-      "last_seen": 35.4667
+      "text": "Your hands are still shaking. Mine too.",
+      "first_seen": 31.8,
+      "last_seen": 36.0667
     },
     {
       "index": 3,
       "id": "hands_will_stop",
       "speaker": "Caelan",
-      "text": "They\u2019ll stop.",
-      "first_seen": 36.5,
-      "last_seen": 38.9667
+      "text": "It'll be ok, they'll stop once we get moving.",
+      "first_seen": 37.1,
+      "last_seen": 42.2667
     },
     {
       "index": 4,
       "id": "miras_hands",
       "speaker": "Mira",
-      "text": "So will mine, if I give them a minute.",
-      "first_seen": 40.0,
-      "last_seen": 44.9667
+      "text": "I hope you're right.",
+      "first_seen": 43.3,
+      "last_seen": 46.5
     },
     {
       "index": 5,
       "id": "entrance",
       "speaker": "Caelan",
       "text": "How far to the entrance?",
-      "first_seen": 46.0333,
-      "last_seen": 49.5
+      "first_seen": 47.5333,
+      "last_seen": 51.0
     },
     {
       "index": 6,
       "id": "ridge",
       "speaker": "Mira",
       "text": "Beyond the ridge. There\u2019s some climbing yet.",
-      "first_seen": 50.5333,
-      "last_seen": 55.5
+      "first_seen": 52.0333,
+      "last_seen": 56.3
     },
     {
       "index": 7,
       "id": "can_manage",
       "speaker": "Caelan",
       "text": "I can manage.",
-      "first_seen": 56.5333,
-      "last_seen": 59.0
+      "first_seen": 57.3333,
+      "last_seen": 60.1
     },
     {
       "index": 8,
       "id": "rest",
       "speaker": "Mira",
-      "text": "I know. I\u2019m asking you to rest.",
-      "first_seen": 60.0333,
-      "last_seen": 64.0
+      "text": "I know. But you need to rest a bit first.",
+      "first_seen": 61.1333,
+      "last_seen": 66.5
     },
     {
       "index": 9,
       "id": "valley_houses",
       "speaker": "Caelan",
-      "text": "*looks across the valley* There are still people in those houses.",
-      "first_seen": 65.0333,
-      "last_seen": 71.5
+      "text": "You know, there are still people in those houses.",
+      "first_seen": 67.5333,
+      "last_seen": 72.7
     },
     {
       "index": 10,
       "id": "evacuation",
       "speaker": "Mira",
-      "text": "The carts are going back for another group.",
-      "first_seen": 72.5333,
-      "last_seen": 77.0
+      "text": "Yeah...but the caravan is going back for another group. They will make it out...I hope.",
+      "first_seen": 73.7333,
+      "last_seen": 82.0
     },
     {
       "index": 11,
       "id": "opposite_direction",
       "speaker": "Caelan",
-      "text": "And when we leave here, we\u2019re going the other way.",
-      "first_seen": 78.0333,
-      "last_seen": 83.5
+      "text": "And when we leave here, we\u2019re going the other way. It feels like we're turning our back on them.",
+      "first_seen": 83.0333,
+      "last_seen": 92.0
     },
     {
       "index": 12,
       "id": "surge",
       "speaker": "Mira",
-      "text": "Another surge could take that road. We need to reach the source.",
-      "first_seen": 84.5333,
-      "last_seen": 91.0
+      "text": "Maybe...but another surge like that could wipe out the whole valley. We need to reach the source so we can put an end to this.",
+      "first_seen": 93.0333,
+      "last_seen": 104.6
     },
     {
       "index": 13,
       "id": "promise",
       "speaker": "Caelan",
-      "text": "I wish we could tell them more than \u2018we\u2019ll do what we can.\u2019",
-      "first_seen": 92.0333,
-      "last_seen": 99.0
+      "text": "I'm scared, Mira. We've come so far, but we still have so far left to go.",
+      "first_seen": 105.6333,
+      "last_seen": 113.6
     },
     {
       "index": 14,
       "id": "first_carts",
       "speaker": "Mira",
-      "text": "We got the first carts through. They saw that.",
-      "first_seen": 100.0333,
-      "last_seen": 105.0
+      "text": "It's ok, Caelan, I'm scared too. But I believe in you!",
+      "first_seen": 114.6333,
+      "last_seen": 120.7
     },
     {
       "index": 15,
       "id": "mill_memory",
       "speaker": "Caelan",
-      "text": "I was thinking about the mill.",
-      "first_seen": 106.0333,
-      "last_seen": 110.0
+      "text": "Mira...I was thinking about the mill.",
+      "first_seen": 121.7333,
+      "last_seen": 126.1
     },
     {
       "index": 16,
       "id": "halden",
       "speaker": "Mira",
       "text": "Halden\u2019s?",
-      "first_seen": 111.0333,
-      "last_seen": 113.5
+      "first_seen": 127.1333,
+      "last_seen": 129.7
     },
     {
       "index": 17,
       "id": "small_spell",
       "speaker": "Caelan",
-      "text": "I cleared that little recess and felt as if I\u2019d done something remarkable.",
-      "first_seen": 114.5333,
-      "last_seen": 122.0
+      "text": "Do you remember when I barely managed to clear that little recess? Would you ever have guessed we'd look back on that as the least of our troubles?",
+      "first_seen": 130.7333,
+      "last_seen": 143.0
     },
     {
       "index": 18,
       "id": "useful_spell",
       "speaker": "Mira",
-      "text": "You cleared the catch so I could work on it. We needed that.",
-      "first_seen": 123.0333,
-      "last_seen": 130.0
+      "text": "*laughs* Ha...yeah that seems like a lifetime ago now. But, Caelan?",
+      "first_seen": 144.0333,
+      "last_seen": 150.4
     },
     {
       "index": 19,
       "id": "told_me",
       "speaker": "Caelan",
-      "text": "*a faint smile* You told me that then, too.",
-      "first_seen": 131.0333,
-      "last_seen": 136.0
+      "text": "What?",
+      "first_seen": 151.4333,
+      "last_seen": 154.0
     },
     {
       "index": 20,
       "id": "meant_it",
       "speaker": "Mira",
-      "text": "I meant it then, too.",
-      "first_seen": 137.0333,
-      "last_seen": 140.5
+      "text": "I know what else you're thinking about. I want you to know he's just as proud of you as I am.",
+      "first_seen": 155.0333,
+      "last_seen": 164.6
     },
     {
       "index": 21,
       "id": "nervous",
       "speaker": "Caelan",
-      "text": "You didn\u2019t seem nervous.",
-      "first_seen": 144.5333,
-      "last_seen": 148.0
+      "text": "...thanks. I'm feeling better...lighter.",
+      "first_seen": 167.7333,
+      "last_seen": 171.5
     },
     {
       "index": 22,
       "id": "understood_problem",
       "speaker": "Mira",
-      "text": "I was. It helped having a problem I could understand.",
-      "first_seen": 149.0333,
-      "last_seen": 154.5
+      "text": "Your hands stopped shaking. Mine too...I'm ready.",
+      "first_seen": 174.0667,
+      "last_seen": 178.8333
     },
     {
       "index": 23,
       "id": "catch_and_branch",
       "speaker": "Caelan",
-      "text": "A broken catch. A branch in the water.",
-      "first_seen": 155.5333,
-      "last_seen": 160.0
+      "text": "This lamp...we'll leave it here. Mira, think you can you work your magic with it?",
+      "first_seen": 179.8667,
+      "last_seen": 187.8333
     },
     {
       "index": 24,
       "id": "two_of_us",
       "speaker": "Mira",
-      "text": "And two of us to deal with it.",
-      "first_seen": 161.0333,
-      "last_seen": 165.2
+      "text": "Leave it to me! This beacon will guide the evacuation to safety.",
+      "first_seen": 188.8667,
+      "last_seen": 195.0333
     },
     {
       "index": 25,
       "id": "simple_again",
       "speaker": "Caelan",
-      "text": "I wish it were that simple again.",
-      "first_seen": 166.2333,
-      "last_seen": 170.2
+      "text": "This should help too.",
+      "first_seen": 196.0667,
+      "last_seen": 199.2333
     },
     {
       "index": 26,
       "id": "so_do_i",
       "speaker": "Mira",
-      "text": "So do I.",
-      "first_seen": 171.2333,
-      "last_seen": 173.7
+      "text": "Ok there! Don't break on me now.",
+      "first_seen": 212.3667,
+      "last_seen": 216.6333
     },
     {
       "index": 27,
       "id": "going_in",
       "speaker": "Caelan",
-      "text": "But we\u2019re going in.",
-      "first_seen": 177.7333,
-      "last_seen": 180.7
+      "text": "Huh? Me? Or the lamp?",
+      "first_seen": 217.6667,
+      "last_seen": 221.1333
     },
     {
       "index": 28,
       "id": "when_ready",
       "speaker": "Mira",
-      "text": "When you\u2019re ready.",
-      "first_seen": 181.7333,
-      "last_seen": 184.5
+      "text": "*smiles* Let's go.",
+      "first_seen": 222.1667,
+      "last_seen": 224.9333
     },
     {
       "index": 29,
       "id": "one_moment",
       "speaker": "Caelan",
-      "text": "Give me a moment.",
-      "first_seen": 185.5333,
-      "last_seen": 188.7
+      "text": "Indeed.",
+      "first_seen": 225.9667,
+      "last_seen": 228.5333
     }
   ],
   "dialogue_gaps_seconds": [
@@ -337,13 +338,13 @@
     1.0,
     1.0,
     1.0,
-    4.0,
+    3.1,
+    2.55,
     1.0,
     1.0,
     1.0,
+    13.1,
     1.0,
-    1.0,
-    4.0,
     1.0,
     1.0
   ],
@@ -353,16 +354,17 @@
       320
     ],
     "text_scale": 1.5,
-    "text": "I cleared that little recess and felt as if I\u2019d done something remarkable.",
+    "text": "Do you remember when I barely managed to clear that little recess? Would you ever have guessed we'd look back on that as the least of our troubles?",
     "caption": [
       22,
       15,
       436,
-      89
+      114
     ],
     "lines": [
-      "I cleared that little recess and felt as if I\u2019d done",
-      "something remarkable."
+      "Do you remember when I barely managed to clear",
+      "that little recess? Would you ever have guessed",
+      "we'd look back on that as the least of our troubles?"
     ],
     "skip": [
       417,
@@ -391,15 +393,749 @@
       }
     ]
   },
+  "sequence_events": {
+    "sip_start": 165.1,
+    "sip_lower": 166.4,
+    "cup_setdown_start": 171.7,
+    "cup_set_down": 172.5,
+    "hand_reach": 172.75,
+    "hand_hold": 173.55,
+    "hands_line_start": 174.05,
+    "hand_release": 179.05,
+    "hands_released": 179.65,
+    "lamp_walk_start": 180.8,
+    "lamp_work_start": 184.8,
+    "lamp_stage_1": 186.8,
+    "lamp_stage_2": 189.8,
+    "flare_charge": 196.25,
+    "flare_launch": 200.0,
+    "flare_burst": 204.0,
+    "flare_glimmer": 205.6,
+    "camera_return_start": 208.0,
+    "camera_returned": 212.0,
+    "lamp_restored": 212.35,
+    "departure_start": 229.15,
+    "memorial_centered": 236.15,
+    "actors_offscreen": 244.65,
+    "helmet_zoom_start": 245.15,
+    "fade_start": 246.65,
+    "end": 255.15,
+    "flare_release_pose": 199.7
+  },
+  "sequence_checks": {
+    "handholding": 165,
+    "return_barrier": 6420,
+    "glimmer": 1485,
+    "fixed_camera": 268,
+    "actors_offscreen": 13,
+    "zoom": 300
+  },
+  "semantic_frames": [
+    {
+      "file": "valley.png",
+      "elapsed": 4.0333,
+      "shot": "valley",
+      "camera": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": false,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "kneel"
+        }
+      }
+    },
+    {
+      "file": "lantern_reveal.png",
+      "elapsed": 22.1,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": false,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "kneel"
+        }
+      }
+    },
+    {
+      "file": "lamp_stage_0.png",
+      "elapsed": 22.2,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": false,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "kneel"
+        }
+      }
+    },
+    {
+      "file": "conversation.png",
+      "elapsed": 67.7667,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": false,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "look_out"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "kneel"
+        }
+      }
+    },
+    {
+      "file": "quiet_exchange.png",
+      "elapsed": 121.9667,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": false,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_cup"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "kneel"
+        }
+      }
+    },
+    {
+      "file": "cup_on_bench.png",
+      "elapsed": 172.7333,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "sit"
+        }
+      }
+    },
+    {
+      "file": "handholding.png",
+      "elapsed": 174.3333,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "hands_hold"
+        },
+        "mira": {
+          "position": [
+            725.0,
+            375.0
+          ],
+          "pose": "hands_hold"
+        }
+      }
+    },
+    {
+      "file": "lamp_work.png",
+      "elapsed": 185.0333,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 0,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "lamp_stage_1.png",
+      "elapsed": 187.0333,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 1,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "seated_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "lamp_stage_2.png",
+      "elapsed": 190.0333,
+      "shot": "conversation",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 2,
+      "flare_phase": "dormant",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "stand_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "flare_ascent.png",
+      "elapsed": 200.3667,
+      "shot": "flare_ascent",
+      "camera": [
+        447.24917430912546,
+        41.609977474524875
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 2,
+      "flare_phase": "flight",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "cast_recover"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "flare_burst.png",
+      "elapsed": 204.3333,
+      "shot": "signal_sky",
+      "camera": [
+        430.0,
+        -590.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 2,
+      "flare_phase": "burst",
+      "glimmer_visible": false,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "stand_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "sky_glimmer.png",
+      "elapsed": 206.1333,
+      "shot": "signal_sky",
+      "camera": [
+        430.0,
+        -590.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 2,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "stand_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "camera_return.png",
+      "elapsed": 210.0333,
+      "shot": "pan_down",
+      "camera": [
+        432.56249421294547,
+        -205.6258680581852
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 2,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "stand_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair"
+        }
+      }
+    },
+    {
+      "file": "lamp_stage_3.png",
+      "elapsed": 212.5667,
+      "shot": "restoration",
+      "camera": [
+        435.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            670.0,
+            375.0
+          ],
+          "pose": "stand_empty"
+        },
+        "mira": {
+          "position": [
+            585.0,
+            375.0
+          ],
+          "pose": "repair_finish"
+        }
+      }
+    },
+    {
+      "file": "departure.png",
+      "elapsed": 231.1667,
+      "shot": "departure_follow",
+      "camera": [
+        378.6714361305273,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            589.3333333337556,
+            374.99999999999994
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            504.3333333337557,
+            374.99999999999994
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "foreground_pass.png",
+      "elapsed": 235.9667,
+      "shot": "departure_follow",
+      "camera": [
+        155.56613000762488,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            397.33333333376663,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            312.33333333376663,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "helmet_centered.png",
+      "elapsed": 236.3667,
+      "shot": "memorial_hold",
+      "camera": [
+        155.00000000000003,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            381.33333333376754,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            296.33333333376754,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "actors_offscreen.png",
+      "elapsed": 244.7667,
+      "shot": "memorial_hold",
+      "camera": [
+        155.0,
+        160.0
+      ],
+      "zoom": 1.0,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            50.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            -35.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "helmet_before_fade.png",
+      "elapsed": 246.4667,
+      "shot": "helmet_zoom",
+      "camera": [
+        155.0,
+        160.0
+      ],
+      "zoom": 1.04032668379563,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            50.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            -35.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "helmet_fade.png",
+      "elapsed": 247.2667,
+      "shot": "helmet_zoom",
+      "camera": [
+        155.0,
+        160.0
+      ],
+      "zoom": 1.0981255504619865,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            50.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            -35.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    },
+    {
+      "file": "last_look.png",
+      "elapsed": 250.1667,
+      "shot": "helmet_zoom",
+      "camera": [
+        155.0,
+        160.0
+      ],
+      "zoom": 1.4271249921281457,
+      "lamp_stage": 3,
+      "flare_phase": "glimmer",
+      "glimmer_visible": true,
+      "cup_visible": true,
+      "actors": {
+        "caelan": {
+          "position": [
+            50.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        },
+        "mira": {
+          "position": [
+            -35.0,
+            375.0
+          ],
+          "pose": "walk_left"
+        }
+      }
+    }
+  ],
+  "action_clips": {
+    "handholding_closeup.mp4": {
+      "scene_interval": [
+        172.4,
+        179.65
+      ],
+      "movie_interval": [
+        173.76666666666668,
+        181.03333333333333
+      ],
+      "source": "Consecutive production-rendered frames; no soundtrack in short clips"
+    },
+    "beacon_sequence.mp4": {
+      "scene_interval": [
+        199.0,
+        213.35
+      ],
+      "movie_interval": [
+        200.36666666666667,
+        216.76666666666668
+      ],
+      "source": "Consecutive production-rendered frames; no soundtrack in short clips"
+    },
+    "helmet_ending.mp4": {
+      "scene_interval": [
+        228.65,
+        255.13
+      ],
+      "movie_interval": [
+        232.06666666666666,
+        258.53333333333336
+      ],
+      "source": "Consecutive production-rendered frames; no soundtrack in short clips"
+    }
+  },
   "drinking": {
     "interval": [
-      141.1,
-      144.27999999999997
+      164.5,
+      167.48
     ],
     "cues": {
-      "lift": 141.7,
-      "lower": 143.2,
-      "return_settled": 143.67999999999998
+      "lift": 165.1,
+      "lower": 166.4,
+      "return_settled": 166.88
     },
     "crop": [
       181,
@@ -407,18 +1143,35 @@
       164,
       124
     ],
-    "frames": 95,
-    "clip_seconds": 3.1666666666666665,
+    "frames": 89,
+    "clip_seconds": 2.966666666666667,
     "source": "Consecutive production world frames; cropped and integer-scaled"
   },
   "screenshots": [
     "title.png",
     "valley.png",
     "lantern_reveal.png",
+    "lamp_stage_0.png",
     "conversation.png",
-    "paused.png",
     "quiet_exchange.png",
     "minimum_large_text.png",
+    "cup_on_bench.png",
+    "handholding.png",
+    "lamp_work.png",
+    "lamp_stage_1.png",
+    "lamp_stage_2.png",
+    "flare_ascent.png",
+    "paused.png",
+    "flare_burst.png",
+    "sky_glimmer.png",
+    "camera_return.png",
+    "lamp_stage_3.png",
+    "departure.png",
+    "foreground_pass.png",
+    "helmet_centered.png",
+    "actors_offscreen.png",
+    "helmet_before_fade.png",
+    "helmet_fade.png",
     "last_look.png",
     "bedroom.png"
   ],

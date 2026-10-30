@@ -45,6 +45,15 @@ class Capture:
         self.drink_crop = None
         self.drink_interval = None
         self.drink_cues = None
+        self.timeline = None
+        self.checks = dict(handholding=0, return_barrier=0, glimmer=0,
+                           fixed_camera=0, actors_offscreen=0, zoom=0)
+        self.semantic_frames = []
+        self.clock_samples = []
+        self.lamp_samples = {}
+        self.clip_records = {}
+        self._last_zoom = 1.0
+        self.reconstructed_motif_wraps = 0
 
     @property
     def seconds(self):
@@ -78,6 +87,9 @@ class Capture:
         game.draw()
         scene = game.opening_cinematic
         if scene.active:
+            self.clock_samples.append((scene.elapsed, self.seconds))
+            if self.timeline is not None:
+                self.verify_sequence(scene)
             record = scene.dialogue
             if record is not None:
                 index = scene.data['dialogue'].index(record)
@@ -91,7 +103,11 @@ class Capture:
                     game.canvas.subsurface(self.drink_crop), 'RGB'))
                 self.drink_times.append(scene.elapsed)
         self.encoder.stdin.write(pygame.image.tobytes(game.window, 'RGB'))
+        previous_track, previous_position = self.trace.loaded, self.trace.position
         self.trace.advance(1/FPS)
+        if (previous_track is not None and previous_track.endswith('dare_to_dream_leitmotif.ogg')
+                and self.trace.loaded == previous_track and self.trace.position < previous_position):
+            self.reconstructed_motif_wraps += 1
         self.frames += 1
 
     def hold(self, seconds):
@@ -114,7 +130,7 @@ class Capture:
             actor_bounds = []
             for record, anchor, frames, transitions in scene.actors:
                 image = scene._actor_frame(record['id'], frames, transitions)
-                position = pygame.Vector2(record['position'])-scene.camera_position
+                position = scene.actor_position(record['id'])-scene.camera_position
                 rect = image.get_bounding_rect().move(round(position.x-anchor[0]),
                                                        round(position.y-anchor[1]))
                 assert not scene.caption_rect.colliderect(rect), 'Large caption covers the acting'
@@ -127,6 +143,51 @@ class Capture:
             game.window = pygame.display.set_mode(original_size, pygame.RESIZABLE)
             game.audio.set_text_scale(original_text)
             game.draw()
+
+    def verify_sequence(self, scene):
+        """Observe production state, including the return/repair completion barrier."""
+        elapsed, events = scene.elapsed, self.timeline
+        if elapsed < events['camera_returned']-1e-7:
+            assert scene.lamp_stage < 3, 'Lamp fully restored before the camera returned'
+            self.checks['return_barrier'] += 1
+        if events['hand_hold'] <= elapsed < events['hand_release']:
+            assert scene.cup_visible, 'Cup was not put down before hands were held'
+            self.checks['handholding'] += 1
+        if events['flare_glimmer']+.05 <= elapsed < events['end']:
+            assert scene.glimmer_visible, 'Signal light disappeared after the firework burst'
+            self.checks['glimmer'] += 1
+        if events['memorial_centered']+.05 <= elapsed < events['helmet_zoom_start']:
+            assert scene.memorial_visible
+            assert scene.camera_position.distance_to((155, 160)) < 1e-6
+            memorial = scene.data['dynamic_props']['memorial']
+            assert abs(memorial['position'][0]-scene.camera_position.x-240) < 1e-6
+            self.checks['fixed_camera'] += 1
+        if events['actors_offscreen']+.05 <= elapsed < events['helmet_zoom_start']:
+            for record, anchor, frames, transitions in scene.actors:
+                image = scene._actor_frame(record['id'], frames, transitions)
+                point = scene.actor_position(record['id'])-scene.camera_position
+                bounds = image.get_bounding_rect().move(round(point.x-anchor[0]),
+                                                        round(point.y-anchor[1]))
+                assert not pygame.Rect(0, 0, 480, 320).colliderect(bounds), record['id']+' did not exit'
+            self.checks['actors_offscreen'] += 1
+        if elapsed >= events['helmet_zoom_start']:
+            assert scene.camera_zoom+1e-9 >= self._last_zoom, 'Helmet zoom reversed'
+            self._last_zoom = scene.camera_zoom
+            self.checks['zoom'] += 1
+        if scene.dialogue is not None and scene.dialogue['id'] == 'so_do_i':
+            assert elapsed >= events['camera_returned']
+            assert scene.lamp_stage == 3, 'Completion line did not coincide with the restored lamp'
+
+    def capture_semantic_frame(self, scene, name):
+        self.snapshot(name)
+        self.semantic_frames.append(dict(file=name, elapsed=round(scene.elapsed, 4),
+            shot=scene.shot, camera=list(scene.camera_position), zoom=scene.camera_zoom,
+            lamp_stage=scene.lamp_stage, flare_phase=scene.flare_phase,
+            glimmer_visible=scene.glimmer_visible, cup_visible=scene.cup_visible,
+            actors={actor: dict(position=list(scene.actor_position(actor)),
+                                pose=scene.pose(actor)) for actor in ('caelan', 'mira')}))
+        if name.startswith('lamp_stage_'):
+            self.lamp_samples[scene.lamp_stage] = self.game.canvas.copy()
 
     @staticmethod
     def line(scene, identifier):
@@ -159,7 +220,7 @@ class Capture:
         self.drink_interval = (max(0, start-.6), end)
         rects = []
         for record, anchor, frames, _ in scene.actors:
-            point = pygame.Vector2(record['position'])-scene.camera_position
+            point = scene.actor_position(record['id'])-scene.camera_position
             image = next(iter(frames.values()))
             rects.append(pygame.Rect(round(point.x-anchor[0]), round(point.y-anchor[1]),
                                      image.get_width(), image.get_height()))
@@ -197,6 +258,45 @@ class Capture:
         pygame.image.save(pygame.transform.scale(sheet, (sheet.get_width()*2,
                           sheet.get_height()*2)), str(self.output/'drinking_keyframes.png'))
 
+    def movie_time(self, scene_time):
+        return min(self.clock_samples, key=lambda item: abs(item[0]-scene_time))[1]
+
+    def write_action_reviews(self):
+        """Extract selected consecutive production frames from the full capture."""
+        e = self.timeline
+        clips = (
+            ('handholding_closeup.mp4', e['hand_reach']-.35, e['hand_release']+.6,
+             'crop=400:260:360:200,scale=800:520:flags=neighbor'),
+            ('beacon_sequence.mp4', e['flare_launch']-1, e['lamp_restored']+1, None),
+            ('helmet_ending.mp4', e['departure_start']-.5, e['end']-.02, None),
+        )
+        for filename, start, finish, video_filter in clips:
+            start_time, finish_time = self.movie_time(start), self.movie_time(finish)
+            command = ['ffmpeg', '-y', '-v', 'error', '-ss', str(start_time),
+                       '-i', str(self.output/'opening_cinematic.mp4'),
+                       '-t', str(finish_time-start_time), '-an']
+            if video_filter:
+                command += ['-vf', video_filter]
+            command += ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+                        '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
+                        str(self.output/filename)]
+            subprocess.run(command, check=True)
+            self.clip_records[filename] = dict(scene_interval=[start, finish],
+                movie_interval=[start_time, finish_time],
+                source='Consecutive production-rendered frames; no soundtrack in short clips')
+
+        assert set(self.lamp_samples) == {0, 1, 2, 3}, 'Not all visible repair stages were captured'
+        crop = pygame.Rect(169, 166, 66, 68)
+        sheet = pygame.Surface((crop.width*4, crop.height+17))
+        sheet.fill('#15232b')
+        font = pygame.font.Font(str(ROOT/'assets/ui/fonts/AtkinsonHyperlegible-Regular.ttf'), 11)
+        for stage in range(4):
+            sheet.blit(self.lamp_samples[stage].subsurface(crop), (stage*crop.width, 17))
+            sheet.blit(font.render('Stage '+str(stage), True, '#f8f0d9'),
+                       (stage*crop.width+3, 2))
+        pygame.image.save(pygame.transform.scale(sheet, (sheet.get_width()*3,
+                          sheet.get_height()*3)), str(self.output/'lamp_stages.png'))
+
     def record(self):
         game = self.game
         self.encoder = subprocess.Popen([
@@ -217,29 +317,55 @@ class Capture:
         self.event('cinematic_started', duration=scene.duration)
         self.scene_duration = scene.duration
         self.scene_dialogue = list(scene.data['dialogue'])
+        self.timeline = dict(scene.data['events'])
+        self.timeline['end'] = scene.duration
         conversation = next(shot for shot in scene.data['shots'] if shot['id'] == 'conversation')
         # Actor framing is fixed throughout the conversation. Calculate the crop
         # at that authored shot without changing the live scene clock.
         original_elapsed = scene.elapsed
-        scene.elapsed = conversation['start']
+        scene.elapsed = next(cue['start'] for cue in scene.data['acting']['caelan']
+                             if cue['pose'] == 'drink')
         self.prepare_drink_capture(scene)
         scene.elapsed = original_elapsed
         longest = self.longest_caption(scene)
-        look = next(cue for cue in reversed(scene.data['acting']['caelan'])
-                    if cue['pose'] == 'look_out')
+        e = self.timeline
+        stages = {record['stage']: record['start'] for record in
+                  scene.data['dynamic_props']['lamp']['stage_cues']}
+        stage_two = stages[2]+.2
+        if stage_two >= e['flare_launch']:
+            stage_two = max(stages[2], e['camera_returned'])+.1
+        assert stage_two < e['lamp_restored'], 'Intermediate repair has no visible ground-shot interval'
         targets = iter(sorted([
             (4, 'valley.png'), (conversation['start']+.1, 'lantern_reveal.png'),
+            (conversation['start']+.2, 'lamp_stage_0.png'),
             (self.line(scene, 'valley_houses')['start']+.25, 'conversation.png'),
             (self.line(scene, 'mill_memory')['start']+.25, 'quiet_exchange.png'),
-            (look['start']+.25, 'last_look.png')]))
+            (e['cup_set_down']+.2, 'cup_on_bench.png'),
+            (self.line(scene, 'understood_problem')['start']+.25, 'handholding.png'),
+            (e['lamp_work_start']+.2, 'lamp_work.png'),
+            (stages[1]+.2, 'lamp_stage_1.png'),
+            (stage_two, 'lamp_stage_2.png'),
+            (e['flare_launch']+.35, 'flare_ascent.png'),
+            (e['flare_burst']+.3, 'flare_burst.png'),
+            (e['flare_glimmer']+.5, 'sky_glimmer.png'),
+            ((e['camera_return_start']+e['camera_returned'])/2, 'camera_return.png'),
+            (e['lamp_restored']+.2, 'lamp_stage_3.png'),
+            (e['departure_start']+2, 'departure.png'),
+            (e['memorial_centered']-.2, 'foreground_pass.png'),
+            (e['memorial_centered']+.2, 'helmet_centered.png'),
+            (e['actors_offscreen']+.1, 'actors_offscreen.png'),
+            (e['fade_start']-.2, 'helmet_before_fade.png'),
+            ((e['helmet_zoom_start']+e['end'])/2, 'last_look.png'),
+            (e['fade_start']+.6, 'helmet_fade.png'),
+        ]))
         target = next(targets, None)
-        pause_at = self.line(scene, 'surge')['start']+.4
+        pause_at = e['flare_launch']+.7
         paused = enlarged = False
         for _ in range(round((scene.duration+12)*FPS)):
             if not scene.active:
                 break
             if target is not None and scene.elapsed >= target[0]:
-                self.snapshot(target[1])
+                self.capture_semantic_frame(scene, target[1])
                 target = next(targets, None)
             if scene.elapsed >= longest['start']+.25 and not enlarged:
                 self.minimum_text_snapshot()
@@ -249,10 +375,14 @@ class Capture:
                 self.frame()
                 assert scene.paused and game.music.paused
                 elapsed = scene.elapsed
+                frozen = (scene.camera_position, scene.camera_zoom, scene.flare_phase,
+                          scene.lamp_stage, scene.actor_position('caelan'), scene.actor_position('mira'))
                 self.event('escape_paused', elapsed=elapsed)
                 self.snapshot('paused.png')
                 self.hold(2)
                 assert scene.elapsed == elapsed
+                assert frozen == (scene.camera_position, scene.camera_zoom, scene.flare_phase,
+                                   scene.lamp_stage, scene.actor_position('caelan'), scene.actor_position('mira'))
                 self.key(pygame.K_ESCAPE)
                 self.frame()
                 assert not scene.paused and not game.music.paused
@@ -268,6 +398,7 @@ class Capture:
         assert self.path.is_file()
         assert len(self.observed_dialogue) == len(self.scene_dialogue), 'Some dialogue was not shown'
         assert self.accessibility is not None, 'Longest caption was not captured'
+        assert all(self.checks.values()), 'Some required cinematic stages were not verified'
         self.event('bedroom_started', first_line=first_line)
         self.hold(1)  # Let the ordinary morning fade reveal the room.
         self.snapshot('bedroom.png')
@@ -291,6 +422,7 @@ class Capture:
             '-movflags', '+faststart', str(self.output/'opening_cinematic.mp4')], check=True)
         for name in ('silent.mp4', 'soundtrack.wav'):
             (self.output/name).unlink()
+        self.write_action_reviews()
         commands = [event for event in self.trace.events if event['event'] != 'volume']
         motif_plays = [event for event in commands if event['event'] == 'play'
                        and event.get('file', '').endswith('dare_to_dream_leitmotif.ogg')]
@@ -303,10 +435,13 @@ class Capture:
             world_freeze_checks=self.freeze_checks, escape_pause_preserves_position=True,
             no_checkpoint_until_bedroom=True, leitmotif_plays=len(motif_plays),
             leitmotif_repeat=True, events=self.events, mixer_commands=commands,
+            reconstructed_motif_wraps=self.reconstructed_motif_wraps,
             dialogue_lines=len(self.scene_dialogue),
             observed_dialogue=[self.observed_dialogue[index]
                                for index in range(len(self.scene_dialogue))],
             dialogue_gaps_seconds=gaps, accessibility=self.accessibility,
+            sequence_events=self.timeline, sequence_checks=self.checks,
+            semantic_frames=self.semantic_frames, action_clips=self.clip_records,
             drinking=dict(interval=list(self.drink_interval), cues=self.drink_cues,
                           crop=list(self.drink_crop), frames=len(self.drink_frames),
                           clip_seconds=len(self.drink_frames)/FPS,
@@ -325,15 +460,28 @@ handoff. All images are rendered by the game with the runtime assets. Temporary
 journey and settings files leave ordinary saves untouched. Effects are muted.
 
 The expanded scene lasts {self.scene_duration:.1f} seconds and presents all
-{len(self.scene_dialogue)} dialogue lines. Its ordinary gaps are one second;
-two four-second acting pauses retain room for the drink and final preparation.
+{len(self.scene_dialogue)} user-authored dialogue lines. The choreography includes
+putting the cup down, holding hands, walking to and repairing the lamp, the
+blue flare/firework and persistent sky light, the return shot, and the departure
+past an anonymous bloodstained helmet. Actor and camera actions receive their
+own authored time; ordinary dialogue gaps remain short.
 
 The soundtrack is reconstructed from the exact shipped OGGs and observed
 production mixer commands because the headless SDL driver has no audio loopback.
 It includes the actual fades and the preserved music position across the pause.
 It is not a separate musical arrangement. `verification.json` records the
 observed route, all dialogue lines and gaps, single repeating leitmotif request,
-frozen-world checks and longest-caption layout.
+frozen-world checks, longest-caption layout and the new sequence barriers. The
+two-second Esc demonstration occurs during the flare flight, freezing its
+motion, the camera and the same music playback position.
+
+- [Handholding close-up](handholding_closeup.mp4)
+- [Flare flight, firework, sky light and completed repair](beacon_sequence.mp4)
+- [Departure and helmet ending](helmet_ending.mp4)
+- [Four visible lamp repair stages](lamp_stages.png)
+
+These short clips are consecutive production-rendered frames with no audio;
+the full preview above includes the complete soundtrack.
 
 [Watch the corrected drinking motion close-up](drinking_closeup.mp4) or inspect its
 [rest → lift → sip → lower → rest frames](drinking_keyframes.png). These are
@@ -344,7 +492,21 @@ the short close-up has no audio.
 - [Lantern-lit sanctuary](lantern_reveal.png)
 - [Conversation](conversation.png)
 - [Quiet exchange](quiet_exchange.png)
-- [Final look](last_look.png)
+- [Cup placed on the bench](cup_on_bench.png)
+- [Mira holding both hands](handholding.png)
+- [Mira working on the lamp](lamp_work.png)
+- [Flare ascent](flare_ascent.png)
+- [Firework burst](flare_burst.png)
+- [Persistent sky light](sky_glimmer.png)
+- [Camera returning to the pair](camera_return.png)
+- [Restored lamp](lamp_stage_3.png)
+- [Walking departure](departure.png)
+- [Passing behind the foreground sword](foreground_pass.png)
+- [Helmet centered; camera held](helmet_centered.png)
+- [Both actors offscreen](actors_offscreen.png)
+- [Helmet before the fade](helmet_before_fade.png)
+- [Helmet close-up](last_look.png)
+- [Final helmet fade](helmet_fade.png)
 - [Esc pause](paused.png)
 - [480×320 with 150% text](minimum_large_text.png)
 - [Bedroom handoff](bedroom.png)

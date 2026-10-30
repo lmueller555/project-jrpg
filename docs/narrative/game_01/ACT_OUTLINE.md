@@ -26,6 +26,13 @@ itself is not implemented yet. The expanded opening establishes evacuation
 carts, a threatened valley road and an entrance beyond a ridge as facts of
 this frame. It leaves the crisis's cause and the final plan concealed.
 
+The later author revision adds hand-holding, mechanical lamp restoration,
+Caelan's evacuation flare and a closing focus on an anonymous bloody helmet
+resting on a sword in stone. This approves a deliberate hint of an unidentified
+death by that point in the journey, without assigning the loss to Tomas or
+another character. It does not expose the saga-level history or finalize the
+unimplemented later-act events.
+
 ## Logline — working proposal
 
 When a regional ruler breaks an age-old religious prohibition to excavate beneath a sanctuary, a devastating aetheric disaster pits government against faith. A young member of the religious order, personally affected by the catastrophe, investigates what both institutions are concealing—and must stop a second, greater disaster without abandoning the people each institution claims to protect.
