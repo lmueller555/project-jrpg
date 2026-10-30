@@ -170,18 +170,21 @@ class BattleSceneTests(unittest.TestCase):
         self.click(self.scene.continue_rect.center)
         self.assertTrue(self.scene.dismissed)
 
-    def test_result_retry_message_preserves_resources_and_outcome(self):
+    def test_victory_banner_has_no_rewards_or_continue_and_cannot_be_dismissed(self):
         self.ready();self.model.enemy.hp = 1
         self.click(self.scene.command_rects['attack'].center)
         self.scene.update(1)
         self.assertEqual(self.model.phase, 'victory')
-        self.scene.result_error = 'Rewards could not be collected. Try again.'
         with patch.object(Painter, 'text', autospec=True, wraps=Painter.text) as text:
             self.draw()
-        self.assertIn('Try again', [call.args[1] for call in text.call_args_list])
-        self.assertFalse(self.scene.dismissed)
+        visible = ' '.join(str(call.args[1]) for call in text.call_args_list)
+        self.assertIn('VICTORY', visible)
+        self.assertNotIn('Continue', visible)
+        self.assertNotIn('RP', visible)
+        self.assertNotIn('Emerald', visible)
         self.key(pygame.K_RETURN)
-        self.assertTrue(self.scene.dismissed)
+        self.click(self.scene.continue_rect.center)
+        self.assertFalse(self.scene.dismissed)
 
     def test_physical_approach_and_hurt_frames_follow_the_action(self):
         self.ready()

@@ -14,7 +14,7 @@ import pygame
 from main import Game
 from quests import MILL_QUEST
 from test_mill_battle_gameplay import (
-    click, finish_mill_battle, key, read_social, seed_completed_mill, seed_mill_handoff,
+    acknowledge_battle_result, click, finish_mill_battle, key, read_social, seed_completed_mill, seed_mill_handoff, wait_for_spoils,
 )
 
 
@@ -165,19 +165,18 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertTrue(quest.encounter_pending)
         self.assertFalse(game.combat.active)
 
-    def test_mill_victory_and_reward_retry_keep_battle_music_until_settlement(self):
+    def test_mill_victory_and_reward_retry_keep_fanfare_until_spoils_exit(self):
         game = self.game();self.seed_encounter(game);self.reach_cue(game)
         read_social(game)
         scene = finish_mill_battle(game, dismiss=False)
         self.assertEqual(scene.model.phase, 'victory')
-        self.assertEqual(game.music.desired_track, 'battle')
-        game.draw()
+        self.assertEqual(game.music.desired_track, 'victory')
         with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
-            click(game, scene.continue_rect.center)
+            spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
-        self.assertTrue(scene.result_error)
-        self.assertEqual(game.music.desired_track, 'battle')
-        game.draw();click(game, scene.continue_rect.center)
+        self.assertTrue(spoils.result_error)
+        self.assertEqual(game.music.desired_track, 'victory')
+        acknowledge_battle_result(game, scene)
         self.assertFalse(game.combat.active)
         self.assertTrue(game.mill_quest.encounter_cleared)
         self.assertEqual(game.music.desired_track, 'eldenmere')

@@ -33,6 +33,7 @@ class GameMusic:
         self._failed = False
         self._paused = False
         self._stream_paused = False
+        self._completed = False
         self._duck = self._duck_target = 1.0
         self._envelope = 1.0
         self._fade_mode = None
@@ -55,14 +56,15 @@ class GameMusic:
             result = {}
             for identifier, record in records.items():
                 filename, gain = record['file'], record.get('gain', .45)
+                loop = record.get('loop', True)
                 if (not isinstance(identifier, str) or not isinstance(filename, str)
                         or type(gain) not in (int, float) or not math.isfinite(gain)
-                        or not 0 <= gain <= 1):
+                        or not 0 <= gain <= 1 or type(loop) is not bool):
                     raise ValueError('Invalid music track')
                 path = (self.music_root / filename).resolve()
                 if not path.is_relative_to(self.music_root.resolve()):
                     raise ValueError('Music path escapes its folder')
-                result[identifier] = {'path': path, 'gain': float(gain)}
+                result[identifier] = {'path': path, 'gain': float(gain), 'loop': loop}
             return result
         except (OSError, ValueError, KeyError, TypeError) as error:
             self.error = str(error)
@@ -70,7 +72,8 @@ class GameMusic:
 
     @property
     def playing(self):
-        if not self._loaded or not self._owns_stream() or self._stream_paused:
+        self._observe_completion()
+        if not self._loaded or not self._owns_stream() or self._stream_paused or self._completed:
             return False
         try:
             return bool(self._mixer.get_init() and self._mixer.music.get_busy())
@@ -80,6 +83,25 @@ class GameMusic:
     @property
     def paused(self):
         return self._paused
+
+    @property
+    def completed(self):
+        """A finished one-shot remains selected and silent until another request."""
+        self._observe_completion()
+        return self._completed
+
+    def _observe_completion(self):
+        if (self._completed or not self._loaded or not self._owns_stream()
+                or self._paused or self._stream_paused or self._volume() <= 0
+                or self.tracks[self.current_track]['loop']):
+            return
+        try:
+            if self._mixer.get_init() and not self._mixer.music.get_busy():
+                self._completed = True
+                self._fade_mode = None
+                self._fade_remaining = 0.0
+        except (pygame.error, OSError):
+            pass
 
     def _owns_stream(self):
         owner = self._owners.get(self._mixer)
@@ -94,6 +116,7 @@ class GameMusic:
             previous.current_track = None
             previous._fade_mode = None
             previous._failed = True
+            previous._completed = False
         self._owners[self._mixer] = weakref.ref(self)
 
     def _volume(self):
@@ -124,6 +147,7 @@ class GameMusic:
         self.current_track = None
         self._loaded = False
         self._stream_paused = False
+        self._completed = False
         self._fade_mode = None
         self._fade_remaining = 0.0
 
@@ -136,10 +160,11 @@ class GameMusic:
             self._envelope = 0.0 if fade > 0 else 1.0
             gain = self.tracks[identifier]['gain'] * self._volume() * self._duck * self._envelope
             self._mixer.music.set_volume(0.0 if self._paused else gain)
-            self._mixer.music.play(-1)
+            self._mixer.music.play(-1 if self.tracks[identifier]['loop'] else 0)
             self.current_track = identifier
             self._loaded = True
             self._stream_paused = False
+            self._completed = False
             self.error = None
             if fade > 0:
                 self._fade_mode = 'in'
@@ -156,7 +181,7 @@ class GameMusic:
             return False
 
     def play(self, identifier, fade_ms=450):
-        """Request a looping track without restarting an unchanged request."""
+        """Request a loop or one-shot without restarting an unchanged request."""
         if identifier not in self.tracks:
             return False
         try:
@@ -173,6 +198,11 @@ class GameMusic:
         self._requested_fade = fade
         self._failed = False
         if self.current_track is None:
+            self._start(identifier, fade)
+        elif self._completed:
+            # A finished fanfare is already silent; returning to exploration
+            # only needs the new track's fade-in, not another silent fade-out.
+            self._clear_current()
             self._start(identifier, fade)
         elif identifier == self.current_track:
             # Returning to the current music while it fades toward another
@@ -193,7 +223,7 @@ class GameMusic:
         return True
 
     def _apply_pause(self):
-        if not self._loaded or not self._owns_stream():
+        if not self._loaded or not self._owns_stream() or self._completed:
             return
         paused = self._paused or self._volume() <= 0
         if paused != self._stream_paused:
@@ -205,11 +235,12 @@ class GameMusic:
 
     def refresh_volume(self):
         """Apply preferences immediately, preserving both duck and fade gains."""
+        self._observe_completion()
         if self.current_track is None:
             if self.desired_track is not None and not self._failed:
                 self._start(self.desired_track, self._requested_fade)
             return
-        if not self._owns_stream():
+        if not self._owns_stream() or self._completed:
             return
         try:
             if not self._mixer.get_init():
@@ -243,6 +274,7 @@ class GameMusic:
                 return
         except (ValueError, TypeError, OverflowError):
             return
+        self._observe_completion()
         if not self._paused:
             self._duck += (self._duck_target - self._duck) * min(1.0, seconds / .18)
         if self.current_track is None and self.desired_track is not None and not self._failed:

@@ -233,7 +233,10 @@ def main(argv=None):
         run(game, .6, 'victory and battle rewards')
         record(game, 'battle_victory')
         outcome_hp, outcome_mp = model.player.hp, model.player.mp
-        click(game, scene.continue_rect.center)
+        until(game, lambda: game.combat.post_phase == 'spoils' and
+              game.combat.spoils.awarded, 'Spoils award checkpoint')
+        record(game, 'battle_spoils')
+        click(game, game.combat.spoils.continue_rect.center)
         assert not game.combat.active
         assert game.lattice.state()['rp'] == 20 and game.lattice.rank() == 2
         assert game.lattice.steps() == 1 and game.inventory.quantity('aether_emerald') == 1

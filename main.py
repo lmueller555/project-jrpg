@@ -467,6 +467,7 @@ class Game:
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
+                           'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
@@ -526,6 +527,7 @@ class Game:
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                LatticeProgression.valid_journey(data) and
+               ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
                ('elira_visit' not in data or EliraVisit.valid_journey(data)) and
@@ -671,6 +673,11 @@ class Game:
         self.pause.close()
         self.camera.reset()
         self.music.play('eldenmere')
+        if data is not None and data.get('post_battle') is not None:
+            if not self.combat.restore_pending(data['post_battle']):
+                self.save_error='The saved battle spoils could not be restored.'
+                self.on_title=True
+                return False
         self.save_progress()
         return True
 
@@ -679,10 +686,9 @@ class Game:
         if self.on_title or not self.save_store.enabled:return False
         self._sync_inventory()
         saved_position=self.player.position
-        if self.combat.active and self.combat.kind=='mill':
-            # An interrupted story fight resumes at the safe approach. HP/MP
-            # are still the pre-battle live values until complete settlement.
-            saved_position=self.mill_quest.upstream.data['spawn']
+        checkpoint=self.combat.checkpoint_position
+        if checkpoint is not None:saved_position=checkpoint
+        post_battle=self.combat.snapshot()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
@@ -698,6 +704,7 @@ class Game:
               'player':{'scene':self.world.data['id'],
                         'position':list(saved_position),'facing':self.player.facing},
               'exterior_position':list(self.exterior_position)}
+        if post_battle is not None:data['post_battle']=post_battle
         if not self.save_store.write(data):
             self.save_error=self.save_store.error
             self._save_retry_seconds=10.0
@@ -906,10 +913,10 @@ class Game:
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
         self.mill_quest.sync_encounter_music()
-        battle=self.combat.scene
         self.music.set_paused(not self._music_focused or
-                              bool(battle and (battle.paused or not battle.focused)))
-        self.music.set_ducked(self.social.active or bool(battle and battle.tutorial_active))
+                              bool(self.combat.active and (self.combat.paused or not self.combat.focused)))
+        self.music.set_ducked(not self.combat.post_phase and
+                             (self.social.active or self.combat.tutorial_active))
         self.music.update(seconds)
         if self.on_title:
             self.title.update(seconds)

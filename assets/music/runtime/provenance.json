@@ -5,7 +5,7 @@
   "quality": 8,
   "musical_rearrangement": false,
   "normalization": false,
-  "looping": "Repeat the authored cue; no sample-accurate musical-loop claim",
+  "looping": "World/battle repeat the authored cue; victory plays once; no sample-accurate musical-loop claim",
   "tracks": [
     {
       "identifier": "eldenmere",
@@ -15,6 +15,7 @@
       "source_codec": "opus",
       "source_decoded_frames": 4564488,
       "source_decoded_seconds": 95.0935,
+      "loop": true,
       "runtime": "runtime/eldenmere_theme.ogg",
       "boundaries": {
         "removed_tail_frames": 0,
@@ -32,6 +33,7 @@
         "sample_step_across_repeat": 0.001214016112498939,
         "pygame_full_decode": true,
         "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
         "sha256": "8da4b81c76da788944a21d7c5035443f56cea85db9e6e745898f68ad61688657",
         "bytes": 2504032
       }
@@ -44,6 +46,7 @@
       "source_codec": "opus",
       "source_decoded_frames": 9118728,
       "source_decoded_seconds": 189.9735,
+      "loop": true,
       "runtime": "runtime/kindled_courage.ogg",
       "boundaries": {
         "threshold_dbfs": -60,
@@ -65,8 +68,40 @@
         "sample_step_across_repeat": 0.00013599864905700088,
         "pygame_full_decode": true,
         "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
         "sha256": "bded4775581ea8f01ac58e990bb56afd74a39028e3833eeca399ad3f1f9e856b",
         "bytes": 5249374
+      }
+    },
+    {
+      "identifier": "victory",
+      "source": "Triumphal Fanfare.m4a",
+      "source_git_blob_sha": "ab0adebed97a04f13d9a1c5604d76a287bb63ab9",
+      "source_sha256": "9860511d7b3b45246743b0497a737830ab21337934a6c29f3d6e90ccc804d106",
+      "source_codec": "opus",
+      "source_decoded_frames": 192648,
+      "source_decoded_seconds": 4.0135,
+      "loop": false,
+      "runtime": "runtime/triumphal_fanfare.ogg",
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 192648,
+        "duration_seconds": 4.0135,
+        "peak_dbfs": -6.016088643014557,
+        "rms_dbfs": -21.849318727826066,
+        "sample_step_across_repeat": 0.001210779882967472,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": false,
+        "pygame_stream_one_shot": true,
+        "sha256": "4b0822bf945bc344172785242d6a02504b4d67396b307b547de66d4e46c99e13",
+        "bytes": 119345
       }
     }
   ]

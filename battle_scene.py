@@ -260,15 +260,8 @@ class BattleScene:
         """Full messages flow beneath the occupied party row, never over values."""
         model = self.model
         if model.phase in RESULTS:
+            if model.phase == 'victory':return ''
             if self.result_error:return self.result_error
-            if model.phase == 'victory':
-                rewards = model.enemy_definition['rewards']
-                text = str(rewards['rp'])+' RP'
-                definitions = getattr(getattr(self.game, 'inventory', None), 'definitions', {})
-                for identifier, quantity in rewards['drops'].items():
-                    label = definitions.get(identifier, {}).get('name', identifier.replace('_', ' ').title())
-                    text += ' · '+label+' ×'+str(quantity)
-                return text
             if model.phase == 'defeat':
                 return ('Return to the safe approach.' if self.battlefield == 'millrace'
                         else 'Return to Eldenmere.')
@@ -287,6 +280,7 @@ class BattleScene:
         return True
 
     def _confirm(self):
+        if self.model.phase == 'victory':return
         if self.model.phase in RESULTS:
             self.dismissed = True
             self._sound('confirm')
@@ -528,6 +522,21 @@ class BattleScene:
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name', color=GOLD, anchor='center', bold=True)
+        if model.phase == 'victory':
+            # The encounter owner advances this celebration to Spoils of Battle.
+            # Rewards and an exit command belong to that separate screen.
+            banner_height = max(46, painter.font('title', bold=True).get_linesize()+20)
+            self.victory_banner_rect = pygame.Rect(66, 86, 348, banner_height)
+            painter.panel(self.victory_banner_rect)
+            painter.text('VICTORY', self.victory_banner_rect.center, role='title',
+                         color=GOLD, anchor='center', bold=True)
+            if self.paused:
+                painter.veil(150)
+                painter.panel((124, 111, 232, 100))
+                painter.text('Battle paused', (240, 126), color=GOLD, anchor='midtop', bold=True)
+                painter.button(self.resume_rect, 'Resume', disabled=not self.focused)
+            painter.clip()
+            return
         painter.panel(self.panel_rect)
         top = self.panel_rect.top
         heading = ({'victory': 'VICTORY', 'defeat': 'DEFEATED', 'fled': 'ESCAPED'}[model.phase]

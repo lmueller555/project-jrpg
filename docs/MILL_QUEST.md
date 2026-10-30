@@ -24,8 +24,11 @@ Mira's stronger spear attacks, Caelan's useful defense and the creature's
 separate preparation/charge turns teach the basics through cooperation. Every
 gauge pauses when either party member is ready.
 
-Victory commits the encounter and reward once. The post-fight dialogue proceeds
-linearly, without a continue/rest choice; unread aftermath remains available.
+Victory plays Triumphal Fanfare once and shows a banner before opening Spoils
+of Battle. Spoils commits the encounter and reward once; its Continue begins
+the linear post-fight dialogue, without a continue/rest choice. Unread aftermath
+remains available. Quitting during victory resumes Spoils silently without
+repeating its grant.
 Withdrawal leaves the encounter pending and defeat returns to a viable safe
 checkpoint. The same Mira continues as the existing world companion.
 
@@ -151,5 +154,6 @@ approach starts with world music and waits for the cue again.
 The entry transition freezes the actual world view and all battle gauges until
 the battlefield is revealed. Reduced Motion uses a short uniform fade. Music
 keeps playing while the player decides actions, lowers during tutorial guidance,
-and returns to the Eldenmere Theme after the encounter settles. This cue adds no
+and returns to the Eldenmere Theme after Spoils Continue (or a non-victory return).
+The victory fanfare plays once, followed by silence while Spoils stays open. This cue adds no
 saved quest fact or new dialogue choice.

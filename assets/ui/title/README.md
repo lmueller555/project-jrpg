@@ -47,4 +47,5 @@ python tools/build_title_music.py --soundfont /path/to/GeneralUser-GS.sf2
 ```
 
 Gameplay music now uses the shared catalog in `assets/music/tracks.json`; battle
-entry and return switch between Eldenmere Theme and Kindled Courage.
+entry and return switch between Eldenmere Theme and Kindled Courage. Victory
+uses the one-shot Triumphal Fanfare, followed by silence on Spoils until Continue.

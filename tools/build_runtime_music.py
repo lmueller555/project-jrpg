@@ -26,6 +26,10 @@ SOURCES = (
     dict(identifier='battle', source='Kindled Courage.m4a',
          git_sha='8acead411b5d07b89666355cdc559928c90f442e',
          target='kindled_courage.ogg', title='Kindled Courage', trim_tail=True),
+    dict(identifier='victory', source='Triumphal Fanfare.m4a',
+         git_sha='ab0adebed97a04f13d9a1c5604d76a287bb63ab9',
+         target='triumphal_fanfare.ogg', title='Triumphal Fanfare', trim_tail=False,
+         loop=False),
 )
 
 
@@ -96,7 +100,7 @@ def encode(audio, target, title):
         temporary.unlink(missing_ok=True)
 
 
-def verify_asset(path, expected_frames):
+def verify_asset(path, expected_frames, *, loop=True):
     stream = probe(path)['streams'][0]
     if (stream['codec_name'], stream['sample_rate'], stream['channels']) != ('vorbis', '48000', 2):
         raise ValueError(f'Unexpected runtime format: {path.name}')
@@ -117,7 +121,7 @@ def verify_asset(path, expected_frames):
         if abs(sound.get_length() - expected_frames / RATE) > 1 / RATE:
             raise ValueError(f'Pygame duration mismatch: {path.name}')
         pygame.mixer.music.load(str(path))
-        pygame.mixer.music.play(loops=-1)
+        pygame.mixer.music.play(loops=-1 if loop else 0)
         if not pygame.mixer.music.get_busy():
             raise ValueError(f'Pygame could not stream: {path.name}')
         pygame.mixer.music.pause()
@@ -131,7 +135,8 @@ def verify_asset(path, expected_frames):
                 peak_dbfs=20 * math.log10(max(peak, 1e-12)),
                 rms_dbfs=20 * math.log10(max(rms, 1e-12)),
                 sample_step_across_repeat=float(np.max(np.abs(decoded[-1] - decoded[0]))),
-                pygame_full_decode=True, pygame_stream_with_repeat=True,
+                pygame_full_decode=True, pygame_stream_with_repeat=loop,
+                pygame_stream_one_shot=not loop,
                 sha256=sha256(path), bytes=path.stat().st_size)
 
 
@@ -152,22 +157,26 @@ def build():
             export, boundaries = trimmed_battle(audio)
         target = MUSIC / 'runtime' / source['target']
         encode(export, target, source['title'])
-        verified = verify_asset(target, len(export))
+        loop = source.get('loop', True)
+        verified = verify_asset(target, len(export), loop=loop)
         if path.read_bytes() != original:
             raise AssertionError('An original upload changed during export')
         tracks[source['identifier']] = dict(file='runtime/' + source['target'], gain=.45)
+        if not loop:
+            tracks[source['identifier']]['loop'] = False
         records.append(dict(identifier=source['identifier'], source=source['source'],
                             source_git_blob_sha=source['git_sha'],
                             source_sha256=hashlib.sha256(original).hexdigest(),
                             source_codec=stream['codec_name'],
                             source_decoded_frames=len(audio),
                             source_decoded_seconds=len(audio) / RATE,
+                            loop=loop,
                             runtime='runtime/' + source['target'],
                             boundaries=boundaries, verification=verified))
     (MUSIC / 'tracks.json').write_text(json.dumps(dict(version=1, tracks=tracks), indent=2) + '\n')
     audit = dict(version=1, source='User-provided uploads', export_codec='Ogg Vorbis',
                  quality=8, musical_rearrangement=False, normalization=False,
-                 looping='Repeat the authored cue; no sample-accurate musical-loop claim',
+                 looping='World/battle repeat the authored cue; victory plays once; no sample-accurate musical-loop claim',
                  tracks=records)
     (MUSIC / 'runtime/provenance.json').write_text(json.dumps(audit, indent=2) + '\n')
     print(json.dumps(audit, indent=2))
