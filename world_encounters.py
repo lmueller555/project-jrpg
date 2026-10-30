@@ -15,6 +15,8 @@ from battle_scene import BattleScene
 from battle_transition import BattleTransition
 from inventory import MAX_QUANTITY
 from quests import MILL_QUEST
+from post_battle import valid_pending_snapshot
+from spoils_scene import SpoilsScene
 from ui_style import GOLD
 
 
@@ -42,12 +44,42 @@ class CombatEncounters:
         self._world_art = {}
         self.transition = None
         self._entry_keys = set()
+        self.spoils = None
+        self.post_phase = None
+        self._post_elapsed = 0.0
+        self._pending = None
+        self._victory_checkpointed = False
+        self._exiting_spoils = False
 
     @property
     def active(self):return self.scene is not None
 
     @property
     def model(self):return self.scene.model if self.scene is not None else None
+
+    @property
+    def view(self):return self.spoils if self.post_phase == 'spoils' else self.scene
+
+    @property
+    def paused(self):return bool(self.view and self.view.paused)
+
+    @property
+    def focused(self):return self.view.focused if self.view is not None else True
+
+    @property
+    def tutorial_active(self):return bool(not self.post_phase and self.scene and self.scene.tutorial_active)
+
+    @property
+    def checkpoint_position(self):
+        if self._pending is not None:return tuple(self._pending['position'])
+        if self._exiting_spoils:return tuple(self.game.player.position)
+        if self.active and self.kind == 'mill':return tuple(self.game.mill_quest.upstream.data['spawn'])
+        return tuple(self.game.player.position)
+
+    @staticmethod
+    def valid_pending_snapshot(record, data=None):return valid_pending_snapshot(record, data)
+
+    def snapshot(self):return deepcopy(self._pending)
 
     @property
     def transitioning(self):
@@ -67,6 +99,12 @@ class CombatEncounters:
         self._mill_origin = None
         self.transition = None
         self._entry_keys.clear()
+        self.spoils = None
+        self.post_phase = None
+        self._post_elapsed = 0.0
+        self._pending = None
+        self._victory_checkpointed = False
+        self._exiting_spoils = False
         self._music('eldenmere')
 
     def _capture_world(self):
@@ -180,11 +218,17 @@ class CombatEncounters:
 
     def update(self, seconds):
         if not self.active:return
+        if self.post_phase:
+            self._update_post_battle(seconds)
+            return
         if self.transitioning:
             self.transition.update(seconds, paused=self.scene.paused or not self.scene.focused)
             if not self.transition.active:self.transition = None
             return
         self.scene.update(seconds)
+        if self.model.phase == 'victory':
+            self._begin_victory()
+            return
         if self.scene.dismissed:self._settle()
 
     def handle_event(self, event):
@@ -193,6 +237,8 @@ class CombatEncounters:
             self._entry_keys.discard(event.key)
         elif event.type == pygame.KEYDOWN and event.key in self._entry_keys:
             return True
+        if self.post_phase:
+            return self._handle_post_event(event)
         if self.transitioning:
             if event.type == pygame.KEYDOWN:self._entry_keys.add(event.key)
             if event.type == pygame.WINDOWFOCUSLOST:self._entry_keys.clear()
@@ -206,11 +252,17 @@ class CombatEncounters:
                 self.scene._held = True
             return True
         self.scene.handle_event(event)
+        if self.model.phase == 'victory':
+            self._begin_victory()
+            return True
         if self.scene.dismissed:self._settle()
         return True
 
     def draw(self, canvas, ui_surface):
         if not self.active:return
+        if self.post_phase:
+            self._draw_post_battle(canvas, ui_surface)
+            return
         self.scene.draw(canvas, ui_surface)
         if self.transitioning:
             self.transition.draw(ui_surface)
@@ -224,8 +276,226 @@ class CombatEncounters:
                 painter.button(self.scene.resume_rect, 'Resume', disabled=not self.scene.focused)
                 painter.clip()
 
+    def _checkpoint(self):
+        store = getattr(self.game, 'save_store', None)
+        if store is not None and not store.enabled:return True
+        return bool(self.game.save_progress())
+
+    def _begin_victory(self):
+        if self._pending is not None or self.model is None or self.model.phase != 'victory':return False
+        game, model = self.game, self.model
+        hp, mp = model.player.hp, model.player.mp
+        incapacitated = hp == 0
+        if incapacitated:hp = max(1, game.attributes.value('hp')//4)
+        position = self._mill_origin if self.kind == 'mill' and self._mill_origin is not None else game.player.position
+        self._pending = {
+            'version': 1, 'kind': self.kind, 'receipt': self.receipt_id, 'stage': 'pending',
+            'rewards': self._available_rewards(model.enemy_definition['rewards']),
+            'before': {'hp': game.attributes.current_hp, 'mp': game.attributes.current_mp},
+            'resources': {'hp': hp, 'mp': mp}, 'scene': game.world.data['id'],
+            'position': list(position), 'facing': game.player.facing,
+            'incapacitated': incapacitated}
+        if not valid_pending_snapshot(self._pending):
+            self._pending = None
+            raise RuntimeError('A completed battle produced an invalid victory record')
+        self.post_phase = 'banner'
+        self._post_elapsed = 0.0
+        self.scene.dismissed = False
+        self.scene._tutorial_queue.clear()
+        self._entry_keys.clear()
+        self._victory_checkpointed = self._checkpoint()
+        music = getattr(game, 'music', None)
+        if music is not None:
+            music.set_ducked(False)
+            music.play('victory', fade_ms=0)
+        return True
+
+    def _post_error(self, message):
+        self.scene.result_error = message
+        self.spoils.set_error(message)
+        return False
+
+    def _award_spoils(self):
+        if self._pending is None or self.spoils is None:return False
+        game, record = self.game, self._pending
+        if record['stage'] == 'awarded':
+            # A failed save retries only the complete checkpoint, never a grant.
+            if not self._checkpoint():return self._post_error('Progress could not be saved. Try again.')
+            self.scene.result_error = ''
+            self.spoils.set_awarded(record['rewards'])
+            return True
+        if not self._victory_checkpointed:
+            self._victory_checkpointed = self._checkpoint()
+            if not self._victory_checkpointed:
+                return self._post_error('The victory could not be saved. Try again.')
+        resources = record['resources']
+        proposed = deepcopy(game.attributes)
+        if not proposed.set_current(hp=resources['hp'], mp=resources['mp']):
+            return self._post_error('Battle resources could not be collected. Try again.')
+        quest = game.mill_quest
+        if self.kind == 'mill':
+            proposed_quests = deepcopy(game.quests)
+            if not quest.encounter_pending or not proposed_quests.complete_objective(MILL_QUEST, 'secure_trail'):
+                return self._post_error('The encounter could not be completed. Try again.')
+        before = (game.lattice.to_dict(), game.inventory.to_dict(), game.quests.to_dict(),
+                  quest.to_dict(), set(game.social.flags))
+        reward = record['rewards']
+        if game.lattice.has_receipt(record['receipt']):
+            return self._post_error('The victory receipt is inconsistent. Try again.')
+        awards = {'caelan': reward['rp']} if reward['rp'] else {}
+        if awards or reward['drops']:
+            granted = game.lattice_progression.award_battle_rewards(record['receipt'], awards, reward['drops'])
+        else:
+            # Empty capped spoils still need a receipt. The lattice's canonical
+            # reward operation supports an empty award; progression requires a
+            # nonempty bundle because it normally also owns inventory changes.
+            proposed_lattice = deepcopy(game.lattice)
+            granted = (proposed_lattice.award_rewards(record['receipt'], {})
+                       and game.lattice.restore(proposed_lattice.to_dict()))
+        if not granted:return self._post_error('Rewards could not be collected. Try again.')
+        if self.kind == 'mill' and not quest.battle_won():
+            game.lattice.restore(before[0]);game.inventory.restore(before[1])
+            game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
+            return self._post_error('The encounter could not be completed. Try again.')
+        if not game.attributes.set_current(hp=resources['hp'], mp=resources['mp']):
+            game.lattice.restore(before[0]);game.inventory.restore(before[1])
+            game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
+            return self._post_error('Battle resources could not be collected. Try again.')
+        record['stage'] = 'awarded'
+        if not self._checkpoint():return self._post_error('Progress could not be saved. Try again.')
+        self.scene.result_error = ''
+        self.spoils.set_awarded(reward)
+        return True
+
+    def _update_post_battle(self, seconds):
+        if self.paused or not self.focused:return
+        if self.post_phase == 'banner':
+            self.scene.update(seconds)
+            self._post_elapsed += seconds
+            if self._post_elapsed >= 1.6:
+                self.spoils = SpoilsScene(self.game, self._pending['rewards'],
+                                          party=self.model.party, model=self.model)
+                self.post_phase = 'spoils_transition'
+                self._post_elapsed = 0.0
+            return
+        if self.post_phase == 'spoils_transition':
+            self._post_elapsed += seconds
+            duration = .22 if self.game.audio.reduced_motion else .36
+            if self._post_elapsed >= duration:
+                self.spoils.paused, self.spoils.focused = self.scene.paused, self.scene.focused
+                self.spoils._held = self.scene._held
+                self.post_phase = 'spoils'
+                self._post_elapsed = 0.0
+                self._award_spoils()
+            return
+        self.spoils.update(seconds)
+        if self.spoils.retry_requested:
+            self.spoils.retry_requested = False
+            self._award_spoils()
+        if self.spoils.dismissed:self._finish_spoils()
+
+    def _handle_post_event(self, event):
+        if self.post_phase != 'spoils':
+            if event.type == pygame.KEYDOWN:self._entry_keys.add(event.key)
+            if event.type == pygame.WINDOWFOCUSLOST:self._entry_keys.clear()
+            if (event.type in (pygame.WINDOWFOCUSLOST, pygame.WINDOWFOCUSGAINED, pygame.MOUSEBUTTONUP)
+                    or event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE
+                    or self.scene.paused and event.type == pygame.MOUSEBUTTONDOWN):
+                self.scene.handle_event(event)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                self.scene._held = True
+            return True
+        self.spoils.handle_event(event)
+        if self.spoils.retry_requested:
+            self.spoils.retry_requested = False
+            self._award_spoils()
+        if self.spoils.dismissed:self._finish_spoils()
+        return True
+
+    def _draw_post_battle(self, canvas, ui_surface):
+        if self.post_phase == 'spoils':
+            self.spoils.draw(canvas, ui_surface)
+            return
+        if self.post_phase == 'banner':
+            self.scene.draw(canvas, ui_surface)
+            return
+        duration = .22 if self.game.audio.reduced_motion else .36
+        progress = min(1., self._post_elapsed/duration)
+        if progress < .5:self.scene.draw(canvas, ui_surface)
+        else:self.spoils.draw(canvas, ui_surface)
+        opacity = round(255*(1-abs(2*progress-1)))
+        self.game.ui.painter(ui_surface).veil(opacity)
+        if self.scene.paused:
+            painter = self.game.ui.painter(ui_surface)
+            painter.veil(150)
+            painter.panel((124, 111, 232, 100))
+            painter.text('Battle paused', (240, 126), color=GOLD, anchor='midtop', bold=True)
+            painter.button(self.scene.resume_rect, 'Resume', disabled=not self.scene.focused)
+            painter.clip()
+
+    def _finish_spoils(self):
+        if self._pending is None or self._pending['stage'] != 'awarded' or not self.spoils.ready:return False
+        game, record = self.game, self._pending
+        game.player.position.update(record['position'])
+        game.player.facing = record['facing']
+        self._pending = None
+        self._exiting_spoils = True
+        if not self._checkpoint():
+            self._pending = record
+            self._exiting_spoils = False
+            self.spoils.dismissed = False
+            return self._post_error('Progress could not be saved. Try again.')
+        kind = self.kind
+        self._settled = True
+        self.scene = None;self.spoils = None;self.transition = None
+        self.post_phase = None;self._exiting_spoils = False
+        self._entry_keys.clear();self.kind = None;self._mill_intro_started = False
+        if kind == 'bat':self.cooldown = self.definition['respawn_seconds']
+        game.player.moving = game.player.running = False
+        game.player.walk_ms = 0.0;game._mouse_held = False
+        game.social.clear_pointer();game.camera.reset()
+        self._music('eldenmere')
+        if kind == 'mill':game.mill_quest.battle_returned('victory', recovered=record['incapacitated'])
+        return True
+
+    def restore_pending(self, record):
+        if record is None:return True
+        if not valid_pending_snapshot(record):return False
+        game = self.game
+        validation = {'player': {'scene': game.world.data['id'], 'position': record['position'],
+                                  'facing': record['facing']},
+                      'aether_lattice': game.lattice.to_dict(),
+                      'character_attributes': game.attributes.to_dict(),
+                      'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
+        if not valid_pending_snapshot(record, validation):return False
+        self._pending = deepcopy(record)
+        # begin_journey has already chosen a clear standing spot if an NPC now
+        # occupies the old return position; keep that safe landing on exit.
+        self._pending['position'] = list(game.player.position)
+        self._pending['facing'] = game.player.facing
+        self.kind, self.receipt_id = record['kind'], record['receipt']
+        self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
+        model = BattleModel(game.attributes, game.lattice.learned_abilities(),
+                            enemy_id='ridgeback_tusker' if self.kind == 'mill' else 'bat',
+                            guest_id='mira' if self.kind == 'mill' else None)
+        model.player.hp = 0 if record['incapacitated'] else record['resources']['hp']
+        model.player.mp = record['resources']['mp']
+        model.enemy.hp = 0;model.phase = 'victory'
+        model.enemy_definition['rewards'] = deepcopy(record['rewards'])
+        self.scene = BattleScene(game, model, battlefield='millrace' if self.kind == 'mill' else 'eldenmere')
+        self.spoils = SpoilsScene(game, record['rewards'], party=model.party, model=model)
+        self.post_phase = 'spoils';self._post_elapsed = 0.;self.transition = None
+        self._settled = False;self._victory_checkpointed = True;self._entry_keys.clear()
+        music = getattr(game, 'music', None)
+        if music is not None:music.stop()
+        self._award_spoils()
+        return True
+
     def _settle(self):
         if not self.active or not self.scene.model.ended or self._settled:return False
+        if self.model.phase == 'victory':
+            if self._pending is None:self._begin_victory()
+            return False
         if self.kind == 'mill':return self._settle_mill()
         game, scene, model = self.game, self.scene, self.scene.model
         # Defeat is a safe withdrawal in this first encounter: the journey still
@@ -235,17 +505,6 @@ class CombatEncounters:
             if not proposed.set_current(hp=model.player.hp, mp=model.player.mp):
                 scene.dismissed = False
                 scene.result_error = 'Could not return from battle. Try again.'
-                return False
-        if model.phase == 'victory' and not game.lattice.has_receipt(self.receipt_id):
-            reward = self._available_rewards(model.enemy_definition['rewards'])
-            # At technical storage limits, keep the room that remains; those
-            # limits must never make a completed test encounter impossible to leave.
-            awards = {'caelan': reward['rp']} if reward['rp'] else {}
-            drops = reward['drops']
-            if (awards or drops) and not game.lattice_progression.award_battle_rewards(
-                    self.receipt_id, awards, drops):
-                scene.dismissed = False
-                scene.result_error = 'Rewards could not be collected. Try again.'
                 return False
         if model.phase != 'defeat':
             # Rewards only affect RP/inventory; the already validated resource
@@ -270,6 +529,9 @@ class CombatEncounters:
         game, scene = self.game, self.scene
         model, quest = scene.model, game.mill_quest
         outcome = model.phase
+        if outcome == 'victory':
+            if self._pending is None:self._begin_victory()
+            return False
         hp, mp = model.player.hp, model.player.mp
         if outcome == 'defeat':
             # Retry the introductory encounter with viable resources. No quest
@@ -283,35 +545,9 @@ class CombatEncounters:
             scene.dismissed = False
             scene.result_error = 'Could not return from battle. Try again.'
             return False
-        if outcome == 'victory':
-            proposed_quests = deepcopy(game.quests)
-            if not quest.encounter_pending or not proposed_quests.complete_objective(MILL_QUEST, 'secure_trail'):
-                scene.dismissed = False
-                scene.result_error = 'Could not finish the encounter. Try again.'
-                return False
-            before = (game.lattice.to_dict(), game.inventory.to_dict(),
-                      game.quests.to_dict(), quest.to_dict(), set(game.social.flags))
-            reward = self._available_rewards(model.enemy_definition['rewards'])
-            awards = {'caelan': reward['rp']} if reward['rp'] else {}
-            if ((awards or reward['drops']) and not game.lattice.has_receipt(self.receipt_id)
-                    and not game.lattice_progression.award_battle_rewards(
-                        self.receipt_id, awards, reward['drops'])):
-                scene.dismissed = False
-                scene.result_error = 'Rewards could not be collected. Try again.'
-                return False
-            if not quest.battle_won():
-                game.lattice.restore(before[0]);game.inventory.restore(before[1])
-                game.quests.restore(before[2]);quest.restore(before[3])
-                game.social.flags = before[4]
-                scene.dismissed = False
-                scene.result_error = 'Could not finish the encounter. Try again.'
-                return False
         if not game.attributes.set_current(hp=hp, mp=mp):
             raise RuntimeError('Validated battle resources could not be applied')
-        if outcome != 'victory':
-            game.player.position.update(quest.upstream.data['spawn'])
-        elif self._mill_origin is not None:
-            game.player.position.update(self._mill_origin)
+        game.player.position.update(quest.upstream.data['spawn'])
         self._settled = True
         self.scene = None
         self.transition = None
@@ -323,7 +559,7 @@ class CombatEncounters:
         game._mouse_held = False
         game.social.clear_pointer()
         game.camera.reset()
-        # Commit resources, once-only rewards and the cleared path together.
+        # Defeat/withdrawal checkpoints retain the existing safe retry policy.
         game.save_progress()
         self._music('eldenmere')
         quest.battle_returned(outcome, recovered=model.player.hp <= 0)

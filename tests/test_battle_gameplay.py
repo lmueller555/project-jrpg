@@ -15,7 +15,7 @@ import pygame
 from aether_lattice import MAX_RP
 from inventory import MAX_QUANTITY
 from main import Game
-from test_mill_battle_gameplay import seed_completed_mill
+from test_mill_battle_gameplay import acknowledge_battle_result, seed_completed_mill, wait_for_spoils
 
 
 class BattleGameplayTests(unittest.TestCase):
@@ -104,9 +104,7 @@ class BattleGameplayTests(unittest.TestCase):
 
     def dismiss(self, game, scene):
         self.assertTrue(scene.model.ended)
-        game.draw()
-        self.click(game, scene.continue_rect.center)
-        game.update(0, (0, 0), False)
+        acknowledge_battle_result(game, scene)
         self.assertFalse(game.combat.active)
 
     def test_bat_is_reachable_and_only_explicit_nearby_interaction_starts_battle(self):
@@ -164,7 +162,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertFalse(game.quest_ui.journal_open)
         self.assertFalse(game.map_open)
 
-    def test_victory_settles_once_and_continue_restores_resources_and_real_rewards(self):
+    def test_victory_awards_on_spoils_and_continue_returns_with_real_rewards(self):
         game = self.game()
         scene = self.start(game)
         before = self.snapshot(game)
@@ -172,7 +170,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.finish(game, scene)
         self.assertEqual(scene.model.phase, 'victory')
         self.assertLess(scene.model.player.hp, game.attributes.current_hp)
-        self.assertEqual(self.snapshot(game), before)  # Result acknowledgement owns settlement.
+        self.assertEqual(self.snapshot(game), before)  # Rewards wait for the separate Spoils screen.
         final_hp, final_mp = scene.model.player.hp, scene.model.player.mp
         self.dismiss(game, scene)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), (final_hp, final_mp))
@@ -228,9 +226,11 @@ class BattleGameplayTests(unittest.TestCase):
         expected = scene.model.player.hp, scene.model.player.mp
         self.dismiss(game, scene)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), expected)
-        self.assertEqual(game.lattice.to_dict(), before_lattice)
+        after_lattice = game.lattice.to_dict()
+        self.assertEqual(after_lattice['characters'], before_lattice['characters'])
+        self.assertEqual(after_lattice['receipts'], sorted(before_lattice['receipts']+[receipt]))
         self.assertEqual(game.inventory.to_dict(), before_inventory)
-        self.assertFalse(game.lattice.has_receipt(receipt))
+        self.assertTrue(game.lattice.has_receipt(receipt))
         self.assertFalse(scene.result_error)
         self.assertIsNone(game.save_error)
 
@@ -258,14 +258,12 @@ class BattleGameplayTests(unittest.TestCase):
         self.finish(game, scene)
         self.assertEqual(scene.model.phase, 'victory')
         before = self.snapshot(game)
-        game.draw()
         with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
-            self.click(game, scene.continue_rect.center)
-            game.update(0, (0, 0), False)
+            spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
         self.assertIs(game.combat.scene, scene)
         self.assertFalse(scene.dismissed)
-        self.assertTrue(scene.result_error)
+        self.assertTrue(spoils.result_error)
         self.assertEqual(self.snapshot(game), before)
         self.dismiss(game, scene)
         self.assertEqual(game.lattice.state()['rp'], 20)

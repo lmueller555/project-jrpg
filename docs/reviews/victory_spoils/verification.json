@@ -1,0 +1,354 @@
+{
+  "temporary_journey_and_settings": true,
+  "normal_player_files_untouched": true,
+  "prior_quest_fixture": "Legitimate completed legacy MQ02 unlocks optional Bat; combat is played with normal starting stats and real commands, recording starts before the final attack",
+  "video_frames": 304,
+  "video_fps": 30,
+  "duration_seconds": 10.133333333333333,
+  "screenshots": [
+    "final_attack_ready.png",
+    "victory_banner.png",
+    "spoils_of_battle.png",
+    "spoils_after_fanfare_silence.png",
+    "spoils_minimum_large_text.png",
+    "returned_world.png"
+  ],
+  "phases": [
+    {
+      "time": 0.0,
+      "phase": "final_attack_ready",
+      "enemy_hp": 18
+    },
+    {
+      "time": 1.7,
+      "phase": "banner"
+    },
+    {
+      "time": 3.3,
+      "phase": "spoils_transition"
+    },
+    {
+      "time": 3.666667,
+      "phase": "spoils"
+    },
+    {
+      "time": 3.7,
+      "phase": "rewards_received_in_spoils",
+      "rewards": {
+        "rp": 20,
+        "emerald": 1
+      }
+    },
+    {
+      "time": 5.666667,
+      "phase": "fanfare_completed_no_following_music"
+    },
+    {
+      "time": 5.733333,
+      "phase": "silence_review_started"
+    },
+    {
+      "time": 8.333333,
+      "phase": "continue_returns_to_world_music"
+    }
+  ],
+  "music_requests": [
+    {
+      "time": 1.7,
+      "track": "victory"
+    },
+    {
+      "time": 8.333333,
+      "track": "eldenmere"
+    }
+  ],
+  "mixer_initial_state": {
+    "file": "assets/music/runtime/kindled_courage.ogg",
+    "position_frames": 0,
+    "playing": true,
+    "paused": false,
+    "volume": 0.0
+  },
+  "mixer_events": [
+    {
+      "time": 0.0,
+      "event": "volume",
+      "requested": 0.0,
+      "applied": 0.0
+    },
+    {
+      "time": 0.0,
+      "event": "volume",
+      "requested": 0.03333333333333333,
+      "applied": 0.03125
+    },
+    {
+      "time": 0.033333,
+      "event": "volume",
+      "requested": 0.06666666666666667,
+      "applied": 0.0625
+    },
+    {
+      "time": 0.066667,
+      "event": "volume",
+      "requested": 0.09999999999999999,
+      "applied": 0.09375
+    },
+    {
+      "time": 0.1,
+      "event": "volume",
+      "requested": 0.13333333333333328,
+      "applied": 0.1328125
+    },
+    {
+      "time": 0.133333,
+      "event": "volume",
+      "requested": 0.1666666666666666,
+      "applied": 0.1640625
+    },
+    {
+      "time": 0.166667,
+      "event": "volume",
+      "requested": 0.19999999999999996,
+      "applied": 0.1953125
+    },
+    {
+      "time": 0.2,
+      "event": "volume",
+      "requested": 0.23333333333333328,
+      "applied": 0.2265625
+    },
+    {
+      "time": 0.233333,
+      "event": "volume",
+      "requested": 0.2666666666666666,
+      "applied": 0.265625
+    },
+    {
+      "time": 0.266667,
+      "event": "volume",
+      "requested": 0.29999999999999993,
+      "applied": 0.296875
+    },
+    {
+      "time": 0.3,
+      "event": "volume",
+      "requested": 0.3333333333333332,
+      "applied": 0.328125
+    },
+    {
+      "time": 0.333333,
+      "event": "volume",
+      "requested": 0.3666666666666666,
+      "applied": 0.359375
+    },
+    {
+      "time": 0.366667,
+      "event": "volume",
+      "requested": 0.3999999999999999,
+      "applied": 0.3984375
+    },
+    {
+      "time": 0.4,
+      "event": "volume",
+      "requested": 0.4333333333333333,
+      "applied": 0.4296875
+    },
+    {
+      "time": 0.433333,
+      "event": "volume",
+      "requested": 0.45,
+      "applied": 0.4453125
+    },
+    {
+      "time": 1.7,
+      "event": "stop"
+    },
+    {
+      "time": 1.7,
+      "event": "load",
+      "file": "assets/music/runtime/triumphal_fanfare.ogg"
+    },
+    {
+      "time": 1.7,
+      "event": "volume",
+      "requested": 0.45,
+      "applied": 0.4453125
+    },
+    {
+      "time": 1.7,
+      "event": "play",
+      "file": "assets/music/runtime/triumphal_fanfare.ogg",
+      "loops": 0,
+      "start": 0.0
+    },
+    {
+      "time": 1.733333,
+      "event": "volume",
+      "requested": 0.45,
+      "applied": 0.4453125
+    },
+    {
+      "time": 5.7135,
+      "event": "decoded_source_end",
+      "file": "assets/music/runtime/triumphal_fanfare.ogg"
+    },
+    {
+      "time": 8.333333,
+      "event": "stop"
+    },
+    {
+      "time": 8.333333,
+      "event": "load",
+      "file": "assets/music/runtime/eldenmere_theme.ogg"
+    },
+    {
+      "time": 8.333333,
+      "event": "volume",
+      "requested": 0.0,
+      "applied": 0.0
+    },
+    {
+      "time": 8.333333,
+      "event": "play",
+      "file": "assets/music/runtime/eldenmere_theme.ogg",
+      "loops": -1,
+      "start": 0.0
+    },
+    {
+      "time": 8.333333,
+      "event": "volume",
+      "requested": 0.0,
+      "applied": 0.0
+    },
+    {
+      "time": 8.333333,
+      "event": "volume",
+      "requested": 0.03333333333333333,
+      "applied": 0.03125
+    },
+    {
+      "time": 8.366667,
+      "event": "volume",
+      "requested": 0.06666666666666667,
+      "applied": 0.0625
+    },
+    {
+      "time": 8.4,
+      "event": "volume",
+      "requested": 0.09999999999999999,
+      "applied": 0.09375
+    },
+    {
+      "time": 8.433333,
+      "event": "volume",
+      "requested": 0.13333333333333328,
+      "applied": 0.1328125
+    },
+    {
+      "time": 8.466667,
+      "event": "volume",
+      "requested": 0.1666666666666666,
+      "applied": 0.1640625
+    },
+    {
+      "time": 8.5,
+      "event": "volume",
+      "requested": 0.19999999999999996,
+      "applied": 0.1953125
+    },
+    {
+      "time": 8.533333,
+      "event": "volume",
+      "requested": 0.23333333333333328,
+      "applied": 0.2265625
+    },
+    {
+      "time": 8.566667,
+      "event": "volume",
+      "requested": 0.2666666666666666,
+      "applied": 0.265625
+    },
+    {
+      "time": 8.6,
+      "event": "volume",
+      "requested": 0.29999999999999993,
+      "applied": 0.296875
+    },
+    {
+      "time": 8.633333,
+      "event": "volume",
+      "requested": 0.3333333333333332,
+      "applied": 0.328125
+    },
+    {
+      "time": 8.666667,
+      "event": "volume",
+      "requested": 0.3666666666666666,
+      "applied": 0.359375
+    },
+    {
+      "time": 8.7,
+      "event": "volume",
+      "requested": 0.3999999999999999,
+      "applied": 0.3984375
+    },
+    {
+      "time": 8.733333,
+      "event": "volume",
+      "requested": 0.4333333333333333,
+      "applied": 0.4296875
+    },
+    {
+      "time": 8.766667,
+      "event": "volume",
+      "requested": 0.45,
+      "applied": 0.4453125
+    }
+  ],
+  "fanfare_plays": 1,
+  "fanfare_loop_count": 0,
+  "controller_observed_natural_eof": true,
+  "controller_completed_at": 5.666666666666667,
+  "decoded_fanfare_end_seconds": 5.713499999999847,
+  "silent_spoils_seconds": 2.6,
+  "no_music_during_silent_spoils": true,
+  "reward_before": {
+    "rp": 0,
+    "emerald": 0
+  },
+  "reward_after": {
+    "rp": 20,
+    "emerald": 1
+  },
+  "rewards_awarded_before_continue": true,
+  "continue_did_not_award_again": true,
+  "no_in_battle_reward_text": true,
+  "banner_text": [
+    "Bat",
+    "Bat",
+    "Eldenmere",
+    "Eldenmere",
+    "19",
+    "19",
+    "VICTORY"
+  ],
+  "spoils_text": [
+    "Spoils of Battle",
+    "Resonance Points (RP)",
+    "Caelan",
+    "+20 RP",
+    "Items",
+    "Aether Emerald",
+    "\u00d71",
+    "Rewards received.",
+    "Continue"
+  ],
+  "source_audio": {
+    "assets/music/runtime/eldenmere_theme.ogg": "8da4b81c76da788944a21d7c5035443f56cea85db9e6e745898f68ad61688657",
+    "assets/music/runtime/kindled_courage.ogg": "bded4775581ea8f01ac58e990bb56afd74a39028e3833eeca399ad3f1f9e856b",
+    "assets/music/runtime/triumphal_fanfare.ogg": "4b0822bf945bc344172785242d6a02504b4d67396b307b547de66d4e46c99e13"
+  },
+  "soundtrack": "Offline reconstruction from exact runtime OGGs and observed production mixer commands; not hardware loopback. One-shot source stops at its natural end. Effects muted.",
+  "game_integration": true
+}

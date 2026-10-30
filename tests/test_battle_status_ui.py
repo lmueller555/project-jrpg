@@ -227,8 +227,7 @@ class BattleStatusUITests(unittest.TestCase):
             self.assertFalse(self.scene.continue_rect.colliderect(self.scene.hp_rect))
             self.assertFalse(self.scene.continue_rect.colliderect(self.scene.mp_rect))
 
-        # A compact result block must still show the complete reward, including
-        # the crystal name and quantity, rather than clipping wrapped lines.
+        # Victory is a banner; rewards belong to the separate Spoils screen.
         self.make_scene()
         self.scene.update(20)
         self.model.enemy.hp = 1
@@ -237,9 +236,9 @@ class BattleStatusUITests(unittest.TestCase):
         self.assertEqual(self.model.phase, 'victory')
         records = self.text_bounds()
         visible = ' '.join(text for text, _ in records)
-        for word in ('20', 'RP', 'Aether', 'Emerald'):
-            self.assertIn(word, visible)
-        self.assertRegex(visible, r'×\s*1')
+        self.assertIn('VICTORY', visible)
+        for word in ('RP', 'Aether', 'Emerald', 'Continue'):
+            self.assertNotIn(word, visible)
         for text, rect in records:
             self.assertTrue(self.canvas.get_rect().contains(rect), (text, rect))
 

@@ -46,9 +46,13 @@ through Eldenmere, its interiors and the millrace, continuing across New Game,
 Continue and area transfers. **Kindled Courage** plays in battles. During MQ02,
 it starts when Mira says “Easy, Caelan. Back slowly. Keep your feet under you,”
 then continues through a brief world-to-battle curtain and reveal. Reduced
-Motion uses a short plain fade. The Music slider controls the soundtrack
-independently of effects. See the [music assets](assets/music/README.md) and
-[music/transition preview](docs/reviews/battle_music_transition/README.md).
+Motion uses a short plain fade. Victories play **Triumphal Fanfare** once and
+show a victory banner before opening **Spoils of Battle**, where RP and items
+are awarded. After the fanfare ends, Spoils stays silent until Continue returns
+to the world theme. Victory checkpoints survive quitting without losing or
+duplicating rewards. The Music slider controls the soundtrack independently of effects. See the [music assets](assets/music/README.md) and
+[music/transition preview](docs/reviews/battle_music_transition/README.md) and
+[victory/Spoils review](docs/reviews/victory_spoils/README.md).
 
 | Control | Action |
 | --- | --- |

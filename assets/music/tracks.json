@@ -8,6 +8,11 @@
     "battle": {
       "file": "runtime/kindled_courage.ogg",
       "gain": 0.45
+    },
+    "victory": {
+      "file": "runtime/triumphal_fanfare.ogg",
+      "gain": 0.45,
+      "loop": false
     }
   }
 }

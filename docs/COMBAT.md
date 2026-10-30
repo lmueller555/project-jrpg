@@ -58,8 +58,8 @@ pause the transition; resizing and fullscreen changes preserve its progress.
 Music continues during ATB decisions and gently lowers beneath dialogue and
 Mira's tutorial. Explicit battle pause and window focus loss pause the score
 without rewinding it. Volume and mute changes apply immediately through the
-existing Music preference. Successful return from victory, Flee or defeat
-restores the Eldenmere theme; failed reward settlement keeps the battle score.
+existing Music preference. Exiting Spoils, or returning from Flee or defeat, restores the Eldenmere theme.
+Victory uses its one-shot fanfare and then silence, including reward retries.
 Environmental and UI effects retain their independent volume and channels.
 
 The original uploads remain in `assets/music/`; supported Vorbis playback copies
@@ -121,7 +121,7 @@ the space beneath the party row. See the
 | Click a ready row / Tab | Select another ready party member |
 | Arrows + Enter/Space | Select and commit a command |
 | Escape | Pause/resume the battle |
-| Continue on a result | Return to exploration; failed mill attempts return to the safe approach |
+| Continue on Spoils / a non-victory result | Return to exploration; failed mill attempts return to the safe approach |
 | F11 | Toggle fullscreen |
 
 Losing window focus pauses battle time and input. Regaining focus leaves it
@@ -175,8 +175,8 @@ A visible Tusker and damaged tree mark the actual upstream approach. Mira
 carries her spear from the workbench, sets it aside during intake work and
 takes it up for the return. See the [actual MQ02 review](reviews/mill_combat/README.md).
 
-Victory grants Caelan 30 RP and one Aether Emerald once, and commits the cleared
-trail with remaining resources before the linear aftermath. The intake remains
+Victory grants Caelan 30 RP and one Aether Emerald once on Spoils, and commits
+the cleared trail with remaining resources before its Continue opens the linear aftermath. The intake remains
 blocked until the existing repair. If Mira wins while Caelan is incapacitated,
 first aid restores him to 25% maximum HP before the recovery exchange. Flee
 returns to the safe approach without rewards or encounter completion. Defeat
@@ -213,25 +213,45 @@ Bite as the free fallback. At starting attributes, Caelan's Attack deals about
 Enemy HP and MP have independent structural bounds; future bosses can exceed
 party resource caps without changing the damage calculation.
 
+## Victory and Spoils of Battle
+
+When the final enemy is defeated, combat shows a centered **VICTORY** banner
+and immediately replaces Kindled Courage with the user-supplied **Triumphal
+Fanfare**. The fanfare plays once. The banner leads through a brief fade into a
+separate **Spoils of Battle** screen; reward amounts and a victory Continue
+button no longer appear in the battlefield.
+
+Spoils awards the encounter's actual Resonance Points and items on entry.
+Resonance Points are the game's existing battle-experience progression; this
+change does not introduce a second EXP system. The Bat grants 20 RP and one
+Aether Emerald; MQ02's Tusker grants 30 RP and one Aether Emerald. Displayed
+amounts reflect available RP/inventory capacity. The screen shows authoritative
+received amounts, and Continue becomes available after the award checkpoint
+succeeds. A failed grant or save leaves a Retry action on Spoils.
+
+The fanfare may finish while Spoils is open. No music follows it, and volume,
+focus or repeated updates cannot replay it. Eldenmere Theme resumes only when
+the player exits Spoils. World clocks remain frozen during the banner, fade and
+Spoils; keyboard, mouse, focus, pause, scrolling and enlarged text remain usable.
+
 ## Outcomes and checkpoints
 
-Victory grants **20 Resonance Points and one Aether Emerald** on Continue.
-This uses the existing atomic lattice reward operation with a unique receipt
-for the encounter attempt. Resource changes and the reward checkpoint are saved
-together; repeated confirmation cannot award twice. Rewards displayed before
-return reflect available room at technical RP/inventory storage limits.
+Victory saves a durable pending reward before presenting Spoils. Resources,
+once-only reward receipt, and MQ02's cleared-encounter milestone are committed
+together when Spoils awards the result. Continue leaves the review screen and
+returns to exploration; Mira's linear aftermath begins only then.
 
-Victory and Flee retain the battle's remaining HP/MP, without refilling them.
-Flee grants no rewards. Defeat returns with the pre-battle resources in this
-prototype, allowing combat review without losing story progress. The Bat
-reappears after four seconds in the exploration world for another test.
+Quitting during the victory banner, the fade or Spoils resumes directly at
+Spoils in silence. A pending grant is completed once; an already received grant
+is displayed without being awarded again. Presentation clocks and partial
+battles are never serialized. Failed writes can be retried without duplicating
+items or progression. Older journeys without a post-battle checkpoint still load.
 
-Battle HP/MP are copies until return. Quitting an unfinished encounter saves
-the pre-battle journey rather than a partial fight. No interrupted battle is
-resumed on Continue. A reward validation failure keeps the result open for a
-retry with live resources, inventory and progression unchanged. A disk-write
-failure after a successful settlement uses the game's existing live-state save
-retry and error notice; it does not apply rewards again.
+Victory retains remaining HP/MP, with the existing MQ02 first aid if Mira wins
+while Caelan is incapacitated. Flee grants no rewards and keeps its existing
+safe return. Defeat also keeps its existing retry checkpoint. Neither Flee nor
+defeat opens Spoils or plays the victory fanfare. The Bat returns after its
+normal four-second exploration cooldown.
 
 ## Code and art
 
@@ -243,8 +263,10 @@ retry and error notice; it does not apply rewards again.
   panorama, transparent grass accent and source metadata. The retained
   [generated artwork](../assets/source/combat/eldenmere_README.md) is exported
   by [`tools/build_eldenmere_battlefield.py`](../tools/build_eldenmere_battlefield.py).
-- [`world_encounters.py`](../world_encounters.py): visible Bat, entry guards,
-  resource/reward settlement, return and cooldown.
+- [`world_encounters.py`](../world_encounters.py): encounter entry, victory flow,
+  atomic reward checkpoints, return and cooldown.
+- [`spoils_scene.py`](../spoils_scene.py): dedicated reward review and retry UI.
+- [`post_battle.py`](../post_battle.py): durable victory checkpoint validation.
 - [`assets/combat/actions.json`](../assets/combat/actions.json) and
   [`enemies.json`](../assets/combat/enemies.json): validated action/enemy data.
 - [`assets/combat/encounter.json`](../assets/combat/encounter.json): world placement.

@@ -35,9 +35,12 @@ notes are optional; you can add the audio on its own.
 | --- | --- | --- |
 | `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title and Eldenmere/millrace exploration |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it during Mira's warning to back away |
+| `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
 
 [`tracks.json`](tracks.json) identifies the approved runtime files and their
-mix levels. New uploads remain available for review until assigned to playback.
+mix levels. `loop: false` marks the victory fanfare as a one-shot; the world
+and battle cues use the default repeating playback. New uploads remain
+available for review until assigned to playback.
 
 The original uploads are preserved unchanged. Their M4A containers contain
 48 kHz stereo Opus audio. This Pygame build needs Ogg Vorbis runtime copies, so
@@ -49,7 +52,8 @@ only 1.1485 seconds of the final near-silent tail, retaining 25 ms after the las
 5 ms RMS block above -60 dBFS. Five-millisecond de-clicks at its quiet boundaries
 avoid clicks. Its runtime duration is 188.825 seconds. Both cues repeat as
 authored; these exports do not claim a sample-accurate musical loop or recreate
-missing musical transitions.
+missing musical transitions. The fanfare keeps its full natural ending and is
+not repeated, faded out early or trimmed into a loop.
 
 ## Rebuild runtime exports
 
@@ -60,7 +64,8 @@ installed:
 python tools/build_runtime_music.py
 ```
 
-The builder checks the original upload hashes, exports both files, verifies
-their full decoded frame counts and Pygame streaming/repeat support, and writes
+The builder checks the original upload hashes, exports all assigned files,
+verifies their full decoded frame counts and Pygame streaming/repeat or one-shot
+support, and writes
 [`runtime/provenance.json`](runtime/provenance.json). The game plays the
 pre-rendered files and does not need FFmpeg or NumPy installed.

@@ -77,6 +77,32 @@ def seed_completed_mill(game):
     assert game.save_progress()
 
 
+def wait_for_spoils(game, limit=200):
+    """Let the production banner and transition reach the reward screen."""
+    for _ in range(limit):
+        spoils = getattr(game.combat, 'spoils', None)
+        if (spoils is not None and game.combat.post_phase == 'spoils'
+                and (spoils.awarded or spoils.result_error)):
+            return spoils
+        game.update(.05, (0, 0), False)
+    raise AssertionError('Victory did not reach Spoils of Battle')
+
+
+def acknowledge_battle_result(game, scene):
+    """Use the appropriate real result screen, including an explicit retry."""
+    if scene.model.phase == 'victory':
+        spoils = wait_for_spoils(game)
+        if spoils.result_error:
+            game.draw();click(game, spoils.retry_rect.center)
+            game.update(0, (0, 0), False)
+            assert spoils.awarded and not spoils.result_error
+        game.draw();click(game, spoils.continue_rect.center)
+    else:
+        game.draw();click(game, scene.continue_rect.center)
+    game.update(0, (0, 0), False)
+    assert not game.combat.active
+
+
 def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=True,
                        on_step=None):
     """Use actual tutorial acknowledgement and mouse command/result input."""
@@ -91,9 +117,7 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
             key(game, pygame.K_SPACE)
         elif scene.model.ended:
             if dismiss:
-                game.draw();click(game, scene.continue_rect.center)
-                game.update(0, (0, 0), False)
-                assert not game.combat.active
+                acknowledge_battle_result(game, scene)
                 if read_aftermath:read_social(game)
             return scene
         elif scene.model.waiting_for_player:
@@ -257,7 +281,7 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.assertEqual(scene.model.phase, 'victory')
         self.assertFalse(c.encounter_cleared)
         expected = scene.model.enemy_definition['rewards']
-        game.draw();click(game, scene.continue_rect.center)
+        acknowledge_battle_result(game, scene)
         self.assertTrue(c.encounter_cleared)
         self.assertFalse(c.aftermath_done)
         self.assertFalse(game.social.choosing)
@@ -282,11 +306,10 @@ class MillBattleGameplayTests(unittest.TestCase):
         scene = self.start();game = self.game
         finish_mill_battle(game, dismiss=False)
         before = self.snapshot()
-        game.draw()
         with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
-            click(game, scene.continue_rect.center)
+            spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
-        self.assertTrue(scene.result_error)
+        self.assertTrue(spoils.result_error)
         self.assertEqual(self.snapshot(), before)
         finish_mill_battle(game)
         self.assertTrue(game.mill_quest.encounter_cleared)
@@ -294,7 +317,7 @@ class MillBattleGameplayTests(unittest.TestCase):
     def test_unread_aftermath_survives_reload_without_repeating_the_battle_or_reward(self):
         scene = self.start();game = self.game
         finish_mill_battle(game, dismiss=False)
-        game.draw();click(game, scene.continue_rect.center)
+        acknowledge_battle_result(game, scene)
         self.assertTrue(game.mill_quest.encounter_cleared)
         self.assertFalse(game.mill_quest.aftermath_done)
         committed = game.lattice.to_dict(), game.inventory.to_dict()

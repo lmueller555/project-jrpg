@@ -115,7 +115,14 @@ class Capture:
                 assert not game.mill_quest.encounter_cleared and not game.mill_quest.restored
                 self.frame(900, 'victory.png')
                 if dismiss:
-                    click(game, scene.continue_rect.center)
+                    for entry_tick in range(600):
+                        if (game.combat.post_phase == 'spoils' and
+                                game.combat.spoils.awarded):break
+                        game.update(1/30, (0, 0), False)
+                        if entry_tick % 3 == 0:self.frame(100)
+                    else:raise AssertionError('The real Spoils award did not finish')
+                    self.frame(900, 'spoils_of_battle.png')
+                    click(game, game.combat.spoils.continue_rect.center)
                     assert not game.combat.active
                     assert game.mill_quest.encounter_cleared
                     assert not game.mill_quest.aftermath_done

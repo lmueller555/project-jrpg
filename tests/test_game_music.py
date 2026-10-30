@@ -16,6 +16,7 @@ from game_music import GameMusic
 CATALOG = {'version': 1, 'tracks': {
     'eldenmere': {'file': 'runtime/eldenmere_theme.ogg', 'gain': .45},
     'battle': {'file': 'runtime/kindled_courage.ogg', 'gain': .6},
+    'victory': {'file': 'runtime/triumphal_fanfare.ogg', 'gain': .45, 'loop': False},
 }}
 
 
@@ -266,6 +267,90 @@ class SoundtrackTests(unittest.TestCase):
         self.assertEqual(stream.stops, stopped)
         self.assertEqual(second.current_track, 'battle')
         self.assertTrue(second.playing)
+
+    def test_victory_interrupts_battle_once_then_stays_silent_after_eof(self):
+        game, music, stream = self.make_music()
+        music.play('battle', fade_ms=0)
+        music.play('victory', fade_ms=0)
+        self.assertEqual(stream.plays, [-1, 0])
+        self.assertEqual(music.current_track, 'victory')
+        self.assertTrue(music.playing)
+        stream.busy = False  # SDL_mixer reports the natural one-shot ending.
+        music.update(.1)
+        self.assertTrue(music.completed)
+        self.assertFalse(music.playing)
+        self.assertEqual((music.current_track, music.desired_track), ('victory', 'victory'))
+        loads, pauses, unpauses = len(stream.loads), stream.pauses, stream.unpauses
+        for _ in range(3):
+            music.play('victory', fade_ms=0)
+            game.audio.set_music(.5)
+            game.audio.toggle_music()
+            game.audio.toggle_music()
+            music.set_paused(True)
+            music.set_paused(False)
+            music.set_ducked(True)
+            music.update(10)
+        self.assertEqual(stream.plays, [-1, 0])
+        self.assertEqual(len(stream.loads), loads)
+        self.assertEqual((stream.pauses, stream.unpauses), (pauses, unpauses))
+        self.assertEqual(music.desired_track, 'victory')
+
+    def test_pausing_a_fanfare_is_not_mistaken_for_natural_completion(self):
+        game, music, stream = self.make_music()
+        music.play('victory', fade_ms=0)
+        music.set_paused(True)
+        self.assertFalse(stream.get_busy())
+        music.update(20)
+        self.assertFalse(music.completed)
+        music.set_paused(False)
+        self.assertTrue(music.playing)
+        self.assertEqual(stream.plays, [0])
+        self.assertEqual(stream.unpauses, 1)
+        stream.busy = False
+        self.assertTrue(music.completed)
+
+    def test_muting_an_unfinished_fanfare_retains_its_playback_position(self):
+        game, music, stream = self.make_music()
+        music.play('victory', fade_ms=0)
+        game.audio.set_music(0)
+        music.update(10)
+        self.assertFalse(music.completed)
+        self.assertFalse(music.playing)
+        game.audio.set_music(.8)
+        self.assertTrue(music.playing)
+        self.assertEqual(stream.plays, [0])
+        self.assertAlmostEqual(stream.volume, .36)
+
+    def test_leaving_finished_fanfare_starts_world_music_without_a_silent_out_fade(self):
+        game, music, stream = self.make_music()
+        music.play('victory', fade_ms=0)
+        stream.busy = False
+        self.assertTrue(music.completed)
+        music.play('eldenmere', fade_ms=400)
+        self.assertEqual(music.current_track, 'eldenmere')
+        self.assertFalse(music.completed)
+        self.assertEqual(stream.plays, [0, -1])
+        music.update(.4)
+        self.assertAlmostEqual(stream.volume, .45)
+
+    def test_another_battle_can_play_a_new_fanfare_after_leaving_spoils(self):
+        game, music, stream = self.make_music()
+        music.play('victory', fade_ms=0)
+        stream.busy = False
+        music.update(.1)
+        music.play('eldenmere', fade_ms=0)
+        music.play('battle', fade_ms=0)
+        music.play('victory', fade_ms=0)
+        self.assertEqual(stream.plays, [0, -1, -1, 0])
+        self.assertFalse(music.completed)
+        self.assertTrue(music.playing)
+
+    def test_repeat_metadata_requires_a_real_boolean(self):
+        bad = GameMusic(SimpleNamespace(audio=AudioSettings()),
+                        catalog={'version': 1, 'tracks': {'bad': {'file': 'bad.ogg', 'loop': 0}}},
+                        mixer=FakeMixer())
+        self.assertFalse(bad.play('bad'))
+        self.assertEqual(bad.tracks, {})
 
 
 if __name__ == '__main__':
