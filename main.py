@@ -868,6 +868,20 @@ class Game:
                 self.social.clear_pointer()
                 self.pause.open()
                 continue
+            if self.mill_quest.encounter_cutscene_active:
+                if not self.social.active:
+                    # Pans own the scene, while the ordinary pause menu remains
+                    # available to mouse users as well as through Escape.
+                    if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
+                        point=self.to_canvas(event.pos)
+                        if point is not None and self._hud_menu_rect().collidepoint(point):
+                            self.social.clear_pointer()
+                            self.pause.open()
+                            self.ui.sound('confirm')
+                    continue
+                if (event.type==pygame.KEYDOWN and
+                        event.key in (pygame.K_i,pygame.K_m,pygame.K_j)):
+                    continue
             if event.type==pygame.MOUSEMOTION:
                 self.social.pointer(self.to_canvas(event.pos),pressed=self._mouse_held)
             if (not self.social.locked and not self.opening.locks_player
@@ -926,6 +940,10 @@ class Game:
             self.opening_audio.set_paused(True)
             self.combat.update(seconds)
             return
+        if (not self._music_focused and self.world is self.mill_quest.upstream and
+                (self.mill_quest.encounter_cutscene_active or self.mill_quest.encounter_pending)):
+            self.opening_audio.set_paused(True)
+            return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open)
         if self.pause.is_open or self.inventory_ui.is_open:
             if self.pause.is_open:self.pause.update(seconds)
@@ -961,7 +979,13 @@ class Game:
             if self.world.data.get('kind')=='interior' and self.opening.stage in ('explore','assignment','done'):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
-        for visit in self.household_visits:visit.update(seconds)
+        for visit in self.household_visits:
+            visit.update(seconds)
+            if self.combat.active:
+                # The mill cutscene starts its fight only after its return pan.
+                # Keep that captured shot fixed as soon as battle takes over.
+                self.opening_audio.set_paused(True)
+                return
         for scene in self.scenes.values():
             blocker=scene.probe_rect(self.player.position) if scene is self.world else None
             for npc in scene.npcs:

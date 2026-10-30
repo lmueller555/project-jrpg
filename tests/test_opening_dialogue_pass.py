@@ -86,7 +86,8 @@ class OpeningDialogueDriver:
             if predicate():return
             if getattr(getattr(self.g, 'combat', None), 'active', False):
                 finish_mill_battle(self.g, read_aftermath=False)
-            if read and self.g.social.locked:self.read()
+            if read and (self.g.social.locked or getattr(
+                    getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)):self.read()
             self.tick()
         raise AssertionError(('Timeout', self.g.world.data['id'], tuple(self.g.player.position),
                               self.g.opening.stage, self.g.social.script_identifier))
@@ -118,10 +119,13 @@ class OpeningDialogueDriver:
 
     def read(self):
         for _ in range(1000):
-            if not self.g.social.locked:return
+            if getattr(getattr(self.g, 'combat', None), 'active', False):return
+            cutscene = getattr(getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)
+            if not self.g.social.locked and not cutscene:return
             if not self.g.social.active:self.tick(.02);continue
             if self.g.social.choosing:return
             self.record_page();self.key(pygame.K_SPACE)
+            if cutscene:self.tick(.02)
         raise AssertionError(('Unread conversation', self.identifier()))
 
     def walk(self, goal, destination=None, read=True, *, return_if_blocked=False):
@@ -147,7 +151,8 @@ class OpeningDialogueDriver:
                     if self.g.world is not world:
                         assert self.g.world.data['id'] == destination
                         return
-                    if self.g.social.locked:
+                    if (self.g.social.locked or getattr(
+                            getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)):
                         if not read:return
                         self.read()
                         if self.g.social.choosing:return

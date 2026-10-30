@@ -99,8 +99,12 @@ control. Both chairs use permanent positions in the source room, runtime map
 and collision masks; no scene action moves furniture. Action queues and dialogue
 completion barriers prevent quick reading from omitting a required gesture.
 
-`camera_director.py` follows Caelan with the full 480×320 world viewport, including
-through dialogue, and eases tracking over approximately 0.35 seconds. Opening a
+`camera_director.py` normally follows Caelan with the full 480×320 world viewport,
+including through live dialogue, and eases tracking over approximately 0.35 seconds.
+Its explicit scripted focus/return API also supports MQ02's millrace cutscene:
+the party stops, a bounded shot holds the boar, and the camera returns before
+music and battle start. That scoped sequence uses fixed bottom/top dialogue
+panels; ordinary conversations keep their existing behavior. Opening an ordinary
 bubble does not change the shot or reserve a separate text-panel area. Bedroom
 inspections, the breakfast invitation and the accepted-quest exchange are live;
 the authored bed, guided walk and chair/meal actions still control his body.

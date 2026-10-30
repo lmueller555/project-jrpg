@@ -55,3 +55,12 @@ controls in addition to their existing keyboard shortcuts.
 Navigation, confirmation and back sounds are quiet and follow the effects
 volume. UI animation does not delay input, and reduced-motion mode preserves
 immediate interaction.
+
+## Scripted millrace dialogue
+
+MQ02's arrival cutscene keeps the full world viewport while temporarily owning
+actor movement and camera shots. The boar shot uses a fixed bottom portrait
+panel; the returning party shot uses a top panel to keep both characters visible
+near the map edge. Neither panel draws a speech tail toward an offscreen actor.
+Pagination, text scaling and response input use the existing dialogue system.
+Normal conversations retain their live speaker-anchored bubbles.

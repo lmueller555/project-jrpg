@@ -50,6 +50,10 @@ class MillQuest:
         self._return_dialogue = None
         self._encounter_callback = None
         self._encounter_music_started = False
+        self._encounter_phase = None
+        self._encounter_elapsed = 0.0
+        self._encounter_warning_acknowledged = False
+        self._encounter_auto_armed = True
         self._aftermath_recovered = False
         self.cast = read('poses/animation.json')
         sheet = self.town.image(ART+'poses/poses.png')
@@ -77,7 +81,13 @@ class MillQuest:
     @property
     def mill_restored(self):return self.restored
     @property
-    def locks_player(self):return self.action is not None
+    def locks_player(self):return self.action is not None or self.encounter_cutscene_active
+    @property
+    def encounter_cutscene_active(self):return getattr(self, '_encounter_phase', None) is not None
+    @property
+    def encounter_cutscene_phase(self):return getattr(self, '_encounter_phase', None)
+    @property
+    def encounter_camera_returning(self):return self.encounter_cutscene_phase == 'pan_back'
     @property
     def combat_unlocked(self):return self.encounter_cleared or self.legacy_bypass
     @property
@@ -94,20 +104,22 @@ class MillQuest:
         return (self.active and self._done('diagnose_mill') and self.warned
                 and not self.combat_unlocked)
     def _at_encounter_approach(self):
-        # The bank is open ground, so both the road and the direct eastern
-        # approach must encounter the threat before reaching the intake.
-        return pygame.Rect(self.layout.get('combat_trigger', (16, 16, 516, 368))).collidepoint(
-            self.game.player.position)
+        # The encounter now belongs to arrival, before the player walks up the
+        # bank. Keep this query for interaction/owner compatibility.
+        return self.game.world is self.upstream
     @property
     def encounter_ready(self):
         game = self.game
         return (self.encounter_pending and game.world is self.upstream
-                and self._at_encounter_approach() and self._with_mira()
+                and getattr(self, '_encounter_auto_armed', True)
+                and self.encounter_cutscene_phase in (None, 'arrival') and self._with_mira()
                 and not self.action and not game.social.locked and not self.dialogue
                 and not game.pause.is_open and not game.inventory_ui.is_open
                 and not game.quest_ui.journal_open and not game.map_open
                 and not game.opening.locks_player and not game.opening_fade
                 and not game.transfer_cooldown
+                and not game.on_title and game.attributes.current_hp > 0
+                and not any(visit.locks_player for visit in game.household_visits if visit is not self)
                 and not getattr(getattr(game, 'combat', None), 'active', False))
     @property
     def stage(self):
@@ -201,6 +213,7 @@ class MillQuest:
 
     def restore(self, data=None):
         if data is not None and not self.valid_snapshot(data):return False
+        self._cancel_encounter()
         old_upstream = (data is not None and data.get('version') == 1
                         and 'intake' not in data['inspected']
                         and self.active and self.game.world is self.upstream)
@@ -210,6 +223,10 @@ class MillQuest:
         self._player_route = None
         self._return_dialogue = None;self._encounter_callback = None
         self._encounter_music_started = False
+        self._encounter_phase = None
+        self._encounter_elapsed = 0.0
+        self._encounter_warning_acknowledged = False
+        self._encounter_auto_armed = True
         self._aftermath_recovered = False
         self.inspected = set(data['inspected']) if data else set()
         if data:
@@ -226,7 +243,7 @@ class MillQuest:
         self.mira.end_conversation();self.mira.quest_mode = self.active
         self.mira.story_following = self.active;self.mira.moving = False
         self._returning = False
-        if old_upstream:
+        if old_upstream or self.encounter_pending and self.game.world is self.upstream:
             # Old pre-intake checkpoints may stand beyond the new approach.
             # Rejoin that safe approach rather than strand the new objective.
             self.game.player.position.update(self.upstream.data['spawn'])
@@ -310,14 +327,10 @@ class MillQuest:
             self.dialogue = None;self.mira.end_conversation()
             if identifier == 'mill_repair_done':self.release_pose()
             if identifier == 'mill_encounter_intro':
-                self._encounter_callback = None
-                if self._encounter_music_started:
-                    self._encounter_music_started = False
-                    music = getattr(self.game, 'music', None)
-                    if music is not None:music.play('eldenmere')
+                self._cancel_encounter()
 
     def can_speak(self, identifier):
-        if identifier in ('mira_worker', 'halden') and self.action:return False
+        if identifier in ('mira_worker', 'halden') and (self.action or self.encounter_cutscene_active):return False
         return True
 
     def marker_for(self, identifier):
@@ -327,6 +340,7 @@ class MillQuest:
         return NotImplemented
 
     def try_conversation(self, actor):
+        if self.encounter_cutscene_active:return False
         if actor is self.mira:
             status = self.game.quests.status(MILL_QUEST)
             if status == 'available':return self._speak('reunion', self._recruit)
@@ -390,7 +404,7 @@ class MillQuest:
         return None
 
     def interact(self):
-        if self.game.social.locked:return False
+        if self.game.social.locked or self.encounter_cutscene_active:return False
         target = self._target()
         if target is None:
             if (self.game.quests.status(MILL_QUEST) == 'available' and self.mira in self.game.world.npcs
@@ -440,41 +454,126 @@ class MillQuest:
         return not self.active or self.warned or self.legacy_bypass
 
     def begin_encounter(self, on_finished):
-        """Read the approach before the owning encounter controller starts battle."""
+        """Stop the arriving party, reveal the threat, then read the exchange."""
         if (not self.encounter_pending or self.game.world is not self.upstream
-                or not self._at_encounter_approach()
+                or self.encounter_cutscene_phase not in (None, 'arrival')
                 or not self._with_mira() or not callable(on_finished)):
             return False
         self._encounter_callback = on_finished
         self._encounter_music_started = False
-        def finished():
-            callback, self._encounter_callback = self._encounter_callback, None
-            if self.encounter_pending and callback is not None:callback()
-        if self._speak('encounter_intro', finished):return True
-        self._encounter_callback = None
-        return False
+        self._encounter_auto_armed = False
+        self._encounter_warning_acknowledged = False
+        self._encounter_phase = 'noticing';self._encounter_elapsed = 0.0
+        self._stop_encounter_actors()
+        return True
+
+    def _stop_encounter_actors(self):
+        """Use the existing standing sprites at their actual arrival positions."""
+        player = self.game.player
+        player.moving = player.running = False;player.walk_ms = 0.0
+        self.mira.moving = False;self.mira.walk_ms = 0.0
+        self.paths.pop(self.mira, None)
+        threat = pygame.Vector2(self.points['combat_position'])
+        player.facing = facing_toward(threat-player.position)
+        self.mira.facing = facing_toward(
+            player.position-self.mira.position if self.encounter_camera_returning else threat-self.mira.position)
+
+    def _encounter_can_tick(self):
+        game = self.game
+        return (not game.pause.is_open and not game.inventory_ui.is_open
+                and getattr(game, '_music_focused', True))
+
+    def _cancel_encounter(self):
+        """Release transient staging without completing dialogue or the fight."""
+        was_active = self.encounter_cutscene_active
+        self._encounter_phase = None;self._encounter_elapsed = 0.0
+        self._encounter_callback = None;self._encounter_warning_acknowledged = False
+        social = getattr(self.game, 'social', None)
+        if social is not None and getattr(social, 'script_identifier', None) == 'mill_encounter_intro':
+            social.cancel_script()
+        if getattr(self, 'dialogue', None) == 'encounter_intro':self.dialogue = None
+        camera = getattr(self.game, 'camera', None)
+        if was_active and camera is not None:camera.return_to_player(duration=0)
+        if getattr(self, '_encounter_music_started', False):
+            music = getattr(self.game, 'music', None)
+            if music is not None:music.play('eldenmere')
+        self._encounter_music_started = False
+
+    def _encounter_dialogue_finished(self):
+        # A quick acknowledgement never skips the return pan.
+        self._encounter_warning_acknowledged = True
+
+    def _begin_encounter_return(self):
+        if self.encounter_cutscene_phase != 'conversation':return
+        self._encounter_phase = 'pan_back';self._encounter_elapsed = 0.0
+        self.game.camera.return_to_player(duration=0 if self.game.audio.reduced_motion else .65)
+
+    def _finish_encounter_cutscene(self):
+        callback, self._encounter_callback = self._encounter_callback, None
+        self._encounter_phase = None;self._encounter_elapsed = 0.0
+        self._encounter_warning_acknowledged = False
+        self.mira.end_conversation()
+        if not self.encounter_pending or callback is None:return
+        music = getattr(self.game, 'music', None)
+        self._encounter_music_started = True
+        if music is not None:music.play('battle')
+        if callback() is False:
+            self._encounter_music_started = False
+            if music is not None:music.play('eldenmere')
+
+    def _update_encounter_cutscene(self, seconds):
+        if not self.encounter_cutscene_active:return
+        game = self.game
+        if game.world is not self.upstream or not self.encounter_pending:
+            self._cancel_encounter();return
+        if not self._encounter_can_tick():return
+        if self.encounter_cutscene_phase == 'arrival':
+            # Caelan waits at the link while the existing Mira follows through
+            # it using the ordinary path and authored transition landing.
+            game.player.moving = game.player.running = False;game.player.walk_ms = 0.0
+            self._follow(seconds)
+            return
+        if game.audio.reduced_motion:
+            if self.encounter_cutscene_phase == 'pan_to_boar' and not game.camera.settled:
+                game.camera.focus(self.points['combat_position'], duration=0, anchor=(.5, .34))
+            elif self.encounter_camera_returning and not game.camera.settled:
+                game.camera.return_to_player(duration=0)
+        self._stop_encounter_actors()
+        self._encounter_elapsed += max(0.0, seconds)
+        if self.encounter_cutscene_phase == 'noticing' and self._encounter_elapsed >= .25:
+            duration = 0 if game.audio.reduced_motion else .75
+            game.camera.focus(self.points['combat_position'], duration=duration, anchor=(.5, .34))
+            self._encounter_phase = 'pan_to_boar';self._encounter_elapsed = 0.0
+        elif self.encounter_cutscene_phase == 'pan_to_boar' and game.camera.settled:
+            self._encounter_phase = 'conversation';self._encounter_elapsed = 0.0
+            if not self._speak('encounter_intro', self._encounter_dialogue_finished):
+                self._cancel_encounter()
+        elif (self.encounter_cutscene_phase == 'conversation'
+              and self._encounter_warning_acknowledged):
+            # Script drivers/accessibility input can acknowledge several pages
+            # between ticks. The return shot is still mandatory in that case.
+            self._begin_encounter_return()
+        elif (self.encounter_camera_returning and game.camera.settled
+              and self._encounter_warning_acknowledged):
+            self._finish_encounter_cutscene()
 
     def sync_encounter_music(self):
-        """Cue the score on Mira's displayed warning, independent of read speed.
-
-        This presentation latch is deliberately absent from the saved quest
-        facts. Reflowing the page or pausing cannot retrigger the same cue.
-        """
+        """The final warning requests a return shot; music waits for arrival."""
         game = self.game
-        music = getattr(game, 'music', None)
-        if music is None:return
         intro = (self.dialogue == 'encounter_intro'
                  and game.social.script_identifier == 'mill_encounter_intro'
                  and game.social.active)
-        if intro and not self._encounter_music_started:
+        if intro and self.encounter_cutscene_phase == 'conversation' and self._encounter_can_tick():
             page = game.social.page
-            if page and page.get('cue') == 'mill_battle_music':
-                self._encounter_music_started = True
-                music.play('battle')
+            if page and page.get('cue') == 'mill_return_to_party':
+                self._begin_encounter_return()
         elif (self._encounter_music_started and not intro
+              and not self.encounter_cutscene_active
               and not getattr(getattr(game, 'combat', None), 'active', False)):
             self._encounter_music_started = False
-            music.play('eldenmere')
+            music = getattr(game, 'music', None)
+            if music is not None:
+                music.play('eldenmere')
 
     def battle_won(self):
         """Commit the encounter fact; its owner saves this with resources/rewards."""
@@ -671,7 +770,14 @@ class MillQuest:
         if goal is not None:self._move(goal, seconds, 116 if distance>72 else 82)
 
     def on_enter_scene(self, origin, transition):
+        if self.encounter_cutscene_active:self._cancel_encounter()
         self.trail.clear();self.last_scene = None;self.paths.pop(self.mira, None)
+        if self.game.world is self.upstream and self.encounter_pending:
+            self._encounter_auto_armed = True
+            self._encounter_phase = 'arrival';self._encounter_elapsed = 0.0
+            self.game.player.moving = self.game.player.running = False
+            self.game.player.walk_ms = 0.0
+        elif self.game.world is not self.upstream:self._encounter_auto_armed = True
 
     def _stage_halden(self, force=False):
         if not self.restored:return
@@ -784,6 +890,9 @@ class MillQuest:
 
     def update(self, seconds):
         self.sync_encounter_music()
+        if self.encounter_cutscene_active:
+            self._update_encounter_cutscene(seconds)
+            self._sync_props();return
         if self.game.map_open or self.game.quest_ui.journal_open:return
         if self.dialogue == 'repair_done' and not self._holding_repair_pose():self.release_pose()
         if self.active:
