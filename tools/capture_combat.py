@@ -138,19 +138,18 @@ def main(argv=None):
                          'enemy_atb_for_verification_only': model.enemy.atb if model else None})
         assert game.ui_surface.get_clip() == game.ui_surface.get_rect()
 
-    def place(game):
-        # Camera/player placement is a review fixture. Starting the encounter
-        # still requires the actual E input at its real world interaction point.
+    def place(game, distance=24):
+        # Camera/player placement is a review fixture. The production contact
+        # trigger starts the encounter on the next world update.
         game.world = game.town
-        game.player.position.update(game.combat.position+(0, 24))
+        game.player.position.update(game.combat.position+(0, distance))
         game.player.facing = 'back'
         game.camera.reset()
         assert game.world.can_stand(game.player.position)
-        assert game.combat.interaction_hint() == 'E: Engage Bat'
 
     def start(game):
         place(game)
-        key(game, pygame.K_e)
+        game.update(0, (0, 0), False)
         assert game.combat.active
         game.combat.model.rng = random.Random(7)
         game.draw()
@@ -166,7 +165,7 @@ def main(argv=None):
         assert scene.model.phase == 'acting'
 
     with fixture() as game:
-        place(game)
+        place(game, distance=40)
         assert game.save_progress()
         run(game, .3, 'visible Bat west of the well')
         record(game, 'eldenmere_bat')

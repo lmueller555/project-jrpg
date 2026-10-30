@@ -166,7 +166,7 @@ class Capture:
 
     def run(self):
         try:
-            assert not self.game.combat.bat_unlocked
+            assert self.game.combat.bat_unlocked
             with patch.object(opening_driver, 'finish_mill_battle', self.battle):
                 self.driver.run()
             quest = self.game.mill_quest
