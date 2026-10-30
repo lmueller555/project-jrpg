@@ -672,6 +672,7 @@ class Game:
         self.opening_audio.reset()
         self.pause.close()
         self.camera.reset()
+        self.combat.prepare_world_resume()
         self.music.play('eldenmere')
         if data is not None and data.get('post_battle') is not None:
             if not self.combat.restore_pending(data['post_battle']):
@@ -932,6 +933,11 @@ class Game:
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
         self.combat.tick_world(seconds)
+        if self.combat.active:
+            # Contact can begin an encounter during this world update. Keep the
+            # captured approach and every exploration clock frozen immediately.
+            self.opening_audio.set_paused(True)
+            return
         self.elapsed_ms+=seconds*1000
         self.location_seconds=max(0.0,self.location_seconds-seconds)
         self.opening.update(seconds)

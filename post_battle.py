@@ -87,9 +87,6 @@ def valid_pending_snapshot(record, data=None):
                     or quests.status(MILL_QUEST) != 'active'
                     or quests.objective_status(MILL_QUEST, 'secure_trail')
                        != ('completed' if awarded else 'active')):return False
-        elif not (data.get('mill_quest', {}).get('encounter_cleared')
-                  or data.get('mill_quest', {}).get('legacy_bypass')):
-            return False
     except (KeyError, TypeError, ValueError, AttributeError):
         return False
     return True

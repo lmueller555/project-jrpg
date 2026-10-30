@@ -228,14 +228,15 @@ class MillBattleGameplayTests(unittest.TestCase):
         return (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict(),
                 game.quests.to_dict(), game.mill_quest.to_dict())
 
-    def test_fresh_journey_cannot_fight_the_town_bat_before_miras_introduction(self):
+    def test_fresh_journey_can_fight_the_test_bat_before_miras_introduction(self):
         game = self.game
         game.world = game.town
         game.player.position.update(game.combat.position+(0, 24))
-        self.assertFalse(game.combat.interact())
-        self.assertFalse(game.combat.interaction_hint())
-        key(game, pygame.K_e)
-        self.assertFalse(game.combat.active)
+        self.assertFalse(game.mill_quest.combat_unlocked)
+        game.update(.05, (0, 0), False)
+        self.assertTrue(game.combat.active)
+        self.assertEqual(game.combat.model.enemy_id, 'bat')
+        self.assertFalse(game.mill_quest.combat_unlocked)
 
     def test_unread_warning_blocks_departure_and_encounter_precedes_intake(self):
         self.diagnose(False);game = self.game;c = game.mill_quest

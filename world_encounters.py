@@ -25,7 +25,7 @@ ENCOUNTER_PATH = ROOT/'assets/combat/encounter.json'
 
 
 class CombatEncounters:
-    """MQ02's first fight and the later repeatable Bat share battle ownership."""
+    """MQ02's story fight and the repeatable test Bat share battle ownership."""
 
     def __init__(self, game):
         self.game = game
@@ -50,6 +50,7 @@ class CombatEncounters:
         self._pending = None
         self._victory_checkpointed = False
         self._exiting_spoils = False
+        self._bat_contact_armed = True
 
     @property
     def active(self):return self.scene is not None
@@ -105,6 +106,7 @@ class CombatEncounters:
         self._pending = None
         self._victory_checkpointed = False
         self._exiting_spoils = False
+        self._bat_contact_armed = True
         self._music('eldenmere')
 
     def _capture_world(self):
@@ -126,7 +128,8 @@ class CombatEncounters:
 
     @property
     def bat_unlocked(self):
-        return self.game.mill_quest.combat_unlocked
+        # The optional test encounter is available independently of story progress.
+        return True
 
     def _world_available(self):
         game = self.game
@@ -146,10 +149,21 @@ class CombatEncounters:
                 and self.game.player.position.distance_squared_to(self.position) <= self.radius**2)
 
     def interaction_hint(self):
-        return 'E: Engage Bat' if self.nearby() else ''
+        if not self.nearby():return ''
+        return ('Approach the Bat to test combat' if self._bat_contact_armed else
+                'Move away, then approach the Bat to test again')
+
+    def _inside_bat_radius(self):
+        return (self.game.world.data['id'] == self.definition['scene'] and
+                self.game.player.position.distance_squared_to(self.position) <= self.radius**2)
+
+    def prepare_world_resume(self):
+        """Loading onto the Bat's spot is not a new approach to the encounter."""
+        self._bat_contact_armed = not self._inside_bat_radius()
 
     def interact(self, rng=None):
         if not self.nearby():return False
+        self._bat_contact_armed = False
         model = BattleModel(self.game.attributes,
                             self.game.lattice.learned_abilities(),
                             rng=random.Random() if rng is None else rng,
@@ -209,6 +223,10 @@ class CombatEncounters:
         if self.active:return
         self.world_seconds += seconds
         self.cooldown = max(0.0, self.cooldown-seconds)
+        if not self._inside_bat_radius():self._bat_contact_armed = True
+        if self._bat_contact_armed and self.nearby():
+            self.interact()
+            return
         quest = self.game.mill_quest
         approach = self.game.world is quest.upstream and quest._at_encounter_approach()
         if not quest.encounter_pending or not approach:
@@ -474,6 +492,7 @@ class CombatEncounters:
         self._pending['position'] = list(game.player.position)
         self._pending['facing'] = game.player.facing
         self.kind, self.receipt_id = record['kind'], record['receipt']
+        if self.kind == 'bat':self._bat_contact_armed = False
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
         model = BattleModel(game.attributes, game.lattice.learned_abilities(),
                             enemy_id='ridgeback_tusker' if self.kind == 'mill' else 'bat',

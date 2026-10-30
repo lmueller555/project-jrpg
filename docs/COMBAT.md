@@ -6,12 +6,20 @@ Mira is a temporary, player-controlled guest with a short spear, her own
 attributes, commands, HP/MP and ATB. The warning, encounter and linear
 aftermath lead into the quest's existing small spell and mechanical repair.
 
-The repeatable Bat encounter unlocks after that fight, or for migrated older
-journeys that already passed the intake investigation. It contains one Bat and Caelan.
-The Bat hovers on the grass west of the well, at world position **336, 900**.
-Approach within 32 pixels and press **E** when **Engage Bat** appears. The Bat
-does not attack automatically and cannot interrupt a conversation, household
-action, opening cutscene, menu or room transition.
+The repeatable **test Bat** is available in Eldenmere independently of MQ02 or
+other quest progress. It contains one Bat and Caelan and hovers on the grass
+west of the well, at world position **336, 900**. Walk or run within 32 pixels to
+start the encounter automatically; no interaction key is required. It cannot
+interrupt a conversation, household action, opening cutscene, menu or room
+transition, and it does not trigger indoors or at the millrace.
+
+After returning, move outside its trigger radius before approaching again.
+The normal four-second respawn cooldown also applies, so standing at the
+return point cannot repeatedly drag the player into combat. Loading while
+already inside its radius also waits for the player to leave and reapproach.
+Pre-MQ02 victories
+use the same fanfare, Spoils, once-only rewards and reload checkpoints without
+advancing or inventing mill quest progress.
 
 The encounter opens a separate view of Eldenmere's well clearing, with combat
 sprites and a bottom interface. The exploration world, player position,

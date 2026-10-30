@@ -7,6 +7,13 @@ Explore the approved Eldenmere town as Caelan by running `main.py`. The game use
 Add your music files to [`assets/music/`](assets/music/). The folder's README
 covers formats, filenames and optional track notes.
 
+## Test combat
+
+A repeatable Bat hovers on the grass west of Eldenmere's well. Walk or run into
+it to start a test battle, even before the mill quest. After returning, step
+away and approach again; the normal four-second respawn cooldown applies.
+See the [combat guide](docs/COMBAT.md) for its location and battle controls.
+
 ## Play Eldenmere
 
 Use Python 3.10 or newer. From the repository folder:

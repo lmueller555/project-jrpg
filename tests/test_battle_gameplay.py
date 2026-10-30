@@ -107,15 +107,13 @@ class BattleGameplayTests(unittest.TestCase):
         acknowledge_battle_result(game, scene)
         self.assertFalse(game.combat.active)
 
-    def test_bat_is_reachable_and_only_explicit_nearby_interaction_starts_battle(self):
+    def test_bat_is_reachable_and_approaching_starts_battle_without_an_action_key(self):
         game = self.game()
         self.assertFalse(game.combat.active)
         self.assertTrue(game.world.can_stand(game.combat.position))
         self.assertFalse(game.combat.interact())
         self.place_by_bat(game)
         game.update(.1, (0, 0), False)
-        self.assertFalse(game.combat.active)  # Walking near the Bat is not an auto-trigger.
-        self.key(game, pygame.K_e)
         self.assertTrue(game.combat.active)
         self.assertEqual(game.combat.scene.model.enemy.name, 'Bat')
 

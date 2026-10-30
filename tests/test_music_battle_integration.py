@@ -87,7 +87,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         game.player.position.update(game.combat.position+(0, 24))
         game.opening_fade = game.transfer_cooldown = 0
         self.frame(game)
-        self.assertTrue(game.combat.interact())
+        self.assertTrue(game.combat.active)
         return game.combat.scene
 
     def test_title_to_new_game_keeps_the_same_eldenmere_stream(self):
