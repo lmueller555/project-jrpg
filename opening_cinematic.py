@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pygame
 
+import speech_bubble
 from ui_style import BRASS, GOLD, IVORY, MUTED
 
 
@@ -44,6 +45,12 @@ class OpeningCinematic:
         self.skip_rect = pygame.Rect(426, 292, 44, 20)
         self.caption_rect = pygame.Rect(22, 250, 436, 32)
         self.caption_lines = []
+        self.caption_pages = []
+        self.caption_page_index = 0
+        self.caption_layout = None
+        self._caption_cache = {}
+        self._dialogue_speakers = {}
+        self._dialogue_portraits = {}
         self.reset()
 
     def _validate(self):
@@ -200,6 +207,23 @@ class OpeningCinematic:
         self.layers, self.actors = layers, actors
         self._actor_loops, self._prop_art, self._upper_sky = actor_loops, prop_art, upper_sky
         self._upper_edge_layers = upper_edge_layers
+        social = getattr(self.game, 'social', None)
+        speakers = (social.data['speakers'] if social is not None else
+                    json.loads((ROOT/'assets/dialogue/eldenmere.json').read_text())['speakers'])
+        portraits = getattr(social, 'portraits', {})
+        manifest = None
+        for name in {record['speaker'] for record in self.data['dialogue']}:
+            key = name.lower()
+            profile = speakers[key]
+            portrait_key = profile['portrait']
+            portrait = portraits.get(portrait_key)
+            if portrait is None:
+                if manifest is None:
+                    manifest = json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())
+                filename = manifest['portraits'][portrait_key]['file']
+                portrait = pygame.image.load(str(ROOT/'assets/portraits/eldenmere'/filename)).convert_alpha()
+            self._dialogue_speakers[name] = profile
+            self._dialogue_portraits[portrait_key] = portrait
         mist = pygame.Surface((240, 32), pygame.SRCALPHA)
         for inset in range(14):
             pygame.draw.ellipse(mist, (151, 172, 188, 1+inset),
@@ -633,34 +657,75 @@ class OpeningCinematic:
         width = max(44, painter.font().size('Skip')[0]+18)
         self.skip_rect = pygame.Rect(470-width, 310-height, width, height)
         self.caption_lines = []
+        self.caption_pages = []
+        self.caption_page_index = 0
+        self.caption_layout = None
         record = self.dialogue
         if record is None:
             self.caption_rect = pygame.Rect(22, self.skip_rect.top-8, 436, 0)
             return
-        self.caption_lines = painter.wrap(record['text'], 412)
-        line = painter.font().get_linesize()+2
-        name = painter.font('small', bold=True).get_linesize()+4
-        height = 16+name+line*len(self.caption_lines)
-        self.caption_rect = pygame.Rect(22, self.skip_rect.top-9-height, 436, height)
-        if self.caption_rect.top < 210:
-            # Enlarged text gets the sky area, preserving the handoff, cup and
-            # faces instead of pushing a taller subtitle strip over the actors.
-            self.caption_rect.top = 15
+        profile = self._dialogue_speakers[record['speaker']]
+        font = painter.font()
+        signature = (record['id'], record['text'], font.size(record['text']),
+                     font.get_linesize(), painter.font('name', bold=True).get_linesize())
+        cached = self._caption_cache.get(signature)
+        if cached is None:
+            wrapped = painter.wrap(record['text'], speech_bubble.TEXT_WIDTH)
+            count = math.ceil(len(wrapped)/speech_bubble.MAX_LINES)
+            lines_per_page, extra = divmod(len(wrapped), count)
+            pages, offset = [], 0
+            for index in range(count):
+                end = offset+lines_per_page+(index < extra)
+                pages.append(wrapped[offset:end])
+                offset = end
+            # Balance the pages so a short trailing line cannot become a
+            # fleeting final page when the readability font is enlarged.
+            # Allocate the existing line hold by text length. Every page gets
+            # its reading time without shifting dialogue or acting cues.
+            weights = [sum(len(line) for line in page) for page in pages]
+            cached = pages, weights
+            self._caption_cache[signature] = cached
+        self.caption_pages, weights = cached
+        progress = (self.elapsed-record['start'])/(record['end']-record['start'])
+        remaining = max(0.0, progress)*sum(weights)
+        for index, weight in enumerate(weights):
+            self.caption_page_index = index
+            if remaining < weight:
+                break
+            remaining -= weight
+        self.caption_lines = self.caption_pages[self.caption_page_index]
+        names, text_top, line_height, height = speech_bubble.measure_dialogue(
+            painter, profile['name'], self.caption_pages[0], reserve_hint=False)
+        # Keep one steady panel size throughout an automatically paged passage.
+        x = (VIEW_SIZE[0]-speech_bubble.PANEL_WIDTH)//2
+        candidates = [pygame.Rect(x, self.skip_rect.top-9-math.ceil(height),
+                                  speech_bubble.PANEL_WIDTH, math.ceil(height)),
+                      pygame.Rect(x, 6, speech_bubble.PANEL_WIDTH, math.ceil(height))]
+        protected = []
+        for actor, anchor, frames, transitions in self.actors:
+            image = self._actor_frame(actor['id'], frames, transitions)
+            point = self.actor_position(actor['id'])-self.camera_position
+            rect = image.get_bounding_rect().move(round(point.x-anchor[0]),
+                                                   round(point.y-anchor[1]))
+            if pygame.Rect((0, 0), VIEW_SIZE).colliderect(rect):
+                protected.append(rect.inflate(8, 8))
+        self.caption_rect = min(candidates, key=lambda panel: sum(
+            panel.clip(rect).width*panel.clip(rect).height for rect in protected))
+        panel = self.caption_rect
+        portrait = pygame.Rect(panel.x+speech_bubble.PADDING, panel.y+12,
+                               speech_bubble.PORTRAIT_SIZE, speech_bubble.PORTRAIT_SIZE)
+        self.caption_layout = speech_bubble.BubbleLayout(
+            panel, portrait, (panel.x+speech_bubble.TEXT_OFFSET, panel.y+text_top),
+            (), panel.midbottom, None, False, False, profile['portrait'],
+            name_lines=names, line_height=line_height)
 
     def _draw_captions(self, painter):
-        record = self.dialogue
-        if record is None:
+        layout = self.caption_layout
+        if layout is None:
             return
-        shade = pygame.Surface(painter.canvas.get_size(), pygame.SRCALPHA)
-        pygame.draw.rect(shade, (10, 19, 27, 220), painter.area(self.caption_rect),
-                         border_radius=max(1, round(3*painter.scale)))
-        painter.canvas.blit(shade, (0, 0))
-        x, y = self.caption_rect.x+12, self.caption_rect.y+8
-        painter.text(record['speaker'], (x, y), role='small', color=GOLD, bold=True)
-        y += painter.font('small', bold=True).get_linesize()+4
-        for line in self.caption_lines:
-            painter.text(line, (x, y), color=IVORY)
-            y += painter.font().get_linesize()+2
+        speech_bubble.draw_dialogue_frame(
+            painter, layout, self._dialogue_portraits[layout.portrait_key])
+        speech_bubble.draw_dialogue_prose(painter, layout, self.caption_lines)
 
     def draw(self, canvas, ui_surface):
         self._load()

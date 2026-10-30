@@ -156,6 +156,57 @@ class OpeningBeaconTests(unittest.TestCase):
             # Entire96px actor canvases have left the fixed viewport.
             self.assertLess(self.scene.actor_position(actor).x-camera.x+48, 0)
 
+    def test_departure_moves_twenty_percent_faster_with_the_same_spacing_and_gait(self):
+        departure = self.events['departure_start']
+        duration = self.events['actors_offscreen']-departure
+        self.assertAlmostEqual(duration, 15.5/1.2, places=5)
+        for actor in ('caelan', 'mira'):
+            before = self.at(departure+1).actor_position(actor).copy()
+            after = self.at(departure+2).actor_position(actor).copy()
+            self.assertAlmostEqual(before.x-after.x, 48, places=4)
+            self.assertAlmostEqual(before.y, after.y)
+            self.assertEqual([duration for _, duration in self.scene._actor_loops[actor]['walk_left']],
+                             [.18, .18, .18, .18])
+            _, _, frames, transitions = next(record for record in self.scene.actors
+                                             if record[0]['id'] == actor)
+            self.at(departure+.01)
+            first = self.scene._actor_frame(actor, frames, transitions)
+            self.at(departure+.17)
+            self.assertIs(self.scene._actor_frame(actor, frames, transitions), first)
+            self.at(departure+.19)
+            self.assertIsNot(self.scene._actor_frame(actor, frames, transitions), first)
+            self.at(departure+.73)
+            self.assertIs(self.scene._actor_frame(actor, frames, transitions), first)
+        for fraction in (0, .25, .5, .75, 1):
+            self.at(departure+duration*fraction)
+            gap = self.scene.actor_position('caelan')-self.scene.actor_position('mira')
+            self.assertAlmostEqual(gap.x, 85)
+            self.assertAlmostEqual(gap.y, 0)
+
+    def test_departure_camera_and_ending_retime_together_without_rushing_the_memorial(self):
+        departure = self.events['departure_start']
+        centered = self.events['memorial_centered']
+        self.assertAlmostEqual(centered-departure, 7/1.2, places=5)
+        start = self.at(departure).camera_position.copy()
+        middle = self.at((departure+centered)/2).camera_position.copy()
+        end = self.at(centered).camera_position.copy()
+        self.assertEqual((start, end), (pygame.Vector2(435, 160), pygame.Vector2(155, 160)))
+        self.assertAlmostEqual(middle.x, (start.x+end.x)/2)
+        self.assertEqual(middle.y, 160)
+        self.assertAlmostEqual(self.events['helmet_zoom_start']-self.events['actors_offscreen'], .5)
+        self.assertAlmostEqual(self.scene.duration-self.events['helmet_zoom_start'], 10)
+        self.assertAlmostEqual(self.events['fade_start']-self.events['helmet_zoom_start'], 1.5)
+        self.assertAlmostEqual(self.scene.duration, 252.566667, places=5)
+
+    def test_earlier_lamp_approach_keeps_its_authored_speed(self):
+        # The pace adjustment belongs to the final departure, not Mira's
+        # earlier movement into the repair scene or a global animation clock.
+        self.assertEqual(self.events['lamp_walk_start'], 180.8)
+        before = self.at(182).actor_position('mira').copy()
+        after = self.at(183).actor_position('mira').copy()
+        self.assertAlmostEqual(before.x-after.x, 40)
+        self.assertAlmostEqual(before.y, after.y)
+
     def test_zoom_waits_for_the_exit_and_fully_fades_the_helmet_shot(self):
         zoom, fade = self.events['helmet_zoom_start'], self.events['fade_start']
         self.assertEqual(self.at(zoom-.01).camera_zoom, 1)

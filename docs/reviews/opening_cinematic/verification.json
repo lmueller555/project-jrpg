@@ -1,10 +1,10 @@
 {
-  "frames": 7818,
+  "frames": 7741,
   "fps": 30,
-  "seconds": 260.6,
-  "scene_duration_seconds": 255.15,
+  "seconds": 258.03333333333336,
+  "scene_duration_seconds": 252.566667,
   "route": "Unmodified production title New Game; natural cinematic completion",
-  "world_freeze_checks": 7715,
+  "world_freeze_checks": 7638,
   "escape_pause_preserves_position": true,
   "no_checkpoint_until_bedroom": true,
   "leitmotif_plays": 1,
@@ -13,7 +13,7 @@
     {
       "time": 1.4,
       "event": "cinematic_started",
-      "duration": 255.15
+      "duration": 252.566667
     },
     {
       "time": 202.1667,
@@ -26,7 +26,7 @@
       "elapsed": 200.76666666665784
     },
     {
-      "time": 258.6,
+      "time": 256.0333,
       "event": "bedroom_started",
       "first_line": "Caelan? You're awake, aren't you?"
     }
@@ -57,16 +57,16 @@
       "event": "unpause"
     },
     {
-      "time": 259.033333,
+      "time": 256.466667,
       "event": "stop"
     },
     {
-      "time": 259.033333,
+      "time": 256.466667,
       "event": "load",
       "file": "assets/music/runtime/eldenmere_theme.ogg"
     },
     {
-      "time": 259.033333,
+      "time": 256.466667,
       "event": "play",
       "file": "assets/music/runtime/eldenmere_theme.ogg",
       "loops": -1,
@@ -75,6 +75,64 @@
   ],
   "reconstructed_motif_wraps": 1,
   "dialogue_lines": 30,
+  "dialogue_pages": 30,
+  "dialogue_draw_checks": 4795,
+  "standard_dialogue_panel": true,
+  "left_speaker_portraits": true,
+  "no_click_to_continue_prompt": true,
+  "departure": {
+    "movement_pixels_per_second": {
+      "caelan": 47.99999876129039,
+      "mira": 47.99999876129039
+    },
+    "walking_frame_seconds": {
+      "caelan": [
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ],
+      "mira": [
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ]
+    },
+    "animation_cadence_unchanged": true,
+    "camera_follow_seconds": 5.833332999999982,
+    "walking_seconds": 12.91666699999999
+  },
+  "large_text_paging": {
+    "file": "large_text_paging.mp4",
+    "image": "large_text_pages.png",
+    "source": "Production Game.draw at the original timed line; separate silent accessibility review",
+    "dialogue_id": "catch_and_branch",
+    "scene_interval": [
+      179.85,
+      187.85
+    ],
+    "viewport": [
+      480,
+      320
+    ],
+    "text_scale": 1.5,
+    "frames": 240,
+    "pages": [
+      [
+        "This lamp...we'll leave it",
+        "here. Mira, think you can"
+      ],
+      [
+        "you work your magic with",
+        "it?"
+      ]
+    ],
+    "page_seconds": [
+      5.233333333333333,
+      2.7666666666666666
+    ]
+  },
   "observed_dialogue": [
     {
       "index": 0,
@@ -82,7 +140,17 @@
       "speaker": "Mira",
       "text": "Here. While it\u2019s warm.",
       "first_seen": 24.0,
-      "last_seen": 27.1667
+      "last_seen": 27.1667,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Here. While it\u2019s warm."
+          ],
+          "first_seen": 24.0,
+          "last_seen": 27.1667
+        }
+      ]
     },
     {
       "index": 1,
@@ -90,7 +158,17 @@
       "speaker": "Caelan",
       "text": "Thanks, Mira",
       "first_seen": 28.2,
-      "last_seen": 30.7667
+      "last_seen": 30.7667,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Thanks, Mira"
+          ],
+          "first_seen": 28.2,
+          "last_seen": 30.7667
+        }
+      ]
     },
     {
       "index": 2,
@@ -98,7 +176,17 @@
       "speaker": "Mira",
       "text": "Your hands are still shaking. Mine too.",
       "first_seen": 31.8,
-      "last_seen": 36.0667
+      "last_seen": 36.0667,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Your hands are still shaking. Mine too."
+          ],
+          "first_seen": 31.8,
+          "last_seen": 36.0667
+        }
+      ]
     },
     {
       "index": 3,
@@ -106,7 +194,17 @@
       "speaker": "Caelan",
       "text": "It'll be ok, they'll stop once we get moving.",
       "first_seen": 37.1,
-      "last_seen": 42.2667
+      "last_seen": 42.2667,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "It'll be ok, they'll stop once we get moving."
+          ],
+          "first_seen": 37.1,
+          "last_seen": 42.2667
+        }
+      ]
     },
     {
       "index": 4,
@@ -114,7 +212,17 @@
       "speaker": "Mira",
       "text": "I hope you're right.",
       "first_seen": 43.3,
-      "last_seen": 46.5
+      "last_seen": 46.5,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "I hope you're right."
+          ],
+          "first_seen": 43.3,
+          "last_seen": 46.5
+        }
+      ]
     },
     {
       "index": 5,
@@ -122,7 +230,17 @@
       "speaker": "Caelan",
       "text": "How far to the entrance?",
       "first_seen": 47.5333,
-      "last_seen": 51.0
+      "last_seen": 51.0,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "How far to the entrance?"
+          ],
+          "first_seen": 47.5333,
+          "last_seen": 51.0
+        }
+      ]
     },
     {
       "index": 6,
@@ -130,7 +248,17 @@
       "speaker": "Mira",
       "text": "Beyond the ridge. There\u2019s some climbing yet.",
       "first_seen": 52.0333,
-      "last_seen": 56.3
+      "last_seen": 56.3,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Beyond the ridge. There\u2019s some climbing yet."
+          ],
+          "first_seen": 52.0333,
+          "last_seen": 56.3
+        }
+      ]
     },
     {
       "index": 7,
@@ -138,7 +266,17 @@
       "speaker": "Caelan",
       "text": "I can manage.",
       "first_seen": 57.3333,
-      "last_seen": 60.1
+      "last_seen": 60.1,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "I can manage."
+          ],
+          "first_seen": 57.3333,
+          "last_seen": 60.1
+        }
+      ]
     },
     {
       "index": 8,
@@ -146,7 +284,17 @@
       "speaker": "Mira",
       "text": "I know. But you need to rest a bit first.",
       "first_seen": 61.1333,
-      "last_seen": 66.5
+      "last_seen": 66.5,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "I know. But you need to rest a bit first."
+          ],
+          "first_seen": 61.1333,
+          "last_seen": 66.5
+        }
+      ]
     },
     {
       "index": 9,
@@ -154,7 +302,17 @@
       "speaker": "Caelan",
       "text": "You know, there are still people in those houses.",
       "first_seen": 67.5333,
-      "last_seen": 72.7
+      "last_seen": 72.7,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "You know, there are still people in those houses."
+          ],
+          "first_seen": 67.5333,
+          "last_seen": 72.7
+        }
+      ]
     },
     {
       "index": 10,
@@ -162,7 +320,18 @@
       "speaker": "Mira",
       "text": "Yeah...but the caravan is going back for another group. They will make it out...I hope.",
       "first_seen": 73.7333,
-      "last_seen": 82.0
+      "last_seen": 82.0,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Yeah...but the caravan is going back for another group.",
+            "They will make it out...I hope."
+          ],
+          "first_seen": 73.7333,
+          "last_seen": 82.0
+        }
+      ]
     },
     {
       "index": 11,
@@ -170,7 +339,18 @@
       "speaker": "Caelan",
       "text": "And when we leave here, we\u2019re going the other way. It feels like we're turning our back on them.",
       "first_seen": 83.0333,
-      "last_seen": 92.0
+      "last_seen": 92.0,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "And when we leave here, we\u2019re going the other way. It",
+            "feels like we're turning our back on them."
+          ],
+          "first_seen": 83.0333,
+          "last_seen": 92.0
+        }
+      ]
     },
     {
       "index": 12,
@@ -178,7 +358,19 @@
       "speaker": "Mira",
       "text": "Maybe...but another surge like that could wipe out the whole valley. We need to reach the source so we can put an end to this.",
       "first_seen": 93.0333,
-      "last_seen": 104.6
+      "last_seen": 104.6,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Maybe...but another surge like that could wipe out the",
+            "whole valley. We need to reach the source so we can put",
+            "an end to this."
+          ],
+          "first_seen": 93.0333,
+          "last_seen": 104.6
+        }
+      ]
     },
     {
       "index": 13,
@@ -186,7 +378,18 @@
       "speaker": "Caelan",
       "text": "I'm scared, Mira. We've come so far, but we still have so far left to go.",
       "first_seen": 105.6333,
-      "last_seen": 113.6
+      "last_seen": 113.6,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "I'm scared, Mira. We've come so far, but we still have so",
+            "far left to go."
+          ],
+          "first_seen": 105.6333,
+          "last_seen": 113.6
+        }
+      ]
     },
     {
       "index": 14,
@@ -194,7 +397,17 @@
       "speaker": "Mira",
       "text": "It's ok, Caelan, I'm scared too. But I believe in you!",
       "first_seen": 114.6333,
-      "last_seen": 120.7
+      "last_seen": 120.7,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "It's ok, Caelan, I'm scared too. But I believe in you!"
+          ],
+          "first_seen": 114.6333,
+          "last_seen": 120.7
+        }
+      ]
     },
     {
       "index": 15,
@@ -202,7 +415,17 @@
       "speaker": "Caelan",
       "text": "Mira...I was thinking about the mill.",
       "first_seen": 121.7333,
-      "last_seen": 126.1
+      "last_seen": 126.1,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Mira...I was thinking about the mill."
+          ],
+          "first_seen": 121.7333,
+          "last_seen": 126.1
+        }
+      ]
     },
     {
       "index": 16,
@@ -210,7 +433,17 @@
       "speaker": "Mira",
       "text": "Halden\u2019s?",
       "first_seen": 127.1333,
-      "last_seen": 129.7
+      "last_seen": 129.7,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Halden\u2019s?"
+          ],
+          "first_seen": 127.1333,
+          "last_seen": 129.7
+        }
+      ]
     },
     {
       "index": 17,
@@ -218,7 +451,19 @@
       "speaker": "Caelan",
       "text": "Do you remember when I barely managed to clear that little recess? Would you ever have guessed we'd look back on that as the least of our troubles?",
       "first_seen": 130.7333,
-      "last_seen": 143.0
+      "last_seen": 143.0,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Do you remember when I barely managed to clear that",
+            "little recess? Would you ever have guessed we'd look",
+            "back on that as the least of our troubles?"
+          ],
+          "first_seen": 130.7333,
+          "last_seen": 143.0
+        }
+      ]
     },
     {
       "index": 18,
@@ -226,7 +471,18 @@
       "speaker": "Mira",
       "text": "*laughs* Ha...yeah that seems like a lifetime ago now. But, Caelan?",
       "first_seen": 144.0333,
-      "last_seen": 150.4
+      "last_seen": 150.4,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "*laughs* Ha...yeah that seems like a lifetime ago now.",
+            "But, Caelan?"
+          ],
+          "first_seen": 144.0333,
+          "last_seen": 150.4
+        }
+      ]
     },
     {
       "index": 19,
@@ -234,7 +490,17 @@
       "speaker": "Caelan",
       "text": "What?",
       "first_seen": 151.4333,
-      "last_seen": 154.0
+      "last_seen": 154.0,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "What?"
+          ],
+          "first_seen": 151.4333,
+          "last_seen": 154.0
+        }
+      ]
     },
     {
       "index": 20,
@@ -242,7 +508,18 @@
       "speaker": "Mira",
       "text": "I know what else you're thinking about. I want you to know he's just as proud of you as I am.",
       "first_seen": 155.0333,
-      "last_seen": 164.6
+      "last_seen": 164.6,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "I know what else you're thinking about. I want you to",
+            "know he's just as proud of you as I am."
+          ],
+          "first_seen": 155.0333,
+          "last_seen": 164.6
+        }
+      ]
     },
     {
       "index": 21,
@@ -250,7 +527,17 @@
       "speaker": "Caelan",
       "text": "...thanks. I'm feeling better...lighter.",
       "first_seen": 167.7333,
-      "last_seen": 171.5
+      "last_seen": 171.5,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "...thanks. I'm feeling better...lighter."
+          ],
+          "first_seen": 167.7333,
+          "last_seen": 171.5
+        }
+      ]
     },
     {
       "index": 22,
@@ -258,7 +545,17 @@
       "speaker": "Mira",
       "text": "Your hands stopped shaking. Mine too...I'm ready.",
       "first_seen": 174.0667,
-      "last_seen": 178.8333
+      "last_seen": 178.8333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Your hands stopped shaking. Mine too...I'm ready."
+          ],
+          "first_seen": 174.0667,
+          "last_seen": 178.8333
+        }
+      ]
     },
     {
       "index": 23,
@@ -266,7 +563,18 @@
       "speaker": "Caelan",
       "text": "This lamp...we'll leave it here. Mira, think you can you work your magic with it?",
       "first_seen": 179.8667,
-      "last_seen": 187.8333
+      "last_seen": 187.8333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "This lamp...we'll leave it here. Mira, think you can you",
+            "work your magic with it?"
+          ],
+          "first_seen": 179.8667,
+          "last_seen": 187.8333
+        }
+      ]
     },
     {
       "index": 24,
@@ -274,7 +582,18 @@
       "speaker": "Mira",
       "text": "Leave it to me! This beacon will guide the evacuation to safety.",
       "first_seen": 188.8667,
-      "last_seen": 195.0333
+      "last_seen": 195.0333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Leave it to me! This beacon will guide the evacuation to",
+            "safety."
+          ],
+          "first_seen": 188.8667,
+          "last_seen": 195.0333
+        }
+      ]
     },
     {
       "index": 25,
@@ -282,7 +601,17 @@
       "speaker": "Caelan",
       "text": "This should help too.",
       "first_seen": 196.0667,
-      "last_seen": 199.2333
+      "last_seen": 199.2333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "This should help too."
+          ],
+          "first_seen": 196.0667,
+          "last_seen": 199.2333
+        }
+      ]
     },
     {
       "index": 26,
@@ -290,7 +619,17 @@
       "speaker": "Mira",
       "text": "Ok there! Don't break on me now.",
       "first_seen": 212.3667,
-      "last_seen": 216.6333
+      "last_seen": 216.6333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Ok there! Don't break on me now."
+          ],
+          "first_seen": 212.3667,
+          "last_seen": 216.6333
+        }
+      ]
     },
     {
       "index": 27,
@@ -298,7 +637,17 @@
       "speaker": "Caelan",
       "text": "Huh? Me? Or the lamp?",
       "first_seen": 217.6667,
-      "last_seen": 221.1333
+      "last_seen": 221.1333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Huh? Me? Or the lamp?"
+          ],
+          "first_seen": 217.6667,
+          "last_seen": 221.1333
+        }
+      ]
     },
     {
       "index": 28,
@@ -306,7 +655,17 @@
       "speaker": "Mira",
       "text": "*smiles* Let's go.",
       "first_seen": 222.1667,
-      "last_seen": 224.9333
+      "last_seen": 224.9333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "*smiles* Let's go."
+          ],
+          "first_seen": 222.1667,
+          "last_seen": 224.9333
+        }
+      ]
     },
     {
       "index": 29,
@@ -314,7 +673,17 @@
       "speaker": "Caelan",
       "text": "Indeed.",
       "first_seen": 225.9667,
-      "last_seen": 228.5333
+      "last_seen": 228.5333,
+      "pages": [
+        {
+          "index": 0,
+          "lines": [
+            "Indeed."
+          ],
+          "first_seen": 225.9667,
+          "last_seen": 228.5333
+        }
+      ]
     }
   ],
   "dialogue_gaps_seconds": [
@@ -356,21 +725,41 @@
     "text_scale": 1.5,
     "text": "Do you remember when I barely managed to clear that little recess? Would you ever have guessed we'd look back on that as the least of our troubles?",
     "caption": [
-      22,
-      15,
-      436,
-      114
+      91,
+      6,
+      298,
+      127
     ],
     "lines": [
-      "Do you remember when I barely managed to clear",
-      "that little recess? Would you ever have guessed",
-      "we'd look back on that as the least of our troubles?"
+      "Do you remember when I",
+      "barely managed to clear",
+      "that little recess? Would you"
     ],
     "skip": [
       417,
       279,
       53,
       31
+    ],
+    "portrait": [
+      99,
+      18,
+      48,
+      48
+    ],
+    "portrait_key": "caelan",
+    "page_index": 0,
+    "pages": [
+      [
+        "Do you remember when I",
+        "barely managed to clear",
+        "that little recess? Would you"
+      ],
+      [
+        "ever have guessed we'd",
+        "look back on that as the",
+        "least of our troubles?"
+      ]
     ],
     "actor_bounds": [
       {
@@ -415,19 +804,19 @@
     "camera_returned": 212.0,
     "lamp_restored": 212.35,
     "departure_start": 229.15,
-    "memorial_centered": 236.15,
-    "actors_offscreen": 244.65,
-    "helmet_zoom_start": 245.15,
-    "fade_start": 246.65,
-    "end": 255.15,
+    "memorial_centered": 234.983333,
+    "actors_offscreen": 242.066667,
+    "helmet_zoom_start": 242.566667,
+    "fade_start": 244.066667,
+    "end": 252.566667,
     "flare_release_pose": 199.7
   },
   "sequence_checks": {
     "handholding": 165,
     "return_barrier": 6420,
-    "glimmer": 1485,
-    "fixed_camera": 268,
-    "actors_offscreen": 13,
+    "glimmer": 1408,
+    "fixed_camera": 227,
+    "actors_offscreen": 14,
     "zoom": 300
   },
   "semantic_frames": [
@@ -886,7 +1275,7 @@
       "elapsed": 231.1667,
       "shot": "departure_follow",
       "camera": [
-        378.6714361305273,
+        357.74331984050633,
         160.0
       ],
       "zoom": 1.0,
@@ -897,15 +1286,15 @@
       "actors": {
         "caelan": {
           "position": [
-            589.3333333337556,
-            374.99999999999994
+            573.2000024985712,
+            375.0
           ],
           "pose": "walk_left"
         },
         "mira": {
           "position": [
-            504.3333333337557,
-            374.99999999999994
+            488.2000024985712,
+            375.0
           ],
           "pose": "walk_left"
         }
@@ -913,10 +1302,10 @@
     },
     {
       "file": "foreground_pass.png",
-      "elapsed": 235.9667,
+      "elapsed": 234.8,
       "shot": "departure_follow",
       "camera": [
-        155.56613000762488,
+        155.81232696554076,
         160.0
       ],
       "zoom": 1.0,
@@ -927,14 +1316,14 @@
       "actors": {
         "caelan": {
           "position": [
-            397.33333333376663,
+            398.800006999226,
             375.0
           ],
           "pose": "walk_left"
         },
         "mira": {
           "position": [
-            312.33333333376663,
+            313.800006999226,
             375.0
           ],
           "pose": "walk_left"
@@ -943,10 +1332,10 @@
     },
     {
       "file": "helmet_centered.png",
-      "elapsed": 236.3667,
+      "elapsed": 235.2,
       "shot": "memorial_hold",
       "camera": [
-        155.00000000000003,
+        155.0,
         160.0
       ],
       "zoom": 1.0,
@@ -957,14 +1346,14 @@
       "actors": {
         "caelan": {
           "position": [
-            381.33333333376754,
+            379.60000749471095,
             375.0
           ],
           "pose": "walk_left"
         },
         "mira": {
           "position": [
-            296.33333333376754,
+            294.600007494711,
             375.0
           ],
           "pose": "walk_left"
@@ -973,7 +1362,7 @@
     },
     {
       "file": "actors_offscreen.png",
-      "elapsed": 244.7667,
+      "elapsed": 242.2,
       "shot": "memorial_hold",
       "camera": [
         155.0,
@@ -1003,13 +1392,13 @@
     },
     {
       "file": "helmet_before_fade.png",
-      "elapsed": 246.4667,
+      "elapsed": 243.9,
       "shot": "helmet_zoom",
       "camera": [
         155.0,
         160.0
       ],
-      "zoom": 1.04032668379563,
+      "zoom": 1.041303684058597,
       "lamp_stage": 3,
       "flare_phase": "glimmer",
       "glimmer_visible": true,
@@ -1033,13 +1422,13 @@
     },
     {
       "file": "helmet_fade.png",
-      "elapsed": 247.2667,
+      "elapsed": 244.7,
       "shot": "helmet_zoom",
       "camera": [
         155.0,
         160.0
       ],
-      "zoom": 1.0981255504619865,
+      "zoom": 1.0995479418396255,
       "lamp_stage": 3,
       "flare_phase": "glimmer",
       "glimmer_visible": true,
@@ -1063,13 +1452,13 @@
     },
     {
       "file": "last_look.png",
-      "elapsed": 250.1667,
+      "elapsed": 247.6,
       "shot": "helmet_zoom",
       "camera": [
         155.0,
         160.0
       ],
-      "zoom": 1.4271249921281457,
+      "zoom": 1.4292498945374619,
       "lamp_stage": 3,
       "flare_phase": "glimmer",
       "glimmer_visible": true,
@@ -1118,11 +1507,11 @@
     "helmet_ending.mp4": {
       "scene_interval": [
         228.65,
-        255.13
+        252.54666699999999
       ],
       "movie_interval": [
         232.06666666666666,
-        258.53333333333336
+        255.93333333333334
       ],
       "source": "Consecutive production-rendered frames; no soundtrack in short clips"
     }

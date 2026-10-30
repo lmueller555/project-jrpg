@@ -12,6 +12,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
 from main import Game
+import speech_bubble
 
 
 class OpeningCinematicGameplayTests(unittest.TestCase):
@@ -88,6 +89,34 @@ class OpeningCinematicGameplayTests(unittest.TestCase):
         self.assertFalse(game.pause.is_open)
         self.assertEqual(self.backend.play.call_args.args, (-1,))
         self.assertTrue(str(self.backend.load.call_args.args[0]).endswith('dare_to_dream_leitmotif.ogg'))
+
+    def test_portrait_dialogue_reuses_gameplay_art_without_starting_a_conversation(self):
+        game = self.game()
+        scene = self.start(game)
+        before = (game.social.actor, list(game.social.pages), game.social.page_index,
+                  game.social.script_identifier, set(game.social.flags))
+        for speaker in ('Caelan', 'Mira'):
+            record = next(record for record in scene.data['dialogue']
+                          if record['speaker'] == speaker)
+            scene.elapsed = record['start']+.1
+            with patch.object(speech_bubble, 'draw_dialogue_frame',
+                              wraps=speech_bubble.draw_dialogue_frame) as frame:
+                game.draw()
+            profile = game.social.data['speakers'][speaker.lower()]
+            self.assertIs(frame.call_args.args[2], game.social.portraits[profile['portrait']])
+            elapsed = scene.elapsed
+            center = scene.caption_rect.center
+            self.events(game, pygame.event.Event(pygame.MOUSEBUTTONDOWN, button=1,
+                                                 pos=(center[0]*2, center[1]*2)),
+                        pygame.event.Event(pygame.MOUSEBUTTONUP, button=1,
+                                           pos=(center[0]*2, center[1]*2)))
+            self.assertEqual(scene.elapsed, elapsed)
+            self.assertFalse(game.social.active)
+            self.assertEqual((game.social.actor, game.social.pages, game.social.page_index,
+                              game.social.script_identifier, game.social.flags), before)
+            self.assertFalse(self.path.exists())
+        self.click_skip(game)
+        self.assert_bedroom(game)
 
     def test_cinematic_freezes_world_quests_and_morning_ambience(self):
         game = self.game()
