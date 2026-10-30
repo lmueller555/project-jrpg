@@ -28,36 +28,36 @@
     420
   ],
   "courtyard": [
-    386,
-    318
+    228,
+    252
   ],
   "serene": [
-    364,
-    326
+    288,
+    116
   ],
   "tomas": [
-    420,
-    348
+    108,
+    200
   ],
   "aldric_courtyard": [
-    400,
-    326
+    228,
+    200
   ],
   "aldric_aside": [
-    442,
-    304
+    378,
+    144
   ],
   "clerk_courtyard": [
-    444,
-    350
+    288,
+    132
   ],
   "driver_courtyard": [
-    444,
-    328
+    288,
+    252
   ],
   "attendant_courtyard": [
-    324,
-    340
+    336,
+    252
   ],
   "aldric_road": [
     610,
@@ -84,20 +84,20 @@
     576
   ],
   "preparations": [
-    386,
-    326
+    264,
+    128
   ],
   "welcome": [
-    386,
-    318
+    228,
+    252
   ],
   "discussion": [
-    386,
-    318
+    228,
+    252
   ],
   "aftermath": [
-    386,
-    326
+    168,
+    228
   ],
   "venn_cart_path": [
     [
@@ -205,5 +205,29 @@
       950,
       420
     ]
+  ],
+  "dining_scene_id": "sanctuary_dining",
+  "serene_meal": [
+    144,
+    228
+  ],
+  "dining_stations": [
+    "preparations",
+    "serene",
+    "serene_meal",
+    "tomas",
+    "courtyard",
+    "welcome",
+    "discussion",
+    "aftermath",
+    "aldric_courtyard",
+    "clerk_courtyard",
+    "driver_courtyard",
+    "attendant_courtyard",
+    "aldric_aside"
+  ],
+  "outside_courtyard": [
+    386,
+    318
   ]
 }

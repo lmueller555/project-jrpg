@@ -150,7 +150,7 @@
         "CH01_MQ02"
       ],
       "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to the sanctuary.",
-      "available_tracker_text": "Speak with Mother Serene about the visiting regent.",
+      "available_tracker_text": "Speak with Mother Serene in the sanctuary dining room about the visiting regent.",
       "accept_text": "Meet Aldric’s party by the brook.",
       "report_text": "Speak with Mother Serene after the visit.",
       "completion_text": "Aldric's visit has ended. Festival preparations continue.",
@@ -164,8 +164,8 @@
         },
         {
           "id": "accompany_visit",
-          "text": "Accompany Aldric through the village to the sanctuary.",
-          "tracker_text": "Accompany Aldric to the sanctuary.",
+          "text": "Accompany Aldric through the village and into the sanctuary dining room.",
+          "tracker_text": "Bring Aldric inside to the sanctuary dining room.",
           "requires": [
             "meet_visitors"
           ]
@@ -173,7 +173,7 @@
         {
           "id": "welcome_party",
           "text": "Help welcome the visitors and hear Aldric and Serene's conversation.",
-          "tracker_text": "Join the visitors in the sanctuary courtyard.",
+          "tracker_text": "Join the visitors in the sanctuary dining room.",
           "requires": [
             "accompany_visit"
           ]
@@ -197,7 +197,7 @@
         "CH01_MQ03"
       ],
       "summary": "Help Liam make his first lantern of his own and discover what the Festival of Light means to his neighbours.",
-      "available_tracker_text": "Meet Tomas by the sanctuary lantern supplies.",
+      "available_tracker_text": "Speak with Tomas in the sanctuary dining room.",
       "accept_text": "Join the school’s festival preparations with Tomas.",
       "report_text": "Show Mother the lantern, then put it away safely at home.",
       "completion_text": "Liam is ready to carry his own lantern at the festival.",

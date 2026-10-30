@@ -4,7 +4,7 @@
 
 ## Playing the opening segment
 
-After Aldric’s visit and Caelan’s final conversation with Serene, speak with Tomas in the sanctuary courtyard. His invitation continues MQ03’s existing call about the lanterns. Serene has her promised response to write; the brothers go to the school’s special preparation session.
+After Aldric’s visit and Caelan’s final conversation with Serene, speak with Tomas in the sanctuary dining room. His invitation continues MQ03’s existing call about the lanterns, with Serene present for her replies. Serene has her promised response to write; the brothers leave through the hall and go to the school’s special preparation session.
 
 Meet Liam’s mother and the six children, inspect Liam’s tower drawing, then finish the exchange in which his mother agrees to the outing. Accompany Liam and Tomas to Mira. Give Liam space to present his own design, test the shape, help with the corners and try the handle. Finish the reaction scene after the balance test.
 

@@ -210,9 +210,10 @@ See the [runtime capture and testing notes](reviews/opening_conclusion/README.md
 ## MQ03 — The Regent’s Road
 
 After the completed mill quest, MQ03 becomes available from Serene in the
-sanctuary courtyard. The complete visit is playable: preparations with Tomas,
+sanctuary dining room. The complete visit is playable: preparations with Tomas,
 meeting Aldric’s party by the brook, witnessing the road crew’s cart dispute,
-a visible release and delivery of Mr. Venn’s cart, the sanctuary welcome,
+a visible release and delivery of Mr. Venn’s cart, an escort through the hall
+into the dining room, the sanctuary welcome and meal,
 Aldric and Serene’s unresolved excavation discussion, and Caelan’s private
 reflection with Serene. The four objectives concern meeting, accompanying,
 welcoming and speaking; no player objective inspects the hire receipt or
@@ -221,8 +222,9 @@ road project’s additional cost.
 
 `regent_quest.py` owns a version-one stage checkpoint and one instance of each
 visitor. It borrows the actual Venn father actor for the cart delivery, pauses
-Serene and Tomas at their courtyard stations, and leaves them there for the
-festival preparations after the quest. New Game returns their ordinary opening
+Serene and Tomas at their dining-room stations, and leaves them there for the
+next invitation after the quest. Tomas's MQ04 invitation also happens inside,
+with Serene present. New Game returns their ordinary opening
 routines and Mr. Venn’s household placement. Leaving dialogue never accepts
 unread prose; load restores safe staging without repeating finished exchanges.
 Older completed MQ02 saves gain the visit without replaying the mill quest.
@@ -236,7 +238,7 @@ and [production-game preview](reviews/regent_quest/README.md).
 
 ## MQ04 — A Light of His Own, opening segment
 
-MQ03 unlocks the first of four segments of MQ04. Tomas’s courtyard invitation leads into a school preparation session with the existing teacher and six children, a parent-approved outing, and collaborative frame construction at Mira’s workshop. One quest record stores committed scenes; the full eight-objective chain is stable from this first segment. The endpoint `frame_ready` completes only the first two objectives and keeps MQ04 active, with a truthful checkpoint in the journal and tracker.
+MQ03 unlocks the first of four segments of MQ04. Tomas’s dining-room invitation leads into a school preparation session with the existing teacher and six children, a parent-approved outing, and collaborative frame construction at Mira’s workshop. One quest record stores committed scenes; the full eight-objective chain is stable from this first segment. The endpoint `frame_ready` completes only the first two objectives and keeps MQ04 active, with a truthful checkpoint in the journal and tracker.
 
 Quest-scoped attendance borrows the actual home residents. Liam’s existing play and block routines yield safely, Tomas’s MQ03 staging hands off explicitly, and Mira’s post-mill return no longer competes with her workshop scene. New Game releases borrowed actors; old completed-MQ03 saves gain the newly gated quest without replaying earlier visits. See [the implementation guide](LANTERN_QUEST.md), [script](narrative/game_01/CH01_MQ04.md), and [review artifacts](reviews/lantern_quest/README.md).
 

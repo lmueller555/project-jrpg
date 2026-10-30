@@ -1,5 +1,6 @@
 """MQ03 keeps Caelan a guide/host while adults own the road dispute."""
 import copy
+from collections import deque
 import json
 import os
 from pathlib import Path
@@ -94,8 +95,24 @@ class RegentQuestTests(unittest.TestCase):
             self.assertEqual(self.g.world.data['id'],new_scene)
 
     def at(self,key):
+        self.go_scene(self.c.world_for_station(key))
         self.walk(self.clear_position(self.g.world,self.c.points[key]))
         self.g.transfer_cooldown=0
+
+    def go_scene(self,destination):
+        """Use the same doors as a player; companions must follow themselves."""
+        if self.g.world is destination:return
+        queue=deque([(self.g.world, [])]);seen={self.g.world.path};steps=None
+        while queue:
+            world,path=queue.popleft()
+            if world is destination:steps=path;break
+            for door in world.doors:
+                other=self.g._load_scene(ROOT/door.data['destination'])
+                if other.path not in seen:
+                    seen.add(other.path);queue.append((other,path+[(door,other)]))
+        self.assertIsNotNone(steps,('No room route',self.g.world.data['id'],destination.data['id']))
+        for door,other in steps:
+            self.walk(door.data['anchor'],new_scene=other.data['id'])
 
     def read_current(self):
         identifier=self.g.social.script_identifier
@@ -176,6 +193,77 @@ class RegentQuestTests(unittest.TestCase):
             self.assertNotIn('receipt',json.dumps(item).lower())
             self.assertNotIn('adjudicat',json.dumps(item).lower())
 
+    def test_preparations_and_their_interaction_are_inside_the_dining_room(self):
+        self.assertIs(self.c._world(self.c.serene),self.c.dining)
+        self.assertIs(self.c._world(self.c.tomas),self.c.dining)
+        self.assertNotIn(self.c.serene,self.g.town.npcs)
+        self.assertNotIn(self.c.tomas,self.g.town.npcs)
+        self.g.player.position.update(self.clear_position(self.g.town,(386,326)))
+        self.assertIsNone(self.c._target())
+        self.assertFalse(self.c.interact())
+        self.at('preparations')
+        self.assertIs(self.g.world,self.c.dining)
+        self.assertEqual(self.c._target(),'preparations')
+        self.assertEqual(self.g.quests.status(REGENT),'available')
+
+    def test_hospitality_uses_one_of_each_actor_and_leaves_a_clear_exit(self):
+        self.welcome()
+        actors=[self.c.serene,self.c.tomas,*self.c.party]
+        self.assertEqual(len(actors),6)
+        family_chairs=[entity for entity in self.c.dining.entities if 'chair' in entity['id']]
+        guest_chairs=[prop for prop in self.c.surface_props
+                      if prop['id'].startswith('dining_guest_chair_')]
+        self.assertEqual(len(family_chairs)+len(guest_chairs),7)
+        for chair in guest_chairs:
+            self.assertEqual(chair['scene'],self.c.dining.data['id'])
+            self.assertTrue(self.c.surface_prop_visible(chair))
+            self.assertFalse(self.c.dining.can_stand(pygame.Rect(chair['blocker']).center))
+        for actor in actors:
+            self.assertIs(self.c._world(actor),self.c.dining)
+            self.assertEqual(sum(actor in room.npcs for room in self.g.scenes.values()),1)
+            self.assertTrue(self.c.dining.can_stand(actor.position,actor.probe_size,actor),
+                            (actor.data['id'],tuple(actor.position)))
+        for index,actor in enumerate(actors):
+            body=self.c.dining.probe_rect(actor.position,actor.probe_size)
+            for other in actors[index+1:]:
+                self.assertFalse(body.colliderect(self.c.dining.probe_rect(other.position,other.probe_size)),
+                                 (actor.data['id'],other.data['id']))
+        exit_door=next(door for door in self.c.dining.doors if door.data['id']=='hall')
+        self.assertIsNotNone(find_path(self.c.dining,self.g.player.position,
+                                      exit_door.data['anchor'],self.c.dining.probe_size,None))
+
+    def test_hospitality_checkpoints_reload_interior_actors_without_duplicates(self):
+        self.escort()
+        for stage in ('welcome','hosted'):
+            with self.subTest(stage=stage):
+                self.assertEqual(self.c.stage,stage)
+                self.reload()
+                self.assertEqual(self.c.stage,stage)
+                self.assertIs(self.g.world,self.c.dining)
+                self.assertFalse(self.g.social.active)
+                for actor in (self.c.serene,self.c.tomas,*self.c.party):
+                    self.assertIs(self.c._world(actor),self.c.dining)
+                    self.assertEqual(sum(actor in room.npcs for room in self.g.scenes.values()),1)
+                if stage=='welcome':
+                    self.interact('welcome');self.read_current()
+
+    def test_legacy_town_player_checkpoint_restages_the_welcome_inside(self):
+        self.escort();self.g.save_progress()
+        data=json.loads(self.path.read_text())
+        self.assertEqual(data['regent_quest'],{'version':1,'stage':'welcome'})
+        data['player']={'scene':'eldenmere.playable','position':[386,318],'facing':'back'}
+        self.path.write_text(json.dumps(data))
+        other=self.game(True);self.assertTrue(other.begin_journey(True),other.save_error)
+        self.g=other;self.c=other.regent_quest
+        self.assertEqual(self.c.stage,'welcome')
+        self.assertEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
+        self.assertIs(self.g.world,self.g.town)
+        self.assertIsNone(self.c._target())
+        for actor in (self.c.serene,self.c.tomas,*self.c.party):
+            self.assertIs(self.c._world(actor),self.c.dining)
+        self.at('courtyard');self.interact('welcome');self.read_current()
+        self.assertEqual(self.c.stage,'hosted')
+
     def test_unread_preparations_do_not_accept_the_visit(self):
         self.at('preparations');self.interact('preparations')
         self.g.social.advance();self.g.social.cancel()
@@ -206,7 +294,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(sum(original in w.npcs for w in self.g.scenes.values()),1)
         self.assertEqual(sum(n.data['id']=='venn_father' for w in self.g.scenes.values() for n in w.npcs),1)
 
-    def test_cart_release_and_courtyard_arrival_precede_escort_completion(self):
+    def test_cart_release_and_interior_arrival_precede_escort_completion(self):
         self.dispute(False)
         cart=next(p for p in self.c.surface_props if p['id']=='venn_cart')
         start=pygame.Vector2(cart['position'])
@@ -220,6 +308,12 @@ class RegentQuestTests(unittest.TestCase):
         self.assertLessEqual(pygame.Vector2(cart['position']).distance_to(start),8)
         self.until(lambda:pygame.Vector2(cart['position']).distance_to(start)>4)
         self.until(lambda:self.c.stage=='escorting')
+        self.walk(self.clear_position(self.g.town,(386,318)))
+        self.tick(.5)
+        self.assertEqual(self.c.stage,'escorting')
+        self.assertNotEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
+        self.go_scene(self.c.hall)
+        self.assertEqual(self.c.stage,'escorting')
         self.at('courtyard');self.until(lambda:self.c.stage=='welcome')
         self.until(lambda:self.c._delivery_done)
         self.assertGreater(pygame.Vector2(cart['position']).distance_to(start),100)
@@ -275,8 +369,28 @@ class RegentQuestTests(unittest.TestCase):
         self.reload();self.assertEqual(self.g.quests.status(REGENT),'completed')
         self.assertTrue(self.g.mill_quest.mill_restored)
 
+    def test_completed_visit_hands_the_same_tomas_to_an_interior_invitation(self):
+        self.complete()
+        lantern=self.g.lantern_quest
+        self.assertIs(lantern.tomas,self.c.tomas)
+        self.assertIs(self.g.world,self.c.dining)
+        self.walk(self.clear_position(self.c.dining,lantern.points['invitation']))
+        self.until(lambda:lantern._target()=='invitation')
+        self.assertTrue(lantern.interact())
+        self.assertEqual(self.g.social.script_identifier,'lantern_invitation')
+        speakers={line['speaker'] for line in self.g.social._source_lines}
+        self.assertTrue({'tomas','serene'}<=speakers)
+        self.read_current()
+        self.assertEqual(lantern.stage,'invited')
+        self.assertTrue(self.c._tomas_handed_off)
+        self.assertIs(lantern._world(lantern.tomas),self.c.dining)
+        self.c._setup_stage(force=True);self.c.update(.2)
+        self.assertIs(lantern._world(lantern.tomas),self.c.dining)
+        self.assertEqual(sum(lantern.tomas in room.npcs for room in self.g.scenes.values()),1)
+
     def test_parked_cart_leaves_halden_accessible_after_the_visit(self):
         self.complete();self.until(lambda:self.c._delivery_done)
+        self.go_scene(self.g.town)
         halden=self.g.halden_visit.halden
         options=[halden.position+offset for offset in ((0,16),(20,0),(-20,0),(0,-16),(18,12),(-18,12))]
         self.assertTrue(any(self.g.town.can_stand(pos) and
@@ -300,6 +414,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(sum(self.g.venn_visit.family['father'] in w.npcs for w in self.g.scenes.values()),1)
         self.assertIn(self.g.venn_visit.family['father'],self.g.venn_visit.home.npcs)
         self.assertTrue(all(not actor.story_visible for actor in self.c.actors.values()))
+        self.assertTrue(all(not self.c.surface_prop_visible(prop) for prop in self.c.surface_props))
 
     def test_invalid_or_cross_quest_visit_checkpoint_is_rejected(self):
         self.g.save_progress();good=json.loads(self.path.read_text())
@@ -312,7 +427,7 @@ class RegentQuestTests(unittest.TestCase):
 
     def test_walkaway_from_unread_preparations_leaves_quest_available(self):
         self.at('preparations');self.interact('preparations');self.g.social.advance()
-        self.walk(self.clear_position(self.g.town,self.c.points['arrival']))
+        self.at('arrival')
         self.assertFalse(self.g.social.active)
         self.assertEqual(self.g.quests.status(REGENT),'available')
         self.assertEqual(self.c.stage,'idle')

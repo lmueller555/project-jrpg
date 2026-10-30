@@ -21,6 +21,7 @@ from main import Game
 from npc_routines import find_path
 from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST
 from tools.capture_mill_quest import save_gif
+from tools.quest_capture_navigation import travel_to
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'docs/reviews/lantern_quest'
@@ -57,7 +58,7 @@ def seed_previous_quests(game):
     assert game.regent_quest.restore({'version': 1, 'stage': 'done'})
     if game.quests.status(LANTERN) == 'locked':assert game.quests.unlock(LANTERN)
     assert game.lantern_quest.restore(None)
-    game.world = game.town
+    game.world = game.lantern_quest.invitation_world
     game.player.position.update(game.lantern_quest.points['invitation'])
     game.player.facing = 'back'
     game.opening_fade = 0;game.transfer_cooldown = 0
@@ -79,6 +80,7 @@ class Capture:
         self.frames = [];self.durations = [];self.craft = [];self.craft_durations = []
         self.seen_pages = [];self.seen_contexts = [];self.saved_stills = set()
         self.tick_index = 0;self.label = 'A Light of His Own / festival preparations'
+        self.room_transitions = []
         self.font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
         seed_previous_quests(self.g)
 
@@ -189,8 +191,7 @@ class Capture:
         self.at('invitation');self.interact('invitation')
         assert self.c.stage == 'invited'
         self.label = 'A special preparation afternoon at the village school'
-        door = next(d for d in self.g.town.doors if d.data['id'] == 'school')
-        self.walk(door.data['anchor'], 'school')
+        travel_to(self,self.c.school)
         self.at('classroom')
         self.interact('classroom');assert self.c.stage == 'classroom'
         self.label = 'Liam has plans for a tower-shaped lantern'

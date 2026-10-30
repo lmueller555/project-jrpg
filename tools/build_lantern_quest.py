@@ -254,7 +254,7 @@ def build():
                            'frame_handle': [5, 1], 'frame_is_lit': False,
                            'design': 'Liam\'s small, vented tower frame; no paper or flame yet.'})
     json_file('layout.json', {
-        'invitation': [386, 326], 'tomas_invitation': [420, 348],
+        'invitation': [108, 228], 'tomas_invitation': [108, 200],
         'school': [254, 302], 'classroom': [254, 302],
         'school_approach': [672, 750], 'school_entry': [216, 342],
         'school_teacher': [266, 246], 'school_liam': [318, 246], 'school_tomas': [228, 270],

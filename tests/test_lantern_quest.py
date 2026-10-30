@@ -47,8 +47,10 @@ class LanternQuestTests(unittest.TestCase):
                    [(a.data['id'], self.c._world(a).data['id'], tuple(a.position))
                     for a in (self.c.tomas, self.c.liam, self.c.mother)]))
 
-    def position(self, key, scene='eldenmere.playable'):
+    def position(self, key, scene=None):
         """Place only the player; companions must still reach their own stations."""
+        if scene is None:
+            scene='sanctuary_dining' if key=='invitation' else 'eldenmere.playable'
         world = self.g._scene_by_id(scene)
         self.g.world = world
         point = pygame.Vector2(self.c.points[key])
@@ -137,6 +139,20 @@ class LanternQuestTests(unittest.TestCase):
         self.assertEqual(self.g.quests.status(LANTERN), 'available')
         self.assertEqual(self.c.stage, 'idle')
         self.reload();self.assertEqual(self.c.stage, 'idle')
+
+    def test_invitation_remains_with_tomas_and_serene_inside_the_sanctuary(self):
+        dining=self.g._scene_by_id('sanctuary_dining')
+        self.assertIs(self.c._world(self.c.tomas),dining)
+        self.assertIs(self.g.regent_quest._world(self.g.regent_quest.serene),dining)
+        self.position('invitation','eldenmere.playable')
+        self.tick(.2)
+        self.assertIsNone(self.c._target())
+        self.assertIs(self.c._world(self.c.tomas),dining)
+        self.position('invitation');self.scene('invitation',False)
+        self.assertIs(self.g.world,dining)
+        self.assertTrue({'tomas','serene'}<={line['speaker'] for line in self.g.social._source_lines})
+        for actor in (self.c.tomas,self.g.regent_quest.serene):
+            self.assertEqual(sum(actor in room.npcs for room in self.g.scenes.values()),1)
 
     def test_cancelled_classroom_scene_does_not_advance_or_authorize_outing(self):
         self.invite();self.position('classroom', 'school');self.scene('classroom', False)
