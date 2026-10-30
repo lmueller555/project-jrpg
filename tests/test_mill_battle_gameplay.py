@@ -84,6 +84,9 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
     scene = game.combat.scene
     for _ in range(4000):
         if on_step:on_step(scene)
+        if getattr(game.combat, 'transitioning', False):
+            game.update(.1, (0, 0), False)
+            continue
         if getattr(scene, 'tutorial_active', False):
             key(game, pygame.K_SPACE)
         elif scene.model.ended:

@@ -6,6 +6,7 @@ working. Interface options live in the same atomic document as volume settings.
 from __future__ import annotations
 
 import math
+import weakref
 
 import pygame
 
@@ -23,6 +24,7 @@ class AudioSettings:
         self.reduced_motion = False
         self.tracker_visible = True
         self.error = None
+        self._music_controller = None
         saved = self.store.load()
         if saved is not None:
             keys = ('music_volume', 'effects_volume', 'last_music', 'last_effects')
@@ -84,8 +86,16 @@ class AudioSettings:
         if self.store.enabled:
             self.error = None if self.store.write(self.to_dict()) else self.store.error
 
+    def bind_music(self, controller):
+        """Let this game's soundtrack apply its own track/fade/duck mix."""
+        self._music_controller = weakref.ref(controller)
+
     def apply_music(self):
-        """Keep the original theme's mix level; the setting is its multiplier."""
+        """Refresh the soundtrack immediately; retain standalone menu support."""
+        controller = self._music_controller() if self._music_controller is not None else None
+        if controller is not None:
+            controller.refresh_volume()
+            return
         try:
             if pygame.mixer.get_init():
                 pygame.mixer.music.set_volume(.45*self.music_volume)

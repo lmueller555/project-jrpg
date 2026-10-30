@@ -49,6 +49,7 @@ class MillQuest:
         self._returning = False
         self._return_dialogue = None
         self._encounter_callback = None
+        self._encounter_music_started = False
         self._aftermath_recovered = False
         self.cast = read('poses/animation.json')
         sheet = self.town.image(ART+'poses/poses.png')
@@ -208,6 +209,7 @@ class MillQuest:
         self.dialogue = None;self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
         self._player_route = None
         self._return_dialogue = None;self._encounter_callback = None
+        self._encounter_music_started = False
         self._aftermath_recovered = False
         self.inspected = set(data['inspected']) if data else set()
         if data:
@@ -307,7 +309,12 @@ class MillQuest:
         if identifier and identifier.startswith('mill_'):
             self.dialogue = None;self.mira.end_conversation()
             if identifier == 'mill_repair_done':self.release_pose()
-            if identifier == 'mill_encounter_intro':self._encounter_callback = None
+            if identifier == 'mill_encounter_intro':
+                self._encounter_callback = None
+                if self._encounter_music_started:
+                    self._encounter_music_started = False
+                    music = getattr(self.game, 'music', None)
+                    if music is not None:music.play('eldenmere')
 
     def can_speak(self, identifier):
         if identifier in ('mira_worker', 'halden') and self.action:return False
@@ -439,12 +446,35 @@ class MillQuest:
                 or not self._with_mira() or not callable(on_finished)):
             return False
         self._encounter_callback = on_finished
+        self._encounter_music_started = False
         def finished():
             callback, self._encounter_callback = self._encounter_callback, None
             if self.encounter_pending and callback is not None:callback()
         if self._speak('encounter_intro', finished):return True
         self._encounter_callback = None
         return False
+
+    def sync_encounter_music(self):
+        """Cue the score on Mira's displayed warning, independent of read speed.
+
+        This presentation latch is deliberately absent from the saved quest
+        facts. Reflowing the page or pausing cannot retrigger the same cue.
+        """
+        game = self.game
+        music = getattr(game, 'music', None)
+        if music is None:return
+        intro = (self.dialogue == 'encounter_intro'
+                 and game.social.script_identifier == 'mill_encounter_intro'
+                 and game.social.active)
+        if intro and not self._encounter_music_started:
+            page = game.social.page
+            if page and page.get('cue') == 'mill_battle_music':
+                self._encounter_music_started = True
+                music.play('battle')
+        elif (self._encounter_music_started and not intro
+              and not getattr(getattr(game, 'combat', None), 'active', False)):
+            self._encounter_music_started = False
+            music.play('eldenmere')
 
     def battle_won(self):
         """Commit the encounter fact; its owner saves this with resources/rewards."""
@@ -753,6 +783,7 @@ class MillQuest:
         return True
 
     def update(self, seconds):
+        self.sync_encounter_music()
         if self.game.map_open or self.game.quest_ui.journal_open:return
         if self.dialogue == 'repair_done' and not self._holding_repair_pose():self.release_pose()
         if self.active:

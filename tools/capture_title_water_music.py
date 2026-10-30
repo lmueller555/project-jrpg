@@ -22,12 +22,14 @@ OUTPUT=ROOT/'docs/reviews/title_water_music'
 def capture():
     OUTPUT.mkdir(parents=True,exist_ok=True)
     game=main.Game(window_size=(640,360),fullscreen=False)
-    score=json.loads((ROOT/'assets/ui/title/music_score.json').read_text())
-    duration=score['duration_seconds']
+    track=json.loads((ROOT/'assets/music/tracks.json').read_text())['tracks']['eldenmere']
+    soundtrack=ROOT/'assets/music'/track['file']
+    duration=pygame.mixer.Sound(str(soundtrack)).get_length()
     command=['ffmpeg','-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24',
              '-s','640x360','-r','10','-i','-',
-             '-i',str(ROOT/'assets/ui/title/eldenmere_theme.ogg'),
+             '-i',str(soundtrack),
              '-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p',
+             '-af',f"volume={track['gain']*game.audio.music_volume},afade=t=in:st=0:d=0.9",
              '-c:a','aac','-b:a','160k','-shortest','-movflags','+faststart',
              str(OUTPUT/'title_with_music.mp4')]
     encoder=subprocess.Popen(command,stdin=subprocess.PIPE)
@@ -57,6 +59,7 @@ def capture():
         print(f'Captured {duration:.2f}s title video with full music and a looping water close-up.')
     finally:
         if encoder.poll() is None:encoder.kill();encoder.wait()
+        game.music.stop()
         pygame.quit()
 
 

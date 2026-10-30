@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "source": "User-provided uploads",
+  "export_codec": "Ogg Vorbis",
+  "quality": 8,
+  "musical_rearrangement": false,
+  "normalization": false,
+  "looping": "Repeat the authored cue; no sample-accurate musical-loop claim",
+  "tracks": [
+    {
+      "identifier": "eldenmere",
+      "source": "Eldenmere Theme.m4a",
+      "source_git_blob_sha": "57758f45b93257789f1fff434fecce4a43ef8a4c",
+      "source_sha256": "3e4215224cba1fd1d36d5ee3207ee69900b14a3c732c92c5ab60eaa0de27a227",
+      "source_codec": "opus",
+      "source_decoded_frames": 4564488,
+      "source_decoded_seconds": 95.0935,
+      "runtime": "runtime/eldenmere_theme.ogg",
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 4564488,
+        "duration_seconds": 95.0935,
+        "peak_dbfs": -3.928079359013817,
+        "rms_dbfs": -19.240563340662856,
+        "sample_step_across_repeat": 0.001214016112498939,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "sha256": "8da4b81c76da788944a21d7c5035443f56cea85db9e6e745898f68ad61688657",
+        "bytes": 2504032
+      }
+    },
+    {
+      "identifier": "battle",
+      "source": "Kindled Courage.m4a",
+      "source_git_blob_sha": "8acead411b5d07b89666355cdc559928c90f442e",
+      "source_sha256": "febf47c6f09b4849c29bae44c104946668bf092150fe4d07150a3de27977e4fc",
+      "source_codec": "opus",
+      "source_decoded_frames": 9118728,
+      "source_decoded_seconds": 189.9735,
+      "runtime": "runtime/kindled_courage.ogg",
+      "boundaries": {
+        "threshold_dbfs": -60,
+        "measurement_window_ms": 5,
+        "last_active_end_frame": 9062400,
+        "safety_tail_ms": 25,
+        "boundary_declick_ms": 5,
+        "removed_tail_frames": 55128,
+        "removed_tail_seconds": 1.1485
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 9063600,
+        "duration_seconds": 188.825,
+        "peak_dbfs": -2.0777500966385496,
+        "rms_dbfs": -16.93465514570079,
+        "sample_step_across_repeat": 0.00013599864905700088,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "sha256": "bded4775581ea8f01ac58e990bb56afd74a39028e3833eeca399ad3f1f9e856b",
+        "bytes": 5249374
+      }
+    }
+  ]
+}

@@ -138,3 +138,18 @@ location or displaying a blue spark alone is insufficient evidence of a
 completed task.
 
 See the [interaction placement audit and native scene previews](reviews/mill_triggers/README.md) for the corrected road ends, object approaches and real-input route verification.
+
+## Encounter music and transition
+
+The Eldenmere Theme continues between the town, interiors and the millrace.
+Kindled Courage begins on Mira's displayed “Easy, Caelan. Back slowly. Keep your
+feet under you” line in the encounter introduction. It continues through the
+rest of the exchange, the world-to-battle curtain and the fight. Leaving the
+conversation before battle restores the world theme; loading an unfinished
+approach starts with world music and waits for the cue again.
+
+The entry transition freezes the actual world view and all battle gauges until
+the battlefield is revealed. Reduced Motion uses a short uniform fade. Music
+keeps playing while the player decides actions, lowers during tutorial guidance,
+and returns to the Eldenmere Theme after the encounter settles. This cue adds no
+saved quest fact or new dialogue choice.

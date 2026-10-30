@@ -41,10 +41,14 @@ then takes a courtyard break. He uses the portrait dialogue system and safely
 sets down carried work before speaking. See his [routine previews](docs/reviews/tomas_routines/README.md).
 
 The title water animates throughout the brook, pools, mill discharge and
-foreground cascades. The soundtrack is now a new 93-second sampled piano/cello
-theme in 4/4 at 72 BPM, with strict beat alignment. The earlier flute/harp track
-has been replaced. Listen to the [clean and metronome-reference excerpts](docs/reviews/title_piano_cello/README.md)
-or watch the [title video and water close-up](docs/reviews/title_water_music/README.md).
+foreground cascades. Your **Eldenmere Theme** now loops on the title screen and
+through Eldenmere, its interiors and the millrace, continuing across New Game,
+Continue and area transfers. **Kindled Courage** plays in battles. During MQ02,
+it starts when Mira says “Easy, Caelan. Back slowly. Keep your feet under you,”
+then continues through a brief world-to-battle curtain and reveal. Reduced
+Motion uses a short plain fade. The Music slider controls the soundtrack
+independently of effects. See the [music assets](assets/music/README.md) and
+[music/transition preview](docs/reviews/battle_music_transition/README.md).
 
 | Control | Action |
 | --- | --- |

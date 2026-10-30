@@ -86,6 +86,10 @@ class Capture:
         assert game.combat.kind == 'mill' and model.enemy_id == 'ridgeback_tusker'
         assert [member.name for member in model.party] == ['Caelan', 'Mira']
         model.rng = random.Random(7)
+        # Capture the production entry before labeling a frame as battlefield.
+        while game.combat.transitioning:
+            self.frame(100)
+            game.update(1/30, (0, 0), False)
         self.frame(600, 'battlefield.png')
         world = game.elapsed_ms, tuple(game.player.position), tuple(game.mill_quest.mira.position)
         captured_actions, guide_keys = set(), set()
