@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "opening_a_light_before_the_descent",
-  "duration": 255.15,
+  "duration": 252.566667,
   "canvas": [
     960,
     480
@@ -152,7 +152,7 @@
     {
       "id": "departure_follow",
       "start": 229.15,
-      "end": 236.15,
+      "end": 234.983333,
       "from": [
         435,
         160
@@ -164,8 +164,8 @@
     },
     {
       "id": "memorial_hold",
-      "start": 236.15,
-      "end": 245.15,
+      "start": 234.983333,
+      "end": 242.566667,
       "from": [
         155,
         160
@@ -177,8 +177,8 @@
     },
     {
       "id": "helmet_zoom",
-      "start": 245.15,
-      "end": 255.15,
+      "start": 242.566667,
+      "end": 252.566667,
       "from": [
         155,
         160
@@ -599,11 +599,11 @@
     "camera_returned": 212.0,
     "lamp_restored": 212.35,
     "departure_start": 229.15,
-    "memorial_centered": 236.15,
-    "actors_offscreen": 244.65,
-    "helmet_zoom_start": 245.15,
-    "fade_start": 246.65,
-    "end": 255.15,
+    "memorial_centered": 234.983333,
+    "actors_offscreen": 242.066667,
+    "helmet_zoom_start": 242.566667,
+    "fade_start": 244.066667,
+    "end": 252.566667,
     "flare_release_pose": 199.7
   },
   "camera_bounds": [
@@ -624,14 +624,14 @@
     ]
   },
   "fade_out": {
-    "start": 246.65,
-    "end": 255.15
+    "start": 244.066667,
+    "end": 252.566667
   },
   "position_tracks": {
     "caelan": [
       {
         "start": 229.15,
-        "end": 244.65,
+        "end": 242.066667,
         "from": [
           670,
           375
@@ -685,7 +685,7 @@
       },
       {
         "start": 229.15,
-        "end": 244.65,
+        "end": 242.066667,
         "from": [
           585,
           375
@@ -773,7 +773,7 @@
       670,
       -430
     ],
-    "glimmer_until": 255.15,
+    "glimmer_until": 252.566667,
     "charge_origin": [
       661,
       327

@@ -32,6 +32,41 @@ class BubbleLayout:
     name_lines: tuple = ()
     line_height: int = 14
 
+
+def measure_dialogue(painter, name, lines, reserve_hint=True):
+    """Measure the portrait panel shared by gameplay and timed scenes."""
+    name_lines = tuple(painter.wrap(name, TEXT_WIDTH, role='name', bold=True))
+    text_top = 10+len(name_lines)*(painter.font('name', bold=True).get_linesize()+1)+4
+    line_height = painter.font().get_linesize()+2
+    hint_height = painter.font('small').get_height() if reserve_hint else 0
+    height = max(72, text_top+len(lines)*line_height+hint_height+14)
+    return name_lines, text_top, line_height, height
+
+
+def draw_dialogue_frame(painter, layout, portrait):
+    """Draw the common panel, left portrait and speaker name."""
+    painter.panel(layout.panel)
+    painter.image(portrait, layout.portrait)
+    painter.rect(BRASS, layout.portrait.inflate(2, 2), 1)
+    name_x = layout.panel.x+TEXT_OFFSET
+    name_height = painter.font('name', bold=True).get_linesize()+1
+    for index, line in enumerate(layout.name_lines):
+        painter.text(line, (name_x, layout.panel.y+10+index*name_height),
+                     role='name', color=GOLD, bold=True)
+
+
+def draw_dialogue_prose(painter, layout, lines, hint=None, show_indicator=False):
+    """Draw shared body text with optional interaction hints."""
+    text_x, text_y = layout.text_origin
+    for index, line in enumerate(lines):
+        painter.text(line, (text_x, text_y+index*layout.line_height))
+    if hint:
+        painter.text(hint, (text_x, layout.panel.bottom-painter.font('small').get_height()-7),
+                     role='small', color=MUTED)
+    if show_indicator:
+        painter.lantern((layout.panel.right-12, layout.panel.bottom-13), size=6)
+
+
 class SpeechBubble:
     def __init__(self, social):
         self.social = social
@@ -166,10 +201,9 @@ class SpeechBubble:
         else:
             speaker = social.data['speakers'][social.page['speaker']]
             name = speaker['name']+(' · nearby' if offscreen and not cutscene_phase else '')
-            name_lines = tuple(painter.wrap(name, TEXT_WIDTH, role='name', bold=True))
-            text_top = 10+len(name_lines)*(painter.font('name', bold=True).get_linesize()+1)+4
+            name_lines, text_top, line_height, height = measure_dialogue(
+                painter, name, social.page['lines'])
             width = PANEL_WIDTH
-            height = max(72, text_top+len(social.page['lines'])*line_height+hint_height+14)
             if choices:
                 columns, button_width, prompt_lines, option_lines, heights = self._choice_content(choices, painter)
                 button_top = text_top+len(prompt_lines)*line_height+5
@@ -227,20 +261,14 @@ class SpeechBubble:
         if layout is None:return None
         social, panel = self.social, layout.panel
         self._tail(painter, layout)
-        painter.panel(panel)
         if layout.pending:
+            painter.panel(panel)
             top = panel.y+8
             for line in layout.prompt_lines:
                 painter.text(line, (panel.centerx, top), role='small', anchor='midtop')
                 top += painter.font('small').get_height()+2
             return layout
-        painter.image(social.portraits[layout.portrait_key], layout.portrait)
-        painter.rect(BRASS, layout.portrait.inflate(2, 2), 1)
-        name_x = panel.x+TEXT_OFFSET
-        name_height = painter.font('name', bold=True).get_linesize()+1
-        for index, line in enumerate(layout.name_lines):
-            painter.text(line, (name_x, panel.y+10+index*name_height),
-                         role='name', color=GOLD, bold=True)
+        draw_dialogue_frame(painter, layout, social.portraits[layout.portrait_key])
         text_x, text_y = layout.text_origin
         if social.choosing:
             for index, line in enumerate(layout.prompt_lines):
@@ -254,14 +282,9 @@ class SpeechBubble:
                 for index, line in enumerate(lines):
                     painter.text(line, (rect.centerx+(5 if selected else 0), first_y+index*layout.line_height),
                                  color=GOLD if selected else IVORY, anchor='center')
-            hint = 'Choose a response'
+            draw_dialogue_prose(painter, layout, (), hint='Choose a response')
         else:
-            for index, line in enumerate(social.page['lines']):
-                painter.text(line, (text_x, text_y+index*layout.line_height))
-            hint = 'Click to continue'
-        painter.text(hint, (text_x, panel.bottom-painter.font('small').get_height()-7),
-                     role='small', color=MUTED)
-        reduced_motion = getattr(getattr(social.game, 'audio', None), 'reduced_motion', False)
-        if not social.choosing and (reduced_motion or int(elapsed_ms//650) % 2 == 0):
-            painter.lantern((panel.right-12, panel.bottom-13), size=6)
+            reduced_motion = getattr(getattr(social.game, 'audio', None), 'reduced_motion', False)
+            draw_dialogue_prose(painter, layout, social.page['lines'], hint='Click to continue',
+                                show_indicator=reduced_motion or int(elapsed_ms//650) % 2 == 0)
         return layout

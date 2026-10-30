@@ -6,7 +6,7 @@ mountain valley. A cup, a traveling lantern and a recollection of the mill
 establish exhaustion and familiarity before the scene returns to Caelan's
 ordinary sanctuary bedroom and Tomas's existing first line.
 
-The 255.15-second sequence begins with “Later in the journey…” to identify the
+The 252.57-second sequence begins with “Later in the journey…” to identify the
 flashforward explicitly. [Watch the captured opening](reviews/opening_cinematic/README.md).
 
 ## Story contract
@@ -46,15 +46,18 @@ move to the lantern-lit pair, hold their conversation and return attention to
 the approach ahead. Local animation gives the light, fabric and atmosphere
 motion without continuously moving the conversation's frame.
 
-Dialogue advances automatically. Text uses the shared display-resolution
-renderer and respects the readability setting. Camera shots and captions belong
-to the cinematic, while the ordinary world, morning action sequence and quest
-state remain suspended.
+Dialogue advances automatically through the same portrait dialogue panel used
+in ordinary gameplay: the speaker portrait sits on the left beside the shared
+border, speaker label, fonts and text spacing. Longer passages advance through
+readable pages within their authored dialogue hold, without a click-to-continue
+prompt. The shared display-resolution renderer respects the readability setting.
+The cinematic owns dialogue timing and shot placement while the ordinary world,
+morning action sequence and quest state remain suspended.
 
 Ordinary gaps between lines remain about one second. The author's latest
 30-line dialogue is preserved verbatim; longer lines receive enough time to
 read. Visible cup placement, hand contact, repair and camera work own their
-action beats. The sequence runs for about four minutes and fifteen seconds.
+action beats. The sequence runs for about four minutes and thirteen seconds.
 Caelan's corrected forward/downward drinking motion is retained.
 
 ## Authored actions and camera sequence
@@ -72,12 +75,16 @@ Caelan's corrected forward/downward drinking motion is retained.
 4. Full restoration and “Ok there! Don't break on me now.” are gated by the
    completed downward pan. The lamp remains partial until the camera has
    returned, and becomes fully restored as Mira delivers that line.
-5. Following the final exchange, both walk left. The camera follows for seven
-   seconds, revealing the nearer sword and helmet as the actors pass behind
-   them. At center view the camera stops while both continue offscreen.
-6. After both are gone, the camera slowly zooms toward the helmet and fades to
-   black. The ordinary bedroom opening follows, with Tomas's original first
-   line. The sword is hidden in the earlier valley shots to preserve its reveal.
+5. Following the final exchange, both walk left at 48 pixels per second, a 20%
+   increase in departure movement speed. Their existing walk animation cadence
+   remains 180 ms per frame. The same paths now take about 12.92 seconds, and
+   the smoothly eased camera follows for about 5.83 seconds, revealing the
+   nearer sword and helmet as the actors pass behind them. At center view the
+   camera stops while both continue offscreen.
+6. Half a second after both are gone, the camera begins the existing ten-second
+   helmet zoom, with the fade starting 1.5 seconds into it. The ordinary bedroom
+   opening follows, with Tomas's original first line. The sword is hidden in the
+   earlier valley shots to preserve its reveal.
 
 Scene events, actor paths and camera shots are data in `scene.json`. Lamp stages
 and the completion line have a runtime camera-return gate, rather than relying

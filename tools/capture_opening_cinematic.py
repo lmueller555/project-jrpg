@@ -14,6 +14,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+from unittest.mock import patch
 import wave
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
@@ -26,6 +27,8 @@ import numpy as np
 import pygame
 from main import Game
 from capture_battle_music_transition import MixerTrace, FPS, RATE
+from speech_bubble import MAX_LINES, PANEL_WIDTH, PORTRAIT_SIZE, TEXT_WIDTH
+from ui_style import Painter
 
 
 class Capture:
@@ -54,6 +57,9 @@ class Capture:
         self.clip_records = {}
         self._last_zoom = 1.0
         self.reconstructed_motif_wraps = 0
+        self.dialogue_draw_checks = 0
+        self.departure = None
+        self.paging_review = None
 
     @property
     def seconds(self):
@@ -97,6 +103,21 @@ class Capture:
                     index=index, id=record['id'], speaker=record['speaker'], text=record['text'],
                     first_seen=round(scene.elapsed, 4)))
                 observed['last_seen'] = round(scene.elapsed, 4)
+                layout = scene.caption_layout
+                assert layout is not None and layout.portrait is not None
+                assert layout.portrait_key == record['speaker'].lower()
+                assert layout.portrait.size == (PORTRAIT_SIZE, PORTRAIT_SIZE)
+                assert layout.panel.width == PANEL_WIDTH
+                assert 0 <= scene.caption_page_index < len(scene.caption_pages)
+                assert len(scene.caption_lines) <= MAX_LINES
+                pages = observed.setdefault('pages', [dict(index=page_index, lines=list(lines))
+                    for page_index, lines in enumerate(scene.caption_pages)])
+                assert [page['lines'] for page in pages] == [list(lines) for lines in scene.caption_pages]
+                page = pages[scene.caption_page_index]
+                page.setdefault('first_seen', round(scene.elapsed, 4))
+                page['last_seen'] = round(scene.elapsed, 4)
+                assert page['lines'] == list(scene.caption_lines)
+                self.dialogue_draw_checks += 1
             if (self.drink_interval is not None and
                     self.drink_interval[0] <= scene.elapsed <= self.drink_interval[1]):
                 self.drink_frames.append(pygame.image.tobytes(
@@ -138,6 +159,10 @@ class Capture:
             self.accessibility = dict(viewport=[480, 320], text_scale=1.5,
                 text=scene.dialogue['text'], caption=list(scene.caption_rect),
                 lines=list(scene.caption_lines), skip=list(scene.skip_rect),
+                portrait=list(scene.caption_layout.portrait),
+                portrait_key=scene.caption_layout.portrait_key,
+                page_index=scene.caption_page_index,
+                pages=[list(lines) for lines in scene.caption_pages],
                 actor_bounds=actor_bounds)
         finally:
             game.window = pygame.display.set_mode(original_size, pygame.RESIZABLE)
@@ -201,7 +226,7 @@ class Capture:
             self.game.audio.text_scale = 1.5
             painter = self.game.ui.painter(pygame.Surface((480, 320)))
             return max(scene.data['dialogue'], key=lambda record: (
-                len(painter.wrap(record['text'], 412)), len(record['text'])))
+                len(painter.wrap(record['text'], TEXT_WIDTH)), len(record['text'])))
         finally:
             self.game.audio.text_scale = original
 
@@ -258,6 +283,66 @@ class Capture:
         pygame.image.save(pygame.transform.scale(sheet, (sheet.get_width()*2,
                           sheet.get_height()*2)), str(self.output/'drinking_keyframes.png'))
 
+    def write_large_text_paging_review(self):
+        """Render a complete timed line at 480x320 with 150% accessibility text."""
+        game, scene = self.game, self.game.opening_cinematic
+        record = self.line(scene, 'catch_and_branch')
+        original_size, original_text = game.window.get_size(), game.audio.text_scale
+        original_elapsed, original_active = scene.elapsed, scene.active
+        encoder = None
+        pages, page_frames, page_samples = None, {}, {}
+        filename = 'large_text_paging.mp4'
+        try:
+            game.window = pygame.display.set_mode((480, 320), pygame.RESIZABLE)
+            game.audio.set_text_scale(1.5)
+            scene.active = True
+            encoder = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo',
+                '-pixel_format', 'rgb24', '-video_size', '480x320', '-framerate', str(FPS),
+                '-i', '-', '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+                '-pix_fmt', 'yuv420p', '-movflags', '+faststart', str(self.output/filename)],
+                stdin=subprocess.PIPE)
+            frame_count = round((record['end']-record['start'])*FPS)
+            for frame in range(frame_count):
+                scene.elapsed = record['start']+frame/FPS
+                game.draw()
+                current = [list(lines) for lines in scene.caption_pages]
+                if pages is None:
+                    pages = current
+                assert current == pages
+                page_index = scene.caption_page_index
+                page_frames[page_index] = page_frames.get(page_index, 0)+1
+                page_samples.setdefault(page_index, game.window.copy())
+                assert pygame.Rect(0, 0, 480, 320).contains(scene.caption_rect)
+                assert not scene.caption_rect.colliderect(scene.skip_rect)
+                encoder.stdin.write(pygame.image.tobytes(game.window, 'RGB'))
+            encoder.stdin.close()
+            assert encoder.wait() == 0
+            encoder = None
+            assert set(page_frames) == set(range(len(pages)))
+            assert max(map(len, pages))-min(map(len, pages)) <= 1
+            assert page_frames[len(pages)-1]/FPS >= 2.7
+            sheet = pygame.Surface((480*len(pages), 338))
+            sheet.fill('#15232b')
+            font = pygame.font.Font(str(ROOT/'assets/ui/fonts/AtkinsonHyperlegible-Regular.ttf'), 11)
+            for index in range(len(pages)):
+                sheet.blit(page_samples[index], (480*index, 18))
+                label = f'Page {index+1} · {page_frames[index]/FPS:.2f}s'
+                sheet.blit(font.render(label, True, '#f8f0d9'), (480*index+6, 3))
+            pygame.image.save(sheet, str(self.output/'large_text_pages.png'))
+            self.paging_review = dict(file=filename, image='large_text_pages.png',
+                source='Production Game.draw at the original timed line; separate silent accessibility review',
+                dialogue_id=record['id'], scene_interval=[record['start'], record['end']],
+                viewport=[480, 320], text_scale=1.5, frames=frame_count, pages=pages,
+                page_seconds=[page_frames[index]/FPS for index in range(len(pages))])
+        finally:
+            if encoder is not None:
+                encoder.stdin.close()
+                encoder.wait()
+            scene.elapsed, scene.active = original_elapsed, original_active
+            game.window = pygame.display.set_mode(original_size, pygame.RESIZABLE)
+            game.audio.set_text_scale(original_text)
+            game.draw()
+
     def movie_time(self, scene_time):
         return min(self.clock_samples, key=lambda item: abs(item[0]-scene_time))[1]
 
@@ -302,7 +387,7 @@ class Capture:
         self.encoder = subprocess.Popen([
             'ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pixel_format', 'rgb24',
             '-video_size', '960x640', '-framerate', str(FPS), '-i', '-', '-an',
-            '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-pix_fmt',
+            '-c:v', 'libx264', '-preset', 'slow', '-crf', '30', '-pix_fmt',
             'yuv420p', str(self.output/'silent.mp4')], stdin=subprocess.PIPE)
         self.trace.begin()
         self.snapshot('title.png')
@@ -319,6 +404,21 @@ class Capture:
         self.scene_dialogue = list(scene.data['dialogue'])
         self.timeline = dict(scene.data['events'])
         self.timeline['end'] = scene.duration
+        departure_tracks = {actor: next(track for track in scene.data['position_tracks'][actor]
+            if track['start'] == self.timeline['departure_start']) for actor in ('caelan', 'mira')}
+        speed = {actor: pygame.Vector2(track['from']).distance_to(track['to']) /
+            (track['end']-track['start']) for actor, track in departure_tracks.items()}
+        assert all(abs(value-48) < .0001 for value in speed.values())
+        loops = {actor: [duration for _, duration in scene._actor_loops[actor]['walk_left']]
+                 for actor in ('caelan', 'mira')}
+        assert all(all(abs(duration-.18) < 1e-9 for duration in loop) for loop in loops.values())
+        follow = next(shot for shot in scene.data['shots'] if shot['id'] == 'departure_follow')
+        assert abs(follow['end']-follow['start']-7/1.2) < .00001
+        assert follow['to'] == [155, 160]
+        self.departure = dict(movement_pixels_per_second=speed,
+            walking_frame_seconds=loops, animation_cadence_unchanged=True,
+            camera_follow_seconds=follow['end']-follow['start'],
+            walking_seconds=self.timeline['actors_offscreen']-self.timeline['departure_start'])
         conversation = next(shot for shot in scene.data['shots'] if shot['id'] == 'conversation')
         # Actor framing is fixed throughout the conversation. Calculate the crop
         # at that authored shot without changing the live scene clock.
@@ -397,6 +497,10 @@ class Capture:
         assert game.music.desired_track == 'eldenmere'
         assert self.path.is_file()
         assert len(self.observed_dialogue) == len(self.scene_dialogue), 'Some dialogue was not shown'
+        for observed in self.observed_dialogue.values():
+            assert all('first_seen' in page for page in observed['pages']), 'Some timed dialogue pages were omitted'
+            joined = ' '.join(line for page in observed['pages'] for line in page['lines'])
+            assert ' '.join(joined.split()) == ' '.join(observed['text'].split()), 'Timed pages lost dialogue text'
         assert self.accessibility is not None, 'Longest caption was not captured'
         assert all(self.checks.values()), 'Some required cinematic stages were not verified'
         self.event('bedroom_started', first_line=first_line)
@@ -408,6 +512,7 @@ class Capture:
             raise RuntimeError('FFmpeg video encoder failed')
         self.encoder = None
         self.write_drink_review()
+        self.write_large_text_paging_review()
 
     def write_audio_and_metadata(self):
         audio = np.concatenate(self.trace.blocks)
@@ -437,6 +542,11 @@ class Capture:
             leitmotif_repeat=True, events=self.events, mixer_commands=commands,
             reconstructed_motif_wraps=self.reconstructed_motif_wraps,
             dialogue_lines=len(self.scene_dialogue),
+            dialogue_pages=sum(len(record['pages']) for record in self.observed_dialogue.values()),
+            dialogue_draw_checks=self.dialogue_draw_checks,
+            standard_dialogue_panel=True, left_speaker_portraits=True,
+            no_click_to_continue_prompt=True, departure=self.departure,
+            large_text_paging=self.paging_review,
             observed_dialogue=[self.observed_dialogue[index]
                                for index in range(len(self.scene_dialogue))],
             dialogue_gaps_seconds=gaps, accessibility=self.accessibility,
@@ -466,6 +576,14 @@ blue flare/firework and persistent sky light, the return shot, and the departure
 past an anonymous bloodstained helmet. Actor and camera actions receive their
 own authored time; ordinary dialogue gaps remain short.
 
+Dialogue uses the same bordered panel, left speaker portraits, gold names,
+typography and text spacing as normal gameplay. Longer lines turn through
+timed pages inside their existing dialogue holds, with no click-to-continue
+prompt. Every page is observed in the full capture. Departure movement is 20%
+faster (48 pixels/second); the walking animation keeps its 180 ms frame cadence.
+The camera follow is retimed to keep the helmet centered, followed by the
+existing slow zoom and fade after both characters leave.
+
 The soundtrack is reconstructed from the exact shipped OGGs and observed
 production mixer commands because the headless SDL driver has no audio loopback.
 It includes the actual fades and the preserved music position across the pause.
@@ -479,9 +597,16 @@ motion, the camera and the same music playback position.
 - [Flare flight, firework, sky light and completed repair](beacon_sequence.mp4)
 - [Departure and helmet ending](helmet_ending.mp4)
 - [Four visible lamp repair stages](lamp_stages.png)
+- [Automatic paging at 480×320 with 150% text](large_text_paging.mp4)
+- [Both large-text pages and their display times](large_text_pages.png)
 
 These short clips are consecutive production-rendered frames with no audio;
 the full preview above includes the complete soundtrack.
+
+The accessibility paging clip separately renders the original eight-second
+lamp request through production `Game.draw` at 480×320 with 150% text. It shows
+both balanced pages using the original timed hold, with no soundtrack or input
+required. It does not change the default-size full playthrough above.
 
 [Watch the corrected drinking motion close-up](drinking_closeup.mp4) or inspect its
 [rest → lift → sip → lower → rest frames](drinking_keyframes.png). These are
@@ -530,7 +655,15 @@ python tools/capture_opening_cinematic.py
                 self.game.audio.set_music(1)
                 self.game.audio.set_effects(0)
                 pygame.event.clear()
-                self.record()
+                original_text = Painter.text
+
+                def checked_text(painter, text, *args, **kwargs):
+                    if self.game.opening_cinematic.active:
+                        assert text != 'Click to continue', 'Cinematic showed an interactive dialogue prompt'
+                    return original_text(painter, text, *args, **kwargs)
+
+                with patch.object(Painter, 'text', checked_text):
+                    self.record()
                 return self.write_audio_and_metadata()
             finally:
                 if self.encoder is not None:

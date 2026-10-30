@@ -17,6 +17,7 @@ import pygame
 from audio_settings import AudioSettings
 from opening_cinematic import OpeningCinematic, SCENE
 from ui_style import UIStyle
+from speech_bubble import MAX_LINES, PANEL_WIDTH, PORTRAIT_SIZE, TEXT_WIDTH
 
 
 class OpeningCinematicTests(unittest.TestCase):
@@ -252,16 +253,28 @@ class OpeningCinematicTests(unittest.TestCase):
                 for record in self.scene.data['dialogue']:
                     self.scene.elapsed = record['start']+.1
                     self.draw()
+                    layout = self.scene.caption_layout
                     rect = self.scene.caption_rect
                     self.assertTrue(pygame.Rect(0, 0, 480, 320).contains(rect))
                     self.assertFalse(rect.colliderect(self.scene.skip_rect))
-                    # Faces/hands live approximately screen130..205 at the
-                    # authored conversation shot. Text stays above or below.
-                    self.assertTrue(rect.bottom <= 130 or rect.top >= 210,
-                                    (size, scale, record['text'], rect))
+                    self.assertEqual(rect.width, PANEL_WIDTH)
+                    self.assertEqual(layout.portrait.size, (PORTRAIT_SIZE, PORTRAIT_SIZE))
+                    self.assertTrue(rect.contains(layout.portrait))
+                    self.assertLess(layout.portrait.right, layout.text_origin[0])
+                    self.assertLessEqual(len(self.scene.caption_lines), MAX_LINES)
                     painter = self.game.ui.painter(self.ui)
-                    self.assertTrue(all(painter.font().size(line)[0] <= 412
-                                        for line in self.scene.caption_lines))
+                    for index, line in enumerate(self.scene.caption_lines):
+                        text_rect = pygame.Rect((0, 0), painter.font().size(line))
+                        text_rect.topleft = (layout.text_origin[0],
+                                             layout.text_origin[1]+index*layout.line_height)
+                        self.assertLessEqual(text_rect.width, TEXT_WIDTH)
+                        self.assertTrue(rect.contains(text_rect),
+                                        (size, scale, record['id'], text_rect, rect))
+                    # The seated conversation's joined hands occupy this
+                    # central band. A portrait panel belongs above or below it.
+                    if record['start'] < self.scene.data['events']['lamp_walk_start']:
+                        self.assertFalse(rect.colliderect(pygame.Rect(210, 172, 100, 30)),
+                                         (size, scale, record['id'], rect))
 
     def test_expanded_exchange_matches_the_approved_speaker_transcript(self):
         guide = (SCENE.parents[3]/'docs/OPENING_CINEMATIC.md').read_text(encoding='utf-8')
