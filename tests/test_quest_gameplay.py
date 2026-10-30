@@ -211,6 +211,13 @@ class QuestGameplayTests(unittest.TestCase):
         self.assertTrue(self.title_click(restored, restored.title.rows[0]))
         restored.update(.7, (0, 0), False)
         self.assertFalse(restored.on_title)
+        self.assertTrue(restored.opening_cinematic.active)
+        # Choosing New Game keeps the existing checkpoint intact until the
+        # framing scene completes or the player uses its explicit Skip button.
+        self.assertEqual(json.loads(self.path.read_text())['quests'], game.quests.to_dict())
+        restored.draw()
+        self.assertTrue(self.canvas_click(restored, restored.opening_cinematic.skip_rect.center))
+        self.assertFalse(restored.opening_cinematic.active)
         self.assertEqual(restored.quests.status(OPENING_QUEST), 'available')
         self.assertEqual(restored.social.flags, set())
         self.assertEqual(restored.world.data['id'], 'sanctuary_bedroom')

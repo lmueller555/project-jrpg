@@ -5,7 +5,7 @@
   "quality": 8,
   "musical_rearrangement": false,
   "normalization": false,
-  "looping": "World/battle repeat the authored cue; victory plays once; no sample-accurate musical-loop claim",
+  "looping": "World/battle/opening repeat the authored cue; victory plays once; no sample-accurate musical-loop claim",
   "tracks": [
     {
       "identifier": "eldenmere",
@@ -102,6 +102,37 @@
         "pygame_stream_one_shot": true,
         "sha256": "4b0822bf945bc344172785242d6a02504b4d67396b307b547de66d4e46c99e13",
         "bytes": 119345
+      }
+    },
+    {
+      "identifier": "opening_leitmotif",
+      "source": "Dare to Dream Leitmotif.m4a",
+      "source_git_blob_sha": "c057902f21e2d84ac786f5f4ee37ac98f3c073e2",
+      "source_sha256": "42cd87f4ab621c82ce930cf0264e07830357025042e2559f27bb08fa7cedb5c1",
+      "source_codec": "opus",
+      "source_decoded_frames": 9560328,
+      "source_decoded_seconds": 199.1735,
+      "loop": true,
+      "runtime": "runtime/dare_to_dream_leitmotif.ogg",
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 5
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 9560328,
+        "duration_seconds": 199.1735,
+        "peak_dbfs": -3.8501620825646232,
+        "rms_dbfs": -17.85742039874378,
+        "sample_step_across_repeat": 3.974109858972952e-05,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
+        "sha256": "4d606ad5d62be9c6075a059326e0f05947dd65cac8718b4b7b80f0598d028d4a",
+        "bytes": 5332005
       }
     }
   ]

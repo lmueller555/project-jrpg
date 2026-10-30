@@ -78,7 +78,7 @@ class LatticeGameplayTests(unittest.TestCase):
         game = self.game()
         self.first_hp(game)
         self.assertEqual(game.attributes.value('hp'), 240)
-        self.assertTrue(game.begin_journey())
+        self.assertTrue(game.begin_journey(show_cinematic=False))
         self.assertEqual(game.lattice.rank(), 1)
         self.assertEqual(game.lattice.steps(), 0)
         self.assertEqual(game.lattice.rp_progress(), (0, 20))

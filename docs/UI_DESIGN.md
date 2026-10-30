@@ -64,3 +64,16 @@ panel; the returning party shot uses a top panel to keep both characters visible
 near the map edge. Neither panel draws a speech tail toward an offscreen actor.
 Pagination, text scaling and response input use the existing dialogue system.
 Normal conversations retain their live speaker-anchored bubbles.
+
+## New Game cinematic
+
+The opening cinematic uses the battle scenes' detailed visual style with layered
+scenery, separate conversational character poses and authored camera shots.
+Dialogue is timed automatically and rendered at display resolution using the
+shared text-size preference. A compact Skip button stays in the bottom-right
+corner, including while paused. Escape toggles a dedicated cinematic pause;
+it freezes camera, actors, ambient movement, captions and the looping leitmotif.
+Focus loss also freezes the scene, without clearing a manual pause on return.
+Reduced Motion uses static shot changes. Finishing or skipping leads into the
+ordinary bedroom opening; Continue never inserts this flashforward into an
+existing journey. See [the cinematic guide](OPENING_CINEMATIC.md).

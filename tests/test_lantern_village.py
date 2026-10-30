@@ -276,7 +276,7 @@ class LanternVillageTests(unittest.TestCase):
         self.assertEqual(self.c.stage, 'elira_visited')
 
     def test_new_game_releases_outing_and_restores_the_school_households(self):
-        self.finish_visits();self.assertTrue(self.g.begin_journey(False))
+        self.finish_visits();self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(LANTERN), 'locked')
         self.assertEqual(self.c.stage, 'idle')
         self.assertEqual(self.c.school.npcs, [])

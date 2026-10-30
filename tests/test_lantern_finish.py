@@ -310,7 +310,7 @@ class LanternFinishTests(unittest.TestCase):
         self.assertIs(shared.liam_owner, blocks)
         self.assertIsNone(shared.pending_liam_owner)
         self.assertFalse(hasattr(self.c.liam, 'story_sprite'))
-        self.assertTrue(self.g.begin_journey(False))
+        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.c.stage, 'idle')
         self.assertIsNone(shared.liam_owner);self.assertIsNone(shared.pending_liam_owner)
         self.assertFalse(blocks.active);self.assertIsNone(blocks.forgotten_id)
@@ -394,7 +394,7 @@ class LanternFinishTests(unittest.TestCase):
                 self.assertFalse(type(self.c).valid_journey(invalid))
 
     def test_new_game_removes_finished_props_and_releases_all_final_cast(self):
-        self.through('farewell');self.assertTrue(self.g.begin_journey(False))
+        self.through('farewell');self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.c.stage, 'idle')
         self.assertEqual(self.g.quests.status(LANTERN), 'locked')
         self.assertIsNone(self.g.play_routines[0].liam_owner)

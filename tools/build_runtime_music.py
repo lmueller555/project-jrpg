@@ -30,6 +30,10 @@ SOURCES = (
          git_sha='ab0adebed97a04f13d9a1c5604d76a287bb63ab9',
          target='triumphal_fanfare.ogg', title='Triumphal Fanfare', trim_tail=False,
          loop=False),
+    dict(identifier='opening_leitmotif', source='Dare to Dream Leitmotif.m4a',
+         git_sha='c057902f21e2d84ac786f5f4ee37ac98f3c073e2',
+         target='dare_to_dream_leitmotif.ogg', title='Dare to Dream Leitmotif',
+         trim_tail=False, boundary_declick_ms=5),
 )
 
 
@@ -140,10 +144,22 @@ def verify_asset(path, expected_frames, *, loop=True):
                 sha256=sha256(path), bytes=path.stat().st_size)
 
 
-def build():
-    records = []
-    tracks = {}
+def build(identifiers=None):
+    """Rebuild all assigned cues, or replace selected cues without touching others."""
+    selected = None if identifiers is None else set(identifiers)
+    known = {source['identifier'] for source in SOURCES}
+    if selected is not None and (not selected or not selected <= known):
+        raise ValueError('Select at least one known music track')
+    catalog_path = MUSIC / 'tracks.json'
+    audit_path = MUSIC / 'runtime/provenance.json'
+    if selected is None:
+        tracks, records = {}, []
+    else:
+        tracks = json.loads(catalog_path.read_text(encoding='utf-8'))['tracks']
+        records = json.loads(audit_path.read_text(encoding='utf-8'))['tracks']
     for source in SOURCES:
+        if selected is not None and source['identifier'] not in selected:
+            continue
         path = MUSIC / source['source']
         original = path.read_bytes()
         if git_blob_sha(original) != source['git_sha']:
@@ -155,6 +171,15 @@ def build():
                           boundary_declick_ms=0)
         if source['trim_tail']:
             export, boundaries = trimmed_battle(audio)
+        elif source.get('boundary_declick_ms'):
+            # The leitmotif's first sample is audible while its tail is quiet.
+            # Taper only five milliseconds at both ends; preserve every frame,
+            # the complete musical phrase and its natural reverb/ending.
+            amount = round(source['boundary_declick_ms'] * RATE / 1000)
+            export = audio.copy()
+            export[:amount] *= np.linspace(0, 1, amount)[:, None]
+            export[-amount:] *= np.linspace(1, 0, amount)[:, None]
+            boundaries['boundary_declick_ms'] = source['boundary_declick_ms']
         target = MUSIC / 'runtime' / source['target']
         encode(export, target, source['title'])
         loop = source.get('loop', True)
@@ -162,9 +187,11 @@ def build():
         if path.read_bytes() != original:
             raise AssertionError('An original upload changed during export')
         tracks[source['identifier']] = dict(file='runtime/' + source['target'], gain=.45)
+        if source['identifier'] == 'opening_leitmotif':
+            tracks[source['identifier']]['loop'] = True
         if not loop:
             tracks[source['identifier']]['loop'] = False
-        records.append(dict(identifier=source['identifier'], source=source['source'],
+        record = dict(identifier=source['identifier'], source=source['source'],
                             source_git_blob_sha=source['git_sha'],
                             source_sha256=hashlib.sha256(original).hexdigest(),
                             source_codec=stream['codec_name'],
@@ -172,16 +199,25 @@ def build():
                             source_decoded_seconds=len(audio) / RATE,
                             loop=loop,
                             runtime='runtime/' + source['target'],
-                            boundaries=boundaries, verification=verified))
-    (MUSIC / 'tracks.json').write_text(json.dumps(dict(version=1, tracks=tracks), indent=2) + '\n')
+                            boundaries=boundaries, verification=verified)
+        existing = next((index for index, item in enumerate(records)
+                         if item['identifier'] == source['identifier']), None)
+        if existing is None:
+            records.append(record)
+        else:
+            records[existing] = record
+    catalog_path.write_text(json.dumps(dict(version=1, tracks=tracks), indent=2) + '\n')
     audit = dict(version=1, source='User-provided uploads', export_codec='Ogg Vorbis',
                  quality=8, musical_rearrangement=False, normalization=False,
-                 looping='World/battle repeat the authored cue; victory plays once; no sample-accurate musical-loop claim',
+                 looping='World/battle/opening repeat the authored cue; victory plays once; no sample-accurate musical-loop claim',
                  tracks=records)
-    (MUSIC / 'runtime/provenance.json').write_text(json.dumps(audit, indent=2) + '\n')
+    audit_path.write_text(json.dumps(audit, indent=2) + '\n')
     print(json.dumps(audit, indent=2))
 
 
 if __name__ == '__main__':
-    argparse.ArgumentParser(description=__doc__).parse_args()
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--track', action='append', choices=[source['identifier'] for source in SOURCES],
+                        help='Rebuild only this cue; repeat to select more than one')
+    arguments = parser.parse_args()
+    build(arguments.track)

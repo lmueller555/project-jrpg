@@ -183,7 +183,7 @@ class InventoryGameplayTests(unittest.TestCase):
     def test_new_game_resets_items_and_delivery_receipts(self):
         self.game.accept_quest(OPENING_QUEST)
         self.game.deliver_quest_item(OPENING_QUEST, 'halden', 'halden')
-        self.assertTrue(self.game.begin_journey(False))
+        self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.game.inventory.entries(), [])
         self.assertFalse(self.game.inventory.was_delivered(OPENING_QUEST, 'halden'))
         self.assertEqual(self.game.quests.status(OPENING_QUEST), 'available')

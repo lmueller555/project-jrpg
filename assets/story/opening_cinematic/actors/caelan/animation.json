@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "actor": "caelan",
+  "canvas": [
+    96,
+    112
+  ],
+  "anchor": [
+    48,
+    104
+  ],
+  "native_scale": 0.18,
+  "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png",
+  "source_sha256": "8e52356a8ebf4481678d38649962f3da729cb2831870d3f2ba76c10e990f8964",
+  "poses": {
+    "seated_empty": "seated_empty.png",
+    "seated_cup": "seated_cup.png",
+    "glance": "glance.png",
+    "drink": "drink.png",
+    "look_out": "look_out.png",
+    "stand": "stand.png",
+    "reach_empty": "reach_empty.png",
+    "receive_cup": "receive_cup.png",
+    "withdraw_cup": "withdraw_cup.png",
+    "lift_cup": "lift_cup.png",
+    "rise": "rise.png",
+    "rise_high": "rise_high.png"
+  },
+  "extraction": {
+    "seated_empty": {
+      "source_bounds": [
+        177,
+        114,
+        419,
+        466
+      ],
+      "foot_center_source_x": 89.0,
+      "offset": [
+        32,
+        41
+      ],
+      "bounds": [
+        32,
+        41,
+        76,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "seated_cup": {
+      "source_bounds": [
+        653,
+        113,
+        885,
+        466
+      ],
+      "foot_center_source_x": 86.5,
+      "offset": [
+        32,
+        40
+      ],
+      "bounds": [
+        32,
+        40,
+        74,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "glance": {
+      "source_bounds": [
+        1133,
+        110,
+        1364,
+        466
+      ],
+      "foot_center_source_x": 87.0,
+      "offset": [
+        32,
+        40
+      ],
+      "bounds": [
+        32,
+        40,
+        74,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "drink": {
+      "source_bounds": [
+        174,
+        591,
+        405,
+        945
+      ],
+      "foot_center_source_x": 86.0,
+      "offset": [
+        33,
+        40
+      ],
+      "bounds": [
+        33,
+        40,
+        75,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "look_out": {
+      "source_bounds": [
+        653,
+        588,
+        883,
+        945
+      ],
+      "foot_center_source_x": 86.5,
+      "offset": [
+        32,
+        40
+      ],
+      "bounds": [
+        32,
+        40,
+        73,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "stand": {
+      "source_bounds": [
+        1161,
+        505,
+        1350,
+        945
+      ],
+      "foot_center_source_x": 103.0,
+      "offset": [
+        29,
+        25
+      ],
+      "bounds": [
+        29,
+        25,
+        63,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png"
+    },
+    "reach_empty": {
+      "source_bounds": [
+        155,
+        30,
+        525,
+        455
+      ],
+      "foot_center_source_x": 102.0,
+      "offset": [
+        32,
+        36
+      ],
+      "bounds": [
+        32,
+        36,
+        91,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    },
+    "receive_cup": {
+      "source_bounds": [
+        632,
+        28,
+        931,
+        455
+      ],
+      "foot_center_source_x": 102.5,
+      "offset": [
+        32,
+        36
+      ],
+      "bounds": [
+        32,
+        36,
+        80,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    },
+    "withdraw_cup": {
+      "source_bounds": [
+        1115,
+        24,
+        1372,
+        455
+      ],
+      "foot_center_source_x": 101.5,
+      "offset": [
+        32,
+        35
+      ],
+      "bounds": [
+        32,
+        35,
+        73,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    },
+    "lift_cup": {
+      "source_bounds": [
+        155,
+        555,
+        417,
+        982
+      ],
+      "foot_center_source_x": 104.5,
+      "offset": [
+        31,
+        36
+      ],
+      "bounds": [
+        31,
+        36,
+        73,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    },
+    "rise": {
+      "source_bounds": [
+        648,
+        532,
+        913,
+        980
+      ],
+      "foot_center_source_x": 119.0,
+      "offset": [
+        29,
+        32
+      ],
+      "bounds": [
+        29,
+        32,
+        71,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    },
+    "rise_high": {
+      "source_bounds": [
+        1140,
+        468,
+        1381,
+        982
+      ],
+      "foot_center_source_x": 123.5,
+      "offset": [
+        28,
+        22
+      ],
+      "bounds": [
+        28,
+        22,
+        67,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png"
+    }
+  },
+  "transitions": {
+    "seated_empty:reach_empty": [
+      {
+        "file": "reach_empty.png",
+        "duration_ms": 260
+      }
+    ],
+    "reach_empty:seated_cup": [
+      {
+        "file": "receive_cup.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "withdraw_cup.png",
+        "duration_ms": 280
+      }
+    ],
+    "seated_empty:seated_cup": [
+      {
+        "file": "receive_cup.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "withdraw_cup.png",
+        "duration_ms": 280
+      }
+    ],
+    "seated_cup:drink": [
+      {
+        "file": "lift_cup.png",
+        "duration_ms": 260
+      }
+    ],
+    "drink:seated_cup": [
+      {
+        "file": "lift_cup.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "withdraw_cup.png",
+        "duration_ms": 220
+      }
+    ],
+    "seated_cup:stand": [
+      {
+        "file": "rise.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "rise_high.png",
+        "duration_ms": 260
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "assets/source/cinematics/opening_actors/caelan_quiet_generated.png",
+      "sha256": "8e52356a8ebf4481678d38649962f3da729cb2831870d3f2ba76c10e990f8964",
+      "native_scale": 0.18
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/caelan_inbetweens_generated.png",
+      "sha256": "29548bd73258b012f79995cbe1095b8ee4f3cf375ff0f41332e5955f344d84cd",
+      "native_scale": 0.16
+    }
+  ]
+}

@@ -50,6 +50,12 @@ class OpeningGameplayTests(unittest.TestCase):
         self.key(game, pygame.K_RETURN)
         game.update(.7, (0, 0), False)
         self.assertFalse(game.on_title)
+        # This fixture exercises the sanctuary morning. Take the production
+        # Skip path through the new framing scene before reading that morning.
+        self.assertTrue(game.opening_cinematic.active)
+        game.draw()
+        self.click(game, game.opening_cinematic.skip_rect.center)
+        self.assertFalse(game.opening_cinematic.active)
         self.assertEqual(game.world.data['id'], 'sanctuary_bedroom')
         self.assertEqual(game.opening.stage, 'wake')
         return game

@@ -87,7 +87,7 @@ class SereneStoryHandoffTests(unittest.TestCase):
 
     def test_new_game_resets_handoff_and_returns_serene_to_opening(self):
         self.borrow()
-        self.assertTrue(self.game.begin_journey(False))
+        self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         self.assertFalse(self.quest._serene_handed_off)
         self.assertFalse(self.quest._tomas_handed_off)
         self.assertFalse(self.quest._owned)

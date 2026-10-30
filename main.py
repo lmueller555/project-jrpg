@@ -25,6 +25,7 @@ from quests import QuestLog, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
 from quest_ui import QuestUI
 from save_game import SaveStore
 from opening import OpeningSequence
+from opening_cinematic import OpeningCinematic
 from opening_audio import MorningAudio
 from audio_settings import AudioSettings
 from game_music import GameMusic
@@ -434,6 +435,7 @@ class Game:
         self.status_ui=StatusUI(self)
         self.lattice_ui=LatticeUI(self)
         self.opening=OpeningSequence(self)
+        self.opening_cinematic=OpeningCinematic(self)
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
         self.venn_visit=VennVisit(self)
@@ -584,10 +586,27 @@ class Game:
             return record['stored_sacks']==[0,1,2] and record['departed']
         return True
 
-    def begin_journey(self,continue_saved=False):
-        """Continue quest facts, not an interrupted conversation or NPC action."""
+    def begin_journey(self,continue_saved=False,*,show_cinematic=True):
+        """Start the framing scene, or continue durable present-day quest facts.
+
+        The cinematic precedes New Game's first checkpoint. Keep an existing
+        journey untouched until the scene finishes or is skipped. Tools which
+        exercise a later quest can explicitly request the ordinary opening.
+        """
+        if not continue_saved and show_cinematic:
+            self.on_title=False
+            self._mouse_held=False
+            self.social.clear_pointer()
+            self.opening_audio.set_paused(True)
+            self.opening_cinematic.start(
+                lambda:self.begin_journey(False,show_cinematic=False))
+            self.music.set_paused(not self._music_focused)
+            self.music.set_ducked(False)
+            self.music.play('opening_leitmotif',fade_ms=0)
+            return True
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
+        self.opening_cinematic.reset()
         self.combat.reset()
         self.lattice=AetherLattice()
         if data is not None and 'aether_lattice' in data:
@@ -673,6 +692,7 @@ class Game:
         self.pause.close()
         self.camera.reset()
         self.combat.prepare_world_resume()
+        self.music.set_paused(not self._music_focused)
         self.music.play('eldenmere')
         if data is not None and data.get('post_battle') is not None:
             if not self.combat.restore_pending(data['post_battle']):
@@ -684,7 +704,8 @@ class Game:
 
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
-        if self.on_title or not self.save_store.enabled:return False
+        if (self.on_title or self.opening_cinematic.active
+                or not self.save_store.enabled):return False
         self._sync_inventory()
         saved_position=self.player.position
         checkpoint=self.combat.checkpoint_position
@@ -828,6 +849,12 @@ class Game:
                 if not self.title.handle_event(event):return False
                 continue
             if resumed:continue
+            if self.opening_cinematic.active:
+                self.opening_cinematic.handle_event(event)
+                self.music.set_paused(not self._music_focused or
+                                      self.opening_cinematic.paused)
+                resumed=not self.opening_cinematic.active
+                continue
             if self.combat.active:
                 self.combat.handle_event(event)
                 resumed=not self.combat.active
@@ -925,6 +952,16 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        if self.opening_cinematic.active:
+            # The flashforward has its own scene clock and never advances the
+            # present-day world, dialogue, quest actors or checkpoint clock.
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or
+                                  self.opening_cinematic.paused)
+            self.music.set_ducked(False)
+            self.music.update(seconds)
+            self.opening_cinematic.update(seconds)
+            return
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
         self.mill_quest.sync_encounter_music()
@@ -1148,6 +1185,13 @@ class Game:
     def draw(self):
         if self.on_title:
             self.title.draw()
+            return
+        if self.opening_cinematic.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.opening_cinematic.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19')
+            self.window.blit(self.ui_surface,origin)
+            pygame.display.flip()
             return
         if self.combat.active:
             _,size,origin=self._ensure_ui_surface()

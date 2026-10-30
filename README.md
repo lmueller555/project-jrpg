@@ -35,7 +35,12 @@ separately at display resolution with the bundled Atkinson Hyperlegible fonts,
 so letters have smooth, readable edges instead of enlarged bitmap shapes.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
-menu**. Click New Game to begin Caelan's opening morning, or use arrows and Enter.
+menu**. Click New Game, or use arrows and Enter, to begin with a somber cinematic
+glimpse of Caelan and Mira later in their journey. Layered sanctuary and valley
+art, quiet character animation and camera shots lead into Caelan's opening
+morning. **Esc** pauses/resumes the cinematic and its music; a small **Skip**
+button remains available in the bottom-right corner. Continue resumes the saved
+journey directly. See the [opening cinematic guide](docs/OPENING_CINEMATIC.md).
 Settings changes fullscreen/windowed mode, independent music/effects levels,
 text size, reduced interface motion and objective visibility. Continue resumes
 a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
@@ -49,8 +54,10 @@ sets down carried work before speaking. See his [routine previews](docs/reviews/
 
 The title water animates throughout the brook, pools, mill discharge and
 foreground cascades. Your **Eldenmere Theme** now loops on the title screen and
-through Eldenmere, its interiors and the millrace, continuing across New Game,
-Continue and area transfers. **Kindled Courage** plays in battles. MQ02 now
+through Eldenmere, its interiors and the millrace, continuing across Continue
+and area transfers. **Dare to Dream Leitmotif** loops throughout the New Game
+cinematic, then hands back to Eldenmere Theme when it ends or is skipped.
+**Kindled Courage** plays in battles. MQ02 now
 stages a cutscene on millrace arrival: Caelan and Mira stop, the camera pans to
 the boar for their conversation, then returns on Mira's “come back to me” warning.
 The score and fight begin only after the camera is back and the warning is read,

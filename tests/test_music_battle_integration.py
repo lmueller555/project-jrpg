@@ -92,7 +92,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertTrue(game.combat.active)
         return game.combat.scene
 
-    def test_title_to_new_game_keeps_the_same_eldenmere_stream(self):
+    def test_title_to_cinematic_loops_leitmotif_then_skip_restores_eldenmere(self):
         game = self.game(title=True)
         game.title.start_music()
         self.frame(game)
@@ -102,9 +102,24 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         game.title.activate()  # New Game uses the title's actual fade path.
         self.frame(game, 1)
         self.assertFalse(game.on_title)
+        self.assertTrue(game.opening_cinematic.active)
+        self.assertEqual(game.music.desired_track, 'opening_leitmotif')
+        self.frame(game, 1)
+        self.assertEqual(game.music.current_track, 'opening_leitmotif')
+        self.assertEqual(self.backend.load.call_count, loads+1)
+        self.assertEqual(self.backend.play.call_count, starts+1)
+        self.backend.play.assert_called_with(-1)
+        for _ in range(4):self.frame(game, .1)
+        self.assertEqual(self.backend.play.call_count, starts+1)
+        game.draw()
+        click(game, game.opening_cinematic.skip_rect.center)
+        self.assertFalse(game.opening_cinematic.active)
         self.assertEqual(game.music.desired_track, 'eldenmere')
-        self.assertEqual(self.backend.load.call_count, loads)
-        self.assertEqual(self.backend.play.call_count, starts)
+        self.frame(game, 1)
+        self.assertEqual(game.music.current_track, 'eldenmere')
+        self.assertEqual(self.backend.load.call_count, loads+2)
+        self.assertEqual(self.backend.play.call_count, starts+2)
+        self.assertEqual(game.social.script_identifier, 'opening_wake')
 
     def test_town_interior_and_millrace_share_the_exploration_stream(self):
         game = self.game()

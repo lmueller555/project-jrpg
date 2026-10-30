@@ -357,7 +357,7 @@ class LanternRestTests(unittest.TestCase):
                 self.assertFalse(type(self.c).valid_journey(invalid))
 
     def test_new_game_releases_father_serene_and_material_poses(self):
-        self.finish_section();self.assertTrue(self.g.begin_journey(False))
+        self.finish_section();self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.c.stage, 'idle')
         self.assertEqual(self.g.quests.status(LANTERN), 'locked')
         self.assertIsNone(self.g.play_routines[0].liam_owner)

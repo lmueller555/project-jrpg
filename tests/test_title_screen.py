@@ -37,13 +37,23 @@ class TitleTests(unittest.TestCase):
         self.assertEqual((tuple(self.game.player.position),actor.state_ms,self.game.elapsed_ms),initial)
         self.assertEqual([r.centerx for r in self.game.title.rows],[320]*4)
 
-    def test_new_game_click_fades_then_enters_real_playable_world(self):
+    def test_new_game_click_fades_to_cinematic_and_skip_enters_real_playable_world(self):
         self.assertTrue(self.click(self.game.title.rows[0]))
         self.assertTrue(self.game.on_title)
         self.game.update(.3)
         self.assertTrue(self.game.on_title)
         self.game.update(.4)
         self.assertFalse(self.game.on_title)
+        self.assertTrue(self.game.opening_cinematic.active)
+        self.game.draw()
+        width,height=self.game.window.get_size()
+        scale=max(1,min(width//480,height//320))
+        x,y=self.game.opening_cinematic.skip_rect.center
+        point=(round((width-480*scale)//2+x*scale),round((height-320*scale)//2+y*scale))
+        for kind in (pygame.MOUSEBUTTONDOWN,pygame.MOUSEBUTTONUP):
+            pygame.event.post(pygame.event.Event(kind,button=1,pos=point))
+        self.assertTrue(self.game.handle_events())
+        self.assertFalse(self.game.opening_cinematic.active)
         self.assertEqual(self.game.world.data['id'],'sanctuary_bedroom')
         self.assertEqual(self.game.opening.stage,'wake')
         self.assertTrue(self.game.social.scripted)

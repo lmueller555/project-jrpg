@@ -5,6 +5,8 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 from pathlib import Path
 from types import SimpleNamespace
+import hashlib
+import json
 import unittest
 
 import pygame
@@ -17,6 +19,8 @@ CATALOG = {'version': 1, 'tracks': {
     'eldenmere': {'file': 'runtime/eldenmere_theme.ogg', 'gain': .45},
     'battle': {'file': 'runtime/kindled_courage.ogg', 'gain': .6},
     'victory': {'file': 'runtime/triumphal_fanfare.ogg', 'gain': .45, 'loop': False},
+    'opening_leitmotif': {'file': 'runtime/dare_to_dream_leitmotif.ogg',
+                         'gain': .45, 'loop': True},
 }}
 
 
@@ -351,6 +355,44 @@ class SoundtrackTests(unittest.TestCase):
                         mixer=FakeMixer())
         self.assertFalse(bad.play('bad'))
         self.assertEqual(bad.tracks, {})
+
+    def test_opening_leitmotif_repeats_and_pause_resumes_without_restarting(self):
+        game, music, stream = self.make_music()
+        music.play('opening_leitmotif', fade_ms=0)
+        self.assertEqual(stream.plays, [-1])
+        self.assertEqual(Path(stream.loads[0]).name, 'dare_to_dream_leitmotif.ogg')
+        music.update(210)  # Longer than the complete authored 199-second cue.
+        music.set_paused(True)
+        music.update(60)
+        self.assertTrue(stream.paused)
+        self.assertFalse(music.completed)
+        music.set_paused(False)
+        music.play('opening_leitmotif')
+        music.update(210)
+        self.assertEqual(len(stream.loads), 1)
+        self.assertEqual(stream.plays, [-1])
+        self.assertEqual((stream.pauses, stream.unpauses), (1, 1))
+        self.assertTrue(music.playing)
+        self.assertEqual(music.desired_track, 'opening_leitmotif')
+
+    def test_shipped_opening_track_is_the_user_leitmotif_and_matches_provenance(self):
+        root = Path(__file__).resolve().parents[1] / 'assets/music'
+        catalog = json.loads((root/'tracks.json').read_text())
+        track = catalog['tracks']['opening_leitmotif']
+        self.assertEqual(track['file'], 'runtime/dare_to_dream_leitmotif.ogg')
+        self.assertIs(track['loop'], True)
+        audit = json.loads((root/'runtime/provenance.json').read_text())
+        record = next(item for item in audit['tracks']
+                      if item['identifier'] == 'opening_leitmotif')
+        self.assertEqual(record['source'], 'Dare to Dream Leitmotif.m4a')
+        self.assertEqual(record['source_git_blob_sha'],
+                         'c057902f21e2d84ac786f5f4ee37ac98f3c073e2')
+        self.assertEqual(record['source_decoded_frames'],
+                         record['verification']['decoded_frames'])
+        self.assertEqual(record['boundaries']['removed_tail_frames'], 0)
+        self.assertIs(record['verification']['pygame_stream_with_repeat'], True)
+        self.assertEqual(hashlib.sha256((root/track['file']).read_bytes()).hexdigest(),
+                         record['verification']['sha256'])
 
 
 if __name__ == '__main__':

@@ -207,7 +207,7 @@ class UIIntegrationTests(unittest.TestCase):
         self.assertGreater(self.game.location_seconds, 0)
 
     def test_wake_cue_survives_text_and_display_reflow_without_repeating_motion(self):
-        self.assertTrue(self.game.begin_journey(False))
+        self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         opening = self.game.opening
         with patch.object(opening, '_queue', wraps=opening._queue) as queue:
             for _ in range(80):

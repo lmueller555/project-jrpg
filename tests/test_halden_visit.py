@@ -228,7 +228,7 @@ class HaldenGameplayTests(unittest.TestCase):
     def test_accepted_escort_walks_from_breakfast_to_halden_then_returns_to_work(self):
         from test_opening_gameplay import OpeningGameplayTests
         helper = OpeningGameplayTests()
-        self.game.begin_journey(False)
+        self.game.begin_journey(False, show_cinematic=False)
         helper.enter_breakfast(self.game);helper.finish_breakfast(self.game)
         helper.approach_serene(self.game)
         for _ in range(50):
@@ -276,7 +276,7 @@ class HaldenGameplayTests(unittest.TestCase):
         bad = copy.deepcopy(data);bad['halden_visit']['concluded'] = True
         self.path.write_text(json.dumps(bad));broken = self.make_game(True)
         self.assertFalse(broken.has_saved_journey)
-        self.assertTrue(self.game.begin_journey(False))
+        self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.visit.stored, set());self.assertFalse(self.visit.owns_tomas)
         self.assertIsNone(self.visit.carried);self.assertFalse(self.visit.medicine)
 

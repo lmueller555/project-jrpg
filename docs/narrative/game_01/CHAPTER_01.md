@@ -8,6 +8,15 @@
 
 Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Players spend time living in **Eldenmere**, building attachment to the community and Caelen's relationships before the inciting catastrophe. The excavation disaster occurs in **Act I, Chapter 3**, not in Chapter 1.
 
+New Game now begins with an approved, separate [cinematic flashforward](../../OPENING_CINEMATIC.md):
+an exhausted Caelan and Mira briefly rest in a damaged wayside sanctuary
+overlooking an inhabited valley. Their mill recollection frames the journey
+before the game returns to this chapter's ordinary morning. The working later-act
+outline places the eventual reprise near the Act IV/V boundary; its exact route,
+the crisis's mechanics and other characters' outcomes remain unapproved. The
+teaser does not move the excavation catastrophe into Chapter 1 or establish
+Tomas's fate, Eldenmere's condition or hidden cosmology.
+
 - **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, the sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Light** is the emotional high point of the opening.
