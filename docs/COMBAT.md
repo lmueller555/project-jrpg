@@ -37,6 +37,36 @@ Two small foreground grass tufts sway at the outer corners. Reduced Motion
 keeps them still, and pausing the battle freezes their animation. Background
 art, grass poses and contact shadows are loaded or prepared once per encounter.
 
+## Music and battle entry
+
+The user-provided **Eldenmere Theme** plays on the title screen, throughout
+Eldenmere and its interiors, and along the millrace. A shared streamed-music
+controller preserves playback across New Game, Continue and those area changes.
+Every encounter uses the user-provided **Kindled Courage**. In MQ02 it is cued
+on the first displayed page of Mira's “Easy, Caelan. Back slowly. Keep your feet
+under you” line, while the player is still in the world. Text reflow and repeated
+updates do not restart it. Canceling that encounter conversation returns to the
+Eldenmere theme; an unfinished encounter reloads with the world theme.
+
+Battle entry freezes a freshly rendered world frame, closes a dark diagonal
+curtain, briefly covers the screen and reveals the battlefield in 0.72 seconds.
+Reduced Motion uses a 0.26-second plain fade. World and battle clocks remain
+frozen throughout entry. Held keys, mouse clicks and transition acknowledgements
+cannot submit a command when the battlefield appears. Escape and focus loss
+pause the transition; resizing and fullscreen changes preserve its progress.
+
+Music continues during ATB decisions and gently lowers beneath dialogue and
+Mira's tutorial. Explicit battle pause and window focus loss pause the score
+without rewinding it. Volume and mute changes apply immediately through the
+existing Music preference. Successful return from victory, Flee or defeat
+restores the Eldenmere theme; failed reward settlement keeps the battle score.
+Environmental and UI effects retain their independent volume and channels.
+
+The original uploads remain in `assets/music/`; supported Vorbis playback copies
+and their catalog are under the same folder. The asset guide documents the
+conversion and conservative removal of the battle track's near-silent tail.
+See the [actual scene and transition review](reviews/battle_music_transition/README.md).
+
 ## Timing and decisions
 
 Each combatant has an ATB gauge from 0 to 1. During charging:

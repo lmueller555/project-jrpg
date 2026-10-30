@@ -27,6 +27,7 @@ from save_game import SaveStore
 from opening import OpeningSequence
 from opening_audio import MorningAudio
 from audio_settings import AudioSettings
+from game_music import GameMusic
 from pause_menu import PauseMenu
 from camera_director import CameraDirector
 from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
@@ -383,6 +384,8 @@ class Game:
         pygame.display.set_caption('Project JRPG — Eldenmere')
         self.canvas=pygame.Surface(VIEW_SIZE)
         self.audio=AudioSettings(settings_path)
+        self.music=GameMusic(self)
+        self._music_focused=True
         self.ui=UIStyle(self)
         self.ui_surface=None
         self._ensure_ui_surface()
@@ -449,6 +452,7 @@ class Game:
         self._saved_progress=self._progress_signature()
         self._save_retry_seconds=0.0
         self.opening_fade=0.0
+        self.music.play('eldenmere',fade_ms=900)
 
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
@@ -666,6 +670,7 @@ class Game:
         self.opening_audio.reset()
         self.pause.close()
         self.camera.reset()
+        self.music.play('eldenmere')
         self.save_progress()
         return True
 
@@ -798,7 +803,12 @@ class Game:
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 self.save_progress()
+                self.music.stop()
                 return False
+            if event.type==pygame.WINDOWFOCUSLOST:
+                self._music_focused=False
+            elif event.type==pygame.WINDOWFOCUSGAINED:
+                self._music_focused=True
             if event.type==pygame.KEYDOWN and event.key==pygame.K_F11:
                 self.toggle_fullscreen()
                 continue
@@ -893,6 +903,14 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        # Music owns a separate clock: ATB decisions and world menus must not
+        # freeze the score, while explicit battle/focus pauses retain position.
+        self.mill_quest.sync_encounter_music()
+        battle=self.combat.scene
+        self.music.set_paused(not self._music_focused or
+                              bool(battle and (battle.paused or not battle.focused)))
+        self.music.set_ducked(self.social.active or bool(battle and battle.tutorial_active))
+        self.music.update(seconds)
         if self.on_title:
             self.title.update(seconds)
             return
@@ -1096,7 +1114,7 @@ class Game:
             return
         if self.combat.active:
             _,size,origin=self._ensure_ui_surface()
-            self.combat.scene.draw(self.canvas,self.ui_surface)
+            self.combat.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
             pygame.display.flip()
@@ -1167,6 +1185,7 @@ def main(argv=None):
     finally:
         game.save_progress()
         game.opening_audio.reset()
+        game.music.stop()
         pygame.quit()
     return 0
 

@@ -146,7 +146,10 @@ class MillCombatStoryTests(unittest.TestCase):
         for name in ('warning', 'encounter_intro', 'aftermath', 'aftermath_recovered', 'withdrawal', 'retry'):
             self.assertGreater(len(lines[name]), 1)
             for line in lines[name]:
-                self.assertEqual(set(line), {'speaker', 'text'})
+                expected = {'speaker', 'text'}
+                if name == 'encounter_intro' and line.get('cue') == 'mill_battle_music':
+                    expected.add('cue')
+                self.assertEqual(set(line), expected)
                 self.assertIn(line['speaker'], ('caelan', 'mira'))
                 self.assertNotIn('ATB', line['text'])
         self.assertFalse(any('rest' in line['text'].lower() for line in lines['aftermath']))
@@ -155,6 +158,9 @@ class MillCombatStoryTests(unittest.TestCase):
         self.assertTrue(any('spear' in line['text'] for line in lines['warning']))
         self.assertTrue(any('bandage' in line['text'] for line in lines['aftermath_recovered']))
         self.assertTrue(any('tree' in line['text'] for line in lines['encounter_intro']))
+        self.assertEqual([(line['speaker'], line['text']) for line in lines['encounter_intro']
+                          if line.get('cue') == 'mill_battle_music'],
+                         [('mira', 'Easy, Caelan. Back slowly. Keep your feet under you.')])
 
 
 if __name__ == '__main__':unittest.main()

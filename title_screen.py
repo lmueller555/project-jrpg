@@ -5,6 +5,7 @@ from pathlib import Path
 import pygame
 from title_water import TitleWater
 from audio_settings import AudioSettings
+from game_music import GameMusic
 from pause_menu import SettingsPanel
 from ui_style import UIStyle, GOLD, IVORY, BRASS, MUTED, DISABLED
 
@@ -17,6 +18,7 @@ class TitleScreen:
     def __init__(self,game):
         self.game=game
         if not hasattr(game,'audio'):game.audio=AudioSettings()
+        if not hasattr(game,'music'):game.music=GameMusic(game)
         if not hasattr(game,'ui'):game.ui=UIStyle(game)
         self.scene=pygame.Surface(SIZE)
         self.ui=pygame.Surface(SIZE,pygame.SRCALPHA)
@@ -41,7 +43,6 @@ class TitleScreen:
         self.elapsed=0.0
         self.fade=0.0
         self.continuing=False
-        self.music_started=False
         self.options=('New Game','Continue','Settings','Quit')
         self.rows=[pygame.Rect(235,243+i*24,170,22) for i in range(4)]
         self.settings_panel=SettingsPanel(self,SIZE)
@@ -54,30 +55,23 @@ class TitleScreen:
     @property
     def music_enabled(self):return self.game.audio.music_volume>0
 
+    @property
+    def music_started(self):
+        return self.game.music.current_track=='eldenmere' and self.game.music.playing
+
     @music_enabled.setter
     def music_enabled(self, enabled):
         if bool(enabled) != self.music_enabled:self.game.audio.toggle_music()
 
     def _sync_music(self):
-        if not self.music_enabled:
-            if self.music_started:pygame.mixer.music.stop();self.music_started=False
-        elif not self.music_started and getattr(self.game,'on_title',True):
-            self.start_music()
+        if getattr(self.game,'on_title',True):self.start_music()
+        self.game.music.refresh_volume()
 
     def _adjust_volume(self,direction):
         return self.settings_panel._adjust(direction)
 
     def start_music(self):
-        if not self.music_enabled:return
-        try:
-            if not pygame.mixer.get_init():pygame.mixer.init()
-            pygame.mixer.music.load(str(ROOT/'assets/ui/title/eldenmere_theme.ogg'))
-            pygame.mixer.music.set_volume(.45*self.game.audio.music_volume)
-            pygame.mixer.music.play(-1,fade_ms=900)
-            self.music_started=True
-        except pygame.error:
-            # Machines without an audio output can still launch and play.
-            self.music_started=False
+        self.game.music.play('eldenmere',fade_ms=900)
 
     def to_canvas(self,point):
         width,height=self.game.window.get_size()
@@ -121,12 +115,10 @@ class TitleScreen:
             self.continuing=False
             self.fade=.001
             self.game.ui.sound('confirm')
-            if self.music_started:pygame.mixer.music.fadeout(0 if getattr(self.game.audio,'reduced_motion',False) else 650)
         elif self.selected==1 and self.game.has_saved_journey:
             self.continuing=True
             self.fade=.001
             self.game.ui.sound('confirm')
-            if self.music_started:pygame.mixer.music.fadeout(0 if getattr(self.game.audio,'reduced_motion',False) else 650)
         elif self.selected==2:
             self.settings=True;self.selected=0;self.settings_panel.reset()
             self.game.ui.sound('confirm')

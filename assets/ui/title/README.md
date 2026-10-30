@@ -21,15 +21,16 @@ occasional distant birds. Twenty-four water overlay frames animate the full
 course with faster falls and slower surface motion. The original scenery
 remains a single master image.
 
-`eldenmere_theme.wav` and `eldenmere_theme.ogg` now contain the replacement
-93.33-second sampled piano/cello score, **A Place to Return To**. The former
-flute/harp track is discarded. The new piece uses 4/4 at a fixed 72 BPM, with
-quarter-grid entrances/releases and calibrated sample attacks. Its G-major
-melody receives a cello answer and restrained strings before a quiet return.
-`music_score.json` records note events, sample-clock timing and attack offsets.
-See `assets/source/audio/title_piano_cello/` for the GeneralUser GS sample
-license/provenance, and `docs/reviews/title_piano_cello/` for clean and metronome
-excerpts. Music still loops, mutes in Settings and fades out on New Game.
+The current title soundtrack is the user-provided **Eldenmere Theme** from
+`assets/music/`, played through the shared `GameMusic` controller. It continues
+into New Game or Continue and throughout Eldenmere and the millrace, with live
+Music settings. See `assets/music/README.md` for the supplied originals,
+compatible runtime exports and rebuild instructions.
+
+The older `eldenmere_theme.wav`, `eldenmere_theme.ogg` and `music_score.json`
+here retain the previous sampled piano/cello title score, **A Place to Return
+To**, and its historical previews/provenance. They are no longer the default
+soundtrack. `tools/build_title_music.py` rebuilds that historical score.
 
 The two bundled DejaVu fonts have their license and attribution in
 `assets/ui/fonts/LICENSE-DejaVu.txt`. Only Pygame is required by the game;
@@ -45,4 +46,5 @@ python tools/build_title_water.py
 python tools/build_title_music.py --soundfont /path/to/GeneralUser-GS.sf2
 ```
 
-The theme does not change gameplay music, which is not implemented yet.
+Gameplay music now uses the shared catalog in `assets/music/tracks.json`; battle
+entry and return switch between Eldenmere Theme and Kindled Courage.

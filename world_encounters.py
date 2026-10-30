@@ -12,8 +12,10 @@ import pygame
 from aether_lattice import MAX_RP
 from battle_model import BattleModel
 from battle_scene import BattleScene
+from battle_transition import BattleTransition
 from inventory import MAX_QUANTITY
 from quests import MILL_QUEST
+from ui_style import GOLD
 
 
 ROOT = Path(__file__).resolve().parent
@@ -38,12 +40,22 @@ class CombatEncounters:
         self._mill_intro_started = False
         self._mill_origin = None
         self._world_art = {}
+        self.transition = None
+        self._entry_keys = set()
 
     @property
     def active(self):return self.scene is not None
 
     @property
     def model(self):return self.scene.model if self.scene is not None else None
+
+    @property
+    def transitioning(self):
+        return bool(self.transition is not None and self.transition.active)
+
+    def _music(self, track):
+        music = getattr(self.game, 'music', None)
+        if music is not None:music.play(track)
 
     def reset(self):
         self.scene = None
@@ -53,6 +65,26 @@ class CombatEncounters:
         self.kind = None
         self._mill_intro_started = False
         self._mill_origin = None
+        self.transition = None
+        self._entry_keys.clear()
+        self._music('eldenmere')
+
+    def _capture_world(self):
+        """Render the actual approach, including story props, without a frame flip."""
+        game = self.game
+        frame = pygame.Surface(game.canvas.get_size())
+        camera = game.camera.position()
+        game.world.draw(frame, camera, game.player, game.elapsed_ms, include_ui=False)
+        self.draw_world(frame, camera)
+        game.opening.draw_world(frame, camera)
+        for visit in game.household_visits:visit.draw_world(frame, camera)
+        return frame
+
+    def _begin_transition(self, frame):
+        self.transition = BattleTransition(
+            frame, reduced_motion=getattr(self.game.audio, 'reduced_motion', False))
+        self._entry_keys.clear()
+        self._music('battle')
 
     @property
     def bat_unlocked(self):
@@ -85,6 +117,7 @@ class CombatEncounters:
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'])
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
+        frame = self._capture_world()
         self.scene = BattleScene(self.game, model)
         self.kind = 'bat'
         self.receipt_id = 'battle:'+uuid4().hex
@@ -93,6 +126,7 @@ class CombatEncounters:
         self.game.player.walk_ms = 0.0
         self.game.social.clear_pointer()
         self.game._mouse_held = False
+        self._begin_transition(frame)
         return True
 
     def start_mill(self, rng=None):
@@ -114,6 +148,7 @@ class CombatEncounters:
             game.save_progress()
         finally:
             game.player.position.update(self._mill_origin)
+        frame = self._capture_world()
         self.scene = BattleScene(game, model, battlefield='millrace', tutorial=True)
         self.kind = 'mill'
         self.receipt_id = 'mq02:ridgeback_tusker'
@@ -122,6 +157,7 @@ class CombatEncounters:
         game.player.walk_ms = 0.0
         game.social.clear_pointer()
         game._mouse_held = False
+        self._begin_transition(frame)
         return True
 
     def _available_rewards(self, reward):
@@ -144,14 +180,49 @@ class CombatEncounters:
 
     def update(self, seconds):
         if not self.active:return
+        if self.transitioning:
+            self.transition.update(seconds, paused=self.scene.paused or not self.scene.focused)
+            if not self.transition.active:self.transition = None
+            return
         self.scene.update(seconds)
         if self.scene.dismissed:self._settle()
 
     def handle_event(self, event):
         if not self.active:return False
+        if event.type == pygame.KEYUP:
+            self._entry_keys.discard(event.key)
+        elif event.type == pygame.KEYDOWN and event.key in self._entry_keys:
+            return True
+        if self.transitioning:
+            if event.type == pygame.KEYDOWN:self._entry_keys.add(event.key)
+            if event.type == pygame.WINDOWFOCUSLOST:self._entry_keys.clear()
+            if (event.type in (pygame.WINDOWFOCUSLOST, pygame.WINDOWFOCUSGAINED,
+                               pygame.MOUSEBUTTONUP)
+                    or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE)
+                    or (self.scene.paused and event.type == pygame.MOUSEBUTTONDOWN)):
+                self.scene.handle_event(event)
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                # Holding a click through the reveal cannot spend a turn.
+                self.scene._held = True
+            return True
         self.scene.handle_event(event)
         if self.scene.dismissed:self._settle()
         return True
+
+    def draw(self, canvas, ui_surface):
+        if not self.active:return
+        self.scene.draw(canvas, ui_surface)
+        if self.transitioning:
+            self.transition.draw(ui_surface)
+            if self.scene.paused:
+                # Keep the ordinary pause controls visible over a frozen curtain.
+                painter = self.game.ui.painter(ui_surface)
+                painter.veil(150)
+                painter.panel((124, 111, 232, 100))
+                painter.text('Battle paused', (240, 126), color=GOLD,
+                             anchor='midtop', bold=True)
+                painter.button(self.scene.resume_rect, 'Resume', disabled=not self.scene.focused)
+                painter.clip()
 
     def _settle(self):
         if not self.active or not self.scene.model.ended or self._settled:return False
@@ -183,6 +254,8 @@ class CombatEncounters:
                 raise RuntimeError('Validated battle resources could not be applied')
         self._settled = True
         self.scene = None
+        self.transition = None
+        self._entry_keys.clear()
         self.kind = None
         self.cooldown = self.definition['respawn_seconds']
         game.player.moving = game.player.running = False
@@ -190,6 +263,7 @@ class CombatEncounters:
         game._mouse_held = False
         game.social.clear_pointer()
         game.save_progress()
+        self._music('eldenmere')
         return True
 
     def _settle_mill(self):
@@ -240,6 +314,8 @@ class CombatEncounters:
             game.player.position.update(self._mill_origin)
         self._settled = True
         self.scene = None
+        self.transition = None
+        self._entry_keys.clear()
         self.kind = None
         self._mill_intro_started = False
         game.player.moving = game.player.running = False
@@ -249,6 +325,7 @@ class CombatEncounters:
         game.camera.reset()
         # Commit resources, once-only rewards and the cleared path together.
         game.save_progress()
+        self._music('eldenmere')
         quest.battle_returned(outcome, recovered=model.player.hp <= 0)
         return True
 
