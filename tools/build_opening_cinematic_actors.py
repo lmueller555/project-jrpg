@@ -176,6 +176,9 @@ def build():
         source = Image.open(path).convert('RGBA')
         output = TARGET/actor
         output.mkdir(parents=True, exist_ok=True)
+        previous_path = output/'animation.json'
+        previous = (json.loads(previous_path.read_text(encoding='utf-8'))
+                    if previous_path.exists() else {})
         metadata = {'version': 1, 'actor': actor, 'canvas': list(CANVAS),
                     'anchor': list(ANCHOR), 'native_scale': record['scale'],
                     'source': path.relative_to(ROOT).as_posix(),
@@ -199,6 +202,16 @@ def build():
         for transition, frames in TRANSITIONS[actor].items():
             metadata['transitions'][transition] = [
                 {'file': pose+'.png', 'duration_ms': duration} for pose, duration in frames]
+        # Selective later-scene exports own additional acting and motion. A
+        # base rebuild preserves their records and files instead of silently
+        # discarding handholding, empty standing, casting or repair loops.
+        for section in ('poses', 'extraction', 'transitions', 'loops'):
+            additions = previous.get(section, {})
+            if additions:
+                metadata[section] = {**additions, **metadata.get(section, {})}
+        known_sources = {item['path'] for item in metadata['sources']}
+        metadata['sources'].extend(item for item in previous.get('sources', [])
+                                   if item['path'] not in known_sources)
         (output/'animation.json').write_text(json.dumps(metadata, indent=2)+'\n', encoding='utf-8')
         all_metadata[actor] = metadata
     build_drinking()

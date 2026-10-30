@@ -6,7 +6,7 @@ mountain valley. A cup, a traveling lantern and a recollection of the mill
 establish exhaustion and familiarity before the scene returns to Caelan's
 ordinary sanctuary bedroom and Tomas's existing first line.
 
-The 198.7-second sequence begins with “Later in the journey…” to identify the
+The 255.15-second sequence begins with “Later in the journey…” to identify the
 flashforward explicitly. [Watch the captured opening](reviews/opening_cinematic/README.md).
 
 ## Story contract
@@ -19,17 +19,20 @@ working story material. This change does not implement the late-game quests or
 approve their unresolved outcomes.
 
 Caelan and Mira reaching this moment is a deliberate limited disclosure. The
-scene does not establish Tomas's fate, Eldenmere's ultimate condition, a death
-or a specific bereavement. The lantern is ordinary traveling equipment, not
-Liam's tower lantern or somebody's memorial keepsake. The sanctuary is a
-wayside resting place, not a revelation of the ancient sacrificial temple.
-Aldric's responsibility, the regional mechanism and all saga-level mysteries
-remain concealed. Caelan's familiar faith is not declared false.
+author's revised ending now hints that someone has died: an anonymous bloody
+metal helmet rests on a sword embedded in stone. It identifies neither the
+helmet's owner nor whose death it suggests, and it does not settle Tomas's fate
+or Eldenmere's ultimate condition. The reference to “he” in Mira's encouragement
+remains the author's exact wording and leaves its context unresolved for the
+player. The lantern is ordinary traveling equipment, not Liam's tower lantern
+or an identified memorial keepsake. The wayside sanctuary does not reveal the
+ancient sacrificial temple. Aldric's responsibility, the regional mechanism and
+all saga-level mysteries remain concealed.
 
-The expanded exchange establishes an entrance beyond the ridge, a road
-threatened by another local surge, evacuation carts and the pair’s help with
-the first group. These are approved facts of the framing scene. They do not
-settle the cause of the crisis, its mechanism or the wider later-act plot.
+The author's exchange establishes an entrance beyond the ridge, a threatened
+valley and a caravan returning for another group. Their reassurance, the lamp
+repair and the blue signal connect this pause to the evacuation. These framing
+facts do not settle the cause of the crisis or the wider later-act plot.
 
 The later narrative should return to this scene and continue beyond the final
 line, giving its quiet exchange a context the player has earned. That reprise
@@ -48,45 +51,75 @@ renderer and respects the readability setting. Camera shots and captions belong
 to the cinematic, while the ordinary world, morning action sequence and quest
 state remain suspended.
 
-Ordinary gaps between lines are one second, reduced from the original two.
-The two four-second pauses allow the sitting/drinking action and the final
-shared hesitation. Short replies have shorter display holds; longer lines
-retain time to read. The expanded sequence runs for about three minutes and
-nineteen seconds. Caelan lifts, sips and lowers the cup during a quiet beat,
-with the same forward/downward head bearing and planted seated anchors.
+Ordinary gaps between lines remain about one second. The author's latest
+30-line dialogue is preserved verbatim; longer lines receive enough time to
+read. Visible cup placement, hand contact, repair and camera work own their
+action beats. The sequence runs for about four minutes and fifteen seconds.
+Caelan's corrected forward/downward drinking motion is retained.
+
+## Authored actions and camera sequence
+
+1. Caelan sets the cup on the bench, freeing both hands. Mira reaches for and
+   holds both his hands before “Your hands stopped shaking. Mine too...I'm
+   ready.” Contact continues throughout the line, then she releases him.
+2. On Caelan's lamp request, Mira rises, walks around the bench on the clear
+   foreground floor and kneels to the lamp's left. Her wrench work accompanies
+   two visible partial restoration stages. This is mechanical repair.
+3. Caelan stands and prepares a large blue signal. “This should help too” leads
+   into its launch. The camera follows it upward into the extended sky, holds
+   its firework burst and the small glimmering light it leaves behind, then
+   pans down. The light persists in world space after leaving the shot.
+4. Full restoration and “Ok there! Don't break on me now.” are gated by the
+   completed downward pan. The lamp remains partial until the camera has
+   returned, and becomes fully restored as Mira delivers that line.
+5. Following the final exchange, both walk left. The camera follows for seven
+   seconds, revealing the nearer sword and helmet as the actors pass behind
+   them. At center view the camera stops while both continue offscreen.
+6. After both are gone, the camera slowly zooms toward the helmet and fades to
+   black. The ordinary bedroom opening follows, with Tomas's original first
+   line. The sword is hidden in the earlier valley shots to preserve its reveal.
+
+Scene events, actor paths and camera shots are data in `scene.json`. Lamp stages
+and the completion line have a runtime camera-return gate, rather than relying
+only on caption ordering. Pause/focus loss freeze the same visual clock for
+paths, actor loops, lamp state, flare particles, glimmer and zoom. Reduced Motion
+uses static compositions and a restrained signal/fade. Skip remains available.
+
+The flare depicts Caelan later in the journey. It does not change his starting
+attributes, grant a combat ability or alter the modest early-quest magicks.
 
 ## Approved dialogue
 
 - **Mira:** “Here. While it’s warm.”
-- **Caelan:** “Thank you.”
-- **Mira:** “Your hands are still shaking.”
-- **Caelan:** “They’ll stop.”
-- **Mira:** “So will mine, if I give them a minute.”
+- **Caelan:** “Thanks, Mira”
+- **Mira:** “Your hands are still shaking. Mine too.”
+- **Caelan:** “It'll be ok, they'll stop once we get moving.”
+- **Mira:** “I hope you're right.”
 - **Caelan:** “How far to the entrance?”
 - **Mira:** “Beyond the ridge. There’s some climbing yet.”
 - **Caelan:** “I can manage.”
-- **Mira:** “I know. I’m asking you to rest.”
-- **Caelan:** “*looks across the valley* There are still people in those houses.”
-- **Mira:** “The carts are going back for another group.”
-- **Caelan:** “And when we leave here, we’re going the other way.”
-- **Mira:** “Another surge could take that road. We need to reach the source.”
-- **Caelan:** “I wish we could tell them more than ‘we’ll do what we can.’”
-- **Mira:** “We got the first carts through. They saw that.”
-- **Caelan:** “I was thinking about the mill.”
+- **Mira:** “I know. But you need to rest a bit first.”
+- **Caelan:** “You know, there are still people in those houses.”
+- **Mira:** “Yeah...but the caravan is going back for another group. They will make it out...I hope.”
+- **Caelan:** “And when we leave here, we’re going the other way. It feels like we're turning our back on them.”
+- **Mira:** “Maybe...but another surge like that could wipe out the whole valley. We need to reach the source so we can put an end to this.”
+- **Caelan:** “I'm scared, Mira. We've come so far, but we still have so far left to go.”
+- **Mira:** “It's ok, Caelan, I'm scared too. But I believe in you!”
+- **Caelan:** “Mira...I was thinking about the mill.”
 - **Mira:** “Halden’s?”
-- **Caelan:** “I cleared that little recess and felt as if I’d done something remarkable.”
-- **Mira:** “You cleared the catch so I could work on it. We needed that.”
-- **Caelan:** “*a faint smile* You told me that then, too.”
-- **Mira:** “I meant it then, too.”
-- **Caelan:** “You didn’t seem nervous.”
-- **Mira:** “I was. It helped having a problem I could understand.”
-- **Caelan:** “A broken catch. A branch in the water.”
-- **Mira:** “And two of us to deal with it.”
-- **Caelan:** “I wish it were that simple again.”
-- **Mira:** “So do I.”
-- **Caelan:** “But we’re going in.”
-- **Mira:** “When you’re ready.”
-- **Caelan:** “Give me a moment.”
+- **Caelan:** “Do you remember when I barely managed to clear that little recess? Would you ever have guessed we'd look back on that as the least of our troubles?”
+- **Mira:** “*laughs* Ha...yeah that seems like a lifetime ago now. But, Caelan?”
+- **Caelan:** “What?”
+- **Mira:** “I know what else you're thinking about. I want you to know he's just as proud of you as I am.”
+- **Caelan:** “...thanks. I'm feeling better...lighter.”
+- **Mira:** “Your hands stopped shaking. Mine too...I'm ready.”
+- **Caelan:** “This lamp...we'll leave it here. Mira, think you can you work your magic with it?”
+- **Mira:** “Leave it to me! This beacon will guide the evacuation to safety.”
+- **Caelan:** “This should help too.”
+- **Mira:** “Ok there! Don't break on me now.”
+- **Caelan:** “Huh? Me? Or the lamp?”
+- **Mira:** “*smiles* Let's go.”
+- **Caelan:** “Indeed.”
 
 ## Music and controls
 

@@ -28,7 +28,24 @@
     "cup_raise_low": "cup_raise_low.png",
     "cup_near_mouth": "cup_near_mouth.png",
     "lower_cup": "lower_cup.png",
-    "cup_lower_mid": "cup_lower_mid.png"
+    "cup_lower_mid": "cup_lower_mid.png",
+    "cup_set_start": "cup_set_start.png",
+    "cup_set_down": "cup_set_down.png",
+    "cast_prepare": "cast_prepare.png",
+    "cast_release": "cast_release.png",
+    "stand_empty": "stand_empty.png",
+    "cast_recover": "cast_prepare.png",
+    "hands_reach": "hands_reach.png",
+    "hands_meet": "hands_meet.png",
+    "hands_hold": "hands_hold.png",
+    "hands_release": "hands_release.png",
+    "beacon_walk_left_01": "../beacon_motion/caelan/walk_left_01.png",
+    "beacon_walk_left_02": "../beacon_motion/caelan/walk_left_02.png",
+    "beacon_walk_left_03": "../beacon_motion/caelan/walk_left_03.png",
+    "beacon_walk_left_04": "../beacon_motion/caelan/walk_left_04.png",
+    "walk_left": "../beacon_motion/caelan/walk_left_01.png",
+    "rise_empty_01": "rise_empty_01.png",
+    "rise_empty_02": "rise_empty_02.png"
   },
   "extraction": {
     "seated_empty": {
@@ -350,6 +367,340 @@
         104
       ],
       "source": "assets/source/cinematics/opening_actors/caelan_drinking_generated.png"
+    },
+    "cup_set_start": {
+      "source_bounds": [
+        173,
+        26,
+        448,
+        447
+      ],
+      "foot_center_source_x": 107.0,
+      "offset": [
+        32,
+        40
+      ],
+      "bounds": [
+        32,
+        40,
+        74,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png"
+    },
+    "cup_set_down": {
+      "source_bounds": [
+        258,
+        72,
+        1046,
+        1138
+      ],
+      "foot_center_source_x": 400.5,
+      "offset": [
+        24,
+        40
+      ],
+      "bounds": [
+        24,
+        40,
+        71,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_cup_setdown_generated.png"
+    },
+    "cast_prepare": {
+      "source_bounds": [
+        178,
+        467,
+        415,
+        989
+      ],
+      "foot_center_source_x": 125.0,
+      "offset": [
+        29,
+        24
+      ],
+      "bounds": [
+        29,
+        24,
+        65,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png"
+    },
+    "cast_release": {
+      "source_bounds": [
+        613,
+        474,
+        935,
+        989
+      ],
+      "foot_center_source_x": 167.0,
+      "offset": [
+        22,
+        25
+      ],
+      "bounds": [
+        22,
+        25,
+        71,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png"
+    },
+    "stand_empty": {
+      "source_bounds": [
+        1147,
+        467,
+        1373,
+        989
+      ],
+      "foot_center_source_x": 114.0,
+      "offset": [
+        31,
+        24
+      ],
+      "bounds": [
+        31,
+        24,
+        66,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png"
+    },
+    "cast_recover": {
+      "source_bounds": [
+        178,
+        467,
+        415,
+        989
+      ],
+      "foot_center_source_x": 125.0,
+      "offset": [
+        29,
+        24
+      ],
+      "bounds": [
+        29,
+        24,
+        65,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png"
+    },
+    "hands_reach": {
+      "source_bounds": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "bounds": [
+        24,
+        39,
+        74,
+        104
+      ],
+      "native_scale": 0.145,
+      "pair_offset": [
+        13,
+        34
+      ],
+      "contact_seam_world_x": 696,
+      "authored_inward_bench_adjustment": true,
+      "source": "assets/source/cinematics/opening_actors/beacon_handhold_generated.png"
+    },
+    "hands_meet": {
+      "source_bounds": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "bounds": [
+        34,
+        39,
+        74,
+        104
+      ],
+      "native_scale": 0.145,
+      "pair_offset": [
+        18,
+        34
+      ],
+      "contact_seam_world_x": 696,
+      "authored_inward_bench_adjustment": true,
+      "source": "assets/source/cinematics/opening_actors/beacon_handhold_generated.png"
+    },
+    "hands_hold": {
+      "source_bounds": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "bounds": [
+        30,
+        38,
+        74,
+        104
+      ],
+      "native_scale": 0.145,
+      "pair_offset": [
+        17,
+        36
+      ],
+      "contact_seam_world_x": 696,
+      "authored_inward_bench_adjustment": true,
+      "source": "assets/source/cinematics/opening_actors/beacon_handhold_generated.png"
+    },
+    "hands_release": {
+      "source_bounds": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "bounds": [
+        28,
+        39,
+        70,
+        104
+      ],
+      "native_scale": 0.145,
+      "pair_offset": [
+        20,
+        36
+      ],
+      "contact_seam_world_x": 696,
+      "authored_inward_bench_adjustment": true,
+      "source": "assets/source/cinematics/opening_actors/beacon_handhold_generated.png"
+    },
+    "beacon_walk_left_01": {
+      "source_bounds": [
+        78,
+        70,
+        317,
+        501
+      ],
+      "physical_scale": 0.18561484918793503,
+      "offset": [
+        27,
+        24
+      ],
+      "bounds": [
+        27,
+        24,
+        71,
+        104
+      ],
+      "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+      "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
+    },
+    "beacon_walk_left_02": {
+      "source_bounds": [
+        467,
+        69,
+        630,
+        500
+      ],
+      "physical_scale": 0.18561484918793503,
+      "offset": [
+        29,
+        24
+      ],
+      "bounds": [
+        29,
+        24,
+        59,
+        104
+      ],
+      "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+      "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
+    },
+    "beacon_walk_left_03": {
+      "source_bounds": [
+        793,
+        69,
+        1030,
+        501
+      ],
+      "physical_scale": 0.18561484918793503,
+      "offset": [
+        26,
+        24
+      ],
+      "bounds": [
+        26,
+        24,
+        70,
+        104
+      ],
+      "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+      "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
+    },
+    "beacon_walk_left_04": {
+      "source_bounds": [
+        1203,
+        70,
+        1369,
+        501
+      ],
+      "physical_scale": 0.18561484918793503,
+      "offset": [
+        28,
+        24
+      ],
+      "bounds": [
+        28,
+        24,
+        59,
+        104
+      ],
+      "source": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+      "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+    },
+    "rise_empty_01": {
+      "source_bounds": [
+        252,
+        271,
+        611,
+        875
+      ],
+      "foot_center_source_x": 160.0,
+      "offset": [
+        30,
+        36
+      ],
+      "bounds": [
+        30,
+        36,
+        71,
+        104
+      ],
+      "source_cell": 0,
+      "source": "assets/source/cinematics/opening_actors/beacon_empty_rise_generated.png"
+    },
+    "rise_empty_02": {
+      "source_bounds": [
+        239,
+        183,
+        571,
+        875
+      ],
+      "foot_center_source_x": 171.5,
+      "offset": [
+        29,
+        26
+      ],
+      "bounds": [
+        29,
+        26,
+        67,
+        104
+      ],
+      "source_cell": 1,
+      "source": "assets/source/cinematics/opening_actors/beacon_empty_rise_generated.png"
     }
   },
   "transitions": {
@@ -416,6 +767,52 @@
         "file": "rise_high.png",
         "duration_ms": 260
       }
+    ],
+    "seated_cup:cup_set_start": [
+      {
+        "file": "cup_set_start.png",
+        "duration_ms": 180
+      }
+    ],
+    "cup_set_down:seated_empty": [
+      {
+        "file": "seated_empty.png",
+        "duration_ms": 180
+      }
+    ],
+    "seated_empty:stand_empty": [
+      {
+        "file": "rise_empty_01.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "rise_empty_02.png",
+        "duration_ms": 220
+      }
+    ],
+    "cast_prepare:cast_release": [
+      {
+        "file": "cast_prepare.png",
+        "duration_ms": 180
+      }
+    ],
+    "cast_recover:stand_empty": [
+      {
+        "file": "cast_prepare.png",
+        "duration_ms": 180
+      }
+    ],
+    "seated_empty:hands_reach": [
+      {
+        "file": "hands_reach.png",
+        "duration_ms": 180
+      }
+    ],
+    "hands_release:seated_empty": [
+      {
+        "file": "hands_release.png",
+        "duration_ms": 180
+      }
     ]
   },
   "sources": [
@@ -433,6 +830,51 @@
       "path": "assets/source/cinematics/opening_actors/caelan_drinking_generated.png",
       "sha256": "108afd064a54a03fe57355e4c68ebea24d2aeacc555b079582950c531c94c501",
       "native_scale": 0.134
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/beacon_caelan_actions_generated.png",
+      "sha256": "20081e9ff652be214bcb387a66e302e9396d55ef877488cd148cac24aae80380",
+      "native_scale": 0.153
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/beacon_cup_setdown_generated.png",
+      "sha256": "c5921f7e5b26452104c5a9d98e883d27ab68397daf77fbe65b70f23fa57d3176",
+      "native_scale": 0.06
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/beacon_empty_rise_generated.png",
+      "sha256": "900d5f8e74fd8288621a3ffffce76fd2d22d1ccc7889943c6535a4f20dc70512",
+      "native_scale": 0.113
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/beacon_handhold_generated.png",
+      "sha256": "cfde4c704acb453294aa0ca7f59bf83e2760a679b30b9c7077a108e38cc26480",
+      "native_scale": 0.145
+    },
+    {
+      "path": "assets/source/cinematics/beacon_motion/walk_left_generated.png",
+      "sha256": "c2d4b6b9bd0ab647a57cf71b42314ffde029be8f2c2d5fa7e72de45b10bf3891",
+      "native_scale": 0.18561484918793503
     }
-  ]
+  ],
+  "loops": {
+    "walk_left": [
+      {
+        "file": "../beacon_motion/caelan/walk_left_01.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "../beacon_motion/caelan/walk_left_02.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "../beacon_motion/caelan/walk_left_03.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "../beacon_motion/caelan/walk_left_04.png",
+        "duration_ms": 180
+      }
+    ]
+  }
 }

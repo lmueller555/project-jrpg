@@ -21,6 +21,12 @@ the crisis's mechanics and other characters' outcomes remain unapproved. The
 teaser does not move the excavation catastrophe into Chapter 1 or establish
 Tomas's fate, Eldenmere's condition or hidden cosmology.
 
+The author-expanded cinematic now includes Mira holding Caelan's hands,
+incremental lamp repair and his skyward blue signal for the caravan. Its closing
+shot follows their departure, then stays with an anonymous bloody helmet on a
+sword embedded in stone. This deliberately hints at an unidentified death later
+in the journey; it does not assign that loss to Tomas or any named character.
+
 - **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, the sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Light** is the emotional high point of the opening.

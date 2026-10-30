@@ -62,7 +62,7 @@
         960,
         480
       ],
-      "sha256": "80f6728dd4e5960dd8cc71fa543a7d66c0787c0659babac2d1553eed05255837"
+      "sha256": "2431887efe66e019cc2c82910d844a13a4f8e75126031d3705ccbc5dafa166e9"
     },
     {
       "file": "assets/story/opening_cinematic/foreground.png",
@@ -92,6 +92,7 @@
       624,
       363
     ],
+    "lamp_baked_into_architecture": false,
     "foreground_strip_y": 450
   },
   "notes": [
@@ -100,6 +101,7 @@
     "Alpha valley, architecture and near rubble are separate depth layers.",
     "The ordinary wayside sanctuary does not establish hidden cosmology.",
     "No people, dialogue, interface, flame or actor shadows are baked into scenery.",
-    "The low shared bench supports actor seated poses at the registered floor."
+    "The low shared bench supports actor seated poses at the registered floor.",
+    "The traveling lamp is a separate runtime prop with authored repair stages."
   ]
 }

@@ -35,11 +35,27 @@ class OpeningCinematicTests(unittest.TestCase):
         data = json.loads(SCENE.read_text())
         self.path = self.directory/'scene.json'
         self.path.write_text(json.dumps(data))
+
+        def fixture_image(filename, size, color=None):
+            target = self.directory/filename
+            target.parent.mkdir(parents=True, exist_ok=True)
+            image = pygame.Surface(size, pygame.SRCALPHA)
+            if color is not None:
+                image.fill(color)
+            pygame.image.save(image, target)
+
         for index, record in enumerate(data['layers']):
-            image = pygame.Surface((960, 480), pygame.SRCALPHA)
-            if index == 0:
-                image.fill('#192a40')
-            pygame.image.save(image, self.directory/record['file'])
+            fixture_image(record['file'], data['canvas'], '#192a40' if index == 0 else None)
+        if 'upper_sky' in data:
+            sky = data['upper_sky']
+            fixture_image(sky['file'], sky['size'], '#192a40')
+        props = data.get('dynamic_props', {})
+        for filename in props.get('lamp', {}).get('states', []):
+            fixture_image(filename, (18, 30), '#b89b5d')
+        if 'cup' in props:
+            fixture_image(props['cup']['file'], (8, 8), '#b89b5d')
+        if 'memorial' in props:
+            fixture_image(props['memorial']['file'], (100, 160), '#736b64')
         for actor in data['actors']:
             path = self.directory/actor['manifest']
             path.parent.mkdir(parents=True)
@@ -196,7 +212,8 @@ class OpeningCinematicTests(unittest.TestCase):
             x, y = self.scene.camera_position
             # Vector2.lerp can drift a few ulps even when both endpoints
             # are identical. Allow only numerical noise, not pixel overshoot.
-            self.assertTrue(-1e-9 <= x <= 480+1e-9 and -1e-9 <= y <= 160+1e-9,
+            left, top, right, bottom = self.scene.data.get('camera_bounds', [0, 0, 480, 160])
+            self.assertTrue(left-1e-9 <= x <= right+1e-9 and top-1e-9 <= y <= bottom+1e-9,
                             (elapsed, x, y))
 
     def test_temporal_caption_identifies_flashforward_before_the_reveal(self):
@@ -262,23 +279,20 @@ class OpeningCinematicTests(unittest.TestCase):
 
     def test_dialogue_gaps_are_brisk_and_short_replies_do_not_linger(self):
         dialogue = self.scene.data['dialogue']
-        quiet_beats = {'meant_it', 'so_do_i'}
-        for current, following in zip(dialogue, dialogue[1:]):
-            expected = 4 if current['id'] in quiet_beats else 1
-            self.assertAlmostEqual(following['start']-current['end'], expected,
-                                   msg=current['id'])
-        for identifier in ('thanks', 'halden', 'so_do_i'):
+        gaps = [following['start']-current['end']
+                for current, following in zip(dialogue, dialogue[1:])]
+        self.assertTrue(all(gap >= 1-1e-9 for gap in gaps))
+        self.assertGreaterEqual(sum(abs(gap-1) < 1e-9 for gap in gaps), 20)
+        for identifier in ('thanks', 'halden', 'told_me'):
             record = self.dialogue_record(identifier)
             self.assertGreaterEqual(record['end']-record['start'], 2)
-            self.assertLessEqual(record['end']-record['start'], 3)
+            self.assertLessEqual(record['end']-record['start'], 4)
         short = self.dialogue_record('thanks')
         long = self.dialogue_record('small_spell')
         self.assertGreater(long['end']-long['start'],
                            2*(short['end']-short['start']))
 
-    def test_sitting_and_the_complete_sip_fit_a_caption_free_action_beat(self):
-        quiet_start = self.dialogue_record('meant_it')['end']
-        quiet_end = self.dialogue_record('nervous')['start']
+    def test_the_complete_sip_finishes_before_the_cup_is_set_down(self):
         drink = self.acting_cue('caelan', 'drink')
         returning = next(cue for cue in self.scene.data['acting']['caelan']
                          if cue['start'] > drink['start'] and cue['pose'] == 'seated_cup')
@@ -289,16 +303,13 @@ class OpeningCinematicTests(unittest.TestCase):
             manifest = json.loads((SCENE.parent/record['manifest']).read_text())
             return sum(frame['duration_ms'] for frame in manifest['transitions'][identifier])/1000
 
-        sit = self.acting_cue('mira', 'sit')
-        self.assertGreaterEqual(sit['start'], quiet_start)
-        self.assertLessEqual(sit['start']+transition_seconds('mira', 'kneel:sit'),
-                             drink['start'])
-        self.assertGreaterEqual(drink['start'], quiet_start)
         self.assertLess(drink['start']+transition_seconds('caelan', 'seated_cup:drink'),
                         returning['start'])
         self.assertLessEqual(returning['start']+transition_seconds('caelan', 'drink:seated_cup'),
-                             quiet_end)
-        self.assertFalse(any(record['start'] < quiet_end and record['end'] > quiet_start
+                             self.scene.data['events']['cup_set_down'])
+        self.assertFalse(any(record['speaker'] == 'Caelan'
+                             and record['start'] < returning['start']
+                             and record['end'] > drink['start']
                              for record in self.scene.data['dialogue']))
 
     def test_authored_transition_runs_once_then_holds_destination_pose(self):

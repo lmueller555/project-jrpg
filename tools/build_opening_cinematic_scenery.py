@@ -64,9 +64,7 @@ def main():
     with Image.open(SOURCE / names[3]) as image:
         half = image.height // 2
         bench = prop(image, (0, 0, image.width, half), (135, 26))
-        lamp = prop(image, (0, half, image.width, image.height), (18, 30))
     sanctuary.alpha_composite(bench, (633, 350))
-    sanctuary.alpha_composite(lamp, (615, 345))
     sanctuary.save(TARGET / 'sanctuary.png', optimize=True)
     # A shallow authored rubble strip sits below the acting plane and moves
     # only slightly faster than the architecture. The painted floor remains
@@ -86,6 +84,7 @@ def main():
             'actor_floor_y': 375, 'bench_rect': [633, 350, 135, 26],
             'bench_seat_y': 357, 'lamp_rect': [615, 345, 18, 30],
             'lamp_flame_center': [624, 363],
+            'lamp_baked_into_architecture': False,
             'foreground_strip_y': 450,
         },
         'notes': [
@@ -95,6 +94,7 @@ def main():
             'The ordinary wayside sanctuary does not establish hidden cosmology.',
             'No people, dialogue, interface, flame or actor shadows are baked into scenery.',
             'The low shared bench supports actor seated poses at the registered floor.',
+            'The traveling lamp is a separate runtime prop with authored repair stages.',
         ],
     }
     (TARGET / 'scenery_provenance.json').write_text(
