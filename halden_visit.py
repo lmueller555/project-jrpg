@@ -13,6 +13,7 @@ from pathlib import Path
 import pygame
 
 from npc_routines import find_path
+from npc_following import following_facing, idle_following_facing, reset_following_facing
 from quests import OPENING_QUEST
 from social import facing_toward, clear_sight
 
@@ -145,7 +146,7 @@ class HaldenVisit:
         self.action = None;self.action_time = 0;self.tomas_job = None;self.tomas_held = None
         self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
         self.dialogue = None;self.returning = False;self.owns_tomas = False
-        self.tomas.story_following = False
+        self.tomas.story_following = False;reset_following_facing(self.tomas)
         self.halden.end_conversation()
         completed = self.game.quests.objective_status(OPENING_QUEST, 'halden') == 'completed'
         self.stored = set(data['stored_sacks']) if data else set(range(3)) if completed else set()
@@ -189,6 +190,7 @@ class HaldenVisit:
         return None
 
     def _place_tomas(self, world, position):
+        reset_following_facing(self.tomas)
         old = self.game._routine_worlds[self.tomas]
         if self.tomas in old.npcs:old.npcs.remove(self.tomas)
         if self.tomas not in world.npcs:world.npcs.append(self.tomas)
@@ -198,6 +200,7 @@ class HaldenVisit:
 
     def _join(self):
         if self.owns_tomas:return
+        reset_following_facing(self.tomas)
         self.owns_tomas = True;self.tomas.story_paused = True;self.tomas.story_following = True
         self.tomas.end_conversation();self.game.opening._clear_pose(self.tomas)
         self.tomas.moving = False;self.tomas.walk_ms = 0
@@ -213,6 +216,7 @@ class HaldenVisit:
             self._place_tomas(hall, landing)
         self.tomas.select_step('return_through_hall', position=tuple(self.tomas.position), scene_id='sanctuary_hall', facing='back')
         self._clear_tomas_pose();self.tomas.story_following = False;self.tomas.story_paused = False
+        reset_following_facing(self.tomas)
         self.owns_tomas = False;self.returning = False
 
     def can_speak(self, identifier):
@@ -359,6 +363,10 @@ class HaldenVisit:
         elif not self.action:self._clear_player_pose()
 
     def _move(self, actor, world, goal, dt, speed=76):
+        with following_facing(actor, dt):
+            return self._move_path(actor, world, goal, dt, speed)
+
+    def _move_path(self, actor, world, goal, dt, speed=76):
         goal = point(goal);actor.moving = False
         avoid = world.probe_rect(self.game.player.position) if self.game.world is world else None
         if actor.position.distance_to(goal)<.1:
@@ -406,7 +414,8 @@ class HaldenVisit:
                 'position': door.data['spawn'], 'departure_door': door.data['id'],
                 'arrival_door': door.data['arrival_door']}
         result = self.game._transfer_routine_npc(self.tomas, step)
-        if result is not None:self.paths.pop(self.tomas, None)
+        if result is not None:
+            self.paths.pop(self.tomas, None);reset_following_facing(self.tomas)
         return result is destination
 
     def _follow(self, dt):
@@ -424,7 +433,7 @@ class HaldenVisit:
             if landing:self._move(actor, world, landing, dt)
             return
         if distance<=34:
-            actor.moving = False;self.paths.pop(actor, None);return
+            actor.moving = False;self.paths.pop(actor, None);idle_following_facing(actor, dt);return
         length = 0;goal = self.trail[-1]
         for previous in reversed(self.trail):
             length += pygame.Vector2(goal).distance_to(previous);goal = previous

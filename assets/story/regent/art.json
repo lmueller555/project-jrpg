@@ -140,17 +140,101 @@
       }
     },
     {
-      "id": "courtyard_refreshments",
-      "scene": "eldenmere.playable",
+      "id": "dining_guest_chair_north_a",
+      "scene": "sanctuary_dining",
       "position": [
-        350,
-        293
+        276,
+        132
       ],
-      "sort_y": 311,
+      "sort_y": 166,
+      "sort_priority": 0,
+      "blocker": [
+        278,
+        162,
+        20,
+        5
+      ],
       "states": {
-        "waiting": "assets/story/regent/props/courtyard_refreshments.png",
-        "welcoming": "assets/story/regent/props/courtyard_refreshments.png",
-        "settled": "assets/story/regent/props/courtyard_refreshments.png"
+        "waiting": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+        "released": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+        "settled": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png"
+      }
+    },
+    {
+      "id": "dining_guest_chair_north_b",
+      "scene": "sanctuary_dining",
+      "position": [
+        324,
+        132
+      ],
+      "sort_y": 166,
+      "sort_priority": 0,
+      "blocker": [
+        326,
+        162,
+        20,
+        5
+      ],
+      "states": {
+        "waiting": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+        "released": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png",
+        "settled": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_down.png"
+      }
+    },
+    {
+      "id": "dining_guest_chair_south_a",
+      "scene": "sanctuary_dining",
+      "position": [
+        276,
+        210
+      ],
+      "sort_y": 244,
+      "sort_priority": 0,
+      "blocker": [
+        278,
+        240,
+        20,
+        5
+      ],
+      "states": {
+        "waiting": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+        "released": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+        "settled": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      }
+    },
+    {
+      "id": "dining_guest_chair_south_b",
+      "scene": "sanctuary_dining",
+      "position": [
+        324,
+        210
+      ],
+      "sort_y": 244,
+      "sort_priority": 0,
+      "blocker": [
+        326,
+        240,
+        20,
+        5
+      ],
+      "states": {
+        "waiting": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+        "released": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+        "settled": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      }
+    },
+    {
+      "id": "dining_refreshments",
+      "scene": "sanctuary_dining",
+      "position": [
+        272,
+        76
+      ],
+      "sort_y": 104,
+      "states": {
+        "waiting": "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png",
+        "released": "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png",
+        "settled": "assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png"
       }
     }
   ]

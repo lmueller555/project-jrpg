@@ -80,8 +80,8 @@ class SereneStoryHandoffTests(unittest.TestCase):
         self.assertTrue(self.quest.restore({'version': 1, 'stage': 'done'}))
         self.assertFalse(self.quest._serene_handed_off)
         self.assertFalse(self.quest._tomas_handed_off)
-        self.assertIs(self.game._routine_worlds[self.serene], self.game.town)
-        self.assertLess(self.serene.position.distance_to(self.quest.points['serene']), 1)
+        self.assertIs(self.game._routine_worlds[self.serene], self.quest.dining)
+        self.assertLess(self.serene.position.distance_to(self.quest.points['serene_meal']), 1)
         self.assertIsNot(self.serene.story_sprite, self.pose)
         self.assertIsNotNone(self.quest.try_conversation(self.serene))
 

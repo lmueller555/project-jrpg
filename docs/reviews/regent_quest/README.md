@@ -1,38 +1,19 @@
-# The Regent's Road in game
+# The Regent's Road — interior staging and following review
 
-[Complete quest overview](quest.gif) · [Cart release close-up](cart_release.gif).
+The production Game is played from MQ03 availability to completion. Only completed MQ01/MQ02 prerequisites and the initial player station are seeded. All six main conversations, the cart release, player walking, NPC following and door transfers use the normal quest controllers. Temporary saves leave ordinary journeys untouched.
 
-The production game follows Caelan welcoming Aldric's party, accompanying the
-visitors through the village and helping receive them at the sanctuary. Aldric
-handles the road crew's expired cart hire; his clerk checks the terms. Caelan
-contributes only his firsthand knowledge that Halden's mill is working again.
-There is no player receipt inspection or adjudication objective.
+- [Complete quest overview](quest.gif) — travel is compressed; every main dialogue page remains.
+- [Cart release](cart_release.gif) — Mr. Venn and his cart visibly depart.
+- [Actual NPC following](following.gif) — movement is sampled at ten frames per second.
+- [Preparations inside the dining room](preparations.png)
+- [Welcome and meal](welcome.png)
+- [Aldric and Serene's discussion](discussion.png)
+- [Private aftermath](aftermath.png)
 
-The welcome and quiet covenant discussion keep the approved emotional dialogue
-cues. Serene offers to pursue records and a joint review; the disagreement stays
-unresolved, and this quest does not authorize excavation. Caelan's final exchange
-with her is required before MQ03 completes. The mill remains restored.
+- [MQ04 invitation in the same dining room](lantern_handoff.png)
 
-## Capture method
+The player walks from the dining room through the hall and courtyard to meet the visitors, then leads them back through the same doors. All local conversations and the visitors' final stations are inside the sanctuary dining room. MQ04 becomes available normally; its invitation is then read with both Tomas and Serene present inside. The road dispute and unresolved excavation decision are preserved.
 
-Run `python tools/capture_regent_quest.py` with Pygame and Pillow installed. The
-capture seeds only completed MQ01/MQ02 prerequisite facts and the starting
-station. MQ03 advances through the real game's walking, public interactions,
-dialogue callbacks and scene-controller clocks. It never assigns an MQ03 stage
-or completes its objectives directly.
+`capture.json` records room transitions, dialogue locations and actual facing-change timestamps. Sustained follower turns respect the shared minimum turn interval; brief pauses remain in the measurement; scripted poses, dialogue, prolonged idle and room transfers are separate. The following clip uses ordinary collision-aware pathfinding, not direct actor movement.
 
-The compact 320-pixel-wide overview retains each main dialogue page and compresses
-travel samples. Full-resolution UI stills accompany it, and the complete dialogue
-script is in [CH01_MQ03.md](../../narrative/game_01/CH01_MQ03.md).
-Review captions are outside the rendered game image. The separate cart clip
-uses the same world renderer with a camera following the real Mr. Venn actor
-and released cart. All exported GIF frames and cumulative durations are checked
-against the indexed source images after decoding. The capture also checks that
-all six main conversations appear exactly once with every dialogue page. A brief
-clerk travel reminder can appear before the dispute is settled; its stage is
-checked, and out-of-sequence visit reminders are rejected. The completed delivery
-and parked cart are also checked, including clear access to Halden.
-
-The PNG stills show the actual display-resolution game UI: preparation,
-arrival, the dispute and ruling, the welcome, the covenant disagreement and
-the personal aftermath.
+Reproduce with `python tools/capture_regent_quest.py`.

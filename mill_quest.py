@@ -12,6 +12,7 @@ import pygame
 
 from halden_visit import point, town_path
 from npc_routines import find_path
+from npc_following import following_facing, idle_following_facing, reset_following_facing
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from social import facing_toward
 
@@ -670,6 +671,7 @@ class MillQuest:
     def _worlds(self):return list(self.game.scenes.values())
 
     def _place_mira(self, world, position):
+        reset_following_facing(self.mira)
         for room in self._worlds():
             if self.mira in room.npcs:room.npcs.remove(self.mira)
         world.npcs.append(self.mira);self._mira_world = world
@@ -685,6 +687,10 @@ class MillQuest:
         return None
 
     def _move(self, goal, seconds, speed=82):
+        with following_facing(self.mira, seconds):
+            return self._move_path(goal, seconds, speed)
+
+    def _move_path(self, goal, seconds, speed=82):
         actor = self.mira;world = self._mira_world;goal = point(goal);actor.moving = False
         avoid = world.probe_rect(self.game.player.position) if self.game.world is world else None
         if actor.position.distance_to(goal)<.2:self.paths.pop(actor, None);return True
@@ -758,7 +764,9 @@ class MillQuest:
             landing = self._near_player()
             if landing is not None:self._move(landing, seconds)
             return
-        if distance<=36:self.mira.moving = False;self.paths.pop(self.mira, None);return
+        if distance<=36:
+            self.mira.moving = False;self.paths.pop(self.mira, None)
+            idle_following_facing(self.mira, seconds);return
         goal = self.trail[-1];length = 0.
         for previous in reversed(self.trail):
             length += pygame.Vector2(goal).distance_to(previous);goal = previous

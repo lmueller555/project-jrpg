@@ -189,12 +189,17 @@ def props():
  im=Image.new('RGBA',(54,20));d=ImageDraw.Draw(im)
  for r,c in [((1,10,16,18),'#737e7a'),((13,5,29,17),'#8e9388'),((29,10,46,19),'#69736d'),((21,1,40,10),'#a4aaa0')]:d.rectangle(r,fill=c);d.line((r[0],r[1],r[2],r[1]),fill='#c0c0ab')
  add('road_stone',[650,588],im,608)
- im=Image.new('RGBA',(44,18));d=ImageDraw.Draw(im)
- d.rectangle((0,4,43,13),fill=WOOD_DARK);d.rectangle((2,5,41,11),fill=WOOD)
- for x in (8,32):d.line((x,12,x,17),fill=WOOD_DARK,width=2)
- for x in (6,17,29):d.rectangle((x,1,x+5,6),fill='#d6c29a');d.line((x+1,0,x+4,0),fill='#eee1bf')
- d.ellipse((23,5,34,10),fill='#d3b486')
- add('courtyard_refreshments',[350,293],im,311,('waiting','welcoming','settled'))
+ # Hospitality belongs to the dining room. Four ordinary spare chairs join
+ # its three family chairs without changing the opening breakfast furniture.
+ for suffix,x,y,direction in [('north_a',276,132,'down'),('north_b',324,132,'down'),
+                              ('south_a',276,210,'up'),('south_b',324,210,'up')]:
+  filename=f'assets/terrain/eldenmere/cottage_furniture/sprites/chair_{direction}.png'
+  records.append(dict(id='dining_guest_chair_'+suffix,scene='sanctuary_dining',
+                      position=[x,y],sort_y=y+34,sort_priority=0,blocker=[x+2,y+30,20,5],
+                      states={s:filename for s in ('waiting','released','settled')}))
+ records.append(dict(id='dining_refreshments',scene='sanctuary_dining',position=[272,76],
+                     sort_y=104,states={s:'assets/terrain/eldenmere/sanctuary_interior/props/breadboard.png'
+                                       for s in ('waiting','released','settled')}))
  return records
 
 def build():
@@ -220,6 +225,14 @@ def build():
   'aldric_route':[[726,456],[720,480],[610,512],[480,480],[384,384],[400,326]],
   'scene_id':'eldenmere.playable'}
  layout.update({'aldric_arrival':[726,456],'clerk_arrival':[702,456],'driver_arrival':[750,456],'attendant_arrival':[678,456], 'venn_road':layout['venn_start'],'foreman_road':layout['foreman'],'venn_delivery':layout['venn_end'],'cart_route':layout['venn_cart_path']})
+ layout.update(outside_courtyard=[386,318],dining_scene_id='sanctuary_dining',preparations=[264,128],serene=[288,116],
+               serene_meal=[144,228],tomas=[108,200],courtyard=[228,252],welcome=[228,252],
+               discussion=[228,252],aftermath=[168,228],aldric_courtyard=[228,200],
+               clerk_courtyard=[288,132],driver_courtyard=[288,252],
+               attendant_courtyard=[336,252],aldric_aside=[378,144],
+               dining_stations=['preparations','serene','serene_meal','tomas','courtyard',
+                                'welcome','discussion','aftermath','aldric_courtyard',
+                                'clerk_courtyard','driver_courtyard','attendant_courtyard','aldric_aside'])
  (OUT/'layout.json').write_text(json.dumps(layout,indent=2)+'\n')
  # Review of actual native-pixel art, not an alternative redesign.
  board=Image.new('RGB',(720,440),'#e8edf2');d=ImageDraw.Draw(board)

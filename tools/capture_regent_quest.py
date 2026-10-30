@@ -13,13 +13,16 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 from pathlib import Path
 import json
 import sys
+import tempfile
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import pygame
 from PIL import Image,ImageDraw,ImageFont
 from main import Game
 from npc_routines import find_path
 from quests import OPENING_QUEST,MILL_QUEST,REGENT_QUEST
-from capture_mill_quest import save_gif
+from npc_following import IDLE_RESET, TURN_INTERVAL
+from tools.capture_mill_quest import save_gif
+from tools.quest_capture_navigation import travel_to
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'docs/reviews/regent_quest'
@@ -28,13 +31,19 @@ OUT=ROOT/'docs/reviews/regent_quest'
 class Capture:
     def __init__(self):
         OUT.mkdir(parents=True,exist_ok=True)
-        self.g=Game(fullscreen=False,start_on_title=False,save_path=None)
+        self.temp=tempfile.TemporaryDirectory(prefix='mq03-review-')
+        self.g=Game(fullscreen=False,start_on_title=False,
+                    save_path=Path(self.temp.name)/'journey.json',
+                    settings_path=Path(self.temp.name)/'settings.json')
         self.g.audio.set_music(0);self.g.audio.set_effects(0)
         self.c=self.g.regent_quest
         self.frames=[];self.durations=[];self.cart=[];self.cart_durations=[]
         self.tick_index=0;self.label='Prepare to welcome Aldric'
         self.font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',14)
         self.seen_pages=[];self.seen_contexts=[];self.saved_stills=set()
+        self.room_transitions=[];self.dialogue_rooms={}
+        self.simulation_seconds=0.;self.follow_frames=[];self.follow_durations=[]
+        self.facing_runs={};self.facing_changes=[];self.facing_intervals=[]
         self._seed_previous_quests()
 
     def _seed_previous_quests(self):
@@ -55,7 +64,8 @@ class Capture:
         g.opening.restore({'version':1,'stage':'disabled'})
         if g.quests.status(REGENT_QUEST)=='locked':assert g.quests.unlock(REGENT_QUEST)
         self.c.restore(None)
-        g.world=g.town;g.player.position.update(self.c.points['preparations'])
+        g.world=self.c.world_for_station('preparations')
+        g.player.position.update(self.c.points['preparations'])
         g.player.facing='back';g.opening_fade=0;g.transfer_cooldown=0
         g.social.blocked.clear();g.quests.drain_events();g.quest_ui.reset();g.camera.reset()
         assert g.quests.status(REGENT_QUEST)=='available'
@@ -89,6 +99,41 @@ class Capture:
     def tick(self,seconds=1/30,direction=(0,0),record=True):
         before=self.c.stage
         self.g.update(seconds,direction,False);self.tick_index+=1
+        self.simulation_seconds+=seconds
+        if self.c.stage in ('met','escorting') and not self.g.social.locked:
+            for actor in self.c.party:
+                if self.c._world(actor) is not self.g.world:
+                    self.facing_runs.pop(actor,None)
+                    continue
+                if not actor.moving:
+                    run=self.facing_runs.get(actor)
+                    if run is not None:
+                        run['idle_seconds']+=seconds
+                        if run['idle_seconds']+1e-9>=IDLE_RESET:self.facing_runs.pop(actor,None)
+                    continue
+                run=self.facing_runs.setdefault(actor,dict(facing=actor.facing,last_turn=None,
+                    scene=self.g.world.data['id'],stage=self.c.stage,idle_seconds=0.))
+                run['idle_seconds']=0.
+                if (run['scene']!=self.g.world.data['id'] or run['stage']!=self.c.stage):
+                    self.facing_runs.pop(actor,None)
+                    continue
+                if actor.facing!=run['facing']:
+                    if run['last_turn'] is not None:
+                        interval=self.simulation_seconds-run['last_turn']
+                        self.facing_intervals.append(interval)
+                        assert interval+1e-7>=TURN_INTERVAL,('Rapid follower facing',actor.data['id'],interval)
+                    self.facing_changes.append(dict(actor=actor.data['id'],
+                        time=round(self.simulation_seconds,6),previous=run['facing'],
+                        facing=actor.facing,scene=self.g.world.data['id']))
+                    run['facing']=actor.facing;run['last_turn']=self.simulation_seconds
+            if (len(self.follow_frames)<200 and self.tick_index%3==0 and
+                    any(actor.moving and self.c._world(actor) is self.g.world for actor in self.c.party)):
+                image=self.game_image()
+                out=Image.new('RGB',(480,344),'#e8edf2');out.paste(image,(0,24))
+                ImageDraw.Draw(out).text((9,4),'Actual NPC following · stable facing at path corners',
+                                        font=self.font,fill='#243529')
+                self.follow_frames.append(out);self.follow_durations.append(100)
+        else:self.facing_runs.clear()
         if record and self.tick_index%30==0:self.frame(120)
         if before=='releasing' or self.c.stage=='releasing':
             if self.tick_index%3==0:self.cart_frame(100)
@@ -100,10 +145,19 @@ class Capture:
         raise AssertionError(('Timeout',self.c.stage,self.g.social.script_identifier,
                               tuple(self.g.player.position),[(a.data['id'],tuple(a.position),self.c._world(a).data['id'],self.c.paths.get(a)) for a in self.c.party]))
 
-    def walk(self,goal,seconds=120):
-        goal=pygame.Vector2(goal);route=[];stalled=0
+    def walk(self,goal,seconds=180,next_scene=None):
+        origin=self.g.world
+        goal=pygame.Vector2(*(round(value/2)*2 for value in goal));route=[];stalled=0
         for _ in range(round(seconds*30)):
-            if self.g.player.position.distance_to(goal)<1.5:return
+            if self.g.world is not origin:
+                assert self.g.world.data['id']==next_scene
+                return
+            if self.g.player.position.distance_to(goal)<1.5:
+                if next_scene is None:return
+                door=next(d for d in origin.doors
+                          if pygame.Vector2(d.data['anchor']).distance_to(goal)<3)
+                self.tick(direction=(0,-1 if door.data['entry_side']=='north' else 1))
+                continue
             # Auto-started scripted conversation is read in place before moving
             # on, preserving the controller's public stage callbacks.
             if self.g.social.active:
@@ -122,6 +176,7 @@ class Capture:
         raise AssertionError(('Walking stalled',tuple(self.g.player.position),tuple(goal),self.c.stage))
 
     def at(self,key):
+        travel_to(self,self.c.world_for_station(key))
         point=pygame.Vector2(self.c.points[key])
         if key=='road':point+=(-20,52)  # Caelan observes beside the gathered adults.
         target=None
@@ -142,6 +197,7 @@ class Capture:
         while self.g.social.active:
             count+=1;assert count<220,'Unfinished dialogue'
             identifier=self.g.social.script_identifier
+            self.dialogue_rooms.setdefault(identifier,set()).add(self.g.world.data['id'])
             page=self.g.social.page
             speaker=page.get('speaker')
             text=page.get('text','') or ' '.join(page.get('lines',[]))
@@ -170,6 +226,28 @@ class Capture:
         assert self.g.social.script_identifier=='regent_'+kind,(self.g.social.script_identifier,kind,self.c.stage)
         self.read()
 
+    def capture_handoff(self):
+        """Read the next invitation from MQ03's actual completed state."""
+        lantern=self.g.lantern_quest
+        travel_to(self,lantern.invitation_world)
+        self.walk(lantern.points['invitation'])
+        self.wait(lambda:lantern._target()=='invitation')
+        assert lantern.interact()
+        pages=0;room=self.g.world.data['id']
+        while self.g.social.active and self.g.social.script_identifier=='lantern_invitation':
+            pages+=1;assert pages<100
+            assert self.g.world is lantern.invitation_world
+            assert lantern._world(lantern.tomas) is self.g.world
+            assert lantern._world(lantern.serene) is self.g.world
+            if self.g.social.page['speaker']=='serene' and 'lantern_handoff.png' not in self.saved_stills:
+                self.save_still('lantern_handoff.png')
+            self.g.social.advance()
+            for _ in range(4):self.tick(record=False)
+        assert lantern.stage=='invited'
+        assert 'lantern_handoff.png' in self.saved_stills
+        return dict(room=room,dialogue_pages=pages,stage=lantern.stage,
+                    tomas_and_serene_present=True,prior_quest_still_complete=self.c.stage=='done')
+
     def run(self):
         self.frame(1000)
         self.wait(lambda:self.c._preps_ready)
@@ -189,7 +267,7 @@ class Capture:
         self.wait(lambda:self.c.stage=='escorting')
         self.cart_frame(700)
         assert self.cart,'No cart movement captured'
-        self.label='Bring the visitors to the sanctuary courtyard'
+        self.label='Bring the visitors inside to the sanctuary dining room'
         self.at('courtyard');self.wait(lambda:self.c.stage=='welcome')
         self.label='A warm welcome and time to talk'
         self.wait(lambda:self.c._group_ready)
@@ -203,7 +281,7 @@ class Capture:
         assert self.c.stage=='done' and self.g.quests.status(REGENT_QUEST)=='completed'
         assert self.g.mill_quest.mill_restored and not self.g.opening_conclusion.mill_stopped
         assert not any('AUTHORIZ' in flag.upper() or 'EXCAVATION_STARTED' in flag.upper() for flag in self.g.social.flags)
-        assert 'CH01_MQ04' not in self.g.quests.definitions
+        assert self.g.quests.status('CH01_MQ04')=='available'
         self.wait(lambda:self.c._delivery_done)
         for _ in range(20):self.tick()
         assert pygame.Vector2(self.c.cart['position']).distance_to(self.c.points['cart_end'])<1
@@ -230,12 +308,57 @@ class Capture:
         overview=[frame.resize((320,229),Image.Resampling.NEAREST) for frame in frames]
         save_gif(OUT/'quest.gif',overview,durations,64)
         save_gif(OUT/'cart_release.gif',self.cart,self.cart_durations,128)
+        assert self.follow_frames and self.facing_changes,'No actual following captured'
+        assert self.facing_intervals,'No sustained turning sequence measured'
+        save_gif(OUT/'following.gif',self.follow_frames,self.follow_durations,96)
+        expected_interior={'regent_'+kind for kind in ('preparations','welcome','discussion','aftermath')}
+        assert all(self.dialogue_rooms[key]=={'sanctuary_dining'} for key in expected_interior)
+        assert any(t['origin']=='sanctuary_hall' and t['destination']=='sanctuary_dining'
+                   for t in self.room_transitions)
+        assert all(self.c._world(actor) is self.c.dining for actor in self.c.party)
+        handoff=self.capture_handoff()
         (OUT/'capture.json').write_text(json.dumps({'quest_completed':True,'stage':self.c.stage,
             'quest_id':REGENT_QUEST,'dialogue_pages':len(self.seen_pages),'overview_frames':len(frames),
             'cart_frames':len(self.cart),'optional_dialogue':sorted(optional),'seeded':'completed MQ01/MQ02 prerequisites and starting station only',
-            'excavation_authorized':False,'role':'guide and host; adults settle the dispute'},indent=2)+'\n')
+            'excavation_authorized':False,'role':'guide and host; adults settle the dispute',
+            'room_transitions':self.room_transitions,
+            'dialogue_rooms':{k:sorted(v) for k,v in self.dialogue_rooms.items()},
+            'mq04_available':True,'party_final_room':'sanctuary_dining',
+            'mq04_handoff':handoff,
+            'following':dict(frames=len(self.follow_frames),
+                minimum_turn_interval=TURN_INTERVAL,
+                observed_minimum_continuous_turn_interval=min(self.facing_intervals),
+                measured_intervals=len(self.facing_intervals),
+                facing_changes=self.facing_changes,
+                measurement='Consecutive following turns including short stops, excluding idle >= 0.35s, dialogue and room transfers')},indent=2)+'\n')
+        (OUT/'README.md').write_text(
+            '# The Regent\'s Road — interior staging and following review\n\n'
+            'The production Game is played from MQ03 availability to completion. Only completed '
+            'MQ01/MQ02 prerequisites and the initial player station are seeded. All six main '
+            'conversations, the cart release, player walking, NPC following and door transfers '
+            'use the normal quest controllers. Temporary saves leave ordinary journeys untouched.\n\n'
+            '- [Complete quest overview](quest.gif) — travel is compressed; every main dialogue page remains.\n'
+            '- [Cart release](cart_release.gif) — Mr. Venn and his cart visibly depart.\n'
+            '- [Actual NPC following](following.gif) — movement is sampled at ten frames per second.\n'
+            '- [Preparations inside the dining room](preparations.png)\n'
+            '- [Welcome and meal](welcome.png)\n'
+            '- [Aldric and Serene\'s discussion](discussion.png)\n'
+            '- [Private aftermath](aftermath.png)\n\n'
+            '- [MQ04 invitation in the same dining room](lantern_handoff.png)\n\n'
+            'The player walks from the dining room through the hall and courtyard to meet the '
+            'visitors, then leads them back through the same doors. All local conversations and '
+            'the visitors\' final stations are inside the sanctuary dining room. MQ04 becomes '
+            'available normally; its invitation is then read with both Tomas and Serene present '
+            'inside. The road dispute and unresolved excavation decision are preserved.\n\n'
+            '`capture.json` records room transitions, dialogue locations and actual facing-change '
+            'timestamps. Sustained follower turns respect the shared minimum turn interval; '
+            'brief pauses remain in the measurement; scripted poses, dialogue, prolonged idle and '
+            'room transfers are separate. '
+            'The following clip uses ordinary collision-aware pathfinding, not direct actor movement.\n\n'
+            'Reproduce with `python tools/capture_regent_quest.py`.\n',encoding='utf-8')
         print('Captured complete MQ03:',len(frames),'overview frames;',len(self.cart),'cart frames;',len(self.seen_pages),'dialogue pages')
-        for name in ['quest.gif','cart_release.gif']:print(name,(OUT/name).stat().st_size,'bytes')
+        for name in ['quest.gif','cart_release.gif','following.gif']:print(name,(OUT/name).stat().st_size,'bytes')
+        self.temp.cleanup()
         pygame.quit()
 
 

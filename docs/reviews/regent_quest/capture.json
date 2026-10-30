@@ -3,12 +3,225 @@
   "stage": "done",
   "quest_id": "CH01_MQ03",
   "dialogue_pages": 113,
-  "overview_frames": 123,
+  "overview_frames": 129,
   "cart_frames": 10,
   "optional_dialogue": [
     "regent_clerk_waiting"
   ],
   "seeded": "completed MQ01/MQ02 prerequisites and starting station only",
   "excavation_authorized": false,
-  "role": "guide and host; adults settle the dispute"
+  "role": "guide and host; adults settle the dispute",
+  "room_transitions": [
+    {
+      "origin": "sanctuary_dining",
+      "destination": "sanctuary_hall",
+      "door": "hall"
+    },
+    {
+      "origin": "sanctuary_hall",
+      "destination": "eldenmere.playable",
+      "door": "courtyard"
+    },
+    {
+      "origin": "eldenmere.playable",
+      "destination": "sanctuary_hall",
+      "door": "sanctuary"
+    },
+    {
+      "origin": "sanctuary_hall",
+      "destination": "sanctuary_dining",
+      "door": "dining"
+    }
+  ],
+  "dialogue_rooms": {
+    "regent_preparations": [
+      "sanctuary_dining"
+    ],
+    "mill_after": [
+      "eldenmere.playable"
+    ],
+    "regent_clerk_waiting": [
+      "eldenmere.playable"
+    ],
+    "regent_arrival": [
+      "eldenmere.playable"
+    ],
+    "regent_dispute": [
+      "eldenmere.playable"
+    ],
+    "regent_welcome": [
+      "sanctuary_dining"
+    ],
+    "regent_discussion": [
+      "sanctuary_dining"
+    ],
+    "regent_aftermath": [
+      "sanctuary_dining"
+    ]
+  },
+  "mq04_available": true,
+  "party_final_room": "sanctuary_dining",
+  "mq04_handoff": {
+    "room": "sanctuary_dining",
+    "dialogue_pages": 16,
+    "stage": "invited",
+    "tomas_and_serene_present": true,
+    "prior_quest_still_complete": true
+  },
+  "following": {
+    "frames": 114,
+    "minimum_turn_interval": 0.2,
+    "observed_minimum_continuous_turn_interval": 0.3333333333333144,
+    "measured_intervals": 12,
+    "facing_changes": [
+      {
+        "actor": "regent_attendant",
+        "time": 21.455581,
+        "previous": "right",
+        "facing": "left",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "aldric",
+        "time": 29.252165,
+        "previous": "left",
+        "facing": "front",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "regent_clerk",
+        "time": 29.952165,
+        "previous": "front",
+        "facing": "left",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "aldric",
+        "time": 29.985498,
+        "previous": "front",
+        "facing": "left",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "regent_attendant",
+        "time": 30.485498,
+        "previous": "right",
+        "facing": "left",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "aldric",
+        "time": 32.485498,
+        "previous": "left",
+        "facing": "back",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "regent_clerk",
+        "time": 32.752165,
+        "previous": "left",
+        "facing": "back",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "regent_attendant",
+        "time": 33.218832,
+        "previous": "left",
+        "facing": "back",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "regent_driver",
+        "time": 33.385498,
+        "previous": "left",
+        "facing": "back",
+        "scene": "eldenmere.playable"
+      },
+      {
+        "actor": "aldric",
+        "time": 36.641058,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_clerk",
+        "time": 36.907725,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_driver",
+        "time": 37.174391,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_attendant",
+        "time": 37.374391,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "aldric",
+        "time": 38.474391,
+        "previous": "back",
+        "facing": "right",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_clerk",
+        "time": 38.774391,
+        "previous": "back",
+        "facing": "right",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "aldric",
+        "time": 38.974391,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_driver",
+        "time": 39.141058,
+        "previous": "back",
+        "facing": "right",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_clerk",
+        "time": 39.241058,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_attendant",
+        "time": 39.274391,
+        "previous": "back",
+        "facing": "right",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_driver",
+        "time": 39.474391,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      },
+      {
+        "actor": "regent_attendant",
+        "time": 39.729949,
+        "previous": "right",
+        "facing": "back",
+        "scene": "sanctuary_hall"
+      }
+    ],
+    "measurement": "Consecutive following turns including short stops, excluding idle >= 0.35s, dialogue and room transfers"
+  }
 }

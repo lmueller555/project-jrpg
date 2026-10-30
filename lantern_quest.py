@@ -11,6 +11,7 @@ from lantern_village import LanternVillage, VILLAGE_STAGES, VILLAGE_PREFIX
 from lantern_rest import LanternRest, REST_STAGES, REST_PREFIX
 from lantern_finish import LanternFinish, FINISH_STAGES, FINISH_PREFIX
 from npc_routines import find_path
+from npc_following import following_facing, idle_following_facing, reset_following_facing
 from quests import LANTERN_QUEST, REGENT_QUEST, QuestLog
 from social import facing_toward
 
@@ -30,6 +31,7 @@ class LanternQuest:
     def __init__(self, game):
         self.game = game;self.town = game.town
         self.school = game._scene_by_id('school')
+        self.invitation_world = game._scene_by_id('sanctuary_dining')
         self.layout = json.loads((ART/'layout.json').read_text());self.points = self.layout
         self.lines = json.loads((ART/'scene.json').read_text())
         self.art = json.loads((ART/'art.json').read_text())
@@ -114,6 +116,7 @@ class LanternQuest:
         return next((world for world in self.game.scenes.values() if actor in world.npcs), None)
 
     def _place(self, actor, world, position):
+        reset_following_facing(actor)
         for scene in self.game.scenes.values():
             if actor in scene.npcs:scene.npcs.remove(actor)
         world.npcs.append(actor);actor.position.update(position)
@@ -154,10 +157,12 @@ class LanternQuest:
         for identifier in self._quest_profiles:self.game.social.profiles.pop(identifier, None)
         self._quest_profiles.clear()
         self.tomas.story_following = False;self.tomas.story_paused = False
+        reset_following_facing(self.tomas)
         for key in ('story_sprite', 'story_draw_anchor'):
             if hasattr(self.tomas, key):delattr(self.tomas, key)
         if self._mira_owned:
             self.mira.quest_mode = False;self.mira.story_following = False
+            reset_following_facing(self.mira)
             self.mira.end_conversation();self._mira_owned = False
         self._owned = False
 
@@ -219,7 +224,7 @@ class LanternQuest:
             if landing is not None:self._place(actor, self.school, landing)
             actor.facing = 'front'
         if self.stage == 'idle':
-            self._restore_station(self.tomas, self.town, self.points['tomas_invitation'])
+            self._restore_station(self.tomas, self.invitation_world, self.points['tomas_invitation'])
             if self._liam_claimed:self._restore_station(self.liam, self.school, self.points['school_liam'])
         elif self.stage in ('invited', 'classroom', 'designed'):
             self._restore_station(self.tomas, self.school, self.points['school_tomas'])
@@ -283,7 +288,7 @@ class LanternQuest:
         if self.rest.active:return self.rest.target()
         if self.stage == 'frame_ready' or self.stage in VILLAGE_STAGES:return self.village.target()
         if self.stage == 'idle':
-            return 'invitation' if self.game.world is self.town and self._near(self.points['invitation'], 62) else None
+            return 'invitation' if self.game.world is self.invitation_world and self._near(self.points['invitation'], 62) else None
         if self.stage in ('invited', 'classroom', 'designed'):
             if self.game.world is self.school and self._near(self.points['school'], 86):
                 return {'invited': 'classroom', 'classroom': 'design', 'designed': 'permission'}[self.stage]
@@ -367,7 +372,7 @@ class LanternQuest:
         if self.finish_part.active:return self.finish_part.tracker_text()
         if self.rest.active:return self.rest.tracker_text()
         if self.stage in VILLAGE_STAGES:return self.village.tracker_text()
-        return {'idle': 'Meet Tomas by the sanctuary lantern supplies.',
+        return {'idle': 'Speak with Tomas in the sanctuary dining room.',
                 'invited': 'Join the lantern preparations at the village school.',
                 'classroom': 'Look at Liam’s lantern drawing with him.',
                 'designed': 'Agree on the outing with Liam’s mother.',
@@ -396,6 +401,10 @@ class LanternQuest:
                 'lift': 'E: Let Liam try the handle', 'frame_ready': 'E: Look at the finished frame'}.get(self._target(), '')
 
     def _move(self, actor, desired, seconds, speed=68):
+        with following_facing(actor, seconds):
+            return self._move_path(actor, desired, seconds, speed)
+
+    def _move_path(self, actor, desired, seconds, speed=68):
         world = self._world(actor);desired = point(desired);actor.moving = False
         if actor.position.distance_to(desired)<1:self.paths.pop(actor, None);return True
         avoid = world.probe_rect(self.game.player.position) if world is self.game.world else None
@@ -463,7 +472,7 @@ class LanternQuest:
             if actor is self.liam and not self._liam_claimed:continue
             if not self._travel(actor, self.game.world, seconds):continue
             if actor.position.distance_to(self.game.player.position)<32:
-                actor.moving = False;continue
+                actor.moving = False;idle_following_facing(actor, seconds);continue
             desired = self._landing(actor, self.game.player.position+offset, self.game.world)
             if desired is not None:self._move(actor, desired, seconds, 80)
 
@@ -580,7 +589,7 @@ class LanternQuest:
                 else:attendance.append(False)
                 self._class_ready = all(attendance)
                 if self.stage == 'idle':
-                    self._ready = self._station(self.tomas, self.town, self.points['tomas_invitation'], seconds)
+                    self._ready = self._station(self.tomas, self.invitation_world, self.points['tomas_invitation'], seconds)
                 else:self._ready = self._station(self.tomas, self.school, self.points['school_tomas'], seconds) and self._class_ready
             else:
                 if self.stage == 'permitted' and not self._gathering:
