@@ -8,6 +8,7 @@ performed here. No limb deformation or per-pose body stretching is applied.
 from __future__ import annotations
 
 from collections import deque
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -50,6 +51,17 @@ TRANSITIONS = {
         'sit:stand': [('settle_seat', 200), ('lower_seat', 200), ('recover', 200)],
         'look:stand': [('settle_seat', 200), ('lower_seat', 200), ('recover', 200)],
     },
+}
+DRINKING = {
+    'file': 'caelan_drinking_generated.png', 'scale': .134,
+    'poses': ('cup_raise_low', 'lift_cup', 'cup_near_mouth', 'drink',
+              'lower_cup', 'cup_lower_mid'),
+}
+DRINKING_TRANSITIONS = {
+    'seated_cup:drink': [('cup_raise_low', 160), ('lift_cup', 160),
+                        ('cup_near_mouth', 160)],
+    'drink:seated_cup': [('lower_cup', 160), ('cup_lower_mid', 160),
+                        ('cup_raise_low', 160)],
 }
 
 
@@ -102,6 +114,60 @@ def export_pose(image, bounds, scale):
                     'offset': list(offset), 'bounds': list(canvas.getbbox())}
 
 
+def build_drinking():
+    """Replace only Caelan's drinking action, preserving all other exports."""
+    folder = TARGET/'caelan'
+    manifest_path = folder/'animation.json'
+    metadata = json.loads(manifest_path.read_text(encoding='utf-8'))
+    source_path = SOURCE/DRINKING['file']
+    source_data = source_path.read_bytes()
+    source = Image.open(source_path).convert('RGBA')
+    source_name = source_path.relative_to(ROOT).as_posix()
+    for pose, bounds in zip(DRINKING['poses'], components(source)):
+        frame, details = export_pose(source, bounds, DRINKING['scale'])
+        details['source'] = source_name
+        filename = pose+'.png'
+        frame.save(folder/filename)
+        metadata['poses'][pose] = filename
+        metadata['extraction'][pose] = details
+    metadata['sources'] = [record for record in metadata['sources']
+                           if record['path'] != source_name]
+    metadata['sources'].append({'path': source_name,
+                                'sha256': hashlib.sha256(source_data).hexdigest(),
+                                'native_scale': DRINKING['scale']})
+    for identifier, frames in DRINKING_TRANSITIONS.items():
+        metadata['transitions'][identifier] = [
+            {'file': pose+'.png', 'duration_ms': duration} for pose, duration in frames]
+    manifest_path.write_text(json.dumps(metadata, indent=2)+'\n', encoding='utf-8')
+
+    work = ROOT/'work'
+    work.mkdir(exist_ok=True)
+    poses = ('seated_cup', *DRINKING['poses'], 'seated_cup')
+    contact = Image.new('RGB', (96*4, 112*2), '#292f3b')
+    draw = ImageDraw.Draw(contact)
+    for index, pose in enumerate(poses):
+        x, y = index%4*96, index//4*112
+        frame = Image.open(folder/(pose+'.png')).convert('RGBA')
+        contact.paste(frame, (x, y), frame)
+        draw.text((x+2, y+1), pose, fill='#eeeeee')
+        draw.line((x, y+104, x+95, y+104), fill='#747d83')
+    contact.resize((1152, 672), Image.Resampling.NEAREST).save(work/'cinematic-drinking-contact.png')
+    sequence = [('seated_cup', 550), ('cup_raise_low', 160), ('lift_cup', 160),
+                ('cup_near_mouth', 160), ('drink', 650), ('lower_cup', 160),
+                ('cup_lower_mid', 160), ('cup_raise_low', 160), ('seated_cup', 650)]
+    frames, durations = [], []
+    for pose, duration in sequence:
+        frame = Image.open(folder/(pose+'.png')).convert('RGBA')
+        preview = Image.new('RGBA', CANVAS, '#292f3b')
+        preview.alpha_composite(frame)
+        frames.append(preview.convert('RGB').resize((576, 672), Image.Resampling.NEAREST))
+        durations.append(duration)
+    frames[0].save(work/'cinematic-drinking-preview.gif', save_all=True,
+                   append_images=frames[1:], duration=durations, loop=0,
+                   disposal=2, optimize=False)
+    print('Exported six registered drinking frames; other actor exports unchanged.')
+
+
 def build():
     all_metadata = {}
     for actor, record in ACTORS.items():
@@ -135,6 +201,7 @@ def build():
                 {'file': pose+'.png', 'duration_ms': duration} for pose, duration in frames]
         (output/'animation.json').write_text(json.dumps(metadata, indent=2)+'\n', encoding='utf-8')
         all_metadata[actor] = metadata
+    build_drinking()
     review = Image.new('RGB', (96*6, 112*4), '#292f3b')
     draw = ImageDraw.Draw(review)
     for actor_index, (actor, record) in enumerate(ACTORS.items()):
@@ -151,4 +218,11 @@ def build():
 
 
 if __name__ == '__main__':
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--drinking-only', action='store_true',
+                        help="Rebuild only Caelan's registered lift/sip/lower action")
+    arguments = parser.parse_args()
+    if arguments.drinking_only:
+        build_drinking()
+    else:
+        build()

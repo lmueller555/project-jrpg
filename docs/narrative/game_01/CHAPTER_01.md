@@ -11,8 +11,12 @@ Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Player
 New Game now begins with an approved, separate [cinematic flashforward](../../OPENING_CINEMATIC.md):
 an exhausted Caelan and Mira briefly rest in a damaged wayside sanctuary
 overlooking an inhabited valley. Their mill recollection frames the journey
-before the game returns to this chapter's ordinary morning. The working later-act
-outline places the eventual reprise near the Act IV/V boundary; its exact route,
+before the game returns to this chapter's ordinary morning.
+The expanded exchange establishes an entrance beyond a ridge, evacuation carts
+and a valley road threatened by another local surge. Its mill recollection
+connects Caelan's modest early success to their shared responsibility later.
+The working later-act outline places the eventual reprise near the Act IV/V
+boundary; its exact route,
 the crisis's mechanics and other characters' outcomes remain unapproved. The
 teaser does not move the excavation catastrophe into Chapter 1 or establish
 Tomas's fate, Eldenmere's condition or hidden cosmology.

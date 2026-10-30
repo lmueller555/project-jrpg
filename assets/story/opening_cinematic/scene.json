@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "opening_a_light_before_the_descent",
-  "duration": 130.0,
+  "duration": 198.7,
   "canvas": [
     960,
     480
@@ -81,7 +81,7 @@
     {
       "id": "conversation",
       "start": 22.0,
-      "end": 121.0,
+      "end": 189.7,
       "from": [
         435,
         160
@@ -93,8 +93,8 @@
     },
     {
       "id": "path_ahead",
-      "start": 121.0,
-      "end": 128.0,
+      "start": 189.7,
+      "end": 196.7,
       "from": [
         435,
         160
@@ -106,8 +106,8 @@
     },
     {
       "id": "morning_transition",
-      "start": 128.0,
-      "end": 130.0,
+      "start": 196.7,
+      "end": 198.7,
       "from": [
         0,
         0
@@ -120,68 +120,212 @@
   ],
   "dialogue": [
     {
+      "id": "warm_cup",
       "start": 24.0,
-      "end": 30.0,
+      "end": 28.0,
       "speaker": "Mira",
       "text": "Here. While it’s warm."
     },
     {
-      "start": 32.0,
-      "end": 38.0,
+      "id": "thanks",
+      "start": 29.0,
+      "end": 31.2,
+      "speaker": "Caelan",
+      "text": "Thank you."
+    },
+    {
+      "id": "shaking_hands",
+      "start": 32.2,
+      "end": 35.5,
+      "speaker": "Mira",
+      "text": "Your hands are still shaking."
+    },
+    {
+      "id": "hands_will_stop",
+      "start": 36.5,
+      "end": 39.0,
+      "speaker": "Caelan",
+      "text": "They’ll stop."
+    },
+    {
+      "id": "miras_hands",
+      "start": 40.0,
+      "end": 45.0,
+      "speaker": "Mira",
+      "text": "So will mine, if I give them a minute."
+    },
+    {
+      "id": "entrance",
+      "start": 46.0,
+      "end": 49.5,
+      "speaker": "Caelan",
+      "text": "How far to the entrance?"
+    },
+    {
+      "id": "ridge",
+      "start": 50.5,
+      "end": 55.5,
+      "speaker": "Mira",
+      "text": "Beyond the ridge. There’s some climbing yet."
+    },
+    {
+      "id": "can_manage",
+      "start": 56.5,
+      "end": 59.0,
+      "speaker": "Caelan",
+      "text": "I can manage."
+    },
+    {
+      "id": "rest",
+      "start": 60.0,
+      "end": 64.0,
+      "speaker": "Mira",
+      "text": "I know. I’m asking you to rest."
+    },
+    {
+      "id": "valley_houses",
+      "start": 65.0,
+      "end": 71.5,
+      "speaker": "Caelan",
+      "text": "*looks across the valley* There are still people in those houses."
+    },
+    {
+      "id": "evacuation",
+      "start": 72.5,
+      "end": 77.0,
+      "speaker": "Mira",
+      "text": "The carts are going back for another group."
+    },
+    {
+      "id": "opposite_direction",
+      "start": 78.0,
+      "end": 83.5,
+      "speaker": "Caelan",
+      "text": "And when we leave here, we’re going the other way."
+    },
+    {
+      "id": "surge",
+      "start": 84.5,
+      "end": 91.0,
+      "speaker": "Mira",
+      "text": "Another surge could take that road. We need to reach the source."
+    },
+    {
+      "id": "promise",
+      "start": 92.0,
+      "end": 99.0,
+      "speaker": "Caelan",
+      "text": "I wish we could tell them more than ‘we’ll do what we can.’"
+    },
+    {
+      "id": "first_carts",
+      "start": 100.0,
+      "end": 105.0,
+      "speaker": "Mira",
+      "text": "We got the first carts through. They saw that."
+    },
+    {
+      "id": "mill_memory",
+      "start": 106.0,
+      "end": 110.0,
       "speaker": "Caelan",
       "text": "I was thinking about the mill."
     },
     {
-      "start": 40.0,
-      "end": 45.0,
+      "id": "halden",
+      "start": 111.0,
+      "end": 113.5,
       "speaker": "Mira",
-      "text": "The mill?"
+      "text": "Halden’s?"
     },
     {
-      "start": 47.0,
-      "end": 56.0,
+      "id": "small_spell",
+      "start": 114.5,
+      "end": 122.0,
       "speaker": "Caelan",
-      "text": "How certain we were that we could put things right."
+      "text": "I cleared that little recess and felt as if I’d done something remarkable."
     },
     {
-      "start": 58.0,
-      "end": 65.0,
+      "id": "useful_spell",
+      "start": 123.0,
+      "end": 130.0,
       "speaker": "Mira",
-      "text": "*sits beside him* I wasn’t certain."
+      "text": "You cleared the catch so I could work on it. We needed that."
     },
     {
-      "start": 67.0,
-      "end": 75.0,
+      "id": "told_me",
+      "start": 131.0,
+      "end": 136.0,
       "speaker": "Caelan",
-      "text": "*looks at her* You could have mentioned that."
+      "text": "*a faint smile* You told me that then, too."
     },
     {
-      "start": 77.0,
-      "end": 87.0,
+      "id": "meant_it",
+      "start": 137.0,
+      "end": 140.5,
       "speaker": "Mira",
-      "text": "*a tired smile* You were nervous enough already."
+      "text": "I meant it then, too."
     },
     {
-      "start": 90.0,
-      "end": 97.0,
+      "id": "nervous",
+      "start": 144.5,
+      "end": 148.0,
       "speaker": "Caelan",
-      "text": "I thought we’d had a difficult day."
+      "text": "You didn’t seem nervous."
     },
     {
-      "start": 99.0,
-      "end": 104.0,
+      "id": "understood_problem",
+      "start": 149.0,
+      "end": 154.5,
       "speaker": "Mira",
-      "text": "We had."
+      "text": "I was. It helped having a problem I could understand."
     },
     {
-      "start": 109.0,
-      "end": 113.0,
+      "id": "catch_and_branch",
+      "start": 155.5,
+      "end": 160.0,
+      "speaker": "Caelan",
+      "text": "A broken catch. A branch in the water."
+    },
+    {
+      "id": "two_of_us",
+      "start": 161.0,
+      "end": 165.2,
       "speaker": "Mira",
-      "text": "Ready?"
+      "text": "And two of us to deal with it."
     },
     {
-      "start": 115.0,
-      "end": 120.0,
+      "id": "simple_again",
+      "start": 166.2,
+      "end": 170.2,
+      "speaker": "Caelan",
+      "text": "I wish it were that simple again."
+    },
+    {
+      "id": "so_do_i",
+      "start": 171.2,
+      "end": 173.7,
+      "speaker": "Mira",
+      "text": "So do I."
+    },
+    {
+      "id": "going_in",
+      "start": 177.7,
+      "end": 180.7,
+      "speaker": "Caelan",
+      "text": "But we’re going in."
+    },
+    {
+      "id": "when_ready",
+      "start": 181.7,
+      "end": 184.5,
+      "speaker": "Mira",
+      "text": "When you’re ready."
+    },
+    {
+      "id": "one_moment",
+      "start": 185.5,
+      "end": 188.7,
       "speaker": "Caelan",
       "text": "Give me a moment."
     }
@@ -193,31 +337,47 @@
         "pose": "seated_empty"
       },
       {
-        "start": 27.4,
+        "start": 26.3,
         "pose": "reach_empty"
       },
       {
-        "start": 28.0,
+        "start": 26.9,
         "pose": "seated_cup"
       },
       {
-        "start": 67.0,
+        "start": 65.0,
+        "pose": "look_out"
+      },
+      {
+        "start": 71.5,
+        "pose": "seated_cup"
+      },
+      {
+        "start": 131.0,
         "pose": "glance"
       },
       {
-        "start": 76.0,
+        "start": 136.0,
         "pose": "seated_cup"
       },
       {
-        "start": 87.5,
+        "start": 141.7,
         "pose": "drink"
       },
       {
-        "start": 89.5,
+        "start": 143.2,
         "pose": "seated_cup"
       },
       {
-        "start": 120.0,
+        "start": 144.5,
+        "pose": "glance"
+      },
+      {
+        "start": 148.0,
+        "pose": "seated_cup"
+      },
+      {
+        "start": 188.7,
         "pose": "look_out"
       }
     ],
@@ -231,31 +391,36 @@
         "pose": "offer"
       },
       {
-        "start": 28.0,
+        "start": 26.9,
         "pose": "kneel"
       },
       {
-        "start": 58.0,
+        "start": 140.55,
         "pose": "sit"
       },
       {
-        "start": 77.0,
+        "start": 149.0,
         "pose": "look"
       },
       {
-        "start": 88.0,
+        "start": 154.5,
         "pose": "sit"
       },
       {
-        "start": 107.0,
+        "start": 174.0,
         "pose": "stand"
       }
     ]
   },
-  "narrative_note": "Approved opening framing scene set late in Game I. Exact later-act placement and wider context remain provisional. The scene establishes no casualties, full companion roster, antagonist responsibility, temple origin, ancient identity or cosmic revelation. A future full reprise must continue this quiet moment into the consequential decision.",
+  "narrative_note": "Approved expanded late-Game-I framing scene. The entrance beyond the ridge, threatened valley road, another surge and evacuation carts are established within this opening. Exact later-act placement and wider causes remain provisional. The scene establishes no casualties, Tomas outcome, full companion roster, antagonist responsibility, temple origin, ancient identity or cosmic revelation. A future full reprise must continue this quiet moment into the consequential decision.",
   "framing_caption": {
     "text": "Later in the journey…",
     "start": 1.5,
     "end": 7.0
+  },
+  "pacing": {
+    "ordinary_gap_seconds": 1.0,
+    "action_gap_seconds": 4.0,
+    "reading_note": "Short replies use shorter holds; longer lines retain time to read. The four-second quiet beat contains sitting, sipping and lowering."
   }
 }
