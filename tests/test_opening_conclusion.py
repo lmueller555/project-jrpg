@@ -88,7 +88,7 @@ class OpeningConclusionTests(unittest.TestCase):
         g.update(.02,(0,0));self.read();self.assertEqual(self.c.stage,'done')
         g.save_progress();g=self.make_game(True);self.assertTrue(g.begin_journey(True))
         self.assertEqual(g.opening_conclusion.stage,'done');self.assertFalse(g.quests.drain_events())
-        self.assertTrue(g.begin_journey(False));self.assertEqual(g.opening_conclusion.stage,'idle')
+        self.assertTrue(g.begin_journey(False, show_cinematic=False));self.assertEqual(g.opening_conclusion.stage,'idle')
         self.assertEqual(g.quests.status(MILL_QUEST),'locked')
         self.assertIn(g.halden_visit.halden,g.halden_visit.home.npcs)
         self.assertFalse(next(r for r in g.town.entities if r['id']=='mill')['animation_stopped'])

@@ -16,6 +16,14 @@ This outline explores **The Broken Covenant** as the preferred current direction
 
 **Proposal status:** The mountainous region, secular/religious covenant, sanctuary mechanisms, protagonist's religious affiliation, ruler, events, outcomes, and act titles below are *all provisional*. The previously recorded **Hollow Harvest** is an older *alternative proposal*, not canon; this outline records a new leading option without silently revising the existing Story Bible.
 
+**Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
+shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
+then returns to the Eldenmere morning. The current intended location for the
+eventual reprise is the threshold between Acts IV and V. This approves the
+opening scene, not the full five-act plot, the final mechanism or anyone else's
+fate. Later writing must earn and continue this moment; the late-game reprise
+itself is not implemented yet.
+
 ## Logline — working proposal
 
 When a regional ruler breaks an age-old religious prohibition to excavate beneath a sanctuary, a devastating aetheric disaster pits government against faith. A young member of the religious order, personally affected by the catastrophe, investigates what both institutions are concealing—and must stop a second, greater disaster without abandoning the people each institution claims to protect.

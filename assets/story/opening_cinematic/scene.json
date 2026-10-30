@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "id": "opening_a_light_before_the_descent",
+  "duration": 130.0,
+  "canvas": [
+    960,
+    480
+  ],
+  "viewport": [
+    480,
+    320
+  ],
+  "layers": [
+    {
+      "file": "sky.png",
+      "parallax": 0.08
+    },
+    {
+      "file": "valley.png",
+      "parallax": 0.3
+    },
+    {
+      "file": "sanctuary.png",
+      "parallax": 1.0
+    },
+    {
+      "file": "foreground.png",
+      "parallax": 1.03,
+      "foreground": true
+    }
+  ],
+  "lantern_position": [
+    624,
+    363
+  ],
+  "actors": [
+    {
+      "id": "caelan",
+      "position": [
+        670,
+        375
+      ],
+      "manifest": "actors/caelan/animation.json"
+    },
+    {
+      "id": "mira",
+      "position": [
+        725,
+        375
+      ],
+      "manifest": "actors/mira/animation.json"
+    }
+  ],
+  "shots": [
+    {
+      "id": "valley",
+      "start": 0.0,
+      "end": 8.0,
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "reveal",
+      "start": 8.0,
+      "end": 22.0,
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        435,
+        160
+      ]
+    },
+    {
+      "id": "conversation",
+      "start": 22.0,
+      "end": 121.0,
+      "from": [
+        435,
+        160
+      ],
+      "to": [
+        435,
+        160
+      ]
+    },
+    {
+      "id": "path_ahead",
+      "start": 121.0,
+      "end": 128.0,
+      "from": [
+        435,
+        160
+      ],
+      "to": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "morning_transition",
+      "start": 128.0,
+      "end": 130.0,
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        0
+      ]
+    }
+  ],
+  "dialogue": [
+    {
+      "start": 24.0,
+      "end": 30.0,
+      "speaker": "Mira",
+      "text": "Here. While it’s warm."
+    },
+    {
+      "start": 32.0,
+      "end": 38.0,
+      "speaker": "Caelan",
+      "text": "I was thinking about the mill."
+    },
+    {
+      "start": 40.0,
+      "end": 45.0,
+      "speaker": "Mira",
+      "text": "The mill?"
+    },
+    {
+      "start": 47.0,
+      "end": 56.0,
+      "speaker": "Caelan",
+      "text": "How certain we were that we could put things right."
+    },
+    {
+      "start": 58.0,
+      "end": 65.0,
+      "speaker": "Mira",
+      "text": "*sits beside him* I wasn’t certain."
+    },
+    {
+      "start": 67.0,
+      "end": 75.0,
+      "speaker": "Caelan",
+      "text": "*looks at her* You could have mentioned that."
+    },
+    {
+      "start": 77.0,
+      "end": 87.0,
+      "speaker": "Mira",
+      "text": "*a tired smile* You were nervous enough already."
+    },
+    {
+      "start": 90.0,
+      "end": 97.0,
+      "speaker": "Caelan",
+      "text": "I thought we’d had a difficult day."
+    },
+    {
+      "start": 99.0,
+      "end": 104.0,
+      "speaker": "Mira",
+      "text": "We had."
+    },
+    {
+      "start": 109.0,
+      "end": 113.0,
+      "speaker": "Mira",
+      "text": "Ready?"
+    },
+    {
+      "start": 115.0,
+      "end": 120.0,
+      "speaker": "Caelan",
+      "text": "Give me a moment."
+    }
+  ],
+  "acting": {
+    "caelan": [
+      {
+        "start": 0.0,
+        "pose": "seated_empty"
+      },
+      {
+        "start": 27.4,
+        "pose": "reach_empty"
+      },
+      {
+        "start": 28.0,
+        "pose": "seated_cup"
+      },
+      {
+        "start": 67.0,
+        "pose": "glance"
+      },
+      {
+        "start": 76.0,
+        "pose": "seated_cup"
+      },
+      {
+        "start": 87.5,
+        "pose": "drink"
+      },
+      {
+        "start": 89.5,
+        "pose": "seated_cup"
+      },
+      {
+        "start": 120.0,
+        "pose": "look_out"
+      }
+    ],
+    "mira": [
+      {
+        "start": 0.0,
+        "pose": "kneel"
+      },
+      {
+        "start": 24.0,
+        "pose": "offer"
+      },
+      {
+        "start": 28.0,
+        "pose": "kneel"
+      },
+      {
+        "start": 58.0,
+        "pose": "sit"
+      },
+      {
+        "start": 77.0,
+        "pose": "look"
+      },
+      {
+        "start": 88.0,
+        "pose": "sit"
+      },
+      {
+        "start": 107.0,
+        "pose": "stand"
+      }
+    ]
+  },
+  "narrative_note": "Approved opening framing scene set late in Game I. Exact later-act placement and wider context remain provisional. The scene establishes no casualties, full companion roster, antagonist responsibility, temple origin, ancient identity or cosmic revelation. A future full reprise must continue this quiet moment into the consequential decision.",
+  "framing_caption": {
+    "text": "Later in the journey…",
+    "start": 1.5,
+    "end": 7.0
+  }
+}

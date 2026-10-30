@@ -1,13 +1,15 @@
 # Sanctuary opening
 
-New Game now stages the approved bedroom, breakfast and request scenes from
+New Game first plays the approved late-journey [opening cinematic](OPENING_CINEMATIC.md),
+then stages the bedroom, breakfast and request scenes from
 `narrative/game_01/CH01_MQ01.md`. The playable opening now continues through
 Tomas's temporary escort, the complete first household visit to Halden, and
 Elira's memorial-lantern visit, and the Venn family's recovery-supply/gate visit.
 
 ## Playable sequence
 
-1. The title fades into Caelan's bedroom. His closed-eye head is visible on the
+1. After the cinematic finishes or is skipped, the title's New Game path enters
+   Caelan's bedroom. His closed-eye head is visible on the
    existing pillow, with his body beneath the quilt. Tomas speaks from outside
    the bedroom doorway. Click, Space or E advances the approved exchange. Four
    registered wake poses show him waking, sitting at the edge and standing;

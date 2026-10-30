@@ -155,7 +155,7 @@ class RegentQuestTests(unittest.TestCase):
         self.g=other;self.c=other.regent_quest;other.opening_fade=0;other.transfer_cooldown=0
 
     def test_regent_is_locked_until_the_mill_quest_is_complete(self):
-        self.assertTrue(self.g.begin_journey(False))
+        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(REGENT),'locked')
         self.assertFalse(self.g.accept_quest(REGENT))
         self.assertNotIn(REGENT,self.g.quest_ui._visible_quests())
@@ -291,7 +291,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(self.g.quests.objective_status(REGENT,'meet_visitors'),'completed')
 
     def test_new_game_resets_visit_and_actor_routines(self):
-        self.complete();self.assertTrue(self.g.begin_journey(False))
+        self.complete();self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(REGENT),'locked')
         self.assertEqual(self.c.stage,'idle')
         self.assertFalse(self.c._owned)

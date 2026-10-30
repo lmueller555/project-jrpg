@@ -316,7 +316,7 @@ class VennGameplayTests(unittest.TestCase):
 
     def test_new_game_clears_repair_supplies_and_visual_pose(self):
         self.deliver();self.inspect('pin');self.inspect('channel');self.choose('tools');self.wait(.5)
-        self.assertTrue(self.game.begin_journey(False))
+        self.assertTrue(self.game.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.visit.inspected, set());self.assertIsNone(self.visit.method)
         self.assertFalse(self.visit.repaired);self.assertFalse(self.visit.delivered);self.assertIsNone(self.visit.action)
         self.assertEqual(self.visit._gate_frame(0)[0], 'idle_jammed')

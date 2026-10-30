@@ -1,0 +1,88 @@
+{
+  "frames": 4064,
+  "fps": 30,
+  "seconds": 135.46666666666667,
+  "route": "Unmodified production title New Game; natural cinematic completion",
+  "world_freeze_checks": 3961,
+  "escape_pause_preserves_position": true,
+  "no_checkpoint_until_bedroom": true,
+  "leitmotif_plays": 1,
+  "leitmotif_repeat": true,
+  "events": [
+    {
+      "time": 1.4,
+      "event": "cinematic_started",
+      "duration": 130.0
+    },
+    {
+      "time": 46.4333,
+      "event": "escape_paused",
+      "elapsed": 45.00000000000001
+    },
+    {
+      "time": 48.4667,
+      "event": "escape_resumed",
+      "elapsed": 45.03333333333334
+    },
+    {
+      "time": 133.4667,
+      "event": "bedroom_started",
+      "first_line": "Caelan? You're awake, aren't you?"
+    }
+  ],
+  "mixer_commands": [
+    {
+      "time": 1.366667,
+      "event": "stop"
+    },
+    {
+      "time": 1.366667,
+      "event": "load",
+      "file": "assets/music/runtime/dare_to_dream_leitmotif.ogg"
+    },
+    {
+      "time": 1.366667,
+      "event": "play",
+      "file": "assets/music/runtime/dare_to_dream_leitmotif.ogg",
+      "loops": -1,
+      "start": 0.0
+    },
+    {
+      "time": 46.4,
+      "event": "pause"
+    },
+    {
+      "time": 48.433333,
+      "event": "unpause"
+    },
+    {
+      "time": 133.9,
+      "event": "stop"
+    },
+    {
+      "time": 133.9,
+      "event": "load",
+      "file": "assets/music/runtime/eldenmere_theme.ogg"
+    },
+    {
+      "time": 133.9,
+      "event": "play",
+      "file": "assets/music/runtime/eldenmere_theme.ogg",
+      "loops": -1,
+      "start": 0.0
+    }
+  ],
+  "screenshots": [
+    "title.png",
+    "valley.png",
+    "lantern_reveal.png",
+    "conversation.png",
+    "paused.png",
+    "minimum_large_text.png",
+    "quiet_exchange.png",
+    "last_look.png",
+    "bedroom.png"
+  ],
+  "audio": "Exact runtime OGG reconstructed from observed mixer commands; SDL dummy has no loopback",
+  "music_sha256": "4d606ad5d62be9c6075a059326e0f05947dd65cac8718b4b7b80f0598d028d4a"
+}

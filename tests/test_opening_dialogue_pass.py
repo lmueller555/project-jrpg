@@ -221,12 +221,20 @@ class OpeningDialogueDriver:
         raise AssertionError(('Could not approach actor', actor.data['id'], expected))
 
     def breakfast(self):
-        self.key(pygame.K_RETURN);self.tick(.7)
+        self.start_new_game()
         assert self.g.opening.stage == 'wake';self.read()
         self.until(lambda: self.g.opening.stage == 'explore')
         self.travel('sanctuary_dining')
         self.until(lambda: self.g.opening.stage == 'assignment')
         self.offer()
+
+    def start_new_game(self):
+        """Use the real title and cinematic Skip before reviewing the morning."""
+        self.key(pygame.K_RETURN);self.tick(.7)
+        assert self.g.opening_cinematic.active
+        self.g.draw()
+        self.click(self.g.opening_cinematic.skip_rect.center)
+        assert not self.g.opening_cinematic.active
 
     def offer(self, accept=True):
         serene = next(a for a in self.g.persistent_npcs if a.data['id'] == 'mother_serene')
@@ -441,7 +449,7 @@ class OpeningDialoguePassTests(unittest.TestCase):
                     self.assertTrue(all(g.social.font.size(text)[0] <= TEXT_WIDTH for text in page['lines']))
 
     def test_new_game_reaches_full_briefing_before_explicit_acceptance(self):
-        d = self.driver;d.key(pygame.K_RETURN);d.tick(.7);d.read()
+        d = self.driver;d.start_new_game();d.read()
         d.until(lambda: d.g.opening.stage == 'explore');d.travel('sanctuary_dining')
         d.until(lambda: d.g.opening.stage == 'assignment')
         d.offer(accept=False)
@@ -453,7 +461,7 @@ class OpeningDialoguePassTests(unittest.TestCase):
         self.assertFalse(d.g.inventory.was_granted(OPENING_QUEST))
 
     def test_legacy_assignment_without_tomas_keeps_same_offer_and_all_directions(self):
-        d = self.driver;d.key(pygame.K_RETURN);d.tick(.7);d.read()
+        d = self.driver;d.start_new_game();d.read()
         d.until(lambda: d.g.opening.stage == 'explore');d.travel('sanctuary_dining')
         d.until(lambda: d.g.opening.stage == 'assignment')
         tomas = d.g.halden_visit.tomas;hall = d.g._scene_by_id('sanctuary_hall')

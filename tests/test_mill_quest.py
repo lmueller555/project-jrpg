@@ -331,7 +331,7 @@ class MillQuestTests(unittest.TestCase):
 
     def test_new_game_resets_companion_intake_and_mill(self):
         self.repair();actor=self.c.mira
-        self.assertTrue(self.g.begin_journey(False))
+        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(MILL_QUEST),'locked')
         self.assertFalse(self.c.prepared);self.assertFalse(self.c.spell_done)
         self.assertFalse(self.c.mill_restored);self.assertFalse(actor.quest_mode)

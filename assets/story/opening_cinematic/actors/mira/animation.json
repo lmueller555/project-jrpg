@@ -1,0 +1,361 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    96,
+    112
+  ],
+  "anchor": [
+    48,
+    104
+  ],
+  "native_scale": 0.167,
+  "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png",
+  "source_sha256": "22cee96ce9f2c0ef2fb14d162db437b6de609aa401134bb05f9aead9323831ab",
+  "poses": {
+    "kneel": "kneel.png",
+    "offer": "offer.png",
+    "sit": "sit.png",
+    "look": "look.png",
+    "stand": "stand.png",
+    "recover": "recover.png",
+    "lift_cup": "lift_cup.png",
+    "release_cup": "release_cup.png",
+    "lower_hands": "lower_hands.png",
+    "rise_kneel": "rise_kneel.png",
+    "lower_seat": "lower_seat.png",
+    "settle_seat": "settle_seat.png"
+  },
+  "extraction": {
+    "kneel": {
+      "source_bounds": [
+        172,
+        76,
+        437,
+        471
+      ],
+      "foot_center_source_x": 132.5,
+      "offset": [
+        26,
+        38
+      ],
+      "bounds": [
+        26,
+        38,
+        70,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "offer": {
+      "source_bounds": [
+        602,
+        76,
+        927,
+        472
+      ],
+      "foot_center_source_x": 204.5,
+      "offset": [
+        14,
+        38
+      ],
+      "bounds": [
+        14,
+        38,
+        68,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "sit": {
+      "source_bounds": [
+        1128,
+        76,
+        1388,
+        479
+      ],
+      "foot_center_source_x": 100.5,
+      "offset": [
+        31,
+        37
+      ],
+      "bounds": [
+        31,
+        37,
+        74,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "look": {
+      "source_bounds": [
+        148,
+        565,
+        402,
+        973
+      ],
+      "foot_center_source_x": 100.5,
+      "offset": [
+        31,
+        36
+      ],
+      "bounds": [
+        31,
+        36,
+        73,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "stand": {
+      "source_bounds": [
+        678,
+        488,
+        877,
+        976
+      ],
+      "foot_center_source_x": 103.5,
+      "offset": [
+        31,
+        23
+      ],
+      "bounds": [
+        31,
+        23,
+        64,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "recover": {
+      "source_bounds": [
+        1119,
+        556,
+        1405,
+        972
+      ],
+      "foot_center_source_x": 172.0,
+      "offset": [
+        19,
+        35
+      ],
+      "bounds": [
+        19,
+        35,
+        67,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_quiet_generated.png"
+    },
+    "lift_cup": {
+      "source_bounds": [
+        157,
+        36,
+        446,
+        479
+      ],
+      "foot_center_source_x": 144.5,
+      "offset": [
+        26,
+        37
+      ],
+      "bounds": [
+        26,
+        37,
+        70,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    },
+    "release_cup": {
+      "source_bounds": [
+        599,
+        35,
+        946,
+        479
+      ],
+      "foot_center_source_x": 202.5,
+      "offset": [
+        17,
+        37
+      ],
+      "bounds": [
+        17,
+        37,
+        69,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    },
+    "lower_hands": {
+      "source_bounds": [
+        1143,
+        34,
+        1442,
+        479
+      ],
+      "foot_center_source_x": 149.5,
+      "offset": [
+        25,
+        37
+      ],
+      "bounds": [
+        25,
+        37,
+        70,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    },
+    "rise_kneel": {
+      "source_bounds": [
+        135,
+        497,
+        475,
+        970
+      ],
+      "foot_center_source_x": 190.0,
+      "offset": [
+        19,
+        33
+      ],
+      "bounds": [
+        19,
+        33,
+        70,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    },
+    "lower_seat": {
+      "source_bounds": [
+        656,
+        508,
+        920,
+        973
+      ],
+      "foot_center_source_x": 126.5,
+      "offset": [
+        29,
+        34
+      ],
+      "bounds": [
+        29,
+        34,
+        69,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    },
+    "settle_seat": {
+      "source_bounds": [
+        1165,
+        545,
+        1427,
+        976
+      ],
+      "foot_center_source_x": 103.5,
+      "offset": [
+        32,
+        39
+      ],
+      "bounds": [
+        32,
+        39,
+        72,
+        104
+      ],
+      "source": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png"
+    }
+  },
+  "transitions": {
+    "kneel:offer": [
+      {
+        "file": "lift_cup.png",
+        "duration_ms": 320
+      }
+    ],
+    "offer:kneel": [
+      {
+        "file": "release_cup.png",
+        "duration_ms": 230
+      },
+      {
+        "file": "lower_hands.png",
+        "duration_ms": 260
+      }
+    ],
+    "offer:recover": [
+      {
+        "file": "release_cup.png",
+        "duration_ms": 230
+      },
+      {
+        "file": "lower_hands.png",
+        "duration_ms": 260
+      }
+    ],
+    "kneel:sit": [
+      {
+        "file": "rise_kneel.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "stand.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "recover.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "lower_seat.png",
+        "duration_ms": 220
+      },
+      {
+        "file": "settle_seat.png",
+        "duration_ms": 220
+      }
+    ],
+    "sit:stand": [
+      {
+        "file": "settle_seat.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "lower_seat.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "recover.png",
+        "duration_ms": 200
+      }
+    ],
+    "look:stand": [
+      {
+        "file": "settle_seat.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "lower_seat.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "recover.png",
+        "duration_ms": 200
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "assets/source/cinematics/opening_actors/mira_quiet_generated.png",
+      "sha256": "22cee96ce9f2c0ef2fb14d162db437b6de609aa401134bb05f9aead9323831ab",
+      "native_scale": 0.167
+    },
+    {
+      "path": "assets/source/cinematics/opening_actors/mira_inbetweens_generated.png",
+      "sha256": "6aadef8bd020080925e7c5891c66f540dff3fcbd3f3d90994c8f32378c191110",
+      "native_scale": 0.151
+    }
+  ]
+}

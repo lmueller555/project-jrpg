@@ -34,7 +34,7 @@ class CharacterAttributesGameplayTests(unittest.TestCase):
 
     def test_new_game_has_balanced_full_resources_and_checkpoints_attributes(self):
         game = self.game(title=True)
-        self.assertTrue(game.begin_journey())
+        self.assertTrue(game.begin_journey(show_cinematic=False))
         expected = CharacterAttributes('caelan').to_dict()
         self.assertEqual(game.attributes.to_dict(), expected)
         self.assertEqual(expected['attributes']['hp'], 140)
@@ -116,7 +116,7 @@ class CharacterAttributesGameplayTests(unittest.TestCase):
         self.assertTrue(game.begin_journey(True))
         self.assertEqual(game.attributes.current_hp, 0)
         self.assertEqual(game.attributes.value('spr'), 20)
-        self.assertTrue(game.begin_journey())
+        self.assertTrue(game.begin_journey(show_cinematic=False))
         self.assertEqual(game.attributes.to_dict(), CharacterAttributes('caelan').to_dict())
         self.assertEqual(game.opening.stage, 'wake')
         self.assertEqual(game.quests.status(OPENING_QUEST), 'available')

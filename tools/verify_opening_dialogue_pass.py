@@ -1,7 +1,8 @@
 """Capture the revised morning through MQ02 from an actual New Game.
 
-No main-quest progress or actor stations are seeded. The driver uses production
-walking, doors, proximity conversations, normal E/Space and explicit choices.
+No main-quest progress or actor stations are seeded. The driver starts from the
+real title and uses the cinematic's visible Skip button to focus this review on
+the morning, then production walking, doors, E/Space and explicit choices.
 Historical reviews are left untouched; new evidence goes under work/.
 """
 import json
@@ -87,7 +88,7 @@ class Capture:
             assert d.g.quests.status(OPENING_QUEST) == d.g.quests.status(MILL_QUEST) == 'completed'
             assert d.g.elira_visit.lantern == 'table' and d.g.venn_visit.repaired and d.g.mill_quest.restored
             assert all(Path(OUT/name).exists() for name in self.stills)
-            data = {'start': 'actual New Game; no MQ01/MQ02 progress, actor positions or household receipts seeded',
+            data = {'start': 'actual New Game; opening cinematic skipped through its visible button; no MQ01/MQ02 progress, actor positions or household receipts seeded',
                     'input': 'real walking, animated doors, proximity conversations, E and Space key events, explicit choices',
                     'household_order': list(d.order), 'venn_approach': d.method,
                     'mq01_completed': True, 'mq02_completed': True,

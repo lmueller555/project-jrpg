@@ -266,7 +266,7 @@ class EliraGameplayTests(unittest.TestCase):
         raw = json.dumps(bad);self.path.write_text(raw)
         broken = self.make_game(True)
         self.assertFalse(broken.has_saved_journey);self.assertEqual(self.path.read_text(), raw)
-        self.game.begin_journey(False)
+        self.game.begin_journey(False, show_cinematic=False)
         self.assertEqual(self.visit.lantern, 'shelf');self.assertFalse(self.visit.delivered)
         self.assertIsNone(self.visit.action);self.assertEqual(self.game.quests.status(QUEST), 'available')
         self.assertFalse(hasattr(self.game.player, 'story_position'))

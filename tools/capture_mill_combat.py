@@ -2,6 +2,8 @@
 
 The existing opening driver supplies production walking, dialogue and inputs.
 No quest progress, combat unlocks, spells or character attributes are seeded.
+The title opens the cinematic, whose visible Skip button takes this focused
+quest capture into the sanctuary morning.
 Pillow only assembles already-rendered frames into the review animation.
 """
 from __future__ import annotations

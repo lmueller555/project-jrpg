@@ -120,7 +120,7 @@ class LanternQuestTests(unittest.TestCase):
         self.g.opening_fade = 0;self.g.transfer_cooldown = 0
 
     def test_new_game_keeps_the_quest_locked_before_regent_visit(self):
-        self.assertTrue(self.g.begin_journey(False))
+        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(LANTERN), 'locked')
         self.assertFalse(self.g.accept_quest(LANTERN))
         self.assertNotIn(LANTERN, self.g.quest_ui._visible_quests())
@@ -347,7 +347,7 @@ class LanternQuestTests(unittest.TestCase):
                              for flag in self.g.social.flags))
 
     def test_new_game_restores_school_children_to_their_households(self):
-        self.frame_ready();self.assertTrue(self.g.begin_journey(False))
+        self.frame_ready();self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
         self.assertEqual(self.g.quests.status(LANTERN), 'locked')
         self.assertEqual(self.c.stage, 'idle')
         self.assertEqual(self.g.opening.stage, 'wake')

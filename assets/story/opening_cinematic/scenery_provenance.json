@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "canvas": [
+    960,
+    480
+  ],
+  "exporter": "tools/build_opening_cinematic_scenery.py",
+  "sources": [
+    {
+      "file": "assets/source/cinematics/opening/valley_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "b3de496f123bfb5591b544feec9fd6c76adf5e28e6079db2409e89f372619e15"
+    },
+    {
+      "file": "assets/source/cinematics/opening/valley_alpha_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "e8867129e527bffbc5e21011b9ae136077b573a841fdc45bd35da9590c9f3a80"
+    },
+    {
+      "file": "assets/source/cinematics/opening/sanctuary_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "7b75db1dd1a6f6cf478610ce625279bf210e713daa95550adcc916013b838c9a"
+    },
+    {
+      "file": "assets/source/cinematics/opening/props_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "2452c4dc06ad9da3a49c8f24c5fb0dd169d6453aaa2e1f9bbb37bcd95a4c9022"
+    }
+  ],
+  "exports": [
+    {
+      "file": "assets/story/opening_cinematic/sky.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "d1257ba0d802f7f374ca141942c4b4c4cd4505b074bc03b2f31ad196e79971a4"
+    },
+    {
+      "file": "assets/story/opening_cinematic/valley.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "4622af37d717484f9a665356e5b63e35e3b28e2d53952ddb490b5ef1414d4983"
+    },
+    {
+      "file": "assets/story/opening_cinematic/sanctuary.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "80f6728dd4e5960dd8cc71fa543a7d66c0787c0659babac2d1553eed05255837"
+    },
+    {
+      "file": "assets/story/opening_cinematic/foreground.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "ce25b2964d681b4e8db4ac5be0da28a037b5bf608ebd61dbe7d0d46e684943ef"
+    }
+  ],
+  "registration": {
+    "actor_floor_y": 375,
+    "bench_rect": [
+      633,
+      350,
+      135,
+      26
+    ],
+    "bench_seat_y": 357,
+    "lamp_rect": [
+      615,
+      345,
+      18,
+      30
+    ],
+    "lamp_flame_center": [
+      624,
+      363
+    ],
+    "foreground_strip_y": 450
+  },
+  "notes": [
+    "Entirely imagegen-authored scenery; retained sources are unchanged.",
+    "The farthest sky plate retains distant terrain as painted overscan.",
+    "Alpha valley, architecture and near rubble are separate depth layers.",
+    "The ordinary wayside sanctuary does not establish hidden cosmology.",
+    "No people, dialogue, interface, flame or actor shadows are baked into scenery.",
+    "The low shared bench supports actor seated poses at the registered floor."
+  ]
+}
