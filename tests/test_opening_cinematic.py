@@ -1,7 +1,9 @@
 """Cinematic shot, acting, text and input contracts independent of quest state."""
 import json
+import math
 import os
 from pathlib import Path
+import re
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -51,7 +53,10 @@ class OpeningCinematicTests(unittest.TestCase):
                 transition = pygame.Surface((96, 112), pygame.SRCALPHA)
                 transition.fill('#875755')
                 pygame.image.save(transition, path.parent/'kneel_sit.png')
-                manifest['transitions'] = {'kneel:sit': [
+                cues = data['acting']['mira']
+                sit_index = next(i for i, cue in enumerate(cues) if cue['pose'] == 'sit')
+                transition_id = cues[sit_index-1]['pose']+':sit'
+                manifest['transitions'] = {transition_id: [
                     {'file': 'kneel_sit.png', 'duration_ms': 300}]}
             path.write_text(json.dumps(manifest))
         self.scene = OpeningCinematic(self.game, scene_path=self.path)
@@ -68,6 +73,16 @@ class OpeningCinematicTests(unittest.TestCase):
 
     def draw(self):
         self.scene.draw(self.canvas, self.ui)
+
+    def shot_record(self, identifier):
+        return next(record for record in self.scene.data['shots'] if record['id'] == identifier)
+
+    def acting_cue(self, actor, pose):
+        return next(cue for cue in self.scene.data['acting'][actor] if cue['pose'] == pose)
+
+    def dialogue_record(self, identifier):
+        return next(record for record in self.scene.data['dialogue']
+                    if record['id'] == identifier)
 
     def key(self, *, repeat=False):
         self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN,
@@ -162,39 +177,48 @@ class OpeningCinematicTests(unittest.TestCase):
 
     def test_camera_pan_is_smooth_bounded_and_holds_for_conversation(self):
         self.scene.start()
-        self.scene.update(8)
-        self.assertEqual(self.scene.camera_position, (0, 0))
-        self.scene.update(7)
-        self.assertAlmostEqual(self.scene.camera_position.x, 217.5)
-        self.assertAlmostEqual(self.scene.camera_position.y, 80)
-        self.scene.update(7)
+        reveal = self.shot_record('reveal')
+        conversation = self.shot_record('conversation')
+        half_pan = (reveal['end']-reveal['start'])/2
+        self.scene.update(reveal['start'])
+        self.assertEqual(self.scene.camera_position, reveal['from'])
+        self.scene.update(half_pan)
+        midpoint = pygame.Vector2(reveal['from']).lerp(reveal['to'], .5)
+        self.assertAlmostEqual(self.scene.camera_position.x, midpoint.x)
+        self.assertAlmostEqual(self.scene.camera_position.y, midpoint.y)
+        self.scene.update(half_pan)
         point = self.scene.camera_position.copy()
-        self.scene.update(70)
+        self.scene.update((conversation['end']-conversation['start'])/2)
         self.assertEqual(self.scene.camera_position, point)
         self.assertEqual(self.scene.shot, 'conversation')
-        for elapsed in range(131):
-            self.scene.elapsed = elapsed
+        for elapsed in range(math.ceil(self.scene.duration)+1):
+            self.scene.elapsed = min(elapsed, self.scene.duration)
             x, y = self.scene.camera_position
-            self.assertTrue(0 <= x <= 480 and 0 <= y <= 160)
+            # Vector2.lerp can drift a few ulps even when both endpoints
+            # are identical. Allow only numerical noise, not pixel overshoot.
+            self.assertTrue(-1e-9 <= x <= 480+1e-9 and -1e-9 <= y <= 160+1e-9,
+                            (elapsed, x, y))
 
     def test_temporal_caption_identifies_flashforward_before_the_reveal(self):
         self.scene.start()
         self.assertIsNone(self.scene.framing_caption)
-        self.scene.update(2)
+        caption = self.scene.data['framing_caption']
+        self.scene.update((caption['start']+caption['end'])/2)
         self.assertEqual(self.scene.framing_caption['text'], 'Later in the journey…')
         self.assertEqual(self.scene.shot, 'valley')
         self.assertIsNone(self.scene.dialogue)
-        self.scene.update(6)
+        self.scene.update(caption['end']-self.scene.elapsed+1)
         self.assertIsNone(self.scene.framing_caption)
 
     def test_reduced_motion_changes_shots_without_continuous_pan(self):
         self.scene.start()
         self.game.audio.set_reduced_motion(True)
-        self.scene.update(9)
+        reveal = self.shot_record('reveal')
+        self.scene.update(reveal['start']+1)
         point = self.scene.camera_position.copy()
         self.scene.update(4)
         self.assertEqual(self.scene.camera_position, point)
-        self.assertEqual(point, (435, 160))
+        self.assertEqual(point, reveal['to'])
         self.draw()
         rendered = pygame.image.tobytes(self.canvas, 'RGB')
         self.scene.update(2)
@@ -222,17 +246,73 @@ class OpeningCinematicTests(unittest.TestCase):
                     self.assertTrue(all(painter.font().size(line)[0] <= 412
                                         for line in self.scene.caption_lines))
 
+    def test_expanded_exchange_matches_the_approved_speaker_transcript(self):
+        guide = (SCENE.parents[3]/'docs/OPENING_CINEMATIC.md').read_text(encoding='utf-8')
+        documented = re.findall(r'^- \*\*(Mira|Caelan):\*\* “(.*)”$', guide, re.MULTILINE)
+        dialogue = self.scene.data['dialogue']
+        self.assertEqual(len(dialogue), 30)
+        self.assertEqual(len({record['id'] for record in dialogue}), 30)
+        self.assertEqual([(record['speaker'], record['text']) for record in dialogue],
+                         documented)
+        order = [record['id'] for record in dialogue]
+        beats = ('entrance', 'evacuation', 'surge', 'mill_memory',
+                 'small_spell', 'two_of_us', 'one_moment')
+        self.assertEqual([order.index(beat) for beat in beats],
+                         sorted(order.index(beat) for beat in beats))
+
+    def test_dialogue_gaps_are_brisk_and_short_replies_do_not_linger(self):
+        dialogue = self.scene.data['dialogue']
+        quiet_beats = {'meant_it', 'so_do_i'}
+        for current, following in zip(dialogue, dialogue[1:]):
+            expected = 4 if current['id'] in quiet_beats else 1
+            self.assertAlmostEqual(following['start']-current['end'], expected,
+                                   msg=current['id'])
+        for identifier in ('thanks', 'halden', 'so_do_i'):
+            record = self.dialogue_record(identifier)
+            self.assertGreaterEqual(record['end']-record['start'], 2)
+            self.assertLessEqual(record['end']-record['start'], 3)
+        short = self.dialogue_record('thanks')
+        long = self.dialogue_record('small_spell')
+        self.assertGreater(long['end']-long['start'],
+                           2*(short['end']-short['start']))
+
+    def test_sitting_and_the_complete_sip_fit_a_caption_free_action_beat(self):
+        quiet_start = self.dialogue_record('meant_it')['end']
+        quiet_end = self.dialogue_record('nervous')['start']
+        drink = self.acting_cue('caelan', 'drink')
+        returning = next(cue for cue in self.scene.data['acting']['caelan']
+                         if cue['start'] > drink['start'] and cue['pose'] == 'seated_cup')
+
+        def transition_seconds(actor, identifier):
+            record = next(record for record in self.scene.data['actors']
+                          if record['id'] == actor)
+            manifest = json.loads((SCENE.parent/record['manifest']).read_text())
+            return sum(frame['duration_ms'] for frame in manifest['transitions'][identifier])/1000
+
+        sit = self.acting_cue('mira', 'sit')
+        self.assertGreaterEqual(sit['start'], quiet_start)
+        self.assertLessEqual(sit['start']+transition_seconds('mira', 'kneel:sit'),
+                             drink['start'])
+        self.assertGreaterEqual(drink['start'], quiet_start)
+        self.assertLess(drink['start']+transition_seconds('caelan', 'seated_cup:drink'),
+                        returning['start'])
+        self.assertLessEqual(returning['start']+transition_seconds('caelan', 'drink:seated_cup'),
+                             quiet_end)
+        self.assertFalse(any(record['start'] < quiet_end and record['end'] > quiet_start
+                             for record in self.scene.data['dialogue']))
+
     def test_authored_transition_runs_once_then_holds_destination_pose(self):
         self.scene.start()
         actor = next(actor for actor in self.scene.actors if actor[0]['id'] == 'mira')
         _, _, frames, transitions = actor
-        self.scene.elapsed = 58.1
+        start = self.acting_cue('mira', 'sit')['start']
+        self.scene.elapsed = start+.1
         image = self.scene._actor_frame('mira', frames, transitions)
         self.assertEqual(image.get_at((0, 0)), pygame.Color('#875755'))
-        self.scene.elapsed = 58.4
+        self.scene.elapsed = start+.4
         self.assertIs(self.scene._actor_frame('mira', frames, transitions), frames['sit'])
         self.game.audio.set_reduced_motion(True)
-        self.scene.elapsed = 58.1
+        self.scene.elapsed = start+.1
         self.assertIs(self.scene._actor_frame('mira', frames, transitions), frames['sit'])
 
     def test_invalid_delta_cannot_corrupt_visual_clock(self):

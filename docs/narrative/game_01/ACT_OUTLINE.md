@@ -22,7 +22,9 @@ then returns to the Eldenmere morning. The current intended location for the
 eventual reprise is the threshold between Acts IV and V. This approves the
 opening scene, not the full five-act plot, the final mechanism or anyone else's
 fate. Later writing must earn and continue this moment; the late-game reprise
-itself is not implemented yet.
+itself is not implemented yet. The expanded opening establishes evacuation
+carts, a threatened valley road and an entrance beyond a ridge as facts of
+this frame. It leaves the crisis's cause and the final plan concealed.
 
 ## Logline — working proposal
 

@@ -6,7 +6,7 @@ mountain valley. A cup, a traveling lantern and a recollection of the mill
 establish exhaustion and familiarity before the scene returns to Caelan's
 ordinary sanctuary bedroom and Tomas's existing first line.
 
-The 130-second sequence begins with “Later in the journey…” to identify the
+The 198.7-second sequence begins with “Later in the journey…” to identify the
 flashforward explicitly. [Watch the captured opening](reviews/opening_cinematic/README.md).
 
 ## Story contract
@@ -26,6 +26,11 @@ wayside resting place, not a revelation of the ancient sacrificial temple.
 Aldric's responsibility, the regional mechanism and all saga-level mysteries
 remain concealed. Caelan's familiar faith is not declared false.
 
+The expanded exchange establishes an entrance beyond the ridge, a road
+threatened by another local surge, evacuation carts and the pair’s help with
+the first group. These are approved facts of the framing scene. They do not
+settle the cause of the crisis, its mechanism or the wider later-act plot.
+
 The later narrative should return to this scene and continue beyond the final
 line, giving its quiet exchange a context the player has earned. That reprise
 remains future work.
@@ -42,6 +47,46 @@ Dialogue advances automatically. Text uses the shared display-resolution
 renderer and respects the readability setting. Camera shots and captions belong
 to the cinematic, while the ordinary world, morning action sequence and quest
 state remain suspended.
+
+Ordinary gaps between lines are one second, reduced from the original two.
+The two four-second pauses allow the sitting/drinking action and the final
+shared hesitation. Short replies have shorter display holds; longer lines
+retain time to read. The expanded sequence runs for about three minutes and
+nineteen seconds. Caelan lifts, sips and lowers the cup during a quiet beat,
+with the same forward/downward head bearing and planted seated anchors.
+
+## Approved dialogue
+
+- **Mira:** “Here. While it’s warm.”
+- **Caelan:** “Thank you.”
+- **Mira:** “Your hands are still shaking.”
+- **Caelan:** “They’ll stop.”
+- **Mira:** “So will mine, if I give them a minute.”
+- **Caelan:** “How far to the entrance?”
+- **Mira:** “Beyond the ridge. There’s some climbing yet.”
+- **Caelan:** “I can manage.”
+- **Mira:** “I know. I’m asking you to rest.”
+- **Caelan:** “*looks across the valley* There are still people in those houses.”
+- **Mira:** “The carts are going back for another group.”
+- **Caelan:** “And when we leave here, we’re going the other way.”
+- **Mira:** “Another surge could take that road. We need to reach the source.”
+- **Caelan:** “I wish we could tell them more than ‘we’ll do what we can.’”
+- **Mira:** “We got the first carts through. They saw that.”
+- **Caelan:** “I was thinking about the mill.”
+- **Mira:** “Halden’s?”
+- **Caelan:** “I cleared that little recess and felt as if I’d done something remarkable.”
+- **Mira:** “You cleared the catch so I could work on it. We needed that.”
+- **Caelan:** “*a faint smile* You told me that then, too.”
+- **Mira:** “I meant it then, too.”
+- **Caelan:** “You didn’t seem nervous.”
+- **Mira:** “I was. It helped having a problem I could understand.”
+- **Caelan:** “A broken catch. A branch in the water.”
+- **Mira:** “And two of us to deal with it.”
+- **Caelan:** “I wish it were that simple again.”
+- **Mira:** “So do I.”
+- **Caelan:** “But we’re going in.”
+- **Mira:** “When you’re ready.”
+- **Caelan:** “Give me a moment.”
 
 ## Music and controls
 

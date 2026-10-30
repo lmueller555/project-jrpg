@@ -1,9 +1,10 @@
 {
-  "frames": 4064,
+  "frames": 6125,
   "fps": 30,
-  "seconds": 135.46666666666667,
+  "seconds": 204.16666666666666,
+  "scene_duration_seconds": 198.7,
   "route": "Unmodified production title New Game; natural cinematic completion",
-  "world_freeze_checks": 3961,
+  "world_freeze_checks": 6022,
   "escape_pause_preserves_position": true,
   "no_checkpoint_until_bedroom": true,
   "leitmotif_plays": 1,
@@ -12,20 +13,20 @@
     {
       "time": 1.4,
       "event": "cinematic_started",
-      "duration": 130.0
+      "duration": 198.7
     },
     {
-      "time": 46.4333,
+      "time": 86.3667,
       "event": "escape_paused",
-      "elapsed": 45.00000000000001
+      "elapsed": 84.93333333333108
     },
     {
-      "time": 48.4667,
+      "time": 88.4,
       "event": "escape_resumed",
-      "elapsed": 45.03333333333334
+      "elapsed": 84.96666666666441
     },
     {
-      "time": 133.4667,
+      "time": 202.1667,
       "event": "bedroom_started",
       "first_line": "Caelan? You're awake, aren't you?"
     }
@@ -48,38 +49,376 @@
       "start": 0.0
     },
     {
-      "time": 46.4,
+      "time": 86.333333,
       "event": "pause"
     },
     {
-      "time": 48.433333,
+      "time": 88.366667,
       "event": "unpause"
     },
     {
-      "time": 133.9,
+      "time": 202.6,
       "event": "stop"
     },
     {
-      "time": 133.9,
+      "time": 202.6,
       "event": "load",
       "file": "assets/music/runtime/eldenmere_theme.ogg"
     },
     {
-      "time": 133.9,
+      "time": 202.6,
       "event": "play",
       "file": "assets/music/runtime/eldenmere_theme.ogg",
       "loops": -1,
       "start": 0.0
     }
   ],
+  "dialogue_lines": 30,
+  "observed_dialogue": [
+    {
+      "index": 0,
+      "id": "warm_cup",
+      "speaker": "Mira",
+      "text": "Here. While it\u2019s warm.",
+      "first_seen": 24.0,
+      "last_seen": 27.9667
+    },
+    {
+      "index": 1,
+      "id": "thanks",
+      "speaker": "Caelan",
+      "text": "Thank you.",
+      "first_seen": 29.0,
+      "last_seen": 31.1667
+    },
+    {
+      "index": 2,
+      "id": "shaking_hands",
+      "speaker": "Mira",
+      "text": "Your hands are still shaking.",
+      "first_seen": 32.2,
+      "last_seen": 35.4667
+    },
+    {
+      "index": 3,
+      "id": "hands_will_stop",
+      "speaker": "Caelan",
+      "text": "They\u2019ll stop.",
+      "first_seen": 36.5,
+      "last_seen": 38.9667
+    },
+    {
+      "index": 4,
+      "id": "miras_hands",
+      "speaker": "Mira",
+      "text": "So will mine, if I give them a minute.",
+      "first_seen": 40.0,
+      "last_seen": 44.9667
+    },
+    {
+      "index": 5,
+      "id": "entrance",
+      "speaker": "Caelan",
+      "text": "How far to the entrance?",
+      "first_seen": 46.0333,
+      "last_seen": 49.5
+    },
+    {
+      "index": 6,
+      "id": "ridge",
+      "speaker": "Mira",
+      "text": "Beyond the ridge. There\u2019s some climbing yet.",
+      "first_seen": 50.5333,
+      "last_seen": 55.5
+    },
+    {
+      "index": 7,
+      "id": "can_manage",
+      "speaker": "Caelan",
+      "text": "I can manage.",
+      "first_seen": 56.5333,
+      "last_seen": 59.0
+    },
+    {
+      "index": 8,
+      "id": "rest",
+      "speaker": "Mira",
+      "text": "I know. I\u2019m asking you to rest.",
+      "first_seen": 60.0333,
+      "last_seen": 64.0
+    },
+    {
+      "index": 9,
+      "id": "valley_houses",
+      "speaker": "Caelan",
+      "text": "*looks across the valley* There are still people in those houses.",
+      "first_seen": 65.0333,
+      "last_seen": 71.5
+    },
+    {
+      "index": 10,
+      "id": "evacuation",
+      "speaker": "Mira",
+      "text": "The carts are going back for another group.",
+      "first_seen": 72.5333,
+      "last_seen": 77.0
+    },
+    {
+      "index": 11,
+      "id": "opposite_direction",
+      "speaker": "Caelan",
+      "text": "And when we leave here, we\u2019re going the other way.",
+      "first_seen": 78.0333,
+      "last_seen": 83.5
+    },
+    {
+      "index": 12,
+      "id": "surge",
+      "speaker": "Mira",
+      "text": "Another surge could take that road. We need to reach the source.",
+      "first_seen": 84.5333,
+      "last_seen": 91.0
+    },
+    {
+      "index": 13,
+      "id": "promise",
+      "speaker": "Caelan",
+      "text": "I wish we could tell them more than \u2018we\u2019ll do what we can.\u2019",
+      "first_seen": 92.0333,
+      "last_seen": 99.0
+    },
+    {
+      "index": 14,
+      "id": "first_carts",
+      "speaker": "Mira",
+      "text": "We got the first carts through. They saw that.",
+      "first_seen": 100.0333,
+      "last_seen": 105.0
+    },
+    {
+      "index": 15,
+      "id": "mill_memory",
+      "speaker": "Caelan",
+      "text": "I was thinking about the mill.",
+      "first_seen": 106.0333,
+      "last_seen": 110.0
+    },
+    {
+      "index": 16,
+      "id": "halden",
+      "speaker": "Mira",
+      "text": "Halden\u2019s?",
+      "first_seen": 111.0333,
+      "last_seen": 113.5
+    },
+    {
+      "index": 17,
+      "id": "small_spell",
+      "speaker": "Caelan",
+      "text": "I cleared that little recess and felt as if I\u2019d done something remarkable.",
+      "first_seen": 114.5333,
+      "last_seen": 122.0
+    },
+    {
+      "index": 18,
+      "id": "useful_spell",
+      "speaker": "Mira",
+      "text": "You cleared the catch so I could work on it. We needed that.",
+      "first_seen": 123.0333,
+      "last_seen": 130.0
+    },
+    {
+      "index": 19,
+      "id": "told_me",
+      "speaker": "Caelan",
+      "text": "*a faint smile* You told me that then, too.",
+      "first_seen": 131.0333,
+      "last_seen": 136.0
+    },
+    {
+      "index": 20,
+      "id": "meant_it",
+      "speaker": "Mira",
+      "text": "I meant it then, too.",
+      "first_seen": 137.0333,
+      "last_seen": 140.5
+    },
+    {
+      "index": 21,
+      "id": "nervous",
+      "speaker": "Caelan",
+      "text": "You didn\u2019t seem nervous.",
+      "first_seen": 144.5333,
+      "last_seen": 148.0
+    },
+    {
+      "index": 22,
+      "id": "understood_problem",
+      "speaker": "Mira",
+      "text": "I was. It helped having a problem I could understand.",
+      "first_seen": 149.0333,
+      "last_seen": 154.5
+    },
+    {
+      "index": 23,
+      "id": "catch_and_branch",
+      "speaker": "Caelan",
+      "text": "A broken catch. A branch in the water.",
+      "first_seen": 155.5333,
+      "last_seen": 160.0
+    },
+    {
+      "index": 24,
+      "id": "two_of_us",
+      "speaker": "Mira",
+      "text": "And two of us to deal with it.",
+      "first_seen": 161.0333,
+      "last_seen": 165.2
+    },
+    {
+      "index": 25,
+      "id": "simple_again",
+      "speaker": "Caelan",
+      "text": "I wish it were that simple again.",
+      "first_seen": 166.2333,
+      "last_seen": 170.2
+    },
+    {
+      "index": 26,
+      "id": "so_do_i",
+      "speaker": "Mira",
+      "text": "So do I.",
+      "first_seen": 171.2333,
+      "last_seen": 173.7
+    },
+    {
+      "index": 27,
+      "id": "going_in",
+      "speaker": "Caelan",
+      "text": "But we\u2019re going in.",
+      "first_seen": 177.7333,
+      "last_seen": 180.7
+    },
+    {
+      "index": 28,
+      "id": "when_ready",
+      "speaker": "Mira",
+      "text": "When you\u2019re ready.",
+      "first_seen": 181.7333,
+      "last_seen": 184.5
+    },
+    {
+      "index": 29,
+      "id": "one_moment",
+      "speaker": "Caelan",
+      "text": "Give me a moment.",
+      "first_seen": 185.5333,
+      "last_seen": 188.7
+    }
+  ],
+  "dialogue_gaps_seconds": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    4.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    4.0,
+    1.0,
+    1.0
+  ],
+  "accessibility": {
+    "viewport": [
+      480,
+      320
+    ],
+    "text_scale": 1.5,
+    "text": "I cleared that little recess and felt as if I\u2019d done something remarkable.",
+    "caption": [
+      22,
+      15,
+      436,
+      89
+    ],
+    "lines": [
+      "I cleared that little recess and felt as if I\u2019d done",
+      "something remarkable."
+    ],
+    "skip": [
+      417,
+      279,
+      53,
+      31
+    ],
+    "actor_bounds": [
+      {
+        "actor": "caelan",
+        "bounds": [
+          219,
+          151,
+          42,
+          64
+        ]
+      },
+      {
+        "actor": "mira",
+        "bounds": [
+          268,
+          149,
+          44,
+          66
+        ]
+      }
+    ]
+  },
+  "drinking": {
+    "interval": [
+      141.1,
+      144.27999999999997
+    ],
+    "cues": {
+      "lift": 141.7,
+      "lower": 143.2,
+      "return_settled": 143.67999999999998
+    },
+    "crop": [
+      181,
+      105,
+      164,
+      124
+    ],
+    "frames": 95,
+    "clip_seconds": 3.1666666666666665,
+    "source": "Consecutive production world frames; cropped and integer-scaled"
+  },
   "screenshots": [
     "title.png",
     "valley.png",
     "lantern_reveal.png",
     "conversation.png",
     "paused.png",
-    "minimum_large_text.png",
     "quiet_exchange.png",
+    "minimum_large_text.png",
     "last_look.png",
     "bedroom.png"
   ],
