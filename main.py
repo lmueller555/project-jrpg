@@ -648,6 +648,7 @@ class Game:
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
+        self.overworld_travel.restore(data.get('overworld') if data else None)
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -675,7 +676,6 @@ class Game:
         self._mouse_held=False
         if data is None:self.opening.start_new_game()
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
-        self.overworld_travel.restore(data.get('overworld') if data else None)
         regional_checkpoint=self.overworld_travel.stage_story_restore()
         self.halden_visit.restore(data.get('halden_visit') if data else None)
         self.elira_visit.restore(data.get('elira_visit') if data else None)
@@ -802,6 +802,7 @@ class Game:
             from overworld_world import OverworldWorld
             self._overworld_world=OverworldWorld(REGION_FILE,progress_flags=self.social.flags)
             self._overworld_world.discovered=self.overworld_travel.discovered
+            self._overworld_world.grain_farm.restore(self.overworld_travel.farm_state)
         self._overworld_world.set_progress(self.social.flags)
         return self._overworld_world
 

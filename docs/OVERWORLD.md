@@ -198,3 +198,46 @@ The layout check validates wall–river joins, default enclosure reachability,
 bridge independence and the walking-time target. Runtime tests additionally
 exercise actor footprints, seams, cache eviction, map coordinate transforms,
 travel locks, legacy/region Continue and quest companion ownership.
+
+## Western grain farm
+
+The western farmstead now has two region-owned workers: a loader in rust and a
+careful coworker in slate. `grain_farm.py` owns their small courtyard routes,
+work poses, three individually accounted sacks and optional conversation.
+Before `CH01_MQ02_MILL_RESTORED`, the loader inspects and covers waiting grain;
+the coworker walks around the parked cart to check its lashings. The actual
+intake-repair flag starts two finite loading trips. Quest completion alone does
+not start loading, and the workers do not claim Caelan repaired the mill.
+
+After loading, the loader considers the third sack. Press E near a worker once
+the coworker has returned to the resting spot to hear their axle disagreement.
+Passing through does not start dialogue. Afterwards they lower the spare sack
+together, and the loader checks the lashings. Quiet checking and resting replace
+further loading. Each worker also has a short greeting and state-aware prose.
+Walking away cancels an unfinished conversation. Workers wait for blocked
+routes; they never relocate the player or teleport to bypass an obstruction.
+
+The optional `overworld.grain_farm` save record stores the number of completed
+placements, whether the exchange was read, whether the physical payoff finished,
+and completed greetings. The outer save version stays 1. Continue reconstructs
+unfinished work at a safe storage boundary: an unplaced sack returns to storage,
+while placed sacks stay on the cart. A read exchange is not repeated if Continue
+occurs during the assisted placement. The final scene beat commits after the
+loader checks the lashings. Leaving and returning retains the live controller;
+chunk eviction does not own or duplicate workers. The controller sleeps beyond
+260 pixels from the farm and uses the same map/journal pause as the region.
+
+The cart remains parked. Original decorative grain sacks remain reserve scenery;
+the three small handled sacks are the finite delivery batch. This adds no town
+NPC ownership, companion representation, quest reward, bridge repair, gate
+release, or delivery destination. Work-pose provenance and the repeatable builder
+live in `assets/source/characters/grain_workers/README.md`.
+
+[Gameplay videos and review notes](reviews/grain_farm/README.md) show both mill
+states, the whole exchange and payoff, blocked-path recovery, and Continue.
+
+```sh
+python tools/build_grain_workers.py
+python -m unittest discover -s tests -p 'test_grain_farm.py' -v
+python tools/capture_grain_farm.py
+```
