@@ -56,7 +56,7 @@ class BridgeCrewTests(unittest.TestCase):
         self.assertEqual(self.c.state['tea_beat'],0)
         self.assertFalse(self.g.social.locked)
         self.assertEqual(flags,self.g.social.flags);self.assertEqual(quests,self.g.quests.to_dict())
-        self.assertEqual(len(self.c.props()),11)
+        self.assertEqual(len(self.c.props()),13)
 
     def test_full_scene_and_repeat_greeting(self):
         self.scene()

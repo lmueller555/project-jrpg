@@ -10,7 +10,7 @@ sitting and drinking poses from the approved front-walk layers, with explicitly
 registered arms and seated legs. It uses the existing generated
 `../grain_workers/pose_reference.png` as a grip/weight reference; no new generated
 plate is claimed. The builder creates separate cup, kettle, masonry, tool,
-tray, bench and barrier props with a small hard-pixel palette. Cup and stone
+tray, bench, barrier and check/cross sorting stakes with a small hard-pixel palette. Cup and stone
 carry poses retain four approved walking leg phases; a blocked carrier freezes
 the feet. All frames use a 40×44 canvas and [20,38] anchor.
 

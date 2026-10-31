@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 ART = ROOT/'assets/characters/bridge_workers'
 SOURCE = (-2376, 616)
 STACK = (-2344, 616)
+REJECT = (-2312, 616)
 KETTLE = (-2304, 584)
 HELP = (-2360, 616)
 SEAT = (-2400, 600)
@@ -66,7 +67,7 @@ class BridgeCrew:
         self.tender = BridgeWorker('tender', 'male_03', KETTLE)
         self.actors = [self.mason, self.tender]
         self.art = {name: pygame.image.load(str(ART/(name+'.png'))).convert_alpha()
-                    for name in ('stone','cup','kettle','bench','tray','tool','barrier')}
+                    for name in ('stone','cup','kettle','bench','tray','tool','barrier','keep_mark','reject_mark')}
         self.restore()
 
     def restore(self, data=None):
@@ -132,7 +133,7 @@ class BridgeCrew:
             self.mason.pose = 'lift' if self.timer<.7 else 'carry'
             if self.timer>=1.4:self._stage('carry')
         elif stage == 'carry':
-            if self._walk(self.mason,STACK,seconds,player,'carry'):self._stage('place')
+            if self._walk(self.mason,REJECT if self.state['sorted']==2 else STACK,seconds,player,'carry'):self._stage('place')
         elif stage == 'place':
             self.mason.pose = 'lift'
             if self.timer>=1.2:
@@ -239,9 +240,10 @@ class BridgeCrew:
             result.append((y if sort is None else sort,4,image,(round(x)-image.get_width()//2,round(y)-image.get_height())))
         add('tray',(-2304,577));add('kettle',(-2307,575));add('bench',(-2400,603),598)
         add('barrier',(-2416,634),634)
+        add('keep_mark',(-2344,604));add('reject_mark',(-2312,604))
         for index in range(3):
             p=pygame.Vector2(SOURCE)+(index*3-3,-2)
-            if index<self.state['sorted']:p=pygame.Vector2(STACK)+(index*7-7,-2 if index<2 else -10)
+            if index<self.state['sorted']:p=pygame.Vector2(REJECT)+(0,-2) if index==2 else pygame.Vector2(STACK)+(index*7-7,-2)
             elif index==self.state['sorted'] and self.stage in ('lift','carry','place'):
                 p=self.mason.position+(0,-11 if self.stage=='carry' or self.stage=='lift' and self.timer>=.7 else -3)
             add('stone',p,p.y+18)
