@@ -49,6 +49,7 @@ class MapUI:
         self.player_legend_rect = pygame.Rect(314, 232, 130, 50)
         self.building_rects = {}
         self._mouse_held = False
+        self._regional_map = None
         self.detail_scroll = 0
         self.detail_max_scroll = 0
         self._plan = self._read_plan()
@@ -140,6 +141,9 @@ class MapUI:
         return tuple(self.game.exterior_position)
 
     def reset(self):
+        if getattr(self.game.world, 'is_overworld', False):
+            self._regional().reset()
+            return
         self._mouse_held = False
         self.hovered = None
         self.close_hovered = False
@@ -170,6 +174,8 @@ class MapUI:
                    self.building_rects[pair[1]['id']].height)[0]
 
     def handle_event(self, event):
+        if getattr(self.game.world, 'is_overworld', False):
+            return self._regional().handle_event(event)
         if not self.game.map_open:return False
         if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key in (pygame.K_m, pygame.K_ESCAPE):
@@ -310,6 +316,9 @@ class MapUI:
         painter.rect(INK, (x-1, y-1, 2, 2))
 
     def draw(self, canvas):
+        if getattr(self.game.world, 'is_overworld', False):
+            self._regional().draw(canvas)
+            return
         if not self.game.map_open:return
         painter = self._painter(canvas)
         self._layout()
@@ -339,6 +348,12 @@ class MapUI:
         painter.rect(BRASS, self.map_rect, 1)
         painter.line('#c4b184', (299, 66), (299, 290), 1)
         self._draw_details(painter)
+
+    def _regional(self):
+        if self._regional_map is None:
+            from overworld_map import RegionalMapUI
+            self._regional_map = RegionalMapUI(self.game)
+        return self._regional_map
 
     def _draw_details(self, painter):
         record = self.selected_landmark

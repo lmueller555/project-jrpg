@@ -3,8 +3,10 @@
 **Status: Approved regional geography, cultural foundations and opening
 regional context around Eldenmere. Illustrative encounters remain story seeds.**
 
-**Implementation:** The recent surge damage and covenant context below are
-approved documentation; runtime and map-art integration remain pending.
+**Implementation:** The [first regional overworld](../../OVERWORLD.md) now
+represents the boundary rivers, woodland, foothills, fields, guarded walls and
+lightning-destroyed western road bridge. Aldric's arrival cutscene and the
+covenant-related MQ03 dialogue rewrite remain pending.
 
 Elden Vale is Eldenmere's home region: a wooded inland valley on
 the western foothills of Merovar's Greyfold Mountains. The valley gives Game I

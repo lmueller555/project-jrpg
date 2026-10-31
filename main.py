@@ -50,6 +50,7 @@ from regent_quest import RegentQuest
 from lantern_quest import LanternQuest
 from world_encounters import CombatEncounters
 from bed_rest import BedRest
+from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -397,6 +398,7 @@ class Game:
         self.world=World()
         self.town=self.world
         self.scenes={self.world.path:self.world}
+        self._overworld_world=None
         self.persistent_npcs=[]
         self._routine_worlds={}
         self.exterior_position=pygame.Vector2(self.world.data['spawn'])
@@ -452,6 +454,7 @@ class Game:
         self.pause=PauseMenu(self)
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
+        self.overworld_travel=OverworldTravel(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -473,6 +476,7 @@ class Game:
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
+                           'overworld':self.overworld_travel.to_dict(),
                            'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
@@ -520,11 +524,12 @@ class Game:
         def point(value):
             return (isinstance(value,list) and len(value)==2 and
                     all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
-        scene_ids={self.town.data['id'],*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
+        scene_ids={self.town.data['id'],WORLD_ID,*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
         player=data.get('player')
         valid=(type(data.get('version')) is int and data['version']==1 and
                isinstance(player,dict) and isinstance(player.get('scene'),str) and
                player['scene'] in scene_ids and point(player.get('position')) and
+               OverworldTravel.valid_journey(data) and
                player.get('facing') in ('front','back','left','right') and
                point(data.get('exterior_position')) and
                isinstance(data.get('dialogue_flags'),list) and
@@ -668,6 +673,8 @@ class Game:
         self._mouse_held=False
         if data is None:self.opening.start_new_game()
         else:self.opening.restore(data.get('opening',{'version':1,'stage':'disabled'}))
+        self.overworld_travel.restore(data.get('overworld') if data else None)
+        regional_checkpoint=self.overworld_travel.stage_story_restore()
         self.halden_visit.restore(data.get('halden_visit') if data else None)
         self.elira_visit.restore(data.get('elira_visit') if data else None)
         self.venn_visit.restore(data.get('venn_visit') if data else None)
@@ -693,6 +700,7 @@ class Game:
                 self.world=self.town
                 landing=self.town.data['spawn']
             self.player.position.update(landing)
+        self.overworld_travel.finish_story_restore(regional_checkpoint)
         self.opening_audio.reset()
         self.pause.close()
         self.camera.reset()
@@ -731,6 +739,7 @@ class Game:
               'player':{'scene':self.world.data['id'],
                         'position':list(saved_position),'facing':self.player.facing},
               'exterior_position':list(self.exterior_position)}
+        data['overworld']=self.overworld_travel.to_dict()
         if post_battle is not None:data['post_battle']=post_battle
         if not self.save_store.write(data):
             self.save_error=self.save_store.error
@@ -780,11 +789,23 @@ class Game:
 
     def _load_scene(self,path):
         path=Path(path).resolve()
+        if path==REGION_FILE.resolve():return self.overworld_world
         if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
         return self.scenes[path]
 
+    @property
+    def overworld_world(self):
+        """The streamed region is one lazy world, outside town routine graphs."""
+        if self._overworld_world is None:
+            from overworld_world import OverworldWorld
+            self._overworld_world=OverworldWorld(REGION_FILE,progress_flags=self.social.flags)
+            self._overworld_world.discovered=self.overworld_travel.discovered
+        self._overworld_world.set_progress(self.social.flags)
+        return self._overworld_world
+
     def _scene_by_id(self,scene_id):
         if scene_id==self.town.data['id']:return self.town
+        if scene_id==WORLD_ID:return self.overworld_world
         try:path={**self.town.data.get('interior_scenes',{}),**self.town.data.get('exterior_scenes',{})}[scene_id]
         except KeyError as error:raise ValueError(f'Unknown routine scene: {scene_id}') from error
         return self._load_scene(ROOT/path)
@@ -958,6 +979,7 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
+                    if self.overworld_travel.interact():continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
@@ -999,6 +1021,9 @@ class Game:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
+        if (self.overworld_travel.active and (self.map_open or self.quest_ui.journal_open)):
+            self.opening_audio.set_paused(True)
+            return
         self.opening_fade=max(0,self.opening_fade-seconds)
         self.combat.tick_world(seconds)
         if self.combat.active:
@@ -1029,27 +1054,28 @@ class Game:
             if self.world.data.get('kind')=='interior' and self.opening.stage in ('explore','assignment','done'):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
-        for visit in self.household_visits:
-            visit.update(seconds)
-            if self.combat.active:
-                # The mill cutscene starts its fight only after its return pan.
-                # Keep that captured shot fixed as soon as battle takes over.
-                self.opening_audio.set_paused(True)
-                return
-        for scene in self.scenes.values():
-            blocker=scene.probe_rect(self.player.position) if scene is self.world else None
-            for npc in scene.npcs:
-                if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
-        for npc in self.persistent_npcs:
-            if getattr(npc,'story_paused',False):continue
-            scene=self._routine_worlds[npc]
-            blocker=scene.probe_rect(self.player.position) if scene is self.world else None
-            npc.update(seconds,scene,blocker,self._transfer_routine_npc)
-        for routine in self.play_routines:routine.update(seconds)
-        for routine in self.block_routines:routine.update(seconds)
-        for routine in self.bone_routines:routine.update(seconds)
+        if not self.overworld_travel.active:
+            for visit in self.household_visits:
+                visit.update(seconds)
+                if self.combat.active:
+                    # The mill cutscene starts its fight only after its return pan.
+                    self.opening_audio.set_paused(True)
+                    return
+            for scene in self.scenes.values():
+                blocker=scene.probe_rect(self.player.position) if scene is self.world else None
+                for npc in scene.npcs:
+                    if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
+            for npc in self.persistent_npcs:
+                if getattr(npc,'story_paused',False):continue
+                scene=self._routine_worlds[npc]
+                blocker=scene.probe_rect(self.player.position) if scene is self.world else None
+                npc.update(seconds,scene,blocker,self._transfer_routine_npc)
+            for routine in self.play_routines:routine.update(seconds)
+            for routine in self.block_routines:routine.update(seconds)
+            for routine in self.bone_routines:routine.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
+        self.overworld_travel.update(seconds)
         if (not self.map_open and not self.quest_ui.journal_open and
                 not self.opening.locks_player and not self.household_action and not self.transfer_cooldown):
             for door in self.world.doors:
@@ -1201,7 +1227,7 @@ class Game:
                 canvas.blit(layer,(0,0))
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
-        hint=(hint or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
+        hint=(hint or self.overworld_travel.interaction_hint() or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
                     if (hint:=visit.interaction_hint())), ''))
         if not hint:hint=self.combat.interaction_hint()

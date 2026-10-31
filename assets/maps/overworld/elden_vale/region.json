@@ -1,0 +1,1907 @@
+{
+  "version": 1,
+  "id": "auratia.overworld",
+  "name": "Elden Vale",
+  "kind": "overworld",
+  "continent": "Merovar",
+  "region_id": "elden_vale_start",
+  "tile_size": 24,
+  "chunk_size": 16,
+  "bounds_tiles": [
+    -256,
+    -192,
+    512,
+    384
+  ],
+  "spawn_tile": [
+    12,
+    -25
+  ],
+  "art_manifest": "assets/terrain/overworld/elden_vale/art.json",
+  "terrain": {
+    "rivers": [
+      {
+        "id": "western_boundary_river",
+        "width": 10,
+        "points": [
+          [
+            -156,
+            -192
+          ],
+          [
+            -146,
+            -158
+          ],
+          [
+            -132,
+            -128
+          ],
+          [
+            -126,
+            -108
+          ],
+          [
+            -124,
+            -96
+          ],
+          [
+            -130,
+            -72
+          ],
+          [
+            -125,
+            -54
+          ],
+          [
+            -119,
+            -34
+          ],
+          [
+            -124,
+            -15
+          ],
+          [
+            -116,
+            8
+          ],
+          [
+            -111,
+            30
+          ],
+          [
+            -115,
+            53
+          ],
+          [
+            -122,
+            75
+          ],
+          [
+            -124,
+            96
+          ],
+          [
+            -134,
+            124
+          ],
+          [
+            -147,
+            156
+          ],
+          [
+            -154,
+            192
+          ]
+        ]
+      },
+      {
+        "id": "eastern_boundary_river",
+        "width": 12,
+        "points": [
+          [
+            133,
+            -192
+          ],
+          [
+            139,
+            -160
+          ],
+          [
+            131,
+            -128
+          ],
+          [
+            126,
+            -110
+          ],
+          [
+            124,
+            -96
+          ],
+          [
+            118,
+            -74
+          ],
+          [
+            126,
+            -51
+          ],
+          [
+            120,
+            -28
+          ],
+          [
+            126,
+            -6
+          ],
+          [
+            121,
+            15
+          ],
+          [
+            116,
+            38
+          ],
+          [
+            121,
+            64
+          ],
+          [
+            128,
+            82
+          ],
+          [
+            124,
+            96
+          ],
+          [
+            119,
+            125
+          ],
+          [
+            107,
+            154
+          ],
+          [
+            94,
+            192
+          ]
+        ]
+      }
+    ],
+    "forests": [
+      {
+        "id": "northwestern_woodland",
+        "polygon": [
+          [
+            -112,
+            -86
+          ],
+          [
+            -62,
+            -89
+          ],
+          [
+            -25,
+            -77
+          ],
+          [
+            1,
+            -49
+          ],
+          [
+            -13,
+            -10
+          ],
+          [
+            -64,
+            -17
+          ],
+          [
+            -105,
+            -39
+          ]
+        ]
+      },
+      {
+        "id": "millrace_woodland",
+        "polygon": [
+          [
+            -23,
+            -88
+          ],
+          [
+            31,
+            -87
+          ],
+          [
+            44,
+            -61
+          ],
+          [
+            27,
+            -43
+          ],
+          [
+            -1,
+            -45
+          ],
+          [
+            -17,
+            -63
+          ]
+        ]
+      },
+      {
+        "id": "northeastern_woodland",
+        "polygon": [
+          [
+            42,
+            -87
+          ],
+          [
+            101,
+            -85
+          ],
+          [
+            107,
+            -61
+          ],
+          [
+            83,
+            -34
+          ],
+          [
+            48,
+            -40
+          ],
+          [
+            32,
+            -61
+          ]
+        ]
+      },
+      {
+        "id": "western_bank_woods",
+        "polygon": [
+          [
+            -245,
+            -180
+          ],
+          [
+            -171,
+            -182
+          ],
+          [
+            -153,
+            -130
+          ],
+          [
+            -146,
+            -85
+          ],
+          [
+            -154,
+            -22
+          ],
+          [
+            -160,
+            19
+          ],
+          [
+            -190,
+            47
+          ],
+          [
+            -243,
+            30
+          ]
+        ]
+      },
+      {
+        "id": "northern_headwater_woods",
+        "polygon": [
+          [
+            -108,
+            -183
+          ],
+          [
+            109,
+            -184
+          ],
+          [
+            110,
+            -135
+          ],
+          [
+            73,
+            -113
+          ],
+          [
+            16,
+            -116
+          ],
+          [
+            -31,
+            -108
+          ],
+          [
+            -100,
+            -128
+          ]
+        ]
+      },
+      {
+        "id": "eastern_outer_woods",
+        "polygon": [
+          [
+            157,
+            -188
+          ],
+          [
+            241,
+            -186
+          ],
+          [
+            242,
+            -113
+          ],
+          [
+            206,
+            -70
+          ],
+          [
+            163,
+            -82
+          ]
+        ]
+      },
+      {
+        "id": "southwestern_copse",
+        "polygon": [
+          [
+            -108,
+            52
+          ],
+          [
+            -77,
+            46
+          ],
+          [
+            -58,
+            63
+          ],
+          [
+            -61,
+            83
+          ],
+          [
+            -102,
+            85
+          ]
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "id": "western_near_fields",
+        "polygon": [
+          [
+            -57,
+            1
+          ],
+          [
+            -18,
+            -3
+          ],
+          [
+            -16,
+            21
+          ],
+          [
+            -58,
+            31
+          ],
+          [
+            -82,
+            15
+          ]
+        ]
+      },
+      {
+        "id": "southern_west_fields",
+        "polygon": [
+          [
+            -53,
+            39
+          ],
+          [
+            -20,
+            31
+          ],
+          [
+            6,
+            49
+          ],
+          [
+            -5,
+            78
+          ],
+          [
+            -43,
+            77
+          ]
+        ]
+      },
+      {
+        "id": "southern_east_fields",
+        "polygon": [
+          [
+            45,
+            33
+          ],
+          [
+            81,
+            35
+          ],
+          [
+            96,
+            59
+          ],
+          [
+            72,
+            80
+          ],
+          [
+            46,
+            71
+          ]
+        ]
+      },
+      {
+        "id": "southern_middle_fields",
+        "polygon": [
+          [
+            -3,
+            81
+          ],
+          [
+            39,
+            76
+          ],
+          [
+            64,
+            88
+          ],
+          [
+            60,
+            132
+          ],
+          [
+            13,
+            144
+          ],
+          [
+            -22,
+            119
+          ]
+        ]
+      },
+      {
+        "id": "far_bank_fields",
+        "polygon": [
+          [
+            -213,
+            65
+          ],
+          [
+            -167,
+            57
+          ],
+          [
+            -158,
+            97
+          ],
+          [
+            -180,
+            129
+          ],
+          [
+            -219,
+            115
+          ]
+        ]
+      },
+      {
+        "id": "southern_riverlands",
+        "polygon": [
+          [
+            -84,
+            139
+          ],
+          [
+            -39,
+            134
+          ],
+          [
+            1,
+            155
+          ],
+          [
+            27,
+            188
+          ],
+          [
+            -106,
+            188
+          ]
+        ]
+      },
+      {
+        "id": "southeastern_riverlands",
+        "polygon": [
+          [
+            39,
+            140
+          ],
+          [
+            87,
+            130
+          ],
+          [
+            99,
+            170
+          ],
+          [
+            79,
+            190
+          ],
+          [
+            39,
+            186
+          ]
+        ]
+      }
+    ],
+    "hills": [
+      {
+        "id": "eastern_foothills",
+        "polygon": [
+          [
+            85,
+            -70
+          ],
+          [
+            106,
+            -91
+          ],
+          [
+            111,
+            -47
+          ],
+          [
+            101,
+            -10
+          ],
+          [
+            96,
+            24
+          ],
+          [
+            78,
+            11
+          ],
+          [
+            79,
+            -22
+          ]
+        ]
+      },
+      {
+        "id": "eastern_upland_front",
+        "polygon": [
+          [
+            153,
+            -64
+          ],
+          [
+            207,
+            -100
+          ],
+          [
+            248,
+            -72
+          ],
+          [
+            250,
+            119
+          ],
+          [
+            209,
+            137
+          ],
+          [
+            160,
+            96
+          ],
+          [
+            144,
+            38
+          ]
+        ]
+      },
+      {
+        "id": "northern_wooded_rise",
+        "polygon": [
+          [
+            -94,
+            -81
+          ],
+          [
+            -62,
+            -85
+          ],
+          [
+            -35,
+            -65
+          ],
+          [
+            -43,
+            -42
+          ],
+          [
+            -79,
+            -39
+          ],
+          [
+            -99,
+            -61
+          ]
+        ]
+      }
+    ],
+    "scorched": [
+      {
+        "id": "broken_bridge_east_bank",
+        "polygon": [
+          [
+            -105,
+            27
+          ],
+          [
+            -102,
+            26
+          ],
+          [
+            -99,
+            28
+          ],
+          [
+            -100,
+            31
+          ],
+          [
+            -103,
+            32
+          ],
+          [
+            -106,
+            30
+          ]
+        ]
+      },
+      {
+        "id": "broken_bridge_west_bank",
+        "polygon": [
+          [
+            -124,
+            26
+          ],
+          [
+            -120,
+            26
+          ],
+          [
+            -119,
+            29
+          ],
+          [
+            -121,
+            32
+          ],
+          [
+            -125,
+            33
+          ],
+          [
+            -126,
+            29
+          ]
+        ]
+      }
+    ]
+  },
+  "roads": [
+    {
+      "id": "south_town_road",
+      "role": "damaged southern connection",
+      "surface": "stone_road",
+      "width": 3,
+      "points": [
+        [
+          12,
+          -28
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          -24,
+          14
+        ],
+        [
+          -70,
+          24
+        ],
+        [
+          -99,
+          29
+        ],
+        [
+          -111,
+          29
+        ],
+        [
+          -123,
+          29
+        ],
+        [
+          -132,
+          34
+        ],
+        [
+          -146,
+          72
+        ],
+        [
+          -159,
+          118
+        ],
+        [
+          -174,
+          182
+        ]
+      ]
+    },
+    {
+      "id": "northern_corridor",
+      "role": "future northern route",
+      "surface": "dirt",
+      "width": 3,
+      "points": [
+        [
+          12,
+          -36
+        ],
+        [
+          8,
+          -64
+        ],
+        [
+          20,
+          -96
+        ],
+        [
+          27,
+          -140
+        ],
+        [
+          20,
+          -185
+        ]
+      ]
+    },
+    {
+      "id": "southern_land_corridor",
+      "role": "distinct future southern land route",
+      "surface": "dirt",
+      "width": 3,
+      "points": [
+        [
+          12,
+          2
+        ],
+        [
+          36,
+          26
+        ],
+        [
+          28,
+          60
+        ],
+        [
+          28,
+          96
+        ],
+        [
+          39,
+          142
+        ],
+        [
+          55,
+          185
+        ]
+      ]
+    },
+    {
+      "id": "woodland_loop",
+      "role": "local walking loop",
+      "surface": "dirt",
+      "width": 2.5,
+      "points": [
+        [
+          8,
+          -64
+        ],
+        [
+          -20,
+          -80
+        ],
+        [
+          -48,
+          -68
+        ],
+        [
+          -64,
+          -42
+        ],
+        [
+          -40,
+          -14
+        ],
+        [
+          12,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "foothill_loop",
+      "role": "local walking loop",
+      "surface": "dirt",
+      "width": 2.5,
+      "points": [
+        [
+          12,
+          -36
+        ],
+        [
+          50,
+          -55
+        ],
+        [
+          78,
+          -40
+        ],
+        [
+          74,
+          -20
+        ],
+        [
+          62,
+          4
+        ],
+        [
+          36,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "field_loop",
+      "role": "local walking loop",
+      "surface": "dirt",
+      "width": 2.5,
+      "points": [
+        [
+          36,
+          26
+        ],
+        [
+          66,
+          50
+        ],
+        [
+          46,
+          75
+        ],
+        [
+          12,
+          72
+        ],
+        [
+          -18,
+          52
+        ],
+        [
+          -24,
+          14
+        ]
+      ]
+    },
+    {
+      "id": "relief_staging_spur",
+      "role": "small crew staging point",
+      "surface": "dirt",
+      "width": 3,
+      "points": [
+        [
+          -70,
+          24
+        ],
+        [
+          -68,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "village_circuit",
+      "role": "walking connection around the miniature settlement",
+      "surface": "dirt",
+      "width": 2.5,
+      "points": [
+        [
+          12,
+          -36
+        ],
+        [
+          21,
+          -37
+        ],
+        [
+          28,
+          -29
+        ],
+        [
+          24,
+          -18
+        ],
+        [
+          12,
+          -20
+        ],
+        [
+          -1,
+          -18
+        ],
+        [
+          -6,
+          -29
+        ],
+        [
+          0,
+          -37
+        ],
+        [
+          12,
+          -36
+        ]
+      ]
+    }
+  ],
+  "walls": [
+    {
+      "id": "north_wall",
+      "y": -96,
+      "x0": -124,
+      "x1": 124,
+      "gate_x": 20,
+      "gate_width": 4
+    },
+    {
+      "id": "south_wall",
+      "y": 96,
+      "x0": -124,
+      "x1": 124,
+      "gate_x": 28,
+      "gate_width": 4
+    }
+  ],
+  "town": {
+    "id": "eldenmere",
+    "name": "Eldenmere",
+    "tile_position": [
+      12,
+      -28
+    ],
+    "entry_rect_tiles": [
+      9,
+      -33,
+      6,
+      6
+    ],
+    "exit_tile": [
+      12,
+      -25
+    ],
+    "description": "Eldenmere stands among the streams, terraces and woodland of the vale."
+  },
+  "bridge": {
+    "id": "western_stone_bridge",
+    "tile_position": [
+      -111,
+      30
+    ],
+    "orientation": "horizontal",
+    "repair_flag": "ELDEN_VALE_WEST_BRIDGE_REPAIRED",
+    "damage_rect_tiles": [
+      -120,
+      26,
+      18,
+      8
+    ],
+    "deck_rect_tiles": [
+      -120,
+      28,
+      18,
+      4
+    ],
+    "east_approach_tile": [
+      -98,
+      28
+    ],
+    "west_approach_tile": [
+      -128,
+      34
+    ],
+    "description": "A lightning surge shattered this stone crossing. The southern road continues on the far bank."
+  },
+  "gates": [
+    {
+      "id": "north_checkpoint",
+      "tile_position": [
+        20,
+        -96
+      ],
+      "rect_tiles": [
+        18,
+        -98,
+        4,
+        4
+      ],
+      "clearance_flag": "CH01_OPENING_REGION_RELEASED",
+      "destination_ready": false,
+      "guard_tiles": [
+        [
+          15,
+          -91
+        ],
+        [
+          25,
+          -91
+        ]
+      ],
+      "label": "Northern checkpoint"
+    },
+    {
+      "id": "south_checkpoint",
+      "tile_position": [
+        28,
+        96
+      ],
+      "rect_tiles": [
+        26,
+        94,
+        4,
+        4
+      ],
+      "clearance_flag": "CH01_OPENING_REGION_RELEASED",
+      "destination_ready": false,
+      "guard_tiles": [
+        [
+          23,
+          91
+        ],
+        [
+          33,
+          91
+        ]
+      ],
+      "label": "Southern checkpoint"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "upper_millrace",
+      "name": "Upper Millrace",
+      "kind": "millrace",
+      "tile_position": [
+        8,
+        -64
+      ],
+      "discovered": true,
+      "description": "Northern woodland surrounds the village's upper millrace."
+    },
+    {
+      "id": "woodland_overlook",
+      "name": "Woodland overlook",
+      "kind": "overlook",
+      "tile_position": [
+        -48,
+        -68
+      ],
+      "discovered": true,
+      "description": "A clearing on the woodland loop, with views across the inland vale."
+    },
+    {
+      "id": "foothill_overlook",
+      "name": "Foothill overlook",
+      "kind": "overlook",
+      "tile_position": [
+        74,
+        -20
+      ],
+      "discovered": true,
+      "description": "The eastern walking loop meets the wooded Greyfold foothills."
+    },
+    {
+      "id": "relief_staging",
+      "name": "Road crew staging",
+      "kind": "staging",
+      "prop": "supplies",
+      "tile_position": [
+        -68,
+        16
+      ],
+      "discovered": true,
+      "description": "Road crews gather stone and supplies beside the route to the damaged crossing."
+    }
+  ],
+  "safe_clearings": [
+    {
+      "id": "town_return",
+      "rect_tiles": [
+        7,
+        -28,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "town_footprint",
+      "rect_tiles": [
+        6,
+        -36,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "millrace_locator",
+      "rect_tiles": [
+        3,
+        -69,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "woodland_overlook",
+      "rect_tiles": [
+        -53,
+        -73,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "foothill_overlook",
+      "rect_tiles": [
+        69,
+        -25,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "crew_staging",
+      "rect_tiles": [
+        -73,
+        11,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "bridge_east_approach",
+      "rect_tiles": [
+        -102,
+        23,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "north_checkpoint",
+      "rect_tiles": [
+        11,
+        -103,
+        18,
+        18
+      ]
+    },
+    {
+      "id": "south_checkpoint",
+      "rect_tiles": [
+        19,
+        85,
+        18,
+        18
+      ]
+    }
+  ],
+  "route_validation": {
+    "walking_speed_px_per_second": 72,
+    "bridge_approach_target_seconds": [
+      40,
+      60
+    ],
+    "bridge_approach_road": "south_town_road",
+    "bridge_approach_start_tile": [
+      12,
+      -25
+    ],
+    "bridge_approach_end_tile": [
+      -98,
+      28
+    ],
+    "reachable_landmark_ids": [
+      "upper_millrace",
+      "woodland_overlook",
+      "foothill_overlook",
+      "relief_staging"
+    ],
+    "opening_enclosure": {
+      "north_wall": "north_wall",
+      "south_wall": "south_wall",
+      "western_river": "western_boundary_river",
+      "eastern_river": "eastern_boundary_river"
+    },
+    "notes": [
+      "Gate clearance and bridge repair are independent, absent by default and have no producer.",
+      "The southern checkpoint is a separate future land corridor; the damaged south-town road bends west before the southern wall.",
+      "Rivers meet each end of both walls. No playable shoreline, delta, named next town or original temple location is introduced."
+    ],
+    "measured_bridge_approach_seconds": 46.76,
+    "geometry_checks": {
+      "opening_reachable_tiles": 43616,
+      "required_points_reachable": 10,
+      "closed_perimeter": true,
+      "broken_bridge_blocks_crossing": true,
+      "repaired_bridge_connects_banks": true,
+      "scope": "Offline four-neighbour tile sampling of continuous vector barriers; runtime actor/decoration probes have separate engine checks."
+    }
+  },
+  "geography": {
+    "atlas_source": "assets/world/auratia/world_map.png",
+    "atlas_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0",
+    "atlas_source_size": [
+      1448,
+      1086
+    ],
+    "coordinate_system": "Source image continuous pixel coordinates, origin upper left; normalized u=x/1448, v=y/1086. Runtime tile coordinates are separately authored, y increases south.",
+    "survey_method": "Manual tracing of visible blue watercourses and settlement illustrations in the approved PNG; approximate orientation anchors, not surveyed distances or geographic border claims.",
+    "atlas_traces": [
+      {
+        "id": "western_watercourse_reference",
+        "atlas_points": [
+          [
+            194,
+            310
+          ],
+          [
+            201,
+            321
+          ],
+          [
+            192,
+            328
+          ],
+          [
+            178,
+            334
+          ],
+          [
+            163,
+            343
+          ],
+          [
+            158,
+            349
+          ],
+          [
+            164,
+            358
+          ],
+          [
+            178,
+            361
+          ],
+          [
+            179,
+            368
+          ],
+          [
+            171,
+            373
+          ],
+          [
+            178,
+            382
+          ],
+          [
+            184,
+            392
+          ],
+          [
+            196,
+            396
+          ],
+          [
+            205,
+            402
+          ],
+          [
+            207,
+            407
+          ],
+          [
+            214,
+            415
+          ],
+          [
+            224,
+            421
+          ],
+          [
+            227,
+            428
+          ],
+          [
+            237,
+            433
+          ],
+          [
+            244,
+            439
+          ],
+          [
+            255,
+            446
+          ],
+          [
+            248,
+            451
+          ],
+          [
+            240,
+            455
+          ],
+          [
+            236,
+            463
+          ],
+          [
+            234,
+            472
+          ],
+          [
+            248,
+            483
+          ],
+          [
+            255,
+            489
+          ],
+          [
+            246,
+            496
+          ],
+          [
+            235,
+            513
+          ]
+        ],
+        "atlas_normalized_points": [
+          [
+            0.1339779,
+            0.2854512
+          ],
+          [
+            0.13881215,
+            0.29558011
+          ],
+          [
+            0.13259669,
+            0.30202578
+          ],
+          [
+            0.12292818,
+            0.30755064
+          ],
+          [
+            0.11256906,
+            0.31583794
+          ],
+          [
+            0.10911602,
+            0.3213628
+          ],
+          [
+            0.11325967,
+            0.32965009
+          ],
+          [
+            0.12292818,
+            0.33241252
+          ],
+          [
+            0.12361878,
+            0.3388582
+          ],
+          [
+            0.11809392,
+            0.34346225
+          ],
+          [
+            0.12292818,
+            0.35174954
+          ],
+          [
+            0.12707182,
+            0.36095764
+          ],
+          [
+            0.13535912,
+            0.36464088
+          ],
+          [
+            0.14157459,
+            0.37016575
+          ],
+          [
+            0.1429558,
+            0.3747698
+          ],
+          [
+            0.14779006,
+            0.38213628
+          ],
+          [
+            0.15469613,
+            0.38766114
+          ],
+          [
+            0.15676796,
+            0.39410681
+          ],
+          [
+            0.16367403,
+            0.39871087
+          ],
+          [
+            0.16850829,
+            0.40423573
+          ],
+          [
+            0.17610497,
+            0.4106814
+          ],
+          [
+            0.17127072,
+            0.41528545
+          ],
+          [
+            0.16574586,
+            0.41896869
+          ],
+          [
+            0.16298343,
+            0.42633517
+          ],
+          [
+            0.16160221,
+            0.43462247
+          ],
+          [
+            0.17127072,
+            0.44475138
+          ],
+          [
+            0.17610497,
+            0.45027624
+          ],
+          [
+            0.1698895,
+            0.45672192
+          ],
+          [
+            0.16229282,
+            0.47237569
+          ]
+        ]
+      },
+      {
+        "id": "eastern_watercourse_reference",
+        "atlas_points": [
+          [
+            243,
+            319
+          ],
+          [
+            266,
+            322
+          ],
+          [
+            281,
+            332
+          ],
+          [
+            298,
+            339
+          ],
+          [
+            307,
+            344
+          ],
+          [
+            304,
+            352
+          ],
+          [
+            311,
+            358
+          ],
+          [
+            321,
+            366
+          ],
+          [
+            327,
+            372
+          ],
+          [
+            332,
+            376
+          ],
+          [
+            332,
+            384
+          ],
+          [
+            327,
+            391
+          ],
+          [
+            317,
+            396
+          ],
+          [
+            316,
+            403
+          ],
+          [
+            315,
+            409
+          ],
+          [
+            305,
+            417
+          ],
+          [
+            301,
+            421
+          ],
+          [
+            302,
+            426
+          ],
+          [
+            294,
+            432
+          ],
+          [
+            290,
+            436
+          ],
+          [
+            290,
+            442
+          ],
+          [
+            295,
+            446
+          ],
+          [
+            299,
+            452
+          ],
+          [
+            292,
+            458
+          ]
+        ],
+        "atlas_normalized_points": [
+          [
+            0.16781768,
+            0.29373849
+          ],
+          [
+            0.18370166,
+            0.29650092
+          ],
+          [
+            0.19406077,
+            0.30570902
+          ],
+          [
+            0.2058011,
+            0.3121547
+          ],
+          [
+            0.21201657,
+            0.31675875
+          ],
+          [
+            0.20994475,
+            0.32412523
+          ],
+          [
+            0.21477901,
+            0.32965009
+          ],
+          [
+            0.22168508,
+            0.33701657
+          ],
+          [
+            0.22582873,
+            0.34254144
+          ],
+          [
+            0.22928177,
+            0.34622468
+          ],
+          [
+            0.22928177,
+            0.35359116
+          ],
+          [
+            0.22582873,
+            0.36003683
+          ],
+          [
+            0.21892265,
+            0.36464088
+          ],
+          [
+            0.21823204,
+            0.37108656
+          ],
+          [
+            0.21754144,
+            0.37661142
+          ],
+          [
+            0.21063536,
+            0.3839779
+          ],
+          [
+            0.20787293,
+            0.38766114
+          ],
+          [
+            0.20856354,
+            0.39226519
+          ],
+          [
+            0.20303867,
+            0.39779006
+          ],
+          [
+            0.20027624,
+            0.4014733
+          ],
+          [
+            0.20027624,
+            0.40699816
+          ],
+          [
+            0.20372928,
+            0.4106814
+          ],
+          [
+            0.20649171,
+            0.41620626
+          ],
+          [
+            0.20165746,
+            0.42173112
+          ]
+        ]
+      }
+    ],
+    "anchors": [
+      {
+        "id": "eldenmere",
+        "atlas_pixel": [
+          236,
+          403
+        ],
+        "tile_position": [
+          12,
+          -28
+        ],
+        "confidence": "named settlement icon",
+        "atlas_normalized": [
+          0.16298343,
+          0.37108656
+        ]
+      },
+      {
+        "id": "northern_woodland_context",
+        "atlas_pixel": [
+          236,
+          383
+        ],
+        "tile_position": [
+          8,
+          -64
+        ],
+        "confidence": "illustrative woodland; runtime millrace position is a local adaptation",
+        "atlas_normalized": [
+          0.16298343,
+          0.35267035
+        ]
+      },
+      {
+        "id": "western_crossing_context",
+        "atlas_pixel": [
+          225,
+          425
+        ],
+        "tile_position": [
+          -111,
+          30
+        ],
+        "confidence": "approximate west-watercourse crossing context; destroyed bridge is approved runtime layout, not existing damage artwork",
+        "atlas_normalized": [
+          0.15538674,
+          0.39134438
+        ]
+      },
+      {
+        "id": "greyfold_foothills_context",
+        "atlas_pixel": [
+          329,
+          405
+        ],
+        "tile_position": [
+          92,
+          -20
+        ],
+        "confidence": "visible western mountain front",
+        "atlas_normalized": [
+          0.22720994,
+          0.37292818
+        ]
+      },
+      {
+        "id": "southwestern_settlement_illustration",
+        "atlas_pixel": [
+          182,
+          492
+        ],
+        "confidence": "unnamed illustration; not a new playable town or approved settlement identity",
+        "atlas_normalized": [
+          0.12569061,
+          0.45303867
+        ]
+      }
+    ],
+    "opening_corridor_reference_polygon": [
+      [
+        171,
+        373
+      ],
+      [
+        327,
+        372
+      ],
+      [
+        315,
+        409
+      ],
+      [
+        290,
+        442
+      ],
+      [
+        244,
+        439
+      ],
+      [
+        224,
+        421
+      ],
+      [
+        207,
+        407
+      ],
+      [
+        184,
+        392
+      ]
+    ],
+    "adaptation": [
+      "Preserve the inhabited corridor between western and eastern north-south waterways, woodland north, Greyfold foothills east, and cultivated riverlands south.",
+      "The runtime corridor widens and bends the atlas topology for 24px miniature-scale travel; no literal PNG scaling or uniform map-to-kilometre conversion is used.",
+      "The village brook and controlled millrace remain distinct local water features in detailed Eldenmere; they are not additional bounding rivers.",
+      "Neither boundary watercourse is assigned a new proper name or automatically identified as the River Leth. Repeated labels do not create duplicate rivers.",
+      "The old ridge sanctuary and original sacrificial temple receive no new location. Exact confluences, political borders, physical distances and unnamed settlements remain open.",
+      "North and south walls, checkpoints, walking loops, overlooks and bridge damage are authored runtime interpretation, not features redrawn onto the approved classroom map."
+    ],
+    "references": [
+      "docs/world/WORLD_ATLAS.md",
+      "docs/world/regions/ELDEN_VALE.md",
+      "docs/WORLD_MAP.md",
+      "docs/world/eldenmere/blockout/README.md"
+    ],
+    "opening_corridor_normalized_polygon": [
+      [
+        0.11809392,
+        0.34346225
+      ],
+      [
+        0.22582873,
+        0.34254144
+      ],
+      [
+        0.21754144,
+        0.37661142
+      ],
+      [
+        0.20027624,
+        0.40699816
+      ],
+      [
+        0.16850829,
+        0.40423573
+      ],
+      [
+        0.15469613,
+        0.38766114
+      ],
+      [
+        0.1429558,
+        0.3747698
+      ],
+      [
+        0.12707182,
+        0.36095764
+      ]
+    ]
+  },
+  "build": {
+    "tool": "tools/build_elden_vale_overworld.py",
+    "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
+    "source_recipe_sha256": "c1255720b1e11aff37fe097b729482e1a0ec496113a622967e127ea5cf5f1b9f",
+    "atlas_reference": "docs/reviews/elden_vale_overworld/atlas_reference.png",
+    "exports": [
+      "assets/maps/overworld/elden_vale/region.json",
+      "docs/reviews/elden_vale_overworld/atlas_reference.png"
+    ]
+  }
+}

@@ -4,8 +4,9 @@
 **Scope:** The damaged southern road, the small number of recent lightning
 incidents, Aldric's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
-**Implementation:** Documentation revision only. The arrival cutscene, road-damage
-presentation and revised runtime dialogue remain to be implemented.
+**Implementation:** The [Elden Vale overworld](../../OVERWORLD.md) now presents
+the lightning-destroyed western bridge and road damage on both banks. The
+arrival cutscene and revised runtime dialogue remain to be implemented.
 
 References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
 [MQ03](CH01_MQ03.md), [Elden Vale](../../world/regions/ELDEN_VALE.md),
@@ -23,9 +24,13 @@ not a new name for that town.
 
 The damage gives the road project a specific purpose: restore the connection
 used by people and deliveries between these communities. Its destruction is
-not ordinary wear or a general modernization project. Exact damaged structures,
-detours, reconstruction quantities and access mechanics need later design;
-the documentation does not establish a new playable route or alter map art.
+not ordinary wear or a general modernization project. The first playable
+overworld now establishes a destroyed stone bridge across the western boundary
+river, with road damage on both banks. Eldenmere's southern road bends west to
+this crossing; the far-bank route continues toward the unnamed town south.
+Guarded land gates are separate from the ruined crossing. Detours, repair
+quantities and eventual restoration still need later quest design. The
+classroom world-map artwork remains unchanged.
 
 MQ02's stopped mill remains a separate local problem. The ridgeback tusker
 felled the tree whose broken limb obstructs the intake. Fixing the mill does

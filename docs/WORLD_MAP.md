@@ -37,8 +37,9 @@ classroom, fitted viewer, and zoomed detail.
 
 ## Opening story route context
 
-**Status:** Approved regional lore; runtime and map-art integration of the
-recent damage remain pending.
+**Status:** Approved regional lore. The [Elden Vale overworld](OVERWORLD.md)
+now implements the local landscape and ruined western crossing. The classroom
+map remains unchanged; Aldric's revised arrival/story integration is pending.
 
 Before Game I opens, an extraordinarily powerful lightning surge destroyed
 the road from Eldenmere to the next town south, along the map's corresponding
