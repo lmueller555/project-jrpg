@@ -29,9 +29,9 @@ GARDEN_WORK=[
  walk((-526,1126),'can'), beat('water',2.4,sound='water',pour=True),
  walk(GARDEN,'can'), put('can',(-526,1187)),
  walk((-526,1158)), beat('weed',2.4,sound='leaves'),pick('turnip_0'),
- walk((-526,1190),'turnip_0'),put('turnip_0',(-512,1187)),
+ walk((-526,1196),'turnip_0'),walk((-518,1196),'turnip_0'),put('turnip_0',(-512,1187)),walk((-526,1196)),
  walk((-526,1126)),beat('weed',2.4,sound='leaves'),pick('turnip_1'),
- walk(GARDEN,'turnip_1'),put('turnip_1',(-508,1187)),walk((-526,1174)),
+ walk((-526,1196),'turnip_1'),walk((-514,1196),'turnip_1'),put('turnip_1',(-508,1187)),walk((-526,1196)),walk((-526,1174)),
 ]
 # Existing tree row at y=-300, clear east/west aisle at y=-278.
 ORCHARD_WORK=[]
@@ -39,11 +39,12 @@ for i,x in enumerate((-170,-240,-100)):
  approach=[walk((-180,-250)),walk((-180,-282)),walk((x,-282))] if i==2 else [walk((x,-250)),walk((x,-282))]
  leave=[walk((-180,-282),'apple_'+str(i)),walk((-180,-250),'apple_'+str(i))] if i==2 else [walk((x,-250),'apple_'+str(i))]
  ORCHARD_WORK += approach+[pick('apple_'+str(i),'reach'),
-                  beat('admire',2.5 if i==2 else 1.6,sound='leaves')]+leave+[walk(ORCHARD,'apple_'+str(i)),
+                  beat('admire',2.5 if i==2 else 1.6,sound='leaves'),beat('carry',1.,lower=True)]+leave+[walk(ORCHARD,'apple_'+str(i)),
+                  walk(((-153+i*4 if i!=1 else -127)-6,-247),'apple_'+str(i)),
                   put('apple_'+str(i),(-153+i*4,-258) if i!=1 else (-127,-258))]
 ORCHARD_WORK += [walk((-96,-250)),walk((-96,-263)),beat('rest',5)]
 GARDEN_SCENE=[walk((-526,1174)),pick('plant'),walk((-552,1174),'plant'),walk((-552,1144),'plant'),
-              put('plant',(-546,1141)),beat('weed',2.2,sound='leaves'),beat('idle',3)]
+              put('plant',(-546,1141)),beat('weed',2.2,sound='leaves'),walk((-552,1164)),beat('idle',3)]
 PROGRAMS={'gardener':GARDEN_WORK,'picker':ORCHARD_WORK}
 STARTS={'gardener':GARDEN,'picker':ORCHARD}
 INITIAL={'can':(-526,1187),'plant':(-516,1171),
@@ -190,13 +191,14 @@ class GardenOrchard:
    elif a.pose=='reach':hand=a.position+(2,-22)
    elif a.pose=='fill':
     t=s['elapsed']/action['duration'];hand=a.position+pygame.Vector2(HAND).lerp((-16,-15),math.sin(math.pi*t))
+   if action and action.get('lower'):hand=a.position+pygame.Vector2(0,-18).lerp(HAND,min(1,s['elapsed']/action['duration']))
    for key,p in positions.items():
     if isinstance(p,str):p=hand.copy()
     if action and action.get('item')==key:
      t=min(1,s['elapsed']/action['duration'])
      if action.get('kind')=='pickup':p=p.lerp(hand,t)
      elif action.get('kind')=='put':p=hand.lerp(pygame.Vector2(action['point']),t)
-    result[key]=(p, a.position.y+6 if isinstance(positions[key],str) or action and action.get('item')==key else p.y)
+    result[key]=(p, a.position.y+6 if isinstance(positions[key],str) or action and action.get('item')==key else p.y+(8 if key.startswith(('apple','turnip')) else 0))
   return result
 
  def props(self):
