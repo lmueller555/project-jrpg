@@ -23,14 +23,17 @@ HANDOFF = pygame.Rect(-2387, 600, 40, 22)
 
 
 def empty_state():
-    return {'sorted': 0, 'tea_beat': 0, 'greeted': []}
+    return {'sorted': 0, 'tea_beat': 0, 'request_read': False, 'greeted': []}
 
 
 def valid_state(data):
-    return (isinstance(data, dict) and set(data) == set(empty_state())
+    return (isinstance(data, dict) and {'sorted','tea_beat','greeted'} <= set(data) <= set(empty_state())
             and type(data['sorted']) is int and 0 <= data['sorted'] <= 3
             and type(data['tea_beat']) is int and 0 <= data['tea_beat'] <= 5
             and (not data['tea_beat'] or data['sorted'] == 3)
+            and type(data.get('request_read', False)) is bool
+            and (not data.get('request_read', False) or data['tea_beat'] >= 1)
+            and ('request_read' not in data or data['tea_beat'] < 2 or data['request_read'])
             and isinstance(data['greeted'], list)
             and all(isinstance(x, str) and x in ('mason', 'tender') for x in data['greeted'])
             and len(data['greeted']) == len(set(data['greeted'])))
@@ -73,13 +76,16 @@ class BridgeCrew:
     def restore(self, data=None):
         self.state = {**empty_state(), **(data or {})}
         self.state['greeted'] = list(self.state['greeted'])
+        if data and 'request_read' not in data:self.state['request_read'] = data['tea_beat'] >= 2
         self.mason.position.update(SOURCE); self.tender.position.update(KETTLE)
         for actor in self.actors:
             actor.clock = 0; actor.pose = 'idle'; actor.facing = 'front'; actor.moving = False
         self.timer = 0; self.route = 0; self.work_timer = 0
         beat = self.state['tea_beat']
         self.stage = 'inspect' if self.state['sorted'] < 3 else 'ready'
-        if beat == 1:self.stage = 'tea_pickup'
+        if beat == 1:
+            self.stage = 'wobble' if self.state['request_read'] else 'tea_pickup'
+            if self.state['request_read']:self.tender.position.update(HELP)
         elif beat in (2,3,4):
             self.tender.position.update(HELP)
             self.stage = {2:'reach',3:'exchange',4:'sit_walk'}[beat]
@@ -212,8 +218,11 @@ class BridgeCrew:
                 and not HANDOFF.colliderect(self.world.probe_rect(game.player.position))):
             self._commit(game,tea_beat=1);self._stage('tea_home');return True
         if self.stage=='request':
+            def request_done():
+                self._commit(game,request_read=True)
+                self._stage('wobble')
             return self._script(game,[{'speaker':'bridge_tender','text':'Tea. You can spare a moment.'},
-                {'speaker':'bridge_mason','text':'Leave it on that stone. Just this edge to check.'}],lambda:self._stage('wobble'))
+                {'speaker':'bridge_mason','text':'Leave it on that stone. Just this edge to check.'}],request_done)
         if self.stage=='exchange':
             def done():self._commit(game,tea_beat=4);self._stage('sit_walk')
             return self._script(game,[{'speaker':'bridge_mason','text':'You moved it.'},

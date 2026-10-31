@@ -262,7 +262,9 @@ tool. The cup is handed back and carried to the kettle. Subsequent interactions
 use quiet work greetings. This creates no quest or reward.
 
 The optional `overworld.bridge_crew` record stores `sorted` (0–3), `tea_beat`
-(0–5), and greeted roles. Completed sorting, cup placement, cup handoff, read
+(0–5), `request_read`, and greeted roles. The first dialogue commits its read
+fact immediately; Continue during the wobble resumes the physical action
+without replaying that dialogue. Older crew records remain valid. Completed sorting, cup placement, cup handoff, read
 exchange and completed break are checkpointed. Continue restores an interrupted
 carry to its last safe station; read final dialogue never repeats. A break
 interrupted after the exchange resumes its physical payoff. Existing saves

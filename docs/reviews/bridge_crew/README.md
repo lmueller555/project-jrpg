@@ -16,8 +16,8 @@ actors, to retain the existing regional scale.
 - [Blocked route and Continue](blocked_and_continue.mp4): worker yields to the
   player's actual collision probe, recovers after movement, then resumes after
   Continue with one committed stone kept in its stack.
-- [Tea interruption / Continue](tea_continue.mp4): reload during the cup handoff
-  and again during sitting. The completed exchange stays read; the physical
+- [Tea interruption / Continue](tea_continue.mp4): reload immediately after the first dialogue, during the cup handoff
+  and again during sitting. Both completed exchanges stay read; the physical
   break resumes and the cup returns to its kettle.
 
 The capture fixture instantiates the real game with temporary saves, mutes
@@ -39,3 +39,14 @@ The tea visit uses E to begin and again at each dialogue boundary. This keeps
 the physical vignette optional and permits walking away without automatically
 starting dialogue. Saves retain completed physical beats rather than every
 animation frame; an unfinished movement restarts from its last safe station.
+
+
+## Prop refinement
+
+The bench, approach barrier and masonry now reuse the region's existing
+textured assets. The kettle and cup reuse sanctuary art; trays and signs use
+workshop timber grain with shaded edges. Positions, image dimensions,
+collision rectangles and staging are unchanged. Source hashes/crop recipes
+are in `assets/source/characters/bridge_workers/props_export.json`.
+The full-scene 20s and 48s reviews are retained at native 480×320 and display
+960×640 resolution for comparison with the original visual-review feedback.

@@ -123,7 +123,7 @@ class BridgeCrewTests(unittest.TestCase):
         self.dialogue()
 
     def test_schema_rejects_corrupt_payload(self):
-        for key,value in [('sorted',True),('sorted',4),('tea_beat',-1),('tea_beat',True),('tea_beat',1),('greeted',[{}]),('greeted',['mason','mason'])]:
+        for key,value in [('sorted',True),('sorted',4),('tea_beat',-1),('tea_beat',True),('tea_beat',1),('request_read',True),('request_read',1),('greeted',[{}]),('greeted',['mason','mason'])]:
             record=self.c.to_dict();record[key]=value;self.assertFalse(valid_state(record))
 
     def test_chunk_eviction_does_not_own_crew(self):
@@ -148,3 +148,25 @@ class BridgeCrewTests(unittest.TestCase):
         for beat in range(1,6):
             self.c.restore({'sorted':3,'tea_beat':beat,'greeted':[]})
             self.assertTrue(self.g.world.can_stand((-2352,672)))
+
+    def test_continue_immediately_after_first_dialogue_skips_read_lines(self):
+        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        self.g.player.position.update(-2376,642);self.ready()
+        self.g.overworld_travel.interact();self.until(lambda:self.c.stage=='request')
+        self.dialogue()
+        self.assertEqual(self.c.stage,'wobble')
+        self.assertEqual(self.c.state['tea_beat'],1)
+        self.assertTrue(self.c.state['request_read'])
+        self.assertTrue(self.g.save_progress())
+        other=self.make_game(True);self.assertTrue(other.begin_journey(True))
+        self.g=other;self.c=other.world.bridge_crew
+        other.opening_fade=other.transfer_cooldown=0
+        self.assertEqual(self.c.stage,'wobble')
+        self.assertFalse(other.social.active)
+        self.until(lambda:self.c.stage=='exchange')
+        self.assertFalse(other.social.active)
+        self.dialogue()
+        self.assertEqual(self.c.state['tea_beat'],4)
+        again=self.make_game(True);self.assertTrue(again.begin_journey(True))
+        self.assertEqual(again.world.bridge_crew.stage,'sit_walk')
+        self.assertFalse(again.social.active)

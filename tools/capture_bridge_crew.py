@@ -3,7 +3,7 @@ import os
 os.environ.setdefault('SDL_VIDEODRIVER','dummy')
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 from pathlib import Path
-import sys, tempfile, json
+import sys, tempfile, json, subprocess
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 import pygame
 from PIL import Image
@@ -30,6 +30,13 @@ def setup(root):
 
 def still(g,name):
     g.draw();Image.frombytes('RGB',g.window.get_size(),pygame.image.tobytes(g.window,'RGB')).save(OUT/(name+'.png'))
+
+def review_frames():
+    for second in (20,48):
+        display=OUT/f'refined_{second}s_display.png'
+        subprocess.run(['ffmpeg','-y','-loglevel','error','-ss',str(second),'-i',str(OUT/'work_and_tea.mp4'),'-frames:v','1',str(display)],check=True)
+        Image.open(display).resize((480,320),Image.Resampling.NEAREST).save(OUT/f'refined_{second}s_native.png')
+
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True);report={}
@@ -65,6 +72,12 @@ def main():
         assert g.overworld_travel.interact()
         r.until(lambda:c.stage=='request');assert g.overworld_travel.interact()
         while g.social.active:r.run(2.5);g.social.advance()
+        assert c.stage=='wobble' and c.state['request_read']
+        assert g.save_progress();still(g,'first_dialogue_before_continue')
+        g.on_title=True;assert g.begin_journey(True);g.opening_fade=g.transfer_cooldown=0
+        g.camera.focus((-2376,616),duration=0);g.location_seconds=0;c=g.world.bridge_crew
+        assert c.stage=='wobble' and not g.social.active
+        r.run(.4);still(g,'first_dialogue_after_continue')
         r.until(lambda:c.stage=='reach');r.run(.8);assert g.save_progress();still(g,'cup_before_continue')
         g.on_title=True;assert g.begin_journey(True);g.opening_fade=g.transfer_cooldown=0
         g.camera.focus((-2376,616),duration=0);g.location_seconds=0;c=g.world.bridge_crew
@@ -77,6 +90,7 @@ def main():
         r.until(lambda:c.state['tea_beat']==5);r.run(2);report['tea_continue']=r.close()
         report['cache_stats']=g.world.cache_stats
     (OUT/'capture_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    review_frames()
     pygame.quit()
 
 if __name__=='__main__':main()
