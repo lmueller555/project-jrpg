@@ -1,0 +1,95 @@
+{
+  "status": "review",
+  "method": "existing art crops, nearest-neighbour registration and material-matched edge finishing",
+  "sources": {
+    "bench": {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/bench.png",
+      "sha256": "e86e9f13b2bd7f65828efd0e43a4e366c0d76bffd09f6ff5d5d4ef2adf540447"
+    },
+    "barrier": {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/fence_h.png",
+      "sha256": "f9b1f1b013461f5dca150e65779be0a5e518e9ff3d700da439fbf1401f39f1f3"
+    },
+    "stone": {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/bridge_rubble.png",
+      "sha256": "8becc424348a61789e31dcebb2fdaf13059a503c3636bdb4bf3557517761477d"
+    },
+    "wood": {
+      "path": "assets/terrain/eldenmere/workshop/props/workbench.png",
+      "sha256": "bf0273a6cbda665f8d768dc86c39d75546d0ed413bbe09db3b6382d7ad09f445"
+    },
+    "kettle": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/kettle.png",
+      "sha256": "6a757f48cad69955ed47d1ef7dcb8ad9dd4d670fac7e213c63a5a96a4a1915c1"
+    },
+    "cup": {
+      "path": "assets/story/sanctuary_opening/poses/cup.png",
+      "sha256": "b14a92909fe1a74583c8dd28c8e12e73347b3197a486a5c212c1abe37f99da25"
+    }
+  },
+  "crops": {
+    "bench": [
+      3,
+      0,
+      33,
+      18
+    ],
+    "barrier": [
+      2,
+      0,
+      46,
+      18
+    ],
+    "stone": [
+      13,
+      0,
+      20,
+      10
+    ],
+    "wood": [
+      10,
+      2,
+      22,
+      14
+    ]
+  },
+  "dimensions": {
+    "bench": [
+      26,
+      12
+    ],
+    "barrier": [
+      38,
+      19
+    ],
+    "kettle": [
+      12,
+      12
+    ],
+    "cup": [
+      6,
+      6
+    ],
+    "stone": [
+      12,
+      9
+    ],
+    "tray": [
+      24,
+      8
+    ],
+    "keep_mark": [
+      13,
+      10
+    ],
+    "reject_mark": [
+      13,
+      10
+    ],
+    "tool": [
+      13,
+      5
+    ]
+  },
+  "preserved": "runtime positions, anchors, collision, actor art and surrounding scenery"
+}

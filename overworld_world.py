@@ -210,6 +210,9 @@ class OverworldWorld:
         from grain_farm import GrainFarm
         self.grain_farm = GrainFarm(self)
         self.npcs.extend(self.grain_farm.actors)
+        from bridge_crew import BridgeCrew
+        self.bridge_crew = BridgeCrew(self)
+        self.npcs.extend(self.bridge_crew.actors)
 
     @staticmethod
     def _tile_point(point):return tuple(value*TILE_SIZE for value in point)
@@ -438,6 +441,8 @@ class OverworldWorld:
         for cx in range(rect.left//CHUNK_PIXELS, (rect.right-1)//CHUNK_PIXELS+1):
             for cy in range(rect.top//CHUNK_PIXELS, (rect.bottom-1)//CHUNK_PIXELS+1):
                 if self._collision_chunk(cx, cy).overlap(self._probes[size], (rect.x-cx*CHUNK_PIXELS, rect.y-cy*CHUNK_PIXELS)) is not None:return False
+        crew = getattr(self, 'bridge_crew', None)
+        if crew and any(block.colliderect(rect) for block in crew.ground_blockers(ignore_npc)):return False
         farm = getattr(self, 'grain_farm', None)
         if farm and any(block.colliderect(rect) for block in farm.ground_blockers(ignore_npc)):return False
         return (not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
@@ -588,6 +593,7 @@ class OverworldWorld:
             if surface is None:continue
             x,y = position;rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
             if rect.colliderect(viewport):ordered.append((prop['position'][1]+prop.get('sort_offset',0),1,surface,rect.topleft))
+        ordered.extend(self.bridge_crew.props())
         ordered.extend(self.grain_farm.props())
         ordered.extend(self.grain_farm.cover_props())
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:

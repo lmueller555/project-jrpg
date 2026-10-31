@@ -252,3 +252,47 @@ python -m unittest discover -s tests -p 'test_grain_farm.py' -v
 python tools/capture_grain_farm.py
 python tools/capture_region_npcs.py
 ```
+
+## Near-bank bridge crew
+
+`bridge_crew.py` owns two regional workers north of the ruined western approach:
+a moss-shirted mason and a slate-shirted surveyor. Three loose stones are
+inspected and moved into a two-piece reusable stack and a separate rejected
+piece. Afterwards the mason brushes down, checks the barrier and looks toward
+the damage; the surveyor measures along the work area. The batch never grows.
+All stations are on existing connected dry ground, outside the main road.
+The broken bridge, water, checkpoints and main quest facts are unchanged.
+
+Once sorting finishes, E near the resting mason starts an optional tea visit.
+The surveyor returns to the visible kettle, picks up the cup and walks around
+the steady tray. E continues the two short exchanges, allowing the player to
+leave rather than imposing modal dialogue. The unstable stone makes the
+surveyor move the cup to the tray, then guide it into the mason's reaching
+hand. The mason sits with the drink while the surveyor briefly takes over the
+tool. The cup is handed back and carried to the kettle. Subsequent interactions
+use quiet work greetings. This creates no quest or reward.
+
+The optional `overworld.bridge_crew` record stores `sorted` (0–3), `tea_beat`
+(0–5), `request_read`, and greeted roles. The first dialogue commits its read
+fact immediately; Continue during the wobble resumes the physical action
+without replaying that dialogue. Older crew records remain valid. Completed sorting, cup placement, cup handoff, read
+exchange and completed break are checkpointed. Continue restores an interrupted
+carry to its last safe station; read final dialogue never repeats. A break
+interrupted after the exchange resumes its physical payoff. Existing saves
+without the block remain valid. Leaving retains the live controller, while
+map, journal, title, pause and town transitions suspend it. Chunk eviction
+never owns actors or props. The controller sleeps beyond 260 pixels.
+
+The cup has one rendered location at every stage. Actor probes and a reserved
+handoff area prevent overlap; the sequence begins only when that reservation
+is clear. Workers wait for blocked routes rather than teleporting or moving
+the player. Source art and procedural export provenance are recorded in
+`assets/source/characters/bridge_workers/README.md`; new assets remain review.
+
+[Actual-game videos and fixture details](reviews/bridge_crew/README.md).
+
+```sh
+python tools/build_bridge_workers.py
+python -m unittest discover -s tests -p 'test_bridge_crew.py' -v
+python tools/capture_bridge_crew.py
+```
