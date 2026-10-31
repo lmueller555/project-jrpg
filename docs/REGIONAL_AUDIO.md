@@ -65,3 +65,10 @@ Run `python -m unittest discover -s tests -v`. Focused coverage lives in
 `test_regional_audio.py` and `test_regional_audio_events.py`; the existing farm,
 bridge, world, save, arrival and audio-setting tests remain regression coverage.
 See [audible review](reviews/regional_audio/README.md) for capture details.
+
+Garden/orchard work adds three finite synthesized materials: a gentle water
+pour, leaf handling, and soft fruit/wicker contact. Their producers live in
+`garden_orchard.py`, share the `garden_work` incidental family, and emit only at
+physical beats. Contact time persists with the worker action, preventing a
+Continue from repeating an already-heard contact. Existing attenuation, hard
+cutoff, pause/exit handling and four-voice budgeting are unchanged.

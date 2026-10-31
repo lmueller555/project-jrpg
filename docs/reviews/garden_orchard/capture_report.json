@@ -1,0 +1,20 @@
+{
+  "method": "Record actual Game.update/draw, 30 Hz simulation and normal 15 fps playback.\n\nFixtures seed completed predecessor quests and place only Caelan/camera near a\nsite. Worker steps, props, contact events, dialogue and Continue use production\ncode. A second fixture places Caelan in a worker lane to demonstrate yielding.\nAudio is the production accepted start/gain/stop stream rendered with identical\nsynthesis PCM (see capture_regional_audio); no editorial effects or music.\n",
+  "clips": {
+    "garden_work_and_care": {
+      "seconds": 79.46666666666667,
+      "peak_dbfs": -21.50878548080827,
+      "events": 28
+    },
+    "orchard_harvest_and_rest": {
+      "seconds": 75.6,
+      "peak_dbfs": -21.050679861014853,
+      "events": 20
+    },
+    "blocked_and_continue": {
+      "seconds": 75.23333333333333,
+      "peak_dbfs": -21.445348565283414,
+      "events": 32
+    }
+  }
+}

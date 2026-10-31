@@ -173,6 +173,9 @@ class OverworldWorld:
         from bridge_crew import BridgeCrew
         self.bridge_crew = BridgeCrew(self)
         self.npcs.extend(self.bridge_crew.actors)
+        from garden_orchard import GardenOrchard
+        self.garden_orchard = GardenOrchard(self)
+        self.npcs.extend(self.garden_orchard.actors)
 
     @staticmethod
     def _tile_point(point):return tuple(value*TILE_SIZE for value in point)
@@ -405,6 +408,8 @@ class OverworldWorld:
         if crew and any(block.colliderect(rect) for block in crew.ground_blockers(ignore_npc)):return False
         farm = getattr(self, 'grain_farm', None)
         if farm and any(block.colliderect(rect) for block in farm.ground_blockers(ignore_npc)):return False
+        garden = getattr(self, 'garden_orchard', None)
+        if garden and any(block.colliderect(rect) for block in garden.ground_blockers(ignore_npc)):return False
         return (not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
                 and not any(block.colliderect(rect) for block in getattr(self, 'task_blockers', lambda: ())())
                 and (player_blocker is None or not player_blocker.colliderect(rect)))
@@ -554,6 +559,7 @@ class OverworldWorld:
             x,y = position;rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
             if rect.colliderect(viewport):ordered.append((prop['position'][1]+prop.get('sort_offset',0),1,surface,rect.topleft))
         ordered.extend(self.bridge_crew.props())
+        ordered.extend(self.garden_orchard.props())
         ordered.extend(self.grain_farm.props())
         ordered.extend(self.grain_farm.cover_props())
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:

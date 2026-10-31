@@ -1,0 +1,213 @@
+{
+  "method": "Game.update/draw plus offline PCM from the production accepted voice stream.\n\nThe dummy device cannot be recorded. Fake channel leases preserve the mixer\nAPI; RegionalAudio owns cue expiry using game seconds. Its observer feeds the\nsame generated PCM, gains and stop events into a 48kHz mono offline mixer.\nNo unrelated soundtrack, normalization or compression is added.\n",
+  "seconds": 75.6,
+  "sample_rate": 48000,
+  "peak": 0.08860658668934379,
+  "peak_dbfs": -21.050679861014853,
+  "rms_dbfs": -39.5908632572913,
+  "markers": [
+    {
+      "time": 0.0,
+      "label": "Village orchard: three fruit, one bruised, finite sorting"
+    },
+    {
+      "time": 64.6,
+      "label": "Picker greeting after settling in the existing rest nook"
+    }
+  ],
+  "snapshots": [
+    {
+      "time": 0.0,
+      "label": "Village orchard: three fruit, one bruised, finite sorting",
+      "listener": [
+        -115.0,
+        -238.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 64.6,
+      "label": "Picker greeting after settling in the existing rest nook",
+      "listener": [
+        -115.0,
+        -238.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.45,
+          "source": [
+            -114.99999999999999,
+            -238.0
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.45,
+      "ambient": true
+    },
+    {
+      "time": 3.3666666666666667,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.4163539017346529,
+      "ambient": false
+    },
+    {
+      "time": 3.8666666666666667,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 5.166666666666667,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.4163539017346529,
+      "ambient": false
+    },
+    {
+      "time": 5.666666666666667,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 12.133333333333333,
+      "action": "start",
+      "key": "garden_picker_basket",
+      "sound": "basket",
+      "gain": 0.4892485432883873,
+      "ambient": false
+    },
+    {
+      "time": 12.466666666666667,
+      "action": "stop",
+      "key": "garden_picker_basket"
+    },
+    {
+      "time": 18.066666666666666,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.12137082399324017,
+      "ambient": false
+    },
+    {
+      "time": 18.566666666666666,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 19.866666666666667,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.12137082399324017,
+      "ambient": false
+    },
+    {
+      "time": 20.366666666666667,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 29.9,
+      "action": "start",
+      "key": "garden_picker_basket",
+      "sound": "basket",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 30.233333333333334,
+      "action": "stop",
+      "key": "garden_picker_basket"
+    },
+    {
+      "time": 37.96666666666667,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.48656642945032064,
+      "ambient": false
+    },
+    {
+      "time": 38.46666666666667,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 39.766666666666666,
+      "action": "start",
+      "key": "garden_picker_leaves",
+      "sound": "leaves",
+      "gain": 0.48656642945032064,
+      "ambient": false
+    },
+    {
+      "time": 40.266666666666666,
+      "action": "stop",
+      "key": "garden_picker_leaves"
+    },
+    {
+      "time": 51.4,
+      "action": "start",
+      "key": "garden_picker_basket",
+      "sound": "basket",
+      "gain": 0.49825437132127487,
+      "ambient": false
+    },
+    {
+      "time": 51.733333333333334,
+      "action": "stop",
+      "key": "garden_picker_basket"
+    },
+    {
+      "time": 75.6,
+      "action": "stop",
+      "key": "wind"
+    }
+  ],
+  "source_sha256": {
+    "garden_orchard.py": "86fa295d3deea2ea97de45fd4753f8940682aa26931bf1c53090f909a7750ad1",
+    "regional_audio.py": "0d84b45ac478f69d773187c51b477238f3f8d5aac6cf6675e9e4dc2fb9da631c",
+    "assets/characters/garden_workers/art.json": "4467480ae3dfa461f08199811109fa5b09779e1fe1e06801e71fda5dee29b062"
+  },
+  "state": {
+    "gardener": {
+      "phase": "work",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -526.0,
+        1190.0
+      ],
+      "read": false,
+      "greeted": false
+    },
+    "picker": {
+      "phase": "rest",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -96.0,
+        -263.0
+      ],
+      "read": false,
+      "greeted": true
+    }
+  },
+  "cache_stats": {
+    "render_bytes": 11796480,
+    "render_chunks": 20,
+    "collision_chunks": 1,
+    "metadata_chunks": 33
+  }
+}

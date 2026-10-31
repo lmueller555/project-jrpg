@@ -483,7 +483,7 @@ class Game:
                            'regent_quest':self.regent_quest.to_dict(),
                            'regent_arrival':self.regent_arrival.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
-                           'overworld':self.overworld_travel.to_dict(),
+                           'overworld':self.overworld_travel.progress_dict(),
                            'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
@@ -817,6 +817,7 @@ class Game:
             self._overworld_world.discovered=self.overworld_travel.discovered
             self._overworld_world.grain_farm.restore(self.overworld_travel.farm_state)
             self._overworld_world.bridge_crew.restore(self.overworld_travel.bridge_state)
+            self._overworld_world.garden_orchard.restore(self.overworld_travel.garden_state)
         self._overworld_world.set_progress(self.social.flags)
         return self._overworld_world
 

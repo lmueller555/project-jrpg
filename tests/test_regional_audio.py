@@ -95,4 +95,4 @@ class RegionalAudioTests(TestCase):
         for name in DURATIONS:
             pcm=samples(name,8000,1);self.assertLess(max(abs(x) for x in pcm),20000)
             self.assertGreater(max(abs(x) for x in pcm),500);fingerprints.add(pcm.tobytes())
-        self.assertEqual(len(fingerprints),7)
+        self.assertEqual(len(fingerprints),len(DURATIONS))
