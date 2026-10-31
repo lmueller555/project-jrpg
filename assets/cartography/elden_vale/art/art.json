@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "tiles": {
+    "land": {
+      "image": "assets/cartography/elden_vale/art/tiles/land.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "water": {
+      "image": "assets/cartography/elden_vale/art/tiles/water.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "grain": {
+      "image": "assets/cartography/elden_vale/art/tiles/grain.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "vegetables": {
+      "image": "assets/cartography/elden_vale/art/tiles/vegetables.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "fallow": {
+      "image": "assets/cartography/elden_vale/art/tiles/fallow.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "pasture": {
+      "image": "assets/cartography/elden_vale/art/tiles/pasture.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "orchard": {
+      "image": "assets/cartography/elden_vale/art/tiles/orchard.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "forest_floor": {
+      "image": "assets/cartography/elden_vale/art/tiles/forest_floor.png",
+      "native_size": [
+        128,
+        128
+      ]
+    },
+    "rock_base": {
+      "image": "assets/cartography/elden_vale/art/tiles/rock_base.png",
+      "native_size": [
+        128,
+        128
+      ]
+    }
+  },
+  "props": {
+    "forest_broadleaf_a": {
+      "image": "assets/cartography/elden_vale/art/props/forest_broadleaf_a.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_broadleaf_b": {
+      "image": "assets/cartography/elden_vale/art/props/forest_broadleaf_b.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_conifer_a": {
+      "image": "assets/cartography/elden_vale/art/props/forest_conifer_a.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_conifer_b": {
+      "image": "assets/cartography/elden_vale/art/props/forest_conifer_b.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "foothills_a": {
+      "image": "assets/cartography/elden_vale/art/props/foothills_a.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "foothills_b": {
+      "image": "assets/cartography/elden_vale/art/props/foothills_b.png",
+      "native_size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "town": {
+      "image": "assets/cartography/elden_vale/art/props/town.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "farm": {
+      "image": "assets/cartography/elden_vale/art/props/farm.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "bridge_broken": {
+      "image": "assets/cartography/elden_vale/art/props/bridge_broken.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "bridge_repaired": {
+      "image": "assets/cartography/elden_vale/art/props/bridge_repaired.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "gate_closed": {
+      "image": "assets/cartography/elden_vale/art/props/gate_closed.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "gate_open": {
+      "image": "assets/cartography/elden_vale/art/props/gate_open.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "overlook": {
+      "image": "assets/cartography/elden_vale/art/props/overlook.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "millrace": {
+      "image": "assets/cartography/elden_vale/art/props/millrace.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "relief": {
+      "image": "assets/cartography/elden_vale/art/props/relief.png",
+      "native_size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    }
+  }
+}

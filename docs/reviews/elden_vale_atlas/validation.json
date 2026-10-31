@@ -1,0 +1,73 @@
+{
+  "verified_at_utc": "2026-10-31T20:18:21.543649+00:00",
+  "base_commit": "917e02a25fb10fb79ba0454f10480b7684e3d03e",
+  "full_suite": {
+    "passed": true,
+    "tests": 1257,
+    "seconds": 613.451,
+    "log_sha256": "b2a9b60d2cc400dcad4ce6bd290b08bf837d723c3e76da8537ba4520c1ed905c",
+    "command": "python -m unittest discover -s tests",
+    "note": "Full discovery completed successfully. Two final atlas UI regressions were added during this run; the final focused run below covers the final UI and those cases."
+  },
+  "final_map_suite": {
+    "passed": true,
+    "tests": 35,
+    "seconds": 4.066,
+    "log_sha256": "ad36d27fafebe7f2d0e0b437155ea5db7688cc256816e27bddad304544f5a41e",
+    "command": "PYTHONPATH=tests python -m unittest test_overworld_map test_overworld_minimap test_regional_cartography"
+  },
+  "exporters": {
+    "tools/build_cartography_art.py --check": {
+      "passed": true,
+      "images": 24
+    },
+    "tools/build_elden_vale_cartography.py --check": {
+      "passed": true,
+      "atlas_tiles": 43
+    }
+  },
+  "source_integrity": {
+    "capture_input_files_verified": 81,
+    "protected_original_pngs_verified": 10433,
+    "region_source": "assets/maps/overworld/elden_vale/region.json",
+    "region_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "region_changed": false
+  },
+  "visual_review": {
+    "independent_review_passed": true,
+    "layout_states_checked": 600,
+    "capture_count": 22,
+    "capture_report_sha256": "df34afffedba0086daf76a8a16de07b13a162f206987604a080054736fde5e5b",
+    "native_edge_card": {
+      "selected_marker_clear": true,
+      "legacy_wheel_scrolls_card": true,
+      "geography_unchanged_during_card_scroll": true
+    }
+  },
+  "component_rendering": {
+    "atlas": {
+      "gameplay_terrain_requests": 0
+    },
+    "minimap": {
+      "gameplay_terrain_requests": 0
+    },
+    "peak_cache": {
+      "tile_bytes": 24641536,
+      "tile_count": 24,
+      "icon_bytes": 18968,
+      "icon_count": 13,
+      "tile_loads": 25
+    },
+    "cache_budgets": {
+      "tile_bytes": 25165824,
+      "icon_bytes": 2097152
+    }
+  },
+  "exploration_hud": {
+    "menu_button_removed": true,
+    "escape_pause_preserved": true,
+    "minimap_walk_update_frames": 180,
+    "minimap_walk_displacement_pixels": 257.05
+  },
+  "unresolved_blockers": []
+}

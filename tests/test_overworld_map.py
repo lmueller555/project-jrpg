@@ -69,10 +69,11 @@ class RegionalMapTests(unittest.TestCase):
         x, y, width, height = self.data['bounds_tiles']
         northwest = self.map.world_to_map((x*24, y*24))
         southeast = self.map.world_to_map(((x+width)*24, (y+height)*24))
-        self.assertGreaterEqual(northwest[0], self.map.map_rect.left)
-        self.assertGreaterEqual(northwest[1], self.map.map_rect.top)
-        self.assertLessEqual(southeast[0], self.map.map_rect.right)
-        self.assertLessEqual(southeast[1], self.map.map_rect.bottom)
+        # Fit now frames the inhabited vale, not all distant authored context.
+        # Signed world coordinates retain their exact aspect and inverse map.
+        fx,fy,fw,fh = self.map.focus_bounds
+        self.assertTrue(self.map.map_rect.collidepoint(self.map.tile_to_map((fx,fy))))
+        self.assertTrue(self.map.map_rect.collidepoint(self.map.tile_to_map((fx+fw,fy+fh))))
         self.assertAlmostEqual((southeast[0]-northwest[0])/(southeast[1]-northwest[1]), width/height)
         for record in self.map.landmarks:
             with self.subTest(landmark=record['id']):
@@ -98,8 +99,29 @@ class RegionalMapTests(unittest.TestCase):
         self.map.zoom_at(point, 1000)
         self.assertEqual(self.map.zoom, self.map.MAX_ZOOM)
         self.map.zoom_at(point, -1000)
-        self.assertEqual(self.map.zoom, 1)
+        self.assertEqual(self.map.zoom, self.map.min_zoom)
         self.assertEqual(self.map.center, pygame.Vector2(0, 0))
+
+    def test_zoom_out_reaches_authored_context_while_fit_keeps_the_useful_vale(self):
+        self.map.fit()
+        self.assertEqual(self.map.zoom,1)
+        # At this aspect the context eventually clamps horizontally. A point
+        # on the horizontal centre keeps both coordinates free on the first
+        # zoom-out step and verifies the genuine pointer anchor.
+        point = (self.map.map_rect.centerx,self.map.map_rect.centery+16)
+        before = self.map.map_to_tile(point)
+        self.map.zoom_at(point,-1)
+        self.assertLess(self.map.zoom,1)
+        self.assertGreater(self.map.zoom,self.map.min_zoom)
+        self.assertLess(self.map.map_to_tile(point).distance_to(before),.001)
+        self.map.zoom_at(point,-100)
+        x,y,width,height = self.map.bounds
+        self.assertTrue(self.map.map_rect.collidepoint(self.map.tile_to_map((x,y))))
+        self.assertTrue(self.map.map_rect.collidepoint(self.map.tile_to_map((x+width,y+height))))
+        context_scale = self.map.scale
+        self.map.fit()
+        self.assertEqual(self.map.zoom,1)
+        self.assertGreater(self.map.scale,context_scale)
 
     def test_letterboxed_hover_select_close_and_repeat_controls(self):
         record = next(record for record in self.map.landmarks if record['kind'] == 'bridge')
@@ -153,6 +175,7 @@ class RegionalMapTests(unittest.TestCase):
         self.game.audio.text_scale = 1.5
         self.map.selected = next(i for i, record in enumerate(self.map.landmarks)
                                  if record['id'] == self.data['landmarks'][0]['id'])
+        self.map.select_landmark(self.data['landmarks'][0]['id'])
         self.map.selected_landmark['description'] = 'A long woodland description with a clear view. '*25
         for size in ((480, 320), (960, 640), (1280, 720)):
             with self.subTest(size=size):
@@ -163,11 +186,138 @@ class RegionalMapTests(unittest.TestCase):
                 self.map_ui.draw(canvas)
                 self.assertEqual(canvas.get_clip(), clip)
                 self.assertGreater(self.map.detail_max_scroll, 0)
+                self.assertTrue(self.map.map_rect.contains(self.map.detail_panel))
+                self.assertFalse(self.map.detail_panel.colliderect(
+                    self.map.marker_rects[self.map.selected_landmark['id']]))
                 self.event(pygame.KEYDOWN, key=pygame.K_END, repeat=False)
                 self.assertEqual(self.map.detail_scroll, self.map.detail_max_scroll)
                 self.map_ui.draw(canvas)
         self.assertEqual(json.dumps(self.data, sort_keys=True), before)
         self.game.quest_ui.draw_map_markers.assert_not_called()
+
+    def test_overview_prioritizes_geography_and_keeps_major_labels_visible(self):
+        canvas = pygame.Surface((960,640))
+        self.map_ui.draw(canvas)
+        self.assertFalse(self.map.details_visible)
+        self.assertGreater(self.map.map_rect.width*self.map.map_rect.height,480*320*.65)
+        major = {record['id'] for record in self.map.landmarks
+                 if record['kind'] in ('town','bridge','checkpoint')}
+        self.assertTrue(major <= self.map.label_rects.keys())
+        rectangles = [self.map.label_rects[key] for key in major]
+        for index,rect in enumerate(rectangles):
+            self.assertTrue(self.map.map_rect.contains(rect))
+            self.assertFalse(any(rect.colliderect(other) for other in rectangles[index+1:]))
+
+    def test_place_card_wheel_and_close_do_not_move_the_geography(self):
+        record = next(item for item in self.map.landmarks if item['kind']=='bridge')
+        self.map.select_landmark(record['id'])
+        record['description'] = 'Longer description. '*100
+        # The bridge uses its operational description; use an ordinary known
+        # landmark to exercise genuinely scrollable content.
+        ordinary = next(item for item in self.map.landmarks if item['kind']=='overlook')
+        ordinary['description'] = 'A wooded trail beside the valley. '*100
+        self.map.select_landmark(ordinary['id'])
+        self.map_ui.draw(pygame.Surface((960,640)))
+        zoom = self.map.zoom;center = self.map.center.copy()
+        point = self.screen_point(self.map.detail_rect.center)
+        self.event(pygame.MOUSEWHEEL,y=-2,precise_y=-2,pos=point)
+        self.assertGreater(self.map.detail_scroll,0)
+        self.assertEqual(self.map.zoom,zoom)
+        self.assertEqual(self.map.center,center)
+        self.event(pygame.MOUSEBUTTONDOWN,button=1,pos=self.screen_point(self.map.detail_close_rect.center))
+        self.assertFalse(self.map.details_visible)
+
+    def test_legacy_wheel_buttons_scroll_the_card_and_zoom_only_over_the_map(self):
+        ordinary = next(item for item in self.map.landmarks if item['kind']=='overlook')
+        ordinary['description'] = 'A quiet woodland trail. '*100
+        self.map.select_landmark(ordinary['id'])
+        self.map_ui.draw(pygame.Surface((960,640)))
+        zoom = self.map.zoom;center = self.map.center.copy()
+        point = self.screen_point(self.map.detail_rect.center)
+        self.event(pygame.MOUSEBUTTONDOWN,button=5,pos=point)
+        self.assertGreater(self.map.detail_scroll,0)
+        self.assertEqual(self.map.zoom,zoom)
+        self.assertEqual(self.map.center,center)
+        self.event(pygame.MOUSEBUTTONDOWN,button=4,pos=point)
+        self.assertEqual(self.map.detail_scroll,0)
+        map_point = self.screen_point((self.map.map_rect.left+20,self.map.map_rect.top+20))
+        self.assertFalse(self.map.detail_panel.collidepoint(self.map._point(
+            pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=5,pos=map_point))))
+        self.event(pygame.MOUSEBUTTONDOWN,button=5,pos=map_point)
+        self.assertLess(self.map.zoom,zoom)
+
+    def test_dragging_from_a_marker_does_not_open_its_card_and_label_click_selects(self):
+        self.map_ui.draw(pygame.Surface((960,640)))
+        town = next(item for item in self.map.landmarks if item['kind']=='town')
+        point = self.map.marker_rects[town['id']].center
+        self.map.zoom_at(point,2)
+        self.map_ui.draw(pygame.Surface((960,640)))
+        point = self.map.marker_rects[town['id']].center
+        self.event(pygame.MOUSEBUTTONDOWN,button=1,pos=self.screen_point(point))
+        self.event(pygame.MOUSEMOTION,pos=self.screen_point((point[0]+20,point[1]+10)))
+        self.event(pygame.MOUSEBUTTONUP,button=1,pos=self.screen_point((point[0]+20,point[1]+10)))
+        self.assertFalse(self.map.details_visible)
+        self.map.fit();self.map_ui.draw(pygame.Surface((960,640)))
+        bridge = next(item for item in self.map.landmarks if item['kind']=='bridge')
+        point = self.screen_point(self.map.label_rects[bridge['id']].center)
+        self.event(pygame.MOUSEBUTTONDOWN,button=1,pos=point)
+        self.event(pygame.MOUSEBUTTONUP,button=1,pos=point)
+        self.assertTrue(self.map.details_visible)
+        self.assertEqual(self.map.selected_landmark['id'],bridge['id'])
+
+    def test_directional_player_remains_distinct_on_a_selected_landmark(self):
+        town = next(item for item in self.map.landmarks if item['kind']=='town')
+        self.game.player.position.update(pygame.Vector2(town['tile_position'])*24)
+        self.map.select_landmark(town['id'])
+        pictures = []
+        for facing in ('back','right','front','left'):
+            self.game.player.facing = facing
+            canvas = pygame.Surface((960,640));self.map_ui.draw(canvas)
+            painter = self.game.ui.painter(canvas)
+            point = painter.point(self.map.world_to_map(self.game.player.position))
+            patch_rect = pygame.Rect(point[0]-14,point[1]-14,28,28)
+            pictures.append(pygame.image.tobytes(canvas.subsurface(patch_rect),'RGB'))
+            self.assertIn(canvas.get_at(point)[:3],((217,170,70),(255,245,213),(52,67,55)))
+            self.assertFalse(self.map.detail_panel.collidepoint(self.map.world_to_map(self.game.player.position)))
+        self.assertEqual(len(set(pictures)),4)
+
+    def test_priority_labels_survive_large_text_and_each_selected_place_card(self):
+        major = {record['id'] for record in self.map.landmarks
+                 if record['kind'] in ('town','bridge','checkpoint')}
+        for size in ((480,320),(960,640),(1280,720)):
+            for text_scale in (1,1.5):
+                self.game.window = pygame.display.set_mode(size)
+                self.game.audio.text_scale = text_scale
+                for identifier in (None,*sorted(major)):
+                    self.map.fit()
+                    if identifier:self.map.select_landmark(identifier)
+                    self.map_ui.draw(pygame.Surface(size))
+                    for zoom in (1,self.map.min_zoom,(1+self.map.min_zoom)/2):
+                        with self.subTest(size=size,text_scale=text_scale,selected=identifier,zoom=zoom):
+                            self.map.zoom = zoom
+                            self.map._clamp()
+                            self.map_ui.draw(pygame.Surface(size))
+                            self.assertTrue(major <= self.map.label_rects.keys())
+                            rectangles = [self.map.label_rects[key] for key in major]
+                            for index,rect in enumerate(rectangles):
+                                self.assertTrue(self.map.map_rect.contains(rect))
+                                self.assertFalse(any(rect.colliderect(other) for other in rectangles[index+1:]))
+                                if identifier:self.assertFalse(rect.colliderect(self.map.detail_panel))
+
+    def test_card_shortens_to_keep_selected_bridge_and_player_visible_when_panned(self):
+        self.game.window = pygame.display.set_mode((480,320))
+        self.game.audio.text_scale = 1.5
+        self.map.zoom = 1.25
+        self.map.center.update(-60,0)
+        self.map.select_landmark('western_stone_bridge')
+        self.map_ui.draw(pygame.Surface((480,320)))
+        selected = self.map.marker_rects['western_stone_bridge']
+        self.assertFalse(self.map.detail_panel.colliderect(selected))
+        self.assertFalse(self.map.detail_panel.collidepoint(self.map.world_to_map(self.game.player.position)))
+        self.assertLess(self.map.detail_panel.height,148)
+        self.assertGreater(self.map.detail_max_scroll,0)
+        self.event(pygame.KEYDOWN,key=pygame.K_END,repeat=False)
+        self.assertEqual(self.map.detail_scroll,self.map.detail_max_scroll)
 
     def test_map_allocations_depend_on_display_instead_of_region_extent(self):
         self.data['bounds_tiles'] = [-1000000, -750000, 2000000, 1500000]

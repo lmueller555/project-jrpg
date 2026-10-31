@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "source": "assets/maps/overworld/elden_vale/region.json",
+  "geometry_sha256": "ccc1d0318080a93bd06587e9e781fe2574c2f560e15bda8f6838cabb1ee10ca9",
+  "bounds_tiles": [
+    -256,
+    -192,
+    512,
+    384
+  ],
+  "survey_pixels_per_tile": 3,
+  "atlas_pixels_per_tile": 6,
+  "focus_bounds_tiles": [
+    -140,
+    -110,
+    280,
+    220
+  ],
+  "anchors": {
+    "Eldenmere": [
+      12,
+      -28
+    ],
+    "Western crossing": [
+      -111,
+      30
+    ],
+    "Northern checkpoint": [
+      20,
+      -96
+    ],
+    "Southern checkpoint": [
+      28,
+      96
+    ]
+  },
+  "notes": "Geographic survey only; artwork adds no roads, watercourses or labels."
+}
