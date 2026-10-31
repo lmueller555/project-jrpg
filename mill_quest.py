@@ -641,6 +641,9 @@ class MillQuest:
         if not self.game.quests.turn_in(MILL_QUEST, 'mira_worker'):return
         self.resolved = True;self.game.social.flags.add('CH01_MQ02_COMPLETE')
         self.game.quests.unlock(REGENT_QUEST)
+        # The receipt is checkpointed with the completed repair and rewards.
+        # Playback begins only after this fully acknowledged report releases UI.
+        self.game.regent_arrival.request()
         self.mira.end_conversation();self.mira.story_following = True;self._returning = True
         self._save()
 

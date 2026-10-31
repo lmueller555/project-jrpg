@@ -12,7 +12,7 @@ OUT=ROOT/'assets/story/regent'
 DIRECTIONS=('front','left','right','back')
 OUTLINE='#1a0e16';WOOD='#836347';WOOD_LIGHT='#b79a6c';WOOD_DARK='#573e2a'
 SPECS={
- 'aldric':{'name':'Regent Aldric','source':'male_03','position':[726,456],
+ 'aldric':{'name':'Regent Aldric','source':'male_03','position':[732,1032],
            'hair':['#3b302d','#70635a','#aaa196'],
            'shirt':['#263d4e','#3e5869','#637c89'],
            'trousers':['#343037','#514850','#75656a']},
@@ -20,11 +20,11 @@ SPECS={
            'hair':['#242027','#38343d','#55515b'],
            'shirt':['#60402d','#976b43','#c19a64'],
            'trousers':['#35343b','#4b4952','#68646e']},
- 'regent_clerk':{'name':'Clerk','source':'male_01','position':[702,456],
+ 'regent_clerk':{'name':'Clerk','source':'male_01','position':[708,1054],
            'hair':['#30251f','#5b3f2b','#8b6343'],
            'shirt':['#354653','#607987','#8b9c9f'],
            'trousers':['#493e3b','#725d4c','#a38a6a']},
- 'regent_driver':{'name':'Driver','source':'male_01','position':[750,456],
+ 'regent_driver':{'name':'Driver','source':'male_01','position':[744,1104],
            'hair':['#312924','#69513c','#9a7857'],
            'shirt':['#344c37','#547953','#80986b'],
            'trousers':['#5b4130','#896348','#b48c5c']},
@@ -185,7 +185,8 @@ def props():
   path=save(Path('props')/(identifier+'.png'),image)
   records.append({'id':identifier,'scene':'eldenmere.playable','position':position,'sort_y':sort_y,'states':{s:path for s in states}})
  add('venn_cart',[625,522],prop_cart(),558)
- add('regent_wagon',[694,400],prop_wagon(),444)
+ add('regent_wagon',[652,1060],prop_wagon(),1104)
+ records[-1]['blocker']=[658,1090,68,15]
  im=Image.new('RGBA',(54,20));d=ImageDraw.Draw(im)
  for r,c in [((1,10,16,18),'#737e7a'),((13,5,29,17),'#8e9388'),((29,10,46,19),'#69736d'),((21,1,40,10),'#a4aaa0')]:d.rectangle(r,fill=c);d.line((r[0],r[1],r[2],r[1]),fill='#c0c0ab')
  add('road_stone',[650,588],im,608)
@@ -210,10 +211,10 @@ def build():
  walk={d:[f'assets/characters/npcs/male_01/walk_{d}/frame_{i:02}.png' for i in range(1,5)] for d in DIRECTIONS}
  path=OUT/'actors/regent_attendant/animation.json';path.parent.mkdir(parents=True,exist_ok=True)
  path.write_text(json.dumps({'idles':idle,'walks':walk,'canvas':[24,36],'draw_anchor':[12,30]},indent=2)+'\n')
- actors.append({'id':'regent_attendant','name':'Traveling attendant','position':[678,456],'probe_size':[8,4],'draw_anchor':[12,30],'art':path.relative_to(ROOT).as_posix(),'facing':'front'})
+ actors.append({'id':'regent_attendant','name':'Traveling attendant','position':[672,1132],'probe_size':[8,4],'draw_anchor':[12,30],'art':path.relative_to(ROOT).as_posix(),'facing':'front'})
  art={'actors':actors,'existing_actors':{'venn_father':{'art':venn_walks()}},'props':props()}
  (OUT/'art.json').write_text(json.dumps(art,indent=2)+'\n')
- layout={'arrival':[744,480],'road':[610,520],'cart_start':[625,522],'cart_end':[955,390],
+ layout={'arrival':[744,1032],'road':[610,520],'cart_start':[625,522],'cart_end':[955,390],
   'cart_actor_offset':[5,-30],'venn_start':[620,552],'venn_end':[950,420],
   'courtyard':[386,318],'serene':[364,326],'tomas':[420,348],
   'aldric_courtyard':[400,326],'aldric_aside':[442,304],
@@ -222,9 +223,9 @@ def build():
   'foreman':[700,548],'crew_resume':[660,576],
   'preparations':[386,326], 'welcome':[386,318], 'discussion':[386,318], 'aftermath':[386,326],
   'venn_cart_path':[[620,552],[720,552],[744,480],[936,480],[972,408],[950,420]],
-  'aldric_route':[[726,456],[720,480],[610,512],[480,480],[384,384],[400,326]],
+  'aldric_route':[[732,1032],[720,1032],[516,1032],[516,552],[610,512],[480,480],[384,384],[400,326]],
   'scene_id':'eldenmere.playable'}
- layout.update({'aldric_arrival':[726,456],'clerk_arrival':[702,456],'driver_arrival':[750,456],'attendant_arrival':[678,456], 'venn_road':layout['venn_start'],'foreman_road':layout['foreman'],'venn_delivery':layout['venn_end'],'cart_route':layout['venn_cart_path']})
+ layout.update({'aldric_arrival':[732,1032],'clerk_arrival':[708,1054],'driver_arrival':[744,1104],'attendant_arrival':[672,1132], 'venn_road':layout['venn_start'],'foreman_road':layout['foreman'],'venn_delivery':layout['venn_end'],'cart_route':layout['venn_cart_path']})
  layout.update(outside_courtyard=[386,318],dining_scene_id='sanctuary_dining',preparations=[264,128],serene=[288,116],
                serene_meal=[144,228],tomas=[108,200],courtyard=[228,252],welcome=[228,252],
                discussion=[228,252],aftermath=[168,228],aldric_courtyard=[228,200],

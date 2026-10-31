@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_right": "stand_right.png",
+    "gesture_right": "gesture_right.png"
+  },
+  "loops": {
+    "step_right": [
+      {
+        "file": "step_0.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "step_1.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "step_2.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "step_3.png",
+        "duration_ms": 180
+      }
+    ]
+  },
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "window_left": "window_left.png",
+    "stand_right": "stand_right.png",
+    "turn_right": "turn_right.png"
+  },
+  "loops": {
+    "walk_right": [
+      {
+        "file": "walk_0.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "walk_1.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "walk_2.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "walk_3.png",
+        "duration_ms": 180
+      }
+    ]
+  },
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

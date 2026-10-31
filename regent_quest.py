@@ -83,7 +83,10 @@ class RegentQuest:
     @property
     def active(self):return self.game.quests.status(REGENT_QUEST) in ('active', 'ready')
     @property
-    def eligible(self):return self.game.quests.status(REGENT_QUEST) != 'locked'
+    def eligible(self):
+        arrival = getattr(self.game, 'regent_arrival', None)
+        return (self.game.quests.status(REGENT_QUEST) != 'locked'
+                and (arrival is None or arrival.arrival_complete))
     @property
     def locks_player(self):return False
     @property
@@ -151,7 +154,7 @@ class RegentQuest:
             if self._handed_off(actor):continue
             actor.story_paused = True;actor.story_following = False
             actor.end_conversation()
-        for actor in self.party:actor.story_following = True
+        for actor in self.party:actor.story_following = self.stage != 'idle'
         self.venn.story_following = self.stage != 'idle'
 
     def restore(self, data=None):
@@ -205,10 +208,7 @@ class RegentQuest:
         ready = [True if self._serene_handed_off else self._stage_routine(self.serene, self.points[serene_point], force),
                  True if self._tomas_handed_off else self._stage_routine(self.tomas, self.points['tomas'], force)]
         self._preps_ready = all(ready)
-        if self.stage == 'idle':
-            self._setup = self._preps_ready
-            return
-        party_phase = ('arrival' if self.stage == 'assigned' else
+        party_phase = ('arrival' if self.stage in ('idle', 'assigned') else
                        'road' if self.stage in ('met', 'dispute', 'releasing', 'escorting') else 'courtyard')
         party_world = self.dining if party_phase == 'courtyard' else self.town
         for actor, prefix in self._party_keys():
@@ -216,6 +216,12 @@ class RegentQuest:
             if self.stage in ('discussion', 'done') and actor is self.aldric:target = self.points['aldric_aside']
             landing = self._landing(actor, target, party_world)
             if landing is not None:self._place(actor, party_world, landing)
+        if self.stage == 'idle':
+            # The cinematic has already brought the visitors into town. They
+            # wait by the southern brook approach before Caelan accepts his
+            # hosting task; Mr. Venn and the road crew remain unborrowed.
+            self._setup = self._preps_ready
+            return
         self.foreman.story_following = False
         target = self.points['crew_resume'] if self.cart_released else self.points['foreman']
         landing = self._landing(self.foreman, target)
@@ -301,6 +307,7 @@ class RegentQuest:
         if actor is self.tomas and self._owned:
             return self._speak('hospitality_after' if self.stage in ('hosted', 'discussion', 'done') else 'tomas_waiting')
         if actor is self.aldric:
+            if self.stage == 'idle':return self._speak('arrival_waiting')
             if self.stage == 'assigned':return self._speak('arrival', self._met)
             if self.stage == 'dispute':return self._speak('dispute', self._settled) if self._group_ready else False
             if self.stage == 'escorting':return False
@@ -398,7 +405,7 @@ class RegentQuest:
     def tracker_text(self):
         if not self.eligible:return ''
         return {'idle': 'Meet Mother Serene in the sanctuary dining room.',
-                'assigned': 'Meet the visitors by the brook.',
+                'assigned': 'Meet the visitors by the lower bridge.',
                 'met': 'Accompany Aldric through the village toward the road crew.',
                 'dispute': 'Listen as Aldric handles the road crew’s cart dispute.',
                 'releasing': 'Give Mr. Venn room to collect his cart.',
@@ -542,6 +549,7 @@ class RegentQuest:
     def surface_prop_visible(self, prop):
         if not self.eligible:return False
         if prop['scene'] == self.dining.data['id']:return True
+        if prop['id'] == 'regent_wagon':return True
         return self.stage != 'idle'
 
     def _sync_props(self):
@@ -562,6 +570,10 @@ class RegentQuest:
 
     def _task_blockers(self):
         blockers = list(self._prior_blockers())
+        for prop in self.surface_props:
+            if (prop['scene'] == self.town.data['id'] and prop.get('blocker')
+                    and self.surface_prop_visible(prop)):
+                blockers.append(pygame.Rect(prop['blocker']))
         if self.surface_prop_visible(self.cart) and not getattr(self, '_cart_owner_moving', False):
             x, y = self.cart['position']
             blockers.append(pygame.Rect(round(x)+14, round(y)+20, 47, 12))

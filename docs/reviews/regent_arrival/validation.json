@@ -1,0 +1,202 @@
+{
+  "verified_at_utc": "2026-10-31T21:19:41.820632+00:00",
+  "base_commit": "9bc0cdbd1044ce2636fd477b0f8a8ed47c2b6d86",
+  "full_suite": {
+    "command": "python -m unittest discover -s tests",
+    "passed": true,
+    "tests": 1286,
+    "seconds": 645.61,
+    "log_sha256": "d5b55168a06505ad721c326671aeaef7972e836b2231b3b761f024512691714e"
+  },
+  "final_focused_suite": {
+    "command": "PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_quest test_overworld_map test_overworld_travel",
+    "passed": true,
+    "tests": 79,
+    "seconds": 61.467,
+    "log_sha256": "cb8139e5653e08b7c3145234d2ed08c9c68b45ec93b9faf359a0251e2bd9cc7e",
+    "note": "Final current-code check after visual refinements and additional arrival regressions; includes real asset rendering, persistence, direct travel guards, quest flow and map integration."
+  },
+  "exporters": {
+    "tools/build_regent_arrival_actors.py --check": {
+      "passed": true,
+      "registered_files": 59
+    },
+    "tools/build_regent_arrival_scenery.py --check": {
+      "passed": true,
+      "scene_plates": 4,
+      "foreground_layers": 4,
+      "gate_leaf": 1
+    }
+  },
+  "source_integrity": {
+    "render_input_hashes_verified": 82,
+    "capture_hashes_verified": 35,
+    "protected_original_pngs_verified": 10582,
+    "region_source": "assets/maps/overworld/elden_vale/region.json",
+    "region_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "region_unchanged": true
+  },
+  "production_capture": {
+    "report_sha256": "5ddad7aa4cc2d5ded49f8057f005916d018d371666b21a34b4d08c80e63553a8",
+    "video": {
+      "file": "regent_arrival.mp4",
+      "frames": 4889,
+      "fps": 30,
+      "seconds": 162.96666666666667
+    },
+    "world_freeze_checks": 4047,
+    "pause_and_focus_verified": true,
+    "mq02_completed": true,
+    "mq03_available_after_cinematic": true,
+    "caelan_restored_to_report_station": true,
+    "mq03": {
+      "status": "completed",
+      "stage": "done",
+      "objectives": [
+        "meet_visitors",
+        "accompany_visit",
+        "welcome_party",
+        "speak_serene"
+      ],
+      "main_dialogue_pages": 121,
+      "optional_dialogue_pages": 2,
+      "room_transitions": [
+        {
+          "origin": "eldenmere.playable",
+          "destination": "sanctuary_hall",
+          "door": "sanctuary"
+        },
+        {
+          "origin": "sanctuary_hall",
+          "destination": "sanctuary_dining",
+          "door": "dining"
+        },
+        {
+          "origin": "sanctuary_dining",
+          "destination": "sanctuary_hall",
+          "door": "hall"
+        },
+        {
+          "origin": "sanctuary_hall",
+          "destination": "eldenmere.playable",
+          "door": "courtyard"
+        },
+        {
+          "origin": "eldenmere.playable",
+          "destination": "sanctuary_hall",
+          "door": "sanctuary"
+        },
+        {
+          "origin": "sanctuary_hall",
+          "destination": "sanctuary_dining",
+          "door": "dining"
+        }
+      ],
+      "final_party_rooms": [
+        "sanctuary_dining",
+        "sanctuary_dining",
+        "sanctuary_dining",
+        "sanctuary_dining"
+      ],
+      "cart_visible_release": true,
+      "cart_delivery_finished": true,
+      "mq04_available": true,
+      "excavation_authorized": false,
+      "player_role": "guide and host; witness to adult decisions"
+    },
+    "persistence": {
+      "pending_resumes": true,
+      "skip_commits_seen": true,
+      "queued_input_isolated": true,
+      "resources_not_duplicated": true,
+      "seen_does_not_replay": true,
+      "legacy_completed_mill_does_not_replay": true
+    },
+    "accessibility": {
+      "locals": {
+        "window": [
+          480,
+          320
+        ],
+        "text_scale": 1.5,
+        "panel": [
+          91,
+          8,
+          298,
+          121
+        ],
+        "pages": 1,
+        "portrait_inside": true,
+        "prose_inside": true,
+        "skip_clear": true,
+        "complete_source_text": true
+      },
+      "bridge_damage": {
+        "window": [
+          480,
+          320
+        ],
+        "text_scale": 1.5,
+        "panel": [
+          91,
+          8,
+          298,
+          146
+        ],
+        "pages": 2,
+        "portrait_inside": true,
+        "prose_inside": true,
+        "skip_clear": true,
+        "complete_source_text": true
+      },
+      "letterboxed": {
+        "window": [
+          1000,
+          740
+        ],
+        "text_scale": 1.5,
+        "panel": [
+          91,
+          8,
+          298,
+          102
+        ],
+        "pages": 1,
+        "portrait_inside": true,
+        "prose_inside": true,
+        "skip_clear": true,
+        "complete_source_text": true
+      },
+      "serene_window": {
+        "window": [
+          480,
+          320
+        ],
+        "text_scale": 1.5,
+        "panel": [
+          91,
+          8,
+          298,
+          121
+        ],
+        "pages": 1,
+        "portrait_inside": true,
+        "prose_inside": true,
+        "skip_clear": true,
+        "complete_source_text": true
+      }
+    }
+  },
+  "independent_review": {
+    "passed": true,
+    "reviewed": [
+      "fixed-hinge gate and rear wagon passage",
+      "horse occlusion and actor paths",
+      "Serene eyeline and window caravan",
+      "parking and original mill return",
+      "native 150 percent text and letterboxing",
+      "MQ03 acceptance and complete quest handoff"
+    ]
+  },
+  "unresolved_blockers": []
+}

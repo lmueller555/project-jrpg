@@ -128,15 +128,21 @@ The same Mira actor follows through doors and trail links; progress survives
 leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
 [in-game previews](docs/reviews/mill_quest/README.md).
 
+**Aldric arrives after the mill quest.** A detailed, player-advanced
+[cinematic](docs/REGENT_ARRIVAL.md) shows his caravan admitted at the southern
+land gate, his conversation with locals about the ruined crossing, and Serene's
+private reaction from inside the sanctuary. Escape pauses/resumes; Skip ends
+the scene without accepting MQ03 or changing Caelan's location.
+
 **The Regent’s Road is playable after the mill quest.** Meet Serene and Tomas
-in the sanctuary courtyard, greet Aldric’s visitors by the brook, and guide them
+in the sanctuary dining room, greet Aldric’s visitors by the brook, and guide them
 through the village. Aldric and his clerk handle the road crew’s cart dispute;
 Caelan contributes only what he knows about the working mill. The released cart
 leaves with Mr. Venn, and the party continues to the sanctuary for a welcome,
 a measured excavation discussion and a private exchange with Serene. Dialogue
 includes occasional emotional cues and remains live and cancelable. The visit
 does not authorize excavation or start the festival quest. See the
-[quest guide](docs/REGENT_QUEST.md) and [scene review](docs/reviews/regent_quest/README.md).
+[quest guide](docs/REGENT_QUEST.md) and [arrival review](docs/reviews/regent_arrival/README.md).
 
 **Quest feedback is available in-game.** Mother Serene has an outlined gold `!`
 in the sanctuary and on the town map. Approach her to hear the opening request;
@@ -298,7 +304,7 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
 - [Approved companion foundations](docs/narrative/game_01/COMPANIONS.md): Lucan, Rhea and Edran’s backgrounds, personalities, combat roles and introduction windows.
 - [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
-- [Regional surges and Aldric's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): approved southern-road damage, repair pressures and the planned end-MQ02 caravan arrival.
+- [Regional surges and Aldric's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): southern-road damage, repair pressures and the end-MQ02 caravan arrival.
 - [Sanctuary covenant](docs/world/SANCTUARY_COVENANT.md): approved protected-ground boundaries, custodial duties, public evidence and the unresolved trial-cut request.
 - [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 

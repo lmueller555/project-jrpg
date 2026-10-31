@@ -62,6 +62,8 @@ class OverworldTravelTests(unittest.TestCase):
                                 'prepared': True, 'spell_done': True, 'encouraged': True,
                                 'restored': True, 'verified': True, 'resolved': True})
         self.assertTrue(game.quests.unlock(REGENT_QUEST))
+        # This completed-mill prerequisite represents an established old journey.
+        game.regent_arrival.restore(None)
         game.regent_quest.restore()
 
     def test_automatic_roundtrip_uses_south_entrance_and_singleton(self):

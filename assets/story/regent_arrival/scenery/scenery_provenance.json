@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "canvas": [
+    960,
+    480
+  ],
+  "exporter": "tools/build_regent_arrival_scenery.py",
+  "exporter_sha256": "6079325ed9b46bca4a3c6d2d6fa160a564f223162a8459366bb476bf451736e2",
+  "prompts_sha256": "5c6e2d20d0da9f92224f7dbe67a720cba44b532f19790ac5e7fe039d27fd1860",
+  "sources": [
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/gate_leaf_generated.png",
+      "size": [
+        2179,
+        722
+      ],
+      "sha256": "16babd54dad5ba030bd65c7e336aba1d53617d9029b68689c04ec31c76b5650d"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/riverbank_generated.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "5e38716ac3b2d9373a3a03fe2b4d1ea8201453d6e204b0f72492784f1331d43e"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/riverbank_revised.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "24dd70d4914c818e918fdb7f7888cda3b4b2ae4a4d9b648645db86736459ada8"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/sanctuary_window_generated.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "9fb176a52f12c10fcc955bbfadc312e614ea43fd83b160370e3558875cedf721"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/sanctuary_window_revised.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "80f3c00cd07c84ed96c1a91bd7d41ee10a2e64977f8a6a868c610a95e32be9e5"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/south_gate_generated.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "ddbdabe9684ff1ee6307feb3da53f854060106d444a18eb3598c6eded1bb2306"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/south_gate_revised.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "8769793b7936dba609649858fb0817b3957002850199692ff89b4efe5ec0b4e9"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/town_approach_generated.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "de5b111302bf9429a4d6edb98f11499c678876cc87f036d790dd93c756a16c6b"
+    },
+    {
+      "file": "assets/source/cinematics/regent_arrival/scenery/town_approach_revised.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "ad004413ad6e18a3061bd58b608e00806c5332063af776f6681bbdb72a1e1329"
+    }
+  ],
+  "exports": [
+    {
+      "file": "assets/story/regent_arrival/scenery/gate_leaf.png",
+      "size": [
+        156,
+        49
+      ],
+      "sha256": "d14ca2fb7c9fc467c7dc0f447446891cd79c0995f8938ad10f5952c6fb149d8e"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/riverbank.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "7629fad1678aa668ab8fec2f09b0d8d7f302dd53e64a7b1ed7893bb0569e19e8"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/riverbank_foreground.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "b9dc0b2d95427c8de59ff621cfb7cc810f4998c457dadab6b752f7818e83c79a"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/sanctuary_window.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "a5df932c99b772921f96daf5ddcd1647975902fac8689ed2314d40d066f31e29"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/sanctuary_window_foreground.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "6f6f742c0a64a1f146bdd03e6103a36027ddf3314f271a3c8e2fbeb15d446e76"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/south_gate.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "0f33037a64e03c5fafd6b14c277c7712a3edf664186aa805ef34079dddd1a558"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/south_gate_foreground.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "a6230418b854c19083197db7e999d01d72c1c495c9fd2402384c1a8d555ed8a6"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/town_approach.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "81529d59533bc3866087b7f8dc1b8e0ac800e5f028bd92d6e749eec3f377b381"
+    },
+    {
+      "file": "assets/story/regent_arrival/scenery/town_approach_foreground.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "f9c991a5d0653106c0fa7b589b4501c6d4a48e872af09cd8d3c5dbe6751b8665"
+    }
+  ],
+  "scenery_manifest_sha256": "a23447fcb4e7127d6f2ad55d6a03d5f7b2f1ba1bb5fc91e7e60ee10f685bea73",
+  "notes": [
+    "Original imagegen generations and revisions are retained without alteration.",
+    "Exports only crop alpha/foreground pixels and nearest-resize authored imagery.",
+    "No actors, horses, caravans, interface or dialogue are baked into the scenery.",
+    "Gate leaf is a separate authored transparent prop; the background aperture is open.",
+    "Far village architecture uses a humble blue-roof sanctuary and timber belfry, not a cathedral.",
+    "The destroyed bridge is broad enough for wagon traffic; both road approaches are scarred.",
+    "The intact town-brook wooden bridge is distinct from the ruined western stone river crossing.",
+    "Sanctuary window sill and character feet are registered for a 76-pixel adult looking outward."
+  ]
+}
