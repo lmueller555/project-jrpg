@@ -14,7 +14,8 @@ SIZE=(640,360)
 
 
 class TitleScreen:
-    settings_index = 2
+    gallery_index = 2
+    settings_index = 3
     def __init__(self,game):
         self.game=game
         if not hasattr(game,'audio'):game.audio=AudioSettings()
@@ -43,8 +44,8 @@ class TitleScreen:
         self.elapsed=0.0
         self.fade=0.0
         self.continuing=False
-        self.options=('New Game','Continue','Settings','Quit')
-        self.rows=[pygame.Rect(235,243+i*24,170,22) for i in range(4)]
+        self.options=('New Game','Continue','Gallery','Settings','Quit')
+        self.rows=[pygame.Rect(235,219+i*24,170,22) for i in range(len(self.options))]
         self.settings_panel=SettingsPanel(self,SIZE)
         self.settings_rows=self.settings_panel.rows
         self.slider_rects=self.settings_panel.slider_rects
@@ -119,10 +120,13 @@ class TitleScreen:
             self.continuing=True
             self.fade=.001
             self.game.ui.sound('confirm')
-        elif self.selected==2:
+        elif self.selected==self.gallery_index:
+            self._mouse_held=False;self._pressed=None
+            self.game.ui.sound('confirm');self.game.open_gallery()
+        elif self.selected==self.settings_index:
             self.settings=True;self.selected=0;self.settings_panel.reset()
             self.game.ui.sound('confirm')
-        elif self.selected==3:
+        elif self.selected==4:
             self.game.ui.sound('confirm');return False
         return True
 
@@ -159,9 +163,9 @@ class TitleScreen:
         row_height=max(22,painter.font('body').get_height()+4)
         stride=row_height+2
         footer=painter.font('small').get_height()+22
-        panel=pygame.Rect(225,358-(stride*4+footer),190,stride*4+footer)
+        panel=pygame.Rect(225,358-(stride*len(self.options)+footer),190,stride*len(self.options)+footer)
         self.rows[:]=[pygame.Rect(235,panel.top+7+index*stride,170,row_height)
-                      for index in range(4)]
+                      for index in range(len(self.options))]
         return panel
 
     def _logo(self,painter,text,base_size,y):

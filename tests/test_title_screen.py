@@ -35,7 +35,7 @@ class TitleTests(unittest.TestCase):
         self.game.update(3,(1,0),True)
         self.assertTrue(self.game.on_title)
         self.assertEqual((tuple(self.game.player.position),actor.state_ms,self.game.elapsed_ms),initial)
-        self.assertEqual([r.centerx for r in self.game.title.rows],[320]*4)
+        self.assertEqual([r.centerx for r in self.game.title.rows],[320]*5)
 
     def test_new_game_click_fades_to_cinematic_and_skip_enters_real_playable_world(self):
         self.assertTrue(self.click(self.game.title.rows[0]))
@@ -85,8 +85,23 @@ class TitleTests(unittest.TestCase):
         self.game.handle_events()
         self.assertEqual(self.game.title.selected,0)
 
+    def test_gallery_opens_without_a_save_and_back_preserves_title_focus(self):
+        self.assertFalse(self.game.has_saved_journey)
+        self.click(self.game.title.rows[self.game.title.gallery_index])
+        self.assertTrue(self.game.on_title)
+        self.assertTrue(self.game.on_gallery)
+        self.assertFalse(self.game.title.settings)
+        self.game.draw()
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_ESCAPE))
+        self.game.handle_events()
+        self.assertFalse(self.game.on_gallery)
+        self.assertEqual(self.game.title.selected,self.game.title.gallery_index)
+        self.game.draw()
+        self.click(self.game.title.rows[self.game.title.settings_index])
+        self.assertTrue(self.game.title.settings)
+
     def test_settings_display_toggle_and_escape_back(self):
-        self.click(self.game.title.rows[2])
+        self.click(self.game.title.rows[self.game.title.settings_index])
         self.assertTrue(self.game.title.settings)
         with patch.object(self.game,'toggle_fullscreen') as toggle:
             self.click(self.game.title.settings_rows[0])
@@ -94,28 +109,30 @@ class TitleTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_ESCAPE))
         self.game.handle_events()
         self.assertFalse(self.game.title.settings)
-        self.assertEqual(self.game.title.selected,2)
+        self.assertEqual(self.game.title.selected,self.game.title.settings_index)
         self.game.draw()
 
     def test_quit_click_and_keyboard_selection_exit_cleanly(self):
-        self.assertFalse(self.click(self.game.title.rows[3]))
-        self.game.title.selected=3
+        self.assertFalse(self.click(self.game.title.rows[-1]))
+        self.game.title.selected=len(self.game.title.options)-1
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_RETURN))
         self.assertFalse(self.game.handle_events())
 
     def test_both_enter_keys_activate_the_highlighted_title_option(self):
         for key in (pygame.K_RETURN,pygame.K_KP_ENTER):
-            for selected in range(4):
+            for selected in range(len(self.game.title.options)):
                 with self.subTest(key=key,selected=selected):
+                    self.game.on_gallery=False
                     self.game.title.selected=selected
                     self.game.title.settings=False
                     self.game.title.fade=0
                     pygame.event.clear()
                     pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=key))
                     running=self.game.handle_events()
-                    self.assertEqual(running,selected!=3)
+                    self.assertEqual(running,selected!=4)
                     self.assertEqual(self.game.title.fade>0,selected==0)
-                    self.assertEqual(self.game.title.settings,selected==2)
+                    self.assertEqual(self.game.title.settings,selected==self.game.title.settings_index)
+                    self.assertEqual(self.game.on_gallery,selected==self.game.title.gallery_index)
 
     def test_keypad_enter_works_in_settings_and_repeat_does_not_reactivate(self):
         self.game.title.settings=True
@@ -133,7 +150,7 @@ class TitleTests(unittest.TestCase):
         self.assertFalse(self.game.title.settings)
 
     def test_music_and_effects_levels_have_independent_keyboard_and_mouse_controls(self):
-        self.click(self.game.title.rows[2])
+        self.click(self.game.title.rows[self.game.title.settings_index])
         self.game.title.selected=1
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_LEFT))
         self.game.handle_events()
@@ -155,7 +172,7 @@ class TitleTests(unittest.TestCase):
         self.assertFalse(self.game.title.settings)
 
     def test_music_setting_toggles_and_missing_audio_device_is_nonfatal(self):
-        self.click(self.game.title.rows[2])
+        self.click(self.game.title.rows[self.game.title.settings_index])
         row=self.game.title.settings_rows[1]
         point=(row.left+30,row.centery)
         target=pygame.Rect(point[0]-1,point[1]-1,2,2)
@@ -174,11 +191,11 @@ class TitleTests(unittest.TestCase):
             with self.subTest(size=size):
                 self.game.window=pygame.display.set_mode(size,pygame.RESIZABLE)
                 self.game.draw()
-                point=self.position(self.game.title.rows[2])
+                point=self.position(self.game.title.rows[self.game.title.settings_index])
                 pygame.event.post(pygame.event.Event(pygame.MOUSEMOTION,pos=point,rel=(0,0),buttons=(0,0,0)))
                 self.game.handle_events()
-                self.assertEqual(self.game.title.selected,2)
-                self.assertEqual(self.game.title._row_at(self.game.title.to_canvas(point)),2)
+                self.assertEqual(self.game.title.selected,self.game.title.settings_index)
+                self.assertEqual(self.game.title._row_at(self.game.title.to_canvas(point)),self.game.title.settings_index)
                 self.assertTrue(0<=point[0]<size[0] and 0<=point[1]<size[1])
 
     def test_animation_changes_scene_without_changing_menu_placement(self):
@@ -244,7 +261,7 @@ class TitleTests(unittest.TestCase):
         self.assertEqual(self.game.title.ui.get_size(),(480,270))
         for first,second in zip(self.game.title.rows,self.game.title.rows[1:]):
             self.assertLess(first.bottom,second.top)
-        self.click(self.game.title.rows[2])
+        self.click(self.game.title.rows[self.game.title.settings_index])
         self.game.draw()
         self.game.title.selected=7
         self.game.draw()
@@ -255,7 +272,7 @@ class TitleTests(unittest.TestCase):
         self.assertFalse(self.game.title.settings)
 
     def test_title_plus_and_minus_shortcuts_change_selected_audio_only(self):
-        self.click(self.game.title.rows[2])
+        self.click(self.game.title.rows[self.game.title.settings_index])
         self.game.title.selected=2
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN,key=pygame.K_MINUS))
         self.game.handle_events()
