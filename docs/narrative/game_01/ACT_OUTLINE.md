@@ -1,7 +1,7 @@
 # Game I — Act Outline: The Broken Covenant
 
-**Status:** WORKING NARRATIVE / PROPOSED — **not approved canon**  
-**Version:** 0.2  
+**Status:** WORKING NARRATIVE / PROPOSED, except explicitly linked approved material.\
+**Version:** 0.3\
 **Scope:** Broad five-act narrative structure only; not a scene list, quest plan, or finalized world design.
 
 ## Authority and boundaries
@@ -14,7 +14,13 @@ This outline explores **The Broken Covenant** as the preferred current direction
 - Aether is conserved, and magicks manipulate existing free-flowing aether; ancient mechanisms cannot generate limitless energy.
 - The ending must resolve the regional primary conflict, leave meaningful consequences, and not depend on a sequel for emotional closure.
 
-**Proposal status:** The mountainous region, secular/religious covenant, sanctuary mechanisms, protagonist's religious affiliation, ruler, events, outcomes, and act titles below are *all provisional*. The previously recorded **Hollow Harvest** is an older *alternative proposal*, not canon; this outline records a new leading option without silently revising the existing Story Bible.
+**Proposal status:** The broad five-act sequence, sanctuary mechanisms,
+unapproved later events and outcomes remain provisional. Geography and cast
+foundations have separate approvals. The specific
+[regional surges and relief visit](REGIONAL_SURGES.md),
+[covenant terms](../../world/SANCTUARY_COVENANT.md) and revised MQ03 motives
+are now approved; this does not approve the whole outline. **Hollow Harvest**
+remains an older alternative, not canon.
 
 **Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
 shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
@@ -43,12 +49,24 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 ## Act I — The Shattered Oath
 
-**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; four mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
+**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
+
+**Approved opening pressure:** Before the opening morning, a lightning surge
+destroys Eldenmere's southern connection. Aldric arrives after aiding a couple
+of other affected communities, seeking enough stone for regional repairs.
+The marked ridge reserve, incomplete public hazard evidence, Serene's material
+help and Aldric's disputed shallow trial cut now give their disagreement
+concrete stakes. The end-MQ02 arrival scene and revised MQ03 dialogue remain
+pending runtime implementation. This small number of early incidents does not
+move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
 
 **Function:** Establish the protagonist's lived faith, community, political tensions, and personal loss.
 
-- The region has long upheld a covenant preventing excavation beneath ancient sacred sanctuaries.
-- Resource pressures and the ruler's development agenda create public friction with the religious order.
+- The approved covenant protects the old ridge sanctuary's marked reserve,
+  including buried foundations; ordinary care and surface inspection remain permitted.
+- Repairs after a handful of lightning incidents strain resources. Aldric's
+  relief efforts and request for quarry stone meet Serene's shared-custody duty
+  and incomplete evidence of danger. Both contribute to the immediate recovery.
 - The ruler authorizes excavation; a violent aetheric disturbance devastates a nearby settlement tied personally to the protagonist.
 - Religious authorities call the calamity punishment for broken faith; government authorities describe an unforeseen accident.
 - The protagonist finds evidence that neither explanation is complete and decides to investigate independently.

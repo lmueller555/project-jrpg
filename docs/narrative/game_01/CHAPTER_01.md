@@ -1,7 +1,7 @@
 # Game I — Chapter 1: Life in Eldenmere
 
-**Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.  
-**Version:** 1.1 (festival preparation split)  
+**Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.\
+**Version:** 1.2 (regional surges and covenant revision)\
 **Parent:** [Act Outline](ACT_OUTLINE.md) · [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
 
 ## Approved chapter structure
@@ -36,7 +36,31 @@ in the journey; it does not assign that loss to Tomas or any named character.
 
 The earlier 60–90-minute main-narrative estimate predates the approved longer festival preparation quest and is being reassessed. MQ04 now targets roughly **45–60 minutes** at a comfortable first-playthrough pace, across four implementation PRs. Duration is a playtest target, not a requirement to pad the game; the complete chapter timing remains OPEN.
 
-**Authority note:** Approving this chapter structure does not approve the precise character biographies, dialogue, town map, quest mechanics, story timings, or details of the coming disaster. The game's existing overarching restrictions still apply.
+**Authority note:** This chapter structure does not by itself approve every
+biography, line of dialogue, map, mechanic or detail of the coming disaster.
+Later explicit approvals are recorded in their linked guides. The approved
+[regional surges and relief visit](REGIONAL_SURGES.md) and
+[sanctuary covenant](../../world/SANCTUARY_COVENANT.md) now govern the revised
+MQ02/MQ03 story. Their arrival cutscene and revised dialogue are pending runtime
+implementation; current gameplay descriptions below retain that distinction.
+
+## Approved regional background
+
+Before the opening morning, an extraordinary lightning surge destroyed the
+road to the next town south of Eldenmere. Only a handful of comparable events
+have occurred elsewhere. Aldric has already helped a couple of those affected
+communities, and their combined repair needs are straining stone supplies.
+His arranged visit brings that relief effort to Eldenmere and a request to
+discuss the protected ridge seam with Serene. The festival gives the visit a
+social setting; the repaired mill does not cause his journey.
+
+The old ridge sanctuary is separate from the village sanctuary. Its marked
+reserve includes the hillside and buried foundations. Serene's public plan and
+old injury account justify caution without explaining the site's full purpose.
+She shares them openly and commits courtyard repair stone, crew meals and a
+joint surface inspection. Aldric's proposed supervised trial cut remains
+disputed. These events foreshadow aether instability on a limited regional
+scale; they do not move the later catastrophe into the opening chapter.
 
 ## Mandatory quests — approved sequence and functions
 
@@ -58,15 +82,32 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 
 **Current staging:** After the mill diagnosis, Mira warns about riverbank monsters and brings her short spear. A ridgeback tusker on the northern trail introduces player-controlled party combat; its damage explains the tree whose broken limb jams the intake. Victory is followed by a linear character exchange, then the established bypass, small spell and cooperative repair. The encounter is mandatory on a new route, with explicit migration for older journeys already beyond the intake.
 
+**Approved next handoff, pending implementation:** After MQ02's conclusion,
+show Aldric's caravan arriving in Eldenmere. The player should witness this
+expected relief visit before meeting the visitors in MQ03. The
+[arrival goal](REGIONAL_SURGES.md#approved-arrival-cutscene-goal) leaves exact
+camera work and runtime persistence for the subsequent implementation.
+
 **Emotional result:** Mira and Caelen succeed through complementary strengths rather than one worldview defeating the other.
 
 ### MQ03 — The Regent's Road
 
-**Premise:** Aldric visits Eldenmere. The village welcomes him, and Caelen helps with preparations. Aldric demonstrates fair, humane judgment before a measured disagreement with Serene over excavation policy.
+**Premise:** Aldric reaches Eldenmere during a relief journey after unusual
+lightning has damaged several communities. Regional repair demand motivates
+his request to examine a stone seam inside protected ridge-sanctuary ground.
+Caelan welcomes and guides him, witnesses humane judgment in the cart dispute,
+and hears a measured disagreement with Serene over the proposed trial cut.
 
 **Purpose:** Establish why Caelen and the villagers admire Aldric; give both government development and religious protection a legitimate argument; introduce the covenant without lore dumping.
 
-**Implemented staging:** Caelan welcomes and guides Aldric's party, witnesses the regent settle the road crew's expired hire of Mr. Venn's cart, and helps host the visitors at the sanctuary. Aldric's clerk checks the agreement; Caelan supplies only firsthand news that the mill is working. The later excavation discussion remains unresolved. See the [approved revised MQ03 script](CH01_MQ03.md). No old mentorship or precise personal history with Aldric is established.
+**Existing gameplay and approved revision:** Caelan's guide/host role, the
+adult-managed cart dispute and sanctuary hospitality are already playable.
+The [revised MQ03 narrative script](CH01_MQ03.md) adds the relief context,
+specific covenant evidence and Serene's practical contribution; its dialogue
+changes remain pending implementation. Aldric's clerk checks the agreement,
+and Caelan contributes firsthand news that the mill is working. No old
+mentorship or precise personal history with Aldric is established. MQ03
+authorizes no excavation and leaves the trial-cut request unresolved.
 
 **Emotional result:** The future antagonist's character feels sincerely admirable in the present.
 

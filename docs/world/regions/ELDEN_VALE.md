@@ -1,7 +1,10 @@
 # Elden Vale Regional Setting
 
-**Status: Approved regional geography and cultural foundations around Eldenmere.
-Illustrative encounters remain story seeds.**
+**Status: Approved regional geography, cultural foundations and opening
+regional context around Eldenmere. Illustrative encounters remain story seeds.**
+
+**Implementation:** The recent surge damage and covenant context below are
+approved documentation; runtime and map-art integration remain pending.
 
 Elden Vale is Eldenmere's home region: a wooded inland valley on
 the western foothills of Merovar's Greyfold Mountains. The valley gives Game I
@@ -80,6 +83,20 @@ service and religious guidance. It is part of ordinary village life. Serene
 has personal relationships with the people she serves, and its household
 includes Caelan and Tomas.
 
+The **old ridge sanctuary near Eldenmere** is a separate site from this
+inhabited village sanctuary. Its marked reserve includes sanctuary buildings,
+a wooded hill and buried foundations beyond the visible walls. The covenant
+protects the ground beneath the reserve as well as its surface. The ridge
+site's exact position and full buried layout remain open; it is not
+established as the original sacrificial temple.
+
+Civil authorities, sanctuary keepers and the community share a custodial
+trust in the reserve. Protection sits alongside duties of care and practical
+service; it does not make the ground the order's unrestricted property or
+prevent ordinary passage and maintenance within established limits. New
+quarrying and disturbance of buried works require joint review and exceptional
+authorization. See the [Sanctuary Covenant](../SANCTUARY_COVENANT.md).
+
 The wider valley could support small sanctuary households, travelling
 caretakers and lay volunteers with varying resources. A remote household may
 depend on these services more than a prosperous market settlement does.
@@ -100,10 +117,36 @@ borders and the source of his regency remain open. Elden Vale and nearby
 upper Leth road and quarry districts form the immediate setting of his
 administration's concerns.
 
+Before Game I opens, an extraordinarily powerful lightning surge destroyed
+Eldenmere's road south to the next town. The southern connection is part of
+the [classroom world map's route context](../../WORLD_MAP.md); the town has no
+approved name. A handful of similar incidents have affected other parts of
+the region, and Aldric has already visited a couple of communities to provide
+relief. These are serious local emergencies, not a widespread cataclysm.
+Their deeper mechanism is unknown to the people involved. The
+[Regional Surges guide](../../narrative/game_01/REGIONAL_SURGES.md) governs
+these incidents and the opening arrival context.
+
+Repairs across the affected communities strain stone supplies, hauling and
+other repair resources. Aldric seeks a nearer stone seam within the ridge
+sanctuary's protected boundary to supply several towns. More distant stone
+remains an alternative, with a longer haul competing for carts, money and
+time needed by other repairs.
+
 Road access, affordable building material, reliable mills and safe movement
 between settlements can improve people's lives. The covenant also protects
 sanctuary ground, including what lies beneath it. Serene's concern has a
 legitimate basis even where she cannot explain every inherited boundary.
+
+Serene has shared an old foundation plan and an account of workers injured
+by an unexplained discharge after opening a passage. That small historical
+event is distinct from the recent lightning surges; no common cause is
+established. The records support caution without revealing the site's full
+history or proving that any excavation would cause a catastrophe. Serene
+offers existing courtyard stone, crew meals, surface inspection and help
+obtaining records. This contribution defers her own repairs but cannot meet
+the region's full material need. The [MQ03 discussion](../../narrative/game_01/CH01_MQ03.md)
+leaves excavation permission unresolved.
 
 Valley residents should have varied positions. A quarry worker may want steady
 work and stronger safety oversight. A farmer may welcome a road while

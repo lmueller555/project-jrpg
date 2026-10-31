@@ -34,3 +34,23 @@ python -m unittest discover -s tests -p 'test_*world_map*.py' -v
 
 The [review captures](reviews/school_world_map/README.md) show the actual
 classroom, fitted viewer, and zoomed detail.
+
+## Opening story route context
+
+**Status:** Approved regional lore; runtime and map-art integration of the
+recent damage remain pending.
+
+Before Game I opens, an extraordinarily powerful lightning surge destroyed
+the road from Eldenmere to the next town south, along the map's corresponding
+southward connection. That town has no approved name: **River Leth** and
+**Lower Leth** are geographic labels, not its name. The
+[Regional Surges guide](narrative/game_01/REGIONAL_SURGES.md) records the
+handful of other recent incidents, Aldric's relief visits and the resulting
+repair shortages. The [Sanctuary Covenant](world/SANCTUARY_COVENANT.md)
+explains how those needs bear on the proposed quarry near the old ridge
+sanctuary.
+
+This route context does not redraw the classroom map, add damage markers or
+establish a new playable town. The existing viewer and artwork remain the
+geographic reference described above; the regional story does not set new
+distances or settle the unnamed town's precise location.
