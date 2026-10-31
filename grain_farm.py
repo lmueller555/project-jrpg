@@ -4,6 +4,8 @@ Only completed physical beats persist. Continue reconstructs an interrupted
 carry at storage; ordinary departure preserves the live controller in place.
 No town actor, route graph, quest objective or streaming chunk owns this work.
 """
+import json
+import math
 from pathlib import Path
 import pygame
 
@@ -24,6 +26,19 @@ LINES = [
     ('loader', 'You could have mentioned that before I picked it up.'),
     ('coworker', 'I did. You were explaining how much would fit.'),
 ]
+DIRECTIONS = ('front', 'back', 'left', 'right')
+PICKUP_SECONDS = 1.2
+PLACE_SECONDS = 1.2
+PUSH_SECONDS = .6
+LOWER_SECONDS = .8
+RECOVER_SECONDS = .4
+REQUIRED_CLIPS = {
+    'loader': {'inspect_front', 'cover_front', 'lift_front', 'look_left',
+               'place_right', 'push_right', 'work_right', 'stretch_front',
+               'recover_front',
+               *('hold_'+d for d in DIRECTIONS), *('carry_'+d for d in DIRECTIONS)},
+    'coworker': {'work_left', 'assist_right', 'assist_low_right', 'recover_right', 'stretch_front'},
+}
 
 
 def empty_state():
@@ -42,6 +57,12 @@ def valid_state(data):
 
 
 class FarmWorker:
+    """Registered full-body clips; pose changes never redraw individual limbs.
+
+    The controller finalizes movement and facing before ``advance`` compares
+    clip identities. A blocked walk therefore settles into its authored hold
+    instead of repeatedly restarting a stride on transient ``moving`` writes.
+    """
     def __init__(self, role, variant, position):
         self.role = role
         self.data = {'id': 'grain_'+role, 'name': 'Grain loader' if role == 'loader' else 'Grain worker'}
@@ -53,14 +74,46 @@ class FarmWorker:
         self.pose = 'idle'
         self.clock = 0
         self.moving = False
-        self.frames = {}
-        for direction in ('front','back','left','right'):
+        self.reverse = False
+        self.action_duration = None
+        self._selection = None
+        self.clips = {}
+        for direction in DIRECTIONS:
             base=ROOT/f'assets/characters/npcs/{variant}'
-            self.frames['idle_'+direction]=[self._padded(base/f'idle_{direction}.png')]
-            self.frames['walk_'+direction]=[self._padded(base/f'walk_{direction}/frame_{i:02}.png') for i in range(1,5)]
-        for pose in ('lift','carry','look','cover','place','work','assist','assist_low','stretch'):
-            self.frames[pose]=[pygame.image.load(str(ART/f'{role}_{pose}_{i}.png')).convert_alpha()
-                               for i in range(4 if pose=='carry' else 2)]
+            self.clips['idle_'+direction] = {'loop': False, 'frames': [
+                {'image': self._padded(base/f'idle_{direction}.png'), 'duration_ms': 1000}]}
+            self.clips['walk_'+direction] = {'loop': True, 'frames': [
+                {'image': self._padded(base/f'walk_{direction}/frame_{i:02}.png'), 'duration_ms': 140}
+                for i in range(1, 5)]}
+        manifest_path = ART/role/'animation.json'
+        data = json.loads(manifest_path.read_text())
+        if (data.get('version') != 1 or data.get('canvas') != [40, 44]
+                or data.get('anchor') != [20, 38]
+                or not REQUIRED_CLIPS[role] <= set(data.get('sequences', {}))):
+            raise ValueError('Incomplete grain-worker animation manifest: '+role)
+        for key, clip in data['sequences'].items():
+            if type(clip.get('loop')) is not bool or not clip.get('frames'):
+                raise ValueError('Invalid grain-worker clip: '+key)
+            frames = []
+            for metadata in clip['frames']:
+                duration = metadata.get('duration_ms')
+                if (type(duration) not in (int, float) or not math.isfinite(duration)
+                        or duration <= 0):raise ValueError('Invalid grain-worker frame duration')
+                path = (manifest_path.parent/metadata['file']).resolve()
+                if not path.is_relative_to(manifest_path.parent.resolve()):
+                    raise ValueError('Grain-worker frame leaves its asset directory')
+                image = pygame.image.load(str(path)).convert_alpha()
+                if image.get_size() != (40, 44):
+                    raise ValueError('Incorrect grain-worker frame dimensions')
+                for point in [metadata.get('sack_offset'), metadata.get('cloth_offset'),
+                              *metadata.get('hands', [])]:
+                    if point is not None and (len(point) != 2 or any(
+                            type(n) not in (int, float) or not math.isfinite(n) for n in point)):
+                        raise ValueError('Invalid grain-worker attachment')
+                if metadata.get('sack_layer', 'front') not in ('front', 'back'):
+                    raise ValueError('Invalid grain-worker sack layer')
+                frames.append({**metadata, 'image': image})
+            self.clips[key] = {**clip, 'frames': frames}
 
     @staticmethod
     def _padded(path):
@@ -72,13 +125,56 @@ class FarmWorker:
     def blocker(self):
         return pygame.Rect(round(self.position.x)-5, round(self.position.y)-3,10,6)
 
+    @property
+    def animation_key(self):
+        if self.pose == 'idle':return ('walk_' if self.moving else 'idle_')+self.facing
+        if self.pose == 'carry':return ('carry_' if self.moving else 'hold_')+self.facing
+        return {'inspect': 'inspect_front', 'cover': 'cover_front',
+                'lift': 'lift_front', 'lower': 'lift_front', 'look': 'look_left',
+                'place': 'place_right', 'push': 'push_right',
+                'recover': 'recover_front' if self.role == 'loader' else 'recover_right',
+                'work': 'work_'+self.facing, 'assist': 'assist_right',
+                'assist_low': 'assist_low_right', 'stretch': 'stretch_front'}[self.pose]
+
+    def restart(self):
+        self.clock = 0.
+        self._selection = None
+
+    def advance(self, seconds):
+        selection = (self.animation_key, self.reverse, self.action_duration)
+        if selection != self._selection:
+            self.clock = 0.
+            self._selection = selection
+        elif self.animation_key.startswith('hold_'):
+            self.clock = 0.
+        else:self.clock += max(0., seconds)
+
+    @property
+    def frame_index(self):
+        clip = self.clips[self.animation_key]
+        indices = list(range(len(clip['frames'])))
+        if self.reverse:indices.reverse()
+        total = sum(frame['duration_ms'] for frame in clip['frames'])/1000
+        time = (self.clock/self.action_duration*total
+                if self.action_duration is not None else self.clock)
+        if clip['loop'] and self.action_duration is None:time %= total
+        for index in indices:
+            duration = clip['frames'][index]['duration_ms']/1000
+            if time < duration:return index
+            time -= duration
+        return indices[-1]
+
+    @property
+    def attachment(self):
+        return {key: value for key, value in self.clips[self.animation_key]['frames'][self.frame_index].items()
+                if key != 'image'}
+
+    @property
+    def hand_positions(self):
+        return [self.position+point for point in self.attachment.get('hands', [])]
+
     def sprite(self, elapsed_ms):
-        key=self.pose.removesuffix('_left') if self.pose!='idle' else ('walk_' if self.moving else 'idle_')+self.facing
-        frames=self.frames[key]
-        index=int(self.clock/(.14 if self.moving else .6))%len(frames)
-        if self.pose=='carry' and not self.moving:index=0
-        image=frames[index]
-        return pygame.transform.flip(image,True,False) if (self.pose=='work' and self.facing=='left') or self.pose.endswith('_left') else image
+        return self.clips[self.animation_key]['frames'][self.frame_index]['image']
 
 
 class GrainFarm:
@@ -106,19 +202,50 @@ class GrainFarm:
         self.coworker_timer=0
         if self.state['scene_done']:self.stage='rest'
         elif self.state['exchange_read']:self.stage='help_approach'
+        self._prepare_stage_pose()
+        for actor in self.actors:actor.advance(0)
 
     def to_dict(self):
         return {**self.state,'greeted':list(self.state['greeted'])}
 
     def _stage(self, name):
         self.stage=name;self.timer=0
-        self.loader.moving=False;self.loader.pose='idle'
+        self.loader.moving=False
+        self.loader.restart()
+        if name in ('help_place', 'help_recover'):self.coworker.restart()
+        self._prepare_stage_pose()
+
+    @staticmethod
+    def _act(actor, pose, facing=None, *, duration=None, reverse=False):
+        actor.pose = pose
+        actor.reverse = reverse
+        actor.action_duration = duration
+        if facing is not None:actor.facing = facing
+
+    def _prepare_stage_pose(self):
+        """Enter a physical beat with its first pose, not a one-frame idle pop."""
+        stage = self.stage
+        if stage == 'inspect':self._act(self.loader, 'inspect', 'front')
+        elif stage in ('cover', 'uncover'):
+            self._act(self.loader, 'cover', 'front', duration=1., reverse=stage == 'uncover')
+        elif stage in ('lift', 'lift_spare'):
+            self._act(self.loader, 'lift', 'front', duration=PICKUP_SECONDS)
+        elif stage in ('carry', 'ready', 'help_approach', 'help_place'):
+            self._act(self.loader, 'carry', 'front')
+            if stage == 'help_place':self._act(self.coworker, 'assist', 'right')
+        elif stage == 'place':self._act(self.loader, 'place', 'right', duration=PLACE_SECONDS)
+        elif stage == 'help_recover':
+            self._act(self.loader, 'recover', 'front', duration=RECOVER_SECONDS)
+            self._act(self.coworker, 'recover', 'right', duration=RECOVER_SECONDS)
+        elif stage in ('check', 'quiet_work'):self._act(self.loader, 'work', 'right')
+        elif stage == 'rest':self._act(self.loader, 'stretch', 'front')
+        else:self._act(self.loader, 'idle', 'back' if stage == 'return' else 'front')
 
     def _walk(self, actor, target, seconds, player, carrying=False):
         delta=pygame.Vector2(target)-actor.position
         if delta.length()<.1:return True
         actor.facing=('right' if delta.x>0 else 'left') if abs(delta.x)>abs(delta.y) else ('front' if delta.y>0 else 'back')
-        actor.pose='carry' if carrying else 'idle'
+        self._act(actor, 'carry' if carrying else 'idle')
         actor.moving=False
         # Short substeps keep a large frame from crossing a foot or solid prop.
         remaining=min(delta.length(),22*seconds)
@@ -137,23 +264,28 @@ class GrainFarm:
         """Walk around the south of the parked cart, clear of the loading lane."""
         actor=self.coworker
         if self.coworker_stop==6:
-            actor.pose='stretch';self.coworker_timer+=seconds
+            self._act(actor, 'stretch', 'front');self.coworker_timer+=seconds
             if self.coworker_timer>=3:
                 self.coworker_stop=0;self.coworker_timer=0
             return
         target=COWORKER_ROUTE[self.coworker_stop]
         if self._walk(actor,target,seconds,player):
             if self.coworker_stop==2:
-                actor.facing='left';actor.pose='work';self.coworker_timer+=seconds
+                self._act(actor, 'work', 'left');self.coworker_timer+=seconds
                 if self.coworker_timer<3:return
             self.coworker_stop+=1;self.coworker_timer=0
 
     def update(self, seconds, game):
         if game.player.position.distance_to(SOURCE)>260:return
         if game.social.locked:
+            for actor in self.actors:actor.moving=False
             if game.social.script_identifier==SCENE_ID:
                 page=game.social.page
-                self.loader.pose='look' if page and page.get('cue')=='axle' else 'carry'
+                self._act(self.loader, 'look' if page and page.get('cue')=='axle' else 'carry', 'front')
+            # The held load stays owned by its carrier. A small authored look
+            # can settle while prose is read; work and movement clocks do not.
+            for actor in self.actors:
+                actor.advance(min(max(seconds, 0.), .1) if actor.pose == 'look' else 0)
             return
         if self.dialogue_running:
             # Walking away cancels prose without committing its completion.
@@ -161,61 +293,74 @@ class GrainFarm:
             self._stage('ready')
         seconds=min(seconds,.1)
         self.timer+=seconds
-        for actor in self.actors:actor.clock+=seconds;actor.moving=False
+        for actor in self.actors:actor.moving=False
         player=self.world.probe_rect(game.player.position)
         loaded=self.state['loaded']
-        if self.stage not in ('ready','help_approach','help_place','help_return','check_walk','check'):
+        if self.stage not in ('ready','help_approach','help_place','help_recover','help_return','check_walk','check'):
             self._coworker_work(seconds,player)
         elif self.stage=='ready' and self.coworker_stop!=6:
             self._coworker_work(seconds,player)
         if self.stage=='inspect':
-            self.loader.pose='lift'
+            self._act(self.loader, 'inspect', 'front')
             if self.timer>=2:
                 self._stage(('uncover' if self.covered else 'lift') if MILL_FLAG in game.social.flags and loaded<2 else
-                            'ready' if MILL_FLAG in game.social.flags and not self.state['scene_done'] else 'cover')
+                            'lift_spare' if MILL_FLAG in game.social.flags and not self.state['scene_done'] else 'cover')
         elif self.stage=='cover':
-            self.loader.pose='cover'
+            self._act(self.loader, 'cover', 'front', duration=1.)
             if self.timer>=1:
                 self.covered=True;self._stage('rest')
         elif self.stage=='uncover':
-            self.loader.pose='cover'
+            self._act(self.loader, 'cover', 'front', duration=1., reverse=True)
             if self.timer>=1:
                 self.covered=False;self._stage('lift')
-        elif self.stage=='lift':
-            self.loader.pose='lift' if self.timer<.6 else 'carry'
-            if self.timer>=1.2:self._stage('carry')
+        elif self.stage in ('lift', 'lift_spare'):
+            self._act(self.loader, 'lift', 'front', duration=PICKUP_SECONDS)
+            if self.timer>=PICKUP_SECONDS:
+                self._stage('ready' if self.stage == 'lift_spare' else 'carry')
         elif self.stage=='carry':
             if self._walk(self.loader,CART,seconds,player,True):self._stage('place')
         elif self.stage=='place':
-            self.loader.pose='place'
-            if self.timer>=1.2:
+            if loaded == 1 and self.timer >= PLACE_SECONDS:
+                self._act(self.loader, 'push', 'right', duration=PUSH_SECONDS)
+            else:self._act(self.loader, 'place', 'right', duration=PLACE_SECONDS)
+            # The second sack is set on the bed before a short supported
+            # slide. Its final slot is beyond a safe two-handed carry reach.
+            if self.timer >= PLACE_SECONDS+(PUSH_SECONDS if loaded == 1 else 0):
                 self._commit(game,loaded=loaded+1)
                 self._stage('return')
         elif self.stage=='return':
             if self._walk(self.loader,SOURCE,seconds,player):self._stage('inspect')
         elif self.stage=='ready':
-            self.loader.pose='carry'
-            if self.coworker_stop==6:self.coworker.facing='back';self.coworker.pose='idle'
+            self._act(self.loader, 'carry', 'front')
+            if self.coworker_stop==6:self._act(self.coworker, 'idle', 'back')
             # The extra sack stays in the loader's grip until explicitly engaged.
         elif self.stage=='help_approach':
-            self.loader.pose='carry'
+            self._act(self.loader, 'carry', 'front')
             if self._walk(self.coworker,HELP,seconds,player):self._stage('help_place')
         elif self.stage=='help_place':
-            pose='assist' if self.timer<.8 else 'assist_low'
-            self.loader.pose='carry' if self.timer<.8 else 'lift';self.coworker.pose=pose
-            if self.timer>=1.6:self._stage('help_return')
+            if self.timer < .8:
+                self._act(self.loader, 'carry', 'front')
+                self._act(self.coworker, 'assist', 'right')
+            else:
+                self._act(self.loader, 'lower', 'front', duration=LOWER_SECONDS, reverse=True)
+                self._act(self.coworker, 'assist_low', 'right', duration=LOWER_SECONDS)
+            if self.timer>=.8+LOWER_SECONDS:self._stage('help_recover')
+        elif self.stage=='help_recover':
+            self._act(self.loader, 'recover', 'front', duration=RECOVER_SECONDS)
+            self._act(self.coworker, 'recover', 'right', duration=RECOVER_SECONDS)
+            if self.timer>=RECOVER_SECONDS:self._stage('help_return')
         elif self.stage=='help_return':
             if self._walk(self.coworker,REST,seconds,player):
                 self.coworker_stop=6;self.coworker_timer=0;self._stage('check_walk')
         elif self.stage=='check_walk':
             if self._walk(self.loader,CART,seconds,player):self._stage('check')
         elif self.stage=='check':
-            self.loader.pose='work'
+            self._act(self.loader, 'work', 'right')
             if self.timer>=2:
                 self._commit(game,scene_done=True)
                 self._stage('rest')
         elif self.stage=='rest':
-            self.loader.pose='stretch' if self.timer<2 else 'idle'
+            self._act(self.loader, 'stretch' if self.timer<2 else 'idle', 'front')
 
             if self.timer>=5:
                 if loaded<2 and MILL_FLAG in game.social.flags:self._stage('return')
@@ -223,8 +368,11 @@ class GrainFarm:
                 else:self._stage('inspect')
         elif self.stage=='quiet_check':
             if self._walk(self.loader,CART,seconds,player):
-                self.loader.pose='work'
-                if self.timer>=5:self._stage('rest')
+                self._stage('quiet_work')
+        elif self.stage=='quiet_work':
+            self._act(self.loader, 'work', 'right')
+            if self.timer>=2:self._stage('rest')
+        for actor in self.actors:actor.advance(seconds)
 
     def nearby(self, game):
         actor=min(self.actors,key=lambda a:a.position.distance_squared_to(game.player.position))
@@ -269,7 +417,21 @@ class GrainFarm:
         return [pygame.Rect(SOURCE[0]-6,SOURCE[1]-6,12,4)]
 
     def cover_props(self):
-        return [(SOURCE[1]+8,5,self.cover,(SOURCE[0]-9,SOURCE[1]-14))] if self.covered else []
+        if self.stage in ('cover', 'uncover'):
+            metadata = self.loader.attachment
+            offset = metadata.get('cloth_offset')
+            if offset is None:
+                hands = metadata.get('hands', [])
+                offset = (sum(p[0] for p in hands)/len(hands),
+                          sum(p[1] for p in hands)/len(hands)) if hands else (0, -14)
+            point = self.loader.position+offset
+            return [(self.loader.position.y+8,5,self.cover,
+                     (round(point.x)-9,round(point.y)-4))]
+        if not self.covered:return []
+        final = self.loader.clips['cover_front']['frames'][-1]
+        offset = final.get('cloth_offset', (0, -14))
+        point = pygame.Vector2(SOURCE)+offset
+        return [(SOURCE[1]+8,5,self.cover,(round(point.x)-9,round(point.y)-4))]
 
     def props(self):
         """Exactly three sack records, each with one current owner/location."""
@@ -280,11 +442,16 @@ class GrainFarm:
             sort_y=SOURCE[1]+7
             if index<loaded:
                 point=pygame.Vector2(-810+index*6,208-index*2);sort_y=228
-            elif index==loaded and loaded<2 and self.stage in ('lift','carry','place'):
-                offset=(0,-3) if self.stage=='lift' and self.timer<.6 else (10,-9) if self.stage=='place' else (0,-11)
-                point=self.loader.position+offset;sort_y=self.loader.position.y+7
-            elif index==2 and not self.state['scene_done'] and self.stage in ('ready','help_approach','help_place'):
-                offset=(0,-11 if self.timer<.8 else -3) if self.stage=='help_place' else (0,-11)
-                point=self.loader.position+offset;sort_y=self.loader.position.y+7
+            elif ((index==loaded and loaded<2 and self.stage in ('lift','carry','place')) or
+                  (index==2 and not self.state['scene_done'] and
+                   self.stage in ('lift_spare','ready','help_approach','help_place'))):
+                metadata = self.loader.attachment
+                offset = metadata.get('sack_offset')
+                gripped = metadata.get('gripped', metadata.get('sack_gripped', True))
+                # A placed sack stays on the bed after the hands release;
+                # only pickup/lowering reach frames defer to the ground pile.
+                if offset is not None and (gripped or self.stage == 'place'):
+                    point=self.loader.position+offset
+                    sort_y=self.loader.position.y+(5 if metadata.get('sack_layer') == 'back' else 7)
             result.append((sort_y,4,self.sack,(round(point.x)-6,round(point.y)-10)))
         return result

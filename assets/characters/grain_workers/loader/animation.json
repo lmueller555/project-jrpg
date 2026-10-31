@@ -1,0 +1,816 @@
+{
+  "version": 1,
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "sequences": {
+    "inspect_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "inspect_front_0.png",
+          "duration_ms": 650
+        },
+        {
+          "file": "inspect_front_1.png",
+          "duration_ms": 650
+        }
+      ]
+    },
+    "cover_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cover_front_0.png",
+          "duration_ms": 500,
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "cloth_offset": [
+            0,
+            -14
+          ]
+        },
+        {
+          "file": "cover_front_1.png",
+          "duration_ms": 500,
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "cloth_offset": [
+            0,
+            -14
+          ]
+        }
+      ]
+    },
+    "lift_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "lift_front_0.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -3
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -2,
+              -5
+            ],
+            [
+              2,
+              -5
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "lift_front_1.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -7
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -8
+            ],
+            [
+              3,
+              -8
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "lift_front_2.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              5,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "lift_front_3.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "recover_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "recover_front_0.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_1.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_2.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_3.png",
+          "duration_ms": 100,
+          "gripped": false
+        }
+      ]
+    },
+    "hold_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_front_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_back_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_left_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_right_0.png",
+          "duration_ms": 720,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -12
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_front_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -4,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -3,
+              -14
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_back_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "back",
+          "hands": [
+            [
+              -4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_left_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            -7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_right_0.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_1.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_2.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_3.png",
+          "duration_ms": 180,
+          "sack_offset": [
+            7,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              5,
+              -14
+            ],
+            [
+              7,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "look_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "look_left_0.png",
+          "duration_ms": 350,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "look_left_1.png",
+          "duration_ms": 350,
+          "sack_offset": [
+            0,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              3,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "place_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "place_right_0.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            4,
+            -14
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              3,
+              -14
+            ],
+            [
+              4,
+              -15
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_right_1.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            9,
+            -13
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              7,
+              -12
+            ],
+            [
+              9,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_right_2.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              10,
+              -11
+            ],
+            [
+              11,
+              -12
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_right_3.png",
+          "duration_ms": 300,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              4,
+              -13
+            ],
+            [
+              4,
+              -13
+            ]
+          ],
+          "gripped": false
+        }
+      ]
+    },
+    "push_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "push_right_0.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            14,
+            -10
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              11,
+              -18
+            ]
+          ]
+        },
+        {
+          "file": "push_right_1.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            16,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              12,
+              -18
+            ]
+          ]
+        },
+        {
+          "file": "push_right_2.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            18,
+            -11
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              15,
+              -19
+            ]
+          ]
+        },
+        {
+          "file": "push_right_3.png",
+          "duration_ms": 240,
+          "sack_offset": [
+            20,
+            -12
+          ],
+          "sack_layer": "front",
+          "hands": [
+            [
+              15,
+              -19
+            ]
+          ]
+        }
+      ]
+    },
+    "work_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "work_right_0.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "work_right_1.png",
+          "duration_ms": 550
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "stretch_front_0.png",
+          "duration_ms": 850
+        },
+        {
+          "file": "stretch_front_1.png",
+          "duration_ms": 850
+        }
+      ]
+    }
+  }
+}

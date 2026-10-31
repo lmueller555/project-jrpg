@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "generations": [
+    {
+      "file": "directions_generated.png",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": [
+        "assets/terrain/overworld/elden_vale/props/guard_front.png",
+        "assets/terrain/overworld/elden_vale/props/guard_back.png"
+      ],
+      "prompt": "Create a clean transparent pixel-art SPRITE SHEET expanding this EXACT existing JRPG roadside guard appearance into proper directional idle and restrained conversational poses. Use the two provided references for costume identity: completely CLOSED-visored rounded silver plate helmet (NO visible face or hair, narrow dark visor slit); silver pauldrons/gauntlets with warm brass/gold rims; navy blue knee-length tabard, brown leather cross strap and belt, brown boots; tall narrow rectangular shield with a brass rim and navy inset permanently strapped to the guard's PHYSICAL LEFT forearm. No spear, no lance, no staff, no new weapon, no open face. Classic polished 16-bit RPG overworld sprite proportions, realistic short natural arms and legs, full-body adult about 36 pixels high once exported. Hard edges, crisp pixel clusters, no smooth digital painting or anti-aliasing. Transparent background, no text, no labels, no grid lines, no shadows/background scenery. EXACT 4 rows by 4 columns, sixteen equally sized cells, each complete centered full body with generous transparent gutter, common scale and ground baseline in every cell. ROW 1: four FRONT-facing poses (1 relaxed idle, 2 tiny natural chest breath/weight settling with feet planted, 3 modest open empty RIGHT hand gesture below chest height while left shield stays supported, 4 recovering relaxed right hand). ROW 2: four LEFT-facing true profile poses with same idle/breath/short free-right-hand gesture/recover; shield on near physical-left arm clearly visible. ROW 3: four RIGHT-facing true profile poses with idle/breath/short free-right-hand gesture/recover; shield stays on far physical-left arm and is partly hidden by torso (do NOT simply mirror row2). ROW 4: four BACK-facing poses with idle/breath/subtle right forearm gesture/recover, the physical-left shield on viewer's left and leather cross strap visible. Keep the helmet, shoulders, elbow/wrist lengths, knees, boots and shield consistent in all sixteen poses. Feet never leave their fixed standing ground line; tiny torso shifts only, no waving, no pumping both arms, no idle walking. The hand gesture should be calm checkpoint conversation, not casting magic."
+    },
+    {
+      "file": "portrait_generated.png",
+      "tool": "image_gen.imagegen",
+      "transparent_background": false,
+      "references": [
+        "assets/terrain/overworld/elden_vale/props/guard_front.png",
+        "assets/source/characters/road_guards/directions_generated.png"
+      ],
+      "prompt": "Create ONE square polished pixel-art JRPG dialogue portrait for the EXACT closed-helmet roadside guard in these reference sprites. Bust portrait from upper chest to helmet top, centered with modest margins, looking slightly to viewer's left. The guard's identity is the ARMOR: CLOSED rounded silver steel helmet with one dark narrow horizontal visor slit, absolutely NO exposed face, NO skin, NO hair, NO open helmet. Silver plate pauldrons with warm brass/gold edging, navy blue tabard over chainmail, brown leather diagonal strap, matching the provided full-body sprites. This is an ordinary hardworking Elden Vale checkpoint guard, not a king: no crown, no plumes, no magical glow, no ornate fantasy spikes. The left shoulder can show the top gold-rim edge of his navy shield, but no spear or unrelated weapon. Opaque flat dark forest-green background #203b33 so it fits the game's existing dialogue portrait frames. Rich but restrained 16-bit/32-bit JRPG pixel portrait rendering, hard pixel clusters and clear silver highlights, no smooth illustration or oil paint, no text, no border, no UI. Make it readable when exported at 72x72 pixels. Keep the closed-visor helmet exactly faithful to the guard sprites; do not invent a generic villager face."
+    }
+  ]
+}

@@ -228,17 +228,27 @@ loader checks the lashings. Leaving and returning retains the live controller;
 chunk eviction does not own or duplicate workers. The controller sleeps beyond
 260 pixels from the farm and uses the same map/journal pause as the region.
 
+The [NPC animation pass](REGION_NPCS.md) gives the workers authored full-body
+work and directional carrying sequences. Per-frame palm and sack registration
+keeps the load supported during lifting, placement and shared lowering. Blocked
+carrying uses a steady hold. Four-direction guard poses and a matching armored
+portrait also make checkpoint conversations consistent with the visible actors.
+
 The cart remains parked. Original decorative grain sacks remain reserve scenery;
 the three small handled sacks are the finite delivery batch. This adds no town
 NPC ownership, companion representation, quest reward, bridge repair, gate
 release, or delivery destination. Work-pose provenance and the repeatable builder
 live in `assets/source/characters/grain_workers/README.md`.
 
-[Gameplay videos and review notes](reviews/grain_farm/README.md) show both mill
-states, the whole exchange and payoff, blocked-path recovery, and Continue.
+[Current NPC videos and review notes](reviews/region_npcs/README.md) show both
+mill states, the whole exchange and payoff, blocked-path recovery, Continue and
+the guard conversations. The [original farm review](reviews/grain_farm/README.md)
+remains as the earlier implementation record.
 
 ```sh
 python tools/build_grain_workers.py
+python tools/build_grain_workers.py --check
 python -m unittest discover -s tests -p 'test_grain_farm.py' -v
 python tools/capture_grain_farm.py
+python tools/capture_region_npcs.py
 ```

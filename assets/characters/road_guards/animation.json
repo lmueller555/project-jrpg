@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "id": "elden_vale_road_guard",
+  "canvas": [
+    40,
+    44
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "poses": {
+    "idle_front_0": "idle_front_0.png",
+    "idle_front_1": "idle_front_1.png",
+    "gesture_front": "gesture_front.png",
+    "recover_front": "recover_front.png",
+    "idle_left_0": "idle_left_0.png",
+    "idle_left_1": "idle_left_1.png",
+    "gesture_left": "gesture_left.png",
+    "recover_left": "recover_left.png",
+    "idle_right_0": "idle_right_0.png",
+    "idle_right_1": "idle_right_1.png",
+    "gesture_right": "gesture_right.png",
+    "recover_right": "recover_right.png",
+    "idle_back_0": "idle_back_0.png",
+    "idle_back_1": "idle_back_1.png",
+    "gesture_back": "gesture_back.png",
+    "recover_back": "recover_back.png"
+  },
+  "clips": {
+    "idle_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_front_0.png",
+          "duration_ms": 1050
+        },
+        {
+          "file": "idle_front_1.png",
+          "duration_ms": 1050
+        }
+      ]
+    },
+    "greet_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "idle_front_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "gesture_front.png",
+          "duration_ms": 360
+        },
+        {
+          "file": "recover_front.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "idle_front_0.png",
+          "duration_ms": 260
+        }
+      ]
+    },
+    "idle_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_left_0.png",
+          "duration_ms": 1050
+        },
+        {
+          "file": "idle_left_1.png",
+          "duration_ms": 1050
+        }
+      ]
+    },
+    "greet_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "idle_left_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "gesture_left.png",
+          "duration_ms": 360
+        },
+        {
+          "file": "recover_left.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "idle_left_0.png",
+          "duration_ms": 260
+        }
+      ]
+    },
+    "idle_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_right_0.png",
+          "duration_ms": 1050
+        },
+        {
+          "file": "idle_right_1.png",
+          "duration_ms": 1050
+        }
+      ]
+    },
+    "greet_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "idle_right_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "gesture_right.png",
+          "duration_ms": 360
+        },
+        {
+          "file": "recover_right.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "idle_right_0.png",
+          "duration_ms": 260
+        }
+      ]
+    },
+    "idle_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_back_0.png",
+          "duration_ms": 1050
+        },
+        {
+          "file": "idle_back_1.png",
+          "duration_ms": 1050
+        }
+      ]
+    },
+    "greet_back": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "idle_back_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "gesture_back.png",
+          "duration_ms": 360
+        },
+        {
+          "file": "recover_back.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "idle_back_0.png",
+          "duration_ms": 260
+        }
+      ]
+    }
+  },
+  "equipment": {
+    "helmet": "closed silver visor",
+    "tabard": "navy and gold",
+    "shield_arm": "physical left"
+  },
+  "portrait_key": "road_guard",
+  "portrait": {
+    "name": "Road guard",
+    "expression": "neutral",
+    "file": "road_guard_neutral.png",
+    "sprite_root": "assets/characters/road_guards",
+    "source": "assets/source/characters/road_guards/portrait_generated.png",
+    "source_rect": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  }
+}
