@@ -1,12 +1,22 @@
 # Mira and the mill quest
 
+**Approval/runtime boundary (2026-10-31):** The route below describes the
+existing mill quest. MQ02 completion currently unlocks MQ03, whose caravan
+appears through existing quest staging. The approved
+[regional story handoff](narrative/game_01/REGIONAL_SURGES.md) requires an
+arrival cutscene at the end of MQ02, leading into the revised lightning,
+quarry and [covenant](world/SANCTUARY_COVENANT.md) discussion in the
+[approved MQ03 target](narrative/game_01/CH01_MQ03.md). That arrival and the new
+dialogue await runtime integration; this documentation change does not add
+them to the playable repair route.
+
 `CH01_MQ02` begins after MQ01's stopped-wheel exchange. Its available marker points
 to Mira at her existing outdoor workbench. Finishing the reunion accepts the
 quest and lets the same actor accompany Caelan.
 
 The dialogue connects Halden’s festival flour to the Festival of Light, introduces Mira’s work and friendship before the investigation, and gives the actual north-road route in speech. Stage-specific reminders repeat the next destination or control. Brief emotional cues use literal asterisks.
 
-The complete route is workbench, mill diagnosis, Mira's practical warning and
+The current runtime route is workbench, mill diagnosis, Mira's practical warning and
 armed departure, the riverbank encounter, a linear aftermath, upstream intake,
 pressure relief, a small successful spell, encouragement, cooperative repair,
 verification of the working mill, and Halden's closing exchange. The first
@@ -66,8 +76,9 @@ Object interactions measure the gap between Caelan’s ground footprint and the 
 ## Ownership
 
 `mill_quest.py` owns quest staging, accompaniment, physical actions and durable
-milestones. `assets/story/mill/scene.json` holds the spoken lines. The narrative
-script is [CH01_MQ02](narrative/game_01/CH01_MQ02.md).
+milestones. `assets/story/mill/scene.json` holds the current spoken lines. The
+[approved MQ02 narrative target](narrative/game_01/CH01_MQ02.md) also records
+the future arrival handoff; that addition is not yet implemented.
 
 Mira's existing bench actor, directional walking art, portrait and workshop are
 reused. Her bench-work fitting stays at the workbench while she accompanies

@@ -1,6 +1,10 @@
 # Auratia World Atlas
 
-**Status: Approved world name, broad geography and regional cultural foundations.**
+**Status: Approved world name, broad geography, regional cultural foundations
+and opening regional context.**
+
+**Implementation:** The recent surge damage and covenant context below are
+approved documentation; runtime and map-art integration remain pending.
 
 **Auratia** contains four major continents, a significant central island chain
 and a northern circumpolar ocean region.
@@ -106,6 +110,25 @@ administration's immediate concerns lie in Elden Vale and neighbouring upper
 Leth road and quarry districts. His title's constitutional basis, any higher
 sovereign authority and exact political boundaries remain open. A geographic
 region in the atlas is not automatically a nation or province.
+
+### The region at the opening of Game I
+
+Before the opening, an extraordinarily powerful lightning surge destroyed
+the road from Eldenmere to the next town south. That town has no approved
+name. A handful of similar events elsewhere in the region have led Aldric to
+visit a couple of affected communities and provide relief. Repairs strain
+available stone, transport and labour across those communities; this is not a
+widespread cataclysm. See [Regional Surges](../narrative/game_01/REGIONAL_SURGES.md)
+for the recent incidents and arrival context.
+
+The resulting material need drives Aldric's request to quarry a nearer seam
+inside the protected reserve of an old ridge sanctuary near Eldenmere. This
+is a separate site from the inhabited village sanctuary. Its marked reserve
+covers a wooded hill and buried foundations as well as sanctuary buildings.
+The [Sanctuary Covenant](SANCTUARY_COVENANT.md) records the shared custodial
+trust, public evidence and relief obligations behind the disagreement;
+neither the site's complete history nor the surges' deeper cause is public
+knowledge.
 
 The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
 

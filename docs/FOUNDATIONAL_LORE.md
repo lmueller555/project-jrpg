@@ -1,7 +1,7 @@
 # Project JRPG — Foundational Lore
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.3
+**Version:** 0.4
 
 **Last revised:** 2026-10-31
 
@@ -158,7 +158,15 @@ Over time, memories of the ancient civilization became religious tradition. The 
 
 The very **temple where the ancients performed their sacrifice** survives into the current age as a **holy place of worship**.
 
-This religion has a real historical basis: ancient beings did sacrifice their own active existence to preserve the world, and life energy does flow back to them after death. But the detailed theology, institutions, doctrines, and rituals of the religion are **not yet canon**.
+This religion has a real historical basis: ancient beings did sacrifice their own active existence to preserve the world, and life energy does flow back to them after death. Selected modern beliefs and practices are now approved locally: Eldenmere's Festival of Light and returning-life teaching, the sanctuary's community service, and the
+[sanctuary covenant](world/SANCTUARY_COVENANT.md). These establish sincere
+in-world belief and custodial responsibilities, without certifying personal
+consciousness after death or explaining the hidden ancient history. The wider
+religion's institutions, doctrines and rituals remain open beyond those approvals.
+
+The covenant's old ridge sanctuary near Eldenmere is separate from the village
+sanctuary. Neither has been identified as the original sacrificial temple;
+that temple's location remains unassigned.
 
 ### Working interpretation
 
@@ -209,13 +217,31 @@ The overarching ancient and cosmic conflict unfolds across **multiple games**. *
 - **Visible or potentially visible:** Everyday magicks and aether, modern faith and worship at the ancient temple, regional unrest or instability, and local people's choices and consequences.
 - **Largely concealed:** The temple's sacrificial origin, the atmospheric barrier, the Great Sacrifice, exactly four active survivors and their identity, the distant dying worlds, and the larger cosmic plan.
 - **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
-- **Still to design:** Game I protagonist, immediate antagonist, conflict, stakes, local resolution, and amount of foreshadowing; individual identities and relationships of the four.
+- **Approved regional foundations:** Caelan's opening community and relationships,
+  the limited [early lightning incidents and Aldric's relief visit](narrative/game_01/REGIONAL_SURGES.md),
+  and the [covenant disagreement](world/SANCTUARY_COVENANT.md). These do not
+  establish a complete five-act plot or the final mechanism of the catastrophe.
+- **Still to design:** Remaining game-wide motives, stakes and local resolution,
+  the precise later crisis and degree of further foreshadowing; individual
+  identities and relationships of the four.
 
 ### Working story direction — not locked plot
 
-The opening could feature environmental or magical anomalies that drive a protagonist to investigate. Gradual revelations may reframe the temple, the gods, the planetary atmosphere, the hidden survivors, and the existence of the distant cosmic threat.
+The approved opening background now includes a handful of extraordinary
+lightning incidents, including destruction of Eldenmere's southern road before
+the opening morning. Aldric has aided other affected communities, and their
+combined repair needs motivate his quarry request. These incidents foreshadow
+a problem with aether's flow without establishing a complete mechanism or
+making the early region cataclysmic. They precede the proposed excavation.
+Gradual later revelations may reframe the temple, the gods, the planetary
+atmosphere, the hidden survivors and the distant cosmic threat.
 
-The story's intended **tone is mature and morally complex**. Its broad creative direction combines high fantasy, technological or industrial transformation, and the legacy of an ancient catastrophe. No specific country, industrial system, hero, villain, technology, or opening crisis has yet been approved.
+The story's intended **tone is mature and morally complex**. Its broad creative
+direction combines high fantasy, technological or industrial transformation,
+and the legacy of an ancient catastrophe. Approved geography, characters and
+opening events are recorded in the World Atlas and linked Game I guides.
+Exact national constitutions, the wider industrial system and unresolved
+later-act outcomes remain open.
 
 **Potential central dramatic question:** What sacrifices can living civilizations justifiably demand of one another in order to face a threat to existence, especially when neither side knows whether its solution will work?
 
@@ -250,7 +276,7 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 | High | What precisely causes the cosmic aether imbalance? | Ultimate mystery; may remain hidden until late narrative |
 | High | What is the dissenters' actual plan, and what evidence makes it plausible? | Grounds antagonist motivation without guaranteeing success |
 | High | How is aether removed from dormant ancients and why does that deplete barrier support? | Central causal mechanism and plot stakes |
-| High | What does planetary destabilization look like, and what is the opening incident? | Makes the ancient conflict affect the protagonist personally |
+| High | What further forms does destabilization take beyond the approved early lightning incidents, and how does the later inciting crisis unfold? | Connects regional consequences to the protagonist without prematurely fixing hidden mechanisms |
 | High | Who is the protagonist, what do they lose or want, and why do they act? | Creates an emotional narrative rather than just lore |
 | High | What could end the conflict and what unavoidable cost remains? | Prevents an effortless last-minute solution |
 | Medium | How are the four survivors related, and are they aligned or divided? | Enables individual motives, arcs, and conflict |

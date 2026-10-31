@@ -1,5 +1,10 @@
 # Sanctuary opening
 
+This guide describes the checked-in runtime. The approved regional-surges,
+covenant and MQ02-to-MQ03 arrival revisions remain documentation only; the
+[MQ03 status below](#mq03--the-regents-road) distinguishes that target from
+the existing playable visit.
+
 New Game first plays the approved late-journey [opening cinematic](OPENING_CINEMATIC.md),
 then stages the bedroom, breakfast and request scenes from
 `narrative/game_01/CH01_MQ01.md`. The playable opening now continues through
@@ -215,8 +220,19 @@ See the [runtime capture and testing notes](reviews/opening_conclusion/README.md
 
 ## MQ03 — The Regent’s Road
 
+**Approval/runtime boundary (2026-10-31):** `regent_quest.py` and
+`assets/story/regent/scene.json` still implement the previous visit and
+excavation dialogue. The [approved regional story](narrative/game_01/REGIONAL_SURGES.md),
+[covenant guide](world/SANCTUARY_COVENANT.md) and
+[revised MQ03 target](narrative/game_01/CH01_MQ03.md) require an arrival
+cutscene at the end of MQ02 and new lightning, relief, quarry and covenant
+dialogue. Those changes await runtime integration. The caravan currently
+appears through existing quest staging after the mill quest unlocks MQ03;
+this documentation change adds no playable road damage, stone handoff or
+inspection activity.
+
 After the completed mill quest, MQ03 becomes available from Serene in the
-sanctuary dining room. The complete visit is playable: preparations with Tomas,
+sanctuary dining room. The existing visit is playable: preparations with Tomas,
 meeting Aldric’s party by the brook, witnessing the road crew’s cart dispute,
 a visible release and delivery of Mr. Venn’s cart, an escort through the hall
 into the dining room, the sanctuary welcome and meal,
@@ -239,7 +255,7 @@ The dispute, welcome and private conversation use the portrait bubbles and
 occasional visible textual emotional cues. Ordinary movement remains available,
 while pause/inventory/map/journal defer staging. Formal excavation permission is
 not granted here; that remains the post-festival story beat. See the
-[implementation guide](REGENT_QUEST.md), [full narrative script](narrative/game_01/CH01_MQ03.md)
+[runtime implementation guide](REGENT_QUEST.md), [approved narrative target](narrative/game_01/CH01_MQ03.md)
 and [production-game preview](reviews/regent_quest/README.md).
 
 ## MQ04 — A Light of His Own, opening segment

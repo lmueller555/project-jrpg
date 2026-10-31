@@ -62,6 +62,30 @@ are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
 Lattice paths require later implementation.
 
+## Aldric and Serene — approved relief visit and covenant positions
+
+The [regional surge context](REGIONAL_SURGES.md) and
+[covenant guide](../../world/SANCTUARY_COVENANT.md) establish the reasons for
+their revised MQ03 disagreement. These are approved character motivations;
+the updated runtime dialogue and end-MQ02 arrival remain pending.
+
+Aldric has visited two other affected communities and is helping repair damage
+from a small number of extraordinary lightning incidents. Eldenmere's southern
+road is another damaged connection. He seeks more quarry stone because the
+combined repair needs strain regional supplies. His supervised trial-cut
+proposal is sincere and limited under his understanding of the site.
+
+Serene holds protected ground in keeping for the community rather than as
+personal property. She shares an old foundation plan and an account of workers
+injured by an unexplained discharge. She cannot explain the site's full extent
+or purpose and does not claim certainty about a coming disaster. She offers
+courtyard repair stone, crew meals, a joint surface inspection and requests for
+missing records, while withholding endorsement of excavation. Her inherited
+private warning remains a separate chapter-ending beat.
+
+Caelan remains a guide, host and witness. He does not adjudicate the covenant,
+approve a quarry or inspect the adults' hire agreement.
+
 ## Mira's millrace outing
 
 Mira is Caelan's childhood friend and a capable mechanical problem-solver.

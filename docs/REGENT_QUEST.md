@@ -1,5 +1,18 @@
 # Aldric's visit and the regent quest
 
+**Approval/runtime boundary (2026-10-31):** This guide describes the existing
+`regent_quest.py` and `assets/story/regent/scene.json`, which still contain the
+previous visit and excavation dialogue. The
+[approved MQ03 revision](narrative/game_01/CH01_MQ03.md) now draws on the
+[regional surges and relief work](narrative/game_01/REGIONAL_SURGES.md) and
+[sanctuary covenant](world/SANCTUARY_COVENANT.md); those changes await runtime
+integration. This documentation change does not add road damage, stone
+handoffs or inspection activities to the playable quest.
+
+MQ02 completion currently unlocks the visit, and the caravan appears through
+the existing quest staging. The approved future handoff requires a caravan
+arrival cutscene at the end of MQ02; that cutscene is not implemented.
+
 `CH01_MQ03` follows completion of Mira's mill quest. Caelan's job is to welcome and guide the visitors and help receive them at the sanctuary. Aldric settles a dispute concerning his road project; Caelan witnesses it and supplies only the mill status he knows firsthand.
 
 ## Playing through
@@ -14,7 +27,7 @@ The visit preserves the revised role boundary: Caelan does not adjudicate a hire
 
 `assets/story/regent/scene.json` contains the six main scenes (`preparations`, `arrival`, `dispute`, `welcome`, `discussion`, `aftermath`) and short optional replies. Selected text carries brief parenthetical delivery cues for relief, anger, surprise, concern, laughter, hesitation and fatigue. These are intentionally occasional. Optional replies are stage-aware: the cart settlement and revised hire terms are discussed only after release, while Tomas refers to the meal only after the welcome. Earlier interactions use waiting replies.
 
-The complete implementation script is [CH01_MQ03](narrative/game_01/CH01_MQ03.md). Ordinary dialogue stays live and cancelable. The visit gives the welcome, food, journey and personal reactions time before advancing its objectives. New officials use role titles instead of invented personal histories.
+The [approved narrative target](narrative/game_01/CH01_MQ03.md) includes the new lightning damage, relief-driven quarry request and concrete covenant discussion; the current runtime dialogue has not yet adopted them. Ordinary dialogue stays live and cancelable. The existing visit gives the welcome, food, journey and personal reactions time before advancing its objectives. New officials use role titles instead of invented personal histories.
 
 ## Objectives and durable progress
 

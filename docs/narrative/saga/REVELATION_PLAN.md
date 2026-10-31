@@ -35,6 +35,22 @@ Game I is principally regional in scope, with a complete local conflict and reso
 5. Preserve a sense of completion at the end of Game I; a closing hint must not replace the resolution.
 6. Do not imply that modern inhabitants are fragments of ancient souls or that the four automatically know how to stop the catastrophe.
 
+## Approved early regional clues
+
+The [regional surge revision](../game_01/REGIONAL_SURGES.md) establishes a
+handful of extraordinary lightning incidents before and around the opening,
+including pre-opening destruction of Eldenmere's southern road. They subtly
+foreshadow a problem with aether flow and echo the opening cinematic's much
+larger threatened surge. They do not establish the exact cause of that future
+scene or reveal the ancient/cosmic explanation.
+
+The [covenant](../../world/SANCTUARY_COVENANT.md) gives Serene public,
+incomplete evidence: an old plan and a historic maintenance account of a small
+discharge injuring workers. She shares these openly. That older incident is
+distinct from the recent lightning events and from the inherited warning she
+privately examines after the festival. Neither the site nor its buried work
+is identified as the original sacrificial temple or a known planetary mechanism.
+
 ## Game I possible clue categories (PROPOSED; not required)
 
 - A religious phrase containing an oddly precise historical or atmospheric reference.

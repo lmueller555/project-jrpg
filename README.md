@@ -289,9 +289,13 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
 - [Approved companion foundations](docs/narrative/game_01/COMPANIONS.md): Lucan, Rhea and Edran’s backgrounds, personalities, combat roles and introduction windows.
 - [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
+- [Regional surges and Aldric's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): approved southern-road damage, repair pressures and the planned end-MQ02 caravan arrival.
+- [Sanctuary covenant](docs/world/SANCTUARY_COVENANT.md): approved protected-ground boundaries, custodial duties, public evidence and the unresolved trial-cut request.
 - [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 
-These documents retain their original status labels. Approved story decisions, proposals, and open questions remain distinct; the reset does not change narrative canon.
+Status labels distinguish approved story decisions, proposals and open questions.
+The approved local revisions above update the opening's canon without approving
+the entire working act outline. Runtime guides identify the remaining gameplay work.
 
 ## New character art
 
