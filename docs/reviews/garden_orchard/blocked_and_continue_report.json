@@ -1,0 +1,341 @@
+{
+  "method": "Game.update/draw plus offline PCM from the production accepted voice stream.\n\nThe dummy device cannot be recorded. Fake channel leases preserve the mixer\nAPI; RegionalAudio owns cue expiry using game seconds. Its observer feeds the\nsame generated PCM, gains and stop events into a 48kHz mono offline mixer.\nNo unrelated soundtrack, normalization or compression is added.\n",
+  "seconds": 75.23333333333333,
+  "sample_rate": 48000,
+  "peak": 0.08467058721420981,
+  "peak_dbfs": -21.445348565283414,
+  "rms_dbfs": -44.023190158871614,
+  "markers": [
+    {
+      "time": 4.0,
+      "label": "Caelan obstructs the watering lane; worker waits with vessel"
+    },
+    {
+      "time": 9.0,
+      "label": "Caelan steps aside; carrying resumes"
+    },
+    {
+      "time": 9.6,
+      "label": "Save and Continue during carried water"
+    },
+    {
+      "time": 62.03333333333333,
+      "label": "Save and Continue while moving the plant after dialogue read"
+    }
+  ],
+  "snapshots": [
+    {
+      "time": 4.0,
+      "label": "Caelan obstructs the watering lane; worker waits with vessel",
+      "listener": [
+        -526.0,
+        1172.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.1946587672896052,
+          "source": [
+            -611.6470588235294,
+            1207.4117647058822
+          ]
+        }
+      }
+    },
+    {
+      "time": 9.0,
+      "label": "Caelan steps aside; carrying resumes",
+      "listener": [
+        -526.0,
+        1172.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.24811284504016148,
+          "source": [
+            -608.4352941176471,
+            1165.6588235294116
+          ]
+        }
+      }
+    },
+    {
+      "time": 9.6,
+      "label": "Save and Continue during carried water",
+      "listener": [
+        -507.6000000000007,
+        1181.5999999999995
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.14737067832627068,
+          "source": [
+            -609.0611764705882,
+            1173.7952941176466
+          ]
+        }
+      }
+    },
+    {
+      "time": 62.03333333333333,
+      "label": "Save and Continue while moving the plant after dialogue read",
+      "listener": [
+        -526.0,
+        1204.4000000000005
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.23483404117860246,
+          "source": [
+            -610.9129411764707,
+            1197.868235294118
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.23089183655419404,
+      "ambient": true
+    },
+    {
+      "time": 2.533333333333333,
+      "action": "start",
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 3.6,
+      "action": "stop",
+      "key": "garden_gardener_water"
+    },
+    {
+      "time": 9.6,
+      "action": "stop",
+      "key": "wind"
+    },
+    {
+      "time": 9.6,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.14737067832627068,
+      "ambient": true
+    },
+    {
+      "time": 11.0,
+      "action": "start",
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.46481945788008605,
+      "ambient": false
+    },
+    {
+      "time": 12.066666666666666,
+      "action": "stop",
+      "key": "garden_gardener_water"
+    },
+    {
+      "time": 14.866666666666667,
+      "action": "start",
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.3394172112214479,
+      "ambient": false
+    },
+    {
+      "time": 15.933333333333334,
+      "action": "stop",
+      "key": "garden_gardener_water"
+    },
+    {
+      "time": 21.233333333333334,
+      "action": "start",
+      "key": "garden_gardener_basket",
+      "sound": "basket",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 21.566666666666666,
+      "action": "stop",
+      "key": "garden_gardener_basket"
+    },
+    {
+      "time": 23.466666666666665,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.46481945788008605,
+      "ambient": false
+    },
+    {
+      "time": 23.966666666666665,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 25.866666666666667,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.46481945788008605,
+      "ambient": false
+    },
+    {
+      "time": 26.366666666666667,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 30.8,
+      "action": "start",
+      "key": "garden_gardener_basket",
+      "sound": "basket",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 31.133333333333333,
+      "action": "stop",
+      "key": "garden_gardener_basket"
+    },
+    {
+      "time": 35.13333333333333,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.3394172112214479,
+      "ambient": false
+    },
+    {
+      "time": 35.63333333333333,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 37.53333333333333,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.3394172112214479,
+      "ambient": false
+    },
+    {
+      "time": 38.03333333333333,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 44.13333333333333,
+      "action": "start",
+      "key": "garden_gardener_basket",
+      "sound": "basket",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 44.46666666666667,
+      "action": "stop",
+      "key": "garden_gardener_basket"
+    },
+    {
+      "time": 60.63333333333333,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 61.13333333333333,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 62.03333333333333,
+      "action": "stop",
+      "key": "wind"
+    },
+    {
+      "time": 62.03333333333333,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.23483404117860246,
+      "ambient": true
+    },
+    {
+      "time": 66.03333333333333,
+      "action": "start",
+      "key": "garden_gardener_basket",
+      "sound": "basket",
+      "gain": 0.4338251612198824,
+      "ambient": false
+    },
+    {
+      "time": 66.36666666666666,
+      "action": "stop",
+      "key": "garden_gardener_basket"
+    },
+    {
+      "time": 66.8,
+      "action": "start",
+      "key": "garden_gardener_leaves",
+      "sound": "leaves",
+      "gain": 0.4338251612198824,
+      "ambient": false
+    },
+    {
+      "time": 67.3,
+      "action": "stop",
+      "key": "garden_gardener_leaves"
+    },
+    {
+      "time": 75.23333333333333,
+      "action": "stop",
+      "key": "wind"
+    }
+  ],
+  "source_sha256": {
+    "garden_orchard.py": "86fa295d3deea2ea97de45fd4753f8940682aa26931bf1c53090f909a7750ad1",
+    "regional_audio.py": "0d84b45ac478f69d773187c51b477238f3f8d5aac6cf6675e9e4dc2fb9da631c",
+    "assets/characters/garden_workers/art.json": "4467480ae3dfa461f08199811109fa5b09779e1fe1e06801e71fda5dee29b062"
+  },
+  "state": {
+    "gardener": {
+      "phase": "rest",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "read": true,
+      "greeted": false
+    },
+    "picker": {
+      "phase": "work",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -145.0,
+        -250.0
+      ],
+      "read": false,
+      "greeted": false
+    }
+  },
+  "cache_stats": {
+    "render_bytes": 11796480,
+    "render_chunks": 20,
+    "collision_chunks": 2,
+    "metadata_chunks": 27
+  }
+}
