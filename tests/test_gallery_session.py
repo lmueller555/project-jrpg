@@ -286,6 +286,38 @@ class GallerySessionTests(unittest.TestCase):
         self.assertFalse(child.map_open)
         self.assertFalse(child.pause.is_open)
 
+    def test_two_e_presses_on_final_grain_dialogue_page_cannot_start_world_interaction(self):
+        game = self.game();before = self.snapshot(game)
+        session = self.launch(game, 'grain_extra_sack')
+        child = session.game
+        farm = child.world.grain_farm
+        self.assertEqual(child.social.script_identifier, 'grain_farm_extra_sack')
+        for _ in range(100):
+            game.draw()
+            if child.social.page_index == len(child.social.pages)-1:break
+            self.assertTrue(self.key(game, pygame.K_SPACE))
+        else:self.fail('The production grain exchange never reached its final page')
+        self.assertTrue(child.social.active)
+        self.assertFalse(farm.state['exchange_read'])
+        second_press = pygame.event.Event(pygame.KEYDOWN, key=pygame.K_e, repeat=False)
+        with patch.object(child.overworld_travel, 'interact',
+                          wraps=child.overworld_travel.interact) as interact:
+            self.assertTrue(self.key(game, pygame.K_e, second_press))
+            # Both inputs belong to the conversation visible at batch start.
+            # Its first acknowledgement closes it; the second must not fall
+            # through to a nearby worker's ordinary greeting.
+            interact.assert_not_called()
+        self.assertFalse(child.social.active)
+        self.assertNotEqual(child.social.script_identifier, 'grain_farm_greeting')
+        self.assertTrue(farm.state['exchange_read'])
+        self.assertEqual(farm.stage, 'help_approach')
+        self.finish(game)
+        self.assertTrue(session.playback.finished)
+        self.assertTrue(farm.state['scene_done'])
+        self.assertIsNone(game.gallery.error)
+        self.assertEqual(self.snapshot(game), before)
+        self.assertFalse(self.path.exists())
+
     def test_every_registered_scene_completes_with_rendered_dialogue_and_real_input(self):
         game = self.game();before = self.snapshot(game)
         for entry in GALLERY_ENTRIES:
