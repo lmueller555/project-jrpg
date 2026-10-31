@@ -35,6 +35,12 @@ stances and larger cinematic standing poses. Their native canvases are 24×36,
 The approved Edran design uses the sky-blue and silver revision. These are
 static base poses for future animations and scenes.
 
+All three [front-walk cycles](../../reviews/companion_front_walks/README.md)
+are also approved. Each has four 24×36 frames at 140 ms per frame, matching
+Caelan's walking cadence. The retained sources, shared palettes and fixed
+registration are reproducible through the companion front-walk exporter.
+Other directions, running and action animations remain future work.
+
 ## Lucan Rooke
 
 ### Background and motivation

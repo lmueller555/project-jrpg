@@ -1,0 +1,13 @@
+Perform a VERY TARGETED HEAD CONSISTENCY correction on this four-frame Edran walking sprite sheet. Use the close-up head reference as the canonical head drawing. This is an animation-quality correction, not a redesign.
+
+KEEP THE ENTIRE ORIGINAL FOUR-FRAME SHEET LAYOUT AND EVERYTHING BELOW THE CHIN PIXEL-FOR-PIXEL AS CLOSELY AS POSSIBLE: all four body/leg/boot poses, robe folds, silver sash, pouch, shoulder capelet, staff, hands, arm positions, background transparency, character scales, horizontal locations and planted-foot ground positions are already correct and must remain unchanged. Do not adjust the gait or crop/move the figures.
+
+Only fix the head art in FRAME2 and FRAME4 (the second and fourth figures from the left):
+- They must have the SAME front-facing head shape, salt-and-pepper HAIR PIXEL PATTERN, GRAY TEMPLE PATCHES, eye position/shape/size, nose, mouth, BEARD OUTLINE and expression as the contact heads in FRAME1 and FRAME3.
+- Match FRAME2's head to FRAME1's head, and FRAME4's head to FRAME3's head. Treat each as a repeated fixed character head translated upward slightly for the passing step, not redrawn from another angle.
+- Both eyes must be equally visible, looking straight toward camera in ALL FOUR heads; do not rotate or narrow the face, turn it sideways, blink, tilt the head, change the brows or reshape the beard.
+- Keep each passing head at its existing higher location: frame2 and frame4 remain about ONE eventual native pixel above their contact counterparts, roughly15–20sourcepixels. No size change, squash, stretch, face morph or new hairstyle.
+- Frames1 and3 heads are already good; keep them as the references, with no change in expression.
+- The canonical close-up is the exact desired friendly/reserved adult46 face, gray-temple short brown-gray hair and short neat beard. Preserve it, not an elderly white-bearded face.
+
+Everything remains a CHIBI FRONT OVERWORLD sprite animation sequence, all four fullbody figures facing directly forward, on a transparentRGBAbackground. Same sky-blue/silver outfit and all equipment. Exactly FOUR figures, same wide image canvas and spacing. No text, labels, guides, additional views, shadows or scenery. Keep the crisp chunky pixel-art style. This change should make the four heads look like one stable head bobbing slightly while the body walks.

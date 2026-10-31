@@ -53,6 +53,8 @@ injuries and protective workings. Both learn from evidence and can be wrong.
 
 Their approved front idle, combat-ready and cinematic standing sprites are
 linked in the [companion guide](COMPANIONS.md#approved-base-sprite-designs).
+Their [four-frame front walks](../../reviews/companion_front_walks/README.md)
+are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
 Lattice paths require later implementation.
 

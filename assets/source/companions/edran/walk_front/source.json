@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "animation": "walk.front",
+  "status": "approved",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2048,
+    768
+  ],
+  "source_sha256": "3a841d431eb77d496dcfc6405dad0ab43d71fdd83962488f4c884f98c1095255",
+  "generated_original_filename": "exec-c8b40db3-9e19-40aa-8601-011f7b9d8bf6.png",
+  "first_attempt_generated_original_filename": "exec-41a90f99-872e-434f-9239-4079b3935df3.png",
+  "appearance_reference": "assets/characters/edran/idle_front.png",
+  "character_reference": "assets/source/companions/edran/design_sheet.png",
+  "gait_reference": "assets/characters/caelan/walk_front/animation.json",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "duration_ms": 140,
+  "loop": true,
+  "suggested_uniform_native_scale": 0.0441,
+  "alpha_cleanup_threshold": 128,
+  "equipment": {
+    "staff_hand": "anatomical right / screen left",
+    "staff_ground_contact": "carried clear of the ground",
+    "pouch_side": "anatomical left / screen right"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "phase": "screen_left_contact",
+      "duration_ms": 140,
+      "source_cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_bounds": [
+        43,
+        52,
+        468,
+        711
+      ],
+      "source_body_axis_x": 280,
+      "source_ground_y": 710,
+      "head_offset": [
+        0,
+        0
+      ],
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "phase": "screen_left_support_passing",
+      "duration_ms": 140,
+      "source_cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_bounds": [
+        542,
+        36,
+        960,
+        708
+      ],
+      "source_body_axis_x": 784,
+      "source_ground_y": 707,
+      "head_offset": [
+        0,
+        -1
+      ],
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    },
+    {
+      "index": 2,
+      "phase": "screen_right_contact",
+      "duration_ms": 140,
+      "source_cell": [
+        1024,
+        0,
+        1536,
+        768
+      ],
+      "source_bounds": [
+        1055,
+        51,
+        1478,
+        708
+      ],
+      "source_body_axis_x": 1294,
+      "source_ground_y": 707,
+      "head_offset": [
+        0,
+        0
+      ],
+      "upper_body_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 3,
+      "phase": "screen_right_support_passing",
+      "duration_ms": 140,
+      "source_cell": [
+        1536,
+        0,
+        2048,
+        768
+      ],
+      "source_bounds": [
+        1563,
+        37,
+        1983,
+        708
+      ],
+      "source_body_axis_x": 1804,
+      "source_ground_y": 707,
+      "head_offset": [
+        0,
+        -1
+      ],
+      "upper_body_offset": [
+        0,
+        -1
+      ]
+    }
+  ],
+  "notes": [
+    "Imagegen authored all four poses; second pass removed raised-kicking soles from passing poses.",
+    "Use one uniform scale for all frames; register the supporting-foot baseline while preserving small source-authored body rise.",
+    "Source contains faint low-alpha generation haze; thresholding alpha at128 leaves isolated full figures.",
+    "Do not mirror opposite phases: crook, pouch, hair and robe details are asymmetric.",
+    "Targeted imagegen head-consistency pass preserves the four lower-body poses and front-facing face/hair/beard identity across passing phases."
+  ],
+  "export": {
+    "scale": 0.0441,
+    "frames": [
+      {
+        "source_bounds": [
+          43,
+          52,
+          468,
+          711
+        ],
+        "body_bounds": [
+          43,
+          52,
+          468,
+          711
+        ],
+        "body_center_x": 280,
+        "ground_y": 710
+      },
+      {
+        "source_bounds": [
+          542,
+          36,
+          960,
+          708
+        ],
+        "body_bounds": [
+          542,
+          36,
+          960,
+          708
+        ],
+        "body_center_x": 784,
+        "ground_y": 707
+      },
+      {
+        "source_bounds": [
+          1055,
+          51,
+          1478,
+          708
+        ],
+        "body_bounds": [
+          1055,
+          51,
+          1478,
+          708
+        ],
+        "body_center_x": 1294,
+        "ground_y": 707
+      },
+      {
+        "source_bounds": [
+          1563,
+          37,
+          1983,
+          708
+        ],
+        "body_bounds": [
+          1563,
+          37,
+          1983,
+          708
+        ],
+        "body_center_x": 1804,
+        "ground_y": 707
+      }
+    ],
+    "sampling_phase": [
+      0.15,
+      0.65
+    ]
+  },
+  "pre_head_consistency_generated_original_filename": "exec-ee2b1831-ba9a-41c1-8f02-d598d94ff9bb.png",
+  "head_consistency_prompt_file": "head_consistency_prompt.txt",
+  "art_status": "approved",
+  "approval_note": "The user approved this four-frame front-walk cycle for merge into main."
+}

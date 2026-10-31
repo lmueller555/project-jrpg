@@ -21,3 +21,8 @@ show their actual native pixels with whole-number enlargements.
 Rebuild with the repository's asset environment:
 
     python tools/build_companion_sprite_studies.py --actor lucan
+
+## Front walking animation
+
+The [four-frame front walk](walk_front/README.md) is approved, with a
+[loop preview](../../../docs/reviews/companion_front_walks/lucan_front_walk.gif).

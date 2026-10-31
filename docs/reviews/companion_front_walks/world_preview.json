@@ -1,0 +1,35 @@
+{
+  "actual_renderer": true,
+  "preview_only": true,
+  "walking_speed_pixels_per_second": 72.0,
+  "gait_period_ms": 560,
+  "duration_ms": 2240,
+  "frame_step_ms": 20,
+  "route_starts": [
+    [
+      288,
+      540
+    ],
+    [
+      336,
+      540
+    ],
+    [
+      384,
+      540
+    ],
+    [
+      432,
+      540
+    ]
+  ],
+  "distance_pixels": 161,
+  "collision_free_paths": true,
+  "actors": [
+    "caelan",
+    "lucan",
+    "rhea",
+    "edran"
+  ],
+  "gif": "walking_in_eldenmere.gif"
+}
