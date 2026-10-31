@@ -283,6 +283,7 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.
 - [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements and an earlier alternative premise.
 - [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
+- [Approved companion foundations](docs/narrative/game_01/COMPANIONS.md): Lucan, Rhea and Edran’s backgrounds, personalities, combat roles and introduction windows.
 - [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
 - [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
 

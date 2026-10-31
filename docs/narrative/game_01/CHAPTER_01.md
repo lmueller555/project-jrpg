@@ -136,6 +136,8 @@ Her precise knowledge is limited: she does not know the cosmic catastrophe, the 
 Caelan's age of **18** and Tomas's age of **14** are approved canon; see
 [approved character facts](CHARACTERS.md). Other ages and biography details
 remain **working proposals pending character approval** unless separately approved.
+The later [companion foundations](COMPANIONS.md) approve Lucan, Rhea and Edran
+and their introduction windows; their exact recruitment quests remain open.
 
 ## Chapter pacing and prerequisites
 

@@ -1,7 +1,8 @@
 # Game I — approved character facts
 
-**Status:** CANON for the facts listed below. Ages approved by the author on
-2026-10-25 and measured at the beginning of Game I.
+**Status:** CANON for the facts listed below. Ages are measured at the beginning
+of Game I. The opening household ages were approved on 2026-10-25; the companion
+foundations below were approved on 2026-10-30.
 
 | Character | Age at game opening | Relationship |
 | --- | --- | --- |
@@ -30,9 +31,29 @@ Her age is unspecified. Her front, left, right and back idle designs are approve
 Earlier narrative drafts spell Caelan's name **Caelen**; both spellings refer
 to the same protagonist, whose current game and asset identity is **Caelan**.
 
-Other characters' ages and unapproved biography details remain open. See
+Unlisted ages and unapproved biography details remain open. See
 [Chapter 1](CHAPTER_01.md) and the [opening quest](CH01_MQ01.md) for established
 relationships and scene context.
+
+## Eventual party members
+
+The approved [companion guide](COMPANIONS.md) records the full backgrounds,
+personalities, motivations, flaws, relationships and intended combat roles.
+
+| Character | Age at opening | Home region | Role and introduction |
+| --- | --- | --- | --- |
+| Lucan Rooke | 24 | Redstone March | Confident, arrogant Knight; sword and shield or a two-handed sword; Act I |
+| Rhea Sorel | 22 | Wooded western Greyfold slopes | Upbeat, carefree Aethermage and field naturalist; sometimes chaotic offensive magicks; early Act II |
+| Edran Hale | 46 | Lower Leth | Reserved, wise Sage; healing, defense, support and enemy debuffs; end of Act II |
+
+Rhea's approved background is the study of aether in nature, following basic
+local instruction. She and Edran are major sources of lore during travel:
+her environmental observations complement his experience with healing,
+injuries and protective workings. Both learn from evidence and can be wrong.
+
+These are approved narrative foundations for eventual party members. Their
+recruitment quests, sprites, battle abilities, numeric builds and Lattice paths
+are not implemented by this documentation.
 
 ## Mira's millrace outing
 
