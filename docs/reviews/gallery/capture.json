@@ -1,6 +1,6 @@
 {
-  "source_commit": "a7dd9fe40b7e050a5a07e31a482495c3ab0182c7",
-  "runtime_python_sha256": "34e417ebe59192993b9922b133528ffa3c7a49ad748f396081621f94e2023b0a",
+  "source_commit": "d218c0188b84d74f1daec15545f7d3101cf4e7d5",
+  "runtime_python_sha256": "4daefcb1fde33a7e69a70e27d975da86d20ec5bbdcc9732432d43a81df625357",
   "fps": 30,
   "frames": 3559,
   "duration_seconds": 118.633,
@@ -190,6 +190,9 @@
         "bridge_seconds": 0,
         "grain_stage": null,
         "grain_seconds": 0,
+        "garden_phase": null,
+        "garden_step": null,
+        "garden_seconds": 0,
         "dialogue": null
       }
     },
@@ -228,6 +231,9 @@
         "bridge_seconds": 0,
         "grain_stage": null,
         "grain_seconds": 0,
+        "garden_phase": null,
+        "garden_step": null,
+        "garden_seconds": 0,
         "dialogue": null
       }
     },
@@ -266,6 +272,9 @@
         "bridge_seconds": 0,
         "grain_stage": null,
         "grain_seconds": 0,
+        "garden_phase": null,
+        "garden_step": null,
+        "garden_seconds": 0,
         "dialogue": "mill_encounter_intro"
       }
     },
@@ -304,6 +313,9 @@
         "bridge_seconds": 0,
         "grain_stage": null,
         "grain_seconds": 0,
+        "garden_phase": null,
+        "garden_step": null,
+        "garden_seconds": 0,
         "dialogue": "mill_encounter_intro"
       }
     },
@@ -315,7 +327,7 @@
         640
       ],
       "text_scale": 1.0,
-      "frame": 250,
+      "frame": 256,
       "state": {
         "opening": "disabled",
         "opening_action": null,
@@ -342,6 +354,50 @@
         "bridge_seconds": 0.7333,
         "grain_stage": "inspect",
         "grain_seconds": 0,
+        "garden_phase": "work",
+        "garden_step": 0,
+        "garden_seconds": 0.0,
+        "dialogue": null
+      }
+    },
+    {
+      "file": "regional_garden_quiet_care.png",
+      "scene": "garden_quiet_care",
+      "size": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "frame": 196,
+      "state": {
+        "opening": "disabled",
+        "opening_action": null,
+        "opening_action_seconds": 0.0,
+        "cinematic_seconds": 0.0,
+        "arrival_shot": "mill_close",
+        "arrival_seconds": 0.0,
+        "elira_action": null,
+        "elira_seconds": 0.0,
+        "venn_phase": null,
+        "venn_seconds": 0.0,
+        "mill_action": null,
+        "mill_seconds": 0.0,
+        "mill_camera": null,
+        "lantern_action": null,
+        "lantern_seconds": 0.0,
+        "lantern_stage": "idle",
+        "regent_stage": "idle",
+        "regent_cart_released": false,
+        "halden_action": null,
+        "halden_seconds": 0.0,
+        "tomas_job": null,
+        "bridge_stage": "inspect",
+        "bridge_seconds": 0.0,
+        "grain_stage": "inspect",
+        "grain_seconds": 0,
+        "garden_phase": "scene",
+        "garden_step": 4,
+        "garden_seconds": 0.9333,
         "dialogue": null
       }
     }
