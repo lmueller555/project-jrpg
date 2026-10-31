@@ -63,9 +63,11 @@ class FarmWorker:
     clip identities. A blocked walk therefore settles into its authored hold
     instead of repeatedly restarting a stride on transient ``moving`` writes.
     """
-    def __init__(self, role, variant, position):
+    def __init__(self, role, variant, position, *, asset_root=ART,
+                 required_clips=None, identifier_prefix='grain', name=None):
         self.role = role
-        self.data = {'id': 'grain_'+role, 'name': 'Grain loader' if role == 'loader' else 'Grain worker'}
+        self.data = {'id': identifier_prefix+'_'+role,
+                     'name': name or ('Grain loader' if role == 'loader' else 'Grain worker')}
         self.scene_id = 'auratia.overworld'
         self.position = pygame.Vector2(position)
         self.probe_size = (10, 6)
@@ -85,11 +87,12 @@ class FarmWorker:
             self.clips['walk_'+direction] = {'loop': True, 'frames': [
                 {'image': self._padded(base/f'walk_{direction}/frame_{i:02}.png'), 'duration_ms': 140}
                 for i in range(1, 5)]}
-        manifest_path = ART/role/'animation.json'
+        manifest_path = Path(asset_root)/role/'animation.json'
         data = json.loads(manifest_path.read_text())
+        required = REQUIRED_CLIPS[role] if required_clips is None else required_clips
         if (data.get('version') != 1 or data.get('canvas') != [40, 44]
                 or data.get('anchor') != [20, 38]
-                or not REQUIRED_CLIPS[role] <= set(data.get('sequences', {}))):
+                or not required <= set(data.get('sequences', {}))):
             raise ValueError('Incomplete grain-worker animation manifest: '+role)
         for key, clip in data['sequences'].items():
             if type(clip.get('loop')) is not bool or not clip.get('frames'):
@@ -105,13 +108,15 @@ class FarmWorker:
                 image = pygame.image.load(str(path)).convert_alpha()
                 if image.get_size() != (40, 44):
                     raise ValueError('Incorrect grain-worker frame dimensions')
-                for point in [metadata.get('sack_offset'), metadata.get('cloth_offset'),
+                for point in [metadata.get(key) for key in
+                              ('sack_offset', 'cloth_offset', 'stone_offset', 'cup_offset', 'tool_offset')]+[
                               *metadata.get('hands', [])]:
                     if point is not None and (len(point) != 2 or any(
                             type(n) not in (int, float) or not math.isfinite(n) for n in point)):
                         raise ValueError('Invalid grain-worker attachment')
-                if metadata.get('sack_layer', 'front') not in ('front', 'back'):
-                    raise ValueError('Invalid grain-worker sack layer')
+                if any(metadata.get(key, 'front') not in ('front', 'back')
+                       for key in ('sack_layer', 'stone_layer', 'cup_layer')):
+                    raise ValueError('Invalid worker attachment layer')
                 frames.append({**metadata, 'image': image})
             self.clips[key] = {**clip, 'frames': frames}
 
@@ -145,7 +150,7 @@ class FarmWorker:
         if selection != self._selection:
             self.clock = 0.
             self._selection = selection
-        elif self.animation_key.startswith('hold_'):
+        elif self.animation_key.startswith(('hold_', 'cup_hold_')):
             self.clock = 0.
         else:self.clock += max(0., seconds)
 

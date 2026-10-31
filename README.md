@@ -99,7 +99,7 @@ The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives t
 The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
 
 The [region NPC animation pass](docs/REGION_NPCS.md) adds authored full-body
-working and directional carrying poses for the grain workers, with registered
+working and directional carrying poses for the grain and bridge workers, with registered
 hand grips and supported loads. Checkpoint guards have directional conversation
 poses and a portrait matching their silver armor, closed helmet and navy tabard.
 

@@ -1,17 +1,80 @@
 {
-  "status": "review",
-  "anchor": [
-    20,
-    38
-  ],
+  "version": 1,
+  "status": "implemented",
   "canvas": [
     40,
     44
   ],
-  "appearance": "approved male_01 and male_03 layered front walks",
-  "pose_reference": "assets/source/characters/grain_workers/pose_reference.png",
-  "roles": [
-    "mason",
-    "tender"
-  ]
+  "anchor": [
+    20,
+    38
+  ],
+  "exporter": "tools/build_bridge_workers.py",
+  "roles": {
+    "mason": {
+      "manifest": "mason/animation.json",
+      "sha256": "738bd8eacf35b11543d9afdcf3c29f4178a23b754f5b4f7b2068c9950795427a"
+    },
+    "tender": {
+      "manifest": "tender/animation.json",
+      "sha256": "188297d8601f8b382f17680b149270e8dae4eb758474d26e31fd2852c6d8da53"
+    }
+  },
+  "props": {
+    "stone": {
+      "file": "stone.png",
+      "source": "assets/source/characters/bridge_workers/common/stone.png",
+      "sha256": "a762e8c3f341657e605bfde42f4eaaaae0be542c98d34a7d166623c97712598d"
+    },
+    "cup": {
+      "file": "cup.png",
+      "source": "assets/source/characters/bridge_workers/common/cup.png",
+      "sha256": "b14a92909fe1a74583c8dd28c8e12e73347b3197a486a5c212c1abe37f99da25"
+    },
+    "kettle": {
+      "file": "kettle.png",
+      "source": "assets/source/characters/bridge_workers/common/kettle.png",
+      "sha256": "1bf943deab0efb1bd50fc65e1fc1698ebb1c28d2c06035f17172bcdbb76f654e"
+    },
+    "bench": {
+      "file": "bench.png",
+      "source": "assets/source/characters/bridge_workers/common/bench.png",
+      "sha256": "efa20a164a24dbe5ffb5a43f0f9dd21b8c4d86f3dccf2df667171589100e7c8e"
+    },
+    "tray": {
+      "file": "tray.png",
+      "source": "assets/source/characters/bridge_workers/common/tray.png",
+      "sha256": "261da3ff4c50b732b5acd4b91b1bddd9e8609d8cf1c8d846ea80fe46e80d4ad2"
+    },
+    "tool": {
+      "file": "tool.png",
+      "source": "assets/source/characters/bridge_workers/common/tool.png",
+      "sha256": "9b7d6b9b98457a166a40091265a87454f648b2535bd61fcdeccd10b6a635ded5"
+    },
+    "barrier": {
+      "file": "barrier.png",
+      "source": "assets/source/characters/bridge_workers/common/barrier.png",
+      "sha256": "139b7462effc1374be42d10f80fec3b29107f3fac2fb74dcc9aefe39dc0ddfec"
+    },
+    "keep_mark": {
+      "file": "keep_mark.png",
+      "source": "assets/source/characters/bridge_workers/common/keep_mark.png",
+      "sha256": "ea204f96d25d5091df9948b8d7bafa26abe0ca7e709901edc2fb022ab5238afe"
+    },
+    "reject_mark": {
+      "file": "reject_mark.png",
+      "source": "assets/source/characters/bridge_workers/common/reject_mark.png",
+      "sha256": "cb0bb202f9dc9eaf97589ebc45ece3776e2eeed6cb8486d35b010e28a307227c"
+    }
+  },
+  "stone_anchor": [
+    6,
+    9
+  ],
+  "registration": "Per-frame item offsets, palm contacts and depth layers belong to each authored sequence.",
+  "appearance": {
+    "mason": "male_01",
+    "tender": "male_03"
+  },
+  "body_art": "Authored full-body frames; approved directional idle/walk art remains read-only."
 }

@@ -1,7 +1,8 @@
 # Elden Vale NPC sprites and routine animation
 
-The opening overworld contains six NPCs: the loader and coworker at the western
-grain farm, and two road guards at each of the northern and southern checkpoints.
+The opening overworld contains eight NPCs: the loader and coworker at the western
+grain farm, the mason and surveyor at the ruined western crossing, and two road
+guards at each of the northern and southern checkpoints.
 Their animation belongs to the persistent region actors, independently of the
 streamed terrain chunks.
 
@@ -38,6 +39,25 @@ with help. Existing mill gating, dialogue, completed beats, blocked-path
 behavior and safe Continue reconstruction remain in place. The save version
 and `overworld.grain_farm` durable fields are unchanged.
 
+## Bridge crew
+
+The mason retains the moss/tan `male_01` appearance and the surveyor retains
+the slate/brown `male_03` appearance. Their own authored manifests live under
+`assets/characters/bridge_workers/<role>/`. Work, measuring, stone carrying,
+cup carrying and handoff use the direction appropriate to the object and route.
+Full-body seated and recovery poses keep the mason supported by the bench while
+his cup moves between his hands and mouth.
+
+Stone, cup and tool positions follow the painted hand contacts. The mason steps
+into reachable placement and receiving stations; the cup has one owner and one
+visible location through the shaky-stone, steady-tray and handoff sequence.
+Holding a cup or stone on a blocked path uses an authored still hold.
+
+The crew still sorts exactly three stones and offers the same optional tea
+break. Existing `overworld.bridge_crew` fields (`sorted`, `tea_beat`,
+`request_read`, `greeted`) and safe Continue boundaries remain unchanged.
+Sorting and tea do not repair the bridge, open a checkpoint or alter quests.
+
 ## Checkpoint guards
 
 The guard sprites and portrait share a closed-visored silver helmet and armor,
@@ -55,13 +75,17 @@ remain unchanged; a conversation does not open a road.
 
 - Worker sources: `assets/source/characters/grain_workers/loader/` and `coworker/`.
 - Guard sources: `assets/source/characters/road_guards/`.
+- Bridge crew sources: `assets/source/characters/bridge_workers/mason/` and `tender/`.
 - The original worker prototype reference remains available for history.
 - `tools/build_grain_workers.py` invokes the two authored role exporters and
   verifies the unchanged sack/cloth sources. The former arm assembler and its
   obsolete flat pose files are retired.
+- `tools/build_bridge_workers.py` likewise invokes the mason and surveyor
+  exporters and verifies the unchanged bridge-work props.
 
 ```sh
 python tools/build_grain_workers.py --check
+python tools/build_bridge_workers.py --check
 python tools/build_road_guards.py --check
 python tools/capture_region_npcs.py
 ```

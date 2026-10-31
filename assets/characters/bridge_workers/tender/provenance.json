@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "exporter": "tools/build_bridge_tender.py",
+  "sources": [
+    {
+      "file": "assets/source/characters/bridge_workers/tender/cup_walk_generated.png",
+      "sha256": "58ac508ce99e8ccac73df13695c41ac9036405f473f69c0070b9e9016f096904"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/tender/actions_generated.png",
+      "sha256": "c756f0e558aa1862733deb63e9ceb6861797b57b0dd5b48b7bd43191ba7ebc8d"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/tender/identity_reference.png",
+      "sha256": "142eed56552494bd0512856af1250387ef23f137f9676f996600d1c2b7dd7a78"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/tender/cup_walk_prompt.txt",
+      "sha256": "cb8470a0723f69807891b5733bd92b7fe1a3e323379050afb2d330740175411e"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/tender/actions_prompt.txt",
+      "sha256": "063b45b0daa720ff0dfc7ab0456679aa25bf2685257c0cb90d7a4085eae9fc99"
+    }
+  ],
+  "reused_authored_frames": [
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_0.png",
+      "sha256": "77d48e9da0deb9ef0b757de41fd9793679612b37230cb4a39db8312bba0f3645"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_1.png",
+      "sha256": "65b74f7134461e12082c77969158b796a9484cf579c82e67c01bbd45195c1897"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_2.png",
+      "sha256": "e84ade7e543831133b62e77c0c8131b143364e38edeb5d4f9d90d173d24b0954"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_3.png",
+      "sha256": "16000a4d708096796d5dea78731b4de741c29f0001e4c528746b463c2f6dd721"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_0.png",
+      "sha256": "ab463eca95537c0c24b76ecd2ae9f889d66fafb368f36f691561b2cfac6d0b74"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_1.png",
+      "sha256": "39c2e60c6d1c3caa953b5a3bd5aee661ad535d4fdc28095583826739123e51df"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_2.png",
+      "sha256": "8ce54b4b108ceab4b6c23913de27ad34bad524af3601ea8399f8c5ef9613eb3f"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_3.png",
+      "sha256": "3c68ff838d4147af57fa686e173a8f0273a0d09117e972e38b035b3a33dc194a"
+    }
+  ],
+  "reused_authored_manifest": {
+    "file": "assets/characters/grain_workers/coworker/animation.json",
+    "sha256": "f9044cf828c62c92e180daea310ed904941b0cfadcd68fc74663b18dc61c7e28"
+  },
+  "registration": {
+    "canvas": [
+      40,
+      44
+    ],
+    "anchor": [
+      20,
+      38
+    ],
+    "clips": {
+      "cup_front": {
+        "scale": 0.12992125984251968,
+        "cells": [
+          [
+            "cup_walk",
+            0,
+            0
+          ],
+          [
+            "cup_walk",
+            0,
+            1
+          ],
+          [
+            "cup_walk",
+            0,
+            2
+          ],
+          [
+            "cup_walk",
+            0,
+            3
+          ]
+        ]
+      },
+      "cup_back": {
+        "scale": 0.13414634146341464,
+        "cells": [
+          [
+            "cup_walk",
+            1,
+            0
+          ],
+          [
+            "cup_walk",
+            1,
+            1
+          ],
+          [
+            "cup_walk",
+            1,
+            2
+          ],
+          [
+            "cup_walk",
+            1,
+            3
+          ]
+        ]
+      },
+      "cup_left": {
+        "scale": 0.13253012048192772,
+        "cells": [
+          [
+            "cup_walk",
+            2,
+            0
+          ],
+          [
+            "cup_walk",
+            2,
+            1
+          ],
+          [
+            "cup_walk",
+            2,
+            2
+          ],
+          [
+            "cup_walk",
+            2,
+            3
+          ]
+        ]
+      },
+      "cup_right": {
+        "scale": 0.132,
+        "cells": [
+          [
+            "cup_walk",
+            3,
+            0
+          ],
+          [
+            "cup_walk",
+            3,
+            1
+          ],
+          [
+            "cup_walk",
+            3,
+            2
+          ],
+          [
+            "cup_walk",
+            3,
+            3
+          ]
+        ]
+      },
+      "cup_hold_front": {
+        "scale": 0.12359550561797752,
+        "cells": [
+          [
+            "actions",
+            0,
+            0
+          ]
+        ]
+      },
+      "cup_hold_back": {
+        "scale": 0.12359550561797752,
+        "cells": [
+          [
+            "actions",
+            0,
+            1
+          ]
+        ]
+      },
+      "cup_hold_left": {
+        "scale": 0.1375,
+        "cells": [
+          [
+            "actions",
+            2,
+            0
+          ]
+        ]
+      },
+      "cup_hold_right": {
+        "scale": 0.13253012048192772,
+        "cells": [
+          [
+            "actions",
+            1,
+            0
+          ]
+        ]
+      },
+      "pickup_right": {
+        "scale": 0.13253012048192772,
+        "cells": [
+          [
+            "actions",
+            1,
+            0
+          ],
+          [
+            "actions",
+            1,
+            0
+          ],
+          [
+            "actions",
+            1,
+            3
+          ],
+          [
+            "actions",
+            1,
+            3
+          ]
+        ]
+      },
+      "offer_left": {
+        "scale": 0.1375,
+        "cells": [
+          [
+            "actions",
+            2,
+            0
+          ],
+          [
+            "actions",
+            2,
+            1
+          ],
+          [
+            "actions",
+            2,
+            1
+          ],
+          [
+            "actions",
+            2,
+            3
+          ]
+        ]
+      },
+      "receive_left": {
+        "scale": 0.1375,
+        "cells": [
+          [
+            "actions",
+            2,
+            0
+          ],
+          [
+            "actions",
+            2,
+            1
+          ],
+          [
+            "actions",
+            2,
+            1
+          ],
+          [
+            "actions",
+            2,
+            0
+          ]
+        ]
+      },
+      "measure_right": {
+        "scale": 0.1346938775510204,
+        "cells": [
+          [
+            "actions",
+            3,
+            1
+          ],
+          [
+            "actions",
+            3,
+            2
+          ],
+          [
+            "actions",
+            3,
+            1
+          ],
+          [
+            "actions",
+            3,
+            1
+          ]
+        ]
+      },
+      "work_right": {
+        "scale": 0.1346938775510204,
+        "cells": [
+          [
+            "actions",
+            3,
+            1
+          ],
+          [
+            "actions",
+            3,
+            2
+          ],
+          [
+            "actions",
+            3,
+            1
+          ],
+          [
+            "actions",
+            3,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "exports": [
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_front_0.png",
+      "sha256": "87a8a9c2b19cd1397a086868adab822441ef8e114ec21f1c8795151bd40715bc"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_front_1.png",
+      "sha256": "9f168526b90ea7ecce2d8af5e30c8f0c3c7fd26f469852ce75c03f66b0505a7b"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_front_2.png",
+      "sha256": "847a444b418b800ec57daec6bbd6b2d78970399f8b1fd74bdf8bf22ba3c44794"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_front_3.png",
+      "sha256": "caa551772a01b4bf2e0b4a7ad0f066d4d5503eec999fcab7591e5877e1511f50"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_back_0.png",
+      "sha256": "18e5f897183bd89ffd00818aa735f12efe62b45e9195a858bda67c99a383322b"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_back_1.png",
+      "sha256": "868c7d5d984d9d686fdead6f3bd5baecac7fd9ef250be9be84f1e1369d5fb7c2"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_back_2.png",
+      "sha256": "325c2b8bceedb0699a6ab74cf9068e282bb57ee822b17d76df69c3b5e9652839"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_back_3.png",
+      "sha256": "ce635b5ac17d7879bda57113bf27a8731b59bc1f3dac3728e3d1480843cd8a8c"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_left_0.png",
+      "sha256": "e41eb286b1fd2a20d3083bc8bbcc512bf4af1ad1a7d621b59c2127a506a5da07"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_left_1.png",
+      "sha256": "c8ed56d940e1687c725990cd8e1f15c67756702046fccc3fb22288bd55d6dcb2"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_left_2.png",
+      "sha256": "715b5f24b7fabf70c0687477c82348106e29577e865b233b9fdbfd84431af7f0"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_left_3.png",
+      "sha256": "9a3c5e91301a127f29725882e04f01585c90f5d7fbcb8648f6ef39677ea54fa2"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_right_0.png",
+      "sha256": "b9dbe13f7b0828cf40b30b74e421f6ac83e1355f0de964a5bec95bdd7cef6cb6"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_right_1.png",
+      "sha256": "9eb73323d555be1622eb5a47b6e14ace73db349151991f9097a2f405d1682a56"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_right_2.png",
+      "sha256": "33860d82f9e90f9037d32cdea58ec8e0f343aa73c7e229c79851f647a02aeacc"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_right_3.png",
+      "sha256": "abb4775bf7d14fc8c2a3104454753505da1bac151c443e2b87d8328df46d7c66"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_hold_front_0.png",
+      "sha256": "1ae5a94925a52b63b2ccaea9d00903955b546d0346f27fcb4afeea48dad5c452"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_hold_back_0.png",
+      "sha256": "95373eb0faeabbc0f9f4b017bdd20a0840fc69ff2fd7b67b816c66b840aa79f5"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_hold_left_0.png",
+      "sha256": "d9cb4cb72189dd006115fc6b451537d905dcfc8e9838d0cbea493d162ffdce61"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/cup_hold_right_0.png",
+      "sha256": "d4e28465f965f0c7f9aae6afbdffc28564288cab1f383601742b2455cc276460"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/pickup_right_0.png",
+      "sha256": "c5512d8f884f44836df8fb36fc0ea53719612daff7d8099edf26e5a851df1b96"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/pickup_right_1.png",
+      "sha256": "c5512d8f884f44836df8fb36fc0ea53719612daff7d8099edf26e5a851df1b96"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/pickup_right_2.png",
+      "sha256": "a676c7dd363c4e21e03d89d33d332c058477c685296610106e31ba2618f670ec"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/pickup_right_3.png",
+      "sha256": "a676c7dd363c4e21e03d89d33d332c058477c685296610106e31ba2618f670ec"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/offer_left_0.png",
+      "sha256": "d9cb4cb72189dd006115fc6b451537d905dcfc8e9838d0cbea493d162ffdce61"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/offer_left_1.png",
+      "sha256": "575d67f2c8eced602a372a34b236a70f7966b1841e71dcc96639c12295d03371"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/offer_left_2.png",
+      "sha256": "575d67f2c8eced602a372a34b236a70f7966b1841e71dcc96639c12295d03371"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/offer_left_3.png",
+      "sha256": "81a755c6ac7247ed9ea162e32052e9966ddb755d17608615e4034071dbc6ae65"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/receive_left_0.png",
+      "sha256": "d9cb4cb72189dd006115fc6b451537d905dcfc8e9838d0cbea493d162ffdce61"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/receive_left_1.png",
+      "sha256": "575d67f2c8eced602a372a34b236a70f7966b1841e71dcc96639c12295d03371"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/receive_left_2.png",
+      "sha256": "575d67f2c8eced602a372a34b236a70f7966b1841e71dcc96639c12295d03371"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/receive_left_3.png",
+      "sha256": "d9cb4cb72189dd006115fc6b451537d905dcfc8e9838d0cbea493d162ffdce61"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_right_0.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_right_1.png",
+      "sha256": "acea4f156d03f220d43d0607f97158b628f07075db983fc09d54ca1c609611fa"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_right_2.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_right_3.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/work_right_0.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/work_right_1.png",
+      "sha256": "acea4f156d03f220d43d0607f97158b628f07075db983fc09d54ca1c609611fa"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/work_right_2.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/work_right_3.png",
+      "sha256": "077706fd2976fd8c122a1beb5f78955bd1b6f9bd7ee39a6fc05c3c25fcca0b1a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_left_0.png",
+      "sha256": "77d48e9da0deb9ef0b757de41fd9793679612b37230cb4a39db8312bba0f3645"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_left_1.png",
+      "sha256": "65b74f7134461e12082c77969158b796a9484cf579c82e67c01bbd45195c1897"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_left_2.png",
+      "sha256": "e84ade7e543831133b62e77c0c8131b143364e38edeb5d4f9d90d173d24b0954"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/measure_left_3.png",
+      "sha256": "16000a4d708096796d5dea78731b4de741c29f0001e4c528746b463c2f6dd721"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/stretch_front_0.png",
+      "sha256": "ab463eca95537c0c24b76ecd2ae9f889d66fafb368f36f691561b2cfac6d0b74"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/stretch_front_1.png",
+      "sha256": "39c2e60c6d1c3caa953b5a3bd5aee661ad535d4fdc28095583826739123e51df"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/stretch_front_2.png",
+      "sha256": "8ce54b4b108ceab4b6c23913de27ad34bad524af3601ea8399f8c5ef9613eb3f"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/stretch_front_3.png",
+      "sha256": "3c68ff838d4147af57fa686e173a8f0273a0d09117e972e38b035b3a33dc194a"
+    },
+    {
+      "file": "assets/characters/bridge_workers/tender/animation.json",
+      "sha256": "188297d8601f8b382f17680b149270e8dae4eb758474d26e31fd2852c6d8da53"
+    }
+  ],
+  "notes": [
+    "All frames are whole authored figures; no procedural limb paint/warp.",
+    "Only bridge tender states used by the actual tea/measurement routine are exported; no seated/drinking tender poses.",
+    "External cup/tool remain separate controller-owned props; no duplicate baked props."
+  ]
+}

@@ -286,13 +286,16 @@ never owns actors or props. The controller sleeps beyond 260 pixels.
 The cup has one rendered location at every stage. Actor probes and a reserved
 handoff area prevent overlap; the sequence begins only when that reservation
 is clear. Workers wait for blocked routes rather than teleporting or moving
-the player. Source art and procedural export provenance are recorded in
-`assets/source/characters/bridge_workers/README.md`; new assets remain review.
+the player. The [NPC animation pass](REGION_NPCS.md) gives both workers authored
+directional work and carrying frames, registered hand contacts and supported
+seated drinking/recovery. Source art and reproducible export provenance are
+recorded in `assets/source/characters/bridge_workers/README.md`.
 
 [Actual-game videos and fixture details](reviews/bridge_crew/README.md).
 
 ```sh
 python tools/build_bridge_workers.py
+python tools/build_bridge_workers.py --check
 python -m unittest discover -s tests -p 'test_bridge_crew.py' -v
 python tools/capture_bridge_crew.py
 ```
