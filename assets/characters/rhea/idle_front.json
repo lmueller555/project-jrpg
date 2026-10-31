@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "display_name": "Rhea Sorel",
+  "status": "approved",
+  "canvas": [
+    24,
+    36
+  ],
+  "anchor": [
+    10,
+    34
+  ],
+  "facing": "front",
+  "source": "assets/source/companions/rhea/design_sheet.png",
+  "source_sha256": "eec0ae5defba350464ac7e420bb914445b3a784d411697a2200568b8bee41f78",
+  "extraction": {
+    "panel_bounds": [
+      100,
+      0,
+      390,
+      883
+    ],
+    "source_bounds": [
+      113,
+      428,
+      372,
+      837
+    ],
+    "source_body_bounds": [
+      113,
+      428,
+      300,
+      837
+    ],
+    "source_ground": [
+      218,
+      836
+    ],
+    "uniform_scale": 0.07823960880195599,
+    "target_body_height": 32,
+    "exported_body_height": 32,
+    "offset": [
+      2,
+      3
+    ],
+    "bounds": [
+      2,
+      3,
+      22,
+      35
+    ],
+    "equipment_reduced_body_scale": false,
+    "palette_colors": 32
+  },
+  "image": "idle_front.png",
+  "authored_pose_count": 1,
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    10,
+    34
+  ],
+  "animation": "idle.front"
+}

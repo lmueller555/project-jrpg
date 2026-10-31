@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "name": "Edran Hale",
+  "age_at_opening": 46,
+  "status": "approved",
+  "source_file": "design_sheet.png",
+  "source_dimensions": [
+    1983,
+    793
+  ],
+  "source_sha256": "e6ff9f8fe4b41e86b3330e5687ed45a1a0ff187c0c87a06efc228793a89211b9",
+  "generated_original_filename": "exec-86e1d587-b0f8-4346-b48c-42fba86b70d4.png",
+  "background": "transparent",
+  "layout": "three equal-width columns: front overworld, left-facing combat, front cinematic",
+  "appearance": {
+    "hair": "short salt-and-pepper with gray temples",
+    "beard": "neatly trimmed",
+    "skin": "warm light olive/tan",
+    "clothing": "sky-blue long robe, high collar and capelet, silver embroidery and woven sash, slate-gray boots and healer pouch",
+    "accessories": "small cool-gray healer pouch and journal",
+    "staff": "ashwood crook with silver fittings; anatomical right hand; no orb"
+  },
+  "panels": [
+    {
+      "id": "overworld_front",
+      "column": 0,
+      "facing": "front",
+      "source_cell": [
+        0,
+        0,
+        661,
+        793
+      ],
+      "source_bounds": [
+        219,
+        376,
+        490,
+        770
+      ],
+      "target_canvas": [
+        24,
+        36
+      ],
+      "target_anchor": [
+        12,
+        34
+      ]
+    },
+    {
+      "id": "combat_idle",
+      "column": 1,
+      "facing": "left",
+      "source_cell": [
+        661,
+        0,
+        1322,
+        793
+      ],
+      "source_bounds": [
+        753,
+        259,
+        1234,
+        776
+      ],
+      "target_canvas": [
+        64,
+        64
+      ],
+      "target_anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "id": "cinematic_stand",
+      "column": 2,
+      "facing": "front",
+      "source_cell": [
+        1322,
+        0,
+        1983,
+        793
+      ],
+      "source_bounds": [
+        1447,
+        23,
+        1879,
+        777
+      ],
+      "target_canvas": [
+        96,
+        112
+      ],
+      "target_anchor": [
+        48,
+        104
+      ]
+    }
+  ],
+  "prompt_file": "prompt.txt",
+  "export": {
+    "overworld": {
+      "source_bounds": [
+        0,
+        0,
+        661,
+        793
+      ],
+      "source_body_bounds": [
+        275,
+        376,
+        490,
+        770
+      ],
+      "ground_x": 365,
+      "ground_y": 769,
+      "target_body_height": 29,
+      "sampling_note": "Selected a uniform nearest-neighbor sampling size that retains both eyes and beard at native resolution."
+    },
+    "combat": {
+      "source_bounds": [
+        661,
+        0,
+        1322,
+        793
+      ],
+      "source_body_bounds": [
+        800,
+        259,
+        1234,
+        776
+      ],
+      "ground_x": 996,
+      "ground_y": 775
+    },
+    "cinematic": {
+      "source_bounds": [
+        1322,
+        0,
+        1983,
+        793
+      ],
+      "source_body_bounds": [
+        1510,
+        23,
+        1879,
+        777
+      ],
+      "ground_x": 1651.5,
+      "ground_y": 776
+    }
+  },
+  "art_status": "approved",
+  "supersedes_source_sha256": "6b59bbb0388b2a6771faf7d6d51bb088c3440e4fd1ee8ccabe94f4241a9a2439",
+  "supersedes_generated_original_filename": "exec-b1c1c26d-7e64-410a-8323-00ef60287ee7.png",
+  "revision_reason": "User requested a new outfit and sky-blue/silver palette to distinguish Edran from Caelan.",
+  "approval_note": "The user approved the revised sky-blue and silver outfit in all three static sprite designs."
+}

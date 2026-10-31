@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "display_name": "Edran Hale",
+  "status": "approved",
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    54
+  ],
+  "facing": "left",
+  "source": "assets/source/companions/edran/design_sheet.png",
+  "source_sha256": "e6ff9f8fe4b41e86b3330e5687ed45a1a0ff187c0c87a06efc228793a89211b9",
+  "extraction": {
+    "panel_bounds": [
+      661,
+      0,
+      1322,
+      793
+    ],
+    "source_bounds": [
+      753,
+      259,
+      1234,
+      776
+    ],
+    "source_body_bounds": [
+      800,
+      259,
+      1234,
+      776
+    ],
+    "source_ground": [
+      996,
+      775
+    ],
+    "uniform_scale": 0.08123791102514506,
+    "target_body_height": 42,
+    "exported_body_height": 42,
+    "offset": [
+      13,
+      13
+    ],
+    "bounds": [
+      13,
+      13,
+      52,
+      55
+    ],
+    "equipment_reduced_body_scale": false,
+    "palette_colors": 47
+  },
+  "image": "idle_01.png",
+  "authored_pose_count": 1,
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 500
+        }
+      ]
+    }
+  }
+}

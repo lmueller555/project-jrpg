@@ -1,0 +1,478 @@
+{
+  "status": "approved",
+  "static_poses_only": true,
+  "binary_alpha": true,
+  "actor_statuses": {
+    "lucan": "approved",
+    "rhea": "approved",
+    "edran": "approved"
+  },
+  "sampling": "uniform nearest-neighbor; no anatomy redrawing or per-axis warping",
+  "actors": {
+    "lucan": {
+      "overworld": {
+        "image": "assets/characters/lucan/idle_front.png",
+        "status": "approved",
+        "metadata": "assets/characters/lucan/idle_front.json",
+        "canvas": [
+          24,
+          36
+        ],
+        "anchor": [
+          12,
+          34
+        ],
+        "sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+        "panel_bounds": [
+          0,
+          0,
+          500,
+          809
+        ],
+        "source_bounds": [
+          69,
+          263,
+          401,
+          761
+        ],
+        "source_body_bounds": [
+          125,
+          263,
+          363,
+          761
+        ],
+        "source_ground": [
+          244,
+          760
+        ],
+        "uniform_scale": 0.06285714285714286,
+        "target_body_height": 32,
+        "exported_body_height": 31,
+        "offset": [
+          1,
+          4
+        ],
+        "bounds": [
+          1,
+          4,
+          22,
+          35
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 31
+      },
+      "combat": {
+        "image": "assets/combat/lucan/idle_01.png",
+        "status": "approved",
+        "metadata": "assets/combat/lucan/animation.json",
+        "canvas": [
+          64,
+          64
+        ],
+        "anchor": [
+          32,
+          54
+        ],
+        "sha256": "0dac968c662c28d960ec0f6c871c6fd4ed15723e917ce2a597db4cf41be60aeb",
+        "panel_bounds": [
+          500,
+          0,
+          1300,
+          809
+        ],
+        "source_bounds": [
+          620,
+          189,
+          1201,
+          765
+        ],
+        "source_body_bounds": [
+          770,
+          189,
+          1202,
+          765
+        ],
+        "source_ground": [
+          986.5,
+          764
+        ],
+        "uniform_scale": 0.07291666666666667,
+        "target_body_height": 42,
+        "exported_body_height": 42,
+        "offset": [
+          6,
+          13
+        ],
+        "bounds": [
+          6,
+          13,
+          48,
+          55
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 48
+      },
+      "cinematic": {
+        "image": "assets/cinematics/companions/lucan/stand_front.png",
+        "status": "approved",
+        "metadata": "assets/cinematics/companions/lucan/animation.json",
+        "canvas": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "sha256": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d",
+        "panel_bounds": [
+          1300,
+          0,
+          1944,
+          809
+        ],
+        "source_bounds": [
+          1415,
+          18,
+          1891,
+          783
+        ],
+        "source_body_bounds": [
+          1480,
+          18,
+          1860,
+          783
+        ],
+        "source_ground": [
+          1673,
+          782
+        ],
+        "uniform_scale": 0.10196078431372549,
+        "target_body_height": 78,
+        "exported_body_height": 78,
+        "offset": [
+          22,
+          27
+        ],
+        "bounds": [
+          22,
+          27,
+          71,
+          105
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 63
+      }
+    },
+    "rhea": {
+      "overworld": {
+        "image": "assets/characters/rhea/idle_front.png",
+        "status": "approved",
+        "metadata": "assets/characters/rhea/idle_front.json",
+        "canvas": [
+          24,
+          36
+        ],
+        "anchor": [
+          10,
+          34
+        ],
+        "sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+        "panel_bounds": [
+          100,
+          0,
+          390,
+          883
+        ],
+        "source_bounds": [
+          113,
+          428,
+          372,
+          837
+        ],
+        "source_body_bounds": [
+          113,
+          428,
+          300,
+          837
+        ],
+        "source_ground": [
+          218,
+          836
+        ],
+        "uniform_scale": 0.07823960880195599,
+        "target_body_height": 32,
+        "exported_body_height": 32,
+        "offset": [
+          2,
+          3
+        ],
+        "bounds": [
+          2,
+          3,
+          22,
+          35
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 32
+      },
+      "combat": {
+        "image": "assets/combat/rhea/idle_01.png",
+        "status": "approved",
+        "metadata": "assets/combat/rhea/animation.json",
+        "canvas": [
+          64,
+          64
+        ],
+        "anchor": [
+          32,
+          54
+        ],
+        "sha256": "f06f82545a5298a7181e6835136df5751f21c56d919d088f34cf055eabc3979b",
+        "panel_bounds": [
+          530,
+          0,
+          1060,
+          883
+        ],
+        "source_bounds": [
+          552,
+          225,
+          1032,
+          843
+        ],
+        "source_body_bounds": [
+          552,
+          225,
+          960,
+          843
+        ],
+        "source_ground": [
+          782,
+          842
+        ],
+        "uniform_scale": 0.06796116504854369,
+        "target_body_height": 42,
+        "exported_body_height": 42,
+        "offset": [
+          17,
+          13
+        ],
+        "bounds": [
+          17,
+          13,
+          50,
+          55
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 48
+      },
+      "cinematic": {
+        "image": "assets/cinematics/companions/rhea/stand_front.png",
+        "status": "approved",
+        "metadata": "assets/cinematics/companions/rhea/animation.json",
+        "canvas": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "sha256": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3",
+        "panel_bounds": [
+          1200,
+          0,
+          1690,
+          883
+        ],
+        "source_bounds": [
+          1229,
+          22,
+          1663,
+          852
+        ],
+        "source_body_bounds": [
+          1229,
+          22,
+          1515,
+          852
+        ],
+        "source_ground": [
+          1405.5,
+          851
+        ],
+        "uniform_scale": 0.09397590361445783,
+        "target_body_height": 78,
+        "exported_body_height": 78,
+        "offset": [
+          32,
+          27
+        ],
+        "bounds": [
+          32,
+          27,
+          73,
+          105
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 62
+      }
+    },
+    "edran": {
+      "overworld": {
+        "image": "assets/characters/edran/idle_front.png",
+        "status": "approved",
+        "metadata": "assets/characters/edran/idle_front.json",
+        "canvas": [
+          24,
+          36
+        ],
+        "anchor": [
+          12,
+          34
+        ],
+        "sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+        "panel_bounds": [
+          0,
+          0,
+          661,
+          793
+        ],
+        "source_bounds": [
+          219,
+          376,
+          490,
+          770
+        ],
+        "source_body_bounds": [
+          275,
+          376,
+          490,
+          770
+        ],
+        "source_ground": [
+          365,
+          769
+        ],
+        "uniform_scale": 0.07360406091370558,
+        "target_body_height": 29,
+        "exported_body_height": 29,
+        "offset": [
+          2,
+          6
+        ],
+        "bounds": [
+          2,
+          6,
+          22,
+          35
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 32
+      },
+      "combat": {
+        "image": "assets/combat/edran/idle_01.png",
+        "status": "approved",
+        "metadata": "assets/combat/edran/animation.json",
+        "canvas": [
+          64,
+          64
+        ],
+        "anchor": [
+          32,
+          54
+        ],
+        "sha256": "f510efc1e13be76f85c5fcde1b7e4f1cf888855bc1fd661e2834ef0a5951f4f5",
+        "panel_bounds": [
+          661,
+          0,
+          1322,
+          793
+        ],
+        "source_bounds": [
+          753,
+          259,
+          1234,
+          776
+        ],
+        "source_body_bounds": [
+          800,
+          259,
+          1234,
+          776
+        ],
+        "source_ground": [
+          996,
+          775
+        ],
+        "uniform_scale": 0.08123791102514506,
+        "target_body_height": 42,
+        "exported_body_height": 42,
+        "offset": [
+          13,
+          13
+        ],
+        "bounds": [
+          13,
+          13,
+          52,
+          55
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 47
+      },
+      "cinematic": {
+        "image": "assets/cinematics/companions/edran/stand_front.png",
+        "status": "approved",
+        "metadata": "assets/cinematics/companions/edran/animation.json",
+        "canvas": [
+          96,
+          112
+        ],
+        "anchor": [
+          48,
+          104
+        ],
+        "sha256": "ad22892a4974d30b7bafcfaf9e7402a09e441c9d18912cbc0531c54582d934aa",
+        "panel_bounds": [
+          1322,
+          0,
+          1983,
+          793
+        ],
+        "source_bounds": [
+          1447,
+          23,
+          1879,
+          777
+        ],
+        "source_body_bounds": [
+          1510,
+          23,
+          1879,
+          777
+        ],
+        "source_ground": [
+          1651.5,
+          776
+        ],
+        "uniform_scale": 0.10344827586206896,
+        "target_body_height": 78,
+        "exported_body_height": 78,
+        "offset": [
+          27,
+          27
+        ],
+        "bounds": [
+          27,
+          27,
+          72,
+          105
+        ],
+        "equipment_reduced_body_scale": false,
+        "palette_colors": 64
+      }
+    }
+  }
+}

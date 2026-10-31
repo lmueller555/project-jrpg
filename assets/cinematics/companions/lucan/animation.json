@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "display_name": "Lucan Rooke",
+  "status": "approved",
+  "canvas": [
+    96,
+    112
+  ],
+  "anchor": [
+    48,
+    104
+  ],
+  "facing": "front",
+  "source": "assets/source/companions/lucan/design_sheet.png",
+  "source_sha256": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+  "extraction": {
+    "panel_bounds": [
+      1300,
+      0,
+      1944,
+      809
+    ],
+    "source_bounds": [
+      1415,
+      18,
+      1891,
+      783
+    ],
+    "source_body_bounds": [
+      1480,
+      18,
+      1860,
+      783
+    ],
+    "source_ground": [
+      1673,
+      782
+    ],
+    "uniform_scale": 0.10196078431372549,
+    "target_body_height": 78,
+    "exported_body_height": 78,
+    "offset": [
+      22,
+      27
+    ],
+    "bounds": [
+      22,
+      27,
+      71,
+      105
+    ],
+    "equipment_reduced_body_scale": false,
+    "palette_colors": 63
+  },
+  "image": "stand_front.png",
+  "authored_pose_count": 1,
+  "poses": {
+    "stand_front": "stand_front.png"
+  }
+}

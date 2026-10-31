@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "display_name": "Lucan Rooke",
+  "status": "approved",
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    54
+  ],
+  "facing": "left",
+  "source": "assets/source/companions/lucan/design_sheet.png",
+  "source_sha256": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+  "extraction": {
+    "panel_bounds": [
+      500,
+      0,
+      1300,
+      809
+    ],
+    "source_bounds": [
+      620,
+      189,
+      1201,
+      765
+    ],
+    "source_body_bounds": [
+      770,
+      189,
+      1202,
+      765
+    ],
+    "source_ground": [
+      986.5,
+      764
+    ],
+    "uniform_scale": 0.07291666666666667,
+    "target_body_height": 42,
+    "exported_body_height": 42,
+    "offset": [
+      6,
+      13
+    ],
+    "bounds": [
+      6,
+      13,
+      48,
+      55
+    ],
+    "equipment_reduced_body_scale": false,
+    "palette_colors": 48
+  },
+  "image": "idle_01.png",
+  "authored_pose_count": 1,
+  "animations": {
+    "idle": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 500
+        }
+      ]
+    }
+  }
+}

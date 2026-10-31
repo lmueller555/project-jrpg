@@ -291,6 +291,11 @@ These documents retain their original status labels. Approved story decisions, p
 
 ## New character art
 
+[Lucan, Rhea and Edran's base sprites](docs/reviews/companion_sprites/README.md)
+are approved in front overworld, combat-ready and cinematic standing formats.
+Rhea has a green dress, blonde hair, blue eyes and a purple tanglewood staff
+with a green orb; Edran uses his revised sky-blue and silver outfit.
+
 [Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. All four directional idle designs are approved.
 
 The approved [front-facing walk cycle](assets/characters/caelan/walk_front/README.md) contains four frames with coordinated head-and-shoulder bobbing and an enlarged looping GIF.
