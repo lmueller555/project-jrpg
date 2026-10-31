@@ -97,9 +97,10 @@ class GallerySession:
                     forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False))
                 elif event.key in (pygame.K_SPACE, pygame.K_e, pygame.K_RETURN, pygame.K_KP_ENTER):
                     if cinematic or self.game.social.active:
-                        # Return is the catalogue confirm and dialogue confirm.
-                        key = pygame.K_SPACE if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER) else event.key
-                        forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=key, repeat=False))
+                        # All preview confirms are dialogue-only. A second E in
+                        # this batch must not become a world interaction when
+                        # the first E closes the final page and runs its callback.
+                        forwarded.append(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False))
                 continue
             if event.type == pygame.VIDEORESIZE and not self.parent.fullscreen:
                 self.parent.window = pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
