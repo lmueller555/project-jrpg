@@ -95,6 +95,8 @@ The southern road now leads automatically to the [Elden Vale overworld](docs/OVE
 
 The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives the vale distinct farmsteads and crop parcels, orchards, clustered forests, rocky slopes and planted riverbanks. Worn stone roads, cart tracks and woodland paths connect the new scenery, with wildlife, laundry, relief supplies and small resting places adding local character.
 
+The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
+
 Mother Serene now follows one continuous sanctuary schedule. She sorts the household provisions, checks the preparation list, tends the dining-room hearth and walks through the real connecting doorway to arrange linens in the hall. Her position and action clock persist when Caelan changes rooms; she yields when he blocks a route or doorway landing. The four [enlarged in-room routine previews](docs/reviews/serene_sanctuary_routines/README.md) await user review.
 
 Mira now works at the bench outside her shop: she inspects a fitting, makes three wrench strokes, tests it by hand and rests. Her [enlarged looping preview](docs/reviews/mira_bench/bench_closeup.gif) is approved by the user. She has foot collision and draws at the appropriate depth; the shop entrance remains clear.

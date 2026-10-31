@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "tiles": {},
+  "props": {
+    "broken_bridge_wide": {
+      "image": "assets/terrain/overworld/elden_vale/composition/props/broken_bridge_wide.png",
+      "foot_anchor": [
+        144,
+        94
+      ],
+      "deck_top_px": 34,
+      "deck_bottom_px": 106,
+      "deck_clear_width_px": 72,
+      "deck_sample_x_px": [
+        56,
+        232
+      ],
+      "central_gap_x_px": [
+        107,
+        181
+      ]
+    },
+    "fence_ns": {
+      "image": "assets/terrain/overworld/elden_vale/composition/props/fence_ns.png",
+      "foot_anchor": [
+        9,
+        24
+      ]
+    },
+    "fence_corner": {
+      "image": "assets/terrain/overworld/elden_vale/composition/props/fence_corner.png",
+      "foot_anchor": [
+        18,
+        36
+      ]
+    }
+  }
+}

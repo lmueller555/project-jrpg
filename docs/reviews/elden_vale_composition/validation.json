@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "tests": {
+    "relevant_regression": {
+      "tests": 107,
+      "seconds": 28.566,
+      "result": "passed",
+      "coverage": [
+        "Composition environment and gameplay, existing material/seam/cache tests",
+        "Road and doorway/orchard access, guard interactions, bridge width and independent repair",
+        "Town contacts, perimeter, companion ownership and Continue",
+        "Regional/town/classroom maps, camera and social behavior"
+      ]
+    }
+  },
+  "builds": {
+    "composition_art": "3 native props and width metadata byte-for-byte reproducible",
+    "region_manifest_and_atlas_reference": "byte-for-byte reproducible",
+    "compilation": "passed",
+    "whitespace": "passed"
+  },
+  "protected_assets": {
+    "pre_existing_tracked_pngs": 10405,
+    "changed": [],
+    "approved_atlas_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0"
+  },
+  "bridge_width": {
+    "art_key": "broken_bridge_wide",
+    "native_sprite_size": [
+      288,
+      144
+    ],
+    "deck_top_px": 34,
+    "deck_bottom_px": 106,
+    "clear_roadway_pixels": 72,
+    "clear_roadway_tiles": 3.0,
+    "art_world_top": 660,
+    "art_world_bottom": 732,
+    "repaired_deck_rect_pixels": [
+      -2880,
+      660,
+      432,
+      72
+    ],
+    "transparent_gap_columns": [
+      107,
+      181
+    ],
+    "transparent_gap_width_px": 74,
+    "audit_uses": "Production western_bridge.png plus review-only measured grid overlay"
+  },
+  "layout": {
+    "roads": 29,
+    "setpieces": 10,
+    "shore_conditions": 4,
+    "bridge_walk_seconds": 46.05,
+    "geometry_checks": {
+      "opening_reachable_tiles": 43616,
+      "required_points_reachable": 20,
+      "closed_perimeter": true,
+      "broken_bridge_blocks_crossing": true,
+      "repaired_bridge_connects_banks": true,
+      "scope": "Offline four-neighbour tile sampling of continuous vector barriers and authored approaches; runtime actor/decoration probes have separate engine checks."
+    }
+  },
+  "independent_reviews": {
+    "code": "No remaining blocker",
+    "visual": "12 fresh scene views reviewed; placement issues resolved before final capture"
+  },
+  "capture_input_hashes_match_final_files": true,
+  "capture_report": "capture_report.json",
+  "region_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+  "scope": {
+    "regional_map_redesign": "separate planned PR; map UI/renderer unchanged",
+    "story_progression": "existing release and repair facts retained",
+    "user_authorization": "Create and merge; in-game review afterwards"
+  }
+}

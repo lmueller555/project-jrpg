@@ -117,11 +117,64 @@ class EnvironmentDetail:
             if center and math.dist(point,center) < scene.get('clearance_radius',7):return True
         return False
 
+    def _grove_props(self, cx, cy):
+        """Each loose stand owns several overlapping crowns and open margins.
+
+        Grove centres live on a coarse global lattice, but their full-cell
+        jitter, variable radii and uneven children make the visible trees form
+        masses rather than rows. Feet, not centre cells, own the final props.
+        """
+        forests = self.world.region.get('terrain',{}).get('forests',[])
+        if not forests:return
+        view = pygame.Rect(cx*CHUNK,cy*CHUNK,CHUNK,CHUNK)
+        if not any(self.world._feature_intersects(f['polygon'],view,4*TILE) for f in forests):return
+        left,top,right,bottom = cx*16,cy*16,(cx+1)*16,(cy+1)*16
+        for gx in range(math.floor((left-4)/8),math.ceil((right+4)/8)):
+            for gy in range(math.floor((top-4)/8),math.ceil((bottom+4)/8)):
+                seed = stable(gx,gy,211)
+                center = (gx*8+1.2+(seed%560)/100,
+                          gy*8+1.2+((seed>>9)%560)/100)
+                forest = next((f for f in forests if inside(center,f['polygon'])),None)
+                if forest is None:continue
+                density = forest.get('density','medium')
+                chance = {'sparse':50,'medium':76,'dense':94}.get(density,76)
+                if seed%100 >= chance:continue
+                count = {'sparse':4,'medium':7,'dense':10}.get(density,7)+(seed>>17)%3
+                radius = 1.65+((seed>>13)%95)/100
+                style = forest.get('style',forest.get('kind','broadleaf'))
+                stand_conifer = style == 'conifer' or (style == 'mixed' and (seed>>11)%4 == 0)
+                for child in range(count):
+                    branch = stable(gx,gy,child+231)
+                    angle = ((seed>>7)%360)*math.pi/180+child*2.399963
+                    reach = radius*math.sqrt((child+.4)/count)*(.82+(branch%35)/100)
+                    point = (center[0]+math.cos(angle)*reach,
+                             center[1]+math.sin(angle)*reach)
+                    if (math.floor(point[0]/16),math.floor(point[1]/16)) != (cx,cy):continue
+                    if not inside(point,forest['polygon']) or self._reserved(point):continue
+                    conifer = stand_conifer or (style == 'mixed' and branch%13 == 0)
+                    choices = ('conifer_a','conifer_b') if conifer else ('oak_a','oak_b','oak_c')
+                    fallback = 'tree_conifer' if conifer else 'tree_broadleaf'
+                    variant = (seed>>20)%len(choices) if child%4 else (branch>>10)%len(choices)
+                    key = self.prop_key(choices[variant],fallback)
+                    grove_id = f'stand:{gx}:{gy}'
+                    yield {'id':f'{grove_id}:tree:{child}','key':key,
+                           'position':self.world._tile_point(point),'solid':(12,8),
+                           'grove_id':grove_id,'crown_ground':True}
+                    if child%3 == 0:
+                        bush = (point[0]+.55,point[1]+.35)
+                        if ((math.floor(bush[0]/16),math.floor(bush[1]/16)) == (cx,cy)
+                                and inside(bush,forest['polygon']) and not self._reserved(bush)):
+                            kind = ('fern','shrub','sapling','log','stump')[(branch>>15)%5]
+                            yield {'id':f'{grove_id}:floor:{child}',
+                                   'key':self.prop_key(kind,'rock'),
+                                   'position':self.world._tile_point(bush),'grove_id':grove_id}
+
     def chunk_props(self, cx, cy):
         props = list(self.by_chunk.get((cx,cy),()))
+        props.extend(self._grove_props(cx,cy))
         terrain = self.world.region.get('terrain',{})
-        # Two full-cell jitters and a coarse grove signal break the old square
-        # spacing. Each foot owns one chunk, even when its canopy spans a seam.
+        # Small meadow details and legacy hill fixtures stay sparse. Actual
+        # forest trees come from the composed stands above.
         for gx in range(math.floor(cx*16/3)*3,math.ceil((cx+1)*16/3)*3,3):
             for gy in range(math.floor(cy*16/3)*3,math.ceil((cy+1)*16/3)*3,3):
                 for candidate in range(2):
@@ -130,24 +183,9 @@ class EnvironmentDetail:
                     if (math.floor(point[0]/16),math.floor(point[1]/16)) != (cx,cy):continue
                     if self._reserved(point):continue
                     forest = next((f for f in terrain.get('forests',[]) if inside(point,f['polygon'])),None)
-                    if forest:
-                        density = {'sparse':.28,'medium':.46,'dense':.68}.get(forest.get('density','medium'),.46)
-                        grove = (stable(math.floor(point[0]/11),math.floor(point[1]/11),61)%100)/100
-                        density *= .48+grove
-                        if seed%1000 < density*1000:
-                            style = forest.get('style',forest.get('kind','broadleaf'))
-                            conifer = style == 'conifer' or (style == 'mixed' and seed%3 == 0)
-                            choices = ('conifer_a','conifer_b') if conifer else ('oak_a','oak_b','oak_c')
-                            fallback = 'tree_conifer' if conifer else 'tree_broadleaf'
-                            key = self.prop_key(choices[(seed>>14)%len(choices)],fallback)
-                            props.append({'id':f'grove:{gx}:{gy}:{candidate}','key':key,
-                                          'position':self.world._tile_point(point),'solid':(12,8)})
-                        elif seed%5 == 0:
-                            key = self.prop_key(('fern','shrub','sapling','log','stump')[(seed>>13)%5],'rock')
-                            props.append({'id':f'understorey:{gx}:{gy}:{candidate}','key':key,
-                                          'position':self.world._tile_point(point)})
-                    else:
+                    if not forest:
                         hill = next((h for h in terrain.get('hills',[]) if inside(point,h['polygon'])),None)
+                        if hill and hill.get('ground_treatment') == 'localized':continue
                         if hill and seed%7 == 0:
                             east = hill.get('style') == 'rocky_ridge' and point[0] > 70
                             xs = [p[0] for p in hill['polygon']]
@@ -165,7 +203,10 @@ class EnvironmentDetail:
         # Generated riverbank plants use the actual path normal and stay outside
         # its solid water, so they follow bends instead of a rectangular grid.
         viewport = pygame.Rect(cx*CHUNK,cy*CHUNK,CHUNK,CHUNK)
-        for river_index,river in enumerate(terrain.get('rivers',[])):
+        # Authored bank conditions own the plants at selected bends. Legacy
+        # manifests retain the sparse automatic shoreline decoration.
+        rivers = [] if terrain.get('shore_conditions') else terrain.get('rivers',[])
+        for river_index,river in enumerate(rivers):
             points = [self.world._tile_point(p) for p in river['points']]
             for point,normal,index,_ in samples(points,72,viewport,200):
                 seed = stable(index,river_index,91)
@@ -277,20 +318,76 @@ class EnvironmentDetail:
     def ground(self, target, cx, cy):
         self.world._pattern(target,self.key('grass_meadow','grass'))
         terrain = self.world.region.get('terrain',{})
+        for feature in terrain.get('hills',[]):
+            if feature.get('ground_treatment') == 'localized':continue
+            key = 'grass_dry' if feature.get('style') == 'rocky_ridge' else 'grass_lush'
+            self.polygon(target,feature,self.key(key,'grass'),cx,cy,6)
         for feature in terrain.get('forests',[]):
             self.polygon(target,feature,self.key('grass_lush','forest_floor'),cx,cy,10)
-            self.polygon(target,feature,self.key('leaf_litter','forest_floor'),cx,cy,6,inset=14)
+        self._canopy_ground(target,cx,cy)
         crops = {'grain':'grain','vegetables':'vegetables','fallow':'furrows','pasture':'pasture','orchard':'orchard_grass'}
         for feature in terrain.get('fields',[]):
             key = self.key(crops.get(feature.get('crop'),'grain'),'field')
             self.polygon(target,feature,key,cx,cy,2,feature.get('row_angle',0))
-        for feature in terrain.get('hills',[]):
-            key = 'grass_dry' if feature.get('style') == 'rocky_ridge' else 'grass_lush'
-            self.polygon(target,feature,self.key(key,'grass'),cx,cy,6)
+        self._ridge_ground(target,cx,cy)
+        for feature in terrain.get('shore_conditions',[]):
+            key = {'gravel':'gravel','rocky':'gravel','damp':'leaf_litter',
+                   'reeds':'grass_lush'}.get(feature.get('kind'),'grass_lush')
+            self.polygon(target,feature,self.key(key,'bank'),cx,cy,5)
         for feature in terrain.get('yards',[]):
             self.polygon(target,feature,self.key(feature.get('surface','gravel'),'dirt'),cx,cy,4)
         for feature in terrain.get('scorched',[]):
             self.polygon(target,feature,'scorched',cx,cy,4)
+
+    def _nearby_ground_props(self, cx, cy):
+        view = pygame.Rect(cx*CHUNK,cy*CHUNK,CHUNK,CHUNK).inflate(160,100)
+        for nx in range(cx-1,cx+2):
+            for ny in range(cy-1,cy+2):
+                metadata = self.world._chunk_metadata(nx,ny)
+                if metadata:
+                    for prop in metadata['props']:
+                        if view.collidepoint(prop['position']):yield prop
+
+    def _canopy_ground(self, target, cx, cy):
+        """Fallen leaves collect beneath crowns, not across an entire biome."""
+        origin = (cx*CHUNK,cy*CHUNK)
+        view = pygame.Rect(origin,(CHUNK,CHUNK))
+        forests = self.world.region.get('terrain',{}).get('forests',[])
+        if not any(self.world._feature_intersects(f['polygon'],view,80) for f in forests):return
+        crowns = [p for p in self._nearby_ground_props(cx,cy) if p.get('crown_ground')]
+        if not crowns:return
+        def mask(surface):
+            for prop in crowns:
+                x,y = prop['position'];seed = stable(round(x),round(y),251)
+                width,height = 32+seed%16,18+(seed>>7)%10
+                rect = pygame.Rect(round(x)-width//2-origin[0],
+                                   round(y)-height//2-origin[1]-2,width,height)
+                pygame.draw.ellipse(surface,'white',rect)
+                for side in (-1,1):
+                    pygame.draw.circle(surface,'white',
+                                       (rect.centerx+side*(width//3),rect.centery+side*3),5)
+        self.paint(target,self.key('leaf_litter','forest_floor'),mask,origin)
+
+    def _ridge_ground(self, target, cx, cy):
+        """Exposed earth hugs the authored rock shelf instead of a tan mat."""
+        hills = [h for h in self.world.region.get('terrain',{}).get('hills',[])
+                 if h.get('ground_treatment') == 'localized']
+        if not hills:return
+        origin = (cx*CHUNK,cy*CHUNK)
+        view = pygame.Rect(origin,(CHUNK,CHUNK))
+        if not any(self.world._feature_intersects(h['polygon'],view,80) for h in hills):return
+        rocks = [p for p in self._nearby_ground_props(cx,cy)
+                 if p.get('key') in ('ridge','rock_outcrop') and
+                 any(inside((p['position'][0]/TILE,p['position'][1]/TILE),h['polygon'])
+                     for h in hills)]
+        if not rocks:return
+        def mask(surface):
+            for prop in rocks:
+                x,y = prop['position'];wide = prop['key'] == 'ridge'
+                width,height = (100,26) if wide else (64,20)
+                rect = pygame.Rect(round(x)-width//2-origin[0],round(y)-height//2-origin[1],width,height)
+                pygame.draw.ellipse(surface,'white',rect)
+        self.paint(target,self.key('grass_dry','dirt'),mask,origin)
 
     @staticmethod
     def offset(points, distance):
@@ -369,7 +466,8 @@ class EnvironmentDetail:
                 center = (round(point[0]+normal[0]*distance*side-origin[0]),
                           round(point[1]+normal[1]*distance*side-origin[1]))
                 pygame.draw.circle(mask,'white',center,4+seed%9)
-        self.paint(target,self.key('gravel','bank'),gravel,origin)
+        if not self.world.region.get('terrain',{}).get('shore_conditions'):
+            self.paint(target,self.key('gravel','bank'),gravel,origin)
 
     def prop_frame(self, prop, elapsed_ms):
         animation = prop.get('animation') or {}
