@@ -228,19 +228,29 @@ loader checks the lashings. Leaving and returning retains the live controller;
 chunk eviction does not own or duplicate workers. The controller sleeps beyond
 260 pixels from the farm and uses the same map/journal pause as the region.
 
+The [NPC animation pass](REGION_NPCS.md) gives the workers authored full-body
+work and directional carrying sequences. Per-frame palm and sack registration
+keeps the load supported during lifting, placement and shared lowering. Blocked
+carrying uses a steady hold. Four-direction guard poses and a matching armored
+portrait also make checkpoint conversations consistent with the visible actors.
+
 The cart remains parked. Original decorative grain sacks remain reserve scenery;
 the three small handled sacks are the finite delivery batch. This adds no town
 NPC ownership, companion representation, quest reward, bridge repair, gate
 release, or delivery destination. Work-pose provenance and the repeatable builder
 live in `assets/source/characters/grain_workers/README.md`.
 
-[Gameplay videos and review notes](reviews/grain_farm/README.md) show both mill
-states, the whole exchange and payoff, blocked-path recovery, and Continue.
+[Current NPC videos and review notes](reviews/region_npcs/README.md) show both
+mill states, the whole exchange and payoff, blocked-path recovery, Continue and
+the guard conversations. The [original farm review](reviews/grain_farm/README.md)
+remains as the earlier implementation record.
 
 ```sh
 python tools/build_grain_workers.py
+python tools/build_grain_workers.py --check
 python -m unittest discover -s tests -p 'test_grain_farm.py' -v
 python tools/capture_grain_farm.py
+python tools/capture_region_npcs.py
 ```
 
 ## Near-bank bridge crew
@@ -276,13 +286,25 @@ never owns actors or props. The controller sleeps beyond 260 pixels.
 The cup has one rendered location at every stage. Actor probes and a reserved
 handoff area prevent overlap; the sequence begins only when that reservation
 is clear. Workers wait for blocked routes rather than teleporting or moving
-the player. Source art and procedural export provenance are recorded in
-`assets/source/characters/bridge_workers/README.md`; new assets remain review.
+the player. The [NPC animation pass](REGION_NPCS.md) gives both workers authored
+directional work and carrying frames, registered hand contacts and supported
+seated drinking/recovery. Source art and reproducible export provenance are
+recorded in `assets/source/characters/bridge_workers/README.md`.
 
 [Actual-game videos and fixture details](reviews/bridge_crew/README.md).
 
 ```sh
 python tools/build_bridge_workers.py
+python tools/build_bridge_workers.py --check
 python -m unittest discover -s tests -p 'test_bridge_crew.py' -v
 python tools/capture_bridge_crew.py
 ```
+
+## Garden and orchard workers
+
+The [garden/orchard work guide](GARDEN_ORCHARD.md) documents the southern kitchen
+gardener's finite watering and harvest, the village orchard picker's fruit
+sorting and rest, and an optional act of care for a struggling plant. Both
+workers belong to the region. Their objects, interrupted actions and first-read
+conversation persist independently of streamed scenery. Physical contacts use
+the shared distance-limited regional audio controller.

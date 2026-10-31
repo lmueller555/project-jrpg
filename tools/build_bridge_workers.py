@@ -1,69 +1,69 @@
-"""Export bridge work poses from approved layered villagers, not flattened warps.
+"""Build the authored bridge-crew animations and unchanged shared props."""
+from __future__ import annotations
 
-Generated pose_reference.png guides grips and weight; approved appearance parts
-retain the exact palette, head and foot registration. Outputs are new assets.
-"""
-from pathlib import Path
+import argparse
+import hashlib
 import json
-from PIL import Image, ImageDraw
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'assets/characters/bridge_workers'
+SOURCE = ROOT/'assets/source/characters/bridge_workers/common'
+ROLES = ('mason', 'tender')
 
 
-def build():
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def metadata():
+    return {
+        'version': 1,
+        'status': 'implemented',
+        'canvas': [40, 44],
+        'anchor': [20, 38],
+        'exporter': 'tools/build_bridge_workers.py',
+        'roles': {role: {'manifest': f'{role}/animation.json',
+                         'sha256': digest(OUT/role/'animation.json')}
+                  for role in ROLES},
+        'props': {name: {'file': name+'.png',
+                         'source': (SOURCE/(name+'.png')).relative_to(ROOT).as_posix(),
+                         'sha256': digest(SOURCE/(name+'.png'))}
+                  for name in ('stone', 'cup', 'kettle', 'bench', 'tray', 'tool', 'barrier', 'keep_mark', 'reject_mark')},
+        'stone_anchor': [6, 9],
+        'registration': 'Per-frame item offsets, palm contacts and depth layers belong to each authored sequence.',
+        'appearance': {'mason': 'male_01', 'tender': 'male_03'},
+        'body_art': 'Authored full-body frames; approved directional idle/walk art remains read-only.',
+    }
+
+
+def build(check=False):
+    for role in ROLES:
+        command = [sys.executable, str(ROOT/'tools'/f'build_bridge_{role}.py')]
+        if check:command.append('--check')
+        subprocess.run(command, cwd=ROOT, check=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    for role, variant in [('mason','male_01'), ('tender','male_03')]:
-        source = ROOT/f'assets/source/characters/npcs/{variant}/walk_front/parts'
-        palette_data = json.loads((ROOT/f'assets/characters/npcs/{variant}/palette.json').read_text())
-        palette = palette_data.get('material_overrides', palette_data.get('materials'))
-        def body(phase=None, crouch=0):
-            image = Image.new('RGBA',(40,44))
-            for part in ['idle_legs' if phase is None else f'frame_{phase+1:02}_legs','waist','shirt','head']:
-                layer = Image.open(source/f'{part}.png').convert('RGBA')
-                image.alpha_composite(layer,(8, 4+(crouch if part in ('head','shirt') else 0)))
-            return image
-        def arms(image, hands, crouch=0):
-            d=ImageDraw.Draw(image)
-            for shoulder,hand in zip([(15,21+crouch),(24,21+crouch)], hands):
-                elbow=(shoulder[0]+(-2 if shoulder[0]<20 else 2),round((shoulder[1]+hand[1])/2))
-                d.line([shoulder,elbow,hand],fill='#1a0e16',width=4)
-                d.line([shoulder,elbow],fill=palette['shirt']['base'],width=3)
-                d.line([elbow,hand],fill='#eda052',width=2)
-                d.point(hand,fill='#e8c49d')
-        poses={
-            'lift': ([(15,35),(24,35)],3),
-            'carry': ([(15,27),(24,27)],0),
-            'look': ([(15,27),(24,27)],2),
-            'cover': ([(15,29),(24,29)],2),
-            'place': ([(25,29),(33,29)],2),
-            'work': ([(25,27),(31,27)],0),
-            'assist': ([(30,27),(34,27)],1),
-            'assist_low': ([(30,35),(34,35)],3),
-            'stretch': ([(14,29),(24,22)],0),
-            'cup': ([(18,26),(24,29)],0),
-            'offer': ([(7,26),(13,26)],0),
-            'receive': ([(27,26),(31,26)],0),
-            'drink': ([(18,19),(22,19)],5),
-            'sit': ([(15,30),(24,30)],5),
-            'measure': ([(10,28),(30,28)],2),
-        }
-        for name,(hands,crouch) in poses.items():
-            for phase in range(4 if name in ('carry','cup') else 2):
-                image=body(phase if name in ('carry','cup') else None,crouch)
-                animated=[(x,y+(phase%2 if name=='work' else 0)) for x,y in hands]
-                arms(image,animated,crouch)
-                if name in ('sit','drink'):
-                    image.paste((0,0,0,0),(10,31,30,44))
-                    d=ImageDraw.Draw(image)
-                    d.rectangle((14,31,25,34),fill=palette['trousers']['base'] if 'trousers' in palette else '#665039')
-                    d.rectangle((14,34,17,38),fill='#594333');d.rectangle((23,34,26,38),fill='#594333')
-                    d.rectangle((13,38,18,39),fill='#251e20');d.rectangle((23,38,28,39),fill='#251e20')
-                image.save(OUT/f'{role}_{name}_{phase}.png')
-    from build_bridge_props import build_props
-    build_props()
-    (OUT/'art.json').write_text(json.dumps({'status':'review','anchor':[20,38], 'canvas':[40,44],
-        'appearance':'approved male_01 and male_03 layered front walks',
-        'pose_reference':'assets/source/characters/grain_workers/pose_reference.png',
-        'roles':['mason','tender']},indent=2)+'\n')
+    for name in ('stone.png', 'cup.png', 'kettle.png', 'bench.png', 'tray.png', 'tool.png', 'barrier.png', 'keep_mark.png', 'reject_mark.png'):
+        source, target = SOURCE/name, OUT/name
+        if check:
+            if not target.exists() or target.read_bytes() != source.read_bytes():
+                raise ValueError(f'Changed shared bridge prop: {target.relative_to(ROOT)}')
+        elif not target.exists() or target.read_bytes() != source.read_bytes():
+            shutil.copyfile(source, target)
+    expected = json.dumps(metadata(), indent=2)+'\n'
+    path = OUT/'art.json'
+    if check:
+        if not path.exists() or path.read_text() != expected:
+            raise ValueError('Bridge worker registration is stale; run tools/build_bridge_workers.py')
+    else:path.write_text(expected)
+    print(('Verified' if check else 'Built')+' both authored bridge manifests and unchanged shared bridge props')
 
-if __name__=='__main__':build()
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check', action='store_true')
+    args = parser.parse_args()
+    build(args.check)

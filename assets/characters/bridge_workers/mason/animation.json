@@ -1,0 +1,1658 @@
+{
+  "version": 1,
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "sequences": {
+    "inspect_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "inspect_front_0.png",
+          "duration_ms": 650
+        },
+        {
+          "file": "inspect_front_1.png",
+          "duration_ms": 650
+        }
+      ]
+    },
+    "lift_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "lift_front_0.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -2
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -4,
+              -5
+            ],
+            [
+              2,
+              -5
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "lift_front_1.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -6
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -4,
+              -7
+            ],
+            [
+              3,
+              -7
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "lift_front_2.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -9
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -11
+            ],
+            [
+              4,
+              -12
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "lift_front_3.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              4,
+              -12
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "recover_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "recover_front_0.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_1.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_2.png",
+          "duration_ms": 100,
+          "gripped": false
+        },
+        {
+          "file": "recover_front_3.png",
+          "duration_ms": 100,
+          "gripped": false
+        }
+      ]
+    },
+    "place_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "place_front_0.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              4,
+              -12
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_front_1.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -9
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -11
+            ],
+            [
+              4,
+              -12
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_front_2.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -6
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -4,
+              -7
+            ],
+            [
+              3,
+              -7
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "place_front_3.png",
+          "duration_ms": 300,
+          "stone_offset": [
+            0,
+            -2
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -4,
+              -5
+            ],
+            [
+              2,
+              -5
+            ]
+          ],
+          "gripped": false
+        }
+      ]
+    },
+    "work_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "work_right_0.png",
+          "duration_ms": 500,
+          "tool_offset": [
+            7,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "work_right_1.png",
+          "duration_ms": 500,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              7,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "work_right_2.png",
+          "duration_ms": 500,
+          "tool_offset": [
+            9,
+            -11
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              9,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "work_right_3.png",
+          "duration_ms": 500,
+          "tool_offset": [
+            7,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "measure_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "measure_left_0.png",
+          "duration_ms": 600,
+          "tool_offset": [
+            -8,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              -9,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "measure_left_1.png",
+          "duration_ms": 600,
+          "tool_offset": [
+            -6,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "measure_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "measure_right_0.png",
+          "duration_ms": 600,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              8,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "measure_right_1.png",
+          "duration_ms": 600,
+          "tool_offset": [
+            6,
+            -12
+          ],
+          "tool_layer": "front",
+          "hands": [
+            [
+              4,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "stretch_front_0.png",
+          "duration_ms": 800
+        },
+        {
+          "file": "stretch_front_1.png",
+          "duration_ms": 800
+        }
+      ]
+    },
+    "hold_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_front_0.png",
+          "duration_ms": 720,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              4,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_front_0.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -11
+            ],
+            [
+              2,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_1.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -5,
+              -11
+            ],
+            [
+              2,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_2.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -3,
+              -13
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_front_3.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -6,
+              -12
+            ],
+            [
+              3,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_hold_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_hold_front_0.png",
+          "duration_ms": 720,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              5,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_front_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              2,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "cup_front_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              3,
+              -14
+            ]
+          ]
+        },
+        {
+          "file": "cup_front_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -3,
+              -13
+            ],
+            [
+              5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "cup_front_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ],
+            [
+              3,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_back_0.png",
+          "duration_ms": 720,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_back_0.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_1.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_2.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "carry_back_3.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            0,
+            -12
+          ],
+          "stone_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_hold_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_hold_back_0.png",
+          "duration_ms": 720,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_back_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "cup_back_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "cup_back_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        },
+        {
+          "file": "cup_back_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              -5,
+              -12
+            ],
+            [
+              5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_left_0.png",
+          "duration_ms": 720,
+          "stone_offset": [
+            -7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -6,
+              -12
+            ],
+            [
+              -5,
+              -12
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_left_0.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            -7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -7,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_1.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            -7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_2.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            -7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -7,
+              -13
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_left_3.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            -7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              -7,
+              -14
+            ],
+            [
+              -5,
+              -14
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_hold_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_hold_left_0.png",
+          "duration_ms": 720,
+          "cup_offset": [
+            -7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -6,
+              -14
+            ],
+            [
+              -5,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_left_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ],
+            [
+              -4,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "cup_left_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ],
+            [
+              -4,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "cup_left_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ],
+            [
+              -4,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "cup_left_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -7,
+              -15
+            ],
+            [
+              -4,
+              -11
+            ]
+          ]
+        }
+      ]
+    },
+    "hold_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "hold_right_0.png",
+          "duration_ms": 720,
+          "stone_offset": [
+            7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              4,
+              -12
+            ],
+            [
+              5,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "carry_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "carry_right_0.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_1.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_2.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "carry_right_3.png",
+          "duration_ms": 180,
+          "stone_offset": [
+            7,
+            -12
+          ],
+          "stone_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_hold_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_hold_right_0.png",
+          "duration_ms": 720,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              5,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "cup_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_right_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              6,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "cup_right_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "cup_right_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        },
+        {
+          "file": "cup_right_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ],
+            [
+              7,
+              -13
+            ]
+          ]
+        }
+      ]
+    },
+    "receive_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "receive_right_0.png",
+          "duration_ms": 350,
+          "cup_offset": [
+            9,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              9,
+              -13
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "receive_right_1.png",
+          "duration_ms": 350,
+          "cup_offset": [
+            9,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              8,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "receive_right_2.png",
+          "duration_ms": 350,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "receive_right_3.png",
+          "duration_ms": 350,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "offer_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "offer_right_0.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              5,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "offer_right_1.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            8,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              8,
+              -15
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "offer_right_2.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            8,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              8,
+              -16
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "offer_right_3.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            8,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              8,
+              -14
+            ]
+          ],
+          "gripped": false
+        }
+      ]
+    },
+    "sit_down_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "sit_down_front_0.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -7,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "seat_contact": [
+            0,
+            -12
+          ]
+        },
+        {
+          "file": "sit_down_front_1.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -5,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -3,
+              -13
+            ]
+          ],
+          "seat_contact": [
+            2,
+            -10
+          ]
+        },
+        {
+          "file": "sit_down_front_2.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -3,
+            -8
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              0,
+              -11
+            ]
+          ],
+          "seat_contact": [
+            5,
+            -7
+          ]
+        },
+        {
+          "file": "sit_down_front_3.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            2,
+            -6
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              1,
+              -9
+            ],
+            [
+              5,
+              -9
+            ]
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        }
+      ]
+    },
+    "sit_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "sit_front_0.png",
+          "duration_ms": 1000,
+          "cup_offset": [
+            2,
+            -6
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              1,
+              -9
+            ],
+            [
+              5,
+              -9
+            ]
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        }
+      ]
+    },
+    "drink_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "drink_front_0.png",
+          "duration_ms": 650,
+          "cup_offset": [
+            2,
+            -6
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              1,
+              -9
+            ],
+            [
+              5,
+              -9
+            ]
+          ],
+          "mouth_offset": [
+            1,
+            -16
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        },
+        {
+          "file": "drink_front_1.png",
+          "duration_ms": 350,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              0,
+              -13
+            ],
+            [
+              1,
+              -11
+            ]
+          ],
+          "mouth_offset": [
+            1,
+            -16
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        },
+        {
+          "file": "drink_front_2.png",
+          "duration_ms": 850,
+          "cup_offset": [
+            0,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              0,
+              -13
+            ],
+            [
+              2,
+              -11
+            ]
+          ],
+          "mouth_offset": [
+            1,
+            -16
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        },
+        {
+          "file": "drink_front_3.png",
+          "duration_ms": 450,
+          "cup_offset": [
+            2,
+            -6
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              1,
+              -9
+            ],
+            [
+              5,
+              -9
+            ]
+          ],
+          "mouth_offset": [
+            1,
+            -16
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        }
+      ]
+    },
+    "stand_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "stand_front_0.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            2,
+            -6
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              1,
+              -9
+            ],
+            [
+              5,
+              -9
+            ]
+          ],
+          "seat_contact": [
+            7,
+            -5
+          ]
+        },
+        {
+          "file": "stand_front_1.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -3,
+            -9
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              0,
+              -12
+            ]
+          ],
+          "seat_contact": [
+            5,
+            -7
+          ]
+        },
+        {
+          "file": "stand_front_2.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -5,
+            -11
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -2,
+              -14
+            ]
+          ],
+          "seat_contact": [
+            2,
+            -10
+          ]
+        },
+        {
+          "file": "stand_front_3.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -7,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -15
+            ]
+          ],
+          "seat_contact": [
+            0,
+            -12
+          ]
+        }
+      ]
+    }
+  }
+}

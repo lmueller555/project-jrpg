@@ -70,7 +70,7 @@
     },
     "road_guard": {
       "name": "Road guard",
-      "portrait": "male_01"
+      "portrait": "road_guard"
     },
     "regent_clerk": {
       "name": "Clerk",
@@ -131,6 +131,16 @@
       "name": "Bridge surveyor",
       "actor_id": "bridge_tender",
       "portrait": "male_03"
+    },
+    "regional_gardener": {
+      "name": "Kitchen gardener",
+      "actor_id": "regional_gardener",
+      "portrait": "female_01"
+    },
+    "regional_picker": {
+      "name": "Orchard picker",
+      "actor_id": "regional_picker",
+      "portrait": "male_02"
     }
   },
   "characters": {

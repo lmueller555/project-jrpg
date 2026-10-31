@@ -1,0 +1,209 @@
+{
+  "status": "implementation visual review; user approval pending",
+  "source": "assets/source/characters/garden_workers/props_generation.png",
+  "export_crops": {
+    "barrel": [
+      [
+        80,
+        60,
+        450,
+        520
+      ],
+      [
+        23,
+        28
+      ]
+    ],
+    "basket": [
+      [
+        575,
+        185,
+        975,
+        495
+      ],
+      [
+        19,
+        15
+      ]
+    ],
+    "can": [
+      [
+        1060,
+        180,
+        1525,
+        490
+      ],
+      [
+        22,
+        15
+      ]
+    ],
+    "plant": [
+      [
+        150,
+        625,
+        425,
+        940
+      ],
+      [
+        13,
+        16
+      ]
+    ],
+    "apple": [
+      [
+        680,
+        710,
+        850,
+        910
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "turnip": [
+      [
+        1130,
+        625,
+        1430,
+        940
+      ],
+      [
+        8,
+        9
+      ]
+    ]
+  },
+  "alpha_threshold": 128,
+  "resampling": "nearest",
+  "body_sources": [
+    "approved female_01 layered walks",
+    "approved male_02 layered walks"
+  ],
+  "poses": "new articulated occupied arms and seated legs on approved appearance layers; no live town actors reused",
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "prop_anchor": "bottom center",
+  "pose_hand_canvas": {
+    "carry": [
+      [
+        15,
+        27
+      ],
+      [
+        24,
+        27
+      ]
+    ],
+    "carry_can": [
+      [
+        10,
+        20
+      ],
+      [
+        20,
+        27
+      ]
+    ],
+    "water": [
+      [
+        19,
+        20
+      ],
+      [
+        29,
+        27
+      ]
+    ],
+    "fill": [
+      [
+        6,
+        18
+      ],
+      [
+        13,
+        13
+      ]
+    ],
+    "weed": [
+      [
+        23,
+        32
+      ],
+      [
+        29,
+        32
+      ]
+    ],
+    "reach": [
+      [
+        20,
+        14
+      ],
+      [
+        24,
+        14
+      ]
+    ],
+    "sort": [
+      [
+        23,
+        32
+      ],
+      [
+        29,
+        32
+      ]
+    ],
+    "admire": [
+      [
+        18,
+        18
+      ],
+      [
+        23,
+        18
+      ]
+    ],
+    "rest": [
+      [
+        16,
+        31
+      ],
+      [
+        24,
+        31
+      ]
+    ]
+  },
+  "can_nozzle_from_bottom_center": [
+    10,
+    -13
+  ],
+  "prop_offsets": {
+    "carry_can": [
+      0,
+      -7
+    ],
+    "carry_plant": [
+      0,
+      -7
+    ],
+    "water_can": [
+      9,
+      -7
+    ],
+    "fill_can": [
+      -16,
+      -15
+    ]
+  },
+  "review": "assets/source/characters/garden_workers/contacts_native.png"
+}
