@@ -1,10 +1,10 @@
 {
   "game_integration": true,
   "renderer": "Production Game.draw() and game.window",
-  "source_base_commit": "ded6e3f637bc58852eb0c5b70fcf124ea4b82ca0",
+  "source_base_commit": "69370ac69b739a21f8da21557e3639a72dc4875d",
   "source_sha256": {
     "mill_quest.py": "f79caa47e2238787dd6a156d7cbda0a3863fa02a23b2d28ad150ed122975a8ad",
-    "main.py": "74a2bed05ed0e3ee80392555a1ba717a35db999daf4230f6267b367ca97ac8dd",
+    "main.py": "2006387d89e38451e1737162ab2d3a5c30c2aac406842bf6d974597efa69543f",
     "tests/test_millrace_departure.py": "235134bb6c764553f3e28c06a3700c03e5bc1ed4c2d883ca8c9e22ff4aca7212",
     "tests/test_mill_trigger_geometry.py": "c262489a2b2bf8139ebd379e9b9ffbb985a63166cc44a6ef5b6066acd330d4c9",
     "tools/capture_millrace_departure.py": "cf6cab0ca8d5a78a3619b5c2b47d89fb684e25c3e2143073f50a1029b0ee9118"
