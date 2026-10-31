@@ -1,0 +1,577 @@
+{
+  "method": "Game.update/draw plus offline PCM from the production accepted voice stream.\n\nThe dummy device cannot be recorded. Fake channel leases preserve the mixer\nAPI; RegionalAudio owns cue expiry using game seconds. Its observer feeds the\nsame generated PCM, gains and stop events into a 48kHz mono offline mixer.\nNo unrelated soundtrack, normalization or compression is added.\n",
+  "seconds": 116.8,
+  "sample_rate": 48000,
+  "peak": 0.21650593185036285,
+  "peak_dbfs": -13.290604006111746,
+  "rms_dbfs": -37.636257959831056,
+  "markers": [
+    {
+      "time": 0.0,
+      "label": "Farm: finite placements, rustles and lashing"
+    },
+    {
+      "time": 17.6,
+      "label": "Bridge: tool contact and tea"
+    },
+    {
+      "time": 79.4,
+      "label": "River approach: far, mid, near (walk west)"
+    },
+    {
+      "time": 84.8,
+      "label": "River departure: near to hard cutoff"
+    },
+    {
+      "time": 90.8,
+      "label": "Return to hearing range"
+    },
+    {
+      "time": 96.8,
+      "label": "Effects mute"
+    },
+    {
+      "time": 98.8,
+      "label": "Unmute"
+    },
+    {
+      "time": 100.8,
+      "label": "Regional map pauses audio"
+    },
+    {
+      "time": 104.8,
+      "label": "Town transfer releases voices"
+    },
+    {
+      "time": 106.8,
+      "label": "Return to region"
+    },
+    {
+      "time": 108.8,
+      "label": "Budget fixture: six candidates; two beds plus two incidental voices"
+    },
+    {
+      "time": 110.8,
+      "label": "Wind within an authored grain patch"
+    },
+    {
+      "time": 114.8,
+      "label": "Title releases voices"
+    }
+  ],
+  "snapshots": [
+    {
+      "time": 0.0,
+      "label": "Farm: finite placements, rustles and lashing",
+      "listener": [
+        -876.0,
+        232.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 17.6,
+      "label": "Bridge: tool contact and tea",
+      "listener": [
+        -876.0,
+        232.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 79.4,
+      "label": "River approach: far, mid, near (walk west)",
+      "listener": [
+        -2376.0,
+        642.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.16672519792023294,
+          "source": [
+            -2549.6952557333157,
+            681.4761944848444
+          ]
+        }
+      }
+    },
+    {
+      "time": 84.8,
+      "label": "River departure: near to hard cutoff",
+      "listener": [
+        -2568.8000000000884,
+        1000.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.55,
+          "source": [
+            -2590.245782082192,
+            996.2702987683297
+          ]
+        }
+      }
+    },
+    {
+      "time": 90.8,
+      "label": "Return to hearing range",
+      "listener": [
+        -2136.79999999999,
+        1000.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 96.8,
+      "label": "Effects mute",
+      "listener": [
+        -2568.8000000000884,
+        1000.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.55,
+          "source": [
+            -2590.245782082192,
+            996.2702987683297
+          ]
+        }
+      }
+    },
+    {
+      "time": 98.8,
+      "label": "Unmute",
+      "listener": [
+        -2568.8000000000884,
+        1000.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 100.8,
+      "label": "Regional map pauses audio",
+      "listener": [
+        -2568.8000000000884,
+        1000.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.55,
+          "source": [
+            -2590.245782082192,
+            996.2702987683297
+          ]
+        }
+      }
+    },
+    {
+      "time": 104.8,
+      "label": "Town transfer releases voices",
+      "listener": [
+        -2568.8000000000884,
+        1000.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.55,
+          "source": [
+            -2590.245782082192,
+            996.2702987683297
+          ]
+        }
+      }
+    },
+    {
+      "time": 106.8,
+      "label": "Return to region",
+      "listener": [
+        120.0,
+        120.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 108.8,
+      "label": "Budget fixture: six candidates; two beds plus two incidental voices",
+      "listener": [
+        -2550.0,
+        1000.0
+      ],
+      "voices": {
+        "river": {
+          "gain": 0.5494026137963669,
+          "source": [
+            -2589.693855476685,
+            993.0967207866634
+          ]
+        }
+      }
+    },
+    {
+      "time": 110.8,
+      "label": "Wind within an authored grain patch",
+      "listener": [
+        -2550.0,
+        1000.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 114.8,
+      "label": "Title releases voices",
+      "listener": [
+        -1400.0,
+        720.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.45,
+          "source": [
+            -1400.0,
+            720.0
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 2.566666666666667,
+      "action": "start",
+      "key": "farm_cloth",
+      "sound": "rustle",
+      "gain": 0.4343720028584629,
+      "ambient": false
+    },
+    {
+      "time": 3.033333333333333,
+      "action": "stop",
+      "key": "farm_cloth"
+    },
+    {
+      "time": 5.566666666666666,
+      "action": "start",
+      "key": "farm_place",
+      "sound": "sack",
+      "gain": 0.47051947135403593,
+      "ambient": false
+    },
+    {
+      "time": 6.0,
+      "action": "stop",
+      "key": "farm_place"
+    },
+    {
+      "time": 9.366666666666667,
+      "action": "start",
+      "key": "farm_cloth",
+      "sound": "rustle",
+      "gain": 0.4343720028584629,
+      "ambient": false
+    },
+    {
+      "time": 9.833333333333334,
+      "action": "stop",
+      "key": "farm_cloth"
+    },
+    {
+      "time": 12.366666666666667,
+      "action": "start",
+      "key": "farm_place",
+      "sound": "sack",
+      "gain": 0.47051947135403593,
+      "ambient": false
+    },
+    {
+      "time": 12.8,
+      "action": "stop",
+      "key": "farm_place"
+    },
+    {
+      "time": 17.6,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.16672519792023294,
+      "ambient": true
+    },
+    {
+      "time": 55.666666666666664,
+      "action": "start",
+      "key": "bridge_cup_stone",
+      "sound": "cup",
+      "gain": 0.4924624309650105,
+      "ambient": false
+    },
+    {
+      "time": 55.766666666666666,
+      "action": "start",
+      "key": "bridge_tool",
+      "sound": "stone",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 55.9,
+      "action": "stop",
+      "key": "bridge_cup_stone"
+    },
+    {
+      "time": 56.03333333333333,
+      "action": "stop",
+      "key": "bridge_tool"
+    },
+    {
+      "time": 56.833333333333336,
+      "action": "start",
+      "key": "bridge_cup_tray",
+      "sound": "cup",
+      "gain": 0.4972052105978506,
+      "ambient": false
+    },
+    {
+      "time": 57.06666666666667,
+      "action": "stop",
+      "key": "bridge_cup_tray"
+    },
+    {
+      "time": 65.76666666666667,
+      "action": "start",
+      "key": "bridge_tool",
+      "sound": "stone",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 66.03333333333333,
+      "action": "stop",
+      "key": "bridge_tool"
+    },
+    {
+      "time": 66.96666666666667,
+      "action": "start",
+      "key": "bridge_tool",
+      "sound": "stone",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 67.23333333333333,
+      "action": "stop",
+      "key": "bridge_tool"
+    },
+    {
+      "time": 68.16666666666667,
+      "action": "start",
+      "key": "bridge_tool",
+      "sound": "stone",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 68.43333333333334,
+      "action": "stop",
+      "key": "bridge_tool"
+    },
+    {
+      "time": 77.36666666666666,
+      "action": "start",
+      "key": "bridge_cup_return",
+      "sound": "cup",
+      "gain": 0.31787169967596596,
+      "ambient": false
+    },
+    {
+      "time": 77.6,
+      "action": "stop",
+      "key": "bridge_cup_return"
+    },
+    {
+      "time": 79.4,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 81.6,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.005839471135129015,
+      "ambient": true
+    },
+    {
+      "time": 88.13333333333334,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 93.6,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.005839471135129015,
+      "ambient": true
+    },
+    {
+      "time": 96.8,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 98.8,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.55,
+      "ambient": true
+    },
+    {
+      "time": 100.8,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 102.8,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.55,
+      "ambient": true
+    },
+    {
+      "time": 104.8,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 106.8,
+      "action": "start",
+      "key": "river",
+      "sound": "river",
+      "gain": 0.5494026137963669,
+      "ambient": true
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "bed_fixture0",
+      "sound": "river",
+      "gain": 0.5,
+      "ambient": true
+    },
+    {
+      "time": 108.8,
+      "action": "stop",
+      "key": "river"
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "bed_fixture1",
+      "sound": "wind",
+      "gain": 0.5,
+      "ambient": true
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget0",
+      "sound": "cup",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget1",
+      "sound": "creak",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 108.8,
+      "action": "stop",
+      "key": "budget0"
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget2",
+      "sound": "cup",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 108.8,
+      "action": "stop",
+      "key": "budget1"
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget3",
+      "sound": "creak",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 108.8,
+      "action": "stop",
+      "key": "budget2"
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget4",
+      "sound": "cup",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 108.8,
+      "action": "stop",
+      "key": "budget3"
+    },
+    {
+      "time": 108.8,
+      "action": "start",
+      "key": "budget5",
+      "sound": "creak",
+      "gain": 0.5,
+      "ambient": false
+    },
+    {
+      "time": 109.0,
+      "action": "stop",
+      "key": "budget4"
+    },
+    {
+      "time": 109.43333333333334,
+      "action": "stop",
+      "key": "budget5"
+    },
+    {
+      "time": 110.8,
+      "action": "stop",
+      "key": "bed_fixture0"
+    },
+    {
+      "time": 110.8,
+      "action": "stop",
+      "key": "bed_fixture1"
+    },
+    {
+      "time": 110.8,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.45,
+      "ambient": true
+    },
+    {
+      "time": 114.8,
+      "action": "stop",
+      "key": "wind"
+    }
+  ]
+}
