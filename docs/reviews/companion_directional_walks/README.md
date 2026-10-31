@@ -1,7 +1,8 @@
 # Companion directional walking review
 
-**Status:** Nine new left, right and rear walk cycles are proposed for user
-review. The approved front walks appear alongside them as references.
+**Status:** All nine left, right and rear walk cycles are approved by the user.
+Together with the approved front walks, they complete each character's
+four-direction walking set.
 
 [Watch all three characters in all four directions](walk_directions.gif).
 [Inspect the authored key poses](contact_sheet.png).
@@ -38,7 +39,7 @@ rendering it; image padding does not determine the character's world position.
 These review captures temporarily stage Caelan and the three companions in the
 actual town renderer, on collision-free routes at the game's walking speed.
 The scenery remains still so the gait and foot placement can be compared.
-Recruitment scenes and party behavior will use the movement sets after approval.
+Recruitment scenes and party behavior can use these approved movement sets.
 
 Generated sources, prompts and extraction recipes are retained under
 `assets/source/companions/<character>/walk_<direction>/`.

@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "lucan",
   "animation": "walk.back",
-  "status": "review",
-  "art_status": "review",
+  "status": "approved",
+  "art_status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     1983,
@@ -137,5 +137,6 @@
     "Rear shield interior/straps and near-vertical viewer-right blade preserve approved equipment ownership.",
     "Common scale/grid for all4; complete swordtips retained.",
     "No approved source or native sprite modified."
-  ]
+  ],
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }

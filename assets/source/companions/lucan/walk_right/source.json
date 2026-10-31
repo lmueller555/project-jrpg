@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "lucan",
   "animation": "walk.right",
-  "status": "review",
-  "art_status": "review",
+  "status": "approved",
+  "art_status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     2079,
@@ -128,5 +128,6 @@
     "Frame4 has opposite grounded/passing leg arrangement from frame2.",
     "Common scale/grid for all4; contact bodies521sourcepx, passing538sourcepx.",
     "No approved source or native sprite modified."
-  ]
+  ],
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }

@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "edran",
   "animation": "walk.left",
-  "status": "review",
-  "art_status": "review",
+  "status": "approved",
+  "art_status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     2048,
@@ -146,6 +146,7 @@
     "One common scale/grid for all four frames; exporter may refine axis/grid registration for native readability.",
     "Crook is carried in the right hand rather than planted as a cane.",
     "Source haze below alpha128 should be removed by the established deterministic export.",
-    "Visual review remains pending; this source is not user-approved."
-  ]
+    "The user approved the final four-frame cycle for merge into main."
+  ],
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }

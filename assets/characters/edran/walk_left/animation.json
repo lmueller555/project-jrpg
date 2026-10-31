@@ -4,8 +4,8 @@
   "display_name": "Edran Hale",
   "animation": "walk.left",
   "facing": "left",
-  "status": "review",
-  "design_status": "review",
+  "status": "approved",
+  "design_status": "approved",
   "image": "spritesheet.png",
   "frame_size": [
     24,
@@ -20,7 +20,7 @@
   "source": "assets/source/companions/edran/walk_left/walk_sheet.png",
   "source_sha256": "8ed8f4ec9a9a179317e048d088b6a50ee92e048c3887143f931c0a87723558dd",
   "source_recipe": "assets/source/companions/edran/walk_left/source.json",
-  "source_recipe_sha256": "9d90fb5bc74dcf4d6df776f1b9c2ec868eee6849e4e4add69ee3cfe02d603f25",
+  "source_recipe_sha256": "12a580ed2b5b00708a6b71e5d05d535c3c7fb92024f2fd92a592268fb87d491d",
   "palette_source": "assets/characters/edran/idle_front.png",
   "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
   "palette": [

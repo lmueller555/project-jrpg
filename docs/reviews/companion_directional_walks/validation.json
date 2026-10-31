@@ -1,5 +1,5 @@
 {
-  "status": "review",
+  "status": "approved",
   "frame_size": [
     24,
     36
@@ -116,28 +116,28 @@
       "duration_ms": 560,
       "frame_count": 4,
       "loop": 0,
-      "sha256": "7d106ce000d62c4b2547f1859c5ce3412959e5316abdc54280d67b81d66b4340"
+      "sha256": "e4468e1d28d73a4312e64da2bea618437982749e8593a99cb3cd01cb9aaf5645"
     },
     "rhea": {
       "file": "rhea_walk_directions.gif",
       "duration_ms": 560,
       "frame_count": 4,
       "loop": 0,
-      "sha256": "bad211f99746ac4e9182e20a52edd4649fada60f6b8d0f7be058c27ec53e30d4"
+      "sha256": "137abc3338fd8bc2097c793fc111cf9778b93c9691850053e063b45bf2d80068"
     },
     "edran": {
       "file": "edran_walk_directions.gif",
       "duration_ms": 560,
       "frame_count": 4,
       "loop": 0,
-      "sha256": "f030aa0c328975ae94790f3c38ffa9fe31a48f8f53d617d97927458e8ca85a28"
+      "sha256": "a3d3787f6a620ca064d1a0ae9c85311ba0a8e6e51aebea9950ea6a7f4eae308a"
     },
     "combined": {
       "file": "walk_directions.gif",
       "duration_ms": 560,
       "frame_count": 4,
       "loop": 0,
-      "sha256": "ec25c8d8270fa35011bf2029a09f956db8b6db2963f301bae827eb7af7ac7972"
+      "sha256": "8dec908c47917048dff384217ceb4beea5d036165c6b006ed0c9bc565cc2bb9b"
     }
   },
   "actors": {
@@ -598,8 +598,8 @@
         "display_name": "Lucan Rooke",
         "animation": "walk.left",
         "facing": "left",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -614,7 +614,7 @@
         "source": "assets/source/companions/lucan/walk_left/walk_sheet.png",
         "source_sha256": "4fecfe13c49ac5a4cc48e35df28b6927f425f5cabf033df5a91d8312b9453925",
         "source_recipe": "assets/source/companions/lucan/walk_left/source.json",
-        "source_recipe_sha256": "be6c069b275a94d4d7cdd08ccc1e1b72ee5b9aa2cffa8a561357b18640c5c2c9",
+        "source_recipe_sha256": "595bcb0597e88f0aa62f98b9cfdb5056e809b74a91fa11531b9a5f879b1100ff",
         "palette_source": "assets/characters/lucan/idle_front.png",
         "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
         "palette": [
@@ -1041,8 +1041,8 @@
         "display_name": "Lucan Rooke",
         "animation": "walk.right",
         "facing": "right",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -1057,7 +1057,7 @@
         "source": "assets/source/companions/lucan/walk_right/walk_sheet.png",
         "source_sha256": "92a5a8b2b041c19dd83c9ce841236ce60b43ef36c9dc6a45ee2d1e62a1771051",
         "source_recipe": "assets/source/companions/lucan/walk_right/source.json",
-        "source_recipe_sha256": "c8e12722e876547f18ab274f226959e56f07bfc197aacd64208d58d0c4c54212",
+        "source_recipe_sha256": "a7a6048adb216ba485290ebffcddffc35c4f45b8c3598a77ed2fa83f97a57a4b",
         "palette_source": "assets/characters/lucan/idle_front.png",
         "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
         "palette": [
@@ -1484,8 +1484,8 @@
         "display_name": "Lucan Rooke",
         "animation": "walk.back",
         "facing": "back",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -1500,7 +1500,7 @@
         "source": "assets/source/companions/lucan/walk_back/walk_sheet.png",
         "source_sha256": "ba84cde6a78aaec0f261981acb0b883b5b9c69717a3173cb57b928786db8966e",
         "source_recipe": "assets/source/companions/lucan/walk_back/source.json",
-        "source_recipe_sha256": "ab0544e42e9c39fd4d46f059ed41f4a2bd81f53e755ae97f5d937be1ae4345b4",
+        "source_recipe_sha256": "c82173a095da1d1311cb5a279a720697576f020e409ace80aedf86214f035715",
         "palette_source": "assets/characters/lucan/idle_front.png",
         "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
         "palette": [
@@ -2384,8 +2384,8 @@
         "display_name": "Rhea Sorel",
         "animation": "walk.left",
         "facing": "left",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -2400,7 +2400,7 @@
         "source": "assets/source/companions/rhea/walk_left/walk_sheet.png",
         "source_sha256": "fc502cee2122cf8f74fb923dc783dfeb588b7c03b9f3c27cfd8171d1d2bfd768",
         "source_recipe": "assets/source/companions/rhea/walk_left/source.json",
-        "source_recipe_sha256": "0ef91c0220793f18d248bb796adc826836b8bdd246a00d0f76ed9ff01c8bb1ce",
+        "source_recipe_sha256": "10a3e86f7a462610aeb4edcc6ced42d11ec5dd1172f6ea36e07814fae2df2611",
         "palette_source": "assets/characters/rhea/idle_front.png",
         "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
         "palette": [
@@ -2832,8 +2832,8 @@
         "display_name": "Rhea Sorel",
         "animation": "walk.right",
         "facing": "right",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -2848,7 +2848,7 @@
         "source": "assets/source/companions/rhea/walk_right/walk_sheet.png",
         "source_sha256": "1c784146dd270913b6910c124ee89c461b2245d8892ff03bd8383c7330f646d2",
         "source_recipe": "assets/source/companions/rhea/walk_right/source.json",
-        "source_recipe_sha256": "2e965e600505baaa7eb46a0492e33a7dca5934dfac37464d23cd162e2ab67613",
+        "source_recipe_sha256": "89ef4054216fa4f58d4abd88404741ca186637927a73a771cd5442f7b194a7ca",
         "palette_source": "assets/characters/rhea/idle_front.png",
         "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
         "palette": [
@@ -3280,8 +3280,8 @@
         "display_name": "Rhea Sorel",
         "animation": "walk.back",
         "facing": "back",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -3296,7 +3296,7 @@
         "source": "assets/source/companions/rhea/walk_back/walk_sheet.png",
         "source_sha256": "77cd59433d1c6a24f8b4c1340f22e5c43f726aeaf8ec2eb293cf4ddbe7f64dd4",
         "source_recipe": "assets/source/companions/rhea/walk_back/source.json",
-        "source_recipe_sha256": "dea67bc0b59839646215b2fdf4e64648b5d7e53ad5bf32c71f84498eab3686aa",
+        "source_recipe_sha256": "79479269e503d72f87e6172254efccf519b2b1bfc30871fcc36ac1de8a8f9035",
         "palette_source": "assets/characters/rhea/idle_front.png",
         "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
         "palette": [
@@ -4185,8 +4185,8 @@
         "display_name": "Edran Hale",
         "animation": "walk.left",
         "facing": "left",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -4201,7 +4201,7 @@
         "source": "assets/source/companions/edran/walk_left/walk_sheet.png",
         "source_sha256": "8ed8f4ec9a9a179317e048d088b6a50ee92e048c3887143f931c0a87723558dd",
         "source_recipe": "assets/source/companions/edran/walk_left/source.json",
-        "source_recipe_sha256": "9d90fb5bc74dcf4d6df776f1b9c2ec868eee6849e4e4add69ee3cfe02d603f25",
+        "source_recipe_sha256": "12a580ed2b5b00708a6b71e5d05d535c3c7fb92024f2fd92a592268fb87d491d",
         "palette_source": "assets/characters/edran/idle_front.png",
         "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
         "palette": [
@@ -4633,8 +4633,8 @@
         "display_name": "Edran Hale",
         "animation": "walk.right",
         "facing": "right",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -4649,7 +4649,7 @@
         "source": "assets/source/companions/edran/walk_right/walk_sheet.png",
         "source_sha256": "eacb8549a3045973a0b36e27254a9d9f47c77fd17880f7bd34a3002163b986fc",
         "source_recipe": "assets/source/companions/edran/walk_right/source.json",
-        "source_recipe_sha256": "9e50f4d4c2c28f94a32ebe6f6aad6386cefe02265508267b91feb78ea63468df",
+        "source_recipe_sha256": "5f35222a137f473df41961f1383ddd3b5c2129b39283337d9c8fd350c62b86b8",
         "palette_source": "assets/characters/edran/idle_front.png",
         "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
         "palette": [
@@ -5081,8 +5081,8 @@
         "display_name": "Edran Hale",
         "animation": "walk.back",
         "facing": "back",
-        "status": "review",
-        "design_status": "review",
+        "status": "approved",
+        "design_status": "approved",
         "image": "spritesheet.png",
         "frame_size": [
           24,
@@ -5097,7 +5097,7 @@
         "source": "assets/source/companions/edran/walk_back/walk_sheet.png",
         "source_sha256": "47ec86b454f6fbcbb113f0444c5810381723beb90d53afd8a6e098531de6d070",
         "source_recipe": "assets/source/companions/edran/walk_back/source.json",
-        "source_recipe_sha256": "c645f158d6cb861985da2f470603a45b7f987284cbf820964e774ee3a1c29d12",
+        "source_recipe_sha256": "e63118e4a1b7cb25faaecbaa56a472a1bd7b80b567ee5ccaf2dec019e25ca86a",
         "palette_source": "assets/characters/edran/idle_front.png",
         "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
         "palette": [

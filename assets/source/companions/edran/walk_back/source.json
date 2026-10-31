@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "edran",
   "animation": "walk.back",
-  "status": "review",
-  "art_status": "review",
+  "status": "approved",
+  "art_status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     2048,
@@ -148,10 +148,11 @@
     "One common scale/grid for all four frames; exporter may refine axis/grid registration for native readability.",
     "Crook is carried in the right hand rather than planted as a cane.",
     "Source haze below alpha128 should be removed by the established deterministic export.",
-    "Visual review remains pending; this source is not user-approved.",
+    "The user approved the final four-frame cycle for merge into main.",
     "Native QA found phase4 repeated phase2 support; a targeted imagegen correction redrew only fourth-pose boots/adjacent hem so screen-right boot supports at floor and screen-left boot lifts in recovery. Head/rise/staff/pouch and other directions retained; all generator outputs preserved unaltered."
   ],
   "bob_refinement_file": "bob_refinement_sheet.png",
   "bob_refinement_sha256": "92872f64895a806d4b23a1c3180579f63e879d421573acddb72430732af05602",
-  "bob_refinement_generated_original_filename": "exec-c148afe1-82b3-4936-8052-654ef30a19a5.png"
+  "bob_refinement_generated_original_filename": "exec-c148afe1-82b3-4936-8052-654ef30a19a5.png",
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }

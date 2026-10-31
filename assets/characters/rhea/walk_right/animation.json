@@ -4,8 +4,8 @@
   "display_name": "Rhea Sorel",
   "animation": "walk.right",
   "facing": "right",
-  "status": "review",
-  "design_status": "review",
+  "status": "approved",
+  "design_status": "approved",
   "image": "spritesheet.png",
   "frame_size": [
     24,
@@ -20,7 +20,7 @@
   "source": "assets/source/companions/rhea/walk_right/walk_sheet.png",
   "source_sha256": "1c784146dd270913b6910c124ee89c461b2245d8892ff03bd8383c7330f646d2",
   "source_recipe": "assets/source/companions/rhea/walk_right/source.json",
-  "source_recipe_sha256": "2e965e600505baaa7eb46a0492e33a7dca5934dfac37464d23cd162e2ab67613",
+  "source_recipe_sha256": "89ef4054216fa4f58d4abd88404741ca186637927a73a771cd5442f7b194a7ca",
   "palette_source": "assets/characters/rhea/idle_front.png",
   "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
   "palette": [

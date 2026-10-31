@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "rhea",
   "direction": "right",
-  "art_status": "review",
-  "status": "review",
+  "art_status": "approved",
+  "status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     2172,
@@ -230,5 +230,6 @@
       }
     ]
   },
-  "registration_notes": "Final unaltered four-frame source. Common32/596 scale and one samplingphase; same head/hair/body width acrossfour. FacingRIGHT staff+pouchfar and slitright/near remain. Rhea right-walk anchor12,34 was approved by root as transparent padding to preserve full trailinghair/staff while keeping true pelvis registered; right idle stays10,34. No limb deformation or actor mirroring."
+  "registration_notes": "Final unaltered four-frame source. Common32/596 scale and one samplingphase; same head/hair/body width acrossfour. FacingRIGHT staff+pouchfar and slitright/near remain. Rhea right-walk anchor12,34 was approved by root as transparent padding to preserve full trailinghair/staff while keeping true pelvis registered; right idle stays10,34. No limb deformation or actor mirroring.",
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }

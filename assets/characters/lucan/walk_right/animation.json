@@ -4,8 +4,8 @@
   "display_name": "Lucan Rooke",
   "animation": "walk.right",
   "facing": "right",
-  "status": "review",
-  "design_status": "review",
+  "status": "approved",
+  "design_status": "approved",
   "image": "spritesheet.png",
   "frame_size": [
     24,
@@ -20,7 +20,7 @@
   "source": "assets/source/companions/lucan/walk_right/walk_sheet.png",
   "source_sha256": "92a5a8b2b041c19dd83c9ce841236ce60b43ef36c9dc6a45ee2d1e62a1771051",
   "source_recipe": "assets/source/companions/lucan/walk_right/source.json",
-  "source_recipe_sha256": "c8e12722e876547f18ab274f226959e56f07bfc197aacd64208d58d0c4c54212",
+  "source_recipe_sha256": "a7a6048adb216ba485290ebffcddffc35c4f45b8c3598a77ed2fa83f97a57a4b",
   "palette_source": "assets/characters/lucan/idle_front.png",
   "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
   "palette": [

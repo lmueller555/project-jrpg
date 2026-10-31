@@ -2,8 +2,8 @@
   "version": 1,
   "actor": "lucan",
   "animation": "walk.left",
-  "status": "review",
-  "art_status": "review",
+  "status": "approved",
+  "art_status": "approved",
   "source_file": "walk_sheet.png",
   "source_dimensions": [
     2048,
@@ -146,5 +146,6 @@
     "Common scale/grid for all4; contact bodies590/593sourcepx, passing603sourcepx.",
     "Complete sword tips retained with fixed full-body scale.",
     "No approved source or native sprite modified."
-  ]
+  ],
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
 }
