@@ -1,7 +1,7 @@
 {
   "version": 1,
   "actor": "rhea",
-  "status": "review",
+  "status": "approved",
   "source_file": "design_sheet.png",
   "source_dimensions": [
     1881,
@@ -116,5 +116,7 @@
       }
     }
   },
-  "registration_notes": "All body heights736/737px, same compact~3-head proportions. Stafftip sits~1-2nativepixels above plantedboots. Rearstaff projectsleft and needs proposed_anchor12,34 atfullbody scale; do not shrinkbody or shiftphysicalpivot solelyfor equipmentpadding. Each profile independently authored with anatomical near/far occlusion; no pose mirroring."
+  "registration_notes": "All body heights736/737px, same compact~3-head proportions. Stafftip sits~1-2nativepixels above plantedboots. Rearstaff projectsleft and needs proposed_anchor12,34 atfullbody scale; do not shrinkbody or shiftphysicalpivot solelyfor equipmentpadding. Each profile independently authored with anatomical near/far occlusion; no pose mirroring.",
+  "art_status": "approved",
+  "approval_note": "The user approved all three directional idle poses for merge into main."
 }

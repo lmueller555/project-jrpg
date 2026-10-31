@@ -2,7 +2,7 @@
   "version": 1,
   "actor": "lucan",
   "animation": "idle.directional",
-  "status": "review",
+  "status": "approved",
   "source_file": "directional_sheet.png",
   "source_dimensions": [
     1983,
@@ -103,5 +103,7 @@
     "Rear shield shows its interior straps/rim; rear face and front belt buckle are absent.",
     "All poses are stationary with relaxed feet on their own source ground baseline.",
     "Use one uniform scale for all three poses; no body shrink, anatomy redrawing or axis warping."
-  ]
+  ],
+  "art_status": "approved",
+  "approval_note": "The user approved all three directional idle poses for merge into main."
 }

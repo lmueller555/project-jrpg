@@ -39,7 +39,9 @@ All three [front-walk cycles](../../reviews/companion_front_walks/README.md)
 are also approved. Each has four 24×36 frames at 140 ms per frame, matching
 Caelan's walking cadence. The retained sources, shared palettes and fixed
 registration are reproducible through the companion front-walk exporter.
-Other directions, running and action animations remain future work.
+Their [left, right and rear idles](../../reviews/companion_directional_idles/README.md)
+are approved as well, completing the four-direction standing references.
+The remaining directional walks, running and action animations remain future work.
 
 ## Lucan Rooke
 

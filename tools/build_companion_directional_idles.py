@@ -25,8 +25,7 @@ REVIEW = ROOT/'docs/reviews/companion_directional_idles'
 ACTORS = {'lucan': 'Lucan Rooke', 'rhea': 'Rhea Sorel', 'edran': 'Edran Hale'}
 DIRECTIONS = ('left', 'right', 'back')
 ORDER = ('front',)+DIRECTIONS
-LABELS = {'front': 'Front — approved', 'left': 'Left — review',
-          'right': 'Right — review', 'back': 'Rear — review'}
+LABELS = {'front': 'Front', 'left': 'Left', 'right': 'Right', 'back': 'Rear'}
 FRAME_SIZE = (24, 36)
 PAPER = (232, 237, 242)
 INK = (38, 52, 62)
@@ -106,12 +105,16 @@ def build_actor(actor):
     directory = SOURCE/actor/'directional_idles'
     recipe_path = directory/'source.json'
     recipe = json.loads(recipe_path.read_text())
+    status = recipe.get('art_status', recipe.get('status', 'review'))
+    if status not in ('approved', 'review'):
+        raise ValueError(f'{actor}: invalid directional-idle approval status')
     original = source_path(directory, recipe)
     sheet = Image.open(original).convert('RGBA')
     destination = ROOT/f'assets/characters/{actor}'
     front_path = destination/'idle_front.png'
     front = Image.open(front_path).convert('RGBA')
     front_meta = json.loads((destination/'idle_front.json').read_text())
+    statuses = {'front': front_meta['status'], **{d: status for d in DIRECTIONS}}
     palette = approved_palette(front)
     export, prepared = prepare_sources(sheet, recipe)
     anchor = tuple(export.get('anchor', front_meta.get('foot_anchor', front_meta.get('anchor', (12, 34)))))
@@ -134,7 +137,7 @@ def build_actor(actor):
         path = destination/f'idle_{direction}.png'
         frame.save(path, optimize=True)
         metadata = {'version': 1, 'actor': actor, 'display_name': ACTORS[actor],
-                    'status': 'review', 'design_status': 'review', 'facing': direction,
+                    'status': status, 'design_status': status, 'facing': direction,
                     'animation': 'idle.'+direction, 'authored_pose_count': 1,
                     'image': path.name, 'canvas': list(FRAME_SIZE), 'frame_size': list(FRAME_SIZE),
                     'anchor': list(pose_anchor), 'foot_anchor': list(pose_anchor),
@@ -161,15 +164,17 @@ def build_actor(actor):
         atlas.alpha_composite(poses[direction], (index*24, 0))
         frame_records.append({'direction': direction, 'file': f'idle_{direction}.png',
                               'rect': [index*24, 0, 24, 36], 'foot_anchor': list(anchors[direction]),
-                              'status': 'approved' if direction == 'front' else 'review'})
+                              'status': statuses[direction]})
     atlas.save(destination/'idle_directions.png', optimize=True)
     write_json(destination/'idle_directions.json',
-               {'version': 1, 'actor': actor, 'display_name': ACTORS[actor], 'status': 'review',
+               {'version': 1, 'actor': actor, 'display_name': ACTORS[actor],
+                'status': 'approved' if all(s == 'approved' for s in statuses.values()) else 'review',
                 'image': 'idle_directions.png', 'frame_size': list(FRAME_SIZE),
                 'foot_anchor': list(anchor), 'order': list(ORDER),
                 'per_direction_anchors': {key: list(value) for key, value in anchors.items()},
                 'frames': frame_records})
     return {'poses': poses, 'anchor': anchor, 'anchors': anchors, 'records': records,
+            'statuses': statuses,
             'scale': scale, 'phase': phase, 'target_height': target_height,
             'source_body_heights': source_heights}
 
@@ -186,22 +191,26 @@ def actor_board(actor, data):
               font=font(18), fill=MUTED)
     for index, direction in enumerate(ORDER):
         left=index*360;center=left+180
-        draw.text((left+22, 101), LABELS[direction], font=font(22), fill=INK)
+        draw.text((left+22, 101), LABELS[direction]+' — '+data['statuses'][direction],
+                  font=font(22), fill=INK)
         draw.line((left+18, 456, left+342, 456), fill=GROUND)
         sprite = data['poses'][direction]
         place(board, sprite, center, 455, data['anchors'][direction], 10)
         board.paste(sprite, (center-12, 487), sprite)
-    draw.text((22, 540), '10× above · native sprites below · new views awaiting review', font=font(17), fill=MUTED)
+    approval = 'all four views approved' if all(s == 'approved' for s in data['statuses'].values()) else 'new views awaiting review'
+    draw.text((22, 540), '10× above · native sprites below · '+approval, font=font(17), fill=MUTED)
     board.save(REVIEW/f'{actor}_directional_idles.png', optimize=True)
 
 
 def comparison_board(data):
     board = Image.new('RGB', (1360, 112+370*len(data)), PAPER);draw = ImageDraw.Draw(board)
-    draw.text((22, 15), 'Companion directional idle studies — review', font=font(29), fill=INK)
+    status = 'approved' if all(s == 'approved' for r in data.values() for s in r['statuses'].values()) else 'review'
+    draw.text((22, 15), 'Companion directional idle studies — '+status, font=font(29), fill=INK)
     draw.text((22, 59), 'Front reference approved · new left/right/rear static poses · no mirroring or anatomy warping',
               font=font(17), fill=MUTED)
     for index, direction in enumerate(ORDER):
-        draw.text((index*340+22, 88), LABELS[direction], font=font(21), fill=INK)
+        direction_status = 'approved' if all(r['statuses'][direction] == 'approved' for r in data.values()) else 'review'
+        draw.text((index*340+22, 88), LABELS[direction]+' — '+direction_status, font=font(21), fill=INK)
     for row, (actor, record) in enumerate(data.items()):
         top=122+row*370;baseline=top+284
         draw.text((22, top+4), ACTORS[actor], font=font(21), fill=INK)
@@ -221,8 +230,9 @@ def build(actors=None, snapshot=None):
     for actor, record in data.items():actor_board(actor, record)
     comparison_board(data)
     verify_protected(protected)
+    status = 'approved' if all(s == 'approved' for r in data.values() for s in r['statuses'].values()) else 'review'
     write_json(REVIEW/'validation.json',
-               {'status': 'review', 'static_poses_only': True, 'new_pose_count': len(data)*3,
+               {'status': status, 'static_poses_only': True, 'new_pose_count': len(data)*3,
                 'new_directions': list(DIRECTIONS), 'frame_size': list(FRAME_SIZE),
                 'binary_alpha': True, 'floor_row': 34,
                 'sampling': 'one uniform affine nearest-neighbor grid per actor; no anatomy edits or mirroring',

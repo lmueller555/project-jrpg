@@ -2,7 +2,7 @@
   "version": 1,
   "actor": "rhea",
   "display_name": "Rhea Sorel",
-  "status": "review",
+  "status": "approved",
   "image": "idle_directions.png",
   "frame_size": [
     24,
@@ -65,7 +65,7 @@
         10,
         34
       ],
-      "status": "review"
+      "status": "approved"
     },
     {
       "direction": "right",
@@ -80,7 +80,7 @@
         10,
         34
       ],
-      "status": "review"
+      "status": "approved"
     },
     {
       "direction": "back",
@@ -95,7 +95,7 @@
         12,
         34
       ],
-      "status": "review"
+      "status": "approved"
     }
   ]
 }

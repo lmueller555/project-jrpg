@@ -1,7 +1,7 @@
 # Companion directional idle review
 
-**Status:** Left, right and rear poses are proposed for user review. The front
-poses remain the approved originals.
+**Status:** All nine left, right and rear poses are approved by the user,
+completing the four-direction idle sets alongside the approved front poses.
 
 [Compare all three characters](directional_comparison.png).
 
@@ -39,5 +39,5 @@ Rebuild the native poses and comparison boards with:
 
     python tools/build_companion_directional_idles.py
 
-These assets are review candidates. Recruitment scenes and party integration
-will use the directional sets after their art is approved.
+Recruitment scenes and party integration can now use these approved directional
+references as their remaining movement and action animations are developed.
