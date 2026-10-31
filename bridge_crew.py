@@ -152,7 +152,7 @@ class BridgeCrew:
         elif stage == 'tea_home':
             if self._walk(self.tender,KETTLE,seconds,player):self._stage('tea_pickup')
         elif stage == 'tea_pickup':
-            self.mason.pose = 'work'; self.tender.pose = 'cup'
+            self.mason.pose = 'work'; self.tender.pose = 'work' if self.timer<.5 else 'cup'
             if self.timer>1:self._stage('tea_across')
         elif stage == 'tea_across':
             if self._walk(self.tender,(-2336,584),seconds,player,'cup'):self._stage('tea_down')
@@ -190,7 +190,10 @@ class BridgeCrew:
         elif stage == 'tray_up':
             if self._walk(self.tender,(-2336,584),seconds,player,'cup'):self._stage('tray_across')
         elif stage == 'tray_across':
-            if self._walk(self.tender,KETTLE,seconds,player,'cup'):
+            if self._walk(self.tender,KETTLE,seconds,player,'cup'):self._stage('tray_place')
+        elif stage == 'tray_place':
+            self.tender.pose = 'cup' if self.timer<.5 else 'work'
+            if self.timer>1:
                 self._commit(game,tea_beat=5);self._stage('ready')
 
     def nearby(self,game):
@@ -246,8 +249,10 @@ class BridgeCrew:
         add('stone',(-2368+(1 if self.stage=='wobble' and int(self.timer*6)%2 else 0),609))
         add('tray',SAFE)
         stage=self.stage
-        cup=pygame.Vector2(KETTLE)+(-1,-11)
-        if stage in ('tea_pickup','tea_across','tea_down','tea_side','request'):cup=self.tender.position+(-1,-11)
+        cup=pygame.Vector2(KETTLE)+(8,-11)
+        if stage=='tea_pickup':cup=cup.lerp(self.tender.position+(-1,-11),min(1,self.timer))
+        elif stage=='tray_place':cup=(self.tender.position+(-1,-11)).lerp(cup,min(1,self.timer))
+        elif stage in ('tea_across','tea_down','tea_side','request'):cup=self.tender.position+(-1,-11)
         elif stage=='wobble':
             t=min(1,max(0,(self.timer-.8)/1.2))
             cup=(self.tender.position+(-1,-11)).lerp(pygame.Vector2(-2368,600),min(1,self.timer/.8)) if self.timer<.8 else pygame.Vector2(-2368,600).lerp(pygame.Vector2(SAFE)+(0,-7),t)
@@ -256,6 +261,7 @@ class BridgeCrew:
         elif stage in ('exchange','sit_walk','sit','tool_return','stand','cup_return'):
             cup=self.mason.position+((0,-13) if stage=='sit' else (9,-11) if stage in ('exchange','cup_return') else (-1,-11))
         elif stage in ('tray_return','tray_up','tray_across'):cup=self.tender.position+(-1,-11)
+        if stage=='cup_return':cup=(self.mason.position+(9,-11)).lerp(self.tender.position+(-1,-11),min(1,self.timer))
         add('cup',cup,cup.y+24)
         tool=self.tender if stage=='sit' and self.tender.position.distance_to(SOURCE)<.1 else self.mason
         point=tool.position+(9,-10) if tool.pose=='work' else pygame.Vector2(SOURCE)+(10,-3)
