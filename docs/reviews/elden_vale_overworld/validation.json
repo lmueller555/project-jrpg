@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "tests": {
+    "full_regression": {
+      "command": "python -m unittest discover -s tests",
+      "tests": 1214,
+      "seconds": 627.677,
+      "result": "passed"
+    },
+    "final_overworld": {
+      "command": "python -m unittest discover -s tests -p 'test_overworld_*.py'",
+      "tests": 29,
+      "seconds": 11.414,
+      "result": "passed"
+    }
+  },
+  "other_checks": {
+    "native_art_exporter": "22 PNGs byte-for-byte reproducible",
+    "region_exporter": "manifest and atlas reference byte-for-byte reproducible",
+    "python_compilation": "passed",
+    "whitespace": "passed",
+    "independent_code_review": "no blocking issues",
+    "visual_review": "actual final game captures inspected"
+  },
+  "approved_assets": {
+    "existing_tracked_png_count": 10284,
+    "changed_existing_pngs": [],
+    "atlas_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0"
+  },
+  "region": {
+    "bounds_tiles": [
+      -256,
+      -192,
+      512,
+      384
+    ],
+    "tile_size": 24,
+    "chunk_size": 16,
+    "spawn_tile": [
+      12,
+      -25
+    ],
+    "bridge_walk_seconds": 46.76,
+    "geometry_checks": {
+      "opening_reachable_tiles": 43616,
+      "required_points_reachable": 10,
+      "closed_perimeter": true,
+      "broken_bridge_blocks_crossing": true,
+      "repaired_bridge_connects_banks": true,
+      "scope": "Offline four-neighbour tile sampling of continuous vector barriers; runtime actor/decoration probes have separate engine checks."
+    }
+  },
+  "runtime_scenarios": [
+    "Automatic village south exit and miniature entry from all four sides",
+    "No repeated portal transfer until contact rearms",
+    "Pause, dialogue, action and battle transfer locks",
+    "Legacy and regional Continue with persistent discoveries",
+    "Virtual Tomas/Mira/Liam/regent companions retain identity and quest progress",
+    "Full-foot collision reachability, blocked perimeter and diagonal/running movement",
+    "Negative coordinates, seam-safe wide strokes and missing sparse chunks",
+    "Independent bridge repair and checkpoint readiness",
+    "1,000-chunk bounded cache traversal",
+    "Regional map transforms, discovery, progress states and text scaling"
+  ],
+  "capture_report": "capture_report.json",
+  "deferred": [
+    "Opening-story clearance producer and onward destinations",
+    "Bridge repair quest",
+    "Aldric arrival cutscene and revised MQ03 dialogue",
+    "New regional random encounters"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "actual_renderer": true,
+  "quest_progress_seeded": false,
+  "transitions": [
+    [
+      "eldenmere.playable",
+      "auratia.overworld"
+    ],
+    [
+      "auratia.overworld",
+      "eldenmere.playable"
+    ]
+  ],
+  "overview": {
+    "streamed_chunks": 768,
+    "largest_world_render_surface": [
+      384,
+      384
+    ],
+    "overview_size": [
+      1536,
+      1152
+    ],
+    "max_render_cache_bytes": 66650112,
+    "max_metadata_chunks": 64,
+    "configured_render_budget": 67108864
+  },
+  "region_sha256": "de4b44c21fba75a80adfa77c639c9f17587bdb6475341c2f066cf35407c90b00",
+  "art_manifest_sha256": "cd26ece5a475d96332d56619dd5a46557682ec2e5b9155549d3abf19214d623c",
+  "captures": {
+    "eastern_foothills.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 84500
+    },
+    "northern_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 66742
+    },
+    "northern_woodland.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 110456
+    },
+    "region_overview.png": {
+      "size": [
+        1536,
+        1152
+      ],
+      "frames": 1,
+      "bytes": 563262
+    },
+    "region_overview_annotated.png": {
+      "size": [
+        1536,
+        1152
+      ],
+      "frames": 1,
+      "bytes": 567767
+    },
+    "region_walk.gif": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 42,
+      "bytes": 3126629
+    },
+    "regional_map.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 56552
+    },
+    "southern_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 73337
+    },
+    "southern_farmland.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 77210
+    },
+    "town_miniature.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 78247
+    },
+    "town_transition.gif": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 14,
+      "bytes": 456728
+    },
+    "western_bridge.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 99442
+    }
+  }
+}

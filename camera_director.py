@@ -40,9 +40,15 @@ class CameraDirector:
         return max(0.0, min(world_size-view_size, value))
 
     def _bounded(self, point, height):
-        width, world_height = self.game.world.size
-        return (self._axis(point[0], width, VIEW_SIZE[0]),
-                self._axis(point[1], world_height, height))
+        world = self.game.world
+        bounds = getattr(world, 'bounds', None)
+        if bounds is None:
+            left = top = 0
+            width, world_height = world.size
+        else:
+            left, top, width, world_height = bounds
+        return (left+self._axis(point[0]-left, width, VIEW_SIZE[0]),
+                top+self._axis(point[1]-top, world_height, height))
 
     @staticmethod
     def _position_of(actor):

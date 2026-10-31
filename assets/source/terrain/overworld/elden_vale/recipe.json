@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "tile_size": 24,
+  "palette_colors": 64,
+  "alpha_threshold": 128,
+  "source_records": [
+    {
+      "key": "texture_sheet",
+      "file": "assets/source/terrain/overworld/elden_vale/texture_sheet.png",
+      "generation_artifact": "exec-dca2e3e2-c56a-4c6d-b411-2b8d80ea391d.png",
+      "sha256": "86edfb5cd370f55fd1e41702fb6609f3b0ff944b95867d75957f37f27154626c",
+      "unaltered": true
+    },
+    {
+      "key": "prop_sheet",
+      "file": "assets/source/terrain/overworld/elden_vale/prop_sheet.png",
+      "generation_artifact": "exec-a394e64a-08f4-4dad-985f-9f0fdf44ee87.png",
+      "sha256": "b34a89adecd2424f8e20ffe5ca1e7536ffe5155e0203726ceb3ed36ccbbb1378",
+      "unaltered": true
+    },
+    {
+      "key": "landmark_sheet",
+      "file": "assets/source/terrain/overworld/elden_vale/landmark_sheet.png",
+      "generation_artifact": "exec-d358a901-2aaa-4652-bf7f-1bbc3ffb6d87.png",
+      "sha256": "183cc82e076390f078b9fb1806c72da33d049cdcc387188492997e5c832efc06",
+      "unaltered": true
+    }
+  ],
+  "tiles": {
+    "grass": {
+      "source": "texture_sheet.png",
+      "crop": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "dirt": {
+      "source": "texture_sheet.png",
+      "crop": [
+        418,
+        0,
+        836,
+        418
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stone_road": {
+      "source": "texture_sheet.png",
+      "crop": [
+        836,
+        0,
+        1254,
+        418
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "field": {
+      "source": "texture_sheet.png",
+      "crop": [
+        0,
+        418,
+        418,
+        836
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "forest_floor": {
+      "source": "texture_sheet.png",
+      "crop": [
+        418,
+        418,
+        836,
+        836
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "water": {
+      "source": "texture_sheet.png",
+      "crop": [
+        836,
+        418,
+        1254,
+        836
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "bank": {
+      "source": "texture_sheet.png",
+      "crop": [
+        0,
+        836,
+        418,
+        1254
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "scorched": {
+      "source": "texture_sheet.png",
+      "crop": [
+        418,
+        836,
+        836,
+        1254
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "wall": {
+      "source": "texture_sheet.png",
+      "crop": [
+        836,
+        836,
+        1254,
+        1254
+      ],
+      "size": [
+        24,
+        24
+      ]
+    }
+  },
+  "props": {
+    "tree_broadleaf": {
+      "source": "prop_sheet.png",
+      "crop": [
+        0,
+        0,
+        418,
+        460
+      ],
+      "size": [
+        48,
+        60
+      ],
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "tree_conifer": {
+      "source": "prop_sheet.png",
+      "crop": [
+        418,
+        0,
+        836,
+        460
+      ],
+      "size": [
+        36,
+        60
+      ],
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "rock": {
+      "source": "prop_sheet.png",
+      "crop": [
+        836,
+        0,
+        1254,
+        460
+      ],
+      "size": [
+        36,
+        24
+      ],
+      "foot_anchor": [
+        18,
+        24
+      ]
+    },
+    "mountain": {
+      "source": "prop_sheet.png",
+      "crop": [
+        0,
+        460,
+        460,
+        840
+      ],
+      "size": [
+        96,
+        96
+      ],
+      "foot_anchor": [
+        48,
+        96
+      ]
+    },
+    "supplies": {
+      "source": "prop_sheet.png",
+      "crop": [
+        460,
+        460,
+        836,
+        840
+      ],
+      "size": [
+        72,
+        48
+      ],
+      "foot_anchor": [
+        36,
+        48
+      ]
+    },
+    "checkpoint": {
+      "source": "prop_sheet.png",
+      "crop": [
+        836,
+        460,
+        1254,
+        840
+      ],
+      "size": [
+        96,
+        72
+      ],
+      "foot_anchor": [
+        48,
+        72
+      ]
+    },
+    "wall_segment": {
+      "source": "prop_sheet.png",
+      "crop": [
+        0,
+        840,
+        418,
+        1254
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "eldenmere": {
+      "source": "landmark_sheet.png",
+      "crop": [
+        0,
+        0,
+        1000,
+        610
+      ],
+      "size": [
+        144,
+        120
+      ],
+      "foot_anchor": [
+        72,
+        120
+      ]
+    },
+    "guard_front": {
+      "source": "landmark_sheet.png",
+      "crop": [
+        1100,
+        200,
+        1320,
+        570
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "guard_back": {
+      "source": "landmark_sheet.png",
+      "crop": [
+        1320,
+        200,
+        1550,
+        570
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "broken_bridge": {
+      "source": "landmark_sheet.png",
+      "crop": [
+        0,
+        610,
+        1774,
+        887
+      ],
+      "size": [
+        288,
+        120
+      ],
+      "foot_anchor": [
+        144,
+        120
+      ]
+    }
+  },
+  "glints": {
+    "water_glint_1": {
+      "source": "texture_sheet.png",
+      "crop": [
+        836,
+        418,
+        1044,
+        626
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "visible_rgb_min": [
+        88,
+        140,
+        148
+      ]
+    },
+    "water_glint_2": {
+      "source": "texture_sheet.png",
+      "crop": [
+        1045,
+        627,
+        1253,
+        835
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "visible_rgb_min": [
+        88,
+        140,
+        148
+      ]
+    }
+  }
+}

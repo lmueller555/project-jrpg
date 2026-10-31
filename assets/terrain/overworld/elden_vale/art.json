@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "tiles": {
+    "grass": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/grass.png"
+    },
+    "dirt": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/dirt.png"
+    },
+    "stone_road": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/stone_road.png"
+    },
+    "field": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/field.png"
+    },
+    "forest_floor": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/forest_floor.png"
+    },
+    "water": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/water.png"
+    },
+    "bank": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/bank.png"
+    },
+    "scorched": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/scorched.png"
+    },
+    "wall": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/wall.png"
+    },
+    "water_glint_1": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/water_glint_1.png"
+    },
+    "water_glint_2": {
+      "image": "assets/terrain/overworld/elden_vale/tiles/water_glint_2.png"
+    }
+  },
+  "props": {
+    "tree_broadleaf": {
+      "image": "assets/terrain/overworld/elden_vale/props/tree_broadleaf.png",
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "tree_conifer": {
+      "image": "assets/terrain/overworld/elden_vale/props/tree_conifer.png",
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "rock": {
+      "image": "assets/terrain/overworld/elden_vale/props/rock.png",
+      "foot_anchor": [
+        18,
+        24
+      ]
+    },
+    "mountain": {
+      "image": "assets/terrain/overworld/elden_vale/props/mountain.png",
+      "foot_anchor": [
+        48,
+        96
+      ]
+    },
+    "supplies": {
+      "image": "assets/terrain/overworld/elden_vale/props/supplies.png",
+      "foot_anchor": [
+        36,
+        48
+      ]
+    },
+    "checkpoint": {
+      "image": "assets/terrain/overworld/elden_vale/props/checkpoint.png",
+      "foot_anchor": [
+        48,
+        72
+      ]
+    },
+    "wall_segment": {
+      "image": "assets/terrain/overworld/elden_vale/props/wall_segment.png",
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "eldenmere": {
+      "image": "assets/terrain/overworld/elden_vale/props/eldenmere.png",
+      "foot_anchor": [
+        72,
+        120
+      ]
+    },
+    "guard_front": {
+      "image": "assets/terrain/overworld/elden_vale/props/guard_front.png",
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "guard_back": {
+      "image": "assets/terrain/overworld/elden_vale/props/guard_back.png",
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "broken_bridge": {
+      "image": "assets/terrain/overworld/elden_vale/props/broken_bridge.png",
+      "foot_anchor": [
+        144,
+        120
+      ]
+    }
+  }
+}

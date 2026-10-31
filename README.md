@@ -1,6 +1,6 @@
 # Project JRPG
 
-Explore the approved Eldenmere town as Caelan by running `main.py`. The game uses the new 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
+Explore Eldenmere and the surrounding Elden Vale as Caelan by running `main.py`. The game uses 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
 
 ## Music files
 
@@ -74,7 +74,7 @@ duplicating rewards. The Music slider controls the soundtrack independently of e
 | --- | --- |
 | WASD or arrow keys | Move Caelan |
 | Shift | Run with Caelan’s approved four-direction running animations |
-| M | Open/close the town map; click landmarks to inspect them |
+| M | Open/close the town or regional map; click landmarks to inspect them |
 | J | Open/close the quest journal; select a quest and scroll its details |
 | I | Open/close the inventory; Tab or left/right switches categories |
 | Left click anywhere / Space / E | Advance an open conversation |
@@ -89,7 +89,9 @@ The commons now contains a roofed stone well, a rounded dirt-and-stone square an
 
 **Building doors open automatically when you approach.** They stay open nearby and close as you move away. Walk into an open doorway to enter; walk down through the interior's entrance threshold to return outside. No action key is required. The sanctuary hall also connects to Caelan's bedroom and the dining room through its northern doors.
 
-All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors. The map's north and south roads currently end at the town boundary.
+All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors.
+
+The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
 Mother Serene now follows one continuous sanctuary schedule. She sorts the household provisions, checks the preparation list, tends the dining-room hearth and walks through the real connecting doorway to arrange linens in the hall. Her position and action clock persist when Caelan changes rooms; she yields when he blocks a route or doorway landing. The four [enlarged in-room routine previews](docs/reviews/serene_sanctuary_routines/README.md) await user review.
 

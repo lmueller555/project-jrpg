@@ -24,11 +24,15 @@ def foot_gap(a, b):
 def clear_sight(world, a, b):
     delta = b-a
     count = max(1, math.ceil(delta.length()))
+    query = getattr(world, 'is_blocked_at', None)
     for index in range(count+1):
         point = a + delta*(index/count)
         x, y = round(point.x), round(point.y)
-        if not (0 <= x < world.size[0] and 0 <= y < world.size[1]):return False
-        if world.blocked.get_at((x, y)):return False
+        if query is not None:
+            if query((x, y)):return False
+        else:
+            if not (0 <= x < world.size[0] and 0 <= y < world.size[1]):return False
+            if world.blocked.get_at((x, y)):return False
     return True
 
 
