@@ -103,7 +103,8 @@ def build():
     spawn=room_spawn(meta,room_blocked)
     center=meta['entry_rect'][0]+meta['entry_rect'][2]/2
     room.update(id='school',name='Eldenmere school',spawn=spawn,teacher='liam_mother',
-                overview=data['overview'],school_layout=(AREA/'layout.json').relative_to(ROOT).as_posix())
+                overview=data['overview'],school_layout=(AREA/'layout.json').relative_to(ROOT).as_posix(),
+                world_map_display=meta['world_map_display'])
     room['doors']=[portal('courtyard',[center,meta['entry_rect'][1]-6],'south',
                           TOWN.relative_to(ROOT).as_posix(),layout['approach'],'school',width=24)]
     write_json(ROOM,room)

@@ -9,7 +9,9 @@ remain story seeds; exact political borders and institutions remain open.
 Merovar occupies the northwestern part of the world map. Its inhabited
 middle latitudes include wooded valleys, mountain uplands, fertile river plains
 and a southern maritime coast. Farther north, forests give way to boreal country
-and tundra; those distant regions remain unnamed. Moist westerly winds reach the
+and tundra; the far northern coasts form part of the Nivren Crown's
+[Rimeward Shores](../POLAR_REGIONS.md), while more detailed inland districts
+remain unnamed. Moist westerly winds reach the
 Greyfold range from the west, supporting wet slopes and headwater forests. Its
 eastern rain shadow supports the drier Redstone March.
 

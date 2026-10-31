@@ -447,12 +447,21 @@
       "image_from_repo_root": "assets/terrain/eldenmere/cottage_hearth/frames/frame_01.png"
     }
   ],
+  "world_map_display": {
+    "entity_id": "village_map",
+    "position": [
+      108,
+      94
+    ],
+    "radius": 22,
+    "label": "Examine Auratia\u2019s world map"
+  },
   "features": [
     "six pupil seats",
     "three slate desks",
     "teacher book and ink",
     "chalk counting lesson",
-    "stream-mill-terraces map",
+    "Auratia world map with polar regions",
     "child house and dog drawings",
     "shared worn books",
     "festival paper patterns and lantern"

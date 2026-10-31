@@ -454,5 +454,14 @@
   ],
   "teacher": "liam_mother",
   "overview": "assets/maps/eldenmere/playable/overview.png",
-  "school_layout": "assets/maps/eldenmere/school/layout.json"
+  "school_layout": "assets/maps/eldenmere/school/layout.json",
+  "world_map_display": {
+    "entity_id": "village_map",
+    "position": [
+      108,
+      94
+    ],
+    "radius": 22,
+    "label": "Examine Auratia\u2019s world map"
+  }
 }

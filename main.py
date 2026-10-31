@@ -33,6 +33,7 @@ from pause_menu import PauseMenu
 from camera_director import CameraDirector
 from ui_style import UIStyle, IVORY, GOLD, MUTED, ERROR
 from map_ui import MapUI
+from world_map_viewer import WorldMapViewer
 from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
@@ -431,6 +432,7 @@ class Game:
         self.title=TitleScreen(self)
         self.quest_ui=QuestUI(self)
         self.map_ui=MapUI(self)
+        self.world_map_viewer=WorldMapViewer(self)
         self.inventory_ui=InventoryUI(self)
         self.status_ui=StatusUI(self)
         self.lattice_ui=LatticeUI(self)
@@ -653,6 +655,7 @@ class Game:
         self.social.blocked.clear()
         self.map_open=False
         self.quest_ui.reset()
+        self.world_map_viewer.close()
         self.inventory_ui.reset()
         self.status_ui.reset()
         self.lattice_ui.reset()
@@ -859,6 +862,12 @@ class Game:
                 self.combat.handle_event(event)
                 resumed=not self.combat.active
                 continue
+            if self.world_map_viewer.is_open:
+                self.world_map_viewer.handle_event(event)
+                resumed=not self.world_map_viewer.is_open
+                self._mouse_held=False
+                self.social.clear_pointer()
+                continue
             if event.type==pygame.MOUSEBUTTONUP and event.button==1:
                 self._mouse_held=False
                 self.social.pointer(self.to_canvas(getattr(event,'pos',pygame.mouse.get_pos())),pressed=False)
@@ -947,6 +956,7 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
+                    if self.try_inspect_world_map():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
         return True
@@ -981,8 +991,9 @@ class Game:
                 (self.mill_quest.encounter_cutscene_active or self.mill_quest.encounter_pending)):
             self.opening_audio.set_paused(True)
             return
-        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open)
-        if self.pause.is_open or self.inventory_ui.is_open:
+        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
+                                      self.world_map_viewer.is_open)
+        if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
@@ -1058,7 +1069,7 @@ class Game:
 
     def enter(self,door):
         if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
-                self.opening.locks_player or self.household_action):return False
+                self.world_map_viewer.is_open or self.opening.locks_player or self.household_action):return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -1087,6 +1098,26 @@ class Game:
         self.save_progress()
         return True
 
+    def nearby_world_map(self):
+        """Use the reachable floor approach authored beside the classroom map."""
+        if (self.on_title or self.opening_cinematic.active or self.combat.active or
+                self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
+                self.map_open or self.quest_ui.journal_open or self.social.locked or
+                self.household_action or self.opening.locks_player or self.transfer_cooldown):return None
+        display=self.world.data.get('world_map_display')
+        if display is not None and self.player.position.distance_to(display['position'])<=display['radius']:
+            return display
+        return None
+
+    def try_inspect_world_map(self):
+        if self.nearby_world_map() is None:return False
+        self.player.moving=False
+        self.player.facing='back'
+        self._mouse_held=False
+        self.social.clear_pointer()
+        self.world_map_viewer.open()
+        return True
+
     def nearby_world_link(self):
         if self.social.locked or self.household_action or self.opening.locks_player:return None
         return next((link for link in self.world.data.get('world_links',[])
@@ -1101,6 +1132,7 @@ class Game:
         if (not isinstance(link,dict) or link not in self.world.data.get('world_links',[]) or
                 self.player.position.distance_to(link['position'])>link.get('radius',20) or
                 self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
+                self.world_map_viewer.is_open or
                 self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
         if link.get('id')=='town_to_upstream' and not self.mill_quest.can_enter_upstream():return False
         destination=self._load_scene(ROOT/link['destination']);spawn=link['spawn']
@@ -1132,7 +1164,8 @@ class Game:
 
     def draw_hud(self,canvas):
         if (self.pause.is_open or self.social.locked or self.opening.locks_player
-                or self.map_open or self.quest_ui.journal_open or self.inventory_ui.is_open):return
+                or self.map_open or self.quest_ui.journal_open or self.inventory_ui.is_open or
+                self.world_map_viewer.is_open):return
         painter=self.ui.painter(canvas)
         menu=self._hud_menu_rect()
         pointer=self.to_canvas(pygame.mouse.get_pos())
@@ -1164,7 +1197,9 @@ class Game:
             if layer is not canvas:
                 layer.set_alpha(round(fade*255))
                 canvas.blit(layer,(0,0))
-        hint=self.opening.interaction_hint() or next((hint for visit in self.household_visits
+        display=self.nearby_world_map()
+        hint=('E: '+display['label']) if display is not None else ''
+        hint=hint or self.opening.interaction_hint() or next((hint for visit in self.household_visits
                                                      if (hint:=visit.interaction_hint())), '')
         if not hint:hint=self.combat.interaction_hint()
         if not hint:
@@ -1232,6 +1267,7 @@ class Game:
         self.inventory_ui.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
         self.lattice_ui.draw(self.ui_surface)
+        self.world_map_viewer.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
         pygame.display.flip()

@@ -1,0 +1,32 @@
+{
+  "id": "auratia.world_map",
+  "status": "approved world map and classroom sprite adaptation",
+  "world_map": "assets/world/auratia/world_map.png",
+  "world_map_size": [
+    1448,
+    1086
+  ],
+  "approved_original_filename": "exec-84160ef4-23a8-49eb-9aba-f8626924f576.png",
+  "world_map_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0",
+  "wall_sprite": "assets/world/auratia/wall_map.png",
+  "wall_sprite_size": [
+    42,
+    40
+  ],
+  "wall_sprite_source": "assets/source/world/auratia/wall_map_generated.png",
+  "wall_sprite_source_size": [
+    1285,
+    1224
+  ],
+  "wall_sprite_source_crop": [
+    58,
+    123,
+    1228,
+    1113
+  ],
+  "wall_sprite_source_sha256": "2c897ea1db4ee412ac99ba76fb05fdf33d7e237196785f073d6cec3a4ee1fa5b",
+  "export": "crop opaque bounds; nearest-neighbor fit within 40x36; 64-color palette; centered in 42x40; binary alpha",
+  "build_tool": "tools/build_auratia_world_map.py",
+  "geography": "docs/world/WORLD_ATLAS.md",
+  "polar_regions": "docs/world/POLAR_REGIONS.md"
+}
