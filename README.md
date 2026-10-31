@@ -98,6 +98,11 @@ The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives t
 
 The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
 
+The [region NPC animation pass](docs/REGION_NPCS.md) adds authored full-body
+working and directional carrying poses for the grain and bridge workers, with registered
+hand grips and supported loads. Checkpoint guards have directional conversation
+poses and a portrait matching their silver armor, closed helmet and navy tabard.
+
 The [illustrated regional atlas](docs/REGIONAL_MAP.md) adds detailed cartography, live place labels and passage states, a compact selection card, and a north-up overworld minimap. Click the minimap or press M to open the atlas. The exploration Menu button has been removed throughout the game; Escape still pauses. See the [atlas and minimap previews](docs/reviews/elden_vale_atlas/README.md).
 
 Mother Serene now follows one continuous sanctuary schedule. She sorts the household provisions, checks the preparation list, tends the dining-room hearth and walks through the real connecting doorway to arrange linens in the hall. Her position and action clock persist when Caelan changes rooms; she yields when he blocks a route or doorway landing. The four [enlarged in-room routine previews](docs/reviews/serene_sanctuary_routines/README.md) await user review.

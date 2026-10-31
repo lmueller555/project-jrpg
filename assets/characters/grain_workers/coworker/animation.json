@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "sequences": {
+    "work_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "work_left_0.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -7,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ]
+        },
+        {
+          "file": "work_left_1.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -10,
+              -12
+            ],
+            [
+              -7,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "work_left_2.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -11,
+              -12
+            ],
+            [
+              -7,
+              -10
+            ]
+          ]
+        },
+        {
+          "file": "work_left_3.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -8,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ]
+        }
+      ]
+    },
+    "assist_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "assist_right_0.png",
+          "duration_ms": 800,
+          "hands": [
+            [
+              9,
+              -14
+            ],
+            [
+              7,
+              -11
+            ]
+          ]
+        }
+      ]
+    },
+    "assist_low_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "assist_low_right_0.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              9,
+              -14
+            ],
+            [
+              7,
+              -11
+            ]
+          ]
+        },
+        {
+          "file": "assist_low_right_1.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              9,
+              -10
+            ],
+            [
+              7,
+              -8
+            ]
+          ]
+        },
+        {
+          "file": "assist_low_right_2.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              11,
+              -5
+            ],
+            [
+              8,
+              -4
+            ]
+          ]
+        },
+        {
+          "file": "assist_low_right_3.png",
+          "duration_ms": 200,
+          "hands": [
+            [
+              11,
+              -7
+            ],
+            [
+              8,
+              -7
+            ]
+          ]
+        }
+      ]
+    },
+    "recover_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "recover_right_0.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recover_right_1.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recover_right_2.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recover_right_3.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "stretch_front_0.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_1.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_2.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_3.png",
+          "duration_ms": 550
+        }
+      ]
+    }
+  }
+}

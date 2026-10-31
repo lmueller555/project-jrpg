@@ -58,6 +58,19 @@ class BridgeCrewTests(unittest.TestCase):
         self.assertEqual(flags,self.g.social.flags);self.assertEqual(quests,self.g.quests.to_dict())
         self.assertEqual(len(self.c.props()),13)
 
+    def test_sorting_phase_changes_do_not_stutter_the_independent_surveyor(self):
+        observed=0
+        for _ in range(1200):
+            stage=self.c.stage;point=self.c.tender.position.copy()
+            self.tick()
+            if (self.c.stage!=stage and self.c.stage in self.c.AMBIENT
+                    and self.c.tender.position.distance_to(point)>.01):
+                observed+=1
+                self.assertTrue(self.c.tender.moving)
+                self.assertTrue(self.c.tender.animation_key.startswith('walk_'))
+            if self.c.state['sorted']==3:break
+        self.assertGreater(observed,0)
+
     def test_full_scene_and_repeat_greeting(self):
         self.scene()
         self.assertTrue(self.g.overworld_travel.interact())

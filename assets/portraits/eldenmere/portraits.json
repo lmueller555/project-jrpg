@@ -318,6 +318,19 @@
         1254,
         1254
       ]
+    },
+    "road_guard": {
+      "name": "Road guard",
+      "expression": "neutral",
+      "file": "road_guard_neutral.png",
+      "sprite_root": "assets/characters/road_guards",
+      "source": "assets/source/characters/road_guards/portrait_generated.png",
+      "source_rect": [
+        0,
+        0,
+        1254,
+        1254
+      ]
     }
   },
   "aliases": {

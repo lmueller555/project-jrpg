@@ -1,0 +1,711 @@
+{
+  "version": 1,
+  "exporter": "tools/build_bridge_mason.py",
+  "sources": [
+    {
+      "file": "assets/source/characters/bridge_workers/mason/work_generated.png",
+      "sha256": "8ff21d07606cf1303a82fef7fc4982871dc46677986079ba513f6a72026f89e9",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/carry_generated.png",
+      "sha256": "21662e3d348eebd9664bea5539bbf25b522dae744167a332ac9af311b22c0d9c",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/tea_generated.png",
+      "sha256": "78c4236ad5a133628c6e99ca50aab093c599bb13986ae5fad67e33c7d3fbe8c2",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/seated_generated.png",
+      "sha256": "04d5da35d104c8cf782f904710d8cc6a06a74d0dd83901c2058804ef28491656",
+      "size": [
+        1206,
+        1304
+      ]
+    }
+  ],
+  "registration": {
+    "alpha_threshold": 128,
+    "source_boxes": {
+      "work": {
+        "0,0": [
+          79,
+          75,
+          212,
+          264
+        ],
+        "1,0": [
+          94,
+          288,
+          203,
+          534
+        ],
+        "2,0": [
+          89,
+          555,
+          201,
+          780
+        ],
+        "3,0": [
+          79,
+          803,
+          223,
+          1032
+        ],
+        "4,0": [
+          87,
+          1055,
+          199,
+          1284
+        ],
+        "5,0": [
+          87,
+          1295,
+          198,
+          1519
+        ],
+        "0,1": [
+          329,
+          57,
+          454,
+          264
+        ],
+        "1,1": [
+          327,
+          294,
+          471,
+          534
+        ],
+        "2,1": [
+          336,
+          557,
+          447,
+          780
+        ],
+        "3,1": [
+          332,
+          798,
+          454,
+          1032
+        ],
+        "4,1": [
+          332,
+          1066,
+          452,
+          1284
+        ],
+        "5,1": [
+          340,
+          1300,
+          448,
+          1519
+        ],
+        "0,2": [
+          574,
+          35,
+          680,
+          264
+        ],
+        "1,2": [
+          574,
+          326,
+          718,
+          534
+        ],
+        "2,2": [
+          565,
+          572,
+          709,
+          780
+        ],
+        "3,2": [
+          559,
+          798,
+          692,
+          1032
+        ],
+        "4,2": [
+          572,
+          1050,
+          700,
+          1284
+        ],
+        "5,2": [
+          573,
+          1297,
+          679,
+          1519
+        ],
+        "0,3": [
+          831,
+          30,
+          939,
+          264
+        ],
+        "1,3": [
+          832,
+          288,
+          942,
+          534
+        ],
+        "2,3": [
+          833,
+          555,
+          943,
+          780
+        ],
+        "3,3": [
+          834,
+          798,
+          944,
+          1032
+        ],
+        "4,3": [
+          833,
+          1055,
+          945,
+          1284
+        ],
+        "5,3": [
+          843,
+          1297,
+          951,
+          1519
+        ]
+      },
+      "carry": {
+        "0,0": [
+          123,
+          27,
+          225,
+          229
+        ],
+        "1,0": [
+          124,
+          236,
+          222,
+          433
+        ],
+        "2,0": [
+          119,
+          437,
+          238,
+          634
+        ],
+        "3,0": [
+          110,
+          642,
+          224,
+          839
+        ],
+        "4,0": [
+          123,
+          847,
+          224,
+          1044
+        ],
+        "5,0": [
+          125,
+          1051,
+          222,
+          1228
+        ],
+        "6,0": [
+          120,
+          1232,
+          232,
+          1429
+        ],
+        "0,1": [
+          348,
+          27,
+          451,
+          229
+        ],
+        "1,1": [
+          348,
+          236,
+          445,
+          431
+        ],
+        "2,1": [
+          352,
+          438,
+          461,
+          634
+        ],
+        "3,1": [
+          333,
+          642,
+          452,
+          841
+        ],
+        "4,1": [
+          348,
+          849,
+          450,
+          1044
+        ],
+        "5,1": [
+          347,
+          1051,
+          443,
+          1229
+        ],
+        "6,1": [
+          350,
+          1232,
+          461,
+          1429
+        ],
+        "0,2": [
+          574,
+          27,
+          674,
+          226
+        ],
+        "1,2": [
+          573,
+          236,
+          670,
+          431
+        ],
+        "2,2": [
+          572,
+          437,
+          689,
+          634
+        ],
+        "3,2": [
+          560,
+          642,
+          675,
+          839
+        ],
+        "4,2": [
+          573,
+          848,
+          674,
+          1044
+        ],
+        "5,2": [
+          576,
+          1051,
+          670,
+          1228
+        ],
+        "6,2": [
+          574,
+          1232,
+          686,
+          1429
+        ],
+        "0,3": [
+          799,
+          27,
+          900,
+          229
+        ],
+        "1,3": [
+          797,
+          236,
+          894,
+          433
+        ],
+        "2,3": [
+          801,
+          436,
+          910,
+          634
+        ],
+        "3,3": [
+          786,
+          642,
+          905,
+          841
+        ],
+        "4,3": [
+          799,
+          848,
+          900,
+          1044
+        ],
+        "5,3": [
+          799,
+          1051,
+          894,
+          1231
+        ],
+        "6,3": [
+          800,
+          1232,
+          910,
+          1429
+        ]
+      },
+      "tea": {
+        "0,0": [
+          89,
+          28,
+          214,
+          269
+        ],
+        "1,0": [
+          89,
+          288,
+          213,
+          532
+        ],
+        "2,0": [
+          81,
+          546,
+          207,
+          788
+        ],
+        "3,0": [
+          81,
+          804,
+          214,
+          1028
+        ],
+        "4,0": [
+          80,
+          1063,
+          227,
+          1273
+        ],
+        "5,0": [
+          81,
+          1283,
+          201,
+          1521
+        ],
+        "0,1": [
+          333,
+          32,
+          487,
+          269
+        ],
+        "1,1": [
+          330,
+          288,
+          487,
+          532
+        ],
+        "2,1": [
+          327,
+          551,
+          468,
+          788
+        ],
+        "3,1": [
+          336,
+          803,
+          463,
+          1028
+        ],
+        "4,1": [
+          335,
+          1039,
+          468,
+          1273
+        ],
+        "5,1": [
+          336,
+          1283,
+          455,
+          1521
+        ],
+        "0,2": [
+          573,
+          30,
+          728,
+          269
+        ],
+        "1,2": [
+          572,
+          288,
+          729,
+          532
+        ],
+        "2,2": [
+          581,
+          570,
+          718,
+          788
+        ],
+        "3,2": [
+          582,
+          803,
+          708,
+          1028
+        ],
+        "4,2": [
+          582,
+          1037,
+          712,
+          1273
+        ],
+        "5,2": [
+          575,
+          1283,
+          698,
+          1521
+        ],
+        "0,3": [
+          826,
+          29,
+          952,
+          269
+        ],
+        "1,3": [
+          826,
+          287,
+          968,
+          532
+        ],
+        "2,3": [
+          825,
+          570,
+          954,
+          788
+        ],
+        "3,3": [
+          826,
+          804,
+          952,
+          1028
+        ],
+        "4,3": [
+          824,
+          1035,
+          946,
+          1273
+        ],
+        "5,3": [
+          834,
+          1283,
+          954,
+          1521
+        ]
+      },
+      "seat": {
+        "0,0": [
+          67,
+          50,
+          258,
+          451
+        ],
+        "1,0": [
+          66,
+          517,
+          269,
+          834
+        ],
+        "2,0": [
+          67,
+          945,
+          268,
+          1256
+        ],
+        "0,1": [
+          358,
+          80,
+          551,
+          451
+        ],
+        "1,1": [
+          361,
+          516,
+          564,
+          834
+        ],
+        "2,1": [
+          365,
+          895,
+          560,
+          1255
+        ],
+        "0,2": [
+          660,
+          114,
+          857,
+          451
+        ],
+        "1,2": [
+          654,
+          516,
+          861,
+          834
+        ],
+        "2,2": [
+          660,
+          864,
+          861,
+          1256
+        ],
+        "0,3": [
+          951,
+          141,
+          1148,
+          451
+        ],
+        "1,3": [
+          951,
+          517,
+          1149,
+          834
+        ],
+        "2,3": [
+          960,
+          848,
+          1151,
+          1256
+        ]
+      }
+    },
+    "sequence_scales": {
+      "inspect_front": 0.14847161572052403,
+      "lift_front": 0.1452991452991453,
+      "recover_front": 0.1452991452991453,
+      "place_front": 0.1452991452991453,
+      "work_right": 0.1511111111111111,
+      "measure_left": 0.1452991452991453,
+      "measure_right": 0.1452991452991453,
+      "stretch_front": 0.1452991452991453,
+      "hold_front": 0.15178571428571427,
+      "carry_front": 0.16831683168316833,
+      "cup_hold_front": 0.14285714285714285,
+      "cup_front": 0.17258883248730963,
+      "hold_back": 0.1552511415525114,
+      "carry_back": 0.17258883248730963,
+      "cup_hold_back": 0.14285714285714285,
+      "cup_back": 0.18888888888888888,
+      "hold_left": 0.15315315315315314,
+      "carry_left": 0.1717171717171717,
+      "cup_hold_left": 0.14285714285714285,
+      "cup_left": 0.17258883248730963,
+      "hold_right": 0.15315315315315314,
+      "carry_right": 0.1708542713567839,
+      "cup_hold_right": 0.14285714285714285,
+      "cup_right": 0.1708542713567839,
+      "receive_right": 0.14107883817427386,
+      "offer_right": 0.13877551020408163,
+      "sit_down_front": 0.08333333333333333,
+      "sit_front": 0.08333333333333333,
+      "drink_front": 0.08333333333333333,
+      "stand_front": 0.08333333333333333
+    },
+    "seat_reflected_full_profile": true,
+    "anchor": [
+      20,
+      38
+    ]
+  },
+  "exports": {
+    "inspect_front_0.png": "86b2d1278eb3d0741a4c62cdb99171164debff4b5cab0aa4ba1da3777749ba16",
+    "inspect_front_1.png": "04b8ad1754ae0a1982b402339bbe3f6314679697b89b92d14c8d9a79e110cba0",
+    "lift_front_0.png": "f76e07741f953820e9bf1d21d1392455acb70df3065d060f9ecf4cdc687e117c",
+    "lift_front_1.png": "558f90872ce8226945e9b9975f045820cfe3adba15f258d245504aca7b0f9952",
+    "lift_front_2.png": "121af0d4e752ea58fd4a9f0d0d38c2281db9ed1e454eacd8bb6275c77984878e",
+    "lift_front_3.png": "f73f222ac88394a4b48a3dd6e33ea0251577e981db8cc3635a04fe0090fa5241",
+    "recover_front_0.png": "f76e07741f953820e9bf1d21d1392455acb70df3065d060f9ecf4cdc687e117c",
+    "recover_front_1.png": "558f90872ce8226945e9b9975f045820cfe3adba15f258d245504aca7b0f9952",
+    "recover_front_2.png": "121af0d4e752ea58fd4a9f0d0d38c2281db9ed1e454eacd8bb6275c77984878e",
+    "recover_front_3.png": "f73f222ac88394a4b48a3dd6e33ea0251577e981db8cc3635a04fe0090fa5241",
+    "place_front_0.png": "f73f222ac88394a4b48a3dd6e33ea0251577e981db8cc3635a04fe0090fa5241",
+    "place_front_1.png": "121af0d4e752ea58fd4a9f0d0d38c2281db9ed1e454eacd8bb6275c77984878e",
+    "place_front_2.png": "558f90872ce8226945e9b9975f045820cfe3adba15f258d245504aca7b0f9952",
+    "place_front_3.png": "f76e07741f953820e9bf1d21d1392455acb70df3065d060f9ecf4cdc687e117c",
+    "work_right_0.png": "04f84890e3397fb7299310fd42870eb62e4d253120182563aba2612f2019092b",
+    "work_right_1.png": "5701c377a17c988476b63f196014cf8f98731cce34e6ea39499d20c750dd90cd",
+    "work_right_2.png": "7551eac4f98c42b9cae7d57a846d033d7601ff1c9caca34b790f4e56ac8b8e92",
+    "work_right_3.png": "ed20c50eae8c0e65f6edbdd53ed5b65694ddf8f51bb8fb7377167da0036bc7b7",
+    "measure_left_0.png": "1c52f42248bc51623cd1c4a87f5287f0c1f770525edfb97aa0710fdf86e9f6eb",
+    "measure_left_1.png": "e36bcf82bd07d191c824ec0c1ce798919b619b3c480c740774441bd3d291008e",
+    "measure_right_0.png": "5eba88f3fb6c4d275083ea20c1ba7d8ec2247eff742a53f7fe0b0b6dca84332b",
+    "measure_right_1.png": "9f619681a95e013fafc9122dee8636be40e79036af63bda764e70116c9d6eeec",
+    "stretch_front_0.png": "cb877bd0a2bf36c208bd5e40c9363a9459a6cace7f3754edd97dd7c4dd78d5b2",
+    "stretch_front_1.png": "b39e3078c7d2311074b85a742c32cf56b338956ebc2d07c846ba02c8ac21f29a",
+    "hold_front_0.png": "ebcd4c2cf2466179f5dfae25e460d0ccdca3896ed93b141fd642f4492595aff5",
+    "carry_front_0.png": "897ea777bc6e7c3f76898e2f97c4caf0727f770de76cf7ae809e49ce857b654d",
+    "carry_front_1.png": "1b9caf8796e4258b978e7e5ef13b6a756634c103d8a851b3a76cb07c02e61f72",
+    "carry_front_2.png": "e4346e89b4c38d292c069b18de660e251cafebff4a43e575bde6ac6d7748158c",
+    "carry_front_3.png": "573124ac2095f419f5903b6ee3fc089cfbe2600945a275d1ee5e519c51943dab",
+    "cup_hold_front_0.png": "8ef21ff837329c6b892166e836f5223840c6e5798fed46152b624656f0190352",
+    "cup_front_0.png": "d40b3408af0bcce4a01e8e7dd72e045cbb50ab19db084584f909ac418b924984",
+    "cup_front_1.png": "8f2e52eeb76c530e7df5d1d5d6e40c5f9ed2e0dc31586ee3185081b746eae997",
+    "cup_front_2.png": "87c9c77d14f9cb242b25b6fa83c2070a8ac4d8646fbbc80c001c1a98f4198cf5",
+    "cup_front_3.png": "b06d787b7e255bb920d54b939547aeaf8f2fcaa2bfd00e4c473f2bd5b6bb76f0",
+    "hold_back_0.png": "bd47c0acd40252710e3294f78cd0cc66e9e5b090558f102255ab73dd569009be",
+    "carry_back_0.png": "b326957115e4c5c13ad423df3fa18b475e0bd0dafa44cf2d2ada0caa8122f106",
+    "carry_back_1.png": "542cd32c540eb477387973beedb69f99f2775e5cdf72c7e63184614809b66f59",
+    "carry_back_2.png": "a67ac783d8e9ba01a39ea8552360abb6682d5c50f3ee89d05936df004d2f3724",
+    "carry_back_3.png": "fefe118dba32c19a34d5d03f003b57be46086c40da2ee49971efb311add4f48b",
+    "cup_hold_back_0.png": "46d8217750d251d3326ef4aca3220a8ff2b43982d42aebe23652489a06e81258",
+    "cup_back_0.png": "0a2b56e13628571eee64d99c150bfe5c2c7fdc27f471f98ab9cfd39d061f78ad",
+    "cup_back_1.png": "fe1e2ef35d0becf42b5332682627c294fa8bc0aae12f2b8e477cb21bce498158",
+    "cup_back_2.png": "6191e48397d0dd9b8d10f844b2014c5502b4d0f34bdbb6763febdf9b1e5a142f",
+    "cup_back_3.png": "61427f785ceac6e66b1e93233d3d7e87bdfecbdd4f90284dc0e7b7e727a23bd4",
+    "hold_left_0.png": "a60aceb87b28a7a559c852479febd175d8ef7e535da413475f9b7b09cc07fbc7",
+    "carry_left_0.png": "9342dd48bb17c8cb15d3c1e72c7e3a6b2a9cebca18b72416725c779d660299a1",
+    "carry_left_1.png": "4350511dc09e40da02978e06eab4dcfecc7651844ce048c2edcbf13df1bb1f42",
+    "carry_left_2.png": "cfcc04a4e1c5b7b9d3e30956fed166a5151aba61bf5aaf600722395f80a633f7",
+    "carry_left_3.png": "6df72dc83cd4bfdee92c200815fed5d195bd6f7bef84a64c8dda57c01ac34ce0",
+    "cup_hold_left_0.png": "a97aac2e5c761157b30c2bb35904a6934dbe9d4e97fa7dc1416d449879a45f61",
+    "cup_left_0.png": "71dcc891964893ecb3ff54f6b39674af5654f742aadf549229ecca72771d6731",
+    "cup_left_1.png": "36889dc1f5cb8f338965c7037a6484d189f2bbc766b05cf323c72e174b5dfb0a",
+    "cup_left_2.png": "7dc91163f4be718b6b520fc0abf995c910f8bfb730390af58411dafe69506547",
+    "cup_left_3.png": "8fffb380218038ab7b4d8d8f4cc5fee4674fc6b2eb679fef933b1462c20ff166",
+    "hold_right_0.png": "7d6c94ce0f80cc1c4c80b660a4318ee9f9482fd04cb4a4c51d9d8d263cfe0a84",
+    "carry_right_0.png": "415ae2cd56fcc831f91c7107154d45ee62f5b166a95aad7c6e5a6fc2be9de00d",
+    "carry_right_1.png": "7b6c6007ed15fa275f69ed30cd663e90a48bad9a98191e23cff541763c6cfe53",
+    "carry_right_2.png": "74288a4ba27f24fae80ba196a307be3eccabd3fd3f9c7441999ff590ffe4b315",
+    "carry_right_3.png": "00816fa5ecb7adb3a175c42f51dedd08ee1e20fa28900a485e2e9123f4de1484",
+    "cup_hold_right_0.png": "e7d11b805dcddc1b359602216a6fe10b1fa6238f1f21aefccbc8da569c95e62b",
+    "cup_right_0.png": "415ae2cd56fcc831f91c7107154d45ee62f5b166a95aad7c6e5a6fc2be9de00d",
+    "cup_right_1.png": "7b6c6007ed15fa275f69ed30cd663e90a48bad9a98191e23cff541763c6cfe53",
+    "cup_right_2.png": "74288a4ba27f24fae80ba196a307be3eccabd3fd3f9c7441999ff590ffe4b315",
+    "cup_right_3.png": "00816fa5ecb7adb3a175c42f51dedd08ee1e20fa28900a485e2e9123f4de1484",
+    "receive_right_0.png": "122a49aef316ec48b5a1f401070491b5b17fbbe0a02fd3313c703cca80db5011",
+    "receive_right_1.png": "ba2d553563e2dd8dff4b845b2f670f756799587ea020e71e6a4fa9cfb37a42ff",
+    "receive_right_2.png": "094b2d3a426129c37fe23b355d3927de87ae60deb2723cd51ce192e93706e9f8",
+    "receive_right_3.png": "7e6b813047266570c38874d279584050409fe1b6f4573e3d465496ee5f2f1b76",
+    "offer_right_0.png": "29228ede81e59ca1347729d6c8f0e074ddcb92b83dd8ffd3b04900fe0104239e",
+    "offer_right_1.png": "6e9f8651436bf06a946978b51d4da32b0cc77384ca7877a855ec08b706c8ab6f",
+    "offer_right_2.png": "e24719513154de5aeebc0f8ce991cd955dac2ab4a5ee25662f12a7b3d2a5bf0a",
+    "offer_right_3.png": "4c711dae935852d6fe50dcb6c24bc163c1c904bab716b0aac815140257a0c0b7",
+    "sit_down_front_0.png": "313a9695e59f341db4cd3164546864da25d93363d3b36ddc8c3ad444f8dd8bc1",
+    "sit_down_front_1.png": "bd0ee9f28ca7d9dde531b96371d1ad754c21ba3dc3a9c21dae5c2b971c75e782",
+    "sit_down_front_2.png": "8d789e2764ca47c11dc22d5b06b0ef0350796ef99201760283fea5823b1b1b6c",
+    "sit_down_front_3.png": "08d15ec3b5250c17ecf44283b9b508d31d7622263b69a8a190997ef35d98a089",
+    "sit_front_0.png": "15dda1a81074353d58ddd65344be6b6042730faada341f0d0a5f337c2d25af7a",
+    "drink_front_0.png": "15dda1a81074353d58ddd65344be6b6042730faada341f0d0a5f337c2d25af7a",
+    "drink_front_1.png": "e30bebf8e540d36a833ff4f81c6ba58810acf1b17c395789e61d353822f39282",
+    "drink_front_2.png": "bd3bd5dad73d35dce03a43b0304b00fa3891ec84fd80a21141e3792a7d59780d",
+    "drink_front_3.png": "4f2e3c63e273096fa28ee2788a0967d10a1eb8c683044969d2d623485d6989f6",
+    "stand_front_0.png": "d0d285f4e9ddd1234379d01d1d69054e0c5234afca843ace659d3645b44769ff",
+    "stand_front_1.png": "b2d16cc14e23962215bff2c7c5edaa0a64019b9a611c6d5df81f70da5f33a045",
+    "stand_front_2.png": "3765464b9298cdb5f8348c53439a78a241da0181e5848c587b91ac77f6b7cb75",
+    "stand_front_3.png": "81482866fd7e4abe77acd4f5bd5e2c6e69480696be77683da2d25178b82c3145",
+    "animation.json": "738bd8eacf35b11543d9afdcf3c29f4178a23b754f5b4f7b2068c9950795427a"
+  },
+  "notes": [
+    "Complete imagegen-authored bodies only; no procedural arms or body warps.",
+    "Seat source is a genuinely sideways whole-body clip reflected as a whole to face the bench; no front-pose substitution.",
+    "One physical scale throughout seated transitions preserves native 27px seated vs34px standing height.",
+    "Stone, cup and tool remain separate props; metadata registers actual painted contacts.",
+    "The missing cup-right source row uses the anatomically compatible fully authored cargo-right body."
+  ]
+}

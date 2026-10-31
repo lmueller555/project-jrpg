@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "exporter": "tools/build_grain_coworker.py",
+  "sources": [
+    {
+      "file": "assets/source/characters/grain_workers/coworker/work_generated.png",
+      "sha256": "3179481c18792be6643a7cad69ee72c89a999ba3725add5dd00b90fcb5ab14c1"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/identity_reference.png",
+      "sha256": "142eed56552494bd0512856af1250387ef23f137f9676f996600d1c2b7dd7a78"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/coworker/prompt.txt",
+      "sha256": "e0f81c5beab3af189040fb5280394f7a5e5f9109b2a2b37ab8cf3fc9cfb89470"
+    }
+  ],
+  "registration": {
+    "canvas": [
+      40,
+      44
+    ],
+    "anchor": [
+      20,
+      38
+    ],
+    "uniform_source_scale": 0.125,
+    "rows": [
+      [
+        0,
+        289
+      ],
+      [
+        289,
+        578
+      ],
+      [
+        578,
+        855
+      ],
+      [
+        855,
+        1155
+      ]
+    ]
+  },
+  "exports": [
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_0.png",
+      "sha256": "77d48e9da0deb9ef0b757de41fd9793679612b37230cb4a39db8312bba0f3645"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_1.png",
+      "sha256": "65b74f7134461e12082c77969158b796a9484cf579c82e67c01bbd45195c1897"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_2.png",
+      "sha256": "e84ade7e543831133b62e77c0c8131b143364e38edeb5d4f9d90d173d24b0954"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/work_left_3.png",
+      "sha256": "16000a4d708096796d5dea78731b4de741c29f0001e4c528746b463c2f6dd721"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/assist_right_0.png",
+      "sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/assist_low_right_0.png",
+      "sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/assist_low_right_1.png",
+      "sha256": "23736cf42ea14b2f84fc3242c1e985aa8a98d04a8b7a70528e0af376f538c54e"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/assist_low_right_2.png",
+      "sha256": "e5ee257bff8913ef6c0a977eebfb3fbc8888cde903dc868d802a33771faaafa4"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/assist_low_right_3.png",
+      "sha256": "d87c6ba49e47bf2aed27d006a417b036099fe87e867bcfbfb54700cbe5a17eb3"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/recover_right_0.png",
+      "sha256": "d87c6ba49e47bf2aed27d006a417b036099fe87e867bcfbfb54700cbe5a17eb3"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/recover_right_1.png",
+      "sha256": "23736cf42ea14b2f84fc3242c1e985aa8a98d04a8b7a70528e0af376f538c54e"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/recover_right_2.png",
+      "sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/recover_right_3.png",
+      "sha256": "f7b375899dcd04cc9c8217659adfd7bd8eea4ea722c5bf572ffba6651864b718"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_0.png",
+      "sha256": "ab463eca95537c0c24b76ecd2ae9f889d66fafb368f36f691561b2cfac6d0b74"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_1.png",
+      "sha256": "39c2e60c6d1c3caa953b5a3bd5aee661ad535d4fdc28095583826739123e51df"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_2.png",
+      "sha256": "8ce54b4b108ceab4b6c23913de27ad34bad524af3601ea8399f8c5ef9613eb3f"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/stretch_front_3.png",
+      "sha256": "3c68ff838d4147af57fa686e173a8f0273a0d09117e972e38b035b3a33dc194a"
+    },
+    {
+      "file": "assets/characters/grain_workers/coworker/animation.json",
+      "sha256": "f9044cf828c62c92e180daea310ed904941b0cfadcd68fc74663b18dc61c7e28"
+    }
+  ],
+  "notes": [
+    "All action figures are whole authored image-generation frames. No procedural limb paint or limb warping.",
+    "The sack and cover are separate controller-owned objects; no duplicate load is baked into these bodies.",
+    "Approved male_03 directional idles and walks are reused by the runtime without edits."
+  ]
+}

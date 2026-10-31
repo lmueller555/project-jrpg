@@ -138,3 +138,74 @@ class GrainFarmTests(unittest.TestCase):
         self.assertEqual(actors,world.grain_farm.actors)
         self.assertEqual(before,self.f.to_dict())
         self.assertEqual(len([a for a in world.npcs if a.data['id'].startswith('grain_')]),2)
+
+    def sack_point(self, index):
+        """Lower-center registration from the actual production prop record."""
+        record=self.f.props()[2-index]
+        return pygame.Vector2(record[3])+(6,10)
+
+    def test_both_cart_placements_release_on_the_bed_before_committing(self):
+        self.g.social.flags.add(MILL_FLAG)
+        for index in range(2):
+            self.until(lambda:self.f.stage=='place' and self.f.state['loaded']==index)
+            saw_release=False;seen_poses=set();last_point=None
+            for _ in range(120):
+                if self.f.state['loaded']>index:break
+                point=self.sack_point(index)
+                seen_poses.add(self.f.loader.pose)
+                if self.f.loader.attachment.get('gripped') is False:
+                    saw_release=True
+                    self.assertLess(point.distance_to((-810,208)),.1)
+                last_point=point
+                self.tick()
+            else:self.fail('Placement never committed')
+            self.assertTrue(saw_release)
+            self.assertLess(last_point.distance_to(self.sack_point(index)),.1)
+            self.assertEqual(len(self.f.props()),3)
+            if index==1:self.assertIn('push',seen_poses)
+
+    def test_spare_sack_is_physically_lifted_before_the_reading_hold(self):
+        self.g.social.flags.add(MILL_FLAG)
+        self.until(lambda:self.f.stage=='lift_spare')
+        self.assertEqual(self.f.state['loaded'],2)
+        self.assertEqual(self.sack_point(2),pygame.Vector2(SOURCE)+(0,-3))
+        last_point=None
+        for _ in range(90):
+            if self.f.stage=='ready':break
+            last_point=self.sack_point(2)
+            self.tick()
+        else:self.fail('Spare sack never reached its hold')
+        self.assertLess(last_point.distance_to(self.sack_point(2)),.1)
+        self.assertFalse(self.f.state['exchange_read'])
+
+    def test_shared_lowering_releases_the_sack_before_empty_handed_recovery(self):
+        self.ready();self.g.player.position.update(-870,203)
+        self.assertTrue(self.g.overworld_travel.interact());self.finish_dialogue()
+        self.until(lambda:self.f.stage=='help_recover')
+        point=self.sack_point(2)
+        positions=[a.position.copy() for a in self.f.actors]
+        self.assertEqual(point,pygame.Vector2(SOURCE)+(0,-3))
+        self.assertEqual([a.pose for a in self.f.actors],['recover','recover'])
+        for _ in range(20):
+            if self.f.stage!='help_recover':break
+            self.assertEqual(self.sack_point(2),point)
+            self.assertEqual([a.position for a in self.f.actors],positions)
+            self.tick()
+        self.assertEqual(self.f.stage,'help_return')
+        self.assertTrue(self.f.state['exchange_read'])
+        self.assertFalse(self.f.state['scene_done'])
+
+    def test_ordinary_greeting_freezes_an_unfinished_physical_lift(self):
+        self.g.social.flags.add(MILL_FLAG)
+        self.until(lambda:self.f.stage=='lift')
+        self.tick(12)
+        self.g.player.position.update(-846,192)
+        self.assertTrue(self.g.overworld_travel.interact())
+        self.assertNotEqual(self.g.social.script_identifier,SCENE_ID)
+        self.tick()
+        before=(self.f.timer,self.f.loader.clock,self.f.loader.attachment,self.sack_point(0))
+        self.tick(60)
+        self.assertEqual(before,(self.f.timer,self.f.loader.clock,
+                                 self.f.loader.attachment,self.sack_point(0)))
+        self.finish_dialogue()
+        self.until(lambda:self.f.state['loaded']==1)
