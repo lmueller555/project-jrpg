@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 import tempfile
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,6 +42,27 @@ def write_json(path, data):
     path.write_text(json.dumps(data, indent=2)+'\n', encoding='utf-8')
 
 
+def gate_occlusion(plate):
+    """Extract masonry pixels without painting over the road or scenery.
+
+    This binary mask is used only for an actor whose feet have crossed the
+    gate's ground plane. In front of the gate, the same actor remains wholly
+    visible. Silhouettes are registered in native plate pixels, independent
+    of actor scale or the cinematic camera.
+    """
+    record = json.loads((SOURCE/'gate_occlusion.json').read_text())
+    if record['version'] != 1 or record['canvas'] != list(SIZE):
+        raise ValueError('Gate occlusion mask has incorrect registration')
+    alpha = Image.new('L', SIZE)
+    draw = ImageDraw.Draw(alpha)
+    for polygon in record['silhouettes'].values():
+        draw.polygon([tuple(point) for point in polygon], fill=255)
+    # Empty pixels carry no stray source RGB, including in tools that inspect
+    # sprite channels without alpha compositing.
+    result = Image.composite(plate.convert('RGBA'), Image.new('RGBA', SIZE), alpha)
+    return result, record['behind_y']
+
+
 def export(target):
     target.mkdir(parents=True, exist_ok=True)
     names = sorted(SOURCE.glob('*.png'))
@@ -64,6 +85,12 @@ def export(target):
             'camera': [380, 125] if key == 'gate' else [320, 140],
             'anchors': {},
         }
+        if key == 'gate':
+            masonry, behind_y = gate_occlusion(plate)
+            masonry.save(target/'south_gate_masonry.png', optimize=True)
+            scenes[key]['occluders'] = [
+                {'file': 'south_gate_masonry.png', 'behind_y': behind_y},
+            ]
     with Image.open(SOURCE/'gate_leaf_generated.png') as image:
         gate = image.convert('RGBA')
         gate.putalpha(gate.getchannel('A').point(lambda value: 255 if value >= 128 else 0))
@@ -113,6 +140,7 @@ def export(target):
         'exporter': 'tools/build_regent_arrival_scenery.py',
         'exporter_sha256': digest(Path(__file__)),
         'prompts_sha256': digest(SOURCE/'prompts.json'),
+        'gate_occlusion_sha256': digest(SOURCE/'gate_occlusion.json'),
         'sources': [record(path, 'assets/source/cinematics/regent_arrival/scenery') for path in names],
         'exports': [record(path, 'assets/story/regent_arrival/scenery') for path in sorted(target.glob('*.png'))],
         'scenery_manifest_sha256': digest(target/'scenery.json'),
@@ -121,6 +149,7 @@ def export(target):
             'Exports only crop alpha/foreground pixels and nearest-resize authored imagery.',
             'No actors, horses, caravans, interface or dialogue are baked into the scenery.',
             'Gate leaf is a separate authored transparent prop; the background aperture is open.',
+            'Gate masonry uses a source-registered binary alpha silhouette; only actors beyond the gate ground plane are occluded. No road or sky rectangles are extracted.',
             'Far village architecture uses a humble blue-roof sanctuary and timber belfry, not a cathedral.',
             'The destroyed bridge is broad enough for wagon traffic; both road approaches are scarred.',
             'The intact town-brook wooden bridge is distinct from the ruined western stone river crossing.',
@@ -146,7 +175,7 @@ def main():
                     raise SystemExit('Scenery export differs: '+name)
             if sorted(path.name for path in TARGET.iterdir()) != names:
                 raise SystemExit('Unexpected files in scenery export directory')
-        print('Verified four cinematic plates, four foreground layers, gate leaf and provenance')
+        print('Verified four cinematic plates, four foreground layers, gate masonry, gate leaf and provenance')
     else:
         names = export(TARGET)
         print('Exported '+str(len(names))+' registered cinematic scenery files')

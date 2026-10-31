@@ -40,6 +40,7 @@ class ArrivalAudio:
         self.next_wood = 0.
         self.stream = None
         self.mode = None
+        self.gain = 1.
 
     def stop(self):
         for channel, sound in self.channels:
@@ -74,10 +75,13 @@ class ArrivalAudio:
         if sound is None:return None
         sound.set_volume(volume*float(self.game.audio.effects_volume))
         channel = sound.play(loops=-1 if loop else 0)
-        if channel is not None:self.channels.append((channel, sound))
+        if channel is not None:
+            channel.set_volume(self.gain)
+            self.channels.append((channel, sound))
         return (channel, sound) if channel is not None else None
 
-    def update(self, seconds, mode, paused=False):
+    def update(self, seconds, mode, paused=False, gain=1.):
+        self.gain = max(0., min(1., gain))
         volume = float(self.game.audio.effects_volume)
         if volume <= 0:
             self.stop();return
@@ -87,6 +91,7 @@ class ArrivalAudio:
         for channel, sound in self.channels:
             try:
                 if channel.get_sound() is sound:
+                    channel.set_volume(self.gain)
                     if paused:channel.pause()
                     else:channel.unpause()
             except pygame.error:pass
@@ -232,7 +237,9 @@ class RegentArrival:
     @property
     def camera_position(self):
         camera = self.phase['camera']
-        progress = 1. if self.reduced_motion else smooth(self.phase_time/self.phase['min_seconds'])
+        progress = (1. if self.reduced_motion else
+                    smooth((self.phase_time-camera.get('move_start', 0.))/
+                           camera.get('move_seconds', self.phase['min_seconds'])))
         return pygame.Vector2(camera['from']).lerp(camera['to'], progress)
 
     def begin_input_batch(self):
@@ -276,12 +283,18 @@ class RegentArrival:
 
     def _audio_mode(self):
         if self.phase.get('sound') == 'travel' or self.shot == 'mill_close':return 'travel'
-        return 'riverbank' if self.phase['scene'] == 'riverbank' else None
+        return 'riverbank' if self.phase['scene'] == 'riverbank' or self.phase.get('sound') == 'riverbank' else None
+
+    def _audio_gain(self):
+        if self.shot == 'gate_admission':return 1-self.fade_alpha/255
+        if self.shot == 'gate_departure_black':return .35*smooth(self.phase_time/self.phase['min_seconds'])
+        if self.shot == 'bridge_establishing':return .35+.65*smooth(self.phase_time/self.phase.get('fade_in', 1.))
+        return 1.
 
     def update(self, seconds):
         if not self.active:return
         paused = self.paused or not self.focused or not self.game._music_focused
-        self.audio.update(0 if paused else seconds, self._audio_mode(), paused=paused)
+        self.audio.update(0 if paused else seconds, self._audio_mode(), paused=paused, gain=self._audio_gain())
         if paused:return
         self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
         self._next_if_ready()
@@ -314,6 +327,15 @@ class RegentArrival:
                 leaf = dict(record['gate_leaf'])
                 leaf['image'] = pygame.image.load(str(manifest_path.parent/leaf['file'])).convert_alpha()
                 loaded['gate_leaf'] = leaf
+            loaded['occluders'] = []
+            for record_layer in record.get('occluders', []):
+                image = pygame.image.load(str(manifest_path.parent/record_layer['file'])).convert_alpha()
+                if image.get_size() != tuple(self.data['canvas']):
+                    raise ValueError('Arrival occlusion layer has incorrect dimensions')
+                # RGB zero lets subtraction construct an inverse alpha mask
+                # without changing the actor's painted colors.
+                image.fill((0, 0, 0, 255), special_flags=pygame.BLEND_RGBA_MULT)
+                loaded['occluders'].append({**record_layer, 'image':image})
             plates[key] = loaded
         actors = {}
         for identifier, filename in self.data['actors'].items():
@@ -337,10 +359,40 @@ class RegentArrival:
             self.profiles[key] = profile;self.portraits[profile['portrait']] = portrait
         self.scenery = plates;self.actor_art = actors
 
-    def actor_position(self, actor):
+    def _movement_fraction(self, actor):
         start = actor.get('move_start', 0.)
         duration = actor.get('move_seconds', self.phase['min_seconds'])
-        progress = max(0., min(1., (self.phase_time-start)/duration))
+        return max(0., min(1., (self.phase_time-start)/duration))
+
+    def actor_route_distance(self, actor):
+        return actor['route_start']+(actor['route_end']-actor['route_start'])*self._movement_fraction(actor)
+
+    def _route_sample(self, actor):
+        """Project a shared ground route; depth controls both size and feet.
+
+        The stations are ground-space lateral position and distance away from
+        the foreground. Equal travel distances keep the party spaced along
+        the bend while perspective naturally reduces apparent speed.
+        """
+        route = self.data['routes'][actor['route']]
+        points = [pygame.Vector2(x, depth*route['depth_unit']) for x,depth in route['stations']]
+        remaining = self.actor_route_distance(actor)
+        point = points[-1]
+        for a,b in zip(points, points[1:]):
+            length = a.distance_to(b)
+            if remaining <= length:
+                point = a.lerp(b, max(0., remaining/length))
+                break
+            remaining -= length
+        scale = 1/(1+point.y/route['depth_unit'])
+        vanish = pygame.Vector2(route['vanishing_point'])
+        position = pygame.Vector2(vanish.x+(point.x-vanish.x)*scale,
+                                  vanish.y+(route['ground_y']-vanish.y)*scale)
+        return position,scale
+
+    def actor_position(self, actor):
+        if actor.get('route'):return self._route_sample(actor)[0]
+        progress = self._movement_fraction(actor)
         points = actor.get('path', [actor['position'], actor.get('to', actor['position'])])
         lengths = [pygame.Vector2(a).distance_to(b) for a,b in zip(points, points[1:])]
         distance = sum(lengths)*progress
@@ -350,15 +402,25 @@ class RegentArrival:
             distance -= length
         return pygame.Vector2(points[-1])
 
-    def _frame(self, actor):
-        art = self.actor_art[actor['id']]
+    def actor_pose(self, actor):
         pose = actor['pose']
         start = actor.get('move_start', 0.)
         duration = actor.get('move_seconds', self.phase['min_seconds'])
-        if 'to' in actor or 'path' in actor:
+        if 'to' in actor or 'path' in actor or 'route' in actor:
             if self.phase_time < start:pose = actor.get('before_pose', 'parked_left' if actor['id'] == 'caravan' else 'stand_left')
             elif self.phase_time >= start+duration:pose = actor.get('after_pose', 'parked_left' if actor['id'] == 'caravan' else 'stand_left')
+            elif actor.get('route'):
+                for distance,mark_pose in actor.get('route_poses', []):
+                    if self.actor_route_distance(actor) >= distance:pose = mark_pose
+        if (actor.get('turn_start') is not None and
+                actor['turn_start'] <= self.phase_time < start):pose = actor['turn_pose']
         if actor['id'] == 'serene' and self.dialogue_index >= 2:pose = 'turn_right'
+        return pose
+
+    def _frame(self, actor):
+        art = self.actor_art[actor['id']]
+        pose = self.actor_pose(actor)
+        start = actor.get('move_start', 0.)
         if pose in art['loops']:
             frames = art['loops'][pose];total = sum(d for _,d in frames)
             time = (max(0., self.phase_time-start)*actor.get('animation_rate',1.))%total
@@ -370,6 +432,7 @@ class RegentArrival:
 
     def _actor_scale(self, actor):
         scale = actor.get('scale', 1.)
+        if actor.get('route'):return scale*self._route_sample(actor)[1]
         if 'scale_to' in actor:
             fraction = max(0., min(1., (self.phase_time-actor.get('move_start', 0.))/actor.get('move_seconds', self.phase['min_seconds'])))
             scale += (actor['scale_to']-scale)*fraction
@@ -383,6 +446,16 @@ class RegentArrival:
             image = pygame.transform.scale(image, (max(1, round(image.get_width()*scale)), max(1, round(image.get_height()*scale))))
             anchor *= scale
         point = position-camera-anchor
+        occluders = self.scenery.get(self.phase['scene'], {}).get('occluders', [])
+        for layer in occluders:
+            if position.y > layer['behind_y']:continue
+            visibility = pygame.Surface(image.get_size(), pygame.SRCALPHA)
+            visibility.fill((255, 255, 255, 255))
+            origin = position-anchor
+            visibility.blit(layer['image'], (-round(origin.x), -round(origin.y)),
+                            special_flags=pygame.BLEND_RGBA_SUB)
+            image = image.copy()
+            image.blit(visibility, (0,0), special_flags=pygame.BLEND_RGBA_MULT)
         old_clip = canvas.get_clip()
         clips = actor.get('clip_rects')
         if clips:
@@ -403,6 +476,7 @@ class RegentArrival:
     @property
     def fade_alpha(self):
         phase = self.phase
+        if phase.get('black'):return 255
         fade_in = max(0., 1-self.phase_time/phase['fade_in']) if phase.get('fade_in') else 0.
         fade_out = (max(0., (self.phase_time-(phase['min_seconds']-phase['fade_out']))/phase['fade_out'])
                     if phase.get('fade_out') else 0.)
@@ -461,6 +535,7 @@ class RegentArrival:
                 if actor['id'] == 'caravan':
                     art = self.actor_art['caravan']
                     if (art.get('driver_offset') and not actor.get('driver_baked')
+                            and self.actor_pose(actor) not in art.get('driver_baked_poses', [])
                             and not any(a['id'] == 'driver' for a in self.phase['actors'])):
                         driver = {'id':'driver','pose':art.get('driver_seated_pose','seated_left'),
                                   'position':list(self.actor_position(actor)+pygame.Vector2(art['driver_offset'])*self._actor_scale(actor)),
@@ -476,7 +551,10 @@ class RegentArrival:
             speech_bubble.draw_dialogue_prose(painter, self.caption_layout, self.caption_lines,
                 hint='Click to continue', show_indicator=self.reduced_motion or int(self.elapsed/.65)%2 == 0)
         if self.phase.get('caption'):painter.text(self.phase['caption'], (240, 24), color=IVORY, anchor='midtop')
-        if self.fade_alpha:painter.veil(self.fade_alpha)
+        if self.fade_alpha:
+            veil = pygame.Surface(ui_surface.get_size(), pygame.SRCALPHA)
+            veil.fill((0, 0, 0, self.fade_alpha))
+            ui_surface.blit(veil, (0, 0))
         painter.button(self.skip_rect,'Skip')
         pause_key = 'P' if getattr(self.game, '_is_gallery_preview', False) else 'Esc'
         painter.text(f'{pause_key} · Resume' if self.paused else f'{pause_key} · Pause', (12,self.skip_rect.centery), role='small',color=MUTED,anchor='midleft')

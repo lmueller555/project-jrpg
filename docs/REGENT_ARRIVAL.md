@@ -16,11 +16,18 @@ The visual clock belongs to the cinematic rather than the exploration world.
 2. A modest relief caravan reaches the intact southern land checkpoint. A
    guard recognizes Aldric; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
+   Aldric and the caravan turn into the gateway and recede along the painted
+   road. A settled camera, shared road perspective and masonry occlusion make
+   their passage into the valley visible. The wagon clears the gate before
+   the scene fades out.
 3. Inside the wall, Aldric listens to local accounts of the lightning strike
    and its consequences for ordinary deliveries. The ruined western crossing
    provides a physical view of the damage. His questions, practical response
    and reluctance to promise an unsupported date establish his responsibilities
    and fatigue.
+   A brief black transition separates the gate passage from this later stop.
+   The riverbank fades into view and holds on the ruined crossing before the
+   conversation begins; travel effects give way to river ambience.
 4. The caravan continues toward Eldenmere. Serene watches its approach from
    inside the sanctuary. Her private concerns acknowledge Aldric's difficult
    journey and their coming discussion. Tomas's cups return her attention to
@@ -90,9 +97,15 @@ barriers remain authoritative for the cinematic's geography.
 ```sh
 python tools/build_regent_arrival_scenery.py --check
 python tools/build_regent_arrival_actors.py --check
-PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_quest
+PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_arrival_staging test_regent_quest
 python tools/capture_regent_arrival.py
+python tools/capture_regent_arrival_polish.py
 ```
+
+The [gate and transition review](reviews/regent_arrival_polish/README.md)
+shows the corrected walk cycle and continuous gate-to-riverbank sequence.
+The full arrival can also be replayed from the title screen's **Gallery** as
+**Aldric's Relief Caravan**, without loading or changing a journey.
 
 See the [production-game review](reviews/regent_arrival/README.md),
 [MQ03 guide](REGENT_QUEST.md), [regional surge context](narrative/game_01/REGIONAL_SURGES.md)

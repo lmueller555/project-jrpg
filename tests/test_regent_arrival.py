@@ -340,8 +340,10 @@ class ArrivalAudioOwnershipTests(unittest.TestCase):
         own = MagicMock();own.get_sound.return_value=sound
         reused = MagicMock();reused.get_sound.return_value=other_sound
         audio.mode='travel';audio.channels=[(own,sound),(reused,sound)]
-        audio.update(0,'travel',paused=True)
+        audio.update(0,'travel',paused=True,gain=.25)
         own.pause.assert_called_once();reused.pause.assert_not_called()
+        own.set_volume.assert_called_once_with(.25)
+        reused.set_volume.assert_not_called()
         audio.stop()
         own.stop.assert_called_once();reused.stop.assert_not_called()
         self.assertEqual(audio.channels,[])

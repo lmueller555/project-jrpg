@@ -57,7 +57,8 @@ def png(image):
 
 def build():
     sheets={name:Image.open(SOURCE/(name+'_generated.png')).convert('RGBA')
-            for name in ('travelers','household','caravan','walks','back_views','back_vehicle_refined')}
+            for name in ('travelers','household','caravan','walks','back_views','back_vehicle_refined',
+                         'turns','turn_intermediates','turn_shallow')}
     # Source sheets are authored rows with unequal transparent gutters. The
     # explicit cell boundaries prevent a neighboring row's boots from entering
     # another actor's frame; no generated subject is trimmed to a uniform grid.
@@ -65,17 +66,22 @@ def build():
                 'household':[0,355,690,1022,1282],
                 'walks':[0,475,887],
                 'back_views':[0,555,1024],
-                'back_vehicle_refined':[0,555,1024]}
+                'back_vehicle_refined':[0,555,1024],
+                'turns':[0,475,887]}
     records={
       'aldric':{'height':80,'frames':{
         'stand_left':('travelers',0,0,True),'listen_left':('travelers',1,0,True),
-        'gesture_left':('travelers',2,0,False),'walk_0':('travelers',3,0,False),
+        'gesture_left':('travelers',2,0,False),'walk_0':('travelers',3,0,True),
         'walk_1':('travelers',0,1,False),'walk_2':('travelers',1,1,False),
         'walk_3':('travelers',2,1,False),'stand_right':('travelers',3,1,False),
         'stand_back':('back_views',0,1,False),'walk_back_0':('back_views',0,1,False),
         'walk_back_1':('back_views',1,1,False),'walk_back_2':('back_views',2,1,False),
-        'walk_back_3':('back_views',3,1,False)},
+        'walk_back_3':('back_views',3,1,False),
+        'turn_left_back':('turns',0,0,False),
+        'walk_left_back_0':('turns',0,0,False),'walk_left_back_1':('turns',1,0,False),
+        'walk_left_back_2':('turns',2,0,False),'walk_left_back_3':('turns',3,0,False)},
         'loops':{'walk_left':['walk_0','walk_1','walk_2','walk_3'],
+                 'walk_left_back':['walk_left_back_0','walk_left_back_1','walk_left_back_2','walk_left_back_3'],
                  'walk_back':['walk_back_0','walk_back_1','walk_back_2','walk_back_3']}},
       'guard':{'height':80,'frames':{
         'stand_right':('travelers',0,2,False),'gesture_right':('travelers',1,2,False),
@@ -110,7 +116,7 @@ def build():
         for pose,frame in frames.items():
             frame_scale=scale
             frame_source=record['frames'][pose][0]
-            if frame_source in ('walks','back_views'):
+            if frame_source in ('walks','back_views','turns'):
                 group=[f for key,f in frames.items() if record['frames'][key][0]==frame_source]
                 frame_scale=record['height']/max(f.getbbox()[3]-f.getbbox()[1] for f in group)
             flip=record['frames'][pose][3]
@@ -146,11 +152,16 @@ def build():
         outputs[f'caravan/walk_{index}.png']=png(sprite)
     manifest={'version':1,'canvas':[300,144],'anchor':[150,136],
               'poses':{'parked_left':'walk_0.png','stand_left':'walk_0.png',
+                       'turn_left_back':'walk_left_back_0.png',
+                       'turn_left_back_shallow':'turn_left_back_shallow.png',
+                       'turn_left_back_deep':'turn_left_back_deep.png',
                        'parked_back':'walk_back_0.png'},
               'loops':{'walk_left':[{'file':f'walk_{i}.png','duration_ms':200} for i in range(4)],
+                       'walk_left_back':[{'file':f'walk_left_back_{i}.png','duration_ms':200} for i in range(4)],
                        'walk_back':[{'file':f'walk_back_{i}.png','duration_ms':200} for i in range(4)]},
               'driver_offset':[-4,-28],'driver_seated_pose':'seated_left',
-              'driver_baked_poses':['walk_back','parked_back'],
+              'driver_baked_poses':['walk_back','parked_back','turn_left_back','walk_left_back',
+                                    'turn_left_back_shallow','turn_left_back_deep'],
               'source':'imagegen-authored horse/provision wagon; rear view includes its correctly back-facing driver'}
     backs=[cell(sheets['back_vehicle_refined'],col,0,row_bounds=row_bounds['back_vehicle_refined']) for col in range(4)]
     scale=130/max(frame.getbbox()[3]-frame.getbbox()[1] for frame in backs)
@@ -161,9 +172,40 @@ def build():
         crop=crop.resize(size,Image.Resampling.NEAREST)
         sprite=Image.new('RGBA',(300,144));sprite.alpha_composite(crop,(150-crop.width//2,136-crop.height))
         outputs[f'caravan/walk_back_{index}.png']=png(sprite)
+    # Rear three-quarter art bridges the side and rear silhouettes. Keep one
+    # shared scale for the complete horse, wagon, load and baked seated driver;
+    # its ground anchor is registered to the wheel-contact baseline.
+    turns=[cell(sheets['turns'],col,1,row_bounds=row_bounds['turns']) for col in range(4)]
+    turn_scale=130/max(frame.getbbox()[3]-frame.getbbox()[1] for frame in turns)
+    for index,frame in enumerate(turns):
+        box=frame.getbbox();crop=frame.crop(box)
+        size=(round(crop.width*turn_scale),round(crop.height*turn_scale))
+        if size[0]>280:raise ValueError('Three-quarter caravan exceeds its canvas')
+        crop=crop.resize(size,Image.Resampling.NEAREST)
+        sprite=Image.new('RGBA',(300,144));sprite.alpha_composite(crop,(150-crop.width//2,136-crop.height))
+        outputs[f'caravan/walk_left_back_{index}.png']=png(sprite)
+    # Two additional authored yaw angles make the physical wagon's silhouette
+    # change progressively during its turn. Uniform resizing preserves wheels,
+    # horse and driver proportions; no crossfade or nonuniform stretching.
+    intermediate_frames = {
+        'turn_left_back_shallow': (clean(sheets['turn_shallow']),112),
+        'turn_left_back_deep': (cell(sheets['turn_intermediates'],0,1,2,2),130),
+    }
+    intermediate_sizes={}
+    for pose,(frame,height) in intermediate_frames.items():
+        box=frame.getbbox();crop=frame.crop(box)
+        frame_scale=height/crop.height
+        size=(round(crop.width*frame_scale),height)
+        if size[0]>280:raise ValueError('Intermediate caravan exceeds its canvas')
+        crop=crop.resize(size,Image.Resampling.NEAREST)
+        sprite=Image.new('RGBA',(300,144));sprite.alpha_composite(crop,(150-crop.width//2,136-crop.height))
+        outputs[f'caravan/{pose}.png']=png(sprite)
+        intermediate_sizes[pose]=list(size)
     outputs['caravan/animation.json']=(json.dumps(manifest,indent=2)+'\n').encode()
     metadata['caravan']={'canvas':[300,144],'anchor':[150,136],'driver_offset':[-4,-28],
-                         'rear_max_width':110,'rear_height':130,'rear_driver_baked':True}
+                         'rear_max_width':110,'rear_height':130,'rear_driver_baked':True,
+                         'three_quarter_height':130,'three_quarter_driver_baked':True,
+                         'intermediate_sizes':intermediate_sizes}
     for col,name in enumerate(('guard','local','clerk','driver')):
         portrait=cell(sheets['household'],col,3,row_bounds=row_bounds['household'])
         box=portrait.getbbox();portrait=portrait.crop(box)
@@ -178,6 +220,10 @@ def build():
                'Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.',
                'Human sprites are authored cinematic bodies rather than enlarged overworld sprites.',
                'Aldric has natural stride and restrained conversational poses; caravan uses four complete horse-walk frames.',
+               'The original first side-walk source faces right; its explicit orientation flag normalizes the complete loop to left.',
+               'Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.',
+               'Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.',
+               'The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.',
                'Supporting portraits match this cinematic cast; existing Aldric, Serene and Tomas portraits remain authoritative.']}
     outputs['provenance.json']=(json.dumps(provenance,indent=2)+'\n').encode()
     return outputs

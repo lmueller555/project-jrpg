@@ -1,0 +1,58 @@
+{
+  "recorded_at_utc": "2026-10-31T23:56:04.688133+00:00",
+  "base_main_commit": "e80c3534cbc14afa37de29927bd5f5c3f0d6081e",
+  "regression": {
+    "result": "passed",
+    "tests": 173,
+    "seconds": 167.83,
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_arrival_staging test_regent_quest test_gallery_catalogue test_gallery_session test_gallery_ui test_save_game test_mill_quest test_game_music",
+    "log": "tests.txt",
+    "log_sha256": "b6a4c312df5e13582ea022bb370fecb46b0e5778458dbc3bda66cc831a9bfa2f"
+  },
+  "export_checks": {
+    "actor_exports": {
+      "result": "passed",
+      "files": 70
+    },
+    "scenery_exports": {
+      "result": "passed"
+    },
+    "python_compile": "passed",
+    "git_diff_check": "passed"
+  },
+  "capture": {
+    "report": "capture_report.json",
+    "report_sha256": "cf78fc112b5ddc7b6e5e26356bf0f657126ef67c756e82724ba1e213e3bb6251",
+    "current_input_hashes_verified": 119,
+    "artifact_hashes_verified": 18,
+    "frames": 3641,
+    "world_freeze_checks": 3640,
+    "gate_to_bridge_frames": 579,
+    "fps": 30,
+    "gif_validation": {
+      "file": "gate_to_bridge.gif",
+      "captured_frames": 193,
+      "encoded_frames": 170,
+      "milliseconds": 19300,
+      "decoded_pixels_verified": true,
+      "timing_verified": true
+    },
+    "smoke_checks": {
+      "pending_reload_starts_from_beginning": true,
+      "pause_freezes_scene_and_world": true,
+      "focus_freezes_scene_and_world": true,
+      "skip_preserves_quest_handoff": true,
+      "gallery_plays_new_phases": true,
+      "gallery_preserves_save_bytes": true
+    },
+    "audio": "Silent SDL-dummy visual preview; no reconstructed or synthetic soundtrack."
+  },
+  "independent_visual_review": {
+    "result": "passed",
+    "corrected_side_walk": "all four frames face left",
+    "turn": "five authored caravan angles",
+    "gate": "whole wagon clears masonry and recedes along road",
+    "transition": "true black hold and riverbank establishing shot",
+    "unresolved_blockers": []
+  }
+}

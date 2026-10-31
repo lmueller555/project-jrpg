@@ -47,6 +47,12 @@
           280
         ]
       },
+      "occluders": [
+        {
+          "file": "south_gate_masonry.png",
+          "behind_y": 296
+        }
+      ],
       "gate_leaf": {
         "file": "gate_leaf.png",
         "position": [

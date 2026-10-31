@@ -46,3 +46,18 @@ elevated rear view. The exporter uses that revised row for the rear vehicle.
 `native_review.png`, `back_review.png` and `walk_review.gif` are review-only contact artifacts.
 They are not loaded by the game. Runtime `provenance.json` records source and
 export hashes so source integrity and byte-identical rebuilds can be checked.
+
+The arrival polish adds `turns_generated.png`, an original transparent two-row
+three-quarter sheet. Its Aldric and complete horse/wagon poses bridge the side
+and rear views; the driver is baked into every three-quarter caravan pose.
+The exporter exposes `turn_left_back` and `walk_left_back` on both actors.
+The first side-walk frame's original source points right, so its explicit
+orientation flag mirrors it to match the other three left-facing frames.
+
+Two additional authored caravan angles bridge the turn with native silhouette
+widths of 280px (side), 221px (shallow), 155px (three-quarter), 111px (deep)
+and 93px (rear). The shallow sprite uses `turn_shallow_generated.png`; the
+deep sprite uses only the lower-left cell of `turn_intermediates_generated.png`.
+The latter's first shallow attempt remains as source provenance but is not
+exported. Both static turn poses include the seated driver, retain transparent
+gutters, and use uniform nearest resizing with the common wheel baseline.
