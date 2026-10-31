@@ -12,7 +12,7 @@ os.environ.update(SDL_VIDEODRIVER='dummy', SDL_AUDIODRIVER='dummy',
 import pygame
 
 from map_ui import MapUI
-from overworld_map import RegionalMapUI
+from overworld_map import FIELD_STYLES, PAPER, RegionalMapUI
 from ui_style import UIStyle
 
 
@@ -182,6 +182,69 @@ class RegionalMapTests(unittest.TestCase):
             return constructor(size, *args, **kwargs)
         with patch('pygame.Surface', side_effect=bounded_surface):self.map_ui.draw(canvas)
         self.assertTrue(sizes)
+
+    def test_crop_parcels_have_distinct_treatments_and_follow_row_orientation(self):
+        def polygon_at(rect):
+            return [list(self.map.map_to_tile(point)) for point in
+                    (rect.topleft, rect.topright, rect.bottomright, rect.bottomleft)]
+        self.data['terrain'] = {'fields': []}
+        crops = ('grain', 'vegetables', 'fallow', 'pasture', 'orchard')
+        rectangles = []
+        for index, crop in enumerate(crops):
+            rect = pygame.Rect(45+index*49, 92, 42, 52)
+            rectangles.append(rect)
+            self.data['terrain']['fields'].append({'id': crop, 'crop': crop,
+                                                  'row_angle': 0, 'polygon': polygon_at(rect)})
+        canvas = pygame.Surface((480, 320))
+        painter = self.game.ui.painter(canvas)
+        self.map._draw_terrain(painter)
+        for crop, rect in zip(crops, rectangles):
+            with self.subTest(crop=crop):
+                # Parcel interiors retain their chart colour, with vegetation
+                # hatching confined inside the field instead of bleeding out.
+                self.assertEqual(canvas.get_at((rect.left+2, rect.top+2))[:3],
+                                 pygame.Color(FIELD_STYLES[crop][0])[:3])
+                self.assertEqual(canvas.get_at((rect.left+2, rect.top-2))[:3],
+                                 pygame.Color(PAPER)[:3])
+        self.assertEqual(len({canvas.get_at((rect.left+2, rect.top+2))[:3]
+                              for rect in rectangles}), len(crops))
+        field = self.data['terrain']['fields'][0]
+        rect = rectangles[0]
+        patch_rect = pygame.Rect(rect.left+2, rect.top+2, rect.width-4, rect.height-4)
+        horizontal = pygame.image.tobytes(canvas.subsurface(patch_rect), 'RGB')
+        field['row_angle'] = 90
+        self.map._draw_terrain(painter)
+        vertical = pygame.image.tobytes(canvas.subsurface(patch_rect), 'RGB')
+        self.assertNotEqual(horizontal, vertical)
+
+    def test_footpath_dashes_remain_continuous_when_curves_are_densified(self):
+        canvas = pygame.Surface((480, 320))
+        painter = self.game.ui.painter(canvas)
+        def route(points):return {'points': [list(self.map.map_to_tile(p)) for p in points]}
+        canvas.fill(PAPER)
+        self.map._draw_footpath(painter, route(((70, 170), (260, 170))))
+        sparse = pygame.image.tobytes(canvas, 'RGB')
+        colors = [canvas.get_at((x, 170))[:3] for x in range(70, 260)]
+        self.assertIn(pygame.Color(PAPER)[:3], colors)
+        self.assertIn(pygame.Color('#a28f6b')[:3], colors)
+        canvas.fill(PAPER)
+        self.map._draw_footpath(painter, route(tuple((x, 170) for x in range(70, 261, 2))))
+        self.assertEqual(pygame.image.tobytes(canvas, 'RGB'), sparse)
+
+    def test_farmyard_cartography_does_not_add_destinations_or_discovery_ids(self):
+        before_landmarks = [record['id'] for record in self.map.landmarks]
+        self.game.overworld_travel = SimpleNamespace(discovered={'eldenmere'})
+        tile = list(self.map.map_to_tile((140, 140)))
+        self.data['setpieces'] = [{'id': 'western_farmyard', 'kind': 'farmstead',
+                                  'name': 'Farmyard', 'tile_position': tile, 'props': []}]
+        before_data = json.dumps(self.data, sort_keys=True)
+        canvas = pygame.Surface((480, 320))
+        canvas.fill(PAPER)
+        self.map._draw_farmsteads(self.game.ui.painter(canvas))
+        self.assertNotEqual(canvas.get_at((140, 140))[:3], pygame.Color(PAPER)[:3])
+        self.assertEqual([record['id'] for record in self.map.landmarks], before_landmarks)
+        self.assertEqual(self.game.overworld_travel.discovered, {'eldenmere'})
+        self.assertEqual(json.dumps(self.data, sort_keys=True), before_data)
 
     def test_town_and_indoor_modes_keep_existing_map_and_exterior_position(self):
         region = self.game.world

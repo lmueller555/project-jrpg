@@ -6,6 +6,8 @@ Coordinates remain global tiles, including the region's negative origin.
 """
 from __future__ import annotations
 
+import math
+
 import pygame
 
 
@@ -15,6 +17,13 @@ MUTED = '#6d7054'
 BRASS = '#a88c4b'
 WATER = '#789b9b'
 WATER_EDGE = '#547679'
+FIELD_STYLES = {
+    'grain': ('#d7c18a', '#a9915c'),
+    'vegetables': ('#b2c29b', '#789167'),
+    'fallow': ('#c7b395', '#a18c70'),
+    'pasture': ('#c5ca99', '#97a575'),
+    'orchard': ('#b4c49b', '#738b63'),
+}
 
 
 class RegionalMapUI:
@@ -250,6 +259,60 @@ class RegionalMapUI:
             previous = current
         return inside
 
+    def _terrain_hatching(self, painter, record, kind, points, edge):
+        # Work only over the clipped display rectangle. Neither large authored
+        # polygons nor increased map zoom increase the glyph allocation budget.
+        box = pygame.Rect(min(p[0] for p in points), min(p[1] for p in points),
+                          max(p[0] for p in points)-min(p[0] for p in points),
+                          max(p[1] for p in points)-min(p[1] for p in points)).clip(self.map_rect)
+        spacing = 12 if kind == 'forests' else 13
+        angle = math.radians(record.get('row_angle', -18))
+        direction = (math.cos(angle), math.sin(angle))
+        crop = record.get('crop', 'grain')
+        for row, y in enumerate(range(box.top+5, box.bottom-3, spacing)):
+            for column, x in enumerate(range(box.left+5, box.right-3, spacing)):
+                # Full little glyphs stay within their own parcel or woodland.
+                if not all(self._inside(point, points) for point in
+                           ((x-4, y-4), (x+4, y-4), (x-4, y+4), (x+4, y+4))):continue
+                if kind == 'fields':
+                    if crop == 'orchard':
+                        self._circle(painter, edge, (x, y-1), 2, 1)
+                        painter.line(edge, (x, y+1), (x, y+4))
+                    elif crop == 'pasture':
+                        painter.line(edge, (x-3, y+2), (x-1, y-1))
+                        painter.line(edge, (x-1, y-1), (x, y+2))
+                        painter.line(edge, (x, y+2), (x+2, y))
+                    else:
+                        dx, dy = direction[0]*4, direction[1]*4
+                        painter.line(edge, (x-dx, y-dy), (x+dx, y+dy))
+                        if crop == 'vegetables':
+                            for offset in (-2, 2):
+                                self._circle(painter, edge,
+                                             (x+direction[0]*offset, y+direction[1]*offset), .7)
+                        elif crop == 'fallow':
+                            normal = (-direction[1]*2, direction[0]*2)
+                            painter.line(edge, (x-dx+normal[0], y-dy+normal[1]),
+                                         (x+dx+normal[0], y+dy+normal[1]))
+                elif kind == 'forests':
+                    conifer = (record.get('style') == 'conifer' or
+                               record.get('style') == 'mixed' and (row+column)%3 == 0)
+                    if conifer:
+                        self._polygon(painter, edge, ((x, y-4), (x-3, y+2), (x+3, y+2)), 1)
+                        painter.line(edge, (x, y+2), (x, y+4))
+                    else:
+                        self._circle(painter, edge, (x-1, y-1), 2, 1)
+                        self._circle(painter, edge, (x+1, y-2), 2, 1)
+                        painter.line(edge, (x, y+1), (x, y+4))
+                elif kind == 'hills':
+                    if record.get('style') == 'wooded_rise':
+                        for a, b in (((x-4, y+2), (x-2, y)), ((x-2, y), (x+1, y-1)),
+                                     ((x+1, y-1), (x+4, y+1))):painter.line(edge, a, b)
+                    else:
+                        painter.line(edge, (x-4, y+2), (x, y-3))
+                        painter.line(edge, (x, y-3), (x+4, y+2))
+                        painter.line(edge, (x, y-3), (x+1, y+1))
+                else:painter.line(edge, (x-3, y+2), (x+3, y-1))
+
     def _draw_terrain(self, painter):
         painter.rect(PAPER, self.map_rect)
         terrain = self.data.get('terrain', {})
@@ -260,24 +323,12 @@ class RegionalMapUI:
             for record in terrain.get(kind, []):
                 polygon = record.get('polygon', [])
                 points = [self.tile_to_map(point) for point in polygon]
-                self._polygon(painter, fill, points)
+                parcel_fill, parcel_edge = (FIELD_STYLES.get(record.get('crop'), FIELD_STYLES['grain'])
+                                            if kind == 'fields' else (fill, edge))
+                self._polygon(painter, parcel_fill, points)
                 if len(points) < 3:continue
-                # Sparse cartographic hatching has a fixed screen-space budget.
-                box = pygame.Rect(min(p[0] for p in points), min(p[1] for p in points),
-                                  max(p[0] for p in points)-min(p[0] for p in points),
-                                  max(p[1] for p in points)-min(p[1] for p in points)).clip(self.map_rect)
-                spacing = 13 if kind == 'forests' else 16
-                for y in range(box.top+6, box.bottom-3, spacing):
-                    for x in range(box.left+6, box.right-3, spacing):
-                        if not self._inside((x, y), points):continue
-                        if kind == 'forests':
-                            painter.line(edge, (x, y-3), (x-3, y+3))
-                            painter.line(edge, (x-3, y+3), (x+3, y+3))
-                            painter.line(edge, (x+3, y+3), (x, y-3))
-                        elif kind == 'hills':
-                            painter.line(edge, (x-4, y+2), (x, y-3))
-                            painter.line(edge, (x, y-3), (x+4, y+2))
-                        else:painter.line(edge, (x-4, y+2), (x+4, y-1))
+                if kind == 'fields':self._polygon(painter, parcel_edge, points, .5)
+                self._terrain_hatching(painter, record, kind, points, parcel_edge)
         for record in terrain.get('rivers', []):
             self._draw_route(painter, record, WATER_EDGE, WATER, minimum=3)
 
@@ -290,9 +341,46 @@ class RegionalMapUI:
             self._circle(painter, fill, start, width/2)
         if points:self._circle(painter, fill, points[-1], width/2)
 
+    def _draw_footpath(self, painter, record):
+        # Accumulate dashes along the route rather than restarting at each
+        # sampled curve point, so densified paths remain a coherent fine line.
+        points = [self.tile_to_map(point) for point in record.get('points', [])]
+        phase = 0.0
+        for start, end in zip(points, points[1:]):
+            delta = pygame.Vector2(end)-start
+            length = delta.length()
+            if not length:continue
+            direction = delta/length
+            offset = 0.0
+            while offset < length:
+                step = min(length-offset, 7-phase)
+                if phase < 4:
+                    visible = min(step, 4-phase)
+                    painter.line('#a28f6b', pygame.Vector2(start)+direction*offset,
+                                 pygame.Vector2(start)+direction*(offset+visible), 1)
+                offset += step
+                phase = (phase+step)%7
+
+    def _draw_farmsteads(self, painter):
+        # Farmyards are descriptive cartography, not selectable destinations or
+        # additional discovery records. Existing landmark/save identities stay
+        # entirely with the travel controller.
+        for record in self.data.get('setpieces', []):
+            if record.get('kind') not in ('farm', 'farmstead', 'farmyard'):continue
+            position = record.get('tile_position')
+            if position is None:continue
+            x, y = self.tile_to_map(position)
+            if not self.map_rect.inflate(12, 12).collidepoint(x, y):continue
+            painter.rect('#b8a17b', (x-3, y-1, 6, 4))
+            self._polygon(painter, '#8d7657', ((x-4, y), (x, y-4), (x+4, y)))
+            painter.line('#a39370', (x-5, y+5), (x+5, y+5))
+
     def _draw_roads_walls(self, painter):
         for road in self.data.get('roads', []):
-            self._draw_route(painter, road, '#b09a70', '#d3bb88')
+            kind = road.get('kind', 'stone' if road.get('surface') == 'stone_road' else 'cart')
+            if kind == 'foot':self._draw_footpath(painter, road)
+            elif kind == 'stone':self._draw_route(painter, road, '#a79e83', '#ded2af', minimum=2.2)
+            else:self._draw_route(painter, road, '#b49d75', '#d2bc8c', minimum=1.3)
         for wall in self.data.get('walls', []):
             left = self.tile_to_map((wall['x0'], wall['y']))
             right = self.tile_to_map((wall['x1'], wall['y']))
@@ -426,6 +514,7 @@ class RegionalMapUI:
             painter.clip(self.map_rect)
             self._draw_terrain(painter)
             self._draw_roads_walls(painter)
+            self._draw_farmsteads(painter)
             self._layout_markers()
             for index, record in enumerate(self.landmarks):
                 self._draw_marker(painter, record)

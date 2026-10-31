@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "tiles": {
+    "grass_lush": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_lush.png"
+    },
+    "grass_dry": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_dry.png"
+    },
+    "grass_meadow": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png"
+    },
+    "leaf_litter": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/leaf_litter.png"
+    },
+    "pasture": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/pasture.png"
+    },
+    "grain": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/grain.png"
+    },
+    "vegetables": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/vegetables.png"
+    },
+    "furrows": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/furrows.png"
+    },
+    "orchard_grass": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/orchard_grass.png"
+    },
+    "gravel": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/gravel.png"
+    },
+    "stone_road_worn": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/stone_road_worn.png"
+    },
+    "cart_earth": {
+      "image": "assets/terrain/overworld/elden_vale/polish/tiles/cart_earth.png"
+    }
+  },
+  "props": {
+    "oak_a": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/oak_a.png",
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "oak_b": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/oak_b.png",
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "oak_c": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/oak_c.png",
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "conifer_a": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/conifer_a.png",
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "conifer_b": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/conifer_b.png",
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "sapling": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/sapling.png",
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "shrub": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/shrub.png",
+      "foot_anchor": [
+        15,
+        24
+      ]
+    },
+    "fern": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/fern.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "log": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/log.png",
+      "foot_anchor": [
+        21,
+        18
+      ]
+    },
+    "stump": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/stump.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "flowers_a": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/flowers_a.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "flowers_b": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/flowers_b.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "reeds": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/reeds.png",
+      "foot_anchor": [
+        15,
+        30
+      ]
+    },
+    "river_rocks": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png",
+      "foot_anchor": [
+        18,
+        20
+      ]
+    },
+    "rock_outcrop": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
+      "foot_anchor": [
+        32,
+        36
+      ]
+    },
+    "ridge": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "foot_anchor": [
+        48,
+        64
+      ]
+    },
+    "farm_house": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/farm_house.png",
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "barn": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/barn.png",
+      "foot_anchor": [
+        30,
+        48
+      ]
+    },
+    "shed": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/shed.png",
+      "foot_anchor": [
+        18,
+        30
+      ]
+    },
+    "haystack": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/haystack.png",
+      "foot_anchor": [
+        12,
+        24
+      ]
+    },
+    "grain_sacks": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/grain_sacks.png",
+      "foot_anchor": [
+        12,
+        20
+      ]
+    },
+    "fence_h": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/fence_h.png",
+      "foot_anchor": [
+        24,
+        18
+      ]
+    },
+    "fence_v": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/fence_v.png",
+      "foot_anchor": [
+        9,
+        36
+      ]
+    },
+    "hedge_h": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/hedge_h.png",
+      "foot_anchor": [
+        24,
+        18
+      ]
+    },
+    "hedge_v": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/hedge_v.png",
+      "foot_anchor": [
+        9,
+        36
+      ]
+    },
+    "orchard_tree": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/orchard_tree.png",
+      "foot_anchor": [
+        18,
+        42
+      ]
+    },
+    "cart": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/cart.png",
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "waypost": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/waypost.png",
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "bench": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/bench.png",
+      "foot_anchor": [
+        18,
+        18
+      ]
+    },
+    "laundry": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/laundry.png",
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "lantern_crates": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/lantern_crates.png",
+      "foot_anchor": [
+        12,
+        24
+      ]
+    },
+    "checkpoint_shelter": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/checkpoint_shelter.png",
+      "foot_anchor": [
+        30,
+        48
+      ]
+    },
+    "bridge_rubble": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/bridge_rubble.png",
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "split_rail": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/split_rail.png",
+      "foot_anchor": [
+        24,
+        24
+      ]
+    },
+    "grass_tuft": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/grass_tuft.png",
+      "foot_anchor": [
+        9,
+        18
+      ]
+    },
+    "bird_1": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/bird_1.png",
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "bird_2": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/bird_2.png",
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "butterfly_1": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/butterfly_1.png",
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "butterfly_2": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/butterfly_2.png",
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "sheep_1": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/sheep_1.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "sheep_2": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/sheep_2.png",
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "smoke_1": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/smoke_1.png",
+      "foot_anchor": [
+        9,
+        30
+      ]
+    },
+    "smoke_2": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/smoke_2.png",
+      "foot_anchor": [
+        9,
+        30
+      ]
+    },
+    "wall_segment_moss": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/wall_segment_moss.png",
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "wall_segment_worn": {
+      "image": "assets/terrain/overworld/elden_vale/polish/props/wall_segment_worn.png",
+      "foot_anchor": [
+        24,
+        48
+      ]
+    }
+  }
+}

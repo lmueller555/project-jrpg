@@ -21,7 +21,36 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets/source/maps/overworld/elden_vale/recipe.json"
 OUTPUT = ROOT / "assets/maps/overworld/elden_vale/region.json"
-REFERENCE = ROOT / "docs/reviews/elden_vale_overworld/atlas_reference.png"
+REFERENCE = ROOT / "docs/reviews/elden_vale_polish/atlas_reference.png"
+
+
+def smooth_road(points, steps=6):
+    """Densify a hand-authored route, retaining each purposeful junction.
+
+    The cubic Hermite interpolation uses short tangents to avoid loops
+    around tight bends. Its output is the single source for paint, clearances,
+    the regional map and walking-time validation, rather than a visual-only
+    curve that would disagree with collision or travel measurements.
+    """
+    if len(points) < 3 or steps < 2:
+        return deepcopy(points)
+    result = [list(points[0])]
+    for index, (a, b) in enumerate(zip(points, points[1:])):
+        previous = points[max(0, index-1)]
+        following = points[min(len(points)-1, index+2)]
+        for sample in range(1, steps+1):
+            t = sample/steps
+            h00 = 2*t**3-3*t**2+1
+            h10 = t**3-2*t**2+t
+            h01 = -2*t**3+3*t**2
+            h11 = t**3-t**2
+            # A shortened tangent gives broad countryside curves and keeps
+            # bridge approaches from overshooting the authored crossing.
+            point = [h00*a[axis]+h10*(b[axis]-previous[axis])*.35+
+                     h01*b[axis]+h11*(following[axis]-a[axis])*.35
+                     for axis in (0, 1)]
+            result.append([round(value, 4) for value in point])
+    return result
 
 
 def _distance(point, start, end):
@@ -105,6 +134,24 @@ def validate(data):
     for river in data["terrain"]["rivers"]:
         if river["width"] <= 0 or len(river["points"]) < 2:
             raise ValueError("River requires positive width and a continuous polyline")
+    crops = {"grain", "vegetables", "fallow", "pasture", "orchard"}
+    for field in data["terrain"].get("fields", []):
+        if field.get("crop") not in crops or len(field["polygon"]) < 3:
+            raise ValueError("A field needs an explicit crop and parcel outline")
+    if not {"stone", "cart", "foot"} <= {road.get("kind") for road in data["roads"]}:
+        raise ValueError("Regional roads require a readable surface hierarchy")
+    if any(road["width"] < 1.15 or len(road["points"]) < 2 for road in data["roads"]):
+        raise ValueError("A route is too narrow for the regional player probe")
+    setpieces = data.get("setpieces", [])
+    if sum(piece.get("kind") == "farmstead" for piece in setpieces) < 3:
+        raise ValueError("The environment pass requires three composed farmsteads")
+    identifiers = [prop["id"] for piece in setpieces for prop in piece.get("props", [])]
+    identifiers.extend(prop["id"] for prop in data.get("decorations", []))
+    if len(identifiers) != len(set(identifiers)):
+        raise ValueError("Authored props must have unique identities")
+    for piece in setpieces:
+        if not piece.get("approach_tile") or not piece.get("review"):
+            raise ValueError("A composed scene needs a walkable approach and review camera")
     for wall in data["walls"]:
         for endpoint in ((wall["x0"], wall["y"]), (wall["x1"], wall["y"])):
             if not any(any(_distance(endpoint, a, b)[0] < river["width"] / 2 - 1
@@ -134,6 +181,7 @@ def validate(data):
     required.extend(mark["tile_position"] for mark in data["landmarks"]
                     if mark["id"] in validation["reachable_landmark_ids"])
     required.extend(point for gate in data["gates"] for point in gate["guard_tiles"])
+    required.extend(piece["approach_tile"] for piece in setpieces)
     if any(tuple(point) not in reached for point in required):
         raise ValueError("An authored spawn, landmark, guard or bridge approach is unreachable")
     north = min(wall["y"] for wall in data["walls"])
@@ -151,12 +199,15 @@ def validate(data):
         "closed_perimeter": True,
         "broken_bridge_blocks_crossing": True,
         "repaired_bridge_connects_banks": True,
-        "scope": "Offline four-neighbour tile sampling of continuous vector barriers; runtime actor/decoration probes have separate engine checks."
+        "scope": "Offline four-neighbour tile sampling of continuous vector barriers and authored approaches; runtime actor/decoration probes have separate engine checks."
     }
 
 
 def prepare():
     data = deepcopy(json.loads(SOURCE.read_text(encoding="utf-8")))
+    for road in data.get("roads", []):
+        if road.get("control_points"):
+            road["points"] = smooth_road(road["control_points"], road.get("smooth_steps", 6))
     geography = data["geography"]
     atlas = ROOT / geography["atlas_source"]
     digest = hashlib.sha256(atlas.read_bytes()).hexdigest()

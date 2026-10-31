@@ -7,6 +7,13 @@ The [review captures](reviews/elden_vale_overworld/README.md) show the actual
 renderer and the [atlas survey](reviews/elden_vale_overworld/atlas_reference.png)
 shows how the region follows the approved world map.
 
+The [environment quality pass](reviews/elden_vale_polish/README.md) adds three
+composed farmsteads, smaller crop parcels, village orchards, clustered woodland,
+rocky slopes, riverbank planting and inhabited checkpoints. The main stone road,
+farm cart tracks and woodland footpaths have distinct widths and materials;
+their junctions and bends follow the places they serve. The original regional
+captures remain available as a historical comparison.
+
 ## Geography and travel
 
 Elden Vale is an inland, temperate corridor on the western side of Merovar's
@@ -44,6 +51,14 @@ Major geography is charted immediately; optional local landmarks are added
 after Caelan approaches them. Discovery persists with the saved journey.
 The regional map and journal pause movement and regional time. The existing
 Eldenmere Theme continues across the scale change.
+
+The countryside uses grain, vegetable, fallow, pasture and orchard ground,
+with parcel-specific row directions. Farmhouses, barns, sheds, fences and gates
+form compact regional scenery. Flowers, laundry, resting places, relief carts
+and packed lantern supplies give routes local character. Small wildlife and
+smoke animations are placed in selected scenes. These additions do not create
+new interiors or quests. The regional map reflects crop and road differences;
+farmstead glyphs are scenery rather than new selectable destinations.
 
 ## Boundaries and story facts
 
@@ -84,6 +99,15 @@ and keep canopies continuous across seams. Missing sparse chunks and positions
 outside authored bounds block movement. Full player-foot probes query every
 chunk they touch, including negative-coordinate seams.
 
+`overworld_environment.py` supplies the detailed environment layer. Authored
+setpieces group globally positioned props with optional solid foot rectangles.
+Prop ownership, collision indexing and deterministic tree clusters work across
+chunk boundaries. Roads and reserved scene approaches keep their clearances;
+tree silhouettes, undergrowth and ground-edge variation break up regular grids.
+Material patterns use global coordinates, including rotated crop textures, so
+eviction or a change in load order does not shift the scenery. Regional ground
+and props continue to share small source assets and the existing cache budgets.
+
 The region stays outside `Game.scenes`: streaming a terrain section does not
 create an additional town scene, tick a remote household or duplicate an NPC.
 Camera clamping uses the region's actual origin. Sight queries use a world
@@ -115,6 +139,15 @@ or complete a quest, replay a reward, or add a regional edge to NPC path graphs.
   `assets/source/terrain/overworld/elden_vale/`.
 - Native tiles/props and anchors:
   `assets/terrain/overworld/elden_vale/art.json`.
+- Detailed environment art and its export manifest:
+  `assets/terrain/overworld/elden_vale/polish/art.json`.
+- Original detail generations, prompts and export recipes:
+  `assets/source/terrain/overworld/elden_vale/polish/`.
+
+The `detail_art_manifest` extends the base art at runtime. Existing art and
+the original review images remain unchanged. The layout recipe adds typed crop
+parcels, road hierarchy, authored setpieces and decorative placements. Existing
+world, landmark, town-contact and progression identifiers stay stable.
 
 The layout builder pins the approved classroom atlas by SHA-256, retains
 normalized reference anchors, and exports its survey annotation separately.
@@ -123,9 +156,10 @@ distances are authored gameplay interpretations of its geography.
 
 ```sh
 python tools/build_overworld_art.py --check
+python tools/build_overworld_polish_art.py --check
 python tools/build_elden_vale_overworld.py --check
 python -m unittest discover -s tests -p 'test_overworld_*.py' -v
-python tools/capture_elden_vale_overworld.py
+python tools/capture_elden_vale_polish.py
 ```
 
 The layout check validates wall–river joins, default enclosure reachability,

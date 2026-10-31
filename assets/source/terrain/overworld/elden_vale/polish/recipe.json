@@ -1,0 +1,963 @@
+{
+  "version": 1,
+  "alpha_threshold": 128,
+  "tile_palette_colors": 32,
+  "prop_palette_colors": 48,
+  "source_records": [
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/nature_sheet.png",
+      "sha256": "c010be5d39879501cb6be40f07bb13ed48cd6cdf4fcb0c2ebc9a4920b25f44fe",
+      "generator_original": "exec-2b304eb3-e128-4842-b995-bd7c23427d22.png"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/farm_sheet.png",
+      "sha256": "4f3d5a6e200e3faac568da03e2351833d22306522c622b0ac3aa61bea8d1d336",
+      "generator_original": "exec-36e46ddc-0076-4e06-a069-f6fc85e0d353.png"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/texture_sheet.png",
+      "sha256": "959f3ce7055084e008d7ea59ad512818b103df0292b125147735cd20bdda0408",
+      "generator_original": "exec-7e2b7171-5275-4bc7-af65-040e0cdc928a.png"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/detail_sheet.png",
+      "sha256": "f8c7fd462012a52d7e9d26272c285cc33f96c8446d6cd185ed6f4f89cc5c0a08",
+      "generator_original": "exec-70bbf84c-7421-49c2-8230-b09d13595bcc.png"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/wall_sheet.png",
+      "sha256": "3ba1d4d770d3246df2749b77f61aaeafc613a76b5c67b68c31f3346598fb9ba9",
+      "generator_original": "exec-c59c41a5-9f20-42bc-85a0-04501c04d192.png"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/polish/quiet_texture_sheet.png",
+      "sha256": "62ae17514f3db7b892eb05bda51f47217f8ead0fed1a95c4e88a9377842c2457",
+      "generator_original": "exec-aa48c51b-000f-4ff7-a0a3-0c0eb860f39f.png"
+    }
+  ],
+  "tiles": {
+    "grass_lush": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        3,
+        3,
+        311,
+        311
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "grass_dry": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        317,
+        3,
+        624,
+        311
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "grass_meadow": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        630,
+        3,
+        937,
+        311
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "leaf_litter": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        943,
+        3,
+        1251,
+        311
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "pasture": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        3,
+        317,
+        311,
+        624
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "grain": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        317,
+        317,
+        624,
+        624
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "vegetables": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        630,
+        317,
+        937,
+        624
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "furrows": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        943,
+        317,
+        1251,
+        624
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "orchard_grass": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        3,
+        630,
+        311,
+        937
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "gravel": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        317,
+        630,
+        624,
+        937
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "stone_road_worn": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        630,
+        630,
+        937,
+        937
+      ],
+      "size": [
+        24,
+        24
+      ]
+    },
+    "cart_earth": {
+      "source": "quiet_texture_sheet.png",
+      "crop": [
+        943,
+        630,
+        1251,
+        937
+      ],
+      "size": [
+        24,
+        24
+      ]
+    }
+  },
+  "props": {
+    "oak_a": {
+      "source": "nature_sheet.png",
+      "crop": [
+        15,
+        22,
+        358,
+        423
+      ],
+      "size": [
+        48,
+        60
+      ],
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "oak_b": {
+      "source": "nature_sheet.png",
+      "crop": [
+        360,
+        20,
+        624,
+        423
+      ],
+      "size": [
+        48,
+        60
+      ],
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "oak_c": {
+      "source": "nature_sheet.png",
+      "crop": [
+        632,
+        65,
+        959,
+        423
+      ],
+      "size": [
+        48,
+        60
+      ],
+      "foot_anchor": [
+        24,
+        60
+      ]
+    },
+    "conifer_a": {
+      "source": "nature_sheet.png",
+      "crop": [
+        968,
+        38,
+        1250,
+        423
+      ],
+      "size": [
+        36,
+        60
+      ],
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "conifer_b": {
+      "source": "nature_sheet.png",
+      "crop": [
+        6,
+        431,
+        355,
+        768
+      ],
+      "size": [
+        36,
+        60
+      ],
+      "foot_anchor": [
+        18,
+        60
+      ]
+    },
+    "sapling": {
+      "source": "nature_sheet.png",
+      "crop": [
+        365,
+        491,
+        627,
+        769
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "shrub": {
+      "source": "nature_sheet.png",
+      "crop": [
+        636,
+        565,
+        917,
+        768
+      ],
+      "size": [
+        30,
+        24
+      ],
+      "foot_anchor": [
+        15,
+        24
+      ]
+    },
+    "fern": {
+      "source": "nature_sheet.png",
+      "crop": [
+        965,
+        567,
+        1251,
+        768
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "log": {
+      "source": "nature_sheet.png",
+      "crop": [
+        16,
+        809,
+        367,
+        974
+      ],
+      "size": [
+        42,
+        18
+      ],
+      "foot_anchor": [
+        21,
+        18
+      ]
+    },
+    "stump": {
+      "source": "nature_sheet.png",
+      "crop": [
+        374,
+        798,
+        628,
+        975
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "flowers_a": {
+      "source": "nature_sheet.png",
+      "crop": [
+        661,
+        809,
+        922,
+        976
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "flowers_b": {
+      "source": "nature_sheet.png",
+      "crop": [
+        968,
+        819,
+        1251,
+        977
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "reeds": {
+      "source": "nature_sheet.png",
+      "crop": [
+        4,
+        987,
+        295,
+        1250
+      ],
+      "size": [
+        30,
+        30
+      ],
+      "foot_anchor": [
+        15,
+        30
+      ]
+    },
+    "river_rocks": {
+      "source": "nature_sheet.png",
+      "crop": [
+        294,
+        1057,
+        585,
+        1241
+      ],
+      "size": [
+        36,
+        20
+      ],
+      "foot_anchor": [
+        18,
+        20
+      ]
+    },
+    "rock_outcrop": {
+      "source": "nature_sheet.png",
+      "crop": [
+        582,
+        1001,
+        936,
+        1242
+      ],
+      "size": [
+        64,
+        36
+      ],
+      "foot_anchor": [
+        32,
+        36
+      ]
+    },
+    "ridge": {
+      "source": "nature_sheet.png",
+      "crop": [
+        937,
+        991,
+        1254,
+        1242
+      ],
+      "size": [
+        96,
+        64
+      ],
+      "foot_anchor": [
+        48,
+        64
+      ]
+    },
+    "farm_house": {
+      "source": "farm_sheet.png",
+      "crop": [
+        20,
+        28,
+        309,
+        356
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "barn": {
+      "source": "farm_sheet.png",
+      "crop": [
+        317,
+        51,
+        711,
+        356
+      ],
+      "size": [
+        60,
+        48
+      ],
+      "foot_anchor": [
+        30,
+        48
+      ]
+    },
+    "shed": {
+      "source": "farm_sheet.png",
+      "crop": [
+        712,
+        119,
+        974,
+        354
+      ],
+      "size": [
+        36,
+        30
+      ],
+      "foot_anchor": [
+        18,
+        30
+      ]
+    },
+    "haystack": {
+      "source": "farm_sheet.png",
+      "crop": [
+        976,
+        92,
+        1253,
+        356
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "foot_anchor": [
+        12,
+        24
+      ]
+    },
+    "grain_sacks": {
+      "source": "farm_sheet.png",
+      "crop": [
+        22,
+        421,
+        304,
+        618
+      ],
+      "size": [
+        24,
+        20
+      ],
+      "foot_anchor": [
+        12,
+        20
+      ]
+    },
+    "fence_h": {
+      "source": "farm_sheet.png",
+      "crop": [
+        319,
+        416,
+        668,
+        619
+      ],
+      "size": [
+        48,
+        18
+      ],
+      "foot_anchor": [
+        24,
+        18
+      ]
+    },
+    "fence_v": {
+      "source": "farm_sheet.png",
+      "crop": [
+        723,
+        363,
+        847,
+        618
+      ],
+      "size": [
+        18,
+        36
+      ],
+      "foot_anchor": [
+        9,
+        36
+      ]
+    },
+    "hedge_h": {
+      "source": "farm_sheet.png",
+      "crop": [
+        899,
+        451,
+        1247,
+        619
+      ],
+      "size": [
+        48,
+        18
+      ],
+      "foot_anchor": [
+        24,
+        18
+      ]
+    },
+    "hedge_v": {
+      "source": "farm_sheet.png",
+      "crop": [
+        70,
+        649,
+        233,
+        929
+      ],
+      "size": [
+        18,
+        36
+      ],
+      "foot_anchor": [
+        9,
+        36
+      ]
+    },
+    "orchard_tree": {
+      "source": "farm_sheet.png",
+      "crop": [
+        285,
+        648,
+        594,
+        930
+      ],
+      "size": [
+        36,
+        42
+      ],
+      "foot_anchor": [
+        18,
+        42
+      ]
+    },
+    "cart": {
+      "source": "farm_sheet.png",
+      "crop": [
+        594,
+        683,
+        971,
+        931
+      ],
+      "size": [
+        48,
+        30
+      ],
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "waypost": {
+      "source": "farm_sheet.png",
+      "crop": [
+        997,
+        664,
+        1251,
+        932
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        36
+      ]
+    },
+    "bench": {
+      "source": "farm_sheet.png",
+      "crop": [
+        33,
+        1025,
+        313,
+        1221
+      ],
+      "size": [
+        36,
+        18
+      ],
+      "foot_anchor": [
+        18,
+        18
+      ]
+    },
+    "laundry": {
+      "source": "farm_sheet.png",
+      "crop": [
+        337,
+        963,
+        682,
+        1221
+      ],
+      "size": [
+        48,
+        30
+      ],
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "lantern_crates": {
+      "source": "farm_sheet.png",
+      "crop": [
+        707,
+        985,
+        963,
+        1225
+      ],
+      "size": [
+        24,
+        24
+      ],
+      "foot_anchor": [
+        12,
+        24
+      ]
+    },
+    "checkpoint_shelter": {
+      "source": "farm_sheet.png",
+      "crop": [
+        975,
+        928,
+        1254,
+        1247
+      ],
+      "size": [
+        60,
+        48
+      ],
+      "foot_anchor": [
+        30,
+        48
+      ]
+    },
+    "bridge_rubble": {
+      "source": "detail_sheet.png",
+      "crop": [
+        10,
+        65,
+        311,
+        307
+      ],
+      "size": [
+        48,
+        30
+      ],
+      "foot_anchor": [
+        24,
+        30
+      ]
+    },
+    "split_rail": {
+      "source": "detail_sheet.png",
+      "crop": [
+        320,
+        89,
+        620,
+        310
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "foot_anchor": [
+        24,
+        24
+      ]
+    },
+    "grass_tuft": {
+      "source": "detail_sheet.png",
+      "crop": [
+        647,
+        93,
+        934,
+        310
+      ],
+      "size": [
+        18,
+        18
+      ],
+      "foot_anchor": [
+        9,
+        18
+      ]
+    },
+    "bird_1": {
+      "source": "detail_sheet.png",
+      "crop": [
+        1012,
+        157,
+        1187,
+        307
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "bird_2": {
+      "source": "detail_sheet.png",
+      "crop": [
+        73,
+        417,
+        259,
+        600
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "butterfly_1": {
+      "source": "detail_sheet.png",
+      "crop": [
+        375,
+        416,
+        591,
+        600
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "butterfly_2": {
+      "source": "detail_sheet.png",
+      "crop": [
+        703,
+        427,
+        863,
+        599
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "foot_anchor": [
+        6,
+        12
+      ]
+    },
+    "sheep_1": {
+      "source": "detail_sheet.png",
+      "crop": [
+        965,
+        399,
+        1249,
+        615
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "sheep_2": {
+      "source": "detail_sheet.png",
+      "crop": [
+        14,
+        690,
+        310,
+        899
+      ],
+      "size": [
+        24,
+        18
+      ],
+      "foot_anchor": [
+        12,
+        18
+      ]
+    },
+    "smoke_1": {
+      "source": "detail_sheet.png",
+      "crop": [
+        413,
+        613,
+        550,
+        915
+      ],
+      "size": [
+        18,
+        30
+      ],
+      "foot_anchor": [
+        9,
+        30
+      ]
+    },
+    "smoke_2": {
+      "source": "detail_sheet.png",
+      "crop": [
+        682,
+        638,
+        844,
+        920
+      ],
+      "size": [
+        18,
+        30
+      ],
+      "foot_anchor": [
+        9,
+        30
+      ]
+    },
+    "wall_segment_moss": {
+      "source": "wall_sheet.png",
+      "crop": [
+        30,
+        205,
+        600,
+        562
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "foot_anchor": [
+        24,
+        48
+      ]
+    },
+    "wall_segment_worn": {
+      "source": "wall_sheet.png",
+      "crop": [
+        658,
+        205,
+        1230,
+        562
+      ],
+      "size": [
+        48,
+        48
+      ],
+      "foot_anchor": [
+        24,
+        48
+      ]
+    }
+  }
+}
