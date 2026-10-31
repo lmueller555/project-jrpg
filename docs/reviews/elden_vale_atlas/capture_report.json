@@ -1,0 +1,1143 @@
+{
+  "actual_renderer": true,
+  "quest_progress_seeded": false,
+  "capture_stage": "final",
+  "started_at_utc": "2026-10-31T20:08:54.384059+00:00",
+  "views": {
+    "minimap_town.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": true,
+      "minimap_rect": [
+        364,
+        230,
+        104,
+        78
+      ],
+      "minimap_center_tiles": [
+        12.0,
+        -25.0
+      ]
+    },
+    "atlas_fit.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": false,
+      "selected": "eldenmere",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        0,
+        0,
+        172,
+        126
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_close.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        12.0,
+        -28.0
+      ],
+      "zoom": 1.953125,
+      "details_visible": false,
+      "selected": "eldenmere",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        0,
+        0,
+        172,
+        126
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_large_text.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "north_checkpoint",
+      "map_rect": [
+        16,
+        45,
+        448,
+        229
+      ],
+      "detail_panel": [
+        284,
+        146,
+        172,
+        120
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_bridge_large_text.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "western_stone_bridge",
+      "map_rect": [
+        16,
+        45,
+        448,
+        229
+      ],
+      "detail_panel": [
+        284,
+        150,
+        172,
+        116
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_overlap_large_text.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -672.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "eldenmere",
+      "map_rect": [
+        16,
+        45,
+        448,
+        229
+      ],
+      "detail_panel": [
+        24,
+        53,
+        172,
+        116
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_small_large_text.png": {
+      "window_size": [
+        480,
+        320
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "western_stone_bridge",
+      "map_rect": [
+        16,
+        47,
+        448,
+        217
+      ],
+      "detail_panel": [
+        284,
+        108,
+        172,
+        148
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 61
+    },
+    "atlas_small_large_text_scrolled.png": {
+      "window_size": [
+        480,
+        320
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "western_stone_bridge",
+      "map_rect": [
+        16,
+        47,
+        448,
+        217
+      ],
+      "detail_panel": [
+        284,
+        108,
+        172,
+        148
+      ],
+      "detail_scroll": 61,
+      "detail_max_scroll": 61
+    },
+    "atlas_small_edge_bridge.png": {
+      "window_size": [
+        480,
+        320
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.5,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        -60.0,
+        0.0
+      ],
+      "zoom": 1.25,
+      "details_visible": true,
+      "selected": "western_stone_bridge",
+      "map_rect": [
+        16,
+        47,
+        448,
+        217
+      ],
+      "detail_panel": [
+        24,
+        55,
+        172,
+        116
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 93
+    },
+    "atlas_bridge.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "western_stone_bridge",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        284,
+        190,
+        172,
+        84
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_checkpoint.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "north_checkpoint",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        284,
+        190,
+        172,
+        84
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_player_overlap.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        288.0,
+        -672.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "eldenmere",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        284,
+        190,
+        172,
+        84
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "atlas_letterboxed.png": {
+      "window_size": [
+        1440,
+        810
+      ],
+      "player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "text_scale": 1.0,
+      "map_open": true,
+      "minimap_visible": false,
+      "center_tiles": [
+        0.0,
+        0.0
+      ],
+      "zoom": 1.0,
+      "details_visible": true,
+      "selected": "south_checkpoint",
+      "map_rect": [
+        16,
+        40,
+        448,
+        242
+      ],
+      "detail_panel": [
+        24,
+        48,
+        172,
+        84
+      ],
+      "detail_scroll": 0,
+      "detail_max_scroll": 0
+    },
+    "minimap_forest.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        -1152.0,
+        -1632.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": true,
+      "minimap_rect": [
+        364,
+        230,
+        104,
+        78
+      ],
+      "minimap_center_tiles": [
+        -48.0,
+        -68.0
+      ],
+      "requested_tile": [
+        -48,
+        -68
+      ],
+      "camera_pixel": [
+        -1392,
+        -1792
+      ],
+      "facing": "back"
+    },
+    "minimap_bridge.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        -2352.0,
+        672.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": true,
+      "minimap_rect": [
+        364,
+        230,
+        104,
+        78
+      ],
+      "minimap_center_tiles": [
+        -98.0,
+        28.0
+      ],
+      "requested_tile": [
+        -98,
+        28
+      ],
+      "camera_pixel": [
+        -2808,
+        536
+      ],
+      "facing": "left"
+    },
+    "minimap_checkpoint.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        480.0,
+        -2184.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": true,
+      "minimap_rect": [
+        364,
+        230,
+        104,
+        78
+      ],
+      "minimap_center_tiles": [
+        20.0,
+        -91.0
+      ],
+      "requested_tile": [
+        20,
+        -91
+      ],
+      "camera_pixel": [
+        240,
+        -2416
+      ],
+      "facing": "back"
+    },
+    "minimap_large_text.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        432.0,
+        -2208.0
+      ],
+      "text_scale": 1.5,
+      "map_open": false,
+      "minimap_visible": true,
+      "minimap_rect": [
+        364,
+        230,
+        104,
+        78
+      ],
+      "minimap_center_tiles": [
+        18.0,
+        -92.0
+      ],
+      "interaction_hint": "E: Speak with the road guard"
+    },
+    "town_no_menu.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        384.0,
+        312.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": false
+    },
+    "interior_no_menu.png": {
+      "window_size": [
+        960,
+        640
+      ],
+      "player_pixel": [
+        144.0,
+        294.0
+      ],
+      "text_scale": 1.0,
+      "map_open": false,
+      "minimap_visible": false
+    }
+  },
+  "minimap_component": {
+    "gameplay_terrain_requests": 0
+  },
+  "atlas_component": {
+    "gameplay_terrain_requests": 0
+  },
+  "native_edge_card": {
+    "selected_marker_clear": true,
+    "legacy_wheel_scrolls_card": true,
+    "geography_unchanged_during_card_scroll": true
+  },
+  "menu_button_removed": true,
+  "escape_pause_preserved": true,
+  "navigation": {
+    "wheel_steps": 5,
+    "drag_events": 12,
+    "keyboard_selection": true,
+    "fit_key": true,
+    "input": "production Game.handle_events"
+  },
+  "minimap_walk": {
+    "road_id": "western_farm_spur",
+    "start_pixel": [
+      -1008.0,
+      408.0
+    ],
+    "end_pixel": [
+      -865.8921050083088,
+      193.80714743665118
+    ],
+    "displacement_pixels": 257.05,
+    "minimap_centers": [
+      [
+        -42.0,
+        17.0
+      ],
+      [
+        -41.95599559032138,
+        16.910202383501364
+      ],
+      [
+        -41.82420286250675,
+        16.64070181495501
+      ],
+      [
+        -41.692851137134525,
+        16.370985808307758
+      ],
+      [
+        -41.56149941176231,
+        16.101269801660507
+      ],
+      [
+        -41.42988783242011,
+        15.831680576385729
+      ],
+      [
+        -41.29814632609292,
+        15.562154741797187
+      ],
+      [
+        -41.16640481976573,
+        15.292628907208645
+      ],
+      [
+        -41.033816796076465,
+        15.023519317917817
+      ],
+      [
+        -40.90080551370616,
+        14.754617851275846
+      ],
+      [
+        -40.767794231335856,
+        14.485716384633875
+      ],
+      [
+        -40.633146409564446,
+        14.217633767322532
+      ],
+      [
+        -40.497680318092506,
+        13.949960574676503
+      ],
+      [
+        -40.362214226620566,
+        13.682287382030474
+      ],
+      [
+        -40.221543671278994,
+        13.417312298560546
+      ],
+      [
+        -40.08087311593741,
+        13.152337215090618
+      ],
+      [
+        -39.932476654119725,
+        12.891685532945552
+      ],
+      [
+        -39.780217239064015,
+        12.633195551462912
+      ],
+      [
+        -39.62129352579993,
+        12.378748595571615
+      ],
+      [
+        -39.46236981253584,
+        12.124301639680318
+      ],
+      [
+        -39.29894816593733,
+        11.872719912555652
+      ],
+      [
+        -39.135526519338825,
+        11.621138185430986
+      ],
+      [
+        -38.969372142491984,
+        11.371363574405288
+      ],
+      [
+        -38.80185140052098,
+        11.122492521429075
+      ],
+      [
+        -38.63278396008886,
+        10.874683807081192
+      ],
+      [
+        -38.46062312273449,
+        10.628999769989969
+      ],
+      [
+        -38.28618744846157,
+        10.384957862532517
+      ],
+      [
+        -38.10720210035154,
+        10.144200214342618
+      ],
+      [
+        -37.917379022704814,
+        9.912098933312615
+      ],
+      [
+        -37.718383965066934,
+        9.687711156239452
+      ],
+      [
+        -37.51188267698343,
+        9.470094019920047
+      ],
+      [
+        -37.3030821301999,
+        9.254730131988092
+      ],
+      [
+        -37.08968306601628,
+        9.043872740831034
+      ],
+      [
+        -36.87440785817663,
+        8.834939801410645
+      ],
+      [
+        -36.65819457850896,
+        8.626969087858594
+      ],
+      [
+        -36.44095393876671,
+        8.420074434090838
+      ],
+      [
+        -36.22346883105784,
+        8.213434837624884
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ],
+      [
+        -36.07883770867953,
+        8.075297809860466
+      ]
+    ],
+    "update_frames": 180,
+    "movement": "production Game.update, walking"
+  },
+  "cartography_cache": {
+    "tile_bytes": 24641536,
+    "tile_count": 24,
+    "tile_budget": 25165824,
+    "tile_loads": 25,
+    "icon_bytes": 18968,
+    "icon_count": 13,
+    "icon_budget": 2097152
+  },
+  "peak_cartography_cache": {
+    "tile_bytes": 24641536,
+    "tile_count": 24,
+    "icon_bytes": 18968,
+    "icon_count": 13,
+    "tile_loads": 25
+  },
+  "render_input_sha256": {
+    "main.py": "c4df1a8bdebbee363e811bc5e86d3ef168ab803360977ff32dd7e66f310fceda",
+    "map_ui.py": "838c638013698b144ad2981bba57b645d8cf3eaf115eefce82bdb426c0570637",
+    "overworld_map.py": "0a09ffda5841c7450fcadb0783c5753cc0f5fc95f75cd443b44562c1268e9f54",
+    "overworld_minimap.py": "45ee3d3877c04f1f85fdf4d1e19c7e2144381eda4f4dc39329d8594178134117",
+    "regional_cartography.py": "f8ebdacfac9f5399193fb4edfdd45c7f83646b0798d6b3ac2037e58da534f33c",
+    "ui_style.py": "8cf274b44b350ddd24fb9f48a326b8b35153467c9fa040fd891c340cc47bd157",
+    "tools/capture_elden_vale_atlas.py": "2e34459d11c12429d2413351667361c230a8da1e62c3d15330cb586cdf100bae",
+    "assets/maps/overworld/elden_vale/region.json": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "assets/cartography/elden_vale/art/art.json": "f4e903ae5a2a4ffee4e1891b5383df2b3a206b77dc90bce8a4a2d30e8d62c292",
+    "assets/cartography/elden_vale/art/props/bridge_broken.png": "bb8812c3eb57ac215bdfb7cda65ab94e0eb315b9cb98d501e7bfe5edd563639b",
+    "assets/cartography/elden_vale/art/props/bridge_repaired.png": "831e62af8f5acedd2fe62dacd24c33227f47f3d77af3904614c47f31c866832b",
+    "assets/cartography/elden_vale/art/props/farm.png": "0d140ddbf6254b24b3959e89c4663a03cbca6a53565dbc981fcf6fbd25f3c48c",
+    "assets/cartography/elden_vale/art/props/foothills_a.png": "bf41837f1a30619c49a7d507df3d68c20e97453a9434b2e2047da9ceaa08b0ce",
+    "assets/cartography/elden_vale/art/props/foothills_b.png": "30de468b5ee610e040bb9a9b2cf4f0129756a9dc156077eed215afa2cbd26aa5",
+    "assets/cartography/elden_vale/art/props/forest_broadleaf_a.png": "98746dff05613d0b71037788896fd885e35127d695ececd41c2a6ac12c827482",
+    "assets/cartography/elden_vale/art/props/forest_broadleaf_b.png": "40f7f1893281791cd2c779370849ede8666d2d2e539b635135aaf5035e24b660",
+    "assets/cartography/elden_vale/art/props/forest_conifer_a.png": "314f95a10fd21c64c3df77dc87c51414eda42a02ceda52f2eeb460b823219606",
+    "assets/cartography/elden_vale/art/props/forest_conifer_b.png": "5e95429184ce3d2ea4256c81f5b03129901d0ea33e33cd41dab081f5b1dba7ae",
+    "assets/cartography/elden_vale/art/props/gate_closed.png": "6cc76cbb8e287750fbabd657dcb7b10522cbf26e6a4f3fc489b58d689c5f6226",
+    "assets/cartography/elden_vale/art/props/gate_open.png": "4c3f6dfd636fc1f392ff48ae6403bcc8460f5646b108884b9d85c191a5f4788b",
+    "assets/cartography/elden_vale/art/props/millrace.png": "569cf6e78b1b99671eac4480e0e88da47aa80c97d6b5af205e68731285fa00a3",
+    "assets/cartography/elden_vale/art/props/overlook.png": "4a5713ecb1249fe6b7bb5355a33bfeacf684ee15ea21caf3a679d108409d4e97",
+    "assets/cartography/elden_vale/art/props/relief.png": "18b91a69a4ee5c006d8600d333ad7b56986775f0e01674b0c2ba4705f09e960b",
+    "assets/cartography/elden_vale/art/props/town.png": "9471188696a5f7b2c01323e38efa00480e8bc8196d16f40ca4f05db375484661",
+    "assets/cartography/elden_vale/art/tiles/fallow.png": "96f4a63cdd231092fa4342226457bf60333874c59ff3916b6be0998211a89330",
+    "assets/cartography/elden_vale/art/tiles/forest_floor.png": "be139ca42e435c60c1beaad17f0603bda49c52d6aacf2e9838afe35d5b0f1082",
+    "assets/cartography/elden_vale/art/tiles/grain.png": "6c575269a975e722f3b562630e003a801b1025b55b4ee772263776e90e9583a5",
+    "assets/cartography/elden_vale/art/tiles/land.png": "d4ef64d871f6e9b8bbc7fb89d54573751754197257aa3371b04eb1c915cc4523",
+    "assets/cartography/elden_vale/art/tiles/orchard.png": "4b459e6602adfe5caeaec21e3767f7e8092f6bc7bec06104337a0a20cf9d15fd",
+    "assets/cartography/elden_vale/art/tiles/pasture.png": "0a41277fca058f75a55c171a502841e0f8758f396e89d3b742cce80b0ad02509",
+    "assets/cartography/elden_vale/art/tiles/rock_base.png": "4b3e29234875ab28f006e33aee31114abecb54f14d461fc9fd6673260ae9b605",
+    "assets/cartography/elden_vale/art/tiles/vegetables.png": "8af169909743f70b432044ec9affb72521d3f678f3d747bbad6db81614416c1c",
+    "assets/cartography/elden_vale/art/tiles/water.png": "4567826376d33d5976c12490ad5464e117d83eae65c0f499eab232eb2e79bd21",
+    "assets/cartography/elden_vale/manifest.json": "b5e0efed53d581b3d98e3ada79e63f1dfa8ef7517459b2fdb6fd95410de1f750",
+    "assets/cartography/elden_vale/tiles/lod_1/0_0.png": "73146b80dac68a3e95aab904f2e09cbf3e619097fbbad9cfd08b90d91c730351",
+    "assets/cartography/elden_vale/tiles/lod_1/0_1.png": "bc55d2f54f3de3446589d1718f4dce43850c76fe70d257842eeaa4de938c0f3d",
+    "assets/cartography/elden_vale/tiles/lod_1/0_2.png": "45cb072b10ec7e782329fd1b1958598def3231cddeea327d266b481054d9f4a3",
+    "assets/cartography/elden_vale/tiles/lod_1/0_3.png": "da12bb1b6eda879b37da0adb33cc3933e907e70dd36905bdea86194e43ece117",
+    "assets/cartography/elden_vale/tiles/lod_1/0_4.png": "72a76682bc6baf34a1df9680df438db9b9e84caa9e9a6edef3bc1db520ea4f0d",
+    "assets/cartography/elden_vale/tiles/lod_1/1_0.png": "c93409b9380c57367b98c9d784dc6b1079cbc85bd96963ed8eb0f265286778d6",
+    "assets/cartography/elden_vale/tiles/lod_1/1_1.png": "a6fbbbba1b2782703f13438db0551dbc96972b37d4bfad5c5768d19cdedfba17",
+    "assets/cartography/elden_vale/tiles/lod_1/1_2.png": "36acaef5524bc9b56d32e439f1b6e869e85858bf1199ea4a308659fe3f950193",
+    "assets/cartography/elden_vale/tiles/lod_1/1_3.png": "00116ea1338e90c704ef6f834d1401bc0c571c8348f23ad3e35662639bf5c157",
+    "assets/cartography/elden_vale/tiles/lod_1/1_4.png": "6394178f07cb1979eae12a3ed85a58930ed583445c76ba3c4cb1ee40e0652408",
+    "assets/cartography/elden_vale/tiles/lod_1/2_0.png": "068c62fc7f74cd79ae2defb9ed38b9873d76458b3850a4ccd613f1e4429b2243",
+    "assets/cartography/elden_vale/tiles/lod_1/2_1.png": "0cbf911230fb0592971bc6c08cd5a99c0937c93df1eb946bb43fa871100ac05d",
+    "assets/cartography/elden_vale/tiles/lod_1/2_2.png": "732292212457d31d848ed9bb462a8c73c02e9486a9885317a3fe6acb12c3e364",
+    "assets/cartography/elden_vale/tiles/lod_1/2_3.png": "589574694d1f5e5a1b71e5b4ed82d7c0c409a0cc1d798c9c49144ba66974d70e",
+    "assets/cartography/elden_vale/tiles/lod_1/2_4.png": "e31b4b9740f9329d1c3e0d42468246b23804644a3d7950e9e1f23d4fe803d3dc",
+    "assets/cartography/elden_vale/tiles/lod_1/3_0.png": "5fd87c59a640f5431b65f7fdae2086e4a2934c770d441ec815da19351aec9243",
+    "assets/cartography/elden_vale/tiles/lod_1/3_1.png": "1913b4ee321081c880f5d8c239689295fef5e60708b39037ca85e4f08df2ffd3",
+    "assets/cartography/elden_vale/tiles/lod_1/3_2.png": "bac76784acf20dadd06d8e29e590372e53d2d064099684cf3904aa0b15da394d",
+    "assets/cartography/elden_vale/tiles/lod_1/3_3.png": "d09ef05de8c40e90be1d9e0767a12da7c61bb7306b9bdad746a903b9e06231dd",
+    "assets/cartography/elden_vale/tiles/lod_1/3_4.png": "f4ff32a7af50638286cb87244c483ee7c5a1ca37afff5b011ef866a0a2a029d6",
+    "assets/cartography/elden_vale/tiles/lod_1/4_0.png": "9a6e981a57942ba911f56d9ce633f3f6fd2ba8c90f803fc8528d89ccbc8b3df5",
+    "assets/cartography/elden_vale/tiles/lod_1/4_1.png": "3ef2b3a6d9ea697fa398716022007ce6d3fdbeb46c7bbd4f11258092ce5d6613",
+    "assets/cartography/elden_vale/tiles/lod_1/4_2.png": "429dee222e7c2f95b233c37c2e90da022150fbdb118da397f0cc62310af7f6a8",
+    "assets/cartography/elden_vale/tiles/lod_1/4_3.png": "edcbc8a8fa5cca7b18f88522d3f182fe46fab9954a4d751522dbd22c94e27c20",
+    "assets/cartography/elden_vale/tiles/lod_1/4_4.png": "dd511e90787d76a519899011f5b146613a58c681e11aae652868fb505565d396",
+    "assets/cartography/elden_vale/tiles/lod_1/5_0.png": "0cdceee014f6eda92d69cf6641514aabc35f8ea1d32b6cc2bc1d72ed2409765a",
+    "assets/cartography/elden_vale/tiles/lod_1/5_1.png": "5c637fc706366363b5d1b3e44cd1c737e5983bb44edd32c527655c60a92b5fca",
+    "assets/cartography/elden_vale/tiles/lod_1/5_2.png": "53af776047121b425ead08d8fc352fbaa99ef80ff5da2498b3430fbce8e0db2d",
+    "assets/cartography/elden_vale/tiles/lod_1/5_3.png": "20ae995871ea6ac9e597a90ea5048b0f0bd2cce56eb7dab9bb66a30f909d12ee",
+    "assets/cartography/elden_vale/tiles/lod_1/5_4.png": "72a76682bc6baf34a1df9680df438db9b9e84caa9e9a6edef3bc1db520ea4f0d",
+    "assets/cartography/elden_vale/tiles/lod_2/0_0.png": "e4675b0d3d2b572aa191fdbe1d3955a0d9623f96642b301260426bbe5304f2dd",
+    "assets/cartography/elden_vale/tiles/lod_2/0_1.png": "8e11c904bbc96fbcf918f85ad59536020477866078359373510f0d6ede0b92f6",
+    "assets/cartography/elden_vale/tiles/lod_2/0_2.png": "7cb8beb743b661c949beeb4faa96f8b126e3597a58cefd1cef0bd614b8bd8eac",
+    "assets/cartography/elden_vale/tiles/lod_2/1_0.png": "91721bde8e7b925055b6695b557f756b8335cf682277b988223da5c4416e4f27",
+    "assets/cartography/elden_vale/tiles/lod_2/1_1.png": "b67a62b8ade5a7b9ef6c6aa3def7cb7a84859e846fb9161aae01c87ffdc1bc4e",
+    "assets/cartography/elden_vale/tiles/lod_2/1_2.png": "76f7f1c394bbfb98426b1e15cbe819b2bb545857a6e0f70c51bcb1f65567a3e6",
+    "assets/cartography/elden_vale/tiles/lod_2/2_0.png": "f084684104c5004be938d072fb1c9f9366800774ddd5e74190bd3ce8ae6e4529",
+    "assets/cartography/elden_vale/tiles/lod_2/2_1.png": "255ff6e8c78a02e64612d8f685341a795f2832c481d0aed1d88134848d9f0a25",
+    "assets/cartography/elden_vale/tiles/lod_2/2_2.png": "e1c69c37b716839fb847d43496e5d00a2c83e30490b17652a914c1ca6a93ee08",
+    "assets/cartography/elden_vale/tiles/lod_4/0_0.png": "614d7e2e14a92396f4d301f1c2a467c0ab4045bbc595856868caed7862360510",
+    "assets/cartography/elden_vale/tiles/lod_4/0_1.png": "a08d8cdf2c081c8832d7f290ffd6cef8a4bff9a1b6259ec0c0e045b603a6c524",
+    "assets/cartography/elden_vale/tiles/lod_4/1_0.png": "9890025ef08cee579d39268a466be82f4a4cb8171082d88d4dde6a3f6cb16865",
+    "assets/cartography/elden_vale/tiles/lod_4/1_1.png": "37ef3822467c8188fbf5eeb983aa841ac0eadd65f547c2f69b3d78224fe53c27",
+    "assets/ui/fonts/AtkinsonHyperlegible-Bold.ttf": "5a3b0c8cc8ca545155150b4512a1fa248298df121c50d6557e651e61fbdab92f",
+    "assets/ui/fonts/AtkinsonHyperlegible-Regular.ttf": "7fb917c89019896d0b52ee84b7cbb3304c18cb90b19a62f5e32712bd23e97669",
+    "assets/ui/fonts/DejaVuSans.ttf": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+    "assets/ui/fonts/DejaVuSerif.ttf": "8cb29f7db250ebb2551a6ce2c1e0bfd5a0eb520e9e233370db0493e82e1f36f7"
+  },
+  "finished_at_utc": "2026-10-31T20:08:57.266354+00:00",
+  "captures": {
+    "atlas_bridge.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 708117
+    },
+    "atlas_bridge_large_text.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 664810
+    },
+    "atlas_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 707141
+    },
+    "atlas_close.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 845958
+    },
+    "atlas_fit.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 783613
+    },
+    "atlas_large_text.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 659534
+    },
+    "atlas_letterboxed.png": {
+      "size": [
+        1440,
+        810
+      ],
+      "frames": 1,
+      "bytes": 681107
+    },
+    "atlas_navigation.gif": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 22,
+      "bytes": 7215109
+    },
+    "atlas_overlap_large_text.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 641612
+    },
+    "atlas_player_overlap.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 707662
+    },
+    "atlas_small_edge_bridge.png": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 1,
+      "bytes": 157976
+    },
+    "atlas_small_large_text.png": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 1,
+      "bytes": 158447
+    },
+    "atlas_small_large_text_scrolled.png": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 1,
+      "bytes": 157570
+    },
+    "before_after.png": {
+      "size": [
+        1920,
+        690
+      ],
+      "frames": 1,
+      "bytes": 858075
+    },
+    "interior_no_menu.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 22507
+    },
+    "minimap_bridge.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 187783
+    },
+    "minimap_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 180011
+    },
+    "minimap_forest.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 246823
+    },
+    "minimap_large_text.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 179253
+    },
+    "minimap_town.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 150833
+    },
+    "minimap_tracking.gif": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 57,
+      "bytes": 3119004
+    },
+    "town_no_menu.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 55094
+    }
+  }
+}

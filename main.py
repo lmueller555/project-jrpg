@@ -51,6 +51,7 @@ from lantern_quest import LanternQuest
 from world_encounters import CombatEncounters
 from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID
+from overworld_minimap import OverworldMinimap
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -455,6 +456,7 @@ class Game:
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
         self.overworld_travel=OverworldTravel(self)
+        self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -930,27 +932,17 @@ class Game:
                 continue
             if self.mill_quest.encounter_cutscene_active:
                 if not self.social.active:
-                    # Pans own the scene, while the ordinary pause menu remains
-                    # available to mouse users as well as through Escape.
-                    if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
-                        point=self.to_canvas(event.pos)
-                        if point is not None and self._hud_menu_rect().collidepoint(point):
-                            self.social.clear_pointer()
-                            self.pause.open()
-                            self.ui.sound('confirm')
+                    # Pans own world input; Escape above still pauses the game.
                     continue
                 if (event.type==pygame.KEYDOWN and
                         event.key in (pygame.K_i,pygame.K_m,pygame.K_j)):
                     continue
             if event.type==pygame.MOUSEMOTION:
                 self.social.pointer(self.to_canvas(event.pos),pressed=self._mouse_held)
-            if (not self.social.locked and not self.opening.locks_player
-                    and event.type==pygame.MOUSEBUTTONDOWN and event.button==1
-                    and self.to_canvas(event.pos) is not None and
-                    self._hud_menu_rect().collidepoint(self.to_canvas(event.pos))):
-                self.social.clear_pointer()
-                self.pause.open()
-                self.ui.sound('confirm')
+            if self.minimap.handle_event(event):
+                # The opening click and its queued release belong to this HUD
+                # action, not to a landmark beneath the newly opened atlas.
+                resumed=True
                 continue
             if not self.social.locked and self.quest_ui.handle_hud_event(event):continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
@@ -1183,23 +1175,12 @@ class Game:
     def draw_map(self):
         self.map_ui.draw(self.ui_surface)
 
-    def _hud_menu_rect(self):
-        painter=self.ui.painter(self.ui_surface)
-        font=painter.font()
-        width=max(64,font.size('Menu')[0]+30)
-        height=max(22,font.get_height()+8)
-        self.menu_rect=pygame.Rect(VIEW_SIZE[0]-12-width,VIEW_SIZE[1]-12-height,width,height)
-        return self.menu_rect
-
     def draw_hud(self,canvas):
         if (self.pause.is_open or self.social.locked or self.opening.locks_player
                 or self.map_open or self.quest_ui.journal_open or self.inventory_ui.is_open or
                 self.world_map_viewer.is_open):return
         painter=self.ui.painter(canvas)
-        menu=self._hud_menu_rect()
-        pointer=self.to_canvas(pygame.mouse.get_pos())
-        painter.button(menu,'Menu',selected=pointer is not None and menu.collidepoint(pointer),
-                       pressed=self._mouse_held and pointer is not None and menu.collidepoint(pointer))
+        self.minimap.draw(canvas)
         if self.location_seconds>0:
             fade=1.0 if self.audio.reduced_motion else min(1.0,self.location_seconds/.45)
             layer=canvas if fade>=1 else pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
@@ -1237,7 +1218,7 @@ class Game:
             if link is not None:hint='E: '+link.get('label','Follow the trail')
         if hint:
             hint=hint.replace(': ',' — ',1)
-            available=menu.left-24
+            available=self.minimap.rect.left-24 if self.minimap.visible else VIEW_SIZE[0]-24
             lines=painter.wrap(hint,available-18,role='body')
             line_height=painter.font().get_linesize()
             rect=pygame.Rect(12,VIEW_SIZE[1]-12-(len(lines)*line_height+14),
@@ -1284,7 +1265,8 @@ class Game:
             painter=self.ui.painter(self.ui_surface)
             lines=painter.wrap('Progress could not be saved. Check the saves folder.',436,role='small')
             height=len(lines)*painter.font('small').get_linesize()+14
-            y=VIEW_SIZE[1]-self._hud_menu_rect().height-22-height
+            bottom=self.minimap.rect.top-8 if self.minimap.visible else VIEW_SIZE[1]-12
+            y=bottom-height
             painter.panel((12,y,456,height))
             for index,line in enumerate(lines):
                 painter.text(line,(22,y+7+index*painter.font('small').get_linesize()),

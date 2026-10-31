@@ -56,14 +56,24 @@ contact rearming prevent immediate return loops. The existing direct village ↔
 Upper Millrace route and MQ02 cutscene remain available. The regional millrace
 landmark is a locator, not another quest entrance.
 
-Press **M** to inspect the regional map. Scroll or use +/- to zoom, drag to pan,
-click a landmark for details, or use arrows/WASD to select landmarks. **Fit** or
-**F** restores the overview; **M**, **Esc** or the close button returns to play.
+Press **M**, or click the overworld minimap, to inspect the
+[illustrated regional atlas](REGIONAL_MAP.md). Its default view frames the
+inhabited vale, both rivers, the ruined crossing and the checkpoints. Scroll or
+use +/- to zoom, drag to pan, click a known place or its name for details, or use
+arrows/WASD to select landmarks. **Fit** or **F** restores the local overview;
+zooming farther out shows the wider authored chart. **M**, **Esc** or the close
+button returns to play.
 The town map and classroom world-map viewer retain their existing behavior.
 Major geography is charted immediately; optional local landmarks are added
 after Caelan approaches them. Discovery persists with the saved journey.
 The regional map and journal pause movement and regional time. The existing
 Eldenmere Theme continues across the scale change.
+
+A north-up minimap follows Caelan at the bottom right during ordinary regional
+exploration. It shares the atlas's geography and live passage states, while a
+directional player marker provides local orientation. It yields to dialogue
+and interface screens. The exploration Menu button is removed in every area;
+Escape continues to open pause.
 
 The countryside uses grain, vegetable, fallow, pasture and orchard ground,
 with parcel-specific row directions. Farmhouses, barns, sheds, fences and gates
@@ -178,8 +188,10 @@ python tools/build_overworld_art.py --check
 python tools/build_overworld_polish_art.py --check
 python tools/build_overworld_composition_art.py --check
 python tools/build_elden_vale_overworld.py --check
+python tools/build_cartography_art.py --check
+python tools/build_elden_vale_cartography.py --check
 python -m unittest discover -s tests -p 'test_overworld_*.py' -v
-python tools/capture_elden_vale_composition.py
+python tools/capture_elden_vale_atlas.py
 ```
 
 The layout check validates wall–river joins, default enclosure reachability,
