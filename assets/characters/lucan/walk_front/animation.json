@@ -1,0 +1,450 @@
+{
+  "version": 1,
+  "character": "lucan",
+  "display_name": "Lucan Rooke",
+  "animation": "walk.front",
+  "status": "approved",
+  "design_status": "approved",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "source": "assets/source/companions/lucan/walk_front/walk_sheet.png",
+  "source_sha256": "0cf3e9fec6169cbfa63530ce15673f6cf67e8fc071870171d54d0bad7ee88f21",
+  "source_recipe": "assets/source/companions/lucan/walk_front/source.json",
+  "source_recipe_sha256": "095f48cb742933149e6dffa320f8bdac7316297214116f238c2ea17fd57f529a",
+  "palette_source": "assets/characters/lucan/idle_front.png",
+  "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+  "palette": [
+    [
+      4,
+      1,
+      1
+    ],
+    [
+      150,
+      37,
+      30
+    ],
+    [
+      71,
+      40,
+      25
+    ],
+    [
+      55,
+      27,
+      17
+    ],
+    [
+      22,
+      7,
+      4
+    ],
+    [
+      105,
+      25,
+      23
+    ],
+    [
+      41,
+      20,
+      12
+    ],
+    [
+      119,
+      68,
+      40
+    ],
+    [
+      201,
+      196,
+      195
+    ],
+    [
+      250,
+      249,
+      249
+    ],
+    [
+      162,
+      43,
+      34
+    ],
+    [
+      167,
+      159,
+      158
+    ],
+    [
+      252,
+      199,
+      154
+    ],
+    [
+      90,
+      84,
+      86
+    ],
+    [
+      162,
+      95,
+      41
+    ],
+    [
+      183,
+      118,
+      53
+    ],
+    [
+      154,
+      41,
+      33
+    ],
+    [
+      224,
+      218,
+      217
+    ],
+    [
+      49,
+      34,
+      30
+    ],
+    [
+      105,
+      95,
+      97
+    ],
+    [
+      35,
+      14,
+      9
+    ],
+    [
+      96,
+      43,
+      30
+    ],
+    [
+      135,
+      35,
+      30
+    ],
+    [
+      237,
+      167,
+      102
+    ],
+    [
+      249,
+      186,
+      86
+    ],
+    [
+      109,
+      70,
+      45
+    ],
+    [
+      199,
+      117,
+      73
+    ],
+    [
+      235,
+      206,
+      161
+    ],
+    [
+      253,
+      194,
+      96
+    ],
+    [
+      197,
+      134,
+      42
+    ],
+    [
+      199,
+      118,
+      48
+    ]
+  ],
+  "common_uniform_scale": 0.05040650406504065,
+  "registration": "authored body/pelvis center and floor",
+  "common_sampling_phase": [
+    0.1,
+    0.7
+  ],
+  "sampling": "one exact affine nearest-neighbor grid for all four poses",
+  "distinct_native_frames": 4,
+  "shared_palette_color_count": 31,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "screen_left_contact",
+      "source_frame": 0,
+      "sha256": "8f2c61582742e457025b0e1a87b1680f4832c547c0d8b1a2490b13bdcc4c041c",
+      "panel": [
+        33,
+        100,
+        459,
+        715
+      ],
+      "bounds": [
+        33,
+        100,
+        459,
+        715
+      ],
+      "body_bounds": [
+        33,
+        100,
+        459,
+        715
+      ],
+      "body_center_x": 246,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        4,
+        23,
+        35
+      ],
+      "sampling_phase": [
+        0.1,
+        0.7
+      ],
+      "affine_output_to_source": [
+        19.838709677419356,
+        0,
+        -27.048387096774178,
+        0,
+        19.838709677419356,
+        -74.4032258064517
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 29
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "screen_left_support_passing",
+      "source_frame": 1,
+      "sha256": "b62f16f478319e86573aa248104430574a0af8815110d15504b68ccdc6f817f9",
+      "panel": [
+        545,
+        77,
+        986,
+        715
+      ],
+      "bounds": [
+        545,
+        77,
+        986,
+        715
+      ],
+      "body_bounds": [
+        545,
+        77,
+        986,
+        715
+      ],
+      "body_center_x": 765.5,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        23,
+        35
+      ],
+      "sampling_phase": [
+        0.1,
+        0.7
+      ],
+      "affine_output_to_source": [
+        19.838709677419356,
+        0,
+        -19.548387096774178,
+        0,
+        19.838709677419356,
+        -51.4032258064517
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 29
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "screen_right_contact",
+      "source_frame": 2,
+      "sha256": "6c6356e12437a7c912364dd95984f500391f06a26b75e054f5d68b5e8ff68be0",
+      "panel": [
+        1057,
+        100,
+        1482,
+        715
+      ],
+      "bounds": [
+        1057,
+        100,
+        1482,
+        715
+      ],
+      "body_bounds": [
+        1057,
+        100,
+        1482,
+        715
+      ],
+      "body_center_x": 1269.5,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        4,
+        23,
+        35
+      ],
+      "sampling_phase": [
+        0.1,
+        0.7
+      ],
+      "affine_output_to_source": [
+        19.838709677419356,
+        0,
+        -27.548387096774178,
+        0,
+        19.838709677419356,
+        -74.4032258064517
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 30
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "screen_right_support_passing",
+      "source_frame": 3,
+      "sha256": "b1eb03f15233864c4ec59692b08781e2dda3ec1c85d6cd78dfcd6f546344e319",
+      "panel": [
+        1569,
+        77,
+        2009,
+        715
+      ],
+      "bounds": [
+        1569,
+        77,
+        2009,
+        715
+      ],
+      "body_bounds": [
+        1569,
+        77,
+        2009,
+        715
+      ],
+      "body_center_x": 1789,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        23,
+        35
+      ],
+      "sampling_phase": [
+        0.1,
+        0.7
+      ],
+      "affine_output_to_source": [
+        19.838709677419356,
+        0,
+        -20.048387096774178,
+        0,
+        19.838709677419356,
+        -51.4032258064517
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 29
+    }
+  ],
+  "scale_analysis": {
+    "target_body_height": 31,
+    "source_body_heights": [
+      615,
+      638,
+      615,
+      638
+    ],
+    "inferred_desired_scale": 0.04948124501197127,
+    "equipment_fit_scale": 0.04555808656036447,
+    "equipment_reduced_scale": false
+  },
+  "review": {
+    "gif": "../../../../docs/reviews/companion_front_walks/lucan_front_walk.gif",
+    "scale": 10,
+    "background": "#e8edf2"
+  }
+}

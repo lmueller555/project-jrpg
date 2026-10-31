@@ -295,6 +295,8 @@ These documents retain their original status labels. Approved story decisions, p
 are approved in front overworld, combat-ready and cinematic standing formats.
 Rhea has a green dress, blonde hair, blue eyes and a purple tanglewood staff
 with a green orb; Edran uses his revised sky-blue and silver outfit.
+Their [front walking cycles](docs/reviews/companion_front_walks/README.md)
+are approved, with animated comparisons and a town-renderer movement preview.
 
 [Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. All four directional idle designs are approved.
 

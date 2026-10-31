@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "animation": "walk.front",
+  "status": "approved",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2240,
+    700
+  ],
+  "source_sha256": "b6872c5d5f08ac6f51a800233519d736f6b41cc35b41e75a954417575f023102",
+  "authored_pose_count": 4,
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    10,
+    34
+  ],
+  "duration_ms": 140,
+  "loop": true,
+  "frames": [
+    {
+      "index": 0,
+      "phase": "screen_left_contact",
+      "duration_ms": 140,
+      "source_bounds": [
+        42,
+        47,
+        431,
+        670
+      ],
+      "source_body_bounds": [
+        42,
+        47,
+        431,
+        670
+      ],
+      "ground_x": 200,
+      "ground_y": 669,
+      "source_cell": [
+        0,
+        0,
+        560,
+        700
+      ],
+      "assembly_source": "left_half_generated.png",
+      "assembly_crop": [
+        87,
+        105,
+        476,
+        728
+      ],
+      "assembly_uniform_scale": 1.0,
+      "assembly_offset": [
+        42,
+        47
+      ],
+      "anatomical_staff_hand": "left"
+    },
+    {
+      "index": 1,
+      "phase": "screen_left_support_passing",
+      "duration_ms": 140,
+      "source_bounds": [
+        610,
+        47,
+        990,
+        670
+      ],
+      "source_body_bounds": [
+        610,
+        47,
+        990,
+        670
+      ],
+      "ground_x": 760,
+      "ground_y": 669,
+      "source_cell": [
+        560,
+        0,
+        1120,
+        700
+      ],
+      "assembly_source": "left_half_generated.png",
+      "assembly_crop": [
+        592,
+        96,
+        972,
+        719
+      ],
+      "assembly_uniform_scale": 1.0,
+      "assembly_offset": [
+        610,
+        47
+      ],
+      "anatomical_staff_hand": "left"
+    },
+    {
+      "index": 2,
+      "phase": "screen_right_contact",
+      "duration_ms": 140,
+      "source_bounds": [
+        1152,
+        47,
+        1547,
+        670
+      ],
+      "source_body_bounds": [
+        1152,
+        47,
+        1547,
+        670
+      ],
+      "ground_x": 1320,
+      "ground_y": 669,
+      "source_cell": [
+        1120,
+        0,
+        1680,
+        700
+      ],
+      "assembly_source": "right_half_generated.png",
+      "assembly_crop": [
+        121,
+        100,
+        702,
+        1016
+      ],
+      "assembly_uniform_scale": 0.6801310043668122,
+      "assembly_offset": [
+        1152,
+        47
+      ],
+      "anatomical_staff_hand": "left"
+    },
+    {
+      "index": 3,
+      "phase": "screen_right_support_passing",
+      "duration_ms": 140,
+      "source_bounds": [
+        1713,
+        46,
+        2103,
+        670
+      ],
+      "source_body_bounds": [
+        1713,
+        46,
+        2103,
+        670
+      ],
+      "ground_x": 1880,
+      "ground_y": 669,
+      "source_cell": [
+        1680,
+        0,
+        2240,
+        700
+      ],
+      "assembly_source": "right_half_generated.png",
+      "assembly_crop": [
+        763,
+        98,
+        1336,
+        1016
+      ],
+      "assembly_uniform_scale": 0.6801310043668122,
+      "assembly_offset": [
+        1713,
+        46
+      ],
+      "anatomical_staff_hand": "left"
+    }
+  ],
+  "assembly": "Four imagegen-authored chibi poses; both source halves preserve the same approximately3-head body proportions. Right half normalized by one uniform623/916 scale; aligned by blue-eye center and planted-boot baseline; binary-alpha threshold128. No anatomy redraw or per-axis warp.",
+  "generated_sources": [
+    {
+      "file": "left_half_generated.png",
+      "original_filename": "exec-fe9b56d0-0b5d-4cae-9b85-4883ff1cc5f8.png",
+      "sha256": "85db2bba70f327c42fd29ff431938e74f4943de5bb0c0eb3e68ca34980bd73a5"
+    },
+    {
+      "file": "right_half_generated.png",
+      "original_filename": "exec-f2567c23-f1a9-493c-8482-506efddc7e87.png",
+      "sha256": "eea5a3e8560d3aa4be46076a2d1b108153468ac7631e2caf6116042a5e1768e5"
+    }
+  ],
+  "appearance": "Approved blonde/blue-eyed adult22 Rhea, fittedgreen dress with right-thigh slit at viewerleft, brownboots andpouch; purpletanglewoodstaff andgreenorb in anatomicallefthand/viewerright throughout.",
+  "motion_notes": "Opposite-foot half authored separately with matching compact chibi proportions; equipment and dress slit retain their anatomical sides. The native shared-grid export preserves both blue iris pixels in all four approved frames.",
+  "rejected_attempts": [
+    {
+      "original_filename": "exec-18999f3c-b8f3-421c-b9ea-dc11817c5f5b.png",
+      "reason": "Oppositefoot correct but body too tall; superseded and not used."
+    },
+    {
+      "original_filename": "exec-578f0ed5-ae99-46d1-96f5-f859cbca59dd.png",
+      "reason": "Chibi proportions correct but samefoot leading; superseded and not used."
+    }
+  ],
+  "export": {
+    "scale": 0.051364365971107544,
+    "frames": [
+      {
+        "source_bounds": [
+          42,
+          47,
+          431,
+          670
+        ],
+        "body_bounds": [
+          42,
+          47,
+          431,
+          670
+        ],
+        "body_center_x": 200,
+        "ground_y": 669
+      },
+      {
+        "source_bounds": [
+          610,
+          47,
+          990,
+          670
+        ],
+        "body_bounds": [
+          610,
+          47,
+          990,
+          670
+        ],
+        "body_center_x": 760,
+        "ground_y": 669
+      },
+      {
+        "source_bounds": [
+          1152,
+          47,
+          1547,
+          670
+        ],
+        "body_bounds": [
+          1152,
+          47,
+          1547,
+          670
+        ],
+        "body_center_x": 1320,
+        "ground_y": 669
+      },
+      {
+        "source_bounds": [
+          1713,
+          46,
+          2103,
+          670
+        ],
+        "body_bounds": [
+          1713,
+          46,
+          2103,
+          670
+        ],
+        "body_center_x": 1880,
+        "ground_y": 669
+      }
+    ],
+    "sampling_phase": [
+      0.1,
+      0.75
+    ]
+  },
+  "art_status": "approved",
+  "approval_note": "The user approved this four-frame front-walk cycle for merge into main."
+}

@@ -1,0 +1,50 @@
+Create an AUTHORED FOUR-FRAME FRONT WALK CYCLE source sheet for LUCAN ROOKE, the adult24-year-old Knight in this fantasy pixel-art JRPG.
+
+Use the supplied character sheet and approved24x36 idle as visual references. MATCH THE SMALL LEFTMOST FRONT OVERWORLD CHIBI DESIGN, not the tall middle combat or cinematic figure. Match the coarse pixel style and the front-walk gait shown in the Caelan reference. Lucan has dark swept brown hair, both dark eyes visible frontally, silver-steel armor, oxblood/red surcoat with gold edging, dark trousers and brown boots. His sword is held in his anatomical RIGHT hand = viewer/screenLEFT. His red heater shield with yellow/gold upward chevron is held in anatomical LEFT hand = viewer/screenRIGHT. THESE HANDS NEVER SWITCH. Keep his distinctive approved appearance in every frame.
+
+OUTPUT:
+One WIDE TRANSPARENT RGBA sheet with exactly FOUR isolated full-body front-view sprites in a single horizontal row. Each is the same compact adult chibi avatar around3heads tall, destined for a24x36 pixel native game frame. Use clearly stepped, coarse square pixel clusters rather than a smooth big illustration. All four drawings have exactly the same head size, body proportions, costume, equipment size and camera direction. Face straight toward the viewer in EVERY frame, both eyes visible. Do not turn into a side view. No text, labels, borders, grid, backgrounds, floor plane, circles or shadows. Keep generous completely transparent gaps between the drawings. The entire sword, shield, hair and both feet must fit inside the drawing area without clipping.
+
+WALK ACTION, FOUR DRAWN PHASES, LEFT TO RIGHT:
+1. SCREEN-LEFT BOOT FORWARD / CONTACT: His right/anatomical leg advances toward the camera. The screen-left boot reaches lower/down toward the common ground baseline; the screen-right boot is back and slightly higher. Relaxed normal walking stride, not high marching. Upright chest, natural hip and knee angles.
+2. SCREEN-LEFT SUPPORT / PASSING: Weight rests over the screen-left foot. The other/screen-right foot is passing under the hips with a modest lifted bent knee. Head and shoulders are about one tiny native pixel higher than in contact. Natural constant leg lengths; use foreshortening and overlap to explain depth.
+3. SCREEN-RIGHT BOOT FORWARD / CONTACT: The opposite/anatomical-left leg now advances toward the camera. The screen-right boot extends down toward the ground baseline, screen-left boot trails behind and higher. This is a newly drawn alternate step, NOT a horizontally flipped frame: sword stays screen-left and shield screen-right.
+4. SCREEN-RIGHT SUPPORT / PASSING: Weight rests over screen-right foot while screen-left foot passes under the hips with a modest lifted bent knee. Head and shoulders rise about one native pixel as in frame2. This must look like the opposite passing step, not a repeated contact pose.
+
+PERSONALITY AND EQUIPMENT MOTION:
+Lucan walks with firm, controlled, confident steps and steady shoulders. Sword stays in a LOW carry, angled away from the advancing boot so it does not cut across his legs; only modest elbow and blade motion. The shield has small supported forearm movement and follows his upper-body rise, retaining its shape and size. Armor plates move with body segments and never stretch. A small surcoat hem sway follows each step. Both phases retain normal upper-arm/forearm and thigh/calf proportions. No dramatic crouching, no run, no hopping, no long lunge, no planted feet while the knees stretch forward, no paper-doll rotated limbs.
+
+REGISTRATION:
+Draw contact frames1/3 at the same size and their forward boot soles on the same baseline. Passing frames2/4 use a subtle coordinated head/torso rise, while their supporting foot remains on that baseline. Leave enough transparent margin above the head for this small rise. The motion should loop smoothly4→1 at140ms per frame, matching the supplied Caelan rhythm. Keep the face and hair essentially unchanged except for the small whole-head rise. This is a walking asset, not four idle variants.
+
+CORRECTION PROMPT
+Edit the supplied four-frame front-walking Lucan sprite sheet. PRESERVE frames1,2,3 and all artwork above the hips in frame4. Preserve four columns, fullbody front-view chibi style, same armor, shield, sword, face, hair, color palette and transparent background.
+
+CORRECT ONLY THE LEGS OF THE FOURTH / RIGHTMOST FIGURE:
+The fourth drawing is the OPPOSITE passing step from frame2. Currently frame4 wrongly repeats frame2's leg arrangement. In frame4 the SCREEN-RIGHT boot must be the supporting grounded boot, its sole at the shared low foot baseline. The SCREEN-LEFT foot must be visibly LIFTED and passing under the hips, with a bent knee and its toe higher than the supporting right sole. The right/shield-side leg supports the body; the left/sword-side foot passes. Draw a normal modest walking step, not a high march or lunge, with believable thigh/calf lengths and a clear grounded right boot.
+
+Frame2 should remain screen-LEFT support with screen-RIGHT foot passing lifted. Thus frames2 and4 have visibly opposite supporting legs. DO NOT mirror the whole figure: sword stays on viewerLEFT and shield on viewerRIGHT in every frame. Keep the shield and sword in frame4 exactly as they were; change only leg/boot and minimal lower surcoat overlap needed for the opposite passing leg.
+
+Maintain the small1-native-pixel head/torso rise on passing frames2 and4. No background, glow behind the drawings, floor, labels or grid. Transparent RGBA, four isolated fully visible front sprites in a single row.
+
+HEAD CONSISTENCY PASS
+Correct HEAD CONSISTENCY ONLY in the supplied four-frame FRONT WALK pixel-art sheet of Lucan.
+
+The first and third drawings already have the desired side-swept brown hairstyle and face. The second and fourth drawings wrongly change his fringe into a long central bang and alter his eyes. This is visible flicker when animated.
+
+MAKE ALL FOUR HEADS THE SAME DRAWING/IDENTITY:
+Use the FIRST drawing's head as the master: same head width and height, same side-swept dark-brown fringe, same hair silhouette and light/shadow clusters, same face shape, same eye locations, same gaze and expression. In the SECOND and FOURTH drawings replace the changed hair/face with that exact same head design at the existing higher passing-pose location. The passing heads should be only shifted UP approximately one tiny native pixel relative to their contact heads, without rotating, resizing, changing hair strands or creating a central bang. Do not let either passing head become taller or narrower. No blinking. Both contact heads1/3 and both passing heads2/4 must visually match each other aside from the intentional small vertical bob.
+
+PRESERVE ALL OTHER CONTENT:
+Keep the exact four walking body poses, arms, torso armor, red/gold cloth, sword, shield and leg/boot configurations. Do not change any gait or swap feet. Frame1 screen-left boot forward contact; frame2 screen-left supports while opposite foot passes; frame3 screen-right boot forward contact; frame4 screen-right supports while screen-left foot passes. Sword remains viewerLEFT and shield viewerRIGHT in all four frames. Preserve the previously corrected rightmost leg arrangement. Leave head/shoulder placement and same source composition otherwise stable. This is normal walking, no long legs or large motion.
+
+Same transparent RGBA landscape sheet, four separated front-facing chibi figures in one horizontal row, all fullbody inbounds, no text/labels/background/shadows/glow. Retain the original coarse pixel-art style and approved character appearance.
+
+HEAD MASTER REFERENCE PASS
+The second reference is the exact desired Lucan head master, cropped from the first/contact pose. Use that cropped head's hair silhouette, swept fringe, hair shading, eye geometry, forehead opening and facial expression for ALL FOUR heads on the first reference walking sprite sheet.
+
+The important correction is the fringe: the master has a short SIDE-SWEPT tuft leaving a broad forehead opening over the eyes. The passing poses currently develop a LONG VERTICAL CENTRAL BANG descending between the eyes. REMOVE that long central bang in poses2 and4. Reproduce the short swept master tuft exactly, at the same relative forehead location, and make the forehead/eyes match the master. Treat this as reusing one fixed animation head, not drawing a new hairstyle for each pose.
+
+Do not change body action, weapon positions, armor, clothing or leg poses. Keep the same head dimensions in all poses. Contact1/3 heads stay at their original positions; passing2/4 heads stay slightly higher as part of the walk. The master head should translate vertically with the upper body; it must not morph, turn, blink or change haircut. Both eyes look straight forward throughout. No different facial expression between steps.
+
+Retain the exact four-frame front walk:1 screenLEFT contact,2 screenLEFT support with opposite foot passing,3 screenRIGHT contact,4 screenRIGHT support with screenLEFT foot passing. Sword stays viewerLEFT and red/gold shield viewerRIGHT. Preserve all four existing body poses and native-like coarse square pixel art. Transparent RGBA background, four isolated fullbody drawings in one row, no labels, shadows, glow or added characters.

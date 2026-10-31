@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "animation": "walk.front",
+  "status": "approved",
+  "source": "walk_sheet.png",
+  "source_dimensions": [
+    2048,
+    768
+  ],
+  "source_sha256": "0cf3e9fec6169cbfa63530ce15673f6cf67e8fc071870171d54d0bad7ee88f21",
+  "generated_original_filename": "exec-d7aa9abc-976d-4639-89bf-937d0d6d59b6.png",
+  "initial_generated_filename": "exec-9e3991f3-cbb9-4929-9c86-b09235ebf64e.png",
+  "correction": "Fourth pose redrawn to support on screen-right boot, with screen-left passing foot lifted. Sword/shield hands preserved.",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "duration_ms": 560,
+  "contact_body_height_source": 615,
+  "suggested_common_scale": 0.05040650406504065,
+  "design_reference": "assets/source/companions/lucan/design_sheet.png",
+  "idle_reference": "assets/characters/lucan/idle_front.png",
+  "gait_reference": "assets/characters/caelan/walk_front/animation.json",
+  "frames": [
+    {
+      "index": 0,
+      "phase": "screen_left_contact",
+      "duration_ms": 140,
+      "source_bounds": [
+        33,
+        100,
+        459,
+        715
+      ],
+      "source_ground_y": 714,
+      "body_center_x": 246,
+      "expected_head_offset": [
+        0,
+        0
+      ],
+      "note": "Use a common uniform scale; register the body center, not only the forward boot, to avoid sideways root wobble."
+    },
+    {
+      "index": 1,
+      "phase": "screen_left_support_passing",
+      "duration_ms": 140,
+      "source_bounds": [
+        545,
+        77,
+        986,
+        715
+      ],
+      "source_ground_y": 714,
+      "body_center_x": 765.5,
+      "expected_head_offset": [
+        0,
+        -1
+      ],
+      "note": "Use a common uniform scale; register the body center, not only the forward boot, to avoid sideways root wobble."
+    },
+    {
+      "index": 2,
+      "phase": "screen_right_contact",
+      "duration_ms": 140,
+      "source_bounds": [
+        1057,
+        100,
+        1482,
+        715
+      ],
+      "source_ground_y": 714,
+      "body_center_x": 1269.5,
+      "expected_head_offset": [
+        0,
+        0
+      ],
+      "note": "Use a common uniform scale; register the body center, not only the forward boot, to avoid sideways root wobble."
+    },
+    {
+      "index": 3,
+      "phase": "screen_right_support_passing",
+      "duration_ms": 140,
+      "source_bounds": [
+        1569,
+        77,
+        2009,
+        715
+      ],
+      "source_ground_y": 714,
+      "body_center_x": 1789,
+      "expected_head_offset": [
+        0,
+        -1
+      ],
+      "note": "Use a common uniform scale; register the body center, not only the forward boot, to avoid sideways root wobble."
+    }
+  ],
+  "export": {
+    "scale": 0.05040650406504065,
+    "frames": [
+      {
+        "source_bounds": [
+          33,
+          100,
+          459,
+          715
+        ],
+        "body_bounds": [
+          33,
+          100,
+          459,
+          715
+        ],
+        "body_center_x": 246,
+        "ground_y": 714
+      },
+      {
+        "source_bounds": [
+          545,
+          77,
+          986,
+          715
+        ],
+        "body_bounds": [
+          545,
+          77,
+          986,
+          715
+        ],
+        "body_center_x": 765.5,
+        "ground_y": 714
+      },
+      {
+        "source_bounds": [
+          1057,
+          100,
+          1482,
+          715
+        ],
+        "body_bounds": [
+          1057,
+          100,
+          1482,
+          715
+        ],
+        "body_center_x": 1269.5,
+        "ground_y": 714
+      },
+      {
+        "source_bounds": [
+          1569,
+          77,
+          2009,
+          715
+        ],
+        "body_bounds": [
+          1569,
+          77,
+          2009,
+          715
+        ],
+        "body_center_x": 1789,
+        "ground_y": 714
+      }
+    ],
+    "sampling_phase": [
+      0.1,
+      0.7
+    ]
+  },
+  "generation_history": [
+    {
+      "source": "exec-50b80436-4c5c-4023-a413-7a2f7082381d.png",
+      "sha256": "f642bc867308a1661f30044fb1190a6257f8d68ba8fe0438cf432560262fffaa",
+      "revision": "Original corrected gait retained before head-consistency revisions."
+    },
+    {
+      "source": "exec-25bba728-2f03-43d6-88b0-8743af14fec7.png",
+      "revision": "First head-consistency pass."
+    },
+    {
+      "source": "exec-d7aa9abc-976d-4639-89bf-937d0d6d59b6.png",
+      "revision": "Head-master-reference pass: all heads share swept fringe and eye geometry; contact/passing placements retained."
+    }
+  ],
+  "head_master_reference": "head_master_reference.png",
+  "art_status": "approved",
+  "approval_note": "The user approved this four-frame front-walk cycle for merge into main."
+}
