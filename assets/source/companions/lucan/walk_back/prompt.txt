@@ -1,0 +1,34 @@
+GENERATION 1: lucan_walk_back_prompt
+
+Create an AUTHORED FOUR-FRAME REAR/BACK OVERWORLD WALK CYCLE for Lucan Rooke, adult24-year-old Knight, using the approved REAR idle reference. Match his compact3-head chibi silhouette and31px native body height, dark swept brown hair seen frombehind, silver-steel armor, oxblood red BACK cloth/tabard with gold trim, brown boots. This is the same character, not a taller battle sprite.
+
+One WIDE TRANSPARENT RGBA sheet with exactly FOUR isolated fullbody rear-facing drawings in one horizontal row, all SAME BODY SIZE, outfit, camera, head shape and equipment. Lucan walks AWAY from viewer. In every frame show only the back of his head/hair, shoulder/back armor and red back cloth: NO face, eye, front chest insignia or front belt buckle. Same rear head drawing in all4, with only its small up/down walk bob. Boots show heels/soles appropriate to walking away.
+
+CRITICAL HANDEDNESS: AnatomicalRIGHT sword is on VIEWER/SCREEN RIGHT; anatomicalLEFT shield is on VIEWER/SCREEN LEFT. Rear shield shows inner wooden surface, straps and metal rim as in the approved rear idle. Sword hangs nearly VERTICAL close to the right thigh/calf, complete point visible slightly above floor and safely clear of the boot. Do not angle it far outward: full weapons must fit a narrow24x36 native frame at unchanged31px body height. No equipment swaps or mirror poses.
+
+FOUR DISTINCT RELAXED WALKING PHASES, left to right:
+1. ScreenLEFT leg/boot contacts and supports on the shared low floor line, while screenRIGHT leg is in the trailing/return part of its step. Legs clearly alternate through travel away from camera; normal knee/thigh/calf lengths.
+2. ScreenLEFT leg supports naturally under the hips; screenRIGHT foot is LIFTED/PASSING forward away from viewer, mildly bent knee and visible rear boot/sole cues. Hips, torso, shoulders/head rise about ONE NATIVE PIXEL while supporting sole stays on SAME FLOOR.
+3. ScreenRIGHT leg/boot now contacts/supports on the shared floor, with screenLEFT leg trailing/returning. This is the alternate leg contact, not frame1 repeated.
+4. ScreenRIGHT leg supports under hips, screenLEFT foot is LIFTED/PASSING forward away from viewer. Opposite support from2, not a duplicate. Body rises as in2.
+Passing rise is about3percent of total body height; fully authored by changed hip/knee posture, not translating the whole figure upward. Keep planted supporting sole on the same baseline in every frame. Use foreshortening/overlap to show depth without stretching limbs. Normalwalk, not high march/run/hop/deep crouch. Modest reciprocal hand/arm motion around carried sword/shield, small red hem follow-through, steady confident shoulders. Gear follows hands/body as rigid objects rather than changing size.
+
+Complete hair, hands, boots, shield and sword point within each isolated pose. Plenty transparent gap between four drawings. Coarse crisp square pixel clusters and same controlled palette as approved native idle. No labels/text/grid/borders/floor/shadow/background/glow/extra characters. Loop order contact→passing→oppositecontact→oppositepassing at140ms each, total560ms.
+
+---
+
+GENERATION 2: lucan_walk_back_refinement_prompt
+
+Correct ONLY THE FOURTH/rightmost REAR WALK pose's LEG SUPPORT in this Lucan sheet. Keep all other figures and all four heads, torsos, armor, arms and gear unchanged.
+
+The fourth currently repeats the second: screenLEFT boot planted and screenRIGHT heel lifted. This is wrong. In the FOURTH figure, PLANT the SCREEN-RIGHT BOOT on the shared low floor baseline and LIFT THE SCREEN-LEFT BOOT, with its toe/sole clearly higher than the planted right sole. Swap only those leg/boot roles using natural hips/knees and unchanged limb lengths. The right leg must visibly lead into the right grounded boot; left leg into left lifted boot. A modest lifted returning foot, not a high kick. The other rear poses1/2/3 remain exactly as supplied.
+
+Every figure still faces AWAY from viewer. Sword anatomicalRIGHT on viewerRIGHT, nearlyvertical close to calf with fullpoint visible, shield anatomicalLEFT on viewerLEFT showing interior straps/rim. No mirrored figure, no face appearing, no front belt buckle. Preserve same rear hair and red/gold back cloth. Keep supporting floor fixed; no fullsprite upward translation.
+
+Transparent RGBA,4 separated fullbody rear chibi sprites in one row, no labels/grid/floor/shadow/background. The only requested change is the last pose's opposite supporting leg.
+
+---
+
+GENERATION 3: lucan_walk_back_refinement2_prompt
+
+Edit ONLY the BOOTS/LOWER LEGS of the FOURTH RIGHTMOST figure in this rear-view Lucan four-frame walk sheet. Do not change any head, torso, hair, arms, armor, sword, shield, or figures1/2/3. IMPORTANT coordinate instruction: in figure4, the boot on the LEFT SIDE OF THE IMAGE (around x1640) is currently low and planted; the boot on the RIGHT SIDE OF THE IMAGE (around x1760) is currently raised. Reverse their heights. LEFT IMAGE BOOT x1640 must be LIFTED with its lowest point around y690 and visible dark sole at y680, no contact with the y735 floor. RIGHT IMAGE BOOT x1760 must be PLANTED FLAT with its lowest sole on y735, naturally linked to the right-image supporting leg. The first passing pose2 keeps left-imageboot planted/right-imageboot lifted; fourth must be visibly opposite. Do not mirror the torso or swap equipment; redraw only fourth lowerlegs/boots with normal proportions. He walks AWAY from us, not forward; rear hair/backcloth and no face/buckle. Sword stays viewer-right close to calf, shield interior viewer-left. Same transparent 4 columns, no text, labels, ground or background. Only correct the repeated leg phase on the rightmost figure.

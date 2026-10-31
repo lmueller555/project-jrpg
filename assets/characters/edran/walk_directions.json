@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "character": "edran",
+  "status": "approved",
+  "image": "walk_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "per_direction_anchors": {
+    "front": [
+      12,
+      34
+    ],
+    "left": [
+      12,
+      34
+    ],
+    "right": [
+      12,
+      34
+    ],
+    "back": [
+      12,
+      34
+    ]
+  },
+  "directions": [
+    {
+      "direction": "front",
+      "status": "approved",
+      "animation": "walk_front/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            0,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "left",
+      "status": "approved",
+      "animation": "walk_left/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            36,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "right",
+      "status": "approved",
+      "animation": "walk_right/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            72,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    },
+    {
+      "direction": "back",
+      "status": "approved",
+      "animation": "walk_back/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frames": [
+        {
+          "rect": [
+            0,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            24,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            48,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        },
+        {
+          "rect": [
+            72,
+            108,
+            24,
+            36
+          ],
+          "duration_ms": 140
+        }
+      ]
+    }
+  ],
+  "review": {
+    "gif": "../../../docs/reviews/companion_directional_walks/edran_walk_directions.gif",
+    "columns": [
+      "front",
+      "left",
+      "right",
+      "back"
+    ],
+    "scale": 10,
+    "background": "#e8edf2"
+  }
+}

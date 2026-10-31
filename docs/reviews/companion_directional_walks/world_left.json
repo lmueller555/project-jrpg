@@ -1,0 +1,309 @@
+{
+  "actual_renderer": "World.draw",
+  "preview_only": true,
+  "world": "eldenmere.playable",
+  "direction": "left",
+  "movement_vector": [
+    -1,
+    0
+  ],
+  "camera": [
+    778,
+    532
+  ],
+  "native_viewport": [
+    480,
+    320
+  ],
+  "view_scale": 2,
+  "walking_speed_pixels_per_second": 72.0,
+  "gait_period_ms": 560,
+  "gait_cycles": 4,
+  "duration_ms": 2240,
+  "frame_step_ms": 20,
+  "expected_frame_count": 112,
+  "distance_pixels": 161.28,
+  "collision_free_paths": true,
+  "unobscured_body_bounds": true,
+  "trajectory_samples_per_actor_including_endpoint": 113,
+  "static_world_time_ms": 0,
+  "map_actors_removed_for_review": true,
+  "actors": [
+    {
+      "character": "caelan",
+      "label": "Caelan reference",
+      "animation": "assets/characters/caelan/walk_left/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "frame_files": [
+        "frame_01.png",
+        "frame_02.png",
+        "frame_03.png",
+        "frame_04.png"
+      ],
+      "frame_sha256": [
+        "530adf3ef8d77bbe6ceaf9ac764a2370c2f13a3a73ec03c2201faadf67438ef8",
+        "a45d9cc1904995541ab47d8d4a4e09684d625767c2c02e35d46440890dd13517",
+        "2d3ba50204e90dbcffe9c2a22de29b5a6a3ae1488541acb609e61b4da7e16374",
+        "30802fed35e061dafe6d8b3cda72b37ad74b85bad06ef58ca5ad5d5c6c7dce68"
+      ],
+      "frame_durations_ms": [
+        140,
+        140,
+        140,
+        140
+      ],
+      "route_start": [
+        1061.28,
+        636
+      ],
+      "route_end": [
+        900.0,
+        636.0
+      ]
+    },
+    {
+      "character": "lucan",
+      "label": "Lucan",
+      "animation": "assets/characters/lucan/walk_left/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "frame_files": [
+        "frame_01.png",
+        "frame_02.png",
+        "frame_03.png",
+        "frame_04.png"
+      ],
+      "frame_sha256": [
+        "4d2fe9594114ab1ed5abeee5a422426ba6ebb72ec8b63347bfad608e1688d5d2",
+        "7b3f43e04f8a75e6fca2b891333bab0c797b8e477001761b35951e4098b4b123",
+        "1910bc39847fe09e2b4046f1419ec281f9bef1fd96de492735ea7d9a907a7e6c",
+        "ab924d510035f12c4d0766a7eb7171de9a2919c0ee071bc288dc953f13cd7515"
+      ],
+      "frame_durations_ms": [
+        140,
+        140,
+        140,
+        140
+      ],
+      "route_start": [
+        1061.28,
+        684
+      ],
+      "route_end": [
+        900.0,
+        684.0
+      ]
+    },
+    {
+      "character": "rhea",
+      "label": "Rhea",
+      "animation": "assets/characters/rhea/walk_left/animation.json",
+      "foot_anchor": [
+        10,
+        34
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "frame_files": [
+        "frame_01.png",
+        "frame_02.png",
+        "frame_03.png",
+        "frame_04.png"
+      ],
+      "frame_sha256": [
+        "50422ca0575f570baf145446f3f2a5ed0dab610c1a8d37cbf5ea9033f024ca1e",
+        "3518bd81aa3b8f875c2c798d6abe5d63acb20dea830eae0cd8aa8a7182088a99",
+        "2d45b758b7be3aa87adfcf4f8eb36cf0548f2c0bfa1d7a5a2e94af0285ef7498",
+        "e440148ee25768e27896ef2c37379cce760be74d9e558f2fc434a1411305f5bf"
+      ],
+      "frame_durations_ms": [
+        140,
+        140,
+        140,
+        140
+      ],
+      "route_start": [
+        1061.28,
+        732
+      ],
+      "route_end": [
+        900.0,
+        732.0
+      ]
+    },
+    {
+      "character": "edran",
+      "label": "Edran",
+      "animation": "assets/characters/edran/walk_left/animation.json",
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "frame_size": [
+        24,
+        36
+      ],
+      "frame_files": [
+        "frame_01.png",
+        "frame_02.png",
+        "frame_03.png",
+        "frame_04.png"
+      ],
+      "frame_sha256": [
+        "e54bba1a3576a722d45e4213886db8ac6318c1acbe9db06e408b8df4b8fbd737",
+        "b7e17c3d6a7cbafa4614b2b220c59fbc70579677a0ffeba830feccce10221f2a",
+        "cc9ebc7383fa70215b2cf39dfcf615fd56dbcc7da8d72acc6c5f4605b46ab042",
+        "0639fbc90a1b4f43c9fb7e47c3a2c0d24ff7043dcbfd2457402feb03133ac49c"
+      ],
+      "frame_durations_ms": [
+        140,
+        140,
+        140,
+        140
+      ],
+      "route_start": [
+        1061.28,
+        780
+      ],
+      "route_end": [
+        900.0,
+        780.0
+      ]
+    }
+  ],
+  "gif": "world_left.gif",
+  "png": "world_left.png",
+  "actual_frame_count": 112,
+  "gif_loop": 0,
+  "gif_frame_durations_ms": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+  ],
+  "exact_reserved_sprite_colors": 106,
+  "exact_opaque_sprite_pixels_preserved": true
+}

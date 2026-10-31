@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "animation": "walk.right",
+  "status": "approved",
+  "art_status": "approved",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2079,
+    756
+  ],
+  "source_sha256": "92a5a8b2b041c19dd83c9ce841236ce60b43ef36c9dc6a45ee2d1e62a1771051",
+  "generated_original_filename": "exec-50ed41a2-ddb5-4d18-a348-94ca6f6f9bae.png",
+  "generation_history": [
+    {
+      "source": "exec-ef196bc6-ff43-4406-ada1-f0747176cb65.png",
+      "note": "Initial source; fourth passing support needed correction."
+    },
+    {
+      "source": "exec-50ed41a2-ddb5-4d18-a348-94ca6f6f9bae.png",
+      "note": "Fourth passing legs corrected to opposite support; heads/equipment/direction preserved."
+    }
+  ],
+  "reference_sha256": {
+    "assets/source/companions/lucan/directional_idles/directional_sheet.png": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+    "assets/characters/lucan/idle_right.png": "45198cdbcbe3365d943e6349ce39a2feb79bb8a8db134482f1d99c3e2b18c2b7"
+  },
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "duration_ms": 560,
+  "phases": [
+    "near_contact",
+    "near_support_passing",
+    "far_contact",
+    "far_support_passing"
+  ],
+  "handedness": {
+    "sword": "anatomical_right_near",
+    "shield": "anatomical_left_far_interior_visible"
+  },
+  "export": {
+    "scale": 0.05950095969289827,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "frames": [
+      {
+        "source_bounds": [
+          114,
+          148,
+          422,
+          669
+        ],
+        "body_bounds": [
+          172,
+          148,
+          372,
+          669
+        ],
+        "body_center_x": 272.5,
+        "ground_y": 668
+      },
+      {
+        "source_bounds": [
+          659,
+          138,
+          920,
+          676
+        ],
+        "body_bounds": [
+          700,
+          138,
+          900,
+          676
+        ],
+        "body_center_x": 800,
+        "ground_y": 675
+      },
+      {
+        "source_bounds": [
+          1155,
+          148,
+          1467,
+          669
+        ],
+        "body_bounds": [
+          1212,
+          148,
+          1412,
+          669
+        ],
+        "body_center_x": 1312.5,
+        "ground_y": 668
+      },
+      {
+        "source_bounds": [
+          1698,
+          138,
+          1959,
+          676
+        ],
+        "body_bounds": [
+          1740,
+          138,
+          1940,
+          676
+        ],
+        "body_center_x": 1840,
+        "ground_y": 675
+      }
+    ]
+  },
+  "notes": [
+    "Independently authored right-facing cycle; not a horizontal mirror.",
+    "Frame4 has opposite grounded/passing leg arrangement from frame2.",
+    "Common scale/grid for all4; contact bodies521sourcepx, passing538sourcepx.",
+    "No approved source or native sprite modified."
+  ],
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
+}

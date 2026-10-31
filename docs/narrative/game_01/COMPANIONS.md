@@ -41,7 +41,9 @@ Caelan's walking cadence. The retained sources, shared palettes and fixed
 registration are reproducible through the companion front-walk exporter.
 Their [left, right and rear idles](../../reviews/companion_directional_idles/README.md)
 are approved as well, completing the four-direction standing references.
-The remaining directional walks, running and action animations remain future work.
+All [four walking directions](../../reviews/companion_directional_walks/README.md)
+are approved for each character, with four-frame cycles at the same cadence.
+Running and action animations remain future work.
 
 ## Lucan Rooke
 

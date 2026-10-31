@@ -1,0 +1,64 @@
+GENERATION 1: lucan_walk_left_prompt
+
+Create an AUTHORED FOUR-FRAME OVERWORLD WALK CYCLE for LUCAN ROOKE, adult24-year-old Knight, matching his APPROVED directional idle references. Exactly the same compact approximately3-head chibi proportions, brown side-swept hair, face, silver-steel armor, oxblood red cloth with gold trim, dark trousers and brown boots. This must match the tiny24x36 native game sprite, not a taller combat illustration.
+
+ONE WIDE TRANSPARENT RGBA source sheet with exactly FOUR isolated fullbody drawings in ONE HORIZONTAL ROW, ordered contact1 → passing1 → opposite contact → opposite passing. Same character scale and camera in all4. Every head must have the SAME hair silhouette, fringe, eye geometry and expression; reuse one fixed-looking head design, only the small vertical movement is allowed. No turning toward/away from camera between steps, no costume changes or morphing face.
+
+Normal WALKING, not running, marching, kicking or lunging. Modest stride suitable for24px-wide game frame: feet move only a few native pixels relative to hips, keeping their envelope within the approved equipment silhouette. The supporting boot is planted flat at a common floor baseline in EVERY frame. The other boot visibly lifts and passes. Knees/hips bend naturally without changing thigh/calf length. Frame2 and4 have a subtle~ONE NATIVE PIXEL coordinated head/torso rise authored by the changed gait; planted supporting sole stays on the same floor baseline. Do not just translate a rigid idle sprite. Upper body calm and confident, armor segments attached, modest reciprocal arm motion limited by sword and shield. No oversized arm swing, detached hands, stretchy legs or high lifted knees. Small red cloth hem follow-through.
+
+Sword remains anatomical RIGHT hand and shield anatomical LEFT arm in every frame. These drawings must never be mirror-swapped or alternate equipment hands. Keep the COMPLETE sword point and shield inside each drawing. Low-carried sword must remain close enough to the body/leg to export at full31px body height into24x36 frame. Do not make the blade horizontal or overly outward. Preserve shield size and gold-chevron design where its outer face is visible.
+
+No text, labels, border, grid, floor illustration, cast shadow, background or glow behind figures. Generous transparent gaps between drawings. Whole heads, hair, boots, blade points and shield visible. Crisp coarse square pixel clusters and controlled warm outlines/color blocks like the supplied native sprites; no smooth painting/vector/3D, no extra characters or poses.
+
+The whole four-frame sequence should loop at140ms per frame, total560ms.
+
+DIRECTION FOR ALL4: SCREEN LEFT, matching the approved LEFT idle's slight3quarter/profile orientation. Face/eye look screenLEFT throughout. His anatomicalLEFT shield arm is NEAR camera: prominent red shield outer face with gold upward chevron. Sword-right arm is FAR and partly occluded as in the approved idle. Keep the same near/far relationships in all4.
+
+FRAME1: Near/anatomicalLEFT leg advances a modest distance toward screenLEFT, heel/contact reaching the shared floor. Far/right leg trails toward screenRIGHT.
+FRAME2: Near/LEFT leg supports under the hips, far/RIGHT leg passes under the hips with toe lifted and a mild bent knee. Head/torso is~1nativepx higher.
+FRAME3: Far/RIGHT leg now advances toward screenLEFT and contacts the shared floor; near/LEFT leg trails behind toward screenRIGHT. Make near/far leg overlap show this alternate step.
+FRAME4: Far/RIGHT leg supports under the hips, near/LEFT leg passes lifted. Head/torso higher as in2. Frame4 is the opposite support from2, not a duplicate.
+Keep modest arm counter-motion: the shield remains held firmly rather than fixed motionless to the air; all gear follows the hands/body.
+
+---
+
+GENERATION 2: lucan_walk_left_correction_prompt
+
+Correct ONLY THE FOURTH/RIGHTMOST FIGURE'S LEGS in the supplied four-frame left-facing Lucan walk sheet. Preserve the other three poses and all four heads, torsos, arms, sword/shield ownership, costume, scale and facing.
+
+All figures face SCREEN LEFT; near anatomicalLEFT leg is shield-side, far anatomicalRIGHT leg is sword-side. Frame2 already shows NEAR leg support and FAR foot passing lifted. Frame4 must show the OPPOSITE: FAR leg supports and NEAR foot passes lifted. Currently frame4 repeats frame2's near-side grounded boot arrangement.
+
+For frame4, lift the NEAR/sword-or-shield-side boot that is currently planted, and place the FAR boot that was lifted onto the common floor baseline under the hips. Swap the LEG SUPPORT/OVERLAP only, never mirror or swap the whole character. Make this readable: the lifted near boot can sit just behind the supporting calf with its toe clearly above the floor, while the supporting far boot is beneath/slightly ahead of the hips. The near thigh/knee must lead visibly into the lifted near boot; the far thigh/calf leads into the grounded far boot. Preserve normal limb lengths, modest knee bend and relaxed walking (no high knee or sprint). Use occlusion so it is clearly the opposite passing step rather than the same pose again.
+
+Keep both contact poses1/3 and the first passing pose2 as they were. Keep the same small body rise in4 as2 without moving the floor support boot. Sword anatomicalRIGHT and shield anatomicalLEFT at all times; left-facing retains shield near/redchevron, right-facing retains sword near/shield interior far. Keep full weapons within each figure's narrow silhouette and match the approved idle's31px body scale after export.
+
+Transparent RGBA, same four separated fullbody drawings in a single horizontal row, no text/grid/floor/shadow/background. Crisp coarse pixel art. Only fix the last passing legs.
+
+---
+
+GENERATION 3: lucan_walk_left_final_prompt
+
+Refine the supplied Lucan SCREEN-LEFT walking sheet. Keep all four heads, costumes, weapons, direction and the two contact poses1/3 unchanged. Keep sword-right arm far and shield-left arm near with red/gold outer face.
+
+Fix the two passing poses2/4:
+1. Their head/torso rise is too weak. Raise the hips, chest, shoulders and head in both passing poses enough to be about ONE NATIVE GAME PIXEL higher than the contact poses after31px body export. Here that is approximately18–20source pixels total rise relative to contacts, rather than only6–8px. Keep the supporting boot's sole on the SAME FLOOR. Achieve this with the naturally straighter supporting knee/hip of a passing walk, not longer legs or a rigid whole-sprite translation. Hair/face design and head dimensions stay exactly the same.
+2. Make frame4 clearly the opposite passing support from2. Frame2 has near/shield-side leg support and far foot passing. In frame4 plant the FAR/right leg beneath/slightly behind the hips, and lift the NEAR/left foot so it passes FORWARD ON THE LEFT SIDE of the supporting shin, its toe clearly above the floor. In the rightmost drawing the planted far boot should sit under the hips around screenx1770, while the lifted near boot is just left/infront aroundx1705 with toe~30–45source pixels above the floor. These are approximate composition cues, not labels to draw. Current fourth free boot behind far right repeats frame2: change that leg overlap/placement, keeping normal anatomy and a modest walk, not a kick.
+Preserve leg lengths, face direction, armor segments, shield size, sword/hand ownership and modest gear carry. Full sword tip stays in the frame. Four isolated completebody chibi pixel sprites in one transparent RGBA row; no text, labels, background, glow or shadow.
+
+---
+
+GENERATION 4: lucan_walk_left_refinement_prompt
+
+Tone down the BODY BOUNCE in ONLY the second and fourth figures of this left-facing Lucan walk sheet. Preserve the two contact poses1/3 and all four correct leg-support phases/equipment identities.
+
+Passing poses2/4 currently rise about50source pixels above the contacts, which is too bouncy. LOWER THEIR HIPS, CHEST, SHOULDERS AND HEAD by approximately30source pixels, keeping their SUPPORTING BOOT planted at exactly the same floor. This reduces their rise to approximately18–20source pixels above contact, about1nativegamepixel. Let the supporting knee bend gently as the pelvis lowers, preserving actual thigh/calf lengths. Do not translate their whole sprite or move the grounded boot. Keep the opposite raised foot's same natural passing arrangement, especially frame4's corrected lifted near foot in front of the supporting shin.
+
+Keep all hair, face/head dimensions, shield and sword size/handedness/color, limbs, armor and facing unchanged; gear follows the lowered hand positions coherently. Frame2 near leg supports/far passes; frame4 far supports/near passes. Normal calm walk, not a bounce/hop orrun. Full sword tips still fit inside each narrow pose.
+
+Transparent RGBA, same4 separated fullbody front-left-profile chibi drawings in one row, no text/grid/background/shadow. Only moderate the second/fourth body bounce.
+
+---
+
+GENERATION 5: lucan_walk_left_refinement2_prompt
+
+Edit ONLY walking poses 2 and 4 in the supplied LEFT-facing Lucan sprite sheet. Poses 1 and 3 unchanged. The previous edit made the heads in poses2/4 LOWER than the contact heads: this is wrong. Correct the passing posture so the top of hair in figures2/4 is a SMALL amount ABOVE figures1/3, roughly 15–20 source pixels above, not below. Current head tops are at y151 vs y125; desired passing head tops around y107–112. Lift the pelvis/chest/head together about40source pixels while the support boot stays on the exact y713 ground; gently straighten the supporting knee with natural unchanged leg length. Keep the head size, armor and body proportions stable; do not stretch lowerlegs or translate the planted sole. Preserve current correct leg arrangement: figure2 forward/screenleft leg grounded, rear/screenright foot lifting under pelvis; figure4 rear/screenright leg grounded, screenleft foot lifted just in front of shin. Keep every boot and sword point fully visible. Shield near camera, sword far, identity and outfit unchanged. Same transparent four-column sheet, no labels/background/ground shadow. This is a compact calm walk, only a subtle rise in passing.

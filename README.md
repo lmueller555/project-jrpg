@@ -303,6 +303,8 @@ Their [front walking cycles](docs/reviews/companion_front_walks/README.md)
 are approved, with animated comparisons and a town-renderer movement preview.
 Their [four-direction idle sets](docs/reviews/companion_directional_idles/README.md)
 are also approved, with side and rear views retaining each character's equipment placement.
+Their [complete walking sets](docs/reviews/companion_directional_walks/README.md)
+are approved in all four directions, with animated comparisons and town movement previews.
 
 [Caelan's idle sprites](assets/characters/caelan/README.md) begin the new art library at 24×36 pixels per frame. All four directional idle designs are approved.
 

@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "animation": "walk.back",
+  "status": "approved",
+  "art_status": "approved",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2048,
+    768
+  ],
+  "source_sha256": "47ec86b454f6fbcbb113f0444c5810381723beb90d53afd8a6e098531de6d070",
+  "generated_original_filename": "exec-3a09ab1e-4bcc-49bf-b521-580d4ffb3213.png",
+  "first_attempt_file": "initial_sheet.png",
+  "first_attempt_generated_original_filename": "exec-8974cc1f-32b3-41d5-913c-8d281946fbb7.png",
+  "first_attempt_sha256": "f90a1ac416cc7da235d98d024eb4b0d980244226497e3fd9ff40cae94cabd7a3",
+  "source_generation": {
+    "tool": "image_gen.imagegen",
+    "transparent_background": true,
+    "generation_prompt": "prompt.txt",
+    "refinement_prompt": "refinement_prompt.txt",
+    "originals_preserved_unaltered": true,
+    "references": [
+      {
+        "path": "assets/source/companions/edran/directional_idles/directional_sheet.png",
+        "sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26"
+      },
+      {
+        "path": "assets/characters/edran/idle_back.png",
+        "sha256": "56bfddb09c4049fdf55e319092051c3721962f601920d04797cf5219b7fa0e53"
+      },
+      {
+        "path": "assets/source/companions/edran/walk_front/walk_sheet.png",
+        "sha256": "3a841d431eb77d496dcfc6405dad0ab43d71fdd83962488f4c884f98c1095255"
+      },
+      {
+        "path": "assets/characters/edran/walk_front/spritesheet.png",
+        "sha256": "960b71ae74446db42690844abf658f0a1fcde8eed49ac9fc1805c3f7c9c87318"
+      }
+    ],
+    "direction_reference_crop": "reference_idle.png",
+    "crop_provenance": "Unmodified crop of approved directional idle sheet, 10 source pixels of border around the approved pose bounds.",
+    "opposite_support_prompt": "opposite_support_prompt.txt",
+    "opposite_support_input": "bob_refinement_sheet.png"
+  },
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "frame_duration_ms": 140,
+  "loop_duration_ms": 560,
+  "frame_count": 4,
+  "target_body_height": 29,
+  "alpha_cleanup_threshold": 128,
+  "equipment": {
+    "staff_hand": "anatomical right",
+    "pouch_side": "anatomical left",
+    "occlusion": "staff viewer right, pouch viewer left"
+  },
+  "export": {
+    "scale": 0.04296296296296296,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "frames": [
+      {
+        "phase": "contact_1",
+        "source_bounds": [
+          62,
+          39,
+          479,
+          715
+        ],
+        "body_bounds": [
+          62,
+          39,
+          439,
+          715
+        ],
+        "body_center_x": 247,
+        "ground_y": 714
+      },
+      {
+        "phase": "passing_1",
+        "source_bounds": [
+          575,
+          25,
+          977,
+          715
+        ],
+        "body_bounds": [
+          575,
+          25,
+          934,
+          715
+        ],
+        "body_center_x": 756,
+        "ground_y": 714
+      },
+      {
+        "phase": "opposite_contact",
+        "source_bounds": [
+          1080,
+          39,
+          1494,
+          715
+        ],
+        "body_bounds": [
+          1080,
+          39,
+          1451,
+          715
+        ],
+        "body_center_x": 1268,
+        "ground_y": 714
+      },
+      {
+        "phase": "opposite_passing",
+        "source_bounds": [
+          1601,
+          27,
+          2005,
+          715
+        ],
+        "body_bounds": [
+          1601,
+          27,
+          1966,
+          715
+        ],
+        "body_center_x": 1785,
+        "ground_y": 714
+      }
+    ]
+  },
+  "notes": [
+    "Four imagegen-authored poses in this direction; no mirrored actor, procedural limb motion or modifications to approved sprites.",
+    "One targeted imagegen refinement strengthened the passing-leg/body rise while keeping supporting feet on the floor.",
+    "One common scale/grid for all four frames; exporter may refine axis/grid registration for native readability.",
+    "Crook is carried in the right hand rather than planted as a cane.",
+    "Source haze below alpha128 should be removed by the established deterministic export.",
+    "The user approved the final four-frame cycle for merge into main.",
+    "Native QA found phase4 repeated phase2 support; a targeted imagegen correction redrew only fourth-pose boots/adjacent hem so screen-right boot supports at floor and screen-left boot lifts in recovery. Head/rise/staff/pouch and other directions retained; all generator outputs preserved unaltered."
+  ],
+  "bob_refinement_file": "bob_refinement_sheet.png",
+  "bob_refinement_sha256": "92872f64895a806d4b23a1c3180579f63e879d421573acddb72430732af05602",
+  "bob_refinement_generated_original_filename": "exec-c148afe1-82b3-4936-8052-654ef30a19a5.png",
+  "approval_note": "The user approved this four-frame directional walk cycle for merge into main."
+}

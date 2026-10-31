@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "character": "rhea",
+  "display_name": "Rhea Sorel",
+  "animation": "walk.left",
+  "facing": "left",
+  "status": "approved",
+  "design_status": "approved",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    10,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "source": "assets/source/companions/rhea/walk_left/walk_sheet.png",
+  "source_sha256": "fc502cee2122cf8f74fb923dc783dfeb588b7c03b9f3c27cfd8171d1d2bfd768",
+  "source_recipe": "assets/source/companions/rhea/walk_left/source.json",
+  "source_recipe_sha256": "10a3e86f7a462610aeb4edcc6ced42d11ec5dd1172f6ea36e07814fae2df2611",
+  "palette_source": "assets/characters/rhea/idle_front.png",
+  "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+  "palette": [
+    [
+      5,
+      3,
+      4
+    ],
+    [
+      25,
+      26,
+      29
+    ],
+    [
+      35,
+      80,
+      51
+    ],
+    [
+      73,
+      35,
+      21
+    ],
+    [
+      157,
+      95,
+      45
+    ],
+    [
+      229,
+      160,
+      86
+    ],
+    [
+      250,
+      203,
+      154
+    ],
+    [
+      86,
+      42,
+      23
+    ],
+    [
+      101,
+      52,
+      29
+    ],
+    [
+      110,
+      75,
+      37
+    ],
+    [
+      137,
+      62,
+      36
+    ],
+    [
+      35,
+      31,
+      71
+    ],
+    [
+      95,
+      38,
+      91
+    ],
+    [
+      195,
+      127,
+      55
+    ],
+    [
+      248,
+      182,
+      133
+    ],
+    [
+      206,
+      114,
+      71
+    ],
+    [
+      143,
+      73,
+      118
+    ],
+    [
+      203,
+      138,
+      58
+    ],
+    [
+      187,
+      132,
+      61
+    ],
+    [
+      71,
+      155,
+      11
+    ],
+    [
+      90,
+      93,
+      75
+    ],
+    [
+      249,
+      200,
+      98
+    ],
+    [
+      251,
+      193,
+      82
+    ],
+    [
+      190,
+      130,
+      72
+    ],
+    [
+      58,
+      136,
+      41
+    ],
+    [
+      154,
+      95,
+      90
+    ],
+    [
+      109,
+      199,
+      28
+    ],
+    [
+      145,
+      235,
+      8
+    ],
+    [
+      250,
+      251,
+      245
+    ],
+    [
+      11,
+      117,
+      173
+    ],
+    [
+      12,
+      120,
+      180
+    ],
+    [
+      158,
+      233,
+      26
+    ]
+  ],
+  "common_uniform_scale": 0.050393700787401574,
+  "common_sampling_phase": [
+    0.5,
+    0.95
+  ],
+  "sampling": "one exact affine nearest-neighbor grid for all four authored poses",
+  "registration": "authored pelvis/body center and supporting floor; equipment does not recenter actor",
+  "target_body_height": 32,
+  "source_body_heights": [
+    629,
+    633,
+    632,
+    635
+  ],
+  "directional_idle_reference": "assets/characters/rhea/idle_left.png",
+  "directional_idle_sha256": "07ed5d6e73961b3569acf5cea1e36caea73e01aad403e105cf7bd3294b0fba01",
+  "distinct_native_frames": 4,
+  "shared_palette_color_count": 32,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "right_contact",
+      "source_frame": 0,
+      "sha256": "50422ca0575f570baf145446f3f2a5ed0dab610c1a8d37cbf5ea9033f024ca1e",
+      "panel": [
+        81,
+        53,
+        510,
+        682
+      ],
+      "bounds": [
+        81,
+        53,
+        510,
+        682
+      ],
+      "body_bounds": [
+        152,
+        53,
+        510,
+        682
+      ],
+      "body_center_x": 270,
+      "ground_y": 681,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        23,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.95
+      ],
+      "affine_output_to_source": [
+        19.84375,
+        0,
+        -19.359375,
+        0,
+        19.84375,
+        -65.53906250000011
+      ],
+      "registered_body_center": [
+        10,
+        34
+      ],
+      "palette_colors": 28
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "right_support_passing",
+      "source_frame": 1,
+      "sha256": "3518bd81aa3b8f875c2c798d6abe5d63acb20dea830eae0cd8aa8a7182088a99",
+      "panel": [
+        611,
+        53,
+        1036,
+        686
+      ],
+      "bounds": [
+        611,
+        53,
+        1036,
+        686
+      ],
+      "body_bounds": [
+        682,
+        53,
+        1036,
+        686
+      ],
+      "body_center_x": 800,
+      "ground_y": 685,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        22,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.95
+      ],
+      "affine_output_to_source": [
+        19.84375,
+        0,
+        -19.359375,
+        0,
+        19.84375,
+        -61.539062500000114
+      ],
+      "registered_body_center": [
+        10,
+        34
+      ],
+      "palette_colors": 29
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "left_contact",
+      "source_frame": 2,
+      "sha256": "2d45b758b7be3aa87adfcf4f8eb36cf0548f2c0bfa1d7a5a2e94af0285ef7498",
+      "panel": [
+        1151,
+        53,
+        1572,
+        685
+      ],
+      "bounds": [
+        1151,
+        53,
+        1572,
+        685
+      ],
+      "body_bounds": [
+        1220,
+        53,
+        1572,
+        685
+      ],
+      "body_center_x": 1342,
+      "ground_y": 684,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        22,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.95
+      ],
+      "affine_output_to_source": [
+        19.84375,
+        0,
+        -17.359375,
+        0,
+        19.84375,
+        -62.539062500000114
+      ],
+      "registered_body_center": [
+        10,
+        34
+      ],
+      "palette_colors": 29
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "left_support_passing",
+      "source_frame": 3,
+      "sha256": "e440148ee25768e27896ef2c37379cce760be74d9e558f2fc434a1411305f5bf",
+      "panel": [
+        1695,
+        53,
+        2116,
+        688
+      ],
+      "bounds": [
+        1695,
+        53,
+        2116,
+        688
+      ],
+      "body_bounds": [
+        1768,
+        53,
+        2116,
+        688
+      ],
+      "body_center_x": 1886,
+      "ground_y": 687,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        3,
+        22,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.95
+      ],
+      "affine_output_to_source": [
+        19.84375,
+        0,
+        -17.359375,
+        0,
+        19.84375,
+        -59.539062500000114
+      ],
+      "registered_body_center": [
+        10,
+        34
+      ],
+      "palette_colors": 29
+    }
+  ]
+}

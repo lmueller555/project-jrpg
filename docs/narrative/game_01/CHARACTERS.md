@@ -57,6 +57,8 @@ Their [four-frame front walks](../../reviews/companion_front_walks/README.md)
 are also approved.
 All [four directional idle views](../../reviews/companion_directional_idles/README.md)
 are approved for each companion.
+Their [four-direction walking sets](../../reviews/companion_directional_walks/README.md)
+are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
 Lattice paths require later implementation.
 
