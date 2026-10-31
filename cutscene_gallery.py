@@ -318,6 +318,22 @@ def _grain_extra(game, playback):
     playback.watch(lambda: controller.state['scene_done'] and not game.social.active)
 
 
+def _garden_care(game, playback):
+    from garden_orchard import empty_state, valid_state
+    world = game.overworld_world
+    _station(game, world, (-526, 1204))
+    controller = world.garden_orchard
+    # Resume the committed end of the gardener's finite harvest, before the
+    # optional conversation. The picker remains at the untouched default state.
+    state = empty_state()
+    state['gardener'].update(phase='ready', position=[-526, 1174])
+    if not valid_state(state):raise ValueError('Invalid garden preview checkpoint')
+    controller.restore(state)
+    if not game.overworld_travel.interact():raise ValueError('Cannot start the garden conversation')
+    playback.watch(lambda: controller.state['gardener']['phase'] == 'rest'
+                   and not game.social.active)
+
+
 def _entry(identifier, name, chapter, description, fixture, automatic=False):
     return GalleryEntry(identifier, name, chapter, description,
                         f'assets/ui/gallery/{identifier}.png',
@@ -373,6 +389,8 @@ GALLERY_ENTRIES = (
            'A quiet disagreement by the grain cart ends with a shared lift.', _grain_extra),
     _entry('bridge_tea', 'Tea by the Broken Bridge', 'Elden Vale',
            'The repair crew sets down a cup, steadies a tray and takes a short break.', _bridge_tea),
+    _entry('garden_quiet_care', 'A Little Shade', 'Elden Vale',
+           'A quiet conversation leads the gardener to move a struggling plant beside the hedge.', _garden_care),
 )
 
 GALLERY_BY_ID = {entry.id: entry for entry in GALLERY_ENTRIES}

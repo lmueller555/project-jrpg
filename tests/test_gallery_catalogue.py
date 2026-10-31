@@ -138,6 +138,16 @@ class GalleryCatalogueTests(unittest.TestCase):
             elif identifier == 'grain_extra_sack':
                 self.assertTrue(game.world.grain_farm.state['scene_done'])
                 self.assertIn('grain_farm_extra_sack', scripts)
+            elif identifier == 'garden_quiet_care':
+                controller = game.world.garden_orchard
+                self.assertEqual(controller.state['gardener']['phase'], 'rest')
+                self.assertTrue(controller.state['gardener']['read'])
+                self.assertIn('garden_quiet_care', scripts)
+                self.assertEqual(tuple(controller.portable_positions()['plant'][0]), (-546, 1141))
+                self.assertEqual(tuple(controller.actors[0].position), (-552, 1164))
+                self.assertTrue(game.world.can_stand(controller.actors[0].position,
+                                                    controller.actors[0].probe_size,
+                                                    controller.actors[0]))
             elif identifier == 'bridge_tea':
                 self.assertEqual(game.world.bridge_crew.state['tea_beat'], 5)
                 self.assertIn('bridge_crew_tea', scripts)
