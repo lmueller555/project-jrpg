@@ -98,6 +98,12 @@ The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives t
 
 The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
 
+The [purposeful wildlife pass](docs/PURPOSEFUL_WILDLIFE_SCOPE.md) gives the existing
+sheep, birds and butterflies small local routines, with one farm cat resting and
+stretching by the southern doorstep. After the kitchen gardener finishes her
+plant-care scene, she takes an empty basket to the southern sheep for a brief
+visit. See the [actual-game review](docs/reviews/purposeful_wildlife/README.md).
+
 The [region NPC animation pass](docs/REGION_NPCS.md) adds authored full-body
 working and directional carrying poses for the grain and bridge workers, with registered
 hand grips and supported loads. Checkpoint guards have directional conversation

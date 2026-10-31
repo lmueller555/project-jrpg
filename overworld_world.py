@@ -216,6 +216,9 @@ class OverworldWorld:
         from garden_orchard import GardenOrchard
         self.garden_orchard = GardenOrchard(self)
         self.npcs.extend(self.garden_orchard.actors)
+        from purposeful_wildlife import PurposefulWildlife, REPLACED_PROP_IDS
+        self._wildlife_prop_ids = REPLACED_PROP_IDS
+        self.wildlife = PurposefulWildlife(self)
 
     @staticmethod
     def _tile_point(point):return tuple(value*TILE_SIZE for value in point)
@@ -450,6 +453,8 @@ class OverworldWorld:
         if farm and any(block.colliderect(rect) for block in farm.ground_blockers(ignore_npc)):return False
         garden = getattr(self, 'garden_orchard', None)
         if garden and any(block.colliderect(rect) for block in garden.ground_blockers(ignore_npc)):return False
+        wildlife = getattr(self, 'wildlife', None)
+        if wildlife and any(block.colliderect(rect) for block in wildlife.ground_blockers(ignore_npc)):return False
         return (not any(npc is not ignore_npc and npc.blocker.colliderect(rect) for npc in self.npcs)
                 and not any(block.colliderect(rect) for block in getattr(self, 'task_blockers', lambda: ())())
                 and (player_blocker is None or not player_blocker.colliderect(rect)))
@@ -538,7 +543,10 @@ class OverworldWorld:
             for cy in range(expanded.top//CHUNK_PIXELS, (expanded.bottom-1)//CHUNK_PIXELS+1):
                 metadata = self._chunk_metadata(cx, cy)
                 if metadata:
-                    yield from metadata['props']
+                    # The regional controller owns these identities once. Chunk
+                    # reactivation must never resurrect the decorative copies.
+                    yield from (prop for prop in metadata['props']
+                                if prop.get('id') not in self._wildlife_prop_ids)
         town = self.region.get('town')
         if town:yield {'key':'eldenmere', 'position': self._tile_point(town['tile_position'])}
         bridge = self.region.get('bridge')
@@ -602,6 +610,7 @@ class OverworldWorld:
         ordered.extend(self.garden_orchard.props())
         ordered.extend(self.grain_farm.props())
         ordered.extend(self.grain_farm.cover_props())
+        ordered.extend(self.wildlife.props())
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:
             if not getattr(actor,'story_visible',True):continue
             position = getattr(actor,'story_position',None) or actor.position
