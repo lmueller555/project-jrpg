@@ -75,3 +75,15 @@ See [gameplay captures](reviews/garden_orchard/README.md) for actual-game video,
 normal-scale stills, scripted fixture disclosure and the audible capture method.
 Automated coverage is in `tests/test_garden_orchard.py`. No animal AI, interior,
 bench interaction for Caelan, delivery, bridge/gate or quest changes are included.
+
+## Validation boundary
+
+The production regression command is `python -m pytest tests -q`. A broader
+repository-wide pytest sweep also collects historical art tools. Three tests in
+`tools/test_eldenmere_sanctuary_interior.py` fail unchanged on base main
+`aa9456b5e75df711809c52eddbb6b190da036793`: optional inspection-line text,
+old exported scene reconstruction, and old blocking-mask reconstruction. These
+were reproduced in a detached baseline worktree (three failed, four passed).
+This PR does not rewrite those unrelated sanctuary fixtures. The audio PCM
+uniqueness check now covers the declared sound collection rather than hardcoding
+the former seven-sound count; all ten materials pass its level/distinctness checks.
