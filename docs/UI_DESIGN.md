@@ -11,6 +11,11 @@ character frames. Interface text is drawn separately at the actual output
 resolution with antialiasing. Enlarging the world never enlarges a small bitmap
 of its lettering.
 
+Gallery playback reserves a separate toolbar above its complete 480×320 scene.
+This preview viewport uses nearest-neighbor fitting when an integer scale cannot
+fill the available area; text is still rasterized at the output resolution.
+The toolbar never covers dialogue, actors or the production Skip button.
+
 Atkinson Hyperlegible Regular and Bold are bundled with the game. Their distinct
 letter shapes and punctuation are used for dialogue, objectives, menus and the
 journal; the approved serif game logo remains on the title screen. Font origin
@@ -47,6 +52,8 @@ a report. Camera, world animation and other NPC routines continue normally.
 
 The title keeps its approved animated scene and bottom-center menu. Pause,
 settings, buttons and selections use the shared green-and-brass treatment.
+Gallery uses the same treatment with lazy-loaded scene thumbnails, wrapped names
+and descriptions, a visible scrollbar, and retained selection on replay return.
 Volume controls display percentages and accept mouse adjustment and keyboard
 left/right or plus/minus. Readability settings apply to both title and gameplay.
 At larger text sizes, settings can scroll; wheel navigation and keyboard

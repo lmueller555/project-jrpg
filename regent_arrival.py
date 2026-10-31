@@ -478,7 +478,8 @@ class RegentArrival:
         if self.phase.get('caption'):painter.text(self.phase['caption'], (240, 24), color=IVORY, anchor='midtop')
         if self.fade_alpha:painter.veil(self.fade_alpha)
         painter.button(self.skip_rect,'Skip')
-        painter.text('Esc · Resume' if self.paused else 'Esc · Pause', (12,self.skip_rect.centery), role='small',color=MUTED,anchor='midleft')
+        pause_key = 'P' if getattr(self.game, '_is_gallery_preview', False) else 'Esc'
+        painter.text(f'{pause_key} · Resume' if self.paused else f'{pause_key} · Pause', (12,self.skip_rect.centery), role='small',color=MUTED,anchor='midleft')
         if self.paused or not self.focused or not self.game._music_focused:
             rect = pygame.Rect(193,264,94,26)
             painter.panel(rect);painter.text('Paused',rect.center,role='label',color=IVORY,bold=True,anchor='center')
