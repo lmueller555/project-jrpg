@@ -133,7 +133,11 @@ class GrainFarm:
         self.state.update(changes)
         game.save_progress()
 
-    def _coworker_work(self, seconds, player):
+    def _sound(self, game, key, name, actor):
+        audio = getattr(game, 'regional_audio', None)
+        if audio:audio.emit('farm_'+key, name, lambda: actor.position, 'farm')
+
+    def _coworker_work(self, seconds, player, game):
         """Walk around the south of the parked cart, clear of the loading lane."""
         actor=self.coworker
         if self.coworker_stop==6:
@@ -144,7 +148,10 @@ class GrainFarm:
         target=COWORKER_ROUTE[self.coworker_stop]
         if self._walk(actor,target,seconds,player):
             if self.coworker_stop==2:
-                actor.facing='left';actor.pose='work';self.coworker_timer+=seconds
+                actor.facing='left';actor.pose='work'
+                if self.coworker_timer < .6 <= self.coworker_timer+seconds:
+                    self._sound(game,'lash','creak',actor)
+                self.coworker_timer+=seconds
                 if self.coworker_timer<3:return
             self.coworker_stop+=1;self.coworker_timer=0
 
@@ -160,14 +167,21 @@ class GrainFarm:
             self.dialogue_running=False
             self._stage('ready')
         seconds=min(seconds,.1)
+        previous_timer=self.timer
         self.timer+=seconds
         for actor in self.actors:actor.clock+=seconds;actor.moving=False
         player=self.world.probe_rect(game.player.position)
         loaded=self.state['loaded']
+        if self.stage in ('lift','cover','uncover') and previous_timer < .6 <= self.timer:
+            self._sound(game,'cloth','rustle',self.loader)
+        if self.stage == 'check' and previous_timer < .6 <= self.timer:
+            self._sound(game,'lash','creak',self.loader)
+        if self.stage == 'help_place' and previous_timer < .8 <= self.timer:
+            self._sound(game,'extra_place','sack',self.loader)
         if self.stage not in ('ready','help_approach','help_place','help_return','check_walk','check'):
-            self._coworker_work(seconds,player)
+            self._coworker_work(seconds,player,game)
         elif self.stage=='ready' and self.coworker_stop!=6:
-            self._coworker_work(seconds,player)
+            self._coworker_work(seconds,player,game)
         if self.stage=='inspect':
             self.loader.pose='lift'
             if self.timer>=2:
@@ -189,6 +203,7 @@ class GrainFarm:
         elif self.stage=='place':
             self.loader.pose='place'
             if self.timer>=1.2:
+                self._sound(game,'place','sack',self.loader)
                 self._commit(game,loaded=loaded+1)
                 self._stage('return')
         elif self.stage=='return':

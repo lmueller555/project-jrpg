@@ -28,6 +28,7 @@ from opening import OpeningSequence
 from opening_cinematic import OpeningCinematic
 from regent_arrival import RegentArrival
 from opening_audio import MorningAudio
+from regional_audio import RegionalAudio
 from audio_settings import AudioSettings
 from game_music import GameMusic
 from pause_menu import PauseMenu
@@ -458,6 +459,7 @@ class Game:
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
         self.overworld_travel=OverworldTravel(self)
+        self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
@@ -712,6 +714,7 @@ class Game:
             self.player.position.update(landing)
         self.overworld_travel.finish_story_restore(regional_checkpoint)
         self.opening_audio.reset()
+        self.regional_audio.reset()
         self.pause.close()
         self.camera.reset()
         self.combat.prepare_world_resume()
@@ -997,6 +1000,13 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        self.regional_audio.update(seconds)
+        try:
+            self._update_world(seconds,direction,running)
+        finally:
+            self.regional_audio.update(0)
+
+    def _update_world(self,seconds,direction=None,running=None):
         if self.opening_cinematic.active:
             # The flashforward has its own scene clock and never advances the
             # present-day world, dialogue, quest actors or checkpoint clock.

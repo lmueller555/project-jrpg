@@ -426,6 +426,7 @@ class RegionalMapTests(unittest.TestCase):
         game.overworld_travel = SimpleNamespace(active=True)
         game.quest_ui.journal_open = False
         game.opening_audio = Mock()
+        game.regional_audio = Mock()
         game.elapsed_ms = 1234
         game.opening_fade = 0
         game.update(.5, (1, 0), True)

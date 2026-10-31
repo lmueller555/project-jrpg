@@ -123,6 +123,8 @@ class BridgeCrew:
         if game.player.position.distance_to(SOURCE)>260 or game.social.locked:return
         # A cancelled page leaves its physical beat available on the next E.
         if self.dialogue_running:self.dialogue_running = False
+        previous_timer = self.timer
+        previous_clocks = {a:a.clock for a in self.actors}
         seconds = min(seconds,.1); self.timer += seconds
         for actor in self.actors:actor.clock += seconds; actor.moving = False
         player = self.world.probe_rect(game.player.position)
@@ -203,6 +205,22 @@ class BridgeCrew:
             if self.timer>1:
                 self._commit(game,tea_beat=5);self._stage('ready')
 
+        audio = getattr(game, 'regional_audio', None)
+        if audio:
+            if stage == 'wobble' and previous_timer < .8 <= self.timer:
+                audio.emit('bridge_cup_stone','cup',(-2368,600),'ceramic',3)
+            if stage == 'wobble' and self.stage == 'reach':
+                audio.emit('bridge_cup_tray','cup',SAFE,'ceramic',3)
+            if stage == 'tray_place' and self.stage == 'ready':
+                audio.emit('bridge_cup_return','cup',KETTLE,'ceramic',3)
+            for actor in self.actors:
+                # Two-frame work pose lowers the hand on odd .6s frames.
+                if actor is self.working_tool_actor() and actor.pose == 'work' and int(actor.clock/.6)%2 == 1 and int(previous_clocks[actor]/.6)%2 == 0:
+                    audio.emit('bridge_tool','stone',lambda a=actor:a.position,'masonry')
+
+    def working_tool_actor(self):
+        return self.tender if self.stage == 'sit' and self.tender.position.distance_to(SOURCE)<.1 else self.mason
+
     def nearby(self,game):
         actor=min(self.actors,key=lambda a:a.position.distance_squared_to(game.player.position))
         return actor if actor.position.distance_to(game.player.position)<=34 else None
@@ -274,7 +292,7 @@ class BridgeCrew:
         elif stage in ('tray_return','tray_up','tray_across'):cup=self.tender.position+(-1,-11)
         if stage=='cup_return':cup=(self.mason.position+(9,-11)).lerp(self.tender.position+(-1,-11),min(1,self.timer))
         add('cup',cup,cup.y+24)
-        tool=self.tender if stage=='sit' and self.tender.position.distance_to(SOURCE)<.1 else self.mason
-        point=tool.position+(9,-10) if tool.pose=='work' else pygame.Vector2(SOURCE)+(10,-3)
+        tool=self.working_tool_actor()
+        point=tool.position+(9,-10+int(tool.clock/.6)%2) if tool.pose=='work' else pygame.Vector2(SOURCE)+(10,-3)
         add('tool',point,point.y+18)
         return result

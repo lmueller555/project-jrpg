@@ -25,6 +25,7 @@ class AudioSettings:
         self.tracker_visible = True
         self.error = None
         self._music_controller = None
+        self._effects_controllers = weakref.WeakSet()
         saved = self.store.load()
         if saved is not None:
             keys = ('music_volume', 'effects_volume', 'last_music', 'last_effects')
@@ -86,6 +87,9 @@ class AudioSettings:
         if self.store.enabled:
             self.error = None if self.store.write(self.to_dict()) else self.store.error
 
+    def bind_effects(self, controller):
+        self._effects_controllers.add(controller)
+
     def bind_music(self, controller):
         """Let this game's soundtrack apply its own track/fade/duck mix."""
         self._music_controller = weakref.ref(controller)
@@ -114,6 +118,8 @@ class AudioSettings:
             setattr(self, '_last_'+kind, value)
         if kind == 'music':
             self.apply_music()
+        if kind == 'effects':
+            for controller in self._effects_controllers:controller.refresh_volume()
         self._save()
         return True
 
