@@ -56,8 +56,8 @@ destroys Eldenmere's southern connection. Aldric arrives after aiding a couple
 of other affected communities, seeking enough stone for regional repairs.
 The marked ridge reserve, incomplete public hazard evidence, Serene's material
 help and Aldric's disputed shallow trial cut now give their disagreement
-concrete stakes. The end-MQ02 arrival scene and revised MQ03 dialogue remain
-pending runtime implementation. This small number of early incidents does not
+concrete stakes. The end-MQ02 arrival scene and revised MQ03 dialogue now
+present this context in the game. This small number of early incidents does not
 move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
 
 **Function:** Establish the protagonist's lived faith, community, political tensions, and personal loss.

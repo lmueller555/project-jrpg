@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_left": "stand_left.png",
+    "listen_left": "listen_left.png",
+    "gesture_left": "gesture_left.png",
+    "stand_right": "stand_right.png",
+    "stand_back": "stand_back.png"
+  },
+  "loops": {
+    "walk_left": [
+      {
+        "file": "walk_0.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_1.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_2.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_3.png",
+        "duration_ms": 160
+      }
+    ],
+    "walk_back": [
+      {
+        "file": "walk_back_0.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_back_1.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_back_2.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_back_3.png",
+        "duration_ms": 160
+      }
+    ]
+  },
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

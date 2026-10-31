@@ -3,8 +3,9 @@
 **Status: Approved world name, broad geography, regional cultural foundations
 and opening regional context.**
 
-**Implementation:** The recent surge damage and covenant context below are
-approved documentation; runtime and map-art integration remain pending.
+**Implementation:** The Elden Vale overworld shows the ruined western crossing
+and road damage. Aldric's arrival and MQ03 dialogue present the relief and
+covenant context below. The classroom world-map artwork is unchanged.
 
 **Auratia** contains four major continents, a significant central island chain
 and a northern circumpolar ocean region.

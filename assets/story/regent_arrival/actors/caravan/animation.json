@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "canvas": [
+    300,
+    144
+  ],
+  "anchor": [
+    150,
+    136
+  ],
+  "poses": {
+    "parked_left": "walk_0.png",
+    "stand_left": "walk_0.png",
+    "parked_back": "walk_back_0.png"
+  },
+  "loops": {
+    "walk_left": [
+      {
+        "file": "walk_0.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_1.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_2.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_3.png",
+        "duration_ms": 200
+      }
+    ],
+    "walk_back": [
+      {
+        "file": "walk_back_0.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_back_1.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_back_2.png",
+        "duration_ms": 200
+      },
+      {
+        "file": "walk_back_3.png",
+        "duration_ms": 200
+      }
+    ]
+  },
+  "driver_offset": [
+    -4,
+    -28
+  ],
+  "driver_seated_pose": "seated_left",
+  "driver_baked_poses": [
+    "walk_back",
+    "parked_back"
+  ],
+  "source": "imagegen-authored horse/provision wagon; rear view includes its correctly back-facing driver"
+}

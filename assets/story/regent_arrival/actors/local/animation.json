@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_right": "stand_right.png",
+    "talk_right": "talk_right.png"
+  },
+  "loops": {},
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

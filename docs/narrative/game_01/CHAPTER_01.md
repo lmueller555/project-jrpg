@@ -41,8 +41,8 @@ biography, line of dialogue, map, mechanic or detail of the coming disaster.
 Later explicit approvals are recorded in their linked guides. The approved
 [regional surges and relief visit](REGIONAL_SURGES.md) and
 [sanctuary covenant](../../world/SANCTUARY_COVENANT.md) now govern the revised
-MQ02/MQ03 story. Their arrival cutscene and revised dialogue are pending runtime
-implementation; current gameplay descriptions below retain that distinction.
+MQ02/MQ03 story. The [arrival cinematic](../../REGENT_ARRIVAL.md) and revised MQ03
+dialogue now implement that approved opening context.
 
 ## Approved regional background
 

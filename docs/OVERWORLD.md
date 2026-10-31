@@ -99,8 +99,9 @@ The engine can reconstruct the repaired crossing from the fact for later work;
 this PR implements the destroyed state experienced during the opening.
 
 The intact land checkpoints reserve a route for Aldric's relief caravan, which
-must not arrive across the ruined bridge. Its arrival cutscene and MQ03 dialogue
-rewrite remain separate story work. No new quest, random encounter, original
+must not arrive across the ruined bridge. The [arrival cinematic](REGENT_ARRIVAL.md)
+uses the southern land checkpoint and preserves the broken crossing and the
+player's travel restrictions. No new quest, random encounter, original
 temple location, named southern town or old ridge sanctuary marker is added.
 
 ## Streaming and coordinates

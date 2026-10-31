@@ -26,6 +26,7 @@ from quest_ui import QuestUI
 from save_game import SaveStore
 from opening import OpeningSequence
 from opening_cinematic import OpeningCinematic
+from regent_arrival import RegentArrival
 from opening_audio import MorningAudio
 from audio_settings import AudioSettings
 from game_music import GameMusic
@@ -447,6 +448,7 @@ class Game:
         self.venn_visit=VennVisit(self)
         self.opening_conclusion=OpeningConclusion(self)
         self.mill_quest=MillQuest(self)
+        self.regent_arrival=RegentArrival(self)
         self.regent_quest=RegentQuest(self)
         self.lantern_quest=LanternQuest(self)
         self.household_visits=(self.lantern_quest,self.regent_quest,self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
@@ -477,13 +479,16 @@ class Game:
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
+                           'regent_arrival':self.regent_arrival.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
                            'overworld':self.overworld_travel.to_dict(),
                            'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
-    def household_action(self):return any(visit.locks_player for visit in self.household_visits)
+    def household_action(self):
+        return (self.regent_arrival.active or self.regent_arrival.state=='pending' or
+                any(visit.locks_player for visit in self.household_visits))
 
     def _sync_inventory(self):
         """Grant entrusted supplies once; reconcile older quest-only journeys."""
@@ -549,6 +554,7 @@ class Game:
                (MillQuest.valid_journey(data) if 'mill_quest' in data else
                 set(data['quests']['quests'].get('CH01_MQ02',{}).get('completed_objectives',[])) <= {'meet_mira'}) and
                ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked') and
+               ('regent_arrival' not in data or RegentArrival.valid_journey(data)) and
                (RegentQuest.valid_journey(data) if 'regent_quest' in data else
                 data['quests']['quests'].get(REGENT_QUEST,{}).get('status','locked') in ('locked','available')) and
                (LanternQuest.valid_journey(data) if 'lantern_quest' in data else
@@ -618,6 +624,7 @@ class Game:
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
         self.opening_cinematic.reset()
+        self.regent_arrival.reset()
         self.combat.reset()
         self.lattice=AetherLattice()
         if data is not None and 'aether_lattice' in data:
@@ -685,6 +692,7 @@ class Game:
         # Older completed mill journeys gain the new visit without replaying MQ02.
         if self.quests.status(MILL_QUEST)=='completed' and self.quests.status(REGENT_QUEST)=='locked':
             self.quests.unlock(REGENT_QUEST);self.quests.drain_events()
+        self.regent_arrival.restore(data.get('regent_arrival') if data else None)
         self.regent_quest.restore(data.get('regent_quest') if data else None)
         if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
             self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()
@@ -715,6 +723,7 @@ class Game:
                 self.on_title=True
                 return False
         self.save_progress()
+        self.regent_arrival.maybe_start()
         return True
 
     def save_progress(self):
@@ -736,6 +745,7 @@ class Game:
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
                            'regent_quest':self.regent_quest.to_dict(),
+                           'regent_arrival':self.regent_arrival.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
@@ -856,6 +866,7 @@ class Game:
         self._ensure_ui_surface()
 
     def handle_events(self):
+        self.regent_arrival.begin_input_batch()
         advanced=False
         resumed=False
         for event in pygame.event.get():
@@ -883,6 +894,12 @@ class Game:
                 self.music.set_paused(not self._music_focused or
                                       self.opening_cinematic.paused)
                 resumed=not self.opening_cinematic.active
+                continue
+            if self.regent_arrival.active or self.regent_arrival.state=='pending':
+                if self.regent_arrival.active:self.regent_arrival.handle_event(event)
+                self.music.set_paused(not self._music_focused or
+                                      self.regent_arrival.paused)
+                resumed=not self.regent_arrival.active
                 continue
             if self.combat.active:
                 self.combat.handle_event(event)
@@ -988,6 +1005,14 @@ class Game:
             self.music.set_ducked(False)
             self.music.update(seconds)
             self.opening_cinematic.update(seconds)
+            return
+        if not self.on_title:self.regent_arrival.maybe_start()
+        if self.regent_arrival.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.regent_arrival.paused)
+            self.music.set_ducked(self.regent_arrival.dialogue is not None)
+            self.music.update(seconds)
+            self.regent_arrival.update(seconds)
             return
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
@@ -1235,6 +1260,13 @@ class Game:
         if self.opening_cinematic.active:
             _,size,origin=self._ensure_ui_surface()
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19')
+            self.window.blit(self.ui_surface,origin)
+            pygame.display.flip()
+            return
+        if self.regent_arrival.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.regent_arrival.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
             pygame.display.flip()

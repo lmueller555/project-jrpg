@@ -63,6 +63,8 @@ class Capture:
                              'restored':True,'verified':True,'resolved':True})
         g.opening.restore({'version':1,'stage':'disabled'})
         if g.quests.status(REGENT_QUEST)=='locked':assert g.quests.unlock(REGENT_QUEST)
+        # Seed a legacy completed-mill journey; arrival has already happened.
+        g.regent_arrival.restore(None)
         self.c.restore(None)
         g.world=self.c.world_for_station('preparations')
         g.player.position.update(self.c.points['preparations'])

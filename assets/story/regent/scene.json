@@ -18,7 +18,7 @@
     },
     {
       "speaker": "serene",
-      "text": "Caelan, would you meet our visitors by the brook? Bring them in here when they're ready. I'd rather not leave all this unattended."
+      "text": "Caelan, would you meet our visitors by the lower bridge? Bring them in here when they're ready. I'd rather not leave all this unattended."
     },
     {
       "speaker": "caelan",
@@ -27,6 +27,14 @@
     {
       "speaker": "serene",
       "text": "Four, according to the letter. I've prepared for six."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Is he here about the southern road?"
+    },
+    {
+      "speaker": "serene",
+      "text": "That, and the stone for the repairs. He asked to speak with me about the old sanctuary on the ridge."
     },
     {
       "speaker": "tomas",
@@ -38,7 +46,7 @@
     },
     {
       "speaker": "tomas",
-      "text": "(relieved) Good. I didn't want to be the only one doing it."
+      "text": "*relieved* Good. I didn't want to be the only one doing it."
     },
     {
       "speaker": "serene",
@@ -60,7 +68,7 @@
     },
     {
       "speaker": "aldric",
-      "text": "(with a small, relieved laugh) Then perhaps our timing isn't quite as bad as I feared."
+      "text": "*with a small, relieved laugh* Then perhaps our timing isn't quite as bad as I feared."
     },
     {
       "speaker": "caelan",
@@ -92,7 +100,7 @@
     },
     {
       "speaker": "aldric",
-      "text": "(his concern easing) Good. He'll have enough work before the festival without that."
+      "text": "*his concern easing* Good. He'll have enough work before the festival without that."
     },
     {
       "speaker": "regent_driver",
@@ -110,7 +118,7 @@
     },
     {
       "speaker": "road_foreman",
-      "text": "We spent half of it waiting for the stone."
+      "text": "We spent half of it waiting for enough stone to make the haul."
     },
     {
       "speaker": "venn_father",
@@ -122,7 +130,7 @@
     },
     {
       "speaker": "venn_father",
-      "text": "(his temper rising) And you know why I need my cart back!"
+      "text": "*his temper rising* And you know why I need my cart back!"
     },
     {
       "speaker": "road_foreman",
@@ -138,7 +146,7 @@
     },
     {
       "speaker": "road_foreman",
-      "text": "For the stone haul. The delivery was delayed."
+      "text": "For the stone haul. The delivery was short. The other repair crews are waiting on the same supply."
     },
     {
       "speaker": "aldric",
@@ -186,7 +194,7 @@
     },
     {
       "speaker": "aldric",
-      "text": "(rubbing his brow) I understand. Send me the revised figures. We'll deal with that separately."
+      "text": "*rubbing his brow* I understand. Send me the revised figures. We'll deal with that separately."
     },
     {
       "speaker": "aldric",
@@ -210,7 +218,7 @@
     },
     {
       "speaker": "venn_father",
-      "text": "Thank you. And—well. I wasn't trying to hold up the road."
+      "text": "Thank you. And\u2014well. I wasn't trying to hold up the road."
     },
     {
       "speaker": "aldric",
@@ -218,7 +226,7 @@
     },
     {
       "speaker": "venn_father",
-      "text": "(exhaling) Right. Can I take it now?"
+      "text": "*exhaling* Right. Can I take it now?"
     },
     {
       "speaker": "road_foreman",
@@ -264,11 +272,11 @@
     },
     {
       "speaker": "tomas",
-      "text": "(surprised) You walked?"
+      "text": "*surprised* You walked?"
     },
     {
       "speaker": "aldric",
-      "text": "(laughing) After sitting in it all morning, I was glad to."
+      "text": "*laughing* After sitting in it all morning, I was glad to."
     },
     {
       "speaker": "regent_driver",
@@ -286,71 +294,75 @@
   "discussion": [
     {
       "speaker": "aldric",
-      "text": "I've looked at the survey again. The proposed cuts are well clear of the sanctuary buildings."
+      "text": "Thank you for the meal. Before I lose you to the festival preparations, may we look at the ridge survey?"
     },
     {
       "speaker": "serene",
-      "text": "They're still inside the protected boundary."
+      "text": "Of course. I've brought what we have about the old sanctuary. Let me move these cups."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I'll take them."
     },
     {
       "speaker": "aldric",
-      "text": "I know. That is why I'm asking."
+      "text": "The nearer seam is here. The surveyors believe we could reach it without going near the standing walls."
     },
     {
       "speaker": "serene",
-      "text": "And I'm trying to explain why the distance from the buildings doesn't settle it. The covenant protects the ground beneath them too."
+      "text": "Inside the sanctuary boundary."
     },
     {
       "speaker": "aldric",
-      "text": "The stone the crew was waiting for comes from three days away. There is a nearer seam on the survey."
+      "text": "Yes. I haven't forgotten your letter."
     },
     {
       "speaker": "serene",
-      "text": "Within that boundary."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Yes. I need someone to explain what it protects."
+      "text": "I know you haven't. But the covenant covers the hillside and the works beneath it too. The walls we can see are only part of what we've agreed to care for. That keeping belongs to all of us. I can't give it away on my own."
     },
     {
       "speaker": "serene",
-      "text": "I can tell you what the covenant requires. I can't give you a complete account of why every boundary was drawn."
+      "text": "In our faith, we receive life and return it to the gods. These places were entrusted to the living in the same spirit. I owe that keeping to the people who come after us."
     },
     {
       "speaker": "aldric",
-      "text": "That is what I keep being told."
+      "text": "And the stone we can use is already promised to repair crews across the region. More can come from farther away, but every longer haul ties up a cart another crew needs. The supply is stretched as it is."
     },
     {
       "speaker": "serene",
-      "text": "I know."
+      "text": "The southern road still has people cut off from their usual route. I understand why you want another source."
     },
     {
       "speaker": "aldric",
-      "text": "Meanwhile, every additional journey costs money that could have repaired something else."
+      "text": "That surge broke stone we thought would outlast us. Now every damaged crossing and stretch of road needs material at once. A nearer quarry could make a difference well beyond Eldenmere."
     },
     {
       "speaker": "serene",
-      "text": "I understand that it's costing more."
+      "text": "There is something here your engineer should read before deciding where to cut. This is an old maintenance account."
     },
     {
       "speaker": "aldric",
-      "text": "More money. More time. Work left unfinished elsewhere."
+      "text": "May I?"
     },
     {
       "speaker": "serene",
-      "text": "Yes."
+      "text": "*passes him the account* The workers opened a passage beneath the sanctuary. A small discharge injured them. They couldn't explain what caused it. They closed the passage again."
     },
     {
       "speaker": "aldric",
-      "text": "(frustration showing) Then I need more than another letter telling me to wait."
-    },
-    {
-      "speaker": "aldric",
-      "text": "I'm sorry. You have answered my letters."
+      "text": "*reads for a moment* Does it say where the discharge came from?"
     },
     {
       "speaker": "serene",
-      "text": "(quietly) I'm frustrated too. I would like to give you something more useful."
+      "text": "No. Or how far the passage went. I wish it did."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Can you tell whether it has anything to do with the lightning we've been seeing?"
+    },
+    {
+      "speaker": "serene",
+      "text": "I can't. This tells us what happened to those workers. It doesn't explain the recent surges."
     },
     {
       "speaker": "caelan",
@@ -358,43 +370,59 @@
     },
     {
       "speaker": "aldric",
-      "text": "A preliminary excavation to examine the seam. The surveyors propose working in the ridge, clear of the buildings."
+      "text": "A small cut, with my engineer present. If we encounter old masonry, we stop."
     },
     {
       "speaker": "serene",
-      "text": "But within the protected ground. That is the part we still disagree about."
-    },
-    {
-      "speaker": "serene",
-      "text": "I will request the relevant records and ask for a joint review. Your surveyors should be able to put their questions directly to the order."
+      "text": "*unfolds the old plan* These foundations disappear into the hillside. We don't know where your first cut would meet them."
     },
     {
       "speaker": "aldric",
-      "text": "How soon could that happen?"
+      "text": "Then help us establish that. I've come through two other communities waiting for repairs. They need an answer too."
     },
     {
       "speaker": "serene",
-      "text": "I can send the request today. I can't promise when they'll answer."
+      "text": "Take the stone we've set aside for the courtyard. I'll have food prepared for the crew, and I'll walk the boundary with your engineer."
     },
     {
       "speaker": "aldric",
-      "text": "(wearily) Everyone needs more time."
+      "text": "*his expression softens* Thank you. That will help. But it won't give us enough."
     },
     {
       "speaker": "serene",
-      "text": "I know you're tired of hearing it."
+      "text": "*quietly* I know. I'm asking you to investigate ground we have reason to distrust. I owe you my help in doing that."
     },
     {
       "speaker": "aldric",
-      "text": "Please send it. And let me know when you have a reply."
+      "text": "The trial would be shallow, clear of every wall marked here. I'm asking to find out what stone is there."
     },
     {
       "speaker": "serene",
-      "text": "I will. I am still not endorsing excavation on what we know today."
+      "text": "And I can't tell you that the unmarked ground is clear. Let us inspect the surface together. Your engineer can have copies of both records, and I'll request any further plans and accounts the order holds."
     },
     {
       "speaker": "aldric",
-      "text": "I understand your answer. Thank you for hearing me out."
+      "text": "You're agreeing to the inspection, then?"
+    },
+    {
+      "speaker": "serene",
+      "text": "On the surface, yes. I am not endorsing the trial cut. That account concerns an opening too; we don't yet know what made it dangerous."
+    },
+    {
+      "speaker": "aldric",
+      "text": "*looks back at the plan* I'll have my engineer speak with you. And please send for those records."
+    },
+    {
+      "speaker": "serene",
+      "text": "I will. We'll arrange the stone and the meals as well."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Thank you. I still need an answer about the seam."
+    },
+    {
+      "speaker": "serene",
+      "text": "I know. I haven't put your request aside."
     }
   ],
   "aftermath": [
@@ -408,19 +436,19 @@
     },
     {
       "speaker": "caelan",
-      "text": "He didn't seem angry earlier."
+      "text": "He looked tired."
     },
     {
       "speaker": "serene",
-      "text": "He had an answer he could give Mr. Venn."
+      "text": "It's been a difficult journey. There are people waiting for him to make things better."
     },
     {
       "speaker": "caelan",
-      "text": "And you couldn't give him one."
+      "text": "You still have more records to find?"
     },
     {
       "speaker": "serene",
-      "text": "(after a moment) Not the one he wanted. I still owe him the answer I promised."
+      "text": "I hope so. I'll send the request while the meal is cleared."
     },
     {
       "speaker": "caelan",
@@ -543,6 +571,12 @@
     {
       "speaker": "tomas",
       "text": "I'm trying to get these chairs ready before everyone arrives."
+    }
+  ],
+  "arrival_waiting": [
+    {
+      "speaker": "aldric",
+      "text": "Mother Serene is expecting us. We'll wait here until she's ready."
     }
   ]
 }

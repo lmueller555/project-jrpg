@@ -6,7 +6,8 @@ incidents, Aldric's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
 **Implementation:** The [Elden Vale overworld](../../OVERWORLD.md) now presents
 the lightning-destroyed western bridge and road damage on both banks. The
-arrival cutscene and revised runtime dialogue remain to be implemented.
+arrival cutscene and revised MQ03 runtime dialogue now present the relief visit
+and protected-ground disagreement. See [the arrival guide](../../REGENT_ARRIVAL.md).
 
 References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
 [MQ03](CH01_MQ03.md), [Elden Vale](../../world/regions/ELDEN_VALE.md),
@@ -107,9 +108,9 @@ with Serene preparing hospitality and Tomas helping. Caelan's role remains
 welcoming and guiding the visitors, witnessing the cart dispute and helping
 host them. He gains no legal or survey authority from the new context.
 
-Exact dialogue, shots, movement, camera timing, input ownership and save/reload
-handling for this arrival remain implementation work. This document does not
-claim that the new cutscene already plays or introduce a new save contract.
+The [arrival guide](../../REGENT_ARRIVAL.md) documents the cinematic's dialogue,
+shots, input ownership and saved handoff. The scene grants no new repair,
+checkpoint-release or excavation facts.
 
 ## Knowledge and longer-term continuity
 

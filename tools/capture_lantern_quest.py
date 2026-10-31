@@ -55,6 +55,8 @@ def seed_previous_quests(game):
     for objective in game.quests.definitions[REGENT_QUEST]['objectives']:
         assert game.quests.complete_objective(REGENT_QUEST, objective['id'])
     assert game.quests.turn_in(REGENT_QUEST, 'mother_serene')
+    # This fixture is an established journey beyond the new arrival boundary.
+    game.regent_arrival.restore(None)
     assert game.regent_quest.restore({'version': 1, 'stage': 'done'})
     if game.quests.status(LANTERN) == 'locked':assert game.quests.unlock(LANTERN)
     assert game.lantern_quest.restore(None)
