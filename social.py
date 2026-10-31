@@ -74,6 +74,11 @@ class SocialSystem:
         """Measure and draw using the same display-resolution font metrics."""
         if not hasattr(self.game, 'ui'):self.game.ui = UIStyle(self.game)
         if canvas is None and self._active_canvas is not None:canvas = self._active_canvas
+        if canvas is None and getattr(self.game, '_is_gallery_preview', False):
+            # Preview scenes fit below a separate toolbar. Input pagination must
+            # use that same fitted surface as draw, not an integer-size fallback.
+            self.game._ensure_ui_surface()
+            canvas = self.game.ui_surface
         if canvas is None:
             window = getattr(self.game, 'window', None)
             size = window.get_size() if window is not None else (480, 320)

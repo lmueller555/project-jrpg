@@ -382,15 +382,24 @@ def camera_for(position,world_size,view_size=VIEW_SIZE):
 
 
 class Game:
-    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None,settings_path=None):
+    def __init__(self,window_size=WINDOW_SIZE,fullscreen=True,start_on_title=True,save_path=None,settings_path=None,*,_preview_window=None,_preview_settings=None):
         pygame.display.init();pygame.font.init()
+        self._is_gallery_preview=_preview_window is not None
+        self.on_gallery=False
+        self.gallery=None
+        self.gallery_session=None
         self.fullscreen=fullscreen
         self.windowed_size=tuple(window_size)
-        self.window=pygame.display.set_mode((0,0) if fullscreen else self.windowed_size,
-                                            pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE)
+        self.window=(_preview_window if _preview_window is not None else
+                     pygame.display.set_mode((0,0) if fullscreen else self.windowed_size,
+                                            pygame.FULLSCREEN if fullscreen else pygame.RESIZABLE))
         pygame.display.set_caption('Project JRPG — Eldenmere')
         self.canvas=pygame.Surface(VIEW_SIZE)
-        self.audio=AudioSettings(settings_path)
+        self.audio=AudioSettings(None if self._is_gallery_preview else settings_path)
+        if self._is_gallery_preview and _preview_settings is not None:
+            for key in ('music_volume','effects_volume','text_scale','reduced_motion','tracker_visible',
+                        '_last_music','_last_effects'):
+                setattr(self.audio,key,getattr(_preview_settings,key))
         self.music=GameMusic(self)
         self._music_focused=True
         self.ui=UIStyle(self)
@@ -461,13 +470,46 @@ class Game:
         self.overworld_travel=OverworldTravel(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
-        self.save_store=SaveStore(save_path)
+        self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
         self._saved_progress=self._progress_signature()
         self._save_retry_seconds=0.0
         self.opening_fade=0.0
         self.music.play('eldenmere',fade_ms=900)
+
+    def open_gallery(self):
+        """The catalogue lives on the title; it never starts a normal journey."""
+        if self._is_gallery_preview or not self.on_title:return False
+        if self.gallery is None:
+            from gallery_ui import GalleryUI
+            self.gallery=GalleryUI(self)
+        self.on_gallery=True
+        self.title.fade=0
+        self.title._mouse_held=False
+        self.gallery.resume()
+        return True
+
+    def close_gallery(self):
+        if self.gallery_session is not None:self.gallery_session.close()
+        self.on_gallery=False
+        self.title.selected=self.title.options.index('Gallery')
+        self.title._mouse_held=False
+        self.title._pressed=None
+
+    def launch_gallery_scene(self,entry_id):
+        if not self.on_gallery or self.gallery_session is not None:return False
+        from cutscene_gallery import GALLERY_ENTRIES
+        from gallery_session import GallerySession
+        entry=next((entry for entry in GALLERY_ENTRIES if entry.id==entry_id),None)
+        if entry is None:return False
+        try:
+            self.gallery_session=GallerySession(self,entry)
+        except (OSError,ValueError,pygame.error) as error:
+            self.gallery.error=f'This scene could not open: {error}'
+            self.gallery.resume()
+            return False
+        return True
 
     def _progress_signature(self):
         return json.dumps({'quests':self.quests.to_dict(),
@@ -731,7 +773,7 @@ class Game:
 
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
-        if (self.on_title or self.opening_cinematic.active
+        if (self._is_gallery_preview or self.on_title or self.opening_cinematic.active
                 or not self.save_store.enabled):return False
         self._sync_inventory()
         saved_position=self.player.position
@@ -767,11 +809,10 @@ class Game:
         return True
 
     def to_canvas(self,point):
-        """Match draw's integer scaling, including fullscreen letterboxing."""
-        width,height=self.window.get_size()
-        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
-        x=(point[0]-(width-VIEW_SIZE[0]*scale)//2)/scale
-        y=(point[1]-(height-VIEW_SIZE[1]*scale)//2)/scale
+        """Match the rendered viewport, including preview and fullscreen borders."""
+        _,size,origin=self._ensure_ui_surface()
+        x=(point[0]-origin[0])*VIEW_SIZE[0]/size[0]
+        y=(point[1]-origin[1])*VIEW_SIZE[1]/size[1]
         return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
 
     def lattice_move_reason(self,target):return self.lattice_progression.move_reason(target)
@@ -794,10 +835,15 @@ class Game:
         return True
 
     def _ensure_ui_surface(self):
-        """UI pixels follow the display; world pixels retain integer scaling."""
+        """Display-resolution UI over nearest-scaled world pixels.
+
+        Normal play retains integer scaling. A Gallery preview fits its complete
+        scene below the separate toolbar, including at the minimum window size.
+        """
         width,height=self.window.get_size()
-        scale=max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1]))
-        size=(VIEW_SIZE[0]*scale,VIEW_SIZE[1]*scale)
+        scale=(min(width/VIEW_SIZE[0],height/VIEW_SIZE[1]) if self._is_gallery_preview else
+               max(1,min(width//VIEW_SIZE[0],height//VIEW_SIZE[1])))
+        size=(round(VIEW_SIZE[0]*scale),round(VIEW_SIZE[1]*scale))
         if self.ui_surface is None or self.ui_surface.get_size()!=size:
             self.ui_surface=pygame.Surface(size)
         return scale,size,((width-size[0])//2,(height-size[1])//2)
@@ -871,11 +917,18 @@ class Game:
         else:self.window=pygame.display.set_mode(self.windowed_size,pygame.RESIZABLE)
         self._ensure_ui_surface()
 
-    def handle_events(self):
+    def handle_events(self,events=None):
+        events=pygame.event.get() if events is None else events
+        if self.gallery_session is not None:
+            session=self.gallery_session
+            try:return session.handle_events(events)
+            except (OSError,ValueError,pygame.error) as error:
+                session.fail(error)
+                return True
         self.regent_arrival.begin_input_batch()
         advanced=False
         resumed=False
-        for event in pygame.event.get():
+        for event in events:
             if event.type==pygame.QUIT:
                 self.save_progress()
                 self.music.stop()
@@ -891,8 +944,14 @@ class Game:
                 self.window=pygame.display.set_mode((max(480,event.w),max(320,event.h)),pygame.RESIZABLE)
                 self._ensure_ui_surface()
                 continue
+            if resumed:continue
+            if self.on_gallery:
+                if self.gallery_session is None and not self.gallery.handle_event(event):return False
+                resumed=not self.on_gallery or self.gallery_session is not None
+                continue
             if self.on_title:
                 if not self.title.handle_event(event):return False
+                resumed=self.on_gallery
                 continue
             if resumed:continue
             if self.opening_cinematic.active:
@@ -962,12 +1021,12 @@ class Game:
                     continue
             if event.type==pygame.MOUSEMOTION:
                 self.social.pointer(self.to_canvas(event.pos),pressed=self._mouse_held)
-            if self.minimap.handle_event(event):
+            if not self._is_gallery_preview and self.minimap.handle_event(event):
                 # The opening click and its queued release belong to this HUD
                 # action, not to a landmark beneath the newly opened atlas.
                 resumed=True
                 continue
-            if not self.social.locked and self.quest_ui.handle_hud_event(event):continue
+            if not self._is_gallery_preview and not self.social.locked and self.quest_ui.handle_hud_event(event):continue
             if event.type==pygame.MOUSEBUTTONDOWN and event.button==1:
                 self.social.pointer(self.to_canvas(event.pos),pressed=True)
                 if (not self._mouse_held and not advanced and self.social.active
@@ -1002,6 +1061,16 @@ class Game:
         return True
 
     def update(self,seconds,direction=None,running=None):
+        if self.gallery_session is not None:
+            session=self.gallery_session
+            try:session.update(seconds)
+            except (OSError,ValueError,pygame.error) as error:session.fail(error)
+            return
+        if self.on_gallery:
+            self.music.set_paused(not self._music_focused)
+            self.music.update(seconds)
+            self.gallery.update(seconds)
+            return
         self.regional_audio.update(seconds)
         try:
             self._update_world(seconds,direction,running)
@@ -1056,7 +1125,7 @@ class Game:
             self.opening_audio.set_paused(True)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
-        self.combat.tick_world(seconds)
+        if not self._is_gallery_preview:self.combat.tick_world(seconds)
         if self.combat.active:
             # Contact can begin an encounter during this world update. Keep the
             # captured approach and every exploration clock frozen immediately.
@@ -1267,6 +1336,16 @@ class Game:
                 painter.text(line,(rect.x+9,rect.y+7+index*line_height),color=GOLD)
 
     def draw(self):
+        if self.gallery_session is not None:
+            session=self.gallery_session
+            try:session.draw()
+            except (OSError,ValueError,pygame.error) as error:
+                session.fail(error)
+                self.gallery.draw()
+            return
+        if self.on_gallery:
+            self.gallery.draw()
+            return
         if self.on_title:
             self.title.draw()
             return
@@ -1275,21 +1354,21 @@ class Game:
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            pygame.display.flip()
+            if not self._is_gallery_preview:pygame.display.flip()
             return
         if self.regent_arrival.active:
             _,size,origin=self._ensure_ui_surface()
             self.regent_arrival.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            pygame.display.flip()
+            if not self._is_gallery_preview:pygame.display.flip()
             return
         if self.combat.active:
             _,size,origin=self._ensure_ui_surface()
             self.combat.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            pygame.display.flip()
+            if not self._is_gallery_preview:pygame.display.flip()
             return
         camera=self.camera.position()
         self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
@@ -1300,12 +1379,13 @@ class Game:
         pygame.transform.scale(self.canvas,size,self.ui_surface)
         for routine in getattr(self.world,'play_routines',[]):
             routine.draw(self.ui_surface,camera,self.world)
-        self.quest_ui.draw_markers(self.ui_surface,camera)
-        self.draw_hud(self.ui_surface)
-        self.quest_ui.draw_tracker(self.ui_surface)
+        if not self._is_gallery_preview:
+            self.quest_ui.draw_markers(self.ui_surface,camera)
+            self.draw_hud(self.ui_surface)
+            self.quest_ui.draw_tracker(self.ui_surface)
         if not self.map_open and not self.quest_ui.journal_open:
             self.social.draw(self.ui_surface,self.elapsed_ms,camera=camera)
-        self.quest_ui.draw_notifications(self.ui_surface)
+        if not self._is_gallery_preview:self.quest_ui.draw_notifications(self.ui_surface)
         if self.save_error and not self.quest_ui.journal_open:
             painter=self.ui.painter(self.ui_surface)
             lines=painter.wrap('Progress could not be saved. Check the saves folder.',436,role='small')
@@ -1327,7 +1407,7 @@ class Game:
         self.world_map_viewer.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)
-        pygame.display.flip()
+        if not self._is_gallery_preview:pygame.display.flip()
 
 
 def main(argv=None):
