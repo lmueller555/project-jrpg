@@ -1,0 +1,22 @@
+{
+  "scene": "sanctuary_bedroom",
+  "entity": "bed",
+  "interaction_radius": 16,
+  "offer": [
+    {
+      "speaker": "caelan",
+      "text": "*stretches* A little rest would help."
+    }
+  ],
+  "prompt": "Rest here? Fully restores the party's HP and MP.",
+  "choices": [
+    {"text": "Rest", "action": "rest"},
+    {"text": "Not now", "action": "leave"}
+  ],
+  "complete": [
+    {
+      "speaker": "caelan",
+      "text": "*takes a steady breath* That's better. Ready to go."
+    }
+  ]
+}

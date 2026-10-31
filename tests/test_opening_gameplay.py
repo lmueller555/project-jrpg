@@ -254,24 +254,26 @@ class OpeningGameplayTests(unittest.TestCase):
         self.assertTrue(game.social.choosing)
         self.assertEqual(game.quests.status(OPENING_QUEST), 'available')
 
-    def test_optional_bed_inspection_uses_e_without_advancing_the_story(self):
+    def test_optional_bed_rest_offer_uses_e_without_advancing_the_story(self):
         game = self.new_game()
         self.finish_script(game)
         game.update(.6, (0, 0), False)
-        # Caelan steps onto the clear right bedside; inspect from the bed's
-        # authored access point rather than requiring a wide trigger radius.
+        # The real bedside remains reachable after the authored wake-up.
         self.walk_to(game, game.world.data['destinations']['bed'])
-        self.assertIn('E:', game.opening.interaction_hint())
+        self.assertEqual(game.bed_rest.interaction_hint(), 'E: rest')
         progress = game.quests.to_dict()
         position = game.player.position.copy()
         self.key(game, pygame.K_e)
         self.assertTrue(game.social.scripted)
-        self.assertEqual(game.social.script_identifier, 'bedroom_inspect_bed')
+        self.assertEqual(game.social.script_identifier, 'bed_rest_offer')
         self.assertEqual(game.social.page['speaker'], 'caelan')
         game.update(.2, (1, 0), True)
         self.assertGreater(game.player.position.x, position.x)
         self.assertTrue(game.social.scripted)
-        self.finish_script(game)
+        game.social.advance()
+        self.assertTrue(game.social.choosing)
+        self.click(game, game.social.choice_rects[1].center)
+        self.assertFalse(game.social.locked)
         self.assertEqual(game.opening.stage, 'explore')
         self.assertEqual(game.quests.to_dict(), progress)
 

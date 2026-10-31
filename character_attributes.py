@@ -156,6 +156,10 @@ class CharacterAttributes:
         self._current_hp, self._current_mp = hp, mp
         return True
 
+    def recover(self):
+        """Refill HP and MP to effective maxima, preserving growth and modifiers."""
+        return self.set_current(hp=self.value('hp'), mp=self.value('mp'))
+
     def to_dict(self):
         # Bonuses are stored by their owner, not copied into the base record.
         return {'version': SNAPSHOT_VERSION, 'character_id': self.character_id,
