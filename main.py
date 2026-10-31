@@ -803,6 +803,7 @@ class Game:
             self._overworld_world=OverworldWorld(REGION_FILE,progress_flags=self.social.flags)
             self._overworld_world.discovered=self.overworld_travel.discovered
             self._overworld_world.grain_farm.restore(self.overworld_travel.farm_state)
+            self._overworld_world.bridge_crew.restore(self.overworld_travel.bridge_state)
         self._overworld_world.set_progress(self.social.flags)
         return self._overworld_world
 
