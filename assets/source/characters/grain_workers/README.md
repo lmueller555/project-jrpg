@@ -1,24 +1,32 @@
-# Grain workers: source and export
+# Grain workers: authored body animations
 
-`pose_reference.png` is the unmodified image-generation work-pose reference made
-for this change, using the approved male_02 and male_03 front review images as
-appearance references. Requested poses were lifting, carrying, placing,
-stretching, checking rope, inspecting grain, assisting, and resting; the prompt
-specified the existing rust/charcoal and slate/brown costumes, planted feet,
-clear hand grips, hard pixels, and no scenery or lettering.
+The two grain workers retain the approved `male_02` rust/charcoal loader and
+`male_03` slate/brown coworker appearances. Their ordinary four-direction idles
+and walks remain read-only. The routine now uses image-authored full-body work
+and carrying sequences, with profiles and rear views suited to each action.
 
-This reference guides the grips and weight shifts. Runtime exports deliberately
-retain the approved villagers' layered heads, shirts, waists and legs rather
-than replacing the approved designs with the generated plate. The existing
-walk frames remain read-only. `tools/build_grain_workers.py` assembles the work
-poses from those appearance parts and explicitly registered arm joints, on a
-40×44 transparent canvas with the common [20,38] foot anchor. Carrying reuses all
-four approved leg phases; waiting in a blocked lane holds the first phase.
-The small sack and cover are controller-owned props, separate from the bodies.
+Each role has a source folder containing original generations, exact prompts,
+export registration and review images. The role exporters crop and uniformly
+register those authored bodies on a 40×44 transparent canvas with foot anchor
+[20,38]. Per-frame data records the sack attachment, palm contacts, timing and
+front/back depth. `grain_farm.py` chooses the pose and synchronizes the separate
+sack with that data. Stationary work uses planted feet and natural weight shifts;
+blocked carrying holds a supported load until the path clears.
 
-The new action exports have **review** status; this does not relabel any source
-or existing villager artwork as newly approved. Normal-zoom gameplay evidence
-is in `docs/reviews/grain_farm/`.
+`pose_reference.png` is retained as the original prototype reference. The former
+front-body arm assembler and its flat work-pose exports have been retired.
+The new role manifests are the live runtime source of work animation.
 
-Rebuild with `python tools/build_grain_workers.py` (Pillow required). Runtime
-needs only Pygame and reads the checked-in PNGs.
+The small sack and cloth are byte-identical to their earlier artwork. Canonical
+copies live under `common/`, allowing the shared builder to restore and verify
+them without changing their shape or palette.
+
+```sh
+python tools/build_grain_workers.py
+python tools/build_grain_workers.py --check
+```
+
+The shared command invokes `tools/build_grain_loader.py` and
+`tools/build_grain_coworker.py`, then checks/registers their manifests and props.
+Both role exporters also support `--check` independently. Gameplay review and
+verification live in `docs/reviews/region_npcs/`.

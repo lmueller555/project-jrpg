@@ -27,6 +27,8 @@ class OverworldTravel:
         self._region_armed = False
         self.discovered = {'eldenmere'}
         self.farm_state = None
+        self._speaking_guard = None
+        self._guard_script = None
         self.bridge_state = None
         self.garden_state = None
 
@@ -92,6 +94,7 @@ class OverworldTravel:
 
     def restore(self, data=None):
         """Rearm only after leaving a destination's contact footprint."""
+        self._clear_guard()
         self._town_armed = False
         self._region_armed = False
         self.farm_state = (data or {}).get('grain_farm')
@@ -189,6 +192,7 @@ class OverworldTravel:
     def _commit(self, destination, position, facing, transition):
         g = self.game
         origin = g.world
+        self._clear_guard()
         if origin is g.town:
             g.exterior_position.update(g.player.position)
         g.world = destination
@@ -237,6 +241,10 @@ class OverworldTravel:
 
     def update(self, seconds=0):
         g = self.game
+        if self._speaking_guard is not None and (
+                not self.active or not g.social.locked
+                or g.social.script_identifier != self._guard_script):
+            self._clear_guard()
         if g._overworld_world is not None:
             g._overworld_world.set_progress(g.social.flags)
         if self.active:
@@ -275,6 +283,13 @@ class OverworldTravel:
                      if any(self.game.player.position.distance_to(point) <= 52
                             for point in gate.get('guard_positions', [gate['guard_position']]))), None)
 
+    def _clear_guard(self):
+        """Release the selected speaker on completion, cancellation or travel."""
+        if self._speaking_guard is not None:
+            self._speaking_guard.end_conversation()
+        self._speaking_guard = None
+        self._guard_script = None
+
     def interaction_hint(self):
         if self.active:
             hint = self.game.world.bridge_crew.interaction_hint(self.game)
@@ -304,8 +319,18 @@ class OverworldTravel:
             text = 'The road is open. Travel safely.'
         guards = [actor for actor in self.game.world.npcs
                   if actor.data['id'].startswith('road_guard:'+gate['id']+':')]
-        if guards:
-            actor = min(guards, key=lambda actor: actor.position.distance_squared_to(self.game.player.position))
-            self.game.social.data['speakers']['road_guard']['actor_id'] = actor.data['id']
-        return self.game.social.start_script([{'speaker': 'road_guard', 'text': text}],
-                                              identifier='overworld_guard_'+gate['id'])
+        if not guards:return False
+        actor = min(guards, key=lambda actor: actor.position.distance_squared_to(self.game.player.position))
+        self.game.social.data['speakers']['road_guard']['actor_id'] = actor.data['id']
+        identifier = 'overworld_guard_'+gate['id']
+        started = self.game.social.start_script([{'speaker': 'road_guard', 'text': text}],
+                                               on_complete=self._clear_guard, identifier=identifier)
+        if started:
+            from social import facing_toward
+            # Keep this approach facing for the entire exchange rather than
+            # rapidly flipping as the player moves around a planted guard.
+            actor.begin_conversation(facing_toward(self.game.player.position-actor.position),
+                                     self.game.elapsed_ms)
+            self._speaking_guard = actor
+            self._guard_script = identifier
+        return started

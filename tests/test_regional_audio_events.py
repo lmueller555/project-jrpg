@@ -12,7 +12,12 @@ class FarmAudioEvents(TestCase):
     until=farm_tests.GrainFarmTests.until
     ready=farm_tests.GrainFarmTests.ready
     def test_only_two_loaded_sacks_and_no_idle_impacts(self):
-        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+        def check_contact(key,*args):
+            if key=='farm_place':
+                self.assertEqual(self.f.stage,'place')
+                point=self.f.props()[2-self.f.state['loaded']][3]
+                self.assertEqual((point[0]+6,point[1]+10),(-810,208))
+        with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.ready();self.tick(300)
             self.assertEqual(sum(c.args[0]=='farm_place' for c in emit.call_args_list),2)
             self.assertTrue(any(c.args[1]=='rustle' for c in emit.call_args_list))
@@ -33,7 +38,15 @@ class BridgeAudioEvents(TestCase):
     dialogue=bridge_tests.BridgeCrewTests.dialogue
     scene=bridge_tests.BridgeCrewTests.scene
     def test_cup_contacts_once_and_completed_restore_silent(self):
-        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+        from bridge_crew import WORK_STONE,SAFE,KETTLE
+        targets={'bridge_cup_stone':(WORK_STONE[0],WORK_STONE[1]-9),
+                 'bridge_cup_tray':(SAFE[0],SAFE[1]-7),
+                 'bridge_cup_return':(KETTLE[0]+8,KETTLE[1]-11)}
+        def check_contact(key,*args):
+            if key in targets:
+                self.assertLessEqual(self.c.cup_position.distance_to(targets[key]),1.01)
+                self.assertIn(self.c.stage,('wobble','tray_place'))
+        with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.scene()
             keys=[c.args[0] for c in emit.call_args_list]
             for key in ('bridge_cup_stone','bridge_cup_tray','bridge_cup_return'):self.assertEqual(keys.count(key),1)
@@ -46,9 +59,17 @@ class BridgeAudioEvents(TestCase):
             self.tick()
             self.assertFalse(any(c.args[0]=='bridge_tool' for c in emit.call_args_list))
     def test_new_contact_keeps_full_duration_on_long_frame(self):
-        from bridge_crew import SOURCE,HELP
+        from bridge_crew import SOURCE,HELP,WORK_STONE
         self.c.restore({'sorted':3,'tea_beat':1,'request_read':True,'greeted':[]})
-        self.c.timer=.79
+        # Approach the actual authored frame that first rests the cup on the
+        # stone, rather than the retired two-frame animation's .8s deadline.
+        frames=self.c.tender.clips['offer_left']['frames']
+        index=next(i for i,f in enumerate(frames)
+                   if (HELP[0]+f['cup_offset'][0],HELP[1]+f['cup_offset'][1])
+                   ==(WORK_STONE[0],WORK_STONE[1]-9))
+        contact=sum(f['duration_ms'] for f in frames[:index])/sum(f['duration_ms'] for f in frames)*2
+        self.c.timer=contact-.01
+        self.c.tender.clock=self.c.timer
         self.g.audio.set_effects(1)
         self.g.update(.1,(0,0),False)
         self.assertIn('bridge_cup_stone',self.g.regional_audio.voices)

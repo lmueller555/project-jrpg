@@ -1,31 +1,45 @@
 {
-  "status": "review",
-  "anchor": [
-    20,
-    38
-  ],
+  "version": 1,
+  "status": "implemented",
   "canvas": [
     40,
     44
   ],
-  "source": "assets/source/characters/grain_workers/pose_reference.png",
-  "appearance": "approved male_02 and male_03 walk_front parts",
-  "grip_offsets": {
-    "lift": [
-      0,
-      -3
-    ],
-    "carry": [
-      0,
-      -11
-    ],
-    "place": [
-      10,
-      -9
-    ]
+  "anchor": [
+    20,
+    38
+  ],
+  "exporter": "tools/build_grain_workers.py",
+  "roles": {
+    "loader": {
+      "manifest": "loader/animation.json",
+      "sha256": "2939465cd212c27be84ea0e28650783c2b9962cb7f49ed56820d904cd9d2cf10"
+    },
+    "coworker": {
+      "manifest": "coworker/animation.json",
+      "sha256": "f9044cf828c62c92e180daea310ed904941b0cfadcd68fc74663b18dc61c7e28"
+    }
   },
-  "roles": [
-    "loader",
-    "coworker"
-  ]
+  "props": {
+    "sack": {
+      "file": "sack.png",
+      "source": "assets/source/characters/grain_workers/common/sack.png",
+      "sha256": "99cee271b931add8049b1d31700ce252da6c0c85d980d6b3b53c3e6ea52ba74b"
+    },
+    "cover": {
+      "file": "cover.png",
+      "source": "assets/source/characters/grain_workers/common/cover.png",
+      "sha256": "6518344d649defa8ad9b8468a7834d75ebab93d487473716b18f069672c28ab1"
+    }
+  },
+  "sack_anchor": [
+    6,
+    10
+  ],
+  "registration": "Per-frame sack offsets, palm contacts and depth layers belong to each authored sequence.",
+  "appearance": {
+    "loader": "male_02",
+    "coworker": "male_03"
+  },
+  "body_art": "Authored full-body frames; approved directional idle/walk art remains read-only."
 }

@@ -1,0 +1,832 @@
+{
+  "version": 1,
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "sequences": {
+    "cup_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_front_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -5,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_front_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -5,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_front_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -5,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_front_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -5,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_back_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_back_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_back_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_back_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_left_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_left_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_left_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_left_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "cup_right_0.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_right_1.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_right_2.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "cup_right_3.png",
+          "duration_ms": 180,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_hold_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cup_hold_front_0.png",
+          "duration_ms": 1000,
+          "cup_offset": [
+            -5,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -5,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_hold_back": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cup_hold_back_0.png",
+          "duration_ms": 1000,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "back",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_hold_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cup_hold_left_0.png",
+          "duration_ms": 1000,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "cup_hold_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "cup_hold_right_0.png",
+          "duration_ms": 1000,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "cup_layer": "front",
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "pickup_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "pickup_right_0.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            8,
+            -11
+          ],
+          "hands": [
+            [
+              7,
+              -14
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "pickup_right_1.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            8,
+            -11
+          ],
+          "hands": [
+            [
+              7,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "pickup_right_2.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            7,
+            -12
+          ],
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "pickup_right_3.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            6,
+            -14
+          ],
+          "hands": [
+            [
+              6,
+              -14
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "offer_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "offer_left_0.png",
+          "duration_ms": 500,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "offer_left_1.png",
+          "duration_ms": 500,
+          "cup_offset": [
+            -12,
+            -16
+          ],
+          "hands": [
+            [
+              -12,
+              -16
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "offer_left_2.png",
+          "duration_ms": 500,
+          "cup_offset": [
+            -12,
+            -16
+          ],
+          "hands": [
+            [
+              -12,
+              -16
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "offer_left_3.png",
+          "duration_ms": 500,
+          "cup_offset": [
+            -7,
+            -13
+          ],
+          "hands": [
+            [
+              -7,
+              -13
+            ]
+          ],
+          "gripped": false
+        }
+      ]
+    },
+    "receive_left": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "receive_left_0.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -12,
+            -14
+          ],
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": false
+        },
+        {
+          "file": "receive_left_1.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -12,
+            -14
+          ],
+          "hands": [
+            [
+              -12,
+              -16
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "receive_left_2.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -12,
+            -15
+          ],
+          "hands": [
+            [
+              -12,
+              -16
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "receive_left_3.png",
+          "duration_ms": 250,
+          "cup_offset": [
+            -6,
+            -13
+          ],
+          "hands": [
+            [
+              -6,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "measure_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "measure_right_0.png",
+          "duration_ms": 400,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_right_1.png",
+          "duration_ms": 400,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -13
+            ],
+            [
+              5,
+              -11
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_right_2.png",
+          "duration_ms": 400,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_right_3.png",
+          "duration_ms": 400,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "work_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "work_right_0.png",
+          "duration_ms": 360,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "work_right_1.png",
+          "duration_ms": 360,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -13
+            ],
+            [
+              5,
+              -11
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "work_right_2.png",
+          "duration_ms": 360,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        },
+        {
+          "file": "work_right_3.png",
+          "duration_ms": 360,
+          "tool_offset": [
+            8,
+            -12
+          ],
+          "hands": [
+            [
+              10,
+              -14
+            ],
+            [
+              3,
+              -13
+            ]
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "measure_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "measure_left_0.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -7,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ],
+          "tool_offset": [
+            -8,
+            -10
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_left_1.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -10,
+              -12
+            ],
+            [
+              -7,
+              -11
+            ]
+          ],
+          "tool_offset": [
+            -8,
+            -10
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_left_2.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -11,
+              -12
+            ],
+            [
+              -7,
+              -10
+            ]
+          ],
+          "tool_offset": [
+            -8,
+            -10
+          ],
+          "gripped": true
+        },
+        {
+          "file": "measure_left_3.png",
+          "duration_ms": 360,
+          "hands": [
+            [
+              -8,
+              -11
+            ],
+            [
+              -6,
+              -10
+            ]
+          ],
+          "tool_offset": [
+            -8,
+            -10
+          ],
+          "gripped": true
+        }
+      ]
+    },
+    "stretch_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "stretch_front_0.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_1.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_2.png",
+          "duration_ms": 550
+        },
+        {
+          "file": "stretch_front_3.png",
+          "duration_ms": 550
+        }
+      ]
+    }
+  }
+}

@@ -86,6 +86,13 @@ def build():
             records[key] = {'name': name, 'expression': 'neutral',
                 'file': f'{key}_neutral.png', 'sprite_root': ('assets/characters/liam_father' if key=='liam_father' else 'assets/story/regent/actors/aldric' if key=='aldric' else 'assets/story/venn/'+key[5:] if key.startswith('venn_') else f'assets/story/{key}'),
                 'source': source.relative_to(ROOT).as_posix(), 'source_rect': [0, 0, *master.size]}
+    guard_source = ROOT/'assets/source/characters/road_guards/portrait_generated.png'
+    if guard_source.exists():
+        master = Image.open(guard_source).convert('RGB')
+        master.resize((SIZE, SIZE), Image.Resampling.NEAREST).save(OUTPUT/'road_guard_neutral.png', optimize=True)
+        records['road_guard'] = {'name': 'Road guard', 'expression': 'neutral',
+            'file': 'road_guard_neutral.png', 'sprite_root': 'assets/characters/road_guards',
+            'source': guard_source.relative_to(ROOT).as_posix(), 'source_rect': [0, 0, *master.size]}
     manifest = {
         'status': 'awaiting_user_review', 'frame_size': [SIZE, SIZE],
         'format': 'RGB PNG', 'background': 'opaque dark green',

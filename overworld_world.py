@@ -87,26 +87,66 @@ class _BlockedView:
 
 
 class RoadGuard:
-    """A fixed regional actor; the travel controller owns guard conversation."""
+    """A fixed post with authored views and a single restrained greeting.
+
+    Turning changes the whole pose, including the shield's physical side. It
+    never rotates an arm or mirrors asymmetric equipment at runtime.
+    """
     def __init__(self, world, gate, position=None, index=0):
         self.data = {'id': f'road_guard:{gate["id"]}:{index}', 'name': 'Road guard'}
         self.position = pygame.Vector2(position or gate['guard_position'])
         self.scene_id = world.data['id']
-        self.draw_anchor = (12, 36)
         self.probe_size = (12, 8)
-        self.facing = 'front' if self.position.y < 0 else 'back'
-        key = 'guard_front' if self.facing == 'front' else 'guard_back'
-        self._sprite, self.draw_anchor = world._prop_image(key)
-        if self._sprite is None:
-            fallback = ROOT/f'assets/characters/npcs/male_01/idle_{self.facing}.png'
-            self._sprite = pygame.image.load(str(fallback)).convert_alpha()
-            self.draw_anchor = (12, 30)
+        self.watch_facing = 'front' if self.position.y < 0 else 'back'
+        self.facing = self.watch_facing
+        self.moving = False
+        self._conversation_started_ms = None
+        if not hasattr(world, '_road_guard_art'):
+            folder = ROOT/'assets/characters/road_guards'
+            manifest = json.loads((folder/'animation.json').read_text())
+            frames = {name: pygame.image.load(str(folder/name)).convert_alpha()
+                      for name in set(manifest['poses'].values())}
+            if any(image.get_size() != tuple(manifest['canvas']) for image in frames.values()):
+                raise ValueError('Road guard poses must share their authored canvas')
+            for clip in manifest['clips'].values():
+                if not clip['frames'] or any(
+                        frame['file'] not in frames or type(frame['duration_ms']) not in (int,float)
+                        or not math.isfinite(frame['duration_ms']) or frame['duration_ms'] <= 0
+                        for frame in clip['frames']):
+                    raise ValueError('Invalid road guard animation clip')
+            world._road_guard_art = (manifest, frames)
+        self._art, self._frames = world._road_guard_art
+        self.draw_anchor = tuple(self._art['draw_anchor'])
 
     @property
     def blocker(self):
         return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
-    def sprite(self, elapsed_ms):return self._sprite
+    def begin_conversation(self, facing, elapsed_ms):
+        if facing not in ('front', 'back', 'left', 'right'):
+            raise ValueError('Unknown guard conversation direction')
+        self.facing = facing
+        self._conversation_started_ms = elapsed_ms
+
+    def end_conversation(self):
+        self.facing = self.watch_facing
+        self._conversation_started_ms = None
+
+    def sprite(self, elapsed_ms):
+        key = 'idle_'+self.facing
+        clock = max(0, elapsed_ms)
+        if self._conversation_started_ms is not None:
+            greeting = self._art['clips']['greet_'+self.facing]
+            since = max(0, elapsed_ms-self._conversation_started_ms)
+            if since < sum(frame['duration_ms'] for frame in greeting['frames']):
+                key = 'greet_'+self.facing;clock = since
+        clip = self._art['clips'][key]
+        total = sum(frame['duration_ms'] for frame in clip['frames'])
+        clock = clock % total if clip['loop'] else min(clock, total-1)
+        for frame in clip['frames']:
+            if clock < frame['duration_ms']:return self._frames[frame['file']]
+            clock -= frame['duration_ms']
+        return self._frames[clip['frames'][-1]['file']]
 
 
 class OverworldWorld:
