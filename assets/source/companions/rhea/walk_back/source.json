@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "direction": "back",
+  "art_status": "review",
+  "status": "review",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2400,
+    780
+  ],
+  "source_sha256": "77cd59433d1c6a24f8b4c1340f22e5c43f726aeaf8ec2eb293cf4ddbe7f64dd4",
+  "background": "transparent",
+  "frame_count": 4,
+  "frame_duration_ms": 140,
+  "loop_duration_ms": 560,
+  "references": [
+    "assets/characters/rhea/idle_back.png",
+    "assets/source/companions/rhea/directional_idles/design_sheet.png",
+    "assets/characters/caelan/walk_back/frames_review.png"
+  ],
+  "provenance": {
+    "generator": "image_gen",
+    "initial_generated_filename": "exec-cfe448b5-b8cb-4136-8ec1-48a4cdc38183.png",
+    "full_sheet_generated_filename": "exec-1647024d-a18d-4508-900d-68a79949c58e.png",
+    "passing_generated_filename": "exec-e68ae86b-6b61-4c5c-8430-a0edbf2204fe.png",
+    "unaltered_generated_files": [
+      "initial_generated.png",
+      "full_sheet_generated.png",
+      "passing_generated.png"
+    ],
+    "prompt_file": "prompt.txt",
+    "correction_prompt_file": "correction_prompt.txt",
+    "passing_prompt_file": "passing_prompt.txt",
+    "technical_assembly": [
+      {
+        "frame": 1,
+        "generated_source_file": "initial_generated.png",
+        "generated_source_bounds": [
+          136,
+          75,
+          514,
+          728
+        ],
+        "uniform_scale": 0.9096477794793262,
+        "destination_origin": [
+          98,
+          127
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; authored fullpose crop, uniform nearest group scale, binary alpha threshold, transparent cell placement"
+      },
+      {
+        "frame": 2,
+        "generated_source_file": "harmonized_generated.png",
+        "generated_source_bounds": [
+          607,
+          78,
+          953,
+          670
+        ],
+        "uniform_scale": 1,
+        "destination_origin": [
+          717,
+          129
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; authored fullpose crop, uniform nearest group scale, binary alpha threshold, transparent cell placement"
+      },
+      {
+        "frame": 3,
+        "generated_source_file": "initial_generated.png",
+        "generated_source_bounds": [
+          1074,
+          75,
+          1458,
+          728
+        ],
+        "uniform_scale": 0.9096477794793262,
+        "destination_origin": [
+          1291,
+          127
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; authored fullpose crop, uniform nearest group scale, binary alpha threshold, transparent cell placement"
+      },
+      {
+        "frame": 4,
+        "generated_source_file": "harmonized_generated.png",
+        "generated_source_bounds": [
+          1151,
+          78,
+          1497,
+          672
+        ],
+        "uniform_scale": 1,
+        "destination_origin": [
+          1917,
+          127
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; authored fullpose crop, uniform nearest group scale, binary alpha threshold, transparent cell placement"
+      }
+    ],
+    "harmonized_generated_filename": "exec-758646ac-6e7c-4d3c-b88c-629783fb62a6.png",
+    "harmonize_prompt_file": "harmonize_prompt.txt",
+    "final_source_note": "Original generated contacts1/3 and harmonized generated passing2/3 combined asfour actual independently authored phases. No heads, limbs, costume or staff procedurally drawn/warped. All raw generated sources unchanged. The previous single passing output/harmonization whole sheet are retained as provenance, but only specified wholepose crops are exported.",
+    "saved_png_files": [
+      {
+        "file": "assembled_before_harmonize.png",
+        "dimensions": [
+          2400,
+          760
+        ],
+        "sha256": "72b7c38b072fe5f1bd666f4a49a9be7331ef05d5266693b094c81c61fc09a151"
+      },
+      {
+        "file": "full_sheet_generated.png",
+        "dimensions": [
+          2048,
+          768
+        ],
+        "sha256": "bb9e85742cb877e4deef5d9e8bba3ff20cc5a3794c0c1d83cc89146cf29fe153"
+      },
+      {
+        "file": "harmonized_generated.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "3f9de1140110d4b53c31aafbaed38e124420b356fc1a5fedbc9e88f94d750396"
+      },
+      {
+        "file": "initial_generated.png",
+        "dimensions": [
+          2048,
+          768
+        ],
+        "sha256": "287430c327eea4f3a2da724dea0c913774879f626a4f3ab21a4cb65aacd08d88"
+      },
+      {
+        "file": "passing_generated.png",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "sha256": "200db258eaf55cac1f736195afdb072350ce2118c69a0df9c06f1dfc3406354d"
+      },
+      {
+        "file": "walk_sheet.png",
+        "dimensions": [
+          2400,
+          780
+        ],
+        "sha256": "77cd59433d1c6a24f8b4c1340f22e5c43f726aeaf8ec2eb293cf4ddbe7f64dd4"
+      }
+    ],
+    "reference_preparation": "Approved direction cropped directly from directional_idles/design_sheet.png; approved native idle and Caelan gait frames enlarged with nearest sampling as references only. No generated poses or limbs created procedurally."
+  },
+  "export": {
+    "scale": 0.05387205387205387,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "frames": [
+      {
+        "phase": "left_contact",
+        "source_bounds": [
+          98,
+          127,
+          442,
+          721
+        ],
+        "body_bounds": [
+          184,
+          127,
+          442,
+          721
+        ],
+        "body_center_x": 300,
+        "ground_y": 720
+      },
+      {
+        "phase": "left_support_passing",
+        "source_bounds": [
+          717,
+          129,
+          1063,
+          721
+        ],
+        "body_bounds": [
+          801,
+          129,
+          1063,
+          721
+        ],
+        "body_center_x": 900,
+        "ground_y": 720
+      },
+      {
+        "phase": "right_contact",
+        "source_bounds": [
+          1291,
+          127,
+          1640,
+          721
+        ],
+        "body_bounds": [
+          1375,
+          127,
+          1640,
+          721
+        ],
+        "body_center_x": 1500,
+        "ground_y": 720
+      },
+      {
+        "phase": "right_support_passing",
+        "source_bounds": [
+          1917,
+          127,
+          2263,
+          721
+        ],
+        "body_bounds": [
+          2002,
+          127,
+          2263,
+          721
+        ],
+        "body_center_x": 2100,
+        "ground_y": 720
+      }
+    ]
+  },
+  "registration_notes": "Source assembled from complete imagegen-authored rear poses; one uniform contact-source group scale594/653 aligns sourcebodyheight/head identity with passing group at nativebody32. All ground720, rearanchor12,34 asapprovedidle. Leftsupport/rightlift phase2; rightsupport/leftlift phase4. Contacts1/3 each showoppositefootawayfromcamera; no duplicated gaitpose. Staff/pouch screenLEFT andslitRIGHTouteredgeallfour."
+}

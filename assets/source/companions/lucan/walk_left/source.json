@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "animation": "walk.left",
+  "status": "review",
+  "art_status": "review",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2048,
+    768
+  ],
+  "source_sha256": "4fecfe13c49ac5a4cc48e35df28b6927f425f5cabf033df5a91d8312b9453925",
+  "generated_original_filename": "exec-84854fb1-e25b-4787-be68-92121c08709f.png",
+  "generation_history": [
+    {
+      "source": "exec-7e686f66-7f71-4742-b509-1386dba1a8e7.png",
+      "sha256": "c7c3d8a970216fc5aa909100ef5e4017d407707d0968eb1d316a0c129d18c6da",
+      "note": "Initial source; fourth passing needed distinct opposite support."
+    },
+    {
+      "source": "exec-5fb75eab-4eac-40c2-ac62-2ac35816ff18.png",
+      "sha256": "b2d1487f33058eecc97d461e418d9a673adc3bd4a348b7f08deab6fe295e4e55",
+      "note": "First leg-phase correction."
+    },
+    {
+      "source": "exec-83a4f7cf-1095-4399-8f26-ef5c3e30a2eb.png",
+      "sha256": "bfa39dad7e8d583559173b33a1dd0fc9cacf6757e308e072c249d44368043678",
+      "note": "Correct opposite passing arrangement, but body rise excessive."
+    },
+    {
+      "source": "exec-ff67da54-e738-4ffb-85d8-0be1fd8ab1de.png",
+      "sha256": "baecffa00a259237bd31929f112f9eb67aca707151108798db6833db418ad3c7",
+      "note": "Intermediate body-rise reduction was too strong."
+    },
+    {
+      "source": "exec-84854fb1-e25b-4787-be68-92121c08709f.png",
+      "sha256": "4fecfe13c49ac5a4cc48e35df28b6927f425f5cabf033df5a91d8312b9453925",
+      "note": "Final modest passing rise while preserving opposite support and stable equipment."
+    }
+  ],
+  "reference_sha256": {
+    "assets/source/companions/lucan/directional_idles/directional_sheet.png": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+    "assets/characters/lucan/idle_left.png": "612b8cfff4ecbc4419db231a3d3a32ea1942896d86a5114d596bac8159e36b6a"
+  },
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "duration_ms": 560,
+  "phases": [
+    "near_contact",
+    "near_support_passing",
+    "far_contact",
+    "far_support_passing"
+  ],
+  "handedness": {
+    "sword": "anatomical_right_far",
+    "shield": "anatomical_left_near_exterior_visible"
+  },
+  "export": {
+    "scale": 0.05254237288135593,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "frames": [
+      {
+        "source_bounds": [
+          71,
+          124,
+          471,
+          714
+        ],
+        "body_bounds": [
+          174,
+          124,
+          394,
+          714
+        ],
+        "body_center_x": 284.5,
+        "ground_y": 713
+      },
+      {
+        "source_bounds": [
+          534,
+          111,
+          929,
+          714
+        ],
+        "body_bounds": [
+          638,
+          111,
+          858,
+          714
+        ],
+        "body_center_x": 748.5,
+        "ground_y": 713
+      },
+      {
+        "source_bounds": [
+          1051,
+          124,
+          1446,
+          717
+        ],
+        "body_bounds": [
+          1152,
+          124,
+          1372,
+          717
+        ],
+        "body_center_x": 1262.5,
+        "ground_y": 716
+      },
+      {
+        "source_bounds": [
+          1558,
+          111,
+          1953,
+          714
+        ],
+        "body_bounds": [
+          1663,
+          111,
+          1883,
+          714
+        ],
+        "body_center_x": 1773,
+        "ground_y": 713
+      }
+    ]
+  },
+  "notes": [
+    "Independently authored left-facing cycle; not a horizontal mirror.",
+    "Frame4 has opposite grounded/passing leg arrangement from frame2.",
+    "Common scale/grid for all4; contact bodies590/593sourcepx, passing603sourcepx.",
+    "Complete sword tips retained with fixed full-body scale.",
+    "No approved source or native sprite modified."
+  ]
+}

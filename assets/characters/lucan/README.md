@@ -33,3 +33,10 @@ The approved [left, right and rear poses](../../../docs/reviews/companion_direct
 complete the directional idle set beside the approved front idle. See the
 [directional review guide](../../../docs/reviews/companion_directional_idles/README.md)
 for the source and export workflow.
+
+## Remaining walking directions
+
+The proposed [left, right and rear walking cycles](../../../docs/reviews/companion_directional_walks/lucan_walk_directions.gif)
+are ready for user review beside the approved front walk. See the
+[walking review guide](../../../docs/reviews/companion_directional_walks/README.md)
+for the key poses, town movement previews and reproducible export workflow.

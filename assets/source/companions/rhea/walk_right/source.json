@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "direction": "right",
+  "art_status": "review",
+  "status": "review",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2172,
+    724
+  ],
+  "source_sha256": "1c784146dd270913b6910c124ee89c461b2245d8892ff03bd8383c7330f646d2",
+  "background": "transparent",
+  "frame_count": 4,
+  "frame_duration_ms": 140,
+  "loop_duration_ms": 560,
+  "references": [
+    "assets/characters/rhea/idle_right.png",
+    "assets/source/companions/rhea/directional_idles/design_sheet.png",
+    "assets/characters/caelan/walk_right/frames_review.png"
+  ],
+  "provenance": {
+    "generator": "image_gen",
+    "initial_generated_filename": "exec-979e120f-4ef8-4a52-9f99-a79d2189b37b.png",
+    "full_sheet_generated_filename": "exec-ec87a47a-8987-443e-be8d-0146d9acadf7.png",
+    "passing_generated_filename": "exec-eb04a5bb-156a-4a85-8442-6a1ba6b65620.png",
+    "unaltered_generated_files": [
+      "initial_generated.png",
+      "full_sheet_generated.png",
+      "passing_generated.png"
+    ],
+    "prompt_file": "prompt.txt",
+    "correction_prompt_file": "correction_prompt.txt",
+    "passing_prompt_file": "passing_prompt.txt",
+    "technical_assembly": [
+      {
+        "frame": 1,
+        "generated_source_file": "full_sheet_generated.png",
+        "generated_source_bounds": [
+          60,
+          71,
+          475,
+          725
+        ],
+        "uniform_scale": 1.0,
+        "destination_origin": [
+          60,
+          67
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; crop, uniform nearest rescale(if listed), alpha threshold, transparent cell placement only"
+      },
+      {
+        "frame": 2,
+        "generated_source_file": "passing_generated.png",
+        "generated_source_bounds": [
+          108,
+          131,
+          967,
+          1450
+        ],
+        "uniform_scale": 0.49583017437452614,
+        "destination_origin": [
+          652,
+          66
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; crop, uniform nearest rescale(if listed), alpha threshold, transparent cell placement only"
+      },
+      {
+        "frame": 3,
+        "generated_source_file": "full_sheet_generated.png",
+        "generated_source_bounds": [
+          1074,
+          68,
+          1496,
+          725
+        ],
+        "uniform_scale": 1.0,
+        "destination_origin": [
+          1254,
+          64
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; crop, uniform nearest rescale(if listed), alpha threshold, transparent cell placement only"
+      },
+      {
+        "frame": 4,
+        "generated_source_file": "full_sheet_generated.png",
+        "generated_source_bounds": [
+          1595,
+          69,
+          2006,
+          725
+        ],
+        "uniform_scale": 1.0,
+        "destination_origin": [
+          1864,
+          65
+        ],
+        "alpha_threshold": 128,
+        "creative_changes": "none; crop, uniform nearest rescale(if listed), alpha threshold, transparent cell placement only"
+      }
+    ],
+    "harmonized_generated_filename": "exec-da753125-edb0-4a5d-a17a-49b13a676855.png",
+    "harmonize_prompt_file": "harmonize_prompt.txt",
+    "final_source_note": "Final walk_sheet.png is unaltered imagegen output; tool harmonized upperbody/head/hair/staff identities across4 while preserving independently authored alternating legs.",
+    "saved_png_files": [
+      {
+        "file": "assembled_before_harmonize.png",
+        "dimensions": [
+          2400,
+          760
+        ],
+        "sha256": "2286a23f3c21790c0b653a8a4fda69a8996d5efb3f99cf1bc384dbe995bf0b54"
+      },
+      {
+        "file": "full_sheet_generated.png",
+        "dimensions": [
+          2048,
+          768
+        ],
+        "sha256": "a4f5e8160b6635bdbb5c03fba965cbdda23e99d70829fe521e34b1be5c12b205"
+      },
+      {
+        "file": "initial_generated.png",
+        "dimensions": [
+          2048,
+          768
+        ],
+        "sha256": "fdafe9f6248c396891f970e142869dc8894242f652545d85fab7f50a937a10a3"
+      },
+      {
+        "file": "passing_generated.png",
+        "dimensions": [
+          1024,
+          1536
+        ],
+        "sha256": "354e41309d936894a9f1641c83505c2a62f709b03f414f434b51db5b3179bc43"
+      },
+      {
+        "file": "walk_sheet.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "1c784146dd270913b6910c124ee89c461b2245d8892ff03bd8383c7330f646d2"
+      }
+    ],
+    "reference_preparation": "Approved direction cropped directly from directional_idles/design_sheet.png; approved native idle and Caelan gait frames enlarged with nearest sampling as references only. No generated poses or limbs created procedurally."
+  },
+  "export": {
+    "scale": 0.053691275167785234,
+    "sampling_phase": [
+      0.65,
+      0.575
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "frames": [
+      {
+        "phase": "right_contact",
+        "source_bounds": [
+          46,
+          73,
+          440,
+          669
+        ],
+        "body_bounds": [
+          46,
+          73,
+          415,
+          669
+        ],
+        "body_center_x": 270,
+        "ground_y": 668
+      },
+      {
+        "phase": "right_support_passing",
+        "source_bounds": [
+          587,
+          73,
+          983,
+          669
+        ],
+        "body_bounds": [
+          587,
+          73,
+          935,
+          669
+        ],
+        "body_center_x": 813,
+        "ground_y": 668
+      },
+      {
+        "phase": "left_contact",
+        "source_bounds": [
+          1129,
+          73,
+          1525,
+          669
+        ],
+        "body_bounds": [
+          1129,
+          73,
+          1497,
+          669
+        ],
+        "body_center_x": 1355,
+        "ground_y": 668
+      },
+      {
+        "phase": "left_support_passing",
+        "source_bounds": [
+          1674,
+          73,
+          2069,
+          669
+        ],
+        "body_bounds": [
+          1674,
+          73,
+          2034,
+          669
+        ],
+        "body_center_x": 1900,
+        "ground_y": 668
+      }
+    ]
+  },
+  "registration_notes": "Final unaltered four-frame source. Common32/596 scale and one samplingphase; same head/hair/body width acrossfour. FacingRIGHT staff+pouchfar and slitright/near remain. Rhea right-walk anchor12,34 was approved by root as transparent padding to preserve full trailinghair/staff while keeping true pelvis registered; right idle stays10,34. No limb deformation or actor mirroring."
+}

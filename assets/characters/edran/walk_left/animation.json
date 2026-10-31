@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "character": "edran",
+  "display_name": "Edran Hale",
+  "animation": "walk.left",
+  "facing": "left",
+  "status": "review",
+  "design_status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "source": "assets/source/companions/edran/walk_left/walk_sheet.png",
+  "source_sha256": "8ed8f4ec9a9a179317e048d088b6a50ee92e048c3887143f931c0a87723558dd",
+  "source_recipe": "assets/source/companions/edran/walk_left/source.json",
+  "source_recipe_sha256": "9d90fb5bc74dcf4d6df776f1b9c2ec868eee6849e4e4add69ee3cfe02d603f25",
+  "palette_source": "assets/characters/edran/idle_front.png",
+  "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+  "palette": [
+    [
+      2,
+      2,
+      3
+    ],
+    [
+      152,
+      131,
+      115
+    ],
+    [
+      245,
+      177,
+      123
+    ],
+    [
+      98,
+      93,
+      91
+    ],
+    [
+      133,
+      181,
+      219
+    ],
+    [
+      199,
+      193,
+      188
+    ],
+    [
+      58,
+      55,
+      54
+    ],
+    [
+      99,
+      69,
+      52
+    ],
+    [
+      162,
+      161,
+      162
+    ],
+    [
+      143,
+      111,
+      91
+    ],
+    [
+      214,
+      216,
+      216
+    ],
+    [
+      57,
+      37,
+      27
+    ],
+    [
+      40,
+      27,
+      21
+    ],
+    [
+      94,
+      65,
+      49
+    ],
+    [
+      75,
+      48,
+      35
+    ],
+    [
+      30,
+      25,
+      29
+    ],
+    [
+      36,
+      37,
+      41
+    ],
+    [
+      111,
+      136,
+      161
+    ],
+    [
+      28,
+      50,
+      79
+    ],
+    [
+      55,
+      98,
+      144
+    ],
+    [
+      209,
+      212,
+      215
+    ],
+    [
+      41,
+      72,
+      110
+    ],
+    [
+      117,
+      169,
+      212
+    ],
+    [
+      119,
+      171,
+      214
+    ],
+    [
+      202,
+      120,
+      76
+    ],
+    [
+      227,
+      154,
+      104
+    ],
+    [
+      76,
+      117,
+      158
+    ],
+    [
+      154,
+      181,
+      205
+    ],
+    [
+      86,
+      58,
+      43
+    ],
+    [
+      176,
+      200,
+      218
+    ],
+    [
+      164,
+      93,
+      60
+    ],
+    [
+      214,
+      186,
+      166
+    ]
+  ],
+  "common_uniform_scale": 0.04588607594936709,
+  "common_sampling_phase": [
+    0.5,
+    0.5
+  ],
+  "sampling": "one exact affine nearest-neighbor grid for all four authored poses",
+  "registration": "authored pelvis/body center and supporting floor; equipment does not recenter actor",
+  "target_body_height": 29,
+  "source_body_heights": [
+    631,
+    652,
+    631,
+    650
+  ],
+  "directional_idle_reference": "assets/characters/edran/idle_left.png",
+  "directional_idle_sha256": "b5429f32233af6313f354586cfd9a802e5eecb257c3f196daa66bff33fa18b90",
+  "distinct_native_frames": 4,
+  "shared_palette_color_count": 32,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "contact_1",
+      "source_frame": 0,
+      "sha256": "e54bba1a3576a722d45e4213886db8ac6318c1acbe9db06e408b8df4b8fbd737",
+      "panel": [
+        59,
+        84,
+        453,
+        715
+      ],
+      "bounds": [
+        59,
+        84,
+        453,
+        715
+      ],
+      "body_bounds": [
+        129,
+        84,
+        453,
+        715
+      ],
+      "body_center_x": 277,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        2,
+        6,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        21.79310344827586,
+        0,
+        -54.413793103448256,
+        0,
+        21.79310344827586,
+        -121.86206896551721
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 31
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "passing_1",
+      "source_frame": 1,
+      "sha256": "b7e17c3d6a7cbafa4614b2b220c59fbc70579677a0ffeba830feccce10221f2a",
+      "panel": [
+        530,
+        64,
+        924,
+        716
+      ],
+      "bounds": [
+        530,
+        64,
+        924,
+        716
+      ],
+      "body_bounds": [
+        607,
+        64,
+        924,
+        716
+      ],
+      "body_center_x": 769,
+      "ground_y": 715,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        2,
+        5,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        21.79310344827586,
+        0,
+        -33.413793103448256,
+        0,
+        21.79310344827586,
+        -100.86206896551721
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 31
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "opposite_contact",
+      "source_frame": 2,
+      "sha256": "cc9ebc7383fa70215b2cf39dfcf615fd56dbcc7da8d72acc6c5f4605b46ab042",
+      "panel": [
+        1069,
+        85,
+        1463,
+        716
+      ],
+      "bounds": [
+        1069,
+        85,
+        1463,
+        716
+      ],
+      "body_bounds": [
+        1134,
+        85,
+        1463,
+        716
+      ],
+      "body_center_x": 1288,
+      "ground_y": 715,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        2,
+        6,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        21.79310344827586,
+        0,
+        -53.413793103448256,
+        0,
+        21.79310344827586,
+        -121.86206896551721
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 30
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "opposite_passing",
+      "source_frame": 3,
+      "sha256": "0639fbc90a1b4f43c9fb7e47c3a2c0d24ff7043dcbfd2457402feb03133ac49c",
+      "panel": [
+        1569,
+        65,
+        1967,
+        715
+      ],
+      "bounds": [
+        1569,
+        65,
+        1967,
+        715
+      ],
+      "body_bounds": [
+        1657,
+        65,
+        1967,
+        715
+      ],
+      "body_center_x": 1810,
+      "ground_y": 714,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        1,
+        5,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        21.79310344827586,
+        0,
+        -31.413793103448256,
+        0,
+        21.79310344827586,
+        -102.86206896551721
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 29
+    }
+  ]
+}

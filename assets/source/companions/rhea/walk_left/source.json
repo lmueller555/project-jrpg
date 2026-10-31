@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "direction": "left",
+  "art_status": "review",
+  "status": "review",
+  "source_file": "walk_sheet.png",
+  "source_dimensions": [
+    2172,
+    724
+  ],
+  "source_sha256": "fc502cee2122cf8f74fb923dc783dfeb588b7c03b9f3c27cfd8171d1d2bfd768",
+  "background": "transparent",
+  "frame_count": 4,
+  "frame_duration_ms": 140,
+  "loop_duration_ms": 560,
+  "references": [
+    "assets/source/companions/rhea/directional_idles/design_sheet.png#left",
+    "assets/characters/rhea/idle_left.png",
+    "assets/characters/caelan/walk_left/frames_review.png"
+  ],
+  "provenance": {
+    "generator": "image_gen",
+    "initial_generated_filename": "exec-cdb922cf-2f9e-4449-9342-1bf62b8b8234.png",
+    "generated_original_filename": "exec-13829bdb-9b07-45e4-8982-b1e093d85540.png",
+    "creative_edits": "Imagegen corrected opposite physical legs in frames3/4. Both actual generated PNGs retained unchanged.",
+    "prompt_file": "prompt.txt",
+    "correction_prompt_file": "correction_prompt.txt",
+    "saved_png_files": [
+      {
+        "file": "initial_generated.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "a96680ae7d8278ea157d1abf57e990f707e801229d7aa3984adb24e4afa89b51"
+      },
+      {
+        "file": "walk_sheet.png",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "fc502cee2122cf8f74fb923dc783dfeb588b7c03b9f3c27cfd8171d1d2bfd768"
+      }
+    ],
+    "reference_preparation": "Approved direction cropped directly from directional_idles/design_sheet.png; approved native idle and Caelan gait frames enlarged with nearest sampling as references only. No generated poses or limbs created procedurally."
+  },
+  "anatomical_notes": "Facing left: left-hand staff and left-hip pouch near/visible; right-thigh slit far. Frames1/2 right bare/slit leg forward/support; frames3/4 left covered leg forward/support. Full staff rigidly carried above floor.",
+  "export": {
+    "scale": 0.050393700787401574,
+    "sampling_phase": [
+      0.5,
+      0.95
+    ],
+    "anchor": [
+      10,
+      34
+    ],
+    "frames": [
+      {
+        "phase": "right_contact",
+        "source_bounds": [
+          81,
+          53,
+          510,
+          682
+        ],
+        "body_bounds": [
+          152,
+          53,
+          510,
+          682
+        ],
+        "body_center_x": 270,
+        "ground_y": 681
+      },
+      {
+        "phase": "right_support_passing",
+        "source_bounds": [
+          611,
+          53,
+          1036,
+          686
+        ],
+        "body_bounds": [
+          682,
+          53,
+          1036,
+          686
+        ],
+        "body_center_x": 800,
+        "ground_y": 685
+      },
+      {
+        "phase": "left_contact",
+        "source_bounds": [
+          1151,
+          53,
+          1572,
+          685
+        ],
+        "body_bounds": [
+          1220,
+          53,
+          1572,
+          685
+        ],
+        "body_center_x": 1342,
+        "ground_y": 684
+      },
+      {
+        "phase": "left_support_passing",
+        "source_bounds": [
+          1695,
+          53,
+          2116,
+          688
+        ],
+        "body_bounds": [
+          1768,
+          53,
+          2116,
+          688
+        ],
+        "body_center_x": 1886,
+        "ground_y": 687
+      }
+    ]
+  },
+  "registration_notes": "Whole-sheet source coordinates. One uniform scale/phase across4. Body pivot uses pelvis, not outer hair bounds; no body shrink to accommodate staff. Suggested body centers may be refined uniformly against visible belt/pelvis during export."
+}

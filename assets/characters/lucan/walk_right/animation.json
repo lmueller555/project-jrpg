@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "character": "lucan",
+  "display_name": "Lucan Rooke",
+  "animation": "walk.right",
+  "facing": "right",
+  "status": "review",
+  "design_status": "review",
+  "image": "spritesheet.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "loop": true,
+  "frame_duration_ms": 140,
+  "source": "assets/source/companions/lucan/walk_right/walk_sheet.png",
+  "source_sha256": "92a5a8b2b041c19dd83c9ce841236ce60b43ef36c9dc6a45ee2d1e62a1771051",
+  "source_recipe": "assets/source/companions/lucan/walk_right/source.json",
+  "source_recipe_sha256": "c8e12722e876547f18ab274f226959e56f07bfc197aacd64208d58d0c4c54212",
+  "palette_source": "assets/characters/lucan/idle_front.png",
+  "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+  "palette": [
+    [
+      4,
+      1,
+      1
+    ],
+    [
+      150,
+      37,
+      30
+    ],
+    [
+      71,
+      40,
+      25
+    ],
+    [
+      55,
+      27,
+      17
+    ],
+    [
+      22,
+      7,
+      4
+    ],
+    [
+      105,
+      25,
+      23
+    ],
+    [
+      41,
+      20,
+      12
+    ],
+    [
+      119,
+      68,
+      40
+    ],
+    [
+      201,
+      196,
+      195
+    ],
+    [
+      250,
+      249,
+      249
+    ],
+    [
+      162,
+      43,
+      34
+    ],
+    [
+      167,
+      159,
+      158
+    ],
+    [
+      252,
+      199,
+      154
+    ],
+    [
+      90,
+      84,
+      86
+    ],
+    [
+      162,
+      95,
+      41
+    ],
+    [
+      183,
+      118,
+      53
+    ],
+    [
+      154,
+      41,
+      33
+    ],
+    [
+      224,
+      218,
+      217
+    ],
+    [
+      49,
+      34,
+      30
+    ],
+    [
+      105,
+      95,
+      97
+    ],
+    [
+      35,
+      14,
+      9
+    ],
+    [
+      96,
+      43,
+      30
+    ],
+    [
+      135,
+      35,
+      30
+    ],
+    [
+      237,
+      167,
+      102
+    ],
+    [
+      249,
+      186,
+      86
+    ],
+    [
+      109,
+      70,
+      45
+    ],
+    [
+      199,
+      117,
+      73
+    ],
+    [
+      235,
+      206,
+      161
+    ],
+    [
+      253,
+      194,
+      96
+    ],
+    [
+      197,
+      134,
+      42
+    ],
+    [
+      199,
+      118,
+      48
+    ]
+  ],
+  "common_uniform_scale": 0.05950095969289827,
+  "common_sampling_phase": [
+    0.5,
+    0.5
+  ],
+  "sampling": "one exact affine nearest-neighbor grid for all four authored poses",
+  "registration": "authored pelvis/body center and supporting floor; equipment does not recenter actor",
+  "target_body_height": 31,
+  "source_body_heights": [
+    521,
+    538,
+    521,
+    538
+  ],
+  "directional_idle_reference": "assets/characters/lucan/idle_right.png",
+  "directional_idle_sha256": "45198cdbcbe3365d943e6349ce39a2feb79bb8a8db134482f1d99c3e2b18c2b7",
+  "distinct_native_frames": 4,
+  "shared_palette_color_count": 31,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "first_contact",
+      "source_frame": 0,
+      "sha256": "de314c97d50e570bfeedeb64b53a2a02c67ff940a61c729306752eccb9297a5e",
+      "panel": [
+        114,
+        148,
+        422,
+        669
+      ],
+      "bounds": [
+        114,
+        148,
+        422,
+        669
+      ],
+      "body_bounds": [
+        172,
+        148,
+        372,
+        669
+      ],
+      "body_center_x": 272.5,
+      "ground_y": 668,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        3,
+        4,
+        21,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        16.806451612903224,
+        0,
+        -51.580645161290334,
+        0,
+        16.806451612903224,
+        -59.82258064516134
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 30
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "first_support_passing",
+      "source_frame": 1,
+      "sha256": "7101c5d70edf99f4d43fcb45d1692115dbf5db713dd7228d31d4ca2299393121",
+      "panel": [
+        659,
+        138,
+        920,
+        676
+      ],
+      "bounds": [
+        659,
+        138,
+        920,
+        676
+      ],
+      "body_bounds": [
+        700,
+        138,
+        900,
+        676
+      ],
+      "body_center_x": 800,
+      "ground_y": 675,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        4,
+        3,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        16.806451612903224,
+        0,
+        -69.08064516129033,
+        0,
+        16.806451612903224,
+        -42.82258064516134
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 30
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "opposite_contact",
+      "source_frame": 2,
+      "sha256": "72ed4bf8ebd30adeb053b1b2324748a34ca3d995832b25e573fbe8154c8d708e",
+      "panel": [
+        1155,
+        148,
+        1467,
+        669
+      ],
+      "bounds": [
+        1155,
+        148,
+        1467,
+        669
+      ],
+      "body_bounds": [
+        1212,
+        148,
+        1412,
+        669
+      ],
+      "body_center_x": 1312.5,
+      "ground_y": 668,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        3,
+        4,
+        22,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        16.806451612903224,
+        0,
+        -52.580645161290334,
+        0,
+        16.806451612903224,
+        -59.82258064516134
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 30
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "duration_ms": 140,
+      "phase": "opposite_support_passing",
+      "source_frame": 3,
+      "sha256": "9ab411a8969fd17251854f1318b020247d9eea732472fed22132de2787f64b7d",
+      "panel": [
+        1698,
+        138,
+        1959,
+        676
+      ],
+      "bounds": [
+        1698,
+        138,
+        1959,
+        676
+      ],
+      "body_bounds": [
+        1740,
+        138,
+        1940,
+        676
+      ],
+      "body_center_x": 1840,
+      "ground_y": 675,
+      "native_offset": [
+        0,
+        0
+      ],
+      "native_bounds": [
+        4,
+        3,
+        20,
+        35
+      ],
+      "sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "affine_output_to_source": [
+        16.806451612903224,
+        0,
+        -68.08064516129033,
+        0,
+        16.806451612903224,
+        -42.82258064516134
+      ],
+      "registered_body_center": [
+        12,
+        34
+      ],
+      "palette_colors": 28
+    }
+  ]
+}
