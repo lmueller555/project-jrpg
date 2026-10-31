@@ -223,10 +223,11 @@ same embankment while both care about their home. Let a traveller's mistaken
 expectation meet a specific person rather than a whole population confirming
 the stereotype.
 
-Use this atlas to choose backgrounds for future characters after their needs
-are clear. Garrick, Tallis and Orsen's recently proposed biographies are not
-assigned homelands by this document. The existing characters' identities and
-relationships retain their approved facts.
+The approved [companion foundations](../narrative/game_01/COMPANIONS.md) place
+Lucan Rooke in the Redstone March, Rhea Sorel on the wooded western Greyfold
+slopes and Edran Hale in the Lower Leth. Specific home settlements remain open.
+Use the atlas to develop future backgrounds as the characters' needs become
+clear. Existing identities and relationships retain their approved facts.
 
 The world name, continental arrangement, Eldenmere's placement and regional
 foundations are approved. More precise borders, languages, political systems,

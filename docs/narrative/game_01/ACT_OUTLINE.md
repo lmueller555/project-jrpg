@@ -55,7 +55,15 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 **Act break:** Faith gives way to doubt; the protagonist chooses truth-seeking over automatic obedience.
 
-**Not yet chosen:** Precise personal loss, final character biographies, gameplay details, evidence, and the emotional stakes of leaving. The provisional starting community is **Eldenmere**; its Chapter 1 introductory structure is approved, while geography and supporting details remain under development.
+**Approved companion introduction:** Lucan Rooke, the Knight, enters during
+Act I through a legitimate road-security assignment and initial escort.
+His character foundation is recorded in the [companion guide](COMPANIONS.md);
+the exact recruitment quest remains open.
+
+**Not yet chosen:** Precise personal loss, remaining character biographies,
+recruitment scene details, gameplay details, evidence and the emotional stakes
+of leaving. Eldenmere's approved local setting and wider geography are recorded
+in the [World Atlas](../../world/WORLD_ATLAS.md).
 
 ## Act II — The Divided Land
 
@@ -69,7 +77,17 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 **Act break:** The protagonist uncovers that government-backed researchers took known risks; the ruler's motive is survival and prosperity, not senseless destruction.
 
-**Not yet chosen:** Specific towns, factions, party recruitment, research records, order of revelations, and the ruler's prior relationship with the protagonist.
+**Approved companion introductions:** Rhea Sorel, the naturalist Aethermage,
+enters early in Act II while investigating unusual aether behavior. Edran Hale,
+the Sage, enters at the end of Act II when the party's account connects
+injuries and failed protective workings he has encountered. They become major
+sources of lore through their complementary observations during travel.
+See the [companion guide](COMPANIONS.md).
+
+**Not yet chosen:** Specific towns, factions, exact recruitment quests and
+scenes, research records, order of revelations and the ruler's prior
+relationship with the protagonist. The approved introduction windows do not
+approve the remainder of this working act outline.
 
 ## Act III — The Truth Beneath the Mountain
 
