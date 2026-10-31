@@ -13,6 +13,7 @@ os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
+from cutscene_gallery import GALLERY_ENTRIES
 from main import Game
 from save_game import SaveStore
 
@@ -71,6 +72,7 @@ class GallerySessionTests(unittest.TestCase):
     def snapshot(self, game):
         return {
             'world': id(game.world),
+            'overworld': id(game._overworld_world),
             'scene_cache': tuple((str(path), id(scene)) for path, scene in game.scenes.items()),
             'position': tuple(game.player.position),
             'clock': game.elapsed_ms,
@@ -113,16 +115,19 @@ class GallerySessionTests(unittest.TestCase):
         self.settings_path.write_text(json.dumps(settings, indent=3)+'\n', encoding='utf-8')
         saved_bytes = self.path.read_bytes();settings_bytes = self.settings_path.read_bytes()
         game = self.game();before = self.snapshot(game)
-        for identifier in ('later_journey', 'morning_wake', 'regent_arrival', 'lantern_finishing'):
-            session = self.launch(game, identifier)
-            self.assertIsNot(session.game.audio, game.audio)
-            self.assertEqual(session.game.audio.to_dict(), game.audio.to_dict())
-            self.assertFalse(session.game.audio.store.enabled)
-            game.update(.25)
-            self.assertTrue(self.key(game, pygame.K_ESCAPE))
-            self.assertEqual(self.snapshot(game), before)
-            self.assertEqual(self.path.read_bytes(), saved_bytes)
-            self.assertEqual(self.settings_path.read_bytes(), settings_bytes)
+        for entry in GALLERY_ENTRIES:
+            with self.subTest(entry=entry.id):
+                session = self.launch(game, entry.id)
+                self.assertIsNot(session.game.audio, game.audio)
+                self.assertEqual(session.game.audio.to_dict(), game.audio.to_dict())
+                self.assertFalse(session.game.audio.store.enabled)
+                game.update(.05)
+                self.assertTrue(self.key(game, pygame.K_ESCAPE))
+                self.assertEqual(self.snapshot(game), before)
+                self.assertEqual(self.path.read_bytes(), saved_bytes)
+                self.assertEqual(self.settings_path.read_bytes(), settings_bytes)
+                del session
+                gc.collect()
         game.close_gallery()
         self.assertTrue(game.begin_journey(True))
         self.assertEqual(game.world.data['id'], payload['player']['scene'])
@@ -216,16 +221,28 @@ class GallerySessionTests(unittest.TestCase):
         self.assertFalse(game.on_gallery)
         self.assertTrue(game.on_title)
 
+    def test_title_gallery_and_back_transitions_consume_same_batch(self):
+        game = self.game()
+        game.title.selected = game.title.options.index('Gallery')
+        enter = pygame.event.Event(pygame.KEYDOWN, key=pygame.K_RETURN, repeat=False)
+        self.assertTrue(self.key(game, pygame.K_RETURN, enter))
+        self.assertTrue(game.on_gallery)
+        self.assertIsNone(game.gallery_session)
+        self.assertTrue(self.key(game, pygame.K_ESCAPE, enter))
+        self.assertFalse(game.on_gallery)
+        self.assertTrue(game.on_title)
+        self.assertIsNone(game.gallery_session)
+        self.assertEqual(game.title.fade, 0)
+
     def test_production_skip_returns_without_starting_the_opening_morning(self):
         game = self.game();before = self.snapshot(game)
         session = self.launch(game)
         game.draw()
         child = session.game
         point = child.opening_cinematic.skip_rect.center
-        width, height = child.window.get_size()
-        scale = max(1, min(width//480, height//320))
-        screen = (round((width-480*scale)//2+point[0]*scale),
-                  round((height-320*scale)//2+point[1]*scale))
+        scale, _, origin = child._ensure_ui_surface()
+        screen = (round(origin[0]+point[0]*scale)+session.viewport_rect.x,
+                  round(origin[1]+point[1]*scale)+session.viewport_rect.y)
         for kind in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
             pygame.event.post(pygame.event.Event(kind, button=1, pos=screen))
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False))
@@ -268,6 +285,33 @@ class GallerySessionTests(unittest.TestCase):
         self.assertFalse(child.quest_ui.journal_open)
         self.assertFalse(child.map_open)
         self.assertFalse(child.pause.is_open)
+
+    def test_every_registered_scene_completes_with_rendered_dialogue_and_real_input(self):
+        game = self.game();before = self.snapshot(game)
+        for entry in GALLERY_ENTRIES:
+            with self.subTest(entry=entry.id):
+                session = self.launch(game, entry.id)
+                child = session.game
+                for frame in range(4000):
+                    # Render and acknowledge through the actual fractional
+                    # preview viewport. Reflowing against a different input
+                    # canvas previously reset long dialogue to the same page.
+                    if frame % 3 == 0:
+                        game.draw()
+                        if game.gallery_session is None:break
+                        if child.social.active or child.regent_arrival.active:
+                            self.assertTrue(self.key(game, pygame.K_SPACE))
+                    game.update(.1)
+                    if game.gallery_session is None:break
+                self.assertIsNone(game.gallery_session,
+                                  'Rendered dialogue and input must agree on page layout')
+                self.assertIsNone(game.gallery.error)
+                self.assertTrue(session.playback.finished)
+                self.assertTrue(session.closed)
+                self.assertEqual(self.snapshot(game), before)
+                self.assertFalse(self.path.exists())
+                del session, child
+                gc.collect()
 
     def test_preview_never_ticks_incidental_world_encounters(self):
         game = self.game()
@@ -315,14 +359,20 @@ class GallerySessionTests(unittest.TestCase):
 
     def test_world_scene_focus_loss_pauses_music_and_morning_ambience(self):
         game = self.game()
-        child = self.launch(game, 'morning_wake').game
+        session = self.launch(game, 'morning_wake')
+        child = session.game
         game.update(.1)
         clock = child.elapsed_ms
+        page = child.social.page_index
         pygame.event.post(pygame.event.Event(pygame.WINDOWFOCUSLOST))
-        self.assertTrue(game.handle_events());game.update(2)
+        pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False))
+        with patch.object(session.playback, '_drive') as drive:
+            self.assertTrue(game.handle_events());game.update(2)
+            drive.assert_not_called()
         self.assertTrue(child.music.paused)
         self.assertTrue(child.opening_audio._paused)
         self.assertEqual(child.elapsed_ms, clock)
+        self.assertEqual(child.social.page_index, page)
         pygame.event.post(pygame.event.Event(pygame.WINDOWFOCUSGAINED))
         self.assertTrue(game.handle_events());game.update(.1)
         self.assertFalse(child.music.paused)
@@ -334,14 +384,14 @@ class GallerySessionTests(unittest.TestCase):
         first = self.launch(game)
         pygame.event.post(pygame.event.Event(pygame.VIDEORESIZE, w=800, h=800))
         self.assertTrue(game.handle_events());game.draw()
-        point = game.ui.painter(game.window, (640, 360)).point(first.restart_rect.center)
+        point = first._painter().point(first.restart_rect.center)
         for kind in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
             pygame.event.post(pygame.event.Event(kind, button=1, pos=point))
         self.assertTrue(game.handle_events())
         second = game.gallery_session
         self.assertIsNot(second, first)
         game.draw()
-        point = game.ui.painter(game.window, (640, 360)).point(second.back_rect.center)
+        point = second._painter().point(second.back_rect.center)
         for kind in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
             pygame.event.post(pygame.event.Event(kind, button=1, pos=point))
         self.assertTrue(game.handle_events())
@@ -354,7 +404,8 @@ class GallerySessionTests(unittest.TestCase):
         self.assertTrue(self.key(game, pygame.K_F11))
         self.assertTrue(game.fullscreen)
         self.assertTrue(child.fullscreen)
-        self.assertIs(child.window, game.window)
+        self.assertIsNot(child.window, game.window)
+        self.assertEqual(child.window.get_size(), game.gallery_session.viewport_rect.size)
         self.assertTrue(self.key(game, pygame.K_ESCAPE))
         self.assertTrue(game.fullscreen)
         with patch('pygame.display.set_mode', wraps=pygame.display.set_mode) as mode:
@@ -371,10 +422,37 @@ class GallerySessionTests(unittest.TestCase):
         pygame.event.post(pygame.event.Event(pygame.VIDEORESIZE, w=1100, h=750))
         self.assertTrue(game.handle_events());game.draw()
         self.assertEqual(game.window.get_size(), (1100, 750))
-        self.assertIs(child.window, game.window)
+        self.assertIsNot(child.window, game.window)
+        self.assertEqual(child.window.get_size(), game.gallery_session.viewport_rect.size)
         self.assertTrue(self.key(game, pygame.K_ESCAPE));game.draw()
         self.assertEqual(game.window.get_size(), (1100, 750))
         self.assertEqual(self.snapshot(game), before)
+
+    def test_reserved_toolbar_and_scene_input_fit_small_wide_and_tall_windows(self):
+        game = self.game();game.audio.text_scale = 1.5
+        for size in ((960, 640), (480, 320), (1920, 810), (800, 800)):
+            with self.subTest(size=size):
+                game.window = pygame.display.set_mode(size, pygame.RESIZABLE)
+                session = self.launch(game)
+                game.draw()
+                child = session.game
+                self.assertTrue(game.window.get_rect().contains(session.viewport_rect))
+                self.assertGreaterEqual(session.viewport_rect.top,
+                                        session._painter().area(session.bar_rect).bottom)
+                scale, pixels, origin = child._ensure_ui_surface()
+                self.assertTrue(child.window.get_rect().contains(pygame.Rect(origin, pixels)))
+                point = child.opening_cinematic.skip_rect.center
+                local = (round(origin[0]+point[0]*scale), round(origin[1]+point[1]*scale))
+                recovered = child.to_canvas(local)
+                self.assertLess(pygame.Vector2(recovered).distance_to(point), 2)
+                screen = (local[0]+session.viewport_rect.x, local[1]+session.viewport_rect.y)
+                for kind in (pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP):
+                    pygame.event.post(pygame.event.Event(kind, button=1, pos=screen))
+                self.assertTrue(game.handle_events())
+                game.update(.7)
+                self.assertIsNone(game.gallery_session)
+                del session, child
+                gc.collect()
 
     def test_arrival_audio_and_controller_resources_are_released(self):
         game = self.game()
@@ -394,6 +472,42 @@ class GallerySessionTests(unittest.TestCase):
         self.assertTrue(all(channel.get_sound() is not sound or not channel.get_busy()
                             for channel, sound in owned))
         self.assertTrue(game.music._owns_stream())
+
+    def test_regional_previews_release_owned_voices_without_stopping_other_audio(self):
+        game = self.game();game.audio.effects_volume = 1
+        before = self.snapshot(game)
+        for identifier in ('grain_extra_sack', 'bridge_tea'):
+            with self.subTest(entry=identifier):
+                child = self.launch(game, identifier).game
+                sentinel = pygame.mixer.Sound(buffer=bytes(4096))
+                unrelated = sentinel.play(loops=-1)
+                self.assertIsNotNone(unrelated)
+                try:
+                    # Grain's dialogue station is intentionally outside the
+                    # ambience radius. Its first sound is the real sack contact.
+                    for _ in range(300):
+                        if child.social.active:self.assertTrue(self.key(game, pygame.K_SPACE))
+                        game.update(.1)
+                        if child.regional_audio.voices or game.gallery_session is None:break
+                    self.assertIsNotNone(child._overworld_world)
+                    self.assertTrue(child.regional_audio.voices,
+                                    'The actual dummy mixer must receive a regional voice')
+                    owned = [(channel, sound) for _, channel, sound, _
+                             in child.regional_audio.voices.values()]
+                    self.assertTrue(self.key(game, pygame.K_ESCAPE))
+                    self.assertEqual(child.regional_audio.voices, {})
+                    self.assertEqual(child.regional_audio.cooldowns, {})
+                    self.assertTrue(all(channel.get_sound() is not sound or not channel.get_busy()
+                                        for channel, sound in owned))
+                    self.assertIs(unrelated.get_sound(), sentinel)
+                    self.assertTrue(unrelated.get_busy())
+                    self.assertTrue(game.music._owns_stream())
+                    self.assertEqual(self.snapshot(game), before)
+                finally:
+                    sentinel.stop()
+                    if game.gallery_session is not None:game.gallery_session.close()
+                del child
+                gc.collect()
 
     def test_quit_during_preview_closes_audio_without_saving(self):
         game = self.game()
@@ -430,6 +544,25 @@ class GallerySessionTests(unittest.TestCase):
         self.assertTrue(game.launch_gallery_scene('later_journey'))
         self.assertTrue(self.key(game, pygame.K_ESCAPE))
         self.assertFalse(self.path.exists())
+
+    def test_missing_arrival_layer_during_draw_restores_gallery_and_saved_journey(self):
+        self.saved_payload()
+        saved_bytes = self.path.read_bytes()
+        game = self.game();before = self.snapshot(game)
+        session = self.launch(game, 'regent_arrival')
+        child = session.game
+        with patch.object(child.regent_arrival, '_load', side_effect=FileNotFoundError('Missing arrival layer')):
+            game.draw()
+        self.assertTrue(session.closed)
+        self.assertIsNone(game.gallery_session)
+        self.assertTrue(game.on_gallery)
+        self.assertIn('Missing arrival layer', game.gallery.error)
+        self.assertTrue(game.music._owns_stream())
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        self.assertFalse(child.music._owns_stream())
+        self.assertEqual(child.regent_arrival.audio.channels, [])
+        self.assertEqual(self.path.read_bytes(), saved_bytes)
+        self.assertEqual(self.snapshot(game), before)
 
 
 if __name__ == '__main__':unittest.main()
