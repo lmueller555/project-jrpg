@@ -162,6 +162,10 @@ class OverworldWorld:
                                'rect': self._tile_rect(gate['rect_tiles'])})
         self.npcs = [RoadGuard(self, gate, position, index)
                      for gate in self.gates for index,position in enumerate(gate['guard_positions'])]
+        self.environment = None
+        if self.region.get('detail_art_manifest'):
+            from overworld_environment import EnvironmentDetail
+            self.environment = EnvironmentDetail(self)
 
     @staticmethod
     def _tile_point(point):return tuple(value*TILE_SIZE for value in point)
@@ -196,6 +200,11 @@ class OverworldWorld:
         path = ROOT/candidate if isinstance(candidate, str) else ART_FILE
         self.art_available = path.exists()
         if self.art_available:self._art = json.loads(path.read_text(encoding='utf-8'))
+        detail = self.region.get('detail_art_manifest')
+        if detail and (ROOT/detail).exists():
+            additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
+            for group in ('tiles','props'):
+                self._art.setdefault(group,{}).update(additional.get(group,{}))
 
     def _tile_image(self, key):
         if key not in self._tiles:
@@ -248,6 +257,8 @@ class OverworldWorld:
         key = (cx, cy);cached = self._metadata_cache.get(key)
         if cached is not None:return cached
         if not self._has_chunk(cx, cy):return None
+        if self.environment is not None:
+            return self._metadata_cache.put(key,{'coord':key,'props':self.environment.chunk_props(cx,cy)})
         props = []
         # Four-tile cells own their jittered trees, independent of load order.
         for x in range(cx*CHUNK_TILES, (cx+1)*CHUNK_TILES, 4):
@@ -334,7 +345,9 @@ class OverworldWorld:
                 pygame.draw.rect(surface, 'white', rect)
         for gate in self.gates:
             if not self._gate_open(gate):pygame.draw.rect(surface, 'white', gate['rect'].move(-origin[0], -origin[1]))
-        for prop in metadata['props']:
+        props = (self.environment.collision_props(cx,cy) if self.environment is not None
+                 else (prop for prop in metadata['props'] if prop.get('solid')))
+        for prop in props:
             width, height = prop['solid'];x, y = prop['position']
             rect = pygame.Rect(round(x)-width//2-origin[0], round(y)-height//2-origin[1], width, height)
             pygame.draw.rect(surface, 'white', rect)
@@ -389,31 +402,40 @@ class OverworldWorld:
         surface = pygame.Surface((CHUNK_PIXELS, CHUNK_PIXELS))
         if self._chunk_metadata(cx, cy) is None:
             surface.fill('#283d38');return surface
-        self._pattern(surface, 'grass')
         terrain = self.region.get('terrain', {})
         ox, oy = cx*CHUNK_PIXELS, cy*CHUNK_PIXELS
         chunk_rect = pygame.Rect(ox, oy, CHUNK_PIXELS, CHUNK_PIXELS)
-        for category, key in (('forests','forest_floor'), ('fields','field'), ('hills','grass'), ('scorched','scorched')):
-            for feature in terrain.get(category, []):
-                if not self._feature_intersects(feature['polygon'], chunk_rect):continue
-                polygon = [(round(x*TILE_SIZE-ox), round(y*TILE_SIZE-oy)) for x, y in feature['polygon']]
-                self._paint_shape(surface, key, lambda mask, polygon=polygon: pygame.draw.polygon(mask, 'white', polygon))
-        for road in self.region.get('roads', []):
-            if not self._feature_intersects(road['points'], chunk_rect, road.get('width',3)*TILE_SIZE/2+10):continue
-            points = self._local_path(road, cx, cy);width = road.get('width', 3)*TILE_SIZE
-            self._draw_path(surface, '#8e9568', points, width+10)
-            self._paint_shape(surface, road.get('surface','dirt'), lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
+        if self.environment is not None:
+            self.environment.ground(surface,cx,cy)
+            self.environment.roads(surface,cx,cy)
+        else:
+            self._pattern(surface, 'grass')
+            for category, key in (('forests','forest_floor'), ('fields','field'), ('hills','grass'), ('scorched','scorched')):
+                for feature in terrain.get(category, []):
+                    if not self._feature_intersects(feature['polygon'], chunk_rect):continue
+                    polygon = [(round(x*TILE_SIZE-ox), round(y*TILE_SIZE-oy)) for x, y in feature['polygon']]
+                    self._paint_shape(surface, key, lambda mask, polygon=polygon: pygame.draw.polygon(mask, 'white', polygon))
+            for road in self.region.get('roads', []):
+                if not self._feature_intersects(road['points'], chunk_rect, road.get('width',3)*TILE_SIZE/2+10):continue
+                points = self._local_path(road, cx, cy);width = road.get('width', 3)*TILE_SIZE
+                self._draw_path(surface, '#8e9568', points, width+10)
+                self._paint_shape(surface, road.get('surface','dirt'), lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
         if not self._bridge_repaired():
             # The strike destroyed road approaches as well as the span. Let the
             # authored scorched polygons interrupt the stone road on both banks.
             for feature in terrain.get('scorched',[]):
+                if self.environment is not None:
+                    self.environment.polygon(surface,feature,'scorched',cx,cy,4)
+                    continue
                 if not self._feature_intersects(feature['polygon'],chunk_rect):continue
                 polygon = [(round(x*TILE_SIZE-ox),round(y*TILE_SIZE-oy)) for x,y in feature['polygon']]
                 self._paint_shape(surface,'scorched',lambda mask,p=polygon:pygame.draw.polygon(mask,'white',p))
         for river in terrain.get('rivers', []):
-            if not self._feature_intersects(river['points'], chunk_rect, river.get('width',8)*TILE_SIZE/2+24):continue
+            fringe = 40 if self.environment is not None else 24
+            if not self._feature_intersects(river['points'], chunk_rect, river.get('width',8)*TILE_SIZE/2+fringe):continue
             points = self._local_path(river, cx, cy);width = river.get('width',8)*TILE_SIZE
-            self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
+            if self.environment is not None:self.environment.bank(surface,river,cx,cy)
+            else:self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
             self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
         bridge = self.region.get('bridge')
         if bridge and self._bridge_repaired():
@@ -450,7 +472,12 @@ class OverworldWorld:
                 end = min(right, expanded.right/TILE_SIZE)
                 for x in range(math.ceil(start/2)*2, math.ceil(end/2)*2, 2):
                     if x+1 > right:continue
-                    yield {'key':'wall_segment', 'position':self._tile_point((x+1, wall['y']+.5))}
+                    key = 'wall_segment'
+                    if self.environment is not None:
+                        seed = _stable_hash(x,round(wall['y']),53)
+                        preferred = 'wall_segment_moss' if seed%5 == 0 else 'wall_segment_worn' if seed%7 == 0 else key
+                        if preferred in self._art.get('props',{}):key = preferred
+                    yield {'key':key, 'position':self._tile_point((x+1, wall['y']+.5))}
         for gate in self.gates:
             if not self._gate_open(gate):yield {'key':'checkpoint', 'position':gate['position']}
 
@@ -481,10 +508,12 @@ class OverworldWorld:
         self._draw_water(target,camera,elapsed_ms)
         ordered = []
         for prop in self._static_props(viewport):
-            surface, anchor = self._prop_image(prop['key'])
+            key,position = (self.environment.prop_frame(prop,elapsed_ms) if self.environment is not None
+                            else (prop['key'],prop['position']))
+            surface, anchor = self._prop_image(key)
             if surface is None:continue
-            x,y = prop['position'];rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
-            if rect.colliderect(viewport):ordered.append((y,1,surface,rect.topleft))
+            x,y = position;rect = surface.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
+            if rect.colliderect(viewport):ordered.append((prop['position'][1]+prop.get('sort_offset',0),1,surface,rect.topleft))
         for actor, priority in [(npc,2) for npc in self.npcs]+[(player,3)]:
             if not getattr(actor,'story_visible',True):continue
             position = getattr(actor,'story_position',None) or actor.position

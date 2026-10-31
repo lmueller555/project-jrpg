@@ -1,0 +1,576 @@
+{
+  "actual_renderer": true,
+  "quest_progress_seeded": false,
+  "capture_stage": "final",
+  "views": {
+    "town_miniature.png": {
+      "requested_player_tile": [
+        12,
+        -25
+      ],
+      "actual_player_pixel": [
+        288.0,
+        -600.0
+      ],
+      "focus_tile": [
+        12,
+        -29
+      ],
+      "camera_pixel": [
+        48,
+        -856
+      ]
+    },
+    "village_outskirts.png": {
+      "requested_player_tile": [
+        3,
+        -11
+      ],
+      "actual_player_pixel": [
+        72.0,
+        -264.0
+      ],
+      "focus_tile": [
+        3,
+        -13
+      ],
+      "camera_pixel": [
+        -168,
+        -472
+      ]
+    },
+    "western_bridge.png": {
+      "requested_player_tile": [
+        -101,
+        29
+      ],
+      "actual_player_pixel": [
+        -2424.0,
+        696.0
+      ],
+      "focus_tile": [
+        -109,
+        29
+      ],
+      "camera_pixel": [
+        -2856,
+        536
+      ]
+    },
+    "northern_checkpoint.png": {
+      "requested_player_tile": [
+        20,
+        -91
+      ],
+      "actual_player_pixel": [
+        480.0,
+        -2184.0
+      ],
+      "focus_tile": [
+        20,
+        -94
+      ],
+      "camera_pixel": [
+        240,
+        -2416
+      ]
+    },
+    "southern_checkpoint.png": {
+      "requested_player_tile": [
+        28,
+        91
+      ],
+      "actual_player_pixel": [
+        672.0,
+        2184.0
+      ],
+      "focus_tile": [
+        28,
+        94
+      ],
+      "camera_pixel": [
+        432,
+        2096
+      ]
+    },
+    "eastern_foothills.png": {
+      "requested_player_tile": [
+        74,
+        -20
+      ],
+      "actual_player_pixel": [
+        1776.0,
+        -480.0
+      ],
+      "focus_tile": [
+        78,
+        -24
+      ],
+      "camera_pixel": [
+        1632,
+        -736
+      ]
+    },
+    "northern_woodland.png": {
+      "requested_player_tile": [
+        -48,
+        -68
+      ],
+      "actual_player_pixel": [
+        -1152.0,
+        -1632.0
+      ],
+      "focus_tile": [
+        -48,
+        -70
+      ],
+      "camera_pixel": [
+        -1392,
+        -1840
+      ]
+    },
+    "forest_interior.png": {
+      "requested_player_tile": [
+        -80,
+        -66
+      ],
+      "actual_player_pixel": [
+        -1904.0,
+        -1584.0
+      ],
+      "focus_tile": [
+        -80,
+        -69
+      ],
+      "camera_pixel": [
+        -2160,
+        -1816
+      ]
+    },
+    "southern_farmland.png": {
+      "requested_player_tile": [
+        46,
+        75
+      ],
+      "actual_player_pixel": [
+        1104.0,
+        1800.0
+      ],
+      "focus_tile": [
+        46,
+        71
+      ],
+      "camera_pixel": [
+        864,
+        1544
+      ]
+    },
+    "relief_staging.png": {
+      "requested_player_tile": [
+        -68,
+        19
+      ],
+      "actual_player_pixel": [
+        -1632.0,
+        456.0
+      ],
+      "focus_tile": [
+        -68,
+        16
+      ],
+      "camera_pixel": [
+        -1872,
+        224
+      ]
+    },
+    "farmstead_west.png": {
+      "requested_player_tile": [
+        -36,
+        10
+      ],
+      "actual_player_pixel": [
+        -864.0,
+        240.0
+      ],
+      "focus_tile": [
+        -36,
+        7
+      ],
+      "camera_pixel": [
+        -1104,
+        8
+      ]
+    },
+    "farmstead_south.png": {
+      "requested_player_tile": [
+        -15,
+        52
+      ],
+      "actual_player_pixel": [
+        -360.0,
+        1248.0
+      ],
+      "focus_tile": [
+        -13,
+        50
+      ],
+      "camera_pixel": [
+        -552,
+        1040
+      ]
+    },
+    "farmstead_east.png": {
+      "requested_player_tile": [
+        60,
+        51
+      ],
+      "actual_player_pixel": [
+        1440.0,
+        1224.0
+      ],
+      "focus_tile": [
+        60,
+        50.5
+      ],
+      "camera_pixel": [
+        1200,
+        1052
+      ]
+    },
+    "orchard.png": {
+      "requested_player_tile": [
+        -4,
+        -9
+      ],
+      "actual_player_pixel": [
+        -96.0,
+        -216.0
+      ],
+      "focus_tile": [
+        -4,
+        -11
+      ],
+      "camera_pixel": [
+        -336,
+        -424
+      ]
+    },
+    "riverbank.png": {
+      "requested_player_tile": [
+        107,
+        37
+      ],
+      "actual_player_pixel": [
+        2568.0,
+        888.0
+      ],
+      "focus_tile": [
+        113,
+        35
+      ],
+      "camera_pixel": [
+        2472,
+        680
+      ]
+    }
+  },
+  "transitions": [
+    [
+      "eldenmere.playable",
+      "auratia.overworld"
+    ],
+    [
+      "auratia.overworld",
+      "eldenmere.playable"
+    ]
+  ],
+  "walk": {
+    "road_id": "western_farm_spur",
+    "start_pixel": [
+      -1008.0,
+      408.0
+    ],
+    "end_pixel": [
+      -865.8921050083088,
+      193.80714743665118
+    ],
+    "displacement_pixels": 257.05,
+    "update_frames": 180,
+    "movement": "production Game.update, walking"
+  },
+  "overview": {
+    "streamed_chunks": 768,
+    "largest_world_render_surface": [
+      384,
+      384
+    ],
+    "overview_size": [
+      1536,
+      1152
+    ],
+    "max_render_cache_bytes": 66650112,
+    "max_metadata_chunks": 64,
+    "configured_render_budget": 67108864
+  },
+  "region_sha256": "a0a8e09e499c599e166646e97fced193242b30633abede7b4903790c4599c017",
+  "art_manifest_sha256": "cd26ece5a475d96332d56619dd5a46557682ec2e5b9155549d3abf19214d623c",
+  "detail_art_manifest_sha256": "b5105bfb344de2f1b3c92bf39069be09171073d690c3e154cc81c88f53f8b163",
+  "engine_sha256": "9b45477d9f8d6465f3c69c20ba8496641e89c944a002cf90ad9aa499676353e2",
+  "environment_helper_sha256": "892e294d628def22bae56270d1151747f7141e244e13745a8c08135ce895158b",
+  "render_input_sha256": {
+    "assets/maps/overworld/elden_vale/region.json": "a0a8e09e499c599e166646e97fced193242b30633abede7b4903790c4599c017",
+    "assets/terrain/overworld/elden_vale/art.json": "cd26ece5a475d96332d56619dd5a46557682ec2e5b9155549d3abf19214d623c",
+    "assets/terrain/overworld/elden_vale/polish/art.json": "b5105bfb344de2f1b3c92bf39069be09171073d690c3e154cc81c88f53f8b163",
+    "assets/terrain/overworld/elden_vale/polish/props/barn.png": "0a718c94cd9b2662e73a10787fc225c9d2af5d33384c420097ec5e610a83b262",
+    "assets/terrain/overworld/elden_vale/polish/props/bench.png": "e86e9f13b2bd7f65828efd0e43a4e366c0d76bffd09f6ff5d5d4ef2adf540447",
+    "assets/terrain/overworld/elden_vale/polish/props/bird_1.png": "f336266b2e2261cd8b75959644185ff15301a1fcfb0ee94f25c5bcc19a967e9d",
+    "assets/terrain/overworld/elden_vale/polish/props/bird_2.png": "b4f0d1e563e5b1e6c8bf01b68f123fa4b7c239b69d3087de501a7efd5c712fec",
+    "assets/terrain/overworld/elden_vale/polish/props/bridge_rubble.png": "8becc424348a61789e31dcebb2fdaf13059a503c3636bdb4bf3557517761477d",
+    "assets/terrain/overworld/elden_vale/polish/props/butterfly_1.png": "4c1839ecd8b75305ae115c15a792b31c2380aa5e92d0106cae3ecd15034cf409",
+    "assets/terrain/overworld/elden_vale/polish/props/butterfly_2.png": "c2f5bca2340cc00959bd97ea19bdb6fd19d6ee85ddd375c110a18c7fea984f43",
+    "assets/terrain/overworld/elden_vale/polish/props/cart.png": "45149c54d2768b88a2ae7c88947ec4767aa83cca7133c82a965c22fe9dd895c2",
+    "assets/terrain/overworld/elden_vale/polish/props/checkpoint_shelter.png": "40582593d06eaa44b4f06ee3a25b73af46dbd840c8099ad53772a4df40551c3e",
+    "assets/terrain/overworld/elden_vale/polish/props/conifer_a.png": "fc72d44de28c7d5658371b1d4d2136e15c435389e34dbc59d998a96bca003d3a",
+    "assets/terrain/overworld/elden_vale/polish/props/conifer_b.png": "2f0f654c7439a60b6a14717825c46309eddb590e75b742d07a382b372e2fb878",
+    "assets/terrain/overworld/elden_vale/polish/props/farm_house.png": "f992fec48af5552a201f6871feb22d970289ca194ff490e218bbe7e75ce3b70f",
+    "assets/terrain/overworld/elden_vale/polish/props/fence_h.png": "f9b1f1b013461f5dca150e65779be0a5e518e9ff3d700da439fbf1401f39f1f3",
+    "assets/terrain/overworld/elden_vale/polish/props/fence_v.png": "461ef6b81984b1a26ad498847dbcc51bccca5b3353b6c6b925315b1d2c3ab96f",
+    "assets/terrain/overworld/elden_vale/polish/props/fern.png": "e07c2c4ef38e664b3f13ac62813fd638132326e594feca8f4d1f727a5adac364",
+    "assets/terrain/overworld/elden_vale/polish/props/flowers_a.png": "048326c60268a8b920658a0beb74e2ac7229f6cc3df61908b041e07dd1cbc020",
+    "assets/terrain/overworld/elden_vale/polish/props/flowers_b.png": "b3c81849d9b55d2a28801f8fe28e31448afcffe149fa67ee5b96ead61d575d4f",
+    "assets/terrain/overworld/elden_vale/polish/props/grain_sacks.png": "a2d2b0c823105f7c347ae52add16398515bc5c624e88b3992bfcae4c06933003",
+    "assets/terrain/overworld/elden_vale/polish/props/grass_tuft.png": "0520bebf84765a216839ca27968a3622487c2b00e52d891f63c7c9596284795e",
+    "assets/terrain/overworld/elden_vale/polish/props/haystack.png": "3e83e3b631020e544372d0debe525637b6c6dd0f41cfce73dc8879e4927f01d6",
+    "assets/terrain/overworld/elden_vale/polish/props/hedge_h.png": "60d88142b56ad80616fad25095246b6dfeb405a9f438019f12d66f7be82cbfdc",
+    "assets/terrain/overworld/elden_vale/polish/props/hedge_v.png": "a70455f039159329c68c32fb49a47467273a09dca41f7cbaa34ffafffbb8aa73",
+    "assets/terrain/overworld/elden_vale/polish/props/lantern_crates.png": "f852387622d7f2f6b2da994095d564431119b728073fb09ff68408081bbbd7a6",
+    "assets/terrain/overworld/elden_vale/polish/props/laundry.png": "a4c3d57245cea3837b0fe57108a0c9aff0abc5f4d32ac70f3d413ad3eda1ce0e",
+    "assets/terrain/overworld/elden_vale/polish/props/log.png": "9604e64f035273e787b6ccd37f55d0f94254a28a7d75f85ecb43ad838dee7158",
+    "assets/terrain/overworld/elden_vale/polish/props/oak_a.png": "0cab1a5d767c1eee21b398ce63f762423a4633af09bb6dda92755d624b752549",
+    "assets/terrain/overworld/elden_vale/polish/props/oak_b.png": "dd363e214da7c8d125d2c82d60241b1a49676453ef2a712f73487d3fca1f3907",
+    "assets/terrain/overworld/elden_vale/polish/props/oak_c.png": "7a6daaf531d282be12465958a0a424c60ac162e496d9fa46f4e58a88e6a2147b",
+    "assets/terrain/overworld/elden_vale/polish/props/orchard_tree.png": "4da6ec88c2f0dc7bf723b1cf11e36904a6d4d877463d6b78241cd62d11ad405e",
+    "assets/terrain/overworld/elden_vale/polish/props/reeds.png": "8f1a36332e34d5c34c20eb647a78ee4d352196800fde94447f6fc9c84aaee203",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
+    "assets/terrain/overworld/elden_vale/polish/props/sapling.png": "e859522d61f6b1f393ba30a58ea87b83bc2dc19ada1bd4d3fc34187582bf58d4",
+    "assets/terrain/overworld/elden_vale/polish/props/shed.png": "eddb928139f095cef1f26c42f274681a4c83fc29ad70cdf9e44982b68f1a48ed",
+    "assets/terrain/overworld/elden_vale/polish/props/sheep_1.png": "f7028a71c03df742a6b316ca98d374d9edc2a9f110965818549c01a1dbf34a28",
+    "assets/terrain/overworld/elden_vale/polish/props/sheep_2.png": "968055b5ecf054defe500f777eec8447b4be483a05fe4afb44b4ebf73625db08",
+    "assets/terrain/overworld/elden_vale/polish/props/shrub.png": "6ca74ed9f072841960e2b4216781d7db84cb4d3923221069193c220e1a3b1813",
+    "assets/terrain/overworld/elden_vale/polish/props/smoke_1.png": "e8211509cbc8006c5ac30c6b01db4f70e6ba9468d1c426dbd30bc5c39865a91d",
+    "assets/terrain/overworld/elden_vale/polish/props/smoke_2.png": "e65bb20489150a0e0530b135bbae97ccdc0293c1d43990c193ccd3f5ee403add",
+    "assets/terrain/overworld/elden_vale/polish/props/split_rail.png": "4643e8744d6fd07eec919c659183c6d9769bd66222583e7ac5e92adf66c355e6",
+    "assets/terrain/overworld/elden_vale/polish/props/stump.png": "c7b9943ebceeb7422ec80d4a1bfcc6949ee1272e5b67265719644ce5032eea52",
+    "assets/terrain/overworld/elden_vale/polish/props/wall_segment_moss.png": "93f28e55b76a17b8209984175921eef940692ea1ab3e8f843930a5e06653d03f",
+    "assets/terrain/overworld/elden_vale/polish/props/wall_segment_worn.png": "8c36ced5e1361f07d24b49063d5622617f09d554e8537176440402fe8e9375da",
+    "assets/terrain/overworld/elden_vale/polish/props/waypost.png": "4e187c08c19c7756dfff63bfc8040ce42f284a86b34d85d4ab585a9ec3d8e0b9",
+    "assets/terrain/overworld/elden_vale/polish/tiles/cart_earth.png": "35e6c628d5f76366826e79e44162152dfb8bcb8be3096080b17151e8eec43615",
+    "assets/terrain/overworld/elden_vale/polish/tiles/furrows.png": "9e410e395876df5d348100d7449f686dc8d9f92cd4bf39eac02d54c07f1cbd56",
+    "assets/terrain/overworld/elden_vale/polish/tiles/grain.png": "7303f64c94e063cb3bf5f1f0f4047ccc92df86d89629b16ace4e5636d24dbd2d",
+    "assets/terrain/overworld/elden_vale/polish/tiles/grass_dry.png": "fabb3a6dbcdc99e27e9f9b1244170c3a79f16e9417ea3c385b4440ed1f080d36",
+    "assets/terrain/overworld/elden_vale/polish/tiles/grass_lush.png": "9ef30b7ddfa148c6b2689b7c4fd6eb0427abedad2caf7e5d5eaf1057b4781406",
+    "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png": "74627d17dbb1b3f8dfb33cc7a71ea9ab0d36f1860ccbdd397041332c773d7a47",
+    "assets/terrain/overworld/elden_vale/polish/tiles/gravel.png": "81878d2195dd9d2b995d85c3042486b8de458a29004a74a93eaaed2feb6a9f0c",
+    "assets/terrain/overworld/elden_vale/polish/tiles/leaf_litter.png": "62620531e647ec2e5c5eb6a66828674df4e8949453b9e5f46fb13aa6679acd01",
+    "assets/terrain/overworld/elden_vale/polish/tiles/orchard_grass.png": "e4a0a6d369137e9994baa39df64f6841cde3eba6f38298bc00bc1c2e323b613d",
+    "assets/terrain/overworld/elden_vale/polish/tiles/pasture.png": "853ed2ddd9db0c0c464df4ceab507d536f12be9562cd133ee509f0b1def63416",
+    "assets/terrain/overworld/elden_vale/polish/tiles/stone_road_worn.png": "b8c2638df2e9a426498a74f4be2cdcc94b33250f69c315d709997b1e9c26c164",
+    "assets/terrain/overworld/elden_vale/polish/tiles/vegetables.png": "91125570b6f2b8186a5ae42e605c97a1decba76dab9ec562aaee5d4febe01219",
+    "assets/terrain/overworld/elden_vale/props/broken_bridge.png": "083ddacdeaeda171950d9c08da7ada5900cd34a46a51b965dd18cb062a9cb085",
+    "assets/terrain/overworld/elden_vale/props/checkpoint.png": "79daf2dca29d38272feebc7dd8f502adbf8c1c618deaab0f5a24af37ffac120c",
+    "assets/terrain/overworld/elden_vale/props/eldenmere.png": "9dd1646ccb1abf05b8546611742bfc0fef23ac1c16c9385ec241e6e350992d16",
+    "assets/terrain/overworld/elden_vale/props/guard_back.png": "d3aaba01eaf4265181c6bf79273ba84808881dad7898c97e4b00f35451906bfb",
+    "assets/terrain/overworld/elden_vale/props/guard_front.png": "f912f027b7df14c27dfdadc9282573982041fc387adf7598a15a8d84173b6543",
+    "assets/terrain/overworld/elden_vale/props/mountain.png": "1f96d3267c86fb77af384e6287a39bdd2c98e9a3bbf7b05c7075eb6416373c39",
+    "assets/terrain/overworld/elden_vale/props/rock.png": "041d6c4ba3938ca1b2e803441698ab6ebcbd2a08a86bfbc1fe7fba6a9cb8d011",
+    "assets/terrain/overworld/elden_vale/props/supplies.png": "17167a2f014ae38abc6db4cf6efc84fad9b02392ff9385ab390e59b7ceca9b1e",
+    "assets/terrain/overworld/elden_vale/props/tree_broadleaf.png": "40a2bc4ee870f81e8eb7ef8a4a65b36b9b213f9b60abf4762f476615f138455f",
+    "assets/terrain/overworld/elden_vale/props/tree_conifer.png": "935f565a97ff2b44c414fe8ff6836792a572558a1ac531b762845c1819e6784f",
+    "assets/terrain/overworld/elden_vale/props/wall_segment.png": "db0fa620fef92228adde22feae439a2a38c7594f960c483634caad7dd798b050",
+    "assets/terrain/overworld/elden_vale/tiles/bank.png": "c96540a7955cd8227e328558d020f03460dab318d44e07d60388dba245db29bc",
+    "assets/terrain/overworld/elden_vale/tiles/dirt.png": "8116e3dbd4f44b749925ffc603994455c78863cb92e0c3f5743272bcbebc091c",
+    "assets/terrain/overworld/elden_vale/tiles/field.png": "d99692bd2f62d5674bbef2cda9a077bbb7f1875f2c4b6848ea67a8fe7af5f5b4",
+    "assets/terrain/overworld/elden_vale/tiles/forest_floor.png": "e9d0692dceae5e7e7049bcb3bb91ba00fef8d4fe6c1c67b3ebe54c035616ea12",
+    "assets/terrain/overworld/elden_vale/tiles/grass.png": "195a256e6d9bb035faaa8eea6f316c336aefadf473efe3c6770a6737c6d9b9af",
+    "assets/terrain/overworld/elden_vale/tiles/scorched.png": "7591395379bd6ed06f2cf4520a3169d39f38f6c7b0c5aab29e3eacef3b6690c1",
+    "assets/terrain/overworld/elden_vale/tiles/stone_road.png": "82cdae94f9a4fbdf995ac72404cce0ad2f5d7e67ec7eaaa4ce9d8a870b36e449",
+    "assets/terrain/overworld/elden_vale/tiles/wall.png": "5c73054719c93ed75da06b4a4664ad38ee3defe37ff79f9b20a885933d4d33d3",
+    "assets/terrain/overworld/elden_vale/tiles/water.png": "05187d334b3257f777d29daad11d33a9d3e29528e27def1a433770e760501552",
+    "assets/terrain/overworld/elden_vale/tiles/water_glint_1.png": "132af0c4eccb59ccb3091bedb3cf337c79f6e7f70543afd29d973eae123d43bb",
+    "assets/terrain/overworld/elden_vale/tiles/water_glint_2.png": "a6ab8b471930b8624a63a1d48cdd5a29bb5b63094bc0e71ec6ec471e2d032e3a",
+    "overworld_environment.py": "892e294d628def22bae56270d1151747f7141e244e13745a8c08135ce895158b",
+    "overworld_world.py": "9b45477d9f8d6465f3c69c20ba8496641e89c944a002cf90ad9aa499676353e2"
+  },
+  "captures": {
+    "before_after.png": {
+      "size": [
+        960,
+        1452
+      ],
+      "frames": 1,
+      "bytes": 579474
+    },
+    "eastern_foothills.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 121603
+    },
+    "farm_walk.gif": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 55,
+      "bytes": 3030817
+    },
+    "farmstead_east.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 151589
+    },
+    "farmstead_south.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 145739
+    },
+    "farmstead_west.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 143365
+    },
+    "forest_interior.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 205357
+    },
+    "northern_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 110417
+    },
+    "northern_woodland.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 196049
+    },
+    "orchard.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 85127
+    },
+    "region_overview.png": {
+      "size": [
+        1536,
+        1152
+      ],
+      "frames": 1,
+      "bytes": 1016989
+    },
+    "region_overview_annotated.png": {
+      "size": [
+        1536,
+        1152
+      ],
+      "frames": 1,
+      "bytes": 1025881
+    },
+    "regional_map.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 61249
+    },
+    "relief_staging.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 134708
+    },
+    "riverbank.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 72685
+    },
+    "southern_checkpoint.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 110943
+    },
+    "southern_farmland.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 58260
+    },
+    "town_miniature.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 83326
+    },
+    "town_transition.gif": {
+      "size": [
+        480,
+        320
+      ],
+      "frames": 14,
+      "bytes": 502998
+    },
+    "village_outskirts.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 116297
+    },
+    "western_bridge.png": {
+      "size": [
+        960,
+        640
+      ],
+      "frames": 1,
+      "bytes": 124128
+    }
+  }
+}

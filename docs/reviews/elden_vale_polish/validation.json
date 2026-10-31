@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "tests": {
+    "related_regression": {
+      "tests": 99,
+      "seconds": 25.965,
+      "result": "passed"
+    },
+    "final_overworld": {
+      "tests": 41,
+      "seconds": 18.541,
+      "result": "passed"
+    }
+  },
+  "regression_scope": [
+    "Overworld materials, maps, streaming, movement, travel and Continue",
+    "Town map, school atlas and world-map viewer",
+    "Camera director, scripted camera and social interactions"
+  ],
+  "builds": {
+    "polish_art": "byte-for-byte reproducible, 57 native PNGs",
+    "region_manifest_and_atlas_reference": "byte-for-byte reproducible",
+    "compilation": "passed",
+    "whitespace": "passed"
+  },
+  "protected_assets": {
+    "pre_existing_tracked_pngs": 10321,
+    "changed": [],
+    "approved_atlas_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0"
+  },
+  "layout": {
+    "road_count": 13,
+    "crop_parcels": 21,
+    "farmsteads": 3,
+    "setpieces": 10,
+    "authored_props": 379,
+    "native_ground_tiles": 12,
+    "native_props_and_frames": 45,
+    "bridge_walk_seconds": 46.05,
+    "geometry": {
+      "opening_reachable_tiles": 43616,
+      "required_points_reachable": 20,
+      "closed_perimeter": true,
+      "broken_bridge_blocks_crossing": true,
+      "repaired_bridge_connects_banks": true,
+      "scope": "Offline four-neighbour tile sampling of continuous vector barriers and authored approaches; runtime actor/decoration probes have separate engine checks."
+    }
+  },
+  "independent_review": {
+    "code": "No blocking issues; actual negative/positive chunk seam comparisons match",
+    "visual": "Final farm, forest, orchard, ridge, river, bridge and checkpoint views approved by independent reviewer"
+  },
+  "capture_input_hashes_match_final_files": true,
+  "capture_report": "capture_report.json",
+  "preserved_contracts": [
+    "Region/world/landmark identities and save schema",
+    "Town contact geometry and existing quest progress",
+    "Separate future chapter clearance and bridge repair",
+    "Closed river/wall enclosure and existing music"
+  ],
+  "region_sha256": "a0a8e09e499c599e166646e97fced193242b30633abede7b4903790c4599c017"
+}
