@@ -380,6 +380,20 @@ class MillQuest:
         if self.stage == 'aftermath' and self._near(self.mira.position, 84):
             return 'aftermath', 'E: Speak with Mira after the encounter'
         if self.game.world is self.town:
+            # The investigation gives north-road directions before its final
+            # acknowledgement. Walking away can leave that dialogue unfinished;
+            # offer the missing step at the trail instead of a travel hint whose
+            # quest gate will silently reject E. Unread inspections still require
+            # returning to the actual wheel/channel, and the warning stays gated.
+            if not self.can_enter_upstream() and any(
+                    link.get('id') == 'town_to_upstream' and
+                    self._near(link['position'], link.get('radius', 20))
+                    for link in self.town.data.get('world_links', [])):
+                if self._done('diagnose_mill'):
+                    return 'warning', 'E: Hear Mira before leaving town'
+                if {'mechanism', 'race'} <= self.inspected:
+                    return 'diagnosis', 'E: Discuss the mill with Mira'
+                return 'reminder_diagnose', 'E: Ask Mira about the mill'
             if not self._done('diagnose_mill'):
                 candidates = [kind for kind in ('mechanism', 'race') if self._near_object(kind)]
                 if candidates:
@@ -421,6 +435,7 @@ class MillQuest:
         if kind in ('mechanism', 'race', 'intake'):
             return self._speak(kind, lambda: self._record_inspection(kind))
         if kind == 'diagnosis':return self._speak('diagnosis', self._diagnose)
+        if kind == 'reminder_diagnose':return self._speak(kind)
         if kind == 'prepare':return self._speak(kind, lambda: self._start_action('prepare'))
         if kind == 'spell_intro':return self._speak(kind, lambda: self._start_action('spell'))
         if kind == 'encouragement':return self._encouragement()
