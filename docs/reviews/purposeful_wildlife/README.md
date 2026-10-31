@@ -7,6 +7,14 @@ audio events. [Media and source verification](verification.json) confirms all
 104 inputs match the final files, all six videos decode, and all 24 native/window
 still pairs have the expected dimensions.
 
+This evidence was regenerated after merging main's Gallery integration
+`e80c3534` into the wildlife branch (merge `4e86b720`). The title Gallery now has
+26 entries, including **A Familiar Visitor**, which replays the finite sheep and
+basket visit. This compilation records ordinary regional gameplay; the
+[Gallery review](../gallery/README.md) separately documents the new entry and
+its [production pat-contact preview](../gallery/regional_sheep_basket_visit.png).
+The per-clip input hashes include the merged `main.py`.
+
 The capture uses the actual `Game.update` and `Game.draw`: 30 simulation updates
 and 15 video frames per second, normal regional zoom, a 480×320 native canvas
 and its ordinary 960×640 window. PNG pairs preserve both views. No animal,

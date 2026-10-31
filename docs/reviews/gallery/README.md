@@ -1,6 +1,11 @@
 # Gallery review
 
-The title's Gallery provides 25 immediately available production scene previews.
+This original Gallery review covers 25 immediately available production scene previews.
+The wildlife pass adds **A Familiar Visitor** as entry 26, with its own
+production thumbnail and completion/restart/save-isolation tests. Its finite
+sheep visit and evidence are documented in the [wildlife review](../purposeful_wildlife/README.md).
+The screenshots and video below retain their original 25-entry capture;
+the thumbnail contact sheet includes the new entry.
 Each card has a captured thumbnail, a name, chapter and description. The full
 [coverage matrix and extension guide](../../GALLERY.md) documents fixtures,
 boundaries and intentional exclusions.
@@ -13,7 +18,7 @@ boundaries and intentional exclusions.
   Continue of the original saved journey.
 - [Gallery top](gallery_top.png), [scrolling](gallery_middle.png),
   [last entries](gallery_bottom.png), and [retained selection](gallery_return_selection.png).
-- [All 25 actual thumbnails](thumbnail_contact_sheet.jpg).
+- [All 26 actual thumbnails](thumbnail_contact_sheet.jpg).
 - [960×640 catalogue](gallery_960x640_text1.png),
   [480×320 at 150% text](gallery_480x320_text1.5.png),
   [800×800 at 150% text](gallery_800x800_text1.5.png), and
@@ -26,6 +31,10 @@ boundaries and intentional exclusions.
 - [Regional bridge tea](regional_bridge_tea.png) and
   [garden quiet care](regional_garden_quiet_care.png), plus
   [Continue of the original save](continue_original_save.png).
+- [Finite sheep and basket visit](regional_sheep_basket_visit.png): the new
+  automatic replay at its production pat contact, shown with the Gallery toolbar
+  and normal regional zoom. The complete visit runs about 62 seconds through
+  basket return and release of the original gardener.
 
 ## Reproduce
 
@@ -41,6 +50,9 @@ used. [Capture metadata](capture.json) records the source commit, runtime source
 hash, events and replay-return save-byte checks. The
 [thumbnail provenance](../../../assets/ui/gallery/capture.json) records each
 source frame, controller phase, crop and PNG SHA-256.
+`--mode thumbnails --scene sheep_basket_visit` captures only the new thumbnail
+and full replay still, preserving the original 25 thumbnails and their global
+provenance. The new record supplies its own source commit and runtime hash.
 
 Animation/camera time runs at the normal 30 Hz. Automated dialogue acknowledgement
 is brisk (0.4–1.0 seconds between inputs) to keep the review concise. The video is

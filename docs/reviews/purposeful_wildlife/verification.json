@@ -194,9 +194,10 @@
       ],
       "format": {
         "duration": "67.866667",
-        "size": "4347876"
+        "size": "4341631"
       },
-      "sha256": "324dbb99fee7934f0d5b6f9b6255aea1a3714022f3c67af80143bc071c348b10"
+      "sha256": "37c89458043e3e370281cd000c4d833fa646e461d107b85c01da076846f14152",
+      "full_decode_passed": true
     },
     "bird_grain_scatter_return.mp4": {
       "programs": [],
@@ -221,7 +222,8 @@
         "duration": "29.133333",
         "size": "1221766"
       },
-      "sha256": "68d37565b892379617b034013fe9672e714252e70ac921e0e000922960cfb6de"
+      "sha256": "68d37565b892379617b034013fe9672e714252e70ac921e0e000922960cfb6de",
+      "full_decode_passed": true
     },
     "butterfly_flowers.mp4": {
       "programs": [],
@@ -246,7 +248,8 @@
         "duration": "16.000000",
         "size": "372250"
       },
-      "sha256": "5db9be1222404273671e442ae10a89c93f495b73787c9142e4723b85829b7a6e"
+      "sha256": "5db9be1222404273671e442ae10a89c93f495b73787c9142e4723b85829b7a6e",
+      "full_decode_passed": true
     },
     "cat_sun_and_rest.mp4": {
       "programs": [],
@@ -271,7 +274,8 @@
         "duration": "40.000000",
         "size": "1052062"
       },
-      "sha256": "8377d776e07edc13933250dc2c178d4282ad518fd8b1a043d362c3105b75aafc"
+      "sha256": "8377d776e07edc13933250dc2c178d4282ad518fd8b1a043d362c3105b75aafc",
+      "full_decode_passed": true
     },
     "audible_distance.mp4": {
       "programs": [],
@@ -296,7 +300,8 @@
         "duration": "25.400000",
         "size": "2487190"
       },
-      "sha256": "3e31c1c20f94cb792eec313f632cc8c3cfc90f31263f827f42ae54b7ccb7438c"
+      "sha256": "3e31c1c20f94cb792eec313f632cc8c3cfc90f31263f827f42ae54b7ccb7438c",
+      "full_decode_passed": true
     },
     "purposeful_wildlife.mp4": {
       "programs": [],
@@ -319,9 +324,10 @@
       ],
       "format": {
         "duration": "178.421333",
-        "size": "9476114"
+        "size": "9469869"
       },
-      "sha256": "12b6b35eca3207af3c2ea95880ef88a4c7577cc59ef48a8092129ea5e25601be"
+      "sha256": "2581313851a5deca0c64a3a77b65deeafd1aa9bda97d8c1c705dc18975ee2273",
+      "full_decode_passed": true
     }
   },
   "checks": {
@@ -338,7 +344,8 @@
     "river_near_gain": 0.55,
     "far_river_released": true,
     "mute_and_map_pcm_exact_zero": true,
-    "map_freezes_wildlife": true
+    "map_freezes_wildlife": true,
+    "all_six_media_full_decode_passed": true
   },
   "wildlife_events": {
     "sheep_visit": [
@@ -406,5 +413,16 @@
     "cat_sun_and_rest": [],
     "audible_distance": []
   },
-  "listening_approval": "Not claimed; no verified perceptual listening facility."
+  "listening_approval": "Not claimed; no verified perceptual listening facility.",
+  "gallery_merge_context": {
+    "main_baseline": "e80c3534",
+    "merge_head": "4e86b720",
+    "main_sha256": "330053f8d8e6f72cf111403cf321d23a1b1fe13ec2bd79c3bd58afeadb3ab26a",
+    "gallery_sha256": "b929799d157b45feef6ecd2ea125c124a2b0948f0e44cf66b142ab2b7ae1532e",
+    "catalogue_count": 26,
+    "wildlife_entry": {
+      "id": "sheep_basket_visit",
+      "name": "A Familiar Visitor"
+    }
+  }
 }

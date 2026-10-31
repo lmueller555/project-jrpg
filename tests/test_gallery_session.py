@@ -208,6 +208,45 @@ class GallerySessionTests(unittest.TestCase):
         self.assertIsNone(game.gallery_session)
         self.assertFalse(self.path.exists())
 
+    def test_sheep_visit_restart_and_completion_preserve_saved_wildlife_and_produce(self):
+        self.saved_payload()
+        saved_bytes = self.path.read_bytes()
+        game = self.game()
+        original = game.overworld_world
+        original_wildlife = original.wildlife.to_dict()
+        original_garden = original.garden_orchard.to_dict()
+        before = self.snapshot(game)
+        first = self.launch(game, 'sheep_basket_visit')
+        child = first.game
+        wildlife = child.world.wildlife
+        self.assertIsNot(child.world, original)
+        self.assertIs(wildlife.worker, child.world.garden_orchard.actors[0])
+        self.assertFalse({id(actor) for actor in wildlife.actors}
+                         & {id(actor) for actor in original.wildlife.actors})
+        initial = wildlife.to_dict()
+        for _ in range(900):
+            game.update(.1, (1, 0), True)
+            if wildlife.vignette['basket'] == 'pen':break
+        else:self.fail('The preview never placed its basket at the pen')
+        self.assertTrue(wildlife.worker.wildlife_owned)
+        self.assertEqual(tuple(child.player.position), (-440, 1370))
+        self.assertTrue(self.key(game, pygame.K_r))
+        second = game.gallery_session
+        self.assertIsNot(first, second)
+        self.assertTrue(first.closed)
+        self.assertIsNot(second.game.world, child.world)
+        self.assertEqual(second.game.world.wildlife.to_dict(), initial)
+        self.assertFalse(second.game.world.wildlife.worker.wildlife_owned)
+        self.assertEqual(len(second.game.world.wildlife.actors), 9)
+        self.finish(game)
+        self.assertTrue(second.playback.finished)
+        self.assertEqual(second.game.world.wildlife.vignette['phase'], 'done')
+        self.assertFalse(second.game.world.wildlife.worker.wildlife_owned)
+        self.assertEqual(self.snapshot(game), before)
+        self.assertEqual(original.wildlife.to_dict(), original_wildlife)
+        self.assertEqual(original.garden_orchard.to_dict(), original_garden)
+        self.assertEqual(self.path.read_bytes(), saved_bytes)
+
     def test_escape_consumes_same_batch_and_does_not_launch_again(self):
         game = self.game()
         self.launch(game)

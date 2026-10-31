@@ -88,8 +88,18 @@ class GalleryCatalogueTests(unittest.TestCase):
             playback = GALLERY_BY_ID[identifier].start(game)
             self.assertTrue(game.world.can_stand(game.player.position), identifier)
             scripts = set();actions = set()
+            visit_steps = set();basket_states = set()
+            if identifier == 'sheep_basket_visit':
+                wildlife = game.world.wildlife
+                wildlife_roster = tuple((id(actor), actor.id) for actor in wildlife.actors)
+                garden_before = game.world.garden_orchard.to_dict()
+                produce_before = game.world.garden_orchard.portable_positions()
+                witness = tuple(game.player.position)
+                self.assertEqual(wildlife.vignette['phase'], 'idle')
+                self.assertFalse(wildlife.worker.wildlife_owned)
             # 300 seconds covers the full 252.57-second opening without skipping
-            # shots. Other fixtures finish in under 40 seconds with brisk input.
+            # shots. The pasture visit takes about 62 seconds; other fixtures
+            # finish in under 40 seconds with brisk dialogue input.
             for _ in range(9000):
                 if game.social.active:
                     scripts.add(game.social.script_identifier)
@@ -101,6 +111,9 @@ class GalleryCatalogueTests(unittest.TestCase):
                 for controller in (game.mill_quest, game.lantern_quest):
                     if controller.action:actions.add(controller.action)
                 if not playback.settling:game.update(1/30, (0, 0), False)
+                if identifier == 'sheep_basket_visit':
+                    if wildlife.vignette['phase'] == 'visit':visit_steps.add(wildlife.vignette['step'])
+                    basket_states.add(wildlife.vignette['basket'])
                 playback.update(1/30)
                 self.assertFalse(game.combat.active, identifier+' launched unintended combat')
                 if playback.finished:break
@@ -148,6 +161,26 @@ class GalleryCatalogueTests(unittest.TestCase):
                 self.assertTrue(game.world.can_stand(controller.actors[0].position,
                                                     controller.actors[0].probe_size,
                                                     controller.actors[0]))
+                self.assertFalse(controller.actors[0].wildlife_owned)
+            elif identifier == 'sheep_basket_visit':
+                from purposeful_wildlife import HOMES, VISIT, WORKER_HOME, valid_state
+                self.assertEqual(visit_steps, set(range(len(VISIT))))
+                self.assertEqual(basket_states, {'home', 'hand', 'pen'})
+                self.assertEqual(wildlife.vignette['phase'], 'done')
+                self.assertEqual(wildlife.vignette['basket'], 'home')
+                self.assertEqual(tuple(wildlife.worker.position), WORKER_HOME)
+                self.assertFalse(wildlife.worker.wildlife_owned)
+                self.assertTrue(valid_state(wildlife.to_dict()))
+                self.assertEqual(tuple((id(actor), actor.id) for actor in wildlife.actors), wildlife_roster)
+                self.assertEqual({actor.id for actor in wildlife.actors}, set(HOMES))
+                self.assertEqual(len(wildlife.actors), 9)
+                self.assertEqual(sum(actor is wildlife.worker for actor in game.world.npcs), 1)
+                self.assertEqual(game.world.garden_orchard.to_dict(), garden_before)
+                self.assertEqual(game.world.garden_orchard.portable_positions(), produce_before)
+                self.assertEqual(tuple(game.player.position), witness)
+                self.assertEqual(game.camera.framing_height, 320)
+                self.assertGreater(playback.elapsed, 60)
+                self.assertLess(playback.elapsed, 75)
             elif identifier == 'bridge_tea':
                 self.assertEqual(game.world.bridge_crew.state['tea_beat'], 5)
                 self.assertIn('bridge_crew_tea', scripts)

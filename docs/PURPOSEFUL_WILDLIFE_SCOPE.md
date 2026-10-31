@@ -1,8 +1,8 @@
 # Purposeful regional wildlife
 
 Initially scoped on main `f6e5ed56`, including garden/orchard PR92 and regional
-NPC animation PR94; integrated main `70ef6b23` with millrace recovery PR95 before
-final validation.
+NPC animation PR94; integrated main `70ef6b23` with millrace recovery PR95, then
+main `e80c3534` with Gallery PR93 before final validation.
 This is a focused regional charm PR; parent owns final review and merge.
 
 ## Intent and authored places
@@ -103,6 +103,15 @@ and share one low-priority wildlife family. Their near/far distances are
 regional allocation and lifecycle code owns all channels. Cat and butterflies
 are silent. The art and review remain implementation review, without a claim
 of user approval.
+
+The finite visit is also registered as **A Familiar Visitor**
+(`sheep_basket_visit`) in the title Gallery. It seeds completed plant care and
+uses one clear witness station; production wildlife code owns every walk,
+gather, pat and retrieval until the basket and gardener are back home. Repeating
+animal routines have no catalogue entries. The existing garden Gallery fixture
+keeps the separate visit completed within its disposable preview, preserving
+its original plant-placement/home boundary. Replay completion, restart, close
+and original-save isolation are tested.
 
 ## Geometry reference
 

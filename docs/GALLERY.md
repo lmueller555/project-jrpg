@@ -1,6 +1,6 @@
 # Cutscene Gallery
 
-Choose **Gallery** on the title screen to replay any of the 25 registered scenes.
+Choose **Gallery** on the title screen to replay any of the 26 registered scenes.
 The catalogue is available immediately, including without a saved journey.
 Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,
@@ -61,6 +61,7 @@ it does not duplicate dialogue, animation or camera scripts.
 | `grain_extra_sack` | One Sack Too Many | GrainFarm's finite exchange, shared lowering and lashing check |
 | `bridge_tea` | Tea by the Broken Bridge | BridgeCrew's finite request, offer, reception, drink and seated break |
 | `garden_quiet_care` | A Little Shade | GardenOrchard's quiet-care dialogue, plant lift/carry/placement and settling into rest |
+| `sheep_basket_visit` | A Familiar Visitor | PurposefulWildlife's finite gardener visit, sheep gathering, basket nuzzle and pat, basket retrieval and home return through release of the borrowed gardener |
 
 Fixtures use completed prerequisite quest facts for the selected chapter only.
 The lantern fixtures use the current controller's stage/objective prefix; mill
@@ -68,6 +69,13 @@ intake scenes use current v2 encounter-complete facts. Regional scenes begin at
 their authored finite vignette stations with the preceding routine work seeded.
 The garden preview starts at the completed-work checkpoint and ends only after
 the struggling plant has been moved to its production destination by the hedge.
+Its isolated fixture marks the separately registered pasture follow-up complete
+so the gardener remains at that scene's home/rest boundary. The pasture preview
+starts with plant care completed and the original gardener at home; production
+code performs the entire visit. A fixed clear observer station keeps both sheep
+and the full worker route active. The normal camera holds a full-height view of
+home and pen, with no player travel or animation-clock shortcuts. Completion
+requires the same empty basket and gardener home, with the actor loan released.
 
 Intentional exclusions are ordinary standing conversations, player-controlled
 errands/travel and repeating ambient routines. Specifically: opening quest
@@ -75,7 +83,7 @@ acceptance and household reminders/turn-ins; manually carrying Caelan's sacks;
 mill inspection/report/aftermath exchanges and the playable battle; Regent
 preparations/greeting/welcome/excavation/private dialogue and free escort travel;
 lantern classroom/permission/neighbor/memorial/sanctuary/school conversation
-stations; and recurring resident work, play and patrol loops. Their staged
+stations; and recurring resident work, play, patrol and wildlife routines. Their staged
 actions listed above are included. Future unimplemented scenes are not listed.
 
 ## Isolation and cleanup
@@ -112,6 +120,9 @@ lantern fallback. Browsing does not construct scene runtimes or load every image
 3. Add a representative action predicate/crop to `tools/capture_gallery.py` and
    run `python tools/capture_gallery.py --mode thumbnails`. Check the image and
    `assets/ui/gallery/capture.json` provenance. Thumbnails are 320×180 PNGs.
+   To capture one addition without replacing existing thumbnails, use
+   `--mode thumbnails --scene sheep_basket_visit`. Focused captures retain the
+   original catalogue provenance and supply source hashes on the updated entry.
 4. Run the catalogue and session tests. The catalogue dynamically discovers a
    completion test for every registered entry. Add boundary-specific assertions
    where the new scene needs them, then refresh the review capture.
