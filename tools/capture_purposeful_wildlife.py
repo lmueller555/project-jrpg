@@ -131,6 +131,14 @@ class Recorder(audio_capture.Recorder):
                 label='cat_stretch_peak'
                 if 'cat' in self.families and label not in self.seen:
                     self.seen.add(label);still(self.g,self.name+'_'+label)
+            if (actor.species=='bird' and 'bird' in self.families
+                    and actor.position.distance_to(self.g.player.position)<140):
+                mode=actor.state['mode'];label=None
+                if mode=='away' and actor.clock>=1:label='bird_perched'
+                elif mode=='land' and actor.clock>=.5:label='bird_return_flight'
+                elif mode=='peck' and 'bird_return_flight' in self.seen:label='bird_returned_to_grain'
+                if label and label not in self.seen:
+                    self.seen.add(label);still(self.g,self.name+'_'+label)
 
     def run(self,seconds,direction=(0,0)):
         for _ in range(round(seconds*30)):
@@ -253,9 +261,9 @@ def bird_clip(root):
 
 
 def butterfly_clip(root):
-    game=make_game(root,(-115,-238))
+    game=make_game(root,(-468,1210))
     recorder=Recorder(game,'butterfly_flowers',('butterfly',))
-    recorder.mark('Labelled site cut: butterfly visits the authored orchard flowers')
+    recorder.mark('Labelled site cut: butterfly visits the authored southern flower patch')
     recorder.run(16)
     return recorder.close()
 

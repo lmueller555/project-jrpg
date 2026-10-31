@@ -184,7 +184,7 @@ class Animal:
     @property
     def pose(self):
         mode=self.state['mode']
-        return {'sheep':{'return':'walk','gather':'walk','gather_home':'walk'}, 'bird':{'scatter':'fly','away':'fly'},
+        return {'sheep':{'return':'walk','gather':'walk','gather_home':'walk'}, 'bird':{'scatter':'fly','away':'land','land':'fly'},
                 'cat':{'return':'walk'},'butterfly':{}}[self.species].get(mode,mode)
     @property
     def animation_key(self):return self.species+'_'+self.pose+'_'+self.facing

@@ -156,6 +156,30 @@ class PurposefulWildlifeTests(unittest.TestCase):
             self.assertEqual(len(wings),1)
         self.assertEqual(bird.position,home)
 
+    def test_bird_retreat_folds_wings_and_return_keeps_flapping(self):
+        bird=self.c.by_id['west_bird'];home=pygame.Vector2(HOMES[bird.id])
+        self.g.player.position.update(home+(30,0))
+        self.until(lambda:bird.state['mode']=='away',150)
+        retreat=bird.position.copy();self.tick(30)
+        folded=self.c.clips['bird_land_'+bird.facing]['images'][-1]
+        self.assertIs(bird.sprite(),folded)
+        self.tick(30)
+        self.assertEqual(bird.position,retreat)
+        self.assertIs(bird.sprite(),folded)
+        self.g.player.position.update(home+(100,0))
+        self.until(lambda:bird.state['mode']=='land',300)
+        # Beyond the old landing clip's duration, the returning bird must
+        # still change wing frames while its feet move toward the seeds.
+        self.tick(20);before=bird.position.copy();frames=set()
+        for _ in range(20):
+            self.assertEqual(bird.state['mode'],'land')
+            frames.add(pygame.image.tobytes(bird.sprite(),'RGBA'))
+            self.tick()
+        self.assertGreater(len(frames),1)
+        self.assertLess(bird.position.distance_to(home),before.distance_to(home))
+        self.until(lambda:bird.state['mode']=='peck',100)
+        self.assertEqual(bird.position,home)
+
     def test_cat_full_short_route_and_butterflies_stay_on_real_petals(self):
         cat=self.c.by_id['farm_cat'];self.g.player.position.update(-470,1208)
         self.until(lambda:cat.state['mode']=='stretch',300)

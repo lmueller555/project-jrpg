@@ -2,130 +2,106 @@
   "method": "Actual-game wildlife review at 30 Hz simulation / 15 fps normal playback.\n\nOnly completed predecessor quests and initial Caelan positions are fixtures.\nGarden work/dialogue, animal behavior, the gardener's entire pasture visit,\nplayer movement, contact sounds and Continue use production code. Site changes\nbetween clips are labelled cuts. Music is muted; accepted regional effects are\nrendered from the production PCM and gain stream without normalization.\n",
   "seconds": 16.0,
   "sample_rate": 48000,
-  "peak": 0.08616335141503532,
-  "peak_dbfs": -21.29354834073134,
-  "rms_dbfs": -39.36299094205849,
+  "peak": 0.05063558412144782,
+  "peak_dbfs": -25.91088351451777,
+  "rms_dbfs": -48.12664291923271,
   "markers": [
     {
       "time": 0.0,
-      "label": "Labelled site cut: butterfly visits the authored orchard flowers"
+      "label": "Labelled site cut: butterfly visits the authored southern flower patch"
     }
   ],
   "snapshots": [
     {
       "time": 0.0,
-      "label": "Labelled site cut: butterfly visits the authored orchard flowers",
+      "label": "Labelled site cut: butterfly visits the authored southern flower patch",
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "voices": {}
     }
   ],
   "events": [
     {
-      "time": 0.0,
+      "time": 2.533333333333333,
       "action": "start",
-      "key": "wind",
-      "sound": "wind",
-      "gain": 0.45,
-      "ambient": true,
-      "source": [
-        -114.99999999999999,
-        -238.0
-      ],
-      "listener": [
-        -115.0,
-        -238.0
-      ],
-      "distance": 1.4210854715202004e-14,
-      "family": "foliage",
-      "priority": 0
-    },
-    {
-      "time": 3.3666666666666667,
-      "action": "start",
-      "key": "garden_picker_leaves",
-      "sound": "leaves",
-      "gain": 0.4163539017346529,
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.4488035760053022,
       "ambient": false,
       "source": [
-        -170.0,
-        -282.0
+        -526.0,
+        1190.0
       ],
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
-      "distance": 70.43436661176133,
+      "distance": 61.35144660071187,
       "family": "garden_work",
       "priority": 2
     },
     {
-      "time": 3.8666666666666667,
+      "time": 3.6,
       "action": "stop",
-      "key": "garden_picker_leaves"
+      "key": "garden_gardener_water"
     },
     {
-      "time": 5.166666666666667,
+      "time": 6.2,
       "action": "start",
-      "key": "garden_picker_leaves",
-      "sound": "leaves",
-      "gain": 0.4163539017346529,
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.38556568615657594,
       "ambient": false,
       "source": [
-        -170.0,
-        -282.0
+        -526.0,
+        1158.0
       ],
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
-      "distance": 70.43436661176133,
+      "distance": 77.89736837660179,
       "family": "garden_work",
       "priority": 2
     },
     {
-      "time": 5.666666666666667,
+      "time": 7.266666666666667,
       "action": "stop",
-      "key": "garden_picker_leaves"
+      "key": "garden_gardener_water"
     },
     {
-      "time": 12.133333333333333,
+      "time": 10.066666666666666,
       "action": "start",
-      "key": "garden_picker_basket",
-      "sound": "basket",
-      "gain": 0.4892485432883873,
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.2698543627681065,
       "ambient": false,
       "source": [
-        -159.0,
-        -247.0
+        -526.0,
+        1126.0
       ],
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
-      "distance": 44.91102314577124,
+      "distance": 102.07840124139877,
       "family": "garden_work",
       "priority": 2
     },
     {
-      "time": 12.466666666666667,
+      "time": 11.133333333333333,
       "action": "stop",
-      "key": "garden_picker_basket"
-    },
-    {
-      "time": 16.0,
-      "action": "stop",
-      "key": "wind"
+      "key": "garden_gardener_water"
     }
   ],
   "trace": [
     {
       "time": 0.03333333333333333,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -266,27 +242,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -297,6 +252,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -311,8 +287,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.03333333333333333,
+            "clock": 0.03333333333333333,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -336,21 +312,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 0.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -491,27 +459,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -522,6 +469,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -536,8 +504,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.49999999999999994,
+            "clock": 0.49999999999999994,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -561,21 +529,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 1.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -716,27 +676,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -747,6 +686,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -761,8 +721,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.9999999999999999,
+            "clock": 0.9999999999999999,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -786,21 +746,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 1.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -941,27 +893,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -972,6 +903,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -986,8 +938,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.5000000000000013,
+            "clock": 1.5000000000000013,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -1011,21 +963,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 2.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -1166,27 +1110,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -1197,6 +1120,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -1211,8 +1155,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 2.0000000000000027,
+            "clock": 2.0000000000000027,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -1236,21 +1180,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 2.4,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -1382,7 +1318,7 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
+          "pose": "flutter",
           "position": [
             -451.4,
             1164.8
@@ -1391,27 +1327,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "flutter",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "flutter",
             "target": 1,
@@ -1422,6 +1337,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -1436,8 +1372,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 2.4000000000000012,
+            "clock": 2.4000000000000012,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -1461,21 +1397,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 2.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -1607,36 +1535,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -131.72565835097475,
-            -268.1581138830084
+            -450.92565835097474,
+            1164.6418861169914
           ],
           "state": {
             "position": [
-              -131.72565835097475,
-              -268.1581138830084
+              -450.92565835097474,
+              1164.6418861169914
             ],
             "mode": "flutter",
             "target": 1,
@@ -1647,6 +1554,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -1661,8 +1589,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 2.500000000000001,
+            "clock": 2.500000000000001,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -1686,21 +1614,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 3.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -1832,36 +1752,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -129.35395010584858,
-            -268.94868329805047
+            -448.55395010584857,
+            1163.8513167019485
           ],
           "state": {
             "position": [
-              -129.35395010584858,
-              -268.94868329805047
+              -448.55395010584857,
+              1163.8513167019485
             ],
             "mode": "flutter",
             "target": 1,
@@ -1872,6 +1771,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -1886,8 +1806,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 2.999999999999999,
+            "clock": 2.999999999999999,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -1912,11 +1832,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.4488035760053022,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1190.0
           ]
         }
       }
@@ -1924,8 +1844,8 @@
     {
       "time": 3.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -2057,36 +1977,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -126.98224186072233,
-            -269.7392527130925
+            -446.1822418607224,
+            1163.0607472869058
           ],
           "state": {
             "position": [
-              -126.98224186072233,
-              -269.7392527130925
+              -446.1822418607224,
+              1163.0607472869058
             ],
             "mode": "flutter",
             "target": 1,
@@ -2097,6 +1996,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -2111,8 +2031,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 3.4999999999999973,
+            "clock": 3.4999999999999973,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -2137,18 +2057,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.4488035760053022,
           "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        },
-        "garden_picker_leaves": {
-          "gain": 0.4163539017346529,
-          "source": [
-            -170.0,
-            -282.0
+            -526.0,
+            1190.0
           ]
         }
       }
@@ -2156,8 +2069,8 @@
     {
       "time": 4.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -2289,36 +2202,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -124.61053361559615,
-            -270.5298221281346
+            -443.81053361559583,
+            1162.2701778718647
           ],
           "state": {
             "position": [
-              -124.61053361559615,
-              -270.5298221281346
+              -443.81053361559583,
+              1162.2701778718647
             ],
             "mode": "flutter",
             "target": 1,
@@ -2329,6 +2221,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -2343,8 +2256,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 3.9999999999999956,
+            "clock": 3.9999999999999956,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -2368,21 +2281,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 4.3,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -2516,34 +2421,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -2554,6 +2438,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -2568,8 +2473,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 4.2999999999999945,
+            "clock": 4.2999999999999945,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -2593,21 +2498,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 4.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -2741,34 +2638,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -2779,6 +2655,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -2793,8 +2690,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 4.499999999999994,
+            "clock": 4.499999999999994,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -2818,21 +2715,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 5.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -2966,34 +2855,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -3004,6 +2872,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -3018,8 +2907,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 4.999999999999992,
+            "clock": 4.999999999999992,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -3043,21 +2932,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 5.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -3191,34 +3072,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -3229,6 +3089,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -3243,8 +3124,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 5.49999999999999,
+            "clock": 5.49999999999999,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -3268,28 +3149,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        },
-        "garden_picker_leaves": {
-          "gain": 0.4163539017346529,
-          "source": [
-            -170.0,
-            -282.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 6.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -3423,34 +3289,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -3461,6 +3306,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -3475,8 +3341,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 5.9999999999999885,
+            "clock": 5.9999999999999885,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -3500,21 +3366,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 6.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -3648,34 +3506,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -3686,6 +3523,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -3700,8 +3558,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 6.499999999999987,
+            "clock": 6.499999999999987,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -3726,11 +3584,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.38556568615657594,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1158.0
           ]
         }
       }
@@ -3738,8 +3596,8 @@
     {
       "time": 6.7,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -3871,36 +3729,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -123.2,
-            -271.0
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "flutter",
             "target": 2,
@@ -3911,6 +3748,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -3925,8 +3783,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 6.699999999999986,
+            "clock": 6.699999999999986,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -3951,11 +3809,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.38556568615657594,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1158.0
           ]
         }
       }
@@ -3963,8 +3821,8 @@
     {
       "time": 7.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -4096,36 +3954,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -124.13704257133166,
-            -269.82869678583523
+            -443.3370425713314,
+            1162.9713032141642
           ],
           "state": {
             "position": [
-              -124.13704257133166,
-              -269.82869678583523
+              -443.3370425713314,
+              1162.9713032141642
             ],
             "mode": "flutter",
             "target": 2,
@@ -4136,6 +3973,27 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
           "pose": "sleep",
@@ -4150,8 +4008,8 @@
             ],
             "mode": "sleep",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 6.999999999999985,
+            "clock": 6.999999999999985,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -4176,20 +4034,20 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.38556568615657594,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1158.0
           ]
         }
       }
     },
     {
-      "time": 7.5,
+      "time": 7.033333333333333,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -4321,15 +4179,36 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
+          "pose": "flutter",
           "position": [
-            -451.4,
-            1164.8
+            -443.4411584125904,
+            1163.101448015738
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
+              -443.4411584125904,
+              1163.101448015738
+            ],
+            "mode": "flutter",
+            "target": 2,
+            "elapsed": 0.3333333333333333,
+            "clock": 0.3333333333333333,
+            "facing": "left",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -4340,17 +4219,200 @@
           }
         },
         {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "flutter",
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "stretch",
           "position": [
-            -125.69878019021776,
-            -267.87652476222763
+            -420.0,
+            1182.0
           ],
           "state": {
             "position": [
-              -125.69878019021776,
-              -267.87652476222763
+              -420.0,
+              1182.0
+            ],
+            "mode": "stretch",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        }
+      ],
+      "vignette": {
+        "phase": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552,
+          1164
+        ],
+        "clock": 0.0,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      },
+      "basket": [
+        -516.0,
+        1226.0
+      ],
+      "voices": {
+        "garden_gardener_water": {
+          "gain": 0.38556568615657594,
+          "source": [
+            -526.0,
+            1158.0
+          ]
+        }
+      }
+    },
+    {
+      "time": 7.5,
+      "listener": [
+        -468.0,
+        1210.0
+      ],
+      "actors": [
+        {
+          "id": "south_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "state": {
+            "position": [
+              -420.0,
+              1476.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "state": {
+            "position": [
+              -314.4,
+              1572.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "state": {
+            "position": [
+              1368.0,
+              1392.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "state": {
+            "position": [
+              1526.4,
+              1464.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "west_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "state": {
+            "position": [
+              -840.0,
+              228.0
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "clearing_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "state": {
+            "position": [
+              -1128.0,
+              -1603.2
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_butterfly",
+          "species": "butterfly",
+          "pose": "flutter",
+          "position": [
+            -444.89878019021705,
+            1164.9234752377713
+          ],
+          "state": {
+            "position": [
+              -444.89878019021705,
+              1164.9234752377713
             ],
             "mode": "flutter",
             "target": 2,
@@ -4361,9 +4423,30 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "stretch",
           "position": [
             -420.0,
             1182.0
@@ -4373,10 +4456,10 @@
               -420.0,
               1182.0
             ],
-            "mode": "sleep",
+            "mode": "stretch",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.4666666666666666,
+            "clock": 0.4666666666666666,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -4400,21 +4483,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 8.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -4548,34 +4623,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -127.2,
-            -266.0
-          ],
-          "state": {
-            "position": [
-              -127.2,
-              -266.0
+              -446.4,
+              1166.8
             ],
             "mode": "settle",
             "target": 0,
@@ -4586,9 +4640,30 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "stretch",
           "position": [
             -420.0,
             1182.0
@@ -4598,10 +4673,10 @@
               -420.0,
               1182.0
             ],
-            "mode": "sleep",
+            "mode": "stretch",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.9666666666666666,
+            "clock": 0.9666666666666666,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -4625,21 +4700,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 8.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -4773,34 +4840,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -127.2,
-            -266.0
-          ],
-          "state": {
-            "position": [
-              -127.2,
-              -266.0
+              -446.4,
+              1166.8
             ],
             "mode": "settle",
             "target": 0,
@@ -4811,9 +4857,30 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "stretch",
           "position": [
             -420.0,
             1182.0
@@ -4823,10 +4890,10 @@
               -420.0,
               1182.0
             ],
-            "mode": "sleep",
+            "mode": "stretch",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.466666666666668,
+            "clock": 1.466666666666668,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -4850,21 +4917,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 9.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -4998,34 +5057,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -127.2,
-            -266.0
-          ],
-          "state": {
-            "position": [
-              -127.2,
-              -266.0
+              -446.4,
+              1166.8
             ],
             "mode": "settle",
             "target": 0,
@@ -5036,9 +5074,30 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "stretch",
           "position": [
             -420.0,
             1182.0
@@ -5048,10 +5107,10 @@
               -420.0,
               1182.0
             ],
-            "mode": "sleep",
+            "mode": "stretch",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.9666666666666694,
+            "clock": 1.9666666666666694,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -5075,21 +5134,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
-      "time": 9.5,
+      "time": 9.233333333333333,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -5223,13 +5274,34 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
+              -446.4,
+              1166.8
+            ],
+            "mode": "settle",
+            "target": 0,
+            "elapsed": 1.2333333333333338,
+            "clock": 1.2333333333333338,
+            "facing": "left",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -5240,17 +5312,192 @@
           }
         },
         {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
           "position": [
-            -127.2,
-            -266.0
+            -420.0,
+            1182.0
           ],
           "state": {
             "position": [
-              -127.2,
-              -266.0
+              -420.0,
+              1182.0
+            ],
+            "mode": "walk",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        }
+      ],
+      "vignette": {
+        "phase": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552,
+          1164
+        ],
+        "clock": 0.0,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      },
+      "basket": [
+        -516.0,
+        1226.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 9.5,
+      "listener": [
+        -468.0,
+        1210.0
+      ],
+      "actors": [
+        {
+          "id": "south_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "state": {
+            "position": [
+              -420.0,
+              1476.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "state": {
+            "position": [
+              -314.4,
+              1572.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "state": {
+            "position": [
+              1368.0,
+              1392.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "state": {
+            "position": [
+              1526.4,
+              1464.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "west_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "state": {
+            "position": [
+              -840.0,
+              228.0
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "clearing_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "state": {
+            "position": [
+              -1128.0,
+              -1603.2
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -446.4,
+            1166.8
+          ],
+          "state": {
+            "position": [
+              -446.4,
+              1166.8
             ],
             "mode": "settle",
             "target": 0,
@@ -5261,22 +5508,43 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "walk",
           "position": [
             -420.0,
-            1182.0
+            1185.2000000000007
           ],
           "state": {
             "position": [
               -420.0,
-              1182.0
+              1185.2000000000007
             ],
-            "mode": "sleep",
+            "mode": "walk",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.26666666666666666,
+            "clock": 0.26666666666666666,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -5300,21 +5568,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 10.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -5448,34 +5708,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -127.2,
-            -266.0
-          ],
-          "state": {
-            "position": [
-              -127.2,
-              -266.0
+              -446.4,
+              1166.8
             ],
             "mode": "settle",
             "target": 0,
@@ -5486,22 +5725,43 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "walk",
           "position": [
             -420.0,
-            1182.0
+            1191.200000000002
           ],
           "state": {
             "position": [
               -420.0,
-              1182.0
+              1191.200000000002
             ],
-            "mode": "sleep",
+            "mode": "walk",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 0.7666666666666666,
+            "clock": 0.7666666666666666,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -5525,21 +5785,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 10.4,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -5671,36 +5923,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -127.2,
-            -266.0
+            -446.4,
+            1166.8
           ],
           "state": {
             "position": [
-              -127.2,
-              -266.0
+              -446.4,
+              1166.8
             ],
             "mode": "flutter",
             "target": 0,
@@ -5711,22 +5942,43 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "walk",
           "position": [
             -420.0,
-            1182.0
+            1196.0000000000032
           ],
           "state": {
             "position": [
               -420.0,
-              1182.0
+              1196.0000000000032
             ],
-            "mode": "sleep",
+            "mode": "walk",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.166666666666667,
+            "clock": 1.166666666666667,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -5751,11 +6003,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.2698543627681065,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1126.0
           ]
         }
       }
@@ -5763,8 +6015,8 @@
     {
       "time": 10.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -5896,36 +6148,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -127.66423834544264,
-            -266.185695338177
+            -446.8642383454426,
+            1166.6143046618226
           ],
           "state": {
             "position": [
-              -127.66423834544264,
-              -266.185695338177
+              -446.8642383454426,
+              1166.6143046618226
             ],
             "mode": "flutter",
             "target": 0,
@@ -5936,22 +6167,43 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "walk",
           "position": [
             -420.0,
-            1182.0
+            1197.2000000000035
           ],
           "state": {
             "position": [
               -420.0,
-              1182.0
+              1197.2000000000035
             ],
-            "mode": "sleep",
+            "mode": "walk",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.2666666666666673,
+            "clock": 1.2666666666666673,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -5976,11 +6228,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.2698543627681065,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1126.0
           ]
         }
       }
@@ -5988,8 +6240,8 @@
     {
       "time": 11.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -6121,36 +6373,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -129.98543007265565,
-            -267.1141720290623
+            -449.18543007265555,
+            1165.6858279709372
           ],
           "state": {
             "position": [
-              -129.98543007265565,
-              -267.1141720290623
+              -449.18543007265555,
+              1165.6858279709372
             ],
             "mode": "flutter",
             "target": 0,
@@ -6161,22 +6392,43 @@
           }
         },
         {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
+            ],
+            "mode": "settle",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
           "id": "farm_cat",
           "species": "cat",
-          "pose": "sleep",
+          "pose": "walk",
           "position": [
             -420.0,
-            1182.0
+            1203.2000000000048
           ],
           "state": {
             "position": [
               -420.0,
-              1182.0
+              1203.2000000000048
             ],
-            "mode": "sleep",
+            "mode": "walk",
             "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
+            "elapsed": 1.7666666666666688,
+            "clock": 1.7666666666666688,
             "facing": "right",
             "cooldown": 0.0
           }
@@ -6201,11 +6453,11 @@
         1226.0
       ],
       "voices": {
-        "wind": {
-          "gain": 0.45,
+        "garden_gardener_water": {
+          "gain": 0.2698543627681065,
           "source": [
-            -114.99999999999999,
-            -238.0
+            -526.0,
+            1126.0
           ]
         }
       }
@@ -6213,8 +6465,8 @@
     {
       "time": 11.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -6355,27 +6607,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -6386,23 +6617,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -423.1999999999998,
+            1206.0
+          ],
+          "state": {
+            "position": [
+              -423.1999999999998,
+              1206.0
+            ],
+            "mode": "walk",
+            "target": 2,
+            "elapsed": 2.2666666666666684,
+            "clock": 2.2666666666666684,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -6425,21 +6677,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 12.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -6580,27 +6824,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -6611,23 +6834,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -429.1999999999995,
+            1206.0
+          ],
+          "state": {
+            "position": [
+              -429.1999999999995,
+              1206.0
+            ],
+            "mode": "walk",
+            "target": 2,
+            "elapsed": 2.7666666666666666,
+            "clock": 2.7666666666666666,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -6650,21 +6894,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 12.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -6805,27 +7041,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -6836,23 +7051,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -435.19999999999914,
+            1206.0
+          ],
+          "state": {
+            "position": [
+              -435.19999999999914,
+              1206.0
+            ],
+            "mode": "walk",
+            "target": 2,
+            "elapsed": 3.266666666666665,
+            "clock": 3.266666666666665,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -6875,21 +7111,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 13.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -7030,27 +7258,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -7061,23 +7268,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -441.1999999999988,
+            1206.0
+          ],
+          "state": {
+            "position": [
+              -441.1999999999988,
+              1206.0
+            ],
+            "mode": "walk",
+            "target": 2,
+            "elapsed": 3.766666666666663,
+            "clock": 3.766666666666663,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -7100,21 +7328,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 13.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -7255,27 +7475,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -7286,23 +7485,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -447.19999999999845,
+            1206.0
+          ],
+          "state": {
+            "position": [
+              -447.19999999999845,
+              1206.0
+            ],
+            "mode": "walk",
+            "target": 2,
+            "elapsed": 4.266666666666661,
+            "clock": 4.266666666666661,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -7325,21 +7545,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 13.9,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -7471,7 +7683,7 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
+          "pose": "flutter",
           "position": [
             -451.4,
             1164.8
@@ -7480,27 +7692,6 @@
             "position": [
               -451.4,
               1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "flutter",
-          "position": [
-            -132.2,
-            -268.0
-          ],
-          "state": {
-            "position": [
-              -132.2,
-              -268.0
             ],
             "mode": "flutter",
             "target": 1,
@@ -7511,23 +7702,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -450.0,
+            1208.0000000000005
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1208.0000000000005
+            ],
+            "mode": "walk",
+            "target": 3,
+            "elapsed": 4.66666666666666,
+            "clock": 4.66666666666666,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -7550,21 +7762,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 14.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -7696,36 +7900,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -131.72565835097475,
-            -268.1581138830084
+            -450.92565835097474,
+            1164.6418861169914
           ],
           "state": {
             "position": [
-              -131.72565835097475,
-              -268.1581138830084
+              -450.92565835097474,
+              1164.6418861169914
             ],
             "mode": "flutter",
             "target": 1,
@@ -7736,23 +7919,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "walk",
+          "position": [
+            -450.0,
+            1209.2000000000007
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1209.2000000000007
+            ],
+            "mode": "walk",
+            "target": 3,
+            "elapsed": 4.7666666666666595,
+            "clock": 4.7666666666666595,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -7775,21 +7979,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
-      "time": 14.5,
+      "time": 14.066666666666666,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -7921,15 +8117,36 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
+          "pose": "flutter",
           "position": [
-            -451.4,
-            1164.8
+            -450.6094305849579,
+            1164.5364768616523
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
+              -450.6094305849579,
+              1164.5364768616523
+            ],
+            "mode": "flutter",
+            "target": 1,
+            "elapsed": 0.16666666666666666,
+            "clock": 0.16666666666666666,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "state": {
+            "position": [
+              -132.2,
+              -268.0
             ],
             "mode": "settle",
             "target": 1,
@@ -7940,17 +8157,192 @@
           }
         },
         {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "flutter",
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
           "position": [
-            -129.35395010584858,
-            -268.94868329805047
+            -450.0,
+            1210.0
           ],
           "state": {
             "position": [
-              -129.35395010584858,
-              -268.94868329805047
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "left",
+            "cooldown": 0.0
+          }
+        }
+      ],
+      "vignette": {
+        "phase": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552,
+          1164
+        ],
+        "clock": 0.0,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      },
+      "basket": [
+        -516.0,
+        1226.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 14.5,
+      "listener": [
+        -468.0,
+        1210.0
+      ],
+      "actors": [
+        {
+          "id": "south_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "state": {
+            "position": [
+              -420.0,
+              1476.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "state": {
+            "position": [
+              -314.4,
+              1572.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_a",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "state": {
+            "position": [
+              1368.0,
+              1392.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "east_sheep_b",
+          "species": "sheep",
+          "pose": "graze",
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "state": {
+            "position": [
+              1526.4,
+              1464.0
+            ],
+            "mode": "graze",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "west_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "state": {
+            "position": [
+              -840.0,
+              228.0
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "clearing_bird",
+          "species": "bird",
+          "pose": "peck",
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "state": {
+            "position": [
+              -1128.0,
+              -1603.2
+            ],
+            "mode": "peck",
+            "target": 1,
+            "elapsed": 0.0,
+            "clock": 0.0,
+            "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "south_butterfly",
+          "species": "butterfly",
+          "pose": "flutter",
+          "position": [
+            -448.55395010584857,
+            1163.8513167019485
+          ],
+          "state": {
+            "position": [
+              -448.55395010584857,
+              1163.8513167019485
             ],
             "mode": "flutter",
             "target": 1,
@@ -7961,23 +8353,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
+          "position": [
+            -450.0,
+            1210.0
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 0.4333333333333333,
+            "clock": 0.4333333333333333,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -8000,21 +8413,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 15.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -8146,36 +8551,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -126.98224186072233,
-            -269.7392527130925
+            -446.1822418607224,
+            1163.0607472869058
           ],
           "state": {
             "position": [
-              -126.98224186072233,
-              -269.7392527130925
+              -446.1822418607224,
+              1163.0607472869058
             ],
             "mode": "flutter",
             "target": 1,
@@ -8186,23 +8570,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
+          "position": [
+            -450.0,
+            1210.0
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 0.9333333333333332,
+            "clock": 0.9333333333333332,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -8225,21 +8630,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 15.5,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -8371,36 +8768,15 @@
         {
           "id": "south_butterfly",
           "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -451.4,
-            1164.8
-          ],
-          "state": {
-            "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
           "pose": "flutter",
           "position": [
-            -124.61053361559615,
-            -270.5298221281346
+            -443.81053361559583,
+            1162.2701778718647
           ],
           "state": {
             "position": [
-              -124.61053361559615,
-              -270.5298221281346
+              -443.81053361559583,
+              1162.2701778718647
             ],
             "mode": "flutter",
             "target": 1,
@@ -8411,23 +8787,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
+          "position": [
+            -450.0,
+            1210.0
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 1.4333333333333345,
+            "clock": 1.4333333333333345,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -8450,21 +8847,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 15.8,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -8598,34 +8987,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -8636,23 +9004,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
+          "position": [
+            -450.0,
+            1210.0
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 1.7333333333333354,
+            "clock": 1.7333333333333354,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -8675,21 +9064,13 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     },
     {
       "time": 16.0,
       "listener": [
-        -115.0,
-        -238.0
+        -468.0,
+        1210.0
       ],
       "actors": [
         {
@@ -8823,34 +9204,13 @@
           "species": "butterfly",
           "pose": "settle",
           "position": [
-            -451.4,
-            1164.8
+            -442.4,
+            1161.8
           ],
           "state": {
             "position": [
-              -451.4,
-              1164.8
-            ],
-            "mode": "settle",
-            "target": 1,
-            "elapsed": 0.0,
-            "clock": 0.0,
-            "facing": "right",
-            "cooldown": 0.0
-          }
-        },
-        {
-          "id": "orchard_butterfly",
-          "species": "butterfly",
-          "pose": "settle",
-          "position": [
-            -123.2,
-            -271.0
-          ],
-          "state": {
-            "position": [
-              -123.2,
-              -271.0
+              -442.4,
+              1161.8
             ],
             "mode": "settle",
             "target": 2,
@@ -8861,23 +9221,44 @@
           }
         },
         {
-          "id": "farm_cat",
-          "species": "cat",
-          "pose": "sleep",
+          "id": "orchard_butterfly",
+          "species": "butterfly",
+          "pose": "settle",
           "position": [
-            -420.0,
-            1182.0
+            -132.2,
+            -268.0
           ],
           "state": {
             "position": [
-              -420.0,
-              1182.0
+              -132.2,
+              -268.0
             ],
-            "mode": "sleep",
+            "mode": "settle",
             "target": 1,
             "elapsed": 0.0,
             "clock": 0.0,
             "facing": "right",
+            "cooldown": 0.0
+          }
+        },
+        {
+          "id": "farm_cat",
+          "species": "cat",
+          "pose": "sit",
+          "position": [
+            -450.0,
+            1210.0
+          ],
+          "state": {
+            "position": [
+              -450.0,
+              1210.0
+            ],
+            "mode": "sit",
+            "target": 3,
+            "elapsed": 1.933333333333336,
+            "clock": 1.933333333333336,
+            "facing": "left",
             "cooldown": 0.0
           }
         }
@@ -8900,15 +9281,7 @@
         -516.0,
         1226.0
       ],
-      "voices": {
-        "wind": {
-          "gain": 0.45,
-          "source": [
-            -114.99999999999999,
-            -238.0
-          ]
-        }
-      }
+      "voices": {}
     }
   ],
   "checks": {},
@@ -8999,20 +9372,8 @@
       },
       "south_butterfly": {
         "position": [
-          -451.4,
-          1164.8
-        ],
-        "mode": "settle",
-        "target": 1,
-        "elapsed": 0.0,
-        "clock": 0.0,
-        "facing": "right",
-        "cooldown": 0.0
-      },
-      "orchard_butterfly": {
-        "position": [
-          -123.2,
-          -271.0
+          -442.4,
+          1161.8
         ],
         "mode": "settle",
         "target": 2,
@@ -9021,16 +9382,28 @@
         "facing": "right",
         "cooldown": 0.0
       },
-      "farm_cat": {
+      "orchard_butterfly": {
         "position": [
-          -420.0,
-          1182.0
+          -132.2,
+          -268.0
         ],
-        "mode": "sleep",
+        "mode": "settle",
         "target": 1,
         "elapsed": 0.0,
         "clock": 0.0,
         "facing": "right",
+        "cooldown": 0.0
+      },
+      "farm_cat": {
+        "position": [
+          -450.0,
+          1210.0
+        ],
+        "mode": "sit",
+        "target": 3,
+        "elapsed": 1.933333333333336,
+        "clock": 1.933333333333336,
+        "facing": "left",
         "cooldown": 0.0
       }
     },
@@ -9052,17 +9425,17 @@
   "cache_stats": {
     "render_bytes": 9437184,
     "render_chunks": 16,
-    "collision_chunks": 1,
-    "metadata_chunks": 28
+    "collision_chunks": 2,
+    "metadata_chunks": 16
   },
   "source_sha256": {
     "main.py": "0368f844b8753d24c2887a5a1909e39fd8e9bcdd088c31cc25a8ca7e7a7a35e1",
     "overworld_world.py": "2acd8f22d0a7b61c6127ecdbfe8e39b1cb717823ca01ecdc8463a719904e71ea",
     "overworld_travel.py": "dbc5205115f9c61d87251fc3d786f34edf9aa5d3ab79ea06cd73e301e424e455",
     "garden_orchard.py": "4ac0d889f957cd675f8c2e2e0884c1b2230e955927f4071769ecce60b82a699e",
-    "purposeful_wildlife.py": "feb7134ba5c48d83f51bdc59b35f6219fb024f3d9b419e7c78036274d1c5b4c0",
+    "purposeful_wildlife.py": "dc2ce585ae4ccb129dce8a3d99d7be285423b59fcd6b5d594242faafec4ae2bb",
     "regional_audio.py": "4fbd684aba610ebc544e34ac8f4df9b9c0b7277bae506ee1e450c6e639cc90b7",
-    "tools/capture_purposeful_wildlife.py": "d6b4de13772296f8d0a90dea436821afbb1558e8f3fe913f38f0949f558f2be5",
+    "tools/capture_purposeful_wildlife.py": "8d4c99965460b190c005268bde1456def4fbcb92fd87e4ed6bd55a126b31b301",
     "tools/capture_regional_audio.py": "f1844e8337d3de61c46bff3d2b1efb87818a67788aa89621fd0c975f348278b9",
     "tools/build_regional_wildlife.py": "01d361009d640cf9bf09af768f324e4787f8e29eeebf78574a677f08a5e8341b",
     "assets/characters/garden_workers/art.json": "4467480ae3dfa461f08199811109fa5b09779e1fe1e06801e71fda5dee29b062",

@@ -1,7 +1,7 @@
 {
   "input_files_verified": 104,
   "all_five_reports_share_current_input_hashes": true,
-  "controller_sha256": "feb7134ba5c48d83f51bdc59b35f6219fb024f3d9b419e7c78036274d1c5b4c0",
+  "controller_sha256": "dc2ce585ae4ccb129dce8a3d99d7be285423b59fcd6b5d594242faafec4ae2bb",
   "stills": {
     "audible_distance_bank_native.png": {
       "native_size": [
@@ -30,6 +30,27 @@
         320
       ],
       "window_file": "bird_grain_scatter_return_bird_peck.png"
+    },
+    "bird_grain_scatter_return_bird_perched_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_perched.png"
+    },
+    "bird_grain_scatter_return_bird_return_flight_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_return_flight.png"
+    },
+    "bird_grain_scatter_return_bird_returned_to_grain_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_returned_to_grain.png"
     },
     "butterfly_flowers_butterfly_flutter_native.png": {
       "native_size": [
@@ -198,9 +219,9 @@
       ],
       "format": {
         "duration": "29.133333",
-        "size": "1225409"
+        "size": "1221766"
       },
-      "sha256": "5bd4135e17f3fcd676da7f756185e6a4661e6dbe4e86cfa47fa5f1eb03e42ce8"
+      "sha256": "68d37565b892379617b034013fe9672e714252e70ac921e0e000922960cfb6de"
     },
     "butterfly_flowers.mp4": {
       "programs": [],
@@ -223,9 +244,9 @@
       ],
       "format": {
         "duration": "16.000000",
-        "size": "625309"
+        "size": "372250"
       },
-      "sha256": "86e1e82b8c408ff3480779af249ba03bd354c6014b47b867aeaaff1c1f88a2d8"
+      "sha256": "5db9be1222404273671e442ae10a89c93f495b73787c9142e4723b85829b7a6e"
     },
     "cat_sun_and_rest.mp4": {
       "programs": [],
@@ -298,9 +319,9 @@
       ],
       "format": {
         "duration": "178.421333",
-        "size": "9732816"
+        "size": "9476114"
       },
-      "sha256": "197657abf98ef229b7e5092aa2e1a16b7b50641210f3c37862552e3ef0dd6db1"
+      "sha256": "12b6b35eca3207af3c2ea95880ef88a4c7577cc59ef48a8092129ea5e25601be"
     }
   },
   "checks": {
@@ -311,6 +332,9 @@
     "sheep_visit_completed_basket_home": true,
     "single_sheep_contact_cue": true,
     "one_wing_and_one_landing_cue": true,
+    "away_bird_uses_fold_and_hold_pose": true,
+    "returning_bird_uses_flight_pose": true,
+    "butterfly_capture_site": "southern flower patch, clear of harvest basket",
     "river_near_gain": 0.55,
     "far_river_released": true,
     "mute_and_map_pcm_exact_zero": true,
