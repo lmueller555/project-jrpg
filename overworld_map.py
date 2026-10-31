@@ -1,8 +1,8 @@
-"""A bounded, display-resolution chart of the current overworld region.
+"""Illustrated regional atlas with live navigation and readable place labels.
 
-Only authored vector geometry is read here. Opening this map never requests a
-world overview, renders a chunk, or allocates a surface sized to the region.
-Coordinates remain global tiles, including the region's negative origin.
+Terrain tiles are shared with the exploration minimap. Labels, roads, passage
+states and Caelan's marker stay live, in display pixels. Old vector helpers are
+kept as a bounded fallback for unregistered fixture or future-region geometry.
 """
 from __future__ import annotations
 
@@ -31,10 +31,13 @@ class RegionalMapUI:
 
     def __init__(self, game):
         self.game = game
-        self.map_rect = pygame.Rect(28, 64, 284, 220)
-        self.close_rect = pygame.Rect(432, 22, 28, 22)
-        self.fit_rect = pygame.Rect(268, 288, 44, 16)
-        self.detail_rect = pygame.Rect(328, 88, 116, 138)
+        self.map_rect = pygame.Rect(16, 42, 448, 240)
+        self.close_rect = pygame.Rect(438, 13, 24, 22)
+        self.fit_rect = pygame.Rect(408, 291, 44, 18)
+        self.detail_rect = pygame.Rect(0, 0, 150, 70)
+        self.detail_panel = pygame.Rect(0, 0, 172, 126)
+        self.detail_close_rect = pygame.Rect(0, 0, 14, 14)
+        self.details_visible = False
         self.selected = 0
         self.hovered = None
         self.pointer = None
@@ -43,9 +46,16 @@ class RegionalMapUI:
         self.zoom = 1.0
         self.center = pygame.Vector2()
         self._drag = None
+        self._pressed_place = None
+        self._drag_travel = 0
         self._world = None
         self.landmarks = []
         self.marker_rects = {}
+        self.label_rects = {}
+        self._label_layout = []
+        self._fit_bounds = None
+        self._footer_y = 287
+        self._hint_y = 299
         self.reset()
 
     @property
@@ -63,9 +73,29 @@ class RegionalMapUI:
 
     @property
     def scale(self):
-        _, _, width, height = self.bounds
+        _, _, width, height = self.focus_bounds
         return min((self.map_rect.width-16)/width,
                    (self.map_rect.height-16)/height)*self.zoom
+
+    @property
+    def min_zoom(self):
+        _,_,width,height = self.bounds
+        _,_,focus_width,focus_height = self.focus_bounds
+        context_scale = min((self.map_rect.width-16)/width,(self.map_rect.height-16)/height)
+        focus_scale = min((self.map_rect.width-16)/focus_width,(self.map_rect.height-16)/focus_height)
+        return min(1.0,context_scale/focus_scale)
+
+    @property
+    def focus_bounds(self):
+        chart = self._chart()
+        return tuple(chart.focus_bounds) if chart is not None else self.bounds
+
+    def _chart(self, refresh=False):
+        try:
+            from regional_cartography import get_cartography
+            return get_cartography(self.game, refresh=refresh)
+        except (ImportError, FileNotFoundError):
+            return None
 
     @property
     def selected_landmark(self):
@@ -94,7 +124,7 @@ class RegionalMapUI:
                                 description='The village, its homes, and the road back to familiar places.'))
         bridge = self.data.get('bridge', {})
         if bridge:
-            records.append(dict(bridge, kind='bridge', name=bridge.get('name', 'Western bridge')))
+            records.append(dict(bridge, kind='bridge', name=bridge.get('name', 'Western crossing')))
         for gate in self.data.get('gates', []):
             records.append(dict(gate, kind='checkpoint', name=gate.get('label', 'Road checkpoint')))
         discovered = getattr(getattr(self.game, 'overworld_travel', None), 'discovered', None)
@@ -112,10 +142,12 @@ class RegionalMapUI:
 
     def reset(self):
         self._world = self.game.world
+        self._chart(refresh=True)
         self._collect_landmarks()
         self.fit()
         self.pointer = self.hovered = None
         self.detail_scroll = self.detail_max_scroll = 0
+        self.details_visible = False
         player = pygame.Vector2(self.game.player.position)/self.tile_size
         self.selected = (min(range(len(self.landmarks)),
                              key=lambda i: player.distance_squared_to(self.landmarks[i]['tile_position']))
@@ -123,10 +155,12 @@ class RegionalMapUI:
         self._layout_markers()
 
     def fit(self):
-        x, y, width, height = self.bounds
+        x, y, width, height = self.focus_bounds
         self.center.update(x+width/2, y+height/2)
         self.zoom = 1.0
         self._drag = None
+        self.details_visible = False
+        self.detail_scroll = 0
 
     def _clamp(self):
         x, y, width, height = self.bounds
@@ -138,7 +172,8 @@ class RegionalMapUI:
     def zoom_at(self, point, steps):
         if not self.map_rect.collidepoint(point):return
         before = self.map_to_tile(point)
-        self.zoom = max(1.0, min(self.MAX_ZOOM, self.zoom*1.25**max(-20, min(20, steps))))
+        self.zoom = max(self.min_zoom,min(self.MAX_ZOOM,
+                        self.zoom*1.25**max(-20,min(20,steps))))
         self.center.update(before-(pygame.Vector2(point)-self.map_rect.center)/self.scale)
         self._clamp()
         self._layout_markers()
@@ -146,14 +181,26 @@ class RegionalMapUI:
     def _layout_markers(self):
         self.marker_rects = {}
         for record in self.landmarks:
-            rect = pygame.Rect(0, 0, 15, 15)
+            size = self._marker_size(record)+4
+            rect = pygame.Rect(0, 0, max(17, size), max(17, size))
             rect.center = tuple(round(value) for value in self.tile_to_map(record['tile_position']))
             self.marker_rects[record['id']] = rect.clip(self.map_rect)
+
+    def select_landmark(self, identifier):
+        """Select a known place without adding travel or discovery actions."""
+        for index, record in enumerate(self.landmarks):
+            if record['id'] == identifier:
+                self.selected = index
+                self.details_visible = True
+                self.detail_scroll = 0
+                return True
+        return False
 
     def _at(self, point):
         if point is None or not self.map_rect.collidepoint(point):return None
         candidates = [index for index, record in enumerate(self.landmarks)
-                      if self.marker_rects[record['id']].collidepoint(point)]
+                      if (self.marker_rects[record['id']].collidepoint(point) or
+                          self.label_rects.get(record['id'],pygame.Rect(0,0,0,0)).collidepoint(point))]
         return min(candidates, key=lambda i: pygame.Vector2(point).distance_squared_to(
                    self.tile_to_map(self.landmarks[i]['tile_position']))) if candidates else None
 
@@ -182,6 +229,7 @@ class RegionalMapUI:
                                pygame.K_DOWN, pygame.K_RIGHT, pygame.K_s, pygame.K_d) and self.landmarks:
                 step = -1 if event.key in (pygame.K_UP, pygame.K_LEFT, pygame.K_w, pygame.K_a) else 1
                 self.selected = (self.selected+step) % len(self.landmarks)
+                self.details_visible = True
                 self.detail_scroll = 0
                 if self.zoom > 1:
                     self.center.update(self.selected_landmark['tile_position'])
@@ -202,9 +250,9 @@ class RegionalMapUI:
         elif event.type == pygame.MOUSEWHEEL:
             point = self._point(event)
             if point is not None:
-                if self.map_rect.collidepoint(point):self.zoom_at(point, getattr(event, 'precise_y', event.y))
-                elif self.detail_rect.collidepoint(point):
+                if self.details_visible and self.detail_panel.collidepoint(point):
                     self.detail_scroll = max(0, min(self.detail_max_scroll, self.detail_scroll-event.y*24))
+                elif self.map_rect.collidepoint(point):self.zoom_at(point, getattr(event, 'precise_y', event.y))
         elif event.type == pygame.MOUSEBUTTONDOWN:
             point = self._point(event)
             self.pointer = point
@@ -213,27 +261,41 @@ class RegionalMapUI:
                 elif self.fit_rect.collidepoint(point):
                     self.fit()
                     self._layout_markers()
+                elif self.details_visible and self.detail_panel.collidepoint(point):
+                    if self.detail_close_rect.collidepoint(point):
+                        self.details_visible = False
                 elif self.map_rect.collidepoint(point):
                     self._drag = pygame.Vector2(point)
-                    index = self._at(point)
-                    if index is not None:
-                        self.selected = index
-                        self.detail_scroll = 0
-                        self._sound('confirm')
+                    self._pressed_place = self._at(point)
+                    self._drag_travel = 0
             elif point is not None and event.button in (4, 5):
-                self.zoom_at(point, 1 if event.button == 4 else -1)
-        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._drag = None
+                steps = 1 if event.button == 4 else -1
+                if self.details_visible and self.detail_panel.collidepoint(point):
+                    self.detail_scroll = max(0,min(self.detail_max_scroll,self.detail_scroll-steps*24))
+                elif self.map_rect.collidepoint(point):self.zoom_at(point,steps)
+        elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            if self._drag is not None and self._drag_travel < 3:
+                if self._pressed_place is not None:
+                    self.selected = self._pressed_place
+                    self.details_visible = True
+                    self.detail_scroll = 0
+                    self._sound('confirm')
+                else:self.details_visible = False
+            self._drag = self._pressed_place = None
         elif event.type == pygame.MOUSEMOTION:
             point = self._point(event)
             self.pointer = point
             if self._drag is not None:
                 if point is None:self._drag = None
                 else:
-                    self.center -= (pygame.Vector2(point)-self._drag)/self.scale
+                    delta = pygame.Vector2(point)-self._drag
+                    self._drag_travel += delta.length()
+                    self.center -= delta/self.scale
                     self._drag.update(point)
                     self._clamp()
                     self._layout_markers()
-            self.hovered = self._at(point)
+            self.hovered = (None if self.details_visible and point is not None and
+                            self.detail_panel.collidepoint(point) else self._at(point))
         return True
 
     @staticmethod
@@ -371,6 +433,7 @@ class RegionalMapUI:
             if position is None:continue
             x, y = self.tile_to_map(position)
             if not self.map_rect.inflate(12, 12).collidepoint(x, y):continue
+            if self._art_icon(painter, 'farm', (x, y), 12):continue
             painter.rect('#b8a17b', (x-3, y-1, 6, 4))
             self._polygon(painter, '#8d7657', ((x-4, y), (x, y-4), (x+4, y)))
             painter.line('#a39370', (x-5, y+5), (x+5, y+5))
@@ -395,7 +458,7 @@ class RegionalMapUI:
                     if self.map_rect.left <= x <= self.map_rect.right:
                         painter.rect('#8c8c70', (x, start[1]-3, 3, 3))
 
-    def _draw_marker(self, painter, record):
+    def _legacy_marker(self, painter, record):
         x, y = self.tile_to_map(record['tile_position'])
         if not self.map_rect.inflate(16, 16).collidepoint((x, y)):return
         kind = record.get('kind')
@@ -404,7 +467,6 @@ class RegionalMapUI:
             for dx, dy in ((-5, 1), (2, 3), (-1, -4)):
                 painter.rect('#b5a17b', (x+dx-2, y+dy, 5, 5))
                 self._polygon(painter, '#796b56', [(x+dx-3, y+dy+1), (x+dx, y+dy-3), (x+dx+3, y+dy+1)])
-            painter.text(record['name'], (x+10, y-12), role='small', color=INK)
         elif kind == 'bridge':
             repaired = record.get('repair_flag') in self._flags()
             for dx in (-6, 3):
@@ -427,13 +489,54 @@ class RegionalMapUI:
             self._circle(painter, '#64745d', (x, y), 1)
 
     @staticmethod
-    def _player_symbol(painter, point):
-        x, y = point
-        for a, b in (((x-4, y), (x, y-4)), ((x, y-4), (x+4, y)),
-                     ((x+4, y), (x, y+4)), ((x, y+4), (x-4, y))):
-            painter.line('#fff1c8', a, b, 3)
-            painter.line(INK, a, b, 1)
-        painter.rect(INK, (x-1, y-1, 2, 2))
+    def _marker_size(record):
+        return {'town':22, 'bridge':18, 'checkpoint':17}.get(record.get('kind'),13)
+
+    def _art_icon(self, painter, key, point, size):
+        chart = self._chart()
+        if chart is None:return False
+        icon = chart.icon(key, size=(max(1,round(size*painter.scale)),)*2)
+        if icon is None:return False
+        painter.canvas.blit(icon,icon.get_rect(center=painter.point(point)))
+        return True
+
+    def _marker_status(self, record):
+        if record.get('kind') == 'bridge':
+            return 'Passable' if record.get('repair_flag') in self._flags() else 'Ruined'
+        if record.get('kind') == 'checkpoint':
+            return ('Open' if record.get('clearance_flag') in self._flags() and
+                    record.get('destination_ready',False) else 'Closed')
+        return {'town':'Village', 'millrace':'Millrace', 'staging':'Work site',
+                'overlook':'Overlook'}.get(record.get('kind'),'Landmark')
+
+    def _draw_marker(self, painter, record):
+        point = self.tile_to_map(record['tile_position'])
+        if not self.map_rect.inflate(24,24).collidepoint(point):return
+        kind = record.get('kind');status = self._marker_status(record)
+        key = {'town':'town','overlook':'overlook','millrace':'millrace','staging':'relief'}.get(kind,'overlook')
+        if kind == 'bridge':key = 'bridge_repaired' if status == 'Passable' else 'bridge_broken'
+        elif kind == 'checkpoint':key = 'gate_open' if status == 'Open' else 'gate_closed'
+        if not self._art_icon(painter,key,point,self._marker_size(record)):
+            self._legacy_marker(painter,record)
+        # These conventional marks remain live even when an illustration is
+        # viewed in grayscale or at a small zoom.
+        x,y = point
+        if kind == 'checkpoint' and status == 'Closed':
+            painter.line('#8b4f3e',(x-3,y),(x+3,y),2)
+        elif kind == 'bridge' and status == 'Ruined':
+            painter.line('#8b4f3e',(x-2,y-2),(x+2,y+2),1)
+            painter.line('#8b4f3e',(x+2,y-2),(x-2,y+2),1)
+
+    @staticmethod
+    def _player_symbol(painter, point, facing='front'):
+        angle = {'back':0,'right':math.pi/2,'front':math.pi,'left':-math.pi/2}.get(facing,math.pi)
+        c,s = math.cos(angle),math.sin(angle)
+        def shape(points):
+            return [painter.point((point[0]+x*c-y*s,point[1]+x*s+y*c)) for x,y in points]
+        outline = shape(((0,-7),(5,5),(0,2),(-5,5)))
+        pygame.draw.polygon(painter.canvas,INK,outline)
+        pygame.draw.polygon(painter.canvas,'#fff5d5',shape(((0,-5.5),(3.5,3.5),(0,1),(-3.5,3.5))))
+        pygame.draw.polygon(painter.canvas,'#d9aa46',shape(((0,-3.5),(1.8,2),(0,.5),(-1.8,2))))
 
     def _description(self, record):
         if record.get('kind') == 'bridge':
@@ -444,97 +547,251 @@ class RegionalMapUI:
                     record.get('destination_ready', False) else 'The watch keeps this checkpoint closed.')
         return record.get('description', 'A familiar landmark in Elden Vale.')
 
-    def _draw_details(self, painter):
-        painter.text('SELECTED PLACE', (328, 67), role='small', color=MUTED, bold=True)
-        self.detail_rect.top = max(88, 67+painter.font('small', bold=True).get_linesize()+6)
-        self.detail_rect.height = max(30, 225-self.detail_rect.top)
+    def _layout(self, painter):
+        # Both dimensions matter: a wide pane alone cannot enlarge a 4:3 map.
+        title_height = painter.font('name',bold=True).get_linesize()
+        small_height = painter.font('small').get_linesize()
+        top = max(40,16+title_height+8)
+        footer_height = small_height*2+8
+        bottom = 310-footer_height
+        self.map_rect.update(16,top,448,max(160,bottom-top))
+        self._footer_y = bottom+3
+        self._hint_y = self._footer_y+small_height+1
+        button_height = max(18,painter.font('body').get_linesize()+6)
+        self.fit_rect.update(408,310-button_height,44,button_height)
+        self.close_rect.update(438,13,24,max(22,title_height+4))
+        self._layout_markers()
+        self._layout_details(painter)
+
+    def _layout_details(self, painter):
+        if not self.details_visible or self.selected_landmark is None:
+            self.detail_max_scroll = 0
+            return
         record = self.selected_landmark
-        name = record.get('name', 'Elden Vale') if record else 'Elden Vale'
-        description = self._description(record) if record else 'Follow the roads to discover the region.'
-        name_lines = painter.wrap(name, self.detail_rect.width, role='name', bold=True)
-        lines = painter.wrap(description, self.detail_rect.width, role='body')
-        name_height = painter.font('name', bold=True).get_linesize()
-        body_height = painter.font('body').get_linesize()
-        total = len(name_lines)*name_height+8+len(lines)*body_height
-        self.detail_max_scroll = max(0, total-self.detail_rect.height)
-        self.detail_scroll = max(0, min(self.detail_max_scroll, self.detail_scroll))
-        painter.clip(self.detail_rect)
-        y = self.detail_rect.top-self.detail_scroll
-        for line in name_lines:
-            painter.text(line, (328, y), role='name', color=INK, bold=True)
+        width = 172
+        self._detail_name_lines = painter.wrap(record.get('name','Landmark'),width-34,role='name',bold=True)
+        self._detail_lines = painter.wrap(self._description(record),width-20,role='body')
+        name_height = painter.font('name',bold=True).get_linesize()
+        line_height = painter.font('body').get_linesize()
+        status_height = painter.font('small',bold=True).get_linesize()
+        header_height = len(self._detail_name_lines)*name_height+status_height+21
+        height = min(148,max(84,header_height+len(self._detail_lines)*line_height+9))
+        safe = self.map_rect.inflate(-16,-16)
+        minimum_height = min(height,max(84,header_height+28))
+        heights = list(range(height,minimum_height-1,-8))
+        if minimum_height not in heights:heights.append(minimum_height)
+        candidates = [pygame.Rect(position,(width,h)) for h in heights for position in
+                      ((safe.right-width,safe.bottom-h),(safe.left,safe.bottom-h),
+                       (safe.right-width,safe.top),(safe.left,safe.top))]
+        player = self.world_to_map(self.game.player.position)
+        selected = self.tile_to_map(record['tile_position'])
+        player_obstacle = pygame.Rect(player[0]-10,player[1]-10,20,20)
+        selected_obstacle = self.marker_rects[record['id']].inflate(6,6)
+        important = [self.marker_rects[item['id']].inflate(6,6) for item in self.landmarks
+                     if item.get('kind') in ('town','bridge','checkpoint')]
+        compass = pygame.Rect(self.map_rect.right-29,self.map_rect.top+8,22,36)
+        def score(rect):
+            overlap = rect.colliderect(selected_obstacle)*1000
+            overlap += rect.colliderect(player_obstacle)*500
+            overlap += sum(rect.colliderect(obstacle)*3 for obstacle in important)
+            overlap += rect.colliderect(compass)*2
+            return overlap,height-rect.height,-pygame.Vector2(rect.center).distance_squared_to(selected)
+        self.detail_panel = min(candidates,key=score)
+        height = self.detail_panel.height
+        self.detail_close_rect = pygame.Rect(self.detail_panel.right-20,self.detail_panel.top+6,14,14)
+        self.detail_rect = pygame.Rect(self.detail_panel.left+10,self.detail_panel.top+header_height,
+                                      width-20,max(20,height-header_height-8))
+        self.detail_max_scroll = max(0,len(self._detail_lines)*line_height-self.detail_rect.height)
+        self.detail_scroll = max(0,min(self.detail_max_scroll,self.detail_scroll))
+
+    def _label_lines(self, painter, record):
+        name = record.get('name','Landmark')
+        if record.get('kind') == 'bridge':name = 'Western crossing'
+        if record.get('kind') == 'bridge' and painter.font('small',bold=True).size(name)[0] > 118:
+            name = 'West bridge'
+        if (record.get('kind') == 'checkpoint' and
+                painter.font('small',bold=True).size(name)[0] > 130):
+            name = 'North gate' if record['tile_position'][1] < 0 else 'South gate'
+        width = 170 if record.get('kind') in ('town','bridge','checkpoint') else 118
+        lines = painter.wrap(name,width,role='small',bold=True)
+        if record.get('kind') in ('bridge','checkpoint'):
+            lines.append(self._marker_status(record))
+        return lines
+
+    def _layout_labels(self, painter):
+        self.label_rects = {}
+        self._label_layout = []
+        if not self.landmarks:return
+        selected_id = self.selected_landmark['id'] if self.details_visible else None
+        hovered_id = self.landmarks[self.hovered]['id'] if self.hovered is not None else None
+        priority = {'town':0,'bridge':1,'checkpoint':2}
+        records = sorted(self.landmarks,key=lambda r:(-1 if r['id']==selected_id else
+                         priority.get(r.get('kind'),4),r['id']))
+        major_ids = {record['id'] for record in self.landmarks if record.get('kind') in priority}
+        occupied = [rect.inflate(2,2) for key,rect in self.marker_rects.items()
+                    if rect.width and rect.height and key in major_ids | {selected_id}]
+        player = self.world_to_map(self.game.player.position)
+        occupied.append(pygame.Rect(round(player[0])-8,round(player[1])-9,16,18))
+        occupied.append(pygame.Rect(self.map_rect.right-29,self.map_rect.top+7,24,38))
+        if self.details_visible:occupied.append(self.detail_panel.inflate(6,6))
+        safe = self.map_rect.inflate(-10,-10)
+        line_height = painter.font('small',bold=True).get_linesize()
+        for record in records:
+            major = record.get('kind') in priority
+            if not major and self.zoom < 1.6 and record['id'] not in (selected_id,hovered_id):continue
+            x,y = self.tile_to_map(record['tile_position'])
+            if not self.map_rect.collidepoint(x,y):continue
+            lines = self._label_lines(painter,record)
+            width = max(painter.font('small',bold=True).size(line)[0] for line in lines)+4
+            height = line_height*len(lines)+2
+            radius = self._marker_size(record)/2+5
+            candidates = []
+            for offset in (0,12,24,40):
+                gap = radius+offset
+                candidates.extend(pygame.Rect(round(px),round(py),width,height) for px,py in
+                                  ((x+gap,y-height/2),(x-gap-width,y-height/2),
+                                   (x+gap,y-height*.15),(x-gap-width,y-height*.15),
+                                   (x+gap,y-height*.85),(x-gap-width,y-height*.85),
+                                   (x-width/2,y-gap-height),(x-width/2,y+gap),
+                                   (x+gap,y-gap-height),(x-gap-width,y+gap)))
+            chosen = next((rect for rect in candidates if safe.contains(rect) and
+                           not any(rect.colliderect(other) for other in occupied)),None)
+            if chosen is None and major:
+                # Major navigation names keep a place even at large text. Use
+                # the least crowded in-bounds candidate rather than clipping.
+                candidates = [rect.clamp(safe) for rect in candidates]
+                if self.details_visible:
+                    candidates = [rect for rect in candidates if not rect.colliderect(self.detail_panel)]
+                if not candidates:continue
+                chosen = min(candidates,key=lambda rect:sum(rect.clip(other).width*rect.clip(other).height
+                                                            for other in occupied))
+            if chosen is None:continue
+            self.label_rects[record['id']] = chosen
+            occupied.append(chosen.inflate(5,4))
+            self._label_layout.append((record,lines,chosen))
+        # Minor symbols yield to priority lettering at a crowded overview;
+        # selecting one restores its own symbol and gives its label priority.
+        major_labels = [rect for key,rect in self.label_rects.items() if key in major_ids]
+        for record in self.landmarks:
+            key = record['id']
+            if key in major_ids or key == selected_id:continue
+            if any(self.marker_rects[key].colliderect(rect) for rect in major_labels):
+                self.marker_rects[key] = pygame.Rect(0,0,0,0)
+
+    def _draw_labels(self, painter):
+        line_height = painter.font('small',bold=True).get_linesize()
+        for record,lines,rect in self._label_layout:
+            for index,line in enumerate(lines):
+                point = (rect.left+2,rect.top+index*line_height)
+                color = '#704738' if index == len(lines)-1 and line in ('Closed','Ruined') else INK
+                # A quiet paper halo separates lettering from rich terrain
+                # without covering it with a row of opaque label boxes.
+                for dx,dy in ((-1,0),(1,0),(0,-1),(0,1)):
+                    painter.text(line,(point[0]+dx,point[1]+dy),role='small',color='#eee4c5',bold=True)
+                painter.text(line,point,role='small',color=color,bold=True)
+
+    def _draw_details(self, painter):
+        if not self.details_visible or self.selected_landmark is None:return
+        record = self.selected_landmark
+        panel = self.detail_panel
+        painter.panel(panel,parchment=True)
+        painter.rect(BRASS,(panel.left+1,panel.top+1,2,panel.height-2))
+        y = panel.top+8
+        name_height = painter.font('name',bold=True).get_linesize()
+        for line in self._detail_name_lines:
+            painter.text(line,(panel.left+10,y),role='name',color=INK,bold=True)
             y += name_height
-        y += 8
-        for line in lines:
-            painter.text(line, (328, y), role='body', color=MUTED)
-            y += body_height
+        status = self._marker_status(record)
+        painter.text(status,(panel.left+10,y+2),role='small',
+                     color='#8b4f3e' if status in ('Closed','Ruined') else MUTED,bold=True)
+        painter.text('×',self.detail_close_rect.center,role='body',anchor='center',color=MUTED)
+        painter.clip(self.detail_rect)
+        line_height = painter.font('body').get_linesize()
+        y = self.detail_rect.top-self.detail_scroll
+        for line in self._detail_lines:
+            painter.text(line,(self.detail_rect.left,y),role='body',color=INK)
+            y += line_height
         painter.clip(None)
         if self.detail_max_scroll:
-            painter.rect('#c6b588', (449, self.detail_rect.top, 2, self.detail_rect.height))
-            thumb = max(10, self.detail_rect.height**2/(self.detail_rect.height+self.detail_max_scroll))
+            x = panel.right-5
+            painter.rect('#c6b588',(x,self.detail_rect.top,2,self.detail_rect.height))
+            thumb = max(10,self.detail_rect.height**2/(self.detail_rect.height+self.detail_max_scroll))
             offset = (self.detail_rect.height-thumb)*self.detail_scroll/self.detail_max_scroll
-            painter.rect(BRASS, (449, self.detail_rect.top+offset, 2, thumb))
-        painter.line('#c4b184', (328, 232), (444, 232))
-        self._player_symbol(painter, (334, 245))
-        painter.text('You are here', (345, 237), role='small', color=INK, bold=True)
-        painter.text('Elden Vale', (328, 258), role='small', color=MUTED)
+            painter.rect(BRASS,(x,self.detail_rect.top+offset,2,thumb))
 
     def _draw_hover(self, painter):
-        if self.hovered is None or self.hovered >= len(self.landmarks):return
-        record = self.landmarks[self.hovered]
-        lines = painter.wrap(record.get('name', 'Landmark'), 146, role='small', bold=True)
-        height = len(lines)*painter.font('small', bold=True).get_linesize()+8
-        width = max(painter.font('small', bold=True).size(line)[0] for line in lines)+12
-        point = self.tile_to_map(record['tile_position'])
-        rect = pygame.Rect(point[0]+10, point[1]+11, width, height).clamp(self.map_rect.inflate(-6, -6))
-        painter.rect('#f1e5c5', rect)
-        painter.rect(BRASS, rect, 1)
-        for index, line in enumerate(lines):
-            painter.text(line, (rect.left+6, rect.top+4+index*painter.font('small', bold=True).get_linesize()),
-                         role='small', bold=True, color=INK)
+        # Persistent names and hover-priority label placement replace the old
+        # tooltip box, keeping the underlying route visible.
+        return
+
+    def _draw_legend(self, painter):
+        y = self._footer_y
+        self._player_symbol(painter,(23,y+4),'back')
+        painter.text('You',(32,y-1),role='small',color=INK)
+        x = 32+painter.font('small').size('You')[0]+17
+        painter.line('#8b4f3e',(x,y+3),(x+8,y+3),2)
+        painter.line(INK,(x,y),(x,y+7),1)
+        painter.line(INK,(x+8,y),(x+8,y+7),1)
+        painter.text('Closed gate',(x+12,y-1),role='small',color=INK)
+        x += 12+painter.font('small').size('Closed gate')[0]+17
+        painter.line('#8b4f3e',(x,y),(x+6,y+6),1)
+        painter.line('#8b4f3e',(x+6,y),(x,y+6),1)
+        painter.text('Ruined crossing',(x+11,y-1),role='small',color=INK)
 
     def draw(self, canvas):
         if not self.game.map_open:return
         if self._world is not self.game.world:self.reset()
-        style = getattr(self.game, 'ui', None)
+        style = getattr(self.game,'ui',None)
         if style is None:
             from ui_style import UIStyle
             style = self.game.ui = UIStyle(self.game)
-        painter = style.painter(canvas, logical_size=(480, 320))
+        painter = style.painter(canvas,logical_size=(480,320))
         old_clip = canvas.get_clip()
         try:
-            painter.veil(190)
-            painter.panel((12, 12, 456, 296), parchment=True)
-            painter.lantern((31, 31), color=BRASS, size=10)
-            painter.text('Elden Vale', (47, 23), role='heading', color=INK, bold=True)
-            subtitle_y = 23+painter.font('heading', bold=True).get_linesize()+2
-            if subtitle_y+painter.font('small').get_linesize() <= self.map_rect.top-4:
-                painter.text('Merovar · Regional map', (28, subtitle_y), role='small', color=MUTED)
-            painter.button(self.close_rect, '×', selected=self.pointer is not None and
+            self._layout(painter)
+            painter.veil(205)
+            painter.panel((8,8,464,304),parchment=True)
+            painter.text('Elden Vale',(20,14),role='name',color=INK,bold=True)
+            painter.text('REGIONAL ATLAS',(116,17),role='small',color=MUTED)
+            painter.button(self.close_rect,'×',selected=self.pointer is not None and
                            self.close_rect.collidepoint(self.pointer))
             painter.clip(self.map_rect)
-            self._draw_terrain(painter)
-            self._draw_roads_walls(painter)
+            chart = self._chart()
+            if chart is not None:
+                used_art = chart.draw_terrain(canvas,painter.area(self.map_rect),self.center,self.scale*painter.scale)
+                if not used_art:self._draw_terrain(painter)
+                chart.draw_routes(canvas,painter.area(self.map_rect),self.center,self.scale*painter.scale,flags=self._flags())
+            else:
+                self._draw_terrain(painter)
+                self._draw_roads_walls(painter)
             self._draw_farmsteads(painter)
             self._layout_markers()
-            for index, record in enumerate(self.landmarks):
-                self._draw_marker(painter, record)
-                if index == self.selected or index == self.hovered:
-                    x, y = self.tile_to_map(record['tile_position'])
-                    self._circle(painter, '#967135' if index == self.selected else BRASS, (x, y), 9, 1)
-            self._player_symbol(painter, self.world_to_map(self.game.player.position))
-            self._draw_hover(painter)
-            painter.text('N', (self.map_rect.right-11, self.map_rect.top+6), role='small', color=INK, anchor='midtop')
-            painter.line(INK, (self.map_rect.right-11, self.map_rect.top+32),
-                         (self.map_rect.right-11, self.map_rect.top+21))
-            painter.line(INK, (self.map_rect.right-11, self.map_rect.top+21),
-                         (self.map_rect.right-14, self.map_rect.top+26))
-            painter.line(INK, (self.map_rect.right-11, self.map_rect.top+21),
-                         (self.map_rect.right-8, self.map_rect.top+26))
+            self._layout_labels(painter)
+            for index,record in enumerate(self.landmarks):
+                if not self.marker_rects[record['id']].width:continue
+                if (self.details_visible and index == self.selected) or index == self.hovered:
+                    point = self.tile_to_map(record['tile_position'])
+                    self._circle(painter,'#ead390',point,self._marker_size(record)/2+4,2)
+                    self._circle(painter,'#6f5734',point,self._marker_size(record)/2+5,.7)
+                self._draw_marker(painter,record)
+            self._draw_labels(painter)
+            self._player_symbol(painter,self.world_to_map(self.game.player.position),
+                                getattr(self.game.player,'facing','front'))
+            painter.text('N',(self.map_rect.right-15,self.map_rect.top+6),role='small',color=INK,anchor='midtop',bold=True)
+            x = self.map_rect.right-15;y = self.map_rect.top+27
+            self._polygon(painter,'#eee4c5',((x,y-8),(x-4,y+4),(x,y+1),(x+4,y+4)))
+            painter.line(INK,(x,y-8),(x-4,y+4),1)
+            painter.line(INK,(x,y-8),(x+4,y+4),1)
             painter.clip(None)
-            painter.rect(BRASS, self.map_rect, 1)
-            painter.line('#c4b184', (320, 64), (320, 284))
+            painter.rect(BRASS,self.map_rect,1)
             self._draw_details(painter)
-            painter.text('Scroll: zoom · Drag: pan', (28, 289), role='small', color=MUTED)
-            painter.button(self.fit_rect, 'Fit', selected=self.pointer is not None and
+            self._draw_legend(painter)
+            hints = ('Scroll zoom · Drag pan · Arrows places · M / Esc close',
+                     'Wheel zoom · Drag pan · Arrows select · M close',
+                     'Wheel zoom · Drag pan · M / Esc close')
+            available = self.fit_rect.left-28
+            hint = next((line for line in hints if painter.font('hint').size(line)[0]<=available),hints[-1])
+            painter.text(hint,(20,self._hint_y),role='hint',color=MUTED)
+            painter.button(self.fit_rect,'Fit',selected=self.pointer is not None and
                            self.fit_rect.collidepoint(self.pointer))
         finally:canvas.set_clip(old_clip)

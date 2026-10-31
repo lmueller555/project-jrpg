@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "generator": "image_gen.imagegen",
+  "style_reference": "assets/world/auratia/world_map.png",
+  "alpha_threshold": 128,
+  "material_colors": 96,
+  "mass_colors": 160,
+  "icon_colors": 128,
+  "source_records": [
+    {
+      "file": "assets/source/cartography/elden_vale/materials_sheet.png",
+      "sha256": "557cd51d33f0b3eedde9f2e2d0d04ed4ca5fb2c4a52b0d59f8437e5d97869b4c"
+    },
+    {
+      "file": "assets/source/cartography/elden_vale/masses_sheet.png",
+      "sha256": "da04939d2446cfce4c64e03e28cea6f7e04ed4e41bd6ce831dc7bcd0f7b2e2bc"
+    },
+    {
+      "file": "assets/source/cartography/elden_vale/icons_sheet.png",
+      "sha256": "e0beba16952b2b3efae674f87c907ce0cd888b3a3518ac849edfed8e246d0cba"
+    },
+    {
+      "file": "assets/source/cartography/elden_vale/quiet_materials_sheet.png",
+      "sha256": "3d527fda40087091ddb1f96e32f26f5ad31cbbc9cdaa9e830f28c02e6e3425a0"
+    }
+  ],
+  "tiles": {
+    "land": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        0,
+        0,
+        418,
+        418
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "water": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        418,
+        0,
+        836,
+        418
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "grain": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        836,
+        0,
+        1254,
+        418
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "vegetables": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        0,
+        418,
+        418,
+        836
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "fallow": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        418,
+        418,
+        836,
+        836
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "pasture": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        836,
+        418,
+        1254,
+        836
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "orchard": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        0,
+        836,
+        418,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "forest_floor": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        418,
+        836,
+        836,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ]
+    },
+    "rock_base": {
+      "source": "quiet_materials_sheet.png",
+      "crop": [
+        836,
+        836,
+        1254,
+        1254
+      ],
+      "size": [
+        128,
+        128
+      ]
+    }
+  },
+  "props": {
+    "forest_broadleaf_a": {
+      "source": "masses_sheet.png",
+      "crop": [
+        10,
+        0,
+        650,
+        455
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_broadleaf_b": {
+      "source": "masses_sheet.png",
+      "crop": [
+        655,
+        20,
+        1278,
+        450
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_conifer_a": {
+      "source": "masses_sheet.png",
+      "crop": [
+        0,
+        455,
+        650,
+        850
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "forest_conifer_b": {
+      "source": "masses_sheet.png",
+      "crop": [
+        650,
+        450,
+        1278,
+        850
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "foothills_a": {
+      "source": "masses_sheet.png",
+      "crop": [
+        0,
+        850,
+        660,
+        1230
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "foothills_b": {
+      "source": "masses_sheet.png",
+      "crop": [
+        665,
+        840,
+        1278,
+        1230
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "foot_anchor": [
+        128,
+        256
+      ],
+      "role": "mass"
+    },
+    "town": {
+      "source": "icons_sheet.png",
+      "crop": [
+        0,
+        0,
+        510,
+        410
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "farm": {
+      "source": "icons_sheet.png",
+      "crop": [
+        520,
+        40,
+        1005,
+        410
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "bridge_broken": {
+      "source": "icons_sheet.png",
+      "crop": [
+        1008,
+        70,
+        1536,
+        395
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "bridge_repaired": {
+      "source": "icons_sheet.png",
+      "crop": [
+        0,
+        420,
+        510,
+        695
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "gate_closed": {
+      "source": "icons_sheet.png",
+      "crop": [
+        520,
+        420,
+        1010,
+        695
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "gate_open": {
+      "source": "icons_sheet.png",
+      "crop": [
+        1020,
+        420,
+        1536,
+        695
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "overlook": {
+      "source": "icons_sheet.png",
+      "crop": [
+        10,
+        700,
+        510,
+        1024
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "millrace": {
+      "source": "icons_sheet.png",
+      "crop": [
+        520,
+        705,
+        1010,
+        1024
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "relief": {
+      "source": "icons_sheet.png",
+      "crop": [
+        1020,
+        700,
+        1536,
+        1024
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    }
+  }
+}

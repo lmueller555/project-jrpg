@@ -31,6 +31,12 @@ prompts appear only when relevant. The permanent full-controls strip has been
 removed. Controls remain available from the pause interface. The current
 objective can be hidden without altering quest progress.
 
+The exploration Menu button has been removed globally. Escape opens pause.
+During regional overworld exploration, a compact illustrated minimap occupies
+the bottom-right corner and opens the full atlas when clicked. It yields to
+dialogue and modal screens; town and interior exploration have no replacement
+corner button. HUD prompts account for the minimap's occupied area.
+
 Dialogue remains part of the running world. Portrait bubbles follow the current
 speaker, protect participants' faces and keep their response buttons inside the
 viewport. Clicks advance prose; explicit response buttons handle quest choices.
@@ -48,9 +54,14 @@ selection keep the selected entry visible. The controls reference is available
 inside Settings on both the title screen and pause menu.
 
 The journal presents quests separately from the selected quest's details and
-objectives. The map preserves Eldenmere's geography with simplified cartography,
+objectives. The town map preserves Eldenmere's geography with simplified cartography,
 selectable landmarks and a dedicated player legend. Both have visible close
 controls in addition to their existing keyboard shortcuts.
+
+The [regional atlas](REGIONAL_MAP.md) uses illustrated, geographically registered
+terrain with live routes, markers and labels. A compact header and contextual
+place card give the map most of the available space. Important names, passage
+states and the player marker remain readable at different zoom and text sizes.
 
 Navigation, confirmation and back sounds are quiet and follow the effects
 volume. UI animation does not delay input, and reduced-motion mode preserves

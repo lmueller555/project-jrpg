@@ -1,0 +1,490 @@
+{
+  "version": 1,
+  "region_id": "elden_vale_start",
+  "geometry_sha256": "ccc1d0318080a93bd06587e9e781fe2574c2f560e15bda8f6838cabb1ee10ca9",
+  "bounds_tiles": [
+    -256,
+    -192,
+    512,
+    384
+  ],
+  "focus_bounds_tiles": [
+    -140,
+    -110,
+    280,
+    220
+  ],
+  "pixels_per_tile": 6,
+  "tile_size": 512,
+  "levels": [
+    1,
+    2,
+    4
+  ],
+  "art_manifest": "assets/cartography/elden_vale/art/art.json",
+  "art_sha256": "f4e903ae5a2a4ffee4e1891b5383df2b3a206b77dc90bce8a4a2d30e8d62c292",
+  "source": "assets/maps/overworld/elden_vale/region.json",
+  "source_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+  "input_sha256": {
+    "assets/maps/overworld/elden_vale/region.json": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "assets/cartography/elden_vale/art/art.json": "f4e903ae5a2a4ffee4e1891b5383df2b3a206b77dc90bce8a4a2d30e8d62c292",
+    "tools/build_elden_vale_cartography.py": "d368eadc74080f7c6c47337b3af6831ce1c6d2f5953a8c823460367354c4c678",
+    "regional_cartography.py": "f8ebdacfac9f5399193fb4edfdd45c7f83646b0798d6b3ac2037e58da534f33c",
+    "assets/cartography/elden_vale/art/tiles/land.png": "d4ef64d871f6e9b8bbc7fb89d54573751754197257aa3371b04eb1c915cc4523",
+    "assets/cartography/elden_vale/art/tiles/water.png": "4567826376d33d5976c12490ad5464e117d83eae65c0f499eab232eb2e79bd21",
+    "assets/cartography/elden_vale/art/tiles/grain.png": "6c575269a975e722f3b562630e003a801b1025b55b4ee772263776e90e9583a5",
+    "assets/cartography/elden_vale/art/tiles/vegetables.png": "8af169909743f70b432044ec9affb72521d3f678f3d747bbad6db81614416c1c",
+    "assets/cartography/elden_vale/art/tiles/fallow.png": "96f4a63cdd231092fa4342226457bf60333874c59ff3916b6be0998211a89330",
+    "assets/cartography/elden_vale/art/tiles/pasture.png": "0a41277fca058f75a55c171a502841e0f8758f396e89d3b742cce80b0ad02509",
+    "assets/cartography/elden_vale/art/tiles/orchard.png": "4b459e6602adfe5caeaec21e3767f7e8092f6bc7bec06104337a0a20cf9d15fd",
+    "assets/cartography/elden_vale/art/tiles/forest_floor.png": "be139ca42e435c60c1beaad17f0603bda49c52d6aacf2e9838afe35d5b0f1082",
+    "assets/cartography/elden_vale/art/tiles/rock_base.png": "4b3e29234875ab28f006e33aee31114abecb54f14d461fc9fd6673260ae9b605",
+    "assets/cartography/elden_vale/art/props/forest_broadleaf_a.png": "98746dff05613d0b71037788896fd885e35127d695ececd41c2a6ac12c827482",
+    "assets/cartography/elden_vale/art/props/forest_broadleaf_b.png": "40f7f1893281791cd2c779370849ede8666d2d2e539b635135aaf5035e24b660",
+    "assets/cartography/elden_vale/art/props/forest_conifer_a.png": "314f95a10fd21c64c3df77dc87c51414eda42a02ceda52f2eeb460b823219606",
+    "assets/cartography/elden_vale/art/props/forest_conifer_b.png": "5e95429184ce3d2ea4256c81f5b03129901d0ea33e33cd41dab081f5b1dba7ae",
+    "assets/cartography/elden_vale/art/props/foothills_a.png": "bf41837f1a30619c49a7d507df3d68c20e97453a9434b2e2047da9ceaa08b0ce",
+    "assets/cartography/elden_vale/art/props/foothills_b.png": "30de468b5ee610e040bb9a9b2cf4f0129756a9dc156077eed215afa2cbd26aa5",
+    "assets/cartography/elden_vale/art/props/town.png": "9471188696a5f7b2c01323e38efa00480e8bc8196d16f40ca4f05db375484661",
+    "assets/cartography/elden_vale/art/props/farm.png": "0d140ddbf6254b24b3959e89c4663a03cbca6a53565dbc981fcf6fbd25f3c48c",
+    "assets/cartography/elden_vale/art/props/bridge_broken.png": "bb8812c3eb57ac215bdfb7cda65ab94e0eb315b9cb98d501e7bfe5edd563639b",
+    "assets/cartography/elden_vale/art/props/bridge_repaired.png": "831e62af8f5acedd2fe62dacd24c33227f47f3d77af3904614c47f31c866832b",
+    "assets/cartography/elden_vale/art/props/gate_closed.png": "6cc76cbb8e287750fbabd657dcb7b10522cbf26e6a4f3fc489b58d689c5f6226",
+    "assets/cartography/elden_vale/art/props/gate_open.png": "4c3f6dfd636fc1f392ff48ae6403bcc8460f5646b108884b9d85c191a5f4788b",
+    "assets/cartography/elden_vale/art/props/overlook.png": "4a5713ecb1249fe6b7bb5355a33bfeacf684ee15ea21caf3a679d108409d4e97",
+    "assets/cartography/elden_vale/art/props/millrace.png": "569cf6e78b1b99671eac4480e0e88da47aa80c97d6b5af205e68731285fa00a3",
+    "assets/cartography/elden_vale/art/props/relief.png": "18b91a69a4ee5c006d8600d333ad7b56986775f0e01674b0c2ba4705f09e960b"
+  },
+  "tiles": [
+    {
+      "level": 1,
+      "x": 0,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/0_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 1,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/1_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 2,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/2_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 3,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/3_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 4,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/4_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 5,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/5_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 0,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/0_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 1,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/1_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 2,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/2_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 3,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/3_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 4,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/4_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 5,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/5_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 0,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/0_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 1,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/1_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 2,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/2_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 3,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/3_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 4,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/4_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 5,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/5_2.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 0,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/0_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 1,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/1_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 2,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/2_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 3,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/3_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 4,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/4_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 5,
+      "y": 3,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/5_3.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 1,
+      "x": 0,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/0_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 1,
+      "x": 1,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/1_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 1,
+      "x": 2,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/2_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 1,
+      "x": 3,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/3_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 1,
+      "x": 4,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/4_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 1,
+      "x": 5,
+      "y": 4,
+      "image": "assets/cartography/elden_vale/tiles/lod_1/5_4.png",
+      "size": [
+        512,
+        256
+      ]
+    },
+    {
+      "level": 2,
+      "x": 0,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/0_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 1,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/1_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 2,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/2_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 0,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/0_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 1,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/1_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 2,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/2_1.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 2,
+      "x": 0,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/0_2.png",
+      "size": [
+        512,
+        128
+      ]
+    },
+    {
+      "level": 2,
+      "x": 1,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/1_2.png",
+      "size": [
+        512,
+        128
+      ]
+    },
+    {
+      "level": 2,
+      "x": 2,
+      "y": 2,
+      "image": "assets/cartography/elden_vale/tiles/lod_2/2_2.png",
+      "size": [
+        512,
+        128
+      ]
+    },
+    {
+      "level": 4,
+      "x": 0,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_4/0_0.png",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "level": 4,
+      "x": 1,
+      "y": 0,
+      "image": "assets/cartography/elden_vale/tiles/lod_4/1_0.png",
+      "size": [
+        256,
+        512
+      ]
+    },
+    {
+      "level": 4,
+      "x": 0,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_4/0_1.png",
+      "size": [
+        512,
+        64
+      ]
+    },
+    {
+      "level": 4,
+      "x": 1,
+      "y": 1,
+      "image": "assets/cartography/elden_vale/tiles/lod_4/1_1.png",
+      "size": [
+        256,
+        64
+      ]
+    }
+  ]
+}
