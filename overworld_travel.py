@@ -26,13 +26,17 @@ class OverworldTravel:
         self._town_armed = True
         self._region_armed = False
         self.discovered = {'eldenmere'}
+        self.farm_state = None
 
     @property
     def active(self):
         return bool(getattr(self.game.world, 'is_overworld', False))
 
     def to_dict(self):
-        return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered)}
+        world = self.game._overworld_world
+        farm = world.grain_farm.to_dict() if world is not None else self.farm_state
+        return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered),
+                **({'grain_farm': farm} if farm is not None else {})}
 
     @staticmethod
     def discovery_ids():
@@ -49,7 +53,10 @@ class OverworldTravel:
         active = data.get('player', {}).get('scene') == WORLD_ID
         if record is None:
             return not active
-        if not (isinstance(record, dict) and set(record) in ({'version', 'region'}, {'version', 'region', 'discovered'})
+        from grain_farm import valid_state
+        if not (isinstance(record, dict) and {'version', 'region'} <= set(record)
+                and set(record) <= {'version', 'region', 'discovered', 'grain_farm'}
+                and ('grain_farm' not in record or valid_state(record['grain_farm']))
                 and type(record['version']) is int and record['version'] == 1
                 and record['region'] == REGION_ID
                 and not (active and data.get('post_battle') is not None)):
@@ -63,10 +70,12 @@ class OverworldTravel:
         """Rearm only after leaving a destination's contact footprint."""
         self._town_armed = False
         self._region_armed = False
+        self.farm_state = (data or {}).get('grain_farm')
         self.discovered.clear()
         self.discovered.update((data or {}).get('discovered', ['eldenmere']))
         if self.game._overworld_world is not None:
             self.game._overworld_world.set_progress(self.game.social.flags)
+            self.game._overworld_world.grain_farm.restore(self.farm_state)
 
     def stage_story_restore(self):
         """Restore committed town actors at town scale, retaining region feet."""
@@ -202,6 +211,8 @@ class OverworldTravel:
         g = self.game
         if g._overworld_world is not None:
             g._overworld_world.set_progress(g.social.flags)
+        if self.active:
+            g.world.grain_farm.update(seconds, g)
         # Observe leaving a contact even during the short transfer cooldown.
         # A running player can reach the town exit again before it expires.
         if g.world is g.town:
@@ -235,11 +246,15 @@ class OverworldTravel:
                             for point in gate.get('guard_positions', [gate['guard_position']]))), None)
 
     def interaction_hint(self):
+        if self.active:
+            hint = self.game.world.grain_farm.interaction_hint(self.game)
+            if hint:return hint
         return 'E: Speak with the road guard' if self.nearby_guard() is not None else ''
 
     def interact(self):
         if not self.can_travel():
             return False
+        if self.active and self.game.world.grain_farm.interact(self.game):return True
         gate = self.nearby_guard()
         if gate is None:
             return False

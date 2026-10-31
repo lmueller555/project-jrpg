@@ -1,0 +1,31 @@
+{
+  "status": "review",
+  "anchor": [
+    20,
+    38
+  ],
+  "canvas": [
+    40,
+    44
+  ],
+  "source": "assets/source/characters/grain_workers/pose_reference.png",
+  "appearance": "approved male_02 and male_03 walk_front parts",
+  "grip_offsets": {
+    "lift": [
+      0,
+      -3
+    ],
+    "carry": [
+      0,
+      -11
+    ],
+    "place": [
+      10,
+      -9
+    ]
+  },
+  "roles": [
+    "loader",
+    "coworker"
+  ]
+}

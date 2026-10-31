@@ -1,0 +1,29 @@
+{
+  "before_repair": {
+    "frames": 300,
+    "fps": 15,
+    "seconds": 20.0
+  },
+  "loading_and_vignette": {
+    "frames": 760,
+    "fps": 15,
+    "seconds": 50.666666666666664
+  },
+  "blocked_path_and_continue": {
+    "frames": 461,
+    "fps": 15,
+    "seconds": 30.733333333333334
+  },
+  "final_state": {
+    "loaded": 2,
+    "exchange_read": false,
+    "scene_done": false,
+    "greeted": []
+  },
+  "cache_stats": {
+    "render_bytes": 7077888,
+    "render_chunks": 12,
+    "collision_chunks": 1,
+    "metadata_chunks": 22
+  }
+}
