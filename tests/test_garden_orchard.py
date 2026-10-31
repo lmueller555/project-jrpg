@@ -61,6 +61,36 @@ class GardenOrchardTests(unittest.TestCase):
     def positions(self):
         return {k:tuple(p) for k,(p,_) in self.c.portable_positions().items()}
 
+    def test_animation_frames_do_not_trigger_disk_autosaves(self):
+        # Settle discovery, then inspect ordinary pre-contact action frames.
+        self.tick(3);self.assertTrue(self.g.save_progress())
+        with mock.patch.object(self.g.save_store,'write',wraps=self.g.save_store.write) as write:
+            self.tick(10)
+            self.assertEqual(write.call_count,0)
+        self.until(lambda:(self.c.action('gardener') or {}).get('carry')=='can')
+        self.assertTrue(self.g.save_progress())
+        with mock.patch.object(self.g.save_store,'write',wraps=self.g.save_store.write) as write:
+            self.tick(10)
+            self.assertEqual(write.call_count,0)
+            expected=self.c.to_dict()
+            self.assertTrue(self.g.save_progress())
+            self.assertEqual(write.call_count,1)
+            self.assertEqual(write.call_args.args[0]['overworld']['garden_orchard'],expected)
+
+    def test_contact_and_step_still_checkpoint_precise_snapshots(self):
+        self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.7)
+        with mock.patch.object(self.g.save_store,'write',wraps=self.g.save_store.write) as write:
+            self.tick(2)
+            self.assertEqual(write.call_count,1)
+            saved=write.call_args.args[0]['overworld']['garden_orchard']['gardener']
+            self.assertGreaterEqual(saved['elapsed'],.75)
+            self.assertEqual(saved['position'],list(self.c.actors[0].position))
+        step=self.c.state['gardener']['step']
+        with mock.patch.object(self.g.save_store,'write',wraps=self.g.save_store.write) as write:
+            self.until(lambda:self.c.state['gardener']['step']!=step)
+            self.assertEqual(write.call_count,1)
+            self.assertEqual(write.call_args.args[0]['overworld']['garden_orchard'],self.c.to_dict())
+
     def test_finite_batches_keep_unique_objects_and_story_state(self):
         flags=set(self.g.social.flags);quests=copy.deepcopy(self.g.quests.to_dict())
         for role in ('gardener','picker'):

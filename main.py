@@ -483,7 +483,7 @@ class Game:
                            'regent_quest':self.regent_quest.to_dict(),
                            'regent_arrival':self.regent_arrival.to_dict(),
                            'lantern_quest':self.lantern_quest.to_dict(),
-                           'overworld':self.overworld_travel.to_dict(),
+                           'overworld':self.overworld_travel.progress_dict(),
                            'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 

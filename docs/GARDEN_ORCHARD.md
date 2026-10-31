@@ -37,7 +37,10 @@ without loading art. Older saves omit the field and start the work normally.
 Continue restores the exact action and object ownership rather than rewinding a
 carry to storage. Finishing the dialogue checkpoints its read state before the
 plant move begins. Contact timestamps also checkpoint immediately, so Continue
-after a contact cannot replay its sound. Saving or streaming never creates a
+after a contact cannot replay its sound. The autosave dirty signature excludes
+per-frame feet and action time; those precise fields remain in explicit and
+contact/step snapshots, without synchronous disk writes every animation frame.
+Saving or streaming never creates a
 second worker or crop.
 
 Movement uses one-pixel foot-probe substeps through actual world collision.

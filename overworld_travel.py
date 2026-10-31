@@ -44,6 +44,20 @@ class OverworldTravel:
                 **({'bridge_crew': bridge} if bridge is not None else {}),
                 **({'grain_farm': farm} if farm is not None else {})}
 
+    def progress_dict(self):
+        """Autosave dirtiness follows milestones, not per-frame snapshot fields.
+
+        Explicit saves and controller contact checkpoints still use to_dict(),
+        retaining precise feet and action time for interruption recovery.
+        """
+        record=self.to_dict()
+        garden=record.get('garden_orchard')
+        if garden is not None:
+            record['garden_orchard']={role:{key:value for key,value in state.items()
+                                            if key not in ('position','elapsed')}
+                                      for role,state in garden.items()}
+        return record
+
     @staticmethod
     def discovery_ids():
         # Metadata is small; validating a journey never constructs the world,
