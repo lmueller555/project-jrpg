@@ -54,6 +54,18 @@ The [before](sheep_basket_before_continue_native.png) and
 The later pat and basket retrieval then occur naturally. No animal or gardener
 is relocated while the clip runs.
 
+A separate [first-visit checkpoint regression](first_visit_checkpoint_regression.json)
+checks the earliest automatic visit save after an explicit 90-second gardener
+idle-clock fixture. It observes the first bytes written before any later save,
+confirms the visit clock is initialized to zero, and opens a fresh title screen
+to use production Continue. All 23 checks pass, including valid journey/context,
+exact wildlife state, worker frame and player position, the shared gardener and
+single basket, and the next resumed update. This fixture belongs to the separate
+regression record; the videos retain the production capture described above.
+The [independent comparison](first_checkpoint_independent_review.json) reproduces
+the previous invalid `90.0333` clock checkpoint and its failed Continue, then
+confirms the corrected checkpoint and resumed frame against the same setup.
+
 The clip reports record actor poses and positions, vignette and basket state,
 accepted sound events, listener/source positions and gains, cache measurements,
 and hashes of the 104 input code/art files at process start. Short wildlife cues
@@ -85,12 +97,18 @@ boundaries. Raw peak levels are −28.49 dBFS (sheep), −18.65 (bird), −25.91
 regional work/ambient effects. All remain below full scale without limiting.
 
 Final controller SHA-256:
-`dc2ce585ae4ccb129dce8a3d99d7be285423b59fcd6b5d594242faafec4ae2bb`.
+`8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3`.
 
 Reproduce with:
 
 ```sh
 python tools/capture_purposeful_wildlife.py
+```
+
+Reproduce the first-checkpoint regression with:
+
+```sh
+python -m pytest tests/test_purposeful_wildlife.py::PurposefulWildlifeTests::test_first_visit_checkpoint_after_long_garden_wait_continues_exactly -q
 ```
 
 The tool requires pygame, numpy, and FFmpeg. Captures run serially because the

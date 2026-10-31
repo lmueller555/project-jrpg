@@ -1,7 +1,7 @@
 {
   "input_files_verified": 104,
   "all_five_reports_share_current_input_hashes": true,
-  "controller_sha256": "dc2ce585ae4ccb129dce8a3d99d7be285423b59fcd6b5d594242faafec4ae2bb",
+  "controller_sha256": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
   "stills": {
     "audible_distance_bank_native.png": {
       "native_size": [
@@ -345,7 +345,8 @@
     "far_river_released": true,
     "mute_and_map_pcm_exact_zero": true,
     "map_freezes_wildlife": true,
-    "all_six_media_full_decode_passed": true
+    "all_six_media_full_decode_passed": true,
+    "earliest_visit_checkpoint_valid_and_continue_exact": true
   },
   "wildlife_events": {
     "sheep_visit": [
@@ -414,6 +415,14 @@
     "audible_distance": []
   },
   "listening_approval": "Not claimed; no verified perceptual listening facility.",
+  "first_visit_checkpoint_regression": {
+    "file": "first_visit_checkpoint_regression.json",
+    "sha256": "36b56b4f6711b47c75cf6eb96a4a27d78a41957f4037334775f1dbcc5fb6a669",
+    "all_source_hashes_current": true,
+    "checks_passed": 23,
+    "precondition_gardener_idle_clock": 90.0,
+    "first_checkpoint_worker_clock": 0.0
+  },
   "gallery_merge_context": {
     "main_baseline": "e80c3534",
     "merge_head": "4e86b720",
@@ -423,6 +432,13 @@
     "wildlife_entry": {
       "id": "sheep_basket_visit",
       "name": "A Familiar Visitor"
+    },
+    "wildlife_thumbnail": {
+      "file": "assets/ui/gallery/sheep_basket_visit.png",
+      "sha256": "6f8fb1526b80bc9869931af42e19ee58139bf9bb6375d9124d2b7e7345ece757",
+      "runtime_python_sha256": "7850e098e94941226a5b8160047376e19a816ea9d2d33e65ee25ba70483ce492",
+      "runtime_digest_matches_current_sources": true,
+      "other_25_records_unchanged_by_focused_recapture": true
     }
   }
 }

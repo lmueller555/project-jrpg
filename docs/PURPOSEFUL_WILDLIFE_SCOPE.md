@@ -92,8 +92,10 @@ Neither a second worker nor a town actor is created.
 Explicit saves retain animal positions, modes, animation clocks and bird return
 cooldowns, plus worker feet, visit step and contact time. Only visit milestones
 enter `progress_dict`, so ordinary grazing, flight or walking does not trigger
-disk autosaves. Pickup, placement and pat contacts checkpoint once. A blocked
-gather waits for both sheep to arrive before the affectionate beat; Caelan
+disk autosaves. Pickup, placement and pat contacts checkpoint once. Every visit
+starts from its authored pose before its first checkpoint; the gardener's
+previous idle clock cannot enter the saved loan, even after a long garden wait.
+A blocked gather waits for both sheep to arrive before the affectionate beat; Caelan
 remains free to move. Contact checkpoints do not replay after Continue.
 
 Birds scatter within 50 pixels, then wait at least eight active seconds and

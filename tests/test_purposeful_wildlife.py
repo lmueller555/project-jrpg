@@ -1,5 +1,6 @@
 """Full-Game wildlife routes, ownership, quiet saves and safe interruption."""
 import copy
+import json
 import os
 from pathlib import Path
 import tempfile
@@ -10,6 +11,7 @@ os.environ.setdefault('SDL_VIDEODRIVER','dummy')
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 import pygame
 from main import Game
+from overworld_travel import OverworldTravel
 from purposeful_wildlife import (BASKET_HOME, BASKET_PEN, CAT_ROUTE, FLOWERS,
     GATHER_ROUTES, GATHER_STEP, HOMES, PAT_STEP, REPLACED_PROP_IDS, RETURN_STEP,
     SHEEP_ROUTES, VISIT, WORKER_HOME, WORKER_ROUTE, valid_context, valid_state)
@@ -267,6 +269,59 @@ class PurposefulWildlifeTests(unittest.TestCase):
         self.assertFalse(self.c.worker.wildlife_owned)
         self.assertEqual(tuple(self.c.worker.position),WORKER_HOME)
         self.assertTrue(valid_state(self.c.to_dict()))
+
+    def test_first_visit_checkpoint_after_long_garden_wait_continues_exactly(self):
+        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        self.finish_care();self.c.worker.clock=90.
+        self.g.player.position.update(-440,1370)
+        self.assertTrue(self.g.world.can_stand(self.g.player.position))
+        self.assertTrue(self.g.save_progress())
+        self.assertTrue(OverworldTravel.valid_journey(self.g.saved_journey))
+        garden=self.g.world.garden_orchard.to_dict()
+        path=self.g.save_store.path;previous=path.read_bytes();checkpoints=[]
+        write=self.g.save_store.write
+
+        def capture_first(payload):
+            result=write(payload)
+            if not checkpoints:
+                checkpoints.append((path.read_bytes(),self.c.to_dict(),
+                    pygame.image.tobytes(self.c.worker.sprite(0),'RGBA')))
+            return result
+
+        with mock.patch.object(self.g.save_store,'write',side_effect=capture_first) as saved:
+            self.tick()
+        self.assertEqual(saved.call_count,1)
+        first,state,frame=checkpoints[0];payload=json.loads(first)
+        self.assertNotEqual(first,previous)
+        self.assertEqual(payload['overworld']['wildlife'],state)
+        self.assertTrue(valid_state(state),state['vignette'])
+        self.assertTrue(valid_context(state,payload['overworld']['garden_orchard']))
+        self.assertTrue(OverworldTravel.valid_journey(payload))
+        self.assertEqual(state['vignette'],dict(phase='visit',step=0,elapsed=0.,
+            contact=False,position=list(WORKER_HOME),clock=0.,facing='front',
+            basket='home',moving=False))
+        self.assertEqual(payload['overworld']['garden_orchard'],garden)
+        advanced=self.c.to_dict()
+        advanced_frame=pygame.image.tobytes(self.c.worker.sprite(0),'RGBA')
+
+        # No explicit save can heal this checkpoint before title validation.
+        self.assertEqual(path.read_bytes(),first)
+        resumed=self.make_game(True)
+        self.assertTrue(resumed.has_saved_journey,resumed.save_error)
+        self.assertEqual(resumed.saved_journey,payload)
+        self.assertTrue(resumed.begin_journey(True))
+        resumed.opening_fade=resumed.transfer_cooldown=0
+        self.g=resumed;self.c=resumed.world.wildlife
+        self.assertEqual(list(self.g.player.position),payload['player']['position'])
+        self.assertEqual(self.c.to_dict(),state)
+        self.assertEqual(pygame.image.tobytes(self.c.worker.sprite(0),'RGBA'),frame)
+        self.assertIs(self.c.worker,self.g.world.garden_orchard.actors[0])
+        self.assertTrue(self.c.worker.wildlife_owned)
+        self.assertEqual(self.g.world.garden_orchard.to_dict(),garden)
+        self.assertEqual(sum(prop[2] is self.c.basket for prop in self.c.props()),1)
+        self.tick()
+        self.assertEqual(self.c.to_dict(),advanced)
+        self.assertEqual(pygame.image.tobytes(self.c.worker.sprite(0),'RGBA'),advanced_frame)
 
     def test_continue_during_nuzzle_preserves_owner_basket_clock_and_contact(self):
         self.finish_care();self.until(lambda:self.c.vignette['step']==PAT_STEP and self.c.vignette['elapsed']>.3,escort=True)

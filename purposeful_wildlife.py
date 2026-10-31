@@ -365,7 +365,10 @@ class PurposefulWildlife:
         if v['phase']=='idle':
             if garden.state['gardener']['phase']!='rest' or not garden.state['gardener']['read']:return
             if self.worker.position.distance_to(WORKER_HOME)>.01:return
-            v['phase']='visit';self.worker.wildlife_owned=True;game.save_progress()
+            v['phase']='visit';self.worker.wildlife_owned=True
+            # Publish the loan only after its authored pose replaces the
+            # gardener's unbounded idle clock and transient movement state.
+            self._worker_pose();game.save_progress()
         action=VISIT[v['step']];self._worker_pose();self.worker.moving=False
         self.worker.clock=(self.worker.clock+dt)%60
         if 'target' in action:finished=self._move(self.worker,action['target'],dt,player,22)
