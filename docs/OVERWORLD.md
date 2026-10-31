@@ -286,3 +286,12 @@ python tools/build_bridge_workers.py
 python -m unittest discover -s tests -p 'test_bridge_crew.py' -v
 python tools/capture_bridge_crew.py
 ```
+
+## Garden and orchard workers
+
+The [garden/orchard work guide](GARDEN_ORCHARD.md) documents the southern kitchen
+gardener's finite watering and harvest, the village orchard picker's fruit
+sorting and rest, and an optional act of care for a struggling plant. Both
+workers belong to the region. Their objects, interrupted actions and first-read
+conversation persist independently of streamed scenery. Physical contacts use
+the shared distance-limited regional audio controller.

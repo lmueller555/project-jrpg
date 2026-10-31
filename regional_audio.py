@@ -32,7 +32,8 @@ def distance_gain(distance, near, far):
 
 
 DURATIONS = {'river':4., 'wind':6., 'sack':.42, 'rustle':.45,
-             'creak':.65, 'stone':.24, 'cup':.22}
+             'creak':.65, 'stone':.24, 'cup':.22,
+             'water':1.05, 'leaves':.48, 'basket':.32}
 
 
 def samples(name, rate, channels):
@@ -52,6 +53,19 @@ def samples(name, rate, channels):
             env = math.sin(math.pi*t/duration)**2
             v = env*(low*.8+white*.25)*.6
             if name == 'sack':v += .48*math.exp(-23*t)*math.sin(2*math.pi*78*t)*min(1,t/.004)
+        elif name == 'water':
+            # A finite gentle pour: shaped broadband trickle plus small droplets.
+            env = math.sin(math.pi*t/duration)**2
+            droplets = math.sin(2*math.pi*(930*t+150*t*t))
+            v = env*(low*.20+white*.035+droplets*.018)
+        elif name == 'leaves':
+            env = math.sin(math.pi*t/duration)**2
+            v = env*(white*.08+low*.16)*(0.7+0.3*math.sin(41*t)**2)
+        elif name == 'basket':
+            # Soft fruit/wood contact with a brief wicker rustle, no metal ring.
+            attack = min(1,t/.005)
+            v = attack*math.exp(-24*t)*(.20*math.sin(2*math.pi*105*t)+low*.15)
+            v += math.sin(math.pi*t/duration)**2*white*.025
         elif name == 'creak':
             env = math.sin(math.pi*t/duration)**2
             phase = 2*math.pi*(91*t+65*t*t)
