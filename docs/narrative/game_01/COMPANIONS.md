@@ -1,8 +1,9 @@
 # Game I — approved companion foundations
 
 **Status:** CANON for the character foundations, combat roles and introduction
-windows below. Recruitment quests, final scene scripts, numeric builds, art
-and implementation remain to be designed.
+windows below, plus the approved base sprite designs linked below. Recruitment
+quests, final scene scripts, numeric builds, remaining artwork and gameplay
+integration remain to be designed.
 
 **Approved:** 2026-10-30. Ages are measured at the beginning of Game I.
 
@@ -17,6 +18,22 @@ alongside the [character facts](CHARACTERS.md),
 | Lucan Rooke | 24 | Knight; swordsman and protector | Redstone March | Act I |
 | Rhea Sorel | 22 | Aethermage; offensive caster and field naturalist | Wooded western slopes of the Greyfold Mountains | Early Act II |
 | Edran Hale | 46 | Sage; healer, support caster and teacher | Lower Leth | End of Act II |
+
+## Approved base sprite designs
+
+All three characters have approved front overworld idles, left-facing combat
+stances and larger cinematic standing poses. Their native canvases are 24×36,
+64×64 and 96×112 pixels respectively. See the
+[sprite comparison and scene-scale boards](../../reviews/companion_sprites/README.md).
+
+| Character | Approved appearance | Asset guide |
+| --- | --- | --- |
+| Lucan | Dark swept hair, polished steel armor, oxblood cloth and gold trim; sword and shield | [Lucan sprites](../../../assets/characters/lucan/README.md) |
+| Rhea | Blonde hair, blue eyes, fitted green dress with a thigh slit, brown boots and a notebook pouch; purple tanglewood staff topped with a glowing green orb | [Rhea sprites](../../../assets/characters/rhea/README.md) |
+| Edran | Salt-and-pepper hair and short beard, long sky-blue robe with a high collar and capelet, silver trim and sash, gray boots and healer pouch; ashwood crook with silver fittings | [Edran sprites](../../../assets/characters/edran/README.md) |
+
+The approved Edran design uses the sky-blue and silver revision. These are
+static base poses for future animations and scenes.
 
 ## Lucan Rooke
 
@@ -248,8 +265,9 @@ job system. Caelan retains his approved all-rounder baseline and earned
 magical progression. Mira retains her established skills and relationship
 with him.
 
-Specific settlements, family identities, visual designs, recruitment quest
-scripts, exact abilities, numeric attributes and Lattice layouts remain open.
+Specific settlements, family identities, remaining poses and animations,
+recruitment quest scripts, exact abilities, numeric attributes and Lattice
+layouts remain open.
 Later character outcomes and the identity associated with the cinematic's
 bloody helmet remain undecided. Future scenes should preserve the
 [opening cinematic's established limits](../../OPENING_CINEMATIC.md).

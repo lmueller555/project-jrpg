@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "display_name": "Edran Hale",
+  "status": "approved",
+  "canvas": [
+    96,
+    112
+  ],
+  "anchor": [
+    48,
+    104
+  ],
+  "facing": "front",
+  "source": "assets/source/companions/edran/design_sheet.png",
+  "source_sha256": "e6ff9f8fe4b41e86b3330e5687ed45a1a0ff187c0c87a06efc228793a89211b9",
+  "extraction": {
+    "panel_bounds": [
+      1322,
+      0,
+      1983,
+      793
+    ],
+    "source_bounds": [
+      1447,
+      23,
+      1879,
+      777
+    ],
+    "source_body_bounds": [
+      1510,
+      23,
+      1879,
+      777
+    ],
+    "source_ground": [
+      1651.5,
+      776
+    ],
+    "uniform_scale": 0.10344827586206896,
+    "target_body_height": 78,
+    "exported_body_height": 78,
+    "offset": [
+      27,
+      27
+    ],
+    "bounds": [
+      27,
+      27,
+      72,
+      105
+    ],
+    "equipment_reduced_body_scale": false,
+    "palette_colors": 64
+  },
+  "image": "stand_front.png",
+  "authored_pose_count": 1,
+  "poses": {
+    "stand_front": "stand_front.png"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "actor": "rhea",
+  "status": "approved",
+  "source": "design_sheet.png",
+  "generated_original": "exec-65388fca-6bdd-4522-a3d9-908c78f6b725.png",
+  "source_sha256": "eec0ae5defba350464ac7e420bb914445b3a784d411697a2200568b8bee41f78",
+  "panels": [
+    "overworld_front",
+    "combat_left",
+    "cinematic_front"
+  ],
+  "appearance": {
+    "age": 22,
+    "hair": "blonde",
+    "eyes": "blue",
+    "dress": "emerald green fitted dress with sweetheart neckline and thigh slit",
+    "staff": "purple tanglewood with glowing green orb",
+    "staff_hand": "left"
+  },
+  "export": {
+    "overworld": {
+      "source_bounds": [
+        100,
+        0,
+        390,
+        883
+      ],
+      "source_body_bounds": [
+        113,
+        428,
+        300,
+        837
+      ],
+      "ground_x": 218,
+      "ground_y": 836,
+      "anchor": [
+        10,
+        34
+      ]
+    },
+    "combat": {
+      "source_bounds": [
+        530,
+        0,
+        1060,
+        883
+      ],
+      "source_body_bounds": [
+        552,
+        225,
+        960,
+        843
+      ],
+      "ground_x": 782,
+      "ground_y": 842
+    },
+    "cinematic": {
+      "source_bounds": [
+        1200,
+        0,
+        1690,
+        883
+      ],
+      "source_body_bounds": [
+        1229,
+        22,
+        1515,
+        852
+      ],
+      "ground_x": 1405.5,
+      "ground_y": 851
+    }
+  },
+  "art_status": "approved",
+  "approval_note": "The user approved all three static sprite designs in chat."
+}

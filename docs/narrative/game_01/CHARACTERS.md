@@ -51,9 +51,10 @@ local instruction. She and Edran are major sources of lore during travel:
 her environmental observations complement his experience with healing,
 injuries and protective workings. Both learn from evidence and can be wrong.
 
-These are approved narrative foundations for eventual party members. Their
-recruitment quests, sprites, battle abilities, numeric builds and Lattice paths
-are not implemented by this documentation.
+Their approved front idle, combat-ready and cinematic standing sprites are
+linked in the [companion guide](COMPANIONS.md#approved-base-sprite-designs).
+Recruitment quests, action animations, battle abilities, numeric builds and
+Lattice paths require later implementation.
 
 ## Mira's millrace outing
 

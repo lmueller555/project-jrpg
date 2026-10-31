@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "name": "Lucan Rooke",
+  "age_at_opening": 24,
+  "status": "approved",
+  "source_file": "design_sheet.png",
+  "source_size": [
+    1944,
+    809
+  ],
+  "generated_source": "exec-52f9eeb9-0e05-472b-b547-6bd548322754.png",
+  "initial_source": "exec-dba888a8-f857-446f-9fbf-5f43bab85884.png",
+  "proposed_appearance": {
+    "hair": "short swept-back dark brown",
+    "armor": "polished practical silver-steel plate",
+    "cloth": "oxblood red surcoat and tabard with restrained gold trim",
+    "sword_hand": "anatomical right",
+    "shield_hand": "anatomical left",
+    "helmet": false
+  },
+  "panels": [
+    {
+      "id": "overworld",
+      "facing": "front",
+      "source_region": [
+        0,
+        0,
+        500,
+        809
+      ],
+      "opaque_bounds_alpha_128": [
+        69,
+        263,
+        401,
+        761
+      ],
+      "target_canvas": [
+        24,
+        36
+      ],
+      "target_anchor": [
+        12,
+        34
+      ]
+    },
+    {
+      "id": "combat",
+      "facing": "left",
+      "source_region": [
+        500,
+        0,
+        1300,
+        809
+      ],
+      "opaque_bounds_alpha_128": [
+        620,
+        189,
+        1201,
+        765
+      ],
+      "target_canvas": [
+        64,
+        64
+      ],
+      "target_anchor": [
+        32,
+        54
+      ]
+    },
+    {
+      "id": "cinematic",
+      "facing": "front_three_quarter",
+      "source_region": [
+        1300,
+        0,
+        1944,
+        809
+      ],
+      "opaque_bounds_alpha_128": [
+        1415,
+        18,
+        1891,
+        783
+      ],
+      "target_canvas": [
+        96,
+        112
+      ],
+      "target_anchor": [
+        48,
+        104
+      ]
+    }
+  ],
+  "prompt": "Create a production-quality transparent PIXEL ART character design sheet for an original fantasy JRPG, matched to the supplied game's actual sprite references. The references show the style only; this is a NEW character, not Caelan or Mira.\n\nCHARACTER: LUCAN ROOKE, a visibly adult 24-year-old human Knight. He is confident, proud and a little arrogant, with earned military competence. Short dark brown almost-black hair, swept back neatly; strong readable adult face, clean-shaven, face fully visible, NO helmet. Athletic broad shoulders and natural limb lengths. Polished practical SILVER-STEEL plate armor, warm oxblood/red surcoat and short cloth tabard panels, restrained gold/brass trim, dark fitted trousers and brown/dark leather boots and belt. The same outfit, face, hairstyle and equipment must appear in every view. No oversized fantasy spikes or elaborate pauldrons.\n\nEQUIPMENT: straight steel arming sword with simple gold crossguard in his ANATOMICAL RIGHT hand (viewer's LEFT in the front view); red-and-steel heater shield with a very simple small gold chevron in his ANATOMICAL LEFT hand (viewer's RIGHT in the front view). The shield has practical straps, not a floating object. The sword is held at his side pointing mostly downward in the front and cinematic views. In the left-facing battle view, the shield is forward and sword ready but not raised far overhead. Show both boots fully. Shield and sword remain attached to the proper hands with realistic arm reach.\n\nSHEET LAYOUT: ONE wide landscape sheet with exactly THREE separate full-body sprites, in THREE equal-width columns. Left sprite centered at 1/6 of width, middle at 1/2, right at 5/6. Leave large clean transparent gaps between them. Each character and all his equipment must stay fully within its own third of the image. NO text, labels, frames, separators, ground shadows, bases, scenery or decorative effects.\n\nLEFT COLUMN — FRONT OVERWORLD IDLE:\nFull front-facing neutral standing Lucan, straight toward the viewer, both feet grounded, arms relaxed around sword and shield, subtle proud chin. Match the chunky economical sprite style of the supplied enlarged Caelan front-idle reference, around 3 heads tall, simple clear square pixel clusters and few broad colors. This design will export into a 24x36 native game sprite; favor a strong silhouette over intricate texture. Compact readable shield and sword silhouette within that narrow canvas.\n\nMIDDLE COLUMN — COMBAT IDLE:\nLucan standing in a natural left-facing three-quarter battle-ready stance, face and torso clearly oriented toward the LEFT edge of the image. This will export into a 64x64 native battle frame. Match the greater detail and natural adult anatomy of the supplied actual Caelan and Mira combat sprites. Around 4.5–5 heads tall, balanced weight, slightly bent knees, normal proportions, one sword and one shield. Both feet visible. No active attack, no motion blur, no exaggerated lunge.\n\nRIGHT COLUMN — CINEMATIC STANDING:\nDetailed front-facing or only very slight three-quarter-front full-body Lucan in a relaxed upright standing pose for a dialogue cinematic. Match the supplied larger Caelan cinematic sprite's adult anatomy and pixel finish, around 5 heads tall. This will export into a 96x112 canvas. Proud posture, restrained expression, natural shoulders, elbows and hands; sword held low, shield resting near his opposite side. Same exact face, red cloth, armor and handedness.\n\nOVERALL STYLE: hard square pixels, crisp stepped outlines, restrained colored highlights, no painterly gradients, no anti-aliased vector edges, no photographs or 3D. Keep body proportions and costume consistent between scales. Distinct sprite drawings, not enlargements of the same drawing. Transparent background, including gaps beneath arms and between legs; no opaque checkerboard. Deliver exactly these three views, no extra character or alternate costume.",
+  "correction_prompt": "Edit this Lucan sprite sheet carefully. Preserve the character's identity, red-and-silver outfit, sword, shield, pixel-art style, transparent background, front overworld pose on the left and detailed cinematic pose on the right. Make a clean production sheet with three separated sprites.\n\nCRITICAL CORRECTION: The MIDDLE battle character currently looks toward screen RIGHT. Redraw ONLY his orientation and necessary stance so he faces clearly toward screen LEFT. His nose, eyes, chest and forward stance must point toward the LEFT edge. The intended enemy is offscreen to the LEFT. Show the side/three-quarter face turned LEFT, not toward the shield on the right. Natural standing combat-ready anatomy, no lunging or attack. He still has the sword in his anatomical RIGHT hand and heater shield in his anatomical LEFT hand. Keep both feet complete.\n\nLAYOUT CORRECTION: Recompose into EXACTLY THREE EQUAL-WIDTH columns on the same wide landscape canvas. Center each complete sprite, including the sword and shield, inside its own column: left at one-sixth image width, middle at one-half, right at five-sixths. Every opaque pixel of each sprite must stay inside its own third. In particular the middle sword must not extend into the left third. Give each sprite generous fully transparent space to either side, plus 4% transparent margin above and below. If necessary make the middle sword point more downward and closer to his body to keep it contained. Keep normal arm lengths and a correctly attached hand and sword. No character or boot may touch the image edge. The left view remains FRONT-facing small overworld proportions; right view remains FRONT/slight3quarter-front adult cinematic standing. No extra sprites, labels, text, shadow, opaque backdrop or grid. Preserve hard pixel clusters and a transparent PNG.",
+  "export_notes": "Use explicit source regions rather than equal thirds. Alpha threshold 128 removes generation haze. Preserve source art without redrawing or per-limb deformation.",
+  "source_sha256": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+  "export": {
+    "overworld": {
+      "source_bounds": [
+        0,
+        0,
+        500,
+        809
+      ],
+      "source_body_bounds": [
+        125,
+        263,
+        363,
+        761
+      ],
+      "ground_x": 244,
+      "ground_y": 760
+    },
+    "combat": {
+      "source_bounds": [
+        500,
+        0,
+        1300,
+        809
+      ],
+      "source_body_bounds": [
+        770,
+        189,
+        1202,
+        765
+      ],
+      "ground_x": 986.5,
+      "ground_y": 764
+    },
+    "cinematic": {
+      "source_bounds": [
+        1300,
+        0,
+        1944,
+        809
+      ],
+      "source_body_bounds": [
+        1480,
+        18,
+        1860,
+        783
+      ],
+      "ground_x": 1673,
+      "ground_y": 782
+    }
+  },
+  "art_status": "approved",
+  "approval_note": "The user approved all three static sprite designs in chat."
+}
