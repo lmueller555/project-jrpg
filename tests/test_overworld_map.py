@@ -422,6 +422,9 @@ class RegionalMapTests(unittest.TestCase):
             tick_world=Mock(side_effect=RuntimeError('world resumed')))
         game.social.active = False
         game.on_title = False
+        game.gallery_session = None
+        game.on_gallery = False
+        game._is_gallery_preview = False
         game.pause = game.inventory_ui = game.world_map_viewer = SimpleNamespace(is_open=False)
         game.overworld_travel = SimpleNamespace(active=True)
         game.quest_ui.journal_open = False
