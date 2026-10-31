@@ -113,3 +113,11 @@ Full routines are MP4s. The GIFs focus on the relevant work beats instead of
 duplicating whole videos. Their fixed-palette encoding verifies decoded pixels
 against the intended quantized capture frames and verifies exact playback
 timing, including any combined identical frames.
+
+## Final validation
+
+The final full regression run passed **1,353 tests** in 677.054s; the focused NPC, travel, save/load and audio run passed **127 tests**. All three asset exporter checks passed.
+
+The final recordings match all **448 render inputs** and **97 artifact hashes**. Checks cover all eight NPCs, 16 guard approach conversations, 15 decoded GIFs, finite prop ownership, blocked movement, dialogue pauses and Continue. All 10,673 retained original PNGs and the regional layout manifest are byte unchanged; 108 obsolete procedural pose PNGs were intentionally retired.
+
+See [validation.json](validation.json), [full test log](tests-full.txt) and [focused test log](tests-focused.txt) for the final evidence.
