@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_left": "stand_left.png",
+    "seated_left": "seated_left.png"
+  },
+  "loops": {
+    "walk_left": [
+      {
+        "file": "walk_0.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "stand_left.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "walk_1.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "stand_left.png",
+        "duration_ms": 180
+      }
+    ]
+  },
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

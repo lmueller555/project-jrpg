@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_left": "stand_left.png",
+    "read_left": "read_left.png"
+  },
+  "loops": {},
+  "source": "imagegen-authored; deterministic crop/alpha/orientation/nearest export"
+}

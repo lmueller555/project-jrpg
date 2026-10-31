@@ -2,7 +2,9 @@
 
 **Status:** Approved setting and narrative canon, 2026-10-31.
 
-**Implementation:** Documentation only; runtime integration remains pending.
+**Implementation:** MQ03's runtime dialogue now presents the approved relief
+needs, public records, protected boundary and unresolved trial-cut request.
+The later authorization and excavation remain separate future story work.
 
 **Scope:** The protected ridge sanctuary near Eldenmere, its public covenant,
 and the legitimate disagreement between Serene and Aldric in Chapter 1.

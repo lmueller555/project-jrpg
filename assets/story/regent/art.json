@@ -4,8 +4,8 @@
       "id": "aldric",
       "name": "Regent Aldric",
       "position": [
-        726,
-        456
+        732,
+        1032
       ],
       "probe_size": [
         8,
@@ -40,8 +40,8 @@
       "id": "regent_clerk",
       "name": "Clerk",
       "position": [
-        702,
-        456
+        708,
+        1054
       ],
       "probe_size": [
         8,
@@ -58,8 +58,8 @@
       "id": "regent_driver",
       "name": "Driver",
       "position": [
-        750,
-        456
+        744,
+        1104
       ],
       "probe_size": [
         8,
@@ -76,8 +76,8 @@
       "id": "regent_attendant",
       "name": "Traveling attendant",
       "position": [
-        678,
-        456
+        672,
+        1132
       ],
       "probe_size": [
         8,
@@ -115,15 +115,21 @@
       "id": "regent_wagon",
       "scene": "eldenmere.playable",
       "position": [
-        694,
-        400
+        652,
+        1060
       ],
-      "sort_y": 444,
+      "sort_y": 1104,
       "states": {
         "waiting": "assets/story/regent/props/regent_wagon.png",
         "released": "assets/story/regent/props/regent_wagon.png",
         "settled": "assets/story/regent/props/regent_wagon.png"
-      }
+      },
+      "blocker": [
+        658,
+        1090,
+        68,
+        15
+      ]
     },
     {
       "id": "road_stone",

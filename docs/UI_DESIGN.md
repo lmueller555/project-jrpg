@@ -88,3 +88,13 @@ Focus loss also freezes the scene, without clearing a manual pause on return.
 Reduced Motion uses static shot changes. Finishing or skipping leads into the
 ordinary bedroom opening; Continue never inserts this flashforward into an
 existing journey. See [the cinematic guide](OPENING_CINEMATIC.md).
+
+## Aldric's arrival
+
+The [post-mill arrival](REGENT_ARRIVAL.md) uses detailed cinematic scenery and
+separate animated actors, with the existing portrait dialogue frame and
+display-resolution text. Its dialogue advances at the player's pace. Escape
+pauses/resumes, focus loss suspends playback, and a small Skip control remains
+available. Reduced Motion removes continuous camera travel. Exploration and
+its HUD stay suspended until the scene returns control at the mill. The visit
+continues through ordinary, cancelable MQ03 dialogue afterward.

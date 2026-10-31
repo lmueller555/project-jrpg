@@ -5,7 +5,9 @@ import json
 import os
 from pathlib import Path
 import tempfile
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 os.environ['SDL_VIDEODRIVER']='dummy'
 os.environ['SDL_AUDIODRIVER']='dummy'
@@ -13,6 +15,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT']='1'
 import pygame
 import main
 from npc_routines import find_path
+from halden_visit import town_path
 from quests import OPENING_QUEST, MILL_QUEST, QuestLog
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -52,6 +55,9 @@ class RegentQuestTests(unittest.TestCase):
                              'restored':True,'verified':True,'resolved':True})
         g.opening.restore({'version':1,'stage':'disabled'})
         if g.quests.status(REGENT)=='locked':self.assertTrue(g.quests.unlock(REGENT))
+        # This fixture represents an older completed mill journey. Fresh
+        # gameplay reaches the same seen state through its arrival cinematic.
+        if hasattr(g,'regent_arrival'):g.regent_arrival.restore(None)
         self.c.restore(None)
         g.world=g.town;g.opening_fade=0;g.transfer_cooldown=0
         g.social.blocked.clear();g.quests.drain_events();g.save_progress()
@@ -76,7 +82,10 @@ class RegentQuestTests(unittest.TestCase):
 
     def walk(self,goal,new_scene=None):
         world=self.g.world
-        route=find_path(world,self.g.player.position,goal,world.probe_size,None)
+        route=(town_path(world,self.g.player.position,goal,
+                         SimpleNamespace(probe_size=world.probe_size),None)
+               if world is self.g.town and self.g.player.position.distance_to(goal)>180
+               else find_path(world,self.g.player.position,goal,world.probe_size,None))
         self.assertIsNotNone(route,(world.data['id'],tuple(self.g.player.position),tuple(goal)))
         for corner in route:
             for _ in range(600):
@@ -180,6 +189,7 @@ class RegentQuestTests(unittest.TestCase):
     def test_old_completed_mill_save_unlocks_the_new_visit(self):
         self.g.save_progress();data=json.loads(self.path.read_text())
         data.pop('regent_quest');data['quests']['quests'].pop(REGENT)
+        data.pop('regent_arrival',None)
         self.path.write_text(json.dumps(data));other=self.game(True)
         self.assertTrue(other.begin_journey(True),other.save_error)
         self.assertEqual(other.quests.status(REGENT),'available')
@@ -204,6 +214,45 @@ class RegentQuestTests(unittest.TestCase):
         self.at('preparations')
         self.assertIs(self.g.world,self.c.dining)
         self.assertEqual(self.c._target(),'preparations')
+        self.assertEqual(self.g.quests.status(REGENT),'available')
+
+    def test_seen_arrival_parks_visitors_by_the_southern_brook_before_acceptance(self):
+        self.assertEqual(self.c.stage,'idle')
+        self.assertEqual(self.g.quests.status(REGENT),'available')
+        for actor,prefix in self.c._party_keys():
+            self.assertTrue(actor.story_visible)
+            self.assertIs(self.c._world(actor),self.g.town)
+            self.assertEqual(tuple(actor.position),tuple(self.c.points[prefix+'_arrival']))
+            self.assertGreater(actor.position.y,1000)
+            self.assertLess(actor.position.x,790)  # West bank of the lower brook.
+            self.assertFalse(actor.story_following)
+        self.assertFalse(self.c.foreman.story_visible)
+        self.assertIs(self.c._world(self.c.venn),self.c.venn_home)
+        wagon=next(p for p in self.c.surface_props if p['id']=='regent_wagon')
+        self.assertTrue(self.c.surface_prop_visible(wagon))
+        self.assertFalse(self.c.surface_prop_visible(self.c.cart))
+        self.assertFalse(self.g.quests.states[REGENT]['completed_objectives'])
+        self.assertIsNotNone(town_path(self.g.town,(516,1260),self.clear_position(self.g.town,self.c.points['arrival']),
+                                      SimpleNamespace(probe_size=self.g.town.probe_size),None))
+
+    def test_pending_cinematic_withholds_visitors_and_preparations(self):
+        with patch.object(self.g,'regent_arrival',SimpleNamespace(arrival_complete=False),create=True):
+            self.c.restore(self.c.to_dict())
+            self.assertFalse(self.c.eligible)
+            self.assertEqual(self.g.quests.status(REGENT),'available')
+            self.assertTrue(all(not actor.story_visible for actor in self.c.actors.values()))
+            self.assertTrue(all(not self.c.surface_prop_visible(prop) for prop in self.c.surface_props))
+            self.assertIsNone(self.c._target())
+            self.assertFalse(self.c.interact())
+
+    def test_parked_wagon_is_solid_and_leaves_the_lower_bridge_approach_open(self):
+        wagon=next(p for p in self.c.surface_props if p['id']=='regent_wagon')
+        self.assertFalse(self.g.town.can_stand(pygame.Rect(wagon['blocker']).center))
+        self.assertIsNotNone(town_path(self.g.town,self.clear_position(self.g.town,self.c.points['arrival']),
+                                      (948,1032),SimpleNamespace(probe_size=self.g.town.probe_size),None))
+        self.assertTrue(self.c.try_conversation(self.c.aldric))
+        self.read_current()
+        self.assertEqual(self.c.stage,'idle')
         self.assertEqual(self.g.quests.status(REGENT),'available')
 
     def test_hospitality_uses_one_of_each_actor_and_leaves_a_clear_exit(self):
@@ -440,7 +489,7 @@ class RegentQuestTests(unittest.TestCase):
     def test_dialogue_contains_occasional_readable_emotional_expression(self):
         scenes=json.loads((ROOT/'assets/story/regent/scene.json').read_text())
         lines=[line for scene in scenes.values() for line in scene]
-        cues=[line for line in lines if '(' in line['text'] and ')' in line['text']]
+        cues=[line for line in lines if line['text'].startswith('*') and line['text'].count('*')>=2]
         self.assertGreaterEqual(len(cues),5)
         self.assertLess(len(cues),len(lines)//2)
         self.assertTrue({'aldric','serene','tomas'}<={line['speaker'] for line in cues})

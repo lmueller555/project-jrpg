@@ -67,7 +67,7 @@ Lattice paths require later implementation.
 The [regional surge context](REGIONAL_SURGES.md) and
 [covenant guide](../../world/SANCTUARY_COVENANT.md) establish the reasons for
 their revised MQ03 disagreement. These are approved character motivations;
-the updated runtime dialogue and end-MQ02 arrival remain pending.
+the runtime dialogue and end-MQ02 arrival now implement that approved context.
 
 Aldric has visited two other affected communities and is helping repair damage
 from a small number of extraordinary lightning incidents. Eldenmere's southern

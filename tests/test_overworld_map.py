@@ -414,6 +414,7 @@ class RegionalMapTests(unittest.TestCase):
         game = Game.__new__(Game)
         game.__dict__.update(self.game.__dict__)
         game.opening_cinematic = SimpleNamespace(active=False)
+        game.regent_arrival = SimpleNamespace(active=False, state='waiting', maybe_start=Mock())
         game.mill_quest = SimpleNamespace(sync_encounter_music=Mock())
         game.music = Mock()
         game._music_focused = True

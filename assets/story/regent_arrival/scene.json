@@ -1,0 +1,742 @@
+{
+  "version": 1,
+  "id": "regent_arrival",
+  "canvas": [
+    960,
+    480
+  ],
+  "viewport": [
+    480,
+    320
+  ],
+  "scenery_manifest": "scenery/scenery.json",
+  "actors": {
+    "aldric": "actors/aldric/animation.json",
+    "guard": "actors/guard/animation.json",
+    "local": "actors/local/animation.json",
+    "clerk": "actors/clerk/animation.json",
+    "driver": "actors/driver/animation.json",
+    "serene": "actors/serene/animation.json",
+    "tomas": "actors/tomas/animation.json",
+    "caravan": "actors/caravan/animation.json"
+  },
+  "speakers": {
+    "aldric": {
+      "profile": "aldric"
+    },
+    "guard": {
+      "profile": "road_guard",
+      "portrait_file": "actors/portraits/guard.png"
+    },
+    "local": {
+      "name": "Carrier",
+      "portrait": "male_02",
+      "portrait_file": "actors/portraits/local.png"
+    },
+    "clerk": {
+      "profile": "regent_clerk",
+      "portrait_file": "actors/portraits/clerk.png"
+    },
+    "driver": {
+      "profile": "regent_driver",
+      "portrait_file": "actors/portraits/driver.png"
+    },
+    "serene": {
+      "profile": "serene"
+    },
+    "tomas": {
+      "profile": "tomas"
+    }
+  },
+  "phases": [
+    {
+      "id": "mill_close",
+      "scene": "world",
+      "min_seconds": 2.2,
+      "camera": {
+        "from": [
+          320,
+          140
+        ],
+        "to": [
+          320,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": [],
+      "fade_out": 1.0
+    },
+    {
+      "id": "gate_approach",
+      "scene": "gate",
+      "min_seconds": 6,
+      "camera": {
+        "from": [
+          420,
+          132
+        ],
+        "to": [
+          480,
+          140
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "walk_left",
+          "position": [
+            1045,
+            375
+          ],
+          "to": [
+            805,
+            375
+          ],
+          "move_seconds": 6
+        },
+        {
+          "id": "aldric",
+          "pose": "walk_left",
+          "position": [
+            865,
+            375
+          ],
+          "to": [
+            625,
+            375
+          ],
+          "move_seconds": 6
+        },
+        {
+          "id": "guard",
+          "pose": "stand_right",
+          "position": [
+            530,
+            375
+          ]
+        },
+        {
+          "id": "guard",
+          "instance": "opposite_watch",
+          "pose": "stand_right",
+          "position": [
+            690,
+            345
+          ],
+          "scale": 0.8
+        }
+      ],
+      "dialogue": [],
+      "fade_in": 0.9,
+      "sound": "travel"
+    },
+    {
+      "id": "gate_greeting",
+      "scene": "gate",
+      "min_seconds": 1.2,
+      "camera": {
+        "from": [
+          480,
+          140
+        ],
+        "to": [
+          480,
+          140
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "parked_left",
+          "position": [
+            805,
+            375
+          ]
+        },
+        {
+          "id": "aldric",
+          "pose": "stand_left",
+          "position": [
+            625,
+            375
+          ]
+        },
+        {
+          "id": "guard",
+          "pose": "stand_right",
+          "position": [
+            530,
+            375
+          ]
+        },
+        {
+          "id": "clerk",
+          "pose": "stand_left",
+          "position": [
+            705,
+            388
+          ]
+        },
+        {
+          "id": "guard",
+          "instance": "opposite_watch",
+          "pose": "stand_right",
+          "position": [
+            690,
+            345
+          ],
+          "scale": 0.8
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "guard",
+          "text": "Regent Aldric. We were beginning to watch for you."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Have we kept you long?"
+        },
+        {
+          "speaker": "guard",
+          "text": "Only since the last wagon came in. You came by the ridge road, my lord?"
+        },
+        {
+          "speaker": "aldric",
+          "text": "We did. Your warning reached us before the turning."
+        },
+        {
+          "speaker": "guard",
+          "text": "A longer journey, then."
+        },
+        {
+          "speaker": "aldric",
+          "text": "*with a tired smile* A better one than finding the crossing ourselves."
+        },
+        {
+          "speaker": "guard",
+          "text": "The approach is clear. Mother Serene is expecting you."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Thank you. And keep someone at the barrier. We can find our way from here."
+        }
+      ]
+    },
+    {
+      "id": "gate_admission",
+      "scene": "gate",
+      "min_seconds": 6.5,
+      "camera": {
+        "from": [
+          480,
+          140
+        ],
+        "to": [
+          330,
+          85
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "walk_back",
+          "position": [
+            805,
+            375
+          ],
+          "to": [
+            490,
+            375
+          ],
+          "move_start": 1.1,
+          "move_seconds": 5.4,
+          "path": [
+            [
+              805,
+              375
+            ],
+            [
+              665,
+              350
+            ],
+            [
+              575,
+              322
+            ],
+            [
+              575,
+              302
+            ]
+          ],
+          "scale_to": 0.75,
+          "after_pose": "parked_back",
+          "driver_baked": true,
+          "before_pose": "parked_back"
+        },
+        {
+          "id": "aldric",
+          "pose": "walk_back",
+          "position": [
+            625,
+            375
+          ],
+          "to": [
+            310,
+            375
+          ],
+          "move_start": 1.1,
+          "move_seconds": 5.4,
+          "path": [
+            [
+              625,
+              375
+            ],
+            [
+              575,
+              305
+            ],
+            [
+              515,
+              230
+            ]
+          ],
+          "scale_to": 0.7,
+          "after_pose": "stand_back",
+          "before_pose": "stand_back"
+        },
+        {
+          "id": "guard",
+          "pose": "step_right",
+          "position": [
+            530,
+            375
+          ],
+          "to": [
+            500,
+            390
+          ],
+          "move_seconds": 0.9,
+          "after_pose": "stand_right"
+        },
+        {
+          "id": "guard",
+          "instance": "opposite_watch",
+          "pose": "stand_right",
+          "position": [
+            690,
+            345
+          ],
+          "scale": 0.8
+        }
+      ],
+      "dialogue": [],
+      "gate_open": true,
+      "sound": "travel"
+    },
+    {
+      "id": "locals",
+      "scene": "riverbank",
+      "min_seconds": 1.4,
+      "camera": {
+        "from": [
+          320,
+          140
+        ],
+        "to": [
+          320,
+          140
+        ]
+      },
+      "actors": [
+        {
+          "id": "aldric",
+          "pose": "listen_left",
+          "position": [
+            635,
+            375
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "talk_right",
+          "position": [
+            540,
+            375
+          ]
+        },
+        {
+          "id": "clerk",
+          "pose": "stand_left",
+          "position": [
+            705,
+            385
+          ]
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "local",
+          "text": "My lord? A moment, if you can spare it."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Of course."
+        },
+        {
+          "speaker": "local",
+          "text": "They said you were coming to look at the road. Are they saying when we'll have our bridge back?"
+        },
+        {
+          "speaker": "aldric",
+          "text": "Not yet. I need to see what the crews are working with before I give you a date."
+        },
+        {
+          "speaker": "local",
+          "text": "*lets out a frustrated breath* We've had enough dates already."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Then I won't give you another one today."
+        },
+        {
+          "speaker": "local",
+          "text": "It's the hauling. Every load takes longer, and there are fewer carts to share."
+        },
+        {
+          "speaker": "aldric",
+          "text": "What has been getting through?"
+        },
+        {
+          "speaker": "local",
+          "text": "Some supplies. Enough lamp oil for the festival, at least. It's the next few loads I'm worried about."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Were you here when it happened?"
+        }
+      ]
+    },
+    {
+      "id": "bridge_damage",
+      "scene": "riverbank",
+      "min_seconds": 2.2,
+      "camera": {
+        "from": [
+          35,
+          55
+        ],
+        "to": [
+          125,
+          70
+        ]
+      },
+      "actors": [],
+      "dialogue": [
+        {
+          "speaker": "local",
+          "text": "*quietly* I saw the flash from the fields. By the time I reached the bank, the middle of the bridge was gone."
+        },
+        {
+          "speaker": "local",
+          "text": "It had split the road on both sides. Stone all over the water."
+        },
+        {
+          "speaker": "aldric",
+          "text": "We've seen damage like this elsewhere. I wish I could tell you why."
+        }
+      ]
+    },
+    {
+      "id": "relief",
+      "scene": "riverbank",
+      "min_seconds": 1.0,
+      "camera": {
+        "from": [
+          320,
+          140
+        ],
+        "to": [
+          320,
+          140
+        ]
+      },
+      "actors": [
+        {
+          "id": "aldric",
+          "pose": "gesture_left",
+          "position": [
+            635,
+            375
+          ]
+        },
+        {
+          "id": "local",
+          "pose": "stand_right",
+          "position": [
+            540,
+            375
+          ]
+        },
+        {
+          "id": "clerk",
+          "pose": "read_left",
+          "position": [
+            705,
+            385
+          ]
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "local",
+          "text": "Elsewhere? I thought we had been unlucky."
+        },
+        {
+          "speaker": "aldric",
+          "text": "So did the people I visited before coming here. There have been a few such incidents."
+        },
+        {
+          "speaker": "local",
+          "text": "And every place needs the same stone and carts."
+        },
+        {
+          "speaker": "aldric",
+          "text": "*nods* Yes. That's part of what I've come to discuss."
+        },
+        {
+          "speaker": "aldric",
+          "text": "Tell my clerk which deliveries are waiting. The crew needs to know what people are still trying to get through."
+        },
+        {
+          "speaker": "clerk",
+          "text": "I can take that down now."
+        },
+        {
+          "speaker": "local",
+          "text": "Thank you. I know ours isn't the only road."
+        },
+        {
+          "speaker": "aldric",
+          "text": "It's still the one you need. Thank you for stopping me."
+        }
+      ]
+    },
+    {
+      "id": "town_approach",
+      "scene": "approach",
+      "min_seconds": 7,
+      "camera": {
+        "from": [
+          415,
+          130
+        ],
+        "to": [
+          310,
+          125
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "walk_left",
+          "position": [
+            900,
+            375
+          ],
+          "to": [
+            650,
+            375
+          ],
+          "move_seconds": 7
+        },
+        {
+          "id": "aldric",
+          "pose": "walk_left",
+          "position": [
+            720,
+            375
+          ],
+          "to": [
+            470,
+            375
+          ],
+          "move_seconds": 7
+        }
+      ],
+      "dialogue": [],
+      "sound": "travel"
+    },
+    {
+      "id": "serene_window",
+      "scene": "sanctuary",
+      "min_seconds": 1.5,
+      "camera": {
+        "from": [
+          345,
+          100
+        ],
+        "to": [
+          320,
+          100
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "walk_left",
+          "position": [
+            640,
+            245
+          ],
+          "to": [
+            330,
+            245
+          ],
+          "move_seconds": 40,
+          "scale": 0.18,
+          "after_pose": "parked_left",
+          "clip_rects": [
+            [
+              345,
+              138,
+              150,
+              125
+            ],
+            [
+              509,
+              138,
+              145,
+              125
+            ]
+          ]
+        },
+        {
+          "id": "serene",
+          "pose": "window_left",
+          "position": [
+            625,
+            335
+          ],
+          "scale": 1.2
+        },
+        {
+          "id": "tomas",
+          "pose": "carry_left",
+          "position": [
+            730,
+            370
+          ],
+          "to": [
+            700,
+            345
+          ],
+          "move_seconds": 1.0,
+          "after_pose": "cups_left",
+          "scale": 1.2
+        }
+      ],
+      "dialogue": [
+        {
+          "speaker": "serene",
+          "text": "He's had little rest between these visits.",
+          "thought": true
+        },
+        {
+          "speaker": "serene",
+          "text": "I wish I had a simpler answer for him.",
+          "thought": true
+        },
+        {
+          "speaker": "tomas",
+          "text": "Mother? Are these enough cups?"
+        },
+        {
+          "speaker": "serene",
+          "text": "*turns back to him* Bring two more, love."
+        },
+        {
+          "speaker": "tomas",
+          "text": "Two more. Right."
+        }
+      ]
+    },
+    {
+      "id": "town_parking",
+      "scene": "approach",
+      "min_seconds": 5.5,
+      "camera": {
+        "from": [
+          310,
+          125
+        ],
+        "to": [
+          340,
+          140
+        ]
+      },
+      "actors": [
+        {
+          "id": "caravan",
+          "pose": "walk_left",
+          "position": [
+            650,
+            375
+          ],
+          "to": [
+            560,
+            375
+          ],
+          "move_seconds": 3,
+          "after_pose": "parked_left",
+          "animation_rate": 0.75
+        },
+        {
+          "id": "aldric",
+          "pose": "walk_left",
+          "position": [
+            470,
+            375
+          ],
+          "to": [
+            395,
+            395
+          ],
+          "move_seconds": 3,
+          "after_pose": "stand_left",
+          "animation_rate": 0.75
+        }
+      ],
+      "dialogue": [],
+      "gate_open": true,
+      "caption": "Eldenmere",
+      "sound": "travel",
+      "fade_out": 1.0
+    },
+    {
+      "id": "return",
+      "scene": "world",
+      "min_seconds": 1.2,
+      "camera": {
+        "from": [
+          320,
+          140
+        ],
+        "to": [
+          320,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": [],
+      "fade_in": 1.2
+    }
+  ],
+  "continuity": {
+    "route": "Intact southern land checkpoint on Eldenmere bank; never across ruined western bridge.",
+    "present_day": "The lightning damage precedes this visit; the mill intake was a separate tusker-felled blockage.",
+    "audience_knowledge": "Caelan remains at the mill and does not hear the remote conversations.",
+    "outcome": "Caravan arrives; MQ03 becomes available, not accepted. No bridge repair, onward gate release, or excavation authorization."
+  }
+}
