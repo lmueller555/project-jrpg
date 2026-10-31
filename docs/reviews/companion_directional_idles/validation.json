@@ -1,0 +1,2420 @@
+{
+  "status": "review",
+  "static_poses_only": true,
+  "new_pose_count": 9,
+  "new_directions": [
+    "left",
+    "right",
+    "back"
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "binary_alpha": true,
+  "floor_row": 34,
+  "sampling": "one uniform affine nearest-neighbor grid per actor; no anatomy edits or mirroring",
+  "palette_policy": "exact approved front-idle palette for each actor",
+  "approved_pngs_verified_unchanged": 24,
+  "protected_png_hashes": {
+    "assets/characters/lucan/idle_front.png": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+    "assets/characters/lucan/walk_front/frame_04.png": "b1eb03f15233864c4ec59692b08781e2dda3ec1c85d6cd78dfcd6f546344e319",
+    "assets/characters/lucan/walk_front/frame_03.png": "6c6356e12437a7c912364dd95984f500391f06a26b75e054f5d68b5e8ff68be0",
+    "assets/characters/lucan/walk_front/spritesheet.png": "29b68b2ae3dd8cf8970b8addc50ec1c3be78c1b6457909eaff429a2ec72b0382",
+    "assets/characters/lucan/walk_front/frame_02.png": "b62f16f478319e86573aa248104430574a0af8815110d15504b68ccdc6f817f9",
+    "assets/characters/lucan/walk_front/frame_01.png": "8f2c61582742e457025b0e1a87b1680f4832c547c0d8b1a2490b13bdcc4c041c",
+    "assets/characters/rhea/idle_front.png": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+    "assets/characters/rhea/walk_front/frame_04.png": "8c602b09f8a9db8c987315b046da8f11415277371bd41fd02a756e580c03b1ba",
+    "assets/characters/rhea/walk_front/frame_03.png": "5a509cdbabfecf806e1769cf0f09843891995a4ba868197c29fc7696719d7a40",
+    "assets/characters/rhea/walk_front/spritesheet.png": "248c4fd116bfca2a1f178e3c91e0e75eed8f65faccb62a77021867ec338c5f24",
+    "assets/characters/rhea/walk_front/frame_02.png": "805e06a63a52f46f7e6774ca2c4d1ee35ae901567c3056b8193d8ea391192ef7",
+    "assets/characters/rhea/walk_front/frame_01.png": "ce56b1b739cfe9f01211734fdb4b2efa48775ae22fbe0a7348149acbd98e3149",
+    "assets/characters/edran/idle_front.png": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+    "assets/characters/edran/walk_front/frame_04.png": "d41c28b1de5d6b208f7138924e2aa799e32d554f4c039c24ca05b55a466f046d",
+    "assets/characters/edran/walk_front/frame_03.png": "757fb71d3ea78f33671391a0bdb847b327f52f958dc227745fa15662e132e4c8",
+    "assets/characters/edran/walk_front/spritesheet.png": "960b71ae74446db42690844abf658f0a1fcde8eed49ac9fc1805c3f7c9c87318",
+    "assets/characters/edran/walk_front/frame_02.png": "cc3769a4f23b6079d226573a17833499572aa961954aa2aa9a6b4ded0bab8cb4",
+    "assets/characters/edran/walk_front/frame_01.png": "f5ed98a4c1c88fc4cc3f00af0e75fbb894422a53ba554d52d28d42f9a6a64761",
+    "assets/combat/lucan/idle_01.png": "0dac968c662c28d960ec0f6c871c6fd4ed15723e917ce2a597db4cf41be60aeb",
+    "assets/combat/rhea/idle_01.png": "f06f82545a5298a7181e6835136df5751f21c56d919d088f34cf055eabc3979b",
+    "assets/combat/edran/idle_01.png": "f510efc1e13be76f85c5fcde1b7e4f1cf888855bc1fd661e2834ef0a5951f4f5",
+    "assets/cinematics/companions/lucan/stand_front.png": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d",
+    "assets/cinematics/companions/rhea/stand_front.png": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3",
+    "assets/cinematics/companions/edran/stand_front.png": "ad22892a4974d30b7bafcfaf9e7402a09e441c9d18912cbc0531c54582d934aa"
+  },
+  "actors": {
+    "lucan": {
+      "common_uniform_scale": 0.051580698835274545,
+      "common_sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "per_direction_anchors": {
+        "front": [
+          12,
+          34
+        ],
+        "left": [
+          12,
+          34
+        ],
+        "right": [
+          12,
+          34
+        ],
+        "back": [
+          12,
+          34
+        ]
+      },
+      "target_body_height": 31,
+      "source_body_heights": [
+        601,
+        598,
+        599
+      ],
+      "poses": {
+        "left": {
+          "version": 1,
+          "actor": "lucan",
+          "display_name": "Lucan Rooke",
+          "status": "review",
+          "design_status": "review",
+          "facing": "left",
+          "animation": "idle.left",
+          "authored_pose_count": 1,
+          "image": "assets/characters/lucan/idle_left.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/lucan/directional_idles/directional_sheet.png",
+          "source_sha256": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+          "source_recipe": "assets/source/companions/lucan/directional_idles/source.json",
+          "source_recipe_sha256": "5a13d5ae830c55591efdb64c1d9903718d68c658e812563daefc82ff7302791a",
+          "palette_source": "assets/characters/lucan/idle_front.png",
+          "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+          "palette": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              150,
+              37,
+              30
+            ],
+            [
+              71,
+              40,
+              25
+            ],
+            [
+              55,
+              27,
+              17
+            ],
+            [
+              22,
+              7,
+              4
+            ],
+            [
+              105,
+              25,
+              23
+            ],
+            [
+              41,
+              20,
+              12
+            ],
+            [
+              119,
+              68,
+              40
+            ],
+            [
+              201,
+              196,
+              195
+            ],
+            [
+              250,
+              249,
+              249
+            ],
+            [
+              162,
+              43,
+              34
+            ],
+            [
+              167,
+              159,
+              158
+            ],
+            [
+              252,
+              199,
+              154
+            ],
+            [
+              90,
+              84,
+              86
+            ],
+            [
+              162,
+              95,
+              41
+            ],
+            [
+              183,
+              118,
+              53
+            ],
+            [
+              154,
+              41,
+              33
+            ],
+            [
+              224,
+              218,
+              217
+            ],
+            [
+              49,
+              34,
+              30
+            ],
+            [
+              105,
+              95,
+              97
+            ],
+            [
+              35,
+              14,
+              9
+            ],
+            [
+              96,
+              43,
+              30
+            ],
+            [
+              135,
+              35,
+              30
+            ],
+            [
+              237,
+              167,
+              102
+            ],
+            [
+              249,
+              186,
+              86
+            ],
+            [
+              109,
+              70,
+              45
+            ],
+            [
+              199,
+              117,
+              73
+            ],
+            [
+              235,
+              206,
+              161
+            ],
+            [
+              253,
+              194,
+              96
+            ],
+            [
+              197,
+              134,
+              42
+            ],
+            [
+              199,
+              118,
+              48
+            ]
+          ],
+          "common_uniform_scale": 0.051580698835274545,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              189,
+              146,
+              542,
+              747
+            ],
+            "bounds": [
+              189,
+              146,
+              542,
+              747
+            ],
+            "body_bounds": [
+              280,
+              146,
+              510,
+              747
+            ],
+            "body_center_x": 387,
+            "ground_y": 746,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              2,
+              4,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              19.387096774193548,
+              0,
+              -44.33870967741933,
+              0,
+              19.387096774193548,
+              -68.85483870967744
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 30
+          },
+          "metadata": "assets/characters/lucan/idle_left.json",
+          "sha256": "612b8cfff4ecbc4419db231a3d3a32ea1942896d86a5114d596bac8159e36b6a"
+        },
+        "right": {
+          "version": 1,
+          "actor": "lucan",
+          "display_name": "Lucan Rooke",
+          "status": "review",
+          "design_status": "review",
+          "facing": "right",
+          "animation": "idle.right",
+          "authored_pose_count": 1,
+          "image": "assets/characters/lucan/idle_right.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/lucan/directional_idles/directional_sheet.png",
+          "source_sha256": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+          "source_recipe": "assets/source/companions/lucan/directional_idles/source.json",
+          "source_recipe_sha256": "5a13d5ae830c55591efdb64c1d9903718d68c658e812563daefc82ff7302791a",
+          "palette_source": "assets/characters/lucan/idle_front.png",
+          "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+          "palette": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              150,
+              37,
+              30
+            ],
+            [
+              71,
+              40,
+              25
+            ],
+            [
+              55,
+              27,
+              17
+            ],
+            [
+              22,
+              7,
+              4
+            ],
+            [
+              105,
+              25,
+              23
+            ],
+            [
+              41,
+              20,
+              12
+            ],
+            [
+              119,
+              68,
+              40
+            ],
+            [
+              201,
+              196,
+              195
+            ],
+            [
+              250,
+              249,
+              249
+            ],
+            [
+              162,
+              43,
+              34
+            ],
+            [
+              167,
+              159,
+              158
+            ],
+            [
+              252,
+              199,
+              154
+            ],
+            [
+              90,
+              84,
+              86
+            ],
+            [
+              162,
+              95,
+              41
+            ],
+            [
+              183,
+              118,
+              53
+            ],
+            [
+              154,
+              41,
+              33
+            ],
+            [
+              224,
+              218,
+              217
+            ],
+            [
+              49,
+              34,
+              30
+            ],
+            [
+              105,
+              95,
+              97
+            ],
+            [
+              35,
+              14,
+              9
+            ],
+            [
+              96,
+              43,
+              30
+            ],
+            [
+              135,
+              35,
+              30
+            ],
+            [
+              237,
+              167,
+              102
+            ],
+            [
+              249,
+              186,
+              86
+            ],
+            [
+              109,
+              70,
+              45
+            ],
+            [
+              199,
+              117,
+              73
+            ],
+            [
+              235,
+              206,
+              161
+            ],
+            [
+              253,
+              194,
+              96
+            ],
+            [
+              197,
+              134,
+              42
+            ],
+            [
+              199,
+              118,
+              48
+            ]
+          ],
+          "common_uniform_scale": 0.051580698835274545,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              806,
+              150,
+              1115,
+              748
+            ],
+            "bounds": [
+              806,
+              150,
+              1115,
+              748
+            ],
+            "body_bounds": [
+              850,
+              150,
+              1085,
+              748
+            ],
+            "body_center_x": 969.5,
+            "ground_y": 747,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              4,
+              4,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              19.387096774193548,
+              0,
+              -78.83870967741933,
+              0,
+              19.387096774193548,
+              -71.85483870967744
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 30
+          },
+          "metadata": "assets/characters/lucan/idle_right.json",
+          "sha256": "45198cdbcbe3365d943e6349ce39a2feb79bb8a8db134482f1d99c3e2b18c2b7"
+        },
+        "back": {
+          "version": 1,
+          "actor": "lucan",
+          "display_name": "Lucan Rooke",
+          "status": "review",
+          "design_status": "review",
+          "facing": "back",
+          "animation": "idle.back",
+          "authored_pose_count": 1,
+          "image": "assets/characters/lucan/idle_back.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/lucan/directional_idles/directional_sheet.png",
+          "source_sha256": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+          "source_recipe": "assets/source/companions/lucan/directional_idles/source.json",
+          "source_recipe_sha256": "5a13d5ae830c55591efdb64c1d9903718d68c658e812563daefc82ff7302791a",
+          "palette_source": "assets/characters/lucan/idle_front.png",
+          "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+          "palette": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              150,
+              37,
+              30
+            ],
+            [
+              71,
+              40,
+              25
+            ],
+            [
+              55,
+              27,
+              17
+            ],
+            [
+              22,
+              7,
+              4
+            ],
+            [
+              105,
+              25,
+              23
+            ],
+            [
+              41,
+              20,
+              12
+            ],
+            [
+              119,
+              68,
+              40
+            ],
+            [
+              201,
+              196,
+              195
+            ],
+            [
+              250,
+              249,
+              249
+            ],
+            [
+              162,
+              43,
+              34
+            ],
+            [
+              167,
+              159,
+              158
+            ],
+            [
+              252,
+              199,
+              154
+            ],
+            [
+              90,
+              84,
+              86
+            ],
+            [
+              162,
+              95,
+              41
+            ],
+            [
+              183,
+              118,
+              53
+            ],
+            [
+              154,
+              41,
+              33
+            ],
+            [
+              224,
+              218,
+              217
+            ],
+            [
+              49,
+              34,
+              30
+            ],
+            [
+              105,
+              95,
+              97
+            ],
+            [
+              35,
+              14,
+              9
+            ],
+            [
+              96,
+              43,
+              30
+            ],
+            [
+              135,
+              35,
+              30
+            ],
+            [
+              237,
+              167,
+              102
+            ],
+            [
+              249,
+              186,
+              86
+            ],
+            [
+              109,
+              70,
+              45
+            ],
+            [
+              199,
+              117,
+              73
+            ],
+            [
+              235,
+              206,
+              161
+            ],
+            [
+              253,
+              194,
+              96
+            ],
+            [
+              197,
+              134,
+              42
+            ],
+            [
+              199,
+              118,
+              48
+            ]
+          ],
+          "common_uniform_scale": 0.051580698835274545,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              1419,
+              147,
+              1758,
+              746
+            ],
+            "bounds": [
+              1419,
+              147,
+              1758,
+              746
+            ],
+            "body_bounds": [
+              1464,
+              147,
+              1730,
+              746
+            ],
+            "body_center_x": 1596,
+            "ground_y": 745,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              3,
+              4,
+              21,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              19.387096774193548,
+              0,
+              -65.33870967741933,
+              0,
+              19.387096774193548,
+              -70.85483870967744
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 28
+          },
+          "metadata": "assets/characters/lucan/idle_back.json",
+          "sha256": "41babce133e45ac7b8fb42db2d28b16c837f62d5dd2f61ea8021b303167456cf"
+        }
+      }
+    },
+    "rhea": {
+      "common_uniform_scale": 0.04341926729986431,
+      "common_sampling_phase": [
+        0.525,
+        0.825
+      ],
+      "per_direction_anchors": {
+        "front": [
+          10,
+          34
+        ],
+        "left": [
+          10,
+          34
+        ],
+        "right": [
+          10,
+          34
+        ],
+        "back": [
+          12,
+          34
+        ]
+      },
+      "target_body_height": 32,
+      "source_body_heights": [
+        736,
+        737,
+        737
+      ],
+      "poses": {
+        "left": {
+          "version": 1,
+          "actor": "rhea",
+          "display_name": "Rhea Sorel",
+          "status": "review",
+          "design_status": "review",
+          "facing": "left",
+          "animation": "idle.left",
+          "authored_pose_count": 1,
+          "image": "assets/characters/rhea/idle_left.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            10,
+            34
+          ],
+          "foot_anchor": [
+            10,
+            34
+          ],
+          "source": "assets/source/companions/rhea/directional_idles/design_sheet.png",
+          "source_sha256": "115e60f35cd84467a3ddedebaba69f60c759cdc737415f7bab3de325eb911afb",
+          "source_recipe": "assets/source/companions/rhea/directional_idles/source.json",
+          "source_recipe_sha256": "76a645d9c631860ea961f0bba616eb01d50625595cb9b2d4cabb222449b4f11f",
+          "palette_source": "assets/characters/rhea/idle_front.png",
+          "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+          "palette": [
+            [
+              5,
+              3,
+              4
+            ],
+            [
+              25,
+              26,
+              29
+            ],
+            [
+              35,
+              80,
+              51
+            ],
+            [
+              73,
+              35,
+              21
+            ],
+            [
+              157,
+              95,
+              45
+            ],
+            [
+              229,
+              160,
+              86
+            ],
+            [
+              250,
+              203,
+              154
+            ],
+            [
+              86,
+              42,
+              23
+            ],
+            [
+              101,
+              52,
+              29
+            ],
+            [
+              110,
+              75,
+              37
+            ],
+            [
+              137,
+              62,
+              36
+            ],
+            [
+              35,
+              31,
+              71
+            ],
+            [
+              95,
+              38,
+              91
+            ],
+            [
+              195,
+              127,
+              55
+            ],
+            [
+              248,
+              182,
+              133
+            ],
+            [
+              206,
+              114,
+              71
+            ],
+            [
+              143,
+              73,
+              118
+            ],
+            [
+              203,
+              138,
+              58
+            ],
+            [
+              187,
+              132,
+              61
+            ],
+            [
+              71,
+              155,
+              11
+            ],
+            [
+              90,
+              93,
+              75
+            ],
+            [
+              249,
+              200,
+              98
+            ],
+            [
+              251,
+              193,
+              82
+            ],
+            [
+              190,
+              130,
+              72
+            ],
+            [
+              58,
+              136,
+              41
+            ],
+            [
+              154,
+              95,
+              90
+            ],
+            [
+              109,
+              199,
+              28
+            ],
+            [
+              145,
+              235,
+              8
+            ],
+            [
+              250,
+              251,
+              245
+            ],
+            [
+              11,
+              117,
+              173
+            ],
+            [
+              12,
+              120,
+              180
+            ],
+            [
+              158,
+              233,
+              26
+            ]
+          ],
+          "common_uniform_scale": 0.04341926729986431,
+          "common_sampling_phase": [
+            0.525,
+            0.825
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              89,
+              60,
+              520,
+              796
+            ],
+            "bounds": [
+              89,
+              60,
+              520,
+              796
+            ],
+            "body_bounds": [
+              177,
+              60,
+              520,
+              796
+            ],
+            "body_center_x": 295,
+            "ground_y": 795,
+            "native_offset": [
+              0,
+              0
+            ],
+            "anchor": [
+              10,
+              34
+            ],
+            "native_bounds": [
+              2,
+              3,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.525,
+              0.825
+            ],
+            "affine_output_to_source": [
+              23.031250000000004,
+              0,
+              -36.403906250000034,
+              0,
+              23.031250000000004,
+              -67.06328125000016
+            ],
+            "registered_body_center": [
+              10,
+              34
+            ],
+            "palette_colors": 28
+          },
+          "metadata": "assets/characters/rhea/idle_left.json",
+          "sha256": "07ed5d6e73961b3569acf5cea1e36caea73e01aad403e105cf7bd3294b0fba01"
+        },
+        "right": {
+          "version": 1,
+          "actor": "rhea",
+          "display_name": "Rhea Sorel",
+          "status": "review",
+          "design_status": "review",
+          "facing": "right",
+          "animation": "idle.right",
+          "authored_pose_count": 1,
+          "image": "assets/characters/rhea/idle_right.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            10,
+            34
+          ],
+          "foot_anchor": [
+            10,
+            34
+          ],
+          "source": "assets/source/companions/rhea/directional_idles/design_sheet.png",
+          "source_sha256": "115e60f35cd84467a3ddedebaba69f60c759cdc737415f7bab3de325eb911afb",
+          "source_recipe": "assets/source/companions/rhea/directional_idles/source.json",
+          "source_recipe_sha256": "76a645d9c631860ea961f0bba616eb01d50625595cb9b2d4cabb222449b4f11f",
+          "palette_source": "assets/characters/rhea/idle_front.png",
+          "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+          "palette": [
+            [
+              5,
+              3,
+              4
+            ],
+            [
+              25,
+              26,
+              29
+            ],
+            [
+              35,
+              80,
+              51
+            ],
+            [
+              73,
+              35,
+              21
+            ],
+            [
+              157,
+              95,
+              45
+            ],
+            [
+              229,
+              160,
+              86
+            ],
+            [
+              250,
+              203,
+              154
+            ],
+            [
+              86,
+              42,
+              23
+            ],
+            [
+              101,
+              52,
+              29
+            ],
+            [
+              110,
+              75,
+              37
+            ],
+            [
+              137,
+              62,
+              36
+            ],
+            [
+              35,
+              31,
+              71
+            ],
+            [
+              95,
+              38,
+              91
+            ],
+            [
+              195,
+              127,
+              55
+            ],
+            [
+              248,
+              182,
+              133
+            ],
+            [
+              206,
+              114,
+              71
+            ],
+            [
+              143,
+              73,
+              118
+            ],
+            [
+              203,
+              138,
+              58
+            ],
+            [
+              187,
+              132,
+              61
+            ],
+            [
+              71,
+              155,
+              11
+            ],
+            [
+              90,
+              93,
+              75
+            ],
+            [
+              249,
+              200,
+              98
+            ],
+            [
+              251,
+              193,
+              82
+            ],
+            [
+              190,
+              130,
+              72
+            ],
+            [
+              58,
+              136,
+              41
+            ],
+            [
+              154,
+              95,
+              90
+            ],
+            [
+              109,
+              199,
+              28
+            ],
+            [
+              145,
+              235,
+              8
+            ],
+            [
+              250,
+              251,
+              245
+            ],
+            [
+              11,
+              117,
+              173
+            ],
+            [
+              12,
+              120,
+              180
+            ],
+            [
+              158,
+              233,
+              26
+            ]
+          ],
+          "common_uniform_scale": 0.04341926729986431,
+          "common_sampling_phase": [
+            0.525,
+            0.825
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              699,
+              59,
+              1121,
+              796
+            ],
+            "bounds": [
+              699,
+              59,
+              1121,
+              796
+            ],
+            "body_bounds": [
+              699,
+              59,
+              1030,
+              796
+            ],
+            "body_center_x": 905,
+            "ground_y": 795,
+            "native_offset": [
+              0,
+              0
+            ],
+            "anchor": [
+              10,
+              34
+            ],
+            "native_bounds": [
+              2,
+              3,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.525,
+              0.825
+            ],
+            "affine_output_to_source": [
+              23.031250000000004,
+              0,
+              -36.403906250000034,
+              0,
+              23.031250000000004,
+              -66.06328125000016
+            ],
+            "registered_body_center": [
+              10,
+              34
+            ],
+            "palette_colors": 30
+          },
+          "metadata": "assets/characters/rhea/idle_right.json",
+          "sha256": "e17a8378e74ff6fdf9e5afa54acf4c5cb67e39e1275a58008225eafa10d1ee4e"
+        },
+        "back": {
+          "version": 1,
+          "actor": "rhea",
+          "display_name": "Rhea Sorel",
+          "status": "review",
+          "design_status": "review",
+          "facing": "back",
+          "animation": "idle.back",
+          "authored_pose_count": 1,
+          "image": "assets/characters/rhea/idle_back.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/rhea/directional_idles/design_sheet.png",
+          "source_sha256": "115e60f35cd84467a3ddedebaba69f60c759cdc737415f7bab3de325eb911afb",
+          "source_recipe": "assets/source/companions/rhea/directional_idles/source.json",
+          "source_recipe_sha256": "76a645d9c631860ea961f0bba616eb01d50625595cb9b2d4cabb222449b4f11f",
+          "palette_source": "assets/characters/rhea/idle_front.png",
+          "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+          "palette": [
+            [
+              5,
+              3,
+              4
+            ],
+            [
+              25,
+              26,
+              29
+            ],
+            [
+              35,
+              80,
+              51
+            ],
+            [
+              73,
+              35,
+              21
+            ],
+            [
+              157,
+              95,
+              45
+            ],
+            [
+              229,
+              160,
+              86
+            ],
+            [
+              250,
+              203,
+              154
+            ],
+            [
+              86,
+              42,
+              23
+            ],
+            [
+              101,
+              52,
+              29
+            ],
+            [
+              110,
+              75,
+              37
+            ],
+            [
+              137,
+              62,
+              36
+            ],
+            [
+              35,
+              31,
+              71
+            ],
+            [
+              95,
+              38,
+              91
+            ],
+            [
+              195,
+              127,
+              55
+            ],
+            [
+              248,
+              182,
+              133
+            ],
+            [
+              206,
+              114,
+              71
+            ],
+            [
+              143,
+              73,
+              118
+            ],
+            [
+              203,
+              138,
+              58
+            ],
+            [
+              187,
+              132,
+              61
+            ],
+            [
+              71,
+              155,
+              11
+            ],
+            [
+              90,
+              93,
+              75
+            ],
+            [
+              249,
+              200,
+              98
+            ],
+            [
+              251,
+              193,
+              82
+            ],
+            [
+              190,
+              130,
+              72
+            ],
+            [
+              58,
+              136,
+              41
+            ],
+            [
+              154,
+              95,
+              90
+            ],
+            [
+              109,
+              199,
+              28
+            ],
+            [
+              145,
+              235,
+              8
+            ],
+            [
+              250,
+              251,
+              245
+            ],
+            [
+              11,
+              117,
+              173
+            ],
+            [
+              12,
+              120,
+              180
+            ],
+            [
+              158,
+              233,
+              26
+            ]
+          ],
+          "common_uniform_scale": 0.04341926729986431,
+          "common_sampling_phase": [
+            0.525,
+            0.825
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              1338,
+              59,
+              1768,
+              796
+            ],
+            "bounds": [
+              1338,
+              59,
+              1768,
+              796
+            ],
+            "body_bounds": [
+              1445,
+              59,
+              1768,
+              796
+            ],
+            "body_center_x": 1592,
+            "ground_y": 795,
+            "native_offset": [
+              0,
+              0
+            ],
+            "anchor": [
+              12,
+              34
+            ],
+            "native_bounds": [
+              1,
+              3,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.525,
+              0.825
+            ],
+            "affine_output_to_source": [
+              23.031250000000004,
+              0,
+              -34.466406250000034,
+              0,
+              23.031250000000004,
+              -66.06328125000016
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 29
+          },
+          "metadata": "assets/characters/rhea/idle_back.json",
+          "sha256": "7fb1ead96015997b4b0b6a0b6656cbe9347aa327365ee5fe405227fa93fef053"
+        }
+      }
+    },
+    "edran": {
+      "common_uniform_scale": 0.04131054131054131,
+      "common_sampling_phase": [
+        0.5,
+        0.5
+      ],
+      "per_direction_anchors": {
+        "front": [
+          12,
+          34
+        ],
+        "left": [
+          12,
+          34
+        ],
+        "right": [
+          12,
+          34
+        ],
+        "back": [
+          12,
+          34
+        ]
+      },
+      "target_body_height": 29,
+      "source_body_heights": [
+        702,
+        701,
+        702
+      ],
+      "poses": {
+        "left": {
+          "version": 1,
+          "actor": "edran",
+          "display_name": "Edran Hale",
+          "status": "review",
+          "design_status": "review",
+          "facing": "left",
+          "animation": "idle.left",
+          "authored_pose_count": 1,
+          "image": "assets/characters/edran/idle_left.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/edran/directional_idles/directional_sheet.png",
+          "source_sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26",
+          "source_recipe": "assets/source/companions/edran/directional_idles/source.json",
+          "source_recipe_sha256": "2755d5cc3071c9e7a17bf5d77ba7bed1e5dbddb9bd66b3a186e3d594d9bd68ee",
+          "palette_source": "assets/characters/edran/idle_front.png",
+          "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+          "palette": [
+            [
+              2,
+              2,
+              3
+            ],
+            [
+              152,
+              131,
+              115
+            ],
+            [
+              245,
+              177,
+              123
+            ],
+            [
+              98,
+              93,
+              91
+            ],
+            [
+              133,
+              181,
+              219
+            ],
+            [
+              199,
+              193,
+              188
+            ],
+            [
+              58,
+              55,
+              54
+            ],
+            [
+              99,
+              69,
+              52
+            ],
+            [
+              162,
+              161,
+              162
+            ],
+            [
+              143,
+              111,
+              91
+            ],
+            [
+              214,
+              216,
+              216
+            ],
+            [
+              57,
+              37,
+              27
+            ],
+            [
+              40,
+              27,
+              21
+            ],
+            [
+              94,
+              65,
+              49
+            ],
+            [
+              75,
+              48,
+              35
+            ],
+            [
+              30,
+              25,
+              29
+            ],
+            [
+              36,
+              37,
+              41
+            ],
+            [
+              111,
+              136,
+              161
+            ],
+            [
+              28,
+              50,
+              79
+            ],
+            [
+              55,
+              98,
+              144
+            ],
+            [
+              209,
+              212,
+              215
+            ],
+            [
+              41,
+              72,
+              110
+            ],
+            [
+              117,
+              169,
+              212
+            ],
+            [
+              119,
+              171,
+              214
+            ],
+            [
+              202,
+              120,
+              76
+            ],
+            [
+              227,
+              154,
+              104
+            ],
+            [
+              76,
+              117,
+              158
+            ],
+            [
+              154,
+              181,
+              205
+            ],
+            [
+              86,
+              58,
+              43
+            ],
+            [
+              176,
+              200,
+              218
+            ],
+            [
+              164,
+              93,
+              60
+            ],
+            [
+              214,
+              186,
+              166
+            ]
+          ],
+          "common_uniform_scale": 0.04131054131054131,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              128,
+              37,
+              526,
+              739
+            ],
+            "bounds": [
+              128,
+              37,
+              526,
+              739
+            ],
+            "body_bounds": [
+              205,
+              37,
+              526,
+              739
+            ],
+            "body_center_x": 355.5,
+            "ground_y": 738,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              3,
+              6,
+              20,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              24.20689655172414,
+              0,
+              -75.08620689655174,
+              0,
+              24.20689655172414,
+              -134.1379310344828
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 30
+          },
+          "metadata": "assets/characters/edran/idle_left.json",
+          "sha256": "b5429f32233af6313f354586cfd9a802e5eecb257c3f196daa66bff33fa18b90"
+        },
+        "right": {
+          "version": 1,
+          "actor": "edran",
+          "display_name": "Edran Hale",
+          "status": "review",
+          "design_status": "review",
+          "facing": "right",
+          "animation": "idle.right",
+          "authored_pose_count": 1,
+          "image": "assets/characters/edran/idle_right.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/edran/directional_idles/directional_sheet.png",
+          "source_sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26",
+          "source_recipe": "assets/source/companions/edran/directional_idles/source.json",
+          "source_recipe_sha256": "2755d5cc3071c9e7a17bf5d77ba7bed1e5dbddb9bd66b3a186e3d594d9bd68ee",
+          "palette_source": "assets/characters/edran/idle_front.png",
+          "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+          "palette": [
+            [
+              2,
+              2,
+              3
+            ],
+            [
+              152,
+              131,
+              115
+            ],
+            [
+              245,
+              177,
+              123
+            ],
+            [
+              98,
+              93,
+              91
+            ],
+            [
+              133,
+              181,
+              219
+            ],
+            [
+              199,
+              193,
+              188
+            ],
+            [
+              58,
+              55,
+              54
+            ],
+            [
+              99,
+              69,
+              52
+            ],
+            [
+              162,
+              161,
+              162
+            ],
+            [
+              143,
+              111,
+              91
+            ],
+            [
+              214,
+              216,
+              216
+            ],
+            [
+              57,
+              37,
+              27
+            ],
+            [
+              40,
+              27,
+              21
+            ],
+            [
+              94,
+              65,
+              49
+            ],
+            [
+              75,
+              48,
+              35
+            ],
+            [
+              30,
+              25,
+              29
+            ],
+            [
+              36,
+              37,
+              41
+            ],
+            [
+              111,
+              136,
+              161
+            ],
+            [
+              28,
+              50,
+              79
+            ],
+            [
+              55,
+              98,
+              144
+            ],
+            [
+              209,
+              212,
+              215
+            ],
+            [
+              41,
+              72,
+              110
+            ],
+            [
+              117,
+              169,
+              212
+            ],
+            [
+              119,
+              171,
+              214
+            ],
+            [
+              202,
+              120,
+              76
+            ],
+            [
+              227,
+              154,
+              104
+            ],
+            [
+              76,
+              117,
+              158
+            ],
+            [
+              154,
+              181,
+              205
+            ],
+            [
+              86,
+              58,
+              43
+            ],
+            [
+              176,
+              200,
+              218
+            ],
+            [
+              164,
+              93,
+              60
+            ],
+            [
+              214,
+              186,
+              166
+            ]
+          ],
+          "common_uniform_scale": 0.04131054131054131,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              817,
+              38,
+              1204,
+              739
+            ],
+            "bounds": [
+              817,
+              38,
+              1204,
+              739
+            ],
+            "body_bounds": [
+              817,
+              38,
+              1152,
+              739
+            ],
+            "body_center_x": 992.5,
+            "ground_y": 738,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              5,
+              6,
+              21,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              24.20689655172414,
+              0,
+              -127.08620689655174,
+              0,
+              24.20689655172414,
+              -135.1379310344828
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 31
+          },
+          "metadata": "assets/characters/edran/idle_right.json",
+          "sha256": "d7ef7c2699da0985586610f20be4738e91e96608894c09262b18384e9d6fcaa5"
+        },
+        "back": {
+          "version": 1,
+          "actor": "edran",
+          "display_name": "Edran Hale",
+          "status": "review",
+          "design_status": "review",
+          "facing": "back",
+          "animation": "idle.back",
+          "authored_pose_count": 1,
+          "image": "assets/characters/edran/idle_back.png",
+          "canvas": [
+            24,
+            36
+          ],
+          "frame_size": [
+            24,
+            36
+          ],
+          "anchor": [
+            12,
+            34
+          ],
+          "foot_anchor": [
+            12,
+            34
+          ],
+          "source": "assets/source/companions/edran/directional_idles/directional_sheet.png",
+          "source_sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26",
+          "source_recipe": "assets/source/companions/edran/directional_idles/source.json",
+          "source_recipe_sha256": "2755d5cc3071c9e7a17bf5d77ba7bed1e5dbddb9bd66b3a186e3d594d9bd68ee",
+          "palette_source": "assets/characters/edran/idle_front.png",
+          "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+          "palette": [
+            [
+              2,
+              2,
+              3
+            ],
+            [
+              152,
+              131,
+              115
+            ],
+            [
+              245,
+              177,
+              123
+            ],
+            [
+              98,
+              93,
+              91
+            ],
+            [
+              133,
+              181,
+              219
+            ],
+            [
+              199,
+              193,
+              188
+            ],
+            [
+              58,
+              55,
+              54
+            ],
+            [
+              99,
+              69,
+              52
+            ],
+            [
+              162,
+              161,
+              162
+            ],
+            [
+              143,
+              111,
+              91
+            ],
+            [
+              214,
+              216,
+              216
+            ],
+            [
+              57,
+              37,
+              27
+            ],
+            [
+              40,
+              27,
+              21
+            ],
+            [
+              94,
+              65,
+              49
+            ],
+            [
+              75,
+              48,
+              35
+            ],
+            [
+              30,
+              25,
+              29
+            ],
+            [
+              36,
+              37,
+              41
+            ],
+            [
+              111,
+              136,
+              161
+            ],
+            [
+              28,
+              50,
+              79
+            ],
+            [
+              55,
+              98,
+              144
+            ],
+            [
+              209,
+              212,
+              215
+            ],
+            [
+              41,
+              72,
+              110
+            ],
+            [
+              117,
+              169,
+              212
+            ],
+            [
+              119,
+              171,
+              214
+            ],
+            [
+              202,
+              120,
+              76
+            ],
+            [
+              227,
+              154,
+              104
+            ],
+            [
+              76,
+              117,
+              158
+            ],
+            [
+              154,
+              181,
+              205
+            ],
+            [
+              86,
+              58,
+              43
+            ],
+            [
+              176,
+              200,
+              218
+            ],
+            [
+              164,
+              93,
+              60
+            ],
+            [
+              214,
+              186,
+              166
+            ]
+          ],
+          "common_uniform_scale": 0.04131054131054131,
+          "common_sampling_phase": [
+            0.5,
+            0.5
+          ],
+          "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+          "registration": "authored body center and floor; equipment does not recenter the actor",
+          "extraction": {
+            "panel": [
+              1497,
+              37,
+              1916,
+              739
+            ],
+            "bounds": [
+              1497,
+              37,
+              1916,
+              739
+            ],
+            "body_bounds": [
+              1497,
+              37,
+              1857,
+              739
+            ],
+            "body_center_x": 1685,
+            "ground_y": 738,
+            "native_offset": [
+              0,
+              0
+            ],
+            "native_bounds": [
+              5,
+              6,
+              22,
+              35
+            ],
+            "sampling_phase": [
+              0.5,
+              0.5
+            ],
+            "affine_output_to_source": [
+              24.20689655172414,
+              0,
+              -114.58620689655174,
+              0,
+              24.20689655172414,
+              -134.1379310344828
+            ],
+            "registered_body_center": [
+              12,
+              34
+            ],
+            "palette_colors": 29
+          },
+          "metadata": "assets/characters/edran/idle_back.json",
+          "sha256": "56bfddb09c4049fdf55e319092051c3721962f601920d04797cf5219b7fa0e53"
+        }
+      }
+    }
+  }
+}

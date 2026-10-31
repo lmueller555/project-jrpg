@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "status": "review",
+  "source_file": "design_sheet.png",
+  "source_dimensions": [
+    1881,
+    836
+  ],
+  "source_sha256": "115e60f35cd84467a3ddedebaba69f60c759cdc737415f7bab3de325eb911afb",
+  "generated_original_filename": "exec-0222e845-3fad-4103-8cc9-a636ca5c696b.png",
+  "background": "transparent",
+  "authored_pose_count": 3,
+  "poses": [
+    "left",
+    "right",
+    "back"
+  ],
+  "appearance": "Approved adult22Rhea, blonde longhair/blueeyes, emerald/goldfitted dress with anatomicalright thighslit, brownboots and left-hipnotebookpouch; purpletanglewoodstaff greenorb held in anatomicalleft hand.",
+  "references": [
+    "assets/characters/rhea/idle_front.png",
+    "assets/source/companions/rhea/walk_front/walk_sheet.png"
+  ],
+  "prompt_file": "prompt.txt",
+  "export": {
+    "scale": 0.04341926729986431,
+    "sampling_phase": [
+      0.525,
+      0.825
+    ],
+    "anchor": [
+      10,
+      34
+    ],
+    "poses": {
+      "left": {
+        "source_bounds": [
+          89,
+          60,
+          520,
+          796
+        ],
+        "body_bounds": [
+          177,
+          60,
+          520,
+          796
+        ],
+        "body_center_x": 295,
+        "ground_y": 795,
+        "proposed_anchor": [
+          10,
+          34
+        ],
+        "anatomical_staff_side": "left; near camera",
+        "right_thigh_slit": "far side, mostly occluded",
+        "pouch": "left hip, near/visible",
+        "anchor": [
+          10,
+          34
+        ]
+      },
+      "right": {
+        "source_bounds": [
+          699,
+          59,
+          1121,
+          796
+        ],
+        "body_bounds": [
+          699,
+          59,
+          1030,
+          796
+        ],
+        "body_center_x": 905,
+        "ground_y": 795,
+        "proposed_anchor": [
+          10,
+          34
+        ],
+        "anatomical_staff_side": "left; far arm partly occluded",
+        "right_thigh_slit": "near side, visible",
+        "pouch": "left hip, far/partly occluded",
+        "anchor": [
+          10,
+          34
+        ]
+      },
+      "back": {
+        "source_bounds": [
+          1338,
+          59,
+          1768,
+          796
+        ],
+        "body_bounds": [
+          1445,
+          59,
+          1768,
+          796
+        ],
+        "body_center_x": 1592,
+        "ground_y": 795,
+        "proposed_anchor": [
+          12,
+          34
+        ],
+        "anatomical_staff_side": "left; screen-left in rear view",
+        "right_thigh_slit": "screen-right side seam",
+        "pouch": "left hip, screen-left",
+        "anchor": [
+          12,
+          34
+        ]
+      }
+    }
+  },
+  "registration_notes": "All body heights736/737px, same compact~3-head proportions. Stafftip sits~1-2nativepixels above plantedboots. Rearstaff projectsleft and needs proposed_anchor12,34 atfullbody scale; do not shrinkbody or shiftphysicalpivot solelyfor equipmentpadding. Each profile independently authored with anatomical near/far occlusion; no pose mirroring."
+}
