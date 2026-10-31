@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "alpha_threshold": 128,
+  "palette_colors": 64,
+  "source_records": [
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/composition/initial_bridge_generation.png",
+      "sha256": "6ecdccd85301c1e01395484e6f4537e2c4e0fced3e518cf19e831e73d092a832"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/composition/wide_bridge_generation.png",
+      "sha256": "54dc218919e8e2e0b2fba565311b0ebda111fd7c9028475d947d046f66068e93"
+    },
+    {
+      "file": "assets/source/terrain/overworld/elden_vale/composition/fence_generation.png",
+      "sha256": "3063d944705ebfd6035878b6728e7a334b565811034875537a120c265153405b"
+    }
+  ],
+  "props": {
+    "broken_bridge_wide": {
+      "source": "wide_bridge_generation.png",
+      "uniform_resize": [
+        232,
+        116
+      ],
+      "size": [
+        288,
+        144
+      ],
+      "components": [
+        {
+          "crop": [
+            0,
+            0,
+            116,
+            116
+          ],
+          "position": [
+            0,
+            14
+          ]
+        },
+        {
+          "crop": [
+            116,
+            0,
+            232,
+            116
+          ],
+          "position": [
+            172,
+            14
+          ]
+        }
+      ],
+      "foot_anchor": [
+        144,
+        94
+      ],
+      "deck_top_px": 34,
+      "deck_bottom_px": 106,
+      "deck_clear_width_px": 72,
+      "deck_sample_x_px": [
+        56,
+        232
+      ],
+      "central_gap_x_px": [
+        107,
+        181
+      ]
+    },
+    "fence_ns": {
+      "source": "fence_generation.png",
+      "crop": [
+        206,
+        106,
+        366,
+        875
+      ],
+      "size": [
+        18,
+        48
+      ],
+      "foot_anchor": [
+        9,
+        24
+      ]
+    },
+    "fence_corner": {
+      "source": "fence_generation.png",
+      "crop": [
+        753,
+        170,
+        1451,
+        845
+      ],
+      "size": [
+        36,
+        36
+      ],
+      "foot_anchor": [
+        18,
+        36
+      ]
+    }
+  }
+}

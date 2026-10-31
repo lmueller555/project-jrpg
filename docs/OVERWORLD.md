@@ -14,6 +14,13 @@ farm cart tracks and woodland footpaths have distinct widths and materials;
 their junctions and bends follow the places they serve. The original regional
 captures remain available as a historical comparison.
 
+The [place-composition pass](reviews/elden_vale_composition/README.md) connects
+farm doors, loading spaces, crop gates and property boundaries into compact
+working places. Orchard aisles arrive at a harvest/resting nook, relief stores
+sit beside their approach, and guards occupy duty stations close to the gates.
+Grouped canopies, connected rock shelves and selected shoreline conditions
+give woodland, foothills and riverbanks more coherent local forms.
+
 ## Geography and travel
 
 Elden Vale is an inland, temperate corridor on the western side of Merovar's
@@ -29,6 +36,12 @@ approach without passing a checkpoint. Broken masonry, scorched ground and
 damaged road on both banks convey the recent surge. The far-bank road continues
 toward the unnamed town south of Eldenmere; its actual destination scene is
 future work. There is no bridge over the eastern river.
+
+The ruined stone bridge has a three-tile roadway: 72 pixels north–south between
+its parapets. The artwork retains its east–west span and an empty collapsed
+center. Its approaches and the independently repaired future deck use the
+same width; increasing the bridge's visible roadway does not grant repair or
+open the crossing. The review includes a measured native-width audit.
 
 The main road takes approximately 47 seconds to walk from the town miniature's
 exit to the near-bank bridge approach. Local paths lead toward woodland, a
@@ -143,11 +156,17 @@ or complete a quest, replay a reward, or add a regional edge to NPC path graphs.
   `assets/terrain/overworld/elden_vale/polish/art.json`.
 - Original detail generations, prompts and export recipes:
   `assets/source/terrain/overworld/elden_vale/polish/`.
+- Wider-bridge composition art and export manifest:
+  `assets/terrain/overworld/elden_vale/composition/art.json`.
+- Original composition generations and measured export recipe:
+  `assets/source/terrain/overworld/elden_vale/composition/`.
 
 The `detail_art_manifest` extends the base art at runtime. Existing art and
 the original review images remain unchanged. The layout recipe adds typed crop
 parcels, road hierarchy, authored setpieces and decorative placements. Existing
 world, landmark, town-contact and progression identifiers stay stable.
+The optional `composition_art_manifest` supplies the wider bridge and related
+composition modules while preserving the base and first-pass art files.
 
 The layout builder pins the approved classroom atlas by SHA-256, retains
 normalized reference anchors, and exports its survey annotation separately.
@@ -157,9 +176,10 @@ distances are authored gameplay interpretations of its geography.
 ```sh
 python tools/build_overworld_art.py --check
 python tools/build_overworld_polish_art.py --check
+python tools/build_overworld_composition_art.py --check
 python tools/build_elden_vale_overworld.py --check
 python -m unittest discover -s tests -p 'test_overworld_*.py' -v
-python tools/capture_elden_vale_polish.py
+python tools/capture_elden_vale_composition.py
 ```
 
 The layout check validates wall–river joins, default enclosure reachability,

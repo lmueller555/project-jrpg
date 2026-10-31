@@ -148,6 +148,7 @@ class OverworldWorld:
         self.entities = []
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
+        self._validate_bridge_width()
         town = self.region.get('town', {})
         self.town_entry_rect = self._tile_rect(town.get('entry_rect_tiles', (9, -33, 6, 6)))
         self.town_exit = self._tile_point(town.get('exit_tile', self.region.get('spawn_tile', (12, -25))))
@@ -200,11 +201,34 @@ class OverworldWorld:
         path = ROOT/candidate if isinstance(candidate, str) else ART_FILE
         self.art_available = path.exists()
         if self.art_available:self._art = json.loads(path.read_text(encoding='utf-8'))
-        detail = self.region.get('detail_art_manifest')
-        if detail and (ROOT/detail).exists():
-            additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
-            for group in ('tiles','props'):
-                self._art.setdefault(group,{}).update(additional.get(group,{}))
+        for field in ('detail_art_manifest','composition_art_manifest'):
+            detail = self.region.get(field)
+            if detail and (ROOT/detail).exists():
+                additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
+                for group in ('tiles','props'):
+                    self._art.setdefault(group,{}).update(additional.get(group,{}))
+
+    def _validate_bridge_width(self):
+        """A declared roadway width agrees in world geometry and exported art."""
+        bridge = self.region.get('bridge',{})
+        if 'deck_width_tiles' not in bridge:return
+        width = bridge['deck_width_tiles']*TILE_SIZE
+        deck = self._tile_rect(bridge['deck_rect_tiles'])
+        if deck.height != width:
+            raise ValueError('Bridge roadway width differs from its collision deck')
+        center = bridge.get('deck_center_tile_y')
+        if center is not None and deck.centery != round(center*TILE_SIZE):
+            raise ValueError('Bridge roadway is not aligned with its approach')
+        record = self._art.get('props',{}).get(bridge.get('broken_art_key'))
+        if record and 'deck_clear_width_px' in record:
+            if record['deck_clear_width_px'] != width:
+                raise ValueError('Bridge artwork roadway differs from its collision width')
+            if record['deck_bottom_px']-record['deck_top_px'] != width:
+                raise ValueError('Bridge artwork deck bounds do not match its clear width')
+            art_center = (record['deck_top_px']+record['deck_bottom_px'])/2
+            offset = bridge['tile_position'][1]*TILE_SIZE-deck.centery
+            if record['foot_anchor'][1] != art_center+offset:
+                raise ValueError('Bridge artwork roadway is not aligned with the world deck')
 
     def _tile_image(self, key):
         if key not in self._tiles:
@@ -441,9 +465,11 @@ class OverworldWorld:
         if bridge and self._bridge_repaired():
             rect = self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).move(-ox,-oy)
             if chunk_rect.colliderect(self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles']))):
-                pygame.draw.rect(surface, '#756c52', rect.inflate(0,8))
-                pygame.draw.rect(surface, '#b2a081', rect)
-                for y in range(rect.top+4, rect.bottom, 8):pygame.draw.line(surface, '#8d7c64', (rect.left,y), (rect.right,y))
+                pygame.draw.rect(surface, '#77786c', rect.inflate(0,8))
+                key = 'stone_road_worn' if 'stone_road_worn' in self._art.get('tiles',{}) else 'stone_road'
+                self._paint_shape(surface,key,lambda mask,r=rect:pygame.draw.rect(mask,'white',r))
+                pygame.draw.line(surface,'#b2b6a4',(rect.left,rect.top-2),(rect.right,rect.top-2),2)
+                pygame.draw.line(surface,'#606c5b',(rect.left,rect.bottom+2),(rect.right,rect.bottom+2),2)
         for wall in self.region.get('walls', []):
             for left, right in self._wall_segments(wall):
                 rect = self._tile_rect((left,wall['y']-.5,right-left,1)).move(-ox,-oy)
@@ -461,7 +487,10 @@ class OverworldWorld:
         town = self.region.get('town')
         if town:yield {'key':'eldenmere', 'position': self._tile_point(town['tile_position'])}
         bridge = self.region.get('bridge')
-        if bridge and not self._bridge_repaired():yield {'key':'broken_bridge', 'position':self._tile_point(bridge['tile_position'])}
+        if bridge and not self._bridge_repaired():
+            key = bridge.get('broken_art_key','broken_bridge')
+            if key not in self._art.get('props',{}):key = 'broken_bridge'
+            yield {'key':key,'position':self._tile_point(bridge['tile_position'])}
         yield from self._bridge_debris()
         for landmark in self.region.get('landmarks', []):
             if landmark.get('prop'):yield {'key':landmark['prop'], 'position':self._tile_point(landmark['tile_position'])}

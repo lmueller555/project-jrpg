@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets/source/maps/overworld/elden_vale/recipe.json"
 OUTPUT = ROOT / "assets/maps/overworld/elden_vale/region.json"
-REFERENCE = ROOT / "docs/reviews/elden_vale_polish/atlas_reference.png"
+REFERENCE = ROOT / "docs/reviews/elden_vale_composition/atlas_reference.png"
 
 
 def smooth_road(points, steps=6):
@@ -165,6 +165,18 @@ def validate(data):
         raise ValueError("Opening checkpoints must retain their pending destinations")
     if data["bridge"]["repair_flag"] != "ELDEN_VALE_WEST_BRIDGE_REPAIRED":
         raise ValueError("Bridge repair must remain independent of checkpoint release")
+    bridge = data["bridge"]
+    if (bridge.get("deck_width_tiles") != 3 or bridge["deck_rect_tiles"][3] != 3
+            or bridge["deck_rect_tiles"][1]+1.5 != bridge.get("deck_center_tile_y")):
+        raise ValueError("The bridge roadway must span exactly three tiles north-south")
+    if bridge.get("broken_art_key") != "broken_bridge_wide":
+        raise ValueError("The widened roadway requires its matching broken bridge artwork")
+    for piece in setpieces:
+        if piece.get("kind") == "farmstead" and len(piece.get("door_approaches", [])) < 3:
+            raise ValueError("A farm needs clear fronts for its home, barn and shed")
+    for shore in data["terrain"].get("shore_conditions", []):
+        if shore.get("kind") not in {"gravel", "damp", "reeds", "rocky"} or len(shore.get("polygon", [])) < 3:
+            raise ValueError("A shoreline condition requires a known material and landward outline")
     validation = data["route_validation"]
     road = next(road for road in data["roads"] if road["id"] == validation["bridge_approach_road"])
     start_distance = _road_distance(road, validation.get("bridge_approach_start_tile", data["spawn_tile"]))
