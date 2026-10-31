@@ -27,6 +27,7 @@ class OverworldTravel:
         self._region_armed = False
         self.discovered = {'eldenmere'}
         self.farm_state = None
+        self.bridge_state = None
 
     @property
     def active(self):
@@ -34,8 +35,10 @@ class OverworldTravel:
 
     def to_dict(self):
         world = self.game._overworld_world
+        bridge = world.bridge_crew.to_dict() if world is not None else self.bridge_state
         farm = world.grain_farm.to_dict() if world is not None else self.farm_state
         return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered),
+                **({'bridge_crew': bridge} if bridge is not None else {}),
                 **({'grain_farm': farm} if farm is not None else {})}
 
     @staticmethod
@@ -54,8 +57,10 @@ class OverworldTravel:
         if record is None:
             return not active
         from grain_farm import valid_state
+        from bridge_crew import valid_state as valid_bridge_state
         if not (isinstance(record, dict) and {'version', 'region'} <= set(record)
-                and set(record) <= {'version', 'region', 'discovered', 'grain_farm'}
+                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew'}
+                and ('bridge_crew' not in record or valid_bridge_state(record['bridge_crew']))
                 and ('grain_farm' not in record or valid_state(record['grain_farm']))
                 and type(record['version']) is int and record['version'] == 1
                 and record['region'] == REGION_ID
@@ -71,11 +76,13 @@ class OverworldTravel:
         self._town_armed = False
         self._region_armed = False
         self.farm_state = (data or {}).get('grain_farm')
+        self.bridge_state = (data or {}).get('bridge_crew')
         self.discovered.clear()
         self.discovered.update((data or {}).get('discovered', ['eldenmere']))
         if self.game._overworld_world is not None:
             self.game._overworld_world.set_progress(self.game.social.flags)
             self.game._overworld_world.grain_farm.restore(self.farm_state)
+            self.game._overworld_world.bridge_crew.restore(self.bridge_state)
 
     def stage_story_restore(self):
         """Restore committed town actors at town scale, retaining region feet."""
@@ -213,6 +220,7 @@ class OverworldTravel:
             g._overworld_world.set_progress(g.social.flags)
         if self.active:
             g.world.grain_farm.update(seconds, g)
+            g.world.bridge_crew.update(seconds, g)
         # Observe leaving a contact even during the short transfer cooldown.
         # A running player can reach the town exit again before it expires.
         if g.world is g.town:
@@ -247,6 +255,8 @@ class OverworldTravel:
 
     def interaction_hint(self):
         if self.active:
+            hint = self.game.world.bridge_crew.interaction_hint(self.game)
+            if hint:return hint
             hint = self.game.world.grain_farm.interaction_hint(self.game)
             if hint:return hint
         return 'E: Speak with the road guard' if self.nearby_guard() is not None else ''
@@ -254,6 +264,7 @@ class OverworldTravel:
     def interact(self):
         if not self.can_travel():
             return False
+        if self.active and self.game.world.bridge_crew.interact(self.game):return True
         if self.active and self.game.world.grain_farm.interact(self.game):return True
         gate = self.nearby_guard()
         if gate is None:
