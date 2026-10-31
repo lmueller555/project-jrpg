@@ -1,0 +1,504 @@
+{
+  "game_integration": true,
+  "renderer": "Production Game.draw() and game.window",
+  "source_base_commit": "ded6e3f637bc58852eb0c5b70fcf124ea4b82ca0",
+  "source_sha256": {
+    "mill_quest.py": "f79caa47e2238787dd6a156d7cbda0a3863fa02a23b2d28ad150ed122975a8ad",
+    "main.py": "74a2bed05ed0e3ee80392555a1ba717a35db999daf4230f6267b367ca97ac8dd",
+    "tests/test_millrace_departure.py": "235134bb6c764553f3e28c06a3700c03e5bc1ed4c2d883ca8c9e22ff4aca7212",
+    "tests/test_mill_trigger_geometry.py": "c262489a2b2bf8139ebd379e9b9ffbb985a63166cc44a6ef5b6066acd330d4c9",
+    "tools/capture_millrace_departure.py": "cf6cab0ca8d5a78a3619b5c2b47d89fb684e25c3e2143073f50a1029b0ee9118"
+  },
+  "video": "millrace_departure.mp4",
+  "video_fps": 20,
+  "video_frames": 1422,
+  "duration_seconds": 71.1,
+  "video_size": [
+    960,
+    640
+  ],
+  "soundtrack": "Silent; SDL dummy capture, no audio reconstruction.",
+  "temporary_journey_and_settings": true,
+  "normal_player_files_untouched": true,
+  "fixture": "Existing geometry fixture completes MQ01 through public quest APIs. MQ02 uses actual recruitment, inspections and dialogue callbacks. The north approach, Continue, recovery and transfer use production input and movement.",
+  "video_edit": "One cut omits the middle walk from the mill to (720, 156); that walk still executes normally and cancels the unacknowledged diagnosis.",
+  "events": [
+    {
+      "time": 0.0,
+      "event": "directions_visible_before_final_acknowledgement",
+      "scene": "eldenmere.playable",
+      "player": [
+        1080.0,
+        370.0
+      ],
+      "mira": [
+        1040.4421161347402,
+        375.6129672143394
+      ],
+      "stage": "diagnose",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": false,
+      "diagnose_completed": false,
+      "warning_completed": false,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": "mill_diagnosis",
+      "cutscene_phase": null
+    },
+    {
+      "time": 9.55,
+      "event": "cut_to_final_walking_approach",
+      "scene": "eldenmere.playable",
+      "player": [
+        720.0,
+        156.00000000000455
+      ],
+      "mira": [
+        720.0,
+        196.0
+      ],
+      "stage": "diagnose",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": false,
+      "diagnose_completed": false,
+      "warning_completed": false,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": null,
+      "cutscene_phase": null
+    },
+    {
+      "time": 12.2,
+      "event": "north_prompt_recovers_pending_diagnosis",
+      "hint": "E: Discuss the mill with Mira"
+    },
+    {
+      "time": 15.3,
+      "event": "continue_preserved_pending_diagnosis",
+      "scene": "eldenmere.playable",
+      "player": [
+        720.0,
+        34.0
+      ],
+      "mira": [
+        720.0,
+        62.0
+      ],
+      "stage": "diagnose",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": false,
+      "diagnose_completed": false,
+      "warning_completed": false,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": null,
+      "cutscene_phase": null
+    },
+    {
+      "time": 16.5,
+      "event": "north_e_resumed_diagnosis"
+    },
+    {
+      "time": 38.95,
+      "event": "warning_started"
+    },
+    {
+      "time": 64.85,
+      "event": "departure_warning_acknowledged",
+      "scene": "eldenmere.playable",
+      "player": [
+        720.0,
+        34.0
+      ],
+      "mira": [
+        720.0,
+        62.0
+      ],
+      "stage": "encounter",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": true,
+      "diagnose_completed": true,
+      "warning_completed": true,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": null,
+      "cutscene_phase": null
+    },
+    {
+      "time": 66.65,
+      "event": "north_e_entered_upstream",
+      "scene": "upstream",
+      "player": [
+        180.0,
+        510.0
+      ],
+      "mira": [
+        720.0,
+        62.0
+      ],
+      "stage": "encounter",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": true,
+      "diagnose_completed": true,
+      "warning_completed": true,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": null,
+      "cutscene_phase": "arrival"
+    },
+    {
+      "time": 68.3,
+      "event": "arrival_pan_reached_encounter",
+      "scene": "upstream",
+      "player": [
+        180.0,
+        510.0
+      ],
+      "mira": [
+        180.0,
+        530.1
+      ],
+      "stage": "encounter",
+      "inspected": [
+        "mechanism",
+        "race"
+      ],
+      "warned": true,
+      "diagnose_completed": true,
+      "warning_completed": true,
+      "encounter_cleared": false,
+      "intake_inspected": false,
+      "script": "mill_encounter_intro",
+      "cutscene_phase": "conversation"
+    }
+  ],
+  "dialogue_pages": [
+    {
+      "time": 16.5,
+      "script": "mill_diagnosis",
+      "page": 0,
+      "text": "The wheel isn\u2019t getting enough water to turn under load. Something\u2019s restricting the intake.",
+      "hold_seconds": 5.067
+    },
+    {
+      "time": 21.55,
+      "script": "mill_diagnosis",
+      "page": 1,
+      "text": "A branch, perhaps?",
+      "hold_seconds": 1.8
+    },
+    {
+      "time": 23.35,
+      "script": "mill_diagnosis",
+      "page": 2,
+      "text": "Could be. We\u2019ll know when we see it.",
+      "hold_seconds": 3.067
+    },
+    {
+      "time": 26.4,
+      "script": "mill_diagnosis",
+      "page": 3,
+      "text": "We\u2019ll need the upper path.",
+      "hold_seconds": 2.067
+    },
+    {
+      "time": 28.45,
+      "script": "mill_diagnosis",
+      "page": 4,
+      "text": "Back over the upper bridge, then north past the sanctuary steps. Take the road out of the village\u2014the intake\u2019s along that trail.",
+      "hold_seconds": 7.733
+    },
+    {
+      "time": 36.2,
+      "script": "mill_diagnosis",
+      "page": 5,
+      "text": "All right. Let\u2019s see what\u2019s caught there.",
+      "hold_seconds": 2.733
+    },
+    {
+      "time": 38.95,
+      "script": "mill_warning",
+      "page": 0,
+      "text": "Before we go\u2014stay close on the river path. Monsters come down to the water.",
+      "hold_seconds": 5.067
+    },
+    {
+      "time": 44.0,
+      "script": "mill_warning",
+      "page": 1,
+      "text": "Close enough to the intake?",
+      "hold_seconds": 2.067
+    },
+    {
+      "time": 46.05,
+      "script": "mill_warning",
+      "page": 2,
+      "text": "Sometimes. Most keep their distance.",
+      "hold_seconds": 2.067
+    },
+    {
+      "time": 48.1,
+      "script": "mill_warning",
+      "page": 3,
+      "text": "And the others?",
+      "hold_seconds": 1.8
+    },
+    {
+      "time": 49.9,
+      "script": "mill_warning",
+      "page": 4,
+      "text": "*checks the spearhead* I\u2019d rather have this with me.",
+      "hold_seconds": 3.4
+    },
+    {
+      "time": 53.3,
+      "script": "mill_warning",
+      "page": 5,
+      "text": "I wasn\u2019t planning to go farther than Halden\u2019s yard today.",
+      "hold_seconds": 3.733
+    },
+    {
+      "time": 57.05,
+      "script": "mill_warning",
+      "page": 6,
+      "text": "Neither was I. Here\u2014take the tool roll. We\u2019ll keep to the open bank.",
+      "hold_seconds": 4.733
+    },
+    {
+      "time": 61.8,
+      "script": "mill_warning",
+      "page": 7,
+      "text": "All right. North past the sanctuary steps, then.",
+      "hold_seconds": 3.067
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "directions.png",
+      "time": 0.0,
+      "state": {
+        "scene": "eldenmere.playable",
+        "player": [
+          1080.0,
+          370.0
+        ],
+        "mira": [
+          1040.4421161347402,
+          375.6129672143394
+        ],
+        "stage": "diagnose",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": false,
+        "diagnose_completed": false,
+        "warning_completed": false,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": "mill_diagnosis",
+        "cutscene_phase": null
+      }
+    },
+    {
+      "file": "recovery_prompt.png",
+      "time": 12.2,
+      "state": {
+        "scene": "eldenmere.playable",
+        "player": [
+          720.0,
+          34.0
+        ],
+        "mira": [
+          720.0,
+          68.33333333333397
+        ],
+        "stage": "diagnose",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": false,
+        "diagnose_completed": false,
+        "warning_completed": false,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": null,
+        "cutscene_phase": null
+      }
+    },
+    {
+      "file": "continue_recovery.png",
+      "time": 15.3,
+      "state": {
+        "scene": "eldenmere.playable",
+        "player": [
+          720.0,
+          34.0
+        ],
+        "mira": [
+          720.0,
+          62.0
+        ],
+        "stage": "diagnose",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": false,
+        "diagnose_completed": false,
+        "warning_completed": false,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": null,
+        "cutscene_phase": null
+      }
+    },
+    {
+      "file": "warning.png",
+      "time": 38.95,
+      "state": {
+        "scene": "eldenmere.playable",
+        "player": [
+          720.0,
+          34.0
+        ],
+        "mira": [
+          720.0,
+          62.0
+        ],
+        "stage": "warning",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": false,
+        "diagnose_completed": true,
+        "warning_completed": false,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": "mill_warning",
+        "cutscene_phase": null
+      }
+    },
+    {
+      "file": "travel_prompt.png",
+      "time": 64.85,
+      "state": {
+        "scene": "eldenmere.playable",
+        "player": [
+          720.0,
+          34.0
+        ],
+        "mira": [
+          720.0,
+          62.0
+        ],
+        "stage": "encounter",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": true,
+        "diagnose_completed": true,
+        "warning_completed": true,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": null,
+        "cutscene_phase": null
+      }
+    },
+    {
+      "file": "upstream.png",
+      "time": 67.35,
+      "state": {
+        "scene": "upstream",
+        "player": [
+          180.0,
+          510.0
+        ],
+        "mira": [
+          180.0,
+          530.1
+        ],
+        "stage": "encounter",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": true,
+        "diagnose_completed": true,
+        "warning_completed": true,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": null,
+        "cutscene_phase": "noticing"
+      }
+    },
+    {
+      "file": "arrival_pan.png",
+      "time": 68.3,
+      "state": {
+        "scene": "upstream",
+        "player": [
+          180.0,
+          510.0
+        ],
+        "mira": [
+          180.0,
+          530.1
+        ],
+        "stage": "encounter",
+        "inspected": [
+          "mechanism",
+          "race"
+        ],
+        "warned": true,
+        "diagnose_completed": true,
+        "warning_completed": true,
+        "encounter_cleared": false,
+        "intake_inspected": false,
+        "script": "mill_encounter_intro",
+        "cutscene_phase": "conversation"
+      }
+    }
+  ],
+  "final_state": {
+    "scene": "upstream",
+    "player": [
+      180.0,
+      510.0
+    ],
+    "mira": [
+      180.0,
+      530.1
+    ],
+    "stage": "encounter",
+    "inspected": [
+      "mechanism",
+      "race"
+    ],
+    "warned": true,
+    "diagnose_completed": true,
+    "warning_completed": true,
+    "encounter_cleared": false,
+    "intake_inspected": false,
+    "script": "mill_encounter_intro",
+    "cutscene_phase": "conversation"
+  }
+}
