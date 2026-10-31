@@ -1,8 +1,10 @@
 # Project JRPG — Foundational Lore
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.2  
-**Last revised:** 2026-10-13  
+**Version:** 0.3
+
+**Last revised:** 2026-10-31
+
 **Scope:** Core cosmology, history before the game's opening, ancient sacrifice, successor life, religion, and the original source of the present crisis.
 
 ## 0. How to read this document
@@ -18,6 +20,12 @@ This document preserves the decisions reached so far without pretending that eve
 **Originality:** Inspiration includes the emotional archetype of morally competing civilizations from classic JRPGs and FFXIV, but the game must create its own terminology, mythology, events, characters, locations, and imagery. No copied characters, Sundering, Rejoinings, or other proprietary narrative mechanisms.
 
 **Terminology:** “Aether,” “Ancients,” “Great Sacrifice,” and related descriptive names are **placeholders** until we choose original in-world terminology. “Magicks” is currently the selected descriptive spelling, not necessarily a final in-world term.
+
+**World and geography:** The world is named **Auratia**. The
+[World Atlas](world/WORLD_ATLAS.md) establishes its continents, regional
+geography and cultural foundations, including Eldenmere's place in Elden Vale
+on Merovar. Exact borders, distances and illustrative future encounters remain
+open; established cosmology and Eldenmere's local map retain their authority.
 
 ---
 
