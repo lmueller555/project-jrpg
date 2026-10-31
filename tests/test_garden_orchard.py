@@ -228,3 +228,34 @@ class GardenOrchardTests(unittest.TestCase):
                                 ('gardener','work',True),('picker','scene',True),('picker','ready',False)]:
             data=self.c.to_dict();data[role].update(phase=phase,read=read,step=0)
             self.assertFalse(valid_state(data),(role,phase,read))
+
+    def test_completed_produce_remains_visible_above_opaque_baskets(self):
+        for role in ('gardener','picker'):self.finish_work(role)
+        props=self.c.props()
+        baskets=[entry for entry in props if entry[2] is self.c.art['basket']]
+        produce=[entry for entry in props if entry[2] in (self.c.art['apple'],self.c.art['turnip'])]
+        self.assertEqual(len(produce),5)
+        for item in produce:
+            _,_,fruit,fruit_pos=item
+            fruit_rect=fruit.get_rect(topleft=fruit_pos)
+            basket=max(baskets,key=lambda entry:fruit_rect.clip(entry[2].get_rect(topleft=entry[3])).width*
+                       fruit_rect.clip(entry[2].get_rect(topleft=entry[3])).height)
+            _,_,basket_image,basket_pos=basket
+            overlap=fruit_rect.clip(basket_image.get_rect(topleft=basket_pos))
+            self.assertGreater(overlap.width*overlap.height,0)
+            # Render the same depth order as the world. A fully opaque fruit
+            # pixel over opaque wicker must retain its fruit colour after both
+            # sprites draw; the old order erased every deposited harvest item.
+            sample=None
+            for y in range(overlap.top,overlap.bottom):
+                for x in range(overlap.left,overlap.right):
+                    f=fruit.get_at((x-fruit_pos[0],y-fruit_pos[1]))
+                    b=basket_image.get_at((x-basket_pos[0],y-basket_pos[1]))
+                    if f.a==b.a==255 and f!=b:sample=(x,y,f);break
+                if sample:break
+            self.assertIsNotNone(sample)
+            canvas=pygame.Surface(overlap.size,pygame.SRCALPHA)
+            for _,_,image,point in sorted((basket,item),key=lambda entry:(entry[0],entry[1])):
+                canvas.blit(image,(point[0]-overlap.x,point[1]-overlap.y))
+            x,y,expected=sample
+            self.assertEqual(canvas.get_at((x-overlap.x,y-overlap.y)),expected)
