@@ -62,8 +62,8 @@ covers empty/long catalogues, missing thumbnails, lazy image caching, keyboard
 focus visibility, wheel clamping and varied display/text sizes.
 
 The PR records the full regression suite's exact tested commit and discovered/
-passed count. Modules run sequentially in fresh processes so Pygame asset graphs
-from unrelated suites do not accumulate in memory.
+passed count. Modules run in fresh processes with at most three workers, so
+Pygame asset graphs from unrelated suites do not accumulate in one process.
 
 Normal exploration retains integer pixel scaling. A replay fits its complete
 scene below the toolbar with nearest-neighbor scaling and display-resolution
