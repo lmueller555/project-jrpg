@@ -13,7 +13,7 @@ MILL_FLAG = 'CH01_MQ02_MILL_RESTORED'
 SOURCE = (-824, 192)
 CART = (-824, 218)
 REST = (-852, 220)
-HELP = (-846, 192)
+HELP = (-840, 192)
 COWORKER_ROUTE = [(-852,244),(-788,244),(-788,218),(-788,244),(-852,244),REST]
 SCENE_ID = 'grain_farm_extra_sack'
 LINES = [
@@ -202,7 +202,7 @@ class GrainFarm:
             if self._walk(self.coworker,HELP,seconds,player):self._stage('help_place')
         elif self.stage=='help_place':
             pose='assist' if self.timer<.8 else 'assist_low'
-            self.loader.pose=pose+'_left';self.coworker.pose=pose
+            self.loader.pose='carry' if self.timer<.8 else 'lift';self.coworker.pose=pose
             if self.timer>=1.6:self._stage('help_return')
         elif self.stage=='help_return':
             if self._walk(self.coworker,REST,seconds,player):
@@ -262,9 +262,11 @@ class GrainFarm:
 
     def ground_blockers(self, actor=None):
         if actor in self.actors:return []
-        if self.state['loaded']<2 or self.stage not in ('ready','help_approach','help_place'):
-            return [pygame.Rect(SOURCE[0]-17,SOURCE[1]-8,24,7)]
-        return []
+        if self.state['loaded']==2 and self.stage in ('ready','help_approach','help_place'):
+            return []
+        # Match the sack's ground contact, not a padded rectangle spanning the
+        # whole station: that padding would obstruct the barn's approach road.
+        return [pygame.Rect(SOURCE[0]-6,SOURCE[1]-6,12,4)]
 
     def cover_props(self):
         return [(SOURCE[1]+8,5,self.cover,(SOURCE[0]-9,SOURCE[1]-14))] if self.covered else []
@@ -275,8 +277,6 @@ class GrainFarm:
         loaded=self.state['loaded']
         for index in range(2,-1,-1):
             point=pygame.Vector2(SOURCE)+(0,-7+index*2)
-            if index==2 and (self.state['scene_done'] or self.stage in ('help_return','check_walk','check')):
-                point+=(-11,0)
             sort_y=SOURCE[1]+7
             if index<loaded:
                 point=pygame.Vector2(-810+index*6,208-index*2);sort_y=228
@@ -284,7 +284,7 @@ class GrainFarm:
                 offset=(0,-3) if self.stage=='lift' and self.timer<.6 else (10,-9) if self.stage=='place' else (0,-11)
                 point=self.loader.position+offset;sort_y=self.loader.position.y+7
             elif index==2 and not self.state['scene_done'] and self.stage in ('ready','help_approach','help_place'):
-                offset=(-11,-11 if self.timer<.8 else -3) if self.stage=='help_place' else (0,-11)
+                offset=(0,-11 if self.timer<.8 else -3) if self.stage=='help_place' else (0,-11)
                 point=self.loader.position+offset;sort_y=self.loader.position.y+7
             result.append((sort_y,4,self.sack,(round(point.x)-6,round(point.y)-10)))
         return result

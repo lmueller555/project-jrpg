@@ -21,10 +21,10 @@ def build():
                 layer = Image.open(source/f'{part}.png').convert('RGBA')
                 image.alpha_composite(layer,(8, 4+(crouch if part in ('head','shirt') else 0)))
             return image
-        def arms(image, hands):
+        def arms(image, hands, crouch=0):
             d=ImageDraw.Draw(image)
-            for shoulder,hand in zip([(15,21),(24,21)], hands):
-                elbow=(shoulder[0]+(-2 if shoulder[0]<20 else 2),round((21+hand[1])/2))
+            for shoulder,hand in zip([(15,21+crouch),(24,21+crouch)], hands):
+                elbow=(shoulder[0]+(-2 if shoulder[0]<20 else 2),round((shoulder[1]+hand[1])/2))
                 d.line([shoulder,elbow,hand],fill='#1a0e16',width=4)
                 d.line([shoulder,elbow],fill=palette['shirt']['base'],width=3)
                 d.line([elbow,hand],fill='#eda052',width=2)
@@ -36,15 +36,15 @@ def build():
             'cover': ([(15,29),(24,29)],2),
             'place': ([(25,29),(33,29)],2),
             'work': ([(25,27),(31,27)],0),
-            'assist': ([(25,27),(31,27)],1),
-            'assist_low': ([(25,35),(31,35)],3),
+            'assist': ([(30,27),(34,27)],1),
+            'assist_low': ([(30,35),(34,35)],3),
             'stretch': ([(14,29),(24,22)],0),
         }
         for name,(hands,crouch) in poses.items():
             for phase in range(4 if name=='carry' else 2):
                 image=body(phase if name=='carry' else None,crouch)
                 animated=[(x,y+(phase%2 if name=='work' else 0)) for x,y in hands]
-                arms(image,animated)
+                arms(image,animated,crouch)
                 image.save(OUT/f'{role}_{name}_{phase}.png')
     sack=Image.new('RGBA',(12,12));d=ImageDraw.Draw(sack)
     d.polygon([(3,0),(8,0),(8,3),(10,5),(11,9),(9,11),(2,11),(0,9),(1,5),(4,3)],fill='#56422d')

@@ -84,6 +84,8 @@ class GrainFarmTests(unittest.TestCase):
         self.assertFalse(self.f.state['scene_done'])
         self.until(lambda:self.f.state['scene_done'])
         self.assertEqual(len(self.f.props()),3)
+        # The returned spare must not permanently obstruct the barn approach.
+        self.assertTrue(self.g.world.can_stand((-847.488,184.8648)))
         self.assertEqual(flags,self.g.social.flags)
         self.assertEqual(quests,self.g.quests.to_dict())
         self.assertTrue(self.g.overworld_travel.interact())
