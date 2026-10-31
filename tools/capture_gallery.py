@@ -108,10 +108,19 @@ def phase(game):
             'bridge_seconds': round(getattr(getattr(game.world,'bridge_crew',None),'timer',0),4),
             'grain_stage': getattr(getattr(game.world,'grain_farm',None),'stage',None),
             'grain_seconds': round(getattr(getattr(game.world,'grain_farm',None),'timer',0),4),
+            'garden_phase': getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('phase'),
+            'garden_step': getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('step'),
+            'garden_seconds': round(getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('elapsed',0),4),
             'dialogue': game.social.script_identifier}
 
 
 def thumbnail_ready(identifier, g, seconds):
+    if identifier == 'garden_quiet_care':
+        controller = g.world.garden_orchard
+        state = controller.state['gardener']
+        action = controller.action('gardener') or {}
+        return (state['phase'] == 'scene' and action.get('kind') == 'put'
+                and action.get('item') == 'plant' and state['elapsed'] >= .9)
     if identifier == 'halden_medicine':return g.halden_visit.action == 'medicine' and g.halden_visit.action_time >= .4
     if identifier == 'tomas_sack':return g.halden_visit.tomas_job == 'carry' and g.halden_visit.tomas.position.y < 230
     if identifier == 'bridge_tea':return g.world.bridge_crew.stage == 'reach' and g.world.bridge_crew.timer > .7
@@ -140,7 +149,10 @@ def crop_rect(identifier, game):
     protagonist = getattr(game.player, 'story_position', None) or game.player.position
     center = pygame.Vector2(protagonist)-camera+(0,-20)
     width = 240
-    if identifier == 'tomas_sack':
+    if identifier == 'garden_quiet_care':
+        center = pygame.Vector2(-538,1156)-camera
+        width = 240
+    elif identifier == 'tomas_sack':
         center = game.halden_visit.tomas.position-camera+(0,-20)
     elif identifier in ('bridge_tea','grain_extra_sack'):
         width = 320
@@ -358,6 +370,7 @@ def preview_stills():
         ('millrace_dialogue_960x640.png','millrace_threat',(960,640),1.0),
         ('millrace_dialogue_480x320_text1.5.png','millrace_threat',(480,320),1.5),
         ('regional_bridge_tea.png','bridge_tea',(960,640),1.0),
+        ('regional_garden_quiet_care.png','garden_quiet_care',(960,640),1.0),
     )
     for filename,identifier,size,text_scale in specs:
         game.window=pygame.display.set_mode(size,pygame.RESIZABLE)

@@ -1,6 +1,6 @@
 # Gallery review
 
-The title's Gallery provides 24 immediately available production scene previews.
+The title's Gallery provides 25 immediately available production scene previews.
 Each card has a captured thumbnail, a name, chapter and description. The full
 [coverage matrix and extension guide](../../GALLERY.md) documents fixtures,
 boundaries and intentional exclusions.
@@ -13,7 +13,7 @@ boundaries and intentional exclusions.
   Continue of the original saved journey.
 - [Gallery top](gallery_top.png), [scrolling](gallery_middle.png),
   [last entries](gallery_bottom.png), and [retained selection](gallery_return_selection.png).
-- [All 24 actual thumbnails](thumbnail_contact_sheet.jpg).
+- [All 25 actual thumbnails](thumbnail_contact_sheet.jpg).
 - [960×640 catalogue](gallery_960x640_text1.png),
   [480×320 at 150% text](gallery_480x320_text1.5.png),
   [800×800 at 150% text](gallery_800x800_text1.5.png), and
@@ -24,6 +24,7 @@ boundaries and intentional exclusions.
   [millrace at 960×640](millrace_dialogue_960x640.png),
   [millrace at 480×320/150%](millrace_dialogue_480x320_text1.5.png).
 - [Regional bridge tea](regional_bridge_tea.png) and
+  [garden quiet care](regional_garden_quiet_care.png), plus
   [Continue of the original save](continue_original_save.png).
 
 ## Reproduce

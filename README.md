@@ -44,7 +44,7 @@ journey directly. See the [opening cinematic guide](docs/OPENING_CINEMATIC.md).
 Settings changes fullscreen/windowed mode, independent music/effects levels,
 text size, reduced interface motion and objective visibility. Continue resumes
 a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
-**Gallery** replays 24 authored cinematics and staged sequences without playing
+**Gallery** replays 25 authored cinematics and staged sequences without playing
 through their quests. Browse actual scene thumbnails with the mouse/wheel or
 arrows, then click a card or press Enter. **Esc** returns to the catalogue,
 **R** restarts the scene, and Space/E/click advances dialogue. Each replay uses

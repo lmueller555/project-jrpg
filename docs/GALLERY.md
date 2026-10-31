@@ -1,6 +1,6 @@
 # Cutscene Gallery
 
-Choose **Gallery** on the title screen to replay any of the 24 registered scenes.
+Choose **Gallery** on the title screen to replay any of the 25 registered scenes.
 The catalogue is available immediately, including without a saved journey.
 Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,
@@ -60,11 +60,14 @@ it does not duplicate dialogue, animation or camera scripts.
 | `lantern_putaway` | Safe Until Tomorrow | Final home placement and farewell through quest completion |
 | `grain_extra_sack` | One Sack Too Many | GrainFarm's finite exchange, shared lowering and lashing check |
 | `bridge_tea` | Tea by the Broken Bridge | BridgeCrew's finite request, offer, reception, drink and seated break |
+| `garden_quiet_care` | A Little Shade | GardenOrchard's quiet-care dialogue, plant lift/carry/placement and settling into rest |
 
 Fixtures use completed prerequisite quest facts for the selected chapter only.
 The lantern fixtures use the current controller's stage/objective prefix; mill
 intake scenes use current v2 encounter-complete facts. Regional scenes begin at
 their authored finite vignette stations with the preceding routine work seeded.
+The garden preview starts at the completed-work checkpoint and ends only after
+the struggling plant has been moved to its production destination by the hedge.
 
 Intentional exclusions are ordinary standing conversations, player-controlled
 errands/travel and repeating ambient routines. Specifically: opening quest
