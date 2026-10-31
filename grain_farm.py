@@ -200,6 +200,7 @@ class GrainFarm:
         for actor in self.actors:
             actor.clock=0;actor.pose='idle';actor.moving=False;actor.facing='front'
         self.covered=False
+        self._audio_contacts=set()
         self.stage='inspect'
         self.timer=0
         self.dialogue_running=False
@@ -215,6 +216,7 @@ class GrainFarm:
 
     def _stage(self, name):
         self.stage=name;self.timer=0
+        self._audio_contacts.clear()
         self.loader.moving=False
         self.loader.restart()
         if name in ('help_place', 'help_recover'):self.coworker.restart()
@@ -265,6 +267,47 @@ class GrainFarm:
         self.state.update(changes)
         game.save_progress()
 
+    def _sound(self, game, key, name, actor):
+        audio=getattr(game,'regional_audio',None)
+        if audio:audio.emit('farm_'+key,name,lambda:actor.position,'farm')
+
+    @staticmethod
+    def _contact_frame(actor, tool=False):
+        """The painted hand/tool's contact extreme, independent of clip rate."""
+        frames=actor.clips[actor.animation_key]['frames']
+        def score(frame):
+            hands=frame.get('hands',[])
+            reach=max(((-p[0] if actor.facing=='left' else p[0]) for p in hands),default=0)
+            if tool:
+                return (frame.get('tool_offset',(0,-1000))[1],
+                        max((p[1] for p in hands),default=-1000))
+            return reach
+        return max(range(len(frames)),key=lambda index:score(frames[index]))
+
+    def _sync_audio(self, game, previous_frames):
+        """Emit from the sampled physical contact, never the legacy .6s beat."""
+        loader=self.loader;frame=loader.attachment
+        key=(loader.animation_key,loader.frame_index)
+        entered=previous_frames[loader]!=key
+        if self.stage in ('lift','lift_spare') and frame.get('gripped') is True:
+            if 'cloth' not in self._audio_contacts:
+                self._sound(game,'cloth','rustle',loader);self._audio_contacts.add('cloth')
+        elif self.stage in ('cover','uncover'):
+            contact=0 if self.stage=='uncover' else len(loader.clips['cover_front']['frames'])-1
+            if loader.frame_index==contact and 'cloth' not in self._audio_contacts:
+                self._sound(game,'cloth','rustle',loader);self._audio_contacts.add('cloth')
+        if (self.stage=='place' and frame.get('sack_offset')==[14,-10]
+                and 'place' not in self._audio_contacts):
+            self._sound(game,'place','sack',loader);self._audio_contacts.add('place')
+        if (self.stage=='help_place' and loader.pose=='lower' and frame.get('gripped') is False
+                and 'extra_place' not in self._audio_contacts):
+            self._sound(game,'extra_place','sack',loader);self._audio_contacts.add('extra_place')
+        for actor in self.actors:
+            current=(actor.animation_key,actor.frame_index)
+            if (actor.pose=='work' and current!=previous_frames[actor]
+                    and actor.frame_index==self._contact_frame(actor)):
+                self._sound(game,'lash','creak',actor)
+
     def _coworker_work(self, seconds, player):
         """Walk around the south of the parked cart, clear of the loading lane."""
         actor=self.coworker
@@ -296,6 +339,7 @@ class GrainFarm:
             # Walking away cancels prose without committing its completion.
             self.dialogue_running=False
             self._stage('ready')
+        previous_frames={actor:(actor.animation_key,actor.frame_index) for actor in self.actors}
         seconds=min(seconds,.1)
         self.timer+=seconds
         for actor in self.actors:actor.moving=False
@@ -378,6 +422,7 @@ class GrainFarm:
             self._act(self.loader, 'work', 'right')
             if self.timer>=2:self._stage('rest')
         for actor in self.actors:actor.advance(seconds)
+        self._sync_audio(game,previous_frames)
 
     def nearby(self, game):
         actor=min(self.actors,key=lambda a:a.position.distance_squared_to(game.player.position))

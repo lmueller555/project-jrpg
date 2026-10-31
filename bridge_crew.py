@@ -112,6 +112,7 @@ class BridgeCrew:
             self.stage={2:'reach',3:'exchange',4:'sit_walk'}[beat]
             if beat in (2,3):self.mason.position.update(REACH)
         self.dialogue_running=False
+        self._audio_contacts=set()
         self._prepare_stage_pose()
         for actor in self.actors:actor.advance(0)
 
@@ -119,6 +120,7 @@ class BridgeCrew:
 
     def _stage(self, stage):
         self.stage=stage;self.timer=0.
+        self._audio_contacts.clear()
         self.mason.moving=False
         # Sorting is the mason's beat. The surveyor's independent walk must
         # not briefly become an idle every time a stone changes ownership.
@@ -200,6 +202,7 @@ class BridgeCrew:
             for actor in self.actors:actor.moving=False;actor.advance(0)
             return
         if self.dialogue_running:self.dialogue_running=False
+        previous_frames={actor:(actor.animation_key,actor.frame_index) for actor in self.actors}
         seconds=min(max(seconds,0),.1);self.timer+=seconds
         for actor in self.actors:actor.moving=False
         player=self.world.probe_rect(game.player.position)
@@ -287,6 +290,32 @@ class BridgeCrew:
             if self.timer>=1:
                 self._commit(game,tea_beat=5);self._stage('ready')
         for actor in self.actors:actor.advance(seconds)
+        self._sync_audio(game,previous_frames)
+
+    def _sync_audio(self,game,previous_frames):
+        audio=getattr(game,'regional_audio',None)
+        if not audio:return
+        cup=self.cup_position
+        contacts=[]
+        if self.stage=='wobble':
+            if cup.distance_to((WORK_STONE[0],WORK_STONE[1]-9))<=1.01:
+                contacts.append(('bridge_cup_stone',(WORK_STONE[0],WORK_STONE[1]-9)))
+            if cup.distance_to(pygame.Vector2(SAFE)+(0,-7))<.1:
+                contacts.append(('bridge_cup_tray',tuple(cup)))
+        elif self.stage=='tray_place' and cup.distance_to(pygame.Vector2(KETTLE)+(8,-11))<.1:
+            contacts.append(('bridge_cup_return',tuple(cup)))
+        for key,point in contacts:
+            if key not in self._audio_contacts:
+                audio.emit(key,'cup',point,'ceramic',3);self._audio_contacts.add(key)
+        actor=self.working_tool_actor()
+        current=(actor.animation_key,actor.frame_index)
+        if (actor.pose=='work' and current!=previous_frames[actor]
+                and actor.frame_index==GrainFarm._contact_frame(actor,tool=True)):
+            audio.emit('bridge_tool','stone',lambda:actor.position,'masonry')
+
+    def working_tool_actor(self):
+        """The same physical owner drives the prop and its material sound."""
+        return next((actor for actor in self.actors if actor.pose=='work'),self.mason)
 
     def nearby(self,game):
         actor=min(self.actors,key=lambda a:a.position.distance_squared_to(game.player.position))
@@ -351,9 +380,9 @@ class BridgeCrew:
 
     @property
     def tool_position(self):
-        for actor in self.actors:
-            if actor.pose=='work' and actor.attachment.get('tool_offset') is not None:
-                return actor.position+actor.attachment['tool_offset']
+        actor=self.working_tool_actor()
+        if actor.pose=='work' and actor.attachment.get('tool_offset') is not None:
+            return actor.position+actor.attachment['tool_offset']
         return pygame.Vector2(TOOL_REST)
 
     @staticmethod
@@ -381,6 +410,7 @@ class BridgeCrew:
         owner=(self.tender if self.stage in self.TENDER_CUP else
                self.mason if self.stage in self.MASON_CUP else None)
         add('cup',self.cup_position,self._held_sort(owner,'cup') if owner else self.cup_position.y+1)
-        owner=next((a for a in self.actors if a.pose=='work'),None)
+        tool_actor=self.working_tool_actor()
+        owner=tool_actor if tool_actor.pose=='work' else None
         add('tool',self.tool_position,self._held_sort(owner,'tool') if owner else self.tool_position.y+1)
         return result
