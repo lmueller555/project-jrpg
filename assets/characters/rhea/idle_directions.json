@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "display_name": "Rhea Sorel",
+  "status": "approved",
+  "image": "idle_directions.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    10,
+    34
+  ],
+  "order": [
+    "front",
+    "left",
+    "right",
+    "back"
+  ],
+  "per_direction_anchors": {
+    "front": [
+      10,
+      34
+    ],
+    "left": [
+      10,
+      34
+    ],
+    "right": [
+      10,
+      34
+    ],
+    "back": [
+      12,
+      34
+    ]
+  },
+  "frames": [
+    {
+      "direction": "front",
+      "file": "idle_front.png",
+      "rect": [
+        0,
+        0,
+        24,
+        36
+      ],
+      "foot_anchor": [
+        10,
+        34
+      ],
+      "status": "approved"
+    },
+    {
+      "direction": "left",
+      "file": "idle_left.png",
+      "rect": [
+        24,
+        0,
+        24,
+        36
+      ],
+      "foot_anchor": [
+        10,
+        34
+      ],
+      "status": "approved"
+    },
+    {
+      "direction": "right",
+      "file": "idle_right.png",
+      "rect": [
+        48,
+        0,
+        24,
+        36
+      ],
+      "foot_anchor": [
+        10,
+        34
+      ],
+      "status": "approved"
+    },
+    {
+      "direction": "back",
+      "file": "idle_back.png",
+      "rect": [
+        72,
+        0,
+        24,
+        36
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "status": "approved"
+    }
+  ]
+}

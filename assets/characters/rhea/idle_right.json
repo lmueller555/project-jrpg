@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "display_name": "Rhea Sorel",
+  "status": "approved",
+  "design_status": "approved",
+  "facing": "right",
+  "animation": "idle.right",
+  "authored_pose_count": 1,
+  "image": "idle_right.png",
+  "canvas": [
+    24,
+    36
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "anchor": [
+    10,
+    34
+  ],
+  "foot_anchor": [
+    10,
+    34
+  ],
+  "source": "assets/source/companions/rhea/directional_idles/design_sheet.png",
+  "source_sha256": "115e60f35cd84467a3ddedebaba69f60c759cdc737415f7bab3de325eb911afb",
+  "source_recipe": "assets/source/companions/rhea/directional_idles/source.json",
+  "source_recipe_sha256": "6be308f9b9998c2b08327a1a61e2b448bd59d6e6c43b43aaae8463476201e888",
+  "palette_source": "assets/characters/rhea/idle_front.png",
+  "palette_source_sha256": "0697755d2cefcfcf6876718bc46a4179437487ab583a9f150d3fc3b4a3877a96",
+  "palette": [
+    [
+      5,
+      3,
+      4
+    ],
+    [
+      25,
+      26,
+      29
+    ],
+    [
+      35,
+      80,
+      51
+    ],
+    [
+      73,
+      35,
+      21
+    ],
+    [
+      157,
+      95,
+      45
+    ],
+    [
+      229,
+      160,
+      86
+    ],
+    [
+      250,
+      203,
+      154
+    ],
+    [
+      86,
+      42,
+      23
+    ],
+    [
+      101,
+      52,
+      29
+    ],
+    [
+      110,
+      75,
+      37
+    ],
+    [
+      137,
+      62,
+      36
+    ],
+    [
+      35,
+      31,
+      71
+    ],
+    [
+      95,
+      38,
+      91
+    ],
+    [
+      195,
+      127,
+      55
+    ],
+    [
+      248,
+      182,
+      133
+    ],
+    [
+      206,
+      114,
+      71
+    ],
+    [
+      143,
+      73,
+      118
+    ],
+    [
+      203,
+      138,
+      58
+    ],
+    [
+      187,
+      132,
+      61
+    ],
+    [
+      71,
+      155,
+      11
+    ],
+    [
+      90,
+      93,
+      75
+    ],
+    [
+      249,
+      200,
+      98
+    ],
+    [
+      251,
+      193,
+      82
+    ],
+    [
+      190,
+      130,
+      72
+    ],
+    [
+      58,
+      136,
+      41
+    ],
+    [
+      154,
+      95,
+      90
+    ],
+    [
+      109,
+      199,
+      28
+    ],
+    [
+      145,
+      235,
+      8
+    ],
+    [
+      250,
+      251,
+      245
+    ],
+    [
+      11,
+      117,
+      173
+    ],
+    [
+      12,
+      120,
+      180
+    ],
+    [
+      158,
+      233,
+      26
+    ]
+  ],
+  "common_uniform_scale": 0.04341926729986431,
+  "common_sampling_phase": [
+    0.525,
+    0.825
+  ],
+  "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+  "registration": "authored body center and floor; equipment does not recenter the actor",
+  "extraction": {
+    "panel": [
+      699,
+      59,
+      1121,
+      796
+    ],
+    "bounds": [
+      699,
+      59,
+      1121,
+      796
+    ],
+    "body_bounds": [
+      699,
+      59,
+      1030,
+      796
+    ],
+    "body_center_x": 905,
+    "ground_y": 795,
+    "native_offset": [
+      0,
+      0
+    ],
+    "anchor": [
+      10,
+      34
+    ],
+    "native_bounds": [
+      2,
+      3,
+      20,
+      35
+    ],
+    "sampling_phase": [
+      0.525,
+      0.825
+    ],
+    "affine_output_to_source": [
+      23.031250000000004,
+      0,
+      -36.403906250000034,
+      0,
+      23.031250000000004,
+      -66.06328125000016
+    ],
+    "registered_body_center": [
+      10,
+      34
+    ],
+    "palette_colors": 30
+  }
+}

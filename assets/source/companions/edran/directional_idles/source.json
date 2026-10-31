@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "animation": "idle.directional",
+  "status": "approved",
+  "source_file": "directional_sheet.png",
+  "source_dimensions": [
+    2048,
+    768
+  ],
+  "source_sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26",
+  "generated_original_filename": "exec-1931dac0-fc14-4b09-9fce-85d952b3209d.png",
+  "first_attempt_generated_original_filename": "exec-7859ad5c-da86-4bd7-b0f4-8de3663d00b1.png",
+  "appearance_reference": "assets/characters/edran/idle_front.png",
+  "character_reference": "assets/source/companions/edran/design_sheet.png",
+  "gait_identity_reference": "assets/characters/edran/walk_front/spritesheet.png",
+  "reference_front_crop": "reference_front.png",
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "pose_order": [
+    "left",
+    "right",
+    "back"
+  ],
+  "target_body_height": 29,
+  "alpha_cleanup_threshold": 128,
+  "equipment": {
+    "staff_hand": "anatomical right",
+    "pouch_side": "anatomical left",
+    "left_view": "staff arm far/partly occluded, near left arm and pouch visible",
+    "right_view": "staff arm near, left pouch far/mostly occluded",
+    "back_view": "staff viewer-right and pouch viewer-left; no face or front closure on back"
+  },
+  "export": {
+    "scale": 0.04131054131054131,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "poses": {
+      "left": {
+        "source_bounds": [
+          128,
+          37,
+          526,
+          739
+        ],
+        "body_bounds": [
+          205,
+          37,
+          526,
+          739
+        ],
+        "body_center_x": 355.5,
+        "ground_y": 738
+      },
+      "right": {
+        "source_bounds": [
+          817,
+          38,
+          1204,
+          739
+        ],
+        "body_bounds": [
+          817,
+          38,
+          1152,
+          739
+        ],
+        "body_center_x": 992.5,
+        "ground_y": 738
+      },
+      "back": {
+        "source_bounds": [
+          1497,
+          37,
+          1916,
+          739
+        ],
+        "body_bounds": [
+          1497,
+          37,
+          1857,
+          739
+        ],
+        "body_center_x": 1685,
+        "ground_y": 738
+      }
+    }
+  },
+  "notes": [
+    "All three poses independently authored by imagegen from the approved front chibi; no native frame or approved asset was modified.",
+    "The second pass brought the near right-hand crook closer in right and back views to preserve body29 inside24x36 without shrinking.",
+    "Sky-blue/silver highcollar and capelet wrap around the back; only back hair, nape/ears are visible in the rear head.",
+    "One common uniform scale and body/ground registration are suggested; exporter may refine sampling phase for face readability.",
+    "Generation haze below alpha128 is removable with the existing deterministic hard-alpha export."
+  ],
+  "art_status": "approved",
+  "approval_note": "The user approved all three directional idle poses for merge into main."
+}

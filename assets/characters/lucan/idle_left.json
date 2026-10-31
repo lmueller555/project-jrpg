@@ -1,0 +1,246 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "display_name": "Lucan Rooke",
+  "status": "approved",
+  "design_status": "approved",
+  "facing": "left",
+  "animation": "idle.left",
+  "authored_pose_count": 1,
+  "image": "idle_left.png",
+  "canvas": [
+    24,
+    36
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "anchor": [
+    12,
+    34
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "source": "assets/source/companions/lucan/directional_idles/directional_sheet.png",
+  "source_sha256": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+  "source_recipe": "assets/source/companions/lucan/directional_idles/source.json",
+  "source_recipe_sha256": "0b45e954fb7afb2d13a8a4906df963b508c21a83890674120cc5e5703c2a3e53",
+  "palette_source": "assets/characters/lucan/idle_front.png",
+  "palette_source_sha256": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+  "palette": [
+    [
+      4,
+      1,
+      1
+    ],
+    [
+      150,
+      37,
+      30
+    ],
+    [
+      71,
+      40,
+      25
+    ],
+    [
+      55,
+      27,
+      17
+    ],
+    [
+      22,
+      7,
+      4
+    ],
+    [
+      105,
+      25,
+      23
+    ],
+    [
+      41,
+      20,
+      12
+    ],
+    [
+      119,
+      68,
+      40
+    ],
+    [
+      201,
+      196,
+      195
+    ],
+    [
+      250,
+      249,
+      249
+    ],
+    [
+      162,
+      43,
+      34
+    ],
+    [
+      167,
+      159,
+      158
+    ],
+    [
+      252,
+      199,
+      154
+    ],
+    [
+      90,
+      84,
+      86
+    ],
+    [
+      162,
+      95,
+      41
+    ],
+    [
+      183,
+      118,
+      53
+    ],
+    [
+      154,
+      41,
+      33
+    ],
+    [
+      224,
+      218,
+      217
+    ],
+    [
+      49,
+      34,
+      30
+    ],
+    [
+      105,
+      95,
+      97
+    ],
+    [
+      35,
+      14,
+      9
+    ],
+    [
+      96,
+      43,
+      30
+    ],
+    [
+      135,
+      35,
+      30
+    ],
+    [
+      237,
+      167,
+      102
+    ],
+    [
+      249,
+      186,
+      86
+    ],
+    [
+      109,
+      70,
+      45
+    ],
+    [
+      199,
+      117,
+      73
+    ],
+    [
+      235,
+      206,
+      161
+    ],
+    [
+      253,
+      194,
+      96
+    ],
+    [
+      197,
+      134,
+      42
+    ],
+    [
+      199,
+      118,
+      48
+    ]
+  ],
+  "common_uniform_scale": 0.051580698835274545,
+  "common_sampling_phase": [
+    0.5,
+    0.5
+  ],
+  "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+  "registration": "authored body center and floor; equipment does not recenter the actor",
+  "extraction": {
+    "panel": [
+      189,
+      146,
+      542,
+      747
+    ],
+    "bounds": [
+      189,
+      146,
+      542,
+      747
+    ],
+    "body_bounds": [
+      280,
+      146,
+      510,
+      747
+    ],
+    "body_center_x": 387,
+    "ground_y": 746,
+    "native_offset": [
+      0,
+      0
+    ],
+    "native_bounds": [
+      2,
+      4,
+      20,
+      35
+    ],
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "affine_output_to_source": [
+      19.387096774193548,
+      0,
+      -44.33870967741933,
+      0,
+      19.387096774193548,
+      -68.85483870967744
+    ],
+    "registered_body_center": [
+      12,
+      34
+    ],
+    "palette_colors": 30
+  }
+}

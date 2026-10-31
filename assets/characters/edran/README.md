@@ -26,3 +26,10 @@ Rebuild with the repository's asset environment:
 
 The [four-frame front walk](walk_front/README.md) is approved, with a
 [loop preview](../../../docs/reviews/companion_front_walks/edran_front_walk.gif).
+
+## Remaining directional idles
+
+The approved [left, right and rear poses](../../../docs/reviews/companion_directional_idles/edran_directional_idles.png)
+complete the directional idle set beside the approved front idle. See the
+[directional review guide](../../../docs/reviews/companion_directional_idles/README.md)
+for the source and export workflow.

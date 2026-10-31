@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "actor": "edran",
+  "display_name": "Edran Hale",
+  "status": "approved",
+  "design_status": "approved",
+  "facing": "right",
+  "animation": "idle.right",
+  "authored_pose_count": 1,
+  "image": "idle_right.png",
+  "canvas": [
+    24,
+    36
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "anchor": [
+    12,
+    34
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "source": "assets/source/companions/edran/directional_idles/directional_sheet.png",
+  "source_sha256": "90c4e466579307491e05bfa6cf7f6d32042def2643335bfbc98804956672ee26",
+  "source_recipe": "assets/source/companions/edran/directional_idles/source.json",
+  "source_recipe_sha256": "35555f214e42eade0a14616d1edae3d9a5499ea1346c6ad0d5e79f62d3d5e757",
+  "palette_source": "assets/characters/edran/idle_front.png",
+  "palette_source_sha256": "c9dc970273e7921314f553f57ca347e4e6f371479fb8844e588fed5d2bd8a9aa",
+  "palette": [
+    [
+      2,
+      2,
+      3
+    ],
+    [
+      152,
+      131,
+      115
+    ],
+    [
+      245,
+      177,
+      123
+    ],
+    [
+      98,
+      93,
+      91
+    ],
+    [
+      133,
+      181,
+      219
+    ],
+    [
+      199,
+      193,
+      188
+    ],
+    [
+      58,
+      55,
+      54
+    ],
+    [
+      99,
+      69,
+      52
+    ],
+    [
+      162,
+      161,
+      162
+    ],
+    [
+      143,
+      111,
+      91
+    ],
+    [
+      214,
+      216,
+      216
+    ],
+    [
+      57,
+      37,
+      27
+    ],
+    [
+      40,
+      27,
+      21
+    ],
+    [
+      94,
+      65,
+      49
+    ],
+    [
+      75,
+      48,
+      35
+    ],
+    [
+      30,
+      25,
+      29
+    ],
+    [
+      36,
+      37,
+      41
+    ],
+    [
+      111,
+      136,
+      161
+    ],
+    [
+      28,
+      50,
+      79
+    ],
+    [
+      55,
+      98,
+      144
+    ],
+    [
+      209,
+      212,
+      215
+    ],
+    [
+      41,
+      72,
+      110
+    ],
+    [
+      117,
+      169,
+      212
+    ],
+    [
+      119,
+      171,
+      214
+    ],
+    [
+      202,
+      120,
+      76
+    ],
+    [
+      227,
+      154,
+      104
+    ],
+    [
+      76,
+      117,
+      158
+    ],
+    [
+      154,
+      181,
+      205
+    ],
+    [
+      86,
+      58,
+      43
+    ],
+    [
+      176,
+      200,
+      218
+    ],
+    [
+      164,
+      93,
+      60
+    ],
+    [
+      214,
+      186,
+      166
+    ]
+  ],
+  "common_uniform_scale": 0.04131054131054131,
+  "common_sampling_phase": [
+    0.5,
+    0.5
+  ],
+  "sampling": "one exact affine nearest-neighbor grid across left/right/back",
+  "registration": "authored body center and floor; equipment does not recenter the actor",
+  "extraction": {
+    "panel": [
+      817,
+      38,
+      1204,
+      739
+    ],
+    "bounds": [
+      817,
+      38,
+      1204,
+      739
+    ],
+    "body_bounds": [
+      817,
+      38,
+      1152,
+      739
+    ],
+    "body_center_x": 992.5,
+    "ground_y": 738,
+    "native_offset": [
+      0,
+      0
+    ],
+    "native_bounds": [
+      5,
+      6,
+      21,
+      35
+    ],
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "affine_output_to_source": [
+      24.20689655172414,
+      0,
+      -127.08620689655174,
+      0,
+      24.20689655172414,
+      -135.1379310344828
+    ],
+    "registered_body_center": [
+      12,
+      34
+    ],
+    "palette_colors": 31
+  }
+}

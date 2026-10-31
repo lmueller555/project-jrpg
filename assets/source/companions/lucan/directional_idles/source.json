@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "animation": "idle.directional",
+  "status": "approved",
+  "source_file": "directional_sheet.png",
+  "source_dimensions": [
+    1983,
+    793
+  ],
+  "source_sha256": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+  "generated_original_filename": "exec-18247321-fa56-4765-aa77-6ca813c83a40.png",
+  "initial_generated_filename": "exec-40e9b07a-f11f-4f3b-a64d-d2150b68585f.png",
+  "generation_note": "Rear sword carry tightened through imagegen to preserve31px body height without cropping or equipment-driven shrink.",
+  "reference_sha256": {
+    "assets/source/companions/lucan/design_sheet.png": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+    "assets/characters/lucan/idle_front.png": "aa8ca28e2a2da8375b8eb464bcffb71acd079ca3de75239ae38fc4cc9dcee068",
+    "assets/characters/caelan/idle_directions_review.png": "48d53fe4b9e1275628ff5ea7a8d564bf858347338c21cc73ef81e42281cfe792"
+  },
+  "pose_order": [
+    "left",
+    "right",
+    "back"
+  ],
+  "frame_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "handedness": {
+    "sword": "anatomical_right",
+    "shield": "anatomical_left",
+    "left_view": "shield near, sword far",
+    "right_view": "sword near, shield far",
+    "back_view": "sword viewer-right, shield viewer-left"
+  },
+  "export": {
+    "scale": 0.051580698835274545,
+    "sampling_phase": [
+      0.5,
+      0.5
+    ],
+    "anchor": [
+      12,
+      34
+    ],
+    "poses": {
+      "left": {
+        "source_bounds": [
+          189,
+          146,
+          542,
+          747
+        ],
+        "body_bounds": [
+          280,
+          146,
+          510,
+          747
+        ],
+        "body_center_x": 387,
+        "ground_y": 746
+      },
+      "right": {
+        "source_bounds": [
+          806,
+          150,
+          1115,
+          748
+        ],
+        "body_bounds": [
+          850,
+          150,
+          1085,
+          748
+        ],
+        "body_center_x": 969.5,
+        "ground_y": 747
+      },
+      "back": {
+        "source_bounds": [
+          1419,
+          147,
+          1758,
+          746
+        ],
+        "body_bounds": [
+          1464,
+          147,
+          1730,
+          746
+        ],
+        "body_center_x": 1596,
+        "ground_y": 745
+      }
+    }
+  },
+  "notes": [
+    "Left/right are independently authored; far equipment is naturally occluded.",
+    "Rear shield shows its interior straps/rim; rear face and front belt buckle are absent.",
+    "All poses are stationary with relaxed feet on their own source ground baseline.",
+    "Use one uniform scale for all three poses; no body shrink, anatomy redrawing or axis warping."
+  ],
+  "art_status": "approved",
+  "approval_note": "The user approved all three directional idle poses for merge into main."
+}

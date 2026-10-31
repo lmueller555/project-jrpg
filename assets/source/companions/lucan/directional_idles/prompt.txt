@@ -1,0 +1,35 @@
+Create the THREE REMAINING DIRECTIONAL OVERWORLD IDLE SPRITES for LUCAN ROOKE, the adult24-year-old Knight in this fantasy pixel-art JRPG. Use his approved sheet and24x36 front idle as identity/costume references. Use the Caelan directional sheet ONLY to understand the game's front/left/right/back camera conventions and compact native pixel style.
+
+ALL THREE drawings must match Lucan's SMALL LEFTMOST FRONT OVERWORLD DESIGN from his approved sheet, around3heads high, not the tall combat/cinematic art. Dark swept brown hair, silver-steel shoulder/arm/leg armor, oxblood red cloth/tabard edged with restrained gold, dark trousers, brown boots, visible hair/nohelmet. Same adult character and equipment in every view.
+
+OUTPUT ONE WIDE TRANSPARENT RGBA SHEET WITH EXACTLY THREE ISOLATED FULLBODY SPRITES IN A SINGLE ROW:
+1. LEFT: Lucan faces SCREEN LEFT, relaxed stationary side/profile idle.
+2. MIDDLE: Lucan faces SCREEN RIGHT, relaxed stationary side/profile idle.
+3. RIGHT: Lucan faces directly AWAY from the viewer, full REAR idle; back of hair and armor/tabard visible, NO face.
+
+Each drawing is the same compact chibi scale and body height, intended for24x36 native canvas with feet grounded at y34. Use exactly the same head and body proportions as his approved front. All feet flat and still, no walking step, lunge, running crouch or attacking. Upright confident posture. Both feet planted naturally on one common baseline. Sides can show a modest relaxed stagger but never a lifted walking foot. Keep full sword/shield/boots/hair visible within each drawing's own column. Generous transparent gaps between the three figures. No front view, no extra poses, no text, labels, borders, grid, shadows or background.
+
+CRITICAL EQUIPMENT HANDEDNESS — DO NOT MIRROR SWAP:
+Lucan holds the sword in his ANATOMICAL RIGHT hand and shield on ANATOMICAL LEFT arm in every direction.
+- SCREEN-LEFT FACING: his anatomical LEFT side is NEAR the camera, so the shield-bearing arm and RED SHIELD OUTER FACE with gold upward-chevron are prominent in the near foreground. His sword-right arm is FAR and naturally partially hidden; a glimpse of sword/hilt/blade can remain beyond the far side. The shield is not suddenly transferred to his right arm.
+- SCREEN-RIGHT FACING: his anatomical RIGHT side is NEAR the camera, so sword-right hand, gauntlet and low-carried blade are visible on the near side. His shield-left arm is FAR and the shield is partially hidden behind him. Any visible back/inner shield edge has straps/wood or a metal rim, not a second near-side shield. Independently author this view instead of mirroring the left pose.
+- REAR: sword-right hand and blade appear on viewer/screen RIGHT; shield-left arm and shield appear on viewer/screen LEFT. Show the rear of his head and back of red/gold cloth/steel armor. The shield may show its inner straps and rim from behind. Do not put a face or chest-front detail on his back.
+
+The sword remains low and angled safely clear of his boots. Natural human limb lengths and relaxed elbows, no elongated arms/legs, detached weapon grips, extra hands or impossible wrist bends. The shield retains the same dimensions across views, with perspective and occlusion explaining its side-view width. Neither side view should become a front-facing battle stance.
+
+ART DIRECTION:
+Crisp coarse square pixel clusters like the approved native24x36 idle; dark warm outlines, controlled silver/red/gold/brown palette and clear lighting. No smooth vector/painterly style, no photorealism, no3D, no tiny details that displace the big readable silhouette. All three figures should look like directly usable directional partners for the existing front sprite, at exactly the same world scale. Preserve body identity and outfit rather than introducing new costume pieces.
+
+REAR SWORD FIT CORRECTION
+Refine ONLY THE SWORD CARRY OF THE THIRD / REAR VIEW in the supplied Lucan directional idle sheet. Keep the first left-facing pose and second right-facing pose unchanged. Keep all three figures' head/body size, stance, feet, armor, cloth, hand assignment and the rear shield exactly unchanged.
+
+In the REAR/rightmost pose, the sword in his anatomical RIGHT hand (viewerRIGHT) angles too far outward and will clip a24px game frame. Repose that sword as a relaxed nearly VERTICAL LOW HANG beside his right thigh:
+- Grip remains in the right hand, close to his right hip.
+- Blade runs down alongside and just OUTSIDE the right calf/boot, not diagonally far into empty space.
+- Full blade and point visible, same sword length and shape, point safely clear of the boot and slightly above the shared foot baseline.
+- Bring the rear sword's outermost silhouette inward by approximately60source pixels compared with this reference. The whole rear sword should remain close enough that the rear figure fits a narrow overworld frame at the SAME BODY SCALE as the other poses.
+- Adjust only the right wrist/hand angle as necessary for a natural grip. Do not lengthen or shorten his arm or leg, shrink his body, crop the sword point, swap weapons, or move the shield.
+
+All three are stationary compact3-head adult pixel-art idles. Left pose faces screenLEFT with shield-near; middle faces screenRIGHT with sword-near/shield-far; rear faces away with sword viewerRIGHT and shield viewerLEFT. The rear shield continues to show its inner straps/rim. Preserve approved silver-steel/oxblood/gold palette, swept brown hair, natural proportions, all feet planted and same transparent three-column composition.
+
+Transparent RGBA, no labels, background, grid, floor or shadow. Crisp native-like pixel clusters, no new costume details.
