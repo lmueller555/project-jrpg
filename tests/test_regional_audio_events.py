@@ -12,7 +12,12 @@ class FarmAudioEvents(TestCase):
     until=farm_tests.GrainFarmTests.until
     ready=farm_tests.GrainFarmTests.ready
     def test_only_two_loaded_sacks_and_no_idle_impacts(self):
-        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+        def check_contact(key,*args):
+            if key=='farm_place':
+                self.assertEqual(self.f.stage,'place')
+                point=self.f.props()[2-self.f.state['loaded']][3]
+                self.assertEqual((point[0]+6,point[1]+10),(-810,208))
+        with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.ready();self.tick(300)
             self.assertEqual(sum(c.args[0]=='farm_place' for c in emit.call_args_list),2)
             self.assertTrue(any(c.args[1]=='rustle' for c in emit.call_args_list))
@@ -33,7 +38,15 @@ class BridgeAudioEvents(TestCase):
     dialogue=bridge_tests.BridgeCrewTests.dialogue
     scene=bridge_tests.BridgeCrewTests.scene
     def test_cup_contacts_once_and_completed_restore_silent(self):
-        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+        from bridge_crew import WORK_STONE,SAFE,KETTLE
+        targets={'bridge_cup_stone':(WORK_STONE[0],WORK_STONE[1]-9),
+                 'bridge_cup_tray':(SAFE[0],SAFE[1]-7),
+                 'bridge_cup_return':(KETTLE[0]+8,KETTLE[1]-11)}
+        def check_contact(key,*args):
+            if key in targets:
+                self.assertLessEqual(self.c.cup_position.distance_to(targets[key]),1.01)
+                self.assertIn(self.c.stage,('wobble','tray_place'))
+        with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.scene()
             keys=[c.args[0] for c in emit.call_args_list]
             for key in ('bridge_cup_stone','bridge_cup_tray','bridge_cup_return'):self.assertEqual(keys.count(key),1)
