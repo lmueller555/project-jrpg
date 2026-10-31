@@ -85,15 +85,11 @@ def board():
 
 
 def village_map():
-    im=blank((42,40));d=ImageDraw.Draw(im)
-    d.rectangle((2,1,39,37),fill=WOOD['outline']);d.rectangle((3,2,38,36),fill='#b79a6c');d.rectangle((5,4,36,34),fill='#e1d6bc')
-    d.line((5,5,35,5),fill='#fbeed0');d.line((22,5,20,13,24,20,21,33),fill='#67969c',width=3)
-    d.line((7,11,34,11),fill='#a69e86');d.line((7,13,34,13),fill='#a69e86')
-    d.line((8,19,33,19),fill='#b49a73');d.line((12,19,12,30),fill='#b49a73')
-    d.rectangle((8,7,13,10),fill='#836347');d.rectangle((27,15,32,20),fill='#836347')
-    d.line((26,17,33,17),fill='#45382d');d.ellipse((29,19,34,24),outline='#654e3c')
-    d.line((17,23,24,23),fill='#836347',width=2)
-    return export('village_map',{'painted_parchment':im})
+    # Retain the furnishing ID and footprint used by classroom approaches.
+    # The small prop and the inspectable original share one approved geography.
+    im=opened(ROOT/'assets/world/auratia/wall_map.png')
+    assert im.size==(42,40),im.size
+    return export('village_map',{'auratia_world_map':im})
 
 
 def bookcase():
@@ -209,12 +205,15 @@ def build():
           'floor_rect':[24,72,384,288],'entry_rect':[204,360,24,8],'partition_rect':None,'objects':objects,
           'teacher_role':'liam_mother','seat_count':6,'pupil_desk_count':3,'central_aisle':[192,96,60,258],
           'lighting_frame_count':36,'lighting_frame_duration_ms':300,'npcs':[],
+          'world_map_display':{'entity_id':'village_map','position':[108,94],'radius':22,
+                               'label':'Examine Auratia’s world map'},
           'notes':'Welcoming school with room for six children. Teacher and pupil action schedules are a later stage.'}
     write_json(OUT/'room.json',meta)
     write_json(SOURCE/'recipe.json',{'id':'eldenmere.school.interior','status':status,'native_tile_size':24,
         'room_size':list(SIZE),'floor_rect':meta['floor_rect'],'shell_source':'assets/terrain/eldenmere/cottage_interior',
         'furniture_palette':'assets/terrain/eldenmere/cottage_furniture/furniture.json','objects':objects,
-        'features':['six pupil seats','three slate desks','teacher book and ink','chalk counting lesson','stream-mill-terraces map','child house and dog drawings','shared worn books','festival paper patterns and lantern']})
+        'world_map_display':meta['world_map_display'],
+        'features':['six pupil seats','three slate desks','teacher book and ink','chalk counting lesson','Auratia world map with polar regions','child house and dog drawings','shared worn books','festival paper patterns and lantern']})
     # Validate every destination with the same 24x12 floor probe as the game.
     blocked=Image.new('L',SIZE,255);blocked.paste(0,(24,72,408,360))
     for obj in objects:

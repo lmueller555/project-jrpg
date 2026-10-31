@@ -278,6 +278,7 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 
 - [Foundational lore](docs/FOUNDATIONAL_LORE.md): cosmology, ancient history, and established worldbuilding.
 - [Auratia world atlas](docs/world/WORLD_ATLAS.md): approved continental geography, regional cultures, and Eldenmere's wider setting.
+- [Classroom world map](docs/WORLD_MAP.md): inspect Auratia’s map at the village school, including its northern and southern polar regions.
 - [Saga bible](docs/narrative/saga/SAGA_BIBLE.md): overarching narrative and multi-game boundaries.
 - [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.
 - [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements and an earlier alternative premise.

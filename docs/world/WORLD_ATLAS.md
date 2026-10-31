@@ -2,7 +2,8 @@
 
 **Status: Approved world name, broad geography and regional cultural foundations.**
 
-**Auratia** contains three major continents and a significant island chain.
+**Auratia** contains four major continents, a significant central island chain
+and a northern circumpolar ocean region.
 This atlas places Eldenmere within that wider landscape and gives future
 stories places, livelihoods and cultural relationships to draw upon. Exact
 borders and distances remain open; illustrative encounters are story seeds,
@@ -23,22 +24,31 @@ does not by itself reveal the world's hidden history.
 
 ## The broad arrangement
 
-Three continental landmasses surround the **Amber Sea**, a warm central sea
-with major connections to the wider oceans. The **Rillan Isles** lie along
-several routes across it. This arrangement makes contact between societies
-plausible while leaving voyages expensive, seasonal and consequential.
+Merovar, Serevin and Othara surround the **Amber Sea**, a warm central sea with
+major connections to the wider oceans. The **Rillan Isles** lie along several
+routes across it. Farther south, the **Southern Ocean** separates Othara from
+the polar continent **Istrava**. In the north, the **Nivren Crown** includes
+the polar ocean and the far northern shores of Merovar and Serevin; it is not
+another continent. This arrangement makes contact between societies plausible
+while leaving voyages expensive, seasonal and consequential.
 
 | Land | Relative position | Geographic range | Initial story use |
 | --- | --- | --- | --- |
 | **Merovar** | Northwest of the Amber Sea | Temperate valleys, wooded uplands, alpine country, river plains, marshes, southern coasts and a drier eastern interior; colder forests and tundra farther north | Eldenmere and the first game's regional setting |
 | **Serevin** | East and northeast of the Amber Sea | Northern continental steppe, large river basins, seasonal monsoon country, forested uplands and maritime lowlands | Distant connections, visitors and possible later journeys |
 | **Othara** | South of the Amber Sea | A wet eastern coast, cool elevated plateaus, savanna transitions and an arid leeward interior | Trading relationships and substantial space for future games |
-| **Rillan Isles** | Island chain within the central sea routes | Sheltered harbours, wet volcanic highlands, cultivated slopes, reefs and exposed outer islands | Maritime communities with connections to all three continents |
+| **Rillan Isles** | Island chain within the central sea routes | Sheltered harbours, wet volcanic highlands, cultivated slopes, reefs and exposed outer islands | Maritime communities with connections to the three surrounding continents |
+| **Nivren Crown** | Northern polar ocean and the far northern margins of Merovar and Serevin | Central pack ice, fjords, tundra, coastal islands and rocky offshore skerries | Coastal households, seasonal herding, cold-water trade and rescue obligations |
+| **Istrava** | Southern polar continent across the Southern Ocean from Othara | Interior ice plateau, glacier coasts and a subpolar volcanic island fringe | Small island communities and rotating shore stations; substantial room for later stories |
 
 This is a schematic of relative positions, not a coastline or distance map:
 
 ```text
                               NORTH
+
+                         NIVREN CROWN
+                    Pale Sea / NORTH POLE
+             Rimeward Shores / offshore Skeld Isles
 
           MEROVAR                              SEREVIN
     colder northern country             northern steppe and uplands
@@ -52,13 +62,21 @@ This is a schematic of relative positions, not a coastline or distance map:
                    drylands / high plateau
                          wet eastern coast
 
+                        SOUTHERN OCEAN
+
+                            ISTRAVA
+                         Cinder Isles
+                         Bluewall Coast
+                    White Expanse / SOUTH POLE
+
                               SOUTH
 ```
 
-The first atlas does not settle the planet's total land area, exact distances,
-coastline shapes or the existence of additional landmasses. Large interiors,
-remote coasts and northern and southern extremes remain available for later
-development. The original sacrificial temple has no assigned location here.
+The atlas does not settle the planet's total land area, exact distances,
+coastline shapes or the existence of additional landmasses beyond those named
+here. Large interiors, remote coasts and the detailed extent of polar surveys
+remain available for later development. The original sacrificial temple has
+no assigned location here.
 
 ## Where Eldenmere belongs
 
@@ -116,7 +134,7 @@ playable route.
 
 Read the continental detail in [Merovar](continents/MEROVAR.md).
 
-## Other continents and the island chain
+## Other continents, the island chain and the poles
 
 **Serevin** gives us permanent river cities, mobile and settled communities
 in the northern steppe, upland settlements and busy coastal ports. Its
@@ -131,11 +149,24 @@ settlements, plateau towns, farming districts and dryland routes depend upon
 one another. Differences in water access, land tenure and transport create
 cultural histories worth developing. See [Othara](continents/OTHARA.md).
 
-**Rillan** is an archipelago, not a fourth continent or a single island nation.
+**Rillan** is an archipelago, not a continent or a single island nation.
 The **Harbor Chain**, **Rainward Isles** and **Outer Reaches** have different
 relationships with trade and the sea. Port councils, farming communities,
 boatbuilding families and lighthouse crews do not benefit equally from the
 same shipping routes. See [Rillan Isles](continents/RILLAN_ISLES.md).
+
+**Nivren Crown** encompasses the **Pale Sea**, the **Rimeward Shores** and the
+**Skeld Isles**. The North Pole lies over water beneath the Pale Sea's drifting
+pack ice. Long-established coastal settlements and mobile herding households
+occupy the region's continental margins and islands; their lives include
+fishing, boatbuilding, trade, teaching and the maintenance of rescue stores.
+
+**Istrava** contains the **White Expanse**, **Bluewall Coast** and **Cinder
+Isles**. The South Pole lies on its interior ice plateau. Small island
+communities, including families with generations of residence, differ from
+the rotating crews at mainland shore stations. Fisheries, imported supplies
+and local geothermal sites support limited settlement; the deep interior is
+sparsely surveyed. See [Polar Regions](POLAR_REGIONS.md) for both poles.
 
 These areas can first become familiar through people, goods and stories:
 an imported tool, a visiting performer, a sailor's household, a healer trained
@@ -151,6 +182,8 @@ encounter need not promise a later visit.
 | Merovar and Rillan | Merovar timber, wool and grain; island produce, navigation and ship services | Migrant households, crews, travelling teachers and performers |
 | Serevin and the Amber Sea ports | Basin cloth, paper and preserved produce; steppe wool and livestock; imported metals, salt and timber | Clerks, scholars, transport workers, traders and mixed-language families |
 | Othara and the island routes | Plateau ores and woven goods, dryland salts, coastal crops and forest products | Metalworkers, water engineers, healers, students and migrant crews |
+| Nivren Crown and the northern continental coasts | Fish, boat work and coastal passage knowledge; imported grain, tools, cloth and timber where needed | Fishing households, herders, teachers, traders and rescue crews |
+| Othara and Istrava across the Southern Ocean | Fisheries and repair work; imported grain, timber, fuel and equipment | Island families, navigators, healers, surveyors and rotating station crews |
 
 These are broad foundations, not fixed inventories or a complete trade
 simulation. Each region needs food producers and household work as well as its

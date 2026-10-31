@@ -24,8 +24,11 @@ This document preserves the decisions reached so far without pretending that eve
 **World and geography:** The world is named **Auratia**. The
 [World Atlas](world/WORLD_ATLAS.md) establishes its continents, regional
 geography and cultural foundations, including Eldenmere's place in Elden Vale
-on Merovar. Exact borders, distances and illustrative future encounters remain
-open; established cosmology and Eldenmere's local map retain their authority.
+on Merovar. The four major continents are Merovar, Serevin, Othara and Istrava.
+The [Polar Regions](world/POLAR_REGIONS.md) distinguish the Nivren Crown's
+northern polar ocean from Istrava's southern polar landmass. Exact borders,
+distances and illustrative future encounters remain open; established
+cosmology and Eldenmere's local map retain their authority.
 
 ---
 

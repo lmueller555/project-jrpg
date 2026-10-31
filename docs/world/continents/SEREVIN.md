@@ -13,6 +13,10 @@ feed the warmer southeastern rivers. The southwestern Namar Coast faces the
 Amber Sea and connects inland roads with shipping routes. These relationships
 establish travel and climate patterns; exact borders and distances remain open.
 
+The far northern coasts and offshore islands join the Nivren Crown's
+[Rimeward Shores](../POLAR_REGIONS.md). This circumpolar coastal geography
+does not replace Talven's inland steppe or Vashen's warmer southeastern basin.
+
 ## Talven Steppe
 
 Talven is a northern expanse of grassland, sheltered river valleys and dry

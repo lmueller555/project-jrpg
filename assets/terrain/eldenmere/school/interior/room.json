@@ -468,5 +468,14 @@
   "lighting_frame_count": 36,
   "lighting_frame_duration_ms": 300,
   "npcs": [],
+  "world_map_display": {
+    "entity_id": "village_map",
+    "position": [
+      108,
+      94
+    ],
+    "radius": 22,
+    "label": "Examine Auratia\u2019s world map"
+  },
   "notes": "Welcoming school with room for six children. Teacher and pupil action schedules are a later stage."
 }

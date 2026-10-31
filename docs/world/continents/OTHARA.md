@@ -3,8 +3,8 @@
 **Status:** Approved continental geography and cultural foundations. Illustrative
 encounters remain story seeds; exact political borders and institutions remain open.
 
-Othara is Auratia's southern continent. Its regional names describe geographic
-areas containing different communities and jurisdictions. This document follows the
+Othara is the continent south of Auratia's Amber Sea. Its regional names describe
+geographic areas containing different communities and jurisdictions. This document follows the
 [world atlas](../WORLD_ATLAS.md) and preserves the established limits in
 [Foundational Lore](../../FOUNDATIONAL_LORE.md).
 
@@ -17,6 +17,11 @@ windward valleys receive heavy rain; elevation makes the plateau cooler, while
 the northwestern lee receives much less moisture. River valleys and mountain
 passes connect these environments. Exact coastlines, borders, distances and
 seasonal calendars remain open.
+
+Farther south, the Southern Ocean separates Othara from the polar continent
+[Istrava](../POLAR_REGIONS.md). Othara is not joined to the polar ice sheet;
+its existing wet eastern coast, cool plateau and dry northwestern lee retain
+their established climates.
 
 ## Velin Raincoast
 

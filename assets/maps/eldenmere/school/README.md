@@ -14,11 +14,17 @@ classroom; its courtyard exit returns to [672,738]. The map landmark is
 “Village school”. Running `main.py` makes the building directly explorable.
 
 The classroom contains three shared desks, six pupil chairs, a teacher's desk
-and chair, writing board, book shelf, village map, children's drawings, coat
+and chair, writing board, book shelf, Auratia world map, children's drawings, coat
 pegs, reading bench, festival supplies and a hearth. The center aisle and all
 nineteen furnishing approaches are reachable with Caelan's normal footprint.
 Daylight and hearth light animate; classroom objects retain their own depth
 and collision registration.
+
+The small framed world map is on the north wall, left of the writing board.
+Approach `[108,94]` and press **E** to inspect the full-resolution map. Scroll
+zooms, left-drag pans, **Fit** restores the overview, and **Esc**, **E**, or
+**Close** returns to the classroom. The world pauses while the map is open.
+See the [world-map guide](../../../../docs/WORLD_MAP.md).
 
 Liam's mother is the teacher, recorded in the room and family metadata. This
 stage adds the building and furnished interior. Ordinary teaching, pupil attendance and

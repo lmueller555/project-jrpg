@@ -10,7 +10,7 @@ Seasonal winds, freshwater stores and navigable channels shape journeys between 
 
 ## Harbor Chain
 
-The Harbor Chain clusters around sheltered straits and reliable anchorages. Close crossings encourage busy waterfront towns, with stone storage rooms beneath timber galleries and courtyards shared by several households. Dockside kitchens serve bean stews, fish and bread to people whose work follows arriving ships. Established island families live beside newcomers from all three continents; a pilot, a warehouse owner and a casual porter experience the same harbour differently.
+The Harbor Chain clusters around sheltered straits and reliable anchorages. Close crossings encourage busy waterfront towns, with stone storage rooms beneath timber galleries and courtyards shared by several households. Dockside kitchens serve bean stews, fish and bread to people whose work follows arriving ships. Established island families live beside newcomers from Merovar, Serevin and Othara; a pilot, a warehouse owner and a casual porter experience the same harbour differently.
 
 Some towns elect quay councils with seats for pilots, trades and resident households. Representation and citizenship vary, and seasonal workers can struggle to obtain a voice. A household may offer washing water and a meal before discussing business, while commercial lodging follows posted rates. Remembrance gatherings place lamps along shore railings and collect food for absent sailors' dependants; the lamps remain ordinary lights.
 
