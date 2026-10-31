@@ -508,7 +508,7 @@ class GallerySessionTests(unittest.TestCase):
     def test_regional_previews_release_owned_voices_without_stopping_other_audio(self):
         game = self.game();game.audio.effects_volume = 1
         before = self.snapshot(game)
-        for identifier in ('grain_extra_sack', 'bridge_tea'):
+        for identifier in ('grain_extra_sack', 'bridge_tea', 'garden_quiet_care'):
             with self.subTest(entry=identifier):
                 child = self.launch(game, identifier).game
                 sentinel = pygame.mixer.Sound(buffer=bytes(4096))
