@@ -176,6 +176,10 @@ Exploration uses a brief location plaque and nearby interaction prompts instead
 of a permanent controls strip. Dialogue choices show hover/pressed feedback,
 and menus use the same lantern selection mark, spacing and panel treatment.
 
+Caelan's bed in the Sanctuary bedroom is a free rest point. Approach its side
+or foot, press **E**, then choose **Rest** to fully recover the party's HP and
+MP. A brief fade marks the rest, and the recovered resources are saved.
+
 Continue preserves the opening checkpoint without replaying finished scenes.
 Saves from before this opening was added keep their existing location/progress;
 choose **New Game** to experience the new beginning. See [story implementation](docs/STORY_IMPLEMENTATION.md).

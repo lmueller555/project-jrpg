@@ -49,6 +49,7 @@ from mill_quest import MillQuest
 from regent_quest import RegentQuest
 from lantern_quest import LanternQuest
 from world_encounters import CombatEncounters
+from bed_rest import BedRest
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -450,6 +451,7 @@ class Game:
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
         self.combat=CombatEncounters(self)
+        self.bed_rest=BedRest(self)
         self.save_store=SaveStore(save_path)
         self.save_error=None
         self.saved_journey=self._read_saved_journey()
@@ -956,7 +958,7 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
-                    if self.try_inspect_world_map():continue
+                    if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
         return True
@@ -1199,8 +1201,9 @@ class Game:
                 canvas.blit(layer,(0,0))
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
-        hint=hint or self.opening.interaction_hint() or next((hint for visit in self.household_visits
-                                                     if (hint:=visit.interaction_hint())), '')
+        hint=(hint or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
+              next((hint for visit in self.household_visits
+                    if (hint:=visit.interaction_hint())), ''))
         if not hint:hint=self.combat.interaction_hint()
         if not hint:
             link=self.nearby_world_link()

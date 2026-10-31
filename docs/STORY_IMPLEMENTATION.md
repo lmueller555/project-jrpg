@@ -22,8 +22,14 @@ future frame grants no gameplay facts or resources to the opening morning.
    registered wake poses show him waking, sitting at the edge and standing;
    quilt occlusion stays below his face. He leaves through the clear bedside.
 2. Control returns beside the bed. E inspects nearby books, notes, the family
-   drawing, wardrobe or bed using the approved optional lines. The tracker points
-   to breakfast; players can explore without a timer or required inspection list.
+   drawing or wardrobe using the approved optional lines. At the bed's side or
+   foot, **E: rest** offers **Rest / Not now**. Confirming a short rest fully
+   recovers every registered party member's HP and MP to their effective maxima,
+   including Lattice growth, then saves. A brief fade and Caelan's refreshed
+   response acknowledge the rest. This repeatable interaction preserves story
+   stages and is also available to existing journeys without the opening scene.
+   The tracker points to breakfast; players can explore without a timer or
+   required inspection list.
 3. Walking through the hall's northeast door starts the greeting and invitation.
    This exchange allows movement; leaving it unfinished postpones the meal.
    Returning through the doorway or using **E: join breakfast** near the table
