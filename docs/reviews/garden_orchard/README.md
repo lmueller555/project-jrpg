@@ -40,7 +40,10 @@ The current-errand panel is seeded journey UI, not a garden/orchard objective.
 | Post-scene repeat | `(-526, 1160)` | garden focus |
 
 Both Continue checks retain the same saved worker feet, action, action time,
-and prop ownership; their paired PNGs can be compared directly.
+and prop ownership; their paired PNGs can be compared directly. The water-carry
+pair is byte-identical. The plant-carry pair differs only in the worker's stride
+frame (the cosmetic walk clock restarts), while feet and held-pot location are
+unchanged.
 
 Audio comes from the shared regional allocator's accepted start/gain/stop event
 stream and the identical production synthesis PCM. Since the headless device
@@ -53,6 +56,11 @@ not represented as completed in this environment.
 
 Reproduce with `python tools/capture_garden_orchard.py` in the project's Pygame,
 Pillow, NumPy and FFmpeg environment. [Capture summary](capture_report.json)
-records clip duration and technical audio levels. The script asserts safe
+records clip duration and technical audio levels. The final videos are 79.47s
+(garden), 75.60s (orchard), and 75.23s (interruption), with peaks below −21 dBFS.
+Each detailed report includes SHA256s of the controller, shared audio code, and
+art manifest used for capture. Actual frames were inspected for watering and
+branch reach, visible deposited produce, the shaded plant, bench alignment,
+blocked-lane clearance, and reconstruction after Continue. The script asserts safe
 watcher placement, stationary blocked feet, real Continue success, exact saved
 controller restoration, and the scene's read flag surviving its carried payoff.
