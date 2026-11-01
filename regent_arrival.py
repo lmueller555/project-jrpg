@@ -14,7 +14,7 @@ import random
 import pygame
 
 import speech_bubble
-from regent_aerial import RegentAerial, PHASES as AERIAL_PHASES
+from regent_aerial import RegentAerial
 from opening_audio import MorningAudio
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from ui_style import BRASS, IVORY, MUTED
@@ -249,9 +249,9 @@ class RegentArrival:
         return pygame.Vector2(camera['from']).lerp(camera['to'], progress)
 
     def aerial_snapshot(self):
-        if self.shot not in AERIAL_PHASES:return None
+        if self.phase['scene'] != 'aerial':return None
         seconds = sum(p['min_seconds'] for p in self.data['phases'][:self.phase_index]
-                      if p['id'] in AERIAL_PHASES)+self.phase_time
+                      if p['scene'] == 'aerial')+self.phase_time
         return self.aerial.sample(seconds, reduced_motion=self.reduced_motion)
 
     def begin_input_batch(self):
@@ -535,6 +535,11 @@ class RegentArrival:
         return image, position
 
     def _draw_plate(self, canvas, include_actors=True, include_gate=True):
+        if self.phase['scene'] == 'aerial':
+            snapshot = self.aerial_snapshot()
+            self.aerial.draw(canvas, snapshot['seconds'], self.ground_reference_frame,
+                             reduced_motion=self.reduced_motion)
+            return
         camera = self.camera_position
         if self.phase['scene'] == 'world':self._draw_world(canvas)
         else:
@@ -594,11 +599,7 @@ class RegentArrival:
 
     def draw(self, canvas, ui_surface):
         self._load();canvas.fill('#1d302a')
-        snapshot = self.aerial_snapshot()
-        if snapshot is not None:
-            self.aerial.draw(canvas, snapshot['seconds'], self.ground_reference_frame,
-                             reduced_motion=self.reduced_motion)
-        else:self._draw_plate(canvas)
+        self._draw_plate(canvas)
         pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)
         self._layout(painter)

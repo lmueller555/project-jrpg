@@ -65,6 +65,40 @@ class RegentAerialTests(unittest.TestCase):
     def sample(self, seconds, reduced=False):
         return self.scene.aerial.sample(seconds, reduced_motion=reduced)
 
+    def test_scene_dispatcher_renders_aerial_instead_of_looking_up_a_backdrop(self):
+        self.frame('aerial_region', 1.)
+        self.scene._load()
+        canvas = pygame.Surface((480, 320))
+        self.scene._draw_plate(canvas)
+        self.assertGreater(int(pygame.surfarray.array3d(canvas).max()), 0)
+
+    def test_gallery_draws_all_aerial_scenes_even_when_shot_ids_change(self):
+        for renamed in (False, True):
+            with self.subTest(renamed=renamed):
+                parent = self.make_game(self.directory/('gallery-%s.json' % renamed), title=True)
+                self.other_games.append(parent)
+                self.assertTrue(parent.open_gallery())
+                self.assertTrue(parent.launch_gallery_scene('regent_arrival'))
+                scene = parent.gallery_session.game.regent_arrival
+                expected = set()
+                for phase in scene.data['phases']:
+                    if phase['scene'] == 'aerial':
+                        if renamed:phase['id'] = 'retimed_'+phase['id']
+                        expected.add(phase['id'])
+                scene._validate()
+                observed = set()
+                for _ in range(3000):
+                    if parent.gallery_session is None:break
+                    scene = parent.gallery_session.game.regent_arrival
+                    if scene.active:
+                        if scene.phase['scene'] == 'aerial':observed.add(scene.shot)
+                        if scene.dialogue is not None:key(parent, pygame.K_SPACE)
+                    parent.update(.1, (0, 0), False)
+                    parent.draw()
+                self.assertIsNone(parent.gallery_session)
+                self.assertTrue(parent.on_gallery)
+                self.assertEqual(observed, expected)
+
     def frame(self, shot, seconds):
         """Visual probe only; timeline tests below use production input."""
         self.scene.phase_index = next(i for i, phase in enumerate(self.scene.data['phases'])
