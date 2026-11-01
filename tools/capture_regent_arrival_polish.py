@@ -163,6 +163,10 @@ def smoke_checks(directory, saved_pending, saved_completed):
 
 def capture(output):
     output.mkdir(parents=True,exist_ok=True)
+    readme = output/'README.md'
+    verification = ''
+    if readme.exists() and '\n## Verification\n' in readme.read_text():
+        verification = '\n## Verification\n'+readme.read_text().split('\n## Verification\n',1)[1]
     started = datetime.now(timezone.utc).isoformat()
     inputs = source_inputs()
     with tempfile.TemporaryDirectory(prefix='arrival-polish-capture-') as temporary:
@@ -283,7 +287,7 @@ def capture(output):
             'phases':phases,'dialogue_pages':pages,'sampled_actor_trace':samples,
             'gif_validation':gif,'smoke_checks':smoke,'render_input_sha256':inputs,
             'captures':{path.name:digest(path) for path in sorted(output.iterdir())
-                        if path.is_file() and path.name not in ('capture_report.json','README.md')}}
+                        if path.is_file() and path.suffix in ('.png','.gif','.mp4')}}
         (output/'capture_report.json').write_text(json.dumps(report,indent=2)+'\n')
         (output/'README.md').write_text('''# Aldric arrival: movement and transition polish
 
@@ -304,7 +308,7 @@ The [capture report](capture_report.json) includes compact phase/actor samples, 
 To review in-game without repeating MQ02: **Title → Gallery → Aldric’s Relief Caravan**.
 
 Reproduce with `SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python tools/capture_regent_arrival_polish.py`.
-''')
+'''+verification)
         print(json.dumps({'frames':frames,'phases':[p['shot'] for p in phases],
                           'world_freeze_checks':freezes,'gif_validation':gif,
                           'smoke_checks':smoke,'render_inputs':len(inputs)},indent=2))

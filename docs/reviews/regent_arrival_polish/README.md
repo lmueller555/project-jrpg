@@ -20,6 +20,6 @@ Reproduce with `SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python tools/capture
 
 ## Verification
 
-The final regression run passed **173 tests** in **167.830s**, covering arrival staging, MQ02/MQ03, Gallery, saved journeys and music. The actor exporter verifies **70 files**; the scenery exporter and compile/whitespace checks pass. Independent visual review found no unresolved blocker.
+The final regression run passed **183 tests** in **164.749s**, covering arrival staging, MQ02/MQ03, Gallery, saved journeys and music. The actor exporter verifies **70 files**; the scenery exporter and compile/whitespace checks pass. Independent visual review found no unresolved blocker.
 
 All **119 current render inputs** and **18 recorded artifact hashes** match the final capture. See [validation.json](validation.json) and [test log](tests.txt).

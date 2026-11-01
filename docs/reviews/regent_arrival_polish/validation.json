@@ -1,13 +1,14 @@
 {
-  "recorded_at_utc": "2026-10-31T23:56:04.688133+00:00",
-  "base_main_commit": "e80c3534cbc14afa37de29927bd5f5c3f0d6081e",
+  "recorded_at_utc": "2026-11-01T00:12:44.731376+00:00",
+  "base_main_commit": "a811bd67878cf921326f2126c0426aef0db08930",
+  "tested_integration_commit": "574d33d4cb02482da25fac7d78d31051138ffeae",
   "regression": {
     "result": "passed",
-    "tests": 173,
-    "seconds": 167.83,
-    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_arrival_staging test_regent_quest test_gallery_catalogue test_gallery_session test_gallery_ui test_save_game test_mill_quest test_game_music",
+    "tests": 183,
+    "seconds": 164.749,
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_arrival_staging test_regent_quest test_gallery_catalogue test_gallery_session test_gallery_ui test_save_game test_mill_quest test_game_music test_wildlife_journey_validation test_wildlife_audio",
     "log": "tests.txt",
-    "log_sha256": "b6a4c312df5e13582ea022bb370fecb46b0e5778458dbc3bda66cc831a9bfa2f"
+    "log_sha256": "96b336a867fc2cec3d79a00038542af29e07ed05dad8f9221ee02661bd5c6e9b"
   },
   "export_checks": {
     "actor_exports": {
@@ -22,7 +23,7 @@
   },
   "capture": {
     "report": "capture_report.json",
-    "report_sha256": "cf78fc112b5ddc7b6e5e26356bf0f657126ef67c756e82724ba1e213e3bb6251",
+    "report_sha256": "68b0d1f357ba36016ed12f1e2734860a3f5ba19a0ff58c75af27c5af32c69cda",
     "current_input_hashes_verified": 119,
     "artifact_hashes_verified": 18,
     "frames": 3641,
@@ -46,6 +47,17 @@
       "gallery_preserves_save_bytes": true
     },
     "audio": "Silent SDL-dummy visual preview; no reconstructed or synthetic soundtrack."
+  },
+  "wildlife_integration_freeze_probe": {
+    "source": "post-main-wildlife-integration",
+    "wildlife_actors": 9,
+    "active_arrival_game_update_checks": 360,
+    "seconds_simulated": 12,
+    "cached_animal_positions_modes_targets_and_pose_clocks_frozen": true,
+    "gardener_wildlife_vignette_state_frozen": true,
+    "exploration_and_resident_clocks_frozen": true,
+    "explicit_pause_freeze": true,
+    "fixture": "Overworld cache materialized through Game.overworld_world before real MQ02 report acknowledgement; town remains actual current world."
   },
   "independent_visual_review": {
     "result": "passed",
