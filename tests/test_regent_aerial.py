@@ -5,12 +5,14 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
+import numpy as np
 
 from main import Game
 from quests import MILL_QUEST, REGENT_QUEST
@@ -19,6 +21,26 @@ from test_regent_arrival import acknowledge_report, seed_mill_report
 
 
 AERIAL_SHOTS = ('aerial_region', 'aerial_bank', 'aerial_gate', 'aerial_descent')
+
+# Observed dirt-lane centers in the actual 1536x1024 overhead painting, from
+# the southeast approach to the opening. These are independent of the motion
+# controller's route, and include the bend that the old straight route missed.
+PAINTED_APPROACH_PIXELS = (
+    (1163, 1023), (1102, 960), (1034, 900), (972, 850),
+    (905, 800), (847, 755), (809, 720), (790, 690),
+    (777, 650), (773, 600), (768, 550), (768.5, 514),
+)
+
+
+def approach_distance(point):
+    point = pygame.Vector2(point)
+    distances = []
+    for first, second in zip(PAINTED_APPROACH_PIXELS, PAINTED_APPROACH_PIXELS[1:]):
+        first, second = pygame.Vector2(first), pygame.Vector2(second)
+        delta = second-first
+        fraction = max(0., min(1., (point-first).dot(delta)/delta.length_squared()))
+        distances.append(point.distance_to(first+delta*fraction))
+    return min(distances)
 
 
 class RegentAerialTests(unittest.TestCase):
@@ -127,6 +149,142 @@ class RegentAerialTests(unittest.TestCase):
                 tuple((world.data['id'], actor.data['id'], tuple(actor.position))
                       for world in self.g.scenes.values() for actor in world.npcs),
                 copy.deepcopy(self.g.inventory.to_dict()), set(self.g.social.flags))
+
+    def test_overhead_approach_keeps_wheels_and_hooves_on_the_painted_road(self):
+        self.scene._load()
+        aerial = self.scene.aerial
+        aerial._load()
+        plane = aerial.planes['gate_overhead']
+        x0, y0, width, height = plane['bounds_tiles']
+        iw, ih = plane['image'].get_size()
+        # Visible contacts observed on the source sprite, rather than the
+        # vehicle's large transparent canvas or a diagnostic center point.
+        contacts = {'caravan': ((59, 116), (101, 116), (60, 76),
+                                (101, 76), (70, 50), (90, 50)),
+                    'aldric': ((24, 55),)}
+        checked = 0
+        painted_checks = 0
+        original_sprite = aerial._sprite
+        for index in range(round(self.duration*4)):
+            seconds = index/4
+            snapshot = self.sample(seconds)
+            if seconds < 18 or snapshot['ground_handoff'] or snapshot['canopy']['coverage'] > .05:
+                continue
+            drawn = {}
+
+            def background_without_party(canvas, actor, pose, point, scale, clock, *args, **kwargs):
+                if actor in contacts:
+                    drawn[actor] = pygame.Vector2(point)
+                elif actor == 'bird':
+                    return original_sprite(canvas, actor, pose, point, scale, clock, *args, **kwargs)
+
+            background = pygame.Surface((480, 320))
+            with patch.object(aerial, '_sprite', side_effect=background_without_party):
+                aerial.draw(background, seconds, lambda *_args, **_kwargs: None)
+            inverse = np.linalg.inv(aerial._view_matrix(snapshot['view']))
+            for actor, points in contacts.items():
+                if actor not in drawn:
+                    continue
+                item = snapshot['projected_actors'][actor]
+                # A route on the detail painting is not sufficient while that
+                # painting is still transparent over a different-scale road.
+                # Inspect the actual composed ground beneath the actor too.
+                point = drawn[actor]
+                if 3 <= point.x < 477 and 3 <= point.y < 317:
+                    colors = [background.get_at((round(point.x)+dx, round(point.y)+dy))
+                              for dx in range(-2, 3) for dy in range(-2, 3)]
+                    tan = sum(c.r > c.g+10 and c.g > c.b+15 and c.r > 80 for c in colors)
+                    self.assertGreaterEqual(tan/len(colors), .2, (seconds, actor, tuple(point)))
+                    painted_checks += 1
+                anchor = pygame.Vector2(aerial.actors[actor]['anchor'])
+                for contact in points:
+                    delta = (pygame.Vector2(contact)-anchor).rotate(item['screen_heading'])*item['scale']
+                    screen = pygame.Vector2(item['screen_xy'])+delta
+                    if not (2 <= screen.x < 478 and 2 <= screen.y < 318):
+                        continue
+                    world = inverse@np.array((screen.x, screen.y, 1.))
+                    world = world[:2]/world[2]
+                    pixel = ((world[0]-x0)/width*iw, (world[1]-y0)/height*ih)
+                    if not (514 <= pixel[1] <= 1023):
+                        continue
+                    # The narrow bend is about 75--80 pixels across. Five
+                    # pixels allow the painting's gravel/grass edge variation.
+                    self.assertLessEqual(approach_distance(pixel), 43.,
+                                         (seconds, actor, contact, tuple(pixel)))
+                    checked += 1
+        self.assertGreater(checked, 30)
+        self.assertGreater(painted_checks, 5)
+
+    def test_turning_an_overhead_vehicle_preserves_its_rear_ground_anchor(self):
+        aerial = self.scene.aerial
+        aerial._load()
+        data = aerial.actors['caravan']
+        marker = pygame.Surface(data['canvas'], pygame.SRCALPHA)
+        anchor = data['anchor']
+        pygame.draw.rect(marker, '#ff00ff', (anchor[0]-1, anchor[1]-1, 3, 3))
+        data['poses']['overhead'] = marker
+        for heading in (0, -25, -45, -70):
+            with self.subTest(heading=heading):
+                canvas = pygame.Surface((480, 320), pygame.SRCALPHA)
+                aerial._sprite(canvas, 'caravan', 'overhead', (240, 160), 1., 0., angle=-heading)
+                pixels = pygame.surfarray.array3d(canvas)
+                selected = (pixels[:, :, 0] == 255) & (pixels[:, :, 1] == 0) & (pixels[:, :, 2] == 255)
+                xs, ys = np.nonzero(selected)
+                self.assertGreater(len(xs), 0)
+                self.assertLessEqual(pygame.Vector2(float(xs.mean()), float(ys.mean())).distance_to((240, 160)), 1.5)
+
+    def test_post_canopy_zoom_has_real_walking_not_only_camera_motion(self):
+        self.scene._load()
+        snapshots = [(index/10, self.sample(index/10)) for index in range(round(self.duration*10))]
+        clear = next(seconds for seconds, view in snapshots
+                     if view['ground_handoff'] and view['canopy']['coverage'] == 0)
+        times = [clear+.2+(self.duration-clear-.4)*fraction for fraction in (0., .2, .4, .6, .8, 1.)]
+        actual = {'aldric': [], 'caravan': []}
+        frames = {'aldric': set(), 'caravan': set()}
+        original = self.scene._draw_actor
+
+        def record(canvas, actor, camera):
+            if actor['id'] in actual:
+                actual[actor['id']].append(self.scene.actor_position(actor).copy())
+                frames[actor['id']].add(pygame.image.tobytes(self.scene._frame(actor), 'RGBA'))
+            return original(canvas, actor, camera)
+
+        with patch.object(self.scene, '_draw_actor', side_effect=record):
+            for seconds in times:
+                self.frame('aerial_descent', seconds-self.offsets['aerial_descent'])
+                self.render()
+        for actor, positions in actual.items():
+            with self.subTest(actor=actor):
+                self.assertEqual(len(positions), len(times))
+                self.assertTrue(all(b.x < a.x-.5 for a, b in zip(positions, positions[1:])))
+                self.assertGreater(positions[0].x-positions[-1].x, 40.)
+                self.assertLess(max(p.y for p in positions)-min(p.y for p in positions), 1.)
+                self.assertGreater(len(frames[actor]), 1, 'A walking actor kept a single idle image')
+        self.assertGreater(self.sample(times[0])['ground_viewport'][2],
+                           self.sample(times[-1])['ground_viewport'][2])
+
+    def test_descent_and_ground_approach_preserve_native_walking_velocity(self):
+        self.scene._load()
+        positions = {'aldric': [], 'caravan': []}
+        original = self.scene._draw_actor
+
+        def record(canvas, actor, camera):
+            if actor['id'] in positions:
+                positions[actor['id']].append(self.scene.actor_position(actor).copy())
+            return original(canvas, actor, camera)
+
+        with patch.object(self.scene, '_draw_actor', side_effect=record):
+            self.frame('aerial_descent', self.phases['aerial_descent']['min_seconds']-.1)
+            self.render()
+            for seconds in (0., .1):
+                self.frame('gate_approach', seconds)
+                self.render()
+        for actor, samples in positions.items():
+            with self.subTest(actor=actor):
+                self.assertEqual(len(samples), 3)
+                before, after = samples[0]-samples[1], samples[1]-samples[2]
+                self.assertGreater(before.x, 1.)
+                self.assertLess(before.distance_to(after), .01)
 
     def test_bird_flies_west_then_banks_left_toward_the_southern_gate(self):
         west_views = [self.sample(self.at('aerial_region', t)) for t in (.2, .5, .8)]
@@ -263,6 +421,9 @@ class RegentAerialTests(unittest.TestCase):
         switches = [index for index in range(1, len(flags)) if flags[index] != flags[index-1]]
         self.assertEqual(len(switches), 1)
         handoff_time, handoff = samples[switches[0]]
+        # The descent now gives the approaching party several readable seconds
+        # before entering foliage, rather than covering the view almost at once.
+        self.assertGreaterEqual(handoff_time-start, 4.)
         self.assertEqual(handoff['canopy']['coverage'], 1.)
         self.assertTrue(handoff['canopy']['full_occlusion'])
 

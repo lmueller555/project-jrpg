@@ -15,6 +15,7 @@ import pygame
 
 import speech_bubble
 from regent_aerial import RegentAerial
+from regent_aerial_audio import RegentAerialAudio
 from opening_audio import MorningAudio
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from ui_style import BRASS, IVORY, MUTED
@@ -81,7 +82,7 @@ class ArrivalAudio:
             self.channels.append((channel, sound))
         return (channel, sound) if channel is not None else None
 
-    def update(self, seconds, mode, paused=False, gain=1.):
+    def update(self, seconds, mode, paused=False, gain=1., travel_rate=1.):
         self.gain = max(0., min(1., gain))
         volume = float(self.game.audio.effects_volume)
         if volume <= 0:
@@ -102,7 +103,7 @@ class ArrivalAudio:
             if mode == 'riverbank' and self.stream is None:
                 self.stream = self._play('stream', .055, loop=True)
             if mode == 'travel':
-                self.travel += seconds
+                self.travel += seconds*travel_rate
                 if self.travel >= self.next_hoof:
                     self._play('hoof', .075)
                     self.next_hoof = self.travel+(.28 if int(self.travel*2)%2 else .46)
@@ -119,6 +120,7 @@ class RegentArrival:
         self.data = json.loads(self.scene_path.read_text())
         self._validate()
         self.audio = ArrivalAudio(game)
+        self.bird_audio = RegentAerialAudio(game)
         self.aerial = RegentAerial(self)
         self._reference_clock = None
         self._reference_camera = None
@@ -192,6 +194,7 @@ class RegentArrival:
 
     def reset(self):
         self.audio.stop()
+        self.bird_audio.reset()
         self.state = 'waiting'
         self.active = False;self.paused = False;self.focused = True
         self.phase_index = 0;self.phase_time = 0.;self.elapsed = 0.
@@ -270,11 +273,14 @@ class RegentArrival:
     def handle_event(self, event):
         if event.type == pygame.WINDOWFOCUSLOST:
             self.focused = False;self.audio.update(0, self._audio_mode(), paused=True)
+            self.bird_audio.update(0, self.aerial_snapshot(), paused=True)
         elif event.type == pygame.WINDOWFOCUSGAINED:self.focused = True
         elif not self.focused:return
         elif event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key == pygame.K_ESCAPE and not self._batch_pause:
                 self.paused = not self.paused;self._batch_pause = True
+                self.audio.update(0, self._audio_mode(), paused=self.paused, gain=self._audio_gain())
+                self.bird_audio.update(0, self.aerial_snapshot(), paused=self.paused)
             elif event.key in (pygame.K_SPACE, pygame.K_e, pygame.K_RETURN):self.advance()
         elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._mouse_held = False
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
@@ -293,27 +299,50 @@ class RegentArrival:
         self.dialogue_index = 0;self.page_index = 0
         self.caption_layout = None;self.caption_pages = [];self.caption_lines = []
 
-    def _audio_mode(self):
-        if self.phase.get('sound') == 'travel' or self.shot == 'mill_close':return 'travel'
+    def _audio_mode(self, snapshot=None):
+        if self.phase['scene'] == 'aerial':
+            if snapshot is None:snapshot = self.aerial_snapshot()
+            return 'travel' if snapshot.get('party_visible') and snapshot.get('party_moving') else None
+        if self.phase.get('sound') == 'travel':
+            for actor in self.phase['actors']:
+                if actor['id'] not in ('aldric', 'caravan'):continue
+                start = actor.get('move_start', 0.)
+                duration = actor.get('move_seconds', self.phase['min_seconds'])
+                if (any(key in actor for key in ('to', 'path', 'route'))
+                        and start <= self.phase_time < start+duration):return 'travel'
         return 'riverbank' if self.phase['scene'] == 'riverbank' or self.phase.get('sound') == 'riverbank' else None
 
-    def _audio_gain(self):
+    def _audio_gain(self, snapshot=None):
+        if self.phase['scene'] == 'aerial':
+            if snapshot is None:snapshot = self.aerial_snapshot()
+            return 1. if snapshot.get('ground_handoff') else .25
         if self.shot == 'gate_admission':return 1-self.fade_alpha/255
         if self.shot == 'gate_departure_black':return .35*smooth(self.phase_time/self.phase['min_seconds'])
         if self.shot == 'bridge_establishing':return .35+.65*smooth(self.phase_time/self.phase.get('fade_in', 1.))
         return 1.
 
+    def _travel_rate(self, snapshot=None):
+        if self.phase['scene'] == 'aerial':
+            if snapshot is None:snapshot = self.aerial_snapshot()
+            return snapshot.get('approach_speed_pixels', 40.)/40.
+        return min((actor.get('animation_rate', 1.) for actor in self.phase['actors']
+                    if actor['id'] in ('aldric', 'caravan')), default=1.)
+
     def update(self, seconds):
         if not self.active:return
         paused = self.paused or not self.focused or not self.game._music_focused
-        self.audio.update(0 if paused else seconds, self._audio_mode(), paused=paused, gain=self._audio_gain())
+        snapshot = self.aerial_snapshot()
+        self.audio.update(0 if paused else seconds, self._audio_mode(snapshot), paused=paused,
+                          gain=self._audio_gain(snapshot), travel_rate=self._travel_rate(snapshot))
+        self.bird_audio.update(0 if paused else seconds, snapshot, paused=paused)
         if paused:return
         self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
         self._next_if_ready()
 
     def finish(self, reason='finished'):
         if not self.active:return False
-        self.audio.stop();self.active = False;self.paused = False;self.state = 'seen';self.finished_reason = reason
+        self.audio.stop();self.bird_audio.stop()
+        self.active = False;self.paused = False;self.state = 'seen';self.finished_reason = reason
         self.game._mouse_held = False;self.game.social.clear_pointer()
         self.game.player.moving = False
         self.game.regent_quest.restore(self.game.regent_quest.to_dict())
@@ -577,7 +606,7 @@ class RegentArrival:
         for actor in reference['actors']:
             if actor['id'] in ('aldric','caravan'):
                 actor['position'] = list(actor['position'])
-                actor['position'][0] += min(8.,max(0.,-seconds)*40)
+                actor['position'][0] += max(0.,-seconds)*24
                 if standing:
                     actor['pose'] = 'stand_left' if actor['id']=='aldric' else 'parked_left'
                     for key in ('to','path','move_start','move_seconds','before_pose','after_pose'):

@@ -1,0 +1,22 @@
+{
+  "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 PYTHONPATH=tests python -m unittest test_regent_aerial test_regent_aerial_audio test_regent_aerial_audio_integration test_regent_arrival test_regent_arrival_staging test_regent_quest test_gallery_catalogue test_gallery_session test_gallery_ui test_save_game test_mill_quest test_game_music test_wildlife_journey_validation test_wildlife_audio",
+  "tests": 216,
+  "result": "PASS",
+  "capture_report_sha256": "ca3bcade02bafccee20e7812aa1b69d76a11ecdd8fa6aacd97ad5510cc95755b",
+  "verified_render_inputs": 129,
+  "verified_media_files": 8,
+  "independent_motion_audio_review": "PASS: painted-road contacts, guard clearance, continuous handoff and owned audio lifecycle",
+  "runtime_frames": 4341,
+  "world_freeze_checks": 4340,
+  "smoke_checks": {
+    "pending_reload_restarts_before_aerial": true,
+    "pause_freezes_camera_bird_and_world": true,
+    "focus_freezes_camera_bird_and_world": true,
+    "skip_preserves_quest_handoff": true,
+    "gallery_plays_aerial_and_finishes": true,
+    "gallery_preserves_save_bytes": true,
+    "reduced_motion_camera_holds": true
+  },
+  "base_main_commit": "12473a19794af34c7733ef1b30ec619cf7a66a2c",
+  "integration_note": "Latest main adds two music files only. No cinematic code, current cue, or render inputs changed."
+}
