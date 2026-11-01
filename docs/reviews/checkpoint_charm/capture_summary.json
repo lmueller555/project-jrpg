@@ -1,0 +1,169 @@
+{
+  "method": "Record production checkpoint/participation at 30 Hz and 15 fps.\n\nOnly completed predecessor quests and initial player stations are fixtures.\nEvery route, contact, dialogue acknowledgment, optional response and return uses\nGame.update and the production controllers. Site changes are separate labelled\nclips. Regional effects use capture_regional_audio.Recorder's accepted-source\nPCM/gain stream; this is offline rendering, not a recording of a live device.\nMusic is muted. No normalization, playback acceleration or replacement art.\n",
+  "clips": [
+    "guard_full",
+    "overlook_bench",
+    "farm_cat",
+    "unfinished_masonry"
+  ],
+  "seconds": 129.06666666666666,
+  "preview_bytes": 7639853,
+  "native_size": [
+    480,
+    320
+  ],
+  "display_size": [
+    960,
+    640
+  ],
+  "simulation_hz": 30,
+  "video_fps": 15,
+  "fixtures": [
+    "completed MQ01\u2013MQ03 predecessor quests",
+    "initial player stations only"
+  ],
+  "limits": [
+    "SDL dummy audio is not a live device recording",
+    "Offline PCM preserves accepted production sources, gains and stops; no subjective listening claim",
+    "Pause and title/Continue demonstrations call documented production APIs and are labelled in trace",
+    "Cat acknowledgment is intentionally silent; no synthetic animal sound was added"
+  ],
+  "checks": {
+    "guard_full": {
+      "busy_input_does_not_restart": true,
+      "guard_seat_action_continue_exact_state": true,
+      "guard_seat_action_continue_exact_feet": true,
+      "guard_seat_action_continue_snapshot": {
+        "before": {
+          "version": 1,
+          "stage": "owner_sit",
+          "step": 0,
+          "elapsed": 0.26666666666666666,
+          "read": 0,
+          "repeat_read": 0,
+          "contacts": 0,
+          "clock": 0.26666666666666666,
+          "positions": {
+            "owner": [
+              377.0,
+              -2166.0
+            ],
+            "borrower": [
+              552.0,
+              -2208.0
+            ]
+          },
+          "moving": false,
+          "facing": "front"
+        },
+        "after": {
+          "version": 1,
+          "stage": "owner_sit",
+          "step": 0,
+          "elapsed": 0.26666666666666666,
+          "read": 0,
+          "repeat_read": 0,
+          "contacts": 0,
+          "clock": 0.26666666666666666,
+          "positions": {
+            "owner": [
+              377.0,
+              -2166.0
+            ],
+            "borrower": [
+              552.0,
+              -2208.0
+            ]
+          },
+          "moving": false,
+          "facing": "front"
+        },
+        "feet": [
+          408.0,
+          -2140.0
+        ]
+      },
+      "cancel_resumes_unread_line_with_e": true,
+      "busy_e_near_walking_guard_consumed": true,
+      "complete_return": true,
+      "acknowledged_lines": 7,
+      "contacts": 5,
+      "story_flags_unchanged": true,
+      "five_contacts_once_across_continue_and_repeat": true
+    },
+    "overlook_bench": {
+      "overlook_seat_continue_exact_state": true,
+      "overlook_seat_continue_exact_feet": true,
+      "overlook_seat_continue_snapshot": {
+        "before": {
+          "version": 1,
+          "seated": true,
+          "sat": true,
+          "cat_greeted": false,
+          "masonry_read": false,
+          "cat_cooldown": 0.0
+        },
+        "after": {
+          "version": 1,
+          "seated": true,
+          "sat": true,
+          "cat_greeted": false,
+          "masonry_read": false,
+          "cat_cooldown": 0.0
+        },
+        "feet": [
+          1819.2,
+          -519.2
+        ]
+      },
+      "repeat_e_ignored": true,
+      "repeat_escape_ignored": true,
+      "e_stand": true,
+      "escape_stand_consumes_input": true,
+      "movement_stand": true,
+      "cancellation_releases_pose": true,
+      "final_clear_feet": true
+    },
+    "farm_cat": {
+      "cancel_has_no_contact": true,
+      "greeted_through_e_and_dialogue": true,
+      "cat_owned_by_wildlife": true,
+      "acknowledgment_intentionally_silent": true,
+      "no_manufactured_cat_state": true
+    },
+    "unfinished_masonry": {
+      "real_worker_progress": true,
+      "sorted_blocks": 3,
+      "inspection_acknowledged": true,
+      "tea_not_started": true,
+      "no_manufactured_worker_state": true,
+      "actual_tool_contact_audio": true
+    }
+  },
+  "final_source_verification": {
+    "guard_full": {
+      "source_files_match_current_tree": true,
+      "native_frames_verified": true,
+      "seconds": 71.46666666666667,
+      "peak_dbfs": -22.431469458355803
+    },
+    "overlook_bench": {
+      "source_files_match_current_tree": true,
+      "native_frames_verified": true,
+      "seconds": 15.5,
+      "peak_dbfs": -27.45420341602224
+    },
+    "farm_cat": {
+      "source_files_match_current_tree": true,
+      "native_frames_verified": true,
+      "seconds": 8.466666666666667,
+      "peak_dbfs": -32.04870173696204
+    },
+    "unfinished_masonry": {
+      "source_files_match_current_tree": true,
+      "native_frames_verified": true,
+      "seconds": 33.63333333333333,
+      "peak_dbfs": -13.309108890513318
+    }
+  }
+}

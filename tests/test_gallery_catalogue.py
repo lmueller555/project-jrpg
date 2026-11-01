@@ -97,6 +97,10 @@ class GalleryCatalogueTests(unittest.TestCase):
                 witness = tuple(game.player.position)
                 self.assertEqual(wildlife.vignette['phase'], 'idle')
                 self.assertFalse(wildlife.worker.wildlife_owned)
+            elif identifier == 'checkpoint_borrowed_seat':
+                checkpoint = game.world.checkpoint_charm
+                checkpoint_roster = tuple((role, id(actor)) for role, actor in checkpoint.actors.items())
+                checkpoint_flags = set(game.social.flags)
             # 300 seconds covers the full 252.57-second opening without skipping
             # shots. The pasture visit takes about 62 seconds; other fixtures
             # finish in under 40 seconds with brisk dialogue input.
@@ -181,6 +185,19 @@ class GalleryCatalogueTests(unittest.TestCase):
                 self.assertEqual(game.camera.framing_height, 320)
                 self.assertGreater(playback.elapsed, 60)
                 self.assertLess(playback.elapsed, 75)
+            elif identifier == 'checkpoint_borrowed_seat':
+                from checkpoint_charm import HOMES, valid_state
+                self.assertEqual(checkpoint.stage, 'done')
+                self.assertEqual(checkpoint.state['read'], 7)
+                self.assertEqual(checkpoint.state['contacts'], 5)
+                self.assertTrue(valid_state(checkpoint.to_dict()))
+                self.assertEqual(tuple((role, id(actor)) for role, actor in checkpoint.actors.items()), checkpoint_roster)
+                for role, actor in checkpoint.actors.items():
+                    self.assertEqual(tuple(actor.position), HOMES[role])
+                    self.assertIsNone(actor.story_sprite)
+                self.assertEqual(game.social.flags, checkpoint_flags)
+                self.assertTrue(all(not game.world.can_stand(gate['position']) for gate in game.world.gates))
+                self.assertTrue({f'checkpoint_borrowed_seat_{stage}' for stage in ('opening','banter','closing')} <= scripts)
             elif identifier == 'bridge_tea':
                 self.assertEqual(game.world.bridge_crew.state['tea_beat'], 5)
                 self.assertIn('bridge_crew_tea', scripts)

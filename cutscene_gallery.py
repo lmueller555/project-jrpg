@@ -364,6 +364,14 @@ def _sheep_visit(game, playback):
                    and not worker.wildlife_owned, drive)
 
 
+def _checkpoint_seat(game, playback):
+    world = game.overworld_world
+    _station(game, world, (408, -2140))
+    controller = world.checkpoint_charm
+    if not game.overworld_travel.interact():raise ValueError('Cannot start the checkpoint exchange')
+    playback.watch(lambda: controller.state['stage'] == 'done' and not game.social.active)
+
+
 def _entry(identifier, name, chapter, description, fixture, automatic=False):
     return GalleryEntry(identifier, name, chapter, description,
                         f'assets/ui/gallery/{identifier}.png',
@@ -423,6 +431,8 @@ GALLERY_ENTRIES = (
            'A quiet conversation leads the gardener to move a struggling plant beside the hedge.', _garden_care),
     _entry('sheep_basket_visit', 'A Familiar Visitor', 'Elden Vale',
            'The gardener brings an empty basket to the sheep, offers a gentle pat, and returns it home.', _sheep_visit, True),
+    _entry('checkpoint_borrowed_seat', 'Keeping Your Seat', 'Elden Vale',
+           'Two familiar guards share a bench while taking turns at the supplies and the watch.', _checkpoint_seat),
 )
 
 GALLERY_BY_ID = {entry.id: entry for entry in GALLERY_ENTRIES}

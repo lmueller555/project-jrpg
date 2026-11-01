@@ -32,6 +32,8 @@ class OverworldTravel:
         self.bridge_state = None
         self.garden_state = None
         self.wildlife_state = None
+        self.checkpoint_state = None
+        self.participation_state = None
 
     @property
     def active(self):
@@ -43,7 +45,11 @@ class OverworldTravel:
         bridge = world.bridge_crew.to_dict() if world is not None else self.bridge_state
         farm = world.grain_farm.to_dict() if world is not None else self.farm_state
         wildlife = world.wildlife.to_dict() if world is not None else self.wildlife_state
+        checkpoint = world.checkpoint_charm.to_dict() if world is not None else self.checkpoint_state
+        participation = world.participation.to_dict() if world is not None else self.participation_state
         return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered),
+                **({'checkpoint_charm': checkpoint} if checkpoint is not None else {}),
+                **({'participation': participation} if participation is not None else {}),
                 **({'wildlife': wildlife} if wildlife is not None else {}),
                 **({'garden_orchard': garden} if garden is not None else {}),
                 **({'bridge_crew': bridge} if bridge is not None else {}),
@@ -56,6 +62,12 @@ class OverworldTravel:
         retaining precise feet and action time for interruption recovery.
         """
         record=self.to_dict()
+        if 'checkpoint_charm' in record:
+            from checkpoint_charm import progress_state
+            record['checkpoint_charm']=progress_state(record['checkpoint_charm'])
+        if 'participation' in record:
+            from regional_participation import progress_state
+            record['participation']=progress_state(record['participation'])
         wildlife=record.get('wildlife')
         if wildlife is not None:
             from purposeful_wildlife import progress_state
@@ -86,8 +98,12 @@ class OverworldTravel:
         from bridge_crew import valid_state as valid_bridge_state
         from garden_orchard import valid_state as valid_garden_state
         from purposeful_wildlife import valid_context as valid_wildlife_context
+        from checkpoint_charm import valid_state as valid_checkpoint_state
+        from regional_participation import valid_context as valid_participation_context
         if not (isinstance(record, dict) and {'version', 'region'} <= set(record)
-                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'garden_orchard', 'wildlife'}
+                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'garden_orchard', 'wildlife', 'checkpoint_charm', 'participation'}
+                and ('checkpoint_charm' not in record or valid_checkpoint_state(record['checkpoint_charm']))
+                and ('participation' not in record or valid_participation_context(record['participation'], data.get('player')))
                 and ('wildlife' not in record or valid_wildlife_context(
                     record['wildlife'], record.get('garden_orchard')))
                 and ('garden_orchard' not in record or valid_garden_state(record['garden_orchard']))
@@ -117,6 +133,8 @@ class OverworldTravel:
         self.bridge_state = (data or {}).get('bridge_crew')
         self.garden_state = (data or {}).get('garden_orchard')
         self.wildlife_state = (data or {}).get('wildlife')
+        self.checkpoint_state = (data or {}).get('checkpoint_charm')
+        self.participation_state = (data or {}).get('participation')
         self.discovered.clear()
         self.discovered.update((data or {}).get('discovered', ['eldenmere']))
         if self.game._overworld_world is not None:
@@ -125,6 +143,8 @@ class OverworldTravel:
             self.game._overworld_world.bridge_crew.restore(self.bridge_state)
             self.game._overworld_world.garden_orchard.restore(self.garden_state)
             self.game._overworld_world.wildlife.restore(self.wildlife_state)
+            self.game._overworld_world.checkpoint_charm.restore(self.checkpoint_state)
+            self.game._overworld_world.participation.restore(self.participation_state)
 
     def stage_story_restore(self):
         """Restore committed town actors at town scale, retaining region feet."""
@@ -210,6 +230,7 @@ class OverworldTravel:
     def _commit(self, destination, position, facing, transition):
         g = self.game
         origin = g.world
+        if self.active:g.world.participation.before_travel(g)
         self._clear_guard()
         if origin is g.town:
             g.exterior_position.update(g.player.position)
@@ -270,6 +291,8 @@ class OverworldTravel:
             g.world.bridge_crew.update(seconds, g)
             g.world.garden_orchard.update(seconds, g)
             g.world.wildlife.update(seconds, g)
+            g.world.checkpoint_charm.update(seconds, g)
+            g.world.participation.update(seconds, g)
         # Observe leaving a contact even during the short transfer cooldown.
         # A running player can reach the town exit again before it expires.
         if g.world is g.town:
@@ -299,8 +322,9 @@ class OverworldTravel:
         if not self.active:
             return None
         return next((gate for gate in self.game.world.gates
-                     if any(self.game.player.position.distance_to(point) <= 52
-                            for point in gate.get('guard_positions', [gate['guard_position']]))), None)
+                     if any(self.game.player.position.distance_to(actor.position) <= 52
+                            for actor in self.game.world.npcs
+                            if actor.data['id'].startswith('road_guard:'+gate['id']+':'))), None)
 
     def _clear_guard(self):
         """Release the selected speaker on completion, cancellation or travel."""
@@ -311,6 +335,10 @@ class OverworldTravel:
 
     def interaction_hint(self):
         if self.active:
+            hint = self.game.world.participation.interaction_hint(self.game)
+            if hint:return hint
+            hint = self.game.world.checkpoint_charm.interaction_hint(self.game)
+            if hint:return hint
             hint = self.game.world.bridge_crew.interaction_hint(self.game)
             if hint:return hint
             hint = self.game.world.grain_farm.interaction_hint(self.game)
@@ -322,6 +350,8 @@ class OverworldTravel:
     def interact(self):
         if not self.can_travel():
             return False
+        if self.active and self.game.world.participation.interact(self.game):return True
+        if self.active and self.game.world.checkpoint_charm.interact(self.game):return True
         if self.active and self.game.world.bridge_crew.interact(self.game):return True
         if self.active and self.game.world.grain_farm.interact(self.game):return True
         if self.active and self.game.world.garden_orchard.interact(self.game):return True

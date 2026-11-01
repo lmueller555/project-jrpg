@@ -44,7 +44,7 @@ journey directly. See the [opening cinematic guide](docs/OPENING_CINEMATIC.md).
 Settings changes fullscreen/windowed mode, independent music/effects levels,
 text size, reduced interface motion and objective visibility. Continue resumes
 a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
-**Gallery** replays 26 authored cinematics and staged sequences without playing
+**Gallery** replays 27 authored cinematics and staged sequences without playing
 through their quests. Browse actual scene thumbnails with the mouse/wheel or
 arrows, then click a card or press Enter. **Esc** returns to the catalogue,
 **R** restarts the scene, and Space/E/click advances dialogue. Each replay uses
@@ -110,6 +110,13 @@ stretching by the southern doorstep. After the kitchen gardener finishes her
 plant-care scene, she takes an empty basket to the southern sheep for a brief
 visit. See the [actual-game review](docs/reviews/purposeful_wildlife/README.md).
 Replay the finite visit as **A Familiar Visitor** in the title-screen Gallery.
+
+At the northern checkpoint, approach the bench and press E to watch the guards
+share a seat while checking their stores. **Keeping Your Seat** replays the full
+exchange in Gallery. The overlook bench offers optional sitting; E, Escape or
+movement stands again. You can also greet the resting farm cat and inspect the
+bridge crew's unfinished masonry. These small moments add no tasks or rewards.
+See the [gameplay review](docs/reviews/checkpoint_charm/README.md).
 
 The [region NPC animation pass](docs/REGION_NPCS.md) adds authored full-body
 working and directional carrying poses for the grain and bridge workers, with registered
