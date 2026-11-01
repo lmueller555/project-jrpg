@@ -13,7 +13,8 @@
     "listen_left": "listen_left.png",
     "gesture_left": "gesture_left.png",
     "stand_right": "stand_right.png",
-    "stand_back": "stand_back.png"
+    "stand_back": "stand_back.png",
+    "turn_left_back": "turn_left_back.png"
   },
   "loops": {
     "walk_left": [
@@ -31,6 +32,24 @@
       },
       {
         "file": "walk_3.png",
+        "duration_ms": 160
+      }
+    ],
+    "walk_left_back": [
+      {
+        "file": "walk_left_back_0.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_left_back_1.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_left_back_2.png",
+        "duration_ms": 160
+      },
+      {
+        "file": "walk_left_back_3.png",
         "duration_ms": 160
       }
     ],
