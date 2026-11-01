@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "generations": [
+    {
+      "file": "region_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt": "Create ONE high-resolution detailed pixel-art aerial landscape plate for a JRPG cinematic, matching the rich sunlit cinematic pixel style of the second reference. Use the FIRST reference as a STRICT north-up geographic layout: keep every major feature in its exact normalized position and preserve the shapes of the two rivers, woodland, hills, farms, roads, boundary walls and settlement. Canvas 1536x1024, landscape 3:2. This is an actual inhabited inland valley seen from high overhead, with sumptuous handcrafted pixel clusters, tiny architectural detail, varied tree canopies, hedges, crop furrows, small footbridges only over the internal village brook, blue water highlights and warm late-morning light. NO map labels, icons, text, compass, grid, border, interface, people, guards, caravans, birds, animals or clouds baked into the landscape. North is the top, east is right. No horizon/sky at all: a bird's-eye terrain view. Do not invent additional towns, rivers, mountain ranges, bridges or coastline.\n\nEXACT GEOGRAPHY shared by source reference and runtime: world bounds x=-177..177, y=-112..124, y increases south. There are exactly TWO large winding boundary rivers, west around x=-120 and east around x=120, flowing north to south from top to bottom. They do not join. The western river has exactly ONE DESTROYED broad stone bridge at (-111,30), normalized (0.1864,0.6017), with a very visible missing center and shattered approaches on both banks; never paint an intact span there. There is NO bridge over the eastern river. Two modest low stone boundary walls join the two riverbanks: the northern wall along y=-96 (v=.0678), with small guarded gate at x=20 (u=.5565), and southern wall along y=96 (v=.8814), with small guarded gate at x=28 (u=.5791). These are low rural walls, not a fortress or city wall; do not draw towers or battlements. Their thickness is small relative to the valley. The opening itself remains visibly clear in the wall. The white horizontal guide lines in reference are these STONE WALLS, not roads.\n\nEldenmere is the ONE village at tile (12,-28), normalized (.5339,.3559). It has a recognizable cluster of warm timber/cottage buildings and blue slate roofs with a humble blue-roof sanctuary and timber bell tower, nestled beside a small internal brook. Keep it the same scale and location as in layout reference. Its orchard lies immediately southwest. The Upper Millrace at (8,-64), normalized(.5226,.2034), is a tiny waterworks/mill in northern woodland and is separate from both boundary rivers. Dense rounded forest occupies the north and northwest and a smaller grove in the southwest. Wooded low rocky foothills form the east strip (around x=92) exactly where shown; no alpine snow peaks. The lower half is open rural farmland: western farm(-36,8), southern farm(-15,51), eastern farm(60,49), with restrained timber barns, yards and crop parcels in the same positions as source. The main light stone road goes from Eldenmere south then curves WEST through farmland to the broken western bridge; its far-bank continuation bends south. The thinner dirt track from the central road goes southeast then south to the south checkpoint at x28/y96; it does not become a giant highway. Preserve the small woodland/eastern walking loops and road-crew staging near(-68,16) without new settlements.\n\nPaint the terrain richly and beautifully while respecting the reference geometry. Increase the detail and natural variation compared with the guide; remove its map-like flat patterns. Soft canopy shadows, uneven stonework, diverse field margins, orchard rows, river shallows, little flowers and tracks should feel lived in. All aerial features must remain geographically aligned so the camera can later fly down to the real southern gate.",
+      "referenced_image_paths": [
+        "region_layout_reference.png",
+        "assets/story/regent_arrival/scenery/south_gate.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "gate_oblique_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "gate_oblique_prompt.txt",
+      "referenced_image_paths": [
+        "assets/story/regent_arrival/scenery/south_gate.png",
+        "gate_layout_reference.png",
+        "region_generated.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "region_banks_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "region_banks_prompt.txt",
+      "referenced_image_paths": [
+        "region_generated.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "gate_high_oblique_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "gate_high_oblique_prompt.txt",
+      "referenced_image_paths": [
+        "gate_layout_reference.png",
+        "gate_oblique_generated.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "gate_overhead_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "gate_overhead_prompt.txt",
+      "referenced_image_paths": [
+        "gate_overhead_layout_reference.png",
+        "region_generated.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "gate_open_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "gate_open_prompt.txt",
+      "referenced_image_paths": [
+        "gate_oblique_generated.png"
+      ],
+      "transparent_background": false
+    },
+    {
+      "file": "foreground_canopy_generated.png",
+      "tool": "image_gen.imagegen",
+      "prompt_file": "foreground_canopy_prompt.txt",
+      "referenced_image_paths": [
+        "assets/story/regent_arrival/scenery/south_gate.png"
+      ],
+      "transparent_background": true
+    }
+  ]
+}

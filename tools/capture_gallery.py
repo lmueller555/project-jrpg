@@ -144,7 +144,7 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'halden_arrival':return g.opening_conclusion.settled and g.social.active
     if identifier == 'millrace_threat':return g.mill_quest.encounter_cutscene_phase == 'conversation' and g.mill_quest._encounter_elapsed >= .2
     if identifier.startswith('mill_'):return g.mill_quest.action is not None and g.mill_quest.action_time >= .75
-    if identifier == 'regent_arrival':return g.regent_arrival.shot == 'gate_approach' and g.regent_arrival.phase_time >= 3.3
+    if identifier == 'regent_arrival':return g.regent_arrival.shot == 'aerial_region' and g.regent_arrival.phase_time >= 4.
     if identifier == 'regent_cart_release':return g.regent_quest.cart_released and g.regent_quest._release_time >= .6
     wanted = {'lantern_frame':'assemble', 'lantern_collect':'rest_pickup',
               'lantern_homecoming':'rest_place', 'lantern_paper_practice':'rest_draft',

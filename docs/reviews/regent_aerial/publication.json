@@ -1,0 +1,12 @@
+{
+  "transport": "GitHub Git Data API",
+  "local_tested_code_commit": "5e7666a2a14fc1e1f0a58c65fc8629e3becab947",
+  "local_reviewed_head": "eb33e139ca888fda8d92a0b832c9d32aa30e801c",
+  "published_content_commit": "112b66653f30f168671549b5a3652ab616c9c167",
+  "identical_local_and_published_tree": "98ecc8ad90425b33ebb2ed4500266d5cd83bef07",
+  "changed_paths": 84,
+  "unique_git_blobs_verified": 83,
+  "all_uploaded_binary_and_text_git_object_ids_match": true,
+  "capture_report_sha256": "6ebdb15875c8d57053a81e66dd128b31feebcd9df1747f19ba910881e5daeaca",
+  "note": "API-authored commit metadata differs from local commit metadata. The entire published content tree is byte-identical to the local reviewed tree. This record is the only subsequent file addition."
+}

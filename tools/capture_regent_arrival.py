@@ -522,9 +522,10 @@ class Capture:
         quest = self._quest()
         persistence = self._persistence()
         inputs = [ROOT/name for name in ('main.py','mill_quest.py','regent_quest.py',
-            'regent_arrival.py','speech_bubble.py','social.py','ui_style.py','tools/capture_regent_arrival.py',
+            'regent_arrival.py','regent_aerial.py','speech_bubble.py','social.py','ui_style.py','tools/capture_regent_arrival.py',
             'assets/story/regent/scene.json','assets/story/regent/layout.json','assets/story/regent/art.json')]
         inputs += sorted((ROOT/'assets/story/regent_arrival').rglob('*'))
+        inputs += sorted((ROOT/'assets/story/regent_aerial').rglob('*'))
         hashes = {str(path.relative_to(ROOT)):hashlib.sha256(path.read_bytes()).hexdigest()
                   for path in inputs if path.is_file()}
         report = {'actual_renderer':True,'capture_stage':'final' if self.output == ROOT/'docs/reviews/regent_arrival' else 'diagnostic',

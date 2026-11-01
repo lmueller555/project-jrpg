@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "exporter": "tools/build_regent_aerial_actors.py",
+  "exporter_sha256": "a21269bf0cbd9d1700faed12c1d411cda5019e1c7e5d36ff309f27413f4356b4",
+  "prompts_sha256": "f899ddf3f87b22018b2eb931d137ebf165aca19984f40b6a9215b081bebdeeba",
+  "sources": {
+    "bird_generated.png": "431f1a911380f46ecb53e7a6a84854a710686378d8368bb5e8790cd81a0b8794",
+    "convoy_generated.png": "1bdf89bbf171a556665ba3f55ab5c10e3e6de2636d083927c1fea392a9e61df3"
+  },
+  "registrations": {
+    "bird/flap_0.png": {
+      "source_bounds": [
+        55,
+        62,
+        323,
+        333
+      ],
+      "source_body_anchor": [
+        214.35,
+        264.5
+      ],
+      "scale": 0.15267176
+    },
+    "bird/flap_1.png": {
+      "source_bounds": [
+        411,
+        88,
+        458,
+        311
+      ],
+      "source_body_anchor": [
+        639.784,
+        271.0
+      ],
+      "scale": 0.15267176
+    },
+    "bird/flap_2.png": {
+      "source_bounds": [
+        862,
+        117,
+        524,
+        266
+      ],
+      "source_body_anchor": [
+        1117.817,
+        250.0
+      ],
+      "scale": 0.15267176
+    },
+    "bird/flap_3.png": {
+      "source_bounds": [
+        1384,
+        107,
+        365,
+        276
+      ],
+      "source_body_anchor": [
+        1567.284,
+        245.0
+      ],
+      "scale": 0.15267176
+    },
+    "bird/flap_4.png": {
+      "source_bounds": [
+        45,
+        527,
+        341,
+        272
+      ],
+      "source_body_anchor": [
+        215.077,
+        663.0
+      ],
+      "scale": 0.15267176
+    },
+    "bird/flap_5.png": {
+      "source_bounds": [
+        465,
+        469,
+        352,
+        337
+      ],
+      "source_body_anchor": [
+        640.659,
+        674.0
+      ],
+      "scale": 0.15267176
+    },
+    "bird/bank_left.png": {
+      "source_bounds": [
+        927,
+        456,
+        340,
+        329
+      ],
+      "source_body_anchor": [
+        1130,
+        666
+      ],
+      "scale": 0.15267176
+    },
+    "bird/bank_right.png": {
+      "source_bounds": [
+        1392,
+        455,
+        332,
+        336
+      ],
+      "source_body_anchor": [
+        1540,
+        670
+      ],
+      "scale": 0.15267176
+    },
+    "aldric/overhead.png": {
+      "source_bounds": [
+        204,
+        335,
+        114,
+        160
+      ],
+      "source_ground_anchor": [
+        261,
+        495
+      ],
+      "scale": 0.175
+    },
+    "guard/overhead.png": {
+      "source_bounds": [
+        684,
+        287,
+        127,
+        205
+      ],
+      "source_ground_anchor": [
+        747,
+        492
+      ],
+      "scale": 0.175
+    },
+    "caravan/overhead.png": {
+      "source_bounds": [
+        1132,
+        12,
+        227,
+        558
+      ],
+      "source_ground_anchor": [
+        1245,
+        570
+      ],
+      "scale": 0.21505376
+    },
+    "aldric/oblique.png": {
+      "source_bounds": [
+        205,
+        683,
+        116,
+        255
+      ],
+      "source_ground_anchor": [
+        263,
+        938
+      ],
+      "scale": 0.18
+    },
+    "guard/oblique.png": {
+      "source_bounds": [
+        678,
+        669,
+        113,
+        271
+      ],
+      "source_ground_anchor": [
+        734,
+        940
+      ],
+      "scale": 0.18
+    },
+    "caravan/oblique.png": {
+      "source_bounds": [
+        1024,
+        594,
+        503,
+        397
+      ],
+      "source_ground_anchor": [
+        1275,
+        991
+      ],
+      "scale": 0.26242545
+    }
+  },
+  "exports": {
+    "bird/flap_0.png": "a713d11f4cc8d9877c3a8a362d7f1220980fa95018d147189edf12ecd65e0f0f",
+    "bird/flap_1.png": "baf34ce1cc58cf8fbbf22b8eb08a4339942b7460d80f3f90f8d2b2bf080a214e",
+    "bird/flap_2.png": "d33fcf9bc0d352129b07fcc15470b9f751f6c264d96795b3ee6e8199c67ae525",
+    "bird/flap_3.png": "0e59bdf4a93a6ed3c6d2d9634e5d6fe4a9f8c140fbdd0950a043b5a4478da1a2",
+    "bird/flap_4.png": "0a6f1186fb923c060fd1dcb4983c305f1b488baaaa0da1add0f40f51c255baeb",
+    "bird/flap_5.png": "c288241da2206b456549dd62260cff9d4ba442fc58aea4d9ff710060ae4737eb",
+    "bird/bank_left.png": "5794ba5415c86c39869f4db1a76312085a0854c8b9c873c9f1438368d365f7ce",
+    "bird/bank_right.png": "8e4a27c59de2ab0efec8d7c223fb037cb3016524e9b1c2e96dfc790cfae73cd1",
+    "bird/animation.json": "1317c73e184e26dfc40064cf00efe10034b10878d7db6eeb1cd6e5fbf0c498c7",
+    "aldric/overhead.png": "b8ee65a5f62fab2dd398268b748217a2948abc92c4245e83e4645332f11fcf3a",
+    "guard/overhead.png": "f62c2698c72d561da7e21d84ace13d56988224cc5a191cd4e6d99cf7f50f1361",
+    "caravan/overhead.png": "8fb6fc329061aec4b401c1847f95dd24aa385e275cf4b342202bfcabd2921a81",
+    "aldric/oblique.png": "ce2057355b9cb2e46334960d2bd1b6b4bdfd091bb624fbf13ee1a4fa5c05a65f",
+    "guard/oblique.png": "4d2d5591e076187c6517bb4183919b019a6dc2da119966c13903c7dceadce7c0",
+    "caravan/oblique.png": "9c267ec44eb9c134ff1545ce8455fb2d9e04986e56819ceb460d9eaedba5beb7",
+    "aldric/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
+    "guard/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
+    "caravan/animation.json": "7f14c0d11101f956c08df62385bfa16b21924f0be418db4ce09e0db60b5a9636",
+    "manifest.json": "adf48bad854773afd4a5f3fdad7d83fd08d0c01c1f8325773788cceaeddc595f"
+  },
+  "notes": [
+    "Original generations and exact prompts retained without repainting.",
+    "Binary alpha component isolation removes low-alpha matte and keeps neighboring birds out of overlapping crop rectangles.",
+    "All six flap frames share scale and align the head/tail body axis; banking frames align the torso pivot.",
+    "Overhead humans are foreshortened, and the overhead vehicle exposes its roof and complete ground footprint.",
+    "Both caravan views include exactly one seated driver; no separate aerial driver is attached.",
+    "Existing ground cinematic actor exports remain unchanged."
+  ]
+}

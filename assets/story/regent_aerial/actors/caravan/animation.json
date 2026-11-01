@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "canvas": [
+    160,
+    160
+  ],
+  "anchor": [
+    80,
+    128
+  ],
+  "poses": {
+    "overhead": "overhead.png",
+    "oblique": "oblique.png"
+  },
+  "loops": {},
+  "source": "imagegen-authored overhead and high-oblique cinematic subjects",
+  "overhead_facing": "north",
+  "oblique_facing": "northwest",
+  "driver_baked_poses": [
+    "overhead",
+    "oblique"
+  ],
+  "driver_count": 1
+}

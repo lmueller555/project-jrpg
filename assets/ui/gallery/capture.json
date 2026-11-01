@@ -653,9 +653,9 @@
       "name": "Aldric\u2019s Relief Caravan",
       "source": "production Game.canvas",
       "file": "assets/ui/gallery/regent_arrival.png",
-      "sha256": "cf4386926dc9747feed0a39023dae8efbf3870cced8b6c31d6077f5fd6e5c26f",
-      "frame": 165,
-      "seconds": 5.5333,
+      "sha256": "1d2d17ace43fca15dcbc0bc4250399c76b7321a304744072194666bd37c1a43c",
+      "frame": 186,
+      "seconds": 6.2333,
       "crop": [
         0,
         25,
@@ -667,8 +667,8 @@
         "opening_action": null,
         "opening_action_seconds": 0.0,
         "cinematic_seconds": 0.0,
-        "arrival_shot": "gate_approach",
-        "arrival_seconds": 3.3333,
+        "arrival_shot": "aerial_region",
+        "arrival_seconds": 4.0333,
         "elira_action": null,
         "elira_seconds": 0.0,
         "venn_phase": null,
@@ -691,8 +691,14 @@
         "garden_phase": null,
         "garden_step": null,
         "garden_seconds": 0,
+        "wildlife_vignette": {},
+        "checkpoint_stage": null,
+        "checkpoint_state": null,
         "dialogue": null
-      }
+      },
+      "source_commit": "5e7666a2a14fc1e1f0a58c65fc8629e3becab947",
+      "runtime_python_sha256": "30dba57947d0a322bc9dd77ba0a3924ed49033f8768133b415e8bd73b9b155c6",
+      "review_frame": "docs/reviews/gallery/regional_regent_arrival.png"
     },
     {
       "id": "regent_cart_release",

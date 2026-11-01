@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "canvas": [
+    96,
+    96
+  ],
+  "anchor": [
+    48,
+    48
+  ],
+  "facing": "north",
+  "poses": {
+    "glide_north": "flap_2.png",
+    "bank_left_north": "bank_left.png",
+    "bank_right_north": "bank_right.png"
+  },
+  "loops": {
+    "flap_north": [
+      {
+        "file": "flap_0.png",
+        "duration_ms": 80
+      },
+      {
+        "file": "flap_1.png",
+        "duration_ms": 75
+      },
+      {
+        "file": "flap_2.png",
+        "duration_ms": 95
+      },
+      {
+        "file": "flap_3.png",
+        "duration_ms": 75
+      },
+      {
+        "file": "flap_4.png",
+        "duration_ms": 75
+      },
+      {
+        "file": "flap_5.png",
+        "duration_ms": 80
+      }
+    ]
+  },
+  "source": "imagegen-authored kestrel; dorsal six-frame wingbeat and bank poses",
+  "registration": "Shared whole-sheet scale and torso anchors; wings never cropped to a uniform grid."
+}
