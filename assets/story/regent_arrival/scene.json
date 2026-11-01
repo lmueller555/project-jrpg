@@ -68,13 +68,83 @@
       "fade_out": 1.0
     },
     {
-      "id": "gate_approach",
-      "scene": "gate",
+      "id": "aerial_region",
+      "scene": "aerial",
+      "min_seconds": 12,
+      "camera": {
+        "from": [
+          400,
+          140
+        ],
+        "to": [
+          400,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": [],
+      "fade_in": 1.2
+    },
+    {
+      "id": "aerial_bank",
+      "scene": "aerial",
+      "min_seconds": 4,
+      "camera": {
+        "from": [
+          400,
+          140
+        ],
+        "to": [
+          400,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": []
+    },
+    {
+      "id": "aerial_gate",
+      "scene": "aerial",
       "min_seconds": 6,
       "camera": {
         "from": [
-          420,
-          132
+          400,
+          140
+        ],
+        "to": [
+          400,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": []
+    },
+    {
+      "id": "aerial_descent",
+      "scene": "aerial",
+      "min_seconds": 6,
+      "camera": {
+        "from": [
+          400,
+          140
+        ],
+        "to": [
+          400,
+          140
+        ]
+      },
+      "actors": [],
+      "dialogue": [],
+      "sound": "travel"
+    },
+    {
+      "id": "gate_approach",
+      "scene": "gate",
+      "min_seconds": 2.5,
+      "camera": {
+        "from": [
+          400,
+          140
         ],
         "to": [
           380,
@@ -86,27 +156,27 @@
           "id": "caravan",
           "pose": "walk_left",
           "position": [
-            1045,
+            905,
             375
           ],
           "to": [
             805,
             375
           ],
-          "move_seconds": 6
+          "move_seconds": 2.5
         },
         {
           "id": "aldric",
           "pose": "walk_left",
           "position": [
-            865,
+            725,
             375
           ],
           "to": [
             625,
             375
           ],
-          "move_seconds": 6
+          "move_seconds": 2.5
         },
         {
           "id": "guard",
@@ -128,7 +198,6 @@
         }
       ],
       "dialogue": [],
-      "fade_in": 0.9,
       "sound": "travel"
     },
     {

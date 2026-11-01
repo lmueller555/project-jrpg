@@ -13,14 +13,22 @@ battle scenes, with separately authored scenery, actor poses and animation.
 The visual clock belongs to the cinematic rather than the exploration world.
 
 1. The completed mill gets a short closing hold and a fade.
-2. A modest relief caravan reaches the intact southern land checkpoint. A
+2. A bird leads an aerial view west across the actual Elden Vale landscape,
+   then banks left toward the south. The view establishes the two boundary
+   rivers, northern woodland, eastern foothills, village, farms and damaged
+   western crossing. Following the bird over the southern wall reveals the
+   guards and approaching relief caravan from above. The camera descends and
+   passes beneath the nearby canopy before easing into the gate scene. This
+   foreground pass conceals the registered transfer between aerial and ground
+   views; the scenery never dissolves between the two perspectives.
+3. A modest relief caravan reaches the intact southern land checkpoint. A
    guard recognizes Aldric; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
    Aldric and the caravan turn into the gateway and recede along the painted
    road. A settled camera, shared road perspective and masonry occlusion make
    their passage into the valley visible. The wagon clears the gate before
    the scene fades out.
-3. Inside the wall, Aldric listens to local accounts of the lightning strike
+4. Inside the wall, Aldric listens to local accounts of the lightning strike
    and its consequences for ordinary deliveries. The ruined western crossing
    provides a physical view of the damage. His questions, practical response
    and reluctance to promise an unsupported date establish his responsibilities
@@ -28,11 +36,11 @@ The visual clock belongs to the cinematic rather than the exploration world.
    A brief black transition separates the gate passage from this later stop.
    The riverbank fades into view and holds on the ruined crossing before the
    conversation begins; travel effects give way to river ambience.
-4. The caravan continues toward Eldenmere. Serene watches its approach from
+5. The caravan continues toward Eldenmere. Serene watches its approach from
    inside the sanctuary. Her private concerns acknowledge Aldric's difficult
    journey and their coming discussion. Tomas's cups return her attention to
    hospitality.
-5. The caravan's arrival leads into its registered waiting location in town.
+6. The caravan's arrival leads into its registered waiting location in town.
    The scene fades back to Caelan's actual MQ02 completion location.
 
 The southern land gate and the broken western bridge are separate routes. The
@@ -106,6 +114,12 @@ The [gate and transition review](reviews/regent_arrival_polish/README.md)
 shows the corrected walk cycle and continuous gate-to-riverbank sequence.
 The full arrival can also be replayed from the title screen's **Gallery** as
 **Aldric's Relief Caravan**, without loading or changing a journey.
+
+The [aerial-opening review](reviews/regent_aerial/README.md) records the
+bird-led introduction and its continuous handoff to the gate. Its geographic
+reference comes from `assets/maps/overworld/elden_vale/region.json`; cinematic
+art and animation sources are retained under
+`assets/source/cinematics/regent_aerial/`.
 
 See the [production-game review](reviews/regent_arrival/README.md),
 [MQ03 guide](REGENT_QUEST.md), [regional surge context](narrative/game_01/REGIONAL_SURGES.md)

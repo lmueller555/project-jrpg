@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "canvas": [
+    48,
+    64
+  ],
+  "anchor": [
+    24,
+    56
+  ],
+  "poses": {
+    "overhead": "overhead.png",
+    "oblique": "oblique.png"
+  },
+  "loops": {},
+  "source": "imagegen-authored overhead and high-oblique cinematic subjects",
+  "overhead_facing": "north",
+  "oblique_facing": "northwest"
+}

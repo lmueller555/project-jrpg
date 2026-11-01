@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "region": {
+    "file": "region.png",
+    "bounds_tiles": [
+      -177,
+      -112,
+      354,
+      236
+    ],
+    "anchors": {
+      "eldenmere": [
+        820,
+        367
+      ],
+      "upper_millrace": [
+        804,
+        205
+      ],
+      "west_broken_bridge": [
+        281,
+        613
+      ],
+      "north_gate": [
+        855,
+        68
+      ],
+      "south_gate": [
+        891,
+        903
+      ]
+    }
+  },
+  "gate_overhead": {
+    "file": "gate_overhead.png",
+    "bounds_tiles": [
+      -2,
+      76,
+      60,
+      40
+    ],
+    "anchors": {
+      "west_post": [
+        718,
+        514
+      ],
+      "east_post": [
+        819,
+        513
+      ],
+      "aperture": [
+        768.5,
+        513.5
+      ],
+      "hut_peak": [
+        602,
+        460
+      ],
+      "road_aldric": [
+        793.6,
+        716.8
+      ],
+      "road_caravan": [
+        870.4,
+        755.2
+      ]
+    }
+  },
+  "gate_oblique": {
+    "file": "gate_oblique.png",
+    "bounds_tiles": [
+      7.4193548387,
+      84.2580645161,
+      39.6387096774,
+      26.4258064516
+    ],
+    "anchors": {
+      "west_post": [
+        720,
+        455
+      ],
+      "east_post": [
+        875,
+        455
+      ],
+      "aperture": [
+        797.5,
+        455
+      ],
+      "hut_peak": [
+        610,
+        350
+      ],
+      "road_aldric": [
+        836.25,
+        765
+      ],
+      "road_caravan": [
+        952.5,
+        823.125
+      ]
+    }
+  },
+  "foreground_canopy": {
+    "file": "foreground_canopy.png",
+    "canvas": [
+      960,
+      640
+    ],
+    "coverage_rect": [
+      249,
+      131,
+      347,
+      325
+    ],
+    "coverage_rect_format": "xywh",
+    "alpha_threshold": 128,
+    "suggested_near_scale": 2
+  },
+  "geography": {
+    "source": "assets/maps/overworld/elden_vale/region.json",
+    "source_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "orientation": "north up; x east, y south",
+    "region_wall_water_patch_rects": [
+      [
+        224,
+        55,
+        256,
+        83
+      ],
+      [
+        1278,
+        54,
+        1314,
+        84
+      ],
+      [
+        224,
+        890,
+        250,
+        919
+      ],
+      [
+        1284,
+        890,
+        1315,
+        921
+      ]
+    ],
+    "gate_open_road_patch_rect": [
+      736,
+      418,
+      857,
+      438
+    ],
+    "west_bridge": "broken; no other boundary-river crossing"
+  }
+}

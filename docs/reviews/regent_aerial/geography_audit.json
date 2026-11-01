@@ -1,0 +1,261 @@
+{
+  "source": "assets/story/regent_aerial/landscape/region.png",
+  "source_sha256": "dfe84d0d0b29249acb530750ba48c5efcf54b6bafb9c6788cb37a4771916ccfe",
+  "region_geometry_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+  "bounds_tiles": [
+    -177,
+    -112,
+    354,
+    236
+  ],
+  "image_size": [
+    1536,
+    1024
+  ],
+  "method": "Manual observed landmark center selection from actual generated artwork, compared with expected source coordinates. Cyan crosses/lines are expected; orange circles are observed. No runtime/source art edited.",
+  "anchors": {
+    "eldenmere": {
+      "expected_tile": [
+        12,
+        -28
+      ],
+      "expected_pixel": [
+        820.07,
+        364.47
+      ],
+      "observed_pixel": [
+        820,
+        367
+      ],
+      "observed_tile": [
+        11.98,
+        -27.42
+      ],
+      "error_tiles": 0.582,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "upper_millrace": {
+      "expected_tile": [
+        8,
+        -64
+      ],
+      "expected_pixel": [
+        802.71,
+        208.27
+      ],
+      "observed_pixel": [
+        810,
+        210
+      ],
+      "observed_tile": [
+        9.68,
+        -63.6
+      ],
+      "error_tiles": 1.726,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "west_broken_bridge": {
+      "expected_tile": [
+        -111,
+        30
+      ],
+      "expected_pixel": [
+        286.37,
+        616.14
+      ],
+      "observed_pixel": [
+        281,
+        613
+      ],
+      "observed_tile": [
+        -112.24,
+        29.28
+      ],
+      "error_tiles": 1.434,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "north_gate": {
+      "expected_tile": [
+        20,
+        -96
+      ],
+      "expected_pixel": [
+        854.78,
+        69.42
+      ],
+      "observed_pixel": [
+        854,
+        67
+      ],
+      "observed_tile": [
+        19.82,
+        -96.56
+      ],
+      "error_tiles": 0.587,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "south_gate": {
+      "expected_tile": [
+        28,
+        96
+      ],
+      "expected_pixel": [
+        889.49,
+        902.51
+      ],
+      "observed_pixel": [
+        891,
+        903
+      ],
+      "observed_tile": [
+        28.35,
+        96.11
+      ],
+      "error_tiles": 0.366,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "western_farm": {
+      "expected_tile": [
+        -36,
+        8
+      ],
+      "expected_pixel": [
+        611.8,
+        520.68
+      ],
+      "observed_pixel": [
+        615,
+        516
+      ],
+      "observed_tile": [
+        -35.26,
+        6.92
+      ],
+      "error_tiles": 1.307,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "southern_farm": {
+      "expected_tile": [
+        -15,
+        51
+      ],
+      "expected_pixel": [
+        702.92,
+        707.25
+      ],
+      "observed_pixel": [
+        701,
+        701
+      ],
+      "observed_tile": [
+        -15.44,
+        49.56
+      ],
+      "error_tiles": 1.507,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    },
+    "eastern_farm": {
+      "expected_tile": [
+        60,
+        49
+      ],
+      "expected_pixel": [
+        1028.34,
+        698.58
+      ],
+      "observed_pixel": [
+        1029,
+        699
+      ],
+      "observed_tile": [
+        60.15,
+        49.1
+      ],
+      "error_tiles": 0.181,
+      "observation": "manual inspection of visible settlement core, mill building, bridge gap midpoint or gate aperture center"
+    }
+  },
+  "maximum_anchor_error_tiles": 1.726,
+  "topology_review": {
+    "two_distinct_north_south_boundary_rivers": true,
+    "north_and_south_walls_span_between_rivers": true,
+    "only_western_bridge_and_it_is_broken": true,
+    "town_north_of_three_farms": true,
+    "woodland_north_and_northwest": true,
+    "greyfold_ridge_east": true,
+    "stone_road_town_to_western_bridge": true,
+    "separate_dirt_road_to_southern_gate": true,
+    "south_gate_aligned_with_bird_departure": true
+  },
+  "notes": [
+    "Small headwater/millrace water detail in northern woodland is local set dressing distinct from the two boundary rivers, consistent with known village brook/millrace; its full detailed course is not authored in the regional tile geometry.",
+    "Generated shelter details are not enough to validate close-up guard placements; runtime high-view actors must use actual south guards(26,93)/(31,92) and east inside shelter(33.2,92.6)."
+  ],
+  "verdict": "PASS: final landscape matches actual regional topology and observed landmark registration; four wall ends now terminate at inner banks without suggesting added bridges.",
+  "river_centerline_measurements": {
+    "western_boundary_river": {
+      "samples": 221,
+      "median_error_tiles": 1.112,
+      "p95_error_tiles": 2.75,
+      "maximum_error_tiles": 3.612,
+      "method": "Blue-water median X in bounded western/eastern windows at4pixelrow intervals; exclude walls/bridge neighborhoods."
+    },
+    "eastern_boundary_river": {
+      "samples": 221,
+      "median_error_tiles": 2.476,
+      "p95_error_tiles": 4.387,
+      "maximum_error_tiles": 5.397,
+      "method": "Blue-water median X in bounded western/eastern windows at4pixelrow intervals; exclude walls/bridge neighborhoods."
+    }
+  },
+  "original_generated_source_sha256": "94cdddd2cfa7aa44f7541a0da385661917eb2d5f041df0d5483dc04d4fcc2aa1",
+  "wall_endpoint_revision": {
+    "changed_pixels": 3690,
+    "bounded_rects": [
+      [
+        224,
+        55,
+        256,
+        83
+      ],
+      [
+        1278,
+        54,
+        1314,
+        84
+      ],
+      [
+        224,
+        890,
+        250,
+        919
+      ],
+      [
+        1284,
+        890,
+        1315,
+        921
+      ]
+    ],
+    "all_other_pixels_identical": true,
+    "observed_inner_bank_wall_endpoints_pixels": {
+      "northwest": [
+        256,
+        69
+      ],
+      "northeast": [
+        1278,
+        69
+      ],
+      "southwest": [
+        250,
+        904
+      ],
+      "southeast": [
+        1284,
+        904
+      ]
+    },
+    "visually_checked": "No stone crossing remains in either river at the four wall ends; water continues uninterrupted."
+  }
+}

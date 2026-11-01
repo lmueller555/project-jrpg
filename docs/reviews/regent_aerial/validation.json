@@ -1,0 +1,95 @@
+{
+  "recorded_at_utc": "2026-11-01T15:45:28.503257+00:00",
+  "tested_code_commit": "5e7666a2a14fc1e1f0a58c65fc8629e3becab947",
+  "base_main_commit": "81ba9a42aa04cb003eb7988edd72a694daa592ce",
+  "regression": {
+    "result": "passed",
+    "tests": 194,
+    "seconds": 205.818,
+    "log": "tests.txt",
+    "sha256": "2013bab5dd668c077e0459cf83e4ba05c2ff94a72a0136e54efc2ab01f7f5415",
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 PYTHONPATH=tests python -m unittest test_regent_aerial test_regent_arrival test_regent_arrival_staging test_regent_quest test_gallery_catalogue test_gallery_session test_gallery_ui test_save_game test_mill_quest test_game_music test_wildlife_journey_validation test_wildlife_audio"
+  },
+  "checks": {
+    "new_actor_exporter": {
+      "result": "passed",
+      "files": 20
+    },
+    "new_landscape_exporter": "passed: three registered plates and opaque canopy",
+    "existing_actor_exporter": {
+      "result": "passed",
+      "files": 70
+    },
+    "existing_scenery_exporter": "passed",
+    "compile": "passed",
+    "git_whitespace_check": "passed; original prompt captures preserved verbatim via .gitattributes"
+  },
+  "capture": {
+    "report": "capture_report.json",
+    "sha256": "6ebdb15875c8d57053a81e66dd128b31feebcd9df1747f19ba910881e5daeaca",
+    "current_input_hashes_verified": 147,
+    "artifact_hashes_verified": 12,
+    "frames": 4377,
+    "video_frames": 1050,
+    "fps": 30,
+    "world_and_wildlife_freeze_checks": 4376,
+    "canopy_handoffs": [
+      {
+        "video_second": 25.7333,
+        "aerial_seconds": 23.46666666666667,
+        "canopy": {
+          "progress": 0.5185185185185206,
+          "coverage": 1.0,
+          "full_occlusion": true,
+          "world_anchor": [
+            25,
+            96
+          ]
+        }
+      }
+    ],
+    "overhead_cast_visible_samples": 3,
+    "gif_validation": {
+      "file": "aerial_intro.gif",
+      "captured_frames": 175,
+      "encoded_frames": 168,
+      "milliseconds": 35000,
+      "decoded_pixels_verified": true,
+      "timing_verified": true
+    },
+    "smoke_checks": {
+      "pending_reload_restarts_before_aerial": true,
+      "pause_freezes_camera_bird_and_world": true,
+      "focus_freezes_camera_bird_and_world": true,
+      "skip_preserves_quest_handoff": true,
+      "gallery_plays_aerial_and_finishes": true,
+      "gallery_preserves_save_bytes": true,
+      "reduced_motion_camera_holds": true
+    },
+    "audio": "Silent SDL-dummy recording; no reconstructed soundtrack."
+  },
+  "geography": {
+    "audit": "geography_audit.json",
+    "audit_sha256": "46306d9d26dafb6e174da3c1e10a1d489295eb9311a4af158213af87cc2ad165",
+    "painted_landmark_maximum_error_tiles": 1.726,
+    "region_geometry_unchanged": true,
+    "observed_bird_south_gate_crossing_tiles": [
+      28.085,
+      96.018
+    ],
+    "guards_inside_wall": true,
+    "convoy_outside_wall": true
+  },
+  "independent_review": {
+    "result": "passed",
+    "geography": "passed",
+    "motion": "prototype 5 and identical final media accepted",
+    "unresolved_blockers": []
+  },
+  "gallery_thumbnail": {
+    "file": "assets/ui/gallery/regent_arrival.png",
+    "sha256": "1d2d17ace43fca15dcbc0bc4250399c76b7321a304744072194666bd37c1a43c",
+    "fixture": "Real isolated Gallery playback; temporary journey/settings paths; ordinary 30Hz input/update/draw"
+  },
+  "final_commit_scope_note": "Following the tested code commit, only review evidence, the focused Gallery thumbnail/capture metadata and verbatim-prompt whitespace attributes are added."
+}

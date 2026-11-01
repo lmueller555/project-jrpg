@@ -1,0 +1,104 @@
+{
+  "source": "assets/maps/overworld/elden_vale/region.json",
+  "source_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+  "bounds_tiles": [
+    -177,
+    -112,
+    354,
+    236
+  ],
+  "image_size": [
+    2124,
+    1416
+  ],
+  "pixels_per_tile": 6,
+  "origin": "northwest, x east/y south",
+  "suggested_flight_tile_points": [
+    [
+      105,
+      -28
+    ],
+    [
+      84,
+      -28
+    ],
+    [
+      62,
+      -28
+    ],
+    [
+      52,
+      -28
+    ],
+    [
+      43,
+      -26
+    ],
+    [
+      35,
+      -19
+    ],
+    [
+      29,
+      -9
+    ],
+    [
+      28,
+      -4
+    ],
+    [
+      28,
+      20
+    ],
+    [
+      28,
+      52
+    ],
+    [
+      28,
+      82
+    ],
+    [
+      28,
+      104
+    ]
+  ],
+  "required_anchors": {
+    "eldenmere": [
+      12,
+      -28
+    ],
+    "upper_millrace": [
+      8,
+      -64
+    ],
+    "west_broken_bridge": [
+      -111,
+      30
+    ],
+    "north_gate": [
+      20,
+      -96
+    ],
+    "south_gate": [
+      28,
+      96
+    ],
+    "western_farm": [
+      -36,
+      8
+    ],
+    "southern_farm": [
+      -15,
+      51
+    ],
+    "eastern_farm": [
+      60,
+      49
+    ],
+    "foothills": [
+      92,
+      -20
+    ]
+  }
+}

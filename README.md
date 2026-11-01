@@ -154,9 +154,11 @@ leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
 [in-game previews](docs/reviews/mill_quest/README.md).
 
 **Aldric arrives after the mill quest.** A detailed, player-advanced
-[cinematic](docs/REGENT_ARRIVAL.md) shows his caravan admitted at the southern
-land gate, his conversation with locals about the ruined crossing, and Serene's
-private reaction from inside the sanctuary. Escape pauses/resumes; Skip ends
+[cinematic](docs/REGENT_ARRIVAL.md) opens with a bird-led aerial view of the
+actual Elden Vale landscape, then descends to his caravan at the southern
+land gate. It follows his admission, his conversation with locals about the
+ruined crossing, and Serene's private reaction from inside the sanctuary.
+Escape pauses/resumes; Skip ends
 the scene without accepting MQ03 or changing Caelan's location.
 
 **The Regent’s Road is playable after the mill quest.** Meet Serene and Tomas

@@ -1,0 +1,6 @@
+Edit ONLY the four tiny stone wall ends that intrude into blue river water in this existing pixel-art aerial landscape. Keep the entire image, all geography, roads, village, farms, trees, mountains, bridge, lighting and style IDENTICAL. No camera movement, cropping, resizing or layout changes. Nativecanvas1536x1024.
+
+There are two low horizontal boundary walls, around y69 and y904. On BOTH ends of BOTH walls, the little masonry stub currently reaches into the blue water of the river. Remove ONLY these stone portions over WATER, restoring continuous blue rippling river water there. Let each wall stop at the INNER grassy riverbank, snugly touching dryland, never projecting into water. Approximate innerbank endpoints:
+northwall left ends atx254,y69, rightendsx1280,y69;
+southwall leftendsx248,y904, rightendsx1287,y904.
+Do not remove stone over dry land. All water must remain navigationally continuous with no stone crossing, weir, pier or bridge at either boundary wall. Do not remove or alter the separate BROKEN western stone bridge aroundx281,y613: its missing middle is correct. Do not add any bridges. This is a surgical water-restoration edit limited to the four tiny wall stubs. Preserve all other pixels and the exact canvas.

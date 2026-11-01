@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "exporter": "tools/build_regent_aerial_landscape.py",
+  "exporter_sha256": "fba55de9deec7cb07b353983a62c39005c2f75373d9360be9f8aa54430156253",
+  "source_sha256": {
+    "prompts.json": "fbbec1fb51a6ed27236af055a59ff0dec0ff337ae9945f70f1148571b737e89b",
+    "gate_overhead_prompt.txt": "73ce1e5a51d39432bad781b9652b23bd816b3f1339072b21c11a888c58a57b63",
+    "region_banks_prompt.txt": "a7eada2daef901c8778e91ba76ee181842afd4d7445c4ce4ea95147e0a5565e6",
+    "README.md": "457dc9bec664cdcdc58fa4638bc8a79e8f845638d7cc6524b7beecc6ff44fb9d",
+    "region_generated.png": "94cdddd2cfa7aa44f7541a0da385661917eb2d5f041df0d5483dc04d4fcc2aa1",
+    "gate_overhead_layout_reference.png": "41396af440011fc1f48dbe3d81af0059f779392966ba07495bd6647d34a14d6b",
+    "region_banks_generated.png": "e6958500e730ada0666ba559790e2077a794682cbffe1c1c3519747762a4da17",
+    "foreground_canopy_prompt.txt": "a3c2a464aa609f8942cfd7462d2e1c5376e1cfec7e6ce6b8a30c1e67f627f2a3",
+    "gate_high_oblique_generated.png": "020c27e88d47923abe5867399ee62ceec69046af8b2840c77d0876d564f4d397",
+    "gate_open_generated.png": "0cebd9c2f930af330c77cf4c567dbaac1737c34da59d771071809e4e8f1dfcd2",
+    "gate_layout_reference.png": "03338883cb83eef0905a86bd3477689bc099eb808b699449f7848c023dc573b0",
+    "geography_reference.json": "7fb76107fd7f10bb33bf4ccaa816d238306c341b04dc40d8b7d67e4f32b5ec7a",
+    "gate_high_oblique_prompt.txt": "32d2afe368ad4e99bf0ef750dd3c795e0c76daa43a530ac7fe84b159115c6ff3",
+    "gate_oblique_prompt.txt": "391aef5ec6f5aa734269b376b074c92bda2f378b2219cf8d82e2bb9366ade9bc",
+    "region_layout_reference.png": "a4ea53cf94030dc982d4cf1fb839780359c9a9869e73a239ef2d1cc9cd26d396",
+    "gate_oblique_generated.png": "8cbd51ecef1b68ec74b2979995da9bf3bd12f90afdfb4e1f44e59d5ad53106e8",
+    "foreground_canopy_generated.png": "742d50cc8453746b6cf6b7bfd651c056fd30ef1c91d54866846a765e7dfa6a48",
+    "gate_overhead_generated.png": "207e2c070e0041f0bca004ea856b4868390d6fed52f38228a0690cc886fb51de",
+    "gate_open_prompt.txt": "458c24603574e7c248a056d5cae9899359d9348f9a31916e1fdd800c473a7d6c"
+  },
+  "exports": {
+    "foreground_canopy.png": "0607b09476d949ec8620a4a6f57624b26d38465b6c6765baf757d9ed6ce49560",
+    "gate_oblique.png": "5730947a38e1358b74ff1b024fd24536300c13e0377f29d9ee1cf5b5340eb414",
+    "gate_overhead.png": "1d2def3088eb19e321814a1654490b1d02a657d6c33a832913464f1a41474994",
+    "region.png": "dfe84d0d0b29249acb530750ba48c5efcf54b6bafb9c6788cb37a4771916ccfe"
+  },
+  "manifest_sha256": "d482d5cd7ecb74b6235f06c277ca045fee48b66409ff1e472a770731a1c43e54",
+  "operations": [
+    "bounded authored-source crops/composition",
+    "binary canopy alpha cleanup and nearest 960x640 registration",
+    "PNG export"
+  ]
+}

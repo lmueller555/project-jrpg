@@ -62,11 +62,12 @@ def make_game(directory, *, title=False):
 
 def source_inputs():
     paths = [ROOT/name for name in (
-        'regent_arrival.py', 'main.py', 'speech_bubble.py', 'cutscene_gallery.py',
+        'regent_arrival.py', 'regent_aerial.py', 'main.py', 'speech_bubble.py', 'cutscene_gallery.py',
         'gallery_session.py', 'tools/build_regent_arrival_actors.py',
         'tools/build_regent_arrival_scenery.py', 'tools/capture_regent_arrival_polish.py',
         'tests/test_regent_arrival.py', 'tools/capture_region_npcs.py')]
-    for folder in ('assets/story/regent_arrival', 'assets/source/cinematics/regent_arrival'):
+    for folder in ('assets/story/regent_arrival', 'assets/source/cinematics/regent_arrival',
+                   'assets/story/regent_aerial', 'assets/source/cinematics/regent_aerial'):
         paths.extend(path for path in (ROOT/folder).rglob('*') if path.is_file())
     return {str(path.relative_to(ROOT)):digest(path) for path in sorted(set(paths))}
 

@@ -14,6 +14,7 @@ import random
 import pygame
 
 import speech_bubble
+from regent_aerial import RegentAerial, PHASES as AERIAL_PHASES
 from opening_audio import MorningAudio
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from ui_style import BRASS, IVORY, MUTED
@@ -118,6 +119,10 @@ class RegentArrival:
         self.data = json.loads(self.scene_path.read_text())
         self._validate()
         self.audio = ArrivalAudio(game)
+        self.aerial = RegentAerial(self)
+        self._reference_clock = None
+        self._reference_camera = None
+        self._reference_world = None
         self.scenery = None
         self.actor_art = {}
         self.profiles = {}
@@ -236,11 +241,18 @@ class RegentArrival:
     def reduced_motion(self):return bool(self.game.audio.reduced_motion)
     @property
     def camera_position(self):
+        if self._reference_camera is not None:return pygame.Vector2(self._reference_camera)
         camera = self.phase['camera']
         progress = (1. if self.reduced_motion else
                     smooth((self.phase_time-camera.get('move_start', 0.))/
                            camera.get('move_seconds', self.phase['min_seconds'])))
         return pygame.Vector2(camera['from']).lerp(camera['to'], progress)
+
+    def aerial_snapshot(self):
+        if self.shot not in AERIAL_PHASES:return None
+        seconds = sum(p['min_seconds'] for p in self.data['phases'][:self.phase_index]
+                      if p['id'] in AERIAL_PHASES)+self.phase_time
+        return self.aerial.sample(seconds, reduced_motion=self.reduced_motion)
 
     def begin_input_batch(self):
         self._batch_advanced = False;self._batch_pause = False
@@ -423,7 +435,9 @@ class RegentArrival:
         start = actor.get('move_start', 0.)
         if pose in art['loops']:
             frames = art['loops'][pose];total = sum(d for _,d in frames)
-            time = (max(0., self.phase_time-start)*actor.get('animation_rate',1.))%total
+            clock = (max(0., self.phase_time-start) if self._reference_clock is None
+                     else self._reference_clock-start)
+            time = (clock*actor.get('animation_rate',1.))%total
             for image, duration in frames:
                 if time < duration:return image
                 time -= duration
@@ -520,17 +534,16 @@ class RegentArrival:
                     +hinge-pygame.Vector2(hinge.x*sx,hinge.y*sy)-self.camera_position)
         return image, position
 
-    def draw(self, canvas, ui_surface):
-        self._load();canvas.fill('#1d302a')
+    def _draw_plate(self, canvas, include_actors=True, include_gate=True):
         camera = self.camera_position
         if self.phase['scene'] == 'world':self._draw_world(canvas)
         else:
             scenery = self.scenery[self.phase['scene']]
             canvas.blit(scenery['background'], (-round(camera.x), -round(camera.y)))
-            if scenery.get('gate_leaf'):
+            if include_gate and scenery.get('gate_leaf'):
                 image, position = self.gate_leaf_frame(scenery['gate_leaf'])
                 canvas.blit(image, (round(position.x), round(position.y)))
-            for actor in sorted(self.phase['actors'], key=lambda a:self.actor_position(a).y):
+            for actor in sorted(self.phase['actors'] if include_actors else [], key=lambda a:self.actor_position(a).y):
                 self._draw_actor(canvas, actor, camera)
                 if actor['id'] == 'caravan':
                     art = self.actor_art['caravan']
@@ -543,6 +556,49 @@ class RegentArrival:
                         self._draw_actor(canvas, driver, camera)
             if scenery.get('foreground'):
                 canvas.blit(scenery['foreground'], (-round(camera.x), -round(camera.y)))
+
+    def ground_reference_frame(self, canvas, seconds=0., include_actors=True, include_gate=True,
+                               viewport=None, standing=False):
+        """Render the registered ground scene without advancing the story.
+
+        The aerial camera's foreground pass reveals a wider view of this very
+        plate. The remaining descent is a camera push, not an image dissolve.
+        """
+        index = next(i for i,p in enumerate(self.data['phases']) if p['id']=='gate_approach')
+        phase = self.data['phases'][index]
+        saved = (self.phase_index,self.phase_time,self._reference_clock,self._reference_camera)
+        reference = dict(phase)
+        reference['actors'] = [dict(actor) for actor in phase['actors']]
+        for actor in reference['actors']:
+            if actor['id'] in ('aldric','caravan'):
+                actor['position'] = list(actor['position'])
+                actor['position'][0] += min(8.,max(0.,-seconds)*40)
+                if standing:
+                    actor['pose'] = 'stand_left' if actor['id']=='aldric' else 'parked_left'
+                    for key in ('to','path','move_start','move_seconds','before_pose','after_pose'):
+                        actor.pop(key,None)
+        try:
+            self.data['phases'][index] = reference
+            self.phase_index = index;self.phase_time = 0.;self._reference_clock = seconds
+            if viewport is None:self._draw_plate(canvas, include_actors=include_actors, include_gate=include_gate)
+            else:
+                self._reference_camera = (0,0)
+                if self._reference_world is None:self._reference_world=pygame.Surface((960,480))
+                self._draw_plate(self._reference_world,include_actors=include_actors,include_gate=include_gate)
+                bounds=pygame.Rect(*(round(v) for v in viewport))
+                if not self._reference_world.get_rect().contains(bounds):raise ValueError('Aerial landing leaves its ground plate')
+                pygame.transform.scale(self._reference_world.subsurface(bounds),canvas.get_size(),canvas)
+        finally:
+            self.data['phases'][index] = phase
+            self.phase_index,self.phase_time,self._reference_clock,self._reference_camera = saved
+
+    def draw(self, canvas, ui_surface):
+        self._load();canvas.fill('#1d302a')
+        snapshot = self.aerial_snapshot()
+        if snapshot is not None:
+            self.aerial.draw(canvas, snapshot['seconds'], self.ground_reference_frame,
+                             reduced_motion=self.reduced_motion)
+        else:self._draw_plate(canvas)
         pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)
         self._layout(painter)
