@@ -86,6 +86,26 @@ class RegentArrivalStagingTests(unittest.TestCase):
                 self.assertTrue(all(b <= a+.001 for a, b in zip(scales, scales[1:])))
                 self.assertGreater(positions[0].y-positions[-1].y, 90)
 
+    def test_guards_are_near_the_posts_and_clear_of_the_approaching_party(self):
+        phase = self.frame('gate_approach', 0)
+        guards = [actor for actor in phase['actors'] if actor['id'] == 'guard']
+        self.assertEqual(len(guards), 2)
+        # Actual painted cap/base centers, rather than the old far-away duty
+        # stations. The west/east guards each move nearer their own gatepost.
+        stations = ((pygame.Vector2(481, 296), pygame.Vector2(530, 375)),
+                    (pygame.Vector2(670, 287), pygame.Vector2(690, 345)))
+        for actor, (post, old_station) in zip(guards, stations):
+            self.assertLess(self.scene.actor_position(actor).distance_to(post),
+                            old_station.distance_to(post)*.9)
+        for index in range(round(phase['min_seconds']*20)+1):
+            self.scene.phase_time = index/20
+            for actor in phase['actors']:
+                if actor['id'] not in ('aldric', 'caravan'):
+                    continue
+                position = self.scene.actor_position(actor)
+                for guard in guards:
+                    self.assertGreater(position.distance_to(self.scene.actor_position(guard)), 30.)
+
     def test_caravan_follows_aldric_through_the_same_gate_aperture(self):
         phase = self.frame('gate_admission', 0)
         crossings = {}

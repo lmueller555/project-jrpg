@@ -21,6 +21,10 @@ The visual clock belongs to the cinematic rather than the exploration world.
    passes beneath the nearby canopy before easing into the gate scene. This
    foreground pass conceals the registered transfer between aerial and ground
    views; the scenery never dissolves between the two perspectives.
+   The caravan follows the painted approach road before the canopy pass. The
+   descent leaves three additional seconds to watch the approach, and both
+   Aldric and the wagon continue walking throughout the ground-camera push.
+   Guards wait closer to the gate, clear of the approaching party.
 3. A modest relief caravan reaches the intact southern land checkpoint. A
    guard recognizes Aldric; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
@@ -71,6 +75,11 @@ into exploration in the same event batch.
 The Eldenmere theme accompanies this present-day scene. The later-journey
 opening leitmotif and battle music keep their existing uses. Cinematic effects
 respect the game's effects volume and release their channels when playback ends.
+Recorded hawk calls and quieter, animation-timed wingbeats accompany the visible
+bird. Hoofbeats and wagon sounds follow the party's movement and gait rate;
+they stop when the party stops. Pause, focus loss, Skip and leaving the Gallery
+also pause or release the appropriate voices. The recordings and source licenses
+are documented in [the aerial sound assets](../assets/audio/sfx/regent_aerial/README.md).
 
 ## Durable handoff
 
@@ -120,6 +129,10 @@ bird-led introduction and its continuous handoff to the gate. Its geographic
 reference comes from `assets/maps/overworld/elden_vale/region.json`; cinematic
 art and animation sources are retained under
 `assets/source/cinematics/regent_aerial/`.
+
+The [road approach and audio review](reviews/regent_caravan_revision/README.md)
+includes an uninterrupted preview with the actual runtime sound mix, road-contact
+measurements, walking and guard-clearance evidence, and a bird-sound audition.
 
 See the [production-game review](reviews/regent_arrival/README.md),
 [MQ03 guide](REGENT_QUEST.md), [regional surge context](narrative/game_01/REGIONAL_SURGES.md)

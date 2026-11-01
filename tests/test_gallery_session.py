@@ -529,7 +529,10 @@ class GallerySessionTests(unittest.TestCase):
         game = self.game()
         game.audio.effects_volume = 1
         child = self.launch(game, 'regent_arrival').game
-        game.update(.2)
+        # Travel effects begin when the approaching caravan becomes visible.
+        for _ in range(1000):
+            if child.regent_arrival.audio.channels:break
+            game.update(.05)
         owned = list(child.regent_arrival.audio.channels)
         self.assertTrue(owned, 'The actual dummy mixer must receive arrival cues')
         with patch.object(child.regent_arrival.audio, 'stop', wraps=child.regent_arrival.audio.stop) as stop:
