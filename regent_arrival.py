@@ -396,6 +396,11 @@ class RegentArrival:
                         or not math.isfinite(duration) or duration <= 0 for image, duration in sequence)
                         for sequence in loops.values())):
                 raise ValueError('Invalid arrival actor frames or loop duration')
+            for pose,gait in record.get('gaits', {}).items():
+                stride = gait.get('stride_pixels')
+                if (pose not in loops or type(stride) not in (int,float)
+                        or not math.isfinite(stride) or stride <= 0):
+                    raise ValueError('Invalid arrival actor stride')
             actors[identifier] = {**record, 'poses': frames, 'loops': loops}
         for key, record in self.data['speakers'].items():
             profile = dict(self.game.social.data['speakers'].get(record.get('profile'), record))
@@ -472,7 +477,21 @@ class RegentArrival:
             frames = art['loops'][pose];total = sum(d for _,d in frames)
             clock = (max(0., self.phase_time-start) if self._reference_clock is None
                      else self._reference_clock-start)
-            time = (clock*actor.get('animation_rate',1.))%total
+            gait = art.get('gaits', {}).get(pose)
+            if gait and any(key in actor for key in ('to','path','route')):
+                # The authored support boot advances opposite the root by one
+                # stride per cycle. Scene-specific time multipliers must not
+                # make the feet race or drag as travel speed changes. Negative
+                # reference clocks retain the aerial-to-ground gait phase.
+                duration = actor.get('move_seconds',self.phase['min_seconds'])
+                if actor.get('route'):
+                    distance = actor['route_end']-actor['route_start']
+                else:
+                    points = actor.get('path',[actor['position'],actor.get('to',actor['position'])])
+                    distance = sum(pygame.Vector2(a).distance_to(b) for a,b in zip(points,points[1:]))
+                time = (clock*distance/duration/gait['stride_pixels']*total)%total
+            else:
+                time = (clock*actor.get('animation_rate',1.))%total
             for image, duration in frames:
                 if time < duration:return image
                 time -= duration
@@ -611,8 +630,12 @@ class RegentArrival:
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
             if actor['id'] in ('aldric','caravan'):
-                actor['position'] = list(actor['position'])
-                actor['position'][0] += max(0.,-seconds)*24
+                # Translate the whole path, not only its start. The reference
+                # root moves at24px/s; its gait must retain that same speed.
+                for key in ('position','to'):
+                    if key in actor:
+                        actor[key] = list(actor[key])
+                        actor[key][0] += max(0.,-seconds)*24
                 if standing:
                     actor['pose'] = 'stand_left' if actor['id']=='aldric' else 'parked_left'
                     for key in ('to','path','move_start','move_seconds','before_pose','after_pose'):
