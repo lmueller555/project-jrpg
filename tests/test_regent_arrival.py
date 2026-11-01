@@ -174,7 +174,13 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(loaded.regent_arrival.state,'seen')
 
     def test_world_clocks_and_all_residents_freeze_while_reading(self):
-        scene = self.start();self.reach('gate_greeting')
+        scene = self.start()
+        self.assertEqual(self.g.music.desired_track,'eldenmere')
+        for _ in range(30):
+            self.g.update(.1,(0,0),False)
+            if self.g.music.desired_track == 'royalty':break
+        self.assertEqual(self.g.music.desired_track,'royalty')
+        self.reach('gate_greeting')
         self.g.update(.5,(0,0),False)
         before = (self.g.elapsed_ms,tuple(self.g.player.position),
                   [(id(n),tuple(n.position)) for n in self.g.persistent_npcs],self.g.mill_quest.mira.position.copy())
@@ -183,7 +189,7 @@ class RegentArrivalTests(unittest.TestCase):
                  [(id(n),tuple(n.position)) for n in self.g.persistent_npcs],self.g.mill_quest.mira.position.copy())
         self.assertEqual(before,after)
         self.assertEqual(scene.dialogue_index,0)
-        self.assertEqual(self.g.music.desired_track,'eldenmere')
+        self.assertEqual(self.g.music.desired_track,'royalty')
 
     def test_escape_and_focus_pause_cinematic_and_music_without_world_menu(self):
         scene = self.start();self.g.update(.2,(0,0),False)
@@ -236,6 +242,7 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(observed,[p['id'] for p in scene.data['phases']])
         self.assertTrue({'aldric','guard','local','clerk','serene','tomas'}<=speakers)
         self.assertEqual(scene.finished_reason,'finished')
+        self.assertEqual(self.g.music.desired_track,'eldenmere')
         self.assertEqual(self.g.quests.status(REGENT_QUEST),'available')
         self.assertTrue(self.g.saved_journey['mill_quest']['restored'])
 

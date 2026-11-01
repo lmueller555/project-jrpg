@@ -201,6 +201,7 @@ class RegentArrival:
         self.dialogue_index = 0;self.page_index = 0
         self.finished_reason = None;self._mouse_held = False
         self._batch_advanced = False;self._batch_pause = False
+        self._music_transition_started = False
         self.caption_layout = None;self.caption_pages = [];self.caption_lines = []
 
     def restore(self, data=None):
@@ -337,6 +338,10 @@ class RegentArrival:
         self.bird_audio.update(0 if paused else seconds, snapshot, paused=paused)
         if paused:return
         self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
+        if (self.shot == 'mill_close' and self.fade_alpha
+                and not self._music_transition_started):
+            self._music_transition_started = True
+            self.game.music.play('royalty', fade_ms=1000)
         self._next_if_ready()
 
     def finish(self, reason='finished'):
@@ -348,6 +353,7 @@ class RegentArrival:
         self.game.regent_quest.restore(self.game.regent_quest.to_dict())
         self.game.music.set_paused(not self.game._music_focused)
         self.game.music.set_ducked(False)
+        self.game.music.play('eldenmere')
         self.game.save_progress()
         return True
 

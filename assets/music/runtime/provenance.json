@@ -134,6 +134,38 @@
         "sha256": "4d606ad5d62be9c6075a059326e0f05947dd65cac8718b4b7b80f0598d028d4a",
         "bytes": 5332005
       }
+    },
+    {
+      "identifier": "royalty",
+      "source": "Royalty of the Realm.m4a",
+      "source_git_blob_sha": "1ead236be4b4a5e5a8a1ec2d83af3e4be1eaf1ac",
+      "source_sha256": "7d47d02d72308d806ae8276ca8e5fa536dcbdc97bc2f2396a03a254ff37d8bba",
+      "source_codec": "opus",
+      "source_decoded_frames": 6847368,
+      "source_decoded_seconds": 142.6535,
+      "loop": true,
+      "runtime": "runtime/royalty_of_the_realm.ogg",
+      "runtime_frame_delta": 56,
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 6847424,
+        "duration_seconds": 142.65466666666666,
+        "peak_dbfs": -3.229649805066715,
+        "rms_dbfs": -17.986600067669915,
+        "sample_step_across_repeat": 0.0005930697661824524,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
+        "sha256": "e0da0d692ea13efd655aafa11710a650703c277b1ec753caaa3084e0c0016fd8",
+        "bytes": 3799563
+      }
     }
   ]
 }

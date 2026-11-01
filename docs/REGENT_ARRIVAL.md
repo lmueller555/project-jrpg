@@ -72,8 +72,10 @@ interaction, quest staging, time and the exploration HUD remain suspended while
 the cinematic owns the screen. Inputs that finish or skip it cannot continue
 into exploration in the same event batch.
 
-The Eldenmere theme accompanies this present-day scene. The later-journey
-opening leitmotif and battle music keep their existing uses. Cinematic effects
+The Eldenmere theme fades with the completed mill during the opening blackout.
+**Royalty of the Realm** begins as the aerial arrival starts and plays for the
+cinematic's duration. The later-journey opening leitmotif and battle music keep
+their existing uses. Cinematic effects
 respect the game's effects volume and release their channels when playback ends.
 Recorded hawk calls and quieter, animation-timed wingbeats accompany the visible
 bird. Hoofbeats and wagon sounds follow the party's movement and gait rate;

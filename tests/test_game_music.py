@@ -21,6 +21,7 @@ CATALOG = {'version': 1, 'tracks': {
     'victory': {'file': 'runtime/triumphal_fanfare.ogg', 'gain': .45, 'loop': False},
     'opening_leitmotif': {'file': 'runtime/dare_to_dream_leitmotif.ogg',
                          'gain': .45, 'loop': True},
+    'royalty': {'file': 'runtime/royalty_of_the_realm.ogg', 'gain': .45, 'loop': True},
 }}
 
 

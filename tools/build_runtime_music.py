@@ -34,6 +34,11 @@ SOURCES = (
          git_sha='c057902f21e2d84ac786f5f4ee37ac98f3c073e2',
          target='dare_to_dream_leitmotif.ogg', title='Dare to Dream Leitmotif',
          trim_tail=False, boundary_declick_ms=5),
+    # Homebrew's native experimental Vorbis encoder prepends 56 decoded frames.
+    dict(identifier='royalty', source='Royalty of the Realm.m4a',
+         git_sha='1ead236be4b4a5e5a8a1ec2d83af3e4be1eaf1ac',
+         target='royalty_of_the_realm.ogg', title='Royalty of the Realm', trim_tail=False,
+         encoder='vorbis', runtime_frame_delta=56),
 )
 
 
@@ -86,19 +91,21 @@ def trimmed_battle(audio):
                         removed_tail_seconds=(len(audio) - len(result)) / RATE)
 
 
-def encode(audio, target, title):
+def encode(audio, target, title, *, encoder='libvorbis'):
     target.parent.mkdir(parents=True, exist_ok=True)
     # Keep the destination stable until encoding succeeds.
     handle, temporary = tempfile.mkstemp(prefix=target.stem + '-', suffix='.ogg', dir=target.parent)
     os.close(handle)
     temporary = Path(temporary)
     try:
-        subprocess.run([
+        command = [
             'ffmpeg', '-y', '-v', 'error', '-f', 'f32le', '-ar', str(RATE), '-ac', '2',
-            '-i', 'pipe:0', '-map_metadata', '-1', '-c:a', 'libvorbis', '-q:a', '8',
+            '-i', 'pipe:0', '-map_metadata', '-1', '-c:a', encoder, '-q:a', '8',
             '-fflags', '+bitexact', '-flags:a', '+bitexact', '-metadata', f'title={title}',
-            str(temporary),
-        ], input=audio.astype('<f4', copy=False).tobytes(), check=True)
+        ]
+        if encoder == 'vorbis':command.extend(('-strict', '-2'))
+        command.append(str(temporary))
+        subprocess.run(command, input=audio.astype('<f4', copy=False).tobytes(), check=True)
         temporary.replace(target)
     finally:
         temporary.unlink(missing_ok=True)
@@ -181,9 +188,9 @@ def build(identifiers=None):
             export[-amount:] *= np.linspace(1, 0, amount)[:, None]
             boundaries['boundary_declick_ms'] = source['boundary_declick_ms']
         target = MUSIC / 'runtime' / source['target']
-        encode(export, target, source['title'])
+        encode(export, target, source['title'], encoder=source.get('encoder', 'libvorbis'))
         loop = source.get('loop', True)
-        verified = verify_asset(target, len(export), loop=loop)
+        verified = verify_asset(target, len(export) + source.get('runtime_frame_delta', 0), loop=loop)
         if path.read_bytes() != original:
             raise AssertionError('An original upload changed during export')
         tracks[source['identifier']] = dict(file='runtime/' + source['target'], gain=.45)
@@ -199,6 +206,7 @@ def build(identifiers=None):
                             source_decoded_seconds=len(audio) / RATE,
                             loop=loop,
                             runtime='runtime/' + source['target'],
+                            runtime_frame_delta=source.get('runtime_frame_delta', 0),
                             boundaries=boundaries, verification=verified)
         existing = next((index for index, item in enumerate(records)
                          if item['identifier'] == source['identifier']), None)

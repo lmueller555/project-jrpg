@@ -30,12 +30,22 @@ scene, creator or generation tool, and any known loop start/end times. These
 notes are optional; you can add the audio on its own.
 
 ## Current game tracks
+| Original upload | Runtime asset | Use |
+| --- | --- | --- |
+| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
+| `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
+
+**Royalty of the Realm** starts after Eldenmere's one-second fade during the
+arrival blackout and repeats through the Aldric cinematic. Its native Vorbis
+export contains the encoder's documented 56-frame lead-in; no music is trimmed
+or rearranged.
 
 | Original upload | Runtime asset | Use |
 | --- | --- | --- |
 | `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title and Eldenmere/millrace exploration |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
+| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
 
 [`tracks.json`](tracks.json) identifies the approved runtime files and their
