@@ -71,17 +71,14 @@ def build():
     records={
       'aldric':{'height':80,'frames':{
         'stand_left':('travelers',0,0,True),'listen_left':('travelers',1,0,True),
-        'gesture_left':('travelers',2,0,False),'walk_0':('travelers',3,0,True),
-        'walk_1':('travelers',0,1,False),'walk_2':('travelers',1,1,False),
-        'walk_3':('travelers',2,1,False),'stand_right':('travelers',3,1,False),
+                'gesture_left':('travelers',2,0,False),'stand_right':('travelers',3,1,False),
         'stand_back':('back_views',0,1,False),'walk_back_0':('back_views',0,1,False),
         'walk_back_1':('back_views',1,1,False),'walk_back_2':('back_views',2,1,False),
         'walk_back_3':('back_views',3,1,False),
         'turn_left_back':('turns',0,0,False),
         'walk_left_back_0':('turns',0,0,False),'walk_left_back_1':('turns',1,0,False),
         'walk_left_back_2':('turns',2,0,False),'walk_left_back_3':('turns',3,0,False)},
-        'loops':{'walk_left':['walk_0','walk_1','walk_2','walk_3'],
-                 'walk_left_back':['walk_left_back_0','walk_left_back_1','walk_left_back_2','walk_left_back_3'],
+        'loops':{'walk_left_back':['walk_left_back_0','walk_left_back_1','walk_left_back_2','walk_left_back_3'],
                  'walk_back':['walk_back_0','walk_back_1','walk_back_2','walk_back_3']}},
       'guard':{'height':80,'frames':{
         'stand_right':('travelers',0,2,False),'gesture_right':('travelers',1,2,False),
@@ -136,6 +133,22 @@ def build():
                   'loops':{loop:[{'file':pose+'.png','duration_ms':160 if name=='aldric' else 180} for pose in sequence]
                            for loop,sequence in record['loops'].items()},
                   'source':'imagegen-authored; deterministic crop/alpha/orientation/nearest export'}
+        if name=='aldric':
+            # This separately authored native source already has a fixed root.
+            # Do not crop, mirror or recenter it around its moving boots.
+            directory=SOURCE/'aldric_side_walk'
+            side=json.loads((directory/'side_walk.json').read_text())
+            sheet=Image.open(directory/side['sheet']).convert('RGBA')
+            if (side['canvas']!=[80,96] or side['anchor']!=[40,92]
+                    or len(side['frames'])!=8 or sheet.size!=(640,96)):
+                raise ValueError('Invalid native Aldric side-walk source')
+            for index,entry in enumerate(side['frames']):
+                sprite=sheet.crop((index*80,0,(index+1)*80,96))
+                outputs['aldric/'+entry['file']]=png(sprite)
+            manifest['loops']['walk_left']=[{key:entry[key] for key in ('file','duration_ms','phase')}
+                                            for entry in side['frames']]
+            manifest['gaits']={'walk_left':{'stride_pixels':side['stride_pixels']}}
+            manifest['source']='retained appearance; eight native phase-authored side steps; registered rear/idle exports'
         outputs[f'{name}/animation.json']=(json.dumps(manifest,indent=2)+'\n').encode()
         metadata[name]={'canvas':[80,96],'anchor':[40,92],'reference_height':record['height'],'scale':round(scale,6)}
     # Export four registered whole horse/wagon frames. Fixed cell crop+scale
@@ -213,14 +226,30 @@ def build():
         side=max(portrait.size);square=Image.new('RGBA',(side,side))
         square.alpha_composite(portrait,((side-portrait.width)//2,side-portrait.height))
         outputs[f'portraits/{name}.png']=png(square.resize((72,72),Image.Resampling.NEAREST))
+    # Pillow/zlib versions can encode identical pixels differently. Retain an
+    # existing PNG only when its recorded hash AND every regenerated RGBA
+    # pixel agree. A narrow art update must not recompress the remaining cast.
+    previous_path=TARGET/'provenance.json'
+    previous=json.loads(previous_path.read_text())['exports'] if previous_path.exists() else {}
+    for name,data in list(outputs.items()):
+        path=TARGET/name
+        if not name.endswith('.png') or not path.is_file():continue
+        original=path.read_bytes()
+        if previous.get(name)!=digest(original):continue
+        before=Image.open(io.BytesIO(original)).convert('RGBA')
+        after=Image.open(io.BytesIO(data)).convert('RGBA')
+        if before.size==after.size and before.tobytes()==after.tobytes():
+            outputs[name]=original
     provenance={'version':1,'exporter':'tools/build_regent_arrival_actors.py',
-      'sources':{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
+        'sources':{**{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
+                 **{str(path.relative_to(ROOT)):digest(path.read_bytes()) for path in
+                  (SOURCE/'aldric_side_walk/side_walk.png',SOURCE/'aldric_side_walk/side_walk.json')}},
       'actors':metadata,'exports':{name:digest(data) for name,data in sorted(outputs.items())},
       'notes':['Original imagegen generations are retained without modification.',
                'Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.',
                'Human sprites are authored cinematic bodies rather than enlarged overworld sprites.',
-               'Aldric has natural stride and restrained conversational poses; caravan uses four complete horse-walk frames.',
-               'The original first side-walk source faces right; its explicit orientation flag normalizes the complete loop to left.',
+               'Aldric side walking uses eight native support/swing phases, a fixed pelvis root and a 32-pixel full stride.',
+               'Original side-walk generations are retained; rear walks, idles and all other actors remain byte-identical.',
                'Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.',
                'Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.',
                'The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.',

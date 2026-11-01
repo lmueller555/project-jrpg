@@ -115,14 +115,20 @@ barriers remain authoritative for the cinematic's geography.
 
 ```sh
 python tools/build_regent_arrival_scenery.py --check
+python tools/build_aldric_side_walk.py --check
 python tools/build_regent_arrival_actors.py --check
-PYTHONPATH=tests python -m unittest test_regent_arrival test_regent_arrival_staging test_regent_quest
+PYTHONPATH=tests python -m unittest test_aldric_side_walk test_regent_arrival test_regent_arrival_staging test_regent_quest
 python tools/capture_regent_arrival.py
 python tools/capture_regent_arrival_polish.py
+python tools/capture_aldric_side_walk.py
 ```
 
 The [gate and transition review](reviews/regent_arrival_polish/README.md)
-shows the corrected walk cycle and continuous gate-to-riverbank sequence.
+records the earlier gate-to-riverbank staging pass. The current
+[side-walk review](reviews/aldric_side_walk/README.md) replaces Aldric's side
+cycle with eight phase-authored poses, stable appearance pixels, alternating
+support/swing legs and opposing arms. Its cadence follows distance traveled,
+not an independent scene multiplier; rear views and other actors are unchanged.
 The full arrival can also be replayed from the title screen's **Gallery** as
 **Aldric's Relief Caravan**, without loading or changing a journey.
 

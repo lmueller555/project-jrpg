@@ -1,9 +1,10 @@
 # Aldric arrival cinematic cast
 
-These are original imagegen-authored, transparent cinematic sprites. The retained
-PNG generations are unchanged. `prompts.json` records the exact descriptions and
-approved portrait references. They are separate from existing overworld sprites
-and do not replace any approved character artwork.
+The original imagegen-authored, transparent cinematic sheets are retained
+unchanged. `prompts.json` records their descriptions and approved portrait
+references. Aldric's corrected side walk is a separate, offline part-authored
+source in `aldric_side_walk/`, built from those retained appearance pixels; it
+is not a new image generation. Overworld sprites and portraits are unchanged.
 
 `tools/build_regent_arrival_actors.py` exports bounded cells, removes isolated
 alpha matte specks, normalizes facing, registers feet and nearest-resizes the
@@ -12,7 +13,9 @@ The explicit row gutters prevent neighboring cells from leaking into frames.
 Each actor retains a single bodily scale across its poses.
 
 ```sh
+python tools/build_aldric_side_walk.py
 python tools/build_regent_arrival_actors.py
+python tools/build_aldric_side_walk.py --check
 python tools/build_regent_arrival_actors.py --check
 ```
 
@@ -24,8 +27,8 @@ rear view includes the correctly back-facing driver within the illustration;
 the manifest marks these poses so the runtime does not attach a second driver.
 
 - Aldric: natural 80px adult body, navy travelling coat, gold edging, brown hair;
-  standing, listening, restrained gesture, right idle, four left-walk frames,
-  a rear idle and four northbound rear-walk frames.
+  standing, listening, restrained gesture, right idle, eight left-walk phases,
+  a rear idle and unchanged four-frame rear and rear-three-quarter walks.
 - Guard: practical slate tunic and open cap, spear held clear in the same hand,
   admitting gesture and four stepping frames.
 - Clerk, driver and local: distinct practical clothing and matching local
@@ -51,8 +54,13 @@ The arrival polish adds `turns_generated.png`, an original transparent two-row
 three-quarter sheet. Its Aldric and complete horse/wagon poses bridge the side
 and rear views; the driver is baked into every three-quarter caravan pose.
 The exporter exposes `turn_left_back` and `walk_left_back` on both actors.
-The first side-walk frame's original source points right, so its explicit
-orientation flag mirrors it to match the other three left-facing frames.
+The old side-walk sources remain unchanged, including the originally right-facing
+first pose. They are no longer used for the side loop. The new native source
+shares one head/torso appearance, fixed-length limbs, explicit support/swing
+phases and fixed pelvis registration; no moving-foot recentering or per-frame
+mirroring is applied. A 32-pixel full stride controls playback from actual ground
+distance, including the aerial reference handoff. Rear loops retain their
+original clock-based playback. See the [side-walk review](../../../../../docs/reviews/aldric_side_walk/README.md).
 
 Two additional authored caravan angles bridge the turn with native silhouette
 widths of 280px (side), 221px (shallow), 155px (three-quarter), 111px (deep)

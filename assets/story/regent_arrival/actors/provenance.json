@@ -10,7 +10,9 @@
     "assets/source/cinematics/regent_arrival/actors/back_vehicle_refined_generated.png": "fec0c39bc6bb492dde1d6d7e9778cc406e3b59ecc97cdfd3481b073b2c6d8bdf",
     "assets/source/cinematics/regent_arrival/actors/turns_generated.png": "5d5bfc908a91a57fbcce1a64658be792b807213a502792d79c51fb60f327643b",
     "assets/source/cinematics/regent_arrival/actors/turn_intermediates_generated.png": "18ed4790d6eb8a1a087cacd65c768b91851e45c455cdf2369930ff3cf8ba1902",
-    "assets/source/cinematics/regent_arrival/actors/turn_shallow_generated.png": "4307fb744abd65a08786fc3e92ed5cfe4ec8092fe8f4cf7439baa8437b2f23a6"
+    "assets/source/cinematics/regent_arrival/actors/turn_shallow_generated.png": "4307fb744abd65a08786fc3e92ed5cfe4ec8092fe8f4cf7439baa8437b2f23a6",
+    "assets/source/cinematics/regent_arrival/actors/aldric_side_walk/side_walk.png": "29943dcdad0118ef6e3ef8de6064d76a67309131146082c1be83576212bb3064",
+    "assets/source/cinematics/regent_arrival/actors/aldric_side_walk/side_walk.json": "e5a87ef1fe0b0e5c593e4d44b7176dbdccaa38af57c945a3053e43a028eba522"
   },
   "actors": {
     "aldric": {
@@ -128,17 +130,21 @@
     }
   },
   "exports": {
-    "aldric/animation.json": "670cd3344822dc34b2b9eb6865289ab2a651f89f3ef699a6ded876f46ba7af70",
+    "aldric/animation.json": "27b2e3466c17c93938d562671fec3aeb0cce9dad2292b840f442704e7bd6bf6a",
     "aldric/gesture_left.png": "0a7916d68db631b340ea8793b1fa5764861c61307ca171628a61f5b43c830f80",
     "aldric/listen_left.png": "309f1bbb3fe3e59bda22cb8c1db2ec55adcd2a397ee9699c6d7218562e8964c6",
     "aldric/stand_back.png": "63cc2a2e6f317670f1e0e4c8209410baefbb72760ae019cd5a8e38ed433b98be",
     "aldric/stand_left.png": "4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8",
     "aldric/stand_right.png": "5823738e2aada5677e7700cbd8ffec29e5c6a9ce1a2b1c182fe756deb7ad0b3b",
     "aldric/turn_left_back.png": "ffa896d979b9fb18b31535e5daadf52c96475b3b770ba27038aae171ce08af35",
-    "aldric/walk_0.png": "fa064ee43bbd9978c114f3d4c55a7a4e8496087942eecc311f4e0bdcf8b4d2f0",
-    "aldric/walk_1.png": "38fe799e6ed941e03173cf45dd6d415a0a67014cb6fbad460d66d57f7f626d5f",
-    "aldric/walk_2.png": "631eb0876910a4c6394e9827a082e772d532ec19fa9284c693ff850cd963b183",
-    "aldric/walk_3.png": "70073d6d9287fc94665f4689013e196bd0cb8ab3b1df3e2cb70491f2a63d703a",
+    "aldric/walk_0.png": "f96ed9c21b8f059175f1d87c86d2114e926f44916f506fc657495ea0ffb4dda0",
+    "aldric/walk_1.png": "9a71197d8a157167af1371d1f71b5b55d5d27e66751943b9bc309c9e87f864e2",
+    "aldric/walk_2.png": "00773d5095448b5e1eac37d3a61b12873f7ec46365292d34fd78b3b92e4170a0",
+    "aldric/walk_3.png": "e71ba65e5ba146e40d418ba65f2d8ea797f15043d9563728db9eaa89356db1f4",
+    "aldric/walk_4.png": "7e375d34f6e790ce5683e34f50055b67403fd6724903b0e371adc8c9c203392a",
+    "aldric/walk_5.png": "ac0e5845e2be625133f7d63fa5fe3c7bbca8de179c0ab69cb5d3e6713be675b3",
+    "aldric/walk_6.png": "45da3632fc9b0d37c8bfe443f99316738fa2ad714e21309cd45c0b109d785741",
+    "aldric/walk_7.png": "8c51786d590819d4ba55cf894a99729134ced2cd41c4a5a2147037b640eb3bdd",
     "aldric/walk_back_0.png": "63cc2a2e6f317670f1e0e4c8209410baefbb72760ae019cd5a8e38ed433b98be",
     "aldric/walk_back_1.png": "4cb32e72301298e5b180a181f44b6a822696a8d8741075480049b8827d438a6b",
     "aldric/walk_back_2.png": "980c85cec6785fa14a3dc00d36eb91d7dbba6d99180a1bb8ce50214358f8f06c",
@@ -202,8 +208,8 @@
     "Original imagegen generations are retained without modification.",
     "Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.",
     "Human sprites are authored cinematic bodies rather than enlarged overworld sprites.",
-    "Aldric has natural stride and restrained conversational poses; caravan uses four complete horse-walk frames.",
-    "The original first side-walk source faces right; its explicit orientation flag normalizes the complete loop to left.",
+    "Aldric side walking uses eight native support/swing phases, a fixed pelvis root and a 32-pixel full stride.",
+    "Original side-walk generations are retained; rear walks, idles and all other actors remain byte-identical.",
     "Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.",
     "Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.",
     "The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.",
