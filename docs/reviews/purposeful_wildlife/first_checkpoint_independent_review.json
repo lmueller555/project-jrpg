@@ -1,0 +1,582 @@
+{
+  "method": "Real Game.update trigger; capture after actual SaveStore.write; Continue from exact captured first bytes without resaving",
+  "source_file_sha256": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
+  "baseline": {
+    "source_commit": "b27bff2a",
+    "method": "Current Game with _visit method from exact git show b27bff2a:purposeful_wildlife.py; in-memory method patch only",
+    "source_file_sha256": "dc2ce585ae4ccb129dce8a3d99d7be285423b59fcd6b5d594242faafec4ae2bb",
+    "first_checkpoint_sha256": "1a8d8f923aa4bc43a0962532d5aaf2461d0f956cdecb5f42c8df3ec266426e16",
+    "player_station": [
+      -440,
+      1370
+    ],
+    "player_can_stand": true,
+    "first_wildlife_record": {
+      "version": 1,
+      "animals": {
+        "south_sheep_a": {
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_sheep_b": {
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_a": {
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_b": {
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "west_bird": {
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "clearing_bird": {
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_butterfly": {
+          "position": [
+            -451.4,
+            1164.8
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "orchard_butterfly": {
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "farm_cat": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "vignette": {
+        "phase": "visit",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552.0,
+          1164.0
+        ],
+        "clock": 90.03333333333333,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      }
+    },
+    "visit_writes_one_tick": 1,
+    "valid_state": false,
+    "valid_context": false,
+    "valid_journey": false,
+    "at_write": {
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "pose": "idle",
+      "facing": "front",
+      "moving": false,
+      "clock": 90.03333333333333,
+      "owned": true,
+      "frame_sha256": "96f6c4474fe9a9feaddeac90d74ad5dad8f7866aff10dab054d7015525a6cd73"
+    },
+    "title_has_saved_journey": false,
+    "continue_result": false,
+    "save_error": "The saved journey could not be read.",
+    "garden_unchanged": true,
+    "produce_unchanged": true,
+    "after_tick_vignette": {
+      "phase": "visit",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -551.2666666666667,
+        1164.0
+      ],
+      "clock": 0.03333333333333333,
+      "facing": "right",
+      "basket": "home",
+      "moving": true
+    }
+  },
+  "fixed": {
+    "first_checkpoint_sha256": "86c7a7910433f2bf508c4688d6240fbd570f847218febd126a5a348a04df3b1c",
+    "first_wildlife_record": {
+      "version": 1,
+      "animals": {
+        "south_sheep_a": {
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_sheep_b": {
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_a": {
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_b": {
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "west_bird": {
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "clearing_bird": {
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_butterfly": {
+          "position": [
+            -451.4,
+            1164.8
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "orchard_butterfly": {
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "farm_cat": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "vignette": {
+        "phase": "visit",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552.0,
+          1164.0
+        ],
+        "clock": 0.0,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      }
+    },
+    "visit_writes_one_tick": 1,
+    "valid_state": true,
+    "valid_context": true,
+    "valid_journey": true,
+    "at_write": {
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "pose": "idle",
+      "facing": "front",
+      "moving": false,
+      "clock": 0.0,
+      "owned": true,
+      "frame_sha256": "96f6c4474fe9a9feaddeac90d74ad5dad8f7866aff10dab054d7015525a6cd73"
+    },
+    "garden_unchanged": true,
+    "produce_unchanged": true,
+    "title_continue_accepted": true,
+    "restored_exact_first_state": true,
+    "restored_exact_frame": true,
+    "basket_home": true,
+    "single_worker_owner": true,
+    "garden_unchanged_after_continue": true,
+    "one_tick_exact_state": true,
+    "one_tick_exact_worker": true,
+    "player_station": [
+      -440,
+      1370
+    ],
+    "player_can_stand": true
+  },
+  "midwalk": {
+    "vignette": {
+      "phase": "visit",
+      "step": 3,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -523.9333333333332,
+        1226.0
+      ],
+      "clock": 5.633333333333323,
+      "facing": "right",
+      "basket": "hand",
+      "moving": true
+    },
+    "valid_state": true,
+    "exact_state": true,
+    "exact_frame": true,
+    "garden_unchanged": true,
+    "carried_basket": true
+  },
+  "long_wait": {
+    "wait_seconds": 70.5,
+    "vignette": {
+      "phase": "visit",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "clock": 10.500000000000563,
+      "facing": "right",
+      "basket": "home",
+      "moving": false
+    },
+    "valid_state": true,
+    "valid_context": true,
+    "valid_journey": true,
+    "clock_bounded": true,
+    "exact_state": true,
+    "exact_frame": true,
+    "garden_unchanged": true,
+    "produce_unchanged": true,
+    "basket_home": true
+  },
+  "gallery_tests": {
+    "command": "python -m unittest tests.test_gallery_catalogue.GalleryCatalogueTests.test_garden_quiet_care_production_completion tests.test_gallery_catalogue.GalleryCatalogueTests.test_sheep_basket_visit_production_completion tests.test_gallery_session.GallerySessionTests.test_sheep_visit_restart_and_completion_preserve_saved_wildlife_and_produce -v",
+    "passed": 3
+  },
+  "original_baseline": {
+    "visit_writes_one_tick": 1,
+    "first_vignette": {
+      "phase": "visit",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "clock": 90.03333333333333,
+      "facing": "front",
+      "basket": "home",
+      "moving": false
+    },
+    "first_valid_state": false,
+    "first_valid_context": false,
+    "first_valid_journey": false,
+    "at_write": {
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "pose": "idle",
+      "facing": "front",
+      "moving": false,
+      "clock": 90.03333333333333,
+      "owned": true,
+      "frame": "96f6c4474fe9a9feaddeac90d74ad5dad8f7866aff10dab054d7015525a6cd73"
+    },
+    "after_tick_vignette": {
+      "phase": "visit",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -551.2666666666667,
+        1164.0
+      ],
+      "clock": 0.03333333333333333,
+      "facing": "right",
+      "basket": "home",
+      "moving": true
+    },
+    "garden_unchanged": true,
+    "produce_unchanged": true,
+    "title_has_saved_journey": false,
+    "continue_result": false,
+    "save_error": "The saved journey could not be read.",
+    "first_checkpoint_sha256": "7e8f0f220a8ee6476206008fd4fa2a693dd0701a0b0b86ae21880ec3a5246e5c",
+    "first_wildlife_record": {
+      "version": 1,
+      "animals": {
+        "south_sheep_a": {
+          "position": [
+            -420.0,
+            1476.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_sheep_b": {
+          "position": [
+            -314.4,
+            1572.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_a": {
+          "position": [
+            1368.0,
+            1392.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "east_sheep_b": {
+          "position": [
+            1526.4,
+            1464.0
+          ],
+          "mode": "graze",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "west_bird": {
+          "position": [
+            -840.0,
+            228.0
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "clearing_bird": {
+          "position": [
+            -1128.0,
+            -1603.2
+          ],
+          "mode": "peck",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "south_butterfly": {
+          "position": [
+            -451.4,
+            1164.8
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "orchard_butterfly": {
+          "position": [
+            -132.2,
+            -268.0
+          ],
+          "mode": "settle",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        },
+        "farm_cat": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "vignette": {
+        "phase": "visit",
+        "step": 0,
+        "elapsed": 0.0,
+        "contact": false,
+        "position": [
+          -552.0,
+          1164.0
+        ],
+        "clock": 90.03333333333333,
+        "facing": "front",
+        "basket": "home",
+        "moving": false
+      }
+    }
+  },
+  "matched_checkpoint_differences": [
+    {
+      "path": ".overworld.wildlife.vignette.clock",
+      "baseline": 90.03333333333333,
+      "fixed": 0.0
+    }
+  ],
+  "verification_tests": {
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 /workspace/.venvs/project-jrpg/bin/python -m unittest tests.test_purposeful_wildlife.PurposefulWildlifeTests.test_first_visit_checkpoint_after_long_garden_wait_continues_exactly tests.test_gallery_catalogue.GalleryCatalogueTests.test_garden_quiet_care_production_completion tests.test_gallery_catalogue.GalleryCatalogueTests.test_sheep_basket_visit_production_completion tests.test_gallery_session.GallerySessionTests.test_sheep_visit_restart_and_completion_preserve_saved_wildlife_and_produce -v",
+    "passed": 4,
+    "seconds": 9.715,
+    "source_file_sha256": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
+    "test_file_sha256": "8b1c5205bdfd0312e4803839f2a120f31701ba2deaa064b1676da8049378cbaa"
+  }
+}

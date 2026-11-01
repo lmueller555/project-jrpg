@@ -33,7 +33,8 @@ def distance_gain(distance, near, far):
 
 DURATIONS = {'river':4., 'wind':6., 'sack':.42, 'rustle':.45,
              'creak':.65, 'stone':.24, 'cup':.22,
-             'water':1.05, 'leaves':.48, 'basket':.32}
+             'water':1.05, 'leaves':.48, 'basket':.32,
+             'sheep':.55, 'bird':.22, 'wings':.30}
 
 
 def samples(name, rate, channels):
@@ -66,6 +67,23 @@ def samples(name, rate, channels):
             attack = min(1,t/.005)
             v = attack*math.exp(-24*t)*(.20*math.sin(2*math.pi*105*t)+low*.15)
             v += math.sin(math.pi*t/duration)**2*white*.025
+        elif name == 'sheep':
+            # A short voiced bleat: falling pitch, mild quaver and soft breath.
+            env = math.sin(math.pi*t/duration)**2
+            phase = 2*math.pi*(185*t-26*t*t+7/(2*math.pi*5.5)*math.sin(2*math.pi*5.5*t))
+            voice = (.11*math.sin(phase)+.065*math.sin(2*phase)
+                     +.04*math.sin(3*phase)+.015*math.sin(5*phase))
+            v = env*(voice*(.78+.22*math.sin(2*math.pi*6*t)**2)+low*.018)
+        elif name == 'bird':
+            # One rounded chirp, with a smooth rise and fall in pitch.
+            env = math.sin(math.pi*t/duration)**2
+            phase = 2*math.pi*(2300*t+1800*t*t/duration-1200*t*t*t/duration**2)
+            v = env*(.12*math.sin(phase)+white*.004)
+        elif name == 'wings':
+            # Three quiet feather beats; no continuous wildlife ambience.
+            env = math.sin(math.pi*t/duration)**2
+            flutter = .25+.75*math.sin(3*math.pi*t/duration)**2
+            v = env*flutter*(white*.055+low*.18)
         elif name == 'creak':
             env = math.sin(math.pi*t/duration)**2
             phase = 2*math.pi*(91*t+65*t*t)

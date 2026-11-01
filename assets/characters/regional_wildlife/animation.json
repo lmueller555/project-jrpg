@@ -1,0 +1,1644 @@
+{
+  "version": 1,
+  "families": {
+    "sheep": {
+      "size": [
+        24,
+        20
+      ],
+      "anchor": [
+        12,
+        18
+      ]
+    },
+    "cat": {
+      "size": [
+        24,
+        18
+      ],
+      "anchor": [
+        12,
+        16
+      ]
+    },
+    "bird": {
+      "size": [
+        12,
+        12
+      ],
+      "anchor": [
+        6,
+        10
+      ]
+    },
+    "butterfly": {
+      "size": [
+        12,
+        12
+      ],
+      "anchor": [
+        6,
+        10
+      ]
+    }
+  },
+  "clips": {
+    "sheep_graze_right": {
+      "family": "sheep",
+      "frames": [
+        "sheep_graze_right_0.png",
+        "sheep_graze_right_1.png",
+        "sheep_graze_right_2.png",
+        "sheep_graze_right_3.png"
+      ],
+      "durations": [
+        0.6,
+        0.22,
+        0.32,
+        0.44
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            22,
+            15
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            16
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            16
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            15
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_graze_left": {
+      "family": "sheep",
+      "frames": [
+        "sheep_graze_left_0.png",
+        "sheep_graze_left_1.png",
+        "sheep_graze_left_2.png",
+        "sheep_graze_left_3.png"
+      ],
+      "durations": [
+        0.6,
+        0.22,
+        0.32,
+        0.44
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            1,
+            15
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            16
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            16
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            15
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_walk_right": {
+      "family": "sheep",
+      "frames": [
+        "sheep_walk_right_0.png",
+        "sheep_walk_right_1.png",
+        "sheep_walk_right_2.png",
+        "sheep_walk_right_3.png"
+      ],
+      "durations": [
+        0.19,
+        0.16,
+        0.19,
+        0.16
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              6,
+              18
+            ],
+            [
+              16,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              8,
+              18
+            ],
+            [
+              14,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              7,
+              18
+            ],
+            [
+              15,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_walk_left": {
+      "family": "sheep",
+      "frames": [
+        "sheep_walk_left_0.png",
+        "sheep_walk_left_1.png",
+        "sheep_walk_left_2.png",
+        "sheep_walk_left_3.png"
+      ],
+      "durations": [
+        0.19,
+        0.16,
+        0.19,
+        0.16
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              17,
+              18
+            ],
+            [
+              7,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              15,
+              18
+            ],
+            [
+              9,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              16,
+              18
+            ],
+            [
+              8,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_look_right": {
+      "family": "sheep",
+      "frames": [
+        "sheep_look_right_0.png",
+        "sheep_look_right_1.png",
+        "sheep_look_right_2.png"
+      ],
+      "durations": [
+        1.3,
+        0.1,
+        0.65
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            9
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_look_left": {
+      "family": "sheep",
+      "frames": [
+        "sheep_look_left_0.png",
+        "sheep_look_left_1.png",
+        "sheep_look_left_2.png"
+      ],
+      "durations": [
+        1.3,
+        0.1,
+        0.65
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            9
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_nuzzle_right": {
+      "family": "sheep",
+      "frames": [
+        "sheep_nuzzle_right_0.png",
+        "sheep_nuzzle_right_1.png",
+        "sheep_nuzzle_right_2.png",
+        "sheep_nuzzle_right_3.png"
+      ],
+      "durations": [
+        0.35,
+        0.28,
+        0.6,
+        0.4
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            23,
+            11
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            23,
+            11
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            22,
+            10
+          ],
+          "ground_contacts": [
+            [
+              5,
+              18
+            ],
+            [
+              17,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "sheep_nuzzle_left": {
+      "family": "sheep",
+      "frames": [
+        "sheep_nuzzle_left_0.png",
+        "sheep_nuzzle_left_1.png",
+        "sheep_nuzzle_left_2.png",
+        "sheep_nuzzle_left_3.png"
+      ],
+      "durations": [
+        0.35,
+        0.28,
+        0.6,
+        0.4
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            0,
+            11
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            0,
+            11
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        },
+        {
+          "muzzle": [
+            1,
+            10
+          ],
+          "ground_contacts": [
+            [
+              18,
+              18
+            ],
+            [
+              6,
+              18
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_sleep_right": {
+      "family": "cat",
+      "frames": [
+        "cat_sleep_right_0.png",
+        "cat_sleep_right_1.png"
+      ],
+      "durations": [
+        1.2,
+        1.2
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              10,
+              16
+            ],
+            [
+              14,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              10,
+              16
+            ],
+            [
+              14,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_sleep_left": {
+      "family": "cat",
+      "frames": [
+        "cat_sleep_left_0.png",
+        "cat_sleep_left_1.png"
+      ],
+      "durations": [
+        1.2,
+        1.2
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              13,
+              16
+            ],
+            [
+              9,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              13,
+              16
+            ],
+            [
+              9,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_stretch_right": {
+      "family": "cat",
+      "frames": [
+        "cat_stretch_right_0.png",
+        "cat_stretch_right_1.png",
+        "cat_stretch_right_2.png",
+        "cat_stretch_right_3.png"
+      ],
+      "durations": [
+        0.3,
+        0.44,
+        0.7,
+        0.32
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              8,
+              16
+            ],
+            [
+              16,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              6,
+              16
+            ],
+            [
+              21,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              6,
+              16
+            ],
+            [
+              21,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              8,
+              16
+            ],
+            [
+              16,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_stretch_left": {
+      "family": "cat",
+      "frames": [
+        "cat_stretch_left_0.png",
+        "cat_stretch_left_1.png",
+        "cat_stretch_left_2.png",
+        "cat_stretch_left_3.png"
+      ],
+      "durations": [
+        0.3,
+        0.44,
+        0.7,
+        0.32
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              15,
+              16
+            ],
+            [
+              7,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              17,
+              16
+            ],
+            [
+              2,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              17,
+              16
+            ],
+            [
+              2,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              15,
+              16
+            ],
+            [
+              7,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_walk_right": {
+      "family": "cat",
+      "frames": [
+        "cat_walk_right_0.png",
+        "cat_walk_right_1.png",
+        "cat_walk_right_2.png",
+        "cat_walk_right_3.png"
+      ],
+      "durations": [
+        0.18,
+        0.14,
+        0.18,
+        0.14
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              10,
+              16
+            ],
+            [
+              18,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              8,
+              16
+            ],
+            [
+              16,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              6,
+              16
+            ],
+            [
+              15,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              8,
+              16
+            ],
+            [
+              16,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_walk_left": {
+      "family": "cat",
+      "frames": [
+        "cat_walk_left_0.png",
+        "cat_walk_left_1.png",
+        "cat_walk_left_2.png",
+        "cat_walk_left_3.png"
+      ],
+      "durations": [
+        0.18,
+        0.14,
+        0.18,
+        0.14
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              13,
+              16
+            ],
+            [
+              5,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              15,
+              16
+            ],
+            [
+              7,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              17,
+              16
+            ],
+            [
+              8,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              15,
+              16
+            ],
+            [
+              7,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_sit_right": {
+      "family": "cat",
+      "frames": [
+        "cat_sit_right_0.png",
+        "cat_sit_right_1.png",
+        "cat_sit_right_2.png"
+      ],
+      "durations": [
+        1.4,
+        0.12,
+        0.7
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              14,
+              16
+            ],
+            [
+              17,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              14,
+              16
+            ],
+            [
+              17,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              14,
+              16
+            ],
+            [
+              17,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "cat_sit_left": {
+      "family": "cat",
+      "frames": [
+        "cat_sit_left_0.png",
+        "cat_sit_left_1.png",
+        "cat_sit_left_2.png"
+      ],
+      "durations": [
+        1.4,
+        0.12,
+        0.7
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "ground_contacts": [
+            [
+              9,
+              16
+            ],
+            [
+              6,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              9,
+              16
+            ],
+            [
+              6,
+              16
+            ]
+          ]
+        },
+        {
+          "ground_contacts": [
+            [
+              9,
+              16
+            ],
+            [
+              6,
+              16
+            ]
+          ]
+        }
+      ]
+    },
+    "bird_land_right": {
+      "family": "bird",
+      "frames": [
+        "bird_land_right_0.png",
+        "bird_land_right_1.png",
+        "bird_land_right_2.png"
+      ],
+      "durations": [
+        0.12,
+        0.16,
+        0.28
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "bird_land_left": {
+      "family": "bird",
+      "frames": [
+        "bird_land_left_0.png",
+        "bird_land_left_1.png",
+        "bird_land_left_2.png"
+      ],
+      "durations": [
+        0.12,
+        0.16,
+        0.28
+      ],
+      "loop": false,
+      "landmarks": [
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "bird_peck_right": {
+      "family": "bird",
+      "frames": [
+        "bird_peck_right_0.png",
+        "bird_peck_right_1.png",
+        "bird_peck_right_2.png",
+        "bird_peck_right_3.png"
+      ],
+      "durations": [
+        0.7,
+        0.16,
+        0.14,
+        0.35
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            11,
+            8
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            10,
+            10
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ],
+            [
+              7,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "bird_peck_left": {
+      "family": "bird",
+      "frames": [
+        "bird_peck_left_0.png",
+        "bird_peck_left_1.png",
+        "bird_peck_left_2.png",
+        "bird_peck_left_3.png"
+      ],
+      "durations": [
+        0.7,
+        0.16,
+        0.14,
+        0.35
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            0,
+            8
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            1,
+            10
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ],
+            [
+              4,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "bird_fly_right": {
+      "family": "bird",
+      "frames": [
+        "bird_fly_right_0.png",
+        "bird_fly_right_1.png",
+        "bird_fly_right_2.png",
+        "bird_fly_right_3.png"
+      ],
+      "durations": [
+        0.1,
+        0.08,
+        0.1,
+        0.08
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            11,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        }
+      ]
+    },
+    "bird_fly_left": {
+      "family": "bird",
+      "frames": [
+        "bird_fly_left_0.png",
+        "bird_fly_left_1.png",
+        "bird_fly_left_2.png",
+        "bird_fly_left_3.png"
+      ],
+      "durations": [
+        0.1,
+        0.08,
+        0.1,
+        0.08
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "beak": [
+            0,
+            4
+          ],
+          "airborne": true,
+          "ground_contacts": []
+        }
+      ]
+    },
+    "butterfly_flutter_right": {
+      "family": "butterfly",
+      "frames": [
+        "butterfly_flutter_right_0.png",
+        "butterfly_flutter_right_1.png",
+        "butterfly_flutter_right_2.png",
+        "butterfly_flutter_right_3.png"
+      ],
+      "durations": [
+        0.1,
+        0.09,
+        0.1,
+        0.09
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        }
+      ]
+    },
+    "butterfly_flutter_left": {
+      "family": "butterfly",
+      "frames": [
+        "butterfly_flutter_left_0.png",
+        "butterfly_flutter_left_1.png",
+        "butterfly_flutter_left_2.png",
+        "butterfly_flutter_left_3.png"
+      ],
+      "durations": [
+        0.1,
+        0.09,
+        0.1,
+        0.09
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        },
+        {
+          "airborne": true,
+          "ground_contacts": []
+        }
+      ]
+    },
+    "butterfly_settle_right": {
+      "family": "butterfly",
+      "frames": [
+        "butterfly_settle_right_0.png",
+        "butterfly_settle_right_1.png"
+      ],
+      "durations": [
+        1.0,
+        0.22
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ]
+          ]
+        },
+        {
+          "airborne": false,
+          "ground_contacts": [
+            [
+              5,
+              10
+            ]
+          ]
+        }
+      ]
+    },
+    "butterfly_settle_left": {
+      "family": "butterfly",
+      "frames": [
+        "butterfly_settle_left_0.png",
+        "butterfly_settle_left_1.png"
+      ],
+      "durations": [
+        1.0,
+        0.22
+      ],
+      "loop": true,
+      "landmarks": [
+        {
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ]
+          ]
+        },
+        {
+          "airborne": false,
+          "ground_contacts": [
+            [
+              6,
+              10
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "props": {
+    "seeds": {
+      "file": "seeds.png",
+      "size": [
+        16,
+        8
+      ],
+      "anchor": [
+        8,
+        6
+      ]
+    }
+  }
+}

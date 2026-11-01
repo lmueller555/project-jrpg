@@ -112,12 +112,16 @@ class GardenOrchard:
  def restore(self,data=None):
   self.state=copy.deepcopy(data if data is not None else empty_state())
   for actor in self.actors:
+   actor.wildlife_owned=False
    actor.position.update(self.state[actor.role]['position']);actor.clock=0;actor.moving=False
    self._pose(actor)
 
  def to_dict(self):
   result=copy.deepcopy(self.state)
-  for a in self.actors:result[a.role]['position']=list(a.position)
+  for a in self.actors:
+   # The finite pasture visit temporarily owns the gardener's physical feet.
+   # Keep her completed garden snapshot at home; wildlife saves the trip.
+   if not getattr(a,'wildlife_owned',False):result[a.role]['position']=list(a.position)
   return result
 
  def action(self,role):
@@ -126,6 +130,7 @@ class GardenOrchard:
   return (GARDEN_SCENE if s['phase']=='scene' else PROGRAMS[role])[s['step']]
 
  def _pose(self,a):
+  if getattr(a,'wildlife_owned',False):return
   action=self.action(a.role)
   a.draw_anchor=(20,44) if a.role=='picker' and (action is None or action.get('pose')=='rest') else (20,38)
   if action is None:a.pose='rest' if a.role=='picker' else 'idle';a.facing='front';return
@@ -152,6 +157,7 @@ class GardenOrchard:
   if game.social.locked:return
   dt=min(max(seconds,0),.1);player=self.world.probe_rect(game.player.position)
   for a in self.actors:
+   if getattr(a,'wildlife_owned',False):continue
    a.moving=False
    if game.player.position.distance_to(STARTS[a.role])>260:continue
    s=self.state[a.role];a.clock+=dt;self._pose(a);action=self.action(a.role)
