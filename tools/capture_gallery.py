@@ -111,10 +111,16 @@ def phase(game):
             'garden_phase': getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('phase'),
             'garden_step': getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('step'),
             'garden_seconds': round(getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('elapsed',0),4),
+            'wildlife_vignette': dict(getattr(getattr(game.world,'wildlife',None),'vignette',{})),
             'dialogue': game.social.script_identifier}
 
 
 def thumbnail_ready(identifier, g, seconds):
+    if identifier == 'sheep_basket_visit':
+        from purposeful_wildlife import PAT_STEP
+        visit = g.world.wildlife.vignette
+        return (visit['phase'] == 'visit' and visit['step'] == PAT_STEP
+                and visit['contact'] and visit['basket'] == 'pen')
     if identifier == 'garden_quiet_care':
         controller = g.world.garden_orchard
         state = controller.state['gardener']
@@ -149,7 +155,10 @@ def crop_rect(identifier, game):
     protagonist = getattr(game.player, 'story_position', None) or game.player.position
     center = pygame.Vector2(protagonist)-camera+(0,-20)
     width = 240
-    if identifier == 'garden_quiet_care':
+    if identifier == 'sheep_basket_visit':
+        center = pygame.Vector2(-357,1404)-camera
+        width = 128
+    elif identifier == 'garden_quiet_care':
         center = pygame.Vector2(-538,1156)-camera
         width = 240
     elif identifier == 'tomas_sack':
@@ -177,12 +186,14 @@ def crop_rect(identifier, game):
     return rect.clamp(pygame.Rect(0, 0, 480, 320))
 
 
-def capture_thumbnails():
+def capture_thumbnails(identifiers=None):
     OUT.mkdir(parents=True, exist_ok=True);THUMBS.mkdir(parents=True, exist_ok=True)
     records = []
+    entries = [entry for entry in GALLERY_ENTRIES if identifiers is None or entry.id in identifiers]
+    source = {'source_commit':git('rev-parse','HEAD'), 'runtime_python_sha256':runtime_digest()}
     parent = Game(fullscreen=False)
     parent.open_gallery()
-    for entry in GALLERY_ENTRIES:
+    for entry in entries:
         random.seed(9182)
         assert parent.launch_gallery_scene(entry.id), (entry.id, parent.gallery.error)
         session = parent.gallery_session
@@ -208,14 +219,31 @@ def capture_thumbnails():
         records.append({'id':entry.id,'name':entry.name,'source':'production Game.canvas',
                         'file':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
                         'frame':frame,'seconds':round((frame+1)/FPS,4),'crop':list(rect),'state':state})
+        if identifiers is not None:
+            records[-1].update(source)
+            # A focused addition also leaves its full replay composition for
+            # review, including the actual Gallery toolbar and normal zoom.
+            parent.draw()
+            still = OUT/f'regional_{entry.id}.png'
+            pygame.image.save(parent.window,str(still))
+            records[-1]['review_frame'] = str(still.relative_to(ROOT))
         session.close()
         g = session = None
         gc.collect()
         print('thumbnail',entry.id,frame,flush=True)
     parent.music.stop();pygame.quit()
-    (THUMBS/'capture.json').write_text(json.dumps({'source_commit':git('rev-parse','HEAD'),'runtime_python_sha256':runtime_digest(),'fps':FPS,
+    metadata = {**source,'fps':FPS,
         'method':'Real isolated Gallery fixtures, normal 30 Hz updates and dialogue input; world canvas cropped before UI.',
-        'entries':records},indent=2)+'\n')
+        'entries':records}
+    if identifiers is not None and (THUMBS/'capture.json').exists():
+        # Retain the original catalogue-wide provenance and every untouched
+        # thumbnail. A focused recapture supplies its own per-entry source.
+        metadata = json.loads((THUMBS/'capture.json').read_text())
+        by_id = {record['id']:record for record in metadata['entries']}
+        by_id.update({record['id']:record for record in records})
+        records = [by_id[entry.id] for entry in GALLERY_ENTRIES if entry.id in by_id]
+        metadata['entries'] = records
+    (THUMBS/'capture.json').write_text(json.dumps(metadata,indent=2)+'\n')
     montage = Image.new('RGB',(960,240*((len(records)+2)//3)),'#10271f')
     draw = ImageDraw.Draw(montage)
     font = ImageFont.truetype(str(ROOT/'assets/ui/fonts/AtkinsonHyperlegible-Regular.ttf'),17)
@@ -403,9 +431,12 @@ def preview_stills():
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode',choices=('all','thumbnails','review'),default='all')
+    parser.add_argument('--scene',action='append',choices=tuple(GALLERY_BY_ID),
+                        help='Capture only this thumbnail; repeat to select several. Requires --mode thumbnails.')
     args=parser.parse_args()
+    if args.scene and args.mode != 'thumbnails':parser.error('--scene requires --mode thumbnails')
     OUT.mkdir(parents=True,exist_ok=True)
-    if args.mode in ('all','thumbnails'):capture_thumbnails()
+    if args.mode in ('all','thumbnails'):capture_thumbnails(args.scene)
     if args.mode in ('all','review'):
         with tempfile.TemporaryDirectory(prefix='gallery-capture-') as directory:
             review=Review(directory)

@@ -1,0 +1,420 @@
+{
+  "method": "Actual-game wildlife review at 30 Hz simulation / 15 fps normal playback.\n\nOnly completed predecessor quests and initial Caelan positions are fixtures.\nGarden work/dialogue, animal behavior, the gardener's entire pasture visit,\nplayer movement, contact sounds and Continue use production code. Site changes\nbetween clips are labelled cuts. Music is muted; accepted regional effects are\nrendered from the production PCM and gain stream without normalization.\n",
+  "clips": {
+    "sheep": {
+      "seconds": 67.86666666666666,
+      "peak_dbfs": -28.48905039142184,
+      "events": 10,
+      "checks": {
+        "preparation": {
+          "garden_work_and_optional_scene": "completed through production update/interact before recording",
+          "dialogue_pages": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "garden_state": {
+            "gardener": {
+              "phase": "rest",
+              "step": 0,
+              "elapsed": 0.0,
+              "position": [
+                -552.0,
+                1164.0
+              ],
+              "read": true,
+              "greeted": false
+            },
+            "picker": {
+              "phase": "work",
+              "step": 0,
+              "elapsed": 0.0,
+              "position": [
+                -145.0,
+                -250.0
+              ],
+              "read": false,
+              "greeted": false
+            }
+          }
+        },
+        "continue_exact_state": true,
+        "continue_exact_worker_feet": true,
+        "continue_exact_basket": true,
+        "continue_snapshot": {
+          "state": {
+            "version": 1,
+            "animals": {
+              "south_sheep_a": {
+                "position": [
+                  -381.0,
+                  1433.0
+                ],
+                "mode": "look",
+                "target": 4,
+                "elapsed": 5.2333333333333245,
+                "clock": 5.2333333333333245,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "south_sheep_b": {
+                "position": [
+                  -347.0,
+                  1430.0
+                ],
+                "mode": "nuzzle",
+                "target": 4,
+                "elapsed": 0.4666666666666666,
+                "clock": 0.4666666666666666,
+                "facing": "left",
+                "cooldown": 0.0
+              },
+              "east_sheep_a": {
+                "position": [
+                  1368.0,
+                  1392.0
+                ],
+                "mode": "graze",
+                "target": 1,
+                "elapsed": 0.0,
+                "clock": 0.0,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "east_sheep_b": {
+                "position": [
+                  1526.4,
+                  1464.0
+                ],
+                "mode": "graze",
+                "target": 1,
+                "elapsed": 0.0,
+                "clock": 0.0,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "west_bird": {
+                "position": [
+                  -840.0,
+                  228.0
+                ],
+                "mode": "peck",
+                "target": 1,
+                "elapsed": 0.0,
+                "clock": 0.0,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "clearing_bird": {
+                "position": [
+                  -1128.0,
+                  -1603.2
+                ],
+                "mode": "peck",
+                "target": 1,
+                "elapsed": 0.0,
+                "clock": 0.0,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "south_butterfly": {
+                "position": [
+                  -442.4,
+                  1161.8
+                ],
+                "mode": "settle",
+                "target": 2,
+                "elapsed": 1.8000000000000023,
+                "clock": 1.8000000000000023,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "orchard_butterfly": {
+                "position": [
+                  -132.2,
+                  -268.0
+                ],
+                "mode": "settle",
+                "target": 1,
+                "elapsed": 0.0,
+                "clock": 0.0,
+                "facing": "right",
+                "cooldown": 0.0
+              },
+              "farm_cat": {
+                "position": [
+                  -450.0,
+                  1210.0
+                ],
+                "mode": "sit",
+                "target": 3,
+                "elapsed": 5.9999999999999885,
+                "clock": 5.9999999999999885,
+                "facing": "left",
+                "cooldown": 0.0
+              }
+            },
+            "vignette": {
+              "phase": "visit",
+              "step": 10,
+              "elapsed": 0.4666666666666666,
+              "contact": false,
+              "position": [
+                -384.0,
+                1424.0
+              ],
+              "clock": 36.366666666667165,
+              "facing": "front",
+              "basket": "pen",
+              "moving": false
+            }
+          },
+          "worker_feet": [
+            -384.0,
+            1424.0
+          ],
+          "basket": [
+            -360.0,
+            1424.0
+          ]
+        },
+        "completed": {
+          "version": 1,
+          "animals": {
+            "south_sheep_a": {
+              "position": [
+                -420.0,
+                1476.0
+              ],
+              "mode": "graze",
+              "target": 1,
+              "elapsed": 4.099999999999995,
+              "clock": 4.099999999999995,
+              "facing": "left",
+              "cooldown": 0.0
+            },
+            "south_sheep_b": {
+              "position": [
+                -300.98016640039623,
+                1516.0840266683176
+              ],
+              "mode": "return",
+              "target": 0,
+              "elapsed": 5.6999999999999895,
+              "clock": 5.6999999999999895,
+              "facing": "left",
+              "cooldown": 0.0
+            },
+            "east_sheep_a": {
+              "position": [
+                1368.0,
+                1392.0
+              ],
+              "mode": "graze",
+              "target": 1,
+              "elapsed": 0.0,
+              "clock": 0.0,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "east_sheep_b": {
+              "position": [
+                1526.4,
+                1464.0
+              ],
+              "mode": "graze",
+              "target": 1,
+              "elapsed": 0.0,
+              "clock": 0.0,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "west_bird": {
+              "position": [
+                -840.0,
+                228.0
+              ],
+              "mode": "peck",
+              "target": 1,
+              "elapsed": 0.0,
+              "clock": 0.0,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "clearing_bird": {
+              "position": [
+                -1128.0,
+                -1603.2
+              ],
+              "mode": "peck",
+              "target": 1,
+              "elapsed": 0.0,
+              "clock": 0.0,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "south_butterfly": {
+              "position": [
+                -442.4,
+                1161.8
+              ],
+              "mode": "settle",
+              "target": 2,
+              "elapsed": 1.5333333333333348,
+              "clock": 1.5333333333333348,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "orchard_butterfly": {
+              "position": [
+                -132.2,
+                -268.0
+              ],
+              "mode": "settle",
+              "target": 1,
+              "elapsed": 0.0,
+              "clock": 0.0,
+              "facing": "right",
+              "cooldown": 0.0
+            },
+            "farm_cat": {
+              "position": [
+                -450.0,
+                1210.0
+              ],
+              "mode": "sit",
+              "target": 3,
+              "elapsed": 1.6666666666666685,
+              "clock": 1.6666666666666685,
+              "facing": "left",
+              "cooldown": 0.0
+            }
+          },
+          "vignette": {
+            "phase": "done",
+            "step": 0,
+            "elapsed": 0.0,
+            "contact": false,
+            "position": [
+              -552,
+              1164
+            ],
+            "clock": 0.0,
+            "facing": "front",
+            "basket": "home",
+            "moving": false
+          }
+        }
+      }
+    },
+    "birds": {
+      "seconds": 29.133333333333333,
+      "peak_dbfs": -18.652576421721193,
+      "events": 22,
+      "checks": {
+        "accepted_wildlife_events": [
+          {
+            "time": 8.466666666666667,
+            "action": "start",
+            "key": "wildlife_west_bird_wings",
+            "sound": "wings",
+            "gain": 0.2304797536292911,
+            "ambient": false,
+            "source": [
+              -840.0,
+              228.0
+            ],
+            "listener": [
+              -884.000000000002,
+              208.0
+            ],
+            "distance": 48.33218389438015,
+            "family": "wildlife",
+            "priority": 1
+          },
+          {
+            "time": 18.3,
+            "action": "start",
+            "key": "wildlife_west_bird_bird",
+            "sound": "bird",
+            "gain": 0.10327386873116352,
+            "ambient": false,
+            "source": [
+              -840.0,
+              228.0
+            ],
+            "listener": [
+              -840.0069046851415,
+              318.00004468328126
+            ],
+            "distance": 90.00004494814044,
+            "family": "wildlife",
+            "priority": 1
+          }
+        ]
+      }
+    },
+    "butterflies": {
+      "seconds": 16.0,
+      "peak_dbfs": -25.91088351451777,
+      "events": 6,
+      "checks": {}
+    },
+    "cat": {
+      "seconds": 40.0,
+      "peak_dbfs": -24.05158588142045,
+      "events": 20,
+      "checks": {}
+    },
+    "distance": {
+      "seconds": 25.4,
+      "peak_dbfs": -18.86562873582166,
+      "events": 8,
+      "checks": {
+        "near_river_gain": 0.55,
+        "far_river_voice_released": true,
+        "mute_pcm_exact_zero": true,
+        "map_pcm_exact_zero": true,
+        "map_wildlife_frozen": true
+      }
+    }
+  },
+  "compilation": {
+    "file": "purposeful_wildlife.mp4",
+    "seconds": 178.4,
+    "chapters": [
+      {
+        "clip": "sheep_visit",
+        "starts_at": 0,
+        "seconds": 67.86666666666666
+      },
+      {
+        "clip": "bird_grain_scatter_return",
+        "starts_at": 67.86666666666666,
+        "seconds": 29.133333333333333
+      },
+      {
+        "clip": "butterfly_flowers",
+        "starts_at": 97.0,
+        "seconds": 16.0
+      },
+      {
+        "clip": "cat_sun_and_rest",
+        "starts_at": 113.0,
+        "seconds": 40.0
+      },
+      {
+        "clip": "audible_distance",
+        "starts_at": 153.0,
+        "seconds": 25.4
+      }
+    ],
+    "method": "Serial concatenation of the five unchanged normal-speed production captures; no time compression."
+  },
+  "limitations": [
+    "Offline production PCM reconstruction replaces unavailable SDL loopback.",
+    "No subjective listening approval is claimed.",
+    "Initial regional positions and predecessor quest completion are labelled fixtures."
+  ]
+}

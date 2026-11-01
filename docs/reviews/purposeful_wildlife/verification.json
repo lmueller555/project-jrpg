@@ -1,0 +1,444 @@
+{
+  "input_files_verified": 104,
+  "all_five_reports_share_current_input_hashes": true,
+  "controller_sha256": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
+  "stills": {
+    "audible_distance_bank_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "audible_distance_bank.png"
+    },
+    "bird_grain_scatter_return_bird_fly_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_fly.png"
+    },
+    "bird_grain_scatter_return_bird_land_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_land.png"
+    },
+    "bird_grain_scatter_return_bird_peck_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_peck.png"
+    },
+    "bird_grain_scatter_return_bird_perched_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_perched.png"
+    },
+    "bird_grain_scatter_return_bird_return_flight_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_return_flight.png"
+    },
+    "bird_grain_scatter_return_bird_returned_to_grain_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "bird_grain_scatter_return_bird_returned_to_grain.png"
+    },
+    "butterfly_flowers_butterfly_flutter_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "butterfly_flowers_butterfly_flutter.png"
+    },
+    "butterfly_flowers_butterfly_settle_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "butterfly_flowers_butterfly_settle.png"
+    },
+    "cat_sun_and_rest_cat_sit_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "cat_sun_and_rest_cat_sit.png"
+    },
+    "cat_sun_and_rest_cat_sleep_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "cat_sun_and_rest_cat_sleep.png"
+    },
+    "cat_sun_and_rest_cat_stretch_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "cat_sun_and_rest_cat_stretch.png"
+    },
+    "cat_sun_and_rest_cat_stretch_peak_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "cat_sun_and_rest_cat_stretch_peak.png"
+    },
+    "cat_sun_and_rest_cat_walk_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "cat_sun_and_rest_cat_walk.png"
+    },
+    "sheep_basket_after_continue_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_basket_after_continue.png"
+    },
+    "sheep_basket_before_continue_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_basket_before_continue.png"
+    },
+    "sheep_basket_retrieved_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_basket_retrieved.png"
+    },
+    "sheep_pat_contact_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_pat_contact.png"
+    },
+    "sheep_visit_complete_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_complete.png"
+    },
+    "sheep_visit_departure_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_departure.png"
+    },
+    "sheep_visit_sheep_graze_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_sheep_graze.png"
+    },
+    "sheep_visit_sheep_look_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_sheep_look.png"
+    },
+    "sheep_visit_sheep_nuzzle_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_sheep_nuzzle.png"
+    },
+    "sheep_visit_sheep_walk_native.png": {
+      "native_size": [
+        480,
+        320
+      ],
+      "window_file": "sheep_visit_sheep_walk.png"
+    }
+  },
+  "media": {
+    "sheep_visit.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "67.866667",
+        "size": "4341631"
+      },
+      "sha256": "37c89458043e3e370281cd000c4d833fa646e461d107b85c01da076846f14152",
+      "full_decode_passed": true
+    },
+    "bird_grain_scatter_return.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "29.133333",
+        "size": "1221766"
+      },
+      "sha256": "68d37565b892379617b034013fe9672e714252e70ac921e0e000922960cfb6de",
+      "full_decode_passed": true
+    },
+    "butterfly_flowers.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "16.000000",
+        "size": "372250"
+      },
+      "sha256": "5db9be1222404273671e442ae10a89c93f495b73787c9142e4723b85829b7a6e",
+      "full_decode_passed": true
+    },
+    "cat_sun_and_rest.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "40.000000",
+        "size": "1052062"
+      },
+      "sha256": "8377d776e07edc13933250dc2c178d4282ad518fd8b1a043d362c3105b75aafc",
+      "full_decode_passed": true
+    },
+    "audible_distance.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "25.400000",
+        "size": "2487190"
+      },
+      "sha256": "3e31c1c20f94cb792eec313f632cc8c3cfc90f31263f827f42ae54b7ccb7438c",
+      "full_decode_passed": true
+    },
+    "purposeful_wildlife.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 960,
+          "height": 640,
+          "r_frame_rate": "15/1"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "48000",
+          "channels": 1,
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "178.421333",
+        "size": "9469869"
+      },
+      "sha256": "2581313851a5deca0c64a3a77b65deeafd1aa9bda97d8c1c705dc18975ee2273",
+      "full_decode_passed": true
+    }
+  },
+  "checks": {
+    "fixed_nine_animal_roster": true,
+    "all_clip_raw_pcm_below_full_scale": true,
+    "all_render_caches_within_64MiB": true,
+    "exact_continue_state_feet_basket": true,
+    "sheep_visit_completed_basket_home": true,
+    "single_sheep_contact_cue": true,
+    "one_wing_and_one_landing_cue": true,
+    "away_bird_uses_fold_and_hold_pose": true,
+    "returning_bird_uses_flight_pose": true,
+    "butterfly_capture_site": "southern flower patch, clear of harvest basket",
+    "river_near_gain": 0.55,
+    "far_river_released": true,
+    "mute_and_map_pcm_exact_zero": true,
+    "map_freezes_wildlife": true,
+    "all_six_media_full_decode_passed": true,
+    "earliest_visit_checkpoint_valid_and_continue_exact": true
+  },
+  "wildlife_events": {
+    "sheep_visit": [
+      {
+        "time": 37.63333333333333,
+        "action": "start",
+        "key": "wildlife_south_sheep_a_sheep",
+        "sound": "sheep",
+        "gain": 0.07423383047748006,
+        "ambient": false,
+        "source": [
+          -381.0,
+          1433.0
+        ],
+        "listener": [
+          -280.8126691137013,
+          1411.9825856618004
+        ],
+        "distance": 102.36812480251976,
+        "family": "wildlife",
+        "priority": 1
+      }
+    ],
+    "bird_grain_scatter_return": [
+      {
+        "time": 8.466666666666667,
+        "action": "start",
+        "key": "wildlife_west_bird_wings",
+        "sound": "wings",
+        "gain": 0.2304797536292911,
+        "ambient": false,
+        "source": [
+          -840.0,
+          228.0
+        ],
+        "listener": [
+          -884.000000000002,
+          208.0
+        ],
+        "distance": 48.33218389438015,
+        "family": "wildlife",
+        "priority": 1
+      },
+      {
+        "time": 18.3,
+        "action": "start",
+        "key": "wildlife_west_bird_bird",
+        "sound": "bird",
+        "gain": 0.10327386873116352,
+        "ambient": false,
+        "source": [
+          -840.0,
+          228.0
+        ],
+        "listener": [
+          -840.0069046851415,
+          318.00004468328126
+        ],
+        "distance": 90.00004494814044,
+        "family": "wildlife",
+        "priority": 1
+      }
+    ],
+    "butterfly_flowers": [],
+    "cat_sun_and_rest": [],
+    "audible_distance": []
+  },
+  "listening_approval": "Not claimed; no verified perceptual listening facility.",
+  "first_visit_checkpoint_regression": {
+    "file": "first_visit_checkpoint_regression.json",
+    "sha256": "36b56b4f6711b47c75cf6eb96a4a27d78a41957f4037334775f1dbcc5fb6a669",
+    "all_source_hashes_current": true,
+    "checks_passed": 23,
+    "precondition_gardener_idle_clock": 90.0,
+    "first_checkpoint_worker_clock": 0.0
+  },
+  "gallery_merge_context": {
+    "main_baseline": "e80c3534",
+    "merge_head": "4e86b720",
+    "main_sha256": "330053f8d8e6f72cf111403cf321d23a1b1fe13ec2bd79c3bd58afeadb3ab26a",
+    "gallery_sha256": "b929799d157b45feef6ecd2ea125c124a2b0948f0e44cf66b142ab2b7ae1532e",
+    "catalogue_count": 26,
+    "wildlife_entry": {
+      "id": "sheep_basket_visit",
+      "name": "A Familiar Visitor"
+    },
+    "wildlife_thumbnail": {
+      "file": "assets/ui/gallery/sheep_basket_visit.png",
+      "sha256": "6f8fb1526b80bc9869931af42e19ee58139bf9bb6375d9124d2b7e7345ece757",
+      "runtime_python_sha256": "7850e098e94941226a5b8160047376e19a816ea9d2d33e65ee25ba70483ce492",
+      "runtime_digest_matches_current_sources": true,
+      "other_25_records_unchanged_by_focused_recapture": true
+    }
+  }
+}

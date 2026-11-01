@@ -44,7 +44,7 @@ journey directly. See the [opening cinematic guide](docs/OPENING_CINEMATIC.md).
 Settings changes fullscreen/windowed mode, independent music/effects levels,
 text size, reduced interface motion and objective visibility. Continue resumes
 a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
-**Gallery** replays 25 authored cinematics and staged sequences without playing
+**Gallery** replays 26 authored cinematics and staged sequences without playing
 through their quests. Browse actual scene thumbnails with the mouse/wheel or
 arrows, then click a card or press Enter. **Esc** returns to the catalogue,
 **R** restarts the scene, and Space/E/click advances dialogue. Each replay uses
@@ -103,6 +103,13 @@ The southern road now leads automatically to the [Elden Vale overworld](docs/OVE
 The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives the vale distinct farmsteads and crop parcels, orchards, clustered forests, rocky slopes and planted riverbanks. Worn stone roads, cart tracks and woodland paths connect the new scenery, with wildlife, laundry, relief supplies and small resting places adding local character.
 
 The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
+
+The [purposeful wildlife pass](docs/PURPOSEFUL_WILDLIFE_SCOPE.md) gives the existing
+sheep, birds and butterflies small local routines, with one farm cat resting and
+stretching by the southern doorstep. After the kitchen gardener finishes her
+plant-care scene, she takes an empty basket to the southern sheep for a brief
+visit. See the [actual-game review](docs/reviews/purposeful_wildlife/README.md).
+Replay the finite visit as **A Familiar Visitor** in the title-screen Gallery.
 
 The [region NPC animation pass](docs/REGION_NPCS.md) adds authored full-body
 working and directional carrying poses for the grain and bridge workers, with registered

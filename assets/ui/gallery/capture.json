@@ -1153,6 +1153,69 @@
         "garden_seconds": 0.9333,
         "dialogue": null
       }
+    },
+    {
+      "id": "sheep_basket_visit",
+      "name": "A Familiar Visitor",
+      "source": "production Game.canvas",
+      "file": "assets/ui/gallery/sheep_basket_visit.png",
+      "sha256": "6f8fb1526b80bc9869931af42e19ee58139bf9bb6375d9124d2b7e7345ece757",
+      "frame": 1035,
+      "seconds": 34.5333,
+      "crop": [
+        269,
+        248,
+        128,
+        72
+      ],
+      "state": {
+        "opening": "disabled",
+        "opening_action": null,
+        "opening_action_seconds": 0.0,
+        "cinematic_seconds": 0.0,
+        "arrival_shot": "mill_close",
+        "arrival_seconds": 0.0,
+        "elira_action": null,
+        "elira_seconds": 0.0,
+        "venn_phase": null,
+        "venn_seconds": 0.0,
+        "mill_action": null,
+        "mill_seconds": 0.0,
+        "mill_camera": null,
+        "lantern_action": null,
+        "lantern_seconds": 0.0,
+        "lantern_stage": "idle",
+        "regent_stage": "idle",
+        "regent_cart_released": false,
+        "halden_action": null,
+        "halden_seconds": 0.0,
+        "tomas_job": null,
+        "bridge_stage": "inspect",
+        "bridge_seconds": 0.0,
+        "grain_stage": "inspect",
+        "grain_seconds": 0,
+        "garden_phase": "rest",
+        "garden_step": 0,
+        "garden_seconds": 0.0,
+        "wildlife_vignette": {
+          "phase": "visit",
+          "step": 10,
+          "elapsed": 1.2666666666666673,
+          "contact": true,
+          "position": [
+            -384.0,
+            1424.0
+          ],
+          "clock": 34.533333333333935,
+          "facing": "front",
+          "basket": "pen",
+          "moving": false
+        },
+        "dialogue": null
+      },
+      "source_commit": "b27bff2a5dc9d6e46d7ba44c84f07c271803d580",
+      "runtime_python_sha256": "7850e098e94941226a5b8160047376e19a816ea9d2d33e65ee25ba70483ce492",
+      "review_frame": "docs/reviews/gallery/regional_sheep_basket_visit.png"
     }
   ]
 }

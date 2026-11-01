@@ -31,6 +31,7 @@ class OverworldTravel:
         self._guard_script = None
         self.bridge_state = None
         self.garden_state = None
+        self.wildlife_state = None
 
     @property
     def active(self):
@@ -41,7 +42,9 @@ class OverworldTravel:
         garden = world.garden_orchard.to_dict() if world is not None else self.garden_state
         bridge = world.bridge_crew.to_dict() if world is not None else self.bridge_state
         farm = world.grain_farm.to_dict() if world is not None else self.farm_state
+        wildlife = world.wildlife.to_dict() if world is not None else self.wildlife_state
         return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered),
+                **({'wildlife': wildlife} if wildlife is not None else {}),
                 **({'garden_orchard': garden} if garden is not None else {}),
                 **({'bridge_crew': bridge} if bridge is not None else {}),
                 **({'grain_farm': farm} if farm is not None else {})}
@@ -53,6 +56,10 @@ class OverworldTravel:
         retaining precise feet and action time for interruption recovery.
         """
         record=self.to_dict()
+        wildlife=record.get('wildlife')
+        if wildlife is not None:
+            from purposeful_wildlife import progress_state
+            record['wildlife']=progress_state(wildlife)
         garden=record.get('garden_orchard')
         if garden is not None:
             record['garden_orchard']={role:{key:value for key,value in state.items()
@@ -78,8 +85,11 @@ class OverworldTravel:
         from grain_farm import valid_state
         from bridge_crew import valid_state as valid_bridge_state
         from garden_orchard import valid_state as valid_garden_state
+        from purposeful_wildlife import valid_context as valid_wildlife_context
         if not (isinstance(record, dict) and {'version', 'region'} <= set(record)
-                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'garden_orchard'}
+                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'garden_orchard', 'wildlife'}
+                and ('wildlife' not in record or valid_wildlife_context(
+                    record['wildlife'], record.get('garden_orchard')))
                 and ('garden_orchard' not in record or valid_garden_state(record['garden_orchard']))
                 and ('bridge_crew' not in record or valid_bridge_state(record['bridge_crew']))
                 and ('grain_farm' not in record or valid_state(record['grain_farm']))
@@ -87,6 +97,12 @@ class OverworldTravel:
                 and record['region'] == REGION_ID
                 and not (active and data.get('post_battle') is not None)):
             return False
+        wildlife = record.get('wildlife')
+        if wildlife is not None and wildlife['vignette']['phase'] in ('visit', 'done'):
+            gardener = record.get('garden_orchard', {}).get('gardener', {})
+            # An animal visit cannot borrow a worker still carrying garden work.
+            if gardener.get('phase') != 'rest' or not gardener.get('read'):
+                return False
         discovered = record.get('discovered', ['eldenmere'])
         return (isinstance(discovered, list) and all(isinstance(item, str) for item in discovered)
                 and len(discovered) == len(set(discovered)) and 'eldenmere' in discovered
@@ -100,6 +116,7 @@ class OverworldTravel:
         self.farm_state = (data or {}).get('grain_farm')
         self.bridge_state = (data or {}).get('bridge_crew')
         self.garden_state = (data or {}).get('garden_orchard')
+        self.wildlife_state = (data or {}).get('wildlife')
         self.discovered.clear()
         self.discovered.update((data or {}).get('discovered', ['eldenmere']))
         if self.game._overworld_world is not None:
@@ -107,6 +124,7 @@ class OverworldTravel:
             self.game._overworld_world.grain_farm.restore(self.farm_state)
             self.game._overworld_world.bridge_crew.restore(self.bridge_state)
             self.game._overworld_world.garden_orchard.restore(self.garden_state)
+            self.game._overworld_world.wildlife.restore(self.wildlife_state)
 
     def stage_story_restore(self):
         """Restore committed town actors at town scale, retaining region feet."""
@@ -251,6 +269,7 @@ class OverworldTravel:
             g.world.grain_farm.update(seconds, g)
             g.world.bridge_crew.update(seconds, g)
             g.world.garden_orchard.update(seconds, g)
+            g.world.wildlife.update(seconds, g)
         # Observe leaving a contact even during the short transfer cooldown.
         # A running player can reach the town exit again before it expires.
         if g.world is g.town:

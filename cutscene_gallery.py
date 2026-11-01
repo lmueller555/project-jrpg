@@ -329,9 +329,39 @@ def _garden_care(game, playback):
     state['gardener'].update(phase='ready', position=[-526, 1174])
     if not valid_state(state):raise ValueError('Invalid garden preview checkpoint')
     controller.restore(state)
+    # The separately registered pasture visit must not borrow the gardener in
+    # the same update that commits this scene's final home/rest checkpoint.
+    from purposeful_wildlife import empty_state as wildlife_state
+    wildlife = wildlife_state()
+    wildlife['vignette']['phase'] = 'done'
+    world.wildlife.restore(wildlife)
     if not game.overworld_travel.interact():raise ValueError('Cannot start the garden conversation')
     playback.watch(lambda: controller.state['gardener']['phase'] == 'rest'
                    and not game.social.active)
+
+
+def _sheep_visit(game, playback):
+    from garden_orchard import empty_state, valid_state
+    from purposeful_wildlife import WORKER_HOME
+    world = game.overworld_world
+    # One clear witness station activates the full route and both sheep, while
+    # leaving the gate, gathering paths and gardener's homeward lane available.
+    _station(game, world, (-440, 1370))
+    state = empty_state()
+    state['gardener'].update(phase='rest', read=True, position=list(WORKER_HOME))
+    if not valid_state(state):raise ValueError('Invalid pasture preview checkpoint')
+    world.garden_orchard.restore(state)
+    controller = world.wildlife
+    controller.restore()
+    worker = controller.worker
+    # The production idle->visit entry point owns every step and contact. This
+    # fixed, full-height composition covers home through the basket station;
+    # it neither moves the witness nor changes any controller clock.
+    def drive():game.camera.focus((-450, 1280), .75)
+    playback.watch(lambda: controller.vignette['phase'] == 'done'
+                   and controller.vignette['basket'] == 'home'
+                   and tuple(worker.position) == WORKER_HOME
+                   and not worker.wildlife_owned, drive)
 
 
 def _entry(identifier, name, chapter, description, fixture, automatic=False):
@@ -391,6 +421,8 @@ GALLERY_ENTRIES = (
            'The repair crew sets down a cup, steadies a tray and takes a short break.', _bridge_tea),
     _entry('garden_quiet_care', 'A Little Shade', 'Elden Vale',
            'A quiet conversation leads the gardener to move a struggling plant beside the hedge.', _garden_care),
+    _entry('sheep_basket_visit', 'A Familiar Visitor', 'Elden Vale',
+           'The gardener brings an empty basket to the sheep, offers a gentle pat, and returns it home.', _sheep_visit, True),
 )
 
 GALLERY_BY_ID = {entry.id: entry for entry in GALLERY_ENTRIES}

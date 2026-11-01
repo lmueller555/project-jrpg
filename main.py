@@ -864,6 +864,7 @@ class Game:
             self._overworld_world.grain_farm.restore(self.overworld_travel.farm_state)
             self._overworld_world.bridge_crew.restore(self.overworld_travel.bridge_state)
             self._overworld_world.garden_orchard.restore(self.overworld_travel.garden_state)
+            self._overworld_world.wildlife.restore(self.overworld_travel.wildlife_state)
         self._overworld_world.set_progress(self.social.flags)
         return self._overworld_world
 

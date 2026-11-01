@@ -1,0 +1,198 @@
+{
+  "method": "Separate automated first-checkpoint regression; the video remains an ordinary full-visit capture. Completed predecessor quests, care-ready garden state, and a 90-second gardener idle clock are explicit test fixtures. A wrapped production SaveStore.write observes the first actual persisted visit checkpoint; no subsequent save repairs it before fresh title validation and production Continue.",
+  "test_reference": "tests/test_purposeful_wildlife.py::PurposefulWildlifeTests::test_first_visit_checkpoint_after_long_garden_wait_continues_exactly",
+  "simulation_hz": 30,
+  "precondition_gardener_idle_clock": 90.0,
+  "precondition_player_station": [
+    -440.0,
+    1370.0
+  ],
+  "first_checkpoint_worker_clock": 0.0,
+  "first_checkpoint_sha256": "86c7a7910433f2bf508c4688d6240fbd570f847218febd126a5a348a04df3b1c",
+  "first_checkpoint_wildlife": {
+    "version": 1,
+    "animals": {
+      "south_sheep_a": {
+        "position": [
+          -420.0,
+          1476.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "south_sheep_b": {
+        "position": [
+          -314.4,
+          1572.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "east_sheep_a": {
+        "position": [
+          1368.0,
+          1392.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "east_sheep_b": {
+        "position": [
+          1526.4,
+          1464.0
+        ],
+        "mode": "graze",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "west_bird": {
+        "position": [
+          -840.0,
+          228.0
+        ],
+        "mode": "peck",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "clearing_bird": {
+        "position": [
+          -1128.0,
+          -1603.2
+        ],
+        "mode": "peck",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "south_butterfly": {
+        "position": [
+          -451.4,
+          1164.8
+        ],
+        "mode": "settle",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "orchard_butterfly": {
+        "position": [
+          -132.2,
+          -268.0
+        ],
+        "mode": "settle",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      },
+      "farm_cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "mode": "sleep",
+        "target": 1,
+        "elapsed": 0.0,
+        "clock": 0.0,
+        "facing": "right",
+        "cooldown": 0.0
+      }
+    },
+    "vignette": {
+      "phase": "visit",
+      "step": 0,
+      "elapsed": 0.0,
+      "contact": false,
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "clock": 0.0,
+      "facing": "front",
+      "basket": "home",
+      "moving": false
+    }
+  },
+  "first_checkpoint_garden_orchard": {
+    "gardener": {
+      "phase": "rest",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -552.0,
+        1164.0
+      ],
+      "read": true,
+      "greeted": false
+    },
+    "picker": {
+      "phase": "work",
+      "step": 0,
+      "elapsed": 0.0,
+      "position": [
+        -145.0,
+        -250.0
+      ],
+      "read": false,
+      "greeted": false
+    }
+  },
+  "first_checkpoint_worker_frame_rgba_sha256": "96f6c4474fe9a9feaddeac90d74ad5dad8f7866aff10dab054d7015525a6cd73",
+  "first_resumed_update_worker_frame_rgba_sha256": "feecabda9364bfe2f53ded93dd0bda3df13d5cc46e5e561074333e47c7be4823",
+  "checks": {
+    "prior_care_checkpoint_valid": true,
+    "first_visit_update_writes_once": true,
+    "first_checkpoint_replaces_prior_bytes": true,
+    "persisted_wildlife_matches_state_at_write": true,
+    "first_checkpoint_wildlife_valid": true,
+    "first_checkpoint_context_valid": true,
+    "first_checkpoint_journey_valid": true,
+    "authored_departure_pose_initialized_before_write": true,
+    "garden_checkpoint_unchanged": true,
+    "no_later_save_before_title_validation": true,
+    "precondition_player_station_clear": true,
+    "fresh_title_accepts_earliest_checkpoint": true,
+    "fresh_title_loads_exact_payload": true,
+    "production_continue_succeeds": true,
+    "exact_wildlife_state_on_continue": true,
+    "exact_worker_frame_on_continue": true,
+    "exact_player_position_on_continue": true,
+    "single_shared_gardener_actor": true,
+    "wildlife_owns_resumed_gardener": true,
+    "garden_state_unchanged_on_continue": true,
+    "exactly_one_basket": true,
+    "first_resumed_update_matches_uninterrupted_state": true,
+    "first_resumed_update_matches_uninterrupted_frame": true
+  },
+  "source_sha256": {
+    "purposeful_wildlife.py": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
+    "tests/test_purposeful_wildlife.py": "8b1c5205bdfd0312e4803839f2a120f31701ba2deaa064b1676da8049378cbaa",
+    "main.py": "330053f8d8e6f72cf111403cf321d23a1b1fe13ec2bd79c3bd58afeadb3ab26a",
+    "overworld_travel.py": "dbc5205115f9c61d87251fc3d786f34edf9aa5d3ab79ea06cd73e301e424e455",
+    "garden_orchard.py": "4ac0d889f957cd675f8c2e2e0884c1b2230e955927f4071769ecce60b82a699e",
+    "save_game.py": "76fee97c07ed790bc45b28a046c4cb06c3a42b08ff580f785e64a2c6e2d55e25"
+  }
+}
