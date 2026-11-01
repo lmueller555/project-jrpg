@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "id": "checkpoint_charm",
+  "canvas": [
+    40,
+    44
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "clips": {
+    "walk_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_front_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_front_1.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_front_2.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_front_3.png",
+          "duration_ms": 160
+        }
+      ]
+    },
+    "walk_back": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_back_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_back_1.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_back_2.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_back_3.png",
+          "duration_ms": 160
+        }
+      ]
+    },
+    "walk_left": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_left_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_left_1.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_left_2.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_left_3.png",
+          "duration_ms": 160
+        }
+      ]
+    },
+    "walk_right": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_right_0.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_right_1.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_right_2.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "walk_right_3.png",
+          "duration_ms": 160
+        }
+      ]
+    },
+    "sit_down_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "sit_0.png",
+          "duration_ms": 260
+        },
+        {
+          "file": "sit_1.png",
+          "duration_ms": 280
+        },
+        {
+          "file": "sit_2.png",
+          "duration_ms": 300
+        }
+      ]
+    },
+    "sit_front": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "sit_2.png",
+          "duration_ms": 950
+        },
+        {
+          "file": "sit_3.png",
+          "duration_ms": 950
+        }
+      ]
+    },
+    "stand_up_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "sit_2.png",
+          "duration_ms": 240
+        },
+        {
+          "file": "sit_1.png",
+          "duration_ms": 280
+        },
+        {
+          "file": "sit_0.png",
+          "duration_ms": 260
+        }
+      ]
+    },
+    "check_right": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "check_right_0.png",
+          "duration_ms": 450
+        },
+        {
+          "file": "check_right_1.png",
+          "duration_ms": 700
+        },
+        {
+          "file": "check_right_2.png",
+          "duration_ms": 700
+        },
+        {
+          "file": "check_right_3.png",
+          "duration_ms": 450
+        }
+      ]
+    }
+  },
+  "equipment": {
+    "helmet": "closed silver visor",
+    "tabard": "navy and gold",
+    "shield_arm": "physical left"
+  }
+}

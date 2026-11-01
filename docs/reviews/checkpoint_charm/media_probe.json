@@ -1,0 +1,107 @@
+{
+  "guard_full": {
+    "video": {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 640,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "15/1",
+      "nb_frames": "1072",
+      "duration": "71.466667"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "duration": "71.466000"
+    },
+    "format": {
+      "duration": "71.466667",
+      "size": "4139418"
+    }
+  },
+  "overlook_bench": {
+    "video": {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 640,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "15/1",
+      "nb_frames": "233",
+      "duration": "15.533333"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "duration": "15.500000"
+    },
+    "format": {
+      "duration": "15.533333",
+      "size": "1216899"
+    }
+  },
+  "farm_cat": {
+    "video": {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 640,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "15/1",
+      "nb_frames": "127",
+      "duration": "8.466667"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "duration": "8.466000"
+    },
+    "format": {
+      "duration": "8.466667",
+      "size": "645455"
+    }
+  },
+  "unfinished_masonry": {
+    "video": {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 640,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "15/1",
+      "nb_frames": "505",
+      "duration": "33.666667"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "duration": "33.633000"
+    },
+    "format": {
+      "duration": "33.666667",
+      "size": "1641889"
+    }
+  },
+  "checkpoint_charm_preview": {
+    "video": {
+      "codec_name": "h264",
+      "width": 960,
+      "height": 640,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "15/1",
+      "nb_frames": "1937",
+      "duration": "129.133333"
+    },
+    "audio": {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "duration": "129.121000"
+    },
+    "format": {
+      "duration": "129.154362",
+      "size": "7639853"
+    }
+  }
+}

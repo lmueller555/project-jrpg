@@ -681,6 +681,7 @@ class Game:
         self.mill_quest.release_pose()
         self.regent_quest.release_pose()
         self.lantern_quest.release_pose()
+        if self._overworld_world is not None:self._overworld_world.participation.release_pose(self)
         if data is None:
             self.quests.restore(QuestLog().to_dict())
             self.inventory=Inventory()
@@ -758,6 +759,7 @@ class Game:
         self.opening_audio.reset()
         self.regional_audio.reset()
         self.pause.close()
+        if self.overworld_travel.active:self.world.participation.update(0, self)
         self.camera.reset()
         self.combat.prepare_world_resume()
         self.music.set_paused(not self._music_focused)
@@ -865,6 +867,8 @@ class Game:
             self._overworld_world.bridge_crew.restore(self.overworld_travel.bridge_state)
             self._overworld_world.garden_orchard.restore(self.overworld_travel.garden_state)
             self._overworld_world.wildlife.restore(self.overworld_travel.wildlife_state)
+            self._overworld_world.checkpoint_charm.restore(self.overworld_travel.checkpoint_state)
+            self._overworld_world.participation.restore(self.overworld_travel.participation_state)
         self._overworld_world.set_progress(self.social.flags)
         return self._overworld_world
 
@@ -1007,6 +1011,9 @@ class Game:
                 resumed=not self.map_open
                 self.social.clear_pointer()
                 continue
+            if not advanced and self.overworld_travel.active and self.world.participation.handle_event(self,event):
+                resumed=True
+                continue
             if event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
                 if getattr(event,'repeat',False):continue
                 self.social.clear_pointer()
@@ -1054,7 +1061,11 @@ class Game:
                     self.social.clear_pointer()
                 elif (event.key==pygame.K_e and not getattr(event,'repeat',False) and
                       not self.map_open and not self.quest_ui.journal_open):
-                    if self.overworld_travel.interact():continue
+                    if advanced:continue
+                    if self.overworld_travel.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
@@ -1142,6 +1153,8 @@ class Game:
             running=keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]
         if not self.map_open and not self.quest_ui.journal_open:
             self.opening.request_movement(direction)
+            if self.overworld_travel.active:
+                self.world.participation.request_movement(self,direction)
         for scene in self.scenes.values():
             for door in scene.doors:
                 door.update(self.player.position if scene is self.world else None,seconds,

@@ -1216,6 +1216,92 @@
       "source_commit": "b27bff2a5dc9d6e46d7ba44c84f07c271803d580",
       "runtime_python_sha256": "7850e098e94941226a5b8160047376e19a816ea9d2d33e65ee25ba70483ce492",
       "review_frame": "docs/reviews/gallery/regional_sheep_basket_visit.png"
+    },
+    {
+      "id": "checkpoint_borrowed_seat",
+      "name": "Keeping Your Seat",
+      "source": "production Game.canvas",
+      "file": "assets/ui/gallery/checkpoint_borrowed_seat.png",
+      "sha256": "a2b6a44005da8f2562a4dd3aefb8974f5fe531f78f2886c8d40a2e280c297f67",
+      "frame": 726,
+      "seconds": 24.2333,
+      "crop": [
+        77,
+        51,
+        240,
+        135
+      ],
+      "state": {
+        "opening": "disabled",
+        "opening_action": null,
+        "opening_action_seconds": 0.0,
+        "cinematic_seconds": 0.0,
+        "arrival_shot": "mill_close",
+        "arrival_seconds": 0.0,
+        "elira_action": null,
+        "elira_seconds": 0.0,
+        "venn_phase": null,
+        "venn_seconds": 0.0,
+        "mill_action": null,
+        "mill_seconds": 0.0,
+        "mill_camera": null,
+        "lantern_action": null,
+        "lantern_seconds": 0.0,
+        "lantern_stage": "idle",
+        "regent_stage": "idle",
+        "regent_cart_released": false,
+        "halden_action": null,
+        "halden_seconds": 0.0,
+        "tomas_job": null,
+        "bridge_stage": "inspect",
+        "bridge_seconds": 0.0,
+        "grain_stage": "inspect",
+        "grain_seconds": 0,
+        "garden_phase": "work",
+        "garden_step": 0,
+        "garden_seconds": 0.0,
+        "wildlife_vignette": {
+          "phase": "idle",
+          "step": 0,
+          "elapsed": 0.0,
+          "contact": false,
+          "position": [
+            -552,
+            1164
+          ],
+          "clock": 0.0,
+          "facing": "front",
+          "basket": "home",
+          "moving": false
+        },
+        "checkpoint_stage": "banter",
+        "checkpoint_state": {
+          "version": 1,
+          "stage": "banter",
+          "step": 0,
+          "elapsed": 0.0,
+          "read": 2,
+          "repeat_read": 0,
+          "contacts": 4,
+          "clock": 0.0,
+          "positions": {
+            "owner": [
+              306.0,
+              -2194.0
+            ],
+            "borrower": [
+              377.0,
+              -2166.0
+            ]
+          },
+          "moving": false,
+          "facing": "front"
+        },
+        "dialogue": null
+      },
+      "source_commit": "a811bd67878cf921326f2126c0426aef0db08930",
+      "runtime_python_sha256": "427440e124a7c253e5c580b6b594c956ed4c56e9dfacc8b321c983cd8440c5fb",
+      "review_frame": "docs/reviews/gallery/regional_checkpoint_borrowed_seat.png"
     }
   ]
 }

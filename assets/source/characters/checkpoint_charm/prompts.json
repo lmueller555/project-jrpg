@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "generations": [
+    {
+      "file": "poses_generated.png",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": [
+        "assets/source/characters/road_guards/directions_generated.png"
+      ],
+      "prompt": "Create a transparent pixel-art SPRITE SHEET for this EXACT existing ordinary JRPG checkpoint guard, same silver closed-visored helmet (no visible face), brass shoulder and knee edging, navy knee-length tabard with brass hem, brown diagonal leather strap, brown boots, tall rectangular navy/brass shield firmly strapped to PHYSICAL LEFT arm. Use reference costume and proportions faithfully, polished classic 16-bit pixel sprite, hard crisp pixel clusters, no text/labels/grid/scenery/shadows/weapons. Twenty FOUR complete full-body cells, EXACT FOUR COLUMNS and SIX ROWS, evenly spaced, all individual complete characters centered inside equal cells, transparent gutter between each. Every standing guard has identical body height and ground baseline, no cell cuts off head, boot, or shield. ROW ONE four distinct FRONT WALK frames: left foot forward, feet passing, right foot forward, feet passing; natural short strides, free right arm swings gently, left shield stable. ROW TWO four distinct BACK WALK frames same foot sequence, physical-left shield at viewer LEFT, strap visible. ROW THREE four distinct LEFT-profile WALK frames, shield in near arm; realistic alternating bent legs, no sliding feet. ROW FOUR four distinct RIGHT-profile WALK frames, physical-left shield on far side partly hidden, NOT a mirror of left direction. ROW FIVE FRONT sitting sequence on INVISIBLE bench at knee height: cell1 slight knee bend lowering pelvis; cell2 half seated knees bent; cell3 fully seated upright with upper legs forward and lower legs vertical, boots on ground, visibly shorter anatomical silhouette; cell4 relaxed seated same posture with small breath, hands resting, helmet unchanged; NO furniture drawn, no floating body. Seated guard shield stays on LEFT forearm and naturally rests beside left knee. ROW SIX supplies-check RIGHT-profile: cell1 standing looking down; cell2 slight natural lean at waist and free RIGHT hand reaching down diagonally ahead to inspect sack at mid-thigh height; cell3 same right-hand inspection with small motion, no item drawn, left shield strapped safely; cell4 upright recovery. Keep helmet/armor silhouettes consistent in ALL cells. No chair props and no sack props. Actual articulated knees and hips in seated poses, do not squash the standing body. Same scale between all 24 frames."
+    }
+  ]
+}

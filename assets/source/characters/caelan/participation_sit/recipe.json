@@ -1,0 +1,20 @@
+{
+  "output": "assets/characters/caelan/participation_sit_front.png",
+  "size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    34
+  ],
+  "seat_contact": [
+    12,
+    25
+  ],
+  "boots_baseline": 33,
+  "appearance_source": "assets/characters/caelan/idle_front.png",
+  "appearance_sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30",
+  "concept": "imagegen_concept.png",
+  "method": "Approved head/upper tunic pixels plus explicit native articulated seated limbs; no anatomical raster warps."
+}

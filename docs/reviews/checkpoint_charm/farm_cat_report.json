@@ -1,0 +1,2465 @@
+{
+  "method": "Record production checkpoint/participation at 30 Hz and 15 fps.\n\nOnly completed predecessor quests and initial player stations are fixtures.\nEvery route, contact, dialogue acknowledgment, optional response and return uses\nGame.update and the production controllers. Site changes are separate labelled\nclips. Regional effects use capture_regional_audio.Recorder's accepted-source\nPCM/gain stream; this is offline rendering, not a recording of a live device.\nMusic is muted. No normalization, playback acceleration or replacement art.\n",
+  "seconds": 8.466666666666667,
+  "sample_rate": 48000,
+  "peak": 0.02497841708797927,
+  "peak_dbfs": -32.04870173696204,
+  "rms_dbfs": -51.15496119290317,
+  "markers": [
+    {
+      "time": 0.0,
+      "label": "Site cut: existing farm cat; E offers a quiet greeting"
+    },
+    {
+      "time": 1.5,
+      "label": "Walking away cancels before acknowledgment; the cat keeps its own routine"
+    },
+    {
+      "time": 4.866666666666666,
+      "label": "The existing cat owner supplies the bounded silent acknowledgment"
+    }
+  ],
+  "snapshots": [
+    {
+      "time": 0.0,
+      "label": "Site cut: existing farm cat; E offers a quiet greeting",
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "voices": {}
+    },
+    {
+      "time": 1.5,
+      "label": "Walking away cancels before acknowledgment; the cat keeps its own routine",
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.08497002516053535,
+          "source": [
+            -288.0,
+            1224.0
+          ]
+        }
+      }
+    },
+    {
+      "time": 4.866666666666666,
+      "label": "The existing cat owner supplies the bounded silent acknowledgment",
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "voices": {
+        "wind": {
+          "gain": 0.08497002516053535,
+          "source": [
+            -288.0,
+            1224.0
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "action": "start",
+      "key": "wind",
+      "sound": "wind",
+      "gain": 0.08497002516053535,
+      "ambient": true,
+      "source": [
+        -288.0,
+        1224.0
+      ],
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "distance": 114.97825881443848,
+      "family": "foliage",
+      "priority": 0,
+      "source_gain": 0.45,
+      "near": 24,
+      "far": 150,
+      "cooldown": 0.6
+    },
+    {
+      "time": 6.2,
+      "action": "start",
+      "key": "garden_gardener_water",
+      "sound": "water",
+      "gain": 0.14992582490503487,
+      "ambient": false,
+      "source": [
+        -526.0,
+        1190.0
+      ],
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "distance": 126.25371281669304,
+      "family": "garden_work",
+      "priority": 2,
+      "source_gain": 0.5,
+      "near": 32,
+      "far": 180,
+      "cooldown": 0.6
+    },
+    {
+      "time": 7.266666666666667,
+      "action": "stop",
+      "key": "garden_gardener_water"
+    },
+    {
+      "time": 8.466666666666667,
+      "action": "stop",
+      "key": "wind"
+    }
+  ],
+  "name": "farm_cat",
+  "native_size": [
+    480,
+    320
+  ],
+  "window_size": [
+    960,
+    640
+  ],
+  "simulation_hz": 30,
+  "video_fps": 15,
+  "trace": [
+    {
+      "time": 0.03333333333333333,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "back",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "E: Greet the farm cat",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.03333333333333333,
+          "clock": 0.03333333333333333,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 0.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "back",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "E: Greet the farm cat",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.49999999999999994,
+          "clock": 0.49999999999999994,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 0.5333333333333333,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "back",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.49999999999999994,
+          "clock": 0.49999999999999994,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 1.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "back",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.49999999999999994,
+          "clock": 0.49999999999999994,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 1.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "back",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.49999999999999994,
+          "clock": 0.49999999999999994,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 2.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -363.9999999999995,
+        1198.0
+      ],
+      "facing": "right",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 0.5333333333333333,
+          "clock": 0.5333333333333333,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -286.86792452830184,
+            1220.0377358490564
+          ],
+          "gain": 0.2611887807780472
+        }
+      }
+    },
+    {
+      "time": 2.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -390.39999999999986,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "E: Greet the farm cat",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.0333333333333332,
+          "clock": 1.0333333333333332,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.12801159624345115
+        }
+      }
+    },
+    {
+      "time": 2.6666666666666665,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 3.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 3.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 4.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 4.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": false,
+        "masonry_read": false,
+        "cat_cooldown": 0.0
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "sleep",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "sleep",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": "regional_cat_greeting",
+        "page": 0,
+        "lines": [
+          "Hello, you."
+        ]
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 4.866666666666666,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 7.966666666666667
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 0.03333333333333333,
+          "clock": 0.03333333333333333,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 5.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 7.833333333333334
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 0.16666666666666666,
+          "clock": 0.16666666666666666,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 5.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 7.333333333333336
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 0.6666666666666666,
+          "clock": 0.6666666666666666,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 6.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 6.8333333333333375
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 1.166666666666667,
+          "clock": 1.166666666666667,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 6.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 6.333333333333339
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 1.6666666666666685,
+          "clock": 1.6666666666666685,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        },
+        "garden_gardener_water": {
+          "source": [
+            -526.0,
+            1190.0
+          ],
+          "gain": 0.14992582490503487
+        }
+      }
+    },
+    {
+      "time": 7.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 5.833333333333341
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "stretch",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "stretch",
+          "target": 1,
+          "elapsed": 2.1666666666666687,
+          "clock": 2.1666666666666687,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        },
+        "garden_gardener_water": {
+          "source": [
+            -526.0,
+            1190.0
+          ],
+          "gain": 0.14992582490503487
+        }
+      }
+    },
+    {
+      "time": 7.033333333333333,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 5.800000000000008
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1182.0
+        ],
+        "pose": "walk",
+        "state": {
+          "position": [
+            -420.0,
+            1182.0
+          ],
+          "mode": "walk",
+          "target": 1,
+          "elapsed": 0.0,
+          "clock": 0.0,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        },
+        "garden_gardener_water": {
+          "source": [
+            -526.0,
+            1190.0
+          ],
+          "gain": 0.14992582490503487
+        }
+      }
+    },
+    {
+      "time": 7.5,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 5.333333333333343
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1187.6000000000013
+        ],
+        "pose": "walk",
+        "state": {
+          "position": [
+            -420.0,
+            1187.6000000000013
+          ],
+          "mode": "walk",
+          "target": 1,
+          "elapsed": 0.4666666666666666,
+          "clock": 0.4666666666666666,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    },
+    {
+      "time": 8.0,
+      "title": false,
+      "pause": false,
+      "listener": [
+        -400.0,
+        1198.0
+      ],
+      "facing": "left",
+      "player_story_pose": false,
+      "player_can_stand": true,
+      "hint": "",
+      "checkpoint": {
+        "version": 1,
+        "stage": "idle",
+        "step": 0,
+        "elapsed": 0.0,
+        "read": 0,
+        "repeat_read": 0,
+        "contacts": 0,
+        "clock": 0.0,
+        "positions": {
+          "owner": [
+            432.0,
+            -2232.0
+          ],
+          "borrower": [
+            552.0,
+            -2208.0
+          ]
+        },
+        "moving": false,
+        "facing": "front"
+      },
+      "participation": {
+        "version": 1,
+        "seated": false,
+        "sat": false,
+        "cat_greeted": true,
+        "masonry_read": false,
+        "cat_cooldown": 4.833333333333345
+      },
+      "cat": {
+        "position": [
+          -420.0,
+          1193.6000000000026
+        ],
+        "pose": "walk",
+        "state": {
+          "position": [
+            -420.0,
+            1193.6000000000026
+          ],
+          "mode": "walk",
+          "target": 1,
+          "elapsed": 0.9666666666666666,
+          "clock": 0.9666666666666666,
+          "facing": "right",
+          "cooldown": 0.0
+        }
+      },
+      "bridge": {
+        "stage": "inspect",
+        "state": {
+          "sorted": 0,
+          "tea_beat": 0,
+          "request_read": false,
+          "greeted": []
+        }
+      },
+      "dialogue": {
+        "id": null,
+        "page": 0,
+        "lines": null
+      },
+      "voices": {
+        "wind": {
+          "source": [
+            -288.0,
+            1224.0
+          ],
+          "gain": 0.08497002516053535
+        }
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "time": 0.5,
+      "action": "handle_events",
+      "key": "e",
+      "repeat": false,
+      "count": 1
+    },
+    {
+      "time": 1.5,
+      "action": "walk_to",
+      "target": [
+        -360.0,
+        1198.0
+      ]
+    },
+    {
+      "time": 1.5,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        40.0,
+        0.0
+      ]
+    },
+    {
+      "time": 1.5333333333333334,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        37.599999999999966,
+        0.0
+      ]
+    },
+    {
+      "time": 1.5666666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        35.19999999999993,
+        0.0
+      ]
+    },
+    {
+      "time": 1.6,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        32.7999999999999,
+        0.0
+      ]
+    },
+    {
+      "time": 1.6333333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        30.399999999999864,
+        0.0
+      ]
+    },
+    {
+      "time": 1.6666666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        27.99999999999983,
+        0.0
+      ]
+    },
+    {
+      "time": 1.7,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        25.599999999999795,
+        0.0
+      ]
+    },
+    {
+      "time": 1.7333333333333334,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        23.19999999999976,
+        0.0
+      ]
+    },
+    {
+      "time": 1.7666666666666666,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        20.799999999999727,
+        0.0
+      ]
+    },
+    {
+      "time": 1.8,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        18.399999999999693,
+        0.0
+      ]
+    },
+    {
+      "time": 1.8333333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        15.999999999999659,
+        0.0
+      ]
+    },
+    {
+      "time": 1.8666666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        13.599999999999625,
+        0.0
+      ]
+    },
+    {
+      "time": 1.9,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        11.19999999999959,
+        0.0
+      ]
+    },
+    {
+      "time": 1.9333333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        8.799999999999557,
+        0.0
+      ]
+    },
+    {
+      "time": 1.9666666666666666,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        6.3999999999995225,
+        0.0
+      ]
+    },
+    {
+      "time": 2.0,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        3.9999999999994884,
+        0.0
+      ]
+    },
+    {
+      "time": 2.033333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        1.5999999999994543,
+        0.0
+      ]
+    },
+    {
+      "time": 2.066666666666667,
+      "action": "walk_to",
+      "target": [
+        -400.0,
+        1198.0
+      ]
+    },
+    {
+      "time": 2.066666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -40.80000000000058,
+        0.0
+      ]
+    },
+    {
+      "time": 2.1,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -38.400000000000546,
+        0.0
+      ]
+    },
+    {
+      "time": 2.1333333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -36.00000000000051,
+        0.0
+      ]
+    },
+    {
+      "time": 2.1666666666666665,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -33.60000000000048,
+        0.0
+      ]
+    },
+    {
+      "time": 2.2,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -31.200000000000443,
+        0.0
+      ]
+    },
+    {
+      "time": 2.2333333333333334,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -28.80000000000041,
+        0.0
+      ]
+    },
+    {
+      "time": 2.2666666666666666,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -26.400000000000375,
+        0.0
+      ]
+    },
+    {
+      "time": 2.3,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -24.00000000000034,
+        0.0
+      ]
+    },
+    {
+      "time": 2.3333333333333335,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -21.600000000000307,
+        0.0
+      ]
+    },
+    {
+      "time": 2.3666666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -19.200000000000273,
+        0.0
+      ]
+    },
+    {
+      "time": 2.4,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -16.80000000000024,
+        0.0
+      ]
+    },
+    {
+      "time": 2.433333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -14.400000000000205,
+        0.0
+      ]
+    },
+    {
+      "time": 2.466666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -12.00000000000017,
+        0.0
+      ]
+    },
+    {
+      "time": 2.5,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -9.600000000000136,
+        0.0
+      ]
+    },
+    {
+      "time": 2.533333333333333,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -7.200000000000102,
+        0.0
+      ]
+    },
+    {
+      "time": 2.566666666666667,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -4.800000000000068,
+        0.0
+      ]
+    },
+    {
+      "time": 2.6,
+      "action": "movement",
+      "seconds": 0.03333333333333333,
+      "direction": [
+        -2.400000000000034,
+        0.0
+      ]
+    },
+    {
+      "time": 2.6333333333333333,
+      "action": "handle_events",
+      "key": "e",
+      "repeat": false,
+      "count": 1
+    },
+    {
+      "time": 2.6333333333333333,
+      "action": "handle_events",
+      "key": "e",
+      "repeat": true,
+      "count": 8
+    },
+    {
+      "time": 4.833333333333333,
+      "action": "handle_events",
+      "key": "space",
+      "repeat": false,
+      "count": 1
+    },
+    {
+      "time": 5.466666666666667,
+      "action": "handle_events",
+      "key": "e",
+      "repeat": true,
+      "count": 5
+    }
+  ],
+  "checks": {
+    "cancel_has_no_contact": true,
+    "greeted_through_e_and_dialogue": true,
+    "cat_owned_by_wildlife": true,
+    "acknowledgment_intentionally_silent": true,
+    "no_manufactured_cat_state": true
+  },
+  "stills": [
+    {
+      "time": 2.066666666666667,
+      "native": "farm_cat_cancelled_native.png",
+      "display": "farm_cat_cancelled.png"
+    },
+    {
+      "time": 2.6333333333333333,
+      "native": "farm_cat_greeting_native.png",
+      "display": "farm_cat_greeting.png"
+    },
+    {
+      "time": 5.466666666666667,
+      "native": "farm_cat_acknowledged_native.png",
+      "display": "farm_cat_acknowledged.png"
+    }
+  ],
+  "source_sha256": {
+    "main.py": "bf162bd59e74b53d707fdfad130c9fd2dada9280920c9c86904d49d027cc2415",
+    "overworld_world.py": "5ece429baa9eb1779d5b677af8a65a12538df999be589b6063fa69b47a3520ed",
+    "overworld_travel.py": "96fad5f75e17e024b8420dc2e7bfaaec32045858c5079095875987234f057b1d",
+    "checkpoint_charm.py": "896ad01bfd01271ed214c614bbadf2a463d18f6b905feddbae49b0dbd7054111",
+    "regional_participation.py": "87e673cddb081eb7d1d1d600f9739926e0fa30960399c8edff6b902295258cfb",
+    "purposeful_wildlife.py": "8fbf46605902d6954a58fd35638920ea3333d7d19520602d968e495c2a7496d3",
+    "bridge_crew.py": "db723482d28e861f37303164a50f35c18be77f3ed97615651020db32f07404d8",
+    "regional_audio.py": "4fbd684aba610ebc544e34ac8f4df9b9c0b7277bae506ee1e450c6e639cc90b7",
+    "social.py": "4b6a10ccd9d8e39952c31caf3dd80168d111f0860d6a630f4fee23907060992e",
+    "save_game.py": "76fee97c07ed790bc45b28a046c4cb06c3a42b08ff580f785e64a2c6e2d55e25",
+    "tools/capture_checkpoint_charm.py": "7b0af9f16895c431b1439e86e57c5d9155623a4eaac59086d09d434e8b9457d3",
+    "tools/capture_regional_audio.py": "f1844e8337d3de61c46bff3d2b1efb87818a67788aa89621fd0c975f348278b9",
+    "assets/characters/caelan/participation_sit_front.png": "bca2d1d5191fea3531a2bd0931232e5504dc5b9e0f7c661b49726a1b33d21ab4",
+    "assets/maps/overworld/elden_vale/region.json": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+    "assets/characters/checkpoint_charm/walk_right_1.png": "478a2e3ec01a0af8eb7319322793e0c2fa6d4983ca4202cd4acf3b7d0b47ae05",
+    "assets/characters/checkpoint_charm/check_right_2.png": "0e042c68f8a7e346d7e2d772acb0bc2c23455924ba17da0f07a7f95ff7fd9f9f",
+    "assets/characters/checkpoint_charm/walk_left_3.png": "860f1ccbcab075cc6167f6b5714c05061c1ad1e21b6320a47d3e36bf58ca1829",
+    "assets/characters/checkpoint_charm/check_right_0.png": "ae71899796ecb2aecd75fb9041012e85c21b21e7c8a001744442880f2bc54bb2",
+    "assets/characters/checkpoint_charm/sit_3.png": "5da8ed73cd7e59a4d55adddcdcf95b9eff7b07af4f05ae049faf79e598dcb806",
+    "assets/characters/checkpoint_charm/walk_right_2.png": "87387c2335995446f96bdf189b2b9a4cbcc3ce0687a3abd63ac11487f4888006",
+    "assets/characters/checkpoint_charm/walk_back_2.png": "1b4d26f89269f09c8dc21910f80d2185c64cfdf480954104d575fe946fe24a15",
+    "assets/characters/checkpoint_charm/walk_left_2.png": "7bcb7edbee34642e2134b151969be8e4ac1d162873f8198f76add0024d534752",
+    "assets/characters/checkpoint_charm/walk_front_0.png": "406a773b0adf924b264b57b44fe73f5ae18bd52b3adfb91f8d9cad8a41f82810",
+    "assets/characters/checkpoint_charm/walk_left_0.png": "0e8ee5573c8289a1e752d159f282b1bd6e33061fcedf6d828f3d77e754501397",
+    "assets/characters/checkpoint_charm/walk_left_1.png": "ceea909490d70c8b302ee9401bce67a5a466f28164ee9760b3c542417f65d612",
+    "assets/characters/checkpoint_charm/animation.json": "cf65e152692db1367c73c535a75e56556d8f71d431f78d65c2356d3dce1685ef",
+    "assets/characters/checkpoint_charm/sit_2.png": "ab9cf55e7c721dafe8740e7d5898ec208bf2854566c6b21c2079abd7df550061",
+    "assets/characters/checkpoint_charm/walk_front_2.png": "986923241d404e7bc6f0558b04bd115ab55cef5cadec4052f1c3dff6481fb091",
+    "assets/characters/checkpoint_charm/walk_back_0.png": "fddae23fb9616739beb41c86b0aecbee6dd3ec1e101fb5a38049c5e7c4b7a4ed",
+    "assets/characters/checkpoint_charm/walk_back_3.png": "c127b6ff1fea8a857053ed8c334f1b56b07569bb017f75ad357d3392193a163a",
+    "assets/characters/checkpoint_charm/walk_back_1.png": "fdc9f507ee9284dba75162630ebe9a25e57c0a2d7bff95bcc46ed87e6a25a64d",
+    "assets/characters/checkpoint_charm/walk_right_3.png": "491a940664bb3bf4b7cee13f10a814c2b9748fc82957ac24c2ce9aa851b846ae",
+    "assets/characters/checkpoint_charm/sit_1.png": "d3a216a4c2cd27e0170da1a8e6c63f9ef229b58cbd973d9a7aa49cd358caacce",
+    "assets/characters/checkpoint_charm/walk_right_0.png": "d49ab3049f5c5ffe5155837f4a87348109d96c956abd9ab2f2804e23ec52f92f",
+    "assets/characters/checkpoint_charm/check_right_3.png": "cbaf129048520d38a5e1303cce5d70516794d0aec4c23f8e5f84e560c7376a4d",
+    "assets/characters/checkpoint_charm/walk_front_1.png": "e54dba1634673ef2299e09ffab3baaa81bf61cc60b67fdf6ebae9abf009957e6",
+    "assets/characters/checkpoint_charm/walk_front_3.png": "749b5db22079e37103ba8db5721a398e2f712696b070627af3c57971645463fc",
+    "assets/characters/checkpoint_charm/provenance.json": "c23a2e82b1063a13ef2b7fcf17de39a461ee581f6a7ae14b51a8f02a312b0b77",
+    "assets/characters/checkpoint_charm/check_right_1.png": "90b777a3d3c88b5f05beebbf10dcec24a1a1d9bbcb174bcf091cfca02548d8e8",
+    "assets/characters/checkpoint_charm/sit_0.png": "35d808a4766248d2c208812b29e2ee90c0c720675f8094160b2760ed715a6f1e"
+  },
+  "final_state": {
+    "time": 8.466666666666667,
+    "title": false,
+    "pause": false,
+    "listener": [
+      -400.0,
+      1198.0
+    ],
+    "facing": "left",
+    "player_story_pose": false,
+    "player_can_stand": true,
+    "hint": "",
+    "checkpoint": {
+      "version": 1,
+      "stage": "idle",
+      "step": 0,
+      "elapsed": 0.0,
+      "read": 0,
+      "repeat_read": 0,
+      "contacts": 0,
+      "clock": 0.0,
+      "positions": {
+        "owner": [
+          432.0,
+          -2232.0
+        ],
+        "borrower": [
+          552.0,
+          -2208.0
+        ]
+      },
+      "moving": false,
+      "facing": "front"
+    },
+    "participation": {
+      "version": 1,
+      "seated": false,
+      "sat": false,
+      "cat_greeted": true,
+      "masonry_read": false,
+      "cat_cooldown": 4.36666666666668
+    },
+    "cat": {
+      "position": [
+        -420.0,
+        1199.200000000004
+      ],
+      "pose": "walk",
+      "state": {
+        "position": [
+          -420.0,
+          1199.200000000004
+        ],
+        "mode": "walk",
+        "target": 1,
+        "elapsed": 1.4333333333333345,
+        "clock": 1.4333333333333345,
+        "facing": "right",
+        "cooldown": 0.0
+      }
+    },
+    "bridge": {
+      "stage": "inspect",
+      "state": {
+        "sorted": 0,
+        "tea_beat": 0,
+        "request_read": false,
+        "greeted": []
+      }
+    },
+    "dialogue": {
+      "id": null,
+      "page": 0,
+      "lines": null
+    },
+    "voices": {}
+  },
+  "lossless_native_frames": "/tmp/checkpoint-evidence/farm_cat_native_frames.mkv",
+  "source_pcm_wav": "/tmp/checkpoint-evidence/farm_cat.wav",
+  "all_native_frames_verified": true
+}

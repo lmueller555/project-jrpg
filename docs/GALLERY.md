@@ -1,6 +1,6 @@
 # Cutscene Gallery
 
-Choose **Gallery** on the title screen to replay any of the 26 registered scenes.
+Choose **Gallery** on the title screen to replay any of the 27 registered scenes.
 The catalogue is available immediately, including without a saved journey.
 Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,
@@ -62,6 +62,7 @@ it does not duplicate dialogue, animation or camera scripts.
 | `bridge_tea` | Tea by the Broken Bridge | BridgeCrew's finite request, offer, reception, drink and seated break |
 | `garden_quiet_care` | A Little Shade | GardenOrchard's quiet-care dialogue, plant lift/carry/placement and settling into rest |
 | `sheep_basket_visit` | A Familiar Visitor | PurposefulWildlife's finite gardener visit, sheep gathering, basket nuzzle and pat, basket retrieval and home return through release of the borrowed gardener |
+| `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 
 Fixtures use completed prerequisite quest facts for the selected chapter only.
 The lantern fixtures use the current controller's stage/objective prefix; mill
@@ -76,6 +77,10 @@ code performs the entire visit. A fixed clear observer station keeps both sheep
 and the full worker route active. The normal camera holds a full-height view of
 home and pen, with no player travel or animation-clock shortcuts. Completion
 requires the same empty basket and gardener home, with the actor loan released.
+The checkpoint preview starts at its normal bench observation target and uses
+the two existing guards throughout. It ends after both have returned to their
+original posts and all seven lines have been acknowledged. Sitting, greeting
+the cat and inspecting masonry remain ordinary optional interactions.
 
 Intentional exclusions are ordinary standing conversations, player-controlled
 errands/travel and repeating ambient routines. Specifically: opening quest

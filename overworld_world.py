@@ -219,6 +219,10 @@ class OverworldWorld:
         from purposeful_wildlife import PurposefulWildlife, REPLACED_PROP_IDS
         self._wildlife_prop_ids = REPLACED_PROP_IDS
         self.wildlife = PurposefulWildlife(self)
+        from checkpoint_charm import CheckpointCharm
+        self.checkpoint_charm = CheckpointCharm(self)
+        from regional_participation import RegionalParticipation
+        self.participation = RegionalParticipation(self)
 
     @staticmethod
     def _tile_point(point):return tuple(value*TILE_SIZE for value in point)

@@ -112,10 +112,14 @@ def phase(game):
             'garden_step': getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('step'),
             'garden_seconds': round(getattr(getattr(game.world,'garden_orchard',None),'state',{}).get('gardener',{}).get('elapsed',0),4),
             'wildlife_vignette': dict(getattr(getattr(game.world,'wildlife',None),'vignette',{})),
+            'checkpoint_stage': getattr(getattr(game.world,'checkpoint_charm',None),'stage',None),
+            'checkpoint_state': getattr(getattr(game.world,'checkpoint_charm',None),'to_dict',lambda:None)(),
             'dialogue': game.social.script_identifier}
 
 
 def thumbnail_ready(identifier, g, seconds):
+    if identifier == 'checkpoint_borrowed_seat':
+        return g.world.checkpoint_charm.stage == 'banter'
     if identifier == 'sheep_basket_visit':
         from purposeful_wildlife import PAT_STEP
         visit = g.world.wildlife.vignette
@@ -155,7 +159,10 @@ def crop_rect(identifier, game):
     protagonist = getattr(game.player, 'story_position', None) or game.player.position
     center = pygame.Vector2(protagonist)-camera+(0,-20)
     width = 240
-    if identifier == 'sheep_basket_visit':
+    if identifier == 'checkpoint_borrowed_seat':
+        center = pygame.Vector2(365,-2182)-camera
+        width = 240
+    elif identifier == 'sheep_basket_visit':
         center = pygame.Vector2(-357,1404)-camera
         width = 128
     elif identifier == 'garden_quiet_care':
