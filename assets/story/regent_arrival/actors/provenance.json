@@ -7,7 +7,10 @@
     "assets/source/cinematics/regent_arrival/actors/caravan_generated.png": "11b5917529b627ef125e0133e31d75863fea94335a3863078f05c90c95a679f0",
     "assets/source/cinematics/regent_arrival/actors/walks_generated.png": "eba85a7aa71db2720bd0f43c33d18999fa635bdeaf2262988ddf0c1f162a9c25",
     "assets/source/cinematics/regent_arrival/actors/back_views_generated.png": "7c63493e18e2ee1b6e95c380f473a803b651a83a058200d0403f14bd2ecc767d",
-    "assets/source/cinematics/regent_arrival/actors/back_vehicle_refined_generated.png": "fec0c39bc6bb492dde1d6d7e9778cc406e3b59ecc97cdfd3481b073b2c6d8bdf"
+    "assets/source/cinematics/regent_arrival/actors/back_vehicle_refined_generated.png": "fec0c39bc6bb492dde1d6d7e9778cc406e3b59ecc97cdfd3481b073b2c6d8bdf",
+    "assets/source/cinematics/regent_arrival/actors/turns_generated.png": "5d5bfc908a91a57fbcce1a64658be792b807213a502792d79c51fb60f327643b",
+    "assets/source/cinematics/regent_arrival/actors/turn_intermediates_generated.png": "18ed4790d6eb8a1a087cacd65c768b91851e45c455cdf2369930ff3cf8ba1902",
+    "assets/source/cinematics/regent_arrival/actors/turn_shallow_generated.png": "4307fb744abd65a08786fc3e92ed5cfe4ec8092fe8f4cf7439baa8437b2f23a6"
   },
   "actors": {
     "aldric": {
@@ -109,17 +112,30 @@
       ],
       "rear_max_width": 110,
       "rear_height": 130,
-      "rear_driver_baked": true
+      "rear_driver_baked": true,
+      "three_quarter_height": 130,
+      "three_quarter_driver_baked": true,
+      "intermediate_sizes": {
+        "turn_left_back_shallow": [
+          221,
+          112
+        ],
+        "turn_left_back_deep": [
+          111,
+          130
+        ]
+      }
     }
   },
   "exports": {
-    "aldric/animation.json": "66a2131ab9458f4c6994d6d09c618765412c4bb838390ac2befe855f0a4546ad",
+    "aldric/animation.json": "670cd3344822dc34b2b9eb6865289ab2a651f89f3ef699a6ded876f46ba7af70",
     "aldric/gesture_left.png": "0a7916d68db631b340ea8793b1fa5764861c61307ca171628a61f5b43c830f80",
     "aldric/listen_left.png": "309f1bbb3fe3e59bda22cb8c1db2ec55adcd2a397ee9699c6d7218562e8964c6",
     "aldric/stand_back.png": "63cc2a2e6f317670f1e0e4c8209410baefbb72760ae019cd5a8e38ed433b98be",
     "aldric/stand_left.png": "4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8",
     "aldric/stand_right.png": "5823738e2aada5677e7700cbd8ffec29e5c6a9ce1a2b1c182fe756deb7ad0b3b",
-    "aldric/walk_0.png": "3c6a84880957440f6ca35c9e83ae9373f248f826887f8f54d4ea92dee3e8e642",
+    "aldric/turn_left_back.png": "ffa896d979b9fb18b31535e5daadf52c96475b3b770ba27038aae171ce08af35",
+    "aldric/walk_0.png": "fa064ee43bbd9978c114f3d4c55a7a4e8496087942eecc311f4e0bdcf8b4d2f0",
     "aldric/walk_1.png": "38fe799e6ed941e03173cf45dd6d415a0a67014cb6fbad460d66d57f7f626d5f",
     "aldric/walk_2.png": "631eb0876910a4c6394e9827a082e772d532ec19fa9284c693ff850cd963b183",
     "aldric/walk_3.png": "70073d6d9287fc94665f4689013e196bd0cb8ab3b1df3e2cb70491f2a63d703a",
@@ -127,7 +143,13 @@
     "aldric/walk_back_1.png": "4cb32e72301298e5b180a181f44b6a822696a8d8741075480049b8827d438a6b",
     "aldric/walk_back_2.png": "980c85cec6785fa14a3dc00d36eb91d7dbba6d99180a1bb8ce50214358f8f06c",
     "aldric/walk_back_3.png": "dc6b528fc4e71aa2378ffb9faa68726ae33dd5eab857f37b524ad3b4edf9071f",
-    "caravan/animation.json": "c1cc323843ef788e904de0fa774e56c38972e293898f1c0b42b735efc6617ae9",
+    "aldric/walk_left_back_0.png": "ffa896d979b9fb18b31535e5daadf52c96475b3b770ba27038aae171ce08af35",
+    "aldric/walk_left_back_1.png": "1e14842a292228bf696d1a0860937981577c2675f271047e353c3cefdb49136c",
+    "aldric/walk_left_back_2.png": "cacb8a372d575cc2dce721593e767ad9cd526f6f3bb3611b39cda45f14911bd4",
+    "aldric/walk_left_back_3.png": "1ed2f9c718a0073caedfe905339f82389f5a8fe522569184d7a9aec74c137c27",
+    "caravan/animation.json": "28912cbed423add9847b91d3353f0764a49c1f024d717d8c8e9b99cf0f4e62ff",
+    "caravan/turn_left_back_deep.png": "edf8438ae6d7a2d2b4cce45e8b81f6f06a6cc7b3bfaef12b5c69664f033a1f30",
+    "caravan/turn_left_back_shallow.png": "35f116d5bcec96f0e4b5c678a9c1125a1327c17708072cdc32f5710f3c936b61",
     "caravan/walk_0.png": "f8acb9358b44f5f92d12afbd4353ecb4e527944577c8a9d72dbb2ec3bf26194d",
     "caravan/walk_1.png": "7b9cf87ae575035a5c0ab34863b61da892557ffc4d4dbf2bd96bc7a3590e42cc",
     "caravan/walk_2.png": "a628cb6338fd6ae8e3fac1ae6e6dafd4073ceded6ec3e6eef1d8dc81e09226f9",
@@ -136,6 +158,10 @@
     "caravan/walk_back_1.png": "f71ffff78fd3c180ded2ac6c1b7e6eb230b7eab07a8905df283d030665589220",
     "caravan/walk_back_2.png": "7209a57c8186deb26a7cbeeb94faa98687e0be9f98584ba3a070e394db379420",
     "caravan/walk_back_3.png": "982d10319e7e2b9f4f707e118ce09f49e508e4c099de07a39c6d88e32b28d6aa",
+    "caravan/walk_left_back_0.png": "00cc730a703ac9fb5f0ec0ee89a9028001a0a358edd8ce74ae535fab25466a75",
+    "caravan/walk_left_back_1.png": "6b76c4ff00e50bdd7382d82dfbe0f3527ad42e8693c753d7e00140811caa371a",
+    "caravan/walk_left_back_2.png": "9a27e53c6958296f4c6cbd5b1e52deb5bcf1fe09f628f0502327a800ea3618d1",
+    "caravan/walk_left_back_3.png": "e2640b02ec7189b7a7912749aed5abf01f1feaed6e6a860ebd3177a697dbc20c",
     "clerk/animation.json": "16f32584cf366c4c6a3106170da86884bdcd0c024c5d4bb91bed295f2948f569",
     "clerk/read_left.png": "4d598671adb748e13cc87afc4187b6b9245b52e569dfcd1aab5673bd2316504a",
     "clerk/stand_left.png": "85e3a131695e0d2f92384481aa7718de358da258e9b0fb57b7ec16340fa4a03d",
@@ -177,6 +203,10 @@
     "Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.",
     "Human sprites are authored cinematic bodies rather than enlarged overworld sprites.",
     "Aldric has natural stride and restrained conversational poses; caravan uses four complete horse-walk frames.",
+    "The original first side-walk source faces right; its explicit orientation flag normalizes the complete loop to left.",
+    "Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.",
+    "Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.",
+    "The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.",
     "Supporting portraits match this cinematic cast; existing Aldric, Serene and Tomas portraits remain authoritative."
   ]
 }

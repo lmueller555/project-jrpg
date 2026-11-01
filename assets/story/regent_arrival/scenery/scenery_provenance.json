@@ -5,8 +5,9 @@
     480
   ],
   "exporter": "tools/build_regent_arrival_scenery.py",
-  "exporter_sha256": "6079325ed9b46bca4a3c6d2d6fa160a564f223162a8459366bb476bf451736e2",
+  "exporter_sha256": "4f82f878e81c82d5300fdaf2e703eca25da66770b807ab56d0e92a31f9df86c7",
   "prompts_sha256": "5c6e2d20d0da9f92224f7dbe67a720cba44b532f19790ac5e7fe039d27fd1860",
+  "gate_occlusion_sha256": "1b62d5c235a15e07c4b5ddee2607bbc7c74e14fef7b0621b68466f09f9b87e40",
   "sources": [
     {
       "file": "assets/source/cinematics/regent_arrival/scenery/gate_leaf_generated.png",
@@ -139,6 +140,14 @@
       "sha256": "a6230418b854c19083197db7e999d01d72c1c495c9fd2402384c1a8d555ed8a6"
     },
     {
+      "file": "assets/story/regent_arrival/scenery/south_gate_masonry.png",
+      "size": [
+        960,
+        480
+      ],
+      "sha256": "239d95c4be6d6745d1d94fac02bd0be5885f39dbc819773e487ef2e8dbf56b90"
+    },
+    {
       "file": "assets/story/regent_arrival/scenery/town_approach.png",
       "size": [
         960,
@@ -155,12 +164,13 @@
       "sha256": "f9c991a5d0653106c0fa7b589b4501c6d4a48e872af09cd8d3c5dbe6751b8665"
     }
   ],
-  "scenery_manifest_sha256": "a23447fcb4e7127d6f2ad55d6a03d5f7b2f1ba1bb5fc91e7e60ee10f685bea73",
+  "scenery_manifest_sha256": "f7a8cf31d07cf284442fb7e09b6eeb44092612054b7b7b73b8049d322bbddd05",
   "notes": [
     "Original imagegen generations and revisions are retained without alteration.",
     "Exports only crop alpha/foreground pixels and nearest-resize authored imagery.",
     "No actors, horses, caravans, interface or dialogue are baked into the scenery.",
     "Gate leaf is a separate authored transparent prop; the background aperture is open.",
+    "Gate masonry uses a source-registered binary alpha silhouette; only actors beyond the gate ground plane are occluded. No road or sky rectangles are extracted.",
     "Far village architecture uses a humble blue-roof sanctuary and timber belfry, not a cathedral.",
     "The destroyed bridge is broad enough for wagon traffic; both road approaches are scarred.",
     "The intact town-brook wooden bridge is distinct from the ruined western stone river crossing.",
