@@ -89,6 +89,8 @@ approve a quarry or inspect the adults' hire agreement.
 ## Mira's millrace outing
 
 Mira is Caelan's childhood friend and a capable mechanical problem-solver.
+Her job identity is **Machinist**, with future tool-based combat abilities to
+build on these skills. Her opening guest abilities remain unchanged.
 For MQ02 she brings a short travel spear from her workbench. She is a stronger,
 more experienced combatant than unarmed Caelan and joins him as a temporary,
 player-controlled guest against the Ridgeback Tusker outside Eldenmere. Her
@@ -130,7 +132,7 @@ In the opening of MQ04, Liam’s mother and the six existing children attend a s
 
 The approved attribute set is **HP, MP, Str, Mag, Spr, Def, M. Def, Speed, Acc,
 Eva and Lck**. Mag increases damaging-spell power; Spr increases healing-spell
-power. Caelan begins as a balanced all-rounder:
+power. Caelan's approved job identity is **Spellblade**, beginning as a balanced all-rounder:
 
 | HP | MP | Str | Mag | Spr | Def | M. Def | Speed | Acc | Eva | Lck |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -138,8 +140,13 @@ power. Caelan begins as a balanced all-rounder:
 
 HP and MP are maximum values; current resources start full. The remaining
 numbers are ratings, including Acc, Eva and Lck, rather than percentages.
-Starting numbers are a tunable gameplay baseline. They do not assign Caelan a
-job, define a battle format or change his established magical limitations.
+Starting numbers are a tunable gameplay baseline. His Spellblade identity
+develops through learned weapon techniques and magicks; these numbers do not
+change his established magical limitations. Aether Edge is his only
+first-weapon starter skill, with no elemental coverage. He remains unarmed
+during MQ02; acquiring his weapon belongs to future story content. The
+[character ability dictionaries](../../CHARACTER_ABILITIES.md) record his
+unlock rules and the other party members' profiles.
 The values are visible through **Pause → Characters**, with attribute icons and
 hover explanations. The Sphere Grid will be developed separately. See
 [character attributes](../../CHARACTER_ATTRIBUTES.md) for the definitions,

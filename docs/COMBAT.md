@@ -123,24 +123,27 @@ HP is green above 50%, yellow
 above 25% through 50%, and red at 25% or below. MP is blue; the ATB fill stays
 yellow while charging and when ready.
 
-At standard text size the panel is 80 logical pixels tall, down from 108
+At standard text size the starting panel is 80 logical pixels tall, down from 108
 (about 26% shorter). Larger text can expand it to preserve readable labels
 and controls. The table shows participating characters rather than the sketch's
 illustrative future-party placeholders.
 
 Commands form a compact vertical list on the left when a party member is ready.
 Mouse clicks select a command directly; arrow keys and Enter/Space provide
-keyboard access. Only supported learned abilities appear. Result titles and
+keyboard access. Skills is always visible, with unavailable states greyed out;
+its submenu contains supported learned skills. An optional learned spell adds
+a row and can expand the panel slightly. Result titles and
 Continue remain on the left; action messages, rewards and retry details use
 the space beneath the party row. See the
 [compact table preview](reviews/compact_battle/README.md).
 
 | Input | Action |
 | --- | --- |
-| Click a command | Commit that action for the selected ready character |
+| Click a command | Open Skills or commit an action for the selected ready character |
 | Click a ready row / Tab | Select another ready party member |
 | Arrows + Enter/Space | Select and commit a command |
-| Escape | Pause/resume the battle |
+| Back / Escape in Skills | Return to the root commands without spending a turn |
+| Escape outside Skills | Pause/resume the battle |
 | Continue on Spoils / a non-victory result | Return to exploration; failed mill attempts return to the safe approach |
 | F11 | Toggle fullscreen |
 
@@ -157,6 +160,15 @@ or click through a result into exploration. The UI supports the minimum
 | Guard | Halve the next incoming action | 0 | 0.50 / 0.20 seconds |
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
 | Aether Dart | Magical damage, potency 2; requires its lattice unlock | 4 | 0.90 / 0.50 seconds |
+| Aether Edge | Non-elemental weapon enchantment for three strikes; requires first weapon unlock and equipped weapon | 4 | 0.90 / 0.50 seconds |
+
+Caelan is a Spellblade. Aether Edge is his only first-weapon starter skill and
+appears under Skills. Before he has a weapon, Skills is greyed out with
+**Requires a weapon**. Each empowered physical weapon attack adds a Mag-based
+component at potency 0.5, sharing its variance roll and one 9,999 per-hit cap
+with the physical damage. Recasting refreshes three strikes rather than stacking;
+other actions do not consume the charges, and battle results clear them.
+See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
 Guard consumes a turn and remains until the next incoming action resolves.
 Flee is guaranteed in this first encounter. Entering combat grants no spells or

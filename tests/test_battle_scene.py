@@ -124,6 +124,7 @@ class BattleSceneTests(unittest.TestCase):
     def test_command_keyboard_and_repeats_are_gated_by_readiness(self):
         self.ready()
         self.key(pygame.K_DOWN)
+        self.key(pygame.K_DOWN)
         self.key(pygame.K_RETURN, repeat=True)
         self.assertEqual(self.model.phase, 'ready')
         self.key(pygame.K_RETURN)
@@ -231,7 +232,7 @@ class BattleSceneTests(unittest.TestCase):
                                  self.scene.continue_rect):
                         self.assertTrue(self.scene.panel_rect.contains(rect))
                     for identifier, rect in self.scene.command_rects.items():
-                        label = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
+                        label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',
                                  'aether_dart': 'Dart · 4 MP'}[identifier]
                         self.assertEqual(len(labels[label]), 1)
                         self.assertTrue(rect.contains(labels[label][0]),
