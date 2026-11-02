@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parent
 COMBAT_ART = ROOT/'assets/combat'
 RESULTS = ('victory', 'defeat', 'fled')
 ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
-                 'aether_dart': 'Dart · 4 MP'}
+                 'skills': 'Skills', 'back': 'Back',
+                 'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP'}
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
 HP_RED = '#df6b62'
@@ -97,6 +98,8 @@ class BattleScene:
         self.paused = False
         self.focused = True
         self.selected = 0
+        self.command_menu = 'root'
+        self._command_context = (model.phase, model.ready_actor)
         self._held = False
         self._elapsed = 0.0
         self._phase_elapsed = 0.0
@@ -171,6 +174,7 @@ class BattleScene:
                             ground_y-image.get_height()//2))
 
     def _layout(self, painter):
+        self._sync_commands()
         small = painter.font('small').get_linesize()
         name = painter.font('name', bold=True).get_linesize()
         self._detail_lines = painter.wrap(self._detail_text(), 308, role='small')
@@ -180,7 +184,7 @@ class BattleScene:
         # The ordinary panel is 26% shorter. Font enlargement gets real space,
         # rather than clipped labels or vertically compressed typography.
         height = max(80, content_offset+max(
-            len(self.model.available_actions())*command_height+3,
+            len(self._command_actions())*command_height+3,
             len(self.model.party)*row_height+5+len(self._detail_lines)*small+3))
         self.panel_rect = pygame.Rect(8, 312-height, 464, height)
         top = self.panel_rect.top
@@ -206,7 +210,7 @@ class BattleScene:
                                          110, continue_height)
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
         self.command_rects = {}
-        for index, identifier in enumerate(self.model.available_actions()):
+        for index, identifier in enumerate(self._command_actions()):
             self.command_rects[identifier] = pygame.Rect(20, row_top+index*command_height,
                                                         110, command_height)
         return small, name
@@ -266,15 +270,54 @@ class BattleScene:
                 return ('Return to the safe approach.' if self.battlefield == 'millrace'
                         else 'Return to Eldenmere.')
             return ''
-        if model.phase == 'ready':return ''
+        if model.phase == 'ready':
+            actions = self._command_actions()
+            if (self.command_menu == 'skills' and actions
+                    and actions[self.selected % len(actions)] == 'aether_edge'):
+                return '4 MP · Enchant self for 3 weapon strikes.'
+            return ''
         return model.message if model.phase == 'acting' else 'Preparing the next action.'
 
     def _sound(self, kind):self.game.ui.sound(kind)
 
+    def _sync_commands(self):
+        """A command list belongs only to its current ready party member."""
+        context = (self.model.phase, self.model.ready_actor)
+        if context != self._command_context:
+            self.command_menu = 'root'
+            self.selected = 0
+            self._notice = ''
+            self._command_context = context
+
+    def _command_actions(self):
+        if self.command_menu == 'skills':
+            return list(self.model.skill_actions())+['back']
+        commands = getattr(self.model, 'command_actions', self.model.available_actions)
+        return list(commands())
+
+    def _command_reason(self, identifier):
+        if identifier == 'back':return ''
+        if identifier == 'skills':return self.model.command_reason(identifier)
+        return self.model.action_reason(identifier)
+
+    def _set_menu(self, menu):
+        self.command_menu = menu
+        actions = self._command_actions()
+        self.selected = actions.index('skills') if menu == 'root' and 'skills' in actions else 0
+        self._notice = ''
+        self._layout(self.game.ui.painter(self.game.ui_surface))
+
+    def _selection_notice(self):
+        actions = self._command_actions()
+        return self._command_reason(actions[self.selected % len(actions)]) if actions else ''
+
     def _select_member(self, identifier):
         if not self.model.select_ready(identifier):return False
+        self.command_menu = 'root'
+        self._command_context = (self.model.phase, self.model.ready_actor)
         self.selected = 0
         self._notice = ''
+        self._layout(self.game.ui.painter(self.game.ui_surface))
         self._sound('move')
         self._tutorial_event({'type': 'player_ready', 'actor': identifier})
         return True
@@ -286,12 +329,26 @@ class BattleScene:
             self._sound('confirm')
             return
         if self.model.phase != 'ready':return
-        actions = self.model.available_actions()
+        self._sync_commands()
+        actions = self._command_actions()
         if not actions:return
         self.selected %= len(actions)
         identifier = actions[self.selected]
+        if identifier == 'back':
+            self._set_menu('root')
+            self._sound('back')
+            return
+        if identifier == 'skills':
+            reason = self._command_reason(identifier)
+            if reason:
+                self._notice = reason
+                self._sound('back')
+            else:
+                self._set_menu('skills')
+                self._sound('confirm')
+            return
         if self.model.choose_action(identifier):
-            self._notice = ''
+            self._sync_commands()
             self._sound('confirm')
         else:
             self._notice = self.model.action_reason(identifier)
@@ -326,6 +383,11 @@ class BattleScene:
         if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key == pygame.K_ESCAPE:
                 if self.focused:
+                    if (not self.paused and not self.tutorial_active
+                            and self.command_menu == 'skills'):
+                        self._set_menu('root')
+                        self._sound('back')
+                        return True
                     self.paused = not self.paused
                     self._held = False
                     self._sound('back' if self.paused else 'confirm')
@@ -340,10 +402,10 @@ class BattleScene:
                     self._select_member(ready[(index+1) % len(ready)])
             elif self.model.phase == 'ready' and event.key in (
                     pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT):
-                actions = self.model.available_actions()
+                actions = self._command_actions()
                 delta = -1 if event.key in (pygame.K_UP, pygame.K_LEFT) else 1
-                self.selected = (self.selected+delta) % len(actions)
-                self._notice = ''
+                self.selected = (self.selected+delta) % len(actions) if actions else 0
+                self._notice = self._selection_notice()
                 self._sound('move')
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if self._held:return True
@@ -369,7 +431,10 @@ class BattleScene:
         elif event.type == pygame.MOUSEMOTION and not self.paused and self.model.phase == 'ready':
             if point is not None:
                 for index, rect in enumerate(self.command_rects.values()):
-                    if rect.collidepoint(point):self.selected = index;break
+                    if rect.collidepoint(point):
+                        self.selected = index
+                        self._notice = self._selection_notice()
+                        break
         return True
 
     def update(self, seconds):
@@ -391,9 +456,14 @@ class BattleScene:
                 if not event['remaining_hp']:self._defeat_times[event['target']] = self._elapsed
             elif event['type'] == 'guard':
                 self._popups.append({'target': event.get('actor', 'player'), 'text': 'Guard', 'age': 0.0})
+            elif event['type'] == 'enchant':
+                self._popups.append({'target': event['actor'], 'text': 'Aether Edge',
+                                     'age': 0.0, 'enchant': True})
             elif event['type'] == 'player_ready':
+                self.command_menu = 'root'
                 self.selected = 0
                 self._notice = ''
+        self._sync_commands()
         self._last_phase = self.model.phase
 
     @property
@@ -447,7 +517,7 @@ class BattleScene:
                 return 'hurt', popup['age']*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
-            state = ('cast' if action.kind == 'magical' else 'guard' if action.kind == 'guard'
+            state = ('cast' if action.kind in ('magical', 'enchant') else 'guard' if action.kind == 'guard'
                      else 'idle' if action.kind == 'flee' else action.animation
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
@@ -469,6 +539,11 @@ class BattleScene:
             canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
                         (round(point.x-anchor[0]*2), round(point.y-anchor[1]*2)))
         action = self.model.current_action
+        if action is not None and action.kind == 'enchant':
+            point = positions[action.actor]+(0, -34)
+            pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
+            pygame.draw.circle(canvas, '#5da9e9', (round(point.x), round(point.y)), 15+pulse, 1)
+            pygame.draw.circle(canvas, '#b1e4ff', (round(point.x), round(point.y)-18), 2)
         if action is not None and action.kind == 'magical' and not action.resolved:
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
@@ -521,7 +596,17 @@ class BattleScene:
                 x, y = (354 if popup['target'] == 'player' else 126), 99
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
-            painter.text(popup['text'], (x, y), role='name', color=GOLD, anchor='center', bold=True)
+            painter.text(popup['text'], (x, y), role='name',
+                         color=MP_BLUE if popup.get('enchant') else GOLD, anchor='center', bold=True)
+        for member in model.party:
+            hits = getattr(member, 'aether_edge_hits', 0)
+            if not hits or not member.hp:continue
+            point = positions[member.identifier]
+            cue = 'Edge · '+str(hits)+(' strike' if hits == 1 else ' strikes')
+            cue_point = (point.x, min(point.y+20, self.panel_rect.top-8))
+            painter.text(cue, (cue_point[0]+1, cue_point[1]+1), role='small',
+                         color=FOREST_DARK, anchor='midbottom', bold=True)
+            painter.text(cue, cue_point, role='small', color=MP_BLUE, anchor='midbottom', bold=True)
         if model.phase == 'victory':
             # The encounter owner advances this celebration to Spoils of Battle.
             # Rewards and an exit command belong to that separate screen.
@@ -540,7 +625,7 @@ class BattleScene:
         painter.panel(self.panel_rect)
         top = self.panel_rect.top
         heading = ({'victory': 'VICTORY', 'defeat': 'DEFEATED', 'fled': 'ESCAPED'}[model.phase]
-                   if model.phase in RESULTS else 'COMMANDS')
+                   if model.phase in RESULTS else 'SKILLS' if self.command_menu == 'skills' else 'COMMANDS')
         painter.text(heading, (20, top+5), role='small', color=GOLD, bold=True)
         self.header_rects = {}
         for label, center in (('ATB', 181), ('NAME', 254), ('HP', 337), ('MP', 425)):
@@ -572,11 +657,11 @@ class BattleScene:
             painter.button(self.continue_rect, 'Try again' if self.result_error else 'Continue')
         elif model.phase == 'ready':
             for index, (identifier, rect) in enumerate(self.command_rects.items()):
-                disabled = bool(model.action_reason(identifier))
+                disabled = bool(self._command_reason(identifier))
                 painter.rect(FOREST, rect)
                 painter.text(ACTION_LABELS.get(identifier, identifier), rect.center,
                              role='small', anchor='center', color=MUTED if disabled else IVORY)
-                if index == self.selected and not disabled:painter.rect(GOLD, rect, 1)
+                if index == self.selected:painter.rect(MUTED if disabled else GOLD, rect, 1)
             if self._notice:
                 painter.text(self._notice, (240, self.panel_rect.top-6),
                              role='small', color=GOLD, anchor='midbottom')

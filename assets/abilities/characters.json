@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "characters": {
+    "caelan": {
+      "name": "Caelan",
+      "job": "Spellblade",
+      "skills": {
+        "aether_edge": {"unlock": "first_weapon"},
+        "brace": {"unlock": "lattice"},
+        "focused_strike": {"unlock": "lattice"},
+        "sweeping_strike": {"unlock": "lattice"},
+        "guarded_strike": {"unlock": "lattice"},
+        "piercing_strike": {"unlock": "lattice"},
+        "rally": {"unlock": "lattice"},
+        "intercept": {"unlock": "lattice"},
+        "riposte": {"unlock": "lattice"},
+        "channel": {"unlock": "lattice"},
+        "steadfast": {"unlock": "lattice"}
+      },
+      "spells": {
+        "mend": {"unlock": "lattice"},
+        "aether_dart": {"unlock": "lattice"},
+        "aether_arc": {"unlock": "lattice"},
+        "aether_lance": {"unlock": "lattice"},
+        "aether_burst": {"unlock": "lattice"},
+        "greater_mend": {"unlock": "lattice"},
+        "renew": {"unlock": "lattice"},
+        "cleanse": {"unlock": "lattice"},
+        "ward": {"unlock": "lattice"},
+        "dispel": {"unlock": "lattice"}
+      },
+      "abilities": {
+        "basic_magicks": {"unlock": "starting"}
+      }
+    },
+    "mira": {
+      "name": "Mira",
+      "job": "Machinist",
+      "skills": {},
+      "spells": {},
+      "abilities": {}
+    },
+    "lucan": {
+      "name": "Lucan",
+      "job": "Knight",
+      "skills": {},
+      "spells": {},
+      "abilities": {}
+    },
+    "rhea": {
+      "name": "Rhea",
+      "job": "Aethermage",
+      "skills": {},
+      "spells": {},
+      "abilities": {}
+    },
+    "edran": {
+      "name": "Edran",
+      "job": "Sage",
+      "skills": {},
+      "spells": {},
+      "abilities": {}
+    }
+  }
+}

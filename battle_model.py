@@ -14,7 +14,8 @@ from pathlib import Path
 import random
 
 from character_attributes import ATTRIBUTE_IDS, ATTRIBUTE_CAPS
-from combat_damage import magical_damage, physical_damage, roll_variance
+from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
+                           roll_variance)
 
 
 ROOT = Path(__file__).resolve().parent
@@ -24,6 +25,7 @@ GUEST_PATH = ROOT/'assets/combat/guests.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
+SUPPORTED_SKILL_ACTIONS = ('aether_edge',)
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
 
@@ -47,10 +49,12 @@ def load_actions(data=None):
     fields = {'name', 'kind', 'potency', 'mp_cost', 'duration', 'impact_at', 'animation', 'target'}
     for identifier, action in data['actions'].items():
         if (not isinstance(identifier, str) or not identifier
-                or not isinstance(action, dict) or set(action) != fields
+                or not isinstance(action, dict)
+                or set(action) != (fields | {'weapon_hits'}
+                                   if action.get('kind') == 'enchant' else fields)
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant')
                 or action['target'] not in ('opponent', 'self', 'none')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
@@ -60,10 +64,15 @@ def load_actions(data=None):
         if action['kind'] in ('physical', 'magical'):
             if action['potency'] <= 0 or action['target'] != 'opponent':
                 raise ValueError('Invalid damaging action')
+        elif action['kind'] == 'enchant':
+            if (action['potency'] <= 0 or action['target'] != 'self'
+                    or action['animation'] != 'cast'
+                    or not _integer(action['weapon_hits'], 1, 999)):
+                raise ValueError('Invalid weapon enchantment')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
               or action['target'] != ('self' if action['kind'] in ('guard', 'prepare') else 'none')):
             raise ValueError('Invalid utility action')
-    if not set(PLAYER_ACTIONS+SUPPORTED_LEARNED_ACTIONS) <= set(data['actions']):
+    if not set(PLAYER_ACTIONS+SUPPORTED_LEARNED_ACTIONS+SUPPORTED_SKILL_ACTIONS) <= set(data['actions']):
         raise ValueError('Missing player battle action')
     return deepcopy(data['actions'])
 
@@ -134,6 +143,7 @@ class Combatant:
     mp: int
     atb: float = 0.0
     guarded: bool = False
+    aether_edge_hits: int = 0
 
     def value(self, identifier):return self.attributes[identifier]
 
@@ -168,7 +178,8 @@ class BattleModel:
     """
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
-                 *, guest_id=None, action_data=None, enemy_data=None, guest_data=None):
+                 *, guest_id=None, weapon_equipped=False, action_data=None,
+                 enemy_data=None, guest_data=None):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -176,6 +187,8 @@ class BattleModel:
         if (not isinstance(learned_abilities, (tuple, list, set, frozenset))
                 or any(not isinstance(identifier, str) for identifier in learned_abilities)):
             raise ValueError('Invalid learned abilities')
+        if type(weapon_equipped) is not bool:raise ValueError('Invalid weapon equipment state')
+        self.weapon_equipped = weapon_equipped
         values = {key: player_attributes.value(key) for key in ATTRIBUTE_IDS}
         if any(not _integer(value, 1 if key == 'hp' else 0, ATTRIBUTE_CAPS[key])
                for key, value in values.items()):
@@ -260,7 +273,32 @@ class BattleModel:
         if actor is None:return []
         if actor.identifier != 'player':return list(PLAYER_ACTIONS)
         return list(PLAYER_ACTIONS)+[key for key in SUPPORTED_LEARNED_ACTIONS
-                                    if key in self.learned_abilities]
+                                    if key in self.learned_abilities]+self.skill_actions(actor.identifier)
+
+    def skill_actions(self, actor_id=None):
+        """Implemented weapon skills owned by this party member."""
+        actor = self._party_actor(actor_id)
+        if actor is None or actor.identifier != 'player':return []
+        return [key for key in SUPPORTED_SKILL_ACTIONS if key in self.learned_abilities]
+
+    def command_actions(self, actor_id=None):
+        """Root commands include the Skills submenu, never a synthetic action."""
+        actor = self._party_actor(actor_id)
+        if actor is None:return []
+        spells = [key for key in SUPPORTED_LEARNED_ACTIONS
+                  if actor.identifier == 'player' and key in self.learned_abilities]
+        return ['attack', 'skills', 'guard', 'flee']+spells
+
+    def command_reason(self, identifier, actor_id=None):
+        if identifier != 'skills':return self.action_reason(identifier, actor_id)
+        actor = self._party_actor(actor_id)
+        if actor is None:return 'This action is not available.'
+        if (self.phase != 'ready' or not actor.hp
+                or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if actor.identifier == 'player' and not self.weapon_equipped:
+            return 'Requires a weapon.'
+        if not self.skill_actions(actor.identifier):return 'No skills learned.'
+        return ''
 
     def _action_id(self, command, actor):
         if command == 'attack' and actor.identifier in self.guest_definitions:
@@ -274,6 +312,8 @@ class BattleModel:
             return 'This action is not available.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if identifier in SUPPORTED_SKILL_ACTIONS and not self.weapon_equipped:
+            return 'Requires a weapon.'
         if actor.mp < self.actions[self._action_id(identifier, actor)]['mp_cost']:
             return 'Not enough MP.'
         return ''
@@ -342,18 +382,35 @@ class BattleModel:
             self.message = actor.name+' lowers its head toward '+member.name+'.'
             self.events.append({'type': 'telegraph', 'actor': action.actor,
                                 'action': action.action, 'target': target})
+        elif action.kind == 'enchant':
+            actor.aether_edge_hits = self.actions[action.action]['weapon_hits']
+            self.message = actor.name+' enchants their weapon with Aether Edge.'
+            self.events.append({'type': 'enchant', 'actor': action.actor,
+                                'action': action.action,
+                                'remaining_hits': actor.aether_edge_hits})
         else:
             target = self.combatant(action.target)
             protected = target.guarded
             calculator = physical_damage if action.kind == 'physical' else magical_damage
+            variance = roll_variance(self.rng)
             action.damage = calculator(actor, target, self.actions[action.action]['potency'],
-                                       protected=protected, variance_percent=roll_variance(self.rng))
+                                       protected=protected, variance_percent=variance)
+            enchanted = (action.actor == 'player' and self.weapon_equipped
+                         and action.kind == 'physical' and actor.aether_edge_hits > 0)
+            if enchanted:
+                bonus = magical_damage(actor, target, self.actions['aether_edge']['potency'],
+                                       protected=protected, variance_percent=variance)
+                action.damage = min(NORMAL_DAMAGE_CAP, action.damage+bonus)
+                actor.aether_edge_hits -= 1
             target.hp = max(0, target.hp-action.damage)
             target.guarded = False
             self.message = target.name+' takes '+str(action.damage)+' damage.'
-            self.events.append({'type': 'impact', 'actor': action.actor, 'action': action.action,
-                                'target': action.target, 'damage': action.damage,
-                                'remaining_hp': target.hp, 'guarded': protected})
+            event = {'type': 'impact', 'actor': action.actor, 'action': action.action,
+                     'target': action.target, 'damage': action.damage,
+                     'remaining_hp': target.hp, 'guarded': protected}
+            if enchanted:
+                event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
+            self.events.append(event)
             if action.action == 'tusker_charge':self.telegraphed_target = None
             if not target.hp:
                 target.atb = 0.0
@@ -362,6 +419,7 @@ class BattleModel:
         action.resolved = True
 
     def _result(self, outcome):
+        for actor in (*self.party, self.enemy):actor.aether_edge_hits = 0
         self.phase = outcome
         defeat = ('The party has fallen.' if len(self.party) > 1
                   else self.player.name+' has fallen.')

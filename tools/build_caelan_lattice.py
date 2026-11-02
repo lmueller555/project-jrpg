@@ -197,9 +197,8 @@ def build():
     stat_ids = deque(item[-1] for item in sorted(stat_pool))
 
     catalog = json.loads(ABILITIES.read_text())
-    # Only canonical seed definitions and this authored set belong in output;
-    # rerunning the builder must not accumulate retired experimental records.
-    catalog['abilities'] = {key: catalog['abilities'][key] for key in ('basic_magicks', 'brace', 'mend')}
+    # The shared catalog also owns weapon unlocks and other characters' abilities.
+    # Author this Lattice's definitions without deleting those independent entries.
     for identifier, (name, kind, description) in NEW_ABILITIES.items():
         catalog['abilities'][identifier] = {'name': name, 'description': description, 'kind': kind}
         nodes[identifier+'_01'] = {'kind': 'ability', 'name': name,

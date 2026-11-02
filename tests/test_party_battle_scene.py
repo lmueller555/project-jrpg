@@ -80,7 +80,7 @@ class PartyBattleSceneTests(unittest.TestCase):
     def test_two_rows_keep_independent_values_and_active_command_ownership(self):
         self.make_both_ready()
         self.assertEqual(set(self.scene.party_rows), {'player', 'mira'})
-        self.assertEqual(self.scene.panel_rect.height, 80)
+        self.assertLessEqual(self.scene.panel_rect.height, 94)
         self.assertIn('aether_dart', self.scene.command_rects)
         self.click(self.scene.party_rows['mira']['row'].center)
         self.draw()

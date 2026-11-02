@@ -143,8 +143,9 @@ class BattleStatusUITests(unittest.TestCase):
                 with self.subTest(learned=learned, size=size):
                     records = self.text_bounds()
                     labels = [text for text, _ in records]
-                    self.assertLessEqual(self.scene.panel_rect.height, 80)
-                    self.assertGreaterEqual(self.scene.panel_rect.top, 232)
+                    # The optional spell adds one row beside the new Skills group.
+                    self.assertLessEqual(self.scene.panel_rect.height, 94 if learned else 80)
+                    self.assertGreaterEqual(self.scene.panel_rect.top, 218 if learned else 232)
                     headers = []
                     for heading in ('ATB', 'NAME', 'HP', 'MP'):
                         matching = [rect for text, rect in records if text == heading]
@@ -154,7 +155,7 @@ class BattleStatusUITests(unittest.TestCase):
                     self.assertEqual(labels.count('Caelan'), 1)
                     self.assertFalse(any('ally' in text.lower() or text.upper() in ('BARRIER', 'LIMIT')
                                          for text in labels))
-                    self.assertEqual(len(self.scene.command_rects), 4 if learned else 3)
+                    self.assertEqual(len(self.scene.command_rects), 5 if learned else 4)
 
     def test_status_and_maximum_resources_fit_table_columns_at_every_scale(self):
         self.assertTrue(self.game.attributes.set_modifiers('ui-test', {'hp': 9999, 'mp': 999}))
@@ -198,7 +199,7 @@ class BattleStatusUITests(unittest.TestCase):
                         if index:
                             self.assertEqual(command.left, commands[index-1][1].left)
                             self.assertGreaterEqual(command.top, commands[index-1][1].bottom)
-                        label = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
+                        label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',
                                  'aether_dart': 'Dart · 4 MP'}[identifier]
                         label_bounds = next(rect for text, rect in records if text == label)
                         self.assertTrue(command.contains(label_bounds),

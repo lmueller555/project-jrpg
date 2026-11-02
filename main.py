@@ -39,6 +39,7 @@ from world_map_viewer import WorldMapViewer
 from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
+from character_abilities import CharacterAbilities
 from status_ui import StatusUI
 from aether_lattice import AetherLattice
 from lattice_progression import LatticeProgression
@@ -440,6 +441,7 @@ class Game:
         self.inventory=Inventory()
         self.attributes=CharacterAttributes('caelan')
         self.lattice=AetherLattice()
+        self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.social=SocialSystem(self)
         self._mouse_held=False
@@ -516,6 +518,7 @@ class Game:
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
+                           'character_abilities':self.character_abilities.to_dict(),
                            'aether_lattice':self.lattice.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
@@ -543,6 +546,7 @@ class Game:
             quest,objective=delivery['quest'],delivery['objective']
             if self.quests.objective_status(quest,objective)=='completed':
                 self.inventory.deliver(quest,objective,delivery['recipient'])
+        self.character_abilities.reconcile_equipment()
 
     def accept_quest(self,identifier):
         """Update quest and supplies together, before the scene checkpoints."""
@@ -589,6 +593,7 @@ class Game:
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                LatticeProgression.valid_journey(data) and
+               CharacterAbilities.valid_journey(data) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
@@ -699,6 +704,8 @@ class Game:
             position=data['player']['position']
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
+        self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
+        if data is not None:self.character_abilities.restore(data.get('character_abilities'))
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.overworld_travel.restore(data.get('overworld') if data else None)
         # Residents resume their own routines on launch. A saved standing spot
@@ -785,6 +792,7 @@ class Game:
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
+              'character_abilities':self.character_abilities.to_dict(),
               'aether_lattice':self.lattice.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
@@ -833,6 +841,20 @@ class Game:
 
     def award_battle_rewards(self,receipt_id,awards,drops):
         if not self.lattice_progression.award_battle_rewards(receipt_id,awards,drops):return False
+        self.save_progress()
+        return True
+
+    def acquire_weapon(self,character_id,item_id):
+        """Future quest grants add/equip a catalog weapon and unlock its skills."""
+        if self.on_title or self.combat.active or self.opening_cinematic.active:return False
+        if not self.character_abilities.acquire_weapon(character_id,item_id):return False
+        self.save_progress()
+        return True
+
+    def equip_weapon(self,character_id,item_id):
+        """Equip an owned weapon, or None; a live encounter keeps its loadout."""
+        if self.on_title or self.combat.active or self.opening_cinematic.active:return False
+        if not self.character_abilities.equip_weapon(character_id,item_id):return False
         self.save_progress()
         return True
 

@@ -165,7 +165,8 @@ class CombatEncounters:
         if not self.nearby():return False
         self._bat_contact_armed = False
         model = BattleModel(self.game.attributes,
-                            self.game.lattice.learned_abilities(),
+                            self.game.character_abilities.known_abilities(),
+                            weapon_equipped=self.game.character_abilities.has_weapon(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'])
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
@@ -188,7 +189,8 @@ class CombatEncounters:
                 or game.world is not quest.upstream):
             self._mill_intro_started = False
             return False
-        model = BattleModel(game.attributes, game.lattice.learned_abilities(),
+        model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
+                            weapon_equipped=game.character_abilities.has_weapon(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id='ridgeback_tusker', guest_id='mira')
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
@@ -494,7 +496,8 @@ class CombatEncounters:
         self.kind, self.receipt_id = record['kind'], record['receipt']
         if self.kind == 'bat':self._bat_contact_armed = False
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
-        model = BattleModel(game.attributes, game.lattice.learned_abilities(),
+        model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
+                            weapon_equipped=game.character_abilities.has_weapon(),
                             enemy_id='ridgeback_tusker' if self.kind == 'mill' else 'bat',
                             guest_id='mira' if self.kind == 'mill' else None)
         model.player.hp = 0 if record['incapacitated'] else record['resources']['hp']

@@ -1,0 +1,5 @@
+{
+  "source": "Actual Game.draw during production MQ02 battle, no forced battle phases",
+  "unarmed": "Live catalog has no weapon or quest weapon reward; fresh unarmed boar Skills is disabled",
+  "armed": "TEST FIXTURE ONLY: Unawarded Test Sword injected into Inventory constructor, then public Game.acquire_weapon called before story setup; no production weapon or quest grant added"
+}
