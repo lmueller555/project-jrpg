@@ -217,21 +217,21 @@ class AetherEdgeBattleModelTests(unittest.TestCase):
         self.assertFalse(model.player.guarded)
         self.assertEqual(model.player.aether_edge_hits, 3)
 
-    def test_guest_never_borrows_skills_and_spear_hit_keeps_caelans_charges(self):
+    def test_guest_owns_overclock_and_bolt_hit_keeps_caelans_charges(self):
         model = self.model(guest_id='mira')
         model.player.atb = model.combatant('mira').atb = 1
         model.update(0)
         self.assertTrue(model.choose_action('aether_edge', actor_id='player'))
         model.update(.9)
         self.assertEqual(model.ready_actor, 'mira')
-        self.assertEqual(model.skill_actions(), [])
-        self.assertEqual(model.command_reason('skills'), 'No skills learned.')
+        self.assertEqual(model.skill_actions(), ['overclock'])
+        self.assertEqual(model.command_reason('skills'), '')
         self.assertNotIn('aether_edge', model.available_actions())
         self.assertFalse(model.choose_action('aether_edge'))
         self.assertTrue(model.choose_action('attack'))
         model.update(.4)
         self.assertEqual(model.current_action.damage,
-                         physical_damage(model.combatant('mira'), model.enemy, 1.5))
+                         physical_damage(model.combatant('mira'), model.enemy, .75))
         self.assertEqual(model.player.aether_edge_hits, 3)
         self.assertEqual(model.combatant('mira').aether_edge_hits, 0)
         self.assertEqual(model.combatant('mira').mp, 30)

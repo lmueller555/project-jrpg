@@ -180,7 +180,8 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.scene.command_menu, 'root')
         self.assertNotIn('aether_edge', self.scene.command_rects)
         self.click(self.scene.command_rects['skills'].center)
-        self.assertEqual(self.scene._notice, 'No skills learned.')
+        self.assertEqual(self.scene.command_menu, 'skills')
+        self.assertIn('overclock', self.scene.command_rects)
         self.click(self.scene.party_rows['player']['row'].center)
         self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)
@@ -220,7 +221,7 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.resources(), before)
         self.click(self.scene.command_rects['attack'].center)
         self.assertEqual((self.model.current_action.actor, self.model.current_action.action),
-                         ('mira', 'spear_thrust'))
+                         ('mira', 'bolt_shot'))
         self.assertEqual(self.model.player.atb, 1)
         self.assertEqual(self.model.combatant('mira').atb, 0)
 

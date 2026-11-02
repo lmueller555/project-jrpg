@@ -89,14 +89,16 @@ approve a quarry or inspect the adults' hire agreement.
 ## Mira's millrace outing
 
 Mira is Caelan's childhood friend and a capable mechanical problem-solver.
-Her job identity is **Machinist**, with future tool-based combat abilities to
-build on these skills. Her opening guest abilities remain unchanged.
-For MQ02 she brings a short travel spear from her workbench. She is a stronger,
+Her job identity is **Machinist**. For MQ02 she brings a compact spring-driven
+bolt launcher and Rivet, her familiar workshop bot folded into her kit. Rivet
+automatically unfolds for battle and attacks autonomously; Mira's starting
+Overclock skill grants it Haste. She is a stronger,
 more experienced combatant than unarmed Caelan and joins him as a temporary,
 player-controlled guest against the Ridgeback Tusker outside Eldenmere. Her
 weapon handling and practical guidance establish this competence without
 assigning a military background or an age. Their later intake repair preserves
 Caelan's useful, modest magical success and their complementary skills.
+The [bot guide](../../MIRA_BOTS.md) records her combat rules and progression scope.
 
 Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,

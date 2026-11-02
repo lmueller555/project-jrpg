@@ -17,9 +17,10 @@ Rhea and Edran. Each entry references a stable ID in the shared
 - `lattice`: learned from the character's activated Lattice nodes.
 
 The registered identities are Spellblade, Machinist, Knight, Aethermage and Sage,
-respectively. Future companions have empty ability dictionaries until their
-abilities are designed. Registration does not recruit anyone, grant equipment
-or add commands to Mira's existing guest profile. Caelan's current Lattice
+respectively. Lucan, Rhea and Edran have empty ability dictionaries until their
+abilities are designed. Mira starts with Overclock and the Rivet capability;
+Rivet's Piston Jab belongs to its separate bot definition. Registration does
+not recruit anyone or grant equipment. Caelan's current Lattice
 abilities retain their IDs, rewards and unlock requirements.
 
 To add an ability, define its shared name/description/kind, register it in the
@@ -62,9 +63,10 @@ Opening or closing the submenu spends no MP or ATB and leaves all gauges paused.
 Back or Escape returns to the root; Escape at the root pauses the battle.
 Switching ready characters or beginning another turn resets the submenu.
 
-Mira retains her stronger short-spear attack and has no new skills. Existing
-Aether Dart access still requires its Lattice unlock and remains independent
-of weapon equipment.
+Mira's Skills opens Overclock, which requires her active bot and 5 MP rather
+than a weapon. Her bolt launcher and autonomous Rivet replace the former
+short-spear profile. Existing Aether Dart access still requires its Lattice
+unlock and remains independent of weapon equipment. See [Mira's bot rules](MIRA_BOTS.md).
 
 ## Acquisition and saved journeys
 

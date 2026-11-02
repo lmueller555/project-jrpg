@@ -106,6 +106,21 @@
       "description": "A defensive technique for maintaining a steady position under pressure.",
       "kind": "technique"
     },
+    "overclock": {
+      "name": "Overclock",
+      "description": "Mira spends 5 MP to haste her active bot for eight of its turns.",
+      "kind": "technique"
+    },
+    "rivet": {
+      "name": "Rivet",
+      "description": "Mira's starting bot automatically accompanies her into battle and acts on its own.",
+      "kind": "capability"
+    },
+    "piston_jab": {
+      "name": "Piston Jab",
+      "description": "Rivet's autonomous physical strike against one opponent, powered by Mira's Strength.",
+      "kind": "technique"
+    },
     "aether_edge": {
       "name": "Aether Edge",
       "description": "A non-elemental Spellblade technique that requires an equipped weapon and channels aether through three consecutive strikes.",

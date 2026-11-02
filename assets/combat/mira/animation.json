@@ -10,11 +10,16 @@
     54
   ],
   "facing": "left",
-  "source_sheet": "assets/source/combat/mq02_mira_generated_sheet.png",
-  "source_sha256": "e22d2091cb9d11c8ca6d1845cecfbfd480e87a9d3f9e84ae6e76eb4efa58a04b",
+  "source_sheet": "assets/source/combat/machinist/mira_bolt_launcher_generated_sheet.png",
+  "source_sha256": "cd8feea895911398c57761ca37346e3cfd88548ad381b6bebd42b53f86ccc548",
   "sheet": "spritesheet.png",
-  "extraction": "connected-alpha sprites; fixed native scale",
-  "native_scale": 0.137,
+  "source_grid": [
+    4,
+    5
+  ],
+  "authored_frames": 19,
+  "extraction": "connected-alpha source cells; binary alpha; fixed nearest-neighbor native scale",
+  "native_scale": 0.146,
   "animations": {
     "idle": {
       "loop": true,
@@ -24,10 +29,14 @@
           "duration_ms": 260,
           "source_cell": 0,
           "source_bounds": [
-            43,
-            45,
-            312,
-            307
+            79,
+            10,
+            273,
+            265
+          ],
+          "position": [
+            16,
+            17
           ]
         },
         {
@@ -35,10 +44,14 @@
           "duration_ms": 260,
           "source_cell": 1,
           "source_bounds": [
-            344,
-            45,
-            609,
-            308
+            394,
+            10,
+            587,
+            265
+          ],
+          "position": [
+            16,
+            17
           ]
         }
       ]
@@ -51,10 +64,14 @@
           "duration_ms": 200,
           "source_cell": 2,
           "source_bounds": [
-            661,
-            62,
-            954,
-            308
+            673,
+            32,
+            886,
+            265
+          ],
+          "position": [
+            15,
+            20
           ]
         },
         {
@@ -62,10 +79,14 @@
           "duration_ms": 280,
           "source_cell": 3,
           "source_bounds": [
-            881,
-            86,
-            1239,
-            308
+            968,
+            36,
+            1219,
+            265
+          ],
+          "position": [
+            13,
+            21
           ]
         },
         {
@@ -73,13 +94,18 @@
           "duration_ms": 320,
           "source_cell": 4,
           "source_bounds": [
-            29,
-            350,
-            318,
-            608
+            81,
+            289,
+            275,
+            520
+          ],
+          "position": [
+            16,
+            20
           ]
         }
-      ]
+      ],
+      "contact_ms": 400
     },
     "guard": {
       "loop": true,
@@ -89,10 +115,14 @@
           "duration_ms": 240,
           "source_cell": 5,
           "source_bounds": [
-            373,
-            353,
-            635,
-            608
+            401,
+            289,
+            583,
+            522
+          ],
+          "position": [
+            17,
+            20
           ]
         },
         {
@@ -100,10 +130,14 @@
           "duration_ms": 240,
           "source_cell": 6,
           "source_bounds": [
-            688,
-            353,
-            940,
-            608
+            705,
+            289,
+            872,
+            522
+          ],
+          "position": [
+            19,
+            20
           ]
         }
       ]
@@ -116,10 +150,14 @@
           "duration_ms": 160,
           "source_cell": 7,
           "source_bounds": [
-            1025,
-            349,
-            1229,
-            608
+            1014,
+            288,
+            1181,
+            522
+          ],
+          "position": [
+            19,
+            20
           ]
         },
         {
@@ -127,10 +165,14 @@
           "duration_ms": 240,
           "source_cell": 8,
           "source_bounds": [
-            76,
-            678,
-            334,
-            922
+            91,
+            549,
+            275,
+            779
+          ],
+          "position": [
+            18,
+            20
           ]
         }
       ]
@@ -143,10 +185,14 @@
           "duration_ms": 340,
           "source_cell": 9,
           "source_bounds": [
-            370,
-            658,
-            605,
-            926
+            385,
+            546,
+            569,
+            779
+          ],
+          "position": [
+            17,
+            20
           ]
         },
         {
@@ -154,10 +200,14 @@
           "duration_ms": 340,
           "source_cell": 10,
           "source_bounds": [
-            728,
-            651,
-            904,
-            926
+            699,
+            540,
+            882,
+            779
+          ],
+          "position": [
+            18,
+            19
           ]
         }
       ]
@@ -170,10 +220,14 @@
           "duration_ms": 260,
           "source_cell": 11,
           "source_bounds": [
-            1047,
-            695,
-            1231,
-            922
+            976,
+            577,
+            1193,
+            779
+          ],
+          "position": [
+            14,
+            25
           ]
         },
         {
@@ -181,10 +235,14 @@
           "duration_ms": 420,
           "source_cell": 12,
           "source_bounds": [
-            29,
-            1040,
-            315,
-            1211
+            54,
+            847,
+            285,
+            1015
+          ],
+          "position": [
+            14,
+            29
           ]
         }
       ]
@@ -197,10 +255,14 @@
           "duration_ms": 140,
           "source_cell": 13,
           "source_bounds": [
-            348,
-            970,
-            588,
-            1218
+            380,
+            790,
+            553,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         },
         {
@@ -208,10 +270,14 @@
           "duration_ms": 140,
           "source_cell": 14,
           "source_bounds": [
-            637,
-            970,
-            859,
-            1218
+            677,
+            792,
+            849,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         },
         {
@@ -219,15 +285,70 @@
           "duration_ms": 140,
           "source_cell": 15,
           "source_bounds": [
-            948,
-            968,
-            1198,
-            1218
+            994,
+            790,
+            1165,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         }
       ]
     },
-    "spear_thrust": {
+    "overclock": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "overclock_01.png",
+          "duration_ms": 300,
+          "source_cell": 16,
+          "source_bounds": [
+            95,
+            1024,
+            252,
+            1244
+          ],
+          "position": [
+            21,
+            22
+          ]
+        },
+        {
+          "file": "overclock_02.png",
+          "duration_ms": 300,
+          "source_cell": 17,
+          "source_bounds": [
+            372,
+            1024,
+            554,
+            1241
+          ],
+          "position": [
+            17,
+            22
+          ]
+        },
+        {
+          "file": "overclock_03.png",
+          "duration_ms": 300,
+          "source_cell": 18,
+          "source_bounds": [
+            707,
+            1024,
+            858,
+            1243
+          ],
+          "position": [
+            21,
+            22
+          ]
+        }
+      ],
+      "contact_ms": 500
+    },
+    "bolt_shot": {
       "loop": false,
       "frames": [
         {
@@ -235,10 +356,14 @@
           "duration_ms": 200,
           "source_cell": 2,
           "source_bounds": [
-            661,
-            62,
-            954,
-            308
+            673,
+            32,
+            886,
+            265
+          ],
+          "position": [
+            15,
+            20
           ]
         },
         {
@@ -246,10 +371,14 @@
           "duration_ms": 280,
           "source_cell": 3,
           "source_bounds": [
-            881,
-            86,
-            1239,
-            308
+            968,
+            36,
+            1219,
+            265
+          ],
+          "position": [
+            13,
+            21
           ]
         },
         {
@@ -257,13 +386,18 @@
           "duration_ms": 320,
           "source_cell": 4,
           "source_bounds": [
-            29,
-            350,
-            318,
-            608
+            81,
+            289,
+            275,
+            520
+          ],
+          "position": [
+            16,
+            20
           ]
         }
-      ]
+      ],
+      "contact_ms": 400
     },
     "flee": {
       "loop": true,
@@ -273,10 +407,14 @@
           "duration_ms": 140,
           "source_cell": 13,
           "source_bounds": [
-            348,
-            970,
-            588,
-            1218
+            380,
+            790,
+            553,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         },
         {
@@ -284,10 +422,14 @@
           "duration_ms": 140,
           "source_cell": 14,
           "source_bounds": [
-            637,
-            970,
-            859,
-            1218
+            677,
+            792,
+            849,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         },
         {
@@ -295,10 +437,14 @@
           "duration_ms": 140,
           "source_cell": 15,
           "source_bounds": [
-            948,
-            968,
-            1198,
-            1218
+            994,
+            790,
+            1165,
+            1012
+          ],
+          "position": [
+            18,
+            22
           ]
         }
       ]

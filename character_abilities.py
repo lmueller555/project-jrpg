@@ -26,6 +26,34 @@ def _identifier(value):
     return isinstance(value, str) and _IDENTIFIER.fullmatch(value) is not None
 
 
+def starting_abilities(character_id, characters=None):
+    """Read a character's starting registrations without creating game state.
+
+    Bot ownership and direct battle construction use the same authored unlocks
+    as the persistent character ability owner.
+    """
+    if characters is None:
+        characters = json.loads(CHARACTERS_PATH.read_text(encoding='utf-8'))
+    if (not isinstance(characters, dict) or set(characters) != {'version', 'characters'}
+            or type(characters['version']) is not int or characters['version'] != 1
+            or not isinstance(characters['characters'], dict)):
+        raise ValueError('Invalid character ability catalog')
+    if not isinstance(character_id, str):return frozenset()
+    profile = characters['characters'].get(character_id)
+    if profile is None:return frozenset()
+    if (not isinstance(profile, dict)
+            or any(not isinstance(profile.get(group), dict) for group in _GROUP_KINDS)):
+        raise ValueError('Invalid character ability profile')
+    known = set()
+    for group in _GROUP_KINDS:
+        for identifier, record in profile[group].items():
+            if (not _identifier(identifier) or not isinstance(record, dict)
+                    or set(record) != {'unlock'} or record['unlock'] not in _UNLOCKS):
+                raise ValueError('Invalid character ability unlock')
+            if record['unlock'] == 'starting':known.add(identifier)
+    return frozenset(known)
+
+
 class CharacterAbilities:
     """Independent character unlock history backed by shared item ownership."""
 

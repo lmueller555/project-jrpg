@@ -167,6 +167,7 @@ class CombatEncounters:
         model = BattleModel(self.game.attributes,
                             self.game.character_abilities.known_abilities(),
                             weapon_equipped=self.game.character_abilities.has_weapon(),
+                            bot_loadouts=self.game.bot_loadouts.battle_loadouts(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'])
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
@@ -191,6 +192,8 @@ class CombatEncounters:
             return False
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
+                            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+                            guest_abilities={'mira':game.character_abilities.known_abilities('mira')},
                             rng=random.Random() if rng is None else rng,
                             enemy_id='ridgeback_tusker', guest_id='mira')
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
@@ -498,11 +501,16 @@ class CombatEncounters:
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
+                            bot_loadouts=game.bot_loadouts.battle_loadouts(),
+                            guest_abilities=({'mira':game.character_abilities.known_abilities('mira')}
+                                             if self.kind == 'mill' else {}),
                             enemy_id='ridgeback_tusker' if self.kind == 'mill' else 'bat',
                             guest_id='mira' if self.kind == 'mill' else None)
         model.player.hp = 0 if record['incapacitated'] else record['resources']['hp']
         model.player.mp = record['resources']['mp']
-        model.enemy.hp = 0;model.phase = 'victory'
+        model.enemy.hp = 0
+        model._result('victory')
+        model.drain_events()
         model.enemy_definition['rewards'] = deepcopy(record['rewards'])
         self.scene = BattleScene(game, model, battlefield='millrace' if self.kind == 'mill' else 'eldenmere')
         self.spoils = SpoilsScene(game, record['rewards'], party=model.party, model=model)
@@ -598,7 +606,7 @@ class CombatEncounters:
                         for frame in record['animations']['idle']['frames']]
 
     def draw_world(self, canvas, camera):
-        self._draw_mira_spear(canvas, camera)
+        self._draw_mira_weapon(canvas, camera)
         self._draw_mill_world(canvas, camera)
         if (self.active or self.cooldown > 0
                 or not self.bat_unlocked
@@ -615,23 +623,26 @@ class CombatEncounters:
         pygame.draw.ellipse(canvas, '#304a35', shadow)
         canvas.blit(image, (round(point.x-self._anchor[0]), round(point.y-self._anchor[1])))
 
-    def _draw_mira_spear(self, canvas, camera):
+    def _draw_mira_weapon(self, canvas, camera):
         quest = self.game.mill_quest
         carried = (quest.mira_armed and quest._mira_world is self.game.world
                    and not quest.action and not quest._mira_pose)
-        stowed = (getattr(quest, 'mira_spear_stowed', False)
+        stowed = (getattr(quest, 'mira_weapon_stowed', False)
                   and self.game.world is quest.upstream)
         if not carried and not stowed:return
-        if 'spear' not in self._world_art:
+        if 'bolt_launcher' not in self._world_art:
             folder = ROOT/'assets/combat/mira'
-            if not (folder/'world_spear.json').exists():return
-            record = json.loads((folder/'world_spear.json').read_text())
-            image = pygame.image.load(str(folder/'world_spear.png')).convert_alpha()
-            self._world_art['spear'] = image, record['hand_anchor']
-        source, anchor = self._world_art['spear']
+            if not (folder/'world_bolt_launcher.json').exists():return
+            record = json.loads((folder/'world_bolt_launcher.json').read_text())
+            image = pygame.image.load(str(folder/'world_bolt_launcher.png')).convert_alpha()
+            self._world_art['bolt_launcher'] = image, record['hand_anchor']
+        source, anchor = self._world_art['bolt_launcher']
         if carried:
             facing = quest.mira.facing
-            angle = {'front': -8, 'back': 8, 'left': 20, 'right': -20}.get(facing, 0)
+            if facing == 'right':
+                source = pygame.transform.flip(source, True, False)
+                anchor = (source.get_width()-1-anchor[0], anchor[1])
+            angle = {'front': 65, 'back': -65, 'left': -10, 'right': 10}.get(facing, 0)
             hand = quest.mira.position+pygame.Vector2(-8 if facing == 'left' else 8, -13)
         else:
             angle, hand = 18, pygame.Vector2(430, 252)

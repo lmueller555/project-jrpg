@@ -1,9 +1,9 @@
-"""Export the imagegen-authored Mira and Ridgeback Tusker combat atlases.
+"""Export the generated machinist actors and Ridgeback Tusker combat atlas.
 
 This only segments authored opaque sprites, applies one fixed native scale per
-actor, and registers the resulting cutouts at their ground anchors. Connected
-component extraction preserves spear tips that extend beyond a generated grid
-cell; it does not redraw anatomy, weapons or poses.
+actor, and registers the resulting cutouts at their ground anchors. Mira and
+Rivet are delegated to the current machinist exporter; historical spear art is
+never written back over their production assets.
 """
 from __future__ import annotations
 
@@ -14,22 +14,16 @@ from pathlib import Path
 
 from PIL import Image
 
+if __package__:
+    from .build_machinist_assets import build_actor as build_machinist_actor
+else:
+    from build_machinist_assets import build_actor as build_machinist_actor
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/combat'
 OUTPUT = ROOT/'assets/combat'
 ACTORS = {
-    'mira': {'source': 'mq02_mira_generated_sheet.png', 'canvas': (64, 64),
-             'anchor': (32, 54), 'scale': .137, 'facing': 'left',
-             'animations': {
-                 'idle': ([0, 1], [260, 260], True),
-                 'attack': ([2, 3, 4], [200, 280, 320], False),
-                 'guard': ([5, 6], [240, 240], True),
-                 'hurt': ([7, 8], [160, 240], False),
-                 'victory': ([9, 10], [340, 340], True),
-                 'defeat': ([11, 12], [260, 420], False),
-                 'walk': ([13, 14, 15], [140, 140, 140], True),
-             }},
     'ridgeback_tusker': {'source': 'mq02_tusker_generated_sheet.png',
                         'canvas': (96, 72), 'anchor': (48, 62),
                         'scale': .205, 'facing': 'right',
@@ -114,6 +108,8 @@ def exported_frames(source, actor):
 
 
 def build_actor(actor):
+    if actor in ('mira', 'rivet'):
+        return build_machinist_actor(actor)
     settings = ACTORS[actor]
     source = SOURCE/settings['source']
     directory = OUTPUT/actor
@@ -127,8 +123,7 @@ def build_actor(actor):
             frames[index].save(directory/filename, optimize=True)
             entries.append({'file': filename, 'duration_ms': duration, **records[index]})
         animations[state] = {'loop': loop, 'frames': entries}
-    aliases = ({'spear_thrust': 'attack', 'flee': 'walk'} if actor == 'mira' else
-               {'tusk_strike': 'attack', 'prepare_charge': 'prepare', 'tusker_charge': 'charge'})
+    aliases = {'tusk_strike': 'attack', 'prepare_charge': 'prepare', 'tusker_charge': 'charge'}
     for alias, state in aliases.items():animations[alias] = animations[state]
     size = settings['canvas']
     sheet = Image.new('RGBA', (size[0]*4, size[1]*4))
@@ -145,33 +140,12 @@ def build_actor(actor):
     return data
 
 
-def build_world_spear():
-    """Alpha-trim the authored prop and retain its aspect at world scale."""
-    source = SOURCE/'mq02_spear_generated.png'
-    with Image.open(source) as original:image = original.convert('RGBA')
-    image.putalpha(image.getchannel('A').point(lambda value: 255 if value >= 128 else 0))
-    bounds = image.getbbox()
-    if bounds is None:raise ValueError('Generated spear is empty')
-    spear = image.crop(bounds)
-    height = 40
-    width = max(1, round(spear.width*height/spear.height))
-    spear = spear.resize((width, height), Image.Resampling.NEAREST)
-    canvas = Image.new('RGBA', (16, 48))
-    canvas.alpha_composite(spear, ((16-width)//2, 4))
-    directory = OUTPUT/'mira'
-    canvas.save(directory/'world_spear.png', optimize=True)
-    metadata = {'canvas': [16, 48], 'hand_anchor': [8, 28],
-                'tip': [8, 5], 'butt': [8, 43], 'orientation': 'point_up',
-                'source': source.relative_to(ROOT).as_posix(),
-                'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
-                'source_bounds': list(bounds)}
-    (directory/'world_spear.json').write_text(json.dumps(metadata, indent=2)+'\n')
-
-
 def main():
+    for actor in ('mira', 'rivet'):
+        build_machinist_actor(actor)
     for actor in ACTORS:build_actor(actor)
-    build_world_spear()
-    print(json.dumps({'actors': list(ACTORS), 'source_cells_per_actor': 16}))
+    print(json.dumps({'actors': ['mira', 'rivet', *ACTORS],
+                      'source_cells_per_actor': {'mira': 19, 'rivet': 16, 'ridgeback_tusker': 16}}))
     return 0
 
 
