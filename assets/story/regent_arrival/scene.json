@@ -10,6 +10,7 @@
     320
   ],
   "scenery_manifest": "scenery/scenery.json",
+  "crossroads_manifest": "crossroads/manifest.json",
   "actors": {
     "aldric": "actors/aldric/animation.json",
     "guard": "actors/guard/animation.json",
@@ -181,6 +182,14 @@
           "animation_rate": 0.6
         },
         {
+          "id": "clerk",
+          "pose": "walk_left",
+          "position": [671, 399],
+          "to": [635, 399],
+          "move_seconds": 1.5,
+          "gait_offset": 0.25
+        },
+        {
           "id": "guard",
           "pose": "stand_right",
           "position": [
@@ -247,8 +256,8 @@
           "id": "clerk",
           "pose": "stand_left",
           "position": [
-            705,
-            388
+            635,
+            399
           ]
         },
         {
@@ -381,6 +390,21 @@
           "turn_pose": "turn_left_back"
         },
         {
+          "id": "clerk",
+          "pose": "walk_left",
+          "position": [635, 399],
+          "move_start": 0.95,
+          "move_seconds": 11.75,
+          "after_pose": "stand_back",
+          "before_pose": "stand_left",
+          "route": "gate_road",
+          "route_start": 120,
+          "route_end": 1060,
+          "route_offset": [0, 24],
+          "route_poses": [[0, "walk_left"], [180, "walk_left_back"], [310, "walk_back"]],
+          "gait_offset": 0.25
+        },
+        {
           "id": "guard",
           "pose": "step_right",
           "position": [
@@ -429,93 +453,41 @@
       "dialogue": [],
       "gate_open": true,
       "black": true,
-      "sound": "riverbank"
+      "sound": "roadside"
     },
     {
-      "id": "bridge_establishing",
-      "scene": "riverbank",
+      "id": "crossroads_establishing",
+      "scene": "crossroads",
       "min_seconds": 3.2,
       "camera": {
-        "from": [
-          160,
-          80
-        ],
-        "to": [
-          320,
-          140
-        ],
-        "move_start": 1.4,
-        "move_seconds": 1.8
+        "from": [3734, 623],
+        "to": [3734, 623]
       },
       "actors": [
-        {
-          "id": "aldric",
-          "pose": "listen_left",
-          "position": [
-            635,
-            375
-          ]
-        },
-        {
-          "id": "local",
-          "pose": "talk_right",
-          "position": [
-            540,
-            375
-          ]
-        },
-        {
-          "id": "clerk",
-          "pose": "stand_left",
-          "position": [
-            705,
-            385
-          ]
-        }
+        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
+        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
+        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
       "dialogue": [],
-      "fade_in": 1.0
+      "fade_in": 1.0,
+      "sound": "roadside"
     },
     {
       "id": "locals",
-      "scene": "riverbank",
+      "scene": "crossroads",
       "min_seconds": 1.4,
       "camera": {
-        "from": [
-          320,
-          140
-        ],
-        "to": [
-          320,
-          140
-        ]
+        "from": [3734, 623],
+        "to": [3734, 623]
       },
       "actors": [
-        {
-          "id": "aldric",
-          "pose": "listen_left",
-          "position": [
-            635,
-            375
-          ]
-        },
-        {
-          "id": "local",
-          "pose": "talk_right",
-          "position": [
-            540,
-            375
-          ]
-        },
-        {
-          "id": "clerk",
-          "pose": "stand_left",
-          "position": [
-            705,
-            385
-          ]
-        }
+        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
+        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
+        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
+      "sound": "roadside",
       "dialogue": [
         {
           "speaker": "local",
@@ -560,20 +532,29 @@
       ]
     },
     {
+      "id": "road_pan",
+      "scene": "crossroads",
+      "min_seconds": 0.8,
+      "camera": {"from": [3734, 623], "to": [432, 1203]},
+      "camera_track": "west_road",
+      "actors": [
+        {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
+        {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
+        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
+      ],
+      "dialogue": []
+    },
+    {
       "id": "bridge_damage",
-      "scene": "riverbank",
+      "scene": "crossroads",
       "min_seconds": 2.2,
       "camera": {
-        "from": [
-          35,
-          55
-        ],
-        "to": [
-          125,
-          70
-        ]
+        "from": [432, 1203],
+        "to": [432, 1203]
       },
       "actors": [],
+      "sound": "riverbank",
       "dialogue": [
         {
           "speaker": "local",
@@ -582,54 +563,29 @@
         {
           "speaker": "local",
           "text": "It had split the road on both sides. Stone all over the water."
-        },
-        {
-          "speaker": "aldric",
-          "text": "We've seen damage like this elsewhere. I wish I could tell you why."
         }
       ]
     },
     {
       "id": "relief",
-      "scene": "riverbank",
+      "scene": "crossroads",
       "min_seconds": 1.0,
       "camera": {
-        "from": [
-          320,
-          140
-        ],
-        "to": [
-          320,
-          140
-        ]
+        "from": [3734, 623],
+        "to": [3734, 623]
       },
       "actors": [
-        {
-          "id": "aldric",
-          "pose": "gesture_left",
-          "position": [
-            635,
-            375
-          ]
-        },
-        {
-          "id": "local",
-          "pose": "stand_right",
-          "position": [
-            540,
-            375
-          ]
-        },
-        {
-          "id": "clerk",
-          "pose": "read_left",
-          "position": [
-            705,
-            385
-          ]
-        }
+        {"id": "aldric", "pose": "gesture_left", "position": [4004, 863]},
+        {"id": "local", "pose": "stand_right", "position": [3899, 863]},
+        {"id": "clerk", "pose": "read_left", "position": [4064, 879]},
+        {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
+      "sound": "roadside",
       "dialogue": [
+        {
+          "speaker": "aldric",
+          "text": "We've seen damage like this elsewhere. I wish I could tell you why."
+        },
         {
           "speaker": "local",
           "text": "Elsewhere? I thought we had been unlucky."
@@ -704,6 +660,11 @@
             375
           ],
           "move_seconds": 7
+        },
+        {
+          "id": "clerk", "pose": "walk_left",
+          "position": [780, 399], "to": [530, 399],
+          "move_seconds": 7, "gait_offset": 0.25
         }
       ],
       "dialogue": [],
@@ -847,6 +808,11 @@
           "move_seconds": 3,
           "after_pose": "stand_left",
           "animation_rate": 0.75
+        },
+        {
+          "id": "clerk", "pose": "walk_left",
+          "position": [530, 399], "to": [455, 419],
+          "move_seconds": 3, "after_pose": "stand_left", "gait_offset": 0.25
         }
       ],
       "dialogue": [],

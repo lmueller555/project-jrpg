@@ -222,6 +222,8 @@ class AldricSideWalkTests(unittest.TestCase):
             if path.parent == ACTOR and (path.name == 'animation.json' or
                     (path.stem.startswith('walk_') and path.stem[5:].isdigit())):
                 continue
+            if path.parent.name=='clerk' and path.name not in ('stand_left.png','read_left.png'):
+                continue  # Separately authored clerk extension, not Aldric art.
             expected.add(path)
         # A removed hash entry must not silently stop protecting an asset.
         self.assertEqual(set(protected), {path.relative_to(ROOT).as_posix() for path in expected})

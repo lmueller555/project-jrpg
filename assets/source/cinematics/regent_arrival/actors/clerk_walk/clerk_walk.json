@@ -1,0 +1,4904 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "reference_height": 77,
+  "authoring": "offline native part-authored; no imagegen tool used",
+  "authoring_tool": "tools/build_regent_clerk_walk.py",
+  "authoring_tool_sha256": "5c1df4435377b694aaf5ce9b2a8cf4e3f86a07143c0952d0ec5edd68e9cf5e07",
+  "appearance_source": "assets/source/cinematics/regent_arrival/actors/travelers_generated.png",
+  "appearance_source_sha256": "4345f3d017057fea42a42639e6931bc05429bd8c2a5e857c82a7c288ff809c86",
+  "reference_pixels_sha256": "4abcd449a0e32277f21c549d987bfb38205352fdabc736fb3f039cfc01a28b09",
+  "reading_pixels_sha256": "5ef02e4a3c614d6863dd4e8ae1c76d637ba9311a1736c8a09d46c1b854804e87",
+  "registration": "fixed [40,92] ground root; no per-frame crop, rescale or foot recentering",
+  "limb_lengths": {
+    "leg": [
+      16.5,
+      16.0
+    ],
+    "free_arm": [
+      12.041594578792296,
+      10.198039027185569
+    ],
+    "ledger_arm": [
+      12.36931687685298,
+      11.0
+    ]
+  },
+  "projection": "x=40+cos(yaw)*(x-40)+sin(yaw)*lane; y=y+sin(yaw)*((x-40)*0.22-1.65); idle legs keep native y",
+  "ledger_ownership": "anatomical left hand / left hip; near in profile, left in back/overhead",
+  "reconstruction": "New rear hair/nape, moss coat yoke/vent, rear boots and foreshortened aerial silhouettes; retained clerk materials only.",
+  "loops": {
+    "walk_left": {
+      "view": "side",
+      "sheet": "side_walk.png",
+      "stride_pixels": 30,
+      "layers": {
+        "far_thigh": "side_layers/far_thigh.png",
+        "far_shin": "side_layers/far_shin.png",
+        "far_boot": "side_layers/far_boot.png",
+        "free_upper": "side_layers/free_upper.png",
+        "free_forearm": "side_layers/free_forearm.png",
+        "free_hand": "side_layers/free_hand.png",
+        "near_thigh": "side_layers/near_thigh.png",
+        "near_shin": "side_layers/near_shin.png",
+        "near_boot": "side_layers/near_boot.png",
+        "coat": "side_layers/coat.png",
+        "torso": "side_layers/torso.png",
+        "head": "side_layers/head.png",
+        "ledger_arm": "side_layers/ledger_arm.png",
+        "ledger": "side_layers/ledger.png",
+        "ledger_hand": "side_layers/ledger_hand.png"
+      },
+      "frames": [
+        {
+          "file": "walk_0.png",
+          "phase": "near_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                37.5886640042655,
+                71.43952951599115
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                37.5886640042655,
+                71.43952951599115
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              80,
+              53,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                34.37088025062097,
+                70.1097574880735
+              ],
+              "ankle": [
+                32.5,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                34.37088025062097,
+                70.1097574880735
+              ],
+              "ankle": [
+                32.5,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              23,
+              83,
+              36,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                30.137681342250325,
+                44.696458092153286
+              ],
+              "wrist": [
+                26.355019919194735,
+                54.1670162889296
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                30.137681342250325,
+                44.696458092153286
+              ],
+              "wrist": [
+                26.355019919194735,
+                54.1670162889296
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_1.png",
+          "phase": "near_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                32.625045153624264,
+                71.21873683019292
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                32.625045153624264,
+                71.21873683019292
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              39,
+              76,
+              51,
+              89
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                32.87390562751143,
+                70.36024339102265
+              ],
+              "ankle": [
+                36.25,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                32.87390562751143,
+                70.36024339102265
+              ],
+              "ankle": [
+                36.25,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              27,
+              83,
+              40,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                45.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                55.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                45.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                55.527386717047975
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_2.png",
+          "phase": "near_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                30.48766758381734,
+                69.13471601541417
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                30.48766758381734,
+                69.13471601541417
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              32,
+              79,
+              45,
+              89
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                35.64058612887316,
+                70.60534148802816
+              ],
+              "ankle": [
+                40.0,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                35.64058612887316,
+                70.60534148802816
+              ],
+              "ankle": [
+                40.0,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              31,
+              83,
+              44,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_3.png",
+          "phase": "near_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                30.806563657912776,
+                68.3219272763188
+              ],
+              "ankle": [
+                34.0,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                30.806563657912776,
+                68.3219272763188
+              ],
+              "ankle": [
+                34.0,
+                84.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              24,
+              81,
+              38,
+              90
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                37.73490528658432,
+                70.1737180794159
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                37.73490528658432,
+                70.1737180794159
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              35,
+              82,
+              48,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                43.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                54.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                43.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                54.036928561153076
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_4.png",
+          "phase": "far_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                32.13521902032748,
+                70.00415882684285
+              ],
+              "ankle": [
+                32.5,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                32.13521902032748,
+                70.00415882684285
+              ],
+              "ankle": [
+                32.5,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              23,
+              83,
+              36,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                37.89344760806103,
+                71.2049169154346
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                37.89344760806103,
+                71.2049169154346
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              80,
+              53,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                35.862318657749675,
+                44.696458092153286
+              ],
+              "wrist": [
+                36.880423736931306,
+                54.843549401870796
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                35.862318657749675,
+                44.696458092153286
+              ],
+              "wrist": [
+                36.880423736931306,
+                54.843549401870796
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_5.png",
+          "phase": "far_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                31.529797599592975,
+                70.71210644662935
+              ],
+              "ankle": [
+                36.25,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                31.529797599592975,
+                70.71210644662935
+              ],
+              "ankle": [
+                36.25,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              27,
+              83,
+              40,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                33.125717041826285,
+                70.49985061628618
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                33.125717041826285,
+                70.49985061628618
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              39,
+              76,
+              51,
+              89
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                45.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                56.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                45.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                56.036928561153076
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_6.png",
+          "phase": "far_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                34.65747802076505,
+                70.91830716062049
+              ],
+              "ankle": [
+                40.0,
+                86.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                34.65747802076505,
+                70.91830716062049
+              ],
+              "ankle": [
+                40.0,
+                86.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              31,
+              83,
+              44,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                31.465407309844736,
+                68.46631138184611
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                31.465407309844736,
+                68.46631138184611
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              32,
+              79,
+              45,
+              89
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_7.png",
+          "phase": "far_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 0.0,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "free_upper",
+            "free_forearm",
+            "free_hand",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                37.2011036712375,
+                70.40164540521361
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                37.2011036712375,
+                70.40164540521361
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              35,
+              82,
+              48,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                32.39810622236844,
+                68.08039145188597
+              ],
+              "ankle": [
+                34.0,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                32.39810622236844,
+                68.08039145188597
+              ],
+              "ankle": [
+                34.0,
+                84.0
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              24,
+              81,
+              38,
+              90
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                43.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                53.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                43.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                53.527386717047975
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        }
+      ]
+    },
+    "walk_left_back": {
+      "view": "quarter",
+      "sheet": "quarter_walk.png",
+      "stride_pixels": 30,
+      "layers": {
+        "far_thigh": "quarter_layers/far_thigh.png",
+        "far_shin": "quarter_layers/far_shin.png",
+        "far_boot": "quarter_layers/far_boot.png",
+        "free_upper": "quarter_layers/free_upper.png",
+        "free_forearm": "quarter_layers/free_forearm.png",
+        "free_hand": "quarter_layers/free_hand.png",
+        "near_thigh": "quarter_layers/near_thigh.png",
+        "near_shin": "quarter_layers/near_shin.png",
+        "near_boot": "quarter_layers/near_boot.png",
+        "coat": "quarter_layers/coat.png",
+        "torso": "quarter_layers/torso.png",
+        "head": "quarter_layers/head.png",
+        "ledger_arm": "quarter_layers/ledger_arm.png",
+        "ledger": "quarter_layers/ledger.png",
+        "ledger_hand": "quarter_layers/ledger_hand.png"
+      },
+      "frames": [
+        {
+          "file": "walk_left_back_0.png",
+          "phase": "near_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                37.5886640042655,
+                71.43952951599115
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                53.67771031918116
+              ],
+              "knee": [
+                41.12335509044311,
+                69.89768747948668
+              ],
+              "ankle": [
+                48.1317279836453,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              43,
+              80,
+              54,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                32.27051465783015,
+                69.00164581971855
+              ],
+              "ankle": [
+                32.5,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                53.988837302903235
+              ],
+              "knee": [
+                31.706001374723485,
+                66.63249390064408
+              ],
+              "ankle": [
+                31.8682720163547,
+                82.6665476220844
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              24,
+              80,
+              35,
+              90
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                30.137681342250325,
+                44.696458092153286
+              ],
+              "wrist": [
+                26.355019919194735,
+                54.1670162889296
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                30.744329368014913
+              ],
+              "elbow": [
+                39.390248629561526,
+                41.99551517494965
+              ],
+              "wrist": [
+                36.71550308638616,
+                50.87762935222739
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                33.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                45.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                56.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                57.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_1.png",
+          "phase": "near_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                32.625045153624264,
+                71.21873683019292
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                54.67771031918116
+              ],
+              "knee": [
+                37.61354654192932,
+                68.90473691301541
+              ],
+              "ankle": [
+                47.071067811865476,
+                79.76665476220845
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              42,
+              76,
+              53,
+              89
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                31.731973420030368,
+                69.65114219810842
+              ],
+              "ankle": [
+                36.25,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                54.988837302903235
+              ],
+              "knee": [
+                31.325195213526662,
+                67.19821292357064
+              ],
+              "ankle": [
+                34.519922445804255,
+                83.24991071656329
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              27,
+              80,
+              38,
+              90
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                45.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                55.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                31.744329368014913
+              ],
+              "elbow": [
+                39.88983167397542,
+                43.25601223002386
+              ],
+              "wrist": [
+                37.62145994627989,
+                52.43731028952239
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                34.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                46.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                57.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                58.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_2.png",
+          "phase": "near_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                29.783821189455367,
+                68.68619918502095
+              ],
+              "ankle": [
+                40.0,
+                81.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                53.67771031918116
+              ],
+              "knee": [
+                35.60449780999576,
+                65.93020854681805
+              ],
+              "ankle": [
+                42.82842712474619,
+                79.83327381104219
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              37,
+              77,
+              48,
+              88
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                34.265336449592006,
+                70.06301121498639
+              ],
+              "ankle": [
+                40.0,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                53.988837302903235
+              ],
+              "knee": [
+                33.11655339093699,
+                68.00418073947888
+              ],
+              "ankle": [
+                37.17157287525381,
+                83.83327381104219
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              30,
+              81,
+              41,
+              91
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                30.744329368014913
+              ],
+              "elbow": [
+                41.4142135623731,
+                42.785923946807216
+              ],
+              "wrist": [
+                40.407953852397604,
+                52.662808185332516
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                33.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                45.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                56.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                57.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_3.png",
+          "phase": "near_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                29.657788003045976,
+                67.60048069018035
+              ],
+              "ankle": [
+                34.0,
+                83.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                52.67771031918116
+              ],
+              "knee": [
+                35.51537888923114,
+                64.82488388940924
+              ],
+              "ankle": [
+                38.58578643762691,
+                80.89989285987595
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              31,
+              78,
+              43,
+              88
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                36.32903663271741,
+                69.8250466420009
+              ],
+              "ankle": [
+                43.75,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                52.988837302903235
+              ],
+              "knee": [
+                34.575809784760885,
+                68.08725257313465
+              ],
+              "ankle": [
+                39.82322330470336,
+                83.4166369055211
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              33,
+              80,
+              44,
+              91
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                43.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                54.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                29.744329368014913
+              ],
+              "elbow": [
+                42.93859545077077,
+                41.926740260918834
+              ],
+              "wrist": [
+                43.22696264053392,
+                52.18006272636337
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                32.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                44.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                55.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                56.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_4.png",
+          "phase": "far_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                30.4771650309454,
+                69.12838575670483
+              ],
+              "ankle": [
+                32.5,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                53.67771031918116
+              ],
+              "knee": [
+                36.0947659420073,
+                66.48025410754447
+              ],
+              "ankle": [
+                37.525126265847085,
+                82.6665476220844
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              30,
+              80,
+              41,
+              90
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                37.89344760806103,
+                71.2049169154346
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                53.988837302903235
+              ],
+              "knee": [
+                35.68201539398902,
+                69.71048808059854
+              ],
+              "ankle": [
+                42.474873734152915,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              37,
+              80,
+              48,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                35.862318657749675,
+                44.696458092153286
+              ],
+              "wrist": [
+                36.880423736931306,
+                54.843549401870796
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                30.744329368014913
+              ],
+              "elbow": [
+                43.438178495184665,
+                42.886059745386746
+              ],
+              "wrist": [
+                44.158087500634466,
+                53.19153103630321
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                33.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                45.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                56.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                57.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_5.png",
+          "phase": "far_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                30.42622283307769,
+                70.09752975141254
+              ],
+              "ankle": [
+                36.25,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                54.67771031918116
+              ],
+              "knee": [
+                36.05874436844649,
+                67.4414733560688
+              ],
+              "ankle": [
+                40.17677669529664,
+                83.24991071656329
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              33,
+              80,
+              44,
+              90
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                33.125717041826285,
+                70.49985061628618
+              ],
+              "ankle": [
+                46.0,
+                80.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                54.988837302903235
+              ],
+              "knee": [
+                32.310720779734055,
+                68.26373696631403
+              ],
+              "ankle": [
+                41.41421356237309,
+                79.76665476220845
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              36,
+              76,
+              47,
+              89
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                45.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                56.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                31.744329368014913
+              ],
+              "elbow": [
+                42.93859545077077,
+                43.926740260918834
+              ],
+              "wrist": [
+                43.22696264053392,
+                54.18006272636337
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                34.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                46.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                57.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                58.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_6.png",
+          "phase": "far_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                33.28337196568524,
+                70.47805426781049
+              ],
+              "ankle": [
+                40.0,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                53.67771031918116
+              ],
+              "knee": [
+                38.07905389497456,
+                68.26646596830292
+              ],
+              "ankle": [
+                42.82842712474619,
+                83.83327381104219
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              36,
+              81,
+              47,
+              91
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                30.759818235245618,
+                67.93787762443252
+              ],
+              "ankle": [
+                40.0,
+                81.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                53.988837302903235
+              ],
+              "knee": [
+                30.6377776899997,
+                65.33371649471881
+              ],
+              "ankle": [
+                37.17157287525381,
+                79.83327381104219
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              31,
+              77,
+              42,
+              88
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                30.744329368014913
+              ],
+              "elbow": [
+                41.4142135623731,
+                42.785923946807216
+              ],
+              "wrist": [
+                40.407953852397604,
+                52.662808185332516
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                33.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                45.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                56.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                57.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_left_back_7.png",
+          "phase": "far_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 0.7853981633974483,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                35.70757204577577,
+                70.16817609275218
+              ],
+              "ankle": [
+                43.75,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                42.121320343559645,
+                52.67771031918116
+              ],
+              "knee": [
+                39.79322221055954,
+                68.33370482267331
+              ],
+              "ankle": [
+                45.480077554195745,
+                83.4166369055211
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              39,
+              80,
+              50,
+              91
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                31.170060440147505,
+                67.25225596831147
+              ],
+              "ankle": [
+                34.0,
+                83.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                37.878679656440355,
+                52.988837302903235
+              ],
+              "knee": [
+                30.92786273501475,
+                64.71191354850107
+              ],
+              "ankle": [
+                32.928932188134524,
+                80.89989285987595
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              25,
+              78,
+              37,
+              88
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                43.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                53.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                41.4142135623731,
+                29.744329368014913
+              ],
+              "elbow": [
+                39.88983167397542,
+                41.25601223002386
+              ],
+              "wrist": [
+                37.62145994627989,
+                50.43731028952239
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                39.292893218813454,
+                32.07778174593052
+              ],
+              "elbow": [
+                41.41421356237309,
+                44.544472221513644
+              ],
+              "wrist": [
+                41.41421356237309,
+                55.544472221513644
+              ],
+              "grip": [
+                41.41421356237309,
+                56.544472221513644
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        }
+      ]
+    },
+    "walk_back": {
+      "view": "back",
+      "sheet": "back_walk.png",
+      "stride_pixels": 30,
+      "layers": {
+        "far_thigh": "back_layers/far_thigh.png",
+        "far_shin": "back_layers/far_shin.png",
+        "far_boot": "back_layers/far_boot.png",
+        "free_upper": "back_layers/free_upper.png",
+        "free_forearm": "back_layers/free_forearm.png",
+        "free_hand": "back_layers/free_hand.png",
+        "near_thigh": "back_layers/near_thigh.png",
+        "near_shin": "back_layers/near_shin.png",
+        "near_boot": "back_layers/near_boot.png",
+        "coat": "back_layers/coat.png",
+        "torso": "back_layers/torso.png",
+        "head": "back_layers/head.png",
+        "ledger_arm": "back_layers/ledger_arm.png",
+        "ledger": "back_layers/ledger.png",
+        "ledger_hand": "back_layers/ledger_hand.png"
+      },
+      "frames": [
+        {
+          "file": "walk_back_0.png",
+          "phase": "near_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                37.5886640042655,
+                71.43952951599115
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                53.13
+              ],
+              "knee": [
+                44.0,
+                69.25903559692956
+              ],
+              "ankle": [
+                44.0,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              80,
+              49,
+              92
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                32.27051465783015,
+                69.00164581971855
+              ],
+              "ankle": [
+                32.5,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                53.57
+              ],
+              "knee": [
+                36.0,
+                65.65115904444119
+              ],
+              "ankle": [
+                36.0,
+                81.7
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              32,
+              79,
+              40,
+              89
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                30.137681342250325,
+                44.696458092153286
+              ],
+              "wrist": [
+                26.355019919194735,
+                54.1670162889296
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                29.81
+              ],
+              "elbow": [
+                49.0,
+                40.876747987448354
+              ],
+              "wrist": [
+                49.0,
+                49.515120671152445
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                33.11
+              ],
+              "elbow": [
+                31.0,
+                45.77
+              ],
+              "wrist": [
+                31.0,
+                56.77
+              ],
+              "grip": [
+                31.0,
+                57.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_1.png",
+          "phase": "near_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                33.17257207772874,
+                71.43667981823596
+              ],
+              "ankle": [
+                46.0,
+                81.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                54.13
+              ],
+              "knee": [
+                44.0,
+                68.28464567533628
+              ],
+              "ankle": [
+                44.0,
+                80.67
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              40,
+              77,
+              50,
+              89
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                31.731973420030368,
+                69.65114219810842
+              ],
+              "ankle": [
+                36.25,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                54.57
+              ],
+              "knee": [
+                36.0,
+                66.18217635051509
+              ],
+              "ankle": [
+                36.0,
+                82.525
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              32,
+              80,
+              40,
+              90
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                45.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                55.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                30.81
+              ],
+              "elbow": [
+                49.0,
+                42.1827705384787
+              ],
+              "wrist": [
+                49.0,
+                51.157358724471884
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                34.11
+              ],
+              "elbow": [
+                31.0,
+                46.77
+              ],
+              "wrist": [
+                31.0,
+                57.77
+              ],
+              "grip": [
+                31.0,
+                58.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_2.png",
+          "phase": "near_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                30.48766758381734,
+                69.13471601541417
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                53.13
+              ],
+              "knee": [
+                44.0,
+                65.39200288385399
+              ],
+              "ankle": [
+                44.0,
+                80.35
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              40,
+              77,
+              49,
+              87
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                34.265336449592006,
+                70.06301121498639
+              ],
+              "ankle": [
+                40.0,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                53.57
+              ],
+              "knee": [
+                36.0,
+                67.15138523389663
+              ],
+              "ankle": [
+                36.0,
+                83.35
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              32,
+              80,
+              40,
+              90
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                29.81
+              ],
+              "elbow": [
+                49.0,
+                41.8515945787923
+              ],
+              "wrist": [
+                49.0,
+                51.63678140510648
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                33.11
+              ],
+              "elbow": [
+                31.0,
+                45.77
+              ],
+              "wrist": [
+                31.0,
+                56.77
+              ],
+              "grip": [
+                31.0,
+                57.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_3.png",
+          "phase": "near_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                29.657788003045976,
+                67.60048069018035
+              ],
+              "ankle": [
+                34.0,
+                83.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                52.13
+              ],
+              "knee": [
+                44.0,
+                63.675194050850465
+              ],
+              "ankle": [
+                44.0,
+                80.03
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              39,
+              77,
+              48,
+              87
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                37.73490528658432,
+                70.1737180794159
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                52.57
+              ],
+              "knee": [
+                36.0,
+                68.02539724246445
+              ],
+              "ankle": [
+                36.0,
+                84.175
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              32,
+              81,
+              40,
+              91
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                43.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                54.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                28.81
+              ],
+              "elbow": [
+                49.0,
+                41.131323216434176
+              ],
+              "wrist": [
+                49.0,
+                51.41092371408624
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                32.11
+              ],
+              "elbow": [
+                31.0,
+                44.77
+              ],
+              "wrist": [
+                31.0,
+                55.77
+              ],
+              "grip": [
+                31.0,
+                56.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_4.png",
+          "phase": "far_contact",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                30.4771650309454,
+                69.12838575670483
+              ],
+              "ankle": [
+                32.5,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                53.13
+              ],
+              "knee": [
+                44.0,
+                65.38336206351282
+              ],
+              "ankle": [
+                44.0,
+                81.7
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              79,
+              48,
+              89
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                37.89344760806103,
+                71.2049169154346
+              ],
+              "ankle": [
+                47.5,
+                84.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                53.57
+              ],
+              "knee": [
+                36.0,
+                69.09147538920803
+              ],
+              "ankle": [
+                36.0,
+                84.0
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              32,
+              80,
+              41,
+              92
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                35.862318657749675,
+                44.696458092153286
+              ],
+              "wrist": [
+                36.880423736931306,
+                54.843549401870796
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                29.81
+              ],
+              "elbow": [
+                49.0,
+                42.136168196858215
+              ],
+              "wrist": [
+                49.0,
+                52.50724262399568
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                33.11
+              ],
+              "elbow": [
+                31.0,
+                45.77
+              ],
+              "wrist": [
+                31.0,
+                56.77
+              ],
+              "grip": [
+                31.0,
+                57.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_5.png",
+          "phase": "far_down",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            1
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                56.0
+              ],
+              "knee": [
+                30.42622283307769,
+                70.09752975141254
+              ],
+              "ankle": [
+                36.25,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                54.13
+              ],
+              "knee": [
+                44.0,
+                66.34129877468963
+              ],
+              "ankle": [
+                44.0,
+                82.525
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              80,
+              48,
+              90
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                56.0
+              ],
+              "knee": [
+                33.68228290198813,
+                70.78854341960238
+              ],
+              "ankle": [
+                46.0,
+                81.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                54.57
+              ],
+              "knee": [
+                36.0,
+                67.74864565803976
+              ],
+              "ankle": [
+                36.0,
+                80.67
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              32,
+              77,
+              42,
+              89
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                34.0
+              ],
+              "elbow": [
+                35.1558015408079,
+                45.847046877456435
+              ],
+              "wrist": [
+                35.56361433151436,
+                56.036928561153076
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                30.81
+              ],
+              "elbow": [
+                49.0,
+                43.131323216434176
+              ],
+              "wrist": [
+                49.0,
+                53.41092371408624
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                34.0
+              ],
+              "elbow": [
+                51.0,
+                46.0
+              ],
+              "wrist": [
+                51.0,
+                57.0
+              ],
+              "grip": [
+                51.0,
+                58.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                34.11
+              ],
+              "elbow": [
+                31.0,
+                46.77
+              ],
+              "wrist": [
+                31.0,
+                57.77
+              ],
+              "grip": [
+                31.0,
+                58.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_6.png",
+          "phase": "far_passing",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            0
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                55.0
+              ],
+              "knee": [
+                33.28337196568524,
+                70.47805426781049
+              ],
+              "ankle": [
+                40.0,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                53.13
+              ],
+              "knee": [
+                44.0,
+                67.35039610026125
+              ],
+              "ankle": [
+                44.0,
+                83.35
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              80,
+              48,
+              90
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                55.0
+              ],
+              "knee": [
+                31.465407309844736,
+                68.46631138184611
+              ],
+              "ankle": [
+                40.0,
+                82.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                53.57
+              ],
+              "knee": [
+                36.0,
+                64.93870099001195
+              ],
+              "ankle": [
+                36.0,
+                80.35
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              32,
+              77,
+              41,
+              87
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                33.0
+              ],
+              "elbow": [
+                33.0,
+                45.0415945787923
+              ],
+              "wrist": [
+                31.576933870883046,
+                55.13985595351221
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                29.81
+              ],
+              "elbow": [
+                49.0,
+                41.8515945787923
+              ],
+              "wrist": [
+                49.0,
+                51.63678140510648
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                33.0
+              ],
+              "elbow": [
+                51.0,
+                45.0
+              ],
+              "wrist": [
+                51.0,
+                56.0
+              ],
+              "grip": [
+                51.0,
+                57.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                33.11
+              ],
+              "elbow": [
+                31.0,
+                45.77
+              ],
+              "wrist": [
+                31.0,
+                56.77
+              ],
+              "grip": [
+                31.0,
+                57.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        },
+        {
+          "file": "walk_back_7.png",
+          "phase": "far_up",
+          "duration_ms": 125,
+          "body_offset": [
+            0,
+            -1
+          ],
+          "yaw_radians": 1.5707963267948966,
+          "layer_order": [
+            "far_thigh",
+            "far_shin",
+            "far_boot",
+            "near_thigh",
+            "near_shin",
+            "near_boot",
+            "coat",
+            "torso",
+            "head",
+            "ledger_arm",
+            "ledger",
+            "ledger_hand",
+            "free_upper",
+            "free_forearm",
+            "free_hand"
+          ],
+          "far_leg": {
+            "handed_side": "right",
+            "anatomical": {
+              "hip": [
+                39.0,
+                54.0
+              ],
+              "knee": [
+                37.2011036712375,
+                70.40164540521361
+              ],
+              "ankle": [
+                43.75,
+                85.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                44.0,
+                52.13
+              ],
+              "knee": [
+                44.0,
+                68.13588821288586
+              ],
+              "ankle": [
+                44.0,
+                84.175
+              ]
+            },
+            "planted": true,
+            "foot_bounds": [
+              40,
+              81,
+              48,
+              91
+            ]
+          },
+          "near_leg": {
+            "handed_side": "left",
+            "anatomical": {
+              "hip": [
+                41.0,
+                54.0
+              ],
+              "knee": [
+                31.170060440147505,
+                67.25225596831147
+              ],
+              "ankle": [
+                34.0,
+                83.0
+              ]
+            },
+            "screen": {
+              "hip": [
+                36.0,
+                52.57
+              ],
+              "knee": [
+                36.0,
+                63.659669265143926
+              ],
+              "ankle": [
+                36.0,
+                80.03
+              ]
+            },
+            "planted": false,
+            "foot_bounds": [
+              31,
+              77,
+              40,
+              87
+            ]
+          },
+          "free_arm": {
+            "anatomical": {
+              "shoulder": [
+                33.0,
+                32.0
+              ],
+              "elbow": [
+                30.8441984591921,
+                43.847046877456435
+              ],
+              "wrist": [
+                27.636236397381396,
+                53.527386717047975
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                49.0,
+                28.81
+              ],
+              "elbow": [
+                49.0,
+                40.1827705384787
+              ],
+              "wrist": [
+                49.0,
+                49.157358724471884
+              ]
+            },
+            "hand": "right",
+            "role": "free"
+          },
+          "ledger_arm": {
+            "anatomical": {
+              "shoulder": [
+                48.0,
+                32.0
+              ],
+              "elbow": [
+                51.0,
+                44.0
+              ],
+              "wrist": [
+                51.0,
+                55.0
+              ],
+              "grip": [
+                51.0,
+                56.0
+              ]
+            },
+            "screen": {
+              "shoulder": [
+                31.0,
+                32.11
+              ],
+              "elbow": [
+                31.0,
+                44.77
+              ],
+              "wrist": [
+                31.0,
+                55.77
+              ],
+              "grip": [
+                31.0,
+                56.77
+              ]
+            },
+            "hand": "left",
+            "role": "ledger",
+            "attachment": "grip remains inside book and hand alpha"
+          }
+        }
+      ]
+    }
+  },
+  "poses": {
+    "turn_left_back": {
+      "file": "turn_left_back.png",
+      "view": "quarter",
+      "joints": {
+        "file": "walk_left_back_0.png",
+        "phase": "idle",
+        "duration_ms": 125,
+        "body_offset": [
+          0,
+          0
+        ],
+        "yaw_radians": 0.7853981633974483,
+        "layer_order": [
+          "far_thigh",
+          "far_shin",
+          "far_boot",
+          "near_thigh",
+          "near_shin",
+          "near_boot",
+          "coat",
+          "torso",
+          "head",
+          "ledger_arm",
+          "ledger",
+          "ledger_hand",
+          "free_upper",
+          "free_forearm",
+          "free_hand"
+        ],
+        "far_leg": {
+          "handed_side": "right",
+          "anatomical": {
+            "hip": [
+              39.0,
+              55.0
+            ],
+            "knee": [
+              36.71454636467202,
+              71.340951676104
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              42.121320343559645,
+              55.0
+            ],
+            "knee": [
+              40.50526057993178,
+              71.340951676104
+            ],
+            "ankle": [
+              42.82842712474619,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            36,
+            82,
+            47,
+            92
+          ]
+        },
+        "near_leg": {
+          "handed_side": "left",
+          "anatomical": {
+            "hip": [
+              41.0,
+              55.0
+            ],
+            "knee": [
+              37.69869270613543,
+              71.16636539706673
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              37.878679656440355,
+              55.0
+            ],
+            "knee": [
+              35.54430288216811,
+              71.16636539706673
+            ],
+            "ankle": [
+              37.17157287525381,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            30,
+            82,
+            41,
+            92
+          ]
+        },
+        "free_arm": {
+          "anatomical": {
+            "shoulder": [
+              33.0,
+              33.0
+            ],
+            "elbow": [
+              33.0,
+              45.0415945787923
+            ],
+            "wrist": [
+              31.576933870883046,
+              55.13985595351221
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              41.4142135623731,
+              30.744329368014913
+            ],
+            "elbow": [
+              41.4142135623731,
+              42.785923946807216
+            ],
+            "wrist": [
+              40.407953852397604,
+              52.662808185332516
+            ]
+          },
+          "hand": "right",
+          "role": "free"
+        },
+        "ledger_arm": {
+          "anatomical": {
+            "shoulder": [
+              48.0,
+              33.0
+            ],
+            "elbow": [
+              51.0,
+              45.0
+            ],
+            "wrist": [
+              51.0,
+              56.0
+            ],
+            "grip": [
+              51.0,
+              57.0
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              39.292893218813454,
+              33.07778174593052
+            ],
+            "elbow": [
+              41.41421356237309,
+              45.544472221513644
+            ],
+            "wrist": [
+              41.41421356237309,
+              56.544472221513644
+            ],
+            "grip": [
+              41.41421356237309,
+              57.544472221513644
+            ]
+          },
+          "hand": "left",
+          "role": "ledger",
+          "attachment": "grip remains inside book and hand alpha"
+        }
+      }
+    },
+    "stand_back": {
+      "file": "stand_back.png",
+      "view": "back",
+      "joints": {
+        "file": "walk_back_0.png",
+        "phase": "idle",
+        "duration_ms": 125,
+        "body_offset": [
+          0,
+          0
+        ],
+        "yaw_radians": 1.5707963267948966,
+        "layer_order": [
+          "far_thigh",
+          "far_shin",
+          "far_boot",
+          "near_thigh",
+          "near_shin",
+          "near_boot",
+          "coat",
+          "torso",
+          "head",
+          "ledger_arm",
+          "ledger",
+          "ledger_hand",
+          "free_upper",
+          "free_forearm",
+          "free_hand"
+        ],
+        "far_leg": {
+          "handed_side": "right",
+          "anatomical": {
+            "hip": [
+              39.0,
+              55.0
+            ],
+            "knee": [
+              36.71454636467202,
+              71.340951676104
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              44.0,
+              55.0
+            ],
+            "knee": [
+              44.0,
+              71.340951676104
+            ],
+            "ankle": [
+              44.0,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            40,
+            82,
+            48,
+            92
+          ]
+        },
+        "near_leg": {
+          "handed_side": "left",
+          "anatomical": {
+            "hip": [
+              41.0,
+              55.0
+            ],
+            "knee": [
+              37.69869270613543,
+              71.16636539706673
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              36.0,
+              55.0
+            ],
+            "knee": [
+              36.0,
+              71.16636539706673
+            ],
+            "ankle": [
+              36.0,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            32,
+            82,
+            40,
+            92
+          ]
+        },
+        "free_arm": {
+          "anatomical": {
+            "shoulder": [
+              33.0,
+              33.0
+            ],
+            "elbow": [
+              33.0,
+              45.0415945787923
+            ],
+            "wrist": [
+              31.576933870883046,
+              55.13985595351221
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              49.0,
+              29.81
+            ],
+            "elbow": [
+              49.0,
+              41.8515945787923
+            ],
+            "wrist": [
+              49.0,
+              51.63678140510648
+            ]
+          },
+          "hand": "right",
+          "role": "free"
+        },
+        "ledger_arm": {
+          "anatomical": {
+            "shoulder": [
+              48.0,
+              33.0
+            ],
+            "elbow": [
+              51.0,
+              45.0
+            ],
+            "wrist": [
+              51.0,
+              56.0
+            ],
+            "grip": [
+              51.0,
+              57.0
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              31.0,
+              33.11
+            ],
+            "elbow": [
+              31.0,
+              45.77
+            ],
+            "wrist": [
+              31.0,
+              56.77
+            ],
+            "grip": [
+              31.0,
+              57.77
+            ]
+          },
+          "hand": "left",
+          "role": "ledger",
+          "attachment": "grip remains inside book and hand alpha"
+        }
+      }
+    },
+    "stand_left_back": {
+      "file": "turn_left_back.png",
+      "view": "quarter",
+      "joints": {
+        "file": "walk_left_back_0.png",
+        "phase": "idle",
+        "duration_ms": 125,
+        "body_offset": [
+          0,
+          0
+        ],
+        "yaw_radians": 0.7853981633974483,
+        "layer_order": [
+          "far_thigh",
+          "far_shin",
+          "far_boot",
+          "near_thigh",
+          "near_shin",
+          "near_boot",
+          "coat",
+          "torso",
+          "head",
+          "ledger_arm",
+          "ledger",
+          "ledger_hand",
+          "free_upper",
+          "free_forearm",
+          "free_hand"
+        ],
+        "far_leg": {
+          "handed_side": "right",
+          "anatomical": {
+            "hip": [
+              39.0,
+              55.0
+            ],
+            "knee": [
+              36.71454636467202,
+              71.340951676104
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              42.121320343559645,
+              55.0
+            ],
+            "knee": [
+              40.50526057993178,
+              71.340951676104
+            ],
+            "ankle": [
+              42.82842712474619,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            36,
+            82,
+            47,
+            92
+          ]
+        },
+        "near_leg": {
+          "handed_side": "left",
+          "anatomical": {
+            "hip": [
+              41.0,
+              55.0
+            ],
+            "knee": [
+              37.69869270613543,
+              71.16636539706673
+            ],
+            "ankle": [
+              40,
+              87.0
+            ]
+          },
+          "screen": {
+            "hip": [
+              37.878679656440355,
+              55.0
+            ],
+            "knee": [
+              35.54430288216811,
+              71.16636539706673
+            ],
+            "ankle": [
+              37.17157287525381,
+              87.0
+            ]
+          },
+          "planted": true,
+          "foot_bounds": [
+            30,
+            82,
+            41,
+            92
+          ]
+        },
+        "free_arm": {
+          "anatomical": {
+            "shoulder": [
+              33.0,
+              33.0
+            ],
+            "elbow": [
+              33.0,
+              45.0415945787923
+            ],
+            "wrist": [
+              31.576933870883046,
+              55.13985595351221
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              41.4142135623731,
+              30.744329368014913
+            ],
+            "elbow": [
+              41.4142135623731,
+              42.785923946807216
+            ],
+            "wrist": [
+              40.407953852397604,
+              52.662808185332516
+            ]
+          },
+          "hand": "right",
+          "role": "free"
+        },
+        "ledger_arm": {
+          "anatomical": {
+            "shoulder": [
+              48.0,
+              33.0
+            ],
+            "elbow": [
+              51.0,
+              45.0
+            ],
+            "wrist": [
+              51.0,
+              56.0
+            ],
+            "grip": [
+              51.0,
+              57.0
+            ]
+          },
+          "screen": {
+            "shoulder": [
+              39.292893218813454,
+              33.07778174593052
+            ],
+            "elbow": [
+              41.41421356237309,
+              45.544472221513644
+            ],
+            "wrist": [
+              41.41421356237309,
+              56.544472221513644
+            ],
+            "grip": [
+              41.41421356237309,
+              57.544472221513644
+            ]
+          },
+          "hand": "left",
+          "role": "ledger",
+          "attachment": "grip remains inside book and hand alpha"
+        }
+      }
+    }
+  },
+  "aerial": {
+    "overhead": {
+      "file": "aerial_overhead.png",
+      "canvas": [
+        48,
+        64
+      ],
+      "anchor": [
+        24,
+        56
+      ],
+      "facing": "north"
+    },
+    "oblique": {
+      "file": "aerial_oblique.png",
+      "canvas": [
+        48,
+        64
+      ],
+      "anchor": [
+        24,
+        56
+      ],
+      "facing": "northwest"
+    }
+  },
+  "protected_originals": "protected_originals.json"
+}

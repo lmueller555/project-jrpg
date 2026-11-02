@@ -3,6 +3,7 @@
 The source sheets remain unchanged.  Alpha components isolate whole subjects
 where feather tips cross nominal grid boundaries; crops, registration and
 uniform nearest resizing are the only image operations used by this exporter.
+The separately offline-authored native clerk cells are copied at 1:1 instead.
 """
 from __future__ import annotations
 
@@ -20,6 +21,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/cinematics/regent_aerial/actors'
 TARGET = ROOT/'assets/story/regent_aerial/actors'
+CLERK_SOURCE = ROOT/'assets/source/cinematics/regent_arrival/actors/clerk_walk'
 
 
 def sha(data):
@@ -139,13 +141,48 @@ def build():
             record['driver_baked_poses'] = ['overhead','oblique']
             record['driver_count'] = 1
         outputs[identifier+'/animation.json'] = json_bytes(record)
+    clerk = json.loads((CLERK_SOURCE/'clerk_walk.json').read_text())
+    clerk_poses = {}
+    for pose,record in clerk['aerial'].items():
+        sprite = Image.open(CLERK_SOURCE/record['file']).convert('RGBA')
+        if (sprite.size != (48,64) or record['canvas'] != [48,64]
+                or record['anchor'] != [24,56]):
+            raise ValueError('Invalid native overhead clerk registration')
+        outputs['clerk/'+pose+'.png'] = encoded(sprite)
+        clerk_poses[pose] = pose+'.png'
+        registrations['clerk/'+pose+'.png'] = {
+            'native_source':(CLERK_SOURCE/record['file']).relative_to(ROOT).as_posix(),
+            'source_ground_anchor':[24,56], 'scale':1.,
+            'authoring':'offline native part-authored high-camera silhouette; no upright sprite resize'}
+    outputs['clerk/animation.json'] = json_bytes({
+        'version':1, 'canvas':[48,64], 'anchor':[24,56], 'poses':clerk_poses, 'loops':{},
+        'source':'offline native part-authored clerk; retained moss coat, brown hair and left-hand hip ledger',
+        'overhead_facing':'north', 'oblique_facing':'northwest'})
     outputs['manifest.json'] = json_bytes({'version':1,'actors':{
-        name:name+'/animation.json' for name in ('bird','aldric','guard','caravan')}})
+        name:name+'/animation.json' for name in ('bird','aldric','guard','caravan','clerk')}})
+    # Keep the existing compression only after BOTH the recorded hash and all
+    # regenerated RGBA pixels agree, just as in the ground actor exporter.
+    previous_path = TARGET/'provenance.json'
+    previous = json.loads(previous_path.read_text())['exports'] if previous_path.exists() else {}
+    for name,data in list(outputs.items()):
+        path = TARGET/name
+        if not name.endswith('.png') or not path.is_file():
+            continue
+        original = path.read_bytes()
+        if previous.get(name) != sha(original):
+            continue
+        before = Image.open(io.BytesIO(original)).convert('RGBA')
+        after = Image.open(io.BytesIO(data)).convert('RGBA')
+        if before.size == after.size and before.tobytes() == after.tobytes():
+            outputs[name] = original
     outputs['provenance.json'] = json_bytes({'version':1,
         'exporter':'tools/build_regent_aerial_actors.py',
         'exporter_sha256':sha(Path(__file__).read_bytes()),
         'prompts_sha256':sha((SOURCE/'prompts.json').read_bytes()),
         'sources':{path.name:sha(path.read_bytes()) for path in sorted(SOURCE.glob('*.png'))},
+        'native_clerk_sources':{path.relative_to(ROOT).as_posix():sha(path.read_bytes())
+            for path in [CLERK_SOURCE/'clerk_walk.json']+
+                [CLERK_SOURCE/record['file'] for record in clerk['aerial'].values()]},
         'registrations':registrations,
         'exports':{name:sha(data) for name,data in outputs.items()},
         'notes':['Original generations and exact prompts retained without repainting.',
@@ -153,6 +190,7 @@ def build():
                  'All six flap frames share scale and align the head/tail body axis; banking frames align the torso pivot.',
                  'Overhead humans are foreshortened, and the overhead vehicle exposes its roof and complete ground footprint.',
                  'Both caravan views include exactly one seated driver; no separate aerial driver is attached.',
+                 'Clerk overhead/oblique cells are offline native part-authored at 48x64, anchor [24,56]; original generations and other actor PNGs remain byte-identical.',
                  'Existing ground cinematic actor exports remain unchanged.']})
     return outputs
 

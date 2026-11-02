@@ -4,7 +4,9 @@ The original imagegen-authored, transparent cinematic sheets are retained
 unchanged. `prompts.json` records their descriptions and approved portrait
 references. Aldric's corrected side walk is a separate, offline part-authored
 source in `aldric_side_walk/`, built from those retained appearance pixels; it
-is not a new image generation. Overworld sprites and portraits are unchanged.
+is not a new image generation. The clerk's `clerk_walk/` source separately
+authors native side/quarter/rear steps and foreshortened aerial views from his
+own retained appearance. Overworld sprites and portraits are unchanged.
 
 `tools/build_regent_arrival_actors.py` exports bounded cells, removes isolated
 alpha matte specks, normalizes facing, registers feet and nearest-resizes the
@@ -14,9 +16,13 @@ Each actor retains a single bodily scale across its poses.
 
 ```sh
 python tools/build_aldric_side_walk.py
+python tools/build_regent_clerk_walk.py
 python tools/build_regent_arrival_actors.py
+python tools/build_regent_aerial_actors.py
 python tools/build_aldric_side_walk.py --check
+python tools/build_regent_clerk_walk.py --check
 python tools/build_regent_arrival_actors.py --check
+python tools/build_regent_aerial_actors.py --check
 ```
 
 Exports live in `assets/story/regent_arrival/actors/`. Their `animation.json`
@@ -31,8 +37,15 @@ the manifest marks these poses so the runtime does not attach a second driver.
   a rear idle and unchanged four-frame rear and rear-three-quarter walks.
 - Guard: practical slate tunic and open cap, spear held clear in the same hand,
   admitting gesture and four stepping frames.
-- Clerk, driver and local: distinct practical clothing and matching local
-  dialogue portraits; the driver has separate seated and walking poses.
+- Clerk: 77px adult, retained moss coat/brown hair and closed ledger in the
+  anatomical left hand. Eight phases each for side, rear-quarter and rear
+  walking, with a 30px full stride, steady carrying arm, opposing free-arm
+  swing and exact retained side head pixels. Static back/turn and separate
+  native 48×64 aerial views keep convoy staging continuous. Original standing,
+  reading and portrait PNGs are unchanged; unseen rear shapes are documented
+  as native reconstruction, not generated or user-approved art.
+- Driver and local: distinct practical clothing and matching dialogue portraits;
+  the driver has separate seated and walking poses.
 - Serene: brown bun, muted teal mantle, cream dress, window, turn, standing
   poses and four walking frames; Tomas: blond hair, rust vest, cups and a
   shorter 66px teenage body.
@@ -59,8 +72,14 @@ first pose. They are no longer used for the side loop. The new native source
 shares one head/torso appearance, fixed-length limbs, explicit support/swing
 phases and fixed pelvis registration; no moving-foot recentering or per-frame
 mirroring is applied. A 32-pixel full stride controls playback from actual ground
-distance, including the aerial reference handoff. Rear loops retain their
-original clock-based playback. See the [side-walk review](../../../../../docs/reviews/aldric_side_walk/README.md).
+distance, including the aerial reference handoff. Aldric's rear loops retain
+their original clock-based playback. See the [side-walk review](../../../../../docs/reviews/aldric_side_walk/README.md).
+
+The later [clerk/crossroads review](../../../../../docs/reviews/regent_crossroads/README.md)
+adds independent distance-driven clerk loops, not a recolored Aldric. The Aldric
+protection inventory exempts only the clerk manifest and new locomotion files;
+it still guards the original clerk idle, reading and portrait assets. The clerk
+source inventory separately protects all original Aldric art.
 
 Two additional authored caravan angles bridge the turn with native silhouette
 widths of 280px (side), 221px (shallow), 155px (three-quarter), 111px (deep)

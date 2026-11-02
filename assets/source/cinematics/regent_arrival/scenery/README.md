@@ -21,3 +21,11 @@ It uses only nearest resizing, transparent foreground-strip extraction and
 alpha cleanup of the isolated gate prop. It never repaints an environment or
 changes a source PNG. Runtime plates use a bounded 960×480 canvas; the game
 views them through its ordinary 480×320 cinematic viewport.
+
+The current Carrier conversation no longer uses the old riverbank acting area.
+The separate [crossroads source](../crossroads/README.md) composes new native
+scenery from retained raw materials against canonical region masks. It supplies
+a bounded panorama, a 960×480 unscaled crossroads reference and a matching
+bridge reference for the westward traverse. Old generated plates and their
+runtime PNGs remain unchanged. The new builder is
+`tools/build_regent_crossroads.py`; it is not an imagegen export.

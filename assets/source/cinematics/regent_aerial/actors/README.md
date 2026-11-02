@@ -11,6 +11,11 @@ their exact prompts and the existing cinematic actor references.
   Aldric, the cinematic gate guard and the complete horse/provision wagon. Each
   wagon view contains exactly one seated driver. The guard matches the existing
   cinematic's open steel cap, slate/navy tunic and spear.
+- The clerk is a separately retained **offline native reconstruction**, not a
+  new image generation. Its 48×64 overhead/oblique cells and source recipe live
+  in `assets/source/cinematics/regent_arrival/actors/clerk_walk/`. His moss coat,
+  brown hair and left-hand ledger continue into the gate descent and ground
+  walks. Existing aerial art is unchanged.
 
 The raw bird wing silhouettes cross nominal grid-column boundaries. The
 exporter isolates each whole connected alpha subject rather than cutting a
@@ -26,7 +31,9 @@ from the lower camera angle. Both caravan poses use 160×160 canvases and anchor
 from the aerial camera instead of reusing upright side sprites.
 
 ```sh
+python tools/build_regent_clerk_walk.py
 python tools/build_regent_aerial_actors.py
+python tools/build_regent_clerk_walk.py --check
 python tools/build_regent_aerial_actors.py --check
 ```
 

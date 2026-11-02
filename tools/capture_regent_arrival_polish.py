@@ -88,7 +88,7 @@ def pose_sheet(output):
 
 def staging_sheet(output, filenames):
     names = [name for name in filenames if name.startswith(('gate_admission_',
-             'gate_departure_black_', 'bridge_establishing_'))]
+             'gate_departure_black_', 'crossroads_establishing_'))]
     columns = 3
     sheet = Image.new('RGB',(columns*480,((len(names)+columns-1)//columns)*344),'#26352e')
     draw = ImageDraw.Draw(sheet)
@@ -154,7 +154,7 @@ def smoke_checks(directory, saved_pending, saved_completed):
             if scene.dialogue is not None:key(title,pygame.K_SPACE)
         title.update(.1,(0,0),False)
     assert title.gallery_session is None and title.on_gallery
-    assert 'gate_departure_black' in observed and 'bridge_establishing' in observed
+    assert 'gate_departure_black' in observed and 'crossroads_establishing' in observed
     assert path.read_bytes() == original
     title.music.stop();title.opening_audio.reset();title.regional_audio.reset()
     return {'pending_reload_starts_from_beginning':True, 'pause_freezes_scene_and_world':True,
@@ -220,7 +220,7 @@ def capture(output):
                 wanted = {'gate_approach':(2.,),
                     'gate_admission':tuple(round(scene.phase['min_seconds']*fraction,2)
                                             for fraction in (.05,.25,.5,.75,.94)),
-                    'gate_departure_black':(.1,), 'bridge_establishing':(.1,1.5,2.5),
+                    'gate_departure_black':(.1,), 'crossroads_establishing':(.1,1.5,2.5),
                     'locals':(1.,), 'town_approach':(2.,)}
                 for target in wanted.get(shot,()):
                     name = shot+'_'+str(target).replace('.','_')+'.png'
@@ -239,7 +239,7 @@ def capture(output):
                     turn_frames.append((scene.phase_time,Image.frombytes('RGB',(960,640),pixels)
                                         .resize((480,320),Image.Resampling.NEAREST)))
                 video.stdin.write(pixels)
-                in_gate_transition = (shot in ('gate_admission','gate_departure_black','bridge_establishing')
+                in_gate_transition = (shot in ('gate_admission','gate_departure_black','crossroads_establishing')
                                       or shot == 'locals' and scene.phase_time < 1.5)
                 if in_gate_transition:
                     if gate_video is None:
