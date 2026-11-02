@@ -23,23 +23,30 @@ The visual clock belongs to the cinematic rather than the exploration world.
    views; the scenery never dissolves between the two perspectives.
    The caravan follows the painted approach road before the canopy pass. The
    descent leaves three additional seconds to watch the approach, and both
-   Aldric and the wagon continue walking throughout the ground-camera push.
+   Aldric, his ledger-carrying clerk and the wagon continue walking throughout
+   the ground-camera push. Separate foreshortened aerial artwork keeps the
+   clerk present before the descent; he does not appear only after the stop.
    Guards wait closer to the gate, clear of the approaching party.
 3. A modest relief caravan reaches the intact southern land checkpoint. A
    guard recognizes Aldric; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
-   Aldric and the caravan turn into the gateway and recede along the painted
-   road. A settled camera, shared road perspective and masonry occlusion make
+   Aldric, the clerk and the caravan turn into the gateway and recede along the
+   painted road. A settled camera, shared road perspective and masonry occlusion make
    their passage into the valley visible. The wagon clears the gate before
    the scene fades out.
-4. Inside the wall, Aldric listens to local accounts of the lightning strike
-   and its consequences for ordinary deliveries. The ruined western crossing
-   provides a physical view of the damage. His questions, practical response
-   and reluctance to promise an unsupported date establish his responsibilities
-   and fatigue.
-   A brief black transition separates the gate passage from this later stop.
-   The riverbank fades into view and holds on the ruined crossing before the
-   conversation begins; travel effects give way to river ambience.
+4. After the gate passage's short black transition, the party stops at the
+   actual three-way junction at regional tile `(7,4)`. Stone leads north/slightly
+   east to Eldenmere and west-southwest toward the ruined crossing; Aldric's
+   rutted dirt approach joins from the south-southeast. The Carrier asks about
+   deliveries and repairs while the clerk waits beside Aldric.
+   After the player acknowledges "Were you here when it happened?", a 0.8-second
+   camera traverse follows 122.068 tiles of the canonical main road west to the
+   destroyed bridge. Directional blur and sparse tapered streaks affect scenery
+   only and clear before the Carrier's two off-screen account paragraphs.
+   The account remains player-paced. A clean cut returns to the exact crossroads
+   camera and actor stations for Aldric's response about other incidents and
+   the clerk's delivery notes. Nobody is transported to the bridge. River
+   ambience belongs to the bridge insert, not the junction.
 5. The caravan continues toward Eldenmere. Serene watches its approach from
    inside the sanctuary. Her private concerns acknowledge Aldric's difficult
    journey and their coming discussion. Tomas's cups return her attention to
@@ -67,7 +74,11 @@ they are not dialogue that Caelan overhears.
 
 Escape pauses and resumes the scene. A compact Skip button offers an immediate
 handoff without granting another reward or accepting MQ03. Focus loss suspends
-playback. Reduced Motion uses static camera framing. World movement, ordinary
+playback. Reduced Motion uses static framing and replaces the road whip-pan
+with a direct bridge cut, without blur or moving streaks. Dialogue advancement
+is disabled during the short traverse; its input cannot consume an unread
+bridge paragraph. UI, portraits and controls draw after the native effect pass
+and remain sharp. World movement, ordinary
 interaction, quest staging, time and the exploration HUD remain suspended while
 the cinematic owns the screen. Inputs that finish or skip it cannot continue
 into exploration in the same event batch.
@@ -113,22 +124,43 @@ The exporters register authored artwork; they do not redraw the existing
 world, character sprites or portraits. Existing gameplay routes and regional
 barriers remain authoritative for the cinematic's geography.
 
+The new crossroads background is offline composition of retained raw scenery
+materials, not a new image generation or an enlarged regional-map crop. Its
+4928×1728 panorama uses one invertible 28×24px-per-tile ground-plane projection.
+Camera samples follow the road's actual arc distance, without invented shortcuts
+or substituting the intact town bridge. It loads once, decoding to 34,062,336
+bytes. The new bridge illustration assembles retained outer masonry columns
+while preserving the canonical river, deck depth, physical span and open collapse.
+Original region data, existing scenery PNGs and all existing character PNGs
+remain unchanged. Clerk locomotion is independently offline part-authored; its
+side, quarter and rear loops keep the same ledger hand and fixed limb lengths.
+
 ```sh
 python tools/build_regent_arrival_scenery.py --check
 python tools/build_aldric_side_walk.py --check
+python tools/build_regent_clerk_walk.py --check
 python tools/build_regent_arrival_actors.py --check
-PYTHONPATH=tests python -m unittest test_aldric_side_walk test_regent_arrival test_regent_arrival_staging test_regent_quest
+python tools/build_regent_aerial_actors.py --check
+python tools/build_regent_crossroads.py --check
+PYTHONPATH=tests python -m unittest test_regent_clerk_walk test_regent_crossroads_art test_regent_road_pan test_regent_crossroads_gameplay test_aldric_side_walk test_regent_arrival test_regent_arrival_staging test_regent_quest
 python tools/capture_regent_arrival.py
 python tools/capture_regent_arrival_polish.py
 python tools/capture_aldric_side_walk.py
+python tools/capture_regent_crossroads.py
+python tools/capture_regent_crossroads.py --check
 ```
+
+The current [clerk and crossroads review](reviews/regent_crossroads/README.md)
+contains the uninterrupted arrival, a focused crossroads/bridge clip, native
+pose/contact sheets, geographic overlays and reproducible validation receipts.
 
 The [gate and transition review](reviews/regent_arrival_polish/README.md)
 records the earlier gate-to-riverbank staging pass. The current
 [side-walk review](reviews/aldric_side_walk/README.md) replaces Aldric's side
 cycle with eight phase-authored poses, stable appearance pixels, alternating
 support/swing legs and opposing arms. Its cadence follows distance traveled,
-not an independent scene multiplier; rear views and other actors are unchanged.
+not an independent scene multiplier. That earlier pass did not change rear
+views or other actors; the later clerk extension preserves Aldric's art too.
 The full arrival can also be replayed from the title screen's **Gallery** as
 **Aldric's Relief Caravan**, without loading or changing a journey.
 

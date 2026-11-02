@@ -1,7 +1,8 @@
-"""Export registered imagegen-authored arrival actors without repainting sources.
+"""Export registered arrival actors without repainting their retained sources.
 
 Only alpha cleanup, bounded crops, horizontal orientation and nearest resizing
-are used. Original generations and prompts remain in assets/source/cinematics.
+are used for legacy generated sheets. Separately offline-authored native Aldric
+and clerk cells are copied without re-registration. Originals remain retained.
 """
 from __future__ import annotations
 import argparse
@@ -149,6 +150,31 @@ def build():
                                             for entry in side['frames']]
             manifest['gaits']={'walk_left':{'stride_pixels':side['stride_pixels']}}
             manifest['source']='retained appearance; eight native phase-authored side steps; registered rear/idle exports'
+        if name=='clerk':
+            # The offline author already supplies native cells and a shared
+            # root. Copy them; never crop, resize, mirror or center moving feet.
+            directory=SOURCE/'clerk_walk'
+            native=json.loads((directory/'clerk_walk.json').read_text())
+            if (native['canvas']!=[80,96] or native['anchor']!=[40,92]
+                    or native['reference_height']!=77):
+                raise ValueError('Invalid native clerk registration')
+            manifest['gaits']={}
+            for loop,clerk_loop in native['loops'].items():
+                sheet=Image.open(directory/clerk_loop['sheet']).convert('RGBA')
+                if sheet.size!=(640,96) or len(clerk_loop['frames'])!=8:
+                    raise ValueError('Invalid native clerk walk sheet: '+loop)
+                for index,entry in enumerate(clerk_loop['frames']):
+                    outputs['clerk/'+entry['file']]=png(sheet.crop((index*80,0,(index+1)*80,96)))
+                manifest['loops'][loop]=[{key:entry[key] for key in ('file','duration_ms','phase')}
+                                         for entry in clerk_loop['frames']]
+                manifest['gaits'][loop]={'stride_pixels':clerk_loop['stride_pixels']}
+            for pose,entry in native['poses'].items():
+                sprite=Image.open(directory/entry['file']).convert('RGBA')
+                if sprite.size!=(80,96):
+                    raise ValueError('Invalid native clerk pose: '+pose)
+                outputs['clerk/'+entry['file']]=png(sprite)
+                manifest['poses'][pose]=entry['file']
+            manifest['source']='offline native part-authored clerk; retained face/coat/ledger identity; reconstructed rear views; original idle/read unchanged'
         outputs[f'{name}/animation.json']=(json.dumps(manifest,indent=2)+'\n').encode()
         metadata[name]={'canvas':[80,96],'anchor':[40,92],'reference_height':record['height'],'scale':round(scale,6)}
     # Export four registered whole horse/wagon frames. Fixed cell crop+scale
@@ -243,13 +269,17 @@ def build():
     provenance={'version':1,'exporter':'tools/build_regent_arrival_actors.py',
         'sources':{**{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
                  **{str(path.relative_to(ROOT)):digest(path.read_bytes()) for path in
-                  (SOURCE/'aldric_side_walk/side_walk.png',SOURCE/'aldric_side_walk/side_walk.json')}},
+                        (SOURCE/'aldric_side_walk/side_walk.png',SOURCE/'aldric_side_walk/side_walk.json')},
+                      **{path.relative_to(ROOT).as_posix():digest(path.read_bytes())
+                          for path in sorted((SOURCE/'clerk_walk').rglob('*')) if path.is_file()}},
       'actors':metadata,'exports':{name:digest(data) for name,data in sorted(outputs.items())},
       'notes':['Original imagegen generations are retained without modification.',
                'Only alpha cleanup, bounded crops, horizontal registration and nearest resizing are applied.',
                'Human sprites are authored cinematic bodies rather than enlarged overworld sprites.',
                'Aldric side walking uses eight native support/swing phases, a fixed pelvis root and a 32-pixel full stride.',
                'Original side-walk generations are retained; rear walks, idles and all other actors remain byte-identical.',
+               'Clerk alone adds offline native part-authored eight-phase side/rear-quarter/rear walks and matching static turn/back poses; exporter copies registered cells.',
+               'Clerk originals, every other actor PNG and all portraits retain verified hashes and decoded pixels; no imagegen tool was used for the clerk reconstruction.',
                'Authored rear-three-quarter turns preserve full bodies and a single correctly oriented caravan driver.',
                'Shallow and deep authored vehicle angles bridge side, three-quarter and rear silhouettes without stretching.',
                'The retained intermediate source sheet supplies its lower-left deep angle only; its prototype upper row is not exported.',

@@ -16,6 +16,7 @@ import pygame
 import speech_bubble
 from regent_aerial import RegentAerial
 from regent_aerial_audio import RegentAerialAudio
+from regent_road_pan import RoadWhipPan
 from opening_audio import MorningAudio
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from ui_style import BRASS, IVORY, MUTED
@@ -118,6 +119,9 @@ class RegentArrival:
         self.game = game
         self.scene_path = Path(scene_path).resolve()
         self.data = json.loads(self.scene_path.read_text())
+        self.crossroads_path = self._path(self.data['crossroads_manifest'])
+        self.crossroads_data = json.loads(self.crossroads_path.read_text())
+        self.road_pan = RoadWhipPan(self.crossroads_data)
         self._validate()
         self.audio = ArrivalAudio(game)
         self.bird_audio = RegentAerialAudio(game)
@@ -149,10 +153,19 @@ class RegentArrival:
                     or not 0 < duration <= 60):
                 raise ValueError('Invalid arrival shot')
             seen.add(phase['id'])
+            canvas = (self.crossroads_data['canvas'] if phase['scene']=='crossroads'
+                      else self.data['canvas'])
             for p in (phase['camera']['from'], phase['camera']['to']):
                 if (len(p) != 2 or any(type(n) not in (int, float) or not math.isfinite(n) for n in p)
-                        or not 0 <= p[0] <= 480 or not 0 <= p[1] <= 160):
+                        or not 0 <= p[0] <= canvas[0]-VIEW_SIZE[0]
+                        or not 0 <= p[1] <= canvas[1]-VIEW_SIZE[1]):
                     raise ValueError('Arrival camera leaves its plate')
+            if phase.get('camera_track') is not None:
+                if (phase['camera_track']!='west_road' or phase['scene']!='crossroads'
+                        or phase['dialogue']
+                        or phase['camera']['from']!=self.crossroads_data['camera_junction']
+                        or phase['camera']['to']!=self.crossroads_data['camera_bridge']):
+                    raise ValueError('Invalid arrival geographic camera track')
             for line in phase['dialogue']:
                 if line.get('speaker') not in self.data['speakers'] or not line.get('text'):
                     raise ValueError('Invalid arrival dialogue')
@@ -246,11 +259,17 @@ class RegentArrival:
     @property
     def camera_position(self):
         if self._reference_camera is not None:return pygame.Vector2(self._reference_camera)
+        if self.phase.get('camera_track')=='west_road':
+            return pygame.Vector2(self.road_pan_sample.camera_position)
         camera = self.phase['camera']
         progress = (1. if self.reduced_motion else
                     smooth((self.phase_time-camera.get('move_start', 0.))/
                            camera.get('move_seconds', self.phase['min_seconds'])))
         return pygame.Vector2(camera['from']).lerp(camera['to'], progress)
+
+    @property
+    def road_pan_sample(self):
+        return self.road_pan.sample(self.phase_time,self.phase['min_seconds'],self.reduced_motion)
 
     def aerial_snapshot(self):
         if self.phase['scene'] != 'aerial':return None
@@ -293,7 +312,9 @@ class RegentArrival:
             self._mouse_held = True
 
     def _next_if_ready(self):
-        if (self.phase_time < self.phase['min_seconds']
+        minimum = (.001 if self.reduced_motion and self.phase.get('camera_track')=='west_road'
+                   else self.phase['min_seconds'])
+        if (self.phase_time < minimum
                 or self.dialogue_index < len(self.phase['dialogue'])):return
         if self.phase_index+1 == len(self.data['phases']):self.finish('finished');return
         self.phase_index += 1;self.phase_time = 0.
@@ -319,7 +340,7 @@ class RegentArrival:
             return 1. if snapshot.get('ground_handoff') else .25
         if self.shot == 'gate_admission':return 1-self.fade_alpha/255
         if self.shot == 'gate_departure_black':return .35*smooth(self.phase_time/self.phase['min_seconds'])
-        if self.shot == 'bridge_establishing':return .35+.65*smooth(self.phase_time/self.phase.get('fade_in', 1.))
+        if self.shot == 'crossroads_establishing':return .35+.65*smooth(self.phase_time/self.phase.get('fade_in', 1.))
         return 1.
 
     def _travel_rate(self, snapshot=None):
@@ -384,6 +405,13 @@ class RegentArrival:
                 image.fill((0, 0, 0, 255), special_flags=pygame.BLEND_RGBA_MULT)
                 loaded['occluders'].append({**record_layer, 'image':image})
             plates[key] = loaded
+        # A separate bounded panorama spans the actual regional road. Ordinary
+        # arrival plates keep their original native dimensions and art bytes.
+        road_image = pygame.image.load(str(self.crossroads_path.parent/
+                                          self.crossroads_data['background'])).convert()
+        if road_image.get_size()!=tuple(self.crossroads_data['canvas']):
+            raise ValueError('Crossroads panorama has incorrect dimensions')
+        plates['crossroads'] = {'background':road_image}
         actors = {}
         for identifier, filename in self.data['actors'].items():
             path = self._path(filename);record = json.loads(path.read_text())
@@ -440,6 +468,7 @@ class RegentArrival:
         vanish = pygame.Vector2(route['vanishing_point'])
         position = pygame.Vector2(vanish.x+(point.x-vanish.x)*scale,
                                   vanish.y+(route['ground_y']-vanish.y)*scale)
+        position += pygame.Vector2(actor.get('route_offset',(0,0)))*scale
         return position,scale
 
     def actor_position(self, actor):
@@ -492,6 +521,7 @@ class RegentArrival:
                 time = (clock*distance/duration/gait['stride_pixels']*total)%total
             else:
                 time = (clock*actor.get('animation_rate',1.))%total
+            time = (time+actor.get('gait_offset',0.)*total)%total
             for image, duration in frames:
                 if time < duration:return image
                 time -= duration
@@ -615,6 +645,11 @@ class RegentArrival:
                         self._draw_actor(canvas, driver, camera)
             if scenery.get('foreground'):
                 canvas.blit(scenery['foreground'], (-round(camera.x), -round(camera.y)))
+            if self.phase.get('camera_track')=='west_road':
+                # Only scenery/actors enter the effect pass. Captions, portraits
+                # and pause/skip controls are drawn afterwards at full sharpness.
+                canvas.blit(self.road_pan.apply(canvas,self.road_pan_sample,
+                                                reduced_motion=self.reduced_motion),(0,0))
 
     def ground_reference_frame(self, canvas, seconds=0., include_actors=True, include_gate=True,
                                viewport=None, standing=False):
@@ -629,7 +664,7 @@ class RegentArrival:
         reference = dict(phase)
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
-            if actor['id'] in ('aldric','caravan'):
+            if actor['id'] in ('aldric','clerk','caravan'):
                 # Translate the whole path, not only its start. The reference
                 # root moves at24px/s; its gait must retain that same speed.
                 for key in ('position','to'):
@@ -637,7 +672,7 @@ class RegentArrival:
                         actor[key] = list(actor[key])
                         actor[key][0] += max(0.,-seconds)*24
                 if standing:
-                    actor['pose'] = 'stand_left' if actor['id']=='aldric' else 'parked_left'
+                    actor['pose'] = 'parked_left' if actor['id']=='caravan' else 'stand_left'
                     for key in ('to','path','move_start','move_seconds','before_pose','after_pose'):
                         actor.pop(key,None)
         try:

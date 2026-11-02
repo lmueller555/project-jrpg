@@ -270,13 +270,18 @@ def authored_frame(reference, layers, palette, index):
 def protected_inputs():
     path = OUT/'side_walk.json'
     if path.exists():
-        return json.loads(path.read_text())['protected_sha256']
+        # The approved clerk extension owns its new manifest/locomotion only;
+        # original clerk idle/read/portrait pixels remain protected here.
+        return {name:sha for name,sha in json.loads(path.read_text())['protected_sha256'].items()
+                if name!='assets/story/regent_arrival/actors/clerk/animation.json'}
     inputs = list(SOURCE.glob('*_generated.png'))
     for path in (ROOT/'assets/story/regent_arrival/actors').rglob('*'):
         if not path.is_file() or path.name == 'provenance.json':
             continue
         if path.parent.name == 'aldric' and (path.name == 'animation.json' or
                 (path.stem.startswith('walk_') and path.stem[5:].isdigit())):
+            continue
+        if path.parent.name == 'clerk' and path.name not in ('stand_left.png','read_left.png'):
             continue
         inputs.append(path)
     return {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in sorted(inputs)}

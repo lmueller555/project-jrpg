@@ -1,11 +1,16 @@
 {
   "version": 1,
   "exporter": "tools/build_regent_aerial_actors.py",
-  "exporter_sha256": "a21269bf0cbd9d1700faed12c1d411cda5019e1c7e5d36ff309f27413f4356b4",
+  "exporter_sha256": "ce0d83776162d2720e54fc8ef0ecb1c8f9aec08fc3c4c4e965c8337e4faaff37",
   "prompts_sha256": "f899ddf3f87b22018b2eb931d137ebf165aca19984f40b6a9215b081bebdeeba",
   "sources": {
     "bird_generated.png": "431f1a911380f46ecb53e7a6a84854a710686378d8368bb5e8790cd81a0b8794",
     "convoy_generated.png": "1bdf89bbf171a556665ba3f55ab5c10e3e6de2636d083927c1fea392a9e61df3"
+  },
+  "native_clerk_sources": {
+    "assets/source/cinematics/regent_arrival/actors/clerk_walk/clerk_walk.json": "f3290ce6b31a004794fbfdc6f543a1636bc0c478affc243eab96cf824c9dc2a9",
+    "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_overhead.png": "3eb7c7954a10ea4eac3884bf95e253853d0e973f52a3af78d981caf02bf0eb0b",
+    "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_oblique.png": "39fa7eaa8133ad7a1e66a87fb434fcf3934905ba9128a78cd1a0a1d54e78dbcc"
   },
   "registrations": {
     "bird/flap_0.png": {
@@ -189,6 +194,24 @@
         991
       ],
       "scale": 0.26242545
+    },
+    "clerk/overhead.png": {
+      "native_source": "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_overhead.png",
+      "source_ground_anchor": [
+        24,
+        56
+      ],
+      "scale": 1.0,
+      "authoring": "offline native part-authored high-camera silhouette; no upright sprite resize"
+    },
+    "clerk/oblique.png": {
+      "native_source": "assets/source/cinematics/regent_arrival/actors/clerk_walk/aerial_oblique.png",
+      "source_ground_anchor": [
+        24,
+        56
+      ],
+      "scale": 1.0,
+      "authoring": "offline native part-authored high-camera silhouette; no upright sprite resize"
     }
   },
   "exports": {
@@ -210,7 +233,10 @@
     "aldric/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
     "guard/animation.json": "75ba10fd3079c09869c1f8dc5e7beb3b68f5afc2ae8b5b433345ae97b5c59c2c",
     "caravan/animation.json": "7f14c0d11101f956c08df62385bfa16b21924f0be418db4ce09e0db60b5a9636",
-    "manifest.json": "adf48bad854773afd4a5f3fdad7d83fd08d0c01c1f8325773788cceaeddc595f"
+    "clerk/overhead.png": "3eb7c7954a10ea4eac3884bf95e253853d0e973f52a3af78d981caf02bf0eb0b",
+    "clerk/oblique.png": "39fa7eaa8133ad7a1e66a87fb434fcf3934905ba9128a78cd1a0a1d54e78dbcc",
+    "clerk/animation.json": "2bb6ec63bc66ae1af5ca485181588c23cf1e0c466e17d397dfc4ba9136809939",
+    "manifest.json": "15b213cf3778d6e957c89910ab9ad9fcdec064e87f0c89abe0456ec8d8bddce4"
   },
   "notes": [
     "Original generations and exact prompts retained without repainting.",
@@ -218,6 +244,7 @@
     "All six flap frames share scale and align the head/tail body axis; banking frames align the torso pivot.",
     "Overhead humans are foreshortened, and the overhead vehicle exposes its roof and complete ground footprint.",
     "Both caravan views include exactly one seated driver; no separate aerial driver is attached.",
+    "Clerk overhead/oblique cells are offline native part-authored at 48x64, anchor [24,56]; original generations and other actor PNGs remain byte-identical.",
     "Existing ground cinematic actor exports remain unchanged."
   ]
 }

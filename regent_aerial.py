@@ -23,7 +23,7 @@ CANOPY_START = 26.
 CANOPY_HANDOFF = 26.45
 CANOPY_END = 26.9
 APPROACH_SPEED = 24.
-GROUND_PARTY = {'aldric': (611., 375.), 'caravan': (791., 375.)}
+GROUND_PARTY = {'aldric': (611., 375.), 'clerk': (671., 399.), 'caravan': (791., 375.)}
 GROUND_GUARDS = {'guard_west': (530., 330.), 'guard_east': (690., 315.)}
 # Observed centers of the painted road in gate_overhead.png. Coordinates are
 # signed regional tiles; the road bends southeast outside the checkpoint.
@@ -34,7 +34,8 @@ APPROACH_ROAD = ((43.4297,115.9609),(41.0469,113.5),(38.3906,111.1562),
 CARAVAN_CONTACTS = {'rear_left':(59,116),'rear_right':(101,116),
                     'front_left':(60,76),'front_right':(101,76),
                     'hoof_left':(70,50),'hoof_right':(90,50),'nose':(80,14)}
-AERIAL_BOUNDS = {'aldric':(14,28,34,56),'caravan':(56,8,105,128)}
+AERIAL_BOUNDS = {'aldric':(14,28,34,56),'clerk':(15,27,34,56),
+                 'caravan':(56,8,105,128)}
 
 
 def ease(value):
@@ -173,7 +174,8 @@ class RegentAerial:
                     actors[key]['scale']*=.9 if key=='guard_west' else .8
                 else:
                     actors[key].update(heading=-90.,screen_heading=-90.,gait_clock=(actual-DURATION)*.6)
-                    width,height=(45,80) if key=='aldric' else (280,116)
+                    width,height=((280,116) if key=='caravan' else
+                                  (38,77) if key=='clerk' else (45,80))
                     px,py=actors[key]['screen_xy']
                     actors[key]['screen_bounds']=[px-width*scale_x/2,py-height*scale_y,
                                                   px+width*scale_x/2,py]
@@ -219,13 +221,16 @@ class RegentAerial:
 
     def _actors_sample(self,t,view):
         distance=max(0.,t-16)*ROAD_FINISH/(CANOPY_HANDOFF-16)
-        positions={'aldric':road_point(distance+7.2),'caravan':road_point(distance),
+        offsets={'aldric':7.2,'clerk':4.8,'caravan':0.}
+        positions={'aldric':road_point(distance+7.2),'clerk':road_point(distance+4.8),
+                   'caravan':road_point(distance),
                    'guard_west':np.array((26.6,95.05)),
                    'guard_east':np.array((30.25,94.8))}
         result={}
         for key,world in positions.items():
-            moving=key in ('aldric','caravan')
-            ahead=road_point(distance+(5. if key=='caravan' else 7.8)) if moving else world+np.array((0.,1.))
+            moving=key in offsets
+            ahead=(road_point(distance+offsets[key]+(.6 if key!='caravan' else 5.))
+                   if moving else world+np.array((0.,1.)))
             direction=ahead-world
             heading=math.degrees(math.atan2(float(direction[0]),-float(direction[1])))
             point=self._project_world(world,view);front=self._project_world(ahead,view)
@@ -235,7 +240,7 @@ class RegentAerial:
             record={'world_xy':[float(v) for v in world],'screen_xy':point,
                     'heading':heading,'screen_heading':screen_heading,'moving':moving,
                     'world_scale':world_scale,'view':'overhead','scale':scale}
-            if moving:record['road_distance']=float(distance+(7.2 if key=='aldric' else 0.))
+            if moving:record['road_distance']=float(distance+offsets[key])
             else:record['screen_heading']=0.
             if key=='caravan':
                 angle=math.radians(heading);c,s=math.cos(angle),math.sin(angle)
