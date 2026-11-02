@@ -35,7 +35,7 @@ class MillCombatAssetTests(unittest.TestCase):
     def tearDownClass(cls):
         pygame.quit()
 
-    def assert_complete_actor(self, actor, canvas, anchor, facing, required):
+    def assert_complete_actor(self, actor, canvas, anchor, facing, required, frame_count=16):
         data = manifest(actor)
         self.assertEqual(data['canvas'], list(canvas))
         self.assertEqual(data['anchor'], list(anchor))
@@ -48,7 +48,7 @@ class MillCombatAssetTests(unittest.TestCase):
             for record in animation['frames']:
                 self.assertGreater(record['duration_ms'], 0)
                 frames[record['file']] = record
-        self.assertEqual(len(frames), 16)
+        self.assertEqual(len(frames), frame_count)
         images = []
         for filename in frames:
             with self.subTest(actor=actor, frame=filename):
@@ -64,12 +64,12 @@ class MillCombatAssetTests(unittest.TestCase):
                 self.assertLess(bounds[2], canvas[0])
                 self.assertLess(bounds[3], canvas[1])
                 images.append(image.tobytes())
-        self.assertEqual(len(set(images)), 16)
+        self.assertEqual(len(set(images)), frame_count)
 
-    def test_mira_has_complete_unclipped_native_spear_and_recovery_poses(self):
+    def test_mira_has_complete_unclipped_launcher_overclock_and_recovery_poses(self):
         self.assert_complete_actor('mira', (64, 64), (32, 54), 'left',
                                    {'idle', 'attack', 'guard', 'hurt', 'victory',
-                                    'defeat', 'walk', 'spear_thrust', 'flee'})
+                                    'defeat', 'walk', 'bolt_shot', 'overclock', 'flee'}, 19)
 
     def test_tusker_has_distinct_native_preparation_charge_and_collapse_poses(self):
         self.assert_complete_actor('ridgeback_tusker', (96, 72), (48, 62), 'right',
@@ -77,8 +77,13 @@ class MillCombatAssetTests(unittest.TestCase):
                                     'defeat', 'tusk_strike', 'prepare_charge',
                                     'tusker_charge'})
 
+    def test_rivet_has_complete_small_bot_deployment_jab_and_suspension_poses(self):
+        self.assert_complete_actor('rivet', (32, 32), (16, 28), 'left',
+                                   {'idle', 'deploy', 'attack', 'piston_jab',
+                                    'overclock', 'victory', 'suspend'})
+
     def test_every_authored_pose_references_its_retained_source_atlas(self):
-        for actor in ('mira', 'ridgeback_tusker'):
+        for actor in ('mira', 'ridgeback_tusker', 'rivet'):
             with self.subTest(actor=actor):
                 data = manifest(actor)
                 source = ROOT/data['source_sheet']
@@ -89,15 +94,15 @@ class MillCombatAssetTests(unittest.TestCase):
                 records = {record['source_cell']: record
                            for state in data['animations'].values()
                            for record in state['frames']}
-                self.assertEqual(set(records), set(range(16)))
+                self.assertEqual(set(records), set(range(19 if actor == 'mira' else 16)))
                 for record in records.values():
                     left, top, right, bottom = record['source_bounds']
                     self.assertTrue(0 <= left < right <= width)
                     self.assertTrue(0 <= top < bottom <= height)
 
-    def test_spear_strike_and_charge_resolve_during_the_authored_contact_frame(self):
+    def test_bolt_shot_and_charge_resolve_during_the_authored_contact_frame(self):
         actions = load_actions()
-        for actor, state, action in (('mira', 'attack', 'spear_thrust'),
+        for actor, state, action in (('mira', 'attack', 'bolt_shot'),
                                      ('ridgeback_tusker', 'attack', 'tusk_strike'),
                                      ('ridgeback_tusker', 'charge', 'tusker_charge')):
             with self.subTest(actor=actor, action=action):
@@ -135,24 +140,24 @@ class MillCombatAssetTests(unittest.TestCase):
         self.assertEqual(pygame.image.tobytes(first, 'RGBA'),
                          pygame.image.tobytes(after, 'RGBA'))
 
-    def test_overworld_spear_is_transparent_and_its_grip_tip_and_butt_are_registered(self):
-        data = json.loads((ART/'mira/world_spear.json').read_text())
-        with Image.open(ART/'mira/world_spear.png') as source:
+    def test_overworld_launcher_is_transparent_with_registered_grip_muzzle_and_holster(self):
+        data = json.loads((ART/'mira/world_bolt_launcher.json').read_text())
+        with Image.open(ART/'mira/world_bolt_launcher.png') as source:
             image = source.convert('RGBA')
         self.assertEqual(image.size, tuple(data['canvas']))
-        self.assertEqual(image.size, (16, 48))
-        self.assertEqual(data['orientation'], 'point_up')
+        self.assertEqual(image.size, (24, 20))
+        self.assertEqual(data['orientation'], 'barrel_left')
+        self.assertEqual(data['facing'], 'left')
         self.assertEqual(set(image.getchannel('A').tobytes()), {0, 255})
         bounds = image.getbbox()
         self.assertGreater(bounds[0], 0)
         self.assertGreater(bounds[1], 0)
         self.assertLess(bounds[2], image.width)
         self.assertLess(bounds[3], image.height)
-        for point in (data['hand_anchor'], data['tip'], data['butt']):
+        for point in (data['hand_anchor'], data['muzzle'], data['holster_anchor']):
             self.assertTrue(0 <= point[0] < image.width and 0 <= point[1] < image.height)
             self.assertEqual(image.getpixel(tuple(point))[3], 255)
-        self.assertLess(data['tip'][1], data['hand_anchor'][1])
-        self.assertLess(data['hand_anchor'][1], data['butt'][1])
+        self.assertLess(data['muzzle'][0], data['hand_anchor'][0])
         self.assertEqual(hashlib.sha256((ROOT/data['source']).read_bytes()).hexdigest(),
                          data['source_sha256'])
 

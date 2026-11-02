@@ -15,7 +15,8 @@ COMBAT_ART = ROOT/'assets/combat'
 RESULTS = ('victory', 'defeat', 'fled')
 ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                  'skills': 'Skills', 'back': 'Back',
-                 'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP'}
+                 'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP',
+                 'overclock': 'Overclock'}
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
 HP_RED = '#df6b62'
@@ -33,7 +34,7 @@ class CombatSprites:
             self._load_actor(actor)
 
     def _load_actor(self, actor):
-        if actor not in ('caelan', 'bat', 'mira', 'ridgeback_tusker'):
+        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker'):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))
@@ -103,6 +104,11 @@ class BattleScene:
         self._held = False
         self._elapsed = 0.0
         self._phase_elapsed = 0.0
+        # A result clears the model's attachments. Keep only a visual reference
+        # for the celebration; it never supplies commands or combat resources.
+        self._encounter_bots = tuple(getattr(model, 'bots', ()))
+        self._deploy_times = {bot.identifier: 0.0 for bot in self._encounter_bots}
+        self.bot_status = {}
         self._defeat_times = {member.identifier: 0.0 for member in
                               (*model.party, model.enemy) if not member.hp}
         self._popups = []
@@ -152,6 +158,7 @@ class BattleScene:
         """Small translucent ground projections keep the painted grass visible."""
         shadows = {}
         for key, size, opacity in (('player', (34, 7), 65),
+                                   ('bot', (25, 5), 55),
                                    ('enemy_low', (30, 7), 48),
                                    ('enemy_high', (24, 5), 34),
                                    ('tusker', (114, 14), 62)):
@@ -162,7 +169,9 @@ class BattleScene:
         return shadows
 
     def _draw_shadow(self, canvas, actor, point):
-        if actor != 'enemy':
+        if self._bot(actor) is not None:
+            image, ground_y = self._shadows['bot'], round(point.y)
+        elif actor != 'enemy':
             image, ground_y = self._shadows['player'], round(point.y)
         elif self.model.enemy_id == 'ridgeback_tusker':
             image, ground_y = self._shadows['tusker'], round(point.y)
@@ -213,7 +222,38 @@ class BattleScene:
         for index, identifier in enumerate(self._command_actions()):
             self.command_rects[identifier] = pygame.Rect(20, row_top+index*command_height,
                                                         110, command_height)
+        self._layout_bots(painter)
         return small, name
+
+    def _bot(self, identifier):
+        return next((bot for bot in self._encounter_bots
+                     if bot.identifier == identifier), None)
+
+    def _field_bots(self):
+        if self.model.phase in ('victory', 'defeat'):
+            return self._encounter_bots
+        return tuple(getattr(self.model, 'bots', ()))
+
+    def _layout_bots(self, painter):
+        """A field instrument belongs to the bot, outside command party rows."""
+        self.bot_status = {}
+        if self.model.phase in RESULTS:return
+        small = painter.font('small').get_linesize()
+        for bot in self._field_bots():
+            point = self._bot_home()
+            title = bot.name+' ATB'
+            cue = 'Haste · '+str(bot.haste_turns)
+            width = max(painter.font('small', bold=True).size(title)[0],
+                        painter.font('small', bold=True).size(cue)[0])+10
+            # The status sits just above Rivet. Both move up with the enlarged
+            # command panel, retaining clear space from Mira and Caelan.
+            panel = pygame.Rect(round(point.x-width/2), round(point.y-60)-2*small-16,
+                                width, 2*small+16)
+            self.bot_status[bot.identifier] = {
+                'panel': panel,
+                'name': pygame.Rect(panel.x+5, panel.y+3, width-10, small),
+                'atb': pygame.Rect(panel.x+6, panel.y+small+6, width-12, 6),
+                'haste': pygame.Rect(panel.x+5, panel.y+small+13, width-10, small)}
 
     @property
     def tutorial_active(self):return bool(self._tutorial_queue)
@@ -241,8 +281,8 @@ class BattleScene:
                 'Full ATB: ready to act. Gauges pause while you choose.')
             if event.get('actor') == 'mira':
                 self._queue_tutorial('mira_turn',
-                    'Stay clear of the point. I can reach it from here.',
-                    'Mira is ready. Commands belong to the highlighted party row.')
+                    'Rivet, keep it busy. I can cover you both from here.',
+                    'Mira fires Bolt Shot. Skills → Overclock costs 5 MP and hastens Rivet for 8 bot turns.')
         elif event['type'] == 'telegraph':
             target = self.model.combatant(event.get('target'))
             name = target.name if target is not None else 'us'
@@ -272,9 +312,12 @@ class BattleScene:
             return ''
         if model.phase == 'ready':
             actions = self._command_actions()
-            if (self.command_menu == 'skills' and actions
-                    and actions[self.selected % len(actions)] == 'aether_edge'):
-                return '4 MP · Enchant self for 3 weapon strikes.'
+            if self.command_menu == 'skills' and actions:
+                selected = actions[self.selected % len(actions)]
+                if selected == 'aether_edge':
+                    return '4 MP · Enchant self for 3 weapon strikes.'
+                if selected == 'overclock':
+                    return '5 MP · Haste: +50% ATB for 8 bot turns.'
             return ''
         return model.message if model.phase == 'acting' else 'Preparing the next action.'
 
@@ -459,6 +502,11 @@ class BattleScene:
             elif event['type'] == 'enchant':
                 self._popups.append({'target': event['actor'], 'text': 'Aether Edge',
                                      'age': 0.0, 'enchant': True})
+            elif event['type'] == 'haste_applied':
+                self._popups.append({'target': event['target'], 'text': 'Haste',
+                                     'age': 0.0, 'enchant': True})
+            elif event['type'] == 'bot_deployed':
+                self._deploy_times[event['actor']] = self._elapsed
             elif event['type'] == 'player_ready':
                 self.command_menu = 'root'
                 self.selected = 0
@@ -468,6 +516,9 @@ class BattleScene:
 
     @property
     def reduced_motion(self):return getattr(self.game.audio, 'reduced_motion', False)
+
+    def _bot_home(self):
+        return pygame.Vector2(296, 181-max(0, 202-self.panel_rect.top))
 
     def _positions(self):
         party_battle = len(self.model.party) > 1
@@ -479,10 +530,13 @@ class BattleScene:
         else:
             positions = {'player': pygame.Vector2(354, 184),
                          'enemy': pygame.Vector2(126, 170)}
+        for bot in self._field_bots():
+            positions[bot.identifier] = self._bot_home()
         if self.model.enemy_id == 'bat' and not self.reduced_motion:
             positions['enemy'].y += math.sin(self._elapsed*4)*2
         action = self.model.current_action
-        if action is not None and action.kind == 'physical' and not self.reduced_motion:
+        if (action is not None and action.kind == 'physical' and action.actor != 'mira'
+                and not self.reduced_motion):
             approach = (action.elapsed/max(.001, action.impact_at)
                         if action.elapsed <= action.impact_at else
                         (action.duration-action.elapsed)/max(.001, action.duration-action.impact_at))
@@ -493,7 +547,7 @@ class BattleScene:
             else:
                 target = positions[action.target]
                 contact = (pygame.Vector2(-66, 0) if action.actor == 'enemy' else
-                           pygame.Vector2(136 if action.actor == 'mira' else 112, -4))
+                           pygame.Vector2(83 if self._bot(action.actor) else 112, -4))
                 positions[action.actor] = positions[action.actor].lerp(target+contact, blend)
                 if action.action == 'tusker_charge':
                     member = self.model.combatant(action.target)
@@ -508,6 +562,20 @@ class BattleScene:
         return positions
 
     def _pose(self, actor):
+        bot = self._bot(actor)
+        if bot is not None:
+            owner = self.model.combatant(bot.owner_id)
+            if owner is None or not owner.hp or self.model.phase in ('defeat', 'fled'):
+                return 'suspend', self._elapsed*1000
+            if self.model.phase == 'victory':return 'victory', self._phase_elapsed*1000
+            action = self.model.current_action
+            if action is not None:
+                if action.kind == 'haste' and action.target == actor:
+                    return 'overclock', action.elapsed*1000
+                if action.actor == actor:return action.animation, action.elapsed*1000
+            deployment = self._elapsed-self._deploy_times.get(actor, 0)
+            if deployment < .6:return 'deploy', deployment*1000
+            return 'idle', self._elapsed*1000
         combatant = self.model.combatant(actor)
         if combatant.hp <= 0:
             return 'defeat', (self._elapsed-self._defeat_times.get(actor, 0))*1000
@@ -517,7 +585,8 @@ class BattleScene:
                 return 'hurt', popup['age']*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
-            state = ('cast' if action.kind in ('magical', 'enchant') else 'guard' if action.kind == 'guard'
+            state = ('overclock' if action.kind == 'haste' else
+                     'cast' if action.kind in ('magical', 'enchant') else 'guard' if action.kind == 'guard'
                      else 'idle' if action.kind == 'flee' else action.animation
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
@@ -544,6 +613,22 @@ class BattleScene:
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
             pygame.draw.circle(canvas, '#5da9e9', (round(point.x), round(point.y)), 15+pulse, 1)
             pygame.draw.circle(canvas, '#b1e4ff', (round(point.x), round(point.y)-18), 2)
+        if action is not None and action.kind == 'haste' and action.target in positions:
+            point = positions[action.target]+(0, -24)
+            pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*12)*2)
+            pygame.draw.circle(canvas, '#72c8f0', (round(point.x), round(point.y)), 19+pulse, 1)
+            for offset in (-9, 9):
+                pygame.draw.circle(canvas, '#d8f7ff',
+                                   (round(point.x+offset), round(point.y-25)), 2)
+        if action is not None and action.action == 'bolt_shot' and not action.resolved:
+            fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
+            start = positions[action.actor]+(-33, -40)
+            end = positions[action.target]+(12, -38)
+            point = start.lerp(end, fraction)
+            pygame.draw.line(canvas, '#bd8751', (round(point.x+7), round(point.y)),
+                             (round(point.x), round(point.y)), 3)
+            pygame.draw.line(canvas, '#f1cd77', (round(point.x+3), round(point.y)),
+                             (round(point.x-3), round(point.y)), 1)
         if action is not None and action.kind == 'magical' and not action.resolved:
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
@@ -568,12 +653,27 @@ class BattleScene:
         if current*2 <= maximum:return HP_YELLOW
         return HP_GREEN
 
+    def _draw_bot_status(self, painter):
+        for identifier, row in self.bot_status.items():
+            bot = self._bot(identifier)
+            owner = self.model.combatant(bot.owner_id)
+            active = owner is not None and owner.hp > 0
+            painter.rect(FOREST_DARK, row['panel'])
+            painter.rect(BRASS if active else FOREST_LIGHT, row['panel'], 1)
+            painter.text(bot.name+' ATB', row['name'].topleft, role='small', bold=True,
+                         color=IVORY if active else MUTED)
+            self._bar(painter, row['atb'], bot.atb, ATB_YELLOW if active else MUTED)
+            painter.text('Haste · '+str(bot.haste_turns), row['haste'].topleft,
+                         role='small', bold=True,
+                         color=MP_BLUE if active and bot.haste_turns else MUTED)
+
     def draw(self, world_canvas, ui_surface):
         painter = self.game.ui.painter(ui_surface)
         small, name = self._layout(painter)
         self._draw_field(world_canvas)
         pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
         model, player, enemy = self.model, self.model.player, self.model.enemy
+        self._draw_bot_status(painter)
         enemy_x = 119 if len(model.party) > 1 else 126
         painter.text(enemy.name, (enemy_x+1, 44), role='name', color=FOREST_DARK, anchor='center', bold=True)
         painter.text(enemy.name, (enemy_x, 43), role='name', anchor='center', bold=True)
@@ -590,8 +690,10 @@ class BattleScene:
         positions = self._positions()
         for popup in self._popups:
             if len(model.party) > 1:
+                if popup['target'] not in positions:continue
                 point = positions[popup['target']]
-                x, y = point.x, point.y-(120 if popup['target'] == 'enemy' else 85)
+                x, y = point.x, point.y-(120 if popup['target'] == 'enemy' else
+                                         18 if self._bot(popup['target']) else 85)
             else:
                 x, y = (354 if popup['target'] == 'player' else 126), 99
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)

@@ -36,9 +36,9 @@
     "mira": {
       "name": "Mira",
       "job": "Machinist",
-      "skills": {},
+      "skills": {"overclock": {"unlock": "starting"}},
       "spells": {},
-      "abilities": {}
+      "abilities": {"rivet": {"unlock": "starting"}}
     },
     "lucan": {
       "name": "Lucan",

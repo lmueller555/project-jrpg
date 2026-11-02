@@ -97,7 +97,7 @@ class MillQuest:
                 and not self.legacy_bypass
                 and ('intake' not in self.inspected or self.restored))
     @property
-    def mira_spear_stowed(self):
+    def mira_weapon_stowed(self):
         return (self.active and self._done('meet_mira') and not self.legacy_bypass
                 and 'intake' in self.inspected and not self.restored)
     @property

@@ -92,7 +92,7 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.model.ready_actor, 'mira')
         self.click(self.scene.command_rects['attack'].center)
         self.assertEqual((self.model.current_action.actor, self.model.current_action.action),
-                         ('mira', 'spear_thrust'))
+                         ('mira', 'bolt_shot'))
         self.assertEqual(self.model.player.atb, 1)
         self.assertEqual(self.model.combatant('mira').atb, 0)
 

@@ -54,11 +54,19 @@
     },
     {
       "speaker": "caelan",
-      "text": "Shall I carry anything?"
+      "text": "Taking Rivet? He earned his keep on that jammed hinge."
     },
     {
       "speaker": "mira",
-      "text": "I’ve got my tools. I’ll bring the spear as well, in case we have to go upriver. Come on—we’ll see what the wheel’s doing before he takes anything apart."
+      "text": "He’s folded into my kit. Four good legs, and I’m still carrying him."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Shall I take the tools, then?"
+    },
+    {
+      "speaker": "mira",
+      "text": "I’ve got them. The bolt launcher’s coming too, in case we go upriver. Let’s see the wheel before Halden takes it apart."
     }
   ],
   "mechanism": [
@@ -516,7 +524,7 @@
     },
     {
       "speaker": "mira",
-      "text": "*checks the spearhead* I’d rather have this with me."
+      "text": "*checks the launcher’s spring catch* I’d rather have a few bolts between us and trouble."
     },
     {
       "speaker": "caelan",
@@ -546,7 +554,7 @@
     },
     {
       "speaker": "mira",
-      "text": "*her expression tightens* I see it. Stay with me."
+      "text": "I see it. Stay with me. Rivet’s with us."
     },
     {
       "speaker": "caelan",
@@ -589,7 +597,7 @@
     },
     {
       "speaker": "mira",
-      "text": "I had the better reach. I was glad to have you beside me."
+      "text": "The launcher let me stand clear, and Rivet watched our flank. I was glad to have you beside me."
     },
     {
       "speaker": "caelan",
@@ -601,7 +609,7 @@
     },
     {
       "speaker": "mira",
-      "text": "We’ll take the bank slowly. The intake’s just ahead."
+      "text": "Rivet’s folded away. We’ll take the bank slowly. The intake’s just ahead."
     },
     {
       "speaker": "caelan",
@@ -655,7 +663,7 @@
     },
     {
       "speaker": "mira",
-      "text": "*checks the spearhead* I’d rather have this with me."
+      "text": "*checks the launcher’s spring catch* I’d rather have a few bolts between us and trouble."
     },
     {
       "speaker": "caelan",
@@ -687,7 +695,7 @@
     },
     {
       "speaker": "mira",
-      "text": "*sets the spear safely beside the screen* Let me set this down. We’ll need the tools now."
+      "text": "*secures the bolt launcher beside the screen* We’ll need both hands for the tools now."
     },
     {
       "speaker": "caelan",
@@ -827,7 +835,7 @@
     },
     {
       "speaker": "mira",
-      "text": "I had the better reach. Can you stand?"
+      "text": "I could stand back and aim. Can you stand?"
     },
     {
       "speaker": "caelan",
@@ -835,7 +843,7 @@
     },
     {
       "speaker": "mira",
-      "text": "*helps him up and checks the bandage* Keep beside me. We’ll take the bank slowly."
+      "text": "*helps him up and checks the bandage* Rivet’s back in the kit. Keep beside me. We’ll take the bank slowly."
     },
     {
       "speaker": "caelan",
@@ -848,6 +856,20 @@
     {
       "speaker": "caelan",
       "text": "*picks up the tool roll* Let’s see if that’s where our limb ended up."
+    }
+  ],
+  "repair_done_combat": [
+    {
+      "speaker": "mira",
+      "text": "*with relief* There. Hold it a moment… Good. You can let go."
+    },
+    {
+      "speaker": "caelan",
+      "text": "That’s the water coming through."
+    },
+    {
+      "speaker": "mira",
+      "text": "It is. I’ll get the launcher. Let’s go back and see what the wheel makes of it."
     }
   ]
 }

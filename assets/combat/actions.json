@@ -6,9 +6,11 @@
     "flee": {"name": "Flee", "kind": "flee", "potency": 0, "mp_cost": 0, "duration": 0.7, "impact_at": 0.35, "animation": "flee", "target": "none"},
     "aether_dart": {"name": "Aether Dart", "kind": "magical", "potency": 2, "mp_cost": 4, "duration": 0.9, "impact_at": 0.5, "animation": "cast", "target": "opponent"},
     "aether_edge": {"name": "Aether Edge", "kind": "enchant", "potency": 0.5, "mp_cost": 4, "duration": 0.9, "impact_at": 0.5, "animation": "cast", "target": "self", "weapon_hits": 3},
+    "overclock": {"name": "Overclock", "kind": "haste", "potency": 0, "mp_cost": 5, "duration": 0.9, "impact_at": 0.5, "animation": "overclock", "target": "owned_bot", "turns": 8, "rate_multiplier": 1.5},
     "bite": {"name": "Bite", "kind": "physical", "potency": 1, "mp_cost": 0, "duration": 0.72, "impact_at": 0.36, "animation": "bite", "target": "opponent"},
     "wing_gust": {"name": "Wing Gust", "kind": "magical", "potency": 1.5, "mp_cost": 2, "duration": 0.85, "impact_at": 0.45, "animation": "gust", "target": "opponent"},
-    "spear_thrust": {"name": "Spear Thrust", "kind": "physical", "potency": 1.5, "mp_cost": 0, "duration": 0.8, "impact_at": 0.4, "animation": "attack", "target": "opponent"},
+    "bolt_shot": {"name": "Bolt Shot", "kind": "physical", "potency": 0.75, "mp_cost": 0, "duration": 0.8, "impact_at": 0.4, "animation": "attack", "target": "opponent"},
+    "piston_jab": {"name": "Piston Jab", "kind": "physical", "potency": 1, "mp_cost": 0, "duration": 0.8, "impact_at": 0.4, "animation": "attack", "target": "opponent"},
     "tusk_strike": {"name": "Tusk Strike", "kind": "physical", "potency": 1, "mp_cost": 0, "duration": 0.9, "impact_at": 0.45, "animation": "attack", "target": "opponent"},
     "prepare_charge": {"name": "Lowered Tusks", "kind": "prepare", "potency": 0, "mp_cost": 0, "duration": 0.8, "impact_at": 0.4, "animation": "prepare", "target": "self"},
     "tusker_charge": {"name": "Bankbreaker Charge", "kind": "physical", "potency": 1.5, "mp_cost": 0, "duration": 1.0, "impact_at": 0.5, "animation": "charge", "target": "opponent"}

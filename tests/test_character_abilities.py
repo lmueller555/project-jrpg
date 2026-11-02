@@ -64,7 +64,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertFalse(any(record['category'] == 'weapons'
                              for record in Inventory().definitions.values()))
 
-    def test_future_character_profiles_are_registered_without_free_skills(self):
+    def test_character_profiles_register_miras_starters_without_granting_other_guests_skills(self):
         expected = {'caelan': ('Caelan', 'Spellblade'), 'mira': ('Mira', 'Machinist'),
                     'lucan': ('Lucan', 'Knight'), 'rhea': ('Rhea', 'Aethermage'),
                     'edran': ('Edran', 'Sage')}
@@ -75,7 +75,15 @@ class CharacterAbilitiesTests(unittest.TestCase):
                 self.assertEqual((profile['name'], profile['job']), (name, job))
                 self.assertTrue(all(isinstance(profile[key], dict)
                                     for key in ('skills', 'spells', 'abilities')))
-                if identifier != 'caelan':
+                if identifier == 'mira':
+                    self.assertEqual(self.abilities.known_abilities(identifier),
+                                     frozenset({'overclock', 'rivet'}))
+                    self.assertEqual(self.abilities.skill_ids(identifier), ('overclock',))
+                    self.assertFalse(self.abilities.has_weapon(identifier))
+                    self.assertEqual(profile['skills'], {'overclock': {'unlock': 'starting'}})
+                    self.assertEqual(profile['abilities'], {'rivet': {'unlock': 'starting'}})
+                    self.assertEqual(profile['spells'], {})
+                elif identifier != 'caelan':
                     self.assertEqual(self.abilities.known_abilities(identifier), frozenset())
                     self.assertEqual(self.abilities.skill_ids(identifier), ())
                     self.assertFalse(self.abilities.has_weapon(identifier))
@@ -109,7 +117,9 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks', 'aether_edge'}))
         self.assertEqual(self.abilities.skill_ids(), ('aether_edge',))
         self.assertEqual(self.lattice.to_dict(), before_lattice)
-        for identifier in ('mira', 'lucan', 'rhea', 'edran'):
+        self.assertEqual(self.abilities.known_abilities('mira'), frozenset({'overclock', 'rivet'}))
+        self.assertEqual(self.abilities.skill_ids('mira'), ('overclock',))
+        for identifier in ('lucan', 'rhea', 'edran'):
             self.assertEqual(self.abilities.known_abilities(identifier), frozenset())
 
     def test_equip_requires_owned_weapon_and_first_weapon_history_survives_unequip(self):
@@ -160,7 +170,8 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertEqual(self.inventory.quantity('fixture_blade'), 2)
         self.assertTrue(self.abilities.has_weapon())
         self.assertTrue(self.abilities.has_weapon('mira'))
-        self.assertEqual(self.abilities.known_abilities('mira'), frozenset())
+        self.assertEqual(self.abilities.known_abilities('mira'), frozenset({'overclock', 'rivet'}))
+        self.assertEqual(self.abilities.skill_ids('mira'), ('overclock',))
         self.assertTrue(self.abilities.acquire_weapon('lucan', 'fixture_blade'))
         self.assertEqual(self.inventory.quantity('fixture_blade'), 3)
         self.assertTrue(self.abilities.has_weapon('lucan'))

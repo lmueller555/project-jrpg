@@ -40,6 +40,7 @@ from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
 from character_abilities import CharacterAbilities
+from bot_loadouts import BotLoadouts
 from status_ui import StatusUI
 from aether_lattice import AetherLattice
 from lattice_progression import LatticeProgression
@@ -442,6 +443,7 @@ class Game:
         self.attributes=CharacterAttributes('caelan')
         self.lattice=AetherLattice()
         self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
+        self.bot_loadouts=BotLoadouts()
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.social=SocialSystem(self)
         self._mouse_held=False
@@ -519,6 +521,7 @@ class Game:
                            'inventory':self.inventory.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
+                           'bot_loadouts':self.bot_loadouts.to_dict(),
                            'aether_lattice':self.lattice.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
@@ -594,6 +597,7 @@ class Game:
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                LatticeProgression.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
+               BotLoadouts.valid_journey(data) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
@@ -706,6 +710,8 @@ class Game:
             self.exterior_position.update(data['exterior_position'])
         self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
         if data is not None:self.character_abilities.restore(data.get('character_abilities'))
+        self.bot_loadouts=BotLoadouts()
+        if data is not None and 'bot_loadouts' in data:self.bot_loadouts.restore(data['bot_loadouts'])
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.overworld_travel.restore(data.get('overworld') if data else None)
         # Residents resume their own routines on launch. A saved standing spot
@@ -793,6 +799,7 @@ class Game:
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
+              'bot_loadouts':self.bot_loadouts.to_dict(),
               'aether_lattice':self.lattice.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),

@@ -2,8 +2,8 @@
 
 MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
 fight a Ridgeback Tusker together before inspecting the blocked mill intake.
-Mira is a temporary, player-controlled guest with a short spear, her own
-attributes, commands, HP/MP and ATB. The warning, encounter and linear
+Mira is a temporary, player-controlled Machinist with a bolt launcher, her own
+attributes, commands, HP/MP and ATB, and the autonomous bot Rivet. The warning, encounter and linear
 aftermath lead into the quest's existing small spell and mechanical repair.
 
 The repeatable **test Bat** is available in Eldenmere independently of MQ02 or
@@ -190,10 +190,18 @@ halves the next incoming hit against that character and survives the harmless
 preparation turn.
 
 Mira has HP 300, MP 30, Str 20, Mag 12, Spr 12, Def 18, M. Def 14, Speed 12, Acc 16,
-Eva 12 and Lck 10. Her Attack resolves to Spear Thrust at potency 1.5. Against
-the Tusker, Caelan's punch deals 16–17 and her spear deals 96–106. A Tusker
-charge deals 66–73 against Caelan, or 33–36 when guarded. These values use the
-approved formula and 95–105% per-hit variance.
+Eva 12 and Lck 10. Her Attack resolves to Bolt Shot at potency 0.75. Rivet
+automatically joins with empty ATB and uses Piston Jab at potency 1.0, drawing
+its strength from Mira. At fixed 100% variance against the Tusker, Caelan's
+punch deals 16, Mira's bolt 50 and Rivet's jab 67. A Tusker charge deals
+66–73 against Caelan, or 33–36 when guarded. Damage uses the approved formula
+and 95–105% per-hit variance. The launcher and bot are balanced together.
+
+Mira starts with Overclock under Skills: 5 MP and one normal turn grants her
+active bot Haste for eight completed bot actions. Haste multiplies its final
+ATB fill rate by 1.5; recasting refreshes eight turns without stacking. Rivet
+has no health bar, cannot be targeted, and suspends while Mira is incapacitated.
+It does not count toward party survival. See [Mira's bot rules](MIRA_BOTS.md).
 
 The encounter's natural Mira guidance follows readiness, her first turn,
 the targeted charge tell and the resulting hit. Short interface hints explain
@@ -204,7 +212,7 @@ can choose other actions; the creature is never held at artificial minimum HP.
 The new battlefield looks south/southwest toward distant Eldenmere, with the
 river along the near left bank, reeds, exposed roots and freshly broken timber.
 A visible Tusker and damaged tree mark the actual upstream approach. Mira
-carries her spear from the workbench, sets it aside during intake work and
+carries her launcher from the workbench, sets it aside during intake work and
 takes it up for the return. See the [actual MQ02 review](reviews/mill_combat/README.md).
 
 Victory grants Caelan 30 RP and one Aether Emerald once on Spoils, and commits

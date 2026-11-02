@@ -14,6 +14,8 @@ from pathlib import Path
 import random
 
 from character_attributes import ATTRIBUTE_IDS, ATTRIBUTE_CAPS
+from character_abilities import starting_abilities
+from bot_loadouts import load_bot_definitions, starting_battle_loadouts
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
 
@@ -22,10 +24,11 @@ ROOT = Path(__file__).resolve().parent
 ACTION_PATH = ROOT/'assets/combat/actions.json'
 ENEMY_PATH = ROOT/'assets/combat/enemies.json'
 GUEST_PATH = ROOT/'assets/combat/guests.json'
+BOT_PATH = ROOT/'assets/combat/bots.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
-SUPPORTED_SKILL_ACTIONS = ('aether_edge',)
+SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'overclock')
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
 
@@ -51,11 +54,13 @@ def load_actions(data=None):
         if (not isinstance(identifier, str) or not identifier
                 or not isinstance(action, dict)
                 or set(action) != (fields | {'weapon_hits'}
-                                   if action.get('kind') == 'enchant' else fields)
+                                   if action.get('kind') == 'enchant' else
+                                   fields | {'turns', 'rate_multiplier'}
+                                   if action.get('kind') == 'haste' else fields)
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant')
-                or action['target'] not in ('opponent', 'self', 'none')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant', 'haste')
+                or action['target'] not in ('opponent', 'self', 'none', 'owned_bot')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
@@ -69,6 +74,12 @@ def load_actions(data=None):
                     or action['animation'] != 'cast'
                     or not _integer(action['weapon_hits'], 1, 999)):
                 raise ValueError('Invalid weapon enchantment')
+        elif action['kind'] == 'haste':
+            if (action['potency'] != 0 or action['target'] != 'owned_bot'
+                    or action['animation'] != 'overclock'
+                    or not _integer(action['turns'], 1, 999)
+                    or not _number(action['rate_multiplier'], 1.001, 10)):
+                raise ValueError('Invalid bot haste')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
               or action['target'] != ('self' if action['kind'] in ('guard', 'prepare') else 'none')):
             raise ValueError('Invalid utility action')
@@ -134,6 +145,18 @@ def load_guests(actions, data=None):
     return deepcopy(data['guests'])
 
 
+def load_bots(actions, data=None):
+    """Validate bot profiles and their free autonomous attacks together."""
+    definitions = load_bot_definitions(data)
+    for bot in definitions.values():
+        for identifier in bot['ability_ids']:
+            if (identifier not in actions or actions[identifier]['kind'] != 'physical'
+                    or actions[identifier]['target'] != 'opponent'
+                    or actions[identifier]['mp_cost'] != 0):
+                raise ValueError('Invalid autonomous bot action')
+    return definitions
+
+
 @dataclass
 class Combatant:
     identifier: str
@@ -152,6 +175,21 @@ class Combatant:
 
     @property
     def max_mp(self):return self.value('mp')
+
+
+@dataclass
+class BotUnit:
+    """An untargetable battle attachment; it owns no health or magic resource."""
+    identifier: str
+    owner_id: str
+    name: str
+    attributes: dict
+    ability_id: str
+    atb: float = 0.0
+    haste_turns: int = 0
+    haste_rate_multiplier: float = 1.5
+
+    def value(self, identifier):return self.attributes[identifier]
 
 
 @dataclass
@@ -179,7 +217,8 @@ class BattleModel:
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
-                 enemy_data=None, guest_data=None):
+                 enemy_data=None, guest_data=None, bot_loadouts=None,
+                 guest_abilities=None):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -213,6 +252,11 @@ class BattleModel:
             # An explicitly supplied catalog must be valid even without a guest.
             load_guests(self.actions, guest_data)
         self.party = tuple(members)
+        self.guest_abilities = self._guest_ability_map(guest_abilities)
+        self.bot_definitions = load_bots(self.actions)
+        self.bots = self._make_bots(bot_loadouts)
+        self._bot_owner_alive = {bot.identifier: bool(self.combatant(bot.owner_id).hp)
+                                 for bot in self.bots}
         self._active_actor = 'player'
         self.enemy_id = enemy_id
         self.enemy_definition = deepcopy(enemies[enemy_id])
@@ -226,6 +270,9 @@ class BattleModel:
         self.phase = 'charging' if any(member.hp for member in self.party) else 'defeat'
         self.current_action = self.last_action = None
         self.events = []
+        for bot in self.bots:
+            self.events.append({'type': 'bot_deployed', 'actor': bot.identifier,
+                                'owner': bot.owner_id})
         self.message = 'A Bat approaches!' if enemy_id == 'bat' else self.enemy.name+' approaches!'
         self._pending_outcome = None
         self._enemy_action_index = 0
@@ -239,11 +286,62 @@ class BattleModel:
     def ended(self):return self.phase in RESULT_PHASES
 
     @staticmethod
-    def atb_rate(combatant):return .12+.004*combatant.value('speed')
+    def atb_rate(combatant):
+        rate = .12+.004*combatant.value('speed')
+        if isinstance(combatant, BotUnit) and combatant.haste_turns:
+            rate *= combatant.haste_rate_multiplier
+        return rate
 
     def combatant(self, identifier):
         if identifier == 'enemy':return self.enemy
-        return next((member for member in self.party if member.identifier == identifier), None)
+        return next((member for member in (*self.party, *self.bots)
+                     if member.identifier == identifier), None)
+
+    def bot_for(self, owner_id='mira'):
+        return next((bot for bot in self.bots if bot.owner_id == owner_id), None)
+
+    def active_bot(self, owner_id='mira'):
+        bot = self.bot_for(owner_id)
+        owner = self._party_actor(owner_id)
+        return bot if bot is not None and owner is not None and owner.hp and not self.ended else None
+
+    def _guest_ability_map(self, supplied):
+        if supplied is None:
+            return {member.identifier: starting_abilities(member.identifier)
+                    for member in self.party if member.identifier != 'player'}
+        if (not isinstance(supplied, dict)
+                or any(not isinstance(owner, str) or not owner
+                       or not isinstance(known, (tuple, list, set, frozenset))
+                       or any(not isinstance(key, str) or not key for key in known)
+                       for owner, known in supplied.items())):
+            raise ValueError('Invalid guest abilities')
+        return {owner: frozenset(known) for owner, known in supplied.items()}
+
+    def _make_bots(self, supplied):
+        if supplied is None:supplied = starting_battle_loadouts()
+        if not isinstance(supplied, dict):raise ValueError('Invalid battle bot loadouts')
+        bots = []
+        used = set()
+        for owner_id, loadout in supplied.items():
+            if (not isinstance(owner_id, str) or not owner_id
+                    or not isinstance(loadout, dict) or set(loadout) != {'bot_id', 'ability_id'}
+                    or not isinstance(loadout['bot_id'], str)
+                    or loadout['bot_id'] not in self.bot_definitions):
+                raise ValueError('Invalid battle bot loadout')
+            identifier = loadout['bot_id']
+            definition = self.bot_definitions[identifier]
+            if (definition['owner_id'] != owner_id or identifier in used
+                    or not isinstance(loadout['ability_id'], str)
+                    or loadout['ability_id'] not in definition['ability_ids']):
+                raise ValueError('Invalid battle bot loadout')
+            used.add(identifier)
+            owner = self._party_actor(owner_id)
+            if owner is None:continue
+            attributes = dict(definition['attributes'])
+            attributes['str'] = owner.value('str')
+            bots.append(BotUnit(identifier, owner_id, definition['name'], attributes,
+                                loadout['ability_id']))
+        return tuple(bots)
 
     @property
     def active_player(self):
@@ -271,15 +369,19 @@ class BattleModel:
     def available_actions(self, actor_id=None):
         actor = self._party_actor(actor_id)
         if actor is None:return []
-        if actor.identifier != 'player':return list(PLAYER_ACTIONS)
+        if actor.identifier != 'player':return list(PLAYER_ACTIONS)+self.skill_actions(actor.identifier)
         return list(PLAYER_ACTIONS)+[key for key in SUPPORTED_LEARNED_ACTIONS
                                     if key in self.learned_abilities]+self.skill_actions(actor.identifier)
 
     def skill_actions(self, actor_id=None):
-        """Implemented weapon skills owned by this party member."""
+        """Implemented skills owned by this party member."""
         actor = self._party_actor(actor_id)
-        if actor is None or actor.identifier != 'player':return []
-        return [key for key in SUPPORTED_SKILL_ACTIONS if key in self.learned_abilities]
+        if actor is None:return []
+        if actor.identifier == 'player':
+            return ['aether_edge'] if 'aether_edge' in self.learned_abilities else []
+        if actor.identifier == 'mira' and 'overclock' in self.guest_abilities.get('mira', ()):
+            return ['overclock']
+        return []
 
     def command_actions(self, actor_id=None):
         """Root commands include the Skills submenu, never a synthetic action."""
@@ -312,8 +414,10 @@ class BattleModel:
             return 'This action is not available.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
-        if identifier in SUPPORTED_SKILL_ACTIONS and not self.weapon_equipped:
+        if identifier == 'aether_edge' and not self.weapon_equipped:
             return 'Requires a weapon.'
+        if identifier == 'overclock' and self.active_bot(actor.identifier) is None:
+            return 'Requires an active bot.'
         if actor.mp < self.actions[self._action_id(identifier, actor)]['mp_cost']:
             return 'Not enough MP.'
         return ''
@@ -333,8 +437,9 @@ class BattleModel:
         living = [member for member in self.party if member.hp]
         if not living:return None
         if identifier == 'tusker_charge' and self.telegraphed_target:
-            target = self.combatant(self.telegraphed_target)
-            if target is not None and target.hp:return target.identifier
+            target = next((member for member in living
+                           if member.identifier == self.telegraphed_target), None)
+            if target is not None:return target.identifier
         if self.enemy_id == 'ridgeback_tusker' and identifier == 'tusk_strike':
             mira = self.combatant('mira')
             if mira is not None and mira.hp:return 'mira'
@@ -343,11 +448,14 @@ class BattleModel:
     def _start_action(self, actor_id, identifier):
         actor = self.combatant(actor_id)
         record = self.actions[identifier]
-        actor.mp -= record['mp_cost']
+        if not isinstance(actor, BotUnit):actor.mp -= record['mp_cost']
         actor.atb = 0.0
         target = 'enemy' if actor_id != 'enemy' else self._enemy_target(identifier)
         if record['target'] == 'self':target = actor_id
         elif record['target'] == 'none':target = None
+        elif record['target'] == 'owned_bot':
+            bot = self.active_bot(actor_id)
+            target = bot.identifier if bot is not None else None
         self.current_action = BattleAction(actor_id, identifier, target, record['name'],
                                           record['kind'], record['animation'],
                                           record['duration'], record['impact_at'])
@@ -388,12 +496,25 @@ class BattleModel:
             self.events.append({'type': 'enchant', 'actor': action.actor,
                                 'action': action.action,
                                 'remaining_hits': actor.aether_edge_hits})
+        elif action.kind == 'haste':
+            bot = self.active_bot(action.actor)
+            if bot is not None and bot.identifier == action.target:
+                record = self.actions[action.action]
+                bot.haste_turns = record['turns']
+                bot.haste_rate_multiplier = record['rate_multiplier']
+                self.message = actor.name+' overclocks '+bot.name+'.'
+                self.events.append({'type': 'haste_applied', 'actor': action.actor,
+                                    'target': bot.identifier, 'action': action.action,
+                                    'remaining_turns': bot.haste_turns,
+                                    'rate_multiplier': bot.haste_rate_multiplier})
         else:
             target = self.combatant(action.target)
             protected = target.guarded
             calculator = physical_damage if action.kind == 'physical' else magical_damage
             variance = roll_variance(self.rng)
-            action.damage = calculator(actor, target, self.actions[action.action]['potency'],
+            source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
+            if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
+            action.damage = calculator(source, target, self.actions[action.action]['potency'],
                                        protected=protected, variance_percent=variance)
             enchanted = (action.actor == 'player' and self.weapon_equipped
                          and action.kind == 'physical' and actor.aether_edge_hits > 0)
@@ -416,10 +537,19 @@ class BattleModel:
                 target.atb = 0.0
                 if action.target == 'enemy':self._pending_outcome = 'victory'
                 elif not any(member.hp for member in self.party):self._pending_outcome = 'defeat'
+            self._sync_bot_activity()
         action.resolved = True
 
     def _result(self, outcome):
         for actor in (*self.party, self.enemy):actor.aether_edge_hits = 0
+        for bot in self.bots:
+            bot.atb = 0.0
+            bot.haste_turns = 0
+            bot.haste_rate_multiplier = 1.5
+            self.events.append({'type': 'bot_removed', 'actor': bot.identifier,
+                                'owner': bot.owner_id})
+        self.bots = ()
+        self._bot_owner_alive.clear()
         self.phase = outcome
         defeat = ('The party has fallen.' if len(self.party) > 1
                   else self.player.name+' has fallen.')
@@ -431,11 +561,33 @@ class BattleModel:
         for combatant in (*self.party, self.enemy):
             if combatant.hp:
                 combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*seconds)
+        for bot in self.bots:
+            if self.active_bot(bot.owner_id) is bot:
+                bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*seconds)
+
+    def _sync_bot_activity(self):
+        for bot in self.bots:
+            alive = bool(self._party_actor(bot.owner_id).hp)
+            if alive != self._bot_owner_alive[bot.identifier]:
+                self._bot_owner_alive[bot.identifier] = alive
+                self.events.append({'type': 'bot_resumed' if alive else 'bot_suspended',
+                                    'actor': bot.identifier, 'owner': bot.owner_id})
+
+    def _complete_bot_action(self, action):
+        bot = self.combatant(action.actor)
+        if not isinstance(bot, BotUnit) or not bot.haste_turns:return
+        bot.haste_turns -= 1
+        self.events.append({'type': 'haste_tick', 'actor': bot.identifier,
+                            'remaining_turns': bot.haste_turns})
+        if not bot.haste_turns:
+            self.events.append({'type': 'haste_expired', 'actor': bot.identifier,
+                                'remaining_turns': 0})
 
     def update(self, seconds):
         """Consume time through exact gauge/impact boundaries; choice time is free."""
         if type(seconds) not in (int, float):raise TypeError('Battle time must be numeric')
         if not math.isfinite(seconds) or seconds < 0:raise ValueError('Invalid battle time')
+        self._sync_bot_activity()
         remaining = float(seconds)
         while True:
             if self.ended or self.waiting_for_player:return
@@ -444,31 +596,42 @@ class BattleModel:
                 if not living:
                     self._result('defeat')
                     return
-                member = min(living, key=lambda actor: max(0.0, (1-actor.atb)/self.atb_rate(actor)))
-                player_time = max(0.0, (1-member.atb)/self.atb_rate(member))
-                enemy_time = max(0.0, (1-self.enemy.atb)/self.atb_rate(self.enemy))
-                player_first = player_time <= enemy_time+EPSILON
-                boundary = player_time if player_first else enemy_time
+                candidates = [*living, *(bot for bot in self.bots
+                                         if self.active_bot(bot.owner_id) is bot), self.enemy]
+                times = [(actor, max(0.0, (1-actor.atb)/self.atb_rate(actor)))
+                         for actor in candidates]
+                earliest = min(time for actor, time in times)
+                member, boundary = next((actor, time) for actor, time in times
+                                        if time <= earliest+EPSILON)
                 if remaining+EPSILON < boundary:
                     self._advance_gauges(remaining)
                     return
                 self._advance_gauges(boundary)
                 remaining = max(0.0, remaining-boundary)
-                if player_first:
+                if member in living:
                     member.atb = 1.0
                     self._active_actor = member.identifier
                     self.phase = 'ready'
                     self.message = 'Choose an action.'
                     self.events.append({'type': 'player_ready', 'actor': member.identifier})
                     return
-                self.enemy.atb = 1.0
-                self._start_enemy_action()
+                member.atb = 1.0
+                if isinstance(member, BotUnit):
+                    self._start_action(member.identifier, member.ability_id)
+                else:self._start_enemy_action()
             elif self.phase == 'acting':
                 action = self.current_action
+                actor = self.combatant(action.actor)
+                if isinstance(actor, BotUnit) and self.active_bot(actor.owner_id) is None:
+                    if not any(member.hp for member in self.party):
+                        self.last_action, self.current_action = action, None
+                        self._result('defeat')
+                    return
                 if not action.resolved and action.elapsed+EPSILON >= action.impact_at:
                     self._resolve_action()
                 if action.elapsed+EPSILON >= action.duration:
                     action.elapsed = action.duration
+                    self._complete_bot_action(action)
                     self.last_action, self.current_action = action, None
                     if self._pending_outcome is not None:
                         self._result(self._pending_outcome)

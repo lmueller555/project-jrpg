@@ -27,6 +27,7 @@ class PartyBattleModelTests(unittest.TestCase):
         return (model.phase, model.ready_actor, model.telegraphed_target,
                 [(member.identifier, member.hp, member.mp, round(member.atb, 9),
                   member.guarded) for member in (*model.party, model.enemy)],
+                [(bot.identifier, round(bot.atb, 9), bot.haste_turns) for bot in model.bots],
                 deepcopy(model.current_action), deepcopy(model.events))
 
     def test_guest_is_a_separate_fixed_profile_with_meaningfully_stronger_weapon(self):
@@ -41,11 +42,11 @@ class PartyBattleModelTests(unittest.TestCase):
                          ['tusk_strike', 'prepare_charge', 'tusker_charge'])
         model.update(1000)
         self.assertEqual(model.ready_actor, 'mira')
-        self.assertEqual(model.available_actions(), ['attack', 'guard', 'flee'])
+        self.assertEqual(model.available_actions(), ['attack', 'guard', 'flee', 'overclock'])
         self.assertTrue(model.choose_action('attack'))
-        self.assertEqual(model.current_action.action, 'spear_thrust')
+        self.assertEqual(model.current_action.action, 'bolt_shot')
         model.update(.4)
-        self.assertEqual(model.current_action.damage, 101)
+        self.assertEqual(model.current_action.damage, 50)
         model.update(1000)
         self.assertEqual(model.ready_actor, 'player')
         self.assertTrue(model.choose_action('attack'))
@@ -64,7 +65,8 @@ class PartyBattleModelTests(unittest.TestCase):
         before = self.snapshot(model)
         for seconds in (.1, 7, 10000):model.update(seconds)
         self.assertEqual(self.snapshot(model), before)
-        self.assertEqual(model.events, [{'type': 'player_ready', 'actor': 'mira'}])
+        self.assertEqual(model.events, [{'type': 'bot_deployed', 'actor': 'rivet', 'owner': 'mira'},
+                                       {'type': 'player_ready', 'actor': 'mira'}])
 
     def test_simultaneous_party_readiness_allows_selection_before_enemy_turn(self):
         guests = json.loads(GUEST_PATH.read_text())

@@ -64,22 +64,22 @@ class MillCombatStoryTests(unittest.TestCase):
         controller.game.save_progress.assert_not_called()
         self.assertTrue(MillQuest.valid_snapshot(controller.to_dict()))
 
-    def test_spear_is_carried_out_stowed_for_tools_and_carried_home(self):
+    def test_weapon_is_carried_out_stowed_for_tools_and_carried_home(self):
         controller = self.controller(warned=True)
         self.assertTrue(controller.mira_armed)
-        self.assertFalse(controller.mira_spear_stowed)
+        self.assertFalse(controller.mira_weapon_stowed)
         self.assertTrue(controller.battle_won())
         self.assertTrue(controller._aftermath_finished())
         controller._record_inspection('intake')
         self.assertFalse(controller.mira_armed)
-        self.assertTrue(controller.mira_spear_stowed)
+        self.assertTrue(controller.mira_weapon_stowed)
         for objective, fact in (('prepare_intake', 'prepared'), ('small_spell', 'spell_done')):
             self.assertTrue(controller._complete(objective))
             setattr(controller, fact, True)
         controller.encouraged = True
         self.assertTrue(controller._complete('repair_intake'));controller.restored = True
         self.assertTrue(controller.mira_armed)
-        self.assertFalse(controller.mira_spear_stowed)
+        self.assertFalse(controller.mira_weapon_stowed)
         self.assertTrue(controller._complete('verify_mill'));controller.verified = True
         self.assertTrue(controller._complete('report'))
         self.assertTrue(controller.game.quests.turn_in(MILL_QUEST, 'mira_worker'))
@@ -155,7 +155,7 @@ class MillCombatStoryTests(unittest.TestCase):
         self.assertFalse(any('rest' in line['text'].lower() for line in lines['aftermath']))
         self.assertTrue(any('tusker' in line['text'].lower() for line in lines['resolution_combat']))
         self.assertFalse(any('tusker' in line['text'].lower() for line in lines['resolution']))
-        self.assertTrue(any('spear' in line['text'] for line in lines['warning']))
+        self.assertTrue(any('spring catch' in line['text'] for line in lines['warning']))
         self.assertTrue(any('bandage' in line['text'] for line in lines['aftermath_recovered']))
         self.assertTrue(any('tree' in line['text'] for line in lines['encounter_intro']))
         self.assertEqual([(line['speaker'], line['text']) for line in lines['encounter_intro']
