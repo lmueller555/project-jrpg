@@ -81,14 +81,31 @@ class RegionalAudioTests(TestCase):
         self.assertTrue(self.a.failed)
     def test_expired_oneshot_releases_even_when_clock_runs_offline(self):
         self.a.play(self.source());self.a.update(.5);self.assertFalse(self.a.voices)
-    def test_nearest_river_and_real_patch_geometry_without_chunks(self):
+    def test_nearest_river_geometry_without_chunks(self):
         self.g.world.region={'terrain':{'rivers':[{'points':[(0,0),(0,10)],'width':2}],
             'fields':[{'crop':'grain','polygon':[(10,0),(20,0),(20,10),(10,10)]}]}}
         self.g.player.position.update(48,120)
-        sources=list(self.a.ambient_sources());self.assertEqual(len(sources),2)
-        self.assertEqual(sources[0].point(),(24,120));self.assertEqual(sources[1].point(),(240,120))
+        sources=list(self.a.ambient_sources());self.assertEqual(len(sources),1)
+        self.assertEqual(sources[0].point(),(24,120))
         self.a.update(.1);self.g.player.position.update(48,180);self.a.update(.1)
         self.assertEqual(self.a.voices['river'][0].point(),(24,180))
+    def test_forests_grain_and_orchards_do_not_emit_ambient_sound(self):
+        polygon=[(-10,-10),(10,-10),(10,10),(-10,10)]
+        for terrain in ({'forests':[{'polygon':polygon}]},
+                        {'fields':[{'crop':crop,'polygon':polygon} for crop in ('grain','orchard')]}):
+            with self.subTest(terrain=terrain):
+                self.g.world.region={'terrain':terrain}
+                self.assertEqual(list(self.a.ambient_sources()),[])
+                self.a.update(.1)
+                self.assertFalse(self.a.voices)
+    def test_river_remains_audible_only_near_its_bank(self):
+        self.g.world.region={'terrain':{'rivers':[{'points':[(0,0),(0,10)],'width':2}]}}
+        self.g.player.position.update(48,120);self.a.update(.1)
+        self.assertEqual(set(self.a.voices),{'river'})
+        self.g.player.position.update(24+259,120);self.a.update(.1)
+        self.assertEqual(set(self.a.voices),{'river'})
+        self.g.player.position.update(24+260,120);self.a.update(.1)
+        self.assertFalse(self.a.voices)
     def test_original_pcm_safe_and_distinct(self):
         from regional_audio import DURATIONS
         fingerprints=set()

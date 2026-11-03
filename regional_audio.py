@@ -31,9 +31,9 @@ def distance_gain(distance, near, far):
     return 1-t*t*(3-2*t)
 
 
-DURATIONS = {'river':4., 'wind':6., 'sack':.42, 'rustle':.45,
+DURATIONS = {'river':4., 'sack':.42, 'rustle':.45,
              'creak':.65, 'stone':.24, 'cup':.22,
-             'water':1.05, 'leaves':.48, 'basket':.32,
+             'leaves':.48, 'basket':.32,
              'sheep':.55, 'bird':.22, 'wings':.30}
 
 
@@ -42,11 +42,11 @@ def samples(name, rate, channels):
     rng = random.Random(9182)
     duration = DURATIONS[name]; count = round(rate*duration)
     values = []; low = 0.
-    fade = round(rate*.08) if name in ('river','wind') else 0
+    fade = round(rate*.08) if name == 'river' else 0
     for i in range(count+fade):
         t = i/rate; white = rng.uniform(-1,1)
-        low += (.025 if name == 'wind' else .18)*(white-low)
-        if name in ('river','wind'):
+        low += .18*(white-low)
+        if name == 'river':
             # Periodic modulation and a short cyclic crossfade avoid loop seams.
             swell = .65+.35*math.sin(math.pi*t/duration)**2
             v = (low*.9+white*.08)*swell*.45
@@ -54,11 +54,6 @@ def samples(name, rate, channels):
             env = math.sin(math.pi*t/duration)**2
             v = env*(low*.8+white*.25)*.6
             if name == 'sack':v += .48*math.exp(-23*t)*math.sin(2*math.pi*78*t)*min(1,t/.004)
-        elif name == 'water':
-            # A finite gentle pour: shaped broadband trickle plus small droplets.
-            env = math.sin(math.pi*t/duration)**2
-            droplets = math.sin(2*math.pi*(930*t+150*t*t))
-            v = env*(low*.20+white*.035+droplets*.018)
         elif name == 'leaves':
             env = math.sin(math.pi*t/duration)**2
             v = env*(white*.08+low*.16)*(0.7+0.3*math.sin(41*t)**2)
@@ -93,7 +88,7 @@ def samples(name, rate, channels):
             frequencies = (1180,3079,4210) if name=='cup' else (740,1763,3141)
             v = env*(sum(a*math.sin(2*math.pi*f*t) for a,f in zip((.25,.10,.05),frequencies))+white*(.09 if name=='cup' else .3))
         values.append(v)
-    if name in ('river','wind'):
+    if name == 'river':
         fade = round(rate*.08)
         for i in range(fade):
             t = i/fade
@@ -214,12 +209,12 @@ class RegionalAudio:
             self.play(source)
 
     def ambient_sources(self):
-        from overworld_world import _point_in_polygon, TILE_SIZE
+        from overworld_world import TILE_SIZE
         listener = pygame.Vector2(self.game.player.position)/TILE_SIZE
         terrain = self.game.world.region['terrain']
-        def nearest(points, closed=False):
+        def nearest(points):
             best = None
-            for a,b in zip(points,points[1:]+(points[:1] if closed else [])):
+            for a,b in zip(points,points[1:]):
                 a,b = pygame.Vector2(a),pygame.Vector2(b); d=b-a
                 t = max(0,min(1,(listener-a).dot(d)/d.length_squared())) if d.length_squared() else 0
                 p = a+d*t
@@ -235,12 +230,3 @@ class RegionalAudio:
         if rivers:
             p=min(rivers,key=lambda p:p.distance_squared_to(self.game.player.position))
             yield Source('river','river','water',tuple(p),.55,36,260,1,True)
-        patches=terrain.get('forests',[])+[f for f in terrain.get('fields',[]) if f.get('crop') in ('grain','orchard')]
-        points=[]
-        for patch in patches:
-            polygon=patch['polygon']
-            p=listener if _point_in_polygon(listener,polygon) else nearest(polygon,True)
-            if p is not None:points.append(p*TILE_SIZE)
-        if points:
-            p=min(points,key=lambda p:p.distance_squared_to(self.game.player.position))
-            yield Source('wind','wind','foliage',tuple(p),.45,24,150,0,True)

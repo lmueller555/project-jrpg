@@ -78,7 +78,7 @@ class GardenOrchardTests(unittest.TestCase):
             self.assertEqual(write.call_args.args[0]['overworld']['garden_orchard'],expected)
 
     def test_contact_and_step_still_checkpoint_precise_snapshots(self):
-        self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.7)
+        self.until(lambda:(self.c.action('gardener') or {}).get('sound')=='leaves' and self.c.state['gardener']['elapsed']>.7)
         with mock.patch.object(self.g.save_store,'write',wraps=self.g.save_store.write) as write:
             self.tick(2)
             self.assertEqual(write.call_count,1)
@@ -154,7 +154,7 @@ class GardenOrchardTests(unittest.TestCase):
 
     def test_continue_before_contact_emits_exactly_once_at_actor_position(self):
         seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
-        self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.3)
+        self.until(lambda:(self.c.action('gardener') or {}).get('sound')=='leaves' and self.c.state['gardener']['elapsed']>.3)
         step=self.c.state['gardener']['step'];self.continue_journey()
         with mock.patch.object(self.g.regional_audio,'emit') as emit:
             self.until(lambda:self.c.state['gardener']['step']!=step)
@@ -214,7 +214,7 @@ class GardenOrchardTests(unittest.TestCase):
 
     def test_new_audio_materials_are_bounded_and_finite(self):
         from regional_audio import DURATIONS,samples
-        for name in ('water','leaves','basket'):
+        for name in ('leaves','basket'):
             pcm=samples(name,8000,2)
             self.assertEqual(len(pcm),round(DURATIONS[name]*8000)*2)
             self.assertGreater(max(abs(v) for v in pcm),0)
@@ -222,18 +222,39 @@ class GardenOrchardTests(unittest.TestCase):
             self.assertLess(abs(pcm[-1]),20)
 
     def test_real_contact_uses_allocator_and_hard_distance_cutoff(self):
-        self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.3)
+        self.until(lambda:(self.c.action('gardener') or {}).get('sound')=='leaves' and self.c.state['gardener']['elapsed']>.3)
         self.g.audio.set_effects(1)
         actor=self.c.actors[0]
         self.g.player.position.update(actor.position+(30,0))
         self.until(lambda:self.c.state['gardener']['elapsed']>.8)
-        key='garden_gardener_water'
+        key='garden_gardener_leaves'
         self.assertIn(key,self.g.regional_audio.voices)
         source=self.g.regional_audio.voices[key][0]
         self.assertEqual(tuple(source.point()),tuple(actor.position))
         self.assertLessEqual(len(self.g.regional_audio.voices),4)
         self.g.player.position.update(actor.position+(181,0));self.tick()
         self.assertNotIn(key,self.g.regional_audio.voices)
+
+    def test_filling_and_both_watering_actions_are_silent(self):
+        self.g.audio.set_effects(1)
+        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+            for pose in ('fill','water','water'):
+                self.until(lambda:(self.c.action('gardener') or {}).get('pose')==pose
+                           and self.c.state['gardener']['elapsed']>.3)
+                self.assertEqual(self.c.actors[0].pose,pose)
+                step=self.c.state['gardener']['step']
+                self.until(lambda:self.c.state['gardener']['step']!=step)
+            emit.assert_not_called()
+        self.assertFalse(any(v[0].sound=='water' for v in self.g.regional_audio.voices.values()))
+
+    def test_continue_before_watering_contact_stays_silent(self):
+        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
+        self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.3)
+        step=self.c.state['gardener']['step'];self.continue_journey()
+        self.g.audio.set_effects(1)
+        with mock.patch.object(self.g.regional_audio,'emit') as emit:
+            self.until(lambda:self.c.state['gardener']['step']!=step)
+            emit.assert_not_called()
 
     def test_complete_scene_and_harvest_continue_stays_quiet(self):
         seed_previous_quests(self.g);self.g.world=self.g.overworld_world

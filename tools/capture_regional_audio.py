@@ -96,11 +96,11 @@ def main():
         # Explicit stress fixture at listener: production scheduler, synthetic
         # colocated families. Labelled here, never claimed as authored scenery.
         r.mark('Budget fixture: six candidates; two beds plus two incidental voices')
-        for i,name in enumerate(('river','wind')):
-            g.regional_audio.play(Source('bed_fixture'+str(i),name,'bed_fixture'+str(i),lambda:g.player.position,priority=5,ambient=True))
+        for i in range(2):
+            g.regional_audio.play(Source('bed_fixture'+str(i),'river','bed_fixture'+str(i),lambda:g.player.position,priority=5,ambient=True))
         for i in range(6):
             g.regional_audio.play(Source('budget'+str(i),'creak' if i%2 else 'cup','fixture'+str(i),lambda:g.player.position,priority=3+i))
         assert len(g.regional_audio.voices)==4
-        r.run(2);g.regional_audio.stop();r.mark('Wind within an authored grain patch');position((-1400,720));r.run(4);r.mark('Title releases voices');g.on_title=True;r.run(2);r.close()
+        r.run(2);g.regional_audio.stop();r.mark('No ambient wind within an authored grain patch');position((-1400,720));r.run(4);r.mark('Title releases voices');g.on_title=True;r.run(2);r.close()
     pygame.quit()
 if __name__=='__main__':main()

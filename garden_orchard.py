@@ -24,9 +24,9 @@ def pick(key, pose='weed'):return beat(pose,kind='pickup',item=key,**({'sound':'
 def put(key, point):return beat('sort',kind='put',item=key,point=point,sound='basket',contact=1.8)
 
 GARDEN_WORK=[
- pick('can'), beat('fill',2.2,sound='water'),
- walk((-526,1158),'can'), beat('water',2.4,sound='water',pour=True),
- walk((-526,1126),'can'), beat('water',2.4,sound='water',pour=True),
+ pick('can'), beat('fill',2.2),
+ walk((-526,1158),'can'), beat('water',2.4,pour=True),
+ walk((-526,1126),'can'), beat('water',2.4,pour=True),
  walk(GARDEN,'can'), put('can',(-526,1187)),
  walk((-526,1158)), beat('weed',2.4,sound='leaves'),pick('turnip_0'),
  walk((-526,1196),'turnip_0'),walk((-518,1196),'turnip_0'),put('turnip_0',(-512,1187)),walk((-526,1196)),

@@ -18,15 +18,14 @@ bed continues to the exact hard boundary. This prevents boundary chatter.
 | Sound | Base gain | Near/far (pixels) | Family / priority |
 | --- | --- | --- | --- |
 | River | .55 | 36 / 260 | water / 1 |
-| Crop/woodland wind | .45 | 24 / 150 | foliage / 0 |
 | Sack, cloth, parked lashing | .5 | 32 / 180 | farm / 2 |
 | Tool on stone | .5 | 32 / 180 | masonry / 2 |
 | Cup contacts | .5 | 32 / 180 | ceramic / 3 |
 
 A single river source follows the nearest point on the nearest authored river
-edge. A single wind source follows the nearest authored woodland, grain or
-orchard polygon (zero distance while inside). Neither feature creates tile
-emitters, allocates chunks, or changes cache bounds. Voices retain current
+edge. Forests, grain fields and orchards do not emit ambient wind. River
+placement does not create tile emitters, allocate chunks, or change cache bounds.
+Voices retain current
 source positions, including actor callbacks, while playing. No rolling-cart
 sound is used for the stationary farm cart.
 
@@ -53,10 +52,10 @@ without affecting work controllers. Sounds are generated only for the current
 signed-16-bit mixer format and cached per format; failed playback can retry after
 a journey reset. This PR provides attenuation, not stereo pan or obstruction.
 
-All seven sounds are original deterministic synthesis in `regional_audio.py`:
+Sounds are original deterministic synthesis in `regional_audio.py`:
 filtered noise and low resonance for cloth/sacks, nonharmonic damped partials
 for stone and ceramic, irregular wood resonance for lashings, and filtered
-cyclic noise for water/foliage. No external recordings, licenses, or paid assets.
+cyclic noise for rivers. No external recordings, licenses, or paid assets.
 The PCM and mix leave substantial headroom. Future sources should use new
 families only when they warrant sharing the two incidental slots, retain actual
 physical event hooks, and never enqueue inaudible actions.
@@ -64,10 +63,13 @@ physical event hooks, and never enqueue inaudible actions.
 Run `python -m unittest discover -s tests -v`. Focused coverage lives in
 `test_regional_audio.py` and `test_regional_audio_events.py`; the existing farm,
 bridge, world, save, arrival and audio-setting tests remain regression coverage.
-See [audible review](reviews/regional_audio/README.md) for capture details.
+See [audible review](reviews/regional_audio/README.md) for historical capture
+details; that recording predates the removal of wind audio.
 
-Garden/orchard work adds three finite synthesized materials: a gentle water
-pour, leaf handling, and soft fruit/wicker contact. Their producers live in
+Garden/orchard work uses two finite synthesized materials: leaf handling and
+soft fruit/wicker contact. Filling the can and watering plants are silent;
+their animations, timings and saved action progress are unchanged.
+The remaining sound producers live in
 `garden_orchard.py`, share the `garden_work` incidental family, and emit only at
 physical beats. Contact time persists with the worker action, preventing a
 Continue from repeating an already-heard contact. Existing attenuation, hard
