@@ -8,7 +8,7 @@ from pathlib import Path
 import copy
 import math
 import pygame
-from grain_farm import FarmWorker
+from grain_farm import FarmWorker, held_prop_sort
 
 ROOT=Path(__file__).resolve().parent
 ART=ROOT/'assets/characters/garden_workers'
@@ -88,7 +88,7 @@ class GardenWorker(FarmWorker):
   self.role=role;self.data={'id':'regional_'+role,'name':'Kitchen gardener' if role=='gardener' else 'Orchard picker'}
   self.scene_id='auratia.overworld';self.position=pygame.Vector2(point)
   self.probe_size=(10,6);self.draw_anchor=(20,38)
-  self.facing='front';self.pose='idle';self.clock=0.;self.moving=False;self.frames={}
+  self.facing='front';self.pose='idle';self.clock=0.;self.moving=False;self.frames={};self.action_progress=None
   for direction in ('front','back','left','right'):
    base=ROOT/f'assets/characters/npcs/{variant}'
    self.frames['idle_'+direction]=[self._padded(base/f'idle_{direction}.png')]
@@ -99,6 +99,8 @@ class GardenWorker(FarmWorker):
  def sprite(self,elapsed_ms):
   key=('walk' if self.moving else 'idle') if self.pose=='idle' else self.pose
   frames=self.frames[key+'_'+self.facing]
+  if self.action_progress is not None:
+   return frames[min(len(frames)-1,int(self.action_progress*len(frames)))]
   return frames[int(self.clock/(.17 if self.moving else .65))%len(frames)]
 
 
@@ -132,6 +134,8 @@ class GardenOrchard:
  def _pose(self,a):
   if getattr(a,'wildlife_owned',False):return
   action=self.action(a.role)
+  a.action_progress=(self.state[a.role]['elapsed']/action['duration']
+                     if action and action.get('kind') else None)
   a.draw_anchor=(20,44) if a.role=='picker' and (action is None or action.get('pose')=='rest') else (20,38)
   if action is None:a.pose='rest' if a.role=='picker' else 'idle';a.facing='front';return
   a.pose=action.get('pose',('carry_can' if action.get('carry')=='can' else 'carry') if action.get('carry') else 'idle')
@@ -167,7 +171,7 @@ class GardenOrchard:
    else:
     before=s['elapsed'];s['elapsed']=min(action['duration'],before+dt)
     # Commit the contact time immediately. Continue at this beat cannot replay it.
-    if before<action.get('contact',.75)<=s['elapsed'] and action.get('sound'):
+    if not action.get('kind') and before<action.get('contact',.75)<=s['elapsed'] and action.get('sound'):
      self._sound(game,a,action['sound']);game.save_progress()
     finished=s['elapsed']>=action['duration']
    s['position']=list(a.position)
@@ -175,7 +179,10 @@ class GardenOrchard:
     s['step']+=1;s['elapsed']=0.
     program=GARDEN_SCENE if s['phase']=='scene' else PROGRAMS[a.role]
     if s['step']==len(program):s['phase']='rest' if s['phase']=='scene' or a.role=='picker' else 'ready';s['step']=0
-    self._pose(a);game.save_progress()
+    self._pose(a)
+    if action.get('kind') and action.get('sound'):self._sound(game,a,action['sound'])
+    game.save_progress()
+   elif action.get('kind'):self._pose(a)
 
  def _locations(self,role):
   s=self.state[role];positions={k:pygame.Vector2(p) for k,p in INITIAL.items() if ITEM_ROLES[k]==role}
@@ -200,11 +207,7 @@ class GardenOrchard:
    if action and action.get('lower'):hand=a.position+pygame.Vector2(0,-18).lerp(HAND,min(1,s['elapsed']/action['duration']))
    for key,p in positions.items():
     if isinstance(p,str):p=hand.copy()
-    if action and action.get('item')==key:
-     t=min(1,s['elapsed']/action['duration'])
-     if action.get('kind')=='pickup':p=p.lerp(hand,t)
-     elif action.get('kind')=='put':p=hand.lerp(pygame.Vector2(action['point']),t)
-    result[key]=(p, a.position.y+6 if isinstance(positions[key],str) or action and action.get('item')==key else p.y+(8 if key.startswith(('apple','turnip')) else 0))
+    result[key]=(p, held_prop_sort(a) if isinstance(positions[key],str) else p.y+(8 if key.startswith(('apple','turnip')) else 0))
   return result
 
  def props(self):

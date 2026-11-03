@@ -27,9 +27,15 @@ and turnips never respawn. Neither routine grants items, rewards or story flags.
 
 `garden_orchard.py` owns two short authored action sequences. It does not add a
 scheduler or delivery framework. Each portable object's position is derived
-from completed pickup/placement actions and the current hand trajectory: one
+from completed pickup/placement actions and the current holding pose: one
 vessel, one plant, two turnips, three apples. The seven objects remain controller
 owned across streaming eviction.
+
+Objects stay at their source until a grab finishes and stay held until a
+set-down finishes, then snap without interpolating between hand and station.
+Rear-facing carried props draw behind the body's opaque pixels, while exposed
+edges remain visible. Deposited produce still draws over its basket. Filling,
+watering and fruit-admiring gestures retain their intentional held-object motion.
 
 The optional `overworld.garden_orchard` save record contains independent worker
 phase, action index, action time, feet, greeting and read state. It is validated
@@ -55,10 +61,11 @@ Map, journal, pause, title and dialogue suspend work. Distant sites sleep.
 
 ## Sound
 
-The merged regional audio controller receives finite `water`, `leaves` and
+The merged regional audio controller receives finite `leaves` and
 `basket` events at physical action beats, at the active worker's world position.
-A placement emits at ground contact. Watering emits during the visible pour;
-inspection/picking emits during leaf/fruit handling. There are no idle impacts.
+Pickup and placement emit at animation completion, synchronized with the object
+snap. Other leaf-handling work retains its contact timing. Filling and watering
+are silent. There are no idle impacts.
 The shared allocator retains its four-voice maximum, incidental family cap,
 distance falloff and hard cutoff. No controller-owned mixer channels, queued
 sounds, new sound engine, or audio dependency remains pending.
@@ -76,7 +83,8 @@ These assets have implementation review, not a claim of user art approval.
 
 See [gameplay captures](reviews/garden_orchard/README.md) for actual-game video,
 normal-scale stills, scripted fixture disclosure and the audible capture method.
-Automated coverage is in `tests/test_garden_orchard.py`. No animal AI, interior,
+Automated coverage is in `tests/test_garden_orchard.py` and
+`tests/test_regional_prop_transfers.py`. No animal AI, interior,
 bench interaction for Caelan, delivery, bridge/gate or quest changes are included.
 
 ## Validation boundary

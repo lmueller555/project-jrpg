@@ -6,7 +6,7 @@ last safe station. The ruined crossing and all story flags are read-only.
 """
 from pathlib import Path
 import pygame
-from grain_farm import FarmWorker, GrainFarm, DIRECTIONS
+from grain_farm import FarmWorker, GrainFarm, DIRECTIONS, held_prop_sort
 
 ROOT = Path(__file__).resolve().parent
 ART = ROOT/'assets/characters/bridge_workers'
@@ -23,10 +23,19 @@ WORK_STONE = (-2368, 609)
 TOOL_REST = (-2366, 601)
 SCENE_ID = 'bridge_crew_tea'
 HANDOFF = pygame.Rect(-2387, 600, 40, 22)
+CUP_ACTION_SECONDS = 1.
 
 
 def empty_state():
-    return {'sorted': 0, 'tea_beat': 0, 'request_read': False, 'greeted': []}
+    return {'sorted': 0, 'tea_beat': 0, 'request_read': False, 'greeted': [],
+            'cup_phase': 'kettle'}
+
+
+def legacy_cup_phase(data):
+    beat=data.get('tea_beat',0)
+    if beat == 2:return 'tray'
+    if beat in (3,4):return 'mason'
+    return 'tender' if beat == 1 and data.get('request_read',False) else 'kettle'
 
 
 def valid_state(data):
@@ -37,6 +46,12 @@ def valid_state(data):
             and type(data.get('request_read', False)) is bool
             and (not data.get('request_read', False) or data['tea_beat'] >= 1)
             and ('request_read' not in data or data['tea_beat'] < 2 or data['request_read'])
+            and isinstance(data.get('cup_phase',legacy_cup_phase(data)),str)
+            and data.get('cup_phase',legacy_cup_phase(data)) in {
+                0:('kettle',),1:('kettle','tender','stone','tender_from_stone'),
+                2:('tray',),3:('mason',),4:('mason','tender_return'),5:('kettle',)
+            }[data['tea_beat']]
+            and (data.get('cup_phase') not in ('stone','tender_from_stone') or data.get('request_read',False))
             and isinstance(data['greeted'], list)
             and all(isinstance(x, str) and x in ('mason', 'tender') for x in data['greeted'])
             and len(data['greeted']) == len(set(data['greeted'])))
@@ -60,6 +75,11 @@ class BridgeWorker(FarmWorker):
         super().__init__(role, variant, position, asset_root=ART,
                          required_clips=self.REQUIRED[role], identifier_prefix='bridge',
                          name='Bridge mason' if role == 'mason' else 'Bridge surveyor')
+        if role == 'tender':
+            frames=self.clips['offer_left']['frames']
+            for name,subset in (('set_stone',frames[:2]),('take_stone',frames[1:3]),
+                                ('set_tray',frames[2:])):
+                self.clips[name]={'loop':False,'frames':subset}
 
     @property
     def animation_key(self):
@@ -69,6 +89,7 @@ class BridgeWorker(FarmWorker):
         if self.pose in ('work','measure'):return self.pose+'_'+self.facing
         if self.pose in ('offer','receive'):
             return self.pose+('_right' if self.role == 'mason' else '_left')
+        if self.pose in ('set_stone','take_stone','set_tray'):return self.pose
         return {'inspect':'inspect_front','lift':'lift_front','recover':'recover_front',
                 'place':'place_front','stretch':'stretch_front','pickup':'pickup_right',
                 'sit_down':'sit_down_front','sit':'sit_front','drink':'drink_front',
@@ -79,10 +100,6 @@ class BridgeCrew:
     _act = staticmethod(GrainFarm._act)
     AMBIENT = frozenset(('inspect','lift','carry','place','stone_recover','return',
                          'ready','barrier','barrier_look','barrier_return'))
-    TENDER_CUP = frozenset(('tea_pickup','tea_across','tea_down','tea_side','request',
-                           'wobble','cup_return','tray_return','tray_up','tray_across','tray_place'))
-    MASON_CUP = frozenset(('reach','exchange','sit_walk','sit_down','sit','tool_return',
-                          'stand_up','stand'))
 
     def __init__(self, world):
         self.world = world
@@ -95,6 +112,7 @@ class BridgeCrew:
 
     def restore(self, data=None):
         self.state = {**empty_state(), **(data or {})}
+        if data and 'cup_phase' not in data:self.state['cup_phase']=legacy_cup_phase(data)
         self.state['greeted'] = list(self.state['greeted'])
         if data and 'request_read' not in data:self.state['request_read'] = data['tea_beat'] >= 2
         self.mason.position.update(SOURCE);self.tender.position.update(KETTLE)
@@ -105,12 +123,17 @@ class BridgeCrew:
         beat=self.state['tea_beat']
         self.stage='inspect' if self.state['sorted']<3 else 'ready'
         if beat == 1:
-            self.stage='wobble' if self.state['request_read'] else 'tea_pickup'
-            if self.state['request_read']:self.tender.position.update(HELP)
+            phase=self.state['cup_phase']
+            if phase == 'kettle':self.stage='tea_pickup'
+            else:
+                self.tender.position.update(HELP)
+                self.stage=({'stone':'stone_wait','tender_from_stone':'tray_setdown'}.get(phase)
+                            or ('wobble' if self.state['request_read'] else 'request'))
         elif beat in (2,3,4):
             self.tender.position.update(HELP)
             self.stage={2:'reach',3:'exchange',4:'sit_walk'}[beat]
             if beat in (2,3):self.mason.position.update(REACH)
+            elif self.state['cup_phase']=='tender_return':self.stage='tray_return'
         self.dialogue_running=False
         self._audio_contacts=set()
         self._prepare_stage_pose()
@@ -144,7 +167,10 @@ class BridgeCrew:
             self._act(self.tender,'pickup','right',duration=1.,reverse=stage=='tray_place')
         elif stage in ('tea_across','tea_down','tea_side','request','tray_return','tray_up','tray_across'):
             self._act(self.tender,'cup','left' if stage=='request' else self.tender.facing)
-        elif stage == 'wobble':self._act(self.tender,'offer','left',duration=2.)
+        elif stage in ('wobble','stone_pickup','tray_setdown'):
+            self._act(self.tender,{'wobble':'set_stone','stone_pickup':'take_stone',
+                                  'tray_setdown':'set_tray'}[stage],'left',duration=CUP_ACTION_SECONDS)
+        elif stage == 'stone_wait':self._act(self.tender,'idle','left')
         elif stage == 'reach_walk':
             self._act(self.mason,'idle','right');self._act(self.tender,'idle','left')
         elif stage == 'reach':
@@ -239,7 +265,8 @@ class BridgeCrew:
             if self._walk(self.tender,KETTLE,seconds,player):self._stage('tea_pickup')
         elif stage == 'tea_pickup':
             self._act(self.tender,'pickup','right',duration=1.)
-            if self.timer>=1:self._stage('tea_across')
+            if self.timer>=1:
+                self._commit(game,cup_phase='tender');self._stage('tea_across')
         elif stage == 'tea_across':
             if self._walk(self.tender,(-2336,584),seconds,player,'cup'):self._stage('tea_down')
         elif stage == 'tea_down':
@@ -248,15 +275,26 @@ class BridgeCrew:
             if self._walk(self.tender,HELP,seconds,player,'cup'):self._stage('request')
         elif stage == 'request':self._act(self.tender,'cup','left')
         elif stage == 'wobble':
-            self._act(self.tender,'offer','left',duration=2.)
-            if self.timer>=2:
-                self._commit(game,tea_beat=2);self._stage('reach_walk')
+            if self.timer>=CUP_ACTION_SECONDS:
+                self._commit(game,cup_phase='stone')
+                self._cup_sound(game,'bridge_cup_stone')
+                self._stage('stone_wait')
+        elif stage == 'stone_wait':
+            if self.timer>=.6:self._stage('stone_pickup')
+        elif stage == 'stone_pickup':
+            if self.timer>=CUP_ACTION_SECONDS:
+                self._commit(game,cup_phase='tender_from_stone');self._stage('tray_setdown')
+        elif stage == 'tray_setdown':
+            if self.timer>=CUP_ACTION_SECONDS:
+                self._commit(game,tea_beat=2,cup_phase='tray')
+                self._cup_sound(game,'bridge_cup_tray')
+                self._stage('reach_walk')
         elif stage == 'reach_walk':
             if self._walk(self.mason,REACH,seconds,player):self._stage('reach')
         elif stage == 'reach':
             self._act(self.mason,'receive','right',duration=2.)
             if self.timer>=2:
-                self._commit(game,tea_beat=3);self._stage('exchange')
+                self._commit(game,tea_beat=3,cup_phase='mason');self._stage('exchange')
         elif stage == 'exchange':self._act(self.mason,'cup','right')
         elif stage == 'sit_walk':
             if self._walk(self.mason,SEAT,seconds,player,'cup'):self._stage('sit_down')
@@ -278,7 +316,8 @@ class BridgeCrew:
         elif stage == 'cup_return':
             self._act(self.mason,'offer','right',duration=1.)
             self._act(self.tender,'receive','left',duration=1.)
-            if self.timer>=1:self._stage('tray_return')
+            if self.timer>=1:
+                self._commit(game,cup_phase='tender_return');self._stage('tray_return')
         elif stage == 'tray_return':
             if self._walk(self.tender,(-2336,616),seconds,player,'cup'):self._stage('tray_up')
         elif stage == 'tray_up':
@@ -288,30 +327,24 @@ class BridgeCrew:
         elif stage == 'tray_place':
             self._act(self.tender,'pickup','right',duration=1.,reverse=True)
             if self.timer>=1:
-                self._commit(game,tea_beat=5);self._stage('ready')
+                self._commit(game,tea_beat=5,cup_phase='kettle')
+                self._cup_sound(game,'bridge_cup_return')
+                self._stage('ready')
         for actor in self.actors:actor.advance(seconds)
         self._sync_audio(game,previous_frames)
 
     def _sync_audio(self,game,previous_frames):
         audio=getattr(game,'regional_audio',None)
         if not audio:return
-        cup=self.cup_position
-        contacts=[]
-        if self.stage=='wobble':
-            if cup.distance_to((WORK_STONE[0],WORK_STONE[1]-9))<=1.01:
-                contacts.append(('bridge_cup_stone',(WORK_STONE[0],WORK_STONE[1]-9)))
-            if cup.distance_to(pygame.Vector2(SAFE)+(0,-7))<.1:
-                contacts.append(('bridge_cup_tray',tuple(cup)))
-        elif self.stage=='tray_place' and cup.distance_to(pygame.Vector2(KETTLE)+(8,-11))<.1:
-            contacts.append(('bridge_cup_return',tuple(cup)))
-        for key,point in contacts:
-            if key not in self._audio_contacts:
-                audio.emit(key,'cup',point,'ceramic',3);self._audio_contacts.add(key)
         actor=self.working_tool_actor()
         current=(actor.animation_key,actor.frame_index)
         if (actor.pose=='work' and current!=previous_frames[actor]
                 and actor.frame_index==GrainFarm._contact_frame(actor,tool=True)):
             audio.emit('bridge_tool','stone',lambda:actor.position,'masonry')
+
+    def _cup_sound(self,game,key):
+        audio=getattr(game,'regional_audio',None)
+        if audio:audio.emit(key,'cup',tuple(self.cup_position),'ceramic',3)
 
     def working_tool_actor(self):
         """The same physical owner drives the prop and its material sound."""
@@ -356,26 +389,37 @@ class BridgeCrew:
         if index<self.state['sorted']:
             return self.stone_destination(index)+(0,-2)
         point=pygame.Vector2(SOURCE)+(index*3-3,-2)
-        if index==self.state['sorted'] and self.stage in ('lift','carry','place'):
-            frame=self.mason.attachment;offset=frame.get('stone_offset')
-            if offset is not None and (frame.get('gripped',True) or self.stage=='place'):
+        if index==self.state['sorted'] and self.stage in ('carry','place'):
+            frame=self.mason.held_attachment('stone');offset=frame.get('stone_offset')
+            if offset is not None:
                 point=self.mason.position+offset
         return point
 
     @property
+    def cup_owner(self):
+        phase=self.state['cup_phase']
+        if phase in ('tender','tender_from_stone','tender_return'):return self.tender
+        if phase == 'mason':return self.mason
+        return None
+
+    def _cup_attachment(self):
+        actor=self.cup_owner
+        if actor is None:return {}
+        if self.stage in ('wobble','tray_setdown','cup_return','tray_place'):
+            return actor.held_attachment('cup')
+        return actor.attachment
+
+    @property
     def cup_position(self):
-        stage=self.stage
-        if stage=='reach_walk':return pygame.Vector2(SAFE)+(0,-7)
-        actor=(self.tender if stage in self.TENDER_CUP else
-               self.mason if stage in self.MASON_CUP else None)
+        phase=self.state['cup_phase']
+        if phase == 'tray':return pygame.Vector2(SAFE)+(0,-7)
+        if phase == 'stone':
+            return pygame.Vector2(WORK_STONE)+(int(self.timer*6)%2 if self.stage=='stone_wait' else 0,-9)
+        actor=self.cup_owner
         if actor is not None:
-            offset=actor.attachment.get('cup_offset')
+            offset=self._cup_attachment().get('cup_offset')
             if offset is not None:
-                point=actor.position+offset
-                if (stage=='wobble' and actor.attachment.get('gripped') is False
-                        and point.distance_to((WORK_STONE[0],WORK_STONE[1]-9))<1):
-                    point.x+=int(self.timer*6)%2
-                return point
+                return actor.position+offset
         return pygame.Vector2(KETTLE)+(8,-11)
 
     @property
@@ -387,7 +431,7 @@ class BridgeCrew:
 
     @staticmethod
     def _held_sort(actor,kind):
-        return actor.position.y+(5 if actor.attachment.get(kind+'_layer')=='back' else 7)
+        return held_prop_sort(actor,actor.attachment.get(kind+'_layer'))
 
     def props(self):
         result=[]
@@ -400,16 +444,14 @@ class BridgeCrew:
         add('keep_mark',(-2344,604));add('reject_mark',(-2312,604))
         for index in range(3):
             point=self.stone_position(index)
-            active=(index==self.state['sorted'] and self.stage in ('lift','carry','place')
-                    and self.mason.attachment.get('stone_offset') is not None
-                    and self.mason.attachment.get('gripped',True))
-            add('stone',point,self._held_sort(self.mason,'stone') if active else point.y+1)
-        wobble=int(self.timer*6)%2 if self.stage=='wobble' else 0
+            active=index==self.state['sorted'] and self.stage in ('carry','place')
+            layer=self.mason.held_attachment('stone').get('stone_layer') if active else None
+            add('stone',point,held_prop_sort(self.mason,layer) if active else point.y+1)
+        wobble=int(self.timer*6)%2 if self.stage=='stone_wait' else 0
         add('stone',(WORK_STONE[0]+wobble,WORK_STONE[1]))
         add('tray',SAFE)
-        owner=(self.tender if self.stage in self.TENDER_CUP else
-               self.mason if self.stage in self.MASON_CUP else None)
-        add('cup',self.cup_position,self._held_sort(owner,'cup') if owner else self.cup_position.y+1)
+        owner=self.cup_owner
+        add('cup',self.cup_position,held_prop_sort(owner,self._cup_attachment().get('cup_layer')) if owner else self.cup_position.y+1)
         tool_actor=self.working_tool_actor()
         owner=tool_actor if tool_actor.pose=='work' else None
         add('tool',self.tool_position,self._held_sort(owner,'tool') if owner else self.tool_position.y+1)

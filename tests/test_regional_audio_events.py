@@ -14,9 +14,10 @@ class FarmAudioEvents(TestCase):
     def test_only_two_loaded_sacks_and_no_idle_impacts(self):
         def check_contact(key,*args):
             if key=='farm_place':
-                self.assertEqual(self.f.stage,'place')
-                point=self.f.props()[2-self.f.state['loaded']][3]
-                self.assertEqual((point[0]+6,point[1]+10),(-810,208))
+                self.assertEqual(self.f.stage,'return')
+                index=self.f.state['loaded']-1
+                point=self.f.props()[2-index][3]
+                self.assertEqual((point[0]+6,point[1]+10),(-810+index*6,208-index*2))
         with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.ready();self.tick(300)
             self.assertEqual(sum(c.args[0]=='farm_place' for c in emit.call_args_list),2)
@@ -45,7 +46,7 @@ class BridgeAudioEvents(TestCase):
         def check_contact(key,*args):
             if key in targets:
                 self.assertLessEqual(self.c.cup_position.distance_to(targets[key]),1.01)
-                self.assertIn(self.c.stage,('wobble','tray_place'))
+                self.assertIn(self.c.stage,('wobble','tray_setdown','tray_place'))
         with mock.patch.object(self.g.regional_audio,'emit',side_effect=check_contact) as emit:
             self.scene()
             keys=[c.args[0] for c in emit.call_args_list]
@@ -59,16 +60,9 @@ class BridgeAudioEvents(TestCase):
             self.tick()
             self.assertFalse(any(c.args[0]=='bridge_tool' for c in emit.call_args_list))
     def test_new_contact_keeps_full_duration_on_long_frame(self):
-        from bridge_crew import SOURCE,HELP,WORK_STONE
+        from bridge_crew import CUP_ACTION_SECONDS
         self.c.restore({'sorted':3,'tea_beat':1,'request_read':True,'greeted':[]})
-        # Approach the actual authored frame that first rests the cup on the
-        # stone, rather than the retired two-frame animation's .8s deadline.
-        frames=self.c.tender.clips['offer_left']['frames']
-        index=next(i for i,f in enumerate(frames)
-                   if (HELP[0]+f['cup_offset'][0],HELP[1]+f['cup_offset'][1])
-                   ==(WORK_STONE[0],WORK_STONE[1]-9))
-        contact=sum(f['duration_ms'] for f in frames[:index])/sum(f['duration_ms'] for f in frames)*2
-        self.c.timer=contact-.01
+        self.c.timer=CUP_ACTION_SECONDS-.01
         self.c.tender.clock=self.c.timer
         self.g.audio.set_effects(1)
         self.g.update(.1,(0,0),False)

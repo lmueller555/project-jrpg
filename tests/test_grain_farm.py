@@ -144,38 +144,34 @@ class GrainFarmTests(unittest.TestCase):
         record=self.f.props()[2-index]
         return pygame.Vector2(record[3])+(6,10)
 
-    def test_both_cart_placements_release_on_the_bed_before_committing(self):
+    def test_both_cart_placements_snap_only_after_the_complete_action(self):
         self.g.social.flags.add(MILL_FLAG)
         for index in range(2):
             self.until(lambda:self.f.stage=='place' and self.f.state['loaded']==index)
-            saw_release=False;seen_poses=set();last_point=None
+            seen_poses=set();held=self.sack_point(index)
             for _ in range(120):
                 if self.f.state['loaded']>index:break
                 point=self.sack_point(index)
                 seen_poses.add(self.f.loader.pose)
-                if self.f.loader.attachment.get('gripped') is False:
-                    saw_release=True
-                    self.assertLess(point.distance_to((-810,208)),.1)
-                last_point=point
+                self.assertEqual(point,held)
                 self.tick()
             else:self.fail('Placement never committed')
-            self.assertTrue(saw_release)
-            self.assertLess(last_point.distance_to(self.sack_point(index)),.1)
+            self.assertEqual(self.sack_point(index),pygame.Vector2(-810+index*6,208-index*2))
             self.assertEqual(len(self.f.props()),3)
             if index==1:self.assertIn('push',seen_poses)
 
-    def test_spare_sack_is_physically_lifted_before_the_reading_hold(self):
+    def test_spare_sack_stays_grounded_until_lift_finishes(self):
         self.g.social.flags.add(MILL_FLAG)
         self.until(lambda:self.f.stage=='lift_spare')
         self.assertEqual(self.f.state['loaded'],2)
         self.assertEqual(self.sack_point(2),pygame.Vector2(SOURCE)+(0,-3))
-        last_point=None
+        source=self.sack_point(2)
         for _ in range(90):
             if self.f.stage=='ready':break
-            last_point=self.sack_point(2)
+            self.assertEqual(self.sack_point(2),source)
             self.tick()
         else:self.fail('Spare sack never reached its hold')
-        self.assertLess(last_point.distance_to(self.sack_point(2)),.1)
+        self.assertEqual(self.sack_point(2),self.f.loader.position+(0,-14))
         self.assertFalse(self.f.state['exchange_read'])
 
     def test_shared_lowering_releases_the_sack_before_empty_handed_recovery(self):

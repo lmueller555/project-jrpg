@@ -79,6 +79,9 @@ authored route, with a 260-pixel activation limit. Sheep remain in their pens;
 the cat's entire route stays separate from the gardener's walking lane. Animals
 yield to Caelan but do not add player collision blockers. The grounded basket
 has one small footprint and is absent from collision while being carried.
+Basket grabs and set-downs retain the old location/owner for the complete
+animation, then snap once; collision and contact sound change at that boundary.
+The held basket draws behind the gardener on rear views rather than through her.
 
 After the existing gardener reaches her completed `rest` checkpoint, wildlife
 temporarily owns that actor's feet, pose and movement. Garden work skips the
@@ -97,6 +100,11 @@ starts from its authored pose before its first checkpoint; the gardener's
 previous idle clock cannot enter the saved loan, even after a long garden wait.
 A blocked gather waits for both sheep to arrive before the affectionate beat; Caelan
 remains free to move. Contact checkpoints do not replay after Continue.
+
+Wildlife snapshots now use version 2 for completed-animation basket contacts.
+Version 1 saves remain accepted: unfinished legacy basket actions reconstruct
+pre-transfer ownership and contact state, then complete under the new timing.
+The outer game-save version is unchanged.
 
 Birds scatter within 50 pixels, then wait at least eight active seconds and
 until Caelan is over 80 pixels from the landing. Sheep/bird/wing cues are finite

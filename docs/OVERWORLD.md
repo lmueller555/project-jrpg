@@ -229,8 +229,10 @@ chunk eviction does not own or duplicate workers. The controller sleeps beyond
 260 pixels from the farm and uses the same map/journal pause as the region.
 
 The [NPC animation pass](REGION_NPCS.md) gives the workers authored full-body
-work and directional carrying sequences. Per-frame palm and sack registration
-keeps the load supported during lifting, placement and shared lowering. Blocked
+work and directional carrying sequences. Sacks remain at their source through
+grabs and in hand through placement or shared lowering, then snap when the
+animation completes. Directional holding attachments support normal carrying
+and rear-facing body occlusion. Blocked
 carrying uses a steady hold. Four-direction guard poses and a matching armored
 portrait also make checkpoint conversations consistent with the visible actors.
 
@@ -273,17 +275,19 @@ tool. The cup is handed back and carried to the kettle. Subsequent interactions
 use quiet work greetings. This creates no quest or reward.
 
 The optional `overworld.bridge_crew` record stores `sorted` (0–3), `tea_beat`
-(0–5), `request_read`, and greeted roles. The first dialogue commits its read
+(0–5), `request_read`, greeted roles and optional `cup_phase` ownership. The first dialogue commits its read
 fact immediately; Continue during the wobble resumes the physical action
 without replaying that dialogue. Older crew records remain valid. Completed sorting, cup placement, cup handoff, read
 exchange and completed break are checkpointed. Continue restores an interrupted
-carry to its last safe station; read final dialogue never repeats. A break
+carry to its last safe station, preserving completed cup transfers; read final dialogue never repeats. A break
 interrupted after the exchange resumes its physical payoff. Existing saves
 without the block remain valid. Leaving retains the live controller, while
 map, journal, title, pause and town transitions suspend it. Chunk eviction
 never owns actors or props. The controller sleeps beyond 260 pixels.
 
-The cup has one rendered location at every stage. Actor probes and a reserved
+The cup has one rendered location at every stage. Grabs, set-downs and handoffs
+snap only after the complete action animation; stones use the same rule.
+Rear-facing held objects sort behind the body. Actor probes and a reserved
 handoff area prevent overlap; the sequence begins only when that reservation
 is clear. Workers wait for blocked routes rather than teleporting or moving
 the player. The [NPC animation pass](REGION_NPCS.md) gives both workers authored

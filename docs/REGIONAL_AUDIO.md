@@ -29,10 +29,12 @@ Voices retain current
 source positions, including actor callbacks, while playing. No rolling-cart
 sound is used for the stationary farm cart.
 
-Farm cloth cues occur at lift/cover beats, sack impacts at finite placements,
+Farm pickup cloth cues occur at completed grabs, cover cues at their work beats,
+sack impacts at completed placements,
 and creaks at the lashing gesture. The optional sack exchange has a lowering
 contact. Bridge ceramic contacts match the unstable stone, safe tray, and final
-return. Stone strikes follow the tool owner's lowered animation frame; cup
+return. Cup placement contacts occur after the full set-down animation, together
+with the ownership/location snap. Stone strikes follow the tool owner's lowered animation frame; cup
 handling at the kettle cannot emit tool strikes. The tool prop follows that
 one-pixel hand motion. Incidental cooldown is .6 seconds per event key; there
 is no event queue. Distant, muted, paused, unavailable-device and budget-rejected
@@ -71,6 +73,8 @@ soft fruit/wicker contact. Filling the can and watering plants are silent;
 their animations, timings and saved action progress are unchanged.
 The remaining sound producers live in
 `garden_orchard.py`, share the `garden_work` incidental family, and emit only at
-physical beats. Contact time persists with the worker action, preventing a
+physical beats. Pickup and placement contacts occur when their animations
+finish and the object snaps to its new owner or resting place. Other work
+contacts keep their authored timing. Contact time persists with the worker action, preventing a
 Continue from repeating an already-heard contact. Existing attenuation, hard
 cutoff, pause/exit handling and four-voice budgeting are unchanged.

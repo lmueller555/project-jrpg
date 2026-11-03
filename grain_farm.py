@@ -45,6 +45,11 @@ def empty_state():
     return {'loaded': 0, 'exchange_read': False, 'scene_done': False, 'greeted': []}
 
 
+def held_prop_sort(actor, layer=None):
+    behind = layer == 'back' if layer is not None else actor.facing == 'back'
+    return actor.position.y+(5 if behind else 7)
+
+
 def valid_state(data):
     return (isinstance(data, dict) and set(data) == set(empty_state())
             and type(data['loaded']) is int and 0 <= data['loaded'] <= 2
@@ -178,6 +183,10 @@ class FarmWorker:
     def hand_positions(self):
         return [self.position+point for point in self.attachment.get('hands', [])]
 
+    def held_attachment(self, kind):
+        prefix = 'cup_hold_' if kind == 'cup' else 'hold_'
+        return self.clips[prefix+self.facing]['frames'][0]
+
     def sprite(self, elapsed_ms):
         return self.clips[self.animation_key]['frames'][self.frame_index]['image']
 
@@ -286,22 +295,11 @@ class GrainFarm:
 
     def _sync_audio(self, game, previous_frames):
         """Emit from the sampled physical contact, never the legacy .6s beat."""
-        loader=self.loader;frame=loader.attachment
-        key=(loader.animation_key,loader.frame_index)
-        entered=previous_frames[loader]!=key
-        if self.stage in ('lift','lift_spare') and frame.get('gripped') is True:
-            if 'cloth' not in self._audio_contacts:
-                self._sound(game,'cloth','rustle',loader);self._audio_contacts.add('cloth')
-        elif self.stage in ('cover','uncover'):
+        loader=self.loader
+        if self.stage in ('cover','uncover'):
             contact=0 if self.stage=='uncover' else len(loader.clips['cover_front']['frames'])-1
             if loader.frame_index==contact and 'cloth' not in self._audio_contacts:
                 self._sound(game,'cloth','rustle',loader);self._audio_contacts.add('cloth')
-        if (self.stage=='place' and frame.get('sack_offset')==[14,-10]
-                and 'place' not in self._audio_contacts):
-            self._sound(game,'place','sack',loader);self._audio_contacts.add('place')
-        if (self.stage=='help_place' and loader.pose=='lower' and frame.get('gripped') is False
-                and 'extra_place' not in self._audio_contacts):
-            self._sound(game,'extra_place','sack',loader);self._audio_contacts.add('extra_place')
         for actor in self.actors:
             current=(actor.animation_key,actor.frame_index)
             if (actor.pose=='work' and current!=previous_frames[actor]
@@ -366,6 +364,7 @@ class GrainFarm:
             self._act(self.loader, 'lift', 'front', duration=PICKUP_SECONDS)
             if self.timer>=PICKUP_SECONDS:
                 self._stage('ready' if self.stage == 'lift_spare' else 'carry')
+                self._sound(game,'cloth','rustle',self.loader)
         elif self.stage=='carry':
             if self._walk(self.loader,CART,seconds,player,True):self._stage('place')
         elif self.stage=='place':
@@ -377,6 +376,7 @@ class GrainFarm:
             if self.timer >= PLACE_SECONDS+(PUSH_SECONDS if loaded == 1 else 0):
                 self._commit(game,loaded=loaded+1)
                 self._stage('return')
+                self._sound(game,'place','sack',self.loader)
         elif self.stage=='return':
             if self._walk(self.loader,SOURCE,seconds,player):self._stage('inspect')
         elif self.stage=='ready':
@@ -393,7 +393,9 @@ class GrainFarm:
             else:
                 self._act(self.loader, 'lower', 'front', duration=LOWER_SECONDS, reverse=True)
                 self._act(self.coworker, 'assist_low', 'right', duration=LOWER_SECONDS)
-            if self.timer>=.8+LOWER_SECONDS:self._stage('help_recover')
+            if self.timer>=.8+LOWER_SECONDS:
+                self._stage('help_recover')
+                self._sound(game,'extra_place','sack',self.loader)
         elif self.stage=='help_recover':
             self._act(self.loader, 'recover', 'front', duration=RECOVER_SECONDS)
             self._act(self.coworker, 'recover', 'right', duration=RECOVER_SECONDS)
@@ -492,16 +494,13 @@ class GrainFarm:
             sort_y=SOURCE[1]+7
             if index<loaded:
                 point=pygame.Vector2(-810+index*6,208-index*2);sort_y=228
-            elif ((index==loaded and loaded<2 and self.stage in ('lift','carry','place')) or
+            elif ((index==loaded and loaded<2 and self.stage in ('carry','place')) or
                   (index==2 and not self.state['scene_done'] and
-                   self.stage in ('lift_spare','ready','help_approach','help_place'))):
-                metadata = self.loader.attachment
+                   self.stage in ('ready','help_approach','help_place'))):
+                metadata = self.loader.held_attachment('sack')
                 offset = metadata.get('sack_offset')
-                gripped = metadata.get('gripped', metadata.get('sack_gripped', True))
-                # A placed sack stays on the bed after the hands release;
-                # only pickup/lowering reach frames defer to the ground pile.
-                if offset is not None and (gripped or self.stage == 'place'):
+                if offset is not None:
                     point=self.loader.position+offset
-                    sort_y=self.loader.position.y+(5 if metadata.get('sack_layer') == 'back' else 7)
+                    sort_y=held_prop_sort(self.loader,metadata.get('sack_layer'))
             result.append((sort_y,4,self.sack,(round(point.x)-6,round(point.y)-10)))
         return result

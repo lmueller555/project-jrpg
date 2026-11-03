@@ -1,8 +1,9 @@
 # Elden Vale NPC sprites and routine animation
 
-The opening overworld contains eight NPCs: the loader and coworker at the western
+The opening overworld contains ten human NPCs: the loader and coworker at the western
 grain farm, the mason and surveyor at the ruined western crossing, and two road
-guards at each of the northern and southern checkpoints.
+guards at each of the northern and southern checkpoints, plus the kitchen
+gardener and orchard picker.
 Their animation belongs to the persistent region actors, independently of the
 streamed terrain chunks.
 
@@ -25,13 +26,13 @@ generated frames and registration recipe.
 facing. An obstructed route holds the load steadily and resumes the walking
 cycle after the path clears. Work sequences start at their own action boundary;
 ordinary idle and walking loops keep a continuous gait. Reversible lowering and
-release use the same registered contacts as lifting.
+release preserve the authored body motion.
 
-The sack and cloth remain separate props. Their real position and draw order
-follow the active body's attachment data, including appropriate occlusion on a
-rear view. The shared lift registers both workers' palms around the same sack.
-Cart placement includes the short supported adjustment needed to reach the
-second slot without extending the worker's arms unnaturally.
+The sack and cloth remain separate props. A sack stays at its source until the
+grab animation finishes, then snaps to the worker's holding attachment. It stays
+held throughout placement or shared lowering, then snaps to its destination.
+There is no intermediate floating or cart slide. Held sacks follow directional
+holding attachments and draw behind the body on rear views.
 
 The delivery still has exactly three sacks and two completed cart placements.
 The third sack is visibly lifted before the optional exchange, then lowered
@@ -48,15 +49,39 @@ cup carrying and handoff use the direction appropriate to the object and route.
 Full-body seated and recovery poses keep the mason supported by the bench while
 his cup moves between his hands and mouth.
 
-Stone, cup and tool positions follow the painted hand contacts. The mason steps
+Stones stay in the source pile through the full lift and remain held through
+placement, snapping only when each action completes. Cup pickups, supported
+set-downs and handoffs likewise change ownership only after the action completes;
+the stone wait, retrieval and tray placement are separate actions.
+Ordinary carrying, drinking and tool motion retain their painted hand contacts.
+The mason steps
 into reachable placement and receiving stations; the cup has one owner and one
 visible location through the shaky-stone, steady-tray and handoff sequence.
 Holding a cup or stone on a blocked path uses an authored still hold.
 
 The crew still sorts exactly three stones and offers the same optional tea
 break. Existing `overworld.bridge_crew` fields (`sorted`, `tea_beat`,
-`request_read`, `greeted`) and safe Continue boundaries remain unchanged.
+`request_read`, `greeted`) retain their meanings. An optional `cup_phase` records
+completed cup transfers so Continue preserves the owner and does not replay a
+completed placement. Older records derive a safe phase from their existing beats.
 Sorting and tea do not repair the bridge, open a checkpoint or alter quests.
+
+## Garden, orchard and sheep-care props
+
+The watering vessel, turnips, optional relocated plant, three apples and borrowed
+sheep-care basket stay at their source for the complete grab animation. During
+set-down they stay in the worker's hand until the animation finishes, then snap
+to the destination. Pickup and placement sounds occur at that same boundary.
+Filling, watering, admiring fruit and ordinary carry motion remain animated.
+
+All held props use regional depth sorting: behind the body when facing away,
+in front otherwise. The body's actual opaque pixels obscure the prop; portions
+outside the silhouette remain visible. Deposited produce remains visible over
+its receiving basket. The sheep-care basket's collision footprint changes with
+its completed pickup or placement, not when the animation begins.
+
+`tests/test_regional_prop_transfers.py` checks action boundaries, save/Continue,
+single ownership, collision and pixel-composited rear-facing occlusion.
 
 ## Checkpoint guards
 

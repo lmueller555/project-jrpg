@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pygame
 from regional_audio import Source
+from grain_farm import held_prop_sort
 
 ART = Path(__file__).resolve().parent/'assets/characters/regional_wildlife'
 REPLACED_PROP_IDS = frozenset(('south_sheep_a', 'south_sheep_b', 'east_sheep_a',
@@ -91,7 +92,7 @@ def _initial_actor(identifier):
 
 
 def empty_state():
-    return {'version':1,'animals':{key:_initial_actor(key) for key in HOMES},
+    return {'version':2,'animals':{key:_initial_actor(key) for key in HOMES},
             'vignette':{'phase':'idle','step':0,'elapsed':0.,'contact':False,
                         'position':list(WORKER_HOME),'clock':0.,'facing':'front','basket':'home','moving':False}}
 
@@ -108,9 +109,13 @@ def _basket_at(step, contact):
     return result
 
 
+def _contact_time(action, version=2):
+    return action['duration'] if version == 2 and 'basket' in action else action.get('contact')
+
+
 def valid_state(data):
     """Reject nonfinite motion, unknown actors and feet outside authored routes."""
-    if not isinstance(data,dict) or set(data)!={'version','animals','vignette'} or type(data['version']) is not int or data['version']!=1:return False
+    if not isinstance(data,dict) or set(data)!={'version','animals','vignette'} or type(data['version']) is not int or data['version'] not in (1,2):return False
     animals=data['animals'];v=data['vignette']
     if not isinstance(animals,dict) or set(animals)!=set(HOMES):return False
     if not isinstance(v,dict) or set(v)!=set(empty_state()['vignette']):return False
@@ -128,7 +133,7 @@ def valid_state(data):
         for previous in VISIT[:v['step']]:start=previous.get('target',start)
         if not _on_segment(v['position'],start,action.get('target',start)):return False
         if v['elapsed']>action.get('duration',0) or (v['moving'] and 'target' not in action):return False
-        if v['contact']!=('contact' in action and v['elapsed']>=action['contact']):return False
+        if v['contact']!=('contact' in action and v['elapsed']>=_contact_time(action,data['version'])):return False
         if v['basket']!=_basket_at(v['step'],v['contact']):return False
     modes={'sheep':('graze','walk','gather_home','gather','look','nuzzle','return'),
            'cat':('sleep','stretch','walk','sit','return'),
@@ -213,6 +218,12 @@ class PurposefulWildlife:
     def restore(self,data=None):
         state=empty_state() if data is None else copy.deepcopy(data)
         if not valid_context(state,self.world.garden_orchard.to_dict()):raise ValueError('Invalid purposeful wildlife state')
+        if state['version'] == 1:
+            v=state['vignette']
+            if v['phase']=='visit' and 'basket' in VISIT[v['step']]:
+                v['contact']=v['elapsed']>=VISIT[v['step']]['duration']
+                v['basket']=_basket_at(v['step'],v['contact'])
+            state['version']=2
         for a in self.actors:
             a.state=state['animals'][a.id];a.position.update(a.state['position'])
         self.vignette=state['vignette']
@@ -227,35 +238,26 @@ class PurposefulWildlife:
         animals={a.id:{**a.state,'position':list(a.position)} for a in self.actors}
         v=copy.deepcopy(self.vignette)
         if v['phase']=='visit':v['position']=list(self.worker.position);v['clock']=self.worker.clock;v['moving']=self.worker.moving
-        return {'version':1,'animals':copy.deepcopy(animals),'vignette':v}
+        return {'version':2,'animals':copy.deepcopy(animals),'vignette':v}
 
     def progress_dict(self):return progress_state(self.to_dict())
 
     def ground_blockers(self,ignore_npc=None):
         v=self.vignette
         if v['basket']=='hand':return []
-        if v['phase']=='visit':
-            action=VISIT[v['step']]
-            if action.get('item') and not v['contact'] and v['elapsed']>0:return []
         p=BASKET_HOME if v['basket']=='home' else BASKET_PEN
         return [pygame.Rect(round(p[0])-9,round(p[1])-2,18,4)]
 
     def basket_position(self):
         v=self.vignette;hand=self.worker.position+pygame.Vector2(0,-7)
         point=hand if v['basket']=='hand' else pygame.Vector2(BASKET_HOME if v['basket']=='home' else BASKET_PEN)
-        if v['phase']=='visit':
-            action=VISIT[v['step']]
-            if action.get('item') and not v['contact']:
-                ground=pygame.Vector2(BASKET_HOME if action['item']=='home' else BASKET_PEN)
-                t=min(1,v['elapsed']/action['contact'])
-                point=ground.lerp(hand,t) if action['basket']=='hand' else hand.lerp(ground,t)
         return point.copy()
 
     def props(self):
         result=[]
         for key in ('west_bird','clearing_bird'):
             x,y=HOMES[key];result.append((y-1,3,self.seeds,(round(x)-self.seeds.get_width()//2,round(y)-self.seeds.get_height()+2)))
-        p=self.basket_position();sort=self.worker.position.y+6 if self.vignette['basket']=='hand' else p.y
+        p=self.basket_position();sort=held_prop_sort(self.worker) if self.vignette['basket']=='hand' else p.y
         result.append((sort,4,self.basket,(round(p.x)-self.basket.get_width()//2,round(p.y)-self.basket.get_height())))
         for a in self.actors:
             image=a.sprite();x,y=a.draw_anchor
@@ -347,6 +349,7 @@ class PurposefulWildlife:
         v=self.vignette;a=self.worker;action=VISIT[v['step']]
         a.position.update(v['position']);a.clock=v['clock'];a.facing=v['facing'];a.draw_anchor=(20,38);a.moving=v['moving']
         a.pose=action.get('pose','carry' if v['basket']=='hand' else 'idle')
+        a.action_progress=v['elapsed']/action['duration'] if 'basket' in action else None
         if 'target' not in action:a.facing='front' if action.get('pat') else 'right'
 
     def _recall(self):
@@ -383,7 +386,7 @@ class PurposefulWildlife:
                 b=self.by_id['south_sheep_b']
                 if b.state['mode']=='look':self._mode(b,'nuzzle');b.state['facing']='left'
             v['elapsed']=min(action['duration'],v['elapsed']+dt)
-            if 'contact' in action and not v['contact'] and v['elapsed']>=action['contact']:
+            if 'contact' in action and not v['contact'] and v['elapsed']>=_contact_time(action):
                 v['contact']=True
                 if 'basket' in action:v['basket']=action['basket']
                 if action.get('pat'):
@@ -392,6 +395,7 @@ class PurposefulWildlife:
                 if action.get('recall'):self._recall()
                 v['position']=list(self.worker.position);v['clock']=self.worker.clock
                 game.save_progress()
+            self.worker.action_progress=v['elapsed']/action['duration'] if 'basket' in action else None
             gathered=action.get('gather') and v['elapsed']>=2 and all(self.by_id[k].state['mode']=='look' for k in GATHER_ROUTES)
             finished=gathered if action.get('gather') else v['elapsed']>=action['duration']
         v['position']=list(self.worker.position);v['clock']=self.worker.clock;v['facing']=self.worker.facing;v['moving']=self.worker.moving

@@ -134,7 +134,7 @@ class BridgeWorkerPhysicalFlowTests(unittest.TestCase):
         self.until(lambda:self.c.stage == 'request');self.read()
         self.until(lambda:self.c.stage == 'exchange');self.read()
 
-    def test_every_stone_remains_at_its_released_slot_when_the_count_commits(self):
+    def test_every_stone_snaps_to_its_slot_when_placement_completes(self):
         committed = []
         for _ in range(3000):
             before = self.c.state['sorted']
@@ -145,8 +145,7 @@ class BridgeWorkerPhysicalFlowTests(unittest.TestCase):
             if after != before:
                 self.assertEqual(after, before+1)
                 current = self.anchors('stone')
-                self.assertLessEqual(previous[before].distance_to(current[before]), 1,
-                                     ('Released stone jumped on commit', before, previous, current))
+                self.assertGreater(previous[before].distance_to(current[before]), 1)
                 expected = ((STACK[0]-7, STACK[1]-2),
                             (STACK[0], STACK[1]-2), (REJECT[0], REJECT[1]-2))[before]
                 self.assertLessEqual(current[before].distance_to(expected), .01)
@@ -205,6 +204,8 @@ class BridgeWorkerPhysicalFlowTests(unittest.TestCase):
             candidates = [pygame.Vector2(KETTLE)+(8,-11),
                           pygame.Vector2(-2368,600), pygame.Vector2(SAFE)+(0,-7)]
             for actor in self.c.actors:
+                if self.c.cup_owner is actor:
+                    candidates.append(actor.position+self.c._cup_attachment()['cup_offset'])
                 offset = actor.attachment.get('cup_offset')
                 if offset is not None:
                     candidates.append(actor.position+offset)
