@@ -8,7 +8,7 @@
   "looping": "World/battle/opening repeat the authored cue; victory plays once; no sample-accurate musical-loop claim",
   "tracks": [
     {
-      "identifier": "eldenmere",
+      "identifier": "title",
       "source": "Eldenmere Theme.m4a",
       "source_git_blob_sha": "57758f45b93257789f1fff434fecce4a43ef8a4c",
       "source_sha256": "3e4215224cba1fd1d36d5ee3207ee69900b14a3c732c92c5ab60eaa0de27a227",
@@ -165,6 +165,38 @@
         "pygame_stream_one_shot": false,
         "sha256": "e0da0d692ea13efd655aafa11710a650703c277b1ec753caaa3084e0c0016fd8",
         "bytes": 3799563
+      }
+    },
+    {
+      "identifier": "eldenmere",
+      "source": "Eldenmere.m4a",
+      "source_git_blob_sha": "6a4ae0d4f77717cc6445ca7818f452791ebec943",
+      "source_sha256": "2d0d4fb4aaf14c86cfea0b2394f0f06995e574961cb1e9290ab5034a1318f605",
+      "source_codec": "opus",
+      "source_decoded_frames": 4739208,
+      "source_decoded_seconds": 98.7335,
+      "loop": true,
+      "runtime": "runtime/eldenmere.ogg",
+      "runtime_frame_delta": 56,
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 4739264,
+        "duration_seconds": 98.73466666666667,
+        "peak_dbfs": -4.7113680436878065,
+        "rms_dbfs": -19.024704918302856,
+        "sample_step_across_repeat": 0.00181508285459131,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": true,
+        "pygame_stream_one_shot": false,
+        "sha256": "d1dc205565bff9708286a7678c5da75271e6abf56b257ffb128e4422dd8fa76f",
+        "bytes": 1980609
       }
     }
   ]

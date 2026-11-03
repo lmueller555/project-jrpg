@@ -42,7 +42,8 @@ or rearranged.
 
 | Original upload | Runtime asset | Use |
 | --- | --- | --- |
-| `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title and Eldenmere/millrace exploration |
+| `Eldenmere Theme.m4a` | `runtime/eldenmere_theme.ogg` | Title screen |
+| `Eldenmere.m4a` | `runtime/eldenmere.ogg` | Eldenmere, its interiors and millrace exploration; repeats without restarting across area transfers |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
 | `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
@@ -59,7 +60,12 @@ The original uploads are preserved unchanged. Their M4A containers contain
 the exporter creates high-quality Vorbis files at the same sample rate. It
 does not normalize, stretch, rearrange or synthesize the music.
 
-Eldenmere keeps its full 95.0935-second decoded cue. The battle runtime removes
+The title's Eldenmere Theme keeps its full 95.0935-second decoded cue.
+The new Eldenmere exploration cue retains its complete decoded audio without
+trimming or rearrangement. Like Royalty of the Realm, its native Vorbis export
+includes the encoder's 56-frame lead-in. The title keeps its original music;
+Continue and the end of the opening cinematic select the new exploration cue.
+The battle runtime removes
 only 1.1485 seconds of the final near-silent tail, retaining 25 ms after the last
 5 ms RMS block above -60 dBFS. Five-millisecond de-clicks at its quiet boundaries
 avoid clicks. Its runtime duration is 188.825 seconds. Both cues repeat as
@@ -73,7 +79,7 @@ de-clicks at the beginning and end soften the sample discontinuity on repeat;
 there is no trimming, phrase overlap or musical rearrangement. The track repeats
 as authored. Pausing with Esc or losing window focus pauses the stream, and
 resuming continues at the same position. Finishing or skipping the cinematic
-returns to the Eldenmere Theme for the sanctuary morning.
+returns to Eldenmere for the sanctuary morning.
 
 ## Rebuild runtime exports
 
@@ -88,6 +94,12 @@ To rebuild just the opening cue while preserving all other runtime exports:
 
 ```sh
 python tools/build_runtime_music.py --track opening_leitmotif
+```
+
+To rebuild only the Eldenmere/millrace exploration cue:
+
+```sh
+python tools/build_runtime_music.py --track eldenmere
 ```
 
 The builder checks the original upload hashes, exports the selected files,

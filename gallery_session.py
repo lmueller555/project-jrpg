@@ -194,4 +194,4 @@ class GallerySession:
         if resume_music:
             self.parent.music.set_paused(not self.parent._music_focused)
             self.parent.music.set_ducked(False)
-            self.parent.music.play('eldenmere', fade_ms=250)
+            self.parent.music.play('title', fade_ms=250)

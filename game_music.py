@@ -1,7 +1,7 @@
 """One streamed soundtrack shared by the title, exploration and encounters.
 
 Track changes use a short, nonblocking fade-out/fade-in. Requests for the same
-track preserve playback, including the title-to-Eldenmere handoff. Only music
+track preserve playback across Eldenmere and the millrace. Only music
 is controlled here; environmental effects and UI cues keep their own channels.
 """
 from __future__ import annotations
@@ -310,4 +310,3 @@ class GameMusic:
         self._failed = False
         self._paused = False
         self._duck = self._duck_target = 1.0
-

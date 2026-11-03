@@ -58,7 +58,7 @@ class TitleScreen:
 
     @property
     def music_started(self):
-        return self.game.music.current_track=='eldenmere' and self.game.music.playing
+        return self.game.music.current_track=='title' and self.game.music.playing
 
     @music_enabled.setter
     def music_enabled(self, enabled):
@@ -72,7 +72,7 @@ class TitleScreen:
         return self.settings_panel._adjust(direction)
 
     def start_music(self):
-        self.game.music.play('eldenmere',fade_ms=900)
+        self.game.music.play('title',fade_ms=900)
 
     def to_canvas(self,point):
         width,height=self.game.window.get_size()

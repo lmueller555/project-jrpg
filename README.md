@@ -59,10 +59,11 @@ then takes a courtyard break. He uses the portrait dialogue system and safely
 sets down carried work before speaking. See his [routine previews](docs/reviews/tomas_routines/README.md).
 
 The title water animates throughout the brook, pools, mill discharge and
-foreground cascades. Your **Eldenmere Theme** now loops on the title screen and
-through Eldenmere, its interiors and the millrace, continuing across Continue
-and area transfers. **Dare to Dream Leitmotif** loops throughout the New Game
-cinematic, then hands back to Eldenmere Theme when it ends or is skipped.
+foreground cascades. **Eldenmere Theme** loops on the title screen.
+**Eldenmere** loops through Eldenmere, its interiors and the millrace,
+continuing across area transfers and resuming on Continue.
+**Dare to Dream Leitmotif** loops throughout the New Game
+cinematic, then hands back to Eldenmere when it ends or is skipped.
 **Kindled Courage** plays in battles. MQ02 now
 stages a cutscene on millrace arrival: Caelan and Mira stop, the camera pans to
 the boar for their conversation, then returns on Mira's “come back to me” warning.

@@ -16,7 +16,8 @@ from game_music import GameMusic
 
 
 CATALOG = {'version': 1, 'tracks': {
-    'eldenmere': {'file': 'runtime/eldenmere_theme.ogg', 'gain': .45},
+    'title': {'file': 'runtime/eldenmere_theme.ogg', 'gain': .45},
+    'eldenmere': {'file': 'runtime/eldenmere.ogg', 'gain': .45},
     'battle': {'file': 'runtime/kindled_courage.ogg', 'gain': .6},
     'victory': {'file': 'runtime/triumphal_fanfare.ogg', 'gain': .45, 'loop': False},
     'opening_leitmotif': {'file': 'runtime/dare_to_dream_leitmotif.ogg',
@@ -93,7 +94,7 @@ class SoundtrackTests(unittest.TestCase):
         self.addCleanup(music.stop)
         return game, music, mixer.music
 
-    def test_same_track_across_title_world_and_millrace_is_not_restarted(self):
+    def test_same_track_across_town_interiors_and_millrace_is_not_restarted(self):
         game, music, stream = self.make_music()
         self.assertIsNone(music.current_track)
         self.assertEqual(stream.plays, [])
@@ -393,6 +394,28 @@ class SoundtrackTests(unittest.TestCase):
         self.assertEqual(record['boundaries']['removed_tail_frames'], 0)
         self.assertIs(record['verification']['pygame_stream_with_repeat'], True)
         self.assertEqual(hashlib.sha256((root/track['file']).read_bytes()).hexdigest(),
+                         record['verification']['sha256'])
+
+    def test_exploration_uses_new_upload_and_title_keeps_original_theme(self):
+        root = Path(__file__).resolve().parents[1] / 'assets/music'
+        catalog = json.loads((root/'tracks.json').read_text())['tracks']
+        self.assertEqual(catalog['title']['file'], 'runtime/eldenmere_theme.ogg')
+        self.assertEqual(catalog['eldenmere']['file'], 'runtime/eldenmere.ogg')
+        music = GameMusic(SimpleNamespace(audio=AudioSettings()), mixer=FakeMixer())
+        self.addCleanup(music.stop)
+        self.assertTrue(music.tracks['eldenmere']['loop'])
+        audit = json.loads((root/'runtime/provenance.json').read_text())
+        record = next(item for item in audit['tracks'] if item['identifier'] == 'eldenmere')
+        self.assertEqual(record['source'], 'Eldenmere.m4a')
+        self.assertEqual(record['source_git_blob_sha'],
+                         '6a4ae0d4f77717cc6445ca7818f452791ebec943')
+        self.assertEqual(hashlib.sha256((root/record['source']).read_bytes()).hexdigest(),
+                         record['source_sha256'])
+        self.assertEqual(record['boundaries']['removed_tail_frames'], 0)
+        self.assertEqual(record['verification']['decoded_frames'],
+                         record['source_decoded_frames'] + record['runtime_frame_delta'])
+        self.assertIs(record['verification']['pygame_stream_with_repeat'], True)
+        self.assertEqual(hashlib.sha256((root/catalog['eldenmere']['file']).read_bytes()).hexdigest(),
                          record['verification']['sha256'])
 
 

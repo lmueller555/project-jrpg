@@ -480,7 +480,7 @@ class Game:
         self._saved_progress=self._progress_signature()
         self._save_retry_seconds=0.0
         self.opening_fade=0.0
-        self.music.play('eldenmere',fade_ms=900)
+        self.music.play('title' if self.on_title else 'eldenmere',fade_ms=900)
 
     def open_gallery(self):
         """The catalogue lives on the title; it never starts a normal journey."""

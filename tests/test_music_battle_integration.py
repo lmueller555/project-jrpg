@@ -96,7 +96,8 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         game = self.game(title=True)
         game.title.start_music()
         self.frame(game)
-        self.assertEqual(game.music.desired_track, 'eldenmere')
+        self.assertEqual(game.music.desired_track, 'title')
+        self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere_theme.ogg')
         loads, starts = self.backend.load.call_count, self.backend.play.call_count
         self.assertEqual(loads, 1)
         game.title.activate()  # New Game uses the title's actual fade path.
@@ -117,6 +118,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.frame(game, 1)
         self.assertEqual(game.music.current_track, 'eldenmere')
+        self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere.ogg')
         self.assertEqual(self.backend.load.call_count, loads+2)
         self.assertEqual(self.backend.play.call_count, starts+2)
         self.assertEqual(game.social.script_identifier, 'opening_wake')
@@ -125,6 +127,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         game = self.game()
         seed_completed_mill(game)
         self.frame(game)
+        self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere.ogg')
         starts = self.backend.play.call_count
         for identifier in ('sanctuary_hall', 'upstream', 'eldenmere'):
             if identifier == 'eldenmere':world = game.town
