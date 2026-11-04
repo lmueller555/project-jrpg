@@ -34,7 +34,7 @@ class CombatSprites:
             self._load_actor(actor)
 
     def _load_actor(self, actor):
-        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker'):
+        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea'):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))

@@ -2,7 +2,8 @@
   "version": 1,
   "actor": "lucan",
   "display_name": "Lucan Rooke",
-  "status": "approved",
+  "status": "review",
+  "animation_set": "full_combat_review",
   "canvas": [
     64,
     64
@@ -12,58 +13,596 @@
     54
   ],
   "facing": "left",
-  "source": "assets/source/companions/lucan/design_sheet.png",
-  "source_sha256": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
-  "extraction": {
-    "panel_bounds": [
-      500,
-      0,
-      1300,
-      809
-    ],
-    "source_bounds": [
-      620,
-      189,
-      1201,
-      765
-    ],
-    "source_body_bounds": [
-      770,
-      189,
-      1202,
-      765
-    ],
-    "source_ground": [
-      986.5,
-      764
-    ],
-    "uniform_scale": 0.07291666666666667,
-    "target_body_height": 42,
-    "exported_body_height": 42,
-    "offset": [
-      6,
-      13
-    ],
-    "bounds": [
-      6,
-      13,
-      48,
-      55
-    ],
-    "equipment_reduced_body_scale": false,
-    "palette_colors": 48
-  },
+  "source_sheet": "assets/source/combat/companion_animations/lucan/atlas_generated.png",
+  "source_sha256": "34566f5d1a8c438b8b5635c79cceed82a8a4c0c6f86903761ab4aa9cfc856239",
+  "source_grid": [
+    4,
+    6
+  ],
+  "native_scale": 0.21428571428571427,
+  "authored_pose_count": 24,
   "image": "idle_01.png",
-  "authored_pose_count": 1,
+  "sheet": "spritesheet.png",
   "animations": {
     "idle": {
       "loop": true,
       "frames": [
         {
           "file": "idle_01.png",
-          "duration_ms": 500
+          "duration_ms": 180,
+          "source_cell": 0,
+          "source_bounds": [
+            32,
+            51,
+            214,
+            244
+          ],
+          "source_ground": [
+            128,
+            245
+          ],
+          "position": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 180,
+          "source_cell": 1,
+          "source_bounds": [
+            289,
+            47,
+            469,
+            244
+          ],
+          "source_ground": [
+            384,
+            245
+          ],
+          "position": [
+            12,
+            12
+          ]
+        },
+        {
+          "file": "idle_03.png",
+          "duration_ms": 180,
+          "source_cell": 2,
+          "source_bounds": [
+            544,
+            44,
+            725,
+            244
+          ],
+          "source_ground": [
+            640,
+            245
+          ],
+          "position": [
+            11,
+            11
+          ]
+        },
+        {
+          "file": "idle_04.png",
+          "duration_ms": 180,
+          "source_cell": 3,
+          "source_bounds": [
+            801,
+            51,
+            982,
+            244
+          ],
+          "source_ground": [
+            896,
+            245
+          ],
+          "position": [
+            12,
+            12
+          ]
+        }
+      ]
+    },
+    "attack": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 160,
+          "source_cell": 4,
+          "source_bounds": [
+            80,
+            309,
+            221,
+            501
+          ],
+          "source_ground": [
+            128,
+            501
+          ],
+          "position": [
+            22,
+            13
+          ]
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 180,
+          "source_cell": 5,
+          "source_bounds": [
+            273,
+            304,
+            472,
+            500
+          ],
+          "source_ground": [
+            384,
+            501
+          ],
+          "position": [
+            8,
+            12
+          ]
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 120,
+          "source_cell": 6,
+          "source_bounds": [
+            495,
+            314,
+            747,
+            501
+          ],
+          "source_ground": [
+            640,
+            501
+          ],
+          "position": [
+            1,
+            14
+          ]
+        },
+        {
+          "file": "attack_04.png",
+          "duration_ms": 260,
+          "source_cell": 7,
+          "source_bounds": [
+            796,
+            307,
+            982,
+            500
+          ],
+          "source_ground": [
+            896,
+            501
+          ],
+          "position": [
+            11,
+            12
+          ]
+        }
+      ],
+      "contact_ms": 360
+    },
+    "guard": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "guard_01.png",
+          "duration_ms": 240,
+          "source_cell": 12,
+          "source_bounds": [
+            30,
+            817,
+            209,
+            1013
+          ],
+          "source_ground": [
+            128,
+            1013
+          ],
+          "position": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "guard_02.png",
+          "duration_ms": 240,
+          "source_cell": 13,
+          "source_bounds": [
+            287,
+            817,
+            465,
+            1013
+          ],
+          "source_ground": [
+            384,
+            1013
+          ],
+          "position": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    "hurt": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 160,
+          "source_cell": 14,
+          "source_bounds": [
+            548,
+            816,
+            728,
+            1013
+          ],
+          "source_ground": [
+            640,
+            1013
+          ],
+          "position": [
+            12,
+            12
+          ]
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 240,
+          "source_cell": 15,
+          "source_bounds": [
+            800,
+            817,
+            982,
+            1013
+          ],
+          "source_ground": [
+            896,
+            1013
+          ],
+          "position": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    "victory": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "victory_01.png",
+          "duration_ms": 340,
+          "source_cell": 16,
+          "source_bounds": [
+            29,
+            1063,
+            213,
+            1269
+          ],
+          "source_ground": [
+            128,
+            1269
+          ],
+          "position": [
+            11,
+            10
+          ]
+        },
+        {
+          "file": "victory_02.png",
+          "duration_ms": 340,
+          "source_cell": 17,
+          "source_bounds": [
+            285,
+            1061,
+            465,
+            1269
+          ],
+          "source_ground": [
+            384,
+            1269
+          ],
+          "position": [
+            11,
+            9
+          ]
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 260,
+          "source_cell": 18,
+          "source_bounds": [
+            534,
+            1095,
+            719,
+            1269
+          ],
+          "source_ground": [
+            640,
+            1269
+          ],
+          "position": [
+            9,
+            17
+          ]
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 420,
+          "source_cell": 19,
+          "source_bounds": [
+            791,
+            1115,
+            977,
+            1269
+          ],
+          "source_ground": [
+            896,
+            1269
+          ],
+          "position": [
+            10,
+            21
+          ]
+        }
+      ]
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_01.png",
+          "duration_ms": 140,
+          "source_cell": 20,
+          "source_bounds": [
+            29,
+            1329,
+            213,
+            1524
+          ],
+          "source_ground": [
+            128,
+            1525
+          ],
+          "position": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "walk_02.png",
+          "duration_ms": 140,
+          "source_cell": 21,
+          "source_bounds": [
+            288,
+            1326,
+            454,
+            1524
+          ],
+          "source_ground": [
+            384,
+            1525
+          ],
+          "position": [
+            11,
+            11
+          ]
+        },
+        {
+          "file": "walk_03.png",
+          "duration_ms": 140,
+          "source_cell": 22,
+          "source_bounds": [
+            545,
+            1327,
+            711,
+            1524
+          ],
+          "source_ground": [
+            640,
+            1525
+          ],
+          "position": [
+            12,
+            12
+          ]
+        },
+        {
+          "file": "walk_04.png",
+          "duration_ms": 140,
+          "source_cell": 23,
+          "source_bounds": [
+            800,
+            1328,
+            967,
+            1524
+          ],
+          "source_ground": [
+            896,
+            1525
+          ],
+          "position": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    "technique": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "technique_01.png",
+          "duration_ms": 220,
+          "source_cell": 8,
+          "source_bounds": [
+            30,
+            561,
+            210,
+            757
+          ],
+          "source_ground": [
+            128,
+            757
+          ],
+          "position": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "technique_02.png",
+          "duration_ms": 280,
+          "source_cell": 9,
+          "source_bounds": [
+            283,
+            575,
+            469,
+            757
+          ],
+          "source_ground": [
+            384,
+            757
+          ],
+          "position": [
+            10,
+            15
+          ]
+        },
+        {
+          "file": "technique_03.png",
+          "duration_ms": 160,
+          "source_cell": 10,
+          "source_bounds": [
+            535,
+            572,
+            745,
+            757
+          ],
+          "source_ground": [
+            640,
+            757
+          ],
+          "position": [
+            10,
+            14
+          ]
+        },
+        {
+          "file": "technique_04.png",
+          "duration_ms": 240,
+          "source_cell": 11,
+          "source_bounds": [
+            800,
+            562,
+            980,
+            757
+          ],
+          "source_ground": [
+            896,
+            757
+          ],
+          "position": [
+            11,
+            12
+          ]
+        }
+      ],
+      "contact_ms": 500
+    },
+    "flee": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "walk_01.png",
+          "duration_ms": 140,
+          "source_cell": 20,
+          "source_bounds": [
+            29,
+            1329,
+            213,
+            1524
+          ],
+          "source_ground": [
+            128,
+            1525
+          ],
+          "position": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "walk_02.png",
+          "duration_ms": 140,
+          "source_cell": 21,
+          "source_bounds": [
+            288,
+            1326,
+            454,
+            1524
+          ],
+          "source_ground": [
+            384,
+            1525
+          ],
+          "position": [
+            11,
+            11
+          ]
+        },
+        {
+          "file": "walk_03.png",
+          "duration_ms": 140,
+          "source_cell": 22,
+          "source_bounds": [
+            545,
+            1327,
+            711,
+            1524
+          ],
+          "source_ground": [
+            640,
+            1525
+          ],
+          "position": [
+            12,
+            12
+          ]
+        },
+        {
+          "file": "walk_04.png",
+          "duration_ms": 140,
+          "source_cell": 23,
+          "source_bounds": [
+            800,
+            1328,
+            967,
+            1524
+          ],
+          "source_ground": [
+            896,
+            1525
+          ],
+          "position": [
+            11,
+            12
+          ]
         }
       ]
     }
-  }
+  },
+  "extraction": "Authored alpha cells; one native scale; boot/ground registration; no pose repainting"
 }

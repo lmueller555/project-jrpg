@@ -1,0 +1,356 @@
+{
+  "character": "Rhea",
+  "scope": "review source atlas only; no runtime export or merge",
+  "generator": "image_gen.imagegen",
+  "generated_file": "/workspace/generated_images/exec-923f04d5-a1d9-490a-8c9a-83c513c5a95d.png",
+  "atlas": "atlas_generated.png",
+  "prompt": "prompt.txt",
+  "transparent_background": true,
+  "references": [
+    "assets/source/companions/rhea/design_sheet.png",
+    "assets/combat/rhea/idle_01.png"
+  ],
+  "layout": {
+    "columns": 4,
+    "rows": 6,
+    "cell_width": 256,
+    "cell_height": 256,
+    "order": "row-major"
+  },
+  "frame_groups": {
+    "idle": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "cast": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "guard": [
+      12,
+      13
+    ],
+    "hurt": [
+      14,
+      15
+    ],
+    "victory": [
+      16,
+      17
+    ],
+    "defeat": [
+      18,
+      19
+    ],
+    "walk": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "runtime_target": {
+    "width": 64,
+    "height": 64,
+    "anchor": [
+      32,
+      54
+    ],
+    "standing_body_height": 42,
+    "scale_policy": "one shared scale across all frames; no per-frame resize"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "row": 0,
+      "col": 0,
+      "alpha128_bbox": [
+        79,
+        48,
+        201,
+        240
+      ]
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "col": 1,
+      "alpha128_bbox": [
+        81,
+        48,
+        200,
+        240
+      ]
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "col": 2,
+      "alpha128_bbox": [
+        78,
+        56,
+        202,
+        240
+      ]
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "col": 3,
+      "alpha128_bbox": [
+        80,
+        48,
+        202,
+        240
+      ]
+    },
+    {
+      "index": 4,
+      "row": 1,
+      "col": 0,
+      "alpha128_bbox": [
+        72,
+        49,
+        210,
+        240
+      ]
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "col": 1,
+      "alpha128_bbox": [
+        56,
+        51,
+        210,
+        240
+      ]
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "col": 2,
+      "alpha128_bbox": [
+        9,
+        51,
+        212,
+        240
+      ]
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "col": 3,
+      "alpha128_bbox": [
+        80,
+        45,
+        202,
+        240
+      ]
+    },
+    {
+      "index": 8,
+      "row": 2,
+      "col": 0,
+      "alpha128_bbox": [
+        80,
+        47,
+        202,
+        240
+      ]
+    },
+    {
+      "index": 9,
+      "row": 2,
+      "col": 1,
+      "alpha128_bbox": [
+        64,
+        46,
+        205,
+        240
+      ]
+    },
+    {
+      "index": 10,
+      "row": 2,
+      "col": 2,
+      "alpha128_bbox": [
+        40,
+        48,
+        212,
+        240
+      ]
+    },
+    {
+      "index": 11,
+      "row": 2,
+      "col": 3,
+      "alpha128_bbox": [
+        77,
+        47,
+        201,
+        240
+      ]
+    },
+    {
+      "index": 12,
+      "row": 3,
+      "col": 0,
+      "alpha128_bbox": [
+        56,
+        50,
+        204,
+        240
+      ]
+    },
+    {
+      "index": 13,
+      "row": 3,
+      "col": 1,
+      "alpha128_bbox": [
+        53,
+        56,
+        203,
+        240
+      ]
+    },
+    {
+      "index": 14,
+      "row": 3,
+      "col": 2,
+      "alpha128_bbox": [
+        45,
+        40,
+        204,
+        240
+      ]
+    },
+    {
+      "index": 15,
+      "row": 3,
+      "col": 3,
+      "alpha128_bbox": [
+        74,
+        49,
+        204,
+        240
+      ]
+    },
+    {
+      "index": 16,
+      "row": 4,
+      "col": 0,
+      "alpha128_bbox": [
+        64,
+        34,
+        205,
+        240
+      ]
+    },
+    {
+      "index": 17,
+      "row": 4,
+      "col": 1,
+      "alpha128_bbox": [
+        75,
+        45,
+        199,
+        240
+      ]
+    },
+    {
+      "index": 18,
+      "row": 4,
+      "col": 2,
+      "alpha128_bbox": [
+        65,
+        76,
+        198,
+        240
+      ]
+    },
+    {
+      "index": 19,
+      "row": 4,
+      "col": 3,
+      "alpha128_bbox": [
+        68,
+        79,
+        202,
+        240
+      ]
+    },
+    {
+      "index": 20,
+      "row": 5,
+      "col": 0,
+      "alpha128_bbox": [
+        70,
+        45,
+        204,
+        240
+      ]
+    },
+    {
+      "index": 21,
+      "row": 5,
+      "col": 1,
+      "alpha128_bbox": [
+        85,
+        45,
+        201,
+        240
+      ]
+    },
+    {
+      "index": 22,
+      "row": 5,
+      "col": 2,
+      "alpha128_bbox": [
+        82,
+        45,
+        204,
+        240
+      ]
+    },
+    {
+      "index": 23,
+      "row": 5,
+      "col": 3,
+      "alpha128_bbox": [
+        86,
+        42,
+        194,
+        240
+      ]
+    }
+  ],
+  "quality_notes": [
+    "All 24 whole poses are isolated and visible with consistent identity and staff colors.",
+    "True alpha transparency is present; RGB data in transparent regions is brown, but alpha compositing produces clean separation.",
+    "Casting stays grounded with a short free-hand extension and no detached projectile.",
+    "Victory is a small fist/staff gesture; defeat uses one knee with torso reduced by pose.",
+    "Standing body/costume proportions are substantially consistent; all 24 source-cell opaque foot/staff baselines are at y240 (exclusive bbox bottom), with one shared scale suitable for export.",
+    "Attack windup is restrained and the final walk phases are subtle; review playback for readability."
+  ],
+  "prompt_text": "Create a production-ready pixel-art combat sprite animation ATLAS for the existing adult mage Rhea in the provided references. This is functional 2D JRPG sprite art, not a character illustration. Reference 1 is the approved design sheet, reference 2 is the ACTUAL existing combat idle sprite; match its compact pixel-art proportions and same face, hair, costume and staff. Rhea is an adult woman age 22, lively and upbeat, long wavy golden blonde hair, blue eyes, green leaf accessory, emerald green fitted dress with gold trim and a thigh slit, brown knee-high boots, brown belt and notebook pouch. Her weapon is a PURPLE tangled-wood staff with a GLOWING GREEN ORB, not a sword or brown staff. Keep the staff in her same anatomical left hand, at screen-right side when upright, and use her free right hand for casting.\n\nOUTPUT STRUCTURE IS CRITICAL: exactly FOUR equal-width COLUMNS and SIX equal-height ROWS, so exactly TWENTY-FOUR completely separate whole-body poses in row-major order. Recommended canvas 1024x1536 pixels, cells 256x256. True transparent alpha background throughout. No painted transparency checkerboard, no white/gray background, no labels, no words, no gridlines, no border, no ground shadows, no scenery. Every cell has exactly ONE whole Rhea, her staff, and no detached VFX. Substantial transparent margins in every cell; never touch cell boundaries. Use identical character dimensions, body proportions, zoom, consistent foot baseline and centered hip anchor across all 24 cells. Standing body (crown to boot sole) about 178 source pixels high in each 256px cell, with floor at local y220 and body hip center at x128. Keep staff and arm moves moderate enough to remain comfortably inside each cell. This atlas will be reduced with ONE GLOBAL SCALE for all frames to a 64x64 runtime sprite, foot anchor 32,54, standing body 42px tall. Do not enlarge crouched poses, do not change zoom, no perspective or camera changes. Legs and arms retain normal consistent proportions in every frame.\n\nAll 24 poses face LEFT in a consistent three-quarter combat view, looking toward screen-left, with same handedness and body model. Clean crisp limited-palette nearest-neighbor pixel edges and deliberate pixel clusters, no soft airbrushing. Keep details legible at small scale.\n\nExact row-major animation contents:\nROW 1 / cells 0 1 2 3 = 4-frame IDLE loop. Confident relaxed battle-ready stance, staff upright at her right screen side, free hand near waist. Only subtle breathing, small hair sway and tiny knee dip; no broad gesture; loop smoothly.\nROW 2 / cells 4 5 6 7 = 4-frame PHYSICAL STAFF ATTACK. 4 windup pull staff modestly back. 5 draw back further across body with one supporting hand. 6 contact physical short leftward staff jab/diagonal waist-level sweep, staff stays visibly purple with green orb; normal-length arms, moderate stance, no huge overhead gesture, no detached slash, no spell. 7 recover to standing ready. Keep feet grounded and limb lengths fixed.\nROW 3 / cells 8 9 10 11 = 4-frame CAST. 8 grounded anticipation and free hand raises at chest level. 9 channel free hand open toward LEFT and green orb brightens subtly. 10 release free hand forward LEFT with small green glow attached to orb only. 11 recover into standing ready. Stand with hips balanced over legs and torso tall; absolutely no unnatural forward-bent legs or stretched arms. No elemental projectile, flame, lightning, ice, cloud, beam, floating particle trail, runes or large VFX.\nROW 4 / cells 12 13 14 15 = GUARD A, GUARD B, HURT A, HURT B. 12 staff diagonally braced across torso toward incoming attack from left, modest defensive bend. 13 held firm guard tiny compression. 14 whole-body hit recoil leaning a little back right, both arms naturally connected, long hair flick. 15 recovering upright after recoil. Keep same face and costume, no blood or injury marks.\nROW 5 / cells 16 17 18 19 = VICTORY A, VICTORY B, DEFEAT A, DEFEAT B. 16 upbeat confident little smile and small shoulder-height staff flourish, free fist gently raised. 17 confident smile staff settles upright. 18 lower to one knee with realistic leg length, head dipping and staff used as support; body becomes shorter through kneeling only, never resized. 19 settle into one-knee defeated pose, head bowed, staff close at side, visible normal-length legs and boots. No prone corpse.\nROW 6 / cells 20 21 22 23 = four-phase WALK/RETREAT movement cycle, still facing LEFT three-quarter, consistent upright staff grip. 20 left foot forward and right foot back contact. 21 passing pose feet closer, slight lowering. 22 right foot forward and left foot back contact. 23 opposite passing pose slight lifting. Normal walking-sized alternating steps and gentle hair/dress sway; consistent torso shape and same staff held consistently throughout.\n\nHighest priorities: exactly 4x6 isolated poses, no cropping or overlap, unchanged Rhea identity/costume/purple staff/green orb, single consistent standing size and ground baseline, correct LEFT orientation in every frame, readable distinct actions, natural adult anatomy with fixed proportions.\n",
+  "recommended_registration": {
+    "cell_anchor": [
+      128,
+      240
+    ],
+    "shared_scale": 0.21875,
+    "basis": "42 runtime pixels / approximately 192 source pixels standing body",
+    "preview": "/tmp/rhea_global_scale_review.png"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "actors": [
+    {
+      "actor": "lucan",
+      "states": [
+        "idle",
+        "attack",
+        "technique",
+        "guard",
+        "hurt",
+        "victory",
+        "defeat",
+        "walk"
+      ],
+      "authored_poses": 24,
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        54
+      ],
+      "renderer": "CombatSprites.frame",
+      "source_sha256": "34566f5d1a8c438b8b5635c79cceed82a8a4c0c6f86903761ab4aa9cfc856239",
+      "status": "pending_user_review"
+    },
+    {
+      "actor": "rhea",
+      "states": [
+        "idle",
+        "attack",
+        "cast",
+        "guard",
+        "hurt",
+        "victory",
+        "defeat",
+        "walk"
+      ],
+      "authored_poses": 24,
+      "canvas": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        54
+      ],
+      "renderer": "CombatSprites.frame",
+      "source_sha256": "3b09081e93e29470484f6278a929d105a2e270bbfbb653de772e04edb3239f93",
+      "status": "pending_user_review"
+    }
+  ],
+  "media_sha256": {
+    "lucan_animations.gif": "a5c29f3136565607115797cdc5dd1440c8452d316308543979f0f94ee3e9783f",
+    "lucan_overview.png": "8dd8d08c8084a3e7bec140be4bb977354d5881a31b79a3497d83a3ae0acfd81e",
+    "lucan_poses.png": "42609fa390422e35b16595172eb6191205b4d52ef30560f247f790ffc19f5b1f",
+    "rhea_animations.gif": "02c63ea679ca1112d1c096a564264136560b4123f895a3891277bb458cb15e76",
+    "rhea_overview.png": "16efa7650a215989dc38162371bb6fc1ab1b00265e52ad19231d25bf8d28555a",
+    "rhea_poses.png": "e649246a67b549113aef36542738245dcd42799d25778e4eee41ced54d7f9eba"
+  }
+}
