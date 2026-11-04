@@ -37,6 +37,17 @@ Unlisted ages and unapproved biography details remain open. See
 [Chapter 1](CHAPTER_01.md) and the [opening quest](CH01_MQ01.md) for established
 relationships and scene context.
 
+## Caelan - protagonist foundation
+
+**Confirmed, 2026-11-04:** Caelan is reserved, thoughtful and self-doubting.
+Before the crisis, he wants to develop his magicks and find a vocation of his own.
+
+**Profile notes approved, 2026-11-04:** His
+[character sheet](characters/CAELAN.md) gathers the established opening facts,
+approved characterization and growth direction, ten dialogue references and
+five nonverbal portrayal references. Their hypothetical scene events,
+unassigned biography details and exact later outcomes remain open.
+
 ## Eventual party members
 
 The approved [companion guide](COMPANIONS.md) links detailed character profiles
