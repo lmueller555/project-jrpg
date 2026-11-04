@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "character": "lucan",
+  "created_at": "2026-11-04",
+  "generator": "image_gen.imagegen",
+  "prompt": "Create a polished production pixel-art animation atlas of the EXACT existing knight companion Lucan, using the attached approved design sheet and tiny approved combat idle as strict character references. This is animation artwork, not a redesign, and the full identity must remain the same from cell to cell. The MEDIUM character in the design sheet is the body-proportion reference; the 64x64 combat idle is the exact intended game silhouette and LEFT-facing three-quarter view reference.\n\nOUTPUT: one single transparent RGBA image, ideally exactly 1024 px wide by 1536 px high, containing precisely 4 equal columns and 6 equal rows = 24 separate full-body pose sprites. Uniform 256x256 cells. No visible grid, no cell outlines, no dividers, no labels, no text. Preserve transparent background. No backgrounds, shadows, ground marks, gray checkerboards, swoosh strokes, impact art, magic, or detached effects. Each sprite is whole and separate, with generous transparent cell margins and absolutely no crossing between cells. Every sprite in every cell faces screen LEFT in the same three-quarter battle view. Do not make turnaround views or right-facing sprites.\n\nEXACT CHARACTER: young confident, slightly arrogant male knight, tousled DARK BROWN hair, warm fair skin, confident determined eyes, silver plate shoulder armor, silver gorget/chest detail and knee armor with gold edging, RED tabard with gold edging, brown belt with gold buckle, dark gray trousers, brown armored boots. ONE modest silver longsword with GOLD crossguard held in his anatomical RIGHT hand; ONE red kite shield with silver rim and YELLOW upward chevron held in his anatomical LEFT hand. Match these references in every single cell. Do not switch the hands or add weapons. Keep both sword and shield in all poses, including defeat. The shield reads as the near-side object on the screen-right side of the torso in the reference battle view, and the sword reaches toward screen-left. Hands attached naturally to wrists. Preserve face, hairstyle, armor palette, sword blade length, shield shape, and equipment scale.\n\nART: crisp retro RPG pixel art with deliberate hard pixel edges and clean small clusters, sharp black/dark-brown outline, limited rich colors and subtle pixel shading. Same body/head proportions and same drawing scale in ALL 24 sprites. Body height when standing roughly 168 source pixels, with hair top around y=54 and boot ground around y=224 within each 256px cell. Keep a single consistent invisible floor at y=224 in each cell and pelvis/root around x=128. Kneeling must lower the body naturally without shrinking the character. No per-pose size changes. Normal standing/walk knees and arms retain the same limb lengths. Sword, shield, hands, boots all stay within each cell, with minimum 12px clear margin from every cell boundary. Sword poses must be COMPACT, no high overhead blade. All 24 sprites must remain fully visible.\n\nREADING ORDER: left to right within rows, then top to bottom. Follow this EXACT pose map.\n\nROW 1 = cells 0,1,2,3: four-frame subtle breathing idle, all in the approved left-facing battle ready stance, sword held low forward-left and shield at torso side; tiny chest/shoulder rise then settle, same foot locations and ground.\n\nROW 2 = cells 4,5,6,7: readable four-frame ONE-HANDED SWORD ATTACK. Cell4 anticipation: weight shifts onto rear leg and elbow draws sword back close to waist, shield retained. Cell5 windup: slight torso twist, sword raised only to chest/shoulder level, NEVER overhead. Cell6 contact: forward LEFT slash/thrust with fully visible compact straight blade, controlled short lunge, blade no farther than left cell margin. Cell7 recovery: weight settles, sword returns low, shield retained. Same sword blade length in all four.\n\nROW 3 = cells 8,9,10,11: four-frame physical SHIELD BASH technique. Cell8 windup shield drawn slightly back close to chest. Cell9 brace with bent knees and shield upright. Cell10 contact with short forceful step LEFT and left forearm extending shield forward; the red shield is the striking object and sword stays low in RIGHT hand. Cell11 recovery returning to ready. No magic or effects.\n\nROW 4 = cells 12,13,14,15: Cell12 guard shield raised forward-LEFT across torso, knees braced; Cell13 guard hold with tiny settling motion. Cell14 hurt small whole-body recoil to screen-right with shoulders reacting, shield and sword retained; Cell15 hurt recovery into balanced stance. Hurt is restrained and anatomically coherent.\n\nROW 5 = cells 16,17,18,19: Cell16 victory confident compact sword flourish at chest height with chin slightly raised; Cell17 victory proud confident hold with sword low and shield at side. Cell18 defeat begins a NATURAL one-knee kneel, torso slightly bowed, front boot planted and rear knee descends to floor; Cell19 defeat settled on that knee with head lowered. Both keep the SAME head and limb sizes as standing frames: pelvis and knee angles lower body, boots remain realistic, no melting/shortened body/two standing boots under a crouched torso. Sword held low diagonally, shield rests near knee but remains held. No fallen weapons.\n\nROW 6 = cells 20,21,22,23: four distinct phases of LEFT-facing battle walk/retreat footwork, sword and shield in ready positions throughout. Cell20 left-facing contact step with front boot extended left and rear boot right. Cell21 passing phase with boots beneath body and one knee bent. Cell22 opposite contact step with legs exchanged. Cell23 second passing phase with other knee bent. Keep facing left, head constant, center stable; small vertical bob only, feet follow the same floor. Four frames must show clearly different legs and preserve correct limb anatomy.\n\nTreat every cell as an independent whole sprite on transparent alpha. Count exactly 24 and keep all art strictly within its cell. No decorative second characters. No text whatsoever.",
+  "tool_arguments": {
+    "referenced_image_paths": [
+      "assets/source/companions/lucan/design_sheet.png",
+      "assets/combat/lucan/idle_01.png"
+    ],
+    "transparent_background": true
+  },
+  "tool_output": {
+    "workspace_path": "/workspace/generated_images/exec-8b702879-de49-40a7-ba38-d0ca79fc70c8.png",
+    "retained_source": "atlas_generated.png"
+  },
+  "source_atlas": {
+    "width": 1024,
+    "height": 1536,
+    "columns": 4,
+    "rows": 6,
+    "cell_width": 256,
+    "cell_height": 256,
+    "background": "transparent RGBA; low alpha fringe exists",
+    "observed_alpha_range": [
+      0,
+      254
+    ],
+    "nominal_root_x": 128,
+    "nominal_floor_y": 245
+  },
+  "suggested_export": {
+    "runtime_size": [
+      64,
+      64
+    ],
+    "runtime_anchor": [
+      32,
+      54
+    ],
+    "uniform_scale": 0.21428571428571427,
+    "scale_basis": "Approximately 196 source pixels from standing hair top to boot floor. Apply one shared scale to all poses; preserve source floor and root.",
+    "alpha_threshold_for_component_detection": 127,
+    "frame_6_note": "Contact sword extends 17px left of nominal source cell. Extract whole isolated component using recorded bounds. Keep nominal source root; do not recenter this pose by bbox."
+  },
+  "animations": {
+    "idle": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "attack": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "technique": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "guard": [
+      12,
+      13
+    ],
+    "hurt": [
+      14,
+      15
+    ],
+    "victory": [
+      16,
+      17
+    ],
+    "defeat": [
+      18,
+      19
+    ],
+    "move": [
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "frame_components_alpha_gt_127": [
+    [
+      32,
+      51,
+      214,
+      244
+    ],
+    [
+      289,
+      47,
+      469,
+      244
+    ],
+    [
+      544,
+      44,
+      725,
+      244
+    ],
+    [
+      801,
+      51,
+      982,
+      244
+    ],
+    [
+      80,
+      309,
+      221,
+      501
+    ],
+    [
+      273,
+      304,
+      472,
+      500
+    ],
+    [
+      495,
+      314,
+      747,
+      501
+    ],
+    [
+      796,
+      307,
+      982,
+      500
+    ],
+    [
+      30,
+      561,
+      210,
+      757
+    ],
+    [
+      283,
+      575,
+      469,
+      757
+    ],
+    [
+      535,
+      572,
+      745,
+      757
+    ],
+    [
+      800,
+      562,
+      980,
+      757
+    ],
+    [
+      30,
+      817,
+      209,
+      1013
+    ],
+    [
+      287,
+      817,
+      465,
+      1013
+    ],
+    [
+      548,
+      816,
+      728,
+      1013
+    ],
+    [
+      800,
+      817,
+      982,
+      1013
+    ],
+    [
+      29,
+      1063,
+      213,
+      1269
+    ],
+    [
+      285,
+      1061,
+      465,
+      1269
+    ],
+    [
+      534,
+      1095,
+      719,
+      1269
+    ],
+    [
+      791,
+      1115,
+      977,
+      1269
+    ],
+    [
+      29,
+      1329,
+      213,
+      1524
+    ],
+    [
+      288,
+      1326,
+      454,
+      1524
+    ],
+    [
+      545,
+      1327,
+      711,
+      1524
+    ],
+    [
+      800,
+      1328,
+      967,
+      1524
+    ]
+  ],
+  "review_notes": [
+    "Matches approved dark brown hair, silver-and-gold armor, red tabard, sword and red chevron shield.",
+    "All frames face screen left. Sword and shield retained; no magic effects.",
+    "Technique depicts physical shield bash. Defeat uses one-knee descent and settle.",
+    "Idle breathing small; movement uses four distinct leg phases.",
+    "One generated contact-frame silhouette exceeds nominal source cell left edge, but it remains isolated and fits runtime canvas at the suggested shared scale."
+  ]
+}

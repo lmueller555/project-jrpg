@@ -158,6 +158,20 @@ def build_actor(actor):
     digest = hashlib.sha256(source.read_bytes()).hexdigest()
     records = {};frames = {}
     for kind, fmt in FORMATS.items():
+        directory = ROOT/fmt['directory'].format(actor=actor)
+        existing_path = directory/fmt['metadata']
+        if kind == 'combat' and existing_path.exists():
+            existing = json.loads(existing_path.read_text())
+            if existing.get('animation_set') == 'full_combat_review':
+                # The appearance study must not replace a complete animation set.
+                path = directory/existing['image']
+                frames[kind] = Image.open(path).convert('RGBA')
+                records[kind] = {'image': path.relative_to(ROOT).as_posix(),
+                    'status': existing['status'],
+                    'metadata': existing_path.relative_to(ROOT).as_posix(),
+                    'canvas': existing['canvas'], 'anchor': existing['anchor'],
+                    'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+                continue
         overrides = recipe.get('export', {}).get(kind, {})
         frame, extraction = export_pose(sheet, actor, kind, overrides)
         directory = ROOT/fmt['directory'].format(actor=actor)
