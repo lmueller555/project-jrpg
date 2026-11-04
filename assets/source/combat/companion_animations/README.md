@@ -1,9 +1,9 @@
-# Companion combat animation sources — review
+# Companion combat animation sources — approved
 
 Lucan and Rhea each have an imagegen-authored 4×6 atlas containing 24 poses.
 Their `generation.json` files retain prompts and source references. Original
 approved combat-ready pixels are preserved as `approved_ready_reference.png`
-for comparison; the new complete sets are awaiting user review.
+for comparison. The user approved both complete sets on November 4, 2026.
 
 The shared exporter, `tools/build_companion_combat_animations.py`, mechanically
 extracts complete alpha silhouettes, applies binary transparency and one fixed

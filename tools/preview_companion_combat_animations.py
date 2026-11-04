@@ -99,7 +99,7 @@ def preview(actor, output):
     contact.save(output/f'{actor}_poses.png')
     return {'actor': actor, 'states': states, 'authored_poses': 24,
             'canvas': data['canvas'], 'anchor': data['anchor'], 'renderer': 'CombatSprites.frame',
-            'source_sha256': data['source_sha256'], 'status': 'pending_user_review'}
+            'source_sha256': data['source_sha256'], 'status': data['status']}
 
 
 def main():

@@ -1,6 +1,6 @@
-# Lucan and Rhea combat animations — pending review
+# Lucan and Rhea combat animations — approved
 
-These sets are prepared for visual review and have not been merged into main.
+The user approved both animation sets for integration on November 4, 2026.
 Each character has 24 authored poses, eight animation groups, and a movement
 alias for fleeing. Runtime canvases remain 64×64 with ground anchor [32,54].
 

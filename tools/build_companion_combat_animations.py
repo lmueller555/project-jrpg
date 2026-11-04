@@ -64,6 +64,8 @@ def build_actor(actor, output_root=None):
     source = folder/'atlas_generated.png'
     recipe_path = folder/'recipe.json'
     recipe = json.loads(recipe_path.read_text()) if recipe_path.exists() else {}
+    status = recipe.get('approval_status', 'review')
+    if status not in ('review', 'approved'):raise ValueError('Invalid approval status')
     with Image.open(source) as opened:
         cells = authored_cells(opened.convert('RGBA'), (4, 6))
     grounds = []
@@ -115,7 +117,7 @@ def build_actor(actor, output_root=None):
     sheet.save(directory/'spritesheet.png', optimize=True)
     metadata = {
         'version': 1, 'actor': actor, 'display_name': NAMES[actor],
-        'status': 'review', 'animation_set': 'full_combat_review',
+        'status': status, 'animation_set': 'full_combat_review',
         'canvas': [64, 64], 'anchor': [32, 54], 'facing': 'left',
         'source_sheet': source.relative_to(ROOT).as_posix(),
         'source_sha256': digest(source), 'source_grid': [4, 6],

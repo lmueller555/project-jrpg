@@ -1,6 +1,5 @@
 {
-  "status": "pending_user_review",
-  "merged": false,
+  "status": "approved_by_user",
   "checks_passed": 95,
   "asset_command": "python -m unittest discover -s tests -p 'test*combat*.py'",
   "view_command": "python -m unittest test_battle_scene test_party_battle_scene test_skills_battle_scene test_rivet_battle_scene test_battle_status_ui",
@@ -13,10 +12,10 @@
   "independent_visual_review": "PASS: anatomy, facing, equipment retention, weapon bounds and kneeling silhouettes",
   "source_and_runtime_sha256": {
     "battle_scene.py": "ad089b7ef632a1bccc94166143a5236589051e5490c085d87c45e87fe1451606",
-    "tools/build_companion_combat_animations.py": "4dba57c148cd4cd2d0fec7f7ffe9c45a5acbd29ff8f21e92b4541bea2beec04e",
-    "tools/preview_companion_combat_animations.py": "d93fb672fd7c31c3bca485e8970d6946f8b04e23ddcf32ac8e0de4a0c2b337e6",
+    "tools/build_companion_combat_animations.py": "cd00947a52d5c8d16974275883a40e21cc321089a490834a9f3a6287e6930ebb",
+    "tools/preview_companion_combat_animations.py": "3d63e5b269803787c514df7c91ce3668dd1441d7f7a47302cdf43e22ed861f01",
     "tools/build_companion_sprite_studies.py": "c993436b3cd1d3a375e66a728a4d5f0a416dd80e87fecb138f8478cbd1e93000",
-    "assets/combat/lucan/animation.json": "772443be318a1d69c5c36471848104c8d4193e7d05387cdde8ca960f3650a547",
+    "assets/combat/lucan/animation.json": "edce5d32592791f8d72400d939529ebce5b8343d4ecbcb45c4d9873f9c44b47a",
     "assets/combat/lucan/attack_01.png": "4df11022da9e1957ff18a60cdc9a1b77802f95e4446838cb193ca7fcc18a529f",
     "assets/combat/lucan/attack_02.png": "f9e0b4306db7a608dc54e62844bef8432364c940446452752cfc684af6d68f4c",
     "assets/combat/lucan/attack_03.png": "3db3244020d69ef320cf82c49835c3268bb627cb6402de5cc7c9796916e1adb6",
@@ -45,8 +44,8 @@
     "assets/source/combat/companion_animations/lucan/approved_ready_reference.png": "0dac968c662c28d960ec0f6c871c6fd4ed15723e917ce2a597db4cf41be60aeb",
     "assets/source/combat/companion_animations/lucan/atlas_generated.png": "34566f5d1a8c438b8b5635c79cceed82a8a4c0c6f86903761ab4aa9cfc856239",
     "assets/source/combat/companion_animations/lucan/generation.json": "325b4e9eb5649105323a5409db3ade8e962f6fa7b43ceccb7510b8080bd6f4dd",
-    "assets/source/combat/companion_animations/lucan/recipe.json": "14b9fbc044a775d8ea05694ea5e854823204765d8608b95e42ff4391039bdd41",
-    "assets/combat/rhea/animation.json": "1f928ab38e846c2ecedc4357f12ce00c1eb294de4297bd27771f169af9f07d4f",
+    "assets/source/combat/companion_animations/lucan/recipe.json": "33bd030e01fd1dc8196a8f9cd65821f07eb7d241f30f4a3709b29fff9dab680c",
+    "assets/combat/rhea/animation.json": "67a9fac02d6580ab932b7f8ed277d54297f0b7be0e72e4e5ab7c0199648a8a8c",
     "assets/combat/rhea/attack_01.png": "3b2299a2757e650522f4d240c397a45e5855bc06a6ea1509b3b4db292358957a",
     "assets/combat/rhea/attack_02.png": "447465ff1a0a1062111b3bf7950bec6d2f60a0d38d44f18e93dd2599e626a094",
     "assets/combat/rhea/attack_03.png": "5683d4aacfefe0248cb3b97e9ac54ac13ba5c4da170bad1e2b1e16f82d27e010",
@@ -76,7 +75,7 @@
     "assets/source/combat/companion_animations/rhea/atlas_generated.png": "3b09081e93e29470484f6278a929d105a2e270bbfbb653de772e04edb3239f93",
     "assets/source/combat/companion_animations/rhea/generation.json": "4187894dc526a9cc3028009ddd7f03208582b1619c889e95d41650b3f5b9379c",
     "assets/source/combat/companion_animations/rhea/prompt.txt": "ef5f18ff8f2b67ee20c80b4f21f0a65af07cfb341b441706d0088e5a57cfd32f",
-    "assets/source/combat/companion_animations/rhea/recipe.json": "35d8fd617108554b98b9e79ca4d84c9d38a1339db94f8bd938db69f91b91c203"
+    "assets/source/combat/companion_animations/rhea/recipe.json": "8d0ef6ee268802c3166d0191766bfdfae64b386732b2d9e9bdfd1b832bc21d74"
   },
   "previews": {
     "lucan": {
