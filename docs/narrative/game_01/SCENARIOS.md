@@ -54,5 +54,10 @@ The [Ice Reaper pre-boss scene](../scenes/ICE_REAPER_PRE_BOSS.md) records the
 author-specified action sequence beneath a region-sized ice dome: Rhea's
 rescue, her meteor and vine attack, and the Ice Reaper's survival.
 
+**Music and timing:** Wintermute2's first 45 seconds accompany the full
+45-second cinematic, with the same cue continuing into the boss fight.
+Fast anime-style character, object and camera movement keeps the action
+within that fixed duration.
+
 Its kingdom, region, act and installment remain unassigned. This reference
 does not place it in the opening quests or override Game I's regional scope.

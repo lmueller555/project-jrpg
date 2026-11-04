@@ -4,8 +4,9 @@
 motive and ordered action beats below are established scene intent. Further
 story context, staging and implementation remain open.
 
-**Format:** An action-packed cinematic preceding an Ice Reaper boss fight.
-This is not a playable combat script or an implemented cutscene.
+**Format:** An action-packed, 45-second cinematic preceding an Ice Reaper boss
+fight, using Wintermute2's energetic opening. This is not a playable combat
+script or an implemented cutscene.
 
 **Placement:** Unplaced. The kingdom, world region, act and installment have
 not been assigned. Integration must respect or explicitly revise the
@@ -32,6 +33,31 @@ The dome is a regional ice construction, **not the Aethersphere**. Breaking
 through its ice does not establish a breach of the planet's atmosphere or
 reveal the Aethersphere's hidden nature.
 
+## Music and timing contract
+
+**Confirmed, 2026-11-04:** **Wintermute2** is the soundtrack for both this
+cinematic and the Ice Reaper boss fight.
+
+**Original upload:** [Wintermute 2.m4a](<../../../assets/music/Wintermute 2.m4a>).
+Keep this original unchanged; runtime export and playback integration are
+future implementation work.
+
+| Item | Requirement |
+| --- | --- |
+| Full cinematic duration | Exactly **45.0 seconds** in an uninterrupted playthrough |
+| Cinematic music | Wintermute2 from **00:00.000 to 00:45.000**, its extremely energetic intro |
+| Start | Begin the cue at track position zero with the cinematic |
+| Boss-fight handoff | At **00:45.000**, continue the same cue into combat without restarting the song or replaying the intro |
+| Timing budget | All twelve beats, dialogue, reaction holds, impact accents, fades and transition time fit inside the 45 seconds |
+
+The cinematic is timed to the music, not extended by click-to-continue
+dialogue or an additional end hold. The final ice-energy blast must resolve
+within that budget so the boss fight follows without a gap in the score.
+
+Individual shot lengths and musical accent alignments remain to be designed.
+Loop points beyond the initial handoff, mixing, and pause/skip/retry behavior
+are not assigned here.
+
 ## Named participants
 
 | Character | Specified role in this outline |
@@ -55,8 +81,9 @@ The reveal needs to communicate three scales and an immediate danger:
 - **Vertical threat:** The Ice Reaper high in the air above Rhea, charging an
   icicle strike.
 
-Caelan's arrival connects the audience to this view. Exact shot lengths,
-camera movements and party blocking remain to be designed.
+Caelan's arrival connects the audience to this view. Individual shot lengths,
+camera movements and party blocking remain to be designed within the fixed
+45-second duration.
 
 ## Ordered cinematic beats
 
@@ -161,6 +188,34 @@ boss fight still lies ahead.
   encasements and keep the Ice Reaper's position readable across the aerial
   attack and ground impact.
 
+## Fast anime-style presentation
+
+The entire sequence must convey its action within Wintermute2's opening
+45 seconds. Use quick shots and anime-style bursts of movement across
+characters, objects and the camera rather than extending the cinematic.
+
+- **Characters:** Use rapid acceleration and decisive stops, directional
+  smears, speed lines or afterimages for Lucan's rush and Caelan's dash.
+  Land on readable poses for the shield guard, sword strike and Rhea's casting.
+- **Objects and effects:** Give the icicle strike, breaking ice, meteor,
+  vines and rubble fast, clearly directed motion. Preserve a brief readable
+  moment for contact, restraint or a change of state.
+- **Camera and editing:** Use whip pans, snap moves, fast tracking, snap zooms
+  and quick cuts to connect the action. Resolve movement onto the important
+  subject instead of keeping the camera in constant unreadable motion.
+- **Impact accents:** Brief impact frames, shake or hit-stop can emphasize
+  shattering ice, the dome breach, the ground collision and the final blast.
+  These accents consume time inside the 45-second budget; they are not extra
+  holds. Avoid continuous strobing or shake that obscures the choreography.
+
+Speed must not remove necessary information. The regional dome and ruined
+kingdom still need an establishing view; Rhea's distress and determination
+must register before her counterattack. Keep screen direction and the chain
+of protection, rescue, casting, restraint and survival clear.
+
+These are presentation requirements, not a finished shot list or new approved
+animation assets. No additional dialogue is assigned.
+
 ## Continuity and magical limits
 
 The [established aether rules](../../FOUNDATIONAL_LORE.md#1-foundations-of-existence)
@@ -190,13 +245,17 @@ the kingdom's inhabitants' fates are not settled.
 - The Ice Reaper's appearance, personal history and precise relationship to
   the kingdom; no identity as an Ancient is assigned.
 - How the protective-dome backstory is conveyed to the player.
-- Detailed shot plan, duration, choreography, scale cues and performance.
+- Detailed shot plan and per-shot timing within the fixed 45 seconds,
+  choreography, scale cues and performance.
 - Magical sourcing and limits, including how the meteor reaches the dome
   without implying an Aethersphere breach.
-- Music, sound design and additional dialogue; no music track is assigned.
+- Sound design, score/SFX mix and additional dialogue; the Wintermute2
+  assignment and opening 45-second music segment are fixed above.
+- Boss-music looping and pause/skip/retry behavior, preserving synchronization.
 - Effects, scenery and character-action assets needed for implementation.
-- The exact handoff to playable combat: surviving debris, arena and actor
-  positions, camera, encounter state and any carried-over resource effects.
+- Visual and gameplay details of the 45-second handoff: surviving debris,
+  arena and actor positions, camera, encounter state and any carried-over
+  resource effects. The music continues from its current position.
 
-No specific gameplay transition, battle phase, outcome beyond this survival, or
-post-fight scene is approved by this document.
+The duration and music continuity are fixed; specific transition choreography,
+battle phases, outcomes beyond this survival and post-fight scenes remain open.
