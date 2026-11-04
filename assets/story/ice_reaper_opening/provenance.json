@@ -43,66 +43,66 @@
   "party": {
     "caelan": {
       "manifest": {
-        "file": "assets/story/opening_cinematic/actors/caelan/animation.json",
-        "sha256": "8523db225ad40c4e0142b6bb436ca12c775db978b92facbeb344405523588eb2"
+        "file": "assets/combat/caelan/animation.json",
+        "sha256": "a9394d1b7c17f8c464afe85386a10df8204f7d03b4be8ebe186d32d47a1a350e"
       },
       "frames": [
         {
-          "file": "assets/story/opening_cinematic/actors/caelan/stand_empty.png",
+          "file": "assets/combat/caelan/idle_01.png",
           "dimensions": [
-            96,
-            112
+            48,
+            48
           ],
-          "sha256": "0cc529747860d3d14f5873a14ad077f7cee6a0067d476e871774dfc14bb3fd9b"
+          "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
         },
         {
-          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_01.png",
+          "file": "assets/combat/caelan/idle_01.png",
           "dimensions": [
-            96,
-            112
+            48,
+            48
           ],
-          "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
+          "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
         },
         {
-          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_02.png",
+          "file": "assets/combat/caelan/idle_02.png",
           "dimensions": [
-            96,
-            112
+            48,
+            48
           ],
-          "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
-        },
-        {
-          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_03.png",
-          "dimensions": [
-            96,
-            112
-          ],
-          "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
-        },
-        {
-          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_04.png",
-          "dimensions": [
-            96,
-            112
-          ],
-          "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+          "sha256": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a"
         }
       ],
       "pixel_changes": false
     },
     "mira": {
       "manifest": {
-        "file": "assets/story/opening_cinematic/actors/mira/animation.json",
-        "sha256": "b3b7c3686670a33eaf4668f03a0c2e992f47af5fa5866518e5164d5381d223bb"
+        "file": "assets/combat/mira/animation.json",
+        "sha256": "be1e54dd090e356d2c89a2d20599ff8be1dec64c7e384e4a46604a57113741d1"
       },
       "frames": [
         {
-          "file": "assets/story/opening_cinematic/actors/mira/stand.png",
+          "file": "assets/combat/mira/idle_01.png",
           "dimensions": [
-            96,
-            112
+            64,
+            64
           ],
-          "sha256": "2852bfbe6855bb5e17ecf2b329c37ae80a72bfebc210408d433f208e70e00786"
+          "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+        },
+        {
+          "file": "assets/combat/mira/idle_01.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+        },
+        {
+          "file": "assets/combat/mira/idle_02.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "d5abf30d3aa9a226e7c53c983cdd772b079342fc5d15c31deb90e7558dc2e487"
         }
       ],
       "pixel_changes": false
@@ -176,44 +176,28 @@
   },
   "exports": [
     {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/ready_01.png",
+      "dimensions": [
+        48,
+        48
+      ],
+      "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/ready_02.png",
+      "dimensions": [
+        48,
+        48
+      ],
+      "sha256": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a"
+    },
+    {
       "file": "assets/story/ice_reaper_opening/actors/caelan/stand.png",
       "dimensions": [
-        96,
-        112
+        48,
+        48
       ],
-      "sha256": "0cc529747860d3d14f5873a14ad077f7cee6a0067d476e871774dfc14bb3fd9b"
-    },
-    {
-      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_01.png",
-      "dimensions": [
-        96,
-        112
-      ],
-      "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
-    },
-    {
-      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_02.png",
-      "dimensions": [
-        96,
-        112
-      ],
-      "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
-    },
-    {
-      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_03.png",
-      "dimensions": [
-        96,
-        112
-      ],
-      "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
-    },
-    {
-      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_04.png",
-      "dimensions": [
-        96,
-        112
-      ],
-      "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+      "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/ice_reaper/charge.png",
@@ -264,12 +248,28 @@
       "sha256": "6648fec30760673f15733d820d1c9d381c6d1d3d3668dc2894d81d2ed65262b0"
     },
     {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_01.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_02.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "d5abf30d3aa9a226e7c53c983cdd772b079342fc5d15c31deb90e7558dc2e487"
+    },
+    {
       "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
       "dimensions": [
-        96,
-        112
+        64,
+        64
       ],
-      "sha256": "2852bfbe6855bb5e17ecf2b329c37ae80a72bfebc210408d433f208e70e00786"
+      "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/rhea/stand.png",
@@ -366,7 +366,7 @@
   "notes": [
     "New scenery, brush and boss artwork are authored image-generation sources.",
     "Generated source images are retained unchanged.",
-    "Party frames are exact approved assets: Caelan/Mira cinematic motion, Rhea/Lucan combat art; display scale is scene metadata.",
+    "All four party members use exact approved combat frames; display scale is scene metadata.",
     "Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.",
     "The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.",
     "No party actors are baked into the background."

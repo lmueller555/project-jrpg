@@ -15,22 +15,20 @@
   "camera_shake": {"start": 1.2, "end": 2.65, "strength": 1.1},
   "hover": {"amplitude": 1.1, "period": 2.4},
   "actors": [
-    {"id": "caelan", "position": [634.56, 370], "manifest": "actors/caelan/animation.json"},
-    {"id": "mira", "position": [690, 325], "manifest": "actors/mira/animation.json"},
+    {"id": "caelan", "position": [600, 370], "manifest": "actors/caelan/animation.json", "pixel_scale": 2},
+    {"id": "mira", "position": [690, 325], "manifest": "actors/mira/animation.json", "pixel_scale": 2},
     {"id": "rhea", "position": [335, 374], "manifest": "actors/rhea/animation.json", "pixel_scale": 2},
     {"id": "lucan", "position": [665, 372], "manifest": "actors/lucan/animation.json", "pixel_scale": 2},
     {"id": "ice_reaper", "position": [510, 260], "manifest": "actors/ice_reaper/animation.json"}
   ],
   "acting": {
-    "caelan": [{"start": 0.0, "pose": "walk_left"}, {"start": 0.72, "pose": "stand"}],
-    "mira": [{"start": 0.0, "pose": "stand"}],
+    "caelan": [{"start": 0.0, "pose": "ready"}],
+    "mira": [{"start": 0.0, "pose": "ready"}],
     "rhea": [{"start": 0.0, "pose": "stand"}],
     "lucan": [{"start": 0.0, "pose": "ready"}],
     "ice_reaper": [{"start": 0.0, "pose": "charge"}]
   },
-  "position_tracks": {
-    "caelan": [{"start": 0.0, "end": 0.72, "from": [634.56, 370], "to": [600, 370]}]
-  },
+  "position_tracks": {},
   "dynamic_props": {
     "ice_prison_back": {"file": "ice_prison_back.png", "position": [335, 374], "anchor": [44, 130]},
     "ice_prison_front": {"file": "ice_prison_front.png", "position": [335, 374], "anchor": [44, 130]},
