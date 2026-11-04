@@ -79,6 +79,13 @@ providing the approved basis for recruitment rather than a generic road escort.
 His character foundation is recorded in the [companion guide](COMPANIONS.md);
 the exact recruitment quest remains open.
 
+**Established departure story beat:** Near or after the end of Act I, as the
+party prepares to leave Eldenmere, Mira creates a bot to run her workshop
+while she is gone. The [scenario notes](SCENARIOS.md) record the planned sprite
+work and workshop-management routines. Exact placement and whether this is a
+cutscene, dialogue sequence or short quest remain open; no implementation is
+implied by this entry.
+
 **Not yet chosen:** Precise personal loss, remaining character biographies,
 recruitment scene details, gameplay details, evidence and the emotional stakes
 of leaving. Eldenmere's approved local setting and wider geography are recorded

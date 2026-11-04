@@ -144,6 +144,14 @@ These occur after the opening and must not be rewritten as earlier biography:
 Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md)
 and [lantern script](../CH01_MQ04.md).
 
+### Planned departure beat
+
+The [scenario notes](../SCENARIOS.md) record the established intent for Mira
+to create a workshop-management bot before leaving Eldenmere near or after
+the end of Act I. Sprite work and a series of bot routines belong to future
+development. The format and exact timing remain open; this is not an
+accomplishment already completed at the opening or an implemented game scene.
+
 ## Everyday individuality
 
 | Attribute | Value | Status |
