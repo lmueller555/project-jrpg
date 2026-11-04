@@ -15,9 +15,12 @@ alongside the [character facts](CHARACTERS.md),
 [act outline](ACT_OUTLINE.md) and [World Atlas](../../world/WORLD_ATLAS.md).
 
 Mira's opening-story foundations, age-based timeline, upbringing and mill
-training with Halden, and approved characterization and voice references are recorded in her
+training with Halden, and approved characterization and voice references are
+recorded in her
 [character sheet](characters/MIRA.md). Hypothetical scene events and unanswered
 biography details remain open; her existing gameplay and artwork are unchanged.
+Her five new Show, Don't Tell scenarios are proposals for review, separate from
+the approved characterization and dialogue references.
 
 | Character | Age | Role | Home region | Introduction |
 | --- | --- | --- | --- | --- |
@@ -55,8 +58,9 @@ Running and action animations remain future work.
 
 Lucan's approved foundations now live in his authoritative
 [character sheet](characters/LUCAN.md), alongside dictionary-style attributes
-and ten dialogue/expression references. Established characterization, new
-proposals and open questions are explicitly separated.
+and ten dialogue/expression references, plus five proposed Show, Don't Tell
+scenarios. Established characterization, new proposals and open questions are
+explicitly separated.
 
 The [reusable sheet template](characters/TEMPLATE.md) defines the format for
 future character profiles. Rhea and Edran retain their detailed foundations

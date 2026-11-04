@@ -11,6 +11,8 @@ also established on 2026-11-03.
 writing guidance and ten dialogue/expression references below are approved.
 Unanswered biography details remain open. Approval of a voice reference does
 not establish its hypothetical scene as an event or implement its dialogue.
+The five Show, Don't Tell scenarios are new proposals for review, separate
+from this earlier profile approval.
 
 Unless a later scene is identified, this describes her opening characterization.
 
@@ -220,6 +222,125 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Intended growth | Build a life that includes remembrance, pleasure and receiving care, without having to become "fixed" first | Established growth direction |
 | Tests and setbacks | Specific breakdowns, emotional disclosures and pivotal choices remain undecided | Open |
 | Possible end state | Still misses her parents, but no longer treats that pain as evidence she cannot live fully or be loved | Established growth direction; exact ending remains open |
+
+## Show, Don't Tell
+
+These five hypothetical scenarios express Mira without spoken lines, internal
+monologues or explanatory emotion captions. They draw on established
+characterization, but their particular triggers, actions and events remain
+proposals for review. They do not revise existing quest scenes or commission
+new animations. Later-growth scenarios do not imply that her grief is resolved.
+
+### Scenario 1 - Work as shelter
+
+**Status:** Proposed for review.
+**Stage:** Early village life; the particular grief reminder is hypothetical.
+**Setup:** At closing time, Mira sees a child outside the workshop take a
+parent's hand as the family heads home.
+
+**Observable beats:**
+
+- She pauses with a tool halfway to its storage place, following the family
+  with her eyes until they leave view.
+- Instead of finishing the closing routine, she returns to a small mechanism
+  that has already been tested successfully.
+- It completes its cycle cleanly. She watches it, adjusts the same bracket
+  again, and starts another test.
+
+**Inaction / trade-off:** She does not put the tool away or leave, although
+there is no remaining fault to repair. A bounded task takes the place of rest.
+
+**Character signal:** Repair gives her somewhere to direct herself when grief
+is harder to approach. The family is a proposed situational reminder, not a
+newly established trigger or a flashback explaining her parents' deaths.
+
+### Scenario 2 - Genuine delight in discovery
+
+**Status:** Proposed for review.
+**Stage:** Ordinary workshop life.
+**Setup:** With no urgent repair waiting, a little experimental mechanism
+finally completes its first clean cycle.
+
+**Observable beats:**
+
+- Mira follows the motion closely, then breaks into an unguarded grin.
+- She beckons Tomas closer and shifts the mechanism so he can see the moving
+  parts instead of keeping the successful experiment to herself.
+- She lets him turn the handle, settling beside him to watch another cycle.
+  Her attention stays on their shared discovery, not on whether anyone praises her.
+
+**Inaction / trade-off:** She does not immediately turn the experiment into
+a useful assignment or justify spending time on it.
+
+**Character signal:** Curiosity and happiness are genuine parts of her life.
+Making something work can be play, not merely a disguise for pain.
+
+### Scenario 3 - Helping without taking over
+
+**Status:** Proposed for review.
+**Stage:** Early village teaching; a hypothetical workshop beat, not a rewrite of MQ04.
+**Setup:** Liam struggles to balance a small frame he is assembling. Mira
+could straighten it much faster herself.
+
+**Observable beats:**
+
+- She begins reaching for her own tool, notices Liam still trying to place
+  the joint, and sets it back down.
+- She steadies only the unsupported side, tilting the frame slightly so the
+  imbalance becomes visible to him.
+- When he changes the placement, she gradually releases her support. He
+  completes the adjustment while she waits beside him.
+
+**Inaction / trade-off:** She does not take the frame out of his hands or
+replace his attempt with her own. She gives up speed and a perfectly controlled result.
+
+**Character signal:** Her competence makes room for another person's agency.
+Patient help preserves the learner's ownership of the achievement.
+
+### Scenario 4 - Quiet care for Halden
+
+**Status:** Proposed for review.
+**Stage:** Ordinary life after opening her workshop.
+**Setup:** Halden arrives after a tiring day at the mill, lowers his tool bag
+and pauses before finding somewhere to sit.
+
+**Observable beats:**
+
+- Mira notices the pause and stops arranging the parts in front of her.
+- She slides her better chair toward him, clears a place for his cup and
+  takes the smaller stool herself.
+- She sits with him rather than immediately opening his bag to look for work.
+  For a while, the parts on her bench remain untouched.
+
+**Inaction / trade-off:** She does not make him explain his tiredness or turn
+the visit into another job. She gives up her comfortable seat and progress on her project.
+
+**Character signal:** Practical attentiveness expresses affection for the
+person who took her in. The hypothetical tired evening does not establish a
+chronic illness, injury or new family event for Halden.
+
+### Scenario 5 - Accepting company without earning it
+
+**Status:** Proposed for review.
+**Stage:** Possible later growth; exact timing remains open.
+**Setup:** Caelan visits while Mira is absorbed in a harmless personal
+experiment. He sets a second chair beside hers without presenting a task.
+
+**Observable beats:**
+
+- She reaches toward a tool, then looks between the unfinished mechanism
+  and the chair he has brought.
+- She sets the tool down and covers the loose parts instead of finding
+  another useful job to do for him.
+- She settles beside him. The experiment remains unfinished in view, and
+  she lets it stay that way while they share the quiet.
+
+**Inaction / trade-off:** She does not repay the company with a repair, or
+require the project to be finished before she can stop.
+
+**Character signal:** Receiving care can become enough in itself. This is a
+possible expression of trust, not a cure for grief or a declaration of romance.
+The unfinished task is nonessential; she is not abandoning an unsafe civic repair.
 
 ## Ten dialogue and expression references
 

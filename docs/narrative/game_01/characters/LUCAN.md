@@ -2,7 +2,8 @@
 
 **Scope:** Authoritative detailed profile for Lucan. Established entries retain
 the approved companion foundations of 2026-10-30 and the personal-guard revision
-of 2026-11-03. New interpretations and dialogue are explicitly proposed.
+of 2026-11-03. New interpretations, dialogue and nonverbal scenarios are
+explicitly proposed.
 Unless noted otherwise, this describes his opening characterization.
 
 **Related guides:** [Character index](../CHARACTERS.md),
@@ -143,6 +144,126 @@ Detailed mannerisms and behavior when safe remain proposals, not approved animat
 | Intended growth | Protect others while respecting their judgment and agency | Established |
 | Tests and setbacks | Specific scenes, failures and pivotal decisions remain unchosen | Open |
 | End state | Direction of growth is established; later outcomes remain undecided | Established / Open |
+
+## Show, Don't Tell
+
+These five hypothetical scenarios express Lucan without spoken lines, internal
+monologues or explanatory emotion captions. They illustrate established
+competence, pride, overreach, loyalty and intended growth; the particular
+events and actions are proposals for review, not approved quests or animations.
+
+### Scenario 1 - Protection before performance
+
+**Status:** Proposed for review.
+**Stage:** Opening characterization.
+**Setup:** On a narrow rocky path, loose stones begin rolling toward an
+inexperienced traveler beside the party.
+
+**Observable beats:**
+
+- Lucan immediately turns his shield toward the falling stones and moves
+  into the exposed side of the path.
+- He gestures the traveler behind the shield, keeping his own footing
+  between them and the hazard.
+- He holds the protective position until the others are clear, then checks
+  behind him rather than posing for their gratitude.
+
+**Inaction / trade-off:** He does not wait for recognition or keep the safer
+position for himself. His useful action precedes any display of importance.
+
+**Character signal:** His confidence has a foundation in courage and practical
+protection. The hazard should stay believable; the scene does not establish
+invulnerability or a legendary feat.
+
+### Scenario 2 - Taking the decision away
+
+**Status:** Proposed for review.
+**Stage:** Opening flaw, before the intended growth.
+**Setup:** At a route-planning stop, Caelan points to an alternative on the
+shared map while other party members are still considering it.
+
+**Observable beats:**
+
+- Lucan briefly raises a flat palm to stop the contributions, then folds
+  the map before everyone has finished indicating their choices.
+- He points out positions for the group and starts down his selected path,
+  assuming they will follow.
+- When the others remain at the map, he looks back impatiently instead
+  of returning to make room for their judgment.
+
+**Inaction / trade-off:** He does not wait for agreement. A potentially useful
+discussion ends early, at a cost to trust and shared decision-making.
+
+**Character signal:** He confuses protective responsibility with authority.
+His route may be sensible; the flaw is treating it as his decision alone.
+This is a scene proposal, not permission to force the player's movement.
+
+### Scenario 3 - Enjoying being seen
+
+**Status:** Proposed for review.
+**Stage:** Opening characterization.
+**Setup:** After a useful task is complete, nearby villagers acknowledge
+Lucan with appreciative gestures and applause.
+
+**Observable beats:**
+
+- He straightens immediately and smooths his clothing before returning
+  their acknowledgment.
+- He gives his polished armor a quick glance and turns toward the people
+  watching, visibly enjoying the attention.
+- When someone still needs help with the last load, he notices and goes
+  back to work, retaining the pleased expression.
+
+**Inaction / trade-off:** He allows himself a moment of display rather than
+pretending praise means nothing, but does not abandon the remaining work.
+
+**Character signal:** Pride and sincere service coexist. He need not be a
+fraud or a selfless saint for his appetite for recognition to be visible.
+
+### Scenario 4 - Duty over applause
+
+**Status:** Proposed for review.
+**Stage:** Service as Aldric's personal guard.
+**Setup:** During a public gathering, an appreciative group beckons Lucan
+closer while Aldric moves to another part of the crowd.
+
+**Observable beats:**
+
+- Lucan starts to answer the beckoning gesture, then tracks Aldric's movement.
+- He pauses, lowers the hand he had raised toward the group and shifts
+  back into a position from which he can watch Aldric and the approach.
+- He stays there while the others enjoy the gathering, attentive rather
+  than attempting to reclaim its center.
+
+**Inaction / trade-off:** He gives up recognition he genuinely wants instead
+of leaving his protective assignment to pursue it.
+
+**Character signal:** Loyalty to Aldric can outweigh his appetite for applause.
+The setting does not establish an assassination threat, court secret or
+particular political event.
+
+### Scenario 5 - Respect made visible by waiting
+
+**Status:** Proposed for review.
+**Stage:** Possible later growth; not a fixed recruitment or late-story scene.
+**Setup:** The party considers another route. Caelan studies the map while
+the others indicate their preferred approaches.
+
+**Observable beats:**
+
+- Lucan begins to reach toward the map, then withdraws his hand and shifts
+  aside so the others can finish.
+- He studies the indicated route without folding the map or turning the
+  group's pause into an impatient departure.
+- Once Caelan starts leading, Lucan takes a protective position behind the
+  group rather than automatically reclaiming the front.
+
+**Inaction / trade-off:** He does not seize the decision or the visible place
+of command. He accepts a useful role that is not the leading one.
+
+**Character signal:** His competence remains, but protection now leaves room
+for others' agency. Growth is not passive obedience; he can still contribute
+judgment and act when there is a real danger.
 
 ## Ten dialogue and expression references
 

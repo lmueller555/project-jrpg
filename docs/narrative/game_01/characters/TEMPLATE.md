@@ -105,6 +105,34 @@ Record the starting outlook, central contradiction, tests of values, pivotal
 choices, setbacks, intended growth and possible end state. Unchosen events and
 outcomes remain open, even when a direction of growth is established.
 
+## Show, Don't Tell
+
+Write five hypothetical scenarios that express the character through actions
+or inactions rather than spoken lines. Vary the situations: competence, joy,
+vulnerability, relationships, a flaw or a possible growth beat. Not every
+scenario needs to illustrate grief or conflict.
+
+Each scenario should contain:
+
+- **Status:** Proposed for review until explicitly approved. Approval of a trait
+  does not automatically approve a scene illustrating it.
+- **Stage:** Opening characterization or a possible later stage; do not present
+  intended growth as something already completed.
+- **Setup:** An external, player-observable situation that creates a choice.
+- **Observable beats:** Concrete actions, pauses, posture, object interactions
+  or changes in attention. The player should be able to read the scene without
+  explanatory dialogue, an internal monologue or a caption naming the emotion.
+- **Inaction / trade-off:** What the character does not do, or what acting this
+  way costs them. Make the choice meaningful rather than a decorative gesture.
+- **Character signal:** The inference intended for the writer and reviewer,
+  not text to display to the player.
+
+Keep hypothetical triggers, objects and relationships distinct from established
+history. Do not invent a canonical keepsake, injury or past event merely to
+support a gesture. These are portrayal proposals, not approved quests,
+animations, asset requests or gameplay changes. Use a pattern and its context
+to suggest character, rather than treating one ambiguous gesture as proof.
+
 ## Dialogue and expression references
 
 Write ten numbered examples covering contrasting expressions, not ten versions

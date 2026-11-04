@@ -45,6 +45,8 @@ and records the shared companion foundations and intended combat roles.
 profile, with ten dialogue/expression references and explicit established,
 proposed and open entries. [Mira's sheet](characters/MIRA.md) applies the same
 design to her early parental loss, repair work and personal development.
+Both sheets also contain five hypothetical Show, Don't Tell scenarios for
+review. These nonverbal portrayal proposals do not establish new game events.
 The [sheet template](characters/TEMPLATE.md)
 provides the structure for subsequent characters. Rhea and Edran's full
 foundations remain in the companion guide.
