@@ -85,12 +85,23 @@ service and religious guidance. It is part of ordinary village life. Serene
 has personal relationships with the people she serves, and its household
 includes Caelan and Tomas.
 
+Serene follows a [planetary spiritual tradition](../ELDEN_VALE_FAITH.md)
+centered on care, remembrance and responsibility toward the planetary cycle,
+rather than worship of gods. This does not assign identical beliefs to every
+valley resident.
+
 The **old ridge sanctuary near Eldenmere** is a separate site from this
 inhabited village sanctuary. Its marked reserve includes sanctuary buildings,
 a wooded hill and buried foundations beyond the visible walls. The covenant
 protects the ground beneath the reserve as well as its surface. The ridge
 site's exact position and full buried layout remain open; it is not
 established as the original sacrificial temple.
+
+The ridge site is a remembrance-and-renewal sanctuary at a real natural aether
+confluence, with a living memorial grove in its wooded reserve. The confluence
+belongs to the ordinary planetary cycle, separate from the Aethersphere.
+Its detailed workings, the buried structures' purpose and their relationship
+remain unresolved; sacred significance is not a complete excavation-risk model.
 
 Civil authorities, sanctuary keepers and the community share a custodial
 trust in the reserve. Protection sits alongside duties of care and practical

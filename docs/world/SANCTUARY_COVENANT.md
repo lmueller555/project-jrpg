@@ -2,10 +2,14 @@
 
 **Status:** Approved setting and narrative canon, 2026-10-31.
 Lifecycle terminology revised on 2026-11-04; the custodial terms are unchanged.
+Serene's faith and the site's natural and communal significance were clarified
+on 2026-11-04 without changing those terms.
 
 **Implementation:** MQ03's runtime dialogue now presents the approved relief
 needs, public records, protected boundary and unresolved trial-cut request.
 The later authorization and excavation remain separate future story work.
+The newly established faith and confluence significance below are lore
+foundations, not additional implemented dialogue or map features.
 
 **Scope:** The protected ridge sanctuary near Eldenmere, its public covenant,
 and the legitimate disagreement between Serene and Aldric in Chapter 1.
@@ -38,6 +42,23 @@ The ridge sanctuary is **not established as the original temple of the Great
 Sacrifice**. Do not identify the two sites or invent a confirmed connection
 between them. The old sanctuary's complete history and buried layout remain
 unknown to the people involved.
+
+## Why this reserve is sacred
+
+Serene practices a [planetary spiritual tradition](ELDEN_VALE_FAITH.md) that
+does not center gods. The old ridge sanctuary is a place of remembrance and
+renewal at a **real natural aether confluence**, with a living memorial grove
+within its wooded reserve.
+
+The confluence belongs to the ordinary planetary cycle, not the Aethersphere.
+Its detailed workings and its relationship to the buried foundations remain
+imperfectly understood. It is not an unlimited aether source or an established
+artificial planetary mechanism.
+
+The community's shared remembrance, care for the grove and long keeping of
+this natural place give the whole reserve significance beyond its standing
+walls. Neither those practices nor the confluence establishes that individual
+souls persist in trees or that any excavation must cause a catastrophe.
 
 ## Sacred keeping and public responsibility
 
@@ -103,7 +124,9 @@ without permission to excavate.
 Serene's position rests on evidence she can share with Aldric. It does not
 depend on asking him to trust an undisclosed prediction of catastrophe.
 
-The public basis includes:
+The natural confluence and communal significance explain why the place matters.
+They do not supply a complete risk model for excavation. Shared records
+supporting Serene's caution include:
 
 - An old plan showing foundations continuing beneath the wooded hill, beyond
   the standing sanctuary walls.

@@ -184,11 +184,19 @@ proposal is sincere and limited under his understanding of the site.
 
 Serene holds protected ground in keeping for the community rather than as
 personal property. She shares an old foundation plan and an account of workers
-injured by an unexplained discharge. She cannot explain the site's full extent
-or purpose and does not claim certainty about a coming disaster. She offers
+injured by an unexplained discharge. She cannot explain the confluence's full
+workings or the buried structures' purpose and does not claim certainty about
+a coming disaster. She offers
 courtyard repair stone, crew meals, a joint surface inspection and requests for
 missing records, while withholding endorsement of excavation. Her inherited
 private warning remains a separate chapter-ending beat.
+
+**Faith and site significance, confirmed 2026-11-04:** Serene practices a
+[planetary spiritual tradition](../../world/ELDEN_VALE_FAITH.md) that does not
+center gods. The ridge sanctuary is a place of remembrance and renewal at a
+real natural aether confluence, with a living memorial grove. Its public
+importance does not depend on her knowing the purpose of the buried works.
+The confluence belongs to the planetary cycle, not the Aethersphere.
 
 Caelan remains a guide, host and witness. He does not adjudicate the covenant,
 approve a quarry or inspect the adults' hire agreement.

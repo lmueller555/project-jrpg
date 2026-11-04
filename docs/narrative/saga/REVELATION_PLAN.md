@@ -23,6 +23,7 @@ classification is permitted without revealing the barrier or the sacrifice.
 | --- | --- | --- | --- |
 | Aether / magicks | Conserved energy manipulated as magicks | Everyday system; some limits and anomalies observable | Full metaphysics only when story requires |
 | Planetary life cycle | Life and nature consist of aether; death returns it to the planet, separately from the Aethersphere | Common understanding may be explained; no proof of personal consciousness after death | Detailed circulation and identity questions remain open |
+| Ridge sanctuary confluence | A real natural feature within the planetary cycle, at a remembrance-and-renewal sanctuary | Local natural and spiritual significance may be shown without explaining its full workings or the buried structures | Exact mechanics and historical connections remain open |
 | Gods | Ancients revered as gods | Worship and cultural interpretations visible | Mortal origins can eventually be revealed |
 | Holy temple | Original sacrificial site | Sacred place may be depicted without its historical truth | Sacrifice site significance revealed later |
 | Aethersphere / atmosphere | Protective barrier formed ~10,000 years ago; a distinct aetheric form outside the ordinary life cycle | Scholarly recognition of its atmospheric form is allowed; its protective purpose and ancient origin remain hidden | Reveal true purpose and origin when narratively earned |
@@ -56,8 +57,11 @@ The [covenant](../../world/SANCTUARY_COVENANT.md) gives Serene public,
 incomplete evidence: an old plan and a historic maintenance account of a small
 discharge injuring workers. She shares these openly. That older incident is
 distinct from the recent lightning events and from the inherited warning she
-privately examines after the festival. Neither the site nor its buried work
-is identified as the original sacrificial temple or a known planetary mechanism.
+privately examines after the festival. The reserve's
+[natural confluence and communal significance](../../world/ELDEN_VALE_FAITH.md)
+are established, but do not identify the buried works' purpose. Neither
+sanctuary is identified as the original sacrificial temple or a component
+of the Aethersphere.
 
 ## Game I possible clue categories (PROPOSED; not required)
 

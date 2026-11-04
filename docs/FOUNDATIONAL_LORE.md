@@ -191,15 +191,26 @@ Over time, memories of the ancient civilization became religious tradition. The 
 
 The very **temple where the ancients performed their sacrifice** survives into the current age as a **holy place of worship**.
 
-This religion has a real historical basis: ancient beings did sacrifice their
-own active existence to preserve the world. The current lifecycle understanding
-is aether returning to the planet. Selected modern beliefs and practices are
-approved locally: Eldenmere's Festival of Light and planetary-return teaching,
-the sanctuary's community service, and the
+Traditions that revere these beings have a real historical basis: ancient
+beings did sacrifice their own active existence to preserve the world. This
+does not require every modern spiritual tradition to center divine worship.
+
+**Serene's local faith, confirmed 2026-11-04:** She practices a
+[planetary spiritual tradition](world/ELDEN_VALE_FAITH.md) that does not center
+gods. Its responsibilities of care, remembrance and keeping shared places
+are grounded in belonging to the planetary aether cycle.
+
+The old ridge sanctuary is a remembrance-and-renewal site at a **real natural
+aether confluence**, with a living memorial grove. The confluence is part of
+the ordinary planetary cycle, separate from the Aethersphere; its detailed
+workings and relationship to the buried structures remain unresolved.
+
+Selected local practices also include Eldenmere's Festival of Light,
+planetary-return teaching, sanctuary community service and the
 [sanctuary covenant](world/SANCTUARY_COVENANT.md). These establish sincere
-in-world belief and custodial responsibilities, without certifying personal
-consciousness after death or explaining the hidden ancient history. The wider
-religion's institutions, doctrines and rituals remain open beyond those approvals.
+spiritual practice and custodial responsibilities without certifying personal
+consciousness after death or explaining the hidden ancient history. Faith
+names, wider institutions, doctrines and detailed rites remain open.
 
 The covenant's old ridge sanctuary near Eldenmere is separate from the village
 sanctuary. Neither has been identified as the original sacrificial temple;
@@ -244,7 +255,11 @@ Their accumulation might give them overwhelming power relative to modern people,
 
 ### Established canon
 
-At the game's opening, approximately ten millennia after the sacrifice, modern civilizations live beneath the atmosphere and worship remembered ancients as gods, without broadly understanding their mortal origins or the original cosmic catastrophe.
+At the game's opening, approximately ten millennia after the sacrifice,
+modern civilizations live beneath the atmosphere. Traditions that worship
+remembered ancients as gods do not broadly understand their mortal origins
+or the original cosmic catastrophe. This does not make divine worship the
+center of every modern spiritual tradition.
 
 Modern scholars distinguish the Aethersphere's unusual atmospheric aether
 from the planetary cycle. Its protective purpose and ancient origin remain

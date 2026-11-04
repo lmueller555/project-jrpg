@@ -228,6 +228,11 @@ its protective purpose and ancient origin are not known to them. See the
 [Foundational Lore](../FOUNDATIONAL_LORE.md) for the author-level truth and
 remaining metaphysical questions.
 
+Serene's [local planetary tradition](ELDEN_VALE_FAITH.md) does not center
+gods. Its ridge sanctuary combines communal remembrance and keeping a real
+natural aether confluence; this does not define a universal faith or explain
+the site's buried works.
+
 Eldenmere's established Festival of Light combines remembrance with living
 community. Other places may express related beliefs through different
 gatherings, household practices or public observances. These practices can
