@@ -32,6 +32,9 @@ class IceReaperOpening(OpeningCinematic):
         actors = [record['id'] for record in data['actors']]
         if len(actors) != 5 or set(actors) != {'caelan', 'mira', 'rhea', 'lucan', 'ice_reaper'}:
             raise ValueError('Ice Reaper opening has an incorrect cast')
+        for actor in data['actors']:
+            if type(actor.get('pixel_scale', 1)) is not int or actor.get('pixel_scale', 1) not in (1, 2):
+                raise ValueError('Invalid Ice Reaper actor pixel scale')
         for key in ('brush', 'camera_shake'):
             cue = data[key]
             if (not {'start', 'end'} <= cue.keys()
@@ -103,7 +106,14 @@ class IceReaperOpening(OpeningCinematic):
 
     def _draw_actors(self, canvas, camera):
         self._draw_prop(canvas, 'ice_prison_back', camera)
-        super()._draw_actors(canvas, camera)
+        for record, anchor, frames, transitions in sorted(self.actors,
+                key=lambda actor: self.actor_position(actor[0]['id']).y):
+            image = self._actor_frame(record['id'], frames, transitions)
+            scale = record.get('pixel_scale', 1)
+            if scale != 1:
+                image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
+            point = self.actor_position(record['id'])-camera
+            canvas.blit(image, (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale)))
         self._draw_prop(canvas, 'ice_prison_front', camera)
 
     def _brush_layer(self, canvas, record, image, camera):

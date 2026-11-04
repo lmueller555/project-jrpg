@@ -2,16 +2,16 @@
   "version": 1,
   "actor": "rhea",
   "canvas": [
-    96,
-    112
+    64,
+    64
   ],
   "anchor": [
-    48,
-    104
+    32,
+    54
   ],
   "poses": {
     "stand": "stand.png"
   },
-  "source_manifest": "assets/cinematics/companions/rhea/animation.json",
+  "source_manifest": "assets/combat/rhea/animation.json",
   "copied_without_pixel_changes": true
 }
