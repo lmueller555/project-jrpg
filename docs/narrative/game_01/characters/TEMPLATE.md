@@ -6,6 +6,9 @@ scene proposals retain their own explicitly recorded approval status.
 Use one authoritative sheet per character. Link to it from the character index
 and relevant story guides instead of maintaining competing biographies.
 [Lucan's sheet](LUCAN.md) is the first worked example.
+[Mira's sheet](MIRA.md) applies the same structure to bereavement and repair,
+with approved characterization and voice references distinguished from open
+biography details and hypothetical scene events.
 
 ## Record conventions
 

@@ -41,7 +41,9 @@ The approved [companion guide](COMPANIONS.md) links detailed character profiles
 and records the shared companion foundations and intended combat roles.
 [Lucan's character sheet](characters/LUCAN.md) is the first dictionary-style
 profile, with ten dialogue/expression references and explicit established,
-proposed and open entries. The [sheet template](characters/TEMPLATE.md)
+proposed and open entries. [Mira's sheet](characters/MIRA.md) applies the same
+design to her early parental loss, repair work and personal development.
+The [sheet template](characters/TEMPLATE.md)
 provides the structure for subsequent characters. Rhea and Edran's full
 foundations remain in the companion guide.
 
@@ -141,17 +143,22 @@ approve a quarry or inspect the adults' hire agreement.
 
 ## Mira's millrace outing
 
-Mira is Caelan's childhood friend and a capable mechanical problem-solver.
-Her job identity is **Machinist**. For MQ02 she brings a compact spring-driven
-bolt launcher and Rivet, her familiar workshop bot folded into her kit. Rivet
-automatically unfolds for battle and attacks autonomously; Mira's starting
-Overclock skill grants it Haste. She is a stronger,
-more experienced combatant than unarmed Caelan and joins him as a temporary,
-player-controlled guest against the Ridgeback Tusker outside Eldenmere. Her
-weapon handling and practical guidance establish this competence without
-assigning a military background or an age. Their later intake repair preserves
-Caelan's useful, modest magical success and their complementary skills.
-The [bot guide](../../MIRA_BOTS.md) records her combat rules and progression scope.
+Mira is Caelan's childhood friend and a capable **Machinist**. Her authoritative
+[character sheet](characters/MIRA.md) retains her established millrace role,
+Rivet, practical competence and relationships, and adds ten dialogue references.
+
+**Approved background revision, 2026-11-03:** Mira lost both parents tragically
+when she was young. Her enjoyment of fixing things grew in relation to a loss
+she does not know how to mend within herself. This is her relationship to grief,
+not a declaration that she is defective. The age, circumstances, parents'
+identities, guardianship and training history remain open.
+
+**Profile approval, 2026-11-03:** Her detailed characterization, emotional
+interpretations, writing guidance and ten dialogue references are approved.
+Hypothetical scene events, disclosure timing and her exact ending remain open.
+
+The [bot guide](../../MIRA_BOTS.md) remains authoritative for combat rules.
+No game dialogue, mechanics or artwork changes accompany this biography revision.
 
 Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,

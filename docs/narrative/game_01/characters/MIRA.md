@@ -1,0 +1,362 @@
+# Mira - character sheet
+
+**Scope:** Authoritative detailed profile for Mira, using the approved
+[sheet design](TEMPLATE.md). Existing story and gameplay facts are retained.
+Her early loss of both parents and its connection to her enjoyment of fixing
+things were established on 2026-11-03.
+
+**Profile approval:** 2026-11-03. The characterization, emotional interpretations,
+writing guidance and ten dialogue/expression references below are approved.
+Unanswered biography details remain open. Approval of a voice reference does
+not establish its hypothetical scene as an event or implement its dialogue.
+
+Unless a later scene is identified, this describes her opening characterization.
+
+**Related guides:** [Character index](../CHARACTERS.md),
+[companion guide](../COMPANIONS.md), [millrace script](../CH01_MQ02.md),
+[lantern script](../CH01_MQ04.md), [Mira's art](../../../../assets/characters/mira/README.md).
+
+## Identity
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Name and pronouns | Mira; she/her. Surname remains unassigned. | Established / Open |
+| Age at opening | Not assigned; do not infer an age from her competence or friendship with Caelan | Open |
+| Present setting | Her workshop and workbench are in Eldenmere | Established |
+| Birthplace and upbringing location | Exact birthplace and childhood locations remain undecided | Open |
+| Family | Lost both parents tragically when she was young | Established, 2026-11-03 |
+| Guardians and surviving relatives | Who cared for her afterward, and whether she has other relatives, remain undecided | Open |
+| Occupation | Machinist and capable mechanical problem-solver | Established |
+| Appearance | Dark brown hair in a short ponytail, cream flower above her left ear, dusty rose shirt, charcoal trousers, brown boots, belt and tool pouch | Established design; see [art guide](../../../../assets/characters/mira/README.md) for individual asset approval status |
+| Narrative role | Caelan's childhood friend; temporary player-controlled guest in MQ02; appears with him in the opening flashforward | Established |
+| Workshop history | Teacher, training route, ownership history and any connection to her parents remain undecided | Open |
+
+## Background and the meaning of repair
+
+**Established foundation:** Mira suffered the tragic loss of her parents early
+in life. Fixing things became something she enjoyed in response to a loss she
+does not know how to mend within herself. The connection between bereavement
+and repair is part of her character, not an invented mechanical cause of death.
+
+**Established interpretation:** A damaged mechanism offers a kind of reassurance
+her grief does not: she can observe what is wrong, try something, and see a
+change. Making things work gives her agency and genuine pleasure. When the
+loss feels overwhelming, the same activity can become a way to avoid sitting
+with it.
+
+Her inability to "fix herself" describes her relationship to the loss, not an
+objective judgment that she is defective. Her curiosity, humor, friendships
+and enjoyment of craftsmanship are real; they should not all be exposed as
+false appearances concealing sadness.
+
+**Still open:** Her age at the loss, her parents' names and occupations, whether
+their deaths occurred together, the circumstances, who raised her afterward,
+and how she learned her craft. Do not assign an accident, aether incident,
+inherited workshop, parental tool or connection to current events without approval.
+
+## Personality
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Demonstrated strengths | Practical observation, mechanical competence, useful guidance and attention to safety | Established through MQ02 and MQ04 |
+| Social manner | Familiar humor with Caelan; patient, collaborative instruction with Liam and Tomas | Established through existing scenes |
+| Response to uncertainty | Investigates before claiming a cause; accepts what she has not yet verified | Established through the mill diagnosis |
+| Central contradiction | Can make a damaged object useful again, but does not know how to mend her own grief | Established background direction |
+| Central flaw | When emotionally overwhelmed, retreats into useful work rather than admitting what she needs | Established |
+| Self-image | More comfortable being the person who can help than the person asking for help | Established |
+| Others' perceptions | Tomas recommends her repair skills; Caelan recognizes her practical and combat competence | Established in MQ01 and MQ02 |
+| Wider reputation and temperament | Specific reputation beyond the village and broader temperament remain to be developed | Open |
+
+## Inner drives
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Immediate work | Help restore the mill and later help with Liam's lantern, as those quests occur | Established story tasks, not completed opening biography |
+| Foundational motivation | Finds enjoyment in fixing things while carrying an early loss she does not know how to repair in herself | Established, 2026-11-03 |
+| Long-term aspiration | Build useful devices that give ordinary people more independence and time | Established |
+| Personal definition of success | A real improvement someone can use, rather than praise for how clever she is | Established |
+| Emotional need | Learn that receiving care and living with grief do not depend on solving or concealing it first | Established growth direction |
+| Expected source of relief | Sometimes hopes finishing one more useful task will leave her feeling settled inside | Established |
+| Sources of genuine joy | Discovery, craftsmanship and shared success can be rewarding in their own right, not only distractions from loss | Established portrayal direction |
+
+## Fears, values and vulnerabilities
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Deepest fear | Losing someone else she loves and being unable to prevent it | Established |
+| Practical fear | A device she designed injuring the person it was meant to help | Established; does not establish the cause of her parents' deaths |
+| Insecurity | Uncertain how to explain pain that has no obvious repair, especially when others see her as capable | Established |
+| Shame | Embarrassed by needing help with something she cannot make sense of herself | Established |
+| Emotional triggers | Specific reminders, anniversaries and circumstances have not been chosen | Open |
+| Coping habit | Repair has a connection to her early loss; compulsive overwork during difficult moments is an established expression of that connection | Established |
+| Avoided admission | Being busy is not always the same as being all right | Established |
+| Demonstrated priorities | Checks Caelan's injuries; considers heat, balance and weight in Liam's design | Established scene behavior |
+| Values | Useful care, honest observation, safe workmanship and respect for learners | Established interpretation of demonstrated behavior |
+| Faith and worldview | Her personal interpretation of Eldenmere's traditions and her parents' deaths remain undecided | Open |
+| Prejudices and absolute boundaries | Not yet established | Open |
+
+## History, successes and failures
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Formative loss | Tragic loss of both parents when young | Established |
+| Formative response | Came to enjoy fixing things in relation to grief she does not know how to mend | Established |
+| Training and mentors | Specific teachers, first repairs and training history remain undecided | Open |
+| Childhood friendship | Caelan is her childhood friend; when and how they met remain undecided | Established / Open |
+| Earlier feats and proudest success | No particular pre-game invention, rescue or award has been approved | Open |
+| Greatest failure | No specific failure has been chosen; parental loss is not proof that she failed or caused it | Open |
+| Regrets and unfinished obligations | Specific regrets, promises and debts remain undecided | Open |
+
+### Established on-screen demonstrations
+
+These occur after the opening and must not be rewritten as earlier biography:
+
+- **MQ02:** Helps diagnose the restricted mill intake, fights the Ridgeback
+  Tusker with her launcher and Rivet, checks Caelan afterward, and contributes
+  mechanical knowledge to their repair. Caelan's modest magical success remains
+  his own useful contribution.
+- **MQ04:** Helps Liam develop a workable tower-lantern frame without dismissing
+  his design. Guides the children through practical choices about heat, shape,
+  balance and weight.
+
+Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md)
+and [lantern script](../CH01_MQ04.md).
+
+## Everyday individuality
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Likes | Finding an unexpected cause, a satisfying fit between parts, and seeing a beginner understand something | Established |
+| Dislikes | Careless workmanship, unsupported certainty, and treating learners as stupid | Established |
+| Small irritation | Being told something cannot work before anyone has bothered to examine it | Established |
+| Work habits | Observes physical evidence and involves other people in practical tasks | Established scene behavior |
+| Private pleasure | Testing a small mechanism simply because she wants to see it move, even when it has no important purpose | Established |
+| Comfort | Quiet company that does not demand she explain herself or make herself useful | Established |
+| Non-work hobbies and tastes | Food, music, leisure activities and other preferences remain undecided | Open |
+| Treasured possessions | No parental keepsake has been established. Her flower, tools and Rivet do not automatically carry an inherited meaning. | Open |
+
+## Capabilities and limitations
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Job identity | Machinist | Established |
+| Practical competence | Mechanical diagnosis, repair and collaborative construction | Established |
+| MQ02 kit | Compact spring-driven bolt launcher and Rivet, her familiar workshop bot folded into her kit | Established |
+| Rivet and Overclock | Rivet unfolds for battle and attacks autonomously; her starting Overclock grants it Haste | Established |
+| Combat position | Stronger and more experienced than unarmed Caelan in MQ02; temporary player-controlled guest | Established |
+| Background limits | Her competence does not establish a military background or an age | Open |
+| Emotional blind spot | May try to approach another person's pain as a problem to solve before understanding what they want | Established |
+| Help she needs | Someone willing to stay with her without requiring an explanation or a solution | Established |
+| Mechanics and artwork | Existing gameplay and art are unchanged; future abilities and numeric development are outside this sheet | Scope constraint |
+
+See the [bot guide](../../../MIRA_BOTS.md) for combat rules and progression.
+
+## Relationships
+
+| Person or group | Existing dynamic and possible development | Status |
+| --- | --- | --- |
+| Parents | Their early loss shaped her relationship to repair. Their personalities, individual bonds with her and the circumstances remain unassigned. | Established / Open |
+| Caelan | Childhood friend and practical partner. Existing humor and concern are established. Knowing every detail of her loss, romantic feelings and future emotional scenes are not assumed. | Established / Open |
+| Tomas | Knows and recommends her repair abilities; participates in her workshop guidance during MQ04 | Established |
+| Liam | Takes his lantern idea seriously and helps him understand choices instead of replacing his idea with her own | Established scene behavior |
+| Halden | Helps diagnose and repair the mill; their longer personal history remains undecided | Established / Open |
+| Serene | Any guardianship, family-like role or private knowledge of Mira's grief remains undecided; do not invent a foster relationship | Open |
+| Wider party | Specific relationships with Lucan, Rhea and Edran remain to be developed | Open |
+
+**Approved relationship growth:** Let Mira accept care from Caelan and others
+without immediately paying it back through work. Mutual support does not
+require romance and should not erase the friendship's ordinary humor.
+
+## Voice and behavior
+
+**Existing scene foundation:** Uses concrete observations, manageable next
+steps, familiar humor and practical checks on other people's safety. She can
+admit difficulty without presenting herself as an infallible expert.
+
+**Approved writing guidance:**
+
+- Let technical language clarify what someone can observe or do; avoid jargon as a personality substitute.
+- Keep everyday warmth, curiosity and genuine delight. Most conversations need not mention bereavement.
+- When grief surfaces, favor plain words, hesitation and an unfinished thought over an explanatory speech about her psychology.
+- In difficult private moments, she may return to a task or find something to check. This is an approved acting reference, not a required routine animation.
+- Let concern sometimes become too much practical advice, but preserve her demonstrated patience and willingness to collaborate.
+- Show growing trust through her accepting company, asking for help or leaving a task unfinished for a while.
+
+**Avoid:** Treating her as a defective machine, making every invention a grief
+symbol, declaring her responsible for her parents' deaths, implying joy means
+she has forgotten them, or making a single repair, romance or revelation cure
+her loss. Grief does not eliminate competence, humor or a future she can want.
+
+## Secrets, knowledge and character arc
+
+| Attribute | Value | Status |
+| --- | --- | --- |
+| Personal secrets | No secret about the deaths or her family has been established | Open |
+| Disclosure | The loss is a character fact; who knows about it and when the player learns it remain undecided | Established / Open |
+| Knowledge limits | Bereavement does not give her answers about souls, resurrection or hidden cosmic history | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
+| Starting condition | Enjoys repairing things while carrying grief she does not know how to mend within herself | Established |
+| Mistaken belief | If she can keep making things better outside herself, she should eventually be able to stop hurting inside | Established |
+| Central tension | Repair can be meaningful joy and a refuge from a loss that cannot simply be reversed | Established interpretation |
+| Intended growth | Build a life that includes remembrance, pleasure and receiving care, without having to become "fixed" first | Established growth direction |
+| Tests and setbacks | Specific breakdowns, emotional disclosures and pivotal choices remain undecided | Open |
+| Possible end state | Still misses her parents, but no longer treats that pain as evidence she cannot live fully or be loved | Established growth direction; exact ending remains open |
+
+## Ten dialogue and expression references
+
+All ten examples are approved as voice and expression references on 2026-11-03.
+Examples 1 and 3 retain dialogue from existing scenes; the other examples are
+approved reference sketches, not implemented quest dialogue. New contexts and
+acting cues remain hypothetical and do not establish childhood events, the
+cause of death or romance. Later-growth examples illustrate the approved
+direction of development, not changes already completed at the opening.
+
+### 1. Dry confidence - early village work
+
+**Context:** Caelan anticipates Halden's relief before the mill actually works.
+
+> **Caelan:** "Halden will be pleased."
+>
+> **Mira:** "Let's give him a working mill before we tell him how pleased to be."
+
+**Acting cue:** Matter-of-fact, with a small smile; her attention returns to the problem.
+
+**Character signal:** Understated humor and a preference for useful results over premature claims.
+**Status / source:** Existing dialogue, [MQ02 mill inspection](../CH01_MQ02.md).
+The additional acting cue is approved as a reference, not an implemented action.
+
+### 2. Patient encouragement - everyday teaching
+
+**Context:** A learner apologizes for spotting a problem she overlooked.
+
+> "You noticed something I missed. Don't apologize for that. Show me where
+> it catches. We'll start there."
+
+**Acting cue:** Makes room beside her rather than taking the work away.
+
+**Character signal:** Competence leaves space for another person's observation and agency.
+**Status:** Approved voice reference; hypothetical scene.
+
+### 3. Protective care - after the MQ02 fight
+
+**Context:** Caelan tries to dismiss the need for an injury check.
+
+> **Mira:** "It wasn't easy. Are you hurt?"
+>
+> **Caelan:** "I'll manage."
+>
+> **Mira:** "Let me look first."
+
+**Acting cue:** Checks his hands and shoulders before discussing their next task.
+
+**Character signal:** Practical care and honest acknowledgment of difficulty, not invulnerability.
+**Status / source:** Existing dialogue and injury-check action,
+[MQ02 aftermath](../CH01_MQ02.md).
+
+### 4. Genuine delight - discovery for its own sake
+
+**Context:** A small experimental mechanism finally moves as intended.
+
+> "There! Did you see it? No, wait, watch the little arm. It doesn't need
+> anything from us now."
+>
+> "What is it for?"
+>
+> "At the moment? Making me very happy. We can find it a job tomorrow."
+
+**Acting cue:** Laughs without checking whether anyone thinks the experiment impressive.
+
+**Character signal:** Invention can be play and real happiness, not merely a cover for grief.
+**Status:** Approved voice reference; hypothetical scene.
+
+### 5. Anger at careless risk - a value under pressure
+
+**Context:** Someone dismisses another person's concern about an unsafe design.
+
+> "They asked whether it was safe. You told them they were worrying too much.
+> That's not a test. If you don't know, say you don't know, and let us check."
+
+**Acting cue:** Firm and plain; she stops the work before arguing further.
+
+**Character signal:** Her anger targets disregard for people and evidence rather than injured pride.
+**Status:** Approved voice reference; no specific accident is established.
+
+### 6. Grief behind repair - a private conversation
+
+**Context:** Someone she trusts asks why she keeps working when she is upset.
+The disclosure scene and listener remain unchosen.
+
+> "With things, I can usually find where they broke. Then there's somewhere
+> to start."
+>
+> "And with you?"
+>
+> "I lost my parents when I was young. I know that much. I just don't know
+> what I'm supposed to mend."
+
+**Acting cue:** Sets the tool down; the last answer is quieter and less certain than her work instructions.
+
+**Character signal:** States the approved connection between loss and repair without inventing how the deaths happened.
+**Status:** Approved expression of the established background; disclosure scene remains open.
+
+### 7. Fear of another loss - a vulnerability
+
+**Context:** A companion notices she is checking an already-tested device again.
+
+> "I know. We checked it."
+>
+> "Then what are you looking for?"
+>
+> "Something I missed. Something I could still put right before anyone gets
+> hurt. Give me a moment. I'm finding it hard to leave it alone."
+
+**Acting cue:** Eventually lets the companion help with the check rather than silently repeating it.
+
+**Character signal:** Fear can complicate her practical competence without making her incapable.
+**Status:** Approved voice reference; this does not imply a device caused her parents' deaths.
+
+### 8. Apology for trying to solve a feeling - possible growth beat
+
+**Context:** A friend wants to be heard, but she has answered with tasks and suggestions.
+
+> "You weren't asking me to work out what you should do next."
+>
+> "No."
+>
+> "I'm sorry. I heard you were hurting and started looking for something
+> I could change. Tell me again. I'll try listening this time."
+
+**Acting cue:** Stops arranging the work in front of her and gives the friend her attention.
+
+**Character signal:** Learning to offer companionship without turning it into a repair.
+**Status:** Approved voice reference; the scene and timing remain open.
+
+### 9. Affection through accepting company - developing trust
+
+**Context:** Caelan visits and asks whether she needs help.
+
+> "Not with the bench. It's holding together better than I am today."
+>
+> "Should I come back later?"
+>
+> "No. Pull up a chair. You don't have to be useful either."
+
+**Acting cue:** A small, familiar smile; she leaves the unfinished task alone.
+
+**Character signal:** Warmth, humor and an honest request for company coexist with grief.
+**Status:** Approved voice reference; does not establish romance or an actual visit.
+
+### 10. Hope without erasing loss - possible later growth
+
+**Context:** In an unchosen later conversation, she acknowledges both grief and a good day.
+
+> "I still miss them. Today was good, and I still missed them."
+>
+> "Can it be both?"
+>
+> "I think it has to be. I want more days like this. I don't think wanting
+> that means I'm leaving them behind."
+
+**Acting cue:** Does not force a smile or return to work to end the conversation.
+
+**Character signal:** A future can include joy and remembrance without a claim that she has been repaired.
+**Status:** Approved voice and growth reference, not a fixed ending.
