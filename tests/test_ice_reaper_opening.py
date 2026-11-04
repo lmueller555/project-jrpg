@@ -21,8 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PARTY = {
     'caelan': 'assets/story/opening_cinematic/actors/caelan/stand_empty.png',
     'mira': 'assets/story/opening_cinematic/actors/mira/stand.png',
-    'rhea': 'assets/cinematics/companions/rhea/stand_front.png',
-    'lucan': 'assets/cinematics/companions/lucan/stand_front.png',
+    'rhea': 'assets/combat/rhea/idle_01.png',
+    'lucan': 'assets/combat/lucan/idle_01.png',
 }
 
 
@@ -51,18 +51,34 @@ class IceReaperOpeningTests(unittest.TestCase):
                 self.scene.skip()
                 self.assertEqual(calls, ['done'])
 
-    def test_party_uses_the_unchanged_detailed_cinematic_frames(self):
+    def test_party_uses_approved_frames_with_matching_combat_display_scale(self):
         for actor in self.scene.data['actors']:
             if actor['id'] not in PARTY:
                 continue
             with self.subTest(actor=actor['id']):
                 path = self.scene.scene_path.parent/actor['manifest']
                 manifest = json.loads(path.read_text())
-                self.assertEqual(manifest['canvas'], [96, 112])
-                self.assertEqual(manifest['anchor'], [48, 104])
+                combat = actor['id'] in ('rhea', 'lucan')
+                self.assertEqual(manifest['canvas'], [64, 64] if combat else [96, 112])
+                self.assertEqual(manifest['anchor'], [32, 54] if combat else [48, 104])
+                self.assertEqual(actor.get('pixel_scale', 1), 2 if combat else 1)
                 self.assertTrue(manifest['copied_without_pixel_changes'])
                 self.assertEqual((path.parent/manifest['poses']['stand']).read_bytes(),
                                  (ROOT/PARTY[actor['id']]).read_bytes())
+
+    def test_rhea_holds_while_lucan_cycles_his_combat_ready_frames(self):
+        self.scene.start()
+        sampled = {}
+        for actor in ('rhea', 'lucan'):
+            record, anchor, frames, transitions = next(
+                entry for entry in self.scene.actors if entry[0]['id'] == actor)
+            sampled[actor] = []
+            for time in (0., .2, .4, .6):
+                self.scene.elapsed = time
+                image = self.scene._actor_frame(actor, frames, transitions)
+                sampled[actor].append(pygame.image.tostring(image, 'RGBA'))
+        self.assertEqual(len(set(sampled['rhea'])), 1)
+        self.assertGreater(len(set(sampled['lucan'])), 1)
 
     def test_frozen_rhea_and_raised_shard_do_not_release_an_attack(self):
         self.scene.start()
@@ -235,7 +251,9 @@ class IceReaperGalleryTests(unittest.TestCase):
         camera = scene.camera_position
         point = scene.actor_position(actor['id'])-camera
         unzoomed = pygame.Surface((480,320), pygame.SRCALPHA)
-        unzoomed.blit(image, (round(point.x-anchor[0]), round(point.y-anchor[1])))
+        scale = actor.get('pixel_scale', 1)
+        image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
+        unzoomed.blit(image, (round(point.x-anchor[0]*scale), round(point.y-anchor[1]*scale)))
         zoom = scene.camera_zoom
         enlarged = pygame.transform.scale(unzoomed, (round(480*zoom), round(320*zoom)))
         rendered = pygame.Surface((480,320), pygame.SRCALPHA)

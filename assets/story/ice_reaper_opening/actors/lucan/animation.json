@@ -2,16 +2,36 @@
   "version": 1,
   "actor": "lucan",
   "canvas": [
-    96,
-    112
+    64,
+    64
   ],
   "anchor": [
-    48,
-    104
+    32,
+    54
   ],
   "poses": {
     "stand": "stand.png"
   },
-  "source_manifest": "assets/cinematics/companions/lucan/animation.json",
-  "copied_without_pixel_changes": true
+  "source_manifest": "assets/combat/lucan/animation.json",
+  "copied_without_pixel_changes": true,
+  "loops": {
+    "ready": [
+      {
+        "file": "ready_01.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "ready_02.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "ready_03.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "ready_04.png",
+        "duration_ms": 180
+      }
+    ]
+  }
 }

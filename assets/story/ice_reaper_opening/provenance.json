@@ -109,34 +109,66 @@
     },
     "rhea": {
       "manifest": {
-        "file": "assets/cinematics/companions/rhea/animation.json",
-        "sha256": "1b50614550fb8f352b040321b2bd16b746257f0f4766909bc4a50c76ca591bf5"
+        "file": "assets/combat/rhea/animation.json",
+        "sha256": "67a9fac02d6580ab932b7f8ed277d54297f0b7be0e72e4e5ab7c0199648a8a8c"
       },
       "frames": [
         {
-          "file": "assets/cinematics/companions/rhea/stand_front.png",
+          "file": "assets/combat/rhea/idle_01.png",
           "dimensions": [
-            96,
-            112
+            64,
+            64
           ],
-          "sha256": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3"
+          "sha256": "f9a1a33bbcc0e64b1ee9da52ada2200c499bdf69e615fa98be3b2e9bacdeb386"
         }
       ],
       "pixel_changes": false
     },
     "lucan": {
       "manifest": {
-        "file": "assets/cinematics/companions/lucan/animation.json",
-        "sha256": "894003f4d02a9d3fd087051f9ebd7044b872dc28e1eb7b6b5f8a0e1cd41b722c"
+        "file": "assets/combat/lucan/animation.json",
+        "sha256": "edce5d32592791f8d72400d939529ebce5b8343d4ecbcb45c4d9873f9c44b47a"
       },
       "frames": [
         {
-          "file": "assets/cinematics/companions/lucan/stand_front.png",
+          "file": "assets/combat/lucan/idle_01.png",
           "dimensions": [
-            96,
-            112
+            64,
+            64
           ],
-          "sha256": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d"
+          "sha256": "6648fec30760673f15733d820d1c9d381c6d1d3d3668dc2894d81d2ed65262b0"
+        },
+        {
+          "file": "assets/combat/lucan/idle_01.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "6648fec30760673f15733d820d1c9d381c6d1d3d3668dc2894d81d2ed65262b0"
+        },
+        {
+          "file": "assets/combat/lucan/idle_02.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "306181466fc404afeac55ae114ce83bfb5c8856ec5f0b11d8fb208d23eb3029c"
+        },
+        {
+          "file": "assets/combat/lucan/idle_03.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "1967e0da9c5fde4d540b5512d0b1035d119ebd90b4b05be91e4b5e625b255015"
+        },
+        {
+          "file": "assets/combat/lucan/idle_04.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "534f9d9db448d82caf3e64490dfc3802678032b3380b4e7e3a10a632ed7c8ee4"
         }
       ],
       "pixel_changes": false
@@ -189,15 +221,47 @@
         192,
         176
       ],
-      "sha256": "beb2bbee66aaf8583091cca9b4ee1eca25d8070adf272881c4182de4d69f8a95"
+      "sha256": "80b4ec4e9ceed686c1507e48729b323a4463ee7adfb8925968cd458401c90ee8"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/lucan/ready_01.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "6648fec30760673f15733d820d1c9d381c6d1d3d3668dc2894d81d2ed65262b0"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/lucan/ready_02.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "306181466fc404afeac55ae114ce83bfb5c8856ec5f0b11d8fb208d23eb3029c"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/lucan/ready_03.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "1967e0da9c5fde4d540b5512d0b1035d119ebd90b4b05be91e4b5e625b255015"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/lucan/ready_04.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "534f9d9db448d82caf3e64490dfc3802678032b3380b4e7e3a10a632ed7c8ee4"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/lucan/stand.png",
       "dimensions": [
-        96,
-        112
+        64,
+        64
       ],
-      "sha256": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d"
+      "sha256": "6648fec30760673f15733d820d1c9d381c6d1d3d3668dc2894d81d2ed65262b0"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
@@ -210,10 +274,10 @@
     {
       "file": "assets/story/ice_reaper_opening/actors/rhea/stand.png",
       "dimensions": [
-        96,
-        112
+        64,
+        64
       ],
-      "sha256": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3"
+      "sha256": "f9a1a33bbcc0e64b1ee9da52ada2200c499bdf69e615fa98be3b2e9bacdeb386"
     },
     {
       "file": "assets/story/ice_reaper_opening/brush_left.png",
@@ -221,7 +285,7 @@
         960,
         480
       ],
-      "sha256": "1b1761d59d7373c6effe52b9b9363935dd1de50a4d830fce32210314def34d17"
+      "sha256": "a3224a4e46636002c9c8cf82df7be52079bc10aee5f8d0e73345966aa89a5990"
     },
     {
       "file": "assets/story/ice_reaper_opening/brush_right.png",
@@ -229,7 +293,7 @@
         960,
         480
       ],
-      "sha256": "5942a919595132131c9cd5e3031fdb657bac23f92d4a21c7afc11185512ebc5a"
+      "sha256": "51c0a00c92745dd18fd2a2daab4565083256950f883c84361adbe447606e07a3"
     },
     {
       "file": "assets/story/ice_reaper_opening/environment.png",
@@ -253,7 +317,7 @@
         88,
         136
       ],
-      "sha256": "f49e34049996741d38dcedada497bb399cc63a68ee7ed1596d265bfede141532"
+      "sha256": "7b165c5fdbfac121827d9805551559dc9cee3c327fc08e2a90d22ea1c6f18804"
     },
     {
       "file": "assets/story/ice_reaper_opening/ice_prison_front.png",
@@ -261,7 +325,7 @@
         88,
         136
       ],
-      "sha256": "9de84ba1222869f9be1d52ce7f009c7cc18c8b7d9d3c8a4d567e7ea889082ae9"
+      "sha256": "533ad30c9012d9c96ae6a9948f7c7550ebecc25780245cad084418be95fa980f"
     }
   ],
   "registration": {
@@ -302,7 +366,7 @@
   "notes": [
     "New scenery, brush and boss artwork are authored image-generation sources.",
     "Generated source images are retained unchanged.",
-    "Party frames are exact copies from the existing 96x112 cinematic sets.",
+    "Party frames are exact approved assets: Caelan/Mira cinematic motion, Rhea/Lucan combat art; display scale is scene metadata.",
     "Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.",
     "The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.",
     "No party actors are baked into the background."

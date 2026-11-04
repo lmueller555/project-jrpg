@@ -80,9 +80,12 @@ mixing, and main-story pause/skip/retry behavior are not assigned here.
 **Implemented:** The 0:00-0:05 opening uses the same cinematic renderer,
 nearest-scaled pixel presentation and portrait dialogue frame as the game's
 intro. Caelan and Mira reuse the intro's detailed actor art; Rhea and Lucan
-reuse their approved detailed cinematic sprites. All four use the 96x112
-cinematic sets, not small overworld sprites, and their native PNG pixels
-are copied unchanged.
+use their approved 64x64 combat sprites at an integer 2x display scale, with
+anchors scaled to match. Caelan and Mira retain their 96x112 cinematic sets
+and existing entrance motion. All source PNGs are copied unchanged. Lucan
+uses his four-frame ready loop; frozen Rhea holds a single idle pose between
+the ice prison layers. Mira stands farther back and Lucan shifts right to
+keep their silhouettes distinct.
 
 The brush parts to reveal a snowy field, the immense ice dome high above and
 the frozen castle in the background. Rhea is encased in ice at the lower left.
@@ -113,9 +116,9 @@ Pause and focus loss freeze the same visual clock and soundtrack.
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [five-second clip](../../reviews/ice_reaper_opening/preview.mp4),
-[keyframes](../../reviews/ice_reaper_opening/keyframes.png) and
-[verification record](../../reviews/ice_reaper_opening/verification.json).
+Review the [five-second clip](../../reviews/ice_reaper_combat_cast/preview.mp4),
+[keyframes](../../reviews/ice_reaper_combat_cast/keyframes.png) and
+[verification record](../../reviews/ice_reaper_combat_cast/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:

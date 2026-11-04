@@ -1,4 +1,4 @@
-"""Register authored Ice Reaper scenery and unchanged cinematic party sprites."""
+"""Register authored Ice Reaper scenery and approved party sprites."""
 from __future__ import annotations
 
 import json
@@ -19,8 +19,8 @@ SIZE = (960, 480)
 PARTY = {
     'caelan': ('assets/story/opening_cinematic/actors/caelan/animation.json', 'stand_empty'),
     'mira': ('assets/story/opening_cinematic/actors/mira/animation.json', 'stand'),
-    'rhea': ('assets/cinematics/companions/rhea/animation.json', 'stand_front'),
-    'lucan': ('assets/cinematics/companions/lucan/animation.json', 'stand_front'),
+    'rhea': ('assets/combat/rhea/animation.json', 'idle'),
+    'lucan': ('assets/combat/lucan/animation.json', 'idle'),
 }
 
 
@@ -65,10 +65,19 @@ def export_party():
                 raise AssertionError('An existing cinematic frame changed')
             sources.append(record(source))
 
-        copy_frame(manifest['poses'][pose], 'stand.png')
+        combat = 'animations' in manifest
+        source_pose = manifest['animations'][pose]['frames'][0]['file'] if combat else manifest['poses'][pose]
+        copy_frame(source_pose, 'stand.png')
         data = dict(version=1, actor=actor, canvas=manifest['canvas'],
                     anchor=manifest['anchor'], poses={'stand': 'stand.png'},
                     source_manifest=filename, copied_without_pixel_changes=True)
+        if actor == 'lucan':
+            loop = []
+            for index, frame in enumerate(manifest['animations']['idle']['frames'], 1):
+                name = f'ready_{index:02}.png'
+                copy_frame(frame['file'], name)
+                loop.append(dict(file=name, duration_ms=frame['duration_ms']))
+            data['loops'] = {'ready': loop}
         if actor == 'caelan':
             loop = []
             for index, frame in enumerate(manifest['loops']['walk_left'], 1):
@@ -170,7 +179,7 @@ def build():
         notes=[
             'New scenery, brush and boss artwork are authored image-generation sources.',
             'Generated source images are retained unchanged.',
-            'Party frames are exact copies from the existing 96x112 cinematic sets.',
+            'Party frames are exact approved assets: Caelan/Mira cinematic motion, Rhea/Lucan combat art; display scale is scene metadata.',
             'Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.',
             'The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.',
             'No party actors are baked into the background.',
