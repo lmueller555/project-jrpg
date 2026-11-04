@@ -10,7 +10,7 @@ This outline explores **The Broken Covenant** as the preferred current direction
 
 - Game I is a **largely regional**, emotionally grounded, **self-contained** first installment of a multi-game saga.
 - Its primary antagonist is a present-day person with agency and comprehensible motivations; modern societies' problems cannot all be attributed to ancient manipulation.
-- Exactly **four surviving Ancients** remain behind the scenes; their full nature, number, identities, the Great Sacrifice, the atmosphere's origin, and cosmic catastrophe are **not fully revealed**.
+- Exactly **four surviving Ancients** remain behind the scenes; their full nature, number, identities, the Great Sacrifice and cosmic catastrophe are **not fully revealed**. The Aethersphere's protective purpose and ancient origin remain hidden.
 - Aether is conserved, and magicks manipulate existing free-flowing aether; ancient mechanisms cannot generate limitless energy.
 - The ending must resolve the regional primary conflict, leave meaningful consequences, and not depend on a sequel for emotional closure.
 
@@ -127,7 +127,7 @@ approve the remainder of this working act outline.
 
 **Act break:** The party becomes politically isolated and commits to averting a regional disaster independent of either institution.
 
-**Revelation limit:** This is **not** proof to the player that the gods were mortal Ancients, that the atmosphere is their barrier, or that four survivors are harvesting planetary energy.
+**Revelation limit:** This is **not** proof to the player that the gods were mortal Ancients, that the Aethersphere is their protective barrier, or that four survivors are harvesting ancient committed energy.
 
 **Not yet chosen:** Exact antiquity of the mechanisms, credible limits of religious foreknowledge, specific discoveries, and consequences of defying both institutions.
 
@@ -180,7 +180,7 @@ After the main ending has completed, an **unidentified observer** might inspect 
 2. **Antagonist relationship:** Build real earned trust, indebtedness, or earlier admiration between protagonist and ruler before their ideological rupture.
 3. **Religious nuance:** Include compassionate believers, institutional reformers, and legitimate sanctuary cautions; do not flatten faith into corruption.
 4. **Regional mechanism logic:** Specify its aether sources, limits, conservation, and how a local shutdown can contain regional damage without conveniently restoring planetary equilibrium.
-5. **World stakes:** Avoid revealing the true ancient atmospheric system during Game I; the mystery stays appropriately limited.
+5. **World stakes:** Keep the Aethersphere's protective purpose and ancient origin hidden during Game I. Scholarly recognition of its unusual atmospheric form is allowed.
 6. **Companion arcs:** Every principal party member should bring an independent moral perspective and a reason to travel.
 7. **Earned cost:** Name a personal, irreversible price the protagonist pays. A generic damaged economy alone may not provide emotional climax.
 8. **Ending credibility:** Governance reform must be a plausible beginning rather than a magical guarantee of lasting harmony.

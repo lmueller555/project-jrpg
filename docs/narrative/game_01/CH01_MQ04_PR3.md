@@ -6,13 +6,13 @@
 
 ## Narrative contract
 
-Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already understand the annual festival. They give Liam the basic returning-life belief before he asks to speak with Serene; they do not discover their own tradition along with him. The route follows the already agreed outing inside Eldenmere: outside Elira’s cottage → Mira’s workshop → Liam’s home → sanctuary.
+Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already understand the annual festival. They give Liam the basic understanding of planetary aether return before he asks to speak with Serene; they do not discover their own tradition along with him. The route follows the already agreed outing inside Eldenmere: outside Elira’s cottage → Mira’s workshop → Liam’s home → sanctuary.
 
 Mira has secured the frame handle without changing Liam’s chosen position. The actual handoff removes the single frame and drawing from the workshop. Liam carries his own small frame, while Caelan keeps the drawing and loose paper flat in his satchel. At home, they set the materials down before eating. The same father hosts the break; his personal name remains unassigned and Liam’s mother remains at the school. Daisy’s ordinary household activity continues independently and no food is given to her in the scripted scenes.
 
 Liam tries a separate loose practice panel. He grows impatient when the stairs and window compete for space, then makes a small adjustment with help he agrees to. The real covering is not attached and the frame remains unlit. During the brothers’ quiet exchange, Liam stays visibly occupied with the paper. Tomas reflects on his actual offer to carry Elira’s lantern; no new family history or later desire to leave Eldenmere is introduced.
 
-The materials remain safely together at home while the three visit Serene. Her sanctuary work makes space for listening. She speaks sincerely of the belief that life returns to the gods and explains the lantern as an act of remembrance. The script does not reveal ancient history, certify what happens to individual consciousness, promise that the dead hear the singing, or establish resurrection. Liam’s lantern purpose remains undecided for PR4.
+The materials remain safely together at home while the three visit Serene. Her sanctuary work makes space for listening. She explains that life and nature consist of aether, which returns to the planet when living things die, and describes the lantern as an act of remembrance. The script does not reveal ancient history or the Aethersphere's protective purpose, certify what happens to individual consciousness, promise that the dead hear the singing, or establish resurrection. Liam’s lantern purpose remains undecided for PR4.
 
 The eleven main exchanges are separately player-paced. The collection, home placement and practice action commit only through the controller’s explicit handoffs. Canceling unread dialogue cannot grant progress or silently move materials. This segment completes `take_break` and `speak_serene`; final covering, chosen purpose and showing mother remain the fourth segment. The comfortable 12–18-minute target includes movement and conversation and is not a measured duration or a reason to pad the script.
 
@@ -177,9 +177,9 @@ Runtime key: `liam_questions`.
 - **Liam:** “She already remembers him.”
 - **Caelan:** “She does. Taking it lets her do that with other people.”
 - **Liam:** “Is that why it's called Returning Light?”
-- **Caelan:** “We believe the life in us returns to the gods when we die. The festival is part of how we remember that.”
+- **Caelan:** “The aether in living things returns to the planet when they die. The festival is part of how we remember that.”
 - **Liam:** “What comes back?”
-- **Tomas:** “The life. That's what Caelan means by returning.”
+- **Tomas:** “Aether. It's part of the life in all of us.”
 - **Liam:** “But Elira still wanted him here.”
 - **Caelan:** “Yes. You heard how much she misses him.”
 - **Liam:** “I liked when she was laughing.”
@@ -209,8 +209,8 @@ Runtime key: `sanctuary_welcome`.
 - **Mother Serene:** “(smiling) That sounds like a conversation worth having.”
 - **Liam:** “Am I keeping you from that?”
 - **Mother Serene:** “These papers can wait a little. Tell me what you wanted to ask.”
-- **Liam:** “Caelan said the life goes back to the gods.”
-- **Mother Serene:** “Yes. That's what we believe.”
+- **Liam:** “Caelan said our aether goes back to the planet.”
+- **Mother Serene:** “Yes. That's what we understand.”
 - **Liam:** “I don't think I understood it.”
 - **Mother Serene:** “All right. We can take our time.”
 - **Caelan:** “We're not in a hurry.”
@@ -221,9 +221,9 @@ Runtime key: `sanctuary_welcome`.
 Runtime key: `returning_life`.
 
 - **Liam:** “What part of Elira's husband comes back?”
-- **Mother Serene:** “We speak of the life that was in him. The life in all of us.”
-- **Liam:** “Like the life in me?”
-- **Mother Serene:** “Yes. We believe it returns to the gods when we die.”
+- **Mother Serene:** “We mean his aether. Plants and animals are made of it, and so are we.”
+- **Liam:** “Like the aether in me?”
+- **Mother Serene:** “Yes. When living things die, their aether returns to the planet.”
 - **Liam:** “Does any of it go inside the lantern?”
 - **Mother Serene:** “No, love. It's still a lamp. Elira carries it to remember her husband.”
 - **Liam:** “Why does she light it, then?”
@@ -237,10 +237,10 @@ Runtime key: `returning_life`.
 - **Mother Serene:** “(laughing softly) Poor Elira. I can imagine her face.”
 - **Liam:** “She laughed, too. And then she got quiet.”
 - **Mother Serene:** “You can remember something funny and wish the person were here to laugh with you.”
-- **Liam:** “Does she still believe what you said? About the gods?”
+- **Liam:** “Does she still believe what you said? About the aether returning?”
 - **Mother Serene:** “I believe she does.”
 - **Liam:** “But she still wants him here.”
-- **Mother Serene:** “Of course. She misses sharing her days with him. Her faith doesn't stop her missing that.”
+- **Mother Serene:** “Of course. She misses sharing her days with him.”
 
 ## S10 — Gathering with one another
 Runtime key: `remembering`.

@@ -1,7 +1,7 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.1
+**Version:** 0.2
 **References:** [Foundational Lore](../../FOUNDATIONAL_LORE.md) and [Saga Bible](SAGA_BIBLE.md).
 
 ## Purpose
@@ -12,14 +12,20 @@ Track three distinct things: (1) objective storyteller truth, (2) prevailing in-
 
 Game I is principally regional in scope, with a complete local conflict and resolution. Exactly four surviving ancients operate behind the scenes, but their number, identities, historical origin, accumulated aether, mission, and connection to the atmosphere are not fully disclosed. The cosmic catastrophe and Great Sacrifice are not explained in full. Religious belief, an ancient holy temple, magicks, and local consequences of instability may appear.
 
+**Aethersphere boundary, confirmed 2026-11-04:** Modern scholars recognize an
+unusual atmospheric form of aether outside the planetary life cycle. They do
+not know its protective purpose or ancient origin. Naming or discussing this
+classification is permitted without revealing the barrier or the sacrifice.
+
 ## Revelation matrix
 
 | Topic | Writer's established truth | Game I permitted treatment | Beyond Game I |
 | --- | --- | --- | --- |
 | Aether / magicks | Conserved energy manipulated as magicks | Everyday system; some limits and anomalies observable | Full metaphysics only when story requires |
+| Planetary life cycle | Life and nature consist of aether; death returns it to the planet, separately from the Aethersphere | Common understanding may be explained; no proof of personal consciousness after death | Detailed circulation and identity questions remain open |
 | Gods | Ancients revered as gods | Worship and cultural interpretations visible | Mortal origins can eventually be revealed |
 | Holy temple | Original sacrificial site | Sacred place may be depicted without its historical truth | Sacrifice site significance revealed later |
-| Planetary atmosphere | Protective barrier formed ~10,000 years ago | Do not explicitly explain its true origin | Reveal when narratively earned |
+| Aethersphere / atmosphere | Protective barrier formed ~10,000 years ago; a distinct aetheric form outside the ordinary life cycle | Scholarly recognition of its atmospheric form is allowed; its protective purpose and ancient origin remain hidden | Reveal true purpose and origin when narratively earned |
 | Four dissenters | Exactly four active ancients | Unidentified influence, if any; do not reveal count or full nature | Reveal individuals and objective across later games |
 | Current instability | Long-term aether sequestration by dissenters | Regional consequences and immediate human agency | Broader energy mechanism emerges later |
 | New life | Emerged under barrier with less freely available aether | Modern people have independent cultures | Historical origins may be disclosed later |
@@ -34,6 +40,8 @@ Game I is principally regional in scope, with a complete local conflict and reso
 4. Player discoveries and playable character knowledge may differ. Record the distinction when using cutaways.
 5. Preserve a sense of completion at the end of Game I; a closing hint must not replace the resolution.
 6. Do not imply that modern inhabitants are fragments of ancient souls or that the four automatically know how to stop the catastrophe.
+7. Do not use ordinary death-return to fuel the Aethersphere or treat the
+   planetary cycle as proof of reincarnation, resurrection or a sentient planet.
 
 ## Approved early regional clues
 

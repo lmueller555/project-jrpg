@@ -221,6 +221,13 @@ pressures rather than universally identical laws.
 
 ## Faith, magicks and cultural variation
 
+The current foundation describes life and nature as a planetary aether cycle:
+when living beings die, their aether returns to the planet. Scholars distinguish
+the Aethersphere as a poorly understood atmospheric form outside that cycle;
+its protective purpose and ancient origin are not known to them. See the
+[Foundational Lore](../FOUNDATIONAL_LORE.md) for the author-level truth and
+remaining metaphysical questions.
+
 Eldenmere's established Festival of Light combines remembrance with living
 community. Other places may express related beliefs through different
 gatherings, household practices or public observances. These practices can

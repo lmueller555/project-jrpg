@@ -1,6 +1,7 @@
 # Sanctuary Covenant — Elden Vale
 
 **Status:** Approved setting and narrative canon, 2026-10-31.
+Lifecycle terminology revised on 2026-11-04; the custodial terms are unchanged.
 
 **Implementation:** MQ03's runtime dialogue now presents the approved relief
 needs, public records, protected boundary and unresolved trial-cut request.
@@ -40,11 +41,15 @@ unknown to the people involved.
 
 ## Sacred keeping and public responsibility
 
-Local faith understands life as received from the gods and returning to them.
+Life and nature consist of aether. When living beings die, their aether returns
+to the planet's life cycle. The sanctuary's practice of remembrance and care
+sits within this understanding; it does not certify what happens to personal
+consciousness after death.
+
 The sanctuary ground is held in keeping across generations, rather than
-treated as a resource belonging solely to its present custodian. This is a
-religious understanding held sincerely by the community; it does not disclose
-the full historical or metaphysical truth behind that belief.
+treated as a resource belonging solely to its present custodian. This
+custodial duty is held sincerely by the community without disclosing the
+hidden ancient history.
 
 The covenant gives that keeping a recognized public form. Civil authorities
 recognize the reserve and the custodians' duties toward it. Its protection is

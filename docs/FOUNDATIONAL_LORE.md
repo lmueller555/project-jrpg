@@ -1,9 +1,9 @@
 # Project JRPG — Foundational Lore
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.4
+**Version:** 0.5
 
-**Last revised:** 2026-10-31
+**Last revised:** 2026-11-04
 
 **Scope:** Core cosmology, history before the game's opening, ancient sacrifice, successor life, religion, and the original source of the present crisis.
 
@@ -20,6 +20,11 @@ This document preserves the decisions reached so far without pretending that eve
 **Originality:** Inspiration includes the emotional archetype of morally competing civilizations from classic JRPGs and FFXIV, but the game must create its own terminology, mythology, events, characters, locations, and imagery. No copied characters, Sundering, Rejoinings, or other proprietary narrative mechanisms.
 
 **Terminology:** “Aether,” “Ancients,” “Great Sacrifice,” and related descriptive names are **placeholders** until we choose original in-world terminology. “Magicks” is currently the selected descriptive spelling, not necessarily a final in-world term.
+
+**Aethersphere:** The selected name for the atmosphere's distinct aetheric
+form. Modern scholars recognize this form without knowing its protective
+purpose or ancient origin. The planetary-cycle revision below is established
+canon as of 2026-11-04.
 
 **World and geography:** The world is named **Auratia**. The
 [World Atlas](world/WORLD_ATLAS.md) establishes its continents, regional
@@ -38,27 +43,44 @@ cosmology and Eldenmere's local map retain their authority.
 
 Aether is a fundamental energy permeating the world and the wider universe. Aether **cannot be created or destroyed**. It can be moved, concentrated, dispersed, manipulated, or bound, but the total amount is conserved.
 
+Life and all of nature consist of aether. Plants, animals and modern
+inhabitants participate in the planet's aether cycle. When a living being
+dies, its aether returns to the **planet**, rejoining that cycle.
+
+The **Aethersphere** contains a huge amount of aether in a different form,
+separate from the ordinary planetary life cycle. It is the protective barrier
+that forms the world's atmosphere; its energy does not circulate through
+ordinary life and death.
+
 **Magicks** are the deliberate manipulation of **free-flowing aether**. Wielders do not summon new energy into existence. The amount, disposition, and accessibility of aether place real constraints on what any wielder can accomplish.
 
 Living beings possess life-force aether. The strength and scale of individual magical capacity differ between inhabitants and ages. An important distinction is between the **amount of aether a being possesses or can access** and its moral worth: possessing more power does not confer a greater right to exist.
 
-### Working interpretation
+### Modern scholarly understanding
 
-For discussion, it is useful to distinguish aether **freely circulating in the environment**, **retained within life**, **bound to persistent workings such as the protective barrier**, **held in the sleeping ancients' reservoir**, and **sequestered by the survivors**. These are provisional accounting categories or conditions of a single conserved energy—not confirmed separate substances or immutable laws.
+The world's scholars recognize the Aethersphere as an unusual atmospheric
+form of aether that does not participate in the planet's ordinary life cycle.
+Its nature and properties are poorly understood. They do **not** know that
+it is a protective barrier or that it was formed by an ancient sacrifice.
+Recognizing or naming the Aethersphere is not a discovery of that hidden history.
 
-One possible accounting expression is:
+### Accounting limits
 
-```text
-Total planetary-system aether =
-  barrier-bound + circulating/free + living +
-  dormant-ancient reservoir + survivor-sequestered
-```
-
-This is a conceptual inventory, **not a finalized physics equation**; any actual quantitative model must avoid double-counting and define which energy counts as belonging to the planet versus the wider universe.
+Planetary-cycle aether and aetherspheric aether are different forms within
+the same conservation constraint, not unrelated energy sources. Their amounts,
+the accounting of ancient committed or sequestered energy, and any possible
+conversion between forms remain to be designed without double-counting.
+Ordinary magicks do not gain access to the Aethersphere merely because it
+consists of aether.
 
 ### Explicitly unresolved
 
-We have intentionally **not decided** whether aether can directly transform into physical matter or only manipulate existing matter. Likewise, the ultimate mechanics of consciousness, souls, resurrection, magical affinity, spell efficiency, and energy conversion are undecided. Do not quietly assert answers in future documents.
+Nature consisting of aether does **not** settle whether magicks can create
+matter or only manipulate existing matter. The mechanisms of material forms,
+conversion, consciousness, souls, resurrection, reincarnation, magical affinity
+and spell efficiency remain undecided. The planetary cycle does not establish
+a sentient planet or the persistence of personal memories. Do not quietly
+assert answers in future documents.
 
 ---
 
@@ -118,9 +140,14 @@ How the decision was organized, whether each participant's choice was informed a
 
 Approximately **10,000 years before the game's opening**, the sacrificing ancients gathered at a **temple** and surrendered their active lives into **stasis**. Their life force was committed to an immense shield around the planet.
 
-This shield successfully prevented the immediate apocalypse. **It became what later inhabitants understand as the planet's atmosphere.** This is a supernatural worldbuilding premise and should not be silently replaced with an ordinary atmosphere plus a separate, unrelated force field.
+This shield successfully prevented the immediate apocalypse. **It became the
+Aethersphere, what later inhabitants understand as the planet's atmosphere.**
+This is a supernatural worldbuilding premise and should not be silently
+replaced with an ordinary atmosphere plus a separate, unrelated force field.
 
-A significant proportion of the planet's total available life-force aether became committed to the barrier. This left only a fraction of the former free energy accessible to the living beings of subsequent ages.
+A significant proportion of the planet's total available life-force aether
+became committed to this separate form. This left only a fraction of the
+former free energy accessible to the living beings of subsequent ages.
 
 The dissenting ancients did **not** take part in this sacrifice and remained active.
 
@@ -136,17 +163,23 @@ The exact relation between atmospheric gases, weather, and the metaphysical shie
 
 The life force of the dormant ancients helped **guide and nurture the growth of new life for millennia**.
 
-Modern inhabitants are **new living beings**, not automatically fragmented, diminished souls or reincarnations of particular ancients. Their individual aetheric reserves and magical power are a **fraction** of those possessed by the ancient civilization because so much planetary energy remains bound to the barrier.
+Modern inhabitants are **new living beings**, not automatically fragmented,
+diminished souls or reincarnations of particular ancients. Their individual
+aetheric reserves and magical power are a **fraction** of those possessed by
+the ancient civilization because so much energy remains in the separate Aethersphere.
 
-The planet developed an essential cycle: living beings draw upon the available circulating aether; when they die, their energy returns to the planet and is **reabsorbed by the sleeping ancients**. Energy circulates through life and death in a delicate balance that preserves the barrier.
+Life and nature participate in the planetary aether cycle. When a plant,
+animal or inhabitant dies, its aether returns to the planet. That cycle is
+separate from the Aethersphere; ordinary deaths do not fuel or replenish it.
+The dormant Ancients are not recipients of the planet's ordinary death-return flow.
 
 The society beneath the atmosphere developed its own independent history, cultures, beliefs, and values. Its inhabitants' relative lack of power says nothing about whether their lives are worthy of preservation.
 
-### Working interpretation
+### Open questions
 
-The dormant ancients may function as a reservoir as well as a bound power source, routing returned energy to sustain the barrier and replenish accessible energy. Details of the routing, rates, and proportions need to be settled to prevent contradictions later.
-
-An individual's identity or consciousness returning with their aether upon death **has not been determined**.
+The detailed routes, rates and mechanisms of planetary circulation remain
+unassigned. An individual's identity or consciousness returning with their
+aether upon death **has not been determined**.
 
 ---
 
@@ -158,7 +191,11 @@ Over time, memories of the ancient civilization became religious tradition. The 
 
 The very **temple where the ancients performed their sacrifice** survives into the current age as a **holy place of worship**.
 
-This religion has a real historical basis: ancient beings did sacrifice their own active existence to preserve the world, and life energy does flow back to them after death. Selected modern beliefs and practices are now approved locally: Eldenmere's Festival of Light and returning-life teaching, the sanctuary's community service, and the
+This religion has a real historical basis: ancient beings did sacrifice their
+own active existence to preserve the world. The current lifecycle understanding
+is aether returning to the planet. Selected modern beliefs and practices are
+approved locally: Eldenmere's Festival of Light and planetary-return teaching,
+the sanctuary's community service, and the
 [sanctuary covenant](world/SANCTUARY_COVENANT.md). These establish sincere
 in-world belief and custodial responsibilities, without certifying personal
 consciousness after death or explaining the hidden ancient history. The wider
@@ -186,7 +223,12 @@ Exactly four ancients remained active after the Great Sacrifice.
 
 For thousands of years they sought the power to challenge the unknown cosmic threat. They pursued this by **absorbing and accumulating aether from the life force committed by their sleeping brethren**.
 
-Their accumulation removes energy from the normal planetary cycle, weakening its balance. As energy becomes increasingly sequestered, the stability of the life-sustaining barrier and the planet itself begins to deteriorate.
+Their accumulation sequesters energy associated with the ancient sacrifice,
+destabilizing the Aethersphere and threatening the planet beneath it. The
+separate planetary life cycle does not replenish these losses. The precise
+extraction mechanism and how aetherspheric destabilization affects planetary
+life remain open; do not restore an automatic link between ordinary deaths
+and barrier maintenance.
 
 The survivors' purpose is not established as simple greed or vengeance: their professed motivation is to defeat the cosmic danger rather than indefinitely shelter from it. Their methods nevertheless endanger the people living beneath the barrier.
 
@@ -204,6 +246,10 @@ Their accumulation might give them overwhelming power relative to modern people,
 
 At the game's opening, approximately ten millennia after the sacrifice, modern civilizations live beneath the atmosphere and worship remembered ancients as gods, without broadly understanding their mortal origins or the original cosmic catastrophe.
 
+Modern scholars distinguish the Aethersphere's unusual atmospheric aether
+from the planetary cycle. Its protective purpose and ancient origin remain
+hidden, even where the term or scholarly classification is known.
+
 The surviving ancients' long campaign of absorbing energy is destabilizing the planet. This destabilization **leads to the events of the game**.
 
 The opposing claims are morally serious. Modern inhabitants have independent lives and a right to defend their existence. The dissidents believe they must do more than maintain a sanctuary while the deeper cosmic problem remains unresolved. There is no established proof that their plan can work.
@@ -214,8 +260,14 @@ The overarching ancient and cosmic conflict unfolds across **multiple games**. *
 
 ### Disclosure boundaries for Game I
 
-- **Visible or potentially visible:** Everyday magicks and aether, modern faith and worship at the ancient temple, regional unrest or instability, and local people's choices and consequences.
-- **Largely concealed:** The temple's sacrificial origin, the atmospheric barrier, the Great Sacrifice, exactly four active survivors and their identity, the distant dying worlds, and the larger cosmic plan.
+- **Visible or potentially visible:** Everyday magicks, the planetary aether
+  cycle, scholarly recognition of the Aethersphere as a distinct atmospheric
+  form, modern faith and worship at the ancient temple, regional unrest or
+  instability, and local people's choices and consequences.
+- **Largely concealed:** The temple's sacrificial origin, the Aethersphere's
+  protective purpose and ancient origin, the Great Sacrifice, exactly four
+  active survivors and their identity, the distant dying worlds, and the
+  larger cosmic plan.
 - **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
 - **Approved regional foundations:** Caelan's opening community and relationships,
   the limited [early lightning incidents and Aldric's relief visit](narrative/game_01/REGIONAL_SURGES.md),
@@ -234,7 +286,7 @@ combined repair needs motivate his quarry request. These incidents foreshadow
 a problem with aether's flow without establishing a complete mechanism or
 making the early region cataclysmic. They precede the proposed excavation.
 Gradual later revelations may reframe the temple, the gods, the planetary
-atmosphere, the hidden survivors and the distant cosmic threat.
+atmosphere's true purpose and origin, the hidden survivors and the distant cosmic threat.
 
 The story's intended **tone is mature and morally complex**. Its broad creative
 direction combines high fantasy, technological or industrial transformation,
@@ -258,8 +310,8 @@ Dates other than the roughly 10,000-year interval are deliberately approximate.
 | Deep antiquity | Ancients prosper in a world with far greater freely accessible aether |
 | Over many millennia | They observe a spreading imbalance and the death of distant worlds |
 | Approaching ~10,000 years ago | The planet becomes threatened; ancients disagree over survival strategy |
-| ~10,000 years before play | Majority enters stasis at the temple and forms the atmospheric barrier; dissenters remain outside |
-| Following millennia | Ancient life force nurtures new life; a cycle of death and return stabilizes the barrier |
+| ~10,000 years before play | Majority enters stasis at the temple and forms the Aethersphere; dissenters remain outside |
+| Following millennia | Ancient life force nurtures new life; planetary aether circulates through life and nature separately from the Aethersphere |
 | Over generations | Ancients become revered as gods; their sacrificial temple becomes a holy site |
 | Over thousands of years | Surviving ancients accumulate dormant life force, progressively upsetting equilibrium |
 | Game's opening | Planetary instability precipitates the story |
@@ -272,19 +324,19 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 
 | Priority | Decision or mystery | Why it matters |
 | --- | --- | --- |
-| High | Original name for “aether,” its derived terms, and the key ancient events | Establish original voice and consistency |
+| High | Remaining original names for “aether” and the key ancient events; Aethersphere is now the selected atmospheric term | Establish original voice and consistency |
 | High | What precisely causes the cosmic aether imbalance? | Ultimate mystery; may remain hidden until late narrative |
 | High | What is the dissenters' actual plan, and what evidence makes it plausible? | Grounds antagonist motivation without guaranteeing success |
-| High | How is aether removed from dormant ancients and why does that deplete barrier support? | Central causal mechanism and plot stakes |
+| High | How is ancient committed aether extracted, and how does that destabilize the separate Aethersphere? | Central causal mechanism without using ordinary death-return as a supply route |
 | High | What further forms does destabilization take beyond the approved early lightning incidents, and how does the later inciting crisis unfold? | Connects regional consequences to the protagonist without prematurely fixing hidden mechanisms |
 | High | Who is the protagonist, what do they lose or want, and why do they act? | Creates an emotional narrative rather than just lore |
 | High | What could end the conflict and what unavoidable cost remains? | Prevents an effortless last-minute solution |
 | Medium | How are the four survivors related, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
 | Medium | Were sacrifices voluntary and informed, and what was stasis meant to achieve? | Defines the moral weight of the original decision |
 | Medium | Are dormant ancients aware, able to speak, or able to awaken? | Shapes the ethics of the survivors' mission |
-| Medium | What exactly is the atmosphere/barrier, and what sustains its equilibrium? | Preserves clear, consistent metaphysics |
+| Medium | What are the Aethersphere's detailed properties and maintenance mechanisms, and how do its disturbances affect planetary life? | Preserve the separation from the ordinary planetary cycle |
 | Medium | How are energy capacity, manipulation skill, and magical effects limited? | Defines the boundaries of magicks |
-| Medium | How do religions interpret the gods, temple, afterlife, and returned energy? | Shapes faith and revelations |
+| Medium | How do religions interpret the gods, temple, afterlife and planetary return? | Shapes faith without settling consciousness or reviving the retired doctrine |
 | Medium | What technological level has modern civilization attained, and why? | Supports fantasy/industrial themes |
 | Medium | How does the modern population differ socially and culturally from ancients? | Keeps successor civilization independent and credible |
 | Later | Matter creation versus manipulation by magicks | **Explicitly postponed by design** |
@@ -296,11 +348,15 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 ### Key continuity and logic checks
 
 1. **Conservation:** The cosmic phenomenon and the survivors' extraction must move, bind, or sequester aether—not annihilate it.
-2. **No double counting:** Energy bound to the barrier, within dormant ancients, and circulating in life must have a consistent accounting model when quantified.
+2. **No double counting:** Aetherspheric, ancient committed and planetary-cycle
+   energy must have a consistent accounting model when quantified. Do not
+   treat ordinary life and death as a supply route into the Aethersphere.
 3. **No assumed villains:** Historical disagreement does not make every dissenter malicious or every sacrificing ancient morally flawless.
 4. **Distinct successors:** Lower aetheric power does not imply the modern inhabitants are lesser persons or reincarnated fragments.
 5. **Unknown truth:** Survivor confidence about defeating the catastrophe is not evidence of their correctness.
-6. **Atmospheric consistency:** The sacrifice-made atmosphere is established lore; any later environmental explanation must honor that premise.
+6. **Atmospheric consistency:** The sacrifice-made Aethersphere is the
+   atmosphere, in a distinct form separate from the planetary cycle. Scholars
+   recognize its atmospheric form, not its protective purpose or ancient origin.
 7. **Unanswered on purpose:** Do not settle matter creation or persistence of consciousness by implication or convenient dialogue.
 
 ---

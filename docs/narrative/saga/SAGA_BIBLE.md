@@ -1,7 +1,7 @@
 # Project JRPG — Saga Bible
 
 **Status:** Working narrative bible; only passages labeled CANON are authoritative.
-**Version:** 0.1
+**Version:** 0.2
 **Source of truth:** [Foundational Lore](../../FOUNDATIONAL_LORE.md). If this document conflicts with established foundational lore, foundational lore prevails until explicitly revised.
 
 ## Purpose
@@ -11,14 +11,25 @@ Plan a mature, morally complex, original multi-game JRPG narrative. The saga sho
 ## Confirmed foundations (CANON)
 
 - Aether permeates the universe, cannot be created or destroyed, and is manipulated as magicks. Its final original name is undetermined.
+- Life and nature consist of aether. When a plant, animal or inhabitant dies,
+  its aether returns to the planet and rejoins the planetary life cycle.
 - An ancient civilization observed a spreading cosmic imbalance and dying worlds over millennia. The phenomenon's ultimate cause and whether it can be defeated remain unknown.
-- Roughly 10,000 years before Game I, most ancients committed their life force to stasis at a temple, creating the protective planetary atmosphere.
+- Roughly 10,000 years before Game I, most ancients committed their life force
+  to stasis at a temple, creating the protective planetary atmosphere: the Aethersphere.
 - This protection binds a significant share of planetary energy. New modern life developed from the remaining aether over millennia and contains a fraction of individual ancient aetheric power.
-- In the normal life cycle, energy released at death returns to the planet and is reabsorbed by dormant ancients; the cycle helps sustain the barrier.
+- The Aethersphere contains a huge amount of aether in a different form,
+  outside the ordinary planetary life cycle. Ordinary deaths do not replenish it.
+- Modern scholars recognize this unusual atmospheric form and its separation
+  from the life cycle, but do not know its protective purpose or ancient origin.
 - The ancients became objects of divine worship; the sacrificial temple remains a holy site.
 - **Exactly four ancients** refused the sacrifice. They have spent millennia absorbing the life force associated with their dormant brethren, hoping to obtain enough power to confront the cosmic threat. This extraction destabilizes the planetary equilibrium.
 - Those four serve as **behind-the-scenes antagonistic forces in Game I**, not fully disclosed villains. The first installment is a relatively limited regional story with a meaningful local conclusion.
 - Modern inhabitants are distinct, valuable lives, not incomplete fragments of ancients. The story has a mature, morally complex tone.
+
+The lifecycle and scholarly-knowledge revision was confirmed on 2026-11-04.
+Consciousness, reincarnation, resurrection, planetary sentience and conversion
+between aether forms remain open. The four survivors' extraction does not
+establish a normal transfer from the planetary life cycle into the Aethersphere.
 
 ## Central dramatic tensions (creative direction)
 
@@ -59,7 +70,8 @@ What changed the universe's aetheric balance? Where does energy move or become i
 
 ## Next decisions (OPEN)
 
-- Original terminology for aether, ancients, barrier, temple, and the sacrifice.
+- Remaining original terminology for aether, ancients, temple and the sacrifice;
+  Aethersphere is the selected atmospheric term.
 - Four survivors' individual identities, ideology, and feasibility of their plan.
 - Cosmic catastrophe mechanics, persistence, and eventual resolution.
 - Intended broad saga ending and its meaningful cost.

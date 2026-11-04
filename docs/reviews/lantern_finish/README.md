@@ -9,3 +9,9 @@ At `done`, all eight MQ04 objectives are complete. The single finished lantern i
 Reproduce with `python tools/capture_lantern_finish.py`.
 
 The uninterrupted four-part verification starts from MQ04 available, never seeds intermediate MQ04 progress, and completes all 43 scenes, 817 main dialogue pages and eight objectives through 15 actual doors. See `full_quest_verification.json`; reproduce with `python tools/verify_lantern_full_quest.py`.
+
+**Historical verification:** That four-part record predates the 2026-11-04
+planetary-aether revision and includes earlier rest/sanctuary wording. It is
+historical progression evidence, not the current doctrine or a new test result.
+See the [current rest/sanctuary script](../../narrative/game_01/CH01_MQ04_PR3.md)
+and [Foundational Lore](../../FOUNDATIONAL_LORE.md) for the revised teaching.

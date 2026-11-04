@@ -128,7 +128,7 @@ authorizes no excavation and leaves the trial-cut request unresolved.
 
 **PR2 staging:** Liam’s frame and drawing stay with Mira while Caelan and Tomas accompany him along the village preparation route: Halden’s working mill, the Venn family’s cottage and Elira’s cottage. Shared food tables and homebound portions show ordinary cooperation. The recovering Venn child chooses decoration colors while a parent handles the ties; tomorrow’s attendance remains uncertain. Elira’s remembrance builds on the same lantern retrieved in MQ01 and a specific memory of her husband’s poor singing. The farewell and outside reflection leave MQ04 active with its first four objectives complete. See the [PR2 implementation script](CH01_MQ04_PR2.md).
 
-**PR3 staging:** Collect the frame and drawing explicitly from Mira, then return to Liam’s home for food, rest and a loose paper-panel trial. His father hosts while his mother remains at the school; the existing Daisy keeps her independent household behavior. A quiet brother exchange grows from Tomas’s offer to carry Elira’s lantern. Liam’s questions lead to Serene, who explains returning life and remembrance as sincere local faith, without exposing hidden cosmology or settling consciousness. The frame and papers stay at home, unlit and unfinished. MQ04 remains active with its first six objectives complete. See the [PR3 implementation script](CH01_MQ04_PR3.md).
+**PR3 staging:** Collect the frame and drawing explicitly from Mira, then return to Liam’s home for food, rest and a loose paper-panel trial. His father hosts while his mother remains at the school; the existing Daisy keeps her independent household behavior. A quiet brother exchange grows from Tomas’s offer to carry Elira’s lantern. Liam’s questions lead to Serene, who explains planetary aether return and remembrance without exposing hidden ancient history or settling consciousness. The frame and papers stay at home, unlit and unfinished. MQ04 remains active with its first six objectives complete. See the [PR3 implementation script](CH01_MQ04_PR3.md).
 
 **PR4 staging:** Return from Serene’s hall to Liam’s home, where his father has kept the materials safe. Liam chooses to carry his lantern for someone without anybody there to carry a light for them. Use his larger practice stairs and window to finish the same unlit tower, with adult help fastening the covering. After its careful lift and inspection, take only the lantern to his mother at the actual school. Liam explains the workmanship before his personal purpose. His mother remains to finish school work while the three return home and safely put the lantern away. The acknowledged farewell completes MQ04; Liam stays home, Tomas returns to sanctuary preparations and MQ05 does not begin automatically. See the [PR4 implementation script](CH01_MQ04_PR4.md).
 
@@ -136,7 +136,7 @@ authorizes no excavation and leaves the trial-cut request unresolved.
 
 ### MQ05 — The Festival of Light
 
-**Premise:** The village gathers for an observance of the belief that life force returns to the gods, paying off the people and preparations encountered in MQ04.
+**Premise:** The village gathers for remembrance and shared celebration, with the understanding that aether returns to the planet when living things die, paying off the people and preparations encountered in MQ04.
 
 **Purpose:** Celebrate community, present faith through comforting everyday practice and make the main relationships emotionally resonant. Include an inciting event that motivates the narrative to move beyond Eldenmere; its exact form remains PROPOSED.
 
@@ -195,7 +195,7 @@ and their introduction windows; their exact recruitment quests remain open.
 
 Players should understand why Caelen loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelen without becoming a caricature, why Tomas is loved, and why Aldric is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
 
-Mechanisms and magicks must obey conservation of aether. The festival's beliefs are in-world theology, not full confirmation of the ancient history. The four surviving Ancients remain hidden. Preserve the separate regional ending promised by the saga documents.
+Mechanisms and magicks must obey conservation of aether. Planetary-return teaching does not reveal hidden ancient history or settle personal consciousness after death. The Aethersphere's protective purpose and ancient origin, and the four surviving Ancients, remain hidden. Preserve the separate regional ending promised by the saga documents.
 
 ## Still to determine
 

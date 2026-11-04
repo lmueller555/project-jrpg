@@ -1,5 +1,11 @@
 # Questions After the Noise — dialogue
 
+**Historical transcript:** Captured before the 2026-11-04 planetary-aether
+revision. Its doctrinal wording is superseded; the
+[current implementation script](../../narrative/game_01/CH01_MQ04_PR3.md)
+records the live dialogue. This transcript is retained as a capture record,
+not as present-day canon.
+
 Captured through the production game from the shipped PR2 endpoint.
 
 ## Break Invitation
