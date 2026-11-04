@@ -124,7 +124,8 @@ or connection to current events without approval.
 | Formative response | Immersed herself in work on the mill to bury the loss, gaining proficiency and enjoyment without knowing how to mend her grief | Established |
 | Training and mentor | Learned mechanics through work with Halden on the mill; individual first repairs and any other teachers remain undecided | Established / Open |
 | Pre-game milestone | Opened her workshop at 17 with encouragement from Halden, who recognized her continuing grief | Established |
-| Childhood friendship | Caelan is her childhood friend; when and how they met remain undecided | Established / Open |
+| Childhood friendship | Caelan is her childhood friend. Growing up without their parents gives them a mostly unspoken connection; when and how they first met remain undecided. | Established / Open |
+| Shared childhood memories | She and Caelan already share several childhood memories by the opening; these will be explored throughout the game. Specific memories and their presentation remain unassigned. | Established history and disclosure intent, 2026-11-04 / Open details |
 | Earlier feats and proudest success | Workshop opening is established; particular earlier inventions, rescues, awards and her subjective proudest success remain undecided | Established / Open |
 | Greatest failure | No specific failure has been chosen; parental loss is not proof that she failed or caused it | Open |
 | Regrets and unfinished obligations | Specific regrets, promises and debts remain undecided | Open |
@@ -186,7 +187,7 @@ See the [bot guide](../../../MIRA_BOTS.md) for combat rules and progression.
 | Person or group | Existing dynamic and possible development | Status |
 | --- | --- | --- |
 | Parents | Lost them at 12; their loss shaped her relationship to repair. Their personalities, individual bonds with her and the circumstances remain unassigned. | Established / Open |
-| Caelan | Childhood friend and practical partner; both are 18 at the opening. Existing humor and concern are established. Knowing every detail of her loss, romantic feelings and future emotional scenes are not assumed. | Established / Open |
+| Caelan | Childhood friend and practical partner; both are 18 at the opening. Their shared sense of parental loss is a mostly unspoken foundation of the bond, alongside existing humor, concern and several shared childhood memories. Knowing every detail of her loss, romantic feelings and particular memory scenes are not assumed. | Established / Open |
 | Tomas | Knows and recommends her repair abilities; participates in her workshop guidance during MQ04 | Established |
 | Liam | Takes his lantern idea seriously and helps him understand choices instead of replacing his idea with her own | Established scene behavior |
 | Halden | Took her in after her parents' loss at 12, taught her mechanics through mill work, recognized her unresolved grief and encouraged her workshop at 17. Their detailed day-to-day family dynamic remains open. | Established / Open |
@@ -196,6 +197,22 @@ See the [bot guide](../../../MIRA_BOTS.md) for combat rules and progression.
 **Approved relationship growth:** Let Mira accept care from Caelan and others
 without immediately paying it back through work. Mutual support does not
 require romance and should not erase the friendship's ordinary humor.
+
+### Shared childhood bond with Caelan
+
+**Confirmed, 2026-11-04:** Growing up without their parents gives Mira and
+Caelan a shared sense of loss that is a mostly unspoken part of their existing
+bond at the start of the game.
+
+Their situations are not identical: her parents died when she was 12, while
+his are missing and he probably thinks them dead. The author-only fact that
+his parents are alive does not grant Mira knowledge of their survival.
+
+They already have several shared childhood memories before the opening.
+The player will learn about these later, as their shared past is explored
+throughout the game. The particular memories, their chronology and how they
+are presented remain open; see the [shared character record](../CHARACTERS.md).
+The connection does not establish a romance.
 
 ## Voice and behavior
 
@@ -213,6 +230,7 @@ admit difficulty without presenting herself as an infallible expert.
 - In difficult private moments, she may return to a task or find something to check. This is an approved acting reference, not a required routine animation.
 - Let concern sometimes become too much practical advice, but preserve her demonstrated patience and willingness to collaborate.
 - Show growing trust through her accepting company, asking for help or leaving a task unfinished for a while.
+- With Caelan, begin from existing familiarity and a mostly unspoken understanding of parental loss. Do not make every interaction explain their grief; their particular shared memories are for later exploration.
 
 **Avoid:** Treating her as a defective machine, making every invention a grief
 symbol, declaring her responsible for her parents' deaths, implying joy means
@@ -224,7 +242,9 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal secrets | No secret about the deaths or her family has been established | Open |
-| Disclosure | Halden knows about the loss and recognizes her continuing grief; who else knows and when the player learns the history remain undecided | Established / Open |
+| Disclosure | Halden knows about the loss and recognizes her continuing grief. Caelan shares an understanding of growing up without their parents; specific details discussed between the friends and when the player learns her personal history remain undecided. | Established / Open |
+| Shared past with Caelan | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
+| Caelan's parents | The shared connection does not establish that she knows they are alive; her knowledge of their survival or whereabouts remains unassigned | Open |
 | Knowledge limits | Bereavement does not give her answers about souls, resurrection or hidden cosmic history | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
 | Starting condition | At 18, finds purpose maintaining Eldenmere's infrastructure through the workshop she opened at 17, while still carrying grief from her parents' loss at 12 | Established |
 | Mistaken belief | If she can keep making things better outside herself, she should eventually be able to stop hurting inside | Established |

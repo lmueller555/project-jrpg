@@ -58,10 +58,32 @@ missing for years, and Serene cares for them because of that absence.
 brothers do not know this; although they do not talk about it, they probably
 think their parents are dead by now.
 
+**Early responsibility, confirmed 2026-11-04:** Caelan had to quickly learn
+how to care for Tomas while still young and immature himself. Part of his
+self-doubt comes from feeling he must act composed and have the answers for
+his brother even when he does not know what the right answers are. Serene
+remains their caregiver; this does not make Caelan Tomas's sole parent.
+
 The disappearance's cause, exact timeline and circumstances, the parents'
 whereabouts, what Serene knows, and the survival reveal remain open.
 [Caelan's sheet](characters/CAELAN.md) keeps author knowledge separate from
 character belief; no new dialogue reveals this information in the current game.
+
+### Caelan and Mira - shared childhood bond
+
+**Confirmed, 2026-11-04:** Both grew up without their parents, and this shared
+sense of loss is a mostly unspoken part of their existing bond at the opening.
+Mira's parents died when she was 12; Caelan's are missing and he probably
+thinks them dead. Their connection does not establish that Mira knows the
+author-only truth that his parents are alive.
+
+They already share several childhood memories by the start of the game.
+The player will learn about these later, as their shared past is explored
+throughout the game. Specific memories, their chronology and their reveal
+format and timing remain open. No particular childhood event, simultaneous
+loss, shared household, romance or implemented flashback is established here.
+Both [Caelan's sheet](characters/CAELAN.md) and
+[Mira's sheet](characters/MIRA.md) record this shared foundation.
 
 ## Eventual party members
 

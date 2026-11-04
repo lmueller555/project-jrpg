@@ -61,6 +61,21 @@ This revision does not introduce early-game dialogue revealing the secret or
 replace Caelan's opening desire for magical development and a vocation with
 an active parent-search quest.
 
+### Growing up too quickly
+
+**Confirmed, 2026-11-04:** After their parents disappeared, Caelan had to
+quickly work out how to be an older brother and care for Tomas while he was
+still young and immature himself. This premature responsibility is one source
+of his self-doubt.
+
+He feels that he must act composed and have the answers for Tomas, even when
+he does not know what the right answers are. His outward composure is therefore
+not proof that he feels certain or was ready for that responsibility.
+
+Serene remains their caregiver. Caelan's early caregiving role does not make
+him Tomas's sole parent, erase his own immaturity or remove Tomas's agency.
+The exact ages and particular childhood incidents remain unassigned.
+
 ## Personality
 
 | Attribute | Value | Status |
@@ -100,7 +115,8 @@ mission or using magical advancement as proof that he is worth caring about.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Deepest fear | Commit to a path and discover that he cannot meet its demands | Established |
-| Insecurity | Measures what he cannot yet do more heavily than what he has learned | Established; illustrated by the conditional MQ02 encouragement |
+| Insecurity | Measures what he cannot yet do more heavily than what he has learned. Part of his self-doubt comes from taking on care for Tomas while still young and immature. | Established; family background and conditional MQ02 encouragement |
+| Pressure to seem certain | Feels he must act composed and have answers for Tomas even when he does not know the right answers | Established, 2026-11-04 |
 | Shame and avoided admission | Finds it difficult to say that he wants something before he can justify being good at it | Established |
 | Practical fears | Specific phobias and recurring physical fears remain unassigned | Open |
 | Coping habit | Rechecks notes or rehearses a request instead of bringing it to someone | Established |
@@ -118,7 +134,9 @@ ignorant or unable to disagree. Do not use hesitation as his only expression.
 | --- | --- | --- |
 | Known household | Born and always resident in Eldenmere; lives at the sanctuary with his younger biological brother Tomas, in Serene's care because their shared parents are missing | Established |
 | Parents' absence | Neither brother has seen their parents in years. The parents are alive, but the boys do not know this and probably think them dead. | Established author truth / Established character-knowledge boundary |
-| Childhood friendship | Mira is his childhood friend; both are 18 at the opening. When and how they met remain undecided. | Established / Open |
+| Childhood friendship | Mira is his childhood friend; both are 18 at the opening. Their shared sense of parental loss is a mostly unspoken part of their existing bond. When and how they first met remain undecided. | Established / Open |
+| Shared childhood memories | He and Mira already share several childhood memories by the opening; these will be explored throughout the game. Specific memories and their presentation remain unassigned. | Established history and disclosure intent / Open details |
+| Early responsibility | Had to learn quickly how to care for Tomas after their parents disappeared, despite being young and immature himself | Established, 2026-11-04 |
 | Magical education | Already knows some magicks. His teacher, training history and route to a vocation remain undecided. | Established / Open |
 | Ordinary study | Has a partly read book and copies of local inscriptions in his bedroom | Established optional inspections in MQ01 |
 | Other formative events and mentors | Further childhood experiences and formal mentors remain unassigned | Open |
@@ -172,9 +190,9 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 
 | Person | Existing dynamic and possible development | Status |
 | --- | --- | --- |
-| Tomas | Older biological brother with the same missing parents and lifelong home in Eldenmere; not a substitute parent or the owner of Tomas's choices. Further shared childhood details remain open. | Established relationship and portrayal boundary / Open history |
+| Tomas | As his older biological brother, took on care early and feels pressure to appear composed and know the answers. This does not make him Tomas's sole parent or the owner of his choices. Further shared childhood details remain open. | Established relationship and portrayal boundary / Open history |
 | Serene | Cares for both brothers because their parents are missing. His personal balance of affection, trust, disagreement and desire for independence needs further development; her knowledge about the parents remains unassigned. | Established / Open |
-| Mira | Childhood friend and practical partner. He can contribute without matching her expertise. No new romance decision is made here. | Established / Open |
+| Mira | Childhood friend and practical partner. Growing up without their parents gives them a mostly unspoken connection, supported by several shared childhood memories already present at the opening. He can contribute without matching her expertise. Specific memories and any romance remain unassigned. | Established / Open |
 | Lucan | Condescending instruction develops toward mutual respect; Caelan challenges his decisions and Lucan helps him become more assertive | Established companion direction |
 | Aldric | Guide and witness during the relief visit; deeper admiration, distrust and later personal conflict remain to be earned and specified | Established opening role / Open |
 | Rhea and Edran | Eventual companion relationships remain to be developed; they do not automatically become his teachers | Open |
@@ -184,6 +202,20 @@ irritated. With Mira he can admit a practical limit. With Serene he may take
 longer to state a personal wish. With Lucan he may need to insist that an
 observation be heard. These are portrayal directions, not a rule that he always
 behaves one way with each person.
+
+### Shared childhood bond with Mira
+
+**Confirmed, 2026-11-04:** Their friendship at the opening is partly grounded
+in a shared sense of parental loss that is mostly unspoken. Mira's parents
+died when she was 12; Caelan's are missing and he probably thinks them dead,
+without knowing the author-only fact that they are alive.
+
+They already have several shared childhood memories before the game begins.
+The player will learn about these later, through exploration of their shared
+past throughout the game. The particular memories, their chronology and how
+they are presented remain open; see the [shared character record](../CHARACTERS.md).
+This connection does not assign Mira knowledge of his parents' survival or
+establish a romance.
 
 ## Voice and behavior
 
@@ -202,6 +234,11 @@ of concrete questions and useful initiative in existing scenes.
   people's feelings. Thoughtfulness is not automatic wisdom.
 - Let comfort with familiar people change his delivery. Reserve need not make
   his conversations with his brother and oldest friend formal.
+- Around Tomas, distinguish the composure he feels he must show from the
+  certainty he actually has. He need not have the right answer just because
+  he feels responsible for providing one.
+- With Mira, allow familiarity and shared quiet to carry the connection.
+  Their shared past need not become an explanation of grief in every exchange.
 - Give his own desire consequences: he asks for time, starts practice, admits
   a preference or chooses a next step. He cannot spend the whole game waiting
   for stronger personalities to choose his direction.
@@ -215,10 +252,11 @@ They do not require new dialogue-choice mechanics or routine animations.
 | --- | --- | --- |
 | Parents - author-only truth | Their shared parents are alive at the game opening, but missing | Established; unknown to the brothers |
 | Parents - the brothers' belief | Have not seen them in years, do not know they are alive and probably think them dead, without talking about it | Established character knowledge and likely belief, not proof of death |
-| Parents - other people's knowledge | What Serene and others know remains unassigned | Open |
+| Parents - other people's knowledge | What Serene, Mira or others know about the parents' survival or whereabouts remains unassigned; familiarity with the brothers' parental absence does not grant knowledge of this secret | Open |
 | Disappearance and reveal | Cause, whereabouts, exact timeline, and how and when survival is revealed to the brothers or player remain undecided | Open |
 | Hidden lineage and prophecy | Neither has been established by the missing-parents background | Open |
 | Knowledge | Knows his community and its customs; does not know the hidden cosmic history merely because he is the protagonist | Established familiarity / Disclosure constraint |
+| Shared past with Mira | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
 | Starting outlook | Reserved, thoughtful, self-doubting; wants to develop magicks and find a vocation | Established, 2026-11-04 |
 | Mistaken belief | Must know he is capable of a path before allowing himself to choose it | Established |
 | Intended growth | Take responsibility for choices amid uncertainty without becoming loud, domineering or certain about everything | Established growth direction |
