@@ -4,6 +4,8 @@
 [sheet design](TEMPLATE.md). Existing story and gameplay facts are retained.
 Her early loss of both parents and its connection to her enjoyment of fixing
 things were established on 2026-11-03.
+Her age, upbringing with Halden, mill training and workshop timeline were
+also established on 2026-11-03.
 
 **Profile approval:** 2026-11-03. The characterization, emotional interpretations,
 writing guidance and ten dialogue/expression references below are approved.
@@ -21,22 +23,36 @@ Unless a later scene is identified, this describes her opening characterization.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Name and pronouns | Mira; she/her. Surname remains unassigned. | Established / Open |
-| Age at opening | Not assigned; do not infer an age from her competence or friendship with Caelan | Open |
+| Age at opening | 18 | Established, 2026-11-03 |
 | Present setting | Her workshop and workbench are in Eldenmere | Established |
-| Birthplace and upbringing location | Exact birthplace and childhood locations remain undecided | Open |
-| Family | Lost both parents tragically when she was young | Established, 2026-11-03 |
-| Guardians and surviving relatives | Who cared for her afterward, and whether she has other relatives, remain undecided | Open |
+| Birthplace and upbringing location | Birthplace and childhood locations before age 12 remain undecided; Halden took her in in Eldenmere after her loss | Established / Open |
+| Family | Lost both parents tragically at age 12 | Established, 2026-11-03 |
+| Caregiver and surviving relatives | Halden took her in after the loss. Other relatives and formal adoption or guardianship arrangements remain undecided. | Established / Open |
 | Occupation | Machinist and capable mechanical problem-solver | Established |
 | Appearance | Dark brown hair in a short ponytail, cream flower above her left ear, dusty rose shirt, charcoal trousers, brown boots, belt and tool pouch | Established design; see [art guide](../../../../assets/characters/mira/README.md) for individual asset approval status |
 | Narrative role | Caelan's childhood friend; temporary player-controlled guest in MQ02; appears with him in the opening flashforward | Established |
-| Workshop history | Teacher, training route, ownership history and any connection to her parents remain undecided | Open |
+| Workshop history | Gained mechanical proficiency working with Halden on the mill; opened her workshop at 17 with his encouragement. Property and funding arrangements remain undecided. | Established / Open |
 
 ## Background and the meaning of repair
 
-**Established foundation:** Mira suffered the tragic loss of her parents early
-in life. Fixing things became something she enjoyed in response to a loss she
-does not know how to mend within herself. The connection between bereavement
-and repair is part of her character, not an invented mechanical cause of death.
+**Established foundation:** Mira lost both parents at 12, and Halden took her
+in. Working alongside him on the mill is where she gained proficiency as a
+mechanic. She threw herself into the work to bury the loss, finding enjoyment
+in repairing things while not knowing how to mend the pain in her own heart.
+
+Halden recognized her continuing grief and encouraged her to open her workshop
+at 17. At the start of the game, she is 18 and finds purpose in maintaining
+Eldenmere's infrastructure. That purpose and her practical independence have
+not resolved the loss. The connection between bereavement and repair does not
+establish a mechanical cause of her parents' deaths.
+
+### Established age-based timeline
+
+| Age | Event |
+| --- | --- |
+| 12 | Loses both parents; Halden takes her in. She develops her mechanical skills through work with him on the mill, immersing herself in it to bury her grief. |
+| 17 | Opens her workshop with Halden's encouragement; he recognizes that her competence has not healed her grief. |
+| 18 | Game I begins. Maintaining Eldenmere's infrastructure gives her purpose, but she still does not know how to mend the brokenness she feels within her heart. |
 
 **Established interpretation:** A damaged mechanism offers a kind of reassurance
 her grief does not: she can observe what is wrong, try something, and see a
@@ -49,10 +65,12 @@ objective judgment that she is defective. Her curiosity, humor, friendships
 and enjoyment of craftsmanship are real; they should not all be exposed as
 false appearances concealing sadness.
 
-**Still open:** Her age at the loss, her parents' names and occupations, whether
-their deaths occurred together, the circumstances, who raised her afterward,
-and how she learned her craft. Do not assign an accident, aether incident,
-inherited workshop, parental tool or connection to current events without approval.
+**Still open:** Her parents' names and occupations, whether their deaths occurred
+together, the circumstances, her birthplace and life before 12, specific early
+repairs, and the workshop's property and funding arrangements. Halden's care
+is established, but formal adoption or guardianship procedures are not.
+Do not assign an accident, aether incident, inherited workshop, parental tool
+or connection to current events without approval.
 
 ## Personality
 
@@ -71,8 +89,9 @@ inherited workshop, parental tool or connection to current events without approv
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Immediate work | Help restore the mill and later help with Liam's lantern, as those quests occur | Established story tasks, not completed opening biography |
-| Foundational motivation | Finds enjoyment in fixing things while carrying an early loss she does not know how to repair in herself | Established, 2026-11-03 |
+| Present purpose | Maintaining Eldenmere's infrastructure gives her purpose through her own workshop | Established, 2026-11-03 |
+| Opening-story tasks | Help restore the mill and later help with Liam's lantern, as those quests occur | Established story tasks, not completed opening biography |
+| Foundational motivation | Threw herself into mill work with Halden to bury her parents' loss; repair now offers enjoyment and purpose without resolving her grief | Established, 2026-11-03 |
 | Long-term aspiration | Build useful devices that give ordinary people more independence and time | Established |
 | Personal definition of success | A real improvement someone can use, rather than praise for how clever she is | Established |
 | Emotional need | Learn that receiving care and living with grief do not depend on solving or concealing it first | Established growth direction |
@@ -99,11 +118,12 @@ inherited workshop, parental tool or connection to current events without approv
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Formative loss | Tragic loss of both parents when young | Established |
-| Formative response | Came to enjoy fixing things in relation to grief she does not know how to mend | Established |
-| Training and mentors | Specific teachers, first repairs and training history remain undecided | Open |
+| Formative loss | Tragic loss of both parents at 12; Halden took her in | Established |
+| Formative response | Immersed herself in work on the mill to bury the loss, gaining proficiency and enjoyment without knowing how to mend her grief | Established |
+| Training and mentor | Learned mechanics through work with Halden on the mill; individual first repairs and any other teachers remain undecided | Established / Open |
+| Pre-game milestone | Opened her workshop at 17 with encouragement from Halden, who recognized her continuing grief | Established |
 | Childhood friendship | Caelan is her childhood friend; when and how they met remain undecided | Established / Open |
-| Earlier feats and proudest success | No particular pre-game invention, rescue or award has been approved | Open |
+| Earlier feats and proudest success | Workshop opening is established; particular earlier inventions, rescues, awards and her subjective proudest success remain undecided | Established / Open |
 | Greatest failure | No specific failure has been chosen; parental loss is not proof that she failed or caused it | Open |
 | Regrets and unfinished obligations | Specific regrets, promises and debts remain undecided | Open |
 
@@ -144,7 +164,7 @@ and [lantern script](../CH01_MQ04.md).
 | MQ02 kit | Compact spring-driven bolt launcher and Rivet, her familiar workshop bot folded into her kit | Established |
 | Rivet and Overclock | Rivet unfolds for battle and attacks autonomously; her starting Overclock grants it Haste | Established |
 | Combat position | Stronger and more experienced than unarmed Caelan in MQ02; temporary player-controlled guest | Established |
-| Background limits | Her competence does not establish a military background or an age | Open |
+| Background limits | Her age and mill training are established; no military background has been assigned | Established / Open |
 | Emotional blind spot | May try to approach another person's pain as a problem to solve before understanding what they want | Established |
 | Help she needs | Someone willing to stay with her without requiring an explanation or a solution | Established |
 | Mechanics and artwork | Existing gameplay and art are unchanged; future abilities and numeric development are outside this sheet | Scope constraint |
@@ -155,12 +175,12 @@ See the [bot guide](../../../MIRA_BOTS.md) for combat rules and progression.
 
 | Person or group | Existing dynamic and possible development | Status |
 | --- | --- | --- |
-| Parents | Their early loss shaped her relationship to repair. Their personalities, individual bonds with her and the circumstances remain unassigned. | Established / Open |
-| Caelan | Childhood friend and practical partner. Existing humor and concern are established. Knowing every detail of her loss, romantic feelings and future emotional scenes are not assumed. | Established / Open |
+| Parents | Lost them at 12; their loss shaped her relationship to repair. Their personalities, individual bonds with her and the circumstances remain unassigned. | Established / Open |
+| Caelan | Childhood friend and practical partner; both are 18 at the opening. Existing humor and concern are established. Knowing every detail of her loss, romantic feelings and future emotional scenes are not assumed. | Established / Open |
 | Tomas | Knows and recommends her repair abilities; participates in her workshop guidance during MQ04 | Established |
 | Liam | Takes his lantern idea seriously and helps him understand choices instead of replacing his idea with her own | Established scene behavior |
-| Halden | Helps diagnose and repair the mill; their longer personal history remains undecided | Established / Open |
-| Serene | Any guardianship, family-like role or private knowledge of Mira's grief remains undecided; do not invent a foster relationship | Open |
+| Halden | Took her in after her parents' loss at 12, taught her mechanics through mill work, recognized her unresolved grief and encouraged her workshop at 17. Their detailed day-to-day family dynamic remains open. | Established / Open |
+| Serene | Halden is her established caregiver. Any separate family-like role or private knowledge of Mira's grief on Serene's part remains undecided. | Open |
 | Wider party | Specific relationships with Lucan, Rhea and Edran remain to be developed | Open |
 
 **Approved relationship growth:** Let Mira accept care from Caelan and others
@@ -192,9 +212,9 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal secrets | No secret about the deaths or her family has been established | Open |
-| Disclosure | The loss is a character fact; who knows about it and when the player learns it remain undecided | Established / Open |
+| Disclosure | Halden knows about the loss and recognizes her continuing grief; who else knows and when the player learns the history remain undecided | Established / Open |
 | Knowledge limits | Bereavement does not give her answers about souls, resurrection or hidden cosmic history | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
-| Starting condition | Enjoys repairing things while carrying grief she does not know how to mend within herself | Established |
+| Starting condition | At 18, finds purpose maintaining Eldenmere's infrastructure through the workshop she opened at 17, while still carrying grief from her parents' loss at 12 | Established |
 | Mistaken belief | If she can keep making things better outside herself, she should eventually be able to stop hurting inside | Established |
 | Central tension | Repair can be meaningful joy and a refuge from a loss that cannot simply be reversed | Established interpretation |
 | Intended growth | Build a life that includes remembrance, pleasure and receiving care, without having to become "fixed" first | Established growth direction |
@@ -290,7 +310,7 @@ The disclosure scene and listener remain unchosen.
 >
 > "And with you?"
 >
-> "I lost my parents when I was young. I know that much. I just don't know
+> "I lost my parents when I was twelve. I know that much. I just don't know
 > what I'm supposed to mend."
 
 **Acting cue:** Sets the tool down; the last answer is quieter and less certain than her work instructions.

@@ -14,8 +14,8 @@ regions do not require the party to visit each place. This guide belongs
 alongside the [character facts](CHARACTERS.md),
 [act outline](ACT_OUTLINE.md) and [World Atlas](../../world/WORLD_ATLAS.md).
 
-Mira's opening-story foundations, early parental-loss background and approved
-characterization and voice references are recorded in her
+Mira's opening-story foundations, age-based timeline, upbringing and mill
+training with Halden, and approved characterization and voice references are recorded in her
 [character sheet](characters/MIRA.md). Hypothetical scene events and unanswered
 biography details remain open; her existing gameplay and artwork are unchanged.
 

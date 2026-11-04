@@ -3,11 +3,13 @@
 **Status:** CANON for the facts listed below. Ages are measured at the beginning
 of Game I. The opening household ages were approved on 2026-10-25; the companion
 foundations below were approved on 2026-10-30.
+Mira's age, upbringing with Halden and workshop timeline were approved on 2026-11-03.
 
 | Character | Age at game opening | Relationship |
 | --- | --- | --- |
 | Caelan | 18 years old | Tomas's older foster brother |
 | Tomas | 14 years old | Caelan's younger foster brother |
+| Mira | 18 years old | Caelan's childhood friend; Halden took her in after her parents' loss |
 | Liam | 8 years old | Child of Liam's mother and father |
 | Liam's mother | Mid-30s | Liam's mother; Eldenmere's teacher; name unassigned |
 | Liam's father | Mid-30s | Liam's father; name unassigned |
@@ -147,11 +149,16 @@ Mira is Caelan's childhood friend and a capable **Machinist**. Her authoritative
 [character sheet](characters/MIRA.md) retains her established millrace role,
 Rivet, practical competence and relationships, and adds ten dialogue references.
 
-**Approved background revision, 2026-11-03:** Mira lost both parents tragically
-when she was young. Her enjoyment of fixing things grew in relation to a loss
-she does not know how to mend within herself. This is her relationship to grief,
-not a declaration that she is defective. The age, circumstances, parents'
-identities, guardianship and training history remain open.
+**Approved background revision, 2026-11-03:** Mira is 18 at the opening. She lost
+both parents at 12, and Halden took her in. Working with him on the mill gave
+her proficiency as a mechanic; she immersed herself in it to bury the loss.
+Recognizing her unresolved grief, Halden encouraged her to open her workshop at
+17. She now finds purpose in maintaining Eldenmere's infrastructure but still
+does not know how to mend the brokenness she feels in her heart.
+
+This describes her relationship to grief, not a declaration that she is
+defective. Her parents' identities and death circumstances, formal caregiving
+arrangements, and workshop property and funding details remain open.
 
 **Profile approval, 2026-11-03:** Her detailed characterization, emotional
 interpretations, writing guidance and ten dialogue references are approved.
