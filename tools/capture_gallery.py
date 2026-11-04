@@ -118,6 +118,8 @@ def phase(game):
 
 
 def thumbnail_ready(identifier, g, seconds):
+    if identifier == 'ice_reaper_opening':
+        return g.opening_cinematic.shot == 'frozen_field'
     if identifier == 'checkpoint_borrowed_seat':
         return g.world.checkpoint_charm.stage == 'banter'
     if identifier == 'sheep_basket_visit':
@@ -153,6 +155,8 @@ def thumbnail_ready(identifier, g, seconds):
 
 
 def crop_rect(identifier, game):
+    if identifier == 'ice_reaper_opening':
+        return pygame.Rect(0, 0, 480, 270)
     if identifier in ('later_journey', 'regent_arrival'):
         return pygame.Rect(0, 25, 480, 270)
     camera = game.camera.position()

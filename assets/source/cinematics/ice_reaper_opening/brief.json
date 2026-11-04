@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "design_requirements_confirmed": "2026-11-04",
+  "art_review_status": "awaiting_user_review",
+  "ice_reaper": {
+    "identity": "A woman with an affinity for ice magic",
+    "transformation": "Merged with a great amount of ice-aspected aether; parts of her are covered in ice",
+    "wings": "Glassy blue wings",
+    "palette": ["blue", "white", "silver"],
+    "opening_pose": "Airborne with one arm raised and a massive glacial shard overhead",
+    "proposed_styling": "Silver-white hair and dark blue clothing are artwork proposals, not additional biographical facts"
+  },
+  "sources": {
+    "environment_generated.png": "sha256:f1cc60c4d1f1ab40de7fd8c51e8ba7a2b8f4d76b8616efad8e9f665de5414006",
+    "ice_reaper_generated.png": "sha256:a799a044b26c558da1b234c72a52d27ef7f347af5b1e658fa8a10166ec47d81a",
+    "brush_generated.png": "sha256:b4e773fb952897c763bd2bb59ef1c586e399ed54d0566a3b74b59f5666d087de",
+    "prison_generated.png": "sha256:0a452e128725e3dfecad06b4d1b264c18c767e818f7a7dbd8e073c43e01adced"
+  },
+  "style_reference": "assets/source/cinematics/opening/valley_generated.png",
+  "party_reference": [
+    "assets/story/opening_cinematic/actors/caelan/stand_empty.png",
+    "assets/story/opening_cinematic/actors/mira/stand.png",
+    "assets/cinematics/companions/rhea/stand_front.png",
+    "assets/cinematics/companions/lucan/stand_front.png"
+  ],
+  "party_pixels_regenerated": false,
+  "notes": [
+    "The generated background contains no party members or boss.",
+    "The boss and shard are extracted as separate authored assets.",
+    "Foreground brush clears on the same paused cinematic clock as the camera.",
+    "No Ancient identity, exact kingdom placement or new combat ability rules are assigned."
+  ]
+}

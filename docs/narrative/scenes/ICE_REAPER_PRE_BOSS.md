@@ -2,11 +2,12 @@
 
 **Status:** Author-specified scene outline, 2026-11-04. The setting, protective
 motive and ordered action beats below are established scene intent. Further
-story context, staging and implementation remain open.
+story context and staging after the opening remain open.
 
 **Format:** An action-packed, 45-second cinematic preceding an Ice Reaper boss
-fight, using Wintermute2's energetic opening. This is not a playable combat
-script or an implemented cutscene.
+fight, using Wintermute2's energetic opening. The first five seconds are now
+implemented as an isolated Gallery preview; the remaining forty seconds and
+playable boss encounter are not implemented.
 
 **Placement:** Unplaced. The kingdom, world region, act and installment have
 not been assigned. Integration must respect or explicitly revise the
@@ -33,14 +34,26 @@ The dome is a regional ice construction, **not the Aethersphere**. Breaking
 through its ice does not establish a breach of the planet's atmosphere or
 reveal the Aethersphere's hidden nature.
 
+### Ice Reaper visual brief
+
+**Confirmed, 2026-11-04:** She is a woman with an affinity for ice magic who
+has merged with a great amount of ice-aspected aether. Parts of her body are
+covered in ice. She has glassy blue wings and blue, white and silver accents.
+
+The new artwork follows that brief and remains awaiting visual review.
+Silver-white hair and dark clothing are proposed styling choices, not
+additional biography, royal identity or a confirmed transformation mechanism.
+
 ## Music and timing contract
 
 **Confirmed, 2026-11-04:** **Wintermute2** is the soundtrack for both this
 cinematic and the Ice Reaper boss fight.
 
 **Original upload:** [Wintermute 2.m4a](<../../../assets/music/Wintermute 2.m4a>).
-Keep this original unchanged; runtime export and playback integration are
-future implementation work.
+The original is unchanged. The full-length
+[runtime Vorbis export](../../../assets/music/runtime/wintermute2.ogg) supports
+the opening preview; full-cinematic and boss playback integration remain
+future work.
 
 | Item | Requirement |
 | --- | --- |
@@ -54,16 +67,71 @@ The cinematic is timed to the music, not extended by click-to-continue
 dialogue or an additional end hold. The final ice-energy blast must resolve
 within that budget so the boss fight follows without a gap in the score.
 
-Individual shot lengths and musical accent alignments remain to be designed.
-Loop points beyond the initial handoff, mixing, and pause/skip/retry behavior
-are not assigned here.
+The current partial preview plays only 00:00-00:05, then returns to Gallery.
+Its cue is one-shot playback for that bounded preview, not a decision about
+eventual boss-music loop points.
+
+Individual shot lengths after the opening and exact musical accent alignments
+remain to be designed. Loop points beyond the full cinematic's handoff,
+mixing, and main-story pause/skip/retry behavior are not assigned here.
+
+## Opening preview - first five seconds
+
+**Implemented:** The 0:00-0:05 opening uses the same cinematic renderer,
+nearest-scaled pixel presentation and portrait dialogue frame as the game's
+intro. Caelan and Mira reuse the intro's detailed actor art; Rhea and Lucan
+reuse their approved detailed cinematic sprites. All four use the 96x112
+cinematic sets, not small overworld sprites, and their native PNG pixels
+are copied unchanged.
+
+The brush parts to reveal a snowy field, the immense ice dome high above and
+the frozen castle in the background. Rhea is encased in ice at the lower left.
+Above her, the Ice Reaper holds one arm raised with a massive glacial shard
+hovering overhead, preparing to launch it.
+
+| Time in seconds | Camera and action |
+| --- | --- |
+| 0.00-0.90 | Foreground brush clears as Caelan enters the clearing |
+| 0.90-1.20 | Wide view establishes the snowy field, dome, castle, party and frozen Rhea |
+| 1.20-1.45 | Camera quickly centers the Ice Reaper |
+| 1.45-2.40 | Rapid zoom onto the Ice Reaper and raised shard, with slight camera shake |
+| 2.40-2.65 | Brief threat hold; the shard remains charged, not launched |
+| 2.65-3.35 | Quick camera move and zoom toward Rhea |
+| 3.35-3.85 | Frozen Rhea holds the frame |
+| 3.85-5.00 | Caelan's automatic portrait dialogue displays "Rhea! No!" |
+
+At exactly five seconds the preview finishes without launching the strike,
+starting combat or advancing a journey. It covers the opening reveal and
+exclamation only; Lucan's rush and the rescue follow in later work.
+
+Reduced Motion replaces the animated camera moves with static compositions,
+removes shake and hovering, and fades the brush instead of sweeping it aside.
+Pause and focus loss freeze the same visual clock and soundtrack.
+
+**Replay:** From the title screen choose Gallery, then
+**Ice Reaper: Frozen Clearing (5s)** under Scene Studies. The entry is last in
+the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
+to Gallery. The isolated preview cannot alter the saved journey.
+
+Review the [five-second clip](../../reviews/ice_reaper_opening/preview.mp4),
+[keyframes](../../reviews/ice_reaper_opening/keyframes.png) and
+[verification record](../../reviews/ice_reaper_opening/verification.json).
+New scenery, boss and ice-effect artwork remain awaiting user review.
+
+Rebuild and capture from the repository root with the existing art dependencies:
+
+```sh
+python3 tools/build_ice_reaper_opening.py
+python3 tools/build_runtime_music.py --track wintermute2
+python3 tools/capture_ice_reaper_opening.py
+```
 
 ## Named participants
 
 | Character | Specified role in this outline |
 | --- | --- |
 | Caelan | Enters through the wooded clearing, sees Rhea threatened, and frees her with a fire-charged sword strike |
-| Mira | Present as a party member; her specific actions and positions remain to be developed |
+| Mira | Present on the wooded approach in the opening preview; her later actions and positions remain to be developed |
 | Rhea | Begins encased in ice, is freed, then answers with a red-rune meteor cast and massive restraining vines |
 | Lucan | Rushes past Caelan and shields Rhea against the incoming icicle strike |
 | Ice Reaper | Female boss who created the protective dome; threatens Rhea, defends against the meteor and survives the collision |
@@ -77,13 +145,13 @@ The reveal needs to communicate three scales and an immediate danger:
 
 - **Regional scale:** The enormous dome overhead and the sprawling, destroyed
   kingdom beneath it.
-- **Immediate foreground:** Rhea visibly imprisoned in ice.
-- **Vertical threat:** The Ice Reaper high in the air above Rhea, charging an
-  icicle strike.
+- **Immediate foreground:** Rhea visibly imprisoned in ice at the lower left.
+- **Vertical threat:** The Ice Reaper high in the air above Rhea, with one arm
+  raised and a massive glacial shard overhead, preparing to launch it.
 
 Caelan's arrival connects the audience to this view. Individual shot lengths,
-camera movements and party blocking remain to be designed within the fixed
-45-second duration.
+camera movements and party blocking after the opening remain to be designed
+within the fixed 45-second duration.
 
 ## Ordered cinematic beats
 
@@ -245,17 +313,19 @@ the kingdom's inhabitants' fates are not settled.
 - The Ice Reaper's appearance, personal history and precise relationship to
   the kingdom; no identity as an Ancient is assigned.
 - How the protective-dome backstory is conveyed to the player.
-- Detailed shot plan and per-shot timing within the fixed 45 seconds,
+- Detailed shot plan and per-shot timing for the remaining forty seconds,
   choreography, scale cues and performance.
 - Magical sourcing and limits, including how the meteor reaches the dome
   without implying an Aethersphere breach.
 - Sound design, score/SFX mix and additional dialogue; the Wintermute2
   assignment and opening 45-second music segment are fixed above.
 - Boss-music looping and pause/skip/retry behavior, preserving synchronization.
-- Effects, scenery and character-action assets needed for implementation.
+- Remaining effects, scenery and character-action assets for the later beats.
 - Visual and gameplay details of the 45-second handoff: surviving debris,
   arena and actor positions, camera, encounter state and any carried-over
   resource effects. The music continues from its current position.
 
-The duration and music continuity are fixed; specific transition choreography,
-battle phases, outcomes beyond this survival and post-fight scenes remain open.
+The full duration and music continuity are fixed. The opening preview's
+five-second completion is implemented; the remaining choreography, boss-fight
+transition, battle phases, outcomes beyond this survival and post-fight scenes
+remain open.

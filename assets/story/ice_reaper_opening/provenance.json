@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "exporter": "tools/build_ice_reaper_opening.py",
+  "canvas": [
+    960,
+    480
+  ],
+  "sources": [
+    {
+      "file": "assets/source/cinematics/ice_reaper_opening/environment_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "f1cc60c4d1f1ab40de7fd8c51e8ba7a2b8f4d76b8616efad8e9f665de5414006"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_opening/ice_reaper_generated.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "a799a044b26c558da1b234c72a52d27ef7f347af5b1e658fa8a10166ec47d81a"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_opening/brush_generated.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "b4e773fb952897c763bd2bb59ef1c586e399ed54d0566a3b74b59f5666d087de"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_opening/prison_generated.png",
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "sha256": "0a452e128725e3dfecad06b4d1b264c18c767e818f7a7dbd8e073c43e01adced"
+    }
+  ],
+  "new_art_status": "awaiting_user_review",
+  "party": {
+    "caelan": {
+      "manifest": {
+        "file": "assets/story/opening_cinematic/actors/caelan/animation.json",
+        "sha256": "8523db225ad40c4e0142b6bb436ca12c775db978b92facbeb344405523588eb2"
+      },
+      "frames": [
+        {
+          "file": "assets/story/opening_cinematic/actors/caelan/stand_empty.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "0cc529747860d3d14f5873a14ad077f7cee6a0067d476e871774dfc14bb3fd9b"
+        },
+        {
+          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_01.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
+        },
+        {
+          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_02.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
+        },
+        {
+          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_03.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
+        },
+        {
+          "file": "assets/story/opening_cinematic/actors/beacon_motion/caelan/walk_left_04.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+        }
+      ],
+      "pixel_changes": false
+    },
+    "mira": {
+      "manifest": {
+        "file": "assets/story/opening_cinematic/actors/mira/animation.json",
+        "sha256": "b3b7c3686670a33eaf4668f03a0c2e992f47af5fa5866518e5164d5381d223bb"
+      },
+      "frames": [
+        {
+          "file": "assets/story/opening_cinematic/actors/mira/stand.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "2852bfbe6855bb5e17ecf2b329c37ae80a72bfebc210408d433f208e70e00786"
+        }
+      ],
+      "pixel_changes": false
+    },
+    "rhea": {
+      "manifest": {
+        "file": "assets/cinematics/companions/rhea/animation.json",
+        "sha256": "1b50614550fb8f352b040321b2bd16b746257f0f4766909bc4a50c76ca591bf5"
+      },
+      "frames": [
+        {
+          "file": "assets/cinematics/companions/rhea/stand_front.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3"
+        }
+      ],
+      "pixel_changes": false
+    },
+    "lucan": {
+      "manifest": {
+        "file": "assets/cinematics/companions/lucan/animation.json",
+        "sha256": "894003f4d02a9d3fd087051f9ebd7044b872dc28e1eb7b6b5f8a0e1cd41b722c"
+      },
+      "frames": [
+        {
+          "file": "assets/cinematics/companions/lucan/stand_front.png",
+          "dimensions": [
+            96,
+            112
+          ],
+          "sha256": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d"
+        }
+      ],
+      "pixel_changes": false
+    }
+  },
+  "exports": [
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/stand.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "0cc529747860d3d14f5873a14ad077f7cee6a0067d476e871774dfc14bb3fd9b"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_01.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "577c01c3a72137098a2953f344981c6988b34c77a6cc288211aec3d983179eba"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_02.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "d072a32a6d865f901a425809109617b249b051bb2becc5c5cf67a7a266ea7152"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_03.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "6b667d87bfb6be1d23462e848168201a5ba1fc9c1df259c0562592f5eb6f44e4"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/walk_left_04.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "249fbdbedd105b1d0d4ea21d4ed58957bd4f916966ee0a4cc8509b14333f42b4"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/ice_reaper/charge.png",
+      "dimensions": [
+        192,
+        176
+      ],
+      "sha256": "beb2bbee66aaf8583091cca9b4ee1eca25d8070adf272881c4182de4d69f8a95"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/lucan/stand.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "2852bfbe6855bb5e17ecf2b329c37ae80a72bfebc210408d433f208e70e00786"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/rhea/stand.png",
+      "dimensions": [
+        96,
+        112
+      ],
+      "sha256": "1b477a83f6be5e76846176f288ade67807e7f157c72a35271a2634998fb440a3"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/brush_left.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "1b1761d59d7373c6effe52b9b9363935dd1de50a4d830fce32210314def34d17"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/brush_right.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "5942a919595132131c9cd5e3031fdb657bac23f92d4a21c7afc11185512ebc5a"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/environment.png",
+      "dimensions": [
+        960,
+        480
+      ],
+      "sha256": "244432faa66688f2dfabf4c592d128885ce7a38c8c986785e783523f7e0762b6"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/glacial_shard.png",
+      "dimensions": [
+        28,
+        74
+      ],
+      "sha256": "9c17de53f0bc016d24a20a374e146937ac5817881f22c82331e4381fbe53a49a"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/ice_prison_back.png",
+      "dimensions": [
+        88,
+        136
+      ],
+      "sha256": "f49e34049996741d38dcedada497bb399cc63a68ee7ed1596d265bfede141532"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/ice_prison_front.png",
+      "dimensions": [
+        88,
+        136
+      ],
+      "sha256": "9de84ba1222869f9be1d52ce7f009c7cc18c8b7d9d3c8a4d567e7ea889082ae9"
+    }
+  ],
+  "registration": {
+    "ice_reaper_position": [
+      510,
+      260
+    ],
+    "glacial_shard_position": [
+      510,
+      140
+    ],
+    "glacial_shard_anchor": [
+      14,
+      74
+    ],
+    "glacial_shard_crop": [
+      410,
+      0,
+      609,
+      488
+    ],
+    "glacial_shard_content_bounds": [
+      7,
+      13,
+      185,
+      488
+    ],
+    "glacial_shard_scale": 0.15578947368421053,
+    "frozen_rhea_position": [
+      335,
+      374
+    ],
+    "prison_anchor": [
+      44,
+      130
+    ]
+  },
+  "notes": [
+    "New scenery, brush and boss artwork are authored image-generation sources.",
+    "Generated source images are retained unchanged.",
+    "Party frames are exact copies from the existing 96x112 cinematic sets.",
+    "Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.",
+    "The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.",
+    "No party actors are baked into the background."
+  ]
+}

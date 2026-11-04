@@ -5,7 +5,7 @@
   "quality": 8,
   "musical_rearrangement": false,
   "normalization": false,
-  "looping": "World/battle/opening repeat the authored cue; victory plays once; no sample-accurate musical-loop claim",
+  "looping": "Configured per track; repeating cues retain authored length, one-shot cues play once; no sample-accurate musical-loop claim",
   "tracks": [
     {
       "identifier": "title",
@@ -197,6 +197,38 @@
         "pygame_stream_one_shot": false,
         "sha256": "d1dc205565bff9708286a7678c5da75271e6abf56b257ffb128e4422dd8fa76f",
         "bytes": 1980609
+      }
+    },
+    {
+      "identifier": "wintermute2",
+      "source": "Wintermute 2.m4a",
+      "source_git_blob_sha": "f57c11ff26ce74983e2f3a62da1b8817d02c4b0c",
+      "source_sha256": "3a493542d26600eae8432350a7231685fd1ec266d32cc8bf38f8e36b02627f12",
+      "source_codec": "opus",
+      "source_decoded_frames": 11501448,
+      "source_decoded_seconds": 239.6135,
+      "loop": false,
+      "runtime": "runtime/wintermute2.ogg",
+      "runtime_frame_delta": 56,
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 11501504,
+        "duration_seconds": 239.61466666666666,
+        "peak_dbfs": -3.2795778526377,
+        "rms_dbfs": -18.91814129708071,
+        "sample_step_across_repeat": 0.0005981690483167768,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": false,
+        "pygame_stream_one_shot": true,
+        "sha256": "6a3f3089ed2e35649a9f86c6844d3edb9858d1e81439ae3aca401844228df1e0",
+        "bytes": 9071719
       }
     }
   ]

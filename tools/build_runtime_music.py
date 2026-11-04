@@ -43,6 +43,10 @@ SOURCES = (
          git_sha='1ead236be4b4a5e5a8a1ec2d83af3e4be1eaf1ac',
          target='royalty_of_the_realm.ogg', title='Royalty of the Realm', trim_tail=False,
          encoder='vorbis', runtime_frame_delta=56),
+    dict(identifier='wintermute2', source='Wintermute 2.m4a',
+         git_sha='f57c11ff26ce74983e2f3a62da1b8817d02c4b0c',
+         target='wintermute2.ogg', title='Wintermute2', trim_tail=False,
+         encoder='vorbis', runtime_frame_delta=56, loop=False),
 )
 
 
@@ -221,7 +225,7 @@ def build(identifiers=None):
     catalog_path.write_text(json.dumps(dict(version=1, tracks=tracks), indent=2) + '\n')
     audit = dict(version=1, source='User-provided uploads', export_codec='Ogg Vorbis',
                  quality=8, musical_rearrangement=False, normalization=False,
-                 looping='World/battle/opening repeat the authored cue; victory plays once; no sample-accurate musical-loop claim',
+                 looping='Configured per track; repeating cues retain authored length, one-shot cues play once; no sample-accurate musical-loop claim',
                  tracks=records)
     audit_path.write_text(json.dumps(audit, indent=2) + '\n')
     print(json.dumps(audit, indent=2))

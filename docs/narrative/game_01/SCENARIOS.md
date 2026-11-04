@@ -59,5 +59,10 @@ rescue, her meteor and vine attack, and the Ice Reaper's survival.
 Fast anime-style character, object and camera movement keeps the action
 within that fixed duration.
 
+The opening 0:00-0:05 section is implemented as the isolated Gallery entry
+**Ice Reaper: Frozen Clearing (5s)**. It ends on Caelan's exclamation before
+the attack; the rest of the 45-second cinematic and boss encounter remain
+future work.
+
 Its kingdom, region, act and installment remain unassigned. This reference
 does not place it in the opening quests or override Game I's regional scope.

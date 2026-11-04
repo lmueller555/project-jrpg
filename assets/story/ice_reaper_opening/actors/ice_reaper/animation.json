@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "actor": "ice_reaper",
+  "canvas": [
+    192,
+    176
+  ],
+  "anchor": [
+    96,
+    168
+  ],
+  "poses": {
+    "charge": "charge.png"
+  },
+  "status": "awaiting_review",
+  "source": "assets/source/cinematics/ice_reaper_opening/ice_reaper_generated.png",
+  "extraction": {
+    "crop": [
+      40,
+      430,
+      950,
+      1520
+    ],
+    "excluded_shard_cell": [
+      400,
+      430,
+      630,
+      488
+    ],
+    "content_bounds": [
+      15,
+      11,
+      893,
+      1082
+    ],
+    "uniform_scale": 0.10270774976657329,
+    "target_height": 110,
+    "offset": [
+      49,
+      58
+    ]
+  }
+}

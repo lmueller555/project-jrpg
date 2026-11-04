@@ -67,11 +67,11 @@ class GalleryCatalogueTests(unittest.TestCase):
         self.assertEqual(calls, [])
 
     def test_native_cinematic_skip_completes_the_selected_preview_only(self):
-        for identifier in ('later_journey', 'regent_arrival'):
+        for identifier in ('later_journey', 'regent_arrival', 'ice_reaper_opening'):
             with self.subTest(scene=identifier):
                 game = self.preview()
                 playback = GALLERY_BY_ID[identifier].start(game)
-                if identifier == 'later_journey':game.opening_cinematic.skip()
+                if identifier in ('later_journey', 'ice_reaper_opening'):game.opening_cinematic.skip()
                 else:game.regent_arrival.finish('skipped')
                 playback.update(.7)
                 self.assertTrue(playback.finished)

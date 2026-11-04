@@ -1,0 +1,2000 @@
+{
+  "version": 1,
+  "preview": "ice_reaper_opening",
+  "duration_seconds": 5,
+  "full_cinematic_duration_seconds": 45,
+  "fps": 30,
+  "frames": 150,
+  "completion": [
+    {
+      "elapsed": 5.0,
+      "reason": "completed"
+    }
+  ],
+  "save_and_settings_unchanged": true,
+  "music": {
+    "cue": "wintermute2",
+    "file": "assets/music/runtime/wintermute2.ogg",
+    "sha256": "6a3f3089ed2e35649a9f86c6844d3edb9858d1e81439ae3aca401844228df1e0",
+    "observed_gain": 0.4453125,
+    "segment": [
+      0,
+      5
+    ],
+    "capture_method": "Reconstructed from runtime OGG; SDL dummy has no loopback"
+  },
+  "scene_sha256": "9a41b4fd7ffe4e5e2e3aaa4b0a677fe14ffdc7dc5df108df4a480319e00a7146",
+  "runtime_sources": {
+    "opening_cinematic.py": "4acdb2a0595a750214050368938f9e317186d83f8c4800ae3d04aa2c910f2b43",
+    "ice_reaper_opening.py": "edb68171d8d6d339129ec27257be13bfbb2d33a0d1a2eeb73477167e54902803",
+    "cutscene_gallery.py": "ebe18b11b3da26136bdd914479b3d4470b91e55cc0165a3509b01c10980b49dc"
+  },
+  "source_art_review": "awaiting_user_review",
+  "snapshots": [
+    "000_brush.png",
+    "015_clearing.png",
+    "030_wide.png",
+    "060_reaper.png",
+    "082_camera_move.png",
+    "108_rhea.png",
+    "132_alarm.png"
+  ],
+  "timeline": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "scene_time": 0.0,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.0,
+      "dialogue": null
+    },
+    {
+      "frame": 1,
+      "time": 0.03333333333333333,
+      "scene_time": 0.03333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.0040136158105979775,
+      "dialogue": null
+    },
+    {
+      "frame": 2,
+      "time": 0.06666666666666667,
+      "scene_time": 0.06666666666666667,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.015648021134989584,
+      "dialogue": null
+    },
+    {
+      "frame": 3,
+      "time": 0.1,
+      "scene_time": 0.1,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.03429355281207133,
+      "dialogue": null
+    },
+    {
+      "frame": 4,
+      "time": 0.13333333333333333,
+      "scene_time": 0.13333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.05934054768073972,
+      "dialogue": null
+    },
+    {
+      "frame": 5,
+      "time": 0.16666666666666666,
+      "scene_time": 0.16666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.09017934257989127,
+      "dialogue": null
+    },
+    {
+      "frame": 6,
+      "time": 0.2,
+      "scene_time": 0.19999999999999998,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.1262002743484225,
+      "dialogue": null
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333333333334,
+      "scene_time": 0.2333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.16679367982522986,
+      "dialogue": null
+    },
+    {
+      "frame": 8,
+      "time": 0.26666666666666666,
+      "scene_time": 0.26666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.21134989584920996,
+      "dialogue": null
+    },
+    {
+      "frame": 9,
+      "time": 0.3,
+      "scene_time": 0.3,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.25925925925925924,
+      "dialogue": null
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "scene_time": 0.3333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        239.99999999999997,
+        59.99999999999999
+      ],
+      "zoom": 1.0,
+      "brush": 0.30991210689427423,
+      "dialogue": null
+    },
+    {
+      "frame": 11,
+      "time": 0.36666666666666664,
+      "scene_time": 0.36666666666666664,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.3626987755931514,
+      "dialogue": null
+    },
+    {
+      "frame": 12,
+      "time": 0.4,
+      "scene_time": 0.39999999999999997,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.4170096021947874,
+      "dialogue": null
+    },
+    {
+      "frame": 13,
+      "time": 0.43333333333333335,
+      "scene_time": 0.4333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.4722349235380784,
+      "dialogue": null
+    },
+    {
+      "frame": 14,
+      "time": 0.4666666666666667,
+      "scene_time": 0.4666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.5277650764619214,
+      "dialogue": null
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "scene_time": 0.49999999999999994,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.5829903978052126,
+      "dialogue": null
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333333333333,
+      "scene_time": 0.5333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.6373012244068486,
+      "dialogue": null
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666666666667,
+      "scene_time": 0.5666666666666667,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.6900878931057258,
+      "dialogue": null
+    },
+    {
+      "frame": 18,
+      "time": 0.6,
+      "scene_time": 0.6,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.7407407407407407,
+      "dialogue": null
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333333333333,
+      "scene_time": 0.6333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.78865010415079,
+      "dialogue": null
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666666666666,
+      "scene_time": 0.6666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.83320632017477,
+      "dialogue": null
+    },
+    {
+      "frame": 21,
+      "time": 0.7,
+      "scene_time": 0.7,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.8737997256515774,
+      "dialogue": null
+    },
+    {
+      "frame": 22,
+      "time": 0.7333333333333333,
+      "scene_time": 0.7333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.9098206574201086,
+      "dialogue": null
+    },
+    {
+      "frame": 23,
+      "time": 0.7666666666666667,
+      "scene_time": 0.7666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.9406594523192603,
+      "dialogue": null
+    },
+    {
+      "frame": 24,
+      "time": 0.8,
+      "scene_time": 0.7999999999999999,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.9657064471879286,
+      "dialogue": null
+    },
+    {
+      "frame": 25,
+      "time": 0.8333333333333334,
+      "scene_time": 0.8333333333333333,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.9843519788650104,
+      "dialogue": null
+    },
+    {
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "scene_time": 0.8666666666666666,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 0.9959863841894019,
+      "dialogue": null
+    },
+    {
+      "frame": 27,
+      "time": 0.9,
+      "scene_time": 0.8999999999999999,
+      "shot": "brush_reveal",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 28,
+      "time": 0.9333333333333333,
+      "scene_time": 0.9333333333333332,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 29,
+      "time": 0.9666666666666667,
+      "scene_time": 0.9666666666666666,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "scene_time": 0.9999999999999999,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 31,
+      "time": 1.0333333333333334,
+      "scene_time": 1.0333333333333332,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 32,
+      "time": 1.0666666666666667,
+      "scene_time": 1.0666666666666667,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 33,
+      "time": 1.1,
+      "scene_time": 1.1,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 34,
+      "time": 1.1333333333333333,
+      "scene_time": 1.1333333333333335,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "scene_time": 1.166666666666667,
+      "shot": "frozen_field",
+      "camera": [
+        240.0,
+        60.0
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 36,
+      "time": 1.2,
+      "scene_time": 1.2000000000000004,
+      "shot": "center_reaper",
+      "camera": [
+        240.0,
+        60.00000000000001
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 37,
+      "time": 1.2333333333333334,
+      "scene_time": 1.2333333333333338,
+      "shot": "center_reaper",
+      "camera": [
+        241.88238004142784,
+        56.898554247771195
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 38,
+      "time": 1.2666666666666666,
+      "scene_time": 1.2666666666666673,
+      "shot": "center_reaper",
+      "camera": [
+        245.94827366458105,
+        49.22730045278648
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 39,
+      "time": 1.3,
+      "scene_time": 1.3000000000000007,
+      "shot": "center_reaper",
+      "camera": [
+        249.61892802312727,
+        39.54541519828197
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 40,
+      "time": 1.3333333333333333,
+      "scene_time": 1.3333333333333341,
+      "shot": "center_reaper",
+      "camera": [
+        256.05423022133095,
+        26.365999165591802
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 41,
+      "time": 1.3666666666666667,
+      "scene_time": 1.3666666666666676,
+      "shot": "center_reaper",
+      "camera": [
+        263.27759152030814,
+        15.740901917670266
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 42,
+      "time": 1.4,
+      "scene_time": 1.400000000000001,
+      "shot": "center_reaper",
+      "camera": [
+        267.0515905094333,
+        6.631461605434729
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 43,
+      "time": 1.4333333333333333,
+      "scene_time": 1.4333333333333345,
+      "shot": "center_reaper",
+      "camera": [
+        268.5181914948644,
+        0.057455120423275496
+      ],
+      "zoom": 1.0,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 44,
+      "time": 1.4666666666666666,
+      "scene_time": 1.466666666666668,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.11176076767936,
+        0.5506384623571803
+      ],
+      "zoom": 1.000501908819448,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 45,
+      "time": 1.5,
+      "scene_time": 1.5000000000000013,
+      "shot": "reaper_zoom",
+      "camera": [
+        271.07078676372595,
+        0.0
+      ],
+      "zoom": 1.0044102638868642,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 46,
+      "time": 1.5333333333333334,
+      "scene_time": 1.5333333333333348,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.61230927417944,
+        0.0
+      ],
+      "zoom": 1.011953745551938,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 47,
+      "time": 1.5666666666666667,
+      "scene_time": 1.5666666666666682,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.02911686729686,
+        0.7129928675633328
+      ],
+      "zoom": 1.0228472458462259,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 48,
+      "time": 1.6,
+      "scene_time": 1.6000000000000016,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.63787661832697,
+        0.0
+      ],
+      "zoom": 1.0368056568012838,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 49,
+      "time": 1.6333333333333333,
+      "scene_time": 1.633333333333335,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.8065093520806,
+        0.0
+      ],
+      "zoom": 1.0535438704486682,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 50,
+      "time": 1.6666666666666667,
+      "scene_time": 1.6666666666666685,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.15429480244615,
+        0.6125738942063335
+      ],
+      "zoom": 1.072776778819935,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 51,
+      "time": 1.7,
+      "scene_time": 1.700000000000002,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.4114195649233,
+        0.0
+      ],
+      "zoom": 1.0942192739466408,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 52,
+      "time": 1.7333333333333334,
+      "scene_time": 1.7333333333333354,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.9973758945732,
+        0.2977240862656942
+      ],
+      "zoom": 1.1175862478603418,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 53,
+      "time": 1.7666666666666666,
+      "scene_time": 1.7666666666666688,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.331567649559,
+        0.28639093480793554
+      ],
+      "zoom": 1.1425925925925944,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 54,
+      "time": 1.8,
+      "scene_time": 1.8000000000000023,
+      "shot": "reaper_zoom",
+      "camera": [
+        268.9171827731624,
+        0.0
+      ],
+      "zoom": 1.1689532001749545,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 55,
+      "time": 1.8333333333333333,
+      "scene_time": 1.8333333333333357,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.94746242645374,
+        0.6188848400205045
+      ],
+      "zoom": 1.1963829626389786,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 56,
+      "time": 1.8666666666666667,
+      "scene_time": 1.8666666666666691,
+      "shot": "reaper_zoom",
+      "camera": [
+        271.09635558102775,
+        0.0
+      ],
+      "zoom": 1.2245967720162232,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 57,
+      "time": 1.9,
+      "scene_time": 1.9000000000000026,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.77001881273503,
+        0.0
+      ],
+      "zoom": 1.253309520338244,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 58,
+      "time": 1.9333333333333333,
+      "scene_time": 1.933333333333336,
+      "shot": "reaper_zoom",
+      "camera": [
+        268.9629080385135,
+        0.7119557099178655
+      ],
+      "zoom": 1.2822360996365978,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 59,
+      "time": 1.9666666666666666,
+      "scene_time": 1.9666666666666694,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.4972283658963,
+        0.0
+      ],
+      "zoom": 1.3110914019428406,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 60,
+      "time": 2.0,
+      "scene_time": 2.0000000000000027,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.9089616867799,
+        0.0
+      ],
+      "zoom": 1.3395903192885283,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 61,
+      "time": 2.033333333333333,
+      "scene_time": 2.033333333333336,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.2685422163694,
+        0.5426354454946268
+      ],
+      "zoom": 1.367447743705218,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 62,
+      "time": 2.066666666666667,
+      "scene_time": 2.066666666666669,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.2795269296809,
+        0.0
+      ],
+      "zoom": 1.394378567224465,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 63,
+      "time": 2.1,
+      "scene_time": 2.1000000000000023,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.91711576042826,
+        0.40179223044143364
+      ],
+      "zoom": 1.4200976818778266,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 64,
+      "time": 2.1333333333333333,
+      "scene_time": 2.1333333333333355,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.48414243759345,
+        0.17332699629749504
+      ],
+      "zoom": 1.4443199796968584,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 65,
+      "time": 2.1666666666666665,
+      "scene_time": 2.1666666666666687,
+      "shot": "reaper_zoom",
+      "camera": [
+        268.9581260644943,
+        0.0
+      ],
+      "zoom": 1.4667603527131168,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 66,
+      "time": 2.2,
+      "scene_time": 2.200000000000002,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.7843370030864,
+        0.669857932415171
+      ],
+      "zoom": 1.4871336929581584,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "scene_time": 2.233333333333335,
+      "shot": "reaper_zoom",
+      "camera": [
+        271.0974479150569,
+        0.0
+      ],
+      "zoom": 1.5051548924635392,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 68,
+      "time": 2.2666666666666666,
+      "scene_time": 2.2666666666666684,
+      "shot": "reaper_zoom",
+      "camera": [
+        269.93286275365125,
+        0.0
+      ],
+      "zoom": 1.5205388432608151,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 69,
+      "time": 2.3,
+      "scene_time": 2.3000000000000016,
+      "shot": "reaper_zoom",
+      "camera": [
+        268.91985261405154,
+        0.6910476275368439
+      ],
+      "zoom": 1.5330004373815431,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 70,
+      "time": 2.3333333333333335,
+      "scene_time": 2.333333333333335,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.3454793337631,
+        0.0
+      ],
+      "zoom": 1.5422545668572791,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 71,
+      "time": 2.3666666666666667,
+      "scene_time": 2.366666666666668,
+      "shot": "reaper_zoom",
+      "camera": [
+        270.99112116585195,
+        0.10485560735472965
+      ],
+      "zoom": 1.5480161237195793,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 72,
+      "time": 2.4,
+      "scene_time": 2.4000000000000012,
+      "shot": "reaper_hold",
+      "camera": [
+        269.39911965543735,
+        0.4575518579126123
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 73,
+      "time": 2.433333333333333,
+      "scene_time": 2.4333333333333345,
+      "shot": "reaper_hold",
+      "camera": [
+        269.1637190824026,
+        0.0
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 74,
+      "time": 2.466666666666667,
+      "scene_time": 2.4666666666666677,
+      "shot": "reaper_hold",
+      "camera": [
+        270.81638072839627,
+        0.49464621752951377
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 75,
+      "time": 2.5,
+      "scene_time": 2.500000000000001,
+      "shot": "reaper_hold",
+      "camera": [
+        270.6259085933917,
+        0.05542544267978565
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 76,
+      "time": 2.533333333333333,
+      "scene_time": 2.533333333333334,
+      "shot": "reaper_hold",
+      "camera": [
+        269.0223295192222,
+        0.0
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 77,
+      "time": 2.566666666666667,
+      "scene_time": 2.5666666666666673,
+      "shot": "reaper_hold",
+      "camera": [
+        269.6260263239752,
+        0.7021350632870669
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 78,
+      "time": 2.6,
+      "scene_time": 2.6000000000000005,
+      "shot": "reaper_hold",
+      "camera": [
+        270.8950328159269,
+        0.0
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 79,
+      "time": 2.6333333333333333,
+      "scene_time": 2.6333333333333337,
+      "shot": "reaper_hold",
+      "camera": [
+        270.0270015429762,
+        0.0
+      ],
+      "zoom": 1.55,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 80,
+      "time": 2.6666666666666665,
+      "scene_time": 2.666666666666667,
+      "shot": "find_rhea",
+      "camera": [
+        269.7154734909837,
+        0.21423172443581578
+      ],
+      "zoom": 1.5504184213367886,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 81,
+      "time": 2.7,
+      "scene_time": 2.7,
+      "shot": "find_rhea",
+      "camera": [
+        267.5218658892128,
+        1.8658892128280065
+      ],
+      "zoom": 1.5536443148688048,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 82,
+      "time": 2.7333333333333334,
+      "scene_time": 2.7333333333333334,
+      "shot": "find_rhea",
+      "camera": [
+        263.3457509988122,
+        5.010258071482576
+      ],
+      "zoom": 1.5597856602958644,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "scene_time": 2.7666666666666666,
+      "shot": "find_rhea",
+      "camera": [
+        257.4074074074074,
+        9.481481481481481
+      ],
+      "zoom": 1.5685185185185186,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 84,
+      "time": 2.8,
+      "scene_time": 2.8,
+      "shot": "find_rhea",
+      "camera": [
+        249.92711370262396,
+        15.113702623906683
+      ],
+      "zoom": 1.5795189504373177,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 85,
+      "time": 2.8333333333333335,
+      "scene_time": 2.833333333333333,
+      "shot": "find_rhea",
+      "camera": [
+        241.12514847208732,
+        21.741064679840136
+      ],
+      "zoom": 1.592463016952813,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 86,
+      "time": 2.8666666666666667,
+      "scene_time": 2.8666666666666663,
+      "shot": "find_rhea",
+      "camera": [
+        231.22179030342306,
+        29.197710830363803
+      ],
+      "zoom": 1.6070267789655543,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 87,
+      "time": 2.9,
+      "scene_time": 2.8999999999999995,
+      "shot": "find_rhea",
+      "camera": [
+        220.43731778425672,
+        37.31778425655965
+      ],
+      "zoom": 1.6228862973760931,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 88,
+      "time": 2.933333333333333,
+      "scene_time": 2.9333333333333327,
+      "shot": "find_rhea",
+      "camera": [
+        208.9920095022138,
+        45.93542813950961
+      ],
+      "zoom": 1.6397176330849796,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 89,
+      "time": 2.966666666666667,
+      "scene_time": 2.966666666666666,
+      "shot": "find_rhea",
+      "camera": [
+        197.10614404491986,
+        54.884785660295655
+      ],
+      "zoom": 1.657196846992765,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 90,
+      "time": 3.0,
+      "scene_time": 2.999999999999999,
+      "shot": "find_rhea",
+      "camera": [
+        185.0000000000003,
+        63.99999999999976
+      ],
+      "zoom": 1.6749999999999996,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 91,
+      "time": 3.033333333333333,
+      "scene_time": 3.0333333333333323,
+      "shot": "find_rhea",
+      "camera": [
+        172.89385595508082,
+        73.11521433970385
+      ],
+      "zoom": 1.692803153007234,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 92,
+      "time": 3.066666666666667,
+      "scene_time": 3.0666666666666655,
+      "shot": "find_rhea",
+      "camera": [
+        161.00799049778684,
+        82.06457186048992
+      ],
+      "zoom": 1.7102823669150193,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 93,
+      "time": 3.1,
+      "scene_time": 3.0999999999999988,
+      "shot": "find_rhea",
+      "camera": [
+        149.56268221574388,
+        90.68221574343991
+      ],
+      "zoom": 1.727113702623906,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 94,
+      "time": 3.1333333333333333,
+      "scene_time": 3.133333333333332,
+      "shot": "find_rhea",
+      "camera": [
+        138.77820969657748,
+        98.80228916963578
+      ],
+      "zoom": 1.7429732210344449,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 95,
+      "time": 3.1666666666666665,
+      "scene_time": 3.166666666666665,
+      "shot": "find_rhea",
+      "camera": [
+        128.87485152791317,
+        106.2589353201595
+      ],
+      "zoom": 1.7575369830471865,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 96,
+      "time": 3.2,
+      "scene_time": 3.1999999999999984,
+      "shot": "find_rhea",
+      "camera": [
+        120.07288629737651,
+        112.88629737609298
+      ],
+      "zoom": 1.7704810495626817,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 97,
+      "time": 3.2333333333333334,
+      "scene_time": 3.2333333333333316,
+      "shot": "find_rhea",
+      "camera": [
+        112.59259259259296,
+        118.51851851851823
+      ],
+      "zoom": 1.781481481481481,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 98,
+      "time": 3.2666666666666666,
+      "scene_time": 3.266666666666665,
+      "shot": "find_rhea",
+      "camera": [
+        106.65424900118806,
+        122.98974192851722
+      ],
+      "zoom": 1.7902143397041352,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 99,
+      "time": 3.3,
+      "scene_time": 3.299999999999998,
+      "shot": "find_rhea",
+      "camera": [
+        102.47813411078737,
+        126.13411078717186
+      ],
+      "zoom": 1.796355685131195,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 100,
+      "time": 3.3333333333333335,
+      "scene_time": 3.3333333333333313,
+      "shot": "find_rhea",
+      "camera": [
+        100.28452650901636,
+        127.78576827556415
+      ],
+      "zoom": 1.7995815786632112,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 101,
+      "time": 3.3666666666666667,
+      "scene_time": 3.3666666666666645,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 102,
+      "time": 3.4,
+      "scene_time": 3.3999999999999977,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 103,
+      "time": 3.433333333333333,
+      "scene_time": 3.433333333333331,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 104,
+      "time": 3.466666666666667,
+      "scene_time": 3.466666666666664,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 105,
+      "time": 3.5,
+      "scene_time": 3.4999999999999973,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 106,
+      "time": 3.533333333333333,
+      "scene_time": 3.5333333333333306,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 107,
+      "time": 3.566666666666667,
+      "scene_time": 3.5666666666666638,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 108,
+      "time": 3.6,
+      "scene_time": 3.599999999999997,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 109,
+      "time": 3.6333333333333333,
+      "scene_time": 3.63333333333333,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 110,
+      "time": 3.6666666666666665,
+      "scene_time": 3.6666666666666634,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 111,
+      "time": 3.7,
+      "scene_time": 3.6999999999999966,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 112,
+      "time": 3.7333333333333334,
+      "scene_time": 3.73333333333333,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 113,
+      "time": 3.7666666666666666,
+      "scene_time": 3.766666666666663,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 114,
+      "time": 3.8,
+      "scene_time": 3.7999999999999963,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 115,
+      "time": 3.8333333333333335,
+      "scene_time": 3.8333333333333295,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": null
+    },
+    {
+      "frame": 116,
+      "time": 3.8666666666666667,
+      "scene_time": 3.8666666666666627,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 117,
+      "time": 3.9,
+      "scene_time": 3.899999999999996,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 118,
+      "time": 3.933333333333333,
+      "scene_time": 3.933333333333329,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 119,
+      "time": 3.966666666666667,
+      "scene_time": 3.9666666666666623,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 120,
+      "time": 4.0,
+      "scene_time": 3.9999999999999956,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.00000000000001,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 121,
+      "time": 4.033333333333333,
+      "scene_time": 4.033333333333329,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 122,
+      "time": 4.066666666666666,
+      "scene_time": 4.066666666666662,
+      "shot": "frozen_rhea",
+      "camera": [
+        99.99999999999999,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 123,
+      "time": 4.1,
+      "scene_time": 4.099999999999995,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 124,
+      "time": 4.133333333333334,
+      "scene_time": 4.133333333333328,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 125,
+      "time": 4.166666666666667,
+      "scene_time": 4.166666666666662,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.00000000000001,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 126,
+      "time": 4.2,
+      "scene_time": 4.199999999999995,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 127,
+      "time": 4.233333333333333,
+      "scene_time": 4.233333333333328,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 128,
+      "time": 4.266666666666667,
+      "scene_time": 4.266666666666661,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 129,
+      "time": 4.3,
+      "scene_time": 4.2999999999999945,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 130,
+      "time": 4.333333333333333,
+      "scene_time": 4.333333333333328,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 131,
+      "time": 4.366666666666666,
+      "scene_time": 4.366666666666661,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 132,
+      "time": 4.4,
+      "scene_time": 4.399999999999994,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 133,
+      "time": 4.433333333333334,
+      "scene_time": 4.433333333333327,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 134,
+      "time": 4.466666666666667,
+      "scene_time": 4.466666666666661,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 135,
+      "time": 4.5,
+      "scene_time": 4.499999999999994,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 136,
+      "time": 4.533333333333333,
+      "scene_time": 4.533333333333327,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 137,
+      "time": 4.566666666666666,
+      "scene_time": 4.56666666666666,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 138,
+      "time": 4.6,
+      "scene_time": 4.599999999999993,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 139,
+      "time": 4.633333333333334,
+      "scene_time": 4.633333333333327,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 140,
+      "time": 4.666666666666667,
+      "scene_time": 4.66666666666666,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 141,
+      "time": 4.7,
+      "scene_time": 4.699999999999993,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 142,
+      "time": 4.733333333333333,
+      "scene_time": 4.733333333333326,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 143,
+      "time": 4.766666666666667,
+      "scene_time": 4.7666666666666595,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 144,
+      "time": 4.8,
+      "scene_time": 4.799999999999993,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 145,
+      "time": 4.833333333333333,
+      "scene_time": 4.833333333333326,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 146,
+      "time": 4.866666666666666,
+      "scene_time": 4.866666666666659,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 147,
+      "time": 4.9,
+      "scene_time": 4.899999999999992,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 148,
+      "time": 4.933333333333334,
+      "scene_time": 4.933333333333326,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    },
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "scene_time": 4.966666666666659,
+      "shot": "frozen_rhea",
+      "camera": [
+        100.0,
+        128.0
+      ],
+      "zoom": 1.8,
+      "brush": 1.0,
+      "dialogue": "Rhea! No!"
+    }
+  ],
+  "video_sha256": "6086d75787c8c545449126d6f84c043146c6f1dd3ea99de75f57cc1a13cd7574",
+  "encoded": {
+    "duration": "5.000000",
+    "video_frames": "150",
+    "audio_duration": "5.000000"
+  }
+}

@@ -452,6 +452,9 @@ class OpeningCinematic:
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0:
             return
         self.elapsed = min(self.duration, self.elapsed+seconds)
+        # Frame steps can land a few floating-point bits below an exact endpoint.
+        if self.duration-self.elapsed <= 1e-9:
+            self.elapsed = self.duration
         if self.elapsed >= self.duration:
             self._finish('completed')
 
@@ -631,12 +634,29 @@ class OpeningCinematic:
             # Whole authored bodies keep fixed physical proportions and contact.
             canvas.blit(image, (round(point.x-anchor[0]), round(point.y-anchor[1])))
 
+    def _zoom_focus(self, camera):
+        return pygame.Vector2(self.shot_record.get(
+            'zoom_focus', (camera.x+240, camera.y+160)))-camera
+
+    def _project_rect(self, rect, camera):
+        zoom = self.camera_zoom
+        if zoom <= 1:
+            return rect.copy()
+        focus = self._zoom_focus(camera)
+        offset_x, offset_y = round(focus.x*(1-zoom)), round(focus.y*(1-zoom))
+        scale_x = math.ceil(VIEW_SIZE[0]*zoom)/VIEW_SIZE[0]
+        scale_y = math.ceil(VIEW_SIZE[1]*zoom)/VIEW_SIZE[1]
+        left = math.floor(rect.left*scale_x)+offset_x
+        top = math.floor(rect.top*scale_y)+offset_y
+        right = math.ceil(rect.right*scale_x)+offset_x
+        bottom = math.ceil(rect.bottom*scale_y)+offset_y
+        return pygame.Rect(left, top, right-left, bottom-top)
+
     def _zoom(self, canvas, camera):
         zoom = self.camera_zoom
         if zoom <= 1:
             return
-        focus = pygame.Vector2(self.shot_record.get('zoom_focus',
-                                                   (camera.x+240, camera.y+160)))-camera
+        focus = self._zoom_focus(camera)
         size = (math.ceil(VIEW_SIZE[0]*zoom), math.ceil(VIEW_SIZE[1]*zoom))
         enlarged = pygame.transform.scale(canvas, size)
         canvas.blit(enlarged, (round(focus.x*(1-zoom)), round(focus.y*(1-zoom))))
@@ -707,6 +727,7 @@ class OpeningCinematic:
             point = self.actor_position(actor['id'])-self.camera_position
             rect = image.get_bounding_rect().move(round(point.x-anchor[0]),
                                                    round(point.y-anchor[1]))
+            rect = self._project_rect(rect, self.camera_position)
             if pygame.Rect((0, 0), VIEW_SIZE).colliderect(rect):
                 protected.append(rect.inflate(8, 8))
         self.caption_rect = min(candidates, key=lambda panel: sum(
@@ -727,10 +748,8 @@ class OpeningCinematic:
             painter, layout, self._dialogue_portraits[layout.portrait_key])
         speech_bubble.draw_dialogue_prose(painter, layout, self.caption_lines)
 
-    def draw(self, canvas, ui_surface):
-        self._load()
+    def _draw_scene(self, canvas, camera):
         canvas.fill('#111e2a')
-        camera = self.camera_position
         self._draw_upper_sky(canvas, camera)
         for record, image in self.layers:
             if not record.get('foreground', False):
@@ -748,6 +767,11 @@ class OpeningCinematic:
                 self._draw_layer(canvas, record, image, camera)
         # The memorial occupies a nearer depth plane than both characters.
         self._draw_prop(canvas, 'memorial', camera)
+
+    def draw(self, canvas, ui_surface):
+        self._load()
+        camera = self.camera_position
+        self._draw_scene(canvas, camera)
         self._zoom(canvas, camera)
         pygame.transform.scale(canvas, ui_surface.get_size(), ui_surface)
         painter = self.game.ui.painter(ui_surface)

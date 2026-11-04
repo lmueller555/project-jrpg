@@ -162,6 +162,15 @@ def _opening_film(game, playback):
     game.music.play('opening_leitmotif', fade_ms=0)
 
 
+def _ice_reaper_film(game, playback):
+    from ice_reaper_opening import IceReaperOpening
+    playback.hold_seconds = 0.
+    game.opening_audio.set_paused(True)
+    game.opening_cinematic = IceReaperOpening(game)
+    game.opening_cinematic.start(playback.done)
+    game.music.play('wintermute2', fade_ms=0)
+
+
 def _morning(game, playback, breakfast=False):
     if breakfast:
         game.opening.restore({'version': 1, 'stage': 'explore'})
@@ -433,6 +442,9 @@ GALLERY_ENTRIES = (
            'The gardener brings an empty basket to the sheep, offers a gentle pat, and returns it home.', _sheep_visit, True),
     _entry('checkpoint_borrowed_seat', 'Keeping Your Seat', 'Elden Vale',
            'Two familiar guards share a bench while taking turns at the supplies and the watch.', _checkpoint_seat),
+    _entry('ice_reaper_opening', 'Ice Reaper: Frozen Clearing (5s)', 'Scene Studies',
+           'Five-second cinematic opening: clearing brush, the raised shard and frozen Rhea. Ends before the attack.',
+           _ice_reaper_film, True),
 )
 
 GALLERY_BY_ID = {entry.id: entry for entry in GALLERY_ENTRIES}

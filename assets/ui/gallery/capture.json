@@ -1308,6 +1308,58 @@
       "source_commit": "e116d58ab345212d083c941d4409b4d39a08248e",
       "runtime_python_sha256": "5796673fec84b3edb87c1f48824933d2abd2ae3ad4f23538c0e5466a32f7d0d9",
       "review_frame": "docs/reviews/gallery/regional_checkpoint_borrowed_seat.png"
+    },
+    {
+      "id": "ice_reaper_opening",
+      "name": "Ice Reaper: Frozen Clearing (5s)",
+      "source": "production Game.canvas",
+      "file": "assets/ui/gallery/ice_reaper_opening.png",
+      "sha256": "e8e45fc3bdf06035a0340fcdd1bc2f437d90ca47dba332c9e56cf1ec9860894b",
+      "frame": 27,
+      "seconds": 0.9333,
+      "crop": [
+        0,
+        0,
+        480,
+        270
+      ],
+      "state": {
+        "opening": "disabled",
+        "opening_action": null,
+        "opening_action_seconds": 0.0,
+        "cinematic_seconds": 0.9333,
+        "arrival_shot": "mill_close",
+        "arrival_seconds": 0.0,
+        "elira_action": null,
+        "elira_seconds": 0.0,
+        "venn_phase": null,
+        "venn_seconds": 0.0,
+        "mill_action": null,
+        "mill_seconds": 0.0,
+        "mill_camera": null,
+        "lantern_action": null,
+        "lantern_seconds": 0.0,
+        "lantern_stage": "idle",
+        "regent_stage": "idle",
+        "regent_cart_released": false,
+        "halden_action": null,
+        "halden_seconds": 0.0,
+        "tomas_job": null,
+        "bridge_stage": null,
+        "bridge_seconds": 0,
+        "grain_stage": null,
+        "grain_seconds": 0,
+        "garden_phase": null,
+        "garden_step": null,
+        "garden_seconds": 0,
+        "wildlife_vignette": {},
+        "checkpoint_stage": null,
+        "checkpoint_state": null,
+        "dialogue": null
+      },
+      "source_commit": "945137cdab01b1e7854e2fc88954874201a254c4",
+      "runtime_python_sha256": "a53e9311b72d14a4166520b40c864b648a8f4b6aa78ecd3c1f5fed20c695cba7",
+      "review_frame": "docs/reviews/gallery/regional_ice_reaper_opening.png"
     }
   ]
 }

@@ -48,12 +48,23 @@ or rearranged.
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
 | `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
+| `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Ice Reaper's five-second Gallery opening preview; the full cinematic and boss handoff remain planned |
 
 [`tracks.json`](tracks.json) identifies the approved runtime files and their
-mix levels. `loop: false` marks the victory fanfare as a one-shot; the world
+mix levels. `loop: false` marks the victory fanfare and bounded Wintermute2
+preview cue as one-shots; the world
 and battle cues use the default repeating playback. The opening leitmotif
 explicitly sets `loop: true`. New uploads remain
 available for review until assigned to playback.
+
+**Wintermute2:** `Wintermute 2.m4a` now has a full-length, untrimmed
+`runtime/wintermute2.ogg` export for the five-second Ice Reaper Gallery preview.
+The preview plays from the beginning once, honors music settings and pause,
+and stops when its disposable playback closes. The planned full cinematic
+uses the opening 45 seconds before continuing into the boss fight; that
+main-story integration and final boss-loop behavior remain future work.
+The original upload and existing title, exploration, battle and other cues
+are unchanged. The runtime keeps the native encoder's documented 56 extra frames.
 
 The original uploads are preserved unchanged. Their M4A containers contain
 48 kHz stereo Opus audio. This Pygame build needs Ogg Vorbis runtime copies, so
@@ -100,6 +111,12 @@ To rebuild only the Eldenmere/millrace exploration cue:
 
 ```sh
 python tools/build_runtime_music.py --track eldenmere
+```
+
+To rebuild only the Wintermute2 preview cue:
+
+```sh
+python tools/build_runtime_music.py --track wintermute2
 ```
 
 The builder checks the original upload hashes, exports the selected files,

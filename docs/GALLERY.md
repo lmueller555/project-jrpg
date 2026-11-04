@@ -1,10 +1,18 @@
 # Cutscene Gallery
 
-Choose **Gallery** on the title screen to replay any of the 27 registered scenes.
+Choose **Gallery** on the title screen to replay the registered scenes.
 The catalogue is available immediately, including without a saved journey.
 Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,
 camera, music and effects.
+
+**Scene Studies** includes **Ice Reaper: Frozen Clearing (5s)**, the isolated
+opening section of the planned 45-second boss cinematic. It uses the detailed
+cinematic party sprites, Wintermute2's first five seconds and the production
+cinematic camera/dialogue controls. It ends before the strike or battle and
+does not replace New Game's opening or create a main-story encounter.
+See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
+[review clip](reviews/ice_reaper_opening/preview.mp4).
 
 ## Controls
 
