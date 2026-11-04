@@ -37,9 +37,16 @@ broader revelation boundaries intact.
 ## Approved character facts (CANON)
 
 At the beginning of Game I, **Caelan is 18 years old** and **Tomas is 14 years
-old**. They are foster brothers, with Caelan the older brother. These ages were
+old**. They are biological brothers, with Caelan the older brother. These ages were
 approved by the author on 2026-10-25. See [approved character facts](CHARACTERS.md)
 for the shared reference and the earlier Caelen spelling used in scene drafts.
+
+Their shared parentage and lifelong home in Eldenmere were clarified on
+2026-11-04. Serene cares for them because their parents have been missing for
+years. **Author-only:** The parents are alive at the opening, but the brothers
+do not know this and probably think them dead without discussing it. The cause
+and reveal remain open; see [Caelan's sheet](characters/CAELAN.md) for the
+knowledge boundary.
 
 ## Working premise — THE HOLLOW HARVEST (PROPOSED ONLY)
 

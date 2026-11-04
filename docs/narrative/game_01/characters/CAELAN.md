@@ -26,17 +26,40 @@ and [approved art](../../../../assets/characters/caelan/README.md).
 | Name and pronouns | Caelan; he/him. Earlier drafts use Caelen; surname remains unassigned. | Established / Open; character facts |
 | Age at opening | 18 | Established; character facts |
 | Present home | A sanctuary bedroom in Eldenmere | Established; opening quest |
-| Birthplace and early history | Birthplace, arrival at the sanctuary and earlier family circumstances remain undecided | Open |
-| Family | Tomas's older foster brother; Tomas is 14 | Established; character facts |
-| Guardian | Mother Serene is his guardian and the sanctuary caretaker; formal family arrangements remain unassigned | Established / Open; opening quest |
+| Birthplace and lifelong home | Born in Eldenmere and has lived there his whole life, as has Tomas | Established, 2026-11-04 |
+| Early family timeline | Exact ages when their parents went missing and when Serene began caring for them remain undecided | Open |
+| Family | Tomas's older biological brother; they share the same parents. Tomas is 14. | Established; character facts and 2026-11-04 clarification |
+| Guardian | Mother Serene cares for both brothers because their parents are missing; formal family arrangements remain unassigned | Established / Open |
 | Opening occupation | Sanctuary helper. Acolyte/record keeper remains a working role, not an approved rank or vocation. | Established helper / Open rank; opening quest and [chapter guide](../CHAPTER_01.md) |
 | Appearance | Chestnut hair, ivory tunic, teal outer tabard, ochre trim, dark trousers and brown belt, pouch and boots. Pouch remains on anatomical left. | Established; approved art |
 | Narrative role | Playable protagonist of Game I; not a new party recruit | Established |
 | Combat identity | Spellblade; begins unarmed with his established basic magicks | Established; ability guide |
 
-Foster brotherhood does not establish shared birth parents, their deaths or a
-childhood tragedy matching Mira's. Do not fill these gaps with a hidden lineage,
-prophecy or an invented traumatic event.
+## Family background and missing parents
+
+**Confirmed revision, 2026-11-04:** Caelan and Tomas are biological brothers
+with the same parents. Both were born in Eldenmere and have lived there their
+whole lives. They have not seen their parents in years, which is why they are
+in Serene's care. This supersedes the earlier description of them as foster brothers.
+
+**Author-only truth:** Their parents are alive at the start of the game, but
+missing. The reason for their disappearance and their whereabouts are not yet
+chosen.
+
+**The brothers' knowledge:** Neither knows that their parents are alive.
+Although they do not talk about it, they probably think their parents are dead
+by now. This is their likely private belief, not an established death or a
+certainty they have discussed with each other.
+
+**Still open:** The parents' names and occupations, when and why they went
+missing, the boys' ages at the time, the exact last sighting or reliable news,
+details of the transition into Serene's care, what Serene or others know, and
+how and when their survival will be revealed. Do not assume Serene is hiding
+the truth or assign a hidden lineage, prophecy or other explanation.
+
+This revision does not introduce early-game dialogue revealing the secret or
+replace Caelan's opening desire for magical development and a vocation with
+an active parent-search quest.
 
 ## Personality
 
@@ -93,13 +116,14 @@ ignorant or unable to disagree. Do not use hesitation as his only expression.
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Known household | Lives at the sanctuary; Tomas is his younger foster brother and Serene his guardian | Established |
+| Known household | Born and always resident in Eldenmere; lives at the sanctuary with his younger biological brother Tomas, in Serene's care because their shared parents are missing | Established |
+| Parents' absence | Neither brother has seen their parents in years. The parents are alive, but the boys do not know this and probably think them dead. | Established author truth / Established character-knowledge boundary |
 | Childhood friendship | Mira is his childhood friend; both are 18 at the opening. When and how they met remain undecided. | Established / Open |
 | Magical education | Already knows some magicks. His teacher, training history and route to a vocation remain undecided. | Established / Open |
 | Ordinary study | Has a partly read book and copies of local inscriptions in his bedroom | Established optional inspections in MQ01 |
-| Formative events and mentors | Specific childhood experiences and formal mentors remain unassigned | Open |
-| Proudest success and greatest failure | No particular pre-game event has been approved | Open |
-| Losses, regrets and obligations | Specific losses, promises and debts remain undecided | Open |
+| Other formative events and mentors | Further childhood experiences and formal mentors remain unassigned | Open |
+| Proudest success and greatest failure | No event is assigned as his proudest success or greatest failure; the parents' disappearance is not established as his fault | Open |
+| Losses, regrets and obligations | Years of parental absence are established; further losses, regrets, promises and debts remain undecided | Established absence / Open |
 
 ### Established on-screen demonstrations
 
@@ -148,8 +172,8 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 
 | Person | Existing dynamic and possible development | Status |
 | --- | --- | --- |
-| Tomas | Older foster brother, not a substitute parent or the owner of Tomas's choices. Detailed shared childhood remains open. | Established relationship and portrayal boundary / Open history |
-| Serene | Guardian and sanctuary caretaker. His personal balance of affection, trust, disagreement and desire for independence needs further development. | Established / Open |
+| Tomas | Older biological brother with the same missing parents and lifelong home in Eldenmere; not a substitute parent or the owner of Tomas's choices. Further shared childhood details remain open. | Established relationship and portrayal boundary / Open history |
+| Serene | Cares for both brothers because their parents are missing. His personal balance of affection, trust, disagreement and desire for independence needs further development; her knowledge about the parents remains unassigned. | Established / Open |
 | Mira | Childhood friend and practical partner. He can contribute without matching her expertise. No new romance decision is made here. | Established / Open |
 | Lucan | Condescending instruction develops toward mutual respect; Caelan challenges his decisions and Lucan helps him become more assertive | Established companion direction |
 | Aldric | Guide and witness during the relief visit; deeper admiration, distrust and later personal conflict remain to be earned and specified | Established opening role / Open |
@@ -189,13 +213,17 @@ They do not require new dialogue-choice mechanics or routine animations.
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Secrets and ancestry | No hidden lineage, prophecy or secret cause of his family circumstances is established | Open |
+| Parents - author-only truth | Their shared parents are alive at the game opening, but missing | Established; unknown to the brothers |
+| Parents - the brothers' belief | Have not seen them in years, do not know they are alive and probably think them dead, without talking about it | Established character knowledge and likely belief, not proof of death |
+| Parents - other people's knowledge | What Serene and others know remains unassigned | Open |
+| Disappearance and reveal | Cause, whereabouts, exact timeline, and how and when survival is revealed to the brothers or player remain undecided | Open |
+| Hidden lineage and prophecy | Neither has been established by the missing-parents background | Open |
 | Knowledge | Knows his community and its customs; does not know the hidden cosmic history merely because he is the protagonist | Established familiarity / Disclosure constraint |
 | Starting outlook | Reserved, thoughtful, self-doubting; wants to develop magicks and find a vocation | Established, 2026-11-04 |
 | Mistaken belief | Must know he is capable of a path before allowing himself to choose it | Established |
 | Intended growth | Take responsibility for choices amid uncertainty without becoming loud, domineering or certain about everything | Established growth direction |
 | Tests and setbacks | Specific commitments, failures and turning points remain unchosen | Open |
-| Later outcomes | Exact personal losses, Tomas's fate, Eldenmere's ultimate condition and final vocation remain undecided | Open |
+| Later outcomes | Exact later personal losses, the parents' later fates or reunion, Tomas's fate, Eldenmere's ultimate condition and final vocation remain undecided | Open |
 
 The [opening cinematic](../../../OPENING_CINEMATIC.md) establishes only its
 limited late-journey frame with Mira. Its anonymous helmet does not identify a

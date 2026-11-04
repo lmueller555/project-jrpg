@@ -7,8 +7,8 @@ Mira's age, upbringing with Halden and workshop timeline were approved on 2026-1
 
 | Character | Age at game opening | Relationship |
 | --- | --- | --- |
-| Caelan | 18 years old | Tomas's older foster brother |
-| Tomas | 14 years old | Caelan's younger foster brother |
+| Caelan | 18 years old | Tomas's older biological brother; both cared for by Serene |
+| Tomas | 14 years old | Caelan's younger biological brother; both cared for by Serene |
 | Mira | 18 years old | Caelan's childhood friend; Halden took her in after her parents' loss |
 | Liam | 8 years old | Child of Liam's mother and father |
 | Liam's mother | Mid-30s | Liam's mother; Eldenmere's teacher; name unassigned |
@@ -47,6 +47,21 @@ Before the crisis, he wants to develop his magicks and find a vocation of his ow
 approved characterization and growth direction, ten dialogue references and
 five nonverbal portrayal references. Their hypothetical scene events,
 unassigned biography details and exact later outcomes remain open.
+
+### Caelan and Tomas - shared family background
+
+**Confirmed, 2026-11-04:** The brothers share the same parents. Both were born
+in Eldenmere and have lived there their whole lives. Their parents have been
+missing for years, and Serene cares for them because of that absence.
+
+**Author-only truth:** Their parents are alive at the game opening. The
+brothers do not know this; although they do not talk about it, they probably
+think their parents are dead by now.
+
+The disappearance's cause, exact timeline and circumstances, the parents'
+whereabouts, what Serene knows, and the survival reveal remain open.
+[Caelan's sheet](characters/CAELAN.md) keeps author knowledge separate from
+character belief; no new dialogue reveals this information in the current game.
 
 ## Eventual party members
 

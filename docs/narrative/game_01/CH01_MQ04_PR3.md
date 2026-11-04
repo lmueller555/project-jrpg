@@ -10,7 +10,7 @@ Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already understa
 
 Mira has secured the frame handle without changing Liam’s chosen position. The actual handoff removes the single frame and drawing from the workshop. Liam carries his own small frame, while Caelan keeps the drawing and loose paper flat in his satchel. At home, they set the materials down before eating. The same father hosts the break; his personal name remains unassigned and Liam’s mother remains at the school. Daisy’s ordinary household activity continues independently and no food is given to her in the scripted scenes.
 
-Liam tries a separate loose practice panel. He grows impatient when the stairs and window compete for space, then makes a small adjustment with help he agrees to. The real covering is not attached and the frame remains unlit. During the brothers’ quiet exchange, Liam stays visibly occupied with the paper. Tomas reflects on his actual offer to carry Elira’s lantern; no new foster-family history or later desire to leave Eldenmere is introduced.
+Liam tries a separate loose practice panel. He grows impatient when the stairs and window compete for space, then makes a small adjustment with help he agrees to. The real covering is not attached and the frame remains unlit. During the brothers’ quiet exchange, Liam stays visibly occupied with the paper. Tomas reflects on his actual offer to carry Elira’s lantern; no new family history or later desire to leave Eldenmere is introduced.
 
 The materials remain safely together at home while the three visit Serene. Her sanctuary work makes space for listening. She speaks sincerely of the belief that life returns to the gods and explains the lantern as an act of remembrance. The script does not reveal ancient history, certify what happens to individual consciousness, promise that the dead hear the singing, or establish resurrection. Liam’s lantern purpose remains undecided for PR4.
 
@@ -346,4 +346,3 @@ These exchanges are selected by committed progress and current-room speaker pres
 
 - **Liam:** “I want to show Elira the stairs when they're finished.”
 - **Tomas:** “You can. The paper's waiting safely at home.”
-
