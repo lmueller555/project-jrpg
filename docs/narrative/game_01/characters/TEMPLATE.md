@@ -139,13 +139,38 @@ Write ten numbered examples covering contrasting expressions, not ten versions
 of a catchphrase. Suggested coverage: signature confidence, reassurance, pride,
 anger, fear, failure/apology, affection, humor, loyalty and growth.
 
+### Dialogue structure
+
+**Direction approved:** 2026-11-04.
+
+- Give each speaker an immediate reason to speak: ask for information, make
+  plans, disagree, share an observation, offer care or withhold something.
+  Other speakers need concerns of their own, not just questions that set up
+  the featured character's best line.
+- Vary turn lengths and conversational shapes. Use sustained thoughts,
+  practical exchanges, partial disclosures, ordinary invitations, unanswered
+  offers, disagreements and silence.
+- Avoid making keyword echoes, clever reversals, setup-and-payoff banter or
+  quotable closing lines the default rhythm across the cast.
+- Do not replace every joke with a leading question and a perfectly expressed
+  insight. Characters need not understand or summarize their whole emotional
+  pattern in order to speak about an experience.
+- Retain wit when it fits the person and situation. Clear, complete sentences
+  and thoughtful speeches are welcome; natural dialogue does not require
+  constant stammering, filler or unfinished sentences.
+- Let a conversation finish with a practical next step, a boundary, a lingering
+  disagreement or shared company. Growth can appear in the response and
+  subsequent action rather than a statement of the lesson learned.
+
 Each example should contain:
 
 - **Expression and story stage**
 - **Context:** A hypothetical situation unless an actual scene is cited.
-- **Dialogue:** Enough of an exchange to expose the character's choices.
+- **Dialogue:** A line, sustained thought or exchange that exposes the
+  character's choices; no fixed question-and-answer format is required.
 - **Acting cue:** Delivery, gesture or action that gives the line meaning.
 - **Character signal:** The trait or contradiction illustrated.
 - **Status / source:** Distinguish existing references from new proposals.
 
 These are voice guides, not obligatory lines to repeat in every scene.
+The overall set should demonstrate range rather than uniform cleverness.

@@ -206,8 +206,10 @@ admit difficulty without presenting herself as an infallible expert.
 **Approved writing guidance:**
 
 - Let technical language clarify what someone can observe or do; avoid jargon as a personality substitute.
+- Give enthusiasm room to become a longer observation or shared activity, without requiring a clever answer about usefulness.
 - Keep everyday warmth, curiosity and genuine delight. Most conversations need not mention bereavement.
 - When grief surfaces, favor plain words, hesitation and an unfinished thought over an explanatory speech about her psychology.
+- Let personal disclosures remain partial or end with a boundary. Listeners should not exist only to prompt a neat explanation of her grief.
 - In difficult private moments, she may return to a task or find something to check. This is an approved acting reference, not a required routine animation.
 - Let concern sometimes become too much practical advice, but preserve her demonstrated patience and willingness to collaborate.
 - Show growing trust through her accepting company, asking for help or leaving a task unfinished for a while.
@@ -352,7 +354,10 @@ The unfinished task is nonessential; she is not abandoning an unsafe civic repai
 
 ## Ten dialogue and expression references
 
-All ten examples are approved as voice and expression references on 2026-11-03.
+All ten examples were approved as voice and expression references on 2026-11-03,
+with dialogue-structure revisions approved on 2026-11-04. The revised set varies
+turn lengths, practical goals, personal boundaries and unresolved feelings;
+occasional dry humor remains intentional.
 Examples 1 and 3 retain dialogue from existing scenes; the other examples are
 approved reference sketches, not implemented quest dialogue. New contexts and
 acting cues remain hypothetical and do not establish childhood events, the
@@ -403,18 +408,21 @@ The additional acting cue is approved as a reference, not an implemented action.
 
 ### 4. Genuine delight - discovery for its own sake
 
-**Context:** A small experimental mechanism finally moves as intended.
+**Context:** A small experimental mechanism finally moves as intended, with
+Tomas nearby to share the discovery.
 
-> "There! Did you see it? No, wait, watch the little arm. It doesn't need
-> anything from us now."
->
-> "What is it for?"
->
-> "At the moment? Making me very happy. We can find it a job tomorrow."
+> **Mira:** "Look - the arm's clearing it now. It kept catching there. I nearly
+> took the whole thing apart again."
 
-**Acting cue:** Laughs without checking whether anyone thinks the experiment impressive.
+*She turns the handle, smiling, then shifts aside.*
 
-**Character signal:** Invention can be play and real happiness, not merely a cover for grief.
+> **Mira:** "Tomas, come and try it."
+
+**Acting cue:** Stays absorbed in the moving parts and makes room for Tomas,
+without waiting for praise or a question about the invention's purpose.
+
+**Character signal:** Pleasure emerges through attention and sharing the
+experience. Invention can be play, not merely a cover for grief.
 **Status:** Approved voice reference; hypothetical scene.
 
 ### 5. Anger at careless risk - a value under pressure
@@ -434,17 +442,19 @@ The additional acting cue is approved as a reference, not an implemented action.
 **Context:** Someone she trusts asks why she keeps working when she is upset.
 The disclosure scene and listener remain unchosen.
 
-> "With things, I can usually find where they broke. Then there's somewhere
-> to start."
->
-> "And with you?"
->
-> "I lost my parents when I was twelve. I know that much. I just don't know
-> what I'm supposed to mend."
+> **Mira:** "I was twelve when they died. Halden took me in. I started helping
+> him at the mill. There was always work to do."
 
-**Acting cue:** Sets the tool down; the last answer is quieter and less certain than her work instructions.
+*She puts the part down.*
 
-**Character signal:** States the approved connection between loss and repair without inventing how the deaths happened.
+> **Mira:** "I don't really want to talk about the rest tonight."
+
+**Acting cue:** Leaves the part on the bench and lets the boundary stand,
+rather than offering a complete explanation or immediately resuming the task.
+
+**Character signal:** A concrete recollection connects work and loss without
+requiring her to explain her own psychology. Trust can include choosing how
+much to disclose; the death circumstances remain unassigned.
 **Status:** Approved expression of the established background; disclosure scene remains open.
 
 ### 7. Fear of another loss - a vulnerability
@@ -465,47 +475,62 @@ The disclosure scene and listener remain unchosen.
 
 ### 8. Apology for trying to solve a feeling - possible growth beat
 
-**Context:** A friend wants to be heard, but she has answered with tasks and suggestions.
+**Context:** A friend wants to be heard, but she has interrupted with tasks
+and suggestions.
 
-> "You weren't asking me to work out what you should do next."
->
-> "No."
->
-> "I'm sorry. I heard you were hurting and started looking for something
-> I could change. Tell me again. I'll try listening this time."
+> **Mira:** "Sorry. I interrupted you."
 
-**Acting cue:** Stops arranging the work in front of her and gives the friend her attention.
+*She takes her hands away from the work.*
 
-**Character signal:** Learning to offer companionship without turning it into a repair.
+> **Mira:** "You were telling me what happened. Go on."
+
+**Acting cue:** Gives the friend time to continue without adding another
+suggestion or asking them to acknowledge her apology.
+
+**Character signal:** A specific apology and changed attention demonstrate
+listening without a speech about her tendency to fix things.
 **Status:** Approved voice reference; the scene and timing remain open.
 
 ### 9. Affection through accepting company - developing trust
 
 **Context:** Caelan visits and asks whether she needs help.
 
-> "Not with the bench. It's holding together better than I am today."
+> **Caelan:** "Need a hand?"
 >
-> "Should I come back later?"
+> **Mira:** "No. I'm stopping for today."
+
+*She sets the tool aside.*
+
+> **Mira:** "Are you staying for a bit? You can pull that chair over."
 >
-> "No. Pull up a chair. You don't have to be useful either."
+> **Caelan:** "For a while."
 
-**Acting cue:** A small, familiar smile; she leaves the unfinished task alone.
+**Acting cue:** Makes room for him and leaves the task alone, without turning
+the invitation into another job.
 
-**Character signal:** Warmth, humor and an honest request for company coexist with grief.
+**Character signal:** An ordinary request for company expresses trust without
+a joke about being broken or a lesson about usefulness.
 **Status:** Approved voice reference; does not establish romance or an actual visit.
 
 ### 10. Hope without erasing loss - possible later growth
 
-**Context:** In an unchosen later conversation, she acknowledges both grief and a good day.
+**Context:** After an enjoyable day with a companion, she remembers her parents.
+The activity, listener and later story point remain unchosen.
 
-> "I still miss them. Today was good, and I still missed them."
->
-> "Can it be both?"
->
-> "I think it has to be. I want more days like this. I don't think wanting
-> that means I'm leaving them behind."
+> **Mira:** "I had a good time today."
 
-**Acting cue:** Does not force a smile or return to work to end the conversation.
+*She stays beside the companion.*
 
-**Character signal:** A future can include joy and remembrance without a claim that she has been repaired.
+> **Mira:** "I kept wanting to tell my parents about it."
+
+*She is quiet for a while.*
+
+> **Mira:** "I'd like to do this again. Would you?"
+
+**Acting cue:** Allows the memory and the silence without forcing a smile or
+explaining away the feeling. Her last question asks about a shared future,
+not whether the listener approves her grief.
+
+**Character signal:** Missing her parents and wanting another good day can
+coexist without a concluding statement about healing.
 **Status:** Approved voice and growth reference, not a fixed ending.

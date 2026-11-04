@@ -125,8 +125,10 @@ His courage and skill must appear in actions, not only in boasts.
 - Use clear, deliberate sentences and concrete advice rather than constant courtly flourishes.
 - Under immediate danger, shorten the speech and let useful action precede self-promotion.
 - His humor can protect his dignity, but should not make every exchange a boast.
+- Retain occasional deliberate wit while giving ordinary duties, concerns and guarded answers their own space.
 - Show affection through attention and practical help; leave romantic preferences open.
 - Let a difficult apology become specific and accountable, not another claim of superiority.
+- Let practical questions and cooperation show care or respect without an announcement of the lesson he has learned.
 - In later growth, preserve confidence while changing orders into genuine invitations.
 
 **Avoid:** A cowardly fraud, a caricature who despises ordinary people, instant
@@ -271,6 +273,9 @@ Example 1 preserves the existing approved voice reference. Examples 2-10,
 all contexts and acting cues, and the proposed vulnerability explored in
 example 5 are development proposals. None establishes an actual quest event,
 a performed game line or a fixed recruitment script.
+Dialogue structures were revised on 2026-11-04 following the approved
+[template direction](TEMPLATE.md#dialogue-structure). Existing proposal statuses
+for scene events and unapproved character interpretations remain in place.
 
 ### 1. Signature confidence - opening characterization
 
@@ -300,12 +305,17 @@ a performed game line or a fixed recruitment script.
 
 **Context:** A difficult maneuver works and someone offers him sincere praise.
 
-> "An excellent observation. I was beginning to fear good judgment had deserted
-> this company. Now, praise me while we walk. We still have people to bring home."
+> **Lucan:** "Thank you. That took a fair amount of practice."
 
-**Acting cue:** Enjoys the compliment openly, then checks that everyone is accounted for.
+*He accepts the praise openly before looking back toward the others.*
 
-**Character signal:** Appetite for applause and genuine responsibility share the same moment.
+> **Lucan:** "Is everyone ready to move?"
+
+**Acting cue:** Takes a moment to enjoy the acknowledgment, then checks the
+group rather than turning the compliment into another joke.
+
+**Character signal:** Pride appears in how he receives recognition; a practical
+question returns attention to his responsibility for the others.
 **Status:** Proposed.
 
 ### 4. Anger and overreach - opening flaw
@@ -325,45 +335,53 @@ The scene should allow Caelan to challenge him.
 
 **Context:** In a quiet, hypothetical conversation, someone asks why recognition matters so much.
 
-> "A fine reputation opens doors. A command would give my family security.
-> Those are sensible things to want."
->
-> "And for you?"
->
-> "I'd like to enter a room without wondering whether I have to earn my place
-> in it all over again."
+> **Lucan:** "I'd like a command. Something I can build on. I'd like to make
+> plans for my family."
 
-**Acting cue:** The first answer is polished; the last comes after a long pause.
+*He looks down at his armor before continuing.*
 
-**Character signal:** Explores the proposed insecurity without inventing a past humiliation.
+> **Lucan:** "I worked hard to get this posting. I'm not keen to start again."
+
+**Acting cue:** Leaves the answer there instead of explaining what recognition
+would settle inside him. The pause interrupts his usual assured delivery.
+
+**Character signal:** Practical ambitions and defensiveness suggest the
+proposed insecurity without an interviewer prompting a complete self-analysis
+or an invented past humiliation.
 **Status:** Proposed, including the underlying fear.
 
 ### 6. Failure and apology - possible growth beat
 
 **Context:** His insistence on his own plan has caused a setback; the specific event remains open.
 
-> "You warned me. I heard you, and I decided being responsible meant I didn't
-> have to listen. That was my mistake. What do you need from me now?"
+> **Lucan:** "You told me, and I ignored you. I'm sorry."
 
-**Acting cue:** No excuses and no demand for forgiveness; he waits for the answer.
+*He takes a step back and waits.*
 
-**Character signal:** Accountability requires surrendering control of the response.
+> **Lucan:** "What still needs doing?"
+
+**Acting cue:** Does not resume directing the response or demand forgiveness;
+he waits to learn where his help is wanted.
+
+**Character signal:** Owning a specific action and offering practical help
+shows accountability without a polished summary of his central flaw.
 **Status:** Proposed; neither the failure nor this stage of growth is fixed.
 
 ### 7. Affection through practical care - developing friendship
 
-**Context:** Caelan conceals exhaustion while insisting he can continue.
+**Context:** The party is arranging night watches. Caelan is exhausted, but
+also concerned about Lucan taking another watch.
 
-> "Of course you can keep going. That isn't what I asked. Sit down. I'll take
-> the watch."
+> **Lucan:** "I can take the watch tonight."
 >
-> "Is that an order?"
+> **Caelan:** "You were on last night."
 >
-> "An offer. I'm practicing the distinction."
+> **Lucan:** "I slept this afternoon. I don't mind."
 
-**Acting cue:** A small smile; he leaves room for Caelan to accept or decline.
+**Acting cue:** Waits for Caelan's answer instead of assigning the watches himself.
 
-**Character signal:** Concern remains recognizable as Lucan's, while control starts becoming care.
+**Character signal:** Both have practical concerns for the other. Lucan offers
+care and leaves a choice without commenting on his own development.
 **Status:** Proposed.
 
 ### 8. Humor when challenged - party banter
@@ -382,31 +400,39 @@ The scene should allow Caelan to challenge him.
 
 **Context:** Aldric entrusts him to the party; the actual scene and wording remain open.
 
-> "You are asking me to leave your side."
+> **Lucan:** "Who will be guarding you?"
 >
-> "I am asking you to help them."
->
-> "Then I will. But I should warn them: I take being entrusted with people
-> rather seriously."
+> **Aldric:** "I've made arrangements. You won't be leaving me unprotected."
 
-**Acting cue:** The first response goes to Aldric; the last turns toward the party.
-He does not speak as if the party has become his property or sworn followers.
+*Lucan looks toward the party.*
 
-**Character signal:** Personal loyalty makes the assignment meaningful; his protective pride travels with him.
+> **Lucan:** "Then I'll need to speak with Caelan about the journey."
+
+**Acting cue:** Turns toward the practical preparation after his concern has
+been addressed. No replacement guard or recruitment checkpoint is assigned.
+
+**Character signal:** Loyalty appears in the question he needs answered and
+the responsibility he takes next, not a clever rephrasing of Aldric's request.
 **Status:** Proposed voice sketch, not an approved recruitment script.
 
 ### 10. Respect without surrendering confidence - later growth
 
-**Context:** Caelan proposes a sound plan different from Lucan's; no specific late-story event is fixed.
+**Context:** Caelan and Lucan have different route preferences after rain.
+This is a hypothetical later-growth situation, not a fixed story event.
 
-> "I would have chosen differently. Your reasoning is sound, though, and this
-> is your decision."
+> **Caelan:** "I'm taking the lower path."
 >
-> "You aren't going to argue?"
+> **Lucan:** "The footing will be worse after the rain."
 >
-> "I've given you my judgment. Now tell me where you need my shield."
+> **Caelan:** "I know. I still think it's safer."
 
-**Acting cue:** He follows through on the choice rather than undercutting it afterward.
+*Lucan checks the map again.*
 
-**Character signal:** Growth changes his relationship to authority without erasing his competence or voice.
+> **Lucan:** "Give me a moment to move the supplies."
+
+**Acting cue:** Follows through with the preparation instead of requiring
+Caelan to agree with his preference or praise his willingness to cooperate.
+
+**Character signal:** Respect can coexist with disagreement. His practical
+cooperation shows the changed relationship to authority without a speech about it.
 **Status:** Proposed illustration of the established growth direction.
