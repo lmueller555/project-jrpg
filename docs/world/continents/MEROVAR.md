@@ -2,7 +2,8 @@
 
 **Status:** Approved continental geography and cultural foundations for Auratia.
 Existing Eldenmere geography remains the local anchor. Illustrative encounters
-remain story seeds; exact political borders and institutions remain open.
+remain story seeds. One crown rules Merovar through regional governors and local
+institutions; exact internal borders and constitutional arrangements remain open.
 
 **Parent:** [World atlas](../WORLD_ATLAS.md)
 
@@ -20,10 +21,13 @@ through the interior into Rookfen and the sea. Eldenmere's brook joins this syst
 through unnamed tributaries. Its short millrace remains a separate controlled
 branch, including the established east-to-west flow beneath the mill wheel.
 
-Aldric's administrative reach includes Elden Vale and nearby upper-Leth
-road and quarry districts. It does not establish rule over Merovar. Sovereign
-borders, the constitution of the regency and relations between larger states
-remain open.
+Merovar has one ruling royal family. Aldric is the reigning monarch's younger
+brother, serving as regional regent rather than monarch. His administrative
+reach includes Elden Vale and nearby upper-Leth road and quarry districts.
+The [royal character foundations](../../narrative/game_01/CHARACTERS.md#aldric--approved-royal-background)
+distinguish approved relationships from proposed family names and biographies.
+Exact boundaries, succession rules, the constitution of the regency and
+relations with other continents' states remain open.
 
 ## Elden Vale
 

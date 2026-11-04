@@ -108,9 +108,12 @@ river or watershed. See the approved
 
 Regent Aldric's established authority is regional. His
 administration's immediate concerns lie in Elden Vale and neighbouring upper
-Leth road and quarry districts. His title's constitutional basis, any higher
-sovereign authority and exact political boundaries remain open. A geographic
-region in the atlas is not automatically a nation or province.
+Leth road and quarry districts. Merovar is ruled by one crown through regional
+governors and local institutions, and Aldric is the reigning monarch's younger
+brother. His precise constitutional powers and exact political boundaries
+remain open. The [royal character foundations](../narrative/game_01/CHARACTERS.md#aldric--approved-royal-background)
+record this approved relationship separately from proposed family details.
+A geographic region in the atlas is not automatically an administrative province.
 
 ### The region at the opening of Game I
 

@@ -114,8 +114,10 @@ to carry a stranger's lantern is created.
 
 ## Authority, development and disagreement
 
-Regent Aldric is an established regional authority. His exact jurisdictional
-borders and the source of his regency remain open. Elden Vale and nearby
+Regent Aldric is an established regional authority and the younger brother of
+Merovar's reigning monarch. One crown rules Merovar through regional governors
+and local institutions. His exact jurisdictional borders, appointment history
+and constitutional powers remain open. Elden Vale and nearby
 upper Leth road and quarry districts form the immediate setting of his
 administration's concerns.
 

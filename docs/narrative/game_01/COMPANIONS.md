@@ -6,6 +6,7 @@ quests, final scene scripts, numeric builds, remaining artwork and gameplay
 integration remain to be designed.
 
 **Approved:** 2026-10-30. Ages are measured at the beginning of Game I.
+Lucan's personal-guard role and recruitment premise were revised on 2026-11-03.
 
 Lucan Rooke, Rhea Sorel and Edran Hale are eventual party members. Their
 backgrounds sit within Merovar, preserving Game I's regional scope. Their home
@@ -52,7 +53,12 @@ Running and action animations remain future work.
 Lucan comes from a wagonwright's household in the
 [Redstone March](../../world/continents/MEROVAR.md#redstone-march). He earned his
 knighthood through service protecting road crews and caravans around the
-Greyfold approaches. He dresses impeccably, maintains his equipment
+Greyfold approaches. He now serves as Aldric's personal guard; the exact
+circumstances of his appointment remain open. Aldric is the reigning monarch's
+younger brother, as recorded in the [royal character foundations](CHARACTERS.md#aldric--approved-royal-background).
+Lucan's position places his earned knighthood in direct service to the ruling
+family without changing his non-aristocratic upbringing.
+He dresses impeccably, maintains his equipment
 obsessively and considers his reputation something others should already know.
 
 He wants a prestigious command and lasting security for his family. His
@@ -79,11 +85,13 @@ something useful to teach the other.
 
 ### Story entry and combat role
 
-Introduce Lucan during Act I's growing tensions through a legitimate
-road-security assignment. An escort initially brings him into Caelan's company.
-As events undermine official explanations, his commitment to public service
-gives him a reason to investigate. The exact assignment, quest and recruitment
-sequence remain open.
+Introduce Lucan during Act I's growing tensions as Aldric's personal guard.
+Later, Aldric entrusts him to Caelan's party, which is how he joins. This
+replaces the generic road-security assignment and initial escort premise.
+The exact introduction, reason for Aldric's decision and recruitment scene
+remain open. His commitment to public service and personal loyalty to Aldric
+give this assignment weight; how those loyalties develop as official
+explanations are challenged remains to be designed.
 
 He is the party's swordsman and protector, with two intended equipment options:
 

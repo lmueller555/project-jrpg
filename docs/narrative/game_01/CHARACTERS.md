@@ -42,7 +42,7 @@ personalities, motivations, flaws, relationships and intended combat roles.
 
 | Character | Age at opening | Home region | Role and introduction |
 | --- | --- | --- | --- |
-| Lucan Rooke | 24 | Redstone March | Confident, arrogant Knight; sword and shield or a two-handed sword; Act I |
+| Lucan Rooke | 24 | Redstone March | Confident, arrogant Knight and Aldric's personal guard; sword and shield or a two-handed sword; Act I |
 | Rhea Sorel | 22 | Wooded western Greyfold slopes | Upbeat, carefree Aethermage and field naturalist; sometimes chaotic offensive magicks; early Act II |
 | Edran Hale | 46 | Lower Leth | Reserved, wise Sage; healing, defense, support and enemy debuffs; end of Act II |
 
@@ -61,6 +61,54 @@ Their [four-direction walking sets](../../reviews/companion_directional_walks/RE
 are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
 Lattice paths require later implementation.
+
+## Aldric — approved royal background
+
+**Approved:** 2026-11-03.
+
+Aldric belongs to Merovar's ruling family and is the younger brother of the
+reigning monarch. One crown rules Merovar through regional governors and local
+institutions. Aldric serves as regional regent; his immediate administrative
+concerns remain Elden Vale and nearby upper-Leth road and quarry districts.
+Royal birth does not make him the reigning monarch.
+
+Lucan Rooke is Aldric's personal guard. Later in the story, Aldric entrusts
+Lucan to Caelan's party, establishing the basis for his recruitment. The exact
+occasion and scene remain open; this replaces the earlier generic
+road-security escort recruitment premise.
+
+The dynasty's name, the monarch's identity, Aldric's birthplace and age,
+succession rules and the precise constitutional powers of the regency remain
+unapproved. Membership in the ruling family does not yet assign a named
+capital or royal residence.
+
+### Ruling-family development — proposals, not canon
+
+- **House Maroven:** A proposed dynasty name. Its legitimacy emphasizes keeping
+  roads open, settlements supplied and regional institutions working. This is
+  a royal ideal, not proof that every ruler has fulfilled it.
+- **Queen Isolde Maroven:** Aldric's proposed elder sister and reigning monarch.
+  Patient and politically disciplined, she balances competing regional claims.
+  She trusts Aldric's practical judgment but worries about his tendency to
+  promise results faster than institutions can deliver them.
+- **Dowager Queen Helena Maroven:** Their proposed mother, who values restraint,
+  continuity and relationships with local custodians. She taught Aldric that
+  inherited standing creates obligations rather than personal entitlement.
+- **Prince Oren Maroven:** Isolde's proposed son and intended heir. He admires
+  his uncle's visible service outside court. Aldric wants to teach him that
+  leadership involves listening to people, not merely being admired by them.
+  Exact inheritance rules remain open.
+
+A proposed personal foundation is that Aldric grew up beside an elder sibling
+destined for the crown and sought a useful identity through regional service.
+He wants to be valued for what he accomplishes, not merely his family name.
+That can make urgent relief work both a sincere duty and a personal test.
+His relationship with Lucan can mirror this tension: a royal-born administrator
+and a knight from a wagonwright's household both want achievement to justify
+their standing. How Lucan earned the guard appointment remains to be designed.
+
+These proposals do not establish family secrets, a succession crisis or a
+hidden motive for the sanctuary excavation.
 
 ## Aldric and Serene — approved relief visit and covenant positions
 
