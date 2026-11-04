@@ -47,3 +47,12 @@ absence, allowing the workshop to continue operating without her being there.
 make Mira's attachment to useful work, responsibility toward Eldenmere and
 difficulty leaving visible. It need not imply that she has resolved her grief
 or completed her broader growth before departure.
+
+## Unplaced cinematic reference - Ice Reaper
+
+The [Ice Reaper pre-boss scene](../scenes/ICE_REAPER_PRE_BOSS.md) records the
+author-specified action sequence beneath a region-sized ice dome: Rhea's
+rescue, her meteor and vine attack, and the Ice Reaper's survival.
+
+Its kingdom, region, act and installment remain unassigned. This reference
+does not place it in the opening quests or override Game I's regional scope.
