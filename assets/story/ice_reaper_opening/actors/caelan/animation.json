@@ -2,35 +2,27 @@
   "version": 1,
   "actor": "caelan",
   "canvas": [
-    96,
-    112
+    48,
+    48
   ],
   "anchor": [
-    48,
-    104
+    24,
+    42
   ],
   "poses": {
     "stand": "stand.png"
   },
-  "source_manifest": "assets/story/opening_cinematic/actors/caelan/animation.json",
+  "source_manifest": "assets/combat/caelan/animation.json",
   "copied_without_pixel_changes": true,
   "loops": {
-    "walk_left": [
+    "ready": [
       {
-        "file": "walk_left_01.png",
-        "duration_ms": 180
+        "file": "ready_01.png",
+        "duration_ms": 260
       },
       {
-        "file": "walk_left_02.png",
-        "duration_ms": 180
-      },
-      {
-        "file": "walk_left_03.png",
-        "duration_ms": 180
-      },
-      {
-        "file": "walk_left_04.png",
-        "duration_ms": 180
+        "file": "ready_02.png",
+        "duration_ms": 260
       }
     ]
   }

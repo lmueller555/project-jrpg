@@ -2,16 +2,28 @@
   "version": 1,
   "actor": "mira",
   "canvas": [
-    96,
-    112
+    64,
+    64
   ],
   "anchor": [
-    48,
-    104
+    32,
+    54
   ],
   "poses": {
     "stand": "stand.png"
   },
-  "source_manifest": "assets/story/opening_cinematic/actors/mira/animation.json",
-  "copied_without_pixel_changes": true
+  "source_manifest": "assets/combat/mira/animation.json",
+  "copied_without_pixel_changes": true,
+  "loops": {
+    "ready": [
+      {
+        "file": "ready_01.png",
+        "duration_ms": 260
+      },
+      {
+        "file": "ready_02.png",
+        "duration_ms": 260
+      }
+    ]
+  }
 }
