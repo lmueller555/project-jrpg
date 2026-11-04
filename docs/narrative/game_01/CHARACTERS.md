@@ -37,8 +37,13 @@ relationships and scene context.
 
 ## Eventual party members
 
-The approved [companion guide](COMPANIONS.md) records the full backgrounds,
-personalities, motivations, flaws, relationships and intended combat roles.
+The approved [companion guide](COMPANIONS.md) links detailed character profiles
+and records the shared companion foundations and intended combat roles.
+[Lucan's character sheet](characters/LUCAN.md) is the first dictionary-style
+profile, with ten dialogue/expression references and explicit established,
+proposed and open entries. The [sheet template](characters/TEMPLATE.md)
+provides the structure for subsequent characters. Rhea and Edran's full
+foundations remain in the companion guide.
 
 | Character | Age at opening | Home region | Role and introduction |
 | --- | --- | --- | --- |

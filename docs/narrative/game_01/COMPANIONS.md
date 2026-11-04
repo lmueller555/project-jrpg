@@ -48,67 +48,14 @@ Running and action animations remain future work.
 
 ## Lucan Rooke
 
-### Background and motivation
+Lucan's approved foundations now live in his authoritative
+[character sheet](characters/LUCAN.md), alongside dictionary-style attributes
+and ten dialogue/expression references. Established characterization, new
+proposals and open questions are explicitly separated.
 
-Lucan comes from a wagonwright's household in the
-[Redstone March](../../world/continents/MEROVAR.md#redstone-march). He earned his
-knighthood through service protecting road crews and caravans around the
-Greyfold approaches. He now serves as Aldric's personal guard; the exact
-circumstances of his appointment remain open. Aldric is the reigning monarch's
-younger brother, as recorded in the [royal character foundations](CHARACTERS.md#aldric--approved-royal-background).
-Lucan's position places his earned knighthood in direct service to the ruling
-family without changing his non-aristocratic upbringing.
-He dresses impeccably, maintains his equipment
-obsessively and considers his reputation something others should already know.
-
-He wants a prestigious command and lasting security for his family. His
-confidence rests on real competence: he is brave, decisive and skilled at
-keeping frightened people alive. His ambition and appetite for recognition
-coexist with a serious commitment to public service.
-
-### Personality, flaw and growth
-
-Lucan is confident, arrogant and proud of his work. He enjoys applause, offers
-unsolicited advice and struggles to admit that someone else has a better plan.
-His competence should be visible in his actions, giving his confidence a
-credible foundation.
-
-His central flaw is confusing responsibility for others with authority over
-their choices. When danger approaches, he starts issuing orders, including
-to people who never agreed to follow him. His growth concerns protecting
-people while respecting their judgment and agency.
-
-His relationship with Caelan begins with condescending instruction and
-develops into respect. Caelan challenges his decisions; Lucan helps Caelan
-become more assertive. Their relationship needs occasions when each has
-something useful to teach the other.
-
-### Story entry and combat role
-
-Introduce Lucan during Act I's growing tensions as Aldric's personal guard.
-Later, Aldric entrusts him to Caelan's party, which is how he joins. This
-replaces the generic road-security assignment and initial escort premise.
-The exact introduction, reason for Aldric's decision and recruitment scene
-remain open. His commitment to public service and personal loyalty to Aldric
-give this assignment weight; how those loyalties develop as official
-explanations are challenged remains to be designed.
-
-He is the party's swordsman and protector, with two intended equipment options:
-
-- **Sword and offhand shield:** Guarding, interception and controlling enemy
-  attention emphasize his protective role.
-- **Two-handed sword:** Powerful physical attacks emphasize damage.
-
-These are approved combat directions. Weapon rules, ability definitions,
-starting attributes and Aether Lattice paths require later design.
-
-### Voice reference
-
-Lucan speaks decisively and often assumes he is in charge. Pride, practical
-instruction and a willingness to enter danger should all be audible.
-
-> “You may dislike my manners. I'd appreciate you surviving long enough to
-> complain about them.”
+The [reusable sheet template](characters/TEMPLATE.md) defines the format for
+future character profiles. Rhea and Edran retain their detailed foundations
+below until their sheets are developed.
 
 ## Rhea Sorel
 
