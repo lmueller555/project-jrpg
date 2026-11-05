@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "actor": "ice_reaper",
+  "canvas": [
+    192,
+    192
+  ],
+  "anchor": [
+    96,
+    172
+  ],
+  "animations": {
+    "aim": {
+      "frames": [
+        {
+          "file": "aim_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "aim_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "aim_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "aim_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "aim_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "aim_06.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false
+    },
+    "launch": {
+      "frames": [
+        {
+          "file": "launch_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "launch_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "launch_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "launch_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "launch_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "launch_06.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false
+    },
+    "recharge": {
+      "frames": [
+        {
+          "file": "recharge_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recharge_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recharge_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recharge_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recharge_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "recharge_06.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false
+    },
+    "ready_rear": {
+      "frames": [
+        {
+          "file": "ready_rear_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "ready_rear_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "ready_rear_03.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": true
+    },
+    "ready_side": {
+      "frames": [
+        {
+          "file": "ready_side_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "ready_side_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "ready_side_03.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": true
+    }
+  },
+  "source": "../../source/ice_reaper/actions_generated.png",
+  "source_sha256": "b585b01f015c18317a8126aa4d3d2882458b25c9fdc112eb9fb1076466eabf61",
+  "registration": "6x4 authored cells; fixed nearest scale and placement; alpha threshold only"
+}

@@ -43,33 +43,49 @@
   "party": {
     "caelan": {
       "manifest": {
-        "file": "assets/combat/caelan/animation.json",
-        "sha256": "a9394d1b7c17f8c464afe85386a10df8204f7d03b4be8ebe186d32d47a1a350e"
+        "file": "assets/story/ice_reaper_rescue/actors/caelan/animation.json",
+        "sha256": "44e974a70341f413da78226941778eb9821f43d029b1c29ee867925e0ad0d862"
       },
       "frames": [
         {
-          "file": "assets/combat/caelan/idle_01.png",
+          "file": "assets/story/ice_reaper_rescue/actors/caelan/ready_01.png",
           "dimensions": [
-            48,
-            48
+            128,
+            128
           ],
-          "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
+          "sha256": "120fb68d27448e90479146860715ff8c7e94288a70c25b1d8fedf84fd6cbaccf"
         },
         {
-          "file": "assets/combat/caelan/idle_01.png",
+          "file": "assets/story/ice_reaper_rescue/actors/caelan/ready_01.png",
           "dimensions": [
-            48,
-            48
+            128,
+            128
           ],
-          "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
+          "sha256": "120fb68d27448e90479146860715ff8c7e94288a70c25b1d8fedf84fd6cbaccf"
         },
         {
-          "file": "assets/combat/caelan/idle_02.png",
+          "file": "assets/story/ice_reaper_rescue/actors/caelan/ready_02.png",
           "dimensions": [
-            48,
-            48
+            128,
+            128
           ],
-          "sha256": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a"
+          "sha256": "4d15fb829f975a1d594a34792cb03d9f14e745c8a42b843bd1e94191279ef9ab"
+        },
+        {
+          "file": "assets/story/ice_reaper_rescue/actors/caelan/ready_03.png",
+          "dimensions": [
+            128,
+            128
+          ],
+          "sha256": "68212641c904157e8754f54dcbce0acccf6d243d2eda61aa33e8643041871a8e"
+        },
+        {
+          "file": "assets/story/ice_reaper_rescue/actors/caelan/ready_04.png",
+          "dimensions": [
+            128,
+            128
+          ],
+          "sha256": "aa396969f4292436bfbb874e7d3e938cb306347520c7f81af69d30da9a915f05"
         }
       ],
       "pixel_changes": false
@@ -178,26 +194,42 @@
     {
       "file": "assets/story/ice_reaper_opening/actors/caelan/ready_01.png",
       "dimensions": [
-        48,
-        48
+        128,
+        128
       ],
-      "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
+      "sha256": "120fb68d27448e90479146860715ff8c7e94288a70c25b1d8fedf84fd6cbaccf"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/caelan/ready_02.png",
       "dimensions": [
-        48,
-        48
+        128,
+        128
       ],
-      "sha256": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a"
+      "sha256": "4d15fb829f975a1d594a34792cb03d9f14e745c8a42b843bd1e94191279ef9ab"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/ready_03.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "68212641c904157e8754f54dcbce0acccf6d243d2eda61aa33e8643041871a8e"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/caelan/ready_04.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "aa396969f4292436bfbb874e7d3e938cb306347520c7f81af69d30da9a915f05"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/caelan/stand.png",
       "dimensions": [
-        48,
-        48
+        128,
+        128
       ],
-      "sha256": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9"
+      "sha256": "120fb68d27448e90479146860715ff8c7e94288a70c25b1d8fedf84fd6cbaccf"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/ice_reaper/charge.png",
@@ -326,6 +358,14 @@
         136
       ],
       "sha256": "533ad30c9012d9c96ae6a9948f7c7550ebecc25780245cad084418be95fa980f"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/portraits/lucan.png",
+      "dimensions": [
+        96,
+        96
+      ],
+      "sha256": "0afcb40ebbd15334ebce96f43936bccc0d1bfefa9f18c660b1e6fd4561fef4c5"
     }
   ],
   "registration": {
@@ -366,7 +406,8 @@
   "notes": [
     "New scenery, brush and boss artwork are authored image-generation sources.",
     "Generated source images are retained unchanged.",
-    "All four party members use exact approved combat frames; display scale is scene metadata.",
+    "Combat designs retained; Caelan uses the authored sword-equipped rescue variant awaiting review.",
+    "Mira, Rhea and Lucan opening frames are exact approved combat assets; display scale is scene metadata.",
     "Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.",
     "The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.",
     "No party actors are baked into the background."

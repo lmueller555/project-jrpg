@@ -1,4 +1,4 @@
-"""The partial Ice Reaper preview preserves actor identity and a five-second clock."""
+"""The partial Ice Reaper preview preserves actor identity and a twenty-second clock."""
 import copy
 import gc
 import json
@@ -37,15 +37,15 @@ class IceReaperOpeningTests(unittest.TestCase):
     def tearDown(self):
         pygame.quit()
 
-    def test_exact_five_second_completion_at_30_and_60_fps(self):
+    def test_exact_twenty_second_completion_at_30_and_60_fps(self):
         for fps in (30, 60):
             with self.subTest(fps=fps):
                 calls = []
                 self.scene.start(lambda: calls.append('done'))
-                for _ in range(fps*5):
+                for _ in range(fps*20):
                     self.scene.update(1/fps)
                 self.assertFalse(self.scene.active)
-                self.assertEqual(self.scene.elapsed, 5.)
+                self.assertEqual(self.scene.elapsed, 20.)
                 self.assertEqual(self.scene.finished_reason, 'completed')
                 self.scene.update(1)
                 self.scene.skip()
@@ -58,6 +58,18 @@ class IceReaperOpeningTests(unittest.TestCase):
             with self.subTest(actor=actor['id']):
                 path = self.scene.scene_path.parent/actor['manifest']
                 manifest = json.loads(path.read_text())
+                if actor['id'] == 'caelan':
+                    self.assertEqual(manifest['canvas'], [128, 128])
+                    self.assertEqual(manifest['anchor'], [64, 116])
+                    self.assertEqual(actor.get('pixel_scale', 1), 1)
+                    source_path = ROOT/'assets/story/ice_reaper_rescue/actors/caelan/animation.json'
+                    source = json.loads(source_path.read_text())
+                    ready = manifest['loops']['ready']
+                    self.assertEqual(len(ready), 4)
+                    for local, authored in zip(ready, source['animations']['ready']['frames']):
+                        self.assertEqual((path.parent/local['file']).read_bytes(),
+                                         (source_path.parent/authored['file']).read_bytes())
+                    continue
                 source = json.loads((ROOT/f"assets/combat/{actor['id']}/animation.json").read_text())
                 self.assertEqual(manifest['canvas'], source['canvas'])
                 self.assertEqual(manifest['anchor'], source['anchor'])
@@ -145,6 +157,28 @@ class IceReaperOpeningTests(unittest.TestCase):
         self.scene._zoom(canvas, self.scene.camera_position)
         self.assertEqual(pygame.image.tobytes(canvas, 'RGB'), before)
 
+    def test_rescue_pause_freezes_rendered_action_at_each_major_beat(self):
+        self.scene.start()
+        canvas = pygame.Surface((480, 320))
+        for elapsed in (8.5, 13.8, 16.7, 19.5):
+            with self.subTest(elapsed=elapsed):
+                self.scene.elapsed = elapsed
+                self.scene._draw_scene(canvas, self.scene.camera_position)
+                before = pygame.image.tobytes(canvas, 'RGB')
+                self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE))
+                self.scene.update(.7)
+                self.scene._draw_scene(canvas, self.scene.camera_position)
+                self.assertEqual(pygame.image.tobytes(canvas, 'RGB'), before)
+                self.assertEqual(self.scene.elapsed, elapsed)
+                self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE))
+
+    def test_lucan_cover_line_follows_caelan_alarm(self):
+        alarm, cover = self.scene.data['dialogue']
+        self.assertEqual((alarm['speaker'], alarm['text']), ('Caelan', 'Rhea! No!'))
+        self.assertEqual((cover['speaker'], cover['text']), ('Lucan', "Cael, go! I'll cover!"))
+        self.assertGreaterEqual(cover['start'], alarm['end'])
+        self.assertLessEqual(cover['end'], 7.)
+
     def test_invalid_duration_and_brush_direction_fail_explicitly(self):
         for field in ('duration', 'brush_direction', 'hover'):
             with self.subTest(field=field), tempfile.TemporaryDirectory() as folder:
@@ -197,7 +231,7 @@ class IceReaperGalleryTests(unittest.TestCase):
             pygame.event.Event(pygame.KEYDOWN, key=key, repeat=False),
             pygame.event.Event(pygame.KEYUP, key=key)])
 
-    def test_real_preview_finishes_at_five_seconds_without_mutating_the_journey(self):
+    def test_real_preview_finishes_at_twenty_seconds_without_mutating_the_journey(self):
         before = (self.path.read_bytes(), self.settings.read_bytes(),
                   self.parent._progress_signature(), self.parent.elapsed_ms,
                   tuple(self.parent.player.position), copy.deepcopy(self.parent.saved_journey),
@@ -205,7 +239,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         session = self.launch()
         self.assertIsInstance(session.game.opening_cinematic, IceReaperOpening)
         self.assertFalse(session.game.save_store.enabled)
-        for frame in range(150):
+        for frame in range(600):
             self.assertIs(self.parent.gallery_session, session, frame)
             self.assertEqual(session.game.music.desired_track, 'wintermute2')
             self.parent.update(1/30, (1, 0), True)
@@ -221,14 +255,14 @@ class IceReaperGalleryTests(unittest.TestCase):
 
     def test_gallery_pause_focus_and_restart_preserve_the_preview_boundary(self):
         session = self.launch()
-        self.parent.update(1.8, (0,0), False)
+        self.parent.update(8.5, (0,0), False)
         self.key(pygame.K_p)
         self.parent.update(.5, (0,0), False)
-        self.assertEqual(session.game.opening_cinematic.elapsed, 1.8)
+        self.assertEqual(session.game.opening_cinematic.elapsed, 8.5)
         self.key(pygame.K_p)
         self.parent.handle_events([pygame.event.Event(pygame.WINDOWFOCUSLOST)])
         self.parent.update(.5, (0,0), False)
-        self.assertEqual(session.game.opening_cinematic.elapsed, 1.8)
+        self.assertEqual(session.game.opening_cinematic.elapsed, 8.5)
         self.parent.handle_events([pygame.event.Event(pygame.WINDOWFOCUSGAINED)])
         self.key(pygame.K_r)
         replacement = self.parent.gallery_session

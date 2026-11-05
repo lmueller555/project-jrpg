@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "description": "Layered action foley and designed ice/magic effects",
+  "sources": [
+    {
+      "repository": "https://github.com/kenneyNL/Starter-Kit-FPS",
+      "commit": "185fd2326d74a5cf858cffc616f87cf9696f9cc0",
+      "license": "MIT"
+    },
+    {
+      "repository": "https://github.com/kenneyNL/Starter-Kit-3D-Platformer",
+      "commit": "3fa8a04b1c01ab23db43123d4ce814a34c3fc7f0",
+      "license": "MIT"
+    }
+  ],
+  "sounds": {
+    "snow_dash": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/snow_dash.ogg",
+      "duration": 0.75,
+      "sha256": "a4f27e4dadfac04353f1543387b4af24a2a2a42c544f83516048f559fd52715f",
+      "rate": 48000,
+      "channels": 2
+    },
+    "flame_slash": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/flame_slash.ogg",
+      "duration": 0.85,
+      "sha256": "965a1f9436956b98cd09547ad112e547ef6aa91855053d3460a361edb0f4975f",
+      "rate": 48000,
+      "channels": 2
+    },
+    "prison_crack": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/prison_crack.ogg",
+      "duration": 0.82,
+      "sha256": "ab0538cf2aa92fac250c7e17e11441d2c3f67da5b7eccfbea02999f2e37f353f",
+      "rate": 48000,
+      "channels": 2
+    },
+    "shield_impact": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/shield_impact.ogg",
+      "duration": 1.7,
+      "sha256": "1bcc89a3ce8569ecc5043d80f47e565e3ef656f398435c41fc4618fab1da0404",
+      "rate": 48000,
+      "channels": 2
+    },
+    "load_shell": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/load_shell.ogg",
+      "duration": 0.55,
+      "sha256": "f99d08a983acedd2b3998d3d3a836aa008e132e70451f09fa900ae1e2f972e4a",
+      "rate": 48000,
+      "channels": 2
+    },
+    "close_breech": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/close_breech.ogg",
+      "duration": 0.48,
+      "sha256": "7613bc2df37e0a487a2cdd671d838449e97a1d5927ea213a9e5f741e72ad349a",
+      "rate": 48000,
+      "channels": 2
+    },
+    "launcher_fire": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/launcher_fire.ogg",
+      "duration": 1.3,
+      "sha256": "1765ae94a8f5abb650b8d582702d5ff4542213f9cd44fd1f807b710ba623f31c",
+      "rate": 48000,
+      "channels": 2
+    },
+    "shard_explosion": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/shard_explosion.ogg",
+      "duration": 1.65,
+      "sha256": "eadf29c77e5c2870b697eb199fcb2639ec051e920e46c88614c85ad8e951f218",
+      "rate": 48000,
+      "channels": 2
+    },
+    "awakening": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/awakening.ogg",
+      "duration": 1.7,
+      "sha256": "62cfbd3ae54b2204d76d8fd52e89c04051bda674185a5c8dd2d7da1ffcc246de",
+      "rate": 48000,
+      "channels": 2
+    },
+    "prison_burst": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg",
+      "duration": 2.25,
+      "sha256": "e2301813b95d67ff387523859960bb61a67dfb2e93a5f10f2b1f36fe482615ae",
+      "rate": 48000,
+      "channels": 2
+    },
+    "rune_bloom": {
+      "file": "assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg",
+      "duration": 3.45,
+      "sha256": "121f6dade2b4e8646d1d29fe78960f0dbba90970c5b7972338ecbb76d91a04a0",
+      "rate": 48000,
+      "channels": 2
+    }
+  },
+  "cues": [
+    {
+      "id": "caelan_dash",
+      "time": 7.0,
+      "file": "assets/audio/sfx/ice_reaper_rescue/snow_dash.ogg",
+      "gain": 0.47
+    },
+    {
+      "id": "lucan_dash",
+      "time": 7.15,
+      "file": "assets/audio/sfx/ice_reaper_rescue/snow_dash.ogg",
+      "gain": 0.43
+    },
+    {
+      "id": "fire_slash",
+      "time": 8.3,
+      "file": "assets/audio/sfx/ice_reaper_rescue/flame_slash.ogg",
+      "gain": 0.49
+    },
+    {
+      "id": "prison_crack",
+      "time": 8.5,
+      "file": "assets/audio/sfx/ice_reaper_rescue/prison_crack.ogg",
+      "gain": 0.4
+    },
+    {
+      "id": "shield_impact",
+      "time": 9.0,
+      "file": "assets/audio/sfx/ice_reaper_rescue/shield_impact.ogg",
+      "gain": 0.6
+    },
+    {
+      "id": "load_shell",
+      "time": 11.5,
+      "file": "assets/audio/sfx/ice_reaper_rescue/load_shell.ogg",
+      "gain": 0.37
+    },
+    {
+      "id": "close_breech",
+      "time": 12.2,
+      "file": "assets/audio/sfx/ice_reaper_rescue/close_breech.ogg",
+      "gain": 0.42
+    },
+    {
+      "id": "launcher_fire",
+      "time": 14.2,
+      "file": "assets/audio/sfx/ice_reaper_rescue/launcher_fire.ogg",
+      "gain": 0.57
+    },
+    {
+      "id": "shard_explosion",
+      "time": 14.7,
+      "file": "assets/audio/sfx/ice_reaper_rescue/shard_explosion.ogg",
+      "gain": 0.54
+    },
+    {
+      "id": "awakening",
+      "time": 15.6,
+      "file": "assets/audio/sfx/ice_reaper_rescue/awakening.ogg",
+      "gain": 0.34
+    },
+    {
+      "id": "prison_burst",
+      "time": 16.3,
+      "file": "assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg",
+      "gain": 0.58
+    },
+    {
+      "id": "rune_bloom",
+      "time": 16.5,
+      "file": "assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg",
+      "gain": 0.43
+    }
+  ]
+}

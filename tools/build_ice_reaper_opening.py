@@ -17,7 +17,7 @@ SOURCE = ROOT/'assets/source/cinematics/ice_reaper_opening'
 TARGET = ROOT/'assets/story/ice_reaper_opening'
 SIZE = (960, 480)
 PARTY = {
-    'caelan': ('assets/combat/caelan/animation.json', 'idle'),
+    'caelan': ('assets/story/ice_reaper_rescue/actors/caelan/animation.json', 'ready'),
     'mira': ('assets/combat/mira/animation.json', 'idle'),
     'rhea': ('assets/combat/rhea/animation.json', 'idle'),
     'lucan': ('assets/combat/lucan/animation.json', 'idle'),
@@ -72,7 +72,7 @@ def export_party():
                     source_manifest=filename, copied_without_pixel_changes=True)
         if actor != 'rhea':
             loop = []
-            for index, frame in enumerate(manifest['animations']['idle']['frames'], 1):
+            for index, frame in enumerate(manifest['animations'][pose]['frames'], 1):
                 name = f'ready_{index:02}.png'
                 copy_frame(frame['file'], name)
                 loop.append(dict(file=name, duration_ms=frame['duration_ms']))
@@ -104,6 +104,9 @@ def export_prison():
 
 def build():
     TARGET.mkdir(parents=True, exist_ok=True)
+    (TARGET/'portraits').mkdir(exist_ok=True)
+    shutil.copyfile(ROOT/'assets/story/ice_reaper_rescue/portraits/lucan.png',
+                    TARGET/'portraits/lucan.png')
     names = ('environment_generated.png', 'ice_reaper_generated.png',
              'brush_generated.png', 'prison_generated.png')
     before = {name: digest(SOURCE/name) for name in names}
@@ -171,7 +174,8 @@ def build():
         notes=[
             'New scenery, brush and boss artwork are authored image-generation sources.',
             'Generated source images are retained unchanged.',
-            'All four party members use exact approved combat frames; display scale is scene metadata.',
+            'Combat designs retained; Caelan uses the authored sword-equipped rescue variant awaiting review.',
+            'Mira, Rhea and Lucan opening frames are exact approved combat assets; display scale is scene metadata.',
             'Mechanical crop, alpha cleanup, nearest scaling and new-sprite palette registration only.',
             'The authored ice prison uses transparent front/back planes, not a replacement Rhea sprite.',
             'No party actors are baked into the background.',

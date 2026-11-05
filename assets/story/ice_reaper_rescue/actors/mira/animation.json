@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "animations": {
+    "raise": {
+      "frames": [
+        {
+          "file": "raise_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "raise_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "raise_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "raise_04.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": false
+    },
+    "aim": {
+      "frames": [
+        {
+          "file": "aim_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "aim_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "aim_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "aim_04.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": false
+    },
+    "load": {
+      "frames": [
+        {
+          "file": "load_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_04.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_05.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_06.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_07.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "load_08.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": false
+    },
+    "fire": {
+      "frames": [
+        {
+          "file": "fire_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "fire_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "fire_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "fire_04.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "fire_05.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "fire_06.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": false
+    },
+    "ready_rear": {
+      "frames": [
+        {
+          "file": "ready_rear_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "ready_rear_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "ready_rear_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "ready_rear_04.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": false
+    },
+    "loading_detail": {
+      "frames": [
+        {
+          "file": "loading_detail_01.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "loading_detail_02.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "loading_detail_03.png",
+          "duration_ms": 90
+        },
+        {
+          "file": "loading_detail_04.png",
+          "duration_ms": 90
+        }
+      ],
+      "closeup": true
+    }
+  },
+  "source": "assets/source/cinematics/ice_reaper_rescue/women/mira_actions_generated.png",
+  "source_sha256": "914e151b06ec441f8158554d3b7f05e198dc631beedbd8bcb529c81c981924f9",
+  "authored": true
+}

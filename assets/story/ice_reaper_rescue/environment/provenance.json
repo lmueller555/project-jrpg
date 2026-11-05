@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "creative_method": "Image generation using approved environment, Ice Reaper and Lucan references. Sources retained unchanged.",
+  "sources": [
+    {
+      "file": "assets/story/ice_reaper_rescue/source/environment/views_generated.png",
+      "sha256": "5179d2494d000e626dffa7adc23fc31c30a2e6dce60cd4f840b190ea56af4585"
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/source/ice_reaper/actions_generated.png",
+      "sha256": "b585b01f015c18317a8126aa4d3d2882458b25c9fdc112eb9fb1076466eabf61"
+    },
+    {
+      "file": "assets/story/ice_reaper_rescue/source/portraits/lucan_generated.png",
+      "sha256": "2020a32b4812e7c5022d8d2412fb7c821a51fa94fab8dd14722b02764008ec03"
+    }
+  ],
+  "operations": [
+    "equal-panel crop",
+    "nearest-neighbor registration",
+    "fixed actor anchor",
+    "alpha cleanup",
+    "no body morphing or limb deformation"
+  ]
+}

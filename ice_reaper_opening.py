@@ -1,7 +1,8 @@
-"""The bounded five-second ice-dome reveal, using the opening's cinematic view."""
+"""The twenty-second Ice Reaper reveal and coordinated rescue scene."""
 from __future__ import annotations
 
 import math
+from dataclasses import replace
 from pathlib import Path
 
 import pygame
@@ -10,11 +11,63 @@ from opening_cinematic import OpeningCinematic, VIEW_SIZE, _smooth
 
 
 SCENE = Path(__file__).resolve().parent/'assets/story/ice_reaper_opening/scene.json'
+ACTION_ASSETS = SCENE.parent.parent/'ice_reaper_rescue'
 
 
 class IceReaperOpening(OpeningCinematic):
     def __init__(self, game, *, scene_path=SCENE):
         super().__init__(game, scene_path=scene_path)
+
+    def _load(self):
+        super()._load()
+        if getattr(self, 'action_stage', None) is None:
+            from ice_reaper_action import IceReaperActionStage
+            from ice_reaper_audio import IceReaperActionAudio
+            self.action_stage = IceReaperActionStage(ACTION_ASSETS, strict=True)
+            self.action_audio = IceReaperActionAudio(self.game)
+
+    def reset(self):
+        if getattr(self, 'action_audio', None) is not None:
+            self.action_audio.reset()
+        if getattr(self, 'action_stage', None) is not None:
+            self.action_stage.reset()
+        super().reset()
+
+    def _finish(self, reason):
+        if getattr(self, 'action_audio', None) is not None:
+            self.action_audio.stop()
+        super()._finish(reason)
+
+    def update(self, seconds):
+        previous = self.elapsed
+        playing = (self.active and not self.paused and self.focused
+                   and getattr(self.game, '_music_focused', True))
+        super().update(seconds)
+        if getattr(self, 'action_audio', None) is not None and self.active:
+            self.action_audio.update(previous, self.elapsed, playing=playing)
+
+    def handle_event(self, event):
+        super().handle_event(event)
+        if getattr(self, 'action_audio', None) is not None:
+            if (not self.active or self.paused or not self.focused
+                    or not getattr(self.game, '_music_focused', True)):
+                self.action_audio.pause()
+            else:
+                self.action_audio.resume()
+
+    def _layout(self, painter):
+        super()._layout(painter)
+        if self.elapsed >= 5.0 and self.caption_layout is not None:
+            # The new shot shows the boss high in frame. Keep Lucan's offscreen
+            # line below the action rather than using the old party's bounds.
+            layout = self.caption_layout
+            dy = self.skip_rect.top-9-layout.panel.bottom
+            self.caption_rect = layout.panel.move(0, dy)
+            self.caption_layout = replace(
+                layout, panel=self.caption_rect,
+                portrait=layout.portrait.move(0, dy) if layout.portrait else None,
+                text_origin=(layout.text_origin[0], layout.text_origin[1]+dy),
+                anchor=(layout.anchor[0], layout.anchor[1]+dy))
 
     def _validate(self):
         required = {'version', 'id', 'duration', 'canvas', 'viewport', 'actors',
@@ -27,8 +80,8 @@ class IceReaperOpening(OpeningCinematic):
             raise ValueError('Invalid Ice Reaper scene metadata')
         super()._validate()
         data = self.data
-        if data['id'] != 'ice_reaper_opening' or data['duration'] != 5.0:
-            raise ValueError('The Ice Reaper opening must last exactly five seconds')
+        if data['id'] != 'ice_reaper_opening' or data['duration'] != 20.0:
+            raise ValueError('The Ice Reaper rescue preview must last twenty seconds')
         actors = [record['id'] for record in data['actors']]
         if len(actors) != 5 or set(actors) != {'caelan', 'mira', 'rhea', 'lucan', 'ice_reaper'}:
             raise ValueError('Ice Reaper opening has an incorrect cast')
@@ -60,10 +113,12 @@ class IceReaperOpening(OpeningCinematic):
             raise ValueError('Ice Reaper opening is missing a required ice prop')
         if 'rhea' in data.get('position_tracks', {}):
             raise ValueError('Frozen Rhea cannot walk during the opening')
-        if (len(data['dialogue']) != 1
+        if (len(data['dialogue']) != 2
                 or data['dialogue'][0]['speaker'] != 'Caelan'
-                or data['dialogue'][0]['text'] != 'Rhea! No!'):
-            raise ValueError("Ice Reaper opening must preserve Caelan's authored exclamation")
+                or data['dialogue'][0]['text'] != 'Rhea! No!'
+                or data['dialogue'][1]['speaker'] != 'Lucan'
+                or data['dialogue'][1]['text'] != "Cael, go! I'll cover!"):
+            raise ValueError('Ice Reaper rescue must preserve both authored dialogue cues')
 
     @property
     def brush_progress(self):
@@ -86,6 +141,8 @@ class IceReaperOpening(OpeningCinematic):
 
     @property
     def camera_zoom(self):
+        if self.elapsed >= 5.0:
+            return 1.0
         if self.reduced_motion:
             return self.shot_record.get('zoom', (1., 1.))[-1]
         return super().camera_zoom
@@ -169,6 +226,9 @@ class IceReaperOpening(OpeningCinematic):
         canvas.blit(layer, (0, 0))
 
     def _draw_scene(self, canvas, camera):
+        if self.elapsed >= 5.0:
+            self.action_stage.draw(canvas, self.elapsed, self.reduced_motion)
+            return
         assert self.layers is not None
         canvas.fill('#101e34')
         for record, image in self.layers:

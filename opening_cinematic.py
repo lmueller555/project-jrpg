@@ -210,6 +210,8 @@ class OpeningCinematic:
         social = getattr(self.game, 'social', None)
         speakers = (social.data['speakers'] if social is not None else
                     json.loads((ROOT/'assets/dialogue/eldenmere.json').read_text())['speakers'])
+        # Scene-local speakers need not become overworld NPC registrations.
+        speakers = dict(speakers, **self.data.get('speakers', {}))
         portraits = getattr(social, 'portraits', {})
         manifest = None
         for name in {record['speaker'] for record in self.data['dialogue']}:
@@ -217,6 +219,8 @@ class OpeningCinematic:
             profile = speakers[key]
             portrait_key = profile['portrait']
             portrait = portraits.get(portrait_key)
+            if profile.get('portrait_file'):
+                portrait = pygame.image.load(str(self._path(profile['portrait_file']))).convert_alpha()
             if portrait is None:
                 if manifest is None:
                     manifest = json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())

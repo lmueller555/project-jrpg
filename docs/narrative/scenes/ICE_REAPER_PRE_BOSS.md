@@ -5,8 +5,8 @@ motive and ordered action beats below are established scene intent. Further
 story context and staging after the opening remain open.
 
 **Format:** An action-packed, 45-second cinematic preceding an Ice Reaper boss
-fight, using Wintermute2's energetic opening. The first five seconds are now
-implemented as an isolated Gallery preview; the remaining forty seconds and
+fight, using Wintermute2's energetic opening. The first twenty seconds are now
+implemented as an isolated Gallery preview; the remaining twenty-five seconds and
 playable boss encounter are not implemented.
 
 **Placement:** Unplaced. The kingdom, world region, act and installment have
@@ -67,7 +67,7 @@ The cinematic is timed to the music, not extended by click-to-continue
 dialogue or an additional end hold. The final ice-energy blast must resolve
 within that budget so the boss fight follows without a gap in the score.
 
-The current partial preview plays only 00:00-00:05, then returns to Gallery.
+The current partial preview plays only 00:00-00:20, then returns to Gallery.
 Its cue is one-shot playback for that bounded preview, not a decision about
 eventual boss-music loop points.
 
@@ -75,18 +75,19 @@ Individual shot lengths after the opening and exact musical accent alignments
 remain to be designed. Loop points beyond the full cinematic's handoff,
 mixing, and main-story pause/skip/retry behavior are not assigned here.
 
-## Opening preview - first five seconds
+## Opening and coordinated rescue preview - first twenty seconds
 
-**Implemented:** The 0:00-0:05 opening uses the same cinematic renderer,
-nearest-scaled pixel presentation and portrait dialogue frame as the game's
-intro. All four party members use their approved combat sprites at an integer
-2x display scale, with anchors scaled to match: Caelan's 48x48 set and the
-others' 64x64 sets. Source PNGs are copied unchanged. Caelan, Mira and Lucan
-use their ready loops; frozen Rhea holds a single idle pose between the ice
-prison layers. Caelan is already standing in the clearing when the brush
-parts, since his combat set has no walk cycle. Mira stands farther back and
-Lucan shifts right to keep their silhouettes distinct.
+**Implemented:** The opening keeps its portrait dialogue and pixel presentation.
+The first five seconds retain the frozen-clearing reveal, with a new sword-equipped
+Caelan ready loop. The extension uses authored action sprites matching the combat
+cast and a scene-specific perspective stage. Camera movement targets 60 FPS;
+character actions contain 4–10 distinct drawings with deliberate timing.
 
+Caelan, Lucan and Mira coordinate a rescue: Caelan cracks Rhea's prison with a
+flaming sword, Lucan shields both against the first shard, and Mira destroys a
+second shard with her launcher. Rhea opens glowing green eyes and breaks her
+prison as a large red rune manifests underneath her. The final shot moves across
+the Ice Reaper's shoulders while keeping Rhea central.
 The brush parts to reveal a snowy field, the immense ice dome high above and
 the frozen castle in the background. Rhea is encased in ice at the lower left.
 Above her, the Ice Reaper holds one arm raised with a massive glacial shard
@@ -103,27 +104,41 @@ hovering overhead, preparing to launch it.
 | 3.35-3.85 | Frozen Rhea holds the frame |
 | 3.85-5.00 | Caelan's automatic portrait dialogue displays "Rhea! No!" |
 
-At exactly five seconds the preview finishes without launching the strike,
-starting combat or advancing a journey. It covers the opening reveal and
-exclamation only; Lucan's rush and the rescue follow in later work.
+| 5.00–7.00 | Ice Reaper aims; Lucan says "Cael, go! I'll cover!"; first shard launches |
+| 7.00–7.50 | Caelan and Lucan dash from the party's original position toward Rhea |
+| 7.50–9.50 | Slow-motion sword slash and kneeling shield interception |
+| 9.50–11.00 | 180-degree perspective orbit reveals Mira at the original position |
+| 11.00–12.80 | Push toward Mira loading and aiming her launcher |
+| 12.80–14.20 | Camera moves behind the launcher; second shard becomes visible |
+| 14.20–15.10 | Mira fires and destroys the second shard |
+| 15.10–16.30 | Close-up of Rhea opening green-lit eyes |
+| 16.30–17.20 | Prison shatters and the red rune appears |
+| 17.20–20.00 | Pull up and sweep from the Ice Reaper's left to right shoulder |
+
+At twenty seconds the Gallery preview completes without starting combat or
+advancing the saved journey. The full planned cinematic remains 45 seconds.
 
 Reduced Motion replaces the animated camera moves with static compositions,
 removes shake and hovering, and fades the brush instead of sweeping it aside.
 Pause and focus loss freeze the same visual clock and soundtrack.
 
 **Replay:** From the title screen choose Gallery, then
-**Ice Reaper: Frozen Clearing (5s)** under Scene Studies. The entry is last in
+**Ice Reaper: Frozen Clearing (20s)** under Scene Studies. The entry is last in
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [five-second clip](../../reviews/ice_reaper_full_combat_cast/preview.mp4),
-[keyframes](../../reviews/ice_reaper_full_combat_cast/keyframes.png) and
-[verification record](../../reviews/ice_reaper_full_combat_cast/verification.json).
+Review the [twenty-second clip](../../reviews/ice_reaper_rescue/preview.mp4),
+[keyframes](../../reviews/ice_reaper_rescue/keyframes.png) and
+[verification record](../../reviews/ice_reaper_rescue/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:
 
 ```sh
+python3 tools/build_ice_rescue_men.py
+python3 tools/build_ice_rescue_women.py
+python3 tools/build_ice_rescue_environment.py
+python3 tools/build_ice_reaper_action_audio.py
 python3 tools/build_ice_reaper_opening.py
 python3 tools/build_runtime_music.py --track wintermute2
 python3 tools/capture_ice_reaper_opening.py
@@ -133,9 +148,9 @@ python3 tools/capture_ice_reaper_opening.py
 
 | Character | Specified role in this outline |
 | --- | --- |
-| Caelan | Enters through the wooded clearing, sees Rhea threatened, and frees her with a fire-charged sword strike |
-| Mira | Present on the wooded approach in the opening preview; her later actions and positions remain to be developed |
-| Rhea | Begins encased in ice, is freed, then answers with a red-rune meteor cast and massive restraining vines |
+| Caelan | Enters through the wooded clearing, sees Rhea threatened, and cracks her prison with a fire-charged sword strike |
+| Mira | Remains at the original party position, loads her launcher, and destroys the second shard |
+| Rhea | Begins encased in ice, breaks free after Caelan weakens her prison, and manifests a red rune; the later planned meteor and vines remain unimplemented |
 | Lucan | Rushes past Caelan and shields Rhea against the incoming icicle strike |
 | Ice Reaper | Female boss who created the protective dome; threatens Rhea, defends against the meteor and survives the collision |
 
@@ -316,7 +331,7 @@ the kingdom's inhabitants' fates are not settled.
 - The Ice Reaper's appearance, personal history and precise relationship to
   the kingdom; no identity as an Ancient is assigned.
 - How the protective-dome backstory is conveyed to the player.
-- Detailed shot plan and per-shot timing for the remaining forty seconds,
+- Detailed shot plan and per-shot timing for the remaining twenty-five seconds,
   choreography, scale cues and performance.
 - Magical sourcing and limits, including how the meteor reaches the dome
   without implying an Aethersphere breach.
@@ -328,7 +343,7 @@ the kingdom's inhabitants' fates are not settled.
   arena and actor positions, camera, encounter state and any carried-over
   resource effects. The music continues from its current position.
 
-The full duration and music continuity are fixed. The opening preview's
-five-second completion is implemented; the remaining choreography, boss-fight
+The full duration and music continuity are fixed. The twenty-second preview's
+completion is implemented; the remaining choreography, boss-fight
 transition, battle phases, outcomes beyond this survival and post-fight scenes
 remain open.

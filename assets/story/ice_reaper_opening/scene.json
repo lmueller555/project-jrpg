@@ -1,49 +1,426 @@
 {
   "version": 1,
   "id": "ice_reaper_opening",
-  "duration": 5.0,
+  "duration": 20.0,
   "full_cinematic_duration": 45.0,
-  "canvas": [960, 480],
-  "viewport": [480, 320],
-  "camera_bounds": [0, 0, 480, 160],
-  "layers": [
-    {"file": "environment.png", "parallax": 1.0},
-    {"file": "brush_left.png", "foreground": true, "brush_direction": -1},
-    {"file": "brush_right.png", "foreground": true, "brush_direction": 1}
+  "canvas": [
+    960,
+    480
   ],
-  "brush": {"start": 0.0, "end": 0.9, "travel": 480},
-  "camera_shake": {"start": 1.2, "end": 2.65, "strength": 1.1},
-  "hover": {"amplitude": 1.1, "period": 2.4},
+  "viewport": [
+    480,
+    320
+  ],
+  "camera_bounds": [
+    0,
+    0,
+    480,
+    160
+  ],
+  "layers": [
+    {
+      "file": "environment.png",
+      "parallax": 1.0
+    },
+    {
+      "file": "brush_left.png",
+      "foreground": true,
+      "brush_direction": -1
+    },
+    {
+      "file": "brush_right.png",
+      "foreground": true,
+      "brush_direction": 1
+    }
+  ],
+  "brush": {
+    "start": 0.0,
+    "end": 0.9,
+    "travel": 480
+  },
+  "camera_shake": {
+    "start": 1.2,
+    "end": 2.65,
+    "strength": 1.1
+  },
+  "hover": {
+    "amplitude": 1.1,
+    "period": 2.4
+  },
   "actors": [
-    {"id": "caelan", "position": [600, 370], "manifest": "actors/caelan/animation.json", "pixel_scale": 2},
-    {"id": "mira", "position": [690, 325], "manifest": "actors/mira/animation.json", "pixel_scale": 2},
-    {"id": "rhea", "position": [335, 374], "manifest": "actors/rhea/animation.json", "pixel_scale": 2},
-    {"id": "lucan", "position": [665, 372], "manifest": "actors/lucan/animation.json", "pixel_scale": 2},
-    {"id": "ice_reaper", "position": [510, 260], "manifest": "actors/ice_reaper/animation.json"}
+    {
+      "id": "caelan",
+      "position": [
+        600,
+        370
+      ],
+      "manifest": "actors/caelan/animation.json",
+      "pixel_scale": 1
+    },
+    {
+      "id": "mira",
+      "position": [
+        690,
+        325
+      ],
+      "manifest": "actors/mira/animation.json",
+      "pixel_scale": 2
+    },
+    {
+      "id": "rhea",
+      "position": [
+        335,
+        374
+      ],
+      "manifest": "actors/rhea/animation.json",
+      "pixel_scale": 2
+    },
+    {
+      "id": "lucan",
+      "position": [
+        665,
+        372
+      ],
+      "manifest": "actors/lucan/animation.json",
+      "pixel_scale": 2
+    },
+    {
+      "id": "ice_reaper",
+      "position": [
+        510,
+        260
+      ],
+      "manifest": "actors/ice_reaper/animation.json"
+    }
   ],
   "acting": {
-    "caelan": [{"start": 0.0, "pose": "ready"}],
-    "mira": [{"start": 0.0, "pose": "ready"}],
-    "rhea": [{"start": 0.0, "pose": "stand"}],
-    "lucan": [{"start": 0.0, "pose": "ready"}],
-    "ice_reaper": [{"start": 0.0, "pose": "charge"}]
+    "caelan": [
+      {
+        "start": 0.0,
+        "pose": "ready"
+      }
+    ],
+    "mira": [
+      {
+        "start": 0.0,
+        "pose": "ready"
+      }
+    ],
+    "rhea": [
+      {
+        "start": 0.0,
+        "pose": "stand"
+      }
+    ],
+    "lucan": [
+      {
+        "start": 0.0,
+        "pose": "ready"
+      }
+    ],
+    "ice_reaper": [
+      {
+        "start": 0.0,
+        "pose": "charge"
+      }
+    ]
   },
   "position_tracks": {},
   "dynamic_props": {
-    "ice_prison_back": {"file": "ice_prison_back.png", "position": [335, 374], "anchor": [44, 130]},
-    "ice_prison_front": {"file": "ice_prison_front.png", "position": [335, 374], "anchor": [44, 130]},
-    "glacial_shard": {"file": "glacial_shard.png", "position": [510, 140], "anchor": [14, 74]}
+    "ice_prison_back": {
+      "file": "ice_prison_back.png",
+      "position": [
+        335,
+        374
+      ],
+      "anchor": [
+        44,
+        130
+      ]
+    },
+    "ice_prison_front": {
+      "file": "ice_prison_front.png",
+      "position": [
+        335,
+        374
+      ],
+      "anchor": [
+        44,
+        130
+      ]
+    },
+    "glacial_shard": {
+      "file": "glacial_shard.png",
+      "position": [
+        510,
+        140
+      ],
+      "anchor": [
+        14,
+        74
+      ]
+    }
   },
   "shots": [
-    {"id": "brush_reveal", "start": 0.0, "end": 0.9, "from": [240, 60], "to": [240, 60]},
-    {"id": "frozen_field", "start": 0.9, "end": 1.2, "from": [240, 60], "to": [240, 60]},
-    {"id": "center_reaper", "start": 1.2, "end": 1.45, "from": [240, 60], "to": [270, 0]},
-    {"id": "reaper_zoom", "start": 1.45, "end": 2.4, "from": [270, 0], "to": [270, 0], "zoom": [1.0, 1.55]},
-    {"id": "reaper_hold", "start": 2.4, "end": 2.65, "from": [270, 0], "to": [270, 0], "zoom": [1.55, 1.55]},
-    {"id": "find_rhea", "start": 2.65, "end": 3.35, "from": [270, 0], "to": [100, 128], "zoom": [1.55, 1.8]},
-    {"id": "frozen_rhea", "start": 3.35, "end": 5.0, "from": [100, 128], "to": [100, 128], "zoom": [1.8, 1.8]}
+    {
+      "id": "brush_reveal",
+      "start": 0.0,
+      "end": 0.9,
+      "from": [
+        240,
+        60
+      ],
+      "to": [
+        240,
+        60
+      ]
+    },
+    {
+      "id": "frozen_field",
+      "start": 0.9,
+      "end": 1.2,
+      "from": [
+        240,
+        60
+      ],
+      "to": [
+        240,
+        60
+      ]
+    },
+    {
+      "id": "center_reaper",
+      "start": 1.2,
+      "end": 1.45,
+      "from": [
+        240,
+        60
+      ],
+      "to": [
+        270,
+        0
+      ]
+    },
+    {
+      "id": "reaper_zoom",
+      "start": 1.45,
+      "end": 2.4,
+      "from": [
+        270,
+        0
+      ],
+      "to": [
+        270,
+        0
+      ],
+      "zoom": [
+        1.0,
+        1.55
+      ]
+    },
+    {
+      "id": "reaper_hold",
+      "start": 2.4,
+      "end": 2.65,
+      "from": [
+        270,
+        0
+      ],
+      "to": [
+        270,
+        0
+      ],
+      "zoom": [
+        1.55,
+        1.55
+      ]
+    },
+    {
+      "id": "find_rhea",
+      "start": 2.65,
+      "end": 3.35,
+      "from": [
+        270,
+        0
+      ],
+      "to": [
+        100,
+        128
+      ],
+      "zoom": [
+        1.55,
+        1.8
+      ]
+    },
+    {
+      "id": "frozen_rhea",
+      "start": 3.35,
+      "end": 5.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ],
+      "zoom": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "id": "reaper_aim",
+      "start": 5.0,
+      "end": 7.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rescue_dash",
+      "start": 7.0,
+      "end": 7.5,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rescue_slow_motion",
+      "start": 7.5,
+      "end": 9.5,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rescue_orbit",
+      "start": 9.5,
+      "end": 11.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "mira_loading",
+      "start": 11.0,
+      "end": 12.8,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "launcher_scope",
+      "start": 12.8,
+      "end": 14.2,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "shard_interception",
+      "start": 14.2,
+      "end": 15.1,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rhea_awakens",
+      "start": 15.1,
+      "end": 16.3,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rhea_release",
+      "start": 16.3,
+      "end": 17.2,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rune_panorama",
+      "start": 17.2,
+      "end": 20.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    }
   ],
   "dialogue": [
-    {"id": "caelan_alarm", "speaker": "Caelan", "text": "Rhea! No!", "start": 3.85, "end": 5.0}
-  ]
+    {
+      "id": "caelan_alarm",
+      "speaker": "Caelan",
+      "text": "Rhea! No!",
+      "start": 3.85,
+      "end": 5.0
+    },
+    {
+      "id": "lucan_cover",
+      "speaker": "Lucan",
+      "text": "Cael, go! I'll cover!",
+      "start": 5.15,
+      "end": 6.95
+    }
+  ],
+  "speakers": {
+    "lucan": {
+      "name": "Lucan",
+      "portrait": "ice_reaper_lucan",
+      "portrait_file": "portraits/lucan.png"
+    }
+  }
 }

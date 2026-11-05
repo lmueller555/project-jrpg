@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "actor": "caelan",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "standing_height": 80,
+  "animations": {
+    "ready": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "ready_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "ready_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "ready_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "ready_04.png",
+          "duration_ms": 180
+        }
+      ]
+    },
+    "dash": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "dash_01.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_02.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_03.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_04.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_05.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_06.png",
+          "duration_ms": 80
+        }
+      ]
+    },
+    "slash": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "slash_01.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_02.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_03.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_04.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_05.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_06.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_07.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_08.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_09.png",
+          "duration_ms": 200
+        },
+        {
+          "file": "slash_10.png",
+          "duration_ms": 200
+        }
+      ]
+    },
+    "land": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "land_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "land_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "land_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "land_04.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "ready_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "ready_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "ready_rear_threequarter": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "ready_rear_threequarter_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "slash_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "slash_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "land_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "land_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "dash_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "dash_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "dash_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "dash_front_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "slash_side": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "slash_side_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "land_side": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "land_side_01.png",
+          "duration_ms": 250
+        }
+      ]
+    }
+  },
+  "source": "assets/source/cinematics/ice_reaper_rescue/men/caelan_actions_generated.png"
+}
