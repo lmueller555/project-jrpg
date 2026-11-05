@@ -29,25 +29,46 @@ def sha(path):
 
 
 def opening():
-    """Equal-cell extraction of the approved compact front drawing."""
+    """Isolate the approved compact front drawing above the next sheet row."""
     source = ROOT/'assets/source/cinematics/rhea_winter/approved_wardrobe.png'
     sheet = Image.open(source).convert('RGBA')
-    tile = sheet.crop((0, 0, sheet.width//3, sheet.height//2))
+    # This review sheet is not a uniform animation grid: the larger drawings
+    # begin at y434, before the nominal 512px row boundary. Keep the complete
+    # first figure (including the staff at x379) and exclude that second row.
+    source_box = (0, 0, 512, 400)
+    tile = sheet.crop(source_box)
     alpha = tile.getchannel('A').point(lambda value: 255 if value >= 140 else 0)
     tile.putalpha(alpha)
     bounds = tile.getbbox()
     if bounds is None:
         raise ValueError('Empty compact winter candidate')
+    pixels = np.asarray(tile)
+    occupied = pixels[:,:,3] > 0
+    rows = np.flatnonzero(occupied.any(axis=1))
+    if not np.all(np.diff(rows) == 1):
+        raise ValueError('Opening crop contains separated figure fragments')
+    yy = np.indices(occupied.shape)[0]
+    rgb = pixels[:,:,:3].astype(float)
+    boots = (occupied & (yy >= bounds[3]-24)
+             & (rgb[:,:,0] > rgb[:,:,1]*1.1)
+             & (rgb[:,:,1] > rgb[:,:,2]*1.08))
+    _, foot_x = np.where(boots)
+    if not len(foot_x):
+        raise ValueError('Opening sprite has no registered boot pixels')
+    foot_center = float((foot_x.min()+foot_x.max())/2)
     sprite = tile.crop(bounds)
     # Combat Rhea's existing feet are at (32,54), with 41 native body pixels.
     scale = 41/sprite.height
     size = tuple(max(1, round(value*scale)) for value in sprite.size)
     sprite = sprite.resize(size, Image.Resampling.NEAREST)
     frame = Image.new('RGBA', (64,64))
-    frame.alpha_composite(sprite, (32-size[0]//2, 54-size[1]+1))
+    offset = (32-round((foot_center-bounds[0])*scale), 54-size[1]+1)
+    frame.alpha_composite(sprite, offset)
     frame.save(OUT/'opening.png', optimize=True)
     return dict(file='opening.png', canvas=[64,64], anchor=[32,54],
                 source=str(source.relative_to(ROOT)), source_sha256=sha(source),
+                source_crop=list(source_box), subject_bounds=list(bounds),
+                source_foot_center=foot_center, offset=list(offset),
                 sha256=sha(OUT/'opening.png'))
 
 
