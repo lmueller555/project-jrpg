@@ -1,4 +1,4 @@
-"""The twenty-second Ice Reaper reveal and coordinated rescue scene."""
+"""The twenty-one-second Ice Reaper reveal and coordinated rescue scene."""
 from __future__ import annotations
 
 import math
@@ -80,8 +80,8 @@ class IceReaperOpening(OpeningCinematic):
             raise ValueError('Invalid Ice Reaper scene metadata')
         super()._validate()
         data = self.data
-        if data['id'] != 'ice_reaper_opening' or data['duration'] != 20.0:
-            raise ValueError('The Ice Reaper rescue preview must last twenty seconds')
+        if data['id'] != 'ice_reaper_opening' or data['duration'] != 21.0:
+            raise ValueError('The Ice Reaper rescue preview must last twenty-one seconds')
         actors = [record['id'] for record in data['actors']]
         if len(actors) != 5 or set(actors) != {'caelan', 'mira', 'rhea', 'lucan', 'ice_reaper'}:
             raise ValueError('Ice Reaper opening has an incorrect cast')

@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "canvas": [
+    384,
+    512
+  ],
+  "anchor": [
+    192,
+    512
+  ],
+  "head_center": [
+    185,
+    132
+  ],
+  "face_center": [
+    180,
+    151
+  ],
+  "eyes": [
+    [
+      149.9,
+      139.1
+    ],
+    [
+      197.2,
+      123.9
+    ]
+  ],
+  "frames": {
+    "neutral_closed": {
+      "file": "frames/neutral_closed.png",
+      "eyes": [
+        [
+          152,
+          143
+        ],
+        [
+          201,
+          126
+        ]
+      ],
+      "openness": 0.0,
+      "source_cell": 0
+    },
+    "strain_begin": {
+      "file": "frames/strain_begin.png",
+      "eyes": [
+        [
+          152,
+          143
+        ],
+        [
+          201,
+          126
+        ]
+      ],
+      "openness": 0.0,
+      "source_cell": 1
+    },
+    "strain_mid": {
+      "file": "frames/strain_mid.png",
+      "eyes": [
+        [
+          152,
+          143
+        ],
+        [
+          201,
+          126
+        ]
+      ],
+      "openness": 0.0,
+      "source_cell": 2
+    },
+    "strain_peak": {
+      "file": "frames/strain_peak.png",
+      "eyes": [
+        [
+          152,
+          143
+        ],
+        [
+          201,
+          126
+        ]
+      ],
+      "openness": 0.0,
+      "source_cell": 3
+    },
+    "opening_01": {
+      "file": "frames/opening_01.png",
+      "eyes": [
+        [
+          151.8,
+          142.5
+        ],
+        [
+          199.3,
+          125.7
+        ]
+      ],
+      "openness": 0.2,
+      "source_cell": 4
+    },
+    "opening_02": {
+      "file": "frames/opening_02.png",
+      "eyes": [
+        [
+          151.0,
+          139.5
+        ],
+        [
+          196.8,
+          124.9
+        ]
+      ],
+      "openness": 0.65,
+      "source_cell": 5
+    },
+    "angry_open": {
+      "file": "frames/angry_open.png",
+      "eyes": [
+        [
+          150.1,
+          139.3
+        ],
+        [
+          197.2,
+          124.3
+        ]
+      ],
+      "openness": 1.0,
+      "source_cell": 6
+    },
+    "angry_hold": {
+      "file": "frames/angry_hold.png",
+      "eyes": [
+        [
+          149.9,
+          139.1
+        ],
+        [
+          197.2,
+          123.9
+        ]
+      ],
+      "openness": 1.0,
+      "source_cell": 7
+    }
+  },
+  "sequence": [
+    "neutral_closed",
+    "strain_begin",
+    "strain_mid",
+    "strain_peak",
+    "opening_01",
+    "opening_02",
+    "angry_open",
+    "angry_hold"
+  ],
+  "ice_front": "ice_front.png",
+  "ice_back": "ice_back.png",
+  "portrait_registration": "Uncropped equal cells; torso continues through canvas bottom. Keep bottom below camera viewport.",
+  "eye_effect_contract": "Open eyes use authored green irises. Synchronize gleam to opening_01 through angry_open using each frame eye centers; no emitted eye light during closed frames.",
+  "ice_contract": "Separate rear blue crystal and translucent cracked front glass. Foreground glass overlaps face and shoulders, with source-authored diagonal blade cracks.",
+  "authored": true,
+  "review": "awaiting_full_scene_review"
+}

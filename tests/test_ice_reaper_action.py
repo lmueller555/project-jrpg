@@ -27,8 +27,8 @@ class IceReaperActionTests(unittest.TestCase):
         self.assertEqual(self.stage.telemetry(9.)['first_shard'],'intercepted')
         self.assertEqual(self.stage.telemetry(14.69)['second_shard'],'forming')
         self.assertEqual(self.stage.telemetry(14.7)['second_shard'],'destroyed')
-        self.assertEqual(self.stage.telemetry(16.29)['prison'],'cracked')
-        self.assertEqual(self.stage.telemetry(16.3)['prison'],'shattered')
+        self.assertEqual(self.stage.telemetry(17.29)['prison'],'cracked')
+        self.assertEqual(self.stage.telemetry(17.3)['prison'],'shattered')
 
     def test_swordsman_arrives_right_of_prison_and_lands_beyond_it(self):
         p=self.stage.actor_positions(7.5)

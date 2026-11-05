@@ -69,7 +69,7 @@ SHOTS = (
 
 
 class IceReaperActionStage:
-    """Render absolute time 5–20 seconds, without advancing mutable state."""
+    """Render 5–21 seconds over the preserved 20-second choreography clock."""
 
     def __init__(self, asset_root, *, strict=False):
         self.asset_root = Path(asset_root)
@@ -187,6 +187,8 @@ class IceReaperActionStage:
                 break
         from ice_reaper_rune import RuneSeal
         self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
+        from rhea_awakening_closeup import RheaAwakeningCloseup
+        self.rhea_closeup = RheaAwakeningCloseup(self.asset_root.parent/'ice_reaper_rhea_closeup')
 
     def validate_assets(self):
         if self.missing_assets:
@@ -203,6 +205,20 @@ class IceReaperActionStage:
     def reset(self):
         # The entire visual state is a pure function of elapsed time.
         pass
+
+    @staticmethod
+    def story_time(elapsed):
+        """Map the 21-second playback onto the existing choreography clock.
+
+        The additional second belongs to Rhea's closed-eye hold. All following
+        action, camera, rune and particle tracks retain their original pacing.
+        Close-up expressions and audio use the real playback clock instead.
+        """
+        if elapsed <= 15.1:
+            return float(elapsed)
+        if elapsed <= 16.1:
+            return 15.1
+        return float(elapsed)-1.
 
     @staticmethod
     def shot(time):
@@ -338,14 +354,15 @@ class IceReaperActionStage:
         return PerspectiveCamera(tuple(position), (-3, 1.-.2*q, 0), 245)
 
     @classmethod
-    def telemetry(cls, time):
+    def telemetry(cls, elapsed):
+        time = cls.story_time(elapsed)
         if time < 8.5:
             prison = 'intact'
         elif time < 16.3:
             prison = 'cracked'
         else:
             prison = 'shattered'
-        return dict(shot=cls.shot(time), time=time,
+        return dict(shot=cls.shot(time), time=elapsed, choreography_time=time,
                     positions={key: list(value) for key, value in cls.actor_positions(time).items()},
                     prison=prison,
                     first_shard='aimed' if time < 6.86 else 'flight' if time < 9.0 else 'intercepted',
@@ -835,26 +852,20 @@ class IceReaperActionStage:
     def _rune(self, canvas, camera, time, reduced):
         self.rune_seal.draw(canvas, camera, time, reduced)
 
-    def _closeup(self, canvas, time):
-        data=self.actors['rhea'];sequence=data['sequences'].get('eyes')
-        if not sequence:return False
-        index=min(len(sequence)-1,int(phase(time,15.1,16.25)*len(sequence)))
-        image=sequence[index][0]
-        # Eyes assets can be authored face inserts or full-body states.  The
-        # manifest marks inserts; otherwise crop a stable head/shoulders region.
-        meta=data['manifest'].get('animations',{}).get('eyes',{})
-        closeup=meta.get('closeup',False) or data['manifest'].get('eyes_closeup',False)
-        if closeup:
-            crop=image
-        else:
-            w,h=image.get_size()
-            crop=image.subsurface((round(w*.25),round(h*.08),round(w*.5),round(h*.43)))
-        surface=self._scale(crop,crop.get_width()*min(420/crop.get_width(),290/crop.get_height()),crop.get_height()*min(420/crop.get_width(),290/crop.get_height()))
-        canvas.blit(surface,surface.get_rect(center=(240,169)))
-        # Close foreground ice edges remain cracked until her own release.
-        for i,x in enumerate((56,83,394,420)):
-            pygame.draw.lines(canvas,'#9ad7f7',False,[(x,15),(x+(-1)**i*14,94),(x-8,173),(x+11,252),(x-4,319)],2)
-        return True
+    def _closeup(self, canvas, elapsed, camera, time, reduced=False):
+        position = self.actor_positions(time)['rhea']
+        projected = camera.project(position)
+        if projected is None:
+            return
+        data = self.actors['rhea']
+        scale = camera.focal*1.85/projected[2]/data['body_pixels']
+        ax, ay = data['anchor']
+        # Match the actual frozen-front full-body drawing's iris registration,
+        # not the foot anchor, so the portrait-to-world pullback has no head jump.
+        eyes = tuple((projected[0]+(x-ax)*scale, projected[1]+(46-ay)*scale)
+                     for x in (55,60))
+        self.rhea_closeup.draw(canvas, elapsed, reduced=reduced,
+                               target_eyes=eyes)
 
     def _loading_insert(self, canvas, time):
         if not 11.4 <= time < 12.3:
@@ -898,11 +909,10 @@ class IceReaperActionStage:
         pygame.draw.circle(canvas,'#d9bd7c',(240,125),3,1)
 
     def draw(self, canvas, elapsed, reduced_motion=False):
-        time=clamp(float(elapsed),5,20)
+        actual_time=clamp(float(elapsed),5,21)
+        time=clamp(self.story_time(actual_time),5,20)
         camera=self.camera(time,reduced_motion)
         self._background(canvas,camera,time)
-        if self.shot(time)=='rhea_awakens' and self._closeup(canvas,time):
-            return
         positions=self.actor_positions(time)
         for actor,position in positions.items():
             if actor!='ice_reaper':self._shadow(canvas,camera,position,.6 if actor=='rhea' else .45)
@@ -929,3 +939,5 @@ class IceReaperActionStage:
             self._foreground_boss(canvas,camera,time)
         self._loading_insert(canvas,time)
         self._scope_overlay(canvas,time)
+        if self.shot(time) == 'rhea_awakens':
+            self._closeup(canvas, actual_time, camera, time, reduced_motion)

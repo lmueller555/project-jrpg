@@ -148,20 +148,26 @@
       "gain": 0.54
     },
     {
+      "id": "ice_creak",
+      "time": 15.45,
+      "file": "assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg",
+      "gain": 0.12
+    },
+    {
       "id": "awakening",
-      "time": 15.6,
+      "time": 16.6,
       "file": "assets/audio/sfx/ice_reaper_rescue/awakening.ogg",
       "gain": 0.34
     },
     {
       "id": "prison_burst",
-      "time": 16.3,
+      "time": 17.3,
       "file": "assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg",
       "gain": 0.58
     },
     {
       "id": "rune_bloom",
-      "time": 16.5,
+      "time": 17.5,
       "file": "assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg",
       "gain": 0.43
     }

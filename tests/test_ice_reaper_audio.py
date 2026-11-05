@@ -51,14 +51,36 @@ class IceReaperAudioTests(unittest.TestCase):
     def test_cues_fire_exactly_once_at_30_and_60_fps(self):
         for fps in (30,60):
             self.audio.reset()
-            self.advance(0,20,fps)
+            self.advance(0,21,fps)
             self.assertEqual([event['id'] for event in self.audio.events],
                              [cue['id'] for cue in CUES])
             for event,cue in zip(self.audio.events,CUES):
                 self.assertGreaterEqual(event['time']+1e-8,cue['time'])
                 self.assertLessEqual(event['time']-cue['time'],1/fps+1e-8)
-            self.audio.update(19.99,20)
+            self.audio.update(20.99,21)
             self.assertEqual(len(self.audio.events),len(CUES))
+
+    def test_extra_closeup_second_preserves_early_cues_and_delays_breakout(self):
+        by_id = {cue['id']: cue for cue in CUES}
+        early = {'caelan_dash':7., 'lucan_dash':7.15, 'fire_slash':8.3,
+                 'prison_crack':8.5, 'shield_impact':9., 'load_shell':11.5,
+                 'close_breech':12.2, 'launcher_fire':14.2, 'shard_explosion':14.7}
+        for identifier, time in early.items():
+            self.assertEqual(by_id[identifier]['time'], time)
+        self.assertEqual(by_id['awakening']['time'], 15.6+1)
+        self.assertEqual(by_id['prison_burst']['time'], 16.3+1)
+        self.assertEqual(by_id['rune_bloom']['time'], 16.5+1)
+        self.assertEqual([cue['time'] for cue in CUES], sorted(cue['time'] for cue in CUES))
+        self.assertTrue(15.1 < by_id['ice_creak']['time'] < 16.4)
+        self.assertLess(by_id['ice_creak']['gain'], .15)
+
+    def test_new_closeup_cue_uses_its_own_asset_directory(self):
+        creak = next(cue for cue in CUES if cue['id']=='ice_creak')
+        crack = next(cue for cue in CUES if cue['id']=='prison_crack')
+        self.assertEqual(Path(self.audio._sound(creak).path).parent.name,
+                         'ice_reaper_rhea_closeup')
+        self.assertEqual(Path(self.audio._sound(crack).path).parent.name,
+                         'ice_reaper_rescue')
 
     def test_pause_and_focus_flag_freeze_channels_without_replaying(self):
         self.audio.update(6.99,7.01)
