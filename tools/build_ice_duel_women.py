@@ -108,9 +108,9 @@ def build():
     reaper+=export('ice_reaper','reaper_views_generated.png',4,2,
         [(f'sword_hold_{name}',[index],view) for index,(name,view) in enumerate(directions)],.38)
     portraits=OUTPUT/'portraits';portraits.mkdir(parents=True,exist_ok=True)
-    portrait=Image.open(SOURCE/'rhea_portrait_generated.png').convert('RGB')
-    portrait=portrait.resize((96,96),Image.Resampling.NEAREST).quantize(colors=128,dither=Image.Dither.NONE).convert('RGB')
-    portrait.save(portraits/'rhea_awakening.png',optimize=True)
+    # Keep the approved glowing-eye portrait intact; the dialogue UI scales it.
+    portrait=Image.open(SOURCE/'rhea_portrait_generated.png')
+    shutil.copyfile(SOURCE/'rhea_portrait_generated.png',portraits/'rhea_awakening.png')
     scene_portrait=ROOT/'assets/story/ice_reaper_opening/portraits/rhea_awakening.png'
     scene_portrait.parent.mkdir(parents=True,exist_ok=True)
     shutil.copyfile(portraits/'rhea_awakening.png',scene_portrait)
@@ -123,8 +123,8 @@ def build():
         references={name:sha(ROOT/name) for name in references},
         operation='Equal-cell extraction, alpha threshold140,128-color registration,fixed nearest scaling,foot registration only; no pose deformation or painted facial features.',
         frames=dict(rhea=rhea,ice_reaper=reaper),
-        portrait=dict(file='portraits/rhea_awakening.png',canvas=[96,96],sha256=sha(portraits/'rhea_awakening.png'),
-                      basis='Approved Rhea design sheet; no prior Rhea dialogue portrait existed'))
+        portrait=dict(file='portraits/rhea_awakening.png',canvas=list(portrait.size),sha256=sha(portraits/'rhea_awakening.png'),
+                      basis='Approved image_gen portrait with green magic filling both eye sockets; copied without pixel changes'))
     (OUTPUT/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
     print(json.dumps(dict(rhea_frames=len(rhea),reaper_frames=len(reaper),portrait=str(portraits/'rhea_awakening.png'))))
 
