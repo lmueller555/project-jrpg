@@ -33,15 +33,16 @@ class RheaSceneAwakening:
 
     def __init__(self, stage):
         self.stage = stage
-        self.expression_root = ROOT/'assets/story/rhea_scene_awakening_study'
-        self.expression_manifest = json.loads((self.expression_root/'manifest.json').read_text())
+        self.expression_root = stage.winter.root
+        self.expression_manifest = dict(stage.winter.awakening)
+        self.expression_manifest.update(canvas=stage.winter.manifest['canvas'],
+                                        anchor=list(stage.winter.data['anchor']),
+                                        frames=stage.winter.expression_entries)
         if tuple(self.expression_manifest['canvas']) != (128, 128):
             raise ValueError('Rhea awakening must use registered full-body scene sprites')
         if tuple(self.expression_manifest['anchor']) != stage.actors['rhea']['anchor']:
             raise ValueError('Rhea awakening must preserve the existing scene anchor')
-        self.expression_images = {
-            name: stage._read_image(self.expression_root/entry['file'])
-            for name, entry in self.expression_manifest['frames'].items()}
+        self.expression_images = stage.winter.expressions
         if set(self.expression_images) != {name for _, name in self.EXPRESSION_TIMES}:
             raise ValueError('Rhea awakening expression sequence is incomplete')
         if any(image.get_size() != (128, 128) for image in self.expression_images.values()):
@@ -106,24 +107,25 @@ class RheaSceneAwakening:
         if elapsed < self.BREAKOUT:
             return self.expression_images[expression], expression, True
         azimuth, _ = self.stage.view_angles('rhea', camera, position, time)
-        entries = self.stage.actors['rhea']['manifest']['animations']
-        choices = [key for key in entries if key.startswith('frozen_')]
-        key = min(choices, key=lambda name: abs((azimuth-entries[name]['view_azimuth_deg']+180)%360-180))
-        if key == 'frozen_front':
-            return self.expression_images['angry_hold'], 'angry_hold', True
-        return self.stage.actors['rhea']['sequences'][key][0][0], key, False
+        image, _, key = self.stage.winter.hold(
+            azimuth, 15.1+elapsed, reduced=getattr(self, '_reduced_motion', False))
+        # Energy drawings already contain solid green eyes. The opening gleam
+        # remains on the pre-breakout authored expression frames only.
+        return image, key, False
 
     def _rhea(self, canvas, camera, position, elapsed, time):
         projected = camera.project(position)
         if projected is None:
             return
         image, name, frontal = self._rhea_image(camera, position, elapsed, time)
-        data = self.stage.actors['rhea']
+        data = self.stage.winter.data
         scale = camera.focal*1.85/projected[2]/data['body_pixels']
         surface = self.stage._scale(image, image.get_width()*scale, image.get_height()*scale)
         ax, ay = data['anchor']
         origin = (round(projected[0]-ax*scale), round(projected[1]-ay*scale))
         canvas.blit(surface, origin)
+        self.stage.winter.draw_energy(canvas, camera, position, 15.1+elapsed,
+                                     reduced=getattr(self, '_reduced_motion', False))
         self.last_draw_trace.append({'actor':'rhea', 'representation':name,
                                      'source_canvas':list(image.get_size())})
         glow, gleam = self.eye_state(elapsed)
@@ -190,6 +192,7 @@ class RheaSceneAwakening:
                     rune=self.stage.rune_seal.state(time))
 
     def draw(self, canvas, elapsed, reduced_motion=False):
+        self._reduced_motion = reduced_motion
         elapsed=max(0.,min(self.DURATION,float(elapsed)))
         time=self.canonical_time(elapsed)
         camera=self.camera(elapsed,reduced_motion)

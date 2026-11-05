@@ -70,6 +70,20 @@ class IceReaperDuel:
                 records[action] = dict(images=images,angle=float(angle),data=data)
                 self.asset_records.append(dict(actor=actor,action=action,drawings=len(images),
                                                source=str(path.relative_to(ROOT))))
+        # Keep validation and capture telemetry pointed at the wardrobe art
+        # actually drawn, while the earlier approved artwork stays on disk.
+        self.authored['rhea'] = {}
+        self.asset_records = [record for record in self.asset_records if record['actor'] != 'rhea']
+        winter = stage.winter
+        for name, sequence in winter.actions.items():
+            self.authored['rhea'][name] = dict(images=[image for image,_ in sequence],
+                angle=winter.manifest['actions'][name]['view_azimuth_deg'], data=winter.data)
+        for name, sequence in winter.energy.items():
+            self.authored['rhea']['cast_hold_'+name] = dict(images=[image for image,_ in sequence],
+                angle=winter.manifest['energy'][name]['view_azimuth_deg'], data=winter.data)
+        for name, record in self.authored['rhea'].items():
+            self.asset_records.append(dict(actor='rhea', action=name, drawings=len(record['images']),
+                                           source=str(winter.path.relative_to(ROOT))))
         from ice_reaper_duel_fx import IceReaperDuelFX
         self.fx = IceReaperDuelFX(stage)
         self.validate_assets()
@@ -247,6 +261,12 @@ class IceReaperDuel:
     def _image(self, actor, camera, position, elapsed):
         action,progress,held=self._action(actor,elapsed)
         azimuth=self._azimuth(actor,camera,position,elapsed)
+        if actor == 'rhea':
+            reduced = getattr(self, '_reduced_motion', False)
+            if action in ('staff_sweep', 'cast'):
+                return self.stage.winter.action(action, azimuth, progress, elapsed,
+                                                reduced=reduced)
+            return self.stage.winter.hold(azimuth, elapsed, reduced=reduced)
         candidates=self.authored.get(actor,{})
         records=[(key,entry) for key,entry in candidates.items() if key==action or key.startswith(action+'_')]
         if records:
@@ -291,8 +311,12 @@ class IceReaperDuel:
         surface=self.stage._scale(image,image.get_width()*scale,image.get_height()*scale)
         ax,ay=data['anchor']
         canvas.blit(surface,(round(projected[0]-ax*scale),round(projected[1]-ay*scale)))
+        if actor == 'rhea':
+            self.stage.winter.draw_energy(canvas, camera, position, elapsed,
+                                         reduced=getattr(self, '_reduced_motion', False))
 
     def draw(self,canvas,elapsed,reduced=False):
+        self._reduced_motion = reduced
         elapsed=max(self.START,min(self.DURATION,float(elapsed)))
         camera=self.camera(elapsed,reduced)
         positions=self.actor_positions(elapsed)

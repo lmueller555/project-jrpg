@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "animations": {
+    "staff_sweep": {
+      "frames": [
+        {
+          "file": "staff_sweep_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_06.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_07.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "staff_sweep_08.png",
+          "duration_ms": 100
+        }
+      ],
+      "view_azimuth_deg": 180.0,
+      "loop": false,
+      "energy_cloth": true,
+      "authored_drawings": 8
+    },
+    "cast": {
+      "frames": [
+        {
+          "file": "cast_01.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_02.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_03.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_04.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_05.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_06.png",
+          "duration_ms": 175
+        }
+      ],
+      "view_azimuth_deg": 0.0,
+      "loop": false,
+      "energy_cloth": true,
+      "authored_drawings": 6
+    },
+    "cast_rear": {
+      "frames": [
+        {
+          "file": "cast_rear_01.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_rear_02.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_rear_03.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_rear_04.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_rear_05.png",
+          "duration_ms": 175
+        },
+        {
+          "file": "cast_rear_06.png",
+          "duration_ms": 175
+        }
+      ],
+      "view_azimuth_deg": 180.0,
+      "loop": false,
+      "energy_cloth": true,
+      "authored_drawings": 6
+    }
+  }
+}

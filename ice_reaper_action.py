@@ -188,6 +188,8 @@ class IceReaperActionStage:
                 break
         from ice_reaper_rune import RuneSeal
         self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
+        from rhea_winter import RheaWinterSprites
+        self.winter = RheaWinterSprites(self._read_image)
         from rhea_scene_awakening import RheaSceneAwakening
         self.awakening = RheaSceneAwakening(self)
         from ice_reaper_duel import IceReaperDuel
@@ -502,6 +504,10 @@ class IceReaperActionStage:
         data = self.actors[actor]
         sequences = data['sequences']
         time = 8. if time is None else time
+        if actor == 'rhea':
+            azimuth, _ = self.view_angles(actor, camera, position, time)
+            image, data, _ = self.winter.hold(azimuth, time)
+            return image, data
         if actor == 'ice_reaper' and time >= 16.3:
             return self._approved_boss_frame(camera, position, time)
         key = self.sequence_key(actor, action, local, duration, camera, position, time)

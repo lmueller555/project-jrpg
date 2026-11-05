@@ -168,6 +168,9 @@ class IceReaperOpening(OpeningCinematic):
         for record, anchor, frames, transitions in sorted(self.actors,
                 key=lambda actor: self.actor_position(actor[0]['id']).y):
             image = self._actor_frame(record['id'], frames, transitions)
+            if record['id'] == 'rhea':
+                image = self.action_stage.winter.opening
+                anchor = self.action_stage.winter.opening_anchor
             scale = record.get('pixel_scale', 1)
             if scale != 1:
                 image = pygame.transform.scale(image, (image.get_width()*scale, image.get_height()*scale))
