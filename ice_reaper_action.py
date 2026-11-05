@@ -132,6 +132,9 @@ class IceReaperActionStage:
                                           anchor=anchor, body_pixels=image.get_bounding_rect().height,
                                           manifest={})
         # Angle-specific art augments action strips without altering their phase.
+        # Retain the approved Reaper artwork before the directional overlay
+        # replaces its ready views. The final shot reuses these exact images.
+        self._approved_boss_sequences = self.actors['ice_reaper']['sequences'].copy()
         for actor, data in self.actors.items():
             folder = self.continuity_root/'actors'/actor
             path = folder/'animation.json'
@@ -451,10 +454,28 @@ class IceReaperActionStage:
             return action
         return 'ready' if 'ready' in sequences else next(iter(sequences))
 
+    def _approved_boss_frame(self, camera, position, time):
+        """Original artwork, selected for the current view without changing it."""
+        azimuth, _ = self.view_angles('ice_reaper', camera, position, time)
+        sequences = self._approved_boss_sequences
+        if abs(azimuth) >= 112.5:
+            # The retained rear drawings depict left quarter, back and right
+            # quarter views. Choose by angle, rather than rotating on a timer.
+            views = (-145., 180., 145.)
+            index = min(range(3), key=lambda i: abs((azimuth-views[i]+180)%360-180))
+            image = sequences['ready_rear'][index][0]
+        elif abs(azimuth) >= 45:
+            image = sequences['ready_side'][min(2, int((abs(azimuth)-45)/30))][0]
+        else:
+            image = sequences['recharge'][-1][0]
+        return image, self.actors['ice_reaper']
+
     def _sequence(self, actor, action, local, duration, camera, position, *, time=None):
         data = self.actors[actor]
         sequences = data['sequences']
         time = 8. if time is None else time
+        if actor == 'ice_reaper' and time >= 16.3:
+            return self._approved_boss_frame(camera, position, time)
         key = self.sequence_key(actor, action, local, duration, camera, position, time)
         sequence = sequences[key]
         if duration:

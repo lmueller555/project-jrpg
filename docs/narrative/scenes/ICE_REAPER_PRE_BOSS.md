@@ -134,6 +134,11 @@ she breaks free, then turns toward the Reaper. The final camera follows a real
 path behind the Reaper's shoulders, with her image projected from her world
 position rather than sliding across the screen.
 
+Lucan remains kneeling and facing the Reaper through his shield raise and
+impact; his established late held views are preserved. After Rhea breaks free,
+the Reaper uses the earlier approved artwork with the current camera,
+projection, environment and timing unchanged.
+
 The environment uses one periodic panorama and fixed city, woodland and ruin
 locations. Camera direction and projection determine their visibility; shot
 labels no longer select different geography or crossfade between landscapes.
@@ -147,9 +152,9 @@ Pause and focus loss freeze the same visual clock and soundtrack.
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [twenty-second clip](../../reviews/ice_reaper_continuity/preview.mp4),
-[keyframes](../../reviews/ice_reaper_continuity/keyframes.png) and
-[verification record](../../reviews/ice_reaper_continuity/verification.json).
+Review the [twenty-second clip](../../reviews/ice_reaper_guard_correction/preview.mp4),
+[keyframes](../../reviews/ice_reaper_guard_correction/keyframes.png) and
+[verification record](../../reviews/ice_reaper_guard_correction/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:

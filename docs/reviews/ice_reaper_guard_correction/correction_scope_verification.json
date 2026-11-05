@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "comparison": "Pre-correction PR108 runtime baseline",
+  "camera_samples_unchanged": 899,
+  "camera_track_sha256": "ffe45e8572c8a46906c93680237fe9009edbc775a8f894f3f92c2f0bcc919447",
+  "protected_method_hashes": {
+    "camera": "46f43f32001a0028f5906284614a0f3a0c9a0ac0deb2c23e665b39bc4546a7eb",
+    "world_landmarks": "2f9fe2f4a336960ac83e77d977bb8d25c27315977b0b07d6b53a2f3a2de61ab9",
+    "_background": "dcfda43273eddff1a4ed2f7292951d4d38905a4aa4161f609d069fd968ade5ae",
+    "_panoramic_sky": "d6a1e0645b08748610e73f894bfc6b9d857e898a9601c215cb2aa99e6bf074a2",
+    "_ground_plane": "72dd865daa7a06732cefd5aed483db4a1110620d396de298e1eea4f8d9eb3bfd",
+    "_projected_boss": "90c3f4abbefd7901223cbb843d79c58ee2edad004895a71ba08e3b9cb5c87863"
+  },
+  "environment_hashes_unchanged": {
+    "5.5": "37b30c9aab780a5ffdb640e402fc5655b0c0deb1de38359c02d339872c952201",
+    "8.5": "6a629425a0e5c398865795e6a4460f91d7bd5dd5c8e24543554fde7f629ec323",
+    "10.4": "69a7a4a219454be85c04bbb502f702a99cabe566bf56d63f022298bd5eff043d",
+    "11.0": "77630cbb10c626a366741678a7fdc00a3e41fb6f5ffe9ba922f5685bc3b79f95",
+    "13.8": "7a91fbe7730bdbae31036b581229dac0a8a1f67f989a45a947191bcaf6f39f3b",
+    "16.7": "8fb2085d0a0b131c1810af2574ab7cf612291f59947ddf96670f4b31ff3f64ca",
+    "17.2": "bfa7316fe3d2c26cd8060fb57da6b1b311134b74a471ead780d0ce2224edd58b",
+    "18.3": "80f3cee14b0feba12b5ea4ee233d97c69c8428b32bec4b5f68e1b27603886cbe",
+    "19.0": "d1b5def497daf301f765519293df7179c07b7975e33783e57bab41258fdada6a",
+    "19.8": "003eab4dd8562cdaef9b6557418cf48207a31d0c45bcc2d3936afbd08ed3266a"
+  },
+  "lucan_ending_unchanged": {
+    "10.0": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "454840cc383df97033eb94b29d0d79c3a7fad7d9731616a9d63bd3923bdc7bac"
+    },
+    "11.0": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "32401ff55782804863a55d1dbedf8cec1093e00c0c1f5987ad4782bdb5601beb"
+    },
+    "16.7": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "1803eb0ca64e9254e784d867a8e91e5b2ea4135bc6a1037d83571fb719bb2826"
+    },
+    "17.2": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "1803eb0ca64e9254e784d867a8e91e5b2ea4135bc6a1037d83571fb719bb2826"
+    },
+    "18.3": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "fc54037741128e3ee30e51cfd61bb0b1e8a8724cc2cc22911fe347b11d4f9461"
+    },
+    "19.0": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "c86eb5973003308504db9d2b0aebd2d1d27d5f6ad31e369bee1bf448de2dc64f"
+    },
+    "19.8": {
+      "heading": [
+        0.6551197523852582,
+        0.0,
+        -0.7555250558616028
+      ],
+      "position": [
+        -2.1662500000000002,
+        0.0,
+        -1.35
+      ],
+      "frame": "c86eb5973003308504db9d2b0aebd2d1d27d5f6ad31e369bee1bf448de2dc64f"
+    }
+  },
+  "restored_approved_reaper_art": {
+    "16.3": "6844ede5dba7fedecaf4e2801bc39396978fd1a2ae774407084ef11a0ae6c69d",
+    "17.2": "6844ede5dba7fedecaf4e2801bc39396978fd1a2ae774407084ef11a0ae6c69d",
+    "17.8": "6844ede5dba7fedecaf4e2801bc39396978fd1a2ae774407084ef11a0ae6c69d",
+    "18.3": "9ee9ee4342a81f48656df45716e0d22bd77a4d28c4be3ba6915913e86e70f7ce",
+    "19.0": "76c4136fb9ed75a843ffaa5191779c764ba435e5964ade7896cbd3135b2f1ca6",
+    "19.8": "77825ea152d89b2a2bc756b8fe12d522294d18f508056b254b437e9bce4d89e4"
+  },
+  "note": "Camera, environment and projection checks use the direct runtime; movie comparisons include lossy encoding."
+}

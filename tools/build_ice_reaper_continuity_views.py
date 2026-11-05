@@ -6,6 +6,7 @@ scaling are performed. Each view and action frame has its own authored source ce
 from __future__ import annotations
 import hashlib
 import json
+import sys
 from pathlib import Path
 from statistics import median
 from collections import deque
@@ -13,6 +14,7 @@ import numpy as np
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
 SOURCE=ROOT/'assets/source/cinematics/ice_reaper_continuity'
 TARGET=ROOT/'assets/story/ice_reaper_continuity/actors'
 VIEWS=('front','front_right','right','rear_right','rear','rear_left','left','front_left')
@@ -132,6 +134,9 @@ def build():
         record=dict(version=1,operation='Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.',sources={name:sha(SOURCE/name) for name in sources.values()},frames=provenance[actor])
         (directory/'provenance.json').write_text(json.dumps(record,indent=2)+'\n')
     print(json.dumps({actor:sum(len(a['frames']) for a in m['animations'].values()) for actor,m in manifests.items()}))
+    # Keep the user-requested enemy-facing guard when rebuilding the atlas.
+    from tools.build_lucan_guard_correction import build as correct_lucan_guard
+    correct_lucan_guard()
 
 if __name__=='__main__':
     build()
