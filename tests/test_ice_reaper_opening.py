@@ -205,7 +205,7 @@ class IceReaperOpeningTests(unittest.TestCase):
         self.assertEqual((caelan['start'], caelan['end']), (23.2, 24.))
         self.assertEqual(self.scene.data['speakers']['rhea']['portrait'], 'ice_reaper_rhea')
         self.assertEqual(self.scene.data['speakers']['rhea']['portrait_file'],
-                         'portraits/rhea_awakening.png')
+                         'portraits/rhea_awakening_shawl.png')
         for time, text in ((22., rhea['text']), (23.5, caelan['text'])):
             self.scene.elapsed = time
             self.assertEqual(self.scene.dialogue['text'], text)

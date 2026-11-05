@@ -108,12 +108,15 @@ def build():
     reaper+=export('ice_reaper','reaper_views_generated.png',4,2,
         [(f'sword_hold_{name}',[index],view) for index,(name,view) in enumerate(directions)],.38)
     portraits=OUTPUT/'portraits';portraits.mkdir(parents=True,exist_ok=True)
-    # Keep the approved glowing-eye portrait intact; the dialogue UI scales it.
-    portrait=Image.open(SOURCE/'rhea_portrait_generated.png')
-    shutil.copyfile(SOURCE/'rhea_portrait_generated.png',portraits/'rhea_awakening.png')
-    scene_portrait=ROOT/'assets/story/ice_reaper_opening/portraits/rhea_awakening.png'
-    scene_portrait.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copyfile(portraits/'rhea_awakening.png',scene_portrait)
+    # Retain the previous portrait alongside the active winter-shawl variant.
+    for source_name, filename in (
+            ('rhea_portrait_generated.png', 'rhea_awakening.png'),
+            ('rhea_shawl_portrait_generated.png', 'rhea_awakening_shawl.png')):
+        shutil.copyfile(SOURCE/source_name, portraits/filename)
+        scene_portrait=ROOT/'assets/story/ice_reaper_opening/portraits'/filename
+        scene_portrait.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(portraits/filename,scene_portrait)
+    portrait=Image.open(SOURCE/'rhea_shawl_portrait_generated.png')
     sources={str(p.relative_to(ROOT)):sha(p) for p in sorted(SOURCE.glob('*_generated.png'))}
     references=['assets/source/companions/rhea/design_sheet.png',
         'assets/story/ice_reaper_continuity/actors/rhea/frozen_front_01.png',
@@ -123,10 +126,10 @@ def build():
         references={name:sha(ROOT/name) for name in references},
         operation='Equal-cell extraction, alpha threshold140,128-color registration,fixed nearest scaling,foot registration only; no pose deformation or painted facial features.',
         frames=dict(rhea=rhea,ice_reaper=reaper),
-        portrait=dict(file='portraits/rhea_awakening.png',canvas=list(portrait.size),sha256=sha(portraits/'rhea_awakening.png'),
-                      basis='Approved image_gen portrait with green magic filling both eye sockets; copied without pixel changes'))
+        portrait=dict(file='portraits/rhea_awakening_shawl.png',canvas=list(portrait.size),sha256=sha(portraits/'rhea_awakening_shawl.png'),
+                      basis='Approved front-facing winter-shawl portrait with flaring long hair and glowing green eyes; copied without pixel changes'))
     (OUTPUT/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
-    print(json.dumps(dict(rhea_frames=len(rhea),reaper_frames=len(reaper),portrait=str(portraits/'rhea_awakening.png'))))
+    print(json.dumps(dict(rhea_frames=len(rhea),reaper_frames=len(reaper),portrait=str(portraits/'rhea_awakening_shawl.png'))))
 
 
 if __name__=='__main__':build()

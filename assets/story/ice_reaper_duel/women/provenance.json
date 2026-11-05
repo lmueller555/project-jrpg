@@ -8,7 +8,8 @@
     "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_rear_generated.png": "843f21b8f71951b88943bfd5e40b544f36bd5ff635fcf9ee42f1403e2e9943eb",
     "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_views_generated.png": "3dbbec167d7f28ca4309df3cd407cca3b8c11a9c7b91064f0c918bc505c447d6",
     "assets/source/cinematics/ice_reaper_duel/women/rhea_portrait_generated.png": "893d3ee4922f045edad361c2d809b709db4de4b87da3b676060723cb5dcc12dd",
-    "assets/source/cinematics/ice_reaper_duel/women/rhea_sweep_corrected_generated.png": "53f0539bba5e1468933aa73d461d6de6440f2a2fe8388b02a84481ed4d1d7af4"
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_sweep_corrected_generated.png": "53f0539bba5e1468933aa73d461d6de6440f2a2fe8388b02a84481ed4d1d7af4",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_shawl_portrait_generated.png": "a1b7e41dff37b9ebcd4caba9d45acbba426c0d90fdca79045e6ad6bb3d93c178"
   },
   "references": {
     "assets/source/companions/rhea/design_sheet.png": "eec0ae5defba350464ac7e420bb914445b3a784d411697a2200568b8bee41f78",
@@ -1482,12 +1483,12 @@
     ]
   },
   "portrait": {
-    "file": "portraits/rhea_awakening.png",
+    "file": "portraits/rhea_awakening_shawl.png",
     "canvas": [
       1254,
       1254
     ],
-    "sha256": "893d3ee4922f045edad361c2d809b709db4de4b87da3b676060723cb5dcc12dd",
-    "basis": "Approved image_gen portrait with green magic filling both eye sockets; copied without pixel changes"
+    "sha256": "a1b7e41dff37b9ebcd4caba9d45acbba426c0d90fdca79045e6ad6bb3d93c178",
+    "basis": "Approved front-facing winter-shawl portrait with flaring long hair and glowing green eyes; copied without pixel changes"
   }
 }
