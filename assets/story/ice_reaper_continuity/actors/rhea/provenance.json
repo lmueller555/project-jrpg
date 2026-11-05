@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
+  "sources": {
+    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
+    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
+    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
+    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
+    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
+    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
+    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
+    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473"
+  },
+  "frames": [
+    {
+      "file": "frozen_front_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        362,
+        181,
+        724
+      ],
+      "sha256": "2ff5e1f78e86828816d4427498517ec2c1bc2761e043a350c87ffd21e8d705b3",
+      "source_content_bounds": [
+        42,
+        62,
+        152,
+        291
+      ],
+      "scale": 0.3537117903930131,
+      "foot_source_x": 96.0,
+      "registration": [
+        45,
+        35
+      ]
+    },
+    {
+      "file": "release_front_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 16,
+      "source_box": [
+        0,
+        724,
+        181,
+        1086
+      ],
+      "sha256": "2ab43bc91650d1798fb9e0cafcc5a89af59a00b8e175ad2aa2a140d39c09af36",
+      "source_content_bounds": [
+        14,
+        47,
+        174,
+        263
+      ],
+      "scale": 0.375,
+      "foot_source_x": 94.0,
+      "registration": [
+        34,
+        35
+      ]
+    },
+    {
+      "file": "frozen_front_right_01.png",
+      "source": "front_right_corrections_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        0,
+        724,
+        724,
+        1448
+      ],
+      "sha256": "f45bc5a1b834c7bc7f494666019ec44c57e54607729f711978a630bc49f38a93",
+      "source_content_bounds": [
+        214,
+        56,
+        515,
+        651
+      ],
+      "scale": 0.1361344537815126,
+      "foot_source_x": 342.0,
+      "registration": [
+        47,
+        35
+      ]
+    },
+    {
+      "file": "release_front_right_01.png",
+      "source": "front_right_corrections_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        0,
+        1448,
+        724,
+        2172
+      ],
+      "sha256": "2168b1cbe0a04dec32078dd50a2160e6ca84e219ad24d1847a910a5a052c5143",
+      "source_content_bounds": [
+        101,
+        56,
+        581,
+        652
+      ],
+      "scale": 0.13590604026845637,
+      "foot_source_x": 376.0,
+      "registration": [
+        27,
+        35
+      ]
+    },
+    {
+      "file": "frozen_right_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        362,
+        362,
+        543,
+        724
+      ],
+      "sha256": "5c9388033ccc5ec37507406afa4f33c2c6e7dd65a7c33bf22d6a16106639873b",
+      "source_content_bounds": [
+        35,
+        63,
+        136,
+        291
+      ],
+      "scale": 0.35526315789473684,
+      "foot_source_x": 89.0,
+      "registration": [
+        45,
+        35
+      ]
+    },
+    {
+      "file": "release_right_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 18,
+      "source_box": [
+        362,
+        724,
+        543,
+        1086
+      ],
+      "sha256": "3384c84015512f0c2e8510925fc99ce9dda2ae192654dc64f49d56d066b1dc16",
+      "source_content_bounds": [
+        16,
+        47,
+        149,
+        262
+      ],
+      "scale": 0.3767441860465116,
+      "foot_source_x": 91.0,
+      "registration": [
+        36,
+        35
+      ]
+    },
+    {
+      "file": "frozen_rear_right_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        543,
+        362,
+        724,
+        724
+      ],
+      "sha256": "5f0d5db57745666fcaeb1e0a5d025524876275e3d1d9cf45cd274c2188e6bee7",
+      "source_content_bounds": [
+        37,
+        64,
+        131,
+        291
+      ],
+      "scale": 0.3568281938325991,
+      "foot_source_x": 85.0,
+      "registration": [
+        47,
+        35
+      ]
+    },
+    {
+      "file": "release_rear_right_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 19,
+      "source_box": [
+        543,
+        724,
+        724,
+        1086
+      ],
+      "sha256": "fd219727414c4c0cde61084ae519241a30e427b91cbfe85ab02cf574060bd720",
+      "source_content_bounds": [
+        15,
+        51,
+        158,
+        261
+      ],
+      "scale": 0.38571428571428573,
+      "foot_source_x": 77.0,
+      "registration": [
+        40,
+        35
+      ]
+    },
+    {
+      "file": "frozen_rear_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        724,
+        362,
+        905,
+        724
+      ],
+      "sha256": "3c8bf607a77876babd76e661e8443758f90047b987897dad93191367635b59be",
+      "source_content_bounds": [
+        34,
+        62,
+        140,
+        291
+      ],
+      "scale": 0.3537117903930131,
+      "foot_source_x": 91.0,
+      "registration": [
+        44,
+        35
+      ]
+    },
+    {
+      "file": "release_rear_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 20,
+      "source_box": [
+        724,
+        724,
+        905,
+        1086
+      ],
+      "sha256": "0f97e28a0107600869c3edb7da81c647b25d0418e17afc9f6375d7751b15acf1",
+      "source_content_bounds": [
+        26,
+        50,
+        175,
+        262
+      ],
+      "scale": 0.38207547169811323,
+      "foot_source_x": 91.0,
+      "registration": [
+        39,
+        35
+      ]
+    },
+    {
+      "file": "frozen_rear_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        905,
+        362,
+        1086,
+        724
+      ],
+      "sha256": "1dff883e500bbf02a64eacdf9701d35738b76be9efc227850032b823e8eb66da",
+      "source_content_bounds": [
+        38,
+        64,
+        139,
+        290
+      ],
+      "scale": 0.3584070796460177,
+      "foot_source_x": 90.0,
+      "registration": [
+        45,
+        35
+      ]
+    },
+    {
+      "file": "release_rear_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 21,
+      "source_box": [
+        905,
+        724,
+        1086,
+        1086
+      ],
+      "sha256": "e0432444cb396d36d0b508e81a7049ac3606f23084d6f0f5ffd8bd4a1f9c588f",
+      "source_content_bounds": [
+        33,
+        48,
+        164,
+        261
+      ],
+      "scale": 0.38028169014084506,
+      "foot_source_x": 88.0,
+      "registration": [
+        43,
+        35
+      ]
+    },
+    {
+      "file": "frozen_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 14,
+      "source_box": [
+        1086,
+        362,
+        1267,
+        724
+      ],
+      "sha256": "10483cbb9dca9af667904900c8ac05d20e87e2388967fd07f7c6f27367ec8b83",
+      "source_content_bounds": [
+        39,
+        62,
+        134,
+        291
+      ],
+      "scale": 0.3537117903930131,
+      "foot_source_x": 86.0,
+      "registration": [
+        47,
+        35
+      ]
+    },
+    {
+      "file": "release_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 22,
+      "source_box": [
+        1086,
+        724,
+        1267,
+        1086
+      ],
+      "sha256": "37e0d65c0281a3e5c4af056a84ba03b8afc33fdd520812c2380c784fa6084001",
+      "source_content_bounds": [
+        22,
+        47,
+        157,
+        262
+      ],
+      "scale": 0.3767441860465116,
+      "foot_source_x": 89.0,
+      "registration": [
+        39,
+        35
+      ]
+    },
+    {
+      "file": "frozen_front_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 15,
+      "source_box": [
+        1267,
+        362,
+        1448,
+        724
+      ],
+      "sha256": "0761b7b1412c92037871f08a4c0e0e8da0ae495c1e8a718ace740fb305fb36a0",
+      "source_content_bounds": [
+        31,
+        62,
+        137,
+        291
+      ],
+      "scale": 0.3537117903930131,
+      "foot_source_x": 82.0,
+      "registration": [
+        46,
+        35
+      ]
+    },
+    {
+      "file": "release_front_left_01.png",
+      "source": "women_views_generated.png",
+      "source_cell": 23,
+      "source_box": [
+        1267,
+        724,
+        1448,
+        1086
+      ],
+      "sha256": "6553c4cd010a6fcc679548d37b8d072652f702bb23d9702c0012d6c93faae030",
+      "source_content_bounds": [
+        0,
+        47,
+        162,
+        263
+      ],
+      "scale": 0.375,
+      "foot_source_x": 84.5,
+      "registration": [
+        32,
+        35
+      ]
+    }
+  ]
+}

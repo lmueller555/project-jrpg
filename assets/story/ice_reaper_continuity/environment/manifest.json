@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "panorama": {
+    "file": "panorama.png",
+    "canvas": [
+      3072,
+      768
+    ],
+    "horizontal_degrees": 360,
+    "horizon_y": 0.66,
+    "cloud_horizon_y": 0.54,
+    "above_horizon_degrees": 80,
+    "below_horizon_degrees": 40,
+    "seam_join_columns": 64,
+    "contains_castle": false
+  },
+  "landmarks": {
+    "castle": {
+      "file": "castle.png",
+      "canvas": [
+        552,
+        512
+      ],
+      "anchor": [
+        276,
+        511
+      ],
+      "source_cell": [
+        0,
+        0,
+        790,
+        724
+      ],
+      "trim_bounds": [
+        16,
+        13,
+        768,
+        711
+      ]
+    },
+    "forest": {
+      "file": "forest.png",
+      "canvas": [
+        464,
+        512
+      ],
+      "anchor": [
+        232,
+        511
+      ],
+      "source_cell": [
+        790,
+        0,
+        1435,
+        724
+      ],
+      "trim_bounds": [
+        23,
+        28,
+        615,
+        681
+      ]
+    },
+    "ruins": {
+      "file": "ruins.png",
+      "canvas": [
+        683,
+        512
+      ],
+      "anchor": [
+        341,
+        511
+      ],
+      "source_cell": [
+        1435,
+        0,
+        2172,
+        724
+      ],
+      "trim_bounds": [
+        23,
+        148,
+        719,
+        670
+      ]
+    }
+  },
+  "sources": [
+    {
+      "file": "assets/source/cinematics/ice_reaper_continuity/environment/panorama_generated.png",
+      "sha256": "181bca6b398cfde344fc54ce5add437a3eab93c739f91e00f706fca8bdb20956"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_continuity/environment/landmarks_generated.png",
+      "sha256": "06af159d6b474489031e708c9a9f0f97f4139835e894f72ffd4c0231fbe2ef06"
+    }
+  ],
+  "operations": [
+    "Image-generated panorama and isolated landmark atlas use approved scenery references.",
+    "Generated source PNGs retained unchanged.",
+    "Nearest-neighbour panorama registration to 3072x768.",
+    "Symmetric 64-column overlap edge blend makes the panorama periodic.",
+    "Landmark transparent-cell crop, alpha threshold 40 and nearest registration to 512px height.",
+    "No landmarks are baked into the panoramic sky and mountain texture."
+  ],
+  "review_status": "awaiting_user_review"
+}

@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "actor": "ice_reaper",
+  "canvas": [
+    192,
+    192
+  ],
+  "anchor": [
+    96,
+    172
+  ],
+  "animations": {
+    "ready_front": {
+      "frames": [
+        {
+          "file": "ready_front_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_front_right": {
+      "frames": [
+        {
+          "file": "ready_front_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 45,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_right": {
+      "frames": [
+        {
+          "file": "ready_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_rear_right": {
+      "frames": [
+        {
+          "file": "ready_rear_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 135,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_rear": {
+      "frames": [
+        {
+          "file": "ready_rear_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_rear_left": {
+      "frames": [
+        {
+          "file": "ready_rear_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -135,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_left": {
+      "frames": [
+        {
+          "file": "ready_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -90,
+      "held_view": true,
+      "loop": true
+    },
+    "ready_front_left": {
+      "frames": [
+        {
+          "file": "ready_front_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -45,
+      "held_view": true,
+      "loop": true
+    }
+  },
+  "authored": true,
+  "source_art_review": "awaiting_user_review"
+}

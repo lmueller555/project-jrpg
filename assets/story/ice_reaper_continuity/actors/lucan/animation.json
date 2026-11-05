@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "animations": {
+    "hold_brace_front": {
+      "frames": [
+        {
+          "file": "hold_brace_front_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_front_right": {
+      "frames": [
+        {
+          "file": "hold_brace_front_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 45,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_right": {
+      "frames": [
+        {
+          "file": "hold_brace_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_rear_right": {
+      "frames": [
+        {
+          "file": "hold_brace_rear_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 135,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_rear": {
+      "frames": [
+        {
+          "file": "hold_brace_rear_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_rear_left": {
+      "frames": [
+        {
+          "file": "hold_brace_rear_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -135,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_left": {
+      "frames": [
+        {
+          "file": "hold_brace_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -90,
+      "held_view": true,
+      "loop": true
+    },
+    "hold_brace_front_left": {
+      "frames": [
+        {
+          "file": "hold_brace_front_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -45,
+      "held_view": true,
+      "loop": true
+    },
+    "dash_rear": {
+      "frames": [
+        {
+          "file": "dash_rear_01.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_rear_02.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_rear_03.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_rear_04.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_rear_05.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_rear_06.png",
+          "duration_ms": 80
+        }
+      ],
+      "view_azimuth_deg": 160,
+      "held_view": false,
+      "loop": false
+    },
+    "brace_rear_left": {
+      "frames": [
+        {
+          "file": "brace_rear_left_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_06.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_07.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_left_08.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": -120,
+      "held_view": false,
+      "loop": false
+    },
+    "impact_rear_left": {
+      "frames": [
+        {
+          "file": "impact_rear_left_01.png",
+          "duration_ms": 117
+        },
+        {
+          "file": "impact_rear_left_02.png",
+          "duration_ms": 117
+        },
+        {
+          "file": "impact_rear_left_03.png",
+          "duration_ms": 117
+        },
+        {
+          "file": "impact_rear_left_04.png",
+          "duration_ms": 117
+        },
+        {
+          "file": "impact_rear_left_05.png",
+          "duration_ms": 117
+        },
+        {
+          "file": "impact_rear_left_06.png",
+          "duration_ms": 117
+        }
+      ],
+      "view_azimuth_deg": -110,
+      "held_view": false,
+      "loop": false
+    }
+  },
+  "authored": true,
+  "source_art_review": "awaiting_user_review"
+}

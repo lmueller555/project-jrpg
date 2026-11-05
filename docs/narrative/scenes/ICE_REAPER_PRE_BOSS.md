@@ -118,6 +118,26 @@ hovering overhead, preparing to launch it.
 At twenty seconds the Gallery preview completes without starting combat or
 advancing the saved journey. The full planned cinematic remains 45 seconds.
 
+
+### Rescue continuity and interception polish
+
+The first shard is aimed at Rhea's upper body, not at Lucan. His raised shield
+intersects that same ray before it reaches the prison. The release lowers with
+the Reaper's arm, producing a shallower upper-right-to-lower-left approach.
+Lucan's longer dash ends on the enemy-facing side of Rhea; his shield, pointed
+shard tip, collision flash and fragments share the same contact point.
+
+Actor headings are fixed in world space. Signed camera angles select matching
+authored front, side, three-quarter and rear views without swapping weapon
+hands or resetting an action's phase. Frozen Rhea keeps facing the party until
+she breaks free, then turns toward the Reaper. The final camera follows a real
+path behind the Reaper's shoulders, with her image projected from her world
+position rather than sliding across the screen.
+
+The environment uses one periodic panorama and fixed city, woodland and ruin
+locations. Camera direction and projection determine their visibility; shot
+labels no longer select different geography or crossfade between landscapes.
+
 Reduced Motion replaces the animated camera moves with static compositions,
 removes shake and hovering, and fades the brush instead of sweeping it aside.
 Pause and focus loss freeze the same visual clock and soundtrack.
@@ -127,9 +147,9 @@ Pause and focus loss freeze the same visual clock and soundtrack.
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [twenty-second clip](../../reviews/ice_reaper_rescue/preview.mp4),
-[keyframes](../../reviews/ice_reaper_rescue/keyframes.png) and
-[verification record](../../reviews/ice_reaper_rescue/verification.json).
+Review the [twenty-second clip](../../reviews/ice_reaper_continuity/preview.mp4),
+[keyframes](../../reviews/ice_reaper_continuity/keyframes.png) and
+[verification record](../../reviews/ice_reaper_continuity/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:

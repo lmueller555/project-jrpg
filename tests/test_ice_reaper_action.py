@@ -46,7 +46,7 @@ class IceReaperActionTests(unittest.TestCase):
             camera=self.stage.camera(time)
             x,y,depth=camera.project(camera.target)
             self.assertAlmostEqual(x,240);self.assertAlmostEqual(y,158)
-        self.assertEqual(self.stage._action('ice_reaper',19)[0],'ready_rear')
+        self.assertEqual(self.stage._action('ice_reaper',19)[0],'recharge')
 
     def test_continuous_camera_boundaries_do_not_change_lens_or_position(self):
         for boundary in (9.5,11.,12.8,17.2):

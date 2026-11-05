@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
+  "sources": {
+    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
+    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
+    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
+    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
+    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
+    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
+    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
+    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473"
+  },
+  "frames": [
+    {
+      "file": "ready_front_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "sha256": "a9224313715750682267c1de1d8f6ac47068557e05a24e1e9ea3e3e2cfc793a6",
+      "source_content_bounds": [
+        82,
+        26,
+        379,
+        400
+      ],
+      "scale": 0.3877005347593583,
+      "foot_source_x": 227.0,
+      "registration": [
+        40,
+        27
+      ]
+    },
+    {
+      "file": "ready_front_right_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "sha256": "a5da03e1121368686386a47498488518487553b2f406323a7237ce6cfccdb13a",
+      "source_content_bounds": [
+        93,
+        24,
+        362,
+        397
+      ],
+      "scale": 0.38873994638069703,
+      "foot_source_x": 204.0,
+      "registration": [
+        53,
+        27
+      ]
+    },
+    {
+      "file": "ready_right_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "09499388890f88bb58279071ecb43d772de589a08206c2a498f2fa5264b280d2",
+      "source_content_bounds": [
+        134,
+        24,
+        266,
+        397
+      ],
+      "scale": 0.38873994638069703,
+      "foot_source_x": 218.0,
+      "registration": [
+        63,
+        27
+      ]
+    },
+    {
+      "file": "ready_rear_right_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "sha256": "dca394cf7ed87b4fd1b95caa6c3e94a991e24edb7ee56567adaef0c5ba46fdae",
+      "source_content_bounds": [
+        98,
+        24,
+        328,
+        398
+      ],
+      "scale": 0.3877005347593583,
+      "foot_source_x": 236.0,
+      "registration": [
+        42,
+        27
+      ]
+    },
+    {
+      "file": "ready_rear_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "sha256": "8878b053894819893df4241e8d46d78cee5e5a209d550582b48c0ec77ced0d9e",
+      "source_content_bounds": [
+        76,
+        25,
+        377,
+        396
+      ],
+      "scale": 0.3908355795148248,
+      "foot_source_x": 227.0,
+      "registration": [
+        37,
+        27
+      ]
+    },
+    {
+      "file": "ready_rear_left_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "389fbd044e5c7f1410e2a2b9f1131830868238dd5e89982a86e9a8fc9e6c0240",
+      "source_content_bounds": [
+        135,
+        21,
+        361,
+        399
+      ],
+      "scale": 0.3835978835978836,
+      "foot_source_x": 218.0,
+      "registration": [
+        64,
+        27
+      ]
+    },
+    {
+      "file": "ready_left_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "a06c80af216dd4cf67c59fdf338e99e4d8386172a80ecdc172b731590e33158e",
+      "source_content_bounds": [
+        170,
+        26,
+        331,
+        400
+      ],
+      "scale": 0.3877005347593583,
+      "foot_source_x": 218.0,
+      "registration": [
+        77,
+        27
+      ]
+    },
+    {
+      "file": "ready_front_left_01.png",
+      "source": "boss_views_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "sha256": "5ae4f8e46d1cea54f87eb9e9899ec1cf86fe9f244d27d873dddbfe285d4169c2",
+      "source_content_bounds": [
+        96,
+        24,
+        372,
+        401
+      ],
+      "scale": 0.38461538461538464,
+      "foot_source_x": 221.0,
+      "registration": [
+        48,
+        27
+      ]
+    }
+  ]
+}

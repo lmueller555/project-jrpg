@@ -1,0 +1,688 @@
+{
+  "version": 1,
+  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
+  "sources": {
+    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
+    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
+    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
+    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
+    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
+    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
+    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
+    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473"
+  },
+  "frames": [
+    {
+      "file": "hold_brace_front_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "sha256": "c9854c2a9f35f611ee12ab4e2d84b16bf8f6881a7c93d5c11f2b28de1a1f69d2",
+      "source_content_bounds": [
+        21,
+        144,
+        211,
+        360
+      ],
+      "scale": 0.3148148148148148,
+      "foot_source_x": 122.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_front_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "sha256": "971fb27f6b64137921aa825440a1162ef5bdc89c6cb142103ef11c1f6c10e79b",
+      "source_content_bounds": [
+        26,
+        146,
+        213,
+        360
+      ],
+      "scale": 0.3177570093457944,
+      "foot_source_x": 121.0,
+      "registration": [
+        34,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "sha256": "87f12a4f89d0282fce5dd0468e1b597520d18ffa1b731f4ea3a77535df5c89d0",
+      "source_content_bounds": [
+        52,
+        142,
+        177,
+        364
+      ],
+      "scale": 0.3063063063063063,
+      "foot_source_x": 108.0,
+      "registration": [
+        47,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "sha256": "8655921f1cc7b6c565ee334243dd526bff69581222fa257e172c9bb8861765a9",
+      "source_content_bounds": [
+        41,
+        146,
+        193,
+        360
+      ],
+      "scale": 0.3177570093457944,
+      "foot_source_x": 115.0,
+      "registration": [
+        40,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "sha256": "db431bd97b10243e562ef50b87155d9c00ebe0ba02e08b78f7b85512f906d60b",
+      "source_content_bounds": [
+        23,
+        141,
+        200,
+        361
+      ],
+      "scale": 0.3090909090909091,
+      "foot_source_x": 113.0,
+      "registration": [
+        36,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "292e07a98c32d4683a3463842ddf18f44739d8ffad534863c057a28674078288",
+      "source_content_bounds": [
+        25,
+        144,
+        195,
+        360
+      ],
+      "scale": 0.3148148148148148,
+      "foot_source_x": 115.0,
+      "registration": [
+        36,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 14,
+      "source_box": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "sha256": "12acc53a8ab55108b5bb7701832e6deabd2b855abf41a24d3613c8ec66efbb07",
+      "source_content_bounds": [
+        26,
+        141,
+        168,
+        360
+      ],
+      "scale": 0.3105022831050228,
+      "foot_source_x": 101.0,
+      "registration": [
+        41,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_front_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 15,
+      "source_box": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "sha256": "ae65e55e809fe376f487bca383201476e1551c6cf2a9b96c14391735bb687331",
+      "source_content_bounds": [
+        0,
+        149,
+        175,
+        361
+      ],
+      "scale": 0.32075471698113206,
+      "foot_source_x": 99.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_01.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        362,
+        181,
+        724
+      ],
+      "sha256": "91c2d3ad3c5d3c254dcd97d61d2cbe24a065812fac71132e3c1ac455565e4652",
+      "source_content_bounds": [
+        16,
+        99,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 149.0,
+      "registration": [
+        18,
+        49
+      ]
+    },
+    {
+      "file": "dash_rear_02.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        181,
+        362,
+        362,
+        724
+      ],
+      "sha256": "57b3512b437c21b8e31a9cdff4d4f400be718d7d884e4a9d53c2f4c31d32eb96",
+      "source_content_bounds": [
+        18,
+        96,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 148.0,
+      "registration": [
+        19,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_03.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        362,
+        362,
+        543,
+        724
+      ],
+      "sha256": "58e3269de1787e9aa9c8f135e7414e2934f9f38c935982532e4a81b41dfba94a",
+      "source_content_bounds": [
+        10,
+        89,
+        181,
+        275
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 144.0,
+      "registration": [
+        18,
+        52
+      ]
+    },
+    {
+      "file": "dash_rear_04.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        543,
+        362,
+        724,
+        724
+      ],
+      "sha256": "cffcf2929dc8cca0815c585550fb323ecdaca2d1c40c63721ad98bb108ec5daa",
+      "source_content_bounds": [
+        12,
+        96,
+        181,
+        296
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 111.0,
+      "registration": [
+        30,
+        47
+      ]
+    },
+    {
+      "file": "dash_rear_05.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        724,
+        362,
+        905,
+        724
+      ],
+      "sha256": "65bebaa9145c9357d3d289234fa73cf3fe28ae7f7d5d5f4f9ad4ba9c9ef8bf4f",
+      "source_content_bounds": [
+        6,
+        96,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 99.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_06.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        905,
+        362,
+        1086,
+        724
+      ],
+      "sha256": "9342ba03541e9a4f9a07d1076cbb2a4950b262f8703effa68b7c2d51bb93715d",
+      "source_content_bounds": [
+        8,
+        98,
+        179,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 86.0,
+      "registration": [
+        37,
+        48
+      ]
+    },
+    {
+      "file": "brace_rear_left_01.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "sha256": "d598774c361576639d266e0114bcb38d7833f7a97afaa4d04ea0873190cfec56",
+      "source_content_bounds": [
+        19,
+        186,
+        222,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 141.0,
+      "registration": [
+        22,
+        41
+      ]
+    },
+    {
+      "file": "brace_rear_left_02.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "sha256": "0329da409229b99985e040b1cc3512f92b951929870c9d46821ed5926d47478b",
+      "source_content_bounds": [
+        17,
+        180,
+        222,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 146.0,
+      "registration": [
+        20,
+        39
+      ]
+    },
+    {
+      "file": "brace_rear_left_03.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "sha256": "0c2382867c86ce4e9f32cec386b942eaa1b29a4ea8b678ddb64f3939aadbaa0f",
+      "source_content_bounds": [
+        8,
+        180,
+        221,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 141.0,
+      "registration": [
+        19,
+        39
+      ]
+    },
+    {
+      "file": "brace_rear_left_04.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "sha256": "4d09fd86502e143b41ad905ff196fc74bce08be28130c1eeb999e38be1d77ce1",
+      "source_content_bounds": [
+        2,
+        175,
+        222,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 138.0,
+      "registration": [
+        18,
+        38
+      ]
+    },
+    {
+      "file": "brace_rear_left_05.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "sha256": "a695480f25254d58696dce88999f83755574e91a18a56f5a214b6ae251347fb0",
+      "source_content_bounds": [
+        0,
+        166,
+        222,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 130.0,
+      "registration": [
+        20,
+        34
+      ]
+    },
+    {
+      "file": "brace_rear_left_06.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "86953ac7cb3b30d7c1797b0a4ed5bd8d9d86abc163e85a9dd5409a53123087b2",
+      "source_content_bounds": [
+        0,
+        158,
+        221,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 122.0,
+      "registration": [
+        22,
+        32
+      ]
+    },
+    {
+      "file": "brace_rear_left_07.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "sha256": "94abac2124f1d353fac5170b832e71ee52e968bd1adf5c1ab05b83e45acc3a10",
+      "source_content_bounds": [
+        0,
+        152,
+        220,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 120.0,
+      "registration": [
+        23,
+        30
+      ]
+    },
+    {
+      "file": "brace_rear_left_08.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "f7fe6bbdf9fcbcc17140439d265aa4511dacbe7a007bdeaa4ee68d549676e02e",
+      "source_content_bounds": [
+        0,
+        146,
+        216,
+        405
+      ],
+      "scale": 0.3411513859275053,
+      "foot_source_x": 118.0,
+      "registration": [
+        24,
+        28
+      ]
+    },
+    {
+      "file": "impact_rear_left_01.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "sha256": "06be7536bc060ab69acab2a21fd79afff9d1b269671b3c72c272631f9c03d11c",
+      "source_content_bounds": [
+        14,
+        132,
+        222,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 120.0,
+      "registration": [
+        31,
+        31
+      ]
+    },
+    {
+      "file": "impact_rear_left_02.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "sha256": "c9d81588aeb0b4d3b3a4fdbfc6b7aec445c9a7f53f87df96256b103cdb1ea775",
+      "source_content_bounds": [
+        8,
+        143,
+        222,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 123.0,
+      "registration": [
+        28,
+        34
+      ]
+    },
+    {
+      "file": "impact_rear_left_03.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "sha256": "20447b5fb54a584aa84aad76e044e9aa93d13c2d3c1783e1832d65b7cb1dec53",
+      "source_content_bounds": [
+        5,
+        153,
+        221,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 122.0,
+      "registration": [
+        27,
+        37
+      ]
+    },
+    {
+      "file": "impact_rear_left_04.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "sha256": "1b614708827587e328003242de6ab9cdf91056d849bc3fb28510da33fd33ee43",
+      "source_content_bounds": [
+        0,
+        153,
+        222,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 122.0,
+      "registration": [
+        26,
+        37
+      ]
+    },
+    {
+      "file": "impact_rear_left_05.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "sha256": "072be22601810c42b82185a7714a12aaa035c996111e416bbcc63c9459cd076c",
+      "source_content_bounds": [
+        0,
+        150,
+        221,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 122.0,
+      "registration": [
+        26,
+        36
+      ]
+    },
+    {
+      "file": "impact_rear_left_06.png",
+      "source": "lucan_overhead_left_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "4871ec5ff59bc9b5e3d41c71489629429337a80681bdc1cf6cc72986931566fa",
+      "source_content_bounds": [
+        0,
+        148,
+        219,
+        405
+      ],
+      "scale": 0.3125,
+      "foot_source_x": 120.0,
+      "registration": [
+        26,
+        36
+      ]
+    }
+  ]
+}

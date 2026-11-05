@@ -31,7 +31,7 @@ from tools.capture_gallery import capture_thumbnails
 
 FPS = 60
 SIZE = (960, 640)
-DEFAULT_OUTPUT = ROOT/'docs/reviews/ice_reaper_rescue'
+DEFAULT_OUTPUT = ROOT/'docs/reviews/ice_reaper_continuity'
 MUSIC = ROOT/'assets/music/runtime/wintermute2.ogg'
 KEYFRAME_TIMES = {
     0: 'brush', 1: 'wide', 4.2: 'alarm', 6: 'aim', 7.3: 'dash',

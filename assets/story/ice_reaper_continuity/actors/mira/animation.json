@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "animations": {
+    "aim_front": {
+      "frames": [
+        {
+          "file": "aim_front_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_front_right": {
+      "frames": [
+        {
+          "file": "aim_front_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 45,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_right": {
+      "frames": [
+        {
+          "file": "aim_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_rear_right": {
+      "frames": [
+        {
+          "file": "aim_rear_right_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 135,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_rear": {
+      "frames": [
+        {
+          "file": "aim_rear_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_rear_left": {
+      "frames": [
+        {
+          "file": "aim_rear_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -135,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_left": {
+      "frames": [
+        {
+          "file": "aim_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -90,
+      "held_view": true,
+      "loop": true
+    },
+    "aim_front_left": {
+      "frames": [
+        {
+          "file": "aim_front_left_01.png",
+          "duration_ms": 200
+        }
+      ],
+      "view_azimuth_deg": -45,
+      "held_view": true,
+      "loop": true
+    }
+  },
+  "authored": true,
+  "source_art_review": "awaiting_user_review"
+}
