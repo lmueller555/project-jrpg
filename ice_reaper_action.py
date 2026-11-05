@@ -188,6 +188,20 @@ class IceReaperActionStage:
                 break
         from ice_reaper_rune import RuneSeal
         self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
+        # This front-quarter raising strip belongs only to Mira's pre-fire
+        # loading shot. Keep the shared aim/fire art and its later mapping.
+        folder = self.asset_root.parent/'mira_prefire_aim'
+        prefire = json.loads((folder/'animation.json').read_text())
+        mira = self.actors['mira']
+        if prefire['canvas'] != mira['manifest']['canvas'] or tuple(prefire['anchor']) != mira['anchor']:
+            raise ValueError('Mira pre-fire drawings must preserve scene registration')
+        entry = prefire['animations']['prefire_raise']
+        mira['sequences']['prefire_raise'] = [
+            (self._read_image(folder/frame['file']), frame.get('duration_ms', 112.5)/1000)
+            for frame in entry['frames']]
+        if len(mira['sequences']['prefire_raise']) != 4:
+            raise ValueError('Mira pre-fire raise requires four authored drawings')
+        mira['manifest']['animations']['prefire_raise'] = entry
         from rhea_winter import RheaWinterSprites
         self.winter = RheaWinterSprites(self._read_image)
         from rhea_scene_awakening import RheaSceneAwakening
@@ -444,6 +458,8 @@ class IceReaperActionStage:
         """Choose a camera view without replacing an active action with a hold."""
         data = self.actors[actor]
         sequences = data['sequences']
+        if actor == 'mira' and action == 'aim' and 12.35 <= time < 12.8:
+            return 'prefire_raise'
         azimuth, elevation = self.view_angles(actor, camera, position, time)
         active = duration is not None and local < duration
         turning_release = actor == 'rhea' and action == 'release' and local >= .35
@@ -468,6 +484,11 @@ class IceReaperActionStage:
             view = self._view_metadata(key, entries.get(key, {}))
             if view is None:
                 continue
+            if actor == 'mira' and key.startswith('aim_') and time < 14.2:
+                # These pre-fire aim turnarounds were authored with the view
+                # sign opposite the stage basis. Correct their selection here
+                # without mirroring her equipment or changing the firing shot.
+                view = (-view[0], view[1])
             delta = abs((azimuth-view[0]+180)%360-180)
             score = delta+abs(elevation-view[1])*.25
             # Exact-action views win ties over a generic held-ready fallback.
@@ -512,6 +533,8 @@ class IceReaperActionStage:
             return self._approved_boss_frame(camera, position, time)
         key = self.sequence_key(actor, action, local, duration, camera, position, time)
         sequence = sequences[key]
+        if actor == 'mira' and key == 'prefire_raise':
+            duration = .45
         if duration:
             index = min(len(sequence)-1, int(phase(local, 0, duration)*len(sequence)))
         else:

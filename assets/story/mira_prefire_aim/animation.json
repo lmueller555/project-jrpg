@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "animations": {
+    "prefire_raise": {
+      "frames": [
+        {
+          "file": "raise_01.png",
+          "duration_ms": 112.5,
+          "sha256": "7192c64c0a50689d3af670e82f631c69d4c7c5809606541f2c9713b5a05447b9"
+        },
+        {
+          "file": "raise_02.png",
+          "duration_ms": 112.5,
+          "sha256": "f6b6f90d4159a1822bcb181b206e90b75b3c0617d3607cb4b4f1c44765e4aacf"
+        },
+        {
+          "file": "raise_03.png",
+          "duration_ms": 112.5,
+          "sha256": "7559e2128806c31062ab803a4bd2bcc1aa6045b73a945f453a2b336d3f41d14c"
+        },
+        {
+          "file": "raise_04.png",
+          "duration_ms": 112.5,
+          "sha256": "d38d861f55f11fca09af51116f896d4f3aa5f2fa299ed3baebc1035fb1ebb8bc"
+        }
+      ],
+      "loop": false
+    }
+  },
+  "authored_with": "image_gen",
+  "source": "assets/source/cinematics/mira_prefire_aim/raise_generated.png",
+  "source_sha256": "f63893bfe482f04df7e2b1023092909177855641ce51ccca0944649056d26625",
+  "registration": [
+    {
+      "cell": 1,
+      "source_box": [
+        608,
+        0,
+        1217,
+        646
+      ],
+      "subject_bounds": [
+        145,
+        142,
+        443,
+        589
+      ],
+      "scale": 0.18344519015659955,
+      "offset": [
+        38,
+        34
+      ]
+    },
+    {
+      "cell": 2,
+      "source_box": [
+        0,
+        646,
+        608,
+        1293
+      ],
+      "subject_bounds": [
+        195,
+        114,
+        468,
+        564
+      ],
+      "scale": 0.18444444444444444,
+      "offset": [
+        38,
+        33
+      ]
+    }
+  ],
+  "endpoints": {
+    "assets/story/ice_reaper_rescue/actors/mira/load_08.png": "7192c64c0a50689d3af670e82f631c69d4c7c5809606541f2c9713b5a05447b9",
+    "assets/story/ice_reaper_continuity/actors/mira/aim_front_01.png": "d38d861f55f11fca09af51116f896d4f3aa5f2fa299ed3baebc1035fb1ebb8bc"
+  },
+  "active_scene_interval": [
+    12.35,
+    12.8
+  ]
+}
