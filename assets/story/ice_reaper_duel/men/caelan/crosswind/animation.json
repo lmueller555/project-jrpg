@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "actor": "caelan",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "authored": true,
+  "source_art_review": "awaiting_user_review",
+  "sources": [
+    {
+      "file": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "sha256": "7a7ff57d9c7e2afc680d2b90fca583e03e1e4bc4151f62a37897c9535d864da7"
+    }
+  ],
+  "animations": {
+    "wind_hit_rear_right": {
+      "frames": [
+        {
+          "file": "wind_hit_rear_right_01.png",
+          "duration_ms": 51
+        },
+        {
+          "file": "wind_hit_rear_right_02.png",
+          "duration_ms": 51
+        },
+        {
+          "file": "wind_hit_rear_right_03.png",
+          "duration_ms": 51
+        },
+        {
+          "file": "wind_hit_rear_right_04.png",
+          "duration_ms": 51
+        }
+      ],
+      "view_azimuth_deg": -150,
+      "loop": false,
+      "facing_note": "Rear three-quarter boss-facing crosswind hit; torso shifts right, free arm braces and sword stays low."
+    },
+    "wind_flight_rear": {
+      "frames": [
+        {
+          "file": "wind_flight_rear_01.png",
+          "duration_ms": 123
+        },
+        {
+          "file": "wind_flight_rear_02.png",
+          "duration_ms": 123
+        },
+        {
+          "file": "wind_flight_rear_03.png",
+          "duration_ms": 123
+        },
+        {
+          "file": "wind_flight_rear_04.png",
+          "duration_ms": 123
+        }
+      ],
+      "view_azimuth_deg": -180,
+      "loop": false,
+      "facing_note": "Rear-view sideways flight toward Mira; knees lift naturally and legs trail the lateral displacement."
+    },
+    "wind_land_rear_right": {
+      "frames": [
+        {
+          "file": "wind_land_rear_right_01.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_02.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_03.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_04.png",
+          "duration_ms": 58
+        }
+      ],
+      "view_azimuth_deg": -145,
+      "loop": false,
+      "facing_note": "Rear-quarter landing and bent-knee recovery, looking back toward the confrontation."
+    },
+    "wind_land_rear": {
+      "frames": [
+        {
+          "file": "wind_land_rear_right_01.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_02.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_03.png",
+          "duration_ms": 58
+        },
+        {
+          "file": "wind_land_rear_right_04.png",
+          "duration_ms": 58
+        }
+      ],
+      "view_azimuth_deg": -180,
+      "loop": false,
+      "facing_note": "Rear-quarter landing and bent-knee recovery, looking back toward the confrontation."
+    }
+  },
+  "note": "Register twelve authored Caelan crosswind drawings without pose deformation.\n\nThe four-column, three-row image_gen source contains impact, sideways flight and\nlanding in order. A single scale derived from the first standing drawing preserves\nthe naturally crouched proportions of the airborne and recovery drawings."
+}

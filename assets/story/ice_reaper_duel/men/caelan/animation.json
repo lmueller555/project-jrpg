@@ -38,7 +38,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 180,
+      "view_azimuth_deg": -180,
       "loop": false
     },
     "wind_hit_rear": {
@@ -52,7 +52,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 180,
+      "view_azimuth_deg": -180,
       "loop": false
     },
     "wind_flight_rear": {
@@ -66,7 +66,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 180,
+      "view_azimuth_deg": -180,
       "loop": false
     },
     "wind_land_rear": {
@@ -80,7 +80,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 180,
+      "view_azimuth_deg": -180,
       "loop": false
     },
     "settle_rear": {
@@ -90,7 +90,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 180,
+      "view_azimuth_deg": -180,
       "loop": true
     },
     "wind_front": {
@@ -202,7 +202,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 90,
+      "view_azimuth_deg": -90,
       "loop": false
     },
     "wind_hit_right": {
@@ -216,7 +216,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 90,
+      "view_azimuth_deg": -90,
       "loop": false
     },
     "wind_flight_right": {
@@ -230,7 +230,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 90,
+      "view_azimuth_deg": -90,
       "loop": false
     },
     "wind_land_right": {
@@ -244,7 +244,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 90,
+      "view_azimuth_deg": -90,
       "loop": false
     },
     "settle_right": {
@@ -254,7 +254,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": 90,
+      "view_azimuth_deg": -90,
       "loop": true
     },
     "wind_left": {
@@ -284,7 +284,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": -90,
+      "view_azimuth_deg": 90,
       "loop": false
     },
     "wind_hit_left": {
@@ -298,7 +298,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": -90,
+      "view_azimuth_deg": 90,
       "loop": false
     },
     "wind_flight_left": {
@@ -312,7 +312,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": -90,
+      "view_azimuth_deg": 90,
       "loop": false
     },
     "wind_land_left": {
@@ -326,7 +326,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": -90,
+      "view_azimuth_deg": 90,
       "loop": false
     },
     "settle_left": {
@@ -336,7 +336,7 @@
           "duration_ms": 180
         }
       ],
-      "view_azimuth_deg": -90,
+      "view_azimuth_deg": 90,
       "loop": true
     }
   },
@@ -355,5 +355,6 @@
     }
   ],
   "authored": true,
-  "note": "Complete authored full-body drawings; wind pose is six distinct drawings per view. Runtime owns translation, lift and cast shadows."
+  "note": "Complete authored full-body drawings; wind pose is six distinct drawings per view. Runtime owns translation, lift and cast shadows.",
+  "facing_note": "Image-facing names use the opposite sign to the camera viewer azimuth. Angles register existing drawings without mirroring the sword hand."
 }
