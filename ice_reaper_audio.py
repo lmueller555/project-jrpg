@@ -23,7 +23,7 @@ CUES = (
     {'id': 'shard_explosion', 'time': 14.70, 'file': 'assets/audio/sfx/ice_reaper_rescue/shard_explosion.ogg', 'gain': .54},
     {'id': 'ice_creak', 'time': 15.45, 'file': 'assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg', 'gain': .12},
     {'id': 'awakening', 'time': 16.60, 'file': 'assets/audio/sfx/ice_reaper_rescue/awakening.ogg', 'gain': .34},
-    {'id': 'prison_burst', 'time': 17.30, 'file': 'assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg', 'gain': .58},
+    {'id': 'prison_burst', 'time': 17.10, 'file': 'assets/audio/sfx/ice_reaper_breakout/pressure_release.ogg', 'gain': .58},
     {'id': 'rune_bloom', 'time': 17.50, 'file': 'assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg', 'gain': .43},
     {'id': 'staff_sweep', 'time': 24.00, 'file': 'assets/audio/sfx/ice_reaper_duel/staff_sweep.ogg', 'gain': .34},
     {'id': 'wind_burst', 'time': 24.10, 'file': 'assets/audio/sfx/ice_reaper_duel/wind_burst.ogg', 'gain': .47},
