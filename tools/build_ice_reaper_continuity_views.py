@@ -116,7 +116,8 @@ def build():
     # Held directions preserve pose, equipment hand, and foot registration.
     for view,angle,col in zip(VIEWS,ANGLES,range(8)):
         export('caelan','ready_'+view,'men',[col],71,angle,held=True)
-        export('lucan','hold_brace_'+view,'men',[8+col],68,angle,held=True)
+        # Lucan's held atlas uses the opposite authored view sign to the stage.
+        export('lucan','hold_brace_'+view,'men',[8+col],68,-angle,held=True)
         export('mira','aim_'+view,'quarter' if col==1 else 'women',[0] if col==1 else [col],84,angle,held=True)
         export('rhea','frozen_'+view,'quarter' if col==1 else 'women',[1] if col==1 else [8+col],81,angle,held=True)
         export('rhea','release_'+view,'quarter' if col==1 else 'women',[2] if col==1 else [16+col],81,angle,held=True)

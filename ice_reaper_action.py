@@ -251,25 +251,25 @@ class IceReaperActionStage:
 
     @staticmethod
     def first_shard_target():
-        """Rhea's upper body inside the prison is the attack's intended target."""
-        return V3(-3, 1.1, 0)
+        """The straight attack continues into Rhea's lower body inside the ice."""
+        return V3(-3, .4, 0)
 
     @classmethod
     def first_shard_shield_contact(cls):
         release, target = cls.first_shard_release(), cls.first_shard_target()
         # Contact is on the enemy side of the prison.  Its height and lateral
         # placement follow the attack ray, rather than aiming a new ray at Lucan.
-        guard_depth = -.75
+        guard_depth = -1.1
         return release.lerp(target, (guard_depth-release.z)/(target.z-release.z))
 
     @classmethod
     def lucan_guard_position(cls):
         contact = cls.first_shard_shield_contact()
-        # In the rear-quarter overhead guard the shield is on the upper left
-        # of the body.  Lucan plants farther toward the enemy and holds that
-        # shield above/behind his left shoulder, leaving his kneeling silhouette
-        # visible beside the prison while the shield itself covers Rhea's ray.
-        return V3(contact.x+.215, 0, contact.z-.6)
+        # Plant behind the forward left-arm guard, not beyond an overhead
+        # shield.  Registration puts the attack on the authored upper rim at
+        # native (85,54) while leaving Lucan readable beside the prison.  The
+        # board remains ahead of his face and within ordinary arm reach.
+        return V3(contact.x-.589334662, 0, contact.z-.092633922)
 
     @classmethod
     def attack_geometry(cls):
@@ -484,6 +484,11 @@ class IceReaperActionStage:
             view = self._view_metadata(key, entries.get(key, {}))
             if view is None:
                 continue
+            if actor == 'lucan' and key.startswith('hold_brace_') and time < 9.7:
+                # Preserve the approved pre-dash ready beat, including its two
+                # visible frames at 7.0s. The corrected held atlas takes over
+                # only after the shield impact has completely settled.
+                view = (-view[0], view[1])
             if actor == 'mira' and key.startswith('aim_') and time < 14.2:
                 # These pre-fire aim turnarounds were authored with the view
                 # sign opposite the stage basis. Correct their selection here
