@@ -63,7 +63,7 @@ def capture(output=OUTPUT,*,fps=60):
     asset_roots=('assets/story/ice_reaper_duel','assets/audio/sfx/ice_reaper_duel')
     asset_hashes={str(path.relative_to(ROOT)):digest(path) for folder in asset_roots
                   for path in sorted((ROOT/folder).rglob('*')) if path.is_file()}
-    portrait=ROOT/'assets/story/ice_reaper_opening/portraits/rhea_awakening.png'
+    portrait=ROOT/'assets/story/ice_reaper_opening/portraits/rhea_awakening_shawl.png'
     asset_hashes[str(portrait.relative_to(ROOT))]=digest(portrait)
     preserved={};continuation={}
     original_draw=IceReaperOpening._draw_scene
