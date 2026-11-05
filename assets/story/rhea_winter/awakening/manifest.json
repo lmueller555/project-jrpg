@@ -1,0 +1,218 @@
+{
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "source": "assets/story/rhea_winter/rested/front.png",
+  "source_sha256": "8691de8874187be927d1f2c4457a213bd34510c434d32c25a7724554369930dc",
+  "frames": {
+    "neutral_closed": {
+      "file": "awakening/neutral_closed.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.0
+    },
+    "strain_begin": {
+      "file": "awakening/strain_begin.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.45
+    },
+    "strain_mid": {
+      "file": "awakening/strain_mid.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.75
+    },
+    "strain_peak": {
+      "file": "awakening/strain_peak.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 1.03
+    },
+    "opening_01": {
+      "file": "awakening/opening_01.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.25,
+      "start": 1.3
+    },
+    "opening_02": {
+      "file": "awakening/opening_02.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 0.6,
+      "start": 1.43
+    },
+    "angry_open": {
+      "file": "awakening/angry_open.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 1.0,
+      "start": 1.57
+    },
+    "angry_hold": {
+      "file": "awakening/angry_hold.png",
+      "eyes": [
+        [
+          57.714285714285715,
+          46.0
+        ],
+        [
+          62.285714285714285,
+          46.0
+        ]
+      ],
+      "openness": 1.0,
+      "start": 1.8
+    }
+  },
+  "sequence": [
+    "neutral_closed",
+    "strain_begin",
+    "strain_mid",
+    "strain_peak",
+    "opening_01",
+    "opening_02",
+    "angry_open",
+    "angry_hold"
+  ],
+  "facial_mask_rows": {
+    "44": [
+      56,
+      63
+    ],
+    "45": [
+      56,
+      63
+    ],
+    "46": [
+      56,
+      63
+    ],
+    "47": [
+      56,
+      63
+    ],
+    "48": [
+      56,
+      63
+    ],
+    "49": [
+      56,
+      63
+    ],
+    "50": [
+      56,
+      63
+    ]
+  },
+  "operation": "Nearest registration of existing image_gen-authored facial drawings into the winter face mask; no body or cloth deformation.",
+  "verification": {
+    "neutral_closed": {
+      "sha256": "91250c06219c37ad1c1b3f82c9e7ebab511a8c8934012a5574943e2510500548",
+      "protected_pixels_unchanged": true,
+      "source_expression": "5bb5030be7e42e1a63c9becaa5baa061ceca0158ff2b39abe0e04282d8810d1c"
+    },
+    "strain_begin": {
+      "sha256": "23d31ef998d8bd10f1ca32ff08e59700fa21add37a843ea378bab6c32bb92d4e",
+      "protected_pixels_unchanged": true,
+      "source_expression": "27ba0cf0c19c6645314dad60b5db435b9abb4f8cba9c53630bf6d40181a4004f"
+    },
+    "strain_mid": {
+      "sha256": "93d73eedb2941c32073ec3a542bf0f9280f996fc3addc85e6a5d77b6c1299a56",
+      "protected_pixels_unchanged": true,
+      "source_expression": "126df66f3b4351233237139df66f1376151c60b69fb0701d4f861c47b16b674b"
+    },
+    "strain_peak": {
+      "sha256": "0013ffbb9cf6cbde4ded2b9ca43299c8a42e248f3b5d6a6f5b6caf524615e7f5",
+      "protected_pixels_unchanged": true,
+      "source_expression": "f86c47250e9c9297d77d756ddb687587e64544a7f85573fe9f75c31577f57325"
+    },
+    "opening_01": {
+      "sha256": "58976d001c32e9c0823e8d11340cd8ae44f4eb5206a5b9672c5d7088626046a4",
+      "protected_pixels_unchanged": true,
+      "source_expression": "b6ad1cd3f61dca1cc68ef994772c90aaae242c485fb457f834a9117c1971c1eb"
+    },
+    "opening_02": {
+      "sha256": "01bc73fcdfc49f190302f939e75ae3dbc3dcccb0ebdff9759c8b2dfd37334d24",
+      "protected_pixels_unchanged": true,
+      "source_expression": "e38974fb3b01415bc561d214c5b3dad16927d606488ba7469709dc1dbf12319b"
+    },
+    "angry_open": {
+      "sha256": "d152b7ee06329eeb91252aa97edfa6aafc46e58582b79e493ad71eb2ec703837",
+      "protected_pixels_unchanged": true,
+      "source_expression": "d833409b9d71e1312b6294e36a3a107fa413970a64bc83c70cf723344def7d15"
+    },
+    "angry_hold": {
+      "sha256": "8356c44eca0354250272e0b59ed49eacb9e6e80cc7987153bfa15b9278f4af02",
+      "protected_pixels_unchanged": true,
+      "source_expression": "4cab1839bd84fb1662d56852e060d0e52cb1a38eea9b9887a9649f3b87520488"
+    }
+  }
+}

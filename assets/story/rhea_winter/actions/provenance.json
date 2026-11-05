@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "authored_with": "image_gen",
+  "purpose": "Winter-shawl casting and staff sweep with authored hair/cloth energy motion",
+  "operation": "Equal-cell extraction; alpha threshold140;128-color registration; fixed nearest scaling and foot registration only.",
+  "sources": {
+    "assets/source/cinematics/rhea_winter/actions/cast_generated.png": "0fef0fb16029885527316289982dc97f6252380df052c1ebd3dae624cefadfda",
+    "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png": "5f6452246209e982547aad606614b040dd0e9ec3425548a116d4572468ded621",
+    "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png": "886ba6214a0dc19d9ac589ab733c547d9659b64ecb74aaaaebbdb30dbfab0c0f"
+  },
+  "records": [
+    {
+      "file": "staff_sweep_01.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 0,
+      "cell_bounds": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "sha256": "9b6b4c9a7e258b9eb6cb102e7f0a7f39803ec455c12684c68d9f1d6c95b9e726",
+      "source_bounds": [
+        87,
+        13,
+        353,
+        429
+      ],
+      "foot": [
+        219.5,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        38,
+        34
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_02.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 1,
+      "cell_bounds": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "sha256": "6d3d70bc137995fddd25c1f88e1eefc044b9b501bfdd40b0d7468839fd9e734f",
+      "source_bounds": [
+        74,
+        9,
+        363,
+        429
+      ],
+      "foot": [
+        232.0,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        32,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_03.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 2,
+      "cell_bounds": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "c687d3ad1be07ab258e5e1cda06df737f391c0a10eeedbb82d52eb1e10f05b63",
+      "source_bounds": [
+        61,
+        13,
+        324,
+        429
+      ],
+      "foot": [
+        231.5,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        30,
+        34
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_04.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 3,
+      "cell_bounds": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "4bc717c40cc894065bb99a7a29c98ebdd802291b0dc97c9b9ba14d0a02b2a4ef",
+      "source_bounds": [
+        43,
+        9,
+        396,
+        429
+      ],
+      "foot": [
+        233.0,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        26,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_05.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 4,
+      "cell_bounds": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "sha256": "8c76686592ed0bbd016a9b9d23b193fc388232cbf96c1600b1c43ed66ae0ab72",
+      "source_bounds": [
+        39,
+        5,
+        414,
+        429
+      ],
+      "foot": [
+        231.5,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        26,
+        32
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_06.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 5,
+      "cell_bounds": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "sha256": "d810f7b5d34381a51affd4cb0cd9823ed4e0a1c5b446e17011a2ef75f3f164e3",
+      "source_bounds": [
+        36,
+        13,
+        410,
+        429
+      ],
+      "foot": [
+        231.5,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        25,
+        34
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_07.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 6,
+      "cell_bounds": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "6d06d60dc2cc3099b6d2c8783142b568c0dd8cfffec7139578492df63223f363",
+      "source_bounds": [
+        43,
+        6,
+        400,
+        429
+      ],
+      "foot": [
+        232.0,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        26,
+        32
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "staff_sweep_08.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/staff_sweep_generated.png",
+      "cell": 7,
+      "cell_bounds": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "sha256": "4b1169d33a41cda248d5a12f819745132fef5463b10b13b14e75737a9c9e06b6",
+      "source_bounds": [
+        56,
+        9,
+        405,
+        429
+      ],
+      "foot": [
+        233.0,
+        428
+      ],
+      "scale": 0.2,
+      "offset": [
+        29,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_01.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 0,
+      "cell_bounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "sha256": "d1284b204e44320fd689150930f2a27496a33fc04b198fdee29626276a5df3e0",
+      "source_bounds": [
+        121,
+        15,
+        401,
+        480
+      ],
+      "foot": [
+        282.0,
+        479
+      ],
+      "scale": 0.18,
+      "offset": [
+        35,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_02.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 1,
+      "cell_bounds": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "sha256": "8ac1fd0d37801ea637e07e3c95a6c5cf5608e9332043be26c3b46ed0b4b41a26",
+      "source_bounds": [
+        98,
+        16,
+        382,
+        480
+      ],
+      "foot": [
+        261.5,
+        479
+      ],
+      "scale": 0.18,
+      "offset": [
+        35,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_03.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 2,
+      "cell_bounds": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "sha256": "39262db72e2630d31fc236e6c748ea794adcdbf6e2f194e75a6bdbbeea63897c",
+      "source_bounds": [
+        73,
+        16,
+        368,
+        480
+      ],
+      "foot": [
+        249.5,
+        479
+      ],
+      "scale": 0.18,
+      "offset": [
+        32,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_04.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 3,
+      "cell_bounds": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "sha256": "ab2fc74748f4af67129f63d02739aeac6d829a1a262c50b05bd033f6112e6f5e",
+      "source_bounds": [
+        92,
+        17,
+        402,
+        482
+      ],
+      "foot": [
+        283.0,
+        481
+      ],
+      "scale": 0.18,
+      "offset": [
+        30,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_05.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 4,
+      "cell_bounds": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "sha256": "88289b272225ddc448d67c5e4773937b3fe8885c81bbd3310cd9ac0816d1403d",
+      "source_bounds": [
+        37,
+        13,
+        383,
+        482
+      ],
+      "foot": [
+        263.0,
+        481
+      ],
+      "scale": 0.18,
+      "offset": [
+        23,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_06.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_generated.png",
+      "cell": 5,
+      "cell_bounds": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "sha256": "59b1c204bb92ae2a74d88eeb16ee0cb35a3f4aec8064f0f3e358f84072903371",
+      "source_bounds": [
+        14,
+        12,
+        370,
+        482
+      ],
+      "foot": [
+        253.5,
+        481
+      ],
+      "scale": 0.18,
+      "offset": [
+        21,
+        32
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_01.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 0,
+      "cell_bounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "sha256": "ce4cb0e586af4bde9f5113ad569e32f85e5051f202e7b87754f387136dcff7e0",
+      "source_bounds": [
+        110,
+        11,
+        367,
+        478
+      ],
+      "foot": [
+        249.5,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        39,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_02.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 1,
+      "cell_bounds": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "sha256": "4c1088d88692fb2350789dc0479dce573469aa381a1b0d99ceb4af1443aa5384",
+      "source_bounds": [
+        78,
+        11,
+        354,
+        478
+      ],
+      "foot": [
+        215.5,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        39,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_03.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 2,
+      "cell_bounds": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "sha256": "285accde0ff50cead39636d1d38ead0e3756d26c373c26a4ce494008ed4dc9e3",
+      "source_bounds": [
+        78,
+        11,
+        368,
+        478
+      ],
+      "foot": [
+        216.0,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        39,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_04.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 3,
+      "cell_bounds": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "sha256": "0cdd5b7c2490da45b9bd650cff02468281502febd5a52fd1651c1aadc901b247",
+      "source_bounds": [
+        110,
+        13,
+        402,
+        478
+      ],
+      "foot": [
+        257.5,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        37,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_05.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 4,
+      "cell_bounds": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "sha256": "d04db4e50780a1eba3197811e76b4ec96a27e53724e10432f8c2c529638335e9",
+      "source_bounds": [
+        78,
+        13,
+        419,
+        478
+      ],
+      "foot": [
+        233.5,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        36,
+        33
+      ],
+      "raster_foot_y": 116
+    },
+    {
+      "file": "cast_rear_06.png",
+      "source": "assets/source/cinematics/rhea_winter/actions/cast_rear_generated.png",
+      "cell": 5,
+      "cell_bounds": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "sha256": "a8d8f5921da8efa370d28578c3bd424ced2b1082fd6b2582114bc36b14d6d2f4",
+      "source_bounds": [
+        78,
+        4,
+        402,
+        478
+      ],
+      "foot": [
+        227.5,
+        477
+      ],
+      "scale": 0.18,
+      "offset": [
+        37,
+        32
+      ],
+      "raster_foot_y": 116
+    }
+  ]
+}
