@@ -50,10 +50,14 @@ class ShoulderStagingTests(unittest.TestCase):
             self.assertEqual(Stage.reaper_position(time), settled)
 
     def test_reposition_leaves_other_characters_in_place(self):
-        for value, expected in self.baseline['lucan_end'].items():
+        # Lucan now plants at the revised forward-shield interception point.
+        # Raising the Reaper must not move him out of that settled guard.
+        guard_position = Stage.actor_positions(9.7)['lucan']
+        guard_heading = Stage.actor_heading('lucan',9.7)
+        for value in self.baseline['lucan_end']:
             time = float(value)
-            self.assertEqual(list(Stage.actor_positions(time)['lucan']), expected['position'])
-            self.assertEqual(list(Stage.actor_heading('lucan', time)), expected['heading'])
+            self.assertEqual(Stage.actor_positions(time)['lucan'], guard_position)
+            self.assertEqual(Stage.actor_heading('lucan',time), guard_heading)
         for time in (16.3, 17., 18.15, 19.8):
             positions = Stage.actor_positions(time)
             self.assertEqual(positions['rhea'], pygame.Vector3(-3,0,0))

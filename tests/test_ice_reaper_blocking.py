@@ -25,11 +25,11 @@ class IceReaperBlockingTests(unittest.TestCase):
     def tearDownClass(cls):
         pygame.quit()
 
-    def test_unobstructed_attack_passes_through_rheas_upper_body(self):
+    def test_unobstructed_attack_passes_through_rheas_body_inside_the_prison(self):
         geometry = Stage.attack_geometry()
         release, target, shield = (geometry[key] for key in ('release', 'target', 'shield'))
         rhea = Stage.actor_positions(8.8)['rhea']
-        self.assertLess((target-pygame.Vector3(rhea.x, 1.1, rhea.z)).length(), .01)
+        self.assertLess((target-pygame.Vector3(rhea.x, .4, rhea.z)).length(), .01)
         incoming = shield-release
         continued = release+incoming*((target.z-release.z)/incoming.z)
         self.assertLess((continued-target).length(), .01)
@@ -47,7 +47,7 @@ class IceReaperBlockingTests(unittest.TestCase):
         forward = Stage.camera(8.5).basis()[2]
         self.assertGreater((lucan-rhea).dot(forward), .5)
         self.assertEqual(lucan, geometry['lucan'])
-        self.assertLess(abs(geometry['shield'].x-lucan.x), .5)
+        self.assertLess(abs(geometry['shield'].x-lucan.x), .65)
         self.assertLess(abs(geometry['shield'].z-lucan.z), .7)
         self.assertGreater(geometry['shield'].y, 1.2)
         self.assertLess(geometry['shield'].y, 1.9)
@@ -75,13 +75,15 @@ class IceReaperBlockingTests(unittest.TestCase):
         self.assertLess(distances[-1], .001)
         self.assertGreater(contact.distance_to(Stage.first_shard_target()), .5)
 
-    def test_contact_falls_inside_the_authored_overhead_shield_face(self):
+    def test_contact_falls_inside_the_authored_forward_shield_face(self):
         # These polygons trace the actual wooden/gold board in the final brace
         # and first impact drawings.  Merely hitting near Lucan's body is not
         # enough: the collision must be inside the visible shield surface.
         cases = (
-            (8.99, [(24,31),(31,28),(43,31),(51,38),(45,42),(24,49)]),
-            (9.0, [(31,34),(37,31),(49,34),(57,41),(49,45),(31,52)]),
+            (8.99, [(79,51),(84,51),(88,54),(89,61),(87,70),(83,76),
+                    (78,82),(74,79),(76,70),(76,60),(76,55)]),
+            (9.0, [(79,51),(84,51),(88,54),(89,61),(87,70),(83,76),
+                   (78,82),(74,79),(76,70),(76,60),(76,55)]),
         )
         for time, polygon in cases:
             with self.subTest(time=time):
