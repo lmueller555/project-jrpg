@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "animations": {
+    "release": {
+      "frames": [
+        {
+          "file": "release_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_06.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_07.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_08.png",
+          "duration_ms": 100
+        }
+      ],
+      "closeup": false
+    },
+    "eyes": {
+      "frames": [
+        {
+          "file": "eyes_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "eyes_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "eyes_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "eyes_04.png",
+          "duration_ms": 100
+        }
+      ],
+      "closeup": true
+    },
+    "release_rear": {
+      "frames": [
+        {
+          "file": "release_rear_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_rear_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_rear_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "release_rear_04.png",
+          "duration_ms": 100
+        }
+      ],
+      "closeup": false
+    }
+  },
+  "source": "assets/source/cinematics/ice_reaper_rescue/women/rhea_actions_generated.png",
+  "source_sha256": "5523570f69e5710f32ee16580697d858f3c235431314b68ee4dd9ce50b754aba",
+  "authored": true
+}

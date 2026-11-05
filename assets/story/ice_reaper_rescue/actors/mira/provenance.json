@@ -1,0 +1,667 @@
+{
+  "source": "assets/source/cinematics/ice_reaper_rescue/women/mira_actions_generated.png",
+  "source_sha256": "914e151b06ec441f8158554d3b7f05e198dc631beedbd8bcb529c81c981924f9",
+  "operation": "Equal-cell extraction, alpha threshold, pixel palette registration, nearest scaling and foot registration only; every pose is separately authored.",
+  "frames": [
+    {
+      "file": "raise_01.png",
+      "cell": 0,
+      "source_bounds": [
+        0,
+        0,
+        256,
+        205
+      ],
+      "source_content_bounds": [
+        77,
+        29,
+        190,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        36,
+        36
+      ],
+      "sha256": "c8708a0a0317aa8c685d0e15b8d46fb780049002371805ca6f316a6cf2686ebf"
+    },
+    {
+      "file": "raise_02.png",
+      "cell": 1,
+      "source_bounds": [
+        256,
+        0,
+        512,
+        205
+      ],
+      "source_content_bounds": [
+        74,
+        26,
+        190,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        35,
+        35
+      ],
+      "sha256": "d6912b9c73d571f287fc98b54d06749fba920e689e9f3d231b8057957caa8673"
+    },
+    {
+      "file": "raise_03.png",
+      "cell": 2,
+      "source_bounds": [
+        512,
+        0,
+        768,
+        205
+      ],
+      "source_content_bounds": [
+        71,
+        26,
+        191,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        34,
+        35
+      ],
+      "sha256": "f4b8f26ef1d03d818ee9a0d426d6bb9c14770122f19f0dac91825639e7e30b05"
+    },
+    {
+      "file": "raise_04.png",
+      "cell": 3,
+      "source_bounds": [
+        768,
+        0,
+        1024,
+        205
+      ],
+      "source_content_bounds": [
+        74,
+        30,
+        195,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        34,
+        37
+      ],
+      "sha256": "848ada47d18923aec1d17c487e99cfbea8f9cbfa5f5dd03aaadb7f97b3b6cda9"
+    },
+    {
+      "file": "aim_01.png",
+      "cell": 4,
+      "source_bounds": [
+        1024,
+        0,
+        1280,
+        205
+      ],
+      "source_content_bounds": [
+        77,
+        30,
+        195,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        35,
+        37
+      ],
+      "sha256": "3ea629ffdb00b6f5c1141f9de98cdc3c7229826420fed43d7a206cb19a7c0fcf"
+    },
+    {
+      "file": "aim_02.png",
+      "cell": 5,
+      "source_bounds": [
+        1280,
+        0,
+        1536,
+        205
+      ],
+      "source_content_bounds": [
+        69,
+        28,
+        197,
+        192
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        36
+      ],
+      "sha256": "0bf0e1cf9198cf05b6b0648eeb7b076f2023d32c68cc2fe521b8a0b8a500687d"
+    },
+    {
+      "file": "aim_03.png",
+      "cell": 6,
+      "source_bounds": [
+        0,
+        205,
+        256,
+        410
+      ],
+      "source_content_bounds": [
+        71,
+        28,
+        195,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        33,
+        35
+      ],
+      "sha256": "d7f02e99b3aff55555a606db7ccfa1b0b637cc2c744824e122be796ee6086406"
+    },
+    {
+      "file": "aim_04.png",
+      "cell": 7,
+      "source_bounds": [
+        256,
+        205,
+        512,
+        410
+      ],
+      "source_content_bounds": [
+        69,
+        23,
+        195,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        33,
+        32
+      ],
+      "sha256": "8e7f322b7e7035ee6d1c3d3dba46f6f57da62af0af4c889b54b42d2955f148ef"
+    },
+    {
+      "file": "load_01.png",
+      "cell": 8,
+      "source_bounds": [
+        512,
+        205,
+        768,
+        410
+      ],
+      "source_content_bounds": [
+        61,
+        31,
+        193,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        31,
+        36
+      ],
+      "sha256": "94e0f11fd5529497e22fd8b1edeaa3263d7df35bbb4671134c856bbcf5651734"
+    },
+    {
+      "file": "load_02.png",
+      "cell": 9,
+      "source_bounds": [
+        768,
+        205,
+        1024,
+        410
+      ],
+      "source_content_bounds": [
+        55,
+        27,
+        189,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        31,
+        34
+      ],
+      "sha256": "e5739ce3b4aae957f2757939401755d20dfa91f24cf0fe82a9c0f870f5c3c2f3"
+    },
+    {
+      "file": "load_03.png",
+      "cell": 10,
+      "source_bounds": [
+        1024,
+        205,
+        1280,
+        410
+      ],
+      "source_content_bounds": [
+        53,
+        29,
+        190,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        30,
+        35
+      ],
+      "sha256": "99f66198bc2d54a6df671c3f26f24369b7347b3b56229254b6645bad7b5c0080"
+    },
+    {
+      "file": "load_04.png",
+      "cell": 11,
+      "source_bounds": [
+        1280,
+        205,
+        1536,
+        410
+      ],
+      "source_content_bounds": [
+        54,
+        27,
+        190,
+        194
+      ],
+      "scale": 0.49,
+      "offset": [
+        30,
+        34
+      ],
+      "sha256": "1637eb9ccc49f220edd087045bbee1651396da3bf14723a4a40b8e1380b80c76"
+    },
+    {
+      "file": "load_05.png",
+      "cell": 12,
+      "source_bounds": [
+        0,
+        410,
+        256,
+        614
+      ],
+      "source_content_bounds": [
+        54,
+        29,
+        189,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        31,
+        34
+      ],
+      "sha256": "83ff6405aa531ba7aa1b99b4e1d0b971c1964dee9cabdc284377939f1c5b343a"
+    },
+    {
+      "file": "load_06.png",
+      "cell": 13,
+      "source_bounds": [
+        256,
+        410,
+        512,
+        614
+      ],
+      "source_content_bounds": [
+        59,
+        29,
+        190,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        34
+      ],
+      "sha256": "0a3cc7562fb99d244ce723d17f7c0cac5b3fed52887c8de16ee98d8589c2e1d7"
+    },
+    {
+      "file": "load_07.png",
+      "cell": 14,
+      "source_bounds": [
+        512,
+        410,
+        768,
+        614
+      ],
+      "source_content_bounds": [
+        59,
+        29,
+        190,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        34
+      ],
+      "sha256": "80848fb105b5a375912f8652b7c3f4ad7d5ca70031752ae3844f04bc1c63bce4"
+    },
+    {
+      "file": "load_08.png",
+      "cell": 15,
+      "source_bounds": [
+        768,
+        410,
+        1024,
+        614
+      ],
+      "source_content_bounds": [
+        59,
+        31,
+        190,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        35
+      ],
+      "sha256": "7192c64c0a50689d3af670e82f631c69d4c7c5809606541f2c9713b5a05447b9"
+    },
+    {
+      "file": "fire_01.png",
+      "cell": 16,
+      "source_bounds": [
+        1024,
+        410,
+        1280,
+        614
+      ],
+      "source_content_bounds": [
+        63,
+        34,
+        192,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        36
+      ],
+      "sha256": "0c2ba66d4f284d3fa283b4b8ceccec92d6f3cad28c2983eb1223b8a38b821d9a"
+    },
+    {
+      "file": "fire_02.png",
+      "cell": 17,
+      "source_bounds": [
+        1280,
+        410,
+        1536,
+        614
+      ],
+      "source_content_bounds": [
+        64,
+        34,
+        194,
+        197
+      ],
+      "scale": 0.49,
+      "offset": [
+        32,
+        36
+      ],
+      "sha256": "2a258aaf1f3f08e7e08f35256947df6779ee0d61ca4fc3ef6b484cf067763ad4"
+    },
+    {
+      "file": "fire_03.png",
+      "cell": 18,
+      "source_bounds": [
+        0,
+        614,
+        256,
+        819
+      ],
+      "source_content_bounds": [
+        40,
+        25,
+        200,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        25,
+        30
+      ],
+      "sha256": "954124c2fb5a9e2939a6ee0104c47cc2ea004b6c2872df63f1aa1aece61c4bfe"
+    },
+    {
+      "file": "fire_04.png",
+      "cell": 19,
+      "source_bounds": [
+        256,
+        614,
+        512,
+        819
+      ],
+      "source_content_bounds": [
+        73,
+        38,
+        213,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        29,
+        36
+      ],
+      "sha256": "406e0d0a94aef92bbabc991f69009982bfe15c7481fd6e2763e183ef257f2e47"
+    },
+    {
+      "file": "fire_05.png",
+      "cell": 20,
+      "source_bounds": [
+        512,
+        614,
+        768,
+        819
+      ],
+      "source_content_bounds": [
+        71,
+        38,
+        211,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        29,
+        36
+      ],
+      "sha256": "1ac5f259fe7bee778259da4fb726d26b23ac076cdb801d70e439765883f6ba73"
+    },
+    {
+      "file": "fire_06.png",
+      "cell": 21,
+      "source_bounds": [
+        768,
+        614,
+        1024,
+        819
+      ],
+      "source_content_bounds": [
+        66,
+        37,
+        199,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        31,
+        36
+      ],
+      "sha256": "8865a602d3d67d583a4961dceccc2d41626f4a381c966dadafa3f975c5552d13"
+    },
+    {
+      "file": "ready_rear_01.png",
+      "cell": 22,
+      "source_bounds": [
+        1024,
+        614,
+        1280,
+        819
+      ],
+      "source_content_bounds": [
+        70,
+        29,
+        195,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        33,
+        32
+      ],
+      "sha256": "f824e1e28a4e176cd46209a8620e7d91b36a489efd2be5a8cf53cf3b61205cfe"
+    },
+    {
+      "file": "ready_rear_02.png",
+      "cell": 23,
+      "source_bounds": [
+        1280,
+        614,
+        1536,
+        819
+      ],
+      "source_content_bounds": [
+        70,
+        29,
+        189,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        35,
+        32
+      ],
+      "sha256": "d31b80ea1eb54168d5c66925501ceb40ba7b5c14ca8874bdac87d0306120308b"
+    },
+    {
+      "file": "ready_rear_03.png",
+      "cell": 24,
+      "source_bounds": [
+        0,
+        819,
+        256,
+        1024
+      ],
+      "source_content_bounds": [
+        76,
+        33,
+        182,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        38,
+        34
+      ],
+      "sha256": "66841175dac63726a8e13bc599a52f9d450bd39dfd6df6beb1f1b7d0d84c5cbd"
+    },
+    {
+      "file": "ready_rear_04.png",
+      "cell": 25,
+      "source_bounds": [
+        256,
+        819,
+        512,
+        1024
+      ],
+      "source_content_bounds": [
+        89,
+        25,
+        182,
+        201
+      ],
+      "scale": 0.49,
+      "offset": [
+        41,
+        30
+      ],
+      "sha256": "bd928aeec15dfc2dd7798e3b7928b7fe44d50efa9e307d338194262825bbdb49"
+    },
+    {
+      "file": "loading_detail_01.png",
+      "cell": 26,
+      "source_bounds": [
+        512,
+        819,
+        768,
+        1024
+      ],
+      "source_content_bounds": [
+        38,
+        37,
+        228,
+        191
+      ],
+      "scale": 0.6526315789473685,
+      "offset": [
+        2,
+        13
+      ],
+      "sha256": "e931ac05bf18eb940798659c97eb45f5017ef42b218fba43d83817479caaad58"
+    },
+    {
+      "file": "loading_detail_02.png",
+      "cell": 27,
+      "source_bounds": [
+        768,
+        819,
+        1024,
+        1024
+      ],
+      "source_content_bounds": [
+        37,
+        50,
+        224,
+        191
+      ],
+      "scale": 0.6631016042780749,
+      "offset": [
+        2,
+        17
+      ],
+      "sha256": "789edc219f011b35c1727154429196c7dac935344d624c2b457174b1787e1e42"
+    },
+    {
+      "file": "loading_detail_03.png",
+      "cell": 28,
+      "source_bounds": [
+        1024,
+        819,
+        1280,
+        1024
+      ],
+      "source_content_bounds": [
+        37,
+        50,
+        227,
+        191
+      ],
+      "scale": 0.6526315789473685,
+      "offset": [
+        2,
+        18
+      ],
+      "sha256": "c3ebfaca4972635b4ad2aabdc69d6ad4b86e4e3a8f6aba10f7d7af7b01bfa0c0"
+    },
+    {
+      "file": "loading_detail_04.png",
+      "cell": 29,
+      "source_bounds": [
+        1280,
+        819,
+        1536,
+        1024
+      ],
+      "source_content_bounds": [
+        37,
+        59,
+        225,
+        191
+      ],
+      "scale": 0.6595744680851063,
+      "offset": [
+        2,
+        20
+      ],
+      "sha256": "7b45c19e48b369d14a8b8853207c99f40ead6c02cf4c429bdfc5d0323ef4667f"
+    }
+  ]
+}

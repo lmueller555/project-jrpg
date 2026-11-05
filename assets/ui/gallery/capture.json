@@ -1311,10 +1311,10 @@
     },
     {
       "id": "ice_reaper_opening",
-      "name": "Ice Reaper: Frozen Clearing (5s)",
+      "name": "Ice Reaper: Frozen Clearing (20s)",
       "source": "production Game.canvas",
       "file": "assets/ui/gallery/ice_reaper_opening.png",
-      "sha256": "60ff10deb8fe9fc561148ab549322c0fa13d9c2c4b2226cc1542f560e85cc641",
+      "sha256": "3968db6c9b35474bd134364b91e24b831f146a0e8f5b12df6a83080dc946e53b",
       "frame": 27,
       "seconds": 0.9333,
       "crop": [
@@ -1357,8 +1357,8 @@
         "checkpoint_state": null,
         "dialogue": null
       },
-      "source_commit": "57c9d36c7b93974756b7a8715f95e8871e3c3ceb",
-      "runtime_python_sha256": "b92c15a29169ab6c524a670de253da515f8b6dcbd547e6b0996e5da8ead252ea",
+      "source_commit": "c9a286c9e65c277f3688e020f9ae4d30b2678ad1",
+      "runtime_python_sha256": "2912c1fd9a30a124a4589ad17105940b0e93048764fa03a20856b5b726f0fe4d",
       "review_frame": "docs/reviews/gallery/regional_ice_reaper_opening.png"
     }
   ]

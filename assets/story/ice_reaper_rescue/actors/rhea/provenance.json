@@ -1,0 +1,359 @@
+{
+  "source": "assets/source/cinematics/ice_reaper_rescue/women/rhea_actions_generated.png",
+  "source_sha256": "5523570f69e5710f32ee16580697d858f3c235431314b68ee4dd9ce50b754aba",
+  "operation": "Equal-cell extraction, alpha threshold, pixel palette registration, nearest scaling and foot registration only; every pose is separately authored.",
+  "frames": [
+    {
+      "file": "release_01.png",
+      "cell": 0,
+      "source_bounds": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "source_content_bounds": [
+        108,
+        21,
+        253,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        43,
+        35
+      ],
+      "sha256": "144eaf9bdd9a523d5bc44193c4b553a66e2f8b0829ec12cd5d4d310be750a323"
+    },
+    {
+      "file": "release_02.png",
+      "cell": 1,
+      "source_bounds": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "source_content_bounds": [
+        102,
+        21,
+        252,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        42,
+        35
+      ],
+      "sha256": "f8fdb3f328cac044a34b71b2f6dc818a11cd13296c0556419eb32b2d1d3a3010"
+    },
+    {
+      "file": "release_03.png",
+      "cell": 2,
+      "source_bounds": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "source_content_bounds": [
+        95,
+        19,
+        253,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        41,
+        35
+      ],
+      "sha256": "974c1036c668614e1d603930a521aef8f388345eefa3e46abe5877db8a080055"
+    },
+    {
+      "file": "release_04.png",
+      "cell": 3,
+      "source_bounds": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "source_content_bounds": [
+        92,
+        20,
+        254,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        40,
+        35
+      ],
+      "sha256": "48931057b01f2a8324ea02ec43e4b76d5ac0f364b60c92e3e1c8e01a256d92cb"
+    },
+    {
+      "file": "release_05.png",
+      "cell": 4,
+      "source_bounds": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "source_content_bounds": [
+        82,
+        20,
+        270,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        36,
+        35
+      ],
+      "sha256": "80a75bacc66b28cd28ab6a267e46b4c7c3a32299f8581d396a60d4dc58c91873"
+    },
+    {
+      "file": "release_06.png",
+      "cell": 5,
+      "source_bounds": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "source_content_bounds": [
+        60,
+        20,
+        276,
+        299
+      ],
+      "scale": 0.29,
+      "offset": [
+        32,
+        35
+      ],
+      "sha256": "b99ba078f67819d090613d9d7f64f15fa90fd00382d0cca2817fd714778e4b01"
+    },
+    {
+      "file": "release_07.png",
+      "cell": 6,
+      "source_bounds": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "source_content_bounds": [
+        51,
+        20,
+        290,
+        298
+      ],
+      "scale": 0.29,
+      "offset": [
+        29,
+        35
+      ],
+      "sha256": "b307c0a730d4e309f9af83688bf09aaef6654af9d38445b8665da5c1e2e9aacc"
+    },
+    {
+      "file": "release_08.png",
+      "cell": 7,
+      "source_bounds": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "source_content_bounds": [
+        42,
+        19,
+        292,
+        298
+      ],
+      "scale": 0.29,
+      "offset": [
+        28,
+        35
+      ],
+      "sha256": "5cb8ded4b18ad77971acc132197c0c9a99518ec342f5a2d424d5473118eb9f34"
+    },
+    {
+      "file": "eyes_01.png",
+      "cell": 8,
+      "source_bounds": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "source_content_bounds": [
+        6,
+        16,
+        305,
+        300
+      ],
+      "scale": 0.41471571906354515,
+      "offset": [
+        2,
+        5
+      ],
+      "sha256": "4228dd017ce181f2e90675e561326743560c3259f3ae3c4d1711090d5c18c967"
+    },
+    {
+      "file": "eyes_02.png",
+      "cell": 9,
+      "source_bounds": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "source_content_bounds": [
+        7,
+        16,
+        305,
+        300
+      ],
+      "scale": 0.4161073825503356,
+      "offset": [
+        2,
+        5
+      ],
+      "sha256": "1a2d25b0a0e032addb4eeb52d2fce3f99d2d23a44be50ac0e16b20235b1a13d7"
+    },
+    {
+      "file": "eyes_03.png",
+      "cell": 10,
+      "source_bounds": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "source_content_bounds": [
+        6,
+        16,
+        305,
+        300
+      ],
+      "scale": 0.41471571906354515,
+      "offset": [
+        2,
+        5
+      ],
+      "sha256": "c27e6c0f6ad7720e4a635fd4465e93c5315a786f6144fb7e6819c06f45602a46"
+    },
+    {
+      "file": "eyes_04.png",
+      "cell": 11,
+      "source_bounds": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "source_content_bounds": [
+        7,
+        16,
+        306,
+        300
+      ],
+      "scale": 0.41471571906354515,
+      "offset": [
+        2,
+        5
+      ],
+      "sha256": "5baf08770415fa9d41201a09060239db82a5e7ace9a711d79c7e08e5db3b05bd"
+    },
+    {
+      "file": "release_rear_01.png",
+      "cell": 12,
+      "source_bounds": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "source_content_bounds": [
+        54,
+        15,
+        259,
+        291
+      ],
+      "scale": 0.29,
+      "offset": [
+        34,
+        36
+      ],
+      "sha256": "757f24b7dd736633a0e6613408c8335746500c8f0408e5ae3da5a63aa954727e"
+    },
+    {
+      "file": "release_rear_02.png",
+      "cell": 13,
+      "source_bounds": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "source_content_bounds": [
+        46,
+        15,
+        263,
+        291
+      ],
+      "scale": 0.29,
+      "offset": [
+        32,
+        36
+      ],
+      "sha256": "96e2a68dcaa21915879b50f52f2c44affde7d7ee171e6594e18dec009110bcc3"
+    },
+    {
+      "file": "release_rear_03.png",
+      "cell": 14,
+      "source_bounds": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "source_content_bounds": [
+        69,
+        15,
+        261,
+        293
+      ],
+      "scale": 0.29,
+      "offset": [
+        36,
+        35
+      ],
+      "sha256": "38b967e1d3f7dd1c4c964d3814506734d3800dda9f78117283800aab8276bd09"
+    },
+    {
+      "file": "release_rear_04.png",
+      "cell": 15,
+      "source_bounds": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "source_content_bounds": [
+        58,
+        14,
+        260,
+        293
+      ],
+      "scale": 0.29,
+      "offset": [
+        34,
+        35
+      ],
+      "sha256": "bfc5e996e5e738fc12fb8653e6e13d5eb2b613acb4b8a0ed4e859b376fd7502b"
+    }
+  ]
+}

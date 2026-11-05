@@ -2,27 +2,35 @@
   "version": 1,
   "actor": "caelan",
   "canvas": [
-    48,
-    48
+    128,
+    128
   ],
   "anchor": [
-    24,
-    42
+    64,
+    116
   ],
   "poses": {
     "stand": "stand.png"
   },
-  "source_manifest": "assets/combat/caelan/animation.json",
+  "source_manifest": "assets/story/ice_reaper_rescue/actors/caelan/animation.json",
   "copied_without_pixel_changes": true,
   "loops": {
     "ready": [
       {
         "file": "ready_01.png",
-        "duration_ms": 260
+        "duration_ms": 180
       },
       {
         "file": "ready_02.png",
-        "duration_ms": 260
+        "duration_ms": 180
+      },
+      {
+        "file": "ready_03.png",
+        "duration_ms": 180
+      },
+      {
+        "file": "ready_04.png",
+        "duration_ms": 180
       }
     ]
   }

@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "standing_height": 80,
+  "animations": {
+    "dash": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "dash_01.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_02.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_03.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_04.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_05.png",
+          "duration_ms": 80
+        },
+        {
+          "file": "dash_06.png",
+          "duration_ms": 80
+        }
+      ]
+    },
+    "brace": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "brace_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_06.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_07.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_08.png",
+          "duration_ms": 180
+        }
+      ]
+    },
+    "impact": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "impact_01.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "impact_02.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "impact_03.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "impact_04.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "impact_05.png",
+          "duration_ms": 100
+        },
+        {
+          "file": "impact_06.png",
+          "duration_ms": 100
+        }
+      ]
+    },
+    "ready_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "ready_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "brace_rear": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "brace_rear_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "brace_front": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "brace_front_01.png",
+          "duration_ms": 250
+        }
+      ]
+    },
+    "ready_side": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "ready_side_01.png",
+          "duration_ms": 250
+        }
+      ]
+    }
+  },
+  "source": "assets/source/cinematics/ice_reaper_rescue/men/lucan_actions_generated.png"
+}
