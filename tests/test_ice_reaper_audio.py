@@ -68,7 +68,11 @@ class IceReaperAudioTests(unittest.TestCase):
         for identifier, time in early.items():
             self.assertEqual(by_id[identifier]['time'], time)
         self.assertEqual(by_id['awakening']['time'], 15.6+1)
-        self.assertEqual(by_id['prison_burst']['time'], 16.3+1)
+        # The recorded pressure buildup precedes the visible rupture by 200ms.
+        self.assertAlmostEqual(by_id['prison_burst']['time'] + .2, 17.3)
+        self.assertEqual(by_id['prison_burst']['gain'], .58)
+        self.assertEqual(Path(self.audio._sound(by_id['prison_burst']).path).parent.name,
+                         'ice_reaper_breakout')
         self.assertEqual(by_id['rune_bloom']['time'], 16.5+1)
         self.assertEqual([cue['time'] for cue in CUES], sorted(cue['time'] for cue in CUES))
         self.assertTrue(15.1 < by_id['ice_creak']['time'] < 16.4)
