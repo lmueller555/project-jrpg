@@ -51,6 +51,31 @@ class RheaWinterTests(unittest.TestCase):
         self.assertTrue(name.startswith('winter_energy_front_'))
         self.assertIs(image, self.winter.energy['front'][0][0])
 
+    def test_opening_contains_a_complete_body_without_detached_second_figure(self):
+        alpha = pygame.surfarray.array_alpha(self.winter.opening) > 0
+        rows = np.flatnonzero(alpha.any(axis=0))
+        # The old contaminated export measured 41px overall but contained a
+        # much shorter body and a detached head/staff below its feet.
+        np.testing.assert_array_equal(rows, np.arange(14,55))
+        remaining = set(map(tuple, np.argwhere(alpha)))
+        components = []
+        while remaining:
+            pending = [remaining.pop()]
+            component = []
+            while pending:
+                x,y = pending.pop()
+                component.append((x,y))
+                for dx in (-1,0,1):
+                    for dy in (-1,0,1):
+                        neighbor = (x+dx,y+dy)
+                        if neighbor in remaining:
+                            remaining.remove(neighbor)
+                            pending.append(neighbor)
+            components.append(component)
+        body = max(components, key=len)
+        self.assertEqual(max(y for _,y in body)-min(y for _,y in body)+1, 41)
+        self.assertTrue(all(len(component)<5 for component in components if component is not body))
+
     def test_flow_uses_cinematic_time_and_reduced_motion_holds_one_drawing(self):
         sequence = self.winter.energy['rear']
         duration = sum(length for _,length in sequence)

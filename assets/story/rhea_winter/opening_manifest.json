@@ -10,5 +10,22 @@
   ],
   "source": "assets/source/cinematics/rhea_winter/approved_wardrobe.png",
   "source_sha256": "03f94c41f542581dbd62d201e96c8dddd49d9b116796e49ab216079c897ea7b0",
-  "sha256": "af84c0962fe36e7ed36d2eb31d51d5e570ded0869aca886515b0896ff25f865b"
+  "source_crop": [
+    0,
+    0,
+    512,
+    400
+  ],
+  "subject_bounds": [
+    204,
+    72,
+    379,
+    364
+  ],
+  "source_foot_center": 276.5,
+  "offset": [
+    22,
+    14
+  ],
+  "sha256": "ffa0b683f0589dc66a4abcb53e2a969f9d6b335be9c444eb443ed3365c286f43"
 }
