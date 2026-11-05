@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "generated_with": "image_gen",
+  "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+  "source_sha256": "7a7ff57d9c7e2afc680d2b90fca583e03e1e4bc4151f62a37897c9535d864da7",
+  "operation": "Equal-cell extraction, alpha threshold, detached-cell cleanup, one uniform nearest-neighbor scale, palette and foot registration. No mirroring, joint warping or generated in-between poses.",
+  "standing_height_pixels": 71,
+  "fixed_scale": 0.24825174825174826,
+  "original_parent_wind_art_unchanged": true,
+  "frames": [
+    {
+      "file": "wind_hit_rear_right_01.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "sha256": "cb7ff3a5fe1762cad1e5ec093e063019a466696c72503ea22b4536be24f24c92",
+      "source_content_bounds": [
+        72,
+        45,
+        303,
+        331
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 158.0,
+      "registration": [
+        43,
+        45
+      ]
+    },
+    {
+      "file": "wind_hit_rear_right_02.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        362,
+        0,
+        724,
+        362
+      ],
+      "sha256": "2d99052dd20a3457dfdf175fc8a5a9df9a088658238adfdcce1659ac3952c0ca",
+      "source_content_bounds": [
+        72,
+        43,
+        310,
+        328
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 143.0,
+      "registration": [
+        46,
+        45
+      ]
+    },
+    {
+      "file": "wind_hit_rear_right_03.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        724,
+        0,
+        1086,
+        362
+      ],
+      "sha256": "fd4c0a6211d29d63fd1b4ea21dc9c7aa77807b2ceb38b2a3e11d1f11ed16c82f",
+      "source_content_bounds": [
+        68,
+        43,
+        310,
+        327
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 123.0,
+      "registration": [
+        50,
+        45
+      ]
+    },
+    {
+      "file": "wind_hit_rear_right_04.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        1086,
+        0,
+        1448,
+        362
+      ],
+      "sha256": "e039448e4a03aed04baf5d11d4cdc5074964e84ea141b71e68b41f064c450b3a",
+      "source_content_bounds": [
+        78,
+        42,
+        308,
+        322
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 174.0,
+      "registration": [
+        40,
+        46
+      ]
+    },
+    {
+      "file": "wind_flight_rear_01.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        0,
+        362,
+        362,
+        724
+      ],
+      "sha256": "0c8298c1160c9f6e05ec055631b3776980a790d1c2e511b4ac6c9ba5de338064",
+      "source_content_bounds": [
+        71,
+        34,
+        319,
+        320
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 169.0,
+      "registration": [
+        40,
+        45
+      ]
+    },
+    {
+      "file": "wind_flight_rear_02.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        362,
+        362,
+        724,
+        724
+      ],
+      "sha256": "98bfc41868c9bc07b409a38208e0c868a6818bf7e2ce9d9a5d5a4cc86e050bc4",
+      "source_content_bounds": [
+        58,
+        31,
+        321,
+        303
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 146.0,
+      "registration": [
+        42,
+        48
+      ]
+    },
+    {
+      "file": "wind_flight_rear_03.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        724,
+        362,
+        1086,
+        724
+      ],
+      "sha256": "462cbbfa582c78c8082be6bc8188ee1c19158d69d9615b96f552fb5ddeafc566",
+      "source_content_bounds": [
+        54,
+        27,
+        319,
+        286
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 146.0,
+      "registration": [
+        41,
+        52
+      ]
+    },
+    {
+      "file": "wind_flight_rear_04.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        1086,
+        362,
+        1448,
+        724
+      ],
+      "sha256": "7cd940e08ebe94716e4ff7f784f615fb7aa4f95dc5e83a182ffd65a950f1046e",
+      "source_content_bounds": [
+        50,
+        31,
+        313,
+        320
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 143.0,
+      "registration": [
+        41,
+        44
+      ]
+    },
+    {
+      "file": "wind_land_rear_right_01.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        724,
+        362,
+        1086
+      ],
+      "sha256": "28cf3d62d6fcfa68c1b77f1e6e7b45687f185c665487feada4b21842b4c7bb86",
+      "source_content_bounds": [
+        57,
+        46,
+        315,
+        322
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 142.0,
+      "registration": [
+        43,
+        47
+      ]
+    },
+    {
+      "file": "wind_land_rear_right_02.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        362,
+        724,
+        724,
+        1086
+      ],
+      "sha256": "81360636f9592d0be58d57a1d579763e1b88d63024da866e85f9f7feff5d2495",
+      "source_content_bounds": [
+        52,
+        53,
+        320,
+        322
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 166.5,
+      "registration": [
+        36,
+        49
+      ]
+    },
+    {
+      "file": "wind_land_rear_right_03.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        724,
+        724,
+        1086,
+        1086
+      ],
+      "sha256": "93c8dc07ea5cced77db2ef496f8792f7bb42e1efc8adf9e05d4b9f364a29f419",
+      "source_content_bounds": [
+        57,
+        44,
+        319,
+        324
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 143.0,
+      "registration": [
+        43,
+        46
+      ]
+    },
+    {
+      "file": "wind_land_rear_right_04.png",
+      "source": "assets/source/cinematics/caelan_crosswind/crosswind_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        1086,
+        724,
+        1448,
+        1086
+      ],
+      "sha256": "a6411eb3e1bf66927151e695c2a29bdf626a7cba44d64acbddffe53cdd5eeeb8",
+      "source_content_bounds": [
+        67,
+        39,
+        316,
+        327
+      ],
+      "scale": 0.24825174825174826,
+      "foot_source_x": 151.0,
+      "registration": [
+        43,
+        45
+      ]
+    }
+  ]
+}

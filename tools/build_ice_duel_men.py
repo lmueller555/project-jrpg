@@ -75,6 +75,10 @@ def build():
                 records.append(dict(file=filename,source=path.relative_to(ROOT).as_posix(),cell=index,source_bounds=list(bounds),sha256=digest(output),**registration))
                 board.paste(frame,(phase*128,row*152),frame);draw.text((phase*128+4,row*152+130),f'{view} {phase+1}',fill='white')
             angle={'rear':180,'front':0,'right':90,'left':-90}[view]
+            if actor=='caelan':
+                # These filenames describe image-facing, not the viewer's
+                # signed azimuth. Preserve the sword hand by registering views.
+                angle=-angle
             base=dict(frames=frames,view_azimuth_deg=angle,loop=False)
             if actor=='mira':
                 animations[f'brace_{view}']=base

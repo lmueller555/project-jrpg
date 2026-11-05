@@ -146,21 +146,33 @@ class IceReaperDuel:
         return positions
 
     @classmethod
+    def caelan_heading(cls, elapsed):
+        """Enter the crosswind watching the boss, then recover without a spin.
+
+        The wind translates him sideways independently of his gaze. Freeze
+        both facing targets on the established staging: tracking Rhea from a
+        moving position made his body whip around as he passed her, and a
+        second gust-only initial heading snapped away from his dialogue pose.
+        """
+        initial=IceReaperActionStage.actor_positions(20.)
+        before=cls._direction(initial['ice_reaper']-initial['caelan'])
+        after=cls._direction(initial['ice_reaper']-V3(cls.CAELAN_END))
+        start,end=24.12,25.05
+        duration=end-start
+        # Resist the first impact before turning in the airborne portion. The
+        # landing frames already face the fixed recovery direction.
+        amount=smooth(phase(elapsed,start+duration*.22,start+duration*.75))
+        return cls._turn(before,after,amount)
+
+    @classmethod
     def headings(cls, elapsed):
         positions=cls.actor_positions(elapsed)
         toward_boss=cls._direction(positions['ice_reaper']-positions['rhea'])
-        initial=IceReaperActionStage.actor_positions(20.)
-        result={'rhea':toward_boss, 'ice_reaper':cls._direction(positions['rhea']-positions['ice_reaper'])}
-        for actor,start in (('caelan',24.12),('lucan',24.18)):
-            before=IceReaperActionStage.actor_heading(actor,20.)
-            after=cls._direction(positions['rhea']-positions[actor])
-            if actor=='caelan' and elapsed<cls.WIND_START:
-                result[actor]=cls._turn(before,after,smooth(phase(elapsed,21.2,22.)))
-                continue
-            amount=smooth(phase(elapsed,start,start+.6))
-            if actor=='caelan':
-                before=cls._direction(initial['rhea']-initial['caelan'])
-            result[actor]=cls._turn(before,after,amount)
+        result={'rhea':toward_boss, 'ice_reaper':cls._direction(positions['rhea']-positions['ice_reaper']),
+                'caelan':cls.caelan_heading(elapsed)}
+        before=IceReaperActionStage.actor_heading('lucan',20.)
+        after=cls._direction(positions['rhea']-positions['lucan'])
+        result['lucan']=cls._turn(before,after,smooth(phase(elapsed,24.18,24.18+.6)))
         initial_mira=IceReaperActionStage.actor_heading('mira',20.)
         result['mira']=cls._direction(initial_mira.lerp(
             cls._direction(positions['rhea']-positions['mira']),smooth(phase(elapsed,23.8,24.6))))
@@ -280,8 +292,18 @@ class IceReaperDuel:
         options=[]
         for key,sequence in data['sequences'].items():
             if key.startswith(family+'_'):
+                if actor=='caelan' and not entries.get(key,{}).get('held_view'):
+                    # Older rescue-only ready artwork has inferred direction
+                    # labels and can tie a registered eight-view hold. It must
+                    # not replace that hold at the dialogue/gust handoff.
+                    continue
                 view=self.stage._view_metadata(key,entries.get(key,{}))
-                if view is not None:options.append((abs((azimuth-view[0]+180)%360-180),key,sequence))
+                if view is not None:
+                    # This atlas names the direction the artwork faces on the
+                    # image, opposite the signed viewer angle used here. Scope
+                    # the correction to the finale; keep the rescue untouched.
+                    angle=-view[0] if actor=='caelan' else view[0]
+                    options.append((abs((azimuth-angle+180)%360-180),key,sequence))
         if options:
             _,key,sequence=min(options,key=lambda item:item[0]);return sequence[-1][0],data,key
         key=family if family in data['sequences'] else next(iter(data['sequences']))
