@@ -114,10 +114,11 @@ class IceReaperOpening(OpeningCinematic):
         if 'rhea' in data.get('position_tracks', {}):
             raise ValueError('Frozen Rhea cannot walk during the opening')
         expected = [('Caelan', 'Rhea! No!'), ('Lucan', "Cael, go! I'll cover!"),
+                    ('Mira', 'Incoming! I got this one!'),
                     ('Rhea', 'Thanks guys, now leave her to me...'),
                     ('Caelan', 'Rhea...are you su-')]
         if [(cue['speaker'], cue['text']) for cue in data['dialogue']] != expected:
-            raise ValueError('Ice Reaper cinematic must preserve its four authored dialogue cues')
+            raise ValueError('Ice Reaper cinematic must preserve its five authored dialogue cues')
         if data['dialogue'][-1]['end'] != 24.:
             raise ValueError('Caelan must be interrupted by the staff sweep at 24 seconds')
 

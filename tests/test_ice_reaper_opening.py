@@ -179,9 +179,24 @@ class IceReaperOpeningTests(unittest.TestCase):
         self.assertGreaterEqual(cover['start'], alarm['end'])
         self.assertLessEqual(cover['end'], 7.)
 
+    def test_mira_calls_the_intercept_as_the_rescue_orbit_reveals_her(self):
+        self.scene.start()
+        cue = self.scene.data['dialogue'][2]
+        self.assertEqual((cue['speaker'], cue['text']),
+                         ('Mira', 'Incoming! I got this one!'))
+        self.assertEqual((cue['start'], cue['end']), (10.6, 12.8))
+        self.assertIn('Mira', self.scene._dialogue_speakers)
+        portrait = self.scene._dialogue_speakers['Mira']['portrait']
+        self.assertIn(portrait, self.scene._dialogue_portraits)
+        for time in (10.6, 11., 12.79):
+            self.scene.elapsed = time
+            self.assertEqual(self.scene.dialogue, cue)
+        self.scene.elapsed = 12.8
+        self.assertIsNone(self.scene.dialogue)
+
     def test_rhea_takes_control_and_interrupts_caelan_at_the_staff_sweep(self):
-        self.assertEqual(len(self.scene.data['dialogue']), 4)
-        rhea, caelan = self.scene.data['dialogue'][2:]
+        self.assertEqual(len(self.scene.data['dialogue']), 5)
+        rhea, caelan = self.scene.data['dialogue'][-2:]
         self.assertEqual((rhea['speaker'], rhea['text']),
                          ('Rhea', 'Thanks guys, now leave her to me...'))
         self.assertEqual((caelan['speaker'], caelan['text']),
