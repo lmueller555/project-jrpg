@@ -1,0 +1,1026 @@
+{
+  "version": 1,
+  "comparison": "Previous twenty-second rune and shoulder review",
+  "insert": {
+    "start": 15.1,
+    "end": 16.1,
+    "seconds": 1
+  },
+  "early_scene_pixels_unchanged": {
+    "5.5": "146e301f818409dfd305d9e9c53b3ed123e16ba7566f502f04312ab890f21cd4",
+    "7.3": "3feaec85a485cb108f483b5771320858a9335ab2b5322d3972283b8d22c1b3b1",
+    "8.5": "70e168365dd122f302cbc91d7f7f368c1e1428da183759151a02ae3ac9751324",
+    "8.99": "9fb8e27d082f7e7ed4bf4c5b207230b758f9f3b7bf5fe7023621767970621f29",
+    "9.2": "6496f0273148048a94fda2d9425696a3b0b94d39807163747dc6058f57e275a2",
+    "10.4": "de21e8270d62fa0fc686561c204581a02da42031582f626d6b14ea278715504b",
+    "12.0": "d7b43528038dbbd628337d16761703f880ef0d10c3f1a0e663684dd1b7266ae8",
+    "13.8": "b24b96c9d1eee028ef0f7dda55c10a1087eff9215c1f30d7de0d50b4b45dd966",
+    "14.7": "b619c5e5935d6bf8ac93f655d21e757c51e23017fbb77687c27bc480b45e9337",
+    "15.0": "89bc229ac1ad96aa5dc135bb544c1904b6276545019b5e4125c6e290aef1e2de"
+  },
+  "shifted_camera_samples": 222,
+  "other_actor_position_checks": 1110,
+  "actor_heading_checks": 1110,
+  "late_clock_samples": [
+    {
+      "actual_time": 17.3,
+      "choreography_time": 16.3
+    },
+    {
+      "actual_time": 17.316666666666666,
+      "choreography_time": 16.316666666666666
+    },
+    {
+      "actual_time": 17.333333333333332,
+      "choreography_time": 16.333333333333332
+    },
+    {
+      "actual_time": 17.35,
+      "choreography_time": 16.35
+    },
+    {
+      "actual_time": 17.366666666666667,
+      "choreography_time": 16.366666666666667
+    },
+    {
+      "actual_time": 17.383333333333333,
+      "choreography_time": 16.383333333333333
+    },
+    {
+      "actual_time": 17.4,
+      "choreography_time": 16.4
+    },
+    {
+      "actual_time": 17.416666666666668,
+      "choreography_time": 16.416666666666668
+    },
+    {
+      "actual_time": 17.433333333333334,
+      "choreography_time": 16.433333333333334
+    },
+    {
+      "actual_time": 17.45,
+      "choreography_time": 16.45
+    },
+    {
+      "actual_time": 17.466666666666665,
+      "choreography_time": 16.466666666666665
+    },
+    {
+      "actual_time": 17.483333333333334,
+      "choreography_time": 16.483333333333334
+    },
+    {
+      "actual_time": 17.5,
+      "choreography_time": 16.5
+    },
+    {
+      "actual_time": 17.516666666666666,
+      "choreography_time": 16.516666666666666
+    },
+    {
+      "actual_time": 17.533333333333335,
+      "choreography_time": 16.533333333333335
+    },
+    {
+      "actual_time": 17.55,
+      "choreography_time": 16.55
+    },
+    {
+      "actual_time": 17.566666666666666,
+      "choreography_time": 16.566666666666666
+    },
+    {
+      "actual_time": 17.583333333333332,
+      "choreography_time": 16.583333333333332
+    },
+    {
+      "actual_time": 17.6,
+      "choreography_time": 16.6
+    },
+    {
+      "actual_time": 17.616666666666667,
+      "choreography_time": 16.616666666666667
+    },
+    {
+      "actual_time": 17.633333333333333,
+      "choreography_time": 16.633333333333333
+    },
+    {
+      "actual_time": 17.65,
+      "choreography_time": 16.65
+    },
+    {
+      "actual_time": 17.666666666666668,
+      "choreography_time": 16.666666666666668
+    },
+    {
+      "actual_time": 17.683333333333334,
+      "choreography_time": 16.683333333333334
+    },
+    {
+      "actual_time": 17.7,
+      "choreography_time": 16.7
+    },
+    {
+      "actual_time": 17.716666666666665,
+      "choreography_time": 16.716666666666665
+    },
+    {
+      "actual_time": 17.733333333333334,
+      "choreography_time": 16.733333333333334
+    },
+    {
+      "actual_time": 17.75,
+      "choreography_time": 16.75
+    },
+    {
+      "actual_time": 17.766666666666666,
+      "choreography_time": 16.766666666666666
+    },
+    {
+      "actual_time": 17.783333333333335,
+      "choreography_time": 16.783333333333335
+    },
+    {
+      "actual_time": 17.8,
+      "choreography_time": 16.8
+    },
+    {
+      "actual_time": 17.816666666666666,
+      "choreography_time": 16.816666666666666
+    },
+    {
+      "actual_time": 17.833333333333332,
+      "choreography_time": 16.833333333333332
+    },
+    {
+      "actual_time": 17.85,
+      "choreography_time": 16.85
+    },
+    {
+      "actual_time": 17.866666666666667,
+      "choreography_time": 16.866666666666667
+    },
+    {
+      "actual_time": 17.883333333333333,
+      "choreography_time": 16.883333333333333
+    },
+    {
+      "actual_time": 17.9,
+      "choreography_time": 16.9
+    },
+    {
+      "actual_time": 17.916666666666668,
+      "choreography_time": 16.916666666666668
+    },
+    {
+      "actual_time": 17.933333333333334,
+      "choreography_time": 16.933333333333334
+    },
+    {
+      "actual_time": 17.95,
+      "choreography_time": 16.95
+    },
+    {
+      "actual_time": 17.966666666666665,
+      "choreography_time": 16.966666666666665
+    },
+    {
+      "actual_time": 17.983333333333334,
+      "choreography_time": 16.983333333333334
+    },
+    {
+      "actual_time": 18.0,
+      "choreography_time": 17.0
+    },
+    {
+      "actual_time": 18.016666666666666,
+      "choreography_time": 17.016666666666666
+    },
+    {
+      "actual_time": 18.033333333333335,
+      "choreography_time": 17.033333333333335
+    },
+    {
+      "actual_time": 18.05,
+      "choreography_time": 17.05
+    },
+    {
+      "actual_time": 18.066666666666666,
+      "choreography_time": 17.066666666666666
+    },
+    {
+      "actual_time": 18.083333333333332,
+      "choreography_time": 17.083333333333332
+    },
+    {
+      "actual_time": 18.1,
+      "choreography_time": 17.1
+    },
+    {
+      "actual_time": 18.116666666666667,
+      "choreography_time": 17.116666666666667
+    },
+    {
+      "actual_time": 18.133333333333333,
+      "choreography_time": 17.133333333333333
+    },
+    {
+      "actual_time": 18.15,
+      "choreography_time": 17.15
+    },
+    {
+      "actual_time": 18.166666666666668,
+      "choreography_time": 17.166666666666668
+    },
+    {
+      "actual_time": 18.183333333333334,
+      "choreography_time": 17.183333333333334
+    },
+    {
+      "actual_time": 18.2,
+      "choreography_time": 17.2
+    },
+    {
+      "actual_time": 18.216666666666665,
+      "choreography_time": 17.216666666666665
+    },
+    {
+      "actual_time": 18.233333333333334,
+      "choreography_time": 17.233333333333334
+    },
+    {
+      "actual_time": 18.25,
+      "choreography_time": 17.25
+    },
+    {
+      "actual_time": 18.266666666666666,
+      "choreography_time": 17.266666666666666
+    },
+    {
+      "actual_time": 18.283333333333335,
+      "choreography_time": 17.283333333333335
+    },
+    {
+      "actual_time": 18.3,
+      "choreography_time": 17.3
+    },
+    {
+      "actual_time": 18.316666666666666,
+      "choreography_time": 17.316666666666666
+    },
+    {
+      "actual_time": 18.333333333333332,
+      "choreography_time": 17.333333333333332
+    },
+    {
+      "actual_time": 18.35,
+      "choreography_time": 17.35
+    },
+    {
+      "actual_time": 18.366666666666667,
+      "choreography_time": 17.366666666666667
+    },
+    {
+      "actual_time": 18.383333333333333,
+      "choreography_time": 17.383333333333333
+    },
+    {
+      "actual_time": 18.4,
+      "choreography_time": 17.4
+    },
+    {
+      "actual_time": 18.416666666666668,
+      "choreography_time": 17.416666666666668
+    },
+    {
+      "actual_time": 18.433333333333334,
+      "choreography_time": 17.433333333333334
+    },
+    {
+      "actual_time": 18.45,
+      "choreography_time": 17.45
+    },
+    {
+      "actual_time": 18.466666666666665,
+      "choreography_time": 17.466666666666665
+    },
+    {
+      "actual_time": 18.483333333333334,
+      "choreography_time": 17.483333333333334
+    },
+    {
+      "actual_time": 18.5,
+      "choreography_time": 17.5
+    },
+    {
+      "actual_time": 18.516666666666666,
+      "choreography_time": 17.516666666666666
+    },
+    {
+      "actual_time": 18.533333333333335,
+      "choreography_time": 17.533333333333335
+    },
+    {
+      "actual_time": 18.55,
+      "choreography_time": 17.55
+    },
+    {
+      "actual_time": 18.566666666666666,
+      "choreography_time": 17.566666666666666
+    },
+    {
+      "actual_time": 18.583333333333332,
+      "choreography_time": 17.583333333333332
+    },
+    {
+      "actual_time": 18.6,
+      "choreography_time": 17.6
+    },
+    {
+      "actual_time": 18.616666666666667,
+      "choreography_time": 17.616666666666667
+    },
+    {
+      "actual_time": 18.633333333333333,
+      "choreography_time": 17.633333333333333
+    },
+    {
+      "actual_time": 18.65,
+      "choreography_time": 17.65
+    },
+    {
+      "actual_time": 18.666666666666668,
+      "choreography_time": 17.666666666666668
+    },
+    {
+      "actual_time": 18.683333333333334,
+      "choreography_time": 17.683333333333334
+    },
+    {
+      "actual_time": 18.7,
+      "choreography_time": 17.7
+    },
+    {
+      "actual_time": 18.716666666666665,
+      "choreography_time": 17.716666666666665
+    },
+    {
+      "actual_time": 18.733333333333334,
+      "choreography_time": 17.733333333333334
+    },
+    {
+      "actual_time": 18.75,
+      "choreography_time": 17.75
+    },
+    {
+      "actual_time": 18.766666666666666,
+      "choreography_time": 17.766666666666666
+    },
+    {
+      "actual_time": 18.783333333333335,
+      "choreography_time": 17.783333333333335
+    },
+    {
+      "actual_time": 18.8,
+      "choreography_time": 17.8
+    },
+    {
+      "actual_time": 18.816666666666666,
+      "choreography_time": 17.816666666666666
+    },
+    {
+      "actual_time": 18.833333333333332,
+      "choreography_time": 17.833333333333332
+    },
+    {
+      "actual_time": 18.85,
+      "choreography_time": 17.85
+    },
+    {
+      "actual_time": 18.866666666666667,
+      "choreography_time": 17.866666666666667
+    },
+    {
+      "actual_time": 18.883333333333333,
+      "choreography_time": 17.883333333333333
+    },
+    {
+      "actual_time": 18.9,
+      "choreography_time": 17.9
+    },
+    {
+      "actual_time": 18.916666666666668,
+      "choreography_time": 17.916666666666668
+    },
+    {
+      "actual_time": 18.933333333333334,
+      "choreography_time": 17.933333333333334
+    },
+    {
+      "actual_time": 18.95,
+      "choreography_time": 17.95
+    },
+    {
+      "actual_time": 18.966666666666665,
+      "choreography_time": 17.966666666666665
+    },
+    {
+      "actual_time": 18.983333333333334,
+      "choreography_time": 17.983333333333334
+    },
+    {
+      "actual_time": 19.0,
+      "choreography_time": 18.0
+    },
+    {
+      "actual_time": 19.016666666666666,
+      "choreography_time": 18.016666666666666
+    },
+    {
+      "actual_time": 19.033333333333335,
+      "choreography_time": 18.033333333333335
+    },
+    {
+      "actual_time": 19.05,
+      "choreography_time": 18.05
+    },
+    {
+      "actual_time": 19.066666666666666,
+      "choreography_time": 18.066666666666666
+    },
+    {
+      "actual_time": 19.083333333333332,
+      "choreography_time": 18.083333333333332
+    },
+    {
+      "actual_time": 19.1,
+      "choreography_time": 18.1
+    },
+    {
+      "actual_time": 19.116666666666667,
+      "choreography_time": 18.116666666666667
+    },
+    {
+      "actual_time": 19.133333333333333,
+      "choreography_time": 18.133333333333333
+    },
+    {
+      "actual_time": 19.15,
+      "choreography_time": 18.15
+    },
+    {
+      "actual_time": 19.166666666666668,
+      "choreography_time": 18.166666666666668
+    },
+    {
+      "actual_time": 19.183333333333334,
+      "choreography_time": 18.183333333333334
+    },
+    {
+      "actual_time": 19.2,
+      "choreography_time": 18.2
+    },
+    {
+      "actual_time": 19.216666666666665,
+      "choreography_time": 18.216666666666665
+    },
+    {
+      "actual_time": 19.233333333333334,
+      "choreography_time": 18.233333333333334
+    },
+    {
+      "actual_time": 19.25,
+      "choreography_time": 18.25
+    },
+    {
+      "actual_time": 19.266666666666666,
+      "choreography_time": 18.266666666666666
+    },
+    {
+      "actual_time": 19.283333333333335,
+      "choreography_time": 18.283333333333335
+    },
+    {
+      "actual_time": 19.3,
+      "choreography_time": 18.3
+    },
+    {
+      "actual_time": 19.316666666666666,
+      "choreography_time": 18.316666666666666
+    },
+    {
+      "actual_time": 19.333333333333332,
+      "choreography_time": 18.333333333333332
+    },
+    {
+      "actual_time": 19.35,
+      "choreography_time": 18.35
+    },
+    {
+      "actual_time": 19.366666666666667,
+      "choreography_time": 18.366666666666667
+    },
+    {
+      "actual_time": 19.383333333333333,
+      "choreography_time": 18.383333333333333
+    },
+    {
+      "actual_time": 19.4,
+      "choreography_time": 18.4
+    },
+    {
+      "actual_time": 19.416666666666668,
+      "choreography_time": 18.416666666666668
+    },
+    {
+      "actual_time": 19.433333333333334,
+      "choreography_time": 18.433333333333334
+    },
+    {
+      "actual_time": 19.45,
+      "choreography_time": 18.45
+    },
+    {
+      "actual_time": 19.466666666666665,
+      "choreography_time": 18.466666666666665
+    },
+    {
+      "actual_time": 19.483333333333334,
+      "choreography_time": 18.483333333333334
+    },
+    {
+      "actual_time": 19.5,
+      "choreography_time": 18.5
+    },
+    {
+      "actual_time": 19.516666666666666,
+      "choreography_time": 18.516666666666666
+    },
+    {
+      "actual_time": 19.533333333333335,
+      "choreography_time": 18.533333333333335
+    },
+    {
+      "actual_time": 19.55,
+      "choreography_time": 18.55
+    },
+    {
+      "actual_time": 19.566666666666666,
+      "choreography_time": 18.566666666666666
+    },
+    {
+      "actual_time": 19.583333333333332,
+      "choreography_time": 18.583333333333332
+    },
+    {
+      "actual_time": 19.6,
+      "choreography_time": 18.6
+    },
+    {
+      "actual_time": 19.616666666666667,
+      "choreography_time": 18.616666666666667
+    },
+    {
+      "actual_time": 19.633333333333333,
+      "choreography_time": 18.633333333333333
+    },
+    {
+      "actual_time": 19.65,
+      "choreography_time": 18.65
+    },
+    {
+      "actual_time": 19.666666666666668,
+      "choreography_time": 18.666666666666668
+    },
+    {
+      "actual_time": 19.683333333333334,
+      "choreography_time": 18.683333333333334
+    },
+    {
+      "actual_time": 19.7,
+      "choreography_time": 18.7
+    },
+    {
+      "actual_time": 19.716666666666665,
+      "choreography_time": 18.716666666666665
+    },
+    {
+      "actual_time": 19.733333333333334,
+      "choreography_time": 18.733333333333334
+    },
+    {
+      "actual_time": 19.75,
+      "choreography_time": 18.75
+    },
+    {
+      "actual_time": 19.766666666666666,
+      "choreography_time": 18.766666666666666
+    },
+    {
+      "actual_time": 19.783333333333335,
+      "choreography_time": 18.783333333333335
+    },
+    {
+      "actual_time": 19.8,
+      "choreography_time": 18.8
+    },
+    {
+      "actual_time": 19.816666666666666,
+      "choreography_time": 18.816666666666666
+    },
+    {
+      "actual_time": 19.833333333333332,
+      "choreography_time": 18.833333333333332
+    },
+    {
+      "actual_time": 19.85,
+      "choreography_time": 18.85
+    },
+    {
+      "actual_time": 19.866666666666667,
+      "choreography_time": 18.866666666666667
+    },
+    {
+      "actual_time": 19.883333333333333,
+      "choreography_time": 18.883333333333333
+    },
+    {
+      "actual_time": 19.9,
+      "choreography_time": 18.9
+    },
+    {
+      "actual_time": 19.916666666666668,
+      "choreography_time": 18.916666666666668
+    },
+    {
+      "actual_time": 19.933333333333334,
+      "choreography_time": 18.933333333333334
+    },
+    {
+      "actual_time": 19.95,
+      "choreography_time": 18.95
+    },
+    {
+      "actual_time": 19.966666666666665,
+      "choreography_time": 18.966666666666665
+    },
+    {
+      "actual_time": 19.983333333333334,
+      "choreography_time": 18.983333333333334
+    },
+    {
+      "actual_time": 20.0,
+      "choreography_time": 19.0
+    },
+    {
+      "actual_time": 20.016666666666666,
+      "choreography_time": 19.016666666666666
+    },
+    {
+      "actual_time": 20.033333333333335,
+      "choreography_time": 19.033333333333335
+    },
+    {
+      "actual_time": 20.05,
+      "choreography_time": 19.05
+    },
+    {
+      "actual_time": 20.066666666666666,
+      "choreography_time": 19.066666666666666
+    },
+    {
+      "actual_time": 20.083333333333332,
+      "choreography_time": 19.083333333333332
+    },
+    {
+      "actual_time": 20.1,
+      "choreography_time": 19.1
+    },
+    {
+      "actual_time": 20.116666666666667,
+      "choreography_time": 19.116666666666667
+    },
+    {
+      "actual_time": 20.133333333333333,
+      "choreography_time": 19.133333333333333
+    },
+    {
+      "actual_time": 20.15,
+      "choreography_time": 19.15
+    },
+    {
+      "actual_time": 20.166666666666668,
+      "choreography_time": 19.166666666666668
+    },
+    {
+      "actual_time": 20.183333333333334,
+      "choreography_time": 19.183333333333334
+    },
+    {
+      "actual_time": 20.2,
+      "choreography_time": 19.2
+    },
+    {
+      "actual_time": 20.216666666666665,
+      "choreography_time": 19.216666666666665
+    },
+    {
+      "actual_time": 20.233333333333334,
+      "choreography_time": 19.233333333333334
+    },
+    {
+      "actual_time": 20.25,
+      "choreography_time": 19.25
+    },
+    {
+      "actual_time": 20.266666666666666,
+      "choreography_time": 19.266666666666666
+    },
+    {
+      "actual_time": 20.283333333333335,
+      "choreography_time": 19.283333333333335
+    },
+    {
+      "actual_time": 20.3,
+      "choreography_time": 19.3
+    },
+    {
+      "actual_time": 20.316666666666666,
+      "choreography_time": 19.316666666666666
+    },
+    {
+      "actual_time": 20.333333333333332,
+      "choreography_time": 19.333333333333332
+    },
+    {
+      "actual_time": 20.35,
+      "choreography_time": 19.35
+    },
+    {
+      "actual_time": 20.366666666666667,
+      "choreography_time": 19.366666666666667
+    },
+    {
+      "actual_time": 20.383333333333333,
+      "choreography_time": 19.383333333333333
+    },
+    {
+      "actual_time": 20.4,
+      "choreography_time": 19.4
+    },
+    {
+      "actual_time": 20.416666666666668,
+      "choreography_time": 19.416666666666668
+    },
+    {
+      "actual_time": 20.433333333333334,
+      "choreography_time": 19.433333333333334
+    },
+    {
+      "actual_time": 20.45,
+      "choreography_time": 19.45
+    },
+    {
+      "actual_time": 20.466666666666665,
+      "choreography_time": 19.466666666666665
+    },
+    {
+      "actual_time": 20.483333333333334,
+      "choreography_time": 19.483333333333334
+    },
+    {
+      "actual_time": 20.5,
+      "choreography_time": 19.5
+    },
+    {
+      "actual_time": 20.516666666666666,
+      "choreography_time": 19.516666666666666
+    },
+    {
+      "actual_time": 20.533333333333335,
+      "choreography_time": 19.533333333333335
+    },
+    {
+      "actual_time": 20.55,
+      "choreography_time": 19.55
+    },
+    {
+      "actual_time": 20.566666666666666,
+      "choreography_time": 19.566666666666666
+    },
+    {
+      "actual_time": 20.583333333333332,
+      "choreography_time": 19.583333333333332
+    },
+    {
+      "actual_time": 20.6,
+      "choreography_time": 19.6
+    },
+    {
+      "actual_time": 20.616666666666667,
+      "choreography_time": 19.616666666666667
+    },
+    {
+      "actual_time": 20.633333333333333,
+      "choreography_time": 19.633333333333333
+    },
+    {
+      "actual_time": 20.65,
+      "choreography_time": 19.65
+    },
+    {
+      "actual_time": 20.666666666666668,
+      "choreography_time": 19.666666666666668
+    },
+    {
+      "actual_time": 20.683333333333334,
+      "choreography_time": 19.683333333333334
+    },
+    {
+      "actual_time": 20.7,
+      "choreography_time": 19.7
+    },
+    {
+      "actual_time": 20.716666666666665,
+      "choreography_time": 19.716666666666665
+    },
+    {
+      "actual_time": 20.733333333333334,
+      "choreography_time": 19.733333333333334
+    },
+    {
+      "actual_time": 20.75,
+      "choreography_time": 19.75
+    },
+    {
+      "actual_time": 20.766666666666666,
+      "choreography_time": 19.766666666666666
+    },
+    {
+      "actual_time": 20.783333333333335,
+      "choreography_time": 19.783333333333335
+    },
+    {
+      "actual_time": 20.8,
+      "choreography_time": 19.8
+    },
+    {
+      "actual_time": 20.816666666666666,
+      "choreography_time": 19.816666666666666
+    },
+    {
+      "actual_time": 20.833333333333332,
+      "choreography_time": 19.833333333333332
+    },
+    {
+      "actual_time": 20.85,
+      "choreography_time": 19.85
+    },
+    {
+      "actual_time": 20.866666666666667,
+      "choreography_time": 19.866666666666667
+    },
+    {
+      "actual_time": 20.883333333333333,
+      "choreography_time": 19.883333333333333
+    },
+    {
+      "actual_time": 20.9,
+      "choreography_time": 19.9
+    },
+    {
+      "actual_time": 20.916666666666668,
+      "choreography_time": 19.916666666666668
+    },
+    {
+      "actual_time": 20.933333333333334,
+      "choreography_time": 19.933333333333334
+    },
+    {
+      "actual_time": 20.95,
+      "choreography_time": 19.95
+    },
+    {
+      "actual_time": 20.966666666666665,
+      "choreography_time": 19.966666666666665
+    },
+    {
+      "actual_time": 20.983333333333334,
+      "choreography_time": 19.983333333333334
+    }
+  ],
+  "awakening": {
+    "15.2": {
+      "active": true,
+      "expression": "neutral_closed",
+      "eyes_closed": true,
+      "openness": 0.0,
+      "eye_glow": 0.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "15.7": {
+      "active": true,
+      "expression": "strain_begin",
+      "eyes_closed": true,
+      "openness": 0.0,
+      "eye_glow": 0.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "16.0": {
+      "active": true,
+      "expression": "strain_mid",
+      "eyes_closed": true,
+      "openness": 0.0,
+      "eye_glow": 0.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "16.4": {
+      "active": true,
+      "expression": "opening_01",
+      "eyes_closed": false,
+      "openness": 0.2,
+      "eye_glow": 0.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "16.45": {
+      "active": true,
+      "expression": "opening_01",
+      "eyes_closed": false,
+      "openness": 0.2,
+      "eye_glow": 0.06191390488911252,
+      "gleam_strength": 0.008916323731135094,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "16.62": {
+      "active": true,
+      "expression": "opening_02",
+      "eyes_closed": false,
+      "openness": 0.65,
+      "eye_glow": 0.7407407407407456,
+      "gleam_strength": 1.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "16.9": {
+      "active": true,
+      "expression": "angry_hold",
+      "eyes_closed": false,
+      "openness": 1.0,
+      "eye_glow": 1.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.0,
+      "overlay_alpha": 1.0,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    },
+    "17.15": {
+      "active": true,
+      "expression": "angry_hold",
+      "eyes_closed": false,
+      "openness": 1.0,
+      "eye_glow": 1.0,
+      "gleam_strength": 0.0,
+      "pullback": 0.6064139941690898,
+      "overlay_alpha": 0.6144742831133434,
+      "closed_hold_end": 16.4,
+      "breakout": 17.3
+    }
+  },
+  "rune_completion_at18_6": {
+    "world_radius": 8.2,
+    "center": [
+      -3.0,
+      0.035,
+      0.0
+    ],
+    "progress": 1.0,
+    "stage": "complete",
+    "coverage": 1.0,
+    "complete_at": 17.6,
+    "geometry_scale": 1.0
+  },
+  "note": "Action helpers retain the previous choreography clock. Production draw maps actual elapsed time through story_time; later geometry and camera are preserved with a one-second shift."
+}

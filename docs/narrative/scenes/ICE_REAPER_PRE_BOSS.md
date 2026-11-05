@@ -5,8 +5,8 @@ motive and ordered action beats below are established scene intent. Further
 story context and staging after the opening remain open.
 
 **Format:** An action-packed, 45-second cinematic preceding an Ice Reaper boss
-fight, using Wintermute2's energetic opening. The first twenty seconds are now
-implemented as an isolated Gallery preview; the remaining twenty-five seconds and
+fight, using Wintermute2's energetic opening. The first twenty-one seconds are now
+implemented as an isolated Gallery preview; the remaining twenty-four seconds and
 playable boss encounter are not implemented.
 
 **Placement:** Unplaced. The kingdom, world region, act and installment have
@@ -67,7 +67,7 @@ The cinematic is timed to the music, not extended by click-to-continue
 dialogue or an additional end hold. The final ice-energy blast must resolve
 within that budget so the boss fight follows without a gap in the score.
 
-The current partial preview plays only 00:00-00:20, then returns to Gallery.
+The current partial preview plays only 00:00-00:21, then returns to Gallery.
 Its cue is one-shot playback for that bounded preview, not a decision about
 eventual boss-music loop points.
 
@@ -75,7 +75,7 @@ Individual shot lengths after the opening and exact musical accent alignments
 remain to be designed. Loop points beyond the full cinematic's handoff,
 mixing, and main-story pause/skip/retry behavior are not assigned here.
 
-## Opening and coordinated rescue preview - first twenty seconds
+## Opening and coordinated rescue preview - first twenty-one seconds
 
 **Implemented:** The opening keeps its portrait dialogue and pixel presentation.
 The first five seconds retain the frozen-clearing reveal, with a new sword-equipped
@@ -111,37 +111,90 @@ hovering overhead, preparing to launch it.
 | 11.00–12.80 | Push toward Mira loading and aiming her launcher |
 | 12.80–14.20 | Camera moves behind the launcher; second shard becomes visible |
 | 14.20–15.10 | Mira fires and destroys the second shard |
-| 15.10–16.30 | Close-up of Rhea opening green-lit eyes |
-| 16.30–17.20 | Prison shatters and the red rune appears |
-| 17.20–20.00 | Pull up and sweep from the Ice Reaper's left to right shoulder |
+| 15.10–16.40 | Rhea holds her eyes closed, progressing from stillness to visible strain inside cracked ice |
+| 16.40–17.30 | Her eyes open angrily with a green gleam, then hold while she remains inside the original prison |
+| 17.30–17.95 | Prison shatters; Rhea turns toward the Reaper as the camera rapidly retreats to the first shoulder |
+| 17.95–20.25 | The camera traverses behind the Reaper from one shoulder to the other; the rune completes at 18.60 |
+| 20.25–21.00 | Hold the opposite-shoulder composition with Rhea and the completed rune visible |
 
-At twenty seconds the Gallery preview completes without starting combat or
+At twenty-one seconds the Gallery preview completes without starting combat or
 advancing the saved journey. The full planned cinematic remains 45 seconds.
+
+The awakening uses the existing full-body scene sprite and original prison.
+Eight native 128×128 expression frames change only a small facial mask; her
+body, hair, clothing, staff, anchor and alpha remain exact. The actual scene
+camera moves closer to this same sprite as her closed eyes strain and open
+angrily. A green gleam follows the registered irises before settling into a glow.
+There is one Rhea draw throughout, with the original prison's back and front
+layers enclosing her until the shatter. The separate illustrated portrait and
+its ice enclosure have been removed.
+
+The approved rapid retreat takes 0.65 seconds from the shatter to the first
+shoulder. Rhea turns toward the Reaper during the same movement. A slower,
+2.3-second traverse then carries the camera behind the Reaper to the opposite
+shoulder while targeting Rhea. A final 0.75-second hold ends the preview. The
+score and sound cues continue on their existing 21-second clock.
+
+### Rescue continuity and interception polish
+
+The first shard is aimed at Rhea's upper body, not at Lucan. His raised shield
+intersects that same ray before it reaches the prison. The release lowers with
+the Reaper's arm, producing a shallower upper-right-to-lower-left approach.
+Lucan's longer dash ends on the enemy-facing side of Rhea; his shield, pointed
+shard tip, collision flash and fragments share the same contact point.
+
+Actor headings are fixed in world space. Signed camera angles select matching
+authored front, side, three-quarter and rear views without swapping weapon
+hands or resetting an action's phase. Frozen Rhea keeps facing the party until
+she breaks free, then turns toward the Reaper. The final camera follows a real
+path behind the Reaper's shoulders, with her image projected from her world
+position rather than sliding across the screen.
+
+Lucan remains kneeling and facing the Reaper through his shield raise and
+impact; his established late held views are preserved. After Rhea breaks free,
+the Reaper uses the earlier approved artwork and rises closer to the camera.
+Her head, hair, wings and shoulders form the foreground while her lower body
+extends outside the frame. She settles as the rapid retreat reaches the first
+shoulder, before the shoulder sweep begins. Rhea stays clear at either
+shoulder, with brief natural occlusion during the central crossing.
+
+The rune is an authored seal with a fixed 8.2-world-unit radius. From 17.3 to
+18.6 seconds its central seal ignites, branches trace outward, opposing ring
+fronts close the circumference, and glyphs activate along those paths. Its
+geometry never scales during construction. A completion pulse and restrained
+shimmer follow, with emissive strokes lighting the snow beneath cast shadows.
+
+The environment uses one periodic panorama and fixed city, woodland and ruin
+locations. Camera direction and projection determine their visibility; shot
+labels no longer select different geography or crossfade between landscapes.
 
 Reduced Motion replaces the animated camera moves with static compositions,
 removes shake and hovering, and fades the brush instead of sweeping it aside.
 Pause and focus loss freeze the same visual clock and soundtrack.
 
 **Replay:** From the title screen choose Gallery, then
-**Ice Reaper: Frozen Clearing (20s)** under Scene Studies. The entry is last in
+**Ice Reaper: Frozen Clearing (21s)** under Scene Studies. The entry is last in
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [twenty-second clip](../../reviews/ice_reaper_rescue/preview.mp4),
-[keyframes](../../reviews/ice_reaper_rescue/keyframes.png) and
-[verification record](../../reviews/ice_reaper_rescue/verification.json).
+Review the [twenty-one-second clip](../../reviews/ice_reaper_scene_awakening/preview.mp4),
+[awakening filmstrip](../../reviews/ice_reaper_scene_awakening/awakening_filmstrip.png) and
+[verification record](../../reviews/ice_reaper_scene_awakening/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:
 
 ```sh
+python3 tools/build_ice_reaper_rune.py
 python3 tools/build_ice_rescue_men.py
 python3 tools/build_ice_rescue_women.py
 python3 tools/build_ice_rescue_environment.py
 python3 tools/build_ice_reaper_action_audio.py
+python3 tools/build_rhea_closeup_audio.py
+python3 tools/build_rhea_scene_awakening_study.py
 python3 tools/build_ice_reaper_opening.py
 python3 tools/build_runtime_music.py --track wintermute2
-python3 tools/capture_ice_reaper_opening.py
+python3 tools/capture_ice_reaper_scene_awakening.py
 ```
 
 ## Named participants
@@ -331,7 +384,7 @@ the kingdom's inhabitants' fates are not settled.
 - The Ice Reaper's appearance, personal history and precise relationship to
   the kingdom; no identity as an Ancient is assigned.
 - How the protective-dome backstory is conveyed to the player.
-- Detailed shot plan and per-shot timing for the remaining twenty-five seconds,
+- Detailed shot plan and per-shot timing for the remaining twenty-four seconds,
   choreography, scale cues and performance.
 - Magical sourcing and limits, including how the meteor reaches the dome
   without implying an Aethersphere breach.
@@ -343,7 +396,7 @@ the kingdom's inhabitants' fates are not settled.
   arena and actor positions, camera, encounter state and any carried-over
   resource effects. The music continues from its current position.
 
-The full duration and music continuity are fixed. The twenty-second preview's
+The full duration and music continuity are fixed. The twenty-one-second preview's
 completion is implemented; the remaining choreography, boss-fight
 transition, battle phases, outcomes beyond this survival and post-fight scenes
 remain open.

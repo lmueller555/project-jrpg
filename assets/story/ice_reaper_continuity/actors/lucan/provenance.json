@@ -1,0 +1,695 @@
+{
+  "version": 1,
+  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
+  "sources": {
+    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
+    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
+    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
+    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
+    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
+    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
+    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
+    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473",
+    "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png": "029d428e30c2c525a55e345540609def4fccb7a2ea7a3ded551e208fa4614df9"
+  },
+  "frames": [
+    {
+      "file": "hold_brace_front_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "sha256": "c9854c2a9f35f611ee12ab4e2d84b16bf8f6881a7c93d5c11f2b28de1a1f69d2",
+      "source_content_bounds": [
+        21,
+        144,
+        211,
+        360
+      ],
+      "scale": 0.3148148148148148,
+      "foot_source_x": 122.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_front_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "sha256": "971fb27f6b64137921aa825440a1162ef5bdc89c6cb142103ef11c1f6c10e79b",
+      "source_content_bounds": [
+        26,
+        146,
+        213,
+        360
+      ],
+      "scale": 0.3177570093457944,
+      "foot_source_x": 121.0,
+      "registration": [
+        34,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "sha256": "87f12a4f89d0282fce5dd0468e1b597520d18ffa1b731f4ea3a77535df5c89d0",
+      "source_content_bounds": [
+        52,
+        142,
+        177,
+        364
+      ],
+      "scale": 0.3063063063063063,
+      "foot_source_x": 108.0,
+      "registration": [
+        47,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "sha256": "8655921f1cc7b6c565ee334243dd526bff69581222fa257e172c9bb8861765a9",
+      "source_content_bounds": [
+        41,
+        146,
+        193,
+        360
+      ],
+      "scale": 0.3177570093457944,
+      "foot_source_x": 115.0,
+      "registration": [
+        40,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "sha256": "db431bd97b10243e562ef50b87155d9c00ebe0ba02e08b78f7b85512f906d60b",
+      "source_content_bounds": [
+        23,
+        141,
+        200,
+        361
+      ],
+      "scale": 0.3090909090909091,
+      "foot_source_x": 113.0,
+      "registration": [
+        36,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_rear_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "292e07a98c32d4683a3463842ddf18f44739d8ffad534863c057a28674078288",
+      "source_content_bounds": [
+        25,
+        144,
+        195,
+        360
+      ],
+      "scale": 0.3148148148148148,
+      "foot_source_x": 115.0,
+      "registration": [
+        36,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 14,
+      "source_box": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "sha256": "12acc53a8ab55108b5bb7701832e6deabd2b855abf41a24d3613c8ec66efbb07",
+      "source_content_bounds": [
+        26,
+        141,
+        168,
+        360
+      ],
+      "scale": 0.3105022831050228,
+      "foot_source_x": 101.0,
+      "registration": [
+        41,
+        48
+      ]
+    },
+    {
+      "file": "hold_brace_front_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 15,
+      "source_box": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "sha256": "ae65e55e809fe376f487bca383201476e1551c6cf2a9b96c14391735bb687331",
+      "source_content_bounds": [
+        0,
+        149,
+        175,
+        361
+      ],
+      "scale": 0.32075471698113206,
+      "foot_source_x": 99.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_01.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        362,
+        181,
+        724
+      ],
+      "sha256": "91c2d3ad3c5d3c254dcd97d61d2cbe24a065812fac71132e3c1ac455565e4652",
+      "source_content_bounds": [
+        16,
+        99,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 149.0,
+      "registration": [
+        18,
+        49
+      ]
+    },
+    {
+      "file": "dash_rear_02.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        181,
+        362,
+        362,
+        724
+      ],
+      "sha256": "57b3512b437c21b8e31a9cdff4d4f400be718d7d884e4a9d53c2f4c31d32eb96",
+      "source_content_bounds": [
+        18,
+        96,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 148.0,
+      "registration": [
+        19,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_03.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        362,
+        362,
+        543,
+        724
+      ],
+      "sha256": "58e3269de1787e9aa9c8f135e7414e2934f9f38c935982532e4a81b41dfba94a",
+      "source_content_bounds": [
+        10,
+        89,
+        181,
+        275
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 144.0,
+      "registration": [
+        18,
+        52
+      ]
+    },
+    {
+      "file": "dash_rear_04.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        543,
+        362,
+        724,
+        724
+      ],
+      "sha256": "cffcf2929dc8cca0815c585550fb323ecdaca2d1c40c63721ad98bb108ec5daa",
+      "source_content_bounds": [
+        12,
+        96,
+        181,
+        296
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 111.0,
+      "registration": [
+        30,
+        47
+      ]
+    },
+    {
+      "file": "dash_rear_05.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        724,
+        362,
+        905,
+        724
+      ],
+      "sha256": "65bebaa9145c9357d3d289234fa73cf3fe28ae7f7d5d5f4f9ad4ba9c9ef8bf4f",
+      "source_content_bounds": [
+        6,
+        96,
+        181,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 99.0,
+      "registration": [
+        32,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_06.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        905,
+        362,
+        1086,
+        724
+      ],
+      "sha256": "9342ba03541e9a4f9a07d1076cbb2a4950b262f8703effa68b7c2d51bb93715d",
+      "source_content_bounds": [
+        8,
+        98,
+        179,
+        295
+      ],
+      "scale": 0.3434343434343434,
+      "foot_source_x": 86.0,
+      "registration": [
+        37,
+        48
+      ]
+    },
+    {
+      "file": "brace_rear_left_01.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "sha256": "e438a2d8d77328c3325ee8c01eb05e5088e254c429e99d41b799b2a931cf88f1",
+      "source_content_bounds": [
+        33,
+        173,
+        215,
+        372
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 58.0,
+      "registration": [
+        54,
+        37
+      ]
+    },
+    {
+      "file": "brace_rear_left_02.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "sha256": "583abda3e580b601a9fa79350da397622c04b6fadb7a3d5d81a5818ea3a8c9c0",
+      "source_content_bounds": [
+        47,
+        190,
+        215,
+        371
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 103.0,
+      "registration": [
+        42,
+        44
+      ]
+    },
+    {
+      "file": "brace_rear_left_03.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "sha256": "9f628334efbf5e029c05bff2431913a00f9f2fead46cfd0b2ad09dba0558de55",
+      "source_content_bounds": [
+        40,
+        203,
+        205,
+        371
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        34,
+        49
+      ]
+    },
+    {
+      "file": "brace_rear_left_04.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "sha256": "b77eae685d69e5845d2db4f1290397fbbae9aa93e18df98421365cd47d4f822b",
+      "source_content_bounds": [
+        33,
+        198,
+        198,
+        370
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        31,
+        48
+      ]
+    },
+    {
+      "file": "brace_rear_left_05.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "sha256": "937f0e9b72417505fd4c4b5d33d7b0c545b8e206e151d812ec231c98ff1aa8ee",
+      "source_content_bounds": [
+        35,
+        185,
+        196,
+        370
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 115.0,
+      "registration": [
+        32,
+        43
+      ]
+    },
+    {
+      "file": "brace_rear_left_06.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "c50cd7a8a8588b70072365b024d6e99ad82661a3aaed0e2c448ff6c2830698be",
+      "source_content_bounds": [
+        32,
+        167,
+        196,
+        371
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 115.0,
+      "registration": [
+        31,
+        35
+      ]
+    },
+    {
+      "file": "brace_rear_left_07.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "sha256": "3854e73dc6d1d2912d97353cec6aa4b256b81da1e4da6aedc9bb1942290efc50",
+      "source_content_bounds": [
+        27,
+        149,
+        197,
+        371
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        29,
+        28
+      ]
+    },
+    {
+      "file": "brace_rear_left_08.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "1f1a7432d0983c4c743cf9d8e751243e8d5f00b6af935e7269e6d09f4eccd25c",
+      "source_content_bounds": [
+        26,
+        136,
+        197,
+        371
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 115.0,
+      "registration": [
+        29,
+        23
+      ]
+    },
+    {
+      "file": "impact_rear_left_01.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "sha256": "dfb5ade02cdb9b9c3422a0baa23ad6d7a8d86228093747e9b83c2ec27271e471",
+      "source_content_bounds": [
+        32,
+        138,
+        199,
+        368
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 117.0,
+      "registration": [
+        30,
+        25
+      ]
+    },
+    {
+      "file": "impact_rear_left_02.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 9,
+      "source_box": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "sha256": "728292f9f088e26830ed5072a73386762a4abaade72812601b11b89c6e462f6e",
+      "source_content_bounds": [
+        32,
+        161,
+        196,
+        372
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        31,
+        32
+      ]
+    },
+    {
+      "file": "impact_rear_left_03.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "sha256": "826087b4ad29afb4234a105d9e1982697528bc24d8c4820a28e7962635a548f2",
+      "source_content_bounds": [
+        32,
+        177,
+        197,
+        372
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        31,
+        39
+      ]
+    },
+    {
+      "file": "impact_rear_left_04.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "sha256": "7251fd377a567e443def04ac02eeebc923361988b36495d90b78bf94842b12a7",
+      "source_content_bounds": [
+        29,
+        159,
+        197,
+        369
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 116.0,
+      "registration": [
+        30,
+        33
+      ]
+    },
+    {
+      "file": "impact_rear_left_05.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "sha256": "bad4fd15a75214deb774c80424cbe91abdeb8e175d5cc1cc5e3a7d4cad43d50f",
+      "source_content_bounds": [
+        26,
+        143,
+        196,
+        369
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 115.0,
+      "registration": [
+        29,
+        26
+      ]
+    },
+    {
+      "file": "impact_rear_left_06.png",
+      "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "3f63449327c5438f5d1eb2c17e6ea7e2bc55169bd125289cd7eb1f87ae28beaa",
+      "source_content_bounds": [
+        26,
+        135,
+        196,
+        369
+      ],
+      "scale": 0.3963963963963964,
+      "foot_source_x": 115.0,
+      "registration": [
+        29,
+        23
+      ]
+    }
+  ],
+  "guard_correction": {
+    "review": "awaiting_user_review",
+    "source": "assets/source/cinematics/ice_reaper_guard_correction/lucan_enemy_facing_generated.png",
+    "source_sha256": "029d428e30c2c525a55e345540609def4fccb7a2ea7a3ded551e208fa4614df9",
+    "operation": "Authored frame extraction, alpha cleanup, uniform nearest scaling and foot registration. No mirroring or body deformation. Late held views are untouched."
+  }
+}

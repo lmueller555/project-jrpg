@@ -65,16 +65,18 @@ SHOTS = (
     (7.5, 9.5, 'slow_motion_rescue'), (9.5, 11., 'rescue_orbit'),
     (11., 12.8, 'mira_loading'), (12.8, 14.2, 'launcher_sight'),
     (14.2, 15.1, 'second_shard_intercept'), (15.1, 16.3, 'rhea_awakens'),
-    (16.3, 17.2, 'prison_release'), (17.2, 20., 'rune_panorama'))
+    (16.3, 16.95, 'prison_release'), (16.95, 19.25, 'rune_panorama'),
+    (19.25, 20., 'rune_hold'))
 
 
 class IceReaperActionStage:
-    """Render absolute time 5–20 seconds, without advancing mutable state."""
+    """Render 5–21 seconds over the preserved 20-second choreography clock."""
 
     def __init__(self, asset_root, *, strict=False):
         self.asset_root = Path(asset_root)
         self.repository = Path(__file__).resolve().parent
         self.opening = self.repository/'assets/story/ice_reaper_opening'
+        self.continuity_root = self.asset_root.parent/'ice_reaper_continuity'
         self.images = {}
         self.actors = {}
         self.missing_assets = []
@@ -94,7 +96,7 @@ class IceReaperActionStage:
             'caelan': ('ready', 'dash', 'slash', 'land'),
             'lucan': ('dash', 'brace', 'impact'),
             'mira': ('raise', 'load', 'aim', 'fire'),
-            'rhea': ('release', 'eyes'),
+            'rhea': ('release',),
             'ice_reaper': ('aim', 'launch', 'recharge')}
         for actor, actions in required.items():
             folder = self.asset_root/'actors'/actor
@@ -130,6 +132,40 @@ class IceReaperActionStage:
                 self.actors[actor] = dict(sequences={key: [(image, .1)] for key in actions},
                                           anchor=anchor, body_pixels=image.get_bounding_rect().height,
                                           manifest={})
+        # Angle-specific art augments action strips without altering their phase.
+        # Retain the approved Reaper artwork before the directional overlay
+        # replaces its ready views. The final shot reuses these exact images.
+        self._approved_boss_sequences = self.actors['ice_reaper']['sequences'].copy()
+        for actor, data in self.actors.items():
+            folder = self.continuity_root/'actors'/actor
+            path = folder/'animation.json'
+            if not path.exists():
+                self.missing_assets.append(f'continuity/actors/{actor}/animation.json')
+                continue
+            overlay = json.loads(path.read_text())
+            if tuple(overlay['anchor']) != data['anchor'] or overlay['canvas'] != data['manifest']['canvas']:
+                raise ValueError(f'Continuity views must preserve actor registration: {actor}')
+            for key, entry in overlay['animations'].items():
+                frames = entry['frames']
+                data['sequences'][key] = [(self._read_image(folder/frame['file']),
+                                          frame.get('duration_ms', 180)/1000) for frame in frames]
+                data['manifest']['animations'][key] = entry
+        environment = self.continuity_root/'environment'
+        panorama_path = environment/'panorama.png'
+        self.panorama = None
+        self._panorama_cache = {}
+        self._background_cache = {}
+        self.landmark_images = {}
+        if panorama_path.exists():
+            self.panorama = pygame.surfarray.array3d(self._read_image(panorama_path))
+            for name in ('castle', 'forest', 'ruins'):
+                path = environment/f'{name}.png'
+                if path.exists():
+                    self.landmark_images[name] = self._read_image(path)
+                else:
+                    self.missing_assets.append(f'continuity/environment/{name}.png')
+        else:
+            self.missing_assets.append('continuity/environment/panorama.png')
         self.plates = {}
         for key in ('rescue', 'reverse', 'aerial'):
             path = self.asset_root/'environment'/f'{key}.png'
@@ -150,12 +186,17 @@ class IceReaperActionStage:
             if path.exists():
                 self.scope = self._read_image(path)
                 break
+        from ice_reaper_rune import RuneSeal
+        self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
+        from rhea_scene_awakening import RheaSceneAwakening
+        self.awakening = RheaSceneAwakening(self)
+        self.last_draw_trace = []
 
     def validate_assets(self):
         if self.missing_assets:
             raise ValueError('Missing authored rescue assets: '+', '.join(self.missing_assets))
         required = {'caelan':('ready','dash','slash','land'), 'lucan':('dash','brace','impact'),
-                    'mira':('raise','load','aim','fire'), 'rhea':('eyes','release'),
+                    'mira':('raise','load','aim','fire'), 'rhea':('release',),
                     'ice_reaper':('aim','launch','recharge')}
         for actor, actions in required.items():
             for action in actions:
@@ -168,12 +209,68 @@ class IceReaperActionStage:
         pass
 
     @staticmethod
+    def story_time(elapsed):
+        """Retain the early action's original choreography clock.
+
+        The replacement awakening owns a local clock starting at 15.1 seconds;
+        its camera and expression sequence do not use this legacy hold mapping.
+        """
+        if elapsed <= 15.1:
+            return float(elapsed)
+        if elapsed <= 16.1:
+            return 15.1
+        return float(elapsed)-1.
+
+    @staticmethod
     def shot(time):
         return next((name for start, end, name in SHOTS if start <= time < end),
                     'rune_panorama' if time >= 20 else 'opening')
 
     @staticmethod
-    def actor_positions(time):
+    def first_shard_release():
+        """The first shard leaves the lowered hand, not the overhead charge."""
+        return V3(3.6, 8.3, -8)
+
+    @staticmethod
+    def first_shard_target():
+        """Rhea's upper body inside the prison is the attack's intended target."""
+        return V3(-3, 1.1, 0)
+
+    @classmethod
+    def first_shard_shield_contact(cls):
+        release, target = cls.first_shard_release(), cls.first_shard_target()
+        # Contact is on the enemy side of the prison.  Its height and lateral
+        # placement follow the attack ray, rather than aiming a new ray at Lucan.
+        guard_depth = -.75
+        return release.lerp(target, (guard_depth-release.z)/(target.z-release.z))
+
+    @classmethod
+    def lucan_guard_position(cls):
+        contact = cls.first_shard_shield_contact()
+        # In the rear-quarter overhead guard the shield is on the upper left
+        # of the body.  Lucan plants farther toward the enemy and holds that
+        # shield above/behind his left shoulder, leaving his kneeling silhouette
+        # visible beside the prison while the shield itself covers Rhea's ray.
+        return V3(contact.x+.215, 0, contact.z-.6)
+
+    @classmethod
+    def attack_geometry(cls):
+        """Shared world geometry for rendering, telemetry and review overlays."""
+        return dict(release=cls.first_shard_release(), target=cls.first_shard_target(),
+                    shield=cls.first_shard_shield_contact(), lucan=cls.lucan_guard_position())
+
+    @classmethod
+    def first_shard_tip(cls, time):
+        release, contact = cls.first_shard_release(), cls.first_shard_shield_contact()
+        if time < 6.86:
+            # The tip descends with her lowering arm before the forward launch.
+            return lerp((3.6,12,-8), release, smooth(phase(time,6.45,6.86)))
+        progress = (.68*phase(time,6.86,7.5) if time < 7.5 else
+                    .68+.32*phase(time,7.5,9.0))
+        return release.lerp(contact, progress)
+
+    @classmethod
+    def actor_positions(cls, time):
         dash = 1-(1-phase(time, 7.02, 7.5))**3
         slash = smooth(phase(time, 8.5, 9.25))
         caelan = lerp((4.7, 0, 8), (-1.5, 0, 1.25), dash)
@@ -181,8 +278,17 @@ class IceReaperActionStage:
             caelan = lerp((-1.5, 0, 1.25), (-5.3, 0, -.7), slash)
         return {
             'rhea': V3(-3, 0, 0), 'caelan': caelan,
-            'lucan': lerp((6.5, 0, 8), (-.8, 0, 1.15), dash),
-            'mira': V3(7, 0, 10), 'ice_reaper': V3(2, 6.6, -8)}
+            'lucan': lerp((6.5, 0, 8), cls.lucan_guard_position(), dash),
+            'mira': V3(7, 0, 10), 'ice_reaper': cls.reaper_position(time)}
+
+    @staticmethod
+    def reaper_position(time):
+        """A brief rise and retreat bring her shoulders into the foreground."""
+        original = V3(2, 6.6, -8)
+        heading = V3(5, 0, -8).normalize()
+        settled = original+heading*1.0
+        settled.y = 9.0
+        return original.lerp(settled, smooth(phase(time, 16.3, 16.95)))
 
     @classmethod
     def camera(cls, time, reduced_motion=False):
@@ -214,37 +320,39 @@ class IceReaperActionStage:
             position = lerp((4.6, 2.5, 5.8), position, min(1, p*4))
             target = lerp((7, 1.45, 10), (2.1, 11.4, -8), 1. if reduced_motion else smooth(phase(time, 13, 14.05)))
             return PerspectiveCamera(tuple(position), tuple(target), 255+100*p, (240,158-33*p))
-        if shot == 'rhea_awakens':
-            return PerspectiveCamera((-3.1, 1.9, 2.1), (-3, 1.7, 0), 260)
-        if shot == 'prison_release':
-            p = 1. if reduced_motion else smooth(phase(time, 16.3, 17.2))
-            return PerspectiveCamera(tuple(lerp((-3.1, 1.9, 2.1), (-3, 5.1, 7.5), p)),
-                                     (-3, 1.4, 0), 260)
-        p = phase(time, 17.2, 20)
-        if reduced_motion:
-            return PerspectiveCamera((8.5,13.8,-9.8),(-3,.8,0),245)
-        if p < .34:
-            q = smooth(p/.34)
-            return PerspectiveCamera(tuple(lerp((-3, 5.1, 7.5), (-2, 13.8, -9.8), q)),
-                                     (-3, 1, 0), 260-15*q)
-        q = smooth((p-.34)/.66)
-        position = (-2+10.5*q, 13.8+math.sin(q*math.pi)*.3, -9.8-math.sin(q*math.pi)*.3)
-        return PerspectiveCamera(position, (-3, .8, 0), 245)
+        # This utility accepts the canonical choreography clock. Production
+        # playback passes actual elapsed time directly to the awakening helper.
+        from rhea_scene_awakening import RheaSceneAwakening
+        return RheaSceneAwakening.camera(time-14.1, reduced_motion)
 
     @classmethod
-    def telemetry(cls, time):
+    def telemetry(cls, elapsed):
+        if elapsed >= 15.1-1e-10:
+            from rhea_scene_awakening import RheaSceneAwakening
+            local = RheaSceneAwakening.local_time(elapsed)
+            time = RheaSceneAwakening.canonical_time(local)
+            camera = RheaSceneAwakening.camera(local)
+            return dict(RheaSceneAwakening.state(local), time=elapsed,
+                        choreography_time=time,
+                        positions={key:list(value) for key,value in cls.actor_positions(time).items()},
+                        first_shard='intercepted', second_shard='destroyed',
+                        rune=phase(time,16.3,17.6),
+                        camera_position=list(camera.position),
+                        camera_target=list(camera.target), focal=camera.focal,
+                        slow_motion=False)
+        time = cls.story_time(elapsed)
         if time < 8.5:
             prison = 'intact'
         elif time < 16.3:
             prison = 'cracked'
         else:
             prison = 'shattered'
-        return dict(shot=cls.shot(time), time=time,
+        return dict(shot=cls.shot(time), time=elapsed, choreography_time=time,
                     positions={key: list(value) for key, value in cls.actor_positions(time).items()},
                     prison=prison,
                     first_shard='aimed' if time < 6.86 else 'flight' if time < 9.0 else 'intercepted',
                     second_shard='absent' if time < 12.65 else 'forming' if time < 14.7 else 'destroyed',
-                    rune=phase(time, 16.3, 18.3),
+                    rune=phase(time, 16.3, 17.6),
                     camera_position=list(cls.camera(time).position),
                     camera_target=list(cls.camera(time).target),
                     slow_motion=7.5 <= time < 9.5)
@@ -259,22 +367,136 @@ class IceReaperActionStage:
             self._scaled[key] = pygame.transform.scale(image, (width, height))
         return self._scaled[key]
 
-    def _sequence(self, actor, action, local, duration, camera, position):
+    @staticmethod
+    def _flat_direction(vector, fallback=(0, 0, 1)):
+        direction = V3(vector)
+        direction.y = 0
+        return direction.normalize() if direction.length_squared() > 1e-8 else V3(fallback)
+
+    @classmethod
+    def actor_heading(cls, actor, time):
+        """A character's world direction is independent of the viewing camera."""
+        positions = cls.actor_positions(time)
+        if actor == 'caelan':
+            if time < 7.5:
+                vector = cls.actor_positions(7.5)[actor]-cls.actor_positions(7.02)[actor]
+            else:
+                # Continue facing through the strike and hold the landing.
+                vector = cls.actor_positions(9.3)[actor]-cls.actor_positions(7.5)[actor]
+        elif actor == 'lucan':
+            if time < 7.5:
+                vector = cls.actor_positions(7.5)[actor]-cls.actor_positions(7.02)[actor]
+            else:
+                release = cls.first_shard_release() if hasattr(cls, 'first_shard_release') else positions['ice_reaper']
+                vector = V3(release)-positions[actor]
+        elif actor == 'rhea':
+            # Her original frozen pose faces the approaching party.  The ice
+            # fixes that heading; she can turn toward her attacker only after
+            # she breaks free, rather than changing sides inside the prison.
+            intended = cls._flat_direction(positions['ice_reaper']-positions[actor])
+            angle = math.atan2(intended.x, intended.z)*smooth(phase(time,16.32,16.92))
+            return V3(math.sin(angle),0,math.cos(angle))
+        elif actor == 'mira':
+            vector = positions['ice_reaper']-positions[actor]
+        else:
+            vector = positions['rhea']-positions[actor]
+        return cls._flat_direction(vector)
+
+    @classmethod
+    def view_angles(cls, actor, camera, position, time):
+        """Signed azimuth and elevation of the viewer in the actor's frame.
+
+        Zero azimuth sees the face, +90 sees the actor's right side, and
+        +/-180 sees the back.  A signed angle preserves asymmetric equipment.
+        """
+        viewer = V3(camera.position)-V3(position)
+        heading = cls.actor_heading(actor, time)
+        right = V3(heading.z, 0, -heading.x)
+        horizontal = cls._flat_direction(viewer, heading)
+        azimuth = math.degrees(math.atan2(horizontal.dot(right), horizontal.dot(heading)))
+        elevation = math.degrees(math.atan2(viewer.y, max(.0001, math.hypot(viewer.x, viewer.z))))
+        return azimuth, elevation
+
+    @staticmethod
+    def _view_metadata(key, entry):
+        if 'view_azimuth_deg' in entry:
+            return float(entry['view_azimuth_deg']), float(entry.get('view_elevation_deg', 0.))
+        suffixes = {'front_right':45., 'rear_right':135., 'rear_left':-135.,
+                    'front_left':-45., 'right':90., 'left':-90., 'rear':180.,
+                    'front':0., 'rear_threequarter':135., 'side':90.}
+        for suffix, angle in suffixes.items():
+            if key.endswith('_'+suffix):
+                return angle, 0.
+        return None
+
+    def sequence_key(self, actor, action, local, duration, camera, position, time):
+        """Choose a camera view without replacing an active action with a hold."""
         data = self.actors[actor]
         sequences = data['sequences']
-        # All viewpoint changes select authored body views, never rotate a body.
-        toward = V3(-3, 0, 0)-V3(position)
-        viewer = V3(camera.position)-V3(position)
-        toward.y = viewer.y = 0
-        dot = toward.normalize().dot(viewer.normalize()) if toward.length() > .1 and viewer.length() > .1 else 1
-        suffix = '_rear' if dot < -.35 else '_side' if abs(dot) < .5 else '_front'
-        for alternate in (action+suffix, 'ready'+suffix, suffix[1:]):
-            if alternate in sequences and (alternate.startswith(action) or action in ('ready', 'aim', 'impact', 'recharge')):
-                if duration and local < duration and len(sequences[alternate]) < 4:
-                    continue
-                action = alternate
-                break
-        sequence = sequences.get(action, sequences.get('ready', next(iter(sequences.values()))))
+        azimuth, elevation = self.view_angles(actor, camera, position, time)
+        active = duration is not None and local < duration
+        turning_release = actor == 'rhea' and action == 'release' and local >= .35
+        settled_aim = actor == 'mira' and action == 'aim' and local >= .45
+        base = sequences.get(action)
+        families = [action]
+        if not active:
+            held = {'caelan':'ready', 'lucan':'hold_brace', 'mira':'aim',
+                    'rhea':'frozen' if time < 16.3 else 'release', 'ice_reaper':'ready'}[actor]
+            families = [held, action]
+            if actor == 'rhea' and time >= 17.5:
+                families.append('frozen')
+        candidates = []
+        entries = data['manifest'].get('animations', {})
+        for key, sequence in sequences.items():
+            if not any(key.startswith(family+'_') for family in families):
+                continue
+            # A one-drawing rear pose must never erase a six/eight/ten-drawing
+            # dash, kneel or slash. Matching views retain the same phase index.
+            if active and not (turning_release or settled_aim) and (base is None or len(sequence) != len(base)):
+                continue
+            view = self._view_metadata(key, entries.get(key, {}))
+            if view is None:
+                continue
+            delta = abs((azimuth-view[0]+180)%360-180)
+            score = delta+abs(elevation-view[1])*.25
+            # Exact-action views win ties over a generic held-ready fallback.
+            score += .01*next(i for i, family in enumerate(families) if key.startswith(family+'_'))
+            candidates.append((score, key))
+        if candidates:
+            return min(candidates)[1]
+        if action in sequences:
+            return action
+        return 'ready' if 'ready' in sequences else next(iter(sequences))
+
+    def _approved_boss_frame(self, camera, position, time):
+        """Original artwork, selected for the current view without changing it."""
+        azimuth, _ = self.view_angles('ice_reaper', camera, position, time)
+        sequences = self._approved_boss_sequences
+        if abs(azimuth) >= 112.5:
+            # The retained rear drawings depict left quarter, back and right
+            # quarter views. Choose by angle, rather than rotating on a timer.
+            # The first retained quarter drawing looks left; it belongs on
+            # the right shoulder of this shot, facing inward toward Rhea.
+            views = (145., 180., -145.)
+            index = min(range(3), key=lambda i: abs((azimuth-views[i]+180)%360-180))
+            image = sequences['ready_rear'][index][0]
+        elif abs(azimuth) >= 45:
+            # The approved side drawings all look left. On the opposite side
+            # use the neutral approved back view instead of looking offstage.
+            image = (sequences['ready_rear'][2][0] if azimuth < 0 else
+                     sequences['ready_side'][min(2, int((abs(azimuth)-45)/30))][0])
+        else:
+            image = sequences['recharge'][-1][0]
+        return image, self.actors['ice_reaper']
+
+    def _sequence(self, actor, action, local, duration, camera, position, *, time=None):
+        data = self.actors[actor]
+        sequences = data['sequences']
+        time = 8. if time is None else time
+        if actor == 'ice_reaper' and time >= 16.3:
+            return self._approved_boss_frame(camera, position, time)
+        key = self.sequence_key(actor, action, local, duration, camera, position, time)
+        sequence = sequences[key]
         if duration:
             index = min(len(sequence)-1, int(phase(local, 0, duration)*len(sequence)))
         else:
@@ -302,16 +524,20 @@ class IceReaperActionStage:
             if time < 9.7: return 'impact', time-9.0, .7
             return 'brace', 2, 1.65
         if actor == 'mira':
-            if time < 10.6: return 'raise', time-10, .6
+            # Her preparation begins offscreen during the rescue. When the
+            # orbit reveals her, the settled aiming pose has matching views.
+            if time < 9.1: return 'raise', 0., .4
+            if time < 9.5: return 'raise', time-9.1, .4
+            if time < 10.6: return 'aim', 1., .65
             if time < 12.35: return 'load', time-10.6, 1.75
             if time < 14.2: return 'aim', time-12.35, .65
             if time < 14.95: return 'fire', time-14.2, .75
             return 'aim', 1, .65
         if actor == 'rhea':
             return ('release', time-16.3, 1.2) if time >= 16.3 else ('ready', 0, None)
-        if time >= 17.75: return 'ready_rear', time-17.75, None
         if time < 6.65: return 'aim', time-5, 1.65
         if time < 7.3: return 'launch', time-6.65, .65
+        if time < 11.7: return 'ready', time-7.3, None
         return 'recharge', time-11.7, 2.4
 
     def _billboard(self, canvas, actor, position, camera, time, *, alpha=255):
@@ -320,7 +546,10 @@ class IceReaperActionStage:
             return
         x, y, depth = projected
         action, local, duration = self._action(actor, time)
-        image, data = self._sequence(actor, action, local, duration, camera, position)
+        image, data = self._sequence(actor, action, local, duration, camera, position, time=time)
+        if actor == 'ice_reaper':
+            self._projected_boss(canvas, image, data, position, camera, alpha=alpha)
+            return
         height = 4.8 if actor == 'ice_reaper' else 1.85
         scale = camera.focal*height/depth/max(1, data['body_pixels'])
         if scale <= 0:
@@ -333,26 +562,119 @@ class IceReaperActionStage:
         if actor == 'caelan':
             self._fireblade(canvas, camera, position, time)
 
+    def _projected_boss(self, canvas, image, data, position, camera, *, alpha=255):
+        """Foreshorten the upright body and anchor it to projected head/feet.
+
+        A fixed-height screen billboard incorrectly towers over the arena when
+        the camera looks down from above the wings. A row shear follows the
+        perspective head-to-foot axis without changing the authored anatomy.
+        """
+        foot = camera.project(position)
+        head = camera.project(V3(position)+V3(0,4.8,0))
+        if foot is None or head is None:
+            return
+        body = max(1, data['body_pixels'])
+        height = max(1., foot[1]-head[1])
+        scale_y = height/body
+        scale_x = camera.focal*4.8/((foot[2]+head[2])*.5)/body
+        # In the close foreground the head/shoulder plane is much nearer than
+        # the feet. Use its actual world depth as she rises into that plane;
+        # otherwise the old flat-card foreshortening exposes her whole body.
+        # The projected head remains the anchor, and the lower body naturally
+        # extends below the viewport rather than being masked or screen-pinned.
+        proximity = smooth(phase(position.y, 6.6, 9.0))
+        if proximity:
+            head_scale = camera.focal*4.8/head[2]/body
+            scale_x += (head_scale-scale_x)*proximity
+            scale_y += (head_scale-scale_y)*proximity
+            foot = (head[0]+(foot[0]-head[0])*(1-proximity),
+                    head[1]+body*scale_y, foot[2])
+            height = body*scale_y
+        scaled = self._scale(image, image.get_width()*scale_x, image.get_height()*scale_y)
+        ax, ay = data['anchor']
+        foot_row = ay*scale_y
+        shear = (head[0]-foot[0])/height
+        shifts = [round((foot_row-row)*shear) for row in range(scaled.get_height())]
+        low, high = min(shifts), max(shifts)
+        projected = pygame.Surface((scaled.get_width()+high-low, scaled.get_height()),pygame.SRCALPHA)
+        for row, shift in enumerate(shifts):
+            projected.blit(scaled,(shift-low,row),(0,row,scaled.get_width(),1))
+        if alpha != 255:
+            projected.set_alpha(alpha)
+        canvas.blit(projected,(round(foot[0]-ax*scale_x+low),round(foot[1]-foot_row)))
+
+    @staticmethod
+    def world_landmarks():
+        # The city lies beyond the Reaper; the wooded approach is behind Mira.
+        landmarks = [
+            ('castle', (-14., 0., -70.), 22.),
+            ('ruins', (-21., 0., 5.), 6.),
+            ('ruins', (24., 0., -13.), 8.),
+        ]
+        # Overlapping groups form the same continuous wooded approach from
+        # every view; they never move with the camera or the current shot.
+        for index in range(-9, 10):
+            landmarks.append(('forest', (index*4.8, 0., 38.+3*math.sin(index*1.8)),
+                              10.+1.5*math.cos(index*2.1)))
+        for side in (-1, 1):
+            for index in range(9):
+                landmarks.append(('forest', (side*(32.+2*math.sin(index*1.9)), 0., -8.+index*5.6),
+                                  9.+1.8*math.cos(index*1.7)))
+        return tuple(landmarks)
+
+    def _panoramic_sky(self, canvas, camera):
+        right, up, forward = camera.basis()
+        key = tuple(round(v, 7) for vector in (right, up, forward) for v in vector)+(camera.focal, *camera.center)
+        cached = self._panorama_cache.get(key)
+        if cached is not None:
+            canvas.blit(cached, (0, 0))
+            return
+        u = (self._screen_x-camera.center[0])/camera.focal
+        v = (camera.center[1]-self._screen_y)/camera.focal
+        ray_x = forward.x+right.x*u+up.x*v
+        ray_y = forward.y+right.y*u+up.y*v
+        ray_z = forward.z+right.z*u+up.z*v
+        bearing = np.arctan2(ray_x, -ray_z)
+        elevation = np.arctan2(ray_y, np.sqrt(ray_x*ray_x+ray_z*ray_z))
+        width, height = self.panorama.shape[:2]
+        px = ((.5+bearing/TAU)*width).astype(np.int32)%width
+        py = np.clip((.66-elevation/math.radians(120))*height, 0, height-1).astype(np.int32)
+        image = pygame.surfarray.make_surface(self.panorama[px, py])
+        if len(self._panorama_cache) >= 16:
+            self._panorama_cache.pop(next(iter(self._panorama_cache)))
+        self._panorama_cache[key] = image
+        canvas.blit(image, (0, 0))
+
     def _background(self, canvas, camera, time):
-        shot = self.shot(time)
-        if shot in ('mira_loading', 'launcher_sight', 'second_shard_intercept'):
-            key = 'reverse'
-        elif shot in ('prison_release', 'rune_panorama'):
-            key = 'aerial'
-        else:
-            key = 'rescue'
-        plate = self.plates[key]
-        # The distant plate has modest parallax; ground objects use projection.
-        direction = V3(camera.target)-V3(camera.position)
-        angle = math.atan2(direction.x, direction.z)
-        offset = round(math.sin(angle)*58)
-        canvas.blit(plate, (-80+offset, -80))
-        if shot == 'rescue_orbit':
-            p = smooth(phase(time, 9.5, 11))
-            reverse = self.plates['reverse'].copy()
-            reverse.set_alpha(round(p*255))
-            canvas.blit(reverse, (-80-offset, -80))
+        # A camera pose always sees the same geography, regardless of shot ID.
+        key = tuple(camera.position)+tuple(camera.target)+(camera.focal, *camera.center)
+        cached = self._background_cache.get(key)
+        if cached is not None:
+            canvas.blit(cached, (0, 0))
+            return
+        if self.panorama is None:
+            canvas.blit(self.plates['rescue'], (-80, -80))
+            self._ground_plane(canvas, camera)
+            return
+        self._panoramic_sky(canvas, camera)
         self._ground_plane(canvas, camera)
+        landmarks = []
+        for name, position, height in self.world_landmarks():
+            projected = camera.project(position)
+            if projected is not None:
+                landmarks.append((projected[2], name, position, height, projected))
+        for depth, name, position, height, projected in sorted(landmarks, reverse=True):
+            image = self.landmark_images.get(name)
+            if image is None:
+                continue
+            scale = camera.focal*height/depth/image.get_height()
+            surface = self._scale(image, image.get_width()*scale, image.get_height()*scale)
+            canvas.blit(surface, (round(projected[0]-surface.get_width()/2),
+                                  round(projected[1]-surface.get_height())))
+        if len(self._background_cache) >= 16:
+            self._background_cache.pop(next(iter(self._background_cache)))
+        self._background_cache[key] = canvas.copy()
+
     def _ground_plane(self, canvas, camera):
         if self.ground_texture is None:
             return
@@ -442,7 +764,7 @@ class IceReaperActionStage:
                 p=camera.project(source)
                 if p:pygame.draw.circle(canvas,('#d8edfa','#edf8ff','#bcd9ec')[i%3],p[:2],max(1,round(camera.focal/p[2]*(.035+i%3*.025))))
 
-    def _draw_shard(self, canvas, camera, point, target, *, size=2.8, alpha=255):
+    def _draw_shard(self, canvas, camera, point, target, *, size=2.8, alpha=255, tip=False):
         p=camera.project(point)
         direction=V3(target)-V3(point)
         q=camera.project(V3(point)+direction.normalize()*.5) if direction.length() else p
@@ -452,7 +774,14 @@ class IceReaperActionStage:
         angle=math.degrees(math.atan2(q[0]-p[0],q[1]-p[1]))
         image=pygame.transform.rotate(image,angle)
         if alpha!=255:image.set_alpha(alpha)
-        canvas.blit(image,image.get_rect(center=(round(p[0]),round(p[1]))))
+        center=pygame.Vector2(p[:2])
+        if tip:
+            projected_direction=pygame.Vector2(q[:2])-pygame.Vector2(p[:2])
+            if projected_direction.length_squared():
+                # Contact is defined at the pointed end.  Centering the whole
+                # shard here would push half its length through the shield.
+                center-=projected_direction.normalize()*length*.5
+        canvas.blit(image,image.get_rect(center=(round(center.x),round(center.y))))
 
     def _fragments(self, canvas, camera, origin, time, birth, count, *, fire=False):
         age=time-birth
@@ -471,15 +800,16 @@ class IceReaperActionStage:
             pygame.draw.polygon(canvas,color,[(p[0],p[1]-r*1.8),(p[0]+r,p[1]),(p[0],p[1]+r),(p[0]-r,p[1])])
 
     def _projectiles(self, canvas, camera, positions, time, reduced):
-        # Keep the overhead shard clear of her face in the dialogue shot.
-        start=V3(3.6,12.0,-8);shield=V3(-.8,1.35,1.15)
+        start=self.first_shard_release()
+        target=self.first_shard_target()
+        shield=self.first_shard_shield_contact()
         if time < 6.86:
-            self._draw_shard(canvas,camera,start,shield)
+            self._draw_shard(canvas,camera,self.first_shard_tip(time),target,tip=True)
         elif time < 9.0:
-            u=.68*phase(time,6.86,7.5) if time<7.5 else .68+.32*phase(time,7.5,9.0)
-            point=start.lerp(shield,u)
-            self._line3(canvas,camera,'#b4e6fc',[point,start.lerp(shield,max(0,u-.12))],3)
-            self._draw_shard(canvas,camera,point,shield)
+            point=self.first_shard_tip(time)
+            flight=(shield-start).normalize()
+            self._line3(canvas,camera,'#b4e6fc',[point,point-flight*1.1],3)
+            self._draw_shard(canvas,camera,point,target,tip=True)
         else:
             self._fragments(canvas,camera,shield,time,9.0,22 if not reduced else 8)
             if time<9.17:
@@ -505,61 +835,7 @@ class IceReaperActionStage:
                 if time<14.86:pygame.draw.circle(canvas,'#fff2d2',p[:2],max(1,round((1-age)*18)))
 
     def _rune(self, canvas, camera, time, reduced):
-        if time < 16.3:return
-        reveal=smooth(phase(time,16.3,17.8))
-        radius=8.2*reveal
-        center=V3(-3,.035,0)
-        glow=pygame.Surface(SIZE,pygame.SRCALPHA)
-        for factor,alpha in ((1.16,13),(1.04,19),(.96,24),(.78,18),(.36,35)):
-            points=[camera.project(center+V3(math.cos(i*TAU/80)*radius*factor,0,
-                                            math.sin(i*TAU/80)*radius*factor)) for i in range(80)]
-            if all(points):
-                pygame.draw.polygon(glow,(245,42,67,round(alpha*(.55 if reduced else 1))),
-                                    [(p[0],p[1]) for p in points])
-        for r in (radius,radius-.35,radius-1.):
-            if r <= 0: continue
-            points=[center+V3(math.cos(i*TAU/100)*r,0,math.sin(i*TAU/100)*r) for i in range(101)]
-            self._line3(glow,camera,(255,47,63,70 if not reduced else 28),points,7)
-        canvas.blit(glow,(0,0))
-        for offset,color,width in ((0,'#fa584c',2),(-.35,'#ffb27d',1),(-1.0,'#ad334b',1)):
-            r=max(0,radius+offset)
-            points=[center+V3(math.cos(i*TAU/100)*r,0,math.sin(i*TAU/100)*r) for i in range(101)]
-            self._line3(canvas,camera,color,points,width)
-        for i in range(12):
-            a=i*TAU/12
-            points=[center+V3(math.cos(a)*radius*.78,0,math.sin(a)*radius*.78),
-                    center+V3(math.cos(a+.1)*radius*.9,0,math.sin(a+.1)*radius*.9),
-                    center+V3(math.cos(a+.16)*radius*.8,0,math.sin(a+.16)*radius*.8)]
-            self._line3(canvas,camera,'#ff8b67',points,2)
-            b=a+TAU*5/12
-            self._line3(canvas,camera,'#c43e56',[center+V3(math.cos(a)*radius*.7,0,math.sin(a)*radius*.7),center+V3(math.cos(b)*radius*.7,0,math.sin(b)*radius*.7)],1)
-        if not reduced:
-            for i in range(28):
-                a=i*2.39996
-                point=center+V3(math.cos(a)*(1+i%8*.65),((time-16.3)*1.1+i*.19)%4,math.sin(a)*(1+i%8*.65))
-                p=camera.project(point)
-                if p:pygame.draw.circle(canvas,('#ff8b67','#d34462','#ffd4a1')[i%3],p[:2],1+i%2)
-
-    def _closeup(self, canvas, time):
-        data=self.actors['rhea'];sequence=data['sequences'].get('eyes')
-        if not sequence:return False
-        index=min(len(sequence)-1,int(phase(time,15.1,16.25)*len(sequence)))
-        image=sequence[index][0]
-        # Eyes assets can be authored face inserts or full-body states.  The
-        # manifest marks inserts; otherwise crop a stable head/shoulders region.
-        meta=data['manifest'].get('animations',{}).get('eyes',{})
-        closeup=meta.get('closeup',False) or data['manifest'].get('eyes_closeup',False)
-        if closeup:
-            crop=image
-        else:
-            w,h=image.get_size()
-            crop=image.subsurface((round(w*.25),round(h*.08),round(w*.5),round(h*.43)))
-        surface=self._scale(crop,crop.get_width()*min(420/crop.get_width(),290/crop.get_height()),crop.get_height()*min(420/crop.get_width(),290/crop.get_height()))
-        canvas.blit(surface,surface.get_rect(center=(240,169)))
-        # Close foreground ice edges remain cracked until her own release.
-        for i,x in enumerate((56,83,394,420)):
-            pygame.draw.lines(canvas,'#9ad7f7',False,[(x,15),(x+(-1)**i*14,94),(x-8,173),(x+11,252),(x-4,319)],2)
-        return True
+        self.rune_seal.draw(canvas, camera, time, reduced)
 
     def _loading_insert(self, canvas, time):
         if not 11.4 <= time < 12.3:
@@ -575,23 +851,16 @@ class IceReaperActionStage:
         canvas.blit(surface,surface.get_rect(center=(240,174)))
 
     def _foreground_boss(self, canvas, camera, time):
-        # A matching rear-view near-field plate carries the shoulder sweep.
-        # Its crop deliberately excludes the lower body, as a physical camera
-        # directly above the wings would, while the arena keeps true projection.
-        sequence=self.actors['ice_reaper']['sequences'].get('ready_rear')
-        if not sequence:
+        # The foreground uses the same body, anchor, world position and camera
+        # projection as every other shot. Its back becomes visible because the
+        # camera passes behind her, never because of a timed pose or screen slide.
+        position = self.actor_positions(time)['ice_reaper']
+        projected = camera.project(position)
+        if projected is None:
             return
-        p=smooth(phase(time,18.05,20))
-        image=sequence[int((time-18.05)*3)%len(sequence)][0]
-        scale=2.6
-        surface=self._scale(image,image.get_width()*scale,image.get_height()*scale)
-        anchor=self.actors['ice_reaper']['anchor']
-        x=60+360*p
-        y=600
-        opacity=smooth(phase(time,18.05,18.3))
-        if opacity < 1:
-            surface=surface.copy();surface.set_alpha(round(opacity*255))
-        canvas.blit(surface,(round(x-anchor[0]*scale),round(y-anchor[1]*scale)))
+        action, local, duration = self._action('ice_reaper', time)
+        image, data = self._sequence('ice_reaper', action, local, duration, camera, position, time=time)
+        self._projected_boss(canvas,image,data,position,camera)
 
     def _scope_overlay(self, canvas, time):
         if time < 13.65 or time >= 15.1:return
@@ -610,20 +879,23 @@ class IceReaperActionStage:
         pygame.draw.circle(canvas,'#d9bd7c',(240,125),3,1)
 
     def draw(self, canvas, elapsed, reduced_motion=False):
-        time=clamp(float(elapsed),5,20)
+        actual_time=clamp(float(elapsed),5,21)
+        if actual_time >= 15.1-1e-10:
+            self.awakening.draw(canvas, self.awakening.local_time(actual_time), reduced_motion)
+            self.last_draw_trace = self.awakening.last_draw_trace
+            return
+        self.last_draw_trace = []
+        time=clamp(self.story_time(actual_time),5,20)
         camera=self.camera(time,reduced_motion)
         self._background(canvas,camera,time)
-        if self.shot(time)=='rhea_awakens' and self._closeup(canvas,time):
-            return
         positions=self.actor_positions(time)
-        self._rune(canvas,camera,time,reduced_motion)
         for actor,position in positions.items():
             if actor!='ice_reaper':self._shadow(canvas,camera,position,.6 if actor=='rhea' else .45)
+        # Emissive strokes illuminate the snow even underneath a cast shadow.
+        self._rune(canvas,camera,time,reduced_motion)
         self._dash_snow(canvas,camera,positions,time,reduced_motion)
         visible=[]
         for actor,position in positions.items():
-            if actor == 'ice_reaper' and time >= 18.05:
-                continue
             if actor == 'mira' and 7 <= time < 9.5:
                 continue
             if actor in ('caelan','lucan','rhea') and 13.65 <= time < 15.1:
@@ -635,8 +907,5 @@ class IceReaperActionStage:
             self._billboard(canvas,actor,position,camera,time)
             if actor=='rhea':self._prison(canvas,camera,position,time,True)
         self._projectiles(canvas,camera,positions,time,reduced_motion)
-        self._fragments(canvas,camera,positions['rhea']+V3(0,1.1,0),time,16.3,48 if not reduced_motion else 12)
-        if time >= 18.05:
-            self._foreground_boss(canvas,camera,time)
         self._loading_insert(canvas,time)
         self._scope_overlay(canvas,time)

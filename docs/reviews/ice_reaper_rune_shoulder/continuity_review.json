@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "source_video_sha256": "3cce64b2cb96182ce3ddb34decde41a9a5da74f18f8deb67971183c9d84f332c",
+  "source_fps": 60,
+  "opening_comparison": [
+    {
+      "file": "0000_brush.png",
+      "unchanged": true
+    },
+    {
+      "file": "0060_wide.png",
+      "unchanged": true
+    },
+    {
+      "file": "0252_alarm.png",
+      "unchanged": true
+    }
+  ],
+  "attack_geometry": {
+    "release": [
+      3.6,
+      8.3,
+      -8.0
+    ],
+    "target": [
+      -3.0,
+      1.1,
+      0.0
+    ],
+    "shield": [
+      -2.38125,
+      1.7750000000000001,
+      -0.75
+    ],
+    "lucan": [
+      -2.1662500000000002,
+      0.0,
+      -1.35
+    ]
+  },
+  "filmstrips": {
+    "rune_reveal_filmstrip": [
+      16.3,
+      16.45,
+      16.6,
+      16.75,
+      16.9,
+      17.05,
+      17.25,
+      17.4,
+      17.6
+    ],
+    "shoulder_filmstrip": [
+      18.3,
+      18.6,
+      19.0,
+      19.4,
+      19.8
+    ],
+    "rescue_filmstrip": [
+      7.3,
+      7.5,
+      8.0,
+      8.5,
+      8.99,
+      9.2
+    ]
+  },
+  "note": "Filmstrips and posters decode the delivered MP4; comparison is at 8.6 seconds."
+}

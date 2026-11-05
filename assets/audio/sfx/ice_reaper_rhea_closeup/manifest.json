@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "description": "Quiet ice-pressure creak during Rhea\u2019s closed-eye hold",
+  "source": {
+    "file": "assets/audio/sfx/ice_reaper_rescue/prison_crack.ogg",
+    "sha256": "ab0538cf2aa92fac250c7e17e11441d2c3f67da5b7eccfbea02999f2e37f353f",
+    "license": "MIT-derived Kenney sources; see ../ice_reaper_rescue/source/*_LICENSE.md"
+  },
+  "derivation": {
+    "tool": "ffmpeg",
+    "filter": "asetrate=32000,aresample=48000,highpass=f=95,lowpass=f=2200,afade=t=in:d=0.12,afade=t=out:st=0.94:d=0.29,volume=0.72",
+    "music_changed": false
+  },
+  "sound": {
+    "file": "assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg",
+    "sha256": "2a5c2d1e934bf6edc73b93f5950d4b9da3b89db2962f577a3777f9b4334f914b",
+    "duration": 1.228667,
+    "rate": 48000,
+    "channels": 2
+  },
+  "cue": {
+    "id": "ice_creak",
+    "time": 15.45,
+    "file": "assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg",
+    "gain": 0.12
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "canvas": [
+    512,
+    512
+  ],
+  "file": "rune.png",
+  "center": [
+    256.0,
+    256.0
+  ],
+  "outer_radius_px": 216,
+  "world_radius": 8.2,
+  "alpha_threshold": 96,
+  "palette_colors": 128,
+  "spokes": 6,
+  "spoke_start_angle_degrees": -90,
+  "rings_normalized": [
+    0.845,
+    0.97
+  ],
+  "glyph_band_normalized": [
+    0.875,
+    0.955
+  ],
+  "central_seal_normalized_radius": 0.31,
+  "masks": {
+    "seal": "seal_mask.png",
+    "branches": "branches_mask.png",
+    "rings": "rings_mask.png",
+    "glyphs": "glyphs_mask.png"
+  },
+  "reveal_contract": "Fixed final footprint. Trace center, branching strokes, circumference and glyphs; never scale the completed drawing from the center.",
+  "source_art_review": "awaiting_full_scene_review"
+}

@@ -1,4 +1,4 @@
-"""Physical and authored-motion checks for the 15-second rescue extension."""
+"""Physical and authored-motion checks for the coordinated rescue."""
 import os
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -27,8 +27,8 @@ class IceReaperActionTests(unittest.TestCase):
         self.assertEqual(self.stage.telemetry(9.)['first_shard'],'intercepted')
         self.assertEqual(self.stage.telemetry(14.69)['second_shard'],'forming')
         self.assertEqual(self.stage.telemetry(14.7)['second_shard'],'destroyed')
-        self.assertEqual(self.stage.telemetry(16.29)['prison'],'cracked')
-        self.assertEqual(self.stage.telemetry(16.3)['prison'],'shattered')
+        self.assertEqual(self.stage.telemetry(17.29)['prison'],'cracked')
+        self.assertEqual(self.stage.telemetry(17.3)['prison'],'shattered')
 
     def test_swordsman_arrives_right_of_prison_and_lands_beyond_it(self):
         p=self.stage.actor_positions(7.5)
@@ -46,10 +46,10 @@ class IceReaperActionTests(unittest.TestCase):
             camera=self.stage.camera(time)
             x,y,depth=camera.project(camera.target)
             self.assertAlmostEqual(x,240);self.assertAlmostEqual(y,158)
-        self.assertEqual(self.stage._action('ice_reaper',19)[0],'ready_rear')
+        self.assertEqual(self.stage._action('ice_reaper',19)[0],'recharge')
 
     def test_continuous_camera_boundaries_do_not_change_lens_or_position(self):
-        for boundary in (9.5,11.,12.8,17.2):
+        for boundary in (9.5,11.,12.8,16.3,16.95,19.25):
             before=self.stage.camera(boundary-.000001)
             after=self.stage.camera(boundary)
             self.assertLess(pygame.Vector3(before.position).distance_to(after.position),.001)

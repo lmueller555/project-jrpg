@@ -1,4 +1,4 @@
-"""The partial Ice Reaper preview preserves actor identity and a twenty-second clock."""
+"""The partial Ice Reaper preview preserves actor identity and a twenty-one-second clock."""
 import copy
 import gc
 import json
@@ -37,15 +37,15 @@ class IceReaperOpeningTests(unittest.TestCase):
     def tearDown(self):
         pygame.quit()
 
-    def test_exact_twenty_second_completion_at_30_and_60_fps(self):
+    def test_exact_twenty_one_second_completion_at_30_and_60_fps(self):
         for fps in (30, 60):
             with self.subTest(fps=fps):
                 calls = []
                 self.scene.start(lambda: calls.append('done'))
-                for _ in range(fps*20):
+                for _ in range(fps*21):
                     self.scene.update(1/fps)
                 self.assertFalse(self.scene.active)
-                self.assertEqual(self.scene.elapsed, 20.)
+                self.assertEqual(self.scene.elapsed, 21.)
                 self.assertEqual(self.scene.finished_reason, 'completed')
                 self.scene.update(1)
                 self.scene.skip()
@@ -231,7 +231,7 @@ class IceReaperGalleryTests(unittest.TestCase):
             pygame.event.Event(pygame.KEYDOWN, key=key, repeat=False),
             pygame.event.Event(pygame.KEYUP, key=key)])
 
-    def test_real_preview_finishes_at_twenty_seconds_without_mutating_the_journey(self):
+    def test_real_preview_finishes_at_twenty_one_seconds_without_mutating_the_journey(self):
         before = (self.path.read_bytes(), self.settings.read_bytes(),
                   self.parent._progress_signature(), self.parent.elapsed_ms,
                   tuple(self.parent.player.position), copy.deepcopy(self.parent.saved_journey),
@@ -239,7 +239,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         session = self.launch()
         self.assertIsInstance(session.game.opening_cinematic, IceReaperOpening)
         self.assertFalse(session.game.save_store.enabled)
-        for frame in range(600):
+        for frame in range(630):
             self.assertIs(self.parent.gallery_session, session, frame)
             self.assertEqual(session.game.music.desired_track, 'wintermute2')
             self.parent.update(1/30, (1, 0), True)

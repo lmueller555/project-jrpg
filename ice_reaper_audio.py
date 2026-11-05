@@ -21,9 +21,10 @@ CUES = (
     {'id': 'close_breech', 'time': 12.20, 'file': 'assets/audio/sfx/ice_reaper_rescue/close_breech.ogg', 'gain': .42},
     {'id': 'launcher_fire', 'time': 14.20, 'file': 'assets/audio/sfx/ice_reaper_rescue/launcher_fire.ogg', 'gain': .57},
     {'id': 'shard_explosion', 'time': 14.70, 'file': 'assets/audio/sfx/ice_reaper_rescue/shard_explosion.ogg', 'gain': .54},
-    {'id': 'awakening', 'time': 15.60, 'file': 'assets/audio/sfx/ice_reaper_rescue/awakening.ogg', 'gain': .34},
-    {'id': 'prison_burst', 'time': 16.30, 'file': 'assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg', 'gain': .58},
-    {'id': 'rune_bloom', 'time': 16.50, 'file': 'assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg', 'gain': .43},
+    {'id': 'ice_creak', 'time': 15.45, 'file': 'assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg', 'gain': .12},
+    {'id': 'awakening', 'time': 16.60, 'file': 'assets/audio/sfx/ice_reaper_rescue/awakening.ogg', 'gain': .34},
+    {'id': 'prison_burst', 'time': 17.30, 'file': 'assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg', 'gain': .58},
+    {'id': 'rune_bloom', 'time': 17.50, 'file': 'assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg', 'gain': .43},
 )
 
 
@@ -67,10 +68,13 @@ class IceReaperActionAudio:
         spec = self.mixer.get_init()
         if not spec:
             return None
-        key = (Path(cue['file']).name, spec)
+        relative = Path(cue['file'])
+        folder = self.asset_root if relative.parent.name == ASSETS.name else self.asset_root.parent/relative.parent.name
+        path = folder/relative.name
+        key = (path, spec)
         if key not in self.sounds:
             try:
-                self.sounds[key] = self.mixer.Sound(str(self.asset_root/key[0]))
+                self.sounds[key] = self.mixer.Sound(str(path))
             except (OSError, pygame.error):
                 return None
         return self.sounds[key]

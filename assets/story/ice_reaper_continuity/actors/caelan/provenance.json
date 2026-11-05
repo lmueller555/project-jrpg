@@ -1,0 +1,688 @@
+{
+  "version": 1,
+  "operation": "Authored equal-cell extraction, alpha threshold, palette registration, nearest scaling and foot anchoring only; no mirrored equipment, pose deformation or synthetic in-betweens.",
+  "sources": {
+    "men_views_generated.png": "f27b5ca0e1d487f214bde52826b4be6979c13170c6236ced3e084dacdc19f444",
+    "women_views_generated.png": "a03741f17eb71f865e062da043d1639c3a1f377e1cd5ab8e158081b783c5db2c",
+    "boss_views_generated.png": "6c8648a116529f1e5b82117617d42e9d9d2e0bf6d7f82b90f6be7383b74e0051",
+    "rear_actions_generated.png": "78c7634df2e5bdbd6d7303b4ccb054be2da4bb5673dcff647c83fb72b02b751f",
+    "rescue_actions_generated.png": "dc5c70ae96ae6b74e545a502c9f29f7aa5dfc5745c86be2bb32b086791f1ce9b",
+    "lucan_impact_generated.png": "0089d170bbe6e2129eb22c542abace77afeb28d04ad54b98d5422054ff72df0b",
+    "lucan_overhead_left_generated.png": "4f64d64b7961f05a92187c33b481e09f45a3986d908df20f06829737e97e9986",
+    "front_right_corrections_generated.png": "d2269b8402d1a45a18a71d23bcd0e0f6def5601e5968ec4ddfa620caf6193473"
+  },
+  "frames": [
+    {
+      "file": "ready_front_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "sha256": "89bca06785141d7b881ed0fc847b626d4c034923517bc72ffce3a499297aa4a4",
+      "source_content_bounds": [
+        29,
+        149,
+        197,
+        376
+      ],
+      "scale": 0.31277533039647576,
+      "foot_source_x": 125.0,
+      "registration": [
+        34,
+        45
+      ]
+    },
+    {
+      "file": "ready_front_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "sha256": "77eecdbf016093d7895ff6eddcd3b51052c0545338681261aa79d57638917a2a",
+      "source_content_bounds": [
+        52,
+        148,
+        202,
+        375
+      ],
+      "scale": 0.31277533039647576,
+      "foot_source_x": 135.0,
+      "registration": [
+        38,
+        45
+      ]
+    },
+    {
+      "file": "ready_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "sha256": "d890a0c5d40737c86df5c7b979a68cdd4626fb88c552a7a60f4b1c302f8051f0",
+      "source_content_bounds": [
+        83,
+        144,
+        156,
+        375
+      ],
+      "scale": 0.30735930735930733,
+      "foot_source_x": 115.0,
+      "registration": [
+        54,
+        45
+      ]
+    },
+    {
+      "file": "ready_rear_right_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "sha256": "4704cdd112789e7ac2a3f476a4e6c30c8ac26cbffc9139ca2f2f1e535f78304d",
+      "source_content_bounds": [
+        53,
+        148,
+        193,
+        375
+      ],
+      "scale": 0.31277533039647576,
+      "foot_source_x": 106.0,
+      "registration": [
+        47,
+        45
+      ]
+    },
+    {
+      "file": "ready_rear_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "sha256": "3a6c21370974bf50b58da4ad5a8b3f5aabd05249a1658c5893f8b6d7dfb01d58",
+      "source_content_bounds": [
+        48,
+        148,
+        190,
+        374
+      ],
+      "scale": 0.3141592920353982,
+      "foot_source_x": 111.5,
+      "registration": [
+        44,
+        45
+      ]
+    },
+    {
+      "file": "ready_rear_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "2a034554ddce1cd3e90f2d6aa2160f17801a83c964b24aef551d77ff06347a9c",
+      "source_content_bounds": [
+        53,
+        148,
+        162,
+        375
+      ],
+      "scale": 0.31277533039647576,
+      "foot_source_x": 93.0,
+      "registration": [
+        51,
+        45
+      ]
+    },
+    {
+      "file": "ready_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "sha256": "41cf14acea0ae850172b8bba28771f5b605f75a431528e44c36000efbb9b53dc",
+      "source_content_bounds": [
+        34,
+        145,
+        132,
+        375
+      ],
+      "scale": 0.30869565217391304,
+      "foot_source_x": 95.0,
+      "registration": [
+        45,
+        45
+      ]
+    },
+    {
+      "file": "ready_front_left_01.png",
+      "source": "men_views_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "02b1fd9a0d89586f940e797d418d380d257127879121ac3d8987c9aae8596f49",
+      "source_content_bounds": [
+        0,
+        148,
+        141,
+        375
+      ],
+      "scale": 0.31277533039647576,
+      "foot_source_x": 80.0,
+      "registration": [
+        39,
+        45
+      ]
+    },
+    {
+      "file": "dash_rear_01.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        181,
+        362
+      ],
+      "sha256": "352b722b1987b5f513bf3b7d9eac103e354d3eb7558f26663919216847bf991e",
+      "source_content_bounds": [
+        20,
+        156,
+        181,
+        349
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 156.0,
+      "registration": [
+        14,
+        45
+      ]
+    },
+    {
+      "file": "dash_rear_02.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        181,
+        0,
+        362,
+        362
+      ],
+      "sha256": "c2f48acc91ec4402a13b4328e69716ce4bc4a71498763542d949bb0559186ba0",
+      "source_content_bounds": [
+        29,
+        155,
+        181,
+        349
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 156.0,
+      "registration": [
+        17,
+        45
+      ]
+    },
+    {
+      "file": "dash_rear_03.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        362,
+        0,
+        543,
+        362
+      ],
+      "sha256": "1647fbbdec1382e6420779318788286edcf930d828e0ede740fc0153b36a10f9",
+      "source_content_bounds": [
+        21,
+        151,
+        181,
+        335
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 154.0,
+      "registration": [
+        15,
+        48
+      ]
+    },
+    {
+      "file": "dash_rear_04.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        543,
+        0,
+        724,
+        362
+      ],
+      "sha256": "30f7bf68d2366ecb3c25994d3d3df7335bca73de3e7d5222c8632763e5bae91b",
+      "source_content_bounds": [
+        27,
+        156,
+        181,
+        349
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 126.0,
+      "registration": [
+        28,
+        45
+      ]
+    },
+    {
+      "file": "dash_rear_05.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        724,
+        0,
+        905,
+        362
+      ],
+      "sha256": "16ad788d0e1fa33ee2e9f692624da5a5f0db98a96841bae84991b79fc2c56d80",
+      "source_content_bounds": [
+        28,
+        154,
+        180,
+        347
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 119.0,
+      "registration": [
+        31,
+        45
+      ]
+    },
+    {
+      "file": "dash_rear_06.png",
+      "source": "rear_actions_generated.png",
+      "source_cell": 5,
+      "source_box": [
+        905,
+        0,
+        1086,
+        362
+      ],
+      "sha256": "181e5c7b21398d3f07c69efc7a00c5e1fcc9c67fbeda1c7ac18332f173c9f980",
+      "source_content_bounds": [
+        29,
+        152,
+        171,
+        348
+      ],
+      "scale": 0.36787564766839376,
+      "foot_source_x": 96.0,
+      "registration": [
+        39,
+        44
+      ]
+    },
+    {
+      "file": "slash_rear_right_01.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "sha256": "82523bc8890bfe7d01dc43c3fc3fee976ba1447d075d2a96244feff9633589ac",
+      "source_content_bounds": [
+        65,
+        50,
+        222,
+        235
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 180.0,
+      "registration": [
+        16,
+        39
+      ]
+    },
+    {
+      "file": "slash_rear_right_02.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 1,
+      "source_box": [
+        256,
+        0,
+        512,
+        256
+      ],
+      "sha256": "5c746c38aee0c1508f301f965c23fc3b3c19139c6cc27417f85b26f58a5f4beb",
+      "source_content_bounds": [
+        64,
+        49,
+        224,
+        233
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 181.0,
+      "registration": [
+        15,
+        39
+      ]
+    },
+    {
+      "file": "slash_rear_right_03.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 2,
+      "source_box": [
+        512,
+        0,
+        768,
+        256
+      ],
+      "sha256": "59101188935c9eacf6bbf0f9972f72cce5d7ddb2509485f8d5abfd457321b72f",
+      "source_content_bounds": [
+        58,
+        46,
+        234,
+        231
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 178.0,
+      "registration": [
+        14,
+        39
+      ]
+    },
+    {
+      "file": "slash_rear_right_04.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 3,
+      "source_box": [
+        768,
+        0,
+        1024,
+        256
+      ],
+      "sha256": "a14ebd8d4ff2328524153748cf6c694ee5d45395c7334bef47b7ab22d7dc0650",
+      "source_content_bounds": [
+        57,
+        44,
+        240,
+        233
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 167.0,
+      "registration": [
+        18,
+        37
+      ]
+    },
+    {
+      "file": "slash_rear_right_05.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 4,
+      "source_box": [
+        1024,
+        0,
+        1280,
+        256
+      ],
+      "sha256": "5a833a634a7e12bef9d6b800ede0a2e707f53d10c5fcd53e963b2c9d555d16f0",
+      "source_content_bounds": [
+        54,
+        32,
+        224,
+        231
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 162.0,
+      "registration": [
+        19,
+        33
+      ]
+    },
+    {
+      "file": "slash_rear_right_06.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 6,
+      "source_box": [
+        0,
+        256,
+        256,
+        512
+      ],
+      "sha256": "bf178aff854382dee23e79ac9c5de89c70671e062eebb09ecb80e140e3ddb869",
+      "source_content_bounds": [
+        50,
+        5,
+        207,
+        229
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 157.0,
+      "registration": [
+        19,
+        23
+      ]
+    },
+    {
+      "file": "slash_rear_right_07.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 7,
+      "source_box": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "sha256": "24511eb7b06a3df7f19212e27792c91918dc1caaa0a7d044dade7b9ea8e3ee7d",
+      "source_content_bounds": [
+        51,
+        16,
+        228,
+        229
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 156.0,
+      "registration": [
+        20,
+        27
+      ]
+    },
+    {
+      "file": "slash_rear_right_08.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 8,
+      "source_box": [
+        512,
+        256,
+        768,
+        512
+      ],
+      "sha256": "3cdb1b3eddd62d3a6647c9998dad44f4d22f7b2f351595606a2c15b4f2275595",
+      "source_content_bounds": [
+        43,
+        37,
+        228,
+        229
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 145.0,
+      "registration": [
+        21,
+        36
+      ]
+    },
+    {
+      "file": "slash_rear_right_09.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 10,
+      "source_box": [
+        1024,
+        256,
+        1280,
+        512
+      ],
+      "sha256": "c144da56f4e591bd695ca094517e6da2760581a39b162e8c936ba10914c79412",
+      "source_content_bounds": [
+        19,
+        57,
+        227,
+        229
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 122.0,
+      "registration": [
+        21,
+        44
+      ]
+    },
+    {
+      "file": "slash_rear_right_10.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 11,
+      "source_box": [
+        1280,
+        256,
+        1536,
+        512
+      ],
+      "sha256": "e1b9d7bc41b7b4d63d4c5fc33da7fcf44b865cda728c11c80755d46b4f0b69d9",
+      "source_content_bounds": [
+        10,
+        64,
+        235,
+        229
+      ],
+      "scale": 0.41711229946524064,
+      "foot_source_x": 118.0,
+      "registration": [
+        19,
+        47
+      ]
+    },
+    {
+      "file": "land_rear_right_01.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 12,
+      "source_box": [
+        0,
+        512,
+        256,
+        768
+      ],
+      "sha256": "9d0d71ed4455504d178a3525db719b7a12f69ae6ffec5ed1b77bec304c5fd776",
+      "source_content_bounds": [
+        19,
+        64,
+        231,
+        227
+      ],
+      "scale": 0.39118457300275483,
+      "foot_source_x": 118.0,
+      "registration": [
+        25,
+        52
+      ]
+    },
+    {
+      "file": "land_rear_right_02.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 13,
+      "source_box": [
+        256,
+        512,
+        512,
+        768
+      ],
+      "sha256": "1227df4744020213d0f74f3afba120bdae32cd08ed7c5ff643486e3d9cac1a24",
+      "source_content_bounds": [
+        29,
+        61,
+        203,
+        231
+      ],
+      "scale": 0.39118457300275483,
+      "foot_source_x": 120.0,
+      "registration": [
+        28,
+        49
+      ]
+    },
+    {
+      "file": "land_rear_right_03.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 15,
+      "source_box": [
+        768,
+        512,
+        1024,
+        768
+      ],
+      "sha256": "e8fbd75353b402add5e72e08915fed08f655152bb959f1b2bc2bfce141baf018",
+      "source_content_bounds": [
+        43,
+        41,
+        187,
+        234
+      ],
+      "scale": 0.39118457300275483,
+      "foot_source_x": 123.0,
+      "registration": [
+        33,
+        41
+      ]
+    },
+    {
+      "file": "land_rear_right_04.png",
+      "source": "rescue_actions_generated.png",
+      "source_cell": 17,
+      "source_box": [
+        1280,
+        512,
+        1536,
+        768
+      ],
+      "sha256": "0a4155ec88c94eb70b64673d9a60a1ce118a2e172d68c8fb8a96d02b10352da7",
+      "source_content_bounds": [
+        46,
+        29,
+        181,
+        234
+      ],
+      "scale": 0.39118457300275483,
+      "foot_source_x": 85.0,
+      "registration": [
+        49,
+        36
+      ]
+    }
+  ]
+}

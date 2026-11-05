@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "source": "assets/source/cinematics/ice_reaper_rune/rune_generated.png",
+  "source_sha256": "73870ac0019d23b7ac6426ef238f051a72d872aeac68ae50a1a4fc52283bb792",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "source_content_bounds": [
+    50,
+    22,
+    1202,
+    1228
+  ],
+  "square_crop": [
+    23,
+    22,
+    1229,
+    1228
+  ],
+  "registration_offset": [
+    40,
+    40
+  ],
+  "generated_with": "image_gen",
+  "operation": "Authored artwork; alpha threshold, equal-aspect square registration, nearest scaling, palette registration and masks from authored alpha only.",
+  "source_unchanged": true,
+  "exports": {
+    "branches_mask.png": "46b01542ea150cd94b15fe07261bf85277fb7bc20d87d9e8c8fc4fe08cf89cec",
+    "glyphs_mask.png": "434fd6eb816b647a570bdfcccd29c06a24e9e309690a3e81279bc48948911fa7",
+    "rings_mask.png": "d6fc31a382bd054d3295b6042196bce0636813ff821a8945e9062b821958ad63",
+    "rune.png": "a7cecf2c3a7192934bbf6fa619fdf9a333581b58857fd3b94d799a0ac38e374b",
+    "seal_mask.png": "e49faa00e4ed261ffade4285dc4bcc9250fca85c900580cb588c6f0edd71fac9"
+  },
+  "review": "awaiting_full_scene_review"
+}

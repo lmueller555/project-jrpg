@@ -1,0 +1,47 @@
+{
+  "focused_regression": {
+    "modules": [
+      "test_ice_reaper_action",
+      "test_ice_reaper_audio",
+      "test_ice_reaper_blocking",
+      "test_ice_reaper_environment",
+      "test_ice_reaper_facing",
+      "test_ice_reaper_opening",
+      "test_ice_reaper_requested_corrections",
+      "test_ice_reaper_rune",
+      "test_ice_reaper_shoulder_staging",
+      "test_gallery_catalogue",
+      "test_gallery_session",
+      "test_opening_cinematic"
+    ],
+    "tests": 147,
+    "failures": 0,
+    "errors": 0,
+    "success": true
+  },
+  "awakening_module": {
+    "module": "test_rhea_awakening_closeup",
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "success": true
+  },
+  "total_focused_tests": 155,
+  "runtime_sources_match_capture": true,
+  "runtime_source_sha256": {
+    "opening_cinematic.py": "8f7b0d578516f89fc681327162fde9241bb79f68bb955d2829bd9fb90928d9c7",
+    "ice_reaper_opening.py": "37faf6a03323c59b7159679346fb8541b7081a9229cf56f099a0c1607daed126",
+    "ice_reaper_action.py": "600b34849acdc1acb136a823a5f515d5c226f02a21676a9bf80fe6b7a9ef9c9c",
+    "ice_reaper_audio.py": "bd54cef580170052b2768259019406da789d8f8361a4b30c0511e120af144aa7",
+    "cutscene_gallery.py": "53f8d6893ffe00e90205264770857601106ca8d931b692bbfeeaca44203e77f2",
+    "ice_reaper_rune.py": "e46a996b0fde6ba181d993ee80f26f160d422424a8056f7cb50e6525d1eb9b6a",
+    "rhea_awakening_closeup.py": "c7947b1589c2b17d434bb96b38f36a84de36f5b6291dd7d8894eeaaedb0426aa"
+  },
+  "preserved_before_15_1_native_samples": 10,
+  "shifted_camera_samples": 222,
+  "shifted_actor_positions": 1110,
+  "shifted_actor_headings": 1110,
+  "review_video_bytes": 8988385,
+  "review_video_sha256": "27ecc258c5fd00c2aeaf0e55ac80741ed8e32305b03a8007b8ebfee2518e954d",
+  "note": "The focused regression suite and final close-up module checks overlap no test cases. Capture used a fresh process after the final eye-light correction. Earlier native sample hashes and shifted choreography references were recorded from the preceding committed revision."
+}

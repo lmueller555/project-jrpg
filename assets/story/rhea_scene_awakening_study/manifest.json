@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "actor": "rhea",
+  "purpose": "Full-body scene-sprite awakening for the Ice Reaper cinematic",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "source": "assets/story/ice_reaper_continuity/actors/rhea/frozen_front_01.png",
+  "source_sha256": "2ff5e1f78e86828816d4427498517ec2c1bc2761e043a350c87ffd21e8d705b3",
+  "frames": {
+    "neutral_closed": {
+      "file": "frames/neutral_closed.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.0
+    },
+    "strain_begin": {
+      "file": "frames/strain_begin.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.45
+    },
+    "strain_mid": {
+      "file": "frames/strain_mid.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 0.75
+    },
+    "strain_peak": {
+      "file": "frames/strain_peak.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.0,
+      "start": 1.03
+    },
+    "opening_01": {
+      "file": "frames/opening_01.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.25,
+      "start": 1.3
+    },
+    "opening_02": {
+      "file": "frames/opening_02.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 0.6,
+      "start": 1.43
+    },
+    "angry_open": {
+      "file": "frames/angry_open.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 1.0,
+      "start": 1.57
+    },
+    "angry_hold": {
+      "file": "frames/angry_hold.png",
+      "eyes": [
+        [
+          59.5,
+          46.0
+        ],
+        [
+          63.5,
+          46.0
+        ]
+      ],
+      "openness": 1.0,
+      "start": 1.8
+    }
+  },
+  "sequence": [
+    "neutral_closed",
+    "strain_begin",
+    "strain_mid",
+    "strain_peak",
+    "opening_01",
+    "opening_02",
+    "angry_open",
+    "angry_hold"
+  ],
+  "shatter_at": 2.2,
+  "protected": {
+    "body": true,
+    "hair": true,
+    "staff": true,
+    "clothing": true,
+    "original_alpha": true
+  },
+  "facial_mask_rows": {
+    "44": [
+      59,
+      64
+    ],
+    "45": [
+      58,
+      64
+    ],
+    "46": [
+      58,
+      64
+    ],
+    "47": [
+      58,
+      64
+    ],
+    "48": [
+      59,
+      64
+    ],
+    "49": [
+      60,
+      63
+    ],
+    "50": [
+      60,
+      63
+    ]
+  },
+  "registration": {
+    "native_source_crop": [
+      49,
+      39,
+      66,
+      57
+    ],
+    "source_grid": [
+      4,
+      2
+    ],
+    "cell": [
+      384,
+      512
+    ],
+    "crop_in_cell": [
+      56,
+      112,
+      328,
+      400
+    ],
+    "integer_translation": [
+      0,
+      -1
+    ],
+    "method": "nearest extraction; source-palette nearest-color registration"
+  },
+  "authored": {
+    "tool": "image_gen",
+    "sheet": "assets/source/cinematics/rhea_scene_awakening_study/expressions_generated.png",
+    "sha256": "c6451aca2ecc2f92464f5cfaed8b517da8f4df375eebf4e9d76288669b0360cb",
+    "prompt": "assets/source/cinematics/rhea_scene_awakening_study/expressions_prompt.txt"
+  },
+  "verification": {
+    "neutral_closed": {
+      "sha256": "5bb5030be7e42e1a63c9becaa5baa061ceca0158ff2b39abe0e04282d8810d1c",
+      "changed_pixels": 39,
+      "protected_pixels_unchanged": true
+    },
+    "strain_begin": {
+      "sha256": "27ba0cf0c19c6645314dad60b5db435b9abb4f8cba9c53630bf6d40181a4004f",
+      "changed_pixels": 40,
+      "protected_pixels_unchanged": true
+    },
+    "strain_mid": {
+      "sha256": "126df66f3b4351233237139df66f1376151c60b69fb0701d4f861c47b16b674b",
+      "changed_pixels": 40,
+      "protected_pixels_unchanged": true
+    },
+    "strain_peak": {
+      "sha256": "f86c47250e9c9297d77d756ddb687587e64544a7f85573fe9f75c31577f57325",
+      "changed_pixels": 41,
+      "protected_pixels_unchanged": true
+    },
+    "opening_01": {
+      "sha256": "b6ad1cd3f61dca1cc68ef994772c90aaae242c485fb457f834a9117c1971c1eb",
+      "changed_pixels": 40,
+      "protected_pixels_unchanged": true
+    },
+    "opening_02": {
+      "sha256": "e38974fb3b01415bc561d214c5b3dad16927d606488ba7469709dc1dbf12319b",
+      "changed_pixels": 41,
+      "protected_pixels_unchanged": true
+    },
+    "angry_open": {
+      "sha256": "d833409b9d71e1312b6294e36a3a107fa413970a64bc83c70cf723344def7d15",
+      "changed_pixels": 41,
+      "protected_pixels_unchanged": true
+    },
+    "angry_hold": {
+      "sha256": "4cab1839bd84fb1662d56852e060d0e52cb1a38eea9b9887a9649f3b87520488",
+      "changed_pixels": 40,
+      "protected_pixels_unchanged": true
+    }
+  }
+}
