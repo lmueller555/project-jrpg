@@ -1,4 +1,8 @@
-"""The Reaper approaches the locked ending camera and frames the rune reveal."""
+"""The approved fast retreat and shoulder sweep frame the same grounded cast.
+
+Stage camera helpers below use the canonical action clock; the production
+awakening segment runs one second later on the playback clock.
+"""
 import os
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -24,9 +28,11 @@ class ShoulderStagingTests(unittest.TestCase):
     def tearDownClass(cls):
         pygame.quit()
 
-    def test_locked_camera_matches_all_recorded_samples(self):
+    def test_earlier_camera_matches_recorded_samples_before_replaced_awakening(self):
         for sample in self.baseline['camera']:
             time = sample[0]
+            if time >= 15.1:
+                continue
             camera = Stage.camera(time)
             current = [time, list(camera.position), list(camera.target), camera.focal, list(camera.center)]
             self.assertEqual(current, sample, f'Camera changed at {time}')
@@ -35,12 +41,12 @@ class ShoulderStagingTests(unittest.TestCase):
         original = pygame.Vector3(2, 6.6, -8)
         for time in (0., 5., 9., 14.7, 16.29, 16.3):
             self.assertEqual(Stage.reaper_position(time), original)
-        heights = [Stage.reaper_position(time).y for time in (16.3, 16.7, 17.2, 17.8, 18.15)]
+        heights = [Stage.reaper_position(time).y for time in (16.3, 16.45, 16.65, 16.8, 16.95)]
         self.assertEqual(heights, sorted(heights))
-        settled = Stage.reaper_position(18.15)
+        settled = Stage.reaper_position(16.95)
         self.assertGreater(settled.y, original.y+2.)
         self.assertGreater(settled.distance_to(original), 2.5)
-        for time in (18.3, 19., 19.8, 20.):
+        for time in (16.95, 17.5, 18.3, 19., 19.8, 20.):
             self.assertEqual(Stage.reaper_position(time), settled)
 
     def test_reposition_leaves_other_characters_in_place(self):
@@ -55,7 +61,7 @@ class ShoulderStagingTests(unittest.TestCase):
             self.assertEqual(positions['caelan'], pygame.Vector3(-5.3,0,-.7))
 
     def test_lower_body_is_naturally_outside_ending_viewport(self):
-        for time in (18.3, 19., 19.8):
+        for time in (16.95, 18.1, 19.25):
             camera = self.stage.camera(time)
             position = self.stage.actor_positions(time)['ice_reaper']
             image, data = self.stage._approved_boss_frame(camera, position, time)
@@ -67,7 +73,7 @@ class ShoulderStagingTests(unittest.TestCase):
                              f'Lower torso/legs visible at {time}')
 
     def test_shoulder_edges_leave_rhea_readable(self):
-        for time in (18.3, 19.8):
+        for time in (16.95, 19.25):
             camera = self.stage.camera(time)
             canvas = pygame.Surface((480,320),pygame.SRCALPHA)
             self.stage._foreground_boss(canvas,camera,time)
@@ -81,7 +87,7 @@ class ShoulderStagingTests(unittest.TestCase):
     def test_only_brief_central_occlusion_during_the_sweep(self):
         any_occlusion = 0
         substantial_occlusion = 0
-        for frame in range(1089,1200):
+        for frame in range(1017,1156):
             time = frame/60
             camera = self.stage.camera(time)
             head = camera.project(self.stage.actor_positions(time)['rhea']+pygame.Vector3(0,1.6,0))
@@ -92,7 +98,7 @@ class ShoulderStagingTests(unittest.TestCase):
                 pygame.mask.Mask(body.size,fill=True),body.topleft)
             if covered:
                 any_occlusion += 1
-                self.assertTrue(18.5 < time < 19.6)
+                self.assertTrue(17.4 < time < 18.85)
             if covered > body.width*body.height*.5:
                 substantial_occlusion += 1
         self.assertLessEqual(any_occlusion/60,.6)

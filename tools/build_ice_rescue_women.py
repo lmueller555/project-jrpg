@@ -50,7 +50,7 @@ def export_sheet(actor,columns,rows,groups,scale):
 
 def build():
     mira=export_sheet('mira',6,5,{'raise':list(range(4)),'aim':list(range(4,8)),'load':list(range(8,16)),'fire':list(range(16,22)),'ready_rear':list(range(22,26)),'loading_detail':list(range(26,30))},.49)
-    rhea=export_sheet('rhea',4,4,{'release':list(range(8)),'eyes':list(range(8,12)),'release_rear':list(range(12,16))},.29)
+    rhea=export_sheet('rhea',4,4,{'release':list(range(8)),'release_rear':list(range(12,16))},.29)
     scope=clean(Image.open(SOURCE/'launcher_scope_generated.png')).resize((480,320),Image.Resampling.NEAREST)
     props=TARGET/'props';props.mkdir(parents=True,exist_ok=True)
     scope.save(props/'launcher_scope.png',optimize=True)

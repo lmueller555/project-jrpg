@@ -1,0 +1,30 @@
+{
+  "modules": [
+    "test_ice_reaper_action",
+    "test_ice_reaper_audio",
+    "test_ice_reaper_blocking",
+    "test_ice_reaper_environment",
+    "test_ice_reaper_facing",
+    "test_ice_reaper_opening",
+    "test_ice_reaper_requested_corrections",
+    "test_ice_reaper_rune",
+    "test_ice_reaper_shoulder_staging",
+    "test_gallery_catalogue",
+    "test_gallery_session",
+    "test_opening_cinematic",
+    "test_rhea_scene_awakening"
+  ],
+  "tests": 155,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "runtime_sources": {
+    "ice_reaper_action.py": "d5f9f9015958f8fc663ae2a4b82e5864b4f5c5dd80953272bcbacefca6f1d8ed",
+    "rhea_scene_awakening.py": "025fb80ba9d73a4a6f0c83089021aa25418907f2b806e23aed7e85c0ba094c46",
+    "ice_reaper_opening.py": "37faf6a03323c59b7159679346fb8541b7081a9229cf56f099a0c1607daed126",
+    "ice_reaper_audio.py": "bd54cef580170052b2768259019406da789d8f8361a4b30c0511e120af144aa7",
+    "ice_reaper_rune.py": "e46a996b0fde6ba181d993ee80f26f160d422424a8056f7cb50e6525d1eb9b6a"
+  },
+  "notes": "Fresh process after removal of the obsolete portrait and eyes inserts; all final runtime files remained frozen for this run.",
+  "runtime_matches_review_capture": true
+}

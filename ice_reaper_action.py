@@ -65,7 +65,8 @@ SHOTS = (
     (7.5, 9.5, 'slow_motion_rescue'), (9.5, 11., 'rescue_orbit'),
     (11., 12.8, 'mira_loading'), (12.8, 14.2, 'launcher_sight'),
     (14.2, 15.1, 'second_shard_intercept'), (15.1, 16.3, 'rhea_awakens'),
-    (16.3, 17.2, 'prison_release'), (17.2, 20., 'rune_panorama'))
+    (16.3, 16.95, 'prison_release'), (16.95, 19.25, 'rune_panorama'),
+    (19.25, 20., 'rune_hold'))
 
 
 class IceReaperActionStage:
@@ -95,7 +96,7 @@ class IceReaperActionStage:
             'caelan': ('ready', 'dash', 'slash', 'land'),
             'lucan': ('dash', 'brace', 'impact'),
             'mira': ('raise', 'load', 'aim', 'fire'),
-            'rhea': ('release', 'eyes'),
+            'rhea': ('release',),
             'ice_reaper': ('aim', 'launch', 'recharge')}
         for actor, actions in required.items():
             folder = self.asset_root/'actors'/actor
@@ -187,14 +188,15 @@ class IceReaperActionStage:
                 break
         from ice_reaper_rune import RuneSeal
         self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
-        from rhea_awakening_closeup import RheaAwakeningCloseup
-        self.rhea_closeup = RheaAwakeningCloseup(self.asset_root.parent/'ice_reaper_rhea_closeup')
+        from rhea_scene_awakening import RheaSceneAwakening
+        self.awakening = RheaSceneAwakening(self)
+        self.last_draw_trace = []
 
     def validate_assets(self):
         if self.missing_assets:
             raise ValueError('Missing authored rescue assets: '+', '.join(self.missing_assets))
         required = {'caelan':('ready','dash','slash','land'), 'lucan':('dash','brace','impact'),
-                    'mira':('raise','load','aim','fire'), 'rhea':('eyes','release'),
+                    'mira':('raise','load','aim','fire'), 'rhea':('release',),
                     'ice_reaper':('aim','launch','recharge')}
         for actor, actions in required.items():
             for action in actions:
@@ -208,11 +210,10 @@ class IceReaperActionStage:
 
     @staticmethod
     def story_time(elapsed):
-        """Map the 21-second playback onto the existing choreography clock.
+        """Retain the early action's original choreography clock.
 
-        The additional second belongs to Rhea's closed-eye hold. All following
-        action, camera, rune and particle tracks retain their original pacing.
-        Close-up expressions and audio use the real playback clock instead.
+        The replacement awakening owns a local clock starting at 15.1 seconds;
+        its camera and expression sequence do not use this legacy hold mapping.
         """
         if elapsed <= 15.1:
             return float(elapsed)
@@ -287,7 +288,7 @@ class IceReaperActionStage:
         heading = V3(5, 0, -8).normalize()
         settled = original+heading*1.0
         settled.y = 9.0
-        return original.lerp(settled, smooth(phase(time, 16.3, 18.15)))
+        return original.lerp(settled, smooth(phase(time, 16.3, 16.95)))
 
     @classmethod
     def camera(cls, time, reduced_motion=False):
@@ -319,42 +320,26 @@ class IceReaperActionStage:
             position = lerp((4.6, 2.5, 5.8), position, min(1, p*4))
             target = lerp((7, 1.45, 10), (2.1, 11.4, -8), 1. if reduced_motion else smooth(phase(time, 13, 14.05)))
             return PerspectiveCamera(tuple(position), tuple(target), 255+100*p, (240,158-33*p))
-        # Frozen Rhea faces the arriving party, as in the opening reveal.
-        # Her close-up stays on that side; she turns after breaking free.
-        rhea = cls.actor_positions(time)['rhea']
-        # The camera remains on its approved route while the Reaper moves.
-        boss = V3(2, 6.6, -8)
-        heading = boss-rhea
-        heading.y = 0
-        heading = heading.normalize()
-        face_camera = rhea+V3(-.1,1.9,2.1)
-        release_camera = rhea+V3(0,5.1,7.5)
-        behind = boss+heading*2.5
-        lateral = V3(-heading.z,0,heading.x)
-        shoulder_left = behind-lateral*3.5
-        shoulder_right = behind+lateral*3.5
-        shoulder_left.y = shoulder_right.y = 15.3
-        if shot == 'rhea_awakens':
-            return PerspectiveCamera(tuple(face_camera), (-3, 1.7, 0), 260)
-        if shot == 'prison_release':
-            p = 1. if reduced_motion else smooth(phase(time, 16.3, 17.2))
-            return PerspectiveCamera(tuple(lerp(face_camera, release_camera, p)),
-                                     (-3, 1.4, 0), 260)
-        p = phase(time, 17.2, 20)
-        if reduced_motion:
-            return PerspectiveCamera(tuple(shoulder_right),(-3,.8,0),245)
-        if p < .34:
-            q = smooth(p/.34)
-            return PerspectiveCamera(tuple(lerp(release_camera, shoulder_left, q)),
-                                     (-3, 1.4-.4*q, 0), 260-15*q)
-        q = smooth((p-.34)/.66)
-        position = shoulder_left.lerp(shoulder_right, q)
-        position.y += math.sin(q*math.pi)*.3
-        position += heading*math.sin(q*math.pi)*.3
-        return PerspectiveCamera(tuple(position), (-3, 1.-.2*q, 0), 245)
+        # This utility accepts the canonical choreography clock. Production
+        # playback passes actual elapsed time directly to the awakening helper.
+        from rhea_scene_awakening import RheaSceneAwakening
+        return RheaSceneAwakening.camera(time-14.1, reduced_motion)
 
     @classmethod
     def telemetry(cls, elapsed):
+        if elapsed >= 15.1-1e-10:
+            from rhea_scene_awakening import RheaSceneAwakening
+            local = RheaSceneAwakening.local_time(elapsed)
+            time = RheaSceneAwakening.canonical_time(local)
+            camera = RheaSceneAwakening.camera(local)
+            return dict(RheaSceneAwakening.state(local), time=elapsed,
+                        choreography_time=time,
+                        positions={key:list(value) for key,value in cls.actor_positions(time).items()},
+                        first_shard='intercepted', second_shard='destroyed',
+                        rune=phase(time,16.3,17.6),
+                        camera_position=list(camera.position),
+                        camera_target=list(camera.target), focal=camera.focal,
+                        slow_motion=False)
         time = cls.story_time(elapsed)
         if time < 8.5:
             prison = 'intact'
@@ -409,7 +394,7 @@ class IceReaperActionStage:
             # fixes that heading; she can turn toward her attacker only after
             # she breaks free, rather than changing sides inside the prison.
             intended = cls._flat_direction(positions['ice_reaper']-positions[actor])
-            angle = math.atan2(intended.x, intended.z)*smooth(phase(time,16.3,17.2))
+            angle = math.atan2(intended.x, intended.z)*smooth(phase(time,16.32,16.92))
             return V3(math.sin(angle),0,math.cos(angle))
         elif actor == 'mira':
             vector = positions['ice_reaper']-positions[actor]
@@ -852,21 +837,6 @@ class IceReaperActionStage:
     def _rune(self, canvas, camera, time, reduced):
         self.rune_seal.draw(canvas, camera, time, reduced)
 
-    def _closeup(self, canvas, elapsed, camera, time, reduced=False):
-        position = self.actor_positions(time)['rhea']
-        projected = camera.project(position)
-        if projected is None:
-            return
-        data = self.actors['rhea']
-        scale = camera.focal*1.85/projected[2]/data['body_pixels']
-        ax, ay = data['anchor']
-        # Match the actual frozen-front full-body drawing's iris registration,
-        # not the foot anchor, so the portrait-to-world pullback has no head jump.
-        eyes = tuple((projected[0]+(x-ax)*scale, projected[1]+(46-ay)*scale)
-                     for x in (55,60))
-        self.rhea_closeup.draw(canvas, elapsed, reduced=reduced,
-                               target_eyes=eyes)
-
     def _loading_insert(self, canvas, time):
         if not 11.4 <= time < 12.3:
             return
@@ -910,6 +880,11 @@ class IceReaperActionStage:
 
     def draw(self, canvas, elapsed, reduced_motion=False):
         actual_time=clamp(float(elapsed),5,21)
+        if actual_time >= 15.1-1e-10:
+            self.awakening.draw(canvas, self.awakening.local_time(actual_time), reduced_motion)
+            self.last_draw_trace = self.awakening.last_draw_trace
+            return
+        self.last_draw_trace = []
         time=clamp(self.story_time(actual_time),5,20)
         camera=self.camera(time,reduced_motion)
         self._background(canvas,camera,time)
@@ -921,8 +896,6 @@ class IceReaperActionStage:
         self._dash_snow(canvas,camera,positions,time,reduced_motion)
         visible=[]
         for actor,position in positions.items():
-            if actor == 'ice_reaper' and time >= 18.05:
-                continue
             if actor == 'mira' and 7 <= time < 9.5:
                 continue
             if actor in ('caelan','lucan','rhea') and 13.65 <= time < 15.1:
@@ -934,10 +907,5 @@ class IceReaperActionStage:
             self._billboard(canvas,actor,position,camera,time)
             if actor=='rhea':self._prison(canvas,camera,position,time,True)
         self._projectiles(canvas,camera,positions,time,reduced_motion)
-        self._fragments(canvas,camera,positions['rhea']+V3(0,1.1,0),time,16.3,48 if not reduced_motion else 12)
-        if time >= 18.05:
-            self._foreground_boss(canvas,camera,time)
         self._loading_insert(canvas,time)
         self._scope_overlay(canvas,time)
-        if self.shot(time) == 'rhea_awakens':
-            self._closeup(canvas, actual_time, camera, time, reduced_motion)

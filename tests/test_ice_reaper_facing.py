@@ -36,9 +36,10 @@ class IceReaperFacingTests(unittest.TestCase):
         intended=positions['ice_reaper']-positions['rhea'];intended.y=0
         self.assertGreater(self.stage.actor_heading('rhea',17.2).dot(intended.normalize()),.999)
         previous=self.stage.actor_heading('rhea',16.3)
-        for i in range(1,55):
+        # The approved burst now carries her turn into the .65-second retreat.
+        for i in range(1,40):
             heading=self.stage.actor_heading('rhea',16.3+i/60)
-            self.assertLess(previous.angle_to(heading),5.)
+            self.assertLess(previous.angle_to(heading),7.)
             previous=heading
 
     def test_signed_view_angles_distinguish_both_sides_and_back(self):

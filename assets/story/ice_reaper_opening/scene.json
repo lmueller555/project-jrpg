@@ -376,7 +376,7 @@
     {
       "id": "rhea_release",
       "start": 17.3,
-      "end": 18.2,
+      "end": 17.95,
       "from": [
         100,
         128
@@ -388,7 +388,20 @@
     },
     {
       "id": "rune_panorama",
-      "start": 18.2,
+      "start": 17.95,
+      "end": 20.25,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "rune_hold",
+      "start": 20.25,
       "end": 21.0,
       "from": [
         100,

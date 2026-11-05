@@ -1,8 +1,8 @@
-"""Preserve the reviewed shot while correcting only Lucan and boss artwork.
+"""Retain the rescue and approved cast artwork as Rhea's final shot changes.
 
 The compact snapshots below record PR108 before these requested corrections.
-They deliberately protect the environment/camera the user approved and Lucan's
-already-correct ending, which the user explicitly asked us to retain.
+They protect the earlier environment/camera and Lucan's world-facing ending.
+The later camera is now the separately approved scene-sprite awakening study.
 """
 import ast
 import hashlib
@@ -135,6 +135,9 @@ class RequestedCorrectionTests(unittest.TestCase):
 
     def test_reviewed_camera_positions_framing_and_timing_are_retained(self):
         for time, position, target, focal, center in BASELINE['camera']:
+            if time >= 15.1:
+                # The approved awakening replaces this historical late route.
+                continue
             with self.subTest(time=time):
                 camera = self.stage.camera(time)
                 self.assertEqual(list(camera.position), position)
@@ -145,6 +148,8 @@ class RequestedCorrectionTests(unittest.TestCase):
     def test_reviewed_environment_pixels_are_unchanged(self):
         for sample, expected in BASELINE['environment'].items():
             time = float(sample)
+            if time >= 15.1:
+                continue
             with self.subTest(time=time):
                 canvas = pygame.Surface((480, 320))
                 self.stage._background(canvas, self.stage.camera(time), time)
@@ -152,8 +157,9 @@ class RequestedCorrectionTests(unittest.TestCase):
                 self.assertEqual(actual, expected)
 
     def test_lucans_already_correct_ending_keeps_heading_position_and_art(self):
-        keys = {'17.2':'hold_brace_rear_left', '18.3':'hold_brace_front_right',
-                '19.0':'hold_brace_front', '19.8':'hold_brace_front'}
+        # These exact views were recorded from the approved awakening study.
+        # Camera placement changes which drawing is visible, never his heading.
+        frame = 'c86eb5973003308504db9d2b0aebd2d1d27d5f6ad31e369bee1bf448de2dc64f'
         for sample, expected in BASELINE['lucan_end'].items():
             time = float(sample)
             with self.subTest(time=time):
@@ -163,10 +169,10 @@ class RequestedCorrectionTests(unittest.TestCase):
                 camera = self.stage.camera(time)
                 action, local, duration = self.stage._action('lucan', time)
                 key = self.stage.sequence_key('lucan', action, local, duration, camera, position, time)
-                self.assertEqual(key, keys[sample])
+                self.assertEqual(key, 'hold_brace_front')
                 image, _ = self.stage._sequence('lucan', action, local, duration,
                                                 camera, position, time=time)
-                self.assertEqual(pixel_hash(image), expected['frame'])
+                self.assertEqual(pixel_hash(image), frame)
 
 
 if __name__ == '__main__':

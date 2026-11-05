@@ -1,4 +1,4 @@
-"""Physical and authored-motion checks for the 15-second rescue extension."""
+"""Physical and authored-motion checks for the coordinated rescue."""
 import os
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -49,7 +49,7 @@ class IceReaperActionTests(unittest.TestCase):
         self.assertEqual(self.stage._action('ice_reaper',19)[0],'recharge')
 
     def test_continuous_camera_boundaries_do_not_change_lens_or_position(self):
-        for boundary in (9.5,11.,12.8,17.2):
+        for boundary in (9.5,11.,12.8,16.3,16.95,19.25):
             before=self.stage.camera(boundary-.000001)
             after=self.stage.camera(boundary)
             self.assertLess(pygame.Vector3(before.position).distance_to(after.position),.001)
