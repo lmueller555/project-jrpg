@@ -40,50 +40,158 @@
   "wake": [
     {
       "speaker": "tomas",
-      "text": "Caelan? You're awake, aren't you?"
-    },
-    {
-      "speaker": "tomas",
-      "text": "Mother Serene says if you're still in bed when the last bell rings, you're helping me clean the courtyard."
+      "text": "Cael? Breakfast’s ready."
     },
     {
       "speaker": "caelan",
-      "text": "She didn't say that."
+      "text": "*sleepily* All right. I’m coming."
     },
     {
       "speaker": "tomas",
-      "text": "No. But she might, once I suggest it."
+      "text": "Did I wake you?"
     },
     {
       "speaker": "caelan",
-      "text": "I'm getting up.",
+      "text": "Yes."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Oh. I thought I heard you moving."
+    },
+    {
+      "speaker": "caelan",
+      "text": "That was me trying to get comfortable."
+    },
+    {
+      "speaker": "tomas",
+      "text": "*a small laugh* Well, get uncomfortable. Mother’s already sent me up once."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Give me a minute.",
       "cue": "wake_up"
     },
     {
       "speaker": "tomas",
-      "text": "Breakfast won't wait forever!"
+      "text": "I’ll be downstairs."
     }
   ],
   "breakfast": [
     {
-      "speaker": "serene",
-      "text": "Enjoy a quiet breakfast while you can. Tomorrow we’ll have everyone coming and going for the Festival of Light."
-    },
-    {
-      "speaker": "caelan",
-      "text": "And today?"
+      "speaker": "tomas",
+      "text": "Where do you want the tables tomorrow, Mother? Same place as last year?"
     },
     {
       "speaker": "serene",
-      "text": "Today we make sure everything—and everyone—is ready for it."
+      "text": "Along the courtyard wall, I think. Leave the way from the gate clear."
     },
     {
       "speaker": "tomas",
-      "text": "That sounds like rather more work."
+      "text": "We could put one nearer the kitchen door. Save everyone carrying dishes so far."
     },
     {
       "speaker": "serene",
-      "text": "*with a small smile* It usually is."
+      "text": "Yes, that would help. Show me where you mean after breakfast."
+    },
+    {
+      "speaker": "tomas",
+      "text": "And when we’re finished, could I go over to Mira’s?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "What are you working on?"
+    },
+    {
+      "speaker": "tomas",
+      "text": "Nothing yet. I want to ask her about Rivet. I can understand the legs when he’s standing still, but once he starts walking I lose track of what’s moving what."
+    },
+    {
+      "speaker": "caelan",
+      "text": "You could ask her to slow him down."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I did. She started explaining, and then someone brought her a broken hinge."
+    },
+    {
+      "speaker": "serene",
+      "text": "She’ll be busy today. Ask whether she has time before you settle in."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I will."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Will you need me all afternoon?"
+    },
+    {
+      "speaker": "serene",
+      "text": "I need some help this morning. What did you have in mind?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "I wanted to practise my magicks. Down by the brook, perhaps."
+    },
+    {
+      "speaker": "tomas",
+      "text": "You had your book out last night."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I know."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I wasn’t complaining."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*a little embarrassed* No. I just keep going back to the same part."
+    },
+    {
+      "speaker": "serene",
+      "text": "Is there something in it you don’t understand?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "It makes sense when I read it. Then I try, and I can’t tell whether I’ve misunderstood something or whether I simply need more practice."
+    },
+    {
+      "speaker": "serene",
+      "text": "Would you like someone with you?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "For now, I’d rather try on my own."
+    },
+    {
+      "speaker": "serene",
+      "text": "All right. We’ll leave you some time this afternoon."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "tomas",
+      "text": "You can leave the tables to me once we’ve carried them out. I can arrange them."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right."
+    },
+    {
+      "speaker": "serene",
+      "text": "Eat another piece before you go, both of you. Tomorrow’s the Festival of Light; today I expect we’ll all forget to stop for lunch."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I won’t."
+    },
+    {
+      "speaker": "serene",
+      "text": "Then remind the rest of us."
     }
   ],
   "inspections": {
@@ -144,58 +252,54 @@
   ],
   "breakfast_greeting": [
     {
-      "speaker": "tomas",
-      "text": "There you are. I saved you some bread."
+      "speaker": "serene",
+      "text": "Good morning, Caelan. There’s bread beside your brother. Help yourself."
     },
     {
       "speaker": "caelan",
-      "text": "You did?"
-    },
-    {
-      "speaker": "tomas",
-      "text": "*grins* Mother Serene wouldn’t let me eat it."
+      "text": "Morning. Sorry—I didn’t mean to sleep so late."
     },
     {
       "speaker": "serene",
-      "text": "Sit down, Caelan. Before your brother decides you aren’t coming."
+      "text": "You haven’t missed anything. Sit down."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Except the courtyard."
     },
     {
       "speaker": "caelan",
-      "text": "Have you been up long?"
-    },
-    {
-      "speaker": "serene",
-      "text": "Long enough to wish there were another pair of hands in the kitchen."
+      "text": "You’ve finished?"
     },
     {
       "speaker": "tomas",
-      "text": "I offered."
-    },
-    {
-      "speaker": "serene",
-      "text": "You offered to taste things."
-    },
-    {
-      "speaker": "tomas",
-      "text": "Someone ought to."
+      "text": "Most of it. There are still the tables to move."
     },
     {
       "speaker": "caelan",
-      "text": "*smiles* Very public-spirited of you."
+      "text": "I’ll help you with those."
     },
     {
       "speaker": "tomas",
-      "text": "Thank you."
+      "text": "Good. I wasn’t going to try them on my own."
     }
   ],
   "kindness": [
     {
       "speaker": "caelan",
-      "text": "Your cup’s here, Mother."
+      "text": "Here, Mother."
     },
     {
       "speaker": "serene",
-      "text": "Thank you, Caelan. Now, could you both spare me a little time?"
+      "text": "Thank you."
+    },
+    {
+      "speaker": "serene",
+      "text": "When you’ve finished, come and see me. There are a few things I’d like taken into the village."
+    },
+    {
+      "speaker": "caelan",
+      "text": "We’ll come over."
     }
   ]
 }

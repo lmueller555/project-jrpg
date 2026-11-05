@@ -64,7 +64,7 @@ class OpeningCinematicGameplayTests(unittest.TestCase):
         self.assertEqual(game.social.script_identifier, 'opening_wake')
         self.assertEqual(game.social.page_index, 0)
         self.assertEqual(' '.join(game.social.page['lines']),
-                         "Caelan? You're awake, aren't you?")
+                         "Cael? Breakfast’s ready.")
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertFalse(game.music.paused)
 
