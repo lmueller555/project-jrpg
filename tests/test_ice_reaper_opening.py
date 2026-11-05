@@ -1,4 +1,4 @@
-"""The partial Ice Reaper preview preserves actor identity and a twenty-one-second clock."""
+"""The complete Ice Reaper preview preserves actor identity and a thirty-two-second clock."""
 import copy
 import gc
 import json
@@ -37,15 +37,15 @@ class IceReaperOpeningTests(unittest.TestCase):
     def tearDown(self):
         pygame.quit()
 
-    def test_exact_twenty_one_second_completion_at_30_and_60_fps(self):
+    def test_exact_thirty_two_second_completion_at_30_and_60_fps(self):
         for fps in (30, 60):
             with self.subTest(fps=fps):
                 calls = []
                 self.scene.start(lambda: calls.append('done'))
-                for _ in range(fps*21):
+                for _ in range(fps*32):
                     self.scene.update(1/fps)
                 self.assertFalse(self.scene.active)
-                self.assertEqual(self.scene.elapsed, 21.)
+                self.assertEqual(self.scene.elapsed, 32.)
                 self.assertEqual(self.scene.finished_reason, 'completed')
                 self.scene.update(1)
                 self.scene.skip()
@@ -160,7 +160,7 @@ class IceReaperOpeningTests(unittest.TestCase):
     def test_rescue_pause_freezes_rendered_action_at_each_major_beat(self):
         self.scene.start()
         canvas = pygame.Surface((480, 320))
-        for elapsed in (8.5, 13.8, 16.7, 19.5):
+        for elapsed in (8.5, 13.8, 16.7, 19.5, 24.5, 27.9, 31.):
             with self.subTest(elapsed=elapsed):
                 self.scene.elapsed = elapsed
                 self.scene._draw_scene(canvas, self.scene.camera_position)
@@ -173,11 +173,37 @@ class IceReaperOpeningTests(unittest.TestCase):
                 self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE))
 
     def test_lucan_cover_line_follows_caelan_alarm(self):
-        alarm, cover = self.scene.data['dialogue']
+        alarm, cover = self.scene.data['dialogue'][:2]
         self.assertEqual((alarm['speaker'], alarm['text']), ('Caelan', 'Rhea! No!'))
         self.assertEqual((cover['speaker'], cover['text']), ('Lucan', "Cael, go! I'll cover!"))
         self.assertGreaterEqual(cover['start'], alarm['end'])
         self.assertLessEqual(cover['end'], 7.)
+
+    def test_rhea_takes_control_and_interrupts_caelan_at_the_staff_sweep(self):
+        self.assertEqual(len(self.scene.data['dialogue']), 4)
+        rhea, caelan = self.scene.data['dialogue'][2:]
+        self.assertEqual((rhea['speaker'], rhea['text']),
+                         ('Rhea', 'Thanks guys, now leave her to me...'))
+        self.assertEqual((caelan['speaker'], caelan['text']),
+                         ('Caelan', 'Rhea...are you su-'))
+        self.assertEqual((rhea['start'], rhea['end']), (21.1, 23.15))
+        self.assertEqual((caelan['start'], caelan['end']), (23.2, 24.))
+        self.assertEqual(self.scene.data['speakers']['rhea']['portrait'], 'ice_reaper_rhea')
+        self.assertEqual(self.scene.data['speakers']['rhea']['portrait_file'],
+                         'portraits/rhea_awakening.png')
+        for time, text in ((22., rhea['text']), (23.5, caelan['text'])):
+            self.scene.elapsed = time
+            self.assertEqual(self.scene.dialogue['text'], text)
+        self.scene.elapsed = 24.
+        self.assertIsNone(self.scene.dialogue)
+
+    def test_charge_fades_without_extending_the_cinematic_clock(self):
+        self.scene.elapsed = 31.1
+        self.assertEqual(self.scene.fade_alpha, 0)
+        self.scene.elapsed = 31.7
+        self.assertGreater(self.scene.fade_alpha, 0)
+        self.scene.elapsed = 32.
+        self.assertEqual(self.scene.fade_alpha, 255)
 
     def test_invalid_duration_and_brush_direction_fail_explicitly(self):
         for field in ('duration', 'brush_direction', 'hover'):
@@ -231,7 +257,7 @@ class IceReaperGalleryTests(unittest.TestCase):
             pygame.event.Event(pygame.KEYDOWN, key=key, repeat=False),
             pygame.event.Event(pygame.KEYUP, key=key)])
 
-    def test_real_preview_finishes_at_twenty_one_seconds_without_mutating_the_journey(self):
+    def test_real_preview_finishes_at_thirty_two_seconds_without_mutating_the_journey(self):
         before = (self.path.read_bytes(), self.settings.read_bytes(),
                   self.parent._progress_signature(), self.parent.elapsed_ms,
                   tuple(self.parent.player.position), copy.deepcopy(self.parent.saved_journey),
@@ -239,7 +265,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         session = self.launch()
         self.assertIsInstance(session.game.opening_cinematic, IceReaperOpening)
         self.assertFalse(session.game.save_store.enabled)
-        for frame in range(630):
+        for frame in range(960):
             self.assertIs(self.parent.gallery_session, session, frame)
             self.assertEqual(session.game.music.desired_track, 'wintermute2')
             self.parent.update(1/30, (1, 0), True)

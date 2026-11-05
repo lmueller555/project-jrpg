@@ -190,6 +190,8 @@ class IceReaperActionStage:
         self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
         from rhea_scene_awakening import RheaSceneAwakening
         self.awakening = RheaSceneAwakening(self)
+        from ice_reaper_duel import IceReaperDuel
+        self.duel = IceReaperDuel(self)
         self.last_draw_trace = []
 
     def validate_assets(self):
@@ -327,6 +329,13 @@ class IceReaperActionStage:
 
     @classmethod
     def telemetry(cls, elapsed):
+        if elapsed >= 21.-1e-10:
+            from ice_reaper_duel import IceReaperDuel
+            camera = IceReaperDuel.camera(elapsed)
+            return dict(IceReaperDuel.state(elapsed), time=elapsed,
+                        positions={key:list(value) for key,value in IceReaperDuel.actor_positions(elapsed).items()},
+                        camera_position=list(camera.position), camera_target=list(camera.target),
+                        focal=camera.focal, prison='shattered', rune=1., slow_motion=False)
         if elapsed >= 15.1-1e-10:
             from rhea_scene_awakening import RheaSceneAwakening
             local = RheaSceneAwakening.local_time(elapsed)
@@ -879,7 +888,11 @@ class IceReaperActionStage:
         pygame.draw.circle(canvas,'#d9bd7c',(240,125),3,1)
 
     def draw(self, canvas, elapsed, reduced_motion=False):
-        actual_time=clamp(float(elapsed),5,21)
+        actual_time=clamp(float(elapsed),5,32)
+        if actual_time >= 21.-1e-10:
+            self.duel.draw(canvas, actual_time, reduced_motion)
+            self.last_draw_trace = self.duel.last_draw_trace
+            return
         if actual_time >= 15.1-1e-10:
             self.awakening.draw(canvas, self.awakening.local_time(actual_time), reduced_motion)
             self.last_draw_trace = self.awakening.last_draw_trace

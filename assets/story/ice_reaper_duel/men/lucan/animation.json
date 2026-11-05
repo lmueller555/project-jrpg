@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "animations": {
+    "wind_rear": {
+      "frames": [
+        {
+          "file": "wind_rear_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "wind_hit_rear": {
+      "frames": [
+        {
+          "file": "wind_rear_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_02.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "wind_flight_rear": {
+      "frames": [
+        {
+          "file": "wind_rear_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "wind_land_rear": {
+      "frames": [
+        {
+          "file": "wind_rear_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_rear_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "settle_rear": {
+      "frames": [
+        {
+          "file": "wind_rear_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": true
+    },
+    "wind_front": {
+      "frames": [
+        {
+          "file": "wind_front_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "wind_hit_front": {
+      "frames": [
+        {
+          "file": "wind_front_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_02.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "wind_flight_front": {
+      "frames": [
+        {
+          "file": "wind_front_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "wind_land_front": {
+      "frames": [
+        {
+          "file": "wind_front_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_front_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "settle_front": {
+      "frames": [
+        {
+          "file": "wind_front_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": true
+    },
+    "wind_right": {
+      "frames": [
+        {
+          "file": "wind_right_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_04.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "wind_hit_right": {
+      "frames": [
+        {
+          "file": "wind_right_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_02.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "wind_flight_right": {
+      "frames": [
+        {
+          "file": "wind_right_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "wind_land_right": {
+      "frames": [
+        {
+          "file": "wind_right_05.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "wind_right_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "settle_right": {
+      "frames": [
+        {
+          "file": "wind_right_06.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": true
+    }
+  },
+  "sources": [
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "sha256": "ed76bec8286b6d6b84b3a0bedeb39bc28960314b130e64462be7b638f6725ad2"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "sha256": "8d776703e565ebc302b60764ce1e06de522f2689c4e69f010dc3e79d0d2042ae"
+    }
+  ],
+  "authored": true,
+  "note": "Complete authored full-body drawings; wind pose is six distinct drawings per view. Runtime owns translation, lift and cast shadows."
+}

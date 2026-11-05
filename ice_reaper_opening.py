@@ -1,4 +1,4 @@
-"""The twenty-one-second Ice Reaper reveal and coordinated rescue scene."""
+"""The thirty-two-second Ice Reaper rescue and duel cinematic."""
 from __future__ import annotations
 
 import math
@@ -80,8 +80,8 @@ class IceReaperOpening(OpeningCinematic):
             raise ValueError('Invalid Ice Reaper scene metadata')
         super()._validate()
         data = self.data
-        if data['id'] != 'ice_reaper_opening' or data['duration'] != 21.0:
-            raise ValueError('The Ice Reaper rescue preview must last twenty-one seconds')
+        if data['id'] != 'ice_reaper_opening' or data['duration'] != 32.0:
+            raise ValueError('The Ice Reaper cinematic must last thirty-two seconds')
         actors = [record['id'] for record in data['actors']]
         if len(actors) != 5 or set(actors) != {'caelan', 'mira', 'rhea', 'lucan', 'ice_reaper'}:
             raise ValueError('Ice Reaper opening has an incorrect cast')
@@ -113,12 +113,13 @@ class IceReaperOpening(OpeningCinematic):
             raise ValueError('Ice Reaper opening is missing a required ice prop')
         if 'rhea' in data.get('position_tracks', {}):
             raise ValueError('Frozen Rhea cannot walk during the opening')
-        if (len(data['dialogue']) != 2
-                or data['dialogue'][0]['speaker'] != 'Caelan'
-                or data['dialogue'][0]['text'] != 'Rhea! No!'
-                or data['dialogue'][1]['speaker'] != 'Lucan'
-                or data['dialogue'][1]['text'] != "Cael, go! I'll cover!"):
-            raise ValueError('Ice Reaper rescue must preserve both authored dialogue cues')
+        expected = [('Caelan', 'Rhea! No!'), ('Lucan', "Cael, go! I'll cover!"),
+                    ('Rhea', 'Thanks guys, now leave her to me...'),
+                    ('Caelan', 'Rhea...are you su-')]
+        if [(cue['speaker'], cue['text']) for cue in data['dialogue']] != expected:
+            raise ValueError('Ice Reaper cinematic must preserve its four authored dialogue cues')
+        if data['dialogue'][-1]['end'] != 24.:
+            raise ValueError('Caelan must be interrupted by the staff sweep at 24 seconds')
 
     @property
     def brush_progress(self):
@@ -149,7 +150,7 @@ class IceReaperOpening(OpeningCinematic):
 
     @property
     def fade_alpha(self):
-        return 0
+        return round(255*max(0.,min(1.,(self.elapsed-31.1)/.9)))
 
     def _hover_offset(self):
         if self.reduced_motion:

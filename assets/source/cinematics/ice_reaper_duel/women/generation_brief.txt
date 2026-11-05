@@ -1,0 +1,11 @@
+Art-direction record (summary of the image_gen prompts)
+
+Rhea references: approved companions/rhea/design_sheet.png and original registered frozen_front/frozen_rear scene sprites. Full-body pixel art only, forest-green gold-trimmed dress, long blonde hair, brown boots and purple tanglewood staff with green orb. The first source sheet supplies six frontal casting drawings only. Its original rear sweep was superseded because of a staff-hand continuity problem.
+
+The corrected sweep source supplies eight rear-three-quarter drawings: begin with staff in anatomical LEFT hand on viewer left, twist toward her right, move the LEFT forearm across the front of the torso, sweep the staff toward anatomical right, and follow through. Her right arm stays free. Rear casting source supplies six drawings with LEFT staff grounded and free RIGHT palm rising and extending. Cast turnaround supplies eight views; the staff remains in anatomical LEFT hand (front viewer right, rear viewer left).
+
+Reaper references: the approved rescue recharge_06.png and ready_rear_01.png. Preserve silver-white long hair, dark navy flowing gown/icy armor and broad faceted blue glass wings. Eighteen authored full-body actions in six columns by three rows: six sword-conjuring drawings, six windup drawings and six front-facing charging drawings. Eight directional held sword views in four columns by two rows preserve sword in anatomical RIGHT hand. Body scale is constant; camera code supplies motion and enlargement.
+
+Rhea portrait source is a square UI portrait derived from the approved design sheet: head and shoulders, angry determined expression, green glowing irises, warm blonde hair and skin. No existing Rhea dialogue portrait was available. This portrait is never a world-space sprite.
+
+All sources were generated with image_gen using local referenced images and transparent_background=true for full-body sheets, false for the portrait. The build script only extracts cells, thresholds alpha, registers palette, uses fixed nearest scaling and places feet at the existing anchors. No procedural body warping, mirrored views or painted facial edits.

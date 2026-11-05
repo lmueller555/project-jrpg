@@ -1,0 +1,39 @@
+{
+  "modules": [
+    "test_ice_reaper_action",
+    "test_ice_reaper_audio",
+    "test_ice_reaper_blocking",
+    "test_ice_reaper_environment",
+    "test_ice_reaper_facing",
+    "test_ice_reaper_opening",
+    "test_ice_reaper_requested_corrections",
+    "test_ice_reaper_rune",
+    "test_ice_reaper_shoulder_staging",
+    "test_gallery_catalogue",
+    "test_gallery_session",
+    "test_opening_cinematic",
+    "test_rhea_scene_awakening",
+    "test_ice_reaper_duel"
+  ],
+  "tests": 169,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "runtime_sources": {
+    "ice_reaper_action.py": "9def6e2d481cf12253aed986820cc7cdb17a59498019b150a82812d1dc81dd8e",
+    "ice_reaper_opening.py": "01f0652279e8bed373057da98361af0c9751997c1e3061eea1dbb0888b6b5329",
+    "rhea_scene_awakening.py": "025fb80ba9d73a4a6f0c83089021aa25418907f2b806e23aed7e85c0ba094c46",
+    "ice_reaper_duel.py": "20ab57169514fd78bb653370f1e94a79a914b38c4e19b54abcfad70a6a5500b9",
+    "ice_reaper_duel_fx.py": "806b6a7aa22cbdfa2a11c824568d4ad4d0b334159f8ea51f4ceb1020d4c0ee16",
+    "ice_reaper_audio.py": "f50b2b1529835dd14e8ac8c642c0d1789f6ad87b761988b29b3facee0dbff197",
+    "opening_cinematic.py": "8f7b0d578516f89fc681327162fde9241bb79f68bb955d2829bd9fb90928d9c7",
+    "cutscene_gallery.py": "45c2c88f974913103679b5d2cc8f0a4e68b0b8346fb13e18ce6b6f9c24f4772d"
+  },
+  "runtime_sources_unchanged": true,
+  "runtime_changed_during_run": [],
+  "capture_sources_match": true,
+  "capture_frames": 1920,
+  "capture_duration": 32.0,
+  "sound_cues": 27,
+  "video_sha256": "8e1be2138d5cff06500d00cd90a6085e6d7190d0209104cc496c81bc39e09961"
+}

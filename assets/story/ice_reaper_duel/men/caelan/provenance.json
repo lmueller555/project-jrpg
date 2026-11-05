@@ -1,0 +1,669 @@
+{
+  "version": 1,
+  "generated_with": "image_gen",
+  "sources": [
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "sha256": "b360b46c5c3e42b74af0087a54e10ff35a9cd02470979da3725c3906364db6cb"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "sha256": "ed76bec8286b6d6b84b3a0bedeb39bc28960314b130e64462be7b638f6725ad2"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "sha256": "8d776703e565ebc302b60764ce1e06de522f2689c4e69f010dc3e79d0d2042ae"
+    }
+  ],
+  "operation": "Equal-cell extraction, alpha threshold, fixed actor scale and foot/knee registration. No joint warping, mirrored weapons or generated in-between poses.",
+  "frames": [
+    {
+      "file": "wind_rear_01.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 0,
+      "source_bounds": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "sha256": "4f9001097f6bd306f54a1ecaf2aa1a13b5f6e4c1c87927fcbff51e3ec331be20",
+      "scale": 0.38,
+      "source_content_bounds": [
+        56,
+        52,
+        218,
+        240
+      ],
+      "foot": [
+        104.0,
+        239
+      ],
+      "offset": [
+        24,
+        25
+      ]
+    },
+    {
+      "file": "wind_rear_02.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 1,
+      "source_bounds": [
+        256,
+        0,
+        512,
+        256
+      ],
+      "sha256": "7342c69ed4611cf240beec55815ab8896fac857b711170721643331bc5dffa57",
+      "scale": 0.38,
+      "source_content_bounds": [
+        65,
+        59,
+        224,
+        240
+      ],
+      "foot": [
+        119.0,
+        239
+      ],
+      "offset": [
+        19,
+        25
+      ]
+    },
+    {
+      "file": "wind_rear_03.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 2,
+      "source_bounds": [
+        512,
+        0,
+        768,
+        256
+      ],
+      "sha256": "3c0918cbb4321bf102e8b779e259fe0c5b15a14ea5c3b3d0fb34e999b0b651cf",
+      "scale": 0.38,
+      "source_content_bounds": [
+        74,
+        44,
+        216,
+        215
+      ],
+      "foot": [
+        110.5,
+        214
+      ],
+      "offset": [
+        22,
+        35
+      ]
+    },
+    {
+      "file": "wind_rear_04.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 3,
+      "source_bounds": [
+        768,
+        0,
+        1024,
+        256
+      ],
+      "sha256": "70ae11b59ff829d7d2681fdc6270501b28a2c5917919ff88eb13d07ef9d56358",
+      "scale": 0.38,
+      "source_content_bounds": [
+        71,
+        36,
+        221,
+        186
+      ],
+      "foot": [
+        106.0,
+        185
+      ],
+      "offset": [
+        24,
+        46
+      ]
+    },
+    {
+      "file": "wind_rear_05.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 4,
+      "source_bounds": [
+        1024,
+        0,
+        1280,
+        256
+      ],
+      "sha256": "06cd32ef8da7f7d8cc1ad0d45231524f96477323c68f5c09763f863f400f4ed7",
+      "scale": 0.38,
+      "source_content_bounds": [
+        64,
+        64,
+        221,
+        236
+      ],
+      "foot": [
+        88.0,
+        235
+      ],
+      "offset": [
+        31,
+        27
+      ]
+    },
+    {
+      "file": "wind_rear_06.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 5,
+      "source_bounds": [
+        1280,
+        0,
+        1536,
+        256
+      ],
+      "sha256": "28533af209cc8905b2d9e324ec9f3ea0649fdd54e28998494e94a8959456f629",
+      "scale": 0.38,
+      "source_content_bounds": [
+        62,
+        82,
+        222,
+        240
+      ],
+      "foot": [
+        112.0,
+        239
+      ],
+      "offset": [
+        21,
+        25
+      ]
+    },
+    {
+      "file": "wind_front_01.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 6,
+      "source_bounds": [
+        0,
+        256,
+        256,
+        512
+      ],
+      "sha256": "c38ffec8698b64de8b840ec070f86c65261ef2c1a8562305c127e63be05731ec",
+      "scale": 0.38,
+      "source_content_bounds": [
+        39,
+        51,
+        206,
+        240
+      ],
+      "foot": [
+        161.0,
+        239
+      ],
+      "offset": [
+        3,
+        25
+      ]
+    },
+    {
+      "file": "wind_front_02.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 7,
+      "source_bounds": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "sha256": "4c7b0425d4e6ed5120b24227951b085b311446800c8e1f59b9e099279cfeff50",
+      "scale": 0.38,
+      "source_content_bounds": [
+        47,
+        56,
+        217,
+        234
+      ],
+      "foot": [
+        156.5,
+        233
+      ],
+      "offset": [
+        5,
+        27
+      ]
+    },
+    {
+      "file": "wind_front_03.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 8,
+      "source_bounds": [
+        512,
+        256,
+        768,
+        512
+      ],
+      "sha256": "34da8402fa1afb07ab39237e1d5aede464edbd4a1fdb38445a20291acf87db97",
+      "scale": 0.38,
+      "source_content_bounds": [
+        47,
+        39,
+        215,
+        210
+      ],
+      "foot": [
+        141.0,
+        209
+      ],
+      "offset": [
+        10,
+        37
+      ]
+    },
+    {
+      "file": "wind_front_04.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 9,
+      "source_bounds": [
+        768,
+        256,
+        1024,
+        512
+      ],
+      "sha256": "7c83a688382371a6291a98036d0206ba42532038bf2b885f95704768a0c57401",
+      "scale": 0.38,
+      "source_content_bounds": [
+        43,
+        31,
+        202,
+        181
+      ],
+      "foot": [
+        161.0,
+        180
+      ],
+      "offset": [
+        3,
+        48
+      ]
+    },
+    {
+      "file": "wind_front_05.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 10,
+      "source_bounds": [
+        1024,
+        256,
+        1280,
+        512
+      ],
+      "sha256": "d97e640efda49ba042d8de5473b510925454578413c31a120a6a7bd016734159",
+      "scale": 0.38,
+      "source_content_bounds": [
+        42,
+        60,
+        202,
+        243
+      ],
+      "foot": [
+        159.0,
+        242
+      ],
+      "offset": [
+        4,
+        24
+      ]
+    },
+    {
+      "file": "wind_front_06.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_men_generated.png",
+      "cell": 11,
+      "source_bounds": [
+        1280,
+        256,
+        1536,
+        512
+      ],
+      "sha256": "0402ec13d644fc51588442da915d42758b3d3d9358175a1dcabcc0f2aaeb5ed4",
+      "scale": 0.38,
+      "source_content_bounds": [
+        35,
+        81,
+        204,
+        240
+      ],
+      "foot": [
+        159.0,
+        239
+      ],
+      "offset": [
+        4,
+        25
+      ]
+    },
+    {
+      "file": "wind_right_01.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 0,
+      "source_bounds": [
+        0,
+        0,
+        256,
+        341
+      ],
+      "sha256": "68152812f5cd59085ad86f9ceaa74befc11b087b7297100c686519a27b9b89e4",
+      "scale": 0.31,
+      "source_content_bounds": [
+        71,
+        58,
+        237,
+        287
+      ],
+      "foot": [
+        115.0,
+        286
+      ],
+      "offset": [
+        28,
+        27
+      ]
+    },
+    {
+      "file": "wind_right_02.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 1,
+      "source_bounds": [
+        256,
+        0,
+        512,
+        341
+      ],
+      "sha256": "848cd3a0b8e87876ee6fe52f3b8eb58aa98cb69cb13f42433a66b7fc61b89efa",
+      "scale": 0.31,
+      "source_content_bounds": [
+        51,
+        64,
+        226,
+        287
+      ],
+      "foot": [
+        134.0,
+        286
+      ],
+      "offset": [
+        22,
+        27
+      ]
+    },
+    {
+      "file": "wind_right_03.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 2,
+      "source_bounds": [
+        512,
+        0,
+        768,
+        341
+      ],
+      "sha256": "3859d83b485b3ffbbc0a78c97496ca0b6a7c72ee3c74bef7271cab933f35aa12",
+      "scale": 0.31,
+      "source_content_bounds": [
+        38,
+        48,
+        220,
+        252
+      ],
+      "foot": [
+        114.0,
+        251
+      ],
+      "offset": [
+        29,
+        38
+      ]
+    },
+    {
+      "file": "wind_right_04.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 3,
+      "source_bounds": [
+        768,
+        0,
+        1024,
+        341
+      ],
+      "sha256": "deec101da1bc28f2d63cda7efbcfe55b009d0554d032f80e23218872e81ef146",
+      "scale": 0.31,
+      "source_content_bounds": [
+        27,
+        32,
+        206,
+        209
+      ],
+      "foot": [
+        117.0,
+        208
+      ],
+      "offset": [
+        28,
+        52
+      ]
+    },
+    {
+      "file": "wind_right_05.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 4,
+      "source_bounds": [
+        1024,
+        0,
+        1280,
+        341
+      ],
+      "sha256": "eb5acb31368298a0d1737afa403698d0333778043922fb085630129ef5bb0723",
+      "scale": 0.31,
+      "source_content_bounds": [
+        26,
+        71,
+        207,
+        286
+      ],
+      "foot": [
+        117.0,
+        285
+      ],
+      "offset": [
+        28,
+        28
+      ]
+    },
+    {
+      "file": "wind_right_06.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "cell": 5,
+      "source_bounds": [
+        1280,
+        0,
+        1536,
+        341
+      ],
+      "sha256": "9b571c89fd00e506c5290732a38298b2197bffcf9631692dc3b82f7d07753055",
+      "scale": 0.31,
+      "source_content_bounds": [
+        12,
+        110,
+        222,
+        287
+      ],
+      "foot": [
+        147.0,
+        286
+      ],
+      "offset": [
+        18,
+        27
+      ]
+    },
+    {
+      "file": "wind_left_01.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 0,
+      "source_bounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "sha256": "e58191f574f4f034f80507b49f33555457fd3fe1abf65e20eb95a0de6b40adde",
+      "scale": 0.203,
+      "source_content_bounds": [
+        126,
+        97,
+        445,
+        447
+      ],
+      "foot": [
+        212.0,
+        446
+      ],
+      "offset": [
+        21,
+        25
+      ]
+    },
+    {
+      "file": "wind_left_02.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 1,
+      "source_bounds": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "sha256": "0debf299340e5c629e4cd16c96577503835a2d453a0f9022613563a2189795e7",
+      "scale": 0.203,
+      "source_content_bounds": [
+        127,
+        108,
+        428,
+        447
+      ],
+      "foot": [
+        216.0,
+        446
+      ],
+      "offset": [
+        20,
+        25
+      ]
+    },
+    {
+      "file": "wind_left_03.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 2,
+      "source_bounds": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "sha256": "a33f81c3815509c174f077bb669f2840a03ac9f3de5c1aed4cb00d4254511372",
+      "scale": 0.203,
+      "source_content_bounds": [
+        104,
+        85,
+        418,
+        395
+      ],
+      "foot": [
+        231.0,
+        394
+      ],
+      "offset": [
+        17,
+        36
+      ]
+    },
+    {
+      "file": "wind_left_04.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 3,
+      "source_bounds": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "sha256": "ecc06d422b93b67435a2d8224a18af03b40ac2f33b91fe8011ec29f13b0d0029",
+      "scale": 0.203,
+      "source_content_bounds": [
+        130,
+        62,
+        429,
+        344
+      ],
+      "foot": [
+        245.0,
+        343
+      ],
+      "offset": [
+        14,
+        46
+      ]
+    },
+    {
+      "file": "wind_left_05.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 4,
+      "source_bounds": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "sha256": "4b795838a3df07f6a8491020299e2d7d3d0825591166227fc3559046261307ff",
+      "scale": 0.203,
+      "source_content_bounds": [
+        114,
+        75,
+        437,
+        407
+      ],
+      "foot": [
+        162.0,
+        406
+      ],
+      "offset": [
+        31,
+        34
+      ]
+    },
+    {
+      "file": "wind_left_06.png",
+      "source": "assets/source/cinematics/ice_reaper_duel/men/caelan_left_generated.png",
+      "cell": 5,
+      "source_bounds": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "sha256": "9b2b787fab1b852853d8b1094fd2c096124354b029a98787e3cd1fb48d833e38",
+      "scale": 0.203,
+      "source_content_bounds": [
+        86,
+        124,
+        443,
+        404
+      ],
+      "foot": [
+        298.0,
+        403
+      ],
+      "offset": [
+        4,
+        34
+      ]
+    }
+  ]
+}

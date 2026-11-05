@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "actor": "mira",
+  "canvas": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    116
+  ],
+  "body_pixels": 82,
+  "animations": {
+    "brace_front": {
+      "frames": [
+        {
+          "file": "brace_front_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "react_front": {
+      "frames": [
+        {
+          "file": "brace_front_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_front_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": false
+    },
+    "settle_front": {
+      "frames": [
+        {
+          "file": "brace_front_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 0,
+      "loop": true
+    },
+    "brace_rear": {
+      "frames": [
+        {
+          "file": "brace_rear_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "react_rear": {
+      "frames": [
+        {
+          "file": "brace_rear_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_rear_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": false
+    },
+    "settle_rear": {
+      "frames": [
+        {
+          "file": "brace_rear_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 180,
+      "loop": true
+    },
+    "brace_right": {
+      "frames": [
+        {
+          "file": "brace_right_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "react_right": {
+      "frames": [
+        {
+          "file": "brace_right_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_02.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_03.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "brace_right_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": false
+    },
+    "settle_right": {
+      "frames": [
+        {
+          "file": "brace_right_04.png",
+          "duration_ms": 180
+        }
+      ],
+      "view_azimuth_deg": 90,
+      "loop": true
+    }
+  },
+  "sources": [
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/mira_brace_generated.png",
+      "sha256": "53946a47ba560da65fa9f0d7edd692b6c5f67d06d8c2724653a5cd5c88d08dd5"
+    },
+    {
+      "file": "assets/source/cinematics/ice_reaper_duel/men/wind_right_generated.png",
+      "sha256": "8d776703e565ebc302b60764ce1e06de522f2689c4e69f010dc3e79d0d2042ae"
+    }
+  ],
+  "authored": true,
+  "note": "Complete authored full-body drawings; wind pose is six distinct drawings per view. Runtime owns translation, lift and cast shadows."
+}

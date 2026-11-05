@@ -1,0 +1,1493 @@
+{
+  "version": 1,
+  "authored_with": "image_gen",
+  "sources": {
+    "assets/source/cinematics/ice_reaper_duel/women/reaper_actions_generated.png": "2b2f25e37db71ab7ea6443e3f58e16aa6eb238284264224806db1d4730219730",
+    "assets/source/cinematics/ice_reaper_duel/women/reaper_views_generated.png": "e3eb7d2b78519a0b017208105f0224d556d4ec348fee8d530f741e0669a37e9c",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_actions_generated.png": "7ec945675693e991c3e9181d2656c2917f0fa3426b7974f5ac0e90dd8d3b11af",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_rear_generated.png": "843f21b8f71951b88943bfd5e40b544f36bd5ff635fcf9ee42f1403e2e9943eb",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_views_generated.png": "3dbbec167d7f28ca4309df3cd407cca3b8c11a9c7b91064f0c918bc505c447d6",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_portrait_generated.png": "486b95a6a0ed49c9204bae3b346061eb96ae1764d49a3da4206be1fe8c493f40",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_sweep_corrected_generated.png": "53f0539bba5e1468933aa73d461d6de6440f2a2fe8388b02a84481ed4d1d7af4"
+  },
+  "references": {
+    "assets/source/companions/rhea/design_sheet.png": "eec0ae5defba350464ac7e420bb914445b3a784d411697a2200568b8bee41f78",
+    "assets/story/ice_reaper_continuity/actors/rhea/frozen_front_01.png": "2ff5e1f78e86828816d4427498517ec2c1bc2761e043a350c87ffd21e8d705b3",
+    "assets/story/ice_reaper_rescue/actors/ice_reaper/recharge_06.png": "c3c14a2833d391ecb7328b35979792b489762daebf9cd7ad3d3705eef9d16b6a",
+    "assets/story/ice_reaper_rescue/actors/ice_reaper/ready_rear_01.png": "3a758ef431c0770be2455ff0a31d330e6b67b18be49a0236a9f8a94e190d0cc0"
+  },
+  "operation": "Equal-cell extraction, alpha threshold140,128-color registration,fixed nearest scaling,foot registration only; no pose deformation or painted facial features.",
+  "frames": {
+    "rhea": [
+      {
+        "file": "cast_01.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 8,
+        "source_bounds": [
+          0,
+          630,
+          312,
+          946
+        ],
+        "sha256": "29450e1a2fe46f23a737ecd6a0856df616ec6dd8ac56cb0b18522b3f90a18422",
+        "content_bounds": [
+          102,
+          13,
+          249,
+          295
+        ],
+        "foot": [
+          172.0,
+          294
+        ],
+        "scale": 0.29,
+        "offset": [
+          44,
+          35
+        ]
+      },
+      {
+        "file": "cast_02.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 9,
+        "source_bounds": [
+          312,
+          630,
+          624,
+          946
+        ],
+        "sha256": "c30497f454676fe9ee22262a914218f23c81e43e13fa9b0ab1019ff39abc1389",
+        "content_bounds": [
+          77,
+          13,
+          234,
+          295
+        ],
+        "foot": [
+          155.5,
+          294
+        ],
+        "scale": 0.29,
+        "offset": [
+          41,
+          35
+        ]
+      },
+      {
+        "file": "cast_03.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 10,
+        "source_bounds": [
+          624,
+          630,
+          935,
+          946
+        ],
+        "sha256": "925886ddaae2025b8a676755e5e9c1ac411687232ad7b5878a13af56d3761f6d",
+        "content_bounds": [
+          48,
+          15,
+          234,
+          295
+        ],
+        "foot": [
+          153.0,
+          294
+        ],
+        "scale": 0.29,
+        "offset": [
+          34,
+          35
+        ]
+      },
+      {
+        "file": "cast_04.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 11,
+        "source_bounds": [
+          935,
+          630,
+          1247,
+          946
+        ],
+        "sha256": "a233fc2795cf7ffc528fabc70c0dd8b5a6b690ff14975391eaff110e406ca76c",
+        "content_bounds": [
+          13,
+          15,
+          237,
+          295
+        ],
+        "foot": [
+          141.5,
+          294
+        ],
+        "scale": 0.29,
+        "offset": [
+          27,
+          35
+        ]
+      },
+      {
+        "file": "cast_05.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 12,
+        "source_bounds": [
+          0,
+          946,
+          312,
+          1261
+        ],
+        "sha256": "d2ee29d007d16df02ee9c7bc65aed5f8dbca4c75738f83e1e25920af0be2952a",
+        "content_bounds": [
+          48,
+          18,
+          284,
+          293
+        ],
+        "foot": [
+          181.5,
+          292
+        ],
+        "scale": 0.29,
+        "offset": [
+          25,
+          37
+        ]
+      },
+      {
+        "file": "cast_06.png",
+        "source": "rhea_actions_generated.png",
+        "cell": 13,
+        "source_bounds": [
+          312,
+          946,
+          624,
+          1261
+        ],
+        "sha256": "e3266aabb08ec46e9afca1e4a28a0eb7027149bb88e0b6f5961d300fae8e7c90",
+        "content_bounds": [
+          46,
+          20,
+          260,
+          294
+        ],
+        "foot": [
+          164.5,
+          293
+        ],
+        "scale": 0.29,
+        "offset": [
+          30,
+          37
+        ]
+      },
+      {
+        "file": "staff_sweep_01.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 0,
+        "source_bounds": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "sha256": "53d29f6a87232879b00de304dbc7f4c29a080e814597a0c1441f08cc4acf5a94",
+        "content_bounds": [
+          99,
+          27,
+          343,
+          425
+        ],
+        "foot": [
+          227.5,
+          424
+        ],
+        "scale": 0.2,
+        "offset": [
+          38,
+          37
+        ]
+      },
+      {
+        "file": "staff_sweep_02.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 1,
+        "source_bounds": [
+          444,
+          0,
+          887,
+          444
+        ],
+        "sha256": "edffc5f050d9212d44c699396bb996af3e16c5d0856296e2a4bf21aa7825aea1",
+        "content_bounds": [
+          88,
+          27,
+          347,
+          425
+        ],
+        "foot": [
+          240.0,
+          424
+        ],
+        "scale": 0.2,
+        "offset": [
+          34,
+          37
+        ]
+      },
+      {
+        "file": "staff_sweep_03.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 2,
+        "source_bounds": [
+          887,
+          0,
+          1330,
+          444
+        ],
+        "sha256": "b12609caf4b31ce6bf508dd82bd9d912f1d3e320a1dcfba80ecd511392666c64",
+        "content_bounds": [
+          102,
+          27,
+          315,
+          425
+        ],
+        "foot": [
+          227.5,
+          424
+        ],
+        "scale": 0.2,
+        "offset": [
+          39,
+          37
+        ]
+      },
+      {
+        "file": "staff_sweep_04.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 3,
+        "source_bounds": [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        "sha256": "cd5122efc27fcb672c43c4566cc7ee1a55888a0abb1f8755a8e7870229879024",
+        "content_bounds": [
+          89,
+          34,
+          395,
+          425
+        ],
+        "foot": [
+          227.5,
+          424
+        ],
+        "scale": 0.2,
+        "offset": [
+          36,
+          38
+        ]
+      },
+      {
+        "file": "staff_sweep_05.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 4,
+        "source_bounds": [
+          0,
+          444,
+          444,
+          887
+        ],
+        "sha256": "07293a832cb19908b16cbd96a8248f73783db9ced4a9bae6c0fe87f18f3ca315",
+        "content_bounds": [
+          80,
+          35,
+          428,
+          426
+        ],
+        "foot": [
+          229.0,
+          425
+        ],
+        "scale": 0.2,
+        "offset": [
+          34,
+          38
+        ]
+      },
+      {
+        "file": "staff_sweep_06.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 5,
+        "source_bounds": [
+          444,
+          444,
+          887,
+          887
+        ],
+        "sha256": "e2586fd562af3efa6b3d546a2dd386ee481c928b62704927909c3b5b9922da4f",
+        "content_bounds": [
+          81,
+          34,
+          409,
+          426
+        ],
+        "foot": [
+          229.0,
+          425
+        ],
+        "scale": 0.2,
+        "offset": [
+          34,
+          38
+        ]
+      },
+      {
+        "file": "staff_sweep_07.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 6,
+        "source_bounds": [
+          887,
+          444,
+          1330,
+          887
+        ],
+        "sha256": "cfd3878562b985655443a7924e36b9a1b4fe216a494d652a116f66e1ec7ec64f",
+        "content_bounds": [
+          81,
+          34,
+          403,
+          426
+        ],
+        "foot": [
+          228.0,
+          425
+        ],
+        "scale": 0.2,
+        "offset": [
+          35,
+          38
+        ]
+      },
+      {
+        "file": "staff_sweep_08.png",
+        "source": "rhea_sweep_corrected_generated.png",
+        "cell": 7,
+        "source_bounds": [
+          1330,
+          444,
+          1774,
+          887
+        ],
+        "sha256": "fa4f8f0384fb4a54d1872126d3d0366212dc47f023f22e0f89a29cf1ce781df0",
+        "content_bounds": [
+          91,
+          34,
+          408,
+          426
+        ],
+        "foot": [
+          228.0,
+          425
+        ],
+        "scale": 0.2,
+        "offset": [
+          37,
+          38
+        ]
+      },
+      {
+        "file": "cast_rear_01.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 0,
+        "source_bounds": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "sha256": "63574eca46c7afe1eb804f7c2c0bbff5ec98c5c0a856968e84c15dbd2eba658d",
+        "content_bounds": [
+          111,
+          40,
+          368,
+          479
+        ],
+        "foot": [
+          252.5,
+          478
+        ],
+        "scale": 0.18,
+        "offset": [
+          39,
+          37
+        ]
+      },
+      {
+        "file": "cast_rear_02.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 1,
+        "source_bounds": [
+          512,
+          0,
+          1024,
+          512
+        ],
+        "sha256": "a471f6af7af1dd64e0031bc40327419d127c95e0d9c774f29eeb799e932f2544",
+        "content_bounds": [
+          105,
+          39,
+          371,
+          479
+        ],
+        "foot": [
+          250.5,
+          478
+        ],
+        "scale": 0.18,
+        "offset": [
+          38,
+          37
+        ]
+      },
+      {
+        "file": "cast_rear_03.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 2,
+        "source_bounds": [
+          1024,
+          0,
+          1536,
+          512
+        ],
+        "sha256": "fe17d2ca348f3233f7376fd0d587ab3f5feaafa2d341055e9d525a06843ceda2",
+        "content_bounds": [
+          107,
+          40,
+          389,
+          479
+        ],
+        "foot": [
+          247.0,
+          478
+        ],
+        "scale": 0.18,
+        "offset": [
+          39,
+          37
+        ]
+      },
+      {
+        "file": "cast_rear_04.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 3,
+        "source_bounds": [
+          0,
+          512,
+          512,
+          1024
+        ],
+        "sha256": "c7bb6b38e32fb95a4b123674c5c147562a0c3d3450a8d43564fe3c5a2f23ed66",
+        "content_bounds": [
+          100,
+          40,
+          404,
+          478
+        ],
+        "foot": [
+          263.5,
+          477
+        ],
+        "scale": 0.18,
+        "offset": [
+          35,
+          37
+        ]
+      },
+      {
+        "file": "cast_rear_05.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 4,
+        "source_bounds": [
+          512,
+          512,
+          1024,
+          1024
+        ],
+        "sha256": "7a96687c34ad947a66954b71f4cd29966a5f59623f17f4767360332ea9505951",
+        "content_bounds": [
+          97,
+          40,
+          441,
+          478
+        ],
+        "foot": [
+          269.0,
+          477
+        ],
+        "scale": 0.18,
+        "offset": [
+          33,
+          37
+        ]
+      },
+      {
+        "file": "cast_rear_06.png",
+        "source": "rhea_cast_rear_generated.png",
+        "cell": 5,
+        "source_bounds": [
+          1024,
+          512,
+          1536,
+          1024
+        ],
+        "sha256": "f98805ec34f72edf3ad5caf6261e83a5cd32d378e31dab743c24597b957d3863",
+        "content_bounds": [
+          100,
+          40,
+          424,
+          478
+        ],
+        "foot": [
+          259.5,
+          477
+        ],
+        "scale": 0.18,
+        "offset": [
+          35,
+          37
+        ]
+      },
+      {
+        "file": "cast_hold_front_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 0,
+        "source_bounds": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "sha256": "4c85c2091a2223bc19982f208b6690560aeaceffdd70bc61fa62c7ca6c24baf4",
+        "content_bounds": [
+          103,
+          23,
+          336,
+          394
+        ],
+        "foot": [
+          239.5,
+          393
+        ],
+        "scale": 0.21,
+        "offset": [
+          35,
+          38
+        ]
+      },
+      {
+        "file": "cast_hold_front_left_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 1,
+        "source_bounds": [
+          444,
+          0,
+          887,
+          444
+        ],
+        "sha256": "d7566e43c9bcb5da2441914db169aee88ad83e12a659d70b701a0fa2cad58af0",
+        "content_bounds": [
+          103,
+          23,
+          330,
+          396
+        ],
+        "foot": [
+          239.5,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          35,
+          38
+        ]
+      },
+      {
+        "file": "cast_hold_left_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 2,
+        "source_bounds": [
+          887,
+          0,
+          1330,
+          444
+        ],
+        "sha256": "cc3ba2ced199cd2bb6fbabd05cf7ea4397ca774c14967097e975cb50deeaffaa",
+        "content_bounds": [
+          115,
+          23,
+          329,
+          396
+        ],
+        "foot": [
+          231.0,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          40,
+          38
+        ]
+      },
+      {
+        "file": "cast_hold_rear_left_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 3,
+        "source_bounds": [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        "sha256": "49f05ff03774232fc2888b75ab5c4a7ae720b800a6ec9e1139a0b38b5c9f4db8",
+        "content_bounds": [
+          121,
+          26,
+          371,
+          396
+        ],
+        "foot": [
+          216.5,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          44,
+          39
+        ]
+      },
+      {
+        "file": "cast_hold_rear_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 4,
+        "source_bounds": [
+          0,
+          444,
+          444,
+          887
+        ],
+        "sha256": "b5793b236282628061e0f0ccf386fa0bec3d6defad5df0642ad932dde1735411",
+        "content_bounds": [
+          103,
+          19,
+          345,
+          396
+        ],
+        "foot": [
+          204.0,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          43,
+          37
+        ]
+      },
+      {
+        "file": "cast_hold_rear_right_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 5,
+        "source_bounds": [
+          444,
+          444,
+          887,
+          887
+        ],
+        "sha256": "b45dd93a960738f49ea62b7d951c43a001e5447aa3115a3673a4e78358293809",
+        "content_bounds": [
+          84,
+          20,
+          326,
+          396
+        ],
+        "foot": [
+          201.0,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          39,
+          37
+        ]
+      },
+      {
+        "file": "cast_hold_right_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 6,
+        "source_bounds": [
+          887,
+          444,
+          1330,
+          887
+        ],
+        "sha256": "e78ade5663477746bf036741383be03b233a846ab1a2f0dd385476b568d74c4e",
+        "content_bounds": [
+          92,
+          23,
+          330,
+          396
+        ],
+        "foot": [
+          213.0,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          39,
+          38
+        ]
+      },
+      {
+        "file": "cast_hold_front_right_01.png",
+        "source": "rhea_cast_views_generated.png",
+        "cell": 7,
+        "source_bounds": [
+          1330,
+          444,
+          1774,
+          887
+        ],
+        "sha256": "6c3e647b8aaa630cfdca838bcc79a84c161d9e07ddef160a43b305b3111f4269",
+        "content_bounds": [
+          79,
+          23,
+          345,
+          396
+        ],
+        "foot": [
+          231.0,
+          395
+        ],
+        "scale": 0.21,
+        "offset": [
+          32,
+          38
+        ]
+      }
+    ],
+    "ice_reaper": [
+      {
+        "file": "sword_conjure_01.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 0,
+        "source_bounds": [
+          0,
+          0,
+          296,
+          296
+        ],
+        "sha256": "cb902a0774871c744105e24e975a9f3a50a44fbc117d84c2af75b9d0a29cfad7",
+        "content_bounds": [
+          47,
+          12,
+          271,
+          281
+        ],
+        "foot": [
+          162.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          36,
+          33
+        ]
+      },
+      {
+        "file": "sword_conjure_02.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 1,
+        "source_bounds": [
+          296,
+          0,
+          591,
+          296
+        ],
+        "sha256": "1d3188dab85d93d2ffa4dd65a79c0c0dfacee0b92f78370120086e34799661dc",
+        "content_bounds": [
+          44,
+          12,
+          270,
+          281
+        ],
+        "foot": [
+          161.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          35,
+          33
+        ]
+      },
+      {
+        "file": "sword_conjure_03.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 2,
+        "source_bounds": [
+          591,
+          0,
+          887,
+          296
+        ],
+        "sha256": "b75e5e190a4002c3ce80c9cfff9ceb7795ba529692f3473416050164eccdbed6",
+        "content_bounds": [
+          46,
+          12,
+          271,
+          281
+        ],
+        "foot": [
+          162.0,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          36,
+          33
+        ]
+      },
+      {
+        "file": "sword_conjure_04.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 3,
+        "source_bounds": [
+          887,
+          0,
+          1183,
+          296
+        ],
+        "sha256": "1f87466c9f7ab520edb117c392f738d93fa631291e6cbf0165f39e7db61ef761",
+        "content_bounds": [
+          41,
+          12,
+          271,
+          281
+        ],
+        "foot": [
+          162.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          33,
+          33
+        ]
+      },
+      {
+        "file": "sword_conjure_05.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 4,
+        "source_bounds": [
+          1183,
+          0,
+          1478,
+          296
+        ],
+        "sha256": "7c8e4c70c86e3c747e96e32eb35f2f30a72fde3e9a762aad2757dc1d66f1c399",
+        "content_bounds": [
+          25,
+          12,
+          270,
+          281
+        ],
+        "foot": [
+          162.0,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          25,
+          33
+        ]
+      },
+      {
+        "file": "sword_conjure_06.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 5,
+        "source_bounds": [
+          1478,
+          0,
+          1774,
+          296
+        ],
+        "sha256": "cda63dd5f2b47424bdd65e76e47427f17ad22f3f4dbf84a3588066bb7935350e",
+        "content_bounds": [
+          18,
+          12,
+          271,
+          281
+        ],
+        "foot": [
+          162.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          21,
+          33
+        ]
+      },
+      {
+        "file": "sword_windup_01.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 6,
+        "source_bounds": [
+          0,
+          296,
+          296,
+          591
+        ],
+        "sha256": "7b1421933ba5d749e3937f4e53791104984f08479c5400263c9f43e72e9d1ca5",
+        "content_bounds": [
+          41,
+          19,
+          255,
+          281
+        ],
+        "foot": [
+          153.0,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          38,
+          36
+        ]
+      },
+      {
+        "file": "sword_windup_02.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 7,
+        "source_bounds": [
+          296,
+          296,
+          591,
+          591
+        ],
+        "sha256": "326a6c8a907bdd871861cfe063acb0e6148e5f3f206a65ee1921f7870e1cee09",
+        "content_bounds": [
+          35,
+          19,
+          253,
+          281
+        ],
+        "foot": [
+          154.0,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          34,
+          36
+        ]
+      },
+      {
+        "file": "sword_windup_03.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 8,
+        "source_bounds": [
+          591,
+          296,
+          887,
+          591
+        ],
+        "sha256": "15084a28715fc4b4546a15bccb8979e39085d70c83037ae9ad4880d457609e7e",
+        "content_bounds": [
+          11,
+          14,
+          254,
+          281
+        ],
+        "foot": [
+          156.0,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          21,
+          34
+        ]
+      },
+      {
+        "file": "sword_windup_04.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 9,
+        "source_bounds": [
+          887,
+          296,
+          1183,
+          591
+        ],
+        "sha256": "4032797b40f9602d0750707ede901d243bd1a0f39e06fbf9def2bdbbe04a7941",
+        "content_bounds": [
+          12,
+          10,
+          254,
+          280
+        ],
+        "foot": [
+          155.0,
+          279
+        ],
+        "scale": 0.52,
+        "offset": [
+          22,
+          32
+        ]
+      },
+      {
+        "file": "sword_windup_05.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 10,
+        "source_bounds": [
+          1183,
+          296,
+          1478,
+          591
+        ],
+        "sha256": "a012f166f985e123868690189ff8c74d3ac7d8824c0d7e002b941f18620a519c",
+        "content_bounds": [
+          16,
+          11,
+          261,
+          281
+        ],
+        "foot": [
+          155.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          23,
+          32
+        ]
+      },
+      {
+        "file": "sword_windup_06.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 11,
+        "source_bounds": [
+          1478,
+          296,
+          1774,
+          591
+        ],
+        "sha256": "d5734773cdb358bf16e461d26d94d233493dc68dc0911d298725b07255e3a278",
+        "content_bounds": [
+          30,
+          22,
+          269,
+          281
+        ],
+        "foot": [
+          155.5,
+          280
+        ],
+        "scale": 0.52,
+        "offset": [
+          31,
+          38
+        ]
+      },
+      {
+        "file": "sword_charge_01.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 12,
+        "source_bounds": [
+          0,
+          591,
+          296,
+          887
+        ],
+        "sha256": "40640d1b9ada853b289156501803ef72a8c2f44a761560b8f53aeda57881a291",
+        "content_bounds": [
+          22,
+          21,
+          260,
+          274
+        ],
+        "foot": [
+          156.5,
+          273
+        ],
+        "scale": 0.52,
+        "offset": [
+          26,
+          41
+        ]
+      },
+      {
+        "file": "sword_charge_02.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 13,
+        "source_bounds": [
+          296,
+          591,
+          591,
+          887
+        ],
+        "sha256": "7e0ab03d1acc3bde1dc8366b1bf2b12cbd01b432bb0425f8a4f479afbad46eae",
+        "content_bounds": [
+          18,
+          31,
+          262,
+          274
+        ],
+        "foot": [
+          156.5,
+          273
+        ],
+        "scale": 0.52,
+        "offset": [
+          24,
+          46
+        ]
+      },
+      {
+        "file": "sword_charge_03.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 14,
+        "source_bounds": [
+          591,
+          591,
+          887,
+          887
+        ],
+        "sha256": "b48202593a25fd06b5045917accf815c7de9263de0321ece4cab11e7ac4d1526",
+        "content_bounds": [
+          12,
+          38,
+          264,
+          257
+        ],
+        "foot": [
+          155.0,
+          256
+        ],
+        "scale": 0.52,
+        "offset": [
+          22,
+          59
+        ]
+      },
+      {
+        "file": "sword_charge_04.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 15,
+        "source_bounds": [
+          887,
+          591,
+          1183,
+          887
+        ],
+        "sha256": "d9b0a8eccab824f286bdde3f4b45452a44e322368fae47e4347c40b162344964",
+        "content_bounds": [
+          8,
+          53,
+          280,
+          255
+        ],
+        "foot": [
+          145.5,
+          254
+        ],
+        "scale": 0.52,
+        "offset": [
+          24,
+          67
+        ]
+      },
+      {
+        "file": "sword_charge_05.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 16,
+        "source_bounds": [
+          1183,
+          591,
+          1478,
+          887
+        ],
+        "sha256": "4dc170805d037fd074310fa67b3e7b57317dc23e82e25cdfa191a53859abdf08",
+        "content_bounds": [
+          7,
+          53,
+          281,
+          249
+        ],
+        "foot": [
+          147.0,
+          248
+        ],
+        "scale": 0.52,
+        "offset": [
+          23,
+          71
+        ]
+      },
+      {
+        "file": "sword_charge_06.png",
+        "source": "reaper_actions_generated.png",
+        "cell": 17,
+        "source_bounds": [
+          1478,
+          591,
+          1774,
+          887
+        ],
+        "sha256": "4e61ded22ce4dcad7af9a2699af2a0a2d4583a9a81ae884569a3a5463ac06e6a",
+        "content_bounds": [
+          7,
+          55,
+          284,
+          248
+        ],
+        "foot": [
+          148.0,
+          247
+        ],
+        "scale": 0.52,
+        "offset": [
+          23,
+          72
+        ]
+      },
+      {
+        "file": "sword_hold_front_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 0,
+        "source_bounds": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "sha256": "611690e297e1919100c1b722a9327d228150e4102f9ea7984cdc02361a76e3fa",
+        "content_bounds": [
+          58,
+          21,
+          400,
+          416
+        ],
+        "foot": [
+          240.0,
+          415
+        ],
+        "scale": 0.38,
+        "offset": [
+          27,
+          22
+        ]
+      },
+      {
+        "file": "sword_hold_front_left_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 1,
+        "source_bounds": [
+          444,
+          0,
+          887,
+          444
+        ],
+        "sha256": "45f270353aa41f14d167a60f9002cc92bbb80766fcc72d3b1ccefc7aca95cbed",
+        "content_bounds": [
+          55,
+          22,
+          366,
+          418
+        ],
+        "foot": [
+          231.0,
+          417
+        ],
+        "scale": 0.38,
+        "offset": [
+          29,
+          22
+        ]
+      },
+      {
+        "file": "sword_hold_left_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 2,
+        "source_bounds": [
+          887,
+          0,
+          1330,
+          444
+        ],
+        "sha256": "2a789b2eb20dd61215b4dfa7cf5d8bbe273616629c320deca353bf31966753d0",
+        "content_bounds": [
+          67,
+          17,
+          309,
+          416
+        ],
+        "foot": [
+          209.0,
+          415
+        ],
+        "scale": 0.38,
+        "offset": [
+          42,
+          21
+        ]
+      },
+      {
+        "file": "sword_hold_rear_left_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 3,
+        "source_bounds": [
+          1330,
+          0,
+          1774,
+          444
+        ],
+        "sha256": "fc8d848b57f2f6f601d1c792f1485a3be2b427403e7271143fd90163c90d77ea",
+        "content_bounds": [
+          12,
+          21,
+          349,
+          417
+        ],
+        "foot": [
+          174.5,
+          416
+        ],
+        "scale": 0.38,
+        "offset": [
+          34,
+          22
+        ]
+      },
+      {
+        "file": "sword_hold_rear_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 4,
+        "source_bounds": [
+          0,
+          444,
+          444,
+          887
+        ],
+        "sha256": "4880f621515b52b7dc72f88080f79f00e5f9e78c27ca43810546b9f80d47155d",
+        "content_bounds": [
+          82,
+          16,
+          428,
+          412
+        ],
+        "foot": [
+          237.5,
+          411
+        ],
+        "scale": 0.38,
+        "offset": [
+          37,
+          22
+        ]
+      },
+      {
+        "file": "sword_hold_rear_right_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 5,
+        "source_bounds": [
+          444,
+          444,
+          887,
+          887
+        ],
+        "sha256": "068ee1ee1bf30c6589c42e1ae377d088706dfe15c5622e1485e0be5e8a494722",
+        "content_bounds": [
+          57,
+          14,
+          365,
+          411
+        ],
+        "foot": [
+          201.5,
+          410
+        ],
+        "scale": 0.38,
+        "offset": [
+          41,
+          22
+        ]
+      },
+      {
+        "file": "sword_hold_right_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 6,
+        "source_bounds": [
+          887,
+          444,
+          1330,
+          887
+        ],
+        "sha256": "a459d3d6cba43afc86d7247fb8121a08aa5586076878b971c8bc7b5d8381d4d8",
+        "content_bounds": [
+          103,
+          12,
+          345,
+          413
+        ],
+        "foot": [
+          207.0,
+          412
+        ],
+        "scale": 0.38,
+        "offset": [
+          56,
+          20
+        ]
+      },
+      {
+        "file": "sword_hold_front_right_01.png",
+        "source": "reaper_views_generated.png",
+        "cell": 7,
+        "source_bounds": [
+          1330,
+          444,
+          1774,
+          887
+        ],
+        "sha256": "bdcc11c086aa09607061be73e3cf689e25b4d75f9abe1a55eabf61265c7b4566",
+        "content_bounds": [
+          35,
+          14,
+          380,
+          412
+        ],
+        "foot": [
+          207.5,
+          411
+        ],
+        "scale": 0.38,
+        "offset": [
+          30,
+          21
+        ]
+      }
+    ]
+  },
+  "portrait": {
+    "file": "portraits/rhea_awakening.png",
+    "canvas": [
+      96,
+      96
+    ],
+    "sha256": "d0953a6be628baefdad92cfbeb023c7293e11cd74018e286515d43d41e9030ff",
+    "basis": "Approved Rhea design sheet; no prior Rhea dialogue portrait existed"
+  }
+}

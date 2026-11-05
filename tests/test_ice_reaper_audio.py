@@ -51,13 +51,13 @@ class IceReaperAudioTests(unittest.TestCase):
     def test_cues_fire_exactly_once_at_30_and_60_fps(self):
         for fps in (30,60):
             self.audio.reset()
-            self.advance(0,21,fps)
+            self.advance(0,32,fps)
             self.assertEqual([event['id'] for event in self.audio.events],
                              [cue['id'] for cue in CUES])
             for event,cue in zip(self.audio.events,CUES):
                 self.assertGreaterEqual(event['time']+1e-8,cue['time'])
                 self.assertLessEqual(event['time']-cue['time'],1/fps+1e-8)
-            self.audio.update(20.99,21)
+            self.audio.update(31.99,32)
             self.assertEqual(len(self.audio.events),len(CUES))
 
     def test_extra_closeup_second_preserves_early_cues_and_delays_breakout(self):
@@ -142,13 +142,44 @@ class IceReaperAudioTests(unittest.TestCase):
         import json
         root=Path(__file__).resolve().parents[1]
         manifest=json.loads((root/'assets/audio/sfx/ice_reaper_rescue/manifest.json').read_text())
-        self.assertEqual(manifest['cues'],list(CUES))
+        self.assertEqual(manifest['cues'],list(CUES[:13]))
+        duel=json.loads((root/'assets/audio/sfx/ice_reaper_duel/manifest.json').read_text())
+        self.assertEqual(duel['cues'],list(CUES[13:]))
         for cue in CUES:
             self.assertTrue((root/cue['file']).is_file())
             self.assertGreater((root/cue['file']).stat().st_size,1000)
             self.assertTrue(0<cue['gain']<1)
         for sound in manifest['sounds'].values():
             self.assertTrue(0<sound['duration']<4)
+        for sound in duel['sounds'].values():
+            self.assertTrue(0<sound['duration']<5)
+        sounds={Path(sound['file']).name:sound for sound in duel['sounds'].values()}
+        for cue in CUES[13:]:
+            self.assertLessEqual(cue['time']+sounds[Path(cue['file']).name]['duration'],32)
+
+    def test_duel_sounds_follow_the_staff_landings_and_six_rune_points(self):
+        by_id={cue['id']:cue for cue in CUES[13:]}
+        self.assertEqual(len(by_id),14)
+        self.assertEqual(by_id['staff_sweep']['time'],24.)
+        self.assertEqual(by_id['caelan_lands']['time'],25.05)
+        self.assertEqual(by_id['lucan_lands']['time'],25.15)
+        self.assertEqual([by_id[f'fireball_{index}']['time'] for index in range(1,7)],
+                         [25.8,25.95,26.1,26.25,26.4,26.55])
+        self.assertEqual(by_id['sword_windup']['time'],29.55)
+        self.assertEqual(by_id['charge_launch']['time'],30.3)
+        self.assertTrue(all(Path(self.audio._sound(cue).path).parent.name=='ice_reaper_duel'
+                            for cue in CUES[13:]))
+
+    def test_pausing_duel_audio_does_not_bank_or_repeat_the_gust(self):
+        self.audio.update(23.99,24.01)
+        self.audio.update(24.01,24.11)
+        events=list(self.audio.events)
+        voices=list(self.audio.voices.values())
+        self.audio.update(24.11,24.11,playing=False)
+        self.assertTrue(all(voice.channel.paused for voice in voices))
+        self.audio.update(24.11,24.12,playing=True)
+        self.assertEqual(self.audio.events,events)
+        self.assertFalse(any(voice.channel.paused for voice in voices))
 
 
 if __name__=='__main__':unittest.main()

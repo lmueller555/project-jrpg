@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "ice_reaper_opening",
-  "duration": 21.0,
-  "full_cinematic_duration": 45.0,
+  "duration": 32.0,
+  "full_cinematic_duration": 32.0,
   "canvas": [
     960,
     480
@@ -411,6 +411,123 @@
         100,
         128
       ]
+    },
+    {
+      "id": "rhea_takes_over",
+      "start": 21.0,
+      "end": 23.2,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "caelan_interrupted",
+      "start": 23.2,
+      "end": 24.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "wind_clearance",
+      "start": 24.0,
+      "end": 25.15,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "reaper_reaction",
+      "start": 25.15,
+      "end": 25.65,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "sword_and_fire",
+      "start": 25.65,
+      "end": 26.7,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "duel_orbit",
+      "start": 26.7,
+      "end": 29.15,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "charge_push",
+      "start": 29.15,
+      "end": 29.55,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "reaper_windup",
+      "start": 29.55,
+      "end": 30.3,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
+    },
+    {
+      "id": "reaper_charge",
+      "start": 30.3,
+      "end": 32.0,
+      "from": [
+        100,
+        128
+      ],
+      "to": [
+        100,
+        128
+      ]
     }
   ],
   "dialogue": [
@@ -427,6 +544,20 @@
       "text": "Cael, go! I'll cover!",
       "start": 5.15,
       "end": 6.95
+    },
+    {
+      "id": "rhea_takes_over",
+      "speaker": "Rhea",
+      "text": "Thanks guys, now leave her to me...",
+      "start": 21.1,
+      "end": 23.15
+    },
+    {
+      "id": "caelan_interrupted",
+      "speaker": "Caelan",
+      "text": "Rhea...are you su-",
+      "start": 23.2,
+      "end": 24.0
     }
   ],
   "speakers": {
@@ -434,6 +565,15 @@
       "name": "Lucan",
       "portrait": "ice_reaper_lucan",
       "portrait_file": "portraits/lucan.png"
+    },
+    "rhea": {
+      "name": "Rhea",
+      "portrait": "ice_reaper_rhea",
+      "portrait_file": "portraits/rhea_awakening.png"
     }
+  },
+  "fade_out": {
+    "start": 31.1,
+    "end": 32.0
   }
 }
