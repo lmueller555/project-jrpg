@@ -7,7 +7,7 @@
     "assets/source/cinematics/ice_reaper_duel/women/rhea_actions_generated.png": "7ec945675693e991c3e9181d2656c2917f0fa3426b7974f5ac0e90dd8d3b11af",
     "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_rear_generated.png": "843f21b8f71951b88943bfd5e40b544f36bd5ff635fcf9ee42f1403e2e9943eb",
     "assets/source/cinematics/ice_reaper_duel/women/rhea_cast_views_generated.png": "3dbbec167d7f28ca4309df3cd407cca3b8c11a9c7b91064f0c918bc505c447d6",
-    "assets/source/cinematics/ice_reaper_duel/women/rhea_portrait_generated.png": "486b95a6a0ed49c9204bae3b346061eb96ae1764d49a3da4206be1fe8c493f40",
+    "assets/source/cinematics/ice_reaper_duel/women/rhea_portrait_generated.png": "893d3ee4922f045edad361c2d809b709db4de4b87da3b676060723cb5dcc12dd",
     "assets/source/cinematics/ice_reaper_duel/women/rhea_sweep_corrected_generated.png": "53f0539bba5e1468933aa73d461d6de6440f2a2fe8388b02a84481ed4d1d7af4"
   },
   "references": {
@@ -1484,10 +1484,10 @@
   "portrait": {
     "file": "portraits/rhea_awakening.png",
     "canvas": [
-      96,
-      96
+      1254,
+      1254
     ],
-    "sha256": "d0953a6be628baefdad92cfbeb023c7293e11cd74018e286515d43d41e9030ff",
-    "basis": "Approved Rhea design sheet; no prior Rhea dialogue portrait existed"
+    "sha256": "893d3ee4922f045edad361c2d809b709db4de4b87da3b676060723cb5dcc12dd",
+    "basis": "Approved image_gen portrait with green magic filling both eye sockets; copied without pixel changes"
   }
 }
