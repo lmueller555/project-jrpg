@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "canvas": [
+    128,
+    171
+  ],
+  "anchor": [
+    64,
+    100
+  ],
+  "core_pixels": 52,
+  "animations": {
+    "fireball": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "fireball_01.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "sha256": "a5a7a4cdb8d4014bfef181ec0e0fb56246d31f124a079fdbc44dd335466f8a6d"
+        },
+        {
+          "file": "fireball_02.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            384,
+            0,
+            768,
+            512
+          ],
+          "sha256": "1bf1b6be7208f9241fa938eb21ab3e013ccdadba5c862d49f5f65488890bd7f4"
+        },
+        {
+          "file": "fireball_03.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            768,
+            0,
+            1152,
+            512
+          ],
+          "sha256": "6252f87f5684cf4db805ffb693ba120e4aee0f7db59b344cafb0b03337b58d96"
+        },
+        {
+          "file": "fireball_04.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            1152,
+            0,
+            1536,
+            512
+          ],
+          "sha256": "bb2f6226473b9f207f81d41ae8ef0a5034eac9cfd20f3eede887881d14777352"
+        },
+        {
+          "file": "fireball_05.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            0,
+            512,
+            384,
+            1024
+          ],
+          "sha256": "7320bdbad22ea0990081aff5d5251b9451a8d9c58521dfa84cefe797b841d2ac"
+        },
+        {
+          "file": "fireball_06.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            384,
+            512,
+            768,
+            1024
+          ],
+          "sha256": "af20499e518e7984135f0bde7474fe16400b28336bd44c9ef7701096e399aac2"
+        },
+        {
+          "file": "fireball_07.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            768,
+            512,
+            1152,
+            1024
+          ],
+          "sha256": "0d0dc43fddfa3a219b427cb5064a7919a241995a45b15e132f22c51c8f376d7e"
+        },
+        {
+          "file": "fireball_08.png",
+          "duration_ms": 85,
+          "source_bounds": [
+            1152,
+            512,
+            1536,
+            1024
+          ],
+          "sha256": "d666723e3efb38d820bad0ede364f4e26f5e2ca44e529b5e1ed1b397cf8e5e10"
+        }
+      ]
+    }
+  },
+  "fireball_anchors": [
+    {
+      "index": 0,
+      "texture": [
+        256.0,
+        87.51999999999998
+      ],
+      "world": [
+        -2.9999999999999996,
+        0.035,
+        -6.396
+      ],
+      "ignition": 25.8
+    },
+    {
+      "index": 1,
+      "texture": [
+        401.90796002960224,
+        171.76
+      ],
+      "world": [
+        2.5390984826052687,
+        0.035,
+        -3.198
+      ],
+      "ignition": 25.95
+    },
+    {
+      "index": 2,
+      "texture": [
+        401.90796002960224,
+        340.23999999999995
+      ],
+      "world": [
+        2.5390984826052696,
+        0.035,
+        3.1979999999999986
+      ],
+      "ignition": 26.1
+    },
+    {
+      "index": 3,
+      "texture": [
+        256.0,
+        424.48
+      ],
+      "world": [
+        -2.9999999999999996,
+        0.035,
+        6.396
+      ],
+      "ignition": 26.25
+    },
+    {
+      "index": 4,
+      "texture": [
+        110.09203997039779,
+        340.24000000000007
+      ],
+      "world": [
+        -8.539098482605269,
+        0.035,
+        3.1980000000000017
+      ],
+      "ignition": 26.400000000000002
+    },
+    {
+      "index": 5,
+      "texture": [
+        110.09203997039779,
+        171.76
+      ],
+      "world": [
+        -8.539098482605269,
+        0.035,
+        -3.1980000000000004
+      ],
+      "ignition": 26.55
+    }
+  ],
+  "rune_source": "assets/story/ice_reaper_rune/rune.png",
+  "rune_sha256": "a7cecf2c3a7192934bbf6fa619fdf9a333581b58857fd3b94d799a0ac38e374b",
+  "rune_spokes": 6,
+  "source": "assets/source/cinematics/ice_reaper_duel/fx/fireball_generated.png",
+  "source_sha256": "4f67d687568368b1d2b27bb17fefba1930097623b39670f66796e6d1d6d16db3",
+  "authored": true,
+  "extraction": "Equal-cell extraction and nearest-neighbour registration only. Eight authored drawings; no procedural flame deformation."
+}

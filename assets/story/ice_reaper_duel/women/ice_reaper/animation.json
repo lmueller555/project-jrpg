@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "actor": "ice_reaper",
+  "canvas": [
+    192,
+    192
+  ],
+  "anchor": [
+    96,
+    172
+  ],
+  "body_pixels": 155,
+  "animations": {
+    "sword_conjure": {
+      "frames": [
+        {
+          "file": "sword_conjure_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_conjure_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_conjure_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_conjure_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_conjure_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_conjure_06.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 0.0,
+      "loop": false
+    },
+    "sword_windup": {
+      "frames": [
+        {
+          "file": "sword_windup_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_windup_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_windup_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_windup_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_windup_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_windup_06.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 0.0,
+      "loop": false
+    },
+    "sword_charge": {
+      "frames": [
+        {
+          "file": "sword_charge_01.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_charge_02.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_charge_03.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_charge_04.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_charge_05.png",
+          "duration_ms": 70
+        },
+        {
+          "file": "sword_charge_06.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 0.0,
+      "loop": false
+    },
+    "sword_hold_front": {
+      "frames": [
+        {
+          "file": "sword_hold_front_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 0.0,
+      "loop": true
+    },
+    "sword_hold_front_left": {
+      "frames": [
+        {
+          "file": "sword_hold_front_left_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": -45.0,
+      "loop": true
+    },
+    "sword_hold_left": {
+      "frames": [
+        {
+          "file": "sword_hold_left_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": -90.0,
+      "loop": true
+    },
+    "sword_hold_rear_left": {
+      "frames": [
+        {
+          "file": "sword_hold_rear_left_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": -135.0,
+      "loop": true
+    },
+    "sword_hold_rear": {
+      "frames": [
+        {
+          "file": "sword_hold_rear_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 180.0,
+      "loop": true
+    },
+    "sword_hold_rear_right": {
+      "frames": [
+        {
+          "file": "sword_hold_rear_right_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 135.0,
+      "loop": true
+    },
+    "sword_hold_right": {
+      "frames": [
+        {
+          "file": "sword_hold_right_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 90.0,
+      "loop": true
+    },
+    "sword_hold_front_right": {
+      "frames": [
+        {
+          "file": "sword_hold_front_right_01.png",
+          "duration_ms": 70
+        }
+      ],
+      "view_azimuth_deg": 45.0,
+      "loop": true
+    }
+  }
+}

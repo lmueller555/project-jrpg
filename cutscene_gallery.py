@@ -442,8 +442,8 @@ GALLERY_ENTRIES = (
            'The gardener brings an empty basket to the sheep, offers a gentle pat, and returns it home.', _sheep_visit, True),
     _entry('checkpoint_borrowed_seat', 'Keeping Your Seat', 'Elden Vale',
            'Two familiar guards share a bench while taking turns at the supplies and the watch.', _checkpoint_seat),
-    _entry('ice_reaper_opening', 'Ice Reaper: Frozen Clearing (21s)', 'Scene Studies',
-           'Five-second cinematic opening: clearing brush, the raised shard and frozen Rhea. Ends before the attack.',
+    _entry('ice_reaper_opening', 'Ice Reaper: Frozen Clearing (32s)', 'Scene Studies',
+           'A coordinated rescue, Rhea’s awakening and a fiery confrontation with the Ice Reaper.',
            _ice_reaper_film, True),
 )
 

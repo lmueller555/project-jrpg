@@ -152,7 +152,7 @@ def main():
     manifest={'version':1,'description':'Layered action foley and designed ice/magic effects',
               'sources':[{'repository':'https://github.com/kenneyNL/Starter-Kit-FPS','commit':'185fd2326d74a5cf858cffc616f87cf9696f9cc0','license':'MIT'},
                          {'repository':'https://github.com/kenneyNL/Starter-Kit-3D-Platformer','commit':'3fa8a04b1c01ab23db43123d4ce814a34c3fc7f0','license':'MIT'}],
-              'sounds':sounds,'cues':list(CUES)}
+              'sounds':sounds,'cues':[cue for cue in CUES if cue['time'] < 21]}
     (TARGET/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps({'effects':len(sounds),'cues':len(CUES)}))
 

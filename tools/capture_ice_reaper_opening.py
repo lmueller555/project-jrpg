@@ -187,7 +187,7 @@ def capture(output, fps=FPS):
     sheet.save(output/'keyframes.png', optimize=True)
     report = dict(
         version=2, preview='ice_reaper_opening', duration_seconds=duration,
-        full_cinematic_duration_seconds=45, fps=fps, frames=len(frames),
+        full_cinematic_duration_seconds=scene.data.get('full_cinematic_duration', duration), fps=fps, frames=len(frames),
         completion=completion, save_and_settings_unchanged=True,
         music=dict(cue='wintermute2', file=MUSIC.relative_to(ROOT).as_posix(),
                    sha256=file_hash(MUSIC), observed_gain=gains[0], segment=[0,duration]),

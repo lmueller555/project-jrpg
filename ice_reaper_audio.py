@@ -25,6 +25,20 @@ CUES = (
     {'id': 'awakening', 'time': 16.60, 'file': 'assets/audio/sfx/ice_reaper_rescue/awakening.ogg', 'gain': .34},
     {'id': 'prison_burst', 'time': 17.30, 'file': 'assets/audio/sfx/ice_reaper_rescue/prison_burst.ogg', 'gain': .58},
     {'id': 'rune_bloom', 'time': 17.50, 'file': 'assets/audio/sfx/ice_reaper_rescue/rune_bloom.ogg', 'gain': .43},
+    {'id': 'staff_sweep', 'time': 24.00, 'file': 'assets/audio/sfx/ice_reaper_duel/staff_sweep.ogg', 'gain': .34},
+    {'id': 'wind_burst', 'time': 24.10, 'file': 'assets/audio/sfx/ice_reaper_duel/wind_burst.ogg', 'gain': .47},
+    {'id': 'caelan_lands', 'time': 25.05, 'file': 'assets/audio/sfx/ice_reaper_duel/caelan_lands.ogg', 'gain': .34},
+    {'id': 'lucan_lands', 'time': 25.15, 'file': 'assets/audio/sfx/ice_reaper_duel/lucan_lands.ogg', 'gain': .37},
+    {'id': 'ice_sword_forms', 'time': 25.72, 'file': 'assets/audio/sfx/ice_reaper_duel/ice_sword_forms.ogg', 'gain': .31},
+    {'id': 'fireball_1', 'time': 25.80, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fireball_2', 'time': 25.95, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fireball_3', 'time': 26.10, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fireball_4', 'time': 26.25, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fireball_5', 'time': 26.40, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fireball_6', 'time': 26.55, 'file': 'assets/audio/sfx/ice_reaper_duel/fireball_ignite.ogg', 'gain': .14},
+    {'id': 'fire_presence', 'time': 26.70, 'file': 'assets/audio/sfx/ice_reaper_duel/fire_presence.ogg', 'gain': .115},
+    {'id': 'sword_windup', 'time': 29.55, 'file': 'assets/audio/sfx/ice_reaper_duel/sword_windup.ogg', 'gain': .31},
+    {'id': 'charge_launch', 'time': 30.30, 'file': 'assets/audio/sfx/ice_reaper_duel/charge_launch.ogg', 'gain': .52},
 )
 
 

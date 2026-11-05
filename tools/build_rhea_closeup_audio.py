@@ -43,7 +43,7 @@ def build():
     # Keep the central runtime cue ledger accurate without changing its audio.
     ledger = ROOT/'assets/audio/sfx/ice_reaper_rescue/manifest.json'
     data = json.loads(ledger.read_text())
-    data['cues'] = list(CUES)
+    data['cues'] = [cue for cue in CUES if cue['time'] < 21]
     ledger.write_text(json.dumps(data,indent=2)+'\n')
     print(json.dumps(dict(file=output.relative_to(ROOT).as_posix(),duration=manifest['sound']['duration'],cues=len(CUES))))
 
