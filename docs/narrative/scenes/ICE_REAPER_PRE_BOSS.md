@@ -112,12 +112,11 @@ hovering overhead, preparing to launch it.
 | 12.80–14.20 | Camera moves behind the launcher; second shard becomes visible |
 | 14.20–15.10 | Mira fires and destroys the second shard |
 | 15.10–16.30 | Close-up of Rhea opening green-lit eyes |
-| 16.30–17.20 | Prison shatters and the red rune appears |
-| 17.20–20.00 | Pull up and sweep from the Ice Reaper's left to right shoulder |
+| 16.30–17.20 | Prison shatters and the authored red seal starts constructing across the ground |
+| 17.20–20.00 | Rune completes; the Reaper rises closer as the unchanged camera sweeps over her shoulders |
 
 At twenty seconds the Gallery preview completes without starting combat or
 advancing the saved journey. The full planned cinematic remains 45 seconds.
-
 
 ### Rescue continuity and interception polish
 
@@ -136,8 +135,17 @@ position rather than sliding across the screen.
 
 Lucan remains kneeling and facing the Reaper through his shield raise and
 impact; his established late held views are preserved. After Rhea breaks free,
-the Reaper uses the earlier approved artwork with the current camera,
-projection, environment and timing unchanged.
+the Reaper uses the earlier approved artwork and rises closer to the camera.
+Her head, hair, wings and shoulders form the foreground while her lower body
+extends outside the frame. She settles before the shoulder sweep; the camera
+path, environment and timing remain unchanged. Rhea stays clear at either
+shoulder, with brief natural occlusion during the central crossing.
+
+The rune is an authored seal with a fixed 8.2-world-unit radius. From 16.3 to
+17.6 seconds its central seal ignites, branches trace outward, opposing ring
+fronts close the circumference, and glyphs activate along those paths. Its
+geometry never scales during construction. A completion pulse and restrained
+shimmer follow, with emissive strokes lighting the snow beneath cast shadows.
 
 The environment uses one periodic panorama and fixed city, woodland and ruin
 locations. Camera direction and projection determine their visibility; shot
@@ -152,21 +160,22 @@ Pause and focus loss freeze the same visual clock and soundtrack.
 the catalogue: End, then Enter selects it. P pauses, R restarts and Esc returns
 to Gallery. The isolated preview cannot alter the saved journey.
 
-Review the [twenty-second clip](../../reviews/ice_reaper_guard_correction/preview.mp4),
-[keyframes](../../reviews/ice_reaper_guard_correction/keyframes.png) and
-[verification record](../../reviews/ice_reaper_guard_correction/verification.json).
+Review the [twenty-second clip](../../reviews/ice_reaper_rune_shoulder/preview.mp4),
+[keyframes](../../reviews/ice_reaper_rune_shoulder/keyframes.png) and
+[verification record](../../reviews/ice_reaper_rune_shoulder/verification.json).
 New scenery, boss and ice-effect artwork remain awaiting user review.
 
 Rebuild and capture from the repository root with the existing art dependencies:
 
 ```sh
+python3 tools/build_ice_reaper_rune.py
 python3 tools/build_ice_rescue_men.py
 python3 tools/build_ice_rescue_women.py
 python3 tools/build_ice_rescue_environment.py
 python3 tools/build_ice_reaper_action_audio.py
 python3 tools/build_ice_reaper_opening.py
 python3 tools/build_runtime_music.py --track wintermute2
-python3 tools/capture_ice_reaper_opening.py
+python3 tools/capture_ice_reaper_rune_shoulder.py
 ```
 
 ## Named participants

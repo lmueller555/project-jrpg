@@ -185,6 +185,8 @@ class IceReaperActionStage:
             if path.exists():
                 self.scope = self._read_image(path)
                 break
+        from ice_reaper_rune import RuneSeal
+        self.rune_seal = RuneSeal(self.asset_root.parent/'ice_reaper_rune/rune.png')
 
     def validate_assets(self):
         if self.missing_assets:
@@ -260,7 +262,16 @@ class IceReaperActionStage:
         return {
             'rhea': V3(-3, 0, 0), 'caelan': caelan,
             'lucan': lerp((6.5, 0, 8), cls.lucan_guard_position(), dash),
-            'mira': V3(7, 0, 10), 'ice_reaper': V3(2, 6.6, -8)}
+            'mira': V3(7, 0, 10), 'ice_reaper': cls.reaper_position(time)}
+
+    @staticmethod
+    def reaper_position(time):
+        """A brief rise and retreat bring her shoulders into the foreground."""
+        original = V3(2, 6.6, -8)
+        heading = V3(5, 0, -8).normalize()
+        settled = original+heading*1.0
+        settled.y = 9.0
+        return original.lerp(settled, smooth(phase(time, 16.3, 18.15)))
 
     @classmethod
     def camera(cls, time, reduced_motion=False):
@@ -295,7 +306,8 @@ class IceReaperActionStage:
         # Frozen Rhea faces the arriving party, as in the opening reveal.
         # Her close-up stays on that side; she turns after breaking free.
         rhea = cls.actor_positions(time)['rhea']
-        boss = cls.actor_positions(time)['ice_reaper']
+        # The camera remains on its approved route while the Reaper moves.
+        boss = V3(2, 6.6, -8)
         heading = boss-rhea
         heading.y = 0
         heading = heading.normalize()
@@ -338,7 +350,7 @@ class IceReaperActionStage:
                     prison=prison,
                     first_shard='aimed' if time < 6.86 else 'flight' if time < 9.0 else 'intercepted',
                     second_shard='absent' if time < 12.65 else 'forming' if time < 14.7 else 'destroyed',
-                    rune=phase(time, 16.3, 18.3),
+                    rune=phase(time, 16.3, 17.6),
                     camera_position=list(cls.camera(time).position),
                     camera_target=list(cls.camera(time).target),
                     slow_motion=7.5 <= time < 9.5)
@@ -461,11 +473,16 @@ class IceReaperActionStage:
         if abs(azimuth) >= 112.5:
             # The retained rear drawings depict left quarter, back and right
             # quarter views. Choose by angle, rather than rotating on a timer.
-            views = (-145., 180., 145.)
+            # The first retained quarter drawing looks left; it belongs on
+            # the right shoulder of this shot, facing inward toward Rhea.
+            views = (145., 180., -145.)
             index = min(range(3), key=lambda i: abs((azimuth-views[i]+180)%360-180))
             image = sequences['ready_rear'][index][0]
         elif abs(azimuth) >= 45:
-            image = sequences['ready_side'][min(2, int((abs(azimuth)-45)/30))][0]
+            # The approved side drawings all look left. On the opposite side
+            # use the neutral approved back view instead of looking offstage.
+            image = (sequences['ready_rear'][2][0] if azimuth < 0 else
+                     sequences['ready_side'][min(2, int((abs(azimuth)-45)/30))][0])
         else:
             image = sequences['recharge'][-1][0]
         return image, self.actors['ice_reaper']
@@ -558,6 +575,19 @@ class IceReaperActionStage:
         height = max(1., foot[1]-head[1])
         scale_y = height/body
         scale_x = camera.focal*4.8/((foot[2]+head[2])*.5)/body
+        # In the close foreground the head/shoulder plane is much nearer than
+        # the feet. Use its actual world depth as she rises into that plane;
+        # otherwise the old flat-card foreshortening exposes her whole body.
+        # The projected head remains the anchor, and the lower body naturally
+        # extends below the viewport rather than being masked or screen-pinned.
+        proximity = smooth(phase(position.y, 6.6, 9.0))
+        if proximity:
+            head_scale = camera.focal*4.8/head[2]/body
+            scale_x += (head_scale-scale_x)*proximity
+            scale_y += (head_scale-scale_y)*proximity
+            foot = (head[0]+(foot[0]-head[0])*(1-proximity),
+                    head[1]+body*scale_y, foot[2])
+            height = body*scale_y
         scaled = self._scale(image, image.get_width()*scale_x, image.get_height()*scale_y)
         ax, ay = data['anchor']
         foot_row = ay*scale_y
@@ -803,40 +833,7 @@ class IceReaperActionStage:
                 if time<14.86:pygame.draw.circle(canvas,'#fff2d2',p[:2],max(1,round((1-age)*18)))
 
     def _rune(self, canvas, camera, time, reduced):
-        if time < 16.3:return
-        reveal=smooth(phase(time,16.3,17.8))
-        radius=8.2*reveal
-        center=V3(-3,.035,0)
-        glow=pygame.Surface(SIZE,pygame.SRCALPHA)
-        for factor,alpha in ((1.16,13),(1.04,19),(.96,24),(.78,18),(.36,35)):
-            points=[camera.project(center+V3(math.cos(i*TAU/80)*radius*factor,0,
-                                            math.sin(i*TAU/80)*radius*factor)) for i in range(80)]
-            if all(points):
-                pygame.draw.polygon(glow,(245,42,67,round(alpha*(.55 if reduced else 1))),
-                                    [(p[0],p[1]) for p in points])
-        for r in (radius,radius-.35,radius-1.):
-            if r <= 0: continue
-            points=[center+V3(math.cos(i*TAU/100)*r,0,math.sin(i*TAU/100)*r) for i in range(101)]
-            self._line3(glow,camera,(255,47,63,70 if not reduced else 28),points,7)
-        canvas.blit(glow,(0,0))
-        for offset,color,width in ((0,'#fa584c',2),(-.35,'#ffb27d',1),(-1.0,'#ad334b',1)):
-            r=max(0,radius+offset)
-            points=[center+V3(math.cos(i*TAU/100)*r,0,math.sin(i*TAU/100)*r) for i in range(101)]
-            self._line3(canvas,camera,color,points,width)
-        for i in range(12):
-            a=i*TAU/12
-            points=[center+V3(math.cos(a)*radius*.78,0,math.sin(a)*radius*.78),
-                    center+V3(math.cos(a+.1)*radius*.9,0,math.sin(a+.1)*radius*.9),
-                    center+V3(math.cos(a+.16)*radius*.8,0,math.sin(a+.16)*radius*.8)]
-            self._line3(canvas,camera,'#ff8b67',points,2)
-            b=a+TAU*5/12
-            self._line3(canvas,camera,'#c43e56',[center+V3(math.cos(a)*radius*.7,0,math.sin(a)*radius*.7),center+V3(math.cos(b)*radius*.7,0,math.sin(b)*radius*.7)],1)
-        if not reduced:
-            for i in range(28):
-                a=i*2.39996
-                point=center+V3(math.cos(a)*(1+i%8*.65),((time-16.3)*1.1+i*.19)%4,math.sin(a)*(1+i%8*.65))
-                p=camera.project(point)
-                if p:pygame.draw.circle(canvas,('#ff8b67','#d34462','#ffd4a1')[i%3],p[:2],1+i%2)
+        self.rune_seal.draw(canvas, camera, time, reduced)
 
     def _closeup(self, canvas, time):
         data=self.actors['rhea'];sequence=data['sequences'].get('eyes')
@@ -907,9 +904,10 @@ class IceReaperActionStage:
         if self.shot(time)=='rhea_awakens' and self._closeup(canvas,time):
             return
         positions=self.actor_positions(time)
-        self._rune(canvas,camera,time,reduced_motion)
         for actor,position in positions.items():
             if actor!='ice_reaper':self._shadow(canvas,camera,position,.6 if actor=='rhea' else .45)
+        # Emissive strokes illuminate the snow even underneath a cast shadow.
+        self._rune(canvas,camera,time,reduced_motion)
         self._dash_snow(canvas,camera,positions,time,reduced_motion)
         visible=[]
         for actor,position in positions.items():
