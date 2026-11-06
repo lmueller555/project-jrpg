@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "source": "travel_generated.png",
+  "source_sha256": "7122ac38eb0ed50c221073fdfad2a7ceda27f249070ea64d9dce440e1b30d39e",
+  "generation": "exec-e39d5ecc-e576-4636-a5e3-f7164673091d.png",
+  "alpha_threshold": 225,
+  "directions": {
+    "left": {
+      "standing": {
+        "bounds": [
+          128,
+          22,
+          276,
+          407
+        ],
+        "anchor": [
+          208.0,
+          407
+        ]
+      },
+      "frames": [
+        {
+          "bounds": [
+            444,
+            24,
+            644,
+            405
+          ],
+          "anchor": [
+            547.5,
+            407
+          ]
+        },
+        {
+          "bounds": [
+            801,
+            24,
+            945,
+            407
+          ],
+          "anchor": [
+            875.0,
+            407
+          ]
+        },
+        {
+          "bounds": [
+            1107,
+            23,
+            1309,
+            405
+          ],
+          "anchor": [
+            1208.5,
+            407
+          ]
+        },
+        {
+          "bounds": [
+            1471,
+            23,
+            1628,
+            403
+          ],
+          "anchor": [
+            1557.5,
+            407
+          ]
+        }
+      ]
+    },
+    "back": {
+      "standing": {
+        "bounds": [
+          117,
+          463,
+          290,
+          852
+        ],
+        "anchor": [
+          202.5,
+          854
+        ]
+      },
+      "frames": [
+        {
+          "bounds": [
+            455,
+            467,
+            627,
+            854
+          ],
+          "anchor": [
+            539.5,
+            854
+          ]
+        },
+        {
+          "bounds": [
+            791,
+            465,
+            959,
+            852
+          ],
+          "anchor": [
+            873.0,
+            854
+          ]
+        },
+        {
+          "bounds": [
+            1139,
+            467,
+            1307,
+            854
+          ],
+          "anchor": [
+            1222.5,
+            854
+          ]
+        },
+        {
+          "bounds": [
+            1482,
+            467,
+            1652,
+            852
+          ],
+          "anchor": [
+            1568.0,
+            854
+          ]
+        }
+      ]
+    }
+  },
+  "phases": [
+    "near_contact",
+    "near_passing",
+    "far_contact",
+    "far_passing"
+  ],
+  "references": {
+    "assets/source/companions/lucan/design_sheet.png": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+    "assets/cinematics/companions/lucan/stand_front.png": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d",
+    "assets/story/regent_arrival/actors/aldric/stand_left.png": "4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8",
+    "assets/story/regent_arrival/actors/clerk/stand_left.png": "85e3a131695e0d2f92384481aa7718de358da258e9b0fb57b7ec16340fa4a03d"
+  },
+  "prompt": "Use ONLY approved tall adult RIGHTMOST Lucan from design_sheet, not chibi overworld. Match adult Aldric/clerk proportions: head about one sixth body, normal arms/legs. Silver/gold armor, red tabard, brown boots, LEFT lowered shield/right low-carried sword. Two rowsfive cells: left side stand+four consecutive walk drawings, thenrear north stand+four walk drawings. Transparent, no scenery, no equipment clipping, upright calm travel, common foot baseline. Actual tool output retained; deterministic alpha225 cleanup removes light matte without repainting pixels."
+}

@@ -17,6 +17,10 @@ from pathlib import Path
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 from PIL import Image
+if __package__:
+    from .export_regent_lucan import aerial_outputs as lucan_aerial_outputs
+else:
+    from export_regent_lucan import aerial_outputs as lucan_aerial_outputs
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/cinematics/regent_aerial/actors'
@@ -158,8 +162,9 @@ def build():
         'version':1, 'canvas':[48,64], 'anchor':[24,56], 'poses':clerk_poses, 'loops':{},
         'source':'offline native part-authored clerk; retained moss coat, brown hair and left-hand hip ledger',
         'overhead_facing':'north', 'oblique_facing':'northwest'})
+    outputs.update(lucan_aerial_outputs())
     outputs['manifest.json'] = json_bytes({'version':1,'actors':{
-        name:name+'/animation.json' for name in ('bird','aldric','guard','caravan','clerk')}})
+        name:name+'/animation.json' for name in ('bird','aldric','guard','caravan','clerk','lucan')}})
     # Keep the existing compression only after BOTH the recorded hash and all
     # regenerated RGBA pixels agree, just as in the ground actor exporter.
     previous_path = TARGET/'provenance.json'

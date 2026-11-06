@@ -143,7 +143,7 @@ def _regent_checkpoint(game, stage):
     if stage == 'done':
         if not game.quests.turn_in(REGENT_QUEST, 'mother_serene'):raise ValueError('Cannot finish regent quest')
         game.quests.unlock(LANTERN_QUEST)
-    if not game.regent_quest.restore({'version': 1, 'stage': stage}):raise ValueError('Invalid regent checkpoint')
+    if not game.regent_quest.restore({'version': 2, 'stage': stage}):raise ValueError('Invalid regent checkpoint')
 
 
 def _lantern_checkpoint(game, stage, world, position):
@@ -268,18 +268,6 @@ def _arrival(game, playback):
     if not game.regent_arrival.request() or not game.regent_arrival.maybe_start():
         raise ValueError('Cannot start Aldric arrival')
     playback.watch(lambda: game.regent_arrival.arrival_complete and not game.regent_arrival.active)
-
-
-def _cart(game, playback):
-    _regent_checkpoint(game, 'dispute')
-    controller = game.regent_quest
-    _station(game, game.town, (610, 548))
-    # Reconstruct the authored stations around the actual preview witness.
-    controller.restore({'version': 1, 'stage': 'dispute'})
-    def drive():
-        if controller.stage == 'dispute' and not game.social.active:controller.interact()
-    playback.watch(lambda: controller.stage == 'escorting' and controller._delivery_done, drive)
-    drive()
 
 
 def _lantern(game, playback, segment):
@@ -421,8 +409,6 @@ GALLERY_ENTRIES = (
            'A lever, a haul rope and two pairs of hands restore the mill.', partial(_mill_action, action='repair')),
     _entry('regent_arrival', 'Aldric’s Relief Caravan', 'The Regent’s Road',
            'The present-day caravan reaches Eldenmere after the mill is restored.', _arrival),
-    _entry('regent_cart_release', 'The Road Crew’s Cart', 'The Regent’s Road',
-           'Witness the dispute and Mr. Venn hauling the released cart away.', _cart),
     _entry('lantern_frame', 'A Frame of His Own', 'Liam’s First Lantern',
            'Try the design, assemble the tower frame and help Liam lift it.', partial(_lantern, segment='frame')),
     _entry('lantern_collect', 'Gathering the Materials', 'Liam’s First Lantern',

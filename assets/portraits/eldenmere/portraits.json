@@ -331,6 +331,18 @@
         1254,
         1254
       ]
+    },
+    "lucan": {
+      "name": "Lucan Rooke",
+      "expression": "confident",
+      "file": "../../story/ice_reaper_opening/portraits/lucan.png",
+      "sprite_root": "assets/characters/lucan",
+      "source": "assets/story/ice_reaper_opening/portraits/lucan.png",
+      "native_size": [
+        96,
+        96
+      ],
+      "reuse": "Approved dialogue portrait; shared renderer fits it to the ordinary portrait frame."
     }
   },
   "aliases": {

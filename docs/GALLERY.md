@@ -58,8 +58,7 @@ it does not duplicate dialogue, animation or camera scripts.
 | `mill_bypass` | Make Room for the Water | Mill preparation dialogue and bypass action |
 | `mill_small_spell` | A Smaller Magical Success | Mill spell introduction/action and Mira's encouragement |
 | `mill_repair` | Freeing the Intake | Mill repair dialogue, lever and haul-rope action until restored |
-| `regent_arrival` | Aldric's Relief Caravan | RegentArrival requested after completed mill facts; natural finish or Skip |
-| `regent_cart_release` | The Road Crew's Cart | Regent dispute dialogue, release and Venn's cart departure |
+| `regent_arrival` | Aldric's Relief Caravan | RegentArrival requested after MQ02's sanctuary homecoming and cup placement; natural finish or Skip |
 | `lantern_frame` | A Frame of His Own | Workshop design, assembly and frame lift until frame ready |
 | `lantern_collect` | Gathering the Materials | Collection dialogue and material pickup |
 | `lantern_homecoming` | A Place at the Table | Home arrival and material placement |
@@ -73,6 +72,8 @@ it does not duplicate dialogue, animation or camera scripts.
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 
 Fixtures use completed prerequisite quest facts for the selected chapter only.
+The regent prerequisites use the current version-two direct-escort checkpoint;
+the retired road-crew cart scene is no longer a replay entry.
 The lantern fixtures use the current controller's stage/objective prefix; mill
 intake scenes use current v2 encounter-complete facts. Regional scenes begin at
 their authored finite vignette stations with the preceding routine work seeded.

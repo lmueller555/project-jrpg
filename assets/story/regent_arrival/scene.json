@@ -19,7 +19,8 @@
     "driver": "actors/driver/animation.json",
     "serene": "actors/serene/animation.json",
     "tomas": "actors/tomas/animation.json",
-    "caravan": "actors/caravan/animation.json"
+    "caravan": "actors/caravan/animation.json",
+    "lucan": "actors/lucan/animation.json"
   },
   "speakers": {
     "aldric": {
@@ -182,6 +183,20 @@
           "animation_rate": 0.6
         },
         {
+          "id": "lucan",
+          "pose": "walk_left",
+          "position": [
+            641,
+            351
+          ],
+          "to": [
+            605,
+            351
+          ],
+          "move_seconds": 1.5,
+          "gait_offset": 0.5
+        },
+        {
           "id": "clerk",
           "pose": "walk_left",
           "position": [671, 399],
@@ -251,6 +266,15 @@
             330
           ],
           "scale": 0.9
+        },
+        {
+          "id": "lucan",
+          "pose": "stand_left",
+          "position": [
+            605,
+            351
+          ],
+          "gait_offset": 0.5
         },
         {
           "id": "clerk",
@@ -390,6 +414,40 @@
           "turn_pose": "turn_left_back"
         },
         {
+          "id": "lucan",
+          "pose": "walk_left",
+          "position": [
+            605,
+            351
+          ],
+          "move_start": 0.95,
+          "move_seconds": 11.75,
+          "after_pose": "stand_back",
+          "before_pose": "stand_left",
+          "route": "gate_road",
+          "route_start": 150,
+          "route_end": 1090,
+          "route_offset": [
+            0,
+            -24
+          ],
+          "route_poses": [
+            [
+              0,
+              "walk_left"
+            ],
+            [
+              180,
+              "walk_left_back"
+            ],
+            [
+              310,
+              "walk_back"
+            ]
+          ],
+          "gait_offset": 0.5
+        },
+        {
           "id": "clerk",
           "pose": "walk_left",
           "position": [635, 399],
@@ -466,6 +524,7 @@
       "actors": [
         {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
         {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
         {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
         {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
@@ -484,6 +543,7 @@
       "actors": [
         {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
         {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
         {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
         {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
@@ -540,6 +600,7 @@
       "actors": [
         {"id": "aldric", "pose": "listen_left", "position": [4004, 863]},
         {"id": "local", "pose": "talk_right", "position": [3899, 863]},
+        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
         {"id": "clerk", "pose": "stand_left", "position": [4064, 879]},
         {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
@@ -577,6 +638,7 @@
       "actors": [
         {"id": "aldric", "pose": "gesture_left", "position": [4004, 863]},
         {"id": "local", "pose": "stand_right", "position": [3899, 863]},
+        {"id": "lucan", "pose": "stand_left", "position": [4034, 839], "gait_offset": 0.5},
         {"id": "clerk", "pose": "read_left", "position": [4064, 879]},
         {"id": "caravan", "pose": "parked_left", "position": [4334, 888]}
       ],
@@ -660,6 +722,20 @@
             375
           ],
           "move_seconds": 7
+        },
+        {
+          "id": "lucan",
+          "pose": "walk_left",
+          "position": [
+            750,
+            351
+          ],
+          "to": [
+            500,
+            351
+          ],
+          "move_seconds": 7,
+          "gait_offset": 0.5
         },
         {
           "id": "clerk", "pose": "walk_left",
@@ -808,6 +884,21 @@
           "move_seconds": 3,
           "after_pose": "stand_left",
           "animation_rate": 0.75
+        },
+        {
+          "id": "lucan",
+          "pose": "walk_left",
+          "position": [
+            500,
+            351
+          ],
+          "to": [
+            425,
+            371
+          ],
+          "move_seconds": 3,
+          "after_pose": "stand_left",
+          "gait_offset": 0.5
         },
         {
           "id": "clerk", "pose": "walk_left",

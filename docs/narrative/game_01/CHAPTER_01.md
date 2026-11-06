@@ -95,19 +95,20 @@ camera work and runtime persistence for the subsequent implementation.
 **Premise:** Aldric reaches Eldenmere during a relief journey after unusual
 lightning has damaged several communities. Regional repair demand motivates
 his request to examine a stone seam inside protected ridge-sanctuary ground.
-Caelan welcomes and guides him, witnesses humane judgment in the cart dispute,
-and hears a measured disagreement with Serene over the proposed trial cut.
+Caelan welcomes Aldric and his personal guard Lucan, guides the party directly
+to a sanctuary meal, and hears a measured disagreement with Serene over the
+proposed trial cut. The former cart dispute is removed.
 
 **Purpose:** Establish why Caelen and the villagers admire Aldric; give both government development and religious protection a legitimate argument; introduce the covenant without lore dumping.
 
-**Existing gameplay and approved revision:** Caelan's guide/host role, the
-adult-managed cart dispute and sanctuary hospitality are already playable.
-The [revised MQ03 narrative script](CH01_MQ03.md) adds the relief context,
-specific covenant evidence and Serene's practical contribution; its dialogue
-changes remain pending implementation. Aldric's clerk checks the agreement,
-and Caelan contributes firsthand news that the mill is working. No old
-mentorship or precise personal history with Aldric is established. MQ03
-authorizes no excavation and leaves the trial-cut request unresolved.
+**Implemented visit:** The [revised MQ03 script](CH01_MQ03.md) introduces
+Lucan, gives Tomas room for mechanical curiosity, establishes Aldric's royal
+relationship and presents the ridge's natural confluence and memorial grove.
+Shared hazard records and Serene's practical contribution support a genuine,
+unresolved disagreement. The direct escort has no legal-investigation task,
+cart release or road-crew stop. No old mentorship or precise personal history
+with Aldric is established. MQ03 authorizes no excavation and leaves the
+trial-cut request unresolved.
 
 **Emotional result:** The future antagonist's character feels sincerely admirable in the present.
 
@@ -201,8 +202,8 @@ Mechanisms and magicks must obey conservation of aether. Planetary-return teachi
 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
 2. Determine the introductory gameplay systems and whether any combat is appropriate this early.
-3. Identify the exact local dispute resolved by Aldric and why Caelen admires him.
+3. Develop later tests of Aldric's leadership after his relief arrival and sanctuary visit.
 4. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
-5. Establish Serene's legitimate basis for caution, without giving her forbidden saga knowledge.
+5. Develop the subsequent site investigation without giving Serene forbidden saga knowledge.
 6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
 7. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

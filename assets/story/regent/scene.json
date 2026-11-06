@@ -12,425 +12,396 @@
   "arrival": [
     {
       "speaker": "caelan",
-      "text": "Regent Aldric? Mother Serene sent me."
+      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
     },
     {
       "speaker": "aldric",
-      "text": "Ah. Thank you. Have we kept her waiting?"
+      "text": "Thank you, Caelan. Have we kept her waiting?"
     },
     {
       "speaker": "caelan",
-      "text": "She's still getting everything ready."
+      "text": "We’ve just finished setting the table."
     },
     {
       "speaker": "aldric",
-      "text": "*with a small, relieved laugh* Then perhaps our timing isn't quite as bad as I feared."
-    },
-    {
-      "speaker": "caelan",
-      "text": "I'm Caelan. I'll show you the way."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Thank you, Caelan. I heard Halden was having trouble with his mill."
-    },
-    {
-      "speaker": "caelan",
-      "text": "We've just got it working again."
-    },
-    {
-      "speaker": "aldric",
-      "text": "You were helping him?"
-    },
-    {
-      "speaker": "caelan",
-      "text": "With Mira. There was a limb caught at the intake."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Any damage?"
-    },
-    {
-      "speaker": "caelan",
-      "text": "Nothing serious."
-    },
-    {
-      "speaker": "aldric",
-      "text": "*his concern easing* Good. He'll have enough work before the festival without that."
+      "text": "Then we’ve arrived at a very good moment."
     },
     {
       "speaker": "regent_driver",
-      "text": "We're ready here, my lord."
+      "text": "*under his breath* Finally."
     },
     {
       "speaker": "aldric",
-      "text": "Then let's not keep our hosts waiting."
-    }
-  ],
-  "dispute": [
-    {
-      "speaker": "venn_father",
-      "text": "No. Listen to me. I agreed to a day."
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "We spent half of it waiting for enough stone to make the haul."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "I know. I was here."
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "Then you know why we haven't finished."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "*his temper rising* And you know why I need my cart back!"
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "My lord. I hadn't seen you there."
+      "text": "*glances back with a tired smile* Yes. I heard that."
     },
     {
       "speaker": "aldric",
-      "text": "Please, go on. What was agreed?"
+      "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
     },
     {
-      "speaker": "venn_father",
-      "text": "The cart for yesterday. Back by evening."
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "For the stone haul. The delivery was short. The other repair crews are waiting on the same supply."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Was there an agreement to keep it longer?"
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "No. I expected we'd be finished before he needed it."
-    },
-    {
-      "speaker": "regent_clerk",
-      "text": "The hire note gives yesterday. There isn't an extension."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "My grain's ready. I've already lost time waiting for the mill."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Is it taking deliveries again?"
+      "speaker": "lucan",
+      "text": "Through the courtyard?"
     },
     {
       "speaker": "caelan",
-      "text": "Yes. Halden's working through what was waiting."
+      "text": "Yes. Then through the hall to the dining room."
     },
     {
-      "speaker": "venn_father",
-      "text": "Which is why I'd like to get there before everyone else does."
+      "speaker": "lucan",
+      "text": "Good. I’ll follow behind."
     },
     {
-      "speaker": "aldric",
-      "text": "The hire has ended. Return the cart."
+      "speaker": "lucan",
+      "text": "That’s an unusual sword."
     },
     {
-      "speaker": "road_foreman",
-      "text": "Then I'll need another hire, or another day. The men still need paying while they wait."
+      "speaker": "caelan",
+      "text": "Mira made it. She gave it to me this morning."
     },
     {
-      "speaker": "aldric",
-      "text": "Put the additional cost in the road account."
+      "speaker": "lucan",
+      "text": "This morning?"
     },
     {
-      "speaker": "road_foreman",
-      "text": "That leaves less for the upper section."
+      "speaker": "caelan",
+      "text": "An early birthday present."
     },
     {
-      "speaker": "aldric",
-      "text": "*rubbing his brow* I understand. Send me the revised figures. We'll deal with that separately."
+      "speaker": "lucan",
+      "text": "Keep it clear of the gatepost. You’re wearing it wider than you think."
     },
     {
-      "speaker": "aldric",
-      "text": "What can the crew do while you arrange the transport?"
+      "speaker": "caelan",
+      "text": "*adjusts the scabbard* Thank you.",
+      "cue": "caelan_scabbard"
     },
     {
-      "speaker": "road_foreman",
-      "text": "We can prepare the bedding along the lower stretch. It changes the order of the work, but we can start there."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Then do that. Mr. Venn, would you consider another hire once your delivery is finished?"
-    },
-    {
-      "speaker": "venn_father",
-      "text": "Perhaps. I've other things waiting."
-    },
-    {
-      "speaker": "aldric",
-      "text": "Then it will need another agreement."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "Thank you. And—well. I wasn't trying to hold up the road."
-    },
-    {
-      "speaker": "aldric",
-      "text": "I didn't think you were."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "*exhaling* Right. Can I take it now?"
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "Yes. We'll clear the way."
+      "speaker": "caelan",
+      "text": "This way."
     }
   ],
   "welcome": [
     {
       "speaker": "serene",
-      "text": "There you are. Sit down before it all goes cold."
+      "text": "Welcome. Come and sit down.",
+      "cue": "meal_settle"
     },
     {
       "speaker": "aldric",
-      "text": "I'm sorry. We stopped at the road crew."
+      "text": "Thank you for receiving us."
     },
     {
       "speaker": "serene",
-      "text": "Is everything all right?"
+      "text": "You look as though you could use something warm."
     },
     {
       "speaker": "aldric",
-      "text": "It should be now. There'll be another account for me to read tomorrow."
+      "text": "I could use several things. That’s comfortably first."
     },
     {
       "speaker": "serene",
-      "text": "Eat something first. You can worry about tomorrow afterward."
-    },
-    {
-      "speaker": "tomas",
-      "text": "Did you come all the way over the ridge in that wagon?"
-    },
-    {
-      "speaker": "aldric",
-      "text": "Most of the way."
-    },
-    {
-      "speaker": "tomas",
-      "text": "Most?"
-    },
-    {
-      "speaker": "aldric",
-      "text": "I walked the steep part."
-    },
-    {
-      "speaker": "tomas",
-      "text": "*surprised* You walked?"
-    },
-    {
-      "speaker": "aldric",
-      "text": "*laughing* After sitting in it all morning, I was glad to."
-    },
-    {
-      "speaker": "regent_driver",
-      "text": "He made better time than we did, too."
-    },
-    {
-      "speaker": "serene",
-      "text": "Have some bread. All of you. Caelan, would you pass that plate?"
+      "text": "Caelan, would you pass the bread?"
     },
     {
       "speaker": "caelan",
-      "text": "Here you are."
+      "text": "Here you are.",
+      "cue": "pass_bread"
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "Thank you."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Were you working the brake coming down the ridge?"
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "Most of the way down."
+    },
+    {
+      "speaker": "tomas",
+      "text": "How do you stop the wagon getting ahead of the horses?"
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "Keep it slow before it starts. Once a loaded wagon’s running, you’ve left yourself very little to work with."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Does the brake press against both wheels?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "*slides the bread toward him* You were going to make sure everyone remembered to eat."
+    },
+    {
+      "speaker": "tomas",
+      "text": "I can ask while I’m eating.",
+      "cue": "tomas_eat"
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "*chuckles* Ask away."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Are you watching the door?"
+    },
+    {
+      "speaker": "lucan",
+      "text": "Among other things.",
+      "cue": "lucan_watch"
+    },
+    {
+      "speaker": "tomas",
+      "text": "Even while you’re eating?"
+    },
+    {
+      "speaker": "lucan",
+      "text": "His lordship chose me because I can manage both."
     }
   ],
   "discussion": [
     {
       "speaker": "aldric",
-      "text": "Thank you for the meal. Before I lose you to the festival preparations, may we look at the ridge survey?"
+      "text": "Before I lose you to the festival preparations, could we look at the ridge survey?",
+      "cue": "open_survey"
     },
     {
       "speaker": "serene",
-      "text": "Of course. I've brought what we have about the old sanctuary. Let me move these cups."
+      "text": "Of course. Caelan, let me move those plates."
     },
     {
       "speaker": "caelan",
-      "text": "I'll take them."
+      "text": "I’ve got them.",
+      "cue": "clear_plates"
     },
     {
       "speaker": "aldric",
-      "text": "The nearer seam is here. The surveyors believe we could reach it without going near the standing walls."
+      "text": "The surveyors marked the nearer seam here. They believe it could supply stone for several of the repair crews."
     },
     {
       "speaker": "serene",
-      "text": "Inside the sanctuary boundary."
+      "text": "What’s coming from the existing quarries?"
     },
     {
       "speaker": "aldric",
-      "text": "Yes. I haven't forgotten your letter."
+      "text": "More is being cut. Much of it is already promised, and the longer journeys keep tying up the same carts."
     },
     {
-      "speaker": "serene",
-      "text": "I know you haven't. But the covenant covers the hillside and the works beneath it too. The walls we can see are only part of what we've agreed to care for. That keeping belongs to all of us. I can't give it away on my own."
-    },
-    {
-      "speaker": "serene",
-      "text": "We understand life as part of the planet's aether cycle. These places were entrusted to our care. I owe that keeping to the people who come after us."
+      "speaker": "tomas",
+      "text": "Couldn’t the crown send more?"
     },
     {
       "speaker": "aldric",
-      "text": "And the stone we can use is already promised to repair crews across the region. More can come from farther away, but every longer haul ties up a cart another crew needs. The supply is stretched as it is."
+      "text": "I’ve asked."
     },
     {
-      "speaker": "serene",
-      "text": "The southern road still has people cut off from their usual route. I understand why you want another source."
-    },
-    {
-      "speaker": "aldric",
-      "text": "That surge broke stone we thought would outlast us. Now every damaged crossing and stretch of road needs material at once. A nearer quarry could make a difference well beyond Eldenmere."
-    },
-    {
-      "speaker": "serene",
-      "text": "There is something here your engineer should read before deciding where to cut. This is an old maintenance account."
+      "speaker": "tomas",
+      "text": "I thought being the monarch’s brother would make that part quicker."
     },
     {
       "speaker": "aldric",
-      "text": "May I?"
-    },
-    {
-      "speaker": "serene",
-      "text": "*passes him the account* The workers opened a passage beneath the sanctuary. A small discharge injured them. They couldn't explain what caused it. They closed the passage again."
+      "text": "People haven’t been refusing me, Tomas. They still have to cut the stone and bring it. There are other communities waiting for the same loads."
     },
     {
       "speaker": "aldric",
-      "text": "*reads for a moment* Does it say where the discharge came from?"
+      "text": "A nearer source would give us more room to work. The proposed face is clear of the standing sanctuary walls."
     },
     {
       "speaker": "serene",
-      "text": "No. Or how far the passage went. I wish it did."
+      "text": "The protected ground extends beyond those walls."
     },
     {
       "speaker": "aldric",
-      "text": "Can you tell whether it has anything to do with the lightning we've been seeing?"
+      "text": "I know. I believe we can preserve the place while working the seam. I wouldn’t have brought you the proposal otherwise."
     },
     {
       "speaker": "serene",
-      "text": "I can't. This tells us what happened to those workers. It doesn't explain the recent surges."
+      "text": "Aether gathers there naturally. People have cared for that place for generations. They tend the grove in remembrance of those they’ve lost."
     },
     {
-      "speaker": "caelan",
-      "text": "May I ask what the work would involve?"
+      "speaker": "serene",
+      "text": "The sanctuary buildings are part of that keeping. So are the trees, and the ground beneath them."
     },
     {
       "speaker": "aldric",
-      "text": "A small cut, with my engineer present. If we encounter old masonry, we stop."
+      "text": "Then the plan needs to account for all of it."
     },
     {
       "speaker": "serene",
-      "text": "*unfolds the old plan* These foundations disappear into the hillside. We don't know where your first cut would meet them."
+      "text": "Yes. And there is still a great deal we cannot account for."
+    },
+    {
+      "speaker": "serene",
+      "text": "These foundations continue into the hillside. The plan never shows where they end.",
+      "cue": "open_plan"
     },
     {
       "speaker": "aldric",
-      "text": "Then help us establish that. I've come through two other communities waiting for repairs. They need an answer too."
+      "text": "My engineer could supervise a shallow trial, away from the marked walls. If we encounter masonry, we stop."
     },
     {
       "speaker": "serene",
-      "text": "Take the stone we've set aside for the courtyard. I'll have food prepared for the crew, and I'll walk the boundary with your engineer."
+      "text": "We would already have opened the ground by then."
     },
     {
       "speaker": "aldric",
-      "text": "*his expression softens* Thank you. That will help. But it won't give us enough."
+      "text": "That is how we establish what is there."
     },
     {
       "speaker": "serene",
-      "text": "*quietly* I know. I'm asking you to investigate ground we have reason to distrust. I owe you my help in doing that."
+      "text": "Ordinarily, yes. But there’s an account I want your engineer to read first."
+    },
+    {
+      "speaker": "serene",
+      "text": "Workers opened a passage beneath the sanctuary. A discharge injured them. They closed the passage again.",
+      "cue": "open_account"
     },
     {
       "speaker": "aldric",
-      "text": "The trial would be shallow, clear of every wall marked here. I'm asking to find out what stone is there."
+      "text": "*reads for a moment* Did they find what caused it?"
     },
     {
       "speaker": "serene",
-      "text": "And I can't tell you that the unmarked ground is clear. Let us inspect the surface together. Your engineer can have copies of both records, and I'll request any further plans and accounts the order holds."
+      "text": "They left no explanation."
     },
     {
       "speaker": "aldric",
-      "text": "You're agreeing to the inspection, then?"
+      "text": "Could it have anything to do with the recent lightning?"
     },
     {
       "speaker": "serene",
-      "text": "On the surface, yes. I am not endorsing the trial cut. That account concerns an opening too; we don't yet know what made it dangerous."
+      "text": "I can’t tell you that. This account is much older."
     },
     {
       "speaker": "aldric",
-      "text": "*looks back at the plan* I'll have my engineer speak with you. And please send for those records."
+      "text": "Then we need someone to examine the site."
     },
     {
       "speaker": "serene",
-      "text": "I will. We'll arrange the stone and the meals as well."
+      "text": "We do. Your engineer and I can walk it together. Inspect the surface, compare it with the plan, and see what further records we can obtain."
     },
     {
       "speaker": "aldric",
-      "text": "Thank you. I still need an answer about the seam."
+      "text": "And the trial cut?"
     },
     {
       "speaker": "serene",
-      "text": "I know. I haven't put your request aside."
+      "text": "I can agree to the inspection. I cannot endorse opening the ground yet."
+    },
+    {
+      "speaker": "serene",
+      "text": "Take the stone we set aside for the courtyard repairs."
+    },
+    {
+      "speaker": "aldric",
+      "text": "You still need that work done."
+    },
+    {
+      "speaker": "serene",
+      "text": "We can put it off. I’ll arrange meals for the crew as well."
+    },
+    {
+      "speaker": "aldric",
+      "text": "*his expression softens* Thank you. That will help."
+    },
+    {
+      "speaker": "serene",
+      "text": "But it won’t be enough."
+    },
+    {
+      "speaker": "aldric",
+      "text": "No."
+    },
+    {
+      "speaker": "serene",
+      "text": "I know."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I’ll have my engineer speak with you. Please send for the records."
+    },
+    {
+      "speaker": "serene",
+      "text": "I will."
+    },
+    {
+      "speaker": "aldric",
+      "text": "And when we’ve done the inspection, we’ll need to discuss the seam again."
+    },
+    {
+      "speaker": "serene",
+      "text": "Yes."
     }
   ],
   "aftermath": [
     {
       "speaker": "caelan",
-      "text": "Was he angry with you?"
+      "text": "*quietly* He looked relieved when you offered the stone."
     },
     {
       "speaker": "serene",
-      "text": "Some of it, I think."
+      "text": "There are people waiting for it."
     },
     {
       "speaker": "caelan",
-      "text": "He looked tired."
+      "text": "I thought that might settle things for a while."
     },
     {
       "speaker": "serene",
-      "text": "It's been a difficult journey. There are people waiting for him to make things better."
+      "text": "It settles what we can give him today."
     },
     {
       "speaker": "caelan",
-      "text": "You still have more records to find?"
+      "text": "And he’ll ask about the quarry again."
     },
     {
       "speaker": "serene",
-      "text": "I hope so. I'll send the request while the meal is cleared."
+      "text": "I expect so."
     },
     {
       "speaker": "caelan",
-      "text": "I liked him."
+      "text": "*after a moment* I liked him."
     },
     {
       "speaker": "serene",
       "text": "So do I."
     },
     {
-      "speaker": "tomas",
-      "text": "Caelan? Can you come and look at the lanterns?"
+      "speaker": "caelan",
+      "text": "That makes it harder."
     },
     {
       "speaker": "serene",
-      "text": "Go and help him. We still have a festival to get ready for."
+      "text": "Yes."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Caelan? When you’re finished, can you come and look at the lanterns?"
     },
     {
       "speaker": "caelan",
-      "text": "I'm coming."
+      "text": "What’s wrong with them?"
+    },
+    {
+      "speaker": "tomas",
+      "text": "Nothing. I want to show you."
+    },
+    {
+      "speaker": "serene",
+      "text": "Go on. I have a letter to write."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. I’m coming."
     }
   ],
   "preparations_after": [
     {
       "speaker": "serene",
-      "text": "The food will be ready when you bring the visitors."
+      "text": "Everything’s ready here. You’ll find the visitors by the lower bridge."
     }
   ],
   "arrival_reminder": [
@@ -439,46 +410,18 @@
       "text": "Lead the way, Caelan. I'll follow you."
     }
   ],
-  "dispute_after_venn": [
-    {
-      "speaker": "venn_father",
-      "text": "I'm sorry you had to stand through that."
-    },
-    {
-      "speaker": "caelan",
-      "text": "I was only bringing him to lunch."
-    },
-    {
-      "speaker": "venn_father",
-      "text": "Then I hope you get yours. I'd better get this grain to Halden."
-    }
-  ],
-  "dispute_after_foreman": [
-    {
-      "speaker": "road_foreman",
-      "text": "We'll start on the bedding. I still have to find another cart for the stone."
-    },
-    {
-      "speaker": "caelan",
-      "text": "I hope you can."
-    },
-    {
-      "speaker": "road_foreman",
-      "text": "So do I. Mind the tools as you pass."
-    }
-  ],
   "hospitality_after": [
     {
       "speaker": "tomas",
-      "text": "I thought he'd have someone carry everything for him."
+      "text": "Do you think he’d show me the brake once he’s finished?"
     },
     {
       "speaker": "caelan",
-      "text": "He still has to sit in the wagon."
+      "text": "You could ask him."
     },
     {
       "speaker": "tomas",
-      "text": "I suppose. I'd like to see that ridge road for myself."
+      "text": "I will."
     }
   ],
   "aldric_after": [
@@ -502,37 +445,154 @@
   "clerk_after": [
     {
       "speaker": "regent_clerk",
-      "text": "I'll send the revised hire terms to the foreman."
-    }
-  ],
-  "venn_waiting": [
-    {
-      "speaker": "venn_father",
-      "text": "I agreed to a day. I need my cart back."
-    }
-  ],
-  "foreman_waiting": [
-    {
-      "speaker": "road_foreman",
-      "text": "I need to speak with the regent when he has a moment."
+      "text": "I’ll make sure the engineer receives Mother Serene’s copies."
     }
   ],
   "clerk_waiting": [
     {
       "speaker": "regent_clerk",
-      "text": "We've still to reach the sanctuary. Is Serene expecting us?"
+      "text": "I’ll wait until his lordship has finished."
     }
   ],
   "tomas_waiting": [
     {
       "speaker": "tomas",
-      "text": "I'm trying to get these chairs ready before everyone arrives."
+      "text": "Everything’s ready. I hope they’re hungry."
     }
   ],
   "arrival_waiting": [
     {
       "speaker": "aldric",
       "text": "Mother Serene is expecting us. We'll wait here until she's ready."
+    }
+  ],
+  "lucan_waiting": [
+    {
+      "speaker": "lucan",
+      "text": "The regent is expected inside. Are you taking us in?"
+    }
+  ],
+  "lucan_after": [
+    {
+      "speaker": "lucan",
+      "text": "I’ll stay with his lordship."
+    }
+  ],
+  "arrival_unarmed": [
+    {
+      "speaker": "caelan",
+      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Thank you, Caelan. Have we kept her waiting?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Mother Serene is expecting you."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Then we’ve arrived at a very good moment."
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "*under his breath* Finally."
+    },
+    {
+      "speaker": "aldric",
+      "text": "*glances back with a tired smile* Yes. I heard that."
+    },
+    {
+      "speaker": "aldric",
+      "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Through the courtyard?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yes. Then through the hall to the dining room."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Good. I’ll follow behind."
+    },
+    {
+      "speaker": "caelan",
+      "text": "This way."
+    }
+  ],
+  "arrival_before_homecoming": [
+    {
+      "speaker": "caelan",
+      "text": "Regent Aldric? Mother Serene sent me. I’m Caelan."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Thank you, Caelan. Have we kept her waiting?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Mother Serene is expecting you."
+    },
+    {
+      "speaker": "aldric",
+      "text": "Then we’ve arrived at a very good moment."
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "*under his breath* Finally."
+    },
+    {
+      "speaker": "aldric",
+      "text": "*glances back with a tired smile* Yes. I heard that."
+    },
+    {
+      "speaker": "aldric",
+      "text": "This is Lucan Rooke, my guard. Lucan, Caelan is showing us in."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Through the courtyard?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yes. Then through the hall to the dining room."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Good. I’ll follow behind."
+    },
+    {
+      "speaker": "lucan",
+      "text": "That’s an unusual sword."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Mira made it. She gave it to me this morning."
+    },
+    {
+      "speaker": "lucan",
+      "text": "This morning?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "An early birthday present."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Keep it clear of the gatepost. You’re wearing it wider than you think."
+    },
+    {
+      "speaker": "caelan",
+      "text": "*adjusts the scabbard* Thank you.",
+      "cue": "caelan_scabbard"
+    },
+    {
+      "speaker": "caelan",
+      "text": "This way."
     }
   ]
 }

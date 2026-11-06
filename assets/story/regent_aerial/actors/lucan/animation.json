@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "canvas": [
+    48,
+    64
+  ],
+  "anchor": [
+    24,
+    56
+  ],
+  "poses": {
+    "overhead": "overhead.png",
+    "oblique": "oblique.png"
+  },
+  "loops": {},
+  "overhead_facing": "north",
+  "oblique_facing": "northwest",
+  "source": "imagegen-authored camera-specific Lucan travel poses; approved identity, lowered shield and low-carried sword",
+  "source_recipe": "assets/source/cinematics/regent_arrival/actors/lucan/aerial_source.json"
+}

@@ -1,8 +1,8 @@
 """The Regent's Road: Caelan welcomes visitors and witnesses adult decisions.
 
-The hire agreement is handled by Aldric and his clerk. The player has no legal
-inspection task. Durable scene checkpoints are separate from NPC paths and
-partially read conversations, so leaving and loading cannot accept unread prose.
+Caelan guides Aldric and Lucan directly to the sanctuary. Durable scene
+checkpoints are separate from NPC paths and partially read conversations;
+leaving or loading cannot accept unread prose or authorize excavation.
 """
 from collections import deque
 import json
@@ -15,15 +15,17 @@ from npc_routines import find_path
 from npc_following import following_facing, idle_following_facing, reset_following_facing
 from quests import REGENT_QUEST, MILL_QUEST, LANTERN_QUEST, QuestLog
 from regent_actors import StoryActor
+from regent_actions import RegentActions
 from social import facing_toward
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/regent/'
-STAGES = ('idle', 'assigned', 'met', 'dispute', 'releasing', 'escorting',
-          'welcome', 'hosted', 'discussion', 'done')
+STAGES = ('idle', 'assigned', 'escorting', 'welcome', 'hosted', 'discussion', 'done')
+LEGACY_STAGES = ('idle', 'assigned', 'met', 'dispute', 'releasing', 'escorting',
+                 'welcome', 'hosted', 'discussion', 'done')
+LEGACY_ESCORT = frozenset(('met', 'dispute', 'releasing', 'escorting'))
 OBJECTIVES = ('meet_visitors', 'accompany_visit', 'welcome_party', 'speak_serene')
-PREFIX = {'idle': 0, 'assigned': 0, 'met': 1, 'dispute': 1,
-          'releasing': 1, 'escorting': 1, 'welcome': 2,
+PREFIX = {'idle': 0, 'assigned': 0, 'escorting': 1, 'welcome': 2,
           'hosted': 3, 'discussion': 3, 'done': 4}
 
 
@@ -38,25 +40,18 @@ class RegentQuest:
         self.layout = read('layout.json');self.points = self.layout
         self.lines = read('scene.json');art = read('art.json')
         self.actors = {rec['id']: StoryActor(rec, self.town) for rec in art['actors']}
-        self.aldric = self.actors['aldric'];self.foreman = self.actors['road_foreman']
+        self.aldric = self.actors['aldric'];self.lucan = self.actors['lucan']
         self.clerk = self.actors['regent_clerk'];self.driver = self.actors['regent_driver']
-        self.attendant = self.actors.get('regent_attendant')
-        self.party = [a for a in (self.aldric, self.clerk, self.driver, self.attendant) if a is not None]
+        self.party = [self.aldric, self.clerk, self.driver, self.lucan]
         self.serene = next(a for a in game.persistent_npcs if a.data['id'] == 'mother_serene')
         self.tomas = next(a for a in game.persistent_npcs if a.data['id'] == 'tomas')
-        self.venn = game.venn_visit.family['father'];self.venn_home = game.venn_visit.home
-        self.venn_home_position = tuple(self.venn.position)
-        self.venn.moving = False;self.venn.walk_ms = 0.;self.venn.opens_doors = True
         self._worlds = {a: self.town for a in self.actors.values()}
-        self._worlds[self.venn] = self.venn_home
-        self._venn_walks = self._load_venn_art(art['existing_actors']['venn_father']['art'])
-        self._venn_haul_walks = self._load_venn_art(art['existing_actors']['venn_father']['art'], 'haul_walks')
         self.stage = 'idle';self.dialogue = None;self.action = None
         self.paths = {};self.retries = {};self._owned = False;self._setup = False
         self._tomas_handed_off = False
         self._serene_handed_off = False
         self._preps_ready = False;self._group_ready = False;self._aside_ready = False
-        self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
+        self._meal_ready = False
         self.trail = deque(maxlen=1024);self.last_scene = None
         self.surface_props = []
         for record in art['props']:
@@ -65,20 +60,11 @@ class RegentQuest:
                                        'surface': next(iter(states.values()))})
         self.town.attach_routine_props(self)
         self.dining.attach_routine_props(self)
-        self.cart = next(p for p in self.surface_props if p['id'] == 'venn_cart')
         self._prior_blockers = getattr(self.town, 'task_blockers', lambda: ())
         self.town.task_blockers = self._task_blockers
         self._prior_dining_blockers = getattr(self.dining, 'task_blockers', lambda: ())
         self.dining.task_blockers = self._dining_blockers
-
-    def _load_venn_art(self, path, key='walks'):
-        meta = json.loads((ROOT/path).read_text())
-        key = key if key in meta else 'walks'
-        if 'sheet' in meta:
-            sheet = self.town.image(meta['sheet'])
-            return {d: [sheet.subsurface(f['rect']).copy() for f in frames]
-                    for d, frames in meta[key].items()}
-        return {d: [self.town.image(p) for p in frames] for d, frames in meta[key].items()}
+        self.scene_actions = RegentActions(self)
 
     @property
     def active(self):return self.game.quests.status(REGENT_QUEST) in ('active', 'ready')
@@ -89,21 +75,27 @@ class RegentQuest:
                 and (arrival is None or arrival.arrival_complete))
     @property
     def locks_player(self):return False
-    @property
-    def cart_released(self):return STAGES.index(self.stage) >= STAGES.index('releasing')
-
-    def to_dict(self):return {'version': 1, 'stage': self.stage}
+    def to_dict(self):return {'version': 2, 'stage': self.stage}
 
     @staticmethod
     def valid_snapshot(data):
-        return (isinstance(data, dict) and set(data) == {'version', 'stage'} and
-                type(data['version']) is int and data['version'] == 1 and
-                isinstance(data['stage'], str) and data['stage'] in STAGES)
+        if (not isinstance(data, dict) or set(data) != {'version', 'stage'}
+                or type(data['version']) is not int or not isinstance(data['stage'], str)):
+            return False
+        stages = LEGACY_STAGES if data['version'] == 1 else STAGES if data['version'] == 2 else ()
+        return data['stage'] in stages
+
+    @staticmethod
+    def migrate_snapshot(data):
+        if not RegentQuest.valid_snapshot(data):return data
+        return {'version': 2, 'stage': ('escorting' if data['version'] == 1
+                and data['stage'] in LEGACY_ESCORT else data['stage'])}
 
     @staticmethod
     def valid_journey(data):
         record = data['regent_quest']
         if not RegentQuest.valid_snapshot(record):return False
+        record = RegentQuest.migrate_snapshot(record)
         quests = QuestLog()
         if not quests.restore(data.get('quests')):return False
         status = quests.status(REGENT_QUEST);stage = record['stage']
@@ -133,8 +125,9 @@ class RegentQuest:
         actor.story_visible = False;actor.moving = False;actor.end_conversation()
 
     def release_pose(self):
+        self.scene_actions.release()
         if not self._owned:return
-        for actor in (self.serene, self.tomas, self.venn):
+        for actor in (self.serene, self.tomas):
             if self._handed_off(actor):continue
             for key in ('story_sprite', 'story_draw_anchor'):
                 if hasattr(actor, key):delattr(actor, key)
@@ -155,29 +148,24 @@ class RegentQuest:
             actor.story_paused = True;actor.story_following = False
             actor.end_conversation()
         for actor in self.party:actor.story_following = self.stage != 'idle'
-        self.venn.story_following = self.stage != 'idle'
 
     def restore(self, data=None):
         if data is not None and not self.valid_snapshot(data):return False
         self.release_pose();self.dialogue = None;self.action = None
+        self.scene_actions.reset()
         self._tomas_handed_off = False
         self._serene_handed_off = False
         self.paths.clear();self.retries.clear();self.trail.clear();self.last_scene = None
-        self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
         self._preps_ready = False;self._group_ready = False;self._setup = False
-        if data:self.stage = data['stage']
+        self._meal_ready = False
+        if data:self.stage = self.migrate_snapshot(data)['stage']
         else:
             status = self.game.quests.status(REGENT_QUEST)
             done = len(self.game.quests.states[REGENT_QUEST]['completed_objectives'])
             self.stage = ('done' if status == 'completed' else
-                          ('assigned', 'met', 'welcome', 'hosted')[min(3, done)] if status == 'active' else 'idle')
+                          ('assigned', 'escorting', 'welcome', 'hosted')[min(3, done)] if status == 'active' else 'idle')
         for actor in self.actors.values():self._hide(actor)
-        # Previous live borrowing must not strand the family after New Game.
-        if not self.eligible:
-            landing = self._landing(self.venn, self.venn_home_position, self.venn_home)
-            if landing is not None:self._place(self.venn, self.venn_home, landing)
-            self._venn_returned = True
-            return True
+        if not self.eligible:return True
         self._claim();self._setup_stage(force=True)
         self._sync_props();self._pose_owned()
         return True
@@ -204,50 +192,39 @@ class RegentQuest:
 
     def _setup_stage(self, force=False):
         self._claim()
-        serene_point = 'serene_meal' if STAGES.index(self.stage) >= STAGES.index('welcome') else 'serene'
+        serene_point = ('aftermath' if self.stage in ('discussion', 'done') else
+                        'serene_meal' if self.stage in ('welcome', 'hosted') else 'serene')
         ready = [True if self._serene_handed_off else self._stage_routine(self.serene, self.points[serene_point], force),
                  True if self._tomas_handed_off else self._stage_routine(self.tomas, self.points['tomas'], force)]
         self._preps_ready = all(ready)
-        party_phase = ('arrival' if self.stage in ('idle', 'assigned') else
-                       'road' if self.stage in ('met', 'dispute', 'releasing', 'escorting') else 'courtyard')
-        party_world = self.dining if party_phase == 'courtyard' else self.town
-        for actor, prefix in self._party_keys():
-            target = self.points[prefix+'_'+party_phase]
+        phase = 'arrival' if self.stage in ('idle', 'assigned', 'escorting') else 'courtyard'
+        world = self.game.world if self.stage == 'escorting' else self.dining if phase == 'courtyard' else self.town
+        for index, (actor, prefix) in enumerate(self._party_keys()):
+            # A legacy roadside checkpoint becomes an ordinary escort beside
+            # the saved player, never a completed cart settlement or a jump to lunch.
+            target = (self.game.player.position + pygame.Vector2(((-28,28),(28,28),(-42,0),(42,0))[index])
+                      if self.stage == 'escorting' else self.points[prefix+'_'+phase])
             if self.stage in ('discussion', 'done') and actor is self.aldric:target = self.points['aldric_aside']
-            landing = self._landing(actor, target, party_world)
-            if landing is not None:self._place(actor, party_world, landing)
-        if self.stage == 'idle':
-            # The cinematic has already brought the visitors into town. They
-            # wait by the southern brook approach before Caelan accepts his
-            # hosting task; Mr. Venn and the road crew remain unborrowed.
-            self._setup = self._preps_ready
-            return
-        self.foreman.story_following = False
-        target = self.points['crew_resume'] if self.cart_released else self.points['foreman']
-        landing = self._landing(self.foreman, target)
-        if landing is not None:self._place(self.foreman, self.town, landing)
-        if self.stage == 'done':
-            landing = self._landing(self.venn, self.venn_home_position, self.venn_home)
-            if landing is not None:self._place(self.venn, self.venn_home, landing)
-            self._delivery_done = True;self._venn_returned = True;self.venn.story_following = False
-        else:
-            delivered = STAGES.index(self.stage) >= STAGES.index('escorting')
-            pos = self.points['venn_delivery'] if delivered else self.points['venn_road']
-            landing = self._landing(self.venn, pos)
-            if landing is not None:self._place(self.venn, self.town, landing)
-            self._delivery_done = delivered;self._venn_returned = False
+            landing = self._landing(actor, target, world)
+            if landing is not None:self._place(actor, world, landing)
         self._setup = self._preps_ready
-        self._group_ready = self.stage in ('dispute', 'welcome', 'hosted', 'discussion', 'done')
+        self._group_ready = self.stage in ('welcome', 'hosted', 'discussion', 'done')
         self._aside_ready = self.stage in ('discussion', 'done')
+        if self.stage in ('welcome', 'hosted'):
+            self._meal_ready = all(self._world(actor) is self.dining
+                and actor.position.distance_to(seat['approach']) < 1
+                for actor in (*self.party, self.serene, self.tomas)
+                if (seat := self.points.get('meal_seats', {}).get(actor.data['id'])))
 
     def _party_keys(self):
-        return [(a, prefix) for a, prefix in ((self.aldric, 'aldric'), (self.clerk, 'clerk'),
-                (self.driver, 'driver'), (self.attendant, 'attendant')) if a is not None]
+        return [(self.aldric, 'aldric'), (self.clerk, 'clerk'),
+                (self.driver, 'driver'), (self.lucan, 'lucan')]
 
     def _save(self):self._sync_props();self.game.save_progress()
 
     def _transition(self, stage):
         self.stage = stage;self._group_ready = False
+        self._meal_ready = self._meal_ready and stage in ('welcome', 'hosted')
         self.paths.clear();self.retries.clear();self.trail.clear();self.last_scene = None
         self._save()
 
@@ -255,7 +232,7 @@ class RegentQuest:
 
     def _speak(self, kind, callback=None):
         if self.game.social.locked:return False
-        actors = tuple(actor for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman)
+        actors = tuple(actor for actor in (*self.party, self.serene, self.tomas)
                        if not self._handed_off(actor))
         for actor in actors:
             if self._world(actor) is self.game.world:
@@ -265,15 +242,21 @@ class RegentQuest:
             self.dialogue = None
             for actor in actors:actor.end_conversation()
             if callback is not None:callback()
-        result = self.game.social.start_script(self.lines[kind], finished, 'regent_'+kind)
+        source = kind
+        if kind == 'arrival':
+            if self.game.inventory.quantity('caelan_gearblade') == 0:source = 'arrival_unarmed'
+            elif not self.game.mill_quest.cups_placed:source = 'arrival_before_homecoming'
+        self._dialogue_lines = self.lines[source]
+        result = self.game.social.start_script(self._dialogue_lines, finished, 'regent_'+kind)
         self.dialogue = kind if result else None
         if result:self.game.social.blocked.update(actors)
         return result
 
     def on_dialogue_cancelled(self, identifier):
         if identifier and identifier.startswith('regent_'):
+            self.scene_actions.release()
             self.dialogue = None
-            for actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman):
+            for actor in (*self.party, self.serene, self.tomas):
                 if not self._handed_off(actor):actor.end_conversation()
 
     def can_speak(self, identifier):
@@ -285,8 +268,8 @@ class RegentQuest:
         if identifier == 'mother_serene':
             if self._serene_handed_off:return NotImplemented
             return '!' if self.stage == 'idle' else '?' if self.stage == 'discussion' and self._aside_ready else None
-        if identifier == 'aldric':return '?' if self.stage in ('assigned', 'dispute', 'welcome', 'hosted') else None
-        if identifier in ('road_foreman', 'regent_clerk', 'regent_driver', 'regent_attendant'):return None
+        if identifier == 'aldric':return '?' if self.stage in ('assigned', 'welcome', 'hosted') else None
+        if identifier in ('lucan', 'regent_clerk', 'regent_driver'):return None
         return NotImplemented
 
     def _near(self, where, radius=38):return self.game.player.position.distance_to(where)<=radius
@@ -294,7 +277,7 @@ class RegentQuest:
     def try_conversation(self, actor):
         if not self.eligible:return None
         if self._handed_off(actor):return None
-        if (actor in (*self.party, self.serene, self.tomas, self.venn, self.foreman)
+        if (actor in (*self.party, self.serene, self.tomas)
                 and self._world(actor) is not self.game.world):return False
         if actor is self.serene:
             if self.stage == 'idle':return self._speak('preparations', self._accept) if self._preps_ready else False
@@ -309,20 +292,13 @@ class RegentQuest:
         if actor is self.aldric:
             if self.stage == 'idle':return self._speak('arrival_waiting')
             if self.stage == 'assigned':return self._speak('arrival', self._met)
-            if self.stage == 'dispute':return self._speak('dispute', self._settled) if self._group_ready else False
             if self.stage == 'escorting':return False
             if self.stage == 'welcome':return self._speak('welcome', self._welcomed) if self._group_ready else False
             if self.stage == 'hosted':return self._speak('discussion', self._discussed) if self._group_ready else False
             return self._speak('aldric_after' if self.stage in ('discussion', 'done') else 'arrival_reminder')
-        if actor is self.venn and self.stage != 'idle' and not self._venn_returned:
-            if self.stage == 'dispute' and self._group_ready:return self._speak('dispute', self._settled)
-            return self._speak('dispute_after_venn' if self.cart_released else 'venn_waiting')
-        if actor is self.foreman:
-            if self.stage == 'dispute' and self._group_ready:return self._speak('dispute', self._settled)
-            return self._speak('dispute_after_foreman' if self.cart_released else 'foreman_waiting')
         if actor is self.driver:return self._speak('driver_after')
-        if actor is self.clerk:return self._speak('clerk_after' if self.cart_released else 'clerk_waiting')
-        if actor is self.attendant:return None
+        if actor is self.clerk:return self._speak('clerk_after' if self.stage in ('discussion', 'done') else 'clerk_waiting')
+        if actor is self.lucan:return self._speak('lucan_after' if self.stage in ('discussion', 'done') else 'lucan_waiting')
         return None
 
     def _target(self):
@@ -334,13 +310,12 @@ class RegentQuest:
             if self.stage == 'discussion' and self._aside_ready and self._near(self.points['aftermath']):return 'aftermath'
         elif self.game.world is self.town:
             if self.stage == 'assigned' and self._near(self.points['arrival'], 48):return 'arrival'
-            if self.stage == 'dispute' and self._group_ready and self._near(self.points['road'], 60):return 'dispute'
         return None
 
     def interact(self):
         if self.game.social.locked:return False
         target = self._target()
-        callbacks = {'preparations': self._accept, 'arrival': self._met, 'dispute': self._settled,
+        callbacks = {'preparations': self._accept, 'arrival': self._met,
                      'welcome': self._welcomed, 'discussion': self._discussed, 'aftermath': self._finish}
         return self._speak(target, callbacks[target]) if target is not None else False
 
@@ -352,12 +327,7 @@ class RegentQuest:
 
     def _met(self):
         if self.stage != 'assigned':return
-        self._complete('meet_visitors');self._transition('met')
-
-    def _settled(self):
-        if self.stage != 'dispute':return
-        self._release_time = 0.;self._delivery_index = 1;self._delivery_done = False;self._venn_returned = False
-        self._transition('releasing')
+        self._complete('meet_visitors');self._transition('escorting')
 
     def _welcomed(self):
         if self.stage != 'welcome':return
@@ -398,7 +368,6 @@ class RegentQuest:
             return 'Let Aldric step aside before speaking with Serene.'
         target = self._target()
         return {'preparations': 'E: Help welcome the visitors', 'arrival': 'E: Greet Regent Aldric',
-                'dispute': 'E: Listen as Aldric speaks with the road crew',
                 'welcome': 'E: Join the sanctuary welcome', 'discussion': 'E: Listen to Aldric and Serene',
                 'aftermath': 'E: Speak with Mother Serene'}.get(target, '')
 
@@ -406,9 +375,6 @@ class RegentQuest:
         if not self.eligible:return ''
         return {'idle': 'Meet Mother Serene in the sanctuary dining room.',
                 'assigned': 'Meet the visitors by the lower bridge.',
-                'met': 'Accompany Aldric through the village toward the road crew.',
-                'dispute': 'Listen as Aldric handles the road crew’s cart dispute.',
-                'releasing': 'Give Mr. Venn room to collect his cart.',
                 'escorting': 'Bring Aldric’s party through the sanctuary hall to the dining room.',
                 'welcome': 'Join the welcome in the sanctuary dining room.',
                 'hosted': 'Listen to Aldric and Serene after the meal.',
@@ -418,14 +384,8 @@ class RegentQuest:
     def journal_detail(self):return self.tracker_text()
 
     def _move(self, actor, desired, seconds, speed=74):
-        # The person handling the cart plans his own walking path, not a route
-        # around the cart that moves with him. Everyone else still sees it.
-        previous = getattr(self, '_cart_owner_moving', False)
-        if actor is self.venn:self._cart_owner_moving = True
-        try:
-            with following_facing(actor, seconds):
-                return self._move_impl(actor, desired, seconds, speed)
-        finally:self._cart_owner_moving = previous
+        with following_facing(actor, seconds):
+            return self._move_impl(actor, desired, seconds, speed)
 
     def _move_impl(self, actor, desired, seconds, speed=74):
         world = self._world(actor);desired = point(desired);actor.moving = False
@@ -515,32 +475,26 @@ class RegentQuest:
     def _group_to(self, phase, seconds):
         ready = []
         world = self.dining if phase == 'courtyard' else self.town
-        for actor, prefix in self._party_keys():
-            desired = self.points[prefix+'_'+phase]
+        members = self._party_keys()
+        if phase == 'courtyard':
+            members += [(self.serene, 'serene_meal'), (self.tomas, 'tomas')]
+        for actor, prefix in members:
+            if self._handed_off(actor):continue
+            seat = self.points.get('meal_seats', {}).get(actor.data['id']) if phase == 'courtyard' else None
+            desired = (seat['approach'] if seat else self.points[prefix]
+                       if actor in (self.serene, self.tomas) else self.points[prefix+'_'+phase])
             ready.append(self._travel(actor, world, seconds) and self._move(actor, desired, seconds))
         if phase == 'courtyard':
-            if not self._serene_handed_off:
-                ready.append(self._travel(self.serene, self.dining, seconds) and
-                             self._move(self.serene, self.points['serene_meal'], seconds, 48))
+            self._meal_ready = all(ready)
         return all(ready)
 
-    def _deliver_cart(self, seconds):
-        if self._delivery_done:return
-        route = self.points['cart_route']
-        self._travel(self.venn, self.town, seconds)
-        if self._move(self.venn, route[min(self._delivery_index, len(route)-1)], seconds, 54):
-            self._delivery_index += 1
-            if self._delivery_index>=len(route):self._delivery_done = True;self.venn.moving = False
-
     def _pose_owned(self):
-        for actor in (self.serene, self.tomas, self.venn):
+        for actor in (self.serene, self.tomas):
             if self._handed_off(actor):continue
-            if actor is self.venn and (self._venn_returned or self.stage == 'idle'):continue
             if not self._owned or actor not in self._world(actor).npcs:continue
             direction = actor.facing
-            hauling = actor is self.venn and self.cart_released and not self._delivery_done
-            frames = (self._venn_haul_walks if hauling else self._venn_walks)[direction] if actor is self.venn else actor.walks[direction]
-            if actor.moving or hauling:
+            frames = actor.walks[direction]
+            if actor.moving:
                 frame = frames[int(getattr(actor, 'walk_ms', 0.)//140)%len(frames)]
                 image = frame[0] if isinstance(frame, tuple) else frame
             else:image = actor.idles[direction]
@@ -554,19 +508,7 @@ class RegentQuest:
 
     def _sync_props(self):
         for prop in self.surface_props:
-            state = 'settled' if self.stage in ('discussion', 'done') else 'released' if self.cart_released else 'waiting'
-            prop['surface'] = prop['states'].get(state, next(iter(prop['states'].values())))
-            if prop['id'] == 'venn_cart':
-                offset = pygame.Vector2(self.points.get('cart_actor_offset', (8, -26)))
-                if self.stage in ('releasing', 'escorting', 'welcome', 'hosted', 'discussion'):
-                    prop['position'] = list(self.venn.position+offset)
-                    prop['sort_y'] = self.venn.position.y+6
-                elif self.stage == 'done':
-                    prop['position'] = (list(self.points['cart_end']) if self._delivery_done else list(self.venn.position+offset))
-                    prop['sort_y'] = self.points['venn_delivery'][1]+6 if self._delivery_done else self.venn.position.y+6
-                else:
-                    prop['position'] = list(self.venn.position+offset) if self.stage != 'idle' else list(self.points['cart_start'])
-                    prop['sort_y'] = self.venn.position.y+6 if self.stage != 'idle' else self.points['venn_road'][1]+6
+            prop['surface'] = prop['states'].get('waiting', next(iter(prop['states'].values())))
 
     def _task_blockers(self):
         blockers = list(self._prior_blockers())
@@ -574,9 +516,6 @@ class RegentQuest:
             if (prop['scene'] == self.town.data['id'] and prop.get('blocker')
                     and self.surface_prop_visible(prop)):
                 blockers.append(pygame.Rect(prop['blocker']))
-        if self.surface_prop_visible(self.cart) and not getattr(self, '_cart_owner_moving', False):
-            x, y = self.cart['position']
-            blockers.append(pygame.Rect(round(x)+14, round(y)+20, 47, 12))
         return blockers
 
     def _dining_blockers(self):
@@ -587,13 +526,6 @@ class RegentQuest:
                 blockers.append(pygame.Rect(prop['blocker']))
         return blockers
 
-    def _return_venn(self, seconds):
-        if not self._delivery_done or self._venn_returned:return
-        if self._travel(self.venn, self.venn_home, seconds) and self._move(self.venn, self.venn_home_position, seconds):
-            self._venn_returned = True;self.venn.story_following = False;self.venn.moving = False
-            for key in ('story_sprite', 'story_draw_anchor'):
-                if hasattr(self.venn, key):delattr(self.venn, key)
-
     def on_enter_scene(self, origin, transition):
         self.trail.clear();self.last_scene = None;self.paths.clear()
 
@@ -603,31 +535,24 @@ class RegentQuest:
         if not self._setup:
             self._setup_stage(force=False)
         if not self._setup:return
-        for actor in (*self.party, self.foreman, self.venn, self.serene, self.tomas):
+        for actor in (*self.party, self.serene, self.tomas):
             if not self._handed_off(actor):actor.moving = False
         if not self.dialogue:
-            if self.stage == 'met':
+            if self.stage == 'escorting':
                 self._follow_party(seconds)
-                if self.game.world is self.town and self._near(self.points['road'], 54) and self._world(self.aldric) is self.town and self.aldric.position.distance_to(self.points['road'])<96:
-                    self._transition('dispute')
-            elif self.stage == 'dispute':self._group_ready = self._group_to('road', seconds)
-            elif self.stage == 'releasing':
-                self._deliver_cart(seconds);self._release_time += seconds
-                self._move(self.foreman, self.points['crew_resume'], seconds, 44)
-                if self.venn.position.distance_to(self.points['venn_road'])>40:
-                    self._transition('escorting')
-            elif self.stage == 'escorting':
-                self._follow_party(seconds);self._deliver_cart(seconds)
-                self._move(self.foreman, self.points['crew_resume'], seconds, 44)
                 if self.game.world is self.dining and self._near(self.points['welcome'], 58) and self._world(self.aldric) is self.dining and self.aldric.position.distance_to(self.points['welcome'])<96:
                     self._complete('accompany_visit');self._transition('welcome')
             elif self.stage in ('welcome', 'hosted'):
-                self._group_ready = self._group_to('courtyard', seconds);self._deliver_cart(seconds)
+                self._group_ready = self._group_to('courtyard', seconds)
             elif self.stage in ('discussion', 'done'):
                 aside = self._landing(self.aldric, self.points['aldric_aside'], self.dining)
-                if aside is not None and self._move(self.aldric, aside, seconds, 52):self._aside_ready = True
-                self._deliver_cart(seconds)
-                if self.stage == 'done':self._return_venn(seconds)
+                aldric_ready = aside is not None and self._move(self.aldric, aside, seconds, 52)
+                serene_ready = self._serene_handed_off
+                if not serene_ready:
+                    station = self._landing(self.serene, self.points['aftermath'], self.dining)
+                    serene_ready = station is not None and self._move(self.serene, station, seconds, 48)
+                self._aside_ready = aldric_ready and serene_ready
         self._pose_owned();self._sync_props()
+        self.scene_actions.update(seconds)
 
-    def draw_world(self, canvas, camera):pass
+    def draw_world(self, canvas, camera):self.scene_actions.draw_world(canvas, camera)

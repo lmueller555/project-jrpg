@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "canvas": [
+    80,
+    96
+  ],
+  "anchor": [
+    40,
+    92
+  ],
+  "poses": {
+    "stand_left": "stand_left.png",
+    "stand_back": "stand_back.png",
+    "turn_left_back": "stand_back.png"
+  },
+  "loops": {
+    "walk_left": [
+      {
+        "file": "walk_left_0.png",
+        "duration_ms": 140,
+        "phase": "near_contact"
+      },
+      {
+        "file": "walk_left_1.png",
+        "duration_ms": 140,
+        "phase": "near_passing"
+      },
+      {
+        "file": "walk_left_2.png",
+        "duration_ms": 140,
+        "phase": "far_contact"
+      },
+      {
+        "file": "walk_left_3.png",
+        "duration_ms": 140,
+        "phase": "far_passing"
+      }
+    ],
+    "walk_back": [
+      {
+        "file": "walk_back_0.png",
+        "duration_ms": 140,
+        "phase": "near_contact"
+      },
+      {
+        "file": "walk_back_1.png",
+        "duration_ms": 140,
+        "phase": "near_passing"
+      },
+      {
+        "file": "walk_back_2.png",
+        "duration_ms": 140,
+        "phase": "far_contact"
+      },
+      {
+        "file": "walk_back_3.png",
+        "duration_ms": 140,
+        "phase": "far_passing"
+      }
+    ],
+    "walk_left_back": [
+      {
+        "file": "walk_back_0.png",
+        "duration_ms": 140,
+        "phase": "near_contact"
+      },
+      {
+        "file": "walk_back_1.png",
+        "duration_ms": 140,
+        "phase": "near_passing"
+      },
+      {
+        "file": "walk_back_2.png",
+        "duration_ms": 140,
+        "phase": "far_contact"
+      },
+      {
+        "file": "walk_back_3.png",
+        "duration_ms": 140,
+        "phase": "far_passing"
+      }
+    ]
+  },
+  "gaits": {
+    "walk_left": {
+      "stride_pixels": 32
+    },
+    "walk_back": {
+      "stride_pixels": 32
+    },
+    "walk_left_back": {
+      "stride_pixels": 32
+    }
+  },
+  "source": "imagegen-authored cinematic travel poses matching approved tall Lucan identity and adult regent cast proportions; registered nearest export",
+  "view_aliases": {
+    "walk_left_back": "walk_back",
+    "turn_left_back": "stand_back"
+  }
+}

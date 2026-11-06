@@ -7,10 +7,10 @@ institutional history remain open.
 This descriptive title is not a chosen religion name or a declaration that
 every person in Elden Vale follows the same tradition.
 
-**Implementation:** These are lore foundations, not newly implemented scenes,
-map features or ritual animations. MQ03 currently presents the covenant,
-relief needs and shared hazard records; the additional site significance
-below still needs to be expressed in future scene work.
+**Implementation:** MQ03's revised ridge discussion now expresses the natural
+aether confluence, living memorial grove and communal keeping alongside the
+relief needs and shared hazard records. These foundations do not add a playable
+ridge map or new ritual animations, or define the confluence's workings.
 
 Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),

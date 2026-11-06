@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "exporter": "tools/export_regent_lucan.py",
+  "sources": {
+    "assets/source/cinematics/regent_arrival/actors/lucan/aerial_generated.png": "19dccf0cb42de5322ab69a5c25085b1198993b95ace93f99c31104eae5d21b6b",
+    "assets/source/cinematics/regent_arrival/actors/lucan/aerial_source.json": "8577cf759b5b9a2aa672b7d2dd1018cb1595ed232ece81f6c8fdc7bb5b519ff4"
+  },
+  "exports": {
+    "lucan/overhead.png": "77b290a47f38ca63aa2346287ed18919181c4062973b67671cd4357217e2743b",
+    "lucan/oblique.png": "5b49dbb3292e5591d807dc9e08172a5de63b24b1a291649fc964f2fc8317979b",
+    "lucan/animation.json": "199f4eb8885e83411630d8f7ebd24099eea2731e064b3d385ab806a5b4be74ed"
+  }
+}

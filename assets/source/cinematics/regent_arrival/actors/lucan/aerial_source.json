@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "source": "aerial_generated.png",
+  "source_sha256": "19dccf0cb42de5322ab69a5c25085b1198993b95ace93f99c31104eae5d21b6b",
+  "generation": "exec-2641bb45-2406-4e08-a10d-7a02aa79dccd.png",
+  "poses": {
+    "overhead": {
+      "bounds": [
+        505,
+        180,
+        847,
+        650
+      ],
+      "height": 28
+    },
+    "oblique": {
+      "bounds": [
+        1184,
+        144,
+        1543,
+        681
+      ],
+      "height": 34
+    }
+  },
+  "references": {
+    "assets/cinematics/companions/lucan/stand_front.png": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d",
+    "assets/source/companions/lucan/directional_idles/directional_sheet.png": "844873b01eb6a9b3d98aa8974d991e9d1fe85622345b325a53bd60b906174afa",
+    "assets/story/regent_aerial/actors/guard/overhead.png": "f62c2698c72d561da7e21d84ace13d56988224cc5a191cd4e6d99cf7f50f1361"
+  },
+  "prompt": "Two matching high-overhead and oblique travel poses for approved Lucan: brown hair, silver-and-gold armor, red tunic, lowered red/gold left-hand shield, silver sword carried low in right hand. Walking north / northwest away from camera. Camera-specific foreshortening, full transparent background, no scenery, no kneeling or combat, exact established identity. Initial generation used a sheathed sword; a precise second imagegen edit restored the low-carried sword to match the approved ground walking originals. Original first pass remains retained.",
+  "initial_generation": "exec-060eb513-170a-43b3-961b-f68dc9eedd2d.png",
+  "initial_sha256": "28e9f14bd37eaf54a8d6806e829cacef0255e23d388349813a06c7433c2842c6"
+}

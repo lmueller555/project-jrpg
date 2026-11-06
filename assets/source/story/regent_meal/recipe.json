@@ -1,0 +1,192 @@
+{
+  "source": "generated_seated.png",
+  "sha256": "7c332f6bff576965949e3721cc5dc0528cdf306b2b2d04f942b8d5fc720b729f",
+  "method": "authored seated poses; alpha threshold and uniform nearest-neighbor reduction only; no body warping",
+  "frames": [
+    {
+      "actor": "aldric",
+      "file": "assets/story/regent/poses/aldric_seated.png",
+      "source_cell": [
+        0,
+        0,
+        397,
+        793
+      ],
+      "source_bounds": [
+        70,
+        127,
+        379,
+        742
+      ],
+      "uniform_scale": 0.04552845528455285,
+      "export_size": [
+        14,
+        28
+      ],
+      "offset": [
+        5,
+        7
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "facing": "left"
+    },
+    {
+      "actor": "lucan",
+      "file": "assets/story/regent/poses/lucan_seated.png",
+      "source_cell": [
+        397,
+        0,
+        793,
+        793
+      ],
+      "source_bounds": [
+        73,
+        146,
+        352,
+        741
+      ],
+      "uniform_scale": 0.047058823529411764,
+      "export_size": [
+        13,
+        28
+      ],
+      "offset": [
+        5,
+        7
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "facing": "front"
+    },
+    {
+      "actor": "clerk",
+      "file": "assets/story/regent/poses/clerk_seated.png",
+      "source_cell": [
+        793,
+        0,
+        1190,
+        793
+      ],
+      "source_bounds": [
+        65,
+        128,
+        331,
+        742
+      ],
+      "uniform_scale": 0.04560260586319218,
+      "export_size": [
+        12,
+        28
+      ],
+      "offset": [
+        6,
+        7
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "facing": "front"
+    },
+    {
+      "actor": "driver",
+      "file": "assets/story/regent/poses/driver_seated.png",
+      "source_cell": [
+        1190,
+        0,
+        1586,
+        793
+      ],
+      "source_bounds": [
+        61,
+        128,
+        316,
+        741
+      ],
+      "uniform_scale": 0.04567699836867863,
+      "export_size": [
+        12,
+        28
+      ],
+      "offset": [
+        6,
+        7
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "facing": "back"
+    },
+    {
+      "actor": "serene",
+      "file": "assets/story/regent/poses/serene_seated.png",
+      "source_cell": [
+        1586,
+        0,
+        1983,
+        793
+      ],
+      "source_bounds": [
+        41,
+        102,
+        328,
+        742
+      ],
+      "uniform_scale": 0.04375,
+      "export_size": [
+        13,
+        28
+      ],
+      "offset": [
+        5,
+        7
+      ],
+      "anchor": [
+        12,
+        30
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "facing": "front"
+    }
+  ],
+  "tool": "image_gen.imagegen",
+  "alpha_threshold": 180,
+  "canvas": [
+    24,
+    36
+  ],
+  "baseline": 34,
+  "references": {
+    "clerk_reference.png": "ea29ffa780282a1d6125e46d3289f0d1c7a326202af22ecb6c07e3e0dfc16d9d",
+    "lucan_reference.png": "0d989e4ee6e627de82943391d59d27650ae11ce9d63c14df2f368090c5dc7fbb",
+    "aldric_reference.png": "c4868f877c4797fecebb024cd627ef0e7b5f6c5fb08afe4a29e44cc19751f828",
+    "driver_reference.png": "1e42d572d9234f1af338805f11d78ecbaf71321dd320db6adf6130db84234d2c",
+    "tomas_seated_reference.png": "3f01447f3354e8d983658677817f15c8fe182764b09d49c15347df51399b8b52",
+    "serene_reference.png": "4665b227f5c9d8955adde2d72acebeb4109a5975d9940b61465c1189b51b417a"
+  }
+}
