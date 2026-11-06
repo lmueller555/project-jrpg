@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 
 from aether_lattice import AetherLattice
+from gear_state import DEFAULT_GEM, valid_gem
 from inventory import Inventory
 
 
@@ -112,9 +113,24 @@ class CharacterAbilities:
                                         'first_weapon_acquired': False}
                             for identifier in self.characters}
         self._deferred_weapon_training = set()
+        self._gear_focus = ({'caelan': DEFAULT_GEM}
+                            if 'caelan' in self.characters else {})
 
     def _known_character(self, character_id):
         return isinstance(character_id, str) and character_id in self.characters
+
+    def active_gem(self, character_id='caelan'):
+        """Return the settled gearblade focus, independent of learned skills."""
+        if not isinstance(character_id, str):return None
+        return self._gear_focus.get(character_id)
+
+    def set_active_gem(self, gem, character_id='caelan'):
+        """Keep a valid settled focus without granting elemental knowledge."""
+        if (not isinstance(character_id, str) or character_id not in self._gear_focus
+                or not valid_gem(gem)):
+            return False
+        self._gear_focus[character_id] = gem
+        return True
 
     def known_abilities(self, character_id='caelan'):
         """Derive known IDs from character registration and canonical owners."""
@@ -237,6 +253,9 @@ class CharacterAbilities:
         # journeys retain their exact representation and already-earned skills.
         if self._deferred_weapon_training:
             result['deferred_weapon_training'] = sorted(self._deferred_weapon_training)
+        focus = {identifier: gem for identifier, gem in sorted(self._gear_focus.items())
+                 if gem != DEFAULT_GEM}
+        if focus:result['gear_focus'] = focus
         return result
 
     def restore(self, data):
@@ -245,8 +264,8 @@ class CharacterAbilities:
             self.reset()
             return True
         if (not isinstance(data, dict)
-                or set(data) not in ({'version', 'characters'},
-                                     {'version', 'characters', 'deferred_weapon_training'})
+                or not {'version', 'characters'} <= set(data)
+                or set(data) - {'version', 'characters', 'deferred_weapon_training', 'gear_focus'}
                 or type(data['version']) is not int or data['version'] != 1
                 or not isinstance(data['characters'], dict)
                 or set(data['characters']) != set(self.characters)):
@@ -271,8 +290,15 @@ class CharacterAbilities:
                 or any(not data['characters'][identifier]['first_weapon_acquired']
                        for identifier in deferred)):
             return False
+        focus = data.get('gear_focus', {})
+        if (not isinstance(focus, dict)
+                or any(identifier != 'caelan' or identifier not in self.characters
+                       or not valid_gem(gem) for identifier, gem in focus.items())):
+            return False
         self._characters = deepcopy(data['characters'])
         self._deferred_weapon_training = set(deferred)
+        self._gear_focus = ({'caelan': focus.get('caelan', DEFAULT_GEM)}
+                            if 'caelan' in self.characters else {})
         return True
 
     @classmethod

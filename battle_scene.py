@@ -7,6 +7,10 @@ from pathlib import Path
 
 import pygame
 
+from gear_widget import GearWidget
+from gear_state import GEM_NAMES, GEM_COLORS
+from gearblade_fx import GearbladeEffects
+
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
 
@@ -131,6 +135,15 @@ class BattleScene:
         self.party_rows = {}
         self.header_rects = {}
         self._detail_lines = []
+        self.gear = GearWidget(getattr(model, 'active_gem', 'water'))
+        self.gear_fx = GearbladeEffects()
+        self._slot_time = None
+        self._gear_adjust_time = None
+        self._command_scroll = 0
+        self._pointer = None
+        self._pointer_window = None
+        self._viewport = (self.game.ui_surface.get_size(), getattr(self.game.audio, 'text_scale', 1))
+        self._command_lines = {}
         self._background = self._make_background(COMBAT_ART/battlefield/'background.png')
         self._grass = self._make_grass() if battlefield == 'eldenmere' else ()
         self._shadows = self._make_shadows()
@@ -188,45 +201,72 @@ class BattleScene:
                             ground_y-image.get_height()//2))
 
     def _layout(self, painter):
+        """One geometry map for character columns and the shared right menu."""
         self._sync_commands()
         small = painter.font('small').get_linesize()
         name = painter.font('name', bold=True).get_linesize()
-        self._detail_lines = painter.wrap(self._detail_text(), 308, role='small')
-        row_height = max(name, small+6)+3
-        command_height = max(14, small)
-        content_offset = small+8
-        # The ordinary panel is 26% shorter. Font enlargement gets real space,
-        # rather than clipped labels or vertically compressed typography.
-        height = max(80, content_offset+max(
-            len(self._command_actions())*command_height+3,
-            len(self.model.party)*row_height+5+len(self._detail_lines)*small+3))
+        self._status_height = max(56, name+2*small+25)
+        height = 2*self._status_height
         self.panel_rect = pygame.Rect(8, 312-height, 464, height)
         top = self.panel_rect.top
-        row_top = top+content_offset
+        command_width = max(80, painter.font('small', bold=True).size('COMMANDS')[0]+12)
+        self.commands_panel = pygame.Rect(self.panel_rect.right-command_width, top, command_width, height)
+        party_width = self.commands_panel.left-self.panel_rect.left
         self.party_rows = {}
+        count = len(self.model.party)
         for index, member in enumerate(self.model.party):
+            left = 8+round(party_width*index/count)
+            right = 8+round(party_width*(index+1)/count)
+            column = pygame.Rect(left, top, right-left, height)
+            center = column.centerx
             name_width, name_height = painter.font('name', bold=True).size(member.name)
-            name_rect = pygame.Rect(220, row_top+index*row_height, name_width, name_height)
+            bar_width = min(112, column.width-24)
+            hp_top = top+name+12
+            mp_top = hp_top+small+6
             self.party_rows[member.identifier] = {
-                'row': pygame.Rect(152, name_rect.top-1, 308, row_height),
-                'name': name_rect,
-                'atb': pygame.Rect(156, name_rect.centery-3, 50, 6),
-                'hp': pygame.Rect(294, name_rect.top+small+1, 86, 5),
-                'mp': pygame.Rect(390, name_rect.top+small+1, 70, 5)}
+                'column': column,
+                'row': pygame.Rect(left+2, top+2, column.width-4, self._status_height-3),
+                'name': pygame.Rect(center-name_width//2, top+4, name_width, name_height),
+                'atb': pygame.Rect(center-28, top+name+6, 56, 4),
+                'hp_text': pygame.Rect(center-bar_width//2, hp_top, bar_width, small),
+                'mp_text': pygame.Rect(center-bar_width//2, mp_top, bar_width, small),
+                'hp': pygame.Rect(center-bar_width//2, hp_top+small+1, bar_width, 3),
+                'mp': pygame.Rect(center-bar_width//2, mp_top+small+1, bar_width, 3),
+                'interactable': pygame.Rect(left+4, top+self._status_height+2,
+                                            column.width-8, self._status_height-6)}
         player_row = self.party_rows['player']
         self.name_rect, self.atb_rect = player_row['name'], player_row['atb']
         self.hp_rect, self.mp_rect = player_row['hp'], player_row['mp']
         self.party_row_rect = player_row['row']
-        self._party_bottom = max(row['row'].bottom for row in self.party_rows.values())
+        self._party_bottom = top+self._status_height
         self._detail_top = self._party_bottom+5
-        continue_height = max(20, painter.font().get_height()+4)
-        self.continue_rect = pygame.Rect(20, self.panel_rect.bottom-continue_height-5,
-                                         110, continue_height)
+        space = player_row['interactable']
+        side = min(48, space.height, space.width)
+        wheel = pygame.Rect(0, 0, side, side)
+        wheel.center = (space.centerx-18 if space.width >= 140 else space.centerx, space.centery)
+        self.gear.layout(wheel)
+        self.continue_rect = pygame.Rect(self.commands_panel.left+6, self.panel_rect.bottom-25, self.commands_panel.width-12, 20)
         self.resume_rect = pygame.Rect(172, 171, 136, 29)
+        self.header_rects = {}
+        actions = self._command_actions()
+        self._command_lines = {identifier: painter.wrap(ACTION_LABELS.get(identifier, identifier),
+                                                        self.commands_panel.width-16, role='small')
+                               for identifier in actions}
+        row_heights = [max(16, len(self._command_lines[item])*small+5) for item in actions]
+        available = height-small-15
+        self._command_scroll = min(self._command_scroll, max(0, len(actions)-1))
+        if actions:
+            selected = self.selected % len(actions)
+            if selected < self._command_scroll:self._command_scroll = selected
+            while sum(row_heights[self._command_scroll:selected+1]) > available:
+                self._command_scroll += 1
         self.command_rects = {}
-        for index, identifier in enumerate(self._command_actions()):
-            self.command_rects[identifier] = pygame.Rect(20, row_top+index*command_height,
-                                                        110, command_height)
+        y = top+small+10
+        for index in range(self._command_scroll, len(actions)):
+            row_height = row_heights[index]
+            if y+row_height > self.panel_rect.bottom-5:break
+            self.command_rects[actions[index]] = pygame.Rect(self.commands_panel.left+6, y, self.commands_panel.width-12, row_height)
+            y += row_height
         self._layout_bots(painter)
         return small, name
 
@@ -329,7 +369,10 @@ class BattleScene:
                     'Full ATB: ready to act. Gauges pause while you choose. Select Guard.')
             elif stage=='first_edge':
                 self._queue_tutorial('spellblade_choose','Now—while it’s turning. Choose a focus.',
-                    'Skills: try Nature Edge, Aqua Edge, or Flame Edge.')
+                    'Drag the gear to seat a gem in the top catch, then try its Edge from Skills.')
+                self._queue_tutorial('gear_instruction',
+                    'The catch at the top, Cael. Turn a gem into it, then draw your aether through the blade.',
+                    'Hovering over the gear slows all ATB charging to 25%. You can also adjust it while choosing an action.')
         elif kind=='spellblade_failed':
             lines=(('caelan','It didn’t—'),('mira','Stay with me.'),
                    ('caelan','*breathing quickly* I turned it. I’m trying, but nothing’s happening!'),
@@ -368,7 +411,7 @@ class BattleScene:
                 if selected == 'aether_edge':
                     return '4 MP · Physical and non-elemental magical sword strike.'
                 if selected in ('nature_edge','aqua_edge','flame_edge'):
-                    return 'Choose an elemental focus · Unpractised technique.'
+                    return self._command_reason(selected) or 'Unpractised elemental focus.'
                 if selected == 'overclock':
                     return '5 MP · Haste: +50% ATB for 8 bot turns.'
             return ''
@@ -401,6 +444,7 @@ class BattleScene:
         actions = self._command_actions()
         self.selected = actions.index('skills') if menu == 'root' and 'skills' in actions else 0
         self._notice = ''
+        self._command_scroll = 0
         self._layout(self.game.ui.painter(self.game.ui_surface))
 
     def _selection_notice(self):
@@ -413,6 +457,7 @@ class BattleScene:
         self._command_context = (self.model.phase, self.model.ready_actor)
         self.selected = 0
         self._notice = ''
+        self._command_scroll = 0
         self._layout(self.game.ui.painter(self.game.ui_surface))
         self._sound('move')
         self._tutorial_event({'type': 'player_ready', 'actor': identifier})
@@ -450,47 +495,92 @@ class BattleScene:
             self._notice = self.model.action_reason(identifier)
             self._sound('back')
 
+    @property
+    def gear_enabled(self):
+        action = self.model.current_action
+        return (self.model.weapon_equipped and self.model.player.hp > 0
+                and self.model.phase not in RESULTS and not self.dismissed
+                and not self.paused and self.focused and not self.tutorial_active
+                and not (action is not None and action.actor == 'player'))
+
+    @property
+    def gear_hover_available(self):
+        return (self.model.weapon_equipped and self.model.player.hp > 0
+                and self.model.phase not in RESULTS and not self.dismissed
+                and not self.paused and self.focused and not self.tutorial_active)
+
+    @property
+    def atb_multiplier(self):
+        return .25 if self.gear_hover_available and self.gear.hovered else 1.0
+
+    def _cancel_gear(self):
+        self.gear.active_gem = self.model.active_gem
+        self.gear.cancel()
+        self.gear.hovered = False
+        self.gear.focused = False
+        self.model.gear_settling = False
+
     def handle_event(self, event):
         if self.dismissed:return True
         self._layout(self.game.ui.painter(self.game.ui_surface))
         point = self.game.to_canvas(event.pos) if hasattr(event, 'pos') else None
-        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-            self._held = False
-            return True
+        if hasattr(event, 'pos'):
+            self._pointer_window = event.pos
+            self._pointer = point
+            self.gear.hovered = bool(point is not None and self.gear.rect.collidepoint(point))
+        if event.type == pygame.WINDOWLEAVE:
+            self._pointer = self._pointer_window = None
+            self.gear.hovered = False
         if event.type == pygame.WINDOWFOCUSLOST:
             self.focused = False
             self.paused = True
             self._held = False
+            self._cancel_gear()
             return True
         if event.type == pygame.WINDOWFOCUSGAINED:
             self.focused = True
             return True
         if (self.tutorial_active and not self.paused
                 and not (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE)):
-            if (event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False)
-                    and event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE)):
+            self._cancel_gear()
+            if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False) and event.key in (
+                    pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
                 self.advance_tutorial()
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if not self._held:
                     self._held = True
                     if point is not None and self.tutorial_continue_rect.collidepoint(point):
                         self.advance_tutorial()
+            elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
             return True
         if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key == pygame.K_ESCAPE:
+                self._cancel_gear()
                 if self.focused:
-                    if (not self.paused and not self.tutorial_active
-                            and self.command_menu == 'skills'):
-                        self._set_menu('root')
-                        self._sound('back')
-                        return True
+                    if not self.paused and self.command_menu == 'skills':
+                        self._set_menu('root');self._sound('back');return True
                     self.paused = not self.paused
                     self._held = False
                     self._sound('back' if self.paused else 'confirm')
                 return True
-            if self.paused:return True
-            if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):
-                self._confirm()
+        # The selector receives captured pointer events before character/menu hits.
+        if self.gear_enabled:
+            consumed = self.gear.handle_event(event, point, enabled=True, reduced_motion=self.reduced_motion)
+            self.model.gear_settling = self.gear.busy
+            if consumed:
+                if event.type == pygame.MOUSEBUTTONUP and event.button == 1:self._held = False
+                return True
+        elif self.gear.busy:self._cancel_gear()
+        if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+            self._held = False
+            return True
+        if self.paused:
+            if (event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and self.focused
+                    and point is not None and self.resume_rect.collidepoint(point)):
+                self.paused = False;self._sound('confirm')
+            return True
+        if event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
+            if event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):self._confirm()
             elif self.model.phase == 'ready' and event.key == pygame.K_TAB:
                 ready = self.model.ready_members
                 if ready:
@@ -501,46 +591,66 @@ class BattleScene:
                 actions = self._command_actions()
                 delta = -1 if event.key in (pygame.K_UP, pygame.K_LEFT) else 1
                 self.selected = (self.selected+delta) % len(actions) if actions else 0
-                self._notice = self._selection_notice()
-                self._sound('move')
+                self._notice = self._selection_notice();self._sound('move')
+            elif event.key == pygame.K_g and self.gear_enabled:
+                self.gear.focused = True
+                self._notice = 'Gear: Left/Right to turn, Enter to seat, Tab to return.'
+        elif event.type == pygame.MOUSEWHEEL and self.model.phase == 'ready':
+            if self._pointer is not None and self.commands_panel.collidepoint(self._pointer):
+                actions = self._command_actions()
+                self.selected = max(0, min(len(actions)-1, self.selected-event.y))
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if self._held:return True
             self._held = True
+            self.gear.focused = False
             if point is None:return True
-            if self.paused:
-                if self.focused and self.resume_rect.collidepoint(point):
-                    self.paused = False
-                    self._sound('confirm')
-                return True
             if self.model.phase in RESULTS:
                 if self.continue_rect.collidepoint(point):self._confirm()
             elif self.model.phase == 'ready':
                 for identifier, row in self.party_rows.items():
                     if row['row'].collidepoint(point):
-                        self._select_member(identifier)
-                        return True
-                for index, (identifier, rect) in enumerate(self.command_rects.items()):
+                        self._select_member(identifier);return True
+                actions = self._command_actions()
+                for identifier, rect in self.command_rects.items():
                     if rect.collidepoint(point):
-                        self.selected = index
-                        self._confirm()
-                        break
-        elif event.type == pygame.MOUSEMOTION and not self.paused and self.model.phase == 'ready':
-            if point is not None:
-                for index, rect in enumerate(self.command_rects.values()):
-                    if rect.collidepoint(point):
-                        self.selected = index
-                        self._notice = self._selection_notice()
-                        break
+                        self.selected = actions.index(identifier);self._confirm();break
+        elif event.type == pygame.MOUSEMOTION and self.model.phase == 'ready' and point is not None:
+            actions = self._command_actions()
+            for identifier, rect in self.command_rects.items():
+                if rect.collidepoint(point):
+                    self.selected = actions.index(identifier)
+                    self._notice = self._selection_notice();break
         return True
 
     def update(self, seconds):
         if self.dismissed or self.paused or not self.focused or self.tutorial_active:return
         if type(seconds) not in (int, float):raise TypeError('Scene time must be numeric')
         if not math.isfinite(seconds) or seconds < 0:raise ValueError('Invalid scene time')
+        viewport = (self.game.ui_surface.get_size(), getattr(self.game.audio, 'text_scale', 1))
+        if viewport != self._viewport:
+            self._viewport = viewport
+            self._cancel_gear()
+            self._layout(self.game.ui.painter(self.game.ui_surface))
+        if self._pointer_window is not None:
+            self._pointer = self.game.to_canvas(self._pointer_window)
+        self.gear.hovered = bool(self.gear_hover_available and self._pointer is not None
+                                 and self.gear.rect.collidepoint(self._pointer))
         self._elapsed += seconds
         for popup in self._popups:popup['age'] += seconds
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
-        self.model.update(seconds)
+        if not self.gear_enabled and (self.gear.busy):self._cancel_gear()
+        gem = self.gear.update(seconds, reduced_motion=self.reduced_motion)
+        if gem is not None and self.model.set_active_gem(gem):
+            self._slot_time = self._elapsed
+            self._gear_adjust_time = self._elapsed
+            owner = getattr(self.game, 'character_abilities', None)
+            if owner is not None and owner.set_active_gem(gem):
+                save = getattr(self.game, 'save_progress', None)
+                if save is not None:save()
+        self.model.gear_settling = self.gear.busy
+        for notice in self.gear.consume_notices():
+            self._sound('gear_seat' if notice == 'seat' else 'gear_detent')
+        self.model.update(seconds, atb_multiplier=self.atb_multiplier)
         self._phase_elapsed = (0.0 if self.model.phase != self._last_phase
                                else self._phase_elapsed+seconds)
         for event in self.model.drain_events():
@@ -566,6 +676,7 @@ class BattleScene:
                 self._notice = ''
         self._sync_commands()
         self._last_phase = self.model.phase
+        if self.model.phase in RESULTS or self.tutorial_active:self._cancel_gear()
 
     @property
     def reduced_motion(self):return getattr(self.game.audio, 'reduced_motion', False)
@@ -575,14 +686,14 @@ class BattleScene:
 
     def _positions(self):
         party_battle = len(self.model.party) > 1
+        offset = max(0, 202-self.panel_rect.top)
         if party_battle:
-            offset = max(0, 202-self.panel_rect.top)
             positions = {'player': pygame.Vector2(354, 194-offset),
                          'mira': pygame.Vector2(404, 151-offset),
                          'enemy': pygame.Vector2(119, 196-offset)}
         else:
-            positions = {'player': pygame.Vector2(354, 184),
-                         'enemy': pygame.Vector2(126, 170)}
+            positions = {'player': pygame.Vector2(354, 184-offset),
+                         'enemy': pygame.Vector2(126, 170-offset)}
         for bot in self._field_bots():
             positions[bot.identifier] = self._bot_home()
         if self.model.enemy_id == 'bat' and not self.reduced_motion:
@@ -638,7 +749,8 @@ class BattleScene:
                 return 'hurt', popup['age']*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
-            state = ('overclock' if action.kind == 'haste' else
+            state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
+                     'overclock' if action.kind == 'haste' else
                      'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
                      else 'idle' if action.kind == 'flee' else action.animation
                      if action.animation in ('prepare', 'charge') else 'attack')
@@ -646,6 +758,9 @@ class BattleScene:
         if actor == 'enemy' and self.model.telegraphed_target:
             return 'prepare', self._elapsed*1000
         if combatant.guarded:return 'guard', self._elapsed*1000
+        if actor == 'player' and self._gear_adjust_time is not None:
+            age = self._elapsed-self._gear_adjust_time
+            if age < .6:return 'focus_adjust', age*1000
         return 'idle', self._elapsed*1000
 
     def _draw_field(self, canvas):
@@ -663,20 +778,20 @@ class BattleScene:
                 image, anchor = combat_frame(image, state, time)
             canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
                         (round(point.x-anchor[0]*2), round(point.y-anchor[1]*2)))
+            if actor == 'player' and self.model.weapon_equipped and self.model.player.hp:
+                current = self.model.current_action
+                own_action = current if current is not None and current.actor == 'player' else None
+                context = ({key: getattr(own_action, key) for key in
+                            ('action', 'kind', 'elapsed', 'duration', 'impact_at')}
+                           if own_action is not None else {})
+                from gear_state import REQUIRED_GEMS
+                mastered = any(key in self.model.learned_abilities and gem == self.model.active_gem
+                               for key, gem in REQUIRED_GEMS.items())
+                context['unmastered'] = not mastered and context.get('action') != 'aether_edge'
+                self.gear_fx.draw(canvas, point, state, time, self.model.active_gem, self._elapsed,
+                    slot_age=None if self._slot_time is None else self._elapsed-self._slot_time,
+                    action=context, reduced_motion=self.reduced_motion)
         action = self.model.current_action
-        if action is not None and action.kind == 'spellblade':
-            point = positions[action.actor]+(-26, -31)
-            arc=pygame.Rect(round(point.x-20),round(point.y-23),40,45)
-            strength=math.sin(math.pi*min(1,action.elapsed/action.duration))
-            if strength>.1:
-                pygame.draw.arc(canvas, '#b8a0ed', arc, .3, 2.7, 3)
-                pygame.draw.arc(canvas, '#e9e1ff', arc.inflate(-5,-5), .3, 2.7, 1)
-        if action is not None and action.kind == 'failed_edge':
-            color={'nature_edge':'#79c36b','aqua_edge':'#5da9e9','flame_edge':'#dd7660'}[action.action]
-            point=positions[action.actor]+(-25,-35)
-            fraction=action.elapsed/action.duration
-            if fraction<.65:
-                pygame.draw.circle(canvas,color,(round(point.x),round(point.y)),max(1,round(4*(1-fraction))),1)
         if action is not None and action.kind == 'enchant':
             point = positions[action.actor]+(0, -34)
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
@@ -795,50 +910,64 @@ class BattleScene:
             return
         painter.panel(self.panel_rect)
         top = self.panel_rect.top
-        heading = ({'victory': 'VICTORY', 'defeat': 'DEFEATED', 'fled': 'ESCAPED'}[model.phase]
-                   if model.phase in RESULTS else 'SKILLS' if self.command_menu == 'skills' else 'COMMANDS')
-        painter.text(heading, (20, top+5), role='small', color=GOLD, bold=True)
+        heading = ({'defeat': 'DEFEATED', 'fled': 'ESCAPED'}.get(model.phase)
+                   or ('SKILLS' if self.command_menu == 'skills' else 'COMMANDS'))
+        painter.text(heading, (self.commands_panel.centerx, top+5), role='small',
+                     color=GOLD, anchor='midtop', bold=True)
         self.header_rects = {}
-        for label, center in (('ATB', 181), ('NAME', 254), ('HP', 337), ('MP', 425)):
-            self.header_rects[label] = painter.text(label, (center, top+5), role='small',
-                                                   color=GOLD, anchor='midtop', bold=True)
-        if model.phase == 'ready':
-            painter.rect(FOREST_LIGHT, self.party_rows[model.ready_actor]['row'])
-        painter.line(BRASS, (152, top+small+7), (460, top+small+7))
         for member in model.party:
             row = self.party_rows[member.identifier]
+            if model.phase == 'ready' and model.ready_actor == member.identifier:
+                painter.rect(FOREST_LIGHT, row['row'])
+                painter.rect(GOLD, row['row'], 1)
             painter.text(member.name, row['name'].topleft, role='name',
                          color=GOLD if member.hp else MUTED, bold=True)
-            painter.text(str(member.hp)+'/'+str(member.max_hp),
-                         (row['hp'].left, row['name'].top), role='small')
-            self._bar(painter, row['hp'], member.hp/member.max_hp,
-                      self._health_color(member.hp, member.max_hp))
-            painter.text(str(member.mp)+'/'+str(member.max_mp),
-                         (row['mp'].left, row['name'].top), role='small')
-            self._bar(painter, row['mp'], member.mp/member.max_mp if member.max_mp else 0, MP_BLUE)
+            painter.text('ATB', (row['atb'].left-5, row['atb'].centery), role='small',
+                         color=MUTED, anchor='midright')
             self._bar(painter, row['atb'], member.atb, ATB_YELLOW)
-            painter.line(FOREST_LIGHT, (152, row['row'].bottom), (460, row['row'].bottom))
-        painter.line(FOREST_LIGHT, (142, top+5), (142, self.panel_rect.bottom-5))
-        for x in (214, 288, 384):
-            painter.line(FOREST_LIGHT, (x, top+5), (x, self._party_bottom))
-        for index, line in enumerate(self._detail_lines):
-            painter.text(line, (152, self._detail_top+index*small), role='small',
-                         color=MUTED if self.result_error else IVORY)
+            for label, value, maximum, key, color in (
+                    ('HP', member.hp, member.max_hp, 'hp', self._health_color(member.hp, member.max_hp)),
+                    ('MP', member.mp, member.max_mp, 'mp', MP_BLUE)):
+                text_rect = row[key+'_text']
+                self.header_rects[label] = painter.text(label, text_rect.topleft, role='small', color=GOLD)
+                painter.text(str(value)+'/'+str(maximum), text_rect.topright,
+                             role='small', anchor='topright')
+                self._bar(painter, row[key], value/maximum if maximum else 0, color)
+            column = row['column']
+            painter.line(BRASS, (column.right, top+5), (column.right, self.panel_rect.bottom-5))
+            painter.line(BRASS, (column.left+4, top+self._status_height),
+                         (column.right-4, top+self._status_height))
+        self.gear.draw(painter, self._elapsed, enabled=self.gear_enabled,
+                       slowed=self.atb_multiplier < 1, focused=self.gear.focused)
+        space = self.party_rows['player']['interactable']
+        if space.width >= 140:
+            painter.text(GEM_NAMES[self.model.active_gem], (self.gear.rect.right+7, self.gear.rect.centery),
+                         role='small', color=GEM_COLORS[self.model.active_gem], anchor='midleft', bold=True)
+            if self.atb_multiplier < 1:
+                painter.text('ATB 25%', (self.gear.rect.right+7, self.gear.rect.centery+14),
+                             role='small', color=MUTED, anchor='midleft')
         if model.phase in RESULTS:
-            painter.button(self.continue_rect, 'Try again' if self.result_error else 'Continue')
-        elif model.phase == 'ready':
-            for index, (identifier, rect) in enumerate(self.command_rects.items()):
-                disabled = bool(self._command_reason(identifier))
-                painter.rect(FOREST, rect)
-                painter.text(ACTION_LABELS.get(identifier, identifier), rect.center,
-                             role='small', anchor='center', color=MUTED if disabled else IVORY)
-                if index == self.selected:painter.rect(MUTED if disabled else GOLD, rect, 1)
-            if self._notice:
-                painter.text(self._notice, (240, self.panel_rect.top-6),
-                             role='small', color=GOLD, anchor='midbottom')
+            painter.button(self.continue_rect, 'Retry' if self.result_error else 'Continue')
         else:
-            painter.text('Waiting' if model.phase == 'charging' else 'Acting',
-                         (20, self.name_rect.top), role='small', color=MUTED)
+            actions = self._command_actions()
+            for identifier, rect in self.command_rects.items():
+                disabled = model.phase != 'ready' or bool(self._command_reason(identifier))
+                painter.rect(FOREST, rect)
+                lines = self._command_lines[identifier]
+                y = rect.centery-len(lines)*small/2
+                for line in lines:
+                    painter.text(line, (rect.centerx, y), role='small', anchor='midtop',
+                                 color=MUTED if disabled else IVORY)
+                    y += small
+                if model.phase == 'ready' and actions.index(identifier) == self.selected:
+                    painter.rect(MUTED if disabled else GOLD, rect, 1)
+            detail = self._notice or self._detail_text()
+            if detail and (self._notice or self.command_menu == 'skills'):
+                lines = painter.wrap(detail, 270, role='small')
+                box = pygame.Rect(192, top-len(lines)*small-12, 280, len(lines)*small+8)
+                painter.panel(box)
+                for index, line in enumerate(lines):
+                    painter.text(line, (box.x+5, box.y+4+index*small), role='small', color=IVORY)
         if self.tutorial_active:self._draw_tutorial(painter)
         if self.paused:
             painter.veil(150)

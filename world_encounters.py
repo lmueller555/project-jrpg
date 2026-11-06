@@ -167,6 +167,7 @@ class CombatEncounters:
         model = BattleModel(self.game.attributes,
                             self.game.character_abilities.known_abilities(),
                             weapon_equipped=self.game.character_abilities.has_weapon(),
+                            active_gem=self.game.character_abilities.active_gem(),
                             bot_loadouts=self.game.bot_loadouts.battle_loadouts(),
                             rng=random.Random() if rng is None else rng,
                             enemy_id=self.definition['enemy'])
@@ -209,6 +210,7 @@ class CombatEncounters:
             return quest._speak('tutorial_preparation', prepared)
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
+                            active_gem=game.character_abilities.active_gem(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
                             guest_abilities={'mira':game.character_abilities.known_abilities('mira')},
                             rng=random.Random() if rng is None else rng,
@@ -535,6 +537,7 @@ class CombatEncounters:
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
+                            active_gem=game.character_abilities.active_gem(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
                             guest_abilities=({'mira':game.character_abilities.known_abilities('mira')}
                                              if self.kind == 'mill' else {}),

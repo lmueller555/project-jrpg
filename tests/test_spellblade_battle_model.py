@@ -2,6 +2,7 @@
 import unittest
 from battle_model import BattleModel, ELEMENTAL_EDGE_ATTEMPTS
 from character_attributes import CharacterAttributes
+from gear_state import REQUIRED_GEMS
 from test_aether_edge_battle_model import FixedVariance
 
 
@@ -31,12 +32,14 @@ class SpellbladeLessonTests(unittest.TestCase):
                     self.assertEqual(m.skill_actions(),list(ELEMENTAL_EDGE_ATTEMPTS))
                     self.assertNotIn('aether_edge',m.available_actions())
                     hp,mp=m.enemy.hp,m.player.mp
+                    self.assertTrue(m.set_active_gem(REQUIRED_GEMS[first]))
                     self.assertTrue(m.choose_action(first));action=m.current_action
                     m.update(action.duration)
                     self.assertEqual(m.enemy.hp,hp);self.assertEqual(m.player.mp,mp)
                     self.assertFalse(m.aether_edge_discovered)
                     self.assertEqual(m.spellblade_stage,'second_edge')
                     self.ready(m)
+                    self.assertTrue(m.set_active_gem(REQUIRED_GEMS[second]))
                     self.assertTrue(m.choose_action(second))
                     self.assertEqual(m.current_action.action,'aether_edge')
                     self.assertEqual(m.player.mp,mp-4)

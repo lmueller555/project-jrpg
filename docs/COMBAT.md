@@ -99,8 +99,8 @@ The Bat has Speed 8 and needs approximately 6.58 charging seconds. These are
 the initial tuning values; animation time is separate.
 
 When any participating character becomes ready, **every gauge stops at that
-exact boundary** while the player chooses. The active party row is highlighted;
-click another ready row or press Tab to choose between ready characters.
+exact boundary** while the player chooses. The active character column is highlighted;
+click another ready character’s status area or press Tab to choose between ready characters.
 Commands and MP costs belong to the selected character. Enemy gauges exist
 in the model but are never displayed.
 The Bat automatically chooses an affordable action when its gauge fills.
@@ -113,35 +113,29 @@ Large updates and smaller time steps follow the same readiness boundaries.
 
 ## Battle controls and interface
 
-The compact bottom panel places a party table on the right, with shared
-**ATB, NAME, HP, MP** column headings. Each participating character occupies
-one horizontal row. A small yellow ATB gauge sits to the left of the name;
-HP and MP show current/max numbers with thin bars beneath them in their own
-columns. The millrace has Caelan and Mira's rows; the Bat has Caelan's row.
-HP is green above 50%, yellow
-above 25% through 50%, and red at 25% or below. MP is blue; the ATB fill stays
-yellow while charging and when ready.
+The bottom panel has one column per participating character and a narrower
+shared Commands column on the right. Character columns contain name and yellow
+ATB at the top, stacked HP/MP values and bars beneath, and an individual mechanic
+area in the bottom half. HP is green above 50%, yellow above 25% through 50%,
+and red at 25% or below. MP is blue.
 
-At standard text size the starting panel is 80 logical pixels tall, down from 108
-(about 26% shorter). Larger text can expand it to preserve readable labels
-and controls. The table shows participating characters rather than the sketch's
-illustrative future-party placeholders.
-
-Commands form a compact vertical list on the left when a party member is ready.
-Mouse clicks select a command directly; arrow keys and Enter/Space provide
-keyboard access. Skills is always visible, with unavailable states greyed out;
-its submenu contains supported learned skills. An optional learned spell adds
-a row and can expand the panel slightly. Result titles and
-Continue remain on the left; action messages, rewards and retry details use
-the space beneath the party row. See the
-[compact table preview](reviews/compact_battle/README.md).
+Caelan’s lower section contains his rotating gear. Mira’s lower section is
+reserved for her future mechanic; Overclock and Rivet continue through their
+existing command and autonomous behavior. Panel height follows measured text
+and the wheel’s usable area; larger text keeps its configured size. Long
+command labels wrap and command selection scrolls to remain visible. Contextual
+skill details appear immediately above the panel.
 
 | Input | Action |
 | --- | --- |
 | Click a command | Open Skills or commit an action for the selected ready character |
-| Click a ready row / Tab | Select another ready party member |
+| Click a ready character’s status / Tab | Select another ready party member |
 | Arrows + Enter/Space | Select and commit a command |
-| Back / Escape in Skills | Return to the root commands without spending a turn |
+| Drag Caelan’s gear | Rotate a gem toward the fixed north catch; release to seat it |
+| Hover the gear | All units’ ATB charges at 25% of its normal rate |
+| G, then Left/Right and Enter/Space | Focus the gear, rotate and seat a gem with the keyboard |
+| Tab while the gear is focused | Return to command navigation |
+| Back / Escape in Skills | Return to root commands without spending a turn |
 | Escape outside Skills | Pause/resume the battle |
 | Continue on Spoils / a non-victory result | Return to exploration; failed mill attempts return to the safe approach |
 | F11 | Toggle fullscreen |
@@ -150,6 +144,45 @@ Losing window focus pauses battle time and input. Regaining focus leaves it
 paused until Resume or Escape. Repeated held input cannot spend several turns
 or click through a result into exploration. The UI supports the minimum
 480×320 window, 150% text, letterboxing and Reduced Motion.
+
+## Caelan’s gear focus
+
+The wheel holds Nature, Water, Fire and Ice gems. The fixed catch at twelve
+o’clock determines the settled focus. A short snap confirms seating; gear
+rotation consumes no turn, ATB or MP. Caelan can adjust it while charging and
+while deciding an action. His confirmed action captures its focus and locks
+rotation until that action finishes.
+
+Hover slows charging for party members, enemies and Rivet. Haste multiplies
+normally: an Overclocked Rivet charges at base × 1.5 × 0.25 while hovering.
+Ready decisions still pause every gauge completely. Attack animations, damage
+impact timing and audio retain their normal speed.
+
+Aether Edge works with every gem and remains non-elemental. Future learned
+Nature Edge, Aqua Edge and Flame Edge require their respective gems as well as
+normal weapon and MP requirements. Selecting a gem never teaches its skill.
+The Ice gem currently supplies a focus position without an initial combat skill.
+MQ02 temporarily exposes its three experimental Edges: the first matching
+attempt fails, the next matching attempt discovers Aether Edge, and only that
+technique remains learned afterward. The later water utility spell does not
+grant Aqua Edge.
+
+Seating triggers a mechanical catch, engraved energy chase and an elemental
+burst. Blade effects attach to authored per-frame guard and sword coordinates:
+branching Nature filaments, Water ribbons, Fire embers or Ice glints. Unmastered
+focuses stay tentative, failed casts sputter, and Aether Edge uses neutral
+violet-white energy. Its eight-drawing presentation lasts 900 ms, with contact
+aligned to damage at 500 ms. A brief four-drawing adjustment gesture handles
+focus changes without altering body proportions.
+
+The last settled focus survives encounters and save/load. Water is the default
+for new and legacy saves, matching Mira’s gift presentation. Pause, focus loss,
+resize, dialogue and results cancel unfinished gestures safely. Reduced Motion
+retains gem identification and immediate visual seating while suppressing
+optional motion and bursts.
+
+See the [gear combat review](reviews/caelan_gear/README.md) for production MQ02
+and four-focus animation previews.
 
 ## Caelan's initial actions
 
