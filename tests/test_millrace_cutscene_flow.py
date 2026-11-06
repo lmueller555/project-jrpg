@@ -96,7 +96,7 @@ class MillraceCutsceneFlowTests(unittest.TestCase):
         self.assertTrue(self.game.social.active)
         self.assertFalse(self.game.combat.active)
         self.assertEqual(self.game.music.desired_track, 'eldenmere')
-        self.assertIn('come back to me', self.game.social.page['lines'][0])
+        self.assertIn('back towards me', self.game.social.page['lines'][0])
         mill_fixture.key(self.game, pygame.K_SPACE)
         self.tick(0)
         self.assertTrue(self.game.combat.active)

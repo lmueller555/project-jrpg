@@ -61,8 +61,8 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertNotIn('aether_edge', self.abilities.known_abilities())
         self.assertNotIn('focused_strike', self.abilities.known_abilities())
         self.assertEqual(Inventory().entries('weapons'), [])
-        self.assertFalse(any(record['category'] == 'weapons'
-                             for record in Inventory().definitions.values()))
+        self.assertEqual(Inventory().definitions['caelan_gearblade']['category'], 'weapons')
+        self.assertEqual(Inventory().quantity('caelan_gearblade'), 0)
 
     def test_character_profiles_register_miras_starters_without_granting_other_guests_skills(self):
         expected = {'caelan': ('Caelan', 'Spellblade'), 'mira': ('Mira', 'Machinist'),
@@ -133,6 +133,85 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertIn('aether_edge', self.abilities.known_abilities())
         self.assertEqual(self.abilities.skill_ids(), ('aether_edge',))
         self.assertTrue(self.abilities.to_dict()['characters']['caelan']['first_weapon_acquired'])
+
+    def test_story_gift_equips_blade_but_defers_skill_until_successful_lesson(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        self.assertTrue(self.abilities.has_weapon())
+        self.assertTrue(self.abilities.starter_skills_pending())
+        self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks'}))
+        self.assertEqual(self.abilities.skill_ids(), ())
+        self.assertEqual(self.abilities.to_dict()['deferred_weapon_training'], ['caelan'])
+        self.assertEqual(self.abilities.to_dict()['characters']['caelan'],
+                         {'equipped_weapon': 'caelan_gearblade', 'first_weapon_acquired': True})
+        before = self.inventory.to_dict()
+        self.assertTrue(self.abilities.learn_first_weapon_skills())
+        self.assertTrue(self.abilities.learn_first_weapon_skills())
+        self.assertEqual(self.inventory.to_dict(), before)
+        self.assertFalse(self.abilities.starter_skills_pending())
+        self.assertEqual(self.abilities.skill_ids(), ('aether_edge',))
+        self.assertNotIn('deferred_weapon_training', self.abilities.to_dict())
+        self.assertTrue({'nature_edge','aqua_edge','flame_edge'}.isdisjoint(self.abilities.known_abilities()))
+
+    def test_pending_lesson_round_trip_re_equipping_and_reset_do_not_grant_knowledge(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        self.assertTrue(self.abilities.equip_weapon('caelan', None))
+        self.assertFalse(self.abilities.learn_first_weapon_skills())
+        saved = self.abilities.to_dict()
+        other = CharacterAbilities(self.inventory, self.lattice)
+        self.assertTrue(other.restore(saved))
+        self.assertEqual(other.to_dict(), saved)
+        self.assertTrue(other.starter_skills_pending())
+        self.assertNotIn('aether_edge', other.known_abilities())
+        self.assertTrue(other.equip_weapon('caelan', 'caelan_gearblade'))
+        self.assertNotIn('aether_edge', other.known_abilities())
+        self.assertTrue(other.learn_first_weapon_skills())
+        self.assertTrue(other.equip_weapon('caelan', None))
+        self.assertIn('aether_edge', other.known_abilities())
+        other.reset()
+        self.assertFalse(other.starter_skills_pending())
+        self.assertNotIn('aether_edge', other.known_abilities())
+        self.assertNotIn('deferred_weapon_training', other.to_dict())
+
+    def test_version_one_history_without_pending_extension_keeps_earned_skills(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        saved = self.abilities.to_dict()
+        saved.pop('deferred_weapon_training')
+        self.assertTrue(self.abilities.restore(saved))
+        self.assertFalse(self.abilities.starter_skills_pending())
+        self.assertIn('aether_edge', self.abilities.known_abilities())
+
+    def test_invalid_pending_lesson_snapshots_reject_atomically(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        saved = self.abilities.to_dict()
+        before = self.snapshot()
+        for value in (None, True, {}, 'caelan', [True], [[]], ['missing'], ['caelan','caelan']):
+            with self.subTest(value=value):
+                bad = deepcopy(saved);bad['deferred_weapon_training'] = value
+                self.assertFalse(self.abilities.restore(bad))
+                self.assertEqual(self.snapshot(), before)
+        bad = deepcopy(saved)
+        bad['deferred_weapon_training'] = ['mira']
+        self.assertFalse(self.abilities.restore(bad))
+        self.assertEqual(self.snapshot(), before)
+        for value in (None, 1, 'yes'):
+            self.assertFalse(self.abilities.acquire_weapon('caelan','caelan_gearblade',learn_starter=value))
+            self.assertEqual(self.snapshot(), before)
+
+    def test_another_deferred_gift_cannot_remove_an_already_earned_skill(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'fixture_blade'))
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade', learn_starter=False))
+        self.assertIn('aether_edge', self.abilities.known_abilities())
+        self.assertFalse(self.abilities.starter_skills_pending())
+
+    def test_journey_validator_checks_pending_training_against_saved_ownership(self):
+        inventory = Inventory();lattice = AetherLattice()
+        abilities = CharacterAbilities(inventory, lattice)
+        self.assertTrue(abilities.acquire_weapon('caelan','caelan_gearblade',learn_starter=False))
+        journey = dict(inventory=inventory.to_dict(),aether_lattice=lattice.to_dict(),
+                       character_abilities=abilities.to_dict())
+        self.assertTrue(CharacterAbilities.valid_journey(journey))
+        journey['inventory']['items'].clear()
+        self.assertFalse(CharacterAbilities.valid_journey(journey))
 
     def test_invalid_acquisition_and_equipment_leave_inventory_and_unlocks_unchanged(self):
         self.assertTrue(self.inventory.add('fixture_coat'))

@@ -164,7 +164,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
     def test_mill_music_waits_for_the_return_pan_and_miras_acknowledged_warning(self):
         game = self.game();self.seed_encounter(game)
         page = self.reach_cue(game)
-        self.assertIn('come back to me', ' '.join(page['lines']))
+        self.assertIn('back towards me', ' '.join(page['lines']))
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.assertFalse(game.combat.active)
         self.frame(game, .1)

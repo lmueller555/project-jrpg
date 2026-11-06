@@ -11,6 +11,7 @@ from unittest.mock import Mock
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 from mill_quest import FACTS, REPAIR_FACTS, MillQuest
+from inventory import Inventory
 from quests import MILL_QUEST, OPENING_QUEST, QuestLog
 
 
@@ -34,7 +35,7 @@ class MiraMachinistStoryTests(unittest.TestCase):
         for objective in ('meet_mira', 'diagnose_mill'):
             self.assertTrue(quests.complete_objective(MILL_QUEST, objective))
         controller = MillQuest.__new__(MillQuest)
-        controller.game = SimpleNamespace(quests=quests,
+        controller.game = SimpleNamespace(quests=quests, inventory=Inventory(),
             social=SimpleNamespace(flags=set(), locked=False, blocked=set(),
                                    start_script=Mock(return_value=True)),
             player=SimpleNamespace(walk_ms=0.0))
@@ -54,31 +55,33 @@ class MiraMachinistStoryTests(unittest.TestCase):
         controller.lines = self.lines
         return controller
 
-    def test_required_reunion_recognizes_rivet_before_explaining_his_folded_kit(self):
+    def test_required_reunion_establishes_the_mill_problem_before_the_early_gift(self):
         reunion = self.lines['reunion']
-        mention = next(line for line in reunion if 'Rivet' in line['text'])
-        self.assertEqual(mention['speaker'], 'caelan')
-        self.assertIn('earned his keep', mention['text'])
-        mira = ' '.join(line['text'] for line in reunion if line['speaker'] == 'mira')
-        self.assertIn('folded into my kit', mira)
-        self.assertIn('Four good legs', mira)
-        self.assertIn('bolt launcher', mira)
+        self.assertEqual(reunion[0]['speaker'], 'caelan')
+        self.assertIn('Halden', reunion[0]['text'])
+        self.assertIn('mill has stopped', reunion[0]['text'])
+        self.assertTrue(any('water' in line['text'] for line in reunion))
+        gift = ' '.join(line['text'] for line in self.lines['gift'])
+        for detail in ('birthday', 'grip', 'housing', 'ring', 'Water', 'Nature', 'Fire', 'Ice', 'aether'):
+            self.assertIn(detail, gift)
+        self.assertTrue(any(line.get('cue') == 'handoff' for line in self.lines['gift']))
 
     def test_route_weapon_checks_and_both_aftermaths_match_the_machinist_kit(self):
         self.assertEqual(self.lines['warning'], self.lines['reminder_warning'])
         warning = ' '.join(line['text'] for line in self.lines['warning'])
-        self.assertIn('spring catch', warning)
-        self.assertIn('bolts', warning)
+        for detail in ('water', 'launcher', 'Rivet', 'sword sheathed'):
+            self.assertIn(detail, warning)
         for name in ('aftermath', 'aftermath_recovered'):
             text = ' '.join(line['text'] for line in self.lines[name])
-            self.assertIn('Rivet', text)
-            self.assertTrue('folded away' in text or 'back in the kit' in text)
+            self.assertIn('elements', text)
+            self.assertIn('sheathed', text)
+            self.assertIn('quieter', text)
             self.assertNotIn('better reach', text)
         for name, lines in self.lines.items():
             self.assertNotRegex(' '.join(line['text'] for line in lines), r'(?i)\bspear\w*', name)
         self.assertEqual(self.lines['encounter_intro'][-1], {
             'speaker': 'mira',
-            'text': 'Caelan, come back to me. Slowly. Keep your feet under you.',
+            'text': 'Caelan, back towards me. Slowly.',
             'cue': 'mill_return_to_party'})
 
     def test_full_current_implementation_script_matches_every_runtime_exchange(self):
@@ -88,7 +91,8 @@ class MiraMachinistStoryTests(unittest.TestCase):
         self.assertEqual({name for name, _ in blocks}, set(self.lines))
         for name, text in blocks:
             with self.subTest(exchange=name):
-                actual = re.findall(r'^- \*\*(\w+):\*\* “(.*)”$', text, re.MULTILINE)
+                actual = [(speaker, prose.replace('\\*', '*')) for speaker, prose in
+                          re.findall(r'^- \*\*(\w+):\*\* “(.*)”$', text, re.MULTILINE)]
                 expected = [(line['speaker'].title(), line['text']) for line in self.lines[name]]
                 self.assertEqual(actual, expected)
 
@@ -140,17 +144,20 @@ class MiraMachinistStoryTests(unittest.TestCase):
                          'active')
 
     def test_launcher_retrieval_uses_the_existing_repair_dialogue_and_legacy_branch(self):
-        for fought in (False, True):
-            with self.subTest(fought=fought):
+        for armed, fought in ((True, False), (True, True), (False, False), (False, True)):
+            with self.subTest(armed=armed, fought=fought):
                 controller = self.controller()
+                if armed:self.assertTrue(controller.game.inventory.add('caelan_gearblade'))
                 controller.encounter_cleared = fought
                 controller.release_pose = Mock()
                 self.assertTrue(controller._speak('repair_done'))
                 lines, finished, identifier = controller.game.social.start_script.call_args.args
                 self.assertEqual(identifier, 'mill_repair_done')
                 source = 'repair_done_combat' if fought else 'repair_done'
+                if not armed:source = 'legacy_'+source
                 self.assertIs(lines, self.lines[source])
-                self.assertEqual(lines[:2], self.lines['repair_done'][:2])
+                base = 'repair_done' if armed else 'legacy_repair_done'
+                self.assertEqual(lines[:2], self.lines[base][:2])
                 self.assertEqual(any('launcher' in line['text'] for line in lines), fought)
                 finished()
                 controller.release_pose.assert_called_once_with()

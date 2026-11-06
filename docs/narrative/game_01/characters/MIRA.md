@@ -134,9 +134,11 @@ or connection to current events without approval.
 
 These occur after the opening and must not be rewritten as earlier biography:
 
-- **MQ02:** Helps diagnose the restricted mill intake, fights the Ridgeback
-  Tusker with her launcher and Rivet, checks Caelan afterward, and contributes
-  mechanical knowledge to their repair. Caelan's modest magical success remains
+- **MQ02:** Presents Caelan’s early birthday blade before the outing, helps
+  diagnose the restricted mill intake, covers him during the first combat
+  lesson, fights the Ridgeback Tusker with her launcher and Rivet, checks Caelan
+  afterward, and contributes mechanical knowledge to their repair. Caelan's
+  modest magical success remains
   his own useful contribution.
 - **MQ04:** Helps Liam develop a workable tower-lantern frame without dismissing
   his design. Guides the children through practical choices about heat, shape,
@@ -174,7 +176,7 @@ accomplishment already completed at the opening or an implemented game scene.
 | Practical competence | Mechanical diagnosis, repair and collaborative construction | Established |
 | MQ02 kit | Compact spring-driven bolt launcher and Rivet, her familiar workshop bot folded into her kit | Established |
 | Rivet and Overclock | Rivet unfolds for battle and attacks autonomously; her starting Overclock grants it Haste | Established |
-| Combat position | Stronger and more experienced than unarmed Caelan in MQ02; temporary player-controlled guest | Established |
+| Combat position | Stronger and more experienced than newly armed Caelan in MQ02; temporary player-controlled guest after the guided opening | Established |
 | Background limits | Her age and mill training are established; no military background has been assigned | Established / Open |
 | Emotional blind spot | May try to approach another person's pain as a problem to solve before understanding what they want | Established |
 | Help she needs | Someone willing to stay with her without requiring an explanation or a solution | Established |

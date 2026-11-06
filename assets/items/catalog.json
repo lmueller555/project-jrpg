@@ -60,14 +60,45 @@
       "category": "items",
       "description": "Prismatic crystallized aether. Consumed to activate spell and ability nodes on the Aether Lattice.",
       "use_context": "aether_lattice"
+    },
+    "caelan_gearblade": {
+      "name": "Mira’s Blade",
+      "category": "weapons",
+      "description": "An early birthday gift from Mira: a sword whose rotating gear guard holds green Nature, blue Water, red Fire and white Ice focuses. Caelan directs his own aether through the selected focus.",
+      "equipment_slot": "weapon"
     }
   },
   "quest_grants": {
-    "CH01_MQ01": {"halden_medicine": 1, "elira_supplies": 1, "venn_supplies": 1}
+    "CH01_MQ01": {
+      "halden_medicine": 1,
+      "elira_supplies": 1,
+      "venn_supplies": 1
+    }
   },
   "deliveries": {
-    "CH01_MQ01/halden": {"quest": "CH01_MQ01", "objective": "halden", "recipient": "halden", "items": {"halden_medicine": 1}},
-    "CH01_MQ01/elira": {"quest": "CH01_MQ01", "objective": "elira", "recipient": "elira", "items": {"elira_supplies": 1}},
-    "CH01_MQ01/venn": {"quest": "CH01_MQ01", "objective": "venn", "recipient": "venn", "items": {"venn_supplies": 1}}
+    "CH01_MQ01/halden": {
+      "quest": "CH01_MQ01",
+      "objective": "halden",
+      "recipient": "halden",
+      "items": {
+        "halden_medicine": 1
+      }
+    },
+    "CH01_MQ01/elira": {
+      "quest": "CH01_MQ01",
+      "objective": "elira",
+      "recipient": "elira",
+      "items": {
+        "elira_supplies": 1
+      }
+    },
+    "CH01_MQ01/venn": {
+      "quest": "CH01_MQ01",
+      "objective": "venn",
+      "recipient": "venn",
+      "items": {
+        "venn_supplies": 1
+      }
+    }
   }
 }

@@ -29,6 +29,7 @@ RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
 PLAYER_ACTIONS = ('attack', 'guard', 'flee')
 SUPPORTED_LEARNED_ACTIONS = ('aether_dart',)
 SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'overclock')
+ELEMENTAL_EDGE_ATTEMPTS = ('nature_edge', 'aqua_edge', 'flame_edge')
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
 
@@ -56,19 +57,23 @@ def load_actions(data=None):
                 or set(action) != (fields | {'weapon_hits'}
                                    if action.get('kind') == 'enchant' else
                                    fields | {'turns', 'rate_multiplier'}
-                                   if action.get('kind') == 'haste' else fields)
+                                   if action.get('kind') == 'haste' else
+                                   fields | {'magical_potency'}
+                                   if action.get('kind') == 'spellblade' else fields)
                 or any(not isinstance(action[key], str) or not action[key].strip()
                        for key in ('name', 'animation'))
-                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant', 'haste')
+                or action['kind'] not in ('physical', 'magical', 'guard', 'flee', 'prepare', 'enchant', 'haste', 'spellblade', 'failed_edge')
                 or action['target'] not in ('opponent', 'self', 'none', 'owned_bot')
                 or not _integer(action['mp_cost'], maximum=999999)
                 or not _number(action['duration'], .001, 10)
                 or not _number(action['impact_at'], 0, action['duration'])
                 or not _number(action['potency'])):
             raise ValueError('Invalid battle action')
-        if action['kind'] in ('physical', 'magical'):
+        if action['kind'] in ('physical', 'magical', 'spellblade'):
             if action['potency'] <= 0 or action['target'] != 'opponent':
                 raise ValueError('Invalid damaging action')
+            if action['kind'] == 'spellblade' and not _number(action['magical_potency'], .001):
+                raise ValueError('Invalid spellblade component')
         elif action['kind'] == 'enchant':
             if (action['potency'] <= 0 or action['target'] != 'self'
                     or action['animation'] != 'cast'
@@ -81,7 +86,7 @@ def load_actions(data=None):
                     or not _number(action['rate_multiplier'], 1.001, 10)):
                 raise ValueError('Invalid bot haste')
         elif (action['potency'] != 0 or action['mp_cost'] != 0
-              or action['target'] != ('self' if action['kind'] in ('guard', 'prepare') else 'none')):
+              or action['target'] != ('self' if action['kind'] in ('guard', 'prepare', 'failed_edge') else 'none')):
             raise ValueError('Invalid utility action')
     if not set(PLAYER_ACTIONS+SUPPORTED_LEARNED_ACTIONS+SUPPORTED_SKILL_ACTIONS) <= set(data['actions']):
         raise ValueError('Missing player battle action')
@@ -218,7 +223,7 @@ class BattleModel:
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
-                 guest_abilities=None):
+                 guest_abilities=None, spellblade_tutorial=False):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -277,7 +282,19 @@ class BattleModel:
         self._pending_outcome = None
         self._enemy_action_index = 0
         self.telegraphed_target = None
+        if type(spellblade_tutorial) is not bool:raise ValueError('Invalid spellblade tutorial state')
+        if spellblade_tutorial and (enemy_id != 'ridgeback_tusker' or guest_id != 'mira' or not weapon_equipped):
+            raise ValueError('Spellblade lesson requires the armed mill party')
+        self.spellblade_stage = ('opening' if spellblade_tutorial and
+                                'aether_edge' not in self.learned_abilities else None)
+        self.aether_edge_discovered = False
+        self._lesson_bot_actions = 0
+        if self.spellblade_guided:self.enemy.atb = 1.
         if self.phase == 'defeat':self._result('defeat')
+
+    @property
+    def spellblade_guided(self):
+        return self.spellblade_stage not in (None, 'complete')
 
     @property
     def waiting_for_player(self):return self.phase == 'ready'
@@ -354,7 +371,8 @@ class BattleModel:
     @property
     def ready_members(self):
         return tuple(member.identifier for member in self.party
-                     if member.hp and member.atb+EPSILON >= 1)
+                     if member.hp and member.atb+EPSILON >= 1
+                     and (not self.spellblade_guided or member.identifier == 'player'))
 
     def select_ready(self, identifier):
         if (not self.waiting_for_player or not isinstance(identifier, str)
@@ -378,6 +396,8 @@ class BattleModel:
         actor = self._party_actor(actor_id)
         if actor is None:return []
         if actor.identifier == 'player':
+            if self.spellblade_stage in ('first_edge', 'second_edge'):
+                return list(ELEMENTAL_EDGE_ATTEMPTS)
             return ['aether_edge'] if 'aether_edge' in self.learned_abilities else []
         if actor.identifier == 'mira' and 'overclock' in self.guest_abilities.get('mira', ()):
             return ['overclock']
@@ -395,6 +415,10 @@ class BattleModel:
         if identifier != 'skills':return self.action_reason(identifier, actor_id)
         actor = self._party_actor(actor_id)
         if actor is None:return 'This action is not available.'
+        if self.spellblade_guided:
+            if actor.identifier != 'player':return 'Mira is covering Caelan.'
+            if self.spellblade_stage not in ('first_edge', 'second_edge'):
+                return 'Guard against the charge first.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
         if actor.identifier == 'player' and not self.weapon_equipped:
@@ -414,11 +438,19 @@ class BattleModel:
             return 'This action is not available.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if self.spellblade_guided:
+            if actor.identifier != 'player':return 'Mira is covering Caelan.'
+            expected = ('guard',) if self.spellblade_stage == 'guard' else ELEMENTAL_EDGE_ATTEMPTS
+            if identifier not in expected:
+                return ('Guard against the charge first.' if self.spellblade_stage == 'guard'
+                        else 'Choose a focus from Skills.')
         if identifier == 'aether_edge' and not self.weapon_equipped:
             return 'Requires a weapon.'
         if identifier == 'overclock' and self.active_bot(actor.identifier) is None:
             return 'Requires an active bot.'
-        if actor.mp < self.actions[self._action_id(identifier, actor)]['mp_cost']:
+        action_id = ('aether_edge' if self.spellblade_stage == 'second_edge' and
+                     identifier in ELEMENTAL_EDGE_ATTEMPTS else self._action_id(identifier, actor))
+        if actor.mp < self.actions[action_id]['mp_cost']:
             return 'Not enough MP.'
         return ''
 
@@ -426,7 +458,10 @@ class BattleModel:
         if self.action_reason(identifier, actor_id):return False
         actor = self._party_actor(actor_id)
         self._active_actor = actor.identifier
-        self._start_action(actor.identifier, self._action_id(identifier, actor))
+        action = ('aether_edge' if actor.identifier == 'player' and
+                  self.spellblade_stage == 'second_edge' and identifier in ELEMENTAL_EDGE_ATTEMPTS
+                  else self._action_id(identifier, actor))
+        self._start_action(actor.identifier, action)
         return True
 
     def drain_events(self):
@@ -436,6 +471,7 @@ class BattleModel:
     def _enemy_target(self, identifier):
         living = [member for member in self.party if member.hp]
         if not living:return None
+        if self.spellblade_guided and identifier == 'tusker_charge':return 'player'
         if identifier == 'tusker_charge' and self.telegraphed_target:
             target = next((member for member in living
                            if member.identifier == self.telegraphed_target), None)
@@ -466,8 +502,12 @@ class BattleModel:
 
     def _start_enemy_action(self):
         choices = self.enemy_definition['abilities']
-        identifier = choices[self._enemy_action_index % len(choices)]
-        self._enemy_action_index += 1
+        if self.spellblade_guided:
+            identifier = ('prepare_charge' if self.spellblade_stage == 'opening' else
+                          'tusker_charge' if self.spellblade_stage == 'charge' else 'tusk_strike')
+        else:
+            identifier = choices[self._enemy_action_index % len(choices)]
+            self._enemy_action_index += 1
         if self.enemy.mp < self.actions[identifier]['mp_cost']:
             identifier = next(key for key in choices if self.actions[key]['mp_cost'] == 0
                               and self.actions[key]['kind'] in ('physical', 'magical'))
@@ -480,6 +520,8 @@ class BattleModel:
             actor.guarded = True
             self.message = actor.name+' braces for the next attack.'
             self.events.append({'type': 'guard', 'actor': action.actor})
+            if self.spellblade_stage == 'guard' and action.actor == 'player':
+                self.spellblade_stage = 'charge';self.enemy.atb = 1.
         elif action.kind == 'flee':
             self._pending_outcome = 'fled'
             self.message = actor.name+' gets away safely.'
@@ -490,6 +532,12 @@ class BattleModel:
             self.message = actor.name+' lowers its head toward '+member.name+'.'
             self.events.append({'type': 'telegraph', 'actor': action.actor,
                                 'action': action.action, 'target': target})
+            if self.spellblade_stage == 'opening':self.spellblade_stage = 'guard'
+        elif action.kind == 'failed_edge':
+            self.message = 'The chosen focus flickers; the elemental strike fails.'
+            self.spellblade_stage = 'second_edge'
+            self.events.append({'type': 'spellblade_failed', 'actor': action.actor,
+                                'action': action.action})
         elif action.kind == 'enchant':
             actor.aether_edge_hits = self.actions[action.action]['weapon_hits']
             self.message = actor.name+' enchants their weapon with Aether Edge.'
@@ -510,12 +558,16 @@ class BattleModel:
         else:
             target = self.combatant(action.target)
             protected = target.guarded
-            calculator = physical_damage if action.kind == 'physical' else magical_damage
+            calculator = physical_damage if action.kind in ('physical', 'spellblade') else magical_damage
             variance = roll_variance(self.rng)
             source = self.combatant(actor.owner_id) if isinstance(actor, BotUnit) else actor
             if isinstance(actor, BotUnit):actor.attributes['str'] = source.value('str')
             action.damage = calculator(source, target, self.actions[action.action]['potency'],
                                        protected=protected, variance_percent=variance)
+            if action.kind == 'spellblade':
+                bonus = magical_damage(source, target, self.actions[action.action]['magical_potency'],
+                                       protected=protected, variance_percent=variance)
+                action.damage = min(NORMAL_DAMAGE_CAP, action.damage+bonus)
             enchanted = (action.actor == 'player' and self.weapon_equipped
                          and action.kind == 'physical' and actor.aether_edge_hits > 0)
             if enchanted:
@@ -532,7 +584,15 @@ class BattleModel:
             if enchanted:
                 event.update(aether_edge=True, remaining_hits=actor.aether_edge_hits)
             self.events.append(event)
-            if action.action == 'tusker_charge':self.telegraphed_target = None
+            if action.action == 'tusker_charge':
+                self.telegraphed_target = None
+                if self.spellblade_stage == 'charge':self.spellblade_stage = 'first_edge'
+            if action.action == 'aether_edge' and self.spellblade_stage == 'second_edge':
+                self.spellblade_stage = 'complete'
+                self.learned_abilities = self.learned_abilities | {'aether_edge'}
+                self.aether_edge_discovered = True
+                self.events.append({'type': 'spellblade_discovered', 'actor': 'player',
+                                    'action': 'aether_edge'})
             if not target.hp:
                 target.atb = 0.0
                 if action.target == 'enemy':self._pending_outcome = 'victory'
@@ -566,6 +626,17 @@ class BattleModel:
                 bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*seconds)
 
     def _sync_bot_activity(self):
+        # A lesson cannot keep ordering an incapacitated character to act.
+        # Release the companions without treating survival as a skill discovery.
+        if self.spellblade_guided and not self.player.hp:
+            self.spellblade_stage = None
+            self.telegraphed_target = None
+            if self.current_action is not None and self.current_action.actor == 'player':
+                self.last_action, self.current_action = self.current_action, None
+                self.phase = 'charging'
+            elif self.waiting_for_player and self._active_actor == 'player':
+                self.phase = 'charging'
+            self.events.append({'type': 'spellblade_interrupted', 'actor': 'player'})
         for bot in self.bots:
             alive = bool(self._party_actor(bot.owner_id).hp)
             if alive != self._bot_owner_alive[bot.identifier]:
@@ -575,6 +646,7 @@ class BattleModel:
 
     def _complete_bot_action(self, action):
         bot = self.combatant(action.actor)
+        if isinstance(bot, BotUnit) and self.spellblade_guided:self._lesson_bot_actions += 1
         if not isinstance(bot, BotUnit) or not bot.haste_turns:return
         bot.haste_turns -= 1
         self.events.append({'type': 'haste_tick', 'actor': bot.identifier,
@@ -597,7 +669,8 @@ class BattleModel:
                     self._result('defeat')
                     return
                 candidates = [*living, *(bot for bot in self.bots
-                                         if self.active_bot(bot.owner_id) is bot), self.enemy]
+                                         if self.active_bot(bot.owner_id) is bot
+                                         and (not self.spellblade_guided or self._lesson_bot_actions < 3)), self.enemy]
                 times = [(actor, max(0.0, (1-actor.atb)/self.atb_rate(actor)))
                          for actor in candidates]
                 earliest = min(time for actor, time in times)
@@ -610,6 +683,9 @@ class BattleModel:
                 remaining = max(0.0, remaining-boundary)
                 if member in living:
                     member.atb = 1.0
+                    if self.spellblade_guided and member.identifier != 'player':
+                        self._start_action(member.identifier, 'guard')
+                        continue
                     self._active_actor = member.identifier
                     self.phase = 'ready'
                     self.message = 'Choose an action.'

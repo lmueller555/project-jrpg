@@ -27,6 +27,7 @@ from save_game import SaveStore
 from opening import OpeningSequence
 from opening_cinematic import OpeningCinematic
 from regent_arrival import RegentArrival
+from mill_gift import MillGift
 from opening_audio import MorningAudio
 from regional_audio import RegionalAudio
 from audio_settings import AudioSettings
@@ -462,6 +463,7 @@ class Game:
         self.venn_visit=VennVisit(self)
         self.opening_conclusion=OpeningConclusion(self)
         self.mill_quest=MillQuest(self)
+        self.mill_gift=MillGift(self)
         self.regent_arrival=RegentArrival(self)
         self.regent_quest=RegentQuest(self)
         self.lantern_quest=LanternQuest(self)
@@ -537,7 +539,7 @@ class Game:
 
     @property
     def household_action(self):
-        return (self.regent_arrival.active or self.regent_arrival.state=='pending' or
+        return (self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
                 any(visit.locks_player for visit in self.household_visits))
 
     def _sync_inventory(self):
@@ -664,6 +666,7 @@ class Game:
         exercise a later quest can explicitly request the ordinary opening.
         """
         if not continue_saved and show_cinematic:
+            self.mill_gift.reset()
             self.on_title=False
             self._mouse_held=False
             self.social.clear_pointer()
@@ -677,6 +680,7 @@ class Game:
         data=self.saved_journey if continue_saved else None
         if continue_saved and data is None:return False
         self.opening_cinematic.reset()
+        self.mill_gift.reset()
         self.regent_arrival.reset()
         self.combat.reset()
         self.lattice=AetherLattice()
@@ -851,10 +855,10 @@ class Game:
         self.save_progress()
         return True
 
-    def acquire_weapon(self,character_id,item_id):
-        """Future quest grants add/equip a catalog weapon and unlock its skills."""
+    def acquire_weapon(self,character_id,item_id,*,learn_starter=True):
+        """Grant/equip a weapon; authored training may defer its starter skill."""
         if self.on_title or self.combat.active or self.opening_cinematic.active:return False
-        if not self.character_abilities.acquire_weapon(character_id,item_id):return False
+        if not self.character_abilities.acquire_weapon(character_id,item_id,learn_starter=learn_starter):return False
         self.save_progress()
         return True
 
@@ -959,6 +963,7 @@ class Game:
                 session.fail(error)
                 return True
         self.regent_arrival.begin_input_batch()
+        self.mill_gift.begin_event_batch()
         advanced=False
         resumed=False
         for event in events:
@@ -992,6 +997,11 @@ class Game:
                 self.music.set_paused(not self._music_focused or
                                       self.opening_cinematic.paused)
                 resumed=not self.opening_cinematic.active
+                continue
+            if self.mill_gift.active:
+                self.mill_gift.handle_event(event)
+                self.music.set_paused(not self._music_focused or self.mill_gift.paused)
+                resumed=not self.mill_gift.active
                 continue
             if self.regent_arrival.active or self.regent_arrival.state=='pending':
                 if self.regent_arrival.active:self.regent_arrival.handle_event(event)
@@ -1118,6 +1128,13 @@ class Game:
             self.regional_audio.update(0)
 
     def _update_world(self,seconds,direction=None,running=None):
+        if self.mill_gift.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.mill_gift.paused)
+            self.music.set_ducked(True)
+            self.music.update(seconds)
+            self.mill_gift.update(seconds)
+            return
         if self.opening_cinematic.active:
             # The flashforward has its own scene clock and never advances the
             # present-day world, dialogue, quest actors or checkpoint clock.
@@ -1394,6 +1411,13 @@ class Game:
         if self.opening_cinematic.active:
             _,size,origin=self._ensure_ui_surface()
             self.opening_cinematic.draw(self.canvas,self.ui_surface)
+            self.window.fill('#101b19')
+            self.window.blit(self.ui_surface,origin)
+            if not self._is_gallery_preview:pygame.display.flip()
+            return
+        if self.mill_gift.active:
+            _,size,origin=self._ensure_ui_surface()
+            self.mill_gift.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
             if not self._is_gallery_preview:pygame.display.flip()

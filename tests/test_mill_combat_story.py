@@ -155,12 +155,13 @@ class MillCombatStoryTests(unittest.TestCase):
         self.assertFalse(any('rest' in line['text'].lower() for line in lines['aftermath']))
         self.assertTrue(any('tusker' in line['text'].lower() for line in lines['resolution_combat']))
         self.assertFalse(any('tusker' in line['text'].lower() for line in lines['resolution']))
-        self.assertTrue(any('spring catch' in line['text'] for line in lines['warning']))
+        self.assertTrue(any('sword sheathed' in line['text'] for line in lines['warning']))
+        self.assertTrue(any('Rivet' in line['text'] for line in lines['warning']))
         self.assertTrue(any('bandage' in line['text'] for line in lines['aftermath_recovered']))
         self.assertTrue(any('tree' in line['text'] for line in lines['encounter_intro']))
         self.assertEqual([(line['speaker'], line['text']) for line in lines['encounter_intro']
                           if line.get('cue') == 'mill_return_to_party'],
-                         [('mira', 'Caelan, come back to me. Slowly. Keep your feet under you.')])
+                         [('mira', 'Caelan, back towards me. Slowly.')])
 
 
 if __name__ == '__main__':unittest.main()

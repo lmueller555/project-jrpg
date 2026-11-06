@@ -48,7 +48,7 @@ class MillraceDepartureTests(unittest.TestCase):
         self.h.approach((1080, 370));self.h.event('race')
         while self.g.social.page['source_line'] < len(self.c.lines['race'])-1:
             key(self.g, pygame.K_SPACE)
-        self.assertIn('further upstream', self.c.lines['race'][self.g.social.page['source_line']]['text'])
+        self.assertIn('river trail', self.c.lines['race'][self.g.social.page['source_line']]['text'])
 
     def diagnosis_directions(self):
         self.race_directions()

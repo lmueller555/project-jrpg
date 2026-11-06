@@ -37,7 +37,7 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
         mira = model.combatant('mira')
         self.assertEqual((mira.hp, mira.mp, mira.value('str')), (300, 30, 20))
-        self.assertEqual(model.enemy.hp, 450)
+        self.assertEqual(model.enemy.hp, 700)
         self.assertEqual(model.enemy_definition['abilities'],
                          ['tusk_strike', 'prepare_charge', 'tusker_charge'])
         model.update(1000)
@@ -135,7 +135,7 @@ class PartyBattleModelTests(unittest.TestCase):
                    and event['action'] == 'tusker_charge')
         self.assertEqual(tell['target'], 'player')
         self.assertEqual(hit['target'], 'player')
-        self.assertEqual(hit['damage'], 34)
+        self.assertEqual(hit['damage'], 19)
         self.assertTrue(hit['guarded'])
         self.assertFalse(any(event['type'] == 'impact' and event['action'] == 'prepare_charge'
                              for event in history))
@@ -155,7 +155,7 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(.45)
         self.assertTrue(model.player.guarded)
         self.assertEqual(model.player.hp, 140)
-        self.assertEqual(model.combatant('mira').hp, 257)
+        self.assertEqual(model.combatant('mira').hp, 276)
 
     def test_incapped_caelan_does_not_end_battle_while_mira_can_act(self):
         source = CharacterAttributes()
@@ -203,7 +203,7 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(.7)
         self.assertEqual(model.phase, 'fled')
         self.assertEqual([member.hp for member in model.party], [140, 300])
-        self.assertEqual(model.enemy.hp, 450)
+        self.assertEqual(model.enemy.hp, 700)
 
     def test_large_and_small_updates_match_through_party_and_enemy_turns(self):
         large = self.model(rng=random.Random(71))

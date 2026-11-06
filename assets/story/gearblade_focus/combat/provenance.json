@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "generated_with": "image_gen",
+  "source": "assets/source/cinematics/gearblade_focus/combat_generated.png",
+  "source_sha256": "0b9dde2b0c5e77f64204083d4f60c8737806f29b89c6f025de0677e3e8afec52",
+  "operation": "Register authored gearblade water and combat drawings without pose warping.\n\nSources are image_gen-authored equal-cell atlases. Only alpha cleanup, uniform\nnearest-neighbor scaling, palette registration and fixed foot anchoring occur.\nThe combat canvas has extra blade margin while retaining the original body\nheight and an explicit new anchor; no equipment is mirrored.",
+  "fixed_scale": 0.1722488038277512,
+  "frames": [
+    {
+      "file": "idle_01.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sha256": "016c68078f0c8bc2d6910c4238c23ab3cc05e7e5fb8c7021f42b4d978e2bc319",
+      "source_bounds": [
+        59,
+        61,
+        237,
+        270
+      ],
+      "source_foot": [
+        176.0,
+        269
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        12,
+        20
+      ]
+    },
+    {
+      "file": "idle_02.png",
+      "source_cell": 1,
+      "source_box": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sha256": "25d1354d544b22c203229f414a65b7e07895225988ddc30c419e5c519edb93f8",
+      "source_bounds": [
+        53,
+        61,
+        236,
+        270
+      ],
+      "source_foot": [
+        173.0,
+        269
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        11,
+        20
+      ]
+    },
+    {
+      "file": "attack_01.png",
+      "source_cell": 2,
+      "source_box": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sha256": "e5fa5f0f2174e818538beef1764178f8507e1096b2b3119fe14d73e839981c9b",
+      "source_bounds": [
+        83,
+        50,
+        228,
+        269
+      ],
+      "source_foot": [
+        130.0,
+        268
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        24,
+        18
+      ]
+    },
+    {
+      "file": "attack_02.png",
+      "source_cell": 3,
+      "source_box": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sha256": "8a44ec916c472a6490974c155fa3d4779e0f70b5b14db042becd814372ba5892",
+      "source_bounds": [
+        0,
+        66,
+        255,
+        266
+      ],
+      "source_foot": [
+        151.0,
+        265
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        6,
+        22
+      ]
+    },
+    {
+      "file": "attack_03.png",
+      "source_cell": 4,
+      "source_box": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sha256": "c187513e4b4aa5860199638ccae603a5a4d0532aa7053b4805e30dadc5d1e792",
+      "source_bounds": [
+        51,
+        62,
+        261,
+        268
+      ],
+      "source_foot": [
+        189.0,
+        267
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        8,
+        21
+      ]
+    },
+    {
+      "file": "cast_01.png",
+      "source_cell": 5,
+      "source_box": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sha256": "0f2e88a4166f599c2ad0022369e4162ba018fde99ce0e2a32689f8243c40cb02",
+      "source_bounds": [
+        73,
+        57,
+        239,
+        268
+      ],
+      "source_foot": [
+        156.0,
+        267
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        18,
+        20
+      ]
+    },
+    {
+      "file": "cast_02.png",
+      "source_cell": 6,
+      "source_box": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sha256": "bc1222ce0fff26e3765c85fa35272aae23daca10b613bc34a2ce5ff6810f1fcf",
+      "source_bounds": [
+        16,
+        57,
+        246,
+        269
+      ],
+      "source_foot": [
+        159.0,
+        268
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        7,
+        20
+      ]
+    },
+    {
+      "file": "cast_03.png",
+      "source_cell": 7,
+      "source_box": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sha256": "76b9cdcf8ae9a918fac466335e80cf580bbdac05c4b118778a1a1ef4eaaa42e0",
+      "source_bounds": [
+        58,
+        59,
+        238,
+        268
+      ],
+      "source_foot": [
+        202.0,
+        267
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        7,
+        20
+      ]
+    },
+    {
+      "file": "guard_01.png",
+      "source_cell": 8,
+      "source_box": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sha256": "f0fd0ac0c76d4c0ab1b855d64be5f3d1502be743a9e0ba56636c339ca87dfddb",
+      "source_bounds": [
+        89,
+        53,
+        245,
+        259
+      ],
+      "source_foot": [
+        206.0,
+        258
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        12,
+        21
+      ]
+    },
+    {
+      "file": "guard_02.png",
+      "source_cell": 9,
+      "source_box": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sha256": "ae976ccb17fc83f27235548290c311fff5e18fe0afb4f143c9e985f55cb339ef",
+      "source_bounds": [
+        89,
+        67,
+        248,
+        259
+      ],
+      "source_foot": [
+        210.0,
+        258
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        11,
+        23
+      ]
+    },
+    {
+      "file": "hurt_01.png",
+      "source_cell": 10,
+      "source_box": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sha256": "6031064e82c7132af35d4235864fb90ff45182adcb317ce9b25f5f0d1a1d9fac",
+      "source_bounds": [
+        54,
+        53,
+        246,
+        259
+      ],
+      "source_foot": [
+        182.0,
+        258
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        10,
+        21
+      ]
+    },
+    {
+      "file": "hurt_02.png",
+      "source_cell": 11,
+      "source_box": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sha256": "6212b7fec9082cb1b05753a60c1f489fbfff577b56df1cda7cab7a2f05d2c3ca",
+      "source_bounds": [
+        46,
+        56,
+        235,
+        259
+      ],
+      "source_foot": [
+        196.0,
+        258
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        6,
+        21
+      ]
+    },
+    {
+      "file": "victory_01.png",
+      "source_cell": 12,
+      "source_box": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sha256": "a60e3079422f2553b53bf01422e85c8fa88d7afa14aa0c35387c32e667968491",
+      "source_bounds": [
+        89,
+        31,
+        228,
+        267
+      ],
+      "source_foot": [
+        190.0,
+        266
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        15,
+        16
+      ]
+    },
+    {
+      "file": "victory_02.png",
+      "source_cell": 13,
+      "source_box": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sha256": "cc3c2d5bf1f5d2b8363ea6365355c606c4fb19652ff5b613609d4996288e02ba",
+      "source_bounds": [
+        89,
+        31,
+        218,
+        267
+      ],
+      "source_foot": [
+        180.5,
+        266
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        16,
+        16
+      ]
+    },
+    {
+      "file": "defeat_01.png",
+      "source_cell": 14,
+      "source_box": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sha256": "41e30dc25103a18ada7398247da337ebada4dfde2fa183b0813f8b091edfc9d1",
+      "source_bounds": [
+        57,
+        93,
+        242,
+        266
+      ],
+      "source_foot": [
+        172.0,
+        264
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        12,
+        27
+      ]
+    },
+    {
+      "file": "defeat_02.png",
+      "source_cell": 15,
+      "source_box": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sha256": "4499fc2823075ca6df346d401555ad7f00b14be55f47615c8ee7ea0da6ddd8e7",
+      "source_bounds": [
+        73,
+        100,
+        262,
+        267
+      ],
+      "source_foot": [
+        201.0,
+        266
+      ],
+      "scale": 0.1722488038277512,
+      "registration": [
+        10,
+        27
+      ]
+    }
+  ]
+}

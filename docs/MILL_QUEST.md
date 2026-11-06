@@ -9,66 +9,45 @@ MQ03's revised relief, quarry and [covenant](world/SANCTUARY_COVENANT.md)
 discussion. The cinematic returns control to Caelan at the mill; accepting
 MQ03 still requires speaking with Serene inside the sanctuary.
 
-`CH01_MQ02` begins after MQ01's stopped-wheel exchange. Its available marker points
-to Mira at her existing outdoor workbench. Finishing the reunion accepts the
-quest and lets the same actor accompany Caelan.
+`CH01_MQ02` begins after MQ01’s stopped-wheel exchange. Its available marker points to Mira at the existing outdoor workbench before the upper bridge. The revised request leads into her early birthday present for Caelan. Completing the presentation owns/equips the sword once, accepts the quest and records the meeting before the same Mira accompanies him.
 
-The dialogue connects Halden’s festival flour to the Festival of Light, introduces Mira’s work and friendship before the investigation, and gives the actual north-road route in speech. Stage-specific reminders repeat the next destination or control. Brief emotional cues use literal asterisks.
+The main route is now workshop request and gift, mill diagnosis, armed departure, the riverbank tutorial, linear aftermath, intake inspection, pressure relief, sword-focused water spell, encouragement, cooperative repair and gift thanks, working wheel and Halden’s resolution. Dialogue supplies household/work context and the actual north-road directions; selective emotive cues use literal asterisks.
 
-The current runtime route is workbench, mill diagnosis, Mira's practical warning and
-armed departure, the riverbank encounter, a linear aftermath, upstream intake,
-pressure relief, a small successful spell, encouragement, cooperative repair,
-verification of the working mill, and Halden's closing exchange. The first
-battle introduces player-controlled party combat. The repair has no timer,
-casting roll or resource charge.
+## The birthday presentation
+
+Mira prepared the gift before the outing. A detailed workshop insert shows her presenting the blade, Caelan taking its weight, the gear guard and gems, his hand turning the ring and their reactions. Its grip stays fixed while a firm ring click selects a focus. Green is Nature, blue Water, red Fire and white Ice. The selected gem responds, but no elemental spell succeeds during this demonstration.
+
+`mill_gift.py` owns this presentation, using the ordinary portrait-panel format and player-paced source text from `assets/story/mill/scene.json:gift`. The visual phases are `reveal`, `whole`, `handoff`, `gear` and `faces`; minimum authored movement totals approximately eighteen seconds in addition to reading time. Phase completion barriers prevent fast acknowledgements from skipping the handoff or selector demonstration. Pause/focus loss and Reduced Motion retain their normal presentation behavior.
+
+The real item is `caelan_gearblade`, **Mira’s Blade**. Its inventory/first-weapon receipt is separate from learning Aether Edge: the gift leaves starter training pending. Reequipping cannot bypass that state. An interrupted unfinished scene can restart safely, while an owned gift is never granted twice. New Game clears ownership/training normally. Older already-active/completed journeys keep their route without a forced retroactive presentation.
 
 ## Playing through
 
-Speak with Mira after MQ01. Inspect the mill mechanism and its race, then finish
-the diagnosis conversation and Mira's warning. She brings the short trail spear mentioned at her workbench;
-unarmed Caelan carries the tools. Take the north road to the end of the map and
-use **E** to continue to the upper millrace. Beyond the safe arrival and return
-prompt, the visible damaged bank and ridgeback tusker introduce the encounter.
-Mira's stronger spear attacks, Caelan's useful defense and the creature's
-separate preparation/charge turns teach the basics through cooperation. Every
-gauge pauses when either party member is ready.
+Inspect the wheel and its channel with Mira nearby, then acknowledge the diagnosis and departure warning. Mira brings her spring-driven bolt launcher and folded four-legged bot Rivet. Caelan now brings the sheathed gearblade. Take the actual north road past the sanctuary steps and use the boundary prompt to enter the upper millrace.
 
-Victory plays Triumphal Fanfare once and shows a banner before opening Spoils
-of Battle. Spoils commits the encounter and reward once; its Continue begins
-the linear post-fight dialogue, without a continue/rest choice. Unread aftermath
-remains available. Quitting during victory resumes Spoils silently without
-repeating its grant.
-Withdrawal leaves the encounter pending and defeat returns to a viable safe
-checkpoint. The same Mira continues as the existing world companion.
+At the safe arrival, the party stops and notices the damaged tree and ridgeback tusker. The camera pans to the creature, holds while they speak, then returns on Mira’s “Caelan, back towards me. Slowly” warning. Kindled Courage and the battle transition begin only after that returned shot settles and its dialogue is acknowledged.
 
-An incapacitated Caelan receives a linear first-aid exchange instead of the
-ordinary checks. The spear is set beside the intake screen while Mira uses
-the bypass and tools, then carried again on the return walk.
+The guided battle opening teaches **Guard first** against a visible charge. Caelan’s first Skills turn offers Nature Edge, Aqua Edge and Flame Edge; every choice fails, spending the turn without an MP penalty. Mira tells him to use the blade as a focus. On his **next full ATB**, any elemental selection produces direct, non-elemental **Aether Edge**. That discovery becomes his sole learned starter skill and releases ordinary battle controls. The three elemental options are temporary attempts, not learned abilities later removed.
 
-After the exchange, inspect the limb
-jammed across its intake screen. Mira sets the bypass to unload the mechanism
-while Caelan stands clear in his normal idle stance. Once the pressure is off, clear the still water trapped in the inspection recess with
-Caelan's modest spell. Only the inspection pocket clears at this point; the
-limb and jammed screen stay in place until the physical repair. Finish the
-exchange with Mira, grip the visible haul rope while she operates the repair
-lever, and return to see the mill working. Finish the final exchange with
-Halden and Mira to complete the quest.
+A pending-training route arriving from optional Bat combat with fewer than `min(80, max HP)` HP or 4 MP first plays the short `tutorial_preparation` exchange. Its acknowledged callback raises only those resources to the lesson minimums and checkpoints before entry. Normal fresh-game resources are untouched; this adds no rest choice, time advance or objective and prevents the required discovery from being unaffordable.
 
-The inspection pocket is a smaller magical task than pushing back the Venns'
-flowing channel. The brief blue effect accompanies actual movement of existing
-water into a nearby drain. The main obstruction is removed using tools and
-leverage. The whole stream is never held back, created or magically lifted.
+During that short lesson, the game guides the active character and commands; Mira covers with Guard and Rivet contributes a bounded number of autonomous jabs. All gauges pause for dialogue and player decisions. After discovery, Mira is player-controlled and Rivet resumes normal autonomous behavior, including her starting Overclock. The [combat guide](COMBAT.md) records tuning and action details. A recorded discovery survives withdrawal/retry without repeating the gift or teaching scene.
 
-The encouragement exchange branches on `venn_visit.magicks_failed`. A player
-who witnessed that failure hears Caelan's pleasure mixed with disappointment
-and Mira's grounded encouragement. A player who chose tools receives a short
-exchange about the success without an invented previous attempt.
+Victory plays Triumphal Fanfare once, the victory banner and Spoils of Battle. Spoils settles the cleared encounter and reward once. Silence follows the fanfare until Continue returns to the world and starts the linear aftermath. There is no continue/rest choice. Unread aftermath remains available, and quitting during victory resumes Spoils without a duplicate grant. Defeat and withdrawal return to a viable approach rather than restoring the intake.
+
+Mira checks Caelan after the fight. The first-aid variant only appears if he was incapacitated. Rivet folds away, and she secures the launcher beside the intake while using the bypass and tools. The water spell and physical repair remain Caelan and Mira’s work rather than a bot ability.
+
+Inspect the lodged limb and the pressure holding it against the screen. Mira operates the bypass while Caelan stands clear. Once the main supply is isolated, he proposes moving the small pocket around the catch into its adjacent drain. Selecting the blue focus and using a stable sword-casting stance moves existing water and reveals the catch. This deterministic world action has no time limit, cast roll or MP charge; it does not unlock Aqua Edge or move the main current.
+
+The encouragement follows actual success. Its saved Venn-failure branch lets Caelan be pleased while still wishing he had managed that earlier, heavier task. The direct-tools branch invents no failed spell. After acknowledgment, he grips the haul rope while Mira releases the catch and operates the lever. Only that physical repair removes the limb and restores the intake.
+
+The first post-repair line preserves his held-rope beat; advancing beyond it releases the pose. The same follow-up then lets him thank Mira for bringing the gift early and agree to bring his book to the workshop. That is future intent, not a new appointment or practice objective. Return to inspect the working wheel, then speak with Halden and Mira. The final acknowledgment completes MQ02 before the separate Aldric-arrival cinematic.
 
 ## Finding the interactions
 
 The town trail prompt sits at the northern road boundary, beyond the terrace stairs. The return prompt sits at the southern end of the upper millrace road. Both arrivals leave Caelan and Mira on clear ground outside the reverse prompt.
 
-Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. Recruitment remains beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
+Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. The request and birthday presentation remain beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
 
 Object interactions measure the gap between Caelan’s ground footprint and the object’s visible bounds, within 20 native pixels. The wheel reads its approved artwork metadata; intake controls read their rendered alpha bounds. Work stations are separate from interaction areas: Caelan walks around solid props into the existing action positions, preserving Mira’s hand contacts and the rope alignment. The corrected layout and both trail endpoints are reproduced by `tools/build_mill_quest.py`.
 
@@ -88,8 +67,7 @@ existing actor from MQ01, moved to an explicit resolution station.
 
 The upstream area uses the existing world loader and a reversible exterior link.
 Its walking banks, channel and intake collision remain consistent while repair
-props change state. The small spell uses the reviewed standing Caelan silhouette;
-his head, hips, legs and boots retain their idle registration. Mira's supporting
+props change state. The small spell keeps Caelan’s stable stance and normal body proportions while using the gearblade’s blue focus; it does not stretch his limbs or move his planted boots unnaturally. Mira's supporting
 and repair actions remain physically connected to the mechanism.
 
 A single durable mill-restored fact controls the repaired intake, adequate race
@@ -103,7 +81,7 @@ when the encounter actually occurred.
 
 | Objective | Completed by |
 | --- | --- |
-| `meet_mira` | Reading the reunion and accepting MQ02 |
+| `meet_mira` | Acknowledging the request/gift presentation, owning the blade and accepting MQ02 |
 | `diagnose_mill` | Reading both inspections and the diagnosis |
 | `prepare_journey` | Fully reading Mira's warning before departure |
 | `secure_trail` | Winning the riverbank encounter, settled once with rewards |
@@ -129,14 +107,9 @@ stay repaired while the player travels or reloads. Interrupted actions resume
 from a safe unfinished stage. Pause and inventory freeze action clocks; ordinary
 dialogue remains live and cancelable. New Game resets Mira and all mill facts.
 
-Older saves at the available Mira handoff remain valid. Earlier placeholder
-MQ02 objective records preserve only their meeting. Version-one journeys at
-or beyond the intake gain an explicit route bypass: repair progress and the
-two route prerequisites are preserved, without invented combat, warnings,
-aftermath, monster reports or rewards. An old upstream checkpoint before the
-intake rejoins the safe arrival and follows the new route. A saved upstream
-scene remains a valid exterior location. Normal town Bat encounters unlock
-after the riverbank encounter or that explicit older-route bypass.
+Older saves at the available Mira handoff remain valid and can receive the presentation. Already-active/completed MQ02 journeys preserve their prior progress without a forced retroactive gift or replayed fight. When those journeys do not own `caelan_gearblade`, `_speak` chooses the matching `legacy_*` arrays for weapon-dependent aftermath, spell, encouragement, repair follow-up and later replies. Their words do not claim an elemental lesson or birthday gift that never occurred. The committed legacy arrays retain the prior route’s facts and body registration.
+
+Earlier placeholder MQ02 objective records preserve only their meeting. Version-one journeys at or beyond the intake retain the explicit route bypass without invented combat, warnings, aftermath, monster reports or rewards. An old upstream checkpoint before the intake rejoins the safe approach. An upstream scene remains a valid exterior location. The repeatable town Bat is independent of MQ02 story progress.
 
 ## Verification and review
 
@@ -160,7 +133,7 @@ arrival while Mira joins him through the existing link. Both then stand and
 notice the large boar. The camera pans to the creature and holds through the
 pre-fight conversation, with portraits and prose in a fixed bottom panel.
 
-Mira's final “Caelan, come back to me. Slowly. Keep your feet under you” line
+Mira’s final “Caelan, back towards me. Slowly” line
 starts a return pan. Its panel moves above the party so both remain visible.
 The existing Eldenmere Theme continues until the camera has returned and the
 warning has been acknowledged. Only then does Kindled Courage begin and the

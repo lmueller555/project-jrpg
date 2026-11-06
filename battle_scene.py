@@ -16,6 +16,8 @@ RESULTS = ('victory', 'defeat', 'fled')
 ACTION_LABELS = {'attack': 'Attack', 'guard': 'Guard', 'flee': 'Flee',
                  'skills': 'Skills', 'back': 'Back',
                  'aether_edge': 'Aether Edge', 'aether_dart': 'Dart · 4 MP',
+                 'nature_edge': 'Nature Edge', 'aqua_edge': 'Aqua Edge',
+                 'flame_edge': 'Flame Edge',
                  'overclock': 'Overclock'}
 HP_GREEN = '#6fc878'
 HP_YELLOW = GOLD
@@ -94,6 +96,9 @@ class BattleScene:
         self._tutorial_seen = set()
         self.tutorial_continue_rect = pygame.Rect(354, 61, 90, 20)
         self.sprites = sprites if sprites is not None else CombatSprites()
+        if model.weapon_equipped:
+            from gearblade_art import prepare_combat_art
+            prepare_combat_art()
         self.dismissed = False
         self.result_error = ''
         self.paused = False
@@ -262,10 +267,10 @@ class BattleScene:
     def tutorial_text(self):
         return self._tutorial_queue[0]['text'] if self._tutorial_queue else ''
 
-    def _queue_tutorial(self, key, text, help_text=''):
+    def _queue_tutorial(self, key, text, help_text='', speaker='mira'):
         if not self.tutorial or key in self._tutorial_seen:return
         self._tutorial_seen.add(key)
-        self._tutorial_queue.append({'key': key, 'text': text, 'help': help_text})
+        self._tutorial_queue.append({'key': key, 'text': text, 'help': help_text, 'speaker': speaker})
 
     def advance_tutorial(self):
         """Acknowledge one line without submitting a combat command."""
@@ -275,6 +280,14 @@ class BattleScene:
         return True
 
     def _tutorial_event(self, event):
+        if event['type'] == 'spellblade_interrupted':
+            self._tutorial_queue.clear()
+            self._queue_tutorial('spellblade_interrupted',
+                'Stay down, Cael. I’ll finish this.',
+                'Caelan is incapacitated. Mira and Rivet can continue the battle.')
+            return
+        if self.model.spellblade_stage is not None:
+            return self._spellblade_tutorial_event(event)
         if event['type'] == 'player_ready':
             self._queue_tutorial('readiness',
                 'Steady. Get your footing, then strike when you have an opening.',
@@ -300,6 +313,44 @@ class BattleScene:
                 self._queue_tutorial('guard_result',
                     'Keep your guard up when it lowers those tusks.')
 
+    def _spellblade_tutorial_event(self, event):
+        kind=event['type'];stage=self.model.spellblade_stage
+        if kind=='telegraph' and 'guard' not in self._tutorial_seen:
+            lines=(('mira','Watch its head. It’s digging in.'),
+                   ('caelan','Should I move?'),
+                   ('mira','Brace first. Keep the blade between you and its tusks.'))
+            for index,(speaker,text) in enumerate(lines):
+                self._queue_tutorial('spellblade_guard_'+str(index),text,
+                    'Guard halves the next incoming attack.' if index==2 else '',speaker)
+            self._tutorial_seen.add('guard')
+        elif kind=='player_ready' and event.get('actor')=='player':
+            if stage=='guard':
+                self._queue_tutorial('readiness','Steady. Get your footing.',
+                    'Full ATB: ready to act. Gauges pause while you choose. Select Guard.')
+            elif stage=='first_edge':
+                self._queue_tutorial('spellblade_choose','Now—while it’s turning. Choose a focus.',
+                    'Skills: try Nature Edge, Aqua Edge, or Flame Edge.')
+        elif kind=='spellblade_failed':
+            lines=(('caelan','It didn’t—'),('mira','Stay with me.'),
+                   ('caelan','*breathing quickly* I turned it. I’m trying, but nothing’s happening!'),
+                   ('mira','Cael, look at the blade. Use it as the focus. Direct your aether through it.'),
+                   ('caelan','I don’t know if I can do that here.'),
+                   ('mira','Wait for your opening. I’m here.'))
+            for index,(speaker,text) in enumerate(lines):
+                self._queue_tutorial('spellblade_failed_'+str(index),text,
+                    'On Caelan’s next full ATB, choose a focus from Skills again.' if index==5 else '',speaker)
+        elif kind=='spellblade_discovered':
+            lines=(('caelan','That wasn’t what I was trying to do.'),
+                   ('mira','It struck. Can you do that again?'),
+                   ('caelan','I think so. But the focus—'),
+                   ('mira','Go with it. We’ll work out the rest when we’re clear.'))
+            for index,(speaker,text) in enumerate(lines):
+                self._queue_tutorial('spellblade_discovered_'+str(index),text,
+                    'Learned Aether Edge · 4 MP. Normal party commands are now available.' if index==3 else '',speaker)
+        elif kind=='player_ready' and event.get('actor')=='mira' and stage=='complete':
+            self._queue_tutorial('mira_turn','Rivet, keep it busy. I can cover you both from here.',
+                'Mira fires Bolt Shot. Skills → Overclock hastens Rivet for 8 bot turns.')
+
     def _detail_text(self):
         """Full messages flow beneath the occupied party row, never over values."""
         model = self.model
@@ -315,7 +366,9 @@ class BattleScene:
             if self.command_menu == 'skills' and actions:
                 selected = actions[self.selected % len(actions)]
                 if selected == 'aether_edge':
-                    return '4 MP · Enchant self for 3 weapon strikes.'
+                    return '4 MP · Physical and non-elemental magical sword strike.'
+                if selected in ('nature_edge','aqua_edge','flame_edge'):
+                    return 'Choose an elemental focus · Unpractised technique.'
                 if selected == 'overclock':
                     return '5 MP · Haste: +50% ATB for 8 bot turns.'
             return ''
@@ -535,7 +588,7 @@ class BattleScene:
         if self.model.enemy_id == 'bat' and not self.reduced_motion:
             positions['enemy'].y += math.sin(self._elapsed*4)*2
         action = self.model.current_action
-        if (action is not None and action.kind == 'physical' and action.actor != 'mira'
+        if (action is not None and action.kind in ('physical', 'spellblade') and action.actor != 'mira'
                 and not self.reduced_motion):
             approach = (action.elapsed/max(.001, action.impact_at)
                         if action.elapsed <= action.impact_at else
@@ -586,7 +639,7 @@ class BattleScene:
         action = self.model.current_action
         if action is not None and action.actor == actor:
             state = ('overclock' if action.kind == 'haste' else
-                     'cast' if action.kind in ('magical', 'enchant') else 'guard' if action.kind == 'guard'
+                     'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
                      else 'idle' if action.kind == 'flee' else action.animation
                      if action.animation in ('prepare', 'charge') else 'attack')
             return state, action.elapsed*1000
@@ -605,9 +658,25 @@ class BattleScene:
             sprite = ('caelan' if actor == 'player' else self.model.enemy_id
                       if actor == 'enemy' else actor)
             image, anchor = self.sprites.frame(sprite, state, time)
+            if actor == 'player' and self.model.weapon_equipped:
+                from gearblade_art import combat_frame
+                image, anchor = combat_frame(image, state, time)
             canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
                         (round(point.x-anchor[0]*2), round(point.y-anchor[1]*2)))
         action = self.model.current_action
+        if action is not None and action.kind == 'spellblade':
+            point = positions[action.actor]+(-26, -31)
+            arc=pygame.Rect(round(point.x-20),round(point.y-23),40,45)
+            strength=math.sin(math.pi*min(1,action.elapsed/action.duration))
+            if strength>.1:
+                pygame.draw.arc(canvas, '#b8a0ed', arc, .3, 2.7, 3)
+                pygame.draw.arc(canvas, '#e9e1ff', arc.inflate(-5,-5), .3, 2.7, 1)
+        if action is not None and action.kind == 'failed_edge':
+            color={'nature_edge':'#79c36b','aqua_edge':'#5da9e9','flame_edge':'#dd7660'}[action.action]
+            point=positions[action.actor]+(-25,-35)
+            fraction=action.elapsed/action.duration
+            if fraction<.65:
+                pygame.draw.circle(canvas,color,(round(point.x),round(point.y)),max(1,round(4*(1-fraction))),1)
         if action is not None and action.kind == 'enchant':
             point = positions[action.actor]+(0, -34)
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
@@ -781,19 +850,25 @@ class BattleScene:
     def _draw_tutorial(self, painter):
         line = self._tutorial_queue[0]
         small = painter.font('small').get_linesize()
-        spoken = painter.wrap(line['text'], 400, role='small')
-        hints = painter.wrap(line['help'], 400, role='small') if line['help'] else []
+        spoken = painter.wrap(line['text'], 336, role='small')
+        hints = painter.wrap(line['help'], 336, role='small') if line['help'] else []
         button_height = max(20, painter.font().get_height()+4)
-        height = 24+small+(len(spoken)+len(hints))*small+button_height+(5 if hints else 0)
+        height = max(98,24+small+(len(spoken)+len(hints))*small+button_height+(5 if hints else 0))
         panel = pygame.Rect(22, 10, 436, height)
         painter.panel(panel)
-        painter.text('Mira', (34, 18), role='small', color=GOLD, bold=True)
+        speaker=line.get('speaker','mira')
+        social=getattr(self.game,'social',None)
+        if social is not None:
+            portrait=social.portraits[social.data['speakers'][speaker]['portrait']]
+            painter.image(portrait,pygame.Rect(34,28,48,48))
+            painter.rect(BRASS,pygame.Rect(33,27,50,50),1)
+        painter.text('Caelan' if speaker=='caelan' else 'Mira', (94, 18), role='small', color=GOLD, bold=True)
         y = 20+small
         for text in spoken:
-            painter.text(text, (34, y), role='small');y += small
+            painter.text(text, (94, y), role='small');y += small
         if hints:y += 5
         for text in hints:
-            painter.text(text, (34, y), role='small', color=MUTED);y += small
+            painter.text(text, (94, y), role='small', color=MUTED);y += small
         self.tutorial_continue_rect = pygame.Rect(354, panel.bottom-button_height-8,
                                                    90, button_height)
         painter.button(self.tutorial_continue_rect, 'Continue')

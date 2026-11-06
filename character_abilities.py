@@ -111,6 +111,7 @@ class CharacterAbilities:
         self._characters = {identifier: {'equipped_weapon': None,
                                         'first_weapon_acquired': False}
                             for identifier in self.characters}
+        self._deferred_weapon_training = set()
 
     def _known_character(self, character_id):
         return isinstance(character_id, str) and character_id in self.characters
@@ -120,7 +121,8 @@ class CharacterAbilities:
         if not self._known_character(character_id):return frozenset()
         learned = (set(self.lattice.learned_abilities(character_id))
                    if character_id in self.lattice.character_ids else set())
-        first_weapon = self._characters[character_id]['first_weapon_acquired']
+        first_weapon = (self._characters[character_id]['first_weapon_acquired']
+                        and character_id not in self._deferred_weapon_training)
         known = set()
         for group in _GROUP_KINDS:
             for identifier, record in self.characters[character_id][group].items():
@@ -174,17 +176,41 @@ class CharacterAbilities:
                        for owner, record in self._characters.items())
         return reserved < self.inventory.quantity(item_id)+additional_copies
 
-    def acquire_weapon(self, character_id, item_id):
+    def acquire_weapon(self, character_id, item_id, *, learn_starter=True):
         """Add and equip a catalogued weapon, granting first-weapon unlocks once.
 
         Validate character, category and a free copy after the addition before
         touching inventory. After its atomic add succeeds, committing the
         prepared state cannot reject or partially grant unlock history.
+        A story gift can defer its starter technique until an authored lesson
+        succeeds. That deferral never removes a skill already earned.
         """
+        if type(learn_starter) is not bool:return False
         if not self._available_weapon(character_id, item_id, additional_copies=1):return False
         if not self.inventory.add(item_id):return False
+        learned = (self._characters[character_id]['first_weapon_acquired']
+                   and character_id not in self._deferred_weapon_training)
         self._characters[character_id] = {'equipped_weapon': item_id,
                                           'first_weapon_acquired': True}
+        if not learn_starter and not learned:
+            self._deferred_weapon_training.add(character_id)
+        elif learn_starter:
+            self._deferred_weapon_training.discard(character_id)
+        return True
+
+    def starter_skills_pending(self, character_id='caelan'):
+        """Whether this character still needs their first-weapon lesson."""
+        return self._known_character(character_id) and character_id in self._deferred_weapon_training
+
+    def learn_first_weapon_skills(self, character_id='caelan'):
+        """Commit a successful weapon lesson once, retaining earned knowledge.
+
+        Discovery needs the owned, equipped weapon used in the lesson. Repeated
+        settlement calls are harmless; unequipping later keeps the technique.
+        """
+        if not self.has_weapon(character_id):return False
+        if not self._characters[character_id]['first_weapon_acquired']:return False
+        self._deferred_weapon_training.discard(character_id)
         return True
 
     def equip_weapon(self, character_id, item_id):
@@ -203,17 +229,24 @@ class CharacterAbilities:
     def to_dict(self):
         """Save history and only equipment whose inventory ownership is intact."""
         self.reconcile_equipment()
-        return {'version': 1, 'characters': {
+        result = {'version': 1, 'characters': {
             identifier: {'equipped_weapon': record['equipped_weapon'],
                          'first_weapon_acquired': record['first_weapon_acquired']}
             for identifier, record in sorted(self._characters.items())}}
+        # Omit the extension when no lesson is pending. Existing version-one
+        # journeys retain their exact representation and already-earned skills.
+        if self._deferred_weapon_training:
+            result['deferred_weapon_training'] = sorted(self._deferred_weapon_training)
+        return result
 
     def restore(self, data):
         """Restore a complete record atomically; missing legacy data starts unarmed."""
         if data is None:
             self.reset()
             return True
-        if (not isinstance(data, dict) or set(data) != {'version', 'characters'}
+        if (not isinstance(data, dict)
+                or set(data) not in ({'version', 'characters'},
+                                     {'version', 'characters', 'deferred_weapon_training'})
                 or type(data['version']) is not int or data['version'] != 1
                 or not isinstance(data['characters'], dict)
                 or set(data['characters']) != set(self.characters)):
@@ -231,7 +264,15 @@ class CharacterAbilities:
                     return False
                 equipped[weapon] = equipped.get(weapon, 0)+1
                 if equipped[weapon] > self.inventory.quantity(weapon):return False
+        deferred = data.get('deferred_weapon_training', [])
+        if (not isinstance(deferred, list)
+                or any(not self._known_character(identifier) for identifier in deferred)
+                or len(deferred) != len(set(deferred))
+                or any(not data['characters'][identifier]['first_weapon_acquired']
+                       for identifier in deferred)):
+            return False
         self._characters = deepcopy(data['characters'])
+        self._deferred_weapon_training = set(deferred)
         return True
 
     @classmethod

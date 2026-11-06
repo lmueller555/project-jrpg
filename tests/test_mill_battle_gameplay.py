@@ -37,6 +37,10 @@ def read_social(game):
     """Read player-paced prose and allow production cutscene pans to settle."""
     for _ in range(1000):
         if game.combat.active:return
+        if getattr(getattr(game, 'mill_gift', None), 'active', False):
+            key(game, pygame.K_SPACE)
+            game.update(.05, (0, 0), False)
+            continue
         cutscene = getattr(game.mill_quest, 'encounter_cutscene_active', False)
         if game.social.active:
             assert not game.social.choosing, 'MQ02 has a linear aftermath, not a continue/rest choice'
@@ -128,7 +132,18 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
             return scene
         elif scene.model.waiting_for_player:
             action = command
-            if (command == 'attack' and scene.model.telegraphed_target
+            stage = getattr(scene.model, 'spellblade_stage', None)
+            if stage in ('opening', 'guard', 'charge'):
+                action = 'guard'
+            elif stage in ('first_edge', 'second_edge'):
+                # Temporary attempts are selected through the actual Skills
+                # submenu, rather than being granted as permanent knowledge.
+                game.draw()
+                click(game, scene.command_rects['skills'].center)
+                game.draw()
+                click(game, scene.command_rects['nature_edge'].center)
+                continue
+            elif (command == 'attack' and scene.model.telegraphed_target
                     == scene.model.ready_actor):
                 action = 'guard'
             game.draw()

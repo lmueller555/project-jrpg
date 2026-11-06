@@ -33,7 +33,7 @@ and [approved art](../../../../assets/characters/caelan/README.md).
 | Opening occupation | Sanctuary helper. Acolyte/record keeper remains a working role, not an approved rank or vocation. | Established helper / Open rank; opening quest and [chapter guide](../CHAPTER_01.md) |
 | Appearance | Chestnut hair, ivory tunic, teal outer tabard, ochre trim, dark trousers and brown belt, pouch and boots. Pouch remains on anatomical left. | Established; approved art |
 | Narrative role | Playable protagonist of Game I; not a new party recruit | Established |
-| Combat identity | Spellblade; begins unarmed with his established basic magicks | Established; ability guide |
+| Combat identity | Spellblade; begins unarmed with established basic magicks, then receives Mira’s first blade before MQ02’s outing | Established; ability guide |
 
 ## Family background and missing parents
 
@@ -150,8 +150,10 @@ These are events during the game, not achievements completed before its opening:
 - **MQ01:** Offers to investigate the Venns' irrigation problem and repairs it
   with tools. Only if the player tries magicks first does he fail to move the
   flowing water; that failure does not occur on the direct tools route.
-- **MQ02:** Notices a small, isolated water task after pressure relief and
-  proposes a spell that genuinely helps. His initiative matters alongside
+- **MQ02:** Receives Mira’s gear-and-gem blade before leaving the village. His
+  first elemental attempt fails; the next discovers Aether Edge. After pressure
+  relief, he notices a small, isolated water task and deliberately uses the
+  blade’s blue focus to help. His initiative matters alongside
   Mira's mechanical knowledge; neither does all the useful work.
 - **MQ03:** Acts as guide, host and witness rather than deciding the adults'
   covenant or authorizing excavation.
@@ -180,8 +182,8 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Practical competence | Can inspect ordinary problems, use borrowed tools and contribute physical work | Established in opening quests |
 | Basic magicks | Learned capability with meaningful limits; not ignorance, limitless power or creating water from nothing | Established |
 | Early magical scale | Can move an isolated pocket after pressure relief; cannot push back the Venns' flowing load on the attempted-magicks route | Established in MQ01 and MQ02 |
-| Combat | Spellblade identity; initially unarmed. Aether Edge unlocks on first weapon acquisition/equip. | Established; ability guide |
-| Experience relative to Mira | Less experienced than Mira in the opening river-path fight | Established |
+| Combat | Spellblade identity; initially unarmed. Mira’s MQ02 gift defers Aether Edge until his accidental second elemental attempt; it becomes his sole learned starter technique. | Established; ability guide |
+| Experience relative to Mira | Less experienced than Mira despite carrying her new blade in the opening river-path fight | Established |
 | Blind spot | Treats a failed attempt as evidence against a whole possible future, even when the conditions differ | Established |
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
 | Future development | Exact vocation, teachers, specialization and later power are not settled by his job registration | Open |
