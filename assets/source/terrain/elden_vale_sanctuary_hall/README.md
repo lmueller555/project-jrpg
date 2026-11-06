@@ -9,9 +9,10 @@ table and a closed book cabinet, with no domestic bedroom or kitchen.
 `recipe.json` records the source hash, uniform native scale, full-foot navigation
 rectangles, furniture footprints, exact depth silhouettes and inspection
 approaches. `tools/build_sanctuary_reserve_hall.py` exports the native 576×384
-plate, three matching furniture overlays, collision and runtime metadata.
-The overlays let a character pass behind a bench or the records table without
-being painted on top of it. The central aisle and southern doorway stay clear.
+plate, six matching scenery overlays, collision and runtime metadata.
+The overlays cover the benches, records table, cabinet edge and southern plants
+at their individual ground anchors. Gaps between furniture legs and foliage
+remain transparent. The central aisle and southern doorway stay clear.
 
 Rebuild with `python tools/build_sanctuary_reserve_hall.py`; use `--check` to
 verify every product against the retained source. The original generated

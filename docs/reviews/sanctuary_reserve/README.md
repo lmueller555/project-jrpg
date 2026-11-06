@@ -1,5 +1,9 @@
 # Elden Vale Sanctuary — in-game reserve review
 
+This is the initial layout and travel capture. See the
+[scenery-depth correction review](../sanctuary_depth/README.md) for the updated
+character/scenery overlap and focused walkthrough.
+
 ![Actual reserve and hall views](scene_contact.png)
 
 ![Full reserve, stitched from the production renderer](reserve_overview.png)
