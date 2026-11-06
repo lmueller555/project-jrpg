@@ -937,7 +937,7 @@ def capture_frames(game, output, temporary, trace, ledger):
             resident_changes.append({'id': identifier, 'before': before_rows[0], 'after': after_rows[0]})
     existing_ids = {row[1] for row in frozen['residents']}
     new_residents = [row for row in after['residents'] if row[1] not in existing_ids]
-    require({row[1] for row in new_residents} <= {'aldric', 'regent_clerk', 'regent_driver', 'regent_attendant'},
+    require({row[1] for row in new_residents} <= {'aldric', 'regent_clerk', 'regent_driver', 'lucan'},
             'Handoff revealed an unrelated resident')
     completed = (temporary/'journey.json').read_bytes()
     saved = json.loads(completed)

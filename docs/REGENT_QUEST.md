@@ -1,55 +1,48 @@
 # Aldric's visit and the regent quest
 
-This guide describes `regent_quest.py` and `assets/story/regent/scene.json`.
-The [MQ03 script](narrative/game_01/CH01_MQ03.md) draws on the
-[regional surges and relief work](narrative/game_01/REGIONAL_SURGES.md) and
-[sanctuary covenant](world/SANCTUARY_COVENANT.md). Those approved revisions are
-now used by the playable quest. The discussion's promised contributions and
-future inspection do not themselves repair the crossing or authorize excavation.
+This guide describes `regent_quest.py` and `assets/story/regent/scene.json`. The playable [MQ03 script](narrative/game_01/CH01_MQ03.md) implements the direct sanctuary visit, Lucan's introduction, Aldric's royal relationship and the ridge reserve's cultural and natural significance. The former Venn cart section is removed.
 
-MQ02 completion unlocks the visit and starts the [arrival cinematic](REGENT_ARRIVAL.md)
-after Caelan returns from Halden and finishes helping Serene set the clean cups inside the sanctuary. Aldric's party comes through the
-southern land checkpoint, speaks with affected locals, then approaches
-Eldenmere while Serene watches from inside the sanctuary. The town party and
-wagon appear at their corrected approach stations after that handoff. MQ03 is
-still accepted separately through Serene's short request to welcome the visitors.
+## Boundary after MQ02
 
-`CH01_MQ03` follows completion of Mira's mill quest. Caelan's job is to welcome and guide the visitors and help receive them at the sanctuary. Aldric settles a dispute concerning his road project; Caelan witnesses it and supplies only the mill status he knows firsthand.
+MQ02 completes after Caelan returns from Halden, acknowledges Serene's destination instruction and physically places the clean cups. The [arrival cinematic](REGENT_ARRIVAL.md) follows, introducing Aldric's relief visit before returning control to Caelan's actual position in the sanctuary dining room. Speaking with Serene for her short welcome-visitors request separately accepts MQ03. The homecoming and bow question are not repeated.
 
 ## Playing through
 
-MQ02 returns control to Caelan inside the sanctuary dining room after the arrival cinematic. Speak with Serene for the short welcome-visitors request, then meet Aldric’s party by the brook. The longer preparations and Tomas’s bow question now belong to MQ02’s homecoming and are not repeated here. Finish the greeting and accompany Aldric toward the road staging area. Read the disagreement between Mr. Venn and the foreman, Aldric's questions and settlement, and the clerk's confirmation of the hire terms. No receipt is a player target. Wait for the visible release of the cart and the crew's return to work, then bring the party through the sanctuary hall to the dining room.
+1. Speak with Serene inside the dining room, then meet Aldric by the lower bridge.
+2. Finish the greeting with Aldric, Lucan, the clerk and the driver. Lucan is Aldric's personal guard; he replaces the generic traveling attendant and remains a visitor rather than joining the combat party.
+3. Guide the travelers directly through the courtyard entrance, sanctuary hall and dining-room door. There is no road-crew detour or intermediate dispute. The wagon remains at the village approach.
+4. Wait for the visitors to reach their inside stations, then share the meal. Tomas asks about the wagon's brake; Caelan recalls his brother's breakfast promise to make sure everyone eats; Lucan watches the door.
+5. Hear Aldric and Serene discuss the ridge survey after the meal. They consider the natural aether confluence, memorial grove and buried foundations, the public injury account and real material shortages. Serene offers courtyard stone, crew meals and cooperation with surface inspection and records. The trial excavation remains unresolved.
+6. Let Aldric step aside toward the counter, then speak privately with Serene. Tomas's lantern invitation leads toward MQ04; the final acknowledgment completes MQ03.
 
-Finish the welcome and meal inside the dining room before the excavation discussion. Aldric joins the family table while his companions gather at the right-hand tables. Four spare chairs provide seven seats in total, and the middle aisle stays clear for Caelan and the doorway. Aldric steps aside toward the distant counter for Caelan’s final exchange with Serene. Aldric wants a preliminary survey within protected ground; Serene offers records and a joint review while withholding endorsement. Afterward, speak with Serene for Caelan's personal reaction and Tomas's call about the lanterns. That final exchange completes MQ03.
-
-The visit preserves the revised role boundary: Caelan does not adjudicate a hire, direct a government account, negotiate the road project or decide excavation policy. The road foreman has a real logistical problem, and the cost of the delay is placed on the road account rather than the cart owner. The ruling takes effect in the world. The later disagreement remains unresolved.
+The ordered objectives remain `meet_visitors`, `accompany_visit`, `welcome_party` and `speak_serene`. Caelan is a guide, host and witness. He gains no legal or survey authority and performs no receipt inspection. Venn's household and MQ01 progress are untouched; this controller no longer borrows him, stages a foreman or moves a cart.
 
 ## Dialogue and presentation
 
-`assets/story/regent/scene.json` contains the six main scenes (`preparations`, `arrival`, `dispute`, `welcome`, `discussion`, `aftermath`) and short optional replies. Selected text carries brief asterisk-wrapped delivery cues for relief, anger, surprise, concern, laughter, hesitation and fatigue. These are intentionally occasional. Optional replies are stage-aware: the cart settlement and revised hire terms are discussed only after release, while Tomas refers to the meal only after the welcome. Earlier interactions use waiting replies.
+The runtime contains five main arrays: `preparations`, `arrival`, `welcome`, `discussion` and `aftermath`. Two greeting-only compatibility arrays, `arrival_unarmed` and `arrival_before_homecoming`, preserve older completed MQ02 journeys without inventing a sword gift or table-setting work. The canonical new-journey greeting remains unchanged. The [narrative script](narrative/game_01/CH01_MQ03.md) mirrors every main and optional exchange. Brief emotional and physical cues use literal asterisks. Dialogue remains player-paced and cancelable, with physical beats for the scabbard adjustment, bread, eating, guard attention, table clearing, survey, plan and account.
 
-The [narrative script](narrative/game_01/CH01_MQ03.md) includes the lightning damage, relief-driven quarry request and concrete covenant discussion. Ordinary dialogue stays live and cancelable. The two-line opening continues directly from the MQ02 preparations and arrival. The visit gives the welcome, food, journey and personal reactions time before advancing its objectives. New officials use role titles instead of invented personal histories.
+Aldric joins the household table and his companions gather at the right-hand tables. Four guest chairs provide seven seats in total. The middle aisle stays clear for the player and doorway. Lucan's attention is visible without making him negotiate in Aldric's place. Optional replies are stage-aware: the clerk mentions delivering copies only after the ridge discussion, while Tomas's earlier reply reflects the completed table-setting.
 
-## Objectives and durable progress
+## Durable progress and old saves
 
-The ordered objectives are `meet_visitors`, `accompany_visit`, `welcome_party` and `speak_serene`. The optional version-one `regent_quest` record stores a committed `stage` from:
+The version-two `regent_quest` record stores the committed stage:
 
-`idle → assigned → met → dispute → releasing → escorting → welcome → hosted → discussion → done`.
+`idle → assigned → escorting → welcome → hosted → discussion → done`.
 
-The stage identifies the last completed dialogue/staging transition. Dialogue pages, action clocks and path caches are transient. Leaving unread preparations cannot accept the quest, and leaving an unread political conversation cannot endorse excavation. A completed settlement is checkpointed separately from the visible cart release. Old saves with MQ02 finished become eligible for the new visit; New Game resets it.
+Partially read conversations, animation clocks, follow trails and path caches are never durable progress. The greeting records `meet_visitors`; Aldric's actual dining-room arrival records `accompany_visit`; the completed meal records `welcome_party`; the private exchange records `speak_serene` and completes the quest once.
 
-The same Mr. Venn actor participates, with his prior household progress intact. Serene and Tomas are staged for the visit without duplicating their actors. After MQ03, the controller keeps them at their dining-room stations until MQ04 takes ownership of Tomas for its school preparation session; their ordinary routines remain paused during that staging. The explicit Tomas handoff prevents this controller from moving or posing him after MQ04 borrows him; Serene retains the dining-room preparations until a later scene explicitly borrows her. New Game releases this ownership and restores the ordinary sanctuary opening. The mill remains restored after MQ02.
+Version-one `met`, `dispute`, `releasing` and `escorting` saves migrate to the direct escort. Other valid checkpoints retain their progress, including completed visits. Migration does not invent a cart release or start an excavation. Rebuilding the scene uses the same family and visitor actors, with no duplicate Lucan or caravan.
 
-## Chapter boundary
+## Interior and later-quest ownership
 
-This quest does not issue formal excavation authorization. That remains the chapter-closing event after the Festival of Light. Serene does not reveal the inherited warning, and no buried mechanism or ancient identity is established here. MQ04 now begins with Tomas’s lantern invitation, the school preparation session and Liam’s workshop outing.
+Preparations, hospitality, the ridge discussion and the private aftermath use `sanctuary_dining`. Room-aware triggers cannot fire from matching coordinates outdoors. The same family members transfer from MQ02's homecoming after the arrival. After MQ03, Serene and Tomas stay at their dining-room stations until later quests explicitly borrow them. MQ03 stops moving or posing each actor after that handoff; New Game releases its ownership and restores the ordinary sanctuary opening.
+
+## Story limits
+
+The [regional surges](narrative/game_01/REGIONAL_SURGES.md), [planetary faith](world/ELDEN_VALE_FAITH.md) and [covenant](world/SANCTUARY_COVENANT.md) provide the scene's foundations. The natural confluence and grove explain why the whole reserve matters. They do not explain its buried works or prove what a shallow cut would do. The historic injury account is separate from the recent lightning incidents.
+
+No formal excavation authorization is issued, and Serene's inherited warning remains undisclosed. The offered stone, meals, surface inspection and further records do not themselves repair the crossing or open a quarry. Lucan's recruitment remains later story work. MQ04 begins from Tomas's invitation about the lanterns.
 
 ## Design rule
 
-For this quest and future quests, derive Caelan's participation from his relationships, responsibilities, knowledge and choices. Observation, support and witnessing a consequential decision can be sufficient. Add a player task only when there is a credible reason for Caelan to perform it.
-
-## Interior staging and saved journeys
-
-Preparations, hospitality, the political discussion and the personal aftermath all use `sanctuary_dining`. Room-aware triggers cannot fire from matching coordinates outdoors. Guests follow Caelan through the existing courtyard entrance, sanctuary hall and dining-room door; the escort objective completes only after Aldric reaches the dining room. The former `courtyard` station key remains a data compatibility alias for the dining-room welcome. Four quest-owned chairs reference existing furniture art and provide seven chairs in total without changing the earlier breakfast map. Their feet block movement while the central doorway route remains clear.
-
-Version-one quest stages remain valid. Loading any committed hospitality checkpoint places the same actors inside the dining room, including journeys saved at the old outdoor stations. Preparing and speaking inside use the same cancel-safe dialogue commits. Later quests borrow the actual Serene and Tomas actors explicitly, and MQ03 stops moving or posing each actor after that handoff.
+Derive Caelan's participation from his relationships, responsibilities, knowledge and choices. Give him room to observe and react without making him settle a political or engineering decision beyond his role.

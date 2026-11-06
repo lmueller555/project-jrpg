@@ -668,7 +668,7 @@ class RegentArrival:
         reference = dict(phase)
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
-            if actor['id'] in ('aldric','clerk','caravan'):
+            if actor['id'] in ('aldric','lucan','clerk','caravan'):
                 # Translate the whole path, not only its start. The reference
                 # root moves at24px/s; its gait must retain that same speed.
                 for key in ('position','to'):

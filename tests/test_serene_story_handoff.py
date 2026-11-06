@@ -54,8 +54,8 @@ class SereneStoryHandoffTests(unittest.TestCase):
         self.quest.update(.2);self.quest._pose_owned()
         self.assert_borrowed_state(hall, position)
         self.assertEqual(self.quest.stage, 'done')
-        self.assertTrue(self.quest._venn_returned)
-        self.assertTrue(self.quest._delivery_done)
+        self.assertFalse(hasattr(self.quest, '_venn_returned'))
+        self.assertIn(self.game.venn_visit.family['father'], self.game.venn_visit.home.npcs)
 
     def test_handoff_is_idempotent_and_old_conversations_do_not_touch_serene(self):
         hall, position = self.borrow()
@@ -81,7 +81,7 @@ class SereneStoryHandoffTests(unittest.TestCase):
         self.assertFalse(self.quest._serene_handed_off)
         self.assertFalse(self.quest._tomas_handed_off)
         self.assertIs(self.game._routine_worlds[self.serene], self.quest.dining)
-        self.assertLess(self.serene.position.distance_to(self.quest.points['serene_meal']), 1)
+        self.assertLess(self.serene.position.distance_to(self.quest.points['aftermath']), 1)
         self.assertIsNot(self.serene.story_sprite, self.pose)
         self.assertIsNotNone(self.quest.try_conversation(self.serene))
 

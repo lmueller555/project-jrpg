@@ -100,7 +100,6 @@ def phase(game):
             'lantern_seconds': round(game.lantern_quest.action_time, 4),
             'lantern_stage': game.lantern_quest.stage,
             'regent_stage': game.regent_quest.stage,
-            'regent_cart_released': game.regent_quest.cart_released,
             'halden_action': game.halden_visit.action,
             'halden_seconds': round(game.halden_visit.action_time,4),
             'tomas_job': game.halden_visit.tomas_job,
@@ -147,7 +146,6 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'millrace_threat':return g.mill_quest.encounter_cutscene_phase == 'conversation' and g.mill_quest._encounter_elapsed >= .2
     if identifier.startswith('mill_'):return g.mill_quest.action is not None and g.mill_quest.action_time >= .75
     if identifier == 'regent_arrival':return g.regent_arrival.shot == 'aerial_region' and g.regent_arrival.phase_time >= 4.
-    if identifier == 'regent_cart_release':return g.regent_quest.cart_released and g.regent_quest._release_time >= .6
     wanted = {'lantern_frame':'assemble', 'lantern_collect':'rest_pickup',
               'lantern_homecoming':'rest_place', 'lantern_paper_practice':'rest_draft',
               'lantern_finishing':'finish_pickup', 'lantern_putaway':'finish_place'}
@@ -187,9 +185,6 @@ def crop_rect(identifier, game):
         center = (pygame.Vector2(protagonist)+game.mill_quest.mira.position)/2-camera+(0,-18)
     elif identifier == 'halden_arrival':
         center = (pygame.Vector2(protagonist)+game.opening_conclusion.halden.position)/2-camera+(0,-20)
-    elif identifier == 'regent_cart_release':
-        center = game.regent_quest.venn.position-camera+(0,-18)
-        width = 288
     elif identifier == 'morning_breakfast':
         center = (pygame.Vector2(game.opening.data['caelan_seated_position'])+pygame.Vector2(game.opening.data['tomas_seated_position']))/2-camera+(0,-15)
         width = 240

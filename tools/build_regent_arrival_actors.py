@@ -12,6 +12,10 @@ import json
 from pathlib import Path
 from collections import deque
 from PIL import Image, ImageOps
+if __package__:
+    from .export_regent_lucan import ground_outputs as lucan_ground_outputs
+else:
+    from export_regent_lucan import ground_outputs as lucan_ground_outputs
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/cinematics/regent_arrival/actors'
@@ -252,6 +256,10 @@ def build():
         side=max(portrait.size);square=Image.new('RGBA',(side,side))
         square.alpha_composite(portrait,((side-portrait.width)//2,side-portrait.height))
         outputs[f'portraits/{name}.png']=png(square.resize((72,72),Image.Resampling.NEAREST))
+    lucan_outputs,lucan_sources=lucan_ground_outputs()
+    outputs.update(lucan_outputs)
+    metadata['lucan']={'canvas':[80,96],'anchor':[40,92],'reference_height':80,
+                       'source':'adult cinematic travel poses retaining approved character identity'}
     # Pillow/zlib versions can encode identical pixels differently. Retain an
     # existing PNG only when its recorded hash AND every regenerated RGBA
     # pixel agree. A narrow art update must not recompress the remaining cast.
@@ -267,7 +275,7 @@ def build():
         if before.size==after.size and before.tobytes()==after.tobytes():
             outputs[name]=original
     provenance={'version':1,'exporter':'tools/build_regent_arrival_actors.py',
-        'sources':{**{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
+        'sources':{**lucan_sources,**{str((SOURCE/(name+'_generated.png')).relative_to(ROOT)):digest((SOURCE/(name+'_generated.png')).read_bytes()) for name in sheets},
                  **{str(path.relative_to(ROOT)):digest(path.read_bytes()) for path in
                         (SOURCE/'aldric_side_walk/side_walk.png',SOURCE/'aldric_side_walk/side_walk.json')},
                       **{path.relative_to(ROOT).as_posix():digest(path.read_bytes())

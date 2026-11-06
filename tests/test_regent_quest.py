@@ -1,4 +1,4 @@
-"""MQ03 keeps Caelan a guide/host while adults own the road dispute."""
+"""MQ03 welcomes Aldric and Lucan directly, then leaves excavation unresolved."""
 import copy
 from collections import deque
 import json
@@ -132,7 +132,7 @@ class RegentQuestTests(unittest.TestCase):
         self.fail('Unfinished dialogue '+str(identifier))
 
     def interact(self,kind):
-        if kind in ('dispute','welcome','discussion') and not self.g.social.active:
+        if kind in ('welcome','discussion') and not self.g.social.active:
             self.until(lambda:self.c._group_ready)
         if kind=='aftermath' and not self.g.social.active:
             self.until(lambda:self.c._aside_ready)
@@ -147,17 +147,10 @@ class RegentQuestTests(unittest.TestCase):
     def meet(self):
         self.assign();self.at('arrival');self.interact('arrival');self.read_current()
         self.assertEqual(self.g.quests.objective_status(REGENT,'meet_visitors'),'completed')
-        self.assertEqual(self.c.stage,'met')
-
-    def dispute(self,read=True):
-        self.meet();self.at('road')
-        self.until(lambda:self.c.stage=='dispute')
-        self.interact('dispute')
-        if read:
-            self.read_current();self.assertEqual(self.c.stage,'releasing')
+        self.assertEqual(self.c.stage,'escorting')
 
     def escort(self):
-        self.dispute();self.until(lambda:self.c.stage=='escorting')
+        self.meet()
         self.at('courtyard');self.until(lambda:self.c.stage=='welcome')
         self.assertEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
 
@@ -226,11 +219,14 @@ class RegentQuestTests(unittest.TestCase):
             self.assertGreater(actor.position.y,1000)
             self.assertLess(actor.position.x,790)  # West bank of the lower brook.
             self.assertFalse(actor.story_following)
-        self.assertFalse(self.c.foreman.story_visible)
-        self.assertIs(self.c._world(self.c.venn),self.c.venn_home)
+        venn=self.g.venn_visit.family['father']
+        self.assertIn(venn,self.g.venn_visit.home.npcs)
+        self.assertFalse(hasattr(self.c,'venn'))
+        self.assertFalse(hasattr(self.c,'foreman'))
+        self.assertIn(self.c.lucan,self.c.party)
         wagon=next(p for p in self.c.surface_props if p['id']=='regent_wagon')
         self.assertTrue(self.c.surface_prop_visible(wagon))
-        self.assertFalse(self.c.surface_prop_visible(self.c.cart))
+        self.assertFalse(any(p['id'] in ('venn_cart','road_stone') for p in self.c.surface_props))
         self.assertFalse(self.g.quests.states[REGENT]['completed_objectives'])
         self.assertIsNotNone(town_path(self.g.town,(516,1260),self.clear_position(self.g.town,self.c.points['arrival']),
                                       SimpleNamespace(probe_size=self.g.town.probe_size),None))
@@ -299,7 +295,8 @@ class RegentQuestTests(unittest.TestCase):
     def test_legacy_town_player_checkpoint_restages_the_welcome_inside(self):
         self.escort();self.g.save_progress()
         data=json.loads(self.path.read_text())
-        self.assertEqual(data['regent_quest'],{'version':1,'stage':'welcome'})
+        self.assertEqual(data['regent_quest'],{'version':2,'stage':'welcome'})
+        data['regent_quest']['version']=1
         data['player']={'scene':'eldenmere.playable','position':[386,318],'facing':'back'}
         self.path.write_text(json.dumps(data))
         other=self.game(True);self.assertTrue(other.begin_journey(True),other.save_error)
@@ -326,56 +323,59 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(self.c.stage,'assigned')
         self.assertEqual(self.g.quests.objective_status(REGENT,'meet_visitors'),'active')
         self.assertTrue(self.c.interact());self.read_current()
-        self.assertEqual(self.c.stage,'met')
+        self.assertEqual(self.c.stage,'escorting')
 
-    def test_dispute_is_an_adult_conversation_without_a_player_choice(self):
-        self.dispute(False)
-        speakers={p['speaker'] for p in self.g.social._source_lines}
-        self.assertTrue({'aldric','venn_father','road_foreman'}<=speakers)
+    def test_direct_escort_does_not_borrow_venn_or_add_a_road_stop(self):
+        venn=self.g.venn_visit.family['father']
+        home=self.g.venn_visit.home
+        before=tuple(venn.position)
+        self.meet()
+        self.assertEqual(self.c.stage,'escorting')
+        self.assertIn(venn,home.npcs)
+        self.assertEqual(tuple(venn.position),before)
+        self.assertEqual(sum(venn in room.npcs for room in self.g.scenes.values()),1)
+        self.assertFalse(any(actor.data['id']=='road_foreman' for actor in self.c.actors.values()))
+        self.assertFalse(any(p['id'] in ('venn_cart','road_stone') for p in self.c.surface_props))
         self.assertFalse(self.g.social.choosing)
-        self.g.social.cancel();self.assertEqual(self.c.stage,'dispute')
         self.assertNotEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
-        self.reload();self.assertEqual(self.c.stage,'dispute')
 
-    def test_the_same_venn_actor_is_used_in_the_dispute(self):
-        original=self.g.venn_visit.family['father'];self.dispute(False)
-        self.assertIs(self.c.venn,original)
-        self.assertEqual(sum(original in w.npcs for w in self.g.scenes.values()),1)
-        self.assertEqual(sum(n.data['id']=='venn_father' for w in self.g.scenes.values() for n in w.npcs),1)
-
-    def test_cart_release_and_interior_arrival_precede_escort_completion(self):
-        self.dispute(False)
-        cart=next(p for p in self.c.surface_props if p['id']=='venn_cart')
-        start=pygame.Vector2(cart['position'])
-        self.read_current();self.assertEqual(self.c.stage,'releasing')
-        self.assertEqual(pygame.Vector2(cart['position']),start)
-        self.assertNotEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
-        self.assertFalse(self.g.town.can_stand(start+(37,26)))
-        venn_start=self.c.venn.position.copy()
-        self.tick()
-        self.assertLessEqual(self.c.venn.position.distance_to(venn_start),8)
-        self.assertLessEqual(pygame.Vector2(cart['position']).distance_to(start),8)
-        self.until(lambda:pygame.Vector2(cart['position']).distance_to(start)>4)
-        self.until(lambda:self.c.stage=='escorting')
+    def test_direct_escort_finishes_only_inside_the_dining_room(self):
+        self.meet()
         self.walk(self.clear_position(self.g.town,(386,318)))
         self.tick(.5)
         self.assertEqual(self.c.stage,'escorting')
         self.assertNotEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
         self.go_scene(self.c.hall)
         self.assertEqual(self.c.stage,'escorting')
-        self.at('courtyard');self.until(lambda:self.c.stage=='welcome')
-        self.until(lambda:self.c._delivery_done)
-        self.assertGreater(pygame.Vector2(cart['position']).distance_to(start),100)
-        self.assertFalse(self.g.town.can_stand(pygame.Vector2(cart['position'])+(37,26)))
-        self.assertEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
-
-    def test_releasing_cart_checkpoint_resumes_without_duplicate_actors(self):
-        self.dispute();self.reload()
-        self.assertEqual(self.c.stage,'releasing');self.assertTrue(self.c.cart_released)
-        self.assertEqual(sum(self.c.venn in w.npcs for w in self.g.scenes.values()),1)
-        self.assertEqual(sum(self.c.aldric in w.npcs for w in self.g.scenes.values()),1)
-        self.until(lambda:self.c.stage=='escorting')
         self.assertNotEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
+        self.at('courtyard');self.until(lambda:self.c.stage=='welcome')
+        self.assertEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
+        self.until(lambda:self.c._group_ready)
+        for actor in self.c.party:
+            self.assertIs(self.c._world(actor),self.c.dining)
+
+    def test_removed_legacy_dispute_checkpoints_resume_the_direct_escort(self):
+        self.meet();self.g.save_progress()
+        saved=json.loads(self.path.read_text())
+        for stage in ('met','dispute','releasing','escorting'):
+            with self.subTest(stage=stage):
+                data=copy.deepcopy(saved)
+                data['regent_quest']={'version':1,'stage':stage}
+                data['player']={'scene':'eldenmere.playable','position':[610,576],'facing':'front'}
+                self.path.write_text(json.dumps(data))
+                loaded=self.game(True)
+                self.assertTrue(loaded.begin_journey(True),loaded.save_error)
+                self.assertEqual(loaded.regent_quest.stage,'escorting')
+                self.assertEqual(loaded.regent_quest.to_dict(),{'version':2,'stage':'escorting'})
+                self.assertEqual(loaded.quests.states[REGENT]['completed_objectives'],['meet_visitors'])
+                self.assertFalse(loaded.social.active)
+                self.assertIn(loaded.venn_visit.family['father'],loaded.venn_visit.home.npcs)
+                self.assertFalse(any(p['id']=='venn_cart' for p in loaded.regent_quest.surface_props))
+                self.assertEqual(len([a for w in loaded.scenes.values() for a in w.npcs if a.data['id']=='lucan']),1)
+                self.g=loaded;self.c=loaded.regent_quest
+                self.g.opening_fade=0;self.g.transfer_cooldown=0
+                self.at('courtyard');self.until(lambda:self.c.stage=='welcome')
+                self.assertEqual(self.g.quests.objective_status(REGENT,'accompany_visit'),'completed')
 
     def test_overlay_panels_pause_staging(self):
         self.meet()
@@ -437,8 +437,8 @@ class RegentQuestTests(unittest.TestCase):
         self.assertIs(lantern._world(lantern.tomas),self.c.dining)
         self.assertEqual(sum(lantern.tomas in room.npcs for room in self.g.scenes.values()),1)
 
-    def test_parked_cart_leaves_halden_accessible_after_the_visit(self):
-        self.complete();self.until(lambda:self.c._delivery_done)
+    def test_visit_leaves_halden_accessible_without_a_staged_cart(self):
+        self.complete()
         self.go_scene(self.g.town)
         halden=self.g.halden_visit.halden
         options=[halden.position+offset for offset in ((0,16),(20,0),(-20,0),(0,-16),(18,12),(-18,12))]
@@ -448,7 +448,7 @@ class RegentQuestTests(unittest.TestCase):
 
     def test_checkpoint_reload_keeps_one_aldric_and_does_not_replay_arrival(self):
         self.meet();self.reload()
-        self.assertEqual(self.c.stage,'met')
+        self.assertEqual(self.c.stage,'escorting')
         self.assertFalse(self.g.social.active)
         self.assertEqual(sum(self.c.aldric in w.npcs for w in self.g.scenes.values()),1)
         self.assertEqual(self.g.quests.objective_status(REGENT,'meet_visitors'),'completed')
@@ -492,7 +492,7 @@ class RegentQuestTests(unittest.TestCase):
         cues=[line for line in lines if line['text'].startswith('*') and line['text'].count('*')>=2]
         self.assertGreaterEqual(len(cues),5)
         self.assertLess(len(cues),len(lines)//2)
-        self.assertTrue({'aldric','serene','tomas'}<={line['speaker'] for line in cues})
+        self.assertGreaterEqual(len({line['speaker'] for line in cues}),3)
 
 
 if __name__=='__main__':unittest.main()

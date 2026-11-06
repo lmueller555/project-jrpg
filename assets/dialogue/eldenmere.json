@@ -53,11 +53,6 @@
       "portrait": "aldric",
       "actor_id": "aldric"
     },
-    "road_foreman": {
-      "name": "Road foreman",
-      "portrait": "male_02",
-      "actor_id": "road_foreman"
-    },
     "grain_loader": {
       "name": "Grain loader",
       "portrait": "male_02",
@@ -141,6 +136,11 @@
       "name": "Orchard picker",
       "actor_id": "regional_picker",
       "portrait": "male_02"
+    },
+    "lucan": {
+      "name": "Lucan Rooke",
+      "portrait": "lucan",
+      "actor_id": "lucan"
     }
   },
   "characters": {
@@ -735,27 +735,6 @@
         }
       ]
     },
-    "road_foreman": {
-      "conversations": [
-        {
-          "id": "road_foreman_ambient",
-          "lines": [
-            {
-              "speaker": "road_foreman",
-              "text": "We'll start on the bedding. I still have to find another cart for the stone."
-            },
-            {
-              "speaker": "caelan",
-              "text": "I hope you can."
-            },
-            {
-              "speaker": "road_foreman",
-              "text": "So do I. Mind the tools as you pass."
-            }
-          ]
-        }
-      ]
-    },
     "regent_clerk": {
       "conversations": [
         {
@@ -763,7 +742,7 @@
           "lines": [
             {
               "speaker": "regent_clerk",
-              "text": "I'll send the revised hire terms to the foreman."
+              "text": "I’m putting the inspection arrangements in order."
             }
           ]
         }
@@ -777,6 +756,19 @@
             {
               "speaker": "regent_driver",
               "text": "If you're looking at the brake, keep your fingers clear of the catch. It closes harder than it looks."
+            }
+          ]
+        }
+      ]
+    },
+    "lucan": {
+      "conversations": [
+        {
+          "id": "lucan_ambient",
+          "lines": [
+            {
+              "speaker": "lucan",
+              "text": "His lordship is expected at the festival. I’ll be staying with him."
             }
           ]
         }

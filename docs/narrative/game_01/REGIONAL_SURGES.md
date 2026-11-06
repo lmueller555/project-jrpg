@@ -103,10 +103,11 @@ administrator arriving after helping other communities. It can establish the
 damaged southern connection and his intended discussion with Serene without
 delivering the full covenant debate in the street.
 
-The subsequent MQ03 preparations remain inside the sanctuary dining room,
-with Serene preparing hospitality and Tomas helping. Caelan's role remains
-welcoming and guiding the visitors, witnessing the cart dispute and helping
-host them. He gains no legal or survey authority from the new context.
+MQ02's sanctuary homecoming and cup-setting precede the arrival. MQ03 then
+begins with Serene's short request inside the dining room. Caelan welcomes
+Aldric and Lucan, guides the visitors directly to the meal and hears the
+unresolved ridge discussion. The former cart dispute is removed. He gains no
+legal or survey authority from the relief context.
 
 The [arrival guide](../../REGENT_ARRIVAL.md) documents the cinematic's dialogue,
 shots, input ownership and saved handoff. The scene grants no new repair,

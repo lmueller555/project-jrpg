@@ -16,6 +16,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+from types import SimpleNamespace
 import wave
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
@@ -29,6 +30,7 @@ import pygame
 from PIL import Image
 from main import Game
 from npc_routines import find_path
+from halden_visit import town_path
 from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST
 from capture_battle_music_transition import MixerTrace, FPS, RATE
 from capture_mill_quest import save_gif
@@ -62,7 +64,7 @@ class Capture:
         self.last_shot = None
         self._still_phases = set()
         self.quest_frames = []
-        self.cart_frames = []
+        self.quest_expected_pages = {}
         self.admission_frames = []
         self.pause_check = False
         self.frozen = None
@@ -193,7 +195,7 @@ class Capture:
                 return
             if self.g.social.active:
                 identifier = self.g.social.script_identifier
-                if identifier in {'regent_'+kind for kind in ('preparations','arrival','dispute','welcome','discussion','aftermath')}:return
+                if identifier in {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}:return
                 self.read_social(identifier,recording=False)
             if self.g.player.position.distance_to(goal) < 1.5:
                 if next_scene is None:return
@@ -202,7 +204,10 @@ class Capture:
                 self.frame(direction=(0,-1 if door.data['entry_side']=='north' else 1), recording=False)
                 continue
             if not route or stalled >= 20:
-                found = find_path(world, self.g.player.position, goal, world.probe_size, None)
+                found = (town_path(world, self.g.player.position, goal,
+                                   SimpleNamespace(probe_size=world.probe_size), None)
+                         if world is self.g.town and self.g.player.position.distance_to(goal)>180
+                         else find_path(world, self.g.player.position, goal, world.probe_size, None))
                 assert found is not None, ('No route', world.data['id'], list(self.g.player.position), list(goal))
                 route = list(found);stalled = 0
             if not route:return
@@ -376,7 +381,6 @@ class Capture:
         quest = self.g.regent_quest
         travel_to(self, quest.world_for_station(key))
         point = pygame.Vector2(quest.points[key])
-        if key == 'road':point += (-20,40)
         station = None
         for radius in (0,8,16,24,32):
             for offset in ((0,radius),(-radius,0),(radius,0),(0,-radius)):
@@ -384,7 +388,7 @@ class Capture:
                 if self.g.world.can_stand(p):station = p;break
             if station is not None:break
         assert station is not None, ('No clear MQ03 station',key)
-        core = {'regent_'+kind for kind in ('preparations','arrival','dispute','welcome','discussion','aftermath')}
+        core = {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}
         for _ in range(12):
             self.walk(station)
             if not self.g.social.active or self.g.social.script_identifier in core:break
@@ -396,6 +400,7 @@ class Capture:
         if not self.g.social.active:self.key(pygame.K_e)
         assert self.g.social.script_identifier == 'regent_'+kind, (
             kind,self.g.social.script_identifier,self.g.regent_quest.stage)
+        self.quest_expected_pages[kind] = len(self.g.social._make_pages(self.g.social._source_lines))
         self.read_social('regent_'+kind,recording=False)
 
     def _quest(self):
@@ -413,21 +418,7 @@ class Capture:
         self._at_regent('arrival')
         self.snapshot('greeting_station.png')
         self._regent_interact('arrival')
-        assert q.stage == 'met'
-        self._at_regent('road')
-        self.until(lambda:q.stage=='dispute' and q._group_ready,'road crew',recording=False)
-        self._regent_interact('dispute')
-        assert q.stage == 'releasing'
-        old_cart = list(q.cart['position'])
-        for step in range(3600):
-            if q.stage == 'escorting':break
-            self.frame(recording=False)
-            if step % 6 == 0:
-                self.cart_frames.append(Image.frombytes('RGB',self.g.window.get_size(),
-                    pygame.image.tobytes(self.g.window,'RGB')).resize((480,320),Image.Resampling.NEAREST))
         assert q.stage == 'escorting'
-        assert old_cart != list(q.cart['position'])
-        self.snapshot('cart_released.png')
         self._at_regent('courtyard')
         self.until(lambda:q.stage=='welcome' and q._group_ready,'dining arrival',recording=False)
         self._regent_interact('welcome')
@@ -443,24 +434,21 @@ class Capture:
         assert not any('AUTHORIZ' in flag.upper() or 'EXCAVATION_STARTED' in flag.upper()
                        for flag in self.g.social.flags)
         self.snapshot('mq03_complete.png')
-        self.until(lambda:q._delivery_done,'cart delivery',recording=False)
-        assert pygame.Vector2(q.cart['position']).distance_to(q.points['cart_end']) < 1
-        expected = {'regent_'+kind for kind in ('preparations','arrival','dispute','welcome','discussion','aftermath')}
+        expected = {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}
         actual = {row.get('script') for row in self.dialogue}
         assert expected <= actual
-        for kind in ('preparations','arrival','dispute','welcome','discussion','aftermath'):
-            expected_pages = len(self.g.social._make_pages(q.lines[kind]))
+        for kind in ('preparations','arrival','welcome','discussion','aftermath'):
+            expected_pages = self.quest_expected_pages[kind]
             actual_pages = sum(row.get('script') == 'regent_'+kind for row in self.dialogue)
             assert expected_pages == actual_pages, (kind,expected_pages,actual_pages)
         save_gif(self.output/'mq03.gif',self.quest_frames,[700]*len(self.quest_frames),80)
-        save_gif(self.output/'cart_release.gif',self.cart_frames,[200]*len(self.cart_frames),112)
         return {'status':'completed','stage':q.stage,
             'objectives':self.g.quests.states[REGENT_QUEST]['completed_objectives'],
             'main_dialogue_pages':sum(row.get('script') in expected for row in self.dialogue),
             'optional_dialogue_pages':sum(str(row.get('script','')).startswith('regent_') and row.get('script') not in expected for row in self.dialogue),
             'room_transitions':self.room_transitions,
             'final_party_rooms':[q._world(actor).data['id'] for actor in q.party],
-            'cart_visible_release':True,'cart_delivery_finished':True,
+            'direct_sanctuary_escort':True,'lucan_present':q.lucan in q.party,
             'mq04_available':True,'excavation_authorized':False,
             'player_role':'guide and host; witness to adult decisions'}
 
@@ -574,8 +562,8 @@ class Capture:
 These are production Game renders and ordinary event-driven quest/cinematic input.
 A temporary fixture completes MQ01 and MQ02's earlier mill repair/verification,
 leaving the report unread. It uses a legitimate legacy repair bypass, without
-inventing battle victory or rewards. The mill report, sanctuary cup setting, arrival, all six
-revised MQ03 scenes, NPC movement, cart release and door transfers are played.
+inventing battle victory or rewards. The mill report, sanctuary cup setting, arrival, all five
+revised MQ03 scenes, NPC movement and direct sanctuary door transfers are played.
 No cinematic clock or progression checkpoint is assigned during capture.
 
 | Arrival at the southern land gate | Aldric listens to locals |
@@ -592,10 +580,11 @@ No cinematic clock or progression checkpoint is assigned during capture.
 
 [150% local dialogue](locals_large_text.png) · [150% Serene dialogue](serene_window_large_text.png) · [Letterboxed view](letterboxed.png) · [Paused](paused.png)
 
-[Gate admission motion](gate_admission.gif) · [All six revised MQ03 conversations](mq03.gif) · [Actual cart release](cart_release.gif)
+[Gate admission motion](gate_admission.gif) · [All five revised MQ03 conversations](mq03.gif)
 
-The arrival freezes exploration and preserves Caelan's mill station. MQ03 stays
-available until Serene's dining preparations are acknowledged. Separate saved
+The arrival freezes exploration and preserves Caelan's sanctuary station. MQ03 stays
+available until Serene's separate invitation is acknowledged. The visit leads
+directly from the lower bridge to the sanctuary, with Lucan accompanying Aldric. Separate saved
 journey probes verify pending playback recovery, skip, queued-input isolation,
 no duplicate resources and no replay for already-seen or legacy completed saves.
 The bridge remains ruined and no excavation is authorized. The preserved town

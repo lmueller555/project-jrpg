@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "exporter": "tools/export_regent_lucan.py",
+  "sources": {
+    "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png": "7122ac38eb0ed50c221073fdfad2a7ceda27f249070ea64d9dce440e1b30d39e",
+    "assets/source/cinematics/regent_arrival/actors/lucan/travel_source.json": "3cfc215cb20db6dcfdd03d82734c8a33471cacb28cac380889fcd719bdcd3403",
+    "assets/source/companions/lucan/design_sheet.png": "27ac41ba8689a4d15fd40d682ee08ba30d1ba830c5ea50030eafb9c822314ae3",
+    "assets/cinematics/companions/lucan/stand_front.png": "06a0155700f78a8780ae7514c92728b942c8f21e07c397773bc22713840ac65d",
+    "assets/story/regent_arrival/actors/aldric/stand_left.png": "4781136b0a06688dad9c07f0907e9e354350029c14bcaf440faa878efd2939a8",
+    "assets/story/regent_arrival/actors/clerk/stand_left.png": "85e3a131695e0d2f92384481aa7718de358da258e9b0fb57b7ec16340fa4a03d"
+  },
+  "registrations": {
+    "stand_left.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        128,
+        22,
+        276,
+        407
+      ],
+      "source_anchor": [
+        208.0,
+        407
+      ],
+      "scale": 0.2077922077922078
+    },
+    "walk_left_0.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        444,
+        24,
+        644,
+        405
+      ],
+      "source_anchor": [
+        547.5,
+        407
+      ],
+      "scale": 0.2077922077922078
+    },
+    "walk_left_1.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        801,
+        24,
+        945,
+        407
+      ],
+      "source_anchor": [
+        875.0,
+        407
+      ],
+      "scale": 0.2077922077922078
+    },
+    "walk_left_2.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        1107,
+        23,
+        1309,
+        405
+      ],
+      "source_anchor": [
+        1208.5,
+        407
+      ],
+      "scale": 0.2077922077922078
+    },
+    "walk_left_3.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        1471,
+        23,
+        1628,
+        403
+      ],
+      "source_anchor": [
+        1557.5,
+        407
+      ],
+      "scale": 0.2077922077922078
+    },
+    "stand_back.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        117,
+        463,
+        290,
+        852
+      ],
+      "source_anchor": [
+        202.5,
+        854
+      ],
+      "scale": 0.20565552699228792
+    },
+    "walk_back_0.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        455,
+        467,
+        627,
+        854
+      ],
+      "source_anchor": [
+        539.5,
+        854
+      ],
+      "scale": 0.20565552699228792
+    },
+    "walk_back_1.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        791,
+        465,
+        959,
+        852
+      ],
+      "source_anchor": [
+        873.0,
+        854
+      ],
+      "scale": 0.20565552699228792
+    },
+    "walk_back_2.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        1139,
+        467,
+        1307,
+        854
+      ],
+      "source_anchor": [
+        1222.5,
+        854
+      ],
+      "scale": 0.20565552699228792
+    },
+    "walk_back_3.png": {
+      "source": "assets/source/cinematics/regent_arrival/actors/lucan/travel_generated.png",
+      "bounds": [
+        1482,
+        467,
+        1652,
+        852
+      ],
+      "source_anchor": [
+        1568.0,
+        854
+      ],
+      "scale": 0.20565552699228792
+    }
+  },
+  "exports": {
+    "lucan/stand_left.png": "31bf4a5ea33168351d9e9ae265dc256ac966eed32202ee1cb1e5373ea4e8ef13",
+    "lucan/walk_left_0.png": "248f4eb99eed4dd7eab32f83207d47b282858a70f9b0aac0e5a07fec6ff8a49b",
+    "lucan/walk_left_1.png": "0d2ba5504dc24ee03f421e411f51a601d5fb5bd607af67a83e92e5fbd0820cb2",
+    "lucan/walk_left_2.png": "24fba35141e473d11a7915a4eb501fcddc49a9f4e92e32589dc0c63d2768f301",
+    "lucan/walk_left_3.png": "5270b84b8a5b1a28c93e80a76a7bb37f5df4b15353d0865c646a3ccde9a4a887",
+    "lucan/stand_back.png": "622e061ffed89e9ed41d1a05a73789ffad0f666e1ea15369126316ce5a28160c",
+    "lucan/walk_back_0.png": "0621c36e59602dd4f7ffcecc2948e94fe796ce77d51b8e1c370e2734c8ad6866",
+    "lucan/walk_back_1.png": "947eb07d194c2d10ffcfccf0ac632fa3e78ac9b3febe419a078f8f4a66714019",
+    "lucan/walk_back_2.png": "b4a4aab413fc4007711fcb2bcba38b0accb7c1c667bd0fbcf423433b00097165",
+    "lucan/walk_back_3.png": "8c248c37da07de6b8b5881458ca6af8f4093c81681e00dec3e1dfc8b83e9b281",
+    "lucan/animation.json": "4cf8f0620da7f6527fd9fbb2e192bc7fcc7a89b597f5c7aeae349e9947f82478"
+  },
+  "notes": [
+    "No approved source or existing cinematic actor pixels were changed.",
+    "Ten new travel drawings reuse the approved adult cinematic identity, not chibi overworld proportions.",
+    "Four distinct authored stride drawings per direction; no limb morphs or synthetic extra phases.",
+    "A shared body scale and row foot baseline retain natural stride rise.",
+    "Rear-quarter route uses the explicitly recorded closest rear-view alias."
+  ]
+}

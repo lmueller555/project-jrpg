@@ -599,6 +599,7 @@ class GallerySessionTests(unittest.TestCase):
         game = self.game()
         self.assertTrue(game.open_gallery())
         self.assertFalse(game.launch_gallery_scene('unwritten_future_scene'))
+        self.assertFalse(game.launch_gallery_scene('regent_cart_release'))
         self.assertIsNone(game.gallery_session)
         self.assertTrue(game.launch_gallery_scene('later_journey'))
         current = game.gallery_session

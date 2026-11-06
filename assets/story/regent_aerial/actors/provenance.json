@@ -1,7 +1,7 @@
 {
   "version": 1,
   "exporter": "tools/build_regent_aerial_actors.py",
-  "exporter_sha256": "ce0d83776162d2720e54fc8ef0ecb1c8f9aec08fc3c4c4e965c8337e4faaff37",
+  "exporter_sha256": "10f8a05939490e9a348b1301b82b68eea1584062a7577b683842a2bacafcb365",
   "prompts_sha256": "f899ddf3f87b22018b2eb931d137ebf165aca19984f40b6a9215b081bebdeeba",
   "sources": {
     "bird_generated.png": "431f1a911380f46ecb53e7a6a84854a710686378d8368bb5e8790cd81a0b8794",
@@ -236,7 +236,11 @@
     "clerk/overhead.png": "3eb7c7954a10ea4eac3884bf95e253853d0e973f52a3af78d981caf02bf0eb0b",
     "clerk/oblique.png": "39fa7eaa8133ad7a1e66a87fb434fcf3934905ba9128a78cd1a0a1d54e78dbcc",
     "clerk/animation.json": "2bb6ec63bc66ae1af5ca485181588c23cf1e0c466e17d397dfc4ba9136809939",
-    "manifest.json": "15b213cf3778d6e957c89910ab9ad9fcdec064e87f0c89abe0456ec8d8bddce4"
+    "lucan/overhead.png": "77b290a47f38ca63aa2346287ed18919181c4062973b67671cd4357217e2743b",
+    "lucan/oblique.png": "5b49dbb3292e5591d807dc9e08172a5de63b24b1a291649fc964f2fc8317979b",
+    "lucan/animation.json": "199f4eb8885e83411630d8f7ebd24099eea2731e064b3d385ab806a5b4be74ed",
+    "lucan/provenance.json": "94f8459d2d96e98c88a9b34af08bdbea30979a298f3ee733ff79a1003944487e",
+    "manifest.json": "30ca4e9e1fc445615cfa622eeccce7a17492634b02ca4ea6301e4b421db08e95"
   },
   "notes": [
     "Original generations and exact prompts retained without repainting.",

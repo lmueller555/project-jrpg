@@ -28,6 +28,7 @@ class GalleryCatalogueTests(unittest.TestCase):
 
     def test_catalogue_metadata_is_unique_readable_and_repo_local(self):
         self.assertEqual(len(GALLERY_ENTRIES), len(GALLERY_BY_ID))
+        self.assertNotIn('regent_cart_release', GALLERY_BY_ID)
         for entry in GALLERY_ENTRIES:
             with self.subTest(scene=entry.id):
                 self.assertRegex(entry.id, r'^[a-z][a-z0-9_]+$')

@@ -136,6 +136,12 @@ Lucan to Caelan's party, establishing the basis for his recruitment. The exact
 occasion and scene remain open; this replaces the earlier generic
 road-security escort recruitment premise.
 
+MQ03 now introduces Lucan with Aldric's visiting party, in place of the generic
+traveling attendant. His guard work, unsolicited practical advice and meal
+conversation establish his opening dynamic with Caelan. He remains with Aldric;
+this visit does not recruit him into the playable party. The ridge discussion
+also establishes Aldric's relationship to the reigning monarch in dialogue.
+
 The dynasty's name, the monarch's identity, Aldric's birthplace and age,
 succession rules and the precise constitutional powers of the regency remain
 unapproved. Membership in the ruling family does not yet assign a named

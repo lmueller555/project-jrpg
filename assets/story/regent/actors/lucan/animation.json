@@ -1,0 +1,48 @@
+{
+  "canvas": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "idles": {
+    "front": "assets/characters/lucan/idle_front.png",
+    "left": "assets/characters/lucan/idle_left.png",
+    "right": "assets/characters/lucan/idle_right.png",
+    "back": "assets/characters/lucan/idle_back.png"
+  },
+  "walks": {
+    "front": [
+      "assets/characters/lucan/walk_front/frame_01.png",
+      "assets/characters/lucan/walk_front/frame_02.png",
+      "assets/characters/lucan/walk_front/frame_03.png",
+      "assets/characters/lucan/walk_front/frame_04.png"
+    ],
+    "left": [
+      "assets/characters/lucan/walk_left/frame_01.png",
+      "assets/characters/lucan/walk_left/frame_02.png",
+      "assets/characters/lucan/walk_left/frame_03.png",
+      "assets/characters/lucan/walk_left/frame_04.png"
+    ],
+    "right": [
+      "assets/characters/lucan/walk_right/frame_01.png",
+      "assets/characters/lucan/walk_right/frame_02.png",
+      "assets/characters/lucan/walk_right/frame_03.png",
+      "assets/characters/lucan/walk_right/frame_04.png"
+    ],
+    "back": [
+      "assets/characters/lucan/walk_back/frame_01.png",
+      "assets/characters/lucan/walk_back/frame_02.png",
+      "assets/characters/lucan/walk_back/frame_03.png",
+      "assets/characters/lucan/walk_back/frame_04.png"
+    ]
+  },
+  "source": "approved Lucan directional idle and walking sets",
+  "design": "Aldric personal guard; approved armor, sword and shield"
+}

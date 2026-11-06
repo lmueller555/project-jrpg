@@ -6,10 +6,11 @@ Serene's faith and the site's natural and communal significance were clarified
 on 2026-11-04 without changing those terms.
 
 **Implementation:** MQ03's runtime dialogue now presents the approved relief
-needs, public records, protected boundary and unresolved trial-cut request.
-The later authorization and excavation remain separate future story work.
-The newly established faith and confluence significance below are lore
-foundations, not additional implemented dialogue or map features.
+needs, public records, protected boundary and unresolved trial-cut request,
+including the natural confluence, living memorial grove and communal keeping
+that give the whole reserve significance. The later authorization and
+excavation remain separate future story work. No playable ridge map or new
+ritual animation accompanies this dialogue revision.
 
 **Scope:** The protected ridge sanctuary near Eldenmere, its public covenant,
 and the legitimate disagreement between Serene and Aldric in Chapter 1.
