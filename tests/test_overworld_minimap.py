@@ -141,6 +141,21 @@ class OverworldMinimapTests(unittest.TestCase):
         self.assertAlmostEqual(chart.terrain_calls[0][2], minimap.scale*2)
         self.assertEqual(minimap.world_to_map(game.player.position), minimap.content_rect.center)
 
+    def test_known_sanctuary_uses_its_symbol_without_recording_a_visit(self):
+        game, minimap = self.fixture();chart = ChartFixture()
+        game.world.region['landmarks'].append({
+            'id': 'ridge_sanctuary', 'name': 'Ridge Sanctuary', 'kind': 'sanctuary',
+            'tile_position': [-4, -20], 'always_known': True})
+        before = set(game.overworld_travel.discovered)
+        position = game.player.position.copy()
+        with patch.object(minimap, 'cartography', return_value=chart):
+            minimap.draw(pygame.Surface((960,640)))
+        self.assertIn('sanctuary', chart.icons)
+        self.assertIn('ridge_sanctuary', minimap.marker_rects)
+        self.assertEqual(game.overworld_travel.discovered, before)
+        self.assertEqual(game.player.position, position)
+        self.assertFalse(game.map_open)
+
     def test_live_passage_states_and_discovered_places_are_drawn_without_progress_changes(self):
         game, minimap = self.fixture();chart = ChartFixture()
         target = pygame.Surface((960, 640));initial = set(game.social.flags)

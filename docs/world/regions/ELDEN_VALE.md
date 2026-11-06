@@ -6,7 +6,10 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 **Implementation:** The [first regional overworld](../../OVERWORLD.md) now
 represents the boundary rivers, woodland, foothills, fields, guarded walls and
 lightning-destroyed western road bridge. Aldric's [arrival cinematic](../../REGENT_ARRIVAL.md)
-and MQ03 dialogue present the relief visit and covenant disagreement.
+and MQ03 dialogue present the relief visit and covenant disagreement. The old
+ridge sanctuary now has an overworld miniature and approach in the northeastern
+foothills; its detailed reserve and cave are not implemented by that geography
+addition.
 
 Elden Vale is Eldenmere's home region: a wooded inland valley on
 the western foothills of Merovar's Greyfold Mountains. The valley gives Game I
@@ -94,8 +97,11 @@ The **old ridge sanctuary near Eldenmere** is a separate site from this
 inhabited village sanctuary. Its marked reserve includes sanctuary buildings,
 a wooded hill and buried foundations beyond the visible walls. The covenant
 protects the ground beneath the reserve as well as its surface. The ridge
-site's exact position and full buried layout remain open; it is not
-established as the original sacrificial temple.
+site now lies northeast of the village on a wooded shoulder of the eastern
+Greyfold foothills, south of the northern wall and west of the eastern river.
+A maintained spur from the eastern footpath reaches its regional miniature.
+Its full buried layout remains open; it is not established as the original
+sacrificial temple.
 
 The ridge site is a remembrance-and-renewal sanctuary at a real natural aether
 confluence, with a living memorial grove in its wooded reserve. The confluence

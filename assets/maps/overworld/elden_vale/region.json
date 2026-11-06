@@ -1618,6 +1618,45 @@
           ]
         ],
         "ground_treatment": "localized"
+      },
+      {
+        "id": "sanctuary_ridge_shoulder",
+        "style": "rocky_ridge",
+        "polygon": [
+          [
+            79,
+            -69
+          ],
+          [
+            84,
+            -75
+          ],
+          [
+            91,
+            -76
+          ],
+          [
+            99,
+            -72
+          ],
+          [
+            100,
+            -64
+          ],
+          [
+            96,
+            -59
+          ],
+          [
+            88,
+            -59
+          ],
+          [
+            82,
+            -61
+          ]
+        ],
+        "ground_treatment": "localized"
       }
     ],
     "scorched": [
@@ -2046,6 +2085,40 @@
           [
             -125,
             29.5
+          ]
+        ]
+      },
+      {
+        "id": "sanctuary_forecourt",
+        "surface": "gravel",
+        "polygon": [
+          [
+            87.6,
+            -66.3
+          ],
+          [
+            89,
+            -67
+          ],
+          [
+            92,
+            -66.7
+          ],
+          [
+            93,
+            -65.8
+          ],
+          [
+            92,
+            -64
+          ],
+          [
+            89,
+            -63.6
+          ],
+          [
+            87.7,
+            -64.3
           ]
         ]
       }
@@ -6215,6 +6288,307 @@
       ],
       "width": 1.2,
       "role": "Southern watch shelter and stores approach"
+    },
+    {
+      "id": "sanctuary_approach",
+      "kind": "foot",
+      "role": "Maintained woodland approach to the old ridge sanctuary",
+      "surface": "dirt",
+      "width": 1.7,
+      "ruts": false,
+      "control_points": [
+        [
+          42,
+          -45
+        ],
+        [
+          49,
+          -48
+        ],
+        [
+          55,
+          -52
+        ],
+        [
+          62,
+          -52
+        ],
+        [
+          69,
+          -55
+        ],
+        [
+          73,
+          -60
+        ],
+        [
+          78,
+          -57
+        ],
+        [
+          83,
+          -58
+        ],
+        [
+          87,
+          -59.5
+        ],
+        [
+          90,
+          -62
+        ],
+        [
+          90,
+          -66
+        ]
+      ],
+      "points": [
+        [
+          42,
+          -45
+        ],
+        [
+          42.6968,
+          -45.287
+        ],
+        [
+          43.8407,
+          -45.7519
+        ],
+        [
+          45.2375,
+          -46.325
+        ],
+        [
+          46.6926,
+          -46.937
+        ],
+        [
+          48.0116,
+          -47.5185
+        ],
+        [
+          49.0,
+          -48.0
+        ],
+        [
+          49.8657,
+          -48.5475
+        ],
+        [
+          50.8926,
+          -49.2963
+        ],
+        [
+          52.0,
+          -50.1313
+        ],
+        [
+          53.1074,
+          -50.937
+        ],
+        [
+          54.1343,
+          -51.5984
+        ],
+        [
+          55.0,
+          -52.0
+        ],
+        [
+          55.9317,
+          -52.1377
+        ],
+        [
+          57.1259,
+          -52.1296
+        ],
+        [
+          58.4563,
+          -52.0437
+        ],
+        [
+          59.7963,
+          -51.9481
+        ],
+        [
+          61.0197,
+          -51.9109
+        ],
+        [
+          62.0,
+          -52.0
+        ],
+        [
+          62.9965,
+          -52.2789
+        ],
+        [
+          64.2556,
+          -52.7259
+        ],
+        [
+          65.6312,
+          -53.2812
+        ],
+        [
+          66.9778,
+          -53.8852
+        ],
+        [
+          68.1493,
+          -54.478
+        ],
+        [
+          69.0,
+          -55.0
+        ],
+        [
+          69.669,
+          -55.6782
+        ],
+        [
+          70.3741,
+          -56.6593
+        ],
+        [
+          71.0875,
+          -57.7625
+        ],
+        [
+          71.7815,
+          -58.8074
+        ],
+        [
+          72.4282,
+          -59.6134
+        ],
+        [
+          73.0,
+          -60.0
+        ],
+        [
+          73.6539,
+          -59.875
+        ],
+        [
+          74.5037,
+          -59.3778
+        ],
+        [
+          75.4562,
+          -58.675
+        ],
+        [
+          76.4185,
+          -57.9333
+        ],
+        [
+          77.2975,
+          -57.3194
+        ],
+        [
+          78.0,
+          -57.0
+        ],
+        [
+          78.7025,
+          -56.9728
+        ],
+        [
+          79.5815,
+          -57.0907
+        ],
+        [
+          80.5438,
+          -57.3031
+        ],
+        [
+          81.4963,
+          -57.5593
+        ],
+        [
+          82.3461,
+          -57.8084
+        ],
+        [
+          83.0,
+          -58.0
+        ],
+        [
+          83.6042,
+          -58.18
+        ],
+        [
+          84.3222,
+          -58.4148
+        ],
+        [
+          85.0875,
+          -58.6844
+        ],
+        [
+          85.8333,
+          -58.9685
+        ],
+        [
+          86.4931,
+          -59.2471
+        ],
+        [
+          87.0,
+          -59.5
+        ],
+        [
+          87.4815,
+          -59.7946
+        ],
+        [
+          88.063,
+          -60.187
+        ],
+        [
+          88.675,
+          -60.6406
+        ],
+        [
+          89.2481,
+          -61.1185
+        ],
+        [
+          89.713,
+          -61.5839
+        ],
+        [
+          90.0,
+          -62.0
+        ],
+        [
+          90.1215,
+          -62.5272
+        ],
+        [
+          90.1556,
+          -63.2704
+        ],
+        [
+          90.1312,
+          -64.1094
+        ],
+        [
+          90.0778,
+          -64.9241
+        ],
+        [
+          90.0243,
+          -65.5943
+        ],
+        [
+          90.0,
+          -66.0
+        ]
+      ],
+      "smooth_steps": 6
     }
   ],
   "walls": [
@@ -6385,6 +6759,19 @@
       ],
       "discovered": true,
       "description": "Road crews gather stone and supplies beside the route to the damaged crossing."
+    },
+    {
+      "id": "ridge_sanctuary",
+      "name": "Ridge Sanctuary",
+      "kind": "sanctuary",
+      "tile_position": [
+        90,
+        -66
+      ],
+      "always_known": true,
+      "discovered": true,
+      "prop": "ridge_sanctuary",
+      "description": "The old ridge sanctuary stands northeast of Eldenmere in a protected wooded reserve. Its grove is tended as a place of remembrance and renewal. An old footpath climbs from the eastern foothills to its stone arch."
     }
   ],
   "safe_clearings": [
@@ -6513,6 +6900,42 @@
         12,
         15
       ]
+    },
+    {
+      "id": "sanctuary_miniature_clear",
+      "rect_tiles": [
+        87,
+        -70,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "sanctuary_forecourt_clear",
+      "rect_tiles": [
+        87,
+        -67,
+        7,
+        7
+      ]
+    },
+    {
+      "id": "sanctuary_grove_rest",
+      "rect_tiles": [
+        82,
+        -67,
+        5,
+        4
+      ]
+    },
+    {
+      "id": "sanctuary_stair_approach",
+      "rect_tiles": [
+        88,
+        -63,
+        4,
+        4
+      ]
     }
   ],
   "route_validation": {
@@ -6534,7 +6957,8 @@
       "upper_millrace",
       "woodland_overlook",
       "foothill_overlook",
-      "relief_staging"
+      "relief_staging",
+      "ridge_sanctuary"
     ],
     "opening_enclosure": {
       "north_wall": "north_wall",
@@ -6552,7 +6976,7 @@
     "measured_bridge_approach_seconds": 46.05,
     "geometry_checks": {
       "opening_reachable_tiles": 43616,
-      "required_points_reachable": 20,
+      "required_points_reachable": 22,
       "closed_perimeter": true,
       "broken_bridge_blocks_crossing": true,
       "repaired_bridge_connects_banks": true,
@@ -10442,6 +10866,395 @@
         -4,
         51
       ]
+    },
+    {
+      "id": "ridge_sanctuary_reserve",
+      "kind": "sanctuary",
+      "name": "Ridge sanctuary wooded terrace",
+      "tile_position": [
+        90,
+        -66
+      ],
+      "approach_tile": [
+        90,
+        -62
+      ],
+      "arrival_tile": [
+        90,
+        -62
+      ],
+      "review": {
+        "focus_tile": [
+          89.8,
+          -66.4
+        ],
+        "player_tile": [
+          90,
+          -61.2
+        ],
+        "facing": "back"
+      },
+      "miniature_footprint_tiles": [
+        87,
+        -70,
+        6,
+        6
+      ],
+      "clearance_radius": 6.2,
+      "props": [
+        {
+          "id": "sanctuary_ledge_0",
+          "key": "ridge",
+          "tile_position": [
+            82,
+            -62.7
+          ],
+          "solid": [
+            74,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_ledge_1",
+          "key": "ridge",
+          "tile_position": [
+            85.4,
+            -61.7
+          ],
+          "solid": [
+            72,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_ledge_2",
+          "key": "ridge",
+          "tile_position": [
+            94.3,
+            -61.5
+          ],
+          "solid": [
+            72,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_ledge_3",
+          "key": "ridge",
+          "tile_position": [
+            97.3,
+            -63.1
+          ],
+          "solid": [
+            64,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_ledge_4",
+          "key": "ridge",
+          "tile_position": [
+            98.3,
+            -66.9
+          ],
+          "solid": [
+            60,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_ledge_5",
+          "key": "ridge",
+          "tile_position": [
+            96.5,
+            -72
+          ],
+          "solid": [
+            64,
+            10
+          ]
+        },
+        {
+          "id": "sanctuary_lower_outcrop",
+          "key": "rock_outcrop",
+          "tile_position": [
+            95.7,
+            -58.9
+          ],
+          "solid": [
+            38,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_upper_outcrop",
+          "key": "rock_outcrop",
+          "tile_position": [
+            93.8,
+            -74
+          ],
+          "solid": [
+            38,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_stairs",
+          "key": "sanctuary_steps",
+          "tile_position": [
+            90,
+            -62.0
+          ]
+        },
+        {
+          "id": "sanctuary_grove_0",
+          "key": "oak_a",
+          "tile_position": [
+            82.4,
+            -70.3
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_1",
+          "key": "oak_b",
+          "tile_position": [
+            84.4,
+            -71.8
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_2",
+          "key": "oak_c",
+          "tile_position": [
+            86.6,
+            -73.4
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_3",
+          "key": "oak_b",
+          "tile_position": [
+            89.6,
+            -74.5
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_4",
+          "key": "oak_a",
+          "tile_position": [
+            93,
+            -74.4
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_5",
+          "key": "oak_c",
+          "tile_position": [
+            83.1,
+            -67.5
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_6",
+          "key": "oak_a",
+          "tile_position": [
+            80.7,
+            -65.8
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_7",
+          "key": "conifer_b",
+          "tile_position": [
+            99,
+            -70.5
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_grove_8",
+          "key": "conifer_a",
+          "tile_position": [
+            99.7,
+            -64.8
+          ],
+          "solid": [
+            10,
+            8
+          ]
+        },
+        {
+          "id": "sanctuary_bench",
+          "key": "bench",
+          "tile_position": [
+            84.8,
+            -64.6
+          ],
+          "solid": [
+            22,
+            7
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_0",
+          "key": "flowers_a",
+          "tile_position": [
+            83.9,
+            -63.9
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_1",
+          "key": "flowers_b",
+          "tile_position": [
+            86.4,
+            -65.5
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_2",
+          "key": "flowers_a",
+          "tile_position": [
+            92.7,
+            -65
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_3",
+          "key": "flowers_b",
+          "tile_position": [
+            93.4,
+            -63.7
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_4",
+          "key": "flowers_a",
+          "tile_position": [
+            88.3,
+            -61.9
+          ]
+        },
+        {
+          "id": "sanctuary_flowers_5",
+          "key": "flowers_b",
+          "tile_position": [
+            91.6,
+            -61.5
+          ]
+        },
+        {
+          "id": "sanctuary_shrub_0",
+          "key": "shrub",
+          "tile_position": [
+            81.5,
+            -68.8
+          ]
+        },
+        {
+          "id": "sanctuary_shrub_1",
+          "key": "shrub",
+          "tile_position": [
+            85.3,
+            -70
+          ]
+        },
+        {
+          "id": "sanctuary_shrub_2",
+          "key": "shrub",
+          "tile_position": [
+            96.8,
+            -68.3
+          ]
+        },
+        {
+          "id": "sanctuary_shrub_3",
+          "key": "shrub",
+          "tile_position": [
+            97.5,
+            -61.3
+          ]
+        },
+        {
+          "id": "sanctuary_junction_waypost",
+          "key": "waypost",
+          "tile_position": [
+            43.6,
+            -46.8
+          ],
+          "solid": [
+            10,
+            6
+          ]
+        },
+        {
+          "id": "sanctuary_reserve_waypost",
+          "key": "waypost",
+          "tile_position": [
+            87.5,
+            -61.1
+          ],
+          "solid": [
+            10,
+            6
+          ]
+        },
+        {
+          "id": "sanctuary_west_boundary_rock",
+          "key": "rock_outcrop",
+          "tile_position": [
+            85.8,
+            -63.1
+          ],
+          "solid": [
+            28,
+            6
+          ]
+        },
+        {
+          "id": "sanctuary_east_boundary_rock",
+          "key": "rock_outcrop",
+          "tile_position": [
+            94.2,
+            -62.8
+          ],
+          "solid": [
+            28,
+            6
+          ]
+        }
+      ]
     }
   ],
   "clearance_paths": [
@@ -10919,54 +11732,6 @@
       "tile_position": [
         63.2,
         41
-      ]
-    },
-    {
-      "id": "ridge_shelf_0_0",
-      "key": "ridge",
-      "tile_position": [
-        88.0,
-        -60.0
-      ],
-      "solid": [
-        70,
-        12
-      ]
-    },
-    {
-      "id": "ridge_shelf_0_1",
-      "key": "ridge",
-      "tile_position": [
-        91.0,
-        -59.71305756364019
-      ],
-      "solid": [
-        70,
-        12
-      ]
-    },
-    {
-      "id": "ridge_shelf_0_2",
-      "key": "ridge",
-      "tile_position": [
-        94.0,
-        -59.6001705587834
-      ],
-      "solid": [
-        70,
-        12
-      ]
-    },
-    {
-      "id": "ridge_shelf_0_3",
-      "key": "ridge",
-      "tile_position": [
-        97.0,
-        -59.72981472777954
-      ],
-      "solid": [
-        70,
-        12
       ]
     },
     {
@@ -11526,12 +12291,19 @@
   "composition_pass": {
     "version": 1,
     "bridge_roadway_pixels": 72,
-    "intent": "Place composition follows approaches, useful working relationships and connected boundaries; regional scale and existing progression stay stable."
+    "intent": "Place composition follows approaches, useful working relationships and connected boundaries; regional scale and existing progression stay stable.",
+    "ridge_sanctuary": {
+      "version": 1,
+      "placement": "Northeastern wooded Greyfold shoulder inside the starting enclosure",
+      "entry_enabled": false,
+      "intent": "A known regional miniature reached along a maintained climbing path; local reserve and cave scenes remain future work."
+    }
   },
+  "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json",
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "6290788d087af1225a440f4c900c69ee3855b4c9a2046f6476411389f2183a4f",
+    "source_recipe_sha256": "7bcb97750f56bc664965f7ed10a9c40b695180efdeb5fcacf1af4910fb9195be",
     "atlas_reference": "docs/reviews/elden_vale_composition/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",

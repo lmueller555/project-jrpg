@@ -43,6 +43,21 @@ center. Its approaches and the independently repaired future deck use the
 same width; increasing the bridge's visible roadway does not grant repair or
 open the crossing. The review includes a measured native-width audit.
 
+The **Ridge Sanctuary** stands northeast of Eldenmere, on a wooded rocky
+shoulder inside the northern wall and west of the eastern river. A maintained
+footpath branches from the eastern foothill loop, climbs between rock shelves
+and reaches its forecourt. The miniature combines a pale stone hall, slate roof,
+small bellcote and side cloister, with a grove and boundary markers around it.
+The landmark appears on the regional atlas and minimap from the start: Caelan
+already knows this local place.
+
+This update implements only the regional geography and miniature. Walking
+across its clear footprint does not load a scene, open a menu, start dialogue,
+change music, or advance a quest. It creates no cave entrance or local reserve
+map. Eldenmere's existing automatic entry and return remain independent. The
+[actual in-game review](reviews/overworld_sanctuary/README.md) shows the approach,
+miniature, atlas and uneventful walk across its footprint.
+
 The main road takes approximately 47 seconds to walk from the town miniature's
 exit to the near-bank bridge approach. Local paths lead toward woodland, a
 supply staging area, the two checkpoints and an eastern overlook. Ordinary
@@ -101,8 +116,9 @@ this PR implements the destroyed state experienced during the opening.
 The intact land checkpoints reserve a route for Aldric's relief caravan, which
 must not arrive across the ruined bridge. The [arrival cinematic](REGENT_ARRIVAL.md)
 uses the southern land checkpoint and preserves the broken crossing and the
-player's travel restrictions. No new quest, random encounter, original
-temple location, named southern town or old ridge sanctuary marker is added.
+player's travel restrictions. The new ridge landmark does not open those
+checkpoints, repair the bridge, add an encounter or place the original temple.
+The named southern town, local reserve scene and sanctuary quest remain future work.
 
 ## Streaming and coordinates
 

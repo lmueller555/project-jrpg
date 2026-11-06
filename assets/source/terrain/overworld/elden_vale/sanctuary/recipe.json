@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "tool": "image_gen.imagegen",
+  "source": "assets/source/terrain/overworld/elden_vale/sanctuary/generated_miniature.png",
+  "source_sha256": "cb6eedff714a2bcaca4e13e009ee291b72b402b989abf198c4f0b0da8b6fa26a",
+  "reference_images": [
+    {
+      "path": "assets/terrain/overworld/elden_vale/props/eldenmere.png",
+      "sha256": "9dd1646ccb1abf05b8546611742bfc0fef23ac1c16c9385ec241e6e350992d16"
+    },
+    {
+      "review_concept": "/workspace/generated_images/exec-b509cbc7-3a81-49a8-82a9-5a12cc97c57d.png",
+      "sha256": "60c9aa83ac9c9c6e27846da0e6c71671e38b72edafd0f6b144f056bcb16b31c4",
+      "purpose": "Approved sanctuary architecture shown in chat; a design reference, not a runtime dependency."
+    }
+  ],
+  "intent": "Compact old ridge sanctuary: limestone hall, slate roof, oculus, open bellcote and three-arch side cloister, no detailed reserve or cave.",
+  "alpha_threshold": 180,
+  "exports": {
+    "ridge_sanctuary": {
+      "canvas": [
+        96,
+        80
+      ],
+      "crop": [
+        240,
+        145,
+        1128,
+        995
+      ],
+      "fit": [
+        90,
+        72
+      ],
+      "paste": "center_x_bottom_74",
+      "foot_anchor": [
+        32,
+        74
+      ]
+    },
+    "sanctuary_steps": {
+      "canvas": [
+        40,
+        24
+      ],
+      "crop": [
+        353,
+        871,
+        650,
+        995
+      ],
+      "fit": [
+        40,
+        18
+      ],
+      "paste": "center_x_bottom_21",
+      "foot_anchor": [
+        20,
+        21
+      ]
+    }
+  }
+}

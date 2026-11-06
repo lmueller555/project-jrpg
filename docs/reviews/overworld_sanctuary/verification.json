@@ -1,0 +1,118 @@
+{
+  "disposable_journey_and_settings": true,
+  "quest_or_equipment_seeding": false,
+  "normal_player_files_untouched": true,
+  "region_sha256": "c58a1afe07ddd446e3e2e3fbb97ae8157bb1b56d75df210e4f26073f96487746",
+  "views": {
+    "sanctuary_overworld.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    },
+    "woodland_approach.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    },
+    "miniature_crossing.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    },
+    "regional_atlas.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    },
+    "path_junction.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    },
+    "region_context.png": {
+      "size": [
+        1536,
+        1248
+      ],
+      "source": "production game renderer"
+    },
+    "scene_contact.png": {
+      "size": [
+        960,
+        640
+      ],
+      "source": "production game renderer"
+    }
+  },
+  "crossing": {
+    "start_pixel": [
+      2088.0,
+      -1584.0
+    ],
+    "far_edge_pixel": [
+      2232,
+      -1584
+    ],
+    "end_pixel": [
+      2088.0,
+      -1584.0
+    ],
+    "scene_before": "auratia.overworld",
+    "scene_after": "auratia.overworld",
+    "quest_inventory_flags_music_and_scene_set_unchanged": true
+  },
+  "movie": {
+    "file": "sanctuary_walk.mp4",
+    "fps": 15,
+    "frames": 733,
+    "seconds": 48.86666666666667
+  },
+  "context": {
+    "bounds_tiles": [
+      0,
+      -96,
+      128,
+      104
+    ],
+    "scale": 2,
+    "largest_render_request": [
+      384,
+      384
+    ]
+  },
+  "scene": "auratia.overworld",
+  "position_pixel": [
+    2088.0,
+    -1584.0
+  ],
+  "landmark": {
+    "id": "ridge_sanctuary",
+    "name": "Ridge Sanctuary",
+    "kind": "sanctuary",
+    "tile_position": [
+      90,
+      -66
+    ],
+    "always_known": true,
+    "discovered": true,
+    "prop": "ridge_sanctuary",
+    "description": "The old ridge sanctuary stands northeast of Eldenmere in a protected wooded reserve. Its grove is tended as a place of remembrance and renewal. An old footpath climbs from the eastern foothills to its stone arch."
+  },
+  "cache": {
+    "render_bytes": 47775744,
+    "render_chunks": 81,
+    "collision_chunks": 12,
+    "metadata_chunks": 64
+  },
+  "saved_journey_valid": true
+}

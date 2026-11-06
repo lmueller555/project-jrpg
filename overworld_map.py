@@ -129,8 +129,9 @@ class RegionalMapUI:
             records.append(dict(gate, kind='checkpoint', name=gate.get('label', 'Road checkpoint')))
         discovered = getattr(getattr(self.game, 'overworld_travel', None), 'discovered', None)
         for record in self.data.get('landmarks', []):
-            known = (record.get('id') in discovered if discovered is not None else
-                     record.get('discovered', True))
+            known = (record.get('always_known', False) or
+                     (record.get('id') in discovered if discovered is not None else
+                      record.get('discovered', True)))
             if known or record.get('discovery_flag') in self._flags():
                 records.append(dict(record))
         seen = set()
@@ -490,7 +491,7 @@ class RegionalMapUI:
 
     @staticmethod
     def _marker_size(record):
-        return {'town':22, 'bridge':18, 'checkpoint':17}.get(record.get('kind'),13)
+        return {'town':22, 'sanctuary':20, 'bridge':18, 'checkpoint':17}.get(record.get('kind'),13)
 
     def _art_icon(self, painter, key, point, size):
         chart = self._chart()
@@ -506,14 +507,15 @@ class RegionalMapUI:
         if record.get('kind') == 'checkpoint':
             return ('Open' if record.get('clearance_flag') in self._flags() and
                     record.get('destination_ready',False) else 'Closed')
-        return {'town':'Village', 'millrace':'Millrace', 'staging':'Work site',
+        return {'town':'Village', 'sanctuary':'Sanctuary', 'millrace':'Millrace', 'staging':'Work site',
                 'overlook':'Overlook'}.get(record.get('kind'),'Landmark')
 
     def _draw_marker(self, painter, record):
         point = self.tile_to_map(record['tile_position'])
         if not self.map_rect.inflate(24,24).collidepoint(point):return
         kind = record.get('kind');status = self._marker_status(record)
-        key = {'town':'town','overlook':'overlook','millrace':'millrace','staging':'relief'}.get(kind,'overlook')
+        key = {'town':'town','sanctuary':'sanctuary','overlook':'overlook',
+               'millrace':'millrace','staging':'relief'}.get(kind,'overlook')
         if kind == 'bridge':key = 'bridge_repaired' if status == 'Passable' else 'bridge_broken'
         elif kind == 'checkpoint':key = 'gate_open' if status == 'Open' else 'gate_closed'
         if not self._art_icon(painter,key,point,self._marker_size(record)):
@@ -588,7 +590,7 @@ class RegionalMapUI:
         player_obstacle = pygame.Rect(player[0]-10,player[1]-10,20,20)
         selected_obstacle = self.marker_rects[record['id']].inflate(6,6)
         important = [self.marker_rects[item['id']].inflate(6,6) for item in self.landmarks
-                     if item.get('kind') in ('town','bridge','checkpoint')]
+                     if item.get('kind') in ('town','sanctuary','bridge','checkpoint')]
         compass = pygame.Rect(self.map_rect.right-29,self.map_rect.top+8,22,36)
         def score(rect):
             overlap = rect.colliderect(selected_obstacle)*1000
@@ -612,7 +614,7 @@ class RegionalMapUI:
         if (record.get('kind') == 'checkpoint' and
                 painter.font('small',bold=True).size(name)[0] > 130):
             name = 'North gate' if record['tile_position'][1] < 0 else 'South gate'
-        width = 170 if record.get('kind') in ('town','bridge','checkpoint') else 118
+        width = 170 if record.get('kind') in ('town','sanctuary','bridge','checkpoint') else 118
         lines = painter.wrap(name,width,role='small',bold=True)
         if record.get('kind') in ('bridge','checkpoint'):
             lines.append(self._marker_status(record))
@@ -624,7 +626,7 @@ class RegionalMapUI:
         if not self.landmarks:return
         selected_id = self.selected_landmark['id'] if self.details_visible else None
         hovered_id = self.landmarks[self.hovered]['id'] if self.hovered is not None else None
-        priority = {'town':0,'bridge':1,'checkpoint':2}
+        priority = {'town':0,'sanctuary':1,'bridge':2,'checkpoint':3}
         records = sorted(self.landmarks,key=lambda r:(-1 if r['id']==selected_id else
                          priority.get(r.get('kind'),4),r['id']))
         major_ids = {record['id'] for record in self.landmarks if record.get('kind') in priority}
@@ -636,6 +638,7 @@ class RegionalMapUI:
         if self.details_visible:occupied.append(self.detail_panel.inflate(6,6))
         safe = self.map_rect.inflate(-10,-10)
         line_height = painter.font('small',bold=True).get_linesize()
+        placed_labels = []
         for record in records:
             major = record.get('kind') in priority
             if not major and self.zoom < 1.6 and record['id'] not in (selected_id,hovered_id):continue
@@ -657,16 +660,25 @@ class RegionalMapUI:
             chosen = next((rect for rect in candidates if safe.contains(rect) and
                            not any(rect.colliderect(other) for other in occupied)),None)
             if chosen is None and major:
-                # Major navigation names keep a place even at large text. Use
-                # the least crowded in-bounds candidate rather than clipping.
+                # Large text and an open place card can exhaust the nearby
+                # positions. Search the remaining paper, keeping names and
+                # the card separate before preferring proximity to the site.
                 candidates = [rect.clamp(safe) for rect in candidates]
+                step = max(6,line_height//2)
+                candidates.extend(pygame.Rect(px,py,width,height)
+                                  for py in range(safe.top,safe.bottom-height+1,step)
+                                  for px in range(safe.left,safe.right-width+1,step))
+                candidates = [rect for rect in candidates if not any(
+                              rect.colliderect(other) for other in placed_labels)]
                 if self.details_visible:
                     candidates = [rect for rect in candidates if not rect.colliderect(self.detail_panel)]
                 if not candidates:continue
-                chosen = min(candidates,key=lambda rect:sum(rect.clip(other).width*rect.clip(other).height
-                                                            for other in occupied))
+                chosen = min(candidates,key=lambda rect:(
+                    sum(rect.clip(other).width*rect.clip(other).height for other in occupied),
+                    pygame.Vector2(rect.center).distance_squared_to((x,y))))
             if chosen is None:continue
             self.label_rects[record['id']] = chosen
+            placed_labels.append(chosen.inflate(5,4))
             occupied.append(chosen.inflate(5,4))
             self._label_layout.append((record,lines,chosen))
         # Minor symbols yield to priority lettering at a crowded overview;

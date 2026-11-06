@@ -83,7 +83,7 @@ class OverworldMinimap:
         records.extend(dict(gate, kind='checkpoint') for gate in self.data.get('gates', []))
         discovered = getattr(getattr(self.game, 'overworld_travel', None), 'discovered', set())
         records.extend(record for record in self.data.get('landmarks', [])
-                       if record.get('id') in discovered)
+                       if record.get('always_known', False) or record.get('id') in discovered)
         return records
 
     def _icon_key(self, record):
@@ -95,7 +95,7 @@ class OverworldMinimap:
             opened = (record.get('destination_ready', False)
                       and record.get('clearance_flag') in flags)
             return 'gate_open' if opened else 'gate_closed'
-        return {'town': 'town', 'millrace': 'millrace', 'staging': 'relief',
+        return {'town': 'town', 'sanctuary': 'sanctuary', 'millrace': 'millrace', 'staging': 'relief',
                 'overlook': 'overlook'}.get(kind, 'overlook')
 
     def _draw_place(self, target, painter, chart, record):
@@ -104,7 +104,7 @@ class OverworldMinimap:
             return
         point = painter.point(logical)
         kind = record.get('kind')
-        size = max(9, round((7 if kind in ('town', 'bridge', 'checkpoint') else 5)*painter.scale))
+        size = max(9, round((7 if kind in ('town', 'sanctuary', 'bridge', 'checkpoint') else 5)*painter.scale))
         icon = chart.icon(self._icon_key(record), size)
         if icon is not None:
             rect = icon.get_rect(center=point)

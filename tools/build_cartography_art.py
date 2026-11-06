@@ -1,9 +1,10 @@
 """Export original cartographic sheets to native materials and illustrations.
 
-Sources remain unmodified image generations. This exporter only crops, scales
-uniformly with nearest-neighbour sampling, reduces palettes, cleans alpha and
-pads transparent canvases. Runtime geography belongs to the separate survey
-and atlas-tile builder.
+Original cartographic sheets remain unmodified image generations. Named-place
+icons may also reuse approved native gameplay art. This exporter only crops,
+scales uniformly with nearest-neighbour sampling, reduces palettes, cleans
+alpha and pads transparent canvases. Runtime geography belongs to the separate
+survey and atlas-tile builder.
 """
 from __future__ import annotations
 
@@ -48,7 +49,11 @@ def remove_specks(image):
 
 
 def export(spec, recipe, transparent):
-    image = Image.open(SOURCE/spec['source']).convert('RGBA').crop(spec['crop'])
+    # A named landmark can share its approved runtime miniature rather than
+    # inventing a second architectural design for the map's small symbol.
+    source = ROOT/spec['source_image'] if spec.get('source_image') else SOURCE/spec['source']
+    image = Image.open(source).convert('RGBA')
+    image = image.crop(spec.get('crop', (0, 0, image.width, image.height)))
     image = clean_alpha(image, recipe['alpha_threshold'])
     size = tuple(spec['size'])
     if transparent:
@@ -84,7 +89,7 @@ def build(check=False):
     for record in recipe['source_records']:
         path = ROOT/record['file']
         if hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
-            raise ValueError(f'Unaltered generation differs: {record["file"]}')
+            raise ValueError(f'Cartographic source differs: {record["file"]}')
     manifest = {'version': 1, 'tiles': {}, 'props': {}}
     products = {}
     images = []

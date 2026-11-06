@@ -257,7 +257,7 @@ class OverworldWorld:
         path = ROOT/candidate if isinstance(candidate, str) else ART_FILE
         self.art_available = path.exists()
         if self.art_available:self._art = json.loads(path.read_text(encoding='utf-8'))
-        for field in ('detail_art_manifest','composition_art_manifest'):
+        for field in ('detail_art_manifest','composition_art_manifest','sanctuary_art_manifest'):
             detail = self.region.get(field)
             if detail and (ROOT/detail).exists():
                 additional = json.loads((ROOT/detail).read_text(encoding='utf-8'))
