@@ -70,5 +70,41 @@ class SanctuaryReserveHallTests(unittest.TestCase):
         self.world.draw(canvas,(0,0),player,0)
         self.assertEqual(canvas.get_at((128,210))[:3],color)
 
+    def test_projecting_plants_and_cabinet_hide_the_actor_only_from_behind(self):
+        color = (251,0,245)
+        sprite = pygame.Surface((24,36));sprite.fill(color)
+        # These points were selected against the original scene pixels, not
+        # derived from the exported masks or their sorting metadata.
+        pairs = (
+            ('west plant', (62,288), (59,279), (74,319), (65,296)),
+            ('east plant', (506,285), (512,283), (500,319), (509,296)),
+            ('records cabinet', (436,152), (447,130), (436,170), (447,145)),
+        )
+        for name,back,back_pixel,front,front_pixel in pairs:
+            for position,point,visible in ((back,back_pixel,False),(front,front_pixel,True)):
+                with self.subTest(prop=name, visible=visible):
+                    self.assertTrue(self.world.can_stand(position))
+                    player = SimpleNamespace(position=pygame.Vector2(position),sprite=lambda:sprite)
+                    camera = (96,64) if position[0] >= 480 else (0,64)
+                    canvas = pygame.Surface((480,320))
+                    self.world.draw(canvas,camera,player,0)
+                    pixel = canvas.get_at((point[0]-camera[0],point[1]-camera[1]))[:3]
+                    if visible:self.assertEqual(pixel,color)
+                    else:
+                        self.assertNotEqual(pixel,color)
+                        self.assertEqual(pixel,self.world.ground[0].get_at(point)[:3])
+
+    def test_real_gaps_between_leaves_and_flower_spikes_do_not_erase_the_actor(self):
+        color = (251,0,245)
+        sprite = pygame.Surface((24,36));sprite.fill(color)
+        for position,point,camera in (((62,288),(59,275),(0,64)),
+                                      ((519,285),(520,272),(96,64))):
+            with self.subTest(gap=point):
+                self.assertTrue(self.world.can_stand(position))
+                player = SimpleNamespace(position=pygame.Vector2(position),sprite=lambda:sprite)
+                canvas = pygame.Surface((480,320))
+                self.world.draw(canvas,camera,player,0)
+                self.assertEqual(canvas.get_at((point[0]-camera[0],point[1]-camera[1]))[:3],color)
+
 
 if __name__ == '__main__':unittest.main()

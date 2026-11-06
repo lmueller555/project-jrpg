@@ -27,6 +27,37 @@ def encoded(image):
     return data.getvalue()
 
 
+def foliage_gaps(mask, native):
+    """Exclude path/limestone visible between the immutable source's leaves.
+
+    Semantic crown outlines supply the object boundary. This palette gate only
+    clears pale neutral stone and warm bare soil inside those outlines; trunks
+    and branches have separate, tightly traced solid polygons.
+    """
+    bounds = mask.getbbox()
+    if bounds is None:return
+    alpha = mask.load();pixels = native.load()
+    for y in range(bounds[1], bounds[3]):
+        for x in range(bounds[0], bounds[2]):
+            if not alpha[x,y]:continue
+            red, green, blue = pixels[x,y]
+            # Dark, low-saturation pixels include the oak's real branchwork.
+            # Only pale neutral gaps are stone; filtering every muted pixel
+            # punched holes through brown trunks and branches in all crowns.
+            stone = min(red,green,blue) > 85 and blue > green*.73
+            soil = red > 125 and red > green*1.15 and blue > green*.45
+            if stone or soil:alpha[x,y] = 0
+
+
+def profile_y(points, x):
+    if x <= points[0][0]:return points[0][1]
+    for start,end in zip(points,points[1:]):
+        if x <= end[0]:
+            fraction = (x-start[0])/(end[0]-start[0])
+            return start[1]+fraction*(end[1]-start[1])
+    return points[-1][1]
+
+
 def exports():
     recipe = json.loads(RECIPE.read_text(encoding='utf-8'))
     source_path = ROOT/recipe['clean_plate']
@@ -45,27 +76,46 @@ def exports():
     scale_y = native.height/source_height
     for record in recipe['depth_silhouettes']:
         mask = Image.new('L', native.size)
-        points = [(round(x*scale_x), round(y*scale_y)) for x, y in record['polygon']]
+        parts = record.get('parts', [{'polygon':record.get('polygon',[])}])
+        for part in parts:
+            layer = Image.new('L', native.size)
+            points = [(round(x*scale_x),round(y*scale_y)) for x,y in part['polygon']]
+            ImageDraw.Draw(layer).polygon(points,fill=255)
+            if part.get('material') == 'foliage':foliage_gaps(layer,native)
+            mask.paste(255,mask=layer)
         painter = ImageDraw.Draw(mask)
-        painter.polygon(points, fill=255)
         for opening in record.get('openings', []):
             painter.polygon([(round(x*scale_x), round(y*scale_y)) for x, y in opening], fill=0)
         bounds = mask.getbbox()
-        if bounds is None:
-            raise ValueError(f'Empty sanctuary depth silhouette: {record["id"]}')
-        surface = native.convert('RGBA')
-        surface.putalpha(mask)
-        surface = surface.crop(bounds)
-        # Transparent pixels never carry a rectangular ground-colored matte.
-        surface.paste((0, 0, 0, 0), mask=surface.getchannel('A').point(lambda value: 255-value))
-        name = 'depth/'+record['id']+'.png'
-        products[name] = encoded(surface)
-        entities.append({'id': record['id'],
-                         'frames': [(OUTPUT/name).relative_to(ROOT).as_posix()],
-                         'position': list(bounds[:2]),
-                         'sort_y': round(record['baseline']*scale_y),
-                         'frame_duration_ms': 1000,
-                         'phase_offset': 0})
+        if bounds is None:raise ValueError(f'Empty sanctuary depth silhouette: {record["id"]}')
+        slices = [(record['id'],mask,record['baseline'])]
+        if record.get('baseline_profile'):
+            slices = []
+            step = max(1,round(record.get('strip_width',24)*scale_x))
+            for index,left in enumerate(range(bounds[0],bounds[2],step)):
+                right = min(bounds[2],left+step)
+                strip = Image.new('L',native.size)
+                strip.paste(mask.crop((left,bounds[1],right,bounds[3])),(left,bounds[1]))
+                if strip.getbbox():
+                    x = (left+right)/(2*scale_x)
+                    slices.append((record['id']+f'_{index:02}',strip,
+                                   profile_y(record['baseline_profile'],x)))
+        for identifier,alpha,baseline in slices:
+            bounds = alpha.getbbox()
+            surface = native.convert('RGBA');surface.putalpha(alpha)
+            surface = surface.crop(bounds)
+            # Transparent pixels never carry a rectangular ground-colored matte.
+            surface.paste((0,0,0,0),mask=surface.getchannel('A').point(lambda value:255-value))
+            name = 'depth/'+identifier+'.png'
+            products[name] = encoded(surface)
+            entity = {'id':identifier,'source_id':record['id'],
+                      'frames':[(OUTPUT/name).relative_to(ROOT).as_posix()],
+                      'position':list(bounds[:2]),'sort_y':round(baseline*scale_y),
+                      'frame_duration_ms':1000,'phase_offset':0}
+            if 'ground_anchor' in record:
+                entity['ground_anchor'] = [round(value*scale) for value,scale in
+                                           zip(record['ground_anchor'],(scale_x,scale_y))]
+            entities.append(entity)
     manifest = {'version': 1,
                 'size_pixels': list(native.size),
                 'ground': (OUTPUT/'ground.png').relative_to(ROOT).as_posix(),
@@ -80,6 +130,9 @@ def exports():
 
 def build(check=False):
     products = exports()
+    expected = {OUTPUT/name for name in products}
+    obsolete = [path for path in (OUTPUT/'depth').glob('*.png') if path not in expected]
+    if check and obsolete:raise ValueError('Obsolete sanctuary depth exports remain')
     for name, content in products.items():
         path = OUTPUT/name
         if check:
@@ -88,6 +141,8 @@ def build(check=False):
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(content)
+    if not check:
+        for path in obsolete:path.unlink()
     print(f'{"Verified" if check else "Exported"} sanctuary clean plate and '
           f'{len(products)-3} registered depth silhouettes')
 

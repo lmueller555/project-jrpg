@@ -15,11 +15,21 @@ to verify the shipped files. The source is uniformly reduced from 1536×1024 to
 1152×768 with nearest-neighbor sampling, matching the game's local character
 scale. Ground and overview share the same source pixels.
 
-The depth silhouettes are polygon-masked copies of those exact native ground
-pixels, with binary alpha and registered ground baselines. They let the
-existing renderer sort a character in front of or behind the hall, trees and
-entrance arch. The hall's door and cloister recesses have transparent openings;
-the entrance arch is an open ring rather than a solid rectangular overlay.
+The depth silhouettes copy those exact native ground pixels with binary alpha.
+Every tree is registered to its own visible ground contact, including the
+previously unlayered northern oak, grove saplings and cliff-side trees. The
+hall, its western wall and the cloister have separate contacts. Benches, the
+basin, planters, survey board, cave face and boundary stones also have layers.
+
+Crown outlines exclude unrelated floor; the foliage palette gate removes pale
+stone and bare path gaps while retaining dark wood. Trunks and main branches
+have separate solid polygons. Door and arcade openings remain transparent, as
+does the center of the arrival arch. Long sloping walls and rock faces are cut
+into narrow strips following an authored ground-edge profile, so one end does
+not inherit the other end's depth. Source coordinates are 1536×1024; the
+exporter scales their visible front contact edges by 0.75 into the renderer's
+native ordering space. It removes obsolete generated depth files on rebuild.
+
 These masks do not paint replacement scenery or supply collision. The separate
 scene geometry owns walkable routes, object footprints and travel contacts.
 

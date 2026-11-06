@@ -71,6 +71,48 @@
       ],
       "frame_duration_ms": 300,
       "phase_offset": 0
+    },
+    {
+      "id": "west_south_plant",
+      "position": [
+        24,
+        260
+      ],
+      "sort_y": 321,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/west_south_plant.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "east_south_plant",
+      "position": [
+        500,
+        258
+      ],
+      "sort_y": 321,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/east_south_plant.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "records_cabinet",
+      "position": [
+        446,
+        62
+      ],
+      "sort_y": 160,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/records_cabinet.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
     }
   ],
   "foreground": [],
@@ -160,6 +202,6 @@
     }
   ],
   "source_recipe": "assets/source/terrain/elden_vale_sanctuary_hall/recipe.json",
-  "source_recipe_sha256": "3018220ee03617ff71e7c9bd96f380d9f05110b17bd252465450836a63a390b6",
+  "source_recipe_sha256": "2e68582cf4083feac613ca5d5e5fe2858122d9a45cda4ece91c0cd94e86f9f24",
   "source_sha256": "75da360da71837369852e50925b96b83dca2352923e0b166f836b974e10afc59"
 }

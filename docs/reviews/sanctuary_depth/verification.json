@@ -1,0 +1,377 @@
+{
+  "source": "Production Game movement, collision, contacts and draw",
+  "disposable_save_and_settings": true,
+  "quest_or_equipment_seeding": false,
+  "ordinary_movement_only": true,
+  "transit_omitted_from_movie": true,
+  "input_sha256": {
+    "assets/terrain/elden_vale_sanctuary/ground.png": "3476df0237132ddc29325a5135ca9414b3cb906cf3725e486d74b3a0abadbd9a",
+    "assets/maps/elden_vale_sanctuary/map.json": "1e7d658836b49661b818080faec7e34ac070905e728e5d184bddc84b3cb43ae0",
+    "assets/terrain/elden_vale_sanctuary_hall/ground.png": "1e2612e5e59b8c00763a0416e28a22c8dd5405368bc4e7631fdafaa30627c4c7"
+  },
+  "sections": [
+    {
+      "name": "Entrance arch: behind, open passage and front",
+      "start_seconds": 0.0,
+      "end_seconds": 3.933333333333333,
+      "points": [
+        [
+          444,
+          642
+        ],
+        [
+          444,
+          615
+        ],
+        [
+          444,
+          654
+        ],
+        [
+          444,
+          711
+        ]
+      ]
+    },
+    {
+      "name": "Grove: clear ground and both sides of the bench",
+      "start_seconds": 3.933333333333333,
+      "end_seconds": 15.666666666666666,
+      "points": [
+        [
+          310,
+          372
+        ],
+        [
+          300,
+          360
+        ],
+        [
+          271,
+          260
+        ],
+        [
+          271,
+          330
+        ]
+      ]
+    },
+    {
+      "name": "Northern oak: crossing the rear path in both directions",
+      "start_seconds": 15.666666666666666,
+      "end_seconds": 21.866666666666667,
+      "points": [
+        [
+          288,
+          84
+        ],
+        [
+          348,
+          88
+        ],
+        [
+          418,
+          102
+        ],
+        [
+          288,
+          84
+        ]
+      ]
+    },
+    {
+      "name": "Court: basin, planter and cloister front",
+      "start_seconds": 21.866666666666667,
+      "end_seconds": 32.06666666666667,
+      "points": [
+        [
+          750,
+          318
+        ],
+        [
+          750,
+          318
+        ],
+        [
+          750,
+          378
+        ],
+        [
+          704,
+          340
+        ],
+        [
+          704,
+          382
+        ],
+        [
+          660,
+          330
+        ]
+      ]
+    },
+    {
+      "name": "Hall: behind and in front of the south-west plant",
+      "start_seconds": 32.06666666666667,
+      "end_seconds": 34.13333333333333,
+      "points": [
+        [
+          62,
+          288
+        ],
+        [
+          62,
+          288
+        ],
+        [
+          74,
+          319
+        ]
+      ]
+    }
+  ],
+  "views": {
+    "arch_behind": {
+      "file": "arch_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        444.0,
+        614.8800000000001
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "arch_opening": {
+      "file": "arch_opening.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        444.0,
+        654.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "arch_front": {
+      "file": "arch_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        444.0,
+        710.8800000000001
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "clear_ground": {
+      "file": "clear_ground.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        300.01082167291815,
+        360.2555191495337
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "bench_behind": {
+      "file": "bench_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        270.99999999999994,
+        259.99999999999994
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "bench_front": {
+      "file": "bench_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        271.0,
+        330.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "north_oak_behind": {
+      "file": "north_oak_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        348.0,
+        88.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "north_oak_far_side": {
+      "file": "north_oak_far_side.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        418.0,
+        102.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "north_oak_return": {
+      "file": "north_oak_return.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        288.0108833320178,
+        84.25601904235043
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "basin_behind": {
+      "file": "basin_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        749.7553975222372,
+        318.0097840991105
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "basin_front": {
+      "file": "basin_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        750.01036032647,
+        377.74545096251467
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "planter_behind": {
+      "file": "planter_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        704.0,
+        340.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "planter_front": {
+      "file": "planter_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        703.9103117230359,
+        382.0795236736597
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "cloister_front": {
+      "file": "cloister_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        660.0108216729182,
+        330.2555191495337
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall_plant_behind": {
+      "file": "hall_plant_behind.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        62.0,
+        288.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall_plant_front": {
+      "file": "hall_plant_front.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        74.0,
+        319.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    }
+  },
+  "progression_unchanged": true,
+  "saved_journey_valid": true,
+  "movie": {
+    "file": "depth_walk.mp4",
+    "fps": 15,
+    "frames": 512,
+    "seconds": 34.13333333333333
+  },
+  "controlled_comparisons": {
+    "north_oak": {
+      "file": "after_north_oak.png",
+      "feet": [
+        348,
+        88
+      ],
+      "source": "Production World.draw, actual Caelan idle_front at controlled feet"
+    },
+    "open_ground": {
+      "file": "after_open_ground.png",
+      "feet": [
+        300,
+        360
+      ],
+      "source": "Production World.draw, actual Caelan idle_front at controlled feet"
+    },
+    "basin": {
+      "file": "after_basin.png",
+      "feet": [
+        750,
+        318
+      ],
+      "source": "Production World.draw, actual Caelan idle_front at controlled feet"
+    }
+  }
+}

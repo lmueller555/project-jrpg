@@ -45,7 +45,24 @@ def products():
     for record in data['depth_props']:
         mask = Image.new('L', image.size)
         polygon = [(round(x*ratio),round(y*ratio)) for x,y in record['source_polygon']]
-        ImageDraw.Draw(mask).polygon(polygon, fill=255)
+        painter = ImageDraw.Draw(mask)
+        painter.polygon(polygon, fill=255)
+        for opening in record.get('source_openings', []):
+            painter.polygon([(round(x*ratio),round(y*ratio)) for x,y in opening], fill=0)
+        if 'foliage_native_bottom' in record:
+            # Leaves and flower spikes have real gaps. A filled outer polygon
+            # would copy floor pixels through those gaps and erase the actor.
+            # Restrict the porous crown to its green/yellow leaves, light
+            # petals and purple blossoms; the opaque pot remains unchanged.
+            left,top,right,bottom = mask.getbbox()
+            for y in range(top,min(bottom,record['foliage_native_bottom'])):
+                for x in range(left,right):
+                    if not mask.getpixel((x,y)):continue
+                    r,g,b = image.getpixel((x,y))
+                    leaf = g >= r*.85 and b <= g*.62
+                    light_petal = r >= 225 and g >= 205 and b >= 140
+                    purple_petal = b >= g*.9 and r >= g*1.08 and b >= 45
+                    if not (leaf or light_petal or purple_petal):mask.putpixel((x,y),0)
         layer = image.convert('RGBA');layer.putalpha(mask)
         crop = record['native_crop'];layer = layer.crop(rect_box(crop))
         path = ART/'depth'/f'{record["id"]}.png';output[path] = png(layer)

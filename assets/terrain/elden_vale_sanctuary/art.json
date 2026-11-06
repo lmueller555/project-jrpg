@@ -8,20 +8,62 @@
   "overview": "assets/terrain/elden_vale_sanctuary/overview.png",
   "entities": [
     {
-      "id": "sanctuary_hall_depth",
+      "id": "hall_main_depth",
+      "source_id": "hall_main_depth",
       "frames": [
-        "assets/terrain/elden_vale_sanctuary/depth/sanctuary_hall_depth.png"
+        "assets/terrain/elden_vale_sanctuary/depth/hall_main_depth.png"
       ],
       "position": [
-        377,
+        379,
         98
       ],
-      "sort_y": 345,
+      "sort_y": 350,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        535,
+        350
+      ]
+    },
+    {
+      "id": "hall_west_wall_depth",
+      "source_id": "hall_west_wall_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/hall_west_wall_depth.png"
+      ],
+      "position": [
+        379,
+        237
+      ],
+      "sort_y": 323,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        418,
+        323
+      ]
+    },
+    {
+      "id": "cloister_depth",
+      "source_id": "cloister_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cloister_depth.png"
+      ],
+      "position": [
+        629,
+        183
+      ],
+      "sort_y": 316,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        750,
+        316
+      ]
     },
     {
       "id": "arrival_arch_depth",
+      "source_id": "arrival_arch_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/arrival_arch_depth.png"
       ],
@@ -31,101 +73,1906 @@
       ],
       "sort_y": 690,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        441,
+        690
+      ]
+    },
+    {
+      "id": "northwestern_oak_depth",
+      "source_id": "northwestern_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/northwestern_oak_depth.png"
+      ],
+      "position": [
+        208,
+        0
+      ],
+      "sort_y": 158,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        320,
+        158
+      ]
+    },
+    {
+      "id": "northwest_front_sapling_depth",
+      "source_id": "northwest_front_sapling_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/northwest_front_sapling_depth.png"
+      ],
+      "position": [
+        229,
+        100
+      ],
+      "sort_y": 178,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        273,
+        178
+      ]
+    },
+    {
+      "id": "confluence_edge_sapling_depth",
+      "source_id": "confluence_edge_sapling_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/confluence_edge_sapling_depth.png"
+      ],
+      "position": [
+        313,
+        146
+      ],
+      "sort_y": 212,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        356,
+        212
+      ]
     },
     {
       "id": "western_oak_depth",
+      "source_id": "western_oak_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/western_oak_depth.png"
       ],
       "position": [
         0,
-        85
+        87
       ],
-      "sort_y": 380,
+      "sort_y": 394,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        98,
+        394
+      ]
+    },
+    {
+      "id": "west_grove_sapling_depth",
+      "source_id": "west_grove_sapling_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/west_grove_sapling_depth.png"
+      ],
+      "position": [
+        137,
+        251
+      ],
+      "sort_y": 364,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        202,
+        364
+      ]
     },
     {
       "id": "lower_western_oak_depth",
+      "source_id": "lower_western_oak_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/lower_western_oak_depth.png"
       ],
       "position": [
         0,
-        374
+        386
       ],
-      "sort_y": 594,
+      "sort_y": 571,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        91,
+        571
+      ]
     },
     {
-      "id": "grove_oak_depth",
+      "id": "middle_grove_oak_depth",
+      "source_id": "middle_grove_oak_depth",
       "frames": [
-        "assets/terrain/elden_vale_sanctuary/depth/grove_oak_depth.png"
+        "assets/terrain/elden_vale_sanctuary/depth/middle_grove_oak_depth.png"
       ],
       "position": [
-        236,
-        332
+        237,
+        373
       ],
-      "sort_y": 477,
+      "sort_y": 524,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        322,
+        524
+      ]
     },
     {
       "id": "lower_grove_oak_depth",
+      "source_id": "lower_grove_oak_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/lower_grove_oak_depth.png"
       ],
       "position": [
-        280,
-        458
+        232,
+        553
       ],
-      "sort_y": 601,
+      "sort_y": 642,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        297,
+        642
+      ]
+    },
+    {
+      "id": "north_east_low_tree_depth",
+      "source_id": "north_east_low_tree_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/north_east_low_tree_depth.png"
+      ],
+      "position": [
+        750,
+        117
+      ],
+      "sort_y": 186,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        831,
+        186
+      ]
+    },
+    {
+      "id": "north_east_high_tree_depth",
+      "source_id": "north_east_high_tree_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/north_east_high_tree_depth.png"
+      ],
+      "position": [
+        811,
+        76
+      ],
+      "sort_y": 169,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        901,
+        169
+      ]
+    },
+    {
+      "id": "north_east_path_tree_depth",
+      "source_id": "north_east_path_tree_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/north_east_path_tree_depth.png"
+      ],
+      "position": [
+        893,
+        148
+      ],
+      "sort_y": 241,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        967,
+        241
+      ]
     },
     {
       "id": "eastern_ridge_oak_depth",
+      "source_id": "eastern_ridge_oak_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/eastern_ridge_oak_depth.png"
       ],
       "position": [
-        820,
-        130
+        814,
+        165
       ],
-      "sort_y": 297,
+      "sort_y": 284,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        910,
+        284
+      ]
+    },
+    {
+      "id": "western_cliff_oak_depth",
+      "source_id": "western_cliff_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_oak_depth.png"
+      ],
+      "position": [
+        555,
+        379
+      ],
+      "sort_y": 495,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        644,
+        495
+      ]
+    },
+    {
+      "id": "eastern_cliff_sapling_depth",
+      "source_id": "eastern_cliff_sapling_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/eastern_cliff_sapling_depth.png"
+      ],
+      "position": [
+        777,
+        327
+      ],
+      "sort_y": 436,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        844,
+        436
+      ]
     },
     {
       "id": "survey_spur_oak_depth",
+      "source_id": "survey_spur_oak_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/survey_spur_oak_depth.png"
       ],
       "position": [
-        720,
-        471
+        663,
+        482
       ],
-      "sort_y": 586,
+      "sort_y": 600,
       "frame_duration_ms": 1000,
-      "phase_offset": 0
+      "phase_offset": 0,
+      "ground_anchor": [
+        749,
+        600
+      ]
     },
     {
       "id": "southern_canopy_depth",
+      "source_id": "southern_canopy_depth",
       "frames": [
         "assets/terrain/elden_vale_sanctuary/depth/southern_canopy_depth.png"
       ],
       "position": [
-        500,
-        674
+        494,
+        671
       ],
-      "sort_y": 768,
+      "sort_y": 802,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        622,
+        802
+      ]
+    },
+    {
+      "id": "upper_grove_bench_depth",
+      "source_id": "upper_grove_bench_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/upper_grove_bench_depth.png"
+      ],
+      "position": [
+        236,
+        244
+      ],
+      "sort_y": 293,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        272,
+        293
+      ]
+    },
+    {
+      "id": "middle_grove_bench_depth",
+      "source_id": "middle_grove_bench_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/middle_grove_bench_depth.png"
+      ],
+      "position": [
+        136,
+        348
+      ],
+      "sort_y": 392,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        167,
+        392
+      ]
+    },
+    {
+      "id": "lower_grove_bench_depth",
+      "source_id": "lower_grove_bench_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/lower_grove_bench_depth.png"
+      ],
+      "position": [
+        158,
+        508
+      ],
+      "sort_y": 560,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        189,
+        560
+      ]
+    },
+    {
+      "id": "courtyard_basin_depth",
+      "source_id": "courtyard_basin_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/courtyard_basin_depth.png"
+      ],
+      "position": [
+        722,
+        313
+      ],
+      "sort_y": 358,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        750,
+        358
+      ]
+    },
+    {
+      "id": "cloister_planter_depth",
+      "source_id": "cloister_planter_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cloister_planter_depth.png"
+      ],
+      "position": [
+        680,
+        323
+      ],
+      "sort_y": 372,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        704,
+        372
+      ]
+    },
+    {
+      "id": "hall_left_planter_depth",
+      "source_id": "hall_left_planter_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/hall_left_planter_depth.png"
+      ],
+      "position": [
+        435,
+        296
+      ],
+      "sort_y": 350,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        458,
+        350
+      ]
+    },
+    {
+      "id": "hall_right_planter_depth",
+      "source_id": "hall_right_planter_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/hall_right_planter_depth.png"
+      ],
+      "position": [
+        585,
+        298
+      ],
+      "sort_y": 352,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        610,
+        352
+      ]
+    },
+    {
+      "id": "grove_lantern_depth",
+      "source_id": "grove_lantern_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/grove_lantern_depth.png"
+      ],
+      "position": [
+        374,
+        332
+      ],
+      "sort_y": 401,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        382,
+        401
+      ]
+    },
+    {
+      "id": "survey_board_depth",
+      "source_id": "survey_board_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_board_depth.png"
+      ],
+      "position": [
+        848,
+        575
+      ],
+      "sort_y": 611,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        878,
+        611
+      ]
+    },
+    {
+      "id": "western_cliff_face_depth_00",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_00.png"
+      ],
+      "position": [
+        558,
+        443
+      ],
+      "sort_y": 494,
       "frame_duration_ms": 1000,
       "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_01",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_01.png"
+      ],
+      "position": [
+        576,
+        420
+      ],
+      "sort_y": 495,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_02",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_02.png"
+      ],
+      "position": [
+        594,
+        400
+      ],
+      "sort_y": 497,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_03",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_03.png"
+      ],
+      "position": [
+        612,
+        399
+      ],
+      "sort_y": 498,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_04",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_04.png"
+      ],
+      "position": [
+        630,
+        384
+      ],
+      "sort_y": 496,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_05",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_05.png"
+      ],
+      "position": [
+        648,
+        387
+      ],
+      "sort_y": 492,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_06",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_06.png"
+      ],
+      "position": [
+        666,
+        401
+      ],
+      "sort_y": 488,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_07",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_07.png"
+      ],
+      "position": [
+        684,
+        393
+      ],
+      "sort_y": 483,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_08",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_08.png"
+      ],
+      "position": [
+        702,
+        391
+      ],
+      "sort_y": 479,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_09",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_09.png"
+      ],
+      "position": [
+        720,
+        384
+      ],
+      "sort_y": 473,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_10",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_10.png"
+      ],
+      "position": [
+        738,
+        382
+      ],
+      "sort_y": 468,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_11",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_11.png"
+      ],
+      "position": [
+        756,
+        388
+      ],
+      "sort_y": 462,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_12",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_12.png"
+      ],
+      "position": [
+        774,
+        383
+      ],
+      "sort_y": 456,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_13",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_13.png"
+      ],
+      "position": [
+        792,
+        377
+      ],
+      "sort_y": 449,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_14",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_14.png"
+      ],
+      "position": [
+        810,
+        370
+      ],
+      "sort_y": 442,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_15",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_15.png"
+      ],
+      "position": [
+        828,
+        358
+      ],
+      "sort_y": 434,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_16",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_16.png"
+      ],
+      "position": [
+        846,
+        356
+      ],
+      "sort_y": 427,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_17",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_17.png"
+      ],
+      "position": [
+        864,
+        351
+      ],
+      "sort_y": 416,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_18",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_18.png"
+      ],
+      "position": [
+        882,
+        343
+      ],
+      "sort_y": 405,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_19",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_19.png"
+      ],
+      "position": [
+        900,
+        346
+      ],
+      "sort_y": 395,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_cliff_face_depth_20",
+      "source_id": "western_cliff_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_cliff_face_depth_20.png"
+      ],
+      "position": [
+        918,
+        357
+      ],
+      "sort_y": 389,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_00",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_00.png"
+      ],
+      "position": [
+        874,
+        516
+      ],
+      "sort_y": 556,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_01",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_01.png"
+      ],
+      "position": [
+        892,
+        504
+      ],
+      "sort_y": 565,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_02",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_02.png"
+      ],
+      "position": [
+        910,
+        496
+      ],
+      "sort_y": 573,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_03",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_03.png"
+      ],
+      "position": [
+        928,
+        488
+      ],
+      "sort_y": 580,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_04",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_04.png"
+      ],
+      "position": [
+        946,
+        490
+      ],
+      "sort_y": 585,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_05",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_05.png"
+      ],
+      "position": [
+        964,
+        494
+      ],
+      "sort_y": 590,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_06",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_06.png"
+      ],
+      "position": [
+        982,
+        503
+      ],
+      "sort_y": 595,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_07",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_07.png"
+      ],
+      "position": [
+        1000,
+        504
+      ],
+      "sort_y": 593,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_08",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_08.png"
+      ],
+      "position": [
+        1018,
+        511
+      ],
+      "sort_y": 591,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_09",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_09.png"
+      ],
+      "position": [
+        1036,
+        532
+      ],
+      "sort_y": 589,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_stone_face_depth_10",
+      "source_id": "survey_stone_face_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_stone_face_depth_10.png"
+      ],
+      "position": [
+        1054,
+        557
+      ],
+      "sort_y": 588,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "north_loop_rock_depth",
+      "source_id": "north_loop_rock_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/north_loop_rock_depth.png"
+      ],
+      "position": [
+        590,
+        45
+      ],
+      "sort_y": 78,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        622,
+        82
+      ]
+    },
+    {
+      "id": "west_loop_rock_depth",
+      "source_id": "west_loop_rock_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/west_loop_rock_depth.png"
+      ],
+      "position": [
+        30,
+        145
+      ],
+      "sort_y": 160,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        50,
+        184
+      ]
+    },
+    {
+      "id": "southwest_boundary_depth_00",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_00.png"
+      ],
+      "position": [
+        58,
+        558
+      ],
+      "sort_y": 600,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_01",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_01.png"
+      ],
+      "position": [
+        76,
+        568
+      ],
+      "sort_y": 608,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_02",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_02.png"
+      ],
+      "position": [
+        94,
+        584
+      ],
+      "sort_y": 616,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_03",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_03.png"
+      ],
+      "position": [
+        112,
+        589
+      ],
+      "sort_y": 624,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_04",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_04.png"
+      ],
+      "position": [
+        130,
+        601
+      ],
+      "sort_y": 631,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_05",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_05.png"
+      ],
+      "position": [
+        148,
+        607
+      ],
+      "sort_y": 637,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_06",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_06.png"
+      ],
+      "position": [
+        166,
+        607
+      ],
+      "sort_y": 643,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_07",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_07.png"
+      ],
+      "position": [
+        184,
+        619
+      ],
+      "sort_y": 648,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_08",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_08.png"
+      ],
+      "position": [
+        202,
+        621
+      ],
+      "sort_y": 654,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_09",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_09.png"
+      ],
+      "position": [
+        220,
+        620
+      ],
+      "sort_y": 659,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_10",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_10.png"
+      ],
+      "position": [
+        238,
+        629
+      ],
+      "sort_y": 661,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_11",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_11.png"
+      ],
+      "position": [
+        256,
+        630
+      ],
+      "sort_y": 663,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_12",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_12.png"
+      ],
+      "position": [
+        274,
+        638
+      ],
+      "sort_y": 665,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_13",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_13.png"
+      ],
+      "position": [
+        292,
+        638
+      ],
+      "sort_y": 668,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_14",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_14.png"
+      ],
+      "position": [
+        310,
+        639
+      ],
+      "sort_y": 670,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_15",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_15.png"
+      ],
+      "position": [
+        328,
+        638
+      ],
+      "sort_y": 672,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_16",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_16.png"
+      ],
+      "position": [
+        346,
+        644
+      ],
+      "sort_y": 674,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southwest_boundary_depth_17",
+      "source_id": "southwest_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southwest_boundary_depth_17.png"
+      ],
+      "position": [
+        364,
+        645
+      ],
+      "sort_y": 676,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_00",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_00.png"
+      ],
+      "position": [
+        506,
+        644
+      ],
+      "sort_y": 679,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_01",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_01.png"
+      ],
+      "position": [
+        524,
+        643
+      ],
+      "sort_y": 682,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_02",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_02.png"
+      ],
+      "position": [
+        542,
+        651
+      ],
+      "sort_y": 685,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_03",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_03.png"
+      ],
+      "position": [
+        560,
+        652
+      ],
+      "sort_y": 687,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_04",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_04.png"
+      ],
+      "position": [
+        578,
+        652
+      ],
+      "sort_y": 690,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_05",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_05.png"
+      ],
+      "position": [
+        596,
+        655
+      ],
+      "sort_y": 693,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_06",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_06.png"
+      ],
+      "position": [
+        614,
+        659
+      ],
+      "sort_y": 696,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_07",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_07.png"
+      ],
+      "position": [
+        632,
+        661
+      ],
+      "sort_y": 698,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_08",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_08.png"
+      ],
+      "position": [
+        650,
+        662
+      ],
+      "sort_y": 700,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_09",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_09.png"
+      ],
+      "position": [
+        668,
+        661
+      ],
+      "sort_y": 700,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_10",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_10.png"
+      ],
+      "position": [
+        686,
+        664
+      ],
+      "sort_y": 701,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_11",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_11.png"
+      ],
+      "position": [
+        704,
+        663
+      ],
+      "sort_y": 702,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_12",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_12.png"
+      ],
+      "position": [
+        722,
+        664
+      ],
+      "sort_y": 703,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_13",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_13.png"
+      ],
+      "position": [
+        740,
+        665
+      ],
+      "sort_y": 704,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_14",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_14.png"
+      ],
+      "position": [
+        758,
+        666
+      ],
+      "sort_y": 705,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_15",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_15.png"
+      ],
+      "position": [
+        776,
+        664
+      ],
+      "sort_y": 706,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_16",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_16.png"
+      ],
+      "position": [
+        794,
+        667
+      ],
+      "sort_y": 706,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_17",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_17.png"
+      ],
+      "position": [
+        812,
+        664
+      ],
+      "sort_y": 705,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_18",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_18.png"
+      ],
+      "position": [
+        830,
+        664
+      ],
+      "sort_y": 702,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_19",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_19.png"
+      ],
+      "position": [
+        848,
+        659
+      ],
+      "sort_y": 700,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_20",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_20.png"
+      ],
+      "position": [
+        866,
+        658
+      ],
+      "sort_y": 697,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_21",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_21.png"
+      ],
+      "position": [
+        884,
+        651
+      ],
+      "sort_y": 695,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_22",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_22.png"
+      ],
+      "position": [
+        902,
+        652
+      ],
+      "sort_y": 693,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_23",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_23.png"
+      ],
+      "position": [
+        920,
+        644
+      ],
+      "sort_y": 688,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_24",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_24.png"
+      ],
+      "position": [
+        938,
+        643
+      ],
+      "sort_y": 684,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_25",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_25.png"
+      ],
+      "position": [
+        956,
+        632
+      ],
+      "sort_y": 679,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_26",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_26.png"
+      ],
+      "position": [
+        974,
+        631
+      ],
+      "sort_y": 674,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_27",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_27.png"
+      ],
+      "position": [
+        992,
+        620
+      ],
+      "sort_y": 668,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_28",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_28.png"
+      ],
+      "position": [
+        1010,
+        620
+      ],
+      "sort_y": 659,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_29",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_29.png"
+      ],
+      "position": [
+        1028,
+        606
+      ],
+      "sort_y": 650,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_30",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_30.png"
+      ],
+      "position": [
+        1046,
+        602
+      ],
+      "sort_y": 641,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southeast_boundary_depth_31",
+      "source_id": "southeast_boundary_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southeast_boundary_depth_31.png"
+      ],
+      "position": [
+        1064,
+        605
+      ],
+      "sort_y": 634,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_00",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_00.png"
+      ],
+      "position": [
+        894,
+        296
+      ],
+      "sort_y": 405,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_01",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_01.png"
+      ],
+      "position": [
+        909,
+        282
+      ],
+      "sort_y": 405,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_02",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_02.png"
+      ],
+      "position": [
+        924,
+        273
+      ],
+      "sort_y": 404,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_03",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_03.png"
+      ],
+      "position": [
+        939,
+        269
+      ],
+      "sort_y": 404,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_04",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_04.png"
+      ],
+      "position": [
+        954,
+        265
+      ],
+      "sort_y": 404,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_05",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_05.png"
+      ],
+      "position": [
+        969,
+        262
+      ],
+      "sort_y": 402,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_06",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_06.png"
+      ],
+      "position": [
+        984,
+        262
+      ],
+      "sort_y": 401,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_07",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_07.png"
+      ],
+      "position": [
+        999,
+        262
+      ],
+      "sort_y": 399,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_08",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_08.png"
+      ],
+      "position": [
+        1014,
+        266
+      ],
+      "sort_y": 398,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_09",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_09.png"
+      ],
+      "position": [
+        1029,
+        273
+      ],
+      "sort_y": 395,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_10",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_10.png"
+      ],
+      "position": [
+        1044,
+        281
+      ],
+      "sort_y": 391,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "cave_limestone_facade_depth_11",
+      "source_id": "cave_limestone_facade_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/cave_limestone_facade_depth_11.png"
+      ],
+      "position": [
+        1059,
+        301
+      ],
+      "sort_y": 388,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "upper_grove_sapling_stakes_depth",
+      "source_id": "upper_grove_sapling_stakes_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/upper_grove_sapling_stakes_depth.png"
+      ],
+      "position": [
+        310,
+        298
+      ],
+      "sort_y": 347,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        334,
+        347
+      ]
+    },
+    {
+      "id": "caretaker_sapling_stakes_depth",
+      "source_id": "caretaker_sapling_stakes_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/caretaker_sapling_stakes_depth.png"
+      ],
+      "position": [
+        226,
+        380
+      ],
+      "sort_y": 450,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        260,
+        450
+      ]
+    },
+    {
+      "id": "northwest_rock_depth",
+      "source_id": "northwest_rock_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/northwest_rock_depth.png"
+      ],
+      "position": [
+        178,
+        104
+      ],
+      "sort_y": 138,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        198,
+        141
+      ]
+    },
+    {
+      "id": "north_east_loop_rock_depth",
+      "source_id": "north_east_loop_rock_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/north_east_loop_rock_depth.png"
+      ],
+      "position": [
+        796,
+        86
+      ],
+      "sort_y": 119,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        820,
+        125
+      ]
+    },
+    {
+      "id": "east_path_rock_depth",
+      "source_id": "east_path_rock_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/east_path_rock_depth.png"
+      ],
+      "position": [
+        1034,
+        214
+      ],
+      "sort_y": 259,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        1052,
+        261
+      ]
     }
   ],
   "source_recipe": "assets/source/terrain/elden_vale_sanctuary/art_recipe.json",
-  "source_recipe_sha256": "90f4e2349b4ca58ef31b79580736c71dd8b13afe9e58c0d12a6f5c2168df6c66",
+  "source_recipe_sha256": "ee10c1207d838ee00ca6cbd772b62a70470256ddbe76a0235a66524901012177",
   "clean_plate_sha256": "2d099366c544f04a434f269b04ca8137f95e953946cd4753b7e8d0c9566d577b"
 }

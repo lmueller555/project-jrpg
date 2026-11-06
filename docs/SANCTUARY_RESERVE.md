@@ -51,6 +51,13 @@ ownership. Continuing a journey saved here resumes in the corresponding scene.
 
 ## Review and reproduction
 
+The [scenery-depth review](reviews/sanctuary_depth/README.md) shows the corrected
+overlap between Caelan and the trees, props, buildings and hall furniture.
+Individual silhouettes use their own ground anchors; canopy gaps remain
+transparent, and wall/cliff sections follow their sloping ground edges. Tree
+collision follows the visible roots, allowing movement behind projecting
+trunks and crowns. The painted scenery itself is unchanged.
+
 The [in-game review](reviews/sanctuary_reserve/README.md) records ordinary travel
 from Eldenmere, the reserve circuit, hall entry and return, optional inspections,
 and save/continue checks using disposable save and settings files. Reproduce

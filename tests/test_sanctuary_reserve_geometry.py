@@ -59,6 +59,15 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
         self.assertEqual(self.world.data['world_links'],[])
         self.assertTrue(all('cave' not in door['id'] for door in self.world.data['doors']))
 
+    def test_tree_contacts_match_drawn_roots_while_canopy_routes_remain_open(self):
+        # Contacts measured from the retained artwork, independently of the
+        # generated collider records. A projecting trunk is not a ground wall.
+        for point in ((320,147),(321,512),(297,631),(910,275),(749,588),
+                      (200,353),(844,424),(642,485)):
+            with self.subTest(root=point):self.assertFalse(self.world.can_stand(point))
+        for point in ((348,88),(300,360),(204,334)):
+            with self.subTest(clear_route=point):self.assertTrue(self.world.can_stand(point))
+
     def test_hall_threshold_and_reserve_exit_have_clear_player_landings(self):
         hall = self.world.doors[0]
         self.assertEqual(hall.data['arrival_door'],'reserve_exit')
