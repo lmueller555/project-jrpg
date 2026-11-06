@@ -142,7 +142,7 @@ def finish_mill_battle(game, command='attack', *, dismiss=True, read_aftermath=T
                 game.draw()
                 click(game, scene.command_rects['skills'].center)
                 game.draw()
-                click(game, scene.command_rects['nature_edge'].center)
+                click(game, scene.command_rects[{'nature':'nature_edge','water':'aqua_edge','fire':'flame_edge'}.get(scene.model.active_gem,'aqua_edge')].center)
                 continue
             elif (command == 'attack' and scene.model.telegraphed_target
                     == scene.model.ready_actor):

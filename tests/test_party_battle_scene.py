@@ -77,10 +77,16 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.scene.update(0)
         self.draw()
 
-    def test_two_rows_keep_independent_values_and_active_command_ownership(self):
+    def test_two_character_columns_keep_independent_values_and_command_ownership(self):
         self.make_both_ready()
         self.assertEqual(set(self.scene.party_rows), {'player', 'mira'})
-        self.assertLessEqual(self.scene.panel_rect.height, 94)
+        player = self.scene.party_rows['player']
+        guest = self.scene.party_rows['mira']
+        self.assertEqual(player['column'].top, guest['column'].top)
+        self.assertEqual(player['column'].width, guest['column'].width)
+        self.assertLessEqual(player['column'].right, guest['column'].left)
+        self.assertLessEqual(guest['column'].right, self.scene.commands_panel.left)
+        self.assertFalse(player['row'].colliderect(guest['row']))
         self.assertIn('aether_dart', self.scene.command_rects)
         self.click(self.scene.party_rows['mira']['row'].center)
         self.draw()
@@ -160,10 +166,14 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.assertNotEqual(self.scene._pose('player')[0], 'defeat')
         self.assertEqual(self.scene._popups[0]['target'], 'mira')
 
-    def test_two_rows_capped_values_and_four_commands_fit_accessible_windows(self):
+    def test_two_columns_capped_values_and_shared_commands_fit_accessible_windows(self):
         self.model.player.attributes.update(hp=9999, mp=999)
         self.model.player.hp, self.model.player.mp = 9999, 999
         self.make_both_ready()
+        # Large text may scroll the last command out of the initial viewport.
+        # Keyboard selection must reveal that command with its wrapped label.
+        while self.scene._command_actions()[self.scene.selected] != 'aether_dart':
+            self.key(pygame.K_DOWN)
         original = Painter.text
         for size in ((480, 320), (960, 640), (1440, 810)):
             self.game.window = pygame.display.set_mode(size)
@@ -179,19 +189,45 @@ class PartyBattleSceneTests(unittest.TestCase):
 
                 with self.subTest(size=size, text_scale=text_scale):
                     with patch.object(Painter, 'text', record):self.draw()
-                    for label in ('ATB', 'NAME', 'HP', 'MP'):
-                        self.assertEqual(sum(text == label for text, _ in records), 1)
+                    for label in ('ATB', 'HP', 'MP'):
+                        self.assertEqual(sum(text == label and any(row['row'].contains(rect)
+                                                                  for row in self.scene.party_rows.values())
+                                             for text, rect in records), 2)
+                    self.assertFalse(any(text == 'NAME' for text, _ in records))
                     for row in self.scene.party_rows.values():
                         for rect in row.values():self.assertTrue(self.scene.panel_rect.contains(rect))
-                    for label in ('9999/9999', '999/999', 'Caelan', 'Mira', 'Dart · 4 MP'):
+                        self.assertLessEqual(row['name'].bottom, row['atb'].top)
+                        self.assertLessEqual(row['atb'].bottom, row['hp_text'].top)
+                        self.assertLessEqual(row['hp'].bottom, row['mp_text'].top)
+                        self.assertLessEqual(row['mp'].bottom, row['interactable'].top)
+                        for key in ('name', 'atb', 'hp_text', 'mp_text', 'hp', 'mp'):
+                            self.assertTrue(row['row'].contains(row[key]), (key, row))
+                        self.assertLessEqual(row['row'].bottom, row['interactable'].top)
+                    for label in ('9999/9999', '999/999', 'Caelan', 'Mira'):
                         rect = next(rect for text, rect in records if text == label)
                         self.assertTrue(self.scene.panel_rect.contains(rect), (label, rect))
-                    self.assertGreater(self.scene.party_rows['mira']['row'].top,
-                                       self.scene.party_rows['player']['row'].top)
+                        actor = 'mira' if label == 'Mira' else 'player'
+                        self.assertTrue(self.scene.party_rows[actor]['row'].contains(rect))
+                    player = self.scene.party_rows['player']
+                    guest = self.scene.party_rows['mira']
+                    self.assertEqual(player['column'].width, guest['column'].width)
+                    self.assertEqual(player['column'].top, guest['column'].top)
+                    self.assertLessEqual(player['column'].right, guest['column'].left)
+                    self.assertLessEqual(guest['column'].right, self.scene.commands_panel.left)
+                    self.assertTrue(player['interactable'].contains(self.scene.gear.rect))
+                    self.assertGreaterEqual(self.scene.gear.rect.width, 48)
+                    self.assertEqual(self.scene.gear.rect.width, self.scene.gear.rect.height)
                     for rect in self.scene.command_rects.values():
-                        self.assertTrue(self.scene.panel_rect.contains(rect))
+                        self.assertTrue(self.scene.commands_panel.contains(rect))
                         self.assertFalse(any(rect.colliderect(row['row'])
                                              for row in self.scene.party_rows.values()))
+                    for label, rect in records:
+                        if rect.colliderect(self.scene.commands_panel):
+                            self.assertTrue(self.scene.commands_panel.contains(rect),
+                                            (label, rect, self.scene.commands_panel))
+                    for line in self.scene._command_lines['aether_dart']:
+                        self.assertTrue(any(text == line and self.scene.command_rects['aether_dart'].contains(rect)
+                                            for text, rect in records))
                     self.assertLess(self.scene._positions()['player'].y, self.scene.panel_rect.top)
 
     def test_encounter_art_loads_lazily_and_preserves_authored_native_canvas(self):

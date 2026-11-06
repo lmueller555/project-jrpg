@@ -202,8 +202,8 @@ class BattleSceneTests(unittest.TestCase):
         self.game.audio.set_reduced_motion(True)
         self.ready();self.click(self.scene.command_rects['attack'].center)
         self.scene.update(.18)
-        self.assertEqual(self.scene._positions()['player'], pygame.Vector2(354, 184))
-        self.assertEqual(self.scene._positions()['enemy'], pygame.Vector2(126, 170))
+        self.assertEqual(self.scene._positions()['player'], pygame.Vector2(354, 184-max(0,202-self.scene.panel_rect.top)))
+        self.assertEqual(self.scene._positions()['enemy'], pygame.Vector2(126, 170-max(0,202-self.scene.panel_rect.top)))
         self.sprites.calls.clear();self.draw()
         self.assertIn('attack', [state for _, state, _ in self.sprites.calls])
 

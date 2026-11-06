@@ -107,7 +107,7 @@ class RivetBattleSceneTests(unittest.TestCase):
         labels = [text for text, _, _ in self.texts()]
         self.assertIn('Rivet ATB', labels)
         self.assertIn('Haste · 0', labels)
-        self.assertEqual(labels.count('HP'), 1)
+        self.assertEqual(labels.count('HP'), len(self.model.party))
         self.ready_mira()
         before = self.resources()
         self.click(self.scene.bot_status['rivet']['panel'].center)

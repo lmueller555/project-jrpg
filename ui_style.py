@@ -174,7 +174,7 @@ class UIStyle:
         volume = getattr(settings, 'effects_volume', 0)
         if volume <= 0:return
         now = pygame.time.get_ticks()
-        if kind == 'move':
+        if kind in ('move', 'gear_detent'):
             if now-self._last_move < 65:return
             self._last_move = now
         try:
@@ -184,13 +184,23 @@ class UIStyle:
             key = kind, rate, channels
             if key not in self._sounds:
                 frequency, duration = {'move': (440, .038), 'confirm': (659.25, .075),
-                                       'back': (329.63, .055)}.get(kind, (440, .038))
+                                       'back': (329.63, .055), 'gear_detent': (1800, .032),
+                                       'gear_seat': (1350, .12)}.get(kind, (440, .038))
                 samples = array('h')
                 for index in range(round(rate*duration)):
                     t = index/rate
                     envelope = min(1, t/.005)*max(0, 1-t/duration)**2
-                    value = round(4200*envelope*(math.sin(2*math.pi*frequency*t)+
-                                                 .12*math.sin(4*math.pi*frequency*t)))
+                    if kind in ('gear_detent', 'gear_seat'):
+                        # Fast, inharmonic metal transients; the seated gem adds
+                        # a quieter ringing tail after the pawl engages.
+                        click = (math.sin(2*math.pi*frequency*t) +
+                                 .6*math.sin(2*math.pi*frequency*2.71*t))*math.exp(-t*155)
+                        ring = (.24*math.sin(2*math.pi*2250*t)*math.exp(-t*35)
+                                if kind == 'gear_seat' else 0)
+                        value = round(4700*(click+ring)*max(0, 1-t/duration))
+                    else:
+                        value = round(4200*envelope*(math.sin(2*math.pi*frequency*t)+
+                                                     .12*math.sin(4*math.pi*frequency*t)))
                     samples.extend([value]*channels)
                 self._sounds[key] = pygame.mixer.Sound(buffer=samples)
             sound = self._sounds[key]

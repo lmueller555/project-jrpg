@@ -18,6 +18,7 @@ from character_abilities import starting_abilities
 from bot_loadouts import load_bot_definitions, starting_battle_loadouts
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
+from gear_state import DEFAULT_GEM, GEM_NAMES, REQUIRED_GEMS, valid_gem
 
 
 ROOT = Path(__file__).resolve().parent
@@ -210,6 +211,7 @@ class BattleAction:
     elapsed: float = 0.0
     damage: int = 0
     resolved: bool = False
+    active_gem: str | None = None
 
 
 class BattleModel:
@@ -223,7 +225,8 @@ class BattleModel:
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
-                 guest_abilities=None, spellblade_tutorial=False):
+                 guest_abilities=None, spellblade_tutorial=False,
+                 active_gem=DEFAULT_GEM):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -233,6 +236,11 @@ class BattleModel:
             raise ValueError('Invalid learned abilities')
         if type(weapon_equipped) is not bool:raise ValueError('Invalid weapon equipment state')
         self.weapon_equipped = weapon_equipped
+        if not valid_gem(active_gem):raise ValueError('Invalid active gem')
+        self.active_gem = active_gem
+        # The presentation owns selector motion. It holds this flag while a
+        # focus settles, preventing a command from using an intermediate pose.
+        self.gear_settling = False
         values = {key: player_attributes.value(key) for key in ATTRIBUTE_IDS}
         if any(not _integer(value, 1 if key == 'hp' else 0, ATTRIBUTE_CAPS[key])
                for key, value in values.items()):
@@ -301,6 +309,27 @@ class BattleModel:
 
     @property
     def ended(self):return self.phase in RESULT_PHASES
+
+    @property
+    def gear_available(self):
+        """The selector stays usable through other actors' actions and menus."""
+        return bool(self.weapon_equipped and self.player.hp and not self.ended
+                    and not (self.current_action is not None
+                             and self.current_action.actor == 'player'))
+
+    @property
+    def gear_busy(self):
+        return bool(self.gear_settling or not self.gear_available)
+
+    def set_active_gem(self, gem):
+        """Commit a settled focus without spending MP, ATB, or teaching skills.
+
+        ``gear_settling`` blocks commands, not this completion callback. The
+        presentation clears its settling flag after committing the final gem.
+        """
+        if not valid_gem(gem) or not self.gear_available:return False
+        self.active_gem = gem
+        return True
 
     @staticmethod
     def atb_rate(combatant):
@@ -398,7 +427,12 @@ class BattleModel:
         if actor.identifier == 'player':
             if self.spellblade_stage in ('first_edge', 'second_edge'):
                 return list(ELEMENTAL_EDGE_ATTEMPTS)
-            return ['aether_edge'] if 'aether_edge' in self.learned_abilities else []
+            # The shipped elemental records are lesson-only failed attempts.
+            # A later authored damaging definition must also be learned before
+            # it can become a normal skill; the selector grants no unlocks.
+            return [key for key in ('aether_edge', *REQUIRED_GEMS)
+                    if key in self.learned_abilities and key in self.actions
+                    and self.actions[key]['kind'] != 'failed_edge']
         if actor.identifier == 'mira' and 'overclock' in self.guest_abilities.get('mira', ()):
             return ['overclock']
         return []
@@ -421,6 +455,8 @@ class BattleModel:
                 return 'Guard against the charge first.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if actor.identifier == 'player' and self.gear_settling:
+            return 'The gear is settling.'
         if actor.identifier == 'player' and not self.weapon_equipped:
             return 'Requires a weapon.'
         if not self.skill_actions(actor.identifier):return 'No skills learned.'
@@ -438,14 +474,20 @@ class BattleModel:
             return 'This action is not available.'
         if (self.phase != 'ready' or not actor.hp
                 or actor.atb+EPSILON < 1):return actor.name+' is not ready.'
+        if actor.identifier == 'player' and self.gear_settling:
+            return 'The gear is settling.'
         if self.spellblade_guided:
             if actor.identifier != 'player':return 'Mira is covering Caelan.'
             expected = ('guard',) if self.spellblade_stage == 'guard' else ELEMENTAL_EDGE_ATTEMPTS
             if identifier not in expected:
                 return ('Guard against the charge first.' if self.spellblade_stage == 'guard'
                         else 'Choose a focus from Skills.')
-        if identifier == 'aether_edge' and not self.weapon_equipped:
+        if (actor.identifier == 'player' and identifier in ('aether_edge', *REQUIRED_GEMS)
+                and not self.weapon_equipped):
             return 'Requires a weapon.'
+        if actor.identifier == 'player' and identifier in REQUIRED_GEMS:
+            gem = REQUIRED_GEMS[identifier]
+            if self.active_gem != gem:return 'Requires the '+GEM_NAMES[gem]+' gem.'
         if identifier == 'overclock' and self.active_bot(actor.identifier) is None:
             return 'Requires an active bot.'
         action_id = ('aether_edge' if self.spellblade_stage == 'second_edge' and
@@ -494,7 +536,8 @@ class BattleModel:
             target = bot.identifier if bot is not None else None
         self.current_action = BattleAction(actor_id, identifier, target, record['name'],
                                           record['kind'], record['animation'],
-                                          record['duration'], record['impact_at'])
+                                          record['duration'], record['impact_at'],
+                                          active_gem=self.active_gem if actor_id == 'player' else None)
         self.phase = 'acting'
         self.message = actor.name+' uses '+record['name']+'.'
         self.events.append({'type': 'action_started', 'actor': actor_id,
@@ -617,13 +660,14 @@ class BattleModel:
                         'fled': 'Escaped safely.'}[outcome]
         self.events.append({'type': 'result', 'outcome': outcome})
 
-    def _advance_gauges(self, seconds):
+    def _advance_gauges(self, seconds, atb_multiplier=1.0):
+        scaled_seconds = seconds*atb_multiplier
         for combatant in (*self.party, self.enemy):
             if combatant.hp:
-                combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*seconds)
+                combatant.atb = min(1.0, combatant.atb+self.atb_rate(combatant)*scaled_seconds)
         for bot in self.bots:
             if self.active_bot(bot.owner_id) is bot:
-                bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*seconds)
+                bot.atb = min(1.0, bot.atb+self.atb_rate(bot)*scaled_seconds)
 
     def _sync_bot_activity(self):
         # A lesson cannot keep ordering an incapacitated character to act.
@@ -655,10 +699,18 @@ class BattleModel:
             self.events.append({'type': 'haste_expired', 'actor': bot.identifier,
                                 'remaining_turns': 0})
 
-    def update(self, seconds):
-        """Consume time through exact gauge/impact boundaries; choice time is free."""
+    def update(self, seconds, *, atb_multiplier=1.0):
+        """Consume wall time through exact boundaries; choice time is free.
+
+        The global multiplier affects every charging gauge, including hasted
+        bots, but never action animations. Zero freezes charging while still
+        allowing an already full gauge to act. Ready menus always pause gauges.
+        """
         if type(seconds) not in (int, float):raise TypeError('Battle time must be numeric')
         if not math.isfinite(seconds) or seconds < 0:raise ValueError('Invalid battle time')
+        if type(atb_multiplier) not in (int, float):raise TypeError('ATB multiplier must be numeric')
+        if not math.isfinite(atb_multiplier) or atb_multiplier < 0:
+            raise ValueError('Invalid ATB multiplier')
         self._sync_bot_activity()
         remaining = float(seconds)
         while True:
@@ -671,15 +723,19 @@ class BattleModel:
                 candidates = [*living, *(bot for bot in self.bots
                                          if self.active_bot(bot.owner_id) is bot
                                          and (not self.spellblade_guided or self._lesson_bot_actions < 3)), self.enemy]
-                times = [(actor, max(0.0, (1-actor.atb)/self.atb_rate(actor)))
+                times = [(actor, max(0.0, ((1-actor.atb)/self.atb_rate(actor))/atb_multiplier)
+                          if atb_multiplier else 0.0 if actor.atb+EPSILON >= 1 else math.inf)
                          for actor in candidates]
                 earliest = min(time for actor, time in times)
+                if math.isinf(earliest):
+                    self._advance_gauges(remaining, atb_multiplier)
+                    return
                 member, boundary = next((actor, time) for actor, time in times
                                         if time <= earliest+EPSILON)
                 if remaining+EPSILON < boundary:
-                    self._advance_gauges(remaining)
+                    self._advance_gauges(remaining, atb_multiplier)
                     return
-                self._advance_gauges(boundary)
+                self._advance_gauges(boundary, atb_multiplier)
                 remaining = max(0.0, remaining-boundary)
                 if member in living:
                     member.atb = 1.0

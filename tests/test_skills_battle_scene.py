@@ -211,7 +211,7 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.model.ready_actor, 'mira')
         self.assertEqual(len(self.scene.command_rects), 4)
         mira_attack = self.scene.command_rects['attack'].copy()
-        self.assertNotEqual(player_attack.top, mira_attack.top)
+        self.assertEqual(player_attack.top, mira_attack.top)
         self.key(pygame.K_TAB)
         self.assertEqual(self.scene.command_rects['attack'], player_attack)
         self.assertIn('aether_dart', self.scene.command_rects)
@@ -248,6 +248,7 @@ class SkillsBattleSceneTests(unittest.TestCase):
                 self.game.audio.set_text_scale(scale)
                 for menu in ('root', 'skills'):
                     with self.subTest(learned=learned, scale=scale, menu=menu):
+                        self.scene._set_menu('root')
                         if menu == 'skills':self.open_skills()
                         records = self.texts()
                         self.assertTrue(self.canvas.get_rect().contains(self.scene.panel_rect))
@@ -256,9 +257,10 @@ class SkillsBattleSceneTests(unittest.TestCase):
                             for rect in row.values():self.assertTrue(self.scene.panel_rect.contains(rect))
                         for identifier, rect in self.scene.command_rects.items():
                             self.assertTrue(self.scene.panel_rect.contains(rect))
-                            label = next(bounds for text, bounds, _ in records
-                                         if text == ACTION_LABELS[identifier])
-                            self.assertTrue(rect.contains(label), (identifier, rect, label))
+                            for line in self.scene._command_lines[identifier]:
+                                label = next(bounds for text, bounds, _ in records
+                                             if text == line and rect.contains(bounds))
+                                self.assertTrue(rect.contains(label), (identifier, rect, label))
                             self.assertFalse(any(rect.colliderect(row['row'])
                                                  for row in self.scene.party_rows.values()))
                         for text, rect, _ in records:
@@ -268,18 +270,18 @@ class SkillsBattleSceneTests(unittest.TestCase):
                                           if text.startswith('4 MP') or 'weapon strikes' in text]
                             self.assertTrue(help_rects)
                             for rect in help_rects:
-                                self.assertTrue(self.scene.panel_rect.contains(rect))
-                                self.assertGreaterEqual(rect.top, self.scene._party_bottom)
+                                self.assertTrue(self.canvas.get_rect().contains(rect))
+                                self.assertLessEqual(rect.bottom, self.scene.panel_rect.top)
                             self.key(pygame.K_ESCAPE)
 
     def test_edge_uses_an_attack_arc_and_one_enemy_damage_popup_without_charges(self):
         self.ready();self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)
         self.scene.update(.25)
-        self.assertEqual(self.scene._pose('player')[0],'attack')
+        self.assertEqual(self.scene._pose('player')[0],'aether_edge')
         enemy_hp=self.model.enemy.hp
-        with patch('battle_scene.pygame.draw.arc',wraps=pygame.draw.arc) as arcs:self.draw()
-        self.assertTrue(arcs.call_args_list)
+        with patch.object(self.scene.gear_fx, 'draw', wraps=self.scene.gear_fx.draw) as effects:self.draw()
+        self.assertTrue(effects.called)
         self.scene.update(.25)
         self.assertLess(self.model.enemy.hp,enemy_hp)
         self.assertEqual(self.model.player.aether_edge_hits,0)
