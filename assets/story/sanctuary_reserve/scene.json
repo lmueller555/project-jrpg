@@ -5,7 +5,8 @@
     {"speaker":"reserve_caretaker","text":"A little shade helped. And a great deal of watching it and pretending I wasn't worried."},
     {"speaker":"caelan","text":"*smiles* Do you need a hand?"},
     {"speaker":"reserve_caretaker","text":"I've got these. Take a walk while it's quiet. People have been coming up all morning."},
-    {"speaker":"reserve_caretaker","text":"Some sit a while. Some help with the trees. We make room for both."}
+    {"speaker":"reserve_caretaker","text":"Some sit a while. Some help with the trees. We make room for both."},
+    {"speaker":"reserve_caretaker","text":"And mind the rope across the cave. The footing inside still needs checking."}
   ],
   "visitors": [
     {"speaker":"reserve_visitor_slate","text":"That sapling's taller than me now."},
@@ -25,8 +26,10 @@
     {"speaker":"caelan","text":"Serene says the aether gathers here naturally. It's easier to notice when I stand still."}
   ],
   "cave": [
-    {"speaker":"caelan","text":"It's cool this close to the rock. I can feel a little air coming out."},
-    {"speaker":"caelan","text":"There's old stonework just inside. I wonder how far it goes."}
+    {"speaker":"caelan","text":"*stops at the rope* It's cool this close to the rock. I can feel a little air coming out."},
+    {"speaker":"caelan","text":"There's old stonework just inside."},
+    {"speaker":"caelan","text":"*reads the notice* Closed while the inner path is checked."},
+    {"speaker":"caelan","text":"I'll leave the rope where it is."}
   ],
   "survey": [
     {"speaker":"caelan","text":"*studies the marks on the board* The stone face is well clear of the hall."},

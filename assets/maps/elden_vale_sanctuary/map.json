@@ -64,7 +64,7 @@
         1008,
         371
       ],
-      "description": "Roots cling to a natural opening in the limestone ridge. Weathered traces of masonry remain beside it."
+      "description": "Roots cling to a natural opening in the limestone ridge. Weathered traces of masonry remain beside it. A rope closes the entrance while the inner path is checked."
     },
     {
       "id": "stone_seam",
@@ -160,8 +160,8 @@
       164
     ],
     [
-      208,
-      134
+      228,
+      150
     ],
     [
       180,
@@ -278,8 +278,8 @@
       288
     ],
     "cloister_wall": [
-      720,
-      274
+      715,
+      289
     ],
     "basin": [
       750,
@@ -307,7 +307,19 @@
     ],
     "boundary_wall": [
       670,
-      673
+      699
+    ],
+    "cloister_column": [
+      745,
+      300
+    ],
+    "cloister_worktable": [
+      822,
+      303
+    ],
+    "cave_barrier": [
+      1008,
+      371
     ]
   },
   "confluence_motes": {
@@ -350,6 +362,21 @@
       "arrival_door": "reserve_exit"
     }
   ],
+  "navigation_policy": "Open ground throughout the reserve; only visible stone, woody ground contacts and steep rock faces are solid. Geometry is authored against the reference image, never by whitelisting path corridors.",
+  "cave_barrier": {
+    "anchor": [
+      1009,
+      379
+    ],
+    "footprint": [
+      974,
+      364,
+      70,
+      13
+    ],
+    "art_manifest": "assets/terrain/elden_vale_cave_barrier/art.json",
+    "purpose": "Visible keeper barrier closes the unavailable cave beyond its clear public apron."
+  },
   "kind": "reserve",
   "tile_size": 24,
   "size_tiles": [
@@ -404,24 +431,6 @@
       "ground_anchor": [
         418,
         323
-      ]
-    },
-    {
-      "id": "cloister_depth",
-      "source_id": "cloister_depth",
-      "frames": [
-        "assets/terrain/elden_vale_sanctuary/depth/cloister_depth.png"
-      ],
-      "position": [
-        629,
-        183
-      ],
-      "sort_y": 316,
-      "frame_duration_ms": 1000,
-      "phase_offset": 0,
-      "ground_anchor": [
-        750,
-        316
       ]
     },
     {
@@ -2333,6 +2342,182 @@
         1052,
         261
       ]
+    },
+    {
+      "id": "sanctuary_cave_safety_barrier",
+      "frames": [
+        "assets/terrain/elden_vale_cave_barrier/barrier.png"
+      ],
+      "position": [
+        965,
+        331
+      ],
+      "ground_anchor": [
+        1009,
+        379
+      ],
+      "sort_y": 379,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "sanctuary_cloister_openings_ground",
+      "source_id": "sanctuary_cloister_openings_ground",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/ground_patch.png"
+      ],
+      "position": [
+        630,
+        240
+      ],
+      "sort_y": -1000,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "layer": "ground_patch"
+    },
+    {
+      "id": "cloister_open_column_00",
+      "source_id": "cloister_open_column_00",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_column_00.png"
+      ],
+      "position": [
+        631,
+        260
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        639,
+        312
+      ]
+    },
+    {
+      "id": "cloister_open_column_01",
+      "source_id": "cloister_open_column_01",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_column_01.png"
+      ],
+      "position": [
+        685,
+        260
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        691,
+        312
+      ]
+    },
+    {
+      "id": "cloister_open_column_02",
+      "source_id": "cloister_open_column_02",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_column_02.png"
+      ],
+      "position": [
+        739,
+        260
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        745,
+        312
+      ]
+    },
+    {
+      "id": "cloister_open_column_03",
+      "source_id": "cloister_open_column_03",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_column_03.png"
+      ],
+      "position": [
+        791,
+        260
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        797,
+        312
+      ]
+    },
+    {
+      "id": "cloister_open_column_04",
+      "source_id": "cloister_open_column_04",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_column_04.png"
+      ],
+      "position": [
+        842,
+        260
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        848,
+        314
+      ]
+    },
+    {
+      "id": "cloister_open_roof_arches",
+      "source_id": "cloister_open_roof_arches",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_roof_arches.png"
+      ],
+      "position": [
+        629,
+        183
+      ],
+      "sort_y": 312,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        750,
+        312
+      ]
+    },
+    {
+      "id": "cloister_open_rear_wall",
+      "source_id": "cloister_open_rear_wall",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_open_rear_wall.png"
+      ],
+      "position": [
+        647,
+        244
+      ],
+      "sort_y": 285,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        742,
+        285
+      ]
+    },
+    {
+      "id": "cloister_preserved_east_stock",
+      "source_id": "cloister_preserved_east_stock",
+      "frames": [
+        "assets/terrain/elden_vale_cloister_openings/depth/cloister_preserved_east_stock.png"
+      ],
+      "position": [
+        800,
+        266
+      ],
+      "sort_y": 325,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0,
+      "ground_anchor": [
+        842,
+        325
+      ]
     }
   ],
   "foreground": [],
@@ -2342,8 +2527,18 @@
   "build": {
     "tool": "tools/build_elden_vale_sanctuary.py",
     "source_recipe": "assets/source/maps/elden_vale_sanctuary/recipe.json",
-    "source_recipe_sha256": "5d367c2c725449c87efb3cf0322998cb9791302c9f66731aa240b041a1f78f22",
+    "source_recipe_sha256": "86e21b770a41b76e97c651477834dfdd7d4190a99a1c8dae8b356f2ded866e09",
     "art_manifest": "assets/terrain/elden_vale_sanctuary/art.json",
-    "art_manifest_sha256": "3f0138f327c336be5f97ed3feff4368350690fd2ebc8cb79794537f9e4c1d44a"
+    "art_manifest_sha256": "3f0138f327c336be5f97ed3feff4368350690fd2ebc8cb79794537f9e4c1d44a",
+    "additional_art_manifests": [
+      {
+        "path": "assets/terrain/elden_vale_cave_barrier/art.json",
+        "sha256": "c1b316587e63b251726ac636757552020fd074f6b3acf49fc90884a6c501d2bd"
+      },
+      {
+        "path": "assets/terrain/elden_vale_cloister_openings/art.json",
+        "sha256": "a05ad18c08e81da52254eaad0132ea5c1b6f903dc8ab7f298255933c080b8ab8"
+      }
+    ]
   }
 }
