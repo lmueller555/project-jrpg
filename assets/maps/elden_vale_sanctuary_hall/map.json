@@ -1,0 +1,165 @@
+{
+  "id": "elden_vale_sanctuary_hall",
+  "name": "Elden Vale Sanctuary \u2014 Hall",
+  "kind": "interior",
+  "size_pixels": [
+    576,
+    384
+  ],
+  "size_tiles": [
+    24,
+    16
+  ],
+  "tile_size": 24,
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "spawn": [
+    288,
+    328
+  ],
+  "ground_frames": [
+    "assets/terrain/elden_vale_sanctuary_hall/ground.png"
+  ],
+  "ground_frame_duration_ms": 300,
+  "overview": "assets/terrain/elden_vale_sanctuary_hall/overview.png",
+  "collision": "assets/maps/elden_vale_sanctuary_hall/collision.png",
+  "entities": [
+    {
+      "id": "reading_bench_north",
+      "position": [
+        94,
+        179
+      ],
+      "sort_y": 215,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/reading_bench_north.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "reading_bench_south",
+      "position": [
+        93,
+        247
+      ],
+      "sort_y": 284,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/reading_bench_south.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    },
+    {
+      "id": "ledger_table",
+      "position": [
+        428,
+        177
+      ],
+      "sort_y": 255,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/depth/ledger_table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0
+    }
+  ],
+  "foreground": [],
+  "npcs": [],
+  "quests": [],
+  "landmarks": [],
+  "exterior_map_position": [
+    535,
+    345
+  ],
+  "destinations": {
+    "remembrance_table": [
+      288,
+      178
+    ],
+    "records": [
+      476,
+      278
+    ],
+    "book_cabinet": [
+      486,
+      178
+    ]
+  },
+  "inspection_points": {
+    "remembrance_table": {
+      "position": [
+        288,
+        152
+      ],
+      "approach": [
+        288,
+        178
+      ],
+      "facing": "back"
+    },
+    "records": {
+      "position": [
+        476,
+        248
+      ],
+      "approach": [
+        476,
+        278
+      ],
+      "facing": "back"
+    },
+    "book_cabinet": {
+      "position": [
+        486,
+        152
+      ],
+      "approach": [
+        486,
+        178
+      ],
+      "facing": "back"
+    }
+  },
+  "doors": [
+    {
+      "id": "reserve_exit",
+      "anchor": [
+        288,
+        350
+      ],
+      "entry_y": 350,
+      "entry_side": "south",
+      "entry_half_width": 22,
+      "open_radius": 30,
+      "close_radius": 38,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        0,
+        0
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/elden_vale_sanctuary/map.json",
+      "spawn": [
+        535,
+        371
+      ],
+      "arrival_facing": "front",
+      "arrival_door": "sanctuary_hall"
+    }
+  ],
+  "source_recipe": "assets/source/terrain/elden_vale_sanctuary_hall/recipe.json",
+  "source_recipe_sha256": "3018220ee03617ff71e7c9bd96f380d9f05110b17bd252465450836a63a390b6",
+  "source_sha256": "75da360da71837369852e50925b96b83dca2352923e0b166f836b974e10afc59"
+}

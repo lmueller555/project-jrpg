@@ -13,6 +13,10 @@ ROOT = Path(__file__).resolve().parent
 REGION_FILE = ROOT/'assets/maps/overworld/elden_vale/region.json'
 WORLD_ID = 'auratia.overworld'
 REGION_ID = 'elden_vale_start'
+RESERVE_ID = 'elden_vale_sanctuary'
+HALL_ID = 'elden_vale_sanctuary_hall'
+RESERVE_FILE = ROOT/'assets/maps/elden_vale_sanctuary/map.json'
+RESERVE_SCENES = frozenset((RESERVE_ID, HALL_ID))
 TOWN_EXIT = (516, 1332)
 TOWN_RETURN = (516, 1284)
 TOWN_EXIT_RECT = pygame.Rect(492, 1320, 48, 24)
@@ -25,6 +29,8 @@ class OverworldTravel:
         self.game = game
         self._town_armed = True
         self._region_armed = False
+        self._reserve_entry_armed = False
+        self._reserve_exit_armed = False
         self.discovered = {'eldenmere'}
         self.farm_state = None
         self._speaking_guard = None
@@ -38,6 +44,15 @@ class OverworldTravel:
     @property
     def active(self):
         return bool(getattr(self.game.world, 'is_overworld', False))
+
+    @property
+    def in_reserve(self):
+        return getattr(self.game.world, 'data', {}).get('id') in RESERVE_SCENES
+
+    @property
+    def remote(self):
+        """Regional exploration keeps borrowed town actors with their owners."""
+        return self.active or self.in_reserve
 
     def to_dict(self):
         world = self.game._overworld_world
@@ -91,7 +106,7 @@ class OverworldTravel:
         if not isinstance(data, dict) or not isinstance(data.get('player'), dict):
             return False
         record = data.get('overworld')
-        active = data.get('player', {}).get('scene') == WORLD_ID
+        active = data.get('player', {}).get('scene') in {WORLD_ID, *RESERVE_SCENES}
         if record is None:
             return not active
         from grain_farm import valid_state
@@ -129,6 +144,7 @@ class OverworldTravel:
         self._clear_guard()
         self._town_armed = False
         self._region_armed = False
+        self._reserve_entry_armed = self._reserve_exit_armed = False
         self.farm_state = (data or {}).get('grain_farm')
         self.bridge_state = (data or {}).get('bridge_crew')
         self.garden_state = (data or {}).get('garden_orchard')
@@ -148,7 +164,7 @@ class OverworldTravel:
 
     def stage_story_restore(self):
         """Restore committed town actors at town scale, retaining region feet."""
-        if not self.active:
+        if not self.remote:
             return None
         checkpoint = (self.game.world, tuple(self.game.player.position), self.game.player.facing)
         self.game.world = self.game.town
@@ -161,6 +177,7 @@ class OverworldTravel:
             self.game.player.position.update(position)
             self._stop_party()
         self._town_armed = self._region_armed = False
+        self._reserve_entry_armed = self._reserve_exit_armed = False
 
     def can_travel(self):
         g = self.game
@@ -243,6 +260,7 @@ class OverworldTravel:
         g.social.clear_pointer()
         g._mouse_held = False
         self._town_armed = self._region_armed = False
+        self._reserve_entry_armed = self._reserve_exit_armed = False
         for owner in (g.mill_quest, g.regent_quest, g.lantern_quest):
             owner.on_enter_scene(origin, transition)
         if destination is g.town:
@@ -278,6 +296,55 @@ class OverworldTravel:
             return False
         return self._commit(g.town, landing, 'back', {'id': 'overworld_to_town'})
 
+    @staticmethod
+    def _reserve_marker(world):
+        return next((record for record in getattr(world, 'region', {}).get('landmarks', [])
+                     if record.get('destination_scene') == RESERVE_ID), None)
+
+    @classmethod
+    def reserve_contact(cls, world):
+        record = cls._reserve_marker(world)
+        if record is None or not record.get('entry_rect_tiles'):
+            return None
+        return world._tile_rect(record['entry_rect_tiles'])
+
+    @staticmethod
+    def _at_reserve_exit(world, position):
+        record = world.data.get('reserve_exit')
+        return bool(record and pygame.Vector2(position).distance_to(record['position'])
+                    <= record.get('radius', 20))
+
+    def enter_reserve(self):
+        """Change from the regional miniature to its detailed arrival path."""
+        g = self.game
+        if not self.active or not self.can_travel():
+            return False
+        record = self._reserve_marker(g.world)
+        if record is None:
+            return False
+        destination = g._scene_by_id(record['destination_scene'])
+        landing = self._landing(destination, destination.data['spawn'],
+                                lambda point: not self._at_reserve_exit(destination, point))
+        if landing is None:
+            return False
+        self.discovered.add(record['id'])
+        return self._commit(destination, landing, 'back', {'id': 'overworld_to_sanctuary'})
+
+    def leave_reserve(self):
+        g = self.game
+        if g.world.data.get('id') != RESERVE_ID or not self.can_travel():
+            return False
+        destination = g.overworld_world
+        record = self._reserve_marker(destination)
+        if record is None:
+            return False
+        contact = self.reserve_contact(destination)
+        landing = self._landing(destination, destination._tile_point(record['return_tile_position']),
+                                lambda point: not contact.colliderect(destination.probe_rect(point).inflate(2, 2)))
+        if landing is None:
+            return False
+        return self._commit(destination, landing, 'front', {'id': 'sanctuary_to_overworld'})
+
     def update(self, seconds=0):
         g = self.game
         if self._speaking_guard is not None and (
@@ -303,6 +370,14 @@ class OverworldTravel:
             touching = g.world.town_entry_rect.colliderect(g.world.probe_rect(g.player.position).inflate(2, 2))
             if not touching:
                 self._region_armed = True
+            contact = self.reserve_contact(g.world)
+            at_reserve = bool(contact and contact.colliderect(g.world.probe_rect(g.player.position).inflate(2, 2)))
+            if not at_reserve:
+                self._reserve_entry_armed = True
+        elif g.world.data.get('id') == RESERVE_ID:
+            touching = self._at_reserve_exit(g.world, g.player.position)
+            if not touching:
+                self._reserve_exit_armed = True
         else:
             return False
         if not self.can_travel():
@@ -316,6 +391,10 @@ class OverworldTravel:
                     self.discovered.add(landmark['id'])
             if touching and self._region_armed:
                 return self.enter_town()
+            if at_reserve and self._reserve_entry_armed:
+                return self.enter_reserve()
+        elif touching and self._reserve_exit_armed:
+            return self.leave_reserve()
         return False
 
     def nearby_guard(self):

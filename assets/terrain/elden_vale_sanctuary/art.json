@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "size_pixels": [
+    1152,
+    768
+  ],
+  "ground": "assets/terrain/elden_vale_sanctuary/ground.png",
+  "overview": "assets/terrain/elden_vale_sanctuary/overview.png",
+  "entities": [
+    {
+      "id": "sanctuary_hall_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/sanctuary_hall_depth.png"
+      ],
+      "position": [
+        377,
+        98
+      ],
+      "sort_y": 345,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "arrival_arch_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/arrival_arch_depth.png"
+      ],
+      "position": [
+        372,
+        574
+      ],
+      "sort_y": 690,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_oak_depth.png"
+      ],
+      "position": [
+        0,
+        85
+      ],
+      "sort_y": 380,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "lower_western_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/lower_western_oak_depth.png"
+      ],
+      "position": [
+        0,
+        374
+      ],
+      "sort_y": 594,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "grove_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/grove_oak_depth.png"
+      ],
+      "position": [
+        236,
+        332
+      ],
+      "sort_y": 477,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "lower_grove_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/lower_grove_oak_depth.png"
+      ],
+      "position": [
+        280,
+        458
+      ],
+      "sort_y": 601,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "eastern_ridge_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/eastern_ridge_oak_depth.png"
+      ],
+      "position": [
+        820,
+        130
+      ],
+      "sort_y": 297,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_spur_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_spur_oak_depth.png"
+      ],
+      "position": [
+        720,
+        471
+      ],
+      "sort_y": 586,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southern_canopy_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southern_canopy_depth.png"
+      ],
+      "position": [
+        500,
+        674
+      ],
+      "sort_y": 768,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    }
+  ],
+  "source_recipe": "assets/source/terrain/elden_vale_sanctuary/art_recipe.json",
+  "source_recipe_sha256": "90f4e2349b4ca58ef31b79580736c71dd8b13afe9e58c0d12a6f5c2168df6c66",
+  "clean_plate_sha256": "2d099366c544f04a434f269b04ca8137f95e953946cd4753b7e8d0c9566d577b"
+}

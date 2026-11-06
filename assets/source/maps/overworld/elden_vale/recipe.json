@@ -606,6 +606,9 @@
       "always_known": true,
       "discovered": true,
       "prop": "ridge_sanctuary",
+      "destination_scene": "elden_vale_sanctuary",
+      "entry_rect_tiles": [88.5, -67, 3, 2],
+      "return_tile_position": [90, -62],
       "description": "Elden Vale Sanctuary stands northeast of Eldenmere in a protected wooded reserve, where the vale's natural aether currents gather. Its grove is tended as a place of remembrance and renewal. A woodland footpath leads to its stone arch."
     }
   ],
@@ -1453,8 +1456,8 @@
     "ridge_sanctuary": {
       "version": 1,
       "placement": "Northeastern wooded Greyfold shoulder inside the starting enclosure",
-      "entry_enabled": false,
-      "intent": "A known regional miniature reached along a maintained climbing path; local reserve and cave scenes remain future work."
+      "entry_enabled": true,
+      "intent": "A known regional miniature reached along a maintained woodland path, entering the detailed sanctuary reserve. The cave dungeon remains future work."
     }
   },
   "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json"

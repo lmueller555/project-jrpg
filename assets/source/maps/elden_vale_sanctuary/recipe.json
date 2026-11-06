@@ -1,0 +1,1395 @@
+{
+  "version": 1,
+  "id": "elden_vale_sanctuary",
+  "name": "Elden Vale Sanctuary",
+  "reference_size": [
+    1536,
+    1024
+  ],
+  "size_pixels": [
+    1152,
+    768
+  ],
+  "scale": 0.75,
+  "art_manifest": "assets/terrain/elden_vale_sanctuary/art.json",
+  "spawn": [
+    444,
+    642
+  ],
+  "reserve_exit": {
+    "position": [
+      444,
+      735
+    ],
+    "radius": 20
+  },
+  "hall_approach": [
+    535,
+    345
+  ],
+  "paths": [
+    {
+      "id": "arrival",
+      "width": 84,
+      "points": [
+        [
+          590,
+          1019
+        ],
+        [
+          590,
+          956
+        ],
+        [
+          590,
+          890
+        ],
+        [
+          591,
+          820
+        ],
+        [
+          634,
+          761
+        ],
+        [
+          683,
+          698
+        ],
+        [
+          712,
+          630
+        ],
+        [
+          712,
+          563
+        ],
+        [
+          713,
+          500
+        ],
+        [
+          713,
+          460
+        ]
+      ]
+    },
+    {
+      "id": "western_rest",
+      "width": 70,
+      "points": [
+        [
+          634,
+          761
+        ],
+        [
+          550,
+          735
+        ],
+        [
+          447,
+          708
+        ],
+        [
+          351,
+          740
+        ],
+        [
+          265,
+          763
+        ],
+        [
+          212,
+          760
+        ]
+      ]
+    },
+    {
+      "id": "grove_circuit",
+      "width": 76,
+      "points": [
+        [
+          699,
+          612
+        ],
+        [
+          608,
+          583
+        ],
+        [
+          524,
+          548
+        ],
+        [
+          434,
+          510
+        ],
+        [
+          346,
+          473
+        ],
+        [
+          271,
+          467
+        ],
+        [
+          218,
+          490
+        ],
+        [
+          172,
+          534
+        ],
+        [
+          181,
+          577
+        ],
+        [
+          227,
+          618
+        ],
+        [
+          291,
+          651
+        ],
+        [
+          356,
+          705
+        ]
+      ]
+    },
+    {
+      "id": "grove_bench",
+      "width": 70,
+      "points": [
+        [
+          570,
+          517
+        ],
+        [
+          503,
+          459
+        ],
+        [
+          443,
+          420
+        ],
+        [
+          381,
+          410
+        ],
+        [
+          320,
+          429
+        ],
+        [
+          272,
+          468
+        ]
+      ]
+    },
+    {
+      "id": "upper_circuit",
+      "width": 76,
+      "points": [
+        [
+          272,
+          468
+        ],
+        [
+          228,
+          422
+        ],
+        [
+          219,
+          362
+        ],
+        [
+          260,
+          310
+        ],
+        [
+          292,
+          263
+        ],
+        [
+          304,
+          220
+        ],
+        [
+          279,
+          178
+        ],
+        [
+          241,
+          145
+        ],
+        [
+          298,
+          126
+        ],
+        [
+          382,
+          112
+        ],
+        [
+          466,
+          116
+        ],
+        [
+          556,
+          135
+        ],
+        [
+          652,
+          137
+        ],
+        [
+          753,
+          130
+        ],
+        [
+          850,
+          131
+        ],
+        [
+          942,
+          142
+        ],
+        [
+          1032,
+          162
+        ],
+        [
+          1133,
+          168
+        ],
+        [
+          1254,
+          174
+        ],
+        [
+          1352,
+          216
+        ],
+        [
+          1407,
+          293
+        ],
+        [
+          1452,
+          369
+        ],
+        [
+          1469,
+          441
+        ],
+        [
+          1450,
+          491
+        ],
+        [
+          1408,
+          523
+        ],
+        [
+          1344,
+          535
+        ]
+      ]
+    },
+    {
+      "id": "confluence_glade",
+      "width": 72,
+      "points": [
+        [
+          290,
+          263
+        ],
+        [
+          324,
+          290
+        ],
+        [
+          370,
+          322
+        ],
+        [
+          402,
+          360
+        ],
+        [
+          420,
+          405
+        ]
+      ]
+    },
+    {
+      "id": "eastern_circuit",
+      "width": 78,
+      "points": [
+        [
+          707,
+          583
+        ],
+        [
+          767,
+          635
+        ],
+        [
+          834,
+          674
+        ],
+        [
+          906,
+          676
+        ],
+        [
+          984,
+          652
+        ],
+        [
+          1060,
+          631
+        ],
+        [
+          1142,
+          605
+        ],
+        [
+          1233,
+          570
+        ],
+        [
+          1330,
+          539
+        ],
+        [
+          1394,
+          519
+        ]
+      ]
+    },
+    {
+      "id": "cave_approach",
+      "width": 72,
+      "points": [
+        [
+          1344,
+          535
+        ],
+        [
+          1340,
+          508
+        ],
+        [
+          1344,
+          478
+        ]
+      ]
+    },
+    {
+      "id": "survey_branch",
+      "width": 76,
+      "points": [
+        [
+          906,
+          676
+        ],
+        [
+          951,
+          704
+        ],
+        [
+          1016,
+          742
+        ],
+        [
+          1050,
+          790
+        ],
+        [
+          1111,
+          835
+        ],
+        [
+          1144,
+          840
+        ]
+      ]
+    },
+    {
+      "id": "survey_return",
+      "width": 68,
+      "points": [
+        [
+          1144,
+          840
+        ],
+        [
+          1080,
+          856
+        ],
+        [
+          1000,
+          862
+        ],
+        [
+          934,
+          848
+        ],
+        [
+          878,
+          816
+        ],
+        [
+          805,
+          778
+        ],
+        [
+          723,
+          746
+        ],
+        [
+          650,
+          739
+        ]
+      ]
+    }
+  ],
+  "walk_areas": [
+    {
+      "id": "forecourt",
+      "polygon": [
+        [
+          510,
+          490
+        ],
+        [
+          575,
+          446
+        ],
+        [
+          645,
+          463
+        ],
+        [
+          800,
+          462
+        ],
+        [
+          872,
+          413
+        ],
+        [
+          1130,
+          414
+        ],
+        [
+          1180,
+          464
+        ],
+        [
+          1095,
+          518
+        ],
+        [
+          1040,
+          536
+        ],
+        [
+          875,
+          545
+        ],
+        [
+          810,
+          570
+        ],
+        [
+          720,
+          625
+        ],
+        [
+          610,
+          580
+        ]
+      ]
+    },
+    {
+      "id": "memorial_glade",
+      "polygon": [
+        [
+          310,
+          267
+        ],
+        [
+          433,
+          271
+        ],
+        [
+          452,
+          342
+        ],
+        [
+          425,
+          411
+        ],
+        [
+          333,
+          433
+        ],
+        [
+          305,
+          366
+        ]
+      ]
+    },
+    {
+      "id": "caretaker_patch",
+      "polygon": [
+        [
+          245,
+          540
+        ],
+        [
+          325,
+          540
+        ],
+        [
+          335,
+          633
+        ],
+        [
+          280,
+          660
+        ],
+        [
+          245,
+          620
+        ]
+      ]
+    },
+    {
+      "id": "survey_clearing",
+      "polygon": [
+        [
+          1033,
+          786
+        ],
+        [
+          1090,
+          760
+        ],
+        [
+          1153,
+          781
+        ],
+        [
+          1210,
+          800
+        ],
+        [
+          1235,
+          837
+        ],
+        [
+          1161,
+          874
+        ],
+        [
+          1085,
+          865
+        ]
+      ]
+    }
+  ],
+  "solid_rects": [
+    {
+      "id": "hall_west_wall",
+      "rect": [
+        505,
+        316,
+        135,
+        102
+      ]
+    },
+    {
+      "id": "hall_front",
+      "rect": [
+        635,
+        345,
+        178,
+        109
+      ]
+    },
+    {
+      "id": "hall_back",
+      "rect": [
+        600,
+        264,
+        230,
+        90
+      ]
+    },
+    {
+      "id": "cloister_back",
+      "rect": [
+        812,
+        300,
+        376,
+        99
+      ]
+    },
+    {
+      "id": "courtyard_basin",
+      "rect": [
+        967,
+        444,
+        70,
+        30
+      ]
+    },
+    {
+      "id": "left_door_planter",
+      "rect": [
+        586,
+        429,
+        49,
+        33
+      ]
+    },
+    {
+      "id": "right_door_planter",
+      "rect": [
+        786,
+        429,
+        48,
+        35
+      ]
+    },
+    {
+      "id": "cloister_planter",
+      "rect": [
+        914,
+        464,
+        49,
+        29
+      ]
+    },
+    {
+      "id": "upper_grove_bench",
+      "rect": [
+        315,
+        355,
+        93,
+        32
+      ]
+    },
+    {
+      "id": "middle_grove_bench",
+      "rect": [
+        180,
+        485,
+        77,
+        31
+      ]
+    },
+    {
+      "id": "lower_grove_bench",
+      "rect": [
+        211,
+        711,
+        82,
+        32
+      ]
+    },
+    {
+      "id": "west_oak_trunk",
+      "rect": [
+        116,
+        431,
+        55,
+        65
+      ]
+    },
+    {
+      "id": "upper_oak_trunk",
+      "rect": [
+        445,
+        179,
+        42,
+        74
+      ]
+    },
+    {
+      "id": "grove_oak_trunk",
+      "rect": [
+        367,
+        571,
+        42,
+        70
+      ]
+    },
+    {
+      "id": "lower_grove_oak_trunk",
+      "rect": [
+        413,
+        743,
+        42,
+        56
+      ]
+    },
+    {
+      "id": "eastern_oak_trunk",
+      "rect": [
+        1138,
+        338,
+        48,
+        60
+      ]
+    },
+    {
+      "id": "survey_oak_trunk",
+      "rect": [
+        975,
+        743,
+        36,
+        55
+      ]
+    },
+    {
+      "id": "arrival_arch_left_pier",
+      "rect": [
+        501,
+        834,
+        43,
+        85
+      ]
+    },
+    {
+      "id": "arrival_arch_right_pier",
+      "rect": [
+        634,
+        833,
+        43,
+        86
+      ]
+    },
+    {
+      "id": "survey_board",
+      "rect": [
+        1135,
+        776,
+        49,
+        35
+      ]
+    }
+  ],
+  "solid_polygons": [
+    {
+      "id": "eastern_rock_shelf",
+      "polygon": [
+        [
+          770,
+          588
+        ],
+        [
+          790,
+          568
+        ],
+        [
+          828,
+          548
+        ],
+        [
+          912,
+          534
+        ],
+        [
+          984,
+          534
+        ],
+        [
+          1035,
+          520
+        ],
+        [
+          1111,
+          520
+        ],
+        [
+          1196,
+          476
+        ],
+        [
+          1232,
+          478
+        ],
+        [
+          1215,
+          524
+        ],
+        [
+          1140,
+          559
+        ],
+        [
+          1050,
+          583
+        ],
+        [
+          932,
+          615
+        ],
+        [
+          828,
+          633
+        ]
+      ]
+    },
+    {
+      "id": "cave_west_buttress",
+      "polygon": [
+        [
+          1200,
+          366
+        ],
+        [
+          1265,
+          355
+        ],
+        [
+          1280,
+          420
+        ],
+        [
+          1265,
+          480
+        ],
+        [
+          1220,
+          512
+        ],
+        [
+          1200,
+          472
+        ]
+      ]
+    },
+    {
+      "id": "cave_east_buttress",
+      "polygon": [
+        [
+          1397,
+          361
+        ],
+        [
+          1420,
+          389
+        ],
+        [
+          1414,
+          455
+        ],
+        [
+          1394,
+          481
+        ],
+        [
+          1383,
+          447
+        ],
+        [
+          1382,
+          394
+        ]
+      ]
+    },
+    {
+      "id": "cave_dark_depth",
+      "polygon": [
+        [
+          1282,
+          388
+        ],
+        [
+          1377,
+          388
+        ],
+        [
+          1388,
+          463
+        ],
+        [
+          1356,
+          479
+        ],
+        [
+          1297,
+          472
+        ],
+        [
+          1276,
+          437
+        ]
+      ]
+    },
+    {
+      "id": "survey_limestone",
+      "polygon": [
+        [
+          1190,
+          672
+        ],
+        [
+          1250,
+          654
+        ],
+        [
+          1351,
+          673
+        ],
+        [
+          1398,
+          732
+        ],
+        [
+          1374,
+          782
+        ],
+        [
+          1304,
+          779
+        ],
+        [
+          1228,
+          755
+        ],
+        [
+          1170,
+          730
+        ]
+      ]
+    },
+    {
+      "id": "reserve_south_wall_west",
+      "polygon": [
+        [
+          90,
+          753
+        ],
+        [
+          178,
+          792
+        ],
+        [
+          310,
+          830
+        ],
+        [
+          499,
+          852
+        ],
+        [
+          499,
+          898
+        ],
+        [
+          300,
+          878
+        ],
+        [
+          165,
+          845
+        ],
+        [
+          82,
+          800
+        ]
+      ]
+    },
+    {
+      "id": "reserve_south_wall_east",
+      "polygon": [
+        [
+          679,
+          856
+        ],
+        [
+          875,
+          880
+        ],
+        [
+          1070,
+          887
+        ],
+        [
+          1280,
+          858
+        ],
+        [
+          1410,
+          807
+        ],
+        [
+          1430,
+          834
+        ],
+        [
+          1284,
+          897
+        ],
+        [
+          1084,
+          933
+        ],
+        [
+          872,
+          929
+        ],
+        [
+          679,
+          901
+        ]
+      ]
+    }
+  ],
+  "door_clearance": {
+    "rect": [
+      686,
+      434,
+      55,
+      44
+    ]
+  },
+  "landmarks": [
+    {
+      "id": "arrival",
+      "name": "Reserve entrance",
+      "position": [
+        444,
+        642
+      ],
+      "description": "An old arch marks the way into the sanctuary reserve. The woodland path leads back to Elden Vale."
+    },
+    {
+      "id": "sanctuary_hall",
+      "name": "Sanctuary Hall",
+      "position": [
+        535,
+        345
+      ],
+      "description": "The pale stone hall and sheltered cloister are kept for visitors, quiet company and the care of the reserve."
+    },
+    {
+      "id": "memorial_grove",
+      "name": "Memorial Grove",
+      "position": [
+        264,
+        306
+      ],
+      "description": "Old trees and young plantings grow together. Neighbours tend this living grove in remembrance of those they have lost."
+    },
+    {
+      "id": "confluence",
+      "name": "Grove Clearing",
+      "position": [
+        280,
+        218
+      ],
+      "description": "Faint lights drift between the leaves where the vale’s natural aether currents gather."
+    },
+    {
+      "id": "cave",
+      "name": "Ridge Cave",
+      "position": [
+        1008,
+        371
+      ],
+      "description": "Roots cling to a natural opening in the limestone ridge. Weathered traces of masonry remain beside it."
+    },
+    {
+      "id": "stone_seam",
+      "name": "Surveyed Stone Face",
+      "position": [
+        934,
+        558
+      ],
+      "description": "Survey stakes mark an intact limestone seam within the protected reserve, away from the sanctuary hall. No stone has been cut here."
+    }
+  ],
+  "public_approaches": {
+    "arrival": [
+      444,
+      642
+    ],
+    "hall": [
+      534,
+      370
+    ],
+    "gardener": [
+      212,
+      480
+    ],
+    "visitor_1": [
+      264,
+      334
+    ],
+    "visitor_2": [
+      300,
+      320
+    ],
+    "grove": [
+      292,
+      244
+    ],
+    "cave": [
+      1008,
+      406
+    ],
+    "survey": [
+      858,
+      630
+    ],
+    "boundary": [
+      456,
+      654
+    ],
+    "rest_bench": [
+      180,
+      570
+    ]
+  },
+  "loop_waypoints": [
+    [
+      534,
+      440
+    ],
+    [
+      456,
+      438
+    ],
+    [
+      354,
+      382
+    ],
+    [
+      282,
+      316
+    ],
+    [
+      204,
+      350
+    ],
+    [
+      170,
+      314
+    ],
+    [
+      164,
+      272
+    ],
+    [
+      196,
+      232
+    ],
+    [
+      220,
+      198
+    ],
+    [
+      228,
+      164
+    ],
+    [
+      208,
+      134
+    ],
+    [
+      180,
+      110
+    ],
+    [
+      228,
+      94
+    ],
+    [
+      288,
+      84
+    ],
+    [
+      348,
+      88
+    ],
+    [
+      418,
+      102
+    ],
+    [
+      490,
+      102
+    ],
+    [
+      566,
+      98
+    ],
+    [
+      638,
+      98
+    ],
+    [
+      708,
+      106
+    ],
+    [
+      774,
+      122
+    ],
+    [
+      850,
+      126
+    ],
+    [
+      940,
+      130
+    ],
+    [
+      1014,
+      162
+    ],
+    [
+      1056,
+      220
+    ],
+    [
+      1090,
+      278
+    ],
+    [
+      1102,
+      330
+    ],
+    [
+      1088,
+      368
+    ],
+    [
+      1056,
+      392
+    ],
+    [
+      1008,
+      402
+    ],
+    [
+      926,
+      428
+    ],
+    [
+      856,
+      454
+    ],
+    [
+      794,
+      474
+    ],
+    [
+      738,
+      490
+    ],
+    [
+      680,
+      506
+    ],
+    [
+      626,
+      506
+    ],
+    [
+      574,
+      476
+    ],
+    [
+      534,
+      440
+    ]
+  ],
+  "blocked_probes": {
+    "hall": [
+      470,
+      288
+    ],
+    "cloister_wall": [
+      720,
+      274
+    ],
+    "basin": [
+      750,
+      345
+    ],
+    "grove_bench": [
+      271,
+      281
+    ],
+    "tree_trunk": [
+      101,
+      353
+    ],
+    "cliff": [
+      698,
+      437
+    ],
+    "cave_depth": [
+      998,
+      325
+    ],
+    "stone_seam": [
+      963,
+      544
+    ],
+    "boundary_wall": [
+      670,
+      673
+    ]
+  },
+  "confluence_motes": {
+    "center": [
+      280,
+      218
+    ],
+    "radius": [
+      41,
+      28
+    ],
+    "count": 7
+  },
+  "doors": [
+    {
+      "id": "sanctuary_hall",
+      "anchor": [
+        535,
+        345
+      ],
+      "entry_y": 345,
+      "entry_side": "north",
+      "entry_half_width": 12,
+      "open_radius": 32,
+      "close_radius": 40,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        535,
+        345
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/elden_vale_sanctuary_hall/map.json",
+      "spawn": [
+        288,
+        328
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "reserve_exit"
+    }
+  ]
+}

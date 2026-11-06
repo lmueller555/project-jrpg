@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "scene_id": "elden_vale_sanctuary",
+  "hall_scene_id": "elden_vale_sanctuary_hall",
+  "actors": [
+    {"id":"reserve_caretaker","name":"Reserve caretaker","variant":"female_02","position":[232,448],"plant_root":[262,448],"facing":"right"},
+    {"id":"reserve_visitor_slate","name":"Grove visitor","variant":"male_03","position":[264,306],"facing":"right"},
+    {"id":"reserve_visitor_plum","name":"Visitor’s companion","variant":"female_03","position":[300,306],"facing":"left"}
+  ],
+  "targets": {
+    "caretaker":{"actor":"reserve_caretaker","approach_id":"gardener","position":[232,448],"approach":[212,480],"radius":30,"label":"Speak with the caretaker"},
+    "visitor_slate":{"actor":"reserve_visitor_slate","approach_id":"visitor_1","position":[264,306],"approach":[264,334],"radius":25,"label":"Speak with the grove visitors","script":"visitors"},
+    "visitor_plum":{"actor":"reserve_visitor_plum","approach_id":"visitor_2","position":[300,306],"approach":[300,320],"radius":25,"label":"Speak with the grove visitors","script":"visitors"},
+    "boundary":{"position":[497,660],"approach":[456,654],"radius":26,"label":"Read the boundary marker"},
+    "grove":{"position":[280,218],"approach":[292,244],"radius":28,"label":"Look across the memorial grove"},
+    "cave":{"position":[1008,371],"approach":[1008,406],"radius":28,"label":"Examine the cave entrance"},
+    "survey":{"position":[868,599],"approach":[858,630],"radius":30,"label":"Examine the survey board"}
+  },
+  "hall_targets": {
+    "records":{"position":[476,248],"approach":[476,278],"radius":25,"label":"Read the visitors’ ledger"},
+    "remembrance":{"geometry_id":"remembrance_table","position":[288,152],"approach":[288,178],"radius":27,"label":"Look at the remembrance table"},
+    "cabinet":{"geometry_id":"book_cabinet","position":[486,152],"approach":[486,178],"radius":24,"label":"Examine the records cabinet"}
+  }
+}

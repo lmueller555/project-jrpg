@@ -1,0 +1,453 @@
+{
+  "version": 1,
+  "id": "elden_vale_sanctuary_hall",
+  "name": "Elden Vale Sanctuary \u2014 Hall",
+  "source": "assets/source/terrain/elden_vale_sanctuary_hall/generated_hall.png",
+  "source_sha256": "75da360da71837369852e50925b96b83dca2352923e0b166f836b974e10afc59",
+  "provenance": {
+    "tool": "image_gen.imagegen",
+    "reference": "/workspace/generated_images/exec-dbc18891-937c-400f-8e22-f4579944d470.png",
+    "intent": "Actor-free pale-stone remembrance and records hall; natural circle motif, no named gods or hidden ancient mechanism."
+  },
+  "source_size": [
+    1536,
+    1024
+  ],
+  "native_size": [
+    576,
+    384
+  ],
+  "walkable_rects": [
+    [
+      45,
+      146,
+      495,
+      179
+    ],
+    [
+      246,
+      320,
+      85,
+      36
+    ]
+  ],
+  "solid_rects": [
+    {
+      "id": "north_remembrance_table",
+      "rect": [
+        221,
+        145,
+        135,
+        14
+      ]
+    },
+    {
+      "id": "west_north_plant",
+      "rect": [
+        61,
+        140,
+        24,
+        15
+      ]
+    },
+    {
+      "id": "west_north_flowers",
+      "rect": [
+        177,
+        142,
+        22,
+        13
+      ]
+    },
+    {
+      "id": "east_north_flowers",
+      "rect": [
+        375,
+        142,
+        22,
+        13
+      ]
+    },
+    {
+      "id": "records_cabinet",
+      "rect": [
+        448,
+        146,
+        69,
+        14
+      ]
+    },
+    {
+      "id": "reading_bench_north",
+      "rect": [
+        95,
+        201,
+        63,
+        14
+      ]
+    },
+    {
+      "id": "reading_bench_south",
+      "rect": [
+        94,
+        270,
+        64,
+        14
+      ]
+    },
+    {
+      "id": "ledger_table",
+      "rect": [
+        430,
+        227,
+        91,
+        28
+      ]
+    },
+    {
+      "id": "west_south_plant",
+      "rect": [
+        34,
+        298,
+        26,
+        23
+      ]
+    },
+    {
+      "id": "east_south_plant",
+      "rect": [
+        512,
+        295,
+        22,
+        25
+      ]
+    }
+  ],
+  "depth_props": [
+    {
+      "id": "reading_bench_north",
+      "source_polygon": [
+        [
+          254,
+          485
+        ],
+        [
+          261,
+          479
+        ],
+        [
+          413,
+          479
+        ],
+        [
+          423,
+          488
+        ],
+        [
+          420,
+          520
+        ],
+        [
+          415,
+          526
+        ],
+        [
+          422,
+          529
+        ],
+        [
+          422,
+          551
+        ],
+        [
+          415,
+          552
+        ],
+        [
+          415,
+          573
+        ],
+        [
+          405,
+          573
+        ],
+        [
+          402,
+          553
+        ],
+        [
+          270,
+          554
+        ],
+        [
+          269,
+          572
+        ],
+        [
+          258,
+          572
+        ],
+        [
+          258,
+          550
+        ],
+        [
+          253,
+          550
+        ]
+      ],
+      "native_crop": [
+        94,
+        179,
+        65,
+        37
+      ],
+      "sort_y": 215
+    },
+    {
+      "id": "reading_bench_south",
+      "source_polygon": [
+        [
+          252,
+          665
+        ],
+        [
+          259,
+          659
+        ],
+        [
+          414,
+          659
+        ],
+        [
+          422,
+          669
+        ],
+        [
+          421,
+          702
+        ],
+        [
+          416,
+          707
+        ],
+        [
+          421,
+          713
+        ],
+        [
+          421,
+          738
+        ],
+        [
+          415,
+          739
+        ],
+        [
+          415,
+          758
+        ],
+        [
+          403,
+          758
+        ],
+        [
+          400,
+          738
+        ],
+        [
+          270,
+          738
+        ],
+        [
+          269,
+          758
+        ],
+        [
+          257,
+          758
+        ],
+        [
+          257,
+          737
+        ],
+        [
+          250,
+          736
+        ]
+      ],
+      "native_crop": [
+        93,
+        247,
+        66,
+        38
+      ],
+      "sort_y": 284
+    },
+    {
+      "id": "ledger_table",
+      "source_polygon": [
+        [
+          1159,
+          498
+        ],
+        [
+          1160,
+          489
+        ],
+        [
+          1190,
+          488
+        ],
+        [
+          1207,
+          500
+        ],
+        [
+          1341,
+          500
+        ],
+        [
+          1342,
+          477
+        ],
+        [
+          1360,
+          473
+        ],
+        [
+          1371,
+          480
+        ],
+        [
+          1375,
+          500
+        ],
+        [
+          1389,
+          504
+        ],
+        [
+          1394,
+          514
+        ],
+        [
+          1390,
+          616
+        ],
+        [
+          1380,
+          617
+        ],
+        [
+          1380,
+          677
+        ],
+        [
+          1367,
+          680
+        ],
+        [
+          1365,
+          618
+        ],
+        [
+          1175,
+          617
+        ],
+        [
+          1171,
+          679
+        ],
+        [
+          1159,
+          679
+        ],
+        [
+          1156,
+          618
+        ],
+        [
+          1145,
+          618
+        ],
+        [
+          1143,
+          510
+        ]
+      ],
+      "native_crop": [
+        428,
+        177,
+        96,
+        80
+      ],
+      "sort_y": 255
+    }
+  ],
+  "spawn": [
+    288,
+    328
+  ],
+  "exit_anchor": [
+    288,
+    350
+  ],
+  "exterior_return": [
+    535,
+    371
+  ],
+  "exterior_map_position": [
+    535,
+    345
+  ],
+  "destinations": {
+    "remembrance_table": [
+      288,
+      178
+    ],
+    "records": [
+      476,
+      278
+    ],
+    "book_cabinet": [
+      486,
+      178
+    ]
+  },
+  "inspection_points": {
+    "remembrance_table": {
+      "position": [
+        288,
+        152
+      ],
+      "approach": [
+        288,
+        178
+      ],
+      "facing": "back"
+    },
+    "records": {
+      "position": [
+        476,
+        248
+      ],
+      "approach": [
+        476,
+        278
+      ],
+      "facing": "back"
+    },
+    "book_cabinet": {
+      "position": [
+        486,
+        152
+      ],
+      "approach": [
+        486,
+        178
+      ],
+      "facing": "back"
+    }
+  }
+}

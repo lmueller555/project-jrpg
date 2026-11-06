@@ -129,6 +129,10 @@ def build():
     write_json(OUTPUT/'map.json',manifest)
     from build_building_interiors import build as build_interiors
     build_interiors()
+    # The regional sanctuary is a lazy exterior, outside town routines.
+    compiled=read_json(OUTPUT/'map.json')
+    compiled.setdefault('exterior_scenes',{})['elden_vale_sanctuary']='assets/maps/elden_vale_sanctuary/map.json'
+    write_json(OUTPUT/'map.json',compiled)
     print(f'Compiled playable Eldenmere: {base.size}, {len(entities)} depth-sorted objects, six ground phases, no baked actors.')
 
 

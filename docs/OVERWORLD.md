@@ -53,12 +53,15 @@ The landmark appears on the regional atlas and minimap from the start: Caelan
 already knows this local place. It is separate from **Serene's home**, the
 household within Eldenmere where Caelan and Tomas live.
 
-This update implements only the regional geography and miniature. Walking
-across its clear footprint does not load a scene, open a menu, start dialogue,
-change music, or advance a quest. It creates no cave entrance or local reserve
-map. Eldenmere's existing automatic entry and return remain independent. The
-[actual in-game review](reviews/overworld_sanctuary/README.md) shows the approach,
-miniature, atlas and uneventful walk across its footprint.
+Walking onto the miniature now enters the [detailed sanctuary reserve](SANCTUARY_RESERVE.md)
+at its southern woodland approach. The reserve contains the court and cloister,
+memorial grove, cave approach and surveyed stone face, with an enterable hall.
+The southern exit returns to the overworld outside the miniature's contact
+area. The cave dungeon and its quest remain future work. Eldenmere's existing
+automatic entry and return remain independent. The
+[current in-game review](reviews/sanctuary_reserve/README.md) shows this visit;
+the [original miniature review](reviews/overworld_sanctuary/README.md) records
+the earlier stage before entry was enabled.
 
 The main road takes approximately 47 seconds to walk from the town miniature's
 exit to the near-bank bridge approach. Local paths lead toward woodland, a
@@ -120,7 +123,7 @@ must not arrive across the ruined bridge. The [arrival cinematic](REGENT_ARRIVAL
 uses the southern land checkpoint and preserves the broken crossing and the
 player's travel restrictions. The new ridge landmark does not open those
 checkpoints, repair the bridge, add an encounter or place the original temple.
-The named southern town, local reserve scene and sanctuary quest remain future work.
+The named southern town, cave dungeon and sanctuary quest remain future work.
 
 ## Streaming and coordinates
 

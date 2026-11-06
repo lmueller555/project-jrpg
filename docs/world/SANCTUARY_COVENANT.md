@@ -9,9 +9,10 @@ on 2026-11-04 without changing those terms.
 needs, public records, protected boundary and unresolved trial-cut request,
 including the natural confluence, living memorial grove and communal keeping
 that give the whole reserve significance. The later authorization and
-excavation remain separate future story work. The sanctuary has an overworld
-miniature; its detailed reserve and cave remain future work. The dialogue
-revision adds no ritual animations.
+excavation remain separate future story work. The sanctuary's overworld
+miniature now opens into its [detailed reserve and hall](../SANCTUARY_RESERVE.md).
+The cave dungeon remains future work. The dialogue revision adds no ritual
+animations.
 
 **Scope:** Elden Vale Sanctuary near Eldenmere, its public covenant,
 and the legitimate disagreement between Serene and Aldric in Chapter 1.

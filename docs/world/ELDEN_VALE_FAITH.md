@@ -9,9 +9,10 @@ every person in Elden Vale follows the same tradition.
 
 **Implementation:** MQ03's revised discussion of Elden Vale Sanctuary expresses
 the natural aether confluence, living memorial grove and communal keeping alongside the
-relief needs and shared hazard records. The sanctuary now has a regional
-overworld miniature and approach; its detailed reserve and cave remain future
-work. These foundations do not define the confluence's workings.
+relief needs and shared hazard records. Its regional overworld miniature now
+opens into the [detailed reserve and hall](../SANCTUARY_RESERVE.md), with a tended
+grove and subtle visible aether currents. The cave dungeon remains future work.
+These foundations do not define the confluence's workings.
 
 Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),

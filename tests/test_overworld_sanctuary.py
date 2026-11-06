@@ -1,4 +1,4 @@
-"""The ridge landmark is reachable scenery, with no premature scene transition."""
+"""The regional sanctuary approach reaches its detailed reserve safely."""
 import json
 import os
 from pathlib import Path
@@ -11,7 +11,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from main import Game
-from overworld_travel import TOWN_EXIT, TOWN_RETURN, WORLD_ID
+from overworld_travel import TOWN_EXIT, TOWN_RETURN, WORLD_ID, RESERVE_ID
 
 LANDMARK = 'ridge_sanctuary'
 ROAD = 'sanctuary_approach'
@@ -69,31 +69,45 @@ class OverworldSanctuaryTests(unittest.TestCase):
         image, anchor = self.world._prop_image(LANDMARK)
         self.assertIsNotNone(image)
         self.assertTrue(image.get_rect().collidepoint(anchor))
-        self.assertNotIn('destination', site)
+        self.assertEqual(site['destination_scene'], RESERVE_ID)
 
-    def test_normal_walking_connects_town_exit_to_the_complete_new_path(self):
+    def test_normal_walking_connects_town_exit_to_the_detailed_reserve(self):
         branch = self.world._tile_point(self.road['points'][0])
         walk(self.g, regional_path(self.world, self.g.player.position, branch))
-        walk(self.g, [self.world._tile_point(p) for p in self.road['points']])
+        contact = self.g.overworld_travel.reserve_contact(self.world)
+        approach = []
+        for point in self.road['points']:
+            point = self.world._tile_point(point)
+            if contact.colliderect(self.world.probe_rect(point).inflate(2,2)):break
+            approach.append(point)
+        walk(self.g, approach)
         target = self.world._tile_point(self.landmark['tile_position'])
-        self.assertLess(self.g.player.position.distance_to(target), 1.)
-        self.assertEqual(self.g.world.data['id'], WORLD_ID)
-        self.assertTrue(self.world.can_stand(target))
+        for _ in range(100):
+            self.g.update(.05, pygame.Vector2(target)-self.g.player.position, False)
+            if self.g.world.data['id'] == RESERVE_ID:break
+        self.assertEqual(self.g.world.data['id'], RESERVE_ID)
+        self.assertEqual(tuple(self.g.player.position), tuple(self.g.world.data['spawn']))
 
-    def test_walking_over_the_miniature_is_inert_in_both_directions(self):
+    def test_miniature_contact_from_each_side_enters_without_changing_quest_facts(self):
         baseline = (self.g.quests.to_dict(), self.g.inventory.to_dict(), set(self.g.social.flags),
-                    self.g.music.desired_track, set(self.g.scenes))
-        for start, end in (((87,-66),(93,-66)), ((93,-66),(87,-66)),
-                           ((90,-69),(90,-61)), ((90,-61),(90,-69))):
+                    self.g.music.desired_track)
+        for start in ((87,-66), (93,-66), (90,-69), (90,-61)):
+            self.g.world = self.world
+            self.g.transfer_cooldown = 0
             self.g.player.position.update(self.world._tile_point(start))
             self.assertTrue(self.world.can_stand(self.g.player.position), start)
-            walk(self.g, [self.world._tile_point(end)])
+            self.g.overworld_travel.update()
+            goal = pygame.Vector2(self.world._tile_point(self.landmark['tile_position']))
+            for _ in range(100):
+                self.g.update(.05, goal-self.g.player.position, False)
+                if self.g.world.data['id'] == RESERVE_ID:break
+            self.assertEqual(self.g.world.data['id'], RESERVE_ID)
             self.assertFalse(self.g.social.active)
             self.assertFalse(self.g.combat.active)
             self.assertFalse(self.g.map_open)
             self.assertFalse(self.g.pause.is_open)
             self.assertEqual((self.g.quests.to_dict(), self.g.inventory.to_dict(), set(self.g.social.flags),
-                              self.g.music.desired_track, set(self.g.scenes)), baseline)
+                              self.g.music.desired_track), baseline)
 
     def test_known_map_location_does_not_require_a_new_save_field(self):
         self.g.overworld_travel.discovered = {'eldenmere'}
