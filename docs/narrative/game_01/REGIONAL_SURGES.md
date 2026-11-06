@@ -75,8 +75,8 @@ relief effort and a discussion with Serene about the protected ridge site.
 
 ## The protected seam and the unresolved request
 
-The seam lies inside the marked reserve around an old ridge sanctuary near
-Eldenmere, separate from the village sanctuary where Caelan lives. The
+The seam lies inside the marked reserve around Elden Vale Sanctuary on the ridge near
+Eldenmere, separate from Serene’s home where Caelan lives. The
 [covenant guide](../../world/SANCTUARY_COVENANT.md) defines the protected land,
 ordinary permitted use, restricted excavation and shared custodial duties.
 
@@ -103,7 +103,7 @@ administrator arriving after helping other communities. It can establish the
 damaged southern connection and his intended discussion with Serene without
 delivering the full covenant debate in the street.
 
-MQ02's sanctuary homecoming and cup-setting precede the arrival. MQ03 then
+MQ02's homecoming and cup-setting precede the arrival. MQ03 then
 begins with Serene's short request inside the dining room. Caelan welcomes
 Aldric and Lucan, guides the visitors directly to the meal and hears the
 unresolved ridge discussion. The former cart dispute is removed. He gains no

@@ -10,15 +10,15 @@ Approved geographic concept for a 64×56-tile village on the established 24px gr
 - `recipe.json`: editable authored footprint and route specifications, in tile coordinates.
 - `blockout.json`: expanded planning data, water grades, roads, ground levels and independently traversable quest-route examples.
 
-The image map begins at pixel [72,168] and is 1536×1344. North is up. Rulers show every four tiles; building rectangles represent ground footprints, not roofs or complete sprite bounding boxes. The sanctuary's 8×5 and workshop's 5×3 rectangles are provisional space reservations requiring their own designs. Later sprite placement must reserve roof, tree and character overhangs around these ground rectangles.
+The image map begins at pixel [72,168] and is 1536×1344. North is up. Rulers show every four tiles; building rectangles represent ground footprints, not roofs or complete sprite bounding boxes. The home's 8×5 and workshop's 5×3 rectangles are provisional space reservations requiring their own designs. Later sprite placement must reserve roof, tree and character overhangs around these ground rectangles.
 
 ## Geography and opening quests
 
-The northwest sanctuary has a raised courtyard with a southern stair connection. A two-tile upper lane passes Mira's workshop, crosses the stream and reaches the mill and Halden's storehouse yard. A western village lane and an eastern bank lane join at a second, southern bridge near Elira. This loop connects the central-west commons and eastern cultivated terrace without a single mandatory crossing choke point.
+Serene's home in the northwest has a raised courtyard with a southern stair connection. A two-tile upper lane passes Mira's workshop, crosses the stream and reaches the mill and Halden's storehouse yard. A western village lane and an eastern bank lane join at a second, southern bridge near Elira. This loop connects the central-west commons and eastern cultivated terrace without a single mandatory crossing choke point.
 
 | Place | Ground footprint | Proposed function |
 | --- | --- | --- |
-| Sanctuary | [11,7,8,5] | Bedroom, breakfast, Serene's request and return; separate interiors remain to be designed |
+| Serene's home | [11,7,8,5] | Bedroom, breakfast, Serene's request and return; separate interiors remain to be designed |
 | Mira's workshop | [24,15,5,3] | MQ02 contact near the upper crossing; new landmark placeholder |
 | Watermill | [40,11,4,3] | Existing mill's nominal ground footprint; front-right wheel reserved against the west-flowing race |
 | Halden | [40,23,4,3] | Standard 13×10 separate interior; sack task at the entry/storehouse yard |
@@ -28,15 +28,15 @@ The northwest sanctuary has a raised courtyard with a southern stair connection.
 
 Three additional standard cottages give the village a small residential cluster. Gardens and growing plots are schematic space reservations. Props, households and crowd positions have not been invented for the unnamed homes.
 
-MQ01 begins at the sanctuary and visits Halden first with Tomas. Tomas returns by the upper crossing. Elira and Venn can be visited in either order before returning to Serene. Both sequences are exported; the image draws one purple example to avoid overlapping two identical sets of paths. The marker numbers 3/4 identify the homes, not a forced order. The gate is marked G. Elira's shelf/lantern and the Venn child's bed are interior interactions, not objects placed outdoors in this diagram.
+MQ01 begins at home and visits Halden first with Tomas. Tomas returns by the upper crossing. Elira and Venn can be visited in either order before returning to Serene. Both sequences are exported; the image draws one purple example to avoid overlapping two identical sets of paths. The marker numbers 3/4 identify the homes, not a forced order. The gate is marked G. Elira's shelf/lantern and the Venn child's bed are interior interactions, not objects placed outdoors in this diagram.
 
 MQ02 can visit Mira and the mill before taking the northbound maintenance path to a separate woodland map. The obstruction, encounter design and final scene staging remain open. The north exit is an available planning connection; no artificial MQ01 roadblocks are proposed. Quest progression remains a matter of dialogue/state rather than locking village routes.
 
-The south road supports Aldric's arrival at the commons. The commons, main bridge and sanctuary courtyard can host changing festival dressing while preserving the established circulation. Festival mechanics, exact performances, stalls and named NPC positions remain future decisions.
+The south road supports Aldric's arrival at the commons. The commons, main bridge and the courtyard at Serene's home can host changing festival dressing while preserving the established circulation. Festival mechanics, exact performances, stalls and named NPC positions remain future decisions.
 
 ## Elevation and water contract
 
-L1 is the village and both stream bridge approaches. L2 contains the sanctuary terrace and eastern cultivation terrace. L3 is the northern headwater upland. These are relative planning units, not approved sprite pixel heights or a reinterpretation of the watermill's existing elevations. Stone boundaries mark height changes; routes change levels only through the four marked stair rectangles.
+L1 is the village and both stream bridge approaches. L2 contains the terrace at Serene's home and eastern cultivation terrace. L3 is the northern headwater upland. These are relative planning units, not approved sprite pixel heights or a reinterpretation of the watermill's existing elevations. Stone boundaries mark height changes; routes change levels only through the four marked stair rectangles.
 
 The main brook descends from a water surface of 2.8 in the upland to 0.8 entering the village, then gently falls to 0.33 at the south boundary. All water surfaces remain below their adjoining ground level. Heights only decrease downstream.
 

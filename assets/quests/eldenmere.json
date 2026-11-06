@@ -48,7 +48,7 @@
       "requires_quests": [
         "CH01_MQ01"
       ],
-      "summary": "Help Mira investigate Halden's stopped mill, face the danger on the river path together, and restore the upstream intake. Return to Serene afterwards and help finish the sanctuary preparations.",
+      "summary": "Help Mira investigate Halden's stopped mill, face the danger on the river path together, and restore the upstream intake. Return to Serene afterwards and help finish the preparations at home.",
       "available_tracker_text": "Find Mira at her workshop.",
       "objectives": [
         {
@@ -131,16 +131,16 @@
         },
         {
           "id": "return_sanctuary",
-          "text": "Return to Mother Serene and help set the sanctuary table.",
-          "tracker_text": "Return to Mother Serene in the sanctuary dining room.",
+          "text": "Return home to Mother Serene and help set the table.",
+          "tracker_text": "Return to Mother Serene in the dining room at home.",
           "requires": [
             "report"
           ]
         }
       ],
       "accept_text": "Mira is coming with you. Inspect the stopped mill together.",
-      "report_text": "Return to Mother Serene in the sanctuary dining room.",
-      "completion_text": "The mill is running again, and the sanctuary is ready to receive its visitors.",
+      "report_text": "Return to Mother Serene in the dining room at home.",
+      "completion_text": "The mill is running again, and Serene’s home is ready to receive its visitors.",
       "legacy_objectives": [
         "meet_mira"
       ],
@@ -169,8 +169,8 @@
       "requires_quests": [
         "CH01_MQ02"
       ],
-      "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to the sanctuary.",
-      "available_tracker_text": "Speak with Mother Serene in the sanctuary dining room about the visiting regent.",
+      "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to Serene’s home.",
+      "available_tracker_text": "Speak with Mother Serene in the dining room at home about the visiting regent.",
       "accept_text": "Meet Aldric’s party by the brook.",
       "report_text": "Speak with Mother Serene after the visit.",
       "completion_text": "Aldric's visit has ended. Festival preparations continue.",
@@ -184,8 +184,8 @@
         },
         {
           "id": "accompany_visit",
-          "text": "Accompany Aldric through the village and into the sanctuary dining room.",
-          "tracker_text": "Bring Aldric inside to the sanctuary dining room.",
+          "text": "Accompany Aldric through the village to the dining room in Serene’s home.",
+          "tracker_text": "Bring Aldric into the dining room at home.",
           "requires": [
             "meet_visitors"
           ]
@@ -193,7 +193,7 @@
         {
           "id": "welcome_party",
           "text": "Help welcome the visitors and hear Aldric and Serene's conversation.",
-          "tracker_text": "Join the visitors in the sanctuary dining room.",
+          "tracker_text": "Join the visitors in the dining room at home.",
           "requires": [
             "accompany_visit"
           ]
@@ -217,12 +217,12 @@
         "CH01_MQ03"
       ],
       "summary": "Help Liam make his first lantern of his own and discover what the Festival of Light means to his neighbours.",
-      "available_tracker_text": "Speak with Tomas in the sanctuary dining room.",
+      "available_tracker_text": "Speak with Tomas in the dining room at home.",
       "accept_text": "Join the school’s festival preparations with Tomas.",
       "report_text": "Show Mother the lantern, then put it away safely at home.",
       "completion_text": "Liam is ready to carry his own lantern at the festival.",
       "script_reference": "docs/narrative/game_01/CH01_MQ04.md",
-      "implementation_note": "The full four-part quest is playable: school and workshop, village visits, home break and sanctuary conversation, personal purpose and covering, a school visit to Mother, and safe storage at home. MQ04 completes at done with all eight objectives. The unlit lantern persists; the festival starts in a later quest.",
+      "implementation_note": "The full four-part quest is playable: school and workshop, village visits, home break and conversation with Serene, personal purpose and covering, a school visit to Mother, and safe storage at home. MQ04 completes at done with all eight objectives. The unlit lantern persists; the festival starts in a later quest.",
       "objectives": [
         {
           "id": "join_preparations",

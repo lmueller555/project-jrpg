@@ -62,7 +62,7 @@ move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
 
 **Function:** Establish the protagonist's lived faith, community, political tensions, and personal loss.
 
-- The approved covenant protects the old ridge sanctuary's marked reserve,
+- The approved covenant protects Elden Vale Sanctuary’s marked reserve,
   including buried foundations; ordinary care and surface inspection remain permitted.
 - Repairs after a handful of lightning incidents strain resources. Aldric's
   relief efforts and request for quarry stone meet Serene's shared-custody duty

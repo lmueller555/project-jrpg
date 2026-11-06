@@ -9,7 +9,7 @@ The final game name remains open; The Broken Covenant is a working title only.
 
 A broad dawn view across Eldenmere from the bridge approach. The brook curves
 from the near foreground toward the watermill and village. Cottages with warm
-windows and chimney smoke occupy the middle distance. The sanctuary sits on
+windows and chimney smoke occupy the middle distance. Serene's home sits on
 the right-hand rise; distant wooded hills and mountains complete the horizon.
 An upstream path disappears into the trees, suggesting the coming journey.
 
@@ -47,7 +47,7 @@ an occasional distant bird. Keep the camera still to preserve readable menus.
 A new original sampled piano/cello title theme is implemented in fixed-tempo
 4/4, replacing the discarded synthesized flute/harp score. See the timing audit
 and clean/metronome excerpts in `docs/reviews/title_piano_cello/`.
-Stream ambience and a distant sanctuary bell remain possible later additions.
+Stream ambience and a distant bell remain possible later additions.
 
 New Game fades through black into the existing playable town. The approved
 opening bedroom sequence remains a future story milestone. Title scene animation,

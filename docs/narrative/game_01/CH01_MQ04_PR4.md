@@ -6,7 +6,7 @@
 
 ## Narrative contract
 
-Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already know the annual festival; Liam is making his first lantern of his own. Continue directly from `serene_heard`, with the first six objectives complete and MQ04 still active. The route is sanctuary hall → Liam’s home → the actual school → Liam’s home. There is no additional visit or report to Tomas.
+Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already know the annual festival; Liam is making his first lantern of his own. Continue directly from `serene_heard`, with the first six objectives complete and MQ04 still active. The route is the hall at Serene’s home → Liam’s home → the actual school → Liam’s home. There is no additional visit or report to Tomas.
 
 The frame, original drawing and loose practice sheets begin together at home, where the father has kept them safe. Liam chooses to carry his lantern “for someone who hasn’t got one”: someone without anybody there to carry a light for them. This is his own compassionate intention, not a new universal religious requirement, a new dead relative or a claim about the mechanics of souls. His tower design still matters to him. Caelan and Tomas offer practical help without replacing Liam’s choices.
 
@@ -16,7 +16,7 @@ His mother remains Eldenmere’s teacher, with her personal name unassigned. The
 
 The completed lantern must visibly rest on the home table before the closing farewell. The final objective `show_mother` includes that safe return and acknowledgment; its credit and MQ04 completion form one committed ending. Do not mark the objective complete while the quest remains active with all eight objectives satisfied. A canceled or interrupted exchange cannot grant unread purpose, construction, family acknowledgment or quest completion.
 
-Afterward Liam remains at home with ordinary household behavior, Tomas returns to his sanctuary preparation station, Serene stays with her hall work and the mother remains at the school. Later solo replies acknowledge only facts each speaker can know. The endpoint is still preparation day: no MQ05 scene, time advance, festival ceremony, authorization letter, new spell or inciting event occurs. The comfortable 10–15-minute target includes movement and conversation; it is not a measured duration or a reason to pad the script.
+Afterward Liam remains at home with ordinary household behavior, Tomas returns to his preparation station at Serene’s home, Serene stays with her hall work and the mother remains at the school. Later solo replies acknowledge only facts each speaker can know. The endpoint is still preparation day: no MQ05 scene, time advance, festival ceremony, authorization letter, new spell or inciting event occurs. The comfortable 10–15-minute target includes movement and conversation; it is not a measured duration or a reason to pad the script.
 
 ## Main scenes
 
@@ -24,7 +24,7 @@ Afterward Liam remains at home with ordinary household behavior, Tomas returns t
 
 Runtime key: `finish_invitation`.
 
-After the final acknowledgment, the group leaves the actual sanctuary hall and walks home. Serene remains with her papers.
+After the final acknowledgment, the group leaves the hall at Serene’s home and walks home. Serene remains with her papers.
 
 - **Liam:** “Can we go and finish it now?”
 - **Caelan:** “Your lantern?”
@@ -289,7 +289,7 @@ Only after this exchange is fully read, play the safe placement action. Remove t
 
 Runtime key: `farewell`.
 
-Begin after visible safe placement. Complete `show_mother` and MQ04 together only after the final acknowledgment of this whole exchange. Liam remains at home; Tomas can return to his sanctuary preparation station.
+Begin after visible safe placement. Complete `show_mother` and MQ04 together only after the final acknowledgment of this whole exchange. Liam remains at home; Tomas can return to his preparation station at Serene’s home.
 
 - **Liam:** “There. You can see the window.”
 - **Liam’s father:** “Yes. It's safe there.”

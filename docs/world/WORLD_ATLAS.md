@@ -92,8 +92,8 @@ Eldenmere's geographic hierarchy is:
 Elden Vale occupies wooded foothills on the wetter western side of the
 **Greyfold Mountains**. Eldenmere is an inland village within it. The existing
 local map has northern headwater woodland, terraced ground, a descending
-north–south brook, a raised sanctuary and a working mill. It remains a
-brook-side settlement; the name does not establish a lake or coastal location.
+north–south brook, Serene's home on a raised terrace and a working mill. It
+remains a brook-side settlement; the name does not establish a lake or coastal location.
 
 At the larger scale, the village brook joins other tributaries that
 eventually feed the **River Leth**. The Leth runs south through fertile
@@ -126,8 +126,9 @@ widespread cataclysm. See [Regional Surges](../narrative/game_01/REGIONAL_SURGES
 for the recent incidents and arrival context.
 
 The resulting material need drives Aldric's request to quarry a nearer seam
-inside the protected reserve of an old ridge sanctuary near Eldenmere. This
-is a separate site from the inhabited village sanctuary. Its marked reserve
+inside the protected reserve of **Elden Vale Sanctuary**, northeast of Eldenmere.
+This is a separate site from **Serene's home**, the village household where
+Serene, Caelan and Tomas live and provide community care. The sanctuary's marked reserve
 covers a wooded hill and buried foundations as well as sanctuary buildings.
 The [Sanctuary Covenant](SANCTUARY_COVENANT.md) records the shared custodial
 trust, public evidence and relief obligations behind the disagreement;
@@ -229,9 +230,21 @@ its protective purpose and ancient origin are not known to them. See the
 remaining metaphysical questions.
 
 Serene's [local planetary tradition](ELDEN_VALE_FAITH.md) does not center
-gods. Its ridge sanctuary combines communal remembrance and keeping a real
+gods. Elden Vale Sanctuary combines communal remembrance and keeping a real
 natural aether confluence; this does not define a universal faith or explain
 the site's buried works.
+
+Greater regions across Auratia have their own sanctuaries at natural aetherial
+confluences. Their surroundings, architecture, customs and custodial arrangements
+can vary with the people and landscape around them. Elden Vale Sanctuary is the
+first regional example; Serene's home in Eldenmere is a household, not another
+site in this category. This foundation does not assign a sanctuary to every
+named atlas region or settle how all confluences behave.
+
+Exploring these sanctuaries and studying their confluences may become a recurring
+thread of the main plot. This is a narrative direction for future development,
+not a completed itinerary, a reveal about ancient mechanisms or an explanation
+of the recent surges.
 
 Eldenmere's established Festival of Light combines remembrance with living
 community. Other places may express related beliefs through different

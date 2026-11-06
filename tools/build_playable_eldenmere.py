@@ -90,7 +90,7 @@ def build():
     well_recipe=read_json(ROOT/'assets/source/terrain/eldenmere/well/recipe.json')
     destinations={**access['destinations'],**well_recipe['approaches']}
     landmarks=[]
-    names={'sanctuary':'Sanctuary','mira':"Mira’s workshop",'mill':'Watermill',
+    names={'sanctuary':"Serene’s Home",'mira':"Mira’s workshop",'mill':'Watermill',
            'halden':"Halden’s cottage",'elira':"Elira’s cottage",'venn':'Venn family cottage',
            'commons':'Well square'}
     for key,name in names.items():landmarks.append({'id':key,'name':name,'position':access['destinations'][key]})
@@ -109,7 +109,7 @@ def build():
                        'position':[610,448],'probe_size':[8,4],
                        'animation':'assets/characters/mira/work_bench/animation.json',
                        'fitting_position':[594,423],'fitting_sort_y':444},
-                      {'id':'sanctuary_gardener','name':'Sanctuary gardener','routine':'watering',
+                      {'id':'sanctuary_gardener','name':'Gardener','routine':'watering',
                        'position':[322,350],'probe_size':[12,8],
                        'animation':'assets/characters/npcs/female_02/gardener/animations.json',
                        'behavior':'assets/maps/eldenmere/routines/gardener.json'}],

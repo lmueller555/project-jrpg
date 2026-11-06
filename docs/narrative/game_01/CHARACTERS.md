@@ -18,7 +18,7 @@ Caelan and Tomas are four years apart. These ages guide future dialogue,
 characterization and character design. Liam and his parents are a newly
 requested NPC family; their surname and quest association are unassigned.
 Their home is the new wide cottage in western Eldenmere, directly south of
-the sanctuary. His parents remain stationary home residents during ordinary life. MQ04
+Serene’s home. His parents remain stationary home residents during ordinary life. MQ04
 borrows his mother for the school preparation session and its dialogue. Liam and Daisy share an ambient invitation, chase and nap
 routine. Liam also builds with five wooden blocks from a toy box between the
 beds, sometimes leaving one out. Daisy can accidentally knock over his creation
@@ -199,7 +199,7 @@ private warning remains a separate chapter-ending beat.
 
 **Faith and site significance, confirmed 2026-11-04:** Serene practices a
 [planetary spiritual tradition](../../world/ELDEN_VALE_FAITH.md) that does not
-center gods. The ridge sanctuary is a place of remembrance and renewal at a
+center gods. Elden Vale Sanctuary is a place of remembrance and renewal at a
 real natural aether confluence, with a living memorial grove. Its public
 importance does not depend on her knowing the purpose of the buried works.
 The confluence belongs to the planetary cycle, not the Aethersphere.
@@ -235,16 +235,16 @@ Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,
 with a furnished classroom for six children. Her personal name remains open.
 
-The six generic adult villager appearances form three parent pairs: the sanctuary
-gardener (female_02) and male_01 in home_a; female_01 and male_02 in home_b;
+The six generic adult villager appearances form three parent pairs: the gardener at Serene’s home
+(female_02) and male_01 in home_a; female_01 and male_02 in home_b;
 female_03 and male_03 in home_c. The adults' personal names and ages remain unassigned. Halden's, Elira's and the Venn family's story homes are retained.
 
 ## Additional village children
 
 | Child | Age at opening | Household |
 | --- | --- | --- |
-| Tessa | 10 | Daughter of the sanctuary gardener and male_01; home_a |
-| Finn | 6 | Son of the sanctuary gardener and male_01; home_a |
+| Tessa | 10 | Daughter of the gardener at Serene’s home and male_01; home_a |
+| Finn | 6 | Son of the gardener at Serene’s home and male_01; home_a |
 | Rowan | 9 | Son of female_01 and male_02; home_b |
 | Ada | 7 | Daughter of female_01 and male_02; home_b |
 | Pippa | 8 | Daughter of female_03 and male_03; home_c |

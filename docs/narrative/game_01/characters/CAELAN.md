@@ -25,12 +25,12 @@ and [approved art](../../../../assets/characters/caelan/README.md).
 | --- | --- | --- |
 | Name and pronouns | Caelan; he/him. Earlier drafts use Caelen; surname remains unassigned. | Established / Open; character facts |
 | Age at opening | 18 | Established; character facts |
-| Present home | A sanctuary bedroom in Eldenmere | Established; opening quest |
+| Present home | A bedroom at Serene’s home in Eldenmere | Established; opening quest |
 | Birthplace and lifelong home | Born in Eldenmere and has lived there his whole life, as has Tomas | Established, 2026-11-04 |
 | Early family timeline | Exact ages when their parents went missing and when Serene began caring for them remain undecided | Open |
 | Family | Tomas's older biological brother; they share the same parents. Tomas is 14. | Established; character facts and 2026-11-04 clarification |
 | Guardian | Mother Serene cares for both brothers because their parents are missing; formal family arrangements remain unassigned | Established / Open |
-| Opening occupation | Sanctuary helper. Acolyte/record keeper remains a working role, not an approved rank or vocation. | Established helper / Open rank; opening quest and [chapter guide](../CHAPTER_01.md) |
+| Opening occupation | Helps Serene with household and community service. Acolyte/record keeper remains a working role, not an approved rank or vocation. | Established helper / Open rank; opening quest and [chapter guide](../CHAPTER_01.md) |
 | Appearance | Chestnut hair, ivory tunic, teal outer tabard, ochre trim, dark trousers and brown belt, pouch and boots. Pouch remains on anatomical left. | Established; approved art |
 | Narrative role | Playable protagonist of Game I; not a new party recruit | Established |
 | Combat identity | Spellblade; begins unarmed with established basic magicks, then receives Mira’s first blade before MQ02’s outing | Established; ability guide |
@@ -86,7 +86,7 @@ The exact ages and particular childhood incidents remain unassigned.
 | Central contradiction | Wants to develop his abilities and choose a vocation, but doubts whether he is ready to commit to one | Established |
 | Central flaw | Gives his uncertainty too much authority over his decisions, sometimes leaving his own preference unspoken | Established |
 | Self-image | Thinks of himself as someone still preparing, even when he has enough understanding to contribute | Established |
-| Others' perceptions | Trusted with sanctuary errands; Mira accepts his useful proposal at the intake. Wider reputation remains undefined. | Established / Open |
+| Others' perceptions | Trusted with Serene’s community errands; Mira accepts his useful proposal at the intake. Wider reputation remains undefined. | Established / Open |
 | Social range | More at ease with Tomas and Mira than in an unfamiliar group; reserve need not mean coldness | Established |
 
 **Approved portrayal direction:** His self-doubt should complicate action, not replace it.
@@ -99,7 +99,7 @@ patient listener or automatic moral authority.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal desire before the crisis | Develop his magicks and find a vocation of his own | Established, 2026-11-04 |
-| Immediate duties | Help with sanctuary requests and village preparations as the opening quests occur | Established story tasks |
+| Immediate duties | Help with Serene’s requests and village preparations as the opening quests occur | Established story tasks |
 | Why the vocation matters | Wants a direction he has chosen, rather than waiting for the next task someone needs him to perform | Established |
 | Definition of success | Being able to commit to useful work he understands and genuinely wants to pursue | Established |
 | Emotional need | Learn to make choices without requiring certainty that he will succeed or that everyone will approve | Established growth direction |
@@ -121,7 +121,7 @@ mission or using magical advancement as proof that he is worth caring about.
 | Practical fears | Specific phobias and recurring physical fears remain unassigned | Open |
 | Coping habit | Rechecks notes or rehearses a request instead of bringing it to someone | Established |
 | Values | Careful judgment, reliable help and being taken seriously without pretending to know more than he does | Established |
-| Faith and worldview | Familiar with local sanctuary life and Festival of Light traditions. His precise convictions, doubts and formal religious status remain open. | Established familiarity / Open interpretation |
+| Faith and worldview | Familiar with Serene’s service, Elden Vale Sanctuary and Festival of Light traditions. His precise convictions, doubts and formal religious status remain open. | Established familiarity / Open interpretation |
 | Loyalties | Existing relationships with Tomas, Serene and Mira matter; specific tests and absolute boundaries remain unchosen | Established relationships / Open |
 | Prejudices and triggers | Not yet defined | Open |
 
@@ -132,7 +132,7 @@ ignorant or unable to disagree. Do not use hesitation as his only expression.
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Known household | Born and always resident in Eldenmere; lives at the sanctuary with his younger biological brother Tomas, in Serene's care because their shared parents are missing | Established |
+| Known household | Born and always resident in Eldenmere; lives at Serene’s home with his younger biological brother Tomas, in her care because their shared parents are missing | Established |
 | Parents' absence | Neither brother has seen their parents in years. The parents are alive, but the boys do not know this and probably think them dead. | Established author truth / Established character-knowledge boundary |
 | Childhood friendship | Mira is his childhood friend; both are 18 at the opening. Their shared sense of parental loss is a mostly unspoken part of their existing bond. When and how they first met remain undecided. | Established / Open |
 | Shared childhood memories | He and Mira already share several childhood memories by the opening; these will be explored throughout the game. Specific memories and their presentation remain unassigned. | Established history and disclosure intent / Open details |

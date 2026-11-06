@@ -1,4 +1,4 @@
-# Ridge sanctuary overworld art
+# Elden Vale Sanctuary overworld art
 
 `generated_miniature.png` is the unchanged image-generation source, guided by
 the sanctuary concept reviewed in chat and the existing Eldenmere miniature.
@@ -11,6 +11,7 @@ path records authoring provenance only; rebuilding needs only the retained
 generated source and recipe, and does not call image generation.
 
 Run `python tools/build_overworld_sanctuary_art.py`, or pass `--check` to verify.
-The 96×80 miniature is smaller than Eldenmere's 144×120 sprite. The separate
-40×24 steps are extracted from the same threshold. Both exports have binary
-alpha and irregular silhouettes; neither supplies collision or travel behavior.
+The 96×80 miniature is smaller than Eldenmere's 144×120 sprite. It has binary
+alpha and an irregular silhouette, and supplies no collision or travel behavior.
+The approach uses the ordinary dirt path; the former standalone steps are no
+longer exported or placed because the overworld has no matching height change.

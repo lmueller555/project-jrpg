@@ -223,7 +223,7 @@ def capture(output=OUT):
         with Image.open(output/name) as picture:
             report['views'][name]={'size':list(picture.size),'source':'production game renderer'}
     (output/'verification.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
-    (output/'README.md').write_text('''# Ridge Sanctuary — overworld geography
+    (output/'README.md').write_text('''# Elden Vale Sanctuary — overworld geography
 
 [Watch the approach and inert miniature crossing](sanctuary_walk.mp4)
 

@@ -372,7 +372,7 @@ class LanternQuest:
         if self.finish_part.active:return self.finish_part.tracker_text()
         if self.rest.active:return self.rest.tracker_text()
         if self.stage in VILLAGE_STAGES:return self.village.tracker_text()
-        return {'idle': 'Speak with Tomas in the sanctuary dining room.',
+        return {'idle': 'Speak with Tomas in the dining room at home.',
                 'invited': 'Join the lantern preparations at the village school.',
                 'classroom': 'Look at Liam’s lantern drawing with him.',
                 'designed': 'Agree on the outing with Liam’s mother.',

@@ -169,7 +169,7 @@ class OpeningConclusion:
     def on_dialogue_cancelled(self,identifier):
         if identifier=='opening_mill_arrival':self.dialogue=False
     def tracker_text(self):
-        if self.stage in ('arrival','waiting'):return 'Meet Mother Serene and Halden in the sanctuary hall.'
+        if self.stage in ('arrival','waiting'):return 'Meet Mother Serene and Halden in the hall at home.'
         return ''
     def interaction_hint(self):return ''
     def interact(self):return False

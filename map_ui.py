@@ -25,7 +25,7 @@ ROOF = '#8a7660'
 WALL = '#d1bb91'
 
 DESCRIPTIONS = {
-    'sanctuary': 'Home, shared meals, and a quiet place to begin.',
+    'sanctuary': 'Serene, Caelan, and Tomas live here. Neighbors come for shared meals and help.',
     'mira': 'Mira works at the bench outside her workshop.',
     'mill': 'The waterwheel turns beside the brook.',
     'halden': 'Halden lives on the eastern terrace.',
