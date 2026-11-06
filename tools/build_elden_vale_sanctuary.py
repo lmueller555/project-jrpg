@@ -27,36 +27,47 @@ def products():
     def polygon(p):return [point(v) for v in p]
     def rectangle(r):
         x,y,w,h = r
-        return (*point((x,y)),*point((x+w,y+h)))
-    mask = Image.new('L',tuple(recipe['size_pixels']),255)
+        left,top = point((x,y));right,bottom = point((x+w,y+h))
+        # Pillow includes the final pixel; recipe rectangles use width/height.
+        return (left,top,right-1,bottom-1)
+    # The painting's paths are visual guidance through an open reserve. Starting
+    # solid and carving out those paths created invisible walls on clear grass.
+    # Only authored physical footprints may remove otherwise walkable ground.
+    mask = Image.new('L',tuple(recipe['size_pixels']),0)
     draw = ImageDraw.Draw(mask)
-    for area in recipe['walk_areas']:
-        draw.polygon(polygon(area['polygon']),fill=0)
-    for path in recipe['paths']:
-        vertices = polygon(path['points']);width = round(path['width']*scale)
-        draw.line(vertices,fill=0,width=width,joint='curve')
-        radius = width//2
-        for x,y in vertices:draw.ellipse((x-radius,y-radius,x+radius,y+radius),fill=0)
     for solid in recipe['solid_rects']:draw.rectangle(rectangle(solid['rect']),fill=255)
     for solid in recipe['solid_polygons']:draw.polygon(polygon(solid['polygon']),fill=255)
     # The visible doorway is a real traversable threshold. The hall walls on
     # either side remain solid, including when the interior has not been loaded.
     draw.rectangle(rectangle(recipe['door_clearance']['rect']),fill=0)
     collision = BytesIO();mask.convert('RGB').save(collision,format='PNG')
+    additional_art = [(path,json.loads((ROOT/path).read_text()))
+                      for path in recipe.get('additional_art_manifests',[])]
+    replaced_entities = {identifier for _,manifest in additional_art
+                         for identifier in manifest.get('replace_entity_ids',[])}
+    scene_entities = [entity for entity in art['entities']
+                      if entity['id'] not in replaced_entities]
+    for _,manifest in additional_art:
+        scene_entities.extend(manifest['entities'] if 'entities' in manifest
+                              else [manifest['entity']])
     scene = {key:recipe[key] for key in ('id','name','size_pixels','spawn','reserve_exit',
               'hall_approach','landmarks','public_approaches','loop_waypoints',
-              'blocked_probes','confluence_motes','doors')}
+              'blocked_probes','confluence_motes','doors','navigation_policy','cave_barrier')}
     scene.update(kind='reserve',tile_size=24,size_tiles=[v//24 for v in recipe['size_pixels']],
                  player_probe_size=[24,12],player_draw_anchor=[12,30],
                  ground_frames=[art['ground']],ground_frame_duration_ms=1000,
                  collision=(OUT/'collision.png').relative_to(ROOT).as_posix(),
-                 entities=art['entities'],foreground=[],overview=art['overview'],
+                 entities=scene_entities,
+                 foreground=[],overview=art['overview'],
                  npcs=[],world_links=[],
                  build={'tool':'tools/build_elden_vale_sanctuary.py',
                         'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
                         'source_recipe_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
                         'art_manifest':recipe['art_manifest'],
-                        'art_manifest_sha256':hashlib.sha256((ROOT/recipe['art_manifest']).read_bytes()).hexdigest()})
+                        'art_manifest_sha256':hashlib.sha256((ROOT/recipe['art_manifest']).read_bytes()).hexdigest(),
+                        'additional_art_manifests':[
+                            {'path':path,'sha256':hashlib.sha256((ROOT/path).read_bytes()).hexdigest()}
+                            for path,_ in additional_art]})
     return {'map.json':(json.dumps(scene,indent=2,ensure_ascii=False)+'\n').encode(),
             'collision.png':collision.getvalue()}
 

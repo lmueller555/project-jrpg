@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "image": "assets/terrain/elden_vale_cave_barrier/barrier.png",
+  "native_size": [
+    88,
+    48
+  ],
+  "position": [
+    965,
+    331
+  ],
+  "ground_anchor": [
+    1009,
+    379
+  ],
+  "local_ground_anchor": [
+    44,
+    48
+  ],
+  "sort_y": 379,
+  "solid_rect": [
+    974,
+    364,
+    70,
+    13
+  ],
+  "interaction_approach": [
+    1008,
+    406
+  ],
+  "entity": {
+    "id": "sanctuary_cave_safety_barrier",
+    "frames": [
+      "assets/terrain/elden_vale_cave_barrier/barrier.png"
+    ],
+    "position": [
+      965,
+      331
+    ],
+    "ground_anchor": [
+      1009,
+      379
+    ],
+    "sort_y": 379,
+    "frame_duration_ms": 1000,
+    "phase_offset": 0
+  },
+  "source_recipe": "assets/source/terrain/elden_vale_cave_barrier/art_recipe.json",
+  "source_recipe_sha256": "363dc094a929a73da4622b1618f1ec13ff539d6fa2143421ac2e7b61df0b2a81"
+}
