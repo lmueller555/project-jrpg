@@ -1,10 +1,12 @@
 # Aldric's arrival after the mill
 
-The fully acknowledged MQ02 report commits the repaired mill and its ordinary
-quest rewards before a cinematic introduces Regent Aldric. Caelan stays at the
-mill; the audience sees events elsewhere. MQ03 becomes available, and the
-player still accepts it through Serene's preparations dialogue inside the
-sanctuary dining room.
+MQ02's new ending brings Caelan back from Halden's restored mill to help
+Serene and Tomas inside the sanctuary dining room. After the cup placement
+and final sanctuary exchange are acknowledged, the quest and its ordinary
+rewards settle before this cinematic introduces Regent Aldric. Caelan stays
+at the sanctuary while the audience sees events elsewhere. The cinematic
+returns control to his same dining-room position. MQ03 becomes available,
+and Serene's separate request to meet the visitors accepts it.
 
 ## Scene and continuity
 
@@ -12,7 +14,7 @@ The arrival uses the same detailed pixel-art presentation as the opening and
 battle scenes, with separately authored scenery, actor poses and animation.
 The visual clock belongs to the cinematic rather than the exploration world.
 
-1. The completed mill gets a short closing hold and a fade.
+1. The completed sanctuary cup-setting scene gets a short closing hold and a fade. The mill report no longer starts this cinematic.
 2. A bird leads an aerial view west across the actual Elden Vale landscape,
    then banks left toward the south. The view establishes the two boundary
    rivers, northern woodland, eastern foothills, village, farms and damaged
@@ -83,7 +85,7 @@ interaction, quest staging, time and the exploration HUD remain suspended while
 the cinematic owns the screen. Inputs that finish or skip it cannot continue
 into exploration in the same event batch.
 
-The Eldenmere theme fades with the completed mill during the opening blackout.
+The Eldenmere theme fades with the sanctuary closing view during the opening blackout.
 **Royalty of the Realm** begins as the aerial arrival starts and plays for the
 cinematic's duration. The later-journey opening leitmotif and battle music keep
 their existing uses. Cinematic effects
@@ -100,12 +102,12 @@ are documented in [the aerial sound assets](../assets/audio/sfx/regent_aerial/RE
 `seen` states. It is included in the journey snapshot and progress signature.
 Transient dialogue pages, camera positions and animation clocks are not saved.
 
-- A fresh journey waits until the real MQ02 report callback requests arrival.
-- The mill conclusion saves `pending` with the committed quest result.
+- A fresh journey waits until the real MQ02 sanctuary-ending callback requests arrival; Halden’s mill report alone cannot start it.
+- The acknowledged sanctuary conclusion saves `pending` with the committed quest result and cup placement.
 - Completing or skipping the cinematic saves `seen` and releases the visitors
   to their town staging. It does not accept or complete MQ03.
 - Continuing a journey interrupted during arrival restarts the pending scene
-  from its safe beginning. It does not repeat the mill turn-in or its rewards.
+  from its safe beginning. It does not repeat the sanctuary ending, mill report or quest rewards.
 - Older journeys with completed MQ02 and no arrival record migrate to `seen`.
   They retain their existing quest stages without an out-of-sequence cinematic.
 - New Game resets arrival alongside the other story controllers.

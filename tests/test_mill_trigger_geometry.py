@@ -245,8 +245,11 @@ class MillTriggerGeometryTests(unittest.TestCase):
         self.assertIn(self.c.mira, self.g.world.npcs)
         self.assertLess(self.c.halden.position.distance_to(self.g.player.position), 44)
         self.event('resolution');self.read()
-        self.assertTrue(self.c.resolved)
-        self.assertEqual(self.g.quests.status(MILL_QUEST), 'completed')
+        self.assertTrue(self.c.reported_to_halden)
+        self.assertFalse(self.c.resolved)
+        self.assertEqual(self.g.quests.status(MILL_QUEST), 'active')
+        self.assertEqual(self.g.regent_arrival.state, 'waiting')
+        self.assertEqual(self.c.stage, 'return_sanctuary')
         self.assertEqual(sum(self.c.mira in world.npcs for world in self.g.scenes.values()), 1)
 
 

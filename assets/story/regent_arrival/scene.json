@@ -51,17 +51,17 @@
   },
   "phases": [
     {
-      "id": "mill_close",
+      "id": "sanctuary_close",
       "scene": "world",
       "min_seconds": 2.2,
       "camera": {
         "from": [
-          320,
-          140
+          0,
+          0
         ],
         "to": [
-          320,
-          140
+          0,
+          0
         ]
       },
       "actors": [],
@@ -843,7 +843,7 @@
   "continuity": {
     "route": "Intact southern land checkpoint on Eldenmere bank; never across ruined western bridge.",
     "present_day": "The lightning damage precedes this visit; the mill intake was a separate tusker-felled blockage.",
-    "audience_knowledge": "Caelan remains at the mill and does not hear the remote conversations.",
+    "audience_knowledge": "Caelan remains inside the sanctuary dining room after helping with the cups; he does not hear the remote conversations. The cinematic returns to his actual room and position.",
     "outcome": "Caravan arrives; MQ03 becomes available, not accepted. No bridge repair, onward gate release, or excavation authorization."
   },
   "routes": {

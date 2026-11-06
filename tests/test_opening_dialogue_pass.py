@@ -135,12 +135,14 @@ class OpeningDialogueDriver:
                 # its real pages while allowing its authored cues to finish.
                 self.key(pygame.K_SPACE);self.tick(.05)
                 continue
-            cutscene = getattr(getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)
-            if not self.g.social.locked and not cutscene:return
+            quest = getattr(self.g, 'mill_quest', None)
+            cutscene = getattr(quest, 'encounter_cutscene_active', False)
+            cups = getattr(getattr(quest, 'sanctuary_return', None), 'action_active', False)
+            if not self.g.social.locked and not cutscene and not cups:return
             if not self.g.social.active:self.tick(.02);continue
             if self.g.social.choosing:return
             self.record_page();self.key(pygame.K_SPACE)
-            if cutscene:self.tick(.02)
+            if cutscene or cups:self.tick(.02)
         raise AssertionError(('Unread conversation', self.identifier()))
 
     def walk(self, goal, destination=None, read=True, *, return_if_blocked=False):
@@ -347,7 +349,21 @@ class OpeningDialogueDriver:
         self.mill_at('lever');self.mill_event('repair');self.until(lambda: c.restored and c.action is None)
         if self.g.social.locked:self.read()
         self.mill_link(False);self.mill_at('mill_station');self.mill_event('verify')
-        self.mill_event('resolution');assert c.resolved
+        self.mill_event('resolution')
+        assert c.reported_to_halden and not c.resolved
+        self.mill_return()
+
+    def mill_return(self):
+        """Follow Caelan's spoken plan home, using the ordinary sanctuary doors."""
+        c = self.g.mill_quest;home = c.sanctuary_return
+        self.travel('sanctuary_dining')
+        self.until(lambda: home.ready)
+        self.actor(home.serene, 'mill_sanctuary_return')
+        self.read()
+        if not c.resolved:
+            self.until(lambda: c.cups_placed)
+            self.actor(home.serene, 'mill_sanctuary_setting')
+        assert c.resolved and c.reported_to_halden and c.cups_placed
 
     def run(self):
         self.breakfast();self.halden()

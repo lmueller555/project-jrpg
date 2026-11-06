@@ -692,6 +692,7 @@ class Game:
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
+        self.mill_quest.sanctuary_return.reset()
         self.regent_quest.release_pose()
         self.lantern_quest.release_pose()
         if self._overworld_world is not None:self._overworld_world.participation.release_pose(self)
@@ -755,6 +756,7 @@ class Game:
         if self.quests.status(MILL_QUEST)=='completed' and self.quests.status(REGENT_QUEST)=='locked':
             self.quests.unlock(REGENT_QUEST);self.quests.drain_events()
         self.regent_arrival.restore(data.get('regent_arrival') if data else None)
+        if self.regent_arrival.arrival_complete:self.mill_quest.sanctuary_return.release()
         self.regent_quest.restore(data.get('regent_quest') if data else None)
         if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
             self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()

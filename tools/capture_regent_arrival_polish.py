@@ -117,7 +117,7 @@ def smoke_checks(directory, saved_pending, saved_completed):
     game = make_game(directory,title=True)
     assert game.begin_journey(True) and game.regent_arrival.active
     scene = game.regent_arrival
-    assert scene.shot == 'mill_close'
+    assert scene.shot == 'sanctuary_close'
     before = (scene.elapsed,scene.phase_time,world_signature(game))
     key(game,pygame.K_ESCAPE)
     game.update(.5,(1,1),True)

@@ -124,7 +124,7 @@ def _mill_checkpoint(game, stage):
     if stage in ('repair', 'completed'):
         objectives.append('small_spell');facts.update(spell_done=True, encouraged=True)
     if stage == 'completed':
-        objectives += ['repair_intake', 'verify_mill', 'report']
+        objectives += ['repair_intake', 'verify_mill', 'report', 'return_sanctuary']
         facts.update(restored=True, verified=True, resolved=True)
     _complete_objectives(game, MILL_QUEST, objectives)
     if stage == 'completed':
@@ -253,14 +253,17 @@ def _mill_encounter(game, playback):
 
 
 def _arrival(game, playback):
+    from sanctuary_return import TABLE
     playback.hold_seconds = 0.
     _mill_checkpoint(game, 'completed')
-    preferred = game.mill_quest.points['halden_resolution']
+    homecoming = game.mill_quest.sanctuary_return
+    homecoming.restore(reported=True, placed=True, complete=True)
+    preferred = TABLE
     clear = next((pygame.Vector2(preferred)+offset
                   for offset in ((0, 0), (0, 12), (12, 0), (-12, 0), (0, -12), (24, 0))
-                  if game.town.can_stand(pygame.Vector2(preferred)+offset)), None)
+                  if homecoming.dining.can_stand(pygame.Vector2(preferred)+offset)), None)
     if clear is None:raise ValueError('No clear arrival witness station')
-    _station(game, game.town, clear)
+    _station(game, homecoming.dining, clear, 'right')
     # Request exactly the production pending->active arrival boundary.
     if not game.regent_arrival.request() or not game.regent_arrival.maybe_start():
         raise ValueError('Cannot start Aldric arrival')

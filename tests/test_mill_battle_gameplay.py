@@ -42,11 +42,12 @@ def read_social(game):
             game.update(.05, (0, 0), False)
             continue
         cutscene = getattr(game.mill_quest, 'encounter_cutscene_active', False)
+        cups = getattr(getattr(game.mill_quest, 'sanctuary_return', None), 'action_active', False)
         if game.social.active:
             assert not game.social.choosing, 'MQ02 has a linear aftermath, not a continue/rest choice'
             key(game, pygame.K_SPACE)
-        elif not cutscene:return
-        if cutscene:game.update(.05, (0, 0), False)
+        elif not cutscene and not cups:return
+        if cutscene or cups:game.update(.05, (0, 0), False)
     raise AssertionError('MQ02 dialogue or cutscene did not finish')
 
 

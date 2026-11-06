@@ -181,6 +181,8 @@ class Capture:
                  'mill_aftermath': 'spellblade_aftermath.png',
                  'mill_encouragement_failed': 'small_magic_success.png',
                  'mill_repair_done': 'intake_restored.png',
+                 'mill_verify': 'mill_running.png',
+                 'mill_sanctuary_return': 'sanctuary_homecoming.png',
                  'mill_resolution': 'report_to_halden.png'}
         if identifier in names:self.still(names[identifier])
 
@@ -237,7 +239,8 @@ class Capture:
             assert game._read_saved_journey() is not None
             assert game.quests.status('CH01_MQ03') == 'available'
             assert game.regent_arrival.state in ('pending', 'seen')
-            self.still('mill_running.png')
+            assert quest.reported_to_halden and quest.cups_placed
+            assert game.world.data['id'] == 'sanctuary_dining'
             game.update(.1, (0, 0), False)
             if game.regent_arrival.active:self.still('aldric_arrival.png')
             gift_frames = save_animation(self.output/'gift_preview.gif', self.frames['gift'], 150)
@@ -265,6 +268,9 @@ class Capture:
                         'water_focus': sorted(set(self.water_focus)), 'water_frames': water_frames,
                         'prior_venn_failure_played': game.venn_visit.magicks_failed,
                         'quest_completed': True, 'mill_restored': True,
+                        'reported_to_halden': quest.reported_to_halden,
+                        'cups_placed': quest.cups_placed,
+                        'completion_scene': game.world.data['id'],
                         'aldric_handoff': game.regent_arrival.state,
                         'battle_rewards': self.reward,
                         'rp_before_battle': self.before_battle_rp,

@@ -41,6 +41,7 @@ class MiraMachinistStoryTests(unittest.TestCase):
             player=SimpleNamespace(walk_ms=0.0))
         controller.inspected = {'mechanism', 'race'}
         for fact in FACTS:setattr(controller, fact, False)
+        controller.reported_to_halden = controller.cups_placed = False
         controller._returning = False
         controller.action = None
         controller._aftermath_recovered = False

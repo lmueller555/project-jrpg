@@ -48,7 +48,7 @@
       "requires_quests": [
         "CH01_MQ01"
       ],
-      "summary": "Help Mira investigate Halden's stopped mill, face the danger on the river path together, and restore the upstream intake.",
+      "summary": "Help Mira investigate Halden's stopped mill, face the danger on the river path together, and restore the upstream intake. Return to Serene afterwards and help finish the sanctuary preparations.",
       "available_tracker_text": "Find Mira at her workshop.",
       "objectives": [
         {
@@ -128,17 +128,37 @@
           "requires": [
             "verify_mill"
           ]
+        },
+        {
+          "id": "return_sanctuary",
+          "text": "Return to Mother Serene and help set the sanctuary table.",
+          "tracker_text": "Return to Mother Serene in the sanctuary dining room.",
+          "requires": [
+            "report"
+          ]
         }
       ],
       "accept_text": "Mira is coming with you. Inspect the stopped mill together.",
-      "report_text": "Speak with Mira and Halden at the working mill.",
-      "completion_text": "Halden's mill is running again. You and Mira restored its intake together.",
+      "report_text": "Return to Mother Serene in the sanctuary dining room.",
+      "completion_text": "The mill is running again, and the sanctuary is ready to receive its visitors.",
       "legacy_objectives": [
         "meet_mira"
       ],
       "legacy_route_objectives": [
         "prepare_journey",
         "secure_trail"
+      ],
+      "legacy_completion_objectives": [
+        "meet_mira",
+        "diagnose_mill",
+        "prepare_journey",
+        "secure_trail",
+        "reach_intake",
+        "prepare_intake",
+        "small_spell",
+        "repair_intake",
+        "verify_mill",
+        "report"
       ]
     },
     {

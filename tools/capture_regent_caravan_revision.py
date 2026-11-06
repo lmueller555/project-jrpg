@@ -325,7 +325,7 @@ def capture(output,prototype=False):
                     if scene.dialogue is not None and identity!=last_page:
                         last_page=identity;due=frames/FPS+max(1.8,len(' '.join(scene.caption_lines).split())*.18)
                         pages.append({'shot':shot,'speaker':scene.dialogue['speaker']})
-                    recording = (shot in ('mill_close',*AERIAL_PHASES,'gate_approach')
+                    recording = (shot in ('sanctuary_close',*AERIAL_PHASES,'gate_approach')
                                  or shot=='gate_greeting' and scene.phase_time<2.2)
                     if recording:
                         native=image_frame(game);video.stdin.write(native.tobytes())

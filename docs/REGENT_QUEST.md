@@ -8,17 +8,17 @@ now used by the playable quest. The discussion's promised contributions and
 future inspection do not themselves repair the crossing or authorize excavation.
 
 MQ02 completion unlocks the visit and starts the [arrival cinematic](REGENT_ARRIVAL.md)
-after the fully acknowledged final report. Aldric's party comes through the
+after Caelan returns from Halden and finishes helping Serene set the clean cups inside the sanctuary. Aldric's party comes through the
 southern land checkpoint, speaks with affected locals, then approaches
 Eldenmere while Serene watches from inside the sanctuary. The town party and
 wagon appear at their corrected approach stations after that handoff. MQ03 is
-still accepted separately through Serene's preparations exchange.
+still accepted separately through Serene's short request to welcome the visitors.
 
 `CH01_MQ03` follows completion of Mira's mill quest. Caelan's job is to welcome and guide the visitors and help receive them at the sanctuary. Aldric settles a dispute concerning his road project; Caelan witnesses it and supplies only the mill status he knows firsthand.
 
 ## Playing through
 
-Find Serene preparing food at the sanctuary dining-room counter and Tomas arranging chairs for the preparations exchange, then meet Aldric's party by the brook. Finish the greeting and accompany Aldric toward the road staging area. Read the disagreement between Mr. Venn and the foreman, Aldric's questions and settlement, and the clerk's confirmation of the hire terms. No receipt is a player target. Wait for the visible release of the cart and the crew's return to work, then bring the party through the sanctuary hall to the dining room.
+MQ02 returns control to Caelan inside the sanctuary dining room after the arrival cinematic. Speak with Serene for the short welcome-visitors request, then meet Aldric’s party by the brook. The longer preparations and Tomas’s bow question now belong to MQ02’s homecoming and are not repeated here. Finish the greeting and accompany Aldric toward the road staging area. Read the disagreement between Mr. Venn and the foreman, Aldric's questions and settlement, and the clerk's confirmation of the hire terms. No receipt is a player target. Wait for the visible release of the cart and the crew's return to work, then bring the party through the sanctuary hall to the dining room.
 
 Finish the welcome and meal inside the dining room before the excavation discussion. Aldric joins the family table while his companions gather at the right-hand tables. Four spare chairs provide seven seats in total, and the middle aisle stays clear for Caelan and the doorway. Aldric steps aside toward the distant counter for Caelan’s final exchange with Serene. Aldric wants a preliminary survey within protected ground; Serene offers records and a joint review while withholding endorsement. Afterward, speak with Serene for Caelan's personal reaction and Tomas's call about the lanterns. That final exchange completes MQ03.
 
@@ -28,7 +28,7 @@ The visit preserves the revised role boundary: Caelan does not adjudicate a hire
 
 `assets/story/regent/scene.json` contains the six main scenes (`preparations`, `arrival`, `dispute`, `welcome`, `discussion`, `aftermath`) and short optional replies. Selected text carries brief asterisk-wrapped delivery cues for relief, anger, surprise, concern, laughter, hesitation and fatigue. These are intentionally occasional. Optional replies are stage-aware: the cart settlement and revised hire terms are discussed only after release, while Tomas refers to the meal only after the welcome. Earlier interactions use waiting replies.
 
-The [narrative script](narrative/game_01/CH01_MQ03.md) includes the lightning damage, relief-driven quarry request and concrete covenant discussion. Ordinary dialogue stays live and cancelable. The visit gives the welcome, food, journey and personal reactions time before advancing its objectives. New officials use role titles instead of invented personal histories.
+The [narrative script](narrative/game_01/CH01_MQ03.md) includes the lightning damage, relief-driven quarry request and concrete covenant discussion. Ordinary dialogue stays live and cancelable. The two-line opening continues directly from the MQ02 preparations and arrival. The visit gives the welcome, food, journey and personal reactions time before advancing its objectives. New officials use role titles instead of invented personal histories.
 
 ## Objectives and durable progress
 

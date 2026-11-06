@@ -33,6 +33,7 @@ class MillCombatStoryTests(unittest.TestCase):
         controller.inspected = {'mechanism', 'race'}
         controller._returning = False
         for fact in FACTS:setattr(controller, fact, False)
+        controller.reported_to_halden = controller.cups_placed = False
         controller._save = Mock()
         if warned:self.assertTrue(controller._warned())
         return controller
@@ -82,8 +83,13 @@ class MillCombatStoryTests(unittest.TestCase):
         self.assertFalse(controller.mira_weapon_stowed)
         self.assertTrue(controller._complete('verify_mill'));controller.verified = True
         self.assertTrue(controller._complete('report'))
+        controller.reported_to_halden = True;controller._returning = True
+        self.assertTrue(controller.mira_armed)
+        controller._returning = False
+        self.assertFalse(controller.mira_armed)
+        self.assertTrue(controller._complete('return_sanctuary'))
         self.assertTrue(controller.game.quests.turn_in(MILL_QUEST, 'mira_worker'))
-        controller.resolved = True;controller._returning = True
+        controller.cups_placed = controller.resolved = True;controller._returning = True
         self.assertTrue(controller.mira_armed)
         controller._returning = False
         self.assertFalse(controller.mira_armed)

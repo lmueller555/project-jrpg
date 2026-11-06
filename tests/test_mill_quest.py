@@ -337,6 +337,15 @@ class MillQuestTests(unittest.TestCase):
         self.assertTrue(self.g.social.start(halden));self.assertEqual(self.g.social.script_identifier,'mill_resolution')
         self.g.social.cancel();self.assertFalse(self.c.resolved)
         self.g.social.blocked.clear();self.assertTrue(self.g.social.start(halden));self.read_all()
+        self.assertTrue(self.c.reported_to_halden);self.assertFalse(self.c.resolved)
+        self.assertEqual(self.g.quests.status(MILL_QUEST),'active')
+        self.assertFalse(self.g.regent_arrival.active)
+        self.reload();self.assertTrue(self.c.reported_to_halden)
+        home=self.c.sanctuary_return
+        self.g.world=home.dining
+        self.g.player.position.update(self.clear_position(home.dining,home.serene.position+(-24,12)))
+        self.until(lambda:home.ready)
+        self.g.social.blocked.clear();self.assertTrue(self.g.social.start(home.serene));self.read_all()
         self.assertTrue(self.c.resolved);self.assertEqual(self.g.quests.status(MILL_QUEST),'completed')
         self.reload();self.assertTrue(self.c.resolved)
         self.assertEqual(sum(self.c.mira in w.npcs for w in self.g.scenes.values()),1)

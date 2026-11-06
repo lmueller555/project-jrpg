@@ -1,4 +1,4 @@
-"""One-shot, present-day arrival of Aldric's relief caravan after the mill.
+"""One-shot arrival after Caelan returns to help at the sanctuary.
 
 Only the pending/seen receipt is durable. Shots, reading positions, art clocks
 and audio belong to this view; the exploration world never advances behind it.
@@ -359,7 +359,7 @@ class RegentArrival:
         self.bird_audio.update(0 if paused else seconds, snapshot, paused=paused)
         if paused:return
         self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
-        if (self.shot == 'mill_close' and self.fade_alpha
+        if (self.shot == 'sanctuary_close' and self.fade_alpha
                 and not self._music_transition_started):
             self._music_transition_started = True
             self.game.music.play('royalty', fade_ms=1000)
@@ -371,6 +371,10 @@ class RegentArrival:
         self.active = False;self.paused = False;self.state = 'seen';self.finished_reason = reason
         self.game._mouse_held = False;self.game.social.clear_pointer()
         self.game.player.moving = False
+        # The homecoming owns the same family actors only until the arrival
+        # is seen. Release its poses before MQ03 stages the visitors' welcome.
+        homecoming = getattr(self.game.mill_quest, 'sanctuary_return', None)
+        if homecoming is not None:homecoming.release()
         self.game.regent_quest.restore(self.game.regent_quest.to_dict())
         self.game.music.set_paused(not self.game._music_focused)
         self.game.music.set_ducked(False)

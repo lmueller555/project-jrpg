@@ -233,6 +233,33 @@ class Capture:
             self.key(pygame.K_SPACE)
             if self.c.active:return
 
+    def _homecoming(self):
+        """Walk home and acknowledge the actual cup-setting quest ending."""
+        g = self.g
+        assert g.mill_quest.reported_to_halden
+        assert g.quests.status(MILL_QUEST) == 'active'
+        assert self.c.state == 'waiting'
+        self._at_regent('preparations')
+        homecoming = g.mill_quest.sanctuary_return
+        self.until(lambda:homecoming.ready,'sanctuary preparations',recording=False)
+        assert g.world is homecoming.dining
+        self.snapshot('sanctuary_before_help.png')
+        if not g.social.active:self.key(pygame.K_e)
+        for _ in range(FPS*120):
+            if self.c.active:break
+            if g.social.active:
+                assert g.social.script_identifier in ('mill_sanctuary_return','mill_sanctuary_setting')
+                self.read_social(g.social.script_identifier)
+            else:self.frame()
+        else:raise AssertionError('Sanctuary ending did not start the arrival')
+        assert g.mill_quest.cups_placed
+        self.start_station = list(g.player.position)
+        self.start_world = g.world
+        self.fixture['arrival_witness_station'] = self.start_station
+        self.fixture['arrival_witness_room'] = self.start_world.data['id']
+        self.mark('sanctuary_ending_complete',player=self.start_station,
+                  world=self.start_world.data['id'])
+
     def accessibility_snapshot(self, filename, size=(480,320), scale=1.5):
         old_size = self.g.window.get_size()
         old_scale = self.g.audio.text_scale
@@ -501,7 +528,7 @@ class Capture:
         self.key(pygame.K_e)
         assert self.g.social.script_identifier == 'mill_resolution'
         self.read_social('mill_resolution')
-        self.until(lambda:self.c.active,'arrival after MQ02 report')
+        self._homecoming()
         assert self.g.quests.status(MILL_QUEST) == 'completed'
         assert self.g.quests.status(REGENT_QUEST) == 'available'
         self.frozen = self.world_signature()
@@ -510,9 +537,9 @@ class Capture:
         assert self.g.quests.status(REGENT_QUEST) == 'available'
         assert self.g.regent_quest.stage == 'idle'
         assert list(self.g.player.position) == self.start_station
-        assert self.g.world is self.g.town
+        assert self.g.world is self.start_world
         self.hold(.6)
-        self.snapshot('return_to_mill.png')
+        self.snapshot('return_to_sanctuary.png')
         assert self.g.inventory.to_dict() == self.pending_inventory
         self._finish_video()
         party_before_accept = [{'actor':actor.data['id'],'position':list(actor.position),
@@ -534,7 +561,7 @@ class Capture:
             'events':self.events,'screenshots':self.screenshots,'dialogue':self.dialogue,
             'world_freeze_checks':self.freeze_checks,'pause_and_focus_verified':self.pause_check,
             'accessibility':self.accessibility,'mq02_completed':True,'mq03_available_after_cinematic':True,
-            'caelan_restored_to_report_station':True,'report_station':self.start_station,
+            'caelan_restored_to_sanctuary_station':True,'sanctuary_station':self.start_station,
             'caravan_visible_before_acceptance':party_before_accept,'mq03':quest,
             'persistence':persistence,'music':self.music_evidence,'render_input_sha256':hashes,
             'captures':{path.name:hashlib.sha256(path.read_bytes()).hexdigest()
@@ -547,7 +574,7 @@ class Capture:
 These are production Game renders and ordinary event-driven quest/cinematic input.
 A temporary fixture completes MQ01 and MQ02's earlier mill repair/verification,
 leaving the report unread. It uses a legitimate legacy repair bypass, without
-inventing battle victory or rewards. The final mill report, arrival, all six
+inventing battle victory or rewards. The mill report, sanctuary cup setting, arrival, all six
 revised MQ03 scenes, NPC movement, cart release and door transfers are played.
 No cinematic clock or progression checkpoint is assigned during capture.
 
