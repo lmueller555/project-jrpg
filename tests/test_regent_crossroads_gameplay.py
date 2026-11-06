@@ -125,7 +125,7 @@ class RegentCrossroadsGameplayTests(unittest.TestCase):
         self.g.update(5., (1, 1), True)
         self.assertTrue(scene.active)
         self.assertFalse(scene.focused)
-        self.assertEqual((scene.shot, scene.phase_time, scene.elapsed), ('mill_close', 0., 0.))
+        self.assertEqual((scene.shot, scene.phase_time, scene.elapsed), ('sanctuary_close', 0., 0.))
         self.assertEqual(world_state(self.g), before)
         self.assertTrue(self.g.music.paused)
         key(self.g, pygame.K_SPACE)

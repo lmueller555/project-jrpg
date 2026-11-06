@@ -1,4 +1,4 @@
-"""The real mill report commits one arrival without moving its player witness."""
+"""The sanctuary homecoming commits one arrival and preserves its witness."""
 import copy
 import json
 import os
@@ -16,7 +16,7 @@ import pygame
 from main import Game
 from quests import MILL_QUEST, REGENT_QUEST
 from regent_arrival import ArrivalAudio, RegentArrival
-from test_mill_battle_gameplay import key, click, seed_mill_handoff
+from test_mill_battle_gameplay import key, click, read_social, seed_mill_handoff
 
 
 def seed_mill_report(game):
@@ -24,7 +24,8 @@ def seed_mill_report(game):
     seed_mill_handoff(game)
     assert game.accept_quest(MILL_QUEST)
     for record in game.quests.definitions[MILL_QUEST]['objectives']:
-        if record['id'] != 'report':assert game.quests.complete_objective(MILL_QUEST, record['id'])
+        if record['id'] == 'report':break
+        assert game.quests.complete_objective(MILL_QUEST, record['id'])
     assert game.mill_quest.restore({'version':1,'inspected':['mechanism','race','intake'],
         'prepared':True,'spell_done':True,'encouraged':True,'restored':True,
         'verified':True,'resolved':False})
@@ -40,11 +41,26 @@ def seed_mill_report(game):
 
 
 def acknowledge_report(game):
+    """Acknowledge Halden, then play the real sanctuary ending and cup action."""
     assert game.mill_quest._speak('resolution', game.mill_quest._resolve)
-    for _ in range(100):
-        if not game.social.active:break
-        key(game, pygame.K_SPACE)
+    read_social(game)
     assert not game.social.active
+    assert game.regent_arrival.state == 'waiting'
+    assert game.quests.status(MILL_QUEST) != 'completed'
+    homecoming = game.mill_quest.sanctuary_return
+    game.world = homecoming.dining
+    preferred = pygame.Vector2(288, 148)
+    clear = next((preferred+offset
+                  for offset in ((0,0),(0,12),(12,0),(-12,0),(0,-12),(24,0))
+                  if homecoming.dining.can_stand(preferred+offset)), None)
+    assert clear is not None
+    game.player.position.update(clear);game.camera.reset()
+    for _ in range(1000):
+        if homecoming.ready:break
+        game.update(.05, (0,0), False)
+    assert homecoming.ready
+    assert game.mill_quest.try_conversation(homecoming.serene)
+    read_social(game)
     assert game.regent_arrival.state == 'pending'
 
 
@@ -87,7 +103,21 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(self.g.quests.status(REGENT_QUEST),'locked')
         self.assertFalse(self.g.regent_arrival.request())
 
-    def test_report_receipt_and_completed_mill_are_saved_together(self):
+    def test_acknowledged_halden_report_waits_for_the_sanctuary_ending(self):
+        inventory = self.g.inventory.to_dict()
+        self.assertTrue(self.g.mill_quest._speak('resolution',self.g.mill_quest._resolve))
+        read_social(self.g)
+        self.assertTrue(self.g.mill_quest.reported_to_halden)
+        self.assertEqual(self.g.quests.status(MILL_QUEST),'active')
+        self.assertEqual(self.g.quests.status(REGENT_QUEST),'locked')
+        self.assertEqual(self.g.regent_arrival.state,'waiting')
+        self.assertFalse(self.g.regent_arrival.active)
+        self.assertEqual(self.g.inventory.to_dict(),inventory)
+        saved = json.loads(self.path.read_text())
+        self.assertTrue(RegentArrival.valid_journey(saved))
+        self.assertEqual(saved['regent_arrival'],{'version':1,'state':'waiting'})
+
+    def test_sanctuary_ending_and_completed_mill_receipt_are_saved_together(self):
         acknowledge_report(self.g)
         saved = json.loads(self.path.read_text())
         self.assertEqual(saved['regent_arrival'],{'version':1,'state':'pending'})
@@ -100,6 +130,8 @@ class RegentArrivalTests(unittest.TestCase):
 
     def test_skip_preserves_player_and_repair_and_reveals_caravan_without_accepting(self):
         scene = self.start()
+        self.assertEqual(self.g.world.data['id'],'sanctuary_dining')
+        self.assertEqual(scene.shot,'sanctuary_close')
         before = (self.g.world,tuple(self.g.player.position),self.g.inventory.to_dict(),set(self.g.social.flags))
         click(self.g,scene.skip_rect.center)
         self.assertFalse(scene.active);self.assertEqual(scene.state,'seen')
@@ -113,17 +145,34 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertEqual(json.loads(self.path.read_text())['regent_arrival']['state'],'seen')
         self.assertFalse(scene.finish('skipped'))
 
-    def test_direct_travel_api_is_blocked_until_arrival_finishes(self):
+    def test_direct_door_api_is_blocked_until_arrival_finishes(self):
         scene = self.start()
-        link = next(link for link in self.g.town.data['world_links'] if link['id']=='town_to_upstream')
-        self.g.player.position.update(link['position']);self.g.transfer_cooldown=0
+        dining = self.g.world
+        door = dining.doors[0]
+        self.g.transfer_cooldown=0
         self.assertTrue(self.g.household_action)
-        self.assertFalse(self.g.travel_link(link))
-        self.assertIs(self.g.world,self.g.town)
+        self.assertFalse(self.g.enter(door))
+        self.assertIs(self.g.world,dining)
         scene.finish('skipped')
         self.assertFalse(self.g.household_action)
-        self.assertTrue(self.g.travel_link(link))
-        self.assertIs(self.g.world,self.g.mill_quest.upstream)
+        self.assertTrue(self.g.enter(door))
+        self.assertEqual(self.g.world.data['id'],'sanctuary_hall')
+
+    def test_opening_and_return_render_the_actual_sanctuary_room(self):
+        scene = self.start()
+        dining = self.g.world
+        position = tuple(self.g.player.position)
+        for shot in ('sanctuary_close','return'):
+            with self.subTest(shot=shot):
+                scene.phase_index=next(i for i,p in enumerate(scene.data['phases']) if p['id']==shot)
+                scene.phase_time=0
+                with patch.object(dining,'draw',wraps=dining.draw) as room_draw, \
+                        patch.object(self.g.town,'draw',wraps=self.g.town.draw) as town_draw:
+                    self.g.draw()
+                room_draw.assert_called_once()
+                town_draw.assert_not_called()
+                self.assertIs(self.g.world,dining)
+                self.assertEqual(tuple(self.g.player.position),position)
 
     def test_skip_while_paused_resumes_world_music_and_stops_owned_effects(self):
         scene = self.start();key(self.g,pygame.K_ESCAPE)
@@ -141,7 +190,7 @@ class RegentArrivalTests(unittest.TestCase):
         self.assertTrue(loaded.has_saved_journey)
         self.assertTrue(loaded.begin_journey(True))
         self.assertTrue(loaded.regent_arrival.active)
-        self.assertEqual(loaded.regent_arrival.shot,'mill_close')
+        self.assertEqual(loaded.regent_arrival.shot,'sanctuary_close')
         self.assertEqual(loaded.regent_arrival.dialogue_index,0)
         self.assertEqual(loaded.inventory.to_dict(),inventory)
         self.assertEqual(tuple(loaded.player.position),position)

@@ -1,0 +1,214 @@
+{
+  "unseeded_new_game": true,
+  "disposable_journey_and_settings": true,
+  "normal_player_files_untouched": true,
+  "quest_completed_at_sanctuary": true,
+  "reported_to_halden": true,
+  "cups_placed_after_destination_dialogue": true,
+  "movie": {
+    "file": "sanctuary_handoff.mp4",
+    "fps": 20,
+    "frames": 2754,
+    "seconds": 137.7
+  },
+  "cup_action_frames": 192,
+  "stills": [
+    "mill_farewell.png",
+    "sanctuary_checkin.png",
+    "setting_tables.png",
+    "carrying_cups.png",
+    "holding_cups_dialogue.png",
+    "cups_placed.png",
+    "sanctuary_fade.png",
+    "aerial_arrival.png",
+    "mq03_invitation.png"
+  ],
+  "observed_state_transitions": [
+    [
+      "eldenmere.playable",
+      false,
+      false,
+      false,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "eldenmere.playable",
+      true,
+      false,
+      false,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_hall",
+      true,
+      false,
+      false,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      false,
+      false,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      true,
+      false,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      true,
+      true,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      false,
+      true,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      true,
+      true,
+      false,
+      false,
+      "waiting"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      false,
+      false,
+      true,
+      true,
+      "pending"
+    ],
+    [
+      "sanctuary_dining",
+      true,
+      false,
+      false,
+      true,
+      true,
+      "seen"
+    ]
+  ],
+  "sanctuary_return": [
+    {
+      "speaker": "serene",
+      "text": "There you are. How’s the mill?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "Turning again. There was a limb caught across the intake. Mira and I cleared it."
+    },
+    {
+      "speaker": "serene",
+      "text": "Good. Halden must be relieved."
+    },
+    {
+      "speaker": "caelan",
+      "text": "He stood listening to it for a while."
+    },
+    {
+      "speaker": "serene",
+      "text": "*smiles* I can imagine."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Is there anything left to do here? I said I’d help this morning."
+    },
+    {
+      "speaker": "tomas",
+      "text": "The tables are finished, we're just setting them if you can grab the cups."
+    },
+    {
+      "speaker": "serene",
+      "text": "You could bring those clean ones over, if you have a moment."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Yep, on it."
+    }
+  ],
+  "sanctuary_setting": [
+    {
+      "speaker": "caelan",
+      "text": "Are these for tomorrow?"
+    },
+    {
+      "speaker": "serene",
+      "text": "For our visitors today. Regent Aldric is coming with his party."
+    },
+    {
+      "speaker": "caelan",
+      "text": "About the bridge?"
+    },
+    {
+      "speaker": "serene",
+      "text": "The road repairs, yes. He’s asked to speak with me while he’s here."
+    },
+    {
+      "speaker": "tomas",
+      "text": "Do we have to bow?"
+    },
+    {
+      "speaker": "serene",
+      "text": "A greeting will do."
+    },
+    {
+      "speaker": "tomas",
+      "text": "*relieved* Good."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Where do you want these?"
+    },
+    {
+      "speaker": "serene",
+      "text": "Beside the jug, please. Thank you, love."
+    }
+  ],
+  "mq03_invitation": [
+    {
+      "speaker": "serene",
+      "text": "They're here. Caelan, would you meet them by the lower bridge? Bring them in when they're ready."
+    },
+    {
+      "speaker": "caelan",
+      "text": "Of course."
+    }
+  ],
+  "arrival_skip_retained_player_location": [
+    252.0,
+    200.0
+  ],
+  "post_cinematic_scene": "sanctuary_dining",
+  "mq03_accepted_separately": "active",
+  "one_serene": 1,
+  "one_tomas": 1,
+  "one_gift": 1,
+  "saved_journey_valid": true
+}

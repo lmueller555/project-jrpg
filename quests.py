@@ -226,6 +226,14 @@ class QuestLog:
             if identifier == MILL_QUEST and route and 'reach_intake' in done:
                 if not any(key in done for key in route):
                     done = [*done, *route]
+            # The mill formerly ended at Halden. Completed journeys retain
+            # their ending and any subsequent visit; a ready report can still
+            # play the newly added return home before receiving completion.
+            former_ending = record.get('legacy_completion_objectives', [])
+            if (identifier == MILL_QUEST and former_ending
+                    and len(done) == len(former_ending) and set(done) == set(former_ending)):
+                if status == 'completed':done = [*done, 'return_sanctuary']
+                elif status == 'ready':status = 'active'
             done_set = set(done)
             ids = {item['id'] for item in record['objectives']}
             if len(done_set) != len(done) or not done_set <= ids:

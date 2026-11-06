@@ -15,6 +15,7 @@ from npc_routines import find_path
 from npc_following import following_facing, idle_following_facing, reset_following_facing
 from quests import MILL_QUEST, REGENT_QUEST, QuestLog
 from social import facing_toward
+from sanctuary_return import SanctuaryReturn
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/mill/'
@@ -22,7 +23,8 @@ REPAIR_FACTS = ('prepared', 'spell_done', 'encouraged', 'restored', 'verified', 
 ENCOUNTER_FACTS = ('warned', 'encounter_cleared', 'aftermath_done', 'legacy_bypass')
 FACTS = (*REPAIR_FACTS, *ENCOUNTER_FACTS)
 OBJECTIVES = ('meet_mira', 'diagnose_mill', 'prepare_journey', 'secure_trail', 'reach_intake', 'prepare_intake',
-              'small_spell', 'repair_intake', 'verify_mill', 'report')
+              'small_spell', 'repair_intake', 'verify_mill', 'report', 'return_sanctuary')
+RETURN_FACTS = ('reported_to_halden', 'cups_placed')
 
 
 def read(name):return json.loads((ROOT/ART/name).read_text())
@@ -43,6 +45,8 @@ class MillQuest:
         self.bench_position = tuple(self.mira.position)
         self.inspected = set()
         for fact in FACTS:setattr(self, fact, False)
+        self.reported_to_halden = self.cups_placed = False
+        self.sanctuary_return = SanctuaryReturn(game)
         self.action = None;self.action_time = 0.;self.align_time = 0.
         self.dialogue = None;self.paths = {};self.retry = {}
         self.trail = deque(maxlen=1024);self.last_scene = None
@@ -88,7 +92,8 @@ class MillQuest:
     def spell_focus(self):
         return 'water' if self.uses_gearblade and (self.action == 'spell' or self.spell_done) else None
     @property
-    def locks_player(self):return self.action is not None or self.encounter_cutscene_active
+    def locks_player(self):
+        return self.action is not None or self.encounter_cutscene_active or self.sanctuary_return.locks_player
     @property
     def encounter_cutscene_active(self):return getattr(self, '_encounter_phase', None) is not None
     @property
@@ -99,12 +104,12 @@ class MillQuest:
     def combat_unlocked(self):return self.encounter_cleared or self.legacy_bypass
     @property
     def mira_armed(self):
-        return ((self.active or self._returning) and self._done('meet_mira')
+        return (((self.active and not self.reported_to_halden) or self._returning) and self._done('meet_mira')
                 and not self.legacy_bypass
                 and ('intake' not in self.inspected or self.restored))
     @property
     def mira_weapon_stowed(self):
-        return (self.active and self._done('meet_mira') and not self.legacy_bypass
+        return (self.active and not self.reported_to_halden and self._done('meet_mira') and not self.legacy_bypass
                 and 'intake' in self.inspected and not self.restored)
     @property
     def encounter_pending(self):
@@ -132,6 +137,8 @@ class MillQuest:
     def stage(self):
         if self.resolved:return 'completed'
         if not self.active:return self.game.quests.status(MILL_QUEST)
+        if self.reported_to_halden:
+            return 'sanctuary_setting' if self.sanctuary_return.holding_cups else 'return_sanctuary'
         if self.verified:return 'report'
         if self.restored:return 'return_mill'
         if not self._done('diagnose_mill'):return 'diagnose'
@@ -148,8 +155,14 @@ class MillQuest:
     def _complete(self, objective):return self.game.quests.complete_objective(MILL_QUEST, objective)
 
     def to_dict(self):
-        return {'version': 2, 'inspected': [key for key in ('mechanism', 'race', 'intake') if key in self.inspected],
-                **{key: bool(getattr(self, key)) for key in FACTS}}
+        result = {'version': 2, 'inspected': [key for key in ('mechanism', 'race', 'intake') if key in self.inspected],
+                  **{key: bool(getattr(self, key)) for key in FACTS}}
+        # Optional extension leaves older untouched/completed journeys intact.
+        # Only the acknowledged report and final physical placement are saved;
+        # a partially read scene or an unfinished carry never becomes a receipt.
+        if self.reported_to_halden:
+            result.update(reported_to_halden=True, cups_placed=self.cups_placed)
+        return result
 
     @staticmethod
     def migrate_snapshot(data):
@@ -174,13 +187,19 @@ class MillQuest:
                     or not isinstance(data.get('inspected'), list)):
                 return False
             data = MillQuest.migrate_snapshot(data)
-        if (not isinstance(data, dict) or set(data) != {'version', 'inspected', *FACTS} or
+        base = {'version', 'inspected', *FACTS}
+        if (not isinstance(data, dict) or set(data) not in (base, base | set(RETURN_FACTS)) or
                 type(data['version']) is not int or data['version'] != 2 or
                 not isinstance(data['inspected'], list) or
                 any(not isinstance(i, str) or i not in ('mechanism', 'race', 'intake') for i in data['inspected']) or
                 len(set(data['inspected'])) != len(data['inspected']) or
                 any(type(data[key]) is not bool for key in FACTS)):
             return False
+        if 'reported_to_halden' in data:
+            if (any(type(data[key]) is not bool for key in RETURN_FACTS)
+                    or data['reported_to_halden'] and not data['verified']
+                    or data['cups_placed'] and not data['reported_to_halden']
+                    or data['cups_placed'] != data['resolved']):return False
         previous = 'intake' in data['inspected']
         for key in REPAIR_FACTS:
             if data[key] and not previous:return False
@@ -211,8 +230,9 @@ class MillQuest:
         if done('prepare_journey') != (record['warned'] or record['legacy_bypass']):return False
         if done('secure_trail') != (record['encounter_cleared'] or record['legacy_bypass']):return False
         pairs = [('prepared', 'prepare_intake'), ('spell_done', 'small_spell'),
-                 ('restored', 'repair_intake'), ('verified', 'verify_mill'), ('resolved', 'report')]
+                 ('restored', 'repair_intake'), ('verified', 'verify_mill'), ('resolved', 'return_sanctuary')]
         if any(record[fact] != done(objective) for fact, objective in pairs):return False
+        if 'reported_to_halden' in record and record['reported_to_halden'] != done('report'):return False
         if done('reach_intake') != ('intake' in record['inspected']):return False
         if done('diagnose_mill') and not {'mechanism', 'race'} <= set(record['inspected']):return False
         if record['resolved'] != (status == 'completed'):return False
@@ -226,6 +246,7 @@ class MillQuest:
                         and self.active and self.game.world is self.upstream)
         data = self.migrate_snapshot(data) if data is not None else None
         self.release_pose();self.action = None;self.action_time = 0.;self.align_time = 0.
+        self.sanctuary_return.reset()
         self.dialogue = None;self.paths.clear();self.retry.clear();self.trail.clear();self.last_scene = None
         self._player_route = None
         self._return_dialogue = None;self._encounter_callback = None
@@ -247,21 +268,26 @@ class MillQuest:
             for fact in FACTS:setattr(self, fact, inferred[fact])
             if self._done('diagnose_mill'):self.inspected.update(('mechanism', 'race'))
             if self._done('reach_intake'):self.inspected.add('intake')
-        self.mira.end_conversation();self.mira.quest_mode = self.active
-        self.mira.story_following = self.active;self.mira.moving = False
+        self.reported_to_halden = bool(data and data.get('reported_to_halden', self._done('report') and not self.resolved))
+        self.cups_placed = bool(data and data.get('cups_placed', False))
+        escort = self.active and not self.reported_to_halden
+        self.mira.end_conversation();self.mira.quest_mode = escort
+        self.mira.story_following = escort;self.mira.moving = False
         self._returning = False
         if old_upstream or self.encounter_pending and self.game.world is self.upstream:
             # Old pre-intake checkpoints may stand beyond the new approach.
             # Rejoin that safe approach rather than strand the new objective.
             self.game.player.position.update(self.upstream.data['spawn'])
             self.game.player.facing = 'back'
-        if self.active:
+        if escort:
             landing = self._near_player()
             if landing is not None:self._place_mira(self.game.world, landing)
         else:
             self._place_mira(self.town, self.bench_position)
             self.mira.quest_mode = False;self.mira.story_following = False
         if self.restored:self._stage_halden(force=True)
+        self.sanctuary_return.restore(reported=self.reported_to_halden,
+                                      placed=self.cups_placed, complete=self.resolved)
         self._sync_props();self._sync_mill()
         return True
 
@@ -339,16 +365,23 @@ class MillQuest:
 
     def can_speak(self, identifier):
         if identifier in ('mira_worker', 'halden') and (self.action or self.encounter_cutscene_active):return False
+        if (self.reported_to_halden and self.active and identifier in ('mother_serene', 'tomas')
+                and self.sanctuary_return.action_active):return False
         return True
 
     def marker_for(self, identifier):
         if identifier == 'mira_worker':
             return '!' if self.game.quests.status(MILL_QUEST) == 'available' else None
-        if identifier == 'halden' and self.active:return '?' if self.verified else None
+        if identifier == 'halden' and self.active:return '?' if self.verified and not self.reported_to_halden else None
+        if identifier == 'mother_serene' and self.active and self.reported_to_halden:return '?'
         return NotImplemented
 
     def try_conversation(self, actor):
         if self.encounter_cutscene_active:return False
+        if self.reported_to_halden and self.active:
+            if actor is self.sanctuary_return.serene:return self._sanctuary_conversation()
+            if actor is self.mira:return self._speak('after')
+            if actor is self.halden:return self._speak('halden_after')
         if actor is self.mira:
             status = self.game.quests.status(MILL_QUEST)
             if status == 'available':return self._speak('reunion', self._recruit)
@@ -393,7 +426,10 @@ class MillQuest:
         self._save()
 
     def _target(self):
-        if self.action or not self.active:return None
+        if self.action or self.sanctuary_return.action_active or not self.active:return None
+        if self.reported_to_halden:
+            if self._near_serene():return 'sanctuary_return', 'E: Speak with Mother Serene'
+            return None
         if self.stage == 'warning' and self._near(self.mira.position, 84):
             return 'warning', 'E: Hear Mira before leaving town'
         if self.stage == 'aftermath' and self._near(self.mira.position, 84):
@@ -445,6 +481,7 @@ class MillQuest:
                     and self._near(self.mira.position, 36)):
                 return self._speak('reunion', self._recruit)
             return False
+        if target[0] == 'sanctuary_return':return self._sanctuary_conversation()
         if not self._with_mira():return False
         kind = target[0]
         if kind == 'warning':return self._speak('warning', self._warned)
@@ -670,22 +707,54 @@ class MillQuest:
             self.verified = True;self._complete('verify_mill');self._save()
 
     def _resolve(self):
-        if not self.active or not self.verified:return
-        self._complete('report')
-        if not self.game.quests.turn_in(MILL_QUEST, 'mira_worker'):return
-        self.resolved = True;self.game.social.flags.add('CH01_MQ02_COMPLETE')
-        self.game.quests.unlock(REGENT_QUEST)
-        # The receipt is checkpointed with the completed repair and rewards.
-        # Playback begins only after this fully acknowledged report releases UI.
-        self.game.regent_arrival.request()
+        if not self.active or not self.verified or self.reported_to_halden:return
+        if not self._complete('report'):return
+        self.reported_to_halden = True
         self.mira.end_conversation();self.mira.story_following = True;self._returning = True
+        self.sanctuary_return.prepare()
         self._save()
 
+    def _near_serene(self):
+        scene = self.sanctuary_return
+        return (self.game.world is scene.dining and scene.ready
+                and self._near(scene.serene.position, 52))
+
+    def _sanctuary_conversation(self):
+        if not self.active or not self.reported_to_halden or not self._near_serene():return False
+        if self.sanctuary_return.action_active:return False
+        if self.sanctuary_return.holding_cups:
+            return self._speak('sanctuary_setting', self._place_sanctuary_cups)
+        return self._speak('sanctuary_return', self._collect_sanctuary_cups)
+
+    def _collect_sanctuary_cups(self):
+        if self.active and self.reported_to_halden and self._near_serene():
+            self.sanctuary_return.start_cups(self._sanctuary_cups_ready)
+
+    def _sanctuary_cups_ready(self):
+        if self.active and self.reported_to_halden:
+            self._speak('sanctuary_setting', self._place_sanctuary_cups)
+
+    def _place_sanctuary_cups(self):
+        if self.active and self.reported_to_halden and self.sanctuary_return.holding_cups:
+            self.sanctuary_return.place_cups(self._finish_sanctuary)
+
+    def _finish_sanctuary(self):
+        if not self.active or not self.reported_to_halden or self.resolved:return False
+        if not self.game.quests.complete_and_turn_in(MILL_QUEST, 'return_sanctuary', 'mira_worker'):return False
+        self.cups_placed = self.resolved = True
+        self.game.social.flags.add('CH01_MQ02_COMPLETE')
+        self.game.quests.unlock(REGENT_QUEST)
+        self.game.regent_arrival.request()
+        self.game._mouse_held = False;self.game.social.clear_pointer()
+        self._save()
+        return True
+
     def interaction_hint(self):
+        if self.sanctuary_return.action_active:return 'Helping set the sanctuary table…'
         if self.action:return {'prepare': 'Relieving pressure at the intake…', 'spell': 'Moving the trapped water…', 'repair': 'Freeing the intake screen…'}[self.action]
         target = self._target()
         if target:
-            return target[1] if self._with_mira() else 'Wait for Mira to catch up.'
+            return target[1] if self.reported_to_halden or self._with_mira() else 'Wait for Mira to catch up.'
         return ''
 
     def tracker_text(self):
@@ -701,7 +770,9 @@ class MillQuest:
                 'encouragement': 'Speak with Mira about the successful spell.',
                 'repair_intake': 'Help Mira free the intake screen.',
                 'return_mill': 'Return to the mill with Mira and check the wheel.',
-                'report': 'Speak with Halden and Mira by the mill.'}.get(self.stage, '')
+                'report': 'Speak with Halden and Mira by the mill.',
+                'return_sanctuary': 'Return to Mother Serene in the sanctuary dining room.',
+                'sanctuary_setting': 'Help Serene and Tomas set the table in the sanctuary.'}.get(self.stage, '')
 
     def journal_detail(self):return self.tracker_text()
 
@@ -946,8 +1017,9 @@ class MillQuest:
             self._update_encounter_cutscene(seconds)
             self._sync_props();return
         if self.game.map_open or self.game.quest_ui.journal_open:return
+        self.sanctuary_return.update(seconds)
         if self.dialogue == 'repair_done' and not self._holding_repair_pose():self.release_pose()
-        if self.active:
+        if self.active and not self.reported_to_halden:
             self.mira.quest_mode = True;self.mira.story_following = True
             if self.action:self._action_update(seconds)
             elif self.dialogue or self.game.social.resolve_speaker() is self.mira:self.mira.moving = False
@@ -970,6 +1042,7 @@ class MillQuest:
         self._sync_props()
 
     def draw_world(self, canvas, camera):
+        self.sanctuary_return.draw_world(canvas, camera)
         repairing = self.action == 'repair' and self.action_time>0
         if (not repairing and not self._holding_repair_pose()) or self.game.world is not self.upstream:return
         # Rope joins the approved chest-height grip to the lever Mira holds.

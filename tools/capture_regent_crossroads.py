@@ -548,7 +548,7 @@ def start_pending(game):
     game.overworld_world
     require(game.has_saved_journey and game.begin_journey(True), 'Pending restore failed')
     scene = game.regent_arrival
-    require(scene.active and scene.shot == 'mill_close' and scene.phase_time == 0.,
+    require(scene.active and scene.shot == 'sanctuary_close' and scene.phase_time == 0.,
             'Pending restore did not restart normally')
     return scene
 
@@ -598,7 +598,7 @@ def smoke_checks(directory, pending, completed):
     with disposable_game(replay_dir, title=True) as game:
         scene = start_pending(game)
         require(game.inventory.to_dict() == expected_inventory, 'Reload repeated a reward')
-        results['pending_reload_restarts_at_mill_close'] = {'passed': True,
+        results['pending_reload_restarts_at_sanctuary_close'] = {'passed': True,
                                                            'phase_second': scene.phase_time}
         route = drive_to(game, lambda: scene.shot == PAN_SHOT and scene.phase_time >= .35)
         inventory = copy.deepcopy(game.inventory.to_dict())
@@ -749,7 +749,7 @@ def capture_frames(game, output, temporary, trace, ledger):
     frozen = world_state(game)
     game.handle_events([])
     game.update(0, (0, 0), False)
-    require(scene.active and scene.shot == 'mill_close' and scene.phase_time == 0., 'Missing real arrival start')
+    require(scene.active and scene.shot == 'sanctuary_close' and scene.phase_time == 0., 'Missing real arrival start')
     require(world_state(game) == frozen, 'Starting arrival changed the acknowledged world')
     trace.begin()
     full_path, short_path = temporary/'full_silent.mp4', temporary/'sequence_silent.mp4'
@@ -1058,7 +1058,7 @@ def capture(output):
                                                       for path, samples in trace.samples.items()}}
             write_json(output/'audio_events.json', audio)
             # Additional games are disposable and silent. They use actual input
-            # and updates from mill_close, not staged cinematic checkpoints.
+            # and updates from sanctuary_close, not staged cinematic checkpoints.
             with ledger.observe():
                 smokes = smoke_checks(temporary, pending, completed)
             inputs = ledger.fingerprints()

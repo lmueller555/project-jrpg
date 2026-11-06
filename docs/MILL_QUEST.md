@@ -1,17 +1,19 @@
 # Mira and the mill quest
 
-MQ02's fully acknowledged report now leads into the
-[arrival cinematic](REGENT_ARRIVAL.md), after committing the mill repair and
-ordinary quest rewards. It introduces Aldric's relief caravan before the party
-appears at the lower brook bridge in town. The
-[regional story handoff](narrative/game_01/REGIONAL_SURGES.md) continues into
-MQ03's revised relief, quarry and [covenant](world/SANCTUARY_COVENANT.md)
-discussion. The cinematic returns control to Caelan at the mill; accepting
-MQ03 still requires speaking with Serene inside the sanctuary.
+MQ02 now ends with Caelan returning to help Serene and Tomas inside the
+sanctuary dining room. Halden's acknowledged mill report records the repair
+and releases Mira to her workshop, while the quest remains active. After the
+homecoming conversation and actual cup-setting action finish, the existing
+quest rewards settle once and [Aldric's arrival cinematic](REGENT_ARRIVAL.md)
+plays. It introduces the relief caravan before the party appears at the lower
+brook bridge in town, then returns control to Caelan in the same dining room.
+The [regional story handoff](narrative/game_01/REGIONAL_SURGES.md) continues into
+MQ03's relief, quarry and [covenant](world/SANCTUARY_COVENANT.md) discussion.
+Serene's separate request to meet the visitors accepts MQ03.
 
 `CH01_MQ02` begins after MQ01’s stopped-wheel exchange. Its available marker points to Mira at the existing outdoor workbench before the upper bridge. The revised request leads into her early birthday present for Caelan. Completing the presentation owns/equips the sword once, accepts the quest and records the meeting before the same Mira accompanies him.
 
-The main route is now workshop request and gift, mill diagnosis, armed departure, the riverbank tutorial, linear aftermath, intake inspection, pressure relief, sword-focused water spell, encouragement, cooperative repair and gift thanks, working wheel and Halden’s resolution. Dialogue supplies household/work context and the actual north-road directions; selective emotive cues use literal asterisks.
+The main route is now workshop request and gift, mill diagnosis, armed departure, the riverbank tutorial, linear aftermath, intake inspection, pressure relief, sword-focused water spell, encouragement, cooperative repair and gift thanks, working wheel, Halden’s resolution and the sanctuary homecoming. Dialogue supplies household/work context and the actual north-road directions; selective emotive cues use literal asterisks.
 
 ## The birthday presentation
 
@@ -41,13 +43,39 @@ Inspect the lodged limb and the pressure holding it against the screen. Mira ope
 
 The encouragement follows actual success. Its saved Venn-failure branch lets Caelan be pleased while still wishing he had managed that earlier, heavier task. The direct-tools branch invents no failed spell. After acknowledgment, he grips the haul rope while Mira releases the catch and operates the lever. Only that physical repair removes the limb and restores the intake.
 
-The first post-repair line preserves his held-rope beat; advancing beyond it releases the pose. The same follow-up then lets him thank Mira for bringing the gift early and agree to bring his book to the workshop. That is future intent, not a new appointment or practice objective. Return to inspect the working wheel, then speak with Halden and Mira. The final acknowledgment completes MQ02 before the separate Aldric-arrival cinematic.
+The first post-repair line preserves his held-rope beat; advancing beyond it releases the pose. The same follow-up then lets him thank Mira for bringing the gift early and agree to bring his book to the workshop. That is future intent, not a new appointment or practice objective. Return to inspect the working wheel, then speak with Halden and Mira. Their goodbye gives Caelan a spoken reason to return to the sanctuary and help with the remaining preparations. The mill report is saved separately from MQ02 completion; no arrival cinematic or quest reward starts there.
+
+## Return to the sanctuary
+
+After Halden's report, Mira returns to her workshop and Caelan walks home under
+player control. The final objective directs him to Mother Serene at the
+sanctuary. The existing Serene and Tomas actors are staged inside the dining
+room before arrival, without exposing Aldric's party or enabling MQ03 early.
+Caelan's earlier morning offer to help is remembered without suggesting he
+forgot the tables: Tomas and Serene already took over that work.
+
+`sanctuary_return` closes the mill outing and ends with the exact exchange:
+
+- Tomas: “The tables are finished, we're just setting them if you can grab the cups.”
+- Serene: “You could bring those clean ones over, if you have a moment.”
+- Caelan: “Yep, on it.”
+
+Caelan visibly collects, carries and places the clean cups in a short staged
+action, using the existing character and prop art. `sanctuary_setting` introduces
+the expected regent and moves Tomas's bow question here from MQ03. Both the
+physical placement and Serene's final acknowledged thanks are required before
+MQ02 can complete. Interrupted prose or movement cannot bypass that boundary.
+
+The dining-room view holds and fades into the arrival. The audience sees
+Aldric's approach while Caelan stays at the sanctuary, and the return preserves
+his room and position. Speaking with Serene afterward accepts MQ03 through the
+short welcome-visitors request rather than repeating the preparations.
 
 ## Finding the interactions
 
 The town trail prompt sits at the northern road boundary, beyond the terrace stairs. The return prompt sits at the southern end of the upper millrace road. Both arrivals leave Caelan and Mira on clear ground outside the reverse prompt.
 
-Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. The request and birthday presentation remain beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
+Inspect the mechanism beside the visible wheel and the millrace beside its channel. At the intake, approach the visible screen, bypass handle, water recess and repair lever; the **E** hint appears beside each object. After repairs, inspect the same wheel, then speak with the actual Halden and Mira nearby. The new final conversation is beside Serene inside the sanctuary dining room; matching coordinates outside cannot trigger it. The request and birthday presentation remain beside Mira at her outdoor workbench; encouragement follows Mira rather than an abandoned spell position.
 
 Object interactions measure the gap between Caelan’s ground footprint and the object’s visible bounds, within 20 native pixels. The wheel reads its approved artwork metadata; intake controls read their rendered alpha bounds. Work stations are separate from interaction areas: Caelan walks around solid props into the existing action positions, preserving Mira’s hand contacts and the rope alignment. The corrected layout and both trail endpoints are reproduced by `tools/build_mill_quest.py`.
 
@@ -90,14 +118,15 @@ when the encounter actually occurred.
 | `small_spell` | Completing the successful water movement |
 | `repair_intake` | Completing the cooperative lever repair |
 | `verify_mill` | Observing the working mill and finishing its exchange |
-| `report` | Finishing the closing exchange with Halden and Mira |
+| `report` | Finishing the closing exchange with Halden and Mira; the quest then directs Caelan home |
+| `return_sanctuary` | Finishing the visible cup placement after Serene’s final acknowledged thanks |
 
 The optional version-two `mill_quest` journey record stores `inspected` (from
 `mechanism`, `race`, `intake`) and the boolean facts `prepared`, `spell_done`,
 `encouraged`, `restored`, `verified`, `resolved`, `warned`, `encounter_cleared`,
 `aftermath_done` and `legacy_bypass`. Quest state and these facts
 are validated together. Transient poses, dialogue pointers, movement paths and
-action clocks are rebuilt safely rather than serialized.
+action clocks are rebuilt safely rather than serialized. The final handoff extends the same version-two record with the optional boolean pair `reported_to_halden` and `cups_placed`; both are present together once the Halden report is recorded. Older records may omit both. The report objective commits the first fact without marking `resolved`, while the new `return_sanctuary` objective finishes only after Serene’s final acknowledged instruction and the physical cup placement. Reloading between these boundaries does not repeat the mill report or complete unread dialogue.
 
 The pressure-easing and water-returning dialogue follows the actual bypass and repair actions. These follow-ups do not undo completed work if canceled or interrupted.
 
@@ -105,7 +134,7 @@ The successful spell is checkpointed before the encouragement. Leaving that
 exchange unread preserves it without replaying the spell. Completed repairs
 stay repaired while the player travels or reloads. Interrupted actions resume
 from a safe unfinished stage. Pause and inventory freeze action clocks; ordinary
-dialogue remains live and cancelable. New Game resets Mira and all mill facts.
+dialogue remains live and cancelable. New Game resets Mira and all mill facts. Carrying or holding the cups is transient: an interrupted unfinished sequence reloads safely before the introduction and carry. Already-completed older MQ02 journeys retain their result; quest migration adds the new final objective as completed without replaying the homecoming, arrival or rewards. The new state never reopens MQ02 for an existing completed journey.
 
 Older saves at the available Mira handoff remain valid and can receive the presentation. Already-active/completed MQ02 journeys preserve their prior progress without a forced retroactive gift or replayed fight. When those journeys do not own `caelan_gearblade`, `_speak` chooses the matching `legacy_*` arrays for weapon-dependent aftermath, spell, encouragement, repair follow-up and later replies. Their words do not claim an elemental lesson or birthday gift that never occurred. The committed legacy arrays retain the prior route’s facts and body registration.
 

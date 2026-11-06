@@ -67,7 +67,7 @@ class RegentAerialAudioIntegrationTests(unittest.TestCase):
         channel.stop()
 
     def test_travel_sound_matches_actual_ground_motion_and_stops_for_greeting(self):
-        self.assertEqual(self.scene.shot, 'mill_close')
+        self.assertEqual(self.scene.shot, 'sanctuary_close')
         self.assertIsNone(self.scene._audio_mode())
         self.until(lambda:(self.scene.aerial_snapshot() or {}).get('ground_handoff', False))
         before = self.scene.aerial_snapshot()

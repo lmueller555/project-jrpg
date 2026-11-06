@@ -123,7 +123,7 @@ def smoke_checks(directory, pending, completed, output):
     game = make_game(directory,title=True)
     assert game.begin_journey(True) and game.regent_arrival.active
     scene = game.regent_arrival
-    assert scene.shot == 'mill_close'
+    assert scene.shot == 'sanctuary_close'
     advance_until(game,lambda:scene.shot == 'aerial_region' and scene.phase_time > 1)
     before = (scene.elapsed,scene.phase_time,aerial_sample(scene),world_signature(game))
     key(game,pygame.K_ESCAPE)
@@ -260,7 +260,7 @@ def capture(output, *, prototype=False):
                     words = len(' '.join(scene.caption_lines).split())
                     due = frames/FPS+max(1.7,words*.20)
                     pages.append({'shot':shot,'speaker':scene.dialogue['speaker'],'page':scene.page_index})
-                recording = shot in ('mill_close',*AERIAL_PHASES,'gate_approach') or shot == 'gate_greeting' and scene.phase_time < 2.2
+                recording = shot in ('sanctuary_close',*AERIAL_PHASES,'gate_approach') or shot == 'gate_greeting' and scene.phase_time < 2.2
                 if recording:
                     native = image_frame(game)
                     video.stdin.write(native.tobytes())
