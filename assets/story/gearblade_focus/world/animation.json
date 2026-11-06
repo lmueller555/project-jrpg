@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "canvas": [
+    40,
+    48
+  ],
+  "anchor": [
+    20,
+    38
+  ],
+  "body_pixels": 34,
+  "sequence": [
+    "raise_hand",
+    "move_water",
+    "recover"
+  ],
+  "duration_ms": 2500,
+  "animations": {
+    "raise_hand": {
+      "frames": [
+        {
+          "file": "raise_hand_01.png",
+          "duration_ms": 217
+        },
+        {
+          "file": "raise_hand_02.png",
+          "duration_ms": 217
+        },
+        {
+          "file": "raise_hand_03.png",
+          "duration_ms": 217
+        }
+      ],
+      "duration_ms": 650,
+      "loop": false
+    },
+    "move_water": {
+      "frames": [
+        {
+          "file": "move_water_01.png",
+          "duration_ms": 400
+        },
+        {
+          "file": "move_water_02.png",
+          "duration_ms": 400
+        },
+        {
+          "file": "move_water_03.png",
+          "duration_ms": 400
+        }
+      ],
+      "duration_ms": 1200,
+      "loop": false
+    },
+    "recover": {
+      "frames": [
+        {
+          "file": "recover_01.png",
+          "duration_ms": 325
+        },
+        {
+          "file": "recover_02.png",
+          "duration_ms": 325
+        }
+      ],
+      "duration_ms": 650,
+      "loop": false
+    }
+  },
+  "authored": true,
+  "weapon": "caelan_gearblade",
+  "facing": "right"
+}

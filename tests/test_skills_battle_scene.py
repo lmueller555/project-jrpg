@@ -1,4 +1,4 @@
-"""Skills navigation, encounter ownership and readable self-enchantment UI."""
+"""Skills navigation, encounter ownership and direct spellblade attack UI."""
 import os
 import random
 from types import SimpleNamespace
@@ -120,7 +120,7 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.key(pygame.K_RETURN)
         self.key(pygame.K_RETURN)
         self.assertEqual((self.model.current_action.action, self.model.current_action.target),
-                         ('aether_edge', 'player'))
+                         ('aether_edge', 'enemy'))
         self.assertEqual(self.model.player.mp, before[1][0][1]-4)
         self.assertEqual(self.model.player.atb, 0)
         self.assertEqual(self.scene.command_menu, 'root')
@@ -272,38 +272,23 @@ class SkillsBattleSceneTests(unittest.TestCase):
                                 self.assertGreaterEqual(rect.top, self.scene._party_bottom)
                             self.key(pygame.K_ESCAPE)
 
-    def test_enchant_uses_self_cast_effect_and_blue_popup_with_strike_count(self):
-        self.ready()
-        self.open_skills()
+    def test_edge_uses_an_attack_arc_and_one_enemy_damage_popup_without_charges(self):
+        self.ready();self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)
         self.scene.update(.25)
-        self.assertEqual(self.scene._pose('player')[0], 'cast')
-        enemy_hp = self.model.enemy.hp
-        original = pygame.draw.circle
-        with patch('battle_scene.pygame.draw.circle', wraps=original) as circles:
-            self.draw()
-        self.assertTrue(circles.call_args_list)
-        self.assertTrue(all(abs(call.args[2][0]-354) < 20 for call in circles.call_args_list))
+        self.assertEqual(self.scene._pose('player')[0],'attack')
+        enemy_hp=self.model.enemy.hp
+        with patch('battle_scene.pygame.draw.arc',wraps=pygame.draw.arc) as arcs:self.draw()
+        self.assertTrue(arcs.call_args_list)
         self.scene.update(.25)
-        self.assertEqual(self.model.enemy.hp, enemy_hp)
-        self.assertEqual(self.model.player.aether_edge_hits, 3)
-        self.assertEqual(self.scene._popups[-1]['target'], 'player')
-        for scale in (1.0, 1.5):
+        self.assertLess(self.model.enemy.hp,enemy_hp)
+        self.assertEqual(self.model.player.aether_edge_hits,0)
+        self.assertEqual(self.scene._popups[-1]['target'],'enemy')
+        self.assertEqual(self.scene._popups[-1]['text'],str(self.model.current_action.damage))
+        for scale in (1.,1.5):
             self.game.audio.set_text_scale(scale)
-            records = self.texts()
-            for label in ('Aether Edge', 'Edge · 3 strikes'):
-                rect = next(rect for text, rect, color in records if text == label and color == MP_BLUE)
-                self.assertTrue(self.canvas.get_rect().contains(rect))
-                self.assertTrue(all(not rect.colliderect(value)
-                                    for row in self.scene.party_rows.values() for value in row.values()))
-        self.scene.update(.4)
-        self.model.player.atb = 1
-        self.scene.update(0)
-        self.draw()
-        self.click(self.scene.command_rects['attack'].center)
-        self.scene.update(.36)
-        self.assertEqual(self.model.player.aether_edge_hits, 2)
-        self.assertIn('Edge · 2 strikes', [text for text, _, _ in self.texts()])
+            records=self.texts()
+            self.assertFalse(any('strikes' in text or 'Enchant' in text for text,_,_ in records))
 
 
 if __name__ == '__main__':unittest.main()

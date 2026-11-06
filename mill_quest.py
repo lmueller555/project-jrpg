@@ -61,6 +61,7 @@ class MillQuest:
         self.cast_poses = {name: [sheet.subsurface(f['rect']).copy() for f in rec['frames']]
                            for name, rec in self.cast['animations'].items()}
         self._player_route = None
+        self._gearblade_focus = None
         self._approach_walk_ms = 0.
         mill = next(e for e in self.town.data['entities'] if e['id'] == 'mill')
         wheel = json.loads((ROOT/'assets/terrain/eldenmere/watermill/mill.json').read_text())['wheel']
@@ -81,6 +82,11 @@ class MillQuest:
     def active(self):return self.game.quests.status(MILL_QUEST) in ('active', 'ready')
     @property
     def mill_restored(self):return self.restored
+    @property
+    def uses_gearblade(self):return self.game.inventory.quantity('caelan_gearblade') > 0
+    @property
+    def spell_focus(self):
+        return 'water' if self.uses_gearblade and (self.action == 'spell' or self.spell_done) else None
     @property
     def locks_player(self):return self.action is not None or self.encounter_cutscene_active
     @property
@@ -318,6 +324,7 @@ class MillQuest:
             if callback is not None:callback()
         source = ('aftermath_recovered' if kind == 'aftermath' and self._aftermath_recovered else
                   kind+'_combat' if self.encounter_cleared and kind+'_combat' in self.lines else kind)
+        if not self.uses_gearblade and 'legacy_'+source in self.lines:source='legacy_'+source
         result = self.game.social.start_script(self.lines[source], finished, 'mill_'+kind)
         self.dialogue = kind if result else None
         if result:self.game.social.blocked.add(self.mira)
@@ -369,9 +376,21 @@ class MillQuest:
 
     def _recruit(self):
         if self.game.world is not self.town or not self._near(self.mira.position, 48):return
+        if not self.uses_gearblade:
+            return self.game.mill_gift.start(self.lines['gift'], self._finish_recruit)
+        return self._finish_recruit()
+
+    def _finish_recruit(self):
+        # Acknowledging the complete gift is the single ownership boundary.
+        # The same checkpoint records the weapon, deferred training and escort.
+        if self.game.quests.status(MILL_QUEST) != 'available':return False
+        if not self.uses_gearblade:
+            if not self.game.character_abilities.acquire_weapon('caelan','caelan_gearblade',learn_starter=False):return False
         if not self.game.accept_quest(MILL_QUEST):return
         self._complete('meet_mira');self.mira.quest_mode = True;self.mira.story_following = True
-        self.mira.moving = False;self.trail.clear();self._save()
+        self.mira.moving = False;self.trail.clear()
+        self.game._mouse_held=False;self.game.social.clear_pointer()
+        self._save()
 
     def _target(self):
         if self.action or not self.active:return None
@@ -830,6 +849,13 @@ class MillQuest:
             setattr(self, flag, False)
 
     def _cast_pose(self):
+        if self.uses_gearblade:
+            if self._gearblade_focus is None:
+                from gearblade_art import GearbladeFocus
+                self._gearblade_focus = GearbladeFocus(self.town.image)
+            self._set_pose(self.game.player, self._gearblade_focus.frame(self.action_time),
+                           self._gearblade_focus.anchor)
+            return
         time = self.action_time
         for name in self.cast.get('sequence', self.cast['animations']):
             record = self.cast['animations'][name];duration = record['duration_ms']/1000

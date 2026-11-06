@@ -243,6 +243,7 @@ class MillQuestTests(unittest.TestCase):
     def test_spell_preserves_body_and_visibly_clears_only_the_small_recess(self):
         self.prepare();self.at('spell',True)
         idle=self.g.town.image('assets/characters/caelan/idle_right.png')
+        idle_bounds=idle.get_bounding_rect()
         expected_head=pygame.image.tobytes(idle.subsurface((0,0,24,14)),'RGBA')
         expected_legs=pygame.image.tobytes(idle.subsurface((0,25,24,11)),'RGBA')
         def recess():
@@ -260,8 +261,19 @@ class MillQuestTests(unittest.TestCase):
             art=getattr(self.g.player,'story_sprite',None)
             if art is not None:
                 x,y=self.g.player.story_draw_anchor
-                self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-30,24,14)),'RGBA'),expected_head)
-                self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-5,24,11)),'RGBA'),expected_legs)
+                if self.c.spell_focus == 'water':
+                    # The authored sword poses have their own canvas. Verify
+                    # standing height and foot registration against idle,
+                    # rather than requiring the old bare-handed pixels.
+                    bounds=art.get_bounding_rect()
+                    self.assertLessEqual(abs(bounds.height-idle_bounds.height),4)
+                    self.assertLessEqual(abs((bounds.top-y)-(idle_bounds.top-30)),3)
+                    self.assertLessEqual(abs((bounds.bottom-y)-(idle_bounds.bottom-30)),3)
+                    support=art.subsurface((x-8,y-3,16,8))
+                    self.assertGreater(pygame.mask.from_surface(support).count(),0)
+                else:
+                    self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-30,24,14)),'RGBA'),expected_head)
+                    self.assertEqual(pygame.image.tobytes(art.subsurface((x-12,y-5,24,11)),'RGBA'),expected_legs)
                 checked+=1
         self.assertTrue(self.c.spell_done);self.assertGreater(checked,10)
         self.assertNotEqual(recess(),before)

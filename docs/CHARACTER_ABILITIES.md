@@ -1,92 +1,54 @@
 # Character abilities and weapon unlocks
 
-Caelan's job identity is **Spellblade**. He begins unarmed, with his established
-basic magicks, and learns **Aether Edge** when he first acquires/equips a weapon.
-Aether Edge is his only weapon-granted starter skill. Focused Strike remains an
-existing future Lattice unlock; it is neither granted nor made executable here.
+Caelan is a **Spellblade**. He begins unarmed with his established basic magicks. During MQ02, Mira presents his first weapon before the riverbank outing. His first attempted elemental technique fails; his next attempt produces **Aether Edge**, his only learned starter skill. The smaller sword-focused water spell later in the quest is a deliberate world action, not an Aqua Edge unlock.
 
 ## Character dictionaries
 
-[`assets/abilities/characters.json`](../assets/abilities/characters.json) contains
-separate `skills`, `spells`, and `abilities` dictionaries for Caelan, Mira, Lucan,
-Rhea and Edran. Each entry references a stable ID in the shared
-[`catalog.json`](../assets/abilities/catalog.json) and specifies its unlock:
+[`assets/abilities/characters.json`](../assets/abilities/characters.json) contains separate `skills`, `spells` and `abilities` dictionaries for Caelan, Mira, Lucan, Rhea and Edran. Definitions reference stable IDs in [`catalog.json`](../assets/abilities/catalog.json) and an unlock:
 
 - `starting`: known from the beginning.
-- `first_weapon`: permanently known after the first weapon acquisition/equip.
-- `lattice`: learned from the character's activated Lattice nodes.
+- `first_weapon`: granted by generic weapon acquisition, or held pending by an authored training sequence until its discovery.
+- `lattice`: learned from an activated Lattice node.
 
-The registered identities are Spellblade, Machinist, Knight, Aethermage and Sage,
-respectively. Lucan, Rhea and Edran have empty ability dictionaries until their
-abilities are designed. Mira starts with Overclock and the Rivet capability;
-Rivet's Piston Jab belongs to its separate bot definition. Registration does
-not recruit anyone or grant equipment. Caelan's current Lattice
-abilities retain their IDs, rewards and unlock requirements.
+The identities are Spellblade, Machinist, Knight, Aethermage and Sage. Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future Lattice unlock. `basic_magicks` is an authored-world capability rather than an executable combat skill.
 
-To add an ability, define its shared name/description/kind, register it in the
-appropriate character dictionary, and implement its battle action if applicable.
-Catalog registration alone does not make an unimplemented action executable.
-`basic_magicks` remains an authored-world capability rather than a combat skill.
-Rebuilding Caelan's Lattice preserves shared definitions belonging to weapon
-unlocks and other characters; it does not add those abilities as Lattice nodes.
+Nature Edge, Aqua Edge and Flame Edge have shared catalog definitions for the first lesson. They are temporary attempts, not permanent entries in Caelan’s learned dictionary. The visible white Ice gem does not add an initial Ice Edge command. After the breakthrough, only Aether Edge remains usable until later progression grants other abilities.
+
+## Mira’s Blade
+
+The owned item is `caelan_gearblade`, displayed as **Mira’s Blade**. Its circular gear guard holds four focus gems: green Nature, blue Water, red Fire and white Ice. The grip remains still while the ring selects a focus. The item provides no free attribute bonus or elemental mastery. Caelan supplies the control and effort to direct available aether.
+
+The workshop gift presentation shows the whole blade, handoff, selector and the friends’ reactions with the standard portrait text panel. It grants and equips the item once after acknowledgment. It does not demonstrate a successful elemental spell or immediately expose Aether Edge.
 
 ## Aether Edge
 
 | Property | Initial tuning |
 | --- | --- |
 | Command | Skills → Aether Edge |
-| Requirement | Learned skill and an equipped, owned weapon |
+| Requirement | Learned technique and an equipped, owned weapon |
 | Cost | 4 MP and one normal ATB action |
-| Target | Self |
-| Cast / effect time | 0.90 / 0.50 seconds |
-| Duration | Three subsequent physical weapon strikes in this encounter |
-| Effect | Add a non-elemental Mag-based component at potency 0.5 |
+| Target | One enemy |
+| Duration / impact | 0.90 / 0.50 seconds |
+| Effect | Immediate physical strike at potency 1 plus non-elemental Mag component at potency 0.5 |
 
-The ordinary physical component still uses Str/Def; the added component uses
-Mag/M. Def. Both use the same variance roll and existing protection rules. Their
-sum is one hit, one damage popup and one shared 9,999 damage cap. This introduces
-no elemental affinities or elemental coverage. Recasting refreshes three strikes
-without stacking. Spells, Guard and other actors' attacks do not spend charges.
-Charges end with the battle and are not saved as a persistent buff.
+The physical component uses Str/Def and the magical component uses Mag/M. Def. They share the same variance roll and combine into one hit, one damage popup and one 9,999 per-hit cap. The action does not grant charges, enchant later attacks, fire a projectile or introduce elemental affinities. This deliberately replaces the older three-strike self-enchantment.
 
-The existing cast pose, a blue self-enchantment cue and a remaining-strikes label
-show activation and duration. Aether Edge does not fire a projectile at an enemy.
-Its costs and potency are initial tuning values, kept in
-[`assets/combat/actions.json`](../assets/combat/actions.json).
+The accidental tutorial strike uses the same actual action. It is discovered on the resolved attack’s impact, not on opening Skills or selecting Back. The battle immediately exposes the learned technique; world persistence records the discovery so withdrawal/retry does not repeat it. Costs and potency live in [`assets/combat/actions.json`](../assets/combat/actions.json).
 
-## Combat menu
+## Combat menu and first lesson
 
-The root menu includes **Skills** even when unavailable. During Caelan's unarmed
-MQ02 boar fight it is greyed out; selecting it explains **Requires a weapon**.
-After his weapon unlock, Skills opens a submenu containing Aether Edge and Back.
-Opening or closing the submenu spends no MP or ATB and leaves all gauges paused.
-Back or Escape returns to the root; Escape at the root pauses the battle.
-Switching ready characters or beginning another turn resets the submenu.
+The root menu includes Skills even when unavailable. Before owning a weapon, it explains **Requires a weapon**. With a pending lesson weapon, MQ02’s guided opening first teaches Guard against the telegraphed charge. Caelan’s first skill turn offers Nature Edge, Aqua Edge and Flame Edge; all fail, consuming the ATB turn without an MP penalty. On his **next full ATB**, any of those choices resolves as Aether Edge. The temporary entries disappear, and normal party controls resume with Aether Edge as the only learned starter technique.
 
-Mira's Skills opens Overclock, which requires her active bot and 5 MP rather
-than a weapon. Her bolt launcher and autonomous Rivet replace the former
-short-spear profile. Existing Aether Dart access still requires its Lattice
-unlock and remains independent of weapon equipment. See [Mira's bot rules](MIRA_BOTS.md).
+During the short guided lesson, actor switching and Flee are unavailable; the game points to Guard, then Skills. Mira covers with Guard, and Rivet contributes bounded autonomous attacks. Once discovery completes, ordinary commands, target selection and Mira’s player-controlled turns return. Opening or closing Skills spends no MP or ATB; ordinary choices pause every gauge. Back/Escape leaves the submenu without accidentally consuming an attempt. Escape at the root pauses battle.
+
+Mira’s Skills contains Overclock. It requires her active bot and 5 MP; it gives Rivet Haste for eight completed bot turns at 1.5× ATB fill, refreshing without stacking. Aether Dart still requires its independent Lattice unlock. See [Mira’s bot rules](MIRA_BOTS.md).
 
 ## Acquisition and saved journeys
 
-[`character_abilities.py`](../character_abilities.py) owns permanent first-weapon
-history and equipped weapon references. Game checkpoints it under
-`character_abilities` together with inventory and Lattice state. Older journeys
-without this record continue unarmed with no automatic weapon-skill unlock.
-New Game clears the history. Malformed or unowned equipment is rejected during
-save validation without replacing an existing journey.
+[`character_abilities.py`](../character_abilities.py) owns permanent first-weapon history, deferred training and equipped references. The same version-one `character_abilities` envelope accepts optional `deferred_weapon_training: ["caelan"]`; the key is omitted when there is no pending lesson. Old first-weapon history retains its already-known technique. New Game clears history, equipment and deferral. Malformed or unowned equipment is rejected during validation without replacing a journey.
 
-Future story acquisition calls `game.acquire_weapon('caelan', item_id)` with a
-real weapon ID from the item catalog. This adds/equips the weapon and learns
-Aether Edge in one operation. `game.equip_weapon(character_id, item_id)` equips
-an already owned weapon; `None` unequips it. Unequipping retains the permanent
-unlock but prevents using Aether Edge. Equipment reserves owned item quantities
-across characters. Loadout changes are blocked during combat.
+Generic `CharacterAbilities.acquire_weapon(character_id, item_id, learn_starter=True)` preserves immediate starter learning. The MQ02 gift uses `learn_starter=False`: the owned weapon and first-weapon receipt exist, but `starter_skills_pending('caelan')` remains true. Reequipping or unequipping cannot bypass that deferral. `learn_first_weapon_skills('caelan')` commits the earned discovery idempotently and requires an owned, equipped weapon; it never grants another item.
 
-There is currently no weapon item or scripted weapon-acquisition scene in the
-opening content. This foundation supplies that future scene's grant hook; it
-does not give Caelan a weapon before the boar fight or add an acquisition quest.
+`game.equip_weapon(character_id, item_id)` equips an already-owned weapon; `None` unequips it. Unequipping a learned technique retains knowledge but prevents weapon-required use. Equipment reserves inventory quantities across characters, and loadout changes remain blocked during combat.
 
-The [combat UI review](reviews/character_skills/README.md) contains production
-screenshots and regression evidence, with its test-only weapon clearly labeled.
+Older active/completed MQ02 journeys preserve prior progress without a forced retroactive birthday scene. Their weaponless route uses compatibility dialogue rather than claiming a gift or elemental discovery that did not occur. New available quests receive the presentation before recruitment. Save/retry paths never duplicate the gift, learned technique or encounter rewards.

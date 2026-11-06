@@ -123,7 +123,22 @@
     },
     "aether_edge": {
       "name": "Aether Edge",
-      "description": "A non-elemental Spellblade technique that requires an equipped weapon and channels aether through three consecutive strikes.",
+      "description": "A weapon strike combining physical force with non-elemental magicks, discovered when Caelan channels aether through his blade.",
+      "kind": "technique"
+    },
+    "nature_edge": {
+      "name": "Nature Edge",
+      "description": "An unpractised attempt to channel Nature-aspected aether through the blade. This tutorial attempt does not grant a learned elemental technique.",
+      "kind": "technique"
+    },
+    "aqua_edge": {
+      "name": "Aqua Edge",
+      "description": "An unpractised attempt to channel Water-aspected aether through the blade. This tutorial attempt does not grant a learned elemental technique.",
+      "kind": "technique"
+    },
+    "flame_edge": {
+      "name": "Flame Edge",
+      "description": "An unpractised attempt to channel Fire-aspected aether through the blade. This tutorial attempt does not grant a learned elemental technique.",
       "kind": "technique"
     }
   }

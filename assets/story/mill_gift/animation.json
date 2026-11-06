@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "viewport": [
+    480,
+    320
+  ],
+  "plate": [
+    960,
+    640
+  ],
+  "pair_canvas": [
+    256,
+    144
+  ],
+  "pair_anchor": [
+    128,
+    132
+  ],
+  "phases": [
+    {
+      "id": "reveal",
+      "min_seconds": 3
+    },
+    {
+      "id": "whole",
+      "min_seconds": 3
+    },
+    {
+      "id": "handoff",
+      "min_seconds": 4
+    },
+    {
+      "id": "gear",
+      "min_seconds": 5
+    },
+    {
+      "id": "faces",
+      "min_seconds": 3
+    }
+  ],
+  "frames": [
+    {
+      "file": "handoff_01.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "cc9de87972470f0ac6bebe4ba02d1eb1c40edd6da064fa8dac9946d2fa41b87b"
+    },
+    {
+      "file": "handoff_02.png",
+      "source_cell": 1,
+      "source_box": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "83782388f87d6216b172af503d9e3eb7c5584b2a4c1168536c8cb54d39fe6599"
+    },
+    {
+      "file": "handoff_03.png",
+      "source_cell": 2,
+      "source_box": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "53bbf956de4ca04ad8dedbf7ee005ef24f534c8897402f649670b8a51be9f249"
+    },
+    {
+      "file": "handoff_04.png",
+      "source_cell": 3,
+      "source_box": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "196d256c3911b3184097e793abdb3206120210e5d7962b04c7f560a1238c7e29"
+    },
+    {
+      "file": "handoff_05.png",
+      "source_cell": 4,
+      "source_box": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "f1498a14ae1bea76eefd245dcbc5a87c8843c5577ff5e8b8ae9d798a95eb7275"
+    },
+    {
+      "file": "handoff_06.png",
+      "source_cell": 5,
+      "source_box": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "eb3678703fc69ebbf7272fc0ca40578cc7a76215079e10b5207caa95cf000b36"
+    },
+    {
+      "file": "handoff_07.png",
+      "source_cell": 6,
+      "source_box": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "25b2c578682a11b43c1b821cdc2d88f632ad2c2d6050374f284368689b3157f4"
+    },
+    {
+      "file": "handoff_08.png",
+      "source_cell": 7,
+      "source_box": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "scale": 0.3303834808259587,
+      "registration": [
+        55,
+        -2
+      ],
+      "sha256": "672ef3cbe29e9883c3172d75614d09087bf2f08c1ad7fa97ba1e72efd5a2e38b"
+    }
+  ],
+  "gear_hands": [
+    {
+      "file": "gear_hands_01.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "sha256": "da0795a918a8eee8b4cb31c9516532ed91139f0cc39af26ec4dbbad3c8e4ba8c"
+    },
+    {
+      "file": "gear_hands_02.png",
+      "source_cell": 1,
+      "source_box": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "sha256": "ae5d6ac5e6c73d170b663c7287dc25ddcdc48d989ac93406a61f2263230e9325"
+    },
+    {
+      "file": "gear_hands_03.png",
+      "source_cell": 2,
+      "source_box": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "sha256": "7acf0d82375fcb922f82a75faf4a698ed0b8f938c0f3d059aaf591aa5039fef4"
+    },
+    {
+      "file": "gear_hands_04.png",
+      "source_cell": 3,
+      "source_box": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "sha256": "3f635443acb3b052d9bbd47ef47d8c4b8d8ea144a9a6a12ed2f09486566ddb74"
+    }
+  ],
+  "sources": {
+    "gear_hands_generated.png": "af3f6c4067abe01fb0a3fb443ac34a9009972cce425d99276f7c04d9028e2a47",
+    "handoff_generated.png": "c9b1f6d4b6b6ed2998b6eea049953330a1b46e2aed7e8a97537a29de6a8974ff",
+    "weapon_generated.png": "69ade5b923915c3d44f45788c4901c1ac6308ac40584cb037cd8806f563d09b5",
+    "workshop_generated.png": "1359412863bb4239d3927e596e2bc1d4407b52a6bdc46103c106a2671739c35d"
+  },
+  "audio": {
+    "file": "gear_click.ogg",
+    "source": "assets/audio/sfx/ice_reaper_rescue/load_shell.ogg",
+    "source_sha256": "f99d08a983acedd2b3998d3d3a836aa008e132e70451f09fa900ae1e2f972e4a",
+    "trim": [
+      0.2,
+      0.4
+    ],
+    "gain": 0.14
+  },
+  "note": "Register image-authored workshop, gearblade components and eight handoff drawings.\n\nOnly equal-cell extraction, alpha cleanup and uniform nearest-neighbor scaling\nare applied. Actor poses are fully authored; no mirroring or joint deformation."
+}

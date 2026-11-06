@@ -190,12 +190,30 @@ class CombatEncounters:
                 or game.world is not quest.upstream):
             self._mill_intro_started = False
             return False
+        owner=game.character_abilities
+        if owner.starter_skills_pending('caelan') and quest.uses_gearblade:
+            # The authored first lesson draws the gift he is carrying, even if
+            # a loadout edit put it away between the workshop and river path.
+            if not owner.equip_weapon('caelan','caelan_gearblade'):return False
+        training = owner.has_weapon() and owner.starter_skills_pending('caelan')
+        if training and (game.attributes.current_hp < min(80,game.attributes.value('hp'))
+                         or game.attributes.current_mp < 4):
+            # Optional test battles can exhaust a new journey before its first
+            # authored lesson. A brief preparation pause prevents an unwinnable
+            # first Guard or an MP-gated mandatory discovery.
+            def prepared():
+                game.attributes.set_current(hp=max(game.attributes.current_hp,min(80,game.attributes.value('hp'))),
+                                            mp=max(game.attributes.current_mp,4))
+                game.save_progress()
+                self.start_mill(rng)
+            return quest._speak('tutorial_preparation', prepared)
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
                             guest_abilities={'mira':game.character_abilities.known_abilities('mira')},
                             rng=random.Random() if rng is None else rng,
-                            enemy_id='ridgeback_tusker', guest_id='mira')
+                            enemy_id='ridgeback_tusker', guest_id='mira',
+                            spellblade_tutorial=training)
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
         self._mill_origin = tuple(game.player.position)
         # A quit/reload resumes on the safe approach with the fight unfinished.
@@ -249,10 +267,26 @@ class CombatEncounters:
             if not self.transition.active:self.transition = None
             return
         self.scene.update(seconds)
+        self._checkpoint_spellblade_discovery()
         if self.model.phase == 'victory':
             self._begin_victory()
             return
         if self.scene.dismissed:self._settle()
+
+    def _checkpoint_spellblade_discovery(self):
+        if (self.kind != 'mill' or self.model is None
+                or not getattr(self.model,'aether_edge_discovered',False)):
+            return
+        owner=self.game.character_abilities
+        if not owner.starter_skills_pending('caelan'):return
+        if owner.learn_first_weapon_skills('caelan'):
+            # Persist the earned action's resources with the learned technique;
+            # quitting here must not refund its MP while keeping the discovery.
+            self.game.attributes.set_current(hp=self.model.player.hp,mp=self.model.player.mp)
+            self.game.social.flags.add('CH01_MQ02_AETHER_EDGE_DISCOVERED')
+            # No battle clock is saved. A retry retains the skill actually
+            # discovered, and still owes the encounter's victory/reward receipt.
+            self.game.save_progress()
 
     def handle_event(self, event):
         if not self.active:return False

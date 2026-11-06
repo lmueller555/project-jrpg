@@ -108,7 +108,14 @@ class RivetGameplayTests(unittest.TestCase):
             key(game, pygame.K_SPACE)
         elif scene.model.waiting_for_player and guard_ready:
             game.draw()
-            click(game, scene.command_rects['guard'].center)
+            if getattr(scene.model, 'spellblade_stage', None) in ('first_edge', 'second_edge'):
+                # Finish Caelan's authored introductory attempts through the
+                # real Skills UI before exercising ordinary bot controls.
+                click(game, scene.command_rects['skills'].center)
+                game.draw()
+                click(game, scene.command_rects['nature_edge'].center)
+            else:
+                click(game, scene.command_rects['guard'].center)
         else:
             game.update(seconds, (0, 0), False)
 
@@ -124,6 +131,8 @@ class RivetGameplayTests(unittest.TestCase):
         for _ in range(2000):
             self.assertFalse(scene.model.ended)
             if game.combat.transitioning or scene.tutorial_active:
+                self.step(game, scene)
+            elif getattr(scene.model, 'spellblade_stage', None) not in (None, 'complete'):
                 self.step(game, scene)
             elif scene.model.waiting_for_player:
                 game.draw()

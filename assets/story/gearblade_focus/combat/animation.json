@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    56
+  ],
+  "body_pixels": 36,
+  "sequence": [
+    "idle",
+    "attack",
+    "cast",
+    "guard",
+    "hurt",
+    "victory",
+    "defeat"
+  ],
+  "duration_ms": null,
+  "animations": {
+    "idle": {
+      "frames": [
+        {
+          "file": "idle_01.png",
+          "duration_ms": 260
+        },
+        {
+          "file": "idle_02.png",
+          "duration_ms": 260
+        }
+      ],
+      "duration_ms": 520,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        {
+          "file": "attack_01.png",
+          "duration_ms": 180
+        },
+        {
+          "file": "attack_02.png",
+          "duration_ms": 240
+        },
+        {
+          "file": "attack_03.png",
+          "duration_ms": 300
+        }
+      ],
+      "duration_ms": 720,
+      "loop": false
+    },
+    "cast": {
+      "frames": [
+        {
+          "file": "cast_01.png",
+          "duration_ms": 250
+        },
+        {
+          "file": "cast_02.png",
+          "duration_ms": 330
+        },
+        {
+          "file": "cast_03.png",
+          "duration_ms": 320
+        }
+      ],
+      "duration_ms": 900,
+      "loop": false
+    },
+    "guard": {
+      "frames": [
+        {
+          "file": "guard_01.png",
+          "duration_ms": 240
+        },
+        {
+          "file": "guard_02.png",
+          "duration_ms": 240
+        }
+      ],
+      "duration_ms": 480,
+      "loop": true
+    },
+    "hurt": {
+      "frames": [
+        {
+          "file": "hurt_01.png",
+          "duration_ms": 160
+        },
+        {
+          "file": "hurt_02.png",
+          "duration_ms": 240
+        }
+      ],
+      "duration_ms": 400,
+      "loop": false
+    },
+    "victory": {
+      "frames": [
+        {
+          "file": "victory_01.png",
+          "duration_ms": 340
+        },
+        {
+          "file": "victory_02.png",
+          "duration_ms": 340
+        }
+      ],
+      "duration_ms": 680,
+      "loop": true
+    },
+    "defeat": {
+      "frames": [
+        {
+          "file": "defeat_01.png",
+          "duration_ms": 260
+        },
+        {
+          "file": "defeat_02.png",
+          "duration_ms": 420
+        }
+      ],
+      "duration_ms": 680,
+      "loop": false
+    }
+  },
+  "authored": true,
+  "weapon": "caelan_gearblade",
+  "facing": "left"
+}

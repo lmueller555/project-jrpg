@@ -103,8 +103,17 @@ class MillraceCutsceneGameplayTests(unittest.TestCase):
         self.assertFalse(self.c.encounter_cutscene_active)
         self.assertEqual(self.g.music.desired_track, 'battle')
         self.assertTrue(self.g.combat.transitioning)
-        self.assertTrue(all(actor.atb == 0 for actor in
-                            (*self.g.combat.model.party, self.g.combat.model.enemy)))
+        model=self.g.combat.model
+        self.assertTrue(all(actor.atb == 0 for actor in model.party))
+        # The guided opening primes the boar's telegraph. The curtain must
+        # still freeze every gauge and prevent that action from resolving.
+        self.assertEqual(model.enemy.atb,1.)
+        before=tuple(actor.atb for actor in (*model.party,model.enemy))
+        for _ in range(2):
+            self.tick(.1)
+            self.assertTrue(self.g.combat.transitioning)
+            self.assertIsNone(model.current_action)
+            self.assertEqual(tuple(actor.atb for actor in (*model.party,model.enemy)),before)
 
     def test_returned_camera_waits_for_the_player_to_acknowledge_the_warning(self):
         self.warning()

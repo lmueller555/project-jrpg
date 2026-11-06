@@ -3,8 +3,7 @@
 MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
 fight a Ridgeback Tusker together before inspecting the blocked mill intake.
 Mira is a temporary, player-controlled Machinist with a bolt launcher, her own
-attributes, commands, HP/MP and ATB, and the autonomous bot Rivet. The warning, encounter and linear
-aftermath lead into the quest's existing small spell and mechanical repair.
+attributes, commands, HP/MP and ATB, and the autonomous bot Rivet. Mira gives Caelan his gear-and-gem sword before departure. The warning, encounter and linear aftermath lead into his smaller sword-focused water spell and the mechanical repair.
 
 The repeatable **test Bat** is available in Eldenmere independently of MQ02 or
 other quest progress. It contains one Bat and Caelan and hovers on the grass
@@ -54,7 +53,7 @@ Every encounter uses the user-provided **Kindled Courage**. MQ02 stages its
 first millrace arrival as a cutscene: Caelan stops while Mira follows through
 the real trail link, both face the boar, and the camera pans over to hold it
 through their conversation. A bottom portrait panel keeps the creature visible.
-Mira's final “Caelan, come back to me. Slowly. Keep your feet under you” line
+Mira’s final “Caelan, back towards me. Slowly” line
 requests the return pan, with its panel above the party. Battle music starts
 only after the camera has arrived and the player has acknowledged the warning.
 Fast reading cannot skip the pan; slower reading holds the returned party shot.
@@ -160,15 +159,9 @@ or click through a result into exploration. The UI supports the minimum
 | Guard | Halve the next incoming action | 0 | 0.50 / 0.20 seconds |
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
 | Aether Dart | Magical damage, potency 2; requires its lattice unlock | 4 | 0.90 / 0.50 seconds |
-| Aether Edge | Non-elemental weapon enchantment for three strikes; requires first weapon unlock and equipped weapon | 4 | 0.90 / 0.50 seconds |
+| Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 0.90 / 0.50 seconds |
 
-Caelan is a Spellblade. Aether Edge is his only first-weapon starter skill and
-appears under Skills. Before he has a weapon, Skills is greyed out with
-**Requires a weapon**. Each empowered physical weapon attack adds a Mag-based
-component at potency 0.5, sharing its variance roll and one 9,999 per-hit cap
-with the physical damage. Recasting refreshes three strikes rather than stacking;
-other actions do not consume the charges, and battle results clear them.
-See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
+Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
 Guard consumes a turn and remains until the next incoming action resolves.
 Flee is guaranteed in this first encounter. Entering combat grants no spells or
@@ -182,38 +175,28 @@ rules await design. No damage-limit break is granted by the encounter.
 
 ## Millrace tutorial
 
-The Ridgeback Tusker has 450 HP, Str 16, Def 18 and Speed 8. It alternates a
-normal tusk strike, a separate preparation turn and a heavy charge. Preparation
-deals no damage and identifies the charge target. The next enemy turn delivers
-the charge, leaving the target a genuine opportunity to choose Guard. Guard
-halves the next incoming hit against that character and survives the harmless
-preparation turn.
+The Ridgeback Tusker has **700 HP, Str 12, Def 18 and Speed 8**. The revised lesson opens with a separate visible charge preparation, then gives Caelan a real Guard opportunity. After the guided opening it resumes normal tusk strikes, preparation and charge actions. Guard halves the next incoming hit and survives a harmless preparation turn.
 
-Mira has HP 300, MP 30, Str 20, Mag 12, Spr 12, Def 18, M. Def 14, Speed 12, Acc 16,
-Eva 12 and Lck 10. Her Attack resolves to Bolt Shot at potency 0.75. Rivet
-automatically joins with empty ATB and uses Piston Jab at potency 1.0, drawing
-its strength from Mira. At fixed 100% variance against the Tusker, Caelan's
-punch deals 16, Mira's bolt 50 and Rivet's jab 67. A Tusker charge deals
-66–73 against Caelan, or 33–36 when guarded. Damage uses the approved formula
-and 95–105% per-hit variance. The launcher and bot are balanced together.
+Mira has HP 300, MP 30, Str 20, Mag 12, Spr 12, Def 18, M. Def 14, Speed 12, Acc 16, Eva 12 and Lck 10. Bolt Shot uses potency 0.75. Rivet unfolds automatically with empty ATB and autonomously uses Piston Jab at potency 1, drawing strength from Mira. The enemy’s increased health and reduced strength give the new teaching turns room while retaining the damage backend’s 95–105% variance. No hidden minimum-HP invulnerability holds the creature alive.
 
-Mira starts with Overclock under Skills: 5 MP and one normal turn grants her
-active bot Haste for eight completed bot actions. Haste multiplies its final
-ATB fill rate by 1.5; recasting refreshes eight turns without stacking. Rivet
-has no health bar, cannot be targeted, and suspends while Mira is incapacitated.
-It does not count toward party survival. See [Mira's bot rules](MIRA_BOTS.md).
+### Guided opening
 
-The encounter's natural Mira guidance follows readiness, her first turn,
-the targeted charge tell and the resulting hit. Short interface hints explain
-the exact controls. Guidance is player-paced, freezes combat clocks, and
-consumes acknowledgement input so it cannot also commit a command. The player
-can choose other actions; the creature is never held at artificial minimum HP.
+The battle model’s `spellblade_tutorial=True` enables stages `opening → guard → charge → first_edge → second_edge → complete`. The armed, still-learning Caelan is the guided actor:
 
-The new battlefield looks south/southwest toward distant Eldenmere, with the
-river along the near left bank, reeds, exposed roots and freshly broken timber.
-A visible Tusker and damaged tree mark the actual upstream approach. Mira
-carries her launcher from the workbench, sets it aside during intake work and
-takes it up for the return. See the [actual MQ02 review](reviews/mill_combat/README.md).
+1. The visible charge tell leads to Guard and actual guarded charge resolution.
+2. His first Skills turn offers **Nature Edge**, **Aqua Edge** and **Flame Edge**. Any selection fails, spending ATB but no MP.
+3. Mira’s hurried instruction follows the failed resolution. On Caelan’s **next full ATB**, any elemental choice resolves as direct **Aether Edge**.
+4. At the second strike’s impact, `aether_edge_discovered` becomes true, the permanent technique is available in the battle and the temporary attempts disappear. Normal party commands resume.
+
+Back, submenu changes or unacknowledged prose do not advance a lesson. Actor switching and Flee are disabled only during this introductory sequence. Mira automatically covers with Guard. Rivet remains autonomous but takes at most three Piston Jab actions during the bounded lesson; its gauge is preserved and ordinary behavior resumes afterward. This gives the allies useful contributions without allowing their damage to skip the required beats. Existing non-Spellblade/legacy encounters keep their ordinary tutorial behavior.
+
+The scene uses speaker-labelled, player-paced instruction with brief interface hints. All gauges, action clocks and bot clocks stop for those lines and player decisions. Acknowledgement input cannot also commit a command. Model stages advance on resolved actions, not page counts or menu visits. The first-weapon gift and Aether Edge discovery have distinct persistence: a gifted weapon does not learn the technique early, and a recorded discovery is not repeated on withdrawal/retry.
+
+If optional encounters leave the pending-training Caelan below `min(80, max HP)` HP or 4 MP, the pre-battle `tutorial_preparation` exchange completes before entry and restores only those minimums. A normal first playthrough is unaffected. This ensures the required Guard and 4-MP discovery remain viable without inventing a rest choice or additional quest milestone.
+
+After the introduction, Mira is player-controlled with Attack, Skills, Guard and Flee. Overclock costs 5 MP and one normal turn, giving Rivet Haste for eight completed bot actions at 1.5× final ATB fill rate. Recasting refreshes without stacking. Rivet has no HP bar, cannot be targeted, suspends while Mira is incapacitated and does not count toward party survival. See [Mira’s bot rules](MIRA_BOTS.md).
+
+The battlefield looks south/southwest toward distant Eldenmere, with the river along the near left bank, reeds, roots and freshly broken timber. A visible tusker and damaged tree mark the actual upstream approach. Mira carries her launcher from the workshop, secures it during intake work and retrieves it for the return. Caelan’s blade is sheathed on the walking route and used as the blue Water focus for the later isolated-pocket spell. The spell does not unlock Aqua Edge.
 
 Victory grants Caelan 30 RP and one Aether Emerald once on Spoils, and commits
 the cleared trail with remaining resources before its Continue opens the linear aftermath. The intake remains
@@ -311,8 +294,7 @@ normal four-second exploration cooldown.
   [`enemies.json`](../assets/combat/enemies.json): validated action/enemy data.
 - [`assets/combat/encounter.json`](../assets/combat/encounter.json): world placement.
 
-Caelan has idle, unarmed attack, casting, guard, hurt, victory and kneeling defeat
-animations. The Bat has flight, bite, gust, hurt and descending defeat states.
+Caelan retains his unarmed baseline animation bank, while the MQ02 gearblade adds its armed/focus presentation and direct Aether Edge action. Idle, attack, casting, guard, hurt, victory and kneeling defeat states remain supported. The Bat has flight, bite, gust, hurt and descending defeat states.
 Each actor has sixteen distinct transparent native frames. Contact and casting
 poses cover the corresponding action's impact time. The original generated
 sheets and extraction-only exporter are retained in

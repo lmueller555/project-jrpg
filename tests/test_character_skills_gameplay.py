@@ -1,8 +1,7 @@
 """Real journey, save, and command input for permanent first-weapon skills.
 
-The live catalog deliberately has no obtainable weapon. The sword below is a
-test definition, injected into every canonical Inventory constructor so title
-validation and Continue use the same catalog as the live test journey.
+The test sword is injected alongside the live gearblade so acquisition, title
+validation and Continue use the same catalog for independent equipment tests.
 """
 from copy import deepcopy
 import json
@@ -107,6 +106,11 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         controller = game.mill_quest
         self.place(game, controller.mira.position+(0, 28), game.town)
         key(game, pygame.K_e);read_social(game)
+        for _ in range(2400):
+            if not game.mill_gift.active:break
+            game.update(.05, (0, 0), False)
+            key(game, pygame.K_SPACE)
+        self.assertFalse(game.mill_gift.active)
         for name in ('mechanism', 'race'):
             self.place(game, controller.points[name])
             key(game, pygame.K_e);read_social(game)
@@ -167,26 +171,24 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertTrue(game.move_lattice('aether_dart_01'))
         self.assertTrue(game.activate_lattice('aether_dart_01'))
 
-    def test_first_story_fight_is_unarmed_and_shows_grey_skills_without_spending_a_turn(self):
-        game = self.game()
-        self.assertFalse(any(item['category'] == 'weapons'
-                             for item in self.production_catalog['items'].values()))
-        self.assertEqual(game.inventory.entries('weapons'), [])
-        self.assertEqual(game.character_abilities.known_abilities(), frozenset({'basic_magicks'}))
-        scene = self.start_boar(game)
-        self.ready_player(game, scene)
-        self.assertEqual([member.name for member in scene.model.party], ['Caelan', 'Mira'])
-        self.assertEqual(scene.model.skill_actions(), [])
-        self.assertIn(('Skills', MUTED), self.draw_text(game))
-        self.assertNotIn('aether_edge', scene.command_rects)
-        before = (scene.model.player.mp, tuple(member.atb for member in
-                  (*scene.model.party, scene.model.enemy)), self.snapshot(game))
-        click(game, scene.command_rects['skills'].center)
-        self.assertEqual(scene.command_menu, 'root')
-        self.assertIn('Requires a weapon.', [text for text, _ in self.draw_text(game)])
-        self.assertEqual((scene.model.player.mp, tuple(member.atb for member in
-                         (*scene.model.party, scene.model.enemy)), self.snapshot(game)), before)
-        self.assertIsNone(scene.model.current_action)
+    def test_first_story_fight_equips_the_gift_and_guides_guard_before_elemental_attempts(self):
+        game=self.game()
+        self.assertIn('caelan_gearblade',self.production_catalog['items'])
+        self.assertEqual(game.inventory.entries('weapons'),[])
+        scene=self.start_boar(game);self.ready_player(game,scene)
+        self.assertEqual([member.name for member in scene.model.party],['Caelan','Mira'])
+        self.assertTrue(scene.model.weapon_equipped)
+        self.assertEqual(game.inventory.quantity('caelan_gearblade'),1)
+        self.assertNotIn('aether_edge',game.character_abilities.known_abilities())
+        self.assertEqual(scene.model.spellblade_stage,'guard')
+        self.assertEqual(scene.model.skill_actions(),[])
+        click(game,scene.command_rects['guard'].center)
+        self.ready_player(game,scene)
+        self.assertEqual(scene.model.spellblade_stage,'first_edge')
+        self.assertEqual(scene.model.skill_actions(),['nature_edge','aqua_edge','flame_edge'])
+        click(game,scene.command_rects['skills'].center)
+        self.assertEqual(set(scene.command_rects),{'nature_edge','aqua_edge','flame_edge','back'})
+        self.assertNotIn('aether_edge',scene.command_rects)
 
     def test_first_weapon_grants_only_aether_edge_and_survives_continue_but_new_game_clears_it(self):
         game = self.game()
@@ -212,7 +214,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual(resumed.character_abilities.skill_ids(), ())
         self.assertEqual(resumed.character_abilities.known_abilities(), frozenset({'basic_magicks'}))
 
-    def test_real_skills_submenu_casts_edge_for_four_mp_and_settles_without_saving_the_buff(self):
+    def test_real_skills_submenu_strikes_for_four_mp_and_settles_without_saving_a_buff(self):
         game = self.game(completed_mill=True)
         self.assertTrue(game.acquire_weapon('caelan', TEST_SWORD))
         scene = self.start_bat(game)
@@ -224,7 +226,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual(set(scene.command_rects), {'aether_edge', 'back'})
         text = [text for text, _ in self.draw_text(game)]
         self.assertIn('Aether Edge', text)
-        self.assertIn('4 MP · Enchant self for 3 weapon strikes.', text)
+        self.assertIn('4 MP · Physical and non-elemental magical sword strike.', text)
         self.assertEqual((scene.model.player.mp, scene.model.player.atb), (initial_mp, initial_atb))
         click(game, scene.command_rects['back'].center)
         self.assertEqual(scene.command_menu, 'root')
@@ -234,8 +236,11 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual((scene.model.player.mp, scene.model.player.atb), (initial_mp-4, 0))
         self.assertEqual(game.attributes.current_mp, initial_mp)
         self.assertEqual(scene.model.player.aether_edge_hits, 0)
-        self.advance_until(game, lambda: scene.model.player.aether_edge_hits == 3)
-        self.assertIn('Edge · 3 strikes', [text for text, _ in self.draw_text(game)])
+        enemy_hp = scene.model.enemy.hp
+        self.advance_until(game, lambda: scene.model.current_action is not None and scene.model.current_action.resolved)
+        self.assertLess(scene.model.enemy.hp, enemy_hp)
+        self.assertEqual(scene.model.player.aether_edge_hits, 0)
+        self.assertNotIn('Edge · 3 strikes', [text for text, _ in self.draw_text(game)])
         self.ready_player(game, scene)
         click(game, scene.command_rects['flee'].center)
         self.advance_until(game, lambda: scene.model.ended)

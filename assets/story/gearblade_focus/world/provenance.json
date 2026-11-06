@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "generated_with": "image_gen",
+  "source": "assets/source/cinematics/gearblade_focus/water_generated.png",
+  "source_sha256": "05358527a4e9ba9bcd3351c09839a922f5980a7b544ca3f44955df73c3fee285",
+  "operation": "Register authored gearblade water and combat drawings without pose warping.\n\nSources are image_gen-authored equal-cell atlases. Only alpha cleanup, uniform\nnearest-neighbor scaling, palette registration and fixed foot anchoring occur.\nThe combat canvas has extra blade margin while retaining the original body\nheight and an explicit new anchor; no equipment is mirrored.",
+  "fixed_scale": 0.10897435897435898,
+  "frames": [
+    {
+      "file": "raise_hand_01.png",
+      "source_cell": 0,
+      "source_box": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "sha256": "02764f4f401fa1f52978b04c4ca8e74146be7fd8ee7f961e577c86c8827b5276",
+      "source_bounds": [
+        145,
+        76,
+        345,
+        394
+      ],
+      "source_foot": [
+        186.0,
+        390
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        8
+      ]
+    },
+    {
+      "file": "raise_hand_02.png",
+      "source_cell": 1,
+      "source_box": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "sha256": "f5d9a57e8894af0dac7bdf2f8a369b3529e526233d3faa32976805bd0942dc88",
+      "source_bounds": [
+        145,
+        75,
+        343,
+        394
+      ],
+      "source_foot": [
+        185.0,
+        390
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        8
+      ]
+    },
+    {
+      "file": "raise_hand_03.png",
+      "source_cell": 2,
+      "source_box": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "sha256": "7e9d853f68992680b4021c856e4679e7001adbf8944ff953057a1b3421d14943",
+      "source_bounds": [
+        145,
+        75,
+        334,
+        394
+      ],
+      "source_foot": [
+        186.0,
+        390
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        8
+      ]
+    },
+    {
+      "file": "move_water_01.png",
+      "source_cell": 3,
+      "source_box": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "sha256": "22f60e5d220cd6d25af47438c310dc2e9f3a74af39a000d4f26fe23368848e63",
+      "source_bounds": [
+        146,
+        76,
+        336,
+        394
+      ],
+      "source_foot": [
+        186.0,
+        390
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        8
+      ]
+    },
+    {
+      "file": "move_water_02.png",
+      "source_cell": 4,
+      "source_box": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "sha256": "788e2930ca883c661c3b72191751bf529e581556657debceb551214a7a99210e",
+      "source_bounds": [
+        144,
+        75,
+        336,
+        393
+      ],
+      "source_foot": [
+        186.0,
+        389
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        15,
+        8
+      ]
+    },
+    {
+      "file": "move_water_03.png",
+      "source_cell": 5,
+      "source_box": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "sha256": "22836c30eb545e1f127c6f4c20865cf59351e8ed91527ac9a466b124a39af979",
+      "source_bounds": [
+        145,
+        75,
+        334,
+        394
+      ],
+      "source_foot": [
+        185.0,
+        393
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        7
+      ]
+    },
+    {
+      "file": "recover_01.png",
+      "source_cell": 6,
+      "source_box": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "sha256": "9978b21ba8650f585397dba96488f189dc4719be392736ea9f9dc2cfb45c4a1e",
+      "source_bounds": [
+        145,
+        75,
+        339,
+        394
+      ],
+      "source_foot": [
+        186.0,
+        393
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        7
+      ]
+    },
+    {
+      "file": "recover_02.png",
+      "source_cell": 7,
+      "source_box": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "sha256": "3990832e325b942608feebacfeaaac33df344eb5e31ccdfdec0d1980baef0e2e",
+      "source_bounds": [
+        146,
+        75,
+        347,
+        394
+      ],
+      "source_foot": [
+        186.0,
+        393
+      ],
+      "scale": 0.10897435897435898,
+      "registration": [
+        16,
+        7
+      ]
+    }
+  ]
+}

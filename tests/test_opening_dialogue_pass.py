@@ -95,7 +95,9 @@ class OpeningDialogueDriver:
             if getattr(getattr(self.g, 'combat', None), 'active', False):
                 finish_mill_battle(self.g, read_aftermath=False)
             if read and (self.g.social.locked or getattr(
-                    getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)):self.read()
+                    getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)
+                    or getattr(getattr(self.g, 'mill_gift', None), 'active', False)):
+                self.read()
             self.tick()
         raise AssertionError(('Timeout', self.g.world.data['id'], tuple(self.g.player.position),
                               self.g.opening.stage, self.g.social.script_identifier))
@@ -128,6 +130,11 @@ class OpeningDialogueDriver:
     def read(self):
         for _ in range(1000):
             if getattr(getattr(self.g, 'combat', None), 'active', False):return
+            if getattr(getattr(self.g, 'mill_gift', None), 'active', False):
+                # The weapon exchange owns a separate cinematic. Acknowledge
+                # its real pages while allowing its authored cues to finish.
+                self.key(pygame.K_SPACE);self.tick(.05)
+                continue
             cutscene = getattr(getattr(self.g, 'mill_quest', None), 'encounter_cutscene_active', False)
             if not self.g.social.locked and not cutscene:return
             if not self.g.social.active:self.tick(.02);continue
