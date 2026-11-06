@@ -48,21 +48,20 @@ or rearranged.
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Victory banner and Spoils of Battle; plays once, then stays silent until Spoils is left |
 | `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Aldric's arrival cinematic |
 | `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
-| `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Ice Reaper's five-second Gallery opening preview; the full cinematic and boss handoff remain planned |
+| `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Retained previous Ice Reaper cue |
+| `Those I Swore to Save.m4a` | `runtime/those_i_swore_to_save.ogg` | Full Ice Reaper cinematic, starting at track position zero |
 
 [`tracks.json`](tracks.json) identifies the approved runtime files and their
-mix levels. `loop: false` marks the victory fanfare and bounded Wintermute2
-preview cue as one-shots; the world
+mix levels. `loop: false` marks the victory fanfare and cinematic
+cues as one-shots; the world
 and battle cues use the default repeating playback. The opening leitmotif
 explicitly sets `loop: true`. New uploads remain
 available for review until assigned to playback.
 
-**Wintermute2:** `Wintermute 2.m4a` now has a full-length, untrimmed
-`runtime/wintermute2.ogg` export for the five-second Ice Reaper Gallery preview.
-The preview plays from the beginning once, honors music settings and pause,
-and stops when its disposable playback closes. The planned full cinematic
-uses the opening 45 seconds before continuing into the boss fight; that
-main-story integration and final boss-loop behavior remain future work.
+**Ice Reaper:** The full 32-second cinematic uses Those I Swore to Save.
+It plays from the beginning once, honors music settings and pause, and stops
+when its disposable gallery playback closes. The previous Wintermute2 source
+and runtime export remain available.
 The original upload and existing title, exploration, battle and other cues
 are unchanged. The runtime keeps the native encoder's documented 56 extra frames.
 
@@ -124,3 +123,8 @@ verifies their full decoded frame counts and Pygame streaming/repeat or one-shot
 support, and writes
 [`runtime/provenance.json`](runtime/provenance.json). The game plays the
 pre-rendered files and does not need FFmpeg or NumPy installed.
+
+The full Ice Reaper cinematic uses `Those I Swore to Save.m4a`, exported as
+`runtime/those_i_swore_to_save.ogg`. It starts at the beginning of the scene
+and follows gallery pause, restart and exit behavior. Rebuild with
+`python tools/build_runtime_music.py --track those_i_swore_to_save`.

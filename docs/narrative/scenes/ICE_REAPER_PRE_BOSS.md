@@ -16,7 +16,7 @@ Caelan, Lucan and Mira rescue Rhea from an ice prison. Rhea then takes control o
 
 ## Music and playback
 
-The cinematic lasts **32.0 seconds**, including dialogue, camera moves, impacts and the final fade. It uses **Wintermute 2** continuously from track position 0 through 32 seconds. The [original upload](<../../../assets/music/Wintermute 2.m4a>) and [runtime export](../../../assets/music/runtime/wintermute2.ogg) remain unchanged.
+The cinematic lasts **32.0 seconds**, including dialogue, camera moves, impacts and the final fade. It uses **Those I Swore to Save** continuously from track position 0 through 32 seconds. The [original upload](<../../../assets/music/Those I Swore to Save.m4a>) and [runtime export](../../../assets/music/runtime/those_i_swore_to_save.ogg) remain unchanged.
 
 The eventual combat handoff should continue the same cue without restarting. This Gallery preview fades out and returns to Gallery; a playable Ice Reaper boss encounter and main-story placement remain future work. Dialogue advances on the cinematic clock; pause, focus loss and restart preserve synchronization. The user can pause to inspect a shot or read a line.
 
@@ -94,7 +94,7 @@ python3 tools/build_ice_duel_women.py
 python3 tools/build_ice_duel_fx.py
 python3 tools/build_ice_duel_audio.py
 python3 tools/build_ice_reaper_opening.py
-python3 tools/build_runtime_music.py --track wintermute2
+python3 tools/build_runtime_music.py --track those_i_swore_to_save
 python3 tools/capture_ice_reaper_duel.py
 ```
 

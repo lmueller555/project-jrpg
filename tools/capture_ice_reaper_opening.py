@@ -32,7 +32,7 @@ from tools.capture_gallery import capture_thumbnails
 FPS = 60
 SIZE = (960, 640)
 DEFAULT_OUTPUT = ROOT/'docs/reviews/ice_reaper_continuity'
-MUSIC = ROOT/'assets/music/runtime/wintermute2.ogg'
+MUSIC = ROOT/'assets/music/runtime/those_i_swore_to_save.ogg'
 KEYFRAME_TIMES = {
     0: 'brush', 1: 'wide', 4.2: 'alarm', 6: 'aim', 7.3: 'dash',
     8.5: 'slow_slash', 9.2: 'shield_impact', 10.4: 'orbit',
@@ -124,7 +124,7 @@ def capture(output, fps=FPS):
                 for frame in range(frame_count):
                     if not scene.active:
                         raise AssertionError(f'Preview ended before frame {frame}')
-                    if child.music.desired_track != 'wintermute2':
+                    if child.music.desired_track != 'those_i_swore_to_save':
                         raise AssertionError('The preview selected the wrong soundtrack')
                     if frozen != (child._progress_signature(), child.elapsed_ms,
                                   tuple(child.player.position)):
@@ -189,7 +189,7 @@ def capture(output, fps=FPS):
         version=2, preview='ice_reaper_opening', duration_seconds=duration,
         full_cinematic_duration_seconds=scene.data.get('full_cinematic_duration', duration), fps=fps, frames=len(frames),
         completion=completion, save_and_settings_unchanged=True,
-        music=dict(cue='wintermute2', file=MUSIC.relative_to(ROOT).as_posix(),
+        music=dict(cue='those_i_swore_to_save', file=MUSIC.relative_to(ROOT).as_posix(),
                    sha256=file_hash(MUSIC), observed_gain=gains[0], segment=[0,duration]),
         effects=dict(settings_gain=effects_gain, cues=cues),
         audio_capture_method='Reconstructed from runtime score and timed SFX assets; SDL dummy has no loopback',

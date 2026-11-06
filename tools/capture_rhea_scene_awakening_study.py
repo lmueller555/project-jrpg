@@ -31,7 +31,7 @@ SIZE = (960, 640)
 FPS = 60
 MUSIC_START = 15.1
 MUSIC_GAIN = .4453125
-MUSIC = ROOT/'assets/music/runtime/wintermute2.ogg'
+MUSIC = ROOT/'assets/music/runtime/those_i_swore_to_save.ogg'
 SOUNDS = (
     dict(id='ice_creak', time=.35, gain=.12,
          file='assets/audio/sfx/ice_reaper_rhea_closeup/ice_creak.ogg'),
