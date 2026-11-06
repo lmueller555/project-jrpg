@@ -262,6 +262,11 @@ class SocialSystem:
         for identifier, alternative in conversation.get('absent_actor_lines', {}).items():
             if identifier not in present:
                 lines = alternative;break
+        # Select optional recollections from facts already earned in this save.
+        # Freeze the selected source before pagination so resize/reflow cannot
+        # insert an unread branch or change which line the player is reading.
+        lines = [line for line in lines if set(line.get('requires', [])) <= self.flags]
+        if not lines:return False
         self._set_lines(lines)
         self.actor = actor
         self.conversation = conversation

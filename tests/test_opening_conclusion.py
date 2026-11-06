@@ -20,10 +20,13 @@ class OpeningConclusionTests(unittest.TestCase):
                     settings_path=Path(self.temp.name)/'settings.json')
         g.audio.set_music(0);g.audio.set_effects(0)
         return g
-    def ready(self,order=('elira','venn')):
+    def ready(self,order=('elira','venn'),method=None):
         g=self.game;g.accept_quest(OPENING_QUEST)
         for d in ('halden',*order):self.assertTrue(g.quests.complete_objective(OPENING_QUEST,d))
         g._sync_inventory();g.halden_visit.restore();g.elira_visit.restore();g.venn_visit.restore()
+        if method is not None:
+            self.assertTrue(g.venn_visit.restore(dict(version=2, inspected=['pin','channel'],
+                method=method, repaired=True, magicks_failed=method=='magicks')))
         g.world=g._routine_worlds[self.c.serene]
         g.player.position.update(self.c.serene.position+(0,32));g.player.facing='back';g.transfer_cooldown=0
         self.assertTrue(g.social.start(self.c.serene))
@@ -80,6 +83,54 @@ class OpeningConclusionTests(unittest.TestCase):
         self.assertEqual(self.game.quests.status(MILL_QUEST),'locked')
         self.game.player.position.update(184,258);self.game.update(.05,(0,0));self.read()
         self.assertEqual(self.c.stage,'done')
+
+    def test_report_failure_exchange_survives_cancel_and_reload_only_for_magicks(self):
+        failure='It didn’t move. I ended up using the tools.'
+        flag='CH01_MQ01_VENN_MAGICKS_FAILED'
+        for method in ('tools','magicks'):
+            with self.subTest(method=method):
+                if self.game.quests.status(OPENING_QUEST)!='available':
+                    self.game=self.make_game();self.c=self.game.opening_conclusion
+                self.ready(method=method)
+                g=self.game
+                lines=[line['text'] for line in g.social._source_lines]
+                self.assertEqual(failure in lines,method=='magicks')
+                self.assertEqual(flag in g.social.flags,method=='magicks')
+                # Leave during the optional disclosure on the failed route,
+                # or during the ordinary report on the direct-tools route.
+                target=failure if method=='magicks' else 'Hello, Caelan. How did you get on?'
+                for _ in range(100):
+                    source=g.social._source_lines[g.social.page['source_line']]
+                    if source['text']==target:break
+                    g.social.advance()
+                else:self.fail('Expected report passage was not reachable')
+                self.assertTrue(g.social.cancel())
+                self.assertEqual(self.c.stage,'idle')
+                self.assertNotIn('CH01_MQ01_REPORTED',g.social.flags)
+                self.assertEqual(g.quests.status(OPENING_QUEST),'ready')
+                self.assertEqual(g.quests.status(MILL_QUEST),'locked')
+                self.assertTrue(g.save_progress())
+                saved=self.path.read_bytes()
+                g=self.make_game(True);self.assertTrue(g.begin_journey(True))
+                self.game=g;self.c=g.opening_conclusion
+                self.assertEqual(self.path.read_bytes(),saved)
+                self.assertEqual(flag in g.social.flags,method=='magicks')
+                self.assertEqual(g.venn_visit.magicks_failed,method=='magicks')
+                g.world=g._routine_worlds[self.c.serene]
+                g.player.position.update(self.c.serene.position+(0,32))
+                g.player.facing='back';g.transfer_cooldown=0
+                self.assertTrue(g.social.start(self.c.serene))
+                for _ in range(300):
+                    if g.social.active:break
+                    g.update(.02,(0,0))
+                self.assertTrue(g.social.active)
+                self.assertEqual(failure in [line['text'] for line in g.social._source_lines],method=='magicks')
+                self.assertEqual(g.social.page_index,0)
+                self.read()
+                self.assertIn('CH01_MQ01_REPORTED',g.social.flags)
+                self.assertEqual(self.c.stage,'arrival')
+                self.assertEqual(g.quests.status(OPENING_QUEST),'ready')
+                self.assertEqual(g.quests.status(MILL_QUEST),'locked')
     def test_checkpoint_reload_waiting_done_and_new_game(self):
         self.ready();self.read();self.arrive();self.game.save_progress()
         g=self.make_game(True);self.assertTrue(g.begin_journey(True))
