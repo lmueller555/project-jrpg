@@ -70,16 +70,23 @@ class SocialTests(unittest.TestCase):
 
     def test_click_anywhere_switches_portraits_and_no_held_button_skip(self):
         self.approach()
+        # The first source line can span multiple pages as prose changes.
+        # Start on its final page so this click tests the speaker transition.
+        social=self.game.social
+        while (social.page_index+1<len(social.pages) and
+               social.pages[social.page_index+1]['source_line']==social.page['source_line']):
+            self.click()
         self.click((959,1))
         self.assertEqual(self.game.social.page['speaker'],'caelan')
+        page=self.game.social.page_index
         pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=(1,639)))
         self.game.handle_events()
-        self.assertEqual(self.game.social.page_index,2)
+        self.assertEqual(self.game.social.page_index,page+1)
         for _ in range(4):
             pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONDOWN,button=1,pos=(1,1)))
             self.game.handle_events()
         self.assertTrue(self.game.social.active)
-        self.assertEqual(self.game.social.page_index,2)
+        self.assertEqual(self.game.social.page_index,page+1)
         pygame.event.post(pygame.event.Event(pygame.MOUSEBUTTONUP,button=1,pos=(1,1)))
         self.game.handle_events()
         self.click()

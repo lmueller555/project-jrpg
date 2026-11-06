@@ -26,6 +26,14 @@ ROOT = Path(__file__).resolve().parents[1]
 FILES = ('assets/story/opening.json', 'assets/story/halden/scene.json',
          'assets/story/elira/scene.json', 'assets/story/venn/scene.json',
          'assets/story/opening_conclusion.json', 'assets/story/mill/scene.json')
+FAILURE_REPORT_LINES = (
+    '*hesitates* I tried a spell on it first. I thought I could push the water back while I freed the pin.',
+    'How did it go?',
+    'It didn’t move. I ended up using the tools.',
+    'Do you want to tell me about it?',
+    'Later, perhaps.',
+    'All right.',
+)
 
 
 def dialogue_sets():
@@ -510,6 +518,10 @@ class OpeningDialoguePassTests(unittest.TestCase):
     def test_unseeded_route_failed_magick_and_all_main_scenes_complete(self):
         d = self.driver.run()
         self.assertTrue(d.g.venn_visit.magicks_failed)
+        report = [line['text'] for line in d.sources['serene_quest_report']]
+        first = report.index(FAILURE_REPORT_LINES[0])
+        self.assertEqual(report[first:first+len(FAILURE_REPORT_LINES)], list(FAILURE_REPORT_LINES))
+        for line in FAILURE_REPORT_LINES:self.assertEqual(report.count(line), 1)
         self.assertIn('mill_encouragement_failed', d.sources)
         self.assertNotIn('mill_encouragement', d.sources)
         for identifier in ('opening_greeting', 'opening_breakfast', 'opening_kindness',
@@ -529,6 +541,8 @@ class OpeningDialoguePassTests(unittest.TestCase):
         self.addCleanup(self.driver.close)
         d = self.driver.run()
         self.assertFalse(d.g.venn_visit.magicks_failed)
+        report = [line['text'] for line in d.sources['serene_quest_report']]
+        for line in FAILURE_REPORT_LINES:self.assertNotIn(line, report)
         self.assertIn('mill_encouragement', d.sources)
         self.assertNotIn('mill_encouragement_failed', d.sources)
         self.assertLess(d.scenes.index('venn_resolution'), d.scenes.index('elira_resolution'))

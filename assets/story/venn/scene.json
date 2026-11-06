@@ -2,143 +2,163 @@
   "arrival": [
     {
       "speaker": "venn_mother",
-      "text": "Caelan. Is that from the sanctuary?"
+      "text": "Hello, Caelan. Come in quietly, would you? We’ve finally had a little sleep."
     },
     {
       "speaker": "caelan",
-      "text": "Serene asked me to bring these round. How’s the little one?"
+      "text": "Of course. Serene asked me to bring these."
     },
     {
       "speaker": "venn_mother",
-      "text": "*with relief* Finally keeping food down. We’ve had a quieter morning, thank the gods."
+      "text": "Thank you. I meant to get down to the sanctuary yesterday."
     },
     {
       "speaker": "caelan",
-      "text": "That’s good to hear."
+      "text": "How has this morning been?"
     },
     {
       "speaker": "venn_mother",
-      "text": "Please thank Serene for us. I meant to come down myself, but—"
-    },
-    {
-      "speaker": "caelan",
-      "text": "*gently* You’ve had enough to manage."
+      "text": "Better. A little food stayed down, and there hasn’t been so much restlessness."
     },
     {
       "speaker": "venn_father",
-      "text": "If this channel would cooperate, we might get a few things finished."
+      "text": "We both managed to sit down for a while."
     },
     {
       "speaker": "venn_mother",
-      "text": "What’s happened now?"
+      "text": "Until you went out to the plot."
     },
     {
       "speaker": "venn_father",
-      "text": "*sighs* The gate’s caught. There’s water in the brook and hardly any reaching the far end of our plot. I can’t keep carrying buckets across all afternoon."
+      "text": "I thought I could get the watering finished before it got warm."
     },
     {
       "speaker": "caelan",
-      "text": "May I take a look?"
+      "text": "Did something happen?"
     },
     {
       "speaker": "venn_father",
-      "text": "Please. It’s east of the cottage. Look at the pin, then the channel below it."
+      "text": "The irrigation gate’s jammed. There’s plenty of water in the brook, but hardly any getting through to the far end of our plot."
     },
     {
       "speaker": "venn_mother",
-      "text": "Borrow what you need from the tool box."
+      "text": "Can it wait?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Not all day. I’ve been carrying buckets over, but I can’t keep doing that."
     },
     {
       "speaker": "caelan",
-      "text": "I’ll see what I can do."
+      "text": "I could look at the gate while I’m here."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Would you? It’s just east of the cottage. Check the pin at the side, and the channel below the board."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "The tools are in the box. Borrow what you need."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’ll come back and tell you how I get on."
     }
   ],
   "resolution": [
     {
       "speaker": "venn_father",
-      "text": "There it goes. That should reach the far end now."
-    },
-    {
-      "speaker": "venn_mother",
-      "text": "One less thing to worry about."
+      "text": "It’s reaching the far end now. I saw it coming through."
     },
     {
       "speaker": "caelan",
-      "text": "Has it been catching often?"
+      "text": "The pin was caught at an angle. I set it straight and cleared what was under the board."
     },
     {
       "speaker": "venn_father",
-      "text": "Often enough. They’ve got pumps in the capital that could fill these channels in half the time."
+      "text": "Thank you. I’d have spent the rest of the morning hauling water."
     },
     {
       "speaker": "venn_mother",
-      "text": "And payments that would take twice as long to finish."
+      "text": "Then you can spend some of it in here."
     },
     {
       "speaker": "venn_father",
-      "text": "*defensively* I know. I’m only saying it would be useful."
+      "text": "Yes. I can."
     },
     {
       "speaker": "caelan",
-      "text": "For today, at least, you’ve got the water moving again."
-    },
-    {
-      "speaker": "venn_mother",
-      "text": "You’ve done us a kindness. Let Serene know we’ll be all right."
-    },
-    {
-      "speaker": "caelan",
-      "text": "I will. I hope we see you at the festival."
-    },
-    {
-      "speaker": "venn_mother",
-      "text": "We’ll see how the little one feels. I’d like that."
+      "text": "Does it catch like that often?"
     },
     {
       "speaker": "venn_father",
-      "text": "And if we do get there, I intend to sit down for a while."
+      "text": "Often enough that I keep thinking about a pump. They’ve got them in the capital that could do this without all the lifting."
     },
     {
       "speaker": "venn_mother",
-      "text": "*with a small laugh* You say that now."
+      "text": "We’d still have to buy it. And get it repaired when something went wrong."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "I know. I’m not ordering one. I’d just like to get the watering done without losing half a day to it."
     },
     {
       "speaker": "caelan",
-      "text": "I’ll leave you to it. Take care."
+      "text": "Would you want Mira to look at the gate?"
+    },
+    {
+      "speaker": "venn_father",
+      "text": "If it catches again, I’ll ask her. For now, you’ve got it working."
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "Please tell Serene we’re grateful. And that this morning’s been better."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I will. Do you think you’ll make it to the festival?"
+    },
+    {
+      "speaker": "venn_mother",
+      "text": "We’re hoping to. We’ll have to see how tomorrow goes."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. I’ll let you have some quiet."
+    },
+    {
+      "speaker": "venn_father",
+      "text": "Thank you, Caelan."
     }
   ],
   "reminder": [
     {
       "speaker": "venn_father",
-      "text": "The gate is east of the cottage. Have a look at the pin and the channel below it."
-    },
-    {
-      "speaker": "venn_mother",
-      "text": "Borrow what you need from the tool box."
+      "text": "The gate’s east of the cottage. Have a look at the pin and the channel underneath. The tools are there if you need them."
     }
   ],
   "pin": [
     {
       "speaker": "caelan",
-      "text": "The pin’s caught at an angle. I’ll need to take the pressure off before I set it straight."
+      "text": "The pin’s wedged crooked. The water’s pressing the board against it."
     }
   ],
   "channel": [
     {
       "speaker": "caelan",
-      "text": "Twigs have collected below the gate. I’ll need to clear those, too."
+      "text": "There are twigs caught underneath as well. Even if I free the pin, I’ll need to clear those."
     }
   ],
   "choice": [
     {
       "speaker": "caelan",
-      "text": "I could use their tools. Or perhaps I can push the water back long enough to free the pin."
+      "text": "The mallet should help with the pin. Or I could try pushing the water back for a moment—just enough to take the pressure off."
     }
   ],
   "after": [
     {
       "speaker": "venn_mother",
-      "text": "Please let Serene know we’ll be all right. Thank you, Caelan."
+      "text": "It’s still running. Thank you again—and tell Serene we’ve had a better morning."
     }
   ],
   "hands_full": [
@@ -150,7 +170,11 @@
   "magicks_failed": [
     {
       "speaker": "caelan",
-      "text": "*quietly* I can’t move it. I’ll need the tools."
+      "text": "Come on…"
+    },
+    {
+      "speaker": "caelan",
+      "text": "*quietly* Nothing. I’ll get the tools."
     }
   ]
 }

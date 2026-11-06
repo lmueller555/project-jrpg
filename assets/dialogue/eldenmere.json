@@ -156,39 +156,39 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "I promised to look in on three households this morning, but there’s more here than I can leave unattended."
+              "text": "Caelan, could you take these into the village for me? I promised to call on a few people, and I’m going to be needed here."
             },
             {
               "speaker": "caelan",
-              "text": "Who needs us?"
+              "text": "Yes. Who are we going to?"
             },
             {
               "speaker": "serene",
-              "text": "*with concern* Halden first. This is his medicine. His joints have been troubling him again."
+              "text": "Halden first. Take the upper bridge to his cottage, just south of the mill. This is the medicine he asked for."
             },
             {
               "speaker": "tomas",
-              "text": "He’ll tell us they’re perfectly well."
+              "text": "Are his hands troubling him again?"
             },
             {
               "speaker": "serene",
-              "text": "He probably will. He’s milling flour for the Festival of Light, and I suspect he’s trying to carry every sack himself."
+              "text": "They were when I saw him. He’s still trying to get everyone’s flour ready for tomorrow’s baking."
             },
             {
               "speaker": "caelan",
-              "text": "Is there much left to do?"
+              "text": "We can help with the carrying while we’re there."
             },
             {
               "speaker": "serene",
-              "text": "Enough to keep the village kitchens waiting if he overworks himself. He should be at his cottage, just south of the mill."
+              "text": "Please ask him. He may be more willing to let you help if he’s the one telling you where everything goes."
             },
             {
               "speaker": "tomas",
-              "text": "Across the upper bridge?"
+              "text": "He’ll tell us that anyway."
             },
             {
               "speaker": "serene",
-              "text": "Yes. Go with Caelan and see whether he needs a hand."
+              "text": "*a small smile* Quite possibly."
             },
             {
               "speaker": "serene",
@@ -196,27 +196,31 @@
             },
             {
               "speaker": "caelan",
-              "text": "I’ll call on her."
+              "text": "At home?"
             },
             {
               "speaker": "serene",
-              "text": "She should be at home, by the southern bridge. Please ask how she’s doing while you’re there."
-            },
-            {
-              "speaker": "caelan",
-              "text": "Of course."
+              "text": "She should be. Her cottage by the southern bridge. If she wants company, stay a little."
             },
             {
               "speaker": "serene",
-              "text": "And these supplies are for the Venns, up on the eastern terrace. Their little one’s still recovering."
+              "text": "And these are for the Venns, up on the eastern terrace. Their little one’s still recovering."
             },
             {
               "speaker": "tomas",
-              "text": "*more quietly* Any better?"
+              "text": "Still not well enough to come outside?"
             },
             {
               "speaker": "serene",
-              "text": "A little, last I heard. They’ve had their hands full between that and the plot."
+              "text": "I haven’t heard. Ask how this morning has been. They’ve hardly had a chance to think about anything beyond the next meal and the next bit of sleep."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Do they need anything else?"
+            },
+            {
+              "speaker": "serene",
+              "text": "They may. Let them tell you."
             }
           ],
           "sets": [
@@ -229,7 +233,7 @@
               "action": "accept"
             },
             {
-              "text": "Not just yet",
+              "text": "Not right now",
               "action": "decline"
             }
           ],
@@ -237,27 +241,27 @@
             "tomas": [
               {
                 "speaker": "serene",
-                "text": "I promised to look in on three households this morning, but there’s more here than I can leave unattended."
+                "text": "Caelan, could you take these into the village for me? I promised to call on a few people, and I’m going to be needed here."
               },
               {
                 "speaker": "caelan",
-                "text": "Who needs us?"
+                "text": "Yes. Who am I going to?"
               },
               {
                 "speaker": "serene",
-                "text": "*with concern* Halden first. This is his medicine. His joints have been troubling him again."
+                "text": "Halden first. Take the upper bridge to his cottage, just south of the mill. This is the medicine he asked for."
               },
               {
                 "speaker": "serene",
-                "text": "He’s milling flour for the Festival of Light, and I suspect he’s trying to carry every sack himself."
+                "text": "His hands were troubling him when I saw him. He’s still trying to get everyone’s flour ready for tomorrow’s baking."
               },
               {
                 "speaker": "caelan",
-                "text": "Is there much left to do?"
+                "text": "I can help with the carrying while I’m there."
               },
               {
                 "speaker": "serene",
-                "text": "Enough to keep the village kitchens waiting if he overworks himself. He should be at his cottage, just south of the mill, across the upper bridge."
+                "text": "Please ask him. He may be more willing to let you help if he’s the one telling you where everything goes."
               },
               {
                 "speaker": "serene",
@@ -265,23 +269,27 @@
               },
               {
                 "speaker": "caelan",
-                "text": "I’ll call on her."
+                "text": "At home?"
               },
               {
                 "speaker": "serene",
-                "text": "She should be at home, by the southern bridge. Please ask how she’s doing while you’re there."
+                "text": "She should be. Her cottage by the southern bridge. If she wants company, stay a little."
+              },
+              {
+                "speaker": "serene",
+                "text": "And these are for the Venns, up on the eastern terrace. Their little one’s still recovering."
+              },
+              {
+                "speaker": "serene",
+                "text": "Ask how this morning has been. They’ve hardly had a chance to think about anything beyond the next meal and the next bit of sleep."
               },
               {
                 "speaker": "caelan",
-                "text": "Of course."
+                "text": "Do they need anything else?"
               },
               {
                 "speaker": "serene",
-                "text": "And these supplies are for the Venns, up on the eastern terrace. Their little one’s still recovering."
-              },
-              {
-                "speaker": "serene",
-                "text": "They’ve had their hands full between that and the plot."
+                "text": "They may. Let them tell you."
               }
             ]
           }
@@ -296,71 +304,125 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "There you are. How is everyone?"
+              "text": "Hello, Caelan. How did you get on?"
             },
             {
               "speaker": "caelan",
-              "text": "Halden finally accepted the medicine. We moved his flour sacks into the dry."
+              "text": "Everyone has their supplies. Halden asked whether someone could help with the carrying while he finishes the festival flour."
             },
             {
               "speaker": "serene",
-              "text": "Did he let you help without an argument?"
+              "text": "He asked?"
             },
             {
               "speaker": "caelan",
-              "text": "Not entirely."
+              "text": "He wanted me to make sure you knew that."
             },
             {
               "speaker": "serene",
-              "text": "*smiles* I’d have worried if he had."
+              "text": "*smiles* I’ll remember. Did the medicine reach him?"
             },
             {
               "speaker": "caelan",
-              "text": "Elira has the bread and oil. She’s bringing her husband’s lantern tomorrow."
+              "text": "Yes. We moved the three sacks out of his doorway as well."
             },
             {
               "speaker": "serene",
-              "text": "Good. I’m glad she wants to come."
+              "text": "Good. I’ll speak to him about the rest."
             },
             {
               "speaker": "caelan",
-              "text": "And the Venns have their supplies. The little one’s keeping food down. Their irrigation gate was caught, so I got the channel running again."
+              "text": "Elira’s lantern is down on her table. She wants to bring it herself tomorrow."
             },
             {
               "speaker": "serene",
-              "text": "You’ve had a busy morning."
+              "text": "I thought she might. Was she pleased to have it down?"
             },
             {
               "speaker": "caelan",
-              "text": "A useful one, I think."
+              "text": "Yes. She asked me to stay for a little while."
             },
             {
               "speaker": "serene",
-              "text": "You have. And how were they, aside from what needed fixing?"
+              "text": "I’m glad you could."
             },
             {
               "speaker": "caelan",
-              "text": "Halden’s doing more than his joints can bear. Elira misses her husband. The Venns are tired—and worried about what next season will cost them."
+              "text": "And the Venns said this morning’s been better. Their little one’s kept some food down."
             },
             {
               "speaker": "serene",
-              "text": "I’m glad you stayed long enough to hear that."
+              "text": "Oh, that is good."
             },
             {
               "speaker": "caelan",
-              "text": "You knew I’d find more than deliveries."
+              "text": "Their irrigation gate was jammed. I repaired it while I was there."
             },
             {
               "speaker": "serene",
-              "text": "I hoped you’d have time for people. It’s easy to think our work is finished when the baskets are empty."
+              "text": "Is it working properly now?"
             },
             {
               "speaker": "caelan",
-              "text": "Then I suppose we keep showing up."
+              "text": "The water’s reaching the far end again. Mr. Venn said that was what he needed."
+            },
+            {
+              "speaker": "caelan",
+              "text": "*hesitates* I tried a spell on it first. I thought I could push the water back while I freed the pin.",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
             },
             {
               "speaker": "serene",
-              "text": "*warmly* That’s a good place to begin."
+              "text": "How did it go?",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
+            },
+            {
+              "speaker": "caelan",
+              "text": "It didn’t move. I ended up using the tools.",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
+            },
+            {
+              "speaker": "serene",
+              "text": "Do you want to tell me about it?",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
+            },
+            {
+              "speaker": "caelan",
+              "text": "Later, perhaps.",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
+            },
+            {
+              "speaker": "serene",
+              "text": "All right.",
+              "requires": [
+                "CH01_MQ01_VENN_MAGICKS_FAILED"
+              ]
+            },
+            {
+              "speaker": "serene",
+              "text": "Thank you for going round. I’ll follow up with them."
+            },
+            {
+              "speaker": "caelan",
+              "text": "Is there anything else you need before I go?"
+            },
+            {
+              "speaker": "serene",
+              "text": "Nothing that needs you now. Take the time you asked for this morning."
+            },
+            {
+              "speaker": "caelan",
+              "text": "I’ll go down to the brook, then."
             }
           ]
         },
@@ -373,7 +435,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Try Mira’s workbench outside her workshop, before the upper bridge. Halden needs that mill running for tomorrow’s baking."
+              "text": "Mira should be at her workbench outside the workshop, before the upper bridge. Tell her Halden’s waiting at the mill."
             }
           ]
         },
@@ -386,7 +448,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Thank you for looking in on everyone, Caelan. Kindness means more when we make time for it."
+              "text": "Thank you for looking in on everyone. I’ve still got Halden’s carrying to arrange."
             }
           ]
         },
@@ -402,7 +464,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Halden should be at his cottage, south of the mill. Take the medicine over the upper bridge, and let Tomas help with any carrying."
+              "text": "Take the medicine across the upper bridge to Halden’s cottage, south of the mill. He may need help moving the festival flour."
             }
           ]
         },
@@ -422,7 +484,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Elira still needs her bread and lamp oil. Her cottage is by the southern bridge."
+              "text": "Elira’s bread and lamp oil still need taking round. She should be at her cottage by the southern bridge."
             }
           ]
         },
@@ -442,7 +504,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "The Venns are up on the eastern terrace, by their plot. Please take those supplies and ask after the little one."
+              "text": "The Venns are up on the eastern terrace. Please take their supplies and ask how the little one’s been this morning."
             }
           ]
         },
@@ -462,7 +524,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Elira still needs her bread and lamp oil, by the southern bridge. The Venns are up on the eastern terrace, by their plot. You can visit either one next."
+              "text": "Elira by the southern bridge, and the Venns on the eastern terrace. Either one next is fine."
             }
           ]
         },

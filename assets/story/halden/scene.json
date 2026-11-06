@@ -2,153 +2,177 @@
   "arrival": [
     {
       "speaker": "halden",
-      "text": "*grumbles* Serene sent you? I’m not so frail that I need someone counting my aches."
+      "text": "Morning, you two. Mind that sack by the door."
     },
     {
       "speaker": "caelan",
-      "text": "She sent the medicine you asked about last week."
+      "text": "Serene sent your medicine."
     },
     {
       "speaker": "halden",
-      "text": "I said I’d think about asking."
+      "text": "Ah. Thank you. I meant to go and fetch it."
     },
     {
       "speaker": "tomas",
-      "text": "*grins* That’s practically a yes, for you."
+      "text": "She said your hands were hurting."
     },
     {
       "speaker": "halden",
-      "text": "Hmph. And which one of you came to do actual work?"
+      "text": "They are. Particularly when people keep asking me to tell them about it."
     },
     {
       "speaker": "caelan",
-      "text": "What needs moving?"
+      "text": "Would moving these help?"
     },
     {
       "speaker": "halden",
-      "text": "Those three sacks of flour by the door. Onto the dry pallet. I’ve more coming through the mill and nowhere sensible to put it."
+      "text": "It would. I need the doorway clear before I bring any more flour through."
     },
     {
       "speaker": "tomas",
-      "text": "All this for tomorrow?"
+      "text": "Where do you want them?"
     },
     {
       "speaker": "halden",
-      "text": "People want their flour before they start baking for the Festival of Light. They’ve been very particular about telling me that."
+      "text": "On the dry pallet by the north wall. Three sacks. Keep them off the floor."
     },
     {
       "speaker": "caelan",
-      "text": "We’ll make some room."
+      "text": "There’s more waiting at the mill?"
     },
     {
       "speaker": "halden",
-      "text": "One sack at a time. They’re heavier than they look."
+      "text": "More grain to grind, yes. Everyone wants to bake before the Festival of Light. I’d like to give them time to do it."
     },
     {
       "speaker": "tomas",
       "text": "I’ll take the middle one."
     },
     {
+      "speaker": "caelan",
+      "text": "Let me—"
+    },
+    {
+      "speaker": "tomas",
+      "text": "I can carry it. Just help me get it settled."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. We’ll lift it together."
+    },
+    {
       "speaker": "halden",
-      "text": "You’ll wait until your brother’s ready."
+      "text": "Keep it close once you’ve got it. And put it down if you need to. There’s no prize for getting there without stopping."
     }
   ],
   "reminder": [
     {
       "speaker": "halden",
-      "text": "The three sacks of flour by the door need moving to the dry pallet. Take them one at a time."
+      "text": "Those three sacks by the door, onto the dry pallet by the north wall. Take your time."
     },
     {
       "speaker": "tomas",
-      "text": "I’ll take the middle one. Just say when."
+      "text": "I’m ready for the middle one when you are."
     }
   ],
   "conclusion": [
     {
       "speaker": "halden",
-      "text": "There. That’s better."
+      "text": "That’s much better. I can get through here again."
     },
     {
       "speaker": "tomas",
-      "text": "You can actually get through the doorway now."
+      "text": "Are they far enough back?"
     },
     {
       "speaker": "halden",
-      "text": "I could get through it before."
+      "text": "Yes. Leave them there."
     },
     {
       "speaker": "caelan",
-      "text": "Carrying one of those?"
+      "text": "You’ve still got a lot to do."
     },
     {
       "speaker": "halden",
-      "text": "*after a pause* …I spent forty years carrying these myself."
+      "text": "I have. But I can manage the mill without carrying everything in and out as well."
     },
     {
       "speaker": "caelan",
-      "text": "Then perhaps you’ve earned the right to let someone else carry a few."
+      "text": "We can tell Serene you need another pair of hands."
     },
     {
       "speaker": "halden",
-      "text": "Hmph. Tell Serene I’ll take the medicine."
+      "text": "For the carrying, perhaps. Tell her I asked, before she decides I need someone watching me all day."
     },
     {
       "speaker": "caelan",
-      "text": "She’ll be pleased."
+      "text": "I’ll tell her."
     },
     {
       "speaker": "halden",
-      "text": "And if she asks, the wheel’s been making a dreadful racket. I’ll have it looked at."
+      "text": "And thank you. Both of you."
+    },
+    {
+      "speaker": "halden",
+      "text": "The wheel’s been making an awkward noise, too. I’ll have to look at it."
     },
     {
       "speaker": "tomas",
-      "text": "Ask Mira. If anyone can repair it, she can."
+      "text": "Would Mira know what it is?"
     },
     {
       "speaker": "halden",
-      "text": "She’s got her own repairs to finish."
+      "text": "She might. She learned her way around that mill working with me. These days she notices things I’ve walked past twice."
     },
     {
       "speaker": "caelan",
-      "text": "One more reason to ask before it becomes a bigger job."
+      "text": "Have you asked her?"
     },
     {
       "speaker": "halden",
-      "text": "You’ve been listening to Serene."
+      "text": "Not yet. She’s got people coming to her workshop with their own repairs."
     },
     {
-      "speaker": "tomas",
-      "text": "*with a small smile* Both of us have. It’s difficult not to."
+      "speaker": "caelan",
+      "text": "She’d probably rather hear about it before something breaks."
+    },
+    {
+      "speaker": "halden",
+      "text": "*rubs his hand* Yes. I suppose she would."
     }
   ],
   "goodbye": [
     {
       "speaker": "tomas",
-      "text": "I’d better get back. Mother needs help with the preparations."
+      "text": "I’d better get back. Mother will be waiting to move the tables."
     },
     {
       "speaker": "caelan",
-      "text": "Go on. I’ve still got Elira by the southern bridge and the Venns up on the eastern terrace."
+      "text": "I’ve still got Elira by the southern bridge and the Venns on the eastern terrace."
     },
     {
       "speaker": "tomas",
-      "text": "You’ll be back before we’ve finished, then?"
+      "text": "You don’t have to hurry back for us."
     },
     {
       "speaker": "caelan",
-      "text": "That depends how much you get done."
+      "text": "I wasn’t going to hurry."
     },
     {
       "speaker": "tomas",
-      "text": "*rolls his eyes* Oh, very good."
+      "text": "You were about to tell me to wait for you."
     },
     {
       "speaker": "caelan",
-      "text": "And try not to turn the courtyard into a workshop."
+      "text": "*after a pause* I was going to say I’d help when I got back."
     },
     {
       "speaker": "tomas",
-      "text": "*grins* No promises."
+      "text": "We’ll leave you something if there’s anything left."
+    },
+    {
+      "speaker": "caelan",
+      "text": "All right. See you later."
     }
   ]
 }
