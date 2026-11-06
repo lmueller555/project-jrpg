@@ -1,4 +1,4 @@
-# Sanctuary Covenant — Elden Vale
+# Elden Vale Sanctuary — Covenant
 
 **Status:** Approved setting and narrative canon, 2026-10-31.
 Lifecycle terminology revised on 2026-11-04; the custodial terms are unchanged.
@@ -9,10 +9,11 @@ on 2026-11-04 without changing those terms.
 needs, public records, protected boundary and unresolved trial-cut request,
 including the natural confluence, living memorial grove and communal keeping
 that give the whole reserve significance. The later authorization and
-excavation remain separate future story work. No playable ridge map or new
-ritual animation accompanies this dialogue revision.
+excavation remain separate future story work. The sanctuary has an overworld
+miniature; its detailed reserve and cave remain future work. The dialogue
+revision adds no ritual animations.
 
-**Scope:** The protected ridge sanctuary near Eldenmere, its public covenant,
+**Scope:** Elden Vale Sanctuary near Eldenmere, its public covenant,
 and the legitimate disagreement between Serene and Aldric in Chapter 1.
 
 This guide records the approved local facts for reuse in later scenes. It
@@ -25,9 +26,10 @@ hidden history, cosmology and Game I's disclosure limits.
 
 ## The land under protection
 
-The proposed quarry is near an **old ridge sanctuary outside Eldenmere**.
-This is a separate site from the village sanctuary where Serene, Caelan and
-Tomas live. The dispute does not concern quarrying underneath their home.
+The proposed quarry is near **Elden Vale Sanctuary**, on the wooded ridge
+northeast of Eldenmere. This is a separate site from **Serene's home** in the
+village, where Serene, Caelan and Tomas live and offer community care. The
+dispute does not concern quarrying underneath their home.
 
 Marked boundaries enclose the old sanctuary's reserve. The reserve includes
 the sanctuary buildings, a wooded hill and buried foundations extending beyond
@@ -39,7 +41,7 @@ work is clear of the standing walls. Neither party disputes that location.
 Their disagreement concerns whether excavation should be authorized within
 the reserve on the evidence and needs they have now.
 
-The ridge sanctuary is **not established as the original temple of the Great
+Elden Vale Sanctuary is **not established as the original temple of the Great
 Sacrifice**. Do not identify the two sites or invent a confirmed connection
 between them. The old sanctuary's complete history and buried layout remain
 unknown to the people involved.
@@ -47,7 +49,7 @@ unknown to the people involved.
 ## Why this reserve is sacred
 
 Serene practices a [planetary spiritual tradition](ELDEN_VALE_FAITH.md) that
-does not center gods. The old ridge sanctuary is a place of remembrance and
+does not center gods. Elden Vale Sanctuary is a place of remembrance and
 renewal at a **real natural aether confluence**, with a living memorial grove
 within its wooded reserve.
 

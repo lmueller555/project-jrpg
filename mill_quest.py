@@ -750,7 +750,7 @@ class MillQuest:
         return True
 
     def interaction_hint(self):
-        if self.sanctuary_return.action_active:return 'Helping set the sanctuary table…'
+        if self.sanctuary_return.action_active:return 'Helping set the table at home…'
         if self.action:return {'prepare': 'Relieving pressure at the intake…', 'spell': 'Moving the trapped water…', 'repair': 'Freeing the intake screen…'}[self.action]
         target = self._target()
         if target:
@@ -771,8 +771,8 @@ class MillQuest:
                 'repair_intake': 'Help Mira free the intake screen.',
                 'return_mill': 'Return to the mill with Mira and check the wheel.',
                 'report': 'Speak with Halden and Mira by the mill.',
-                'return_sanctuary': 'Return to Mother Serene in the sanctuary dining room.',
-                'sanctuary_setting': 'Help Serene and Tomas set the table in the sanctuary.'}.get(self.stage, '')
+                'return_sanctuary': 'Return to Mother Serene in the dining room at home.',
+                'sanctuary_setting': 'Help Serene and Tomas set the table at home.'}.get(self.stage, '')
 
     def journal_detail(self):return self.tracker_text()
 

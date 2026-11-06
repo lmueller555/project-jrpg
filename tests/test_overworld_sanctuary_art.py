@@ -29,7 +29,7 @@ class SanctuaryArtTests(unittest.TestCase):
     def test_source_recipe_reproduces_the_shipped_pixels_and_registration(self):
         generated = exports()
         manifest = json.loads(generated['art.json'])
-        self.assertEqual(set(manifest['props']), {'ridge_sanctuary', 'sanctuary_steps'})
+        self.assertEqual(set(manifest['props']), {'ridge_sanctuary'})
         for key, record in manifest['props'].items():
             actual = Image.open(ROOT/record['image']).convert('RGBA')
             rebuilt = Image.open(BytesIO(generated[key+'.png'])).convert('RGBA')

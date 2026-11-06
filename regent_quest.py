@@ -368,15 +368,15 @@ class RegentQuest:
             return 'Let Aldric step aside before speaking with Serene.'
         target = self._target()
         return {'preparations': 'E: Help welcome the visitors', 'arrival': 'E: Greet Regent Aldric',
-                'welcome': 'E: Join the sanctuary welcome', 'discussion': 'E: Listen to Aldric and Serene',
+                'welcome': 'E: Join the welcome meal', 'discussion': 'E: Listen to Aldric and Serene',
                 'aftermath': 'E: Speak with Mother Serene'}.get(target, '')
 
     def tracker_text(self):
         if not self.eligible:return ''
-        return {'idle': 'Meet Mother Serene in the sanctuary dining room.',
+        return {'idle': 'Meet Mother Serene in the dining room at home.',
                 'assigned': 'Meet the visitors by the lower bridge.',
-                'escorting': 'Bring Aldric’s party through the sanctuary hall to the dining room.',
-                'welcome': 'Join the welcome in the sanctuary dining room.',
+                'escorting': 'Bring Aldric’s party through the hall at home to the dining room.',
+                'welcome': 'Join the welcome meal in the dining room at home.',
                 'hosted': 'Listen to Aldric and Serene after the meal.',
                 'discussion': 'Speak privately with Mother Serene.',
                 'done': ''}.get(self.stage, '')

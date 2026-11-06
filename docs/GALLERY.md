@@ -46,14 +46,14 @@ it does not duplicate dialogue, animation or camera scripts.
 | --- | --- | --- |
 | `later_journey` | A Light in the Distance | `OpeningCinematic.start`; complete/Skip ends preview before New Game |
 | `morning_wake` | Morning Bells | `OpeningSequence.start_new_game`; wake animation/dialogue through exploration |
-| `morning_breakfast` | Breakfast at the Sanctuary | Opening breakfast arrival, seating, meal, cup and standing through assignment |
+| `morning_breakfast` | Breakfast at Home | Opening breakfast arrival, seating, meal, cup and standing through assignment |
 | `halden_medicine` | Medicine for Halden | Halden visit conversation and physical medicine handoff |
 | `tomas_sack` | Tomas Lends a Hand | Halden visit: Tomas approaches, lifts, carries and stores one sack |
 | `elira_lantern_retrieval` | The Memorial Lantern | Elira stool/retrieval action until lantern carried |
 | `elira_lantern_placement` | A Lantern Remembered | Elira placement action until lantern rests on table |
 | `venn_failed_spell` | A Spell That Will Not Take | Venn magicks attempt and subsequent practical repair |
 | `venn_gate_repair` | Borrowed Tools | Venn tools repair through restored channel |
-| `halden_arrival` | Trouble at the Mill | OpeningConclusion: Halden enters the sanctuary and reports the mill problem |
+| `halden_arrival` | Trouble at the Mill | OpeningConclusion: Halden enters Serene's home and reports the mill problem |
 | `millrace_threat` | A Boar by the Millrace | Mill encounter camera reveal, conversation and return warning; native callback stops before battle |
 | `mill_bypass` | Make Room for the Water | Mill preparation dialogue and bypass action |
 | `mill_small_spell` | A Smaller Magical Success | Mill spell introduction/action and Mira's encouragement |

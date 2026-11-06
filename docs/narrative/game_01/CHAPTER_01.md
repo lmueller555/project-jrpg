@@ -27,11 +27,11 @@ shot follows their departure, then stays with an anonymous bloody helmet on a
 sword embedded in stone. This deliberately hints at an unidentified death later
 in the journey; it does not assign that loss to Tomas or any named character.
 
-- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, the sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
+- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Light** is the emotional high point of the opening.
 - **Aldric receives a credible, sympathetic introduction**; he must earn the admiration he will later jeopardize.
-- **Chapter end:** Serene learns that excavation near an ancient sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
+- **Chapter end:** Serene learns that excavation at Elden Vale Sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
 - **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
 
 The earlier 60–90-minute main-narrative estimate predates the approved longer festival preparation quest and is being reassessed. MQ04 now targets roughly **45–60 minutes** at a comfortable first-playthrough pace, across four implementation PRs. Duration is a playtest target, not a requirement to pad the game; the complete chapter timing remains OPEN.
@@ -54,7 +54,7 @@ His arranged visit brings that relief effort to Eldenmere and a request to
 discuss the protected ridge seam with Serene. The festival gives the visit a
 social setting; the repaired mill does not cause his journey.
 
-The old ridge sanctuary is separate from the village sanctuary. Its marked
+Elden Vale Sanctuary is the regional ridge site, separate from Serene’s home in Eldenmere. Its marked
 reserve includes the hillside and buried foundations. Serene's public plan and
 old injury account justify caution without explaining the site's full purpose.
 She shares them openly and commits courtyard repair stone, crew meals and a
@@ -66,11 +66,11 @@ scale; they do not move the later catastrophe into the opening chapter.
 
 ### MQ01 — A Day Like Any Other
 
-**Premise:** Caelen starts the morning at Eldenmere's sanctuary. Serene asks him to deliver needed medicine or supplies to three households; Tomas accompanies him briefly.
+**Premise:** Caelen starts the morning at Serene’s home in Eldenmere. Serene asks him to deliver needed medicine or supplies to three households; Tomas accompanies him briefly.
 
-**Purpose:** Let the player control Caelen quickly; introduce ordinary worship, service, village geography, family dynamics, and the sanctuary as a genuinely beneficial institution.
+**Purpose:** Let the player control Caelen quickly; introduce ordinary worship, service, village geography, family dynamics, and the practical community service offered by Serene’s household.
 
-**Proposed staging:** Explore Caelen's room, sanctuary library and courtyard; deliver supplies; hear both grateful and skeptical villagers. The number of households, exact tasks, and tutorial interactions are adjustable.
+**Proposed staging:** Explore Caelen's room, the household library and courtyard; deliver supplies; hear both grateful and skeptical villagers. The number of households, exact tasks, and tutorial interactions are adjustable.
 
 **Emotional result:** Eldenmere is home rather than an exposition hub.
 
@@ -94,9 +94,9 @@ camera work and runtime persistence for the subsequent implementation.
 
 **Premise:** Aldric reaches Eldenmere during a relief journey after unusual
 lightning has damaged several communities. Regional repair demand motivates
-his request to examine a stone seam inside protected ridge-sanctuary ground.
+his request to examine a stone seam inside Elden Vale Sanctuary’s protected ground.
 Caelan welcomes Aldric and his personal guard Lucan, guides the party directly
-to a sanctuary meal, and hears a measured disagreement with Serene over the
+to a meal at Serene’s home, and hears a measured disagreement with Serene over the
 proposed trial cut. The former cart dispute is removed.
 
 **Purpose:** Establish why Caelen and the villagers admire Aldric; give both government development and religious protection a legitimate argument; introduce the covenant without lore dumping.
@@ -116,13 +116,13 @@ trial-cut request unresolved.
 
 **Premise:** On the day before the festival, Caelan and Tomas help eight-year-old Liam make his first lantern of his own. Liam has attended earlier festivals; this year he is learning their meaning consciously and taking responsibility for his own contribution. Caelan, 18, and Tomas, 14, already know the annual tradition.
 
-**Purpose:** Let the player learn through a child’s genuine curiosity, ordinary village preparations and substantial character scenes. Caelan’s involvement follows his sanctuary responsibilities, family relationships and an outing explicitly agreed with Liam’s mother, the village teacher.
+**Purpose:** Let the player learn through a child’s genuine curiosity, ordinary village preparations and substantial character scenes. Caelan’s involvement follows his household responsibilities, family relationships and an outing explicitly agreed with Liam’s mother, the village teacher.
 
 **Approved four-PR implementation sequence:**
 
 1. School preparation session, Liam’s ambitious tower drawing, agreed outing and Mira’s workshop. End with a finished unlit frame and MQ04 still active.
 2. A few substantial village preparation encounters and a remembrance scene with Elira, building on the lantern already retrieved in MQ01.
-3. A domestic break, craft frustration, quieter brother conversation and Liam’s sanctuary questions with Serene.
+3. A domestic break, craft frustration, quieter brother conversation and Liam’s questions about faith with Serene.
 4. Liam chooses his purpose, finishes the lantern and explains it to his mother. Complete MQ04 and prepare the festival handoff.
 
 **PR1 staging:** The same teacher and six children attend a special school preparation session; no general attendance schedule is established. Mira collaborates with Liam to preserve his tower design while solving practical balance, weight and ventilation problems. Tomas contributes ideas and Caelan learns to assist when asked. See the [PR1 implementation script](CH01_MQ04.md).
@@ -131,7 +131,7 @@ trial-cut request unresolved.
 
 **PR3 staging:** Collect the frame and drawing explicitly from Mira, then return to Liam’s home for food, rest and a loose paper-panel trial. His father hosts while his mother remains at the school; the existing Daisy keeps her independent household behavior. A quiet brother exchange grows from Tomas’s offer to carry Elira’s lantern. Liam’s questions lead to Serene, who explains planetary aether return and remembrance without exposing hidden ancient history or settling consciousness. The frame and papers stay at home, unlit and unfinished. MQ04 remains active with its first six objectives complete. See the [PR3 implementation script](CH01_MQ04_PR3.md).
 
-**PR4 staging:** Return from Serene’s hall to Liam’s home, where his father has kept the materials safe. Liam chooses to carry his lantern for someone without anybody there to carry a light for them. Use his larger practice stairs and window to finish the same unlit tower, with adult help fastening the covering. After its careful lift and inspection, take only the lantern to his mother at the actual school. Liam explains the workmanship before his personal purpose. His mother remains to finish school work while the three return home and safely put the lantern away. The acknowledged farewell completes MQ04; Liam stays home, Tomas returns to sanctuary preparations and MQ05 does not begin automatically. See the [PR4 implementation script](CH01_MQ04_PR4.md).
+**PR4 staging:** Return from Serene’s hall to Liam’s home, where his father has kept the materials safe. Liam chooses to carry his lantern for someone without anybody there to carry a light for them. Use his larger practice stairs and window to finish the same unlit tower, with adult help fastening the covering. After its careful lift and inspection, take only the lantern to his mother at the actual school. Liam explains the workmanship before his personal purpose. His mother remains to finish school work while the three return home and safely put the lantern away. The acknowledged farewell completes MQ04; Liam stays home, Tomas returns to preparations at Serene’s home and MQ05 does not begin automatically. See the [PR4 implementation script](CH01_MQ04_PR4.md).
 
 **Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. Carrying his lantern for someone without anybody there is his personal intention, not a newly established universal custom or religious rule. His finished lantern keeps the chosen tower shape and an imperfect step. All four preparation segments now conclude within MQ04; tomorrow’s festival remains separate.
 
@@ -161,7 +161,7 @@ These are **ideas**, not commitments to quest count, rewards, or plot canon. Opt
 
 ## Closing beat — the authorization letter
 
-After the festival, Caelen helps Serene close the sanctuary. A messenger brings word that the government has **formally authorized excavation** near a protected sanctuary, escalating the dispute.
+After the festival, Caelen helps Serene finish the evening work at home. A messenger brings word that the government has **formally authorized excavation** at Elden Vale Sanctuary, escalating the dispute.
 
 Serene is shaken but shares only that the conflict with the regent is becoming more serious. Alone, she retrieves and examines an inherited warning about disturbances beneath the mountains. **The player does not read the full warning.** The chapter closes with uncertainty, not an immediate disaster.
 
@@ -169,7 +169,7 @@ Her precise knowledge is limited: she does not know the cosmic catastrophe, the 
 
 ## Character introductions — approved facts and open biography
 
-- **Caelen (Caelan):** **18 years old** at the game opening; Tomas's older biological brother. Local sanctuary acolyte/record keeper (working role); service-oriented and trusting, but observant. Give him agency beyond carrying documents.
+- **Caelen (Caelan):** **18 years old** at the game opening; Tomas's older biological brother. Helps Serene with household and community service; acolyte/record keeper remains a working role. Service-oriented and trusting, but observant. Give him agency beyond carrying documents.
 - **Serene:** Loving guardian and community caretaker; sincere faith and a plausible reason for preserving limited warnings.
 - **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
 - **Tomas:** **14 years old** at the game opening; Caelan's younger biological brother, restless and inventive; an autonomous person, not simply a future tragedy.
@@ -202,7 +202,7 @@ Mechanisms and magicks must obey conservation of aether. Planetary-return teachi
 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
 2. Determine the introductory gameplay systems and whether any combat is appropriate this early.
-3. Develop later tests of Aldric's leadership after his relief arrival and sanctuary visit.
+3. Develop later tests of Aldric's leadership after his relief arrival and visit to Serene’s home.
 4. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
 5. Develop the subsequent site investigation without giving Serene forbidden saga knowledge.
 6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.

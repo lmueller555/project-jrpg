@@ -20,7 +20,7 @@ The [early regional surges](REGIONAL_SURGES.md) establish a handful of unusual
 lightning incidents. One destroyed the road to the next town south of Eldenmere
 before the opening. Aldric has already aided a couple of other communities;
 their combined repair demands strain the supply of stone and motivate his
-request to examine a seam within protected ridge-sanctuary ground.
+request to examine a seam within Elden Vale Sanctuary’s protected ground.
 
 The [covenant](../../world/SANCTUARY_COVENANT.md) defines shared custody,
 marked surface/subsurface protection, permitted ordinary use and the review
@@ -91,7 +91,7 @@ Design locations from approved narrative needs. The Hollow Harvest's proposed
 location needs include agricultural villages, a regional seat of power,
 abandoned settlements, holy spaces and an energy mechanism; that alternative
 does not itself authorize assets or maps. Independently approved Eldenmere,
-world geography and the ridge-sanctuary story retain their own authority.
+world geography and the Elden Vale Sanctuary story retain their own authority.
 
 ## Game I player knowledge (CANON boundary)
 

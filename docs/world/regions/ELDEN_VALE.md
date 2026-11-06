@@ -6,8 +6,8 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 **Implementation:** The [first regional overworld](../../OVERWORLD.md) now
 represents the boundary rivers, woodland, foothills, fields, guarded walls and
 lightning-destroyed western road bridge. Aldric's [arrival cinematic](../../REGENT_ARRIVAL.md)
-and MQ03 dialogue present the relief visit and covenant disagreement. The old
-ridge sanctuary now has an overworld miniature and approach in the northeastern
+and MQ03 dialogue present the relief visit and covenant disagreement. Elden Vale
+Sanctuary now has an overworld miniature and approach in the northeastern
 foothills; its detailed reserve and cave are not implemented by that geography
 addition.
 
@@ -28,7 +28,7 @@ is established in the [World Atlas](../WORLD_ATLAS.md) and
 Eldenmere remains a temperate woodland settlement with streams, sloping
 terraces and cultivated ground. Northern uplands feed the village's main
 brook, which descends south. The Upper Millrace is a distinct northern
-woodland area. The sanctuary occupies a raised northwest terrace; the mill
+woodland area. Serene's home occupies a raised northwest terrace; the mill
 stands in the eastern part of the village.
 
 At the wider scale, short wooded side valleys open into pasture,
@@ -81,20 +81,21 @@ craft household may buy flour while a farming household exchanges produce
 for repairs. Shared meals can reveal relationships through who cooks, who
 brings something, who cannot attend and who receives a portion at home.
 
-## Sanctuary and community
+## Serene's home, Elden Vale Sanctuary and community
 
-The sanctuary's established role includes care, food, supplies, practical
-service and religious guidance. It is part of ordinary village life. Serene
-has personal relationships with the people she serves, and its household
-includes Caelan and Tomas.
+**Serene's home** is the village household where Serene, Caelan and Tomas live.
+Its established community role includes care, food, supplies, practical service
+and religious guidance. These acts are part of ordinary village life, and
+Serene has personal relationships with the people she serves. Caelan and Tomas
+usually call it home; villagers may say Serene's house or Serene's.
 
 Serene follows a [planetary spiritual tradition](../ELDEN_VALE_FAITH.md)
 centered on care, remembrance and responsibility toward the planetary cycle,
 rather than worship of gods. This does not assign identical beliefs to every
 valley resident.
 
-The **old ridge sanctuary near Eldenmere** is a separate site from this
-inhabited village sanctuary. Its marked reserve includes sanctuary buildings,
+**Elden Vale Sanctuary** is a separate regional site from Serene's home.
+Its marked reserve includes sanctuary buildings,
 a wooded hill and buried foundations beyond the visible walls. The covenant
 protects the ground beneath the reserve as well as its surface. The ridge
 site now lies northeast of the village on a wooded shoulder of the eastern
@@ -109,6 +110,11 @@ belongs to the ordinary planetary cycle, separate from the Aethersphere.
 Its detailed workings, the buried structures' purpose and their relationship
 remain unresolved; sacred significance is not a complete excavation-risk model.
 
+Greater regions elsewhere in Auratia also have their own sanctuaries at natural
+aetherial confluences. Elden Vale Sanctuary provides the local introduction to
+that wider pattern. Exploring other sanctuaries may become a recurring main-story
+thread; their individual histories, routes and discoveries remain to be designed.
+
 Civil authorities, sanctuary keepers and the community share a custodial
 trust in the reserve. Protection sits alongside duties of care and practical
 service; it does not make the ground the order's unrestricted property or
@@ -116,7 +122,7 @@ prevent ordinary passage and maintenance within established limits. New
 quarrying and disturbance of buried works require joint review and exceptional
 authorization. See the [Sanctuary Covenant](../SANCTUARY_COVENANT.md).
 
-The wider valley could support small sanctuary households, travelling
+The wider valley could support small care households, travelling
 caretakers and lay volunteers with varying resources. A remote household may
 depend on these services more than a prosperous market settlement does.
 Differences in funding, access and responsibility can matter without defining

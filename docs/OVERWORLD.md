@@ -43,13 +43,15 @@ center. Its approaches and the independently repaired future deck use the
 same width; increasing the bridge's visible roadway does not grant repair or
 open the crossing. The review includes a measured native-width audit.
 
-The **Ridge Sanctuary** stands northeast of Eldenmere, on a wooded rocky
+**Elden Vale Sanctuary** stands northeast of Eldenmere, on a wooded rocky
 shoulder inside the northern wall and west of the eastern river. A maintained
-footpath branches from the eastern foothill loop, climbs between rock shelves
-and reaches its forecourt. The miniature combines a pale stone hall, slate roof,
+footpath branches from the eastern foothill loop, passes between rock shelves
+and reaches its forecourt on an open dirt approach. There are no stair props on
+the overworld approach. The miniature combines a pale stone hall, slate roof,
 small bellcote and side cloister, with a grove and boundary markers around it.
 The landmark appears on the regional atlas and minimap from the start: Caelan
-already knows this local place.
+already knows this local place. It is separate from **Serene's home**, the
+household within Eldenmere where Caelan and Tomas live.
 
 This update implements only the regional geography and miniature. Walking
 across its clear footprint does not load a scene, open a menu, start dialogue,

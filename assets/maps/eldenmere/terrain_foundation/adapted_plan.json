@@ -365,7 +365,7 @@
   "buildings": [
     {
       "id": "sanctuary",
-      "label": "SANCTUARY",
+      "label": "SERENE’S HOME",
       "detail": "bedroom / dining / courtyard",
       "rect": [
         11,
@@ -913,7 +913,7 @@
   "quest_routes": [
     {
       "id": "first_visit",
-      "label": "MQ01 / sanctuary to Halden",
+      "label": "MQ01 / home to Halden",
       "color": "#d16a27",
       "nodes": [
         "sanctuary",

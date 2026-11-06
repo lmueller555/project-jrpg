@@ -6292,7 +6292,7 @@
     {
       "id": "sanctuary_approach",
       "kind": "foot",
-      "role": "Maintained woodland approach to the old ridge sanctuary",
+      "role": "Maintained woodland approach to Elden Vale Sanctuary",
       "surface": "dirt",
       "width": 1.7,
       "ruts": false,
@@ -6762,7 +6762,7 @@
     },
     {
       "id": "ridge_sanctuary",
-      "name": "Ridge Sanctuary",
+      "name": "Elden Vale Sanctuary",
       "kind": "sanctuary",
       "tile_position": [
         90,
@@ -6771,7 +6771,7 @@
       "always_known": true,
       "discovered": true,
       "prop": "ridge_sanctuary",
-      "description": "The old ridge sanctuary stands northeast of Eldenmere in a protected wooded reserve. Its grove is tended as a place of remembrance and renewal. An old footpath climbs from the eastern foothills to its stone arch."
+      "description": "Elden Vale Sanctuary stands northeast of Eldenmere in a protected wooded reserve, where the vale's natural aether currents gather. Its grove is tended as a place of remembrance and renewal. A woodland footpath leads to its stone arch."
     }
   ],
   "safe_clearings": [
@@ -6929,7 +6929,7 @@
       ]
     },
     {
-      "id": "sanctuary_stair_approach",
+      "id": "sanctuary_path_approach",
       "rect_tiles": [
         88,
         -63,
@@ -7549,7 +7549,7 @@
       "The runtime corridor widens and bends the atlas topology for 24px miniature-scale travel; no literal PNG scaling or uniform map-to-kilometre conversion is used.",
       "The village brook and controlled millrace remain distinct local water features in detailed Eldenmere; they are not additional bounding rivers.",
       "Neither boundary watercourse is assigned a new proper name or automatically identified as the River Leth. Repeated labels do not create duplicate rivers.",
-      "The old ridge sanctuary and original sacrificial temple receive no new location. Exact confluences, political borders, physical distances and unnamed settlements remain open.",
+      "Elden Vale Sanctuary occupies the northeastern wooded foothills in the runtime region; the original sacrificial temple remains unlocated. Confluence workings, political borders, physical distances and unnamed settlements remain open.",
       "North and south walls, checkpoints, walking loops, overlooks and bridge damage are authored runtime interpretation, not features redrawn onto the approved classroom map."
     ],
     "references": [
@@ -10870,7 +10870,7 @@
     {
       "id": "ridge_sanctuary_reserve",
       "kind": "sanctuary",
-      "name": "Ridge sanctuary wooded terrace",
+      "name": "Elden Vale Sanctuary wooded terrace",
       "tile_position": [
         90,
         -66
@@ -10996,14 +10996,6 @@
           "solid": [
             38,
             8
-          ]
-        },
-        {
-          "id": "sanctuary_stairs",
-          "key": "sanctuary_steps",
-          "tile_position": [
-            90,
-            -62.0
           ]
         },
         {
@@ -12303,7 +12295,7 @@
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "7bcb97750f56bc664965f7ed10a9c40b695180efdeb5fcacf1af4910fb9195be",
+    "source_recipe_sha256": "f68cbe0fb8399973f9a86519068efa36e35fa0df07872d9e1e6953a2e641672e",
     "atlas_reference": "docs/reviews/elden_vale_composition/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",

@@ -6,13 +6,13 @@
 
 ## Narrative contract
 
-Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already understand the annual festival. They give Liam the basic understanding of planetary aether return before he asks to speak with Serene; they do not discover their own tradition along with him. The route follows the already agreed outing inside Eldenmere: outside Elira’s cottage → Mira’s workshop → Liam’s home → sanctuary.
+Caelan is eighteen, Tomas fourteen and Liam eight. The brothers already understand the annual festival. They give Liam the basic understanding of planetary aether return before he asks to speak with Serene; they do not discover their own tradition along with him. The route follows the already agreed outing inside Eldenmere: outside Elira’s cottage → Mira’s workshop → Liam’s home → Serene’s home.
 
 Mira has secured the frame handle without changing Liam’s chosen position. The actual handoff removes the single frame and drawing from the workshop. Liam carries his own small frame, while Caelan keeps the drawing and loose paper flat in his satchel. At home, they set the materials down before eating. The same father hosts the break; his personal name remains unassigned and Liam’s mother remains at the school. Daisy’s ordinary household activity continues independently and no food is given to her in the scripted scenes.
 
 Liam tries a separate loose practice panel. He grows impatient when the stairs and window compete for space, then makes a small adjustment with help he agrees to. The real covering is not attached and the frame remains unlit. During the brothers’ quiet exchange, Liam stays visibly occupied with the paper. Tomas reflects on his actual offer to carry Elira’s lantern; no new family history or later desire to leave Eldenmere is introduced.
 
-The materials remain safely together at home while the three visit Serene. Her sanctuary work makes space for listening. She explains that life and nature consist of aether, which returns to the planet when living things die, and describes the lantern as an act of remembrance. The script does not reveal ancient history or the Aethersphere's protective purpose, certify what happens to individual consciousness, promise that the dead hear the singing, or establish resurrection. Liam’s lantern purpose remains undecided for PR4.
+The materials remain safely together at home while the three visit Serene. Her work at home makes space for listening. She explains that life and nature consist of aether, which returns to the planet when living things die, and describes the lantern as an act of remembrance. The script does not reveal ancient history or the Aethersphere's protective purpose, certify what happens to individual consciousness, promise that the dead hear the singing, or establish resurrection. Liam’s lantern purpose remains undecided for PR4.
 
 The eleven main exchanges are separately player-paced. The collection, home placement and practice action commit only through the controller’s explicit handoffs. Canceling unread dialogue cannot grant progress or silently move materials. This segment completes `take_break` and `speak_serene`; final covering, chosen purpose and showing mother remain the fourth segment. The comfortable 12–18-minute target includes movement and conversation and is not a measured duration or a reason to pad the script.
 
@@ -186,7 +186,7 @@ Runtime key: `liam_questions`.
 - **Tomas:** “So did I.”
 - **Liam:** “Can we ask Serene about it?”
 - **Caelan:** “Of course. She'll give you time to ask.”
-- **Liam’s father:** “If you're going up to the sanctuary, leave the frame here. I'll keep it safe.”
+- **Liam’s father:** “If you're going up to Serene’s house, leave the frame here. I'll keep it safe.”
 - **Liam:** “And the drawing. I want to use that piece again.”
 - **Liam’s father:** “All of it stays together on the table.”
 - **Caelan:** “Would you like some more to drink before we go?”

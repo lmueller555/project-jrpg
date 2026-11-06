@@ -40,7 +40,7 @@
     {"id": "eastern_steps", "rect": [45, 33, 2, 2], "orientation": "east-west"}
   ],
   "buildings": [
-    {"id": "sanctuary", "label": "SANCTUARY", "detail": "bedroom / dining / courtyard", "rect": [11, 7, 8, 5], "door": [16, 12], "kind": "new_landmark"},
+    {"id": "sanctuary", "label": "SERENE’S HOME", "detail": "bedroom / dining / courtyard", "rect": [11, 7, 8, 5], "door": [16, 12], "kind": "new_landmark"},
     {"id": "mill", "label": "MILL", "detail": "working yard", "rect": [40, 11, 4, 3], "door": [40, 14], "kind": "approved_mill"},
     {"id": "halden", "label": "HALDEN", "detail": "13 x 10 inside", "rect": [40, 23, 4, 3], "door": [42, 26], "kind": "standard"},
     {"id": "mira", "label": "MIRA", "detail": "workshop", "rect": [24, 15, 5, 3], "door": [26, 18], "kind": "new_landmark"},
@@ -87,7 +87,7 @@
     {"id": "woodland_exit", "position": [30, 0]}
   ],
   "quest_routes": [
-    {"id": "first_visit", "label": "MQ01 / sanctuary to Halden", "color": "#d16a27", "nodes": ["sanctuary", "halden"]},
+    {"id": "first_visit", "label": "MQ01 / home to Halden", "color": "#d16a27", "nodes": ["sanctuary", "halden"]},
     {"id": "elira_first", "label": "Choice A / Elira, Venn, return", "color": "#8b468d", "nodes": ["halden", "elira", "venn", "gate", "sanctuary"]},
     {"id": "venn_first", "label": "Choice B / Venn, Elira, return", "color": "#167a78", "nodes": ["halden", "venn", "gate", "elira", "sanctuary"]},
     {"id": "tomas_return", "label": "Tomas leaves after Halden", "color": "#596477", "nodes": ["halden", "sanctuary"]},

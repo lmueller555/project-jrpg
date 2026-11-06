@@ -14,7 +14,7 @@
       "purpose": "Approved sanctuary architecture shown in chat; a design reference, not a runtime dependency."
     }
   ],
-  "intent": "Compact old ridge sanctuary: limestone hall, slate roof, oculus, open bellcote and three-arch side cloister, no detailed reserve or cave.",
+  "intent": "Compact Elden Vale Sanctuary: limestone hall, slate roof, oculus, open bellcote and three-arch side cloister, no detailed reserve or cave.",
   "alpha_threshold": 180,
   "exports": {
     "ridge_sanctuary": {
@@ -36,27 +36,6 @@
       "foot_anchor": [
         32,
         74
-      ]
-    },
-    "sanctuary_steps": {
-      "canvas": [
-        40,
-        24
-      ],
-      "crop": [
-        353,
-        871,
-        650,
-        995
-      ],
-      "fit": [
-        40,
-        18
-      ],
-      "paste": "center_x_bottom_21",
-      "foot_anchor": [
-        20,
-        21
       ]
     }
   }

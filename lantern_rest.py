@@ -205,7 +205,7 @@ class LanternRest:
                 'rested': 'Let Liam try his paper design.',
                 'paper_tried': 'Talk quietly with Tomas while Liam works.',
                 'brothers_spoken': 'Listen to Liam’s questions.',
-                'home_break_done': 'Visit Mother Serene in the sanctuary hall.',
+                'home_break_done': 'Visit Mother Serene in the hall at home.',
                 'serene_welcomed': 'Ask Serene about returning life.',
                 'faith_discussed': 'Talk about remembering and celebrating.',
                 'remembrance_discussed': 'Finish the conversation with Serene.',

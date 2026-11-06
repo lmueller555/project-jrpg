@@ -7,10 +7,11 @@ institutional history remain open.
 This descriptive title is not a chosen religion name or a declaration that
 every person in Elden Vale follows the same tradition.
 
-**Implementation:** MQ03's revised ridge discussion now expresses the natural
-aether confluence, living memorial grove and communal keeping alongside the
-relief needs and shared hazard records. These foundations do not add a playable
-ridge map or new ritual animations, or define the confluence's workings.
+**Implementation:** MQ03's revised discussion of Elden Vale Sanctuary expresses
+the natural aether confluence, living memorial grove and communal keeping alongside the
+relief needs and shared hazard records. The sanctuary now has a regional
+overworld miniature and approach; its detailed reserve and cave remain future
+work. These foundations do not define the confluence's workings.
 
 Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),
@@ -33,11 +34,18 @@ being, or decide what happens to personal identity after death. Other traditions
 may revere gods; the existing history of the Ancients' deification remains
 separate author-level canon. Serene does not thereby know that history.
 
-## Why the ridge sanctuary matters
+## Why Elden Vale Sanctuary matters
 
-The old ridge sanctuary outside Eldenmere is a **remembrance-and-renewal
-sanctuary at a real natural aether confluence**. Its wooded reserve includes
+**Elden Vale Sanctuary**, on the wooded ridge northeast of Eldenmere, is a
+**remembrance-and-renewal sanctuary at a real natural aether confluence**. Its wooded reserve includes
 a living memorial grove cared for by the community.
+
+Other greater regions of Auratia also have their own sanctuaries at natural
+aetherial confluences. Their names, local practices and physical settings can
+reflect the regions that keep them; Serene's tradition does not define a single
+universal faith for all of these places. Exploring their confluences is a
+potential recurring thread for the main story, with the route and discoveries
+still to be designed.
 
 ### A real natural feature
 
@@ -68,9 +76,10 @@ give the land a significance that does not disappear if the buildings fall.
 Serene holds that responsibility for the community rather than owning the
 place or having authority to surrender it alone.
 
-The ridge site remains separate from the village sanctuary where Serene,
-Caelan and Tomas live. Neither has been identified as the original sacrificial
-temple.
+The regional site remains separate from **Serene's home** in Eldenmere, where
+Serene, Caelan and Tomas live. The household continues to offer meals, care,
+supplies and guidance to neighbours. It is called a home rather than a second
+sanctuary; neither place has been identified as the original sacrificial temple.
 
 ## Knowledge and uncertainty
 
@@ -111,7 +120,8 @@ a general prohibition on engineering, farming or using natural resources.
 ## Decisions still open
 
 - The faith's proper name, organization, training, ranks and founding history.
-- The ridge sanctuary and grove's names, founding events and exact map position.
+- The memorial grove's name and founding events. The regional site's name is
+  Elden Vale Sanctuary, and its overworld position is fixed northeast of Eldenmere.
 - Detailed memorial practices, seasonal observances and records.
 - The confluence's physical behavior and the effects of particular excavation.
 - The buried works' origin, purpose and relationship to the natural confluence.

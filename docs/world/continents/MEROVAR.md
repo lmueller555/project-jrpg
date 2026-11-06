@@ -38,7 +38,7 @@ approved brook descends from northern uplands toward the south; its northern
 woodland and Upper Millrace remain immediately local places.
 
 Milling, timber work, wool, orchard produce and household crafts sustain different
-parts of the district. Sanctuary service and neighbourly obligations
+parts of the district. Community care from Serene's home and neighbourly obligations
 are visible in Eldenmere, while road settlements have stronger connections to
 passing carriers and paid seasonal labour. People disagree about how much work
 a household owes its neighbours and what public authorities should provide.

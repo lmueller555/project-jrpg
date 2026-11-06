@@ -172,7 +172,7 @@ def build():
     for name,kind,size in [('mira','workshop','standard'),('mill','mill','wide')]:
         meta,data,blocked=compile_room(TERRAIN/f'cottage_layouts/{size}',name,custom_objects(kind))
         metas[name]=meta;rooms[name]=data;blocks[name]=blocked
-    labels={'sanctuary_hall':'Sanctuary hall','sanctuary_bedroom':"Caelan's room",'sanctuary_dining':'Sanctuary dining room',
+    labels={'sanctuary_hall':'Serene’s Home — Hall','sanctuary_bedroom':"Caelan's room",'sanctuary_dining':'Serene’s Home — Dining Room',
             'halden':"Halden's cottage",'elira':"Elira's cottage",'venn':'Venn family cottage',
             'home_a':'West cottage','home_b':'Village cottage','home_c':'South cottage','mira':"Mira's workshop",'mill':'Watermill workroom'}
     for building in ['sanctuary','mira','mill',*assignments]:

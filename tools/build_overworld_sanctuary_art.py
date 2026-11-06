@@ -1,6 +1,6 @@
 """Export the approved sanctuary miniature into the native overworld prop kit.
 
-The generated source remains unchanged. Both exports use one uniform nearest
+The generated source remains unchanged. The miniature uses one uniform nearest
 scale and hard alpha; no scene image, collider or entry trigger is produced.
 """
 from __future__ import annotations
@@ -65,7 +65,7 @@ def main():
         return
     OUT.mkdir(parents=True, exist_ok=True)
     for name, data in files.items():(OUT/name).write_bytes(data)
-    print('Exported sanctuary miniature, steps and prop manifest.')
+    print('Exported sanctuary miniature and prop manifest.')
 
 
 if __name__ == '__main__':main()
