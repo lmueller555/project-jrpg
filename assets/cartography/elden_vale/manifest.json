@@ -1,7 +1,7 @@
 {
   "version": 1,
   "region_id": "elden_vale_start",
-  "geometry_sha256": "ccc1d0318080a93bd06587e9e781fe2574c2f560e15bda8f6838cabb1ee10ca9",
+  "geometry_sha256": "70872510e9d691cd170988a22545bbf3cedb29aa80e049fab17bcd29dc876a0d",
   "bounds_tiles": [
     -256,
     -192,
@@ -22,13 +22,13 @@
     4
   ],
   "art_manifest": "assets/cartography/elden_vale/art/art.json",
-  "art_sha256": "f4e903ae5a2a4ffee4e1891b5383df2b3a206b77dc90bce8a4a2d30e8d62c292",
+  "art_sha256": "84d9adffb9089628f8b0298a6a45b1de8a0c603070f245e1ed0cffcd9f88b902",
   "source": "assets/maps/overworld/elden_vale/region.json",
-  "source_sha256": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
+  "source_sha256": "c58a1afe07ddd446e3e2e3fbb97ae8157bb1b56d75df210e4f26073f96487746",
   "input_sha256": {
-    "assets/maps/overworld/elden_vale/region.json": "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88",
-    "assets/cartography/elden_vale/art/art.json": "f4e903ae5a2a4ffee4e1891b5383df2b3a206b77dc90bce8a4a2d30e8d62c292",
-    "tools/build_elden_vale_cartography.py": "d368eadc74080f7c6c47337b3af6831ce1c6d2f5953a8c823460367354c4c678",
+    "assets/maps/overworld/elden_vale/region.json": "c58a1afe07ddd446e3e2e3fbb97ae8157bb1b56d75df210e4f26073f96487746",
+    "assets/cartography/elden_vale/art/art.json": "84d9adffb9089628f8b0298a6a45b1de8a0c603070f245e1ed0cffcd9f88b902",
+    "tools/build_elden_vale_cartography.py": "83be8f4d8735eeb6694adf367d6d3468c1cd4f4c2c016720661506e0fdc3cabd",
     "regional_cartography.py": "f8ebdacfac9f5399193fb4edfdd45c7f83646b0798d6b3ac2037e58da534f33c",
     "assets/cartography/elden_vale/art/tiles/land.png": "d4ef64d871f6e9b8bbc7fb89d54573751754197257aa3371b04eb1c915cc4523",
     "assets/cartography/elden_vale/art/tiles/water.png": "4567826376d33d5976c12490ad5464e117d83eae65c0f499eab232eb2e79bd21",
@@ -53,7 +53,8 @@
     "assets/cartography/elden_vale/art/props/gate_open.png": "4c3f6dfd636fc1f392ff48ae6403bcc8460f5646b108884b9d85c191a5f4788b",
     "assets/cartography/elden_vale/art/props/overlook.png": "4a5713ecb1249fe6b7bb5355a33bfeacf684ee15ea21caf3a679d108409d4e97",
     "assets/cartography/elden_vale/art/props/millrace.png": "569cf6e78b1b99671eac4480e0e88da47aa80c97d6b5af205e68731285fa00a3",
-    "assets/cartography/elden_vale/art/props/relief.png": "18b91a69a4ee5c006d8600d333ad7b56986775f0e01674b0c2ba4705f09e960b"
+    "assets/cartography/elden_vale/art/props/relief.png": "18b91a69a4ee5c006d8600d333ad7b56986775f0e01674b0c2ba4705f09e960b",
+    "assets/cartography/elden_vale/art/props/sanctuary.png": "195875aa9759b28ccd73b329ea79248d867c508535cbfd4f35f59e75f4755bf4"
   },
   "tiles": [
     {

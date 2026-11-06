@@ -145,7 +145,8 @@ class RegionalMapTests(unittest.TestCase):
     def test_discovery_and_progress_markers_reflect_controller_without_mutating_manifest(self):
         self.game.overworld_travel = SimpleNamespace(discovered={'eldenmere'})
         self.map.reset()
-        self.assertEqual({record['kind'] for record in self.map.landmarks}, {'town', 'bridge', 'checkpoint'})
+        self.assertEqual({record['kind'] for record in self.map.landmarks},
+                         {'town', 'sanctuary', 'bridge', 'checkpoint'})
         identifier = self.data['landmarks'][0]['id']
         self.game.overworld_travel.discovered.add(identifier)
         self.map.reset()
@@ -155,6 +156,7 @@ class RegionalMapTests(unittest.TestCase):
         self.game.social.flags.add(bridge['repair_flag'])
         self.assertIn('passable', self.map._description(bridge))
         self.assertNotIn('kind', self.data['bridge'])
+
         checkpoint = next(record for record in self.map.landmarks if record['kind'] == 'checkpoint')
         canvas = pygame.Surface((480, 320))
         painter = self.game.ui.painter(canvas)
@@ -169,6 +171,23 @@ class RegionalMapTests(unittest.TestCase):
                 closed = not (clearance and destination_ready)
                 self.assertEqual(canvas.get_at(center)[:3] == (139, 79, 62), closed)
                 self.assertEqual('closed' in self.map._description(checkpoint), closed)
+
+    def test_known_sanctuary_is_descriptive_without_marking_a_visit_or_traveling(self):
+        self.game.overworld_travel = SimpleNamespace(discovered={'eldenmere'})
+        before_discovery = set(self.game.overworld_travel.discovered)
+        before_position = self.game.player.position.copy()
+        before_world = self.game.world
+        self.map.reset()
+        sanctuary = next(record for record in self.map.landmarks if record['id']=='ridge_sanctuary')
+        self.assertTrue(sanctuary['always_known'])
+        self.assertEqual(self.map._marker_status(sanctuary), 'Sanctuary')
+        self.assertTrue(self.map.select_landmark('ridge_sanctuary'))
+        canvas = pygame.Surface((960,640))
+        self.map_ui.draw(canvas)
+        self.assertIn('ridge_sanctuary', self.map.label_rects)
+        self.assertEqual(self.game.overworld_travel.discovered, before_discovery)
+        self.assertEqual(self.game.player.position, before_position)
+        self.assertIs(self.game.world, before_world)
 
     def test_display_resize_large_text_and_long_description_remain_bounded_and_scrollable(self):
         before = json.dumps(self.data, sort_keys=True)
@@ -201,7 +220,7 @@ class RegionalMapTests(unittest.TestCase):
         self.assertFalse(self.map.details_visible)
         self.assertGreater(self.map.map_rect.width*self.map.map_rect.height,480*320*.65)
         major = {record['id'] for record in self.map.landmarks
-                 if record['kind'] in ('town','bridge','checkpoint')}
+                 if record['kind'] in ('town','sanctuary','bridge','checkpoint')}
         self.assertTrue(major <= self.map.label_rects.keys())
         rectangles = [self.map.label_rects[key] for key in major]
         for index,rect in enumerate(rectangles):
@@ -283,7 +302,7 @@ class RegionalMapTests(unittest.TestCase):
 
     def test_priority_labels_survive_large_text_and_each_selected_place_card(self):
         major = {record['id'] for record in self.map.landmarks
-                 if record['kind'] in ('town','bridge','checkpoint')}
+                 if record['kind'] in ('town','sanctuary','bridge','checkpoint')}
         for size in ((480,320),(960,640),(1280,720)):
             for text_scale in (1,1.5):
                 self.game.window = pygame.display.set_mode(size)
@@ -416,6 +435,7 @@ class RegionalMapTests(unittest.TestCase):
         game.opening_cinematic = SimpleNamespace(active=False)
         game.regent_arrival = SimpleNamespace(active=False, state='waiting', maybe_start=Mock())
         game.mill_quest = SimpleNamespace(sync_encounter_music=Mock())
+        game.mill_gift = SimpleNamespace(active=False)
         game.music = Mock()
         game._music_focused = True
         game.combat = SimpleNamespace(active=False, post_phase=False, tutorial_active=False,

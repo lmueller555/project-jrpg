@@ -1,7 +1,7 @@
 {
   "version": 1,
   "source": "assets/maps/overworld/elden_vale/region.json",
-  "geometry_sha256": "ccc1d0318080a93bd06587e9e781fe2574c2f560e15bda8f6838cabb1ee10ca9",
+  "geometry_sha256": "70872510e9d691cd170988a22545bbf3cedb29aa80e049fab17bcd29dc876a0d",
   "bounds_tiles": [
     -256,
     -192,
@@ -32,6 +32,10 @@
     "Southern checkpoint": [
       28,
       96
+    ],
+    "Ridge Sanctuary": [
+      90,
+      -66
     ]
   },
   "notes": "Geographic survey only; artwork adds no roads, watercourses or labels."

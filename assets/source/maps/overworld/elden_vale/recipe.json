@@ -202,7 +202,13 @@
         ],
         "ground_treatment": "localized"
       },
-      {"id": "northern_wooded_rise", "style": "wooded_rise", "polygon": [[-96, -77], [-81, -85], [-65, -83], [-52, -75], [-38, -66], [-43, -53], [-53, -45], [-66, -42], [-81, -47], [-92, -60]], "ground_treatment": "localized"}
+      {"id": "northern_wooded_rise", "style": "wooded_rise", "polygon": [[-96, -77], [-81, -85], [-65, -83], [-52, -75], [-38, -66], [-43, -53], [-53, -45], [-66, -42], [-81, -47], [-92, -60]], "ground_treatment": "localized"},
+      {
+        "id": "sanctuary_ridge_shoulder",
+        "style": "rocky_ridge",
+        "polygon": [[79, -69], [84, -75], [91, -76], [99, -72], [100, -64], [96, -59], [88, -59], [82, -61]],
+        "ground_treatment": "localized"
+      }
     ],
     "scorched": [
       {"id": "broken_bridge_east_bank", "polygon": [[-105, 27], [-104, 26], [-102, 26], [-101, 27], [-99, 27.5], [-99.5, 29], [-99, 30.5], [-101, 31], [-102, 32], [-103, 31.5], [-104, 32], [-106, 30]]},
@@ -220,7 +226,12 @@
       {"id": "woodland_rest", "surface": "leaf_litter", "polygon": [[-49, -70.4], [-47.2, -70.4], [-47, -69.2], [-48, -68.7], [-49.4, -69.4]]},
       {"id": "ridge_shelf_base", "surface": "grass_dry", "polygon": [[77, -27], [93, -26.8], [93.8, -24.0], [88, -23.4], [80, -23.8], [76.7, -25.0]]},
       {"id": "bridge_east_flare", "surface": "stone_road_worn", "polygon": [[-105, 27.5], [-98.8, 27.5], [-98.4, 28.3], [-98.8, 30.5], [-105, 30.5]]},
-      {"id": "bridge_west_flare", "surface": "stone_road_worn", "polygon": [[-124.5, 27.5], [-117, 27.5], [-117, 30.5], [-123.5, 30.5], [-125, 29.5]]}
+      {"id": "bridge_west_flare", "surface": "stone_road_worn", "polygon": [[-124.5, 27.5], [-117, 27.5], [-117, 30.5], [-123.5, 30.5], [-125, 29.5]]},
+      {
+        "id": "sanctuary_forecourt",
+        "surface": "gravel",
+        "polygon": [[87.6, -66.3], [89, -67], [92, -66.7], [93, -65.8], [92, -64], [89, -63.6], [87.7, -64.3]]
+      }
     ],
     "shore_conditions": [
       {"id": "bank_condition_0", "kind": "gravel", "polygon": [[-115.748, -26.515], [-114.336, -25.395], [-114.625, -23.119], [-116.048, -21.248], [-117.011, -21.715]]},
@@ -549,6 +560,17 @@
       "control_points": [[28.5, 92.1], [30.2, 93.35], [31.8, 93.65], [33.2, 93.35]],
       "width": 1.2,
       "role": "Southern watch shelter and stores approach"
+    },
+    {
+      "id": "sanctuary_approach",
+      "kind": "foot",
+      "role": "Maintained woodland approach to the old ridge sanctuary",
+      "surface": "dirt",
+      "width": 1.7,
+      "ruts": false,
+      "control_points": [[42, -45], [49, -48], [55, -52], [62, -52], [69, -55], [73, -60], [78, -57], [83, -58], [87, -59.5], [90, -62], [90, -66]],
+      "points": [[42, -45], [49, -48], [55, -52], [62, -52], [69, -55], [73, -60], [78, -57], [83, -58], [87, -59.5], [90, -62], [90, -66]],
+      "smooth_steps": 6
     }
   ],
   "walls": [{"id": "north_wall", "y": -96, "x0": -124, "x1": 124, "gate_x": 20, "gate_width": 4}, {"id": "south_wall", "y": 96, "x0": -124, "x1": 124, "gate_x": 28, "gate_width": 4}],
@@ -575,7 +597,17 @@
     {"id": "upper_millrace", "name": "Upper Millrace", "kind": "millrace", "tile_position": [8, -64], "discovered": true, "description": "Northern woodland surrounds the village's upper millrace."},
     {"id": "woodland_overlook", "name": "Woodland overlook", "kind": "overlook", "tile_position": [-48, -68], "discovered": true, "description": "A clearing on the woodland loop, with views across the inland vale."},
     {"id": "foothill_overlook", "name": "Foothill overlook", "kind": "overlook", "tile_position": [74, -20], "discovered": true, "description": "The eastern walking loop meets the wooded Greyfold foothills."},
-    {"id": "relief_staging", "name": "Road crew staging", "kind": "staging", "tile_position": [-68, 16], "discovered": true, "description": "Road crews gather stone and supplies beside the route to the damaged crossing."}
+    {"id": "relief_staging", "name": "Road crew staging", "kind": "staging", "tile_position": [-68, 16], "discovered": true, "description": "Road crews gather stone and supplies beside the route to the damaged crossing."},
+    {
+      "id": "ridge_sanctuary",
+      "name": "Ridge Sanctuary",
+      "kind": "sanctuary",
+      "tile_position": [90, -66],
+      "always_known": true,
+      "discovered": true,
+      "prop": "ridge_sanctuary",
+      "description": "The old ridge sanctuary stands northeast of Eldenmere in a protected wooded reserve. Its grove is tended as a place of remembrance and renewal. An old footpath climbs from the eastern foothills to its stone arch."
+    }
   ],
   "safe_clearings": [
     {"id": "town_return", "rect_tiles": [7, -28, 10, 10]},
@@ -591,7 +623,23 @@
     {"id": "south_farmyard_clear", "rect_tiles": [-25, 44, 17, 13]},
     {"id": "east_farmyard_clear", "rect_tiles": [54, 43, 20, 12]},
     {"id": "village_orchard_clear", "rect_tiles": [-13, -18, 17, 16]},
-    {"id": "southern_orchard_clear", "rect_tiles": [-10, 43, 12, 15]}
+    {"id": "southern_orchard_clear", "rect_tiles": [-10, 43, 12, 15]},
+    {
+      "id": "sanctuary_miniature_clear",
+      "rect_tiles": [87, -70, 6, 6]
+    },
+    {
+      "id": "sanctuary_forecourt_clear",
+      "rect_tiles": [87, -67, 7, 7]
+    },
+    {
+      "id": "sanctuary_grove_rest",
+      "rect_tiles": [82, -67, 5, 4]
+    },
+    {
+      "id": "sanctuary_stair_approach",
+      "rect_tiles": [88, -63, 4, 4]
+    }
   ],
   "route_validation": {
     "walking_speed_px_per_second": 72,
@@ -599,7 +647,7 @@
     "bridge_approach_road": "south_town_road",
     "bridge_approach_start_tile": [12, -25],
     "bridge_approach_end_tile": [-98, 28],
-    "reachable_landmark_ids": ["upper_millrace", "woodland_overlook", "foothill_overlook", "relief_staging"],
+    "reachable_landmark_ids": ["upper_millrace", "woodland_overlook", "foothill_overlook", "relief_staging", "ridge_sanctuary"],
     "opening_enclosure": {"north_wall": "north_wall", "south_wall": "south_wall", "western_river": "western_boundary_river", "eastern_river": "eastern_boundary_river"},
     "notes": [
       "Gate clearance and bridge repair are independent, absent by default and have no producer.",
@@ -1085,6 +1133,210 @@
       ],
       "clearance_radius": 5,
       "arrival_tile": [-4, 51]
+    },
+    {
+      "id": "ridge_sanctuary_reserve",
+      "kind": "sanctuary",
+      "name": "Ridge sanctuary wooded terrace",
+      "tile_position": [90, -66],
+      "approach_tile": [90, -62],
+      "arrival_tile": [90, -62],
+      "review": {
+        "focus_tile": [89.8, -66.4],
+        "player_tile": [90, -61.2],
+        "facing": "back"
+      },
+      "miniature_footprint_tiles": [87, -70, 6, 6],
+      "clearance_radius": 6.2,
+      "props": [
+        {
+          "id": "sanctuary_ledge_0",
+          "key": "ridge",
+          "tile_position": [82, -62.7],
+          "solid": [74, 10]
+        },
+        {
+          "id": "sanctuary_ledge_1",
+          "key": "ridge",
+          "tile_position": [85.4, -61.7],
+          "solid": [72, 10]
+        },
+        {
+          "id": "sanctuary_ledge_2",
+          "key": "ridge",
+          "tile_position": [94.3, -61.5],
+          "solid": [72, 10]
+        },
+        {
+          "id": "sanctuary_ledge_3",
+          "key": "ridge",
+          "tile_position": [97.3, -63.1],
+          "solid": [64, 10]
+        },
+        {
+          "id": "sanctuary_ledge_4",
+          "key": "ridge",
+          "tile_position": [98.3, -66.9],
+          "solid": [60, 10]
+        },
+        {
+          "id": "sanctuary_ledge_5",
+          "key": "ridge",
+          "tile_position": [96.5, -72],
+          "solid": [64, 10]
+        },
+        {
+          "id": "sanctuary_lower_outcrop",
+          "key": "rock_outcrop",
+          "tile_position": [95.7, -58.9],
+          "solid": [38, 8]
+        },
+        {
+          "id": "sanctuary_upper_outcrop",
+          "key": "rock_outcrop",
+          "tile_position": [93.8, -74],
+          "solid": [38, 8]
+        },
+        {
+          "id": "sanctuary_stairs",
+          "key": "sanctuary_steps",
+          "tile_position": [90, -62.0]
+        },
+        {
+          "id": "sanctuary_grove_0",
+          "key": "oak_a",
+          "tile_position": [82.4, -70.3],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_1",
+          "key": "oak_b",
+          "tile_position": [84.4, -71.8],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_2",
+          "key": "oak_c",
+          "tile_position": [86.6, -73.4],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_3",
+          "key": "oak_b",
+          "tile_position": [89.6, -74.5],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_4",
+          "key": "oak_a",
+          "tile_position": [93, -74.4],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_5",
+          "key": "oak_c",
+          "tile_position": [83.1, -67.5],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_6",
+          "key": "oak_a",
+          "tile_position": [80.7, -65.8],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_7",
+          "key": "conifer_b",
+          "tile_position": [99, -70.5],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_grove_8",
+          "key": "conifer_a",
+          "tile_position": [99.7, -64.8],
+          "solid": [10, 8]
+        },
+        {
+          "id": "sanctuary_bench",
+          "key": "bench",
+          "tile_position": [84.8, -64.6],
+          "solid": [22, 7]
+        },
+        {
+          "id": "sanctuary_flowers_0",
+          "key": "flowers_a",
+          "tile_position": [83.9, -63.9]
+        },
+        {
+          "id": "sanctuary_flowers_1",
+          "key": "flowers_b",
+          "tile_position": [86.4, -65.5]
+        },
+        {
+          "id": "sanctuary_flowers_2",
+          "key": "flowers_a",
+          "tile_position": [92.7, -65]
+        },
+        {
+          "id": "sanctuary_flowers_3",
+          "key": "flowers_b",
+          "tile_position": [93.4, -63.7]
+        },
+        {
+          "id": "sanctuary_flowers_4",
+          "key": "flowers_a",
+          "tile_position": [88.3, -61.9]
+        },
+        {
+          "id": "sanctuary_flowers_5",
+          "key": "flowers_b",
+          "tile_position": [91.6, -61.5]
+        },
+        {
+          "id": "sanctuary_shrub_0",
+          "key": "shrub",
+          "tile_position": [81.5, -68.8]
+        },
+        {
+          "id": "sanctuary_shrub_1",
+          "key": "shrub",
+          "tile_position": [85.3, -70]
+        },
+        {
+          "id": "sanctuary_shrub_2",
+          "key": "shrub",
+          "tile_position": [96.8, -68.3]
+        },
+        {
+          "id": "sanctuary_shrub_3",
+          "key": "shrub",
+          "tile_position": [97.5, -61.3]
+        },
+        {
+          "id": "sanctuary_junction_waypost",
+          "key": "waypost",
+          "tile_position": [43.6, -46.8],
+          "solid": [10, 6]
+        },
+        {
+          "id": "sanctuary_reserve_waypost",
+          "key": "waypost",
+          "tile_position": [87.5, -61.1],
+          "solid": [10, 6]
+        },
+        {
+          "id": "sanctuary_west_boundary_rock",
+          "key": "rock_outcrop",
+          "tile_position": [85.8, -63.1],
+          "solid": [28, 6]
+        },
+        {
+          "id": "sanctuary_east_boundary_rock",
+          "key": "rock_outcrop",
+          "tile_position": [94.2, -62.8],
+          "solid": [28, 6]
+        }
+      ]
     }
   ],
   "clearance_paths": [{"id": "town_all_sides", "points": [[6, -33], [18, -33], [18, -27], [6, -27], [6, -33]], "width": 3}],
@@ -1145,10 +1397,6 @@
     {"id": "east_grain_edge_0_9", "key": "hedge_h", "tile_position": [57.2, 41]},
     {"id": "east_grain_edge_1_0", "key": "hedge_h", "tile_position": [62.8, 41]},
     {"id": "east_grain_edge_1_1", "key": "hedge_h", "tile_position": [63.2, 41]},
-    {"id": "ridge_shelf_0_0", "key": "ridge", "tile_position": [88.0, -60.0], "solid": [70, 12]},
-    {"id": "ridge_shelf_0_1", "key": "ridge", "tile_position": [91.0, -59.71305756364019], "solid": [70, 12]},
-    {"id": "ridge_shelf_0_2", "key": "ridge", "tile_position": [94.0, -59.6001705587834], "solid": [70, 12]},
-    {"id": "ridge_shelf_0_3", "key": "ridge", "tile_position": [97.0, -59.72981472777954], "solid": [70, 12]},
     {"id": "ridge_shelf_1_0", "key": "ridge", "tile_position": [91.0, -43.0], "solid": [70, 12]},
     {"id": "ridge_shelf_1_1", "key": "ridge", "tile_position": [94.0, -42.71305756364019], "solid": [70, 12]},
     {"id": "ridge_shelf_1_2", "key": "ridge", "tile_position": [97.0, -42.6001705587834], "solid": [70, 12]},
@@ -1206,5 +1454,13 @@
     {"id": "rooted_corner_4", "key": "flowers_a", "tile_position": [72.5, 42.5]}
   ],
   "composition_art_manifest": "assets/terrain/overworld/elden_vale/composition/art.json",
-  "composition_pass": {"version": 1, "bridge_roadway_pixels": 72, "intent": "Place composition follows approaches, useful working relationships and connected boundaries; regional scale and existing progression stay stable."}
+  "composition_pass": {"version": 1, "bridge_roadway_pixels": 72, "intent": "Place composition follows approaches, useful working relationships and connected boundaries; regional scale and existing progression stay stable.",
+    "ridge_sanctuary": {
+      "version": 1,
+      "placement": "Northeastern wooded Greyfold shoulder inside the starting enclosure",
+      "entry_enabled": false,
+      "intent": "A known regional miniature reached along a maintained climbing path; local reserve and cave scenes remain future work."
+    }
+  },
+  "sanctuary_art_manifest": "assets/terrain/overworld/elden_vale/sanctuary/art.json"
 }

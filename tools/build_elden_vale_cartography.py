@@ -66,6 +66,9 @@ def survey(data):
     anchors = {'Eldenmere':data['town']['tile_position'],
                'Western crossing':data['bridge']['tile_position']}
     anchors.update({g['label']:g['tile_position'] for g in data.get('gates',[])})
+    anchors.update({record['name']:record['tile_position']
+                    for record in data.get('landmarks',[])
+                    if record.get('kind') == 'sanctuary'})
     for name,p in anchors.items():
         x,y = point(p);draw.ellipse((x-5,y-5,x+5,y+5),fill='#773f39')
         draw.text((x+8,y-6),name,fill='#26372f',stroke_width=1,stroke_fill='#eee6cf')

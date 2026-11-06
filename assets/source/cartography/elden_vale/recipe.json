@@ -22,6 +22,10 @@
     {
       "file": "assets/source/cartography/elden_vale/quiet_materials_sheet.png",
       "sha256": "3d527fda40087091ddb1f96e32f26f5ad31cbbc9cdaa9e830f28c02e6e3425a0"
+    },
+    {
+      "file": "assets/terrain/overworld/elden_vale/sanctuary/ridge_sanctuary.png",
+      "sha256": "676598c1bd856fb268018bc5483b1f903273fd6a8a88a7251973f80461e1fb1b"
     }
   ],
   "tiles": {
@@ -404,6 +408,18 @@
         1536,
         1024
       ],
+      "size": [
+        64,
+        64
+      ],
+      "foot_anchor": [
+        32,
+        64
+      ],
+      "role": "icon"
+    },
+    "sanctuary": {
+      "source_image": "assets/terrain/overworld/elden_vale/sanctuary/ridge_sanctuary.png",
       "size": [
         64,
         64
