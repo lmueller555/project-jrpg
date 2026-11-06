@@ -230,6 +230,38 @@
         "sha256": "6a3f3089ed2e35649a9f86c6844d3edb9858d1e81439ae3aca401844228df1e0",
         "bytes": 9071719
       }
+    },
+    {
+      "identifier": "those_i_swore_to_save",
+      "source": "Those I Swore to Save.m4a",
+      "source_git_blob_sha": "a55b054d204b294b8fdf923d3a65e7f454cee6e3",
+      "source_sha256": "e49e2c5def34a8ad697391fd3a70ce1ebcd4b231e417eeb635052bcd88eac82a",
+      "source_codec": "opus",
+      "source_decoded_frames": 11441928,
+      "source_decoded_seconds": 238.3735,
+      "loop": false,
+      "runtime": "runtime/those_i_swore_to_save.ogg",
+      "runtime_frame_delta": 0,
+      "boundaries": {
+        "removed_tail_frames": 0,
+        "removed_tail_seconds": 0,
+        "boundary_declick_ms": 0
+      },
+      "verification": {
+        "codec": "vorbis",
+        "sample_rate": 48000,
+        "channels": 2,
+        "decoded_frames": 11441928,
+        "duration_seconds": 238.3735,
+        "peak_dbfs": -3.751298736776794,
+        "rms_dbfs": -19.089336709466203,
+        "sample_step_across_repeat": 0.0006287607247941196,
+        "pygame_full_decode": true,
+        "pygame_stream_with_repeat": false,
+        "pygame_stream_one_shot": true,
+        "sha256": "252fe9803aa7322294441e7a9f25a7b644e07c409b2edcfa476e52047a4cb016",
+        "bytes": 6999810
+      }
     }
   ]
 }

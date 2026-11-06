@@ -282,7 +282,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         self.assertFalse(session.game.save_store.enabled)
         for frame in range(960):
             self.assertIs(self.parent.gallery_session, session, frame)
-            self.assertEqual(session.game.music.desired_track, 'wintermute2')
+            self.assertEqual(session.game.music.desired_track, 'those_i_swore_to_save')
             self.parent.update(1/30, (1, 0), True)
         self.assertTrue(session.closed)
         self.assertIsNone(self.parent.gallery_session)
@@ -310,7 +310,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         self.assertIsNot(replacement, session)
         self.assertTrue(session.closed)
         self.assertEqual(replacement.game.opening_cinematic.elapsed, 0.)
-        self.assertEqual(replacement.game.music.desired_track, 'wintermute2')
+        self.assertEqual(replacement.game.music.desired_track, 'those_i_swore_to_save')
         self.key(pygame.K_ESCAPE)
         self.assertIsNone(self.parent.gallery_session)
         self.assertTrue(self.parent.on_gallery)

@@ -168,7 +168,7 @@ def _ice_reaper_film(game, playback):
     game.opening_audio.set_paused(True)
     game.opening_cinematic = IceReaperOpening(game)
     game.opening_cinematic.start(playback.done)
-    game.music.play('wintermute2', fade_ms=0)
+    game.music.play('those_i_swore_to_save', fade_ms=0)
 
 
 def _morning(game, playback, breakfast=False):
