@@ -1,0 +1,502 @@
+{
+  "id": "elden_vale_sanctuary",
+  "name": "Elden Vale Sanctuary",
+  "size_pixels": [
+    1152,
+    768
+  ],
+  "spawn": [
+    444,
+    642
+  ],
+  "reserve_exit": {
+    "position": [
+      444,
+      735
+    ],
+    "radius": 20
+  },
+  "hall_approach": [
+    535,
+    345
+  ],
+  "landmarks": [
+    {
+      "id": "arrival",
+      "name": "Reserve entrance",
+      "position": [
+        444,
+        642
+      ],
+      "description": "An old arch marks the way into the sanctuary reserve. The woodland path leads back to Elden Vale."
+    },
+    {
+      "id": "sanctuary_hall",
+      "name": "Sanctuary Hall",
+      "position": [
+        535,
+        345
+      ],
+      "description": "The pale stone hall and sheltered cloister are kept for visitors, quiet company and the care of the reserve."
+    },
+    {
+      "id": "memorial_grove",
+      "name": "Memorial Grove",
+      "position": [
+        264,
+        306
+      ],
+      "description": "Old trees and young plantings grow together. Neighbours tend this living grove in remembrance of those they have lost."
+    },
+    {
+      "id": "confluence",
+      "name": "Grove Clearing",
+      "position": [
+        280,
+        218
+      ],
+      "description": "Faint lights drift between the leaves where the vale’s natural aether currents gather."
+    },
+    {
+      "id": "cave",
+      "name": "Ridge Cave",
+      "position": [
+        1008,
+        371
+      ],
+      "description": "Roots cling to a natural opening in the limestone ridge. Weathered traces of masonry remain beside it."
+    },
+    {
+      "id": "stone_seam",
+      "name": "Surveyed Stone Face",
+      "position": [
+        934,
+        558
+      ],
+      "description": "Survey stakes mark an intact limestone seam within the protected reserve, away from the sanctuary hall. No stone has been cut here."
+    }
+  ],
+  "public_approaches": {
+    "arrival": [
+      444,
+      642
+    ],
+    "hall": [
+      534,
+      370
+    ],
+    "gardener": [
+      212,
+      480
+    ],
+    "visitor_1": [
+      264,
+      334
+    ],
+    "visitor_2": [
+      300,
+      320
+    ],
+    "grove": [
+      292,
+      244
+    ],
+    "cave": [
+      1008,
+      406
+    ],
+    "survey": [
+      858,
+      630
+    ],
+    "boundary": [
+      456,
+      654
+    ],
+    "rest_bench": [
+      180,
+      570
+    ]
+  },
+  "loop_waypoints": [
+    [
+      534,
+      440
+    ],
+    [
+      456,
+      438
+    ],
+    [
+      354,
+      382
+    ],
+    [
+      282,
+      316
+    ],
+    [
+      204,
+      350
+    ],
+    [
+      170,
+      314
+    ],
+    [
+      164,
+      272
+    ],
+    [
+      196,
+      232
+    ],
+    [
+      220,
+      198
+    ],
+    [
+      228,
+      164
+    ],
+    [
+      208,
+      134
+    ],
+    [
+      180,
+      110
+    ],
+    [
+      228,
+      94
+    ],
+    [
+      288,
+      84
+    ],
+    [
+      348,
+      88
+    ],
+    [
+      418,
+      102
+    ],
+    [
+      490,
+      102
+    ],
+    [
+      566,
+      98
+    ],
+    [
+      638,
+      98
+    ],
+    [
+      708,
+      106
+    ],
+    [
+      774,
+      122
+    ],
+    [
+      850,
+      126
+    ],
+    [
+      940,
+      130
+    ],
+    [
+      1014,
+      162
+    ],
+    [
+      1056,
+      220
+    ],
+    [
+      1090,
+      278
+    ],
+    [
+      1102,
+      330
+    ],
+    [
+      1088,
+      368
+    ],
+    [
+      1056,
+      392
+    ],
+    [
+      1008,
+      402
+    ],
+    [
+      926,
+      428
+    ],
+    [
+      856,
+      454
+    ],
+    [
+      794,
+      474
+    ],
+    [
+      738,
+      490
+    ],
+    [
+      680,
+      506
+    ],
+    [
+      626,
+      506
+    ],
+    [
+      574,
+      476
+    ],
+    [
+      534,
+      440
+    ]
+  ],
+  "blocked_probes": {
+    "hall": [
+      470,
+      288
+    ],
+    "cloister_wall": [
+      720,
+      274
+    ],
+    "basin": [
+      750,
+      345
+    ],
+    "grove_bench": [
+      271,
+      281
+    ],
+    "tree_trunk": [
+      101,
+      353
+    ],
+    "cliff": [
+      698,
+      437
+    ],
+    "cave_depth": [
+      998,
+      325
+    ],
+    "stone_seam": [
+      963,
+      544
+    ],
+    "boundary_wall": [
+      670,
+      673
+    ]
+  },
+  "confluence_motes": {
+    "center": [
+      280,
+      218
+    ],
+    "radius": [
+      41,
+      28
+    ],
+    "count": 7
+  },
+  "doors": [
+    {
+      "id": "sanctuary_hall",
+      "anchor": [
+        535,
+        345
+      ],
+      "entry_y": 345,
+      "entry_side": "north",
+      "entry_half_width": 12,
+      "open_radius": 32,
+      "close_radius": 40,
+      "frame_duration_ms": 100,
+      "frames": [],
+      "position": [
+        535,
+        345
+      ],
+      "host": null,
+      "requires_open": false,
+      "destination": "assets/maps/elden_vale_sanctuary_hall/map.json",
+      "spawn": [
+        288,
+        328
+      ],
+      "arrival_facing": "back",
+      "arrival_door": "reserve_exit"
+    }
+  ],
+  "kind": "reserve",
+  "tile_size": 24,
+  "size_tiles": [
+    48,
+    32
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "ground_frames": [
+    "assets/terrain/elden_vale_sanctuary/ground.png"
+  ],
+  "ground_frame_duration_ms": 1000,
+  "collision": "assets/maps/elden_vale_sanctuary/collision.png",
+  "entities": [
+    {
+      "id": "sanctuary_hall_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/sanctuary_hall_depth.png"
+      ],
+      "position": [
+        377,
+        98
+      ],
+      "sort_y": 345,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "arrival_arch_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/arrival_arch_depth.png"
+      ],
+      "position": [
+        372,
+        574
+      ],
+      "sort_y": 690,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "western_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/western_oak_depth.png"
+      ],
+      "position": [
+        0,
+        85
+      ],
+      "sort_y": 380,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "lower_western_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/lower_western_oak_depth.png"
+      ],
+      "position": [
+        0,
+        374
+      ],
+      "sort_y": 594,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "grove_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/grove_oak_depth.png"
+      ],
+      "position": [
+        236,
+        332
+      ],
+      "sort_y": 477,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "lower_grove_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/lower_grove_oak_depth.png"
+      ],
+      "position": [
+        280,
+        458
+      ],
+      "sort_y": 601,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "eastern_ridge_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/eastern_ridge_oak_depth.png"
+      ],
+      "position": [
+        820,
+        130
+      ],
+      "sort_y": 297,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "survey_spur_oak_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/survey_spur_oak_depth.png"
+      ],
+      "position": [
+        720,
+        471
+      ],
+      "sort_y": 586,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    },
+    {
+      "id": "southern_canopy_depth",
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary/depth/southern_canopy_depth.png"
+      ],
+      "position": [
+        500,
+        674
+      ],
+      "sort_y": 768,
+      "frame_duration_ms": 1000,
+      "phase_offset": 0
+    }
+  ],
+  "foreground": [],
+  "overview": "assets/terrain/elden_vale_sanctuary/overview.png",
+  "npcs": [],
+  "world_links": [],
+  "build": {
+    "tool": "tools/build_elden_vale_sanctuary.py",
+    "source_recipe": "assets/source/maps/elden_vale_sanctuary/recipe.json",
+    "source_recipe_sha256": "86f907717ce530d6bb424bed4042289b3feb5bb565c271d39136fe3437e9ec66",
+    "art_manifest": "assets/terrain/elden_vale_sanctuary/art.json",
+    "art_manifest_sha256": "071b2a028a98d3325c1730f3025c718ce5b9b37113295374f6265ca92a9fd170"
+  }
+}

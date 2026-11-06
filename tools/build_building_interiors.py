@@ -217,6 +217,9 @@ def build():
         data.update(id=key,name=labels[key],overview=town_map['overview'])
         path=ROOT/room_files[key];path.parent.mkdir(parents=True,exist_ok=True)
         write_json(path,data)
+    # This independently built regional hall is a valid saved scene, but is
+    # deliberately absent from the village's cross-room resident routines.
+    room_files['elden_vale_sanctuary_hall']='assets/maps/elden_vale_sanctuary_hall/map.json'
     town_map['interior_scenes']=room_files
     write_json(TOWN,town_map)
     print(f'Compiled {len(town_map["doors"])} base exterior doors, {len(rooms)} furnished scenes and sanctuary room links.')

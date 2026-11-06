@@ -1627,7 +1627,8 @@
     "mira": "assets/maps/eldenmere/building_interiors/rooms/mira/map.json",
     "mill": "assets/maps/eldenmere/building_interiors/rooms/mill/map.json",
     "liam_house": "assets/maps/eldenmere/building_interiors/rooms/liam_house/map.json",
-    "school": "assets/maps/eldenmere/building_interiors/rooms/school/map.json"
+    "school": "assets/maps/eldenmere/building_interiors/rooms/school/map.json",
+    "elden_vale_sanctuary_hall": "assets/maps/elden_vale_sanctuary_hall/map.json"
   },
   "layout_additions": [
     "assets/maps/eldenmere/liam_house/house.json",
@@ -1638,7 +1639,8 @@
   ],
   "household_registry": "assets/maps/eldenmere/households/households.json",
   "exterior_scenes": {
-    "upstream": "assets/maps/eldenmere/upstream/map.json"
+    "upstream": "assets/maps/eldenmere/upstream/map.json",
+    "elden_vale_sanctuary": "assets/maps/elden_vale_sanctuary/map.json"
   },
   "world_links": [
     {

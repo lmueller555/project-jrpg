@@ -55,7 +55,7 @@ from regent_quest import RegentQuest
 from lantern_quest import LanternQuest
 from world_encounters import CombatEncounters
 from bed_rest import BedRest
-from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID
+from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 
 ROOT=Path(__file__).resolve().parent
@@ -474,6 +474,8 @@ class Game:
         self.combat=CombatEncounters(self)
         self.bed_rest=BedRest(self)
         self.overworld_travel=OverworldTravel(self)
+        from sanctuary_reserve import SanctuaryReserve
+        self.sanctuary_reserve=SanctuaryReserve(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
@@ -719,6 +721,8 @@ class Game:
         if data is not None and 'bot_loadouts' in data:self.bot_loadouts.restore(data['bot_loadouts'])
         self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.overworld_travel.restore(data.get('overworld') if data else None)
+        reserve=getattr(self,'sanctuary_reserve',None)
+        if reserve is not None:reserve.reset()
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -888,7 +892,11 @@ class Game:
     def _load_scene(self,path):
         path=Path(path).resolve()
         if path==REGION_FILE.resolve():return self.overworld_world
-        if path not in self.scenes:self.scenes[path]=World(path,self.town._images)
+        if path not in self.scenes:
+            if path==RESERVE_FILE.resolve():
+                from elden_vale_sanctuary import SanctuaryReserveWorld
+                self.scenes[path]=SanctuaryReserveWorld(path,self.town._images)
+            else:self.scenes[path]=World(path,self.town._images)
         return self.scenes[path]
 
     @property
@@ -1107,6 +1115,11 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    reserve=getattr(self,'sanctuary_reserve',None)
+                    if reserve is not None and reserve.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
                         if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
@@ -1180,7 +1193,8 @@ class Game:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
-        if (self.overworld_travel.active and (self.map_open or self.quest_ui.journal_open)):
+        if (getattr(self.overworld_travel,'remote',self.overworld_travel.active)
+                and (self.map_open or self.quest_ui.journal_open)):
             self.opening_audio.set_paused(True)
             return
         self.opening_fade=max(0,self.opening_fade-seconds)
@@ -1192,7 +1206,7 @@ class Game:
             return
         self.elapsed_ms+=seconds*1000
         self.location_seconds=max(0.0,self.location_seconds-seconds)
-        self.opening.update(seconds)
+        if not getattr(self.overworld_travel,'in_reserve',False):self.opening.update(seconds)
         self.opening_audio.update(seconds)
         if direction is None:
             keys=pygame.key.get_pressed()
@@ -1212,10 +1226,13 @@ class Game:
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
-            if self.world.data.get('kind')=='interior' and self.opening.stage in ('explore','assignment','done'):
+            if (not getattr(self.overworld_travel,'in_reserve',False) and self.world.data.get('kind')=='interior'
+                    and self.opening.stage in ('explore','assignment','done')):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
-        if not self.overworld_travel.active:
+        reserve=getattr(self,'sanctuary_reserve',None)
+        if reserve is not None:reserve.update(seconds)
+        if not getattr(self.overworld_travel,'remote',self.overworld_travel.active):
             for visit in self.household_visits:
                 visit.update(seconds)
                 if self.combat.active:
@@ -1377,7 +1394,10 @@ class Game:
                 canvas.blit(layer,(0,0))
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
-        hint=(hint or self.overworld_travel.interaction_hint() or self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
+        reserve=getattr(self,'sanctuary_reserve',None)
+        hint=(hint or self.overworld_travel.interaction_hint() or
+              (reserve.interaction_hint() if reserve is not None else '') or
+              self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
                     if (hint:=visit.interaction_hint())), ''))
         if not hint:hint=self.combat.interaction_hint()

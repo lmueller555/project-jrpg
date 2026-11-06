@@ -50,6 +50,7 @@ class MapUI:
         self.building_rects = {}
         self._mouse_held = False
         self._regional_map = None
+        self._reserve_map = None
         self.detail_scroll = 0
         self.detail_max_scroll = 0
         self._plan = self._read_plan()
@@ -141,6 +142,9 @@ class MapUI:
         return tuple(self.game.exterior_position)
 
     def reset(self):
+        if self._in_reserve():
+            self._reserve().reset()
+            return
         if getattr(self.game.world, 'is_overworld', False):
             self._regional().reset()
             return
@@ -174,6 +178,8 @@ class MapUI:
                    self.building_rects[pair[1]['id']].height)[0]
 
     def handle_event(self, event):
+        if self._in_reserve():
+            return self._reserve().handle_event(event)
         if getattr(self.game.world, 'is_overworld', False):
             return self._regional().handle_event(event)
         if not self.game.map_open:return False
@@ -316,6 +322,9 @@ class MapUI:
         painter.rect(INK, (x-1, y-1, 2, 2))
 
     def draw(self, canvas):
+        if self._in_reserve():
+            self._reserve().draw(canvas)
+            return
         if getattr(self.game.world, 'is_overworld', False):
             self._regional().draw(canvas)
             return
@@ -348,6 +357,15 @@ class MapUI:
         painter.rect(BRASS, self.map_rect, 1)
         painter.line('#c4b184', (299, 66), (299, 290), 1)
         self._draw_details(painter)
+
+    def _in_reserve(self):
+        return self.game.world.data.get('id') in ('elden_vale_sanctuary', 'elden_vale_sanctuary_hall')
+
+    def _reserve(self):
+        if self._reserve_map is None:
+            from sanctuary_map import SanctuaryMapUI
+            self._reserve_map = SanctuaryMapUI(self.game)
+        return self._reserve_map
 
     def _regional(self):
         if self._regional_map is None:

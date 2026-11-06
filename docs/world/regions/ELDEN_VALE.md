@@ -7,9 +7,9 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 represents the boundary rivers, woodland, foothills, fields, guarded walls and
 lightning-destroyed western road bridge. Aldric's [arrival cinematic](../../REGENT_ARRIVAL.md)
 and MQ03 dialogue present the relief visit and covenant disagreement. Elden Vale
-Sanctuary now has an overworld miniature and approach in the northeastern
-foothills; its detailed reserve and cave are not implemented by that geography
-addition.
+Sanctuary has an overworld miniature and approach in the northeastern foothills.
+Its [detailed reserve and hall](../../SANCTUARY_RESERVE.md) are now accessible
+from the miniature; the cave dungeon and its quest remain future work.
 
 Elden Vale is Eldenmere's home region: a wooded inland valley on
 the western foothills of Merovar's Greyfold Mountains. The valley gives Game I
