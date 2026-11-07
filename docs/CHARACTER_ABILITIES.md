@@ -28,7 +28,7 @@ The workshop gift presentation shows the whole blade, handoff, selector and the 
 | Requirement | Learned technique and an equipped, owned weapon |
 | Cost | 4 MP and one normal ATB action |
 | Target | One enemy |
-| Duration / impact | 0.90 / 0.50 seconds |
+| Duration / impact | 2.00 / 1.00 seconds (full choreographed action) |
 | Effect | Immediate physical strike at potency 1 plus non-elemental Mag component at potency 0.5 |
 
 The physical component uses Str/Def and the magical component uses Mag/M. Def. They share the same variance roll and combine into one hit, one damage popup and one 9,999 per-hit cap. The action does not grant charges, enchant later attacks, fire a projectile or introduce elemental affinities. This deliberately replaces the older three-strike self-enchantment.

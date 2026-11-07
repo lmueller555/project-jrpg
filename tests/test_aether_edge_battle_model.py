@@ -97,7 +97,7 @@ class AetherEdgeBattleModelTests(unittest.TestCase):
         self.assertEqual((model.player.mp,model.player.atb),(26,0))
         self.assertEqual((model.current_action.kind,model.current_action.target,
                           model.current_action.animation),('spellblade','enemy','attack'))
-        model.update(.499)
+        model.update(model.current_action.impact_at-.001)
         self.assertEqual(model.enemy.hp,1000000)
         self.assertEqual(model.enemy.atb,enemy_atb)
         model.update(.001)
@@ -126,7 +126,7 @@ class AetherEdgeBattleModelTests(unittest.TestCase):
         for mag in (5,40):
             model=self.model(attributes(mag=mag),rng=FixedVariance(95))
             self.ready(model);calls=model.rng.calls
-            self.assertTrue(model.choose_action('aether_edge'));model.update(.5)
+            self.assertTrue(model.choose_action('aether_edge'));model.update(model.current_action.impact_at)
             self.assertEqual(model.rng.calls,calls+1)
             expected=(physical_damage(model.player,model.enemy,variance_percent=95)+
                       magical_damage(model.player,model.enemy,.5,variance_percent=95))
@@ -152,7 +152,7 @@ class AetherEdgeBattleModelTests(unittest.TestCase):
     def test_guest_cannot_use_caelans_weapon_skill(self):
         model=self.model(guest_id='mira')
         model.player.atb=model.combatant('mira').atb=1;model.update(0)
-        self.assertTrue(model.choose_action('aether_edge',actor_id='player'));model.update(.9)
+        self.assertTrue(model.choose_action('aether_edge',actor_id='player'));model.update(model.current_action.duration)
         self.assertEqual(model.ready_actor,'mira')
         self.assertEqual(model.skill_actions(),['overclock'])
         self.assertNotIn('aether_edge',model.available_actions())

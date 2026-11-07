@@ -185,7 +185,7 @@ class SkillsBattleSceneTests(unittest.TestCase):
         self.click(self.scene.party_rows['player']['row'].center)
         self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)
-        self.scene.update(.9)
+        self.scene.update(self.model.current_action.duration)
         self.assertEqual(self.model.ready_actor, 'mira')
         self.assertEqual(self.scene.command_menu, 'root')
         self.click(self.scene.party_rows['player']['row'].center)
@@ -277,12 +277,12 @@ class SkillsBattleSceneTests(unittest.TestCase):
     def test_edge_uses_an_attack_arc_and_one_enemy_damage_popup_without_charges(self):
         self.ready();self.open_skills()
         self.click(self.scene.command_rects['aether_edge'].center)
-        self.scene.update(.25)
+        self.scene.update(.9)
         self.assertEqual(self.scene._pose('player')[0],'aether_edge')
         enemy_hp=self.model.enemy.hp
         with patch.object(self.scene.gear_fx, 'draw', wraps=self.scene.gear_fx.draw) as effects:self.draw()
         self.assertTrue(effects.called)
-        self.scene.update(.25)
+        self.scene.update(self.model.current_action.impact_at-.9)
         self.assertLess(self.model.enemy.hp,enemy_hp)
         self.assertEqual(self.model.player.aether_edge_hits,0)
         self.assertEqual(self.scene._popups[-1]['target'],'enemy')

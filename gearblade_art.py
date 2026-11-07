@@ -42,7 +42,7 @@ class GearbladeFocus:
 
 
 class GearbladeCombat:
-    def __init__(self, image_reader=None):
+    def __init__(self, image_reader=None, include_motion=True):
         reader = image_reader or _reader
         self.manifest = json.loads((ROOT/ART/'combat/animation.json').read_text())
         self.anchor = tuple(self.manifest['anchor'])
@@ -77,6 +77,10 @@ class GearbladeCombat:
             name: [(read_frame(frame),frame['duration_ms'])
                    for frame in entry['frames']]
             for name,entry in self.manifest['animations'].items()}
+        self.motion = None
+        if include_motion:
+            from combat_motion_art import CombatMotionArt
+            self.motion = CombatMotionArt(image_reader=reader, legacy=self)
 
     def _selection(self, state, elapsed_ms):
         if not math.isfinite(float(elapsed_ms)):raise ValueError('Invalid animation clock')
@@ -90,17 +94,25 @@ class GearbladeCombat:
             time -= milliseconds
         return state,len(sequence)-1
 
-    def frame(self, state, elapsed_ms):
+    def frame(self, state, elapsed_ms, armed=True):
+        if self.motion is not None:
+            from combat_motion_art import MOTION_STATES
+            if state in MOTION_STATES or not armed:
+                return self.motion.frame(state,elapsed_ms,armed)
         state,index = self._selection(state,elapsed_ms)
         return self.sequences[state][index][0],self.anchor
 
-    def anchors(self, state, elapsed_ms):
+    def anchors(self, state, elapsed_ms, armed=True):
         """Return frame-local weapon anchors, in the unscaled 64-pixel canvas.
 
         The same frame selection drives body and effects. Callers translate
         each point by the actor's floor position minus ``self.anchor`` and
         apply the actor display scale (two in battle).
         """
+        if self.motion is not None:
+            from combat_motion_art import MOTION_STATES
+            if state in MOTION_STATES or not armed:
+                return self.motion.anchors(state,elapsed_ms,armed)
         state,index = self._selection(state,elapsed_ms)
         record = self.manifest['animations'][state]['frames'][index]
         result = {name:tuple(point) for name,point in record['anchors'].items()}

@@ -48,6 +48,8 @@ class GearbladeEffects:
     is seconds since the latest gem settled, or None. ``action`` accepts a
     BattleAction or a mapping with optional ``unmastered`` presentation hint.
     Aether Edge always uses neutral purple-white energy, for every gem.
+    ``pose_anchors`` can supply the selected motion drawing's local weapon
+    anchors and optional ``floor``; otherwise the original art bank selects them.
     """
     LAYER_SIZE = (176, 176)
     FLOOR = (88, 140)
@@ -60,7 +62,7 @@ class GearbladeEffects:
         self._layer = pygame.Surface(self.LAYER_SIZE, pygame.SRCALPHA)
 
     def sample(self, point, state, time_ms, gem, elapsed, slot_age=None,
-               action=None, reduced_motion=False):
+               action=None, reduced_motion=False, pose_anchors=None):
         """Describe the current effect without modifying battle or FX state."""
         clocks = [float(time_ms), float(elapsed), float(point[0]), float(point[1])]
         if slot_age is not None:clocks.append(float(slot_age))
@@ -75,23 +77,33 @@ class GearbladeEffects:
         tentative = bool(_get(action, 'unmastered', False)) or failed
         effect = 'aether' if aether else REQUIRED_GEMS.get(name, gem)
         mode = 'aether' if aether else 'failed' if failed else 'tentative' if tentative else 'elemental'
-        pose = self.art.anchors(state, time_ms)
+        pose = self.art.anchors(state, time_ms) if pose_anchors is None else pose_anchors
+        floor = pose.get('floor', pose.get('foot', self.art.anchor))
         def translate(p):
-            return (float(point[0])+(p[0]-self.art.anchor[0])*self.scale,
-                    float(point[1])+(p[1]-self.art.anchor[1])*self.scale)
+            return (float(point[0])+(p[0]-floor[0])*self.scale,
+                    float(point[1])+(p[1]-floor[1])*self.scale)
         anchors = {key:translate(pose[key]) for key in ('guard', 'active_gem', 'blade_base', 'blade_tip')}
-        anchors['gems'] = {key:translate(value) for key,value in pose['gems'].items()}
+        x, y = pose['guard']
+        gems = pose.get('gems', {'nature':(x,y-3), 'water':(x+3,y),
+                                 'fire':(x,y+3), 'ice':(x-3,y)})
+        anchors['gems'] = {key:translate(value) for key,value in gems.items()}
         active = bool(name) and not failed
         strength = .28 if not active else .66
         if tentative:strength *= .42
         if state == 'hurt':strength *= .35
         if state == 'defeat':strength = 0.
-        # A contact accent is tied to the existing 500 ms battle impact. No
-        # model cost, hit count, duration or damage timing is changed here.
-        contact = max(0., 1-abs(action_age-.5)/.115) if aether and action is not None else 0.
-        if reduced_motion:contact = .55 if aether and .48 <= action_age <= .62 else 0.
+        impact_at = float(_get(action, 'impact_at', .5))
+        duration = float(_get(action, 'duration', max(.9, impact_at)))
+        if not all(math.isfinite(value) for value in (impact_at, duration)) or not 0 <= impact_at <= duration:
+            raise ValueError('Invalid action effects timing')
+        # Contact follows the authoritative action boundary, including the
+        # longer authored Edge sequence. It never anticipates damage.
+        contact_age = action_age-impact_at
+        contact = 1-contact_age/.08 if aether and action is not None and 0 <= contact_age < .08 else 0.
+        if reduced_motion:contact *= .55
         return dict(effect=effect, mode=mode, gem=gem, anchors=anchors,
                     strength=strength, contact=contact, action_age=action_age,
+                    impact_at=impact_at, duration=duration,
                     clock=0. if reduced_motion else max(0.,float(elapsed)),
                     slot_age=slot_age, reduced_motion=bool(reduced_motion),
                     visible=state != 'defeat', active=active)
@@ -229,8 +241,10 @@ class GearbladeEffects:
         start,end,direction,normal=self._basis(anchors)
         _,mid,light=PALETTES['aether']
         age=sample['action_age']
-        gather=_clamp(age/.5) if age<.5 else _clamp((.9-age)/.4)
-        if age<.5:
+        impact, duration = sample['impact_at'], sample['duration']
+        gather=(_clamp(age/max(.001, impact)) if age<impact else
+                _clamp((duration-age)/max(.001, duration-impact)))
+        if age<impact:
             count=3 if sample['reduced_motion'] else 8
             for i in range(count):
                 angle=i*2.399963+sample['clock']*2
@@ -247,8 +261,8 @@ class GearbladeEffects:
             self._glint(layer,end+direction*3,light,contact,4 if not sample['reduced_motion'] else 2)
 
     def draw(self, canvas, point, state, time_ms, gem, elapsed, slot_age=None,
-             action=None, reduced_motion=False):
-        sample=self.sample(point,state,time_ms,gem,elapsed,slot_age,action,reduced_motion)
+             action=None, reduced_motion=False, pose_anchors=None):
+        sample=self.sample(point,state,time_ms,gem,elapsed,slot_age,action,reduced_motion,pose_anchors)
         if not sample['visible']:return sample
         layer=self._layer
         layer.fill((0,0,0,0))

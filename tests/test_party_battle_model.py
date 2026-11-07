@@ -24,11 +24,13 @@ class PartyBattleModelTests(unittest.TestCase):
 
     @staticmethod
     def snapshot(model):
+        events = [{key: value for key, value in event.items() if key != 'frame_age'}
+                  for event in model.events]
         return (model.phase, model.ready_actor, model.telegraphed_target,
                 [(member.identifier, member.hp, member.mp, round(member.atb, 9),
                   member.guarded) for member in (*model.party, model.enemy)],
                 [(bot.identifier, round(bot.atb, 9), bot.haste_turns) for bot in model.bots],
-                deepcopy(model.current_action), deepcopy(model.events))
+                deepcopy(model.current_action), deepcopy(events))
 
     def test_guest_is_a_separate_fixed_profile_with_meaningfully_stronger_weapon(self):
         source = CharacterAttributes()
@@ -50,7 +52,7 @@ class PartyBattleModelTests(unittest.TestCase):
         model.update(1000)
         self.assertEqual(model.ready_actor, 'player')
         self.assertTrue(model.choose_action('attack'))
-        model.update(.36)
+        model.update(model.current_action.impact_at)
         self.assertEqual(model.current_action.damage, 16)
         self.assertEqual(source.to_dict(), before)
 
@@ -86,7 +88,7 @@ class PartyBattleModelTests(unittest.TestCase):
         self.assertFalse(any(event['type'] == 'action_started' and event['actor'] == 'enemy'
                              for event in model.events))
         model.choose_action('guard')
-        model.update(.5)
+        model.update(model.current_action.duration)
         self.assertEqual(model.current_action.actor, 'enemy')
 
     def test_unready_dead_or_unknown_member_cannot_take_a_ready_turn(self):

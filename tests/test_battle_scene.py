@@ -116,7 +116,7 @@ class BattleSceneTests(unittest.TestCase):
         self.assertEqual((action.actor, action.action), ('player', 'attack'))
         for _ in range(3):self.scene.handle_event(press)
         self.assertIs(self.model.current_action, action)
-        self.scene.update(.4)
+        self.scene.update(action.impact_at)
         self.assertLess(self.model.enemy.hp, self.model.enemy.max_hp)
         self.assertEqual(self.game.attributes.to_dict(), original)
         self.assertFalse(self.scene.dismissed)
@@ -174,7 +174,7 @@ class BattleSceneTests(unittest.TestCase):
     def test_victory_banner_has_no_rewards_or_continue_and_cannot_be_dismissed(self):
         self.ready();self.model.enemy.hp = 1
         self.click(self.scene.command_rects['attack'].center)
-        self.scene.update(1)
+        self.scene.update(self.model.current_action.duration)
         self.assertEqual(self.model.phase, 'victory')
         with patch.object(Painter, 'text', autospec=True, wraps=Painter.text) as text:
             self.draw()
@@ -190,22 +190,22 @@ class BattleSceneTests(unittest.TestCase):
     def test_physical_approach_and_hurt_frames_follow_the_action(self):
         self.ready()
         self.click(self.scene.command_rects['attack'].center)
-        self.scene.update(.18)
+        self.scene.update(.3)
         self.assertLess(self.scene._positions()['player'].x, 354)
         self.sprites.calls.clear();self.draw()
-        self.assertTrue(any(actor == 'caelan' and state == 'attack' for actor, state, _ in self.sprites.calls))
-        self.scene.update(.19)
+        self.assertTrue(any(actor == 'caelan' and state == 'run' for actor, state, _ in self.sprites.calls))
+        self.scene.update(self.model.current_action.impact_at-.3)
         self.sprites.calls.clear();self.draw()
         self.assertTrue(any(actor == 'bat' and state == 'hurt' for actor, state, _ in self.sprites.calls))
 
     def test_reduced_motion_keeps_staging_still_but_displays_attack_poses(self):
         self.game.audio.set_reduced_motion(True)
         self.ready();self.click(self.scene.command_rects['attack'].center)
-        self.scene.update(.18)
+        self.scene.update(.69)
         self.assertEqual(self.scene._positions()['player'], pygame.Vector2(354, 184-max(0,202-self.scene.panel_rect.top)))
         self.assertEqual(self.scene._positions()['enemy'], pygame.Vector2(126, 170-max(0,202-self.scene.panel_rect.top)))
         self.sprites.calls.clear();self.draw()
-        self.assertIn('attack', [state for _, state, _ in self.sprites.calls])
+        self.assertIn('slash', [state for _, state, _ in self.sprites.calls])
 
     def test_status_commands_and_results_fit_scaled_letterboxed_large_text_windows(self):
         self.model = BattleModel(self.game.attributes, ['aether_dart'], rng=random.Random(4))

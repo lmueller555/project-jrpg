@@ -50,7 +50,9 @@ class BattleModelTests(unittest.TestCase):
         action = model.current_action
         active = (action.actor, action.action, round(action.elapsed, 9), action.damage,
                   action.resolved) if action else None
-        return model.phase, actors, active, deepcopy(model.events)
+        events = [{key: value for key, value in event.items() if key != 'frame_age'}
+                  for event in model.events]
+        return model.phase, actors, active, deepcopy(events)
 
     def test_bat_has_independent_stats_abilities_and_rewards(self):
         model = self.model()
@@ -139,7 +141,8 @@ class BattleModelTests(unittest.TestCase):
         model = self.model()
         self.ready(model);model.choose_action('attack')
         atb = model.player.atb, model.enemy.atb
-        model.update(.35)
+        action = model.current_action
+        model.update(action.impact_at-.01)
         self.assertEqual(model.enemy.hp, 72)
         self.assertEqual((model.player.atb, model.enemy.atb), atb)
         model.update(.01)
@@ -158,10 +161,11 @@ class BattleModelTests(unittest.TestCase):
     def test_victory_waits_for_the_ending_animation_and_then_freezes(self):
         model = self.model(enemy_data=enemy_data(hp=1))
         self.ready(model);model.choose_action('attack')
-        model.update(.36)
+        action = model.current_action
+        model.update(action.impact_at)
         self.assertEqual(model.enemy.hp, 0)
         self.assertEqual(model.phase, 'acting')
-        model.update(.36)
+        model.update(action.duration-action.impact_at)
         self.assertEqual(model.phase, 'victory')
         self.assertTrue(model.ended)
         self.assertIsNone(model.current_action)
@@ -199,7 +203,7 @@ class BattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('aether_dart'))
         self.assertEqual(model.player.mp, 26)
         self.assertEqual(model.enemy.hp, 72)
-        model.update(.5)
+        model.update(model.current_action.impact_at)
         self.assertEqual(model.enemy.hp, 34)  # 20*2*10²/(100+5) floors to 38.
         self.assertEqual(model.current_action.kind, 'magical')
         before = self.snapshot(model)
@@ -233,7 +237,7 @@ class BattleModelTests(unittest.TestCase):
         model = self.model()
         self.ready(model)
         before_mp = model.player.mp
-        model.choose_action('guard');model.update(.2)
+        model.choose_action('guard');model.update(model.current_action.impact_at)
         self.assertTrue(model.player.guarded)
         self.assertEqual(model.player.hp, 140)
         self.assertEqual(model.player.mp, before_mp)
@@ -289,7 +293,7 @@ class BattleModelTests(unittest.TestCase):
 
     def test_drain_events_preserves_order_and_does_not_replay_impacts(self):
         model = self.model()
-        self.ready(model);model.choose_action('attack');model.update(.36)
+        self.ready(model);model.choose_action('attack');model.update(model.current_action.impact_at)
         events = model.drain_events()
         self.assertEqual([event['type'] for event in events],
                          ['player_ready', 'action_started', 'impact'])
@@ -302,7 +306,7 @@ class BattleModelTests(unittest.TestCase):
         self.assertEqual(model.enemy.max_hp, 1000000)
         self.assertEqual(model.enemy.max_mp, 10000)
         self.assertEqual(model.player.max_hp, 140)
-        self.ready(model);model.choose_action('attack');model.update(.36)
+        self.ready(model);model.choose_action('attack');model.update(model.current_action.impact_at)
         self.assertEqual(model.enemy.hp, 999982)
 
     def test_damage_uses_the_approved_per_hit_cap(self):
@@ -310,7 +314,7 @@ class BattleModelTests(unittest.TestCase):
         actions['actions']['attack']['potency'] = 12
         model = self.model(player(str=255), enemy_data=enemy_data(hp=1000000),
                            action_data=actions)
-        self.ready(model);model.choose_action('attack');model.update(.36)
+        self.ready(model);model.choose_action('attack');model.update(model.current_action.impact_at)
         self.assertEqual(model.current_action.damage, 9999)
         self.assertEqual(model.enemy.hp, 990001)
 

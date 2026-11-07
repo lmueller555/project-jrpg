@@ -171,8 +171,8 @@ Seating triggers a mechanical catch, engraved energy chase and an elemental
 burst. Blade effects attach to authored per-frame guard and sword coordinates:
 branching Nature filaments, Water ribbons, Fire embers or Ice glints. Unmastered
 focuses stay tentative, failed casts sputter, and Aether Edge uses neutral
-violet-white energy. Its eight-drawing presentation lasts 900 ms, with contact
-aligned to damage at 500 ms. A brief four-drawing adjustment gesture handles
+violet-white energy. Its eight-drawing strike bank is sampled within a two-second sequence, with
+contact aligned to damage at one second. A brief four-drawing adjustment gesture handles
 focus changes without altering body proportions.
 
 The last settled focus survives encounters and save/load. Water is the default
@@ -184,15 +184,46 @@ optional motion and bursts.
 See the [gear combat review](reviews/caelan_gear/README.md) for production MQ02
 and four-focus animation previews.
 
+## Choreographed actions
+
+Caelan’s Attack runs through preparation, approach, planting, strike,
+follow-through, a retreating hop and landing. Aether Edge adds a sword-focused
+channeling gesture before its dash. Aether Dart gathers at the current hand or
+blade anchor, releases at 0.75 seconds, lands at 1.10 and recovers by 1.60.
+Armed and unarmed actions use separate authored whole-body drawings, preserving
+body proportions and a shared floor anchor. Contact positions derive from the
+actual sword-tip or fist reach against the Bat or Tusker silhouette.
+
+`assets/combat/caelan_choreography.json` owns phase, pose, movement, elevation,
+camera and impact timing. Only Caelan’s canonical actions receive these timing
+profiles; other actors and custom action fixtures keep their defined timings.
+All ATB remains paused through the complete action, including the return and
+landing. A lethal hit finishes recovery before victory. Discovery checkpoints
+remain at the successful Edge’s authoritative impact. Rivet’s Haste still
+expires after eight completed bot actions, independent of animation duration.
+
+The painted battlefield, sprites and effects receive one restrained camera
+transform (up to 4% zoom); status columns and commands stay fixed. Ground
+shadows follow floor positions beneath airborne sprites. Reduced Motion keeps
+camera and staging steady while retaining action drawings and contact timing.
+
+Impact events drive Bat wing recoil, Tusker head/shoulder recoil, Caelan’s hurt
+recovery and guarded bracing, independently of damage-number lifetimes. Exact
+impact age is carried through coarse frames. Small departure/landing dust and
+short cues from existing licensed recordings accompany movement. No new dodge
+probability or skill unlock is introduced by this presentation pass.
+
+Review the [action and MQ02 previews](reviews/caelan_choreography/README.md).
+
 ## Caelan's initial actions
 
 | Action | Effect | MP | Duration / impact |
 | --- | --- | ---: | --- |
-| Attack | Physical damage, potency 1 | 0 | 0.72 / 0.36 seconds |
-| Guard | Halve the next incoming action | 0 | 0.50 / 0.20 seconds |
+| Attack | Physical damage, potency 1 | 0 | 1.40 / 0.72 seconds |
+| Guard | Halve the next incoming action | 0 | 0.60 / 0.20 seconds |
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
-| Aether Dart | Magical damage, potency 2; requires its lattice unlock | 4 | 0.90 / 0.50 seconds |
-| Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 0.90 / 0.50 seconds |
+| Aether Dart | Magical damage, potency 2; requires its lattice unlock | 4 | 1.60 / 1.10 seconds |
+| Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 2.00 / 1.00 seconds |
 
 Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 

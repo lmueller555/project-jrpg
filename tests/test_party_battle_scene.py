@@ -162,6 +162,8 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.scene.update(.5)
         self.assertEqual(self.model.combatant('mira').hp, 0)
         self.assertFalse(self.model.ended)
+        self.assertEqual(self.scene._pose('mira')[0], 'hurt')
+        self.scene.update(.18)
         self.assertEqual(self.scene._pose('mira')[0], 'defeat')
         self.assertNotEqual(self.scene._pose('player')[0], 'defeat')
         self.assertEqual(self.scene._popups[0]['target'], 'mira')

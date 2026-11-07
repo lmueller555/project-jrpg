@@ -16,6 +16,7 @@ import random
 from character_attributes import ATTRIBUTE_IDS, ATTRIBUTE_CAPS
 from character_abilities import starting_abilities
 from bot_loadouts import load_bot_definitions, starting_battle_loadouts
+from battle_choreography import timing_override
 from combat_damage import (NORMAL_DAMAGE_CAP, magical_damage, physical_damage,
                            roll_variance)
 from gear_state import DEFAULT_GEM, GEM_NAMES, REQUIRED_GEMS, valid_gem
@@ -212,6 +213,8 @@ class BattleAction:
     damage: int = 0
     resolved: bool = False
     active_gem: str | None = None
+    choreography: str | None = None
+    weapon_equipped: bool = False
 
 
 class BattleModel:
@@ -534,10 +537,15 @@ class BattleModel:
         elif record['target'] == 'owned_bot':
             bot = self.active_bot(actor_id)
             target = bot.identifier if bot is not None else None
+        timing = (timing_override(identifier, record['duration'], record['impact_at'])
+                  if actor_id == 'player' else None)
+        duration, impact_at = timing or (record['duration'], record['impact_at'])
         self.current_action = BattleAction(actor_id, identifier, target, record['name'],
                                           record['kind'], record['animation'],
-                                          record['duration'], record['impact_at'],
-                                          active_gem=self.active_gem if actor_id == 'player' else None)
+                                          duration, impact_at,
+                                          active_gem=self.active_gem if actor_id == 'player' else None,
+                                          choreography=identifier if timing else None,
+                                          weapon_equipped=self.weapon_equipped if actor_id == 'player' else False)
         self.phase = 'acting'
         self.message = actor.name+' uses '+record['name']+'.'
         self.events.append({'type': 'action_started', 'actor': actor_id,
@@ -760,7 +768,12 @@ class BattleModel:
                         self._result('defeat')
                     return
                 if not action.resolved and action.elapsed+EPSILON >= action.impact_at:
+                    event_start = len(self.events)
                     self._resolve_action()
+                    # Presentation clocks advance by the caller's full frame,
+                    # including time left unused at a ready/result boundary.
+                    for event in self.events[event_start:]:
+                        if event['type'] == 'impact':event['frame_age'] = remaining
                 if action.elapsed+EPSILON >= action.duration:
                     action.elapsed = action.duration
                     self._complete_bot_action(action)
