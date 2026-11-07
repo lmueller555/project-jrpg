@@ -215,14 +215,14 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         saved = json.loads(driver.path.read_text())
         self.assertEqual(saved['character_attributes']['current_mp'], entry_mp-4)
         self.assertFalse(saved['mill_quest']['encounter_cleared'])
-        before = game.lattice.to_dict(), game.inventory.to_dict()
+        before = game.battle_rewards.to_dict(), game.inventory.to_dict()
         pygame.event.post(pygame.event.Event(pygame.QUIT))
         self.assertFalse(game.handle_events())
         game = self.reload(driver)
         self.assertFalse(game.combat.active)
         self.assertEqual(game.attributes.current_mp, entry_mp-4)
         self.assertIn('aether_edge', game.character_abilities.known_abilities())
-        self.assertEqual(before, (game.lattice.to_dict(), game.inventory.to_dict()))
+        self.assertEqual(before, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
         self.assertFalse(game.mill_quest.encounter_cleared)
         self.assertEqual(game.inventory.quantity(WEAPON), 1)
 
@@ -230,11 +230,11 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
         driver = self.driver();game = driver.g
         self.start_battle(driver)
         drive_spellblade_battle(game, stop_after_discovery=True)
-        before = game.lattice.to_dict(), game.inventory.to_dict()
+        before = game.battle_rewards.to_dict(), game.inventory.to_dict()
         scene = drive_spellblade_battle(game, command='flee', read_aftermath=True)
         self.assertEqual(scene.model.phase, 'fled')
         self.assertFalse(game.mill_quest.encounter_cleared)
-        self.assertEqual(before, (game.lattice.to_dict(), game.inventory.to_dict()))
+        self.assertEqual(before, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
         game = self.reload(driver)
         quest = game.mill_quest
         self.assertTrue(quest.begin_encounter(game.combat.start_mill))
@@ -308,9 +308,9 @@ class MQ02SpellbladeGameplayTests(unittest.TestCase):
                 expected = 'mill_encouragement_failed' if method == 'magicks' else 'mill_encouragement'
                 self.assertIn(expected, driver.sources)
                 self.assertEqual(game.venn_visit.magicks_failed, method == 'magicks')
-                committed = game.lattice.to_dict(), game.inventory.to_dict()
+                committed = game.battle_rewards.to_dict(), game.inventory.to_dict()
                 game.combat.update(0);game.combat.update(0)
-                self.assertEqual(committed, (game.lattice.to_dict(), game.inventory.to_dict()))
+                self.assertEqual(committed, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
                 self.assertIsNotNone(game._read_saved_journey())
 
 

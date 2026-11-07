@@ -2,8 +2,8 @@
 
 This checkpoint implements the approved character/monster curves as standalone
 code and validated design data. The shared effective rating caps are active:
-ordinary ratings 999, Speed 255, player HP 9,999 and MP 999. Existing journeys
-continue using their RP/Lattice rewards and authored encounter ratings.
+ordinary ratings 999, Speed 255, player HP 9,999 and MP 999. The approved growth curves and authored encounter ratings remain available
+independently of the live item-reward flow.
 
 The [canonical leveling specification](../../LEVELING.md) records all five
 character profiles, XP rules, caps, enemy growth and unresolved policies. The
@@ -29,15 +29,15 @@ python tools/preview_leveling.py --all-levels --format csv
 ```
 
 The preview only prints results. It does not load Pygame or read/write a journey,
-settings, inventory or RP state. Output is deterministic and can be generated
+settings or inventory state. Output is deterministic and can be generated
 from another working directory using the script's absolute path.
 
 ## Verification scope
 
 The final regression passed **647 tests and 2,633 subtests across 58 modules**.
 Independent review found no blocking issues. The validation record includes
-source and artifact hashes, plus proof that live progression ownership and
-authored encounter data match the baseline commit.
+source and artifact hashes from that checkpoint, plus its authored encounter
+comparison. Those hashes are historical references, not current source checks.
 
 Tests cover XP thresholds, rounding before doubling, multi-level awards, the
 level-100 cap, malformed records, every character curve across levels 1–100,
@@ -51,8 +51,8 @@ against a 50,000-HP enemy; an explicitly modified 999-Magick fixture reaches the
 existing 9,999 damage cap. These are isolated test fixtures, not live encounter
 balance changes.
 
-Existing save, lattice, party, bot and victory/Spoils regressions verify that
-this checkpoint preserves the current progression flow while introducing its
-replacement foundation. Combat XP distribution, resource recovery, old-save
+Existing save, party, bot and victory/Spoils regressions covered the earlier
+foundation checkpoint. Its validation record is historical; current removal
+and migration validation belongs to the latest regression suite. Combat XP distribution, resource recovery, old-save
 conversion, numerical enemy profile weights and future Stagger remain separate
 design work.

@@ -93,7 +93,7 @@ combat identity. The Tusker's high HP and physical offense provide its numerical
 profile; reacting to its charge is the central behavioral lesson.
 
 These references do not retune the live Bat or MQ02 Tusker. Their current
-attributes, ability timing, RP and drops remain authored in
+attributes, ability timing and drops remain authored in
 [`enemies.json`](../assets/combat/enemies.json) and the battle controller until
 profile weights, enemy levels and the progression transition are settled.
 

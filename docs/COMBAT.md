@@ -243,14 +243,14 @@ Overclock retains its 0.50-second application and 0.90-second duration. See
 | Attack | Physical damage, potency 1 | 0 | 1.40 / 0.72 seconds |
 | Guard | Halve the next incoming action | 0 | 0.60 / 0.20 seconds |
 | Flee | Leave this test encounter safely | 0 | 0.70 / 0.35 seconds |
-| Aether Dart | Magical damage, potency 2; requires its lattice unlock | 4 | 1.60 / 1.10 seconds |
+| Aether Dart | Magical damage, potency 2; requires its learned unlock | 4 | 1.60 / 1.10 seconds |
 | Aether Edge | Immediate physical sword strike plus non-elemental Mag component; requires learned skill and equipped weapon | 4 | 2.00 / 1.00 seconds |
 
 Caelan is a Spellblade. Aether Edge is his only learned starter skill and appears under Skills after its MQ02 discovery. Before he has a weapon, Skills is greyed out with **Requires a weapon**. The direct strike combines physical potency 1 and Mag potency 0.5, sharing one variance roll and one per-hit cap. It does not enchant future attacks or grant charges. See [character dictionaries and weapon unlocks](CHARACTER_ABILITIES.md).
 
 Guard consumes a turn and remains until the next incoming action resolves.
 Flee is guaranteed in this first encounter. Entering combat grants no spells or
-lattice unlocks. Other catalog abilities will receive battle implementations in
+learned unlocks. Other catalog abilities will receive battle implementations in
 later passes; their ownership and descriptions are preserved.
 
 This slice uses the [approved per-hit damage backend](DAMAGE_FORMULA.md), with
@@ -283,7 +283,7 @@ After the introduction, Mira is player-controlled with Attack, Skills, Guard and
 
 The battlefield looks south/southwest toward distant Eldenmere, with the river along the near left bank, reeds, roots and freshly broken timber. A visible tusker and damaged tree mark the actual upstream approach. Mira carries her launcher from the workshop, secures it during intake work and retrieves it for the return. Caelan’s blade is sheathed on the walking route and used as the blue Water focus for the later isolated-pocket spell. The spell does not unlock Aqua Edge.
 
-Victory grants Caelan 30 RP and one Aether Emerald once on Spoils, and commits
+Victory grants one Aether Emerald once on Spoils, and commits
 the cleared trail with remaining resources before its Continue opens the linear aftermath. The intake remains
 blocked until the existing repair. If Mira wins while Caelan is incapacitated,
 first aid restores him to 25% maximum HP before the recovery exchange. Flee
@@ -330,16 +330,17 @@ Fanfare**. The fanfare plays once. The banner leads through a brief fade into a
 separate **Spoils of Battle** screen; reward amounts and a victory Continue
 button no longer appear in the battlefield.
 
-Spoils awards the encounter's actual Resonance Points and items on entry.
-Resonance Points remain the live game's battle-experience progression. The
-standalone [traditional leveling foundation](LEVELING.md) and
-[enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the approved replacement
-curves and metadata, but do not yet distribute combat XP or retune these authored
-encounters. The Bat grants 20 RP and one
-Aether Emerald; MQ02's Tusker grants 30 RP and one Aether Emerald. Displayed
-amounts reflect available RP/inventory capacity. The screen shows authoritative
-received amounts, and Continue becomes available after the award checkpoint
-succeeds. A failed grant or save leaves a Retry action on Spoils.
+Spoils awards the encounter's actual item drops on entry. The Bat and MQ02's
+Tusker each grant one Aether Emerald, subject to inventory capacity. The screen
+shows authoritative received amounts, and Continue becomes available after the
+award checkpoint succeeds. A failed grant or save leaves a Retry action on
+Spoils. Receipts prevent duplicate rewards even when a capped inventory receives
+no additional items.
+
+The standalone [traditional leveling foundation](LEVELING.md) and
+[enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the approved XP and growth
+curves. Combat XP distribution remains pending its eligibility and recovery
+policies; these encounters do not yet award traditional XP.
 
 The fanfare may finish while Spoils is open. No music follows it, and volume,
 focus or repeated updates cannot replay it. Eldenmere Theme resumes only when

@@ -238,7 +238,7 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def snapshot(self):
         game = self.game
-        return (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict(),
+        return (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict(),
                 game.quests.to_dict(), game.mill_quest.to_dict())
 
     def test_fresh_journey_can_fight_the_test_bat_before_miras_introduction(self):
@@ -289,7 +289,7 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def test_victory_settles_once_then_linear_aftermath_unlocks_intake(self):
         scene = self.start();game = self.game;c = game.mill_quest
-        before_rp = game.lattice.state()['rp']
+        before_items = game.inventory.quantity('aether_emerald')
         finish_mill_battle(game, dismiss=False)
         self.assertEqual(scene.model.phase, 'victory')
         self.assertFalse(c.encounter_cleared)
@@ -298,13 +298,15 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.assertTrue(c.encounter_cleared)
         self.assertFalse(c.aftermath_done)
         self.assertFalse(game.social.choosing)
-        self.assertEqual(game.lattice.state()['rp'], before_rp+expected['rp'])
+        self.assertTrue(game.battle_rewards.has_receipt('mq02:ridgeback_tusker'))
+        self.assertEqual(game.inventory.quantity('aether_emerald'),
+                         before_items+expected['drops']['aether_emerald'])
         self.assertFalse(c.mill_restored)
         saved = json.loads(self.path.read_text())
         self.assertTrue(saved['mill_quest']['encounter_cleared'])
-        committed = game.lattice.to_dict(), game.inventory.to_dict()
+        committed = game.battle_rewards.to_dict(), game.inventory.to_dict()
         game.combat.update(0);game.combat.update(0)
-        self.assertEqual(committed, (game.lattice.to_dict(), game.inventory.to_dict()))
+        self.assertEqual(committed, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
         read_social(game)
         self.assertTrue(c.aftermath_done)
         self.assertEqual(c.stage, 'reach_intake')
@@ -313,13 +315,13 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.assertTrue(other.mill_quest.encounter_cleared)
         self.assertTrue(other.mill_quest.aftermath_done)
         self.assertFalse(other.mill_quest.encounter_pending)
-        self.assertEqual(committed, (other.lattice.to_dict(), other.inventory.to_dict()))
+        self.assertEqual(committed, (other.battle_rewards.to_dict(), other.inventory.to_dict()))
 
     def test_reward_rejection_keeps_victory_and_quest_progress_atomic_for_retry(self):
         scene = self.start();game = self.game
         finish_mill_battle(game, dismiss=False)
         before = self.snapshot()
-        with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
+        with patch.object(game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
         self.assertTrue(spoils.result_error)
@@ -333,7 +335,7 @@ class MillBattleGameplayTests(unittest.TestCase):
         acknowledge_battle_result(game, scene)
         self.assertTrue(game.mill_quest.encounter_cleared)
         self.assertFalse(game.mill_quest.aftermath_done)
-        committed = game.lattice.to_dict(), game.inventory.to_dict()
+        committed = game.battle_rewards.to_dict(), game.inventory.to_dict()
         other = self.new_game(True)
         self.assertTrue(other.begin_journey(True))
         self.assertFalse(other.combat.active)
@@ -345,7 +347,7 @@ class MillBattleGameplayTests(unittest.TestCase):
         read_social(other)
         self.assertTrue(other.mill_quest.aftermath_done)
         self.assertEqual(other.mill_quest.stage, 'reach_intake')
-        self.assertEqual(committed, (other.lattice.to_dict(), other.inventory.to_dict()))
+        self.assertEqual(committed, (other.battle_rewards.to_dict(), other.inventory.to_dict()))
 
     def test_mira_can_finish_after_caelans_incapacitation_and_first_aid_allows_return(self):
         scene = self.start();game = self.game
@@ -361,34 +363,34 @@ class MillBattleGameplayTests(unittest.TestCase):
 
     def test_flee_returns_to_safe_unfinished_approach_without_rewards(self):
         self.start();game = self.game;c = game.mill_quest
-        before = game.lattice.to_dict(), game.inventory.to_dict()
+        before = game.battle_rewards.to_dict(), game.inventory.to_dict()
         scene = finish_mill_battle(game, command='flee')
         self.assertEqual(scene.model.phase, 'fled')
         self.assertFalse(c.encounter_cleared)
         self.assertFalse(c.aftermath_done)
         self.assertEqual(c.stage, 'encounter')
-        self.assertEqual(before, (game.lattice.to_dict(), game.inventory.to_dict()))
+        self.assertEqual(before, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
         self.assertTrue(game.world.can_stand(game.player.position))
         self.assertFalse(c.encounter_ready)
         self.assertGreater(game.attributes.current_hp, 0)
 
     def test_party_defeat_offers_viable_retry_without_losing_previous_quest_work(self):
         scene = self.start();game = self.game;c = game.mill_quest
-        before = game.lattice.to_dict(), game.inventory.to_dict()
+        before = game.battle_rewards.to_dict(), game.inventory.to_dict()
         for member in scene.model.party:member.hp = 1
         finish_mill_battle(game, command='guard')
         self.assertEqual(scene.model.phase, 'defeat')
         self.assertFalse(c.encounter_cleared)
         self.assertTrue(c.warned)
         self.assertEqual(c.inspected, {'mechanism', 'race'})
-        self.assertEqual(before, (game.lattice.to_dict(), game.inventory.to_dict()))
+        self.assertEqual(before, (game.battle_rewards.to_dict(), game.inventory.to_dict()))
         self.assertGreater(game.attributes.current_hp, 0)
         self.assertTrue(game.world.can_stand(game.player.position))
         self.assertFalse(c.encounter_ready)
 
     def test_quit_during_fight_loads_safe_unfinished_checkpoint_without_partial_battle(self):
         self.start();game = self.game
-        before = game.lattice.to_dict(), game.inventory.to_dict()
+        before = game.battle_rewards.to_dict(), game.inventory.to_dict()
         attributes = game.attributes.to_dict()
         safe_spawn = list(game.mill_quest.upstream.data['spawn'])
         key_scene = game.combat.scene
@@ -407,7 +409,7 @@ class MillBattleGameplayTests(unittest.TestCase):
         other.opening_fade = other.transfer_cooldown = 0
         other.update(0, (0, 0), False)
         self.assertFalse(other.mill_quest.encounter_ready)
-        self.assertEqual(before, (other.lattice.to_dict(), other.inventory.to_dict()))
+        self.assertEqual(before, (other.battle_rewards.to_dict(), other.inventory.to_dict()))
 
     def test_legacy_completed_mill_preserves_repairs_without_inventing_victory_or_rewards(self):
         game = self.game
@@ -426,7 +428,7 @@ class MillBattleGameplayTests(unittest.TestCase):
         self.assertTrue(other.mill_quest.legacy_bypass)
         self.assertFalse(other.mill_quest.encounter_cleared)
         self.assertFalse(other.mill_quest.aftermath_done)
-        self.assertEqual(other.lattice.state()['rp'], 0)
+        self.assertEqual(other.battle_rewards.to_dict()['receipts'], [])
         self.assertEqual(other.inventory.quantity('aether_emerald'), 0)
         other.world = other.town
         other.player.position.update(other.combat.position+(0, 24))

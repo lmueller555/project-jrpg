@@ -173,7 +173,7 @@ def main(argv=None):
         model = scene.model
         world = game.elapsed_ms, list(game.player.position)
         npcs = [list(actor.position) for actor in game.persistent_npcs]
-        pre_battle = game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict()
+        pre_battle = game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict()
         run(game, .5, 'battle scene and charging ATB')
         record(game, 'battle_charging')
         until(game, lambda: model.waiting_for_player, 'first ready command')
@@ -183,7 +183,7 @@ def main(argv=None):
         run(game, 2.2, 'remaining decision time', animate=False)
         assert before == (model.player.atb, model.enemy.atb)
         assert model.phase == 'ready'
-        assert pre_battle == (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict())
+        assert pre_battle == (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict())
         texts = []
         original_text = Painter.text
 
@@ -192,7 +192,7 @@ def main(argv=None):
             return original_text(painter, text, *args, **kwargs)
 
         with patch.object(Painter, 'text', visible_text):game.draw()
-        assert texts.count('ATB') == 1
+        assert texts.count('ATB') == 0
         assert not any('Enemy ATB' in text or 'Bat ATB' in text for text in texts)
         record(game, 'battle_ready')
         checks.append({'stage': 'ready decision pauses all gauges', 'wait_seconds': 3,
@@ -228,7 +228,7 @@ def main(argv=None):
         assert model.phase == 'victory' and gust_captured
         assert world == (game.elapsed_ms, list(game.player.position))
         assert npcs == [list(actor.position) for actor in game.persistent_npcs]
-        assert pre_battle == (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict())
+        assert pre_battle == (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict())
         run(game, .6, 'victory and battle rewards')
         record(game, 'battle_victory')
         outcome_hp, outcome_mp = model.player.hp, model.player.mp
@@ -237,31 +237,27 @@ def main(argv=None):
         record(game, 'battle_spoils')
         click(game, game.combat.spoils.continue_rect.center)
         assert not game.combat.active
-        assert game.lattice.state()['rp'] == 20 and game.lattice.rank() == 2
-        assert game.lattice.steps() == 1 and game.inventory.quantity('aether_emerald') == 1
+        assert len(game.battle_rewards.to_dict()['receipts']) == 1
+        assert game.inventory.quantity('aether_emerald') == 1
         assert (game.attributes.current_hp, game.attributes.current_mp) == (outcome_hp, outcome_mp)
         assert world == (game.elapsed_ms, list(game.player.position))
-        snapshot = game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict()
+        snapshot = game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict()
         game.combat.update(0);game.combat.update(0)
-        assert snapshot == (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict())
+        assert snapshot == (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict())
         saved = json.loads(game.save_store.path.read_text())
         assert saved['character_attributes'] == game.attributes.to_dict()
-        assert saved['aether_lattice'] == game.lattice.to_dict()
+        assert saved['battle_rewards'] == game.battle_rewards.to_dict()
         assert saved['inventory'] == game.inventory.to_dict()
         record(game, 'return_to_eldenmere')
         run(game, .3, 'back in Eldenmere')
-        checks.append({'stage': 'victory settles once', 'rp': 20, 'rank': 2, 'steps': 1,
+        checks.append({'stage': 'victory settles once', 'receipt_count': 1,
                        'aether_emerald': 1, 'current_hp': outcome_hp, 'current_mp': outcome_mp,
                        'world_unchanged_during_battle': True, 'durable_checkpoint': True,
                        'duplicate_settlement_unchanged': True})
 
-    # A separate, explicitly rewarded review journey learns Dart through the
-    # actual lattice. It has unchanged starting attributes and ordinary MP.
+    # A separate explicit training fixture learns Dart through ability history.
     with fixture() as game:
-        rp = game.lattice.board.rp_for_rank(50)
-        assert game.award_battle_rewards('capture:learn-dart', {'caelan': rp}, {'aether_diamond': 1})
-        assert game.move_lattice('aether_dart_01')
-        assert game.activate_lattice('aether_dart_01')
+        assert game.character_abilities.learn_ability('caelan', 'aether_dart')
         assert game.attributes.value('str') == game.attributes.value('mag') == 10
         scene = start(game);model = scene.model
         until(game, lambda: model.waiting_for_player, 'learned Dart command')
@@ -292,13 +288,13 @@ def main(argv=None):
         choose(game, scene, 'flee')
         run(game, .8, 'Flee returns safely')
         assert model.phase == 'fled'
-        before_rp, before_gems = game.lattice.state()['rp'], game.inventory.quantity('aether_emerald')
+        before_receipts, before_gems = game.battle_rewards.to_dict(), game.inventory.quantity('aether_emerald')
         click(game, scene.continue_rect.center)
         assert not game.combat.active
         assert game.attributes.current_mp == 26
-        assert (game.lattice.state()['rp'], game.inventory.quantity('aether_emerald')) == (before_rp, before_gems)
-        checks.append({'stage': 'learned Dart and flee', 'training_fixture_rp': rp,
-                       'learned_via_real_lattice': True, 'dart_mp_cost': 4,
+        assert (game.battle_rewards.to_dict(), game.inventory.quantity('aether_emerald')) == (before_receipts, before_gems)
+        checks.append({'stage': 'learned Dart and flee', 'explicit_training_fixture': True,
+                       'learned_via_ability_history': True, 'dart_mp_cost': 4,
                        'flee_awarded_no_rewards': True, 'minimum_window': [480, 320],
                        'large_text_scale': 1.5, 'minimum_window_guard_click': True,
                        'letterboxed_window': [1440, 810], 'letterboxed_dart_click': True})
@@ -323,10 +319,9 @@ def main(argv=None):
     metadata = {'isolated_temporary_journeys': True, 'normal_journey_and_settings_untouched': True,
                 'world_bat_position': [336, 900], 'trigger': 'E within 32 world pixels',
                 'fixtures': [{'name': 'starter', 'starting_hp': 140, 'starting_mp': 30,
-                              'rp': 0, 'crystals': 0},
-                             {'name': 'learned Dart', 'training_rp': rp,
-                              'training_crystal': {'aether_diamond': 1},
-                              'ability_activated_through_lattice': 'aether_dart_01'}],
+                              'reward_receipts': 0, 'crystals': 0},
+                             {'name': 'learned Dart',
+                              'explicitly_learned_ability': 'aether_dart'}],
                 'enemy_atb_visible': False, 'checks': checks, 'actions': actions,
                 'captures': captures, 'animation': {'file': 'combat.gif', 'fps': 10,
                     'rendered_frames': len(frames), 'encoded_frames': encoded_frames,

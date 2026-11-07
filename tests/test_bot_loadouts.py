@@ -3,7 +3,6 @@ from copy import deepcopy
 import json
 import unittest
 
-from aether_lattice import AetherLattice
 from bot_loadouts import (BotLoadouts, CATALOG_PATH, load_bot_definitions,
                           starting_battle_loadouts)
 from character_abilities import CharacterAbilities, starting_abilities
@@ -26,7 +25,7 @@ class BotLoadoutsTests(unittest.TestCase):
         self.assertEqual(starting_abilities('missing'), frozenset())
 
     def test_bot_is_a_capability_and_its_strike_is_absent_from_miras_skills(self):
-        abilities = CharacterAbilities(Inventory(), AetherLattice())
+        abilities = CharacterAbilities(Inventory())
         self.assertEqual(abilities.known_abilities('mira'), frozenset({'overclock', 'rivet'}))
         self.assertEqual(abilities.skill_ids('mira'), ('overclock',))
         self.assertEqual(abilities.definitions['rivet']['kind'], 'capability')
@@ -37,14 +36,12 @@ class BotLoadoutsTests(unittest.TestCase):
 
     def test_ownership_does_not_create_a_party_profile_or_change_progression(self):
         inventory = Inventory()
-        lattice = AetherLattice()
-        abilities = CharacterAbilities(inventory, lattice)
-        before = (inventory.to_dict(), lattice.to_dict(), abilities.to_dict())
+        abilities = CharacterAbilities(inventory)
+        before = (inventory.to_dict(), abilities.to_dict())
         self.loadouts.reset()
         self.assertTrue(self.loadouts.restore(self.loadouts.to_dict()))
-        self.assertEqual((inventory.to_dict(), lattice.to_dict(), abilities.to_dict()), before)
+        self.assertEqual((inventory.to_dict(), abilities.to_dict()), before)
         self.assertNotIn('rivet', abilities.character_ids)
-        self.assertNotIn('rivet', lattice.character_ids)
         self.assertEqual(abilities.character_ids, ('caelan', 'mira', 'lucan', 'rhea', 'edran'))
 
     def test_copies_and_round_trip_do_not_share_mutable_loadout_state(self):
@@ -118,13 +115,13 @@ class BotLoadoutsTests(unittest.TestCase):
             'name': 'Fixture Blade', 'description': 'An equipment history fixture.',
             'category': 'weapons'}
         inventory = Inventory(catalog)
-        abilities = CharacterAbilities(inventory, AetherLattice())
+        abilities = CharacterAbilities(inventory)
         self.assertTrue(abilities.acquire_weapon('caelan', 'fixture_blade'))
         self.assertTrue(abilities.equip_weapon('caelan', None))
         saved = abilities.to_dict()
         self.assertEqual(abilities.known_abilities(), frozenset({'basic_magicks', 'aether_edge'}))
         self.assertEqual(abilities.skill_ids(), ('aether_edge',))
-        restored = CharacterAbilities(inventory, AetherLattice())
+        restored = CharacterAbilities(inventory)
         self.assertTrue(restored.restore(saved))
         self.assertEqual(restored.to_dict(), saved)
         self.assertIn('aether_edge', restored.known_abilities())

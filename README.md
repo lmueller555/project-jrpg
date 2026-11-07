@@ -70,7 +70,7 @@ the boar for their conversation, then returns on Mira's “come back to me” wa
 The score and fight begin only after the camera is back and the warning is read,
 continuing through the world-to-battle curtain and reveal. Reduced
 Motion uses a short plain fade. Victories play **Triumphal Fanfare** once and
-show a victory banner before opening **Spoils of Battle**, where RP and items
+show a victory banner before opening **Spoils of Battle**, where items
 are awarded. After the fanfare ends, Spoils stays silent until Continue returns
 to the world theme. Victory checkpoints survive quitting without losing or
 duplicating rewards. The Music slider controls the soundtrack independently of effects. See the [music assets](assets/music/README.md) and
@@ -207,7 +207,7 @@ Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
 **Escape** opens a modal pause menu during exploration, dialogue or actions.
-Characters, Party, Aether Lattice, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
+Characters, Party, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
 controls reference is inside Settings. Pausing holds NPC, action, camera and
 ambience clocks. Music and effects have separate sliders with percentage displays,
 mouse adjustment and
@@ -279,7 +279,7 @@ Current HP/MP and all attributes persist with the journey. Older saves without
 attributes receive the starting profile; the original 300-HP profile migrates
 to 140 HP while preserving its health proportion. New Game resets the profile. See
 [attribute definitions and starting values](docs/CHARACTER_ATTRIBUTES.md).
-Characters also shows Attunement and RP progress. The approved
+The approved
 [per-hit damage formula](docs/DAMAGE_FORMULA.md) is implemented in
 `combat_damage.py`, with physical/magical attribute pairs and 9,999/99,999
 damage limits. The first [wait-ATB battle](docs/COMBAT.md) is playable against
@@ -294,30 +294,12 @@ character growth, the approved XP/reward curves, effective rating caps of 999
 (Speed 255), and an enemy baseline reaching 50,000 HP. The
 [enemy catalogue](docs/ENEMY_ARCHETYPES.md) separates ten qualitative stat
 profiles from fighting styles and twenty approved concepts. These are executable
-standalone backends and design data; live combat continues awarding RP until XP
-eligibility, recovery and save-transition policies are settled.
-
-**Pause → Aether Lattice** opens the connected progression board. Battle-earned
-Resonance Points increase Attunement Rank; each gained rank awards one Lattice
-Step. Every connection crossed costs one Step, including blank nodes and
-backtracking. Reaching a stat or ability node makes it available for activation
-with the matching Aether Crystal. Movement and activation are separate actions;
-unactivated nodes remain traversable. The 200-node section includes large and
-small circular formations, rank gates, all eleven attributes and twenty ability nodes.
-Node bonuses persist without being applied again on Continue. HP/MP nodes raise
-capacity without refilling current resources. See the
-[Aether Lattice reference](docs/AETHER_LATTICE.md).
-
-Bat victories use the battle-reward interface. Normal journeys begin
-at Attunement 1 with zero RP, zero Steps and no crystals; opening quests do not
-grant sample rewards. Review the system immediately in an isolated temporary
-journey with `python tools/preview_aether_lattice.py`, or use
-`--rp 500 --crystals 10` for a richer preview. The ordinary player save and
-settings are kept separate from that preview.
+standalone backends and design data; combat XP distribution awaits the remaining
+eligibility and recovery policies. Live victories currently award item drops.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored
-by Git. **Continue** restores quest facts, dialogue history, attributes, lattice progress and player location
+by Git. **Continue** restores quest facts, dialogue history, attributes, learned abilities and player location
 without replaying old notifications. Ambient NPC routines restart on launch;
 their moment-to-moment action clocks are not part of this save. **New Game** starts
 a fresh journey and replaces that checkpoint. A missing or unreadable save leaves

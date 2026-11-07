@@ -101,7 +101,7 @@ class PartyTravel:
                 or getattr(game, 'map_open', False)
                 or getattr(getattr(game, 'quest_ui', None), 'journal_open', False)):return True
         for name in ('pause', 'inventory_ui', 'world_map_viewer', 'party_ui',
-                     'status_ui', 'lattice_ui', 'journal', 'map_ui'):
+                     'status_ui', 'journal', 'map_ui'):
             if getattr(getattr(game, name, None), 'is_open', False):return True
         social = getattr(game, 'social', None)
         return bool(getattr(social, 'active', False) or getattr(social, 'locked', False)

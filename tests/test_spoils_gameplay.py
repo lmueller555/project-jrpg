@@ -11,7 +11,6 @@ os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
-from aether_lattice import MAX_RP
 from inventory import MAX_QUANTITY
 from main import Game
 import test_battle_gameplay as bat_fixture
@@ -61,7 +60,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         return scene
 
     def state(self, game):
-        return (game.attributes.to_dict(), game.lattice.to_dict(), game.inventory.to_dict(),
+        return (game.attributes.to_dict(), game.battle_rewards.to_dict(), game.inventory.to_dict(),
                 game.quests.to_dict(), game.mill_quest.to_dict())
 
     def quit(self, game):
@@ -100,7 +99,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         spoils = wait_for_spoils(game)
         self.assertTrue(spoils.awarded)
         self.assertTrue(game.combat.active)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         self.assertEqual(game.attributes.current_hp, scene.model.player.hp)
         committed = self.state(game)
@@ -138,7 +137,7 @@ class SpoilsGameplayTests(unittest.TestCase):
 
     def test_quit_during_victory_banner_resumes_silent_spoils_and_awards_once(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)
-        self.assertEqual(game.lattice.state()['rp'], 0)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 0)
         self.quit(game)
         saved = json.loads(self.path.read_text())
         self.assertIsNotNone(saved.get('post_battle'))
@@ -146,7 +145,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertTrue(spoils.awarded)
         self.assertFalse(restored.music.playing)
         self.assertNotIn(restored.music.desired_track, ('battle', 'eldenmere'))
-        self.assertEqual(restored.lattice.state()['rp'], 20)
+        self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
         committed = self.state(restored)
         for _ in range(5):restored.update(1, (0, 0), False)
@@ -163,7 +162,7 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertEqual(game.combat.post_phase, 'spoils_transition')
         self.quit(game)
         restored = self.load();wait_for_spoils(restored)
-        self.assertEqual(restored.lattice.state()['rp'], 20)
+        self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
         self.assertFalse(restored.music.playing)
 
@@ -184,7 +183,7 @@ class SpoilsGameplayTests(unittest.TestCase):
     def test_reward_refusal_uses_spoils_retry_and_does_not_allow_early_exit(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)
         before = self.state(game)
-        with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
+        with patch.object(game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(game)
             self.assertFalse(spoils.awarded)
             self.assertTrue(spoils.result_error)
@@ -194,11 +193,11 @@ class SpoilsGameplayTests(unittest.TestCase):
             self.assertEqual(self.state(game), before)
         game.draw();click(game, spoils.retry_rect.center);game.update(0, (0, 0), False)
         self.assertTrue(spoils.awarded)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         click(game, spoils.continue_rect.center)
         self.assertFalse(game.combat.active)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
 
     def test_failed_victory_checkpoint_blocks_awards_until_retry_can_save(self):
         game = self.game();scene = self.bat(game)
@@ -208,12 +207,12 @@ class SpoilsGameplayTests(unittest.TestCase):
             spoils = wait_for_spoils(game)
             self.assertFalse(spoils.awarded)
             self.assertTrue(spoils.result_error)
-            self.assertEqual(game.lattice.state()['rp'], 0)
+            self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 0)
             self.assertEqual(game.inventory.quantity('aether_emerald'), 0)
             self.assertIsNone(json.loads(self.path.read_text()).get('post_battle'))
         game.draw();click(game, spoils.retry_rect.center)
         self.assertTrue(spoils.awarded)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         self.assertEqual(json.loads(self.path.read_text())['post_battle']['stage'], 'awarded')
 
@@ -224,19 +223,19 @@ class SpoilsGameplayTests(unittest.TestCase):
             spoils = wait_for_spoils(game)
             self.assertFalse(spoils.awarded)
             self.assertTrue(spoils.result_error)
-            self.assertEqual(game.lattice.state()['rp'], 20)
+            self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
             self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
             self.assertEqual(game.combat.snapshot()['stage'], 'awarded')
             self.assertEqual(json.loads(self.path.read_text())['post_battle']['stage'], 'pending')
             key(game, pygame.K_RETURN)
-            self.assertEqual(game.lattice.state()['rp'], 20)
+            self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         game.draw();click(game, spoils.retry_rect.center)
         self.assertTrue(spoils.awarded)
         self.assertFalse(spoils.result_error)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         self.quit(game);restored = self.load();wait_for_spoils(restored)
-        self.assertEqual(restored.lattice.state()['rp'], 20)
+        self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
 
     def test_failed_exit_checkpoint_keeps_spoils_and_music_until_explicit_retry(self):
@@ -269,14 +268,14 @@ class SpoilsGameplayTests(unittest.TestCase):
         spoils = wait_for_spoils(game)
         self.assertTrue(spoils.awarded)
         self.assertEqual(game.attributes.current_hp, game.attributes.value('hp')//4)
-        self.assertEqual(game.lattice.state()['rp'], 30)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertTrue(game.mill_quest.encounter_cleared)
         self.assertFalse(game.mill_quest.aftermath_done)
         self.assertFalse(game.social.active)
         self.quit(game)
         restored = self.load();spoils = wait_for_spoils(restored)
         self.assertFalse(restored.music.playing)
-        self.assertEqual(restored.lattice.state()['rp'], 30)
+        self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(restored.attributes.current_hp, restored.attributes.value('hp')//4)
         self.assertFalse(restored.social.active)
         game = restored
@@ -287,20 +286,19 @@ class SpoilsGameplayTests(unittest.TestCase):
         self.assertTrue(game.world.can_stand(game.player.position))
         mill_fixture.read_social(game)
         self.assertTrue(game.mill_quest.aftermath_done)
-        self.assertEqual(game.lattice.state()['rp'], 30)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
 
     def test_reward_storage_caps_display_and_award_only_available_room(self):
         game = self.game()
         self.assertTrue(game.award_battle_rewards('fixture:almost-full',
-                                                 {'caelan': MAX_RP-7},
                                                  {'aether_emerald': MAX_QUANTITY}))
         scene = self.bat(game);self.win(game, scene);spoils = wait_for_spoils(game)
-        self.assertEqual(scene.model.enemy_definition['rewards'], {'rp': 7, 'drops': {}})
-        self.assertEqual(game.lattice.state()['rp'], MAX_RP)
+        self.assertEqual(scene.model.enemy_definition['rewards'], {'drops': {}})
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 2)
         self.assertEqual(game.inventory.quantity('aether_emerald'), MAX_QUANTITY)
         self.assertTrue(spoils.awarded)
         acknowledge_battle_result(game, scene)
-        self.assertEqual(game.lattice.state()['rp'], MAX_RP)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 2)
 
     def test_entry_inputs_held_through_spoils_reveal_cannot_collect_and_exit_in_one_press(self):
         game = self.game();scene = self.bat(game);self.win(game, scene)

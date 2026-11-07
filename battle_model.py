@@ -124,8 +124,8 @@ def load_enemies(actions, data=None):
                    for key in enemy['abilities']):
             raise ValueError('Enemy requires a free fallback action')
         rewards = enemy['rewards']
-        if (not isinstance(rewards, dict) or set(rewards) != {'rp', 'drops'}
-                or not _integer(rewards['rp']) or not isinstance(rewards['drops'], dict)
+        if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
+                or not isinstance(rewards['drops'], dict)
                 or any(not isinstance(key, str) or not key or not _integer(value, 1, 999999)
                        for key, value in rewards['drops'].items())):
             raise ValueError('Invalid enemy reward')

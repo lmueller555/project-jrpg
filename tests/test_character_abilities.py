@@ -2,11 +2,9 @@
 from copy import deepcopy
 import json
 from pathlib import Path
-import tempfile
 import unittest
 from unittest.mock import patch
 
-from aether_lattice import AetherLattice, LatticeBoard
 from character_abilities import CharacterAbilities
 from inventory import Inventory, MAX_QUANTITY
 
@@ -31,27 +29,10 @@ def weapon_inventory():
 class CharacterAbilitiesTests(unittest.TestCase):
     def setUp(self):
         self.inventory = weapon_inventory()
-        self.lattice = AetherLattice()
-        self.abilities = CharacterAbilities(self.inventory, self.lattice)
+        self.abilities = CharacterAbilities(self.inventory)
 
     def snapshot(self):
-        return (self.inventory.to_dict(), self.abilities.to_dict(), self.lattice.to_dict())
-
-    def test_lattice_builder_preserves_weapon_and_future_character_definitions(self):
-        from tools import build_caelan_lattice
-        catalog = deepcopy(self.abilities.catalog)
-        catalog['abilities']['fixture_future_spell'] = {
-            'name': 'Future Spell Fixture', 'description': 'A catalog extension fixture.',
-            'kind': 'spell'}
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory)/'catalog.json'
-            path.write_text(json.dumps(catalog))
-            with patch.object(build_caelan_lattice, 'ABILITIES', path):
-                board, rebuilt = build_caelan_lattice.build()
-        for identifier in ('aether_edge', 'fixture_future_spell'):
-            self.assertEqual(rebuilt['abilities'][identifier], catalog['abilities'][identifier])
-        self.assertEqual(json.loads(json.dumps(board)), self.lattice.board.data)
-        self.assertNotIn('aether_edge', {node.get('ability_id') for node in board['nodes'].values()})
+        return (self.inventory.to_dict(), self.abilities.to_dict())
 
     def test_new_journey_is_unarmed_and_has_only_basic_magicks(self):
         self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks'}))
@@ -89,7 +70,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
                     self.assertFalse(self.abilities.has_weapon(identifier))
                     self.assertFalse(any(profile[key] for key in ('skills', 'spells', 'abilities')))
 
-    def test_only_aether_edge_uses_first_weapon_and_lattice_rewards_keep_their_ids(self):
+    def test_only_aether_edge_uses_first_weapon_and_other_unlocks_require_learning(self):
         profile = self.abilities.characters['caelan']
         registrations = {key: value for category in ('skills', 'spells', 'abilities')
                          for key, value in profile[category].items()}
@@ -97,10 +78,10 @@ class CharacterAbilitiesTests(unittest.TestCase):
                         if value['unlock'] == 'first_weapon'}
         self.assertEqual(first_weapon, {'aether_edge'})
         self.assertEqual(registrations['basic_magicks'], {'unlock': 'starting'})
-        rewards = {node['ability_id'] for node in self.lattice.board.nodes.values()
-                   if node['kind'] == 'ability'}
-        self.assertEqual({key for key, value in registrations.items()
-                          if value['unlock'] == 'lattice'}, rewards)
+        learned = {key for key, value in registrations.items() if value['unlock'] == 'learned'}
+        self.assertEqual(len(learned), 20)
+        self.assertTrue({'brace', 'mend', 'aether_dart'}.issubset(learned))
+        self.assertTrue(learned.isdisjoint(self.abilities.known_abilities()))
         definition = self.abilities.definitions['aether_edge']
         self.assertEqual(set(definition), {'name', 'description', 'kind'})
         self.assertEqual((definition['name'], definition['kind']), ('Aether Edge', 'technique'))
@@ -108,7 +89,6 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertIn('weapon', definition['description'].lower())
 
     def test_acquisition_adds_and_equips_a_real_catalog_weapon_and_grants_only_edge(self):
-        before_lattice = self.lattice.to_dict()
         self.assertTrue(self.abilities.acquire_weapon('caelan', 'fixture_blade'))
         self.assertEqual(self.inventory.quantity('fixture_blade'), 1)
         self.assertTrue(self.abilities.has_weapon())
@@ -116,7 +96,6 @@ class CharacterAbilitiesTests(unittest.TestCase):
                          {'equipped_weapon': 'fixture_blade', 'first_weapon_acquired': True})
         self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks', 'aether_edge'}))
         self.assertEqual(self.abilities.skill_ids(), ('aether_edge',))
-        self.assertEqual(self.lattice.to_dict(), before_lattice)
         self.assertEqual(self.abilities.known_abilities('mira'), frozenset({'overclock', 'rivet'}))
         self.assertEqual(self.abilities.skill_ids('mira'), ('overclock',))
         for identifier in ('lucan', 'rhea', 'edran'):
@@ -157,7 +136,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertTrue(self.abilities.equip_weapon('caelan', None))
         self.assertFalse(self.abilities.learn_first_weapon_skills())
         saved = self.abilities.to_dict()
-        other = CharacterAbilities(self.inventory, self.lattice)
+        other = CharacterAbilities(self.inventory)
         self.assertTrue(other.restore(saved))
         self.assertEqual(other.to_dict(), saved)
         self.assertTrue(other.starter_skills_pending())
@@ -204,10 +183,10 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertFalse(self.abilities.starter_skills_pending())
 
     def test_journey_validator_checks_pending_training_against_saved_ownership(self):
-        inventory = Inventory();lattice = AetherLattice()
-        abilities = CharacterAbilities(inventory, lattice)
+        inventory = Inventory()
+        abilities = CharacterAbilities(inventory)
         self.assertTrue(abilities.acquire_weapon('caelan','caelan_gearblade',learn_starter=False))
-        journey = dict(inventory=inventory.to_dict(),aether_lattice=lattice.to_dict(),
+        journey = dict(inventory=inventory.to_dict(),
                        character_abilities=abilities.to_dict())
         self.assertTrue(CharacterAbilities.valid_journey(journey))
         journey['inventory']['items'].clear()
@@ -273,7 +252,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertTrue(self.abilities.acquire_weapon('caelan', 'fixture_blade'))
         self.assertTrue(self.abilities.acquire_weapon('mira', 'fixture_blade'))
         saved = self.abilities.to_dict()
-        other = CharacterAbilities(self.inventory, self.lattice)
+        other = CharacterAbilities(self.inventory)
         self.assertTrue(other.restore(saved))
         self.assertTrue(other.has_weapon('caelan'))
         self.assertTrue(other.has_weapon('mira'))
@@ -297,30 +276,69 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertTrue(self.abilities.equip_weapon('caelan', 'fixture_blade'))
         self.assertTrue(self.abilities.has_weapon())
 
-    def test_lattice_unlocks_are_derived_live_and_skill_order_matches_catalog(self):
+    def test_explicit_learned_unlocks_round_trip_and_skill_order_matches_catalog(self):
         self.assertTrue(self.abilities.acquire_weapon('caelan', 'fixture_blade'))
-        self.assertTrue(self.lattice.award_rewards('ability:training', {'caelan': 100000}))
-        for node in ('mend_01', 'brace_01', 'focused_strike_01'):
-            self.assertTrue(self.lattice.move(node))
-            self.assertTrue(self.lattice.activate(node))
+        for ability in ('mend', 'brace', 'focused_strike'):
+            self.assertTrue(self.abilities.learn_ability('caelan', ability))
         expected = frozenset({'basic_magicks', 'aether_edge', 'mend', 'brace', 'focused_strike'})
         self.assertEqual(self.abilities.known_abilities(), expected)
         self.assertEqual(self.abilities.skill_ids(), tuple(
             key for key, definition in self.abilities.definitions.items()
             if definition['kind'] == 'technique' and key in expected))
         self.assertNotIn('mend', self.abilities.skill_ids())
-        self.lattice.reset()
-        self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks', 'aether_edge'}))
+        saved = self.abilities.to_dict()
+        other = CharacterAbilities(self.inventory)
+        self.assertTrue(other.restore(saved))
+        self.assertEqual(other.known_abilities(), expected)
+        self.assertEqual(other.to_dict(), saved)
+        self.abilities.reset()
+        self.assertEqual(self.abilities.known_abilities(), frozenset({'basic_magicks'}))
 
-    def test_catalog_addition_is_compatible_with_current_and_archived_lattice_boards(self):
-        board = self.lattice.board
-        self.assertIn('aether_edge', board.abilities)
-        self.assertNotIn('aether_edge', {node.get('ability_id') for node in board.nodes.values()})
-        for filename in ('aether_lattice_v1.json', 'aether_lattice_v2.json'):
-            data = json.loads((ROOT/'assets/progression'/filename).read_text(encoding='utf-8'))
-            archive = LatticeBoard(data, self.abilities.catalog)
-            self.assertIn('aether_edge', archive.abilities)
-            self.assertEqual(archive.starting_abilities['caelan'], ['basic_magicks'])
+    def test_learning_requires_registered_explicit_unlock_and_never_grants_equipment(self):
+        before = self.snapshot()
+        for character, ability in (
+                ('missing', 'mend'), ([], 'mend'), (None, 'mend'),
+                ('mira', 'mend'), ('caelan', 'overclock'), ('caelan', 'missing'),
+                ('caelan', 'basic_magicks'), ('caelan', 'aether_edge'),
+                ('caelan', None), ('caelan', True), ('caelan', [])):
+            with self.subTest(character=character, ability=ability):
+                self.assertFalse(self.abilities.learn_ability(character, ability))
+                self.assertEqual(self.snapshot(), before)
+        self.assertTrue(self.abilities.learn_ability('caelan', 'aether_dart'))
+        learned = self.snapshot()
+        self.assertFalse(self.abilities.learn_ability('caelan', 'aether_dart'))
+        self.assertEqual(self.snapshot(), learned)
+        self.assertEqual(self.inventory.to_dict(), before[0])
+        self.assertFalse(self.abilities.has_weapon())
+        self.assertEqual(self.abilities.known_abilities(),
+                         frozenset({'basic_magicks', 'aether_dart'}))
+
+    def test_learned_snapshot_validation_is_strict_and_preserves_all_state_on_failure(self):
+        self.assertTrue(self.abilities.acquire_weapon('caelan', 'caelan_gearblade',
+                                                     learn_starter=False))
+        self.assertTrue(self.abilities.set_active_gem('ice'))
+        self.assertTrue(self.abilities.learn_ability('caelan', 'mend'))
+        saved, before = self.abilities.to_dict(), self.snapshot()
+        invalid = (None, True, [], 'mend', {'missing': ['mend']},
+                   {'mira': ['mend']}, {'caelan': []}, {'caelan': 'mend'},
+                   {'caelan': [None]}, {'caelan': [[]]}, {'caelan': [True]},
+                   {'caelan': ['missing']}, {'caelan': ['basic_magicks']},
+                   {'caelan': ['aether_edge']}, {'caelan': ['mend', 'mend']})
+        for learned in invalid:
+            with self.subTest(learned=learned):
+                bad = deepcopy(saved);bad['learned_abilities'] = learned
+                self.assertFalse(self.abilities.restore(bad))
+                self.assertEqual(self.snapshot(), before)
+        clone = CharacterAbilities(self.inventory)
+        self.assertTrue(clone.restore(saved))
+        self.assertTrue(clone.starter_skills_pending())
+        self.assertEqual(clone.active_gem(), 'ice')
+        self.assertEqual(clone.known_abilities(), frozenset({'basic_magicks', 'mend'}))
+        saved['learned_abilities']['caelan'].append('aether_dart')
+        self.assertNotIn('aether_dart', clone.known_abilities())
+        exported = clone.to_dict()
+        exported['learned_abilities']['caelan'].clear()
+        self.assertIn('mend', clone.known_abilities())
 
     def test_round_trip_restores_equipment_and_permanent_unequipped_unlock_without_grants(self):
         self.assertTrue(self.abilities.acquire_weapon('caelan', 'fixture_blade'))
@@ -328,7 +346,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
         self.assertTrue(self.abilities.acquire_weapon('mira', 'fixture_spear'))
         saved = self.abilities.to_dict()
         inventory_before = self.inventory.to_dict()
-        other = CharacterAbilities(self.inventory, self.lattice)
+        other = CharacterAbilities(self.inventory)
         for _ in range(2):
             self.assertTrue(other.restore(saved))
             self.assertEqual(other.to_dict(), saved)
@@ -388,7 +406,7 @@ class CharacterAbilitiesTests(unittest.TestCase):
             with self.subTest(catalog=catalog):
                 original = deepcopy(catalog)
                 with self.assertRaises(ValueError):
-                    CharacterAbilities(self.inventory, self.lattice, catalog=catalog, characters=characters)
+                    CharacterAbilities(self.inventory, catalog=catalog, characters=characters)
                 self.assertEqual(catalog, original)
         bad_characters = []
         for field, value in (('version', True), ('characters', [])):
@@ -403,22 +421,19 @@ class CharacterAbilitiesTests(unittest.TestCase):
             with self.subTest(characters=profiles):
                 original = deepcopy(profiles)
                 with self.assertRaises(ValueError):
-                    CharacterAbilities(self.inventory, self.lattice, catalog=base_catalog, characters=profiles)
+                    CharacterAbilities(self.inventory, catalog=base_catalog, characters=profiles)
                 self.assertEqual(profiles, original)
 
     def test_journey_validation_handles_legacy_and_rejects_explicit_invalid_blocks(self):
         canonical_inventory = Inventory()
-        canonical_lattice = AetherLattice()
-        canonical = CharacterAbilities(canonical_inventory, canonical_lattice)
+        canonical = CharacterAbilities(canonical_inventory)
         journey = {'inventory': canonical_inventory.to_dict(),
-                   'aether_lattice': canonical_lattice.to_dict(),
                    'character_abilities': canonical.to_dict()}
         self.assertTrue(CharacterAbilities.valid_journey(journey))
         self.assertTrue(CharacterAbilities.valid_journey({}))
         self.assertTrue(CharacterAbilities.valid_journey({
-            'inventory': canonical_inventory.to_dict(),
-            'aether_lattice': canonical_lattice.to_dict()}))
-        for block in ('inventory', 'aether_lattice', 'character_abilities'):
+            'inventory': canonical_inventory.to_dict()}))
+        for block in ('inventory', 'character_abilities'):
             for invalid in (None, True, [], {}):
                 with self.subTest(block=block, invalid=invalid):
                     bad = deepcopy(journey);bad[block] = invalid

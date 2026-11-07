@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "345d1a657d2601c3749914912ec3f8633ae2b433",
+  "nodes": [
+    "tests/test_aether_doctrine.py::AetherDoctrineTests::test_current_implementation_scripts_match_the_doctrine_exchanges",
+    "tests/test_aether_doctrine.py::AetherDoctrineTests::test_regent_stewardship_uses_the_planetary_cycle",
+    "tests/test_overworld_map.py::RegionalMapTests::test_real_game_update_freezes_regional_world_until_map_closes",
+    "tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_every_original_art_input_retains_its_pinned_hash",
+    "tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_pinned_regional_source_is_unmodified",
+    "tests/test_aldric_side_walk.py::AldricSideWalkTests::test_all_protected_generated_and_non_side_assets_keep_stored_sha256",
+    "tests/test_caelan_left_run.py::CaelanLeftRunTests::test_matches_approved_frames_and_preserves_existing_art",
+    "tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order",
+    "tests/test_caelan_directional_runs.py::CaelanDirectionalRunTests::test_approved_frames_and_protected_art",
+    "tests/test_doors.py::BuildingDoors::test_all_thirteen_rooms_have_reachable_exits_and_furnishings",
+    "tests/test_mill_quest.py::MillQuestTests::test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest",
+    "tests/test_school.py::EldenmereSchoolTests::test_school_sits_on_lower_ground_without_moving_existing_landmarks",
+    "tests/test_scripted_dialogue.py::ScriptedDialogueTests::test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue"
+  ],
+  "command": [
+    "/workspace/.venvs/project-jrpg/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_aether_doctrine.py::AetherDoctrineTests::test_current_implementation_scripts_match_the_doctrine_exchanges",
+    "tests/test_aether_doctrine.py::AetherDoctrineTests::test_regent_stewardship_uses_the_planetary_cycle",
+    "tests/test_overworld_map.py::RegionalMapTests::test_real_game_update_freezes_regional_world_until_map_closes",
+    "tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_every_original_art_input_retains_its_pinned_hash",
+    "tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_pinned_regional_source_is_unmodified",
+    "tests/test_aldric_side_walk.py::AldricSideWalkTests::test_all_protected_generated_and_non_side_assets_keep_stored_sha256",
+    "tests/test_caelan_left_run.py::CaelanLeftRunTests::test_matches_approved_frames_and_preserves_existing_art",
+    "tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order",
+    "tests/test_caelan_directional_runs.py::CaelanDirectionalRunTests::test_approved_frames_and_protected_art",
+    "tests/test_doors.py::BuildingDoors::test_all_thirteen_rooms_have_reachable_exits_and_furnishings",
+    "tests/test_mill_quest.py::MillQuestTests::test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest",
+    "tests/test_school.py::EldenmereSchoolTests::test_school_sits_on_lower_ground_without_moving_existing_landmarks",
+    "tests/test_scripted_dialogue.py::ScriptedDialogueTests::test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue"
+  ],
+  "returncode": 1,
+  "seconds": 3.77,
+  "summary": "16 failed, 2 passed, 1 subtests passed in 3.39s"
+}

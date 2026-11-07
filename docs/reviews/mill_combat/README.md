@@ -30,7 +30,7 @@ an actual opportunity to Guard.
 The captured fight records Caelan's unarmed attacks at 16 damage and Mira's
 spear strikes at 96–106. Caelan Guards the telegraphed charge for 35 damage.
 There is no artificial enemy health floor or requirement to select one action.
-Victory grants 30 Resonance Points and one Aether Emerald exactly once.
+Victory grants one Aether Emerald exactly once.
 
 Mira checks Caelan in a linear aftermath; there is no rest/continue choice.
 The defeated monster does not repair the intake. The existing bypass, Caelan's

@@ -25,8 +25,8 @@ scenery between frames. The PNG screenshots retain the rendered colors.
 ![Guard, Attack, Bite, Wing Gust and Aether Dart](action_contact_sheet.png)
 
 The first temporary journey uses Caelan's starting attributes. A separate
-temporary journey learns Aether Dart through the real lattice to show its
-existing casting effect against the new scenery. Neither fixture changes the
+temporary journey explicitly learns Aether Dart to show its existing casting
+effect against the new scenery. Neither fixture changes the
 player's ordinary journey or settings.
 
 ![Minimum window with 150 percent text](minimum_window_large_text.png)

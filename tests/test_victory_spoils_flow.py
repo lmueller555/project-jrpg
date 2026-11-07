@@ -13,7 +13,6 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
 
-from aether_lattice import MAX_RP
 from inventory import MAX_QUANTITY
 from main import Game
 from post_battle import valid_pending_snapshot
@@ -58,7 +57,7 @@ class VictoryCheckpointTests(unittest.TestCase):
         owner = self.victory()
         record = owner.snapshot()
         self.assertEqual(record['stage'], 'pending')
-        self.assertEqual(self.game.lattice.state()['rp'], 0)
+        self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 0)
         self.assertEqual(self.game.inventory.quantity('aether_emerald'), 0)
         data = json.loads(self.path.read_text())
         self.assertTrue(valid_pending_snapshot(record, data))
@@ -66,7 +65,7 @@ class VictoryCheckpointTests(unittest.TestCase):
         self.show_spoils()
         self.assertTrue(owner.spoils.ready)
         self.assertEqual(owner.snapshot()['stage'], 'awarded')
-        self.assertTrue(self.game.lattice.has_receipt(record['receipt']))
+        self.assertTrue(self.game.battle_rewards.has_receipt(record['receipt']))
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), json.loads(self.path.read_text())))
 
     def test_saved_pending_record_cannot_invent_rewards_resources_or_receipt_state(self):
@@ -87,7 +86,7 @@ class VictoryCheckpointTests(unittest.TestCase):
         owner = self.victory();self.show_spoils()
         record = owner.snapshot();data = json.loads(self.path.read_text())
         self.assertTrue(valid_pending_snapshot(record, data))
-        bad = deepcopy(data);bad['aether_lattice']['receipts'].remove(record['receipt'])
+        bad = deepcopy(data);bad['battle_rewards']['receipts'].remove(record['receipt'])
         self.assertFalse(valid_pending_snapshot(record, bad))
         bad = deepcopy(data);bad['character_attributes']['current_hp'] += 1
         self.assertFalse(valid_pending_snapshot(record, bad))
@@ -99,9 +98,9 @@ class VictoryCheckpointTests(unittest.TestCase):
             self.assertEqual(owner.snapshot()['stage'], 'awarded')
             self.assertFalse(owner.spoils.ready)
             self.assertIn('saved', owner.spoils.result_error)
-            self.assertEqual(self.game.lattice.state()['rp'], 20)
+            self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 1)
             self.assertEqual(self.game.inventory.quantity('aether_emerald'), 1)
-        with patch.object(self.game.lattice_progression, 'award_battle_rewards', side_effect=AssertionError('duplicate grant')):
+        with patch.object(self.game.battle_rewards, 'award_battle_rewards', side_effect=AssertionError('duplicate grant')):
             owner.spoils.retry_requested = True
             self.game.update(0, (0, 0), False)
         self.assertTrue(owner.spoils.ready)
@@ -112,11 +111,11 @@ class VictoryCheckpointTests(unittest.TestCase):
             owner = self.victory();self.show_spoils()
             self.assertEqual(owner.snapshot()['stage'], 'pending')
             self.assertFalse(owner.spoils.ready)
-            self.assertEqual(self.game.lattice.state()['rp'], 0)
+            self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 0)
         owner.spoils.retry_requested = True
         self.game.update(0, (0, 0), False)
         self.assertTrue(owner.spoils.ready)
-        self.assertEqual(self.game.lattice.state()['rp'], 20)
+        self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 1)
 
     def test_failed_exit_checkpoint_keeps_screen_and_already_awarded_receipt(self):
         owner = self.victory();self.show_spoils()
@@ -134,17 +133,17 @@ class VictoryCheckpointTests(unittest.TestCase):
         self.game.update(0, (0, 0), False)
         self.assertFalse(owner.active)
         self.assertNotIn('post_battle', json.loads(self.path.read_text()))
-        self.assertEqual(self.game.lattice.state()['rp'], 20)
-        self.assertTrue(self.game.lattice.has_receipt(receipt))
+        self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 1)
+        self.assertTrue(self.game.battle_rewards.has_receipt(receipt))
 
     def test_zero_room_spoils_register_empty_receipt_without_overflow(self):
-        self.assertTrue(self.game.award_battle_rewards('fixture:full', {'caelan': MAX_RP},
+        self.assertTrue(self.game.award_battle_rewards('fixture:full',
                                                        {'aether_emerald': MAX_QUANTITY}))
         owner = self.victory();self.show_spoils()
-        self.assertEqual(owner.snapshot()['rewards'], {'rp': 0, 'drops': {}})
+        self.assertEqual(owner.snapshot()['rewards'], {'drops': {}})
         self.assertTrue(owner.spoils.ready)
-        self.assertTrue(self.game.lattice.has_receipt(owner.receipt_id))
-        self.assertEqual(self.game.lattice.state()['rp'], MAX_RP)
+        self.assertTrue(self.game.battle_rewards.has_receipt(owner.receipt_id))
+        self.assertEqual(len(self.game.battle_rewards.to_dict()['receipts']), 2)
         self.assertEqual(self.game.inventory.quantity('aether_emerald'), MAX_QUANTITY)
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), json.loads(self.path.read_text())))
 

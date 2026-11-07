@@ -30,7 +30,7 @@ class SpoilsSceneTests(unittest.TestCase):
         self.game.ui = UIStyle(self.game)
         self.game.to_canvas = self.to_canvas
         self.canvas = pygame.Surface((480, 320))
-        self.rewards = {'rp': 30, 'drops': {'aether_emerald': 1}}
+        self.rewards = {'drops': {'aether_emerald': 1}}
         self.scene = SpoilsScene(self.game, self.rewards)
 
     def tearDown(self):pygame.quit()
@@ -65,13 +65,13 @@ class SpoilsSceneTests(unittest.TestCase):
 
     def test_authoritative_awards_are_snapshotted_and_continue_requires_fresh_input(self):
         self.draw();self.click(self.scene.continue_rect.center, release=False)
-        actual = {'rp': 12, 'drops': {'aether_emerald': 2}}
+        actual = {'drops': {'aether_emerald': 2}}
         self.scene.set_awarded(actual)
         actual['drops']['aether_emerald'] = 50
         self.click(self.scene.continue_rect.center, release=False)
         self.assertFalse(self.scene.dismissed)
         self.scene.handle_event(pygame.event.Event(pygame.MOUSEBUTTONUP, button=1, pos=(0, 0)))
-        self.assertEqual(self.scene.rewards, {'rp': 12, 'drops': {'aether_emerald': 2}})
+        self.assertEqual(self.scene.rewards, {'drops': {'aether_emerald': 2}})
         self.key(pygame.K_RETURN, repeat=True)
         self.assertFalse(self.scene.dismissed)
         self.key(pygame.K_RETURN)
@@ -110,7 +110,7 @@ class SpoilsSceneTests(unittest.TestCase):
         definitions = self.game.inventory.definitions
         for index in range(18):
             definitions['test_item_'+str(index)] = {'name': 'A carefully wrapped keepsake with a very long name '+str(index)}
-        rewards = {'rp': 999999, 'drops': {key: 999999 for key in definitions}}
+        rewards = {'drops': {key: 999999 for key in definitions}}
         self.scene = SpoilsScene(self.game, rewards)
         self.scene.set_awarded()
         for size in ((480, 320), (960, 640), (1440, 810)):
@@ -120,8 +120,8 @@ class SpoilsSceneTests(unittest.TestCase):
             self.game.audio.set_text_scale(1.5)
             self.draw()
             self.assertGreater(self.scene.max_scroll, 0)
-            self.assertLess(self.scene.title_rect.bottom, self.scene.experience_rect.top)
-            self.assertLess(self.scene.experience_rect.bottom, self.scene.items_view.top)
+            self.assertLess(self.scene.title_rect.bottom, self.scene.items_view.top)
+            self.assertFalse(hasattr(self.scene, 'experience_rect'))
             self.assertLess(self.scene.items_view.bottom, self.scene.continue_rect.bottom)
             self.assertTrue(self.scene.panel_rect.contains(self.scene.continue_rect))
             first = set(self.scene.item_rects)
@@ -134,18 +134,19 @@ class SpoilsSceneTests(unittest.TestCase):
             self.scene.handle_event(pygame.event.Event(pygame.MOUSEWHEEL, y=-3))
             self.assertGreater(self.scene.scroll, 0)
 
-    def test_zero_rewards_have_a_clear_empty_state_and_existing_progression_name(self):
-        self.scene = SpoilsScene(self.game, {'rp': 0, 'drops': {}})
+    def test_zero_rewards_have_clear_item_only_empty_state(self):
+        self.scene = SpoilsScene(self.game, {'drops': {}})
         self.scene.set_awarded()
         labels = []
         original = Painter.text
         def record(painter, text, *args, **kwargs):
             labels.append(str(text));return original(painter, text, *args, **kwargs)
         with patch.object(Painter, 'text', record):self.draw()
-        for label in ('Spoils of Battle', 'Resonance Points (RP)', 'Caelan', '+0 RP',
+        for label in ('Spoils of Battle', 'Items',
                       'No items recovered.', 'Rewards received.', 'Continue'):
             self.assertIn(label, labels)
-        self.assertFalse(any('EXP' in label or 'Gil' in label for label in labels))
+        self.assertFalse(any(token in label for label in labels
+                             for token in ('EXP', 'Gil', 'RP', 'Resonance', 'Attunement')))
         self.key(pygame.K_RETURN)
         self.assertTrue(self.scene.dismissed)
 

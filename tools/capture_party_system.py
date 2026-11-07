@@ -135,7 +135,7 @@ class Capture:
                         save_path=directory/'journey.json',settings_path=directory/'settings.json')
             game.audio.set_music(0);game.audio.set_effects(0)
             pygame.event.clear()
-            progression = game.lattice.to_dict()
+            progression = game.battle_rewards.to_dict()
             # Explicit public-API review fixtures. Future recruitment stays unimplemented.
             for identifier in ('mira','lucan','rhea','edran'):
                 assert game.recruit_party_member(identifier)
@@ -272,7 +272,7 @@ class Capture:
             else:raise AssertionError('Three-member battle command loop timed out')
             self.checks['real_combat_actions'] = acted
             self.hold(game,.4,'Three active members have each received a command')
-            assert game.lattice.to_dict() == progression
+            assert game.battle_rewards.to_dict() == progression
             self.checks['progression_unchanged'] = True
             game.opening_audio.reset();game.music.stop()
         self.encoder.stdin.close()

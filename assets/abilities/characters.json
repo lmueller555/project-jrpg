@@ -6,28 +6,28 @@
       "job": "Spellblade",
       "skills": {
         "aether_edge": {"unlock": "first_weapon"},
-        "brace": {"unlock": "lattice"},
-        "focused_strike": {"unlock": "lattice"},
-        "sweeping_strike": {"unlock": "lattice"},
-        "guarded_strike": {"unlock": "lattice"},
-        "piercing_strike": {"unlock": "lattice"},
-        "rally": {"unlock": "lattice"},
-        "intercept": {"unlock": "lattice"},
-        "riposte": {"unlock": "lattice"},
-        "channel": {"unlock": "lattice"},
-        "steadfast": {"unlock": "lattice"}
+        "brace": {"unlock": "learned"},
+        "focused_strike": {"unlock": "learned"},
+        "sweeping_strike": {"unlock": "learned"},
+        "guarded_strike": {"unlock": "learned"},
+        "piercing_strike": {"unlock": "learned"},
+        "rally": {"unlock": "learned"},
+        "intercept": {"unlock": "learned"},
+        "riposte": {"unlock": "learned"},
+        "channel": {"unlock": "learned"},
+        "steadfast": {"unlock": "learned"}
       },
       "spells": {
-        "mend": {"unlock": "lattice"},
-        "aether_dart": {"unlock": "lattice"},
-        "aether_arc": {"unlock": "lattice"},
-        "aether_lance": {"unlock": "lattice"},
-        "aether_burst": {"unlock": "lattice"},
-        "greater_mend": {"unlock": "lattice"},
-        "renew": {"unlock": "lattice"},
-        "cleanse": {"unlock": "lattice"},
-        "ward": {"unlock": "lattice"},
-        "dispel": {"unlock": "lattice"}
+        "mend": {"unlock": "learned"},
+        "aether_dart": {"unlock": "learned"},
+        "aether_arc": {"unlock": "learned"},
+        "aether_lance": {"unlock": "learned"},
+        "aether_burst": {"unlock": "learned"},
+        "greater_mend": {"unlock": "learned"},
+        "renew": {"unlock": "learned"},
+        "cleanse": {"unlock": "learned"},
+        "ward": {"unlock": "learned"},
+        "dispel": {"unlock": "learned"}
       },
       "abilities": {
         "basic_magicks": {"unlock": "starting"}

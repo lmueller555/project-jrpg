@@ -124,7 +124,7 @@ are approved for each companion.
 Their [four-direction walking sets](../../reviews/companion_directional_walks/README.md)
 are also approved.
 Recruitment quests, action animations, battle abilities, numeric builds and
-Lattice paths require later implementation.
+progression unlocks require later implementation.
 
 ## Aldric — approved royal background
 
@@ -293,6 +293,6 @@ Edge; that remains his only learned starter skill. The
 [character ability dictionaries](../../CHARACTER_ABILITIES.md) record his
 unlock rules and the other party members' profiles.
 The values are visible through **Pause → Characters**, with attribute icons and
-hover explanations. The Aether Lattice remains separate from weapon discovery. See
+hover explanations. Weapon discovery retains its authored story rules. See
 [character attributes](../../CHARACTER_ATTRIBUTES.md) for the definitions,
 runtime integration and save compatibility.

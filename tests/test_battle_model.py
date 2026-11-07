@@ -61,7 +61,7 @@ class BattleModelTests(unittest.TestCase):
         self.assertEqual(model.enemy.value('speed'), 8)
         self.assertEqual(model.enemy_definition['abilities'], ['bite', 'wing_gust'])
         self.assertEqual(model.enemy_definition['rewards'],
-                         {'rp': 20, 'drops': {'aether_emerald': 1}})
+                         {'drops': {'aether_emerald': 1}})
         self.assertEqual(model.phase, 'charging')
         self.assertIsNone(model.current_action)
         self.assertIsNone(model.last_action)
@@ -344,8 +344,8 @@ class BattleModelTests(unittest.TestCase):
             bad = enemy_data();bad['enemies']['bat']['abilities'] = abilities
             with self.subTest(abilities=abilities):
                 with self.assertRaises(ValueError):load_enemies(actions, bad)
-        for rewards in ({'rp': True, 'drops': {}}, {'rp': 20, 'drops': {'aether_emerald': 0}},
-                        {'rp': 20, 'drops': [], 'extra': 1}):
+        for rewards in ({'rp': 20, 'drops': {}}, {'drops': {'aether_emerald': 0}},
+                        {'drops': [], 'extra': 1}):
             bad = enemy_data();bad['enemies']['bat']['rewards'] = rewards
             with self.subTest(rewards=rewards):
                 with self.assertRaises(ValueError):load_enemies(actions, bad)

@@ -2,7 +2,6 @@
   "selected_regression_tests": 347,
   "result": "PASS",
   "final_gameplay_and_pending_save_tests": 5,
-  "regression_command": "python -m unittest test_rivet_battle_model test_rivet_battle_scene test_rivet_gameplay test_bot_loadouts test_mira_machinist_story test_mill_combat_assets test_battle_model test_party_battle_model test_aether_edge_battle_model test_battle_scene test_party_battle_scene test_battle_status_ui test_skills_battle_scene test_battle_gameplay test_mill_battle_gameplay test_battle_transition test_music_battle_integration test_mill_combat_story test_mill_quest test_millrace_departure test_millrace_cutscene_flow test_millrace_cutscene_gameplay test_character_abilities test_character_skills_gameplay test_inventory_gameplay test_lattice_gameplay test_lattice_tier_migration test_save_game test_gallery_session",
   "final_gameplay_command": "python -m unittest test_rivet_gameplay",
   "environment": {
     "SDL_VIDEODRIVER": "dummy",
@@ -92,5 +91,6 @@
     "silent": true,
     "frames": 1804,
     "duration_seconds": 60.133
-  }
+  },
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

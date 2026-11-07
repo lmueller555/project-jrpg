@@ -1,0 +1,179 @@
+..F...................... [  4%]
+......................................... [ 12%]
+.................................................................. [ 24%]
+.......................................................................................................................................................F........................... [ 58%]
+............................. [ 63%]
+............................................F.............F............................................................................................. [ 92%]
+.........................................    [100%]
+=================================== FAILURES ===================================
+_ AetherDoctrineTests.test_current_implementation_scripts_match_the_doctrine_exchanges (script='docs/narrative/game_01/CH01_MQ03.md') _
+
+self = <test_aether_doctrine.AetherDoctrineTests testMethod=test_current_implementation_scripts_match_the_doctrine_exchanges>
+
+    def test_current_implementation_scripts_match_the_doctrine_exchanges(self):
+        punctuation = str.maketrans({'\u201c': '"', '\u201d': '"', '\u2019': "'"})
+        cases = (
+            ('docs/narrative/game_01/CH01_MQ04_PR3.md',
+             [line for name in ('liam_questions', 'sanctuary_welcome', 'returning_life')
+              for line in self.lantern[name]]),
+            ('docs/narrative/game_01/CH01_MQ03.md',
+             [line for lines in self.regent.values() for line in lines
+              if line['speaker'] == 'serene' and
+              ('planet' in line['text'].lower() or 'return it to the gods' in line['text'])]),
+        )
+        for filename, lines in cases:
+            with self.subTest(script=filename):
+>               self.assertTrue(lines)
+E               AssertionError: [] is not true
+
+tests/test_aether_doctrine.py:45: AssertionError
+_____ AetherDoctrineTests.test_regent_stewardship_uses_the_planetary_cycle _____
+
+self = <test_aether_doctrine.AetherDoctrineTests testMethod=test_regent_stewardship_uses_the_planetary_cycle>
+
+    def test_regent_stewardship_uses_the_planetary_cycle(self):
+        text = ' '.join(line['text'] for lines in self.regent.values()
+                        for line in lines if line['speaker'] == 'serene')
+>       self.assertIn("planet's aether cycle", text)
+E       AssertionError: "planet's aether cycle" not found in "They're here. Caelan, would you meet them by the lower bridge? Bring them in when they're ready. Welcome. Come and sit down. You look as though you could use something warm. Caelan, would you pass the bread? Of course. Caelan, let me move those plates. What’s coming from the existing quarries? The protected ground extends beyond those walls. Aether gathers there naturally. People have cared for that place for generations. They tend the grove in remembrance of those they’ve lost. The sanctuary buildings are part of that keeping. So are the trees, and the ground beneath them. Yes. And there is still a great deal we cannot account for. These foundations continue into the hillside. The plan never shows where they end. We would already have opened the ground by then. Ordinarily, yes. But there’s an account I want your engineer to read first. Workers opened a passage beneath the sanctuary. A discharge injured them. They closed the passage again. They left no explanation. I can’t tell you that. This account is much older. We do. Your engineer and I can walk it together. Inspect the surface, compare it with the plan, and see what further records we can obtain. I can agree to the inspection. I cannot endorse opening the ground yet. Take the stone we set aside for the courtyard repairs. We can put it off. I’ll arrange meals for the crew as well. But it won’t be enough. I know. I will. Yes. There are people waiting for it. It settles what we can give him today. I expect so. So do I. Yes. Go on. I have a letter to write. Everything’s ready here. You’ll find the visitors by the lower bridge. I have a letter to write. Tomas could use your help with the lanterns."
+
+tests/test_aether_doctrine.py:29: AssertionError
+_ RegionalMapTests.test_real_game_update_freezes_regional_world_until_map_closes _
+
+self = <test_overworld_map.RegionalMapTests testMethod=test_real_game_update_freezes_regional_world_until_map_closes>
+
+    def test_real_game_update_freezes_regional_world_until_map_closes(self):
+        from main import Game
+        game = Game.__new__(Game)
+        game.__dict__.update(self.game.__dict__)
+        game.opening_cinematic = SimpleNamespace(active=False)
+        game.regent_arrival = SimpleNamespace(active=False, state='waiting', maybe_start=Mock())
+        game.mill_quest = SimpleNamespace(sync_encounter_music=Mock())
+        game.mill_gift = SimpleNamespace(active=False)
+        game.music = Mock()
+        game._music_focused = True
+        game.combat = SimpleNamespace(active=False, post_phase=False, tutorial_active=False,
+            tick_world=Mock(side_effect=RuntimeError('world resumed')))
+        game.social.active = False
+        game.on_title = False
+        game.gallery_session = None
+        game.on_gallery = False
+        game._is_gallery_preview = False
+        game.pause = game.inventory_ui = game.world_map_viewer = SimpleNamespace(is_open=False)
+        game.overworld_travel = SimpleNamespace(active=True)
+        game.quest_ui.journal_open = False
+        game.opening_audio = Mock()
+        game.regional_audio = Mock()
+        game.elapsed_ms = 1234
+        game.opening_fade = 0
+>       game.update(.5, (1, 0), True)
+
+tests/test_overworld_map.py:455:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+main.py:1283: in update
+    self._update_world(seconds,direction,running)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <main.Game object at 0x7f02411189b0>, seconds = 0.5, direction = (1, 0)
+running = True
+
+    def _update_world(self,seconds,direction=None,running=None):
+        if self.mill_gift.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.mill_gift.paused)
+            self.music.set_ducked(True)
+            self.music.update(seconds)
+            self.mill_gift.update(seconds)
+            return
+        if self.opening_cinematic.active:
+            # The flashforward has its own scene clock and never advances the
+            # present-day world, dialogue, quest actors or checkpoint clock.
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or
+                                  self.opening_cinematic.paused)
+            self.music.set_ducked(False)
+            self.music.update(seconds)
+            self.opening_cinematic.update(seconds)
+            return
+        if not self.on_title:self.regent_arrival.maybe_start()
+        if self.regent_arrival.active:
+            self.opening_audio.set_paused(True)
+            self.music.set_paused(not self._music_focused or self.regent_arrival.paused)
+            self.music.set_ducked(self.regent_arrival.dialogue is not None)
+            self.music.update(seconds)
+            self.regent_arrival.update(seconds)
+            return
+        # Music owns a separate clock: ATB decisions and world menus must not
+        # freeze the score, while explicit battle/focus pauses retain position.
+        self.mill_quest.sync_encounter_music()
+        self.music.set_paused(not self._music_focused or
+                              bool(self.combat.active and (self.combat.paused or not self.combat.focused)))
+        self.music.set_ducked(not self.combat.post_phase and
+                             (self.social.active or self.combat.tutorial_active))
+        self.music.update(seconds)
+        if self.on_title:
+            self.title.update(seconds)
+            return
+        if self.combat.active:
+            self.opening_audio.set_paused(True)
+            self.combat.update(seconds)
+            return
+        if (not self._music_focused and self.world is self.mill_quest.upstream and
+                (self.mill_quest.encounter_cutscene_active or self.mill_quest.encounter_pending)):
+            self.opening_audio.set_paused(True)
+            return
+        self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
+>                                     self.world_map_viewer.is_open or self.party_ui.is_open)
+                                                                       ^^^^^^^^^^^^^
+E       AttributeError: 'Game' object has no attribute 'party_ui'
+
+main.py:1333: AttributeError
+_ RegentCrossroadsArtTests.test_every_original_art_input_retains_its_pinned_hash _
+
+self = <test_regent_crossroads_art.RegentCrossroadsArtTests testMethod=test_every_original_art_input_retains_its_pinned_hash>
+
+    def test_every_original_art_input_retains_its_pinned_hash(self):
+        self.assertEqual(self.provenance["source_records"], self.recipe["source_records"])
+>       self.assertEqual(len(builder.verified_inputs(self.recipe)), 10)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_regent_crossroads_art.py:77:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+recipe = {'version': 1, 'method': 'Offline composition of retained source materials; no image generation, atlas enlargement, or runtime texture enlargement.', 'seed': 704111, 'canvas': [4928, 1728], ...}
+
+    def verified_inputs(recipe: dict) -> list[dict]:
+        records = []
+        for spec in recipe["source_records"]:
+            path = ROOT / spec["file"]
+            actual = sha256(path.read_bytes())
+            if actual != spec["sha256"]:
+>               raise ValueError(f"Retained input changed; do not silently re-author: {spec['file']}")
+E               ValueError: Retained input changed; do not silently re-author: assets/maps/overworld/elden_vale/region.json
+
+tools/build_regent_crossroads.py:57: ValueError
+______ RegentCrossroadsArtTests.test_pinned_regional_source_is_unmodified ______
+
+self = <test_regent_crossroads_art.RegentCrossroadsArtTests testMethod=test_pinned_regional_source_is_unmodified>
+
+    def test_pinned_regional_source_is_unmodified(self):
+        expected = "0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88"
+>       self.assertEqual(builder.sha256(builder.REGION.read_bytes()), expected)
+E       AssertionError: '3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015' != '0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88'
+E       - 3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015
+E       + 0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88
+
+tests/test_regent_crossroads_art.py:70: AssertionError
+=============================== warnings summary ===============================
+tests/test_venn_magicks.py: 21 warnings
+  /workspace/project-jrpg/tests/test_venn_magicks.py:129: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+    visible=[p for p in effect.getdata() if p[3]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SUBFAILED(script='docs/narrative/game_01/CH01_MQ03.md') tests/test_aether_doctrine.py::AetherDoctrineTests::test_current_implementation_scripts_match_the_doctrine_exchanges
+FAILED tests/test_aether_doctrine.py::AetherDoctrineTests::test_regent_stewardship_uses_the_planetary_cycle
+FAILED tests/test_overworld_map.py::RegionalMapTests::test_real_game_update_freezes_regional_world_until_map_closes
+FAILED tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_every_original_art_input_retains_its_pinned_hash
+FAILED tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_pinned_regional_source_is_unmodified
+5 failed, 529 passed, 21 warnings, 1839 subtests passed in 383.82s (0:06:23)

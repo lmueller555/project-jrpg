@@ -172,12 +172,6 @@ class StatusUI:
         painter.rect(BRASS, (26, 36, 50, 50), 1)
         painter.text('Characters', (26, 15), role='small', color=INK)
         painter.text(attributes.name, (88, 24), role='heading', color=FOREST, bold=True)
-        lattice = getattr(self.game, 'lattice', None)
-        if lattice is not None:
-            progress, needed = lattice.rp_progress(attributes.character_id)
-            painter.text('Attunement '+str(lattice.rank(attributes.character_id)),
-                         (88, 60), role='small', color=INK)
-            painter.text('RP '+str(progress)+' / '+str(needed), (88, 79), role='small', color=FOREST)
         painter.button(self.close_rect, '×')
         for identifier, rect in self.stat_rects.items():
             selected = identifier == self.selected

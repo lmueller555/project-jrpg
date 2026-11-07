@@ -98,11 +98,11 @@ class BatContactEncounterTests(unittest.TestCase):
         for label, block in blockers.items():
             with self.subTest(label=label):
                 game = self.game();self.place(game);block(game)
-                before = (game.attributes.to_dict(), game.lattice.to_dict(),
+                before = (game.attributes.to_dict(), game.battle_rewards.to_dict(),
                           game.inventory.to_dict(), game.quests.to_dict())
                 game.combat.tick_world(.1)
                 self.assertFalse(game.combat.active)
-                self.assertEqual((game.attributes.to_dict(), game.lattice.to_dict(),
+                self.assertEqual((game.attributes.to_dict(), game.battle_rewards.to_dict(),
                                   game.inventory.to_dict(), game.quests.to_dict()), before)
 
     def test_a_conversation_can_end_while_overlapping_then_contact_can_start(self):
@@ -180,7 +180,7 @@ class BatContactEncounterTests(unittest.TestCase):
                 pygame.event.clear()
                 spoils = wait_for_spoils(restored)
                 self.assertTrue(spoils.awarded)
-                self.assertEqual(restored.lattice.state()['rp'], 20)
+                self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
                 self.assertEqual(restored.inventory.quantity('aether_emerald'), 1)
                 self.assertEqual(restored.quests.to_dict(), quests)
                 self.assertEqual(restored.mill_quest.to_dict(), mill)
@@ -191,7 +191,7 @@ class BatContactEncounterTests(unittest.TestCase):
                 self.place(restored)
                 restored.update(10, (0, 0), False)
                 self.assertFalse(restored.combat.active)
-                self.assertEqual(restored.lattice.state()['rp'], 20)
+                self.assertEqual(len(restored.battle_rewards.to_dict()['receipts']), 1)
 
 
 if __name__ == '__main__':unittest.main()

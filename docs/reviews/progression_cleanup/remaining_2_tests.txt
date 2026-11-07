@@ -1,0 +1,145 @@
+.F................... [  4%]
+........F................. [  9%]
+.................................................................................................... [ 28%]
+............................................................................................................................................................... [ 59%]
+.................................................... [ 69%]
+............................................................ [ 81%]
+......................... [ 85%]
+.........................................................................                 [100%]
+=================================== FAILURES ===================================
+_ AldricSideWalkTests.test_all_protected_generated_and_non_side_assets_keep_stored_sha256 _
+
+self = <test_aldric_side_walk.AldricSideWalkTests testMethod=test_all_protected_generated_and_non_side_assets_keep_stored_sha256>
+
+    def test_all_protected_generated_and_non_side_assets_keep_stored_sha256(self):
+        protected = self.side['protected_sha256']
+        expected = set(SOURCES.glob('*_generated.png'))
+        for path in ACTOR.parent.rglob('*'):
+            if not path.is_file() or path.name == 'provenance.json':
+                continue
+            if path.parent == ACTOR and (path.name == 'animation.json' or
+                    (path.stem.startswith('walk_') and path.stem[5:].isdigit())):
+                continue
+            if path.parent.name=='clerk' and path.name not in ('stand_left.png','read_left.png'):
+                continue  # Separately authored clerk extension, not Aldric art.
+            expected.add(path)
+        # A removed hash entry must not silently stop protecting an asset.
+>       self.assertEqual(set(protected), {path.relative_to(ROOT).as_posix() for path in expected})
+E       AssertionError: Items in the second set but not the first:
+E       'assets/story/regent_arrival/actors/lucan/walk_back_0.png'
+E       'assets/story/regent_arrival/actors/lucan/stand_back.png'
+E       'assets/story/regent_arrival/actors/lucan/animation.json'
+E       'assets/story/regent_arrival/actors/lucan/stand_left.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_left_2.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_back_3.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_left_3.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_left_1.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_back_1.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_left_0.png'
+E       'assets/story/regent_arrival/actors/lucan/walk_back_2.png'
+
+tests/test_aldric_side_walk.py:229: AssertionError
+__ CaelanLeftRunTests.test_matches_approved_frames_and_preserves_existing_art __
+
+self = <test_caelan_left_run.CaelanLeftRunTests testMethod=test_matches_approved_frames_and_preserves_existing_art>
+
+    def test_matches_approved_frames_and_preserves_existing_art(self):
+        approval=json.loads((REVIEW/'approval.json').read_text())
+        for name,digest in approval['approved_frames_sha256'].items():
+            self.assertEqual(hashlib.sha256((PACK/name).read_bytes()).hexdigest(),digest,name)
+        for name,digest in approval['protected_inputs_sha256'].items():
+>           self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+E           AssertionError: '35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795' != 'adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8'
+E           - 35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795
+E           + adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8
+E            : assets/characters/caelan/README.md
+
+tests/test_caelan_left_run.py:19: AssertionError
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='crossroads_establishing') _
+
+self = <test_regent_crossroads_gameplay.RegentCrossroadsManifestTests testMethod=test_scene_uses_authored_stations_and_question_pan_account_relief_order>
+
+    def test_scene_uses_authored_stations_and_question_pan_account_relief_order(self):
+        phases = {phase['id']: phase for phase in self.data['phases']}
+        order = list(phases)
+        expected = ['crossroads_establishing', 'locals', 'road_pan', 'bridge_damage', 'relief']
+        first = order.index(expected[0])
+        self.assertEqual(order[first:first+len(expected)], expected)
+        aliases = {'aldric': 'aldric', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
+        for shot in ('crossroads_establishing', 'locals', 'road_pan', 'relief'):
+            phase = phases[shot]
+            with self.subTest(shot=shot):
+                self.assertEqual(phase['scene'], 'crossroads')
+>               self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E               AssertionError: Items in the first set but not the second:
+E               'lucan'
+
+tests/test_regent_crossroads_gameplay.py:592: AssertionError
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='locals') _
+
+self = <test_regent_crossroads_gameplay.RegentCrossroadsManifestTests testMethod=test_scene_uses_authored_stations_and_question_pan_account_relief_order>
+
+    def test_scene_uses_authored_stations_and_question_pan_account_relief_order(self):
+        phases = {phase['id']: phase for phase in self.data['phases']}
+        order = list(phases)
+        expected = ['crossroads_establishing', 'locals', 'road_pan', 'bridge_damage', 'relief']
+        first = order.index(expected[0])
+        self.assertEqual(order[first:first+len(expected)], expected)
+        aliases = {'aldric': 'aldric', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
+        for shot in ('crossroads_establishing', 'locals', 'road_pan', 'relief'):
+            phase = phases[shot]
+            with self.subTest(shot=shot):
+                self.assertEqual(phase['scene'], 'crossroads')
+>               self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E               AssertionError: Items in the first set but not the second:
+E               'lucan'
+
+tests/test_regent_crossroads_gameplay.py:592: AssertionError
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='road_pan') _
+
+self = <test_regent_crossroads_gameplay.RegentCrossroadsManifestTests testMethod=test_scene_uses_authored_stations_and_question_pan_account_relief_order>
+
+    def test_scene_uses_authored_stations_and_question_pan_account_relief_order(self):
+        phases = {phase['id']: phase for phase in self.data['phases']}
+        order = list(phases)
+        expected = ['crossroads_establishing', 'locals', 'road_pan', 'bridge_damage', 'relief']
+        first = order.index(expected[0])
+        self.assertEqual(order[first:first+len(expected)], expected)
+        aliases = {'aldric': 'aldric', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
+        for shot in ('crossroads_establishing', 'locals', 'road_pan', 'relief'):
+            phase = phases[shot]
+            with self.subTest(shot=shot):
+                self.assertEqual(phase['scene'], 'crossroads')
+>               self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E               AssertionError: Items in the first set but not the second:
+E               'lucan'
+
+tests/test_regent_crossroads_gameplay.py:592: AssertionError
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='relief') _
+
+self = <test_regent_crossroads_gameplay.RegentCrossroadsManifestTests testMethod=test_scene_uses_authored_stations_and_question_pan_account_relief_order>
+
+    def test_scene_uses_authored_stations_and_question_pan_account_relief_order(self):
+        phases = {phase['id']: phase for phase in self.data['phases']}
+        order = list(phases)
+        expected = ['crossroads_establishing', 'locals', 'road_pan', 'bridge_damage', 'relief']
+        first = order.index(expected[0])
+        self.assertEqual(order[first:first+len(expected)], expected)
+        aliases = {'aldric': 'aldric', 'local': 'carrier', 'clerk': 'clerk', 'caravan': 'parked_caravan'}
+        for shot in ('crossroads_establishing', 'locals', 'road_pan', 'relief'):
+            phase = phases[shot]
+            with self.subTest(shot=shot):
+                self.assertEqual(phase['scene'], 'crossroads')
+>               self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E               AssertionError: Items in the first set but not the second:
+E               'lucan'
+
+tests/test_regent_crossroads_gameplay.py:592: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_aldric_side_walk.py::AldricSideWalkTests::test_all_protected_generated_and_non_side_assets_keep_stored_sha256
+FAILED tests/test_caelan_left_run.py::CaelanLeftRunTests::test_matches_approved_frames_and_preserves_existing_art
+SUBFAILED(shot='crossroads_establishing') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='locals') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='road_pan') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='relief') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+6 failed, 514 passed, 1408 subtests passed in 344.42s (0:05:44)

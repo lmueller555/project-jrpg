@@ -10,7 +10,6 @@ os.environ['SDL_VIDEODRIVER'] = 'dummy'
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
-from aether_lattice import AetherLattice
 from character_abilities import CharacterAbilities
 from gear_state import GEM_ORDER
 from inventory import Inventory
@@ -19,11 +18,10 @@ from inventory import Inventory
 class GearPersistenceTests(unittest.TestCase):
     def setUp(self):
         self.inventory = Inventory()
-        self.lattice = AetherLattice()
-        self.owner = CharacterAbilities(self.inventory, self.lattice)
+        self.owner = CharacterAbilities(self.inventory)
 
     def snapshot(self):
-        return (self.owner.to_dict(), self.inventory.to_dict(), self.lattice.to_dict())
+        return (self.owner.to_dict(), self.inventory.to_dict())
 
     def test_water_default_preserves_the_legacy_version_one_representation(self):
         legacy = self.owner.to_dict()
@@ -43,7 +41,7 @@ class GearPersistenceTests(unittest.TestCase):
             with self.subTest(gem=gem):
                 self.assertTrue(self.owner.set_active_gem(gem))
                 saved = json.loads(json.dumps(self.owner.to_dict()))
-                other = CharacterAbilities(self.inventory, self.lattice)
+                other = CharacterAbilities(self.inventory)
                 self.assertTrue(other.restore(saved))
                 self.assertEqual(other.active_gem(), gem)
                 self.assertEqual(other.to_dict(), saved)
@@ -88,7 +86,7 @@ class GearPersistenceTests(unittest.TestCase):
                                                   learn_starter=False))
         self.assertTrue(self.owner.set_active_gem('ice'))
         saved = self.owner.to_dict()
-        other = CharacterAbilities(self.inventory, self.lattice)
+        other = CharacterAbilities(self.inventory)
         self.assertTrue(other.restore(saved))
         self.assertTrue(other.starter_skills_pending())
         self.assertEqual(other.known_abilities(), frozenset({'basic_magicks'}))
@@ -110,7 +108,6 @@ class GearPersistenceTests(unittest.TestCase):
     def test_focus_save_is_detached_and_validated_with_the_whole_journey(self):
         self.assertTrue(self.owner.set_active_gem('fire'))
         journey = {'inventory': self.inventory.to_dict(),
-                   'aether_lattice': self.lattice.to_dict(),
                    'character_abilities': self.owner.to_dict()}
         self.assertTrue(CharacterAbilities.valid_journey(journey))
         journey['character_abilities']['gear_focus']['caelan'] = 'missing'

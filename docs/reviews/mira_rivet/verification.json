@@ -77,7 +77,6 @@
       "bots_remaining": 0,
       "receipt": "mq02:ridgeback_tusker",
       "rewards": {
-        "rp": 30,
         "drops": {
           "aether_emerald": 1
         }
@@ -832,9 +831,7 @@
       "video_seconds": 48.033,
       "observed_text": [
         "Spoils of Battle",
-        "Resonance Points (RP)",
         "Caelan",
-        "+30 RP",
         "Items",
         "Aether Emerald",
         "\u00d71",
@@ -876,5 +873,6 @@
   ],
   "guarded_charge_damage": [
     36
-  ]
+  ],
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

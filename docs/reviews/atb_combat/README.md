@@ -23,14 +23,14 @@ The first battle uses Caelan's normal starting attributes and resources. It
 shows Attack, Guard, Bat Bite, Wing Gust, hit reactions and victory. Guard
 reduces the next incoming action. An affordable learned **Aether Dart** appears
 as a fourth command and costs four MP; it does not become available just by
-entering combat. A separate temporary review journey learns it through the
-real lattice before capturing its casting animation.
+entering combat. A separate temporary review journey explicitly learns it before capturing
+its casting animation.
 
 ![Action and pose contact sheet](action_contact_sheet.png)
 
-Victory grants **20 RP and one Aether Emerald** when Continue returns to the
-world. The capture verifies the resulting rank 2, one available Lattice Step,
-one Emerald, saved HP/MP and durable checkpoint, without awarding twice.
+The historical capture verifies an Emerald drop, saved HP/MP and a durable
+checkpoint without awarding twice. Current item-only reward behavior is
+described in the [combat guide](../../COMBAT.md).
 World time, the player's position and NPC positions remain frozen throughout
 the battle. Flee commits the battle's current HP/MP and grants no rewards.
 Defeat returns with pre-battle resources in this first encounter prototype.

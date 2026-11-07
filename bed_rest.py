@@ -51,7 +51,7 @@ class BedRest:
         # Rest recovers the travelling roster, including available reserves.
         # Characters who are elsewhere retain their resources until they return.
         party=getattr(game,'party',None)
-        resources=dict(game.lattice_progression.attributes)
+        resources={'caelan':game.attributes}
         if party is not None:
             resources.update({identifier:party.characters[identifier]
                               for identifier in party.available_ids})

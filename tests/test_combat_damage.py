@@ -130,7 +130,7 @@ class CombatDamageTests(unittest.TestCase):
 
     def test_wrappers_read_capped_effective_attributes_without_mutating_state(self):
         attacker, defender = CharacterAttributes(), CharacterAttributes()
-        self.assertTrue(attacker.set_modifiers('lattice', {'str': 1000, 'mag': 1000,
+        self.assertTrue(attacker.set_modifiers('permanent', {'str': 1000, 'mag': 1000,
                                                          'spr': 245, 'lck': 245}))
         self.assertTrue(defender.set_modifiers('equipment', {'def': 1000, 'm_def': 1000}))
         before = attacker.to_dict(), defender.to_dict()

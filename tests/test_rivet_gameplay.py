@@ -366,7 +366,7 @@ class RivetGameplayTests(unittest.TestCase):
         pending = json.loads(self.path.read_text())
         self.assertEqual(pending['post_battle']['stage'], 'pending')
         self.assert_durable_loadout_only(pending)
-        before_rp = game.lattice.state()['rp']
+        before_receipts = game.battle_rewards.to_dict()['receipts']
         before_items = game.inventory.quantity('aether_emerald')
         # Reload before Spoils awards anything. Restoring this completed fight
         # must perform ordinary result cleanup instead of redeploying Rivet.
@@ -385,12 +385,14 @@ class RivetGameplayTests(unittest.TestCase):
         self.assertEqual(restored.bot_status, {})
         self.assertTrue(returning.combat.spoils.awarded)
         expected = pending['post_battle']['rewards']
-        self.assertEqual(returning.lattice.state()['rp'], before_rp+expected['rp'])
+        self.assertEqual(returning.battle_rewards.to_dict()['receipts'],
+                         sorted(before_receipts+[pending['post_battle']['receipt']]))
         self.assertEqual(returning.inventory.quantity('aether_emerald'),
                          before_items+expected['drops']['aether_emerald'])
         for _ in range(3):
             returning.update(.05, (0, 0), False)
-        self.assertEqual(returning.lattice.state()['rp'], before_rp+expected['rp'])
+        self.assertEqual(returning.battle_rewards.to_dict()['receipts'],
+                         sorted(before_receipts+[pending['post_battle']['receipt']]))
         acknowledge_battle_result(returning, restored)
         self.assertFalse(returning.combat.active)
         self.assertTrue(returning.mill_quest.encounter_cleared)
@@ -405,7 +407,7 @@ class RivetGameplayTests(unittest.TestCase):
         self.assertFalse(resumed.combat.active)
         self.assertEqual(resumed.bot_loadouts.battle_loadouts(), STARTING_LOADOUTS)
         self.assertEqual(resumed.attributes.to_dict(), returning.attributes.to_dict())
-        self.assertEqual(resumed.lattice.state()['rp'], before_rp+expected['rp'])
+        self.assertEqual(resumed.battle_rewards.to_dict(), returning.battle_rewards.to_dict())
 
     def test_legacy_save_missing_bot_loadouts_restores_only_starting_configuration(self):
         game = self.game()
@@ -423,7 +425,7 @@ class RivetGameplayTests(unittest.TestCase):
         self.assertEqual(resumed.character_abilities.known_abilities('mira'),
                          frozenset({'overclock', 'rivet'}))
         self.assertEqual(resumed.inventory.to_dict(), saved['inventory'])
-        self.assertEqual(resumed.lattice.to_dict(), saved['aether_lattice'])
+        self.assertEqual(resumed.battle_rewards.to_dict(), saved['battle_rewards'])
         self.assert_durable_loadout_only(json.loads(self.path.read_text()))
 
     def test_title_rejects_malformed_null_unknown_ability_and_future_bot_without_overwrite(self):

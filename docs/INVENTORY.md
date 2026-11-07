@@ -27,26 +27,23 @@ selling or disposal. Registered quest handoffs use a separate API.
 
 ## Aether Crystals
 
-Crystals appear in **Items** and activate nodes through
-**Pause → Aether Lattice**. Viewing a crystal in the satchel does not consume it
-or grant a stat bonus. A successful activation consumes the complete required
-bundle and records the activated node with the character's progression.
+Crystals appear in **Items** as materials reserved for future uses. Viewing a
+crystal does not consume it or grant an attribute or ability. Ordinary New Game
+starts without sample crystals.
 
-| Item ID | Name | Nodes |
-| --- | --- | --- |
-| `aether_emerald` | Aether Emerald | HP |
-| `aether_sapphire` | Aether Sapphire | MP |
-| `aether_ruby` | Aether Ruby | Str and Def |
-| `aether_amethyst` | Aether Amethyst | Mag and M. Def |
-| `aether_opal` | Aether Opal | Spr |
-| `aether_topaz` | Aether Topaz | Speed, Acc, Eva and Lck |
-| `aether_diamond` | Aether Diamond | Spells and abilities |
+| Item ID | Name |
+| --- | --- |
+| `aether_emerald` | Aether Emerald |
+| `aether_sapphire` | Aether Sapphire |
+| `aether_ruby` | Aether Ruby |
+| `aether_amethyst` | Aether Amethyst |
+| `aether_opal` | Aether Opal |
+| `aether_topaz` | Aether Topaz |
+| `aether_diamond` | Aether Diamond |
 
-The future battle-reward interface grants shared crystal drops and individual
-RP awards in one receipt-backed operation. Replaying the same completion does
-not duplicate its rewards. The isolated lattice preview supplies test rewards
-only to its temporary journey; opening quests and ordinary New Game grants
-remain unchanged. See [Aether Lattice](AETHER_LATTICE.md).
+Battle item rewards use a receipt-backed operation. Replaying the same
+completion does not duplicate its drops, including when inventory capacity
+means no additional items can be received.
 
 ## Serene's request and delivery
 

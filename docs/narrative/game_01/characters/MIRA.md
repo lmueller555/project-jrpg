@@ -213,8 +213,7 @@ do not assign an injury, surgery or new biographical event.
 The enhancements, mech actions, duration counter, activation costs, damage and
 resource handling, and the return of her ordinary kit or bot afterward remain
 open. This five-turn concept is separate from the current Overclock effect,
-which lasts eight completed bot actions. No ultimate name is assigned, and
-no unlock is tied to the Aether Lattice or another progression framework.
+which lasts eight completed bot actions. The ultimate name and acquisition method remain undecided.
 
 ## Relationships
 
