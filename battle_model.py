@@ -24,7 +24,7 @@ from gear_state import DEFAULT_GEM, GEM_NAMES, REQUIRED_GEMS, valid_gem
 
 ROOT = Path(__file__).resolve().parent
 ACTION_PATH = ROOT/'assets/combat/actions.json'
-ENEMY_PATH = ROOT/'assets/combat/enemies.json'
+ENEMY_PATH = ROOT/'assets/combat/bestiary.json'
 GUEST_PATH = ROOT/'assets/combat/guests.json'
 BOT_PATH = ROOT/'assets/combat/bots.json'
 RESULT_PHASES = frozenset(('victory', 'defeat', 'fled'))
@@ -98,38 +98,16 @@ def load_actions(data=None):
 
 
 def load_enemies(actions, data=None):
-    """Enemy HP/MP use structural bounds, independently of party resource caps."""
-    if data is None:data = json.loads(ENEMY_PATH.read_text(encoding='utf-8'))
-    if (not isinstance(data, dict) or set(data) != {'version', 'enemies'}
-            or type(data['version']) is not int or data['version'] != 1
-            or not isinstance(data['enemies'], dict) or not data['enemies']):
-        raise ValueError('Invalid enemy catalog')
-    for identifier, enemy in data['enemies'].items():
-        if (not isinstance(identifier, str) or not identifier or not isinstance(enemy, dict)
-                or set(enemy) != {'name', 'attributes', 'abilities', 'rewards'}
-                or not isinstance(enemy['name'], str) or not enemy['name'].strip()
-                or not isinstance(enemy['attributes'], dict)
-                or set(enemy['attributes']) != set(ATTRIBUTE_IDS)
-                or any(not _integer(value, 1 if key == 'hp' else 0,
-                                    MAX_ENEMY_RESOURCE if key in ('hp', 'mp') else ATTRIBUTE_CAPS[key])
-                       for key, value in enemy['attributes'].items())
-                or not isinstance(enemy['abilities'], list) or not enemy['abilities']
-                or any(not isinstance(key, str) or key not in actions
-                       or actions[key]['kind'] not in ('physical', 'magical', 'prepare')
-                       for key in enemy['abilities'])
-                or len(enemy['abilities']) != len(set(enemy['abilities']))):
-            raise ValueError('Invalid enemy definition')
-        if not any(actions[key]['mp_cost'] == 0 and
-                   actions[key]['kind'] in ('physical', 'magical')
-                   for key in enemy['abilities']):
-            raise ValueError('Enemy requires a free fallback action')
-        rewards = enemy['rewards']
-        if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
-                or not isinstance(rewards['drops'], dict)
-                or any(not isinstance(key, str) or not key or not _integer(value, 1, 999999)
-                       for key, value in rewards['drops'].items())):
-            raise ValueError('Invalid enemy reward')
-    return deepcopy(data['enemies'])
+    """Validate the whole Bestiary and retain fixed profiles for legacy callers.
+
+    Level-derived definitions require ``BattleModel.from_bestiary`` so a caller
+    cannot accidentally fight one at an unspecified level.
+    """
+    from bestiary import FIXED_FIELDS, load_bestiary
+    catalog = load_bestiary(data, actions=actions)
+    return {identifier: deepcopy(enemy)
+            for identifier, enemy in catalog['enemies'].items()
+            if set(enemy) == FIXED_FIELDS}
 
 
 def load_guests(actions, data=None):
@@ -257,6 +235,37 @@ class BattleModel:
     the caller settles their persistent state when the encounter ends.
     """
 
+    @classmethod
+    def from_bestiary(cls, player_attributes, enemy_id, level, *,
+                      bestiary_data=None, **options):
+        """Create a level-specific encounter without settling XP or saved state.
+
+        Bestiary planning metadata stays inert. Only supported behavior and the
+        compiled combat profile are installed in this battle's private copies.
+        """
+        from bestiary import build_enemy
+        if 'enemy_data' in options:
+            raise ValueError('Use bestiary_data for Bestiary encounters')
+        actions = load_actions(options.get('action_data'))
+        record = build_enemy(enemy_id, level, data=bestiary_data, actions=actions)
+        if record['fighting_style'] not in (None, 'standard_attacks',
+                                            'physical_magical_alternation'):
+            raise ValueError('Unsupported Bestiary fighting style')
+        behavior = record['behavior']
+        if behavior is not None and behavior['targeting'] != 'cycle_living_party':
+            raise ValueError('Unsupported Bestiary targeting')
+        model = cls(player_attributes, enemy_id=enemy_id,
+                    enemy_data={'version': 1, 'enemies': {enemy_id: record['combat']}},
+                    **options)
+        model.enemy_bestiary_record = deepcopy(record)
+        model.enemy_bestiary_id = record['id']
+        model.enemy_level = record['level']
+        model.enemy_xp_reward = record['xp_reward']
+        model.enemy_sprite_id = record['presentation']['sprite_id']
+        model.enemy_action_aliases = deepcopy(record['presentation']['action_aliases'])
+        model._enemy_behavior = deepcopy(behavior)
+        return model
+
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
@@ -321,6 +330,13 @@ class BattleModel:
                                  for bot in self.bots}
         self._active_actor = 'player'
         self.enemy_id = enemy_id
+        self.enemy_bestiary_id = None
+        self.enemy_bestiary_record = None
+        self.enemy_level = self.enemy_xp_reward = None
+        self.enemy_sprite_id = enemy_id
+        self.enemy_action_aliases = {}
+        self._enemy_behavior = None
+        self._enemy_target_index = 0
         self.enemy_definition = deepcopy(enemies[enemy_id])
         enemy = self.enemy_definition
         self.enemy = Combatant('enemy', enemy['name'], dict(enemy['attributes']),
@@ -563,6 +579,10 @@ class BattleModel:
     def _enemy_target(self, identifier):
         living = [member for member in self.party if member.hp]
         if not living:return None
+        if self._enemy_behavior is not None:
+            for offset in range(len(self.party)):
+                member = self.party[(self._enemy_target_index+offset) % len(self.party)]
+                if member.hp:return member.identifier
         if self.spellblade_guided and identifier == 'tusker_charge':return 'player'
         if identifier == 'tusker_charge' and self.telegraphed_target:
             target = next((member for member in living
@@ -584,6 +604,10 @@ class BattleModel:
         elif record['target'] == 'owned_bot':
             bot = self.active_bot(actor_id)
             target = bot.identifier if bot is not None else None
+        if (actor_id == 'enemy' and self._enemy_behavior is not None
+                and record['target'] == 'opponent' and target is not None):
+            self._enemy_target_index = (next(index for index, member in enumerate(self.party)
+                                             if member.identifier == target)+1) % len(self.party)
         timing = (timing_override(identifier, record['duration'], record['impact_at'])
                   if actor_id == 'player' else None)
         duration, impact_at = timing or (record['duration'], record['impact_at'])
@@ -599,7 +623,8 @@ class BattleModel:
                             'action': identifier, 'target': target, 'name': record['name']})
 
     def _start_enemy_action(self):
-        choices = self.enemy_definition['abilities']
+        choices = (self._enemy_behavior['sequence'] if self._enemy_behavior is not None
+                   else self.enemy_definition['abilities'])
         if self.spellblade_guided:
             identifier = ('prepare_charge' if self.spellblade_stage == 'opening' else
                           'tusker_charge' if self.spellblade_stage == 'charge' else 'tusk_strike')
@@ -607,8 +632,9 @@ class BattleModel:
             identifier = choices[self._enemy_action_index % len(choices)]
             self._enemy_action_index += 1
         if self.enemy.mp < self.actions[identifier]['mp_cost']:
-            identifier = next(key for key in choices if self.actions[key]['mp_cost'] == 0
-                              and self.actions[key]['kind'] in ('physical', 'magical'))
+            identifier = (self._enemy_behavior['fallback'] if self._enemy_behavior is not None
+                          else next(key for key in choices if self.actions[key]['mp_cost'] == 0
+                                    and self.actions[key]['kind'] in ('physical', 'magical')))
         self._start_action('enemy', identifier)
 
     def _resolve_action(self):

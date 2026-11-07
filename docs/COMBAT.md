@@ -295,6 +295,20 @@ dialogue cursor are not serialized. Older completed
 intake/repair saves preserve their progress through an explicit legacy bypass
 and receive no invented battle or reward.
 
+## Cave Bat and the Bestiary
+
+The [Bestiary](BESTIARY.md) stores fixed authored encounters and computed
+species definitions in one dictionary. `BattleModel.from_bestiary()` resolves a
+Cave Bat at level 2 or 3 with its approved Hybrid/species growth, XP metadata,
+namespaced Bite/Gust actions, living-party target cycle and existing Bat art.
+Its 5 MP pays for two Gusts before free Bite fallback. The factory supports
+isolated combat without placing encounters or awarding live XP.
+
+The Cave Bat is distinct from the fixed test Bat below. The sanctuary cave
+remains closed pending its authored dungeon/quest work. Planned Fire weakness
+and low Stagger resistance are metadata until those mechanics are implemented;
+item drops have not yet been authored.
+
 ## Test Bat
 
 | Attribute | Value |
@@ -339,8 +353,9 @@ no additional items.
 
 The standalone [traditional leveling foundation](LEVELING.md) and
 [enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the approved XP and growth
-curves. Combat XP distribution remains pending its eligibility and recovery
-policies; these encounters do not yet award traditional XP.
+curves and approved active-survivor XP/no-recovery policies. Saved-level and
+encounter integration remain pending; these encounters do not yet award
+traditional XP.
 
 The fanfare may finish while Spoils is open. No music follows it, and volume,
 focus or repeated updates cannot replay it. Eldenmere Theme resumes only when
@@ -381,7 +396,7 @@ normal four-second exploration cooldown.
 - [`spoils_scene.py`](../spoils_scene.py): dedicated reward review and retry UI.
 - [`post_battle.py`](../post_battle.py): durable victory checkpoint validation.
 - [`assets/combat/actions.json`](../assets/combat/actions.json) and
-  [`enemies.json`](../assets/combat/enemies.json): validated action/enemy data.
+  [`bestiary.json`](../assets/combat/bestiary.json): validated action/enemy data.
 - [`assets/combat/encounter.json`](../assets/combat/encounter.json): world placement.
 
 Caelan retains his unarmed baseline animation bank, while the MQ02 gearblade adds its armed/focus presentation and direct Aether Edge action. Idle, attack, casting, guard, hurt, victory and kneeling defeat states remain supported. The Bat has flight, bite, gust, hurt and descending defeat states.

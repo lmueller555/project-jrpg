@@ -1,0 +1,227 @@
+"""Canonical enemy definitions, leveled species and authored encounter records.
+
+The dictionary stores enemy design; generation supplies fresh combat snapshots.
+It does not place encounters, award XP, unlock a dungeon, or enable planned
+elemental/Stagger mechanics. Fixed encounter records preserve existing journeys.
+"""
+from copy import deepcopy
+import json
+import math
+from pathlib import Path
+import re
+
+from character_attributes import ATTRIBUTE_CAPS, ATTRIBUTE_IDS
+from enemy_growth import MAX_ENEMY_HP, load_archetypes, profile_enemy_stats
+from inventory import Inventory, MAX_QUANTITY
+from leveling import MAX_LEVEL, monster_xp
+
+
+ROOT = Path(__file__).resolve().parent
+BESTIARY_PATH = ROOT/'assets/combat/bestiary.json'
+CATALOG_PATH = BESTIARY_PATH
+FIXED_FIELDS = frozenset(('name', 'attributes', 'abilities', 'rewards'))
+SPECIES_FIELDS = frozenset((
+    'mode', 'name', 'description', 'family', 'tier', 'habitats', 'level_range',
+    'archetype', 'stat_profile', 'fighting_style', 'species_multipliers',
+    'tier_multipliers', 'behavior', 'presentation', 'rewards',
+    'planned_mechanics', 'encounter_guidance'))
+_IDENTIFIER = re.compile(r'^[a-zA-Z0-9_.:/-]{1,128}$')
+_DAMAGE_KINDS = ('physical', 'magical')
+
+
+def _identifier(value):
+    return isinstance(value, str) and _IDENTIFIER.fullmatch(value) is not None
+
+
+def _text(value, maximum=2000):
+    return isinstance(value, str) and bool(value.strip()) and len(value) <= maximum
+
+
+def _integer(value, minimum=0, maximum=MAX_ENEMY_HP):
+    return type(value) is int and minimum <= value <= maximum
+
+
+def _multipliers(values):
+    return (isinstance(values, dict) and set(values) <= set(ATTRIBUTE_IDS)
+            and all(type(value) in (int, float) and 0 <= value <= MAX_ENEMY_HP
+                    and math.isfinite(value) for value in values.values())
+            and values.get('hp', 1) > 0)
+
+
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:raise ValueError('Duplicate Bestiary key: '+key)
+        result[key] = value
+    return result
+
+
+def _actions(actions):
+    # The local import permits BattleModel's legacy loader to delegate here
+    # after its action validator has been defined, without an import cycle.
+    from battle_model import load_actions
+    return load_actions(None if actions is None else {'version': 1, 'actions': actions})
+
+
+def _drops(values, definitions=None):
+    if not isinstance(values, dict):return False
+    for identifier, amount in values.items():
+        if not _identifier(identifier) or not _integer(amount, 1, MAX_QUANTITY):return False
+        if definitions is not None and (identifier not in definitions
+                or definitions[identifier]['category'] == 'key_items'):
+            return False
+    return True
+
+
+def _validate_fixed(enemy, actions):
+    if (not _text(enemy['name'], 120) or not isinstance(enemy['attributes'], dict)
+            or set(enemy['attributes']) != set(ATTRIBUTE_IDS)
+            or any(not _integer(value, 1 if key == 'hp' else 0,
+                                MAX_ENEMY_HP if key in ('hp', 'mp') else ATTRIBUTE_CAPS[key])
+                   for key, value in enemy['attributes'].items())
+            or not isinstance(enemy['abilities'], list) or not enemy['abilities']
+            or any(not isinstance(identifier, str) or identifier not in actions
+                   or actions[identifier]['kind'] not in (*_DAMAGE_KINDS, 'prepare')
+                   for identifier in enemy['abilities'])
+            or len(enemy['abilities']) != len(set(enemy['abilities']))
+            or not any(actions[identifier]['mp_cost'] == 0
+                       and actions[identifier]['kind'] in _DAMAGE_KINDS
+                       for identifier in enemy['abilities'])
+            or not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
+            or not _drops(enemy['rewards']['drops'])):
+        raise ValueError('Invalid authored Bestiary encounter')
+
+
+def _validate_species(enemy, actions, archetypes, items):
+    if (set(enemy) != SPECIES_FIELDS or enemy['mode'] != 'species'
+            or not _text(enemy['name'], 120) or not _text(enemy['description'])
+            or not _identifier(enemy['family']) or enemy['tier'] not in ('normal', 'boss')
+            or not isinstance(enemy['habitats'], list) or not enemy['habitats']
+            or any(not _identifier(value) for value in enemy['habitats'])
+            or len(enemy['habitats']) != len(set(enemy['habitats']))
+            or not isinstance(enemy['level_range'], dict)
+            or set(enemy['level_range']) != {'min', 'max'}
+            or not _integer(enemy['level_range']['min'], 1, MAX_LEVEL)
+            or not _integer(enemy['level_range']['max'], enemy['level_range']['min'], MAX_LEVEL)
+            or not isinstance(enemy['archetype'], str)
+            or enemy['archetype'] not in archetypes['concepts']
+            or not isinstance(enemy['stat_profile'], str)
+            or enemy['stat_profile'] not in archetypes['stat_profiles']
+            or not isinstance(enemy['fighting_style'], str)
+            or enemy['fighting_style'] not in archetypes['fighting_styles']
+            or not _multipliers(enemy['species_multipliers'])
+            or not _multipliers(enemy['tier_multipliers'])):
+        raise ValueError('Invalid Bestiary species profile')
+    behavior = enemy['behavior']
+    if (not isinstance(behavior, dict) or set(behavior) != {'sequence', 'fallback', 'targeting'}
+            or not isinstance(behavior['sequence'], list) or not behavior['sequence']
+            or any(not isinstance(identifier, str) or identifier not in actions
+                   or actions[identifier]['kind'] not in (*_DAMAGE_KINDS, 'prepare')
+                   for identifier in behavior['sequence'])
+            or not isinstance(behavior['fallback'], str)
+            or behavior['fallback'] not in behavior['sequence']
+            or actions[behavior['fallback']]['mp_cost'] != 0
+            or actions[behavior['fallback']]['kind'] not in _DAMAGE_KINDS
+            or behavior['targeting'] != 'cycle_living_party'):
+        raise ValueError('Invalid Bestiary behavior')
+    if enemy['fighting_style'] == 'physical_magical_alternation':
+        sequence = behavior['sequence']
+        if (len(sequence) != 2
+                or [actions[key]['kind'] for key in sequence] != ['physical', 'magical']
+                or behavior['fallback'] != sequence[0]):
+            raise ValueError('Mixed attackers require physical/magical alternation')
+    presentation = enemy['presentation']
+    if (not isinstance(presentation, dict) or set(presentation) != {'sprite_id', 'action_aliases'}
+            or not _identifier(presentation['sprite_id'])
+            or Path(presentation['sprite_id']).name != presentation['sprite_id']
+            or not (ROOT/'assets/combat'/presentation['sprite_id']/'animation.json').is_file()
+            or not isinstance(presentation['action_aliases'], dict)
+            or any(key not in behavior['sequence'] or not isinstance(value, str)
+                   or value not in actions
+                   for key, value in presentation['action_aliases'].items())):
+        raise ValueError('Invalid Bestiary presentation')
+    if (not isinstance(enemy['rewards'], dict) or set(enemy['rewards']) != {'drops'}
+            or (enemy['rewards']['drops'] is not None
+                and not _drops(enemy['rewards']['drops'], items))):
+        raise ValueError('Invalid Bestiary drops')
+    planned = enemy['planned_mechanics']
+    if (not isinstance(planned, dict) or set(planned) != {'elemental_affinities', 'stagger'}):
+        raise ValueError('Invalid planned Bestiary mechanics')
+    affinities, stagger = planned['elemental_affinities'], planned['stagger']
+    if (not isinstance(affinities, dict) or set(affinities) != {'status', 'multipliers'}
+            or affinities['status'] != 'planned' or not isinstance(affinities['multipliers'], dict)
+            or any(not _identifier(element) or type(value) not in (int, float)
+                   or value not in (0, .5, 1, 2)
+                   for element, value in affinities['multipliers'].items())
+            or not isinstance(stagger, dict) or set(stagger) != {'status', 'resistance'}
+            or stagger['status'] != 'planned' or stagger['resistance'] not in ('low', 'normal', 'high')):
+        raise ValueError('Invalid planned Bestiary mechanics')
+    guidance = enemy['encounter_guidance']
+    if (not isinstance(guidance, dict) or set(guidance) != {'solo_count', 'party_count'}
+            or any(not _integer(value, 1, 99) for value in guidance.values())):
+        raise ValueError('Invalid Bestiary encounter guidance')
+
+
+def load_bestiary(data=None, actions=None):
+    """Validate the entire canonical dictionary and return a detached copy.
+
+    An optional action dictionary uses ``load_actions()``'s output shape.
+    Authored four-field records and leveled species share one source of truth.
+    """
+    if data is None:
+        data = json.loads(CATALOG_PATH.read_text(encoding='utf-8'), object_pairs_hook=_unique_object)
+    if (not isinstance(data, dict) or set(data) != {'version', 'enemies'}
+            or type(data['version']) is not int or data['version'] != 1
+            or not isinstance(data['enemies'], dict) or not data['enemies']):
+        raise ValueError('Invalid Bestiary dictionary')
+    actions = _actions(actions)
+    archetypes, items = load_archetypes(), Inventory().definitions
+    for identifier, enemy in data['enemies'].items():
+        if not _identifier(identifier) or not isinstance(enemy, dict):
+            raise ValueError('Invalid Bestiary enemy identifier')
+        if set(enemy) == FIXED_FIELDS:_validate_fixed(enemy, actions)
+        else:_validate_species(enemy, actions, archetypes, items)
+    return deepcopy(data)
+
+
+def fixed_enemy_definitions(data=None, actions=None):
+    """Return the currently authored fixed encounters after complete validation."""
+    catalog = load_bestiary(data, actions)
+    return {key: value for key, value in catalog['enemies'].items() if set(value) == FIXED_FIELDS}
+
+
+def build_enemy(enemy_id, level=None, *, data=None, actions=None):
+    """Resolve an authored enemy or a species at an explicitly selected level.
+
+    ``combat`` is a fresh legacy-compatible four-field enemy definition. XP and
+    planning metadata remain separate so compilation cannot award rewards or
+    silently activate future elemental/Stagger rules. A pending loot design
+    yields an empty combat item bundle and ``metadata['drops_pending']``.
+    """
+    catalog = load_bestiary(data, actions)
+    if not isinstance(enemy_id, str) or enemy_id not in catalog['enemies']:
+        raise ValueError('Unknown Bestiary enemy')
+    entry = catalog['enemies'][enemy_id]
+    if set(entry) == FIXED_FIELDS:
+        if level is not None:raise ValueError('Authored encounters have no assigned level')
+        return {'id': enemy_id, 'level': None, 'xp_reward': None,
+                'combat': entry, 'fighting_style': None, 'behavior': None,
+                'presentation': {'sprite_id': enemy_id, 'action_aliases': {}},
+                'metadata': {'mode': 'authored', 'drops_pending': False}}
+    limits = entry['level_range']
+    if not _integer(level, limits['min'], limits['max']):
+        raise ValueError('Select an integer level within the species range')
+    stats = profile_enemy_stats(entry['stat_profile'], level,
+                               species_multipliers=entry['species_multipliers'],
+                               tier_multipliers=entry['tier_multipliers'])
+    pending = entry['rewards']['drops'] is None
+    combat = {'name': entry['name'], 'attributes': stats,
+              'abilities': list(dict.fromkeys(entry['behavior']['sequence'])),
+              'rewards': {'drops': {} if pending else deepcopy(entry['rewards']['drops'])}}
+    metadata = deepcopy(entry)
+    metadata['drops_pending'] = pending
+    return {'id': enemy_id, 'level': level,
+            'xp_reward': monster_xp(level, boss=entry['tier'] == 'boss'),
+            'combat': combat, 'fighting_style': entry['fighting_style'],
+            'behavior': deepcopy(entry['behavior']),
+            'presentation': deepcopy(entry['presentation']), 'metadata': metadata}

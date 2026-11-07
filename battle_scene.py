@@ -203,7 +203,7 @@ class BattleScene:
             image, ground_y = self._shadows['bot'], round(point.y)
         elif actor != 'enemy':
             image, ground_y = self._shadows['player'], round(point.y)
-        elif self.model.enemy_id == 'ridgeback_tusker':
+        elif self.model.enemy_sprite_id == 'ridgeback_tusker':
             image, ground_y = self._shadows['tusker'], round(point.y)
         else:
             # The Bat moves above the same ground plane, including its idle bob.
@@ -758,7 +758,7 @@ class BattleScene:
         positions = self._home_positions() if positions is None else positions
         point = positions[actor]
         if actor == 'enemy':
-            return point+((54, -38) if self.model.enemy_id == 'ridgeback_tusker' else (8, -32))
+            return point+((54, -38) if self.model.enemy_sprite_id == 'ridgeback_tusker' else (8, -32))
         return point+(0, -36)
 
     def _contact_position(self, action, positions):
@@ -789,12 +789,12 @@ class BattleScene:
             blend = 1-(1-max(0.0, min(1.0, approach)))**3
             target = positions[action.target]
             if action.actor == 'enemy':
-                contact = pygame.Vector2(-96, -4) if self.model.enemy_id == 'ridgeback_tusker' else pygame.Vector2(-34, -14)
+                contact = pygame.Vector2(-96, -4) if self.model.enemy_sprite_id == 'ridgeback_tusker' else pygame.Vector2(-34, -14)
             else:contact = pygame.Vector2(83, -4)
             positions[action.actor] = positions[action.actor].lerp(target+contact, blend)
         for actor, record in self._reactions.items():
             if actor not in positions:continue
-            sprite = self.model.enemy_id if actor == 'enemy' else 'caelan' if actor == 'player' else actor
+            sprite = self.model.enemy_sprite_id if actor == 'enemy' else 'caelan' if actor == 'player' else actor
             reaction = target_reaction(sprite, record['age'], direction=-1 if actor == 'enemy' else 1,
                                        reduced_motion=self.reduced_motion, guarded=record['guarded'])
             if reaction['active']:
@@ -803,7 +803,7 @@ class BattleScene:
 
     def _positions(self):
         positions = self._ground_positions()
-        if self.model.enemy_id == 'bat' and not self.reduced_motion:
+        if self.model.enemy_sprite_id == 'bat' and not self.reduced_motion:
             positions['enemy'].y += math.sin(self._elapsed*4)*2
         sample = self._choreography()
         if sample is not None and not self.reduced_motion:
@@ -844,7 +844,7 @@ class BattleScene:
             return 'idle', self._elapsed*1000
         combatant = self.model.combatant(actor)
         reaction = self._reactions.get(actor)
-        sprite = self.model.enemy_id if actor == 'enemy' else actor
+        sprite = self.model.enemy_sprite_id if actor == 'enemy' else actor
         reaction_length = target_reaction(sprite, 0., guarded=bool(reaction and reaction['guarded']))['duration']
         if reaction is not None and reaction['age'] < (.18 if reaction['lethal'] else reaction_length):
             age = reaction['age']
@@ -885,7 +885,7 @@ class BattleScene:
             point = positions[actor]
             self._draw_shadow(canvas, actor, ground[actor])
             state, time = self._pose(actor)
-            sprite = ('caelan' if actor == 'player' else self.model.enemy_id
+            sprite = ('caelan' if actor == 'player' else self.model.enemy_sprite_id
                       if actor == 'enemy' else actor)
             image, anchor = self.sprites.frame(sprite, state, time)
             if actor == 'player':
@@ -1033,7 +1033,7 @@ class BattleScene:
         for popup in self._popups:
             if popup['target'] not in positions:continue
             point = positions[popup['target']]+(0, -(88 if popup['target'] == 'enemy'
-                and self.model.enemy_id == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
+                and self.model.enemy_sprite_id == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
             x, y = self._project(point)
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
             popup_width, popup_height = painter.font('name', bold=True).size(popup['text'])

@@ -138,8 +138,13 @@ profile; reacting to its charge is the central behavioral lesson.
 
 These references do not retune the live Bat or MQ02 Tusker. Their current
 attributes, ability timing and drops remain authored in
-[`enemies.json`](../assets/combat/enemies.json) and the battle controller until
+[`bestiary.json`](../assets/combat/bestiary.json) and the battle controller until
 enemy levels, species adjustments and the progression transition are settled.
+
+The first computed species is **Cave Bat**, separate from the fixed test Bat.
+It uses Hybrid growth, Physical/Magical Alternation, levels 2–3 and species
+factors HP ×0.40, MP ×0.10 and Evasion ×1.20. Its complete definition and
+normal/boss authoring workflow are documented in the [Bestiary guide](BESTIARY.md).
 
 ## Catalogue and growth API
 

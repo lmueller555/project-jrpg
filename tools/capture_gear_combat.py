@@ -49,7 +49,7 @@ def fingerprints():
     names = ['battle_model.py', 'battle_scene.py', 'gear_state.py', 'gear_widget.py',
              'gearblade_fx.py', 'gearblade_art.py', 'ui_style.py', 'main.py',
              'character_abilities.py', 'world_encounters.py', 'tools/capture_gear_combat.py',
-             'assets/combat/actions.json', 'assets/combat/enemies.json',
+             'assets/combat/actions.json', 'assets/combat/bestiary.json',
              'assets/abilities/catalog.json', 'assets/abilities/characters.json']
     # Every authored pose and source input stays byte-identical during capture.
     for directory in ('assets/story/gearblade_focus', 'assets/source/combat',

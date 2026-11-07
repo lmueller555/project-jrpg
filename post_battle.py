@@ -1,19 +1,17 @@
 """Durable victory facts used to resume Spoils without replaying a battle."""
 from __future__ import annotations
 
-import json
 import math
-from pathlib import Path
 import re
 
 from battle_rewards import BattleRewards
+from bestiary import load_bestiary
 from character_attributes import CharacterAttributes
 from inventory import Inventory
 from party_state import MAX_PARTY, PartyState
 from quests import MILL_QUEST, QuestLog
 
 
-ROOT = Path(__file__).resolve().parent
 FIELDS = {'version', 'kind', 'receipt', 'stage', 'rewards', 'before', 'resources',
           'scene', 'position', 'facing', 'incapacitated'}
 PARTY_FIELDS = {'party_before', 'party_resources', 'party_active'}
@@ -74,7 +72,7 @@ def valid_pending_snapshot(record, data=None):
           or record['scene'] != 'eldenmere.playable' or (record['incapacitated'] and not has_party)):
         return False
     rewards = record['rewards']
-    catalog = json.loads((ROOT/'assets/combat/enemies.json').read_text())['enemies']
+    catalog = load_bestiary()['enemies']
     canonical = catalog['ridgeback_tusker' if mill else 'bat']['rewards']
     if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
             or not isinstance(rewards['drops'], dict)
