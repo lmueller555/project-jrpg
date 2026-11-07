@@ -1,5 +1,6 @@
 """The public hall has real navigation, correct furniture depth and a safe exit."""
 import os
+import hashlib
 from pathlib import Path
 from types import SimpleNamespace
 import unittest
@@ -24,8 +25,23 @@ class SanctuaryReserveHallTests(unittest.TestCase):
 
     def tearDown(self):pygame.quit()
 
-    def test_retained_source_reproduces_runtime_products(self):
+    def test_pixel_asset_recipe_reproduces_runtime_products(self):
         build(check=True)
+        self.assertEqual(self.world.data['authoring'],'native_pixel_asset_modules')
+        self.assertEqual(self.world.data['tile_size'],24)
+        self.assertEqual(self.world.probe_size,(24,12))
+        sources = self.world.data['source_assets']
+        self.assertGreaterEqual(len(sources),12)
+        self.assertEqual(len({record['path'] for record in sources}),len(sources))
+        for source in sources:
+            with self.subTest(source=source['path']):
+                self.assertTrue(source['path'].startswith('assets/terrain/eldenmere/'))
+                self.assertEqual(hashlib.sha256((ROOT/source['path']).read_bytes()).hexdigest(),
+                                 source['sha256'])
+        recipe = (ROOT/self.world.data['source_recipe']).read_text()
+        for obsolete in ('generated_hall.png','source_polygon','source_openings'):
+            self.assertNotIn(obsolete,recipe)
+        self.assertFalse(list((ROOT/'assets/terrain/elden_vale_sanctuary_hall/depth').glob('*.png')))
 
     def test_complete_character_footprint_can_walk_to_every_inspection_and_exit(self):
         player = Player(self.world)
@@ -50,6 +66,12 @@ class SanctuaryReserveHallTests(unittest.TestCase):
         self.assertLessEqual(abs(player.position.y-350),1)
         self.assertTrue(door.can_enter(player.position,(0,1)))
 
+    def test_full_foot_flood_connects_all_clear_floor_around_the_furniture(self):
+        from test_reserve_free_roam import full_foot_flood
+        clear,reached = full_foot_flood(self.world)
+        self.assertGreater(len(clear),2000)
+        self.assertEqual(clear,reached)
+
     def test_solid_furniture_and_walls_cannot_be_walked_through(self):
         for point in ((128,208),(128,278),(476,240),(288,151),(486,152),
                       (20,200),(550,200),(288,100),(200,340),(288,365)):
@@ -73,12 +95,13 @@ class SanctuaryReserveHallTests(unittest.TestCase):
     def test_projecting_plants_and_cabinet_hide_the_actor_only_from_behind(self):
         color = (251,0,245)
         sprite = pygame.Surface((24,36));sprite.fill(color)
-        # These points were selected against the original scene pixels, not
-        # derived from the exported masks or their sorting metadata.
+        # These points are chosen against visible furniture, independently of
+        # exported sorting metadata. Compare the real scenery-only rendering
+        # because native props are deliberately absent from the ground layer.
         pairs = (
-            ('west plant', (62,288), (59,279), (74,319), (65,296)),
-            ('east plant', (506,285), (512,283), (500,319), (509,296)),
-            ('records cabinet', (436,152), (447,130), (436,170), (447,145)),
+            ('west plant', (45,296), (43,293), (45,318), (43,293)),
+            ('east plant', (527,296), (525,293), (527,318), (525,293)),
+            ('records cabinet edge', (439,152), (449,148), (460,172), (449,148)),
         )
         for name,back,back_pixel,front,front_pixel in pairs:
             for position,point,visible in ((back,back_pixel,False),(front,front_pixel,True)):
@@ -86,25 +109,31 @@ class SanctuaryReserveHallTests(unittest.TestCase):
                     self.assertTrue(self.world.can_stand(position))
                     player = SimpleNamespace(position=pygame.Vector2(position),sprite=lambda:sprite)
                     camera = (96,64) if position[0] >= 480 else (0,64)
-                    canvas = pygame.Surface((480,320))
+                    before = pygame.Surface((480,320));canvas = pygame.Surface((480,320))
+                    self.world.draw(before,camera,SimpleNamespace(position=player.position,
+                                                                 story_visible=False),0)
                     self.world.draw(canvas,camera,player,0)
                     pixel = canvas.get_at((point[0]-camera[0],point[1]-camera[1]))[:3]
                     if visible:self.assertEqual(pixel,color)
                     else:
                         self.assertNotEqual(pixel,color)
-                        self.assertEqual(pixel,self.world.ground[0].get_at(point)[:3])
+                        self.assertEqual(pixel,before.get_at((point[0]-camera[0],point[1]-camera[1]))[:3])
 
     def test_real_gaps_between_leaves_and_flower_spikes_do_not_erase_the_actor(self):
         color = (251,0,245)
         sprite = pygame.Surface((24,36));sprite.fill(color)
-        for position,point,camera in (((62,288),(59,275),(0,64)),
-                                      ((519,285),(520,272),(96,64))):
+        for position,point,camera in (((45,296),(45,292),(0,64)),
+                                      ((527,296),(527,292),(96,64))):
             with self.subTest(gap=point):
                 self.assertTrue(self.world.can_stand(position))
                 player = SimpleNamespace(position=pygame.Vector2(position),sprite=lambda:sprite)
                 canvas = pygame.Surface((480,320))
                 self.world.draw(canvas,camera,player,0)
                 self.assertEqual(canvas.get_at((point[0]-camera[0],point[1]-camera[1]))[:3],color)
+                # The transparent leaf gap is enclosed by opaque neighboring
+                # leaves, so an entirely missing prop cannot satisfy the test.
+                for dx in (-1,1):
+                    self.assertNotEqual(canvas.get_at((point[0]+dx-camera[0],point[1]-camera[1]))[:3],color)
 
 
 if __name__ == '__main__':unittest.main()

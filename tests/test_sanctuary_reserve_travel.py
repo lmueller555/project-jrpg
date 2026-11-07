@@ -109,6 +109,31 @@ class SanctuaryReserveTravelTests(unittest.TestCase):
                                   set(restored.social.flags)), facts)
                 self.assertEqual(restored.music.desired_track, 'eldenmere')
 
+    def test_legacy_positions_newly_occupied_by_native_objects_restore_safely(self):
+        # Both were clear in the preceding scene exports. The native tree and
+        # reading stand now occupy them. Preserve the remote scene and facts
+        # while using its established safe entry rather than resetting to town.
+        for scene_id,historical_position in ((RESERVE_ID,(144,276)),(HALL_ID,(194,224))):
+            with self.subTest(scene=scene_id):
+                game = self.game();self.reserve(game)
+                game.world = game._scene_by_id(scene_id)
+                game.player.position.update(game.world.data['spawn'])
+                self.assertFalse(game.world.can_stand(historical_position))
+                self.assertTrue(game.save_progress())
+                record = json.loads(self.save.read_text())
+                record['player']['position'] = list(historical_position)
+                self.save.write_text(json.dumps(record)+'\n')
+                facts = (game.quests.to_dict(),game.inventory.to_dict(),game.attributes.to_dict(),
+                         game.party.to_dict(),game.character_abilities.to_dict())
+                restored = self.game(True)
+                self.assertTrue(restored.begin_journey(True))
+                self.assertEqual(restored.world.data['id'],scene_id)
+                self.assertEqual(tuple(restored.player.position),tuple(restored.world.data['spawn']))
+                self.assertTrue(restored.world.can_stand(restored.player.position))
+                self.assertEqual((restored.quests.to_dict(),restored.inventory.to_dict(),
+                                  restored.attributes.to_dict(),restored.party.to_dict(),
+                                  restored.character_abilities.to_dict()),facts)
+
     def test_old_region_save_inside_the_new_portal_waits_for_leave_and_return(self):
         game = self.game();region = self.region(game)
         contact = game.overworld_travel.reserve_contact(region)

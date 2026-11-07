@@ -2,724 +2,9 @@
   "version": 1,
   "id": "elden_vale_sanctuary_hall",
   "name": "Elden Vale Sanctuary \u2014 Hall",
-  "source": "assets/source/terrain/elden_vale_sanctuary_hall/generated_hall.png",
-  "source_sha256": "75da360da71837369852e50925b96b83dca2352923e0b166f836b974e10afc59",
-  "provenance": {
-    "tool": "image_gen.imagegen",
-    "reference": "/workspace/generated_images/exec-dbc18891-937c-400f-8e22-f4579944d470.png",
-    "intent": "Actor-free pale-stone remembrance and records hall; natural circle motif, no named gods or hidden ancient mechanism."
-  },
-  "source_size": [
-    1536,
-    1024
-  ],
   "native_size": [
     576,
     384
-  ],
-  "walkable_rects": [
-    [
-      45,
-      146,
-      495,
-      179
-    ],
-    [
-      246,
-      320,
-      85,
-      36
-    ]
-  ],
-  "solid_rects": [
-    {
-      "id": "north_remembrance_table",
-      "rect": [
-        221,
-        145,
-        135,
-        14
-      ]
-    },
-    {
-      "id": "west_north_plant",
-      "rect": [
-        61,
-        140,
-        24,
-        15
-      ]
-    },
-    {
-      "id": "west_north_flowers",
-      "rect": [
-        177,
-        142,
-        22,
-        13
-      ]
-    },
-    {
-      "id": "east_north_flowers",
-      "rect": [
-        375,
-        142,
-        22,
-        13
-      ]
-    },
-    {
-      "id": "records_cabinet",
-      "rect": [
-        448,
-        146,
-        69,
-        14
-      ]
-    },
-    {
-      "id": "reading_bench_north",
-      "rect": [
-        95,
-        201,
-        63,
-        14
-      ]
-    },
-    {
-      "id": "reading_bench_south",
-      "rect": [
-        94,
-        270,
-        64,
-        14
-      ]
-    },
-    {
-      "id": "ledger_table",
-      "rect": [
-        430,
-        227,
-        91,
-        28
-      ]
-    },
-    {
-      "id": "west_south_plant",
-      "rect": [
-        34,
-        298,
-        26,
-        23
-      ]
-    },
-    {
-      "id": "east_south_plant",
-      "rect": [
-        512,
-        295,
-        22,
-        25
-      ]
-    }
-  ],
-  "depth_props": [
-    {
-      "id": "reading_bench_north",
-      "source_polygon": [
-        [
-          254,
-          485
-        ],
-        [
-          261,
-          479
-        ],
-        [
-          413,
-          479
-        ],
-        [
-          423,
-          488
-        ],
-        [
-          420,
-          520
-        ],
-        [
-          415,
-          526
-        ],
-        [
-          422,
-          529
-        ],
-        [
-          422,
-          551
-        ],
-        [
-          415,
-          552
-        ],
-        [
-          415,
-          573
-        ],
-        [
-          405,
-          573
-        ],
-        [
-          402,
-          553
-        ],
-        [
-          270,
-          554
-        ],
-        [
-          269,
-          572
-        ],
-        [
-          258,
-          572
-        ],
-        [
-          258,
-          550
-        ],
-        [
-          253,
-          550
-        ]
-      ],
-      "native_crop": [
-        94,
-        179,
-        65,
-        37
-      ],
-      "sort_y": 215
-    },
-    {
-      "id": "reading_bench_south",
-      "source_polygon": [
-        [
-          252,
-          665
-        ],
-        [
-          259,
-          659
-        ],
-        [
-          414,
-          659
-        ],
-        [
-          422,
-          669
-        ],
-        [
-          421,
-          702
-        ],
-        [
-          416,
-          707
-        ],
-        [
-          421,
-          713
-        ],
-        [
-          421,
-          738
-        ],
-        [
-          415,
-          739
-        ],
-        [
-          415,
-          758
-        ],
-        [
-          403,
-          758
-        ],
-        [
-          400,
-          738
-        ],
-        [
-          270,
-          738
-        ],
-        [
-          269,
-          758
-        ],
-        [
-          257,
-          758
-        ],
-        [
-          257,
-          737
-        ],
-        [
-          250,
-          736
-        ]
-      ],
-      "native_crop": [
-        93,
-        247,
-        66,
-        38
-      ],
-      "sort_y": 284
-    },
-    {
-      "id": "ledger_table",
-      "source_polygon": [
-        [
-          1159,
-          498
-        ],
-        [
-          1160,
-          489
-        ],
-        [
-          1190,
-          488
-        ],
-        [
-          1207,
-          500
-        ],
-        [
-          1341,
-          500
-        ],
-        [
-          1342,
-          477
-        ],
-        [
-          1360,
-          473
-        ],
-        [
-          1371,
-          480
-        ],
-        [
-          1375,
-          500
-        ],
-        [
-          1389,
-          504
-        ],
-        [
-          1394,
-          514
-        ],
-        [
-          1390,
-          616
-        ],
-        [
-          1380,
-          617
-        ],
-        [
-          1380,
-          677
-        ],
-        [
-          1367,
-          680
-        ],
-        [
-          1365,
-          618
-        ],
-        [
-          1175,
-          617
-        ],
-        [
-          1171,
-          679
-        ],
-        [
-          1159,
-          679
-        ],
-        [
-          1156,
-          618
-        ],
-        [
-          1145,
-          618
-        ],
-        [
-          1143,
-          510
-        ]
-      ],
-      "native_crop": [
-        428,
-        177,
-        96,
-        80
-      ],
-      "sort_y": 255
-    },
-    {
-      "id": "west_south_plant",
-      "source_polygon": [
-        [
-          75,
-          736
-        ],
-        [
-          93,
-          728
-        ],
-        [
-          96,
-          712
-        ],
-        [
-          125,
-          709
-        ],
-        [
-          139,
-          696
-        ],
-        [
-          152,
-          704
-        ],
-        [
-          163,
-          712
-        ],
-        [
-          181,
-          715
-        ],
-        [
-          189,
-          736
-        ],
-        [
-          205,
-          747
-        ],
-        [
-          197,
-          771
-        ],
-        [
-          187,
-          792
-        ],
-        [
-          163,
-          797
-        ],
-        [
-          165,
-          816
-        ],
-        [
-          160,
-          837
-        ],
-        [
-          149,
-          848
-        ],
-        [
-          123,
-          853
-        ],
-        [
-          101,
-          843
-        ],
-        [
-          93,
-          821
-        ],
-        [
-          93,
-          797
-        ],
-        [
-          72,
-          781
-        ],
-        [
-          67,
-          755
-        ]
-      ],
-      "source_openings": [
-        [
-          [
-            165,
-            712
-          ],
-          [
-            179,
-            717
-          ],
-          [
-            176,
-            731
-          ],
-          [
-            165,
-            725
-          ]
-        ]
-      ],
-      "native_crop": [
-        24,
-        260,
-        55,
-        64
-      ],
-      "sort_y": 321,
-      "foliage_native_bottom": 298
-    },
-    {
-      "id": "east_south_plant",
-      "source_polygon": [
-        [
-          1381,
-          739
-        ],
-        [
-          1381,
-          717
-        ],
-        [
-          1389,
-          704
-        ],
-        [
-          1395,
-          691
-        ],
-        [
-          1400,
-          696
-        ],
-        [
-          1405,
-          736
-        ],
-        [
-          1411,
-          741
-        ],
-        [
-          1416,
-          717
-        ],
-        [
-          1421,
-          701
-        ],
-        [
-          1429,
-          699
-        ],
-        [
-          1429,
-          749
-        ],
-        [
-          1440,
-          760
-        ],
-        [
-          1440,
-          797
-        ],
-        [
-          1427,
-          819
-        ],
-        [
-          1427,
-          832
-        ],
-        [
-          1419,
-          853
-        ],
-        [
-          1373,
-          859
-        ],
-        [
-          1363,
-          843
-        ],
-        [
-          1355,
-          819
-        ],
-        [
-          1352,
-          797
-        ],
-        [
-          1336,
-          781
-        ],
-        [
-          1341,
-          760
-        ],
-        [
-          1355,
-          757
-        ],
-        [
-          1349,
-          736
-        ],
-        [
-          1357,
-          736
-        ],
-        [
-          1373,
-          757
-        ]
-      ],
-      "source_openings": [
-        [
-          [
-            1379,
-            707
-          ],
-          [
-            1389,
-            704
-          ],
-          [
-            1389,
-            741
-          ],
-          [
-            1381,
-            733
-          ]
-        ],
-        [
-          [
-            1405,
-            701
-          ],
-          [
-            1416,
-            704
-          ],
-          [
-            1413,
-            741
-          ],
-          [
-            1405,
-            739
-          ]
-        ]
-      ],
-      "native_crop": [
-        500,
-        258,
-        42,
-        66
-      ],
-      "sort_y": 321,
-      "foliage_native_bottom": 298
-    },
-    {
-      "id": "records_cabinet",
-      "source_polygon": [
-        [
-          1192,
-          184
-        ],
-        [
-          1248,
-          181
-        ],
-        [
-          1248,
-          171
-        ],
-        [
-          1288,
-          171
-        ],
-        [
-          1301,
-          179
-        ],
-        [
-          1360,
-          176
-        ],
-        [
-          1365,
-          187
-        ],
-        [
-          1384,
-          197
-        ],
-        [
-          1387,
-          229
-        ],
-        [
-          1384,
-          291
-        ],
-        [
-          1381,
-          427
-        ],
-        [
-          1192,
-          427
-        ]
-      ],
-      "native_crop": [
-        446,
-        62,
-        76,
-        100
-      ],
-      "sort_y": 160
-    }
   ],
   "spawn": [
     288,
@@ -785,5 +70,317 @@
       ],
       "facing": "back"
     }
-  }
+  },
+  "authoring": "native_pixel_asset_modules",
+  "tile_size": 24,
+  "assets": {
+    "floor_a": {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_a.png",
+      "sha256": "992710cc2936d3df6f8d3aee512fd8ef83659b2dc4b0f24767b45642eec125f6"
+    },
+    "floor_b": {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_b.png",
+      "sha256": "feeba32dbfd286c01b7950a1a56c960ee6c95f114bee0a0e62549b0660496127"
+    },
+    "floor_c": {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_c.png",
+      "sha256": "aa6991fe5b83994b1c9aff176557b8eab1d16e326fdbf5239a4eac5a18b5dec8"
+    },
+    "stone_front": {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+      "sha256": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928"
+    },
+    "stone_back": {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_back.png",
+      "sha256": "fb611029d7ff5eebf8a3a671e872d5fc7501067d51628fd8b96ae44f7a8dea76"
+    },
+    "window": {
+      "path": "assets/terrain/eldenmere/cottage_interior/parts/window.png",
+      "sha256": "af69bae989516d58c35ce49e4d550e12ba3561bd8359b79d3aafc435658b62a1"
+    },
+    "threshold": {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/entry_threshold.png",
+      "sha256": "cabd3d8bf34956a4b507067306e04884ea3583e6cbd762e15afa456e44bb006a"
+    },
+    "table": {
+      "path": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "sha256": "89e50d63c782d5ccb6dde32763ecb788a863a9c038ead9e8375ca9ecc610104a"
+    },
+    "chair": {
+      "path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "sha256": "7afbca4fa393b84f8abd24ebe56d2ccf5edd1b4f1d8597de2afbdda5038f13a3"
+    },
+    "bench": {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+      "sha256": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23"
+    },
+    "planter": {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png",
+      "sha256": "934d70ad7c3e7551feac151d8f6bde8fd9e38df5c0864c5f68a480b7af86c2b4"
+    },
+    "bookcase": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png",
+      "sha256": "dcbbc5369df09189bcc83bd24f1da8cb4f385a394fc81f9223e96791cecad5fa"
+    },
+    "bookstand": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png",
+      "sha256": "d7355a509e48bd7f476be73a97766eabf99d4a9e9cfd1ff86c1d6afa73660932"
+    },
+    "notes": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+      "sha256": "03b8f8f94bd88f765706fc6d964d7f3017f414d457c391cfc09ca2e91f908798"
+    },
+    "noticeboard": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png",
+      "sha256": "4b8e08256c417d44404fe690f82e6e129b96e0b94d56af3d79db28fbedd1eac5"
+    },
+    "herb": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+      "sha256": "3825ccba52941f605fad77cbb1197b108f3906a59808aed2731b88bb25a66dd2"
+    },
+    "basket": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png",
+      "sha256": "753d44faf42e7f603dc1533597d0b1b38717e5d33c84512431e4ff340567b2af"
+    },
+    "rug": {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+      "sha256": "0031760b6a69d73ac714c139240cca4970f6ac36653d3ef758599d3512845fd6"
+    }
+  },
+  "design": "Pale limestone walls, warm timber floor, remembrance table, quiet reading benches and public records; assembled from existing Eldenmere pixel modules at native scale.",
+  "floor_rect": [
+    24,
+    144,
+    528,
+    192
+  ],
+  "exit_clearance": [
+    264,
+    336,
+    48,
+    20
+  ],
+  "walls": {
+    "north": [
+      24,
+      48,
+      528,
+      96
+    ],
+    "west": [
+      0,
+      48,
+      24,
+      288
+    ],
+    "east": [
+      552,
+      48,
+      24,
+      288
+    ],
+    "south_left": [
+      24,
+      336,
+      240,
+      24
+    ],
+    "south_right": [
+      312,
+      336,
+      240,
+      24
+    ]
+  },
+  "windows": [
+    [
+      98,
+      64
+    ],
+    [
+      194,
+      64
+    ],
+    [
+      362,
+      64
+    ],
+    [
+      506,
+      64
+    ]
+  ],
+  "noticeboard": [
+    48,
+    98
+  ],
+  "stone_palette": {
+    "#736e60": "#8e8876",
+    "#827d6e": "#a69e87",
+    "#969284": "#b9b198",
+    "#aaa492": "#cbc3aa",
+    "#b5ae9c": "#d4ccb2",
+    "#c3bcaa": "#e0d8bf"
+  },
+  "objects": [
+    {
+      "id": "north_remembrance_table",
+      "position": [
+        224,
+        102
+      ],
+      "kind": "remembrance_table",
+      "floor_rect": [
+        0,
+        32,
+        144,
+        26
+      ],
+      "sort_y": 160
+    },
+    {
+      "id": "records_cabinet",
+      "position": [
+        448,
+        96
+      ],
+      "kind": "bookcases",
+      "floor_rect": [
+        4,
+        48,
+        64,
+        16
+      ],
+      "sort_y": 160
+    },
+    {
+      "id": "reading_bench_north",
+      "position": [
+        104,
+        186
+      ],
+      "asset": "bench",
+      "floor_rect": [
+        4,
+        20,
+        40,
+        10
+      ],
+      "sort_y": 216
+    },
+    {
+      "id": "reading_bench_south",
+      "position": [
+        104,
+        256
+      ],
+      "asset": "bench",
+      "floor_rect": [
+        4,
+        20,
+        40,
+        10
+      ],
+      "sort_y": 286
+    },
+    {
+      "id": "reading_stand",
+      "position": [
+        180,
+        195
+      ],
+      "asset": "bookstand",
+      "floor_rect": [
+        7,
+        22,
+        12,
+        12
+      ],
+      "sort_y": 229
+    },
+    {
+      "id": "ledger_table",
+      "position": [
+        430,
+        206
+      ],
+      "kind": "records_desk",
+      "floor_rect": [
+        0,
+        22,
+        96,
+        26
+      ],
+      "sort_y": 254
+    },
+    {
+      "id": "records_chair",
+      "position": [
+        425,
+        274
+      ],
+      "asset": "chair",
+      "floor_rect": [
+        3,
+        18,
+        18,
+        16
+      ],
+      "sort_y": 308
+    },
+    {
+      "id": "west_north_plant",
+      "position": [
+        64,
+        128
+      ],
+      "asset": "planter",
+      "floor_rect": [
+        2,
+        11,
+        20,
+        7
+      ],
+      "sort_y": 146
+    },
+    {
+      "id": "west_south_plant",
+      "position": [
+        36,
+        286
+      ],
+      "asset": "herb",
+      "floor_rect": [
+        4,
+        16,
+        10,
+        8
+      ],
+      "sort_y": 310
+    },
+    {
+      "id": "east_south_plant",
+      "position": [
+        518,
+        286
+      ],
+      "asset": "herb",
+      "floor_rect": [
+        4,
+        16,
+        10,
+        8
+      ],
+      "sort_y": 310
+    },
+    {
+      "id": "central_remembrance_rug",
+      "position": [
+        264,
+        274
+      ],
+      "asset": "rug",
+      "sort_y": -100
+    }
+  ]
 }

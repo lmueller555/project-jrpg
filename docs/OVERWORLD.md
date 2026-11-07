@@ -59,7 +59,7 @@ memorial grove, cave approach and surveyed stone face, with an enterable hall.
 The southern exit returns to the overworld outside the miniature's contact
 area. The cave dungeon and its quest remain future work. Eldenmere's existing
 automatic entry and return remain independent. The
-[current in-game review](reviews/sanctuary_reserve/README.md) shows this visit;
+[current in-game review](reviews/sanctuary_pixel_assets/README.md) shows this visit;
 the [original miniature review](reviews/overworld_sanctuary/README.md) records
 the earlier stage before entry was enabled.
 

@@ -1,0 +1,1031 @@
+{
+  "source": "Production Game movement, contacts, doors and renderer",
+  "disposable_save_and_settings": true,
+  "quest_or_equipment_seeding": false,
+  "reserve_map_sha256": "218988f41e15bd57ee0fcb69fe294013c449ca467234ebe2aced101e4a4dada5",
+  "source_sha256": {
+    "assets/maps/elden_vale_sanctuary/collision.png": "7d8c27cda7f1f8774f70c0c9bc79eb8ce865b58c5c519e3b54e79011eb90cfd5",
+    "assets/maps/elden_vale_sanctuary/map.json": "218988f41e15bd57ee0fcb69fe294013c449ca467234ebe2aced101e4a4dada5",
+    "assets/maps/elden_vale_sanctuary_hall/collision.png": "4574117ff4a450028225d349d11048836eb8378ffeae74d4302ffdeda1c7d956",
+    "assets/maps/elden_vale_sanctuary_hall/map.json": "5013fbb3796282e65dc05ef007e950a0c1cf4a204ba0549010071dcd207a627c",
+    "assets/source/maps/elden_vale_sanctuary/recipe.json": "6bd17a6671e501474c01ce5742a113265498e09dccc3f2bef665ab371ee91410",
+    "assets/source/terrain/elden_vale_sanctuary/README.md": "af1559ef4e920a1d49c9bd02f51081b3cc1e141b7d709fd3a65ed207b59ac28a",
+    "assets/source/terrain/elden_vale_sanctuary_hall/README.md": "db7e5f541fda6a86f68a3f5ca102a9ee87011860a0f0b3e614d428822f89b988",
+    "assets/source/terrain/elden_vale_sanctuary_hall/recipe.json": "1575aaa5d3d61cf21ea4263b479926fc4475aa8ccd07a920281c1b7d8c455677",
+    "assets/story/sanctuary_reserve/layout.json": "02aa1999065f6e8bdc5a1b755bb504193181bdf976a3c7fe701585314a707739",
+    "assets/story/sanctuary_reserve/scene.json": "f2aa066afe8e49c9abd7bd38955b2882e477dd2f55a6a063396658eccd4e952f",
+    "assets/terrain/elden_vale_sanctuary/art.json": "4d9a874bcff540aada50c6e63f53182fc5fd90f27a209035fb72e5de223e8695",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_01.png": "8ab6be3ff0bbd3b55ae6648b6b3d31a36e92db1ca8143cc48ff757e4e9816225",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_02.png": "49f958dbbe72fd7401e4950ad53de11b94172e7e81908d6aa0f350b5b4f76eaf",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_03.png": "05b162e6add491325f03b37573405c4a2f3f4d1addc474d95236321e00114cff",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_04.png": "d4791dfbae366ffe2dcd548abeb72b4aef6c8f465d7dc99952d0853e5e5de514",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_05.png": "845fde83c95784253eb4882f96634239ad3386308f162e56595e511251f3756b",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_06.png": "199d765f7c4f1f131979ff0015defeb30f0f73f6f98815a2b5b7e7cf489e457c",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_07.png": "81853bddbabe91e838c1be27eda9dcd25fb0eb97c91921dc4b7a99b2008a84bd",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_08.png": "41e4ee297f5f6a9b19d59d8cb71d5debeaf9e95fb7efbae15682cab92a6c68a8",
+    "assets/terrain/elden_vale_sanctuary/foliage/deep/frame_09.png": "24a4aa2ee3ab0c8a8f74d359f47012d55e495a4795d210348a9343de4d201686",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_01.png": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_02.png": "9861764b84a4fae4ccbb89414e1fbc85b4441b8d01a0a09a9593cc6493981f88",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_03.png": "97d332a852a8758e7fa4f20c792b59b27e2174fff8f2f0724fb5d90603620045",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_04.png": "21f98c7f4dd5f3a85a52210c444b8d6172c213b2ca8f69b8d860eb46c781e882",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_05.png": "776e0dc9a596a6d0b27c08607fcd8cceaad10dc2cc249bed83a6a15a0f03f4e4",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_06.png": "3be9b48ed5992264e31807e24ea0b4ce80ecbde096fdbdb73587c4d611335515",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_07.png": "c402beebe570c5a85d504a7b7f24d4c50c291dec180c7b232dc2cace710aa6a7",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_08.png": "1eeeef75c4c664111fc46e3ae28ba9a1fc158cc3325148d5523058a91ab0e833",
+    "assets/terrain/elden_vale_sanctuary/foliage/sage/frame_09.png": "0438430508b3c15208543f2fc32fef72d9e8292e87dc0fc00550324b4b90df0c",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_01.png": "6c6380d03dc50f839663a3dfdaee565bbea53f8008ab5aaad53143e9c396976f",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_02.png": "7a0da1fb1f923a1ec583faa24516cfc7301827cd440e73f89db35aa68e62e3a7",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_03.png": "e756f3b6f57e9698af463b0297a3b9595369f055a7760b4af8f46dc96d0cea86",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_04.png": "4b451f2edae9042aacaffe6c6505c99cea4a5b371f8a6efa14d71e6a063436cc",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_05.png": "4ef1222633bc7e6aea09d1ac478c4eb31c8c2715843c6ba70ab9faca9f28c38f",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_06.png": "3ed4086f60849224222e7e9dc6f17df3c1b94f55696fcdd483a581e20e30cad3",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_07.png": "3eb6f5f1fed13882268969df013adcc0031944a43428532e8dc736674777f4c8",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_08.png": "90af9fa04509213c1a2fe80b6c9eb5bb72897ebfc31923d60775ac0164532dc4",
+    "assets/terrain/elden_vale_sanctuary/foliage/warm/frame_09.png": "241f6a3ca633401a887a05c7d596b4c08afbde8e44852510b38aaec552c1d111",
+    "assets/terrain/elden_vale_sanctuary/ground.png": "db05d34106df543c93d60575a76d955a08f965ff821b9a94bf4857de500d4c49",
+    "assets/terrain/elden_vale_sanctuary/overview.png": "81c294ac534caf43c50a90bb48d8a27727903067d7a8e717a5a94e0ebf7355f7",
+    "assets/terrain/elden_vale_sanctuary_hall/art.json": "2be5b2d0fa4c0d0cf1a5951603e9731c95fbc170244ccaafbb4bc4ef2450b663",
+    "assets/terrain/elden_vale_sanctuary_hall/ground.png": "eaf20a1f8c2447b67642b48584eb40bbb44ddc60d923684db3bb351008c1086e",
+    "assets/terrain/elden_vale_sanctuary_hall/overview.png": "fa9e43639b73a9c3d4a40e72f9427395358681a8b07fd6818873906192a0d556",
+    "assets/terrain/elden_vale_sanctuary_hall/props/central_remembrance_rug.png": "0031760b6a69d73ac714c139240cca4970f6ac36653d3ef758599d3512845fd6",
+    "assets/terrain/elden_vale_sanctuary_hall/props/east_south_plant.png": "3825ccba52941f605fad77cbb1197b108f3906a59808aed2731b88bb25a66dd2",
+    "assets/terrain/elden_vale_sanctuary_hall/props/ledger_table.png": "940042c086e12a0d8c417351643f28436aef3c212bdb914508832d92a1b27d5e",
+    "assets/terrain/elden_vale_sanctuary_hall/props/north_remembrance_table.png": "90ecdd7c16a223065e71bfc255aa568d564369078bddfa6216787331b83b92e7",
+    "assets/terrain/elden_vale_sanctuary_hall/props/reading_bench_north.png": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23",
+    "assets/terrain/elden_vale_sanctuary_hall/props/reading_bench_south.png": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23",
+    "assets/terrain/elden_vale_sanctuary_hall/props/reading_stand.png": "d7355a509e48bd7f476be73a97766eabf99d4a9e9cfd1ff86c1d6afa73660932",
+    "assets/terrain/elden_vale_sanctuary_hall/props/records_cabinet.png": "49de5f440f8cb0a19798c7e9cb5a8c9be60f7bc399db9732da1270868f54f6c4",
+    "assets/terrain/elden_vale_sanctuary_hall/props/records_chair.png": "7afbca4fa393b84f8abd24ebe56d2ccf5edd1b4f1d8597de2afbdda5038f13a3",
+    "assets/terrain/elden_vale_sanctuary_hall/props/west_north_plant.png": "934d70ad7c3e7551feac151d8f6bde8fd9e38df5c0864c5f68a480b7af86c2b4",
+    "assets/terrain/elden_vale_sanctuary_hall/props/west_south_plant.png": "3825ccba52941f605fad77cbb1197b108f3906a59808aed2731b88bb25a66dd2",
+    "assets/terrain/elden_vale_sanctuary_kit/basin.png": "bceab3e68aedb48004af2675f536049e00d6f4e21aeac84274b306641f77cbc5",
+    "assets/terrain/elden_vale_sanctuary_kit/cave.png": "11a048b5abfbfbeb47acea6cd2276f31277f64954bc4fe4541d2cf4a590b6cdb",
+    "assets/terrain/elden_vale_sanctuary_kit/cave_keeper_rail.png": "2a86cda467715dcf80b2e417dfd6e842e9f4e41c8d3bf84e73593cf1272a3a33",
+    "assets/terrain/elden_vale_sanctuary_kit/cloister_arches.png": "ea566538042b11d0ce0c4c302d38d50072aff01e8651385952f9f7e239c1ab32",
+    "assets/terrain/elden_vale_sanctuary_kit/cloister_back_wall.png": "abdac03a014faa4b7a3c2ebc65e66b58e0583bd15fd9f835a534abc6212fd67e",
+    "assets/terrain/elden_vale_sanctuary_kit/cloister_column.png": "62a9efce2360ffde28b4af31e3af443b11aac1c919e96ce6022d8ff333bb12f7",
+    "assets/terrain/elden_vale_sanctuary_kit/cloister_roof.png": "63d06277ab04b44fe30152e349d747396b8e2a783db7a2276ca5b0fd10e388c8",
+    "assets/terrain/elden_vale_sanctuary_kit/entrance_arch.png": "6ca02ff003e5f32e90d95cc9ab1361334d812d6daf5fd982ebf9b734628183a0",
+    "assets/terrain/elden_vale_sanctuary_kit/hall.png": "592bc24a34901e91588e06729dffff66c1e50dabdabf16206c11ade23b004cf3",
+    "assets/terrain/elden_vale_sanctuary_kit/memorial_marker.png": "e9ff23070680a75db1cd08a900874fa317006ae8eaab704b3046abf31386e53a",
+    "assets/terrain/elden_vale_sanctuary_kit/ridge.png": "2d5fa87b767bc16b1edad5156602f12a5f86252838b0852b3ea378c85ec317fd",
+    "assets/terrain/elden_vale_sanctuary_kit/rock_outcrop.png": "2a4ed29575b774d077a951d41ce9b7d15ab26fe49441d8517a2e7382278a80eb",
+    "assets/terrain/elden_vale_sanctuary_kit/survey_board.png": "ba9684460202fef225d1451e2f4a973b353ec5a17afbceb2ed827146da29f57a",
+    "assets/terrain/elden_vale_sanctuary_kit/survey_stake.png": "5b1e820f357bbcf3ff65e43af945bee6b374ef1509eac6210acb64497fcc88f3",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png": "7afbca4fa393b84f8abd24ebe56d2ccf5edd1b4f1d8597de2afbdda5038f13a3",
+    "assets/terrain/eldenmere/cottage_furniture/sprites/table.png": "89e50d63c782d5ccb6dde32763ecb788a863a9c038ead9e8375ca9ecc610104a",
+    "assets/terrain/eldenmere/cottage_interior/parts/window.png": "af69bae989516d58c35ce49e4d550e12ba3561bd8359b79d3aafc435658b62a1",
+    "assets/terrain/eldenmere/cottage_interior/tiles/entry_threshold.png": "cabd3d8bf34956a4b507067306e04884ea3583e6cbd762e15afa456e44bb006a",
+    "assets/terrain/eldenmere/cottage_interior/tiles/floor_a.png": "992710cc2936d3df6f8d3aee512fd8ef83659b2dc4b0f24767b45642eec125f6",
+    "assets/terrain/eldenmere/cottage_interior/tiles/floor_b.png": "feeba32dbfd286c01b7950a1a56c960ee6c95f114bee0a0e62549b0660496127",
+    "assets/terrain/eldenmere/cottage_interior/tiles/floor_c.png": "aa6991fe5b83994b1c9aff176557b8eab1d16e326fdbf5239a4eac5a18b5dec8",
+    "assets/terrain/eldenmere/foliage/shrub/foliage.json": "8f69694d58e7f852556f2e1e776b7bae0b29be0eb75a64868a9dcab8abb95f79",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_01.png": "2a2d8bda147fff7d14bf1c02d9d4d2365ac32db81b4662c580783c0c9cc42d96",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_02.png": "993cf5616bd85b084c44ed0616d9c281690a5febd0fd34fc0691c61259be3996",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_03.png": "b1c1a0816a9f068afe90b99c3b3d8950e1621935ffc089dd57775159afdcceeb",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_04.png": "0ae45b1b2702377acc4308f54d4b980f64d22cde3d83795f73ba8afa5be48d40",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_05.png": "b82a0ac1fd9402a12dedd77a1066366a4037859bc361adda44137818403cc661",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_06.png": "bbf7e1dc9f384ae0a1be34dc6ec375abd1dedcb44c6d670b053caa15bf399262",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_07.png": "a792adad321dc49b31925393a36477ca9c45b80cfeae89d9bceb50fa50564869",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_08.png": "debc138709ba63e3eaff54b33bebc344e15f96cfaa6d568e14471e8699f04a01",
+    "assets/terrain/eldenmere/foliage/shrub/frames/frame_09.png": "c8ed38952e7bbed66eb36efaec594d78d3feb99f38110bf410f1d71f55259a40",
+    "assets/terrain/eldenmere/foliage/tree/foliage.json": "22900c226db87d18cdbffa924d7ccb31b7df529b4fe60a9b3cb53e1ea7c87768",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png": "9861764b84a4fae4ccbb89414e1fbc85b4441b8d01a0a09a9593cc6493981f88",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_03.png": "97d332a852a8758e7fa4f20c792b59b27e2174fff8f2f0724fb5d90603620045",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_04.png": "21f98c7f4dd5f3a85a52210c444b8d6172c213b2ca8f69b8d860eb46c781e882",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_05.png": "776e0dc9a596a6d0b27c08607fcd8cceaad10dc2cc249bed83a6a15a0f03f4e4",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_06.png": "3be9b48ed5992264e31807e24ea0b4ce80ecbde096fdbdb73587c4d611335515",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_07.png": "c402beebe570c5a85d504a7b7f24d4c50c291dec180c7b232dc2cace710aa6a7",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_08.png": "1eeeef75c4c664111fc46e3ae28ba9a1fc158cc3325148d5523058a91ab0e833",
+    "assets/terrain/eldenmere/foliage/tree/frames/frame_09.png": "0438430508b3c15208543f2fc32fef72d9e8292e87dc0fc00550324b4b90df0c",
+    "assets/terrain/eldenmere/garden_fence/modules/e_a/module.png": "d9aca0592f3d39331e1351af7f266f14f357531bfdb436dc10262632560d56f0",
+    "assets/terrain/eldenmere/garden_fence/modules/w_a/module.png": "bcd8f4396bd35c3dd23e1a3aeac66cb1050f27a38ad773d7023e83f33595fa45",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_000.png": "df5f685bfae768fc652f1e2bc7276c73a9d2d278dcc200cfb5baa753d545076a",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_001.png": "ef720458bedcb45822ec24024f50a749457bf6699810804ec6a2ee47465900c1",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_004.png": "0be812de4c4e121a80a7d9c5fc25236aab892e0af51500d59e20f4427d4e3c9b",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_005.png": "124cf66e69af3900a671c5950dc94692df9948a4cf9df9c307df91f2a6b14e58",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_007.png": "c6ec882b5734bef942af0f0a8f365f17e70f86aeec3525caed786fc9b9d1fc55",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_016.png": "5ec096ad31447fc6ea7282fa29aa065c4259b17be84e88beb63eb9b1cb21253c",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_017.png": "7a2f20ca64c053a33a612c42a8a6970a03feb819f52e3f575adb3380be1272ab",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_020.png": "94c53a9efdaa13919a7ff0e671c75834d528e6447fac3dcb0cad3f1ec94c7004",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_021.png": "80a2394530eac28ef4d710d9fada14c81d019c3ed8067a7f8058560f0667ab8f",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_023.png": "38d6e1221b251ca7b0fd6dc2a6f0af069bb5268e19da8e27b2afdd1276b633b5",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_028.png": "9700fdcf1202c3f67982dae575a85bdff6b097c0d4446b1059568b866fcd9910",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_029.png": "969a19e817afe1dbbc7ac46c028db693c85bd3579590506b21dced6d6ca043af",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_031.png": "4a762d6e479ff27e05a718457e673a6f39020593464784b82822978620ddd17e",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_064.png": "549bdaad1552435e74ba2f9a1bf0d359911a5d254c8f27c531a2d96dbf150e37",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_065.png": "72e971474fa3d80ba6f89355debeddc9f5c6b8b8a65230ded6a71028bc9bc225",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_068.png": "984de11f7258ba433ff9ff3d2a978998e390552a57231417517370e4f697b153",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_069.png": "990f05d1903bd72b5c1105f4da6ee8f9fe3cf3aa2635edbc37807dd7fd5b4a7f",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_071.png": "08896c0572b782625531cb50ee5749e040ccdecbad40b87d9c13f3e286299951",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_080.png": "fb99cabdd0e6568fa4b2b5e2f065098bc12e123ada74bd278951132eadb2e3ec",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_081.png": "0936d3c24c2186368d934d6c54304ed4c49027d321ed9a60d255f72288b4e75a",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_084.png": "a67e11ebc5ccfbd923d488ae603dce1a0716a2135963b9158fb206514fd01950",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_085.png": "16d8f26a0280e9aab872330b43e325f57f1e99449b2f46c631848820571b0742",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_087.png": "33ae60a4c76437b5784ae492b59d4d6dee72be7a54adbd950ed7a3f88cdabdab",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_092.png": "553c2b6bb5afb6e56f6f61a18ccb4e70468c2a5fa9423e52e0537c91dc6c4f5a",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_093.png": "b5e9020b6959799d501473fe97a308e901c4633f3802720ce04b25c08daf2c37",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_095.png": "b4293c6de55ee21c3dbdbc8a3594f632621421c936619a806213d7f4cfc4d5b4",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_112.png": "75d538655efa84090abc9533814ba794822707a33d9bb9da61919f48e6956bd6",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_113.png": "76ea7349364bf49b7bdcf40ffeb7ca5ee238e9ec8d137c6e5a1cb831dd616903",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_116.png": "d3dfd265d31a1c065b57f14e9797b705c491498be31dd1ab36d9070f046c63b4",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_117.png": "32ed53fbb65ac2833dcd05839b827021de788f74e27aa5a2549e84adc5a5b82f",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_119.png": "5af224176e611779666001b3ed42cc888441620410e4f2d4f6898b45ac01d63b",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_124.png": "d090a27e911b31876dd84bec2abf57334df53fe42a8f743dbeec792121188448",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_125.png": "2a447eb1cc013ab80265f8b8219fad4683ab88d16e8ae2d6f0f390f9f51ac17d",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_127.png": "43c09c23fd1ccc9cce524748ee3ca8a5855404abf5b92110bc39b485282e997b",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_193.png": "de02af164bb63639f495a1d6bba9532a90313876c9c556459fc5ce2d89ea530e",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_197.png": "353eb5156c3a5cf0c7088d81703b1cf81b751dd7003d9e0e5311553f0527c59d",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_199.png": "337cdf01875efd2d8d933d42656dee73642ef7fb0ac26550ad2459b0c47ad9a6",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_209.png": "530ac9d0d266fe05552d350a89833f268afcb76e8fc264a1f21b1c3132cd1b59",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_213.png": "e8aa5af4f7d09eba56be885a453e2f9fe0e8e1cee915e2e49790c838cd3611ec",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_215.png": "2c61ffa0b7a7cdd111f746956c7c71f4d818208c16fa59db7e3f8f0ab359b6fb",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_221.png": "f3a1708124fb7567d8c2ac9898c54f3c90d6b3e3506fc2479d3008c30e289902",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_223.png": "b08da79800e1f39fa2e0d4c25bfa9f5cdd83664582ddda9374804ac639032ec8",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_241.png": "5dda1204778923a23b51a7f339fec41da2fc2a8d4b80a44f5209b5b5fcbb4286",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_245.png": "9a88674a793d24a991d25ce8ea9511065d1c944f1a9dfcad2e58a09743d69c58",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_247.png": "84391187610d383d6c07293792976191ff397b95337fb8c11cfeb37c4bc26892",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_253.png": "f0f55442103c7ee549fa4dc7e33db051d2542b00e30a4a75c22f8c15a9217ba0",
+    "assets/terrain/eldenmere/grass_dirt/dirt/mask_255.png": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa",
+    "assets/terrain/eldenmere/grass_dirt/dirt_fill_00.png": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa",
+    "assets/terrain/eldenmere/grass_dirt/dirt_fill_01.png": "9a6b7a96b0c95f062ac9139f408743d346967b27033e5767d4623ec53bb2ac55",
+    "assets/terrain/eldenmere/grass_dirt/dirt_fill_02.png": "c9a38833a1c7a091cd2a1435888991f416a36699218d19389d2859924ad15cb1",
+    "assets/terrain/eldenmere/grass_dirt/grass_00.png": "403b33c4706a4cf7f8fb892ec910731d0b04c48597a70e5a3d1b46910c9045d7",
+    "assets/terrain/eldenmere/grass_dirt/grass_01.png": "2de2609e0aa97fbe36c09c1aeae213fdf352fc260fba82dc80b4a83345c306d8",
+    "assets/terrain/eldenmere/grass_dirt/grass_02.png": "dbd2aba909c6897cabd32559ff2ec4f474ba80513d5c500a0040bb9cd3f345d5",
+    "assets/terrain/eldenmere/grass_dirt/grass_03.png": "ba3765c3a9d0d2974adc93a9728c04926b801201c081aadccc45315f9b021b6c",
+    "assets/terrain/eldenmere/grass_dirt/tileset.json": "33126c27f4686809466b42cb73c3d8cfcbb137667842e2e5afd19f610e034c16",
+    "assets/terrain/eldenmere/grass_flowers/flowers_violet/idle.png": "22bc44dcfbe71fff63527688c7a83e59cb4fc508743d2bf8d6e3bd3c83b2c51f",
+    "assets/terrain/eldenmere/grass_flowers/flowers_violet/plant.json": "925b180e394bbaddfec1b5774f8712e79f3c8ba2cc01774b4631d2964440a5b6",
+    "assets/terrain/eldenmere/grass_flowers/flowers_white/idle.png": "7d8ff480a935b496a42eedda136f07813b9865d09f3a236314b676ac7df84205",
+    "assets/terrain/eldenmere/grass_flowers/flowers_white/plant.json": "93656528caf2f0bc02bdec15de548502e621efce27236fb26081f202daefd15f",
+    "assets/terrain/eldenmere/grass_flowers/flowers_yellow/idle.png": "548cda1d20b62462753266b40099051615691beffc4122f2183e319ec9dafeb6",
+    "assets/terrain/eldenmere/grass_flowers/flowers_yellow/plant.json": "2bc7facf358cea5d60441f11b2576de7f8670070c83e6f97537947972f7e97f7",
+    "assets/terrain/eldenmere/grass_flowers/grass_dense/idle.png": "5316f82cc28f63ce4ce3f9cbee60a6fed6f2de4d559d09df5d51892b4634aed0",
+    "assets/terrain/eldenmere/grass_flowers/grass_dense/plant.json": "f71e8e4fe89d2d110331bf23636c39dc9b1e1dacc40611630dae48c323df920c",
+    "assets/terrain/eldenmere/grass_flowers/grass_sparse/idle.png": "e5f8b3de67499e4220e2731be5f458d9792e3e5b843a5cd9a73b32dc62c0fe1e",
+    "assets/terrain/eldenmere/grass_flowers/grass_sparse/plant.json": "810a02dcaf98439e1160e6fdfea3ff531226b55942dd051f2589c343b2c5372c",
+    "assets/terrain/eldenmere/grass_flowers/grass_splayed/idle.png": "f5491bfbf9b1173ea5e0c7c423d947218df0db70bdf5b3d5617e7aa92cfbde5b",
+    "assets/terrain/eldenmere/grass_flowers/grass_splayed/plant.json": "52e4d2f9e2070008fb3bd97f4330c1c105cba7e3c17513be946334df3c208752",
+    "assets/terrain/eldenmere/sanctuary/closed.png": "71ffcab1d2fc7928a21d33ab27dc1c989b99f85dbf7224941185d1bcdf1217aa",
+    "assets/terrain/eldenmere/sanctuary_charm/props/bench.png": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23",
+    "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
+    "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png": "934d70ad7c3e7551feac151d8f6bde8fd9e38df5c0864c5f68a480b7af86c2b4",
+    "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png": "dcbbc5369df09189bcc83bd24f1da8cb4f385a394fc81f9223e96791cecad5fa",
+    "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png": "d7355a509e48bd7f476be73a97766eabf99d4a9e9cfd1ff86c1d6afa73660932",
+    "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png": "753d44faf42e7f603dc1533597d0b1b38717e5d33c84512431e4ff340567b2af",
+    "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png": "03b8f8f94bd88f765706fc6d964d7f3017f414d457c391cfc09ca2e91f908798",
+    "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png": "0031760b6a69d73ac714c139240cca4970f6ac36653d3ef758599d3512845fd6",
+    "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png": "4b8e08256c417d44404fe690f82e6e129b96e0b94d56af3d79db28fbedd1eac5",
+    "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png": "3825ccba52941f605fad77cbb1197b108f3906a59808aed2731b88bb25a66dd2",
+    "assets/terrain/eldenmere/terraces/tiles/wall_back.png": "fb611029d7ff5eebf8a3a671e872d5fc7501067d51628fd8b96ae44f7a8dea76",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_01.png": "7f7a902fa214de70dcc418e332ce840f3bc0e3fc49f16181ecbbcd280f8409c8",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_02.png": "4706f3fb347a1c4e9256e48276afc65bd66564cb53d432dca228830c6f1ad2b5",
+    "assets/terrain/eldenmere/terraces/tiles/wall_side_left.png": "27133eafbff2ebe1686f358558b36602233c79bd3d9590934482e95b40eb7566",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b",
+    "elden_vale_sanctuary.py": "4ed1acf2f33701cdac0f553924e8d7a0d0b09733bdcbb9eadb5c0904d4163126",
+    "main.py": "f338000da99615ff13e1e8071c0c4d4696303497954c338cfbfd4a2bbe578161",
+    "overworld_travel.py": "e646fe2e861849ee23563ab9d5c9d06914129205fa47e7ee8699762d4f4f52c4",
+    "sanctuary_map.py": "644f26d6a99efd33f17bd16c997257fa4dfa800a4e17c3ba34fc73c9941c05cf",
+    "sanctuary_reserve.py": "6f667e2beba98aa7c5f5fda52412dac6927cd6f4cae8da7b56d92b8d87db842b",
+    "save_game.py": "76fee97c07ed790bc45b28a046c4cb06c3a42b08ff580f785e64a2c6e2d55e25",
+    "social.py": "966152061ed878d1ff24d6e00a19435f07d5c0851a0f09b46c413dcfbb1b459b",
+    "tests/test_reserve_free_roam.py": "66b1b77045f47ed64e8ad249145a9db44f3ae82302ae155d98eec1ad943311ba",
+    "tools/build_elden_vale_sanctuary.py": "74f3185fce93657bb68c3d362c0e58ace018c3dd87f08773a0cedcaef4341054",
+    "tools/build_elden_vale_sanctuary_art.py": "71acb607825814527c59155959b98e4285e5f3598dbc37d323e89b55f4361e00",
+    "tools/build_sanctuary_reserve_hall.py": "81eb83ff30083b630fcddf8276fd3dbec1ccf71432b9d8de0f9295c599f42e66",
+    "tools/capture_reserve_free_roam.py": "8e41d4d6150e14c1b3c9a725479c70f253e88b71cd7d10ca03a48dbed594c1f9",
+    "tools/capture_sanctuary_depth.py": "a11813a887075c8d183b021a17fa502095fa7c0b6c1fec57321ab07ddd8b1154",
+    "tools/capture_sanctuary_reserve.py": "e3ee5ff28775e1c38600eca896865c766651071ade0d5fb04c77d2596bfa23ee"
+  },
+  "views": {
+    "arrival": {
+      "file": "arrival.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        444.0,
+        642.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "grass_1": {
+      "file": "grass_1.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        430.0,
+        72.99999999999999
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "grass_2": {
+      "file": "grass_2.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        220.0,
+        370.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "grass_3": {
+      "file": "grass_3.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        300.0,
+        571.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "grass_4": {
+      "file": "grass_4.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        309.0,
+        603.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "continue_on_grass": {
+      "file": "continue_on_grass.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        309.0,
+        603.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "cloister_1": {
+      "file": "cloister_1.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        700.0,
+        318.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "cloister_2": {
+      "file": "cloister_2.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        776.0,
+        318.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "cloister_3": {
+      "file": "cloister_3.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        852.0,
+        318.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_1_behind": {
+      "file": "depth_1_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        144.0,
+        238.00000000000003
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_1_front": {
+      "file": "depth_1_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        144.0,
+        310.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_2_behind": {
+      "file": "depth_2_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        768.0,
+        369.99999999999994
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_2_front": {
+      "file": "depth_2_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        768.0,
+        412.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_3_behind": {
+      "file": "depth_3_behind.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        264.0,
+        260.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "depth_3_front": {
+      "file": "depth_3_front.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        264.0,
+        334.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall_court": {
+      "file": "hall_court.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        534.0000000000001,
+        370.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "boundary": {
+      "file": "boundary.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        456.0109144909988,
+        653.8524982168716
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "caretaker": {
+      "file": "caretaker.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        212.3815992368023,
+        479.38944122111633
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "visitor_slate": {
+      "file": "visitors.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        264.00000000000006,
+        333.2799999999999
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "grove": {
+      "file": "grove.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        291.79199795980196,
+        243.45291046816632
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "visible_cave_barrier": {
+      "file": "visible_cave_barrier.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        1008.0,
+        377.20000000000056
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "cave": {
+      "file": "cave.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        1008.0,
+        405.28
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "survey": {
+      "file": "survey.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        857.970094167978,
+        629.3055501446645
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "overview": {
+      "file": "reserve_overview.png",
+      "size": [
+        1152,
+        768
+      ],
+      "source": "bounded production World.draw views"
+    },
+    "map": {
+      "file": "local_map.png",
+      "scene": "elden_vale_sanctuary",
+      "position": [
+        857.970094167978,
+        629.3055501446645
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall": {
+      "file": "hall.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        288.0,
+        328.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "records": {
+      "file": "hall_records.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        475.90711693483274,
+        277.19601290556653
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall_plant_behind": {
+      "file": "hall_plant_behind.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        45.0,
+        296.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "hall_plant_front": {
+      "file": "hall_plant_front.png",
+      "scene": "elden_vale_sanctuary_hall",
+      "position": [
+        44.88,
+        318.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    },
+    "return": {
+      "file": "overworld_return.png",
+      "scene": "auratia.overworld",
+      "position": [
+        2160.0,
+        -1488.0
+      ],
+      "size": [
+        960,
+        640
+      ],
+      "source": "production Game.draw"
+    }
+  },
+  "inspections": {
+    "boundary": {
+      "approach": [
+        456.0109144909988,
+        653.8524982168716
+      ],
+      "pages": 2
+    },
+    "caretaker": {
+      "approach": [
+        212.3815992368023,
+        479.38944122111633
+      ],
+      "pages": 7
+    },
+    "visitor_slate": {
+      "approach": [
+        264.00000000000006,
+        333.2799999999999
+      ],
+      "pages": 7
+    },
+    "visitor_plum": {
+      "approach": [
+        300.0,
+        319.28
+      ],
+      "pages": 7
+    },
+    "grove": {
+      "approach": [
+        291.79199795980196,
+        243.45291046816632
+      ],
+      "pages": 2
+    },
+    "cave": {
+      "approach": [
+        1008.0,
+        405.28
+      ],
+      "pages": 4
+    },
+    "survey": {
+      "approach": [
+        857.970094167978,
+        629.3055501446645
+      ],
+      "pages": 2
+    },
+    "records": {
+      "approach": [
+        475.90711693483274,
+        277.19601290556653
+      ],
+      "pages": 2
+    },
+    "remembrance": {
+      "approach": [
+        288.0,
+        177.28000000000003
+      ],
+      "pages": 2
+    },
+    "cabinet": {
+      "approach": [
+        486.0,
+        177.27999999999997
+      ],
+      "pages": 2
+    }
+  },
+  "walked_loop": true,
+  "public_approaches": {
+    "arrival": [
+      444.0,
+      642.0
+    ],
+    "hall": [
+      534.0,
+      369.99999999999994
+    ],
+    "gardener": [
+      212.00000000000003,
+      480.0
+    ],
+    "visitor_1": [
+      264.00000000000006,
+      333.99999999999994
+    ],
+    "visitor_2": [
+      300.0,
+      320.0
+    ],
+    "grove": [
+      292.09466114894593,
+      244.10620595562756
+    ],
+    "cave": [
+      1008.0,
+      406.0
+    ],
+    "survey": [
+      857.7438711189455,
+      629.9890873653675
+    ],
+    "boundary": [
+      456.0109126346325,
+      653.7438711189455
+    ],
+    "rest_bench": [
+      180.01091449099872,
+      570.2561368230187
+    ]
+  },
+  "cloister_bays": [
+    {
+      "id": "cloister_bay_1",
+      "front": [
+        700,
+        366
+      ],
+      "inside": [
+        700,
+        318
+      ]
+    },
+    {
+      "id": "cloister_bay_2",
+      "front": [
+        776,
+        366
+      ],
+      "inside": [
+        776,
+        318
+      ]
+    },
+    {
+      "id": "cloister_bay_3",
+      "front": [
+        852,
+        366
+      ],
+      "inside": [
+        852,
+        318
+      ]
+    }
+  ],
+  "depth_walks": [
+    {
+      "id": "reserve_tree_43",
+      "entity_id": "reserve_tree_43",
+      "behind": [
+        144,
+        238
+      ],
+      "front": [
+        144,
+        310
+      ]
+    },
+    {
+      "id": "court_basin",
+      "behind": [
+        768,
+        370
+      ],
+      "front": [
+        768,
+        412
+      ]
+    },
+    {
+      "id": "grove_bench",
+      "behind": [
+        264,
+        260
+      ],
+      "front": [
+        264,
+        334
+      ]
+    }
+  ],
+  "ordinary_movement_only": true,
+  "transit_omitted_from_movie": true,
+  "blocked_probes": {
+    "hall_wall": [
+      460,
+      320
+    ],
+    "tree_root": [
+      144,
+      276
+    ],
+    "cloister_column": [
+      659,
+      331
+    ],
+    "cave_keeper_rail": [
+      1008,
+      365
+    ],
+    "survey_seam": [
+      934,
+      534
+    ],
+    "south_boundary": [
+      576,
+      668
+    ]
+  },
+  "full_foot_flood": {
+    "grid_step": 6,
+    "player_probe": [
+      24,
+      12
+    ],
+    "every_edge_pixel_checked": true,
+    "npc_bodies_omitted": true,
+    "clear_nodes": 16330,
+    "arrival_connected_nodes": 16330
+  },
+  "grass_crossings": [
+    {
+      "name": "north shoulder",
+      "start": [
+        430,
+        96
+      ],
+      "end": [
+        430,
+        73
+      ],
+      "direct_steering": true
+    },
+    {
+      "name": "shaded grove",
+      "start": [
+        250,
+        370
+      ],
+      "end": [
+        220,
+        370
+      ],
+      "direct_steering": true
+    },
+    {
+      "name": "south grove lawn",
+      "start": [
+        336,
+        571
+      ],
+      "end": [
+        300,
+        571
+      ],
+      "direct_steering": true
+    },
+    {
+      "name": "south-west grass",
+      "start": [
+        339,
+        603
+      ],
+      "end": [
+        309,
+        603
+      ],
+      "direct_steering": true
+    }
+  ],
+  "continue_reserve": true,
+  "continue_grass_feet": [
+    309.0,
+    603.0
+  ],
+  "loop_waypoints": [
+    [
+      444,
+      642
+    ],
+    [
+      264,
+      600
+    ],
+    [
+      192,
+      516
+    ],
+    [
+      192,
+      384
+    ],
+    [
+      264,
+      334
+    ],
+    [
+      292,
+      244
+    ],
+    [
+      336,
+      192
+    ],
+    [
+      528,
+      84
+    ],
+    [
+      744,
+      96
+    ],
+    [
+      960,
+      168
+    ],
+    [
+      1100,
+      240
+    ],
+    [
+      1100,
+      336
+    ],
+    [
+      1100,
+      396
+    ],
+    [
+      1100,
+      444
+    ],
+    [
+      1008,
+      432
+    ],
+    [
+      864,
+      456
+    ],
+    [
+      864,
+      552
+    ],
+    [
+      924,
+      570
+    ],
+    [
+      924,
+      630
+    ],
+    [
+      858,
+      630
+    ],
+    [
+      660,
+      624
+    ],
+    [
+      444,
+      642
+    ]
+  ],
+  "cave_barrier": {
+    "footprint": [
+      972,
+      359,
+      72,
+      12
+    ],
+    "stopped_feet": [
+      1008.0,
+      377.20000000000056
+    ],
+    "ordinary_forward_input_blocked": true
+  },
+  "hall_depth_walk": {
+    "behind": [
+      45,
+      296
+    ],
+    "front": [
+      45,
+      318
+    ],
+    "source": "ordinary Game movement"
+  },
+  "continue_hall": true,
+  "round_trip_complete": true,
+  "progression_unchanged": true,
+  "saved_journey_valid": true,
+  "movie": {
+    "file": "reserve_walk.mp4",
+    "fps": 15,
+    "frames": 875,
+    "seconds": 58.333333333333336
+  },
+  "artifact_sha256": {
+    "arrival.png": "5402e712530d16f365d7b992ed6e97d4d35ea2fbbe7aad0d323e246279ebffcf",
+    "boundary.png": "18b21578c9051986a789da175c2b0e30693ba16351fe3b3fb75d30a9e8ead85a",
+    "caretaker.png": "43cfa0b5ddc48f6951c8e2d4626531fab9e576fe4d058510936616816038deb0",
+    "cave.png": "2b664585f8dbb45e547e62501c1ba4c1bc7b140f2f81b7b7c61b37b4cc821044",
+    "cloister_1.png": "bbbf3366f2d626ed57f6e8e758f5874281913b3293edd6fe886a697dad52eefa",
+    "cloister_2.png": "e3b2ecc95e8cb58a14105a4cfa13aaf1942432df7e9126020c370d98885385ac",
+    "cloister_3.png": "8eb0e2d6d9e61310d2f8521f54386dc09184900b3b54e0e3436f52f539480d6c",
+    "continue_on_grass.png": "93665a87adc5308d4a6d42780012161900e7fd75efe787d8906ef9768b1e52f6",
+    "depth_1_behind.png": "f6d26d3476c1659f67eebcf5cfb4b6669741c5164135faa6891eb4d15cb45a60",
+    "depth_1_front.png": "6625ee099287fdf6a141e7cc29cc62d6e573059065183c99a7d4c5a655ddf3d5",
+    "depth_2_behind.png": "93860bf13e6503e983d49554f01351bba47f90e01ec89391494f2828fa363568",
+    "depth_2_front.png": "0b0f083f65beba692ce0ff0730635a290f383b892d61eb7200a7bd61b3a302b0",
+    "depth_3_behind.png": "a4a414172c7bcca35b2b71333479773edd10f461ac2adf90b44a31a17a12f836",
+    "depth_3_front.png": "1736e2c09d2bea3890427d0d19a79ac63a55708ab4395ac028f415370b5e23fa",
+    "grass_1.png": "5a80a6f57ad51e92eee68322be34fefbdddd02b7adc51a39bee06362350e003b",
+    "grass_2.png": "5c8993945924e4b7b484274f5f23969e46a5071a4e05be6e38dad157e111f9a9",
+    "grass_3.png": "1dae852c513e1a3d71b8df01d76dd75e1d9f4e1e5b5f642dafdbb12737ebe4fc",
+    "grass_4.png": "6163b1ef789a6cdd81ee2eb7d152a408dda1d856ec3935b5cc74953f383ac2ba",
+    "grove.png": "e0fccc53053e58d4648491036abe1baa381b58bb1f42c202154f2acebb9f4e79",
+    "hall.png": "0a2038eab43ffb3f24760220620f2c0595e4cb11d8901ed188a52aad3f3dff79",
+    "hall_court.png": "26533cd9ae9fab7bd3af66efc0cb33f421e95a7d433eff9e624feaa0e76c2cd5",
+    "hall_overview.png": "5a227840ac07a01f4b944008caa75040f4277da2c921df0cf41d736373f3ef28",
+    "hall_plant_behind.png": "be751a1484ae7fb5cc2ace6eee3298f33d9ce172940f765f7915cfd04b9a0c93",
+    "hall_plant_front.png": "78e67bb614f737c843e44f9e8986e85d7acc48308583d5e7bec07942b324b5c8",
+    "hall_records.png": "be340e635810321a6c72265c5638325640e38f44b0c18dc22c9da4a5e0469d7e",
+    "local_map.png": "4bb73c2dd5f6de5b1e9387400eb27653d4cd84bf9048081666410f9e2ca83dc0",
+    "overworld_return.png": "d547ca117d0c0023423bd054241eb05567867e96bc9d80019fc4e4baf080f469",
+    "reserve_overview.png": "8b9786fc18a73c435b607f8737b87ee11430c3c3a76ae687f8ea15b5d0835c8a",
+    "reserve_walk.mp4": "21ef7125f18b91f0ed1e55851765ccd71780ece0dff2720640a1b110a28c699b",
+    "scene_contact.png": "3509bb89cf0c62756856523bd147de1a593c5ed53ee5297fa049f20627653a7d",
+    "survey.png": "95fe36f92834d54436d552cfeaaf955bebfd34178c9d6daef636d6035c31dd51",
+    "visible_cave_barrier.png": "8e7d57a3403b8e00cba0ba4d362395c179bf18a3d9d50b78e8156973efeb9a77",
+    "visitors.png": "ca6a41eb1a6d758a675817e3c0b5739d3c36dd1391570004917f158508bd7d98"
+  }
+}

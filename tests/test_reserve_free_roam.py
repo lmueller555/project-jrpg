@@ -1,8 +1,7 @@
-"""Clear scenery must accept real feet, including ground outside the old roads.
+"""Clear native scenery accepts real feet, including grass beyond the roads.
 
-The coordinates below were read from the retained ground painting and reviewed
-cloister floor patch, independently of the navigation recipe. They include lawn, path shoulders and
-the floor under the cloister rather than only landmark approach points.
+The independent samples cover lawns, path shoulders and the open cloister
+bays, rather than only the builder's named landmark approach points.
 """
 from collections import deque
 import json
@@ -23,11 +22,11 @@ from main import Game, Player, World, camera_for
 ROOT = Path(__file__).resolve().parents[1]
 MAP = ROOT/'assets/maps/elden_vale_sanctuary/map.json'
 
-# Independent observations of visible ground and the reviewed opening floors.
+# Independent observations of visible native ground and open cloister floors.
 VISIBLE_GROUND = {
     'north-west shoulder': (430, 81),
-    'grass behind the hall': (510, 120),
-    'north-east grass': (808, 96),
+    'grass behind the hall': (558,114),
+    'north-east grass': (744,108),
     'north-east shoulder': (958, 104),
     'shaded grove lawn': (220, 385),
     'grove inner lawn': (355, 385),
@@ -36,24 +35,24 @@ VISIBLE_GROUND = {
     'south court shoulder': (598, 575),
     'survey inner lawn': (917, 610),
     'survey east lawn': (1050, 590),
-    'cloister west bay': (666, 302),
-    'cloister middle-west bay': (717, 302),
-    'cloister middle-east bay': (771, 302),
-    'cloister west rear floor': (666, 291),
-    'cloister middle-west rear floor': (717, 291),
-    'cloister middle-east rear floor': (771, 291),
+    'cloister west bay': (699,317),
+    'cloister middle bay': (775,317),
+    'cloister east bay': (851,317),
+    'cloister west rear floor': (699,291),
+    'cloister middle rear floor': (775,291),
+    'cloister east rear floor': (851,291),
 }
 
-# Cross an old road edge directly; an A* detour would hide the original fault.
+# Cross path shoulders directly; an A* detour could hide an invisible barrier.
 FREE_CROSSINGS = {
     'north shoulder': ((430, 96), (430, 73)),
     'shaded grove': ((250, 370), (220, 370)),
     'south grove lawn': ((336, 571), (300, 571)),
     'south-west grass': ((339, 603), (309, 603)),
     'survey lawn': ((917, 634), (917, 610)),
-    'cloister west opening': ((666, 326), (666, 291)),
-    'cloister middle-west opening': ((717, 320), (717, 291)),
-    'cloister middle-east opening': ((771, 315), (771, 291)),
+    'cloister west opening': ((699,365),(699,291)),
+    'cloister middle opening': ((775,365),(775,291)),
+    'cloister east opening': ((851,365),(851,291)),
 }
 
 
@@ -111,7 +110,7 @@ class ReserveFreeRoamTests(unittest.TestCase):
             with self.subTest(ground=label):
                 self.assertTrue(self.world.can_stand(point), (label, point))
 
-    def test_player_crosses_former_corridor_edges_in_both_directions(self):
+    def test_player_crosses_path_shoulders_in_both_directions(self):
         player = Player(self.world)
         for label, (start, end) in FREE_CROSSINGS.items():
             with self.subTest(ground=label):
@@ -136,6 +135,7 @@ class ReserveFreeRoamTests(unittest.TestCase):
     def test_broad_full_foot_flood_reaches_visual_ground_and_public_approaches(self):
         clear, reached = full_foot_flood(self.world)
         self.assertGreater(len(reached), 8000, 'Only a narrow road network is open')
+        self.assertEqual(clear,reached,'Clear standing spots must not form unreachable pockets')
         for label, point in {**VISIBLE_GROUND, **self.world.data['public_approaches']}.items():
             nearest = min(clear, key=lambda p:(p[0]-point[0])**2+(p[1]-point[1])**2)
             self.assertLessEqual(pygame.Vector2(nearest).distance_to(point), 5, label)
@@ -145,14 +145,14 @@ class ReserveFreeRoamTests(unittest.TestCase):
         player = Player(self.world)
         for name, start, direction, axis, boundary in (
                 ('hall wall', (470, 362), (0, -1), 1, 337),
-                ('basin', (750, 383), (0, -1), 1, 345),
-                ('western oak roots', (59, 382), (1, 0), 0, 100),
-                ('cliff face', (698, 481), (0, -1), 1, 437),
+                ('basin',(768,412),(0,-1),1,394),
+                ('western oak roots',(184,276),(-1,0),0,156),
+                ('cliff face',(648,550),(0,-1),1,512),
                 ('southern stone wall', (670, 635), (0, 1), 1, 695),
-                ('cloister back wall', (666, 302), (0, -1), 1, 284),
-                ('cloister column', (666, 302), (1, 0), 0, 685),
-                ('eastern cloister worktable', (824, 330), (0, -1), 1, 315),
-                ('visible cave rail', (1008, 406), (0, -1), 1, 377)):
+                ('cloister back wall',(699,317),(0,-1),1,285),
+                ('cloister column',(699,331),(1,0),0,731),
+                ('court bench',(720,480),(0,-1),1,462),
+                ('visible cave rail',(1008,406),(0,-1),1,371)):
             with self.subTest(solid=name):
                 self.assertTrue(self.world.can_stand(start), (name, start))
                 player.position.update(start)
@@ -162,35 +162,35 @@ class ReserveFreeRoamTests(unittest.TestCase):
                     self.assertGreater(player.position[axis], boundary, (name, player.position))
                 else:
                     self.assertLess(player.position[axis], boundary, (name, player.position))
-        for point in ((822,303), (808,309), (843,315), (875,309)):
-            self.assertFalse(self.world.can_stand(point), ('Solid garden workstation', point))
-        for x in (666,717,771):
+        for point in ((661,331),(737,331),(813,331),(889,331)):
+            self.assertFalse(self.world.can_stand(point),('Solid cloister column',point))
+        for x in (699,775,851):
             self.assertFalse(self.world.can_stand((x,286)), ('Visible rear wall base', x))
 
-    def test_open_bay_feet_rest_on_revised_floor_instead_of_original_masonry(self):
-        # The retained painting has masonry across the upper half of each of
-        # these 24×12 feet. A reviewed floor patch must replace those pixels in
-        # the actual renderer before those standing spots are treated as open.
-        invisible = SimpleNamespace(position=pygame.Vector2(), story_visible=False)
-        original = pygame.image.load(str(ROOT/'assets/terrain/elden_vale_sanctuary/ground.png')).convert()
-        for feet in ((666,302), (717,302), (771,302)):
+    def test_open_bay_feet_are_visible_on_the_floor_in_the_actual_renderer(self):
+        color = (251,0,245)
+        sprite = pygame.Surface((24,36),pygame.SRCALPHA)
+        sprite.fill((0,0,0,0));sprite.fill(color,pygame.Rect(0,24,24,12))
+        for feet in ((699,317),(775,317),(851,317)):
             with self.subTest(feet=feet):
+                self.assertTrue(self.world.can_stand(feet))
                 camera = camera_for(feet, self.world.size)
                 canvas = pygame.Surface((480, 320))
-                self.world.draw(canvas, camera, invisible, 0)
+                marker = SimpleNamespace(position=pygame.Vector2(feet),sprite=lambda:sprite)
+                self.world.draw(canvas,camera,marker,0)
                 rect = self.world.probe_rect(feet)
-                former_wall = [(x,y) for y in range(rect.top, rect.centery)
-                               for x in range(rect.left, rect.right)]
-                changed = sum(canvas.get_at((x-camera[0],y-camera[1]))
-                              != original.get_at((x,y)) for x,y in former_wall)
-                self.assertGreater(changed/len(former_wall), .9,
-                                   ('Player feet still overlap the original painted masonry', feet))
+                samples = [(x,y) for y in range(rect.top,rect.bottom)
+                           for x in range(rect.left,rect.right)]
+                visible = sum(canvas.get_at((x-camera[0],y-camera[1]))[:3] == color
+                              for x,y in samples)
+                self.assertGreater(visible/len(samples),.9,
+                                   ('Scenery covers feet on a traversable floor',feet))
 
     def test_new_cloister_floor_and_ground_behind_the_roof_preserve_depth(self):
         player = Player(self.world);player.facing = 'front'
-        for feet, point, hidden in (((717, 302), (717, 282), False),
-                                    ((717, 269), (717, 249), True),
-                                    ((510, 180), (510, 160), True)):
+        for feet, point, hidden in (((699,317),(699,297),False),
+                                    ((699,291),(699,271),True),
+                                    ((535,315),(535,295),True)):
             with self.subTest(feet=feet):
                 player.position.update(feet)
                 self.assertTrue(self.world.can_stand(feet))

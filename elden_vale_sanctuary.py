@@ -19,7 +19,7 @@ class SanctuaryReserveWorld(World):
     def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
         super().draw(target,camera,player,elapsed_ms,include_ui,party_actors=party_actors)
         # A few slow currents are visible in the grove. Their tiny native
-        # glimmers accompany the retained plate's faint lights, not a new rune.
+        # glimmers move among the grove's native pixel foliage.
         record = self.data['confluence_motes'];cx,cy = record['center']
         rx,ry = record['radius'];time = 0 if self.reduced_motion else elapsed_ms/1000
         surface = pygame.Surface(target.get_size(),pygame.SRCALPHA)

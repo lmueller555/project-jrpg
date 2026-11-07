@@ -101,6 +101,13 @@ All nine buildings have separate furnished interiors. Cottages use the approved 
 
 The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
+The sanctuary miniature opens into the [Elden Vale Sanctuary reserve](docs/SANCTUARY_RESERVE.md).
+Its woodland paths, memorial grove, limestone hall, open cloister and small hall
+interior use the same native pixel asset packs and character scale as Eldenmere.
+The [pixel asset review](docs/reviews/sanctuary_pixel_assets/README.md) shows free
+exploration, conversations, inspections, the local map and hall access. The cave
+keeper rail and intact survey face retain their existing story boundaries.
+
 The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives the vale distinct farmsteads and crop parcels, orchards, clustered forests, rocky slopes and planted riverbanks. Worn stone roads, cart tracks and woodland paths connect the new scenery, with wildlife, laundry, relief supplies and small resting places adding local character.
 
 The [place-composition pass](docs/reviews/elden_vale_composition/README.md) brings farm working areas, property boundaries, orchard arrivals, relief loading and gate duty stations into connected arrangements. The destroyed western bridge now has a three-tile-wide roadway, with a collapsed center that keeps the crossing closed.
