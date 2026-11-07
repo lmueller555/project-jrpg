@@ -371,7 +371,7 @@
   ],
   "authoring": "native_pixel_asset_modules",
   "source_recipe": "assets/source/terrain/elden_vale_sanctuary_hall/recipe.json",
-  "source_recipe_sha256": "1575aaa5d3d61cf21ea4263b479926fc4475aa8ccd07a920281c1b7d8c455677",
+  "source_recipe_sha256": "e30290020204957615f76cbb8bae4e613865837167fad68c700385dadd9dc958",
   "source_assets": [
     {
       "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_a.png",
@@ -549,5 +549,60 @@
     336,
     48,
     20
-  ]
+  ],
+  "fantasy_details": {
+    "authoring": "native_pixel_geometry",
+    "palette": {
+      "stone_dark": "#687568",
+      "stone_shadow": "#a5ae99",
+      "stone_light": "#d8d5bc",
+      "glass_shadow": "#335a65",
+      "cyan": "#69bcb4",
+      "cyan_light": "#a7ddd1",
+      "violet": "#9d83bb",
+      "violet_light": "#c5add9",
+      "opal": "#eef2de",
+      "lamp_dark": "#8d5e40",
+      "amber": "#d9aa64",
+      "lamp_light": "#fff0b7"
+    },
+    "wall_details": [
+      {
+        "module": "branch_carving",
+        "position": [
+          150,
+          62
+        ]
+      },
+      {
+        "module": "branch_carving",
+        "position": [
+          332,
+          62
+        ]
+      },
+      {
+        "module": "cycle_medallion",
+        "position": [
+          272,
+          56
+        ]
+      },
+      {
+        "module": "memorial_lamp",
+        "position": [
+          171,
+          107
+        ]
+      },
+      {
+        "module": "memorial_lamp",
+        "position": [
+          402,
+          107
+        ]
+      }
+    ],
+    "notes": "Mounted ornaments fit existing north-wall footprint; furniture, floor, doors and all inspection positions remain unchanged."
+  }
 }

@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "id": "sanctuary_fantasy.grove.24",
+  "status": "production",
+  "tile_size": 24,
+  "palette": {
+    "outline": "#203f39",
+    "leaf_deep": "#2b5548",
+    "leaf_shadow": "#396d58",
+    "leaf_mid": "#568e70",
+    "leaf_light": "#80b39a",
+    "leaf_silver": "#abd3bb",
+    "leaf_tip": "#d9e8cf",
+    "leaf_cyan": "#8fccc2",
+    "wood_deep": "#34453d",
+    "wood_shadow": "#4b6050",
+    "wood_mid": "#71836b",
+    "wood_light": "#a4b18a",
+    "wood_tip": "#c7cdab",
+    "moss": "#378268",
+    "blossom": "#edf2d9",
+    "blossom_shadow": "#9fcfc3",
+    "amethyst": "#b6a4d0",
+    "ground": "#2c7c50"
+  },
+  "modules": {
+    "landmark_roots": {
+      "id": "sanctuary.grove.landmark_roots",
+      "size": [
+        192,
+        176
+      ],
+      "anchor": [
+        112,
+        164
+      ],
+      "footprints": [],
+      "layer": "ground_detail",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_roots/frame_00.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "landmark_trunk": {
+      "id": "sanctuary.grove.landmark_trunk",
+      "size": [
+        192,
+        176
+      ],
+      "anchor": [
+        112,
+        164
+      ],
+      "footprints": [
+        [
+          -12,
+          -12,
+          24,
+          24
+        ]
+      ],
+      "layer": "entity",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_trunk/frame_00.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "ground_base_only"
+    },
+    "landmark_canopy": {
+      "id": "sanctuary.grove.landmark_canopy",
+      "size": [
+        192,
+        176
+      ],
+      "anchor": [
+        112,
+        164
+      ],
+      "footprints": [],
+      "layer": "overhead_canopy",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_02.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_03.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_04.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_05.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "sapling_arching": {
+      "id": "sanctuary.grove.sapling_arching",
+      "size": [
+        48,
+        72
+      ],
+      "anchor": [
+        24,
+        60
+      ],
+      "footprints": [
+        [
+          -12,
+          -12,
+          24,
+          24
+        ]
+      ],
+      "layer": "entity",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_02.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_03.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_04.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_arching/frame_05.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "ground_base_only"
+    },
+    "sapling_upright": {
+      "id": "sanctuary.grove.sapling_upright",
+      "size": [
+        48,
+        72
+      ],
+      "anchor": [
+        24,
+        60
+      ],
+      "footprints": [
+        [
+          -12,
+          -12,
+          24,
+          24
+        ]
+      ],
+      "layer": "entity",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_02.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_03.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_04.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/sapling_upright/frame_05.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "ground_base_only"
+    },
+    "blossom_white": {
+      "id": "sanctuary.grove.blossom_white",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        21
+      ],
+      "footprints": [],
+      "layer": "ground_detail",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_white/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_white/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_white/frame_02.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "blossom_cyan": {
+      "id": "sanctuary.grove.blossom_cyan",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        21
+      ],
+      "footprints": [],
+      "layer": "ground_detail",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_cyan/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_cyan/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/blossom_cyan/frame_02.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "moss_fan": {
+      "id": "sanctuary.grove.moss_fan",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        21
+      ],
+      "footprints": [],
+      "layer": "ground_detail",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_fan/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_fan/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_fan/frame_02.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "moss_rosette": {
+      "id": "sanctuary.grove.moss_rosette",
+      "size": [
+        24,
+        24
+      ],
+      "anchor": [
+        12,
+        21
+      ],
+      "footprints": [],
+      "layer": "ground_detail",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_rosette/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_rosette/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/moss_rosette/frame_02.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "none"
+    },
+    "petal_white": {
+      "id": "sanctuary.grove.petal_white",
+      "size": [
+        8,
+        8
+      ],
+      "anchor": [
+        4,
+        4
+      ],
+      "footprints": [],
+      "layer": "particle",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_white/frame_00.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_white/frame_01.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_white/frame_02.png",
+          "duration_ms": 500
+        }
+      ],
+      "collision": "none"
+    },
+    "petal_cyan": {
+      "id": "sanctuary.grove.petal_cyan",
+      "size": [
+        8,
+        8
+      ],
+      "anchor": [
+        4,
+        4
+      ],
+      "footprints": [],
+      "layer": "particle",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_cyan/frame_00.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_cyan/frame_01.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_cyan/frame_02.png",
+          "duration_ms": 500
+        }
+      ],
+      "collision": "none"
+    },
+    "petal_amethyst": {
+      "id": "sanctuary.grove.petal_amethyst",
+      "size": [
+        8,
+        8
+      ],
+      "anchor": [
+        4,
+        4
+      ],
+      "footprints": [],
+      "layer": "particle",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_amethyst/frame_00.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_amethyst/frame_01.png",
+          "duration_ms": 500
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/petal_amethyst/frame_02.png",
+          "duration_ms": 500
+        }
+      ],
+      "collision": "none"
+    },
+    "landmark_combined": {
+      "id": "sanctuary.grove.landmark_combined",
+      "size": [
+        192,
+        176
+      ],
+      "anchor": [
+        112,
+        164
+      ],
+      "footprints": [
+        [
+          -12,
+          -12,
+          24,
+          24
+        ]
+      ],
+      "layer": "review_composite",
+      "frames": [
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_00.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_01.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_02.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_03.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_04.png",
+          "duration_ms": 800
+        },
+        {
+          "image": "assets/terrain/sanctuary_fantasy/grove/landmark_combined/frame_05.png",
+          "duration_ms": 800
+        }
+      ],
+      "collision": "ground_base_only"
+    }
+  },
+  "source_recipe": "assets/source/terrain/sanctuary_fantasy/grove.json",
+  "source_recipe_sha256": "15c4ead603a10bde42874db2604abbf0002a4944caf138fc04b1300a8eaf755a",
+  "source_assets": [
+    {
+      "path": "assets/terrain/eldenmere/foliage/tree/idle.png",
+      "sha256": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    },
+    {
+      "path": "assets/terrain/eldenmere/foliage/palette.json",
+      "sha256": "dc4c9a14d3eebacd7134a165434291c2a905c63847f9e5b2f8e58b866a387acd"
+    }
+  ],
+  "wind": {
+    "whole_tree_moves": false,
+    "fixed_silhouette": true,
+    "frame_duration_ms": 800,
+    "cycle_duration_ms": 4800
+  },
+  "reference_character_visible_height": 34,
+  "landmark_visible_height": 170,
+  "authoring": "Authored native branch graphs and cluster silhouettes; original approved tree canopy crops supply palette-adapted irregular leaf texture at1:1scale. No scene painting or upscaled source participates."
+}

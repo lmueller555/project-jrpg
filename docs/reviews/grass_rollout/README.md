@@ -22,14 +22,3 @@ retains counts, actual coordinates and final source/artifact fingerprints.
 Regenerate with `python tools/capture_grass_rollout.py`; verify with
 `python tools/capture_grass_rollout.py --check`. Captures use temporary save and
 settings paths and do not modify journey files or map assets.
-
-Final validation passes **189 tests and 3,126 subtests**, covering grass assets,
-contact and visibility, journey resets, map geometry, party travel, Sanctuary
-and mill travel, quest interactions, saves and Gallery sessions. Asset and map
-build checks pass. Collision masks for all three detailed outdoor maps remain
-byte-for-byte identical to the pre-rollout versions.
-
-The final 17.8-second movie contains 356 frames at 960 × 640 / 20 fps.
-Across the town and Sanctuary, 40,756 opaque upper-body pixel comparisons show
-zero occlusion; leg overlap appears in 180 checked frames. Source/artifact
-fingerprints and video metadata were verified after the journey-reset fix.

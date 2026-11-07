@@ -7,6 +7,12 @@ pale limestone hall and side cloister, a tended memorial grove to the west,
 the cave approach on the eastern ridge, and a surveyed stone face within the
 southeastern protected boundary.
 
+The [fantasy expansion](SANCTUARY_FANTASY.md) gives the cave an asymmetric crown
+of amethyst, cyan, opal and amber crystals. A silver-green memorial tree,
+carved architectural details, buried masonry and reflecting water repeat the
+same materials through the grounds. Native pixel assets remain independently
+placed, with slow local animation and restrained positional ambience.
+
 The site remains separate from Serene's home in Eldenmere. Its living grove,
 natural aether confluence and shared keeping retain the meaning established in
 [the faith guide](world/ELDEN_VALE_FAITH.md) and
@@ -64,16 +70,19 @@ ownership. Continuing a journey saved here resumes in the corresponding scene.
 
 ## Review and reproduction
 
-The [pixel asset review](reviews/sanctuary_pixel_assets/README.md) records the
+The [current fantasy review](reviews/sanctuary_fantasy/README.md) records the
+landmarks, ordinary movement, atmosphere, hall, local map and continued journeys.
+The earlier [pixel asset review](reviews/sanctuary_pixel_assets/README.md) records the
 reserve and hall at normal character scale, ordinary travel from Eldenmere,
 free exploration, the cloister, cave rail, optional inspections, local map and
 Save/Continue. Its disposable save and settings files leave player journeys
 untouched. Reproduce with `python tools/capture_sanctuary_reserve.py`.
 
-The exterior retains its 48 × 32 tile extent at 24 pixels per tile. Grass,
-connected dirt paths, foliage, flowers, benches, paving and constructed masonry
-come from Eldenmere's reusable packs. Sanctuary-specific limestone architecture,
-natural rock and cave pieces extend those packs at the same character scale.
+The exterior retains its 48 × 32 tile extent at 24 pixels per tile. Emerald grass
+and matching dirt transitions use the shared approved pack. Ordinary foliage,
+flowers, benches, paving and masonry reuse Eldenmere modules. Sanctuary-specific
+crystals, memorial vegetation, architecture, rock and cave pieces extend those
+packs at the same character scale.
 The hall uses modular floors, walls and individual furnishings.
 
 Ground layers are compiled for runtime efficiency. Trees, architecture and
@@ -90,10 +99,16 @@ deterministic build checks make the replacement reproducible.
 Rebuild the checked-in scenes with Pillow available:
 
 ```sh
+python tools/build_sanctuary_crystals.py
+python tools/build_sanctuary_grove.py
 python tools/build_elden_vale_sanctuary.py
 python tools/build_sanctuary_reserve_hall.py
+python tools/build_overworld_sanctuary_art.py
+python tools/build_sanctuary_crystals.py --check
+python tools/build_sanctuary_grove.py --check
 python tools/build_elden_vale_sanctuary.py --check
 python tools/build_sanctuary_reserve_hall.py --check
+python tools/build_overworld_sanctuary_art.py --check
 ```
 
 The exterior placement recipe is

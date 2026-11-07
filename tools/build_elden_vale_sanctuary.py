@@ -38,6 +38,8 @@ def products():
                  npcs=[],world_links=[],
                  asset_instances=art['asset_instances'],
                  grass=art['grass'],
+                 fantasy_effects=art['fantasy_effects'],
+                 fantasy_review_points=art['fantasy_review_points'],
                  collision_footprints=art['collision_footprints'],
                  depth_samples=art['depth_samples'],cloister_bays=art['cloister_bays'],
                  blocked_probes={'hall_wall':[460,320],'tree_root':[144,276],

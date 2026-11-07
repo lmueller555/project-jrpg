@@ -1,0 +1,456 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.crystals.24",
+  "tile_size": 24,
+  "authoring": "Native authored shard geometry and facet graphs; limestone texture sampled from the established ridge pack. No scene painting or scaling.",
+  "frame_duration_ms": 700,
+  "palettes": {
+    "amethyst": {
+      "deep": "#322d50",
+      "shadow": "#594479",
+      "mid": "#8462ad",
+      "light": "#b28ad5",
+      "bright": "#ddbaed",
+      "glint": "#f4e1f3"
+    },
+    "cyan": {
+      "deep": "#203e4b",
+      "shadow": "#306b7c",
+      "mid": "#4c9aa8",
+      "light": "#7bc9cd",
+      "bright": "#b9eadb",
+      "glint": "#e2f7e6"
+    },
+    "opal": {
+      "deep": "#3c555c",
+      "shadow": "#648993",
+      "mid": "#96b5bb",
+      "light": "#c3d4ce",
+      "bright": "#e3e9d9",
+      "glint": "#fff5df"
+    },
+    "amber": {
+      "deep": "#51402f",
+      "shadow": "#86603a",
+      "mid": "#b18448",
+      "light": "#d3ab67",
+      "bright": "#eed599",
+      "glint": "#fff0c6"
+    }
+  },
+  "limestone": {
+    "source": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+    "sha256": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "crop": [
+      24,
+      20,
+      48,
+      44
+    ],
+    "ramp": [
+      "#3e5149",
+      "#5c6d5e",
+      "#7d8b75",
+      "#9eaa90",
+      "#bdc3a6",
+      "#dedcc0"
+    ]
+  },
+  "shapes": {
+    "small_needle": {
+      "size": [
+        24,
+        32
+      ],
+      "anchor": [
+        12,
+        27
+      ],
+      "footprints": [
+        [
+          5,
+          23,
+          14,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          11,
+          27,
+          7,
+          12,
+          5
+        ],
+        [
+          13,
+          27,
+          15,
+          3,
+          5
+        ],
+        [
+          17,
+          27,
+          22,
+          17,
+          4
+        ]
+      ]
+    },
+    "small_fan": {
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        35
+      ],
+      "footprints": [
+        [
+          10,
+          31,
+          20,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          17,
+          35,
+          3,
+          19,
+          6
+        ],
+        [
+          17,
+          35,
+          12,
+          8,
+          7
+        ],
+        [
+          22,
+          35,
+          24,
+          2,
+          6
+        ],
+        [
+          24,
+          35,
+          36,
+          15,
+          6
+        ],
+        [
+          26,
+          35,
+          35,
+          28,
+          4
+        ]
+      ]
+    },
+    "medium_fork": {
+      "size": [
+        56,
+        68
+      ],
+      "anchor": [
+        28,
+        63
+      ],
+      "footprints": [
+        [
+          17,
+          59,
+          22,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          16,
+          61,
+          3,
+          41,
+          7
+        ],
+        [
+          22,
+          63,
+          15,
+          15,
+          10
+        ],
+        [
+          31,
+          61,
+          35,
+          2,
+          12
+        ],
+        [
+          38,
+          62,
+          49,
+          29,
+          8
+        ],
+        [
+          30,
+          64,
+          25,
+          44,
+          6
+        ],
+        [
+          44,
+          63,
+          53,
+          50,
+          5
+        ]
+      ]
+    },
+    "medium_fan": {
+      "size": [
+        72,
+        76
+      ],
+      "anchor": [
+        36,
+        71
+      ],
+      "footprints": [
+        [
+          23,
+          67,
+          26,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          19,
+          68,
+          3,
+          47,
+          8
+        ],
+        [
+          29,
+          69,
+          13,
+          21,
+          12
+        ],
+        [
+          37,
+          71,
+          32,
+          5,
+          13
+        ],
+        [
+          47,
+          67,
+          51,
+          19,
+          10
+        ],
+        [
+          55,
+          70,
+          68,
+          44,
+          8
+        ],
+        [
+          38,
+          72,
+          41,
+          43,
+          7
+        ],
+        [
+          25,
+          72,
+          22,
+          56,
+          5
+        ]
+      ]
+    },
+    "large_spire": {
+      "size": [
+        72,
+        104
+      ],
+      "anchor": [
+        36,
+        99
+      ],
+      "footprints": [
+        [
+          24,
+          95,
+          24,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          18,
+          96,
+          4,
+          68,
+          9
+        ],
+        [
+          27,
+          99,
+          16,
+          25,
+          12
+        ],
+        [
+          39,
+          97,
+          43,
+          2,
+          17
+        ],
+        [
+          49,
+          98,
+          62,
+          37,
+          12
+        ],
+        [
+          56,
+          96,
+          69,
+          73,
+          7
+        ],
+        [
+          30,
+          99,
+          24,
+          70,
+          8
+        ],
+        [
+          41,
+          100,
+          44,
+          79,
+          7
+        ]
+      ]
+    },
+    "large_crown": {
+      "size": [
+        112,
+        112
+      ],
+      "anchor": [
+        56,
+        107
+      ],
+      "footprints": [
+        [
+          42,
+          103,
+          28,
+          6
+        ]
+      ],
+      "shards": [
+        [
+          25,
+          103,
+          3,
+          76,
+          10
+        ],
+        [
+          40,
+          107,
+          16,
+          35,
+          13
+        ],
+        [
+          50,
+          103,
+          40,
+          9,
+          16
+        ],
+        [
+          66,
+          105,
+          72,
+          2,
+          18
+        ],
+        [
+          83,
+          100,
+          97,
+          39,
+          13
+        ],
+        [
+          89,
+          104,
+          109,
+          76,
+          10
+        ],
+        [
+          59,
+          107,
+          57,
+          55,
+          11
+        ],
+        [
+          42,
+          108,
+          35,
+          83,
+          7
+        ],
+        [
+          72,
+          107,
+          80,
+          87,
+          6
+        ]
+      ]
+    }
+  },
+  "notes": [
+    "Every crystal frame keeps its alpha silhouette and basal five rows fixed.",
+    "Colors are art direction only and assign no elemental affinity or collectable resource.",
+    "Solid crystal sockets should use existing ridge footprints; flat seams and buried paving add no collision.",
+    "Native hard alpha and nearest-neighbor review enlargement preserve pixel edges."
+  ],
+  "review_sources": [
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    }
+  ]
+}

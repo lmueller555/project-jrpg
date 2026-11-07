@@ -1,5 +1,6 @@
 {
-  "version": 1,
+  "version": 2,
+  "authoring": "native_pixel_asset_assembly",
   "tiles": {},
   "props": {
     "ridge_sanctuary": {
@@ -11,5 +12,326 @@
     }
   },
   "source_recipe": "assets/source/terrain/overworld/elden_vale/sanctuary/recipe.json",
-  "source_recipe_sha256": "c1db7c147ebd0939f9057a78faaf43adf5054fe89cec0dc9e8e12ca245451381"
+  "source_recipe_sha256": "0cf12e3cd786238b7d4784213053443c21776bdeaff45874b0971945b997ab81",
+  "source_assets": [
+    {
+      "path": "assets/source/terrain/overworld/elden_vale/sanctuary/recipe.json",
+      "sha256": "0cf12e3cd786238b7d4784213053443c21776bdeaff45874b0971945b997ab81"
+    },
+    {
+      "path": "assets/terrain/eldenmere/garden_fence/modules/e_a/module.png",
+      "sha256": "d9aca0592f3d39331e1351af7f266f14f357531bfdb436dc10262632560d56f0"
+    },
+    {
+      "path": "assets/terrain/eldenmere/garden_fence/modules/w_a/module.png",
+      "sha256": "bcd8f4396bd35c3dd23e1a3aeac66cb1050f27a38ad773d7023e83f33595fa45"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "sha256": "71ffcab1d2fc7928a21d33ab27dc1c989b99f85dbf7224941185d1bcdf1217aa"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png",
+      "sha256": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+      "sha256": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_01.png",
+      "sha256": "7f7a902fa214de70dcc418e332ce840f3bc0e3fc49f16181ecbbcd280f8409c8"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_02.png",
+      "sha256": "4706f3fb347a1c4e9256e48276afc65bd66564cb53d432dca228830c6f1ad2b5"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "sha256": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png",
+      "sha256": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
+      "sha256": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png",
+      "sha256": "74627d17dbb1b3f8dfb33cc7a71ea9ab0d36f1860ccbdd397041332c773d7a47"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/tiles/dirt.png",
+      "sha256": "8116e3dbd4f44b749925ffc603994455c78863cb92e0c3f5743272bcbebc091c"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/crystals/assets.json",
+      "sha256": "2643e565f84d453d7447628a5e3bfff8c7cf6877a4de109c7a574189a1a880c3"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_00.png",
+      "sha256": "6b3bff475ef30ac28bb81215cee54b1f18d3cdddd31f529806fec0ab395f1096"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_00.png",
+      "sha256": "481c472fbce6839f2d03c19de9e751965b0fa16b3a6125fd1173cb95b81810b5"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_00.png",
+      "sha256": "5291b37813489fc2a85de62dac418cff911bd2043d1ed8a9e3e4be5f26b19103"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/grove/assets.json",
+      "sha256": "9a40cf49a74c0c181ff06943c4f9d3b385f8acf8191ebca683f497dcc7b97c4a"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/grove/landmark_canopy/frame_00.png",
+      "sha256": "ee15812e9a212683c5fc421961dcda3ef3bdec8537d01596907c6645514cab2c"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/grove/landmark_roots/frame_00.png",
+      "sha256": "ed03fbb56f10e50923bd6c95dc5335868669be230212ff2fdb2864dc764b06e7"
+    },
+    {
+      "path": "assets/terrain/sanctuary_fantasy/grove/landmark_trunk/frame_00.png",
+      "sha256": "760aee40bc66fcb4c5e76d9dc4259978a2fc24c315672ab61ba7360a04848adb"
+    },
+    {
+      "path": "tools/reserve_stone_kit.py",
+      "sha256": "80d648d6370b8fd367cf27015da3ec0fc72cc686ce9858961fa96f32a54cd299"
+    }
+  ],
+  "components": [
+    {
+      "library": "crystals",
+      "module": "crystal.large_crown.amethyst",
+      "position": [
+        57,
+        13
+      ],
+      "fit": [
+        32,
+        45
+      ]
+    },
+    {
+      "library": "crystals",
+      "module": "crystal.large_spire.cyan",
+      "position": [
+        79,
+        23
+      ],
+      "fit": [
+        16,
+        34
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cave",
+      "position": [
+        64,
+        43
+      ],
+      "fit": [
+        30,
+        25
+      ]
+    },
+    {
+      "library": "crystals",
+      "module": "crystal.medium_fan.opal",
+      "position": [
+        75,
+        46
+      ],
+      "fit": [
+        19,
+        23
+      ]
+    },
+    {
+      "library": "grove",
+      "modules": [
+        "landmark_roots",
+        "landmark_trunk",
+        "landmark_canopy"
+      ],
+      "position": [
+        0,
+        13
+      ],
+      "fit": [
+        28,
+        48
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cloister_roof",
+      "position": [
+        57,
+        49
+      ],
+      "fit": [
+        25,
+        8
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cloister_arches",
+      "position": [
+        58,
+        55
+      ],
+      "fit": [
+        24,
+        11
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "hall",
+      "position": [
+        21,
+        32
+      ],
+      "fit": [
+        44,
+        38
+      ]
+    }
+  ],
+  "grounding": {
+    "materials": {
+      "grass": "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png",
+      "dirt": "assets/terrain/overworld/elden_vale/tiles/dirt.png"
+    },
+    "patches": [
+      [
+        [
+          6,
+          45
+        ],
+        [
+          10,
+          41
+        ],
+        [
+          20,
+          41
+        ],
+        [
+          26,
+          44
+        ],
+        [
+          27,
+          49
+        ],
+        [
+          22,
+          52
+        ],
+        [
+          9,
+          51
+        ]
+      ],
+      [
+        [
+          17,
+          61
+        ],
+        [
+          21,
+          57
+        ],
+        [
+          62,
+          57
+        ],
+        [
+          68,
+          62
+        ],
+        [
+          64,
+          69
+        ],
+        [
+          55,
+          71
+        ],
+        [
+          40,
+          69
+        ],
+        [
+          30,
+          70
+        ],
+        [
+          18,
+          67
+        ]
+      ],
+      [
+        [
+          59,
+          61
+        ],
+        [
+          63,
+          58
+        ],
+        [
+          88,
+          58
+        ],
+        [
+          94,
+          61
+        ],
+        [
+          91,
+          68
+        ],
+        [
+          80,
+          70
+        ],
+        [
+          68,
+          68
+        ]
+      ]
+    ],
+    "approach": [
+      [
+        39,
+        64
+      ],
+      [
+        44,
+        64
+      ],
+      [
+        38,
+        71
+      ],
+      [
+        34,
+        75
+      ],
+      [
+        29,
+        74
+      ]
+    ],
+    "notes": "Small irregular disconnected footings use exact24px regional meadow/dirt pixels. Transparent gaps preserve surrounding world material; detailed reserve emerald grass is not painted beneath the regional icon."
+  }
 }

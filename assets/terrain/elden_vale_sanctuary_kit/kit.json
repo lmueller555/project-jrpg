@@ -309,6 +309,34 @@
         72,
         12
       ]
+    },
+    "basin": {
+      "size": [
+        48,
+        34
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [
+        [
+          4,
+          22,
+          40,
+          12
+        ]
+      ],
+      "frames": [
+        "basin_frame_00.png",
+        "basin_frame_01.png",
+        "basin_frame_02.png",
+        "basin_frame_03.png",
+        "basin_frame_04.png",
+        "basin_frame_05.png"
+      ],
+      "frame_duration_ms": 450,
+      "reduced_motion_frame": 0
     }
   }
 }

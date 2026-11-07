@@ -1,6 +1,7 @@
 """The public hall has real navigation, correct furniture depth and a safe exit."""
 import os
 import hashlib
+import json
 from pathlib import Path
 from types import SimpleNamespace
 import unittest
@@ -9,6 +10,7 @@ os.environ.setdefault('SDL_VIDEODRIVER','dummy')
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 import pygame
+from PIL import Image
 
 from main import Player, World
 from npc_routines import find_path
@@ -65,6 +67,30 @@ class SanctuaryReserveHallTests(unittest.TestCase):
         player.update((0,1),.3,self.world)
         self.assertLessEqual(abs(player.position.y-350),1)
         self.assertTrue(door.can_enter(player.position,(0,1)))
+
+    def test_crystal_windows_and_wall_carvings_stay_above_the_existing_walkable_floor(self):
+        data=self.world.data
+        details=data['fantasy_details']
+        self.assertEqual(details['authoring'],'native_pixel_geometry')
+        folder=ROOT/'assets/terrain/elden_vale_sanctuary_hall/fantasy'
+        ground=Image.open(ROOT/data['ground_frames'][0]).convert('RGB')
+        window=Image.open(folder/'crystal_window.png').convert('RGBA')
+        recipe=json.loads((ROOT/data['source_recipe']).read_text())
+        for x,y in recipe['windows']:
+            with self.subTest(window=(x,y)):
+                actual=ground.crop((x,y,x+window.width,y+window.height))
+                for yy in range(window.height):
+                    for xx in range(window.width):
+                        pixel=window.getpixel((xx,yy))
+                        if pixel[3]:self.assertEqual(actual.getpixel((xx,yy)),pixel[:3])
+        for record in details['wall_details']:
+            with self.subTest(module=record['module'],position=record['position']):
+                image=Image.open(folder/(record['module']+'.png')).convert('RGBA')
+                self.assertLessEqual(set(image.getchannel('A').get_flattened_data()),{0,255})
+                self.assertGreaterEqual(record['position'][1],48)
+                self.assertLessEqual(record['position'][1]+image.height,144)
+        self.assertEqual(hashlib.sha256((ROOT/data['collision']).read_bytes()).hexdigest(),
+                         '4574117ff4a450028225d349d11048836eb8378ffeae74d4302ffdeda1c7d956')
 
     def test_full_foot_flood_connects_all_clear_floor_around_the_furniture(self):
         from test_reserve_free_roam import full_foot_flood

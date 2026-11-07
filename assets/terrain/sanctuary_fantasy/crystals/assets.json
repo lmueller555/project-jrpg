@@ -1,0 +1,1107 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.crystals.24",
+  "tile_size": 24,
+  "modules": {
+    "crystal.small_needle.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amethyst/frame_05.png"
+      ],
+      "size": [
+        24,
+        32
+      ],
+      "anchor": [
+        12,
+        27
+      ],
+      "footprints": [
+        [
+          5,
+          23,
+          14,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_needle.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/cyan/frame_05.png"
+      ],
+      "size": [
+        24,
+        32
+      ],
+      "anchor": [
+        12,
+        27
+      ],
+      "footprints": [
+        [
+          5,
+          23,
+          14,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_needle.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/opal/frame_05.png"
+      ],
+      "size": [
+        24,
+        32
+      ],
+      "anchor": [
+        12,
+        27
+      ],
+      "footprints": [
+        [
+          5,
+          23,
+          14,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_needle.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_needle/amber/frame_05.png"
+      ],
+      "size": [
+        24,
+        32
+      ],
+      "anchor": [
+        12,
+        27
+      ],
+      "footprints": [
+        [
+          5,
+          23,
+          14,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_fan.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        35
+      ],
+      "footprints": [
+        [
+          10,
+          31,
+          20,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_fan.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        35
+      ],
+      "footprints": [
+        [
+          10,
+          31,
+          20,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_fan.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        35
+      ],
+      "footprints": [
+        [
+          10,
+          31,
+          20,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.small_fan.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amber/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        35
+      ],
+      "footprints": [
+        [
+          10,
+          31,
+          20,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fork.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_05.png"
+      ],
+      "size": [
+        56,
+        68
+      ],
+      "anchor": [
+        28,
+        63
+      ],
+      "footprints": [
+        [
+          17,
+          59,
+          22,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fork.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/cyan/frame_05.png"
+      ],
+      "size": [
+        56,
+        68
+      ],
+      "anchor": [
+        28,
+        63
+      ],
+      "footprints": [
+        [
+          17,
+          59,
+          22,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fork.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_05.png"
+      ],
+      "size": [
+        56,
+        68
+      ],
+      "anchor": [
+        28,
+        63
+      ],
+      "footprints": [
+        [
+          17,
+          59,
+          22,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fork.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_05.png"
+      ],
+      "size": [
+        56,
+        68
+      ],
+      "anchor": [
+        28,
+        63
+      ],
+      "footprints": [
+        [
+          17,
+          59,
+          22,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fan.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_05.png"
+      ],
+      "size": [
+        72,
+        76
+      ],
+      "anchor": [
+        36,
+        71
+      ],
+      "footprints": [
+        [
+          23,
+          67,
+          26,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fan.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png"
+      ],
+      "size": [
+        72,
+        76
+      ],
+      "anchor": [
+        36,
+        71
+      ],
+      "footprints": [
+        [
+          23,
+          67,
+          26,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fan.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/opal/frame_05.png"
+      ],
+      "size": [
+        72,
+        76
+      ],
+      "anchor": [
+        36,
+        71
+      ],
+      "footprints": [
+        [
+          23,
+          67,
+          26,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.medium_fan.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amber/frame_05.png"
+      ],
+      "size": [
+        72,
+        76
+      ],
+      "anchor": [
+        36,
+        71
+      ],
+      "footprints": [
+        [
+          23,
+          67,
+          26,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_spire.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_05.png"
+      ],
+      "size": [
+        72,
+        104
+      ],
+      "anchor": [
+        36,
+        99
+      ],
+      "footprints": [
+        [
+          24,
+          95,
+          24,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_spire.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_05.png"
+      ],
+      "size": [
+        72,
+        104
+      ],
+      "anchor": [
+        36,
+        99
+      ],
+      "footprints": [
+        [
+          24,
+          95,
+          24,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_spire.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/opal/frame_05.png"
+      ],
+      "size": [
+        72,
+        104
+      ],
+      "anchor": [
+        36,
+        99
+      ],
+      "footprints": [
+        [
+          24,
+          95,
+          24,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_spire.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amber/frame_05.png"
+      ],
+      "size": [
+        72,
+        104
+      ],
+      "anchor": [
+        36,
+        99
+      ],
+      "footprints": [
+        [
+          24,
+          95,
+          24,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_crown.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_05.png"
+      ],
+      "size": [
+        112,
+        112
+      ],
+      "anchor": [
+        56,
+        107
+      ],
+      "footprints": [
+        [
+          42,
+          103,
+          28,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_crown.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/cyan/frame_05.png"
+      ],
+      "size": [
+        112,
+        112
+      ],
+      "anchor": [
+        56,
+        107
+      ],
+      "footprints": [
+        [
+          42,
+          103,
+          28,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_crown.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_05.png"
+      ],
+      "size": [
+        112,
+        112
+      ],
+      "anchor": [
+        56,
+        107
+      ],
+      "footprints": [
+        [
+          42,
+          103,
+          28,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "crystal.large_crown.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amber/frame_05.png"
+      ],
+      "size": [
+        112,
+        112
+      ],
+      "anchor": [
+        56,
+        107
+      ],
+      "footprints": [
+        [
+          42,
+          103,
+          28,
+          6
+        ]
+      ],
+      "frame_duration_ms": 700,
+      "kind": "crystal",
+      "fixed_root_rows": 5
+    },
+    "vein.amethyst": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [],
+      "frame_duration_ms": 700,
+      "kind": "surface_vein",
+      "fixed_root_rows": 0
+    },
+    "vein.cyan": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [],
+      "frame_duration_ms": 700,
+      "kind": "surface_vein",
+      "fixed_root_rows": 0
+    },
+    "vein.opal": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [],
+      "frame_duration_ms": 700,
+      "kind": "surface_vein",
+      "fixed_root_rows": 0
+    },
+    "vein.amber": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amber/frame_05.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [],
+      "frame_duration_ms": 700,
+      "kind": "surface_vein",
+      "fixed_root_rows": 0
+    },
+    "socket.small": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/socket/small/frame_00.png"
+      ],
+      "size": [
+        40,
+        20
+      ],
+      "anchor": [
+        20,
+        17
+      ],
+      "footprints": [
+        [
+          5,
+          13,
+          30,
+          6
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "socket",
+      "fixed_root_rows": 0
+    },
+    "socket.wide": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/socket/wide/frame_00.png"
+      ],
+      "size": [
+        72,
+        24
+      ],
+      "anchor": [
+        36,
+        21
+      ],
+      "footprints": [
+        [
+          8,
+          17,
+          56,
+          6
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "socket",
+      "fixed_root_rows": 0
+    },
+    "ruins.slab": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/slab/frame_00.png"
+      ],
+      "size": [
+        48,
+        32
+      ],
+      "anchor": [
+        24,
+        28
+      ],
+      "footprints": [
+        [
+          4,
+          23,
+          40,
+          7
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.stele": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/stele/frame_00.png"
+      ],
+      "size": [
+        32,
+        52
+      ],
+      "anchor": [
+        16,
+        48
+      ],
+      "footprints": [
+        [
+          4,
+          43,
+          24,
+          7
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.corner": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/corner/frame_00.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        24,
+        36
+      ],
+      "footprints": [
+        [
+          4,
+          31,
+          40,
+          7
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.root_stone": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/root_stone/frame_00.png"
+      ],
+      "size": [
+        40,
+        32
+      ],
+      "anchor": [
+        20,
+        28
+      ],
+      "footprints": [
+        [
+          4,
+          23,
+          32,
+          7
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.paving": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/paving/frame_00.png"
+      ],
+      "size": [
+        48,
+        24
+      ],
+      "anchor": [
+        24,
+        20
+      ],
+      "footprints": [],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.arc": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/arc/frame_00.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        36,
+        36
+      ],
+      "footprints": [],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "ruins.broken_arc": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/ruins/broken_arc/frame_00.png"
+      ],
+      "size": [
+        72,
+        40
+      ],
+      "anchor": [
+        36,
+        36
+      ],
+      "footprints": [],
+      "frame_duration_ms": 1000,
+      "kind": "buried_masonry",
+      "fixed_root_rows": 0
+    },
+    "memorial.marker": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/memorial/marker/frame_00.png"
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "anchor": [
+        12,
+        33
+      ],
+      "footprints": [
+        [
+          4,
+          28,
+          16,
+          6
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "memorial",
+      "fixed_root_rows": 0
+    },
+    "memorial.lamp": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/memorial/lamp/frame_00.png"
+      ],
+      "size": [
+        24,
+        40
+      ],
+      "anchor": [
+        12,
+        37
+      ],
+      "footprints": [
+        [
+          4,
+          32,
+          16,
+          6
+        ]
+      ],
+      "frame_duration_ms": 1000,
+      "kind": "memorial",
+      "fixed_root_rows": 0
+    },
+    "memorial.offering": {
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/memorial/offering/frame_00.png"
+      ],
+      "size": [
+        40,
+        24
+      ],
+      "anchor": [
+        20,
+        21
+      ],
+      "footprints": [],
+      "frame_duration_ms": 1000,
+      "kind": "memorial",
+      "fixed_root_rows": 0
+    }
+  },
+  "palettes": {
+    "amethyst": {
+      "deep": "#322d50",
+      "shadow": "#594479",
+      "mid": "#8462ad",
+      "light": "#b28ad5",
+      "bright": "#ddbaed",
+      "glint": "#f4e1f3"
+    },
+    "cyan": {
+      "deep": "#203e4b",
+      "shadow": "#306b7c",
+      "mid": "#4c9aa8",
+      "light": "#7bc9cd",
+      "bright": "#b9eadb",
+      "glint": "#e2f7e6"
+    },
+    "opal": {
+      "deep": "#3c555c",
+      "shadow": "#648993",
+      "mid": "#96b5bb",
+      "light": "#c3d4ce",
+      "bright": "#e3e9d9",
+      "glint": "#fff5df"
+    },
+    "amber": {
+      "deep": "#51402f",
+      "shadow": "#86603a",
+      "mid": "#b18448",
+      "light": "#d3ab67",
+      "bright": "#eed599",
+      "glint": "#fff0c6"
+    }
+  },
+  "source_recipe": "assets/source/terrain/sanctuary_fantasy/crystals.json",
+  "source_recipe_sha256": "1c6ff97069e76f08c681ab4c8e25237b345da66ae07e5bd9774af7124136028e",
+  "source_assets": [
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "sha256": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    }
+  ],
+  "notes": [
+    "Every crystal frame keeps its alpha silhouette and basal five rows fixed.",
+    "Colors are art direction only and assign no elemental affinity or collectable resource.",
+    "Solid crystal sockets should use existing ridge footprints; flat seams and buried paving add no collision.",
+    "Native hard alpha and nearest-neighbor review enlargement preserve pixel edges."
+  ]
+}

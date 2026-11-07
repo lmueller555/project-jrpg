@@ -34,7 +34,8 @@ def distance_gain(distance, near, far):
 DURATIONS = {'river':4., 'sack':.42, 'rustle':.45,
              'creak':.65, 'stone':.24, 'cup':.22,
              'leaves':.48, 'basket':.32,
-             'sheep':.55, 'bird':.22, 'wings':.30}
+             'sheep':.55, 'bird':.22, 'wings':.30,
+             'crystal':6., 'spring':4.}
 
 
 def samples(name, rate, channels):
@@ -42,7 +43,8 @@ def samples(name, rate, channels):
     rng = random.Random(9182)
     duration = DURATIONS[name]; count = round(rate*duration)
     values = []; low = 0.
-    fade = round(rate*.08) if name == 'river' else 0
+    looped = name in ('river', 'crystal', 'spring')
+    fade = round(rate*.08) if looped else 0
     for i in range(count+fade):
         t = i/rate; white = rng.uniform(-1,1)
         low += .18*(white-low)
@@ -50,6 +52,18 @@ def samples(name, rate, channels):
             # Periodic modulation and a short cyclic crossfade avoid loop seams.
             swell = .65+.35*math.sin(math.pi*t/duration)**2
             v = (low*.9+white*.08)*swell*.45
+        elif name == 'crystal':
+            # Rounded, quiet mineral resonance; periodic partials support a
+            # seamless bed rather than a stream of triggering chime cues.
+            swell = .65+.35*math.sin(math.pi*t/duration)**2
+            v = swell*(.032*math.sin(2*math.pi*422*t)
+                       +.018*math.sin(2*math.pi*633*t)
+                       +.009*math.sin(2*math.pi*1055*t))
+        elif name == 'spring':
+            # Close, small water: less low rumble than the regional river.
+            swell = .82+.18*math.sin(2*math.pi*t/duration)**2
+            v = (low*.17+white*.035)*swell
+            v += .012*math.sin(2*math.pi*178*t)*math.sin(2*math.pi*3*t)**4
         elif name in ('sack','rustle'):
             env = math.sin(math.pi*t/duration)**2
             v = env*(low*.8+white*.25)*.6
@@ -88,7 +102,7 @@ def samples(name, rate, channels):
             frequencies = (1180,3079,4210) if name=='cup' else (740,1763,3141)
             v = env*(sum(a*math.sin(2*math.pi*f*t) for a,f in zip((.25,.10,.05),frequencies))+white*(.09 if name=='cup' else .3))
         values.append(v)
-    if name == 'river':
+    if looped:
         fade = round(rate*.08)
         for i in range(fade):
             t = i/fade
@@ -113,10 +127,13 @@ class RegionalAudio:
 
     def enabled(self):
         g = self.game
-        return (g.overworld_travel.active and not g.on_title and not g.opening_cinematic.active
+        reserve = getattr(g.world, 'is_sanctuary_reserve', False)
+        return ((g.overworld_travel.active or reserve) and not g.on_title and not g.opening_cinematic.active
                 and not g.regent_arrival.active and g.regent_arrival.state != 'pending'
                 and not g.combat.active and not g.pause.is_open and not g.inventory_ui.is_open
                 and not g.world_map_viewer.is_open and not g.map_open and not g.quest_ui.journal_open
+                and not getattr(getattr(g,'party_ui',None),'is_open',False)
+                and not getattr(g,'on_gallery',False) and getattr(g,'gallery_session',None) is None
                 and g._music_focused and g.audio.effects_volume > 0)
 
     def _notify(self, action, key, **data):
@@ -194,6 +211,14 @@ class RegionalAudio:
     def update(self, seconds):
         self.clock += max(0,seconds)
         sources = list(self.ambient_sources()) if self.enabled() else []
+        active = {source.key for source in sources}
+        # A transfer may keep environmental audio enabled. Do not retain the
+        # old region's river or reserve's crystals in the destination scene.
+        try:
+            for key,voice in list(self.voices.items()):
+                if voice[0].ambient and key not in active:self._stop(key)
+        except pygame.error:
+            self.stop();self.failed=True;return
         for source in sources:
             if source.key in self.voices:
                 _,channel,sound,age = self.voices[source.key]
@@ -209,6 +234,17 @@ class RegionalAudio:
             self.play(source)
 
     def ambient_sources(self):
+        if getattr(self.game.world,'is_sanctuary_reserve',False):
+            effects=self.game.world.data.get('fantasy_effects',{})
+            for index,record in enumerate(effects.get('crystals',[])):
+                yield Source(f'sanctuary.crystal.{index}','crystal','mineral',
+                             record['position'],.22,record.get('near',70),
+                             record.get('far',230),1,True)
+            spring=effects.get('spring')
+            if spring:
+                yield Source('sanctuary.spring','spring','water',spring['position'],
+                             .36,spring.get('near',45),spring.get('far',170),1,True)
+            return
         from overworld_world import TILE_SIZE
         listener = pygame.Vector2(self.game.player.position)/TILE_SIZE
         terrain = self.game.world.region['terrain']

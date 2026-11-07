@@ -59,6 +59,13 @@ def exports():
     tile = 24
     grass_spec = recipe['grass']
     gm = read(ROOT/grass_spec['manifest'])
+    fantasy=recipe.get('fantasy',{})
+    fantasy_packs={family:read(ROOT/path) for family,path in fantasy.get('manifests',{}).items()}
+    for pack in fantasy_packs.values():
+        if pack.get('source_recipe'):read(ROOT/pack['source_recipe'])
+        for reference in pack.get('source_assets',[]):
+            path=reference['path'] if isinstance(reference,dict) else reference
+            used.add(ROOT/path)
     grass = {family:[opened(ROOT/path) for path in record['tiles']]
              for family,record in gm['materials'].items()}
     dirt = {r['mask']:opened(ROOT/r['image']) for r in gm['dirt_transitions']['tiles']}
@@ -128,12 +135,57 @@ def exports():
         baseline = sort_y if sort_y is not None else max((r[1]+r[3] for r in rects),default=position[1]+image.height)
         record = {'id':identifier,'position':position,'frames':frames,'sort_y':baseline,
                   'frame_duration_ms':duration,'phase_offset':phase}
+        if len(frames)>1:record['reduced_motion_frame']=0
         entities.append(record)
         instances.append({**deepcopy(record),'asset_id':asset_id,'footprints':rects})
         for index,rect in enumerate(rects):footprints.append({'id':identifier+f'_{index}','entity_id':identifier,'rect':rect})
         return record
     def stone(identifier, asset, pos, solid=(), sort_y=None):
         return add(identifier,asset,pos,[(KIT/(asset+'.png')).relative_to(ROOT).as_posix()],solid,sort_y)
+
+    def fantasy_module(record, *, override_footprints=None):
+        """Place authored native modules by their fixed ground anchor.
+
+        Optional clearances remove pixels from a cave opening, never paint a
+        replacement patch over it. The source module and every frame remain
+        retained as provenance for these instance-specific transparent exports.
+        """
+        module=fantasy_packs[record['family']]['modules'][record['module']]
+        ax,ay=module['anchor'];rx,ry=record['root'];position=[rx-ax,ry-ay]
+        frames=[]
+        for index,frame in enumerate(module['frames']):
+            path=frame['image'] if isinstance(frame,dict) else frame
+            image=opened(ROOT/path)
+            if record.get('clear_rects') or record.get('clear_polygons'):
+                alpha=image.getchannel('A');draw_alpha=ImageDraw.Draw(alpha)
+                for x,y,w,h in record.get('clear_rects',[]):
+                    draw_alpha.rectangle((x-position[0],y-position[1],
+                                          x+w-1-position[0],y+h-1-position[1]),fill=0)
+                for polygon in record.get('clear_polygons',[]):
+                    draw_alpha.polygon([(x-position[0],y-position[1]) for x,y in polygon],fill=0)
+                image.putalpha(alpha)
+                name=f"fantasy/{record['id']}/frame_{index:02}.png"
+                products[name]=encoded(image)
+                path=(OUTPUT/name).relative_to(ROOT).as_posix()
+            frames.append(path)
+        if record.get('layer')=='ground':
+            first=ROOT/frames[0]
+            if first.as_posix().startswith(OUTPUT.as_posix()+'/'):
+                name=first.relative_to(OUTPUT).as_posix()
+                surface=Image.open(BytesIO(products[name])).convert('RGBA')
+            else:surface=opened(first)
+            ground.alpha_composite(surface,position)
+            return None
+        solids=module.get('footprints',[]) if override_footprints is None else override_footprints
+        entity=add(record['id'],record['module'],position,frames,solids,
+                   sort_y=record.get('sort_y',ry+4),
+                   duration=module.get('frame_duration_ms',800),phase=record.get('phase',0))
+        entity['reduced_motion_frame']=0
+        entity['sort_priority']=record.get('sort_priority',0)
+        entity['fantasy_family']=record['family']
+        if record.get('supported_by'):entity['supported_by']=record['supported_by']
+        instances[-1].update({key:entity[key] for key in ('reduced_motion_frame','sort_priority','fantasy_family')})
+        return entity
 
     tree_dir = TERRAIN/'foliage/tree';tree_meta=read(tree_dir/'foliage.json')
     tree_frames=[(tree_dir/r['image']).relative_to(ROOT).as_posix() for r in tree_meta['wind']['frames']]
@@ -154,9 +206,25 @@ def exports():
             products[name]=encoded(image)
             paths.append((OUTPUT/name).relative_to(ROOT).as_posix())
         tree_variants[variant]=paths
+    replacements={tuple(record['root']):record for record in fantasy.get('tree_replacements',[])}
     for index,(cx,cy) in enumerate(recipe['tree_roots']):
         # A96px crown can overhang paths; only its24px root has a collision body.
         identifier = f'reserve_tree_{index:02}'
+        if (cx,cy) in replacements:
+            spec=replacements[cx,cy]
+            for part_index,module_id in enumerate(spec['modules']):
+                module=fantasy_packs['grove']['modules'][module_id]
+                ax,ay=module['anchor']
+                # Reuse the exact old 24x24 root footprint once. Large crowns
+                # remain overhangs, so previously valid saves remain walkable.
+                solid=[[ax-12,ay-12,24,24]] if part_index==0 else []
+                fantasy_module({'id':identifier+'_'+module_id,'family':'grove',
+                    'module':module_id,'root':[cx,cy],'sort_y':cy+8,
+                    'phase':index%len(module['frames']),
+                    'sort_priority':part_index-2},override_footprints=solid)
+            depth_samples.append({'id':identifier,'entity_id':identifier+'_'+spec['modules'][-1],
+                                  'behind':[cx,cy-38],'front':[cx,cy+38]})
+            continue
         variant=('sage','deep','sage','warm')[index%4]
         add(identifier,'eldenmere.foliage.tree.'+variant,(cx-48,cy-108),tree_variants[variant],
             [tree_meta['ground_rect']],sort_y=cy+8,phase=index%len(tree_frames))
@@ -200,7 +268,11 @@ def exports():
     stone('reserve_cave','cave',cavepos,footprint('cave',[[12,64,35,64],[114,64,34,64],[47,60,67,56]]),383)
     stone('reserve_cave_keeper_rail','cave_keeper_rail',[972,329],[[0,30,72,12]],385)
     stone('reserve_survey_seam','ridge',arch['survey_seam'],footprint('ridge',[[4,32,88,30]]),554)
-    stone('court_basin','basin',arch['court_basin'],footprint('basin',[[4,22,40,12]]),394)
+    basin_frames=[(KIT/f'basin_frame_{index:02}.png').relative_to(ROOT).as_posix() for index in range(6)]
+    basin=add('court_basin','basin',arch['court_basin'],basin_frames,
+              footprint('basin',[[4,22,40,12]]),394,duration=450)
+    basin['reduced_motion_frame']=0
+    instances[-1]['reduced_motion_frame']=0
     stone('reserve_survey_board','survey_board',arch['survey_board'],footprint('survey_board',[[4,22,24,8]]),614)
     stone('reserve_boundary_marker','memorial_marker',arch['boundary_marker'],[[4,18,10,10]],670)
     for index,pos in enumerate(([240,216],[324,240],[180,444])):
@@ -211,6 +283,8 @@ def exports():
         stone(f'reserve_ridge_band_{index}','ridge',pos,[[4,32,88,30]])
     for index,pos in enumerate(([912,264],[1020,300],[768,450])):
         stone(f'reserve_ridge_rock_{index}','rock_outcrop',pos,footprint('rock_outcrop',[[8,18,48,18]]))
+
+    for record in fantasy.get('placements',[]):fantasy_module(record)
 
     # Native terraced masonry forms maintained boundary walls, while the ridge
     # uses natural rock modules. The southern opening remains a real doorway.
@@ -307,6 +381,8 @@ def exports():
               'source_assets':sources,'source_recipe':RECIPE.relative_to(ROOT).as_posix(),
               'depth_samples':depth_samples,'cloister_bays':bays,
               'kit_metadata':kit_meta}
+    manifest['fantasy_effects']=recipe.get('fantasy_effects',{})
+    manifest['fantasy_review_points']=recipe.get('fantasy_review_points',{})
     products['art.json']=(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n').encode()
     return products
 
