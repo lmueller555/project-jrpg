@@ -4,9 +4,12 @@ This reads the existing art builders' assembly helpers, never their export/build
 functions. Running the game does not require Pillow or these tools.
 """
 from hashlib import sha256
+from io import BytesIO
+import argparse
+import json
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 import build_eldenmere_town as town
 import build_eldenmere_workshop as workshop
@@ -18,6 +21,121 @@ ROOT=Path(__file__).resolve().parents[1]
 OUTPUT=ROOT/'assets/maps/eldenmere/playable'
 BASE=ROOT/'assets/maps/eldenmere/terrain_foundation'
 TERRAIN=ROOT/'assets/terrain/eldenmere'
+GRASS_SOURCE=ROOT/'assets/source/maps/eldenmere/grass/recipe.json'
+
+
+def emerald_products():
+    """Update only terrain in the fully assembled, checked-in town.
+
+    Later builders add the school, Liam's home and story links to the original
+    town compiler. Native coverage masks retain that assembled geometry, rather
+    than reconstructing an earlier map and losing those additions.
+    """
+    from grass_terrain import load_pack, material_images, material_at, remap_legacy_green
+    data=read_json(OUTPUT/'map.json');recipe=read_json(GRASS_SOURCE)
+    pack=load_pack();materials=material_images(pack);size=tuple(data['size_pixels'])
+    if sha256((ROOT/data['collision']).read_bytes()).hexdigest()!=recipe['collision_sha256']:
+        raise ValueError('Town navigation changed; review grass coverage before compiling')
+    field=Image.new('RGBA',size);family_map=Image.new('RGB',tuple(data['size_tiles']))
+    family_names=('lawn','meadow','woodland')
+    family_draw=ImageDraw.Draw(family_map)
+    family_draw.rectangle((0,0,family_map.width,family_map.height),fill=(family_names.index(recipe['default_family']),0,0))
+    for region in recipe['material_regions']:
+        family_draw.polygon([tuple(point) for point in region['polygon']],fill=(family_names.index(region['family']),0,0))
+    cells=[]
+    for y in range(data['size_tiles'][1]):
+        row=[]
+        for x in range(data['size_tiles'][0]):
+            family=family_names[family_map.getpixel((x,y))[0]]
+            index,image=material_at(x,y,family,materials,seed=recipe['seed'])
+            field.alpha_composite(image,(24*x,24*y));row.append([family,index])
+        cells.append(row)
+    products={}
+    def retain(path,image):
+        stream=BytesIO();image.save(stream,format='PNG');products[path]=stream.getvalue()
+    masks=[]
+    for path,record in zip(data['ground_frames'],recipe['coverage'],strict=True):
+        coverage_path=ROOT/record['image']
+        if sha256(coverage_path.read_bytes()).hexdigest()!=record['sha256']:
+            raise ValueError('Town grass coverage source changed: '+record['image'])
+        coverage=Image.open(coverage_path).convert('L')
+        if coverage.size!=size:raise ValueError('Grass coverage must match town size')
+        masks.append(coverage)
+        ground=Image.open(ROOT/path).convert('RGBA')
+        ground.paste(field,(0,0),coverage)
+        retain(ROOT/path,remap_legacy_green(ground).convert('RGB'))
+    entities=[]
+    for entity in data['entities']:
+        if entity['id'] in recipe['remove_legacy_entities']:continue
+        entity=dict(entity)
+        if 'flowers' in entity['id']:
+            frames=[]
+            for path in entity['frames']:
+                if path.startswith('assets/terrain/eldenmere/grass_flowers/'):
+                    path=path.replace('assets/terrain/eldenmere/grass_flowers/','assets/terrain/grass/flowers/',1)
+                else:
+                    retain(ROOT/path,remap_legacy_green(Image.open(ROOT/path)))
+                frames.append(path)
+            entity['frames']=frames
+        entities.append(entity)
+    data['entities']=entities
+    # Full opaque grass coverage avoids dirt, flagstones and water. Collision
+    # and visual entity bounds protect buildings, walls, props and approaches.
+    coverage=masks[0];collision=Image.open(ROOT/data['collision']).convert('L')
+    allowed=Image.open(ROOT/data['navigation_allowed']).convert('L')
+    protected=[data['spawn'],*[entry['position'] for entry in data['landmarks']],
+               *data['destinations'].values(),*[npc['position'] for npc in data['npcs']]]
+    entity_bounds=[]
+    for entity in entities:
+        w,h=Image.open(ROOT/entity['frames'][0]).size;x,y=entity['position']
+        entity_bounds.append((x,y,x+w,y+h))
+    def clear(x,y):
+        box=(x-12,y-12,x+12,y+6)
+        if box[0]<0 or box[1]<0 or box[2]>size[0] or box[3]>size[1]:return False
+        if coverage.crop(box).getextrema()!=(255,255):return False
+        if collision.crop(box).getbbox() or allowed.crop(box).getbbox():return False
+        if any(abs(x-p[0])<recipe['protected_radius'] and abs(y-p[1])<recipe['protected_radius'] for p in protected):return False
+        return not any(box[0]<r[2] and box[2]>r[0] and box[1]<r[3] and box[3]>r[1] for r in entity_bounds)
+    instances=[];variants=tuple(pack['tall_grass']['variants']);seen=set()
+    for patch in recipe['patches']:
+        mask=Image.new('L',size);ImageDraw.Draw(mask).polygon([(x*24,y*24) for x,y in patch['polygon']],fill=255)
+        x0,y0,x1,y1=mask.getbbox();spacing_x,spacing_y=recipe['clump_spacing']
+        for row,y in enumerate(range(y0+10,y1-5,spacing_y)):
+            for col,x in enumerate(range(x0+12+(row%2)*11,x1-8,spacing_x)):
+                if (x,y) in seen or not mask.getpixel((x,y)) or (row*7+col*3)%11==0 or not clear(x,y):continue
+                seen.add((x,y));index=(row+col*3)%len(variants)
+                instances.append({'id':f"{patch['id']}.{row}.{col}",'position':[x,y],
+                                  'variant':variants[index],'phase_ms':(x*37+y*71)%4800})
+    if not instances:raise ValueError('Town grass placements unexpectedly empty')
+    data['grass']={'manifest':recipe['pack'],'instances':instances,
+                   'source_recipe':GRASS_SOURCE.relative_to(ROOT).as_posix(),
+                   'material_cells':cells}
+    overview=Image.open(BytesIO(products[ROOT/data['ground_frames'][0]])).convert('RGBA')
+    layers=[]
+    for entity in entities:
+        frame=entity['frames'][entity['phase_offset']%len(entity['frames'])];path=ROOT/frame
+        image=Image.open(BytesIO(products[path])) if path in products else Image.open(path)
+        layers.append((entity['sort_y'],entity.get('sort_priority',0),image.convert('RGBA'),tuple(entity['position'])))
+    ax,ay=pack['tall_grass']['anchor']
+    for instance in instances:
+        pose=pack['tall_grass']['variants'][instance['variant']]['idle'][0];x,y=instance['position']
+        for name,sort_y,priority in (('rear',y-16,-1),('front',y+6,4)):
+            layers.append((sort_y,priority,Image.open(ROOT/pose[name]).convert('RGBA'),(x-ax,y-ay)))
+    for _,_,image,position in sorted(layers,key=lambda record:record[:2]):overview.alpha_composite(image,position)
+    for layer in data['foreground']:overview.alpha_composite(Image.open(ROOT/layer['image']).convert('RGBA'),tuple(layer['position']))
+    retain(ROOT/data['overview'],overview.convert('RGB'))
+    products[OUTPUT/'map.json']=(json.dumps(data,indent=2)+'\n').encode()
+    return products,len(instances)
+
+
+def compile_emerald(check=False):
+    products,count=emerald_products();stale=[]
+    for path,content in products.items():
+        if check:
+            if not path.exists() or path.read_bytes()!=content:stale.append(path.relative_to(ROOT).as_posix())
+        else:path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(content)
+    if stale:raise SystemExit('Stale Eldenmere emerald terrain: '+', '.join(stale))
+    print(f"{'Verified' if check else 'Compiled'} emerald Eldenmere terrain and {count} nonblocking grass clumps; navigation and story metadata retained.")
 
 
 def save(path,image):
@@ -136,4 +254,11 @@ def build():
     print(f'Compiled playable Eldenmere: {base.size}, {len(entities)} depth-sorted objects, six ground phases, no baked actors.')
 
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--terrain-only',action='store_true',help='Apply approved emerald grass to the assembled town, preserving later story/building additions')
+    parser.add_argument('--check',action='store_true',help='Verify assembled emerald terrain without writing files (requires --terrain-only)')
+    args=parser.parse_args()
+    if args.check and not args.terrain_only:parser.error('--check requires --terrain-only')
+    if args.terrain_only:compile_emerald(args.check)
+    else:build()

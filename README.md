@@ -2,6 +2,12 @@
 
 Explore Eldenmere and the surrounding Elden Vale as Caelan by running `main.py`. The game uses 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
 
+Eldenmere, the Sanctuary reserve and the upstream mill area use the approved
+[emerald grass terrain pack](docs/GRASS_TERRAIN.md): varied lawn, meadow and
+woodland ground, with leg-height grass that parts around travelling characters.
+The separate [playable material study](docs/GRASS_DEMO.md) remains available with
+`python tools/preview_grass.py` and uses no journey or settings file.
+
 ## Music files
 
 Add your music files to [`assets/music/`](assets/music/). The folder's README

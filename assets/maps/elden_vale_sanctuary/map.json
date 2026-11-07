@@ -11230,6 +11230,875 @@
       ]
     }
   ],
+  "grass": {
+    "manifest": "assets/terrain/grass/assets.json",
+    "instances": [
+      {
+        "id": "reserve_grass_0_1_284",
+        "position": [
+          294,
+          105
+        ],
+        "variant": "fan",
+        "phase_ms": 2389
+      },
+      {
+        "id": "reserve_grass_0_1_356",
+        "position": [
+          366,
+          105
+        ],
+        "variant": "slender",
+        "phase_ms": 3998
+      },
+      {
+        "id": "reserve_grass_0_2_194",
+        "position": [
+          197,
+          127
+        ],
+        "variant": "arching",
+        "phase_ms": 4315
+      },
+      {
+        "id": "reserve_grass_0_2_302",
+        "position": [
+          304,
+          123
+        ],
+        "variant": "seeded",
+        "phase_ms": 1586
+      },
+      {
+        "id": "reserve_grass_0_2_338",
+        "position": [
+          339,
+          127
+        ],
+        "variant": "fan",
+        "phase_ms": 1557
+      },
+      {
+        "id": "reserve_grass_0_3_176",
+        "position": [
+          184,
+          139
+        ],
+        "variant": "slender",
+        "phase_ms": 4429
+      },
+      {
+        "id": "reserve_grass_0_3_194",
+        "position": [
+          205,
+          137
+        ],
+        "variant": "arching",
+        "phase_ms": 1626
+      },
+      {
+        "id": "reserve_grass_0_3_212",
+        "position": [
+          220,
+          139
+        ],
+        "variant": "seeded",
+        "phase_ms": 2876
+      },
+      {
+        "id": "reserve_grass_0_3_230",
+        "position": [
+          237,
+          138
+        ],
+        "variant": "fan",
+        "phase_ms": 3550
+      },
+      {
+        "id": "reserve_grass_0_4_212",
+        "position": [
+          215,
+          159
+        ],
+        "variant": "slender",
+        "phase_ms": 2556
+      },
+      {
+        "id": "reserve_grass_0_5_230",
+        "position": [
+          236,
+          173
+        ],
+        "variant": "arching",
+        "phase_ms": 3634
+      },
+      {
+        "id": "reserve_grass_0_5_248",
+        "position": [
+          258,
+          174
+        ],
+        "variant": "seeded",
+        "phase_ms": 3632
+      },
+      {
+        "id": "reserve_grass_0_5_266",
+        "position": [
+          273,
+          174
+        ],
+        "variant": "fan",
+        "phase_ms": 2294
+      },
+      {
+        "id": "reserve_grass_1_2_167",
+        "position": [
+          164,
+          332
+        ],
+        "variant": "slender",
+        "phase_ms": 3949
+      },
+      {
+        "id": "reserve_grass_1_4_311",
+        "position": [
+          310,
+          362
+        ],
+        "variant": "arching",
+        "phase_ms": 1632
+      },
+      {
+        "id": "reserve_grass_1_5_257",
+        "position": [
+          266,
+          380
+        ],
+        "variant": "seeded",
+        "phase_ms": 3266
+      },
+      {
+        "id": "reserve_grass_1_6_257",
+        "position": [
+          259,
+          396
+        ],
+        "variant": "fan",
+        "phase_ms": 4762
+      },
+      {
+        "id": "reserve_grass_1_6_275",
+        "position": [
+          278,
+          395
+        ],
+        "variant": "slender",
+        "phase_ms": 4452
+      },
+      {
+        "id": "reserve_grass_1_6_293",
+        "position": [
+          290,
+          395
+        ],
+        "variant": "arching",
+        "phase_ms": 2577
+      },
+      {
+        "id": "reserve_grass_1_7_239",
+        "position": [
+          245,
+          410
+        ],
+        "variant": "seeded",
+        "phase_ms": 1185
+      },
+      {
+        "id": "reserve_grass_1_7_257",
+        "position": [
+          264,
+          411
+        ],
+        "variant": "fan",
+        "phase_ms": 1570
+      },
+      {
+        "id": "reserve_grass_1_7_275",
+        "position": [
+          284,
+          407
+        ],
+        "variant": "slender",
+        "phase_ms": 2868
+      },
+      {
+        "id": "reserve_grass_1_8_239",
+        "position": [
+          240,
+          424
+        ],
+        "variant": "arching",
+        "phase_ms": 3646
+      },
+      {
+        "id": "reserve_grass_1_8_257",
+        "position": [
+          254,
+          426
+        ],
+        "variant": "seeded",
+        "phase_ms": 1182
+      },
+      {
+        "id": "reserve_grass_1_8_275",
+        "position": [
+          274,
+          429
+        ],
+        "variant": "fan",
+        "phase_ms": 266
+      },
+      {
+        "id": "reserve_grass_1_8_293",
+        "position": [
+          292,
+          427
+        ],
+        "variant": "slender",
+        "phase_ms": 2253
+      },
+      {
+        "id": "reserve_grass_1_9_221",
+        "position": [
+          233,
+          441
+        ],
+        "variant": "arching",
+        "phase_ms": 3128
+      },
+      {
+        "id": "reserve_grass_1_9_239",
+        "position": [
+          251,
+          440
+        ],
+        "variant": "seeded",
+        "phase_ms": 233
+      },
+      {
+        "id": "reserve_grass_1_9_257",
+        "position": [
+          269,
+          445
+        ],
+        "variant": "fan",
+        "phase_ms": 2091
+      },
+      {
+        "id": "reserve_grass_1_9_275",
+        "position": [
+          285,
+          441
+        ],
+        "variant": "slender",
+        "phase_ms": 3141
+      },
+      {
+        "id": "reserve_grass_1_10_257",
+        "position": [
+          259,
+          456
+        ],
+        "variant": "arching",
+        "phase_ms": 2351
+      },
+      {
+        "id": "reserve_grass_1_10_275",
+        "position": [
+          277,
+          455
+        ],
+        "variant": "seeded",
+        "phase_ms": 711
+      },
+      {
+        "id": "reserve_grass_2_0_278",
+        "position": [
+          277,
+          478
+        ],
+        "variant": "fan",
+        "phase_ms": 925
+      },
+      {
+        "id": "reserve_grass_2_1_242",
+        "position": [
+          250,
+          495
+        ],
+        "variant": "slender",
+        "phase_ms": 1752
+      },
+      {
+        "id": "reserve_grass_2_1_260",
+        "position": [
+          272,
+          489
+        ],
+        "variant": "arching",
+        "phase_ms": 2328
+      },
+      {
+        "id": "reserve_grass_2_1_278",
+        "position": [
+          287,
+          489
+        ],
+        "variant": "seeded",
+        "phase_ms": 4330
+      },
+      {
+        "id": "reserve_grass_2_1_296",
+        "position": [
+          302,
+          494
+        ],
+        "variant": "fan",
+        "phase_ms": 1444
+      },
+      {
+        "id": "reserve_grass_2_2_260",
+        "position": [
+          262,
+          505
+        ],
+        "variant": "slender",
+        "phase_ms": 2621
+      },
+      {
+        "id": "reserve_grass_2_2_278",
+        "position": [
+          279,
+          505
+        ],
+        "variant": "arching",
+        "phase_ms": 1682
+      },
+      {
+        "id": "reserve_grass_2_2_314",
+        "position": [
+          315,
+          511
+        ],
+        "variant": "seeded",
+        "phase_ms": 3549
+      },
+      {
+        "id": "reserve_grass_2_2_332",
+        "position": [
+          331,
+          509
+        ],
+        "variant": "fan",
+        "phase_ms": 1628
+      },
+      {
+        "id": "reserve_grass_2_3_260",
+        "position": [
+          271,
+          522
+        ],
+        "variant": "slender",
+        "phase_ms": 499
+      },
+      {
+        "id": "reserve_grass_2_3_278",
+        "position": [
+          286,
+          523
+        ],
+        "variant": "arching",
+        "phase_ms": 384
+      },
+      {
+        "id": "reserve_grass_2_3_296",
+        "position": [
+          305,
+          523
+        ],
+        "variant": "seeded",
+        "phase_ms": 3785
+      },
+      {
+        "id": "reserve_grass_2_3_314",
+        "position": [
+          320,
+          527
+        ],
+        "variant": "fan",
+        "phase_ms": 2742
+      },
+      {
+        "id": "reserve_grass_2_3_332",
+        "position": [
+          342,
+          522
+        ],
+        "variant": "slender",
+        "phase_ms": 3197
+      },
+      {
+        "id": "reserve_grass_2_4_278",
+        "position": [
+          279,
+          537
+        ],
+        "variant": "arching",
+        "phase_ms": 735
+      },
+      {
+        "id": "reserve_grass_2_4_296",
+        "position": [
+          296,
+          541
+        ],
+        "variant": "seeded",
+        "phase_ms": 4669
+      },
+      {
+        "id": "reserve_grass_2_4_314",
+        "position": [
+          315,
+          539
+        ],
+        "variant": "fan",
+        "phase_ms": 719
+      },
+      {
+        "id": "reserve_grass_2_5_278",
+        "position": [
+          288,
+          557
+        ],
+        "variant": "slender",
+        "phase_ms": 3836
+      },
+      {
+        "id": "reserve_grass_3_1_596",
+        "position": [
+          604,
+          527
+        ],
+        "variant": "arching",
+        "phase_ms": 4456
+      },
+      {
+        "id": "reserve_grass_3_2_578",
+        "position": [
+          579,
+          541
+        ],
+        "variant": "seeded",
+        "phase_ms": 1370
+      },
+      {
+        "id": "reserve_grass_3_2_596",
+        "position": [
+          593,
+          543
+        ],
+        "variant": "fan",
+        "phase_ms": 1150
+      },
+      {
+        "id": "reserve_grass_3_2_614",
+        "position": [
+          616,
+          541
+        ],
+        "variant": "slender",
+        "phase_ms": 949
+      },
+      {
+        "id": "reserve_grass_3_2_632",
+        "position": [
+          634,
+          541
+        ],
+        "variant": "arching",
+        "phase_ms": 815
+      },
+      {
+        "id": "reserve_grass_3_2_650",
+        "position": [
+          653,
+          539
+        ],
+        "variant": "seeded",
+        "phase_ms": 3647
+      },
+      {
+        "id": "reserve_grass_3_3_560",
+        "position": [
+          568,
+          554
+        ],
+        "variant": "fan",
+        "phase_ms": 3470
+      },
+      {
+        "id": "reserve_grass_3_3_596",
+        "position": [
+          604,
+          556
+        ],
+        "variant": "slender",
+        "phase_ms": 4166
+      },
+      {
+        "id": "reserve_grass_3_3_614",
+        "position": [
+          626,
+          558
+        ],
+        "variant": "arching",
+        "phase_ms": 155
+      },
+      {
+        "id": "reserve_grass_3_3_632",
+        "position": [
+          639,
+          560
+        ],
+        "variant": "seeded",
+        "phase_ms": 4005
+      },
+      {
+        "id": "reserve_grass_3_3_650",
+        "position": [
+          658,
+          555
+        ],
+        "variant": "fan",
+        "phase_ms": 824
+      },
+      {
+        "id": "reserve_grass_3_4_560",
+        "position": [
+          563,
+          571
+        ],
+        "variant": "slender",
+        "phase_ms": 987
+      },
+      {
+        "id": "reserve_grass_3_4_578",
+        "position": [
+          579,
+          576
+        ],
+        "variant": "arching",
+        "phase_ms": 4747
+      },
+      {
+        "id": "reserve_grass_3_4_596",
+        "position": [
+          598,
+          573
+        ],
+        "variant": "seeded",
+        "phase_ms": 1698
+      },
+      {
+        "id": "reserve_grass_3_4_614",
+        "position": [
+          614,
+          575
+        ],
+        "variant": "fan",
+        "phase_ms": 1602
+      },
+      {
+        "id": "reserve_grass_3_4_632",
+        "position": [
+          634,
+          575
+        ],
+        "variant": "slender",
+        "phase_ms": 3326
+      },
+      {
+        "id": "reserve_grass_4_1_690",
+        "position": [
+          696,
+          156
+        ],
+        "variant": "arching",
+        "phase_ms": 3704
+      },
+      {
+        "id": "reserve_grass_4_1_708",
+        "position": [
+          717,
+          155
+        ],
+        "variant": "seeded",
+        "phase_ms": 4399
+      },
+      {
+        "id": "reserve_grass_4_1_726",
+        "position": [
+          738,
+          161
+        ],
+        "variant": "fan",
+        "phase_ms": 57
+      },
+      {
+        "id": "reserve_grass_4_1_744",
+        "position": [
+          755,
+          156
+        ],
+        "variant": "slender",
+        "phase_ms": 854
+      },
+      {
+        "id": "reserve_grass_4_2_708",
+        "position": [
+          705,
+          176
+        ],
+        "variant": "arching",
+        "phase_ms": 4552
+      },
+      {
+        "id": "reserve_grass_4_2_726",
+        "position": [
+          729,
+          171
+        ],
+        "variant": "seeded",
+        "phase_ms": 1530
+      },
+      {
+        "id": "reserve_grass_4_2_744",
+        "position": [
+          744,
+          175
+        ],
+        "variant": "fan",
+        "phase_ms": 1518
+      },
+      {
+        "id": "reserve_grass_4_2_798",
+        "position": [
+          798,
+          175
+        ],
+        "variant": "slender",
+        "phase_ms": 981
+      },
+      {
+        "id": "reserve_grass_4_2_816",
+        "position": [
+          819,
+          176
+        ],
+        "variant": "arching",
+        "phase_ms": 1567
+      },
+      {
+        "id": "reserve_grass_4_3_690",
+        "position": [
+          700,
+          187
+        ],
+        "variant": "seeded",
+        "phase_ms": 1074
+      },
+      {
+        "id": "reserve_grass_4_3_708",
+        "position": [
+          714,
+          192
+        ],
+        "variant": "fan",
+        "phase_ms": 3168
+      },
+      {
+        "id": "reserve_grass_4_4_726",
+        "position": [
+          723,
+          203
+        ],
+        "variant": "slender",
+        "phase_ms": 1966
+      },
+      {
+        "id": "reserve_grass_4_4_816",
+        "position": [
+          819,
+          207
+        ],
+        "variant": "arching",
+        "phase_ms": 1858
+      },
+      {
+        "id": "reserve_grass_5_3_920",
+        "position": [
+          930,
+          209
+        ],
+        "variant": "seeded",
+        "phase_ms": 836
+      },
+      {
+        "id": "reserve_grass_5_3_938",
+        "position": [
+          947,
+          207
+        ],
+        "variant": "fan",
+        "phase_ms": 1273
+      },
+      {
+        "id": "reserve_grass_5_3_956",
+        "position": [
+          963,
+          211
+        ],
+        "variant": "slender",
+        "phase_ms": 1917
+      },
+      {
+        "id": "reserve_grass_5_3_974",
+        "position": [
+          985,
+          208
+        ],
+        "variant": "arching",
+        "phase_ms": 3249
+      },
+      {
+        "id": "reserve_grass_5_4_938",
+        "position": [
+          939,
+          225
+        ],
+        "variant": "seeded",
+        "phase_ms": 2185
+      },
+      {
+        "id": "reserve_grass_5_4_956",
+        "position": [
+          953,
+          229
+        ],
+        "variant": "fan",
+        "phase_ms": 2261
+      },
+      {
+        "id": "reserve_grass_5_4_992",
+        "position": [
+          992,
+          226
+        ],
+        "variant": "slender",
+        "phase_ms": 2412
+      },
+      {
+        "id": "reserve_grass_6_1_1001",
+        "position": [
+          1011,
+          496
+        ],
+        "variant": "arching",
+        "phase_ms": 2665
+      },
+      {
+        "id": "reserve_grass_6_1_1037",
+        "position": [
+          1043,
+          496
+        ],
+        "variant": "seeded",
+        "phase_ms": 517
+      },
+      {
+        "id": "reserve_grass_6_3_1073",
+        "position": [
+          1084,
+          525
+        ],
+        "variant": "fan",
+        "phase_ms": 219
+      },
+      {
+        "id": "reserve_grass_6_3_1091",
+        "position": [
+          1101,
+          529
+        ],
+        "variant": "slender",
+        "phase_ms": 1391
+      },
+      {
+        "id": "reserve_grass_6_6_1037",
+        "position": [
+          1034,
+          577
+        ],
+        "variant": "arching",
+        "phase_ms": 2747
+      },
+      {
+        "id": "reserve_grass_6_7_1037",
+        "position": [
+          1048,
+          591
+        ],
+        "variant": "seeded",
+        "phase_ms": 1375
+      },
+      {
+        "id": "reserve_grass_7_0_966",
+        "position": [
+          968,
+          639
+        ],
+        "variant": "fan",
+        "phase_ms": 3237
+      },
+      {
+        "id": "reserve_grass_7_4_930",
+        "position": [
+          931,
+          698
+        ],
+        "variant": "slender",
+        "phase_ms": 986
+      },
+      {
+        "id": "reserve_grass_7_4_948",
+        "position": [
+          948,
+          701
+        ],
+        "variant": "arching",
+        "phase_ms": 4334
+      },
+      {
+        "id": "reserve_grass_7_4_966",
+        "position": [
+          963,
+          702
+        ],
+        "variant": "seeded",
+        "phase_ms": 2672
+      }
+    ]
+  },
   "collision_footprints": [
     {
       "id": "reserve_tree_00_0",
@@ -14121,12 +14990,12 @@
     "tool": "tools/build_elden_vale_sanctuary.py",
     "implementation": "native_pixel_asset_packs",
     "source_recipe": "assets/source/maps/elden_vale_sanctuary/recipe.json",
-    "source_recipe_sha256": "6bd17a6671e501474c01ce5742a113265498e09dccc3f2bef665ab371ee91410",
+    "source_recipe_sha256": "600d671c03b7eaf55f777bc24ff1705b7a88279487ce6699f7fe75f309864063",
     "art_manifest": "assets/terrain/elden_vale_sanctuary/art.json",
     "source_assets": [
       {
         "path": "assets/source/maps/elden_vale_sanctuary/recipe.json",
-        "sha256": "6bd17a6671e501474c01ce5742a113265498e09dccc3f2bef665ab371ee91410"
+        "sha256": "600d671c03b7eaf55f777bc24ff1705b7a88279487ce6699f7fe75f309864063"
       },
       {
         "path": "assets/terrain/eldenmere/foliage/shrub/foliage.json",
@@ -14217,274 +15086,6 @@
         "sha256": "bcd8f4396bd35c3dd23e1a3aeac66cb1050f27a38ad773d7023e83f33595fa45"
       },
       {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_000.png",
-        "sha256": "df5f685bfae768fc652f1e2bc7276c73a9d2d278dcc200cfb5baa753d545076a"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_001.png",
-        "sha256": "ef720458bedcb45822ec24024f50a749457bf6699810804ec6a2ee47465900c1"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_004.png",
-        "sha256": "0be812de4c4e121a80a7d9c5fc25236aab892e0af51500d59e20f4427d4e3c9b"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_005.png",
-        "sha256": "124cf66e69af3900a671c5950dc94692df9948a4cf9df9c307df91f2a6b14e58"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_007.png",
-        "sha256": "c6ec882b5734bef942af0f0a8f365f17e70f86aeec3525caed786fc9b9d1fc55"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_016.png",
-        "sha256": "5ec096ad31447fc6ea7282fa29aa065c4259b17be84e88beb63eb9b1cb21253c"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_017.png",
-        "sha256": "7a2f20ca64c053a33a612c42a8a6970a03feb819f52e3f575adb3380be1272ab"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_020.png",
-        "sha256": "94c53a9efdaa13919a7ff0e671c75834d528e6447fac3dcb0cad3f1ec94c7004"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_021.png",
-        "sha256": "80a2394530eac28ef4d710d9fada14c81d019c3ed8067a7f8058560f0667ab8f"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_023.png",
-        "sha256": "38d6e1221b251ca7b0fd6dc2a6f0af069bb5268e19da8e27b2afdd1276b633b5"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_028.png",
-        "sha256": "9700fdcf1202c3f67982dae575a85bdff6b097c0d4446b1059568b866fcd9910"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_029.png",
-        "sha256": "969a19e817afe1dbbc7ac46c028db693c85bd3579590506b21dced6d6ca043af"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_031.png",
-        "sha256": "4a762d6e479ff27e05a718457e673a6f39020593464784b82822978620ddd17e"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_064.png",
-        "sha256": "549bdaad1552435e74ba2f9a1bf0d359911a5d254c8f27c531a2d96dbf150e37"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_065.png",
-        "sha256": "72e971474fa3d80ba6f89355debeddc9f5c6b8b8a65230ded6a71028bc9bc225"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_068.png",
-        "sha256": "984de11f7258ba433ff9ff3d2a978998e390552a57231417517370e4f697b153"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_069.png",
-        "sha256": "990f05d1903bd72b5c1105f4da6ee8f9fe3cf3aa2635edbc37807dd7fd5b4a7f"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_071.png",
-        "sha256": "08896c0572b782625531cb50ee5749e040ccdecbad40b87d9c13f3e286299951"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_080.png",
-        "sha256": "fb99cabdd0e6568fa4b2b5e2f065098bc12e123ada74bd278951132eadb2e3ec"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_081.png",
-        "sha256": "0936d3c24c2186368d934d6c54304ed4c49027d321ed9a60d255f72288b4e75a"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_084.png",
-        "sha256": "a67e11ebc5ccfbd923d488ae603dce1a0716a2135963b9158fb206514fd01950"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_085.png",
-        "sha256": "16d8f26a0280e9aab872330b43e325f57f1e99449b2f46c631848820571b0742"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_087.png",
-        "sha256": "33ae60a4c76437b5784ae492b59d4d6dee72be7a54adbd950ed7a3f88cdabdab"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_092.png",
-        "sha256": "553c2b6bb5afb6e56f6f61a18ccb4e70468c2a5fa9423e52e0537c91dc6c4f5a"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_093.png",
-        "sha256": "b5e9020b6959799d501473fe97a308e901c4633f3802720ce04b25c08daf2c37"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_095.png",
-        "sha256": "b4293c6de55ee21c3dbdbc8a3594f632621421c936619a806213d7f4cfc4d5b4"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_112.png",
-        "sha256": "75d538655efa84090abc9533814ba794822707a33d9bb9da61919f48e6956bd6"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_113.png",
-        "sha256": "76ea7349364bf49b7bdcf40ffeb7ca5ee238e9ec8d137c6e5a1cb831dd616903"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_116.png",
-        "sha256": "d3dfd265d31a1c065b57f14e9797b705c491498be31dd1ab36d9070f046c63b4"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_117.png",
-        "sha256": "32ed53fbb65ac2833dcd05839b827021de788f74e27aa5a2549e84adc5a5b82f"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_119.png",
-        "sha256": "5af224176e611779666001b3ed42cc888441620410e4f2d4f6898b45ac01d63b"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_124.png",
-        "sha256": "d090a27e911b31876dd84bec2abf57334df53fe42a8f743dbeec792121188448"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_125.png",
-        "sha256": "2a447eb1cc013ab80265f8b8219fad4683ab88d16e8ae2d6f0f390f9f51ac17d"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_127.png",
-        "sha256": "43c09c23fd1ccc9cce524748ee3ca8a5855404abf5b92110bc39b485282e997b"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_193.png",
-        "sha256": "de02af164bb63639f495a1d6bba9532a90313876c9c556459fc5ce2d89ea530e"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_197.png",
-        "sha256": "353eb5156c3a5cf0c7088d81703b1cf81b751dd7003d9e0e5311553f0527c59d"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_199.png",
-        "sha256": "337cdf01875efd2d8d933d42656dee73642ef7fb0ac26550ad2459b0c47ad9a6"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_209.png",
-        "sha256": "530ac9d0d266fe05552d350a89833f268afcb76e8fc264a1f21b1c3132cd1b59"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_213.png",
-        "sha256": "e8aa5af4f7d09eba56be885a453e2f9fe0e8e1cee915e2e49790c838cd3611ec"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_215.png",
-        "sha256": "2c61ffa0b7a7cdd111f746956c7c71f4d818208c16fa59db7e3f8f0ab359b6fb"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_221.png",
-        "sha256": "f3a1708124fb7567d8c2ac9898c54f3c90d6b3e3506fc2479d3008c30e289902"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_223.png",
-        "sha256": "b08da79800e1f39fa2e0d4c25bfa9f5cdd83664582ddda9374804ac639032ec8"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_241.png",
-        "sha256": "5dda1204778923a23b51a7f339fec41da2fc2a8d4b80a44f5209b5b5fcbb4286"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_245.png",
-        "sha256": "9a88674a793d24a991d25ce8ea9511065d1c944f1a9dfcad2e58a09743d69c58"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_247.png",
-        "sha256": "84391187610d383d6c07293792976191ff397b95337fb8c11cfeb37c4bc26892"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_253.png",
-        "sha256": "f0f55442103c7ee549fa4dc7e33db051d2542b00e30a4a75c22f8c15a9217ba0"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_255.png",
-        "sha256": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt_fill_00.png",
-        "sha256": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt_fill_01.png",
-        "sha256": "9a6b7a96b0c95f062ac9139f408743d346967b27033e5767d4623ec53bb2ac55"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/dirt_fill_02.png",
-        "sha256": "c9a38833a1c7a091cd2a1435888991f416a36699218d19389d2859924ad15cb1"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/grass_00.png",
-        "sha256": "403b33c4706a4cf7f8fb892ec910731d0b04c48597a70e5a3d1b46910c9045d7"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/grass_01.png",
-        "sha256": "2de2609e0aa97fbe36c09c1aeae213fdf352fc260fba82dc80b4a83345c306d8"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/grass_02.png",
-        "sha256": "dbd2aba909c6897cabd32559ff2ec4f474ba80513d5c500a0040bb9cd3f345d5"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/grass_03.png",
-        "sha256": "ba3765c3a9d0d2974adc93a9728c04926b801201c081aadccc45315f9b021b6c"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_dirt/tileset.json",
-        "sha256": "33126c27f4686809466b42cb73c3d8cfcbb137667842e2e5afd19f610e034c16"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_violet/idle.png",
-        "sha256": "22bc44dcfbe71fff63527688c7a83e59cb4fc508743d2bf8d6e3bd3c83b2c51f"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_violet/plant.json",
-        "sha256": "925b180e394bbaddfec1b5774f8712e79f3c8ba2cc01774b4631d2964440a5b6"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_white/idle.png",
-        "sha256": "7d8ff480a935b496a42eedda136f07813b9865d09f3a236314b676ac7df84205"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_white/plant.json",
-        "sha256": "93656528caf2f0bc02bdec15de548502e621efce27236fb26081f202daefd15f"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_yellow/idle.png",
-        "sha256": "548cda1d20b62462753266b40099051615691beffc4122f2183e319ec9dafeb6"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/flowers_yellow/plant.json",
-        "sha256": "2bc7facf358cea5d60441f11b2576de7f8670070c83e6f97537947972f7e97f7"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_dense/idle.png",
-        "sha256": "5316f82cc28f63ce4ce3f9cbee60a6fed6f2de4d559d09df5d51892b4634aed0"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_dense/plant.json",
-        "sha256": "f71e8e4fe89d2d110331bf23636c39dc9b1e1dacc40611630dae48c323df920c"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_sparse/idle.png",
-        "sha256": "e5f8b3de67499e4220e2731be5f458d9792e3e5b843a5cd9a73b32dc62c0fe1e"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_sparse/plant.json",
-        "sha256": "810a02dcaf98439e1160e6fdfea3ff531226b55942dd051f2589c343b2c5372c"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_splayed/idle.png",
-        "sha256": "f5491bfbf9b1173ea5e0c7c423d947218df0db70bdf5b3d5617e7aa92cfbde5b"
-      },
-      {
-        "path": "assets/terrain/eldenmere/grass_flowers/grass_splayed/plant.json",
-        "sha256": "52e4d2f9e2070008fb3bd97f4330c1c105cba7e3c17513be946334df3c208752"
-      },
-      {
         "path": "assets/terrain/eldenmere/sanctuary/closed.png",
         "sha256": "71ffcab1d2fc7928a21d33ab27dc1c989b99f85dbf7224941185d1bcdf1217aa"
       },
@@ -14521,6 +15122,314 @@
         "sha256": "27133eafbff2ebe1686f358558b36602233c79bd3d9590934482e95b40eb7566"
       },
       {
+        "path": "assets/terrain/grass/assets.json",
+        "sha256": "b0f27b68d695ffc3502ccf91f304ee2e4a74c85aba792bb7533a7316f93fc68d"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_000.png",
+        "sha256": "6a9adfb0cf1a0d66cb396802bf80c0622a2852b64ca860d218850da6602d79df"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_001.png",
+        "sha256": "34ab988187c12b1e45796a0f334387f45324d791c9d3ee2091aab2f981777213"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_004.png",
+        "sha256": "c125f62f103d6718263031ac067d2877d65093f3e69359f1a26f77c61916eefd"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_005.png",
+        "sha256": "b4df9f5f504f063d4bc00d92880154ddacb6dc3e9f7b6ef9e48315294e91299f"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_007.png",
+        "sha256": "81a030442fc60b8afe38d7c4bcc6733facbf9f0f323c1d32175974bc2bfb4f99"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_016.png",
+        "sha256": "6102e43ca31c40f8c517cc7481b0b103a4e9de1b4a63baded185f835236eb1f6"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_017.png",
+        "sha256": "cabcbc7ba32914ae565e21bae0ddc874278320f41d791247de58426a87479c29"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_020.png",
+        "sha256": "94897089363e52b67c3234a90d283c8f52d590e210a76ec3768c983d94241060"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_021.png",
+        "sha256": "55e3422684d11b0e4b0abf7881e7733b2020280c96fddd894b66641f8baa5caf"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_023.png",
+        "sha256": "3c579ba819c5258b0d24d652c35c5285d957d75d90cbe4af6f55c52d85badfbe"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_028.png",
+        "sha256": "92f3551608be1e287259cc3134eac9e348d29ba70b48d75bdf99adead396bb09"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_029.png",
+        "sha256": "f48b9c52acae7c8d8a6eb3f31c2e56ca2a470b13b92161d2f4649f4b019b2207"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_031.png",
+        "sha256": "db68360ffb295793fbe914f6fed5e21028044a78f68a8b87cf9c9456ecc41e37"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_064.png",
+        "sha256": "2a875d2018fc2022e1b4f25417b35d16eca6b885152f4cdaabd7a225a96a9f63"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_065.png",
+        "sha256": "44def2e360da2399294377a63dc242cd9c2a29e048af280c37153244e63c17a9"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_068.png",
+        "sha256": "b45b9bc49d0876048f1af51b56be04f9bd526137b734ef417adc034e387218b8"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_069.png",
+        "sha256": "1945e729189b3309e64108047ca427de4a084e136ad98c56eada3b04022f1bf9"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_071.png",
+        "sha256": "4a9243ab606b43f84f1f4521f873c04cfb7ffe18a12845f2b2d536a8c6a4bb44"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_080.png",
+        "sha256": "f773ac6970896ea222a607dcef21f0b21c0ead0d2f0603e71d4f1635221af9b6"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_081.png",
+        "sha256": "f8752752205bbdb80d6728b048ae19c64aecc7e0b7688652f27307bfffe1cbc0"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_084.png",
+        "sha256": "389a529d034034f54a9af3176b466188547a3dcf1dc056c7cc2b9fed0541c36e"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_085.png",
+        "sha256": "16d8f26a0280e9aab872330b43e325f57f1e99449b2f46c631848820571b0742"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_087.png",
+        "sha256": "33ae60a4c76437b5784ae492b59d4d6dee72be7a54adbd950ed7a3f88cdabdab"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_092.png",
+        "sha256": "ed712181fdc09377ccc6f54f00ab1854686e9791a4021c5afad8ae3c68f9913f"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_093.png",
+        "sha256": "b5e9020b6959799d501473fe97a308e901c4633f3802720ce04b25c08daf2c37"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_095.png",
+        "sha256": "b4293c6de55ee21c3dbdbc8a3594f632621421c936619a806213d7f4cfc4d5b4"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_112.png",
+        "sha256": "a4a829c2ba36cada838cb143a62c02935d59d248b51ac4348b9ee1a285ecdafd"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_113.png",
+        "sha256": "d7fa846fb6b6b62e8a909cb5453e4532a5d54f613b90c58b4ed728a4343d4a8a"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_116.png",
+        "sha256": "09101dcb961cf04d5155417998f7b73cbd70b2be2685d789391deb91d863b30b"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_117.png",
+        "sha256": "32ed53fbb65ac2833dcd05839b827021de788f74e27aa5a2549e84adc5a5b82f"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_119.png",
+        "sha256": "5af224176e611779666001b3ed42cc888441620410e4f2d4f6898b45ac01d63b"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_124.png",
+        "sha256": "e6d01901e26d53f25cb02490fbd039020115eb91fa8bc3d9b627445134f044ac"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_125.png",
+        "sha256": "2a447eb1cc013ab80265f8b8219fad4683ab88d16e8ae2d6f0f390f9f51ac17d"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_127.png",
+        "sha256": "43c09c23fd1ccc9cce524748ee3ca8a5855404abf5b92110bc39b485282e997b"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_193.png",
+        "sha256": "a84930fc7fb02aa1169cfc30d3adfb4775608aec8c59ed7be9b0a9932a99fad3"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_197.png",
+        "sha256": "ba1a1f0cf262ce2ed96ab087819d1176038e6449a6aae97cb3460b96d28e2c9e"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_199.png",
+        "sha256": "0ca82f2d147a74a08472231a77e37efaf062f839a48abd547764f86fa45a2936"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_209.png",
+        "sha256": "770e876ff8fbe551748ed5131737d10111acf4eca049489d73bb7c9818440d80"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_213.png",
+        "sha256": "e8aa5af4f7d09eba56be885a453e2f9fe0e8e1cee915e2e49790c838cd3611ec"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_215.png",
+        "sha256": "2c61ffa0b7a7cdd111f746956c7c71f4d818208c16fa59db7e3f8f0ab359b6fb"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_221.png",
+        "sha256": "f3a1708124fb7567d8c2ac9898c54f3c90d6b3e3506fc2479d3008c30e289902"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_223.png",
+        "sha256": "b08da79800e1f39fa2e0d4c25bfa9f5cdd83664582ddda9374804ac639032ec8"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_241.png",
+        "sha256": "9129dbe1b46257152847264c391d4d5525771f93c4024e239cb66a766f3cf49f"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_245.png",
+        "sha256": "9a88674a793d24a991d25ce8ea9511065d1c944f1a9dfcad2e58a09743d69c58"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_247.png",
+        "sha256": "84391187610d383d6c07293792976191ff397b95337fb8c11cfeb37c4bc26892"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_253.png",
+        "sha256": "f0f55442103c7ee549fa4dc7e33db051d2542b00e30a4a75c22f8c15a9217ba0"
+      },
+      {
+        "path": "assets/terrain/grass/dirt/mask_255.png",
+        "sha256": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa"
+      },
+      {
+        "path": "assets/terrain/grass/dirt_fill_00.png",
+        "sha256": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa"
+      },
+      {
+        "path": "assets/terrain/grass/dirt_fill_01.png",
+        "sha256": "9a6b7a96b0c95f062ac9139f408743d346967b27033e5767d4623ec53bb2ac55"
+      },
+      {
+        "path": "assets/terrain/grass/dirt_fill_02.png",
+        "sha256": "c9a38833a1c7a091cd2a1435888991f416a36699218d19389d2859924ad15cb1"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_violet/idle.png",
+        "sha256": "e38eafa3ef873be9ef319cd9bd5639ab1f6ff3a0a415890f4cf27839aeac64ce"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_violet/plant.json",
+        "sha256": "e0ba7b0214cecd2f6dc0d3acfe6e84f59663f539873dbebf3cc3ef45dcce64e7"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_white/idle.png",
+        "sha256": "e8c50889405502bfd2dc7650be3f73bfe53cf204bf54e916d1aac64123ca3fdd"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_white/plant.json",
+        "sha256": "0485faae71a4c038307ec760d334d7d69d22a3d28dfe0744641b42671d50305e"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_yellow/idle.png",
+        "sha256": "e96f471c7eabf038ae5594306bfa1b6819161de4248b34830c11654dd68eed1d"
+      },
+      {
+        "path": "assets/terrain/grass/flowers/flowers_yellow/plant.json",
+        "sha256": "a9fdf33ccba5ff2e47d107d2866fa64cb0bf53e77cebe77384a4116dc021f729"
+      },
+      {
+        "path": "assets/terrain/grass/ground/lawn_00.png",
+        "sha256": "402b110a53edca0648fead6ca83f28780fa656a3a809a9a8d8b1512153486cf9"
+      },
+      {
+        "path": "assets/terrain/grass/ground/lawn_01.png",
+        "sha256": "fee2c14f745f4e669fe70a43d591d6276a056633fff680419bd237cccd2c2291"
+      },
+      {
+        "path": "assets/terrain/grass/ground/lawn_02.png",
+        "sha256": "74d6a3b83bbdd020b462fe790e452927c3593bc03a96ad92c688fd77b13f142f"
+      },
+      {
+        "path": "assets/terrain/grass/ground/lawn_03.png",
+        "sha256": "54ff0802eb3050cf8cee0b1cff2d92db7ffb6cfedd390d000bb183b711264e48"
+      },
+      {
+        "path": "assets/terrain/grass/ground/meadow_00.png",
+        "sha256": "8537264dca9a5f34017559f54dec14e90019d691497569e2920dbe5e72e5620f"
+      },
+      {
+        "path": "assets/terrain/grass/ground/meadow_01.png",
+        "sha256": "abf1a71ed8fd784e3057d4aeaf611a4eb2327e09e9285fea3edd6df691f5a059"
+      },
+      {
+        "path": "assets/terrain/grass/ground/meadow_02.png",
+        "sha256": "20457afa4a01427700041f6fa48dc7ecf02856acdf91401cb518661bd55837ec"
+      },
+      {
+        "path": "assets/terrain/grass/ground/meadow_03.png",
+        "sha256": "3cb01fd4aaa5d8e413eaaa1ed95f3a7088d8707e3e48d3301c658465db34684b"
+      },
+      {
+        "path": "assets/terrain/grass/ground/woodland_00.png",
+        "sha256": "6deef800aebe1f151a9ec82511474ccccda0eb926e097c2ac86735bd7dfd9782"
+      },
+      {
+        "path": "assets/terrain/grass/ground/woodland_01.png",
+        "sha256": "eb418d513cc95b8251890acf44c4767a989581023389be96685a33f4360fa339"
+      },
+      {
+        "path": "assets/terrain/grass/ground/woodland_02.png",
+        "sha256": "293937b18a35acc486c97197d340af8d35ac56a751333acfda6474ad610b21de"
+      },
+      {
+        "path": "assets/terrain/grass/ground/woodland_03.png",
+        "sha256": "13a1d65f90ee720610db6a601c402816db6ba55c0a9974657e1ede5fc2378124"
+      },
+      {
+        "path": "assets/terrain/grass/tall/arching/idle_00_front.png",
+        "sha256": "5dfae3c3ed293c5d0d64e5a69acb229defbdc7083493c30127d6e28f822b2196"
+      },
+      {
+        "path": "assets/terrain/grass/tall/arching/idle_00_rear.png",
+        "sha256": "a9a22cadac69de0a4e7c8379ca43e5b49c0aabe3072ebb18dabfd60c71cb48ef"
+      },
+      {
+        "path": "assets/terrain/grass/tall/fan/idle_00_front.png",
+        "sha256": "debfbbd4fbe3c27f440978aebd8c8450e32b4f220aeff191c5b98b262746bac1"
+      },
+      {
+        "path": "assets/terrain/grass/tall/fan/idle_00_rear.png",
+        "sha256": "b148b094386e24841245f788b3de322c103b90c52d553963031c92cbb2cc9cde"
+      },
+      {
+        "path": "assets/terrain/grass/tall/seeded/idle_00_front.png",
+        "sha256": "fc31874f3d4cab4b0c98ec0eb0b129faf13bed90b7a6f74ed9d11a4a7a582303"
+      },
+      {
+        "path": "assets/terrain/grass/tall/seeded/idle_00_rear.png",
+        "sha256": "2e28788fe447beb7cbfa55ad0d467ba622a96b6c6503db2786cc70b23bcc8c5b"
+      },
+      {
+        "path": "assets/terrain/grass/tall/slender/idle_00_front.png",
+        "sha256": "c1f689190e9b9da0896490c50688694a34c1e1145318aa1f9bb1d2c932d7eeb1"
+      },
+      {
+        "path": "assets/terrain/grass/tall/slender/idle_00_rear.png",
+        "sha256": "5a383e8e275807bfec3b73fe00e1b7de8c158fb7656ec9fc1479df0e72dddf83"
+      },
+      {
         "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
         "sha256": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e"
       },
@@ -14531,6 +15440,10 @@
       {
         "path": "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
         "sha256": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b"
+      },
+      {
+        "path": "tools/grass_terrain.py",
+        "sha256": "b3b574ec93b9bb67e97768cc39a2121ad73f3ea811f637c96a11c9a983d09bf0"
       },
       {
         "path": "tools/reserve_stone_kit.py",

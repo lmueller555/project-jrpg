@@ -792,5 +792,174 @@
       960,
       486
     ]
-  ]
+  ],
+  "grass": {
+    "manifest": "assets/terrain/grass/assets.json",
+    "base_material": "meadow",
+    "material_regions": [
+      {
+        "material": "woodland",
+        "center": [
+          576,
+          74
+        ],
+        "radius": [
+          650,
+          142
+        ]
+      },
+      {
+        "material": "woodland",
+        "center": [
+          102,
+          410
+        ],
+        "radius": [
+          112,
+          340
+        ]
+      },
+      {
+        "material": "woodland",
+        "center": [
+          289,
+          350
+        ],
+        "radius": [
+          152,
+          202
+        ]
+      },
+      {
+        "material": "woodland",
+        "center": [
+          1110,
+          516
+        ],
+        "radius": [
+          118,
+          256
+        ]
+      },
+      {
+        "material": "lawn",
+        "center": [
+          598,
+          433
+        ],
+        "radius": [
+          236,
+          252
+        ]
+      },
+      {
+        "material": "lawn",
+        "center": [
+          804,
+          370
+        ],
+        "radius": [
+          160,
+          118
+        ]
+      }
+    ],
+    "patches": [
+      {
+        "center": [
+          318,
+          142
+        ],
+        "radius": [
+          142,
+          50
+        ]
+      },
+      {
+        "center": [
+          225,
+          390
+        ],
+        "radius": [
+          94,
+          92
+        ]
+      },
+      {
+        "center": [
+          268,
+          530
+        ],
+        "radius": [
+          80,
+          54
+        ]
+      },
+      {
+        "center": [
+          574,
+          581
+        ],
+        "radius": [
+          104,
+          72
+        ]
+      },
+      {
+        "center": [
+          716,
+          194
+        ],
+        "radius": [
+          116,
+          52
+        ]
+      },
+      {
+        "center": [
+          996,
+          200
+        ],
+        "radius": [
+          76,
+          38
+        ]
+      },
+      {
+        "center": [
+          1045,
+          536
+        ],
+        "radius": [
+          62,
+          58
+        ]
+      },
+      {
+        "center": [
+          966,
+          671
+        ],
+        "radius": [
+          108,
+          34
+        ]
+      }
+    ],
+    "clear_rects": [
+      [
+        391,
+        135,
+        288,
+        210
+      ],
+      [
+        655,
+        225,
+        252,
+        120
+      ]
+    ],
+    "notes": "Approved deeper emerald native24px materials. Meadow and woodland form broad coherent patches around a maintained lawn. Interactive grass is16-17px tall and kept clear of roads, object roots, doors, public gathering points and the woodland circuit."
+  }
 }

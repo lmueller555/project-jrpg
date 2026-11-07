@@ -1,0 +1,462 @@
+{
+  "version": 1,
+  "id": "grass_demo.prototype.24",
+  "status": "prototype_for_review",
+  "tile_size": 24,
+  "palette": {
+    "base": "#2c7c50",
+    "deep": "#173f31",
+    "shadow": "#205b3b",
+    "mid": "#286e46",
+    "light": "#42975f",
+    "highlight": "#67b982",
+    "soil": "#625a43",
+    "soil_shadow": "#3e5841",
+    "leaf": "#8f8151",
+    "leaf_light": "#a69a65",
+    "moss": "#246b48",
+    "soft_mid": "#28764e",
+    "soft_light": "#34885a"
+  },
+  "materials": {
+    "lawn": {
+      "label": "Maintained grass",
+      "tiles": [
+        "assets/terrain/grass_demo/ground/lawn_00.png",
+        "assets/terrain/grass_demo/ground/lawn_01.png",
+        "assets/terrain/grass_demo/ground/lawn_02.png",
+        "assets/terrain/grass_demo/ground/lawn_03.png"
+      ]
+    },
+    "meadow": {
+      "label": "Meadow grass",
+      "tiles": [
+        "assets/terrain/grass_demo/ground/meadow_00.png",
+        "assets/terrain/grass_demo/ground/meadow_01.png",
+        "assets/terrain/grass_demo/ground/meadow_02.png",
+        "assets/terrain/grass_demo/ground/meadow_03.png"
+      ]
+    },
+    "woodland": {
+      "label": "Woodland grass",
+      "tiles": [
+        "assets/terrain/grass_demo/ground/woodland_00.png",
+        "assets/terrain/grass_demo/ground/woodland_01.png",
+        "assets/terrain/grass_demo/ground/woodland_02.png",
+        "assets/terrain/grass_demo/ground/woodland_03.png"
+      ]
+    }
+  },
+  "tall_grass": {
+    "frame_size": [
+      24,
+      32
+    ],
+    "anchor": [
+      12,
+      28
+    ],
+    "contact_rect": [
+      -10,
+      -8,
+      20,
+      12
+    ],
+    "height_limits": {
+      "rear": 18,
+      "front": 5
+    },
+    "opaque_height_limit": 17,
+    "reference_character_visible_height": 34,
+    "variants": {
+      "fan": {
+        "idle": [
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_00_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_00_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_01_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_01_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_02_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_02_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_03_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_03_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_04_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_04_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/fan/idle_05_rear.png",
+            "front": "assets/terrain/grass_demo/tall/fan/idle_05_front.png",
+            "duration_ms": 800
+          }
+        ],
+        "parted": {
+          "north": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/north_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/north_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/north_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/north_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/north_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/north_02_front.png"
+            }
+          ],
+          "east": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/east_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/east_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/east_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/east_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/east_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/east_02_front.png"
+            }
+          ],
+          "south": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/south_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/south_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/south_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/south_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/south_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/south_02_front.png"
+            }
+          ],
+          "west": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/west_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/west_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/west_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/west_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/fan/west_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/fan/west_02_front.png"
+            }
+          ]
+        }
+      },
+      "slender": {
+        "idle": [
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_00_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_00_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_01_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_01_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_02_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_02_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_03_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_03_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_04_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_04_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/slender/idle_05_rear.png",
+            "front": "assets/terrain/grass_demo/tall/slender/idle_05_front.png",
+            "duration_ms": 800
+          }
+        ],
+        "parted": {
+          "north": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/north_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/north_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/north_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/north_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/north_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/north_02_front.png"
+            }
+          ],
+          "east": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/east_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/east_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/east_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/east_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/east_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/east_02_front.png"
+            }
+          ],
+          "south": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/south_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/south_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/south_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/south_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/south_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/south_02_front.png"
+            }
+          ],
+          "west": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/west_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/west_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/west_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/west_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/slender/west_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/slender/west_02_front.png"
+            }
+          ]
+        }
+      },
+      "arching": {
+        "idle": [
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_00_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_00_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_01_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_01_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_02_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_02_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_03_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_03_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_04_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_04_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/arching/idle_05_rear.png",
+            "front": "assets/terrain/grass_demo/tall/arching/idle_05_front.png",
+            "duration_ms": 800
+          }
+        ],
+        "parted": {
+          "north": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/north_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/north_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/north_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/north_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/north_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/north_02_front.png"
+            }
+          ],
+          "east": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/east_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/east_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/east_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/east_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/east_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/east_02_front.png"
+            }
+          ],
+          "south": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/south_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/south_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/south_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/south_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/south_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/south_02_front.png"
+            }
+          ],
+          "west": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/west_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/west_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/west_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/west_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/arching/west_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/arching/west_02_front.png"
+            }
+          ]
+        }
+      },
+      "seeded": {
+        "idle": [
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_00_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_00_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_01_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_01_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_02_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_02_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_03_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_03_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_04_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_04_front.png",
+            "duration_ms": 800
+          },
+          {
+            "rear": "assets/terrain/grass_demo/tall/seeded/idle_05_rear.png",
+            "front": "assets/terrain/grass_demo/tall/seeded/idle_05_front.png",
+            "duration_ms": 800
+          }
+        ],
+        "parted": {
+          "north": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/north_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/north_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/north_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/north_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/north_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/north_02_front.png"
+            }
+          ],
+          "east": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/east_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/east_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/east_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/east_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/east_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/east_02_front.png"
+            }
+          ],
+          "south": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/south_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/south_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/south_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/south_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/south_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/south_02_front.png"
+            }
+          ],
+          "west": [
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/west_00_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/west_00_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/west_01_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/west_01_front.png"
+            },
+            {
+              "rear": "assets/terrain/grass_demo/tall/seeded/west_02_rear.png",
+              "front": "assets/terrain/grass_demo/tall/seeded/west_02_front.png"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "source_recipe": "assets/source/terrain/grass_demo/recipe.json",
+  "source_recipe_sha256": "f53fa7a3902c9346d8c08b68b83abe9f5571364b2b1c5bd043f9146af2308b26",
+  "source_assets": [
+    {
+      "path": "assets/terrain/eldenmere/grass_dirt/grass_00.png",
+      "sha256": "403b33c4706a4cf7f8fb892ec910731d0b04c48597a70e5a3d1b46910c9045d7"
+    },
+    {
+      "path": "assets/terrain/eldenmere/grass_flowers/grass_dense/idle.png",
+      "sha256": "5316f82cc28f63ce4ce3f9cbee60a6fed6f2de4d559d09df5d51892b4634aed0"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    }
+  ]
+}

@@ -4,15 +4,22 @@ Ground grass, dirt transitions, water banks/animation and trees are exact native
 approved assets. The intake props use their wood/iron/stone and water palettes.
 Only this new scene and the town's reversible-link metadata are authored here.
 """
+from hashlib import sha256
 from pathlib import Path
-from random import Random
 import json, math
 from PIL import Image, ImageDraw
+
+if __package__:
+    from .grass_terrain import load_pack, material_at, material_images, remap_legacy_green
+else:
+    from grass_terrain import load_pack, material_at, material_images, remap_legacy_green
+
 ROOT=Path(__file__).resolve().parents[1]
 MAP=ROOT/'assets/maps/eldenmere/upstream'
 ART=ROOT/'assets/story/mill'
 PROPS=ART/'props'
 SIZE=(768,576);TILE=24
+GRASS_RECIPE=ROOT/'assets/source/maps/eldenmere/upstream/grass.json'
 
 def read(p):return json.loads((ROOT/p).read_text())
 def load(p):return Image.open(ROOT/p).convert('RGBA')
@@ -139,14 +146,45 @@ def native_props():
     return result
 
 
-def build_scene():
+def grass_instances(recipe, collision, dirtcells):
+    """Author irregular passable patches outside the quest's working lanes."""
+    blocking=collision.convert('L')
+    variants=('fan','slender','arching','seeded')
+    result=[]
+    for patch in recipe['patches']:
+        cx,cy=patch['center'];rx,ry=patch['radii']
+        spacing=patch['spacing']
+        for row,y in enumerate(range(cy-ry,cy+ry+1,spacing)):
+            for col,x in enumerate(range(cx-rx,cx+rx+1,spacing)):
+                seed=(x*73856093) ^ (y*19349663) ^ recipe['seed']
+                px=x+(row%2)*7+(seed%5-2)
+                py=y+((seed>>4)%5-2)
+                edge=((px-cx)/rx)**2+((py-cy)/ry)**2
+                if edge>1 or edge>.70 and seed%3==0:continue
+                bounds=(px-12,py-18,px+12,py+7)
+                if not(0<=bounds[0] and bounds[2]<=SIZE[0] and
+                       0<=bounds[1] and bounds[3]<=SIZE[1]):continue
+                if blocking.crop(bounds).getbbox():continue
+                # Keep roots and blade silhouettes clear of dirt, water and the
+                # intake's repair/spell/lever stations. Vegetation adds no mask.
+                cells={(xx//24,yy//24) for xx in (bounds[0],bounds[2]-1)
+                       for yy in (bounds[1],bounds[3]-1)}
+                if cells & dirtcells:continue
+                if any((px-qx)**2+(py-qy)**2<radius**2
+                       for qx,qy,radius in recipe['clear_circles']):continue
+                result.append({'id':f"upstream.{patch['id']}.{row}.{col}",
+                               'position':[px,py],'variant':variants[seed%4],
+                               'phase_ms':seed%4800})
+    return result
+
+
+def build_scene(*, write_town_link=True):
     MAP.mkdir(parents=True,exist_ok=True)
-    rng=Random(1729)
-    grassmeta=read('assets/terrain/eldenmere/grass_dirt/tileset.json')
-    grass=[load('assets/terrain/eldenmere/grass_dirt/'+p) for p in grassmeta['grass']['images']]
-    dirt=load('assets/terrain/eldenmere/grass_dirt/'+grassmeta['image'])
+    grassmeta=load_pack();materials=material_images(grassmeta)
+    grassrecipe=json.loads(GRASS_RECIPE.read_text())
+    dirt={tile['mask']:load(tile['image']) for tile in grassmeta['dirt_transitions']['tiles']}
     stream=read('assets/terrain/eldenmere/stream/tileset.json')
-    banks=load('assets/terrain/eldenmere/stream/'+stream['banks'])
+    banks=remap_legacy_green(load('assets/terrain/eldenmere/stream/'+stream['banks']))
     water=[load('assets/terrain/eldenmere/stream/'+f['image']) for f in stream['frames'][:6]]
     dirtcells={(x,y) for x in range(6,9) for y in range(9,24)}
     dirtcells|={(x,y) for x in range(8,20) for y in range(12,15)}
@@ -155,11 +193,21 @@ def build_scene():
     streamcells|={(x,3) for x in list(range(4,9))+list(range(16,20))}
     streamcells|={(x,7) for x in list(range(2,5))+list(range(13,16))+list(range(25,28))}
     base=Image.new('RGBA',SIZE)
+    material_cells=[]
     for y in range(24):
-        for x in range(32):base.alpha_composite(grass[rng.randrange(len(grass))],(x*24,y*24))
+        row=[]
+        for x in range(32):
+            # Tree margins use litter/moss, open banks use meadow, and the
+            # maintained intake apron blends into calmer lawn beside the dirt.
+            family='woodland' if x<5 or x>25 or y<3 or y>19 else 'meadow'
+            if any((x+dx,y+dy) in dirtcells for dx,dy in ((0,0),(1,0),(-1,0),(0,1),(0,-1))):family='lawn'
+            index,image=material_at(x,y,family,materials,seed=grassrecipe['seed'])
+            base.alpha_composite(image,(x*24,y*24))
+            row.append([family,index])
+        material_cells.append(row)
     for x,y in sorted(dirtcells):
-        mask=mask_for(dirtcells,x,y);idx=grassmeta['lookup_256'][mask];rect=grassmeta['tiles'][idx]['rect']
-        base.alpha_composite(dirt.crop((rect[0],rect[1],rect[0]+24,rect[1]+24)),(24*x,24*y))
+        mask=mask_for(dirtcells,x,y)
+        base.alpha_composite(dirt[mask],(24*x,24*y))
     tree=load('assets/terrain/eldenmere/foliage/tree/idle.png')
     shrub=load('assets/terrain/eldenmere/foliage/shrub/idle.png')
     treepos=[(-24,-40),(48,-42),(134,-50),(228,-36),(322,-48),(420,-44),(522,-44),(620,-46),(708,-42),
@@ -200,20 +248,36 @@ def build_scene():
         gd.line((531,168,531,575),fill=D['edge']);gd.line((548,168,548,575),fill=D['edge'])
         frames.append(save(ground.convert('RGB'),MAP/'ground'/f'frame_{phase+1:02}.png'))
     collisionpath=save(collision,MAP/'collision.png')
-    overview=Image.open(ROOT/frames[0]).convert('RGB')
-    for e in entities:overview.paste(tree,tuple(e['position']),tree)
+    grass={'manifest':'assets/terrain/grass/assets.json',
+           'instances':grass_instances(grassrecipe,collision,dirtcells)}
+    overview=Image.open(ROOT/frames[0]).convert('RGBA')
+    scenery=[(e['sort_y'],load(e['frames'][0]),e['position']) for e in entities]
+    for item in grass['instances']:
+        pose=grassmeta['tall_grass']['variants'][item['variant']]['idle'][0]
+        x,y=item['position'];ax,ay=grassmeta['tall_grass']['anchor']
+        scenery.extend(((y-16,load(pose['rear']),(x-ax,y-ay)),
+                        (y+6,load(pose['front']),(x-ax,y-ay))))
+    for _,image,position in sorted(scenery,key=lambda item:item[0]):
+        overview.alpha_composite(image,tuple(position))
+    overview=overview.convert('RGB')
     overviewpath=save(overview,MAP/'overview.png')
     destination='assets/maps/eldenmere/playable/map.json'
     record={'id':'upstream','name':'Upper Millrace','kind':'exterior','size_tiles':[32,24],'tile_size':24,'size_pixels':list(SIZE),'spawn':[180,510],
             'player_probe_size':[24,12],'player_draw_anchor':[12,30],'ground_frames':frames,'ground_frame_duration_ms':200,'collision':collisionpath,
             'entities':entities,'foreground':[],'npcs':[],'landmarks':[{'id':'intake','name':'Millrace intake','position':[480,288]}],
-            'overview':overviewpath,'world_links':[{'id':'upstream_to_town','position':[180,546],'destination':destination,'spawn':[720,60],'arrival_facing':'front','label':'Return to Eldenmere','radius':24}]}
+            'overview':overviewpath,'grass':grass,
+            'terrain_materials':{'manifest':grass['manifest'],'cells':material_cells},
+            'build':{'grass_recipe':rel(GRASS_RECIPE),'grass_recipe_sha256':sha256(GRASS_RECIPE.read_bytes()).hexdigest(),
+                     'grass_manifest_sha256':sha256((ROOT/grass['manifest']).read_bytes()).hexdigest()},
+            'world_links':[{'id':'upstream_to_town','position':[180,546],'destination':destination,'spawn':[720,60],'arrival_facing':'front','label':'Return to Eldenmere','radius':24}]}
     write(MAP/'map.json',record)
+    if not write_town_link:return record
     townpath=ROOT/'assets/maps/eldenmere/playable/map.json';town=json.loads(townpath.read_text())
     town.setdefault('exterior_scenes',{})['upstream']=rel(MAP/'map.json')
     links=town.setdefault('world_links',[]);links[:]=[l for l in links if l.get('id')!='town_to_upstream']
     links.append({'id':'town_to_upstream','position':[720,12],'destination':rel(MAP/'map.json'),'spawn':[180,510],'arrival_facing':'back','label':'Follow the millrace upstream','radius':24})
     write(townpath,town)
+    return record
 
 
 def build():

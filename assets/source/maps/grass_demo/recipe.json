@@ -1,0 +1,1428 @@
+{
+  "version": 1,
+  "id": "grass_demo",
+  "name": "Grass demonstration",
+  "tile_size": 24,
+  "size_tiles": [
+    32,
+    22
+  ],
+  "spawn": [
+    108,
+    396
+  ],
+  "seed": 4281,
+  "asset_manifest": "assets/terrain/grass_demo/assets.json",
+  "materials": {
+    "base": "lawn",
+    "patches": [
+      {
+        "material": "woodland",
+        "polygon": [
+          [
+            312,
+            0
+          ],
+          [
+            768,
+            0
+          ],
+          [
+            768,
+            312
+          ],
+          [
+            696,
+            288
+          ],
+          [
+            672,
+            264
+          ],
+          [
+            576,
+            264
+          ],
+          [
+            528,
+            240
+          ],
+          [
+            480,
+            192
+          ],
+          [
+            432,
+            168
+          ],
+          [
+            408,
+            120
+          ],
+          [
+            360,
+            96
+          ],
+          [
+            336,
+            48
+          ]
+        ]
+      },
+      {
+        "material": "meadow",
+        "polygon": [
+          [
+            192,
+            216
+          ],
+          [
+            240,
+            192
+          ],
+          [
+            312,
+            216
+          ],
+          [
+            384,
+            192
+          ],
+          [
+            456,
+            216
+          ],
+          [
+            504,
+            240
+          ],
+          [
+            552,
+            288
+          ],
+          [
+            648,
+            288
+          ],
+          [
+            696,
+            312
+          ],
+          [
+            768,
+            312
+          ],
+          [
+            768,
+            528
+          ],
+          [
+            144,
+            528
+          ],
+          [
+            144,
+            456
+          ],
+          [
+            168,
+            408
+          ],
+          [
+            192,
+            360
+          ],
+          [
+            168,
+            312
+          ]
+        ]
+      }
+    ],
+    "blend_radius": 8,
+    "comparison_current": {
+      "rect": [
+        48,
+        48,
+        144,
+        72
+      ],
+      "label": "Current grass"
+    },
+    "comparison_proposed": {
+      "rect": [
+        216,
+        48,
+        144,
+        72
+      ],
+      "label": "Richer lawn"
+    },
+    "accent_patches": {
+      "lawn": [
+        {
+          "center": [
+            72,
+            204
+          ],
+          "radius": [
+            64,
+            48
+          ]
+        },
+        {
+          "center": [
+            240,
+            132
+          ],
+          "radius": [
+            60,
+            48
+          ]
+        },
+        {
+          "center": [
+            120,
+            360
+          ],
+          "radius": [
+            64,
+            64
+          ]
+        },
+        {
+          "center": [
+            432,
+            72
+          ],
+          "radius": [
+            84,
+            48
+          ]
+        }
+      ],
+      "meadow": [
+        {
+          "center": [
+            348,
+            276
+          ],
+          "radius": [
+            126,
+            96
+          ]
+        },
+        {
+          "center": [
+            552,
+            408
+          ],
+          "radius": [
+            156,
+            96
+          ]
+        },
+        {
+          "center": [
+            264,
+            444
+          ],
+          "radius": [
+            108,
+            60
+          ]
+        }
+      ],
+      "woodland": [
+        {
+          "center": [
+            552,
+            96
+          ],
+          "radius": [
+            114,
+            84
+          ]
+        },
+        {
+          "center": [
+            660,
+            216
+          ],
+          "radius": [
+            108,
+            84
+          ]
+        },
+        {
+          "center": [
+            744,
+            72
+          ],
+          "radius": [
+            72,
+            72
+          ]
+        }
+      ]
+    }
+  },
+  "path": {
+    "points": [
+      [
+        4,
+        16
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        16,
+        5
+      ],
+      [
+        25,
+        5
+      ],
+      [
+        25,
+        8
+      ],
+      [
+        28,
+        8
+      ],
+      [
+        28,
+        17
+      ],
+      [
+        24,
+        17
+      ],
+      [
+        24,
+        19
+      ],
+      [
+        4,
+        19
+      ],
+      [
+        4,
+        16
+      ]
+    ],
+    "width_tiles": 1
+  },
+  "props": [
+    {
+      "id": "context_tree",
+      "kind": "tree",
+      "position": [
+        576,
+        0
+      ],
+      "footprint": [
+        612,
+        96,
+        24,
+        24
+      ],
+      "sort_y": 120
+    },
+    {
+      "id": "context_tree_edge",
+      "kind": "tree",
+      "position": [
+        672,
+        -48
+      ],
+      "footprint": [
+        708,
+        48,
+        24,
+        24
+      ],
+      "sort_y": 72
+    },
+    {
+      "id": "context_bench",
+      "kind": "bench",
+      "position": [
+        48,
+        342
+      ],
+      "footprint": [
+        48,
+        362,
+        48,
+        10
+      ],
+      "sort_y": 372
+    }
+  ],
+  "regions": [
+    {
+      "id": "comparison_current",
+      "name": "Current grass",
+      "label": "Current grass",
+      "rect": [
+        48,
+        48,
+        144,
+        72
+      ]
+    },
+    {
+      "id": "comparison_proposed",
+      "name": "Richer lawn",
+      "label": "Richer lawn",
+      "rect": [
+        216,
+        48,
+        144,
+        72
+      ]
+    },
+    {
+      "id": "woodland",
+      "name": "Woodland grass",
+      "label": "Woodland grass",
+      "polygon": [
+        [
+          432,
+          0
+        ],
+        [
+          768,
+          0
+        ],
+        [
+          768,
+          288
+        ],
+        [
+          576,
+          264
+        ],
+        [
+          480,
+          192
+        ],
+        [
+          408,
+          120
+        ]
+      ]
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow grass",
+      "label": "Meadow grass",
+      "polygon": [
+        [
+          192,
+          216
+        ],
+        [
+          384,
+          192
+        ],
+        [
+          552,
+          288
+        ],
+        [
+          768,
+          312
+        ],
+        [
+          768,
+          528
+        ],
+        [
+          144,
+          528
+        ],
+        [
+          168,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "lawn",
+      "name": "Maintained lawn",
+      "label": "Maintained lawn",
+      "rect": [
+        24,
+        24,
+        720,
+        480
+      ]
+    }
+  ],
+  "checkpoints": {
+    "comparison_current": [
+      120,
+      96
+    ],
+    "comparison_proposed": [
+      288,
+      96
+    ],
+    "lawn": [
+      180,
+      168
+    ],
+    "walk_entry": [
+      240,
+      312
+    ],
+    "stand": [
+      408,
+      312
+    ],
+    "walk_exit": [
+      552,
+      312
+    ],
+    "recovery": [
+      552,
+      312
+    ],
+    "run_entry": [
+      552,
+      336
+    ],
+    "run_exit": [
+      264,
+      336
+    ],
+    "settle": [
+      240,
+      384
+    ],
+    "woodland_entry": [
+      552,
+      264
+    ],
+    "woodland_stand": [
+      600,
+      216
+    ],
+    "woodland_exit": [
+      672,
+      264
+    ]
+  },
+  "review_route": [
+    {
+      "name": "current_grass",
+      "position": [
+        120,
+        96
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2,
+      "shot": "current_grass"
+    },
+    {
+      "name": "richer_lawn",
+      "position": [
+        288,
+        96
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2,
+      "shot": "richer_lawn"
+    },
+    {
+      "name": "maintained_lawn",
+      "position": [
+        180,
+        168
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.8,
+      "shot": "maintained_lawn"
+    },
+    {
+      "name": "walk_entry",
+      "position": [
+        240,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "standing_in_grass",
+      "position": [
+        408,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 2.0,
+      "shot": "standing_in_grass"
+    },
+    {
+      "name": "grass_recovery",
+      "position": [
+        552,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.8,
+      "shot": "grass_recovery"
+    },
+    {
+      "name": "run_entry",
+      "position": [
+        552,
+        336
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "running_through_grass",
+      "position": [
+        264,
+        336
+      ],
+      "mode": "run",
+      "hold_seconds": 0.5,
+      "shot": "running_through_grass"
+    },
+    {
+      "name": "settled_grass",
+      "position": [
+        240,
+        384
+      ],
+      "mode": "run",
+      "hold_seconds": 1.2,
+      "shot": "settled_grass"
+    },
+    {
+      "name": "woodland_entry",
+      "position": [
+        552,
+        264
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "woodland_grass",
+      "position": [
+        600,
+        216
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.8,
+      "shot": "woodland_grass"
+    },
+    {
+      "name": "woodland_exit",
+      "position": [
+        672,
+        264
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2
+    },
+    {
+      "name": "return",
+      "position": [
+        108,
+        396
+      ],
+      "mode": "run",
+      "hold_seconds": 0.5
+    }
+  ],
+  "grass": {
+    "manifest": "assets/terrain/grass_demo/assets.json",
+    "instances": [
+      {
+        "id": "grass_01",
+        "position": [
+          332,
+          260
+        ],
+        "variant": "fan",
+        "phase_ms": 565
+      },
+      {
+        "id": "grass_02",
+        "position": [
+          362,
+          261
+        ],
+        "variant": "slender",
+        "phase_ms": 544
+      },
+      {
+        "id": "grass_03",
+        "position": [
+          385,
+          267
+        ],
+        "variant": "arching",
+        "phase_ms": 1314
+      },
+      {
+        "id": "grass_04",
+        "position": [
+          410,
+          260
+        ],
+        "variant": "seeded",
+        "phase_ms": 1293
+      },
+      {
+        "id": "grass_05",
+        "position": [
+          428,
+          267
+        ],
+        "variant": "fan",
+        "phase_ms": 2063
+      },
+      {
+        "id": "grass_06",
+        "position": [
+          284,
+          287
+        ],
+        "variant": "fan",
+        "phase_ms": 2381
+      },
+      {
+        "id": "grass_07",
+        "position": [
+          315,
+          291
+        ],
+        "variant": "slender",
+        "phase_ms": 3151
+      },
+      {
+        "id": "grass_08",
+        "position": [
+          332,
+          286
+        ],
+        "variant": "seeded",
+        "phase_ms": 3130
+      },
+      {
+        "id": "grass_09",
+        "position": [
+          361,
+          284
+        ],
+        "variant": "fan",
+        "phase_ms": 300
+      },
+      {
+        "id": "grass_10",
+        "position": [
+          383,
+          291
+        ],
+        "variant": "slender",
+        "phase_ms": 279
+      },
+      {
+        "id": "grass_11",
+        "position": [
+          407,
+          284
+        ],
+        "variant": "arching",
+        "phase_ms": 1049
+      },
+      {
+        "id": "grass_12",
+        "position": [
+          433,
+          285
+        ],
+        "variant": "seeded",
+        "phase_ms": 1819
+      },
+      {
+        "id": "grass_13",
+        "position": [
+          456,
+          287
+        ],
+        "variant": "fan",
+        "phase_ms": 1798
+      },
+      {
+        "id": "grass_14",
+        "position": [
+          478,
+          285
+        ],
+        "variant": "slender",
+        "phase_ms": 2568
+      },
+      {
+        "id": "grass_15",
+        "position": [
+          287,
+          314
+        ],
+        "variant": "fan",
+        "phase_ms": 2999
+      },
+      {
+        "id": "grass_16",
+        "position": [
+          313,
+          311
+        ],
+        "variant": "slender",
+        "phase_ms": 2978
+      },
+      {
+        "id": "grass_17",
+        "position": [
+          337,
+          315
+        ],
+        "variant": "arching",
+        "phase_ms": 148
+      },
+      {
+        "id": "grass_18",
+        "position": [
+          358,
+          311
+        ],
+        "variant": "seeded",
+        "phase_ms": 127
+      },
+      {
+        "id": "grass_19",
+        "position": [
+          386,
+          311
+        ],
+        "variant": "fan",
+        "phase_ms": 897
+      },
+      {
+        "id": "grass_20",
+        "position": [
+          408,
+          312
+        ],
+        "variant": "slender",
+        "phase_ms": 1667
+      },
+      {
+        "id": "grass_21",
+        "position": [
+          429,
+          315
+        ],
+        "variant": "arching",
+        "phase_ms": 1646
+      },
+      {
+        "id": "grass_22",
+        "position": [
+          457,
+          310
+        ],
+        "variant": "fan",
+        "phase_ms": 2416
+      },
+      {
+        "id": "grass_23",
+        "position": [
+          478,
+          314
+        ],
+        "variant": "slender",
+        "phase_ms": 2395
+      },
+      {
+        "id": "grass_24",
+        "position": [
+          501,
+          314
+        ],
+        "variant": "arching",
+        "phase_ms": 3165
+      },
+      {
+        "id": "grass_25",
+        "position": [
+          291,
+          333
+        ],
+        "variant": "seeded",
+        "phase_ms": 3257
+      },
+      {
+        "id": "grass_26",
+        "position": [
+          310,
+          333
+        ],
+        "variant": "fan",
+        "phase_ms": 427
+      },
+      {
+        "id": "grass_27",
+        "position": [
+          338,
+          339
+        ],
+        "variant": "slender",
+        "phase_ms": 406
+      },
+      {
+        "id": "grass_28",
+        "position": [
+          360,
+          334
+        ],
+        "variant": "arching",
+        "phase_ms": 1176
+      },
+      {
+        "id": "grass_29",
+        "position": [
+          382,
+          339
+        ],
+        "variant": "fan",
+        "phase_ms": 1946
+      },
+      {
+        "id": "grass_30",
+        "position": [
+          408,
+          336
+        ],
+        "variant": "slender",
+        "phase_ms": 1925
+      },
+      {
+        "id": "grass_31",
+        "position": [
+          429,
+          333
+        ],
+        "variant": "arching",
+        "phase_ms": 2695
+      },
+      {
+        "id": "grass_32",
+        "position": [
+          455,
+          336
+        ],
+        "variant": "seeded",
+        "phase_ms": 2674
+      },
+      {
+        "id": "grass_33",
+        "position": [
+          484,
+          338
+        ],
+        "variant": "fan",
+        "phase_ms": 3444
+      },
+      {
+        "id": "grass_34",
+        "position": [
+          335,
+          364
+        ],
+        "variant": "fan",
+        "phase_ms": 162
+      },
+      {
+        "id": "grass_35",
+        "position": [
+          356,
+          364
+        ],
+        "variant": "slender",
+        "phase_ms": 932
+      },
+      {
+        "id": "grass_36",
+        "position": [
+          384,
+          356
+        ],
+        "variant": "seeded",
+        "phase_ms": 911
+      },
+      {
+        "id": "grass_37",
+        "position": [
+          410,
+          361
+        ],
+        "variant": "fan",
+        "phase_ms": 1681
+      },
+      {
+        "id": "grass_38",
+        "position": [
+          433,
+          358
+        ],
+        "variant": "slender",
+        "phase_ms": 1660
+      },
+      {
+        "id": "grass_39",
+        "position": [
+          455,
+          357
+        ],
+        "variant": "arching",
+        "phase_ms": 2430
+      },
+      {
+        "id": "grass_40",
+        "position": [
+          572,
+          166
+        ],
+        "variant": "seeded",
+        "phase_ms": 2635
+      },
+      {
+        "id": "grass_41",
+        "position": [
+          601,
+          170
+        ],
+        "variant": "fan",
+        "phase_ms": 3405
+      },
+      {
+        "id": "grass_42",
+        "position": [
+          625,
+          166
+        ],
+        "variant": "slender",
+        "phase_ms": 3384
+      },
+      {
+        "id": "grass_43",
+        "position": [
+          555,
+          188
+        ],
+        "variant": "slender",
+        "phase_ms": 328
+      },
+      {
+        "id": "grass_44",
+        "position": [
+          575,
+          193
+        ],
+        "variant": "arching",
+        "phase_ms": 1098
+      },
+      {
+        "id": "grass_45",
+        "position": [
+          596,
+          189
+        ],
+        "variant": "seeded",
+        "phase_ms": 1077
+      },
+      {
+        "id": "grass_46",
+        "position": [
+          623,
+          190
+        ],
+        "variant": "fan",
+        "phase_ms": 1847
+      },
+      {
+        "id": "grass_47",
+        "position": [
+          647,
+          193
+        ],
+        "variant": "slender",
+        "phase_ms": 1826
+      },
+      {
+        "id": "grass_48",
+        "position": [
+          549,
+          216
+        ],
+        "variant": "seeded",
+        "phase_ms": 2822
+      },
+      {
+        "id": "grass_49",
+        "position": [
+          575,
+          220
+        ],
+        "variant": "fan",
+        "phase_ms": 2801
+      },
+      {
+        "id": "grass_50",
+        "position": [
+          600,
+          216
+        ],
+        "variant": "arching",
+        "phase_ms": 3571
+      },
+      {
+        "id": "grass_51",
+        "position": [
+          623,
+          217
+        ],
+        "variant": "seeded",
+        "phase_ms": 3550
+      },
+      {
+        "id": "grass_52",
+        "position": [
+          647,
+          213
+        ],
+        "variant": "fan",
+        "phase_ms": 720
+      },
+      {
+        "id": "grass_53",
+        "position": [
+          575,
+          240
+        ],
+        "variant": "seeded",
+        "phase_ms": 1264
+      },
+      {
+        "id": "grass_54",
+        "position": [
+          597,
+          239
+        ],
+        "variant": "fan",
+        "phase_ms": 1243
+      },
+      {
+        "id": "grass_55",
+        "position": [
+          622,
+          243
+        ],
+        "variant": "slender",
+        "phase_ms": 2013
+      },
+      {
+        "id": "grass_56",
+        "position": [
+          215,
+          408
+        ],
+        "variant": "arching",
+        "phase_ms": 2218
+      },
+      {
+        "id": "grass_57",
+        "position": [
+          236,
+          408
+        ],
+        "variant": "fan",
+        "phase_ms": 2988
+      },
+      {
+        "id": "grass_58",
+        "position": [
+          266,
+          410
+        ],
+        "variant": "slender",
+        "phase_ms": 2967
+      },
+      {
+        "id": "grass_59",
+        "position": [
+          284,
+          404
+        ],
+        "variant": "arching",
+        "phase_ms": 137
+      },
+      {
+        "id": "grass_60",
+        "position": [
+          237,
+          435
+        ],
+        "variant": "arching",
+        "phase_ms": 229
+      },
+      {
+        "id": "grass_61",
+        "position": [
+          263,
+          433
+        ],
+        "variant": "seeded",
+        "phase_ms": 999
+      },
+      {
+        "id": "grass_62",
+        "position": [
+          287,
+          428
+        ],
+        "variant": "fan",
+        "phase_ms": 1769
+      },
+      {
+        "id": "grass_63",
+        "position": [
+          272,
+          280
+        ],
+        "variant": "arching",
+        "phase_ms": 1522
+      },
+      {
+        "id": "grass_64",
+        "position": [
+          490,
+          279
+        ],
+        "variant": "seeded",
+        "phase_ms": 1953
+      },
+      {
+        "id": "grass_65",
+        "position": [
+          516,
+          324
+        ],
+        "variant": "fan",
+        "phase_ms": 2384
+      },
+      {
+        "id": "grass_66",
+        "position": [
+          312,
+          373
+        ],
+        "variant": "slender",
+        "phase_ms": 2815
+      },
+      {
+        "id": "grass_67",
+        "position": [
+          348,
+          300
+        ],
+        "variant": "arching",
+        "phase_ms": 3246
+      },
+      {
+        "id": "grass_68",
+        "position": [
+          372,
+          300
+        ],
+        "variant": "seeded",
+        "phase_ms": 77
+      },
+      {
+        "id": "grass_69",
+        "position": [
+          396,
+          300
+        ],
+        "variant": "fan",
+        "phase_ms": 508
+      },
+      {
+        "id": "grass_70",
+        "position": [
+          420,
+          300
+        ],
+        "variant": "slender",
+        "phase_ms": 939
+      },
+      {
+        "id": "grass_71",
+        "position": [
+          444,
+          300
+        ],
+        "variant": "arching",
+        "phase_ms": 1370
+      },
+      {
+        "id": "grass_72",
+        "position": [
+          360,
+          324
+        ],
+        "variant": "seeded",
+        "phase_ms": 1801
+      },
+      {
+        "id": "grass_73",
+        "position": [
+          384,
+          324
+        ],
+        "variant": "fan",
+        "phase_ms": 2232
+      },
+      {
+        "id": "grass_74",
+        "position": [
+          432,
+          324
+        ],
+        "variant": "slender",
+        "phase_ms": 2663
+      },
+      {
+        "id": "grass_75",
+        "position": [
+          588,
+          204
+        ],
+        "variant": "arching",
+        "phase_ms": 3094
+      },
+      {
+        "id": "grass_76",
+        "position": [
+          612,
+          228
+        ],
+        "variant": "seeded",
+        "phase_ms": 3525
+      },
+      {
+        "id": "grass_77",
+        "position": [
+          228,
+          420
+        ],
+        "variant": "fan",
+        "phase_ms": 356
+      },
+      {
+        "id": "grass_78",
+        "position": [
+          276,
+          420
+        ],
+        "variant": "slender",
+        "phase_ms": 787
+      }
+    ]
+  },
+  "notes": [
+    "Isolated prototype; existing Eldenmere and Sanctuary maps are unchanged.",
+    "All tall grass is freely walkable. Context tree roots and bench are solid.",
+    "Irregular material boundaries blend as native pixel clusters; comparison plots deliberately share a straight edge.",
+    "Review route uses ordinary player movement through lawn, meadow, woodland and dense grass.",
+    "Quiet base variants dominate; fuller growth clusters in larger authored patches. Tall clumps use staggered roots and interleaved inner growth with exact review stand anchors retained."
+  ],
+  "demo_route": [
+    [
+      120,
+      96
+    ],
+    [
+      288,
+      96
+    ],
+    [
+      180,
+      168
+    ],
+    [
+      240,
+      312
+    ],
+    [
+      408,
+      312
+    ],
+    [
+      552,
+      312
+    ],
+    [
+      552,
+      336
+    ],
+    [
+      264,
+      336
+    ],
+    [
+      240,
+      384
+    ],
+    [
+      552,
+      264
+    ],
+    [
+      600,
+      216
+    ],
+    [
+      672,
+      264
+    ],
+    [
+      108,
+      396
+    ]
+  ]
+}

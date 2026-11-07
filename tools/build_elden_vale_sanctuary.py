@@ -37,6 +37,7 @@ def products():
                  entities=art['entities'],foreground=[],overview=art['overview'],
                  npcs=[],world_links=[],
                  asset_instances=art['asset_instances'],
+                 grass=art['grass'],
                  collision_footprints=art['collision_footprints'],
                  depth_samples=art['depth_samples'],cloister_bays=art['cloister_bays'],
                  blocked_probes={'hall_wall':[460,320],'tree_root':[144,276],

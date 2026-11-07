@@ -13,14 +13,16 @@ import json
 from pathlib import Path
 from random import Random
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 if __package__:
     from .build_eldenmere_terrain import BITS, OFFSETS, normalize_mask
     from .reserve_stone_kit import make_kit
+    from .grass_terrain import material_at
 else:
     from build_eldenmere_terrain import BITS, OFFSETS, normalize_mask
     from reserve_stone_kit import make_kit
+    from grass_terrain import material_at
 
 ROOT = Path(__file__).resolve().parents[1]
 RECIPE = ROOT/'assets/source/maps/elden_vale_sanctuary/recipe.json'
@@ -52,17 +54,32 @@ def exports():
     products['../elden_vale_sanctuary_kit/kit.json'] = (json.dumps(kit_meta,indent=2)+'\n').encode()
     for source in kit_meta['source_sha256']:used.add(ROOT/source)
     used.add(ROOT/'tools/reserve_stone_kit.py')
+    used.add(ROOT/'tools/grass_terrain.py')
     width, height = recipe['size_pixels']
     tile = 24
-    gm = read(TERRAIN/'grass_dirt/tileset.json')
-    grass = [opened(TERRAIN/'grass_dirt'/p) for p in gm['grass']['images']]
-    dirt = {r['mask']:opened(TERRAIN/'grass_dirt'/r['image']) for r in gm['tiles']}
-    fills = [opened(TERRAIN/'grass_dirt'/p) for p in gm['dirt_interiors']['images']]
+    grass_spec = recipe['grass']
+    gm = read(ROOT/grass_spec['manifest'])
+    grass = {family:[opened(ROOT/path) for path in record['tiles']]
+             for family,record in gm['materials'].items()}
+    dirt = {r['mask']:opened(ROOT/r['image']) for r in gm['dirt_transitions']['tiles']}
+    fills = [opened(ROOT/path) for path in gm['dirt_transitions']['interiors']]
     ground = Image.new('RGBA', (width,height))
     rng = Random(8713)
+    material_tiles = [path for record in gm['materials'].values() for path in record['tiles']]
+    material_indices = []
     for y in range(height//tile):
+        row = []
         for x in range(width//tile):
-            ground.alpha_composite(rng.choices(grass, weights=(6,3,2,1))[0], (x*tile,y*tile))
+            px,py=x*tile+12,y*tile+12
+            family=grass_spec['base_material']
+            for region in grass_spec['material_regions']:
+                cx,cy=region['center'];rx,ry=region['radius']
+                if ((px-cx)/rx)**2+((py-cy)/ry)**2 <= 1:
+                    family=region['material']
+            index,image=material_at(x,y,family,grass)
+            ground.alpha_composite(image,(x*tile,y*tile))
+            row.append(material_tiles.index(gm['materials'][family]['tiles'][index]))
+        material_indices.append(row)
     path_mask = Image.new('L', (width,height))
     draw = ImageDraw.Draw(path_mask)
     for road in recipe['ground']['roads']:
@@ -82,22 +99,22 @@ def exports():
     for yy in range(350,425,28):
         for xx in range(456,873,40):
             if rng.random()<.77:ground.alpha_composite(flagstones,(xx+rng.randrange(-3,4),yy))
-    plant_names = ('grass_sparse','grass_splayed','grass_dense','flowers_white','flowers_yellow','flowers_violet')
+    # Grass is an independent interactive layer. Only low flowers belong to
+    # the ground cache; their stems use the same approved emerald ramp.
+    plant_names = ('flowers_white','flowers_yellow','flowers_violet')
     plants = []
     for name in plant_names:
-        folder = TERRAIN/'grass_flowers'/name
-        meta = read(folder/'plant.json')
-        image_name = meta.get('idle','idle.png')
-        plants.append(opened(folder/image_name))
+        record=gm['flowers'][name]
+        read(ROOT/record['metadata'])
+        plants.append(opened(ROOT/record['idle']))
     for x,y,w,h in recipe['garden_patches']:
         for _ in range(max(6,w*h//450)):
-            ground.alpha_composite(rng.choices(plants,weights=(2,1,1,3,3,3))[0],
+            ground.alpha_composite(rng.choice(plants),
                                    (rng.randrange(x,x+w-24),rng.randrange(y,y+h-24)))
-    # Small field growth is passable, like the corresponding Eldenmere plants.
-    for _ in range(140):
+    for _ in range(35):
         px,py = rng.randrange(36,width-36),rng.randrange(72,height-72)
         if (px//24,py//24) not in path_cells:
-            ground.alpha_composite(rng.choices(plants,weights=(5,3,2,1,1,1))[0],(px,py))
+            ground.alpha_composite(rng.choice(plants),(px,py))
 
     entities, footprints, instances, depth_samples = [], [], [], []
     def add(identifier, asset_id, position, frames, local_footprints=(), sort_y=None, duration=600, phase=0):
@@ -215,7 +232,43 @@ def exports():
     footprints += [{'id':'map_west_edge','rect':[0,0,12,height]},
                    {'id':'map_east_edge','rect':[1140,0,12,height]},
                    {'id':'map_north_edge','rect':[0,0,width,48]}]
+    # The grass layer has no collision footprint. Its authored patches are
+    # clipped away from solid objects, maintained roads and story approaches
+    # so the terrain remains readable at doors and gathering points.
+    avoid=Image.new('L',(width,height),0)
+    avoid_draw=ImageDraw.Draw(avoid)
+    for px,py in path_cells:
+        avoid_draw.rectangle((px*tile,py*tile,(px+1)*tile-1,(py+1)*tile-1),fill=255)
+    for record in footprints:
+        x,y,w,h=record['rect']
+        avoid_draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
+    for rectangle in grass_spec['clear_rects']:
+        x,y,w,h=rectangle
+        avoid_draw.rectangle((x,y,x+w-1,y+h-1),fill=255)
+    for px,py in [recipe['spawn'],recipe['reserve_exit']['position'],
+                  *recipe['public_approaches'].values(),*recipe['loop_waypoints'],
+                  *[door['anchor'] for door in recipe['doors']]]:
+        avoid_draw.ellipse((px-20,py-20,px+20,py+20),fill=255)
+    avoid=avoid.filter(ImageFilter.MaxFilter(31))
+    grass_instances=[]
+    variants=tuple(gm['tall_grass']['variants'])
+    plant_rng=Random(1903)
+    for patch_index,patch in enumerate(grass_spec['patches']):
+        cx,cy=patch['center'];rx,ry=patch['radius']
+        for row,py in enumerate(range(cy-ry,cy+ry+1,16)):
+            for px in range(cx-rx,cx+rx+1,18):
+                x=px+(row%2)*9+plant_rng.randrange(-3,4)
+                y=py+plant_rng.randrange(-3,4)
+                distance=((x-cx)/rx)**2+((y-cy)/ry)**2
+                if distance>1 or plant_rng.random()>.92-.27*distance:continue
+                if not (24<=x<width-24 and 48<=y<height-24):continue
+                if avoid.getpixel((x,y)):continue
+                grass_instances.append({'id':f'reserve_grass_{patch_index}_{row}_{px}',
+                    'position':[x,y], 'variant':variants[len(grass_instances)%len(variants)],
+                    'phase_ms':plant_rng.randrange(4800)})
+    grass_layer={'manifest':grass_spec['manifest'],'instances':grass_instances}
     overview=ground.copy()
+    overview_layers=[]
     for record in sorted(entities,key=lambda item:item['sort_y']):
         frame=record['frames'][record['phase_offset']%len(record['frames'])]
         if frame.startswith(KIT.relative_to(ROOT).as_posix()+'/'):
@@ -224,7 +277,15 @@ def exports():
             name=Path(frame).relative_to(OUTPUT.relative_to(ROOT)).as_posix()
             image=Image.open(BytesIO(products[name])).convert('RGBA')
         else:image=opened(ROOT/frame)
-        overview.alpha_composite(image,tuple(record['position']))
+        overview_layers.append((record['sort_y'],image,tuple(record['position'])))
+    anchor=gm['tall_grass']['anchor']
+    for instance in grass_instances:
+        pose=gm['tall_grass']['variants'][instance['variant']]['idle'][0]
+        x,y=instance['position'];position=(x-anchor[0],y-anchor[1])
+        overview_layers.append((y-16,opened(ROOT/pose['rear']),position))
+        overview_layers.append((y+6,opened(ROOT/pose['front']),position))
+    for _,image,position in sorted(overview_layers,key=lambda row:row[0]):
+        overview.alpha_composite(image,position)
     products['ground.png']=encoded(ground.convert('RGB'))
     products['overview.png']=encoded(overview.convert('RGB'))
     for record in entities:
@@ -240,6 +301,9 @@ def exports():
               'size_pixels':[width,height],'ground':(OUTPUT/'ground.png').relative_to(ROOT).as_posix(),
               'overview':(OUTPUT/'overview.png').relative_to(ROOT).as_posix(),
               'entities':entities,'asset_instances':instances,'collision_footprints':footprints,
+              'grass':grass_layer,
+              'ground_materials':{'manifest':grass_spec['manifest'],
+                                  'tiles':material_tiles,'indices':material_indices},
               'source_assets':sources,'source_recipe':RECIPE.relative_to(ROOT).as_posix(),
               'depth_samples':depth_samples,'cloister_bays':bays,
               'kit_metadata':kit_meta}
