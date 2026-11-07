@@ -232,7 +232,7 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    options = ('Resume', 'Characters', 'Aether Lattice', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    options = ('Resume', 'Characters', 'Party', 'Aether Lattice', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
     settings_index = options.index('Settings')
 
     def __init__(self, game):
@@ -242,19 +242,44 @@ class PauseMenu:
         self.settings = False
         self.selected = 0
         self.overlay = None
-        self.rows = [pygame.Rect(146, 72+index*26, 188, 24) for index in range(len(self.options))]
+        self.panel = pygame.Rect(126, 8, 228, 304)
+        self.viewport = pygame.Rect(146, 56, 188, 232)
+        self.rows = []
+        self.scroll = self.max_scroll = 0
+        self.row_height = 25
+        self._manual_scroll = False
         self.settings_panel = SettingsPanel(self)
         self.settings_rows = self.settings_panel.rows
         self.slider_rects = self.settings_panel.slider_rects
         self._mouse_held = False
         self._pressed = None
         self._opened_at = 0
+        self._layout()
+
+    def _layout(self, painter=None):
+        if painter is None:
+            painter = self.game.ui.painter(getattr(self.game, 'ui_surface', None) or pygame.Surface((480, 320)))
+        self.row_height = max(25, painter.font().get_height()+6)
+        header = max(48, painter.font('heading', bold=True).get_height()+23)
+        footer = max(24, painter.font('small').get_height()+12)
+        self.viewport = pygame.Rect(146, self.panel.top+header, 188, self.panel.height-header-footer)
+        self.max_scroll = max(0, self.row_height*len(self.options)-self.viewport.height)
+        self.scroll = max(0, min(self.scroll, self.max_scroll))
+        if not self._manual_scroll:
+            start = self.selected*self.row_height
+            self.scroll = max(min(self.scroll, start), start+self.row_height-self.viewport.height, 0)
+            self.scroll = min(self.max_scroll, self.scroll)
+        self.rows[:] = [pygame.Rect(self.viewport.left, self.viewport.top+index*self.row_height-self.scroll,
+                                   self.viewport.width, self.row_height-2) for index in range(len(self.options))]
 
     def open(self):
         self.is_open = True
         self.settings = False
         self.overlay = None
         self.selected = 0
+        self.scroll = 0
+        self._manual_scroll = False
+        self._layout()
         self.settings_panel.reset()
         self._mouse_held = False
         self.game._mouse_held = False
@@ -282,6 +307,7 @@ class PauseMenu:
 
     def _row_at(self, point):
         if point is None:return None
+        if not self.settings and not self.viewport.collidepoint(point):return None
         return next((index for index, row in enumerate(self.settings_rows if self.settings else self.rows)
                      if row.collidepoint(point)), None)
 
@@ -294,6 +320,9 @@ class PauseMenu:
         elif label == 'Characters':
             self.overlay = 'status'
             self.game.status_ui.open()
+        elif label == 'Party':
+            self.overlay = 'party'
+            self.game.party_ui.open()
         elif label == 'Aether Lattice':
             self.overlay = 'lattice'
             self.game.lattice_ui.open()
@@ -328,6 +357,9 @@ class PauseMenu:
             elif self.overlay == 'status':
                 self.game.status_ui.handle_event(event)
                 closed = not self.game.status_ui.is_open
+            elif self.overlay == 'party':
+                self.game.party_ui.handle_event(event)
+                closed = not self.game.party_ui.is_open
             elif self.overlay == 'inventory':
                 self.game.inventory_ui.handle_event(event)
                 closed = not self.game.inventory_ui.is_open
@@ -345,6 +377,7 @@ class PauseMenu:
                 self.game.ui.sound('back')
             return True
         if self.settings:return self.settings_panel.handle_event(event)
+        self._layout()
         if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
             self._mouse_held = False;self._pressed = None
         elif event.type == pygame.MOUSEMOTION:
@@ -358,10 +391,16 @@ class PauseMenu:
             if row is not None:
                 self.selected = self._pressed = row
                 return self.activate()
+        elif event.type == pygame.MOUSEWHEEL:
+            self._manual_scroll = True
+            self.scroll = max(0, min(self.max_scroll, self.scroll-event.y*self.row_height))
+            self._layout()
         elif event.type == pygame.KEYDOWN and not getattr(event, 'repeat', False):
             if event.key == pygame.K_ESCAPE:self.close()
             elif event.key in (pygame.K_UP, pygame.K_w, pygame.K_DOWN, pygame.K_s):
                 self.selected = (self.selected+(-1 if event.key in (pygame.K_UP, pygame.K_w) else 1)) % len(self.rows)
+                self._manual_scroll = False
+                self._layout()
                 self.game.ui.sound('move')
             elif event.key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE):return self.activate()
         return True
@@ -376,12 +415,19 @@ class PauseMenu:
         if self.settings:
             self.settings_panel.draw(painter)
             return
-        panel = pygame.Rect(126, 24, 228, 282)
+        self._layout(painter)
+        panel = self.panel
         painter.panel(panel)
         painter.lantern((panel.left+23, panel.top+25), size=10)
-        painter.text('Paused', (240, 36), role='heading', color=GOLD, anchor='midtop', bold=True)
+        painter.text('Paused', (240, panel.top+11), role='heading', color=GOLD, anchor='midtop', bold=True)
+        painter.clip(self.viewport)
         for index, (label, row) in enumerate(zip(self.options, self.rows)):
             painter.button(row, label, selected=index == self.selected,
                            pressed=self._pressed == index and self._mouse_held)
-        painter.text('Arrows + Enter • Esc: resume', (240, panel.bottom-9),
+        painter.clip()
+        if self.max_scroll:
+            height = max(12, round(self.viewport.height*self.viewport.height/(len(self.rows)*self.row_height)))
+            offset = round((self.viewport.height-height)*self.scroll/self.max_scroll)
+            painter.rect(BRASS, (self.viewport.right+5, self.viewport.top+offset, 3, height))
+        painter.text('↑↓ Enter · Esc: resume', (240, panel.bottom-6),
                      role='small', color=MUTED, anchor='midbottom')

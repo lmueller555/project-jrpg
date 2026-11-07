@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import json
 import math
 import os
@@ -40,6 +41,9 @@ from world_map_viewer import WorldMapViewer
 from inventory import Inventory
 from inventory_ui import InventoryUI
 from character_attributes import CharacterAttributes
+from party_state import PartyState
+from party_ui import PartyUI
+from party_travel import PartyTravel
 from character_abilities import CharacterAbilities
 from bot_loadouts import BotLoadouts
 from status_ui import StatusUI
@@ -237,6 +241,7 @@ class World:
         if size not in self._probes:self._probes[size]=pygame.Mask(size,fill=True)
         return (self.blocked.overlap(self._probes[size],(x,y)) is None
                 and not any(npc is not ignore_npc and not getattr(npc,'story_following',False)
+                            and not getattr(npc,'party_travelling',False)
                             and npc.blocker.colliderect(rect) for npc in self.npcs)
                 and not any(block.colliderect(rect) for block in getattr(self,'task_blockers',lambda:())())
                 and (player_blocker is None or not player_blocker.colliderect(rect)))
@@ -259,7 +264,7 @@ class World:
         raw.update(state=state,frames=[path])
         return True
 
-    def draw(self,target,camera,player,elapsed_ms,include_ui=True):
+    def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
         target.fill('#24302d')
         viewport=pygame.Rect(camera,VIEW_SIZE)
         phase=int(elapsed_ms//self.data['ground_frame_duration_ms'])%len(self.ground)
@@ -276,8 +281,8 @@ class World:
                                 'routine_prop',(surface,prop['position'])))
         for worker in self.work_fittings:
             ordered.append((worker.data['fitting_sort_y'],1,'fitting',worker))
-        for npc in self.npcs:
-            if not getattr(npc,'story_visible',True):continue
+        for npc in (*self.npcs,*party_actors):
+            if not getattr(npc,'story_visible',True) or getattr(npc,'party_travelling',False):continue
             sort_y=getattr(npc,'sort_y',None)
             if getattr(npc,'story_sort_y',None) is not None:sort_y=npc.story_sort_y
             ordered.append((npc.position.y+self.probe_size[1]/2 if sort_y is None else sort_y,2,'npc',npc))
@@ -442,6 +447,9 @@ class Game:
         self.quests=QuestLog()
         self.inventory=Inventory()
         self.attributes=CharacterAttributes('caelan')
+        self.party=PartyState(self.attributes)
+        self._party_prompt_before=None
+        self._party_prompt_callback=None
         self.lattice=AetherLattice()
         self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
         self.bot_loadouts=BotLoadouts()
@@ -455,6 +463,8 @@ class Game:
         self.world_map_viewer=WorldMapViewer(self)
         self.inventory_ui=InventoryUI(self)
         self.status_ui=StatusUI(self)
+        self.party_ui=PartyUI(self)
+        self.party_travel=PartyTravel(self)
         self.lattice_ui=LatticeUI(self)
         self.opening=OpeningSequence(self)
         self.opening_cinematic=OpeningCinematic(self)
@@ -524,6 +534,7 @@ class Game:
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
+                           'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
                            'bot_loadouts':self.bot_loadouts.to_dict(),
                            'aether_lattice':self.lattice.to_dict(),
@@ -602,6 +613,7 @@ class Game:
                LatticeProgression.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                BotLoadouts.valid_journey(data) and
+               ('party' not in data or self._valid_party_snapshot(data)) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
                ('halden_visit' not in data or self._valid_halden_snapshot(data)) and
@@ -620,6 +632,26 @@ class Game:
             self.save_error='The saved journey could not be read.'
             return None
         return data
+
+    @staticmethod
+    def _valid_party_snapshot(data):
+        """Reject the complete journey before touching live roster or resources."""
+        attributes=CharacterAttributes('caelan')
+        lattice=AetherLattice()
+        if 'aether_lattice' in data and not lattice.restore(data['aether_lattice']):return False
+        if 'character_attributes' in data and not attributes.restore(
+                data['character_attributes'],lattice_bonuses=lattice.bonuses()):return False
+        expected_attributes=attributes.to_dict()
+        party=PartyState(attributes)
+        if not party.restore(data['party']):return False
+        if data.get('quests',{}).get('quests',{}).get(MILL_QUEST,{}).get('status') in ('active','ready','completed'):
+            mira=party.members.get('mira')
+            if mira is None:return False
+            if mira['temporary']:
+                accompanying=(data['quests']['quests'][MILL_QUEST]['status'] in ('active','ready')
+                              and not data.get('mill_quest',{}).get('resolved',False))
+                if accompanying and (not mira['available'] or 'mira' not in party.active_ids):return False
+        return attributes.to_dict()==expected_attributes
 
     @staticmethod
     def _valid_inventory_snapshot(data):
@@ -691,6 +723,13 @@ class Game:
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
             self.attributes.restore(data['character_attributes'],lattice_bonuses=self.lattice.bonuses())
+        self.party=PartyState(self.attributes)
+        if data is not None and 'party' in data:
+            if not self.party.restore(data['party']):return False
+        self._party_prompt_before=None
+        self._party_prompt_callback=None
+        self.party_ui.reset()
+        self.party_travel.reset()
         self.elira_visit.release_pose()
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
@@ -765,6 +804,7 @@ class Game:
         if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
             self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()
         self.lantern_quest.restore(data.get('lantern_quest') if data else None)
+        self._sync_story_party()
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -794,6 +834,7 @@ class Game:
                 return False
         self.save_progress()
         self.regent_arrival.maybe_start()
+        if self.party.pending_selection is not None:self._resume_party_selection()
         return True
 
     def save_progress(self):
@@ -801,6 +842,7 @@ class Game:
         if (self._is_gallery_preview or self.on_title or self.opening_cinematic.active
                 or not self.save_store.enabled):return False
         self._sync_inventory()
+        self._sync_story_party()
         saved_position=self.player.position
         checkpoint=self.combat.checkpoint_position
         if checkpoint is not None:saved_position=checkpoint
@@ -808,6 +850,7 @@ class Game:
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'character_attributes':self.attributes.to_dict(),
+              'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
               'bot_loadouts':self.bot_loadouts.to_dict(),
               'aether_lattice':self.lattice.to_dict(),
@@ -833,6 +876,114 @@ class Game:
         self.save_error=None
         self._save_retry_seconds=0.0
         self._saved_progress=self._progress_signature()
+        return True
+
+    def _sync_story_party(self):
+        """Reconcile authored recruitment without granting future companions."""
+        met=self.quests.objective_status(MILL_QUEST,'meet_mira')=='completed'
+        if not met:return
+        migrated='mira' not in self.party.members
+        if migrated:self.party.recruit('mira',temporary=True)
+        accompanying=self.mill_quest.active and not self.mill_quest.resolved
+        if accompanying:
+            self.party.set_available('mira',True)
+            self.party.begin_event('mq02',required=('caelan','mira'),
+                                  reason='Mira is required for the mill outing.')
+        else:
+            leaving=self.party.current_event_id=='mq02'
+            if leaving:self.party.end_event('mq02')
+            if (migrated or leaving) and self.party.members['mira']['temporary']:
+                self.party.set_available('mira',False,'Working in Eldenmere.')
+
+    def _party_checkpoint(self):
+        return not self.save_store.enabled or self.save_progress()
+
+    def party_change_reason(self):
+        if self.combat.active:return 'Party changes are unavailable during combat.'
+        if self.on_title or self.opening_cinematic.active:return 'Begin the journey before changing the party.'
+        if (self.social.active or self.social.locked or self.household_action
+                or self.opening.locks_player or self.regent_arrival.state=='pending'):
+            return 'Finish the current conversation or scene first.'
+        return self.party.selection_change_reason()
+
+    def set_active_party(self,identifiers):
+        """Commit a UI draft and its event lock in one durable checkpoint."""
+        if self.party_change_reason():return False
+        before=self.party.to_dict()
+        if not self.party.select(identifiers):return False
+        pending=self.party.pending_selection
+        if pending is not None and not self.party.confirm_event(pending['event_id']):
+            self.party.restore(before);return False
+        if not self._party_checkpoint():
+            self.party.restore(before);return False
+        self.party_travel.reset()
+        return True
+
+    def recruit_party_member(self,identifier,*,temporary=False):
+        """Story API: recruitment never grants equipment, skills or progression."""
+        if self.combat.active:return False
+        before=self.party.to_dict()
+        if not self.party.recruit(identifier,temporary=temporary):return False
+        if not self._party_checkpoint():self.party.restore(before);return False
+        self.party_travel.reset()
+        if len(before['active'])==3 and not self.party_change_reason():
+            self.party_ui.open(prompt=self.party.definitions[identifier]['name']+' joined. Choose your party.')
+        return True
+
+    def set_party_member_available(self,identifier,available,reason=''):
+        if self.combat.active:return False
+        before=self.party.to_dict()
+        was_active=identifier in self.party.active_ids
+        if not self.party.set_available(identifier,available,reason):return False
+        if not self._party_checkpoint():self.party.restore(before);return False
+        self.party_travel.reset()
+        if was_active and not available and not self.party_change_reason():
+            self.party_ui.open(prompt='A companion is unavailable. Choose a replacement.')
+        return True
+
+    def request_party_selection(self,event_id,*,required=(),unavailable=(),
+                                title='Choose your party',reason='',lock_after=False,on_confirm=None):
+        """Checkpoint a resumable selection gate before a dungeon or story event."""
+        if self.party_change_reason() or self.party_ui.is_open:return False
+        if self.party.current_event_id is not None:return False
+        before=self.party.to_dict()
+        if not self.party.begin_event(event_id,required=required,unavailable=unavailable,
+                reason=reason,selection_pending=True,selection_title=title,lock_after=lock_after):return False
+        if not self._party_checkpoint():self.party.restore(before);return False
+        self._party_prompt_before=before
+        self._party_prompt_callback=on_confirm
+        self._resume_party_selection()
+        return True
+
+    def party_event_ready(self,event_id):
+        """Durable continuation condition for a story controller after reload."""
+        return (self.party.current_event_id==event_id and self.party.pending_selection is None)
+
+    def _resume_party_selection(self):
+        pending=self.party.pending_selection
+        if pending is None:return
+        def confirmed():
+            callback=self._party_prompt_callback
+            self._party_prompt_before=None;self._party_prompt_callback=None
+            if callback is not None:callback()
+        def cancelled():
+            before=self.party.to_dict()
+            if self._party_prompt_before is not None:self.party.restore(self._party_prompt_before)
+            else:self.party.end_event(pending['event_id'],restore=True)
+            if not self._party_checkpoint():
+                self.party.restore(before)
+                self._resume_party_selection()
+                return
+            self._party_prompt_before=None;self._party_prompt_callback=None
+        self.party_ui.open(prompt=pending['title'] or 'Choose your party',
+                           on_confirm=confirmed,on_cancel=cancelled)
+
+    def end_party_event(self,event_id,*,restore_previous=False):
+        if self.combat.active:return False
+        before=self.party.to_dict()
+        if not self.party.end_event(event_id,restore=restore_previous):return False
+        if not self._party_checkpoint():self.party.restore(before);return False
+        self.party_travel.reset()
         return True
 
     def to_canvas(self,point):
@@ -1023,6 +1174,12 @@ class Game:
                 self.combat.handle_event(event)
                 resumed=not self.combat.active
                 continue
+            if self.party_ui.is_open and not self.pause.is_open:
+                self.party_ui.handle_event(event)
+                resumed=not self.party_ui.is_open
+                self._mouse_held=False
+                self.social.clear_pointer()
+                continue
             if self.world_map_viewer.is_open:
                 self.world_map_viewer.handle_event(event)
                 resumed=not self.world_map_viewer.is_open
@@ -1188,8 +1345,8 @@ class Game:
             self.opening_audio.set_paused(True)
             return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
-                                      self.world_map_viewer.is_open)
-        if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open:
+                                      self.world_map_viewer.is_open or self.party_ui.is_open)
+        if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
             if self.pause.is_open:self.pause.update(seconds)
             self.opening_audio.update(0)
             return
@@ -1244,7 +1401,7 @@ class Game:
                 for npc in scene.npcs:
                     if isinstance(npc,(Gardener,DaisyRoutine)):npc.update(seconds,scene,blocker)
             for npc in self.persistent_npcs:
-                if getattr(npc,'story_paused',False):continue
+                if getattr(npc,'story_paused',False) or getattr(npc,'party_travelling',False):continue
                 scene=self._routine_worlds[npc]
                 blocker=scene.probe_rect(self.player.position) if scene is self.world else None
                 npc.update(seconds,scene,blocker,self._transfer_routine_npc)
@@ -1254,6 +1411,8 @@ class Game:
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         self.overworld_travel.update(seconds)
+        self._sync_story_party()
+        self.party_travel.update(seconds)
         if (not self.map_open and not self.quest_ui.journal_open and
                 not self.opening.locks_player and not self.household_action and not self.transfer_cooldown):
             for door in self.world.doors:
@@ -1275,7 +1434,7 @@ class Game:
 
     def enter(self,door):
         if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or
-                self.world_map_viewer.is_open or self.opening.locks_player or self.household_action):return False
+                self.party_ui.is_open or self.world_map_viewer.is_open or self.opening.locks_player or self.household_action):return False
         path=(ROOT/door.data['destination']).resolve()
         destination=self._load_scene(path)
         spawn=door.data['spawn']
@@ -1307,7 +1466,7 @@ class Game:
     def nearby_world_map(self):
         """Use the reachable floor approach authored beside the classroom map."""
         if (self.on_title or self.opening_cinematic.active or self.combat.active or
-                self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
+                self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
                 self.map_open or self.quest_ui.journal_open or self.social.locked or
                 self.household_action or self.opening.locks_player or self.transfer_cooldown):return None
         display=self.world.data.get('world_map_display')
@@ -1338,7 +1497,7 @@ class Game:
         if (not isinstance(link,dict) or link not in self.world.data.get('world_links',[]) or
                 self.player.position.distance_to(link['position'])>link.get('radius',20) or
                 self.pause.is_open or self.inventory_ui.is_open or self.map_open or self.quest_ui.journal_open or
-                self.world_map_viewer.is_open or
+                self.world_map_viewer.is_open or self.party_ui.is_open or
                 self.social.locked or self.household_action or self.opening.locks_player or self.transfer_cooldown):return False
         if link.get('id')=='town_to_upstream' and not self.mill_quest.can_enter_upstream():return False
         destination=self._load_scene(ROOT/link['destination']);spawn=link['spawn']
@@ -1362,6 +1521,7 @@ class Game:
 
     def draw_hud(self,canvas):
         if (self.pause.is_open or self.social.locked or self.opening.locks_player
+                or self.party_ui.is_open
                 or self.map_open or self.quest_ui.journal_open or self.inventory_ui.is_open or
                 self.world_map_viewer.is_open):return
         painter=self.ui.painter(canvas)
@@ -1459,7 +1619,10 @@ class Game:
             if not self._is_gallery_preview:pygame.display.flip()
             return
         camera=self.camera.position()
-        self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
+        if isinstance(self.world,World):
+            self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
+                            party_actors=self.party_travel.actors())
+        else:self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False)
         self.combat.draw_world(self.canvas,camera)
         self.opening.draw_world(self.canvas,camera)
         for visit in self.household_visits:visit.draw_world(self.canvas,camera)
@@ -1491,6 +1654,7 @@ class Game:
         self.quest_ui.draw_journal(self.ui_surface)
         self.inventory_ui.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
+        self.party_ui.draw(self.ui_surface)
         self.lattice_ui.draw(self.ui_surface)
         self.world_map_viewer.draw(self.ui_surface)
         self.window.fill('#101b19')

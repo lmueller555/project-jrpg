@@ -34,6 +34,8 @@ SUPPORTED_SKILL_ACTIONS = ('aether_edge', 'overclock')
 ELEMENTAL_EDGE_ATTEMPTS = ('nature_edge', 'aqua_edge', 'flame_edge')
 EPSILON = 1e-10
 MAX_ENEMY_RESOURCE = 999999999
+PARTY_IDENTIFIERS = frozenset(('player', 'mira', 'lucan', 'rhea', 'edran'))
+MAX_PARTY_MEMBERS = 3
 
 
 def _integer(value, minimum=0, maximum=MAX_ENEMY_RESOURCE):
@@ -164,6 +166,35 @@ def load_bots(actions, data=None):
     return definitions
 
 
+def _party_snapshot(members, actions):
+    """Copy a saved active lineup without refilling anyone's resources."""
+    if (not isinstance(members, (tuple, list))
+            or not 1 <= len(members) <= MAX_PARTY_MEMBERS):
+        raise ValueError('A battle requires one to three party members')
+    copied = []
+    used = set()
+    fields = {'identifier', 'name', 'attributes', 'hp', 'mp', 'attack'}
+    for member in members:
+        if (not isinstance(member, dict) or set(member) != fields
+                or not isinstance(member['identifier'], str)
+                or member['identifier'] not in PARTY_IDENTIFIERS
+                or member['identifier'] in used
+                or not isinstance(member['name'], str) or not member['name'].strip()
+                or not isinstance(member['attributes'], dict)
+                or set(member['attributes']) != set(ATTRIBUTE_IDS)
+                or any(not _integer(value, 1 if key == 'hp' else 0, ATTRIBUTE_CAPS[key])
+                       for key, value in member['attributes'].items())
+                or not _integer(member['hp'], 0, member['attributes']['hp'])
+                or not _integer(member['mp'], 0, member['attributes']['mp'])
+                or member['attack'] not in ('attack', 'bolt_shot')
+                or member['attack'] not in actions):
+            raise ValueError('Invalid battle party member')
+        used.add(member['identifier'])
+        copied.append(deepcopy(member))
+    if 'player' not in used:raise ValueError('The battle party requires Caelan')
+    return copied
+
+
 @dataclass
 class Combatant:
     identifier: str
@@ -222,14 +253,15 @@ class BattleModel:
 
     ``player`` remains Caelan for save settlement and existing callers. Commands
     default to ``active_player``; any living, full-gauge member can be selected
-    while the model waits. Guest resources belong only to this encounter.
+    while the model waits. Supplied party profiles and resources are copied;
+    the caller settles their persistent state when the encounter ends.
     """
 
     def __init__(self, player_attributes, learned_abilities=(), rng=None, enemy_id='bat',
                  *, guest_id=None, weapon_equipped=False, action_data=None,
                  enemy_data=None, guest_data=None, bot_loadouts=None,
                  guest_abilities=None, spellblade_tutorial=False,
-                 active_gem=DEFAULT_GEM):
+                 active_gem=DEFAULT_GEM, party_members=None):
         self.actions = load_actions(action_data)
         enemies = load_enemies(self.actions, enemy_data)
         if not isinstance(enemy_id, str) or enemy_id not in enemies:
@@ -256,7 +288,21 @@ class BattleModel:
         self.player = Combatant('player', name, dict(values), hp, mp)
         self.guest_definitions = {}
         members = [self.player]
-        if guest_id is not None:
+        if party_members is not None:
+            if guest_id is not None:raise ValueError('Supply a party or a legacy guest, not both')
+            profiles = _party_snapshot(party_members, self.actions)
+            members = []
+            for profile in profiles:
+                identifier = profile['identifier']
+                member = Combatant(identifier, profile['name'], profile['attributes'],
+                                   profile['hp'], profile['mp'])
+                members.append(member)
+                if identifier == 'player':self.player = member
+                else:
+                    self.guest_definitions[identifier] = {
+                        key: profile[key] for key in ('name', 'attributes', 'attack')}
+            if guest_data is not None:load_guests(self.actions, guest_data)
+        elif guest_id is not None:
             guests = load_guests(self.actions, guest_data)
             if not isinstance(guest_id, str) or guest_id not in guests:
                 raise ValueError('Unknown battle guest')
@@ -294,7 +340,8 @@ class BattleModel:
         self._enemy_action_index = 0
         self.telegraphed_target = None
         if type(spellblade_tutorial) is not bool:raise ValueError('Invalid spellblade tutorial state')
-        if spellblade_tutorial and (enemy_id != 'ridgeback_tusker' or guest_id != 'mira' or not weapon_equipped):
+        if spellblade_tutorial and (enemy_id != 'ridgeback_tusker'
+                                   or self.combatant('mira') is None or not weapon_equipped):
             raise ValueError('Spellblade lesson requires the armed mill party')
         self.spellblade_stage = ('opening' if spellblade_tutorial and
                                 'aether_edge' not in self.learned_abilities else None)

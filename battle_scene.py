@@ -45,7 +45,7 @@ class CombatSprites:
             self._load_actor(actor)
 
     def _load_actor(self, actor):
-        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea'):
+        if actor not in ('caelan', 'bat', 'mira', 'rivet', 'ridgeback_tusker', 'lucan', 'rhea', 'edran'):
             raise ValueError('Unknown combat actor')
         folder = self.root/actor
         data = json.loads((folder/'animation.json').read_text(encoding='utf-8'))
@@ -217,35 +217,39 @@ class BattleScene:
         self._sync_commands()
         small = painter.font('small').get_linesize()
         name = painter.font('name', bold=True).get_linesize()
-        self._status_height = max(56, name+2*small+25)
-        height = 2*self._status_height
+        count = len(self.model.party)
+        compact = count == 3
+        self._status_height = max(56, name+2*small+25)+(small+3 if compact else 0)
+        interactable_height = 56 if compact else self._status_height
+        height = self._status_height+interactable_height
         self.panel_rect = pygame.Rect(8, 312-height, 464, height)
         top = self.panel_rect.top
         command_width = max(80, painter.font('small', bold=True).size('COMMANDS')[0]+12)
         self.commands_panel = pygame.Rect(self.panel_rect.right-command_width, top, command_width, height)
         party_width = self.commands_panel.left-self.panel_rect.left
         self.party_rows = {}
-        count = len(self.model.party)
         for index, member in enumerate(self.model.party):
             left = 8+round(party_width*index/count)
             right = 8+round(party_width*(index+1)/count)
             column = pygame.Rect(left, top, right-left, height)
             center = column.centerx
             name_width, name_height = painter.font('name', bold=True).size(member.name)
-            bar_width = min(112, column.width-24)
-            hp_top = top+name+12
+            bar_width = min(112, column.width-(16 if compact else 24))
+            atb_width = 44 if compact else 56
+            hp_top = top+name+12+(small+3 if compact else 0)
             mp_top = hp_top+small+6
             self.party_rows[member.identifier] = {
                 'column': column,
                 'row': pygame.Rect(left+2, top+2, column.width-4, self._status_height-3),
                 'name': pygame.Rect(center-name_width//2, top+4, name_width, name_height),
-                'atb': pygame.Rect(center-28, top+name+6, 56, 4),
+                'atb': pygame.Rect(center-atb_width//2+(8 if compact else 0),
+                                   top+name+(9+small//2 if compact else 6), atb_width, 4),
                 'hp_text': pygame.Rect(center-bar_width//2, hp_top, bar_width, small),
                 'mp_text': pygame.Rect(center-bar_width//2, mp_top, bar_width, small),
                 'hp': pygame.Rect(center-bar_width//2, hp_top+small+1, bar_width, 3),
                 'mp': pygame.Rect(center-bar_width//2, mp_top+small+1, bar_width, 3),
                 'interactable': pygame.Rect(left+4, top+self._status_height+2,
-                                            column.width-8, self._status_height-6)}
+                                            column.width-8, interactable_height-6)}
         player_row = self.party_rows['player']
         self.name_rect, self.atb_rect = player_row['name'], player_row['atb']
         self.hp_rect, self.mp_rect = player_row['hp'], player_row['mp']
@@ -306,6 +310,7 @@ class BattleScene:
             # command panel, retaining clear space from Mira and Caelan.
             panel = pygame.Rect(round(point.x-width/2), round(point.y-60)-2*small-16,
                                 width, 2*small+16)
+            if len(self.model.party) == 3:panel.y = max(43, panel.y)
             self.bot_status[bot.identifier] = {
                 'panel': panel,
                 'name': pygame.Rect(panel.x+5, panel.y+3, width-10, small),
@@ -708,6 +713,8 @@ class BattleScene:
     def reduced_motion(self):return getattr(self.game.audio, 'reduced_motion', False)
 
     def _bot_home(self):
+        if len(self.model.party) == 3:
+            return pygame.Vector2(271, self.panel_rect.top-18)
         return pygame.Vector2(296, 181-max(0, 202-self.panel_rect.top))
 
     def _choreography(self, action=None):
@@ -735,9 +742,16 @@ class BattleScene:
 
     def _home_positions(self):
         offset = max(0, 202-self.panel_rect.top)
-        if len(self.model.party) > 1:
-            positions = {'player': pygame.Vector2(354, 194-offset),
-                         'mira': pygame.Vector2(404, 151-offset),
+        if len(self.model.party) == 3:
+            # Three native-size silhouettes step upward toward the right edge.
+            # Anchor them to the panel so larger text keeps their feet visible.
+            positions = {member.identifier: pygame.Vector2(x, self.panel_rect.top-y)
+                         for member, (x, y) in zip(self.model.party,
+                                                  ((329, 6), (385, 29), (439, 53)))}
+            positions['enemy'] = pygame.Vector2(119, 196-offset)
+        elif len(self.model.party) == 2:
+            positions = {self.model.party[0].identifier: pygame.Vector2(354, 194-offset),
+                         self.model.party[1].identifier: pygame.Vector2(404, 151-offset),
                          'enemy': pygame.Vector2(119, 196-offset)}
         else:
             positions = {'player': pygame.Vector2(354, 184-offset),
@@ -1030,9 +1044,11 @@ class BattleScene:
         painter.text(caption, (240, 15), color=GOLD, anchor='midtop')
         target = model.combatant(model.telegraphed_target) if model.telegraphed_target else None
         if target is not None:
-            warning = 'Charge → '+target.name
-            painter.text(warning, (461, 44), role='small', color=FOREST_DARK, anchor='topright')
-            painter.text(warning, (460, 43), role='small', color=GOLD, anchor='topright')
+            compact = len(model.party) == 3
+            warning = 'Charge → '+(target.name.split()[0] if compact else target.name)
+            warning_y = self.panel_rect.top-small-5 if compact else 43
+            painter.text(warning, (461, warning_y+1), role='small', color=FOREST_DARK, anchor='topright')
+            painter.text(warning, (460, warning_y), role='small', color=GOLD, anchor='topright')
         positions = self._positions()
         for popup in self._popups:
             if popup['target'] not in positions:continue
@@ -1088,9 +1104,14 @@ class BattleScene:
                     ('HP', member.hp, member.max_hp, 'hp', self._health_color(member.hp, member.max_hp)),
                     ('MP', member.mp, member.max_mp, 'mp', MP_BLUE)):
                 text_rect = row[key+'_text']
-                self.header_rects[label] = painter.text(label, text_rect.topleft, role='small', color=GOLD)
-                painter.text(str(value)+'/'+str(maximum), text_rect.topright,
-                             role='small', anchor='topright')
+                if len(model.party) == 3:
+                    self.header_rects[label] = painter.text(
+                        label+' '+str(value)+'/'+str(maximum), text_rect.midtop,
+                        role='small', anchor='midtop', color=GOLD)
+                else:
+                    self.header_rects[label] = painter.text(label, text_rect.topleft, role='small', color=GOLD)
+                    painter.text(str(value)+'/'+str(maximum), text_rect.topright,
+                                 role='small', anchor='topright')
                 self._bar(painter, row[key], value/maximum if maximum else 0, color)
             column = row['column']
             painter.line(BRASS, (column.right, top+5), (column.right, self.panel_rect.bottom-5))

@@ -1,0 +1,231 @@
+"""Exploration followers preserve traversed routes and authored story ownership."""
+import os
+from types import SimpleNamespace
+import unittest
+
+os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
+os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
+os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
+
+import pygame
+
+from party_travel import PartyTravel, SPACING, _TravelActor
+from social import SocialSystem
+
+
+class World:
+    def __init__(self, obstacles=(), *, is_overworld=False):
+        self.npcs = []
+        self.obstacles = list(obstacles)
+        self.is_overworld = is_overworld
+        self.data = {'id': 'test_room'}
+
+    def can_stand(self, position):
+        probe = pygame.Rect(round(position[0])-3, round(position[1])-3, 6, 6)
+        return (0 <= probe.left and probe.right <= 240 and 0 <= probe.top and probe.bottom <= 180
+                and not any(probe.colliderect(block) for block in self.obstacles))
+
+
+def actor(identifier):
+    return SimpleNamespace(identifier=identifier, position=pygame.Vector2(), facing='front',
+                           moving=False, visible=False, walk_ms=0., story_following=True,
+                           trail_distance=0., draw_anchor=(12, 34))
+
+
+def game(active=('caelan', 'lucan', 'rhea'), world=None):
+    members = {identifier: {'available': True} for identifier in ('caelan', 'mira', 'lucan', 'rhea', 'edran')}
+    return SimpleNamespace(
+        world=world or World(), player=SimpleNamespace(position=pygame.Vector2(30, 70),
+                                                       facing='front', running=False),
+        party=SimpleNamespace(active_ids=active, members=members),
+        social=SimpleNamespace(active=False, locked=False), pause=SimpleNamespace(is_open=False))
+
+
+def walk(controller, destination, speed=60):
+    player = controller.game.player
+    delta = pygame.Vector2(destination)-player.position
+    steps = max(1, round(delta.length()))
+    step = delta/steps
+    observations = []
+    for _ in range(steps):
+        player.position += step
+        controller.update(1/speed)
+        observations.append(tuple(tuple(actor.position) for actor in controller.actors()))
+    return observations
+
+
+class PartyTravelTests(unittest.TestCase):
+    def test_winding_route_keeps_both_followers_on_the_traversed_side_of_wall(self):
+        world = World((pygame.Rect(50, 30, 20, 60),))
+        context = game(world=world)
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        for point in ((30, 110), (90, 110), (90, 60)):
+            samples = walk(travel, point)
+            for positions in samples:
+                for position in positions:self.assertTrue(world.can_stand(position), position)
+        followers = travel.actors()
+        self.assertEqual([value.identifier for value in followers], ['lucan', 'rhea'])
+        self.assertAlmostEqual(followers[0].position.x, 90)
+        self.assertAlmostEqual(followers[0].position.y, 60+SPACING)
+        self.assertAlmostEqual(followers[1].position.x, 90)
+        self.assertAlmostEqual(followers[1].position.y, 60+2*SPACING)
+        self.assertEqual(followers[0].facing, 'back')
+        self.assertTrue(followers[0].moving)
+        self.assertGreater(followers[0].walk_ms, 0)
+        self.assertEqual(world.npcs, [])
+
+    def test_door_transfer_waits_for_clear_entry_and_never_reuses_old_coordinates(self):
+        context = game()
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (110, 70))
+        self.assertEqual(len(travel.actors()), 2)
+        context.world = World()
+        context.player.position.update(20, 20)
+        self.assertEqual(travel.actors(), ())
+        travel.update(1/60)
+        self.assertEqual(travel.actors(), ())
+        walk(travel, (40, 20))
+        self.assertEqual(travel.actors(), ())
+        walk(travel, (70, 20))
+        self.assertEqual(len(travel.actors()), 2)
+        for follower in travel.actors():
+            self.assertEqual(follower.position.y, 20)
+            self.assertGreaterEqual(follower.position.distance_to(context.player.position), 12)
+        self.assertGreaterEqual(travel.actors()[0].position.distance_to(travel.actors()[1].position), 12)
+
+    def test_changed_formation_and_availability_remove_reserves_without_healing(self):
+        context = game()
+        context.party.characters = {'lucan': SimpleNamespace(current_hp=0)}
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (100, 70))
+        self.assertEqual([value.identifier for value in travel.actors()], ['lucan', 'rhea'])
+        self.assertNotIn('edran', travel._actors)
+        context.party.active_ids = ('caelan', 'rhea')
+        travel.update(1/60)
+        self.assertEqual([value.identifier for value in travel.actors()], ['rhea'])
+        self.assertEqual(context.party.characters['lucan'].current_hp, 0)
+        context.party.members['rhea']['available'] = False
+        self.assertEqual(travel.actors(), ())
+
+    def test_mira_routine_suspends_without_moving_then_releases_to_story_and_reserve(self):
+        context = game(('caelan', 'mira'))
+        mira = SimpleNamespace(position=pygame.Vector2(160, 40), quest_mode=False,
+                               story_following=False, data={'id': 'mira'})
+        context.mill_quest = SimpleNamespace(mira=mira)
+        context.world.npcs.append(mira)
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (100, 70))
+        self.assertEqual([value.identifier for value in travel.actors()], ['mira'])
+        self.assertTrue(mira.party_travelling)
+        self.assertEqual(mira.position, (160, 40))
+        mira.quest_mode = True
+        context.social.active = True
+        travel.update(1/60)
+        self.assertFalse(mira.party_travelling)
+        self.assertEqual(travel.actors(), ())
+        mira.quest_mode = False
+        context.social.active = False
+        travel.update(1/60)
+        self.assertTrue(mira.party_travelling)
+        context.party.active_ids = ('caelan',)
+        travel.update(1/60)
+        self.assertFalse(mira.party_travelling)
+        self.assertEqual(mira.position, (160, 40))
+        context.party.active_ids = ('caelan', 'mira')
+        travel.update(1/60)
+        travel.reset()
+        self.assertFalse(mira.party_travelling)
+        self.assertEqual(travel.actors(), ())
+
+    def test_pause_dialogue_and_journal_freeze_positions_direction_and_walk_clock(self):
+        context = game()
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (100, 70))
+        snapshot = [(tuple(value.position), value.facing, value.walk_ms) for value in travel.actors()]
+        for namespace, field in ((context.pause, 'is_open'), (context.social, 'active'),
+                                 (context.social, 'locked'), (context, 'map_open')):
+            setattr(namespace, field, True)
+            travel.update(10)
+            self.assertEqual([(tuple(value.position), value.facing, value.walk_ms) for value in travel.actors()], snapshot)
+            setattr(namespace, field, False)
+        context.quest_ui = SimpleNamespace(journal_open=True)
+        travel.update(10)
+        self.assertEqual([(tuple(value.position), value.facing, value.walk_ms) for value in travel.actors()], snapshot)
+
+    def test_story_mira_keeps_her_formation_slot_for_the_other_follower(self):
+        context = game(('caelan', 'mira', 'lucan'))
+        mira = SimpleNamespace(quest_mode=True, story_following=True)
+        context.mill_quest = SimpleNamespace(mira=mira)
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (100, 70))
+        self.assertEqual([value.identifier for value in travel.actors()], ['lucan'])
+        self.assertAlmostEqual(travel.actors()[0].position.x, 100-2*SPACING)
+        self.assertFalse(mira.party_travelling)
+
+    def test_npc_obstruction_stops_follower_on_route_until_it_clears(self):
+        context = game(('caelan', 'lucan'))
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (60, 70))
+        follower = travel.actors()[0]
+        # Place an NPC-sized obstruction in the recorded trail after the leader
+        # has already crossed it, as a routine NPC can do between updates.
+        context.player.position.update(100, 70)
+        travel.update(1/600)
+        context.world.obstacles.append(pygame.Rect(48, 65, 6, 10))
+        for _ in range(60):travel.update(1/60)
+        self.assertLess(follower.position.x, 46)
+        self.assertTrue(context.world.can_stand(follower.position))
+        context.world.obstacles.clear()
+        for _ in range(60):travel.update(1/60)
+        self.assertAlmostEqual(follower.position.x, 100-SPACING)
+
+    def test_teleport_and_miniature_overworld_hide_followers_but_reserve_is_supported(self):
+        context = game(('caelan', 'lucan'))
+        travel = PartyTravel(context, actor_factory=actor)
+        travel.update(1/60)
+        walk(travel, (100, 70))
+        context.player.position.update(200, 140)
+        travel.update(1/60)
+        self.assertEqual(travel.actors(), ())
+        context.world = World(is_overworld=True)
+        travel.update(1/60)
+        walk(travel, (160, 140))
+        self.assertEqual(travel.actors(), ())
+        context.world = World()
+        context.world.data['id'] = 'elden_vale_sanctuary'
+        context.overworld_travel = SimpleNamespace(remote=True, in_reserve=True)
+        travel.update(1/60)
+        walk(travel, (120, 140))
+        self.assertEqual(len(travel.actors()), 1)
+
+    def test_approved_directional_art_uses_native_canvas_and_character_foot_anchor(self):
+        pygame.display.init()
+        pygame.display.set_mode((1, 1))
+        for identifier, anchor in (('mira', (12, 34)), ('lucan', (12, 34)),
+                                   ('rhea', (10, 34)), ('edran', (12, 34))):
+            value = _TravelActor(identifier)
+            self.assertEqual(value.draw_anchor, anchor)
+            for facing in ('front', 'back', 'left', 'right'):
+                value.facing = facing
+                self.assertEqual(value.sprite(0).get_size(), (24, 36))
+                value.moving = True
+                value.walk_ms = 160
+                self.assertEqual(value.sprite(0).get_size(), (24, 36))
+                value.moving = False
+
+    def test_hidden_routine_cannot_start_an_invisible_conversation(self):
+        social = SocialSystem.__new__(SocialSystem)
+        social.actor = None
+        social._scripted = False
+        hidden = SimpleNamespace(party_travelling=True)
+        self.assertFalse(social.start(hidden))
+
+
+if __name__ == '__main__':unittest.main()

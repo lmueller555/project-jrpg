@@ -275,8 +275,9 @@ blocked until the existing repair. If Mira wins while Caelan is incapacitated,
 first aid restores him to 25% maximum HP before the recovery exchange. Flee
 returns to the safe approach without rewards or encounter completion. Defeat
 returns there with full Caelan HP and pre-battle MP for a viable retry.
-Interrupted battles save the unfinished encounter at the safe approach; no
-partial ATB, guest resources or dialogue cursor is serialized. Older completed
+Interrupted battles save the unfinished encounter at the safe approach. Party
+resources resume from the entry checkpoint; partial ATB, action damage and the
+dialogue cursor are not serialized. Older completed
 intake/repair saves preserve their progress through an explicit legacy bypass
 and receive no invented battle or reward.
 
