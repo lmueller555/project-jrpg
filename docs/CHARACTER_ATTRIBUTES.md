@@ -48,11 +48,12 @@ are a tunable baseline for the all-rounder profile.
 | --- | ---: |
 | HP | 9,999 |
 | MP | 999 |
-| Str, Mag, Spr, Def, M. Def, Speed, Acc, Eva, Lck | 255 |
+| Speed | 255 |
+| Str, Mag, Spr, Def, M. Def, Acc, Eva, Lck | 999 |
 
 The backend applies these limits to the sum of base attributes and all named
 modifier sources. A gain that crosses a limit stops at that limit. For example,
-254 Str plus a +4 reward produces 255 Str. Earned bonuses remain recorded by
+998 Str plus a +4 reward produces 999 Str. Earned bonuses remain recorded by
 their owners, so rebuilding modifiers or continuing a journey never stacks or
 discards those grants.
 
@@ -80,6 +81,14 @@ starting values and fills both resources. The read-only Characters screen shows
 Caelan's portrait, name, live values, Attunement and RP progress; opening,
 inspecting or closing it does not alter them. Caelan is the currently available
 character.
+
+The standalone [traditional leveling foundation](LEVELING.md) defines approved
+level-1 profiles and level-100 targets for Caelan, Mira, Lucan, Rhea and Edran.
+Its curves leave ordinary natural ratings at or below 300, with slower Speed
+growth; the effective caps above leave room for later modifiers. It does not
+yet replace live RP/Lattice progression, migrate journey attributes, award combat
+XP or change current-resource recovery. Current party guest/placeholder profiles
+retain their authored ratings until the transition rules are settled.
 
 [`attribute_icons.py`](../attribute_icons.py) draws eleven distinct icons with
 the shared interface painter. The icon shapes remain readable on parchment and

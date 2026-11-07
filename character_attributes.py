@@ -18,7 +18,7 @@ ATTRIBUTE_IDS = ('hp', 'mp', 'str', 'mag', 'spr', 'def', 'm_def',
 # Storage bounds also validate raw growth; gameplay caps bound effective values.
 MAX_ATTRIBUTE_VALUE = 999999
 ATTRIBUTE_CAPS = {identifier: 9999 if identifier == 'hp' else
-                  999 if identifier == 'mp' else 255
+                  255 if identifier == 'speed' else 999
                   for identifier in ATTRIBUTE_IDS}
 SNAPSHOT_VERSION = 3
 CATALOG_PATH = Path(__file__).parent/'assets/characters/attributes.json'

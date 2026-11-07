@@ -111,7 +111,7 @@ def load_enemies(actions, data=None):
                 or not isinstance(enemy['attributes'], dict)
                 or set(enemy['attributes']) != set(ATTRIBUTE_IDS)
                 or any(not _integer(value, 1 if key == 'hp' else 0,
-                                    MAX_ENEMY_RESOURCE if key in ('hp', 'mp') else 255)
+                                    MAX_ENEMY_RESOURCE if key in ('hp', 'mp') else ATTRIBUTE_CAPS[key])
                        for key, value in enemy['attributes'].items())
                 or not isinstance(enemy['abilities'], list) or not enemy['abilities']
                 or any(not isinstance(key, str) or key not in actions

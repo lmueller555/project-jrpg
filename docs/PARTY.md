@@ -24,6 +24,13 @@ her existing mill combat ratings. Lucan, Rhea and Edran have registered metadata
 and use the existing starter ratings until their authored recruitment is tuned.
 They stay hidden from the roster until explicitly recruited.
 
+The [traditional leveling foundation](LEVELING.md) supplies separate approved
+growth profiles for all five characters. Living reserve XP eligibility,
+story-unavailable characters, recruitment levels and catch-up remain pending;
+the party system does not silently choose those rules or distribute traditional
+XP. Its current resource persistence and RP/Lattice reward ownership remain in
+effect until the progression transition is implemented.
+
 ## Story ownership
 
 Mira's existing MQ02 meeting recruits her as a temporary guest. The mill outing

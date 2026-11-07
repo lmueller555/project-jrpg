@@ -331,8 +331,11 @@ separate **Spoils of Battle** screen; reward amounts and a victory Continue
 button no longer appear in the battlefield.
 
 Spoils awards the encounter's actual Resonance Points and items on entry.
-Resonance Points are the game's existing battle-experience progression; this
-change does not introduce a second EXP system. The Bat grants 20 RP and one
+Resonance Points remain the live game's battle-experience progression. The
+standalone [traditional leveling foundation](LEVELING.md) and
+[enemy archetype catalogue](ENEMY_ARCHETYPES.md) define the approved replacement
+curves and metadata, but do not yet distribute combat XP or retune these authored
+encounters. The Bat grants 20 RP and one
 Aether Emerald; MQ02's Tusker grants 30 RP and one Aether Emerald. Displayed
 amounts reflect available RP/inventory capacity. The screen shows authoritative
 received amounts, and Continue becomes available after the award checkpoint

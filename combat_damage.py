@@ -63,7 +63,7 @@ def calculate_damage(
         break_damage_limit: bool = False) -> int:
     """Calculate one damaging hit without changing any character or resource.
 
-    Ratings are integers from 0 to 255; potency is positive and finite. Affinity
+    Ratings are integers from 0 to 999; potency is positive and finite. Affinity
     is 0 (immune), 0.5 (resistant), 1 (neutral), or 2 (weak). Critical hits apply
     x1.5, matching protection applies x0.5, and variance is an integer percent
     from 95 through 105. The deterministic default uses 100% variance.

@@ -393,7 +393,7 @@ class RivetBattleModelTests(unittest.TestCase):
         actions = load_actions()
         bots = json.loads(BOT_PATH.read_text())
         self.assertEqual(load_bots(actions, bots)['rivet']['attributes']['speed'], 8)
-        for field, value in (('hp', 10), ('speed', True), ('str', 256)):
+        for field, value in (('hp', 10), ('speed', True), ('speed', 256), ('str', 1000)):
             bad = deepcopy(bots)
             bad['bots']['rivet']['attributes'][field] = value
             with self.subTest(field=field):

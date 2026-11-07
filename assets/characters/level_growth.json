@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "level_cap": 100,
+  "exponents": {"resources": 1.2, "ratings": 1.15, "speed": 1},
+  "xp": {
+    "required_scale": 100,
+    "required_exponent": 0.8,
+    "monster_scale": 30,
+    "monster_exponent": 0.5,
+    "multiplier": 2,
+    "boss_multiplier": 10
+  },
+  "characters": {
+    "caelan": {
+      "name": "Caelan",
+      "start": {"hp": 140, "mp": 30, "str": 10, "mag": 10, "spr": 10, "def": 10, "m_def": 10, "speed": 10, "acc": 10, "eva": 10, "lck": 10},
+      "target": {"hp": 5600, "mp": 400, "str": 280, "mag": 280, "spr": 200, "def": 220, "m_def": 220, "speed": 115, "acc": 230, "eva": 190, "lck": 200}
+    },
+    "mira": {
+      "name": "Mira",
+      "start": {"hp": 150, "mp": 30, "str": 10, "mag": 10, "spr": 10, "def": 10, "m_def": 10, "speed": 10, "acc": 10, "eva": 10, "lck": 10},
+      "target": {"hp": 5800, "mp": 400, "str": 230, "mag": 230, "spr": 230, "def": 230, "m_def": 230, "speed": 100, "acc": 220, "eva": 190, "lck": 200}
+    },
+    "lucan": {
+      "name": "Lucan",
+      "start": {"hp": 170, "mp": 20, "str": 12, "mag": 7, "spr": 8, "def": 12, "m_def": 9, "speed": 8, "acc": 11, "eva": 8, "lck": 9},
+      "target": {"hp": 7400, "mp": 240, "str": 300, "mag": 140, "spr": 170, "def": 300, "m_def": 230, "speed": 89, "acc": 240, "eva": 150, "lck": 180}
+    },
+    "rhea": {
+      "name": "Rhea",
+      "start": {"hp": 100, "mp": 45, "str": 6, "mag": 13, "spr": 10, "def": 7, "m_def": 10, "speed": 10, "acc": 10, "eva": 10, "lck": 10},
+      "target": {"hp": 3600, "mp": 600, "str": 90, "mag": 300, "spr": 190, "def": 120, "m_def": 180, "speed": 108, "acc": 200, "eva": 180, "lck": 200}
+    },
+    "edran": {
+      "name": "Edran",
+      "start": {"hp": 160, "mp": 40, "str": 7, "mag": 7, "spr": 13, "def": 12, "m_def": 12, "speed": 8, "acc": 9, "eva": 7, "lck": 10},
+      "target": {"hp": 6500, "mp": 500, "str": 120, "mag": 120, "spr": 300, "def": 280, "m_def": 300, "speed": 94, "acc": 190, "eva": 140, "lck": 180}
+    }
+  }
+}
