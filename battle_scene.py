@@ -216,12 +216,14 @@ class BattleScene:
         """One geometry map for character columns and the shared right menu."""
         self._sync_commands()
         small = painter.font('small').get_linesize()
-        name = painter.font('name', bold=True).get_linesize()
+        name_font = painter.font('small', bold=True)
+        name = name_font.get_linesize()
         count = len(self.model.party)
-        compact = count == 3
-        self._status_height = max(56, name+2*small+25)+(small+3 if compact else 0)
-        interactable_height = 56 if compact else self._status_height
-        height = self._status_height+interactable_height
+        # Name/ATB, HP and MP each occupy one text row. The remaining two
+        # thirds keep the gear's native size while exposing more battlefield.
+        self._status_height = name+2*small+4
+        interactable_height = 2*self._status_height
+        height = 3*self._status_height
         self.panel_rect = pygame.Rect(8, 312-height, 464, height)
         top = self.panel_rect.top
         command_width = max(80, painter.font('small', bold=True).size('COMMANDS')[0]+12)
@@ -233,21 +235,35 @@ class BattleScene:
             right = 8+round(party_width*(index+1)/count)
             column = pygame.Rect(left, top, right-left, height)
             center = column.centerx
-            name_width, name_height = painter.font('name', bold=True).size(member.name)
-            bar_width = min(112, column.width-(16 if compact else 24))
-            atb_width = 44 if compact else 56
-            hp_top = top+name+12+(small+3 if compact else 0)
-            mp_top = hp_top+small+6
+            name_width, name_height = name_font.size(member.name)
+            inner_width = column.width-8
+            header_gap = 4 if column.width-name_width >= 32 else 2
+            atb_width = min(44 if count == 3 else 56, column.width-4-name_width-header_gap)
+            header_left = center-(name_width+header_gap+atb_width)//2
+            name_rect = pygame.Rect(header_left, top+2, name_width, name_height)
+            atb_rect = pygame.Rect(name_rect.right+header_gap, 0, atb_width, 4)
+            atb_rect.centery = name_rect.centery
+            resource_width = max(painter.font('small').size(label+' '+str(maximum)+'/'+str(maximum))[0]
+                                 for label, maximum in (
+                                     ('HP', member.max_hp), ('MP', member.max_mp)))
+            bar_width = min(112, inner_width-resource_width-4)
+            bar_left = center-(bar_width+4+resource_width)//2
+            hp_top = top+2+name
+            mp_top = hp_top+small
+            hp_text = pygame.Rect(bar_left+bar_width+4, hp_top, resource_width, small)
+            mp_text = pygame.Rect(hp_text.left, mp_top, resource_width, small)
+            hp_bar = pygame.Rect(bar_left, 0, bar_width, 3)
+            mp_bar = pygame.Rect(bar_left, 0, bar_width, 3)
+            hp_bar.centery, mp_bar.centery = hp_text.centery, mp_text.centery
             self.party_rows[member.identifier] = {
                 'column': column,
                 'row': pygame.Rect(left+2, top+2, column.width-4, self._status_height-3),
-                'name': pygame.Rect(center-name_width//2, top+4, name_width, name_height),
-                'atb': pygame.Rect(center-atb_width//2+(8 if compact else 0),
-                                   top+name+(9+small//2 if compact else 6), atb_width, 4),
-                'hp_text': pygame.Rect(center-bar_width//2, hp_top, bar_width, small),
-                'mp_text': pygame.Rect(center-bar_width//2, mp_top, bar_width, small),
-                'hp': pygame.Rect(center-bar_width//2, hp_top+small+1, bar_width, 3),
-                'mp': pygame.Rect(center-bar_width//2, mp_top+small+1, bar_width, 3),
+                'name': name_rect,
+                'atb': atb_rect,
+                'hp_text': hp_text,
+                'mp_text': mp_text,
+                'hp': hp_bar,
+                'mp': mp_bar,
                 'interactable': pygame.Rect(left+4, top+self._status_height+2,
                                             column.width-8, interactable_height-6)}
         player_row = self.party_rows['player']
@@ -283,7 +299,6 @@ class BattleScene:
             if y+row_height > self.panel_rect.bottom-5:break
             self.command_rects[actions[index]] = pygame.Rect(self.commands_panel.left+6, y, self.commands_panel.width-12, row_height)
             y += row_height
-        self._layout_bots(painter)
         return small, name
 
     def _bot(self, identifier):
@@ -294,28 +309,6 @@ class BattleScene:
         if self.model.phase in ('victory', 'defeat'):
             return self._encounter_bots
         return tuple(getattr(self.model, 'bots', ()))
-
-    def _layout_bots(self, painter):
-        """A field instrument belongs to the bot, outside command party rows."""
-        self.bot_status = {}
-        if self.model.phase in RESULTS:return
-        small = painter.font('small').get_linesize()
-        for bot in self._field_bots():
-            point = self._project(self._bot_home())
-            title = bot.name+' ATB'
-            cue = 'Haste · '+str(bot.haste_turns)
-            width = max(painter.font('small', bold=True).size(title)[0],
-                        painter.font('small', bold=True).size(cue)[0])+10
-            # The status sits just above Rivet. Both move up with the enlarged
-            # command panel, retaining clear space from Mira and Caelan.
-            panel = pygame.Rect(round(point.x-width/2), round(point.y-60)-2*small-16,
-                                width, 2*small+16)
-            if len(self.model.party) == 3:panel.y = max(43, panel.y)
-            self.bot_status[bot.identifier] = {
-                'panel': panel,
-                'name': pygame.Rect(panel.x+5, panel.y+3, width-10, small),
-                'atb': pygame.Rect(panel.x+6, panel.y+small+6, width-12, 6),
-                'haste': pygame.Rect(panel.x+5, panel.y+small+13, width-10, small)}
 
     @property
     def tutorial_active(self):return bool(self._tutorial_queue)
@@ -744,8 +737,10 @@ class BattleScene:
         offset = max(0, 202-self.panel_rect.top)
         if len(self.model.party) == 3:
             # Three native-size silhouettes step upward toward the right edge.
-            # Anchor them to the panel so larger text keeps their feet visible.
-            positions = {member.identifier: pygame.Vector2(x, self.panel_rect.top-y)
+            # Reduce the stagger at the largest native-resolution text setting
+            # so the topmost silhouette also remains inside the battlefield.
+            stagger = min(1, max(0, (self.panel_rect.top-108)/47))
+            positions = {member.identifier: pygame.Vector2(x, self.panel_rect.top-6-(y-6)*stagger)
                          for member, (x, y) in zip(self.model.party,
                                                   ((329, 6), (385, 29), (439, 53)))}
             positions['enemy'] = pygame.Vector2(119, 196-offset)
@@ -1009,20 +1004,6 @@ class BattleScene:
         if current*2 <= maximum:return HP_YELLOW
         return HP_GREEN
 
-    def _draw_bot_status(self, painter):
-        for identifier, row in self.bot_status.items():
-            bot = self._bot(identifier)
-            owner = self.model.combatant(bot.owner_id)
-            active = owner is not None and owner.hp > 0
-            painter.rect(FOREST_DARK, row['panel'])
-            painter.rect(BRASS if active else FOREST_LIGHT, row['panel'], 1)
-            painter.text(bot.name+' ATB', row['name'].topleft, role='small', bold=True,
-                         color=IVORY if active else MUTED)
-            self._bar(painter, row['atb'], bot.atb, ATB_YELLOW if active else MUTED)
-            painter.text('Haste · '+str(bot.haste_turns), row['haste'].topleft,
-                         role='small', bold=True,
-                         color=MP_BLUE if active and bot.haste_turns else MUTED)
-
     def draw(self, world_canvas, ui_surface):
         painter = self.game.ui.painter(ui_surface)
         small, name = self._layout(painter)
@@ -1033,7 +1014,6 @@ class BattleScene:
             world_canvas.blit(field, (round(offset[0]), round(offset[1])))
         pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
         model, player, enemy = self.model, self.model.player, self.model.enemy
-        self._draw_bot_status(painter)
         enemy_x = 119 if len(model.party) > 1 else 126
         painter.text(enemy.name, (enemy_x+1, 44), role='name', color=FOREST_DARK, anchor='center', bold=True)
         painter.text(enemy.name, (enemy_x, 43), role='name', anchor='center', bold=True)
@@ -1056,6 +1036,9 @@ class BattleScene:
                 and self.model.enemy_id == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
             x, y = self._project(point)
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
+            popup_width, popup_height = painter.font('name', bold=True).size(popup['text'])
+            x = max(popup_width/2+2, min(478-popup_width/2, x))
+            y = max(popup_height/2+2, min(self.panel_rect.top-popup_height/2-2, y))
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name',
                          color=MP_BLUE if popup.get('enchant') else GOLD, anchor='center', bold=True)
@@ -1095,23 +1078,16 @@ class BattleScene:
             if model.phase == 'ready' and model.ready_actor == member.identifier:
                 painter.rect(FOREST_LIGHT, row['row'])
                 painter.rect(GOLD, row['row'], 1)
-            painter.text(member.name, row['name'].topleft, role='name',
+            painter.text(member.name, row['name'].topleft, role='small',
                          color=GOLD if member.hp else MUTED, bold=True)
-            painter.text('ATB', (row['atb'].left-5, row['atb'].centery), role='small',
-                         color=MUTED, anchor='midright')
             self._bar(painter, row['atb'], member.atb, ATB_YELLOW)
             for label, value, maximum, key, color in (
                     ('HP', member.hp, member.max_hp, 'hp', self._health_color(member.hp, member.max_hp)),
                     ('MP', member.mp, member.max_mp, 'mp', MP_BLUE)):
                 text_rect = row[key+'_text']
-                if len(model.party) == 3:
-                    self.header_rects[label] = painter.text(
-                        label+' '+str(value)+'/'+str(maximum), text_rect.midtop,
-                        role='small', anchor='midtop', color=GOLD)
-                else:
-                    self.header_rects[label] = painter.text(label, text_rect.topleft, role='small', color=GOLD)
-                    painter.text(str(value)+'/'+str(maximum), text_rect.topright,
-                                 role='small', anchor='topright')
+                self.header_rects[label] = painter.text(
+                    label+' '+str(value)+'/'+str(maximum), text_rect.topleft,
+                    role='small', color=GOLD)
                 self._bar(painter, row[key], value/maximum if maximum else 0, color)
             column = row['column']
             painter.line(BRASS, (column.right, top+5), (column.right, self.panel_rect.bottom-5))

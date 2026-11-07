@@ -118,8 +118,9 @@ Large updates and smaller time steps follow the same readiness boundaries.
 
 The bottom panel has one column per participating character and a narrower
 shared Commands column on the right. Character columns contain name and yellow
-ATB at the top, stacked HP/MP values and bars beneath, and an individual mechanic
-area in the bottom half. HP is green above 50%, yellow above 25% through 50%,
+ATB on the same row, followed by HP and MP bars with their labels and values to
+the right. These three compact rows use the top third; the individual mechanic
+area uses the bottom two-thirds. HP is green above 50%, yellow above 25% through 50%,
 and red at 25% or below. MP is blue.
 
 Caelan’s lower section contains his rotating gear. Mira’s lower section is
@@ -128,6 +129,16 @@ existing command and autonomous behavior. Panel height follows measured text
 and the wheel’s usable area; larger text keeps its configured size. Long
 command labels wrap and command selection scrolls to remain visible. Contextual
 skill details appear immediately above the panel.
+
+At standard text size in 960×640 or 1440×960, the three-character panel is
+102 logical pixels tall, down from 128, while Caelan's gear stays 48×48 logical
+pixels. Accessible text keeps its configured size; at the smallest window with
+150% text, the panel grows to fit and the party stagger compresses to keep every
+sprite visible. See the [compact UI comparison](reviews/compact_combat_ui/README.md).
+
+Rivet remains visible and autonomous on the battlefield. Its internal ATB gauge
+and remaining Haste turns are not displayed as a separate HUD. Overclock's
+description and one-off action feedback remain available.
 
 | Input | Action |
 | --- | --- |

@@ -1,0 +1,3521 @@
+{
+  "baseline_commit": "f5c2203010fbfd7a4c17c475a654ef8004edd8ed",
+  "baseline_scene_sha256": "0c2f3b082397b4eb39d81db376c976a7928026d611ef13c0e4e8bfb3470f06e1",
+  "model_state_unchanged_from_baseline": {
+    "battle_model.py": "47af08d33e5acd69c9d22fffcd3930dcc66f5d163f423a2aab6de16651bb1aa3",
+    "party_state.py": "286dacb582d9b4cda25be85b61a021b52083df0fa69de8457ddd5a4f78684e97",
+    "character_attributes.py": "16292514ae2c6d5cb4dc5f80f8a36716295e002d8be5e7dd4f35b0215ec0062a",
+    "gear_state.py": "c721f2fb56c42afb3c4c0eefc40ac2ef982a2fb19c1491f25ffca166c43e515d",
+    "gear_widget.py": "21b3634f5c9bb06e582fb8cda9c3d10f40023b13ca90dc8031b40cf264e17437",
+    "assets/combat/actions.json": "5c263818070e9cd3dc3433de188074b6b8188318b08cf2553845a70cd9fccb90",
+    "assets/combat/bots.json": "5c9cf06a70c3d436f7a5412595554ebeb2c4bd8867bd0f183317be7db233c1c5",
+    "assets/combat/guests.json": "2110b94522c0622c96ae8105639320aa8c203348662c2ce45a583a576246f378",
+    "assets/combat/enemies.json": "a3e8921754d004ad34d815fd40da1360e8d43f68386ea066fce1ae582008da6e"
+  },
+  "fixtures": [
+    "Production PartyState recruits Mira and Lucan for an isolated review only. Lucan recruitment is not added to the story.",
+    "Identical before/after: Caelan HP103/140 MP11/30; Mira HP177/300 MP13/30; Lucan HP97/140 MP4/30; Bat HP16/72; RNG seed7.",
+    "Stills freeze party gauges at .95,0,.98 and Rivet at .9; scene presentation elapsed=.8s shows completed deployment.",
+    "Resource-extreme still uses supported max HP9999/MP999 through a named review modifier.",
+    "Reel starts Mira ATB=1 and all other gauges=0, with durable Bat HP9999. All later ATB/action/damage/haste clocks are production simulation.",
+    "Real G/Right/Enter and mouse drag change gems, real UI clicks select Overclock, subsequent ready actors choose Guard through the UI.",
+    "Video is one contiguous sequence through the first completed hasted bot action. Simulation then continues until all eight haste turns expire.",
+    "No action definitions, sprites, poses, camera, staging, draw calls, personal save files, or settings files are replaced."
+  ],
+  "silent": true,
+  "video_fps": 20,
+  "video_size": [
+    960,
+    640
+  ],
+  "video_seconds": 9.0,
+  "shots": [
+    {
+      "file": "before_1440.png",
+      "window": [
+        1440,
+        960
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          184,
+          464,
+          128
+        ],
+        "panel_height": 128,
+        "status_height": 72,
+        "interactive_height": 56,
+        "status_fraction": 0.5625,
+        "interactive_fraction": 0.4375,
+        "gear": [
+          48,
+          259,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              10,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              54,
+              188,
+              36,
+              14
+            ],
+            "atb": [
+              58,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              16,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              16,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              16,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              16,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              12,
+              258,
+              120,
+              50
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              138,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              189,
+              188,
+              23,
+              14
+            ],
+            "atb": [
+              186,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              144,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              144,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              144,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              144,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              140,
+              258,
+              120,
+              50
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              266,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              313,
+              188,
+              31,
+              14
+            ],
+            "atb": [
+              314,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              272,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              272,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              272,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              272,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              268,
+              258,
+              120,
+              50
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            204,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            220,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            236,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            252,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": [
+          "Rivet ATB",
+          "Haste \u00b7 0"
+        ]
+      }
+    },
+    {
+      "file": "after_1440.png",
+      "window": [
+        1440,
+        960
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          48,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              36,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              64,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              93,
+              222,
+              39,
+              10
+            ],
+            "mp_text": [
+              93,
+              232,
+              39,
+              10
+            ],
+            "hp": [
+              12,
+              226,
+              77,
+              3
+            ],
+            "mp": [
+              12,
+              236,
+              77,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              120,
+              62
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              138,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              169,
+              212,
+              15,
+              10
+            ],
+            "atb": [
+              188,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              218,
+              222,
+              42,
+              10
+            ],
+            "mp_text": [
+              218,
+              232,
+              42,
+              10
+            ],
+            "hp": [
+              140,
+              226,
+              74,
+              3
+            ],
+            "mp": [
+              140,
+              236,
+              74,
+              3
+            ],
+            "interactable": [
+              140,
+              246,
+              120,
+              62
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              266,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              294,
+              212,
+              21,
+              10
+            ],
+            "atb": [
+              319,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              349,
+              222,
+              39,
+              10
+            ],
+            "mp_text": [
+              349,
+              232,
+              39,
+              10
+            ],
+            "hp": [
+              268,
+              226,
+              77,
+              3
+            ],
+            "mp": [
+              268,
+              236,
+              77,
+              3
+            ],
+            "interactable": [
+              268,
+              246,
+              120,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "before_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          184,
+          464,
+          128
+        ],
+        "panel_height": 128,
+        "status_height": 72,
+        "interactive_height": 56,
+        "status_fraction": 0.5625,
+        "interactive_fraction": 0.4375,
+        "gear": [
+          48,
+          259,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              10,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              54,
+              188,
+              36,
+              14
+            ],
+            "atb": [
+              58,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              16,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              16,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              16,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              16,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              12,
+              258,
+              120,
+              50
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              138,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              189,
+              188,
+              23,
+              14
+            ],
+            "atb": [
+              186,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              144,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              144,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              144,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              144,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              140,
+              258,
+              120,
+              50
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              184,
+              128,
+              128
+            ],
+            "row": [
+              266,
+              186,
+              124,
+              69
+            ],
+            "name": [
+              313,
+              188,
+              31,
+              14
+            ],
+            "atb": [
+              314,
+              212,
+              44,
+              4
+            ],
+            "hp_text": [
+              272,
+              223,
+              112,
+              10
+            ],
+            "mp_text": [
+              272,
+              239,
+              112,
+              10
+            ],
+            "hp": [
+              272,
+              234,
+              112,
+              3
+            ],
+            "mp": [
+              272,
+              250,
+              112,
+              3
+            ],
+            "interactable": [
+              268,
+              258,
+              120,
+              50
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            204,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            220,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            236,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            252,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": [
+          "Rivet ATB",
+          "Haste \u00b7 0"
+        ]
+      }
+    },
+    {
+      "file": "after_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          48,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              36,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              64,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              92,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              92,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              12,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              12,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              120,
+              62
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              138,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              168,
+              212,
+              16,
+              10
+            ],
+            "atb": [
+              188,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              216,
+              222,
+              44,
+              10
+            ],
+            "mp_text": [
+              216,
+              232,
+              44,
+              10
+            ],
+            "hp": [
+              140,
+              226,
+              72,
+              3
+            ],
+            "mp": [
+              140,
+              236,
+              72,
+              3
+            ],
+            "interactable": [
+              140,
+              246,
+              120,
+              62
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              266,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              294,
+              212,
+              21,
+              10
+            ],
+            "atb": [
+              319,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              348,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              348,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              268,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              268,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              268,
+              246,
+              120,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "before_minimum_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          148,
+          464,
+          164
+        ],
+        "panel_height": 164,
+        "status_height": 108,
+        "interactive_height": 56,
+        "status_fraction": 0.6585365853658537,
+        "interactive_fraction": 0.34146341463414637,
+        "gear": [
+          45,
+          259,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              148,
+              122,
+              164
+            ],
+            "row": [
+              10,
+              150,
+              118,
+              105
+            ],
+            "name": [
+              40,
+              152,
+              58,
+              23
+            ],
+            "atb": [
+              55,
+              189,
+              44,
+              4
+            ],
+            "hp_text": [
+              16,
+              205,
+              106,
+              19
+            ],
+            "mp_text": [
+              16,
+              230,
+              106,
+              19
+            ],
+            "hp": [
+              16,
+              225,
+              106,
+              3
+            ],
+            "mp": [
+              16,
+              250,
+              106,
+              3
+            ],
+            "interactable": [
+              12,
+              258,
+              114,
+              50
+            ]
+          },
+          "mira": {
+            "column": [
+              130,
+              148,
+              122,
+              164
+            ],
+            "row": [
+              132,
+              150,
+              118,
+              105
+            ],
+            "name": [
+              173,
+              152,
+              37,
+              23
+            ],
+            "atb": [
+              177,
+              189,
+              44,
+              4
+            ],
+            "hp_text": [
+              138,
+              205,
+              106,
+              19
+            ],
+            "mp_text": [
+              138,
+              230,
+              106,
+              19
+            ],
+            "hp": [
+              138,
+              225,
+              106,
+              3
+            ],
+            "mp": [
+              138,
+              250,
+              106,
+              3
+            ],
+            "interactable": [
+              134,
+              258,
+              114,
+              50
+            ]
+          },
+          "lucan": {
+            "column": [
+              252,
+              148,
+              122,
+              164
+            ],
+            "row": [
+              254,
+              150,
+              118,
+              105
+            ],
+            "name": [
+              289,
+              152,
+              49,
+              23
+            ],
+            "atb": [
+              299,
+              189,
+              44,
+              4
+            ],
+            "hp_text": [
+              260,
+              205,
+              106,
+              19
+            ],
+            "mp_text": [
+              260,
+              230,
+              106,
+              19
+            ],
+            "hp": [
+              260,
+              225,
+              106,
+              3
+            ],
+            "mp": [
+              260,
+              250,
+              106,
+              3
+            ],
+            "interactable": [
+              256,
+              258,
+              114,
+              50
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            380,
+            177,
+            86,
+            24
+          ],
+          "skills": [
+            380,
+            201,
+            86,
+            24
+          ],
+          "guard": [
+            380,
+            225,
+            86,
+            24
+          ],
+          "flee": [
+            380,
+            249,
+            86,
+            24
+          ]
+        },
+        "rendered_bot_hud": [
+          "Rivet ATB",
+          "Haste \u00b7 0"
+        ]
+      }
+    },
+    {
+      "file": "minimum_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          129,
+          464,
+          183
+        ],
+        "panel_height": 183,
+        "status_height": 61,
+        "interactive_height": 122,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          45,
+          226,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              10,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              21,
+              131,
+              48,
+              19
+            ],
+            "atb": [
+              73,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              47,
+              150,
+              79,
+              19
+            ],
+            "mp_text": [
+              47,
+              169,
+              79,
+              19
+            ],
+            "hp": [
+              12,
+              158,
+              31,
+              3
+            ],
+            "mp": [
+              12,
+              177,
+              31,
+              3
+            ],
+            "interactable": [
+              12,
+              192,
+              114,
+              116
+            ]
+          },
+          "mira": {
+            "column": [
+              130,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              132,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              152,
+              131,
+              31,
+              19
+            ],
+            "atb": [
+              187,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              161,
+              150,
+              87,
+              19
+            ],
+            "mp_text": [
+              161,
+              169,
+              87,
+              19
+            ],
+            "hp": [
+              134,
+              158,
+              23,
+              3
+            ],
+            "mp": [
+              134,
+              177,
+              23,
+              3
+            ],
+            "interactable": [
+              134,
+              192,
+              114,
+              116
+            ]
+          },
+          "lucan": {
+            "column": [
+              252,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              254,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              268,
+              131,
+              42,
+              19
+            ],
+            "atb": [
+              314,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              291,
+              150,
+              79,
+              19
+            ],
+            "mp_text": [
+              291,
+              169,
+              79,
+              19
+            ],
+            "hp": [
+              256,
+              158,
+              31,
+              3
+            ],
+            "mp": [
+              256,
+              177,
+              31,
+              3
+            ],
+            "interactable": [
+              256,
+              192,
+              114,
+              116
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            380,
+            158,
+            86,
+            24
+          ],
+          "skills": [
+            380,
+            182,
+            86,
+            24
+          ],
+          "guard": [
+            380,
+            206,
+            86,
+            24
+          ],
+          "flee": [
+            380,
+            230,
+            86,
+            24
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "maximum_resources_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 9999,
+          "max_hp": 9999,
+          "mp": 999,
+          "max_mp": 999
+        },
+        "mira": {
+          "hp": 9999,
+          "max_hp": 9999,
+          "mp": 999,
+          "max_mp": 999
+        },
+        "lucan": {
+          "hp": 9999,
+          "max_hp": 9999,
+          "mp": 999,
+          "max_mp": 999
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          129,
+          464,
+          183
+        ],
+        "panel_height": 183,
+        "status_height": 61,
+        "interactive_height": 122,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          45,
+          226,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              10,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              21,
+              131,
+              48,
+              19
+            ],
+            "atb": [
+              73,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              25,
+              150,
+              101,
+              19
+            ],
+            "mp_text": [
+              25,
+              169,
+              101,
+              19
+            ],
+            "hp": [
+              12,
+              158,
+              9,
+              3
+            ],
+            "mp": [
+              12,
+              177,
+              9,
+              3
+            ],
+            "interactable": [
+              12,
+              192,
+              114,
+              116
+            ]
+          },
+          "mira": {
+            "column": [
+              130,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              132,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              152,
+              131,
+              31,
+              19
+            ],
+            "atb": [
+              187,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              147,
+              150,
+              101,
+              19
+            ],
+            "mp_text": [
+              147,
+              169,
+              101,
+              19
+            ],
+            "hp": [
+              134,
+              158,
+              9,
+              3
+            ],
+            "mp": [
+              134,
+              177,
+              9,
+              3
+            ],
+            "interactable": [
+              134,
+              192,
+              114,
+              116
+            ]
+          },
+          "lucan": {
+            "column": [
+              252,
+              129,
+              122,
+              183
+            ],
+            "row": [
+              254,
+              131,
+              118,
+              58
+            ],
+            "name": [
+              268,
+              131,
+              42,
+              19
+            ],
+            "atb": [
+              314,
+              138,
+              44,
+              4
+            ],
+            "hp_text": [
+              269,
+              150,
+              101,
+              19
+            ],
+            "mp_text": [
+              269,
+              169,
+              101,
+              19
+            ],
+            "hp": [
+              256,
+              158,
+              9,
+              3
+            ],
+            "mp": [
+              256,
+              177,
+              9,
+              3
+            ],
+            "interactable": [
+              256,
+              192,
+              114,
+              116
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            380,
+            158,
+            86,
+            24
+          ],
+          "skills": [
+            380,
+            182,
+            86,
+            24
+          ],
+          "guard": [
+            380,
+            206,
+            86,
+            24
+          ],
+          "flee": [
+            380,
+            230,
+            86,
+            24
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "1_member_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          158,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              384,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              380,
+              31
+            ],
+            "name": [
+              158,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              186,
+              215,
+              56,
+              4
+            ],
+            "hp_text": [
+              238,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              238,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              122,
+              226,
+              112,
+              3
+            ],
+            "mp": [
+              122,
+              236,
+              112,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              376,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "2_member_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 13,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          62,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              192,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              188,
+              31
+            ],
+            "name": [
+              62,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              90,
+              215,
+              56,
+              4
+            ],
+            "hp_text": [
+              142,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              142,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              26,
+              226,
+              112,
+              3
+            ],
+            "mp": [
+              26,
+              236,
+              112,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              184,
+              62
+            ]
+          },
+          "mira": {
+            "column": [
+              200,
+              210,
+              192,
+              102
+            ],
+            "row": [
+              202,
+              212,
+              188,
+              31
+            ],
+            "name": [
+              258,
+              212,
+              16,
+              10
+            ],
+            "atb": [
+              278,
+              215,
+              56,
+              4
+            ],
+            "hp_text": [
+              332,
+              222,
+              44,
+              10
+            ],
+            "mp_text": [
+              332,
+              232,
+              44,
+              10
+            ],
+            "hp": [
+              216,
+              226,
+              112,
+              3
+            ],
+            "mp": [
+              216,
+              236,
+              112,
+              3
+            ],
+            "interactable": [
+              204,
+              246,
+              184,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "overclock_active_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 8,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          48,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              36,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              64,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              92,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              92,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              12,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              12,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              120,
+              62
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              138,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              168,
+              212,
+              16,
+              10
+            ],
+            "atb": [
+              188,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              216,
+              222,
+              44,
+              10
+            ],
+            "mp_text": [
+              216,
+              232,
+              44,
+              10
+            ],
+            "hp": [
+              140,
+              226,
+              72,
+              3
+            ],
+            "mp": [
+              140,
+              236,
+              72,
+              3
+            ],
+            "interactable": [
+              140,
+              246,
+              120,
+              62
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              266,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              294,
+              212,
+              21,
+              10
+            ],
+            "atb": [
+              319,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              348,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              348,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              268,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              268,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              268,
+              246,
+              120,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    },
+    {
+      "file": "rivet_after_action_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "party": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "resources": {
+        "player": {
+          "hp": 103,
+          "max_hp": 140,
+          "mp": 11,
+          "max_mp": 30
+        },
+        "mira": {
+          "hp": 177,
+          "max_hp": 300,
+          "mp": 8,
+          "max_mp": 30
+        },
+        "lucan": {
+          "hp": 97,
+          "max_hp": 140,
+          "mp": 4,
+          "max_mp": 30
+        }
+      },
+      "geometry": {
+        "panel": [
+          8,
+          210,
+          464,
+          102
+        ],
+        "panel_height": 102,
+        "status_height": 34,
+        "interactive_height": 68,
+        "status_fraction": 0.3333333333333333,
+        "interactive_fraction": 0.6666666666666666,
+        "gear": [
+          48,
+          253,
+          48,
+          48
+        ],
+        "columns": {
+          "player": {
+            "column": [
+              8,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              10,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              36,
+              212,
+              24,
+              10
+            ],
+            "atb": [
+              64,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              92,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              92,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              12,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              12,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              12,
+              246,
+              120,
+              62
+            ]
+          },
+          "mira": {
+            "column": [
+              136,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              138,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              168,
+              212,
+              16,
+              10
+            ],
+            "atb": [
+              188,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              216,
+              222,
+              44,
+              10
+            ],
+            "mp_text": [
+              216,
+              232,
+              44,
+              10
+            ],
+            "hp": [
+              140,
+              226,
+              72,
+              3
+            ],
+            "mp": [
+              140,
+              236,
+              72,
+              3
+            ],
+            "interactable": [
+              140,
+              246,
+              120,
+              62
+            ]
+          },
+          "lucan": {
+            "column": [
+              264,
+              210,
+              128,
+              102
+            ],
+            "row": [
+              266,
+              212,
+              124,
+              31
+            ],
+            "name": [
+              294,
+              212,
+              21,
+              10
+            ],
+            "atb": [
+              319,
+              215,
+              44,
+              4
+            ],
+            "hp_text": [
+              348,
+              222,
+              40,
+              10
+            ],
+            "mp_text": [
+              348,
+              232,
+              40,
+              10
+            ],
+            "hp": [
+              268,
+              226,
+              76,
+              3
+            ],
+            "mp": [
+              268,
+              236,
+              76,
+              3
+            ],
+            "interactable": [
+              268,
+              246,
+              120,
+              62
+            ]
+          }
+        },
+        "commands": {
+          "attack": [
+            398,
+            230,
+            68,
+            16
+          ],
+          "skills": [
+            398,
+            246,
+            68,
+            16
+          ],
+          "guard": [
+            398,
+            262,
+            68,
+            16
+          ],
+          "flee": [
+            398,
+            278,
+            68,
+            16
+          ]
+        },
+        "rendered_bot_hud": []
+      }
+    }
+  ],
+  "stages": [
+    {
+      "video_seconds": 0,
+      "stage": "Mira ready; compact three-member HUD"
+    },
+    {
+      "video_seconds": 1.3,
+      "stage": "Gear mouse drag and release"
+    },
+    {
+      "video_seconds": 2.2,
+      "stage": "Mira selects Overclock"
+    },
+    {
+      "video_seconds": 3.1,
+      "stage": "Rivet charges and acts autonomously"
+    }
+  ],
+  "inputs": [
+    {
+      "simulation_seconds": 0.6,
+      "kind": "key",
+      "key": "g"
+    },
+    {
+      "simulation_seconds": 0.6,
+      "kind": "key",
+      "key": "right"
+    },
+    {
+      "simulation_seconds": 0.9,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "simulation_seconds": 1.3,
+      "kind": "key",
+      "key": "tab"
+    },
+    {
+      "simulation_seconds": 1.3,
+      "kind": "MouseButtonDown",
+      "logical": [
+        72,
+        266.0
+      ]
+    },
+    {
+      "simulation_seconds": 1.3,
+      "kind": "MouseMotion",
+      "logical": [
+        72.0,
+        266.0
+      ]
+    },
+    {
+      "simulation_seconds": 1.4,
+      "kind": "MouseMotion",
+      "logical": [
+        78.0,
+        267.60769515458674
+      ]
+    },
+    {
+      "simulation_seconds": 1.5,
+      "kind": "MouseMotion",
+      "logical": [
+        82.39230484541326,
+        272.0
+      ]
+    },
+    {
+      "simulation_seconds": 1.6,
+      "kind": "MouseMotion",
+      "logical": [
+        84.0,
+        278.0
+      ]
+    },
+    {
+      "simulation_seconds": 1.7,
+      "kind": "MouseButtonUp",
+      "logical": [
+        84.0,
+        278
+      ]
+    },
+    {
+      "simulation_seconds": 2.2,
+      "kind": "MouseMotion",
+      "logical": [
+        470,
+        5
+      ]
+    },
+    {
+      "simulation_seconds": 2.2,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        254
+      ]
+    },
+    {
+      "simulation_seconds": 2.2,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        254
+      ]
+    },
+    {
+      "simulation_seconds": 2.2,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        238
+      ]
+    },
+    {
+      "simulation_seconds": 2.2,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        238
+      ]
+    },
+    {
+      "simulation_seconds": 9.9,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 9.9,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 10.7,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 10.7,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 11.3,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 11.3,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 19.0,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 19.0,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 20.1,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 20.1,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 20.7,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 20.7,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 29.05,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 29.05,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 30.45,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 30.45,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 31.05,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 31.05,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 38.15,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 38.15,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 39.85,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 39.85,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 40.45,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 40.45,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 47.4,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 47.4,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 50.2,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 50.2,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 50.8,
+      "kind": "MouseButtonDown",
+      "logical": [
+        432,
+        270
+      ]
+    },
+    {
+      "simulation_seconds": 50.8,
+      "kind": "MouseButtonUp",
+      "logical": [
+        432,
+        270
+      ]
+    }
+  ],
+  "bot_verification": {
+    "overclock_mp_after": 8,
+    "haste_applied": 8,
+    "haste_tick_remaining": [
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "autonomous_bot_impacts": 8,
+    "haste_expired_events": 1,
+    "simulation_seconds": 56.7,
+    "rendered_frames_without_bot_hud": 1134,
+    "gear_keyboard": [
+      "water",
+      "nature"
+    ],
+    "gear_mouse_drag": [
+      "nature",
+      "ice"
+    ]
+  },
+  "events": [
+    {
+      "type": "bot_deployed",
+      "actor": "rivet",
+      "owner": "mira"
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "overclock",
+      "target": "rivet",
+      "name": "Overclock"
+    },
+    {
+      "type": "haste_applied",
+      "actor": "mira",
+      "target": "rivet",
+      "action": "overclock",
+      "remaining_turns": 8,
+      "rate_multiplier": 1.5
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 75,
+      "remaining_hp": 9924,
+      "guarded": false,
+      "frame_age": 0.014035087719293418
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 7
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "player_ready",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "lucan",
+      "action": "guard",
+      "target": "lucan",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "damage": 4,
+      "remaining_hp": 99,
+      "guarded": true,
+      "frame_age": 0.01105263157896226
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 76,
+      "remaining_hp": 9848,
+      "guarded": false,
+      "frame_age": 0.008070175438581309
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 6
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "player_ready",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "lucan",
+      "action": "guard",
+      "target": "lucan",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 79,
+      "remaining_hp": 9769,
+      "guarded": false,
+      "frame_age": 0.042105263157869235
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 5
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "name": "Wing Gust"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "damage": 4,
+      "remaining_hp": 95,
+      "guarded": true,
+      "frame_age": 0.042105263157869346
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 72,
+      "remaining_hp": 9697,
+      "guarded": false,
+      "frame_age": 0.006140350877163206
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 4
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "player_ready",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "lucan",
+      "action": "guard",
+      "target": "lucan",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "damage": 4,
+      "remaining_hp": 91,
+      "guarded": true,
+      "frame_age": 0.003157894736830827
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 72,
+      "remaining_hp": 9625,
+      "guarded": false,
+      "frame_age": 0.00017543859645159643
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 3
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "player_ready",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "lucan",
+      "action": "guard",
+      "target": "lucan",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 75,
+      "remaining_hp": 9550,
+      "guarded": false,
+      "frame_age": 0.03421052631574052
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 2
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "name": "Wing Gust"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "wing_gust",
+      "target": "player",
+      "damage": 5,
+      "remaining_hp": 86,
+      "guarded": true,
+      "frame_age": 0.03421052631574063
+    },
+    {
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 71,
+      "remaining_hp": 9479,
+      "guarded": false,
+      "frame_age": 0.010150375939867742
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 1
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "player_ready",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "lucan",
+      "action": "guard",
+      "target": "lucan",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "lucan"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "bite",
+      "target": "player",
+      "damage": 4,
+      "remaining_hp": 82,
+      "guarded": true,
+      "frame_age": 0.045263157894703046
+    },
+    {
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 73,
+      "remaining_hp": 9406,
+      "guarded": false,
+      "frame_age": 0.04228070175432265
+    },
+    {
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 0
+    },
+    {
+      "type": "haste_expired",
+      "actor": "rivet",
+      "remaining_turns": 0
+    }
+  ],
+  "files_unchanged_during_capture": true,
+  "artifacts": {
+    "1_member_960.png": "2ac121faa3f94db5e28ea2c9d6c581556e9d61cfd79c60fdbac46261050a3e00",
+    "2_member_960.png": "74098318b714f2261ec13740f57cefbb2d3333268bb976d231f58e176d3fc21e",
+    "after_1440.png": "4d47f6152645edd766268c8150764f638dbf5ea5120b93fc539585b37397b90d",
+    "after_960.png": "816d0b681f7eec0645ffff714ad7ab7fca6e1555688b4bb4bedeffc15afbc61e",
+    "before_1440.png": "f8d2ffdd908b8e90f2f3d43915a02d2ced3c1390ff6b58ad7f0a631d415e6e74",
+    "before_960.png": "86d05c4f538964ade584ec0be1c295eb09eab88593b89504d4e42fa5366def73",
+    "before_after.png": "52ffb2c91e9c783ca81bcd1c3b5a9b453adc1fc6393399e7f011f5df46911712",
+    "before_minimum_480_text_150.png": "0e4996f0a2191133fdf94c0a51a985a6a888b930f4e29e1485ec0b1a81c9c2ee",
+    "compact_combat_ui_silent.mp4": "ac04f9002f4e215aa287c521cb1193e4c8d6cc0105199f8c4b36ba186e0238f5",
+    "decoded_reel_frames.png": "4c66fbcbf674f132323172a1270905678783d6dfdffde7cc19c3b47022b6630c",
+    "maximum_resources_480_text_150.png": "cb5d783dde845d7c04b6208250cf8b3ad637fcb6d265ea7e220d89d193d7cf04",
+    "minimum_480_text_150.png": "bb151037635a7cd36cb0e1e886726a0d90a8e9c06123eb1ea8ed3cedf84b0f90",
+    "overclock_active_960.png": "fc268cb231adc061d35b19455148b89a55052b9e6fee76f2eac8872158df4513",
+    "rivet_after_action_960.png": "c36fbfd5c819e30cf045ac0533522f864a62422412a79e9a469280e987d18978"
+  }
+}

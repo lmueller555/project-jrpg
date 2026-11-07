@@ -1,0 +1,10 @@
+Final combat and UI regression run
+
+Environment: SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1
+Command: python -m pytest -q tests/test_aether_edge_battle_model.py tests/test_battle_action_audio.py tests/test_battle_action_fx.py tests/test_battle_choreography.py tests/test_battle_gameplay.py tests/test_battle_model.py tests/test_battle_scene.py tests/test_battle_status_ui.py tests/test_battle_transition.py tests/test_battlefield.py tests/test_bot_loadouts.py tests/test_choreography_scene.py tests/test_combat_assets.py tests/test_combat_damage.py tests/test_combat_motion_art.py tests/test_compact_battle_ui.py tests/test_gear_battle_model.py tests/test_gear_battle_scene.py tests/test_gear_persistence.py tests/test_gear_widget.py tests/test_gearblade_art.py tests/test_gearblade_fx.py tests/test_mill_battle_gameplay.py tests/test_mira_combat_scene.py tests/test_mq02_spellblade_gameplay.py tests/test_music_battle_integration.py tests/test_party_battle_model.py tests/test_party_battle_scene.py tests/test_rivet_battle_model.py tests/test_rivet_battle_scene.py tests/test_rivet_gameplay.py tests/test_skills_battle_scene.py tests/test_spellblade_battle_model.py tests/test_three_member_battle.py
+
+................................................... [ 14%]
+....................................................................................................... [ 44%]
+....................................................................................................... [ 73%]
+............................................................................................                                [100%]
+349 passed, 556 subtests passed in 57.95s

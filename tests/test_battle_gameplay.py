@@ -88,17 +88,25 @@ class BattleGameplayTests(unittest.TestCase):
 
     def action(self, game, scene, identifier):
         self.ready(game, scene)
-        self.assertIn(identifier, scene.command_rects)
-        self.click(game, scene.command_rects[identifier].center)
+        self.click(game, self.command_point(game, scene, identifier))
         self.assertEqual(scene.model.phase, 'acting')
         self.assertEqual(scene.model.current_action.action, identifier)
+
+    def command_point(self, game, scene, identifier):
+        self.assertIn(identifier, scene._command_actions())
+        for _ in scene._command_actions():
+            if identifier in scene.command_rects:break
+            self.key(game, pygame.K_DOWN)
+            game.draw()
+        self.assertIn(identifier, scene.command_rects)
+        return scene.command_rects[identifier].center
 
     def finish(self, game, scene, command='attack'):
         for _ in range(3000):
             if scene.model.ended:return
             if scene.model.waiting_for_player:
                 game.draw()
-                self.click(game, scene.command_rects[command].center)
+                self.click(game, self.command_point(game, scene, command))
             else:game.update(.1, (1, 0), True)
         self.fail('The battle did not finish.')
 

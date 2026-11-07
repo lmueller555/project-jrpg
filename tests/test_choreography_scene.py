@@ -72,6 +72,12 @@ class ChoreographySceneTests(unittest.TestCase):
         self.draw()
         if command == 'aether_edge':
             self.click(self.scene.command_rects['skills'].center)
+        self.assertIn(command, self.scene._command_actions())
+        for _ in self.scene._command_actions():
+            if command in self.scene.command_rects:break
+            self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_DOWN))
+            self.draw()
+        self.assertIn(command, self.scene.command_rects)
         self.click(self.scene.command_rects[command].center)
         self.assertEqual(self.model.current_action.action, command)
         return self.model.current_action

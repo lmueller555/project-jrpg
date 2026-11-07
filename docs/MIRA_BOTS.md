@@ -22,7 +22,8 @@ target selection belongs to future multiple-enemy encounters.
 Rivet is a support unit outside the character party tuple. It has no HP or MP,
 cannot be selected by enemy attacks, is excluded from hostile area effects and
 does not count toward party survival, rewards or player command selection.
-Its small field ATB indicator does not add a party-table row or health bar.
+Its ATB and remaining Haste turns are internal state; no separate bot HUD,
+party-table row or health bar is displayed.
 
 Bot gauges share the ordinary battle clock. Player decisions, tutorials, action
 animations, explicit pause and focus loss stop them. At simultaneous readiness,
@@ -52,7 +53,8 @@ Mira's turns, enemy turns and menu time do not consume Haste. Each completed
 Piston Jab spends one turn; starting or reaching its impact does not expire the
 effect early. With Speed 8, Rivet normally fills in about 6.58 charging seconds;
 Haste reduces this to about 4.39. Animation and decision time are excluded from
-both measurements. The field indicator displays the remaining Haste turns.
+both measurements. The remaining turn count is not displayed on the battlefield;
+Overclock's command description and activation feedback still explain the effect.
 
 ## Initial balance
 
