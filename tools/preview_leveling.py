@@ -4,6 +4,7 @@
 Examples:
     python tools/preview_leveling.py --levels 1 25 50 75 100
     python tools/preview_leveling.py --all-levels --format csv
+    python tools/preview_leveling.py --enemy-profiles --levels 1 50 100
 """
 from __future__ import annotations
 
@@ -18,17 +19,22 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from character_attributes import ATTRIBUTE_IDS
-from enemy_growth import baseline_enemy_stats
+from enemy_growth import STAT_PROFILE_IDS, baseline_enemy_stats, profile_enemy_stats
 from leveling import (MAX_LEVEL, character_ids, character_stats, monster_xp,
                       total_xp_for_level, xp_to_next_level)
 
 
-def growth_rows(levels):
+def growth_rows(levels, *, enemy_profiles=False):
     """Yield comparable fixed-reference player and baseline-enemy rows."""
     for level in levels:
-        for identifier in (*character_ids(), 'enemy_baseline'):
-            stats = (baseline_enemy_stats(level) if identifier == 'enemy_baseline'
-                     else character_stats(identifier, level))
+        identifiers = (*character_ids(), 'enemy_baseline')
+        if enemy_profiles:
+            identifiers += tuple('enemy_'+profile for profile in STAT_PROFILE_IDS)
+        for identifier in identifiers:
+            if identifier == 'enemy_baseline':stats = baseline_enemy_stats(level)
+            elif identifier.startswith('enemy_'):
+                stats = profile_enemy_stats(identifier[len('enemy_'):], level)
+            else:stats = character_stats(identifier, level)
             yield {'profile': identifier, 'level': level,
                    'total_xp_to_level': total_xp_for_level(level),
                    'xp_to_next_level': xp_to_next_level(level),
@@ -42,11 +48,13 @@ def main(argv=None):
     selection.add_argument('--levels', type=int, nargs='+', default=[1, 25, 50, 75, 100])
     selection.add_argument('--all-levels', action='store_true')
     parser.add_argument('--format', choices=('markdown', 'csv', 'json'), default='markdown')
+    parser.add_argument('--enemy-profiles', action='store_true',
+                        help='Include all ten approved enemy stat profiles.')
     args = parser.parse_args(argv)
     levels = list(range(1, MAX_LEVEL+1)) if args.all_levels else args.levels
     if any(not 1 <= level <= MAX_LEVEL for level in levels):
         parser.error('levels must be between 1 and 100')
-    rows = list(growth_rows(levels))
+    rows = list(growth_rows(levels, enemy_profiles=args.enemy_profiles))
     if args.format == 'json':
         json.dump(rows, sys.stdout, indent=2)
         print()
@@ -55,7 +63,10 @@ def main(argv=None):
         writer.writeheader()
         writer.writerows(rows)
     else:
-        print('Approved natural growth; enemy rows precede archetype/species/boss modifiers.')
+        if args.enemy_profiles:
+            print('Approved natural growth and enemy stat profiles; species/tier modifiers are absent.')
+        else:
+            print('Approved natural growth; enemy rows precede archetype/species/boss modifiers.')
         print('This preview does not award live XP or modify journeys or resources.')
         print()
         columns = ['profile', 'level', *ATTRIBUTE_IDS]

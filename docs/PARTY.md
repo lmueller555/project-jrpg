@@ -25,11 +25,13 @@ and use the existing starter ratings until their authored recruitment is tuned.
 They stay hidden from the roster until explicitly recruited.
 
 The [traditional leveling foundation](LEVELING.md) supplies separate approved
-growth profiles for all five characters. Living reserve XP eligibility,
-story-unavailable characters, recruitment levels and catch-up remain pending;
-the party system does not silently choose those rules or distribute traditional
-XP. Its current resource persistence and receipt-backed item rewards remain in
-effect until combat XP distribution is implemented.
+growth profiles for all five characters. The approved allocation rule gives the
+full encounter XP to each active combatant alive at battle end; KO'd characters
+and reserves receive none. Recruitment levels and story-absence catch-up remain
+pending. The pure allocation helper accepts the combat-party IDs explicitly, so
+living reserves in the roster cannot receive an accidental share. Live combat
+still awards receipt-backed items until saved level records and enemy levels are
+integrated. Level-up stat gains leave current HP and MP unchanged.
 
 ## Story ownership
 

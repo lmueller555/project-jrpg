@@ -10,8 +10,9 @@ enemy baseline and enemy-design catalogue. Their data lives in
 Live victories currently award receipt-backed item drops. This foundation does
 not automatically distribute traditional XP, replace MQ02's authored guest
 ratings, or retune the Bat and Tusker encounters. The enlarged effective rating
-caps are active in the shared attribute and damage backends. The remaining XP
-eligibility and recovery decisions below stay explicit.
+caps are active in the shared attribute and damage backends. Recipient and
+level-up recovery rules are approved below; enemy levels and live journey
+integration remain separate work.
 
 Older progression-backed saves receive a one-way compatibility import on
 Continue: earned effective attributes, learned abilities and battle receipts are
@@ -49,10 +50,20 @@ This preserves the intended increase from roughly 3.3 same-level monsters per
 level early on to roughly 13.2 near the cap. Enemy counts per encounter and
 ability availability still determine actual pacing.
 
-**Only characters alive at victory qualify for combat XP.** Full XP per eligible
-character versus a divided pool, living reserve eligibility, and story-unavailable
-characters have not yet been decided. The formula API calculates a reward amount;
-it does not distribute that amount or bypass the alive-at-victory requirement.
+**Every character in the active combat party who is alive at battle end receives
+the full encounter XP.** Sum the defeated monsters' rewards before allocation;
+there is no split among survivors. KO'd combatants and reserves receive zero.
+For example, three monsters worth 60 XP each award 180 XP to every surviving
+combatant. Recipient eligibility is evaluated before post-battle recovery.
+
+`combat_xp_allocations(amount, active_ids, current_hp)` implements this selection
+as a pure foundation helper. IDs are canonical character IDs such as `caelan`.
+The HP mapping may contain the full roster, but only the supplied one-to-three
+combat-party IDs receive allocations. The result includes each active ID with
+its full amount or zero when KO'd; the helper does not mutate XP or resources.
+The caller still owns qualifying outcome rules, durable reward receipts and
+live battle integration. Whether partial kills followed by escape grant XP
+has not been approved.
 
 ## Character growth
 
@@ -124,6 +135,18 @@ The cap applies after named modifiers. The 300 natural-rating guideline is not
 an effective combat cap. Character stats do not implicitly unlock new skills,
 gems, gears, weapons, bots or augments.
 
+### Current resources on level-up
+
+**Level-ups do not restore HP or MP.** Increasing maximum HP or MP leaves its
+current value unchanged, including zero HP. A character at 47/140 HP and 7/30 MP
+who gains 20 maximum HP and 5 maximum MP becomes 47/160 HP and 7/35 MP.
+
+`CharacterAttributes.apply_growth(gains)` applies validated nonnegative base-stat
+gains while preserving current resources and existing named modifiers. It returns
+`False` without mutation for invalid data. XP receipts expose `stat_gains`; a
+future live progression coordinator can pass `dict(receipt.stat_gains)` to this
+method. The method itself does not award XP, grant skills or own reward receipts.
+
 ### Mira's future inheritance rules
 
 Bots may inherit different fractions of Mira's stats or augment her own stats.
@@ -187,22 +210,31 @@ enemy catalogues retain their independent structural HP/MP validation bounds;
 this foundation does not rewrite their resources or introduce a new journey
 validation rule.
 
-The [enemy archetype catalogue](ENEMY_ARCHETYPES.md) separates ten qualitative
-stat profiles from fighting styles and twenty approved enemy concepts. Numeric
-profile multipliers remain pending. The growth backend does not invent default
-weights or silently rebalance live enemies.
+The [enemy archetype catalogue](ENEMY_ARCHETYPES.md) separates ten approved
+numerical stat profiles from fighting styles and twenty enemy concepts. Named
+profile generation combines the raw baseline with the profile and explicit
+species/tier factors before rounding once and applying caps. The Bat and Tusker
+retain their authored live values while individual levels, species adjustments
+and encounter tuning are defined.
 
 ## Standalone API and persistence
 
 ```python
-from leveling import CharacterLevel, character_stats, monster_xp, xp_to_next_level
-from enemy_growth import baseline_enemy_stats
+from leveling import (CharacterLevel, character_stats, combat_xp_allocations,
+                      monster_xp, xp_to_next_level)
+from enemy_growth import baseline_enemy_stats, profile_enemy_stats
 
 xp_to_next_level(1)             # 200
 monster_xp(1)                   # 60
 monster_xp(1, boss=True)         # 600
 character_stats('rhea', 100)['mag']  # 300
 baseline_enemy_stats(100)['hp']  # 50000
+profile_enemy_stats('brute', 100)['hp']  # 75000
+
+# Mira is KO'd and Rhea is a reserve; only Caelan receives this reward.
+combat_xp_allocations(180, ('caelan', 'mira'),
+                      {'caelan': 47, 'mira': 0, 'rhea': 100})
+# {'caelan': 180, 'mira': 0}
 
 caelan = CharacterLevel('caelan')
 receipt = caelan.award_xp(200)
@@ -235,11 +267,12 @@ returns 0 at level 100.
 by the enemy baseline. Invalid levels, unknown characters, malformed records and
 boolean numeric inputs are rejected.
 
-This record is not a new journey field. It does not modify live current HP/MP,
-grant equipment or abilities or choose XP recipients. The caller must
-settle eligibility, recovery and durable once-only reward handling when wiring
-it into combat and saves. Existing `CharacterAttributes` snapshots and party
-object identities retain their current ownership.
+This record is not a new journey field. It does not modify live current HP/MP or
+grant equipment or abilities. The allocation and growth helpers encode the
+approved recipient and no-recovery rules; the caller must coordinate them with
+durable once-only reward handling when wiring combat and saves. Existing
+`CharacterAttributes` snapshots and party object identities retain their current
+ownership.
 
 Use the headless [growth preview tool](../tools/preview_leveling.py) to inspect
 the canonical curves without creating a game or reading a journey:
@@ -247,20 +280,19 @@ the canonical curves without creating a game or reading a journey:
 ```sh
 python tools/preview_leveling.py --levels 1 25 50 75 100 --format csv
 python tools/preview_leveling.py --all-levels --format json
+python tools/preview_leveling.py --enemy-profiles --all-levels --format csv
 ```
 
 ## Decisions still pending
 
-- Full encounter XP for each eligible character versus a divided pool.
-- Living reserve eligibility and story-unavailable characters' XP handling.
-- Level-up HP/MP recovery. Adding only the maximum-resource increase is a
-  recommendation, not an approved rule.
 - Recruitment levels, story-absence catch-up and expected campaign levels.
-- Numeric stat-profile multipliers, species adjustments and elite/boss tuning.
+- Individual enemy levels, species adjustments and elite/boss tuning.
+- Qualifying outcome rules for XP, including partial kills followed by escape.
 - Activating durable traditional level records in the live journey.
 - Damage, healing, accuracy/evasion, critical and ATB balance at the new ranges.
 - Elemental affinity assignment, equipment customization and Stagger design.
 
-Current combat XP payout and resource-recovery rules will be implemented once
-these policies are settled. Signature progression remains separate from natural
-level growth.
+Live combat XP payout and saved level records will be integrated once the
+remaining authoring and transition rules are settled. The no-recovery rule is
+already encoded in the growth helper. Signature progression remains separate
+from natural level growth.

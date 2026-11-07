@@ -1,4 +1,4 @@
-"""Enemy growth preserves the approved reference and keeps unauthored AI explicit."""
+"""Approved enemy profiles compose once while encounter and AI tuning stay explicit."""
 from copy import deepcopy
 import unittest
 
@@ -6,8 +6,24 @@ from character_attributes import ATTRIBUTE_IDS, CharacterAttributes
 from enemy_growth import (CONCEPT_IDS, ENEMY_STAT_CAPS, MAX_ENEMY_HP,
                           REFERENCE_CHARACTER_IDS, STAT_PROFILE_IDS,
                           baseline_enemy_stats, build_enemy_stats,
-                          load_archetypes, raw_baseline_enemy_stats)
+                          load_archetypes, profile_enemy_stats,
+                          profile_multipliers, raw_baseline_enemy_stats)
 from leveling import character_stats
+
+
+APPROVED_PROFILE_ROWS = {
+    # HP, MP, STR, MAG, SPR, DEF, MDEF, Speed, Accuracy, Evasion, Luck.
+    'balanced': (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+    'brute': (1.50, .50, 1.15, .60, .75, 1.10, .75, .75, 1, 1, 1),
+    'armored': (1.25, .75, .90, .75, .90, 1.60, .60, .80, 1, 1, 1),
+    'warded': (1.10, 1.25, .90, .90, 1.10, .65, 1.60, .90, 1, 1, 1),
+    'swift': (.80, .75, 1, .75, .75, .85, .85, 1.40, 1.20, 1, 1),
+    'evasive': (.70, .75, .90, .90, .75, .75, .85, 1.15, 1, 1.50, 1),
+    'caster': (.75, 1.50, .50, 1.20, 1, .65, 1.10, .90, 1, 1, 1),
+    'hybrid': (.95, 1.15, 1.05, 1.05, .80, .90, .90, 1, 1, 1, 1),
+    'support': (1, 1.50, .55, .60, 1.35, .90, 1.15, 1, 1, 1, 1),
+    'lightweight': (.40, .50, .65, .65, .60, .70, .70, 1, 1, 1, 1),
+}
 
 
 class EnemyGrowthTests(unittest.TestCase):
@@ -101,13 +117,15 @@ class EnemyArchetypeCatalogTests(unittest.TestCase):
     def setUp(self):
         self.catalog = load_archetypes()
 
-    def test_approved_twenty_concepts_and_ten_profiles_have_no_invented_weights(self):
+    def test_approved_twenty_concepts_and_ten_profiles_have_exact_weights(self):
         self.assertEqual(tuple(self.catalog['stat_profiles']), STAT_PROFILE_IDS)
         self.assertEqual(tuple(self.catalog['concepts']), CONCEPT_IDS)
         self.assertEqual(len(self.catalog['concepts']), 20)
         self.assertEqual(self.catalog['runtime_binding'], 'metadata_only')
-        for profile in self.catalog['stat_profiles'].values():
-            self.assertIsNone(profile['multipliers'])
+        for identifier, profile in self.catalog['stat_profiles'].items():
+            self.assertEqual(tuple(profile['multipliers']), ATTRIBUTE_IDS)
+            self.assertEqual(tuple(profile['multipliers'].values()),
+                             APPROVED_PROFILE_ROWS[identifier])
         for concept in self.catalog['concepts'].values():
             self.assertIn(concept['stat_profile'], self.catalog['stat_profiles'])
             self.assertIn(concept['fighting_style'], self.catalog['fighting_styles'])
@@ -142,6 +160,7 @@ class EnemyArchetypeCatalogTests(unittest.TestCase):
                    {**self.catalog, 'runtime_binding': 'live_ai'},
                    {**self.catalog, 'reference_characters': ['caelan']}]
         for section, identifier, field, value in (
+                ('stat_profiles', 'brute', 'multipliers', None),
                 ('stat_profiles', 'brute', 'multipliers', {'str': 2}),
                 ('stat_profiles', 'brute', 'high_stats', ['unknown']),
                 ('stat_profiles', 'brute', 'high_stats', ['str', 'str']),
@@ -165,6 +184,108 @@ class EnemyArchetypeCatalogTests(unittest.TestCase):
                 before = deepcopy(record)
                 with self.assertRaises(ValueError):load_archetypes(record)
                 self.assertEqual(record, before)
+
+    def test_profile_weights_reject_missing_extra_invalid_and_boolean_values(self):
+        invalid = [None, [], True, -1, float('nan'), float('inf'),
+                   '1.15', {'value': 1}, 10**1000]
+        for value in invalid:
+            with self.subTest(value=repr(value)[:80]):
+                record = deepcopy(self.catalog)
+                record['stat_profiles']['brute']['multipliers']['str'] = value
+                original = deepcopy(record)
+                with self.assertRaises(ValueError):load_archetypes(record)
+                self.assertEqual(record, original)
+        for change in ('missing', 'extra', 'zero_hp'):
+            with self.subTest(change=change):
+                record = deepcopy(self.catalog)
+                weights = record['stat_profiles']['brute']['multipliers']
+                if change == 'missing':weights.pop('lck')
+                elif change == 'extra':weights['attack'] = 1
+                else:weights['hp'] = 0
+                with self.assertRaises(ValueError):load_archetypes(record)
+
+
+class NamedEnemyProfileTests(unittest.TestCase):
+    def test_all_ten_profiles_grow_monotonically_within_caps_at_every_level(self):
+        for identifier in STAT_PROFILE_IDS:
+            previous = None
+            for level in range(1, 101):
+                with self.subTest(profile=identifier, level=level):
+                    values = profile_enemy_stats(identifier, level)
+                    self.assertEqual(tuple(values), ATTRIBUTE_IDS)
+                    for key, value in values.items():
+                        self.assertIs(type(value), int)
+                        self.assertGreaterEqual(value, 1 if key == 'hp' else 0)
+                        self.assertLessEqual(value, ENEMY_STAT_CAPS[key])
+                        if previous:self.assertGreaterEqual(value, previous[key])
+                    previous = values
+
+    def test_named_balanced_profile_matches_baseline_without_rebalancing(self):
+        for level in (1, 11, 25, 50, 75, 100):
+            with self.subTest(level=level):
+                self.assertEqual(profile_enemy_stats('balanced', level),
+                                 baseline_enemy_stats(level))
+
+    def test_approved_examples_use_unrounded_baselines(self):
+        expected = {
+            'brute': {'hp': 75000, 'str': 293, 'speed': 95},
+            'armored': {'hp': 62500, 'def': 460, 'm_def': 174},
+            'warded': {'hp': 55000, 'def': 187, 'm_def': 464},
+            'swift': {'hp': 40000, 'speed': 177, 'acc': 324},
+            'evasive': {'hp': 35000, 'eva': 319},
+            'caster': {'hp': 37500, 'mag': 321, 'mp': 803},
+            'support': {'hp': 50000, 'spr': 368, 'mp': 803},
+            'lightweight': {'hp': 20000, 'str': 166, 'mag': 174},
+        }
+        for identifier, selected in expected.items():
+            with self.subTest(profile=identifier):
+                values = profile_enemy_stats(identifier, 100)
+                self.assertEqual({key: values[key] for key in selected}, selected)
+        # 12.75 Defense ×1.60 =20.4: rounding baseline first would give21.
+        self.assertEqual(profile_enemy_stats('armored', 1)['def'], 20)
+        self.assertEqual(profile_enemy_stats('brute', 1)['hp'], 270)
+        self.assertEqual(profile_enemy_stats('lightweight', 1)['hp'], 72)
+
+    def test_species_and_tier_layers_apply_before_rounding_and_caps(self):
+        species, tier = {'eva': .5, 'str': 10, 'hp': MAX_ENEMY_HP}, {'str': .1, 'hp': 1/MAX_ENEMY_HP}
+        before = deepcopy((species, tier))
+        values = profile_enemy_stats('evasive', 100, species_multipliers=species,
+                                     tier_multipliers=tier)
+        # 212.5 ×1.5 ×0.5 =159.375; rounding the profile first gives160.
+        self.assertEqual(values['eva'], 159)
+        self.assertEqual(values['str'], 230)
+        self.assertEqual(values['hp'], 35000)
+        self.assertEqual((species, tier), before)
+        capped = profile_enemy_stats('brute', 100,
+                                     species_multipliers={'str': 100, 'mp': 100, 'speed': 100},
+                                     tier_multipliers={'hp': 100000})
+        self.assertEqual((capped['str'], capped['mp'], capped['speed']), (999, 999, 255))
+        self.assertEqual(capped['hp'], MAX_ENEMY_HP)
+        zero = profile_enemy_stats('caster', 1, species_multipliers={'mag': 0, 'hp': 1e-20})
+        self.assertEqual((zero['mag'], zero['hp']), (0, 1))
+
+    def test_unknown_profiles_and_invalid_layers_are_rejected(self):
+        for identifier in (None, True, 1, [], {}, '', 'unknown'):
+            with self.subTest(profile=repr(identifier)):
+                with self.assertRaises(ValueError):profile_multipliers(identifier)
+                with self.assertRaises(ValueError):profile_enemy_stats(identifier, 1)
+        for level in (0, 101, True, 1.0, None):
+            with self.subTest(level=level):
+                with self.assertRaises(ValueError):profile_enemy_stats('brute', level)
+        for layer in ([], True, {'attack': 2}, {'hp': 0}, {'mag': -1},
+                      {'mag': True}, {'str': float('nan')}, {'str': 10**1000}):
+            for argument in ('species_multipliers', 'tier_multipliers'):
+                with self.subTest(layer=repr(layer)[:80], argument=argument):
+                    with self.assertRaises(ValueError):
+                        profile_enemy_stats('brute', 1, **{argument: layer})
+
+    def test_profile_getters_and_results_do_not_expose_shared_mutable_state(self):
+        weights = profile_multipliers('brute')
+        stats = profile_enemy_stats('brute', 100)
+        weights['str'] = stats['str'] = 0
+        self.assertEqual(profile_multipliers('brute')['str'], 1.15)
+        self.assertEqual(profile_enemy_stats('brute', 100)['str'], 293)
+        self.assertEqual(profile_multipliers('balanced'), dict.fromkeys(ATTRIBUTE_IDS, 1))
 
 
 if __name__ == '__main__':unittest.main()

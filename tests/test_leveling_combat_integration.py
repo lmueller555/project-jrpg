@@ -6,7 +6,7 @@ import unittest
 from battle_model import BattleModel, ENEMY_PATH
 from character_attributes import CharacterAttributes
 from combat_damage import NORMAL_DAMAGE_CAP
-from enemy_growth import baseline_enemy_stats
+from enemy_growth import STAT_PROFILE_IDS, baseline_enemy_stats, profile_enemy_stats
 from leveling import character_ids, character_stats
 
 
@@ -31,6 +31,35 @@ def enemy_at_level(level):
 
 
 class LevelingCombatIntegrationTests(unittest.TestCase):
+    def test_all_named_profiles_enter_the_real_enemy_validator(self):
+        for level in (1, 50, 100):
+            source = attributes_at_level('caelan', level)
+            for profile in STAT_PROFILE_IDS:
+                with self.subTest(level=level, profile=profile):
+                    expected = profile_enemy_stats(profile, level)
+                    catalog = enemy_at_level(level)
+                    catalog['enemies']['bat']['attributes'] = expected
+                    model = BattleModel(source, enemy_data=catalog, rng=FixedVariance())
+                    self.assertEqual(model.enemy.attributes, expected)
+
+    def test_defensive_profiles_affect_real_attack_resolution(self):
+        for profile, action, expected_damage in (
+                ('armored', 'attack', 2800), ('armored', 'aether_dart', 9999),
+                ('warded', 'attack', 5463), ('warded', 'aether_dart', 5560)):
+            with self.subTest(profile=profile, action=action):
+                source = attributes_at_level('caelan', 100)
+                catalog = enemy_at_level(100)
+                expected = profile_enemy_stats(profile, 100)
+                catalog['enemies']['bat']['attributes'] = expected
+                model = BattleModel(source, learned_abilities=['aether_dart'],
+                                    enemy_data=catalog, rng=FixedVariance())
+                model.player.atb = 1
+                model.update(0)
+                self.assertTrue(model.choose_action(action))
+                model.update(model.current_action.impact_at)
+                self.assertEqual(model.current_action.damage, expected_damage)
+                self.assertEqual(model.enemy.hp, expected['hp']-expected_damage)
+
     def test_every_growth_profile_round_trips_through_real_attributes(self):
         for identifier in character_ids():
             for level in (1, 25, 50, 75, 100):

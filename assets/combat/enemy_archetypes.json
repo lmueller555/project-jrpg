@@ -14,7 +14,19 @@
       "description": "Moderate HP, offenses, defenses and Speed; the reference profile.",
       "high_stats": [],
       "low_stats": [],
-      "multipliers": null
+      "multipliers": {
+        "hp": 1,
+        "mp": 1,
+        "str": 1,
+        "mag": 1,
+        "spr": 1,
+        "def": 1,
+        "m_def": 1,
+        "speed": 1,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "brute": {
       "name": "Brute",
@@ -27,7 +39,19 @@
         "speed",
         "m_def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 1.5,
+        "mp": 0.5,
+        "str": 1.15,
+        "mag": 0.6,
+        "spr": 0.75,
+        "def": 1.1,
+        "m_def": 0.75,
+        "speed": 0.75,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "armored": {
       "name": "Armored",
@@ -39,7 +63,19 @@
       "low_stats": [
         "m_def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 1.25,
+        "mp": 0.75,
+        "str": 0.9,
+        "mag": 0.75,
+        "spr": 0.9,
+        "def": 1.6,
+        "m_def": 0.6,
+        "speed": 0.8,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "warded": {
       "name": "Warded",
@@ -50,7 +86,19 @@
       "low_stats": [
         "def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 1.1,
+        "mp": 1.25,
+        "str": 0.9,
+        "mag": 0.9,
+        "spr": 1.1,
+        "def": 0.65,
+        "m_def": 1.6,
+        "speed": 0.9,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "swift": {
       "name": "Swift",
@@ -63,7 +111,19 @@
         "hp",
         "def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 0.8,
+        "mp": 0.75,
+        "str": 1,
+        "mag": 0.75,
+        "spr": 0.75,
+        "def": 0.85,
+        "m_def": 0.85,
+        "speed": 1.4,
+        "acc": 1.2,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "evasive": {
       "name": "Evasive",
@@ -76,7 +136,19 @@
         "def",
         "m_def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 0.7,
+        "mp": 0.75,
+        "str": 0.9,
+        "mag": 0.9,
+        "spr": 0.75,
+        "def": 0.75,
+        "m_def": 0.85,
+        "speed": 1.15,
+        "acc": 1,
+        "eva": 1.5,
+        "lck": 1
+      }
     },
     "caster": {
       "name": "Caster",
@@ -89,7 +161,19 @@
         "hp",
         "def"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 0.75,
+        "mp": 1.5,
+        "str": 0.5,
+        "mag": 1.2,
+        "spr": 1,
+        "def": 0.65,
+        "m_def": 1.1,
+        "speed": 0.9,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "hybrid": {
       "name": "Hybrid",
@@ -100,7 +184,19 @@
         "mp"
       ],
       "low_stats": [],
-      "multipliers": null
+      "multipliers": {
+        "hp": 0.95,
+        "mp": 1.15,
+        "str": 1.05,
+        "mag": 1.05,
+        "spr": 0.8,
+        "def": 0.9,
+        "m_def": 0.9,
+        "speed": 1,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "support": {
       "name": "Support",
@@ -114,7 +210,19 @@
         "str",
         "mag"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 1,
+        "mp": 1.5,
+        "str": 0.55,
+        "mag": 0.6,
+        "spr": 1.35,
+        "def": 0.9,
+        "m_def": 1.15,
+        "speed": 1,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     },
     "lightweight": {
       "name": "Lightweight",
@@ -125,7 +233,19 @@
         "str",
         "mag"
       ],
-      "multipliers": null
+      "multipliers": {
+        "hp": 0.4,
+        "mp": 0.5,
+        "str": 0.65,
+        "mag": 0.65,
+        "spr": 0.6,
+        "def": 0.7,
+        "m_def": 0.7,
+        "speed": 1,
+        "acc": 1,
+        "eva": 1,
+        "lck": 1
+      }
     }
   },
   "fighting_styles": {
