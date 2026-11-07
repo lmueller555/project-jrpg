@@ -333,7 +333,7 @@ class BattleModelTests(unittest.TestCase):
             bad = deepcopy(actions);bad['actions']['attack'][field] = value
             with self.subTest(action_field=field, value=value):
                 with self.assertRaises(ValueError):load_actions(bad)
-        for field, value in (('hp', 0), ('mp', -1), ('str', 256), ('speed', True)):
+        for field, value in (('hp', 0), ('mp', -1), ('str', 1000), ('speed', 256), ('speed', True)):
             bad = deepcopy(enemies);bad['enemies']['bat']['attributes'][field] = value
             with self.subTest(enemy_field=field, value=value):
                 with self.assertRaises(ValueError):load_enemies(load_actions(), bad)

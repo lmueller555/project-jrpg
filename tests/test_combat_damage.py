@@ -31,6 +31,12 @@ class CombatDamageTests(unittest.TestCase):
             with self.subTest(defense=defense):
                 self.assertEqual(calculate_damage(100, defense), expected)
 
+    def test_999_ratings_are_valid_without_changing_the_per_hit_damage_caps(self):
+        self.assertEqual(calculate_damage(999, 999), NORMAL_DAMAGE_CAP)
+        self.assertEqual(calculate_damage(999, 999, break_damage_limit=True), 18161)
+        self.assertEqual(calculate_damage(100, 999), 181)
+        self.assertEqual(calculate_damage(999, 0, 12, break_damage_limit=True), BREAK_DAMAGE_CAP)
+
     def test_approved_worked_spell_and_variance_endpoints(self):
         self.assertEqual(calculate_damage(50, 40, 2), 714)
         self.assertEqual(calculate_damage(50, 40, 2, variance_percent=95), 678)
@@ -128,11 +134,11 @@ class CombatDamageTests(unittest.TestCase):
                                                          'spr': 245, 'lck': 245}))
         self.assertTrue(defender.set_modifiers('equipment', {'def': 1000, 'm_def': 1000}))
         before = attacker.to_dict(), defender.to_dict()
-        self.assertEqual(physical_damage(attacker, defender), 3663)
-        self.assertEqual(magical_damage(attacker, defender), 3663)
+        self.assertEqual(physical_damage(attacker, defender), 9999)
+        self.assertEqual(magical_damage(attacker, defender), 9999)
         self.assertEqual((attacker.to_dict(), defender.to_dict()), before)
-        self.assertEqual(attacker.value('str'), 255)
-        self.assertEqual(defender.value('m_def'), 255)
+        self.assertEqual(attacker.value('str'), 999)
+        self.assertEqual(defender.value('m_def'), 999)
 
     def test_wrappers_forward_per_hit_modifiers_and_cap_permission(self):
         attacker = SimpleNamespace(value=lambda key: 255)
@@ -152,7 +158,7 @@ class CombatDamageTests(unittest.TestCase):
                     with self.assertRaises(TypeError):wrapper(invalid, valid)
                     with self.assertRaises(TypeError):wrapper(valid, invalid)
             for value, error in ((True, TypeError), (10.0, TypeError),
-                                 (-1, ValueError), (256, ValueError)):
+                                 (-1, ValueError), (1000, ValueError)):
                 invalid = SimpleNamespace(value=lambda key: value)
                 with self.subTest(wrapper=wrapper.__name__, value=value):
                     with self.assertRaises(error):wrapper(invalid, valid)
@@ -164,7 +170,7 @@ class CombatDamageTests(unittest.TestCase):
                 with self.subTest(field=field, bad=bad):
                     args = {'offense': 10, 'defense': 10, field: bad}
                     with self.assertRaises(TypeError):calculate_damage(**args)
-            for bad in (-1, 256):
+            for bad in (-1, 1000):
                 with self.subTest(field=field, bad=bad):
                     args = {'offense': 10, 'defense': 10, field: bad}
                     with self.assertRaises(ValueError):calculate_damage(**args)
@@ -205,17 +211,17 @@ class CombatDamageTests(unittest.TestCase):
     def test_miss_and_immunity_do_not_hide_invalid_requests(self):
         for zero in ({'hit': False}, {'immune': True}, {'affinity': 0}):
             with self.subTest(zero=zero):
-                with self.assertRaises(ValueError):calculate_damage(256, 10, **zero)
+                with self.assertRaises(ValueError):calculate_damage(1000, 10, **zero)
                 with self.assertRaises(ValueError):calculate_damage(10, 10, 0, **zero)
                 with self.assertRaises(ValueError):calculate_damage(10, 10, variance_percent=94, **zero)
                 with self.assertRaises(TypeError):calculate_damage(10, 10, critical=1, **zero)
 
     def test_damage_increases_with_offense_and_decreases_with_defense(self):
-        for defense in (0, 40, 128, 255):
-            values = [calculate_damage(offense, defense) for offense in range(256)]
+        for defense in (0, 40, 128, 255, 999):
+            values = [calculate_damage(offense, defense) for offense in range(1000)]
             self.assertEqual(values, sorted(values))
-        for offense in (1, 10, 100, 255):
-            values = [calculate_damage(offense, defense) for defense in range(256)]
+        for offense in (1, 10, 100, 255, 999):
+            values = [calculate_damage(offense, defense) for defense in range(1000)]
             self.assertEqual(values, sorted(values, reverse=True))
 
     def test_variance_roll_uses_only_the_injected_random_source(self):

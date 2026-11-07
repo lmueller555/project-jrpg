@@ -226,8 +226,8 @@ class PartyBattleModelTests(unittest.TestCase):
         parsed = load_guests(load_actions(), data)
         parsed['mira']['attributes']['str'] = 1
         self.assertEqual(data, before)
-        for field, value in (('hp', 0), ('hp', 10000), ('mp', 1000), ('str', 256),
-                              ('speed', True)):
+        for field, value in (('hp', 0), ('hp', 10000), ('mp', 1000), ('str', 1000),
+                              ('speed', 256), ('speed', True)):
             bad = deepcopy(data);bad['guests']['mira']['attributes'][field] = value
             with self.subTest(field=field, value=value):
                 with self.assertRaises(ValueError):self.model(guest_data=bad)

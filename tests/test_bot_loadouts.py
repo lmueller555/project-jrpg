@@ -144,7 +144,7 @@ class BotLoadoutsTests(unittest.TestCase):
                              ('ability_ids', [['piston_jab']]), ('ability_ids', ['missing']),
                              ('ability_ids', ['rivet'])):
             bad = deepcopy(catalog);bad['bots']['rivet'][field] = value;invalid.append(bad)
-        for key, value in (('hp', 100), ('mp', 20), ('speed', True), ('str', -1), ('acc', 256)):
+        for key, value in (('hp', 100), ('mp', 20), ('speed', True), ('speed', 256), ('str', -1), ('acc', 1000)):
             bad = deepcopy(catalog);bad['bots']['rivet']['attributes'][key] = value;invalid.append(bad)
         for record in invalid:
             with self.subTest(record=record):

@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "runtime_binding": "metadata_only",
+  "reference_characters": [
+    "caelan",
+    "mira",
+    "lucan",
+    "rhea",
+    "edran"
+  ],
+  "stat_profiles": {
+    "balanced": {
+      "name": "Balanced",
+      "description": "Moderate HP, offenses, defenses and Speed; the reference profile.",
+      "high_stats": [],
+      "low_stats": [],
+      "multipliers": null
+    },
+    "brute": {
+      "name": "Brute",
+      "description": "High HP and Strength, slow cadence and weaker magical protection.",
+      "high_stats": [
+        "hp",
+        "str"
+      ],
+      "low_stats": [
+        "speed",
+        "m_def"
+      ],
+      "multipliers": null
+    },
+    "armored": {
+      "name": "Armored",
+      "description": "High physical durability with lower magical protection.",
+      "high_stats": [
+        "hp",
+        "def"
+      ],
+      "low_stats": [
+        "m_def"
+      ],
+      "multipliers": null
+    },
+    "warded": {
+      "name": "Warded",
+      "description": "High magical protection with lower physical Defense.",
+      "high_stats": [
+        "m_def"
+      ],
+      "low_stats": [
+        "def"
+      ],
+      "multipliers": null
+    },
+    "swift": {
+      "name": "Swift",
+      "description": "Frequent, accurate attacks with limited durability.",
+      "high_stats": [
+        "speed",
+        "acc"
+      ],
+      "low_stats": [
+        "hp",
+        "def"
+      ],
+      "multipliers": null
+    },
+    "evasive": {
+      "name": "Evasive",
+      "description": "Difficult to hit but fragile when attacks connect.",
+      "high_stats": [
+        "eva"
+      ],
+      "low_stats": [
+        "hp",
+        "def",
+        "m_def"
+      ],
+      "multipliers": null
+    },
+    "caster": {
+      "name": "Caster",
+      "description": "High spell power and MP with low physical durability.",
+      "high_stats": [
+        "mag",
+        "mp"
+      ],
+      "low_stats": [
+        "hp",
+        "def"
+      ],
+      "multipliers": null
+    },
+    "hybrid": {
+      "name": "Hybrid",
+      "description": "Developed physical and magical offenses with MP for mixed attacks.",
+      "high_stats": [
+        "str",
+        "mag",
+        "mp"
+      ],
+      "low_stats": [],
+      "multipliers": null
+    },
+    "support": {
+      "name": "Support",
+      "description": "Strong healing and support capacity with low direct offense.",
+      "high_stats": [
+        "spr",
+        "mp",
+        "m_def"
+      ],
+      "low_stats": [
+        "str",
+        "mag"
+      ],
+      "multipliers": null
+    },
+    "lightweight": {
+      "name": "Lightweight",
+      "description": "Low individual durability and damage, suited to larger groups; Speed is not automatically exceptional.",
+      "high_stats": [],
+      "low_stats": [
+        "hp",
+        "str",
+        "mag"
+      ],
+      "multipliers": null
+    }
+  },
+  "fighting_styles": {
+    "standard_attacks": {
+      "name": "Standard Attacks",
+      "description": "Use affordable attacks, with a free fallback when MP is exhausted.",
+      "implementation": "existing_pattern",
+      "requirements": []
+    },
+    "magical_offense": {
+      "name": "Magical Offense",
+      "description": "Favor damaging spells while maintaining a free fallback.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "authored_enemy_action_selection"
+      ]
+    },
+    "physical_magical_alternation": {
+      "name": "Physical/Magical Alternation",
+      "description": "Alternate physical and magical attacks; fall back when MP runs out.",
+      "implementation": "existing_pattern",
+      "requirements": []
+    },
+    "telegraphed_windup": {
+      "name": "Telegraphed Windup",
+      "description": "Announce a target, prepare a powerful attack and then recover.",
+      "implementation": "existing_pattern",
+      "requirements": []
+    },
+    "ally_healing": {
+      "name": "Ally Healing",
+      "description": "Spend actions and MP healing injured allies.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "multi_enemy_encounters",
+        "enemy_healing_actions"
+      ]
+    },
+    "ally_buffing": {
+      "name": "Ally Buffing",
+      "description": "Improve allies through authored offensive, defensive or ATB buffs.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "multi_enemy_encounters",
+        "general_enemy_buff_actions"
+      ]
+    },
+    "low_hp_aggression": {
+      "name": "Low-HP Aggression",
+      "description": "Become more aggressive below a visible HP threshold.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "conditional_enemy_behavior"
+      ]
+    },
+    "wounded_targeting": {
+      "name": "Wounded Targeting",
+      "description": "Favor the living character with the lowest HP percentage.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "authored_enemy_target_selection"
+      ]
+    },
+    "category_counter": {
+      "name": "Category Counter",
+      "description": "Telegraph retaliation against a selected attack category.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "enemy_reaction_rules",
+        "counter_telegraphs"
+      ]
+    },
+    "defensive_stances": {
+      "name": "Defensive Stances",
+      "description": "Alternate physical and magical defensive strengths.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "conditional_enemy_modifiers",
+        "stance_telegraphs"
+      ]
+    },
+    "self_healing": {
+      "name": "Self Healing",
+      "description": "Restore personal HP during battle to reward concentrated burst damage.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "enemy_healing_actions"
+      ]
+    },
+    "mp_siphon": {
+      "name": "MP Siphon",
+      "description": "Drain party MP to replenish the enemy supply.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "mp_transfer_actions"
+      ]
+    },
+    "ally_interception": {
+      "name": "Ally Interception",
+      "description": "Intercept a limited number of attacks against selected allies.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "multi_enemy_encounters",
+        "interception_rules"
+      ]
+    },
+    "atb_disruption": {
+      "name": "ATB Disruption",
+      "description": "Occasionally push back a target gauge with bounded disruption.",
+      "implementation": "requires_implementation",
+      "requirements": [
+        "atb_reduction_actions"
+      ]
+    }
+  },
+  "concepts": {
+    "soldier": {
+      "name": "Soldier",
+      "stat_profile": "balanced",
+      "fighting_style": "standard_attacks",
+      "description": "Dependable ordinary attacker supporting specialized allies.",
+      "requirements": []
+    },
+    "brute": {
+      "name": "Brute",
+      "stat_profile": "brute",
+      "fighting_style": "standard_attacks",
+      "description": "Heavy physical pressure separated by slow turns.",
+      "requirements": []
+    },
+    "bulwark": {
+      "name": "Bulwark",
+      "stat_profile": "armored",
+      "fighting_style": "standard_attacks",
+      "description": "Absorb physical punishment; encourage magical attacks or other target priorities.",
+      "requirements": []
+    },
+    "warder": {
+      "name": "Warder",
+      "stat_profile": "warded",
+      "fighting_style": "standard_attacks",
+      "description": "Resist magical damage while presenting a physical vulnerability.",
+      "requirements": []
+    },
+    "duelist": {
+      "name": "Duelist",
+      "stat_profile": "swift",
+      "fighting_style": "standard_attacks",
+      "description": "Apply frequent reliable attacks; removing it reduces enemy action pressure.",
+      "requirements": [
+        "accuracy_checks"
+      ]
+    },
+    "skirmisher": {
+      "name": "Skirmisher",
+      "stat_profile": "evasive",
+      "fighting_style": "standard_attacks",
+      "description": "Reward accurate attacks against a fragile evasive target.",
+      "requirements": [
+        "accuracy_evasion_checks"
+      ]
+    },
+    "arcanist": {
+      "name": "Arcanist",
+      "stat_profile": "caster",
+      "fighting_style": "magical_offense",
+      "description": "Deliver dangerous spells from a fragile body.",
+      "requirements": []
+    },
+    "battlemage": {
+      "name": "Battlemage",
+      "stat_profile": "hybrid",
+      "fighting_style": "physical_magical_alternation",
+      "description": "Challenge reliance on only one defensive strength.",
+      "requirements": []
+    },
+    "windup_attacker": {
+      "name": "Windup Attacker",
+      "stat_profile": "brute",
+      "fighting_style": "telegraphed_windup",
+      "description": "Give a clear opportunity to guard or defeat the enemy before its major attack.",
+      "requirements": []
+    },
+    "mender": {
+      "name": "Mender",
+      "stat_profile": "support",
+      "fighting_style": "ally_healing",
+      "description": "Undo damage to allies and change target priority.",
+      "requirements": []
+    },
+    "captain": {
+      "name": "Captain",
+      "stat_profile": "support",
+      "fighting_style": "ally_buffing",
+      "description": "Multiply the threat posed by accompanying enemies.",
+      "requirements": []
+    },
+    "berserker": {
+      "name": "Berserker",
+      "stat_profile": "brute",
+      "fighting_style": "low_hp_aggression",
+      "description": "Punish leaving several wounded enemies active.",
+      "requirements": []
+    },
+    "opportunist": {
+      "name": "Opportunist",
+      "stat_profile": "swift",
+      "fighting_style": "wounded_targeting",
+      "description": "Pressure vulnerable characters and timely recovery.",
+      "requirements": []
+    },
+    "counterfighter": {
+      "name": "Counterfighter",
+      "stat_profile": "balanced",
+      "fighting_style": "category_counter",
+      "description": "Reward changing attack type or target when a counter is prepared.",
+      "requirements": []
+    },
+    "stancechanger": {
+      "name": "Stancechanger",
+      "stat_profile": "balanced",
+      "fighting_style": "defensive_stances",
+      "description": "Reward adjusting damage type as defensive strengths change.",
+      "requirements": []
+    },
+    "swarmer": {
+      "name": "Swarmer",
+      "stat_profile": "lightweight",
+      "fighting_style": "standard_attacks",
+      "description": "Create collective ATB pressure through numbers, with low individual HP and damage.",
+      "requirements": [
+        "multi_enemy_encounters"
+      ]
+    },
+    "regenerator": {
+      "name": "Regenerator",
+      "stat_profile": "support",
+      "fighting_style": "self_healing",
+      "description": "Sustain itself through recovery and reward concentrated burst damage.",
+      "requirements": []
+    },
+    "siphoner": {
+      "name": "Siphoner",
+      "stat_profile": "caster",
+      "fighting_style": "mp_siphon",
+      "description": "Threaten casting endurance even when direct HP damage is modest.",
+      "requirements": []
+    },
+    "guardian": {
+      "name": "Guardian",
+      "stat_profile": "armored",
+      "fighting_style": "ally_interception",
+      "description": "Protect selected allies through limited interception.",
+      "requirements": []
+    },
+    "disruptor": {
+      "name": "Disruptor",
+      "stat_profile": "swift",
+      "fighting_style": "atb_disruption",
+      "description": "Delay important attacks or recovery through occasional ATB disruption.",
+      "requirements": []
+    }
+  },
+  "enemy_references": {
+    "bat": {
+      "stat_profile": "hybrid",
+      "fighting_style": "physical_magical_alternation",
+      "species_adjustments": null,
+      "notes": "A small Evasion adjustment awaits numerical tuning. The live Bat retains its existing authored stats and actions."
+    },
+    "ridgeback_tusker": {
+      "stat_profile": "brute",
+      "fighting_style": "telegraphed_windup",
+      "species_adjustments": null,
+      "notes": "Brute describes its growth bias; Lowered Tusks and Bankbreaker Charge define its behavior. Live quest tuning is preserved."
+    }
+  }
+}

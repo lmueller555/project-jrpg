@@ -17,7 +17,7 @@ from inventory import Inventory
 from lattice_progression import LatticeProgression
 
 
-EXPECTED_CAPS = {key: 9999 if key == 'hp' else 999 if key == 'mp' else 255
+EXPECTED_CAPS = {key: 9999 if key == 'hp' else 255 if key == 'speed' else 999
                  for key in ATTRIBUTE_IDS}
 
 
@@ -77,9 +77,9 @@ class AttributeCapTests(unittest.TestCase):
                 self.assertEqual((attributes.current_hp, attributes.current_mp), (140, 30))
 
     def test_modifier_replacement_retains_growth_hidden_by_the_cap(self):
-        self.assertTrue(self.attributes.set_modifiers('lattice', {'mag': 200}))
+        self.assertTrue(self.attributes.set_modifiers('lattice', {'mag': 900}))
         self.assertTrue(self.attributes.set_modifiers('equipment', {'mag': 100}))
-        self.assertEqual(self.attributes.value('mag'), 255)
+        self.assertEqual(self.attributes.value('mag'), 999)
         self.assertTrue(self.attributes.set_modifiers('lattice', {'mag': 20}))
         self.assertEqual(self.attributes.value('mag'), 130)
         self.assertEqual(self.attributes.base_value('mag'), 10)
@@ -100,7 +100,7 @@ class AttributeCapTests(unittest.TestCase):
 
     def test_raw_storage_overflow_is_rejected_even_when_effective_value_is_capped(self):
         self.assertTrue(self.attributes.set_modifiers('lattice', {'str': MAX_ATTRIBUTE_VALUE-10}))
-        self.assertEqual(self.attributes.value('str'), 255)
+        self.assertEqual(self.attributes.value('str'), 999)
         before = self.state()
         self.assertFalse(self.attributes.set_modifiers('equipment', {'str': 1}))
         self.assertEqual(self.state(), before)
@@ -134,6 +134,56 @@ class AttributeCapTests(unittest.TestCase):
                     self.assertFalse(self.attributes.restore(record))
                     self.assertEqual(self.state(), before)
 
+    def test_legacy_ratings_restore_without_rescaling_and_new_ratings_round_trip(self):
+        for version in (1, 2, 3):
+            for rating in (255, 999):
+                with self.subTest(version=version, rating=rating):
+                    record = self.attributes.to_dict()
+                    record['version'] = version
+                    record['attributes'].update({key: rating for key in ATTRIBUTE_IDS
+                                                 if key not in ('hp', 'mp', 'speed')})
+                    record['attributes']['speed'] = 255
+                    record.update(current_hp=37, current_mp=4)
+                    self.assertTrue(self.attributes.restore(record))
+                    expected = {**record, 'version': 3}
+                    self.assertEqual(self.attributes.to_dict(), expected)
+                    clone = CharacterAttributes()
+                    self.assertTrue(clone.restore(expected))
+                    self.assertEqual(self.state(clone), self.state())
+
+    def test_battle_catalogs_and_party_snapshots_share_the_new_rating_caps(self):
+        from battle_model import (BOT_PATH, ENEMY_PATH, GUEST_PATH, BattleModel,
+                                  load_actions, load_bots, load_enemies, load_guests)
+        actions = load_actions()
+        ratings = {key: EXPECTED_CAPS[key] for key in ATTRIBUTE_IDS
+                   if key not in ('hp', 'mp')}
+        for path, group, identifier, loader in (
+                (ENEMY_PATH, 'enemies', 'bat', load_enemies),
+                (GUEST_PATH, 'guests', 'mira', load_guests),
+                (BOT_PATH, 'bots', 'rivet', load_bots)):
+            data = json.loads(path.read_text())
+            data[group][identifier]['attributes'].update(ratings)
+            if group == 'enemies':
+                data[group][identifier]['attributes'].update(hp=50000, mp=10000)
+            parsed = loader(actions, data)
+            for key, cap in ratings.items():
+                with self.subTest(catalog=group, attribute=key):
+                    self.assertEqual(parsed[identifier]['attributes'][key], cap)
+                    bad = deepcopy(data)
+                    bad[group][identifier]['attributes'][key] = cap+1
+                    with self.assertRaises(ValueError):loader(actions, bad)
+        member = {'identifier': 'player', 'name': 'Caelan', 'attributes': dict(EXPECTED_CAPS),
+                  'hp': 37, 'mp': 4, 'attack': 'attack'}
+        model = BattleModel(CharacterAttributes(), party_members=[member])
+        self.assertEqual(model.player.attributes, EXPECTED_CAPS)
+        self.assertEqual((model.player.hp, model.player.mp), (37, 4))
+        for key, cap in ratings.items():
+            with self.subTest(party_attribute=key):
+                bad = deepcopy(member)
+                bad['attributes'][key] = cap+1
+                with self.assertRaises(ValueError):
+                    BattleModel(CharacterAttributes(), party_members=[bad])
+
     def fixture(self, stat, base, amount):
         data = deepcopy(LatticeBoard().data)
         data['id'] = 'cap_fixture_'+stat
@@ -154,7 +204,7 @@ class AttributeCapTests(unittest.TestCase):
     def test_lattice_crossing_each_cap_earns_remaining_room_and_keeps_canonical_bonus(self):
         for stat in ATTRIBUTE_IDS:
             base, amount = ((9950, 100) if stat == 'hp' else
-                            (990, 30) if stat == 'mp' else (254, 4))
+                            (990, 30) if stat == 'mp' else (EXPECTED_CAPS[stat]-1, 4))
             with self.subTest(attribute=stat):
                 board, lattice, inventory, attributes, progression, crystal = self.fixture(stat, base, amount)
                 current = attributes.current_hp, attributes.current_mp

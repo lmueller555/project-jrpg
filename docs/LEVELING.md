@@ -1,0 +1,261 @@
+# Character and enemy leveling foundations
+
+This is the approved traditional leveling design and its executable foundation.
+[`leveling.py`](../leveling.py) supplies character growth, XP curves and a
+standalone level record. [`enemy_growth.py`](../enemy_growth.py) supplies the
+enemy baseline and enemy-design catalogue. Their data lives in
+[`level_growth.json`](../assets/characters/level_growth.json) and
+[`enemy_archetypes.json`](../assets/combat/enemy_archetypes.json).
+
+The live journey still uses RP, Attunement and the Aether Lattice. This foundation
+does not automatically award traditional XP, convert old saves, replace MQ02's
+authored guest ratings, or retune the Bat and Tusker encounters. The enlarged
+effective rating caps are active in the shared attribute and damage backends.
+The pending gameplay decisions below remain explicit rather than becoming hidden
+defaults in the reward flow.
+
+## Experience and levels
+
+Characters progress from level **1 to 100**. Let `L` be the character's current
+level and `M` the defeated monster's level:
+
+```text
+XP required to advance from L = 2 × round_half_up(100 × L^0.8)
+Normal monster XP at M        = 2 × round_half_up(30 × M^0.5)
+Boss XP at M                  = 10 × normal monster XP at M
+```
+
+Rounding occurs **before doubling**. A level-1 character needs **200 XP** to
+reach level 2; a level-1 normal monster grants **60 XP**, or **600 XP** for the
+boss reference. Ten times normal XP is the authored boss starting point, not a
+ten-times multiplier on every boss stat.
+
+| Level | XP to next level | Normal monster XP | Boss reference XP |
+| ---: | ---: | ---: | ---: |
+| 1 | 200 | 60 | 600 |
+| 10 | 1,262 | 190 | 1,900 |
+| 25 | 2,626 | 300 | 3,000 |
+| 50 | 4,574 | 424 | 4,240 |
+| 75 | 6,326 | 520 | 5,200 |
+| 99 | 7,898 | 596 | 5,960 |
+| 100 | MAX | 600 | 6,000 |
+
+This preserves the intended increase from roughly 3.3 same-level monsters per
+level early on to roughly 13.2 near the cap. Enemy counts per encounter and
+ability availability still determine actual pacing.
+
+**Only characters alive at victory qualify for combat XP.** Full XP per eligible
+character versus a divided pool, living reserve eligibility, and story-unavailable
+characters have not yet been decided. The formula API calculates a reward amount;
+it does not distribute that amount or bypass the alive-at-victory requirement.
+
+## Character growth
+
+All values below are natural, unmodified attributes. HP and MP are maxima;
+current resources belong to the existing character state. The level-1 profiles
+are new authored growth baselines, separate from current temporary guest and
+placeholder encounter profiles.
+
+| Attribute | Caelan L1 | Mira L1 | Lucan L1 | Rhea L1 | Edran L1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| HP | 140 | 150 | 170 | 100 | 160 |
+| MP | 30 | 30 | 20 | 45 | 40 |
+| Strength | 10 | 10 | 12 | 6 | 7 |
+| Magick | 10 | 10 | 7 | 13 | 7 |
+| Spirit | 10 | 10 | 8 | 10 | 13 |
+| Defense | 10 | 10 | 12 | 7 | 12 |
+| Magick Defense | 10 | 10 | 9 | 10 | 12 |
+| Speed | 10 | 10 | 8 | 10 | 8 |
+| Accuracy | 10 | 10 | 11 | 10 | 9 |
+| Evasion | 10 | 10 | 8 | 10 | 7 |
+| Luck | 10 | 10 | 9 | 10 | 10 |
+
+| Attribute | Caelan L100 | Mira L100 | Lucan L100 | Rhea L100 | Edran L100 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| HP | 5,600 | 5,800 | 7,400 | 3,600 | 6,500 |
+| MP | 400 | 400 | 240 | 600 | 500 |
+| Strength | 280 | 230 | 300 | 90 | 120 |
+| Magick | 280 | 230 | 140 | 300 | 120 |
+| Spirit | 200 | 230 | 170 | 190 | 300 |
+| Defense | 220 | 230 | 300 | 120 | 280 |
+| Magick Defense | 220 | 230 | 230 | 180 | 300 |
+| Speed | 115 | 100 | 89 | 108 | 94 |
+| Accuracy | 230 | 220 | 240 | 200 | 190 |
+| Evasion | 190 | 190 | 150 | 180 | 140 |
+| Luck | 200 | 200 | 180 | 200 | 180 |
+
+The profiles establish these roles:
+
+- **Caelan:** strong physical and magical offense for elemental swordplay.
+- **Mira:** an even foundation across the five core offense, healing and defense
+  ratings; bots and augments provide specialization.
+- **Lucan:** physical offense, HP and physical defense, with lower Speed.
+- **Rhea:** offensive spellcasting, high casting capacity and fragile defenses.
+- **Edran:** high Spirit and both defenses, with low direct offenses.
+
+Growth is fixed and deterministic:
+
+```text
+progress = (level − 1) / 99
+natural stat = start + round_half_up((target − start) × progress^p)
+
+p = 1.2  for HP and MP
+p = 1.15 for ordinary ratings
+p = 1    for Speed
+```
+
+The final Speed targets include both approved increases to Speed gained through
+leveling. Starting Speed stays fixed. Ordinary ratings finish at or below 300,
+leaving room for equipment, spells, items and signature mechanics.
+
+| Attribute | Effective player cap |
+| --- | ---: |
+| HP | 9,999 |
+| MP | 999 |
+| Speed | 255 |
+| Strength, Magick, Spirit, Defense, Magick Defense, Accuracy, Evasion, Luck | 999 |
+
+The cap applies after named modifiers. The 300 natural-rating guideline is not
+an effective combat cap. Character stats do not implicitly unlock new skills,
+gems, gears, weapons, bots or augments.
+
+### Mira's future inheritance rules
+
+Bots may inherit different fractions of Mira's stats or augment her own stats.
+For example, 1.5× her natural level-100 Strength of 230 yields 345 bot Strength;
+a defensive bot granting +50% Defense yields 345 Defense from a natural 230.
+These examples describe future configuration rules, not active bot code changes.
+
+The existing damage formula squares offense, so 1.5× Attack produces about
+2.25× damage at equal potency and target defense. Bot potency and cadence need
+to account for that relationship. Whether inheritance reads natural stats,
+equipment-adjusted stats or temporary buffs still needs an explicit rule, with
+an evaluation order that prevents a bot's owner bonuses from feeding back into
+its own inherited bonuses.
+
+## Enemy baseline
+
+Non-HP enemy attributes use **125% of the unrounded average** of all five
+approved character curves at the same level. This is a fixed design reference;
+active formation, equipment, buffs and story availability do not change it.
+Intermediate values remain unrounded until the resulting enemy stat is rounded.
+
+HP has its own larger curve, reflecting late-game skills, equipment and a
+possible future Stagger damage window:
+
+```text
+Enemy HP = round_half_up(180 + 49,820 × progress^1.8)
+```
+
+| Level | Baseline enemy HP |
+| ---: | ---: |
+| 1 | 180 |
+| 10 | 845 |
+| 25 | 4,067 |
+| 50 | 14,228 |
+| 75 | 29,684 |
+| 90 | 41,310 |
+| 100 | 50,000 |
+
+| Attribute | Enemy L1 baseline | Enemy L100 baseline |
+| --- | ---: | ---: |
+| HP | 180 | 50,000 |
+| MP | 41 | 535 |
+| Strength | 11 | 255 |
+| Magick | 12 | 268 |
+| Spirit | 13 | 273 |
+| Defense | 13 | 288 |
+| Magick Defense | 13 | 290 |
+| Speed | 12 | 127 |
+| Accuracy | 13 | 270 |
+| Evasion | 11 | 213 |
+| Luck | 12 | 240 |
+
+Archetype, species and elite/boss adjustments apply afterward. Enemy HP may
+exceed the player HP cap and is bounded by the existing **999,999,999** structural
+limit. Effective ordinary ratings remain capped at 999, Speed at 255 and MP at
+999. The player natural-rating guideline does not limit specialized enemy
+ratings to 300.
+
+The new growth builder uses MP 999 as its effective ceiling. Existing authored
+enemy catalogues retain their independent structural HP/MP validation bounds;
+this foundation does not rewrite their resources or introduce a new journey
+validation rule.
+
+The [enemy archetype catalogue](ENEMY_ARCHETYPES.md) separates ten qualitative
+stat profiles from fighting styles and twenty approved enemy concepts. Numeric
+profile multipliers remain pending. The growth backend does not invent default
+weights or silently rebalance live enemies.
+
+## Standalone API and persistence
+
+```python
+from leveling import CharacterLevel, character_stats, monster_xp, xp_to_next_level
+from enemy_growth import baseline_enemy_stats
+
+xp_to_next_level(1)             # 200
+monster_xp(1)                   # 60
+monster_xp(1, boss=True)         # 600
+character_stats('rhea', 100)['mag']  # 300
+baseline_enemy_stats(100)['hp']  # 50000
+
+caelan = CharacterLevel('caelan')
+receipt = caelan.award_xp(200)
+assert caelan.level == 2
+snapshot = caelan.to_dict()
+clone = CharacterLevel.from_dict(snapshot)
+assert clone.to_dict() == snapshot
+```
+
+The level record supports multiple level-ups from one award, derived stat gains,
+and a versioned standalone snapshot:
+
+```python
+{'version': 1, 'character_id': 'caelan', 'total_xp': 200}
+```
+
+`CharacterLevel` exposes `character_id`, `total_xp`, `level`, `stats`,
+`xp_into_level` and `xp_remaining`. Awards return an immutable `XpAward` with
+requested, accepted and discarded XP; old/new total XP and level; per-stat gains;
+and `levels_gained`. Exports are fresh copies.
+
+Its total XP stops at the threshold for
+level 100; the receipt distinguishes accepted XP from discarded overflow. An
+invalid award or snapshot does not partially mutate a record. `xp_to_next_level`
+returns 0 at level 100.
+
+`total_xp_for_level(level)` gives the cumulative threshold, and
+`level_for_total_xp(total)` resolves thresholds without awarding anything.
+`raw_character_stats(character_id, level)` exposes the unrounded reference used
+by the enemy baseline. Invalid levels, unknown characters, malformed records and
+boolean numeric inputs are rejected.
+
+This record is not a new journey field. It does not modify live current HP/MP,
+grant equipment or abilities, award RP, or choose XP recipients. The caller must
+settle eligibility, recovery and durable once-only reward handling when wiring
+it into combat and saves. Existing `CharacterAttributes` snapshots and party
+object identities retain their current ownership.
+
+Use the headless [growth preview tool](../tools/preview_leveling.py) to inspect
+the canonical curves without creating a game or reading a journey:
+
+```sh
+python tools/preview_leveling.py --levels 1 25 50 75 100 --format csv
+python tools/preview_leveling.py --all-levels --format json
+```
+
+## Decisions still pending
+
+- Full encounter XP for each eligible character versus a divided pool.
+- Living reserve eligibility and story-unavailable characters' XP handling.
+- Level-up HP/MP recovery. Adding only the maximum-resource increase is a
+  recommendation, not an approved rule.
+- Recruitment levels, story-absence catch-up and expected campaign levels.
+- Numeric stat-profile multipliers, species adjustments and elite/boss tuning.
+- RP/Lattice retirement or conversion, including existing growth and old saves.
+- Damage, healing, accuracy/evasion, critical and ATB balance at the new ranges.
+- Elemental affinity assignment, equipment customization and Stagger design.
+
+Current combat XP payout and resource-recovery rules will be implemented once
+these policies are settled. Signature progression remains separate from natural
+level growth.

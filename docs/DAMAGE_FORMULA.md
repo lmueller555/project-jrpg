@@ -14,11 +14,17 @@ Base damage = (Offense² / 5) × Potency × 100 / (100 + Defense)
 | Physical | Attacker Str | Defender Def |
 | Damaging magick | Attacker Mag | Defender M. Def |
 
-Offense and Defense are effective ratings between 0 and 255. The character
+Offense and Defense are effective ratings between 0 and 999. The character
 wrappers read the appropriate `value()` from each participant. They do not read
 HP, MP, Spr, Speed, Acc, Eva, Lck or Attunement Rank, and do not mutate resources
 or progression. Enemy HP/MP and encounter budgets are independent design work;
 the calculator does not construct or constrain enemy health profiles.
+
+The [traditional leveling foundation](LEVELING.md) now supplies approved natural
+character curves and the larger enemy HP baseline. This calculator retains the
+existing formula and damage caps. Raising an offensive rating by 50% produces
+approximately 2.25 times the damage at equal potency and defense; enemy/profile
+and future bot inheritance tuning must account for the squared offense term.
 
 ## Potency and modifiers
 

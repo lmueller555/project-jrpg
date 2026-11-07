@@ -289,6 +289,14 @@ animations, Attack, Guard, Flee and learned Aether Dart, plus the bottom HP/MP/A
 panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
 [combat preview](docs/reviews/atb_combat/README.md).
 
+The [traditional leveling foundation](docs/LEVELING.md) defines level-1–100
+character growth, the approved XP/reward curves, effective rating caps of 999
+(Speed 255), and an enemy baseline reaching 50,000 HP. The
+[enemy catalogue](docs/ENEMY_ARCHETYPES.md) separates ten qualitative stat
+profiles from fighting styles and twenty approved concepts. These are executable
+standalone backends and design data; live combat continues awarding RP until XP
+eligibility, recovery and save-transition policies are settled.
+
 **Pause → Aether Lattice** opens the connected progression board. Battle-earned
 Resonance Points increase Attunement Rank; each gained rank awards one Lattice
 Step. Every connection crossed costs one Step, including blank nodes and
