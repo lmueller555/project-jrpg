@@ -152,16 +152,34 @@ def products():
             raise ValueError('Original grass reference changed: '+source['path'])
     output={};material_images={};plant_images={}
     palette=recipe['palette']
+    hero=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    hero_bounds=hero.getchannel('A').getbbox()
+    character_height=hero_bounds[3]-hero_bounds[1]
+    if recipe['opaque_height_limit'] != (character_height+1)//2:
+        raise ValueError('Grass height cap must equal half the visible character height')
     manifest={'version':1,'id':recipe['id'],'status':recipe['status'],'tile_size':24,
               'palette':palette,'materials':{},'tall_grass':{
                   'frame_size':recipe['frame_size'],'anchor':recipe['anchor'],
-                  'contact_rect':recipe['contact_rect'],'variants':{}},
+                  'contact_rect':recipe['contact_rect'],
+                  'height_limits':recipe['height_limits'],
+                  'opaque_height_limit':recipe['opaque_height_limit'],
+                  'reference_character_visible_height':character_height,'variants':{}},
               'source_recipe':SOURCE.relative_to(ROOT).as_posix(),
               'source_recipe_sha256':sha256(SOURCE.read_bytes()).hexdigest(),
               'source_assets':recipe['sources']}
     def export(relative,image):
         path=OUTPUT/relative;output[path]=png(image)
         return path.relative_to(ROOT).as_posix()
+    def validate_height(layers):
+        for layer,image in layers.items():
+            bounds=image.getchannel('A').getbbox()
+            if bounds is None or recipe['anchor'][1]-bounds[1] > recipe['height_limits'][layer]:
+                raise ValueError('Grass exceeds the authored '+layer+' height limit')
+        combined=layers['rear'].copy()
+        combined.alpha_composite(layers['front'])
+        bounds=combined.getchannel('A').getbbox()
+        if bounds[3]-bounds[1] > recipe['opaque_height_limit']:
+            raise ValueError('Combined grass silhouette exceeds half-character height')
     for family,spec in recipe['families'].items():
         images=[native_material(family,seed,palette) for seed in spec['seeds']]
         material_images[family]=images
@@ -172,6 +190,7 @@ def products():
         record={'idle':[],'parted':{}}
         for index,wind in enumerate(recipe['idle_wind']):
             images=blade_frame(blades,palette,variant,wind=wind)
+            validate_height(images)
             pose={key:export(f'tall/{variant}/idle_{index:02}_{key}.png',image)
                   for key,image in images.items()}
             pose['duration_ms']=recipe['idle_duration_ms'];record['idle'].append(pose)
@@ -180,6 +199,7 @@ def products():
             record['parted'][direction]=[]
             for index,strength in enumerate(recipe['part_strengths']):
                 images=blade_frame(blades,palette,variant,direction=direction,strength=strength)
+                validate_height(images)
                 pose={key:export(f'tall/{variant}/{direction}_{index:02}_{key}.png',image)
                       for key,image in images.items()}
                 record['parted'][direction].append(pose)
@@ -190,7 +210,7 @@ def products():
     board=Image.new('RGB',(1110,870),'#e4e9df');draw=ImageDraw.Draw(board)
     font=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),18)
     small=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),15)
-    draw.text((20,12),'Grass prototype — native 24px / richer green / rooted reactions',font=font,fill='#273c2e')
+    draw.text((20,12),'Emerald grass prototype — half-height blades / rooted reactions',font=font,fill='#273c2e')
     current=Image.open(ROOT/recipe['sources'][0]['path']).convert('RGB')
     draw.text((20,48),'Current',font=small,fill='#273c2e')
     board.paste(current.resize((144,144),Image.Resampling.NEAREST),(20,72))
@@ -206,17 +226,33 @@ def products():
         tile.alpha_composite(layers['rear']);tile.alpha_composite(layers['front'])
         board.paste(tile.convert('RGB').resize((96,128),Image.Resampling.NEAREST),(x,y))
         draw.text((x,y+134),variant.title(),font=small,fill='#273c2e')
-    hero=Image.open(ROOT/'assets/characters/caelan/idle_front.png').convert('RGBA')
+    hero_foot_row=hero_bounds[3]-1
+    baseline=38
+    hero_y=baseline-hero_foot_row
+    grass_y=baseline-recipe['anchor'][1]
+    tiny=ImageFont.truetype(str(ROOT/'assets/ui/fonts/DejaVuSans.ttf'),12)
     for col,variant in enumerate(recipe['variants']):
         x=20+col*268;y=670
-        draw.text((x,y-24),variant.title()+' — idle / parted',font=small,fill='#273c2e')
+        draw.text((x,y-24),variant.title()+' — common baseline',font=small,fill='#273c2e')
+        beside=Image.new('RGBA',(48,44),palette['base'])
+        beside.alpha_composite(hero,(0,hero_y))
+        layers=plant_images[(variant,'idle',1)]
+        beside.alpha_composite(layers['rear'],(24,grass_y))
+        beside.alpha_composite(layers['front'],(24,grass_y))
+        ImageDraw.Draw(beside).line([(0,baseline+1),(47,baseline+1)],fill=palette['shadow'])
+        board.paste(beside.convert('RGB').resize((96,88),Image.Resampling.NEAREST),(x,y))
+        draw.text((x,y+94),'Beside',font=tiny,fill='#273c2e')
         for index,state in enumerate(('idle','east')):
-            tile=Image.new('RGBA',(36,44),palette['base'])
-            image=plant_images[(variant,state,1)]
-            tile.alpha_composite(image['rear'],(6,10))
-            tile.alpha_composite(hero,(6,5))
-            tile.alpha_composite(image['front'],(6,10))
-            board.paste(tile.convert('RGB').resize((108,132),Image.Resampling.NEAREST),(x+index*120,y))
+            tile=Image.new('RGBA',(32,44),palette['base'])
+            layers=plant_images[(variant,state,1)]
+            tile.alpha_composite(layers['rear'],(4,grass_y))
+            tile.alpha_composite(hero,(4,hero_y))
+            tile.alpha_composite(layers['front'],(4,grass_y))
+            ImageDraw.Draw(tile).line([(0,baseline+1),(31,baseline+1)],fill=palette['shadow'])
+            px=x+104+index*72
+            board.paste(tile.convert('RGB').resize((64,88),Image.Resampling.NEAREST),(px,y))
+            draw.text((px,y+94),'Standing' if index==0 else 'Parted',font=tiny,fill='#273c2e')
+    draw.text((20,824),f'Caelan visible height: {hero_bounds[3]-hero_bounds[1]}px. Upright grass: 16–17px; front tips at most 5px above roots.',font=small,fill='#273c2e')
     output[OUTPUT/'materials_review.png']=png(board)
     return output
 

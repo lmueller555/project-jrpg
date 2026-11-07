@@ -4,19 +4,19 @@
   "status": "prototype_for_review",
   "tile_size": 24,
   "palette": {
-    "base": "#62964e",
-    "deep": "#355b3e",
-    "shadow": "#487440",
-    "mid": "#588b45",
-    "light": "#7eac5a",
-    "highlight": "#a4bf70",
-    "soil": "#796f49",
-    "soil_shadow": "#606442",
-    "leaf": "#9b8c54",
-    "leaf_light": "#b0a369",
-    "moss": "#5c8f49",
-    "soft_mid": "#5e914b",
-    "soft_light": "#6c9e54"
+    "base": "#2c7c50",
+    "deep": "#173f31",
+    "shadow": "#205b3b",
+    "mid": "#286e46",
+    "light": "#42975f",
+    "highlight": "#67b982",
+    "soil": "#625a43",
+    "soil_shadow": "#3e5841",
+    "leaf": "#8f8151",
+    "leaf_light": "#a69a65",
+    "moss": "#246b48",
+    "soft_mid": "#28764e",
+    "soft_light": "#34885a"
   },
   "materials": {
     "lawn": {
@@ -62,6 +62,12 @@
       20,
       12
     ],
+    "height_limits": {
+      "rear": 18,
+      "front": 5
+    },
+    "opaque_height_limit": 17,
+    "reference_character_visible_height": 34,
     "variants": {
       "fan": {
         "idle": [
@@ -434,7 +440,7 @@
     }
   },
   "source_recipe": "assets/source/terrain/grass_demo/recipe.json",
-  "source_recipe_sha256": "3d12e83c0759f5aee1593293f2ee53336f0f16f72701cbcd7e0236494b95750e",
+  "source_recipe_sha256": "f53fa7a3902c9346d8c08b68b83abe9f5571364b2b1c5bd043f9146af2308b26",
   "source_assets": [
     {
       "path": "assets/terrain/eldenmere/grass_dirt/grass_00.png",

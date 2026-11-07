@@ -4,12 +4,21 @@
 
 [Full field](overview.png) · [Walking, running and standing](grass_walk.mp4)
 
+![Grass height compared with Caelan](height_comparison.png)
+
+The height study places unoccupied grass and Caelan on one visible ground
+baseline at the same enlargement. It measures the opaque pixels, not the
+transparent sprite canvases. The gameplay photographs separately show the
+short foreground blades covering legs while the torso stays readable. Every
+occupied movie frame is also compared with grass drawing disabled: opaque
+head and torso pixels must remain identical, while leg overlap is observed.
+
 This isolated prototype uses the actual game Player, camera and World rendering.
 The review walks and runs through authored grass patches, holds still while the
 grass remains displaced, then leaves it to recover. Every review position is
 reached through ordinary movement; no character poses or bend states are staged.
 
-The richer ground palette and lawn, meadow and woodland materials remain in
+The deeper emerald palette and lawn, meadow and woodland materials remain in
 the demonstration. Eldenmere and the Sanctuary have not received the new pack.
 The launcher never opens game journeys or settings files.
 
@@ -21,27 +30,20 @@ artifact and original-world hashes with `python tools/capture_grass_demo.py --ch
 The [verification record](verification.json) contains actual positions, occupied
 grass states, recovery, timings and the immutable source fingerprints.
 
-The final silent video is **44.95 seconds**, **899 frames**, at **960 × 640 / 20 fps**.
-It records 19 real movement/standing views; up to four clumps are occupied at
-once, running reaches strength 2 while standing holds strength 1, and all grass
-recovers after exit. The current and proposed ground palette can also be
-compared on the [material board](../../../assets/terrain/grass_demo/materials_review.png).
+The revised height study measures **34 visible pixels for Caelan** and
+**16–17 pixels for unoccupied grass**, or **47–50% of his height**. Every idle
+and directional parting pose stays within that limit. The shorter foreground
+layer allows the grass to overlap his legs while preserving his coat and belt.
+Across the actual walkthrough, **64,632 opaque upper-body pixel comparisons**
+show **zero occlusion**, while leg overlap appears in **186 frames**.
 
-Integration validation passed **6 tests and 32 subtests**, including real input,
-native walk/run sprites, standing without repeated activation, recovery, and
-head visibility in all four grass variants and facing directions for both gaits.
-Grass overlaps lower-body pixels while leaving the head readable. The isolated
-preview opens neither a journey store nor settings and launches successfully
-from another working directory, writing only an explicitly requested screenshot.
-Original world/grass reference hashes and capture checks pass; a deliberately
-stale source fingerprint was rejected. The final contact sheet and native views
-were visually inspected after the ground's dense repeated motifs were reduced.
+The final silent video contains **899 frames over 44.95 seconds**, at
+**960 × 640 / 20 fps**, and the review retains 19 actual movement/standing views.
+Walking, stronger running displacement, held occupancy and recovery after exit
+all pass. Original-world reference hashes and source/artifact checks pass;
+a deliberately stale source fingerprint was rejected. The height board and
+standing/running views were visually inspected after the emerald palette and
+shorter vegetation were applied. Existing game maps retain their original grass.
 
-Final regression validation passed **68 tests and 101 subtests**, covering the
-grass lifecycle, playable preview, normal world rendering, party travel and
-existing gallery isolation. Both asset and scene builders pass `--check`.
-All **9,145** clear full-foot samples in the demonstration are connected, and
-all 13 route goals were reached with production player movement. Independent
-review also checked 1,224 actual idle/walk/run poses with no head-pixel loss.
-The prototype adds its own assets and scene; original terrain and playable
-maps remain byte-for-byte unchanged.
+The focused interaction, playable-demo and asset-proportion suites pass:
+**19 tests and 381 subtests**. Deterministic asset and scene build checks also pass.

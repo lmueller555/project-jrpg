@@ -95,7 +95,7 @@ class GrassDemoIntegrationTests(unittest.TestCase):
         self.assertTrue(self.demo.player.running)
         self.assertIn(self.demo.player.sprite(), [frame for frame, _ in self.demo.player.runs['left']])
 
-    def test_parted_grass_leaves_the_head_visible_and_overlaps_some_lower_body_pixels(self):
+    def test_parted_grass_leaves_head_and_torso_visible_and_only_overlaps_legs(self):
         self.stand_in_patch()
         world, player = self.demo.world, self.demo.player
         world.grass.enabled = False
@@ -109,25 +109,32 @@ class GrassDemoIntegrationTests(unittest.TestCase):
         anchor = world.data['player_draw_anchor']
         x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
         y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
-        head = legs = changed_legs = 0
+        upper_body = legs = changed_legs = 0
         for y in range(sprite.get_height()):
             for x in range(sprite.get_width()):
                 if not mask.get_at((x, y)):continue
                 point = x+x0, y+y0
-                if y < 14:
-                    head += 1
-                    self.assertEqual(bare.get_at(point), covered.get_at(point), ('Head covered', x, y))
-                elif y >= 23:
+                # Belt, coat hem and hands extend through row 24 in the
+                # actual 24x36 Caelan drawing. Protect them as well as the head.
+                if y < 25:
+                    upper_body += 1
+                    self.assertEqual(bare.get_at(point), covered.get_at(point),
+                                     ('Non-leg pixel covered', x, y))
+                else:
                     legs += 1
                     changed_legs += bare.get_at(point) != covered.get_at(point)
-        self.assertGreater(head, 20)
+        self.assertGreater(upper_body, 100)
         self.assertGreater(legs, 10)
         self.assertGreater(changed_legs, 0, 'Grass should overlap boots or legs at an occupied root')
 
-    def test_dense_patch_walk_and_run_edges_keep_actual_head_pixels_clear(self):
+    def test_dense_patch_all_walk_and_run_frames_keep_actual_non_leg_pixels_clear(self):
         representatives = {}
         for clump in self.demo.world.grass.clumps:
-            representatives.setdefault(clump.variant, clump)
+            previous = representatives.get(clump.variant)
+            distance = pygame.Vector2(clump.position).distance_squared_to((408, 312))
+            if (previous is None or distance < pygame.Vector2(previous.position)
+                    .distance_squared_to((408, 312))):
+                representatives[clump.variant] = clump
         # Each target is approached through real movement. The north-facing
         # target includes the old failing slender/back (-4,+8) edge pose.
         approaches = {
@@ -146,6 +153,55 @@ class GrassDemoIntegrationTests(unittest.TestCase):
                         self.assertEqual(player.facing, facing)
                         self.assertTrue(player.moving)
                         self.assertEqual(player.running, running)
+                        # Sample every authored gait frame at this real foot
+                        # contact. Source sprite timing changes only the pose;
+                        # the actual movement/parting state remains untouched.
+                        phase = 0.
+                        frames = (player.runs if running else player.walks)[facing]
+                        for frame_index, (_, duration) in enumerate(frames):
+                            player.walk_ms = phase+.01
+                            phase += duration
+                            world.grass.enabled = False
+                            self.demo.draw()
+                            bare = self.demo.canvas.copy()
+                            world.grass.enabled = True
+                            self.demo.draw()
+                            covered = self.demo.canvas
+                            sprite = player.sprite()
+                            mask = pygame.mask.from_surface(sprite)
+                            anchor = world.data['player_draw_anchor']
+                            x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
+                            y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
+                            for y in range(25):
+                                for x in range(sprite.get_width()):
+                                    if mask.get_at((x, y)):
+                                        point = x+x0, y+y0
+                                        self.assertEqual(
+                                            bare.get_at(point), covered.get_at(point),
+                                            ('Moving non-leg pixel covered', variant,
+                                             facing, running, frame_index, x, y))
+
+    def test_dense_patch_idle_offsets_leave_every_non_leg_pixel_visible(self):
+        world, player = self.demo.world, self.demo.player
+        representatives = {}
+        for clump in world.grass.clumps:
+            old = representatives.get(clump.variant)
+            if (old is None or pygame.Vector2(clump.position).distance_squared_to((408, 312))
+                    < pygame.Vector2(old.position).distance_squared_to((408, 312))):
+                representatives[clump.variant] = clump
+        offsets = ((0, -8), (0, -4), (0, 0), (0, 4), (0, 8),
+                   (-8, 0), (8, 0), (-4, 8))
+        for variant, clump in representatives.items():
+            for offset in offsets:
+                for facing in ('front', 'back', 'left', 'right'):
+                    with self.subTest(variant=variant, offset=offset, facing=facing):
+                        # This independent rendering matrix includes contact
+                        # edges as well as the root, using each real idle sprite.
+                        player.position.update(pygame.Vector2(clump.position)+offset)
+                        self.assertTrue(world.can_stand(player.position))
+                        player.facing = facing
+                        self.demo.step(.4)
+                        self.assertFalse(player.moving)
                         world.grass.enabled = False
                         self.demo.draw()
                         bare = self.demo.canvas.copy()
@@ -157,12 +213,12 @@ class GrassDemoIntegrationTests(unittest.TestCase):
                         anchor = world.data['player_draw_anchor']
                         x0 = round(player.position.x)-anchor[0]-self.demo.camera[0]
                         y0 = round(player.position.y)-anchor[1]-self.demo.camera[1]
-                        for y in range(14):
+                        for y in range(25):
                             for x in range(sprite.get_width()):
                                 if mask.get_at((x, y)):
                                     point = x+x0, y+y0
                                     self.assertEqual(bare.get_at(point), covered.get_at(point),
-                                                     ('Moving head covered', x, y))
+                                                     ('Idle non-leg pixel covered', x, y))
 
     def test_isolated_preview_preserves_existing_worlds_and_can_launch_from_another_directory(self):
         expected = unchanged_worlds()

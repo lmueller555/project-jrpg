@@ -1,7 +1,7 @@
 # Grass demonstration source
 
 This is a review prototype, separate from the approved Eldenmere and Sanctuary
-maps. `recipe.json` defines a modestly richer green palette, twelve native
+maps. `recipe.json` defines a deeper emerald green palette, twelve native
 24-pixel ground designs and four rooted tall-grass silhouettes.
 
 Maintained grass uses small low-growing clusters. Meadow variants use different
@@ -22,6 +22,14 @@ The contact rectangle is relative to that anchor. Each silhouette has six
 direction. Every pose includes full-canvas `rear` and `front` layers; their root
 rows 26–31 remain identical. The runtime owns contact timing, displacement,
 holding and recovery. The pack supplies no collision or movement penalty.
+
+The upright opaque silhouettes are 16–17 native pixels high, about half
+Caelan's 34-pixel visible height. Every combined idle and parted frame is capped
+at 17 opaque pixels, including seed heads. This cap is derived from the visible
+character height. Rear blades supply the height;
+foreground tips reach at most five pixels above the root, keeping foreground
+overlap on the legs. The review board places Caelan's visible boot baseline and
+the grass roots on one shared ground line, at the same enlargement scale.
 
 Build with `python tools/build_grass_demo_assets.py`; add `--check` to verify
 source references and deterministic exports without writing. The runtime

@@ -22,10 +22,12 @@ settings file. The town and Sanctuary retain their existing terrain.
 | H | Show/hide the guide |
 | Escape | Close |
 
-The richer green palette and different blade arrangements are a prototype for
+The deeper emerald palette and different blade arrangements are a prototype for
 visual review. Ground materials stay quiet enough for Caelan to remain clear.
-Tall grass has several distinct clump shapes, independent breeze phases and
-directional parting poses. Feet trigger the reaction; running displaces it more
+Grass reaches about half Caelan's visible height. Its foreground blades cover
+his legs while leaving his coat, torso and head visible. The clumps have several
+distinct shapes, independent breeze phases and directional parting poses.
+Feet trigger the reaction; running displaces it more
 strongly. Occupied grass stays parted, then recovers after the last actor leaves.
 Its roots remain fixed, and separate rear/front blades overlap the lower body.
 Grass does not block movement or change travel speed. Reduced motion retains a
