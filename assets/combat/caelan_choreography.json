@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "actions": {
+    "attack": {
+      "duration": 1.4,
+      "impact_at": 0.72,
+      "catalog_timing": {
+        "duration": 0.72,
+        "impact_at": 0.36
+      },
+      "reaction_duration": 0.24,
+      "release_at": null,
+      "phases": [
+        {
+          "name": "prepare",
+          "start": 0.0,
+          "end": 0.14,
+          "pose": "plant",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0.12
+          ],
+          "pose_duration_ms": 300
+        },
+        {
+          "name": "approach",
+          "start": 0.14,
+          "end": 0.46,
+          "pose": "run",
+          "approach": [
+            0,
+            1
+          ],
+          "elevation": 3,
+          "camera": [
+            0.12,
+            0.65
+          ],
+          "pose_duration_ms": 540
+        },
+        {
+          "name": "plant",
+          "start": 0.46,
+          "end": 0.6,
+          "pose": "plant",
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            0.65,
+            0.85
+          ],
+          "pose_duration_ms": 300
+        },
+        {
+          "name": "strike",
+          "start": 0.6,
+          "end": 0.79,
+          "pose": "slash",
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            0.85,
+            1
+          ],
+          "pose_duration_ms": 180
+        },
+        {
+          "name": "followthrough",
+          "start": 0.79,
+          "end": 0.94,
+          "pose": "followthrough",
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            1,
+            0.7
+          ],
+          "pose_duration_ms": 220
+        },
+        {
+          "name": "retreat",
+          "start": 0.94,
+          "end": 1.25,
+          "pose": "retreat",
+          "approach": [
+            1,
+            0
+          ],
+          "elevation": 8,
+          "camera": [
+            0.7,
+            0
+          ],
+          "pose_duration_ms": 400
+        },
+        {
+          "name": "land",
+          "start": 1.25,
+          "end": 1.4,
+          "pose": "land",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0
+          ],
+          "pose_duration_ms": 200
+        }
+      ]
+    },
+    "aether_edge": {
+      "duration": 2.0,
+      "impact_at": 1.0,
+      "catalog_timing": {
+        "duration": 0.9,
+        "impact_at": 0.5
+      },
+      "reaction_duration": 0.32,
+      "release_at": null,
+      "phases": [
+        {
+          "name": "focus",
+          "start": 0.0,
+          "end": 0.35,
+          "pose": "focus_adjust",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0.08
+          ],
+          "pose_duration_ms": 600
+        },
+        {
+          "name": "prepare",
+          "start": 0.35,
+          "end": 0.46,
+          "pose": "plant",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0.08,
+            0.16
+          ],
+          "pose_duration_ms": 300
+        },
+        {
+          "name": "approach",
+          "start": 0.46,
+          "end": 0.78,
+          "pose": "run",
+          "approach": [
+            0,
+            1
+          ],
+          "elevation": 4,
+          "camera": [
+            0.16,
+            0.7
+          ],
+          "pose_duration_ms": 540
+        },
+        {
+          "name": "plant",
+          "start": 0.78,
+          "end": 0.88,
+          "pose": "plant",
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            0.7,
+            0.85
+          ],
+          "pose_duration_ms": 300
+        },
+        {
+          "name": "strike",
+          "start": 0.88,
+          "end": 1.1,
+          "pose": "aether_edge",
+          "pose_start_ms": 380,
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            0.85,
+            1
+          ]
+        },
+        {
+          "name": "followthrough",
+          "start": 1.1,
+          "end": 1.35,
+          "pose": "aether_edge",
+          "pose_start_ms": 600,
+          "approach": [
+            1,
+            1
+          ],
+          "elevation": 0,
+          "camera": [
+            1,
+            0.75
+          ]
+        },
+        {
+          "name": "retreat",
+          "start": 1.35,
+          "end": 1.8,
+          "pose": "retreat",
+          "approach": [
+            1,
+            0
+          ],
+          "elevation": 12,
+          "camera": [
+            0.75,
+            0
+          ],
+          "pose_duration_ms": 400
+        },
+        {
+          "name": "land",
+          "start": 1.8,
+          "end": 2.0,
+          "pose": "land",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0
+          ],
+          "pose_duration_ms": 200
+        }
+      ]
+    },
+    "aether_dart": {
+      "duration": 1.6,
+      "impact_at": 1.1,
+      "catalog_timing": {
+        "duration": 0.9,
+        "impact_at": 0.5
+      },
+      "reaction_duration": 0.28,
+      "release_at": 0.75,
+      "phases": [
+        {
+          "name": "prepare",
+          "start": 0.0,
+          "end": 0.75,
+          "pose": "cast_prepare",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0.2
+          ],
+          "pose_duration_ms": 560
+        },
+        {
+          "name": "release",
+          "start": 0.75,
+          "end": 1.1,
+          "pose": "cast_release",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0.2,
+            0.35
+          ],
+          "pose_duration_ms": 180
+        },
+        {
+          "name": "recover",
+          "start": 1.1,
+          "end": 1.6,
+          "pose": "cast_recover",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0.35,
+            0
+          ],
+          "pose_duration_ms": 180
+        }
+      ]
+    },
+    "guard": {
+      "duration": 0.6,
+      "impact_at": 0.2,
+      "catalog_timing": {
+        "duration": 0.5,
+        "impact_at": 0.2
+      },
+      "reaction_duration": 0,
+      "release_at": null,
+      "phases": [
+        {
+          "name": "prepare",
+          "start": 0.0,
+          "end": 0.14,
+          "pose": "guard_enter",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0
+          ],
+          "pose_duration_ms": 300
+        },
+        {
+          "name": "brace",
+          "start": 0.14,
+          "end": 0.45,
+          "pose": "guard_enter",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0
+          ],
+          "pose_start_ms": 299,
+          "pose_duration_ms": 1
+        },
+        {
+          "name": "recover",
+          "start": 0.45,
+          "end": 0.6,
+          "pose": "guard_enter",
+          "approach": [
+            0,
+            0
+          ],
+          "elevation": 0,
+          "camera": [
+            0,
+            0
+          ],
+          "pose_start_ms": 299,
+          "pose_duration_ms": 1
+        }
+      ]
+    }
+  }
+}

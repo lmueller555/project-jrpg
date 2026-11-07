@@ -1,0 +1,3251 @@
+{
+  "version": 1,
+  "actor": "caelan",
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    56
+  ],
+  "body_pixels": 36,
+  "facing": "left",
+  "authored": true,
+  "variants": {
+    "armed": {
+      "file": "armed_authored.png",
+      "scale": 0.21052631578947367,
+      "standing_source_body_pixels": 171,
+      "drawings": [
+        {
+          "source_rect": [
+            61,
+            44,
+            144,
+            163
+          ],
+          "source_foot": [
+            60.0,
+            162
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              42,
+              43
+            ],
+            "active_gem": [
+              42,
+              41
+            ],
+            "blade_base": [
+              45,
+              44
+            ],
+            "blade_tip": [
+              49,
+              48
+            ],
+            "hand": [
+              42,
+              43
+            ],
+            "cast_origin": [
+              49,
+              48
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            265,
+            49,
+            147,
+            158
+          ],
+          "source_foot": [
+            79.0,
+            157
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              38,
+              44
+            ],
+            "active_gem": [
+              38,
+              43
+            ],
+            "blade_base": [
+              41,
+              46
+            ],
+            "blade_tip": [
+              45,
+              49
+            ],
+            "hand": [
+              38,
+              44
+            ],
+            "cast_origin": [
+              45,
+              49
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            472,
+            44,
+            138,
+            161
+          ],
+          "source_foot": [
+            55.5,
+            162
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              42,
+              43
+            ],
+            "active_gem": [
+              42,
+              41
+            ],
+            "blade_base": [
+              44,
+              44
+            ],
+            "blade_tip": [
+              49,
+              49
+            ],
+            "hand": [
+              42,
+              43
+            ],
+            "cast_origin": [
+              49,
+              49
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            669,
+            40,
+            151,
+            155
+          ],
+          "source_foot": [
+            76.5,
+            166
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              39,
+              42
+            ],
+            "active_gem": [
+              39,
+              40
+            ],
+            "blade_base": [
+              42,
+              44
+            ],
+            "blade_tip": [
+              47,
+              47
+            ],
+            "hand": [
+              39,
+              42
+            ],
+            "cast_origin": [
+              47,
+              47
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            885,
+            47,
+            144,
+            160
+          ],
+          "source_foot": [
+            58.5,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              42,
+              43
+            ],
+            "active_gem": [
+              42,
+              41
+            ],
+            "blade_base": [
+              44,
+              45
+            ],
+            "blade_tip": [
+              49,
+              48
+            ],
+            "hand": [
+              42,
+              43
+            ],
+            "cast_origin": [
+              49,
+              48
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1090,
+            42,
+            144,
+            163
+          ],
+          "source_foot": [
+            67.5,
+            164
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              39,
+              42
+            ],
+            "active_gem": [
+              39,
+              40
+            ],
+            "blade_base": [
+              42,
+              44
+            ],
+            "blade_tip": [
+              47,
+              48
+            ],
+            "hand": [
+              39,
+              42
+            ],
+            "cast_origin": [
+              47,
+              48
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            42,
+            254,
+            158,
+            161
+          ],
+          "source_foot": [
+            65.0,
+            160
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              42,
+              45
+            ],
+            "active_gem": [
+              42,
+              43
+            ],
+            "blade_base": [
+              45,
+              46
+            ],
+            "blade_tip": [
+              51,
+              49
+            ],
+            "hand": [
+              42,
+              45
+            ],
+            "cast_origin": [
+              51,
+              49
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            263,
+            259,
+            149,
+            156
+          ],
+          "source_foot": [
+            71.0,
+            155
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              40,
+              45
+            ],
+            "active_gem": [
+              40,
+              43
+            ],
+            "blade_base": [
+              42,
+              46
+            ],
+            "blade_tip": [
+              47,
+              49
+            ],
+            "hand": [
+              40,
+              45
+            ],
+            "cast_origin": [
+              47,
+              49
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            470,
+            268,
+            140,
+            147
+          ],
+          "source_foot": [
+            55.5,
+            146
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              42,
+              44
+            ],
+            "active_gem": [
+              42,
+              42
+            ],
+            "blade_base": [
+              44,
+              46
+            ],
+            "blade_tip": [
+              49,
+              49
+            ],
+            "hand": [
+              42,
+              44
+            ],
+            "cast_origin": [
+              49,
+              49
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            669,
+            248,
+            116,
+            167
+          ],
+          "source_foot": [
+            57.5,
+            166
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              36,
+              28
+            ],
+            "active_gem": [
+              36,
+              26
+            ],
+            "blade_base": [
+              38,
+              26
+            ],
+            "blade_tip": [
+              43,
+              23
+            ],
+            "hand": [
+              36,
+              28
+            ],
+            "cast_origin": [
+              43,
+              23
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            823,
+            255,
+            185,
+            160
+          ],
+          "source_foot": [
+            121.5,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              19,
+              36
+            ],
+            "active_gem": [
+              19,
+              34
+            ],
+            "blade_base": [
+              15,
+              35
+            ],
+            "blade_tip": [
+              7,
+              36
+            ],
+            "hand": [
+              19,
+              36
+            ],
+            "cast_origin": [
+              7,
+              36
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1035,
+            262,
+            190,
+            153
+          ],
+          "source_foot": [
+            120.0,
+            152
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              19,
+              42
+            ],
+            "active_gem": [
+              19,
+              40
+            ],
+            "blade_base": [
+              15,
+              42
+            ],
+            "blade_tip": [
+              8,
+              44
+            ],
+            "hand": [
+              19,
+              42
+            ],
+            "cast_origin": [
+              8,
+              44
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            34,
+            462,
+            151,
+            154
+          ],
+          "source_foot": [
+            92.5,
+            153
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              46
+            ],
+            "active_gem": [
+              23,
+              44
+            ],
+            "blade_base": [
+              20,
+              48
+            ],
+            "blade_tip": [
+              13,
+              51
+            ],
+            "hand": [
+              23,
+              46
+            ],
+            "cast_origin": [
+              13,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            248,
+            478,
+            134,
+            138
+          ],
+          "source_foot": [
+            71.5,
+            137
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              27,
+              47
+            ],
+            "active_gem": [
+              27,
+              45
+            ],
+            "blade_base": [
+              24,
+              49
+            ],
+            "blade_tip": [
+              18,
+              52
+            ],
+            "hand": [
+              27,
+              47
+            ],
+            "cast_origin": [
+              18,
+              52
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            452,
+            450,
+            124,
+            159
+          ],
+          "source_foot": [
+            76.0,
+            165
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              25,
+              43
+            ],
+            "active_gem": [
+              25,
+              41
+            ],
+            "blade_base": [
+              22,
+              45
+            ],
+            "blade_tip": [
+              17,
+              47
+            ],
+            "hand": [
+              25,
+              43
+            ],
+            "cast_origin": [
+              17,
+              47
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            639,
+            437,
+            146,
+            157
+          ],
+          "source_foot": [
+            92.0,
+            178
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              37
+            ],
+            "active_gem": [
+              23,
+              35
+            ],
+            "blade_base": [
+              20,
+              38
+            ],
+            "blade_tip": [
+              13,
+              41
+            ],
+            "hand": [
+              23,
+              37
+            ],
+            "cast_origin": [
+              13,
+              41
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            857,
+            448,
+            144,
+            168
+          ],
+          "source_foot": [
+            83.0,
+            167
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              25,
+              41
+            ],
+            "active_gem": [
+              25,
+              39
+            ],
+            "blade_base": [
+              22,
+              42
+            ],
+            "blade_tip": [
+              15,
+              45
+            ],
+            "hand": [
+              25,
+              41
+            ],
+            "cast_origin": [
+              15,
+              45
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1063,
+            471,
+            158,
+            144
+          ],
+          "source_foot": [
+            95.0,
+            144
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              46
+            ],
+            "active_gem": [
+              23,
+              44
+            ],
+            "blade_base": [
+              20,
+              48
+            ],
+            "blade_tip": [
+              13,
+              51
+            ],
+            "hand": [
+              23,
+              46
+            ],
+            "cast_origin": [
+              13,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            28,
+            653,
+            144,
+            158
+          ],
+          "source_foot": [
+            83.5,
+            157
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              46
+            ],
+            "active_gem": [
+              23,
+              44
+            ],
+            "blade_base": [
+              21,
+              48
+            ],
+            "blade_tip": [
+              15,
+              52
+            ],
+            "hand": [
+              23,
+              46
+            ],
+            "cast_origin": [
+              15,
+              52
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            242,
+            655,
+            146,
+            156
+          ],
+          "source_foot": [
+            88.5,
+            155
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              45
+            ],
+            "active_gem": [
+              23,
+              43
+            ],
+            "blade_base": [
+              20,
+              46
+            ],
+            "blade_tip": [
+              14,
+              50
+            ],
+            "hand": [
+              34,
+              43
+            ],
+            "cast_origin": [
+              34,
+              43
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            448,
+            654,
+            139,
+            157
+          ],
+          "source_foot": [
+            84.0,
+            156
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              45
+            ],
+            "active_gem": [
+              23,
+              43
+            ],
+            "blade_base": [
+              20,
+              47
+            ],
+            "blade_tip": [
+              15,
+              50
+            ],
+            "hand": [
+              32,
+              40
+            ],
+            "cast_origin": [
+              32,
+              40
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            649,
+            649,
+            137,
+            161
+          ],
+          "source_foot": [
+            84.0,
+            160
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              24,
+              45
+            ],
+            "active_gem": [
+              24,
+              43
+            ],
+            "blade_base": [
+              21,
+              47
+            ],
+            "blade_tip": [
+              15,
+              50
+            ],
+            "hand": [
+              25,
+              37
+            ],
+            "cast_origin": [
+              25,
+              37
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            866,
+            650,
+            144,
+            161
+          ],
+          "source_foot": [
+            85.5,
+            160
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              24,
+              46
+            ],
+            "active_gem": [
+              24,
+              44
+            ],
+            "blade_base": [
+              21,
+              48
+            ],
+            "blade_tip": [
+              15,
+              52
+            ],
+            "hand": [
+              19,
+              39
+            ],
+            "cast_origin": [
+              19,
+              39
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1078,
+            653,
+            144,
+            158
+          ],
+          "source_foot": [
+            87.5,
+            157
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              46
+            ],
+            "active_gem": [
+              23,
+              44
+            ],
+            "blade_base": [
+              20,
+              48
+            ],
+            "blade_tip": [
+              14,
+              51
+            ],
+            "hand": [
+              17,
+              37
+            ],
+            "cast_origin": [
+              17,
+              37
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            22,
+            847,
+            145,
+            158
+          ],
+          "source_foot": [
+            89.0,
+            157
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              22,
+              44
+            ],
+            "active_gem": [
+              22,
+              42
+            ],
+            "blade_base": [
+              20,
+              46
+            ],
+            "blade_tip": [
+              14,
+              51
+            ],
+            "hand": [
+              38,
+              42
+            ],
+            "cast_origin": [
+              38,
+              42
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            259,
+            853,
+            135,
+            150
+          ],
+          "source_foot": [
+            73.0,
+            149
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              41
+            ],
+            "active_gem": [
+              26,
+              39
+            ],
+            "blade_base": [
+              23,
+              39
+            ],
+            "blade_tip": [
+              18,
+              37
+            ],
+            "hand": [
+              26,
+              41
+            ],
+            "cast_origin": [
+              18,
+              37
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            456,
+            854,
+            139,
+            150
+          ],
+          "source_foot": [
+            77.5,
+            149
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              41
+            ],
+            "active_gem": [
+              26,
+              39
+            ],
+            "blade_base": [
+              23,
+              39
+            ],
+            "blade_tip": [
+              16,
+              32
+            ],
+            "hand": [
+              26,
+              41
+            ],
+            "cast_origin": [
+              16,
+              32
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            661,
+            857,
+            131,
+            148
+          ],
+          "source_foot": [
+            68.5,
+            147
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              42
+            ],
+            "active_gem": [
+              26,
+              40
+            ],
+            "blade_base": [
+              25,
+              39
+            ],
+            "blade_tip": [
+              18,
+              33
+            ],
+            "hand": [
+              26,
+              42
+            ],
+            "cast_origin": [
+              18,
+              33
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            845,
+            861,
+            161,
+            144
+          ],
+          "source_foot": [
+            93.5,
+            143
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              22,
+              46
+            ],
+            "active_gem": [
+              22,
+              44
+            ],
+            "blade_base": [
+              19,
+              47
+            ],
+            "blade_tip": [
+              13,
+              51
+            ],
+            "hand": [
+              22,
+              46
+            ],
+            "cast_origin": [
+              13,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1058,
+            861,
+            161,
+            143
+          ],
+          "source_foot": [
+            97.5,
+            142
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              21,
+              46
+            ],
+            "active_gem": [
+              21,
+              44
+            ],
+            "blade_base": [
+              18,
+              47
+            ],
+            "blade_tip": [
+              12,
+              51
+            ],
+            "hand": [
+              21,
+              46
+            ],
+            "cast_origin": [
+              12,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            25,
+            1045,
+            132,
+            171
+          ],
+          "source_foot": [
+            80.0,
+            170
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              45
+            ],
+            "active_gem": [
+              23,
+              43
+            ],
+            "blade_base": [
+              21,
+              48
+            ],
+            "blade_tip": [
+              16,
+              53
+            ],
+            "hand": [
+              23,
+              45
+            ],
+            "cast_origin": [
+              16,
+              53
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            241,
+            1045,
+            129,
+            171
+          ],
+          "source_foot": [
+            80.0,
+            170
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              44
+            ],
+            "active_gem": [
+              23,
+              42
+            ],
+            "blade_base": [
+              21,
+              46
+            ],
+            "blade_tip": [
+              16,
+              51
+            ],
+            "hand": [
+              23,
+              44
+            ],
+            "cast_origin": [
+              16,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            446,
+            1045,
+            127,
+            171
+          ],
+          "source_foot": [
+            78.0,
+            170
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              45
+            ],
+            "active_gem": [
+              23,
+              43
+            ],
+            "blade_base": [
+              21,
+              47
+            ],
+            "blade_tip": [
+              16,
+              51
+            ],
+            "hand": [
+              23,
+              45
+            ],
+            "cast_origin": [
+              16,
+              51
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            666,
+            1035,
+            106,
+            181
+          ],
+          "source_foot": [
+            61.0,
+            180
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              23,
+              31
+            ],
+            "active_gem": [
+              23,
+              29
+            ],
+            "blade_base": [
+              24,
+              28
+            ],
+            "blade_tip": [
+              24,
+              19
+            ],
+            "hand": [
+              23,
+              31
+            ],
+            "cast_origin": [
+              24,
+              19
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            876,
+            1032,
+            102,
+            184
+          ],
+          "source_foot": [
+            56.5,
+            183
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              24,
+              31
+            ],
+            "active_gem": [
+              24,
+              29
+            ],
+            "blade_base": [
+              24,
+              28
+            ],
+            "blade_tip": [
+              25,
+              18
+            ],
+            "hand": [
+              24,
+              31
+            ],
+            "cast_origin": [
+              25,
+              18
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1063,
+            1086,
+            169,
+            132
+          ],
+          "source_foot": [
+            101.5,
+            131
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              14,
+              44
+            ],
+            "active_gem": [
+              14,
+              42
+            ],
+            "blade_base": [
+              14,
+              48
+            ],
+            "blade_tip": [
+              15,
+              55
+            ],
+            "hand": [
+              14,
+              44
+            ],
+            "cast_origin": [
+              15,
+              55
+            ]
+          }
+        }
+      ]
+    },
+    "unarmed": {
+      "file": "unarmed_authored.png",
+      "scale": 0.21428571428571427,
+      "standing_source_body_pixels": 168,
+      "drawings": [
+        {
+          "source_rect": [
+            62,
+            35,
+            112,
+            160
+          ],
+          "source_foot": [
+            58.5,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            266,
+            47,
+            103,
+            148
+          ],
+          "source_foot": [
+            60.0,
+            147
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            473,
+            34,
+            107,
+            161
+          ],
+          "source_foot": [
+            64.5,
+            160
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            677,
+            31,
+            119,
+            141
+          ],
+          "source_foot": [
+            60.5,
+            163
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            888,
+            40,
+            117,
+            155
+          ],
+          "source_foot": [
+            65.5,
+            154
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1098,
+            35,
+            115,
+            160
+          ],
+          "source_foot": [
+            75.0,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            51,
+            249,
+            131,
+            155
+          ],
+          "source_foot": [
+            66.5,
+            154
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            266,
+            249,
+            117,
+            155
+          ],
+          "source_foot": [
+            58.0,
+            154
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            469,
+            244,
+            115,
+            160
+          ],
+          "source_foot": [
+            57.0,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            676,
+            242,
+            117,
+            162
+          ],
+          "source_foot": [
+            58.0,
+            161
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            871,
+            247,
+            133,
+            157
+          ],
+          "source_foot": [
+            75.5,
+            156
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              19,
+              38
+            ],
+            "active_gem": [
+              19,
+              38
+            ],
+            "blade_base": [
+              19,
+              38
+            ],
+            "blade_tip": [
+              19,
+              38
+            ],
+            "hand": [
+              19,
+              38
+            ],
+            "cast_origin": [
+              19,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1086,
+            245,
+            128,
+            159
+          ],
+          "source_foot": [
+            73.0,
+            158
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              19,
+              41
+            ],
+            "active_gem": [
+              19,
+              41
+            ],
+            "blade_base": [
+              19,
+              41
+            ],
+            "blade_tip": [
+              19,
+              41
+            ],
+            "hand": [
+              19,
+              41
+            ],
+            "cast_origin": [
+              19,
+              41
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            57,
+            453,
+            112,
+            160
+          ],
+          "source_foot": [
+            58.5,
+            159
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            259,
+            480,
+            114,
+            133
+          ],
+          "source_foot": [
+            68.0,
+            132
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            472,
+            443,
+            98,
+            157
+          ],
+          "source_foot": [
+            72.5,
+            169
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            685,
+            428,
+            97,
+            146
+          ],
+          "source_foot": [
+            50.0,
+            184
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            888,
+            442,
+            98,
+            168
+          ],
+          "source_foot": [
+            59.0,
+            170
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1096,
+            479,
+            110,
+            134
+          ],
+          "source_foot": [
+            64.5,
+            133
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            65,
+            655,
+            97,
+            167
+          ],
+          "source_foot": [
+            48.0,
+            166
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            268,
+            659,
+            108,
+            163
+          ],
+          "source_foot": [
+            56.0,
+            162
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              25,
+              43
+            ],
+            "cast_origin": [
+              25,
+              43
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            469,
+            655,
+            107,
+            165
+          ],
+          "source_foot": [
+            57.5,
+            164
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              22,
+              38
+            ],
+            "cast_origin": [
+              22,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            668,
+            651,
+            119,
+            169
+          ],
+          "source_foot": [
+            71.5,
+            168
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              19,
+              35
+            ],
+            "cast_origin": [
+              19,
+              35
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            871,
+            660,
+            137,
+            162
+          ],
+          "source_foot": [
+            87.0,
+            161
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              17,
+              36
+            ],
+            "cast_origin": [
+              17,
+              36
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1067,
+            658,
+            155,
+            164
+          ],
+          "source_foot": [
+            98.5,
+            163
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              14,
+              35
+            ],
+            "cast_origin": [
+              14,
+              35
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            57,
+            866,
+            111,
+            165
+          ],
+          "source_foot": [
+            59.0,
+            164
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              22,
+              43
+            ],
+            "cast_origin": [
+              22,
+              43
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            268,
+            869,
+            109,
+            162
+          ],
+          "source_foot": [
+            55.5,
+            161
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            472,
+            877,
+            116,
+            154
+          ],
+          "source_foot": [
+            62.5,
+            153
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            681,
+            868,
+            115,
+            163
+          ],
+          "source_foot": [
+            63.0,
+            162
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            882,
+            859,
+            117,
+            172
+          ],
+          "source_foot": [
+            57.5,
+            171
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1088,
+            877,
+            128,
+            154
+          ],
+          "source_foot": [
+            71.5,
+            153
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            60,
+            1072,
+            95,
+            168
+          ],
+          "source_foot": [
+            50.0,
+            167
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            270,
+            1072,
+            94,
+            168
+          ],
+          "source_foot": [
+            48.0,
+            167
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            477,
+            1070,
+            91,
+            170
+          ],
+          "source_foot": [
+            47.0,
+            169
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            683,
+            1069,
+            95,
+            171
+          ],
+          "source_foot": [
+            45.0,
+            170
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            881,
+            1067,
+            104,
+            173
+          ],
+          "source_foot": [
+            51.0,
+            172
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        },
+        {
+          "source_rect": [
+            1082,
+            1111,
+            132,
+            128
+          ],
+          "source_foot": [
+            73.5,
+            127
+          ],
+          "whole_body": true,
+          "facing": "left",
+          "anchors": {
+            "guard": [
+              26,
+              38
+            ],
+            "active_gem": [
+              26,
+              38
+            ],
+            "blade_base": [
+              26,
+              38
+            ],
+            "blade_tip": [
+              26,
+              38
+            ],
+            "hand": [
+              26,
+              38
+            ],
+            "cast_origin": [
+              26,
+              38
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "animations": {
+    "run": {
+      "frames": [
+        {
+          "drawing": 0,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 1,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 2,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 3,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 4,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 5,
+          "duration_ms": 90
+        }
+      ],
+      "duration_ms": 540,
+      "loop": true
+    },
+    "plant": {
+      "frames": [
+        {
+          "drawing": 6,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 7,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 8,
+          "duration_ms": 100
+        }
+      ],
+      "duration_ms": 300,
+      "loop": false
+    },
+    "slash": {
+      "frames": [
+        {
+          "drawing": 9,
+          "duration_ms": 90
+        },
+        {
+          "drawing": 10,
+          "duration_ms": 90
+        }
+      ],
+      "duration_ms": 180,
+      "loop": false
+    },
+    "followthrough": {
+      "frames": [
+        {
+          "drawing": 11,
+          "duration_ms": 110
+        },
+        {
+          "drawing": 12,
+          "duration_ms": 110
+        }
+      ],
+      "duration_ms": 220,
+      "loop": false
+    },
+    "retreat": {
+      "frames": [
+        {
+          "drawing": 13,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 14,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 15,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 16,
+          "duration_ms": 100
+        }
+      ],
+      "duration_ms": 400,
+      "loop": false
+    },
+    "land": {
+      "frames": [
+        {
+          "drawing": 17,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 18,
+          "duration_ms": 100
+        }
+      ],
+      "duration_ms": 200,
+      "loop": false
+    },
+    "cast_prepare": {
+      "frames": [
+        {
+          "drawing": 19,
+          "duration_ms": 140
+        },
+        {
+          "drawing": 20,
+          "duration_ms": 140
+        },
+        {
+          "drawing": 21,
+          "duration_ms": 140
+        },
+        {
+          "drawing": 22,
+          "duration_ms": 140
+        }
+      ],
+      "duration_ms": 560,
+      "loop": false
+    },
+    "cast_release": {
+      "frames": [
+        {
+          "drawing": 23,
+          "duration_ms": 180
+        }
+      ],
+      "duration_ms": 180,
+      "loop": false
+    },
+    "cast_recover": {
+      "frames": [
+        {
+          "drawing": 24,
+          "duration_ms": 180
+        }
+      ],
+      "duration_ms": 180,
+      "loop": false
+    },
+    "guard_enter": {
+      "frames": [
+        {
+          "drawing": 25,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 26,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 27,
+          "duration_ms": 100
+        }
+      ],
+      "duration_ms": 300,
+      "loop": false
+    },
+    "guard_impact": {
+      "frames": [
+        {
+          "drawing": 27,
+          "duration_ms": 80
+        },
+        {
+          "drawing": 26,
+          "duration_ms": 80
+        },
+        {
+          "drawing": 25,
+          "duration_ms": 80
+        }
+      ],
+      "duration_ms": 240,
+      "loop": false
+    },
+    "hurt_recover": {
+      "frames": [
+        {
+          "drawing": 28,
+          "duration_ms": 120
+        },
+        {
+          "drawing": 29,
+          "duration_ms": 120
+        },
+        {
+          "drawing": 30,
+          "duration_ms": 120
+        }
+      ],
+      "duration_ms": 360,
+      "loop": false
+    },
+    "idle": {
+      "frames": [
+        {
+          "drawing": 31,
+          "duration_ms": 260
+        },
+        {
+          "drawing": 32,
+          "duration_ms": 260
+        }
+      ],
+      "duration_ms": 520,
+      "loop": true
+    },
+    "attack": {
+      "frames": [
+        {
+          "drawing": 7,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 8,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 9,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 10,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 11,
+          "duration_ms": 100
+        },
+        {
+          "drawing": 12,
+          "duration_ms": 100
+        }
+      ],
+      "duration_ms": 600,
+      "loop": false
+    },
+    "cast": {
+      "frames": [
+        {
+          "drawing": 19,
+          "duration_ms": 150
+        },
+        {
+          "drawing": 20,
+          "duration_ms": 150
+        },
+        {
+          "drawing": 21,
+          "duration_ms": 150
+        },
+        {
+          "drawing": 22,
+          "duration_ms": 150
+        },
+        {
+          "drawing": 23,
+          "duration_ms": 150
+        },
+        {
+          "drawing": 24,
+          "duration_ms": 150
+        }
+      ],
+      "duration_ms": 900,
+      "loop": false
+    },
+    "guard": {
+      "frames": [
+        {
+          "drawing": 26,
+          "duration_ms": 240
+        },
+        {
+          "drawing": 27,
+          "duration_ms": 240
+        }
+      ],
+      "duration_ms": 480,
+      "loop": true
+    },
+    "hurt": {
+      "frames": [
+        {
+          "drawing": 28,
+          "duration_ms": 120
+        },
+        {
+          "drawing": 29,
+          "duration_ms": 120
+        },
+        {
+          "drawing": 30,
+          "duration_ms": 120
+        }
+      ],
+      "duration_ms": 360,
+      "loop": false
+    },
+    "victory": {
+      "frames": [
+        {
+          "drawing": 33,
+          "duration_ms": 340
+        },
+        {
+          "drawing": 34,
+          "duration_ms": 340
+        }
+      ],
+      "duration_ms": 680,
+      "loop": true
+    },
+    "defeat": {
+      "frames": [
+        {
+          "drawing": 35,
+          "duration_ms": 680
+        }
+      ],
+      "duration_ms": 680,
+      "loop": false
+    }
+  }
+}

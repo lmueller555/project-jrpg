@@ -254,7 +254,7 @@ class BattleStatusUITests(unittest.TestCase):
         self.scene.update(20)
         self.model.enemy.hp = 1
         self.assertTrue(self.model.choose_action('attack'))
-        self.scene.update(1)
+        self.scene.update(self.model.current_action.duration)
         self.assertEqual(self.model.phase, 'victory')
         records = self.text_bounds()
         visible = ' '.join(text for text, _ in records)

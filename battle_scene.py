@@ -10,6 +10,10 @@ import pygame
 from gear_widget import GearWidget
 from gear_state import GEM_NAMES, GEM_COLORS
 from gearblade_fx import GearbladeEffects
+from battle_choreography import sample as sample_choreography
+from battle_action_fx import BattleActionEffects, target_reaction
+from battle_action_audio import BattleActionAudio
+from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
 
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
@@ -121,6 +125,12 @@ class BattleScene:
         self._defeat_times = {member.identifier: 0.0 for member in
                               (*model.party, model.enemy) if not member.hp}
         self._popups = []
+        self._reactions = {}
+        self.action_fx = BattleActionEffects()
+        motion_frame('plant', 0, armed=model.weapon_equipped)
+        self.action_audio = BattleActionAudio(game)
+        self._cue_action = None
+        self._cue_phases = set()
         self._last_phase = model.phase
         self._notice = ''
         self.panel_rect = pygame.Rect(8, 232, 464, 80)
@@ -195,7 +205,7 @@ class BattleScene:
             image, ground_y = self._shadows['tusker'], round(point.y)
         else:
             # The Bat moves above the same ground plane, including its idle bob.
-            ground_y = 184
+            ground_y = round(self._home_positions()['enemy'].y+14)
             image = self._shadows['enemy_low' if point.y > 177 else 'enemy_high']
         canvas.blit(image, (round(point.x)-image.get_width()//2,
                             ground_y-image.get_height()//2))
@@ -285,7 +295,7 @@ class BattleScene:
         if self.model.phase in RESULTS:return
         small = painter.font('small').get_linesize()
         for bot in self._field_bots():
-            point = self._bot_home()
+            point = self._project(self._bot_home())
             title = bot.name+' ATB'
             cue = 'Haste · '+str(bot.haste_turns)
             width = max(painter.font('small', bold=True).size(title)[0],
@@ -536,6 +546,7 @@ class BattleScene:
             self.paused = True
             self._held = False
             self._cancel_gear()
+            self.action_audio.stop()
             return True
         if event.type == pygame.WINDOWFOCUSGAINED:
             self.focused = True
@@ -560,6 +571,7 @@ class BattleScene:
                     if not self.paused and self.command_menu == 'skills':
                         self._set_menu('root');self._sound('back');return True
                     self.paused = not self.paused
+                    if self.paused:self.action_audio.stop()
                     self._held = False
                     self._sound('back' if self.paused else 'confirm')
                 return True
@@ -636,6 +648,9 @@ class BattleScene:
         self.gear.hovered = bool(self.gear_hover_available and self._pointer is not None
                                  and self.gear.rect.collidepoint(self._pointer))
         self._elapsed += seconds
+        for reaction in self._reactions.values():reaction['age'] += seconds
+        self._reactions = {key: value for key, value in self._reactions.items() if value['age'] < .55}
+        self._action_cues()
         for popup in self._popups:popup['age'] += seconds
         self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
         if not self.gear_enabled and (self.gear.busy):self._cancel_gear()
@@ -651,15 +666,22 @@ class BattleScene:
         for notice in self.gear.consume_notices():
             self._sound('gear_seat' if notice == 'seat' else 'gear_detent')
         self.model.update(seconds, atb_multiplier=self.atb_multiplier)
+        self._action_cues()
         self._phase_elapsed = (0.0 if self.model.phase != self._last_phase
                                else self._phase_elapsed+seconds)
         for event in self.model.drain_events():
             self._tutorial_event(event)
             if event['type'] == 'impact':
+                age = max(0., event.get('frame_age', 0.))
+                self._reactions[event['target']] = {'age': age, 'guarded': event.get('guarded', False),
+                    'lethal': not event['remaining_hp'], 'action': event['action']}
+                if age < .12:
+                    metallic = event.get('guarded') and (event['target'] != 'player' or self.model.weapon_equipped)
+                    self.action_audio.play('guard_hit' if metallic else 'impact')
                 self._popups.append({'target': event['target'],
-                                     'text': str(event['damage']), 'age': 0.0,
+                                     'text': str(event['damage']), 'age': age,
                                      'guarded': event.get('guarded', False)})
-                if not event['remaining_hp']:self._defeat_times[event['target']] = self._elapsed
+                if not event['remaining_hp']:self._defeat_times[event['target']] = self._elapsed-age
             elif event['type'] == 'guard':
                 self._popups.append({'target': event.get('actor', 'player'), 'text': 'Guard', 'age': 0.0})
             elif event['type'] == 'enchant':
@@ -674,6 +696,8 @@ class BattleScene:
                 self.command_menu = 'root'
                 self.selected = 0
                 self._notice = ''
+        self._popups = [popup for popup in self._popups if popup['age'] < 1.1]
+        self._reactions = {key: value for key, value in self._reactions.items() if value['age'] < .55}
         self._sync_commands()
         self._last_phase = self.model.phase
         if self.model.phase in RESULTS or self.tutorial_active:self._cancel_gear()
@@ -684,46 +708,107 @@ class BattleScene:
     def _bot_home(self):
         return pygame.Vector2(296, 181-max(0, 202-self.panel_rect.top))
 
-    def _positions(self):
-        party_battle = len(self.model.party) > 1
+    def _choreography(self, action=None):
+        action = self.model.current_action if action is None else action
+        if action is None or not getattr(action, 'choreography', None):return None
+        return sample_choreography(action.choreography, action.elapsed, armed=action.weapon_equipped)
+
+    def _action_cues(self):
+        action = self.model.current_action
+        if action is not self._cue_action:
+            self._cue_action = action
+            self._cue_phases.clear()
+        sample = self._choreography(action)
+        if sample is None or sample.phase in self._cue_phases:return
+        self._cue_phases.add(sample.phase)
+        cue = {'approach': 'step', 'strike': 'swing', 'retreat': 'step',
+               'land': 'land', 'focus': 'focus', 'release': 'release'}.get(sample.phase)
+        if cue:self.action_audio.play(cue)
+
+    def _home_positions(self):
         offset = max(0, 202-self.panel_rect.top)
-        if party_battle:
+        if len(self.model.party) > 1:
             positions = {'player': pygame.Vector2(354, 194-offset),
                          'mira': pygame.Vector2(404, 151-offset),
                          'enemy': pygame.Vector2(119, 196-offset)}
         else:
             positions = {'player': pygame.Vector2(354, 184-offset),
                          'enemy': pygame.Vector2(126, 170-offset)}
-        for bot in self._field_bots():
-            positions[bot.identifier] = self._bot_home()
-        if self.model.enemy_id == 'bat' and not self.reduced_motion:
-            positions['enemy'].y += math.sin(self._elapsed*4)*2
+        for bot in self._field_bots():positions[bot.identifier] = self._bot_home()
+        return positions
+
+    def _hit_point(self, actor, positions=None):
+        positions = self._home_positions() if positions is None else positions
+        point = positions[actor]
+        if actor == 'enemy':
+            return point+((54, -38) if self.model.enemy_id == 'ridgeback_tusker' else (8, -32))
+        return point+(0, -36)
+
+    def _contact_position(self, action, positions):
+        """Match the authored contact point to the target's near-side silhouette."""
+        contact = sample_choreography(action.choreography, action.impact_at,
+                                      armed=action.weapon_equipped)
+        local = motion_anchors(contact.pose, contact.pose_ms, armed=action.weapon_equipped)
+        strike = local.get('strike_point', local['blade_tip'])
+        floor = local.get('floor', (32, 56))
+        reach = pygame.Vector2(strike)-floor
+        return self._hit_point(action.target, positions)-reach*2
+
+    def _ground_positions(self):
+        positions = self._home_positions()
         action = self.model.current_action
-        if (action is not None and action.kind in ('physical', 'spellblade') and action.actor != 'mira'
-                and not self.reduced_motion):
+        sample = self._choreography(action)
+        if action is not None and sample is not None:
+            if action.kind in ('physical', 'spellblade') and action.target in positions:
+                contact = self._contact_position(action, positions)
+                blend = 0 if self.reduced_motion else sample.approach
+                positions[action.actor] = positions[action.actor].lerp(contact, blend)
+        elif (action is not None and action.kind in ('physical', 'spellblade')
+              and action.actor != 'mira' and not self.reduced_motion):
+            # Other actors keep their established action choreography.
             approach = (action.elapsed/max(.001, action.impact_at)
                         if action.elapsed <= action.impact_at else
                         (action.duration-action.elapsed)/max(.001, action.duration-action.impact_at))
             blend = 1-(1-max(0.0, min(1.0, approach)))**3
-            if not party_battle:
-                positions[action.actor] += pygame.Vector2(-202 if action.actor == 'player' else 202,
-                                                           -10 if action.actor == 'player' else 17)*blend
-            else:
-                target = positions[action.target]
-                contact = (pygame.Vector2(-66, 0) if action.actor == 'enemy' else
-                           pygame.Vector2(83 if self._bot(action.actor) else 112, -4))
-                positions[action.actor] = positions[action.actor].lerp(target+contact, blend)
-                if action.action == 'tusker_charge':
-                    member = self.model.combatant(action.target)
-                    guarded = member.guarded or any(
-                        popup['target'] == action.target and popup.get('guarded')
-                        and popup['age'] < .55 for popup in self._popups)
-                    if guarded:
-                        # Turn the full standing silhouette out of the direct
-                        # line of impact; no limb scaling or anchored-leg bend.
-                        step = math.sin(math.pi*min(1, action.elapsed/action.duration))
-                        positions[action.target] += pygame.Vector2(9, -3)*step
+            target = positions[action.target]
+            if action.actor == 'enemy':
+                contact = pygame.Vector2(-96, -4) if self.model.enemy_id == 'ridgeback_tusker' else pygame.Vector2(-34, -14)
+            else:contact = pygame.Vector2(83, -4)
+            positions[action.actor] = positions[action.actor].lerp(target+contact, blend)
+        for actor, record in self._reactions.items():
+            if actor not in positions:continue
+            sprite = self.model.enemy_id if actor == 'enemy' else 'caelan' if actor == 'player' else actor
+            reaction = target_reaction(sprite, record['age'], direction=-1 if actor == 'enemy' else 1,
+                                       reduced_motion=self.reduced_motion, guarded=record['guarded'])
+            if reaction['active']:
+                positions[actor] += pygame.Vector2(reaction['offset'])*(.5 if record['guarded'] else 1)
         return positions
+
+    def _positions(self):
+        positions = self._ground_positions()
+        if self.model.enemy_id == 'bat' and not self.reduced_motion:
+            positions['enemy'].y += math.sin(self._elapsed*4)*2
+        sample = self._choreography()
+        if sample is not None and not self.reduced_motion:
+            positions['player'].y -= sample.elevation
+        return positions
+
+    def _camera(self):
+        sample = self._choreography()
+        if self.reduced_motion or sample is None:return 1., (0., 0.)
+        weight = sample.camera_weight
+        zoom = 1+.04*weight
+        homes = self._home_positions()
+        center = (homes['player']+homes['enemy'])/2+pygame.Vector2(0, -30)
+        pan = (pygame.Vector2(240, 125)-center)*(.10*weight)
+        offset = pygame.Vector2(240, 160)*(1-zoom)+pan
+        offset.x = max(480*(1-zoom), min(0., offset.x))
+        offset.y = max(320*(1-zoom), min(0., offset.y))
+        return zoom, (offset.x, offset.y)
+
+    def _project(self, point):
+        zoom, offset = self._camera()
+        return pygame.Vector2(point)*zoom+offset
 
     def _pose(self, actor):
         bot = self._bot(actor)
@@ -741,14 +826,21 @@ class BattleScene:
             if deployment < .6:return 'deploy', deployment*1000
             return 'idle', self._elapsed*1000
         combatant = self.model.combatant(actor)
+        reaction = self._reactions.get(actor)
+        sprite = self.model.enemy_id if actor == 'enemy' else actor
+        reaction_length = target_reaction(sprite, 0., guarded=bool(reaction and reaction['guarded']))['duration']
+        if reaction is not None and reaction['age'] < (.18 if reaction['lethal'] else reaction_length):
+            age = reaction['age']
+            if actor == 'player':
+                return ('guard_impact' if reaction['guarded'] else 'hurt_recover'), age*1000
+            return 'hurt', age*1000
         if combatant.hp <= 0:
-            return 'defeat', (self._elapsed-self._defeat_times.get(actor, 0))*1000
+            return 'defeat', max(0., self._elapsed-self._defeat_times.get(actor, 0)-.18)*1000
         if actor != 'enemy' and self.model.phase == 'victory':return 'victory', self._phase_elapsed*1000
-        for popup in self._popups:
-            if popup['target'] == actor and popup['text'].isdigit() and popup['age'] < .28:
-                return 'hurt', popup['age']*1000
         action = self.model.current_action
         if action is not None and action.actor == actor:
+            sequence = self._choreography(action)
+            if sequence is not None:return sequence.pose, sequence.pose_ms
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
                      'overclock' if action.kind == 'haste' else
                      'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
@@ -757,7 +849,8 @@ class BattleScene:
             return state, action.elapsed*1000
         if actor == 'enemy' and self.model.telegraphed_target:
             return 'prepare', self._elapsed*1000
-        if combatant.guarded:return 'guard', self._elapsed*1000
+        if combatant.guarded:
+            return ('guard_enter', 300.) if actor == 'player' else ('guard', self._elapsed*1000)
         if actor == 'player' and self._gear_adjust_time is not None:
             age = self._elapsed-self._gear_adjust_time
             if age < .6:return 'focus_adjust', age*1000
@@ -766,16 +859,21 @@ class BattleScene:
     def _draw_field(self, canvas):
         canvas.blit(self._background, (0, 0))
         positions = self._positions()
-        for actor in sorted(positions, key=lambda identifier: positions[identifier].y):
+        ground = self._ground_positions()
+        for actor in sorted(positions, key=lambda identifier: ground[identifier].y):
             point = positions[actor]
-            self._draw_shadow(canvas, actor, point)
+            self._draw_shadow(canvas, actor, ground[actor])
             state, time = self._pose(actor)
             sprite = ('caelan' if actor == 'player' else self.model.enemy_id
                       if actor == 'enemy' else actor)
             image, anchor = self.sprites.frame(sprite, state, time)
-            if actor == 'player' and self.model.weapon_equipped:
-                from gearblade_art import combat_frame
-                image, anchor = combat_frame(image, state, time)
+            if actor == 'player':
+                sequence = self._choreography()
+                if sequence is not None or state in MOTION_STATES:
+                    image, anchor = motion_frame(state, time, armed=self.model.weapon_equipped)
+                elif self.model.weapon_equipped:
+                    from gearblade_art import combat_frame
+                    image, anchor = combat_frame(image, state, time)
             canvas.blit(pygame.transform.scale(image, (image.get_width()*2, image.get_height()*2)),
                         (round(point.x-anchor[0]*2), round(point.y-anchor[1]*2)))
             if actor == 'player' and self.model.weapon_equipped and self.model.player.hp:
@@ -792,6 +890,25 @@ class BattleScene:
                     slot_age=None if self._slot_time is None else self._elapsed-self._slot_time,
                     action=context, reduced_motion=self.reduced_motion)
         action = self.model.current_action
+        if action is not None and getattr(action, 'choreography', None):
+            sequence = self._choreography(action)
+            point = positions[action.actor]
+            local = motion_anchors(sequence.pose, sequence.pose_ms, armed=action.weapon_equipped)
+            origin = pygame.Vector2(point)-pygame.Vector2(32,56)*2
+            attachment = {key: origin+pygame.Vector2(value)*2 for key,value in local.items()
+                          if isinstance(value, (tuple,list)) and len(value) == 2}
+            attachment.update(show_impact=False, target_hit=self._hit_point(action.target, positions)
+                              if action.target in positions else point,
+                              dash_origin=self._home_positions()[action.actor],
+                              landing=self._home_positions()[action.actor],
+                              dash_at=.46 if action.action == 'aether_edge' else .14,
+                              landing_at=1.8 if action.action == 'aether_edge' else 1.25)
+            self.action_fx.draw(canvas, point, positions.get(action.target,point), action,
+                                anchors=attachment, reduced_motion=self.reduced_motion)
+        for actor, reaction in self._reactions.items():
+            if actor in positions:
+                self.action_fx.draw_impact(canvas, self._hit_point(actor, positions), reaction['age'],
+                                           reaction['action'], reduced_motion=self.reduced_motion)
         if action is not None and action.kind == 'enchant':
             point = positions[action.actor]+(0, -34)
             pulse = 0 if self.reduced_motion else round(math.sin(action.elapsed*10)*2)
@@ -813,7 +930,8 @@ class BattleScene:
                              (round(point.x), round(point.y)), 3)
             pygame.draw.line(canvas, '#f1cd77', (round(point.x+3), round(point.y)),
                              (round(point.x-3), round(point.y)), 1)
-        if action is not None and action.kind == 'magical' and not action.resolved:
+        if (action is not None and action.kind == 'magical' and not action.resolved
+                and not getattr(action, 'choreography', None)):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
             start = positions[action.actor]+(-23 if action.actor == 'player' else 20, -37)
             end = positions[action.target]+(0, -33)
@@ -855,6 +973,10 @@ class BattleScene:
         painter = self.game.ui.painter(ui_surface)
         small, name = self._layout(painter)
         self._draw_field(world_canvas)
+        zoom, offset = self._camera()
+        if zoom != 1:
+            field = pygame.transform.scale(world_canvas, (round(480*zoom), round(320*zoom)))
+            world_canvas.blit(field, (round(offset[0]), round(offset[1])))
         pygame.transform.scale(world_canvas, ui_surface.get_size(), ui_surface)
         model, player, enemy = self.model, self.model.player, self.model.enemy
         self._draw_bot_status(painter)
@@ -873,13 +995,10 @@ class BattleScene:
             painter.text(warning, (460, 43), role='small', color=GOLD, anchor='topright')
         positions = self._positions()
         for popup in self._popups:
-            if len(model.party) > 1:
-                if popup['target'] not in positions:continue
-                point = positions[popup['target']]
-                x, y = point.x, point.y-(120 if popup['target'] == 'enemy' else
-                                         18 if self._bot(popup['target']) else 85)
-            else:
-                x, y = (354 if popup['target'] == 'player' else 126), 99
+            if popup['target'] not in positions:continue
+            point = positions[popup['target']]+(0, -(88 if popup['target'] == 'enemy'
+                and self.model.enemy_id == 'ridgeback_tusker' else 18 if self._bot(popup['target']) else 75))
+            x, y = self._project(point)
             y -= 0 if self.reduced_motion else min(14, popup['age']*20)
             painter.text(popup['text'], (x+1, y+1), role='name', color=FOREST_DARK, anchor='center', bold=True)
             painter.text(popup['text'], (x, y), role='name',
@@ -887,7 +1006,7 @@ class BattleScene:
         for member in model.party:
             hits = getattr(member, 'aether_edge_hits', 0)
             if not hits or not member.hp:continue
-            point = positions[member.identifier]
+            point = self._project(positions[member.identifier])
             cue = 'Edge · '+str(hits)+(' strike' if hits == 1 else ' strikes')
             cue_point = (point.x, min(point.y+20, self.panel_rect.top-8))
             painter.text(cue, (cue_point[0]+1, cue_point[1]+1), role='small',

@@ -20,6 +20,8 @@ class GearBattleModelTests(unittest.TestCase):
         return BattleModel(CharacterAttributes(), **options)
 
     def snapshot(self, model):
+        events = [{key: value for key, value in event.items() if key != 'frame_age'}
+                  for event in model.events]
         actors = [(actor.identifier, actor.hp, actor.mp, round(actor.atb, 9))
                   for actor in (*model.party, model.enemy)]
         bots = [(bot.identifier, round(bot.atb, 9), bot.haste_turns)
@@ -28,7 +30,7 @@ class GearBattleModelTests(unittest.TestCase):
         active = (action.actor, action.action, round(action.elapsed, 9),
                   action.damage, action.resolved, action.active_gem) if action else None
         return (model.phase, model.active_gem, model.learned_abilities,
-                actors, bots, active, deepcopy(model.events))
+                actors, bots, active, deepcopy(events))
 
     def ready(self, model, actor='player'):
         model.update(1000)
@@ -119,7 +121,7 @@ class GearBattleModelTests(unittest.TestCase):
         self.assertTrue(model.choose_action('overclock', actor_id='mira'))
         self.assertTrue(model.set_active_gem('fire'))
         self.assertIsNone(model.current_action.active_gem)
-        model.update(.9)
+        model.update(model.current_action.duration)
         model.gear_settling = False
         self.assertTrue(model.choose_action('aether_edge', actor_id='player'))
         self.assertEqual(model.current_action.active_gem, 'fire')
@@ -154,7 +156,7 @@ class GearBattleModelTests(unittest.TestCase):
                             self.assertEqual(model.current_action.active_gem, gem)
                             self.assertEqual(model.player.mp, 26)
                             self.assertEqual(model.player.atb, 0)
-                            model.update(.5)
+                            model.update(model.current_action.impact_at)
                             self.assertGreater(model.current_action.damage, 0)
                             self.assertIsNone(model.spellblade_stage)
                             self.assertFalse(model.aether_edge_discovered)
@@ -179,7 +181,7 @@ class GearBattleModelTests(unittest.TestCase):
             self.ready(model)
             self.assertEqual(model.action_reason('aether_edge'), '')
             self.assertTrue(model.choose_action('aether_edge'))
-            model.update(.5)
+            model.update(model.current_action.impact_at)
             damages.append(model.current_action.damage)
         self.assertEqual(len(set(damages)), 1)
 
@@ -207,7 +209,7 @@ class GearBattleModelTests(unittest.TestCase):
                         self.assertEqual(self.snapshot(model), before)
                         self.assertTrue(model.set_active_gem(REQUIRED_GEMS[first]))
                         self.assertTrue(model.choose_action(first))
-                        model.update(.9)
+                        model.update(model.current_action.duration)
                         self.assertEqual((model.enemy.hp, model.player.mp), (hp, mp))
                         self.assertEqual(model.spellblade_stage, 'second_edge')
                         self.assertFalse(model.aether_edge_discovered)
@@ -219,7 +221,7 @@ class GearBattleModelTests(unittest.TestCase):
                         self.assertTrue(model.choose_action(second))
                         self.assertEqual(model.current_action.action, 'aether_edge')
                         self.assertEqual(model.current_action.active_gem, REQUIRED_GEMS[second])
-                        model.update(.5)
+                        model.update(model.current_action.impact_at)
                         self.assertEqual(model.player.mp, mp-4)
                         self.assertEqual(model.spellblade_stage, 'complete')
                         self.assertEqual(model.learned_abilities, frozenset(['aether_edge']))
@@ -258,15 +260,16 @@ class GearBattleModelTests(unittest.TestCase):
             model.update(0)
             self.assertTrue(model.choose_action('aether_edge'))
             gauges = [actor.atb for actor in (*model.party, *model.bots, model.enemy)]
-            model.update(.499, atb_multiplier=multiplier)
+            action = model.current_action
+            model.update(action.impact_at-.001, atb_multiplier=multiplier)
             self.assertFalse(model.current_action.resolved)
             model.update(.001, atb_multiplier=multiplier)
             self.assertTrue(model.current_action.resolved)
-            self.assertEqual(model.current_action.elapsed, .5)
+            self.assertEqual(model.current_action.elapsed, action.impact_at)
             self.assertEqual([actor.atb for actor in (*model.party, *model.bots, model.enemy)], gauges)
-            model.update(.4, atb_multiplier=multiplier)
+            model.update(action.duration-action.impact_at, atb_multiplier=multiplier)
             self.assertEqual(model.phase, 'charging')
-            self.assertEqual(model.last_action.elapsed, .9)
+            self.assertEqual(model.last_action.elapsed, action.duration)
             model.update(.1, atb_multiplier=multiplier)
             self.assertAlmostEqual(model.player.atb, model.atb_rate(model.player)*.1*multiplier)
 
@@ -278,9 +281,9 @@ class GearBattleModelTests(unittest.TestCase):
         for actor in (*model.party, *model.bots, model.enemy):actor.atb = 1
         model.update(0, atb_multiplier=0)
         self.assertEqual(model.ready_actor, 'player')
-        model.choose_action('guard');model.update(.5, atb_multiplier=0)
+        model.choose_action('guard');model.update(model.current_action.duration, atb_multiplier=0)
         self.assertEqual(model.ready_actor, 'mira')
-        model.choose_action('guard');model.update(.5, atb_multiplier=0)
+        model.choose_action('guard');model.update(model.current_action.duration, atb_multiplier=0)
         self.assertEqual(model.current_action.actor, 'rivet')
         model.update(.8, atb_multiplier=0)
         self.assertEqual(model.current_action.actor, 'enemy')

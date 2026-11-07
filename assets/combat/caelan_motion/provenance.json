@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "generated_with": "image_gen",
+  "asset_edits": "None. Source PNGs copied byte-for-byte; runtime crops whole-body drawings, removes detached alpha fringe, nearest-neighbour scales uniformly and registers fixed feet.",
+  "references": [
+    "assets/source/cinematics/gearblade_focus/combat_generated.png",
+    "assets/story/gearblade_focus/combat/focus_aether_authored.png",
+    "assets/source/combat/caelan_generated_sheet.png"
+  ],
+  "requested_layout": [
+    6,
+    6
+  ],
+  "actual_layout": "36 independent whole-body connected components; individually measured source rectangles avoid slight generated grid drift.",
+  "canvas": [
+    64,
+    64
+  ],
+  "anchor": [
+    32,
+    56
+  ],
+  "body_pixels": 36,
+  "sources": [
+    {
+      "variant": "armed",
+      "file": "armed_authored.png",
+      "sha256": "77e8e88aebe5421cbc91c95f7f0b396cd71dce205d367465c95329f53e857bbd",
+      "original_output": "/workspace/generated_images/exec-ab464536-b4db-4a6e-8d44-f42162735ca4.png",
+      "drawings": 36,
+      "scale": 0.21052631578947367,
+      "standing_source_body_pixels": 171,
+      "operations": [
+        "runtime whole-component crop",
+        "cached runtime alpha mask",
+        "uniform nearest-neighbour scale",
+        "fixed floor registration"
+      ],
+      "pose_inventory": {
+        "run": 6,
+        "plant": 3,
+        "slash_followthrough": 4,
+        "retreat": 4,
+        "landing": 2,
+        "casting": 6,
+        "guard": 3,
+        "hurt_recovery": 3,
+        "idle": 2,
+        "victory": 2,
+        "defeat": 1
+      }
+    },
+    {
+      "variant": "unarmed",
+      "file": "unarmed_authored.png",
+      "sha256": "1634138e1a147686549cd4c44412719d212a89bdf61b0e24baa0b195d45947c3",
+      "original_output": "/workspace/generated_images/exec-912e902e-af15-48f4-810b-28e7b2a1466b.png",
+      "drawings": 36,
+      "scale": 0.21428571428571427,
+      "standing_source_body_pixels": 168,
+      "operations": [
+        "runtime whole-component crop",
+        "cached runtime alpha mask",
+        "uniform nearest-neighbour scale",
+        "fixed floor registration"
+      ],
+      "pose_inventory": {
+        "run": 6,
+        "plant": 3,
+        "slash_followthrough": 4,
+        "retreat": 4,
+        "landing": 2,
+        "casting": 6,
+        "guard": 3,
+        "hurt_recovery": 3,
+        "idle": 2,
+        "victory": 2,
+        "defeat": 1
+      }
+    }
+  ]
+}

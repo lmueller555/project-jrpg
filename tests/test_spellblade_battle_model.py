@@ -43,7 +43,7 @@ class SpellbladeLessonTests(unittest.TestCase):
                     self.assertTrue(m.choose_action(second))
                     self.assertEqual(m.current_action.action,'aether_edge')
                     self.assertEqual(m.player.mp,mp-4)
-                    m.update(.5)
+                    m.update(m.current_action.impact_at)
                     self.assertTrue(m.aether_edge_discovered)
                     self.assertEqual(m.spellblade_stage,'complete')
                     self.assertEqual(m.skill_actions('player'),['aether_edge'])

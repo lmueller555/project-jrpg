@@ -59,7 +59,9 @@ class RivetBattleModelTests(unittest.TestCase):
         action = model.current_action
         active = (action.actor, action.action, round(action.elapsed, 9),
                   action.damage, action.resolved) if action else None
-        return model.phase, actors, bots, active, deepcopy(model.events)
+        events = [{key: value for key, value in event.items() if key != 'frame_age'}
+                  for event in model.events]
+        return model.phase, actors, bots, active, deepcopy(events)
 
     def test_mira_deploys_one_free_resource_less_attachment_at_empty_atb(self):
         model = self.model()
@@ -185,9 +187,9 @@ class RivetBattleModelTests(unittest.TestCase):
         for actor in (*model.party, *model.bots, model.enemy):actor.atb = 1
         model.update(0)
         self.assertEqual(model.ready_actor, 'player')
-        model.choose_action('guard');model.update(.5)
+        model.choose_action('guard');model.update(model.current_action.duration)
         self.assertEqual(model.ready_actor, 'mira')
-        model.choose_action('guard');model.update(.5)
+        model.choose_action('guard');model.update(model.current_action.duration)
         self.assertEqual((model.current_action.actor, model.current_action.elapsed), ('rivet', 0))
         model.update(.8)
         self.assertEqual((model.current_action.actor, model.current_action.elapsed), ('enemy', 0))
@@ -225,7 +227,7 @@ class RivetBattleModelTests(unittest.TestCase):
         self.assertEqual((bot.atb, bot.haste_turns), (.63, 8))
         model.player.atb = 1
         model.update(1000)
-        model.choose_action('guard');model.update(.5)
+        model.choose_action('guard');model.update(model.current_action.duration)
         self.assertEqual((bot.atb, bot.haste_turns), (.63, 8))
         mira.hp = 10
         model.update(0)
@@ -331,9 +333,14 @@ class RivetBattleModelTests(unittest.TestCase):
         self.assertTrue(any(event.get('actor') == 'rivet' and event['type'] == 'impact'
                             for event in large.events))
 
-    def test_combined_damage_stays_near_spear_and_overclock_repays_its_turn_cost(self):
+    def test_fixed_timing_balance_benchmark_and_production_overclock_victory(self):
         catalog = json.loads(ACTION_PATH.read_text())
-        old_actions = deepcopy(catalog)
+        # Hold Caelan's benchmark action times constant across all three groups
+        # to compare Mira/Rivet economics independently of Caelan choreography.
+        benchmark_actions = deepcopy(catalog)
+        benchmark_actions['actions']['attack'].update(duration=.8, impact_at=.4)
+        benchmark_actions['actions']['guard'].update(duration=.5, impact_at=.25)
+        old_actions = deepcopy(benchmark_actions)
         old_actions['actions']['spear_thrust'] = dict(
             catalog['actions']['bolt_shot'], name='Spear Thrust', potency=1.5)
         old_guests = json.loads(GUEST_PATH.read_text())
@@ -343,7 +350,9 @@ class RivetBattleModelTests(unittest.TestCase):
             hp=1000000, str=0, mag=0)
 
         def simulate(*, buff=False, real=False, **options):
-            if not real:options['enemy_data'] = enemies
+            if not real:
+                options['enemy_data'] = enemies
+                options.setdefault('action_data', benchmark_actions)
             model = self.model(enemy_id='ridgeback_tusker', **options)
             history = []
             for tick in range(60000 if real else 9000):

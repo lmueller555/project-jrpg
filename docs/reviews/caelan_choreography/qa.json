@@ -1,0 +1,63 @@
+{
+  "verified_at_utc": "2026-11-07T00:16:03.935828+00:00",
+  "test_command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYTHONPATH=tests /workspace/.venvs/project-jrpg/bin/python -m unittest test_choreography_scene test_battle_scene test_gear_battle_scene test_skills_battle_scene test_party_battle_scene test_rivet_battle_scene",
+  "tests_passed": 62,
+  "new_scene_tests": [
+    "test_real_menu_actions_follow_distinct_phases_and_pose_clocks",
+    "test_lethal_impact_applies_once_then_lands_before_victory",
+    "test_retreat_hop_raises_feet_while_shadow_stays_on_the_floor",
+    "test_dart_prepares_at_home_releases_then_hits_at_the_projectile_boundary",
+    "test_event_reactions_do_not_depend_on_damage_popup_visibility",
+    "test_camera_frames_world_but_menu_bounds_and_labels_stay_fixed",
+    "test_damage_popups_use_the_same_camera_projection_as_actors",
+    "test_pause_freezes_action_phase_camera_and_event_reaction_clocks",
+    "test_reduced_motion_preserves_contact_and_poses_with_static_camera_and_feet",
+    "test_hover_only_slows_gauge_fill_and_never_the_committed_action",
+    "test_frame_partition_does_not_change_phase_damage_or_return_position"
+  ],
+  "retained_regressions": [
+    "MQ02 opening Guard, matching-focus failure and next-turn Aether Edge discovery",
+    "Rivet Haste decrements on eight completed bot actions to zero"
+  ],
+  "capture_verification": {
+    "source_and_art_unchanged": true,
+    "fingerprint_file_count": 242,
+    "failed_attempts": 1,
+    "discoveries": 1,
+    "results": [
+      "victory"
+    ],
+    "reel_cases": 13,
+    "edge_damage_by_gem": {
+      "nature": 27,
+      "water": 27,
+      "fire": 27,
+      "ice": 27
+    },
+    "video_format": {
+      "codec": "H.264",
+      "size": [
+        960,
+        640
+      ],
+      "fps": 30,
+      "pixel_format": "yuv420p",
+      "audio": false
+    },
+    "production_frames": 2729,
+    "reel_frames": 721
+  },
+  "independent_visual_review": {
+    "reviewer": "Caelan art collaborator, read-only review",
+    "files": [
+      "decoded_video_contact_sheet.png",
+      "armed_attack_bat_impact.png",
+      "unarmed_attack_bat_impact.png",
+      "armed_attack_boar_impact.png",
+      "ridgeback_tusker_guarded_guard_impact.png",
+      "aether_dart_bat_release.png",
+      "edge_water_bat_retreat.png"
+    ],
+    "result": "No blocking findings. Armed blade and empty-hand punch read clearly; Tusker brace meets snout; Dart separates hand and target; retreat retains facing with airborne flexed legs; sprites and UI remain inside field."
+  }
+}
