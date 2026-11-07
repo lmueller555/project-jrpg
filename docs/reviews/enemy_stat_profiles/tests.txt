@@ -1,0 +1,10 @@
+Environment: SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1
+Command: python -m pytest -q tests/test_enemy_growth.py tests/test_leveling.py tests/test_leveling_policy.py tests/test_leveling_preview.py tests/test_leveling_combat_integration.py tests/test_character_attributes.py tests/test_attribute_caps.py tests/test_attribute_modifiers.py tests/test_combat_damage.py tests/test_battle_model.py tests/test_party_battle_model.py tests/test_party_state.py tests/test_party_encounters.py tests/test_rivet_battle_model.py tests/test_bot_loadouts.py tests/test_battle_rewards.py tests/test_retired_progression_migration.py tests/test_progression_cleanup.py tests/test_save_game.py tests/test_gear_persistence.py tests/test_character_abilities.py tests/test_victory_spoils_flow.py tests/test_spoils_gameplay.py tests/test_spoils_scene.py tests/test_party_gameplay.py
+
+.................... [  6%]
+.................................................................................................................................. [ 49%]
+.................................................. [ 66%]
+................................... [ 77%]
+....................................... [ 90%]
+............................                                             [100%]
+302 passed, 2894 subtests passed in 48.18s

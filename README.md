@@ -292,10 +292,13 @@ panel. All gauges pause while the player chooses; enemy ATB is hidden. See the
 The [traditional leveling foundation](docs/LEVELING.md) defines level-1–100
 character growth, the approved XP/reward curves, effective rating caps of 999
 (Speed 255), and an enemy baseline reaching 50,000 HP. The
-[enemy catalogue](docs/ENEMY_ARCHETYPES.md) separates ten qualitative stat
-profiles from fighting styles and twenty approved concepts. These are executable
-standalone backends and design data; combat XP distribution awaits the remaining
-eligibility and recovery policies. Live victories currently award item drops.
+[enemy catalogue](docs/ENEMY_ARCHETYPES.md) supplies ten approved numerical stat
+profiles alongside fighting styles and twenty enemy concepts. Use
+`python tools/preview_leveling.py --enemy-profiles --levels 1 50 100` to inspect
+them. Foundation helpers select full XP for each surviving active combatant and
+apply stat gains without restoring current HP/MP. Live integration still needs
+individual enemy levels and saved-level transition rules; victories currently
+award item drops.
 
 The launcher automatically checkpoints quest/conversation changes, room transfers,
 and exit to `saves/journey.json` beside `main.py`; the local saves folder is ignored

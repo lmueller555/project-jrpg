@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "baseline_commit": "469086b36915d119736e519a9ac460c54d7b36b5",
+  "scope": "Approved enemy weights and executable composition; pure active-survivor XP allocation and no-recovery growth helpers. Individual monster authoring and live XP integration remain separate.",
+  "regression": {
+    "modules": [
+      "tests/test_enemy_growth.py",
+      "tests/test_leveling.py",
+      "tests/test_leveling_policy.py",
+      "tests/test_leveling_preview.py",
+      "tests/test_leveling_combat_integration.py",
+      "tests/test_character_attributes.py",
+      "tests/test_attribute_caps.py",
+      "tests/test_attribute_modifiers.py",
+      "tests/test_combat_damage.py",
+      "tests/test_battle_model.py",
+      "tests/test_party_battle_model.py",
+      "tests/test_party_state.py",
+      "tests/test_party_encounters.py",
+      "tests/test_rivet_battle_model.py",
+      "tests/test_bot_loadouts.py",
+      "tests/test_battle_rewards.py",
+      "tests/test_retired_progression_migration.py",
+      "tests/test_progression_cleanup.py",
+      "tests/test_save_game.py",
+      "tests/test_gear_persistence.py",
+      "tests/test_character_abilities.py",
+      "tests/test_victory_spoils_flow.py",
+      "tests/test_spoils_gameplay.py",
+      "tests/test_spoils_scene.py",
+      "tests/test_party_gameplay.py"
+    ],
+    "passed": 302,
+    "subtests_passed": 2894,
+    "failed": 0,
+    "duration_seconds": 48.18,
+    "log": "tests.txt"
+  },
+  "independent_review": {
+    "blocking_findings": 0,
+    "approved_weights_checked": 110,
+    "profile_level_combinations_checked": 1000,
+    "reference_decimal_digits": 60,
+    "rounding_discrepancies": 0
+  },
+  "preview": {
+    "profiles": 16,
+    "levels": 100,
+    "rows": 1600,
+    "csv": "growth.csv",
+    "checkpoints": "checkpoints.md"
+  },
+  "source_sha256": {
+    "enemy_growth.py": "820ca38e61db22741620c4922ab465dadb4703ab6ea67b78dc389d2dd77446b9",
+    "leveling.py": "8cf11a5874b041cb5400e7c0a012f7b84a63694e6fcd3be3e515ffb6b7527ef8",
+    "character_attributes.py": "ec293cbe73705509e825d7e7bea19121400835de020ca3f42ae48851d0e3ed97",
+    "assets/combat/enemy_archetypes.json": "e257a26b0b3dce7ef277430257546a0553c70a73e203879ef3e4a2fde8fbd8bb",
+    "tools/preview_leveling.py": "39500e9f5aca7d44dc133876cc48ced8c4519e6dde3377cebb55f6cad802d0a3",
+    "tests/test_enemy_growth.py": "711827cf3fc4f9bd26b93e34c0813bfabd7599da7bfaeac49e3cda39a230afe1",
+    "tests/test_leveling_policy.py": "6d2ca6e0c6326252840dd5b21ac37dd43d80c8c3c9b266d4e5c6f0016a2fe162",
+    "tests/test_leveling_preview.py": "7c27c4a9e3a165fa7b95c0fe94736a6c04c8dd7b871cf4682376acb89fccdf90",
+    "tests/test_leveling_combat_integration.py": "e7f51c2b3b302c17e6e1005c7d66f87a6f6c1a02b93f63956c17ff23b719d2c0"
+  },
+  "artifacts_sha256": {
+    "growth.csv": "60cce4deae1077160f1ec532df4a16126d18cf6d88d57a0062c77ac4b58a110f",
+    "checkpoints.md": "75d1618c1d29b1ec8c4ba53434b9390ed281942db8f45634ddd7359eff4b0052",
+    "tests.txt": "05d2e9f73902f4e4665d7c9c163d4d006303d8f7db069fc226be40976bf1b24a"
+  },
+  "unchanged_live_flow_and_encounters_sha256": {
+    "main.py": "f338000da99615ff13e1e8071c0c4d4696303497954c338cfbfd4a2bbe578161",
+    "world_encounters.py": "e85dcbb7060f1fc5d0f807be0eb08a361bd418a949ab2f7c580ba31c1eee963c",
+    "battle_rewards.py": "4e1f6d9f1d41e5185300f185e027fcde57e86bb3ca7c7a3af5297be70f9e1b07",
+    "party_state.py": "c56a186783e2be65947826d89c3db38672684bb549f8bebe220105487f61ef38",
+    "spoils_scene.py": "ba3cb4356649f377b8200bea50eb3622a7301627f75e770ba9bfded6bfb19976",
+    "save_game.py": "76fee97c07ed790bc45b28a046c4cb06c3a42b08ff580f785e64a2c6e2d55e25",
+    "legacy_save.py": "a16c5e1a1baf750f77d41a2ba6aedc1d731b4d720c768b964146539056c37fc4",
+    "assets/combat/enemies.json": "edf852228501162d970d0e283fbab5701b72c1bf57db5430a3b1ce90f4f95847",
+    "assets/combat/guests.json": "2110b94522c0622c96ae8105639320aa8c203348662c2ce45a583a576246f378",
+    "assets/characters/level_growth.json": "e1843749e4e9ad0696a5c42327899872269c2e94d9996bec4784adeab0bdf9b0"
+  }
+}

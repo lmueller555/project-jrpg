@@ -1,9 +1,9 @@
-"""Approved enemy growth and qualitative archetypes, independent of battle AI.
+"""Approved enemy growth and stat profiles, independent of battle AI.
 
 The fixed five-character reference excludes party selection, equipment and
-temporary effects. Archetype weights remain unauthored: callers must supply
-explicit multipliers to build_enemy_stats rather than receiving invented ones.
-The metadata catalog does not replace the authored Bat or Tusker encounters.
+temporary effects. Named profiles apply the approved numerical multipliers;
+species and tier adjustments remain explicitly authored optional layers.
+The catalog does not replace the authored Bat or Tusker encounters.
 """
 from copy import deepcopy
 from decimal import Decimal, ROUND_HALF_UP
@@ -63,15 +63,52 @@ def build_enemy_stats(level, *, multipliers):
     resulting maximum is at least one.
     This returns attributes only, without creating an encounter or applying AI.
     """
-    values = raw_baseline_enemy_stats(level)
-    if (not isinstance(multipliers, dict) or not set(multipliers) <= set(ATTRIBUTE_IDS)
-            or any(type(value) not in (int, float) or not 0 <= value <= MAX_ENEMY_HP
-                   or not math.isfinite(value) for value in multipliers.values())
-            or multipliers.get('hp', 1) <= 0):
+    return _layered_enemy_stats(level, (multipliers,))
+
+
+def _valid_multipliers(multipliers, *, complete=False):
+    return (isinstance(multipliers, dict)
+            and (set(multipliers) == set(ATTRIBUTE_IDS) if complete
+                 else set(multipliers) <= set(ATTRIBUTE_IDS))
+            and all(type(value) in (int, float) and 0 <= value <= MAX_ENEMY_HP
+                    and math.isfinite(value) for value in multipliers.values())
+            and multipliers.get('hp', 1) > 0)
+
+
+def _layered_enemy_stats(level, layers):
+    if any(not _valid_multipliers(layer) for layer in layers):
         raise ValueError('Enemy multipliers must be finite nonnegative stat values')
-    return {key: max(1 if key == 'hp' else 0,
-                     _round(min(ENEMY_STAT_CAPS[key], value*multipliers.get(key, 1))))
-            for key, value in values.items()}
+    values = raw_baseline_enemy_stats(level)
+    result = {}
+    for key, value in values.items():
+        # Decimal multiplier composition keeps authored decimal factors exact.
+        # Preserve the unrounded baseline through every layer; a large earlier
+        # multiplier must not hit a cap before a later reduction is applied.
+        adjusted = Decimal(str(value))
+        for layer in layers:adjusted *= Decimal(str(layer.get(key, 1)))
+        result[key] = max(1 if key == 'hp' else 0,
+                          _round(min(Decimal(ENEMY_STAT_CAPS[key]), adjusted)))
+    return result
+
+
+def profile_multipliers(profile_id):
+    """Return a fresh complete multiplier dictionary for a named profile."""
+    if not isinstance(profile_id, str) or profile_id not in STAT_PROFILE_IDS:
+        raise ValueError('Unknown enemy stat profile')
+    return load_archetypes()['stat_profiles'][profile_id]['multipliers']
+
+
+def profile_enemy_stats(profile_id, level, *, species_multipliers=None,
+                        tier_multipliers=None):
+    """Compose baseline, named profile, species and tier before one round/cap.
+
+    Optional adjustment dictionaries are sparse: omitted attributes use ×1.
+    No species or boss weights, abilities, behavior or levels are inferred.
+    """
+    layers = (profile_multipliers(profile_id),
+              {} if species_multipliers is None else species_multipliers,
+              {} if tier_multipliers is None else tier_multipliers)
+    return _layered_enemy_stats(level, layers)
 
 
 def _text(value):
@@ -86,7 +123,7 @@ def _texts(value):
 def load_archetypes(data=None):
     """Validate and copy the approved profiles, concepts and behavior metadata.
 
-    Numerical profile/species weights deliberately remain null until authored.
+    Numerical profile weights are approved; species weights remain unauthored.
     Existing-pattern annotations describe current bespoke battle behavior;
     they do not claim that this catalog is bound to the live battle engine.
     """
@@ -111,8 +148,8 @@ def load_archetypes(data=None):
                 or not _texts(profile['high_stats']) or not _texts(profile['low_stats'])
                 or not set(profile['high_stats']+profile['low_stats']) <= set(ATTRIBUTE_IDS)
                 or set(profile['high_stats']) & set(profile['low_stats'])
-                or profile['multipliers'] is not None):
-            raise ValueError('Invalid qualitative enemy stat profile')
+                or not _valid_multipliers(profile['multipliers'], complete=True)):
+            raise ValueError('Invalid enemy stat profile')
     for identifier, style in data['fighting_styles'].items():
         if (not _text(identifier) or not isinstance(style, dict)
                 or set(style) != {'name', 'description', 'implementation', 'requirements'}

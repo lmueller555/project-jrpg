@@ -83,9 +83,13 @@ character.
 The standalone [traditional leveling foundation](LEVELING.md) defines approved
 level-1 profiles and level-100 targets for Caelan, Mira, Lucan, Rhea and Edran.
 Its curves leave ordinary natural ratings at or below 300, with slower Speed
-growth; the effective caps above leave room for later modifiers. It does not
-yet award combat XP or change current-resource recovery. Current party guest/placeholder profiles
-retain their authored ratings until the transition rules are settled.
+growth; the effective caps above leave room for later modifiers. Its allocation
+helper gives full XP to surviving active combatants and none to reserves or KO'd
+members. `apply_growth(gains)` adds validated nonnegative base-stat gains without
+restoring current HP/MP or changing named modifiers. Maximum-resource increases
+leave current values unchanged, including zero HP. The live party guest and
+placeholder profiles retain their authored ratings until level integration and
+recruitment rules are settled.
 
 [`attribute_icons.py`](../attribute_icons.py) draws eleven distinct icons with
 the shared interface painter. The icon shapes remain readable on parchment and

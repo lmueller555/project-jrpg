@@ -14,7 +14,7 @@ from pathlib import Path
 from types import MappingProxyType
 from typing import Mapping
 
-from character_attributes import ATTRIBUTE_IDS
+from character_attributes import ATTRIBUTE_CAPS, ATTRIBUTE_IDS
 
 
 MIN_LEVEL = 1
@@ -130,7 +130,7 @@ def xp_to_next_level(level):
 
 
 def monster_xp(level, boss=False):
-    """One monster's reward before any unresolved recipient/distribution rule."""
+    """One monster's full reward, before level-cap overflow is considered."""
     level = _level(level)
     if type(boss) is not bool:
         raise TypeError('boss must be a boolean')
@@ -138,6 +138,33 @@ def monster_xp(level, boss=False):
     amount = rules['multiplier']*_round_half_up(
         rules['monster_scale']*level**rules['monster_exponent'])
     return amount*(rules['boss_multiplier'] if boss else 1)
+
+
+def combat_xp_allocations(amount, active_ids, current_hp):
+    """Allocate the full encounter XP to each living active party member.
+
+    IDs use canonical character names, including ``caelan`` rather than the
+    battle model's ``player`` alias. The HP mapping may include reserves; only
+    the ordered active formation receives entries, with zero for KO members.
+    The caller supplies the end-of-battle HP snapshot and determines whether
+    the encounter outcome awards XP. No character, resource or save is mutated.
+    """
+    _integer(amount, 'amount')
+    if (not isinstance(active_ids, (list, tuple)) or not 1 <= len(active_ids) <= 3
+            or any(not isinstance(identifier, str) or identifier not in _CHARACTER_IDS
+                   for identifier in active_ids)
+            or len(active_ids) != len(set(active_ids))):
+        raise ValueError('Combat XP requires one to three distinct active characters')
+    if not isinstance(current_hp, dict):
+        raise TypeError('current_hp must map character IDs to current HP')
+    if (any(not isinstance(identifier, str) or identifier not in _CHARACTER_IDS
+            for identifier in current_hp)
+            or any(identifier not in current_hp for identifier in active_ids)):
+        raise ValueError('Combat XP requires valid HP for every active character')
+    for hp in current_hp.values():
+        _integer(hp, 'current_hp', maximum=ATTRIBUTE_CAPS['hp'])
+    return {identifier: amount if current_hp[identifier] > 0 else 0
+            for identifier in active_ids}
 
 
 # Index zero is level one, which requires no accumulated XP.
