@@ -92,16 +92,26 @@
       "rewards": {
         "drops": null
       },
-      "planned_mechanics": {
-        "elemental_affinities": {
-          "status": "planned",
-          "multipliers": {
-            "fire": 2,
-            "water": 1,
-            "ice": 1,
-            "nature": 1
-          }
+      "elemental_profile": {
+        "element": "non_elemental",
+        "damage_percentages": {
+          "non_elemental": 100,
+          "fire": 200,
+          "electric": 100,
+          "water": 100,
+          "ice": 100,
+          "nature": 100,
+          "wind": 100,
+          "holy": 100,
+          "ground": 100
         },
+        "absorption": {
+          "elements": [],
+          "healing_percent": 100
+        },
+        "design_rationale": "An ordinary cave-dwelling beast with natural fur, leathery wings and no elemental aura. Its fragile wing membranes are vulnerable to scorching heat, suggesting its Fire weakness. Flight and cave residence do not make it Wind- or Ground-aligned, and living in darkness does not imply a Holy weakness. Its other affinities are neutral."
+      },
+      "planned_mechanics": {
         "stagger": {
           "status": "planned",
           "resistance": "low"

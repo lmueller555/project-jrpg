@@ -303,7 +303,12 @@ award item drops.
 The [Bestiary dictionary](docs/BESTIARY.md) is the central source for monster
 and boss definitions. Its first computed species, **Cave Bat**, has an authored
 level range of 2–3, Hybrid growth, species adjustments and a two-Gust attack
-pattern. The existing fixed Bat and MQ02 Tusker remain in the same dictionary
+pattern. Each computed species stores an elemental identity, all nine damage
+percentages, matching-element absorption and the design clues behind its
+affinities. Cave Bat is Non-Elemental, takes 200% Fire damage in its authored
+profile and is neutral to other types. Elemental combat effects and Edran's
+planned Study reveal remain future work; ordinary combat does not display this
+internal data. The existing fixed Bat and MQ02 Tusker remain in the same dictionary
 with their authored values. Use `python tools/preview_bestiary.py --list` or
 `python tools/preview_bestiary.py --enemy cave_bat --levels 2 3` to inspect data.
 The sanctuary cave and new world encounters remain later quest work.

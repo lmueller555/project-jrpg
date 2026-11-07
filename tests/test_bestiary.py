@@ -6,8 +6,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from bestiary import (FIXED_FIELDS, build_enemy, fixed_enemy_definitions,
-                      load_bestiary)
+from bestiary import (ELEMENT_IDS, ELEMENT_NAMES, FIXED_FIELDS, build_enemy,
+                      fixed_enemy_definitions, load_bestiary)
 from character_attributes import ATTRIBUTE_IDS
 
 
@@ -61,13 +61,51 @@ class BestiaryGenerationTests(unittest.TestCase):
         self.assertIsNone(enemy['metadata']['rewards']['drops'])
         self.assertEqual(enemy['metadata']['habitats'], ['elden_vale_sanctuary_caves'])
         self.assertEqual(enemy['metadata']['planned_mechanics'], {
-            'elemental_affinities': {'status': 'planned',
-                'multipliers': {'fire': 2, 'water': 1, 'ice': 1, 'nature': 1}},
             'stagger': {'status': 'planned', 'resistance': 'low'}})
         self.assertEqual(enemy['presentation'], {'sprite_id': 'bat',
             'action_aliases': {'cave_bat_bite': 'bite', 'cave_bat_wing_gust': 'wing_gust'}})
         self.assertNotIn('affinities', enemy['combat'])
+        self.assertNotIn('elemental_profile', enemy['combat'])
         self.assertNotIn('xp', enemy['combat']['rewards'])
+
+    def test_cave_bat_has_the_complete_approved_elemental_profile(self):
+        self.assertEqual(ELEMENT_IDS, ('non_elemental', 'fire', 'electric', 'water',
+                                      'ice', 'nature', 'wind', 'holy', 'ground'))
+        self.assertEqual(tuple(ELEMENT_NAMES), ELEMENT_IDS)
+        self.assertEqual(tuple(ELEMENT_NAMES.values()), (
+            'Non-Elemental', 'Fire', 'Electric', 'Water', 'Ice', 'Nature', 'Wind',
+            'Holy', 'Ground'))
+        for level in (2, 3):
+            with self.subTest(level=level):
+                enemy = build_enemy('cave_bat', level)
+                profile = enemy['metadata']['elemental_profile']
+                self.assertEqual(profile['element'], 'non_elemental')
+                self.assertEqual(profile['damage_percentages'],
+                                 {element: 200 if element == 'fire' else 100
+                                  for element in ELEMENT_IDS})
+                self.assertEqual(profile['absorption'], {'elements': [], 'healing_percent': 100})
+                self.assertIn('wing membranes', profile['design_rationale'])
+                self.assertNotIn('elemental_affinities', enemy['metadata']['planned_mechanics'])
+        for identifier in ('bat', 'ridgeback_tusker'):
+            self.assertNotIn('elemental_profile', build_enemy(identifier)['metadata'])
+
+    def test_each_element_can_be_authored_with_arbitrary_damage_percentages(self):
+        expected = dict(zip(ELEMENT_IDS, (0, 25, 75, 100, 125, 150, 175.5, 199.99, 200)))
+        expected_combat = build_enemy('cave_bat', 2)['combat']
+        for element in ELEMENT_IDS:
+            with self.subTest(element=element):
+                catalog = deepcopy(self.catalog)
+                profile = catalog['enemies']['cave_bat']['elemental_profile']
+                profile['element'] = element
+                profile['damage_percentages'] = deepcopy(expected)
+                profile['absorption']['elements'] = [] if element == 'non_elemental' else [element]
+                # JSON data keeps exact authored values; matching-element
+                # absorption takes precedence when combat later consumes it.
+                catalog = json.loads(json.dumps(catalog))
+                resolved = build_enemy('cave_bat', 2, data=catalog)
+                self.assertEqual(resolved['metadata']['elemental_profile'], profile)
+                self.assertEqual(resolved['metadata']['elemental_profile']['damage_percentages'], expected)
+                self.assertEqual(resolved['combat'], expected_combat)
 
     def test_boss_records_derive_ten_times_xp_with_only_explicit_stat_adjustments(self):
         catalog = deepcopy(self.catalog)
@@ -114,6 +152,8 @@ class BestiaryGenerationTests(unittest.TestCase):
         generated['behavior']['sequence'].clear()
         generated['presentation']['action_aliases'].clear()
         generated['metadata']['planned_mechanics']['stagger']['resistance'] = 'high'
+        generated['metadata']['elemental_profile']['damage_percentages']['fire'] = 50
+        generated['metadata']['elemental_profile']['absorption']['elements'].append('fire')
         self.assertEqual(self.catalog, before)
         exported = load_bestiary(self.catalog)
         exported['enemies']['cave_bat']['species_multipliers']['hp'] = 2
@@ -179,17 +219,68 @@ class BestiaryValidationTests(unittest.TestCase):
                 with self.assertRaises(ValueError):load_bestiary(data)
                 self.assertEqual(data, before)
 
-    def test_bad_planned_values_cannot_enable_unimplemented_mechanics(self):
-        for section, field, value in (
-                ('elemental_affinities', 'status', 'active'),
-                ('elemental_affinities', 'multipliers', {'fire': True}),
-                ('elemental_affinities', 'multipliers', {'fire': float('nan')}),
-                ('elemental_affinities', 'multipliers', {'fire': 1.5}),
-                ('stagger', 'status', 'active'), ('stagger', 'resistance', 99)):
+    def test_bad_stagger_values_cannot_enable_unimplemented_mechanics(self):
+        for field, value in (('status', 'active'), ('resistance', 99)):
             data = deepcopy(self.catalog)
-            data['enemies']['cave_bat']['planned_mechanics'][section][field] = value
-            with self.subTest(section=section, field=field):
+            data['enemies']['cave_bat']['planned_mechanics']['stagger'][field] = value
+            with self.subTest(field=field):
                 with self.assertRaises(ValueError):load_bestiary(data)
+
+    def test_invalid_elemental_profiles_fail_without_mutation(self):
+        valid = self.catalog['enemies']['cave_bat']['elemental_profile']
+        cases = [None, [], {}, {**valid, 'extra': 1}]
+        for key in valid:
+            profile = deepcopy(valid)
+            del profile[key]
+            cases.append(profile)
+        for element in ('poison', 'lightning', 'Non-Elemental', '', None, [], True):
+            cases.append({**valid, 'element': element})
+        for value in (-1, 201, True, False, float('inf'), float('-inf'), float('nan'),
+                      10**1000, '100', None, [], {}):
+            profile = deepcopy(valid)
+            profile['damage_percentages']['fire'] = value
+            cases.append(profile)
+        for percentages in (None, [], {}, {'fire': 200},
+                            {**valid['damage_percentages'], 'poison': 100}):
+            cases.append({**valid, 'damage_percentages': percentages})
+        for element in ELEMENT_IDS:
+            profile = deepcopy(valid)
+            del profile['damage_percentages'][element]
+            cases.append(profile)
+        for rationale in ('', '   ', None, {}, 'x'*2001):
+            cases.append({**valid, 'design_rationale': rationale})
+        for absorption in (None, [], {}, {'elements': [], 'healing_percent': True},
+                           {'elements': [], 'healing_percent': 50},
+                           {'elements': [], 'healing_percent': 100.0},
+                           {'elements': [], 'healing_percent': 100, 'extra': 1},
+                           {'elements': 'fire', 'healing_percent': 100},
+                           {'elements': ['non_elemental'], 'healing_percent': 100},
+                           {'elements': ['fire'], 'healing_percent': 100}):
+            cases.append({**valid, 'absorption': absorption})
+        for index, profile in enumerate(cases):
+            data = deepcopy(self.catalog)
+            data['enemies']['cave_bat']['elemental_profile'] = deepcopy(profile)
+            before = deepcopy(data)
+            with self.subTest(index=index):
+                with self.assertRaises(ValueError):load_bestiary(data)
+                self.assertEqual(data, before)
+
+    def test_typed_enemies_must_absorb_only_their_own_element_at_full_strength(self):
+        for element in ELEMENT_IDS[1:]:
+            for absorbed in ([], ['non_elemental'], ['poison'], [element, element],
+                             [element, 'non_elemental']):
+                data = deepcopy(self.catalog)
+                profile = data['enemies']['cave_bat']['elemental_profile']
+                profile['element'] = element
+                profile['absorption']['elements'] = absorbed
+                with self.subTest(element=element, absorbed=absorbed):
+                    with self.assertRaises(ValueError):load_bestiary(data)
+
+    def test_obsolete_partial_affinity_map_is_rejected(self):
+        data = deepcopy(self.catalog)
+        data['enemies']['cave_bat']['planned_mechanics']['elemental_affinities'] = {
+            'status': 'planned', 'multipliers': {'fire': 2}}
+        with self.assertRaises(ValueError):load_bestiary(data)
 
     def test_duplicate_json_keys_reject_silent_enemy_or_field_overwrites(self):
         entry = json.dumps(self.catalog['enemies']['cave_bat'])

@@ -12,7 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from bestiary import build_enemy, load_bestiary
+from bestiary import ELEMENT_IDS, ELEMENT_NAMES, build_enemy, load_bestiary
 from character_attributes import ATTRIBUTE_IDS
 
 
@@ -24,15 +24,37 @@ def overview_rows(catalogue):
                'levels': f"{levels['min']}–{levels['max']}" if levels else 'fixed',
                'tier': entry.get('tier', ''),
                'stat_profile': entry.get('stat_profile', ''),
-               'fighting_style': entry.get('fighting_style', '')}
+               'fighting_style': entry.get('fighting_style', ''),
+               'element': entry.get('elemental_profile', {}).get('element', 'unassigned')}
 
 
-def stat_rows(records):
+def stat_rows(records, *, include_elements=False):
     for record in records:
         combat = record['combat']
-        yield {'id': record['id'], 'name': combat['name'],
+        row = {'id': record['id'], 'name': combat['name'],
                'level': record['level'], 'xp_reward': record['xp_reward'],
                **{key: combat['attributes'][key] for key in ATTRIBUTE_IDS}}
+        if include_elements:
+            profile = record['metadata'].get('elemental_profile')
+            row['element'] = profile['element'] if profile else 'unassigned'
+            row.update({f'damage_percent_{key}': profile['damage_percentages'][key]
+                        if profile else None for key in ELEMENT_IDS})
+            row['absorption_elements'] = (';'.join(profile['absorption']['elements']) or 'none'
+                                          if profile else 'unassigned')
+            row['absorption_healing_percent'] = (profile['absorption']['healing_percent']
+                                                 if profile else None)
+        yield row
+
+
+def elemental_rows(profile):
+    """Display the effective relationship, including absorption precedence."""
+    absorption = profile['absorption']
+    for element in ELEMENT_IDS:
+        if element in absorption['elements']:
+            response = f"{absorption['healing_percent']}% healing (absorb)"
+        else:
+            response = f"{profile['damage_percentages'][element]}% damage"
+        yield {'Element': ELEMENT_NAMES[element], 'Response': response}
 
 
 def table(rows):
@@ -68,7 +90,7 @@ def main(argv=None):
                 authored = entry.get('level_range')
                 levels = list(range(authored['min'], authored['max']+1)) if authored else [None]
             records = [build_enemy(args.enemy, level, data=catalogue) for level in levels]
-            rows = list(stat_rows(records))
+            rows = list(stat_rows(records, include_elements=args.format == 'csv'))
     except (TypeError, ValueError) as error:
         parser.error(str(error))
     if args.format == 'json':
@@ -91,6 +113,17 @@ def main(argv=None):
                 print('Targeting: ' + record['behavior']['targeting'])
             if record['presentation'] is not None:
                 print('Presentation: ' + record['presentation']['sprite_id'])
+            profile = record['metadata'].get('elemental_profile')
+            print()
+            if profile is None:
+                print('Elemental profile: unassigned (fixed encounter).')
+            else:
+                print('Element: ' + ELEMENT_NAMES[profile['element']])
+                print('Elemental relationships are authoring data; battle effects are not active.')
+                print()
+                table(list(elemental_rows(profile)))
+                print()
+                print('Design rationale: ' + profile['design_rationale'])
     return 0
 
 
