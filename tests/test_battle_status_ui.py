@@ -128,8 +128,8 @@ class BattleStatusUITests(unittest.TestCase):
                 self.assertLessEqual(abs(row.count(yellow)-len(row)*fraction), 1)
                 self.assertLessEqual(self.scene.atb_rect.width, 64)
                 self.assertLessEqual(self.scene.atb_rect.height, 8)
-                self.assertLessEqual(self.scene.name_rect.bottom, self.scene.atb_rect.top)
-                self.assertLessEqual(abs(self.scene.atb_rect.centerx-self.scene.name_rect.centerx), 1)
+                self.assertLessEqual(self.scene.name_rect.right, self.scene.atb_rect.left)
+                self.assertLessEqual(abs(self.scene.atb_rect.centery-self.scene.name_rect.centery), 1)
                 self.assertLessEqual(self.scene.atb_rect.bottom,
                                      self.scene.party_rows['player']['hp_text'].top)
 
@@ -146,23 +146,34 @@ class BattleStatusUITests(unittest.TestCase):
                     records = self.text_bounds()
                     labels = [text for text, _ in records]
                     self.assertTrue(self.canvas.get_rect().contains(self.scene.panel_rect))
-                    self.assertGreaterEqual(self.scene.panel_rect.height, 112)
                     row = self.scene.party_rows['player']
                     self.assertEqual(set(self.scene.party_rows), {'player'})
                     self.assertLessEqual(row['column'].right, self.scene.commands_panel.left)
                     self.assertLessEqual(row['row'].bottom, row['interactable'].top)
+                    self.assertGreater(row['interactable'].height, row['row'].height)
                     self.assertTrue(row['interactable'].contains(self.scene.gear.rect))
                     self.assertGreaterEqual(self.scene.gear.rect.width, 48)
                     self.assertEqual(self.scene.gear.rect.width, self.scene.gear.rect.height)
-                    for heading in ('ATB', 'HP', 'MP'):
-                        matching = [rect for text, rect in records if text == heading]
+                    self.assertNotIn('ATB', labels)
+                    for heading in ('HP ', 'MP '):
+                        matching = [rect for text, rect in records if text.startswith(heading)]
                         self.assertEqual(len(matching), 1, heading)
                         self.assertTrue(row['row'].contains(matching[0]))
                     self.assertNotIn('NAME', labels)
                     self.assertEqual(labels.count('Caelan'), 1)
                     self.assertFalse(any('ally' in text.lower() or text.upper() in ('BARRIER', 'LIMIT')
                                          for text in labels))
-                    self.assertEqual(len(self.scene.command_rects), 5 if learned else 4)
+                    actions = self.scene._command_actions()
+                    self.assertEqual(len(actions), 5 if learned else 4)
+                    reached = set()
+                    for _ in actions:
+                        selected = actions[self.scene.selected]
+                        self.assertIn(selected, self.scene.command_rects)
+                        self.assertTrue(self.scene.commands_panel.contains(self.scene.command_rects[selected]))
+                        reached.add(selected)
+                        self.scene.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_DOWN))
+                        self.draw()
+                    self.assertEqual(reached, set(actions))
 
     def test_status_and_maximum_resources_fit_character_column_at_every_scale(self):
         self.assertTrue(self.game.attributes.set_modifiers('ui-test', {'hp': 9999, 'mp': 999}))
@@ -179,32 +190,26 @@ class BattleStatusUITests(unittest.TestCase):
                     records = self.text_bounds()
                     name = next(rect for text, rect in records if text == 'Caelan')
                     hp = next(rect for text, rect in records
-                              if text.replace(' ', '') == '9999/9999')
+                              if text.replace(' ', '') == 'HP9999/9999')
                     mp = next(rect for text, rect in records
-                              if text.replace(' ', '') == '999/999')
-                    headers = {text: rect for text, rect in records
-                               if text in ('ATB', 'HP', 'MP')}
+                              if text.replace(' ', '') == 'MP999/999')
                     row = self.scene.party_rows['player']
                     for rect in (name, hp, mp, self.scene.hp_rect,
                                  self.scene.mp_rect, self.scene.atb_rect):
                         self.assertTrue(row['row'].contains(rect))
                         for command in self.scene.command_rects.values():
                             self.assertFalse(command.colliderect(rect))
-                    self.assertLessEqual(name.bottom, self.scene.atb_rect.top)
-                    self.assertLessEqual(abs(self.scene.atb_rect.centerx-name.centerx), 1)
+                    self.assertLessEqual(name.right, self.scene.atb_rect.left)
+                    self.assertLessEqual(abs(self.scene.atb_rect.centery-name.centery), 1)
                     self.assertLessEqual(self.scene.atb_rect.bottom, hp.top)
-                    self.assertLessEqual(self.scene.hp_rect.bottom, headers['MP'].top)
+                    self.assertLessEqual(hp.bottom, mp.top)
                     self.assertEqual(self.scene.hp_rect.left, self.scene.mp_rect.left)
                     self.assertEqual(self.scene.hp_rect.width, self.scene.mp_rect.width)
                     self.assertTrue(row['interactable'].contains(self.scene.gear.rect))
                     self.assertEqual(self.scene.gear.rect.width, self.scene.gear.rect.height)
-                    for heading, value, bar in (('HP', hp, self.scene.hp_rect),
-                                                ('MP', mp, self.scene.mp_rect)):
-                        self.assertLessEqual(abs(headers[heading].top-value.top), 1)
-                        self.assertLessEqual(headers[heading].right, value.left)
-                        self.assertLessEqual(value.bottom, bar.top)
-                        self.assertGreaterEqual(value.left, bar.left)
-                        self.assertLessEqual(value.right, bar.right)
+                    for value, bar in ((hp, self.scene.hp_rect), (mp, self.scene.mp_rect)):
+                        self.assertLessEqual(abs(bar.centery-value.centery), 1)
+                        self.assertLessEqual(bar.right, value.left)
                     commands = list(self.scene.command_rects.items())
                     for label, bounds in records:
                         if bounds.colliderect(self.scene.commands_panel):

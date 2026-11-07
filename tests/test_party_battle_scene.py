@@ -87,11 +87,11 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.assertLessEqual(player['column'].right, guest['column'].left)
         self.assertLessEqual(guest['column'].right, self.scene.commands_panel.left)
         self.assertFalse(player['row'].colliderect(guest['row']))
-        self.assertIn('aether_dart', self.scene.command_rects)
+        self.assertIn('aether_dart', self.scene._command_actions())
         self.click(self.scene.party_rows['mira']['row'].center)
         self.draw()
         self.assertEqual(self.model.ready_actor, 'mira')
-        self.assertNotIn('aether_dart', self.scene.command_rects)
+        self.assertNotIn('aether_dart', self.scene._command_actions())
         self.key(pygame.K_TAB)
         self.assertEqual(self.model.ready_actor, 'player')
         self.key(pygame.K_TAB)
@@ -169,8 +169,9 @@ class PartyBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.scene._popups[0]['target'], 'mira')
 
     def test_two_columns_capped_values_and_shared_commands_fit_accessible_windows(self):
-        self.model.player.attributes.update(hp=9999, mp=999)
-        self.model.player.hp, self.model.player.mp = 9999, 999
+        for member in self.model.party:
+            member.attributes.update(hp=9999, mp=999)
+            member.hp, member.mp = 9999, 999
         self.make_both_ready()
         # Large text may scroll the last command out of the initial viewport.
         # Keyboard selection must reveal that command with its wrapped label.
@@ -191,25 +192,31 @@ class PartyBattleSceneTests(unittest.TestCase):
 
                 with self.subTest(size=size, text_scale=text_scale):
                     with patch.object(Painter, 'text', record):self.draw()
-                    for label in ('ATB', 'HP', 'MP'):
+                    self.assertFalse(any(text == 'ATB' for text, _ in records))
+                    for label in ('HP 9999/9999', 'MP 999/999'):
                         self.assertEqual(sum(text == label and any(row['row'].contains(rect)
                                                                   for row in self.scene.party_rows.values())
                                              for text, rect in records), 2)
                     self.assertFalse(any(text == 'NAME' for text, _ in records))
                     for row in self.scene.party_rows.values():
                         for rect in row.values():self.assertTrue(self.scene.panel_rect.contains(rect))
-                        self.assertLessEqual(row['name'].bottom, row['atb'].top)
+                        self.assertLessEqual(row['name'].right, row['atb'].left)
+                        self.assertLessEqual(abs(row['name'].centery-row['atb'].centery), 1)
                         self.assertLessEqual(row['atb'].bottom, row['hp_text'].top)
                         self.assertLessEqual(row['hp'].bottom, row['mp_text'].top)
                         self.assertLessEqual(row['mp'].bottom, row['interactable'].top)
                         for key in ('name', 'atb', 'hp_text', 'mp_text', 'hp', 'mp'):
                             self.assertTrue(row['row'].contains(row[key]), (key, row))
                         self.assertLessEqual(row['row'].bottom, row['interactable'].top)
-                    for label in ('9999/9999', '999/999', 'Caelan', 'Mira'):
-                        rect = next(rect for text, rect in records if text == label)
-                        self.assertTrue(self.scene.panel_rect.contains(rect), (label, rect))
-                        actor = 'mira' if label == 'Mira' else 'player'
-                        self.assertTrue(self.scene.party_rows[actor]['row'].contains(rect))
+                        self.assertGreater(row['interactable'].height, row['row'].height)
+                        for bar, label in (('hp', 'hp_text'), ('mp', 'mp_text')):
+                            self.assertLessEqual(row[bar].right, row[label].left)
+                            self.assertLessEqual(abs(row[bar].centery-row[label].centery), 1)
+                    for actor, row in self.scene.party_rows.items():
+                        for label in (self.model.combatant(actor).name, 'HP 9999/9999', 'MP 999/999'):
+                            rect = next(rect for text, rect in records
+                                        if text == label and row['row'].contains(rect))
+                            self.assertTrue(self.scene.panel_rect.contains(rect), (label, rect))
                     player = self.scene.party_rows['player']
                     guest = self.scene.party_rows['mira']
                     self.assertEqual(player['column'].width, guest['column'].width)

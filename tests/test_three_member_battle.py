@@ -192,9 +192,9 @@ class ThreeMemberBattleUITests(unittest.TestCase):
                         for identifier, row in scene.party_rows.items():
                             member = model.combatant(identifier)
                             matching = [(text, bounds) for text, bounds in records
-                                        if text in (member.name, 'ATB', 'HP 9999/9999', 'MP 999/999')
+                                        if text in (member.name, 'HP 9999/9999', 'MP 999/999')
                                         and bounds.colliderect(row['column'])]
-                            self.assertEqual(len(matching), 4)
+                            self.assertEqual(len(matching), 3)
                             for text, bounds in matching:
                                 self.assertTrue(row['row'].contains(bounds), (text, bounds, row))
                             for index, (_, bounds) in enumerate(matching):
@@ -203,6 +203,11 @@ class ThreeMemberBattleUITests(unittest.TestCase):
                             self.assertLessEqual(row['column'].right, scene.commands_panel.left)
                             self.assertTrue(row['row'].contains(row['hp']))
                             self.assertTrue(row['row'].contains(row['mp']))
+                            self.assertLessEqual(row['name'].right, row['atb'].left)
+                            self.assertLessEqual(abs(row['name'].centery-row['atb'].centery), 1)
+                            for bar, label in (('hp', 'hp_text'), ('mp', 'mp_text')):
+                                self.assertLessEqual(row[bar].right, row[label].left)
+                                self.assertLessEqual(abs(row[bar].centery-row[label].centery), 1)
                             actor = 'caelan' if identifier == 'player' else identifier
                             image, anchor = scene.sprites.frame(actor, 'idle', 0)
                             ink = image.get_bounding_rect()
@@ -216,9 +221,9 @@ class ThreeMemberBattleUITests(unittest.TestCase):
                         for _, bounds in records:
                             if bounds.colliderect(scene.commands_panel):
                                 self.assertTrue(scene.commands_panel.contains(bounds))
-                        for bot in scene.bot_status.values():
-                            self.assertGreaterEqual(bot['panel'].top, 40)
-                            self.assertLess(bot['panel'].bottom, scene.panel_rect.top)
+                        self.assertEqual(scene.bot_status, {})
+                        self.assertFalse(any(text == 'Rivet ATB' or text.startswith('Haste ·')
+                                             for text, _ in records))
 
     def test_native_edran_art_falls_back_to_idle_without_mirroring(self):
         sprites = CombatSprites()

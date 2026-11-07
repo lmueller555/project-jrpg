@@ -94,11 +94,17 @@ class BattleSceneTests(unittest.TestCase):
                 return getattr(actual, key)
 
         self.model.enemy = EnemyWithoutVisibleGauge()
-        with patch.object(Painter, 'text', autospec=True, wraps=Painter.text) as text:
+        with patch.object(Painter, 'text', autospec=True, wraps=Painter.text) as text, \
+                patch.object(BattleScene, '_bar', wraps=BattleScene._bar) as bars:
             self.draw()
         labels = [call.args[1] for call in text.call_args_list]
-        self.assertEqual(labels.count('ATB'), 1)
+        self.assertNotIn('ATB', labels)
         self.assertNotIn('Enemy ATB', labels)
+        self.assertEqual(len(bars.call_args_list), 4)  # Party ATB/HP/MP and enemy HP.
+        player_gauge = [call for call in bars.call_args_list
+                        if call.args[1] == self.scene.party_rows['player']['atb']]
+        self.assertEqual(len(player_gauge), 1)
+        self.assertEqual(player_gauge[0].args[2], self.model.player.atb)
 
     def test_charging_clicks_and_keys_cannot_submit_an_action(self):
         self.click(self.scene.command_rects['attack'].center)
@@ -137,6 +143,11 @@ class BattleSceneTests(unittest.TestCase):
         self.scene = BattleScene(self.game, self.model, sprites=self.sprites)
         self.ready()
         before = self.model.player.atb, self.model.player.mp
+        for _ in self.scene._command_actions():
+            if 'aether_dart' in self.scene.command_rects:break
+            self.key(pygame.K_DOWN)
+            self.draw()
+        self.assertIn('aether_dart', self.scene.command_rects)
         self.click(self.scene.command_rects['aether_dart'].center)
         self.assertEqual(self.model.phase, 'ready')
         self.assertEqual((self.model.player.atb, self.model.player.mp), before)

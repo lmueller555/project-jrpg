@@ -1,4 +1,4 @@
-"""Rivet's compact field UI and Mira's real Overclock command path."""
+"""Autonomous Rivet behavior without a bot HUD and Mira's Overclock path."""
 import os
 import random
 from types import SimpleNamespace
@@ -13,7 +13,7 @@ import pygame
 
 from audio_settings import AudioSettings
 from battle_model import BattleModel
-from battle_scene import BattleScene, MP_BLUE
+from battle_scene import BattleScene
 from character_attributes import CharacterAttributes
 from ui_style import MUTED, Painter, UIStyle
 
@@ -102,27 +102,32 @@ class RivetBattleSceneTests(unittest.TestCase):
         self.assertFalse(hasattr(self.bot, 'hp'))
         self.assertFalse(hasattr(self.bot, 'mp'))
         self.assertEqual(set(self.scene.party_rows), {'player', 'mira'})
-        self.assertEqual(set(self.scene.bot_status['rivet']), {'panel', 'name', 'atb', 'haste'})
+        self.assertEqual(self.scene.bot_status, {})
         self.assertIn(('rivet', 'deploy'), self.sprites.calls)
         labels = [text for text, _, _ in self.texts()]
-        self.assertIn('Rivet ATB', labels)
-        self.assertIn('Haste · 0', labels)
-        self.assertEqual(labels.count('HP'), len(self.model.party))
+        self.assertNotIn('Rivet ATB', labels)
+        self.assertFalse(any(text.startswith('Haste ·') for text in labels))
+        self.assertEqual(sum(text.startswith('HP ') for text in labels), len(self.model.party))
         self.ready_mira()
         before = self.resources()
-        self.click(self.scene.bot_status['rivet']['panel'].center)
         self.click(tuple(self.scene._positions()['rivet']))
         self.assertEqual(self.resources(), before)
         self.assertEqual(self.model.ready_actor, 'mira')
 
-    def test_bot_bar_tracks_its_gauge_independently(self):
+    def test_bot_gauge_charges_independently_without_rendering_a_bar(self):
         self.bot.atb, self.mira.atb, self.model.player.atb = .63, .23, .11
+        self.scene.update(.2)
+        self.assertAlmostEqual(self.bot.atb, .63+.2*self.model.atb_rate(self.bot))
+        self.assertAlmostEqual(self.mira.atb, .23+.2*self.model.atb_rate(self.mira))
+        self.assertAlmostEqual(self.model.player.atb, .11+.2*self.model.atb_rate(self.model.player))
         with patch.object(BattleScene, '_bar', wraps=BattleScene._bar) as bars:
             self.draw()
-        gauge = self.scene.bot_status['rivet']['atb']
-        calls = [call for call in bars.call_args_list if call.args[1] == gauge]
-        self.assertEqual(len(calls), 1)
-        self.assertEqual(calls[0].args[2], .63)
+        party_gauges = [row[key] for row in self.scene.party_rows.values()
+                        for key in ('atb', 'hp', 'mp')]
+        self.assertEqual(len(bars.call_args_list), len(party_gauges)+1)  # Enemy HP only.
+        for gauge in party_gauges:
+            self.assertEqual(sum(call.args[1] == gauge for call in bars.call_args_list), 1)
+        self.assertEqual(self.scene.bot_status, {})
 
     def test_overclock_input_costs_five_mp_once_and_applies_at_impact(self):
         self.open_overclock()
@@ -145,7 +150,7 @@ class RivetBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.bot.haste_turns, 8)
         self.assertEqual((tuple(member.hp for member in self.model.party), self.model.enemy.hp), hp)
         self.assertEqual(self.scene._popups[-1]['text'], 'Haste')
-        self.assertIn(('Haste · 8', MP_BLUE), [(text, color) for text, _, color in self.texts()])
+        self.assertFalse(any(text.startswith('Haste ·') for text, _, _ in self.texts()))
 
     def test_insufficient_mp_and_back_keep_all_resources_and_gauges_paused(self):
         self.open_overclock()
@@ -162,14 +167,15 @@ class RivetBattleSceneTests(unittest.TestCase):
         self.assertEqual(self.scene.command_menu, 'root')
         self.assertEqual(self.resources(), before)
 
-    def test_haste_counter_counts_completed_bot_actions_to_zero(self):
+    def test_hidden_haste_duration_counts_eight_completed_bot_actions_to_zero(self):
         self.open_overclock()
         self.click(self.scene.command_rects['overclock'].center)
         self.scene.update(.9)
         self.model.enemy.hp = 999999
         for remaining in range(8, 0, -1):
             with self.subTest(remaining=remaining):
-                self.assertIn('Haste · '+str(remaining), [text for text, _, _ in self.texts()])
+                self.assertEqual(self.bot.haste_turns, remaining)
+                self.assertFalse(any(text.startswith('Haste ·') for text, _, _ in self.texts()))
                 for member in self.model.party:member.atb = 0
                 self.model.enemy.atb = 0
                 self.bot.atb = 1
@@ -179,9 +185,10 @@ class RivetBattleSceneTests(unittest.TestCase):
                 self.assertEqual(self.bot.haste_turns, remaining)
                 self.scene.update(.4)
                 self.assertEqual(self.bot.haste_turns, remaining-1)
-        self.assertIn(('Haste · 0', MUTED), [(text, color) for text, _, color in self.texts()])
+        self.assertEqual(self.bot.haste_turns, 0)
+        self.assertFalse(any(text.startswith('Haste ·') for text, _, _ in self.texts()))
 
-    def test_field_status_and_labels_fit_large_text_and_avoid_party_bodies(self):
+    def test_bot_hud_stays_absent_at_large_text_and_party_bodies_remain_separate(self):
         self.open_overclock()
         self.bot.haste_turns = 8
         for scale in (1.0, 1.5):
@@ -190,12 +197,9 @@ class RivetBattleSceneTests(unittest.TestCase):
                 self.scene._set_menu(menu)
                 records = self.texts()
                 with self.subTest(scale=scale, menu=menu):
-                    row = self.scene.bot_status['rivet']
-                    self.assertTrue(self.canvas.get_rect().contains(row['panel']))
-                    self.assertFalse(row['panel'].colliderect(self.scene.panel_rect))
-                    for label in ('Rivet ATB', 'Haste · 8'):
-                        bounds = next(rect for text, rect, _ in records if text == label)
-                        self.assertTrue(row['panel'].contains(bounds), (label, row, bounds))
+                    self.assertEqual(self.scene.bot_status, {})
+                    self.assertNotIn('Rivet ATB', [text for text, _, _ in records])
+                    self.assertFalse(any(text.startswith('Haste ·') for text, _, _ in records))
                     positions = self.scene._positions()
                     bodies = {}
                     for identifier, actor in (('player', 'caelan'), ('mira', 'mira'), ('rivet', 'rivet')):
@@ -205,7 +209,8 @@ class RivetBattleSceneTests(unittest.TestCase):
                         bodies[identifier] = pygame.Rect(round(point.x+(bounds.x-anchor[0])*2),
                                                         round(point.y+(bounds.y-anchor[1])*2),
                                                         bounds.width*2, bounds.height*2)
-                        self.assertFalse(row['panel'].colliderect(bodies[identifier]))
+                        self.assertTrue(self.canvas.get_rect().contains(bodies[identifier]))
+                        self.assertLessEqual(bodies[identifier].bottom, self.scene.panel_rect.top)
                     self.assertFalse(bodies['rivet'].colliderect(bodies['mira']))
                     self.assertFalse(bodies['rivet'].colliderect(bodies['player']))
                     for text, rect, _ in records:
@@ -220,7 +225,8 @@ class RivetBattleSceneTests(unittest.TestCase):
         before = self.bot.atb, self.bot.haste_turns
         self.scene.update(.2)
         self.assertEqual((self.bot.atb, self.bot.haste_turns), before)
-        self.assertIn(('Rivet ATB', MUTED), [(text, color) for text, _, color in self.texts()])
+        self.assertEqual(self.scene.bot_status, {})
+        self.assertNotIn('Rivet ATB', [text for text, _, _ in self.texts()])
 
     def test_mira_fires_from_home_while_rivet_jabs_and_returns(self):
         self.ready_mira()
