@@ -149,5 +149,20 @@ class PauseMenuTests(unittest.TestCase):
         self.key(pygame.K_RETURN)
         self.assertFalse(self.menu.settings)
 
+    def test_nine_pause_options_scroll_and_remain_reachable_with_large_text(self):
+        self.game.window=pygame.display.set_mode((480,320))
+        self.game.audio.set_text_scale(1.5)
+        self.menu.open()
+        self.assertEqual(self.menu.options[self.menu.options.index('Characters')+1], 'Party')
+        for _ in range(len(self.menu.options)-1):self.key(pygame.K_DOWN)
+        self.menu.draw(pygame.Surface((480,320)))
+        self.assertEqual(self.menu.options[self.menu.selected], 'Quit')
+        self.assertTrue(self.menu.viewport.contains(self.menu.rows[self.menu.selected]))
+        self.assertGreater(self.menu.max_scroll, 0)
+        self.menu.handle_event(pygame.event.Event(pygame.MOUSEWHEEL,y=10))
+        self.assertEqual(self.menu.scroll, 0)
+        self.assertTrue(self.click(self.menu.rows[0].center))
+        self.assertFalse(self.menu.is_open)
+
 
 if __name__ == '__main__':unittest.main()

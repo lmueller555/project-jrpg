@@ -51,6 +51,8 @@ class CombatEncounters:
         self._victory_checkpointed = False
         self._exiting_spoils = False
         self._bat_contact_armed = True
+        self._party_entry = None
+        self._party_active = None
 
     @property
     def active(self):return self.scene is not None
@@ -107,14 +109,56 @@ class CombatEncounters:
         self._victory_checkpointed = False
         self._exiting_spoils = False
         self._bat_contact_armed = True
+        self._party_entry = None
+        self._party_active = None
         self._music('eldenmere')
+
+    def _party_options(self):
+        party = getattr(self.game, 'party', None)
+        if party is None:return {}
+        return {'party_members': party.battle_members(),
+                'guest_abilities': {identifier: self.game.character_abilities.known_abilities(identifier)
+                                    for identifier in party.active_ids if identifier != 'caelan'}}
+
+    def _capture_party_entry(self):
+        party = getattr(self.game, 'party', None)
+        self._party_active = tuple(party.active_ids) if party is not None else None
+        self._party_entry = self._party_resources() if party is not None else None
+
+    def _party_resources(self):
+        party = self.game.party
+        return {identifier: {'hp': party.characters[identifier].current_hp,
+                             'mp': party.characters[identifier].current_mp}
+                for identifier in self._party_active}
+
+    @staticmethod
+    def _model_resources(model):
+        return {'caelan' if member.identifier == 'player' else member.identifier:
+                {'hp': member.hp, 'mp': member.mp} for member in model.party}
+
+    def _apply_resources(self, resources, party_resources=None):
+        """Validate every participant before changing any persistent resource."""
+        game = self.game
+        updates = {'caelan': resources} if party_resources is None else party_resources
+        party = getattr(game, 'party', None)
+        characters = party.characters if party is not None else {'caelan': game.attributes}
+        for identifier, values in updates.items():
+            if identifier not in characters:return False
+            proposed = deepcopy(characters[identifier])
+            if not proposed.set_current(hp=values['hp'], mp=values['mp']):return False
+        for identifier, values in updates.items():
+            characters[identifier].set_current(hp=values['hp'], mp=values['mp'])
+        return True
 
     def _capture_world(self):
         """Render the actual approach, including story props, without a frame flip."""
         game = self.game
         frame = pygame.Surface(game.canvas.get_size())
         camera = game.camera.position()
-        game.world.draw(frame, camera, game.player, game.elapsed_ms, include_ui=False)
+        travel = getattr(game, 'party_travel', None)
+        options = ({'party_actors': travel.actors()}
+                   if travel is not None and not getattr(game.world, 'is_overworld', False) else {})
+        game.world.draw(frame, camera, game.player, game.elapsed_ms, include_ui=False, **options)
         self.draw_world(frame, camera)
         game.opening.draw_world(frame, camera)
         for visit in game.household_visits:visit.draw_world(frame, camera)
@@ -133,12 +177,15 @@ class CombatEncounters:
 
     def _world_available(self):
         game = self.game
+        party = getattr(game, 'party', None)
+        can_fight = not party.battle_reason() if party is not None else game.attributes.current_hp > 0
         return (not self.active and not game.on_title
                 and not game.pause.is_open and not game.inventory_ui.is_open
+                and not getattr(getattr(game, 'party_ui', None), 'is_open', False)
                 and not game.quest_ui.journal_open and not game.map_open
                 and not game.social.locked and not game.opening.locks_player
                 and not game.household_action and not game.transfer_cooldown
-                and not game.opening_fade and game.attributes.current_hp > 0)
+                and not game.opening_fade and can_fight)
 
     def _exploration_available(self):
         return (self.bat_unlocked and self._world_available()
@@ -163,6 +210,8 @@ class CombatEncounters:
 
     def interact(self, rng=None):
         if not self.nearby():return False
+        party = getattr(self.game, 'party', None)
+        if party is not None and party.battle_reason():return False
         self._bat_contact_armed = False
         model = BattleModel(self.game.attributes,
                             self.game.character_abilities.known_abilities(),
@@ -170,7 +219,8 @@ class CombatEncounters:
                             active_gem=self.game.character_abilities.active_gem(),
                             bot_loadouts=self.game.bot_loadouts.battle_loadouts(),
                             rng=random.Random() if rng is None else rng,
-                            enemy_id=self.definition['enemy'])
+                            enemy_id=self.definition['enemy'], **self._party_options())
+        self._capture_party_entry()
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
         frame = self._capture_world()
         self.scene = BattleScene(self.game, model)
@@ -208,14 +258,18 @@ class CombatEncounters:
                 game.save_progress()
                 self.start_mill(rng)
             return quest._speak('tutorial_preparation', prepared)
+        party = getattr(game, 'party', None)
+        if party is not None and party.battle_reason():return False
+        options = self._party_options() if party is not None else {
+            'guest_id': 'mira',
+            'guest_abilities': {'mira': game.character_abilities.known_abilities('mira')}}
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
                             active_gem=game.character_abilities.active_gem(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
-                            guest_abilities={'mira':game.character_abilities.known_abilities('mira')},
                             rng=random.Random() if rng is None else rng,
-                            enemy_id='ridgeback_tusker', guest_id='mira',
-                            spellblade_tutorial=training)
+                            enemy_id='ridgeback_tusker', spellblade_tutorial=training, **options)
+        self._capture_party_entry()
         model.enemy_definition['rewards'] = self._available_rewards(model.enemy_definition['rewards'])
         self._mill_origin = tuple(game.player.position)
         # A quit/reload resumes on the safe approach with the fight unfinished.
@@ -284,7 +338,10 @@ class CombatEncounters:
         if owner.learn_first_weapon_skills('caelan'):
             # Persist the earned action's resources with the learned technique;
             # quitting here must not refund its MP while keeping the discovery.
-            self.game.attributes.set_current(hp=self.model.player.hp,mp=self.model.player.mp)
+            resources = {'hp': self.model.player.hp, 'mp': self.model.player.mp}
+            party_resources = self._model_resources(self.model) if self._party_active else None
+            if not self._apply_resources(resources, party_resources):
+                raise RuntimeError('Discovered skill produced invalid battle resources')
             self.game.social.flags.add('CH01_MQ02_AETHER_EDGE_DISCOVERED')
             # No battle clock is saved. A retry retains the skill actually
             # discovered, and still owes the encounter's victory/reward receipt.
@@ -354,6 +411,11 @@ class CombatEncounters:
             'resources': {'hp': hp, 'mp': mp}, 'scene': game.world.data['id'],
             'position': list(position), 'facing': game.player.facing,
             'incapacitated': incapacitated}
+        if self._party_active is not None:
+            resources = self._model_resources(model)
+            resources['caelan'] = {'hp': hp, 'mp': mp}
+            self._pending.update(party_before=self._party_resources(),
+                                 party_resources=resources, party_active=list(self._party_active))
         if not valid_pending_snapshot(self._pending):
             self._pending = None
             raise RuntimeError('A completed battle produced an invalid victory record')
@@ -391,13 +453,23 @@ class CombatEncounters:
         proposed = deepcopy(game.attributes)
         if not proposed.set_current(hp=resources['hp'], mp=resources['mp']):
             return self._post_error('Battle resources could not be collected. Try again.')
+        party_resources = record.get('party_resources')
+        if party_resources is not None:
+            party = getattr(game, 'party', None)
+            if party is None or tuple(record['party_active']) != party.active_ids:
+                return self._post_error('The battle party could not be restored. Try again.')
+            for identifier, values in party_resources.items():
+                proposed = deepcopy(party.characters[identifier])
+                if not proposed.set_current(hp=values['hp'], mp=values['mp']):
+                    return self._post_error('Battle resources could not be collected. Try again.')
         quest = game.mill_quest
         if self.kind == 'mill':
             proposed_quests = deepcopy(game.quests)
             if not quest.encounter_pending or not proposed_quests.complete_objective(MILL_QUEST, 'secure_trail'):
                 return self._post_error('The encounter could not be completed. Try again.')
         before = (game.lattice.to_dict(), game.inventory.to_dict(), game.quests.to_dict(),
-                  quest.to_dict(), set(game.social.flags))
+                  quest.to_dict(), set(game.social.flags),
+                  game.party.to_dict() if hasattr(game, 'party') else None)
         reward = record['rewards']
         if game.lattice.has_receipt(record['receipt']):
             return self._post_error('The victory receipt is inconsistent. Try again.')
@@ -415,10 +487,12 @@ class CombatEncounters:
         if self.kind == 'mill' and not quest.battle_won():
             game.lattice.restore(before[0]);game.inventory.restore(before[1])
             game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
+            if before[5] is not None:game.party.restore(before[5])
             return self._post_error('The encounter could not be completed. Try again.')
-        if not game.attributes.set_current(hp=resources['hp'], mp=resources['mp']):
+        if not self._apply_resources(resources, party_resources):
             game.lattice.restore(before[0]);game.inventory.restore(before[1])
             game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
+            if before[5] is not None:game.party.restore(before[5])
             return self._post_error('Battle resources could not be collected. Try again.')
         record['stage'] = 'awarded'
         if not self._checkpoint():return self._post_error('Progress could not be saved. Try again.')
@@ -526,6 +600,7 @@ class CombatEncounters:
                       'aether_lattice': game.lattice.to_dict(),
                       'character_attributes': game.attributes.to_dict(),
                       'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
+        if hasattr(game, 'party'):validation['party'] = game.party.to_dict()
         if not valid_pending_snapshot(record, validation):return False
         self._pending = deepcopy(record)
         # begin_journey has already chosen a clear standing spot if an NPC now
@@ -535,14 +610,22 @@ class CombatEncounters:
         self.kind, self.receipt_id = record['kind'], record['receipt']
         if self.kind == 'bat':self._bat_contact_armed = False
         self._mill_origin = tuple(self._pending['position']) if self.kind == 'mill' else None
+        options = self._party_options() if 'party_active' in record else {
+            'guest_abilities': ({'mira': game.character_abilities.known_abilities('mira')}
+                                if self.kind == 'mill' else {}),
+            'guest_id': 'mira' if self.kind == 'mill' else None}
         model = BattleModel(game.attributes, game.character_abilities.known_abilities(),
                             weapon_equipped=game.character_abilities.has_weapon(),
                             active_gem=game.character_abilities.active_gem(),
                             bot_loadouts=game.bot_loadouts.battle_loadouts(),
-                            guest_abilities=({'mira':game.character_abilities.known_abilities('mira')}
-                                             if self.kind == 'mill' else {}),
                             enemy_id='ridgeback_tusker' if self.kind == 'mill' else 'bat',
-                            guest_id='mira' if self.kind == 'mill' else None)
+                            **options)
+        self._capture_party_entry()
+        if 'party_resources' in record:
+            for member in model.party:
+                identifier = 'caelan' if member.identifier == 'player' else member.identifier
+                member.hp = record['party_resources'][identifier]['hp']
+                member.mp = record['party_resources'][identifier]['mp']
         model.player.hp = 0 if record['incapacitated'] else record['resources']['hp']
         model.player.mp = record['resources']['mp']
         model.enemy.hp = 0
@@ -565,19 +648,15 @@ class CombatEncounters:
             return False
         if self.kind == 'mill':return self._settle_mill()
         game, scene, model = self.game, self.scene, self.scene.model
-        # Defeat is a safe withdrawal in this first encounter: the journey still
-        # owns its pre-battle resources, and receives neither drops nor RP.
+        # Defeat is a safe withdrawal: every member retains the resources saved
+        # before this optional fight, and receives neither drops nor RP.
         if model.phase != 'defeat':
-            proposed = deepcopy(game.attributes)
-            if not proposed.set_current(hp=model.player.hp, mp=model.player.mp):
+            resources = {'hp': model.player.hp, 'mp': model.player.mp}
+            party_resources = self._model_resources(model) if self._party_active else None
+            if not self._apply_resources(resources, party_resources):
                 scene.dismissed = False
                 scene.result_error = 'Could not return from battle. Try again.'
                 return False
-        if model.phase != 'defeat':
-            # Rewards only affect RP/inventory; the already validated resource
-            # capacities cannot change between the validation and this assignment.
-            if not game.attributes.set_current(hp=model.player.hp, mp=model.player.mp):
-                raise RuntimeError('Validated battle resources could not be applied')
         self._settled = True
         self.scene = None
         self.transition = None
@@ -607,13 +686,20 @@ class CombatEncounters:
         elif hp == 0:
             # Incapacitation is followed by first aid before exploration resumes.
             hp = max(1, game.attributes.value('hp')//4)
-        proposed = deepcopy(game.attributes)
-        if not proposed.set_current(hp=hp, mp=mp):
+        party_resources = self._model_resources(model) if self._party_active else None
+        if party_resources is not None:
+            if outcome == 'defeat':
+                # The authored first fight must remain retryable even when a
+                # companion entered injured. Restore HP and preserve entry MP.
+                party_resources = {identifier: {
+                    'hp': game.party.characters[identifier].value('hp'),
+                    'mp': self._party_entry[identifier]['mp']}
+                    for identifier in self._party_active}
+            party_resources['caelan'] = {'hp': hp, 'mp': mp}
+        if not self._apply_resources({'hp': hp, 'mp': mp}, party_resources):
             scene.dismissed = False
             scene.result_error = 'Could not return from battle. Try again.'
             return False
-        if not game.attributes.set_current(hp=hp, mp=mp):
-            raise RuntimeError('Validated battle resources could not be applied')
         game.player.position.update(quest.upstream.data['spawn'])
         self._settled = True
         self.scene = None

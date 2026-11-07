@@ -12,6 +12,7 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 import pygame
+from gear_state import REQUIRED_GEMS
 from main import Game
 from quests import MILL_QUEST
 import test_opening_dialogue_pass as opening
@@ -44,6 +45,16 @@ def drive_spellblade_battle(game, command='attack', *, dismiss=True,
 
     def choose(action):
         game.draw()
+        if action in ATTEMPTS and model.active_gem != REQUIRED_GEMS[action]:
+            # Lesson attempts use the same settled focus as ordinary Skills.
+            key(game, pygame.K_g)
+            for _ in range(4):
+                if scene.gear.preview_gem == REQUIRED_GEMS[action]:break
+                key(game, pygame.K_RIGHT)
+            key(game, pygame.K_RETURN)
+            game.update(.1, (0, 0), False)
+            assert model.active_gem == REQUIRED_GEMS[action] and not model.gear_settling
+            key(game, pygame.K_TAB)
         if action in (*ATTEMPTS, 'aether_edge'):
             if scene.command_menu != 'skills':
                 assert not model.command_reason('skills')

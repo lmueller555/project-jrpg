@@ -207,7 +207,7 @@ Caelan's body; four-pose actions finish even when prose is advanced quickly.
 Pressing a movement key while seated finishes the gestures and stands him up,
 so unread dialogue never holds him at the table.
 **Escape** opens a modal pause menu during exploration, dialogue or actions.
-Characters, Aether Lattice, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
+Characters, Party, Aether Lattice, Inventory, Journal, Map and Settings are available there alongside Resume and Quit; the
 controls reference is inside Settings. Pausing holds NPC, action, camera and
 ambience clocks. Music and effects have separate sliders with percentage displays,
 mouse adjustment and
@@ -262,6 +262,13 @@ successful quest handoffs consume them and save a delivery receipt. The delivery
 API handles all three households' supplies; entering a house never consumes
 them. Older journeys receive only outstanding supplies, and New Game starts
 with an empty satchel. See [inventory design and integration](docs/INVENTORY.md).
+
+**Pause → Party** manages an active formation of up to three recruited
+characters. Story events control recruitment, availability and required members;
+characters retain their own HP/MP when swapped, reserved or saved. Active
+companions follow during exploration and supply the same combat formation.
+Mira joins temporarily for MQ02. See the [party guide](docs/PARTY.md) and
+[captured menu, travel and three-member combat review](docs/reviews/party_system/README.md).
 
 **Caelan's attributes are available through Pause → Characters.** He begins as a
 balanced all-rounder with 140 HP, 30 MP and 10 each in Str, Mag, Spr, Def,

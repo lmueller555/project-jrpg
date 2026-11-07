@@ -1,0 +1,647 @@
+{
+  "fixtures": "Capture real party menus, story selection, exploration and three-member combat.\n\nThe disposable fresh journey explicitly recruits Mira, Lucan, Rhea and Edran\nthrough Game's public story API. Their recruitment is a review fixture, not a\nnew story event. Authored quests, progression, skills and rewards are unchanged.\nInputs, simulation and rendering use production code; frames are never painted\nor composited. Saves and settings live in a TemporaryDirectory.\n",
+  "fps": 30,
+  "video_frames": 515,
+  "video_seconds": 17.166666666666668,
+  "menu_native_size": [
+    960,
+    640
+  ],
+  "source_changed_during_capture": false,
+  "inputs": [
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 0,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "right"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 24,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "right"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 44,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "frame": 74,
+      "kind": "click",
+      "logical": [
+        317,
+        174
+      ],
+      "window": [
+        317,
+        174
+      ]
+    },
+    {
+      "frame": 74,
+      "kind": "key",
+      "key": "end"
+    },
+    {
+      "frame": 74,
+      "kind": "click",
+      "logical": [
+        98,
+        207
+      ],
+      "window": [
+        196,
+        414
+      ]
+    },
+    {
+      "frame": 74,
+      "kind": "wheel",
+      "amount": -8
+    },
+    {
+      "frame": 74,
+      "kind": "click",
+      "logical": [
+        317,
+        195
+      ],
+      "window": [
+        634,
+        390
+      ]
+    },
+    {
+      "frame": 95,
+      "kind": "click",
+      "logical": [
+        407,
+        290
+      ],
+      "window": [
+        814,
+        580
+      ]
+    },
+    {
+      "frame": 95,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 137,
+      "kind": "click",
+      "logical": [
+        407,
+        290
+      ],
+      "window": [
+        814,
+        580
+      ]
+    },
+    {
+      "frame": 137,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 137,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 137,
+      "kind": "key",
+      "key": "down"
+    },
+    {
+      "frame": 137,
+      "kind": "key",
+      "key": "return"
+    },
+    {
+      "frame": 137,
+      "kind": "key",
+      "key": "delete"
+    },
+    {
+      "frame": 161,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 161,
+      "kind": "key",
+      "key": "escape"
+    },
+    {
+      "frame": 437,
+      "kind": "click",
+      "logical": [
+        432,
+        212
+      ],
+      "window": [
+        864,
+        424
+      ]
+    },
+    {
+      "frame": 470,
+      "kind": "click",
+      "logical": [
+        432,
+        244
+      ],
+      "window": [
+        864,
+        488
+      ]
+    },
+    {
+      "frame": 488,
+      "kind": "click",
+      "logical": [
+        432,
+        244
+      ],
+      "window": [
+        864,
+        488
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "frame": 0,
+      "stage": "Five recruited; three active; existing resources shown"
+    },
+    {
+      "frame": 24,
+      "stage": "Keyboard replacement is a draft until confirmed"
+    },
+    {
+      "frame": 44,
+      "stage": "Unavailable companion remains inspectable with an authored reason"
+    },
+    {
+      "frame": 74,
+      "stage": "Mouse selects a reserve in the third active slot"
+    },
+    {
+      "frame": 95,
+      "stage": "Persistent selection gate requires Mira before the event"
+    },
+    {
+      "frame": 119,
+      "stage": "Reload resumes the pending selection through its saved event ID"
+    },
+    {
+      "frame": 137,
+      "stage": "Confirmed event locks the formation with its reason"
+    },
+    {
+      "frame": 161,
+      "stage": "Three selected members follow the traversed town route"
+    },
+    {
+      "frame": 215,
+      "stage": "Travelling party turns along its recorded route"
+    },
+    {
+      "frame": 236,
+      "stage": "Live three-member encounter entry"
+    },
+    {
+      "frame": 503,
+      "stage": "Three active members have each received a command"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "roster_normal.png",
+      "frame": 24,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "event": null,
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "draft_before_cancel.png",
+      "frame": 44,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "event": null,
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "roster_unavailable.png",
+      "frame": 74,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "event": null,
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "roster_minimum_150.png",
+      "frame": 74,
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "event": null,
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "roster_minimum_reason_end.png",
+      "frame": 74,
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "event": null,
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "selection_gate.png",
+      "frame": 119,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "event": "review_dungeon",
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "selection_after_reload.png",
+      "frame": 137,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "event": "review_dungeon",
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "event_locked.png",
+      "frame": 161,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "draft": [
+        "caelan",
+        "mira",
+        "edran"
+      ],
+      "event": "review_dungeon",
+      "combatants": [],
+      "followers": []
+    },
+    {
+      "file": "travel_trail.png",
+      "frame": 215,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": null,
+      "event": null,
+      "combatants": [],
+      "followers": [
+        "mira",
+        "lucan"
+      ]
+    },
+    {
+      "file": "three_member_battle.png",
+      "frame": 275,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": null,
+      "event": null,
+      "combatants": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "followers": [
+        "mira",
+        "lucan"
+      ]
+    },
+    {
+      "file": "three_member_battle_minimum_150.png",
+      "frame": 275,
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": null,
+      "event": null,
+      "combatants": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "followers": [
+        "mira",
+        "lucan"
+      ]
+    },
+    {
+      "file": "mira_three_member_action.png",
+      "frame": 449,
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "active": [
+        "caelan",
+        "mira",
+        "lucan"
+      ],
+      "draft": null,
+      "event": null,
+      "combatants": [
+        "player",
+        "mira",
+        "lucan"
+      ],
+      "followers": [
+        "mira",
+        "lucan"
+      ]
+    }
+  ],
+  "checks": {
+    "fixture_recruited": [
+      "caelan",
+      "mira",
+      "lucan",
+      "rhea",
+      "edran"
+    ],
+    "cancel_keeps_formation_and_all_resources": true,
+    "minimum_window_large_text_mouse_rejection_and_reason_scroll": true,
+    "mouse_confirm_changes_formation_without_heal_or_revive": true,
+    "selection_gate_resumes_after_reload_and_locks_on_confirm": true,
+    "runtime_callback_is_not_serialized": true,
+    "combat_fixture_explicitly_restores_lucan_hp": 97,
+    "travel_followers": [
+      "mira",
+      "lucan"
+    ],
+    "real_combat_actions": [
+      {
+        "actor": "mira",
+        "action": "bolt_shot",
+        "frame": 437
+      },
+      {
+        "actor": "player",
+        "action": "guard",
+        "frame": 470
+      },
+      {
+        "actor": "lucan",
+        "action": "guard",
+        "frame": 488
+      }
+    ],
+    "progression_unchanged": true
+  },
+  "artifacts": {
+    "roster_minimum_150.png": "50cd885798c9ee7e52fab69aeb571cc544adc0c87ce0865c88fdc0db2a8d544b",
+    "draft_before_cancel.png": "d56093a625ada320aaefcea68d25b0a48a47c8ea6d9bcc0b004e33bf82d8089b",
+    "selection_after_reload.png": "958782510c8d34d3a58e181e4d6e8225bca757be835aa960f486b63ce33f4a58",
+    "three_member_battle.png": "e36ad1fed5e542e6dd13ed7a558f2ff2c23c96562d5ed804e6c94fe6d3c4ab21",
+    "roster_unavailable.png": "dd1c94a936b1f7a51546c948e0b9839b347e1efeb62d404cf158cb5c3ed344d5",
+    "event_locked.png": "39f9ce109588519b27b3686f99cfd4e493045d928c148ce68c83aac41da1583d",
+    "selection_gate.png": "a9836e9070a5f514ec6bb24a077dee2777469c6d110488922d9e137f4d2f019c",
+    "travel_trail.png": "54015be74eb51eb9458864baca8283e88f88bb4e30346ece8c95f53f09261dbd",
+    "party_system_silent.mp4": "3429afabe5bc7b8b68ca28c9b341756f082ff6eb3696ee43a7ed8e77ad71539e",
+    "roster_minimum_reason_end.png": "0f5821dba8277287136c416d8dab2ccafdbc8b684bd04e5ccb05344f592d6a70",
+    "roster_normal.png": "5d2173db7233cfeef67a4ca0a13bd217e205f9bc0638790731252adf47025161",
+    "three_member_battle_minimum_150.png": "c256987cb9efef10b7271be11f844f9a7302908847936f04bd2fa1365ff5ca47",
+    "party_menu.gif": "6e1e5f74c601e595143c5e6222b606167197e674473adf7634497292180d5ed5",
+    "mira_three_member_action.png": "80023e30d50a6a61d65becbd349b75129e4171d935b04e21e858bb923dd54885"
+  }
+}

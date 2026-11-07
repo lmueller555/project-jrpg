@@ -138,6 +138,8 @@ class CharacterAttributesGameplayTests(unittest.TestCase):
         game.social.flags.add('health_rebalance')
         self.assertTrue(game.save_progress())
         original = json.loads(self.path.read_text())
+        # The original save predates the party envelope and its Caelan alias.
+        original.pop('party',None)
         record = original['character_attributes']
         record.update(version=1, current_hp=150, current_mp=12)
         record['attributes'].update(hp=300, mag=13, spr=17)

@@ -8,12 +8,14 @@ import re
 
 from aether_lattice import AetherLattice
 from character_attributes import CharacterAttributes
+from party_state import MAX_PARTY, PartyState
 from quests import MILL_QUEST, QuestLog
 
 
 ROOT = Path(__file__).resolve().parent
 FIELDS = {'version', 'kind', 'receipt', 'stage', 'rewards', 'before', 'resources',
           'scene', 'position', 'facing', 'incapacitated'}
+PARTY_FIELDS = {'party_before', 'party_resources', 'party_active'}
 
 
 def _resources(value):
@@ -29,13 +31,14 @@ def valid_pending_snapshot(record, data=None):
     its receipt and final resources. Neither stores presentation clocks.
     """
     if record is None:return True
-    if (not isinstance(record, dict) or set(record) != FIELDS
+    if (not isinstance(record, dict) or set(record) not in (FIELDS, FIELDS | PARTY_FIELDS)
             or type(record['version']) is not int or record['version'] != 1
             or record['kind'] not in ('bat', 'mill')
             or record['stage'] not in ('pending', 'awarded')
             or not isinstance(record['receipt'], str)
             or not _resources(record['before']) or not _resources(record['resources'])
-            or record['before']['hp'] < 1 or record['resources']['hp'] < 1
+            or (record['before']['hp'] < 1 and 'party_active' not in record)
+            or record['resources']['hp'] < 1
             or type(record['incapacitated']) is not bool
             or record['facing'] not in ('front', 'back', 'left', 'right')
             or not isinstance(record['scene'], str)
@@ -43,11 +46,31 @@ def valid_pending_snapshot(record, data=None):
             or any(type(n) not in (int, float) or not math.isfinite(n) or abs(n) >= 1e7
                    for n in record['position'])):
         return False
+    has_party = 'party_active' in record
+    if has_party:
+        active = record['party_active']
+        known = PartyState(CharacterAttributes()).known_ids
+        if (not isinstance(active, list) or not 1 <= len(active) <= MAX_PARTY
+                or any(not isinstance(identifier, str) or identifier not in known for identifier in active)
+                or len(active) != len(set(active)) or active[0] != 'caelan'):
+            return False
+        for field in ('party_before', 'party_resources'):
+            values = record[field]
+            if (not isinstance(values, dict) or set(values) != set(active)
+                    or not all(_resources(value) for value in values.values())):return False
+        if (record['party_before']['caelan'] != record['before']
+                or record['party_resources']['caelan'] != record['resources']):return False
+        for identifier in active:
+            before, after = record['party_before'][identifier], record['party_resources'][identifier]
+            if after['mp'] > before['mp']:return False
+            if (identifier != 'caelan' or not record['incapacitated']) and after['hp'] > before['hp']:
+                return False
     mill = record['kind'] == 'mill'
     if mill:
         if record['receipt'] != 'mq02:ridgeback_tusker' or record['scene'] != 'upstream':return False
+        if has_party and 'mira' not in record['party_active']:return False
     elif (re.fullmatch(r'battle:[0-9a-f]{32}', record['receipt']) is None
-          or record['scene'] != 'eldenmere.playable' or record['incapacitated']):
+          or record['scene'] != 'eldenmere.playable' or (record['incapacitated'] and not has_party)):
         return False
     rewards = record['rewards']
     catalog = json.loads((ROOT/'assets/combat/enemies.json').read_text())['enemies']
@@ -77,6 +100,19 @@ def valid_pending_snapshot(record, data=None):
         if lattice.has_receipt(record['receipt']) != awarded:return False
         resources = record['resources'] if awarded else record['before']
         if (attributes.current_hp, attributes.current_mp) != (resources['hp'], resources['mp']):return False
+        if has_party:
+            party_data = data['party']
+            if party_data['characters']['caelan'] != data['character_attributes']:return False
+            party = PartyState(attributes)
+            if not party.restore(party_data) or list(party.active_ids) != record['party_active']:return False
+            expected = record['party_resources'] if awarded else record['party_before']
+            for identifier in record['party_active']:
+                member = party.characters[identifier]
+                for field in ('party_before', 'party_resources'):
+                    values = record[field][identifier]
+                    if values['hp'] > member.value('hp') or values['mp'] > member.value('mp'):return False
+                if (member.current_hp, member.current_mp) != (expected[identifier]['hp'], expected[identifier]['mp']):
+                    return False
         quests = QuestLog()
         if not quests.restore(data['quests']):return False
         if mill:

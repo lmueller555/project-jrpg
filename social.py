@@ -158,7 +158,8 @@ class SocialSystem:
         if speaker == 'caelan':return self.game.player
         identifier = self.data['speakers'][speaker].get('actor_id', speaker)
         return next((actor for actor in self.game.world.npcs
-                     if actor.data['id'] == identifier), None)
+                     if actor.data['id'] == identifier
+                     and not getattr(actor, 'party_travelling', False)), None)
 
     def anchor_position(self):
         """World-space opaque head position, including authored action poses."""
@@ -214,6 +215,7 @@ class SocialSystem:
             departed = self._conversation_world is not None and self._conversation_world is not game.world
             if self.actor is not None:
                 departed = (departed or self.actor not in game.world.npcs or
+                            getattr(self.actor, 'party_travelling', False) or
                             game.player.position.distance_to(self.actor.position) > self.data['release_radius'])
             elif self._script_origin is not None:
                 departed = departed or game.player.position.distance_to(self._script_origin) > self.data['release_radius']
@@ -232,6 +234,7 @@ class SocialSystem:
         opening = getattr(game, 'opening', None)
         visits = getattr(game, 'household_visits', ())
         for actor in game.world.npcs:
+            if getattr(actor, 'party_travelling', False):continue
             if actor in self.blocked or actor.data['id'] not in self.profiles:continue
             if opening is not None and not opening.can_speak(actor.data['id']):continue
             if any(not visit.can_speak(actor.data['id']) for visit in visits):continue
@@ -247,7 +250,7 @@ class SocialSystem:
             self.start(min(candidates, key=lambda item:item[:2])[2])
 
     def start(self, actor):
-        if self.locked:return False
+        if self.locked or getattr(actor, 'party_travelling', False):return False
         opening = getattr(self.game, 'opening', None)
         if opening is not None and not opening.can_speak(actor.data['id']):return False
         for visit in getattr(self.game, 'household_visits', ()):
@@ -258,7 +261,8 @@ class SocialSystem:
         conversation = next((c for c in profile['conversations'] if self._eligible(c)), None)
         if conversation is None:return False
         lines = conversation['lines']
-        present = {npc.data['id'] for npc in self.game.world.npcs}
+        present = {npc.data['id'] for npc in self.game.world.npcs
+                   if not getattr(npc, 'party_travelling', False)}
         for identifier, alternative in conversation.get('absent_actor_lines', {}).items():
             if identifier not in present:
                 lines = alternative;break

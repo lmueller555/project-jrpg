@@ -16,8 +16,8 @@ class SanctuaryReserveWorld(World):
         nearest = min(self.data['landmarks'],key=lambda p:pygame.Vector2(p['position']).distance_squared_to(position))
         return nearest['name'] if pygame.Vector2(nearest['position']).distance_to(position)<110 else self.data['name']
 
-    def draw(self,target,camera,player,elapsed_ms,include_ui=True):
-        super().draw(target,camera,player,elapsed_ms,include_ui)
+    def draw(self,target,camera,player,elapsed_ms,include_ui=True,party_actors=()):
+        super().draw(target,camera,player,elapsed_ms,include_ui,party_actors=party_actors)
         # A few slow currents are visible in the grove. Their tiny native
         # glimmers accompany the retained plate's faint lights, not a new rune.
         record = self.data['confluence_motes'];cx,cy = record['center']
