@@ -14,6 +14,7 @@ from battle_choreography import sample as sample_choreography
 from battle_action_fx import BattleActionEffects, target_reaction
 from battle_action_audio import BattleActionAudio
 from combat_motion_art import MOTION_STATES, frame as motion_frame, anchors as motion_anchors
+from mira_combat_art import MiraCombatArt
 
 from ui_style import FOREST, FOREST_DARK, FOREST_LIGHT, IVORY, GOLD, BRASS, MUTED
 
@@ -104,6 +105,7 @@ class BattleScene:
         self._tutorial_seen = set()
         self.tutorial_continue_rect = pygame.Rect(354, 61, 90, 20)
         self.sprites = sprites if sprites is not None else CombatSprites()
+        self.mira_art = MiraCombatArt() if model.combatant('mira') is not None else None
         if model.weapon_equipped:
             from gearblade_art import prepare_combat_art
             prepare_combat_art()
@@ -718,6 +720,12 @@ class BattleScene:
         if action is not self._cue_action:
             self._cue_action = action
             self._cue_phases.clear()
+        if (action is not None and action.actor == 'mira'
+                and action.action == 'bolt_shot' and self.mira_art is not None):
+            if action.elapsed >= self.mira_art.release_at and 'mira_release' not in self._cue_phases:
+                self._cue_phases.add('mira_release')
+                self.action_audio.play('focus')
+            return
         sample = self._choreography(action)
         if sample is None or sample.phase in self._cue_phases:return
         self._cue_phases.add(sample.phase)
@@ -833,6 +841,8 @@ class BattleScene:
             age = reaction['age']
             if actor == 'player':
                 return ('guard_impact' if reaction['guarded'] else 'hurt_recover'), age*1000
+            if actor == 'mira' and reaction['guarded']:
+                return 'guard_impact', age*1000
             return 'hurt', age*1000
         if combatant.hp <= 0:
             return 'defeat', max(0., self._elapsed-self._defeat_times.get(actor, 0)-.18)*1000
@@ -841,6 +851,8 @@ class BattleScene:
         if action is not None and action.actor == actor:
             sequence = self._choreography(action)
             if sequence is not None:return sequence.pose, sequence.pose_ms
+            if actor == 'mira' and action.kind == 'guard':
+                return 'guard_enter', action.elapsed*1000
             state = ('aether_edge' if actor == 'player' and action.action == 'aether_edge' else
                      'overclock' if action.kind == 'haste' else
                      'cast' if action.kind in ('magical', 'enchant', 'failed_edge') else 'guard' if action.kind == 'guard'
@@ -921,15 +933,7 @@ class BattleScene:
             for offset in (-9, 9):
                 pygame.draw.circle(canvas, '#d8f7ff',
                                    (round(point.x+offset), round(point.y-25)), 2)
-        if action is not None and action.action == 'bolt_shot' and not action.resolved:
-            fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
-            start = positions[action.actor]+(-33, -40)
-            end = positions[action.target]+(12, -38)
-            point = start.lerp(end, fraction)
-            pygame.draw.line(canvas, '#bd8751', (round(point.x+7), round(point.y)),
-                             (round(point.x), round(point.y)), 3)
-            pygame.draw.line(canvas, '#f1cd77', (round(point.x+3), round(point.y)),
-                             (round(point.x-3), round(point.y)), 1)
+        self._draw_mira_effects(canvas)
         if (action is not None and action.kind == 'magical' and not action.resolved
                 and not getattr(action, 'choreography', None)):
             fraction = max(0, min(1, action.elapsed/max(.001, action.impact_at)))
@@ -940,6 +944,42 @@ class BattleScene:
                 color = ('#376ea2', '#72c8f0', '#d8f7ff')[index]
                 pygame.draw.circle(canvas, color, (round(point.x), round(point.y)), radius)
         self._draw_foreground(canvas)
+
+    def _mira_shot(self):
+        action = self.model.current_action
+        if (self.mira_art is None or action is None or action.actor != 'mira'
+                or action.action != 'bolt_shot'):
+            return None
+        homes = self._home_positions()
+        return self.mira_art.shot(action.elapsed, action.impact_at, homes['mira'],
+                                  self._hit_point(action.target, homes), resolved=action.resolved)
+
+    def _draw_mira_effects(self, canvas):
+        shot = self._mira_shot()
+        if shot is not None:
+            if shot['projectile'] is not None:
+                point = pygame.Vector2(shot['projectile'])
+                direction = pygame.Vector2(shot['target']) - pygame.Vector2(shot['origin'])
+                direction = direction.normalize() if direction.length_squared() else pygame.Vector2(-1, 0)
+                tail = point-direction*7
+                pygame.draw.line(canvas, '#bd8751', tuple(round(n) for n in tail),
+                                 tuple(round(n) for n in point), 2)
+                pygame.draw.line(canvas, '#f1cd77', tuple(round(n) for n in point-direction*3),
+                                 tuple(round(n) for n in point), 1)
+            if shot['flash'] and not self.reduced_motion:
+                x, y = (round(n) for n in shot['muzzle'])
+                # A small spring-release glint, not a firearm's fireball.
+                pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
+                pygame.draw.line(canvas, '#f8f0d9', (x-3, y+2), (x-1, y+1), 1)
+        action = self.model.current_action
+        if (self.mira_art is not None and action is not None and action.actor == 'mira'
+                and action.action == 'overclock' and action.impact_at <= action.elapsed < action.impact_at+.08
+                and not self.reduced_motion):
+            point = self.mira_art.world_anchor('overclock', action.elapsed*1000, 'controller',
+                                               self._home_positions()['mira'])
+            x, y = (round(n) for n in point)
+            pygame.draw.line(canvas, '#f1cd77', (x-3, y-2), (x-1, y-1), 1)
+            pygame.draw.line(canvas, '#f8f0d9', (x+3, y-2), (x+1, y-1), 1)
 
     @staticmethod
     def _bar(painter, rect, fraction, color):

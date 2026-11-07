@@ -113,7 +113,10 @@ class RivetGameplayTests(unittest.TestCase):
                 # real Skills UI before exercising ordinary bot controls.
                 click(game, scene.command_rects['skills'].center)
                 game.draw()
-                click(game, scene.command_rects['nature_edge'].center)
+                # The gear now gates attempts too; use its settled focus.
+                attempt = {'nature': 'nature_edge', 'water': 'aqua_edge',
+                           'fire': 'flame_edge'}[scene.model.active_gem]
+                click(game, scene.command_rects[attempt].center)
             else:
                 click(game, scene.command_rects['guard'].center)
         else:

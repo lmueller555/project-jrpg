@@ -93,7 +93,7 @@
     "mira": {
       "manifest": {
         "file": "assets/combat/mira/animation.json",
-        "sha256": "be1e54dd090e356d2c89a2d20599ff8be1dec64c7e384e4a46604a57113741d1"
+        "sha256": "bd00315640b7bc5f1ec4fe7850f47a408d148d773c86ba71b12430c575668b9c"
       },
       "frames": [
         {
@@ -102,7 +102,7 @@
             64,
             64
           ],
-          "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+          "sha256": "76a8f45be703ca865802a4b0d3caa5a93386450870f4208062eff7983675aa74"
         },
         {
           "file": "assets/combat/mira/idle_01.png",
@@ -110,7 +110,7 @@
             64,
             64
           ],
-          "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+          "sha256": "76a8f45be703ca865802a4b0d3caa5a93386450870f4208062eff7983675aa74"
         },
         {
           "file": "assets/combat/mira/idle_02.png",
@@ -118,7 +118,23 @@
             64,
             64
           ],
-          "sha256": "d5abf30d3aa9a226e7c53c983cdd772b079342fc5d15c31deb90e7558dc2e487"
+          "sha256": "c469d4c653822000228921454329b1fbcb71e62714211e74c20f19d3bc766d33"
+        },
+        {
+          "file": "assets/combat/mira/idle_03.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "01ec1ce6fc294e9a8d9f683ee51e4a1ad3d279aae2f81d7d73fcb4bda343fd4b"
+        },
+        {
+          "file": "assets/combat/mira/idle_04.png",
+          "dimensions": [
+            64,
+            64
+          ],
+          "sha256": "1174c12324764f358b21318097d038e05010c594e52fad90ff1992987cc089da"
         }
       ],
       "pixel_changes": false
@@ -285,7 +301,7 @@
         64,
         64
       ],
-      "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+      "sha256": "76a8f45be703ca865802a4b0d3caa5a93386450870f4208062eff7983675aa74"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/mira/ready_02.png",
@@ -293,7 +309,23 @@
         64,
         64
       ],
-      "sha256": "d5abf30d3aa9a226e7c53c983cdd772b079342fc5d15c31deb90e7558dc2e487"
+      "sha256": "c469d4c653822000228921454329b1fbcb71e62714211e74c20f19d3bc766d33"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_03.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "01ec1ce6fc294e9a8d9f683ee51e4a1ad3d279aae2f81d7d73fcb4bda343fd4b"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/actors/mira/ready_04.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "1174c12324764f358b21318097d038e05010c594e52fad90ff1992987cc089da"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/mira/stand.png",
@@ -301,7 +333,7 @@
         64,
         64
       ],
-      "sha256": "fd27bf43d749ae94bb07eeac27a7531c80e919ffbf8d17f8e59e77fdf648f93b"
+      "sha256": "76a8f45be703ca865802a4b0d3caa5a93386450870f4208062eff7983675aa74"
     },
     {
       "file": "assets/story/ice_reaper_opening/actors/rhea/stand.png",
@@ -366,6 +398,22 @@
         96
       ],
       "sha256": "0afcb40ebbd15334ebce96f43936bccc0d1bfefa9f18c660b1e6fd4561fef4c5"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/portraits/rhea_awakening.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "893d3ee4922f045edad361c2d809b709db4de4b87da3b676060723cb5dcc12dd"
+    },
+    {
+      "file": "assets/story/ice_reaper_opening/portraits/rhea_awakening_shawl.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "a1b7e41dff37b9ebcd4caba9d45acbba426c0d90fdca79045e6ad6bb3d93c178"
     }
   ],
   "registration": {

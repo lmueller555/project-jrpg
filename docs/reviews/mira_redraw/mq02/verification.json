@@ -1,0 +1,1407 @@
+{
+  "silent": true,
+  "size": [
+    960,
+    640
+  ],
+  "fps": 30,
+  "production_video": "mq02_gear_combat_silent.mp4",
+  "production_seconds": 90.96666666666667,
+  "reel_video": "four_gem_fx_silent.mp4",
+  "reel_seconds": 38.5,
+  "production_fixture": "Prior MQ01 public-API handoff + prelude station placement only; MQ02 gift and combat run through production input/update/draw.",
+  "production_overrides": "RNG seed 7 only; no HP/MP/ATB/phase/action/animation timer overrides.",
+  "reel_fixture": "Explicit 1000000-HP harmless slow Bat and fixed 100% damage variance; learned Aether Edge; production action definitions and real selector/menu input.",
+  "source_and_art_fingerprints_unchanged": true,
+  "observations": [
+    {
+      "video_seconds": 0.0,
+      "observation": "launcher_carried",
+      "mira_armed": true
+    },
+    {
+      "video_seconds": 45.9,
+      "observation": "hover_global_slow",
+      "multiplier": 0.25,
+      "before": {
+        "player": 4.807265696626928e-16,
+        "mira": 0.1500000000000185,
+        "rivet": 0.8500000000000048,
+        "enemy": 0.9000000000000034
+      },
+      "after": {
+        "player": 0.024000000000000476,
+        "mira": 0.17520000000001873,
+        "rivet": 0.8728000000000042,
+        "enemy": 0.9228000000000028
+      }
+    },
+    {
+      "video_seconds": 90.967,
+      "observation": "saved_settled_gem",
+      "gem": "water",
+      "ability_state": {
+        "version": 1,
+        "characters": {
+          "caelan": {
+            "equipped_weapon": "caelan_gearblade",
+            "first_weapon_acquired": true
+          },
+          "edran": {
+            "equipped_weapon": null,
+            "first_weapon_acquired": false
+          },
+          "lucan": {
+            "equipped_weapon": null,
+            "first_weapon_acquired": false
+          },
+          "mira": {
+            "equipped_weapon": null,
+            "first_weapon_acquired": false
+          },
+          "rhea": {
+            "equipped_weapon": null,
+            "first_weapon_acquired": false
+          }
+        }
+      }
+    }
+  ],
+  "reel": [
+    {
+      "gem": "nature",
+      "snapshot": "fx_nature.png",
+      "video_seconds": 7.733333333333333,
+      "action": "aether_edge",
+      "kind": "spellblade",
+      "snapshot_at": 0.26666666666666666,
+      "damage": 27,
+      "mp_after": 26
+    },
+    {
+      "gem": "water",
+      "snapshot": "fx_water.png",
+      "video_seconds": 17.933333333333334,
+      "action": "aether_edge",
+      "kind": "spellblade",
+      "snapshot_at": 0.26666666666666666,
+      "damage": 27,
+      "mp_after": 22
+    },
+    {
+      "gem": "fire",
+      "snapshot": "fx_fire.png",
+      "video_seconds": 28.233333333333334,
+      "action": "aether_edge",
+      "kind": "spellblade",
+      "snapshot_at": 0.26666666666666666,
+      "damage": 27,
+      "mp_after": 18
+    },
+    {
+      "gem": "ice",
+      "snapshot": "fx_ice.png",
+      "video_seconds": 37.7,
+      "action": "aether_edge",
+      "kind": "spellblade",
+      "snapshot_at": 0.26666666666666666,
+      "damage": 27,
+      "mp_after": 14
+    }
+  ],
+  "inputs": [
+    {
+      "video_seconds": 1.2,
+      "input": "e",
+      "reason": "Take the authored north-road link"
+    },
+    {
+      "video_seconds": 5.267,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 5.933,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 6.6,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 14.433,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 14.833,
+      "input": "click",
+      "logical_position": [
+        432,
+        254
+      ],
+      "reason": "Choose guard"
+    },
+    {
+      "video_seconds": 14.833,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 24.667,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 25.333,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 25.333,
+      "input": "drag",
+      "from": "water",
+      "to": "nature",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 25.9,
+      "input": "click",
+      "logical_position": [
+        432,
+        238
+      ],
+      "reason": "Open elemental lesson Skills"
+    },
+    {
+      "video_seconds": 26.3,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose nature_edge"
+    },
+    {
+      "video_seconds": 26.3,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 27.467,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 28.133,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 28.8,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 29.467,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 30.133,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 30.8,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 39.667,
+      "input": "drag",
+      "from": "nature",
+      "to": "fire",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 40.233,
+      "input": "click",
+      "logical_position": [
+        432,
+        238
+      ],
+      "reason": "Open elemental lesson Skills"
+    },
+    {
+      "video_seconds": 40.633,
+      "input": "click",
+      "logical_position": [
+        432,
+        254
+      ],
+      "reason": "Choose flame_edge"
+    },
+    {
+      "video_seconds": 40.633,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 42.3,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 42.967,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 43.633,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 44.3,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 45.3,
+      "input": "motion",
+      "logical_position": [
+        86,
+        281
+      ],
+      "reason": "Hover over gear: all charging gauges use 25% speed"
+    },
+    {
+      "video_seconds": 45.9,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Resume ordinary ATB charging"
+    },
+    {
+      "video_seconds": 53.2,
+      "input": "space",
+      "reason": "Acknowledge authored MQ02 guidance"
+    },
+    {
+      "video_seconds": 53.2,
+      "input": "click",
+      "logical_position": [
+        432,
+        238
+      ],
+      "reason": "Open mira Skills"
+    },
+    {
+      "video_seconds": 53.2,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose overclock"
+    },
+    {
+      "video_seconds": 53.2,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 55.3,
+      "input": "drag",
+      "from": "fire",
+      "to": "ice",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 55.867,
+      "input": "click",
+      "logical_position": [
+        432,
+        238
+      ],
+      "reason": "Open player Skills"
+    },
+    {
+      "video_seconds": 55.867,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose aether_edge"
+    },
+    {
+      "video_seconds": 55.867,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 64.233,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose attack"
+    },
+    {
+      "video_seconds": 64.233,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 67.333,
+      "input": "click",
+      "logical_position": [
+        432,
+        254
+      ],
+      "reason": "Choose guard"
+    },
+    {
+      "video_seconds": 67.333,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 74.2,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose attack"
+    },
+    {
+      "video_seconds": 74.2,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 76.8,
+      "input": "drag",
+      "from": "ice",
+      "to": "water",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 77.367,
+      "input": "click",
+      "logical_position": [
+        432,
+        238
+      ],
+      "reason": "Open player Skills"
+    },
+    {
+      "video_seconds": 77.367,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose aether_edge"
+    },
+    {
+      "video_seconds": 77.367,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 85.233,
+      "input": "click",
+      "logical_position": [
+        432,
+        222
+      ],
+      "reason": "Choose attack"
+    },
+    {
+      "video_seconds": 85.233,
+      "input": "motion",
+      "logical_position": [
+        470,
+        180
+      ],
+      "reason": "Leave the selector after committing a command"
+    },
+    {
+      "video_seconds": 90.967,
+      "input": "click",
+      "logical_position": [
+        382,
+        280
+      ],
+      "reason": "Continue from awarded Spoils"
+    },
+    {
+      "video_seconds": 90.967,
+      "input": "drag",
+      "from": "water",
+      "to": "nature",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 90.967,
+      "input": "drag",
+      "from": "nature",
+      "to": "water",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 90.967,
+      "input": "drag",
+      "from": "water",
+      "to": "fire",
+      "reason": "Seat the matching elemental focus"
+    },
+    {
+      "video_seconds": 90.967,
+      "input": "drag",
+      "from": "fire",
+      "to": "ice",
+      "reason": "Seat the matching elemental focus"
+    }
+  ],
+  "events": [
+    {
+      "video_seconds": 4.2,
+      "type": "bot_deployed",
+      "actor": "rivet",
+      "owner": "mira"
+    },
+    {
+      "video_seconds": 4.2,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "prepare_charge",
+      "target": "enemy",
+      "name": "Lowered Tusks"
+    },
+    {
+      "video_seconds": 4.567,
+      "type": "telegraph",
+      "actor": "enemy",
+      "action": "prepare_charge",
+      "target": "player"
+    },
+    {
+      "video_seconds": 12.933,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "video_seconds": 13.133,
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 13.733,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 14.833,
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "video_seconds": 15.0,
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 15.4,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "tusker_charge",
+      "target": "player",
+      "name": "Bankbreaker Charge"
+    },
+    {
+      "video_seconds": 15.9,
+      "type": "impact",
+      "actor": "enemy",
+      "action": "tusker_charge",
+      "target": "player",
+      "damage": 19,
+      "remaining_hp": 121,
+      "guarded": true,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 16.733,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 17.133,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 65,
+      "remaining_hp": 635,
+      "guarded": false,
+      "frame_age": 0.00438596491228966
+    },
+    {
+      "video_seconds": 22.867,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "video_seconds": 23.067,
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 23.967,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 26.3,
+      "type": "action_started",
+      "actor": "player",
+      "action": "nature_edge",
+      "target": "player",
+      "name": "Nature Edge"
+    },
+    {
+      "video_seconds": 26.767,
+      "type": "spellblade_failed",
+      "actor": "player",
+      "action": "nature_edge"
+    },
+    {
+      "video_seconds": 31.5,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "name": "Tusk Strike"
+    },
+    {
+      "video_seconds": 31.967,
+      "type": "impact",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "damage": 12,
+      "remaining_hp": 288,
+      "guarded": true,
+      "frame_age": 0.021052631578956323
+    },
+    {
+      "video_seconds": 32.733,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 33.133,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 71,
+      "remaining_hp": 564,
+      "guarded": false,
+      "frame_age": 0.008771929824579368
+    },
+    {
+      "video_seconds": 38.233,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "guard",
+      "target": "mira",
+      "name": "Guard"
+    },
+    {
+      "video_seconds": 38.433,
+      "type": "guard",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 39.633,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 40.633,
+      "type": "action_started",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "name": "Aether Edge"
+    },
+    {
+      "video_seconds": 41.6,
+      "type": "impact",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "damage": 24,
+      "remaining_hp": 540,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 41.6,
+      "type": "spellblade_discovered",
+      "actor": "player",
+      "action": "aether_edge"
+    },
+    {
+      "video_seconds": 46.4,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "name": "Tusk Strike"
+    },
+    {
+      "video_seconds": 46.833,
+      "type": "impact",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "damage": 11,
+      "remaining_hp": 277,
+      "guarded": true,
+      "frame_age": 0.008771929824579756
+    },
+    {
+      "video_seconds": 47.633,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 48.033,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 69,
+      "remaining_hp": 471,
+      "guarded": false,
+      "frame_age": 0.029824561403536128
+    },
+    {
+      "video_seconds": 52.5,
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 53.2,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "overclock",
+      "target": "rivet",
+      "name": "Overclock"
+    },
+    {
+      "video_seconds": 53.667,
+      "type": "haste_applied",
+      "actor": "mira",
+      "target": "rivet",
+      "action": "overclock",
+      "remaining_turns": 8,
+      "rate_multiplier": 1.5
+    },
+    {
+      "video_seconds": 55.267,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 55.867,
+      "type": "action_started",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "name": "Aether Edge"
+    },
+    {
+      "video_seconds": 56.833,
+      "type": "impact",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "damage": 24,
+      "remaining_hp": 447,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 58.333,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 58.733,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 67,
+      "remaining_hp": 380,
+      "guarded": false,
+      "frame_age": 0.019632414369341607
+    },
+    {
+      "video_seconds": 59.133,
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 7
+    },
+    {
+      "video_seconds": 59.633,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "prepare_charge",
+      "target": "enemy",
+      "name": "Lowered Tusks"
+    },
+    {
+      "video_seconds": 60.033,
+      "type": "telegraph",
+      "actor": "enemy",
+      "action": "prepare_charge",
+      "target": "player"
+    },
+    {
+      "video_seconds": 64.2,
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 64.233,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "name": "Bolt Shot"
+    },
+    {
+      "video_seconds": 64.6,
+      "type": "impact",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "damage": 52,
+      "remaining_hp": 328,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 65.133,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 65.533,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 64,
+      "remaining_hp": 264,
+      "guarded": false,
+      "frame_age": 0.02890559732657739
+    },
+    {
+      "video_seconds": 65.933,
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 6
+    },
+    {
+      "video_seconds": 67.3,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 67.333,
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "video_seconds": 67.5,
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 69.233,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "tusker_charge",
+      "target": "player",
+      "name": "Bankbreaker Charge"
+    },
+    {
+      "video_seconds": 69.733,
+      "type": "impact",
+      "actor": "enemy",
+      "action": "tusker_charge",
+      "target": "player",
+      "damage": 20,
+      "remaining_hp": 101,
+      "guarded": true,
+      "frame_age": 0.0175438596491544
+    },
+    {
+      "video_seconds": 71.933,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 72.333,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 66,
+      "remaining_hp": 198,
+      "guarded": false,
+      "frame_age": 0.03103592314130666
+    },
+    {
+      "video_seconds": 72.733,
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 5
+    },
+    {
+      "video_seconds": 74.167,
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 74.2,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "name": "Bolt Shot"
+    },
+    {
+      "video_seconds": 74.567,
+      "type": "impact",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "damage": 48,
+      "remaining_hp": 150,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 76.767,
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "video_seconds": 77.367,
+      "type": "action_started",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "name": "Aether Edge"
+    },
+    {
+      "video_seconds": 78.333,
+      "type": "impact",
+      "actor": "player",
+      "action": "aether_edge",
+      "target": "enemy",
+      "damage": 24,
+      "remaining_hp": 126,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 80.5,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 80.9,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 68,
+      "remaining_hp": 58,
+      "guarded": false,
+      "frame_age": 0.028404344193967763
+    },
+    {
+      "video_seconds": 81.3,
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 4
+    },
+    {
+      "video_seconds": 81.8,
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "name": "Tusk Strike"
+    },
+    {
+      "video_seconds": 82.233,
+      "type": "impact",
+      "actor": "enemy",
+      "action": "tusk_strike",
+      "target": "mira",
+      "damage": 24,
+      "remaining_hp": 253,
+      "guarded": false,
+      "frame_age": 0.0052631578947796645
+    },
+    {
+      "video_seconds": 85.2,
+      "type": "player_ready",
+      "actor": "mira"
+    },
+    {
+      "video_seconds": 85.233,
+      "type": "action_started",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "name": "Bolt Shot"
+    },
+    {
+      "video_seconds": 85.6,
+      "type": "impact",
+      "actor": "mira",
+      "action": "bolt_shot",
+      "target": "enemy",
+      "damage": 48,
+      "remaining_hp": 10,
+      "guarded": false,
+      "frame_age": 0.0
+    },
+    {
+      "video_seconds": 87.367,
+      "type": "action_started",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "name": "Piston Jab"
+    },
+    {
+      "video_seconds": 87.767,
+      "type": "impact",
+      "actor": "rivet",
+      "action": "piston_jab",
+      "target": "enemy",
+      "damage": 66,
+      "remaining_hp": 0,
+      "guarded": false,
+      "frame_age": 0.009106098579704965
+    },
+    {
+      "video_seconds": 88.167,
+      "type": "haste_tick",
+      "actor": "rivet",
+      "remaining_turns": 3
+    },
+    {
+      "video_seconds": 88.167,
+      "type": "bot_removed",
+      "actor": "rivet",
+      "owner": "mira"
+    },
+    {
+      "video_seconds": 88.167,
+      "type": "result",
+      "outcome": "victory"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "01_launcher_carried.png",
+      "label": "Launcher carried after the authored reunion",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 0.0
+    },
+    {
+      "file": "guidance_01.png",
+      "label": "Watch its head. It\u2019s digging in.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 4.6
+    },
+    {
+      "file": "guidance_02.png",
+      "label": "Should I move?",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 5.267
+    },
+    {
+      "file": "guidance_03.png",
+      "label": "Brace first. Keep the blade between you and its tusks.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 5.933
+    },
+    {
+      "file": "guidance_04.png",
+      "label": "Steady. Get your footing.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 13.767
+    },
+    {
+      "file": "opening_guard.png",
+      "label": "Opening lesson: Guard first",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 14.433
+    },
+    {
+      "file": "guarded_charge.png",
+      "label": "The required opening Guard meets the charge",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 15.9
+    },
+    {
+      "file": "guidance_05.png",
+      "label": "Now\u2014while it\u2019s turning. Choose a focus.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 24.0
+    },
+    {
+      "file": "guidance_06.png",
+      "label": "The catch at the top, Cael. Turn a gem into it, then draw your aether through the blade.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 24.667
+    },
+    {
+      "file": "gear_drag.png",
+      "label": "Captured gear gesture, with no command accepted",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 25.333
+    },
+    {
+      "file": "first_edge_skills.png",
+      "label": "Matching focus gates the temporary lesson choices",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 25.9
+    },
+    {
+      "file": "first_attempt.png",
+      "label": "First elemental attempt, before failure",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 26.5
+    },
+    {
+      "file": "failed_attempt.png",
+      "label": "Failed first focus: no damage and no MP cost",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 26.767
+    },
+    {
+      "file": "guidance_07.png",
+      "label": "It didn\u2019t\u2014",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 26.8
+    },
+    {
+      "file": "guidance_08.png",
+      "label": "Stay with me.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 27.467
+    },
+    {
+      "file": "guidance_09.png",
+      "label": "*breathing quickly* I turned it. I\u2019m trying, but nothing\u2019s happening!",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 28.133
+    },
+    {
+      "file": "guidance_10.png",
+      "label": "Cael, look at the blade. Use it as the focus. Direct your aether through it.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 28.8
+    },
+    {
+      "file": "guidance_11.png",
+      "label": "I don\u2019t know if I can do that here.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 29.467
+    },
+    {
+      "file": "guidance_12.png",
+      "label": "Wait for your opening. I\u2019m here.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 30.133
+    },
+    {
+      "file": "second_edge_skills.png",
+      "label": "Matching focus gates the temporary lesson choices",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 40.233
+    },
+    {
+      "file": "aether_fire.png",
+      "label": "Non-elemental Aether Edge \u00b7 fire",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 40.833
+    },
+    {
+      "file": "guidance_13.png",
+      "label": "That wasn\u2019t what I was trying to do.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 41.633
+    },
+    {
+      "file": "guidance_14.png",
+      "label": "It struck. Can you do that again?",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 42.3
+    },
+    {
+      "file": "guidance_15.png",
+      "label": "I think so. But the focus\u2014",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 42.967
+    },
+    {
+      "file": "guidance_16.png",
+      "label": "Go with it. We\u2019ll work out the rest when we\u2019re clear.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 43.633
+    },
+    {
+      "file": "hover_slow.png",
+      "label": "Gear hover: global charging falls to 25%",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 45.3
+    },
+    {
+      "file": "guidance_17.png",
+      "label": "Rivet, keep it busy. I can cover you both from here.",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 52.533
+    },
+    {
+      "file": "aether_ice.png",
+      "label": "Non-elemental Aether Edge \u00b7 ice",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 56.067
+    },
+    {
+      "file": "aether_water.png",
+      "label": "Non-elemental Aether Edge \u00b7 water",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 77.567
+    },
+    {
+      "file": "victory.png",
+      "label": "Victory after real selector input and normal battle clocks",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 88.2
+    },
+    {
+      "file": "spoils.png",
+      "label": "One settled victory receipt, with no transient gear state",
+      "size": [
+        960,
+        640
+      ],
+      "video_seconds": 90.167
+    }
+  ],
+  "actions": {
+    "prepare_charge": 2,
+    "guard": 5,
+    "tusker_charge": 2,
+    "piston_jab": 8,
+    "nature_edge": 1,
+    "tusk_strike": 3,
+    "aether_edge": 3,
+    "overclock": 1,
+    "bolt_shot": 3
+  },
+  "retained_review_artifacts": [
+    "mq02_gear_combat_silent.mp4",
+    "opening_guard.png",
+    "failed_attempt.png",
+    "second_edge_skills.png",
+    "victory.png",
+    "spoils.png",
+    "fingerprints.json",
+    "verification.json"
+  ],
+  "retention_note": "Full production MQ02 video and selected key stills retained. The capture driver also generated its unchanged auxiliary four-focus reel; that reel and unselected stills are omitted from this Mira-focused review."
+}

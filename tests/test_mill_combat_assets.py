@@ -69,7 +69,8 @@ class MillCombatAssetTests(unittest.TestCase):
     def test_mira_has_complete_unclipped_launcher_overclock_and_recovery_poses(self):
         self.assert_complete_actor('mira', (64, 64), (32, 54), 'left',
                                    {'idle', 'attack', 'guard', 'hurt', 'victory',
-                                    'defeat', 'walk', 'bolt_shot', 'overclock', 'flee'}, 19)
+                                    'defeat', 'walk', 'bolt_shot', 'overclock', 'flee',
+                                    'guard_enter', 'guard_impact'}, 42)
 
     def test_tusker_has_distinct_native_preparation_charge_and_collapse_poses(self):
         self.assert_complete_actor('ridgeback_tusker', (96, 72), (48, 62), 'right',
@@ -94,7 +95,7 @@ class MillCombatAssetTests(unittest.TestCase):
                 records = {record['source_cell']: record
                            for state in data['animations'].values()
                            for record in state['frames']}
-                self.assertEqual(set(records), set(range(19 if actor == 'mira' else 16)))
+                self.assertEqual(set(records), set(range(42 if actor == 'mira' else 16)))
                 for record in records.values():
                     left, top, right, bottom = record['source_bounds']
                     self.assertTrue(0 <= left < right <= width)
@@ -107,14 +108,19 @@ class MillCombatAssetTests(unittest.TestCase):
                                      ('ridgeback_tusker', 'charge', 'tusker_charge')):
             with self.subTest(actor=actor, action=action):
                 frames = manifest(actor)['animations'][state]['frames']
-                self.assertEqual(len(frames), 3)
+                self.assertEqual(len(frames), 8 if actor == 'mira' else 3)
                 self.assertEqual(sum(frame['duration_ms'] for frame in frames),
                                  round(actions[action]['duration']*1000))
                 impact = actions[action]['impact_at']*1000
-                self.assertLessEqual(frames[0]['duration_ms'], impact)
-                self.assertLess(impact, frames[0]['duration_ms']+frames[1]['duration_ms'])
+                clock = 0
+                for contact in frames:
+                    if clock <= impact < clock + contact['duration_ms']:
+                        break
+                    clock += contact['duration_ms']
+                else:
+                    self.fail('No authored drawing at the action impact')
                 actual, anchor = self.sprites.frame(actor, action, impact)
-                expected = pygame.image.load(str(ART/actor/frames[1]['file']))
+                expected = pygame.image.load(str(ART/actor/contact['file']))
                 self.assertEqual(pygame.image.tobytes(actual, 'RGBA'),
                                  pygame.image.tobytes(expected, 'RGBA'))
                 self.assertEqual(anchor, tuple(manifest(actor)['anchor']))

@@ -1,5 +1,10 @@
 # Machinist combat art
 
+Mira's 19-pose atlas below is retained as historical source and for the unchanged
+overworld launcher. Her current 42-drawing combat bank is documented in
+[`../mira_redraw/README.md`](../mira_redraw/README.md). Both build entry points
+dispatch to that exporter for Mira; Rivet continues to use this original atlas.
+
 Both source atlases were authored with `image_gen.imagegen` on 2026-11-02.
 The complete generation prompts and reference are retained in `generation.json`.
 Mira's atlas is an imagegen edit of the existing Mira source, preserving her
