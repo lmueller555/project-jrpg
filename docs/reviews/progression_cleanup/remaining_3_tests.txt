@@ -1,0 +1,123 @@
+........F........................ [  7%]
+...........F..................... [ 14%]
+.................................................... [ 26%]
+........................................... [ 35%]
+................F................................................................ [ 53%]
+........................................... [ 63%]
+............................................................... [ 77%]
+......................... [ 83%]
+........F......F.......... [ 88%]
+..................................................                       [100%]
+=================================== FAILURES ===================================
+_______ CaelanDirectionalRunTests.test_approved_frames_and_protected_art _______
+
+self = <test_caelan_directional_runs.CaelanDirectionalRunTests testMethod=test_approved_frames_and_protected_art>
+
+    def test_approved_frames_and_protected_art(self):
+        data=json.loads((REVIEW/'approval.json').read_text())
+        for name,digest in data['approved_frames_sha256'].items():
+            self.assertEqual(hashlib.sha256((BASE/name).read_bytes()).hexdigest(),digest,name)
+        for name,digest in data['protected_inputs_sha256'].items():
+>           self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+E           AssertionError: '35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795' != 'adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8'
+E           - 35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795
+E           + adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8
+E            : assets/characters/caelan/README.md
+
+tests/test_caelan_directional_runs.py:19: AssertionError
+__ BuildingDoors.test_all_thirteen_rooms_have_reachable_exits_and_furnishings __
+
+self = <test_doors.BuildingDoors testMethod=test_all_thirteen_rooms_have_reachable_exits_and_furnishings>
+
+    def test_all_thirteen_rooms_have_reachable_exits_and_furnishings(self):
+        scenes=self.game.town.data['interior_scenes']
+>       self.assertEqual(len(scenes),13)
+E       AssertionError: 14 != 13
+
+tests/test_doors.py:128: AssertionError
+_ MillQuestTests.test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest _
+
+self = <test_mill_quest.MillQuestTests testMethod=test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest>
+
+    def test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest(self):
+        for status in ('ready','completed'):
+            data=self.g.quests.to_dict()
+            data['quests'][MILL_QUEST]={'status':status,'completed_objectives':['meet_mira']}
+            quests=QuestLog();self.assertTrue(quests.restore(data))
+            self.assertEqual(quests.status(MILL_QUEST),'active')
+            self.assertEqual(quests.objective_status(MILL_QUEST,'meet_mira'),'completed')
+            self.assertEqual(quests.objective_status(MILL_QUEST,'diagnose_mill'),'active')
+            self.g.save_progress();journey=json.loads(self.path.read_text())
+            journey.pop('mill_quest');journey['quests']=data
+            self.path.write_text(json.dumps(journey));other=self.game(True)
+>           self.assertTrue(other.begin_journey(True))
+E           AssertionError: False is not true
+
+tests/test_mill_quest.py:386: AssertionError
+_ EldenmereSchoolTests.test_school_sits_on_lower_ground_without_moving_existing_landmarks _
+
+self = <test_school.EldenmereSchoolTests testMethod=test_school_sits_on_lower_ground_without_moving_existing_landmarks>
+
+    def test_school_sits_on_lower_ground_without_moving_existing_landmarks(self):
+        world=self.town;footprint=pygame.Rect(600,624,144,96)
+        self.assertEqual(self.layout['position'],[576,528])
+        self.assertEqual(self.layout['ground_rect'],list(footprint))
+        self.assertEqual(self.layout['approach'],[672,738])
+        self.assertGreater(footprint.top,384)
+        self.assertLess(footprint.right,800)  # Buffer west of the stream bank.
+        original=read(ROOT/'assets/maps/eldenmere/terrain_foundation/scene.json')
+        for building in original['buildings']:
+            self.assertFalse(footprint.colliderect(building['ground_rect_pixels']),building['id'])
+        by_id={entity['id']:entity for entity in world.entities}
+        expected={'sanctuary':[252,84],'mill':[936,204],'liam_house':[204,384],
+                  'well':[486,792],'venn':[1164,576],'home_b':[444,528]}
+        for identifier,position in expected.items():self.assertEqual(by_id[identifier]['position'],position)
+        self.assertFalse(world.can_stand(footprint.center))
+        self.assertTrue(world.can_stand(self.layout['approach']))
+        self.assertIn('school',{landmark['id'] for landmark in world.data['landmarks']})
+        self.assertEqual(len(world.doors),11)
+>       self.assertEqual(len(world.data['interior_scenes']),13)
+E       AssertionError: 14 != 13
+
+tests/test_school.py:57: AssertionError
+_ ScriptedDialogueTests.test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue _
+
+self = <test_scripted_dialogue.ScriptedDialogueTests testMethod=test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue>
+
+    def test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue(self):
+        self.game.opening = SimpleNamespace(can_speak=Mock(return_value=False))
+        self.assertFalse(self.social.start(self.actor))
+        self.assertFalse(self.social.locked)
+        self.social.update((0, -1))
+        self.assertFalse(self.social.locked)
+        self.actor.request_conversation.assert_not_called()
+>       self.game.opening.can_speak.assert_called_with('mother_serene')
+
+tests/test_scripted_dialogue.py:114:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Mock id='140444949809728'>, args = ('mother_serene',), kwargs = {}
+
+    def assert_called_with(self, /, *args, **kwargs):
+        """assert that the last call was made with the specified arguments.
+
+        Raises an AssertionError if the args and keyword args passed in are
+        different to the last call to the mock."""
+        if self.call_args is None:
+            expected = self._format_mock_call_signature(args, kwargs)
+            actual = 'not called.'
+            error_message = ('expected call not found.\nExpected: %s\n  Actual: %s'
+                    % (expected, actual))
+>           raise AssertionError(error_message)
+E           AssertionError: expected call not found.
+E           Expected: mock('mother_serene')
+E             Actual: not called.
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:940: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_caelan_directional_runs.py::CaelanDirectionalRunTests::test_approved_frames_and_protected_art
+FAILED tests/test_doors.py::BuildingDoors::test_all_thirteen_rooms_have_reachable_exits_and_furnishings
+FAILED tests/test_mill_quest.py::MillQuestTests::test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest
+FAILED tests/test_school.py::EldenmereSchoolTests::test_school_sits_on_lower_ground_without_moving_existing_landmarks
+FAILED tests/test_scripted_dialogue.py::ScriptedDialogueTests::test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue
+5 failed, 444 passed, 2913 subtests passed in 338.96s (0:05:38)

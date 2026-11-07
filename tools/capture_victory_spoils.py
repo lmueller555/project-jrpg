@@ -166,7 +166,7 @@ class Capture:
     def record(self):
         game = self.game
         scene, model = game.combat.scene, game.combat.model
-        self.reward_before = dict(rp=game.lattice.state()['rp'],
+        self.reward_before = dict(receipts=len(game.battle_rewards.to_dict()['receipts']),
                                   emerald=game.inventory.quantity('aether_emerald'))
         game.audio.set_effects(0)
         game.audio.set_music(1)
@@ -187,7 +187,7 @@ class Capture:
         else:raise AssertionError('Final attacks did not produce victory')
         assert model.phase == 'victory'
         assert game.music.desired_track == 'victory'
-        assert game.lattice.state()['rp'] == self.reward_before['rp']
+        assert len(game.battle_rewards.to_dict()['receipts']) == self.reward_before['receipts']
         self.hold(.35)
         self.snapshot('victory_banner.png')
         self.banner_text = self.drawn_text()
@@ -201,10 +201,10 @@ class Capture:
         self.snapshot('spoils_of_battle.png')
         self.spoils_text = self.drawn_text()
         assert 'Spoils of Battle' in self.spoils_text
-        assert 'Resonance Points (RP)' in self.spoils_text
-        self.reward_after = dict(rp=game.lattice.state()['rp'],
+        assert not any('Resonance' in text or 'RP' in text for text in self.spoils_text)
+        self.reward_after = dict(receipts=len(game.battle_rewards.to_dict()['receipts']),
                                  emerald=game.inventory.quantity('aether_emerald'))
-        assert self.reward_after == dict(rp=self.reward_before['rp']+20,
+        assert self.reward_after == dict(receipts=self.reward_before['receipts']+1,
                                          emerald=self.reward_before['emerald']+1)
         assert game.combat.active and game.music.desired_track == 'victory'
         self.mark('rewards_received_in_spoils', rewards=self.reward_after)
@@ -236,7 +236,7 @@ class Capture:
         game.update(0, (0, 0), False)
         assert not game.combat.active
         assert game.music.desired_track == 'eldenmere'
-        assert self.reward_after == dict(rp=game.lattice.state()['rp'],
+        assert self.reward_after == dict(receipts=len(game.battle_rewards.to_dict()['receipts']),
                                          emerald=game.inventory.quantity('aether_emerald'))
         self.mark('continue_returns_to_world_music')
         self.hold(1.8)
@@ -311,7 +311,7 @@ through a legitimate completed legacy mill journey.
 
 The last enemy's defeat starts **Triumphal Fanfare** once and shows the victory
 banner. The scene then fades to a separate **Spoils of Battle** screen, where
-Caelan receives 20 Resonance Points and one Aether Emerald. The fanfare reaches
+The party receives one Aether Emerald and a durable victory receipt. The fanfare reaches
 its natural end, followed by 2.6 seconds of verified silence while Spoils stays
 open. Continue returns to the world and its Eldenmere Theme without re-awarding.
 

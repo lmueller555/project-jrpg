@@ -137,7 +137,7 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertTrue(owner._settle())
         self.assertEqual(self.resources(), before)
         self.assertEqual(self.resources(self.load()), before)
-        self.assertEqual(self.game.lattice.state()['rp'], 0)
+        self.assertEqual(self.game.battle_rewards.to_dict()['receipts'], [])
 
     def test_mill_defeat_restores_viable_companion_hp_and_preserves_entry_mp(self):
         owner = self.start_mill()
@@ -157,7 +157,7 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertTrue(owner._settle())
         self.assertEqual(self.resources()['mira'], (0, 2))
         self.assertEqual(self.resources(self.load())['mira'], (0, 2))
-        self.assertEqual(self.game.lattice.state()['rp'], 0)
+        self.assertEqual(self.game.battle_rewards.to_dict()['receipts'], [])
 
     def test_pending_victory_resumes_same_party_and_companion_ko_then_grants_once(self):
         before = self.resources();owner = self.victory()
@@ -173,12 +173,12 @@ class PartyEncounterTests(unittest.TestCase):
         self.assertEqual(self.resources(restored)['mira'], (0, 17))
         self.assertEqual(self.resources(restored)['lucan'], (61, 3))
         self.assertEqual(self.resources(restored)['rhea'], before['rhea'])
-        self.assertEqual(restored.lattice.state()['rp'], 20)
+        self.assertTrue(restored.battle_rewards.has_receipt(record['receipt']))
         awarded = restored.combat.snapshot()
         self.assertTrue(valid_pending_snapshot(awarded, json.loads(self.path.read_text())))
         again = self.load()
         self.assertEqual(self.resources(again), self.resources(restored))
-        self.assertEqual(again.lattice.state()['rp'], 20)
+        self.assertEqual(again.battle_rewards.to_dict(), restored.battle_rewards.to_dict())
         self.assertEqual(again.inventory.quantity('aether_emerald'), 1)
 
     def test_failed_award_save_keeps_complete_memory_state_and_retries_without_duplicate_reward(self):
@@ -190,16 +190,16 @@ class PartyEncounterTests(unittest.TestCase):
             self.assertEqual(self.resources()['mira'], (0, 17))
             self.assertEqual(self.resources()['lucan'], (61, 3))
             self.assertEqual(json.loads(self.path.read_text())['post_battle']['stage'], 'pending')
-        with patch.object(self.game.lattice_progression, 'award_battle_rewards',
+        with patch.object(self.game.battle_rewards, 'award_battle_rewards',
                           side_effect=AssertionError('duplicate reward')):
             self.assertTrue(owner._award_spoils())
         self.assertTrue(valid_pending_snapshot(owner.snapshot(), json.loads(self.path.read_text())))
         self.assertEqual(self.resources(self.load()), self.resources())
-        self.assertEqual(self.game.lattice.state()['rp'], 20)
+        self.assertTrue(self.game.battle_rewards.has_receipt(owner.snapshot()['receipt']))
 
     def test_rejected_rewards_leave_all_resources_unchanged_until_successful_retry(self):
         before = self.resources();owner = self.victory()
-        with patch.object(self.game.lattice_progression, 'award_battle_rewards', return_value=False):
+        with patch.object(self.game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(self.game)
             self.assertFalse(spoils.ready)
             self.assertEqual(self.resources(), before)

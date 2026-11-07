@@ -272,7 +272,7 @@ class PartyState:
             existing_modifiers = deepcopy(self.characters[identifier]._modifiers)
             bonuses = {key: sum(source.get(key, 0) for source in existing_modifiers.values())
                        for key in ATTRIBUTE_IDS}
-            if not attributes.restore(snapshot, lattice_bonuses=bonuses):return False
+            if not attributes.restore(snapshot, modifier_bonuses=bonuses):return False
             attributes._modifiers = existing_modifiers
         for identifier, record in data['members'].items():
             if (not isinstance(record, dict) or set(record) != {'available','reason','temporary'}

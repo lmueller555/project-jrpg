@@ -28,7 +28,7 @@ future frame grants no gameplay facts or resources to the opening morning.
    drawing or wardrobe using the approved optional lines. At the bed's side or
    foot, **E: rest** offers **Rest / Not now**. Confirming a short rest fully
    recovers every registered party member's HP and MP to their effective maxima,
-   including Lattice growth, then saves. A brief fade and Caelan's refreshed
+   including earned attribute growth, then saves. A brief fade and Caelan's refreshed
    response acknowledge the rest. This repeatable interaction preserves story
    stages and is also available to existing journeys without the opening scene.
    The tracker points to breakfast; players can explore without a timer or

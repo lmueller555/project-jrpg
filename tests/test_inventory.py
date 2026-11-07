@@ -42,21 +42,22 @@ class InventoryTests(unittest.TestCase):
     def test_crystal_catalog_is_available_without_granting_starting_items(self):
         inv = Inventory()
         expected = {
-            'aether_emerald': ('Aether Emerald', 'HP'),
-            'aether_sapphire': ('Aether Sapphire', 'MP'),
-            'aether_ruby': ('Aether Ruby', 'Strength and Defense'),
-            'aether_amethyst': ('Aether Amethyst', 'Magick and Magick Defense'),
-            'aether_opal': ('Aether Opal', 'Spirit'),
-            'aether_topaz': ('Aether Topaz', 'Speed, Accuracy, Evasion and Luck'),
-            'aether_diamond': ('Aether Diamond', 'spell and ability'),
+            'aether_emerald': ('Aether Emerald', 'Green'),
+            'aether_sapphire': ('Aether Sapphire', 'Blue'),
+            'aether_ruby': ('Aether Ruby', 'Red'),
+            'aether_amethyst': ('Aether Amethyst', 'Violet'),
+            'aether_opal': ('Aether Opal', 'White'),
+            'aether_topaz': ('Aether Topaz', 'Gold'),
+            'aether_diamond': ('Aether Diamond', 'Prismatic'),
         }
-        for identifier, (name, purpose) in expected.items():
+        for identifier, (name, color) in expected.items():
             with self.subTest(identifier=identifier):
                 record = inv.definitions[identifier]
                 self.assertEqual(record['name'], name)
                 self.assertEqual(record['category'], 'items')
-                self.assertEqual(record['use_context'], 'aether_lattice')
-                self.assertIn(purpose, record['description'])
+                self.assertEqual(record['use_context'], 'material')
+                self.assertIn(color, record['description'])
+                self.assertIn('crystallized aether', record['description'])
                 self.assertEqual(inv.quantity(identifier), 0)
         self.assertEqual(inv.entries(), [])
         self.assertTrue(inv.grant_quest('CH01_MQ01'))

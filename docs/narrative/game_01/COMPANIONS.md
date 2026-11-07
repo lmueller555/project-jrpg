@@ -248,8 +248,8 @@ magical progression. Mira retains her established skills and relationship
 with him.
 
 Specific settlements, family identities, remaining poses and animations,
-recruitment quest scripts, exact abilities, numeric attributes and Lattice
-layouts remain open.
+recruitment quest scripts, exact abilities, numeric attributes and progression
+unlocks remain open.
 Later character outcomes and the identity associated with the cinematic's
 bloody helmet remain undecided. Future scenes should preserve the
 [opening cinematic's established limits](../../OPENING_CINEMATIC.md).

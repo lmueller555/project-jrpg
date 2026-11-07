@@ -1,0 +1,119 @@
+.FFFFFF.FFFFF                                                      [100%]
+=================================== FAILURES ===================================
+_ AetherDoctrineTests.test_current_implementation_scripts_match_the_doctrine_exchanges (script='docs/narrative/game_01/CH01_MQ03.md') _
+tests/test_aether_doctrine.py:45: in test_current_implementation_scripts_match_the_doctrine_exchanges
+    self.assertTrue(lines)
+E   AssertionError: [] is not true
+_____ AetherDoctrineTests.test_regent_stewardship_uses_the_planetary_cycle _____
+tests/test_aether_doctrine.py:29: in test_regent_stewardship_uses_the_planetary_cycle
+    self.assertIn("planet's aether cycle", text)
+E   AssertionError: "planet's aether cycle" not found in "They're here. Caelan, would you meet them by the lower bridge? Bring them in when they're ready. Welcome. Come and sit down. You look as though you could use something warm. Caelan, would you pass the bread? Of course. Caelan, let me move those plates. What’s coming from the existing quarries? The protected ground extends beyond those walls. Aether gathers there naturally. People have cared for that place for generations. They tend the grove in remembrance of those they’ve lost. The sanctuary buildings are part of that keeping. So are the trees, and the ground beneath them. Yes. And there is still a great deal we cannot account for. These foundations continue into the hillside. The plan never shows where they end. We would already have opened the ground by then. Ordinarily, yes. But there’s an account I want your engineer to read first. Workers opened a passage beneath the sanctuary. A discharge injured them. They closed the passage again. They left no explanation. I can’t tell you that. This account is much older. We do. Your engineer and I can walk it together. Inspect the surface, compare it with the plan, and see what further records we can obtain. I can agree to the inspection. I cannot endorse opening the ground yet. Take the stone we set aside for the courtyard repairs. We can put it off. I’ll arrange meals for the crew as well. But it won’t be enough. I know. I will. Yes. There are people waiting for it. It settles what we can give him today. I expect so. So do I. Yes. Go on. I have a letter to write. Everything’s ready here. You’ll find the visitors by the lower bridge. I have a letter to write. Tomas could use your help with the lanterns."
+_ RegionalMapTests.test_real_game_update_freezes_regional_world_until_map_closes _
+tests/test_overworld_map.py:455: in test_real_game_update_freezes_regional_world_until_map_closes
+    game.update(.5, (1, 0), True)
+main.py:1298: in update
+    self._update_world(seconds,direction,running)
+main.py:1348: in _update_world
+    self.world_map_viewer.is_open or self.party_ui.is_open)
+                                     ^^^^^^^^^^^^^
+E   AttributeError: 'Game' object has no attribute 'party_ui'
+_ RegentCrossroadsArtTests.test_every_original_art_input_retains_its_pinned_hash _
+tests/test_regent_crossroads_art.py:77: in test_every_original_art_input_retains_its_pinned_hash
+    self.assertEqual(len(builder.verified_inputs(self.recipe)), 10)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tools/build_regent_crossroads.py:57: in verified_inputs
+    raise ValueError(f"Retained input changed; do not silently re-author: {spec['file']}")
+E   ValueError: Retained input changed; do not silently re-author: assets/maps/overworld/elden_vale/region.json
+______ RegentCrossroadsArtTests.test_pinned_regional_source_is_unmodified ______
+tests/test_regent_crossroads_art.py:70: in test_pinned_regional_source_is_unmodified
+    self.assertEqual(builder.sha256(builder.REGION.read_bytes()), expected)
+E   AssertionError: '3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015' != '0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88'
+E   - 3f783a64c266d67a2c1dbdab33232947715affd10b3e89a2316f05176bf9f015
+E   + 0ed0eeb8060f035ff2db89fc4f1ef20fc554f9651c9c46893e46613789577d88
+_ AldricSideWalkTests.test_all_protected_generated_and_non_side_assets_keep_stored_sha256 _
+tests/test_aldric_side_walk.py:229: in test_all_protected_generated_and_non_side_assets_keep_stored_sha256
+    self.assertEqual(set(protected), {path.relative_to(ROOT).as_posix() for path in expected})
+E   AssertionError: Items in the second set but not the first:
+E   'assets/story/regent_arrival/actors/lucan/walk_left_3.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_back_2.png'
+E   'assets/story/regent_arrival/actors/lucan/stand_back.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_left_0.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_back_0.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_back_1.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_back_3.png'
+E   'assets/story/regent_arrival/actors/lucan/animation.json'
+E   'assets/story/regent_arrival/actors/lucan/walk_left_1.png'
+E   'assets/story/regent_arrival/actors/lucan/stand_left.png'
+E   'assets/story/regent_arrival/actors/lucan/walk_left_2.png'
+__ CaelanLeftRunTests.test_matches_approved_frames_and_preserves_existing_art __
+tests/test_caelan_left_run.py:19: in test_matches_approved_frames_and_preserves_existing_art
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+E   AssertionError: '35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795' != 'adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8'
+E   - 35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795
+E   + adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8
+E    : assets/characters/caelan/README.md
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='crossroads_establishing') _
+tests/test_regent_crossroads_gameplay.py:592: in test_scene_uses_authored_stations_and_question_pan_account_relief_order
+    self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E   AssertionError: Items in the first set but not the second:
+E   'lucan'
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='locals') _
+tests/test_regent_crossroads_gameplay.py:592: in test_scene_uses_authored_stations_and_question_pan_account_relief_order
+    self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E   AssertionError: Items in the first set but not the second:
+E   'lucan'
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='road_pan') _
+tests/test_regent_crossroads_gameplay.py:592: in test_scene_uses_authored_stations_and_question_pan_account_relief_order
+    self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E   AssertionError: Items in the first set but not the second:
+E   'lucan'
+_ RegentCrossroadsManifestTests.test_scene_uses_authored_stations_and_question_pan_account_relief_order (shot='relief') _
+tests/test_regent_crossroads_gameplay.py:592: in test_scene_uses_authored_stations_and_question_pan_account_relief_order
+    self.assertEqual({actor['id'] for actor in phase['actors']}, set(aliases))
+E   AssertionError: Items in the first set but not the second:
+E   'lucan'
+_______ CaelanDirectionalRunTests.test_approved_frames_and_protected_art _______
+tests/test_caelan_directional_runs.py:19: in test_approved_frames_and_protected_art
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+E   AssertionError: '35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795' != 'adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8'
+E   - 35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795
+E   + adc7c286ee19a8ec003cba2ae8838afd365f5608fe8812d25deecf869efcdef8
+E    : assets/characters/caelan/README.md
+__ BuildingDoors.test_all_thirteen_rooms_have_reachable_exits_and_furnishings __
+tests/test_doors.py:128: in test_all_thirteen_rooms_have_reachable_exits_and_furnishings
+    self.assertEqual(len(scenes),13)
+E   AssertionError: 14 != 13
+_ MillQuestTests.test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest _
+tests/test_mill_quest.py:386: in test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest
+    self.assertTrue(other.begin_journey(True))
+E   AssertionError: False is not true
+_ EldenmereSchoolTests.test_school_sits_on_lower_ground_without_moving_existing_landmarks _
+tests/test_school.py:57: in test_school_sits_on_lower_ground_without_moving_existing_landmarks
+    self.assertEqual(len(world.data['interior_scenes']),13)
+E   AssertionError: 14 != 13
+_ ScriptedDialogueTests.test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue _
+tests/test_scripted_dialogue.py:114: in test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue
+    self.game.opening.can_speak.assert_called_with('mother_serene')
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:940: in assert_called_with
+    raise AssertionError(error_message)
+E   AssertionError: expected call not found.
+E   Expected: mock('mother_serene')
+E     Actual: not called.
+=========================== short test summary info ============================
+SUBFAILED(script='docs/narrative/game_01/CH01_MQ03.md') tests/test_aether_doctrine.py::AetherDoctrineTests::test_current_implementation_scripts_match_the_doctrine_exchanges
+FAILED tests/test_aether_doctrine.py::AetherDoctrineTests::test_regent_stewardship_uses_the_planetary_cycle
+FAILED tests/test_overworld_map.py::RegionalMapTests::test_real_game_update_freezes_regional_world_until_map_closes
+FAILED tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_every_original_art_input_retains_its_pinned_hash
+FAILED tests/test_regent_crossroads_art.py::RegentCrossroadsArtTests::test_pinned_regional_source_is_unmodified
+FAILED tests/test_aldric_side_walk.py::AldricSideWalkTests::test_all_protected_generated_and_non_side_assets_keep_stored_sha256
+FAILED tests/test_caelan_left_run.py::CaelanLeftRunTests::test_matches_approved_frames_and_preserves_existing_art
+SUBFAILED(shot='crossroads_establishing') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='locals') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='road_pan') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+SUBFAILED(shot='relief') tests/test_regent_crossroads_gameplay.py::RegentCrossroadsManifestTests::test_scene_uses_authored_stations_and_question_pan_account_relief_order
+FAILED tests/test_caelan_directional_runs.py::CaelanDirectionalRunTests::test_approved_frames_and_protected_art
+FAILED tests/test_doors.py::BuildingDoors::test_all_thirteen_rooms_have_reachable_exits_and_furnishings
+FAILED tests/test_mill_quest.py::MillQuestTests::test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest
+FAILED tests/test_school.py::EldenmereSchoolTests::test_school_sits_on_lower_ground_without_moving_existing_landmarks
+FAILED tests/test_scripted_dialogue.py::ScriptedDialogueTests::test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue
+16 failed, 2 passed, 1 subtests passed in 3.39s

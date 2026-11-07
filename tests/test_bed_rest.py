@@ -77,18 +77,18 @@ class BedRestTests(unittest.TestCase):
         return attributes.current_hp, attributes.current_mp
 
     def journey(self, game):
-        return (game.lattice.to_dict(), game.inventory.to_dict(),
+        return (game.battle_rewards.to_dict(), game.inventory.to_dict(),
                 game.quests.to_dict(), sorted(game.social.flags),
                 game.opening.to_dict(), game.mill_quest.to_dict(),
                 game.regent_quest.to_dict(), game.lantern_quest.to_dict())
 
     def grow_resources(self, game):
-        self.assertTrue(game.award_battle_rewards(
-            'bed-rest-growth', {'caelan': 10000},
-            {'aether_emerald': 2, 'aether_sapphire': 2, 'aether_diamond': 1}))
-        for identifier in ('hp_01', 'mp_01', 'mend_01'):
-            self.assertTrue(game.move_lattice(identifier))
-            self.assertTrue(game.activate_lattice(identifier))
+        record = game.attributes.to_dict()
+        record['attributes']['hp'] = min(9999, record['attributes']['hp']+100)
+        record['attributes']['mp'] = min(999, record['attributes']['mp']+5)
+        self.assertTrue(game.attributes.restore(record))
+        self.assertTrue(game.character_abilities.learn_ability('caelan', 'mend'))
+        self.assertTrue(game.save_progress())
 
     def test_rest_is_available_at_the_foot_and_side_in_existing_journeys(self):
         game = self.game()
@@ -194,7 +194,7 @@ class BedRestTests(unittest.TestCase):
         saved = json.loads(self.path.read_text())['character_attributes']
         self.assertEqual((saved['current_hp'], saved['current_mp']), (140, 30))
 
-    def test_lattice_maxima_and_caps_survive_rest_and_continue_without_other_changes(self):
+    def test_earned_maxima_and_caps_survive_rest_and_continue_without_other_changes(self):
         for capped in (False, True):
             with self.subTest(capped=capped):
                 game = self.game()
@@ -228,24 +228,21 @@ class BedRestTests(unittest.TestCase):
                 self.assertEqual({key: restored.attributes.value(key)
                                   for key in restored.attributes.definitions}, ratings)
 
-    def test_rest_recovers_every_registered_character_without_resetting_modifiers(self):
+    def test_rest_recovers_recruited_companions_without_resetting_modifiers(self):
         game = self.game()
         self.bedside(game)
-        catalog = deepcopy(game.attributes.catalog)
-        catalog['characters']['companion'] = deepcopy(catalog['characters']['caelan'])
-        catalog['characters']['companion']['name'] = 'Companion'
-        companion = CharacterAttributes('companion', catalog)
+        self.assertTrue(game.party.recruit('mira'))
+        companion = game.party.characters['mira']
         self.assertTrue(companion.set_modifiers('equipment', {'hp': 37, 'mp': 4, 'def': 9}))
         self.assertTrue(companion.set_current(hp=0, mp=0))
-        game.lattice_progression.attributes['companion'] = companion
         base = deepcopy(companion.to_dict()['attributes'])
         self.assertTrue(game.attributes.set_current(hp=1, mp=0))
         self.offer(game)
         self.choose(game, 'rest')
         self.assertEqual(self.resources(game.attributes), (140, 30))
-        self.assertEqual(self.resources(companion), (177, 34))
+        self.assertEqual(self.resources(companion), (337, 34))
         self.assertEqual(companion.to_dict()['attributes'], base)
-        self.assertEqual(companion.value('def'), 19)
+        self.assertEqual(companion.value('def'), base['def']+9)
 
 
 if __name__ == '__main__':

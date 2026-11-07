@@ -35,7 +35,6 @@
       "time": 3.7,
       "phase": "rewards_received_in_spoils",
       "rewards": {
-        "rp": 20,
         "emerald": 1
       }
     },
@@ -314,11 +313,9 @@
   "silent_spoils_seconds": 2.6,
   "no_music_during_silent_spoils": true,
   "reward_before": {
-    "rp": 0,
     "emerald": 0
   },
   "reward_after": {
-    "rp": 20,
     "emerald": 1
   },
   "rewards_awarded_before_continue": true,
@@ -335,9 +332,7 @@
   ],
   "spoils_text": [
     "Spoils of Battle",
-    "Resonance Points (RP)",
     "Caelan",
-    "+20 RP",
     "Items",
     "Aether Emerald",
     "\u00d71",
@@ -350,5 +345,6 @@
     "assets/music/runtime/triumphal_fanfare.ogg": "4b0822bf945bc344172785242d6a02504b4d67396b307b547de66d4e46c99e13"
   },
   "soundtrack": "Offline reconstruction from exact runtime OGGs and observed production mixer commands; not hardware loopback. One-shot source stops at its natural end. Effects muted.",
-  "game_integration": true
+  "game_integration": true,
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

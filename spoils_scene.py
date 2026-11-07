@@ -38,7 +38,6 @@ class SpoilsScene:
         self.scroll = self.max_scroll = 0.0
         self.panel_rect = pygame.Rect(16, 14, 448, 292)
         self.title_rect = pygame.Rect(80, 26, 320, 28)
-        self.experience_rect = pygame.Rect(30, 76, 420, 54)
         self.items_view = pygame.Rect(30, 156, 420, 88)
         self.continue_rect = pygame.Rect(314, 262, 136, 30)
         self.retry_rect = self.continue_rect.copy()
@@ -49,12 +48,12 @@ class SpoilsScene:
 
     @staticmethod
     def _snapshot(rewards):
-        if (not isinstance(rewards, dict) or type(rewards.get('rp')) is not int
-                or rewards['rp'] < 0 or not isinstance(rewards.get('drops'), dict)
+        if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
+                or not isinstance(rewards.get('drops'), dict)
                 or any(not isinstance(key, str) or type(value) is not int or value <= 0
                        for key, value in rewards['drops'].items())):
             raise ValueError('Invalid spoils snapshot')
-        return deepcopy({'rp': rewards['rp'], 'drops': rewards['drops']})
+        return deepcopy({'drops': rewards['drops']})
 
     @property
     def ready(self):return self.awarded and not self.result_error
@@ -80,20 +79,13 @@ class SpoilsScene:
 
     def _sound(self, kind):self.game.ui.sound(kind)
 
-    def _beneficiary(self):
-        first = self.party[0] if self.party else None
-        if isinstance(first, dict):return first.get('name', 'Caelan')
-        return getattr(first, 'name', first if isinstance(first, str) else 'Caelan')
-
     def _layout(self, painter):
         small = painter.font('small').get_linesize()
-        name = painter.font('name', bold=True).get_linesize()
         body = painter.font().get_linesize()
         heading = painter.font('heading', bold=True).get_linesize()
         self.title_rect = pygame.Rect(55, 26, 370, heading)
         rule = self.title_rect.bottom + 8
-        self.experience_rect = pygame.Rect(30, rule + 10, 420, small + name + 19)
-        items_label_y = self.experience_rect.bottom + 10
+        items_label_y = rule + 12
         item_top = items_label_y + small + 7
 
         message = (self.result_error if self.result_error else
@@ -220,14 +212,6 @@ class SpoilsScene:
         painter.lantern((35, self.title_rect.centery), size=11)
         painter.lantern((445, self.title_rect.centery), size=11)
         painter.line(BRASS, (30, self._rule_y), (450, self._rule_y))
-        painter.rect(FOREST_DARK, self.experience_rect)
-        painter.rect(FOREST_LIGHT, self.experience_rect, 1)
-        painter.text('Resonance Points (RP)', (40, self.experience_rect.top+7),
-                     role='small', color=MUTED, bold=True)
-        y = self.experience_rect.top + 9 + self._small
-        painter.text(self._beneficiary(), (40, y), role='name', bold=True)
-        painter.text('+' + str(self.rewards['rp']) + ' RP', (438, y), role='name', color=GOLD,
-                     anchor='topright', bold=True)
         painter.text('Items', (30, self._items_label_y), role='small', color=GOLD, bold=True)
         painter.clip(self.items_view)
         if not self._rows:

@@ -9,7 +9,6 @@ from uuid import uuid4
 
 import pygame
 
-from aether_lattice import MAX_RP
 from battle_model import BattleModel
 from battle_scene import BattleScene
 from battle_transition import BattleTransition
@@ -292,11 +291,10 @@ class CombatEncounters:
         return True
 
     def _available_rewards(self, reward):
-        amount = min(reward['rp'], MAX_RP-self.game.lattice.state()['rp'])
         drops = {key: min(quantity, MAX_QUANTITY-self.game.inventory.quantity(key))
                  for key, quantity in reward['drops'].items()
                  if self.game.inventory.quantity(key) < MAX_QUANTITY}
-        return {'rp': amount, 'drops': drops}
+        return {'drops': drops}
 
     def tick_world(self, seconds):
         if self.active:return
@@ -467,30 +465,21 @@ class CombatEncounters:
             proposed_quests = deepcopy(game.quests)
             if not quest.encounter_pending or not proposed_quests.complete_objective(MILL_QUEST, 'secure_trail'):
                 return self._post_error('The encounter could not be completed. Try again.')
-        before = (game.lattice.to_dict(), game.inventory.to_dict(), game.quests.to_dict(),
+        before = (game.battle_rewards.to_dict(), game.inventory.to_dict(), game.quests.to_dict(),
                   quest.to_dict(), set(game.social.flags),
                   game.party.to_dict() if hasattr(game, 'party') else None)
         reward = record['rewards']
-        if game.lattice.has_receipt(record['receipt']):
+        if game.battle_rewards.has_receipt(record['receipt']):
             return self._post_error('The victory receipt is inconsistent. Try again.')
-        awards = {'caelan': reward['rp']} if reward['rp'] else {}
-        if awards or reward['drops']:
-            granted = game.lattice_progression.award_battle_rewards(record['receipt'], awards, reward['drops'])
-        else:
-            # Empty capped spoils still need a receipt. The lattice's canonical
-            # reward operation supports an empty award; progression requires a
-            # nonempty bundle because it normally also owns inventory changes.
-            proposed_lattice = deepcopy(game.lattice)
-            granted = (proposed_lattice.award_rewards(record['receipt'], {})
-                       and game.lattice.restore(proposed_lattice.to_dict()))
+        granted = game.battle_rewards.award_battle_rewards(record['receipt'], reward['drops'])
         if not granted:return self._post_error('Rewards could not be collected. Try again.')
         if self.kind == 'mill' and not quest.battle_won():
-            game.lattice.restore(before[0]);game.inventory.restore(before[1])
+            game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
             game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
             if before[5] is not None:game.party.restore(before[5])
             return self._post_error('The encounter could not be completed. Try again.')
         if not self._apply_resources(resources, party_resources):
-            game.lattice.restore(before[0]);game.inventory.restore(before[1])
+            game.battle_rewards.restore(before[0]);game.inventory.restore(before[1])
             game.quests.restore(before[2]);quest.restore(before[3]);game.social.flags = before[4]
             if before[5] is not None:game.party.restore(before[5])
             return self._post_error('Battle resources could not be collected. Try again.')
@@ -597,7 +586,7 @@ class CombatEncounters:
         game = self.game
         validation = {'player': {'scene': game.world.data['id'], 'position': record['position'],
                                   'facing': record['facing']},
-                      'aether_lattice': game.lattice.to_dict(),
+                      'battle_rewards': game.battle_rewards.to_dict(),
                       'character_attributes': game.attributes.to_dict(),
                       'quests': game.quests.to_dict(), 'mill_quest': game.mill_quest.to_dict()}
         if hasattr(game, 'party'):validation['party'] = game.party.to_dict()
@@ -649,7 +638,7 @@ class CombatEncounters:
         if self.kind == 'mill':return self._settle_mill()
         game, scene, model = self.game, self.scene, self.scene.model
         # Defeat is a safe withdrawal: every member retains the resources saved
-        # before this optional fight, and receives neither drops nor RP.
+        # before this optional fight, and receives no item drops.
         if model.phase != 'defeat':
             resources = {'hp': model.player.hp, 'mp': model.player.mp}
             party_resources = self._model_resources(model) if self._party_active else None

@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "source_sha256": {
+    "main.py": "f338000da99615ff13e1e8071c0c4d4696303497954c338cfbfd4a2bbe578161",
+    "pause_menu.py": "8a20533fc6a964658587ee6ed0821a281969d074344dac9d32cab1747a4503ac",
+    "status_ui.py": "6d54f73f320db99203f5c17bed72744347742541c032c08158c9a6504beed0f8",
+    "spoils_scene.py": "ba3cb4356649f377b8200bea50eb3622a7301627f75e770ba9bfded6bfb19976",
+    "world_encounters.py": "e85dcbb7060f1fc5d0f807be0eb08a361bd418a949ab2f7c580ba31c1eee963c",
+    "post_battle.py": "3f649f05895be005af358ae7380ba649252e0bf5548e1528cf848dd3462d23ce",
+    "battle_rewards.py": "4e1f6d9f1d41e5185300f185e027fcde57e86bb3ca7c7a3af5297be70f9e1b07",
+    "character_abilities.py": "51bbe1f0a025a857f728f1caff1cf44e693b9cb663c142fff61781aabada1995",
+    "character_attributes.py": "398106bd3482217c2881b0ddf7d6d14fe5659e41b00ca815bd4cc748146dcf66",
+    "party_state.py": "c56a186783e2be65947826d89c3db38672684bb549f8bebe220105487f61ef38",
+    "legacy_save.py": "a16c5e1a1baf750f77d41a2ba6aedc1d731b4d720c768b964146539056c37fc4",
+    "assets/combat/enemies.json": "edf852228501162d970d0e283fbab5701b72c1bf57db5430a3b1ce90f4f95847",
+    "assets/abilities/characters.json": "263dd012d9b04619d25a524ede9175162b51f0c2cc90ea187ebbde4fbe2fee20",
+    "assets/compatibility/retired_progression_rewards.json": "c5f9b6dd7802ca2fbbfeb4edd72fd8e68f265e12d7f4fb4d94ff476ee9be14ed",
+    "assets/items/catalog.json": "c43561385d790690f075686f8482bef1b837dc740c5fe1013cd90a8ecc2380e9",
+    "tools/capture_progression_cleanup.py": "0179ec69593f7ed85bb18983d6113d1efcc7b32171852b62f44d9eaaa53acc39"
+  },
+  "artifact_sha256": {
+    "pause_960.png": "e275d0c7eb1c418941430456affee48b0b33b7fa38eca1a5487032bf8f49d860",
+    "characters_960.png": "aec522b5dc39478f9b1371e900fdd92f6d4d02cf793d4bc8288987ef14a58be4",
+    "pause_480_text_150.png": "fed11dcc485ad3bbf7389c066f24a3f48eb7a78a15713ccaab404cfc3bdb4bbf",
+    "characters_480_text_150.png": "1ec0812d1be5b5e1da8a5b9a06be24078a37c7cca73832bedfa586df1877bbe8",
+    "spoils_960.png": "4a71ab3651c892efac00b5519e0638a359ebbc690eb4e6a208010a0671ba39b4",
+    "spoils_480_text_150.png": "8d83fde1f13b509db2771b77f78e23bfcba9311d8eebc7af6b296e31f64fd838"
+  },
+  "captures": [
+    {
+      "file": "pause_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "text": [
+        "Paused",
+        "Resume",
+        "Characters",
+        "Party",
+        "Inventory",
+        "Journal",
+        "Map",
+        "Settings",
+        "Quit",
+        "\u2191\u2193 Enter \u00b7 Esc: resume"
+      ]
+    },
+    {
+      "file": "characters_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "text": [
+        "Characters",
+        "Caelan",
+        "\u00d7",
+        "HP",
+        "140 / 140",
+        "MP",
+        "30 / 30",
+        "Str",
+        "10",
+        "Mag",
+        "10",
+        "Spr",
+        "10",
+        "Def",
+        "10",
+        "M. Def",
+        "10",
+        "Speed",
+        "10",
+        "Acc",
+        "10",
+        "Eva",
+        "10",
+        "Lck",
+        "10",
+        "Health: Maximum health before incapacitation. Current HP can fall without reducing this maximum.",
+        "Hover / arrows: details \u2022 Esc: back"
+      ]
+    },
+    {
+      "file": "pause_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "text": [
+        "Paused",
+        "Resume",
+        "Characters",
+        "Party",
+        "Inventory",
+        "Journal",
+        "Map",
+        "Settings",
+        "Quit",
+        "\u2191\u2193 Enter \u00b7 Esc: resume"
+      ]
+    },
+    {
+      "file": "characters_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "text": [
+        "Characters",
+        "Caelan",
+        "\u00d7",
+        "HP",
+        "140 / 140",
+        "MP",
+        "30 / 30",
+        "Str",
+        "10",
+        "Mag",
+        "10",
+        "Spr",
+        "10",
+        "Def",
+        "10",
+        "M. Def",
+        "10",
+        "Speed",
+        "10",
+        "Acc",
+        "10",
+        "Eva",
+        "10",
+        "Lck",
+        "10",
+        "Health: Maximum health before incapacitation.",
+        "Current HP can fall without reducing this maximum.",
+        "Hover / arrows: details \u2022 Esc: back"
+      ]
+    },
+    {
+      "file": "spoils_960.png",
+      "window": [
+        960,
+        640
+      ],
+      "text_scale": 1.0,
+      "text": [
+        "Spoils of Battle",
+        "Items",
+        "Aether Emerald",
+        "\u00d71",
+        "Rewards received.",
+        "Continue"
+      ]
+    },
+    {
+      "file": "spoils_480_text_150.png",
+      "window": [
+        480,
+        320
+      ],
+      "text_scale": 1.5,
+      "text": [
+        "Spoils of Battle",
+        "Items",
+        "Aether Emerald",
+        "\u00d71",
+        "Rewards received.",
+        "Continue"
+      ]
+    }
+  ],
+  "completed_real_bat_battle": true,
+  "item_reward_delta": 1,
+  "receipt_survived_continue": true,
+  "reward_not_repeated": true,
+  "fixtures": [
+    "Temporary journey/settings only; opening guidance disabled for review.",
+    "Player placed near the real test Bat; normal stats, abilities, RNG seed 7.",
+    "Actual keyboard menu input and mouse combat/Continue input.",
+    "No enemy/player HP, damage, rewards, poses or draw calls replaced."
+  ]
+}

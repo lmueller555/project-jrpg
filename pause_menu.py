@@ -232,7 +232,7 @@ class SettingsPanel:
 
 
 class PauseMenu:
-    options = ('Resume', 'Characters', 'Party', 'Aether Lattice', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
+    options = ('Resume', 'Characters', 'Party', 'Inventory', 'Journal', 'Map', 'Settings', 'Quit')
     settings_index = options.index('Settings')
 
     def __init__(self, game):
@@ -323,9 +323,6 @@ class PauseMenu:
         elif label == 'Party':
             self.overlay = 'party'
             self.game.party_ui.open()
-        elif label == 'Aether Lattice':
-            self.overlay = 'lattice'
-            self.game.lattice_ui.open()
         elif label == 'Inventory':
             self.overlay = 'inventory'
             self.game.inventory_ui.open()
@@ -345,16 +342,12 @@ class PauseMenu:
         return True
 
     def update(self, seconds):
-        if self.is_open and self.overlay == 'lattice':
-            self.game.lattice_ui.update(seconds)
+        pass
 
     def handle_event(self, event):
         if not self.is_open:return True
         if self.overlay is not None:
-            if self.overlay == 'lattice':
-                self.game.lattice_ui.handle_event(event)
-                closed = not self.game.lattice_ui.is_open
-            elif self.overlay == 'status':
+            if self.overlay == 'status':
                 self.game.status_ui.handle_event(event)
                 closed = not self.game.status_ui.is_open
             elif self.overlay == 'party':

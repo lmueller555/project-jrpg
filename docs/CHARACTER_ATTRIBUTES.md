@@ -57,11 +57,9 @@ modifier sources. A gain that crosses a limit stops at that limit. For example,
 their owners, so rebuilding modifiers or continuing a journey never stacks or
 discards those grants.
 
-A lattice node cannot consume crystals when its attribute is already capped.
-A valid purchase below the cap may use only the remaining room, for its normal
-crystal cost; the preview shows the resulting capped value. HP/MP increases
-still leave current resources unchanged. Removing a modifier that would leave
-current HP or MP above its new effective maximum is rejected atomically.
+Changes to maximum HP/MP leave current resources unchanged unless a caller
+explicitly applies a recovery rule. Removing a modifier that would leave current
+HP or MP above its new effective maximum is rejected atomically.
 
 Base profiles and saved base values must fit their attribute-specific limits.
 Invalid records and current-resource writes are rejected without changing live
@@ -78,7 +76,7 @@ the Characters interface. Each instance has its own state.
 
 The game initializes Caelan's profile when it starts. New Game restores the
 starting values and fills both resources. The read-only Characters screen shows
-Caelan's portrait, name, live values, Attunement and RP progress; opening,
+Caelan's portrait, name and live values; opening,
 inspecting or closing it does not alter them. Caelan is the currently available
 character.
 
@@ -86,8 +84,7 @@ The standalone [traditional leveling foundation](LEVELING.md) defines approved
 level-1 profiles and level-100 targets for Caelan, Mira, Lucan, Rhea and Edran.
 Its curves leave ordinary natural ratings at or below 300, with slower Speed
 growth; the effective caps above leave room for later modifiers. It does not
-yet replace live RP/Lattice progression, migrate journey attributes, award combat
-XP or change current-resource recovery. Current party guest/placeholder profiles
+yet award combat XP or change current-resource recovery. Current party guest/placeholder profiles
 retain their authored ratings until the transition rules are settled.
 
 [`attribute_icons.py`](../attribute_icons.py) draws eleven distinct icons with
@@ -99,10 +96,8 @@ coordinates, including letterboxed windows and enlarged text.
 
 Journey checkpoints include a version-three `character_attributes` record
 containing the character identity, preserved base values under `attributes`,
-and current HP and MP. Lattice modifiers are derived from activated node IDs
-in the separate progression record. Effective values are the preserved base
-plus those modifiers, limited by the caps above, so Continue does not apply bonuses twice. Validation
-rejects malformed or out-of-range values before replacing live state. Current
+and current HP and MP. Named modifiers have separate owners. Validation rejects
+malformed or out-of-range values before replacing live state, and current
 resources must remain within their effective maxima.
 
 Older journeys without the record receive Caelan's starting profile when
@@ -115,21 +110,18 @@ the old maximum, rounded to the nearest integer. Zero HP remains zero; a
 previously positive value remains at least one. MP and every other attribute
 are preserved. Version-one records with a different maximum HP retain that
 value, preserving saved growth. Version-two saved ratings become the preserved
-base without changing their values. Version-three records restore that base
-and recompute lattice bonuses from progression. Current resources remain saved
-values and are not automatically refilled.
+base without changing their values.
+
+Retired progression-backed version-three saves import paid attribute bonuses
+into capped base values once, including matching party records. Learned
+abilities and once-only battle receipts move to their independent owners.
+Current resources remain saved values and are not automatically refilled.
+No retired score is converted into traditional XP.
 
 Loading the title screen validates a save without changing it. Migration is
 committed only when the player continues the journey.
 
 ## Scope and story continuity
-
-The [Aether Lattice](AETHER_LATTICE.md) adds growth through activated stat nodes.
-Early HP nodes add 100 maximum HP, early MP nodes add 5 maximum MP and other
-starter stat nodes add 1 to their attribute. Caelan's expanded section includes
-larger bonuses deeper in the lattice; see the [section growth budget](CAELAN_LATTICE.md).
-Increasing maximum HP or MP leaves the current resource unchanged. Rank gains
-award movement, without hidden stat growth.
 
 The approved [damage formula](DAMAGE_FORMULA.md) is implemented in
 [`combat_damage.py`](../combat_damage.py). Physical attacks use Str/Def and

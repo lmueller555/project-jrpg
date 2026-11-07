@@ -191,11 +191,11 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.assertEqual(self.g.world.data['id'], 'sanctuary_dining')
         self.assertEqual(self.g.regent_arrival.state, 'pending')
         self.assertFalse(self.g.regent_arrival.active)
-        state = self.g.lattice.to_dict(), self.g.inventory.to_dict()
+        state = self.g.battle_rewards.to_dict(), self.g.inventory.to_dict()
         self.assertFalse(self.g.regent_arrival.request())
         self.reload()
         self.assertTrue(self.quest.resolved)
-        self.assertEqual(state, (self.g.lattice.to_dict(), self.g.inventory.to_dict()))
+        self.assertEqual(state, (self.g.battle_rewards.to_dict(), self.g.inventory.to_dict()))
         self.assertFalse(self.home.action_active)
         self.assertIsNotNone(self.g._read_saved_journey())
 

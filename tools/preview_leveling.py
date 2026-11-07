@@ -56,7 +56,7 @@ def main(argv=None):
         writer.writerows(rows)
     else:
         print('Approved natural growth; enemy rows precede archetype/species/boss modifiers.')
-        print('This preview does not award live XP or modify journeys, resources, or RP.')
+        print('This preview does not award live XP or modify journeys or resources.')
         print()
         columns = ['profile', 'level', *ATTRIBUTE_IDS]
         print('| ' + ' | '.join(columns) + ' |')

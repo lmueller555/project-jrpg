@@ -78,7 +78,7 @@ class Capture:
         self.actions = []
         self.water_focus = []
         self.gift_ticks = self.water_ticks = 0
-        self.before_battle_rp = None
+        self.before_battle_receipts = None
         self.gear_click_time = None
         self.videos = {name: Video(output/(name+'.mp4'))
                        for name in ('gift', 'combat_lesson', 'water_focus')}
@@ -209,7 +209,7 @@ class Capture:
                 game.update(.05, (0, 0), False)
 
     def battle(self, game, *args, **kwargs):
-        self.before_battle_rp = game.lattice.state()['rp']
+        self.before_battle_receipts = len(game.battle_rewards.to_dict()['receipts'])
         original_step = kwargs.pop('on_step', None)
 
         def action_frame(scene):
@@ -273,8 +273,8 @@ class Capture:
                         'completion_scene': game.world.data['id'],
                         'aldric_handoff': game.regent_arrival.state,
                         'battle_rewards': self.reward,
-                        'rp_before_battle': self.before_battle_rp,
-                        'rp_after_quest': game.lattice.state()['rp'],
+                        'receipts_before_battle': self.before_battle_receipts,
+                        'receipts_after_quest': len(game.battle_rewards.to_dict()['receipts']),
                         'saved_journey_valid': True,
                         'dialogue_pages': len(self.driver.pages),
                         'gift_audio': {'source': 'assets/story/mill_gift/gear_click.ogg',

@@ -160,11 +160,11 @@ class PartyGameplayTests(unittest.TestCase):
 
     def test_no_party_operation_changes_progression_or_equipment(self):
         game=self.game()
-        before=(game.lattice.to_dict(),game.character_abilities.to_dict(),game.inventory.to_dict())
+        before=(game.battle_rewards.to_dict(),game.character_abilities.to_dict(),game.inventory.to_dict())
         self.recruit(game)
         self.assertTrue(game.set_active_party(('caelan','lucan')))
         self.assertTrue(game.set_party_member_available('rhea',False,'Away on an errand.'))
-        self.assertEqual((game.lattice.to_dict(),game.character_abilities.to_dict(),
+        self.assertEqual((game.battle_rewards.to_dict(),game.character_abilities.to_dict(),
                           game.inventory.to_dict()),before)
 
     def test_sanctuary_world_accepts_party_actors_without_breaking_depth_rendering(self):

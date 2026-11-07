@@ -82,8 +82,8 @@ class Inventory:
     def consume_bundle(self, bundle):
         """Consume a complete ordinary-item cost, leaving quest items protected.
 
-        Validate every item and quantity before removing anything. Lattice
-        activation can therefore charge several crystals as one transaction.
+        Validate every item and quantity before removing anything, so a cost
+        involving several materials is charged as one transaction.
         """
         if not self._valid_bundle(bundle):return False
         if any(self.definitions[key]['category'] == 'key_items' for key in bundle):return False

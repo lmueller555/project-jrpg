@@ -9,7 +9,8 @@ through a legitimate completed legacy mill journey.
 
 The last enemy's defeat starts **Triumphal Fanfare** once and shows the victory
 banner. The scene then fades to a separate **Spoils of Battle** screen, where
-Caelan receives 20 Resonance Points and one Aether Emerald. The fanfare reaches
+Caelan receives an Aether Emerald. This historical recording predates the
+current item-only layout described in the [combat guide](../../COMBAT.md). The fanfare reaches
 its natural end, followed by 2.6 seconds of verified silence while Spoils stays
 open. Continue returns to the world and its Eldenmere Theme without re-awarding.
 

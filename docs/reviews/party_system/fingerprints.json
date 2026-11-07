@@ -1,5 +1,4 @@
 {
-  "aether_lattice.py": "503f62d3f8985216ee89274a1ef720c9efa14a022bb0d41dbe217de290e994d3",
   "assets/characters/attributes.json": "577e1dc0282e9eeb73c99c59c7c24fa6fbaad98d426920d3ad51f88fc9e8747e",
   "assets/characters/caelan/README.md": "35a48b030e5e76773625db514acc6c49f6f676f6a3102e41f6b750477dc4c795",
   "assets/characters/caelan/idle_back.png": "1d2336f31edfc74365a64e7662b31d4fc1f9a23a8593850864e4d27a3aa72c6b",
@@ -470,8 +469,6 @@
   "lantern_quest.py": "03d5609467ef8312cbcc856215bce297275c93e828318c6ae7b7e3b65ab3c401",
   "lantern_rest.py": "9455f4643b38d2c18bc9af41e1670fba7e4bf7c142828c1d7d0c23dac97547a4",
   "lantern_village.py": "ad639b014445de1c23406f69787b05acfe1ab069bc7e4d3f6ae753368dc822e6",
-  "lattice_progression.py": "d73045c79c97f81260dd6abe10b4aa4f1ae504f6a455deb0025c9946438552eb",
-  "lattice_ui.py": "bb62a3f75158f5ca1ea6b5dfbd33090a3abaa5ffbe245b85b4ff0535e0465f7c",
   "liam_blocks.py": "7ffbd6b95adda41c3aebb3c1278db6f77a8c5cb1689b818b18a361df1dcfd42f",
   "liam_daisy_play.py": "8614c6812f17b186fc24eaa9a6bac58802e01cc26ba7adf466144c666acb1611",
   "main.py": "ea2d14a88e5add0a40e83d6e1712ac8e8880554ae6ca05e5dbd3dc4dc6f7c381",
@@ -526,5 +523,6 @@
   "venn_visit.py": "efb6f728be54092848aa58d75e97513abd276efd4e6570af8288ae145a551f47",
   "well_routine.py": "59f3f16b4fd76d5b7d33054e48bc4f778c714df6472387891ea1b5bb0851960c",
   "world_encounters.py": "9358def57e7ed969062e6af77bcac9fd490da9cc668d7ca2677b80f6a9990d95",
-  "world_map_viewer.py": "8a807d4a85d3ff347c33d6a60e462df4ab425f84932e9b574f0491b9f39d2a71"
+  "world_map_viewer.py": "8a807d4a85d3ff347c33d6a60e462df4ab425f84932e9b574f0491b9f39d2a71",
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

@@ -104,7 +104,7 @@ class OverworldMinimapTests(unittest.TestCase):
                 self.assertFalse(minimap.visible)
                 setattr(game, field, False)
         for owner, flag in (('pause', 'is_open'), ('inventory_ui', 'is_open'),
-                ('status_ui', 'is_open'), ('lattice_ui', 'is_open'),
+                ('status_ui', 'is_open'),
                 ('world_map_viewer', 'is_open'), ('opening_cinematic', 'active'),
                 ('combat', 'active'), ('opening', 'locks_player'),
                 ('opening', 'controls_player'), ('opening', 'in_action'),

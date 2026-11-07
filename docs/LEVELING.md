@@ -7,12 +7,17 @@ enemy baseline and enemy-design catalogue. Their data lives in
 [`level_growth.json`](../assets/characters/level_growth.json) and
 [`enemy_archetypes.json`](../assets/combat/enemy_archetypes.json).
 
-The live journey still uses RP, Attunement and the Aether Lattice. This foundation
-does not automatically award traditional XP, convert old saves, replace MQ02's
-authored guest ratings, or retune the Bat and Tusker encounters. The enlarged
-effective rating caps are active in the shared attribute and damage backends.
-The pending gameplay decisions below remain explicit rather than becoming hidden
-defaults in the reward flow.
+Live victories currently award receipt-backed item drops. This foundation does
+not automatically distribute traditional XP, replace MQ02's authored guest
+ratings, or retune the Bat and Tusker encounters. The enlarged effective rating
+caps are active in the shared attribute and damage backends. The remaining XP
+eligibility and recovery decisions below stay explicit.
+
+Older progression-backed saves receive a one-way compatibility import on
+Continue: earned effective attributes, learned abilities and battle receipts are
+preserved. Retired scores and movement currency are discarded without inventing
+traditional XP or character levels. Validation on the title screen does not
+rewrite the player's file.
 
 ## Experience and levels
 
@@ -231,7 +236,7 @@ by the enemy baseline. Invalid levels, unknown characters, malformed records and
 boolean numeric inputs are rejected.
 
 This record is not a new journey field. It does not modify live current HP/MP,
-grant equipment or abilities, award RP, or choose XP recipients. The caller must
+grant equipment or abilities or choose XP recipients. The caller must
 settle eligibility, recovery and durable once-only reward handling when wiring
 it into combat and saves. Existing `CharacterAttributes` snapshots and party
 object identities retain their current ownership.
@@ -252,7 +257,7 @@ python tools/preview_leveling.py --all-levels --format json
   recommendation, not an approved rule.
 - Recruitment levels, story-absence catch-up and expected campaign levels.
 - Numeric stat-profile multipliers, species adjustments and elite/boss tuning.
-- RP/Lattice retirement or conversion, including existing growth and old saves.
+- Activating durable traditional level records in the live journey.
 - Damage, healing, accuracy/evasion, critical and ATB balance at the new ranges.
 - Elemental affinity assignment, equipment customization and Stagger design.
 

@@ -47,9 +47,8 @@ from party_travel import PartyTravel
 from character_abilities import CharacterAbilities
 from bot_loadouts import BotLoadouts
 from status_ui import StatusUI
-from aether_lattice import AetherLattice
-from lattice_progression import LatticeProgression
-from lattice_ui import LatticeUI
+from battle_rewards import BattleRewards
+from legacy_save import migrate_retired_progression
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
@@ -450,10 +449,9 @@ class Game:
         self.party=PartyState(self.attributes)
         self._party_prompt_before=None
         self._party_prompt_callback=None
-        self.lattice=AetherLattice()
-        self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
+        self.battle_rewards=BattleRewards(self.inventory)
+        self.character_abilities=CharacterAbilities(self.inventory)
         self.bot_loadouts=BotLoadouts()
-        self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.social=SocialSystem(self)
         self._mouse_held=False
         self.on_title=start_on_title
@@ -465,7 +463,6 @@ class Game:
         self.status_ui=StatusUI(self)
         self.party_ui=PartyUI(self)
         self.party_travel=PartyTravel(self)
-        self.lattice_ui=LatticeUI(self)
         self.opening=OpeningSequence(self)
         self.opening_cinematic=OpeningCinematic(self)
         self.halden_visit=HaldenVisit(self)
@@ -537,7 +534,7 @@ class Game:
                            'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
                            'bot_loadouts':self.bot_loadouts.to_dict(),
-                           'aether_lattice':self.lattice.to_dict(),
+                           'battle_rewards':self.battle_rewards.to_dict(),
                            'halden_visit':self.halden_visit.to_dict(),
                            'elira_visit':self.elira_visit.to_dict(),
                            'venn_visit':self.venn_visit.to_dict(),
@@ -594,6 +591,11 @@ class Game:
         if data is None:
             self.save_error=self.save_store.error
             return None
+        try:
+            data=migrate_retired_progression(data)
+        except (TypeError, ValueError):
+            self.save_error='The saved journey could not be read.'
+            return None
         def point(value):
             return (isinstance(value,list) and len(value)==2 and
                     all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
@@ -610,7 +612,8 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
-               LatticeProgression.valid_journey(data) and
+               ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
+               BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                BotLoadouts.valid_journey(data) and
                ('party' not in data or self._valid_party_snapshot(data)) and
@@ -637,10 +640,8 @@ class Game:
     def _valid_party_snapshot(data):
         """Reject the complete journey before touching live roster or resources."""
         attributes=CharacterAttributes('caelan')
-        lattice=AetherLattice()
-        if 'aether_lattice' in data and not lattice.restore(data['aether_lattice']):return False
         if 'character_attributes' in data and not attributes.restore(
-                data['character_attributes'],lattice_bonuses=lattice.bonuses()):return False
+                data['character_attributes']):return False
         expected_attributes=attributes.to_dict()
         party=PartyState(attributes)
         if not party.restore(data['party']):return False
@@ -717,12 +718,9 @@ class Game:
         self.mill_gift.reset()
         self.regent_arrival.reset()
         self.combat.reset()
-        self.lattice=AetherLattice()
-        if data is not None and 'aether_lattice' in data:
-            self.lattice.restore(data['aether_lattice'])
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
-            self.attributes.restore(data['character_attributes'],lattice_bonuses=self.lattice.bonuses())
+            self.attributes.restore(data['character_attributes'])
         self.party=PartyState(self.attributes)
         if data is not None and 'party' in data:
             if not self.party.restore(data['party']):return False
@@ -754,11 +752,13 @@ class Game:
             position=data['player']['position']
             self.player.facing=data['player']['facing']
             self.exterior_position.update(data['exterior_position'])
-        self.character_abilities=CharacterAbilities(self.inventory,self.lattice)
+        self.battle_rewards=BattleRewards(self.inventory)
+        if data is not None and 'battle_rewards' in data:
+            self.battle_rewards.restore(data['battle_rewards'])
+        self.character_abilities=CharacterAbilities(self.inventory)
         if data is not None:self.character_abilities.restore(data.get('character_abilities'))
         self.bot_loadouts=BotLoadouts()
         if data is not None and 'bot_loadouts' in data:self.bot_loadouts.restore(data['bot_loadouts'])
-        self.lattice_progression=LatticeProgression(self.lattice,self.inventory,{'caelan':self.attributes})
         self.overworld_travel.restore(data.get('overworld') if data else None)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.reset()
@@ -781,7 +781,6 @@ class Game:
         self.world_map_viewer.close()
         self.inventory_ui.reset()
         self.status_ui.reset()
-        self.lattice_ui.reset()
         self._sync_inventory()
         self.transfer_cooldown=.25
         self.on_title=False
@@ -853,7 +852,7 @@ class Game:
               'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
               'bot_loadouts':self.bot_loadouts.to_dict(),
-              'aether_lattice':self.lattice.to_dict(),
+              'battle_rewards':self.battle_rewards.to_dict(),
               'halden_visit':self.halden_visit.to_dict(),
               'elira_visit':self.elira_visit.to_dict(),
               'venn_visit':self.venn_visit.to_dict(),
@@ -993,22 +992,8 @@ class Game:
         y=(point[1]-origin[1])*VIEW_SIZE[1]/size[1]
         return (x,y) if 0<=x<VIEW_SIZE[0] and 0<=y<VIEW_SIZE[1] else None
 
-    def lattice_move_reason(self,target):return self.lattice_progression.move_reason(target)
-
-    def lattice_activation_reason(self,target):return self.lattice_progression.activation_reason(target)
-
-    def move_lattice(self,target):
-        if not self.lattice_progression.move(target):return False
-        self.save_progress()
-        return True
-
-    def activate_lattice(self,target):
-        if not self.lattice_progression.activate(target):return False
-        self.save_progress()
-        return True
-
-    def award_battle_rewards(self,receipt_id,awards,drops):
-        if not self.lattice_progression.award_battle_rewards(receipt_id,awards,drops):return False
+    def award_battle_rewards(self,receipt_id,drops):
+        if not self.battle_rewards.award_battle_rewards(receipt_id,drops):return False
         self.save_progress()
         return True
 
@@ -1655,7 +1640,6 @@ class Game:
         self.inventory_ui.draw(self.ui_surface)
         self.status_ui.draw(self.ui_surface)
         self.party_ui.draw(self.ui_surface)
-        self.lattice_ui.draw(self.ui_surface)
         self.world_map_viewer.draw(self.ui_surface)
         self.window.fill('#101b19')
         self.window.blit(self.ui_surface,origin)

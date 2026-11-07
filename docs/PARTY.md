@@ -18,7 +18,7 @@ must be able to fight to enter combat. Resting at Caelan's bed recovers availabl
 recruited characters, including reserves. Unavailable characters keep their
 resources while away. Existing battle outcome recovery rules remain in effect.
 
-This work does not change progression, distribute reserve RP, recruit future
+This work does not change progression, distribute reserve XP, recruit future
 characters through new quests, or give them skills or equipment. Mira retains
 her existing mill combat ratings. Lucan, Rhea and Edran have registered metadata
 and use the existing starter ratings until their authored recruitment is tuned.
@@ -28,8 +28,8 @@ The [traditional leveling foundation](LEVELING.md) supplies separate approved
 growth profiles for all five characters. Living reserve XP eligibility,
 story-unavailable characters, recruitment levels and catch-up remain pending;
 the party system does not silently choose those rules or distribute traditional
-XP. Its current resource persistence and RP/Lattice reward ownership remain in
-effect until the progression transition is implemented.
+XP. Its current resource persistence and receipt-backed item rewards remain in
+effect until combat XP distribution is implemented.
 
 ## Story ownership
 

@@ -6,8 +6,9 @@ import math
 from pathlib import Path
 import re
 
-from aether_lattice import AetherLattice
+from battle_rewards import BattleRewards
 from character_attributes import CharacterAttributes
+from inventory import Inventory
 from party_state import MAX_PARTY, PartyState
 from quests import MILL_QUEST, QuestLog
 
@@ -75,8 +76,7 @@ def valid_pending_snapshot(record, data=None):
     rewards = record['rewards']
     catalog = json.loads((ROOT/'assets/combat/enemies.json').read_text())['enemies']
     canonical = catalog['ridgeback_tusker' if mill else 'bat']['rewards']
-    if (not isinstance(rewards, dict) or set(rewards) != {'rp', 'drops'}
-            or type(rewards['rp']) is not int or not 0 <= rewards['rp'] <= canonical['rp']
+    if (not isinstance(rewards, dict) or set(rewards) != {'drops'}
             or not isinstance(rewards['drops'], dict)
             or any(key not in canonical['drops'] or type(amount) is not int
                    or not 1 <= amount <= canonical['drops'][key]
@@ -89,15 +89,15 @@ def valid_pending_snapshot(record, data=None):
         if (data['player']['scene'] != record['scene']
                 or data['player']['position'] != record['position']
                 or data['player']['facing'] != record['facing']):return False
-        lattice = AetherLattice()
-        if not lattice.restore(data['aether_lattice']):return False
+        receipts = BattleRewards(Inventory())
+        if not receipts.restore(data['battle_rewards']):return False
         attributes = CharacterAttributes('caelan')
-        if not attributes.restore(data['character_attributes'], lattice_bonuses=lattice.bonuses()):return False
+        if not attributes.restore(data['character_attributes']):return False
         if (record['resources']['hp'] > attributes.value('hp')
                 or record['resources']['mp'] > attributes.value('mp')):return False
         if record['incapacitated'] and record['resources']['hp'] != max(1, attributes.value('hp')//4):return False
         awarded = record['stage'] == 'awarded'
-        if lattice.has_receipt(record['receipt']) != awarded:return False
+        if receipts.has_receipt(record['receipt']) != awarded:return False
         resources = record['resources'] if awarded else record['before']
         if (attributes.current_hp, attributes.current_mp) != (resources['hp'], resources['mp']):return False
         if has_party:

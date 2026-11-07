@@ -16,7 +16,7 @@ Base damage = (Offense² / 5) × Potency × 100 / (100 + Defense)
 
 Offense and Defense are effective ratings between 0 and 999. The character
 wrappers read the appropriate `value()` from each participant. They do not read
-HP, MP, Spr, Speed, Acc, Eva, Lck or Attunement Rank, and do not mutate resources
+HP, MP, Spr, Speed, Acc, Eva, Lck or character level, and do not mutate resources
 or progression. Enemy HP/MP and encounter budgets are independent design work;
 the calculator does not construct or constrain enemy health profiles.
 

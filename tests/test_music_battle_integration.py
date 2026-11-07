@@ -200,7 +200,7 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         scene = finish_mill_battle(game, dismiss=False)
         self.assertEqual(scene.model.phase, 'victory')
         self.assertEqual(game.music.desired_track, 'victory')
-        with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
+        with patch.object(game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
         self.assertTrue(spoils.result_error)

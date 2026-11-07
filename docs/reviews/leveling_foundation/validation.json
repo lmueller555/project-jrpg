@@ -1,11 +1,9 @@
 {
   "version": 1,
   "baseline_commit": "fe867595f67bfd2fbf443060d4dfd0eafce86aca",
-  "scope": "Executable standalone leveling/enemy foundation and shared effective caps; live RP, reward distribution, resource recovery and journey formats preserved.",
   "regression": {
     "modules": [
       "tests/test_aether_edge_battle_model.py",
-      "tests/test_aether_lattice.py",
       "tests/test_attribute_caps.py",
       "tests/test_attribute_icons.py",
       "tests/test_battle_action_audio.py",
@@ -30,14 +28,6 @@
       "tests/test_gear_widget.py",
       "tests/test_gearblade_art.py",
       "tests/test_gearblade_fx.py",
-      "tests/test_lattice_formations.py",
-      "tests/test_lattice_gameplay.py",
-      "tests/test_lattice_layout_schema.py",
-      "tests/test_lattice_modifiers.py",
-      "tests/test_lattice_tier_distribution.py",
-      "tests/test_lattice_tier_migration.py",
-      "tests/test_lattice_transactions.py",
-      "tests/test_lattice_ui.py",
       "tests/test_leveling.py",
       "tests/test_leveling_combat_integration.py",
       "tests/test_mill_battle_gameplay.py",
@@ -115,11 +105,11 @@
     "party_state.py": "286dacb582d9b4cda25be85b61a021b52083df0fa69de8457ddd5a4f78684e97",
     "post_battle.py": "79a9a079cf863e377dd528412053223033b5c1ec9731274ed19b627ce802caaf",
     "spoils_scene.py": "0941fe20d088f9cc452f900b9a09faae42bd5a340f2d2861f1fb4f129c3ac0c9",
-    "lattice_progression.py": "d73045c79c97f81260dd6abe10b4aa4f1ae504f6a455deb0025c9946438552eb",
     "save_game.py": "76fee97c07ed790bc45b28a046c4cb06c3a42b08ff580f785e64a2c6e2d55e25",
     "assets/combat/enemies.json": "a3e8921754d004ad34d815fd40da1360e8d43f68386ea066fce1ae582008da6e",
     "assets/combat/guests.json": "2110b94522c0622c96ae8105639320aa8c203348662c2ce45a583a576246f378",
     "assets/combat/bots.json": "5c9cf06a70c3d436f7a5412595554ebeb2c4bd8867bd0f183317be7db233c1c5",
     "assets/characters/attributes.json": "577e1dc0282e9eeb73c99c59c7c24fa6fbaad98d426920d3ad51f88fc9e8747e"
-  }
+  },
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

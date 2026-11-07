@@ -2,7 +2,7 @@
 
 This foundation deliberately owns neither battle-reward distribution nor current
 HP/MP. Callers decide eligibility and resource recovery before integrating these
-records with a journey. Existing RP/Lattice saves are not interpreted as XP.
+records with a journey. Retired progression currencies are not interpreted as XP.
 """
 from bisect import bisect_right
 from copy import deepcopy

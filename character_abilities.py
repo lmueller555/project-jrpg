@@ -1,7 +1,7 @@
 """Registered character abilities and permanent first-weapon unlock history.
 
 The shared catalog describes abilities; character dictionaries decide who can
-learn them and how. Lattice rewards remain owned by the lattice. Equipment
+learn them and how. Explicit learned history belongs to this owner. Equipment
 references inventory ownership without consuming the equipped item, and does
 not recruit a character or grant any starting equipment.
 """
@@ -10,7 +10,6 @@ import json
 from pathlib import Path
 import re
 
-from aether_lattice import AetherLattice
 from gear_state import DEFAULT_GEM, valid_gem
 from inventory import Inventory
 
@@ -20,7 +19,7 @@ CATALOG_PATH = ROOT/'assets/abilities/catalog.json'
 CHARACTERS_PATH = ROOT/'assets/abilities/characters.json'
 _IDENTIFIER = re.compile(r'^[a-zA-Z0-9_.:/-]{1,128}$')
 _GROUP_KINDS = {'skills': 'technique', 'spells': 'spell', 'abilities': 'capability'}
-_UNLOCKS = ('starting', 'first_weapon', 'lattice')
+_UNLOCKS = ('starting', 'first_weapon', 'learned')
 
 
 def _identifier(value):
@@ -58,16 +57,15 @@ def starting_abilities(character_id, characters=None):
 class CharacterAbilities:
     """Independent character unlock history backed by shared item ownership."""
 
-    def __init__(self, inventory, lattice, catalog=None, characters=None):
-        if not isinstance(inventory, Inventory) or not isinstance(lattice, AetherLattice):
-            raise ValueError('Character abilities require inventory and lattice owners')
+    def __init__(self, inventory, catalog=None, characters=None):
+        if not isinstance(inventory, Inventory):
+            raise ValueError('Character abilities require an inventory owner')
         if catalog is None:catalog = json.loads(CATALOG_PATH.read_text(encoding='utf-8'))
         if characters is None:characters = json.loads(CHARACTERS_PATH.read_text(encoding='utf-8'))
         self.catalog = deepcopy(catalog)
         self.character_catalog = deepcopy(characters)
         self._validate_catalogs()
         self.inventory = inventory
-        self.lattice = lattice
         self.definitions = self.catalog['abilities']
         self.characters = self.character_catalog['characters']
         self.character_ids = tuple(self.characters)
@@ -108,11 +106,12 @@ class CharacterAbilities:
                         raise ValueError('Invalid character ability unlock')
 
     def reset(self):
-        """Clear equipment and unlock history without changing inventory or lattice."""
+        """Clear equipment and unlock history without changing inventory."""
         self._characters = {identifier: {'equipped_weapon': None,
                                         'first_weapon_acquired': False}
                             for identifier in self.characters}
         self._deferred_weapon_training = set()
+        self._learned_abilities = {}
         self._gear_focus = ({'caelan': DEFAULT_GEM}
                             if 'caelan' in self.characters else {})
 
@@ -133,10 +132,9 @@ class CharacterAbilities:
         return True
 
     def known_abilities(self, character_id='caelan'):
-        """Derive known IDs from character registration and canonical owners."""
+        """Derive known IDs from registration and permanent learned history."""
         if not self._known_character(character_id):return frozenset()
-        learned = (set(self.lattice.learned_abilities(character_id))
-                   if character_id in self.lattice.character_ids else set())
+        learned = self._learned_abilities.get(character_id, set())
         first_weapon = (self._characters[character_id]['first_weapon_acquired']
                         and character_id not in self._deferred_weapon_training)
         known = set()
@@ -144,9 +142,26 @@ class CharacterAbilities:
             for identifier, record in self.characters[character_id][group].items():
                 unlock = record['unlock']
                 if (unlock == 'starting' or unlock == 'first_weapon' and first_weapon
-                        or unlock == 'lattice' and identifier in learned):
+                        or unlock == 'learned' and identifier in learned):
                     known.add(identifier)
         return frozenset(known)
+
+    def _learnable(self, character_id, ability_id):
+        return (self._known_character(character_id) and isinstance(ability_id, str)
+                and any(self.characters[character_id][group].get(ability_id, {}).get('unlock')
+                        == 'learned' for group in _GROUP_KINDS))
+
+    def learn_ability(self, character_id, ability_id):
+        """Record an explicitly granted, registered ability once.
+
+        Story or future progression code owns acquisition conditions. Registering
+        an ability does not grant it, spend inventory, or supply free equipment.
+        """
+        if not self._learnable(character_id, ability_id):return False
+        known = self._learned_abilities.setdefault(character_id, set())
+        if ability_id in known:return False
+        known.add(ability_id)
+        return True
 
     def skill_ids(self, character_id='caelan'):
         """Return known techniques in the shared catalog's authored order."""
@@ -256,6 +271,10 @@ class CharacterAbilities:
         focus = {identifier: gem for identifier, gem in sorted(self._gear_focus.items())
                  if gem != DEFAULT_GEM}
         if focus:result['gear_focus'] = focus
+        if self._learned_abilities:
+            result['learned_abilities'] = {
+                identifier: sorted(abilities)
+                for identifier, abilities in sorted(self._learned_abilities.items())}
         return result
 
     def restore(self, data):
@@ -265,7 +284,8 @@ class CharacterAbilities:
             return True
         if (not isinstance(data, dict)
                 or not {'version', 'characters'} <= set(data)
-                or set(data) - {'version', 'characters', 'deferred_weapon_training', 'gear_focus'}
+                or set(data) - {'version', 'characters', 'deferred_weapon_training', 'gear_focus',
+                               'learned_abilities'}
                 or type(data['version']) is not int or data['version'] != 1
                 or not isinstance(data['characters'], dict)
                 or set(data['characters']) != set(self.characters)):
@@ -295,10 +315,20 @@ class CharacterAbilities:
                 or any(identifier != 'caelan' or identifier not in self.characters
                        or not valid_gem(gem) for identifier, gem in focus.items())):
             return False
+        learned = data.get('learned_abilities', {})
+        if (not isinstance(learned, dict)
+                or any(not self._known_character(identifier)
+                       or not isinstance(abilities, list) or not abilities
+                       or any(not self._learnable(identifier, ability) for ability in abilities)
+                       or len(abilities) != len(set(abilities))
+                       for identifier, abilities in learned.items())):
+            return False
         self._characters = deepcopy(data['characters'])
         self._deferred_weapon_training = set(deferred)
         self._gear_focus = ({'caelan': focus.get('caelan', DEFAULT_GEM)}
                             if 'caelan' in self.characters else {})
+        self._learned_abilities = {identifier: set(abilities)
+                                   for identifier, abilities in learned.items()}
         return True
 
     @classmethod
@@ -307,7 +337,5 @@ class CharacterAbilities:
         if not isinstance(data, dict):return False
         if 'character_abilities' in data and data['character_abilities'] is None:return False
         inventory = Inventory()
-        lattice = AetherLattice()
         if 'inventory' in data and not inventory.restore(data['inventory']):return False
-        if 'aether_lattice' in data and not lattice.restore(data['aether_lattice']):return False
-        return cls(inventory, lattice).restore(data.get('character_abilities'))
+        return cls(inventory).restore(data.get('character_abilities'))

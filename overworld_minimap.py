@@ -35,7 +35,7 @@ class OverworldMinimap:
             return False
         for owner, flag in (
                 ('pause', 'is_open'), ('inventory_ui', 'is_open'),
-                ('status_ui', 'is_open'), ('lattice_ui', 'is_open'),
+                ('status_ui', 'is_open'),
                 ('quest_ui', 'journal_open'), ('world_map_viewer', 'is_open'),
                 ('opening_cinematic', 'active'), ('combat', 'active'),
                 ('social', 'locked'), ('social', 'active'), ('opening', 'locks_player'),

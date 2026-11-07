@@ -12,7 +12,6 @@ os.environ['SDL_AUDIODRIVER'] = 'dummy'
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
-from aether_lattice import MAX_RP
 from inventory import MAX_QUANTITY
 from main import Game
 from test_mill_battle_gameplay import acknowledge_battle_result, seed_completed_mill, wait_for_spoils
@@ -54,7 +53,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertTrue(game.handle_events())
 
     def snapshot(self, game):
-        return (game.attributes.to_dict(), game.lattice.to_dict(),
+        return (game.attributes.to_dict(), game.battle_rewards.to_dict(),
                 game.inventory.to_dict(), game.quests.to_dict(),
                 sorted(game.social.flags))
 
@@ -180,16 +179,14 @@ class BattleGameplayTests(unittest.TestCase):
         final_hp, final_mp = scene.model.player.hp, scene.model.player.mp
         self.dismiss(game, scene)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), (final_hp, final_mp))
-        self.assertEqual(game.lattice.state()['rp'], 20)
-        self.assertEqual(game.lattice.rank(), 2)
-        self.assertEqual(game.lattice.steps(), 1)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         self.assertEqual(game.quests.to_dict(), before[3])
         self.assertEqual(sorted(game.social.flags), before[4])
         committed = self.snapshot(game)
         saved = json.loads(self.path.read_text())
         self.assertEqual(saved['character_attributes'], game.attributes.to_dict())
-        self.assertEqual(saved['aether_lattice'], game.lattice.to_dict())
+        self.assertEqual(saved['battle_rewards'], game.battle_rewards.to_dict())
         self.assertEqual(saved['inventory'], game.inventory.to_dict())
         game.combat.update(0);game.combat.update(0)
         self.assertEqual(self.snapshot(game), committed)
@@ -199,11 +196,11 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertFalse(restored.combat.active)
         self.assertEqual(self.snapshot(restored), committed)
 
-    def test_guard_then_flee_commits_damage_without_reward_or_rank_gain(self):
+    def test_guard_then_flee_commits_damage_without_reward_receipt(self):
         game = self.game()
         self.assertTrue(game.attributes.set_current(hp=100, mp=17))
         scene = self.start(game)
-        before_lattice = game.lattice.to_dict()
+        before_rewards = game.battle_rewards.to_dict()
         before_inventory = game.inventory.to_dict()
         self.action(game, scene, 'guard')
         self.advance_until(game, lambda: scene.model.player.hp < 100)
@@ -215,37 +212,33 @@ class BattleGameplayTests(unittest.TestCase):
         self.dismiss(game, scene)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), expected)
         self.assertLess(expected[0], 100)
-        self.assertEqual(game.lattice.to_dict(), before_lattice)
+        self.assertEqual(game.battle_rewards.to_dict(), before_rewards)
         self.assertEqual(game.inventory.to_dict(), before_inventory)
 
     def test_technical_reward_limits_show_zero_rewards_and_still_allow_victory_return(self):
         game = self.game()
         self.assertTrue(game.award_battle_rewards('test:full-reward-storage',
-                                                 {'caelan': MAX_RP},
                                                  {'aether_emerald': MAX_QUANTITY}))
         scene = self.start(game)
         receipt = game.combat.receipt_id
-        before_lattice, before_inventory = game.lattice.to_dict(), game.inventory.to_dict()
-        self.assertEqual(scene.model.enemy_definition['rewards'], {'rp': 0, 'drops': {}})
+        before_rewards, before_inventory = game.battle_rewards.to_dict(), game.inventory.to_dict()
+        self.assertEqual(scene.model.enemy_definition['rewards'], {'drops': {}})
         self.finish(game, scene)
         self.assertEqual(scene.model.phase, 'victory')
         expected = scene.model.player.hp, scene.model.player.mp
         self.dismiss(game, scene)
         self.assertEqual((game.attributes.current_hp, game.attributes.current_mp), expected)
-        after_lattice = game.lattice.to_dict()
-        self.assertEqual(after_lattice['characters'], before_lattice['characters'])
-        self.assertEqual(after_lattice['receipts'], sorted(before_lattice['receipts']+[receipt]))
+        after_rewards = game.battle_rewards.to_dict()
+        self.assertEqual(after_rewards['receipts'], sorted(before_rewards['receipts']+[receipt]))
         self.assertEqual(game.inventory.to_dict(), before_inventory)
-        self.assertTrue(game.lattice.has_receipt(receipt))
+        self.assertTrue(game.battle_rewards.has_receipt(receipt))
         self.assertFalse(scene.result_error)
         self.assertIsNone(game.save_error)
 
-    def test_lattice_learned_magick_uses_battle_mp_and_settles_it_on_return(self):
+    def test_learned_magick_uses_battle_mp_and_settles_it_on_return(self):
         game = self.game()
-        self.assertTrue(game.award_battle_rewards('test:unlock-dart', {'caelan': 10000},
-                                                 {'aether_diamond': 1}))
-        self.assertTrue(game.move_lattice('aether_dart_01'))
-        self.assertTrue(game.activate_lattice('aether_dart_01'))
+        self.assertTrue(game.character_abilities.learn_ability('caelan', 'aether_dart'))
+        self.assertTrue(game.save_progress())
         scene = self.start(game)
         initial_mp = game.attributes.current_mp
         self.action(game, scene, 'aether_dart')
@@ -255,8 +248,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertEqual(scene.model.phase, 'victory')
         self.dismiss(game, scene)
         self.assertEqual(game.attributes.current_mp, initial_mp-4)
-        self.assertEqual(game.lattice.state()['rp'], 10020)
-        self.assertEqual(game.inventory.quantity('aether_diamond'), 0)
+        self.assertIn('aether_dart', game.character_abilities.known_abilities())
 
     def test_reward_rejection_keeps_result_open_and_all_persistent_state_unchanged(self):
         game = self.game()
@@ -264,7 +256,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.finish(game, scene)
         self.assertEqual(scene.model.phase, 'victory')
         before = self.snapshot(game)
-        with patch.object(game.lattice_progression, 'award_battle_rewards', return_value=False):
+        with patch.object(game.battle_rewards, 'award_battle_rewards', return_value=False):
             spoils = wait_for_spoils(game)
         self.assertTrue(game.combat.active)
         self.assertIs(game.combat.scene, scene)
@@ -272,7 +264,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertTrue(spoils.result_error)
         self.assertEqual(self.snapshot(game), before)
         self.dismiss(game, scene)
-        self.assertEqual(game.lattice.state()['rp'], 20)
+        self.assertEqual(len(game.battle_rewards.to_dict()['receipts']), 1)
         self.assertEqual(game.inventory.quantity('aether_emerald'), 1)
         self.assertEqual(game.attributes.current_hp, scene.model.player.hp)
 
@@ -300,7 +292,7 @@ class BattleGameplayTests(unittest.TestCase):
         self.assertEqual(self.snapshot(game), before)
         saved = json.loads(self.path.read_text())
         self.assertEqual(saved['character_attributes'], before[0])
-        self.assertEqual(saved['aether_lattice'], before[1])
+        self.assertEqual(saved['battle_rewards'], before[1])
         self.assertEqual(saved['inventory'], before[2])
         restored = self.game(title=True)
         self.assertTrue(restored.begin_journey(True))

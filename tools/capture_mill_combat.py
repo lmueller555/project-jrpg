@@ -134,7 +134,7 @@ class Capture:
                 self.actions = [asdict(action) for action in self._actions]
                 self.checks.append({'world_frozen_during_battle': True,
                                     'ready_and_guidance_freeze_all_gauges': True,
-                                    'reward_rp': model.enemy_definition['rewards']['rp'],
+                                    'reward_drops': model.enemy_definition['rewards']['drops'],
                                     'battle_did_not_repair_intake': True,
                                     'linear_aftermath': True})
                 return scene
@@ -192,7 +192,7 @@ class Capture:
                         'quest_completed': True, 'mill_visibly_restored': True,
                         'no_rest_continue_choice': True, 'saved_journey_valid': True,
                         'rendered_frames': len(frames), 'encoded_frames': encoded,
-                        'battle_rewards': self.game.lattice.state()['rp'],
+                        'battle_rewards': self.game.battle_rewards.to_dict(),
                         'source_dialogue_pages': len(self.driver.pages)}
             (self.output/'verification.json').write_text(json.dumps(metadata, indent=2)+'\n')
             print(json.dumps({'output': str(self.output), 'captures': len(self.captures),

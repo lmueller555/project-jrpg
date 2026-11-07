@@ -2,7 +2,7 @@
 
 HP and MP attributes are maxima; their current resource values are separate.
 Saved attributes are preserved base values. Effective values add named modifier
-sources rebuilt from their canonical owners, such as activated lattice nodes,
+sources rebuilt from their canonical owners, such as equipment or temporary effects,
 then stop at each attribute's gameplay cap. Earned modifiers remain canonical.
 All other attributes are ratings, not percentages. Combat damage is calculated
 by combat_damage.py; healing, hit, evasion, critical-chance and turn-timing
@@ -114,13 +114,13 @@ class CharacterAttributes:
         return min(total, self.cap(identifier))
 
     def base_value(self, identifier):
-        """Return preserved growth before lattice or other named modifiers."""
+        """Return preserved growth before named modifiers."""
         return self._attributes[identifier]
 
     def set_modifiers(self, source, bonuses):
         """Replace one source atomically without changing base or current resources.
 
-        An empty mapping removes that source. Recomputing the same lattice
+        An empty mapping removes that source. Recomputing the same permanent
         bonuses therefore never stacks them. Raw earned growth is preserved
         when its effective value reaches a gameplay cap. A replacement that
         would leave a current resource above its new maximum is rejected.
@@ -167,11 +167,11 @@ class CharacterAttributes:
                 'current_hp': self._current_hp, 'current_mp': self._current_mp}
 
     @classmethod
-    def valid_snapshot(cls, data, character_id='caelan', lattice_bonuses=None):
+    def valid_snapshot(cls, data, character_id='caelan', modifier_bonuses=None):
         """Validate base and current resources against externally derived bonuses.
 
-        Versions one and two contain pre-lattice aggregate growth. Their values
-        become the preserved base, so supplying nonzero lattice growth for an
+        Versions one and two contain historical aggregate growth. Their values
+        become the preserved base, so supplying nonzero external growth for an
         older record is rejected instead of counting its growth twice.
         """
         if (not isinstance(data, dict)
@@ -182,19 +182,19 @@ class CharacterAttributes:
                 or data['character_id'] != character_id
                 or not _valid_attributes(data['attributes'])):
             return False
-        bonuses = {} if lattice_bonuses is None else lattice_bonuses
+        bonuses = {} if modifier_bonuses is None else modifier_bonuses
         if not _valid_bonuses(bonuses):return False
         if data['version'] < SNAPSHOT_VERSION and any(bonuses.values()):return False
-        totals = _attribute_totals(data['attributes'], {'lattice': bonuses})
+        totals = _attribute_totals(data['attributes'], {'permanent': bonuses})
         if not _valid_attributes(totals, capped=False):return False
         effective = _capped_values(totals)
         return (all(_integer(data['current_'+resource])
                     and data['current_'+resource] <= effective[resource]
                     for resource in ('hp', 'mp')))
 
-    def restore(self, data, lattice_bonuses=None):
+    def restore(self, data, modifier_bonuses=None):
         """Restore a valid complete record; malformed records leave all state intact."""
-        if not self.valid_snapshot(data, self.character_id, lattice_bonuses):
+        if not self.valid_snapshot(data, self.character_id, modifier_bonuses):
             return False
         attributes = dict(data['attributes'])
         current_hp = data['current_hp']
@@ -205,9 +205,9 @@ class CharacterAttributes:
             scaled = (current_hp*maximum+150)//300
             attributes['hp'] = maximum
             current_hp = max(1, scaled) if current_hp else 0
-        bonuses = {} if lattice_bonuses is None else dict(lattice_bonuses)
+        bonuses = {} if modifier_bonuses is None else dict(modifier_bonuses)
         self._attributes = attributes
         self._current_hp = current_hp
         self._current_mp = data['current_mp']
-        self._modifiers = {'lattice': bonuses} if bonuses else {}
+        self._modifiers = {'permanent': bonuses} if bonuses else {}
         return True

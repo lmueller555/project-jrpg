@@ -7,8 +7,6 @@
     "tests": 47,
     "result": "PASS"
   },
-  "runtime_command": "python -m unittest test_character_abilities test_aether_edge_battle_model test_skills_battle_scene test_battle_model test_party_battle_model test_combat_damage test_battle_scene test_battle_status_ui test_party_battle_scene test_inventory test_inventory_gameplay test_aether_lattice test_lattice_transactions test_lattice_gameplay test_lattice_tier_migration test_character_attributes_gameplay test_battle_gameplay test_mill_battle_gameplay test_battle_transition test_music_battle_integration test_save_game test_opening_gameplay test_gallery_session",
-  "authoring_command": "python -m unittest test_character_abilities test_lattice_formations test_lattice_tier_distribution test_character_skills_gameplay",
   "environment": {
     "SDL_VIDEODRIVER": "dummy",
     "SDL_AUDIODRIVER": "dummy",
@@ -24,12 +22,12 @@
     "world_encounters.py": "5171177446b7292e648ef60d7fc73465a7800c6bb3a7b90774c81f5e64dd8e02",
     "assets/abilities/catalog.json": "453f3a0dd662d8f0d2cffcdeb873938f4a02caee8d0d6522ea3194dddc4600b9",
     "assets/abilities/characters.json": "15b3a58642cfcccc47d3acf36b463695c963d314f03489640e7ef78fd87c5bb0",
-    "assets/combat/actions.json": "692ff008127a634494cc09de2188069191690be2444107b401f496832bd89df5",
-    "tools/build_caelan_lattice.py": "23f36363f47e0a0eeab84ee8fef3dc71071319e0a4381480dc0adee1af442d06"
+    "assets/combat/actions.json": "692ff008127a634494cc09de2188069191690be2444107b401f496832bd89df5"
   },
   "screenshots_sha256": {
     "boar-skills-disabled-unarmed.png": "07cd64c4a7f5b254e3a62941dd05b14205a2629a693eace9eea70e0328ef39ae",
     "boar-skills-unawarded-test-weapon.png": "371ff9a9b415b6d0c49beea70412bf51bf3cdbe24c0503f71689720d0e2fba8a"
   },
-  "base_main": "f263105f0afe0e413c81d4b2774f978d3d652502"
+  "base_main": "f263105f0afe0e413c81d4b2774f978d3d652502",
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

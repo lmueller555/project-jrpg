@@ -8,7 +8,7 @@ Caelan is a **Spellblade**. He begins unarmed with his established basic magicks
 
 - `starting`: known from the beginning.
 - `first_weapon`: granted by generic weapon acquisition, or held pending by an authored training sequence until its discovery.
-- `lattice`: learned from an activated Lattice node.
+- `learned`: granted explicitly and retained in the character's learned history.
 
 The current design identities are Spellblade, Engineer, Armsmaster, Aethermage
 and Sage. **Documentation revision, 2026-11-07:** Engineer replaces Machinist
@@ -16,14 +16,14 @@ for Mira, and Armsmaster replaces Knight for Lucan. The runtime dictionaries
 still contain the earlier Machinist and Knight labels; changing those labels
 is a separate implementation task.
 
-Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future Lattice unlock. `basic_magicks` is an authored-world capability rather than an executable combat skill.
+Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future explicitly learned skill. `basic_magicks` is an authored-world capability rather than an executable combat skill.
 
 Future combat direction is captured in the character sheets for
 [Caelan](narrative/game_01/characters/CAELAN.md#combat-progression-concept),
 [Mira](narrative/game_01/characters/MIRA.md#combat-progression-concept) and
 [Lucan](narrative/game_01/characters/LUCAN.md#combat-progression-concept).
 Their gem, gear, bot, self-augment and weapon unlock methods are undecided;
-these concepts do not choose the Aether Lattice or its eventual replacement.
+these concepts do not determine their eventual acquisition rules.
 
 Nature Edge, Aqua Edge and Flame Edge have shared catalog definitions for the first lesson. They are temporary attempts, not permanent entries in Caelan’s learned dictionary. The visible white Ice gem does not add an initial Ice Edge command. After the breakthrough, only Aether Edge remains usable until later progression grants other abilities.
 
@@ -54,11 +54,17 @@ The root menu includes Skills even when unavailable. Before owning a weapon, it 
 
 During the short guided lesson, actor switching and Flee are unavailable; the game points to Guard, then Skills. Mira covers with Guard, and Rivet contributes bounded autonomous attacks. Once discovery completes, ordinary commands, target selection and Mira’s player-controlled turns return. Opening or closing Skills spends no MP or ATB; ordinary choices pause every gauge. Back/Escape leaves the submenu without accidentally consuming an attempt. Escape at the root pauses battle.
 
-Mira’s Skills contains Overclock. It requires her active bot and 5 MP; it gives Rivet Haste for eight completed bot turns at 1.5× ATB fill, refreshing without stacking. Aether Dart still requires its independent Lattice unlock. See [Mira’s bot rules](MIRA_BOTS.md).
+Mira’s Skills contains Overclock. It requires her active bot and 5 MP; it gives Rivet Haste for eight completed bot turns at 1.5× ATB fill, refreshing without stacking. Aether Dart still requires its independent learned unlock. See [Mira’s bot rules](MIRA_BOTS.md).
 
 ## Acquisition and saved journeys
 
-[`character_abilities.py`](../character_abilities.py) owns permanent first-weapon history, deferred training and equipped references. The same version-one `character_abilities` envelope accepts optional `deferred_weapon_training: ["caelan"]`; the key is omitted when there is no pending lesson. Old first-weapon history retains its already-known technique. New Game clears history, equipment and deferral. Malformed or unowned equipment is rejected during validation without replacing a journey.
+[`character_abilities.py`](../character_abilities.py) owns permanent first-weapon history, deferred training, explicitly learned abilities and equipped references. The same version-one `character_abilities` envelope accepts optional `deferred_weapon_training: ["caelan"]`; the key is omitted when there is no pending lesson. Old first-weapon history retains its already-known technique. New Game clears history, equipment and deferral. Malformed or unowned equipment is rejected during validation without replacing a journey.
+
+`CharacterAbilities.learn_ability(character_id, ability_id)` grants a registered
+`learned` entry explicitly. It does not consume an item or grant unrelated
+abilities. An optional `learned_abilities` mapping in the version-one snapshot
+preserves these grants. Existing saves import earned abilities into this history;
+new games do not receive every registered skill automatically.
 
 Generic `CharacterAbilities.acquire_weapon(character_id, item_id, learn_starter=True)` preserves immediate starter learning. The MQ02 gift uses `learn_starter=False`: the owned weapon and first-weapon receipt exist, but `starter_skills_pending('caelan')` remains true. Reequipping or unequipping cannot bypass that deferral. `learn_first_weapon_skills('caelan')` commits the earned discovery idempotently and requires an owned, equipped weapon; it never grants another item.
 

@@ -192,8 +192,7 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 
 **Current author direction, 2026-11-07:** Preserve these broad strokes for later
 development. These are future concepts, not implemented abilities or a finished
-progression system. Gem and gear acquisition are undecided; no unlock is assigned
-to the Aether Lattice or a replacement progression system.
+progression system. Gem and gear acquisition methods remain undecided.
 
 ### Elemental gems and additional gears
 

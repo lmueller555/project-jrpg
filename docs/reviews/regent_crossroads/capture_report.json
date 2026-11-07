@@ -33091,7 +33091,6 @@
   },
   "render_input_scope": "Only actually executed production Python and actually read runtime asset JSON/PNG; no reviews, authoring inputs or self-report",
   "render_input_sha256": {
-    "aether_lattice.py": "503f62d3f8985216ee89274a1ef720c9efa14a022bb0d41dbe217de290e994d3",
     "assets/abilities/catalog.json": "665306ac2f6f7b9071f14665d23c7f8979de1f8a49bc30b5c51887b44bb51515",
     "assets/characters/ada/idle_front.png": "c4a44ed89592fd80c3d099fd73c2e4e3753f4ea05fde01e85b6acf343a3d6808",
     "assets/characters/attributes.json": "577e1dc0282e9eeb73c99c59c7c24fa6fbaad98d426920d3ad51f88fc9e8747e",
@@ -34949,7 +34948,6 @@
     "assets/portraits/eldenmere/venn_child_neutral.png": "1a46f3b97ba231c74f9dddcdcffc6d46fbed17b03da28035811e97a3d3021311",
     "assets/portraits/eldenmere/venn_father_neutral.png": "8fc7326cb012e750bae2a737d524922b5ca621672b2f5ed89f85aa1bf751e484",
     "assets/portraits/eldenmere/venn_mother_neutral.png": "9f5fdd82ec67da7d66b9c070bd0255afa81d0710747a826ab6ef7bad6618a93e",
-    "assets/progression/aether_lattice.json": "dcfa30f7b8850b28f23ec2d38252a717ea22e740e9c579a0a68b1910cb10e532",
     "assets/quests/eldenmere.json": "b09bb63bc6b3a39bfc74e48adedbf5a3c70aa409df71096a8191a6607118cc12",
     "assets/story/bed_rest.json": "a2e1cc1b0765a2e4c501032e960b4376182075728addd1c083a4d93f7867bf36",
     "assets/story/elira/idle_back.png": "a76a5d21639eaf7e0fee3094110ef4d6dbf4eba731388ed28b6e0185701dd26e",
@@ -35505,8 +35503,6 @@
     "lantern_quest.py": "bb10f59123ca44887d51c5a2a95cbc4f51eb979c6d560ccaf0600891e0634434",
     "lantern_rest.py": "7fb587b83857dd959789b44d4302100558fb64ecadf516bc6c3ec82c253e49f4",
     "lantern_village.py": "ad639b014445de1c23406f69787b05acfe1ab069bc7e4d3f6ae753368dc822e6",
-    "lattice_progression.py": "d73045c79c97f81260dd6abe10b4aa4f1ae504f6a455deb0025c9946438552eb",
-    "lattice_ui.py": "bb62a3f75158f5ca1ea6b5dfbd33090a3abaa5ffbe245b85b4ff0535e0465f7c",
     "liam_blocks.py": "7ffbd6b95adda41c3aebb3c1278db6f77a8c5cb1689b818b18a361df1dcfd42f",
     "liam_daisy_play.py": "8614c6812f17b186fc24eaa9a6bac58802e01cc26ba7adf466144c666acb1611",
     "main.py": "bf162bd59e74b53d707fdfad130c9fd2dada9280920c9c86904d49d027cc2415",
@@ -35741,5 +35737,6 @@
     "The normal seen handoff restages Serene/Tomas and reveals the visitors; these changes are reported separately from the strictly frozen active cinematic.",
     "Clerk crop panels are nearest-neighbor enlargements of actual in-game frames, not isolated sprite renders.",
     "This capture is not the broader test suite. Parent edits to recorded inputs require recapture."
-  ]
+  ],
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }

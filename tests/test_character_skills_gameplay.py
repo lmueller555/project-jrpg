@@ -70,7 +70,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
 
     def snapshot(self, game):
         return deepcopy((game.character_abilities.to_dict(), game.inventory.to_dict(),
-                         game.lattice.to_dict(), game.attributes.to_dict(),
+                         game.battle_rewards.to_dict(), game.attributes.to_dict(),
                          game.quests.to_dict()))
 
     def draw_text(self, game):
@@ -166,10 +166,8 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.fail('The battle did not reach the expected state.')
 
     def unlock_dart(self, game):
-        self.assertTrue(game.award_battle_rewards('skill-test:dart', {'caelan': 10000},
-                                                 {'aether_diamond': 1}))
-        self.assertTrue(game.move_lattice('aether_dart_01'))
-        self.assertTrue(game.activate_lattice('aether_dart_01'))
+        self.assertTrue(game.character_abilities.learn_ability('caelan', 'aether_dart'))
+        self.assertTrue(game.save_progress())
 
     def test_first_story_fight_equips_the_gift_and_guides_guard_before_elemental_attempts(self):
         game=self.game()
@@ -192,7 +190,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
 
     def test_first_weapon_grants_only_aether_edge_and_survives_continue_but_new_game_clears_it(self):
         game = self.game()
-        before_lattice = game.lattice.to_dict()
+        before_rewards = game.battle_rewards.to_dict()
         self.assertTrue(game.acquire_weapon('caelan', TEST_SWORD))
         self.assertEqual(game.inventory.quantity(TEST_SWORD), 1)
         self.assertTrue(game.character_abilities.has_weapon())
@@ -200,7 +198,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
                          frozenset({'basic_magicks', 'aether_edge'}))
         self.assertNotIn('focused_strike', game.character_abilities.known_abilities())
         self.assertEqual(game.character_abilities.skill_ids(), ('aether_edge',))
-        self.assertEqual(game.lattice.to_dict(), before_lattice)
+        self.assertEqual(game.battle_rewards.to_dict(), before_rewards)
         saved = json.loads(self.path.read_text())
         self.assertEqual(saved['character_abilities'], game.character_abilities.to_dict())
         before = self.snapshot(game)
@@ -310,12 +308,17 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual((scene.model.player.mp, scene.model.player.atb, scene.model.enemy.atb), before)
         self.assertEqual(scene.model.player.aether_edge_hits, 0)
 
-    def test_existing_lattice_dart_remains_a_usable_root_command_when_unarmed(self):
+    def test_learned_dart_remains_a_usable_root_command_when_unarmed(self):
         game = self.game(completed_mill=True)
         self.unlock_dart(game)
         self.assertIn('aether_dart', game.character_abilities.known_abilities())
         scene = self.start_bat(game)
         self.ready_player(game, scene)
+        self.assertIn('aether_dart', scene._command_actions())
+        for _ in scene._command_actions():
+            if 'aether_dart' in scene.command_rects:break
+            key(game, pygame.K_DOWN)
+            game.draw()
         self.assertIn('aether_dart', scene.command_rects)
         self.assertEqual(scene.model.command_reason('skills'), 'Requires a weapon.')
         initial_mp = scene.model.player.mp
@@ -357,7 +360,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertFalse(game.equip_weapon('caelan', None))
         self.assertEqual(self.snapshot(game), before)
 
-    def test_legacy_missing_skill_state_defaults_to_unarmed_without_losing_lattice_or_items(self):
+    def test_missing_skill_state_defaults_to_unarmed_without_losing_receipts_or_items(self):
         game = self.game(completed_mill=True)
         self.unlock_dart(game)
         self.assertTrue(game.acquire_weapon('caelan', TEST_SWORD))
@@ -370,9 +373,9 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual(self.path.read_text(), raw)
         self.assertTrue(resumed.begin_journey(True))
         self.assertEqual(resumed.inventory.to_dict(), legacy['inventory'])
-        self.assertEqual(resumed.lattice.to_dict(), legacy['aether_lattice'])
+        self.assertEqual(resumed.battle_rewards.to_dict(), legacy['battle_rewards'])
         self.assertFalse(resumed.character_abilities.has_weapon())
-        self.assertIn('aether_dart', resumed.character_abilities.known_abilities())
+        self.assertNotIn('aether_dart', resumed.character_abilities.known_abilities())
         self.assertNotIn('aether_edge', resumed.character_abilities.known_abilities())
         self.assertEqual(resumed.character_abilities.skill_ids(), ())
 

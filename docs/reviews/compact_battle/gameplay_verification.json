@@ -11,7 +11,6 @@
       "name": "starter",
       "starting_hp": 140,
       "starting_mp": 30,
-      "rp": 0,
       "crystals": 0
     },
     {
@@ -19,8 +18,7 @@
       "training_rp": 6860,
       "training_crystal": {
         "aether_diamond": 1
-      },
-      "ability_activated_through_lattice": "aether_dart_01"
+      }
     }
   ],
   "enemy_atb_visible": false,
@@ -41,7 +39,6 @@
     },
     {
       "stage": "victory settles once",
-      "rp": 20,
       "rank": 2,
       "steps": 1,
       "aether_emerald": 1,
@@ -54,7 +51,6 @@
     {
       "stage": "learned Dart and flee",
       "training_fixture_rp": 6860,
-      "learned_via_real_lattice": true,
       "dart_mp_cost": 4,
       "flee_awarded_no_rewards": true,
       "minimum_window": [
@@ -1151,5 +1147,6 @@
         "action": null
       }
     ]
-  }
+  },
+  "_archive_note": "Historical verification record. Retired progression details and removed source/test references have been omitted. Aggregate results describe the original run, not current validation."
 }
