@@ -19,12 +19,17 @@ from leveling import MAX_LEVEL, monster_xp
 ROOT = Path(__file__).resolve().parent
 BESTIARY_PATH = ROOT/'assets/combat/bestiary.json'
 CATALOG_PATH = BESTIARY_PATH
+ELEMENT_IDS = ('non_elemental', 'fire', 'electric', 'water', 'ice', 'nature',
+               'wind', 'holy', 'ground')
+ELEMENT_NAMES = dict(zip(ELEMENT_IDS, (
+    'Non-Elemental', 'Fire', 'Electric', 'Water', 'Ice', 'Nature', 'Wind',
+    'Holy', 'Ground')))
 FIXED_FIELDS = frozenset(('name', 'attributes', 'abilities', 'rewards'))
 SPECIES_FIELDS = frozenset((
     'mode', 'name', 'description', 'family', 'tier', 'habitats', 'level_range',
     'archetype', 'stat_profile', 'fighting_style', 'species_multipliers',
     'tier_multipliers', 'behavior', 'presentation', 'rewards',
-    'planned_mechanics', 'encounter_guidance'))
+    'elemental_profile', 'planned_mechanics', 'encounter_guidance'))
 _IDENTIFIER = re.compile(r'^[a-zA-Z0-9_.:/-]{1,128}$')
 _DAMAGE_KINDS = ('physical', 'magical')
 
@@ -92,6 +97,33 @@ def _validate_fixed(enemy, actions):
         raise ValueError('Invalid authored Bestiary encounter')
 
 
+def _validate_elemental_profile(profile):
+    """Validate hidden authoring data, without applying elemental combat rules.
+
+    Same-element absorption supersedes the damage percentage. Non-Elemental
+    means unaligned, so it never implies absorption of ordinary attacks.
+    """
+    if (not isinstance(profile, dict)
+            or set(profile) != {'element', 'damage_percentages', 'absorption', 'design_rationale'}
+            or not isinstance(profile['element'], str)
+            or profile['element'] not in ELEMENT_IDS
+            or not isinstance(profile['damage_percentages'], dict)
+            or set(profile['damage_percentages']) != set(ELEMENT_IDS)
+            or any(type(value) not in (int, float) or not 0 <= value <= 200
+                   or not math.isfinite(value)
+                   for value in profile['damage_percentages'].values())
+            or not _text(profile['design_rationale'])):
+        raise ValueError('Invalid Bestiary elemental profile')
+    absorption = profile['absorption']
+    expected = [] if profile['element'] == 'non_elemental' else [profile['element']]
+    if (not isinstance(absorption, dict) or set(absorption) != {'elements', 'healing_percent'}
+            or not isinstance(absorption['elements'], list)
+            or absorption['elements'] != expected
+            or type(absorption['healing_percent']) is not int
+            or absorption['healing_percent'] != 100):
+        raise ValueError('Invalid Bestiary elemental absorption')
+
+
 def _validate_species(enemy, actions, archetypes, items):
     if (set(enemy) != SPECIES_FIELDS or enemy['mode'] != 'species'
             or not _text(enemy['name'], 120) or not _text(enemy['description'])
@@ -144,16 +176,12 @@ def _validate_species(enemy, actions, archetypes, items):
             or (enemy['rewards']['drops'] is not None
                 and not _drops(enemy['rewards']['drops'], items))):
         raise ValueError('Invalid Bestiary drops')
+    _validate_elemental_profile(enemy['elemental_profile'])
     planned = enemy['planned_mechanics']
-    if (not isinstance(planned, dict) or set(planned) != {'elemental_affinities', 'stagger'}):
+    if (not isinstance(planned, dict) or set(planned) != {'stagger'}):
         raise ValueError('Invalid planned Bestiary mechanics')
-    affinities, stagger = planned['elemental_affinities'], planned['stagger']
-    if (not isinstance(affinities, dict) or set(affinities) != {'status', 'multipliers'}
-            or affinities['status'] != 'planned' or not isinstance(affinities['multipliers'], dict)
-            or any(not _identifier(element) or type(value) not in (int, float)
-                   or value not in (0, .5, 1, 2)
-                   for element, value in affinities['multipliers'].items())
-            or not isinstance(stagger, dict) or set(stagger) != {'status', 'resistance'}
+    stagger = planned['stagger']
+    if (not isinstance(stagger, dict) or set(stagger) != {'status', 'resistance'}
             or stagger['status'] != 'planned' or stagger['resistance'] not in ('low', 'normal', 'high')):
         raise ValueError('Invalid planned Bestiary mechanics')
     guidance = enemy['encounter_guidance']

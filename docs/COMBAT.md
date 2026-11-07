@@ -305,9 +305,20 @@ Its 5 MP pays for two Gusts before free Bite fallback. The factory supports
 isolated combat without placing encounters or awarding live XP.
 
 The Cave Bat is distinct from the fixed test Bat below. The sanctuary cave
-remains closed pending its authored dungeon/quest work. Planned Fire weakness
-and low Stagger resistance are metadata until those mechanics are implemented;
-item drops have not yet been authored.
+remains closed pending its authored dungeon/quest work. Its complete elemental
+profile specifies Non-Elemental identity, Fire damage received at 200% and all
+other types at 100%, with no absorption. Elemental effects and low Stagger
+resistance do not affect battle until those mechanics are implemented; item
+drops have not yet been authored.
+
+The Bestiary's [elemental design](BESTIARY.md#elemental-identity-and-relationships)
+uses Non-Elemental, Fire, Electric, Water, Ice, Nature, Wind, Holy and Ground.
+Species store all nine damage percentages and matching-element absorption;
+unaligned creatures do not absorb Non-Elemental attacks. These internal data
+are hidden in ordinary combat. A creature's appearance, name, habitat and
+behavior should offer consistent clues. Edran's planned Study ability will be
+one of the limited ways to reveal the data directly; this authoring update does
+not add Study or affinity labels to the battle HUD.
 
 ## Test Bat
 

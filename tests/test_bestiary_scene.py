@@ -15,6 +15,7 @@ import pygame
 from audio_settings import AudioSettings
 from battle_model import BattleModel
 from battle_scene import BattleScene, CombatSprites
+from bestiary import load_bestiary
 from character_attributes import CharacterAttributes
 from inventory import Inventory
 from leveling import character_stats
@@ -76,6 +77,33 @@ class BestiarySceneTests(unittest.TestCase):
                                   model.enemy_xp_reward), (level, hp, reward))
                 self.assertIn('Cave Bat', labels)
                 self.assertEqual(scene.location_name, 'Eldenmere')
+
+    def test_elemental_design_data_is_hidden_in_ordinary_battle_presentation(self):
+        catalog = load_bestiary()
+        alternate = deepcopy(catalog)
+        profile = alternate['enemies']['cave_bat']['elemental_profile']
+        profile['element'] = 'fire'
+        profile['damage_percentages'] = dict.fromkeys(profile['damage_percentages'], 75)
+        profile['damage_percentages']['fire'] = 200
+        profile['absorption']['elements'] = ['fire']
+        presentations = []
+        for data in (catalog, alternate):
+            self.game.attributes = leveled_caelan(2)
+            model = BattleModel.from_bestiary(self.game.attributes, 'cave_bat', 2,
+                                              bestiary_data=data, rng=random.Random(7))
+            scene = BattleScene(self.game, model, battlefield='eldenmere')
+            labels = []
+            original = Painter.text
+            def record(painter, value, *args, **kwargs):
+                labels.append(str(value))
+                return original(painter, value, *args, **kwargs)
+            self.canvas.fill('black')
+            self.game.ui_surface.fill('black')
+            with patch.object(Painter, 'text', record):
+                self.draw(scene)
+            presentations.append((labels, pygame.image.tobytes(self.canvas, 'RGB'),
+                                   pygame.image.tobytes(self.game.ui_surface, 'RGB')))
+        self.assertEqual(presentations[0], presentations[1])
 
     def test_real_frames_render_bite_gust_hurt_and_defeat_after_mp_depletion(self):
         model, scene = self.encounter(3)
