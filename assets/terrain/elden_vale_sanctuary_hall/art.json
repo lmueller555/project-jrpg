@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "authoring": "native_pixel_asset_modules",
+  "source_recipe": "assets/source/terrain/elden_vale_sanctuary_hall/recipe.json",
+  "source_assets": [
+    {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_a.png",
+      "sha256": "992710cc2936d3df6f8d3aee512fd8ef83659b2dc4b0f24767b45642eec125f6"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_b.png",
+      "sha256": "feeba32dbfd286c01b7950a1a56c960ee6c95f114bee0a0e62549b0660496127"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/floor_c.png",
+      "sha256": "aa6991fe5b83994b1c9aff176557b8eab1d16e326fdbf5239a4eac5a18b5dec8"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+      "sha256": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_back.png",
+      "sha256": "fb611029d7ff5eebf8a3a671e872d5fc7501067d51628fd8b96ae44f7a8dea76"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_interior/parts/window.png",
+      "sha256": "af69bae989516d58c35ce49e4d550e12ba3561bd8359b79d3aafc435658b62a1"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_interior/tiles/entry_threshold.png",
+      "sha256": "cabd3d8bf34956a4b507067306e04884ea3583e6cbd762e15afa456e44bb006a"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+      "sha256": "89e50d63c782d5ccb6dde32763ecb788a863a9c038ead9e8375ca9ecc610104a"
+    },
+    {
+      "path": "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png",
+      "sha256": "7afbca4fa393b84f8abd24ebe56d2ccf5edd1b4f1d8597de2afbdda5038f13a3"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+      "sha256": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png",
+      "sha256": "934d70ad7c3e7551feac151d8f6bde8fd9e38df5c0864c5f68a480b7af86c2b4"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png",
+      "sha256": "dcbbc5369df09189bcc83bd24f1da8cb4f385a394fc81f9223e96791cecad5fa"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png",
+      "sha256": "d7355a509e48bd7f476be73a97766eabf99d4a9e9cfd1ff86c1d6afa73660932"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+      "sha256": "03b8f8f94bd88f765706fc6d964d7f3017f414d457c391cfc09ca2e91f908798"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/noticeboard.png",
+      "sha256": "4b8e08256c417d44404fe690f82e6e129b96e0b94d56af3d79db28fbedd1eac5"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png",
+      "sha256": "3825ccba52941f605fad77cbb1197b108f3906a59808aed2731b88bb25a66dd2"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png",
+      "sha256": "753d44faf42e7f603dc1533597d0b1b38717e5d33c84512431e4ff340567b2af"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png",
+      "sha256": "0031760b6a69d73ac714c139240cca4970f6ac36653d3ef758599d3512845fd6"
+    }
+  ],
+  "entities": [
+    {
+      "id": "north_remembrance_table",
+      "position": [
+        224,
+        102
+      ],
+      "sort_y": 160,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/north_remembrance_table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+        "assets/terrain/eldenmere/sanctuary_interior/props/care_basket.png",
+        "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "footprint": [
+        224,
+        134,
+        144,
+        26
+      ]
+    },
+    {
+      "id": "records_cabinet",
+      "position": [
+        448,
+        96
+      ],
+      "sort_y": 160,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/records_cabinet.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/bookcase.png"
+      ],
+      "footprint": [
+        452,
+        144,
+        64,
+        16
+      ]
+    },
+    {
+      "id": "reading_bench_north",
+      "position": [
+        104,
+        186
+      ],
+      "sort_y": 216,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/reading_bench_north.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "footprint": [
+        108,
+        206,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reading_bench_south",
+      "position": [
+        104,
+        256
+      ],
+      "sort_y": 286,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/reading_bench_south.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "footprint": [
+        108,
+        276,
+        40,
+        10
+      ]
+    },
+    {
+      "id": "reading_stand",
+      "position": [
+        180,
+        195
+      ],
+      "sort_y": 229,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/reading_stand.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/bookstand.png"
+      ],
+      "footprint": [
+        187,
+        217,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "ledger_table",
+      "position": [
+        430,
+        206
+      ],
+      "sort_y": 254,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/ledger_table.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/table.png",
+        "assets/terrain/eldenmere/sanctuary_interior/props/desk_notes.png",
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "footprint": [
+        430,
+        228,
+        96,
+        26
+      ]
+    },
+    {
+      "id": "records_chair",
+      "position": [
+        425,
+        274
+      ],
+      "sort_y": 308,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/records_chair.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/cottage_furniture/sprites/chair_up.png"
+      ],
+      "footprint": [
+        428,
+        292,
+        18,
+        16
+      ]
+    },
+    {
+      "id": "west_north_plant",
+      "position": [
+        64,
+        128
+      ],
+      "sort_y": 146,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/west_north_plant.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/herb_planter.png"
+      ],
+      "footprint": [
+        66,
+        139,
+        20,
+        7
+      ]
+    },
+    {
+      "id": "west_south_plant",
+      "position": [
+        36,
+        286
+      ],
+      "sort_y": 310,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/west_south_plant.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "footprint": [
+        40,
+        302,
+        10,
+        8
+      ]
+    },
+    {
+      "id": "east_south_plant",
+      "position": [
+        518,
+        286
+      ],
+      "sort_y": 310,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/east_south_plant.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/potted_herb.png"
+      ],
+      "footprint": [
+        522,
+        302,
+        10,
+        8
+      ]
+    },
+    {
+      "id": "central_remembrance_rug",
+      "position": [
+        264,
+        274
+      ],
+      "sort_y": -100,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/elden_vale_sanctuary_hall/props/central_remembrance_rug.png"
+      ],
+      "frame_duration_ms": 300,
+      "phase_offset": 0,
+      "source_assets": [
+        "assets/terrain/eldenmere/sanctuary_interior/props/mended_rug.png"
+      ]
+    }
+  ],
+  "native_size": [
+    576,
+    384
+  ]
+}

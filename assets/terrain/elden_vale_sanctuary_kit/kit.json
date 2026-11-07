@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "tile_size": 24,
+  "authoring": "native_modular_source_assembly",
+  "shade_factors": {
+    "cloister_floor": 0.6,
+    "cloister_back_wall": 0.48
+  },
+  "source_crops": [
+    {
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "crop": [
+        78,
+        84,
+        102,
+        108
+      ],
+      "purpose": "slate roof material"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "crop": [
+        32,
+        146,
+        58,
+        182
+      ],
+      "purpose": "carved arched window"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "crop": [
+        118,
+        156,
+        150,
+        198
+      ],
+      "purpose": "timber door and frame"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary/closed.png",
+      "crop": [
+        39,
+        56,
+        54,
+        72
+      ],
+      "purpose": "small bell"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+      "crop": [
+        0,
+        7,
+        24,
+        24
+      ],
+      "purpose": "limestone masonry material"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_01.png",
+      "crop": [
+        0,
+        7,
+        24,
+        24
+      ],
+      "purpose": "limestone masonry material"
+    },
+    {
+      "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_02.png",
+      "crop": [
+        0,
+        7,
+        24,
+        24
+      ],
+      "purpose": "limestone masonry material"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "crop": [
+        0,
+        0,
+        96,
+        64
+      ],
+      "purpose": "natural rock surface"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "crop": [
+        24,
+        20,
+        48,
+        44
+      ],
+      "purpose": "cave limestone face material"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/ridge.png",
+      "crop": [
+        48,
+        16,
+        72,
+        40
+      ],
+      "purpose": "cave limestone face material"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png",
+      "crop": [
+        0,
+        0,
+        64,
+        36
+      ],
+      "purpose": "natural limestone outcrop"
+    },
+    {
+      "path": "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png",
+      "crop": [
+        0,
+        0,
+        36,
+        20
+      ],
+      "purpose": "small natural stones"
+    },
+    {
+      "path": "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png",
+      "crop": [
+        0,
+        0,
+        32,
+        16
+      ],
+      "purpose": "horizontal cloister floor paving"
+    },
+    {
+      "path": "assets/terrain/eldenmere/garden_fence/modules/e_a/module.png",
+      "crop": [
+        10,
+        14,
+        14,
+        32
+      ],
+      "purpose": "keeper rail native post"
+    },
+    {
+      "path": "assets/terrain/eldenmere/garden_fence/modules/w_a/module.png",
+      "crop": [
+        10,
+        14,
+        14,
+        32
+      ],
+      "purpose": "keeper rail native post"
+    }
+  ],
+  "source_sha256": {
+    "assets/terrain/eldenmere/garden_fence/modules/e_a/module.png": "d9aca0592f3d39331e1351af7f266f14f357531bfdb436dc10262632560d56f0",
+    "assets/terrain/eldenmere/garden_fence/modules/w_a/module.png": "bcd8f4396bd35c3dd23e1a3aeac66cb1050f27a38ad773d7023e83f33595fa45",
+    "assets/terrain/eldenmere/sanctuary/closed.png": "71ffcab1d2fc7928a21d33ab27dc1c989b99f85dbf7224941185d1bcdf1217aa",
+    "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_01.png": "7f7a902fa214de70dcc418e332ce840f3bc0e3fc49f16181ecbbcd280f8409c8",
+    "assets/terrain/eldenmere/terraces/tiles/wall_front_02.png": "4706f3fb347a1c4e9256e48276afc65bd66564cb53d432dca228830c6f1ad2b5",
+    "assets/terrain/overworld/elden_vale/polish/props/ridge.png": "c506990b27744fe73dd25f828e8c30a878bbc6c6d778dcc90409a4c03d84215e",
+    "assets/terrain/overworld/elden_vale/polish/props/river_rocks.png": "402dd3a666a23b5c10d4387b744ecaba0170f99277a143311a2b527377b0d024",
+    "assets/terrain/overworld/elden_vale/polish/props/rock_outcrop.png": "2af5dbd8e357d06a27f955002c36216357259f9d0f12aa1b20e16eb4117dc78b"
+  },
+  "modules": {
+    "hall": {
+      "size": [
+        288,
+        216
+      ],
+      "ground_rect": [
+        24,
+        120,
+        240,
+        84
+      ],
+      "door_anchor": [
+        144,
+        210
+      ],
+      "door_clearance": [
+        128,
+        174,
+        32,
+        42
+      ]
+    },
+    "cloister": {
+      "size": [
+        240,
+        120
+      ],
+      "column_x": [
+        0,
+        76,
+        152,
+        228
+      ],
+      "column_position_y": 44,
+      "back_wall_rect": [
+        0,
+        48,
+        240,
+        12
+      ],
+      "column_ground_rects": [
+        [
+          0,
+          100,
+          12,
+          12
+        ],
+        [
+          76,
+          100,
+          12,
+          12
+        ],
+        [
+          152,
+          100,
+          12,
+          12
+        ],
+        [
+          228,
+          100,
+          12,
+          12
+        ]
+      ],
+      "bay_centers": [
+        [
+          44,
+          92
+        ],
+        [
+          120,
+          92
+        ],
+        [
+          196,
+          92
+        ]
+      ]
+    },
+    "entrance_arch": {
+      "size": [
+        96,
+        96
+      ],
+      "ground_rects": [
+        [
+          0,
+          80,
+          24,
+          16
+        ],
+        [
+          72,
+          80,
+          24,
+          16
+        ]
+      ],
+      "opening": [
+        24,
+        40,
+        48,
+        56
+      ],
+      "anchor": [
+        48,
+        96
+      ]
+    },
+    "cave": {
+      "size": [
+        160,
+        128
+      ],
+      "mouth_rect": [
+        47,
+        78,
+        67,
+        50
+      ],
+      "anchor": [
+        80,
+        116
+      ]
+    },
+    "cave_keeper_rail": {
+      "size": [
+        72,
+        48
+      ],
+      "ground_rect": [
+        0,
+        30,
+        72,
+        12
+      ]
+    }
+  }
+}

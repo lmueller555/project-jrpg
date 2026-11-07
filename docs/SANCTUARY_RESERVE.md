@@ -1,7 +1,8 @@
 # Elden Vale Sanctuary reserve
 
-The regional miniature opens into a detailed, peaceful woodland reserve. The
-scene follows the approved sanctuary preview: southern entrance arch and court,
+The regional miniature opens into a detailed, peaceful woodland reserve built
+from the same native pixel asset packs as Eldenmere. The layout follows the
+sanctuary reference: southern entrance arch and court,
 pale limestone hall and side cloister, a tended memorial grove to the west,
 the cave approach on the eastern ridge, and a surveyed stone face within the
 southeastern protected boundary.
@@ -21,9 +22,8 @@ and rock faces have solid footprints consistent with the full player probe.
 Visible open ground is freely walkable, including grass beyond the paths,
 shaded grove clearings, northern shoulders and survey margins. Three open
 cloister bays can be entered from the court; their columns, rear wall and the
-eastern garden workstation remain solid.
-Localized floor patches open the three former low masonry panels so the
-painting and the walkable space agree.
+eastern garden workstation remain solid. The bays are assembled as open floors,
+separate columns, arches and roof pieces, with collision at their physical bases.
 
 The hall is a separate, enterable scene with quiet seating and a records table.
 Its exit returns to the sanctuary court. The southern reserve exit returns to
@@ -64,22 +64,41 @@ ownership. Continuing a journey saved here resumes in the corresponding scene.
 
 ## Review and reproduction
 
-The [scenery-depth review](reviews/sanctuary_depth/README.md) shows the corrected
-overlap between Caelan and the trees, props, buildings and hall furniture.
-Individual silhouettes use their own ground anchors; canopy gaps remain
-transparent, and wall/cliff sections follow their sloping ground edges. Tree
-collision follows the visible roots, allowing movement behind projecting
-trunks and crowns. That depth correction retains the source painting; the
-three open cloister bays use their own localized floor patches.
+The [pixel asset review](reviews/sanctuary_pixel_assets/README.md) records the
+reserve and hall at normal character scale, ordinary travel from Eldenmere,
+free exploration, the cloister, cave rail, optional inspections, local map and
+Save/Continue. Its disposable save and settings files leave player journeys
+untouched. Reproduce with `python tools/capture_sanctuary_reserve.py`.
 
-The [in-game review](reviews/sanctuary_reserve/README.md) records ordinary travel
-from Eldenmere, the reserve circuit, hall entry and return, optional inspections,
-and save/continue checks using disposable save and settings files. Reproduce
-with `python tools/capture_sanctuary_reserve.py`.
+The exterior retains its 48 × 32 tile extent at 24 pixels per tile. Grass,
+connected dirt paths, foliage, flowers, benches, paving and constructed masonry
+come from Eldenmere's reusable packs. Sanctuary-specific limestone architecture,
+natural rock and cave pieces extend those packs at the same character scale.
+The hall uses modular floors, walls and individual furnishings.
 
-The [free exploration review](reviews/sanctuary_free_roam/README.md) records
-ordinary movement off the paths and into the three open cloister bays, the visible cave
-rail, hall entry/exit, and Save/Continue on formerly blocked grass. Its
-independent full-foot flood and direct movement regressions check broad open
-ground as well as the remaining physical barriers. Reproduce with
-`python tools/capture_reserve_free_roam.py`.
+Ground layers are compiled for runtime efficiency. Trees, architecture and
+furniture remain separately placed, depth-sorted objects. Asset placements own
+their solid ground footprints; visible open ground accepts the complete
+24 × 12 player probe. Full-foot flood, straight movement, independent occlusion
+probes and saved-scene tests check the resulting world. The local map uses an
+overview compiled from these same assets.
+
+The previous painted ground, extracted depth silhouettes and localized repair
+patches have been removed from the scene pipeline. Source asset references and
+deterministic build checks make the replacement reproducible.
+
+Rebuild the checked-in scenes with Pillow available:
+
+```sh
+python tools/build_elden_vale_sanctuary.py
+python tools/build_sanctuary_reserve_hall.py
+python tools/build_elden_vale_sanctuary.py --check
+python tools/build_sanctuary_reserve_hall.py --check
+```
+
+The exterior placement recipe is
+[`assets/source/maps/elden_vale_sanctuary/recipe.json`](../assets/source/maps/elden_vale_sanctuary/recipe.json).
+The interior recipe is
+[`assets/source/terrain/elden_vale_sanctuary_hall/recipe.json`](../assets/source/terrain/elden_vale_sanctuary_hall/recipe.json).
+Their exports record the reusable source assets and their hashes. Runtime
+exploration uses the checked-in products and requires no asset-building tools.

@@ -1,11 +1,11 @@
-"""Scenery occludes actual Caelan pixels only where a visible object is ahead.
+"""Native asset scenery occludes actual Caelan pixels at physical objects.
 
-The probes below were selected from the approved painted scene and reachable
-player feet. They deliberately do not consult exported masks or sort values:
-the former broad grove cutout erased the open-ground probes, while missing
-oak, basin and bench layers left the character painted over solid scenery.
+Depth probes are independently chosen from the assembled scene, rather than
+inferred from exported sorting values. Ground provenance is checked against
+the reusable source packs instead of retaining a background-painting hash.
 """
 import hashlib
+import json
 import os
 from pathlib import Path
 from types import SimpleNamespace
@@ -50,43 +50,52 @@ class SanctuaryDepthTests(unittest.TestCase):
         self.assertEqual(after.get_at(screen), scenery if hidden else sprite_color,
                          ('Wrong scenery overlap', feet, point, 'hidden' if hidden else 'visible'))
 
-    def test_ground_art_is_retained_while_only_depth_layers_change(self):
-        expected = {
-            'assets/terrain/elden_vale_sanctuary/ground.png':
-                '3476df0237132ddc29325a5135ca9414b3cb906cf3725e486d74b3a0abadbd9a',
-            'assets/terrain/elden_vale_sanctuary_hall/ground.png':
-                '1e2612e5e59b8c00763a0416e28a22c8dd5405368bc4e7631fdafaa30627c4c7',
-        }
-        for path, digest in expected.items():
-            self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(), digest, path)
+    def test_ground_and_scenery_are_assembled_from_hash_verified_pixel_packs(self):
+        manifest = json.loads((ROOT/'assets/terrain/elden_vale_sanctuary/art.json').read_text())
+        sources = manifest['source_assets']
+        paths = [record['path'] for record in sources]
+        self.assertGreaterEqual(len(sources), 8)
+        self.assertEqual(len(paths), len(set(paths)))
+        for record in sources:
+            with self.subTest(source=record['path']):
+                self.assertEqual(hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest(),
+                                 record['sha256'])
+        self.assertTrue(any('/eldenmere/grass_dirt/' in path for path in paths))
+        self.assertTrue(any('/eldenmere/foliage/' in path for path in paths))
+        for obsolete in ('clean_plate_generated.png','approved_preview.png',
+                         'elden_vale_cloister_openings','elden_vale_cave_barrier'):
+            self.assertFalse(any(obsolete in path for path in paths),obsolete)
+        self.assertEqual(self.world.data['build']['implementation'], 'native_pixel_asset_packs')
+        self.assertEqual(self.world.data['build']['source_assets'], sources)
+        self.assertNotIn('clean_plate_sha256', manifest)
 
-    def test_northwest_oak_crown_covers_the_character_on_the_rear_walking_path(self):
-        self.assert_pixel_depth((348, 88), (348, 75), hidden=True)
+    def test_western_tree_crown_covers_rear_poses_and_leaves_front_poses_visible(self):
+        self.assert_pixel_depth((144,238),(144,218),hidden=True)
+        self.assert_pixel_depth((144,310),(144,290),hidden=False)
 
     def test_open_grass_and_path_between_grove_objects_do_not_erase_the_character(self):
-        for feet, point in (((300, 360), (300, 340)), ((310, 360), (310, 340)),
-                            ((290, 372), (290, 352))):
+        for feet, point in (((600,400),(600,380)),((535,480),(535,460)),
+                            ((240,400),(240,380))):
             with self.subTest(feet=feet):self.assert_pixel_depth(feet, point, hidden=False)
 
-    def test_basin_bench_and_planter_cover_rear_feet_and_leave_front_poses_visible(self):
+    def test_basin_and_bench_cover_rear_feet_and_leave_front_poses_visible(self):
         cases = (
-            ('basin_back', (750, 318), (746, 321), True),
-            ('basin_front', (750, 378), (750, 358), False),
-            ('bench_back', (271, 260), (271, 255), True),
-            ('bench_front', (271, 310), (271, 290), False),
-            ('planter_back', (704, 340), (700, 343), True),
-            ('planter_front', (704, 382), (704, 362), False),
+            ('basin_back',(768,370),(764,364),True),
+            ('basin_front',(768,412),(768,392),False),
+            ('bench_back',(264,260),(262,256),True),
+            ('bench_front',(264,300),(264,280),False),
         )
         for name, feet, point, hidden in cases:
             with self.subTest(name=name):self.assert_pixel_depth(feet, point, hidden=hidden)
 
     def test_cloister_front_pose_is_not_cut_by_its_rear_wall_or_the_hall_depth(self):
-        for feet, point in (((660, 330), (660, 311)), ((676, 330), (676, 301))):
+        for feet, point in (((699,317),(699,297)),((775,317),(775,297)),
+                            ((851,317),(851,297))):
             with self.subTest(feet=feet):self.assert_pixel_depth(feet, point, hidden=False)
 
     def test_arch_stonework_covers_the_rear_pose_but_openings_stay_transparent(self):
         for name, feet, point, hidden in (
-            ('arch_back', (444, 615), (444, 595), True),
+            ('arch_back', (444,600), (444,580), True),
             ('arch_opening', (444, 654), (444, 634), False),
             ('arch_front', (444, 711), (444, 691), False),
             ('hall_doorway', (535, 345), (535, 325), False),

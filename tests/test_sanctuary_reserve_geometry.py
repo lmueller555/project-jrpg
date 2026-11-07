@@ -54,18 +54,23 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
         self.assertEqual(self.world.size,(1152,768))
         self.assertEqual(self.world.probe_size,(24,12))
 
-    def test_open_cloister_replaces_its_old_depth_without_changing_other_scenery(self):
-        original = json.loads((ROOT/'assets/terrain/elden_vale_sanctuary/art.json').read_text())
+    def test_modular_scenery_has_unique_instances_and_no_painted_floor_patches(self):
         entities = {entity['id']:entity for entity in self.world.data['entities']}
         self.assertEqual(len(entities),len(self.world.data['entities']))
-        self.assertNotIn('cloister_depth',entities)
-        self.assertIn('sanctuary_cloister_openings_ground',entities)
-        self.assertIn('cloister_open_roof_arches',entities)
-        self.assertIn('cloister_preserved_east_stock',entities)
-        for entity in original['entities']:
-            if entity['id']=='cloister_depth':continue
-            with self.subTest(retained_scenery=entity['id']):
-                self.assertEqual(entities[entity['id']],entity)
+        for obsolete in ('cloister_depth','sanctuary_cloister_openings_ground',
+                         'cloister_preserved_east_stock','cloister_open_roof_arches'):
+            self.assertNotIn(obsolete,entities)
+        instances = self.world.data['asset_instances']
+        self.assertGreaterEqual(len(instances),20)
+        self.assertEqual(len({instance['id'] for instance in instances}),len(instances))
+        for instance in instances:
+            with self.subTest(instance=instance['id']):
+                self.assertTrue(instance['asset_id'])
+                self.assertEqual(len(instance['position']),2)
+                self.assertTrue(instance['frames'])
+                self.assertTrue(all((ROOT/path).is_file() for path in instance['frames']))
+        self.assertEqual(len(self.world.data['cloister_bays']),3)
+        self.assertNotIn('source_polygon',json.dumps(self.world.data))
 
     def test_every_public_approach_is_reached_by_ordinary_full_foot_movement(self):
         for name,point in self.world.data['public_approaches'].items():
@@ -74,7 +79,12 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
                 self.walk(point)
 
     def test_the_complete_woodland_circuit_is_continuously_walkable(self):
-        for index,point in enumerate(self.world.data['loop_waypoints']):
+        waypoints = self.world.data['loop_waypoints']
+        self.assertLess(min(point[0] for point in waypoints),200)
+        self.assertGreater(max(point[0] for point in waypoints),1000)
+        self.assertLess(min(point[1] for point in waypoints),200)
+        self.assertGreater(max(point[1] for point in waypoints),600)
+        for index,point in enumerate(waypoints):
             with self.subTest(waypoint=index):self.walk(point)
 
     def test_visible_off_path_ground_is_open_across_broad_patches(self):
@@ -83,9 +93,9 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
         # the former path-corridor edges. These are independent of the recipe.
         patches = {
             'northwest_shoulder':(420,74,20,12),
-            'north_hall_shoulder':(504,111,28,14),
+            'north_hall_shoulder':(548,108,28,14),
             'northeast_shoulder':(948,138,20,16),
-            'east_loop_grass':(1080,299,14,22),
+            'east_loop_grass':(1078,414,14,22),
             'western_grove_grass':(213,380,18,18),
             'forecourt_west':(408,395,24,18),
             'forecourt_east':(792,358,20,14),
@@ -103,32 +113,34 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
                         self.assertTrue(self.world.can_stand((px,py)))
 
     def test_cloister_arches_have_full_width_ground_access(self):
-        for x in (666,718,772):
-            with self.subTest(bay=x):
-                self.walk_direct((x,328),(x,291))
-                self.assertFalse(self.world.can_stand((x,286)))
-        for point in ((641,302),(691,302),(745,302),(797,302),(848,302),
-                      (715,289),(822,303),(808,309),(843,315),(875,309)):
+        for center in (699,775,851):
+            for offset in (-18,0,18):
+                x = center+offset
+                with self.subTest(bay=center,offset=offset):
+                    self.walk_direct((x,365),(x,291))
+                    self.assertFalse(self.world.can_stand((x,286)))
+        for point in ((661,331),(737,331),(813,331),(889,331),
+                      (699,279),(775,279),(851,279)):
             with self.subTest(actual_column_or_wall=point):
                 self.assertFalse(self.world.can_stand(point))
-        self.assertTrue(self.world.can_stand((824,330)))
+        self.assertTrue(self.world.can_stand((851,345)))
 
     def test_cliff_top_bottom_and_slope_routes_are_open_around_stone_faces(self):
-        for point in ((710,380),(710,478),(544,470),(562,500),
-                      (920,414),(958,448),(1008,406)):
+        for point in ((648,470),(648,530),(580,500),(860,482),
+                      (750,550),(920,414),(958,448),(1008,406)):
             with self.subTest(clear_ground=point):
                 self.assertTrue(self.world.can_stand(point))
-        for point in ((698,437),(750,423),(963,544)):
+        for point in ((648,495),(720,508),(792,495),(934,534)):
             with self.subTest(visible_rock=point):
                 self.assertFalse(self.world.can_stand(point))
 
     def test_visible_boundary_and_cave_barrier_stop_feet_without_closing_the_exit(self):
         for point in ((430,42),(12,400),(1133,390),(330,670),(670,699),
-                      (1008,371)):
+                      (1008,365)):
             with self.subTest(physical_boundary=point):
                 self.assertFalse(self.world.can_stand(point))
-        self.assertEqual(self.world.data['cave_barrier']['footprint'],[974,364,70,13])
-        self.assertTrue(any(entity['id']=='sanctuary_cave_safety_barrier'
+        self.assertEqual(self.world.data['cave_barrier']['footprint'],[972,359,72,12])
+        self.assertTrue(any(entity['id']=='reserve_cave_keeper_rail'
                             for entity in self.world.data['entities']))
         self.walk_direct((444,642),(444,735))
 
@@ -139,12 +151,11 @@ class SanctuaryReserveGeometryTests(unittest.TestCase):
         self.assertTrue(all('cave' not in door['id'] for door in self.world.data['doors']))
 
     def test_tree_contacts_match_drawn_roots_while_canopy_routes_remain_open(self):
-        # Contacts measured from the retained artwork, independently of the
-        # generated collider records. A projecting trunk is not a ground wall.
-        for point in ((320,147),(321,512),(297,631),(910,275),(749,588),
-                      (200,353),(844,424),(642,485)):
+        # Native tree roots are solid, while the ground below the projecting
+        # crown remains open. Samples are independent of collider records.
+        for point in ((144,276),(144,408),(336,420)):
             with self.subTest(root=point):self.assertFalse(self.world.can_stand(point))
-        for point in ((348,88),(300,360),(204,334)):
+        for point in ((144,238),(144,310),(336,382),(336,454)):
             with self.subTest(clear_route=point):self.assertTrue(self.world.can_stand(point))
 
     def test_hall_threshold_and_reserve_exit_have_clear_player_landings(self):

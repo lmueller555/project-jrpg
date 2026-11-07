@@ -1,153 +1,267 @@
-"""Export the approved reserve clean plate and registered depth silhouettes.
+"""Compose the reserve from native pixel packs and source-derived stone modules.
 
-Image generation removes the preview's people; this deterministic exporter only
-scales the retained source and registers polygon-masked copies of its pixels.
-Geometry, actors, interaction and travel belong to the separate scene builder.
+The retained composition painting is no longer an input. Terrain, independent
+objects and their physical ground contacts share the authored placement recipe.
 """
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import hashlib
 from io import BytesIO
 import json
 from pathlib import Path
+from random import Random
 
 from PIL import Image, ImageDraw
 
+if __package__:
+    from .build_eldenmere_terrain import BITS, OFFSETS, normalize_mask
+    from .reserve_stone_kit import make_kit
+else:
+    from build_eldenmere_terrain import BITS, OFFSETS, normalize_mask
+    from reserve_stone_kit import make_kit
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT/'assets/source/terrain/elden_vale_sanctuary'
-RECIPE = SOURCE/'art_recipe.json'
+RECIPE = ROOT/'assets/source/maps/elden_vale_sanctuary/recipe.json'
 OUTPUT = ROOT/'assets/terrain/elden_vale_sanctuary'
+KIT = ROOT/'assets/terrain/elden_vale_sanctuary_kit'
+TERRAIN = ROOT/'assets/terrain/eldenmere'
 
 
 def encoded(image):
-    data = BytesIO()
-    image.save(data, format='PNG')
-    return data.getvalue()
-
-
-def foliage_gaps(mask, native):
-    """Exclude path/limestone visible between the immutable source's leaves.
-
-    Semantic crown outlines supply the object boundary. This palette gate only
-    clears pale neutral stone and warm bare soil inside those outlines; trunks
-    and branches have separate, tightly traced solid polygons.
-    """
-    bounds = mask.getbbox()
-    if bounds is None:return
-    alpha = mask.load();pixels = native.load()
-    for y in range(bounds[1], bounds[3]):
-        for x in range(bounds[0], bounds[2]):
-            if not alpha[x,y]:continue
-            red, green, blue = pixels[x,y]
-            # Dark, low-saturation pixels include the oak's real branchwork.
-            # Only pale neutral gaps are stone; filtering every muted pixel
-            # punched holes through brown trunks and branches in all crowns.
-            stone = min(red,green,blue) > 85 and blue > green*.73
-            soil = red > 125 and red > green*1.15 and blue > green*.45
-            if stone or soil:alpha[x,y] = 0
-
-
-def profile_y(points, x):
-    if x <= points[0][0]:return points[0][1]
-    for start,end in zip(points,points[1:]):
-        if x <= end[0]:
-            fraction = (x-start[0])/(end[0]-start[0])
-            return start[1]+fraction*(end[1]-start[1])
-    return points[-1][1]
+    stream = BytesIO();image.save(stream, format='PNG');return stream.getvalue()
 
 
 def exports():
-    recipe = json.loads(RECIPE.read_text(encoding='utf-8'))
-    source_path = ROOT/recipe['clean_plate']
-    for record in recipe['sources']:
-        if hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest() != record['sha256']:
-            raise ValueError(f'Retained sanctuary source changed: {record["path"]}')
-    with Image.open(source_path) as original:
-        if list(original.size) != recipe['source_size']:
-            raise ValueError('Sanctuary clean plate size differs from recipe')
-        native = original.convert('RGB').resize(tuple(recipe['native_size']), Image.Resampling.NEAREST)
-    ground = encoded(native)
-    products = {'ground.png': ground, 'overview.png': ground}
-    entities = []
-    source_width, source_height = recipe['source_size']
-    scale_x = native.width/source_width
-    scale_y = native.height/source_height
-    for record in recipe['depth_silhouettes']:
-        mask = Image.new('L', native.size)
-        parts = record.get('parts', [{'polygon':record.get('polygon',[])}])
-        for part in parts:
-            layer = Image.new('L', native.size)
-            points = [(round(x*scale_x),round(y*scale_y)) for x,y in part['polygon']]
-            ImageDraw.Draw(layer).polygon(points,fill=255)
-            if part.get('material') == 'foliage':foliage_gaps(layer,native)
-            mask.paste(255,mask=layer)
-        painter = ImageDraw.Draw(mask)
-        for opening in record.get('openings', []):
-            painter.polygon([(round(x*scale_x), round(y*scale_y)) for x, y in opening], fill=0)
-        bounds = mask.getbbox()
-        if bounds is None:raise ValueError(f'Empty sanctuary depth silhouette: {record["id"]}')
-        slices = [(record['id'],mask,record['baseline'])]
-        if record.get('baseline_profile'):
-            slices = []
-            step = max(1,round(record.get('strip_width',24)*scale_x))
-            for index,left in enumerate(range(bounds[0],bounds[2],step)):
-                right = min(bounds[2],left+step)
-                strip = Image.new('L',native.size)
-                strip.paste(mask.crop((left,bounds[1],right,bounds[3])),(left,bounds[1]))
-                if strip.getbbox():
-                    x = (left+right)/(2*scale_x)
-                    slices.append((record['id']+f'_{index:02}',strip,
-                                   profile_y(record['baseline_profile'],x)))
-        for identifier,alpha,baseline in slices:
-            bounds = alpha.getbbox()
-            surface = native.convert('RGBA');surface.putalpha(alpha)
-            surface = surface.crop(bounds)
-            # Transparent pixels never carry a rectangular ground-colored matte.
-            surface.paste((0,0,0,0),mask=surface.getchannel('A').point(lambda value:255-value))
-            name = 'depth/'+identifier+'.png'
-            products[name] = encoded(surface)
-            entity = {'id':identifier,'source_id':record['id'],
-                      'frames':[(OUTPUT/name).relative_to(ROOT).as_posix()],
-                      'position':list(bounds[:2]),'sort_y':round(baseline*scale_y),
-                      'frame_duration_ms':1000,'phase_offset':0}
-            if 'ground_anchor' in record:
-                entity['ground_anchor'] = [round(value*scale) for value,scale in
-                                           zip(record['ground_anchor'],(scale_x,scale_y))]
-            entities.append(entity)
-    manifest = {'version': 1,
-                'size_pixels': list(native.size),
-                'ground': (OUTPUT/'ground.png').relative_to(ROOT).as_posix(),
-                'overview': (OUTPUT/'overview.png').relative_to(ROOT).as_posix(),
-                'entities': entities,
-                'source_recipe': RECIPE.relative_to(ROOT).as_posix(),
-                'source_recipe_sha256': hashlib.sha256(RECIPE.read_bytes()).hexdigest(),
-                'clean_plate_sha256': hashlib.sha256(source_path.read_bytes()).hexdigest()}
-    products['art.json'] = (json.dumps(manifest, indent=2)+'\n').encode()
+    recipe = json.loads(RECIPE.read_text())
+    used = set()
+    def read(path):
+        path = Path(path)
+        used.add(path)
+        return json.loads(path.read_text())
+    def opened(path):
+        path = Path(path)
+        used.add(path)
+        return Image.open(path).convert('RGBA')
+    products = {}
+    kit, kit_meta = make_kit()
+    for name, image in kit.items():
+        # The helper's assets are runtime modules, rather than one scenery plate.
+        products['../elden_vale_sanctuary_kit/'+name+'.png'] = encoded(image)
+    products['../elden_vale_sanctuary_kit/kit.json'] = (json.dumps(kit_meta,indent=2)+'\n').encode()
+    for source in kit_meta['source_sha256']:used.add(ROOT/source)
+    used.add(ROOT/'tools/reserve_stone_kit.py')
+    width, height = recipe['size_pixels']
+    tile = 24
+    gm = read(TERRAIN/'grass_dirt/tileset.json')
+    grass = [opened(TERRAIN/'grass_dirt'/p) for p in gm['grass']['images']]
+    dirt = {r['mask']:opened(TERRAIN/'grass_dirt'/r['image']) for r in gm['tiles']}
+    fills = [opened(TERRAIN/'grass_dirt'/p) for p in gm['dirt_interiors']['images']]
+    ground = Image.new('RGBA', (width,height))
+    rng = Random(8713)
+    for y in range(height//tile):
+        for x in range(width//tile):
+            ground.alpha_composite(rng.choices(grass, weights=(6,3,2,1))[0], (x*tile,y*tile))
+    path_mask = Image.new('L', (width,height))
+    draw = ImageDraw.Draw(path_mask)
+    for road in recipe['ground']['roads']:
+        points = [tuple(point) for point in road['points']]
+        draw.line(points, fill=255, width=road['width'], joint='curve')
+        radius = road['width']//2
+        for x,y in points:draw.ellipse((x-radius,y-radius,x+radius,y+radius),fill=255)
+    x,y,w,h = recipe['ground']['court']
+    draw.rounded_rectangle((x,y,x+w-1,y+h-1),radius=24,fill=255)
+    path_cells = {(x,y) for y in range(height//tile) for x in range(width//tile)
+                  if path_mask.getpixel((x*tile+12,y*tile+12))}
+    for x,y in sorted(path_cells):
+        mask = normalize_mask(sum(BITS[name] for name,(dx,dy) in OFFSETS.items()
+                                  if (x+dx,y+dy) in path_cells))
+        ground.alpha_composite(rng.choice(fills) if mask==255 else dirt[mask], (x*tile,y*tile))
+    flagstones = opened(TERRAIN/'sanctuary_charm/props/flagstones.png')
+    for yy in range(350,425,28):
+        for xx in range(456,873,40):
+            if rng.random()<.77:ground.alpha_composite(flagstones,(xx+rng.randrange(-3,4),yy))
+    plant_names = ('grass_sparse','grass_splayed','grass_dense','flowers_white','flowers_yellow','flowers_violet')
+    plants = []
+    for name in plant_names:
+        folder = TERRAIN/'grass_flowers'/name
+        meta = read(folder/'plant.json')
+        image_name = meta.get('idle','idle.png')
+        plants.append(opened(folder/image_name))
+    for x,y,w,h in recipe['garden_patches']:
+        for _ in range(max(6,w*h//450)):
+            ground.alpha_composite(rng.choices(plants,weights=(2,1,1,3,3,3))[0],
+                                   (rng.randrange(x,x+w-24),rng.randrange(y,y+h-24)))
+    # Small field growth is passable, like the corresponding Eldenmere plants.
+    for _ in range(140):
+        px,py = rng.randrange(36,width-36),rng.randrange(72,height-72)
+        if (px//24,py//24) not in path_cells:
+            ground.alpha_composite(rng.choices(plants,weights=(5,3,2,1,1,1))[0],(px,py))
+
+    entities, footprints, instances, depth_samples = [], [], [], []
+    def add(identifier, asset_id, position, frames, local_footprints=(), sort_y=None, duration=600, phase=0):
+        position = list(map(int,position))
+        if asset_id in kit:image=kit[asset_id]
+        elif frames[0].startswith(OUTPUT.relative_to(ROOT).as_posix()+'/'):
+            name=Path(frames[0]).relative_to(OUTPUT.relative_to(ROOT)).as_posix()
+            image=Image.open(BytesIO(products[name])).convert('RGBA')
+        else:image=opened(ROOT/frames[0])
+        rects = [[position[0]+r[0],position[1]+r[1],r[2],r[3]] for r in local_footprints]
+        baseline = sort_y if sort_y is not None else max((r[1]+r[3] for r in rects),default=position[1]+image.height)
+        record = {'id':identifier,'position':position,'frames':frames,'sort_y':baseline,
+                  'frame_duration_ms':duration,'phase_offset':phase}
+        entities.append(record)
+        instances.append({**deepcopy(record),'asset_id':asset_id,'footprints':rects})
+        for index,rect in enumerate(rects):footprints.append({'id':identifier+f'_{index}','entity_id':identifier,'rect':rect})
+        return record
+    def stone(identifier, asset, pos, solid=(), sort_y=None):
+        return add(identifier,asset,pos,[(KIT/(asset+'.png')).relative_to(ROOT).as_posix()],solid,sort_y)
+
+    tree_dir = TERRAIN/'foliage/tree';tree_meta=read(tree_dir/'foliage.json')
+    tree_frames=[(tree_dir/r['image']).relative_to(ROOT).as_posix() for r in tree_meta['wind']['frames']]
+    for frame in tree_frames:used.add(ROOT/frame)
+    tree_variants={}
+    for variant,factors in (('sage',(1.,1.,1.)),('deep',(.92,.98,.90)),('warm',(1.08,1.02,.89))):
+        paths=[]
+        for frame_index,source in enumerate(tree_frames):
+            image=opened(ROOT/source)
+            if variant!='sage':
+                pixels=[]
+                for red,green,blue,alpha in image.get_flattened_data():
+                    if green>red*.94 and green>blue*1.15:
+                        red,green,blue=(min(255,round(value*factor)) for value,factor in zip((red,green,blue),factors))
+                    pixels.append((red,green,blue,alpha))
+                image.putdata(pixels)
+            name=f'foliage/{variant}/frame_{frame_index+1:02}.png'
+            products[name]=encoded(image)
+            paths.append((OUTPUT/name).relative_to(ROOT).as_posix())
+        tree_variants[variant]=paths
+    for index,(cx,cy) in enumerate(recipe['tree_roots']):
+        # A96px crown can overhang paths; only its24px root has a collision body.
+        identifier = f'reserve_tree_{index:02}'
+        variant=('sage','deep','sage','warm')[index%4]
+        add(identifier,'eldenmere.foliage.tree.'+variant,(cx-48,cy-108),tree_variants[variant],
+            [tree_meta['ground_rect']],sort_y=cy+8,phase=index%len(tree_frames))
+        if (cx,cy) in ((144,276),(336,420)):
+            depth_samples.append({'id':identifier,'entity_id':identifier,
+                                  'behind':[cx,cy-38],'front':[cx,cy+34]})
+    shrub_dir=TERRAIN/'foliage/shrub'
+    shrub_meta=read(shrub_dir/'foliage.json')
+    shrub_frames=[(shrub_dir/frame['image']).relative_to(ROOT).as_posix() for frame in shrub_meta['wind']['frames']]
+    for cluster_index,(x,y) in enumerate(recipe['shrub_clusters']):
+        for index,(dx,dy) in enumerate(((0,0),(18,-8),(32,10))):
+            add(f'reserve_shrub_{cluster_index}_{index}','eldenmere.foliage.shrub',[x+dx,y+dy],shrub_frames,[[3,15,18,9]],sort_y=y+dy+24,phase=(cluster_index+index)%len(shrub_frames))
+    bench_image = TERRAIN/'sanctuary_charm/props/bench.png'
+    for index,pos in enumerate(recipe['benches']):
+        add(f'reserve_bench_{index}','eldenmere.bench',pos,[bench_image.relative_to(ROOT).as_posix()],[[4,20,40,10]])
+    planter_image = TERRAIN/'sanctuary_charm/props/herb_planter.png'
+    for index,pos in enumerate(recipe['planters']):
+        add(f'reserve_planter_{index}','eldenmere.herb_planter',pos,[planter_image.relative_to(ROOT).as_posix()],[[2,12,20,6]])
+
+    arch = recipe['architecture']
+    # Compatibility footprints are explicit in the kit metadata. All generated
+    # module sprites retain transparent openings, rather than rectangular mattes.
+    def footprint(name, fallback):
+        spec = kit_meta.get('modules',{}).get(name,{})
+        return spec.get('footprints',spec.get('collision_rects',fallback))
+    hall_pos=arch['hall']
+    stone('reserve_hall','hall',hall_pos,
+          footprint('hall',[[24,120,104,84],[160,120,104,84],[128,120,32,50]]),345)
+    cloister_pos=arch['cloister']
+    if 'cloister_floor' in kit:
+        ground.alpha_composite(kit['cloister_floor'],(cloister_pos[0],cloister_pos[1]+48))
+    stone('reserve_cloister_back','cloister_back_wall',[cloister_pos[0],cloister_pos[1]+48],[[0,0,240,12]],285)
+    stone('reserve_cloister_roof','cloister_roof',cloister_pos,[],337)
+    stone('reserve_cloister_arches','cloister_arches',[cloister_pos[0],cloister_pos[1]+44],[],337)
+    for index,xoffset in enumerate((0,76,152,228)):
+        stone(f'reserve_cloister_column_{index}','cloister_column',
+              [cloister_pos[0]+xoffset,cloister_pos[1]+44],[[0,56,12,12]],337)
+    stone('reserve_entrance_arch','entrance_arch',arch['entrance_arch'],
+          footprint('entrance_arch',[[0,80,24,16],[72,80,24,16]]),672)
+    cavepos=arch['cave']
+    stone('reserve_cave','cave',cavepos,footprint('cave',[[12,64,35,64],[114,64,34,64],[47,60,67,56]]),383)
+    stone('reserve_cave_keeper_rail','cave_keeper_rail',[972,329],[[0,30,72,12]],385)
+    stone('reserve_survey_seam','ridge',arch['survey_seam'],footprint('ridge',[[4,32,88,30]]),554)
+    stone('court_basin','basin',arch['court_basin'],footprint('basin',[[4,22,40,12]]),394)
+    stone('reserve_survey_board','survey_board',arch['survey_board'],footprint('survey_board',[[4,22,24,8]]),614)
+    stone('reserve_boundary_marker','memorial_marker',arch['boundary_marker'],[[4,18,10,10]],670)
+    for index,pos in enumerate(([240,216],[324,240],[180,444])):
+        stone(f'reserve_memorial_marker_{index}','memorial_marker',pos,[[4,18,10,10]])
+    for index,pos in enumerate(([888,570],[1008,570],[960,594])):
+        stone(f'reserve_survey_stake_{index}','survey_stake',pos,[[0,18,8,8]])
+    for index,pos in enumerate(recipe['ridge_bands']):
+        stone(f'reserve_ridge_band_{index}','ridge',pos,[[4,32,88,30]])
+    for index,pos in enumerate(([912,264],[1020,300],[768,450])):
+        stone(f'reserve_ridge_rock_{index}','rock_outcrop',pos,footprint('rock_outcrop',[[8,18,48,18]]))
+
+    # Native terraced masonry forms maintained boundary walls, while the ridge
+    # uses natural rock modules. The southern opening remains a real doorway.
+    wall_file=TERRAIN/'terraces/tiles/wall_front_00.png'
+    for index,x in enumerate(list(range(24,396,24))+list(range(492,1128,24))):
+        add(f'reserve_south_wall_{index}','eldenmere.masonry.wall',[x,648],
+            [wall_file.relative_to(ROOT).as_posix()],[[0,16,24,8]],672)
+    wall_side=TERRAIN/'terraces/tiles/wall_side_left.png'
+    for side,x in (('west',12),('east',1116)):
+        for index,y in enumerate(range(48,648,24)):
+            add(f'reserve_{side}_wall_{index}','eldenmere.masonry.side',[x,y],
+                [wall_side.relative_to(ROOT).as_posix()],[[4,0,12,24]],y+24)
+    wall_back=TERRAIN/'terraces/tiles/wall_back.png'
+    for index,x in enumerate(range(24,1128,24)):
+        add(f'reserve_north_wall_{index}','eldenmere.masonry.back',[x,24],
+            [wall_back.relative_to(ROOT).as_posix()],[[0,12,24,12]],48)
+    # The physical map boundary is visible woodland/wall, with a24px central
+    # apron at the south for the reserve's world-travel exit.
+    footprints += [{'id':'map_west_edge','rect':[0,0,12,height]},
+                   {'id':'map_east_edge','rect':[1140,0,12,height]},
+                   {'id':'map_north_edge','rect':[0,0,width,48]}]
+    overview=ground.copy()
+    for record in sorted(entities,key=lambda item:item['sort_y']):
+        frame=record['frames'][record['phase_offset']%len(record['frames'])]
+        if frame.startswith(KIT.relative_to(ROOT).as_posix()+'/'):
+            image=kit[Path(frame).stem]
+        elif frame.startswith(OUTPUT.relative_to(ROOT).as_posix()+'/'):
+            name=Path(frame).relative_to(OUTPUT.relative_to(ROOT)).as_posix()
+            image=Image.open(BytesIO(products[name])).convert('RGBA')
+        else:image=opened(ROOT/frame)
+        overview.alpha_composite(image,tuple(record['position']))
+    products['ground.png']=encoded(ground.convert('RGB'))
+    products['overview.png']=encoded(overview.convert('RGB'))
+    for record in entities:
+        for frame in record['frames']:
+            if not frame.startswith((KIT.relative_to(ROOT).as_posix()+'/',OUTPUT.relative_to(ROOT).as_posix()+'/')):used.add(ROOT/frame)
+    used.add(RECIPE)
+    sources=[{'path':p.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+             for p in sorted(used)]
+    bays=[{'id':f'cloister_bay_{i+1}','center':[700+i*76,318],
+           'inside':[700+i*76,318],'front':[700+i*76,366],'approach':[700+i*76,366]}
+          for i in range(3)]
+    manifest={'version':2,'implementation':'native_pixel_asset_packs','tile_size':24,
+              'size_pixels':[width,height],'ground':(OUTPUT/'ground.png').relative_to(ROOT).as_posix(),
+              'overview':(OUTPUT/'overview.png').relative_to(ROOT).as_posix(),
+              'entities':entities,'asset_instances':instances,'collision_footprints':footprints,
+              'source_assets':sources,'source_recipe':RECIPE.relative_to(ROOT).as_posix(),
+              'depth_samples':depth_samples,'cloister_bays':bays,
+              'kit_metadata':kit_meta}
+    products['art.json']=(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n').encode()
     return products
 
 
 def build(check=False):
-    products = exports()
-    expected = {OUTPUT/name for name in products}
-    obsolete = [path for path in (OUTPUT/'depth').glob('*.png') if path not in expected]
-    if check and obsolete:raise ValueError('Obsolete sanctuary depth exports remain')
-    for name, content in products.items():
-        path = OUTPUT/name
+    products=exports()
+    for name,body in products.items():
+        path=OUTPUT/name
         if check:
-            if not path.is_file() or path.read_bytes() != content:
-                raise ValueError(f'Stale sanctuary art export: {path.relative_to(ROOT)}')
+            if not path.is_file() or path.read_bytes()!=body:raise ValueError('Stale native reserve asset: '+str(path.relative_to(ROOT)))
         else:
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(content)
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(body)
     if not check:
-        for path in obsolete:path.unlink()
-    print(f'{"Verified" if check else "Exported"} sanctuary clean plate and '
-          f'{len(products)-3} registered depth silhouettes')
+        # Masked pieces of the removed painting are not part of the new scene.
+        import shutil
+        if (OUTPUT/'depth').exists():shutil.rmtree(OUTPUT/'depth')
+    print(('Verified' if check else 'Exported')+' native reserve pixel-asset composition')
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true')
-    build(check=parser.parse_args().check)
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true')
+    build(parser.parse_args().check)
