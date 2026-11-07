@@ -1,42 +1,252 @@
 {
-  "version": 1,
-  "tool": "image_gen.imagegen",
-  "source": "assets/source/terrain/overworld/elden_vale/sanctuary/generated_miniature.png",
-  "source_sha256": "cb6eedff714a2bcaca4e13e009ee291b72b402b989abf198c4f0b0da8b6fa26a",
-  "reference_images": [
+  "version": 2,
+  "authoring": "native_pixel_asset_assembly",
+  "intent": "Compact regional landmark: pale hall with branching crown, silvery memorial tree and asymmetric amethyst/cyan/opal crystal ridge. Canvas, foot anchor and regional entry geometry stay unchanged.",
+  "libraries": {
+    "crystals": "assets/terrain/sanctuary_fantasy/crystals/assets.json",
+    "grove": "assets/terrain/sanctuary_fantasy/grove/assets.json"
+  },
+  "components": [
     {
-      "path": "assets/terrain/overworld/elden_vale/props/eldenmere.png",
-      "sha256": "9dd1646ccb1abf05b8546611742bfc0fef23ac1c16c9385ec241e6e350992d16"
+      "library": "crystals",
+      "module": "crystal.large_crown.amethyst",
+      "position": [
+        57,
+        13
+      ],
+      "fit": [
+        32,
+        45
+      ]
     },
     {
-      "review_concept": "/workspace/generated_images/exec-b509cbc7-3a81-49a8-82a9-5a12cc97c57d.png",
-      "sha256": "60c9aa83ac9c9c6e27846da0e6c71671e38b72edafd0f6b144f056bcb16b31c4",
-      "purpose": "Approved sanctuary architecture shown in chat; a design reference, not a runtime dependency."
+      "library": "crystals",
+      "module": "crystal.large_spire.cyan",
+      "position": [
+        79,
+        23
+      ],
+      "fit": [
+        16,
+        34
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cave",
+      "position": [
+        64,
+        43
+      ],
+      "fit": [
+        30,
+        25
+      ]
+    },
+    {
+      "library": "crystals",
+      "module": "crystal.medium_fan.opal",
+      "position": [
+        75,
+        46
+      ],
+      "fit": [
+        19,
+        23
+      ]
+    },
+    {
+      "library": "grove",
+      "modules": [
+        "landmark_roots",
+        "landmark_trunk",
+        "landmark_canopy"
+      ],
+      "position": [
+        0,
+        13
+      ],
+      "fit": [
+        28,
+        48
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cloister_roof",
+      "position": [
+        57,
+        49
+      ],
+      "fit": [
+        25,
+        8
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "cloister_arches",
+      "position": [
+        58,
+        55
+      ],
+      "fit": [
+        24,
+        11
+      ]
+    },
+    {
+      "library": "kit",
+      "module": "hall",
+      "position": [
+        21,
+        32
+      ],
+      "fit": [
+        44,
+        38
+      ]
     }
   ],
-  "intent": "Compact Elden Vale Sanctuary: limestone hall, slate roof, oculus, open bellcote and three-arch side cloister, no detailed reserve or cave.",
-  "alpha_threshold": 180,
   "exports": {
     "ridge_sanctuary": {
       "canvas": [
         96,
         80
       ],
-      "crop": [
-        240,
-        145,
-        1128,
-        995
-      ],
-      "fit": [
-        90,
-        72
-      ],
-      "paste": "center_x_bottom_74",
       "foot_anchor": [
         32,
         74
       ]
     }
+  },
+  "grounding": {
+    "materials": {
+      "grass": "assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png",
+      "dirt": "assets/terrain/overworld/elden_vale/tiles/dirt.png"
+    },
+    "patches": [
+      [
+        [
+          6,
+          45
+        ],
+        [
+          10,
+          41
+        ],
+        [
+          20,
+          41
+        ],
+        [
+          26,
+          44
+        ],
+        [
+          27,
+          49
+        ],
+        [
+          22,
+          52
+        ],
+        [
+          9,
+          51
+        ]
+      ],
+      [
+        [
+          17,
+          61
+        ],
+        [
+          21,
+          57
+        ],
+        [
+          62,
+          57
+        ],
+        [
+          68,
+          62
+        ],
+        [
+          64,
+          69
+        ],
+        [
+          55,
+          71
+        ],
+        [
+          40,
+          69
+        ],
+        [
+          30,
+          70
+        ],
+        [
+          18,
+          67
+        ]
+      ],
+      [
+        [
+          59,
+          61
+        ],
+        [
+          63,
+          58
+        ],
+        [
+          88,
+          58
+        ],
+        [
+          94,
+          61
+        ],
+        [
+          91,
+          68
+        ],
+        [
+          80,
+          70
+        ],
+        [
+          68,
+          68
+        ]
+      ]
+    ],
+    "approach": [
+      [
+        39,
+        64
+      ],
+      [
+        44,
+        64
+      ],
+      [
+        38,
+        71
+      ],
+      [
+        34,
+        75
+      ],
+      [
+        29,
+        74
+      ]
+    ],
+    "notes": "Small irregular disconnected footings use exact24px regional meadow/dirt pixels. Transparent gaps preserve surrounding world material; detailed reserve emerald grass is not painted beneath the regional icon."
   }
 }

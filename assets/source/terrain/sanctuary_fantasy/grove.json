@@ -1,0 +1,538 @@
+{
+  "id": "sanctuary_fantasy.grove.24",
+  "status": "production",
+  "tile_size": 24,
+  "authoring": "Authored native branch graphs and cluster silhouettes; original approved tree canopy crops supply palette-adapted irregular leaf texture at1:1scale. No scene painting or upscaled source participates.",
+  "sources": [
+    {
+      "path": "assets/terrain/eldenmere/foliage/tree/idle.png",
+      "sha256": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    },
+    {
+      "path": "assets/terrain/eldenmere/foliage/palette.json",
+      "sha256": "dc4c9a14d3eebacd7134a165434291c2a905c63847f9e5b2f8e58b866a387acd"
+    }
+  ],
+  "palette": {
+    "outline": "#203f39",
+    "leaf_deep": "#2b5548",
+    "leaf_shadow": "#396d58",
+    "leaf_mid": "#568e70",
+    "leaf_light": "#80b39a",
+    "leaf_silver": "#abd3bb",
+    "leaf_tip": "#d9e8cf",
+    "leaf_cyan": "#8fccc2",
+    "wood_deep": "#34453d",
+    "wood_shadow": "#4b6050",
+    "wood_mid": "#71836b",
+    "wood_light": "#a4b18a",
+    "wood_tip": "#c7cdab",
+    "moss": "#378268",
+    "blossom": "#edf2d9",
+    "blossom_shadow": "#9fcfc3",
+    "amethyst": "#b6a4d0",
+    "ground": "#2c7c50"
+  },
+  "landmark": {
+    "canvas": [
+      192,
+      176
+    ],
+    "anchor": [
+      112,
+      164
+    ],
+    "footprint": [
+      -12,
+      -12,
+      24,
+      24
+    ],
+    "wind_duration_ms": 800,
+    "leaf_phases": [
+      0,
+      1,
+      2,
+      1,
+      0,
+      -1
+    ],
+    "clusters": [
+      [
+        96,
+        20,
+        22,
+        14
+      ],
+      [
+        70,
+        30,
+        22,
+        15
+      ],
+      [
+        120,
+        30,
+        21,
+        15
+      ],
+      [
+        47,
+        45,
+        22,
+        17
+      ],
+      [
+        80,
+        49,
+        21,
+        16
+      ],
+      [
+        106,
+        48,
+        21,
+        17
+      ],
+      [
+        143,
+        50,
+        23,
+        18
+      ],
+      [
+        28,
+        61,
+        20,
+        17
+      ],
+      [
+        58,
+        68,
+        26,
+        18
+      ],
+      [
+        94,
+        71,
+        21,
+        17
+      ],
+      [
+        124,
+        70,
+        25,
+        18
+      ],
+      [
+        161,
+        70,
+        20,
+        17
+      ],
+      [
+        38,
+        86,
+        22,
+        17
+      ],
+      [
+        75,
+        87,
+        24,
+        18
+      ],
+      [
+        139,
+        91,
+        23,
+        18
+      ],
+      [
+        109,
+        96,
+        19,
+        17
+      ],
+      [
+        167,
+        90,
+        14,
+        14
+      ]
+    ],
+    "branches": [
+      [
+        [
+          111,
+          163
+        ],
+        [
+          102,
+          145
+        ],
+        [
+          101,
+          122
+        ],
+        [
+          91,
+          102
+        ],
+        [
+          83,
+          81
+        ],
+        [
+          67,
+          66
+        ],
+        [
+          43,
+          61
+        ],
+        [
+          27,
+          54
+        ]
+      ],
+      [
+        [
+          112,
+          163
+        ],
+        [
+          121,
+          144
+        ],
+        [
+          118,
+          126
+        ],
+        [
+          112,
+          108
+        ],
+        [
+          115,
+          88
+        ],
+        [
+          128,
+          70
+        ],
+        [
+          139,
+          55
+        ]
+      ],
+      [
+        [
+          101,
+          121
+        ],
+        [
+          88,
+          110
+        ],
+        [
+          75,
+          99
+        ],
+        [
+          58,
+          91
+        ],
+        [
+          34,
+          82
+        ]
+      ],
+      [
+        [
+          113,
+          109
+        ],
+        [
+          121,
+          101
+        ],
+        [
+          137,
+          96
+        ],
+        [
+          151,
+          82
+        ]
+      ],
+      [
+        [
+          91,
+          102
+        ],
+        [
+          88,
+          82
+        ],
+        [
+          87,
+          61
+        ],
+        [
+          79,
+          41
+        ]
+      ],
+      [
+        [
+          115,
+          88
+        ],
+        [
+          107,
+          68
+        ],
+        [
+          103,
+          44
+        ],
+        [
+          93,
+          24
+        ]
+      ],
+      [
+        [
+          88,
+          82
+        ],
+        [
+          70,
+          74
+        ],
+        [
+          57,
+          57
+        ],
+        [
+          48,
+          45
+        ]
+      ],
+      [
+        [
+          107,
+          68
+        ],
+        [
+          119,
+          55
+        ],
+        [
+          127,
+          38
+        ]
+      ]
+    ],
+    "roots": [
+      [
+        [
+          109,
+          155
+        ],
+        [
+          101,
+          162
+        ],
+        [
+          89,
+          166
+        ],
+        [
+          78,
+          168
+        ]
+      ],
+      [
+        [
+          109,
+          159
+        ],
+        [
+          99,
+          168
+        ],
+        [
+          93,
+          172
+        ],
+        [
+          82,
+          174
+        ]
+      ],
+      [
+        [
+          112,
+          157
+        ],
+        [
+          115,
+          167
+        ],
+        [
+          124,
+          170
+        ],
+        [
+          134,
+          171
+        ]
+      ],
+      [
+        [
+          118,
+          155
+        ],
+        [
+          126,
+          160
+        ],
+        [
+          134,
+          164
+        ],
+        [
+          145,
+          166
+        ]
+      ],
+      [
+        [
+          112,
+          161
+        ],
+        [
+          109,
+          169
+        ],
+        [
+          105,
+          173
+        ],
+        [
+          98,
+          175
+        ]
+      ],
+      [
+        [
+          118,
+          161
+        ],
+        [
+          122,
+          168
+        ],
+        [
+          126,
+          171
+        ],
+        [
+          136,
+          174
+        ]
+      ]
+    ]
+  },
+  "saplings": {
+    "canvas": [
+      48,
+      72
+    ],
+    "anchor": [
+      24,
+      60
+    ],
+    "footprint": [
+      -12,
+      -12,
+      24,
+      24
+    ],
+    "variants": [
+      "arching",
+      "upright"
+    ],
+    "wind_duration_ms": 800
+  },
+  "understory": [
+    "blossom_white",
+    "blossom_cyan",
+    "moss_fan",
+    "moss_rosette"
+  ],
+  "petals": [
+    "white",
+    "cyan",
+    "amethyst"
+  ],
+  "notes": [
+    "Landmark trunk and roots stay fixed in every pose. Only internal canopy leaf highlights change; canopy alpha and silhouette stay fixed.",
+    "Old-tree root collision exactly matches the24x24source treebase. Canopy overhangs carry no collision.",
+    "No soul, reincarnation or ancient mechanism identity is represented by these assets."
+  ],
+  "leaf_texture_crops": [
+    [
+      41,
+      29,
+      57,
+      43
+    ],
+    [
+      18,
+      48,
+      34,
+      61
+    ],
+    [
+      70,
+      59,
+      85,
+      72
+    ],
+    [
+      14,
+      76,
+      30,
+      88
+    ],
+    [
+      66,
+      82,
+      82,
+      94
+    ],
+    [
+      32,
+      49,
+      52,
+      68
+    ],
+    [
+      44,
+      67,
+      63,
+      85
+    ]
+  ]
+}

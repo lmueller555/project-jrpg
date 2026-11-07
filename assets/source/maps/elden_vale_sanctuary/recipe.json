@@ -46,7 +46,7 @@
         264,
         306
       ],
-      "description": "Old trees and young plantings grow together. Neighbours tend this living grove in remembrance of those they have lost."
+      "description": "Silver-green branches spread above roots and young plantings. Tended flowers and weathered stones mark generations of care in the living memorial grove."
     },
     {
       "id": "confluence",
@@ -55,7 +55,7 @@
         280,
         218
       ],
-      "description": "Faint lights drift between the leaves where the vale’s natural aether currents gather."
+      "description": "Pale blossoms drift through the clearing. Beneath the leaves, the vale’s natural aether currents gather in a faint movement of light."
     },
     {
       "id": "cave",
@@ -64,7 +64,7 @@
         1008,
         371
       ],
-      "description": "Roots cling to a natural opening in the limestone ridge. Weathered traces of masonry remain beside it. A rope closes the entrance while the inner path is checked."
+      "description": "Amethyst, cyan and opal crystals emerge through the limestone around the dark opening. Weathered masonry remains inside. A keeper rail closes the inner path while its footing is checked."
     },
     {
       "id": "stone_seam",
@@ -961,5 +961,806 @@
       ]
     ],
     "notes": "Approved deeper emerald native24px materials. Meadow and woodland form broad coherent patches around a maintained lawn. Interactive grass is16-17px tall and kept clear of roads, object roots, doors, public gathering points and the woodland circuit."
+  },
+  "fantasy": {
+    "manifests": {
+      "crystals": "assets/terrain/sanctuary_fantasy/crystals/assets.json",
+      "grove": "assets/terrain/sanctuary_fantasy/grove/assets.json"
+    },
+    "tree_replacements": [
+      {
+        "root": [
+          360,
+          276
+        ],
+        "modules": [
+          "landmark_roots",
+          "landmark_trunk",
+          "landmark_canopy"
+        ]
+      },
+      {
+        "root": [
+          144,
+          408
+        ],
+        "modules": [
+          "sapling_arching"
+        ]
+      },
+      {
+        "root": [
+          336,
+          420
+        ],
+        "modules": [
+          "sapling_upright"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "id": "ridge_crystal_left",
+        "family": "crystals",
+        "module": "crystal.large_spire.amethyst",
+        "root": [
+          956,
+          350
+        ],
+        "sort_y": 384,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_crystal_right",
+        "family": "crystals",
+        "module": "crystal.large_crown.cyan",
+        "root": [
+          1061,
+          351
+        ],
+        "sort_y": 384,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_crystal_high",
+        "family": "crystals",
+        "module": "crystal.large_spire.opal",
+        "root": [
+          1008,
+          320
+        ],
+        "sort_y": 382,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_crystal_left_fan",
+        "family": "crystals",
+        "module": "crystal.medium_fan.cyan",
+        "root": [
+          947,
+          294
+        ],
+        "sort_y": 383,
+        "supported_by": "reserve_ridge_rock_0",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_crystal_top_fan",
+        "family": "crystals",
+        "module": "crystal.medium_fan.amethyst",
+        "root": [
+          994,
+          288
+        ],
+        "sort_y": 383,
+        "supported_by": "reserve_ridge_band_4",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_crystal_amber",
+        "family": "crystals",
+        "module": "crystal.small_needle.amber",
+        "root": [
+          1060,
+          372
+        ],
+        "sort_y": 384,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_vein_cyan",
+        "family": "crystals",
+        "module": "vein.cyan",
+        "root": [
+          1060,
+          337
+        ],
+        "sort_y": 384,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "ridge_vein_amethyst",
+        "family": "crystals",
+        "module": "vein.amethyst",
+        "root": [
+          953,
+          326
+        ],
+        "sort_y": 384,
+        "supported_by": "reserve_cave",
+        "clear_polygons": [
+          [
+            [
+              975,
+              383
+            ],
+            [
+              975,
+              333
+            ],
+            [
+              981,
+              314
+            ],
+            [
+              993,
+              302
+            ],
+            [
+              1010,
+              298
+            ],
+            [
+              1028,
+              304
+            ],
+            [
+              1040,
+              320
+            ],
+            [
+              1042,
+              383
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "grove_buried_arc",
+        "family": "crystals",
+        "module": "ruins.arc",
+        "root": [
+          276,
+          235
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "grove_broken_arc",
+        "family": "crystals",
+        "module": "ruins.broken_arc",
+        "root": [
+          310,
+          302
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "grove_buried_slab",
+        "family": "crystals",
+        "module": "ruins.slab",
+        "root": [
+          192,
+          366
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "court_carved_paving",
+        "family": "crystals",
+        "module": "ruins.paving",
+        "root": [
+          768,
+          408
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "grove_root_stone",
+        "family": "crystals",
+        "module": "ruins.root_stone",
+        "root": [
+          330,
+          402
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "ridge_old_corner",
+        "family": "crystals",
+        "module": "ruins.corner",
+        "root": [
+          658,
+          492
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "ridge_old_stele",
+        "family": "crystals",
+        "module": "ruins.stele",
+        "root": [
+          624,
+          495
+        ],
+        "sort_y": 514,
+        "supported_by": "reserve_ridge_band_0"
+      },
+      {
+        "id": "ridge_low_stele",
+        "family": "crystals",
+        "module": "ruins.stele",
+        "root": [
+          792,
+          480
+        ],
+        "sort_y": 489,
+        "supported_by": "reserve_ridge_rock_2"
+      },
+      {
+        "id": "hall_lamp_west",
+        "family": "crystals",
+        "module": "memorial.lamp",
+        "root": [
+          437,
+          333
+        ],
+        "sort_y": 346,
+        "supported_by": "reserve_hall"
+      },
+      {
+        "id": "hall_lamp_east",
+        "family": "crystals",
+        "module": "memorial.lamp",
+        "root": [
+          633,
+          333
+        ],
+        "sort_y": 346,
+        "supported_by": "reserve_hall"
+      },
+      {
+        "id": "entrance_lamp_west",
+        "family": "crystals",
+        "module": "memorial.lamp",
+        "root": [
+          408,
+          664
+        ],
+        "sort_y": 673,
+        "supported_by": "reserve_entrance_arch"
+      },
+      {
+        "id": "entrance_lamp_east",
+        "family": "crystals",
+        "module": "memorial.lamp",
+        "root": [
+          480,
+          664
+        ],
+        "sort_y": 673,
+        "supported_by": "reserve_entrance_arch"
+      },
+      {
+        "id": "grove_offering_west",
+        "family": "crystals",
+        "module": "memorial.offering",
+        "root": [
+          250,
+          251
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "grove_offering_east",
+        "family": "crystals",
+        "module": "memorial.offering",
+        "root": [
+          336,
+          272
+        ],
+        "layer": "ground"
+      },
+      {
+        "id": "confluence_understory_00",
+        "family": "grove",
+        "module": "blossom_white",
+        "root": [
+          302,
+          267
+        ],
+        "sort_y": 255,
+        "phase": 0
+      },
+      {
+        "id": "confluence_understory_01",
+        "family": "grove",
+        "module": "blossom_cyan",
+        "root": [
+          321,
+          283
+        ],
+        "sort_y": 271,
+        "phase": 1
+      },
+      {
+        "id": "confluence_understory_02",
+        "family": "grove",
+        "module": "moss_fan",
+        "root": [
+          375,
+          289
+        ],
+        "sort_y": 277,
+        "phase": 2
+      },
+      {
+        "id": "confluence_understory_03",
+        "family": "grove",
+        "module": "moss_rosette",
+        "root": [
+          335,
+          286
+        ],
+        "sort_y": 274,
+        "phase": 0
+      },
+      {
+        "id": "confluence_understory_04",
+        "family": "grove",
+        "module": "blossom_white",
+        "root": [
+          282,
+          239
+        ],
+        "sort_y": 227,
+        "phase": 1
+      },
+      {
+        "id": "confluence_understory_05",
+        "family": "grove",
+        "module": "moss_fan",
+        "root": [
+          265,
+          226
+        ],
+        "sort_y": 214,
+        "phase": 2
+      },
+      {
+        "id": "confluence_understory_06",
+        "family": "grove",
+        "module": "blossom_cyan",
+        "root": [
+          298,
+          307
+        ],
+        "sort_y": 295,
+        "phase": 0
+      },
+      {
+        "id": "confluence_understory_07",
+        "family": "grove",
+        "module": "blossom_white",
+        "root": [
+          320,
+          327
+        ],
+        "sort_y": 315,
+        "phase": 1
+      },
+      {
+        "id": "confluence_understory_08",
+        "family": "grove",
+        "module": "moss_rosette",
+        "root": [
+          168,
+          413
+        ],
+        "sort_y": 401,
+        "phase": 2
+      },
+      {
+        "id": "confluence_understory_09",
+        "family": "grove",
+        "module": "blossom_white",
+        "root": [
+          126,
+          430
+        ],
+        "sort_y": 418,
+        "phase": 0
+      },
+      {
+        "id": "confluence_understory_10",
+        "family": "grove",
+        "module": "blossom_cyan",
+        "root": [
+          152,
+          441
+        ],
+        "sort_y": 429,
+        "phase": 1
+      },
+      {
+        "id": "confluence_understory_11",
+        "family": "grove",
+        "module": "moss_fan",
+        "root": [
+          317,
+          430
+        ],
+        "sort_y": 418,
+        "phase": 2
+      },
+      {
+        "id": "confluence_understory_12",
+        "family": "grove",
+        "module": "blossom_white",
+        "root": [
+          353,
+          442
+        ],
+        "sort_y": 430,
+        "phase": 0
+      },
+      {
+        "id": "confluence_understory_13",
+        "family": "grove",
+        "module": "blossom_cyan",
+        "root": [
+          347,
+          400
+        ],
+        "sort_y": 388,
+        "phase": 1
+      },
+      {
+        "id": "confluence_understory_14",
+        "family": "grove",
+        "module": "moss_rosette",
+        "root": [
+          949,
+          390
+        ],
+        "sort_y": 378,
+        "phase": 2
+      },
+      {
+        "id": "confluence_understory_15",
+        "family": "grove",
+        "module": "blossom_cyan",
+        "root": [
+          1079,
+          397
+        ],
+        "sort_y": 385,
+        "phase": 0
+      }
+    ],
+    "notes": "Native crystal, grove, masonry and memorial modules fit the existing physical root/ridge/architecture bases. Large silhouettes are overhangs; transparent cave-mouth clearances preserve the closed public approach."
+  },
+  "fantasy_effects": {
+    "grove": {
+      "center": [
+        312,
+        218
+      ],
+      "radius": [
+        72,
+        48
+      ],
+      "count": 8,
+      "sort_y": 260,
+      "petal_manifest": "assets/terrain/sanctuary_fantasy/grove/assets.json"
+    },
+    "crystals": [
+      {
+        "position": [
+          1008,
+          347
+        ],
+        "near": 80,
+        "far": 240
+      }
+    ],
+    "spring": {
+      "position": [
+        768,
+        376
+      ],
+      "near": 50,
+      "far": 180
+    }
+  },
+  "fantasy_review_points": {
+    "grove_front": [
+      360,
+      314
+    ],
+    "grove_behind": [
+      360,
+      240
+    ],
+    "crystal_front": [
+      1008,
+      377
+    ],
+    "crystal_behind": [
+      1078,
+      310
+    ],
+    "spring_front": [
+      768,
+      412
+    ],
+    "spring_behind": [
+      768,
+      370
+    ],
+    "grove_full": [
+      385,
+      258
+    ]
   }
 }

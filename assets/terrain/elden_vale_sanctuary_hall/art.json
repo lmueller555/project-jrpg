@@ -333,5 +333,60 @@
   "native_size": [
     576,
     384
-  ]
+  ],
+  "fantasy_details": {
+    "authoring": "native_pixel_geometry",
+    "palette": {
+      "stone_dark": "#687568",
+      "stone_shadow": "#a5ae99",
+      "stone_light": "#d8d5bc",
+      "glass_shadow": "#335a65",
+      "cyan": "#69bcb4",
+      "cyan_light": "#a7ddd1",
+      "violet": "#9d83bb",
+      "violet_light": "#c5add9",
+      "opal": "#eef2de",
+      "lamp_dark": "#8d5e40",
+      "amber": "#d9aa64",
+      "lamp_light": "#fff0b7"
+    },
+    "wall_details": [
+      {
+        "module": "branch_carving",
+        "position": [
+          150,
+          62
+        ]
+      },
+      {
+        "module": "branch_carving",
+        "position": [
+          332,
+          62
+        ]
+      },
+      {
+        "module": "cycle_medallion",
+        "position": [
+          272,
+          56
+        ]
+      },
+      {
+        "module": "memorial_lamp",
+        "position": [
+          171,
+          107
+        ]
+      },
+      {
+        "module": "memorial_lamp",
+        "position": [
+          402,
+          107
+        ]
+      }
+    ],
+    "notes": "Mounted ornaments fit existing north-wall footprint; furniture, floor, doors and all inspection positions remain unchanged."
+  }
 }

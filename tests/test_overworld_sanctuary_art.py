@@ -1,5 +1,6 @@
 """Native sanctuary art stays compact, transparent and source-reproducible."""
 from io import BytesIO
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -44,6 +45,39 @@ class SanctuaryArtTests(unittest.TestCase):
         self.assertEqual(manifest['tiles'], {})
         for record in manifest['props'].values():
             self.assertEqual(set(record), {'image', 'foot_anchor'})
+
+    def test_landmark_tree_and_crystal_ridge_share_native_reserve_sources(self):
+        manifest = json.loads((FOLDER/'art.json').read_text())
+        self.assertEqual(manifest['authoring'],'native_pixel_asset_assembly')
+        self.assertEqual(manifest['props']['ridge_sanctuary']['foot_anchor'],[32,74])
+        components=manifest['components']
+        self.assertTrue(any(record['library']=='grove' and
+                            'landmark_canopy' in record.get('modules',[])
+                            for record in components))
+        crystals=[record for record in components if record['library']=='crystals']
+        self.assertEqual({record['module'].rsplit('.',1)[1] for record in crystals},
+                         {'amethyst','cyan','opal'})
+        sources=manifest['source_assets']
+        self.assertFalse(any('generated_miniature' in record['path'] for record in sources))
+        self.assertEqual(len({record['path'] for record in sources}),len(sources))
+        for record in sources:
+            with self.subTest(source=record['path']):
+                self.assertEqual(hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest(),
+                                 record['sha256'])
+
+    def test_grounding_uses_regional_texture_and_keeps_gaps_open_to_the_world(self):
+        manifest=json.loads((FOLDER/'art.json').read_text())
+        grass_path='assets/terrain/overworld/elden_vale/polish/tiles/grass_meadow.png'
+        self.assertEqual(manifest['grounding']['materials']['grass'],grass_path)
+        self.assertIn(grass_path,{record['path'] for record in manifest['source_assets']})
+        miniature=Image.open(FOLDER/'ridge_sanctuary.png').convert('RGBA')
+        grass=Image.open(ROOT/grass_path).convert('RGBA')
+        for x,y in ((10,48),(20,67),(88,67)):
+            with self.subTest(footing=(x,y)):
+                self.assertEqual(miniature.getpixel((x,y)),grass.getpixel((x%24,y%24)))
+        for point in ((10,61),(50,73)):
+            self.assertEqual(miniature.getpixel(point),(0,0,0,0),
+                             'A continuous ground plate would hide the surrounding region')
 
 
 if __name__ == '__main__':unittest.main()

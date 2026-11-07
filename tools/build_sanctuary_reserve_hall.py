@@ -31,6 +31,66 @@ def box(rect):
     return x, y, x+width, y+height
 
 
+def fantasy_modules(data):
+    """Native carved stone, faceted glass and tended lamps for the public hall."""
+    palette = data['fantasy']['palette']
+    images = {}
+    window = Image.new('RGBA', (24, 36))
+    draw = ImageDraw.Draw(window)
+    outer = [(1,35),(1,12),(4,6),(9,1),(14,1),(19,6),(22,12),(22,35)]
+    draw.polygon(outer, fill=palette['stone_shadow'])
+    draw.line(outer+[outer[0]], fill=palette['stone_dark'])
+    inner = [(4,31),(4,13),(7,8),(11,5),(15,8),(19,13),(19,31)]
+    draw.polygon(inner, fill=palette['glass_shadow'])
+    draw.polygon([(5,14),(10,8),(11,19),(5,24)], fill=palette['cyan'])
+    draw.polygon([(12,7),(18,13),(15,22),(12,18)], fill=palette['violet'])
+    draw.polygon([(6,26),(11,21),(12,30),(6,30)], fill=palette['violet_light'])
+    draw.polygon([(13,21),(18,17),(18,30),(14,30)], fill=palette['cyan_light'])
+    draw.line([(11,6),(11,19),(5,25)], fill=palette['stone_light'])
+    draw.line([(12,19),(18,14)], fill=palette['stone_light'])
+    draw.line([(12,19),(14,31)], fill=palette['stone_light'])
+    draw.line([(4,32),(19,32)], fill=palette['stone_light'])
+    draw.line([(3,35),(20,35)], fill=palette['stone_dark'])
+    draw.point((8,12), fill=palette['opal'])
+    draw.point((16,25), fill=palette['opal'])
+    images['crystal_window'] = window
+
+    support = Image.new('RGBA', (16, 76))
+    draw = ImageDraw.Draw(support)
+    draw.polygon([(5,75),(5,41),(2,29),(1,10),(5,14),(8,30),(10,13),
+                  (15,0),(14,20),(11,40),(11,75)], fill=palette['stone_shadow'])
+    draw.line([(6,74),(6,42),(3,28),(2,13)], fill=palette['stone_light'])
+    draw.line([(8,42),(10,22),(14,4)], fill=palette['stone_light'])
+    draw.line([(10,74),(10,44),(14,31)], fill=palette['stone_dark'])
+    for y in (49,64):
+        draw.line((6,y,10,y-2), fill=palette['stone_dark'])
+    images['branch_carving'] = support
+
+    medallion = Image.new('RGBA', (48, 48))
+    draw = ImageDraw.Draw(medallion)
+    draw.ellipse((2,2,45,45), fill=palette['stone_shadow'], outline=palette['stone_dark'])
+    draw.ellipse((5,5,42,42), outline=palette['stone_light'], width=2)
+    draw.arc((11,11,36,36), 25, 305, fill=palette['stone_dark'], width=2)
+    draw.line([(23,38),(23,24),(16,17),(13,10)], fill=palette['stone_light'], width=2)
+    draw.line([(23,25),(30,18),(34,10)], fill=palette['stone_light'], width=2)
+    draw.polygon([(22,17),(24,12),(26,18),(24,23)], fill=palette['cyan_light'])
+    draw.point((24,17), fill=palette['opal'])
+    images['cycle_medallion'] = medallion
+
+    lamp = Image.new('RGBA', (16, 28))
+    draw = ImageDraw.Draw(lamp)
+    draw.line((7,8,7,25), fill=palette['stone_dark'], width=2)
+    draw.rectangle((3,24,12,26), fill=palette['stone_shadow'])
+    draw.line((3,23,12,23), fill=palette['stone_light'])
+    draw.polygon([(4,10),(5,4),(8,0),(11,5),(12,10),(10,16),(5,16)],
+                 fill=palette['lamp_dark'])
+    draw.polygon([(6,10),(7,5),(9,4),(10,10),(9,14),(7,14)], fill=palette['amber'])
+    draw.line((8,7,8,12), fill=palette['lamp_light'])
+    draw.line((4,17,11,17), fill=palette['stone_light'])
+    images['memorial_lamp'] = lamp
+    return images
+
+
 def products():
     data = json.loads(SOURCE.read_text())
     assets = {}
@@ -76,9 +136,13 @@ def products():
     for x in (0, 552):
         for y in range(48, 336, 24):
             ground.alpha_composite(cap.crop((0, 0, 8, 24)), (x+(16 if x == 0 else 0), y))
-    # Four native windows and a care noticeboard make the back wall readable.
+    fantasy = fantasy_modules(data)
+    # Crystal panes retain the windows' positions; wall ornaments and lamps are
+    # carved/mounted above the existing solid wall instead of consuming floor.
     for point in data['windows']:
-        ground.alpha_composite(assets['window'], tuple(point))
+        ground.alpha_composite(fantasy['crystal_window'], tuple(point))
+    for record in data['fantasy']['wall_details']:
+        ground.alpha_composite(fantasy[record['module']], tuple(record['position']))
     ground.alpha_composite(assets['noticeboard'], tuple(data['noticeboard']))
     ex, ey, ew, eh = data['exit_clearance']
     for y in range(ey, ey+eh, 24):
@@ -91,6 +155,7 @@ def products():
     blocked.paste(0, box(data['floor_rect']))
     blocked.paste(0, box(data['exit_clearance']))
     output = {ART/'ground.png': png(ground.convert('RGB'))}
+    for name, image in fantasy.items():output[ART/'fantasy'/(name+'.png')] = png(image)
     entities = []
     footprints = []
     for record in data['objects']:
@@ -155,12 +220,14 @@ def products():
         'authoring': data['authoring'], 'source_recipe': SOURCE.relative_to(ROOT).as_posix(),
         'source_recipe_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         'source_assets': list(data['assets'].values()), 'object_footprints': footprints,
-        'walkable_floor': data['floor_rect'], 'exit_clearance': data['exit_clearance']}
+        'walkable_floor': data['floor_rect'], 'exit_clearance': data['exit_clearance'],
+        'fantasy_details': data['fantasy']}
     output[MAP/'map.json'] = (json.dumps(map_data, indent=2)+'\n').encode()
     manifest = {'version': 1, 'authoring': data['authoring'],
                 'source_recipe': SOURCE.relative_to(ROOT).as_posix(),
                 'source_assets': list(data['assets'].values()),
-                'entities': entities, 'native_size': data['native_size']}
+                'entities': entities, 'native_size': data['native_size'],
+                'fantasy_details': data['fantasy']}
     output[ART/'art.json'] = (json.dumps(manifest, indent=2)+'\n').encode()
     return output
 

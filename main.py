@@ -338,7 +338,8 @@ class World:
                 surface,position=record
                 target.blit(surface,(position[0]-camera[0],position[1]-camera[1]))
             else:
-                phase=0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces'])
+                phase=(record['reduced_motion_frame'] if self.reduced_motion and 'reduced_motion_frame' in record else
+                       0 if record.get('animation_stopped') else (int(elapsed_ms//record['frame_duration_ms'])+record['phase_offset'])%len(record['surfaces']))
                 surface=self.well.sprite(elapsed_ms) if record['id']=='well' and self.well else record['surfaces'][phase]
                 target.blit(surface,(record['position'][0]-camera[0],record['position'][1]-camera[1]))
                 self.draw_doors(target,camera,record['id'])

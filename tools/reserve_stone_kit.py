@@ -77,6 +77,35 @@ def outlined(draw, points, dark='#444942', light='#c6c3aa', width=1):
     draw.line(points,fill=dark,width=width)
 
 
+def crystal_window(size=(44,44)):
+    """A native faceted light with branching stone tracery and no iconography."""
+    result=Image.new('RGBA',size);draw=ImageDraw.Draw(result)
+    cx,cy=size[0]//2,size[1]//2
+    draw.ellipse((0,0,size[0]-1,size[1]-1),fill='#4b625d',outline='#d2cbb1',width=3)
+    draw.ellipse((5,5,size[0]-6,size[1]-6),fill='#263f43',outline='#9cae9d',width=2)
+    facets=[([(cx,7),(cx,cy),(8,cy)],'#77bfb9'),
+            ([(cx,7),(size[0]-9,cy),(cx,cy)],'#b9d8d1'),
+            ([(8,cy),(cx,cy),(cx,size[1]-8)],'#8f8fc1'),
+            ([(cx,cy),(size[0]-9,cy),(cx,size[1]-8)],'#537f9b')]
+    for points,color in facets:draw.polygon(points,fill=color)
+    for points in ([(cx,7),(cx,cy),(8,cy)],[(size[0]-9,cy),(cx,cy),(cx,size[1]-8)]):
+        draw.line(points,fill='#d4ccae',width=2)
+    draw.line((cx-6,cy-9,cx,cy,cx+7,cy+8),fill='#e0dac1')
+    draw.point((cx+3,cy-5),fill='#f0f3df');draw.point((cx-6,cy+4),fill='#dcebdc')
+    return result
+
+
+def branch_relief(draw,x,y,height=70,width=16):
+    """Carve a small tree-like relief into an existing limestone surface."""
+    paths=[[(x,y),(x-1,y-height//3),(x+1,y-height*2//3),(x,y-height)],
+           [(x-1,y-height//3),(x-width//2,y-height//2),(x-width//2-1,y-height*2//3)],
+           [(x+1,y-height//2),(x+width//2,y-height*3//4),(x+width//2+1,y-height*4//5)]]
+    for path in paths:
+        draw.line([(px+1,py+1) for px,py in path],fill='#7b897b',width=2)
+        draw.line(path,fill='#d6d3bb',width=1)
+    draw.polygon([(x,y-height-4),(x-3,y-height),(x,y-height+4),(x+3,y-height)],fill='#85b8ad')
+
+
 def make_kit():
     building = opened(SOURCE_BUILDING)
     masonry = [opened(path).crop((0,7,24,24)) for path in SOURCE_WALLS]
@@ -95,23 +124,24 @@ def make_kit():
     d = ImageDraw.Draw(hall)
     d.line((24,190,263,190),fill='#d2ccb0',width=2)
     d.line((24,206,263,206),fill='#414b42',width=2)
-    roof_points=[(8,109),(28,64),(114,64),(144,38),(174,64),(260,64),(280,109),(280,116),(8,116)]
+    roof_points=[(8,104),(24,75),(64,68),(104,65),(125,47),(144,38),
+                 (163,47),(184,65),(224,68),(264,75),(280,104),
+                 (280,116),(8,116)]
     hall.alpha_composite(masked_texture(hall.size,roof,roof_points))
     d=ImageDraw.Draw(hall)
     d.line(roof_points+[roof_points[0]],fill='#454a42',width=3)
-    d.line((12,108,276,108),fill='#afa483',width=2)
+    d.line((9,105,28,108,74,104,111,101,144,93,177,101,214,104,260,108,279,105),fill='#b8bfa8',width=2)
     d.line((14,113,274,113),fill='#4b4b3e',width=3)
-    d.line((29,65,113,65,144,39,174,65,258,65),fill='#a8b4a5',width=2)
+    d.line((25,75,64,69,104,66,144,39,184,66,224,69,263,75),fill='#a8b4a5',width=2)
+    for x in (42,76,110,178,212,246):
+        d.polygon([(x,108),(x-4,113),(x,119),(x+4,113)],fill='#c6c9ae',outline='#6b8f86')
     # Stone central gable sits above the long limestone front, with a rose light.
     gable=[(108,116),(108,99),(144,69),(180,99),(180,116)]
     hall.alpha_composite(masked_texture(hall.size,masonry,gable))
     d=ImageDraw.Draw(hall)
     d.line((106,101,144,66,182,101),fill='#4f5950',width=4)
     d.line((108,98,144,66,180,98),fill='#cdc7ac',width=2)
-    d.ellipse((132,91,155,114),fill='#666c60',outline='#d2c7a9',width=3)
-    d.ellipse((137,96,150,109),fill='#253b3c')
-    d.line((144,97,144,108),fill='#ac9b6d')
-    d.line((138,103,149,103),fill='#ac9b6d')
+    hall.alpha_composite(crystal_window(),(122,85))
     window=building.crop((32,146,58,182))
     window_mask=Image.new('L',window.size)
     ImageDraw.Draw(window_mask).polygon([(0,35),(0,12),(3,5),(8,0),(18,0),(23,5),(25,12),(25,35)],fill=255)
@@ -125,19 +155,20 @@ def make_kit():
     d=ImageDraw.Draw(hall)
     d.rectangle((128,207,159,211),fill='#b4b29b')
     d.line((128,211,159,211),fill='#505c50')
-    # Small bell tower is modular limestone, not the household silhouette.
-    tower=Image.new('RGBA',(48,90))
-    tower.alpha_composite(texture((32,64),masonry),(8,26))
-    td=ImageDraw.Draw(tower)
-    td.rectangle((8,26,39,89),outline='#5e695b',width=2)
-    td.rectangle((15,43,32,70),fill='#263930')
-    td.polygon([(15,43),(19,37),(28,37),(32,43)],fill='#263930')
-    tower.alpha_composite(building.crop((39,56,54,72)),(17,48))
-    tower.alpha_composite(masked_texture(tower.size,roof,[(0,29),(24,0),(47,29),(47,34),(0,34)]))
-    td=ImageDraw.Draw(tower)
-    td.line((0,31,24,1,47,31),fill='#d1c7a8',width=2)
-    td.line((0,34,47,34),fill='#505849',width=2)
-    hall.alpha_composite(tower,(120,0))
+    # The roof culminates in open branching stonework around an opal light.
+    # Its base remains above the same doorway and changes no wall footprint.
+    crown=masked_texture((48,76),masonry,[(11,75),(12,48),(7,29),(2,13),(6,9),
+        (15,23),(20,41),(24,48),(28,41),(33,23),(42,9),(46,13),(41,29),(36,48),(37,75)])
+    td=ImageDraw.Draw(crown)
+    td.line((12,73,14,47,9,28,4,12),fill='#dbd5bc',width=2)
+    td.line((35,73,33,47,38,28,44,12),fill='#879c8d',width=2)
+    td.polygon([(24,3),(17,20),(20,35),(26,40),(32,23)],fill='#6db3b7',outline='#d6dfc7')
+    td.polygon([(24,3),(24,31),(17,20)],fill='#c9e6d7')
+    td.line((24,7,29,23,26,35),fill='#f0efda')
+    hall.alpha_composite(crown,(120,0))
+    hd=ImageDraw.Draw(hall)
+    for x in (34,116,172,254):branch_relief(hd,x,195,69,12)
+    hd.line((128,166,136,157,144,153,152,157,160,166),fill='#cbd5bc',width=2)
     images['hall']=hall
 
     # Three 64px-clear bays; all scenery pieces are individually placeable.
@@ -155,6 +186,9 @@ def make_kit():
     rd=ImageDraw.Draw(cloister_roof)
     rd.line(roof_points+[roof_points[0]],fill='#4c5649',width=2)
     rd.line((2,49,237,49),fill='#b4ab8c',width=2)
+    for x in range(22,239,38):
+        rd.line((x-7,46,x,40,x+7,46),fill='#bdcbb5',width=1)
+        rd.polygon([(x,37),(x-2,40),(x,43),(x+2,40)],fill='#75b5ad')
     images['cloister_roof']=cloister_roof
     column=texture((12,72),masonry)
     cd=ImageDraw.Draw(column)
@@ -162,6 +196,7 @@ def make_kit():
     cd.rectangle((0,65,11,71),fill='#b3b79c',outline='#67705f')
     cd.line((1,6,1,64),fill='#d1c9ac')
     cd.line((10,6,10,64),fill='#626d5a')
+    branch_relief(cd,5,65,43,5)
     images['cloister_column']=column
     archbar=Image.new('RGBA',(240,48))
     archbar.alpha_composite(texture((240,48),masonry))
@@ -172,6 +207,12 @@ def make_kit():
                     (left+52,10),(left+60,19),(left+64,29),(left+64,48)],fill=0)
     archbar.putalpha(amask)
     archbar.paste((0,0,0,0),mask=ImageOps.invert(amask))
+    ad=ImageDraw.Draw(archbar)
+    for x in (44,120,196):
+        ad.line((x-21,7,x-11,3,x,2,x+11,3,x+21,7),fill='#b9c8b0')
+        ad.polygon([(x,0),(x-3,4),(x,8),(x+3,4)],fill='#8dc5bb')
+    # Relief stays inside the stone; the three walking openings remain clear.
+    archbar.putalpha(amask)
     images['cloister_arches']=archbar
 
     # Reusable entrance arch: 48px clear opening and two24px piers.
@@ -186,6 +227,8 @@ def make_kit():
         ad.line((x+1,87,x+22,87),fill='#d0c8a8')
     for points in (((47,0),(47,16)),((18,8),(35,21)),((5,25),(27,33)),((76,8),(61,21)),((91,25),(70,33))):
         ad.line(points,fill='#606f58',width=1)
+    ad.polygon([(48,2),(43,9),(48,15),(53,9)],fill='#79ada7',outline='#d2d4b9')
+    branch_relief(ad,11,86,45,9);branch_relief(ad,83,86,45,9)
     images['entrance_arch']=arch
 
     ridge=opened(SOURCE_RIDGE)
@@ -249,13 +292,23 @@ def make_kit():
     sd.rectangle((3,0,5,25),fill='#8c744b');sd.line((3,0,3,25),fill='#c6b477')
     sd.polygon([(5,1),(7,4),(5,8)],fill='#c9b483')
     images['survey_stake']=stake
-    basin=Image.new('RGBA',(48,34));bd=ImageDraw.Draw(basin)
-    bd.ellipse((3,10,44,32),fill='#5f705d')
-    bd.ellipse((1,2,46,27),fill='#858e74',outline='#4d6553',width=2)
-    bd.ellipse((5,4,42,23),fill='#c9c4a5',outline='#a0a58a',width=2)
-    bd.ellipse((10,8,37,20),fill='#466f70',outline='#6e9a91',width=2)
-    bd.line((14,11,25,11),fill='#bfd6b5')
-    images['basin']=basin
+    for index in range(6):
+        basin=Image.new('RGBA',(48,34));bd=ImageDraw.Draw(basin)
+        bd.ellipse((3,10,44,32),fill='#556d65')
+        bd.ellipse((1,2,46,27),fill='#929e8a',outline='#445f56',width=2)
+        bd.ellipse((5,4,42,23),fill='#d4d2b9',outline='#b3beaa',width=2)
+        bd.ellipse((10,8,37,20),fill='#355f72',outline='#80c0b4',width=2)
+        bd.ellipse((14,10,33,18),fill='#568d9c')
+        bd.line((19,12,26,12),fill='#c1dbd4')
+        offset=index%3
+        bd.arc((12-offset,9,34+offset,20),15+index*13,140+index*13,fill='#a8d5cb')
+        bd.arc((17,11,30,17),185-index*17,285-index*17,fill='#b8a9d5')
+        for x,y in ((18,13),(29,16),(24,10)):
+            if (x+y+index)%3!=0:bd.point((x,y),fill='#e1ead9')
+        for x,y in ((6,16),(41,16),(23,25)):
+            bd.line((x-2,y,x,y-2,x+2,y),fill='#79998b')
+        images[f'basin_frame_{index:02}']=basin
+    images['basin']=images['basin_frame_00']
 
     sources=sorted({record['path'] for record in CROPS})
     metadata={
@@ -274,6 +327,10 @@ def make_kit():
                              'opening':[24,40,48,56],'anchor':[48,96]},
             'cave':{'size':[160,128],'mouth_rect':[47,78,67,50],'anchor':[80,116]},
             'cave_keeper_rail':{'size':[72,48],'ground_rect':[0,30,72,12]},
+            'basin':{'size':[48,34],'anchor':[24,28],
+                     'footprints':[[4,22,40,12]],
+                     'frames':[f'basin_frame_{index:02}.png' for index in range(6)],
+                     'frame_duration_ms':450,'reduced_motion_frame':0},
         }}
     return images, metadata
 
