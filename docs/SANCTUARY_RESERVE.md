@@ -48,6 +48,11 @@ Its dungeon, enemy encounters,
 miniboss and Caelan's first elemental Edge remain later quest work. It is
 distinct from the historically sealed workers' passage beneath the sanctuary.
 
+[Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
+species for the eastern-ridge caves. Its data and isolated combat adapter are
+available, while encounter placement and the cave dungeon remain future quest
+work. The peaceful reserve and keeper rail retain their current behavior.
+
 The survey marks remain beside intact limestone. Excavation has not begun, and
 visiting the site does not resolve Aldric and Serene's disagreement or grant
 permission to disturb the ground. The guarded regional gates and destroyed

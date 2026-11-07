@@ -20,6 +20,12 @@ preserved. Retired scores and movement currency are discarded without inventing
 traditional XP or character levels. Validation on the title screen does not
 rewrite the player's file.
 
+The [Bestiary](BESTIARY.md) now stores individual monster and boss definitions.
+Cave Bat is the first computed species, explicitly authored at levels 2–3 with
+84/104 XP metadata. The existing fixed Bat and Tusker retain their current
+values. Choosing a species level or resolving its reward does not grant live
+character XP or change existing encounters.
+
 ## Experience and levels
 
 Characters progress from level **1 to 100**. Let `L` be the character's current

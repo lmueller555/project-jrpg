@@ -25,7 +25,7 @@ SOURCE_PATHS = (
     'main.py', 'pause_menu.py', 'status_ui.py', 'spoils_scene.py',
     'world_encounters.py', 'post_battle.py', 'battle_rewards.py',
     'character_abilities.py', 'character_attributes.py', 'party_state.py',
-    'legacy_save.py', 'assets/combat/enemies.json',
+    'legacy_save.py', 'assets/combat/bestiary.json',
     'assets/abilities/characters.json',
     'assets/compatibility/retired_progression_rewards.json',
     'assets/items/catalog.json', 'tools/capture_progression_cleanup.py',

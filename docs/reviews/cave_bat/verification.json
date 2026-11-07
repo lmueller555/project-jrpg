@@ -1,0 +1,584 @@
+{
+  "version": 1,
+  "source_sha256": {
+    "assets/characters/attributes.json": "577e1dc0282e9eeb73c99c59c7c24fa6fbaad98d426920d3ad51f88fc9e8747e",
+    "assets/characters/level_growth.json": "e1843749e4e9ad0696a5c42327899872269c2e94d9996bec4784adeab0bdf9b0",
+    "assets/combat/actions.json": "74ff3ee3056e404258005f60074da331e44272a66b73f461ad8e013569d43e1e",
+    "assets/combat/bat/animation.json": "8a3a07c79d71ce339d33cf9e24da04d5f97ae052c22b20ebd7994a4ccea618b8",
+    "assets/combat/bat/attack_01.png": "f517b703beaa7a445f9e153f7638f726b548d4b65bda9e8587c45e78c1e7487d",
+    "assets/combat/bat/attack_02.png": "8895d25c939691e3c04a9c6a403dd6e296fafd039c8fedd734cf66a2b43994cb",
+    "assets/combat/bat/attack_03.png": "2a9dd0afc13b150c09a5e00fed926aad798b75039b62e985b994b38cf6a39c57",
+    "assets/combat/bat/cast_01.png": "8506cda095961cd5af6da61488e66669ca392e0662a145e0f6e7e7b71853a6f8",
+    "assets/combat/bat/cast_02.png": "7f776a9dc184110af3c5e88a7bfa92d9bd2e89062630d6dc1a3fc4a4eb4325a2",
+    "assets/combat/bat/cast_03.png": "e3cc5c9a024adac94831d5feec4db4e55e6d8659f7741a666ba72958b49850f4",
+    "assets/combat/bat/defeat_01.png": "7223784b5b8c4819a9e80685f32a79be1821e9f6e67d7cc1c2e3155c73ce8d54",
+    "assets/combat/bat/defeat_02.png": "8b75c31d091870371fc815cde9c2186db773257c3aa4b50e8d1a8c9aa755d522",
+    "assets/combat/bat/defeat_03.png": "857b1b8f596c4344c5c74483dd61d3858b80330b2b4f15aaefb448ae1c4dd501",
+    "assets/combat/bat/defeat_04.png": "055b0a592f190175b147027a5d40266aa0defb559f249be9d2205504fddf7a4a",
+    "assets/combat/bat/hurt_01.png": "fa17dea6fae83143001d45fa8666a554b69bb12a50919f36ff3509c327cc9e58",
+    "assets/combat/bat/hurt_02.png": "6594d5cb7e0c2343e3769abacbe1e13672ce9e5d760b73281fa9ff9851de9b1e",
+    "assets/combat/bat/idle_01.png": "07d31a51db6a79fa5c96babd1ac17d32106f969372b418114d929d287e8c8fec",
+    "assets/combat/bat/idle_02.png": "4bd7df7077e3db93b84a05f47792080a2d287ba4d0f285b1efb8704eab7cc74c",
+    "assets/combat/bat/idle_03.png": "eefa02323073878ff6d74dd0c56af54ff7fe9fb89b399323052e08d885dc5b97",
+    "assets/combat/bat/idle_04.png": "e972f3af0b1e070a560970443d39f27caa1077c09b4de310bf0985dac1aa0aba",
+    "assets/combat/bat/spritesheet.png": "2ee88e610cfba55b29b2bfaad6d5a575c874ceb6544ebb1eb3d9a639fa9f3828",
+    "assets/combat/bestiary.json": "f2a3e442886f9bffdf3d2e054d8d1d4414884089a2ad4b72a1b75f39cfa489c0",
+    "assets/combat/caelan/animation.json": "a9394d1b7c17f8c464afe85386a10df8204f7d03b4be8ebe186d32d47a1a350e",
+    "assets/combat/caelan/attack_01.png": "ef7fdd2be551ec078a7c8207f29b707739df896314849e73c2a2bc45c1d591c5",
+    "assets/combat/caelan/attack_02.png": "9c72723d636d1acb9d684ba33e41e8271ae77974fc4c34e2f0407145fb17339d",
+    "assets/combat/caelan/attack_03.png": "3eefaeeef04339bae7af3146527117ec07ef7645e08292942a9c348092adba68",
+    "assets/combat/caelan/cast_01.png": "73dbb4205af9c504a02e7013d2a01cfa5de551ce8b24c8c6f1ee7b02ad4adad0",
+    "assets/combat/caelan/cast_02.png": "ab46ad0a7564ec4daa99ae9333b69fcce1aa793fb9e94070fe30d97bf96e1c02",
+    "assets/combat/caelan/cast_03.png": "746d61d0198afc7d63cb3650f657ff5cfeee73a5792f53b675edf4298e8bbb3b",
+    "assets/combat/caelan/defeat_01.png": "9f1aceb3dbc69ba963ae8ccd6f1680ebe98cb9c507914df2c577282f1d2a6fda",
+    "assets/combat/caelan/defeat_02.png": "abf409314fcb35c53aabb605f03fd59cdeacc55537d20c32cb02fe3ffcc0e709",
+    "assets/combat/caelan/guard_01.png": "84e523cae5c0d04fd9c0f65fd781b06c4e1c1bb876db48b7c17ac49cfdf5d779",
+    "assets/combat/caelan/guard_02.png": "6525a7d007dcbd33f909905464b6dc9c546c9791d6fcfadb23f411dd7d9222ef",
+    "assets/combat/caelan/hurt_01.png": "8a2addf44c6c4471b2b3396ea6a1193e7d113858eab8d83487d680f235b67f4c",
+    "assets/combat/caelan/hurt_02.png": "4286773d0e11eea81b21723191062b053ef022a1cf53359c9df3e3ba570bc9bb",
+    "assets/combat/caelan/idle_01.png": "eb2a3a1b68694dd84ab81b921f7c124b34e4e543b6f6a9c92714e59ef6d332c9",
+    "assets/combat/caelan/idle_02.png": "14e431fdc59c2a9cfc9b7b39222cdc89c22f78e3bb4d38c84adce9d9cc1a0c6a",
+    "assets/combat/caelan/spritesheet.png": "cc01ff42a5d5101e5860488f4e3730382f6e41759207a3a0ce3726a7702b38cc",
+    "assets/combat/caelan/victory_01.png": "0ab7c7971c77f3b23f331b4d44cd81e3ddab7c8a61a17922d2b8e415354d6ac9",
+    "assets/combat/caelan/victory_02.png": "377e03fa9a4e7d5ec7ec1f57784f28b798db461b0f2ad5e9a8215db00505ced4",
+    "assets/combat/caelan_choreography.json": "4715a9aeafb6a4828f943ea26f0d2955b5530229a0ee1aa4270934074ab2d7e5",
+    "assets/combat/caelan_motion/animation.json": "9f47a4f0719393833d4ba4e28c18c269726025f8184e6560de9fd6e957c3a220",
+    "assets/combat/caelan_motion/armed_authored.png": "77e8e88aebe5421cbc91c95f7f0b396cd71dce205d367465c95329f53e857bbd",
+    "assets/combat/caelan_motion/provenance.json": "1479ad7b92a685b8b2d996ea91d304a1bf00cc671088044f092e0f40b6cc6ba2",
+    "assets/combat/caelan_motion/unarmed_authored.png": "1634138e1a147686549cd4c44412719d212a89bdf61b0e24baa0b195d45947c3",
+    "assets/combat/eldenmere/background.png": "12a3203cae1845c2b241b636ac5dd56348f6997fe9a2158502262cc165701ba9",
+    "assets/combat/eldenmere/grass.png": "e5b6d1702a267569e2a69a0fc63d83e3cfaa923c364a6cfec19cb3e9032bff7c",
+    "assets/combat/eldenmere/scene.json": "5c6b98093279d8d2e9541bd06bc2df09c24383327aebd145ee073e33165188b8",
+    "assets/combat/enemy_archetypes.json": "e257a26b0b3dce7ef277430257546a0553c70a73e203879ef3e4a2fde8fbd8bb",
+    "battle_action_audio.py": "0f293129034e64a1f617ded45ab1a2be697548d3512207313617a3a77aab6ac4",
+    "battle_action_fx.py": "e658e310f389f8d1dca1f3ae2c64412ca1e56202fbfc23db8ad0673ad02b8e55",
+    "battle_choreography.py": "34b6543a8fd36592ee7ebe065add9862b457a259183635d2daa09617dd8c200a",
+    "battle_model.py": "71d8589236f7e51f86d426dc6fc336a33d0ce66e291732b00e53af1796448c55",
+    "battle_scene.py": "89ef7b98259fd372d59f9b16b488c898583190bc71245604816c9184006f79d7",
+    "bestiary.py": "24ac5223ea9084eb14658f86217e5351997023f56d7d7cf024a868c937f756b2",
+    "character_attributes.py": "ec293cbe73705509e825d7e7bea19121400835de020ca3f42ae48851d0e3ed97",
+    "combat_damage.py": "609063367c7910f222abadd62c601327743767d324c19e9893e6b45f66e5b28f",
+    "combat_motion_art.py": "631feb7e6b553c2fa53b6400b1c2ccb30c07161686b47b5ace72a5be3613aac9",
+    "enemy_growth.py": "820ca38e61db22741620c4922ab465dadb4703ab6ea67b78dc389d2dd77446b9",
+    "leveling.py": "8cf11a5874b041cb5400e7c0a012f7b84a63694e6fcd3be3e515ffb6b7527ef8",
+    "main.py": "f338000da99615ff13e1e8071c0c4d4696303497954c338cfbfd4a2bbe578161",
+    "tools/capture_cave_bat.py": "0f0510235fabf509de1dac57522d9177c1f63781def2db59c42cff5cc2c39b06",
+    "ui_style.py": "8a8594a907bcfc6b773ba3ad1654fd7578bb5438479034b154041926c4bc18c4"
+  },
+  "artifact_sha256": {
+    "level_2_ready.png": "89274bd45d8187bb69446398b37f9ef22371c40bf65d2c4e934aa3c37f7d0c31",
+    "level_3_bite.png": "3fd0d82fdacdd2b2228fd670fab7751ef8ca4cce6b894325810a7c745626269f",
+    "level_3_ready.png": "d5925075a19df61b560f027889c2787d00cc42d21ec5fc5e36fd088fd9a0280e",
+    "level_3_wing_gust.png": "16fcf485360377cdf02cb6929d2b7b8e097905ae55e86b4f6e5830a808c90b13",
+    "contact_sheet.png": "094d9251605133ddc677cbed4649e0bae4adb546adeae10429355223742ac77c"
+  },
+  "captures": [
+    {
+      "file": "level_2_ready.png",
+      "level": 2,
+      "state": "ready",
+      "text": [
+        "Cave Bat",
+        "Cave Bat",
+        "Eldenmere",
+        "Eldenmere",
+        "COMMANDS",
+        "Caelan",
+        "HP 144/162",
+        "MP 31/31",
+        "Water",
+        "Attack",
+        "Skills",
+        "Guard",
+        "Flee"
+      ],
+      "player_hp": 144,
+      "enemy_hp": 73,
+      "enemy_mp": 5,
+      "action": null,
+      "action_elapsed": null
+    },
+    {
+      "file": "level_3_bite.png",
+      "level": 3,
+      "state": "bite",
+      "text": [
+        "Cave Bat",
+        "Cave Bat",
+        "Bite",
+        "Bite",
+        "24",
+        "24",
+        "COMMANDS",
+        "Caelan",
+        "HP 167/191",
+        "MP 33/33",
+        "Water",
+        "Attack",
+        "Skills",
+        "Guard",
+        "Flee"
+      ],
+      "player_hp": 167,
+      "enemy_hp": 85,
+      "enemy_mp": 5,
+      "action": "cave_bat_bite",
+      "action_elapsed": 0.398181818181834
+    },
+    {
+      "file": "level_3_ready.png",
+      "level": 3,
+      "state": "ready",
+      "text": [
+        "Cave Bat",
+        "Cave Bat",
+        "Eldenmere",
+        "Eldenmere",
+        "COMMANDS",
+        "Caelan",
+        "HP 167/191",
+        "MP 33/33",
+        "Water",
+        "Attack",
+        "Skills",
+        "Guard",
+        "Flee"
+      ],
+      "player_hp": 167,
+      "enemy_hp": 85,
+      "enemy_mp": 5,
+      "action": null,
+      "action_elapsed": null
+    },
+    {
+      "file": "level_3_wing_gust.png",
+      "level": 3,
+      "state": "wing_gust",
+      "text": [
+        "Cave Bat",
+        "Cave Bat",
+        "Wing Gust",
+        "Wing Gust",
+        "12",
+        "12",
+        "COMMANDS",
+        "Caelan",
+        "HP 155/191",
+        "MP 33/33",
+        "Water",
+        "Attack",
+        "Skills",
+        "Guard",
+        "Flee"
+      ],
+      "player_hp": 155,
+      "enemy_hp": 85,
+      "enemy_mp": 3,
+      "action": "cave_bat_wing_gust",
+      "action_elapsed": 0.4687445887446415
+    }
+  ],
+  "enemy_actions": [
+    {
+      "action": "cave_bat_bite",
+      "mp": 5
+    },
+    {
+      "action": "cave_bat_wing_gust",
+      "mp": 3
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 3
+    },
+    {
+      "action": "cave_bat_wing_gust",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    },
+    {
+      "action": "cave_bat_bite",
+      "mp": 1
+    }
+  ],
+  "events": [
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 24,
+      "remaining_hp": 167,
+      "guarded": false,
+      "frame_age": 0.03818181818183405
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_wing_gust",
+      "target": "player",
+      "name": "Wing Gust"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_wing_gust",
+      "target": "player",
+      "damage": 12,
+      "remaining_hp": 155,
+      "guarded": true,
+      "frame_age": 0.018744588744641487
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 12,
+      "remaining_hp": 143,
+      "guarded": true,
+      "frame_age": 0.019307359307449666
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_wing_gust",
+      "target": "player",
+      "name": "Wing Gust"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_wing_gust",
+      "target": "player",
+      "damage": 13,
+      "remaining_hp": 130,
+      "guarded": true,
+      "frame_age": 0.039870129870257086
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 11,
+      "remaining_hp": 119,
+      "guarded": true,
+      "frame_age": 0.00043290043306467435
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 11,
+      "remaining_hp": 108,
+      "guarded": true,
+      "frame_age": 0.030995670995872436
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 12,
+      "remaining_hp": 96,
+      "guarded": true,
+      "frame_age": 0.02155844155867933
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "guard",
+      "target": "player",
+      "name": "Guard"
+    },
+    {
+      "type": "guard",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 11,
+      "remaining_hp": 85,
+      "guarded": true,
+      "frame_age": 0.012121212121486168
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack"
+    },
+    {
+      "type": "impact",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "damage": 29,
+      "remaining_hp": 56,
+      "guarded": false,
+      "frame_age": 7.632783294297951e-17
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 25,
+      "remaining_hp": 60,
+      "guarded": false,
+      "frame_age": 0.0026839826842937273
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack"
+    },
+    {
+      "type": "impact",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "damage": 28,
+      "remaining_hp": 28,
+      "guarded": false,
+      "frame_age": 7.632783294297951e-17
+    },
+    {
+      "type": "action_started",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "name": "Bite"
+    },
+    {
+      "type": "impact",
+      "actor": "enemy",
+      "action": "cave_bat_bite",
+      "target": "player",
+      "damage": 24,
+      "remaining_hp": 36,
+      "guarded": false,
+      "frame_age": 0.03324675324710082
+    },
+    {
+      "type": "player_ready",
+      "actor": "player"
+    },
+    {
+      "type": "action_started",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "name": "Attack"
+    },
+    {
+      "type": "impact",
+      "actor": "player",
+      "action": "attack",
+      "target": "enemy",
+      "damage": 29,
+      "remaining_hp": 0,
+      "guarded": false,
+      "frame_age": 7.632783294297951e-17
+    },
+    {
+      "type": "result",
+      "outcome": "victory"
+    }
+  ],
+  "bat_states": [
+    "attack",
+    "cast",
+    "defeat",
+    "hurt",
+    "idle"
+  ],
+  "outcome": "victory",
+  "persistent_attributes_unchanged": true,
+  "fixtures": [
+    "Real Game with temporary journey/settings; existing Eldenmere review stage.",
+    "Existing Bat art alias; no new Cave Bat sprite or cave background.",
+    "Caelan uses approved same-level growth stats via a copied attribute catalog.",
+    "Real ATB, seed 7, mouse Guard/Attack input; no HP/MP or pose injection.",
+    "Level 3 encounter completes; no world spawn, cave unlock, loot or XP settlement.",
+    "Planned Fire weakness and Stagger resistance remain inert metadata."
+  ]
+}

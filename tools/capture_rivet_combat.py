@@ -46,7 +46,7 @@ def fingerprints():
         'rules_and_story': ['battle_model.py', 'combat_damage.py', 'bot_loadouts.py',
                             'character_abilities.py', 'mill_quest.py', 'post_battle.py',
                             'assets/combat/actions.json', 'assets/combat/bots.json',
-                            'assets/combat/guests.json', 'assets/combat/enemies.json',
+                            'assets/combat/guests.json', 'assets/combat/bestiary.json',
                             'assets/abilities/catalog.json', 'assets/abilities/characters.json',
                             'assets/story/mill/scene.json', 'assets/story/mill/layout.json'],
         'runtime_art': [str(path.relative_to(ROOT)) for actor in ('mira', 'rivet')

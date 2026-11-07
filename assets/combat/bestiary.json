@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "enemies": {
+    "bat": {
+      "name": "Bat",
+      "attributes": {
+        "hp": 72,
+        "mp": 4,
+        "str": 7,
+        "mag": 6,
+        "spr": 3,
+        "def": 6,
+        "m_def": 5,
+        "speed": 8,
+        "acc": 10,
+        "eva": 12,
+        "lck": 4
+      },
+      "abilities": [
+        "bite",
+        "wing_gust"
+      ],
+      "rewards": {
+        "drops": {
+          "aether_emerald": 1
+        }
+      }
+    },
+    "ridgeback_tusker": {
+      "name": "Ridgeback Tusker",
+      "attributes": {
+        "hp": 700,
+        "mp": 0,
+        "str": 12,
+        "mag": 4,
+        "spr": 4,
+        "def": 18,
+        "m_def": 12,
+        "speed": 8,
+        "acc": 12,
+        "eva": 6,
+        "lck": 4
+      },
+      "abilities": [
+        "tusk_strike",
+        "prepare_charge",
+        "tusker_charge"
+      ],
+      "rewards": {
+        "drops": {
+          "aether_emerald": 1
+        }
+      }
+    },
+    "cave_bat": {
+      "mode": "species",
+      "name": "Cave Bat",
+      "description": "A fragile flying beast dwelling in the caves along the Elden Vale Sanctuary’s eastern ridge. It alternates bites with short magical wing gusts.",
+      "family": "flying_beast",
+      "tier": "normal",
+      "habitats": [
+        "elden_vale_sanctuary_caves"
+      ],
+      "level_range": {
+        "min": 2,
+        "max": 3
+      },
+      "archetype": "battlemage",
+      "stat_profile": "hybrid",
+      "fighting_style": "physical_magical_alternation",
+      "species_multipliers": {
+        "hp": 0.4,
+        "mp": 0.1,
+        "eva": 1.2
+      },
+      "tier_multipliers": {},
+      "behavior": {
+        "sequence": [
+          "cave_bat_bite",
+          "cave_bat_wing_gust"
+        ],
+        "fallback": "cave_bat_bite",
+        "targeting": "cycle_living_party"
+      },
+      "presentation": {
+        "sprite_id": "bat",
+        "action_aliases": {
+          "cave_bat_bite": "bite",
+          "cave_bat_wing_gust": "wing_gust"
+        }
+      },
+      "rewards": {
+        "drops": null
+      },
+      "planned_mechanics": {
+        "elemental_affinities": {
+          "status": "planned",
+          "multipliers": {
+            "fire": 2,
+            "water": 1,
+            "ice": 1,
+            "nature": 1
+          }
+        },
+        "stagger": {
+          "status": "planned",
+          "resistance": "low"
+        }
+      },
+      "encounter_guidance": {
+        "solo_count": 1,
+        "party_count": 2
+      }
+    }
+  }
+}
