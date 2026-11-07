@@ -1,0 +1,449 @@
+{
+  "version": 1,
+  "id": "grass_demo.prototype.24",
+  "status": "prototype_for_review",
+  "tile_size": 24,
+  "frame_size": [
+    24,
+    32
+  ],
+  "anchor": [
+    12,
+    28
+  ],
+  "contact_rect": [
+    -10,
+    -8,
+    20,
+    12
+  ],
+  "palette": {
+    "base": "#62964e",
+    "deep": "#355b3e",
+    "shadow": "#487440",
+    "mid": "#588b45",
+    "light": "#7eac5a",
+    "highlight": "#a4bf70",
+    "soil": "#796f49",
+    "soil_shadow": "#606442",
+    "leaf": "#9b8c54",
+    "leaf_light": "#b0a369",
+    "moss": "#5c8f49",
+    "soft_mid": "#5e914b",
+    "soft_light": "#6c9e54"
+  },
+  "families": {
+    "lawn": {
+      "label": "Maintained grass",
+      "seeds": [
+        17,
+        41,
+        63,
+        89
+      ]
+    },
+    "meadow": {
+      "label": "Meadow grass",
+      "seeds": [
+        113,
+        151,
+        179,
+        211
+      ]
+    },
+    "woodland": {
+      "label": "Woodland grass",
+      "seeds": [
+        239,
+        263,
+        293,
+        331
+      ]
+    }
+  },
+  "idle_wind": [
+    -1,
+    0,
+    1,
+    1,
+    0,
+    -1
+  ],
+  "idle_duration_ms": 800,
+  "part_strengths": [
+    0.35,
+    0.7,
+    1.0
+  ],
+  "variants": {
+    "fan": [
+      [
+        11,
+        28,
+        3,
+        12,
+        2,
+        "rear"
+      ],
+      [
+        12,
+        28,
+        7,
+        7,
+        2,
+        "rear"
+      ],
+      [
+        12,
+        28,
+        12,
+        5,
+        2,
+        "rear"
+      ],
+      [
+        13,
+        28,
+        18,
+        8,
+        2,
+        "rear"
+      ],
+      [
+        14,
+        28,
+        22,
+        13,
+        2,
+        "rear"
+      ],
+      [
+        8,
+        28,
+        2,
+        20,
+        2,
+        "front"
+      ],
+      [
+        10,
+        28,
+        5,
+        15,
+        2,
+        "front"
+      ],
+      [
+        12,
+        28,
+        10,
+        13,
+        2,
+        "front"
+      ],
+      [
+        14,
+        28,
+        17,
+        14,
+        2,
+        "front"
+      ],
+      [
+        16,
+        28,
+        22,
+        19,
+        2,
+        "front"
+      ],
+      [
+        15,
+        28,
+        19,
+        22,
+        2,
+        "front"
+      ]
+    ],
+    "slender": [
+      [
+        7,
+        28,
+        4,
+        11,
+        1,
+        "rear"
+      ],
+      [
+        9,
+        28,
+        8,
+        5,
+        2,
+        "rear"
+      ],
+      [
+        11,
+        28,
+        13,
+        6,
+        2,
+        "rear"
+      ],
+      [
+        13,
+        28,
+        17,
+        9,
+        2,
+        "rear"
+      ],
+      [
+        16,
+        28,
+        19,
+        12,
+        1,
+        "rear"
+      ],
+      [
+        8,
+        28,
+        2,
+        18,
+        2,
+        "front"
+      ],
+      [
+        9,
+        28,
+        6,
+        13,
+        2,
+        "front"
+      ],
+      [
+        11,
+        28,
+        11,
+        11,
+        2,
+        "front"
+      ],
+      [
+        13,
+        28,
+        15,
+        14,
+        2,
+        "front"
+      ],
+      [
+        15,
+        28,
+        20,
+        18,
+        2,
+        "front"
+      ],
+      [
+        17,
+        28,
+        22,
+        22,
+        1,
+        "front"
+      ]
+    ],
+    "arching": [
+      [
+        8,
+        28,
+        1,
+        14,
+        2,
+        "rear"
+      ],
+      [
+        10,
+        28,
+        4,
+        8,
+        2,
+        "rear"
+      ],
+      [
+        12,
+        28,
+        10,
+        4,
+        2,
+        "rear"
+      ],
+      [
+        14,
+        28,
+        19,
+        6,
+        2,
+        "rear"
+      ],
+      [
+        16,
+        28,
+        23,
+        13,
+        2,
+        "rear"
+      ],
+      [
+        8,
+        28,
+        2,
+        22,
+        2,
+        "front"
+      ],
+      [
+        10,
+        28,
+        6,
+        17,
+        2,
+        "front"
+      ],
+      [
+        12,
+        28,
+        12,
+        12,
+        2,
+        "front"
+      ],
+      [
+        15,
+        28,
+        18,
+        17,
+        2,
+        "front"
+      ],
+      [
+        17,
+        28,
+        23,
+        21,
+        2,
+        "front"
+      ]
+    ],
+    "seeded": [
+      [
+        8,
+        28,
+        3,
+        10,
+        1,
+        "rear"
+      ],
+      [
+        10,
+        28,
+        8,
+        5,
+        1,
+        "rear"
+      ],
+      [
+        12,
+        28,
+        13,
+        4,
+        1,
+        "rear"
+      ],
+      [
+        14,
+        28,
+        19,
+        7,
+        1,
+        "rear"
+      ],
+      [
+        16,
+        28,
+        22,
+        13,
+        1,
+        "rear"
+      ],
+      [
+        8,
+        28,
+        2,
+        21,
+        2,
+        "front"
+      ],
+      [
+        10,
+        28,
+        5,
+        14,
+        2,
+        "front"
+      ],
+      [
+        12,
+        28,
+        11,
+        12,
+        2,
+        "front"
+      ],
+      [
+        14,
+        28,
+        17,
+        15,
+        2,
+        "front"
+      ],
+      [
+        16,
+        28,
+        22,
+        20,
+        2,
+        "front"
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "path": "assets/terrain/eldenmere/grass_dirt/grass_00.png",
+      "sha256": "403b33c4706a4cf7f8fb892ec910731d0b04c48597a70e5a3d1b46910c9045d7"
+    },
+    {
+      "path": "assets/terrain/eldenmere/grass_flowers/grass_dense/idle.png",
+      "sha256": "5316f82cc28f63ce4ce3f9cbee60a6fed6f2de4d559d09df5d51892b4634aed0"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    }
+  ],
+  "authoring": "Native pixel material and blade recipes extend the current grass palette and rooted-clump vocabulary. New blades use explicit root/tip/width/depth geometry; original packs are read only.",
+  "notes": [
+    "Ground motifs are designed clusters, not uniform per-pixel noise.",
+    "All tile borders share the common base green for seamless composition.",
+    "All tall-grass states preserve the same hard-alpha roots in rows26..28.",
+    "Tall grass is visual, fully walkable and owned by a separate interactive layer."
+  ]
+}

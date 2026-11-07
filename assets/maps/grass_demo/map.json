@@ -1,0 +1,1654 @@
+{
+  "version": 1,
+  "id": "grass_demo",
+  "name": "Grass demonstration",
+  "kind": "demo",
+  "tile_size": 24,
+  "size_tiles": [
+    32,
+    22
+  ],
+  "size_pixels": [
+    768,
+    528
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "spawn": [
+    108,
+    396
+  ],
+  "ground_frames": [
+    "assets/maps/grass_demo/ground.png"
+  ],
+  "ground_frame_duration_ms": 1000,
+  "collision": "assets/maps/grass_demo/collision.png",
+  "overview": "assets/maps/grass_demo/overview.png",
+  "entities": [
+    {
+      "id": "context_tree",
+      "position": [
+        576,
+        0
+      ],
+      "sort_y": 120,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_03.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_04.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_05.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_06.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_07.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_08.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 0
+    },
+    {
+      "id": "context_tree_edge",
+      "position": [
+        672,
+        -48
+      ],
+      "sort_y": 72,
+      "frames": [
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_03.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_04.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_05.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_06.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_07.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_08.png",
+        "assets/terrain/eldenmere/foliage/tree/frames/frame_09.png"
+      ],
+      "frame_duration_ms": 600,
+      "phase_offset": 2
+    },
+    {
+      "id": "context_bench",
+      "position": [
+        48,
+        342
+      ],
+      "sort_y": 372,
+      "frames": [
+        "assets/terrain/eldenmere/sanctuary_charm/props/bench.png"
+      ],
+      "frame_duration_ms": 1000,
+      "phase_offset": 4
+    }
+  ],
+  "foreground": [],
+  "npcs": [],
+  "doors": [],
+  "landmarks": [
+    {
+      "id": "comparison_current",
+      "name": "Comparison Current",
+      "position": [
+        120,
+        96
+      ]
+    },
+    {
+      "id": "comparison_proposed",
+      "name": "Comparison Proposed",
+      "position": [
+        288,
+        96
+      ]
+    },
+    {
+      "id": "lawn",
+      "name": "Lawn",
+      "position": [
+        180,
+        168
+      ]
+    },
+    {
+      "id": "walk_entry",
+      "name": "Walk Entry",
+      "position": [
+        240,
+        312
+      ]
+    },
+    {
+      "id": "stand",
+      "name": "Stand",
+      "position": [
+        408,
+        312
+      ]
+    },
+    {
+      "id": "walk_exit",
+      "name": "Walk Exit",
+      "position": [
+        552,
+        312
+      ]
+    },
+    {
+      "id": "recovery",
+      "name": "Recovery",
+      "position": [
+        552,
+        312
+      ]
+    },
+    {
+      "id": "run_entry",
+      "name": "Run Entry",
+      "position": [
+        552,
+        336
+      ]
+    },
+    {
+      "id": "run_exit",
+      "name": "Run Exit",
+      "position": [
+        264,
+        336
+      ]
+    },
+    {
+      "id": "settle",
+      "name": "Settle",
+      "position": [
+        240,
+        384
+      ]
+    },
+    {
+      "id": "woodland_entry",
+      "name": "Woodland Entry",
+      "position": [
+        552,
+        264
+      ]
+    },
+    {
+      "id": "woodland_stand",
+      "name": "Woodland Stand",
+      "position": [
+        600,
+        216
+      ]
+    },
+    {
+      "id": "woodland_exit",
+      "name": "Woodland Exit",
+      "position": [
+        672,
+        264
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "comparison_current",
+      "name": "Current grass",
+      "label": "Current grass",
+      "rect": [
+        48,
+        48,
+        144,
+        72
+      ]
+    },
+    {
+      "id": "comparison_proposed",
+      "name": "Richer lawn",
+      "label": "Richer lawn",
+      "rect": [
+        216,
+        48,
+        144,
+        72
+      ]
+    },
+    {
+      "id": "woodland",
+      "name": "Woodland grass",
+      "label": "Woodland grass",
+      "polygon": [
+        [
+          432,
+          0
+        ],
+        [
+          768,
+          0
+        ],
+        [
+          768,
+          288
+        ],
+        [
+          576,
+          264
+        ],
+        [
+          480,
+          192
+        ],
+        [
+          408,
+          120
+        ]
+      ]
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow grass",
+      "label": "Meadow grass",
+      "polygon": [
+        [
+          192,
+          216
+        ],
+        [
+          384,
+          192
+        ],
+        [
+          552,
+          288
+        ],
+        [
+          768,
+          312
+        ],
+        [
+          768,
+          528
+        ],
+        [
+          144,
+          528
+        ],
+        [
+          168,
+          360
+        ]
+      ]
+    },
+    {
+      "id": "lawn",
+      "name": "Maintained lawn",
+      "label": "Maintained lawn",
+      "rect": [
+        24,
+        24,
+        720,
+        480
+      ]
+    }
+  ],
+  "checkpoints": {
+    "comparison_current": [
+      120,
+      96
+    ],
+    "comparison_proposed": [
+      288,
+      96
+    ],
+    "lawn": [
+      180,
+      168
+    ],
+    "walk_entry": [
+      240,
+      312
+    ],
+    "stand": [
+      408,
+      312
+    ],
+    "walk_exit": [
+      552,
+      312
+    ],
+    "recovery": [
+      552,
+      312
+    ],
+    "run_entry": [
+      552,
+      336
+    ],
+    "run_exit": [
+      264,
+      336
+    ],
+    "settle": [
+      240,
+      384
+    ],
+    "woodland_entry": [
+      552,
+      264
+    ],
+    "woodland_stand": [
+      600,
+      216
+    ],
+    "woodland_exit": [
+      672,
+      264
+    ]
+  },
+  "demo_route": [
+    [
+      120,
+      96
+    ],
+    [
+      288,
+      96
+    ],
+    [
+      180,
+      168
+    ],
+    [
+      240,
+      312
+    ],
+    [
+      408,
+      312
+    ],
+    [
+      552,
+      312
+    ],
+    [
+      552,
+      336
+    ],
+    [
+      264,
+      336
+    ],
+    [
+      240,
+      384
+    ],
+    [
+      552,
+      264
+    ],
+    [
+      600,
+      216
+    ],
+    [
+      672,
+      264
+    ],
+    [
+      108,
+      396
+    ]
+  ],
+  "review_route": [
+    {
+      "name": "current_grass",
+      "position": [
+        120,
+        96
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2,
+      "shot": "current_grass"
+    },
+    {
+      "name": "richer_lawn",
+      "position": [
+        288,
+        96
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2,
+      "shot": "richer_lawn"
+    },
+    {
+      "name": "maintained_lawn",
+      "position": [
+        180,
+        168
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.8,
+      "shot": "maintained_lawn"
+    },
+    {
+      "name": "walk_entry",
+      "position": [
+        240,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "standing_in_grass",
+      "position": [
+        408,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 2.0,
+      "shot": "standing_in_grass"
+    },
+    {
+      "name": "grass_recovery",
+      "position": [
+        552,
+        312
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.8,
+      "shot": "grass_recovery"
+    },
+    {
+      "name": "run_entry",
+      "position": [
+        552,
+        336
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "running_through_grass",
+      "position": [
+        264,
+        336
+      ],
+      "mode": "run",
+      "hold_seconds": 0.5,
+      "shot": "running_through_grass"
+    },
+    {
+      "name": "settled_grass",
+      "position": [
+        240,
+        384
+      ],
+      "mode": "run",
+      "hold_seconds": 1.2,
+      "shot": "settled_grass"
+    },
+    {
+      "name": "woodland_entry",
+      "position": [
+        552,
+        264
+      ],
+      "mode": "walk",
+      "hold_seconds": 0.3
+    },
+    {
+      "name": "woodland_grass",
+      "position": [
+        600,
+        216
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.8,
+      "shot": "woodland_grass"
+    },
+    {
+      "name": "woodland_exit",
+      "position": [
+        672,
+        264
+      ],
+      "mode": "walk",
+      "hold_seconds": 1.2
+    },
+    {
+      "name": "return",
+      "position": [
+        108,
+        396
+      ],
+      "mode": "run",
+      "hold_seconds": 0.5
+    }
+  ],
+  "grass": {
+    "manifest": "assets/terrain/grass_demo/assets.json",
+    "instances": [
+      {
+        "id": "grass_01",
+        "position": [
+          332,
+          260
+        ],
+        "variant": "fan",
+        "phase_ms": 565
+      },
+      {
+        "id": "grass_02",
+        "position": [
+          362,
+          261
+        ],
+        "variant": "slender",
+        "phase_ms": 544
+      },
+      {
+        "id": "grass_03",
+        "position": [
+          385,
+          267
+        ],
+        "variant": "arching",
+        "phase_ms": 1314
+      },
+      {
+        "id": "grass_04",
+        "position": [
+          410,
+          260
+        ],
+        "variant": "seeded",
+        "phase_ms": 1293
+      },
+      {
+        "id": "grass_05",
+        "position": [
+          428,
+          267
+        ],
+        "variant": "fan",
+        "phase_ms": 2063
+      },
+      {
+        "id": "grass_06",
+        "position": [
+          284,
+          287
+        ],
+        "variant": "fan",
+        "phase_ms": 2381
+      },
+      {
+        "id": "grass_07",
+        "position": [
+          315,
+          291
+        ],
+        "variant": "slender",
+        "phase_ms": 3151
+      },
+      {
+        "id": "grass_08",
+        "position": [
+          332,
+          286
+        ],
+        "variant": "seeded",
+        "phase_ms": 3130
+      },
+      {
+        "id": "grass_09",
+        "position": [
+          361,
+          284
+        ],
+        "variant": "fan",
+        "phase_ms": 300
+      },
+      {
+        "id": "grass_10",
+        "position": [
+          383,
+          291
+        ],
+        "variant": "slender",
+        "phase_ms": 279
+      },
+      {
+        "id": "grass_11",
+        "position": [
+          407,
+          284
+        ],
+        "variant": "arching",
+        "phase_ms": 1049
+      },
+      {
+        "id": "grass_12",
+        "position": [
+          433,
+          285
+        ],
+        "variant": "seeded",
+        "phase_ms": 1819
+      },
+      {
+        "id": "grass_13",
+        "position": [
+          456,
+          287
+        ],
+        "variant": "fan",
+        "phase_ms": 1798
+      },
+      {
+        "id": "grass_14",
+        "position": [
+          478,
+          285
+        ],
+        "variant": "slender",
+        "phase_ms": 2568
+      },
+      {
+        "id": "grass_15",
+        "position": [
+          287,
+          314
+        ],
+        "variant": "fan",
+        "phase_ms": 2999
+      },
+      {
+        "id": "grass_16",
+        "position": [
+          313,
+          311
+        ],
+        "variant": "slender",
+        "phase_ms": 2978
+      },
+      {
+        "id": "grass_17",
+        "position": [
+          337,
+          315
+        ],
+        "variant": "arching",
+        "phase_ms": 148
+      },
+      {
+        "id": "grass_18",
+        "position": [
+          358,
+          311
+        ],
+        "variant": "seeded",
+        "phase_ms": 127
+      },
+      {
+        "id": "grass_19",
+        "position": [
+          386,
+          311
+        ],
+        "variant": "fan",
+        "phase_ms": 897
+      },
+      {
+        "id": "grass_20",
+        "position": [
+          408,
+          312
+        ],
+        "variant": "slender",
+        "phase_ms": 1667
+      },
+      {
+        "id": "grass_21",
+        "position": [
+          429,
+          315
+        ],
+        "variant": "arching",
+        "phase_ms": 1646
+      },
+      {
+        "id": "grass_22",
+        "position": [
+          457,
+          310
+        ],
+        "variant": "fan",
+        "phase_ms": 2416
+      },
+      {
+        "id": "grass_23",
+        "position": [
+          478,
+          314
+        ],
+        "variant": "slender",
+        "phase_ms": 2395
+      },
+      {
+        "id": "grass_24",
+        "position": [
+          501,
+          314
+        ],
+        "variant": "arching",
+        "phase_ms": 3165
+      },
+      {
+        "id": "grass_25",
+        "position": [
+          291,
+          333
+        ],
+        "variant": "seeded",
+        "phase_ms": 3257
+      },
+      {
+        "id": "grass_26",
+        "position": [
+          310,
+          333
+        ],
+        "variant": "fan",
+        "phase_ms": 427
+      },
+      {
+        "id": "grass_27",
+        "position": [
+          338,
+          339
+        ],
+        "variant": "slender",
+        "phase_ms": 406
+      },
+      {
+        "id": "grass_28",
+        "position": [
+          360,
+          334
+        ],
+        "variant": "arching",
+        "phase_ms": 1176
+      },
+      {
+        "id": "grass_29",
+        "position": [
+          382,
+          339
+        ],
+        "variant": "fan",
+        "phase_ms": 1946
+      },
+      {
+        "id": "grass_30",
+        "position": [
+          408,
+          336
+        ],
+        "variant": "slender",
+        "phase_ms": 1925
+      },
+      {
+        "id": "grass_31",
+        "position": [
+          429,
+          333
+        ],
+        "variant": "arching",
+        "phase_ms": 2695
+      },
+      {
+        "id": "grass_32",
+        "position": [
+          455,
+          336
+        ],
+        "variant": "seeded",
+        "phase_ms": 2674
+      },
+      {
+        "id": "grass_33",
+        "position": [
+          484,
+          338
+        ],
+        "variant": "fan",
+        "phase_ms": 3444
+      },
+      {
+        "id": "grass_34",
+        "position": [
+          335,
+          364
+        ],
+        "variant": "fan",
+        "phase_ms": 162
+      },
+      {
+        "id": "grass_35",
+        "position": [
+          356,
+          364
+        ],
+        "variant": "slender",
+        "phase_ms": 932
+      },
+      {
+        "id": "grass_36",
+        "position": [
+          384,
+          356
+        ],
+        "variant": "seeded",
+        "phase_ms": 911
+      },
+      {
+        "id": "grass_37",
+        "position": [
+          410,
+          361
+        ],
+        "variant": "fan",
+        "phase_ms": 1681
+      },
+      {
+        "id": "grass_38",
+        "position": [
+          433,
+          358
+        ],
+        "variant": "slender",
+        "phase_ms": 1660
+      },
+      {
+        "id": "grass_39",
+        "position": [
+          455,
+          357
+        ],
+        "variant": "arching",
+        "phase_ms": 2430
+      },
+      {
+        "id": "grass_40",
+        "position": [
+          572,
+          166
+        ],
+        "variant": "seeded",
+        "phase_ms": 2635
+      },
+      {
+        "id": "grass_41",
+        "position": [
+          601,
+          170
+        ],
+        "variant": "fan",
+        "phase_ms": 3405
+      },
+      {
+        "id": "grass_42",
+        "position": [
+          625,
+          166
+        ],
+        "variant": "slender",
+        "phase_ms": 3384
+      },
+      {
+        "id": "grass_43",
+        "position": [
+          555,
+          188
+        ],
+        "variant": "slender",
+        "phase_ms": 328
+      },
+      {
+        "id": "grass_44",
+        "position": [
+          575,
+          193
+        ],
+        "variant": "arching",
+        "phase_ms": 1098
+      },
+      {
+        "id": "grass_45",
+        "position": [
+          596,
+          189
+        ],
+        "variant": "seeded",
+        "phase_ms": 1077
+      },
+      {
+        "id": "grass_46",
+        "position": [
+          623,
+          190
+        ],
+        "variant": "fan",
+        "phase_ms": 1847
+      },
+      {
+        "id": "grass_47",
+        "position": [
+          647,
+          193
+        ],
+        "variant": "slender",
+        "phase_ms": 1826
+      },
+      {
+        "id": "grass_48",
+        "position": [
+          549,
+          216
+        ],
+        "variant": "seeded",
+        "phase_ms": 2822
+      },
+      {
+        "id": "grass_49",
+        "position": [
+          575,
+          220
+        ],
+        "variant": "fan",
+        "phase_ms": 2801
+      },
+      {
+        "id": "grass_50",
+        "position": [
+          600,
+          216
+        ],
+        "variant": "arching",
+        "phase_ms": 3571
+      },
+      {
+        "id": "grass_51",
+        "position": [
+          623,
+          217
+        ],
+        "variant": "seeded",
+        "phase_ms": 3550
+      },
+      {
+        "id": "grass_52",
+        "position": [
+          647,
+          213
+        ],
+        "variant": "fan",
+        "phase_ms": 720
+      },
+      {
+        "id": "grass_53",
+        "position": [
+          575,
+          240
+        ],
+        "variant": "seeded",
+        "phase_ms": 1264
+      },
+      {
+        "id": "grass_54",
+        "position": [
+          597,
+          239
+        ],
+        "variant": "fan",
+        "phase_ms": 1243
+      },
+      {
+        "id": "grass_55",
+        "position": [
+          622,
+          243
+        ],
+        "variant": "slender",
+        "phase_ms": 2013
+      },
+      {
+        "id": "grass_56",
+        "position": [
+          215,
+          408
+        ],
+        "variant": "arching",
+        "phase_ms": 2218
+      },
+      {
+        "id": "grass_57",
+        "position": [
+          236,
+          408
+        ],
+        "variant": "fan",
+        "phase_ms": 2988
+      },
+      {
+        "id": "grass_58",
+        "position": [
+          266,
+          410
+        ],
+        "variant": "slender",
+        "phase_ms": 2967
+      },
+      {
+        "id": "grass_59",
+        "position": [
+          284,
+          404
+        ],
+        "variant": "arching",
+        "phase_ms": 137
+      },
+      {
+        "id": "grass_60",
+        "position": [
+          237,
+          435
+        ],
+        "variant": "arching",
+        "phase_ms": 229
+      },
+      {
+        "id": "grass_61",
+        "position": [
+          263,
+          433
+        ],
+        "variant": "seeded",
+        "phase_ms": 999
+      },
+      {
+        "id": "grass_62",
+        "position": [
+          287,
+          428
+        ],
+        "variant": "fan",
+        "phase_ms": 1769
+      },
+      {
+        "id": "grass_63",
+        "position": [
+          272,
+          280
+        ],
+        "variant": "arching",
+        "phase_ms": 1522
+      },
+      {
+        "id": "grass_64",
+        "position": [
+          490,
+          279
+        ],
+        "variant": "seeded",
+        "phase_ms": 1953
+      },
+      {
+        "id": "grass_65",
+        "position": [
+          516,
+          324
+        ],
+        "variant": "fan",
+        "phase_ms": 2384
+      },
+      {
+        "id": "grass_66",
+        "position": [
+          312,
+          373
+        ],
+        "variant": "slender",
+        "phase_ms": 2815
+      },
+      {
+        "id": "grass_67",
+        "position": [
+          348,
+          300
+        ],
+        "variant": "arching",
+        "phase_ms": 3246
+      },
+      {
+        "id": "grass_68",
+        "position": [
+          372,
+          300
+        ],
+        "variant": "seeded",
+        "phase_ms": 77
+      },
+      {
+        "id": "grass_69",
+        "position": [
+          396,
+          300
+        ],
+        "variant": "fan",
+        "phase_ms": 508
+      },
+      {
+        "id": "grass_70",
+        "position": [
+          420,
+          300
+        ],
+        "variant": "slender",
+        "phase_ms": 939
+      },
+      {
+        "id": "grass_71",
+        "position": [
+          444,
+          300
+        ],
+        "variant": "arching",
+        "phase_ms": 1370
+      },
+      {
+        "id": "grass_72",
+        "position": [
+          360,
+          324
+        ],
+        "variant": "seeded",
+        "phase_ms": 1801
+      },
+      {
+        "id": "grass_73",
+        "position": [
+          384,
+          324
+        ],
+        "variant": "fan",
+        "phase_ms": 2232
+      },
+      {
+        "id": "grass_74",
+        "position": [
+          432,
+          324
+        ],
+        "variant": "slender",
+        "phase_ms": 2663
+      },
+      {
+        "id": "grass_75",
+        "position": [
+          588,
+          204
+        ],
+        "variant": "arching",
+        "phase_ms": 3094
+      },
+      {
+        "id": "grass_76",
+        "position": [
+          612,
+          228
+        ],
+        "variant": "seeded",
+        "phase_ms": 3525
+      },
+      {
+        "id": "grass_77",
+        "position": [
+          228,
+          420
+        ],
+        "variant": "fan",
+        "phase_ms": 356
+      },
+      {
+        "id": "grass_78",
+        "position": [
+          276,
+          420
+        ],
+        "variant": "slender",
+        "phase_ms": 787
+      }
+    ]
+  },
+  "collision_footprints": [
+    {
+      "id": "north_boundary",
+      "rect": [
+        0,
+        0,
+        768,
+        24
+      ]
+    },
+    {
+      "id": "south_boundary",
+      "rect": [
+        0,
+        504,
+        768,
+        24
+      ]
+    },
+    {
+      "id": "west_boundary",
+      "rect": [
+        0,
+        24,
+        24,
+        480
+      ]
+    },
+    {
+      "id": "east_boundary",
+      "rect": [
+        744,
+        24,
+        24,
+        480
+      ]
+    },
+    {
+      "id": "context_tree",
+      "rect": [
+        612,
+        96,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "context_tree_edge",
+      "rect": [
+        708,
+        48,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "context_bench",
+      "rect": [
+        48,
+        362,
+        48,
+        10
+      ]
+    }
+  ],
+  "build": {
+    "tool": "tools/build_grass_demo_scene.py",
+    "source_recipe": "assets/source/maps/grass_demo/recipe.json",
+    "source_recipe_sha256": "42fa05212c6728f3a8264f585a8099d506dbcbdcb98f73bb7614c98495f817b5",
+    "source_assets": [
+      {
+        "path": "assets/source/maps/grass_demo/recipe.json",
+        "sha256": "42fa05212c6728f3a8264f585a8099d506dbcbdcb98f73bb7614c98495f817b5"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png",
+        "sha256": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png",
+        "sha256": "9861764b84a4fae4ccbb89414e1fbc85b4441b8d01a0a09a9593cc6493981f88"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_03.png",
+        "sha256": "97d332a852a8758e7fa4f20c792b59b27e2174fff8f2f0724fb5d90603620045"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_04.png",
+        "sha256": "21f98c7f4dd5f3a85a52210c444b8d6172c213b2ca8f69b8d860eb46c781e882"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_05.png",
+        "sha256": "776e0dc9a596a6d0b27c08607fcd8cceaad10dc2cc249bed83a6a15a0f03f4e4"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_06.png",
+        "sha256": "3be9b48ed5992264e31807e24ea0b4ce80ecbde096fdbdb73587c4d611335515"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_07.png",
+        "sha256": "c402beebe570c5a85d504a7b7f24d4c50c291dec180c7b232dc2cace710aa6a7"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_08.png",
+        "sha256": "1eeeef75c4c664111fc46e3ae28ba9a1fc158cc3325148d5523058a91ab0e833"
+      },
+      {
+        "path": "assets/terrain/eldenmere/foliage/tree/frames/frame_09.png",
+        "sha256": "0438430508b3c15208543f2fc32fef72d9e8292e87dc0fc00550324b4b90df0c"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_000.png",
+        "sha256": "df5f685bfae768fc652f1e2bc7276c73a9d2d278dcc200cfb5baa753d545076a"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_001.png",
+        "sha256": "ef720458bedcb45822ec24024f50a749457bf6699810804ec6a2ee47465900c1"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_004.png",
+        "sha256": "0be812de4c4e121a80a7d9c5fc25236aab892e0af51500d59e20f4427d4e3c9b"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_005.png",
+        "sha256": "124cf66e69af3900a671c5950dc94692df9948a4cf9df9c307df91f2a6b14e58"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_007.png",
+        "sha256": "c6ec882b5734bef942af0f0a8f365f17e70f86aeec3525caed786fc9b9d1fc55"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_016.png",
+        "sha256": "5ec096ad31447fc6ea7282fa29aa065c4259b17be84e88beb63eb9b1cb21253c"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_017.png",
+        "sha256": "7a2f20ca64c053a33a612c42a8a6970a03feb819f52e3f575adb3380be1272ab"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_020.png",
+        "sha256": "94c53a9efdaa13919a7ff0e671c75834d528e6447fac3dcb0cad3f1ec94c7004"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_021.png",
+        "sha256": "80a2394530eac28ef4d710d9fada14c81d019c3ed8067a7f8058560f0667ab8f"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_023.png",
+        "sha256": "38d6e1221b251ca7b0fd6dc2a6f0af069bb5268e19da8e27b2afdd1276b633b5"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_028.png",
+        "sha256": "9700fdcf1202c3f67982dae575a85bdff6b097c0d4446b1059568b866fcd9910"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_029.png",
+        "sha256": "969a19e817afe1dbbc7ac46c028db693c85bd3579590506b21dced6d6ca043af"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_031.png",
+        "sha256": "4a762d6e479ff27e05a718457e673a6f39020593464784b82822978620ddd17e"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_064.png",
+        "sha256": "549bdaad1552435e74ba2f9a1bf0d359911a5d254c8f27c531a2d96dbf150e37"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_065.png",
+        "sha256": "72e971474fa3d80ba6f89355debeddc9f5c6b8b8a65230ded6a71028bc9bc225"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_068.png",
+        "sha256": "984de11f7258ba433ff9ff3d2a978998e390552a57231417517370e4f697b153"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_069.png",
+        "sha256": "990f05d1903bd72b5c1105f4da6ee8f9fe3cf3aa2635edbc37807dd7fd5b4a7f"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_071.png",
+        "sha256": "08896c0572b782625531cb50ee5749e040ccdecbad40b87d9c13f3e286299951"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_080.png",
+        "sha256": "fb99cabdd0e6568fa4b2b5e2f065098bc12e123ada74bd278951132eadb2e3ec"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_081.png",
+        "sha256": "0936d3c24c2186368d934d6c54304ed4c49027d321ed9a60d255f72288b4e75a"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_084.png",
+        "sha256": "a67e11ebc5ccfbd923d488ae603dce1a0716a2135963b9158fb206514fd01950"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_085.png",
+        "sha256": "16d8f26a0280e9aab872330b43e325f57f1e99449b2f46c631848820571b0742"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_087.png",
+        "sha256": "33ae60a4c76437b5784ae492b59d4d6dee72be7a54adbd950ed7a3f88cdabdab"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_092.png",
+        "sha256": "553c2b6bb5afb6e56f6f61a18ccb4e70468c2a5fa9423e52e0537c91dc6c4f5a"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_093.png",
+        "sha256": "b5e9020b6959799d501473fe97a308e901c4633f3802720ce04b25c08daf2c37"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_095.png",
+        "sha256": "b4293c6de55ee21c3dbdbc8a3594f632621421c936619a806213d7f4cfc4d5b4"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_112.png",
+        "sha256": "75d538655efa84090abc9533814ba794822707a33d9bb9da61919f48e6956bd6"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_113.png",
+        "sha256": "76ea7349364bf49b7bdcf40ffeb7ca5ee238e9ec8d137c6e5a1cb831dd616903"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_116.png",
+        "sha256": "d3dfd265d31a1c065b57f14e9797b705c491498be31dd1ab36d9070f046c63b4"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_117.png",
+        "sha256": "32ed53fbb65ac2833dcd05839b827021de788f74e27aa5a2549e84adc5a5b82f"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_119.png",
+        "sha256": "5af224176e611779666001b3ed42cc888441620410e4f2d4f6898b45ac01d63b"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_124.png",
+        "sha256": "d090a27e911b31876dd84bec2abf57334df53fe42a8f743dbeec792121188448"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_125.png",
+        "sha256": "2a447eb1cc013ab80265f8b8219fad4683ab88d16e8ae2d6f0f390f9f51ac17d"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_127.png",
+        "sha256": "43c09c23fd1ccc9cce524748ee3ca8a5855404abf5b92110bc39b485282e997b"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_193.png",
+        "sha256": "de02af164bb63639f495a1d6bba9532a90313876c9c556459fc5ce2d89ea530e"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_197.png",
+        "sha256": "353eb5156c3a5cf0c7088d81703b1cf81b751dd7003d9e0e5311553f0527c59d"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_199.png",
+        "sha256": "337cdf01875efd2d8d933d42656dee73642ef7fb0ac26550ad2459b0c47ad9a6"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_209.png",
+        "sha256": "530ac9d0d266fe05552d350a89833f268afcb76e8fc264a1f21b1c3132cd1b59"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_213.png",
+        "sha256": "e8aa5af4f7d09eba56be885a453e2f9fe0e8e1cee915e2e49790c838cd3611ec"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_215.png",
+        "sha256": "2c61ffa0b7a7cdd111f746956c7c71f4d818208c16fa59db7e3f8f0ab359b6fb"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_221.png",
+        "sha256": "f3a1708124fb7567d8c2ac9898c54f3c90d6b3e3506fc2479d3008c30e289902"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_223.png",
+        "sha256": "b08da79800e1f39fa2e0d4c25bfa9f5cdd83664582ddda9374804ac639032ec8"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_241.png",
+        "sha256": "5dda1204778923a23b51a7f339fec41da2fc2a8d4b80a44f5209b5b5fcbb4286"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_245.png",
+        "sha256": "9a88674a793d24a991d25ce8ea9511065d1c944f1a9dfcad2e58a09743d69c58"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_247.png",
+        "sha256": "84391187610d383d6c07293792976191ff397b95337fb8c11cfeb37c4bc26892"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_253.png",
+        "sha256": "f0f55442103c7ee549fa4dc7e33db051d2542b00e30a4a75c22f8c15a9217ba0"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/dirt/mask_255.png",
+        "sha256": "319f7479836f91ac62f59fb05b002f5f60470ea68cd864e0dff7908e9566c5fa"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/grass_00.png",
+        "sha256": "403b33c4706a4cf7f8fb892ec910731d0b04c48597a70e5a3d1b46910c9045d7"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/grass_01.png",
+        "sha256": "2de2609e0aa97fbe36c09c1aeae213fdf352fc260fba82dc80b4a83345c306d8"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/grass_02.png",
+        "sha256": "dbd2aba909c6897cabd32559ff2ec4f474ba80513d5c500a0040bb9cd3f345d5"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/grass_03.png",
+        "sha256": "ba3765c3a9d0d2974adc93a9728c04926b801201c081aadccc45315f9b021b6c"
+      },
+      {
+        "path": "assets/terrain/eldenmere/grass_dirt/tileset.json",
+        "sha256": "33126c27f4686809466b42cb73c3d8cfcbb137667842e2e5afd19f610e034c16"
+      },
+      {
+        "path": "assets/terrain/eldenmere/sanctuary_charm/props/bench.png",
+        "sha256": "33a7416f8fa957149c951160005c2dd1541bdb634ebabc84eddc14cd733a3e23"
+      },
+      {
+        "path": "assets/terrain/eldenmere/terraces/tiles/wall_front_00.png",
+        "sha256": "cbfd06a6680b58366cae73955026e52ca8b2cf5986a55493a447223fe91fb928"
+      },
+      {
+        "path": "assets/terrain/grass_demo/assets.json",
+        "sha256": "55474c70764f584a560a8d1abaa8a9e92921fb9abfaa34059be8fc0065ad9667"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/lawn_00.png",
+        "sha256": "776e1af74cb2621a837f9bc3060b793c9366f2782a4e80f22840f02e1fe91baa"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/lawn_01.png",
+        "sha256": "107ce7ba71de7864c8a488a74a5ed03adb6181900d28a40d76a656b9a616ca49"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/lawn_02.png",
+        "sha256": "d9ec229543e2a4fc7f35546b826bca7120551bb6329aa320deead4dec1edd3ab"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/lawn_03.png",
+        "sha256": "ebef1e639cf3ae9d4a560aec44dd2ad7161b104c93462aaea1f14fe43c5ab1fe"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/meadow_00.png",
+        "sha256": "fbad2348196a5512dec5585d7ff9e62c25b622b9b7394916b525e8be914ed414"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/meadow_01.png",
+        "sha256": "5ad288bd8c1fb33c415b486fa674e7b22b721f61dee3032cee372723b9e47669"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/meadow_02.png",
+        "sha256": "879c7761ee23d98ab26d288be42a4ca5d10b90be831ed919da84f6e81d48411a"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/meadow_03.png",
+        "sha256": "c55fa314a6073b3fed817ac84f44c4fcb8ee75de2079953ee0ff691311f35f6e"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/woodland_00.png",
+        "sha256": "87f18f2a8eb412615d707ce29f94b647fa5470e302770a3466c852e35bd9ecbd"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/woodland_01.png",
+        "sha256": "87eda03e5242e9bb45d9ca4a6d1ee1cf4b571ce78410a027d2aa653763efb289"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/woodland_02.png",
+        "sha256": "0cdf73a5dd37c2ad063efbd35eaff42b7d6f7a76a246e0b62d3dfb89417ffcef"
+      },
+      {
+        "path": "assets/terrain/grass_demo/ground/woodland_03.png",
+        "sha256": "c3ea7c5ce5a783ea5f7c13241eadb2cf039c161b9e609039fbdcc2087195e213"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/arching/idle_00_front.png",
+        "sha256": "5682f61d13b18e861da26624a71b58e5a8629c46d038203c4a3a5dcd913c3a18"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/arching/idle_00_rear.png",
+        "sha256": "c353846faf0917cf633d8bc3c5bf2ad4d02211889410808bff5f879f65823304"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/fan/idle_00_front.png",
+        "sha256": "431ee3d10244577349c600daa9ca126a3288ae3221bc12e329efc15c153a8d00"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/fan/idle_00_rear.png",
+        "sha256": "af717d68efa32e84279d55538b5d1ed534ee87f6c24e7f980f63c581ea65587c"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/seeded/idle_00_front.png",
+        "sha256": "82f46f70e60eaf40cbb0f53e2586cd929be773c99b5a7d7426999addcfc845a0"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/seeded/idle_00_rear.png",
+        "sha256": "db9637bd8c201cceb365d9704279559aede0592f9a7aa2b9ceb113395b045657"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/slender/idle_00_front.png",
+        "sha256": "2fb81ccb4724a0df5b86fb8db5e88f7e6aa0d0aba8c6c04bf48bc65ccf7c9ca3"
+      },
+      {
+        "path": "assets/terrain/grass_demo/tall/slender/idle_00_rear.png",
+        "sha256": "66fee95a1b2d2198e7c7b2e1e4eaee2bfa92b0cc2759f3ce06506af1e1cd1988"
+      }
+    ]
+  }
+}
