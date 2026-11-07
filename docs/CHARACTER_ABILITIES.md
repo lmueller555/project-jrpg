@@ -10,7 +10,20 @@ Caelan is a **Spellblade**. He begins unarmed with his established basic magicks
 - `first_weapon`: granted by generic weapon acquisition, or held pending by an authored training sequence until its discovery.
 - `lattice`: learned from an activated Lattice node.
 
-The identities are Spellblade, Machinist, Knight, Aethermage and Sage. Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future Lattice unlock. `basic_magicks` is an authored-world capability rather than an executable combat skill.
+The current design identities are Spellblade, Engineer, Armsmaster, Aethermage
+and Sage. **Documentation revision, 2026-11-07:** Engineer replaces Machinist
+for Mira, and Armsmaster replaces Knight for Lucan. The runtime dictionaries
+still contain the earlier Machinist and Knight labels; changing those labels
+is a separate implementation task.
+
+Mira starts with Overclock and Rivet; Piston Jab belongs to the bot definition. Registration does not recruit a party member or grant equipment. Focused Strike remains a future Lattice unlock. `basic_magicks` is an authored-world capability rather than an executable combat skill.
+
+Future combat direction is captured in the character sheets for
+[Caelan](narrative/game_01/characters/CAELAN.md#combat-progression-concept),
+[Mira](narrative/game_01/characters/MIRA.md#combat-progression-concept) and
+[Lucan](narrative/game_01/characters/LUCAN.md#combat-progression-concept).
+Their gem, gear, bot, self-augment and weapon unlock methods are undecided;
+these concepts do not choose the Aether Lattice or its eventual replacement.
 
 Nature Edge, Aqua Edge and Flame Edge have shared catalog definitions for the first lesson. They are temporary attempts, not permanent entries in Caelan’s learned dictionary. The visible white Ice gem does not add an initial Ice Edge command. After the breakthrough, only Aether Edge remains usable until later progression grants other abilities.
 

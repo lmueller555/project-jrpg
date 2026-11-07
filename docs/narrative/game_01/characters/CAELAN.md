@@ -186,7 +186,46 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Experience relative to Mira | Less experienced than Mira despite carrying her new blade in the opening river-path fight | Established |
 | Blind spot | Treats a failed attempt as evidence against a whole possible future, even when the conditions differ | Established |
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
-| Future development | Exact vocation, teachers, specialization and later power are not settled by his job registration | Open |
+| Future development | Gear-based combat progression is the current direction below; exact vocation, teachers, unlock methods and detailed later mechanics remain undecided | Direction recorded, 2026-11-07 / Open details |
+
+## Combat progression concept
+
+**Current author direction, 2026-11-07:** Preserve these broad strokes for later
+development. These are future concepts, not implemented abilities or a finished
+progression system. Gem and gear acquisition are undecided; no unlock is assigned
+to the Aether Lattice or a replacement progression system.
+
+### Elemental gems and additional gears
+
+- Lean into the blade's Gear system as Caelan's central combat progression.
+- Introduce more elemental gems over time, beyond the opening set.
+- Eventually add more gears to the blade, allowing simultaneous element
+  selections. Combining different elements can produce unique effects.
+- Selecting the same element on multiple gears can enable a devastating attack
+  of that element.
+
+The methods and timing for unlocking gems and additional gears, the eventual
+element list, combination effects and same-element attack rules remain open.
+The existing one-gear opening and its skill-discovery sequence remain the
+implemented starting point; selecting a gem does not itself teach a skill.
+
+### Ultimate concept: a blade for each unlocked element
+
+- Caelan splits his sword into multiple swords: **one sword per unique element
+  he has unlocked by that point**. Repeated selections of one element do not
+  create additional swords of that element.
+- He wields the swords associated with his currently selected elements. After
+  the second gear unlocks, selecting more than one unique element introduces
+  dual wielding. The remaining swords orbit above him.
+- **Each sword has its own ATB gauge**, including the swords he holds. These
+  gauges are not displayed on the combat UI.
+- The state lasts **five of Caelan's turns**.
+
+What the individual swords do during those turns is undecided. Their actions,
+control and targeting, their interaction with Caelan's own actions, duration
+counting, activation and recovery rules, and how hand-held swords work if later
+gears select more than two unique elements all remain open. No ultimate name
+or numerical tuning is assigned.
 
 ## Relationships
 

@@ -30,7 +30,7 @@ Unless a later scene is identified, this describes her opening characterization.
 | Birthplace and upbringing location | Birthplace and childhood locations before age 12 remain undecided; Halden took her in in Eldenmere after her loss | Established / Open |
 | Family | Lost both parents tragically at age 12 | Established, 2026-11-03 |
 | Caregiver and surviving relatives | Halden took her in after the loss. Other relatives and formal adoption or guardianship arrangements remain undecided. | Established / Open |
-| Occupation | Machinist and capable mechanical problem-solver | Established |
+| Occupation | Engineer and capable mechanical problem-solver | Role revised, 2026-11-07 |
 | Appearance | Dark brown hair in a short ponytail, cream flower above her left ear, dusty rose shirt, charcoal trousers, brown boots, belt and tool pouch | Established design; see [art guide](../../../../assets/characters/mira/README.md) for individual asset approval status |
 | Narrative role | Caelan's childhood friend; temporary player-controlled guest in MQ02; appears with him in the opening flashforward | Established |
 | Workshop history | Gained mechanical proficiency working with Halden on the mill; opened her workshop at 17 with his encouragement. Property and funding arrangements remain undecided. | Established / Open |
@@ -172,7 +172,7 @@ accomplishment already completed at the opening or an implemented game scene.
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Job identity | Machinist | Established |
+| Job identity | Engineer; supersedes the earlier Machinist combat designation | Role revised, 2026-11-07 |
 | Practical competence | Mechanical diagnosis, repair and collaborative construction | Established |
 | MQ02 kit | Compact spring-driven bolt launcher and Rivet, her familiar workshop bot folded into her kit | Established |
 | Rivet and Overclock | Rivet unfolds for battle and attacks autonomously; her starting Overclock grants it Haste | Established |
@@ -180,9 +180,41 @@ accomplishment already completed at the opening or an implemented game scene.
 | Background limits | Her age and mill training are established; no military background has been assigned | Established / Open |
 | Emotional blind spot | May try to approach another person's pain as a problem to solve before understanding what they want | Established |
 | Help she needs | Someone willing to stay with her without requiring an explanation or a solution | Established |
-| Mechanics and artwork | Existing gameplay and art are unchanged; future abilities and numeric development are outside this sheet | Scope constraint |
+| Mechanics and artwork | Existing gameplay and art are unchanged; qualitative future progression is recorded below, with exact rules and numeric development still open | Scope constraint / Open details |
 
-See the [bot guide](../../../MIRA_BOTS.md) for combat rules and progression.
+See the [bot guide](../../../MIRA_BOTS.md) for current implemented combat rules.
+
+## Combat progression concept
+
+**Current author direction, 2026-11-07:** Mira's combat identity is **Engineer**.
+This supersedes Machinist as her intended role. The following broad strokes
+capture future development; they do not implement new bots, augments or an
+ultimate, or change the current launcher, Rivet and Overclock rules.
+
+### Bots and engineered self-augments
+
+- Center her progression on her bots and on engineered prosthetics she creates
+  for herself.
+- Use **Iron Man** as inspiration for wearable engineering and self-augmentation.
+- As the game progresses, she unlocks additional bots and self-augments that she
+  wears and configures.
+
+The unlock methods, bot roster, individual augment effects, configuration limits
+and the exact physical form of the prosthetics remain undecided. These concepts
+do not assign an injury, surgery or new biographical event.
+
+### Ultimate concept: piloted mech
+
+- Mira dismisses her currently deployed bot.
+- She uses her kit to **suit up into a large mech**, with **Gundam** as the
+  reference for the scale and piloted-machine concept.
+- Mira pilots the mech for **five turns**, gaining major combat enhancements.
+
+The enhancements, mech actions, duration counter, activation costs, damage and
+resource handling, and the return of her ordinary kit or bot afterward remain
+open. This five-turn concept is separate from the current Overclock effect,
+which lasts eight completed bot actions. No ultimate name is assigned, and
+no unlock is tied to the Aether Lattice or another progression framework.
 
 ## Relationships
 

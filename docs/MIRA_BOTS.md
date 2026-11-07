@@ -1,4 +1,9 @@
-# Mira's Machinist combat and Rivet
+# Mira's Engineer combat and Rivet
+
+**Design-role revision, 2026-11-07:** Engineer supersedes Machinist. The runtime
+catalog still uses the earlier label; these documentation notes do not change
+the implemented bot rules below. Her [future combat progression concept](narrative/game_01/characters/MIRA.md#combat-progression-concept)
+covers additional bots, engineered self-augments and a five-turn piloted mech.
 
 Mira begins with a compact spring-driven bolt launcher, her workshop bot
 **Rivet**, and **Overclock**. Rivet is her only starting bot and Piston Jab its
