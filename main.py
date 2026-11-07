@@ -60,6 +60,7 @@ from world_encounters import CombatEncounters
 from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
+from interactive_grass import InteractiveGrass
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -211,6 +212,32 @@ class World:
             self.npcs.append(actor(record,self))
         # Bench fittings belong to this world even when their worker leaves.
         self.work_fittings=[npc for npc in self.npcs if 'fitting_sort_y' in npc.data]
+        self.reduced_motion=False
+        self.grass=None
+        if self.data.get('grass'):
+            grass=self.data['grass']
+            self.grass=InteractiveGrass(read_json(ROOT/grass['manifest']),
+                                        grass['instances'],self.image)
+            self.entities.extend(self.grass.entity_records)
+
+    def update_grass(self,seconds,player=None,party_actors=(),*,reduced_motion=False):
+        """React to this scene's visible feet after ordinary actor movement.
+
+        Offscreen scenes receive no player or travelling companions, so old
+        contact history cannot draw a swept trail through a doorway transfer.
+        The authored Mira actor is hidden while her party representation travels.
+        """
+        self.reduced_motion=bool(reduced_motion)
+        if self.grass is None:return
+        actors=(*(actor for actor in self.npcs
+                  if not getattr(actor,'party_travelling',False)),*party_actors)
+        if player is not None:actors=(player,*actors)
+        self.grass.update(seconds,actors,reduced_motion=self.reduced_motion)
+
+    def reset_grass(self,*,reduced_motion=False):
+        """A journey restart keeps art caches, but never old feet or bending."""
+        self.reduced_motion=bool(reduced_motion)
+        if self.grass is not None:self.grass.reset(reduced_motion=self.reduced_motion)
 
     def attach_routine_props(self,actor):
         """Permanently register one actor's nonblocking props for this room."""
@@ -271,7 +298,9 @@ class World:
         self.draw_doors(target,camera,None)
         # Full sprite bounds cull roof/canopy overhangs; ground baselines sort
         # objects so Caelan can walk in front of and behind the same building.
-        ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities if r['rect'].colliderect(viewport)]
+        ordered=[(r['sort_y'],r.get('sort_priority',0),'entity',r) for r in self.entities
+                 if r['rect'].colliderect(viewport) and
+                 (self.grass is None or self.grass.enabled or 'grass_instance' not in r)]
         for owner,prop in self.routine_props:
             if not owner.surface_prop_visible(prop):continue
             surface=prop['surface'];rect=surface.get_rect(topleft=prop['position'])
@@ -818,6 +847,8 @@ class Game:
                 landing=self.town.data['spawn']
             self.player.position.update(landing)
         self.overworld_travel.finish_story_restore(regional_checkpoint)
+        for scene in self.scenes.values():
+            scene.reset_grass(reduced_motion=self.audio.reduced_motion)
         self.opening_audio.reset()
         self.regional_audio.reset()
         self.pause.close()
@@ -1404,6 +1435,7 @@ class Game:
                 if door.can_enter(self.player.position,direction):
                     self.enter(door)
                     break
+        self._update_grass(seconds)
         self.quest_ui.update(seconds)
         self._sync_inventory()
         self._save_retry_seconds=max(0.0,self._save_retry_seconds-seconds)
@@ -1416,6 +1448,14 @@ class Game:
         if location!=self.location_label:
             self.location_label=location
             self.location_seconds=3.5
+
+    def _update_grass(self,seconds):
+        """Advance vegetation on the same exploration clock as moving actors."""
+        companions=self.party_travel.actors()
+        for scene in self.scenes.values():
+            scene.update_grass(seconds,self.player if scene is self.world else None,
+                               companions if scene is self.world else (),
+                               reduced_motion=self.audio.reduced_motion)
 
     def enter(self,door):
         if (self.pause.is_open or self.inventory_ui.is_open or self.quest_ui.journal_open or

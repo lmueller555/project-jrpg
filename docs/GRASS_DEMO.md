@@ -10,7 +10,9 @@ This preview uses Caelan's existing 24 × 36 sprites, walking and running rules,
 the normal 24 × 12 foot probe, and the shared world renderer. Its own small map
 contains maintained lawn, meadow and woodland patches, irregular tall-grass
 edges and adjacent current/proposed grass samples. It opens no journey or
-settings file. The town and Sanctuary retain their existing terrain.
+settings file. The approved art also ships in the shared terrain pack used by
+Eldenmere, the Sanctuary reserve and the upstream mill area; see
+[production grass](GRASS_TERRAIN.md).
 
 | Control | Action |
 | --- | --- |
@@ -22,8 +24,8 @@ settings file. The town and Sanctuary retain their existing terrain.
 | H | Show/hide the guide |
 | Escape | Close |
 
-The deeper emerald palette and different blade arrangements are a prototype for
-visual review. Ground materials stay quiet enough for Caelan to remain clear.
+The deeper emerald palette and different blade arrangements are approved for
+production. This separate field remains available for focused visual review. Ground materials stay quiet enough for Caelan to remain clear.
 Grass reaches about half Caelan's visible height. Its foreground blades cover
 his legs while leaving his coat, torso and head visible. The clumps have several
 distinct shapes, independent breeze phases and directional parting poses.
@@ -40,7 +42,7 @@ display resolution with the game's shared font and panels.
 
 ## Source and reproduction
 
-The prototype pack and map are separate from the currently approved terrain:
+The retained demonstration pack and map are separate from the production maps:
 
 - `assets/source/terrain/grass_demo/`: palette and source recipe.
 - `assets/terrain/grass_demo/`: new ground and rooted vegetation frames.
@@ -65,5 +67,5 @@ For a disposable headless still:
 python tools/preview_grass.py --headless --frames 120 --screenshot /tmp/grass-demo.png
 ```
 
-Source and artifact fingerprint checks accompany the review capture. This
-milestone supplies a playable comparison before wider terrain changes.
+Source and artifact fingerprint checks accompany the review capture. The
+field retains a playable material comparison alongside the production rollout.

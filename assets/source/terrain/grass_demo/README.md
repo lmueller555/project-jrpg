@@ -1,7 +1,7 @@
 # Grass demonstration source
 
-This is a review prototype, separate from the approved Eldenmere and Sanctuary
-maps. `recipe.json` defines a deeper emerald green palette, twelve native
+This retained review field is separate from production maps. Its approved
+art is promoted into `assets/source/terrain/grass/` and `assets/terrain/grass/`. `recipe.json` defines a deeper emerald green palette, twelve native
 24-pixel ground designs and four rooted tall-grass silhouettes.
 
 Maintained grass uses small low-growing clusters. Meadow variants use different

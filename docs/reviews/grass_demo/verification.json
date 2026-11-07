@@ -2,10 +2,12 @@
   "source": "GrassDemo with production Player and GrassDemoWorld",
   "ordinary_movement_only": true,
   "no_save_or_settings_files": true,
-  "existing_world_sha256": {
-    "assets/maps/eldenmere/playable/map.json": "080c53ec48f4a182f661552e30c90d254bb642cf8ce61caba73d20590641ad44",
-    "assets/maps/elden_vale_sanctuary/map.json": "218988f41e15bd57ee0fcb69fe294013c449ca467234ebe2aced101e4a4dada5",
+  "live_world_snapshot_sha256": {
+    "assets/maps/eldenmere/playable/map.json": "4d17afc56fc5126245cc57317ee308ef2a5099be053e645d43341961170e1a00",
+    "assets/maps/elden_vale_sanctuary/map.json": "9478e5a0104e4a1f72e9adad0d99c7f6fa7f28b456e1e4b7eb8f1f42dc30a3a9",
     "assets/maps/elden_vale_sanctuary_hall/map.json": "5013fbb3796282e65dc05ef007e950a0c1cf4a204ba0549010071dcd207a627c",
+    "assets/maps/eldenmere/upstream/map.json": "6b6e4cdbe4419221940213e61bc75b8d96c00a110c774f699b9ce9c047ebe099",
+    "assets/terrain/grass/assets.json": "b0f27b68d695ffc3502ccf91f304ee2e4a74c85aba792bb7533a7316f93fc68d",
     "assets/terrain/eldenmere/grass_dirt/palette.json": "efc22d277f8ef04bfb3339acb2f6b5b4085363dc48b2b896c778bc36c86b1a67",
     "assets/terrain/eldenmere/grass_dirt/tileset.json": "33126c27f4686809466b42cb73c3d8cfcbb137667842e2e5afd19f610e034c16"
   },
@@ -72,7 +74,7 @@
     "assets/maps/grass_demo/overview.png": "253926a04599e69b66f8d6db0aae834b5345a540acb0f72fa1cb83c7d95db84f",
     "assets/source/maps/grass_demo/README.md": "ed675aa83548c36bccf94fd138d6c9cd91409b845992b15f812fd6372ddbf779",
     "assets/source/maps/grass_demo/recipe.json": "42fa05212c6728f3a8264f585a8099d506dbcbdcb98f73bb7614c98495f817b5",
-    "assets/source/terrain/grass_demo/README.md": "f0d4af9af0a6f1c9ae196410044d90d6435de2138286eb232a3c0d9b7bc353d4",
+    "assets/source/terrain/grass_demo/README.md": "820324036bf6e807ec43db486792adfe61cbbb80a4486a754877ee48937c910e",
     "assets/source/terrain/grass_demo/recipe.json": "f53fa7a3902c9346d8c08b68b83abe9f5571364b2b1c5bd043f9146af2308b26",
     "assets/terrain/eldenmere/foliage/tree/frames/frame_01.png": "b6cfbfd770e4d1eca5fdb844936693f64aa08c23606f1b4e70c2b0eff5e912e7",
     "assets/terrain/eldenmere/foliage/tree/frames/frame_02.png": "9861764b84a4fae4ccbb89414e1fbc85b4441b8d01a0a09a9593cc6493981f88",
@@ -296,12 +298,12 @@
     "assets/terrain/grass_demo/tall/slender/west_02_front.png": "0aa01a82e6a95efb8897515e83ea6096916be32de2261444b2f9ddc0ede4da9d",
     "assets/terrain/grass_demo/tall/slender/west_02_rear.png": "f8b5e70680023111e678ee61f34f7dd36cb3b3ba08513e616fc17e648322c831",
     "assets/ui/fonts/DejaVuSans.ttf": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
-    "grass_demo.py": "a6047d8be6fb621d65003a2b5ca1983dcf0ad6d975970578ae5c7ee5ad9346cf",
-    "interactive_grass.py": "67df84f913d54edde0b4b413441c75efbecb549af5f70685da872a3257114989",
-    "main.py": "f338000da99615ff13e1e8071c0c4d4696303497954c338cfbfd4a2bbe578161",
+    "grass_demo.py": "8912d55e654068008e869ed247aff154c5416121c26fca8e6706ac70773554c6",
+    "interactive_grass.py": "1e6550735653d942c07ad0d6f65a9c81a42e85f19bb3b26c0cdbedfa84792411",
+    "main.py": "e399fb4865a4a6a000dc671038e12eb27cecb680e36416ec6fdc342135139419",
     "tools/build_grass_demo_assets.py": "db6c36e3d0563226c3b1b21d102accd377f940e84f48efe68b984f4e0ff8b6ac",
     "tools/build_grass_demo_scene.py": "56176b590f7d6b0c27ac363e4225c76c66559932f25d5b0bf4f47170b44ed06f",
-    "tools/capture_grass_demo.py": "74bc6196173995c5a6a7462913b634d9f3dcedfd10c5b6d6e3a465d93d4f2fa7",
+    "tools/capture_grass_demo.py": "eecddfdebfcea9d42df7d2076bb7ecf711272e5d71905583d5f812832f617899",
     "tools/preview_grass.py": "059e18b9827317abe22c752124b70daabb95d3c878265ed070affea15dd39f4f"
   },
   "checkpoints": [

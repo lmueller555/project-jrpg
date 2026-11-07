@@ -22,11 +22,12 @@ sys.path.insert(0, str(ROOT))
 OUT = ROOT/'docs/reviews/grass_demo'
 FPS = 20
 SIZE = (960, 640)
-BASE_COMMIT = '948e96553dba03b652ba634de22bb809d4d5dcfd'
 GUARDS = (
     'assets/maps/eldenmere/playable/map.json',
     'assets/maps/elden_vale_sanctuary/map.json',
     'assets/maps/elden_vale_sanctuary_hall/map.json',
+    'assets/maps/eldenmere/upstream/map.json',
+    'assets/terrain/grass/assets.json',
     'assets/terrain/eldenmere/grass_dirt/palette.json',
     'assets/terrain/eldenmere/grass_dirt/tileset.json',
 )
@@ -68,14 +69,9 @@ def source_hashes():
     return {str(path.relative_to(ROOT)): digest(path) for path in sorted(seen)}
 
 
-def unchanged_worlds():
-    hashes = {}
-    for name in GUARDS:
-        expected = hashlib.sha256(subprocess.check_output(
-            ['git', 'show', BASE_COMMIT+':'+name], cwd=ROOT)).hexdigest()
-        assert digest(ROOT/name) == expected, 'Existing map or grass pack changed: '+name
-        hashes[name] = expected
-    return hashes
+def world_hashes():
+    """Snapshot current live assets so preview isolation survives approved rollouts."""
+    return {name: digest(ROOT/name) for name in GUARDS}
 
 
 def height_comparison(output):
@@ -152,7 +148,7 @@ def height_comparison(output):
 def check(output):
     report = json.loads((output/'verification.json').read_text())
     assert report['source_sha256'] == source_hashes(), 'Sources changed; recapture the prototype.'
-    assert report['existing_world_sha256'] == unchanged_worlds()
+    assert report['live_world_snapshot_sha256'] == world_hashes()
     for name, expected in report['artifact_sha256'].items():
         assert digest(output/name) == expected, 'Artifact changed: '+name
     assert report['ordinary_movement_only'] and report['no_save_or_settings_files']
@@ -170,7 +166,7 @@ def check(output):
     for variant in height['variants']:
         assert variant['all_pose_max_height'] <= math.ceil(height['character_visible_height']/2)
         assert variant['foreground_max_above_anchor'] <= 5
-    print('Grass demo movement, occupancy, recovery, original worlds and capture hashes verified.')
+    print('Grass demo movement, occupancy, recovery, live-world isolation and capture hashes verified.')
 
 
 def capture(output, movie_enabled=True):
@@ -180,13 +176,13 @@ def capture(output, movie_enabled=True):
 
     output.mkdir(parents=True, exist_ok=True)
     before = source_hashes()
-    guards = unchanged_worlds()
+    guards = world_hashes()
     demo = GrassDemo(window_size=SIZE)
     route = demo.world.data.get('review_route', demo.world.data.get('demo_route'))
     assert route, 'Demo scene needs an authored review route.'
     report = {'source': 'GrassDemo with production Player and GrassDemoWorld',
               'ordinary_movement_only': True, 'no_save_or_settings_files': True,
-              'existing_world_sha256': guards, 'source_sha256': before,
+              'live_world_snapshot_sha256': guards, 'source_sha256': before,
               'checkpoints': [], 'walking_seen': False, 'running_seen': False,
               'standing_occupied_seen': False, 'max_strength': 0., 'max_occupied': 0,
               'upper_body_pixel_checks': 0, 'upper_body_occluded_pixels': 0,
@@ -331,7 +327,7 @@ def capture(output, movie_enabled=True):
         report['height_comparison'] = height_comparison(output)
         artifact_names.append('height_comparison.png')
         assert source_hashes() == before, 'Source files changed during capture.'
-        assert unchanged_worlds() == guards
+        assert world_hashes() == guards
         report['artifact_sha256'] = {name: digest(output/name) for name in artifact_names}
         (output/'verification.json').write_text(json.dumps(report, indent=2)+'\n')
         (output/'README.md').write_text('''# Playable grass demonstration
@@ -354,17 +350,29 @@ The review walks and runs through authored grass patches, holds still while the
 grass remains displaced, then leaves it to recover. Every review position is
 reached through ordinary movement; no character poses or bend states are staged.
 
-The deeper emerald palette and lawn, meadow and woodland materials remain in
-the demonstration. Eldenmere and the Sanctuary have not received the new pack.
-The launcher never opens game journeys or settings files.
+The approved emerald palette and lawn, meadow and woodland materials also ship
+in the shared production terrain pack. This separate demonstration remains
+available for direct material and animation comparison. The launcher never
+opens game journeys or settings files.
 
 Run `python tools/preview_grass.py` to explore. Use WASD or arrows to move,
 Shift to run, R to reset, M for reduced motion and Escape to exit.
 
 Regenerate with `python tools/capture_grass_demo.py`; verify retained source,
-artifact and original-world hashes with `python tools/capture_grass_demo.py --check`.
+artifact and live-world snapshot hashes with `python tools/capture_grass_demo.py --check`.
 The [verification record](verification.json) contains actual positions, occupied
 grass states, recovery, timings and the immutable source fingerprints.
+''' + f'''
+Grass measures 16–17 opaque pixels beside Caelan's 34-pixel visible sprite.
+Every idle and parting pose stays within that half-height limit. Foreground
+blades reach at most five pixels above the roots, preserving the upper body.
+The walkthrough checks **{report['upper_body_pixel_checks']:,} opaque upper-body
+pixels**, with **{report['upper_body_occluded_pixels']} occluded**; leg overlap
+appears in **{report['leg_overlap_frames']} frames**.
+
+The silent walkthrough contains **{report['movie']['frames']} frames** over
+**{report['movie']['seconds']:.2f} seconds**, at **960 × 640 / 20 fps**.
+Movement, standing occupancy, recovery and live-world isolation checks pass.
 ''')
     finally:
         if encoder is not None:

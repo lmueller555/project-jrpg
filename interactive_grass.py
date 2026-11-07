@@ -1,4 +1,4 @@
-"""Foot-driven, nonblocking grass animation for isolated environment previews.
+"""Foot-driven, nonblocking grass animation for authored game environments.
 
 The field owns vegetation state and independent rear/front scenery records.
 It never changes an actor, collision, movement speed, or a world save.
@@ -109,6 +109,21 @@ class InteractiveGrass:
         self.reduced_motion = False
         self._previous_positions = {}
 
+    def reset(self, *, reduced_motion=False):
+        """Discard journey-local contact without rebuilding cached scenery."""
+        self.elapsed_ms = 0.
+        self.reduced_motion = bool(reduced_motion)
+        self._previous_positions.clear()
+        for clump in self.clumps:
+            clump.strength = clump.target_strength = 0.
+            clump.direction = 'south'
+            clump.occupants.clear()
+            clump.activations = 0
+            clump.release_age = 0.
+            clump.state = 'idle'
+            for record, surface in zip(self._records[clump.identifier], self._surfaces(clump)):
+                record['surfaces'] = [surface]
+
     def _surfaces(self, clump):
         variant = self.variants[clump.variant]
         if clump.strength > _EPSILON:
@@ -135,7 +150,7 @@ class InteractiveGrass:
     @staticmethod
     def _feet(actor):
         size = tuple(getattr(actor, 'probe_size', (24, 12)))
-        position = pygame.Vector2(actor.position)
+        position = pygame.Vector2(getattr(actor, 'story_position', None) or actor.position)
         rect = pygame.Rect(0, 0, *size)
         rect.center = round(position.x), round(position.y)
         return position, rect, size

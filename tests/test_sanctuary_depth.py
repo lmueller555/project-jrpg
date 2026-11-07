@@ -60,7 +60,8 @@ class SanctuaryDepthTests(unittest.TestCase):
             with self.subTest(source=record['path']):
                 self.assertEqual(hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest(),
                                  record['sha256'])
-        self.assertTrue(any('/eldenmere/grass_dirt/' in path for path in paths))
+        self.assertIn('assets/terrain/grass/assets.json',paths)
+        self.assertTrue(any('/grass/dirt/' in path for path in paths))
         self.assertTrue(any('/eldenmere/foliage/' in path for path in paths))
         for obsolete in ('clean_plate_generated.png','approved_preview.png',
                          'elden_vale_cloister_openings','elden_vale_cave_barrier'):

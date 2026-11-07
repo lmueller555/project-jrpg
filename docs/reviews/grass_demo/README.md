@@ -18,32 +18,26 @@ The review walks and runs through authored grass patches, holds still while the
 grass remains displaced, then leaves it to recover. Every review position is
 reached through ordinary movement; no character poses or bend states are staged.
 
-The deeper emerald palette and lawn, meadow and woodland materials remain in
-the demonstration. Eldenmere and the Sanctuary have not received the new pack.
-The launcher never opens game journeys or settings files.
+The approved emerald palette and lawn, meadow and woodland materials also ship
+in the shared production terrain pack. This separate demonstration remains
+available for direct material and animation comparison. The launcher never
+opens game journeys or settings files.
 
 Run `python tools/preview_grass.py` to explore. Use WASD or arrows to move,
 Shift to run, R to reset, M for reduced motion and Escape to exit.
 
 Regenerate with `python tools/capture_grass_demo.py`; verify retained source,
-artifact and original-world hashes with `python tools/capture_grass_demo.py --check`.
+artifact and live-world snapshot hashes with `python tools/capture_grass_demo.py --check`.
 The [verification record](verification.json) contains actual positions, occupied
 grass states, recovery, timings and the immutable source fingerprints.
 
-The revised height study measures **34 visible pixels for Caelan** and
-**16–17 pixels for unoccupied grass**, or **47–50% of his height**. Every idle
-and directional parting pose stays within that limit. The shorter foreground
-layer allows the grass to overlap his legs while preserving his coat and belt.
-Across the actual walkthrough, **64,632 opaque upper-body pixel comparisons**
-show **zero occlusion**, while leg overlap appears in **186 frames**.
+Grass measures 16–17 opaque pixels beside Caelan's 34-pixel visible sprite.
+Every idle and parting pose stays within that half-height limit. Foreground
+blades reach at most five pixels above the roots, preserving the upper body.
+The walkthrough checks **64,632 opaque upper-body
+pixels**, with **0 occluded**; leg overlap
+appears in **186 frames**.
 
-The final silent video contains **899 frames over 44.95 seconds**, at
-**960 × 640 / 20 fps**, and the review retains 19 actual movement/standing views.
-Walking, stronger running displacement, held occupancy and recovery after exit
-all pass. Original-world reference hashes and source/artifact checks pass;
-a deliberately stale source fingerprint was rejected. The height board and
-standing/running views were visually inspected after the emerald palette and
-shorter vegetation were applied. Existing game maps retain their original grass.
-
-The focused interaction, playable-demo and asset-proportion suites pass:
-**19 tests and 381 subtests**. Deterministic asset and scene build checks also pass.
+The silent walkthrough contains **899 frames** over
+**44.95 seconds**, at **960 × 640 / 20 fps**.
+Movement, standing occupancy, recovery and live-world isolation checks pass.

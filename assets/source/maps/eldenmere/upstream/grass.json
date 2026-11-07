@@ -1,0 +1,23 @@
+{
+  "status": "approved",
+  "seed": 1729,
+  "ground": "Woodland on tree margins, meadow on open banks, lawn beside maintained dirt.",
+  "patches": [
+    {"id": "west_bank", "center": [107, 275], "radii": [27, 68], "spacing": 17},
+    {"id": "north_meadow", "center": [351, 229], "radii": [43, 37], "spacing": 17},
+    {"id": "inner_meadow", "center": [301, 397], "radii": [69, 27], "spacing": 17},
+    {"id": "east_bank", "center": [588, 323], "radii": [32, 58], "spacing": 17},
+    {"id": "north_shore", "center": [337, 82], "radii": [30, 12], "spacing": 17}
+  ],
+  "clear_circles": [
+    [180, 510, 64], [180, 546, 64],
+    [480, 240, 56], [480, 288, 56], [480, 336, 56], [480, 384, 56],
+    [456, 288, 48], [456, 384, 48],
+    [492, 240, 40], [492, 288, 40], [492, 352, 40], [492, 384, 40]
+  ],
+  "notes": [
+    "Blade geometry and palette come from the approved shared emerald terrain pack.",
+    "Patch silhouettes are staggered ellipses with sparse irregular rims.",
+    "Grass never changes collision, water, repair stations or reversible travel links."
+  ]
+}

@@ -382,6 +382,8 @@ class MillQuestTests(unittest.TestCase):
             self.assertEqual(quests.objective_status(MILL_QUEST,'diagnose_mill'),'active')
             self.g.save_progress();journey=json.loads(self.path.read_text())
             journey.pop('mill_quest');journey['quests']=data
+            # The old placeholder save predates the party schema as well.
+            journey.pop('party')
             self.path.write_text(json.dumps(journey));other=self.game(True)
             self.assertTrue(other.begin_journey(True))
             self.assertEqual(other.quests.status(MILL_QUEST),'active')

@@ -13,7 +13,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from tools.preview_grass import GrassDemo
-from tools.capture_grass_demo import unchanged_worlds
+from tools.capture_grass_demo import world_hashes
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -221,7 +221,7 @@ class GrassDemoIntegrationTests(unittest.TestCase):
                                                      ('Idle non-leg pixel covered', x, y))
 
     def test_isolated_preview_preserves_existing_worlds_and_can_launch_from_another_directory(self):
-        expected = unchanged_worlds()
+        expected = world_hashes()
         with patch('main.SaveStore', side_effect=AssertionError('Preview opened a journey store')), \
                 patch('main.AudioSettings', side_effect=AssertionError('Preview opened settings')):
             isolated = GrassDemo()
@@ -236,7 +236,7 @@ class GrassDemoIntegrationTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual({path.name for path in Path(directory).iterdir()}, {'preview.png'})
             self.assertTrue(screenshot.is_file())
-        self.assertEqual(unchanged_worlds(), expected)
+        self.assertEqual(world_hashes(), expected)
 
 
 if __name__ == '__main__':unittest.main()
