@@ -7,6 +7,8 @@ integration remain to be designed.
 
 **Approved:** 2026-10-30. Ages are measured at the beginning of Game I.
 Lucan's personal-guard role and recruitment premise were revised on 2026-11-03.
+His combat role was revised to Armsmaster on 2026-11-07; the arsenal progression
+and tentative ultimate are recorded in his character sheet.
 
 Lucan Rooke, Rhea Sorel and Edran Hale are eventual party members. Their
 backgrounds sit within Merovar, preserving Game I's regional scope. Their home
@@ -24,7 +26,7 @@ the approved characterization and dialogue references.
 
 | Character | Age | Role | Home region | Introduction |
 | --- | --- | --- | --- | --- |
-| Lucan Rooke | 24 | Knight; swordsman and protector | Redstone March | Act I |
+| Lucan Rooke | 24 | Armsmaster; weapons specialist and protector | Redstone March | Act I |
 | Rhea Sorel | 22 | Aethermage; offensive caster and field naturalist | Wooded western slopes of the Greyfold Mountains | Early Act II |
 | Edran Hale | 46 | Sage; healer, support caster and teacher | Lower Leth | End of Act II |
 
@@ -61,6 +63,12 @@ Lucan's approved foundations now live in his authoritative
 and ten dialogue/expression references, plus five proposed Show, Don't Tell
 scenarios. Established characterization, new proposals and open questions are
 explicitly separated.
+
+His [combat progression concept](characters/LUCAN.md#combat-progression-concept)
+expands his equipment into a growing arsenal with distinct effects. A possible
+five-turn ultimate changes what he can wield, but its exact form is undecided.
+Armsmaster replaces the earlier Knight combat designation; his guard employment
+and approved appearance are retained.
 
 The [reusable sheet template](characters/TEMPLATE.md) defines the format for
 future character profiles. Rhea and Edran retain their detailed foundations

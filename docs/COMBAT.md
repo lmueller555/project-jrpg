@@ -2,8 +2,11 @@
 
 MQ02 introduces combat on the riverbank north of Eldenmere. Caelan and Mira
 fight a Ridgeback Tusker together before inspecting the blocked mill intake.
-Mira is a temporary, player-controlled Machinist with a bolt launcher, her own
+Mira is a temporary, player-controlled Engineer with a bolt launcher, her own
 attributes, commands, HP/MP and ATB, and the autonomous bot Rivet. Mira gives Caelan his gear-and-gem sword before departure. The warning, encounter and linear aftermath lead into his smaller sword-focused water spell and the mechanical repair.
+
+Engineer is her revised design role; the [bot guide](MIRA_BOTS.md) distinguishes
+that terminology from the earlier runtime label and documents current mechanics.
 
 The repeatable **test Bat** is available in Eldenmere independently of MQ02 or
 other quest progress. It contains one Bat and Caelan and hovers on the grass

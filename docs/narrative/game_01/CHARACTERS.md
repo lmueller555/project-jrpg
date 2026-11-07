@@ -48,6 +48,11 @@ approved characterization and growth direction, ten dialogue references and
 five nonverbal portrayal references. Their hypothetical scene events,
 unassigned biography details and exact later outcomes remain open.
 
+His [combat progression concept](characters/CAELAN.md#combat-progression-concept),
+recorded on 2026-11-07, centers on more elemental gems and blade gears, elemental
+combinations, and a five-Caelan-turn ultimate with independently charging swords.
+Unlock methods and each sword's behavior remain open.
+
 ### Caelan and Tomas - shared family background
 
 **Confirmed, 2026-11-04:** The brothers share the same parents. Both were born
@@ -101,7 +106,7 @@ foundations remain in the companion guide.
 
 | Character | Age at opening | Home region | Role and introduction |
 | --- | --- | --- | --- |
-| Lucan Rooke | 24 | Redstone March | Confident, arrogant Knight and Aldric's personal guard; sword and shield or a two-handed sword; Act I |
+| Lucan Rooke | 24 | Redstone March | Confident, arrogant Armsmaster and Aldric's personal guard; growing arsenal of weapons and shields; Act I |
 | Rhea Sorel | 22 | Wooded western Greyfold slopes | Upbeat, carefree Aethermage and field naturalist; sometimes chaotic offensive magicks; early Act II |
 | Edran Hale | 46 | Lower Leth | Reserved, wise Sage; healing, defense, support and enemy debuffs; end of Act II |
 
@@ -209,9 +214,14 @@ approve a quarry or inspect the adults' hire agreement.
 
 ## Mira's millrace outing
 
-Mira is Caelan's childhood friend and a capable **Machinist**. Her authoritative
+Mira is Caelan's childhood friend and a capable **Engineer**. Her authoritative
 [character sheet](characters/MIRA.md) retains her established millrace role,
 Rivet, practical competence and relationships, and adds ten dialogue references.
+
+**Combat direction, 2026-11-07:** Engineer supersedes her earlier Machinist
+designation. Her [future progression notes](characters/MIRA.md#combat-progression-concept)
+cover additional bots, configurable engineered self-augments and a five-turn
+piloted-mech ultimate concept. Detailed mechanics and unlocks remain open.
 
 **Approved background revision, 2026-11-03:** Mira is 18 at the opening. She lost
 both parents at 12, and Halden took her in. Working with him on the mill gave

@@ -19,7 +19,8 @@ Unless noted otherwise, this describes his opening characterization.
 | Home region | Redstone March, Merovar | Established |
 | Birthplace and current residence | Specific settlement and residence undecided | Open |
 | Family and upbringing | A wagonwright's household; non-aristocratic upbringing. Relatives' identities remain undecided. | Established / Open |
-| Occupation and affiliations | Knight; Aldric's personal guard, serving a member of Merovar's ruling family | Established |
+| Occupation and affiliations | Aldric's personal guard, serving a member of Merovar's ruling family | Established |
+| Combat identity | Armsmaster; supersedes the earlier Knight combat designation | Role revised, 2026-11-07 |
 | Appearance | Dark swept hair, polished steel armor, oxblood cloth and gold trim; approved sword-and-shield base design | Established |
 | Narrative role | Eventual party swordsman and protector; introduction during Act I | Established |
 | Recruitment | Aldric later entrusts him to Caelan's party. Exact occasion, reason and scene remain undecided. | Established / Open |
@@ -95,12 +96,42 @@ insignificance into a canonical childhood humiliation.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Skills | Swordsmanship, protection and decisive action under danger | Established |
-| Sword and offhand shield | Intended guarding, interception and control of enemy attention | Established combat direction |
-| Two-handed sword | Intended powerful physical attacks emphasizing damage | Established combat direction |
+| Sword and offhand shield | Intended guarding, interception and control of enemy attention; one configuration within the broader arsenal concept | Existing combat direction / Expanded, 2026-11-07 |
+| Two-handed sword | Intended powerful physical attacks emphasizing damage; one configuration within the broader arsenal concept | Existing combat direction / Expanded, 2026-11-07 |
 | Blind spot | Treats his own protective judgment as authority over others | Established |
 | Help he needs | Other people can offer better plans; he must learn to recognize and accept that | Established growth direction |
 | Noncombat crafts and natural talents | A wagonwright upbringing does not yet establish his own craft proficiency | Open |
-| Mechanics | Exact abilities, weapon rules, starting attributes and Aether Lattice paths remain undesigned | Open |
+| Mechanics | Arsenal-based progression is the current direction below; exact abilities, weapon rules, starting attributes and unlock methods remain undecided | Direction recorded, 2026-11-07 / Open details |
+
+## Combat progression concept
+
+**Current author direction, 2026-11-07:** Lucan's combat identity is
+**Armsmaster**, replacing Knight as his intended job. His employment as Aldric's
+personal guard and his protective characterization remain established.
+These are future combat concepts, not implemented weapon or ability systems.
+
+### A growing arsenal
+
+- Lucan wields a huge arsenal of **weapons and shields**, with different combat
+  effects associated with different equipment.
+- He unlocks more weapons and their effects as the game progresses.
+- The existing sword-and-shield and two-handed-sword directions are examples
+  within that larger arsenal, rather than his only eventual configurations.
+
+The equipment list, individual effects, unlock methods and timing, and switching
+or loadout rules remain open. No progression framework is chosen for these
+unlocks.
+
+### Ultimate possibility: expanded wielding
+
+**Tentative:** Lucan's ultimate is not yet chosen. A possible direction is a
+**five-turn** state that lets him wield more than one weapon at a time, or
+hold a normally two-handed weapon in one hand so that he can use another weapon
+or a shield in his offhand.
+
+This is an idea to revisit, not a finalized ultimate or an established ordinary
+wielding rule. The exact configuration, effects, duration counter, activation
+requirements and name remain undecided.
 
 ## Relationships
 

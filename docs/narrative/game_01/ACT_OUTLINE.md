@@ -73,7 +73,7 @@ move the major catastrophe into Chapter 1 or make every anomaly Aldric's doing.
 
 **Act break:** Faith gives way to doubt; the protagonist chooses truth-seeking over automatic obedience.
 
-**Approved companion introduction:** Lucan Rooke, the Knight, enters during
+**Approved companion introduction:** Lucan Rooke, the Armsmaster, enters during
 Act I as Aldric's personal guard. Aldric later entrusts him to Caelan's party,
 providing the approved basis for recruitment rather than a generic road escort.
 His character foundation is recorded in the [companion guide](COMPANIONS.md);
