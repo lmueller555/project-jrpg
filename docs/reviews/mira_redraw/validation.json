@@ -1,0 +1,36 @@
+{
+  "targeted_test_modules": 37,
+  "passed": 375,
+  "subtests_passed": 854,
+  "failed": 0,
+  "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 /workspace/.venvs/project-jrpg/bin/python -m pytest -q <37 combat/gear/bot/Mira/cinematic modules>",
+  "test_file_patterns": [
+    "test_*battle*.py",
+    "test_gear*.py",
+    "test_rivet*.py",
+    "test_bot*.py",
+    "test_choreograph*.py",
+    "test_combat*.py",
+    "test_mill_combat_assets.py",
+    "test_ice_reaper_opening.py",
+    "test_mira*.py"
+  ],
+  "asset_rebuild": "byte-identical after repeat export",
+  "independent_review": "No blocking runtime or visual findings",
+  "baseline_fixture_repairs": {
+    "baseline_commit": "45bd4ce6e55843862b2b3804ea4f155d5ca33e5d",
+    "before": "6 failed, 1 passed on original main",
+    "after_tests_only": "7 passed on original main with only corrected test fixtures",
+    "repairs": [
+      "Provide ui_surface to battlefield test fixture",
+      "Select tutorial Edge matching the settled gem in Rivet gameplay test helper"
+    ]
+  },
+  "production_captures": {
+    "isolated_seconds": 19.3,
+    "isolated_fps": 60,
+    "full_mq02_seconds": 90.97,
+    "full_mq02_result": "victory and settled Spoils",
+    "fingerprint_mismatches": 0
+  }
+}

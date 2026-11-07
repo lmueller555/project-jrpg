@@ -1,4 +1,8 @@
-"""Extract generated Mira/Rivet art without drawing or repainting sprite pixels.
+"""Extract generated machinist art without drawing or repainting sprite pixels.
+
+Mira's current 42-drawing bank is delegated to build_mira_combat with explicit
+anatomical registration; the old world launcher is preserved. The legacy
+extractor below serves Rivet.
 
 The retained imagegen atlases use a four-column logical grid. Connected alpha
 components keep each complete authored silhouette intact even when it extends
@@ -12,31 +16,17 @@ from collections import deque
 import hashlib
 import json
 from pathlib import Path
+import sys
 
 from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 SOURCE = ROOT / 'assets/source/combat/machinist'
 OUTPUT = ROOT / 'assets/combat'
 ACTORS = {
-    'mira': {
-        'source': 'mira_bolt_launcher_generated_sheet.png',
-        'grid': (4, 5), 'canvas': (64, 64), 'anchor': (32, 54),
-        'scale': .146, 'facing': 'left', 'count': 19,
-        'animations': {
-            'idle': ([0, 1], [260, 260], True),
-            'attack': ([2, 3, 4], [200, 280, 320], False),
-            'guard': ([5, 6], [240, 240], True),
-            'hurt': ([7, 8], [160, 240], False),
-            'victory': ([9, 10], [340, 340], True),
-            'defeat': ([11, 12], [260, 420], False),
-            'walk': ([13, 14, 15], [140, 140, 140], True),
-            'overclock': ([16, 17, 18], [300, 300, 300], False),
-        },
-        'aliases': {'bolt_shot': 'attack', 'flee': 'walk'},
-        'contacts': {'attack': 400, 'overclock': 500},
-    },
     'rivet': {
         'source': 'rivet_generated_sheet.png',
         'grid': (4, 4), 'canvas': (32, 32), 'anchor': (16, 28),
@@ -140,6 +130,9 @@ def exported_frames(actor):
 
 
 def build_actor(actor):
+    if actor == 'mira':
+        from tools.build_mira_combat import build
+        return build()
     settings = ACTORS[actor]
     source = SOURCE / settings['source']
     directory = OUTPUT / actor
@@ -218,7 +211,7 @@ def build_world_launcher(cell, source):
 
 
 def main():
-    result = {actor: build_actor(actor)['authored_frames'] for actor in ACTORS}
+    result = {actor: build_actor(actor)['authored_frames'] for actor in ('mira', *ACTORS)}
     print(json.dumps({'actors': result}))
     return 0
 

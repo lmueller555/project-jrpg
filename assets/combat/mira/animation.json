@@ -10,49 +10,180 @@
     54
   ],
   "facing": "left",
-  "source_sheet": "assets/source/combat/machinist/mira_bolt_launcher_generated_sheet.png",
-  "source_sha256": "cd8feea895911398c57761ca37346e3cfd88548ad381b6bebd42b53f86ccc548",
+  "source_sheet": "assets/source/combat/mira_redraw/mira_combat_authored.png",
+  "source_sha256": "cb8450a8d10d3839c0ea0ac7f4b2205305c839ee4c11f034312b7b02176b8012",
   "sheet": "spritesheet.png",
   "source_grid": [
-    4,
-    5
+    6,
+    7
   ],
-  "authored_frames": 19,
-  "extraction": "connected-alpha source cells; binary alpha; fixed nearest-neighbor native scale",
-  "native_scale": 0.146,
+  "authored_frames": 42,
+  "extraction": "largest connected authored alpha; binary alpha; fixed nearest-neighbor native scale; shared opaque-only 96-color palette; explicit anatomical floor",
+  "registration": "assets/source/combat/mira_redraw/registration.json",
+  "native_scale": 0.225,
   "animations": {
     "idle": {
       "loop": true,
       "frames": [
         {
-          "file": "idle_01.png",
-          "duration_ms": 260,
           "source_cell": 0,
-          "source_bounds": [
-            79,
-            10,
-            273,
-            265
+          "source_rect": [
+            0,
+            0,
+            194,
+            193
           ],
+          "source_foot": [
+            116,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            47,
+            11,
+            169,
+            185
+          ],
+          "native_scale": 0.225,
           "position": [
             16,
-            17
-          ]
+            15
+          ],
+          "file": "idle_01.png",
+          "duration_ms": 280
         },
         {
-          "file": "idle_02.png",
-          "duration_ms": 260,
           "source_cell": 1,
-          "source_bounds": [
-            394,
-            10,
-            587,
-            265
+          "source_rect": [
+            194,
+            0,
+            193,
+            193
           ],
+          "source_foot": [
+            110,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            235,
+            9,
+            356,
+            185
+          ],
+          "native_scale": 0.225,
           "position": [
             16,
-            17
-          ]
+            14
+          ],
+          "file": "idle_02.png",
+          "duration_ms": 260
+        },
+        {
+          "source_cell": 2,
+          "source_rect": [
+            387,
+            0,
+            193,
+            193
+          ],
+          "source_foot": [
+            107,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            422,
+            16,
+            545,
+            185
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "idle_03.png",
+          "duration_ms": 280
+        },
+        {
+          "source_cell": 3,
+          "source_rect": [
+            580,
+            0,
+            194,
+            193
+          ],
+          "source_foot": [
+            102,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            613,
+            12,
+            736,
+            185
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            15
+          ],
+          "file": "idle_04.png",
+          "duration_ms": 260
         }
       ]
     },
@@ -60,85 +191,661 @@
       "loop": false,
       "frames": [
         {
-          "file": "attack_01.png",
-          "duration_ms": 200,
-          "source_cell": 2,
-          "source_bounds": [
-            673,
-            32,
-            886,
-            265
-          ],
-          "position": [
-            15,
-            20
-          ]
-        },
-        {
-          "file": "attack_02.png",
-          "duration_ms": 280,
-          "source_cell": 3,
-          "source_bounds": [
-            968,
-            36,
-            1219,
-            265
-          ],
-          "position": [
-            13,
-            21
-          ]
-        },
-        {
-          "file": "attack_03.png",
-          "duration_ms": 320,
           "source_cell": 4,
-          "source_bounds": [
-            81,
-            289,
-            275,
-            520
+          "source_rect": [
+            774,
+            0,
+            194,
+            193
           ],
+          "source_foot": [
+            96,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              32
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            802,
+            14,
+            924,
+            185
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_01.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 5,
+          "source_rect": [
+            968,
+            0,
+            193,
+            193
+          ],
+          "source_foot": [
+            92,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            989,
+            12,
+            1112,
+            185
+          ],
+          "native_scale": 0.225,
           "position": [
             16,
-            20
-          ]
+            15
+          ],
+          "file": "attack_02.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 6,
+          "source_rect": [
+            0,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            115,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              15,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            39,
+            205,
+            166,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            15,
+            16
+          ],
+          "file": "attack_03.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 7,
+          "source_rect": [
+            194,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            111,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            240,
+            205,
+            367,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_04.png",
+          "duration_ms": 60
+        },
+        {
+          "source_cell": 8,
+          "source_rect": [
+            387,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            108,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            425,
+            205,
+            558,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "attack_05.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 9,
+          "source_rect": [
+            580,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            101,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              33
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            613,
+            206,
+            738,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_06.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 10,
+          "source_rect": [
+            774,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            96,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            802,
+            208,
+            923,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_07.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 11,
+          "source_rect": [
+            968,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            92,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            989,
+            207,
+            1112,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "attack_08.png",
+          "duration_ms": 140
         }
       ],
-      "contact_ms": 400
+      "contact_ms": 400,
+      "release_ms": 280
+    },
+    "guard_enter": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 12,
+          "source_rect": [
+            0,
+            387,
+            194,
+            193
+          ],
+          "source_foot": [
+            115,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            48,
+            412,
+            165,
+            565
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            20
+          ],
+          "file": "guard_enter_01.png",
+          "duration_ms": 150
+        },
+        {
+          "source_cell": 13,
+          "source_rect": [
+            194,
+            387,
+            193,
+            193
+          ],
+          "source_foot": [
+            111,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            245,
+            411,
+            355,
+            565
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            19
+          ],
+          "file": "guard_enter_02.png",
+          "duration_ms": 150
+        }
+      ]
     },
     "guard": {
       "loop": true,
       "frames": [
         {
-          "file": "guard_01.png",
-          "duration_ms": 240,
-          "source_cell": 5,
-          "source_bounds": [
-            401,
-            289,
-            583,
-            522
+          "source_cell": 14,
+          "source_rect": [
+            387,
+            387,
+            193,
+            193
           ],
+          "source_foot": [
+            108,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              40
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            435,
+            419,
+            545,
+            565
+          ],
+          "native_scale": 0.225,
           "position": [
-            17,
-            20
-          ]
+            18,
+            21
+          ],
+          "file": "guard_01.png",
+          "duration_ms": 300
         },
         {
-          "file": "guard_02.png",
-          "duration_ms": 240,
-          "source_cell": 6,
-          "source_bounds": [
-            705,
-            289,
-            872,
-            522
+          "source_cell": 15,
+          "source_rect": [
+            580,
+            387,
+            194,
+            193
           ],
+          "source_foot": [
+            101,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            622,
+            412,
+            733,
+            565
+          ],
+          "native_scale": 0.225,
           "position": [
             19,
             20
-          ]
+          ],
+          "file": "guard_02.png",
+          "duration_ms": 300
+        }
+      ]
+    },
+    "guard_impact": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 16,
+          "source_rect": [
+            774,
+            387,
+            194,
+            193
+          ],
+          "source_foot": [
+            97,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            818,
+            415,
+            926,
+            565
+          ],
+          "native_scale": 0.225,
+          "position": [
+            20,
+            20
+          ],
+          "file": "guard_impact_01.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 17,
+          "source_rect": [
+            968,
+            387,
+            193,
+            193
+          ],
+          "source_foot": [
+            92,
+            178
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            1005,
+            412,
+            1121,
+            565
+          ],
+          "native_scale": 0.225,
+          "position": [
+            20,
+            20
+          ],
+          "file": "guard_impact_02.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 40,
+          "source_rect": [
+            774,
+            1161,
+            194,
+            193
+          ],
+          "source_foot": [
+            99,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              40
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            809,
+            1176,
+            918,
+            1329
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            20
+          ],
+          "file": "guard_impact_03.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 41,
+          "source_rect": [
+            968,
+            1161,
+            193,
+            193
+          ],
+          "source_foot": [
+            94,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              41
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            1001,
+            1176,
+            1112,
+            1329
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            20
+          ],
+          "file": "guard_impact_04.png",
+          "duration_ms": 120
         }
       ]
     },
@@ -146,154 +853,164 @@
       "loop": false,
       "frames": [
         {
+          "source_cell": 18,
+          "source_rect": [
+            0,
+            580,
+            194,
+            194
+          ],
+          "source_foot": [
+            106,
+            173
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            52,
+            590,
+            167,
+            754
+          ],
+          "native_scale": 0.225,
+          "position": [
+            20,
+            17
+          ],
           "file": "hurt_01.png",
-          "duration_ms": 160,
-          "source_cell": 7,
-          "source_bounds": [
-            1014,
-            288,
-            1181,
-            522
-          ],
-          "position": [
-            19,
-            20
-          ]
+          "duration_ms": 80
         },
         {
+          "source_cell": 19,
+          "source_rect": [
+            194,
+            580,
+            193,
+            194
+          ],
+          "source_foot": [
+            106,
+            173
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              21,
+              40
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            245,
+            610,
+            349,
+            754
+          ],
+          "native_scale": 0.225,
+          "position": [
+            20,
+            22
+          ],
           "file": "hurt_02.png",
-          "duration_ms": 240,
-          "source_cell": 8,
-          "source_bounds": [
-            91,
-            549,
-            275,
-            779
-          ],
-          "position": [
-            18,
-            20
-          ]
-        }
-      ]
-    },
-    "victory": {
-      "loop": true,
-      "frames": [
-        {
-          "file": "victory_01.png",
-          "duration_ms": 340,
-          "source_cell": 9,
-          "source_bounds": [
-            385,
-            546,
-            569,
-            779
-          ],
-          "position": [
-            17,
-            20
-          ]
+          "duration_ms": 100
         },
         {
-          "file": "victory_02.png",
-          "duration_ms": 340,
-          "source_cell": 10,
-          "source_bounds": [
-            699,
-            540,
-            882,
-            779
+          "source_cell": 20,
+          "source_rect": [
+            387,
+            580,
+            193,
+            194
           ],
+          "source_foot": [
+            107,
+            173
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              37
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            433,
+            598,
+            537,
+            754
+          ],
+          "native_scale": 0.225,
           "position": [
             18,
             19
-          ]
-        }
-      ]
-    },
-    "defeat": {
-      "loop": false,
-      "frames": [
-        {
-          "file": "defeat_01.png",
-          "duration_ms": 260,
-          "source_cell": 11,
-          "source_bounds": [
-            976,
-            577,
-            1193,
-            779
           ],
-          "position": [
-            14,
-            25
-          ]
+          "file": "hurt_03.png",
+          "duration_ms": 100
         },
         {
-          "file": "defeat_02.png",
-          "duration_ms": 420,
-          "source_cell": 12,
-          "source_bounds": [
-            54,
-            847,
-            285,
-            1015
+          "source_cell": 21,
+          "source_rect": [
+            580,
+            580,
+            194,
+            194
           ],
-          "position": [
-            14,
-            29
-          ]
-        }
-      ]
-    },
-    "walk": {
-      "loop": true,
-      "frames": [
-        {
-          "file": "walk_01.png",
-          "duration_ms": 140,
-          "source_cell": 13,
-          "source_bounds": [
-            380,
-            790,
-            553,
-            1012
+          "source_foot": [
+            105,
+            173
           ],
-          "position": [
-            18,
-            22
-          ]
-        },
-        {
-          "file": "walk_02.png",
-          "duration_ms": 140,
-          "source_cell": 14,
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
           "source_bounds": [
-            677,
-            792,
-            849,
-            1012
+            619,
+            596,
+            728,
+            754
           ],
+          "native_scale": 0.225,
           "position": [
-            18,
-            22
-          ]
-        },
-        {
-          "file": "walk_03.png",
-          "duration_ms": 140,
-          "source_cell": 15,
-          "source_bounds": [
-            994,
-            790,
-            1165,
-            1012
+            17,
+            19
           ],
-          "position": [
-            18,
-            22
-          ]
+          "file": "hurt_04.png",
+          "duration_ms": 120
         }
       ]
     },
@@ -301,151 +1018,1232 @@
       "loop": false,
       "frames": [
         {
+          "source_cell": 22,
+          "source_rect": [
+            774,
+            580,
+            194,
+            194
+          ],
+          "source_foot": [
+            100,
+            173
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              41
+            ],
+            "controller": [
+              35,
+              37
+            ]
+          },
+          "source_bounds": [
+            818,
+            589,
+            920,
+            754
+          ],
+          "native_scale": 0.225,
+          "position": [
+            19,
+            17
+          ],
           "file": "overclock_01.png",
-          "duration_ms": 300,
-          "source_cell": 16,
-          "source_bounds": [
-            95,
-            1024,
-            252,
-            1244
-          ],
-          "position": [
-            21,
-            22
-          ]
+          "duration_ms": 150
         },
         {
+          "source_cell": 23,
+          "source_rect": [
+            968,
+            580,
+            193,
+            194
+          ],
+          "source_foot": [
+            90,
+            173
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              40
+            ],
+            "controller": [
+              41,
+              36
+            ]
+          },
+          "source_bounds": [
+            1004,
+            589,
+            1110,
+            754
+          ],
+          "native_scale": 0.225,
+          "position": [
+            20,
+            17
+          ],
           "file": "overclock_02.png",
-          "duration_ms": 300,
-          "source_cell": 17,
-          "source_bounds": [
-            372,
-            1024,
-            554,
-            1241
-          ],
-          "position": [
-            17,
-            22
-          ]
+          "duration_ms": 150
         },
         {
-          "file": "overclock_03.png",
-          "duration_ms": 300,
-          "source_cell": 18,
-          "source_bounds": [
-            707,
-            1024,
-            858,
-            1243
+          "source_cell": 24,
+          "source_rect": [
+            0,
+            774,
+            194,
+            193
           ],
+          "source_foot": [
+            113,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              20,
+              42
+            ],
+            "controller": [
+              29,
+              32
+            ]
+          },
+          "source_bounds": [
+            55,
+            777,
+            160,
+            945
+          ],
+          "native_scale": 0.225,
           "position": [
-            21,
-            22
-          ]
+            19,
+            16
+          ],
+          "file": "overclock_03.png",
+          "duration_ms": 200
+        },
+        {
+          "source_cell": 25,
+          "source_rect": [
+            194,
+            774,
+            193,
+            193
+          ],
+          "source_foot": [
+            109,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              41
+            ],
+            "controller": [
+              28,
+              32
+            ]
+          },
+          "source_bounds": [
+            244,
+            777,
+            353,
+            945
+          ],
+          "native_scale": 0.225,
+          "position": [
+            19,
+            16
+          ],
+          "file": "overclock_04.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 26,
+          "source_rect": [
+            387,
+            774,
+            193,
+            193
+          ],
+          "source_foot": [
+            107,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              42
+            ],
+            "controller": [
+              30,
+              32
+            ]
+          },
+          "source_bounds": [
+            434,
+            778,
+            539,
+            945
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            17
+          ],
+          "file": "overclock_05.png",
+          "duration_ms": 150
+        },
+        {
+          "source_cell": 27,
+          "source_rect": [
+            580,
+            774,
+            194,
+            193
+          ],
+          "source_foot": [
+            100,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              40
+            ],
+            "controller": [
+              35,
+              39
+            ]
+          },
+          "source_bounds": [
+            620,
+            781,
+            730,
+            945
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            17
+          ],
+          "file": "overclock_06.png",
+          "duration_ms": 150
         }
       ],
       "contact_ms": 500
+    },
+    "victory": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 28,
+          "source_rect": [
+            774,
+            774,
+            194,
+            193
+          ],
+          "source_foot": [
+            96,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              40
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            808,
+            778,
+            923,
+            945
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            17
+          ],
+          "file": "victory_01.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 29,
+          "source_rect": [
+            968,
+            774,
+            193,
+            193
+          ],
+          "source_foot": [
+            93,
+            170
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              41
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            996,
+            777,
+            1112,
+            945
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "victory_02.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 30,
+          "source_rect": [
+            0,
+            967,
+            194,
+            194
+          ],
+          "source_foot": [
+            117,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              41
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            49,
+            967,
+            169,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "victory_03.png",
+          "duration_ms": 320
+        },
+        {
+          "source_cell": 31,
+          "source_rect": [
+            194,
+            967,
+            193,
+            194
+          ],
+          "source_foot": [
+            111,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              40
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            240,
+            968,
+            356,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "victory_04.png",
+          "duration_ms": 420
+        }
+      ]
+    },
+    "defeat": {
+      "loop": false,
+      "frames": [
+        {
+          "source_cell": 32,
+          "source_rect": [
+            387,
+            967,
+            193,
+            194
+          ],
+          "source_foot": [
+            107,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            433,
+            978,
+            538,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            19
+          ],
+          "file": "defeat_01.png",
+          "duration_ms": 120
+        },
+        {
+          "source_cell": 33,
+          "source_rect": [
+            580,
+            967,
+            194,
+            194
+          ],
+          "source_foot": [
+            110,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              43
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            614,
+            996,
+            741,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            15,
+            23
+          ],
+          "file": "defeat_02.png",
+          "duration_ms": 160
+        },
+        {
+          "source_cell": 34,
+          "source_rect": [
+            774,
+            967,
+            194,
+            194
+          ],
+          "source_foot": [
+            106,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              13,
+              52
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            786,
+            1009,
+            936,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            11,
+            26
+          ],
+          "file": "defeat_03.png",
+          "duration_ms": 180
+        },
+        {
+          "source_cell": 35,
+          "source_rect": [
+            968,
+            967,
+            193,
+            194
+          ],
+          "source_foot": [
+            101,
+            168
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              13,
+              52
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            980,
+            1016,
+            1125,
+            1137
+          ],
+          "native_scale": 0.225,
+          "position": [
+            12,
+            27
+          ],
+          "file": "defeat_04.png",
+          "duration_ms": 420
+        }
+      ]
+    },
+    "walk": {
+      "loop": true,
+      "frames": [
+        {
+          "source_cell": 36,
+          "source_rect": [
+            0,
+            1161,
+            194,
+            193
+          ],
+          "source_foot": [
+            110,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            50,
+            1161,
+            160,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            16
+          ],
+          "file": "walk_01.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 37,
+          "source_rect": [
+            194,
+            1161,
+            193,
+            193
+          ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            242,
+            1161,
+            347,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            16
+          ],
+          "file": "walk_02.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 38,
+          "source_rect": [
+            387,
+            1161,
+            193,
+            193
+          ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              41
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            433,
+            1162,
+            542,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            17
+          ],
+          "file": "walk_03.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 39,
+          "source_rect": [
+            580,
+            1161,
+            194,
+            193
+          ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            621,
+            1161,
+            723,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "walk_04.png",
+          "duration_ms": 140
+        }
+      ]
     },
     "bolt_shot": {
       "loop": false,
       "frames": [
         {
-          "file": "attack_01.png",
-          "duration_ms": 200,
-          "source_cell": 2,
-          "source_bounds": [
-            673,
-            32,
-            886,
-            265
-          ],
-          "position": [
-            15,
-            20
-          ]
-        },
-        {
-          "file": "attack_02.png",
-          "duration_ms": 280,
-          "source_cell": 3,
-          "source_bounds": [
-            968,
-            36,
-            1219,
-            265
-          ],
-          "position": [
-            13,
-            21
-          ]
-        },
-        {
-          "file": "attack_03.png",
-          "duration_ms": 320,
           "source_cell": 4,
-          "source_bounds": [
-            81,
-            289,
-            275,
-            520
+          "source_rect": [
+            774,
+            0,
+            194,
+            193
           ],
+          "source_foot": [
+            96,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              32
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            802,
+            14,
+            924,
+            185
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_01.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 5,
+          "source_rect": [
+            968,
+            0,
+            193,
+            193
+          ],
+          "source_foot": [
+            92,
+            185
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            989,
+            12,
+            1112,
+            185
+          ],
+          "native_scale": 0.225,
           "position": [
             16,
-            20
-          ]
+            15
+          ],
+          "file": "attack_02.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 6,
+          "source_rect": [
+            0,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            115,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              15,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            39,
+            205,
+            166,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            15,
+            16
+          ],
+          "file": "attack_03.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 7,
+          "source_rect": [
+            194,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            111,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            240,
+            205,
+            367,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_04.png",
+          "duration_ms": 60
+        },
+        {
+          "source_cell": 8,
+          "source_rect": [
+            387,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            108,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              29
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            425,
+            205,
+            558,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "attack_05.png",
+          "duration_ms": 80
+        },
+        {
+          "source_cell": 9,
+          "source_rect": [
+            580,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            101,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              33
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            613,
+            206,
+            738,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_06.png",
+          "duration_ms": 100
+        },
+        {
+          "source_cell": 10,
+          "source_rect": [
+            774,
+            193,
+            194,
+            194
+          ],
+          "source_foot": [
+            96,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              38
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            802,
+            208,
+            923,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            17,
+            16
+          ],
+          "file": "attack_07.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 11,
+          "source_rect": [
+            968,
+            193,
+            193,
+            194
+          ],
+          "source_foot": [
+            92,
+            183
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              16,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            989,
+            207,
+            1112,
+            376
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "attack_08.png",
+          "duration_ms": 140
         }
       ],
-      "contact_ms": 400
+      "contact_ms": 400,
+      "release_ms": 280
     },
     "flee": {
       "loop": true,
       "frames": [
         {
+          "source_cell": 36,
+          "source_rect": [
+            0,
+            1161,
+            194,
+            193
+          ],
+          "source_foot": [
+            110,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              19,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            50,
+            1161,
+            160,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            16
+          ],
           "file": "walk_01.png",
-          "duration_ms": 140,
-          "source_cell": 13,
-          "source_bounds": [
-            380,
-            790,
-            553,
-            1012
-          ],
-          "position": [
-            18,
-            22
-          ]
+          "duration_ms": 140
         },
         {
+          "source_cell": 37,
+          "source_rect": [
+            194,
+            1161,
+            193,
+            193
+          ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            242,
+            1161,
+            347,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            18,
+            16
+          ],
           "file": "walk_02.png",
-          "duration_ms": 140,
-          "source_cell": 14,
-          "source_bounds": [
-            677,
-            792,
-            849,
-            1012
-          ],
-          "position": [
-            18,
-            22
-          ]
+          "duration_ms": 140
         },
         {
-          "file": "walk_03.png",
-          "duration_ms": 140,
-          "source_cell": 15,
-          "source_bounds": [
-            994,
-            790,
-            1165,
-            1012
+          "source_cell": 38,
+          "source_rect": [
+            387,
+            1161,
+            193,
+            193
           ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              18,
+              41
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            433,
+            1162,
+            542,
+            1330
+          ],
+          "native_scale": 0.225,
           "position": [
-            18,
-            22
-          ]
+            17,
+            17
+          ],
+          "file": "walk_03.png",
+          "duration_ms": 140
+        },
+        {
+          "source_cell": 39,
+          "source_rect": [
+            580,
+            1161,
+            194,
+            193
+          ],
+          "source_foot": [
+            111,
+            167
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              39
+            ],
+            "controller": [
+              31,
+              38
+            ]
+          },
+          "source_bounds": [
+            621,
+            1161,
+            723,
+            1330
+          ],
+          "native_scale": 0.225,
+          "position": [
+            16,
+            16
+          ],
+          "file": "walk_04.png",
+          "duration_ms": 140
         }
       ]
     }

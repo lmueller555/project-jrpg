@@ -29,7 +29,8 @@ class BattlefieldTests(unittest.TestCase):
     def setUp(self):
         pygame.display.init()
         pygame.display.set_mode((480, 320))
-        self.game = SimpleNamespace(audio=SimpleNamespace(reduced_motion=False))
+        self.game = SimpleNamespace(audio=SimpleNamespace(reduced_motion=False),
+                                    ui_surface=pygame.Surface((480, 320)))
         self.model = BattleModel(CharacterAttributes())
 
     def tearDown(self):

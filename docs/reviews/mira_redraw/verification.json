@@ -1,0 +1,350 @@
+{
+  "silent": true,
+  "fps": 60,
+  "size": [
+    960,
+    640
+  ],
+  "seconds": 19.3,
+  "fixtures": [
+    "Isolated production BattleModel and BattleScene with Mira guest and Rivet.",
+    "Durable passive Tusker (HP=1000000, Speed=0), deterministic RNG seed 7.",
+    "Mira ATB=1 before player-command clicks; incoming tusk strikes explicitly selected.",
+    "Victory sets enemy HP=1 at scene creation; incapacity sets Mira HP=1.",
+    "No action definitions, damage clocks, animation clocks, poses or frames replaced."
+  ],
+  "cases": [
+    {
+      "case": "bolt_shot",
+      "start": 0.0,
+      "end": 2.45,
+      "action": "bolt_shot",
+      "duration": 0.8,
+      "impact_at": 0.4,
+      "damage": 50,
+      "reduced_motion": false,
+      "outcome": "charging",
+      "mp_after": 30,
+      "haste_turns": 0,
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "player_ready",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "name": "Bolt Shot"
+        },
+        {
+          "type": "impact",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "damage": 50,
+          "remaining_hp": 999950,
+          "guarded": false,
+          "frame_age": 0.0
+        }
+      ]
+    },
+    {
+      "case": "overclock",
+      "start": 2.45,
+      "end": 5.0,
+      "action": "overclock",
+      "duration": 0.9,
+      "impact_at": 0.5,
+      "damage": 0,
+      "reduced_motion": false,
+      "outcome": "charging",
+      "mp_after": 25,
+      "haste_turns": 8,
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "player_ready",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "mira",
+          "action": "overclock",
+          "target": "rivet",
+          "name": "Overclock"
+        },
+        {
+          "type": "haste_applied",
+          "actor": "mira",
+          "target": "rivet",
+          "action": "overclock",
+          "remaining_turns": 8,
+          "rate_multiplier": 1.5
+        }
+      ]
+    },
+    {
+      "case": "guarded_hit",
+      "start": 5.0,
+      "end": 8.4,
+      "guarded": true,
+      "lethal": false,
+      "incoming": "tusk_strike",
+      "damage": 12,
+      "mira_hp": 288,
+      "pose": "idle",
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "player_ready",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "mira",
+          "action": "guard",
+          "target": "mira",
+          "name": "Guard"
+        },
+        {
+          "type": "guard",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "name": "Tusk Strike"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "damage": 12,
+          "remaining_hp": 288,
+          "guarded": true,
+          "frame_age": 0.0
+        }
+      ]
+    },
+    {
+      "case": "unguarded_hit",
+      "start": 8.4,
+      "end": 11.0,
+      "guarded": false,
+      "lethal": false,
+      "incoming": "tusk_strike",
+      "damage": 24,
+      "mira_hp": 276,
+      "pose": "idle",
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "name": "Tusk Strike"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "damage": 24,
+          "remaining_hp": 276,
+          "guarded": false,
+          "frame_age": 0.0
+        }
+      ]
+    },
+    {
+      "case": "reduced_motion_shot",
+      "start": 11.0,
+      "end": 13.45,
+      "action": "bolt_shot",
+      "duration": 0.8,
+      "impact_at": 0.4,
+      "damage": 50,
+      "reduced_motion": true,
+      "outcome": "charging",
+      "mp_after": 30,
+      "haste_turns": 0,
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "player_ready",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "name": "Bolt Shot"
+        },
+        {
+          "type": "impact",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "damage": 50,
+          "remaining_hp": 999950,
+          "guarded": false,
+          "frame_age": 0.0
+        }
+      ]
+    },
+    {
+      "case": "victory",
+      "start": 13.45,
+      "end": 15.9,
+      "action": "bolt_shot",
+      "duration": 0.8,
+      "impact_at": 0.4,
+      "damage": 50,
+      "reduced_motion": false,
+      "outcome": "victory",
+      "mp_after": 30,
+      "haste_turns": null,
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "player_ready",
+          "actor": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "name": "Bolt Shot"
+        },
+        {
+          "type": "impact",
+          "actor": "mira",
+          "action": "bolt_shot",
+          "target": "enemy",
+          "damage": 50,
+          "remaining_hp": 0,
+          "guarded": false,
+          "frame_age": 0.0
+        },
+        {
+          "type": "bot_removed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "result",
+          "outcome": "victory"
+        }
+      ]
+    },
+    {
+      "case": "incapacitated",
+      "start": 15.9,
+      "end": 18.5,
+      "guarded": false,
+      "lethal": true,
+      "incoming": "tusk_strike",
+      "damage": 24,
+      "mira_hp": 0,
+      "pose": "defeat",
+      "events": [
+        {
+          "type": "bot_deployed",
+          "actor": "rivet",
+          "owner": "mira"
+        },
+        {
+          "type": "action_started",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "name": "Tusk Strike"
+        },
+        {
+          "type": "impact",
+          "actor": "enemy",
+          "action": "tusk_strike",
+          "target": "mira",
+          "damage": 24,
+          "remaining_hp": 0,
+          "guarded": false,
+          "frame_age": 0.0
+        },
+        {
+          "type": "bot_suspended",
+          "actor": "rivet",
+          "owner": "mira"
+        }
+      ]
+    }
+  ],
+  "files_unchanged_during_capture": true,
+  "screenshots": [
+    "bolt_shot_impact.png",
+    "bolt_shot_prepare.png",
+    "bolt_shot_ready.png",
+    "bolt_shot_recover.png",
+    "bolt_shot_release.png",
+    "bolt_shot_settled.png",
+    "guarded_hit_impact.png",
+    "guarded_hit_settled.png",
+    "incapacitated_impact.png",
+    "incapacitated_settled.png",
+    "minimum_large_text.png",
+    "normal_battle.png",
+    "overclock_impact.png",
+    "overclock_prepare.png",
+    "overclock_ready.png",
+    "overclock_recover.png",
+    "overclock_release.png",
+    "overclock_settled.png",
+    "reduced_motion.png",
+    "reduced_motion_shot_impact.png",
+    "reduced_motion_shot_prepare.png",
+    "reduced_motion_shot_ready.png",
+    "reduced_motion_shot_recover.png",
+    "reduced_motion_shot_release.png",
+    "reduced_motion_shot_settled.png",
+    "unguarded_hit_impact.png",
+    "unguarded_hit_settled.png",
+    "victory_impact.png",
+    "victory_prepare.png",
+    "victory_ready.png",
+    "victory_recover.png",
+    "victory_release.png",
+    "victory_settled.png"
+  ]
+}

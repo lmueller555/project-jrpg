@@ -64,6 +64,29 @@ including its turn cost. Active Tusker simulations retain the preparation and
 Guard opportunity and win with either strategy. These are tuning checks, not
 guarantees for every encounter or future attribute build.
 
+## Combat presentation
+
+Mira's combat bank contains 42 authored whole-body drawings with her established
+ponytail, cream flower, rolled pink sleeves and workshop equipment. Her ranged
+formation position stays fixed while her shoulders, elbows and knees carry the
+aim, recoil and recovery. Separate guard entry, held guard and guarded-impact
+drawings distinguish bracing from an unguarded hurt reaction.
+
+Bolt Shot raises and settles the launcher before releasing at 0.28 seconds.
+The bolt travels from the release drawing's registered muzzle to the target's
+silhouette, reaching the unchanged damage impact at 0.40 seconds; recovery ends
+at 0.80 seconds. Overclock's controller gesture applies Haste at 0.50 seconds
+and ends at 0.90 seconds. Small release/controller glints are suppressed with
+Reduced Motion, which retains the drawings and readable bolt travel.
+
+The source atlas and explicit anatomical floor/attachment registration are
+retained under `assets/source/combat/mira_redraw/`. Rebuild using
+`python tools/build_mira_combat.py`; the Machinist and mill asset builders also
+dispatch to this exporter. The existing overworld launcher and Rivet assets
+are preserved. The Ice Reaper opening's copied ready frames use the same idle.
+
+See the [sprite and production-motion review](reviews/mira_redraw/README.md).
+
 ## Definitions and saved loadouts
 
 - [`assets/abilities/characters.json`](../assets/abilities/characters.json)
