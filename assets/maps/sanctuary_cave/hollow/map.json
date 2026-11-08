@@ -1,0 +1,1107 @@
+{
+  "id": "sanctuary_cave_hollow",
+  "name": "Sanctuary Cave — Splitstone Hollow",
+  "kind": "cave",
+  "tile_size": 24,
+  "size_pixels": [
+    1200,
+    912
+  ],
+  "size_tiles": [
+    50,
+    38
+  ],
+  "player_probe_size": [
+    24,
+    12
+  ],
+  "player_draw_anchor": [
+    12,
+    30
+  ],
+  "spawn": [
+    240,
+    785
+  ],
+  "ground_frames": [
+    "assets/terrain/sanctuary_cave/scenes/hollow/ground.png"
+  ],
+  "ground_frame_duration_ms": 700,
+  "collision": "assets/maps/sanctuary_cave/hollow/collision.png",
+  "overview": "assets/terrain/sanctuary_cave/scenes/hollow/overview.png",
+  "entities": [
+    {
+      "id": "boulder_0",
+      "position": [
+        310,
+        570
+      ],
+      "sort_y": 662,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/boulder_0.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        324,
+        653,
+        53,
+        12
+      ]
+    },
+    {
+      "id": "boulder_1",
+      "position": [
+        342,
+        621
+      ],
+      "sort_y": 682,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/boulder_1.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        350,
+        673,
+        30,
+        12
+      ]
+    },
+    {
+      "id": "boulder_2",
+      "position": [
+        563,
+        241
+      ],
+      "sort_y": 282,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/boulder_2.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        572,
+        273,
+        36,
+        12
+      ]
+    },
+    {
+      "id": "boulder_3",
+      "position": [
+        869,
+        711
+      ],
+      "sort_y": 742,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/boulder_3.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        876,
+        733,
+        28,
+        12
+      ]
+    },
+    {
+      "id": "stalagmites_0",
+      "position": [
+        109,
+        535
+      ],
+      "sort_y": 606,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/formations/stalagmites_0.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        118,
+        600,
+        24,
+        9
+      ]
+    },
+    {
+      "id": "stalagmites_1",
+      "position": [
+        544,
+        250
+      ],
+      "sort_y": 321,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/formations/stalagmites_1.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        553,
+        315,
+        24,
+        9
+      ]
+    },
+    {
+      "id": "stalagmites_2",
+      "position": [
+        1019,
+        665
+      ],
+      "sort_y": 736,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/formations/stalagmites_2.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        1028,
+        730,
+        24,
+        9
+      ]
+    },
+    {
+      "id": "stalactites_0",
+      "position": [
+        165,
+        505
+      ],
+      "sort_y": 805,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/formations/stalactites_0.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0
+    },
+    {
+      "id": "stalactites_1",
+      "position": [
+        600,
+        220
+      ],
+      "sort_y": 520,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/formations/stalactites_1.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0
+    },
+    {
+      "id": "crystal_0",
+      "position": [
+        104,
+        619
+      ],
+      "sort_y": 692,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "light_index": 0,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fan.cyan",
+      "footprint": [
+        131,
+        687,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_1",
+      "position": [
+        334,
+        523
+      ],
+      "sort_y": 632,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/amethyst/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 1,
+      "light_index": 1,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.large_crown.amethyst",
+      "footprint": [
+        381,
+        627,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_2",
+      "position": [
+        202,
+        397
+      ],
+      "sort_y": 462,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/opal/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 2,
+      "light_index": 2,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fork.opal",
+      "footprint": [
+        221,
+        457,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_3",
+      "position": [
+        374,
+        269
+      ],
+      "sort_y": 342,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 3,
+      "light_index": 3,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fan.cyan",
+      "footprint": [
+        401,
+        337,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_4",
+      "position": [
+        604,
+        136
+      ],
+      "sort_y": 237,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 4,
+      "light_index": 4,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.large_spire.cyan",
+      "footprint": [
+        631,
+        232,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_5",
+      "position": [
+        759,
+        138
+      ],
+      "sort_y": 247,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_crown/opal/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 5,
+      "light_index": 5,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.large_crown.opal",
+      "footprint": [
+        806,
+        242,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_6",
+      "position": [
+        914,
+        244
+      ],
+      "sort_y": 317,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/amethyst/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "light_index": 6,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fan.amethyst",
+      "footprint": [
+        941,
+        312,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_7",
+      "position": [
+        752,
+        547
+      ],
+      "sort_y": 612,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amber/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 1,
+      "light_index": 7,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fork.amber",
+      "footprint": [
+        771,
+        607,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_8",
+      "position": [
+        959,
+        554
+      ],
+      "sort_y": 627,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 2,
+      "light_index": 8,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.medium_fan.cyan",
+      "footprint": [
+        986,
+        622,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "crystal_9",
+      "position": [
+        964,
+        381
+      ],
+      "sort_y": 482,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/crystal/large_spire/amethyst/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 3,
+      "light_index": 9,
+      "reduced_motion_frame": 2,
+      "source_module": "crystal.large_spire.amethyst",
+      "footprint": [
+        991,
+        477,
+        18,
+        6
+      ]
+    },
+    {
+      "id": "wall_vein_0",
+      "position": [
+        158,
+        653
+      ],
+      "sort_y": 682,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "light_index": 0,
+      "reduced_motion_frame": 2,
+      "source_module": "vein.cyan"
+    },
+    {
+      "id": "wall_vein_2",
+      "position": [
+        248,
+        423
+      ],
+      "sort_y": 452,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 2,
+      "light_index": 2,
+      "reduced_motion_frame": 2,
+      "source_module": "vein.opal"
+    },
+    {
+      "id": "wall_vein_4",
+      "position": [
+        658,
+        198
+      ],
+      "sort_y": 227,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 4,
+      "light_index": 4,
+      "reduced_motion_frame": 2,
+      "source_module": "vein.cyan"
+    },
+    {
+      "id": "wall_vein_6",
+      "position": [
+        968,
+        278
+      ],
+      "sort_y": 307,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "light_index": 6,
+      "reduced_motion_frame": 2,
+      "source_module": "vein.amethyst"
+    },
+    {
+      "id": "wall_vein_8",
+      "position": [
+        1013,
+        588
+      ],
+      "sort_y": 617,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png",
+        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 2,
+      "light_index": 8,
+      "reduced_motion_frame": 2,
+      "source_module": "vein.cyan"
+    },
+    {
+      "id": "pool_reflection_0",
+      "position": [
+        1037,
+        589
+      ],
+      "sort_y": 711,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_0.png",
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_1.png",
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_2.png",
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_3.png",
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_4.png",
+        "assets/terrain/sanctuary_cave/scenes/hollow/water/reflection_0_5.png"
+      ],
+      "frame_duration_ms": 950,
+      "phase_offset": 0,
+      "reduced_motion_frame": 2
+    },
+    {
+      "id": "cave_keeper_chest",
+      "position": [
+        905,
+        629
+      ],
+      "sort_y": 662,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/containers/chest_closed.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        911,
+        655,
+        28,
+        10
+      ],
+      "state": "closed",
+      "state_images": {
+        "closed": "assets/terrain/sanctuary_cave/containers/chest_closed.png",
+        "open": "assets/terrain/sanctuary_cave/containers/chest_open.png"
+      }
+    },
+    {
+      "id": "cave_overlook_cache",
+      "position": [
+        420,
+        309
+      ],
+      "sort_y": 342,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/containers/pack_closed.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        426,
+        335,
+        28,
+        10
+      ],
+      "state": "closed",
+      "state_images": {
+        "closed": "assets/terrain/sanctuary_cave/containers/pack_closed.png",
+        "open": "assets/terrain/sanctuary_cave/containers/pack_open.png"
+      }
+    },
+    {
+      "id": "keeper_marker_0",
+      "position": [
+        756,
+        616
+      ],
+      "sort_y": 653,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/keeper_marker_0.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        763,
+        647,
+        14,
+        6
+      ]
+    },
+    {
+      "id": "keeper_marker_1",
+      "position": [
+        781,
+        611
+      ],
+      "sort_y": 648,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/keeper_marker_1.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        788,
+        642,
+        14,
+        6
+      ]
+    },
+    {
+      "id": "keeper_marker_2",
+      "position": [
+        836,
+        716
+      ],
+      "sort_y": 753,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/scenes/hollow/props/keeper_marker_2.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "footprint": [
+        843,
+        747,
+        14,
+        6
+      ]
+    },
+    {
+      "id": "tunnel_entrance",
+      "position": [
+        192,
+        826
+      ],
+      "sort_y": 822,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/tunnels/mouth_south.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "link_id": "entrance",
+      "kind": "tunnel_mouth"
+    },
+    {
+      "id": "tunnel_depths",
+      "position": [
+        902,
+        145
+      ],
+      "sort_y": 217,
+      "sort_priority": 0,
+      "frames": [
+        "assets/terrain/sanctuary_cave/tunnels/mouth_north.png"
+      ],
+      "frame_duration_ms": 700,
+      "phase_offset": 0,
+      "link_id": "depths",
+      "kind": "tunnel_mouth"
+    }
+  ],
+  "foreground": [],
+  "doors": [],
+  "npcs": [],
+  "landmarks": [
+    {
+      "id": "hollow",
+      "name": "Splitstone Hollow",
+      "position": [
+        310,
+        700
+      ],
+      "description": "A divided pillar marks the junction. The upper gallery and lower keeper route meet again beyond it."
+    },
+    {
+      "id": "keeper",
+      "name": "Keeper’s Recess",
+      "position": [
+        875,
+        670
+      ],
+      "description": "Weathered storage rests above the damp floor beside old path markers."
+    },
+    {
+      "id": "gallery",
+      "name": "Deep Gallery",
+      "position": [
+        720,
+        325
+      ],
+      "description": "Tall walls frame a rising sweep of crystals. The route turns toward a quieter shelf."
+    }
+  ],
+  "cave": {
+    "lights": [
+      {
+        "position": [
+          140,
+          703
+        ],
+        "color": [
+          94,
+          201,
+          215
+        ],
+        "radius": 116,
+        "phase": 0.0,
+        "entity_id": "crystal_0"
+      },
+      {
+        "position": [
+          390,
+          643
+        ],
+        "color": [
+          163,
+          117,
+          218
+        ],
+        "radius": 145,
+        "phase": 0.37,
+        "entity_id": "crystal_1"
+      },
+      {
+        "position": [
+          230,
+          485
+        ],
+        "color": [
+          197,
+          221,
+          216
+        ],
+        "radius": 116,
+        "phase": 0.74,
+        "entity_id": "crystal_2"
+      },
+      {
+        "position": [
+          410,
+          365
+        ],
+        "color": [
+          94,
+          201,
+          215
+        ],
+        "radius": 116,
+        "phase": 1.11,
+        "entity_id": "crystal_3"
+      },
+      {
+        "position": [
+          640,
+          248
+        ],
+        "color": [
+          94,
+          201,
+          215
+        ],
+        "radius": 145,
+        "phase": 1.48,
+        "entity_id": "crystal_4"
+      },
+      {
+        "position": [
+          815,
+          258
+        ],
+        "color": [
+          197,
+          221,
+          216
+        ],
+        "radius": 145,
+        "phase": 1.85,
+        "entity_id": "crystal_5"
+      },
+      {
+        "position": [
+          950,
+          328
+        ],
+        "color": [
+          163,
+          117,
+          218
+        ],
+        "radius": 116,
+        "phase": 2.22,
+        "entity_id": "crystal_6"
+      },
+      {
+        "position": [
+          780,
+          623
+        ],
+        "color": [
+          223,
+          172,
+          92
+        ],
+        "radius": 116,
+        "phase": 2.59,
+        "entity_id": "crystal_7"
+      },
+      {
+        "position": [
+          995,
+          638
+        ],
+        "color": [
+          94,
+          201,
+          215
+        ],
+        "radius": 116,
+        "phase": 2.96,
+        "entity_id": "crystal_8"
+      },
+      {
+        "position": [
+          1000,
+          493
+        ],
+        "color": [
+          163,
+          117,
+          218
+        ],
+        "radius": 145,
+        "phase": 3.33,
+        "entity_id": "crystal_9"
+      }
+    ],
+    "pulse_period_ms": 6000,
+    "treasures": [
+      {
+        "id": "cave_keeper_chest",
+        "entity_id": "cave_keeper_chest",
+        "position": [
+          925,
+          660
+        ],
+        "approach": [
+          925,
+          690
+        ],
+        "kind": "chest",
+        "reward_id": "cave_keeper_chest",
+        "label": "Keeper’s storage chest"
+      },
+      {
+        "id": "cave_overlook_cache",
+        "entity_id": "cave_overlook_cache",
+        "position": [
+          440,
+          340
+        ],
+        "approach": [
+          440,
+          370
+        ],
+        "kind": "pack",
+        "reward_id": "cave_overlook_cache",
+        "label": "High shelf cache"
+      }
+    ],
+    "links": [
+      {
+        "id": "entrance",
+        "position": [
+          240,
+          830
+        ],
+        "radius": 24,
+        "destination": "sanctuary_cave_entrance",
+        "landing": [
+          680,
+          220
+        ],
+        "facing": "front",
+        "label": "Return to the Vein Gallery"
+      },
+      {
+        "id": "depths",
+        "position": [
+          950,
+          225
+        ],
+        "radius": 24,
+        "destination": "sanctuary_cave_depths",
+        "landing": [
+          230,
+          715
+        ],
+        "facing": "back",
+        "label": "Continue toward the Echo Chamber"
+      }
+    ],
+    "inspections": [
+      {
+        "id": "keeper_markers",
+        "position": [
+          790,
+          655
+        ],
+        "approach": [
+          790,
+          690
+        ],
+        "radius": 44,
+        "label": "Examine the keeper markers",
+        "text": "The worn markers follow the dry shelf. Their edges have been repaired more than once."
+      }
+    ],
+    "routes": {
+      "main": [
+        [
+          240,
+          785
+        ],
+        [
+          310,
+          760
+        ],
+        [
+          230,
+          650
+        ],
+        [
+          270,
+          520
+        ],
+        [
+          450,
+          400
+        ],
+        [
+          720,
+          325
+        ],
+        [
+          950,
+          225
+        ]
+      ],
+      "keeper": [
+        [
+          310,
+          760
+        ],
+        [
+          570,
+          680
+        ],
+        [
+          875,
+          720
+        ],
+        [
+          1000,
+          650
+        ],
+        [
+          990,
+          510
+        ],
+        [
+          950,
+          360
+        ],
+        [
+          720,
+          325
+        ]
+      ],
+      "overlook": [
+        [
+          450,
+          400
+        ],
+        [
+          440,
+          370
+        ]
+      ]
+    },
+    "review_points": {
+      "splitstone_hollow": [
+        310,
+        760
+      ],
+      "keeper_recess": [
+        875,
+        720
+      ],
+      "deep_gallery": [
+        720,
+        325
+      ]
+    },
+    "encounter_spaces": [
+      {
+        "id": "hollow_future_encounter",
+        "center": [
+          310,
+          700
+        ],
+        "radius": 65
+      }
+    ]
+  }
+}

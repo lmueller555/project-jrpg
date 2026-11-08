@@ -17,6 +17,7 @@ RESERVE_ID = 'elden_vale_sanctuary'
 HALL_ID = 'elden_vale_sanctuary_hall'
 RESERVE_FILE = ROOT/'assets/maps/elden_vale_sanctuary/map.json'
 RESERVE_SCENES = frozenset((RESERVE_ID, HALL_ID))
+CAVE_SCENES = frozenset(('sanctuary_cave_entrance', 'sanctuary_cave_hollow', 'sanctuary_cave_depths'))
 TOWN_EXIT = (516, 1332)
 TOWN_RETURN = (516, 1284)
 TOWN_EXIT_RECT = pygame.Rect(492, 1320, 48, 24)
@@ -52,7 +53,7 @@ class OverworldTravel:
     @property
     def remote(self):
         """Regional exploration keeps borrowed town actors with their owners."""
-        return self.active or self.in_reserve
+        return self.active or self.in_reserve or self.game.world.data.get('id') in CAVE_SCENES
 
     def to_dict(self):
         world = self.game._overworld_world
@@ -106,7 +107,7 @@ class OverworldTravel:
         if not isinstance(data, dict) or not isinstance(data.get('player'), dict):
             return False
         record = data.get('overworld')
-        active = data.get('player', {}).get('scene') in {WORLD_ID, *RESERVE_SCENES}
+        active = data.get('player', {}).get('scene') in {WORLD_ID, *RESERVE_SCENES, *CAVE_SCENES}
         if record is None:
             return not active
         from grain_farm import valid_state

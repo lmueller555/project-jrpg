@@ -8,6 +8,7 @@ from __future__ import annotations
 import pygame
 
 from social import facing_toward
+from overworld_travel import CAVE_SCENES
 
 
 EMERGENCY_STAGES = frozenset((
@@ -151,6 +152,9 @@ class RegentEmergency:
             self._stage_escorts(force=True)
             self._stage_mira()
             self._arrive()
+        elif world.data['id'] in CAVE_SCENES or origin.data['id'] in CAVE_SCENES:
+            self._stage_escorts(force=True)
+            self._stage_mira()
         else:
             self._staged_world = world
 

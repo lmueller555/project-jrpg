@@ -39,8 +39,10 @@ mining rewards.
 
 The new MQ03 emergency journey reaches an arrival checkpoint after exposing
 Aldric's secret crew and its attack. The existing survey art does not stage
-that crew or resolve the new event; the arrival cutscene and cave dungeon
-remain future story work. Growling heard since the bridge incident foreshadows
+that crew or resolve the new event; the arrival cutscene and cave encounters
+remain future story work. The [cave exploration](SANCTUARY_CAVE.md) extends this
+pixel pack with modular underground scenery and wall-clipped crystal lighting.
+Growling heard since the bridge incident foreshadows
 the coming encounter without identifying the creature or establishing a cause.
 
 Local sound respects effects volume, focus, menus and scene changes. Reduced

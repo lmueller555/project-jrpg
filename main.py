@@ -61,6 +61,7 @@ from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
+from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -513,6 +514,7 @@ class Game:
         self.overworld_travel=OverworldTravel(self)
         from sanctuary_reserve import SanctuaryReserve
         self.sanctuary_reserve=SanctuaryReserve(self)
+        self.sanctuary_cave=SanctuaryCave(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_gallery_preview else save_path)
@@ -560,6 +562,7 @@ class Game:
         return json.dumps({'quests':self.quests.to_dict(),
                            'dialogue_flags':sorted(self.social.flags),
                            'inventory':self.inventory.to_dict(),
+                           'sanctuary_cave':self.sanctuary_cave.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'party':self.party.to_dict(),
                            'character_abilities':self.character_abilities.to_dict(),
@@ -629,7 +632,7 @@ class Game:
         def point(value):
             return (isinstance(value,list) and len(value)==2 and
                     all(type(n) in (int,float) and abs(n)<1e7 and math.isfinite(n) for n in value))
-        scene_ids={self.town.data['id'],WORLD_ID,*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
+        scene_ids={self.town.data['id'],WORLD_ID,*CAVE_SCENE_FILES,*self.town.data.get('interior_scenes',{}),*self.town.data.get('exterior_scenes',{})}
         player=data.get('player')
         valid=(type(data.get('version')) is int and data['version']==1 and
                isinstance(player,dict) and isinstance(player.get('scene'),str) and
@@ -642,6 +645,7 @@ class Game:
                all(isinstance(flag,str) and 0<len(flag)<=128 for flag in data['dialogue_flags']) and
                QuestLog().restore(data.get('quests')) and
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
+               SanctuaryCave.valid_journey(data) and
                ('character_attributes' not in data or CharacterAttributes.valid_snapshot(data['character_attributes'])) and
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
@@ -800,6 +804,7 @@ class Game:
         self.overworld_travel.restore(data.get('overworld') if data else None)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.reset()
+        self.sanctuary_cave.restore(data.get('sanctuary_cave') if data else None)
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
@@ -889,6 +894,7 @@ class Game:
         post_battle=self.combat.snapshot()
         data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
+              'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'party':self.party.to_dict(),
               'character_abilities':self.character_abilities.to_dict(),
@@ -1082,7 +1088,10 @@ class Game:
         path=Path(path).resolve()
         if path==REGION_FILE.resolve():return self.overworld_world
         if path not in self.scenes:
-            if path==RESERVE_FILE.resolve():
+            if path in {source.resolve() for source in CAVE_SCENE_FILES.values()}:
+                from sanctuary_cave_world import SanctuaryCaveWorld
+                self.scenes[path]=SanctuaryCaveWorld(path,self.town._images)
+            elif path==RESERVE_FILE.resolve():
                 from elden_vale_sanctuary import SanctuaryReserveWorld
                 self.scenes[path]=SanctuaryReserveWorld(path,self.town._images)
             else:self.scenes[path]=World(path,self.town._images)
@@ -1107,6 +1116,7 @@ class Game:
     def _scene_by_id(self,scene_id):
         if scene_id==self.town.data['id']:return self.town
         if scene_id==WORLD_ID:return self.overworld_world
+        if scene_id in CAVE_SCENE_FILES:return self._load_scene(CAVE_SCENE_FILES[scene_id])
         try:path={**self.town.data.get('interior_scenes',{}),**self.town.data.get('exterior_scenes',{})}[scene_id]
         except KeyError as error:raise ValueError(f'Unknown routine scene: {scene_id}') from error
         return self._load_scene(ROOT/path)
@@ -1310,6 +1320,10 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
+                    if self.sanctuary_cave.interact():
+                        advanced=True
+                        resumed=True
+                        continue
                     reserve=getattr(self,'sanctuary_reserve',None)
                     if reserve is not None and reserve.interact():
                         advanced=True
@@ -1407,7 +1421,7 @@ class Game:
             return
         self.elapsed_ms+=seconds*1000
         self.location_seconds=max(0.0,self.location_seconds-seconds)
-        if not getattr(self.overworld_travel,'in_reserve',False):self.opening.update(seconds)
+        if not (getattr(self.overworld_travel,'in_reserve',False) or self.sanctuary_cave.active):self.opening.update(seconds)
         self.opening_audio.update(seconds)
         if direction is None:
             keys=pygame.key.get_pressed()
@@ -1427,12 +1441,13 @@ class Game:
         if not self.opening.controls_player:
             previous=self.player.position.copy()
             self.player.update(direction,seconds,self.world,bool(running))
-            if (not getattr(self.overworld_travel,'in_reserve',False) and self.world.data.get('kind')=='interior'
+            if (not (getattr(self.overworld_travel,'in_reserve',False) or self.sanctuary_cave.active) and self.world.data.get('kind')=='interior'
                     and self.opening.stage in ('explore','assignment','done')):
                 self.opening.record_footsteps(self.player.position.distance_to(previous))
         if not self.quest_ui.journal_open:self.social.update(direction)
         reserve=getattr(self,'sanctuary_reserve',None)
         if reserve is not None:reserve.update(seconds)
+        self.sanctuary_cave.update(seconds)
         if not getattr(self.overworld_travel,'remote',self.overworld_travel.active):
             for visit in self.household_visits:
                 visit.update(seconds)
@@ -1475,8 +1490,8 @@ class Game:
                 self._progress_signature()!=self._saved_progress):
             self.save_progress()
         self.camera.update(seconds)
-        location=(self.world.data['name'] if self.world is not self.town
-                  else self.world.location(self.player.position))
+        location=(self.world.location(self.player.position)
+                  if self.world is self.town or self.sanctuary_cave.active else self.world.data['name'])
         if location!=self.location_label:
             self.location_label=location
             self.location_seconds=3.5
@@ -1587,8 +1602,10 @@ class Game:
             fade=1.0 if self.audio.reduced_motion else min(1.0,self.location_seconds/.45)
             layer=canvas if fade>=1 else pygame.Surface(canvas.get_size(),pygame.SRCALPHA)
             plaque=self.ui.painter(layer)
-            title='Eldenmere' if self.world is self.town else self.world.data['name']
-            subtitle=self.world.location(self.player.position) if self.world is self.town else ''
+            title=('Eldenmere' if self.world is self.town else
+                   'Sanctuary Cave' if self.sanctuary_cave.active else self.world.data['name'])
+            subtitle=(self.world.location(self.player.position)
+                      if self.world is self.town or self.sanctuary_cave.active else '')
             title_lines=plaque.wrap(title,180,role='name',bold=True)
             subtitle_lines=plaque.wrap(subtitle,180,role='small') if subtitle else []
             title_height=plaque.font('name',bold=True).get_linesize()
@@ -1612,7 +1629,7 @@ class Game:
         display=self.nearby_world_map()
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
-        hint=(hint or self.overworld_travel.interaction_hint() or
+        hint=(hint or self.overworld_travel.interaction_hint() or self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
               self.bed_rest.interaction_hint() or self.opening.interaction_hint() or
               next((hint for visit in self.household_visits
