@@ -15,7 +15,7 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 import pygame
 
 from main import Player, camera_for
@@ -25,7 +25,10 @@ from sanctuary_cave_world import SanctuaryCaveWorld
 ROOT = Path(__file__).resolve().parents[1]
 MAP = ROOT/'assets/maps/limestone_cave_review/map.json'
 PACK = ROOT/'assets/terrain/limestone_cave/assets.json'
+WALL_GEMS = ROOT/'assets/terrain/limestone_cave/wall_gems/assets.json'
+CHAMBER_SOURCE = ROOT/'assets/source/maps/limestone_cave_review/recipe.json'
 REVIEW = ROOT/'docs/reviews/limestone_cave'
+GEM_COLORS = frozenset(('red', 'blue', 'green', 'white', 'orange', 'purple'))
 
 
 def clear_segment(world, first, last):
@@ -46,6 +49,7 @@ class LimestoneCaveReviewTests(unittest.TestCase):
         cls.player.facing = 'front'
         cls.player.moving = False
         cls.pack = json.loads(PACK.read_text())
+        cls.wall_gems = json.loads(WALL_GEMS.read_text())
 
     @classmethod
     def tearDownClass(cls):
@@ -61,6 +65,7 @@ class LimestoneCaveReviewTests(unittest.TestCase):
 
     def test_builds_reproduce_and_native_materials_reference_real_assets(self):
         for builder in ('tools/build_limestone_cave_assets.py',
+                        'tools/build_wall_gems.py',
                         'tools/build_limestone_cave_chamber.py'):
             result = subprocess.run([sys.executable, builder, '--check'], cwd=ROOT,
                                     capture_output=True, text=True, timeout=120)
@@ -70,16 +75,100 @@ class LimestoneCaveReviewTests(unittest.TestCase):
             self.assertGreaterEqual(len(paths), minimum, material)
             for path in paths:
                 with Image.open(ROOT/path) as image:self.assertEqual(image.size, (24, 24))
-        for module in self.pack['modules'].values():
-            for path in module['frames']:
-                with Image.open(ROOT/path) as image:
-                    self.assertEqual(image.size, tuple(module['size']), path)
-        for path, expected in self.pack['inputs'].items():
-            self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
-        for path, expected in self.pack['artifacts'].items():
-            self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+        for manifest in (self.pack, self.wall_gems):
+            for module in manifest['modules'].values():
+                for path in module['frames']:
+                    with Image.open(ROOT/path) as image:
+                        self.assertEqual(image.size, tuple(module['size']), path)
+            for path, expected in manifest['inputs'].items():
+                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+            for path, expected in manifest['artifacts'].items():
+                self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
         for path, expected in self.world.data['build']['source_sha256'].items():
             self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(), expected, path)
+
+    def test_six_gem_colors_are_recessed_in_walls_and_light_the_exposed_floor(self):
+        """A floor obstacle with a gem sprite cannot satisfy embedded wall art."""
+        spec = json.loads(CHAMBER_SOURCE.read_text())
+        floor = Image.new('L', self.world.size)
+        ImageDraw.Draw(floor).polygon([tuple(point) for point in spec['floor_outline']], fill=255)
+        entities = [record for record in self.world.data['entities'] if 'light_index' in record]
+        self.assertTrue(entities)
+        present = set()
+        for entity in entities:
+            with self.subTest(gem=entity['id']):
+                name = entity['source_module']
+                self.assertTrue(name.startswith('wall_gem.'),
+                                'Standing crystal clusters must be replaced by wall gems')
+                module = self.wall_gems['modules'][name]
+                color = module['gem_color']
+                present.add(color)
+                self.assertIn(color, GEM_COLORS)
+                self.assertFalse(module.get('footprints'))
+                self.assertFalse(entity.get('footprint') or entity.get('footprints'),
+                                 'An embedded gem must not become a floor obstacle')
+                x, y = entity['position']
+                ax, ay = module['anchor']
+                anchor = x+ax, y+ay
+                self.assertEqual(floor.getpixel(anchor), 0, 'Gem anchor is on open floor')
+                self.assertEqual(self.world.blocked.get_at(anchor), 1)
+                bx, by, width, height = module['emission_bounds']
+                core = floor.crop((x+bx, y+by, x+bx+width, y+by+height))
+                self.assertLess(np.count_nonzero(np.array(core))/core.width/core.height, .1,
+                                'The gem body projects onto the traversable floor')
+                source = self.world.data['cave']['lights'][entity['light_index']]
+                self.assertEqual(source['color'], module['color'])
+                red, green, blue = source['color']
+                if color == 'red':self.assertGreater(red, max(green, blue))
+                elif color == 'blue':self.assertGreater(blue, max(red, green))
+                elif color == 'green':self.assertGreater(green, max(red, blue))
+                elif color == 'white':
+                    self.assertGreater(min(red, green, blue), 160)
+                    self.assertLess(max(red, green, blue)-min(red, green, blue), 64)
+                elif color == 'orange':
+                    self.assertGreater(red, green)
+                    self.assertGreater(green, blue)
+                    self.assertGreater(green, red*.4)
+                elif color == 'purple':self.assertGreater(min(red, blue), green)
+                self.assertEqual(source.get('entity_id'), entity['id'])
+                self.assertEqual(floor.getpixel(tuple(source['position'])), 255,
+                                 'Wall light must have an exposed floor root')
+                self.assertEqual(self.world.blocked.get_at(tuple(source['position'])), 0)
+        self.assertEqual(present, GEM_COLORS)
+
+    def test_wall_gem_pulse_brightens_facets_without_moving_the_stone_or_silhouette(self):
+        families = set()
+        for name, module in self.wall_gems['modules'].items():
+            with self.subTest(module=name):
+                families.add(module['gem_color'])
+                frames = []
+                for path in module['frames']:
+                    with Image.open(ROOT/path) as image:
+                        frames.append(np.array(image.convert('RGBA')))
+                self.assertEqual(len(frames), 6)
+                alpha = frames[0][:, :, 3]
+                self.assertTrue(set(np.unique(alpha)) <= {0, 255})
+                self.assertTrue(np.any(alpha), 'Gem module cannot be transparent')
+                for frame in frames[1:]:
+                    self.assertTrue(np.array_equal(alpha, frame[:, :, 3]),
+                                    'Pulsing changes the rock silhouette')
+                x, y, width, height = module['emission_bounds']
+                self.assertTrue(0 <= x < x+width <= module['size'][0])
+                self.assertTrue(0 <= y < y+height <= module['size'][1])
+                core = np.zeros(alpha.shape, dtype=bool)
+                core[y:y+height, x:x+width] = True
+                mineral = core & (alpha > 0)
+                self.assertTrue(mineral.any())
+                brightness = [frame[:, :, :3][mineral].mean() for frame in frames]
+                self.assertGreater(brightness[-1], brightness[0]+5,
+                                   'A facet shimmer alone is not a brightness pulse')
+                for first, last in zip(brightness, brightness[1:]):
+                    self.assertGreaterEqual(last, first-.1)
+                stone = ~core & (alpha > 0)
+                for frame in frames[1:]:
+                    self.assertTrue(np.array_equal(frames[0][stone], frame[stone]),
+                                    'Surrounding limestone changes independently of world light')
+        self.assertEqual(families, GEM_COLORS)
 
     def test_every_review_station_and_route_has_a_full_foot_path(self):
         world = self.world

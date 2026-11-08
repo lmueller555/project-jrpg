@@ -65,7 +65,7 @@
     {
       "id": "flowstone_overhang",
       "position": [
-        442,
+        402,
         132
       ],
       "sort_y": 163,
@@ -201,8 +201,8 @@
     {
       "id": "ceiling_pendants",
       "position": [
-        229,
-        154
+        164,
+        169
       ],
       "sort_y": 634,
       "sort_priority": 0,
@@ -231,250 +231,142 @@
       "source_module": "tunnel.north"
     },
     {
-      "id": "entrance_amethyst",
+      "id": "embedded_red",
       "position": [
-        174,
-        445
+        129,
+        177
       ],
-      "sort_y": 480,
+      "sort_y": 197,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 0,
-      "source_module": "crystal.small_fan.amethyst",
-      "footprints": [
-        [
-          186,
-          477,
-          17,
-          7
-        ]
-      ]
+      "source_module": "wall_gem.red.0",
+      "wall_gem_color": "red"
     },
     {
-      "id": "western_cyan",
+      "id": "embedded_blue",
       "position": [
-        167,
-        181
+        245,
+        122
       ],
-      "sort_y": 252,
+      "sort_y": 143,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 1,
-      "source_module": "crystal.medium_fan.cyan",
-      "footprints": [
-        [
-          195,
-          249,
-          17,
-          7
-        ]
-      ]
+      "source_module": "wall_gem.blue.1",
+      "wall_gem_color": "blue"
     },
     {
-      "id": "inset_vein_1",
+      "id": "embedded_green",
       "position": [
-        217,
-        219
+        334,
+        116
       ],
-      "sort_y": 247,
+      "sort_y": 136,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png"
-      ],
-      "frame_duration_ms": 700,
-      "phase_offset": 0,
-      "reduced_motion_frame": 0,
-      "light_index": 1,
-      "source_module": "vein.cyan"
-    },
-    {
-      "id": "central_opal",
-      "position": [
-        348,
-        186
-      ],
-      "sort_y": 221,
-      "sort_priority": 0,
-      "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 2,
-      "source_module": "crystal.small_fan.opal",
-      "footprints": [
-        [
-          360,
-          218,
-          17,
-          7
-        ]
-      ]
+      "source_module": "wall_gem.green.0",
+      "wall_gem_color": "green"
     },
     {
-      "id": "pool_amethyst",
+      "id": "embedded_white",
       "position": [
-        514,
-        203
+        495,
+        122
       ],
-      "sort_y": 266,
+      "sort_y": 143,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 3,
-      "source_module": "crystal.medium_fork.amethyst",
-      "footprints": [
-        [
-          534,
-          263,
-          17,
-          7
-        ]
-      ]
+      "source_module": "wall_gem.white.1",
+      "wall_gem_color": "white"
     },
     {
-      "id": "inset_vein_3",
+      "id": "embedded_orange",
       "position": [
-        556,
-        233
+        579,
+        135
       ],
-      "sort_y": 261,
+      "sort_y": 155,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_05.png"
-      ],
-      "frame_duration_ms": 700,
-      "phase_offset": 0,
-      "reduced_motion_frame": 0,
-      "light_index": 3,
-      "source_module": "vein.amethyst"
-    },
-    {
-      "id": "tunnel_cyan",
-      "position": [
-        742,
-        223
-      ],
-      "sort_y": 258,
-      "sort_priority": 0,
-      "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 4,
-      "source_module": "crystal.small_fan.cyan",
-      "footprints": [
-        [
-          754,
-          255,
-          17,
-          7
-        ]
-      ]
+      "source_module": "wall_gem.orange.0",
+      "wall_gem_color": "orange"
     },
     {
-      "id": "shore_opal",
+      "id": "embedded_purple",
       "position": [
-        711,
-        409
+        625,
+        127
       ],
-      "sort_y": 444,
+      "sort_y": 148,
       "sort_priority": 0,
       "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_05.png"
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png"
       ],
       "frame_duration_ms": 700,
       "phase_offset": 0,
       "reduced_motion_frame": 0,
       "light_index": 5,
-      "source_module": "crystal.small_fan.opal",
-      "footprints": [
-        [
-          723,
-          441,
-          17,
-          7
-        ]
-      ]
-    },
-    {
-      "id": "inset_vein_5",
-      "position": [
-        745,
-        411
-      ],
-      "sort_y": 439,
-      "sort_priority": 0,
-      "frames": [
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_00.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_01.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_02.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_03.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_04.png",
-        "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_05.png"
-      ],
-      "frame_duration_ms": 700,
-      "phase_offset": 0,
-      "reduced_motion_frame": 0,
-      "light_index": 5,
-      "source_module": "vein.opal"
+      "source_module": "wall_gem.purple.1",
+      "wall_gem_color": "purple"
     },
     {
       "id": "pool_reflection",
@@ -547,87 +439,93 @@
     "lights": [
       {
         "position": [
-          210,
-          490
+          150,
+          249
         ],
         "color": [
-          163,
-          117,
-          218
+          245,
+          76,
+          65
         ],
-        "radius": 145,
+        "radius": 160,
         "phase": 0.0,
-        "entity_id": "entrance_amethyst"
+        "entity_id": "embedded_red",
+        "gain": 0.9
       },
       {
         "position": [
-          220,
-          273
+          270,
+          195
         ],
         "color": [
-          94,
-          201,
-          215
+          66,
+          124,
+          250
         ],
-        "radius": 180,
-        "phase": 0.15,
-        "entity_id": "western_cyan"
+        "radius": 185,
+        "phase": 0.18,
+        "entity_id": "embedded_blue",
+        "gain": 0.9
       },
       {
         "position": [
-          368,
-          240
+          355,
+          188
         ],
         "color": [
-          197,
-          221,
-          216
+          73,
+          222,
+          104
         ],
-        "radius": 150,
-        "phase": 0.3,
-        "entity_id": "central_opal"
+        "radius": 185,
+        "phase": 0.36,
+        "entity_id": "embedded_green",
+        "gain": 0.9
       },
       {
         "position": [
-          537,
-          284
+          520,
+          195
         ],
         "color": [
-          163,
-          117,
-          218
+          231,
+          235,
+          231
         ],
-        "radius": 190,
-        "phase": 0.2,
-        "entity_id": "pool_amethyst"
+        "radius": 185,
+        "phase": 0.54,
+        "entity_id": "embedded_white",
+        "gain": 0.9
       },
       {
         "position": [
-          742,
-          279
+          600,
+          207
         ],
         "color": [
-          94,
-          201,
-          215
+          255,
+          139,
+          45
         ],
-        "radius": 155,
-        "phase": 0.0,
-        "entity_id": "tunnel_cyan"
+        "radius": 160,
+        "phase": 0.72,
+        "entity_id": "embedded_orange",
+        "gain": 0.9
       },
       {
         "position": [
-          710,
-          453
+          650,
+          200
         ],
         "color": [
-          197,
-          221,
-          216
+          183,
+          103,
+          239
         ],
-        "radius": 150,
-        "phase": 0.3,
-        "entity_id": "shore_opal"
+        "radius": 160,
+        "phase": 0.9,
+        "entity_id": "embedded_purple",
+        "gain": 0.9
       },
       {
         "position": [
@@ -644,6 +542,122 @@
       }
     ],
     "pulse_period_ms": 6000,
+    "wall_gems": [
+      {
+        "id": "embedded_red",
+        "entity_id": "embedded_red",
+        "color": "red",
+        "position": [
+          150,
+          197
+        ],
+        "light_position": [
+          150,
+          249
+        ],
+        "emission_bounds": [
+          142,
+          186,
+          17,
+          21
+        ]
+      },
+      {
+        "id": "embedded_blue",
+        "entity_id": "embedded_blue",
+        "color": "blue",
+        "position": [
+          270,
+          143
+        ],
+        "light_position": [
+          270,
+          195
+        ],
+        "emission_bounds": [
+          258,
+          133,
+          24,
+          19
+        ]
+      },
+      {
+        "id": "embedded_green",
+        "entity_id": "embedded_green",
+        "color": "green",
+        "position": [
+          355,
+          136
+        ],
+        "light_position": [
+          355,
+          188
+        ],
+        "emission_bounds": [
+          347,
+          125,
+          17,
+          21
+        ]
+      },
+      {
+        "id": "embedded_white",
+        "entity_id": "embedded_white",
+        "color": "white",
+        "position": [
+          520,
+          143
+        ],
+        "light_position": [
+          520,
+          195
+        ],
+        "emission_bounds": [
+          508,
+          133,
+          24,
+          19
+        ]
+      },
+      {
+        "id": "embedded_orange",
+        "entity_id": "embedded_orange",
+        "color": "orange",
+        "position": [
+          600,
+          155
+        ],
+        "light_position": [
+          600,
+          207
+        ],
+        "emission_bounds": [
+          592,
+          144,
+          17,
+          21
+        ]
+      },
+      {
+        "id": "embedded_purple",
+        "entity_id": "embedded_purple",
+        "color": "purple",
+        "position": [
+          650,
+          148
+        ],
+        "light_position": [
+          650,
+          200
+        ],
+        "emission_bounds": [
+          638,
+          138,
+          24,
+          19
+        ]
+      }
+    ],
     "review_points": {
       "entrance_earth": [
         240,
@@ -684,6 +698,14 @@
       "pulse": [
         430,
         255
+      ],
+      "wall_gems_west": [
+        245,
+        260
+      ],
+      "wall_gems_east": [
+        580,
+        235
       ]
     },
     "routes": {
@@ -895,7 +917,7 @@
     "tool": "tools/build_limestone_cave_chamber.py",
     "source_recipe": "assets/source/maps/limestone_cave_review/recipe.json",
     "source_sha256": {
-      "assets/source/maps/limestone_cave_review/recipe.json": "132b3612408b454fefc9e793ef147cfcacf3f5dcf8bfe854fa5be6fd072b610e",
+      "assets/source/maps/limestone_cave_review/recipe.json": "ab42be8126ad587e231046e430466869c07eb89cf048d149c179cb95263a0e8a",
       "assets/terrain/eldenmere/sanctuary_charm/props/flagstones.png": "070b1dcf324f7cfa8a66018825c95ab99c79b8a58fc413befaffe0c8541f7948",
       "assets/terrain/limestone_cave/assets.json": "065f249554218a189d0aae69df195ae60662095e6d672c789504545971ae76a4",
       "assets/terrain/limestone_cave/modules/formation/boulder/0.png": "f569f64831fa397716f389678cb7716d96941ae6fa56ece872276e8f06bb3328",
@@ -951,55 +973,43 @@
       "assets/terrain/limestone_cave/tiles/silt_01.png": "8c2b5857c993baa62719c573adc6324e15fcddb4708ddd39e370299950baecd3",
       "assets/terrain/limestone_cave/tiles/silt_02.png": "677bdb40136a03d495bf052069d64b42ba54c05e066b2f7849717c715400dd7c",
       "assets/terrain/limestone_cave/tiles/silt_03.png": "73c284e98cd206433853bcec12e19bd7a595c0ac5c952ab5085a415eafacbae6",
-      "assets/terrain/sanctuary_fantasy/crystals/assets.json": "2643e565f84d453d7447628a5e3bfff8c7cf6877a4de109c7a574189a1a880c3",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_00.png": "d507fe88af9e1aa98ba95f05c898b36f29b4a6d8a38b1c5c46e570ab065dcde4",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_01.png": "bb8ffe81c05e7fa60b495cbf114bbefd645e7393616f604f4165f1b10a5d06bd",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_02.png": "b63f6daee6111debb7afaf2364d3fb995eebe6585fe65ad46d2449c9f4e218e1",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_03.png": "58f675b960139f7f1caaa8c39cf554ee058003f46eb6c7485904f57c08512a10",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_04.png": "2f1e16b96a0e476ca1ebeb82e628479cd62539966710d12a188d16d841e15150",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fan/cyan/frame_05.png": "0e551d2209cccb65657847050633080d241c8f36b6a94ee6cce30bcfcdfb1a94",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_00.png": "3d6274b7ec0e532fd7e726d7d5603b1660fe26a88dce91986b495cef96cc5c1a",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_01.png": "9bc2bc9637667eef79f6ca6f5b405cf36531bea92b37f479395652f8ff99a197",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_02.png": "cd1b8519a06f99d123de3865afda357ed7e89e8286afa7f72e827d6b65ad84a3",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_03.png": "31fb9cf3462679b73fd1900a341d430646e11e17ca0c0e37243c840426c78cd2",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_04.png": "905b3ac843eaf6f6acb7a7a74fcd6e04435e35e1091c686842d20f037b198b59",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/medium_fork/amethyst/frame_05.png": "1d317194eccf078ca460e9b7604a5ba132b6696eb38fb4d1fe77c1e101294502",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_00.png": "e482562c4401a8d20165576fae437a3457c3f982ed1cf1856408849416adae3e",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_01.png": "0095de304ce0a66089778e589641337c5e900ae7e4afac62c4106356959d2f46",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_02.png": "9d285aa67b8607bfeef4138676212f826bbfdcc7eec4defa2dd565599f1ea276",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_03.png": "a6eb6000af28e7eefa27b5ee892b71370d1827816b4593963442a2e6a3d6973d",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_04.png": "795e7beb81fb231ff98901366e81aa43b4c865f566b2fc7796d424f53321dc7f",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/amethyst/frame_05.png": "408754eca3d5010c2807251e8de1fbb3edf2276a6866bdd4042940d36b75ab9d",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_00.png": "6ee5402715f2620d4ada50248cfeac817feaa92311a683f32b5f97f90c254933",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_01.png": "dcb083d63e55720bebb6fe31b415485752cb5d9120c1b29d629eb706f8cfa753",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_02.png": "95405526da77e97d63c062eff1e1b0ea31d2eb50ac4bfc16d2096b54d6125d2d",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_03.png": "1bbffade56053fc61ebe52360df198b2a11e66dfc838e3560f96d5dba27a0c88",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_04.png": "03368b97df13215b9e07680f781ae0bdeceb78f57b322851d923fb7ac8c2fc94",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/cyan/frame_05.png": "fa08957d172c623b65780f1fe148993ab777ee8377e7f85fc60a077cd50e1531",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_00.png": "ab73a4cf994ae61adf1ed0c57c8b3ac16f7e99690034c04c99b686fa9fee64d1",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_01.png": "cd8d0431b3429b82183acc4450afa18240ff0859ad46250efc4367c87628df58",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_02.png": "5b6657616c5a57ed183edbad56c968989625589dd46f880d289891a2d0809d97",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_03.png": "8a469d93c5d6c6d79bfbd5eee5a18bc5b5b981dc115249788bfebb09994899f4",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_04.png": "a26c4496803306b8c876805e27db73372575388bdb1d5564ed32d23eaaca622a",
-      "assets/terrain/sanctuary_fantasy/crystals/crystal/small_fan/opal/frame_05.png": "ee3628ec3cae430589c95556cbc32531c13f2e23b556f22c49cf64869edd6c43",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_00.png": "f246bb29c1f20ae563ebe964bb0fbda19295ded8bf6a17681623bcc83a2d70d5",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_01.png": "328ee007b7c84c24efb109dd35345b182e6c4ab1912ff5b0d51f784f62d2a09c",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_02.png": "8f9f59e9c0cc0d4db164d7c7924c67096c3c5a8490d13ff1d49ca9997c3776ee",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_03.png": "f246bb29c1f20ae563ebe964bb0fbda19295ded8bf6a17681623bcc83a2d70d5",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_04.png": "328ee007b7c84c24efb109dd35345b182e6c4ab1912ff5b0d51f784f62d2a09c",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/amethyst/frame_05.png": "8f9f59e9c0cc0d4db164d7c7924c67096c3c5a8490d13ff1d49ca9997c3776ee",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_00.png": "197e7651e32ffa9e3a63a422c5ad521b8765b083d8f1a8037a8366240d6c249c",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_01.png": "cebb283c592113c0b28ac4e30490ec1f6acb3c383a9dfa7db6ad05583e74f473",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_02.png": "cc693e495480f4f9b593846c970e524c293d293fb13cb93bb1f607428fb57273",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_03.png": "197e7651e32ffa9e3a63a422c5ad521b8765b083d8f1a8037a8366240d6c249c",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_04.png": "cebb283c592113c0b28ac4e30490ec1f6acb3c383a9dfa7db6ad05583e74f473",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/cyan/frame_05.png": "cc693e495480f4f9b593846c970e524c293d293fb13cb93bb1f607428fb57273",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_00.png": "fb388812d3d06fac93d3355cee58878234b4f2d30be445c9ec34bac487889cf4",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_01.png": "2e3ea76235edb5ac6e51e9a43435584a5795594592cd3ab9f8fe678702f2ce95",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_02.png": "71f487d8f9df255e978f842f86489d09e9de1a3e5eff556795da1022956374ba",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_03.png": "fb388812d3d06fac93d3355cee58878234b4f2d30be445c9ec34bac487889cf4",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_04.png": "2e3ea76235edb5ac6e51e9a43435584a5795594592cd3ab9f8fe678702f2ce95",
-      "assets/terrain/sanctuary_fantasy/crystals/vein/opal/frame_05.png": "71f487d8f9df255e978f842f86489d09e9de1a3e5eff556795da1022956374ba"
+      "assets/terrain/limestone_cave/wall_gems/assets.json": "428b3a48e91752db4df87535fab82c8b714ce6cdbf562309dd86682a894758a5",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png": "fe6e725b197e5a378a8412c8b0af4fc0197b6477d29a79224c67cadff0ffe057",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png": "9b28ed01a0dc4850443f0e9807483a0cde1421c419234ce4cbd0176b2a111d68",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png": "bbcc14dcabd5ef1fd44580af3f56e20ae232dd4db87fb1c1cea44ab3d00845d2",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png": "4899e23c5f3c2e6f5094e702acec4d6bcb760d9bbed00951aae171db4731cf23",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png": "8a9916b972587fbcbe6ad15abf2fd46c1dee2be5a87dffabc636f4151e553e5d",
+      "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png": "4cb20800d599cf8f79ba27706fce1c65df22e972c5ca66863d7ddf4571a1f871",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png": "38308ed48d92f37d2642d0c8dc8767eb51f96d1d0abfebbb063b80a944463a47",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png": "6170676c069c8fd97c6e544f197004a769e3684a8b781ba6eeb6bcfa642e096e",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png": "4a672d657fbfe1b642bf6d2e75e98a99f6136adec3e2183d98d6fe883dd7148c",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png": "a13c08a62a9a6a3f85521b3d11cdb7ff4ee0d7ec7998ecd2d3dc64e2a6b91632",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png": "c76d43ff8b38e49c7c970ef4d6e3261b78b5e5793101d9bca4081a32011bd6c8",
+      "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png": "adb4067eb33dff1ca1d15b597aa2bec9045d77258003ccccf5b18b6f24df39b4",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png": "e18157a10bf930f26495d025d942204d5b940e897ad5a679ef7f139a28195bd9",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png": "92776de56273c5beb1a4ef6bbf3426368da8ca25681faa8aef676c00d7f0788b",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png": "8630a8f3d8b3d5558364f89333bfa63fbca0467f82ce8c739524c51a089cbe22",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png": "bef94f940924921b325a723711e6d031f7dd173e1bbeffcb7de0587426b47843",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png": "af96b71fb5ca02c2957d78b259505fdcebc0437ea782090ef4bb038265df1b1e",
+      "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png": "9f923621fb0c51e934f45cf1f4236fd0a50a10ca7611fa57622670ba19c2ca2e",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png": "499e5896e1de31ecd695e84b353ab4dc6551b6d9a1431346262c6318d0e6f401",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png": "309eb22b9150c741ce0b3c56723132874521ef0c53d9830377e1f9d67f2ff109",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png": "3295143dd1f1114950a2d76e88c9f13f21b4b5bd5909cf8458322941fede8fc5",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png": "45f9295aaf76dba410cc4fd99452e6c0c32b643828cf8728ac398853c1a162b7",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png": "fa4523422014b79f6fabd0181c1bb757d6f307a81ab2cb0437279e307bb031a9",
+      "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png": "19e4ea1799edc5d749fe8fa48cd32a48595dd9a34db3f5204ef3f8d21d39557a",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png": "126e73d5a57a9cce6905e6adbbb5146107dbc581ed58374aa51ac19b5be4d0c3",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png": "23afe8627f2bbf2c0cf88b224652bdeae68c418abc5cf8ee55ec7766837d30ce",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png": "f149499f5ca150d4731d07aefa2920063f0cb7e390481127162e4497c337b360",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png": "e6ea5401b95993d477b6473e5243e895831e3649671e08fa14dca31d3398ea4e",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png": "0d7dc154f7c0d961bbab5adc74fe3716311f1020b13b9f504d43c1f6e67e4707",
+      "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png": "2c54fba7190939688d5a07abe8bcec0a1931d0bf224a9a413d41bdde8165a68d",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png": "47cfbbcc5d9dcd80617c9c24c5e230db2f05804afcf05fd2c622433527723a76",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png": "18780698086a9e19b5f2e4919313c76bd6764a723c36bc90e79508e4fe8fd92b",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png": "293d9dfb053227d89f2097e19a978ab5baeddcb3fc9f5616801ea2a7a5c35b25",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png": "a36c25cde4e693188f1af50df425ed77d8f2fa6fbc5e782d4fba971f01ba28cd",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png": "2de3a63b0945082a22c3da7fcc480fcab09f810a62d96d9d509b9c526321ef0e",
+      "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png": "ca84228a643c0f23e07eef551ada608dc00a3d827c4eb32c511cac50ed8cc375"
     }
   }
 }

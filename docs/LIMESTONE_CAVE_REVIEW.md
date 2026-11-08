@@ -5,13 +5,14 @@ the live cave and is not merged into main.**
 
 The review develops the Sanctuary's existing natural stone into a cave pack:
 neutral grey and taupe limestone, pale calcite edges, damp teal staining and
-irregular mineral strata. The cyan, amethyst, opal and amber crystal formations
-retain their existing palettes. Their environmental illumination supplies the
-strong colored light rather than baking it into every stone tile.
+irregular mineral strata. Red, blue, green, white, orange and purple gems sit
+inside chipped recesses in the cave walls. Their facets pulse with the colored
+light cast across the surrounding stone and floor. The gems are embedded
+minerals rather than standing crystal clusters on the ground.
 
 The pack contains dry limestone, damp stone, gravel and silt, larger material
 patches, natural wall faces and returns, erosion pockets, overhangs, wet shores,
-crystal sockets and varied formations. Its 24-pixel grid and character scale
+gem recesses and varied formations. Its 24-pixel grid and character scale
 match the Sanctuary and Eldenmere. Keeper paving is a restrained trace of care
 within the natural chamber.
 
@@ -46,13 +47,17 @@ story remain unchanged while this material direction is reviewed.
 The authoritative pack recipe is
 `assets/source/terrain/limestone_cave/recipe.json`; the chamber recipe is
 `assets/source/maps/limestone_cave_review/recipe.json`.
+The embedded gem supplement has its own authoritative recipe at
+`assets/source/terrain/limestone_cave/wall_gems.json`.
 The exported pack manifest records native module sizes, anchors, footprints
 and source provenance. Both builders support deterministic read-only checks.
 
 ```sh
 python tools/build_limestone_cave_assets.py
+python tools/build_wall_gems.py
 python tools/build_limestone_cave_chamber.py
 python tools/build_limestone_cave_assets.py --check
+python tools/build_wall_gems.py --check
 python tools/build_limestone_cave_chamber.py --check
 python tools/capture_limestone_cave.py
 python tools/capture_limestone_cave.py --check
@@ -67,3 +72,5 @@ chamber, material comparison, pulse and walkthrough. The
 compares the proposed modules with the regional stone sources and Caelan.
 The [regional comparison](../assets/terrain/limestone_cave/regional_comparison.png)
 places the new limestone alongside the approved Sanctuary and Eldenmere stone.
+The [embedded gem board](../assets/terrain/limestone_cave/wall_gems/colors_review.png)
+shows the six requested colors and their native sprite variants.

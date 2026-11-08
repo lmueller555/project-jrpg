@@ -20,8 +20,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/maps/limestone_cave_review/recipe.json'
 OUTPUT = ROOT/'assets/maps/limestone_cave_review'
 TILE = 24
-COLORS = {'cyan':[94,201,215], 'amethyst':[163,117,218],
-          'opal':[197,221,216], 'amber':[223,172,92]}
 
 
 def encoded(image):
@@ -47,7 +45,7 @@ def products():
         return path
 
     pack = read(spec['asset_manifest'])
-    crystals = read(spec['crystal_manifest'])
+    gems = read(spec['wall_gem_manifest'])
     width, height = (n*TILE for n in spec['size_tiles'])
     rng = random.Random(spec['seed'])
     materials = {name:[opened(path) for path in record['tiles']]
@@ -148,18 +146,27 @@ def products():
     rec['sort_y']=spec['tunnel']['position'][1]-10
     paving=opened(spec['keeper_paving']['image'])
     for pos in spec['keeper_paving']['positions']:ground.alpha_composite(paving,tuple(pos))
-    lights=[]
-    for index,item in enumerate(spec['crystals']):
-        record=crystals['modules'][item['module']];image=opened(record['frames'][0])
-        rec,pos=entity(item['id'],record,image,item['position'],light_index=index,source_module=item['module'])
-        color=item['module'].split('.')[-1]
-        lights.append({'position':item['light_position'],'color':COLORS[color],
-                       'radius':item['radius'],'phase':item['phase'],'entity_id':item['id']})
-        x,y=item['position'];ImageDraw.Draw(collision).rectangle((x-8,y-3,x+8,y+3),fill=255)
-        rec['footprints']=[[x-8,y-3,17,7]]
-        if index in (1,3,5):
-            vein=crystals['modules']['vein.'+color];vi=opened(vein['frames'][0])
-            entity('inset_vein_'+str(index),vein,vi,[x+38,y-5],light_index=index,source_module='vein.'+color)
+    lights=[];wall_gems=[]
+    for index,item in enumerate(spec['wall_gems']):
+        record=gems['modules'][item['module']];image=opened(record['frames'][0])
+        rec,pos=entity(item['id'],record,image,item['position'],light_index=index,
+                       source_module=item['module'],wall_gem_color=item['color'])
+        # The gem's center and emitting facets sit inside existing solid rock.
+        # Its exposed floor root supplies the wall-clipped environment light;
+        # the gem itself never introduces a new obstacle on the walking floor.
+        ex,ey,ew,eh=record['emission_bounds']
+        for x in range(pos[0]+ex,pos[0]+ex+ew):
+            for y in range(pos[1]+ey,pos[1]+ey+eh):
+                if floor.getpixel((x,y)):
+                    raise ValueError('Gem must be embedded in the wall: '+item['id'])
+        root=tuple(item['light_position'])
+        if collision.getpixel(root):raise ValueError('Blocked wall-gem light root: '+item['id'])
+        lights.append({'position':item['light_position'],'color':record['color'],
+                       'radius':item['radius'],'phase':item['phase'],'entity_id':item['id'],
+                       'gain':item.get('gain',.9)})
+        wall_gems.append({'id':item['id'],'entity_id':item['id'],'color':item['color'],
+                          'position':item['position'],'light_position':item['light_position'],
+                          'emission_bounds':[pos[0]+ex,pos[1]+ey,ew,eh]})
     # A faint steady entrance wash relates the warm stone to the exterior.
     lights.append({'position':[240,532],'color':[201,195,157],'radius':150,'steady':True})
 
@@ -174,9 +181,11 @@ def products():
             yy=7+(line*9+phase*2)%(local.height-14)
             xx=local.width//2+round(math.sin(line*1.7+phase*.13)*local.width*.31)
             rd.line((xx-6,yy,xx+4+(line%3)*3,yy),fill=(137,192,180,45+(line%4)*14))
+        # Broken reflections pick up the nearby orange and purple wall gems.
         for line in range(11):
             yy=16+line*7;xx=55+round(math.sin(line*1.4+phase*.5)*5)
-            rd.line((xx-5+line//3,yy,xx+7+line//3,yy),fill=(170,147,209,85-line*4))
+            tint=(210,150,91) if line%2 else (170,133,215)
+            rd.line((xx-5+line//3,yy,xx+7+line//3,yy),fill=(*tint,85-line*4))
         reflection.putalpha(ImageChops.multiply(reflection.getchannel('A'),local))
         water_frames.append(emit(f'water/frame_{phase:02}.png',reflection))
     entities.append({'id':'pool_reflection','position':list(water_box[:2]),
@@ -203,6 +212,7 @@ def products():
           'entities':entities,'foreground':[],'doors':[],'npcs':[],
           'landmarks':spec['landmarks'],
           'cave':{'ambient':[112,119,127],'lights':lights,'pulse_period_ms':6000,
+                  'wall_gems':wall_gems,
                   'review_points':spec['review_points'],'routes':spec['routes'],
                   'review_checks':checks,'treasures':[],'links':[]},
           'build':{'tool':'tools/build_limestone_cave_chamber.py',

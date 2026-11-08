@@ -1,0 +1,910 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.wall_gems",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "pulse_frames": 6,
+  "colors": {
+    "red": {
+      "label": "Red",
+      "light": [
+        245,
+        76,
+        65
+      ],
+      "deep": [
+        80,
+        20,
+        28
+      ],
+      "mid": [
+        190,
+        42,
+        47
+      ],
+      "bright": [
+        242,
+        84,
+        73
+      ],
+      "glint": [
+        255,
+        177,
+        153
+      ]
+    },
+    "blue": {
+      "label": "Blue",
+      "light": [
+        66,
+        124,
+        250
+      ],
+      "deep": [
+        20,
+        34,
+        92
+      ],
+      "mid": [
+        44,
+        89,
+        201
+      ],
+      "bright": [
+        82,
+        143,
+        249
+      ],
+      "glint": [
+        169,
+        208,
+        255
+      ]
+    },
+    "green": {
+      "label": "Green",
+      "light": [
+        73,
+        222,
+        104
+      ],
+      "deep": [
+        20,
+        69,
+        37
+      ],
+      "mid": [
+        42,
+        163,
+        72
+      ],
+      "bright": [
+        91,
+        222,
+        113
+      ],
+      "glint": [
+        177,
+        255,
+        183
+      ]
+    },
+    "white": {
+      "label": "White",
+      "light": [
+        231,
+        235,
+        231
+      ],
+      "deep": [
+        66,
+        81,
+        86
+      ],
+      "mid": [
+        163,
+        178,
+        177
+      ],
+      "bright": [
+        224,
+        232,
+        226
+      ],
+      "glint": [
+        255,
+        255,
+        246
+      ]
+    },
+    "orange": {
+      "label": "Orange",
+      "light": [
+        255,
+        139,
+        45
+      ],
+      "deep": [
+        96,
+        41,
+        17
+      ],
+      "mid": [
+        215,
+        103,
+        28
+      ],
+      "bright": [
+        255,
+        158,
+        48
+      ],
+      "glint": [
+        255,
+        220,
+        137
+      ]
+    },
+    "purple": {
+      "label": "Purple",
+      "light": [
+        183,
+        103,
+        239
+      ],
+      "deep": [
+        56,
+        25,
+        90
+      ],
+      "mid": [
+        134,
+        62,
+        192
+      ],
+      "bright": [
+        189,
+        116,
+        240
+      ],
+      "glint": [
+        232,
+        190,
+        255
+      ]
+    }
+  },
+  "source_recipe": "assets/source/terrain/limestone_cave/wall_gems.json",
+  "modules": {
+    "wall_gem.red.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        245,
+        76,
+        65
+      ],
+      "gem_color": "red",
+      "label": "Red",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.red.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        245,
+        76,
+        65
+      ],
+      "gem_color": "red",
+      "label": "Red",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.red.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        245,
+        76,
+        65
+      ],
+      "gem_color": "red",
+      "label": "Red",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.blue.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        66,
+        124,
+        250
+      ],
+      "gem_color": "blue",
+      "label": "Blue",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.blue.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        66,
+        124,
+        250
+      ],
+      "gem_color": "blue",
+      "label": "Blue",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.blue.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        66,
+        124,
+        250
+      ],
+      "gem_color": "blue",
+      "label": "Blue",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.green.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        73,
+        222,
+        104
+      ],
+      "gem_color": "green",
+      "label": "Green",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.green.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        73,
+        222,
+        104
+      ],
+      "gem_color": "green",
+      "label": "Green",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.green.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        73,
+        222,
+        104
+      ],
+      "gem_color": "green",
+      "label": "Green",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.white.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        231,
+        235,
+        231
+      ],
+      "gem_color": "white",
+      "label": "White",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.white.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        231,
+        235,
+        231
+      ],
+      "gem_color": "white",
+      "label": "White",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.white.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        231,
+        235,
+        231
+      ],
+      "gem_color": "white",
+      "label": "White",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.orange.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        255,
+        139,
+        45
+      ],
+      "gem_color": "orange",
+      "label": "Orange",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.orange.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        255,
+        139,
+        45
+      ],
+      "gem_color": "orange",
+      "label": "Orange",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.orange.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        255,
+        139,
+        45
+      ],
+      "gem_color": "orange",
+      "label": "Orange",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.purple.0": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_05.png"
+      ],
+      "size": [
+        40,
+        40
+      ],
+      "anchor": [
+        21,
+        20
+      ],
+      "color": [
+        183,
+        103,
+        239
+      ],
+      "gem_color": "purple",
+      "label": "Purple",
+      "emission_bounds": [
+        13,
+        9,
+        17,
+        21
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.purple.1": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png"
+      ],
+      "size": [
+        48,
+        40
+      ],
+      "anchor": [
+        25,
+        21
+      ],
+      "color": [
+        183,
+        103,
+        239
+      ],
+      "gem_color": "purple",
+      "label": "Purple",
+      "emission_bounds": [
+        13,
+        11,
+        24,
+        19
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    },
+    "wall_gem.purple.2": {
+      "frames": [
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_00.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_01.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_02.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_03.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_04.png",
+        "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_05.png"
+      ],
+      "size": [
+        56,
+        48
+      ],
+      "anchor": [
+        29,
+        24
+      ],
+      "color": [
+        183,
+        103,
+        239
+      ],
+      "gem_color": "purple",
+      "label": "Purple",
+      "emission_bounds": [
+        17,
+        10,
+        25,
+        27
+      ],
+      "footprints": [],
+      "mount": "embedded_wall",
+      "pulse_frames": 6
+    }
+  },
+  "inputs": {
+    "assets/source/terrain/limestone_cave/wall_gems.json": "895ce3fd5d804a6354242c4b9aa8febe42ca57066983cbe847bc9204983aa37c",
+    "assets/terrain/limestone_cave/modules/wall/front/0.png": "5c78537301f227f57308147d3b655ebe3f5521913da981efedb8a717eb3d4bd7",
+    "assets/source/terrain/limestone_cave/recipe.json": "6dc38d048731b04a4ba9f8c9f83b7ef100c0ac24549e410543d12c61e1f4a295",
+    "assets/characters/caelan/idle_front.png": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+  },
+  "artifacts": {
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_00.png": "126e73d5a57a9cce6905e6adbbb5146107dbc581ed58374aa51ac19b5be4d0c3",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_01.png": "23afe8627f2bbf2c0cf88b224652bdeae68c418abc5cf8ee55ec7766837d30ce",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_02.png": "f149499f5ca150d4731d07aefa2920063f0cb7e390481127162e4497c337b360",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_03.png": "e6ea5401b95993d477b6473e5243e895831e3649671e08fa14dca31d3398ea4e",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_04.png": "0d7dc154f7c0d961bbab5adc74fe3716311f1020b13b9f504d43c1f6e67e4707",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_0/frame_05.png": "2c54fba7190939688d5a07abe8bcec0a1931d0bf224a9a413d41bdde8165a68d",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_00.png": "b54d9cbfc82a5dec77ea395fa061194e0988bc113bfdc6824a7f3a4f8887d3dd",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_01.png": "f61f1e68c0b3673cb79007a9eb8b0ffab96333277ce1f9dc430b93b4aa2a05b2",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_02.png": "7bcbb9de1ff557c61e5945ad626df6f3b8e1f041119a1e99f1cfa8473095f959",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_03.png": "ba153ce1b45962823734f90e946d2afe4dfd8398bedbd10d550f2b221f2877b8",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_04.png": "32d7a471d3e2dff1b2fd74865bd80c98488e100f23ae6645cdb72d946bea4f59",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_1/frame_05.png": "fad24037e7f81108b241abedb3462fd004971efe68ae9c1faab41b6a2bc10240",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_00.png": "6c314e6a2c9ec91c00107b720af0e85249b1e2fb4c686e4653426714873acbbd",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_01.png": "e0f4eb1643bd18b1679b77121e81eb13903da814c63f39b622cd2b28fb0ce921",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_02.png": "8f0ada82ee27b404a38a1d5e1a55a7eef6fa3349c896282c00c86252b89e8996",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_03.png": "a88452ea71f803f14946d48b2f49d73ba72ac231428bbf13f1388194b3bd11d6",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_04.png": "fc15298a971e4f4bc912096a1c5d1812e31d0bc43475244570e4af7918e4251c",
+    "assets/terrain/limestone_cave/wall_gems/red/variant_2/frame_05.png": "a85382fab5aa692f3a098e7f147d0cf29f76e810465a1baad016487a48404e6e",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_00.png": "18c85f82773fe05a0c84e654ab8548f90e6603fbbeace2fc07b54e391c1aa717",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_01.png": "1706993fe94d1c0fd86bcf18a7b3efb40d88c7ffc6f0a8ad6bff4f14a8744e08",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_02.png": "e98768c04f1861360ca83adcff7f9a1eeb0cfde0566fe55d18009f9657840df5",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_03.png": "92bcd35642214ae4a8e678c79d1eec2ae470d662d59b886ed31de70f124a576a",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_04.png": "6b22a1e60e9bca3ac023374b12bb8f82e9abdfef8e2851cc4793661b2af5911d",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_0/frame_05.png": "f5bd4b7e23e39fadc4e3ca98d274bb94c004c54abd7263ed99e420f9249e6961",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_00.png": "fe6e725b197e5a378a8412c8b0af4fc0197b6477d29a79224c67cadff0ffe057",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_01.png": "9b28ed01a0dc4850443f0e9807483a0cde1421c419234ce4cbd0176b2a111d68",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_02.png": "bbcc14dcabd5ef1fd44580af3f56e20ae232dd4db87fb1c1cea44ab3d00845d2",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_03.png": "4899e23c5f3c2e6f5094e702acec4d6bcb760d9bbed00951aae171db4731cf23",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_04.png": "8a9916b972587fbcbe6ad15abf2fd46c1dee2be5a87dffabc636f4151e553e5d",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_1/frame_05.png": "4cb20800d599cf8f79ba27706fce1c65df22e972c5ca66863d7ddf4571a1f871",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_00.png": "f21def6df1526653d5e7514f62cb4c76f29a9d2d86849f39d9eb3ca0c36cf5f8",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_01.png": "7eaaa8594f0656506214847df51213f15a2d8974ccf4d85f4cf9bffb16cc2b58",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_02.png": "04bbec8af6a3af83f1f9674530e921b54f3e64240a0630f2e1316b0ec17e9365",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_03.png": "4addb926cc7537ec81b96d18a3b058494f87688518d2aa74285f8b941b326e09",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_04.png": "22c0957b55e4f231521f66120142c342dd5b8ac6b298afd3513e18ce17871aa1",
+    "assets/terrain/limestone_cave/wall_gems/blue/variant_2/frame_05.png": "108df34c04d8994e28d85798b1df9366c34e4ec80856967ea93cba76d6471b08",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_00.png": "38308ed48d92f37d2642d0c8dc8767eb51f96d1d0abfebbb063b80a944463a47",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_01.png": "6170676c069c8fd97c6e544f197004a769e3684a8b781ba6eeb6bcfa642e096e",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_02.png": "4a672d657fbfe1b642bf6d2e75e98a99f6136adec3e2183d98d6fe883dd7148c",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_03.png": "a13c08a62a9a6a3f85521b3d11cdb7ff4ee0d7ec7998ecd2d3dc64e2a6b91632",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_04.png": "c76d43ff8b38e49c7c970ef4d6e3261b78b5e5793101d9bca4081a32011bd6c8",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_0/frame_05.png": "adb4067eb33dff1ca1d15b597aa2bec9045d77258003ccccf5b18b6f24df39b4",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_00.png": "be48cf0ff323ebd14dfaaba4654e617b1d7171695d82ae0d11ce7a9edd68eda4",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_01.png": "7cd7802e51dadf1e763474e6731eea7116e38e43367e425e7a5f27e4433f0a77",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_02.png": "d34cf34b2c0dcaf4970495827e7978ade1f6f121c88bf877d8ccd6ca6bd4f367",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_03.png": "29b7711ee783ebcbac158a6c4494b8fb4dc07745212319b5e44dbc21716f0f71",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_04.png": "d1c7a58ffb4f4677411ae71df61b8b4ca09b3d9fb3c36fe79b8038b5b875acf8",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_1/frame_05.png": "dbf1c1f4ec217a6180e81d66e30c0558b9c839ddf443db3d45cf2d1913ef7a5b",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_00.png": "012d468292a273e1602364d73c7afa590c8966bca1baa1acd092b4f0542fe6e8",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_01.png": "d6ba0aada3f3b6527424288bc06e2f22ea04b8bba626c92917b83f39577bf29d",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_02.png": "0f5e1b2d75af2af2bdf187a4865927dd65becfb997f25ff81c868bf1a72a58f5",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_03.png": "4a7c775f15c04680a4a442b528d91e0fab2a12047a8f78449a06ffeb2a74693b",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_04.png": "e36f53d1ce09fac652ba8b08a5a8d7b0270aa6d8283ab1566a24d531c5400653",
+    "assets/terrain/limestone_cave/wall_gems/green/variant_2/frame_05.png": "d08c7703becea1e4e7aed0c00d7042fa9c9e6ed9b4a98528127aeb14001815b7",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_00.png": "97ed4d9facbcd5064720449c5f27488cb9daa70a397ad36ed018b4427cad4570",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_01.png": "e8004a1b8e071da35017ab136be6f8e09e71883e22e2803b02eb54cc23a97e0e",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_02.png": "f580cc006b737d478b080b3c5946775e0436c5302b1e40f4eae95fc7df48ad79",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_03.png": "9e73ee3d96610519239da58e5e5e88714a6951bde92e7a75256f0fc6f2421a4f",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_04.png": "6ed8c2272bcafcad58dbc7a211260ec2f3d32b746ec472819e59196ac137be1a",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_0/frame_05.png": "6d4ad3ca68e3f86465a34151cc16c1b8138c30dfcc909037b69350361fe9a9c2",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_00.png": "47cfbbcc5d9dcd80617c9c24c5e230db2f05804afcf05fd2c622433527723a76",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_01.png": "18780698086a9e19b5f2e4919313c76bd6764a723c36bc90e79508e4fe8fd92b",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_02.png": "293d9dfb053227d89f2097e19a978ab5baeddcb3fc9f5616801ea2a7a5c35b25",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_03.png": "a36c25cde4e693188f1af50df425ed77d8f2fa6fbc5e782d4fba971f01ba28cd",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_04.png": "2de3a63b0945082a22c3da7fcc480fcab09f810a62d96d9d509b9c526321ef0e",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_1/frame_05.png": "ca84228a643c0f23e07eef551ada608dc00a3d827c4eb32c511cac50ed8cc375",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_00.png": "a4841c4e0aa139f0caf970852b554cb137f3afc9e69fe85e35d3850650b414ab",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_01.png": "55aa5b1ae978a9c62615d2e6ed05efbe787e0b9bf79bc3a67e0752ee80233717",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_02.png": "f0175c37ae0c40ad07d688aaaaa1a448a14e271e869fca16e6332342ec3f94c7",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_03.png": "179030c0846ad75a2060c1f7678d923c4efab23f7a0dacfb1aa7a8c8b39f656f",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_04.png": "bdb0978212b8567f4573a51ce83aeb7f2a961e15104e52e94f755b774a42616b",
+    "assets/terrain/limestone_cave/wall_gems/white/variant_2/frame_05.png": "f691c8f07b2d4978e503e9a1c74e3a65b1a0c56e6633bdfdbab6ee9a1c91da41",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_00.png": "e18157a10bf930f26495d025d942204d5b940e897ad5a679ef7f139a28195bd9",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_01.png": "92776de56273c5beb1a4ef6bbf3426368da8ca25681faa8aef676c00d7f0788b",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_02.png": "8630a8f3d8b3d5558364f89333bfa63fbca0467f82ce8c739524c51a089cbe22",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_03.png": "bef94f940924921b325a723711e6d031f7dd173e1bbeffcb7de0587426b47843",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_04.png": "af96b71fb5ca02c2957d78b259505fdcebc0437ea782090ef4bb038265df1b1e",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_0/frame_05.png": "9f923621fb0c51e934f45cf1f4236fd0a50a10ca7611fa57622670ba19c2ca2e",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_00.png": "8c22992aca368e4aad383145d0b19efa2e29387b75bbb1d1f322dc476a3038e4",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_01.png": "8af0f0dfd07c8c4ceba149214fe16feb26c9b73f8764fd0dc0c6a50eb8f8c4db",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_02.png": "cc731bd7240d7960b35a4f9fb300b7a689548f18c1c5b99f91c3feff2fdb94fc",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_03.png": "5b33ae8502f0e690e18ef0a86d027a1c8d75faeeeab9fcd5988b540082acf607",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_04.png": "3f9ad100cb2fcb8305603b0d84c3f85cd63a457da02258323731feb436004a2b",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_1/frame_05.png": "398ec151108caf24154c714d550b91608d962782701ed4914e2f8e32718f3d51",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_00.png": "96b8c15db4ee2976ed6a137c7a5b610e41eda1af72c1cd71f1eebd7492ad6c98",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_01.png": "050158762914194082f405e0b80e3fd42250f3548caeaa51af007ece8099473a",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_02.png": "b875d292296070185a46e827b3012c5dd2dbfc7bc9323ae94c8ddb03bc964dbd",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_03.png": "df6e4d4f00010871051f7d7b2fdb9a8eb499a603e607f1657535a508130b3a42",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_04.png": "bc988fd50018ad574f9cbf0a7eb8b3b17861e3aae14cda8fc227b378fa340da8",
+    "assets/terrain/limestone_cave/wall_gems/orange/variant_2/frame_05.png": "5901338d60f739662508f13712c8517cda4887e0b9628cacec64a88a1b99cd9c",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_00.png": "4a8b5e940f93180c2644f7eddf7ed5cdbf9bbba2b883e745d4e67417ce078391",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_01.png": "0b83fee515c706b9b48a2e6e122d282610050c9880ed0df457242f440a1c80c9",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_02.png": "bec4684eff0cb9755447db9197e1774b6eca193a8a1458bb2ad5d1d3869f1bec",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_03.png": "30c6dcb890db6f87a36c8d57a516ad5a958192beea0e95a7978b891ecf0de902",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_04.png": "973c224d9aa9cdf55f582c2fb023168db05cc2d284e302eaa3c1e1790fd900a1",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_0/frame_05.png": "4d57fee503d9933e528f375f337da2b58d04e3fc8ef41386076a43eeb6bbfbd9",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_00.png": "499e5896e1de31ecd695e84b353ab4dc6551b6d9a1431346262c6318d0e6f401",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_01.png": "309eb22b9150c741ce0b3c56723132874521ef0c53d9830377e1f9d67f2ff109",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_02.png": "3295143dd1f1114950a2d76e88c9f13f21b4b5bd5909cf8458322941fede8fc5",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_03.png": "45f9295aaf76dba410cc4fd99452e6c0c32b643828cf8728ac398853c1a162b7",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_04.png": "fa4523422014b79f6fabd0181c1bb757d6f307a81ab2cb0437279e307bb031a9",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_1/frame_05.png": "19e4ea1799edc5d749fe8fa48cd32a48595dd9a34db3f5204ef3f8d21d39557a",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_00.png": "902fa2bb87c4aad8c6be9072e4026b28146b44e298937577a6a46bc903899dd3",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_01.png": "b8742b1beb579f7e035216fa7537a966bfaa0ab573d9f8007efa63c2c3126852",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_02.png": "2a0121f757ceb326b396203795df8c5a6c3c40dfec4dc718c0844384b7d595ba",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_03.png": "782fc9ea445822c71cc24e6425c35d2eb9ef3b355bda93c7a350ba4fadf7b839",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_04.png": "7adbde9228f215aa797e60156b23f3a68402b48b6c3604c3dec7d0d595551a98",
+    "assets/terrain/limestone_cave/wall_gems/purple/variant_2/frame_05.png": "494a00011063d7c6ee6dbfa2572a122a30219d4e5f2edb48e88868c5e6ce42c7",
+    "assets/terrain/limestone_cave/wall_gems/colors_review.png": "107d9ba04dd8891275361d2de5353c25847b625458453235e96e934bdc94db20",
+    "assets/terrain/limestone_cave/wall_gems/README.md": "428e9a14a7f8aa6f58cbf3dec050eb7797315d580a6e04493a5c596d265f1461"
+  }
+}

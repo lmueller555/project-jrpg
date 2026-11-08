@@ -52,6 +52,7 @@ def source_hashes():
         'main.py', 'sanctuary_cave_world.py', 'ui_style.py',
         'tools/preview_limestone_cave.py', 'tools/capture_limestone_cave.py',
         'tools/build_limestone_cave_assets.py', 'tools/build_limestone_cave_chamber.py',
+        'tools/build_wall_gems.py',
         'tools/capture_sanctuary_reserve.py',
     )}
     for folder in ('assets/source/terrain/limestone_cave', 'assets/terrain/limestone_cave',
@@ -118,7 +119,9 @@ def check(output):
     assert report['ordinary_movement_only'] and report['no_save_or_settings_files']
     assert report['walking_seen'] and report['running_seen'] and report['reduced_motion_static']
     assert report['pulse']['max_mean'] > report['pulse']['min_mean']
-    print('Limestone chamber movement, pulse, static mode, isolation and review fingerprints verified.')
+    assert {gem['color'] for gem in report['wall_gems']} == {
+        'red', 'blue', 'green', 'white', 'orange', 'purple'}
+    print('Limestone chamber movement, six wall-gem colors, pulse, static mode, isolation and review fingerprints verified.')
 
 
 def capture(output, movie_enabled=True):
@@ -230,8 +233,37 @@ def capture(output, movie_enabled=True):
         overview.resize((overview.width*2, overview.height*2), Image.Resampling.NEAREST).save(output/'whole_chamber.png')
         artifacts.append('whole_chamber.png')
 
+        # These details are cropped from the same stitched production views.
+        # They show the recessed mineral and its surrounding wall at one light
+        # clock, rather than substituting a floating gem sprite or mock scene.
+        gem_records = demo.world.data['cave'].get('wall_gems', [])
+        if gem_records:
+            colors = ('red', 'blue', 'green', 'white', 'orange', 'purple')
+            board = Image.new('RGB', (984, 450), '#202925')
+            draw = ImageDraw.Draw(board);font = ImageFont.load_default(size=16)
+            draw.text((16, 10), 'Embedded wall gems / production renderer / 3x native pixels',
+                      fill='#eee6cf', font=font)
+            gem_views = []
+            for index, color in enumerate(colors):
+                gem = next(record for record in gem_records if record['color'] == color)
+                entity = next(record for record in demo.world.entities
+                              if record['id'] == gem.get('entity_id', gem['id']))
+                rect = entity['rect']
+                box = (rect.centerx-50, rect.centery-28, rect.centerx+50, rect.centery+28)
+                detail = overview.crop(box).resize((300,168), Image.Resampling.NEAREST)
+                x = 12+index%3*324;y = 44+index//3*201
+                draw.text((x+4,y), color.title(), fill='#eee6cf', font=font)
+                board.paste(detail, (x,y+23))
+                gem_views.append({'id':gem['id'], 'color':color,
+                                  'world_crop':list(box), 'source':'Stitched production World.draw'})
+            board.save(output/'embedded_wall_gems.png')
+            artifacts.append('embedded_wall_gems.png')
+            report['wall_gems'] = gem_views
+
         selected = ['chamber_material_colors', 'chamber_lit', 'pulse_trough', 'pulse_peak']
-        selected += [name for name in points if name in views][:2]
+        selected += [name for name in ('wall_gems_west', 'wall_gems_east') if name in views]
+        if len(selected) < 6:
+            selected += [name for name in points if name in views and name not in selected][:6-len(selected)]
         board = Image.new('RGB', (980, len(selected)//2*354+16), '#202925')
         draw = ImageDraw.Draw(board);font = ImageFont.load_default(size=16)
         for index, name in enumerate(selected):

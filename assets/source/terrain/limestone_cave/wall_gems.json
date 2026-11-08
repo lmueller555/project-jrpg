@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.wall_gems",
+  "approval_status": "pending_review",
+  "wall_texture": "assets/terrain/limestone_cave/modules/wall/front/0.png",
+  "limestone_recipe": "assets/source/terrain/limestone_cave/recipe.json",
+  "colors": {
+    "red": {"label": "Red", "light": [245, 76, 65], "deep": [80, 20, 28], "mid": [190, 42, 47], "bright": [242, 84, 73], "glint": [255, 177, 153]},
+    "blue": {"label": "Blue", "light": [66, 124, 250], "deep": [20, 34, 92], "mid": [44, 89, 201], "bright": [82, 143, 249], "glint": [169, 208, 255]},
+    "green": {"label": "Green", "light": [73, 222, 104], "deep": [20, 69, 37], "mid": [42, 163, 72], "bright": [91, 222, 113], "glint": [177, 255, 183]},
+    "white": {"label": "White", "light": [231, 235, 231], "deep": [66, 81, 86], "mid": [163, 178, 177], "bright": [224, 232, 226], "glint": [255, 255, 246]},
+    "orange": {"label": "Orange", "light": [255, 139, 45], "deep": [96, 41, 17], "mid": [215, 103, 28], "bright": [255, 158, 48], "glint": [255, 220, 137]},
+    "purple": {"label": "Purple", "light": [183, 103, 239], "deep": [56, 25, 90], "mid": [134, 62, 192], "bright": [189, 116, 240], "glint": [232, 190, 255]}
+  },
+  "variants": [
+    {"size": [40, 40], "anchor": [21, 20], "rock": [[4, 17], [7, 9], [17, 4], [28, 7], [34, 14], [36, 27], [29, 35], [15, 37], [7, 30]], "gem": [[17, 10], [24, 9], [29, 15], [28, 24], [23, 29], [16, 27], [13, 20], [14, 14]], "ridge": [21, 18], "lips": [[[11, 14], [16, 10], [19, 10], [16, 14], [14, 20]], [[23, 29], [28, 25], [31, 26], [28, 31], [20, 33]]]},
+    {"size": [48, 40], "anchor": [25, 21], "rock": [[3, 21], [8, 12], [16, 7], [29, 4], [39, 10], [44, 20], [40, 29], [29, 35], [15, 36], [6, 31]], "gem": [[16, 17], [23, 11], [32, 12], [36, 18], [32, 25], [24, 29], [17, 26], [13, 22]], "ridge": [25, 19], "lips": [[[12, 17], [19, 11], [24, 10], [22, 13], [16, 18]], [[28, 29], [34, 23], [38, 24], [36, 29], [29, 32], [22, 33]]]},
+    {"size": [56, 48], "anchor": [29, 24], "rock": [[4, 24], [9, 13], [18, 7], [31, 3], [42, 8], [49, 16], [52, 29], [46, 39], [34, 44], [20, 42], [10, 35]], "gem": [[20, 15], [28, 10], [36, 13], [41, 20], [38, 30], [31, 36], [22, 32], [17, 24]], "ridge": [29, 22], "lips": [[[15, 20], [20, 13], [27, 9], [31, 10], [27, 14], [22, 16], [19, 23]], [[31, 36], [38, 29], [43, 29], [42, 35], [34, 40], [26, 38]]]}
+  ],
+  "pulse_frames": 6,
+  "notes": "Gem cores are flush in chipped limestone recesses. Fixed rock lips partly cover their facets. The six colors are visual materials, without assigned elemental relationships. Only facet brightness changes during a pulse; the rock silhouette and collision remain fixed."
+}
