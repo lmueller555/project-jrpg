@@ -61,7 +61,7 @@ from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
-from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES
+from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave
 
 ROOT=Path(__file__).resolve().parent
 MAP_FILE=ROOT/'assets/maps/eldenmere/playable/map.json'
@@ -625,8 +625,8 @@ class Game:
             self.save_error=self.save_store.error
             return None
         try:
-            data=migrate_retired_progression(data)
-        except (TypeError, ValueError):
+            data=migrate_legacy_cave(migrate_retired_progression(data))
+        except (TypeError, ValueError, OSError, KeyError):
             self.save_error='The saved journey could not be read.'
             return None
         def point(value):

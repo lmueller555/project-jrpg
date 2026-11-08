@@ -52,7 +52,7 @@ the confluence without revealing an ancient mechanism.
 
 The cave mouth retains its visible keeper rail and public apron. At the apron,
 press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
-Three connected scenes provide branching exploration, one-time treasure and
+One continuous cave provides branching exploration, one-time treasure and
 pulsing environmental light. Cave exploration does not advance MQ03. Enemy
 encounters, the miniboss and Caelan's first elemental Edge remain later quest
 work. This cave is distinct from the historically sealed workers' passage

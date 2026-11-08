@@ -1,0 +1,3290 @@
+{
+  "version": 1,
+  "id": "sanctuary_cave",
+  "name": "Sanctuary Cave",
+  "size_tiles": [
+    100,
+    81
+  ],
+  "tile_size": 24,
+  "seed": 147148,
+  "spawn": [
+    288,
+    1660
+  ],
+  "manifests": {
+    "base": "assets/terrain/limestone_cave/assets.json",
+    "gems": "assets/terrain/limestone_cave/wall_gems/assets.json",
+    "structure": "assets/terrain/limestone_cave/structure/assets.json",
+    "water": "assets/terrain/limestone_cave/water/assets.json",
+    "geology": "assets/terrain/limestone_cave/geology/assets.json",
+    "micro": "assets/terrain/limestone_cave/micro_adapters/assets.json",
+    "containers": "assets/terrain/sanctuary_cave/assets.json"
+  },
+  "rooms": [
+    {
+      "id": "entrance",
+      "name": "Cave Entrance",
+      "position": [
+        288,
+        1600
+      ],
+      "polygon": [
+        [
+          466,
+          1600
+        ],
+        [
+          473,
+          1669
+        ],
+        [
+          437,
+          1729
+        ],
+        [
+          379,
+          1761
+        ],
+        [
+          321,
+          1790
+        ],
+        [
+          256,
+          1789
+        ],
+        [
+          192,
+          1771
+        ],
+        [
+          138,
+          1729
+        ],
+        [
+          121,
+          1662
+        ],
+        [
+          112,
+          1600
+        ],
+        [
+          103,
+          1531
+        ],
+        [
+          145,
+          1477
+        ],
+        [
+          190,
+          1427
+        ],
+        [
+          258,
+          1423
+        ],
+        [
+          320,
+          1411
+        ],
+        [
+          385,
+          1428
+        ],
+        [
+          427,
+          1481
+        ],
+        [
+          476,
+          1530
+        ]
+      ],
+      "description": "Roots grip the limestone where daylight fades behind the keeper rail. Crystal seams mark the way into the galleries."
+    },
+    {
+      "id": "vein_gallery",
+      "name": "Vein Gallery",
+      "position": [
+        456,
+        1280
+      ],
+      "polygon": [
+        [
+          696,
+          1280
+        ],
+        [
+          682,
+          1343
+        ],
+        [
+          618,
+          1384
+        ],
+        [
+          562,
+          1420
+        ],
+        [
+          497,
+          1458
+        ],
+        [
+          415,
+          1455
+        ],
+        [
+          340,
+          1433
+        ],
+        [
+          288,
+          1388
+        ],
+        [
+          241,
+          1340
+        ],
+        [
+          227,
+          1280
+        ],
+        [
+          241,
+          1220
+        ],
+        [
+          291,
+          1175
+        ],
+        [
+          344,
+          1132
+        ],
+        [
+          417,
+          1113
+        ],
+        [
+          496,
+          1105
+        ],
+        [
+          577,
+          1120
+        ],
+        [
+          640,
+          1162
+        ],
+        [
+          669,
+          1221
+        ]
+      ],
+      "description": "Dry stone opens between fissured walls. A side route curls toward reflecting water, while the main passage continues deeper."
+    },
+    {
+      "id": "reflecting_grotto",
+      "name": "Reflecting Grotto",
+      "position": [
+        400,
+        864
+      ],
+      "polygon": [
+        [
+          624,
+          864
+        ],
+        [
+          620,
+          939
+        ],
+        [
+          575,
+          1001
+        ],
+        [
+          518,
+          1055
+        ],
+        [
+          441,
+          1082
+        ],
+        [
+          362,
+          1065
+        ],
+        [
+          292,
+          1040
+        ],
+        [
+          213,
+          1011
+        ],
+        [
+          189,
+          936
+        ],
+        [
+          176,
+          864
+        ],
+        [
+          166,
+          784
+        ],
+        [
+          223,
+          725
+        ],
+        [
+          278,
+          666
+        ],
+        [
+          360,
+          650
+        ],
+        [
+          441,
+          645
+        ],
+        [
+          511,
+          685
+        ],
+        [
+          582,
+          721
+        ],
+        [
+          630,
+          786
+        ]
+      ],
+      "description": "Still water mirrors the tiny crystals above it. The dry bank winds around the pool and rejoins the upper passage."
+    },
+    {
+      "id": "upper_passage",
+      "name": "Upper Passage",
+      "position": [
+        800,
+        820
+      ],
+      "polygon": [
+        [
+          943,
+          820
+        ],
+        [
+          932,
+          852
+        ],
+        [
+          912,
+          883
+        ],
+        [
+          871,
+          902
+        ],
+        [
+          824,
+          912
+        ],
+        [
+          775,
+          916
+        ],
+        [
+          721,
+          911
+        ],
+        [
+          681,
+          886
+        ],
+        [
+          655,
+          855
+        ],
+        [
+          657,
+          820
+        ],
+        [
+          660,
+          786
+        ],
+        [
+          690,
+          758
+        ],
+        [
+          729,
+          738
+        ],
+        [
+          776,
+          728
+        ],
+        [
+          825,
+          726
+        ],
+        [
+          879,
+          729
+        ],
+        [
+          919,
+          753
+        ],
+        [
+          946,
+          785
+        ]
+      ],
+      "description": "A dry passage curves away from the grotto toward Splitstone Hollow. Broken stone and scattered pebbles line its edges."
+    },
+    {
+      "id": "splitstone_hollow",
+      "name": "Splitstone Hollow",
+      "position": [
+        1100,
+        1200
+      ],
+      "polygon": [
+        [
+          1352,
+          1200
+        ],
+        [
+          1341,
+          1263
+        ],
+        [
+          1298,
+          1319
+        ],
+        [
+          1231,
+          1364
+        ],
+        [
+          1144,
+          1381
+        ],
+        [
+          1054,
+          1386
+        ],
+        [
+          984,
+          1344
+        ],
+        [
+          911,
+          1314
+        ],
+        [
+          853,
+          1265
+        ],
+        [
+          847,
+          1200
+        ],
+        [
+          854,
+          1136
+        ],
+        [
+          921,
+          1092
+        ],
+        [
+          977,
+          1046
+        ],
+        [
+          1059,
+          1031
+        ],
+        [
+          1143,
+          1023
+        ],
+        [
+          1225,
+          1044
+        ],
+        [
+          1277,
+          1093
+        ],
+        [
+          1323,
+          1141
+        ]
+      ],
+      "description": "Split columns and hanging stone mark a broad junction. The dry route continues deeper; a damp branch bends toward old keeper stonework."
+    },
+    {
+      "id": "raised_shelf",
+      "name": "High Overlook",
+      "position": [
+        1220,
+        975
+      ],
+      "polygon": [
+        [
+          1313,
+          975
+        ],
+        [
+          1308,
+          1005
+        ],
+        [
+          1288,
+          1029
+        ],
+        [
+          1263,
+          1045
+        ],
+        [
+          1234,
+          1052
+        ],
+        [
+          1204,
+          1060
+        ],
+        [
+          1176,
+          1048
+        ],
+        [
+          1149,
+          1031
+        ],
+        [
+          1138,
+          1003
+        ],
+        [
+          1127,
+          975
+        ],
+        [
+          1139,
+          947
+        ],
+        [
+          1149,
+          919
+        ],
+        [
+          1174,
+          900
+        ],
+        [
+          1205,
+          893
+        ],
+        [
+          1236,
+          892
+        ],
+        [
+          1266,
+          900
+        ],
+        [
+          1285,
+          923
+        ],
+        [
+          1304,
+          946
+        ]
+      ],
+      "description": "A short ramp climbs to a ledge overlooking Splitstone Hollow. Return down the ramp to continue through the junction."
+    },
+    {
+      "id": "keepers_recess",
+      "name": "Keeper's Recess",
+      "position": [
+        1260,
+        1580
+      ],
+      "polygon": [
+        [
+          1448,
+          1580
+        ],
+        [
+          1432,
+          1623
+        ],
+        [
+          1411,
+          1668
+        ],
+        [
+          1351,
+          1689
+        ],
+        [
+          1294,
+          1712
+        ],
+        [
+          1227,
+          1709
+        ],
+        [
+          1170,
+          1689
+        ],
+        [
+          1112,
+          1666
+        ],
+        [
+          1090,
+          1623
+        ],
+        [
+          1069,
+          1580
+        ],
+        [
+          1090,
+          1537
+        ],
+        [
+          1121,
+          1499
+        ],
+        [
+          1165,
+          1465
+        ],
+        [
+          1225,
+          1442
+        ],
+        [
+          1292,
+          1455
+        ],
+        [
+          1353,
+          1469
+        ],
+        [
+          1411,
+          1493
+        ],
+        [
+          1453,
+          1531
+        ]
+      ],
+      "description": "Worn paving and a weathered memorial preserve traces of the Sanctuary keepers. The damp route continues around to the deeper gallery."
+    },
+    {
+      "id": "deep_passage",
+      "name": "Deep Passage",
+      "position": [
+        1660,
+        1420
+      ],
+      "polygon": [
+        [
+          1793,
+          1420
+        ],
+        [
+          1799,
+          1463
+        ],
+        [
+          1761,
+          1492
+        ],
+        [
+          1731,
+          1526
+        ],
+        [
+          1683,
+          1530
+        ],
+        [
+          1637,
+          1533
+        ],
+        [
+          1586,
+          1530
+        ],
+        [
+          1558,
+          1493
+        ],
+        [
+          1527,
+          1461
+        ],
+        [
+          1522,
+          1420
+        ],
+        [
+          1531,
+          1380
+        ],
+        [
+          1554,
+          1344
+        ],
+        [
+          1594,
+          1322
+        ],
+        [
+          1635,
+          1298
+        ],
+        [
+          1683,
+          1310
+        ],
+        [
+          1727,
+          1321
+        ],
+        [
+          1759,
+          1349
+        ],
+        [
+          1786,
+          1381
+        ]
+      ],
+      "description": "Wet cracks and scattered pebbles line this lower passage. Follow its bend toward the Deep Gallery."
+    },
+    {
+      "id": "deep_gallery",
+      "name": "Deep Gallery",
+      "position": [
+        1680,
+        970
+      ],
+      "polygon": [
+        [
+          1867,
+          970
+        ],
+        [
+          1854,
+          1032
+        ],
+        [
+          1817,
+          1082
+        ],
+        [
+          1779,
+          1137
+        ],
+        [
+          1710,
+          1138
+        ],
+        [
+          1647,
+          1150
+        ],
+        [
+          1581,
+          1138
+        ],
+        [
+          1544,
+          1081
+        ],
+        [
+          1502,
+          1033
+        ],
+        [
+          1489,
+          970
+        ],
+        [
+          1515,
+          911
+        ],
+        [
+          1538,
+          854
+        ],
+        [
+          1583,
+          807
+        ],
+        [
+          1648,
+          791
+        ],
+        [
+          1714,
+          784
+        ],
+        [
+          1769,
+          819
+        ],
+        [
+          1819,
+          857
+        ],
+        [
+          1847,
+          911
+        ]
+      ],
+      "description": "Stone formations draw close around the route. Colored seams lead onward toward a sheltered ledge."
+    },
+    {
+      "id": "quiet_shelf",
+      "name": "Quiet Shelf",
+      "position": [
+        1810,
+        600
+      ],
+      "polygon": [
+        [
+          1980,
+          600
+        ],
+        [
+          1967,
+          640
+        ],
+        [
+          1940,
+          677
+        ],
+        [
+          1891,
+          699
+        ],
+        [
+          1841,
+          722
+        ],
+        [
+          1779,
+          722
+        ],
+        [
+          1724,
+          705
+        ],
+        [
+          1687,
+          673
+        ],
+        [
+          1651,
+          641
+        ],
+        [
+          1646,
+          600
+        ],
+        [
+          1657,
+          561
+        ],
+        [
+          1673,
+          519
+        ],
+        [
+          1720,
+          490
+        ],
+        [
+          1783,
+          491
+        ],
+        [
+          1841,
+          477
+        ],
+        [
+          1895,
+          496
+        ],
+        [
+          1937,
+          525
+        ],
+        [
+          1963,
+          561
+        ]
+      ],
+      "description": "A sheltered stone ledge offers a quiet pause before the final chamber. The passage ahead opens beyond the hanging stone."
+    },
+    {
+      "id": "echo_chamber",
+      "name": "Echo Chamber",
+      "position": [
+        2060,
+        300
+      ],
+      "polygon": [
+        [
+          2340,
+          300
+        ],
+        [
+          2327,
+          363
+        ],
+        [
+          2289,
+          425
+        ],
+        [
+          2200,
+          458
+        ],
+        [
+          2109,
+          481
+        ],
+        [
+          2010,
+          483
+        ],
+        [
+          1925,
+          452
+        ],
+        [
+          1843,
+          418
+        ],
+        [
+          1790,
+          364
+        ],
+        [
+          1766,
+          300
+        ],
+        [
+          1810,
+          241
+        ],
+        [
+          1850,
+          186
+        ],
+        [
+          1927,
+          151
+        ],
+        [
+          2009,
+          112
+        ],
+        [
+          2110,
+          115
+        ],
+        [
+          2192,
+          152
+        ],
+        [
+          2291,
+          174
+        ],
+        [
+          2343,
+          233
+        ]
+      ],
+      "description": "A broad, open chamber lies beneath pendant stone. Tiny crystals pulse along the enclosing walls in many colors."
+    }
+  ],
+  "corridors": [
+    {
+      "id": "main",
+      "points": [
+        [
+          288,
+          1660
+        ],
+        [
+          288,
+          1510
+        ],
+        [
+          330,
+          1400
+        ],
+        [
+          456,
+          1280
+        ],
+        [
+          680,
+          1270
+        ],
+        [
+          875,
+          1240
+        ],
+        [
+          1100,
+          1200
+        ],
+        [
+          1370,
+          1180
+        ],
+        [
+          1510,
+          1060
+        ],
+        [
+          1680,
+          970
+        ],
+        [
+          1730,
+          800
+        ],
+        [
+          1790,
+          700
+        ],
+        [
+          1810,
+          600
+        ],
+        [
+          1920,
+          520
+        ],
+        [
+          2000,
+          420
+        ],
+        [
+          2060,
+          300
+        ]
+      ],
+      "width": 120
+    },
+    {
+      "id": "reflecting_loop",
+      "points": [
+        [
+          456,
+          1280
+        ],
+        [
+          360,
+          1150
+        ],
+        [
+          310,
+          1100
+        ],
+        [
+          244,
+          1036
+        ],
+        [
+          250,
+          900
+        ],
+        [
+          270,
+          780
+        ],
+        [
+          420,
+          725
+        ],
+        [
+          562,
+          782
+        ],
+        [
+          640,
+          795
+        ],
+        [
+          800,
+          820
+        ],
+        [
+          940,
+          980
+        ],
+        [
+          940,
+          1120
+        ],
+        [
+          1000,
+          1200
+        ],
+        [
+          1100,
+          1200
+        ]
+      ],
+      "width": 108
+    },
+    {
+      "id": "keeper_loop",
+      "points": [
+        [
+          1100,
+          1200
+        ],
+        [
+          1080,
+          1400
+        ],
+        [
+          1150,
+          1510
+        ],
+        [
+          1260,
+          1580
+        ],
+        [
+          1260,
+          1510
+        ],
+        [
+          1430,
+          1500
+        ],
+        [
+          1450,
+          1570
+        ],
+        [
+          1660,
+          1420
+        ],
+        [
+          1740,
+          1240
+        ],
+        [
+          1730,
+          1110
+        ],
+        [
+          1680,
+          970
+        ]
+      ],
+      "width": 108
+    },
+    {
+      "id": "raised_shelf",
+      "points": [
+        [
+          1100,
+          1200
+        ],
+        [
+          1220,
+          1150
+        ],
+        [
+          1220,
+          1100
+        ],
+        [
+          1220,
+          1050
+        ],
+        [
+          1220,
+          1010
+        ],
+        [
+          1220,
+          970
+        ]
+      ],
+      "width": 132
+    }
+  ],
+  "material_patches": [
+    {
+      "material": "earth",
+      "polygon": [
+        [
+          130,
+          1510
+        ],
+        [
+          235,
+          1430
+        ],
+        [
+          390,
+          1490
+        ],
+        [
+          468,
+          1620
+        ],
+        [
+          415,
+          1770
+        ],
+        [
+          220,
+          1800
+        ],
+        [
+          100,
+          1690
+        ]
+      ]
+    },
+    {
+      "material": "gravel",
+      "polygon": [
+        [
+          240,
+          1140
+        ],
+        [
+          440,
+          1080
+        ],
+        [
+          660,
+          1160
+        ],
+        [
+          645,
+          1300
+        ],
+        [
+          420,
+          1335
+        ],
+        [
+          260,
+          1260
+        ]
+      ]
+    },
+    {
+      "material": "damp",
+      "polygon": [
+        [
+          170,
+          700
+        ],
+        [
+          430,
+          620
+        ],
+        [
+          640,
+          750
+        ],
+        [
+          640,
+          1000
+        ],
+        [
+          490,
+          1080
+        ],
+        [
+          230,
+          1070
+        ]
+      ]
+    },
+    {
+      "material": "silt",
+      "polygon": [
+        [
+          1080,
+          1490
+        ],
+        [
+          1250,
+          1430
+        ],
+        [
+          1440,
+          1490
+        ],
+        [
+          1500,
+          1620
+        ],
+        [
+          1330,
+          1720
+        ],
+        [
+          1100,
+          1670
+        ]
+      ]
+    },
+    {
+      "material": "damp",
+      "polygon": [
+        [
+          1480,
+          1360
+        ],
+        [
+          1640,
+          1280
+        ],
+        [
+          1780,
+          1340
+        ],
+        [
+          1780,
+          1460
+        ],
+        [
+          1660,
+          1550
+        ],
+        [
+          1510,
+          1510
+        ]
+      ]
+    },
+    {
+      "material": "gravel",
+      "polygon": [
+        [
+          1510,
+          860
+        ],
+        [
+          1660,
+          770
+        ],
+        [
+          1830,
+          850
+        ],
+        [
+          1850,
+          1050
+        ],
+        [
+          1680,
+          1150
+        ],
+        [
+          1510,
+          1070
+        ]
+      ]
+    },
+    {
+      "material": "silt",
+      "polygon": [
+        [
+          1720,
+          530
+        ],
+        [
+          1850,
+          490
+        ],
+        [
+          1980,
+          540
+        ],
+        [
+          1920,
+          650
+        ],
+        [
+          1760,
+          700
+        ]
+      ]
+    }
+  ],
+  "pool_cells": [
+    [
+      16,
+      34
+    ],
+    [
+      17,
+      34
+    ],
+    [
+      18,
+      34
+    ],
+    [
+      19,
+      34
+    ],
+    [
+      20,
+      34
+    ],
+    [
+      21,
+      34
+    ],
+    [
+      15,
+      35
+    ],
+    [
+      16,
+      35
+    ],
+    [
+      17,
+      35
+    ],
+    [
+      18,
+      35
+    ],
+    [
+      19,
+      35
+    ],
+    [
+      20,
+      35
+    ],
+    [
+      21,
+      35
+    ],
+    [
+      22,
+      35
+    ],
+    [
+      14,
+      36
+    ],
+    [
+      15,
+      36
+    ],
+    [
+      16,
+      36
+    ],
+    [
+      17,
+      36
+    ],
+    [
+      18,
+      36
+    ],
+    [
+      19,
+      36
+    ],
+    [
+      20,
+      36
+    ],
+    [
+      21,
+      36
+    ],
+    [
+      22,
+      36
+    ],
+    [
+      23,
+      36
+    ],
+    [
+      14,
+      37
+    ],
+    [
+      15,
+      37
+    ],
+    [
+      16,
+      37
+    ],
+    [
+      17,
+      37
+    ],
+    [
+      18,
+      37
+    ],
+    [
+      19,
+      37
+    ],
+    [
+      20,
+      37
+    ],
+    [
+      21,
+      37
+    ],
+    [
+      22,
+      37
+    ],
+    [
+      23,
+      37
+    ],
+    [
+      14,
+      38
+    ],
+    [
+      15,
+      38
+    ],
+    [
+      16,
+      38
+    ],
+    [
+      17,
+      38
+    ],
+    [
+      18,
+      38
+    ],
+    [
+      19,
+      38
+    ],
+    [
+      20,
+      38
+    ],
+    [
+      21,
+      38
+    ],
+    [
+      22,
+      38
+    ],
+    [
+      23,
+      38
+    ],
+    [
+      15,
+      39
+    ],
+    [
+      16,
+      39
+    ],
+    [
+      17,
+      39
+    ],
+    [
+      18,
+      39
+    ],
+    [
+      19,
+      39
+    ],
+    [
+      20,
+      39
+    ],
+    [
+      21,
+      39
+    ],
+    [
+      22,
+      39
+    ],
+    [
+      16,
+      40
+    ],
+    [
+      17,
+      40
+    ],
+    [
+      18,
+      40
+    ],
+    [
+      19,
+      40
+    ],
+    [
+      20,
+      40
+    ],
+    [
+      21,
+      40
+    ],
+    [
+      53,
+      65
+    ],
+    [
+      54,
+      65
+    ],
+    [
+      55,
+      65
+    ],
+    [
+      56,
+      65
+    ],
+    [
+      53,
+      66
+    ],
+    [
+      54,
+      66
+    ],
+    [
+      55,
+      66
+    ],
+    [
+      56,
+      66
+    ],
+    [
+      53,
+      67
+    ],
+    [
+      54,
+      67
+    ],
+    [
+      55,
+      67
+    ],
+    [
+      56,
+      67
+    ],
+    [
+      53,
+      68
+    ],
+    [
+      54,
+      68
+    ],
+    [
+      55,
+      68
+    ],
+    [
+      56,
+      68
+    ]
+  ],
+  "placements": [
+    {
+      "id": "entrance_arch",
+      "pack": "structure",
+      "module": "tunnel.south.wide",
+      "position": [
+        288,
+        1780
+      ]
+    },
+    {
+      "id": "threshold_roots_left",
+      "pack": "geology",
+      "module": "entrance.root.0",
+      "position": [
+        143,
+        1580
+      ],
+      "collision": false
+    },
+    {
+      "id": "threshold_roots_right",
+      "pack": "geology",
+      "module": "entrance.root.2",
+      "position": [
+        420,
+        1605
+      ],
+      "collision": false
+    },
+    {
+      "id": "entrance_moss",
+      "pack": "geology",
+      "module": "entrance.moss.1",
+      "position": [
+        166,
+        1635
+      ],
+      "ground": true
+    },
+    {
+      "id": "threshold_leaves",
+      "pack": "geology",
+      "module": "entrance.leaves.0",
+      "position": [
+        295,
+        1730
+      ],
+      "ground": true
+    },
+    {
+      "id": "entrance_leaves_2",
+      "pack": "geology",
+      "module": "entrance.leaves.2",
+      "position": [
+        380,
+        1640
+      ],
+      "ground": true
+    },
+    {
+      "id": "entrance_pebbles",
+      "pack": "geology",
+      "module": "debris.pebbles.1",
+      "position": [
+        362,
+        1530
+      ],
+      "ground": true
+    },
+    {
+      "id": "vein_alcove",
+      "pack": "structure",
+      "module": "alcove.west",
+      "position": [
+        256,
+        1220
+      ]
+    },
+    {
+      "id": "vein_talus",
+      "pack": "geology",
+      "module": "debris.talus.0",
+      "position": [
+        335,
+        1160
+      ],
+      "ground": true
+    },
+    {
+      "id": "vein_stalagmites",
+      "pack": "base",
+      "module": "formation.stalagmites.0",
+      "position": [
+        590,
+        1195
+      ]
+    },
+    {
+      "id": "vein_rock",
+      "pack": "base",
+      "module": "formation.boulder.1",
+      "position": [
+        620,
+        1350
+      ]
+    },
+    {
+      "id": "vein_cracks",
+      "pack": "geology",
+      "module": "crack.branching.1",
+      "position": [
+        515,
+        1385
+      ],
+      "ground": true
+    },
+    {
+      "id": "grotto_seepage",
+      "pack": "water",
+      "module": "seepage.wall.1",
+      "position": [
+        438,
+        671
+      ],
+      "collision": false
+    },
+    {
+      "id": "grotto_trickle",
+      "pack": "water",
+      "module": "trickle.wall.0",
+      "position": [
+        449,
+        749
+      ],
+      "collision": false
+    },
+    {
+      "id": "grotto_crust",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        570,
+        890
+      ],
+      "ground": true
+    },
+    {
+      "id": "grotto_stain",
+      "pack": "geology",
+      "module": "stain.damp.1",
+      "position": [
+        380,
+        820
+      ],
+      "ground": true
+    },
+    {
+      "id": "grotto_drip",
+      "pack": "water",
+      "module": "drip.falling.0",
+      "position": [
+        453,
+        890
+      ],
+      "collision": false
+    },
+    {
+      "id": "grotto_ripple",
+      "pack": "water",
+      "module": "ripple.small.0",
+      "position": [
+        455,
+        924
+      ],
+      "collision": false
+    },
+    {
+      "id": "grotto_flowstone",
+      "pack": "base",
+      "module": "formation.flowstone.2",
+      "position": [
+        210,
+        870
+      ]
+    },
+    {
+      "id": "upper_slab",
+      "pack": "geology",
+      "module": "slab.fallen.0",
+      "position": [
+        825,
+        758
+      ]
+    },
+    {
+      "id": "upper_pebbles",
+      "pack": "geology",
+      "module": "debris.pebbles.2",
+      "position": [
+        722,
+        865
+      ],
+      "ground": true
+    },
+    {
+      "id": "upper_columns",
+      "pack": "base",
+      "module": "formation.broken_column.0",
+      "position": [
+        700,
+        870
+      ]
+    },
+    {
+      "id": "splitstone_left",
+      "pack": "base",
+      "module": "formation.broken_column.1",
+      "position": [
+        1022,
+        1120
+      ]
+    },
+    {
+      "id": "splitstone_right",
+      "pack": "base",
+      "module": "formation.broken_column.2",
+      "position": [
+        1138,
+        1120
+      ]
+    },
+    {
+      "id": "hollow_pendants",
+      "pack": "base",
+      "module": "formation.pendants.1",
+      "position": [
+        1000,
+        1064
+      ],
+      "collision": false
+    },
+    {
+      "id": "hollow_rubble",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        935,
+        1300
+      ],
+      "ground": true
+    },
+    {
+      "id": "hollow_crack",
+      "pack": "geology",
+      "module": "crack.branching.0",
+      "position": [
+        1110,
+        1302
+      ],
+      "ground": true
+    },
+    {
+      "id": "hollow_ledge",
+      "pack": "structure",
+      "module": "wall.face.south.h24",
+      "position": [
+        970,
+        1361
+      ],
+      "collision": false
+    },
+    {
+      "id": "high_shelf",
+      "pack": "structure",
+      "module": "shelf.low.1",
+      "position": [
+        1220,
+        1010
+      ]
+    },
+    {
+      "id": "overlook_ramp",
+      "pack": "structure",
+      "module": "ramp.north",
+      "position": [
+        1220,
+        1100
+      ]
+    },
+    {
+      "id": "keeper_marker",
+      "pack": "containers",
+      "module": "keeper_marker",
+      "position": [
+        1190,
+        1560
+      ],
+      "collision": false
+    },
+    {
+      "id": "keeper_paving_1",
+      "pack": "keeper",
+      "module": "flagstones",
+      "position": [
+        1215,
+        1568
+      ],
+      "ground": true
+    },
+    {
+      "id": "keeper_paving_2",
+      "pack": "keeper",
+      "module": "flagstones",
+      "position": [
+        1280,
+        1610
+      ],
+      "ground": true
+    },
+    {
+      "id": "keeper_rootless_stain",
+      "pack": "geology",
+      "module": "stain.damp.2",
+      "position": [
+        1355,
+        1628
+      ],
+      "ground": true
+    },
+    {
+      "id": "keeper_flowstone",
+      "pack": "base",
+      "module": "formation.flowstone.0",
+      "position": [
+        1110,
+        1600
+      ]
+    },
+    {
+      "id": "keeper_debris",
+      "pack": "geology",
+      "module": "debris.rubble.2",
+      "position": [
+        1435,
+        1635
+      ],
+      "ground": true
+    },
+    {
+      "id": "lower_wet_crack",
+      "pack": "water",
+      "module": "wet_crack.1",
+      "position": [
+        1512,
+        1510
+      ],
+      "collision": false
+    },
+    {
+      "id": "deep_passage_pebbles",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        1735,
+        1420
+      ],
+      "ground": true
+    },
+    {
+      "id": "deep_compression_west",
+      "pack": "base",
+      "module": "formation.stalagmites.2",
+      "position": [
+        1610,
+        1150
+      ]
+    },
+    {
+      "id": "deep_compression_east",
+      "pack": "base",
+      "module": "formation.flowstone.1",
+      "position": [
+        1805,
+        1110
+      ]
+    },
+    {
+      "id": "deep_mineral",
+      "pack": "geology",
+      "module": "mineral.crust.1",
+      "position": [
+        1540,
+        960
+      ],
+      "ground": true
+    },
+    {
+      "id": "deep_cracks",
+      "pack": "geology",
+      "module": "crack.branching.2",
+      "position": [
+        1780,
+        990
+      ],
+      "ground": true
+    },
+    {
+      "id": "quiet_alcove",
+      "pack": "structure",
+      "module": "alcove.west",
+      "position": [
+        1660,
+        584
+      ]
+    },
+    {
+      "id": "quiet_pendant",
+      "pack": "base",
+      "module": "formation.pendants.0",
+      "position": [
+        1885,
+        520
+      ],
+      "collision": false
+    },
+    {
+      "id": "quiet_silt",
+      "pack": "geology",
+      "module": "erosion.channel.0",
+      "position": [
+        1725,
+        660
+      ],
+      "ground": true
+    },
+    {
+      "id": "arena_west_column",
+      "pack": "base",
+      "module": "formation.broken_column.0",
+      "position": [
+        1825,
+        287
+      ]
+    },
+    {
+      "id": "arena_east_column",
+      "pack": "base",
+      "module": "formation.broken_column.2",
+      "position": [
+        2290,
+        325
+      ]
+    },
+    {
+      "id": "arena_north_pendants",
+      "pack": "base",
+      "module": "formation.pendants.2",
+      "position": [
+        2115,
+        158
+      ],
+      "collision": false
+    },
+    {
+      "id": "arena_north_flowstone",
+      "pack": "base",
+      "module": "formation.flowstone.0",
+      "position": [
+        1970,
+        164
+      ]
+    },
+    {
+      "id": "arena_crust",
+      "pack": "geology",
+      "module": "mineral.crust.3",
+      "position": [
+        2225,
+        430
+      ],
+      "ground": true
+    },
+    {
+      "id": "arena_stone_slab",
+      "pack": "geology",
+      "module": "slab.fallen.2",
+      "position": [
+        2180,
+        145
+      ]
+    },
+    {
+      "id": "ground_detail_0",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        180,
+        1490
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_1",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        405,
+        1440
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_2",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        525,
+        1190
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_3",
+      "pack": "geology",
+      "module": "crack.branching.3",
+      "position": [
+        645,
+        1265
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_4",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        300,
+        700
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_5",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        608,
+        824
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_6",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        745,
+        750
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_7",
+      "pack": "geology",
+      "module": "crack.branching.3",
+      "position": [
+        920,
+        1050
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_8",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        1305,
+        1160
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_9",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        1150,
+        1470
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_10",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        1330,
+        1690
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_11",
+      "pack": "geology",
+      "module": "crack.branching.3",
+      "position": [
+        1590,
+        1470
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_12",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        1770,
+        1320
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_13",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        1580,
+        860
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_14",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        1730,
+        725
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_15",
+      "pack": "geology",
+      "module": "crack.branching.3",
+      "position": [
+        1850,
+        650
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_16",
+      "pack": "geology",
+      "module": "debris.pebbles.0",
+      "position": [
+        1940,
+        460
+      ],
+      "ground": true
+    },
+    {
+      "id": "ground_detail_17",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        2275,
+        220
+      ],
+      "ground": true
+    }
+  ],
+  "light_groups": [
+    {
+      "id": "entrance",
+      "near": [
+        245,
+        1455
+      ],
+      "color": "red",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.0
+    },
+    {
+      "id": "vein_west",
+      "near": [
+        340,
+        1160
+      ],
+      "color": "blue",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.17
+    },
+    {
+      "id": "vein_east",
+      "near": [
+        560,
+        1160
+      ],
+      "color": "green",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.34
+    },
+    {
+      "id": "vein_link",
+      "near": [
+        780,
+        1225
+      ],
+      "color": "white",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.51
+    },
+    {
+      "id": "grotto_west",
+      "near": [
+        270,
+        760
+      ],
+      "color": "orange",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.68
+    },
+    {
+      "id": "grotto_north",
+      "near": [
+        420,
+        700
+      ],
+      "color": "purple",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 0.8500000000000001
+    },
+    {
+      "id": "grotto_east",
+      "near": [
+        575,
+        780
+      ],
+      "color": "red",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.02
+    },
+    {
+      "id": "upper_west",
+      "near": [
+        725,
+        755
+      ],
+      "color": "blue",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.1900000000000002
+    },
+    {
+      "id": "upper_east",
+      "near": [
+        860,
+        790
+      ],
+      "color": "green",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.36
+    },
+    {
+      "id": "hollow_west",
+      "near": [
+        990,
+        1060
+      ],
+      "color": "white",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.53
+    },
+    {
+      "id": "hollow_east",
+      "near": [
+        1280,
+        1090
+      ],
+      "color": "orange",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.7000000000000002
+    },
+    {
+      "id": "hollow_lower",
+      "near": [
+        1040,
+        1300
+      ],
+      "color": "purple",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 1.87
+    },
+    {
+      "id": "shelf",
+      "near": [
+        1220,
+        955
+      ],
+      "color": "red",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.04
+    },
+    {
+      "id": "keeper_west",
+      "near": [
+        1190,
+        1490
+      ],
+      "color": "blue",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.21
+    },
+    {
+      "id": "keeper_east",
+      "near": [
+        1390,
+        1530
+      ],
+      "color": "green",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.3800000000000003
+    },
+    {
+      "id": "lower_passage",
+      "near": [
+        1600,
+        1380
+      ],
+      "color": "white",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.5500000000000003
+    },
+    {
+      "id": "deep_lower",
+      "near": [
+        1720,
+        1240
+      ],
+      "color": "orange",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.72
+    },
+    {
+      "id": "deep_west",
+      "near": [
+        1555,
+        890
+      ],
+      "color": "purple",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 2.89
+    },
+    {
+      "id": "deep_east",
+      "near": [
+        1785,
+        915
+      ],
+      "color": "red",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 3.06
+    },
+    {
+      "id": "deep_exit",
+      "near": [
+        1710,
+        800
+      ],
+      "color": "blue",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 3.2300000000000004
+    },
+    {
+      "id": "quiet_west",
+      "near": [
+        1700,
+        560
+      ],
+      "color": "green",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 3.4000000000000004
+    },
+    {
+      "id": "quiet_east",
+      "near": [
+        1870,
+        550
+      ],
+      "color": "white",
+      "radius": 210,
+      "gain": 0.45,
+      "phase": 3.5700000000000003
+    },
+    {
+      "id": "arena_west",
+      "near": [
+        1875,
+        215
+      ],
+      "color": "orange",
+      "radius": 240,
+      "gain": 0.45,
+      "phase": 3.74
+    },
+    {
+      "id": "arena_north",
+      "near": [
+        2040,
+        160
+      ],
+      "color": "purple",
+      "radius": 240,
+      "gain": 0.45,
+      "phase": 3.91
+    },
+    {
+      "id": "arena_east",
+      "near": [
+        2250,
+        230
+      ],
+      "color": "red",
+      "radius": 240,
+      "gain": 0.45,
+      "phase": 4.08
+    },
+    {
+      "id": "arena_lower",
+      "near": [
+        2160,
+        400
+      ],
+      "color": "blue",
+      "radius": 240,
+      "gain": 0.45,
+      "phase": 4.25
+    },
+    {
+      "id": "daylight",
+      "near": [
+        288,
+        1720
+      ],
+      "color": [
+        211,
+        207,
+        164
+      ],
+      "radius": 250,
+      "gain": 0.58,
+      "steady": true
+    }
+  ],
+  "routes": {
+    "main": [
+      [
+        288,
+        1660
+      ],
+      [
+        288,
+        1510
+      ],
+      [
+        330,
+        1400
+      ],
+      [
+        456,
+        1280
+      ],
+      [
+        680,
+        1270
+      ],
+      [
+        875,
+        1240
+      ],
+      [
+        1100,
+        1200
+      ],
+      [
+        1370,
+        1180
+      ],
+      [
+        1510,
+        1060
+      ],
+      [
+        1680,
+        970
+      ],
+      [
+        1730,
+        800
+      ],
+      [
+        1790,
+        700
+      ],
+      [
+        1810,
+        600
+      ],
+      [
+        1920,
+        520
+      ],
+      [
+        2000,
+        420
+      ],
+      [
+        2060,
+        300
+      ]
+    ],
+    "reflecting_loop": [
+      [
+        456,
+        1280
+      ],
+      [
+        360,
+        1150
+      ],
+      [
+        310,
+        1100
+      ],
+      [
+        244,
+        1036
+      ],
+      [
+        250,
+        900
+      ],
+      [
+        270,
+        780
+      ],
+      [
+        420,
+        725
+      ],
+      [
+        562,
+        782
+      ],
+      [
+        640,
+        795
+      ],
+      [
+        800,
+        820
+      ],
+      [
+        940,
+        980
+      ],
+      [
+        940,
+        1120
+      ],
+      [
+        1000,
+        1200
+      ],
+      [
+        1100,
+        1200
+      ]
+    ],
+    "keeper_loop": [
+      [
+        1100,
+        1200
+      ],
+      [
+        1080,
+        1400
+      ],
+      [
+        1150,
+        1510
+      ],
+      [
+        1260,
+        1580
+      ],
+      [
+        1260,
+        1510
+      ],
+      [
+        1430,
+        1500
+      ],
+      [
+        1450,
+        1570
+      ],
+      [
+        1660,
+        1420
+      ],
+      [
+        1740,
+        1240
+      ],
+      [
+        1730,
+        1110
+      ],
+      [
+        1680,
+        970
+      ]
+    ],
+    "raised_shelf": [
+      [
+        1100,
+        1200
+      ],
+      [
+        1220,
+        1150
+      ],
+      [
+        1220,
+        1100
+      ],
+      [
+        1220,
+        1050
+      ],
+      [
+        1220,
+        1010
+      ],
+      [
+        1220,
+        970
+      ]
+    ]
+  },
+  "navigation_points": {
+    "entrance": [
+      288,
+      1660
+    ],
+    "vein_gallery": [
+      456,
+      1280
+    ],
+    "reflecting_grotto": [
+      270,
+      780
+    ],
+    "upper_passage": [
+      800,
+      820
+    ],
+    "splitstone_hollow": [
+      1100,
+      1200
+    ],
+    "raised_shelf": [
+      1220,
+      970
+    ],
+    "keepers_recess": [
+      1260,
+      1580
+    ],
+    "deep_passage": [
+      1660,
+      1420
+    ],
+    "deep_gallery": [
+      1680,
+      970
+    ],
+    "quiet_shelf": [
+      1810,
+      600
+    ],
+    "echo_chamber": [
+      2060,
+      300
+    ]
+  },
+  "treasures": [
+    {
+      "id": "cave_vein_cache",
+      "entity_id": "cave_vein_cache",
+      "reward_id": "cave_vein_cache",
+      "label": "Vein Gallery cache",
+      "kind": "chest",
+      "position": [
+        334,
+        1200
+      ],
+      "approach": [
+        334,
+        1232
+      ]
+    },
+    {
+      "id": "cave_grotto_pack",
+      "entity_id": "cave_grotto_pack",
+      "reward_id": "cave_grotto_pack",
+      "label": "Grotto supply pack",
+      "kind": "pack",
+      "position": [
+        214,
+        1003
+      ],
+      "approach": [
+        244,
+        1036
+      ]
+    },
+    {
+      "id": "cave_grotto_chest",
+      "entity_id": "cave_grotto_chest",
+      "reward_id": "cave_grotto_chest",
+      "label": "Reflecting Grotto chest",
+      "kind": "chest",
+      "position": [
+        562,
+        750
+      ],
+      "approach": [
+        562,
+        782
+      ]
+    },
+    {
+      "id": "cave_keeper_chest",
+      "entity_id": "cave_keeper_chest",
+      "reward_id": "cave_keeper_chest",
+      "label": "Keeper's Recess chest",
+      "kind": "chest",
+      "position": [
+        1190,
+        1650
+      ],
+      "approach": [
+        1190,
+        1682
+      ]
+    },
+    {
+      "id": "cave_overlook_cache",
+      "entity_id": "cave_overlook_cache",
+      "reward_id": "cave_overlook_cache",
+      "label": "High Overlook cache",
+      "kind": "chest",
+      "position": [
+        1252,
+        944
+      ],
+      "approach": [
+        1220,
+        970
+      ]
+    },
+    {
+      "id": "cave_quiet_cache",
+      "entity_id": "cave_quiet_cache",
+      "reward_id": "cave_quiet_cache",
+      "label": "Quiet Shelf cache",
+      "kind": "pack",
+      "position": [
+        1710,
+        570
+      ],
+      "approach": [
+        1710,
+        602
+      ]
+    }
+  ],
+  "loops": [
+    {
+      "id": "reflecting_grotto",
+      "branch": "vein_gallery",
+      "rejoin": "upper_passage",
+      "route": "reflecting_loop"
+    },
+    {
+      "id": "keepers_recess",
+      "branch": "splitstone_hollow",
+      "rejoin": "deep_gallery",
+      "route": "keeper_loop"
+    }
+  ],
+  "legacy_landings": {
+    "sanctuary_cave_entrance": [
+      288,
+      1660
+    ],
+    "sanctuary_cave_hollow": [
+      1100,
+      1200
+    ],
+    "sanctuary_cave_depths": [
+      1680,
+      970
+    ]
+  },
+  "encounter_spaces": [
+    {
+      "id": "entrance_future_encounter",
+      "center": [
+        288,
+        1510
+      ],
+      "radius": 48,
+      "route": "main"
+    },
+    {
+      "id": "vein_future_encounter",
+      "center": [
+        500,
+        1280
+      ],
+      "radius": 48,
+      "route": "main"
+    },
+    {
+      "id": "hollow_future_encounter",
+      "center": [
+        1100,
+        1200
+      ],
+      "radius": 48,
+      "route": "main"
+    },
+    {
+      "id": "deep_future_encounter",
+      "center": [
+        1680,
+        970
+      ],
+      "radius": 48,
+      "route": "main"
+    },
+    {
+      "id": "grotto_future_encounter",
+      "center": [
+        310,
+        780
+      ],
+      "radius": 48,
+      "route": "reflecting_loop"
+    },
+    {
+      "id": "keeper_future_encounter",
+      "center": [
+        1210,
+        1510
+      ],
+      "radius": 48,
+      "route": "keeper_loop"
+    }
+  ],
+  "arena": {
+    "id": "echo_chamber",
+    "center": [
+      2060,
+      300
+    ],
+    "bounds": [
+      1870,
+      190,
+      380,
+      220
+    ],
+    "status": "reserved_future_miniboss"
+  },
+  "links": [
+    {
+      "id": "reserve",
+      "position": [
+        288,
+        1740
+      ],
+      "approach": [
+        288,
+        1720
+      ],
+      "radius": 28,
+      "destination": "elden_vale_sanctuary",
+      "landing": [
+        1008,
+        406
+      ],
+      "facing": "front",
+      "label": "Return to the Sanctuary"
+    }
+  ],
+  "inspections": [
+    {
+      "id": "grotto_water",
+      "position": [
+        600,
+        940
+      ],
+      "approach": [
+        585,
+        960
+      ],
+      "radius": 32,
+      "label": "Examine the pool",
+      "text": "Tiny crystals shimmer in the water. The dry bank continues around the pool."
+    },
+    {
+      "id": "keeper_stone",
+      "position": [
+        1190,
+        1560
+      ],
+      "approach": [
+        1190,
+        1590
+      ],
+      "radius": 28,
+      "label": "Read the weathered memorial",
+      "text": "The worn marks honor those who came here to guide the dead home."
+    },
+    {
+      "id": "quiet_shelf",
+      "position": [
+        1810,
+        600
+      ],
+      "radius": 30,
+      "label": "Take in the quiet ledge",
+      "text": "A sheltered ledge before the chamber. We should make sure we are ready before going farther."
+    }
+  ],
+  "traversal_checks": {
+    "solid_points": [
+      {
+        "id": "outer_rock",
+        "position": [
+          40,
+          40
+        ]
+      },
+      {
+        "id": "grotto_pool",
+        "position": [
+          456,
+          888
+        ]
+      },
+      {
+        "id": "keeper_pool",
+        "position": [
+          1320,
+          1608
+        ]
+      },
+      {
+        "id": "overlook_left_face",
+        "position": [
+          1142,
+          980
+        ]
+      },
+      {
+        "id": "overlook_right_face",
+        "position": [
+          1298,
+          980
+        ]
+      },
+      {
+        "id": "overlook_front_left",
+        "position": [
+          1168,
+          1000
+        ]
+      },
+      {
+        "id": "overlook_front_right",
+        "position": [
+          1272,
+          1000
+        ]
+      },
+      {
+        "id": "overlook_back",
+        "position": [
+          1220,
+          929
+        ]
+      }
+    ],
+    "ramp_checks": {
+      "lower": [
+        1220,
+        1100
+      ],
+      "middle": [
+        1220,
+        1050
+      ],
+      "upper": [
+        1220,
+        970
+      ]
+    },
+    "clearance_stations": [
+      {
+        "name": "entrance_passage",
+        "position": [
+          330,
+          1400
+        ],
+        "width": 72
+      },
+      {
+        "name": "vein_link",
+        "position": [
+          780,
+          1250
+        ],
+        "width": 72
+      },
+      {
+        "name": "hollow_deep",
+        "position": [
+          1420,
+          1140
+        ],
+        "width": 72
+      },
+      {
+        "name": "deep_quiet",
+        "position": [
+          1730,
+          800
+        ],
+        "width": 72
+      },
+      {
+        "name": "quiet_arena",
+        "position": [
+          1920,
+          520
+        ],
+        "width": 72
+      }
+    ]
+  },
+  "collision_barriers": [
+    {
+      "id": "overlook_left_face",
+      "rect": [
+        1120,
+        940,
+        44,
+        80
+      ]
+    },
+    {
+      "id": "overlook_right_face",
+      "rect": [
+        1276,
+        940,
+        44,
+        80
+      ]
+    },
+    {
+      "id": "overlook_front_left",
+      "rect": [
+        1140,
+        990,
+        56,
+        20
+      ]
+    },
+    {
+      "id": "overlook_front_right",
+      "rect": [
+        1244,
+        990,
+        56,
+        20
+      ]
+    },
+    {
+      "id": "overlook_back",
+      "rect": [
+        1140,
+        918,
+        160,
+        22
+      ]
+    }
+  ]
+}

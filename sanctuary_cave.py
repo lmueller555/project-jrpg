@@ -5,6 +5,9 @@ this dungeon never accepts unread story, recruits a character or starts a boss.
 """
 from __future__ import annotations
 
+from copy import deepcopy
+import json
+import math
 from pathlib import Path
 
 import pygame
@@ -15,9 +18,11 @@ from social import clear_sight
 ROOT = Path(__file__).resolve().parent
 RESERVE_ID = 'elden_vale_sanctuary'
 RESERVE_ENTRY_APPROACH = (1008, 406)
-SCENE_FILES = {f'sanctuary_cave_{name}': ROOT/f'assets/maps/sanctuary_cave/{name}/map.json'
-               for name in ('entrance', 'hollow', 'depths')}
+SCENE_ID = 'sanctuary_cave'
+SCENE_FILES = {SCENE_ID: ROOT/'assets/maps/sanctuary_cave/map.json'}
 CAVE_SCENES = frozenset(SCENE_FILES)
+LEGACY_SCENES = frozenset(f'sanctuary_cave_{name}'
+                          for name in ('entrance', 'hollow', 'depths'))
 REWARDS = {
     'cave_vein_cache': {'aether_sapphire': 1},
     'cave_grotto_pack': {'aether_emerald': 1},
@@ -26,6 +31,36 @@ REWARDS = {
     'cave_overlook_cache': {'aether_amethyst': 2},
     'cave_quiet_cache': {'aether_opal': 1},
 }
+
+
+def migrate_legacy_cave(data, landings=None):
+    """Move an old room checkpoint into the corresponding continuous area.
+
+    Room-local coordinates cannot be reused on the new map. Only the player's
+    scene and feet change; discovery receipts, inventory, party resources and
+    the pending Sanctuary story handoff retain their original values. The
+    returned journey still has to pass every ordinary save validator.
+    """
+    player = data.get('player') if isinstance(data, dict) else None
+    scene = player.get('scene') if isinstance(player, dict) else None
+    if not isinstance(scene, str) or scene not in LEGACY_SCENES:return data
+    position = player.get('position')
+    if not (isinstance(position, list) and len(position) == 2
+            and all(type(value) in (int, float) and math.isfinite(value)
+                    and abs(value) < 1e7 for value in position)):
+        raise ValueError('Invalid legacy cave checkpoint')
+    if landings is None:
+        metadata = json.loads(SCENE_FILES[SCENE_ID].read_text(encoding='utf-8'))
+        landings = metadata['cave']['legacy_landings']
+    landing = landings.get(scene) if isinstance(landings, dict) else None
+    if not (isinstance(landing, (list, tuple)) and len(landing) == 2
+            and all(type(value) in (int, float) and math.isfinite(value)
+                    and abs(value) < 1e7 for value in landing)):
+        raise ValueError('Invalid continuous cave landing')
+    result = deepcopy(data)
+    result['player']['scene'] = SCENE_ID
+    result['player']['position'] = list(landing)
+    return result
 
 
 class SanctuaryCave:
@@ -55,7 +90,7 @@ class SanctuaryCave:
             return SanctuaryCave.valid_snapshot(data['sanctuary_cave'])
         # Existing journeys predate the cave. A cave checkpoint itself must
         # carry its receipts, so malformed new saves cannot silently refill it.
-        return data.get('player', {}).get('scene') not in CAVE_SCENES
+        return data.get('player', {}).get('scene') not in CAVE_SCENES | LEGACY_SCENES
 
     def to_dict(self):
         return {'version': 1, 'opened': sorted(self.opened)}
@@ -101,7 +136,7 @@ class SanctuaryCave:
         if g.world.data.get('id') != RESERVE_ID:return None
         point = g.world.data.get('public_approaches', {}).get('cave', RESERVE_ENTRY_APPROACH)
         return {'id': 'sanctuary_to_cave', 'position': point, 'radius': 28,
-                'destination': 'sanctuary_cave_entrance', 'label': 'Lift the rail and enter the cave'}
+                'destination': SCENE_ID, 'label': 'Lift the rail and enter the cave'}
 
     def _nearby(self):
         if not self._available():return None

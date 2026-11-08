@@ -1,7 +1,6 @@
-"""Production input, cave travel and durable exploration during pending MQ03."""
+"""Production walking, continuous cave exploration and durable MQ03 saves."""
 import json
 import os
-from pathlib import Path
 import tempfile
 import unittest
 
@@ -11,10 +10,8 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from quests import REGENT_QUEST, LANTERN_QUEST
+from sanctuary_cave import SCENE_ID, LEGACY_SCENES, REWARDS
 from tools.capture_mq03_emergency import Driver
-
-
-SCENES = ('sanctuary_cave_entrance', 'sanctuary_cave_hollow', 'sanctuary_cave_depths')
 
 
 class CaveGameplayTests(unittest.TestCase):
@@ -60,6 +57,53 @@ class CaveGameplayTests(unittest.TestCase):
             self.assertEqual(sum(actor in world.npcs for world in game.scenes.values()), 1)
         self.assertEqual([actor.identifier for actor in game.party_travel.actors()].count('mira'), 1)
 
+    def assert_gathered(self):
+        """The real following actors negotiate the same floor as the player."""
+        game = self.driver.game
+        escorts = game.regent_quest.sanctuary_escorts
+        def gathered():
+            mira = next((actor for actor in game.party_travel.actors()
+                         if actor.identifier == 'mira'), None)
+            return (all(actor.position.distance_to(game.player.position) < 160 for actor in escorts)
+                    and mira is not None and mira.position.distance_to(game.player.position) < 80)
+        self.driver.until(gathered, seconds=12)
+        self.assert_pending_party()
+        for actor in escorts:
+            self.assertTrue(game.world.can_stand(actor.position, actor.probe_size, actor),
+                            (actor.data['id'], list(actor.position)))
+        mira = next(actor for actor in game.party_travel.actors() if actor.identifier == 'mira')
+        self.assertLess(mira.position.distance_to(game.player.position), 80)
+        self.assertTrue(game.world.can_stand(mira.position))
+
+    def guard_continuous_walk(self):
+        world = self.driver.game.world
+        def observe(seconds):
+            game = self.driver.game
+            self.assertIs(game.world, world, 'Walking between cave rooms loaded another scene')
+            self.assertEqual(game.transfer_cooldown, 0)
+            self.assertTrue(world.can_stand(game.player.position))
+        self.driver.observer = observe
+        return world
+
+    def open_treasure(self, identifier):
+        game = self.driver.game
+        treasure = next(item for item in game.world.data['cave']['treasures']
+                        if item['id'] == identifier)
+        self.driver.walk(treasure['approach'])
+        before = {item:game.inventory.quantity(item) for item in REWARDS[identifier]}
+        self.key(pygame.K_e)
+        self.acknowledge()
+        self.assertIn(identifier, game.sanctuary_cave.to_dict()['opened'])
+        for item, count in REWARDS[identifier].items():
+            self.assertEqual(game.inventory.quantity(item), before[item]+count)
+        inventory = game.inventory.to_dict()
+        self.key(pygame.K_e)
+        self.acknowledge()
+        self.assertEqual(game.inventory.to_dict(), inventory)
+        entity = next(record for record in game.world.entities
+                      if record['id'] == treasure.get('entity_id', identifier))
+        self.assertEqual(entity['state'], 'open')
+
     def test_old_save_without_cave_state_continues_without_granting_treasure(self):
         driver = self.driver
         before = driver.game.inventory.to_dict()
@@ -86,54 +130,94 @@ class CaveGameplayTests(unittest.TestCase):
                 self.assertIsNotNone(game.save_error)
                 self.assertEqual(driver.save.read_text(), raw)
 
-    def test_real_entry_all_six_rewards_scene_continues_and_return_preserve_pending_mq03(self):
+    def test_real_walking_explores_one_instance_and_preserves_pending_mq03_on_continue(self):
         driver = self.driver
         driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
         self.assert_pending_party()
+        self.assertTrue(driver.game.party.attributes('caelan').set_current(hp=75, mp=4))
+        self.assertTrue(driver.game.party.attributes('mira').set_current(hp=121, mp=7))
+        party = driver.game.party.to_dict()
         # The public cave approach is reached through the production reserve.
         from sanctuary_cave import RESERVE_ENTRY_APPROACH
         driver.walk(RESERVE_ENTRY_APPROACH)
         self.assertIn('cave', driver.game.sanctuary_cave.interaction_hint().lower())
         self.key(pygame.K_e)
-        self.assertEqual(driver.game.world.data['id'], SCENES[0])
+        self.assertEqual(driver.game.world.data['id'], SCENE_ID)
         driver.until(lambda:not driver.game.transfer_cooldown)
-        seen = set()
-        for index, scene in enumerate(SCENES):
-            self.assertEqual(driver.game.world.data['id'], scene)
-            for treasure in driver.game.world.data['cave']['treasures']:
-                with self.subTest(scene=scene, treasure=treasure['id']):
-                    driver.walk(treasure['approach'])
-                    before = sum(driver.game.inventory.to_dict()['items'].values())
-                    self.key(pygame.K_e)
-                    self.acknowledge()
-                    self.assertIn(treasure['id'], driver.game.sanctuary_cave.to_dict()['opened'])
-                    seen.add(treasure['id'])
-                    inventory = driver.game.inventory.to_dict()
-                    self.assertGreater(sum(inventory['items'].values()), before)
-                    self.key(pygame.K_e);self.acknowledge()
-                    self.assertEqual(driver.game.inventory.to_dict(), inventory)
-                    entity = next(record for record in driver.game.world.entities
-                                  if record['id'] == treasure.get('entity_id', treasure['id']))
-                    self.assertEqual(entity['state'], 'open')
-            inventory = driver.game.inventory.to_dict()
-            position = list(driver.game.player.position)
-            driver.continue_saved()
-            self.assertEqual(driver.game.world.data['id'], scene)
-            self.assertEqual(list(driver.game.player.position), position)
-            self.assertEqual(driver.game.inventory.to_dict(), inventory)
-            self.assertEqual(set(driver.game.sanctuary_cave.to_dict()['opened']), seen)
-            self.assert_pending_party()
-            for treasure in driver.game.world.data['cave']['treasures']:
-                driver.walk(treasure['approach'])
-                self.key(pygame.K_e);self.acknowledge()
+        world = self.guard_continuous_walk()
+        cave = world.data['cave']
+        points = cave['navigation_points']
+        transitions = list(driver.transitions)
+        self.assertEqual({link['destination'] for link in cave['links']}, {'elden_vale_sanctuary'})
+        self.assertFalse(LEGACY_SCENES.intersection(scene.data['id'] for scene in driver.game.scenes.values()))
+        # Both optional loops, the raised spur and the arena are reached by
+        # ordinary input. Every room stays in the original world instance.
+        itinerary = (
+            ('vein_gallery', 'cave_vein_cache'),
+            ('reflecting_grotto', 'cave_grotto_pack'),
+            ('reflecting_grotto', 'cave_grotto_chest'),
+            ('upper_passage', None),
+            ('splitstone_hollow', None),
+            ('raised_shelf', 'cave_overlook_cache'),
+            ('splitstone_hollow', None),
+            ('keepers_recess', 'cave_keeper_chest'),
+            ('deep_passage', None),
+            ('deep_gallery', None),
+            ('quiet_shelf', 'cave_quiet_cache'),
+            ('echo_chamber', None),
+        )
+        for room, treasure in itinerary:
+            with self.subTest(room=room, treasure=treasure):
+                driver.walk(points[room])
+                if treasure:self.open_treasure(treasure)
+                self.assert_gathered()
+                self.assertEqual(driver.game.party.to_dict(), party)
+        self.assertEqual(driver.transitions, transitions)
+        self.assertEqual(set(driver.game.sanctuary_cave.to_dict()['opened']), set(REWARDS))
+        inventory = driver.game.inventory.to_dict()
+        position = list(driver.game.player.position)
+        driver.observer = None
+        driver.continue_saved()
+        self.assertEqual(driver.game.world.data['id'], SCENE_ID)
+        self.assertEqual(list(driver.game.player.position), position)
+        self.assertEqual(driver.game.inventory.to_dict(), inventory)
+        self.assertEqual(driver.game.party.to_dict(), party)
+        self.assert_pending_party()
+        for treasure in cave['treasures']:
+            entity = next(record for record in driver.game.world.entities
+                          if record['id'] == treasure.get('entity_id', treasure['id']))
+            self.assertEqual(entity['state'], 'open')
+
+        # Each supported former room save resumes in its matching area. Full
+        # receipt, resource, inventory and story state survive the migration.
+        saved = json.loads(driver.save.read_text())
+        for legacy in sorted(LEGACY_SCENES):
+            with self.subTest(legacy=legacy):
+                old = json.loads(json.dumps(saved))
+                old['player']['scene'] = legacy
+                old['player']['position'] = [410, 600]
+                driver.save.write_text(json.dumps(old))
+                driver.game = driver.new_game(True)
+                self.assertTrue(driver.game.has_saved_journey)
+                self.assertTrue(driver.game.begin_journey(True))
+                driver.until(lambda:not driver.game.opening_fade and not driver.game.transfer_cooldown)
+                self.assertEqual(driver.game.world.data['id'], SCENE_ID)
+                self.assertEqual(list(driver.game.player.position), cave['legacy_landings'][legacy])
                 self.assertEqual(driver.game.inventory.to_dict(), inventory)
-            if index < len(SCENES)-1:self.use_link(SCENES[index+1])
-        self.assertEqual(len(seen), 6)
-        self.use_link(SCENES[1]);self.use_link(SCENES[0]);self.use_link('elden_vale_sanctuary')
+                self.assertEqual(driver.game.party.to_dict(), party)
+                self.assertEqual(set(driver.game.sanctuary_cave.to_dict()['opened']), set(REWARDS))
+                self.assert_pending_party()
+
+        self.guard_continuous_walk()
+        for point in reversed(cave['routes']['main']):driver.walk(point)
+        self.assert_gathered()
+        driver.observer = None
+        self.use_link('elden_vale_sanctuary')
         self.assert_pending_party()
         driver.continue_saved()
         self.assert_pending_party()
-        self.assertEqual(set(driver.game.sanctuary_cave.to_dict()['opened']), seen)
+        self.assertEqual(set(driver.game.sanctuary_cave.to_dict()['opened']), set(REWARDS))
+        self.assertEqual(driver.game.inventory.to_dict(), inventory)
 
 
 if __name__ == '__main__':unittest.main()

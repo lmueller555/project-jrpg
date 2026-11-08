@@ -324,20 +324,13 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                          pygame.image.tobytes(self.render(19321), 'RGB'))
         self.world.reduced_motion = False
 
-    def test_review_has_not_changed_live_levels_or_player_journeys(self):
-        from tools.capture_limestone_cave import world_hashes, check
-        protected = world_hashes()
-        result = subprocess.run(['git', 'diff', 'HEAD', '--name-only'],
-                                cwd=ROOT, capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
-        untracked = subprocess.run(['git', 'ls-files', '--others', '--exclude-standard'],
-                                   cwd=ROOT, capture_output=True, text=True)
-        self.assertEqual(untracked.returncode, 0, untracked.stderr)
-        changed = set(result.stdout.splitlines()) | set(untracked.stdout.splitlines())
-        self.assertFalse(changed & set(protected),
-                         'The isolated proposal changed production sources or assets')
-        report = json.loads((REVIEW/'verification.json').read_text())
-        self.assertEqual(protected, report['live_world_snapshot_sha256'])
+    def test_retained_review_preserves_original_sources_and_artifacts(self):
+        from tools.review_archive import check_review_archive
+        # PR148's retained report pins the exact isolated review sources. Live
+        # deployment is now authorized; it must not rewrite this old evidence.
+        report = check_review_archive(
+            REVIEW, 'e7086d1edc23d3b9a1542f32e94c8b6670474a5b8893447048b76aefd8f3ab20',
+            'live_world_snapshot_sha256')
         self.assertTrue(report['ordinary_movement_only'])
         self.assertTrue(report['no_save_or_settings_files'])
         self.assertTrue(report['walking_seen'] and report['running_seen'])
@@ -346,7 +339,9 @@ class LimestoneCaveReviewTests(unittest.TestCase):
                          self.world.data['cave']['microcrystal_count'])
         self.assertLessEqual(report['microcrystals']['max_width'], 4)
         self.assertLessEqual(report['microcrystals']['max_height'], 5)
-        check(REVIEW)
+        self.assertTrue(report['reduced_motion_static'])
+        self.assertGreater(report['pulse']['max_mean'], report['pulse']['min_mean'])
+        self.assertEqual({gem['color'] for gem in report['wall_gems']}, GEM_COLORS)
 
 
 if __name__ == '__main__':unittest.main()

@@ -1,88 +1,115 @@
 # Sanctuary crystal cave
 
-The Sanctuary's first dungeon is a connected set of native pixel cave scenes.
-The route moves from daylight at the entrance through crystal-bearing galleries
-and reflecting pools to the broad Echo Chamber. Six persistent discoveries
-reward exploration along the route and its optional branches.
-
-The cave extends the Sanctuary's amethyst, cyan, opal and restrained amber
-materials. Slow crystal pulses illuminate surrounding stone and characters.
-The crystals remain scenery; collecting a cache never removes wall formations
-or disturbs memorial offerings.
+The Sanctuary's first dungeon is one continuous scrolling cave, assembled from
+the approved limestone dungeon asset pack. The player walks from the rooted,
+daylit entrance through crystal-bearing galleries and reflecting water to the
+broad Echo Chamber. Rooms, branches and return paths share the same world;
+there are no internal scene transfers or passage interactions.
 
 ## Layout and travel
 
-| Scene | Main route | Optional exploration |
-| --- | --- | --- |
-| Entrance | Cave Entrance → Vein Gallery → upper passage | Reflecting Grotto loop around the pool; three discoveries |
-| Hollow | Splitstone Hollow → Deep Gallery | Keeper's Recess loop and a high shelf; two discoveries |
-| Depths | Deep Gallery → Quiet Shelf → Echo Chamber | Quiet Shelf cache; final chamber and its inspection |
+The direct route is **Cave Entrance → Vein Gallery → Splitstone Hollow →
+Deep Gallery → Quiet Shelf → Echo Chamber**.
 
-The lower grotto and keeper routes reconnect with the main passages. Broad
-landmarks, wall contours and local lighting distinguish junctions. Walkable
-shelves remain consistent with the full 24 × 12 pixel player footprint, and
-scenery sorts against characters at its physical base.
+| Branch | Connection | Exploration reward |
+| --- | --- | --- |
+| Reflecting Grotto | Leaves Vein Gallery and rejoins the Upper Passage before Splitstone Hollow | A dropped pack and a chest across the reflecting pool |
+| Keeper's Recess | Takes the lower damp route from Splitstone Hollow and rejoins Deep Passage | A keeper's chest and traces of maintained stonework |
+| High shelf | A ramp-accessed spur overlooking Splitstone Hollow | A cache and a view over the junction |
+| Quiet Shelf alcove | A short spur before the final chamber | The last cache and room to prepare |
+
+The first Vein Gallery cache introduces the containers on the direct route.
+Both longer detours reconnect, so exploration does not require retracing a
+long dead end. A split pillar, natural arch, contrasting dry and wet routes,
+wall contours and local lighting distinguish the junctions. The Echo Chamber
+has a broad, clear floor framed by stone and embedded microcrystals.
+
+Main passages allow at least three 24-pixel tiles of clearance. Shelves, ramps
+and optional routes are authored for the full 24 × 12 pixel player footprint
+and the following story party. Physical scenery sorts at its base.
 
 Press **E** at the Sanctuary cave approach to lift the rail and enter. Inside,
-press **E** at passage mouths to move between the three scrolling scenes, or
-at containers to collect a discovery. These explicit passage interactions avoid
-automatic transfers while inspecting a tunnel. The entrance passage returns to
-the existing Sanctuary apron. **M** opens the current cave section's local map,
-with room names, passage locations and the player's position.
+walking crosses every room boundary. **E** opens containers, reads inspections
+or returns through the entrance to the Sanctuary apron. **M** shows the whole
+cave, its room landmarks, the exterior exit and the player's actual position.
+Selection and mouse hover label rooms; select a room with the keyboard or mouse
+to read its description.
+Treasure and encounter staging data are not map markers.
 
-Each discovery has an independent stable receipt. Opening it grants a modest
-bundle of existing Aether materials through the inventory foundation and changes
-its visible state. Reopening, revisiting or continuing a journey cannot grant
-the bundle twice. Material uses and equipment customization remain separate
-future systems.
+## Persistent discoveries and journeys
+
+The six existing discovery IDs and their inventory rewards are retained:
+
+| Receipt | Placement |
+| --- | --- |
+| `cave_vein_cache` | Vein Gallery, on the direct route |
+| `cave_grotto_pack` | Reflecting Grotto loop |
+| `cave_grotto_chest` | Across the grotto pool, reached around its shore |
+| `cave_keeper_chest` | Keeper's Recess |
+| `cave_overlook_cache` | High shelf above Splitstone Hollow |
+| `cave_quiet_cache` | Quiet Shelf alcove |
+
+Opening a discovery grants its existing Aether material bundle through the
+inventory foundation and changes the visible container state. Its independent
+receipt prevents duplicate rewards after reopening, revisiting or continuing
+a journey. Material uses and equipment customization remain future systems.
+
+Journeys saved inside the continuous cave restore the same location and opened
+containers. Older journeys from the three-section cave migrate to safe
+landings in the corresponding part of the new map, preserving receipts,
+inventory, party and quest progress.
 
 ## Assets and lighting
 
-The reusable cave source recipe is in
-`assets/source/terrain/sanctuary_cave/`. The builder exports the terrain kit,
-assembled scenes, collision, overviews, asset board and placement metadata to
-`assets/terrain/sanctuary_cave/` and `assets/maps/sanctuary_cave/`.
+The live map is `assets/maps/sanctuary_cave/map.json`, authored by
+`assets/source/maps/sanctuary_cave/recipe.json`. The builder composes the reusable
+modules documented in [the dungeon asset pack](DUNGEON_ASSET_PACK.md): dry and
+damp limestone, gravel, silt, rooted earth transitions, walls and overhangs,
+ledges and ramps, fixed water banks, animated water, seepage, debris and
+restrained keeper paving. Containers reuse the original cave's open and closed
+sprites. Authored room polygons and navigation routes describe the full level.
 
-Floor and wall modules use the existing 24 pixel scale. Crystal formations
-reuse the Sanctuary material language with independent light sources and fixed
-physical silhouettes. Cave scenery remains modular rather than a painted
-background. Source data records the intended paths, room landmarks, treasure
-approaches, future encounter spaces and scene connections.
+Red, blue, green, white, orange and purple microcrystals follow the cave walls
+in varied seams, corners and narrow fissures. Individual facets are mostly
+2 × 3 native pixels and never exceed 4 × 5. They remain embedded scenery when
+the player collects a container.
 
-`SanctuaryCaveWorld` draws the ordinary ground, scenery, party and foreground
-before applying a separate colored light field. Sources follow a six-second
-breathing cycle; their visible crystal frames and local illumination share the
-same pulse. The ambient level preserves readable floors at the trough. Light
-falloff and visibility are cached, clipped at walls and culled to the viewport.
-The HUD, dialogue and menus remain outside the lighting pass.
+`SanctuaryCaveWorld` draws ordinary ground, scenery, party and foreground before
+applying the colored light field. Sources follow a six-second breathing cycle;
+the crystal frames and local illumination share that pulse. Ambient light
+keeps the paths readable at the trough. Cached falloff is clipped at walls and
+culled to the viewport. The HUD, dialogue and menus remain outside the lighting
+pass. Reduced motion holds crystals and illumination at a readable static
+state while preserving the same terrain and collision.
 
-Reduced motion holds crystals and their illumination at a readable static
-state. It does not remove light or make navigation depend on animation.
+## Story and encounters
 
-## Story boundary
+The cave is explorable while the MQ03 Sanctuary arrival remains pending.
+Existing party ownership and Kindled Courage continue at that checkpoint.
+Cave entry, treasure and the Echo Chamber inspection preserve that story state.
 
-The cave is explorable without resolving the pending MQ03 Sanctuary arrival.
-The existing party ownership and Kindled Courage music continue while that
-checkpoint remains active. Cave entry, treasure and the Echo Chamber inspection
-do not complete a quest, recruit Lucan or trigger an invented encounter.
+Six spaces reserve future normal encounters: four on the direct route and one
+on each exploration loop. The Echo Chamber reserves the miniboss arena. These
+are layout metadata, with no enemy population or boss combat added by this
+level implementation. The Quiet Shelf provides a preparation pause without
+restoring HP or MP.
 
 The arrival cutscene, enemy populations, miniboss identity, combat balance and
-post-boss resolution remain later work. The Echo Chamber provides a clear staging
-space for that encounter. The cave does not establish the confluence's detailed
-workings, identify the original sacrificial temple or merge this location with
-the historically sealed workers' passage.
+post-boss resolution remain later work. The cave does not establish the
+confluence's detailed workings, identify the original sacrificial temple or
+merge this location with the historically sealed workers' passage.
 
-## Reproduction and review
+## Reproduction and retained reviews
 
 ```sh
-python tools/build_sanctuary_cave.py
-python tools/build_sanctuary_cave.py --check
-python tools/capture_sanctuary_cave.py
-python tools/capture_sanctuary_cave.py --check
+python tools/build_continuous_sanctuary_cave.py
+python tools/build_continuous_sanctuary_cave.py --check
 ```
 
-The [production review](reviews/sanctuary_cave/README.md) contains gameplay views,
-light trough and crest captures, local maps, reduced motion and a walkthrough.
-It uses disposable settings and saves, production movement and **E** input.
-Its fixture initializes only completed earlier quests; the MQ03 emergency and
-journey to the Sanctuary are played normally before entering the cave.
+The retained [original cave review](reviews/sanctuary_cave/README.md) documents
+the earlier three-section implementation. Its images and walkthrough are
+historical evidence, not a preview of the current layout. The
+[limestone chamber](LIMESTONE_CAVE_REVIEW.md) and
+[expanded pack review](reviews/dungeon_pack/README.md) show the approved reusable
+materials. No new walkthrough was generated for the continuous level; review
+the merged dungeon in-game.

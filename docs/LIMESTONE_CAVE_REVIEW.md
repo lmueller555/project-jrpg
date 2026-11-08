@@ -1,7 +1,8 @@
 # Limestone cave material review
 
-**Status: proposed artwork, awaiting user review. This chamber is isolated from
-the live cave and is not merged into main.**
+**Status: approved and merged. This isolated material-study chamber is retained
+as a review artifact. Its assets now also build the
+[continuous live cave](SANCTUARY_CAVE.md).**
 
 The review develops the Sanctuary's existing natural stone into a cave pack:
 neutral grey and taupe limestone, pale calcite edges, damp teal staining and
@@ -43,8 +44,8 @@ python tools/preview_limestone_cave.py
 | Escape | Close the viewer |
 
 The viewer never opens a journey, quest, inventory or settings controller and
-never writes a player save. The current Sanctuary, cave layout, cave assets and
-story remain unchanged while this material direction is reviewed.
+never writes a player save. It runs separately from the live Sanctuary, dungeon
+layout and story.
 
 ## Assets and reproduction
 

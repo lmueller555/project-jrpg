@@ -16,7 +16,7 @@ class CaveFixture:
     def __init__(self):
         self.size = (240, 180)
         self.blocked = pygame.Mask(self.size)
-        self.data = {'id': 'sanctuary_cave_entrance', 'cave': {'treasures': [
+        self.data = {'id': 'sanctuary_cave', 'cave': {'treasures': [
             {'id': 'cave_vein_cache', 'position': [120, 70], 'approach': [120, 90],
              'reward_id': 'cave_vein_cache', 'label': 'the supply box'}]}}
         self.entities = [{'id': 'cave_vein_cache', 'state': 'closed'}]
@@ -100,8 +100,8 @@ class CaveControllerTests(unittest.TestCase):
                        {'version': 1, 'opened': [], 'extra': 0}):
             with self.subTest(record=record):self.assertFalse(self.scene.valid_snapshot(record))
         self.assertTrue(self.scene.valid_journey({'player': {'scene': 'eldenmere'}}))
-        self.assertFalse(self.scene.valid_journey({'player': {'scene': 'sanctuary_cave_depths'}}))
-        self.assertTrue(self.scene.valid_journey({'player': {'scene': 'sanctuary_cave_depths'},
+        self.assertFalse(self.scene.valid_journey({'player': {'scene': 'sanctuary_cave'}}))
+        self.assertTrue(self.scene.valid_journey({'player': {'scene': 'sanctuary_cave'},
                                                   'sanctuary_cave': valid}))
         self.assertFalse(self.scene.valid_journey({'player': []}))
 
