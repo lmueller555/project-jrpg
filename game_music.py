@@ -304,6 +304,22 @@ class GameMusic:
                 self._envelope = 1.0
         self.refresh_volume()
 
+    def fade_out(self, fade_ms=700):
+        """Fade to silence without restarting an already pending fade."""
+        try:
+            fade = float(fade_ms)/1000
+            if not math.isfinite(fade):return False
+        except (ValueError, TypeError, OverflowError):return False
+        if self.desired_track is None:return
+        self.desired_track = None
+        if self.current_track is None:return
+        if fade <= 0:
+            self._clear_current()
+            return
+        self._fade_mode = 'out'
+        self._fade_duration = self._fade_remaining = fade
+        self._fade_start = self._envelope
+
     def stop(self):
         self._clear_current()
         self.desired_track = None

@@ -866,6 +866,7 @@ class Game:
         self.combat.prepare_world_resume()
         self.music.set_paused(not self._music_focused)
         self.music.play('eldenmere')
+        self.regent_quest.emergency.sync_music(restoring=True)
         if data is not None and data.get('post_battle') is not None:
             if not self.combat.restore_pending(data['post_battle']):
                 self.save_error='The saved battle spoils could not be restored.'
@@ -1365,6 +1366,7 @@ class Game:
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
         self.mill_quest.sync_encounter_music()
+        if not self.on_title:self.regent_quest.emergency.sync_music()
         self.music.set_paused(not self._music_focused or
                               bool(self.combat.active and (self.combat.paused or not self.combat.focused)))
         self.music.set_ducked(not self.combat.post_phase and
