@@ -1,4 +1,4 @@
-"""MQ03 welcomes Aldric and Lucan directly, then leaves excavation unresolved."""
+"""MQ03 welcomes the visitors, then exposes the concealed Sanctuary crew."""
 import copy
 from collections import deque
 import json
@@ -161,11 +161,22 @@ class RegentQuestTests(unittest.TestCase):
     def discussion(self,read=True):
         self.welcome();self.interact('discussion')
         if read:
-            self.read_current();self.assertEqual(self.c.stage,'discussion')
+            self.read_current();self.assertEqual(self.c.stage,'interruption')
             self.assertEqual(self.g.quests.objective_status(REGENT,'welcome_party'),'completed')
 
     def complete(self):
-        self.discussion();self.at('aftermath');self.interact('aftermath');self.read_current()
+        """Explicitly seed the completed v2 route for later-quest compatibility.
+
+        New MQ03 gameplay stops at the deferred Sanctuary arrival. Older
+        completed visits must still support the existing lantern quest without
+        inventing an attack, a new journey or Mira's emergency availability.
+        """
+        self.welcome()
+        self.assertTrue(self.g.quests.complete_objective(REGENT,'speak_serene'))
+        self.assertTrue(self.g.quests.turn_in(REGENT,'mother_serene'))
+        self.g.social.flags.add('CH01_MQ03_COMPLETE')
+        self.g.quests.unlock('CH01_MQ04')
+        self.assertTrue(self.c.restore({'version':2,'stage':'done'}))
         self.assertEqual(self.c.stage,'done');self.assertEqual(self.g.quests.status(REGENT),'completed')
 
     def reload(self):
@@ -188,7 +199,7 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(other.quests.status(REGENT),'available')
         self.assertEqual(other.regent_quest.stage,'idle')
 
-    def test_objectives_give_caelan_only_guide_and_host_responsibilities(self):
+    def test_objectives_retain_compatible_ids_without_adjudication_tasks(self):
         objectives=self.g.quests.definitions[REGENT]['objectives']
         self.assertEqual([o['id'] for o in objectives],
                          ['meet_visitors','accompany_visit','welcome_party','speak_serene'])
@@ -295,7 +306,7 @@ class RegentQuestTests(unittest.TestCase):
     def test_legacy_town_player_checkpoint_restages_the_welcome_inside(self):
         self.escort();self.g.save_progress()
         data=json.loads(self.path.read_text())
-        self.assertEqual(data['regent_quest'],{'version':2,'stage':'welcome'})
+        self.assertEqual(data['regent_quest'],{'version':3,'stage':'welcome'})
         data['regent_quest']['version']=1
         data['player']={'scene':'eldenmere.playable','position':[386,318],'facing':'back'}
         self.path.write_text(json.dumps(data))
@@ -366,7 +377,7 @@ class RegentQuestTests(unittest.TestCase):
                 loaded=self.game(True)
                 self.assertTrue(loaded.begin_journey(True),loaded.save_error)
                 self.assertEqual(loaded.regent_quest.stage,'escorting')
-                self.assertEqual(loaded.regent_quest.to_dict(),{'version':2,'stage':'escorting'})
+                self.assertEqual(loaded.regent_quest.to_dict(),{'version':3,'stage':'escorting'})
                 self.assertEqual(loaded.quests.states[REGENT]['completed_objectives'],['meet_visitors'])
                 self.assertFalse(loaded.social.active)
                 self.assertIn(loaded.venn_visit.family['father'],loaded.venn_visit.home.npcs)
@@ -398,17 +409,22 @@ class RegentQuestTests(unittest.TestCase):
         self.assertEqual(self.g.quests.objective_status(REGENT,'welcome_party'),'completed')
         self.assertEqual(self.g.quests.objective_status(REGENT,'speak_serene'),'active')
         self.assertTrue(self.c.interact());self.read_current()
-        self.assertEqual(self.c.stage,'discussion')
+        self.assertEqual(self.c.stage,'interruption')
 
-    def test_final_personal_exchange_is_required_for_completion(self):
-        self.discussion();self.at('aftermath');self.interact('aftermath')
+    def test_attack_report_is_required_before_the_emergency_departure(self):
+        self.discussion()
+        self.until(lambda:self.c.stage=='attack_report')
+        if not self.g.social.active:self.assertTrue(self.c.interact())
+        self.assertEqual(self.g.social.script_identifier,'regent_attack_report')
         self.g.social.advance();self.g.social.cancel()
         self.assertEqual(self.g.quests.status(REGENT),'active')
+        self.assertEqual(self.c.stage,'attack_report')
         self.assertTrue(self.c.interact());self.read_current()
-        self.assertEqual(self.g.quests.status(REGENT),'completed')
-        self.assertEqual(self.c.stage,'done')
+        self.assertEqual(self.g.quests.status(REGENT),'active')
+        self.assertEqual(self.c.stage,'departure')
+        self.assertEqual(self.g.quests.status('CH01_MQ04'),'locked')
 
-    def test_full_visit_preserves_mill_and_does_not_authorize_excavation(self):
+    def test_legacy_completed_visit_preserves_mill_and_does_not_invent_excavation(self):
         self.complete()
         self.assertTrue(self.g.mill_quest.mill_restored)
         self.assertFalse(next(e for e in self.g.town.entities if e['id']=='mill')['animation_stopped'])

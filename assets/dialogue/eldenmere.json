@@ -68,9 +68,14 @@
       "portrait": "road_guard"
     },
     "regent_clerk": {
-      "name": "Clerk",
+      "name": "Page",
       "portrait": "male_03",
       "actor_id": "regent_clerk"
+    },
+    "regent_survivor": {
+      "name": "Crown worker",
+      "portrait": "regent_survivor",
+      "actor_id": "regent_survivor"
     },
     "regent_driver": {
       "name": "Driver",

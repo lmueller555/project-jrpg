@@ -646,6 +646,7 @@ class Game:
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                BotLoadouts.valid_journey(data) and
+               (not RegentQuest.sanctuary_party_snapshot(data.get('regent_quest')) or 'party' in data) and
                ('party' not in data or self._valid_party_snapshot(data)) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
@@ -682,6 +683,13 @@ class Game:
                 accompanying=(data['quests']['quests'][MILL_QUEST]['status'] in ('active','ready')
                               and not data.get('mill_quest',{}).get('resolved',False))
                 if accompanying and (not mira['available'] or 'mira' not in party.active_ids):return False
+        sanctuary_trip=RegentQuest.sanctuary_party_snapshot(data.get('regent_quest'))
+        if sanctuary_trip:
+            mira=party.members.get('mira')
+            if (mira is None or not mira['available'] or 'mira' not in party.active_ids
+                    or party.current_event_id!='mq03_sanctuary'
+                    or 'mira' not in party.required_ids):return False
+        elif party.current_event_id=='mq03_sanctuary':return False
         return attributes.to_dict()==expected_attributes
 
     @staticmethod
@@ -912,9 +920,20 @@ class Game:
     def _sync_story_party(self):
         """Reconcile authored recruitment without granting future companions."""
         met=self.quests.objective_status(MILL_QUEST,'meet_mira')=='completed'
-        if not met:return
+        sanctuary_trip=bool(getattr(self.regent_quest,'sanctuary_party_active',False))
+        if not met:return not sanctuary_trip
         migrated='mira' not in self.party.members
         if migrated:self.party.recruit('mira',temporary=True)
+        # Acknowledged MQ03 recruitment owns this outing after the completed
+        # mill quest. Reconciliation never resets her persistent resources.
+        if sanctuary_trip:
+            if self.party.current_event_id not in (None,'mq02','mq03_sanctuary'):return False
+            if self.party.current_event_id=='mq02':self.party.end_event('mq02')
+            self.party.set_available('mira',True)
+            return self.party.begin_event('mq03_sanctuary',required=('caelan','mira'),
+                                          reason='Caelan and Mira are needed at the Sanctuary.')
+        if self.party.current_event_id=='mq03_sanctuary':
+            self.party.end_event('mq03_sanctuary')
         accompanying=self.mill_quest.active and not self.mill_quest.resolved
         if accompanying:
             self.party.set_available('mira',True)
@@ -925,6 +944,7 @@ class Game:
             if leaving:self.party.end_event('mq02')
             if (migrated or leaving) and self.party.members['mira']['temporary']:
                 self.party.set_available('mira',False,'Working in Eldenmere.')
+        return True
 
     def _party_checkpoint(self):
         return not self.save_store.enabled or self.save_progress()
@@ -1361,6 +1381,11 @@ class Game:
                 (self.mill_quest.encounter_cutscene_active or self.mill_quest.encounter_pending)):
             self.opening_audio.set_paused(True)
             return
+        if not self._music_focused and self.regent_quest.locks_player:
+            # The survivor's physical entrance shares the exploration clock;
+            # focus loss must not finish that scene while its window is away.
+            self.opening_audio.set_paused(True)
+            return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
                                       self.world_map_viewer.is_open or self.party_ui.is_open)
         if self.pause.is_open or self.inventory_ui.is_open or self.world_map_viewer.is_open or self.party_ui.is_open:
@@ -1425,6 +1450,10 @@ class Game:
             for routine in self.play_routines:routine.update(seconds)
             for routine in self.block_routines:routine.update(seconds)
             for routine in self.bone_routines:routine.update(seconds)
+        elif getattr(self.regent_quest,'sanctuary_escort_active',False):
+            # The same owner stages its visitors in the detailed reserve. The
+            # overworld keeps its existing leader-only scale presentation.
+            self.regent_quest.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         self.overworld_travel.update(seconds)

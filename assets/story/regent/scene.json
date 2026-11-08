@@ -165,12 +165,12 @@
   "discussion": [
     {
       "speaker": "aldric",
-      "text": "Before I lose you to the festival preparations, could we look at the survey for Elden Vale Sanctuary?",
+      "text": "Thank you for the wonderful meal and company. Now if I may, shall we discuss the matter of our visit?",
       "cue": "open_survey"
     },
     {
       "speaker": "serene",
-      "text": "Of course. Caelan, let me move those plates."
+      "text": "Of course. Caelan, please take these plates."
     },
     {
       "speaker": "caelan",
@@ -179,15 +179,15 @@
     },
     {
       "speaker": "aldric",
-      "text": "The surveyors marked the nearer seam here. They believe it could supply stone for several of the repair crews."
+      "text": "Elden Vale Sanctuary is the closest untapped deposit. We would not ask if it were not important."
     },
     {
       "speaker": "serene",
-      "text": "What’s coming from the existing quarries?"
+      "text": "What about the other quarries?"
     },
     {
       "speaker": "aldric",
-      "text": "More is being cut. Much of it is already promised, and the longer journeys keep tying up the same carts."
+      "text": "They are already mined day and night, but we can't keep up with the demand. The same thing that happened here to the bridge is happening across Merovar."
     },
     {
       "speaker": "tomas",
@@ -195,11 +195,11 @@
     },
     {
       "speaker": "aldric",
-      "text": "I’ve asked."
+      "text": "Would that she could, but alas."
     },
     {
       "speaker": "tomas",
-      "text": "I thought being the monarch’s brother would make that part quicker."
+      "text": "Aren't you Her Majesty's brother? Why would she say no?"
     },
     {
       "speaker": "aldric",
@@ -215,125 +215,246 @@
     },
     {
       "speaker": "aldric",
-      "text": "I know. I believe we can preserve the place while working the seam. I wouldn’t have brought you the proposal otherwise."
+      "text": "I know. I believe we can preserve the place while mining the deposit. I wouldn’t have brought you the proposal otherwise."
     },
     {
       "speaker": "serene",
-      "text": "Aether gathers there naturally. People have cared for that place for generations. They tend the grove in remembrance of those they’ve lost."
+      "text": "The Sanctuary was built beside that confluence to guide the region’s dead back to the planet. That is the caretakers’ first responsibility."
     },
     {
       "speaker": "serene",
-      "text": "The sanctuary buildings are part of that keeping. So are the trees, and the ground beneath them."
+      "text": "People come there to remember them, too. The grove and the ground around it are held for that care."
     },
     {
       "speaker": "aldric",
-      "text": "Then the plan needs to account for all of it."
+      "text": "Could that work continue if we kept the crews away from the hall and grove?"
     },
     {
       "speaker": "serene",
-      "text": "Yes. And there is still a great deal we cannot account for."
-    },
-    {
-      "speaker": "serene",
-      "text": "These foundations continue into the hillside. The plan never shows where they end.",
-      "cue": "open_plan"
+      "text": "The ground you propose to mine is part of the place we need to keep. Working it would disrupt our duty to the dead."
     },
     {
       "speaker": "aldric",
-      "text": "My engineer could supervise a shallow trial, away from the marked walls. If we encounter masonry, we stop."
+      "text": "And there are living people waiting for these roads."
     },
     {
       "speaker": "serene",
-      "text": "We would already have opened the ground by then."
+      "text": "Their families depend on us for this as well."
+    },
+    {
+      "speaker": "serene",
+      "text": "There is also a danger your survey does not show. The caretakers have heard growling inside the cave."
     },
     {
       "speaker": "aldric",
-      "text": "That is how we establish what is there."
+      "text": "Since when?"
     },
     {
       "speaker": "serene",
-      "text": "Ordinarily, yes. But there’s an account I want your engineer to read first."
+      "text": "Since the incident at the bridge. They closed the entrance and have been keeping people away."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Has anyone been hurt?"
     },
     {
       "speaker": "serene",
-      "text": "Workers opened a passage beneath the sanctuary. A discharge injured them. They closed the passage again.",
-      "cue": "open_account"
+      "text": "None that the caretakers have reported. I want the entrance left alone while they find out what is inside."
+    }
+  ],
+  "attack_report": [
+    {
+      "speaker": "regent_survivor",
+      "text": "*breathless* Your lordship—the men at the Sanctuary…",
+      "cue": "survivor_alarm"
     },
     {
       "speaker": "aldric",
-      "text": "*reads for a moment* Did they find what caused it?"
+      "text": "What happened?"
+    },
+    {
+      "speaker": "regent_survivor",
+      "text": "Something came out of the cave. We couldn’t get everyone away."
+    },
+    {
+      "speaker": "lucan",
+      "text": "How many are still there?"
+    },
+    {
+      "speaker": "regent_survivor",
+      "text": "I don’t know. I saw men trying to get clear. Others were still up there when I ran."
     },
     {
       "speaker": "serene",
-      "text": "They left no explanation."
+      "text": "What men?"
+    },
+    {
+      "speaker": "regent_survivor",
+      "text": "The advance party. We were setting out the Crown’s working ground."
+    },
+    {
+      "speaker": "serene",
+      "text": "*turns to Aldric* You sent a crew into the reserve?"
     },
     {
       "speaker": "aldric",
-      "text": "Could it have anything to do with the recent lightning?"
+      "text": "I sent them ahead to establish the Crown’s authority over the deposit."
     },
     {
       "speaker": "serene",
-      "text": "I can’t tell you that. This account is much older."
+      "text": "When?"
     },
     {
       "speaker": "aldric",
-      "text": "Then we need someone to examine the site."
+      "text": "Before I came to Eldenmere."
     },
     {
-      "speaker": "serene",
-      "text": "We do. Your engineer and I can walk it together. Inspect the surface, compare it with the plan, and see what further records we can obtain."
-    },
-    {
-      "speaker": "aldric",
-      "text": "And the trial cut?"
-    },
-    {
-      "speaker": "serene",
-      "text": "I can agree to the inspection. I cannot endorse opening the ground yet."
-    },
-    {
-      "speaker": "serene",
-      "text": "Take the stone we set aside for the courtyard repairs."
+      "speaker": "lucan",
+      "text": "*stares at Aldric* You sent men ahead? I wasn't told.",
+      "cue": "lucan_disbelief"
     },
     {
       "speaker": "aldric",
-      "text": "You still need that work done."
+      "text": "It was a separate order, Lucan."
     },
     {
       "speaker": "serene",
-      "text": "We can put it off. I’ll arrange meals for the crew as well."
+      "text": "You came here asking for my agreement after sending them in."
     },
     {
       "speaker": "aldric",
-      "text": "*his expression softens* Thank you. That will help."
+      "text": "There are repair crews waiting. I intended to have the site ready."
     },
     {
       "speaker": "serene",
-      "text": "But it won’t be enough."
+      "text": "What were your men instructed to do when the caretakers objected?"
     },
     {
       "speaker": "aldric",
-      "text": "No."
+      "text": "They carried my orders to secure the ground and prepare the mining work."
     },
     {
-      "speaker": "serene",
-      "text": "I know."
+      "speaker": "regent_survivor",
+      "text": "*struggles to catch his breath* My lord, please. They’re still there."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Is the road to the reserve clear?"
+    },
+    {
+      "speaker": "regent_survivor",
+      "text": "It was when I left. I heard it behind us. That growling…"
+    },
+    {
+      "speaker": "lucan",
+      "text": "*after a moment* We need to reach them."
     },
     {
       "speaker": "aldric",
-      "text": "I’ll have my engineer speak with you. Please send for the records."
+      "text": "Then we’ll go now."
+    }
+  ],
+  "departure": [
+    {
+      "speaker": "serene",
+      "text": "*supports the survivor* Sit down. Slowly.",
+      "cue": "survivor_aid"
+    },
+    {
+      "speaker": "tomas",
+      "text": "I’ll get water."
     },
     {
       "speaker": "serene",
+      "text": "And clean cloths, please. I need to see where he is hurt."
+    },
+    {
+      "speaker": "regent_driver",
+      "text": "I’ll help. Tell me what you need."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I can go with them. Mira has her kit. We can help bring people back."
+    },
+    {
+      "speaker": "serene",
+      "text": "Get Mira, then find the caretakers. Help the wounded. Keep clear of the cave."
+    },
+    {
+      "speaker": "caelan",
       "text": "I will."
     },
     {
       "speaker": "aldric",
-      "text": "And when we’ve done the inspection, we’ll need to discuss the seam again."
+      "text": "Page, bring the survey."
+    },
+    {
+      "speaker": "regent_clerk",
+      "text": "Yes, your lordship."
+    },
+    {
+      "speaker": "lucan",
+      "text": "We stay together on the road. When we arrive, I want to know where everyone is."
     },
     {
       "speaker": "serene",
-      "text": "Yes."
+      "text": "Aldric. We have not finished this."
+    },
+    {
+      "speaker": "aldric",
+      "text": "I know."
+    },
+    {
+      "speaker": "caelan",
+      "text": "I’ll get Mira."
+    }
+  ],
+  "mira_departure": [
+    {
+      "speaker": "mira",
+      "text": "Caelan? What’s happened?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "A crew’s been attacked at the Sanctuary. There are still people up there."
+    },
+    {
+      "speaker": "mira",
+      "text": "*sets down her tools* Attacked by what?"
+    },
+    {
+      "speaker": "lucan",
+      "text": "Something from the cave. The man who reached us couldn’t give a clear account."
+    },
+    {
+      "speaker": "mira",
+      "text": "Are the caretakers safe?"
+    },
+    {
+      "speaker": "caelan",
+      "text": "We need to find out."
+    },
+    {
+      "speaker": "mira",
+      "text": "Then I’m coming. Give me a moment."
+    },
+    {
+      "speaker": "mira",
+      "text": "My kit’s ready. Rivet can help with anything we need to move."
+    },
+    {
+      "speaker": "lucan",
+      "text": "Keep the equipment you need close. We move together."
+    },
+    {
+      "speaker": "mira",
+      "text": "All right. Lead the way."
+    }
+  ],
+  "sanctuary_waiting": [
+    {
+      "speaker": "lucan",
+      "text": "We’re here. Keep together while we get our bearings."
     }
   ],
   "aftermath": [
@@ -593,6 +714,54 @@
     {
       "speaker": "caelan",
       "text": "This way."
+    }
+  ],
+  "survivor_waiting": [
+    {
+      "speaker": "regent_survivor",
+      "text": "The others… please help them."
+    }
+  ],
+  "emergency_serene": [
+    {
+      "speaker": "serene",
+      "text": "I’ll stay with him. Get Mira and reach the caretakers. Keep clear of the cave."
+    }
+  ],
+  "emergency_driver": [
+    {
+      "speaker": "regent_driver",
+      "text": "I’ll help Mother Serene here. Go on."
+    }
+  ],
+  "emergency_tomas": [
+    {
+      "speaker": "tomas",
+      "text": "I’ve got the cloths. Go and find them, Caelan."
+    }
+  ],
+  "travel_aldric": [
+    {
+      "speaker": "aldric",
+      "text": "We need to reach the people still at the Sanctuary."
+    }
+  ],
+  "travel_lucan": [
+    {
+      "speaker": "lucan",
+      "text": "Stay with us, Caelan. We don’t know what is waiting at the cave."
+    }
+  ],
+  "travel_page": [
+    {
+      "speaker": "regent_clerk",
+      "text": "I have the survey. I’ll keep up."
+    }
+  ],
+  "emergency_mira": [
+    {
+      "speaker": "mira",
+      "text": "The kit’s ready. Let’s go."
     }
   ]
 }

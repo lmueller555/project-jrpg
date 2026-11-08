@@ -55,6 +55,48 @@ def walk(controller, destination, speed=60):
 
 
 class PartyTravelTests(unittest.TestCase):
+    def test_story_arrival_publishes_the_same_passive_actor_before_leader_moves(self):
+        context = game(active=('caelan','mira'))
+        context.player.position.update(100,80)
+        authored = SimpleNamespace(party_travelling=False)
+        context.mill_quest = SimpleNamespace(mira=authored)
+        travel = PartyTravel(context,actor_factory=actor)
+        self.assertTrue(travel.stage_companion('mira',(100,104),facing='back'))
+        mira, = travel.actors()
+        self.assertTrue(authored.party_travelling)
+        self.assertEqual(tuple(mira.position),(100,104))
+        self.assertEqual(context.world.npcs,[])
+        for _ in range(10):travel.update(1/60)
+        self.assertIs(travel.actors()[0],mira)
+        self.assertTrue(context.world.can_stand(mira.position))
+        walk(travel,(140,80))
+        self.assertIs(travel.actors()[0],mira)
+        self.assertEqual(context.world.npcs,[])
+
+    def test_story_arrival_cannot_introduce_an_unrecruited_or_blocked_follower(self):
+        context = game(active=('caelan','mira'),world=World((pygame.Rect(95,88,10,8),)))
+        context.player.position.update(100,80)
+        travel = PartyTravel(context,actor_factory=actor)
+        # Both endpoints are clear, but the short route crosses a solid wall.
+        self.assertFalse(travel.stage_companion('mira',(100,110)))
+        self.assertEqual(travel.actors(),())
+        self.assertEqual(travel._actors,{})
+        self.assertFalse(travel.stage_companion('lucan',(75,80)))
+        self.assertEqual(travel._actors,{})
+        context.world.is_overworld=True
+        self.assertFalse(travel.stage_companion('mira',(75,80)))
+
+    def test_mq03_story_lucan_is_not_duplicated_by_a_preexisting_roster_member(self):
+        context=game(active=('caelan','mira','lucan'))
+        context.regent_quest=SimpleNamespace(sanctuary_escort_active=True)
+        travel=PartyTravel(context,actor_factory=actor)
+        travel.update(1/60)
+        walk(travel,(130,70))
+        self.assertEqual([value.identifier for value in travel.actors()],['mira'])
+        context.regent_quest.sanctuary_escort_active=False
+        travel.update(1/60)
+        self.assertEqual([value.identifier for value in travel.actors()],['mira','lucan'])
+
     def test_winding_route_keeps_both_followers_on_the_traversed_side_of_wall(self):
         world = World((pygame.Rect(50, 30, 20, 60),))
         context = game(world=world)

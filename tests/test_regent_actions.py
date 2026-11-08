@@ -125,7 +125,7 @@ class RegentActionTests(unittest.TestCase):
     def test_map_props_and_compact_sheathed_blade_render_without_changing_art(self):
         self.g.social = self.original_social
         self.assertTrue(self.g.acquire_weapon('caelan', 'caelan_gearblade'))
-        self.cue('discussion', 'open_plan');self.view.update(.3)
+        self.cue('discussion', 'open_survey');self.view.update(.3)
         self.g.world = self.owner.dining
         canvas = pygame.Surface((480, 320), pygame.SRCALPHA)
         self.view.draw_world(canvas, (0, 0))
@@ -134,6 +134,63 @@ class RegentActionTests(unittest.TestCase):
         self.assertGreater(pygame.mask.from_surface(canvas).count(), 0)
         self.view.reset()
         self.assertFalse(self.view._map_open)
+
+    def test_survivor_alarm_uses_registered_body_without_moving_physical_feet(self):
+        self.g.world=self.owner.dining
+        actor=self.owner.survivor
+        self.owner._place(actor,self.owner.dining,self.owner.points['survivor_rest'])
+        before=actor.position.copy()
+        self.cue('attack_report','survivor_alarm');self.view.update(.1)
+        self.assertEqual(actor.story_sprite.get_size(),(24,36))
+        self.assertEqual(actor.story_draw_anchor,actor.draw_anchor)
+        self.assertEqual(actor.position,before)
+        self.view.reset()
+        self.assertFalse(hasattr(actor,'story_sprite'))
+
+    def test_lucan_disbelief_turns_toward_aldric_and_never_commits_progress(self):
+        self.g.world=self.owner.dining
+        self.owner._place(self.owner.lucan,self.owner.dining,(336,252))
+        self.owner._place(self.owner.aldric,self.owner.dining,(228,200))
+        before=self.owner.lucan.position.copy()
+        progress=self.g.quests.to_dict()
+        self.cue('attack_report','lucan_disbelief');self.view.update(.1)
+        self.assertIs(self.owner.lucan.story_sprite,self.owner.lucan.idles[self.owner.lucan.facing])
+        self.assertEqual(self.owner.lucan.facing,'left')
+        self.assertEqual(self.owner.lucan.position,before)
+        self.assertEqual(self.g.quests.to_dict(),progress)
+        self.view.reset()
+        self.assertFalse(hasattr(self.owner.lucan,'story_sprite'))
+
+    def test_care_poses_register_the_existing_bench_and_release_cleanly(self):
+        self.g.world=self.owner.dining;self.owner.stage='departure'
+        worker=self.owner.survivor
+        self.owner._place(worker,self.owner.dining,self.owner.points['survivor_rest'])
+        self.owner._place(self.owner.serene,self.owner.dining,self.owner.points['serene_aid'])
+        feet=worker.position.copy()
+        prior_serene=getattr(self.owner.serene,'story_sprite',None)
+        self.cue('departure','survivor_aid');self.view.update(.1)
+        self.assertEqual(worker.position,feet)
+        self.assertEqual(worker.story_position,tuple(self.owner.points['survivor_seat']['position']))
+        self.assertEqual(worker.story_sort_y,self.owner.points['survivor_seat']['sort_y'])
+        self.assertEqual(self.owner.serene.story_sprite.get_size(),(24,36))
+        self.view.reset()
+        self.assertFalse(hasattr(worker,'story_position'))
+        self.assertIs(getattr(self.owner.serene,'story_sprite',None),prior_serene)
+
+    def test_alternative_survivor_landing_never_forces_a_bench_drawing(self):
+        self.g.world=self.owner.dining;self.owner.stage='departure'
+        worker=self.owner.survivor
+        alternative=(84,276)
+        self.owner._place(worker,self.owner.dining,alternative)
+        self.cue('departure','survivor_aid');self.view.update(.1)
+        self.assertFalse(hasattr(worker,'story_position'))
+        self.assertEqual(tuple(worker.position),alternative)
+        # A later safe landing also releases an already-held bench drawing.
+        worker.position.update(self.owner.points['survivor_rest']);self.view.update(.1)
+        self.assertEqual(worker.story_position,tuple(self.owner.points['survivor_seat']['position']))
+        worker.position.update(alternative);self.view.update(.1)
+        self.assertFalse(hasattr(worker,'story_position'))
+        self.assertEqual(tuple(worker.position),alternative)
 
 
 if __name__ == '__main__':unittest.main()

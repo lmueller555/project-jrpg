@@ -104,11 +104,13 @@ A maintained spur from the eastern footpath reaches its regional miniature.
 Its full buried layout remains open; it is not established as the original
 sacrificial temple.
 
-The ridge site is a remembrance-and-renewal sanctuary at a real natural aether
-confluence, with a living memorial grove in its wooded reserve. The confluence
-belongs to the ordinary planetary cycle, separate from the Aethersphere.
-Its detailed workings, the buried structures' purpose and their relationship
-remain unresolved; sacred significance is not a complete excavation-risk model.
+The ridge sanctuary was deliberately built near a real natural aether
+confluence to guide the region's dead back to the planet and remember them.
+Its caretakers perform a critical societal responsibility that mining would
+disrupt. A living memorial grove forms part of the community's continuing care.
+Serene and the keepers understand this function. The confluence belongs to the
+ordinary planetary cycle, separate from the Aethersphere; its exact workings,
+the buried structures' purpose and their relationship remain unresolved.
 
 Greater regions elsewhere in Auratia also have their own sanctuaries at natural
 aetherial confluences. Elden Vale Sanctuary provides the local introduction to
@@ -138,7 +140,7 @@ to carry a stranger's lantern is created.
 ## Authority, development and disagreement
 
 Regent Aldric is an established regional authority and the younger brother of
-Merovar's reigning monarch. One crown rules Merovar through regional governors
+Merovar's reigning queen. One crown rules Merovar through regional governors
 and local institutions. His exact jurisdictional borders, appointment history
 and constitutional powers remain open. Elden Vale and nearby
 upper Leth road and quarry districts form the immediate setting of his
@@ -165,15 +167,25 @@ between settlements can improve people's lives. The covenant also protects
 sanctuary ground, including what lies beneath it. Serene's concern has a
 legitimate basis even where she cannot explain every inherited boundary.
 
-Serene has shared an old foundation plan and an account of workers injured
-by an unexplained discharge after opening a passage. That small historical
-event is distinct from the recent lightning surges; no common cause is
-established. The records support caution without revealing the site's full
-history or proving that any excavation would cause a catastrophe. Serene
-offers existing courtyard stone, crew meals, surface inspection and help
-obtaining records. This contribution defers her own repairs but cannot meet
-the region's full material need. The [MQ03 discussion](../../narrative/game_01/CH01_MQ03.md)
-leaves excavation permission unresolved.
+The old foundation plan and historical passage-injury account remain public
+background evidence, separate from the recent bridge incident. Caretakers
+have heard growling inside the cave since that incident and have kept the
+entrance closed. Neither report establishes the creature's identity or a
+common cause for these events.
+
+Before his discussion with Serene, Aldric secretly sent a Crown crew to secure
+the working area and prepare the mining operation. A panicked survivor's
+report of a cave attack exposes that deployment during
+[MQ03](../../narrative/game_01/CH01_MQ03.md). Serene recognizes his bad faith;
+Lucan, who was not told about the crew, is taken aback. Aldric's genuine relief
+work does not erase his concealed attempt to impose control over the site.
+
+Serene stays to care for the survivor with Tomas and the driver helping.
+Caelan collects Mira and travels to the reserve with her, Aldric, Lucan and
+the page. The new route pauses at the arrival checkpoint; the cutscene and
+miniboss are later work. The exact extent of the crew's mining preparations
+and the operation's later outcome remain for that sequence. No agreement to
+excavate is granted by this emergency response.
 
 Valley residents should have varied positions. A quarry worker may want steady
 work and stronger safety oversight. A farmer may welcome a road while

@@ -169,11 +169,11 @@
       "requires_quests": [
         "CH01_MQ02"
       ],
-      "summary": "Help Serene welcome Regent Aldric to Eldenmere. Meet his party by the brook and accompany them to Serene’s home.",
+      "summary": "Help Serene welcome Regent Aldric to Eldenmere and accompany the visiting party.",
       "available_tracker_text": "Speak with Mother Serene in the dining room at home about the visiting regent.",
       "accept_text": "Meet Aldric’s party by the brook.",
-      "report_text": "Speak with Mother Serene after the visit.",
-      "completion_text": "Aldric's visit has ended. Festival preparations continue.",
+      "report_text": "Continue helping Serene and the visitors.",
+      "completion_text": "The Regent’s Road is complete.",
       "script_reference": "docs/narrative/game_01/CH01_MQ03.md",
       "objectives": [
         {
@@ -200,13 +200,14 @@
         },
         {
           "id": "speak_serene",
-          "text": "Speak with Serene after her conversation with Aldric.",
-          "tracker_text": "Speak with Mother Serene after the visit.",
+          "text": "Help Serene with the remainder of Aldric’s visit.",
+          "tracker_text": "Continue helping Serene and the visitors.",
           "requires": [
             "welcome_party"
           ]
         }
-      ]
+      ],
+      "implementation_note": "The emergency route remains active at the Sanctuary arrival checkpoint. The arrival cutscene and subsequent resolution are later work; new journeys do not unlock MQ04 here. Completed legacy visits retain their existing completion and lantern access."
     },
     {
       "id": "CH01_MQ04",

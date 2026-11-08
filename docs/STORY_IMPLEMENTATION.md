@@ -230,36 +230,39 @@ returns control to Caelan without accepting MQ03. Its saved arrival checkpoint
 prevents both replay after completion and duplicate MQ02 rewards.
 
 After the completed mill quest, MQ03 becomes available from Serene in the
-sanctuary dining room. The visit includes preparations with Tomas,
-meeting Aldric’s party by the brook, witnessing the road crew’s cart dispute,
-a visible release and delivery of Mr. Venn’s cart, an escort through the hall
-into the dining room, the sanctuary welcome and meal,
-Aldric and Serene’s unresolved excavation discussion, and Caelan’s private
-reflection with Serene. The four objectives concern meeting, accompanying,
-welcoming and speaking; no player objective inspects the hire receipt or
-adjudicates the dispute. The clerk handles the terms, and Aldric authorizes the
-road project’s additional cost.
+home dining room. Caelan meets Aldric, Lucan, the page and the driver by the
+brook and guides them directly to the meal. The former Venn cart dispute is
+removed. Serene explains the Sanctuary's duty to guide the region's dead and
+the growling heard since the bridge incident.
 
-`regent_quest.py` owns a version-one stage checkpoint and one instance of each
-visitor. It borrows the actual Venn father actor for the cart delivery, pauses
-Serene and Tomas at their dining-room stations, and leaves them there for the
-next invitation after the quest. Tomas's MQ04 invitation also happens inside,
-with Serene present. New Game returns their ordinary opening
-routines and Mr. Venn’s household placement. Leaving dialogue never accepts
-unread prose; load restores safe staging without repeating finished exchanges.
-Older completed MQ02 saves gain the visit without replaying the mill quest or
-inserting a cinematic into an already established visit.
+An injured Crown worker enters through the actual house doors and reports an
+attack. The crew's presence exposes Aldric's secret deployment before the
+negotiation. Lucan explicitly did not know. Serene, Tomas and the driver remain
+to help the survivor; Caelan collects Mira at her workshop, then travels with
+her, Aldric, Lucan and the page through the existing overworld contacts.
 
-The dispute, welcome and private conversation use the portrait bubbles and
-occasional visible textual emotional cues. Ordinary movement remains available,
-while pause/inventory/map/journal defer staging. Formal excavation permission is
-not granted here; that remains the post-festival story beat. See the
-[runtime implementation guide](REGENT_QUEST.md), [narrative script](narrative/game_01/CH01_MQ03.md)
-and [arrival preview](reviews/regent_arrival/README.md).
+Version-three quest checkpoints separate acknowledged discussion, the physical
+interruption, attack report, departure, Mira's rejoining and Sanctuary travel.
+Partial dialogue and entrance routes are transient. The existing four objective
+IDs remain compatible with earlier journeys; the final objective stays active
+at `sanctuary_arrival_pending`. This endpoint stages all five travelers without
+playing the deferred arrival cutscene, opening the cave, granting rewards or
+unlocking MQ04.
+
+Mira's existing resources and character state persist through the required
+`mq03_sanctuary` party event. Aldric, Lucan and the page are story escorts;
+Lucan is not newly recruited into combat. New Game releases borrowed actors.
+Completed version-one/two MQ03 journeys remain complete and retain later
+lantern progress; an unfinished old discussion resumes before the new facts
+are acknowledged. The later formal authorization remains separate story work.
+
+See the [runtime guide](REGENT_QUEST.md),
+[narrative script](narrative/game_01/CH01_MQ03.md) and
+[current gameplay review](reviews/mq03_emergency/README.md).
 
 ## MQ04 — A Light of His Own, opening segment
 
-MQ03 unlocks the first of four segments of MQ04. Tomas’s dining-room invitation leads into a school preparation session with the existing teacher and six children, a parent-approved outing, and collaborative frame construction at Mira’s workshop. One quest record stores committed scenes; the full eight-objective chain is stable from this first segment. The endpoint `frame_ready` completes only the first two objectives and keeps MQ04 active, with a truthful checkpoint in the journal and tracker.
+Completed legacy MQ03 journeys unlock the first of four segments of MQ04. The new Sanctuary route awaits its later resolution before that handoff. Tomas’s dining-room invitation leads into a school preparation session with the existing teacher and six children, a parent-approved outing, and collaborative frame construction at Mira’s workshop. One quest record stores committed scenes; the full eight-objective chain is stable from this first segment. The endpoint `frame_ready` completes only the first two objectives and keeps MQ04 active, with a truthful checkpoint in the journal and tracker.
 
 Quest-scoped attendance borrows the actual home residents. Liam’s existing play and block routines yield safely, Tomas’s MQ03 staging hands off explicitly, and Mira’s post-mill return no longer competes with her workshop scene. New Game releases borrowed actors; old completed-MQ03 saves gain the newly gated quest without replaying earlier visits. See [the implementation guide](LANTERN_QUEST.md), [script](narrative/game_01/CH01_MQ04.md), and [review artifacts](reviews/lantern_quest/README.md).
 

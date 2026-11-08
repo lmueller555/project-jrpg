@@ -25,14 +25,14 @@ The visual clock belongs to the cinematic rather than the exploration world.
    views; the scenery never dissolves between the two perspectives.
    The caravan follows the painted approach road before the canopy pass. The
    descent leaves three additional seconds to watch the approach, and both
-   Aldric, his ledger-carrying clerk and the wagon continue walking throughout
+   Aldric, his ledger-carrying page and the wagon continue walking throughout
    the ground-camera push. Separate foreshortened aerial artwork keeps the
-   clerk present before the descent; he does not appear only after the stop.
+   page present before the descent; he does not appear only after the stop.
    Guards wait closer to the gate, clear of the approaching party.
 3. A modest relief caravan reaches the intact southern land checkpoint. A
    guard recognizes Aldric; their exchange establishes the longer ridge-road
    approach. The guards admit this expected party and remain on duty.
-   Aldric, the clerk and the caravan turn into the gateway and recede along the
+   Aldric, the page and the caravan turn into the gateway and recede along the
    painted road. A settled camera, shared road perspective and masonry occlusion make
    their passage into the valley visible. The wagon clears the gate before
    the scene fades out.
@@ -40,14 +40,14 @@ The visual clock belongs to the cinematic rather than the exploration world.
    actual three-way junction at regional tile `(7,4)`. Stone leads north/slightly
    east to Eldenmere and west-southwest toward the ruined crossing; Aldric's
    rutted dirt approach joins from the south-southeast. The Carrier asks about
-   deliveries and repairs while the clerk waits beside Aldric.
+   deliveries and repairs while the page waits beside Aldric.
    After the player acknowledges "Were you here when it happened?", a 0.8-second
    camera traverse follows 122.068 tiles of the canonical main road west to the
    destroyed bridge. Directional blur and sparse tapered streaks affect scenery
    only and clear before the Carrier's two off-screen account paragraphs.
    The account remains player-paced. A clean cut returns to the exact crossroads
    camera and actor stations for Aldric's response about other incidents and
-   the clerk's delivery notes. Nobody is transported to the bridge. River
+   the page's delivery notes. Nobody is transported to the bridge. River
    ambience belongs to the bridge insert, not the junction.
 5. The caravan continues toward Eldenmere. Serene watches its approach from
    inside her home. Her private concerns acknowledge Aldric's difficult
@@ -115,6 +115,14 @@ Transient dialogue pages, camera positions and animation clocks are not saved.
 The quest controller uses this handoff to hide new caravan staging while the
 arrival is pending. Afterward, the same party waits at the corrected approach;
 accepting the visit does not create a second Aldric or wagon.
+
+
+The arrival capture verifies MQ03's introductory request, greeting and welcome
+meal, stopping at `hosted` with MQ03 active and MQ04 locked. The later survivor
+report, secret deployment, Mira rejoin and Sanctuary journey are covered by the
+[current emergency review](reviews/mq03_emergency/README.md). The earlier
+revised-visit review remains historical; its old CLI entry now delegates to the
+current emergency driver without overwriting that archive.
 
 ## Assets and review
 

@@ -343,6 +343,14 @@
         96
       ],
       "reuse": "Approved dialogue portrait; shared renderer fits it to the ordinary portrait frame."
+    },
+    "regent_survivor": {
+      "name": "Crown worker",
+      "expression": "shaken",
+      "file": "regent_survivor.png",
+      "sprite_root": "assets/story/regent_emergency",
+      "source": "assets/portraits/eldenmere/male_03_neutral.png",
+      "derivation_recipe": "assets/source/story/regent_emergency/recipe.json"
     }
   },
   "aliases": {

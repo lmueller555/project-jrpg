@@ -1,8 +1,8 @@
-"""Record the revised Regent's Road after an unseeded opening journey.
+"""Historical pre-emergency MQ03 capture helpers.
 
-Every quest receipt, weapon and room transfer is earned through the actual
-controllers. The arrival is advanced through its gate greeting before Skip;
-the MQ03 movie then records real movement and every main dialogue page.
+The retained Capture class documents the earlier completed visit. Command-line
+use now delegates to the current Sanctuary emergency review, defaulting to
+`docs/reviews/mq03_emergency`; it never overwrites the archived visit folder.
 """
 from __future__ import annotations
 import argparse
@@ -234,10 +234,21 @@ class Capture:
             self.video.close();self.driver.close()
 
 
-def main():
+def main(argv=None):
+    from tools.capture_mq03_emergency import OUT, main as current_main
+
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=ROOT/'docs/reviews/mq03_revised_visit')
-    Capture(parser.parse_args().output).run()
+    parser.add_argument('--output', '--out', dest='output', type=Path, default=OUT)
+    parser.add_argument('--check', action='store_true')
+    parser.add_argument('--no-movie', action='store_true')
+    args = parser.parse_args(argv)
+    archive = ROOT/'docs/reviews/mq03_revised_visit'
+    if args.output.resolve() == archive.resolve():
+        parser.error('The revised-visit folder is a historical archive; choose another output folder.')
+    forwarded = ['--out', str(args.output)]
+    if args.check:forwarded.append('--check')
+    if args.no_movie:forwarded.append('--no-movie')
+    return current_main(forwarded)
 
 
 if __name__ == '__main__':main()

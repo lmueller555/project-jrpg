@@ -1,18 +1,21 @@
 # Elden Vale - Serene's planetary faith
 
-**Status:** Approved foundations, 2026-11-04. Proper names, detailed rites and
+**Status:** Approved foundations. The Sanctuary's guidance of the dead and
+MQ03's concealed Crown deployment supersede the earlier remembrance-only and
+mutually good-faith negotiation framing. Proper names, detailed rites and
 institutional history remain open.
 
 **Scope:** The planetary spiritual tradition practiced by Mother Serene.
 This descriptive title is not a chosen religion name or a declaration that
 every person in Elden Vale follows the same tradition.
 
-**Implementation:** MQ03's revised discussion of Elden Vale Sanctuary expresses
-the natural aether confluence, living memorial grove and communal keeping alongside the
-relief needs and shared hazard records. Its regional overworld miniature now
-opens into the [detailed reserve and hall](../SANCTUARY_RESERVE.md), with a tended
-grove and subtle visible aether currents. The cave dungeon remains future work.
-These foundations do not define the confluence's workings.
+**Implementation:** MQ03 explains the Sanctuary's responsibility for the
+region's dead and the mining operation's disruption of that work. Reports of
+cave growling precede a survivor's account of an attack on Aldric's secret
+advance crew. The emergency takes Caelan, Mira, Aldric, Lucan and the page to
+the [detailed reserve](../SANCTUARY_RESERVE.md). The arrival cutscene, cave
+dungeon and miniboss remain later work; the new route does not complete MQ03
+or immediately unlock the lantern quest.
 
 Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),
@@ -28,109 +31,102 @@ meaning and responsibilities people attach to participating in that cycle.
 It emphasizes care for living people and the natural world, remembrance,
 restraint in using shared places, and obligations to future generations.
 Its practice centers these relationships rather than worship of gods.
-Sanctuary service is an expression of the tradition, not a distraction from it.
+Sanctuary service is an expression of the tradition.
 
-This does not declare gods nonexistent, make the planet a confirmed conscious
-being, or decide what happens to personal identity after death. Other traditions
-may revere gods; the existing history of the Ancients' deification remains
-separate author-level canon. Serene does not thereby know that history.
+This does not declare gods nonexistent or make the planet a confirmed
+conscious being. Other traditions may revere gods; the existing history of
+the Ancients' deification remains separate author-level canon. Serene does
+not thereby know that history.
 
 ## Why Elden Vale Sanctuary matters
 
-**Elden Vale Sanctuary**, on the wooded ridge northeast of Eldenmere, is a
-**remembrance-and-renewal sanctuary at a real natural aether confluence**. Its wooded reserve includes
-a living memorial grove cared for by the community.
+**Elden Vale Sanctuary**, on the wooded ridge northeast of Eldenmere, was
+**deliberately constructed near a real natural aether confluence to guide the
+region's dead back to the planet and to remember them**. Its caretakers carry
+out a critical societal responsibility. Mining the protected ground would
+disrupt that work. This function is understood by Serene and the Sanctuary
+keepers; universal knowledge across Auratia has not been established.
 
-Other greater regions of Auratia also have their own sanctuaries at natural
-aetherial confluences. Their names, local practices and physical settings can
-reflect the regions that keep them; Serene's tradition does not define a single
-universal faith for all of these places. Exploring their confluences is a
-potential recurring thread for the main story, with the route and discoveries
-still to be designed.
+Other greater regions of Auratia also have sanctuaries at natural aetherial
+confluences. Their names, local practices and physical settings can reflect
+the regions that keep them; Serene's tradition does not define a single
+universal faith. Their individual histories, routes and discoveries remain
+to be designed.
 
 ### A real natural feature
 
-The confluence is a place where naturally circulating planetary aether meets
-or gathers. It is not created by the sanctuary buildings, an unlimited energy
-source, or an established artificial machine.
+The confluence predates the Sanctuary. It is a place where naturally
+circulating planetary aether meets or gathers, within the ordinary planetary
+cycle. The buildings were sited to serve that natural feature; they did not
+create it. It is not an unlimited energy source or an established artificial
+machine.
 
-It belongs to the ordinary planetary cycle, **not the Aethersphere**. It does
-not feed the atmosphere or reveal its protective purpose. The confluence's
-precise extent, flows, observable effects and interaction with the buried
-foundations remain imperfectly understood.
+The confluence is separate from the **Aethersphere**. Its exact flows, the
+means by which caretakers guide the dead and its relationship to the buried
+foundations remain open. Its approved societal purpose does not reveal the
+atmosphere's protective function or hidden ancient history.
 
-### A place of remembrance and renewal
+### Guidance and remembrance
 
-The place has longstanding communal significance. People tend its living
-grove and remember those who have died, expressing care through something
-that continues growing and needs attention.
+Guiding the dead home is the Sanctuary's central service. The living memorial
+grove and the community's long care of the grounds also preserve remembrance.
+These are ongoing responsibilities toward the region's people.
 
-The trees are living memorials, not confirmed vessels for particular souls
-or proof of reincarnation. No one-person/one-tree rule, named family memorial,
-burial custom or mandatory planting ceremony is established.
+The trees are living memorials, not confirmed vessels for particular souls.
+No one-person/one-tree rule, named family memorial, burial custom or mandatory
+planting ceremony is established. The precise experience of the dead, the
+mechanics of guidance and the persistence of consciousness after return
+remain undecided.
 
 ### A responsibility that outlasts one custodian
 
 The covenant protects the reserve as a whole, not only its standing walls.
-Its natural confluence, shared remembrance and history of communal keeping
-give the land a significance that does not disappear if the buildings fall.
-Serene holds that responsibility for the community rather than owning the
-place or having authority to surrender it alone.
+Its natural confluence, service to the dead, remembrance and communal keeping
+give the ground significance beyond the buildings. Serene holds that
+responsibility for the community rather than owning the site or having
+authority to surrender it alone.
 
 The regional site remains separate from **Serene's home** in Eldenmere, where
-Serene, Caelan and Tomas live. The household continues to offer meals, care,
-supplies and guidance to neighbours. It is called a home rather than a second
-sanctuary; neither place has been identified as the original sacrificial temple.
+Serene, Caelan and Tomas live. The household offers meals, care, supplies and
+guidance to neighbours. Neither place has been identified as the original
+sacrificial temple.
 
-## Knowledge and uncertainty
+## The current danger and breach of trust
 
-- **Author-level fact:** The confluence is real and natural, within the
-  planetary cycle. Its detailed operation is not yet designed.
-- **Community significance:** The sanctuary and grove are valued as a place
-  of remembrance and renewal. Serene's keeping concerns this whole place.
-- **Known public hazard evidence:** The old foundation plan and account of
-  workers injured by an unexplained discharge are still shared with Aldric.
-- **Unresolved risk:** Neither the confluence's existence nor those records
-  proves what a particular shallow cut would do. The buried works' purpose,
-  their relationship to the natural feature and the cause of the discharge
-  remain unknown.
-- **Hidden history:** No protective-barrier function, Aethersphere connection,
-  original-temple identity or ancient mechanism is revealed by this foundation.
+Caretakers have heard growling from the cave since the bridge incident and
+have kept its entrance closed. The chronology is known; the creature's
+identity and the cause of the change are not.
 
-How people recognize or study the confluence, and which of its properties
-can be reliably observed, remain to be developed. Do not invent a complete
-survey, a guaranteed catastrophe or a curse to settle the disagreement.
+Before speaking with Serene, Aldric secretly sent a Crown crew to establish
+control of the site and prepare the mining operation. A panicked survivor
+interrupts the meal's aftermath with news that something from the cave
+attacked the crew. His report exposes Aldric's deployment and makes Serene
+recognize that Aldric was seeking her agreement after already acting.
+Lucan was not told about the deployment and is taken aback.
 
-## Why Aldric and Serene can still disagree sincerely
+Aldric's relief needs remain real, but they do not make this negotiation
+honest or erase the disruption of the caretakers' responsibility. Serene
+stays to treat the survivor, with Tomas and the driver helping. Caelan brings
+Mira into the rescue outing and travels with her, Aldric, Lucan and the page.
+The page's prior knowledge of the operation is not established.
 
-Serene has reasons to preserve the site beyond a secret warning: it is a
-natural feature, a communal place of remembrance and a responsibility entrusted
-across generations. Irreversible excavation matters even before anyone knows
-what lies beneath it.
+The new MQ03 route pauses at the Sanctuary arrival checkpoint. It does not
+explain the attack, identify the miniboss, establish that mining caused the
+growling or resolve the conflict before the later cutscene.
 
-Aldric's repair needs remain real. He can recognize the place's value while
-believing a limited trial cut away from the standing walls can be compatible
-with protecting it. Whether that judgment is sound is not established by
-calling the site sacred or by confirming the confluence.
-
-The existing covenant terms remain in force. Serene offers stone, meals,
-surface inspection and requests for records; ordinary passage, maintenance
-and permitted woodland uses remain possible. This tradition does not establish
-a general prohibition on engineering, farming or using natural resources.
-
-## Decisions still open
+## Knowledge and decisions still open
 
 - The faith's proper name, organization, training, ranks and founding history.
-- The memorial grove's name and founding events. The regional site's name is
-  Elden Vale Sanctuary, and its overworld position is fixed northeast of Eldenmere.
-- Detailed memorial practices, seasonal observances and records.
-- The confluence's physical behavior and the effects of particular excavation.
+- Detailed guidance and memorial practices, seasonal observances and records.
+- The physical behavior of confluences and the precise effects of excavation.
+- The experience of the dead and consciousness after return to the planet.
 - The buried works' origin, purpose and relationship to the natural confluence.
-- Any particular character's childhood memory, family memorial or personal
-  history at this site.
-- How the faith and site significance are introduced through future dialogue,
-  actions, exploration and visual storytelling.
+- The creature's identity and the relation, if any, between the bridge incident,
+  growling, advance crew's activity and attack.
+- The arrival cutscene, rescue, miniboss encounter and later MQ03 resolution.
 
-The current basis does not settle souls, consciousness, resurrection, planetary
-sentience, the later catastrophe's full mechanism or the Aethersphere's hidden
-history.
+The old foundation plan and historical passage-injury account remain public
+background evidence, separate from the recent attack. Serene's inherited
+private warning and the hidden history retain their later disclosure limits.
+No artificial planetary mechanism, Aethersphere connection, temple identity,
+resurrection system or planetary sentience is established by this revision.

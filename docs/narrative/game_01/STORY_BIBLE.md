@@ -22,17 +22,21 @@ before the opening. Aldric has already aided a couple of other communities;
 their combined repair demands strain the supply of stone and motivate his
 request to examine a seam within Elden Vale Sanctuary’s protected ground.
 
-The [covenant](../../world/SANCTUARY_COVENANT.md) defines shared custody,
-marked surface/subsurface protection, permitted ordinary use and the review
-needed for extraction. Serene shares incomplete public hazard evidence and
-offers courtyard stone, crew meals and joint inspection. Aldric's supervised
-trial cut remains disputed. These are present-day people's sincere choices
-under uncertainty. Their knowledge does not reveal the ancient/cosmic cause.
+The [covenant](../../world/SANCTUARY_COVENANT.md) defines shared custody and
+protection of the reserve. The Sanctuary was deliberately built near the
+natural confluence to guide the region's dead back to the planet and remember
+them. Mining would disrupt this critical responsibility. Caretakers have heard
+growling from the cave since the bridge incident; its cause remains unknown.
 
-An arrival cutscene at MQ02's conclusion and the revised MQ03 narrative are
-approved targets, pending runtime implementation. They leave the chapter-end
-authorization and private-warning beat, Chapter 3 catastrophe placement and
-broader revelation boundaries intact.
+Aldric secretly dispatched a Crown crew to establish control and prepare the
+mining operation before seeking Serene's agreement. An injured survivor's report
+exposes his deception during MQ03. Lucan did not know about the deployment and
+is taken aback. Aldric, Lucan, his page, Caelan and Mira travel to the Sanctuary
+while Serene, Tomas and the driver care for the survivor. The new route remains
+active at arrival, awaiting the later cutscene and encounter. Older completed
+journeys retain their progress. The later formal authorization, private warning,
+Chapter 3 catastrophe placement and broader revelation boundaries remain
+separate story work.
 
 ## Approved character facts (CANON)
 

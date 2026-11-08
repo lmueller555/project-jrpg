@@ -177,14 +177,16 @@ Escape pauses/resumes; Skip ends
 the scene without accepting MQ03 or changing Caelan's location.
 
 **The Regent’s Road is playable after the mill quest.** Meet Serene and Tomas
-in the sanctuary dining room, greet Aldric’s visitors by the brook, and guide them
-through the village. Aldric and his clerk handle the road crew’s cart dispute;
-Caelan contributes only what he knows about the working mill. The released cart
-leaves with Mr. Venn, and the party continues to the sanctuary for a welcome,
-a measured excavation discussion and a private exchange with Serene. Dialogue
-includes occasional emotional cues and remains live and cancelable. The visit
-does not authorize excavation or start the festival quest. See the
-[quest guide](docs/REGENT_QUEST.md) and [arrival review](docs/reviews/regent_arrival/README.md).
+in the dining room at home, greet Aldric and Lucan by the brook, and guide the
+visitors directly to the meal. Serene explains the regional Sanctuary's duty
+to guide the dead and the recent growling from its cave. An injured survivor
+interrupts, exposing the Crown crew Aldric secretly sent ahead; Lucan was not
+told. Serene stays to care for the survivor while Caelan collects Mira and
+travels with Aldric, Lucan and the page to Elden Vale Sanctuary. The quest
+remains active at the arrival checkpoint; its arrival cutscene and encounter
+are later work. Existing completed visits retain their progress. See the
+[quest guide](docs/REGENT_QUEST.md), [emergency gameplay review](docs/reviews/mq03_emergency/README.md)
+and [arrival cinematic review](docs/reviews/regent_arrival/README.md).
 
 **Quest feedback is available in-game.** Mother Serene has an outlined gold `!`
 in the sanctuary and on the town map. Approach her to hear the opening request;

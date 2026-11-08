@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "id": "regent.emergency_survivor.24x36",
+  "status": "approved_story_implementation",
+  "frame_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34
+  ],
+  "probe_size": [
+    8,
+    4
+  ],
+  "source_sprite_root": "assets/characters/npcs/male_03",
+  "source_portrait": "assets/portraits/eldenmere/male_03_neutral.png",
+  "walk_order": [
+    0,
+    1,
+    2,
+    2,
+    3,
+    3
+  ],
+  "frame_duration_ms": 140,
+  "palette": {
+    "bandage_shadow": "#a79878",
+    "bandage": "#d8cdb0",
+    "bandage_light": "#eee4c7",
+    "dust": "#a68d6d",
+    "dust_shadow": "#7e6b55",
+    "small_wound": "#825347",
+    "navy": "#394955",
+    "navy_light": "#596e7d",
+    "pants": "#7e6049",
+    "pants_shadow": "#594334",
+    "boot": "#3d2118",
+    "skin": "#e8c49d"
+  },
+  "authoring": "Source-native villager pixels retain identity, equipment scale and grounded boots. Small dirt, cloth wrap and guarded-arm accents plus a forward lean distinguish a shaken field worker. The hurt-side support pose is held longer in the walking cycle. No shared source image is modified.",
+  "sources": [
+    {
+      "path": "assets/characters/npcs/male_03/idle_front.png",
+      "sha256": "a1ae24db1b5e32f89c5d1ddbb1ae6f5f1a93b04bae6184d9dd4401aacbcb77c4"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/idle_back.png",
+      "sha256": "096e2c9a703c389f8e8313566b6b6dafde9dc11e9d4ff2ad272f1fb13fc0a7c9"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/idle_left.png",
+      "sha256": "2a61cbda18ce01a3921595796810a1d77ea6ad0215ad3f7bee2a75a1469fa623"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/idle_right.png",
+      "sha256": "6130e357d061c91de350034ed03ba96adaaf7726cf00106d358999597fa3dc4d"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_front/frame_01.png",
+      "sha256": "8b2c6f4a5ba27066945c9328fbfe67d53817b95f7cf3775dc90828779602a473"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_front/frame_02.png",
+      "sha256": "da42bbe2059df3fb2f859a1270c9efe1fbe089513556b82c195f4765bdbc06b5"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_front/frame_03.png",
+      "sha256": "8ce87e5d5bd56177618c05948faba0eba44ba035c4434c557492cb4822b8fac0"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_front/frame_04.png",
+      "sha256": "3d02067a4adad7b244a486632df520760bee41555c798d5c573ce301210ec4ed"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_back/frame_01.png",
+      "sha256": "563bff0dc98ba8a86d92c98b6888a11fd2374a1cff5c971af0b385bd5fc5cf63"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_back/frame_02.png",
+      "sha256": "98fc26cd6347636a373f5a77d390e5a113232341f5a0103075098b6f0a034087"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_back/frame_03.png",
+      "sha256": "1eb4eb1e88e5b6d786cb332a4f5d54781f00e84a86e152a5ae85e970b4324d91"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_back/frame_04.png",
+      "sha256": "1a3d32a60461894fe73e1e1ee45a4e3d96801440fe6eff840b6dfb41dee66b98"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_left/frame_01.png",
+      "sha256": "9d488152e60316a57c7527c287c895f6ab0f3ff0e11642c62a08a741d69ddd25"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_left/frame_02.png",
+      "sha256": "74d1c0023ea272f15ccfff70cd1469b4c81cc89277e5b6f98e02d0c2093861c9"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_left/frame_03.png",
+      "sha256": "b37424c943426b58db907adf26cae99353d4988197c8d9dffad778eac4d9de62"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_left/frame_04.png",
+      "sha256": "f9188f414dc670558a64357c75e247d727cac06cdbe0042c5e299465d8b2045a"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_right/frame_01.png",
+      "sha256": "0ab4c8aab53d71b6967fbedfd8cbf658a2dd72777b6840e26f9feda436edec70"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_right/frame_02.png",
+      "sha256": "24d2a52cfa949ce5629f8afd8a52316efe0ba938dc90aa9dc8e26601f12a2c24"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_right/frame_03.png",
+      "sha256": "2694987fc3264105c6a65590bd84e2cb92a1cd50995acfc13297708a19146667"
+    },
+    {
+      "path": "assets/characters/npcs/male_03/walk_right/frame_04.png",
+      "sha256": "a9422797c5496374a6f7cdb6d1d39cc96ebb9f6cba7718fd9d2d4769defddbc6"
+    },
+    {
+      "path": "assets/portraits/eldenmere/male_03_neutral.png",
+      "sha256": "2692a09086b07a222fe4e714018783c5c39cd73778cbd3891d3ca6081837c869"
+    },
+    {
+      "path": "assets/characters/caelan/idle_front.png",
+      "sha256": "e823ad3aa9533e0876a9d67b7047275941804cbbb8f40dbfeff7455677046d30"
+    },
+    {
+      "path": "assets/ui/fonts/DejaVuSans.ttf",
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    },
+    {
+      "path": "assets/characters/serene/idle_left.png",
+      "sha256": "78e8775f1001d42c526ea140ca6d8b46c6af560f89a388199dea875503d996e9"
+    }
+  ]
+}

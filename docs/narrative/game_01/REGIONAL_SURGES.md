@@ -6,8 +6,10 @@ incidents, Aldric's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
 **Implementation:** The [Elden Vale overworld](../../OVERWORLD.md) now presents
 the lightning-destroyed western bridge and road damage on both banks. The
-arrival cutscene and revised MQ03 runtime dialogue now present the relief visit
-and protected-ground disagreement. See [the arrival guide](../../REGENT_ARRIVAL.md).
+arrival cutscene presents the relief visit. Revised MQ03 continues the
+protected-ground disagreement into the exposure of Aldric's secret advance
+crew and an emergency journey to the Sanctuary. See
+[the arrival guide](../../REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
 
 References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
 [MQ03](CH01_MQ03.md), [Elden Vale](../../world/regions/ELDEN_VALE.md),
@@ -57,7 +59,9 @@ sanctuary is a separate older incident, not one of these recent road strikes.
 
 Aldric has already travelled to a couple of the affected communities to help
 organize aid and repairs. He reaches Eldenmere with firsthand knowledge of
-their damage and outstanding needs. His concern and relief work are sincere.
+their damage and outstanding needs. His relief work and the material shortages are real. His later negotiation
+with Serene is deceptive: he has already sent a crew to establish Crown
+control of the Sanctuary's working area and prepare mining.
 
 Repairing several damaged places is straining the available materials. A
 nearer stone seam offers a possible additional supply for regional recovery.
@@ -73,23 +77,32 @@ The Festival of Light provides a human and social setting for the visit, and
 Aldric intends to see the villagers there. His immediate business is the
 relief effort and a discussion with Serene about the protected ridge site.
 
-## The protected seam and the unresolved request
+## The protected seam and secret deployment
 
 The seam lies inside the marked reserve around Elden Vale Sanctuary on the ridge near
 Eldenmere, separate from Serene’s home where Caelan lives. The
 [covenant guide](../../world/SANCTUARY_COVENANT.md) defines the protected land,
 ordinary permitted use, restricted excavation and shared custodial duties.
 
-Serene openly shares an old plan and a maintenance account of workers injured
-by an unexplained discharge while opening a passage. The plan does not
-reliably establish where the buried foundations end. Neither record proves
-that a new trial cut will cause a disaster.
+The Sanctuary was deliberately sited near a natural aether confluence to
+guide the region's dead back to the planet and remember them. Mining would
+disrupt that essential service. Serene also reports growling heard by the
+caretakers inside the cave since the bridge incident. The old foundation plan
+and historical passage-injury account remain separate background evidence.
 
-She offers the stone set aside for courtyard repairs, meals for the road crew,
-a joint surface inspection with Aldric's engineer and work to obtain missing
-records. Aldric accepts the help, but it cannot supply all the damaged roads.
-His supervised shallow trial-cut proposal remains disputed. MQ03 ends with
-limited practical agreements and no endorsement or authorization of excavation.
+Aldric has secretly sent a Crown crew ahead to establish control and begin
+preparing the mining operation. A survivor interrupts the post-meal discussion
+with news that something from within the cave attacked the crew, exposing
+Aldric's deployment. Lucan was unaware of the secrecy and is taken aback.
+
+Serene stays to care for the survivor while Caelan collects Mira. Aldric,
+Lucan, the page, Caelan and Mira travel to the reserve. The new route reaches
+an arrival checkpoint with MQ03 still active; the cutscene, miniboss and later
+resolution remain to be built. The earlier limited-inspection agreement and
+immediate lantern handoff are superseded for this route.
+
+Growling after the bridge incident, the crew's later presence and the attack
+form an observed chronology. Their causes and relationship remain open.
 
 ## Approved arrival-cutscene goal
 
@@ -106,8 +119,9 @@ delivering the full covenant debate in the street.
 MQ02's homecoming and cup-setting precede the arrival. MQ03 then
 begins with Serene's short request inside the dining room. Caelan welcomes
 Aldric and Lucan, guides the visitors directly to the meal and hears the
-unresolved ridge discussion. The former cart dispute is removed. He gains no
-legal or survey authority from the relief context.
+ridge discussion interrupted by the attack report. The former cart dispute is
+removed. Caelan volunteers to help the people at risk; he gains no legal or
+survey authority from the relief context.
 
 The [arrival guide](../../REGENT_ARRIVAL.md) documents the cinematic's dialogue,
 shots, input ownership and saved handoff. The scene grants no new repair,

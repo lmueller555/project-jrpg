@@ -131,7 +131,7 @@ progression unlocks require later implementation.
 **Approved:** 2026-11-03.
 
 Aldric belongs to Merovar's ruling family and is the younger brother of the
-reigning monarch. One crown rules Merovar through regional governors and local
+reigning queen. One crown rules Merovar through regional governors and local
 institutions. Aldric serves as regional regent; his immediate administrative
 concerns remain Elden Vale and nearby upper-Leth road and quarry districts.
 Royal birth does not make him the reigning monarch.
@@ -141,13 +141,17 @@ Lucan to Caelan's party, establishing the basis for his recruitment. The exact
 occasion and scene remain open; this replaces the earlier generic
 road-security escort recruitment premise.
 
-MQ03 now introduces Lucan with Aldric's visiting party, in place of the generic
+MQ03 introduces Lucan with Aldric's visiting party, in place of the generic
 traveling attendant. His guard work, unsolicited practical advice and meal
-conversation establish his opening dynamic with Caelan. He remains with Aldric;
-this visit does not recruit him into the playable party. The ridge discussion
-also establishes Aldric's relationship to the reigning monarch in dialogue.
+conversation establish his opening dynamic with Caelan. He was not told about
+Aldric's secret advance crew and is visibly taken aback when the survivor
+exposes it. He then asks practical rescue questions and travels to the Sanctuary
+with Aldric, the page, Caelan and Mira. He remains a story escort; this outing
+does not recruit him into the combat party. The page occupies the earlier
+clerk role, with no approved age, personal history or prior knowledge of the
+secret operation.
 
-The dynasty's name, the monarch's identity, Aldric's birthplace and age,
+The dynasty's name, the queen's personal name and biography, Aldric's birthplace and age,
 succession rules and the precise constitutional powers of the regency remain
 unapproved. Membership in the ruling family does not yet assign a named
 capital or royal residence.
@@ -174,43 +178,51 @@ destined for the crown and sought a useful identity through regional service.
 He wants to be valued for what he accomplishes, not merely his family name.
 That can make urgent relief work both a sincere duty and a personal test.
 His relationship with Lucan can mirror this tension: a royal-born administrator
-and a knight from a wagonwright's household both want achievement to justify
+and a guard from a wagonwright's household both want achievement to justify
 their standing. How Lucan earned the guard appointment remains to be designed.
 
-These proposals do not establish family secrets, a succession crisis or a
-hidden motive for the sanctuary excavation.
+These proposed biographies do not establish additional family secrets, a
+succession crisis or a hidden cosmic motive for the Sanctuary operation.
+Aldric's concealed advance crew is separately approved MQ03 story canon.
 
-## Aldric and Serene — approved relief visit and covenant positions
+## Aldric and Serene — relief needs and the Sanctuary breach of trust
 
 The [regional surge context](REGIONAL_SURGES.md) and
-[covenant guide](../../world/SANCTUARY_COVENANT.md) establish the reasons for
-their revised MQ03 disagreement. These are approved character motivations;
-the runtime dialogue and end-MQ02 arrival now implement that approved context.
+[covenant guide](../../world/SANCTUARY_COVENANT.md) govern the revised MQ03
+conflict. The guidance-of-the-dead role and concealed deployment supersede
+the older mutually sincere negotiation and limited-inspection compromise.
 
-Aldric has visited two other affected communities and is helping repair damage
-from a small number of extraordinary lightning incidents. Eldenmere's southern
-road is another damaged connection. He seeks more quarry stone because the
-combined repair needs strain regional supplies. His supervised trial-cut
-proposal is sincere and limited under his understanding of the site.
+Aldric's relief work and the shortages are real. Before speaking with Serene,
+he has nevertheless sent a Crown crew to establish control of the protected
+area and prepare mining. The panicked survivor's report of the cave attack
+reveals that action. Aldric sought her agreement while concealing an operation
+already set in motion; urgency does not erase the deception.
 
-Serene holds protected ground in keeping for the community rather than as
-personal property. She shares an old foundation plan and an account of workers
-injured by an unexplained discharge. She cannot explain the confluence's full
-workings or the buried structures' purpose and does not claim certainty about
-a coming disaster. She offers
-courtyard repair stone, crew meals, a joint surface inspection and requests for
-missing records, while withholding endorsement of excavation. Her inherited
-private warning remains a separate chapter-ending beat.
+Serene holds the ground in keeping for the region. The Sanctuary was built
+near the natural confluence to guide the region's dead back to the planet and
+remember them. Mining would disrupt that critical service. Caretakers have
+heard growling from the cave since the bridge incident. Its cause, the
+creature's identity and any connection to mining remain unknown.
 
-**Faith and site significance, confirmed 2026-11-04:** Serene practices a
-[planetary spiritual tradition](../../world/ELDEN_VALE_FAITH.md) that does not
-center gods. Elden Vale Sanctuary is a place of remembrance and renewal at a
-real natural aether confluence, with a living memorial grove. Its public
-importance does not depend on her knowing the purpose of the buried works.
-The confluence belongs to the planetary cycle, not the Aethersphere.
+Serene recognizes Aldric's bad faith and then tends the injured survivor,
+with Tomas and the driver helping. Caelan volunteers and collects Mira from
+her workshop. Mira joins with her existing engineering equipment and bot.
+Aldric, Lucan, the page, Caelan and Mira make the emergency journey. The page's
+prior knowledge of the operation remains unspecified. Lucan was unaware and
+is taken aback before turning to the people left in danger.
 
-Caelan remains a guide, host and witness. He does not adjudicate the covenant,
-approve a quarry or inspect the adults' hire agreement.
+Serene's [planetary tradition](../../world/ELDEN_VALE_FAITH.md) does not center
+gods. The confluence belongs to the planetary cycle, separate from the
+Aethersphere; the guidance mechanism and buried works' purpose remain open.
+The grove does not assign individual souls to trees. The public foundation
+plan and historical passage-injury account remain background evidence; her
+inherited private warning keeps its later disclosure limits.
+
+Caelan begins as a guide and host, then chooses to help the endangered crew.
+He gains no authority to grant a quarry, settle the covenant or command Crown
+policy. The new route pauses at Sanctuary arrival with MQ03 active; its
+cutscene and miniboss are later work, and the old immediate lantern handoff
+is not run for this route.
 
 ## Mira's millrace outing
 
