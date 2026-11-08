@@ -22,7 +22,8 @@ class LucanVisitArtTests(unittest.TestCase):
     def test_registered_guard_reuses_every_approved_direction_without_body_changes(self):
         art = read('assets/story/regent/art.json')
         actors = {actor['id']: actor for actor in art['actors']}
-        self.assertEqual(set(actors), {'aldric', 'lucan', 'regent_clerk', 'regent_driver'})
+        self.assertEqual(set(actors), {'aldric', 'lucan', 'regent_clerk', 'regent_driver',
+                                       'regent_survivor'})
         lucan = actors['lucan']
         self.assertEqual(lucan['draw_anchor'], [12, 30])
         animation = read(lucan['art'])

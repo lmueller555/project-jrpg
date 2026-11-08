@@ -17,7 +17,7 @@ SPECS={
            'hair':['#3b302d','#70635a','#aaa196'],
            'shirt':['#263d4e','#3e5869','#637c89'],
            'trousers':['#343037','#514850','#75656a']},
- 'regent_clerk':{'name':'Clerk','source':'male_01','position':[708,1054],
+ 'regent_clerk':{'name':'Page','source':'male_01','position':[708,1054],
            'hair':['#30251f','#5b3f2b','#8b6343'],
            'shirt':['#354653','#607987','#8b9c9f'],
            'trousers':['#493e3b','#725d4c','#a38a6a']},
@@ -59,7 +59,7 @@ def recolor(source,spec,direction,offset=0):
    for x in range(8,16):
     p=im.getpixel((x,y))
     if p[:3] in [rgba(c)[:3] for c in spec['trousers']]:im.putpixel((x,y),rgba(spec['shirt'][0]))
- elif spec['name']=='Clerk' and direction!='back':
+ elif spec['name'] in ('Clerk','Page') and direction!='back':
   # Folded folio held at the ordinary belt, without extending an arm.
   x=13 if direction in ('front','right') else 7
   d.rectangle((x,21+offset,x+2,23+offset),fill='#ded0aa');d.point((x+1,22+offset),fill='#9c8b6b')
@@ -163,6 +163,11 @@ def build():
  actors=[previous[identifier] if identifier in previous else actor_sheet(identifier,spec)
          for identifier,spec in SPECS.items()]
  actors.append(lucan_actor())
+ # Later emergency staging owns this derived actor. Rebuilding the welcome
+ # must preserve it without including it in the original dining visitor party.
+ if 'regent_survivor' in previous:actors.append(previous['regent_survivor'])
+ for actor in actors:
+  if actor['id']=='regent_clerk':actor['name']='Page'
  props_records=old_art.get('props') or props()
  props_records=[prop for prop in props_records if prop['id'] not in ('venn_cart','road_stone')]
  (OUT/'art.json').write_text(json.dumps({'actors':actors,'props':props_records},indent=2)+'\n')

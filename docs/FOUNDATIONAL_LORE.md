@@ -200,20 +200,24 @@ does not require every modern spiritual tradition to center divine worship.
 gods. Its responsibilities of care, remembrance and keeping shared places
 are grounded in belonging to the planetary aether cycle.
 
-The old ridge sanctuary is a remembrance-and-renewal site at a **real natural
-aether confluence**, with a living memorial grove. The confluence is part of
-the ordinary planetary cycle, separate from the Aethersphere; its detailed
-workings and relationship to the buried structures remain unresolved.
+Elden Vale Sanctuary was deliberately constructed near a **real natural
+aether confluence** to **guide the region's dead back to the planet and
+remember them**. This is an actual societal responsibility understood by
+Serene and the keepers; mining the protected ground would disrupt it. Its
+living memorial grove forms part of that care. The confluence belongs to the
+ordinary planetary cycle, separate from the Aethersphere. The exact means of
+guidance, experience of the dead and relationship to the buried structures
+remain unresolved.
 
 Selected local practices also include Eldenmere's Festival of Light,
 planetary-return teaching, sanctuary community service and the
 [sanctuary covenant](world/SANCTUARY_COVENANT.md). These establish sincere
-spiritual practice and custodial responsibilities without certifying personal
-consciousness after death or explaining the hidden ancient history. Faith
+spiritual practice and custodial responsibilities without defining consciousness
+after return to the planet or explaining the hidden ancient history. Faith
 names, wider institutions, doctrines and detailed rites remain open.
 
-The covenant's old ridge sanctuary near Eldenmere is separate from the village
-sanctuary. Neither has been identified as the original sacrificial temple;
+Elden Vale Sanctuary is separate from Serene's home in the village. Neither
+has been identified as the original sacrificial temple;
 that temple's location remains unassigned.
 
 ### Working interpretation

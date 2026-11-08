@@ -13,8 +13,10 @@ carved architectural details, buried masonry and reflecting water repeat the
 same materials through the grounds. Native pixel assets remain independently
 placed, with slow local animation and restrained positional ambience.
 
-The site remains separate from Serene's home in Eldenmere. Its living grove,
-natural aether confluence and shared keeping retain the meaning established in
+The site remains separate from Serene's home in Eldenmere. It was deliberately
+constructed near the natural aether confluence to guide the region's dead back
+to the planet and remember them. Its living grove and shared keeping serve
+that responsibility, as established in
 [the faith guide](world/ELDEN_VALE_FAITH.md) and
 [the covenant](world/SANCTUARY_COVENANT.md).
 
@@ -59,13 +61,17 @@ species for the eastern-ridge caves. Its data and isolated combat adapter are
 available, while encounter placement and the cave dungeon remain future quest
 work. The peaceful reserve and keeper rail retain their current behavior.
 
-The survey marks remain beside intact limestone. Excavation has not begun, and
-visiting the site does not resolve Aldric and Serene's disagreement or grant
-permission to disturb the ground. The guarded regional gates and destroyed
-western bridge retain their existing restrictions.
+During the new MQ03 route, a survivor exposes the Crown crew Aldric secretly
+sent ahead to establish authority and prepare mining. Caretakers have heard
+growling since the bridge incident; the attack's cause and the creature's
+identity remain unresolved. Aldric, Lucan, the page, Caelan and Mira arrive
+with MQ03 still active. The arrival cutscene, crew staging and exact extent of
+the work completed before the attack remain later scene work. Existing survey
+art is not evidence that the emergency has been resolved or permission granted.
+The guarded regional gates and destroyed western bridge retain their restrictions.
 
-The Eldenmere music continues during this visit. The reserve and hall use their
-own scene identities while preserving old save keys and the town's quest actor
+The reserve and hall use their own scene identities while preserving old save
+keys and the town's quest actor
 ownership. Continuing a journey saved here resumes in the corresponding scene.
 
 ## Review and reproduction

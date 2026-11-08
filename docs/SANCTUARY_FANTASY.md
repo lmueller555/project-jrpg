@@ -30,11 +30,18 @@ Both the reserve and hall retain their previous collision masks byte-for-byte.
 Public approaches, the woodland circuit, doors and inspection geometry are
 unchanged. All 96 interactive grass placements are retained.
 
-The confluence remains a natural feature within the planetary cycle. The
-visual effects do not explain its mechanism, establish an Aethersphere link,
-identify the original sacrificial temple or assign souls to memorial trees.
-Crystal colors do not establish elemental affinities or mining rewards. The
-surveyed stone remains intact and the cave dungeon is still future story work.
+The Sanctuary was deliberately built near this natural confluence to guide
+the region's dead back to the planet and remember them. Mining would disrupt
+that duty. The visual effects do not define the guidance mechanism, establish
+an Aethersphere link, identify the original sacrificial temple or assign souls
+to memorial trees. Crystal colors do not establish elemental affinities or
+mining rewards.
+
+The new MQ03 emergency journey reaches an arrival checkpoint after exposing
+Aldric's secret crew and its attack. The existing survey art does not stage
+that crew or resolve the new event; the arrival cutscene and cave dungeon
+remain future story work. Growling heard since the bridge incident foreshadows
+the coming encounter without identifying the creature or establishing a cause.
 
 Local sound respects effects volume, focus, menus and scene changes. Reduced
 motion retains the finished composition while holding optional atmospheric

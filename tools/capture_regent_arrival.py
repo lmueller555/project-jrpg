@@ -1,8 +1,9 @@
 """Capture the production MQ02 report, Aldric's arrival and the MQ03 handoff.
 
 Only earlier quest work and the initial clear mill-report station are seeded.
-The final report, cinematic, persistence and subsequent visit use production
-Game input/update/draw. SDL dummy has no audio loopback: the review soundtrack
+The final report, cinematic, persistence and three-conversation MQ03 meal
+handoff use production Game input/update/draw. The later Sanctuary emergency
+has its own current review driver. SDL dummy has no audio loopback: the review soundtrack
 is reconstructed from exact OGGs and observed mixer commands, with effects muted.
 """
 from __future__ import annotations
@@ -23,6 +24,7 @@ os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
+INTRO_SCENES = ('preparations', 'arrival', 'welcome')
 sys.path[:0] = [str(ROOT), str(ROOT/'tests'), str(ROOT/'tools')]
 
 import numpy as np
@@ -195,7 +197,7 @@ class Capture:
                 return
             if self.g.social.active:
                 identifier = self.g.social.script_identifier
-                if identifier in {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}:return
+                if identifier in {'regent_'+kind for kind in INTRO_SCENES}:return
                 self.read_social(identifier,recording=False)
             if self.g.player.position.distance_to(goal) < 1.5:
                 if next_scene is None:return
@@ -388,7 +390,7 @@ class Capture:
                 if self.g.world.can_stand(p):station = p;break
             if station is not None:break
         assert station is not None, ('No clear MQ03 station',key)
-        core = {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}
+        core = {'regent_'+kind for kind in INTRO_SCENES}
         for _ in range(12):
             self.walk(station)
             if not self.g.social.active or self.g.social.script_identifier in core:break
@@ -404,7 +406,7 @@ class Capture:
         self.read_social('regent_'+kind,recording=False)
 
     def _quest(self):
-        """Walk and play every revised MQ03 scene after the real arrival."""
+        """Verify the arrival handoff through the welcome meal, before the emergency."""
         q = self.g.regent_quest
         self.until(lambda:q._preps_ready,'interior preparations',recording=False)
         self._at_regent('arrival')
@@ -424,32 +426,30 @@ class Capture:
         self._regent_interact('welcome')
         assert q.stage == 'hosted'
         self.until(lambda:q._group_ready,'meal finished',recording=False)
-        self._regent_interact('discussion')
-        assert q.stage == 'discussion'
-        self.until(lambda:q._aside_ready,'Aldric steps aside',recording=False)
-        self._at_regent('aftermath');self._regent_interact('aftermath')
-        assert q.stage == 'done' and self.g.quests.status(REGENT_QUEST) == 'completed'
-        assert self.g.quests.status('CH01_MQ04') == 'available'
+        assert q.stage == 'hosted' and self.g.quests.status(REGENT_QUEST) == 'active'
+        assert self.g.quests.status('CH01_MQ04') == 'locked'
         assert self.g.mill_quest.mill_restored and not self.g.opening_conclusion.mill_stopped
         assert not any('AUTHORIZ' in flag.upper() or 'EXCAVATION_STARTED' in flag.upper()
                        for flag in self.g.social.flags)
-        self.snapshot('mq03_complete.png')
-        expected = {'regent_'+kind for kind in ('preparations','arrival','welcome','discussion','aftermath')}
+        self.snapshot('mq03_meal_handoff.png')
+        expected = {'regent_'+kind for kind in INTRO_SCENES}
         actual = {row.get('script') for row in self.dialogue}
         assert expected <= actual
-        for kind in ('preparations','arrival','welcome','discussion','aftermath'):
+        for kind in INTRO_SCENES:
             expected_pages = self.quest_expected_pages[kind]
             actual_pages = sum(row.get('script') == 'regent_'+kind for row in self.dialogue)
             assert expected_pages == actual_pages, (kind,expected_pages,actual_pages)
         save_gif(self.output/'mq03.gif',self.quest_frames,[700]*len(self.quest_frames),80)
-        return {'status':'completed','stage':q.stage,
+        return {'status':'active','stage':q.stage,
+            'review_scope':'three introductory conversations through the meal',
             'objectives':self.g.quests.states[REGENT_QUEST]['completed_objectives'],
             'main_dialogue_pages':sum(row.get('script') in expected for row in self.dialogue),
             'optional_dialogue_pages':sum(str(row.get('script','')).startswith('regent_') and row.get('script') not in expected for row in self.dialogue),
             'room_transitions':self.room_transitions,
             'final_party_rooms':[q._world(actor).data['id'] for actor in q.party],
             'direct_sanctuary_escort':True,'lucan_present':q.lucan in q.party,
-            'mq04_available':True,'excavation_authorized':False,
+            'mq04_available':False,'emergency_not_started':q.stage == 'hosted',
+            'excavation_authorized':False,
             'player_role':'guide and host; witness to adult decisions'}
 
     def _persistence(self):
@@ -555,15 +555,17 @@ class Capture:
             'captures':{path.name:hashlib.sha256(path.read_bytes()).hexdigest()
                         for path in sorted(self.output.iterdir()) if path.suffix in ('.png','.gif','.mp4')}}
         self.output.joinpath('capture_report.json').write_text(json.dumps(report,indent=2)+'\n')
-        self.output.joinpath('README.md').write_text("""# Aldric's arrival and revised MQ03
+        self.output.joinpath('README.md').write_text("""# Aldric's arrival and MQ03 meal handoff
 
 [Watch the arrival cinematic with music](regent_arrival.mp4) · [Animated preview](regent_arrival.gif)
 
 These are production Game renders and ordinary event-driven quest/cinematic input.
 A temporary fixture completes MQ01 and MQ02's earlier mill repair/verification,
 leaving the report unread. It uses a legitimate legacy repair bypass, without
-inventing battle victory or rewards. The mill report, sanctuary cup setting, arrival, all five
-revised MQ03 scenes, NPC movement and direct sanctuary door transfers are played.
+inventing battle victory or rewards. The mill report, sanctuary cup setting, arrival,
+three introductory MQ03 conversations, NPC movement and direct home door transfers
+are played. The review stops after the meal with MQ03 active and MQ04 locked;
+the later Sanctuary emergency is covered by the current MQ03 emergency review.
 No cinematic clock or progression checkpoint is assigned during capture.
 
 | Arrival at the southern land gate | Aldric listens to locals |
@@ -580,7 +582,7 @@ No cinematic clock or progression checkpoint is assigned during capture.
 
 [150% local dialogue](locals_large_text.png) · [150% Serene dialogue](serene_window_large_text.png) · [Letterboxed view](letterboxed.png) · [Paused](paused.png)
 
-[Gate admission motion](gate_admission.gif) · [All five revised MQ03 conversations](mq03.gif)
+[Gate admission motion](gate_admission.gif) · [MQ03 introduction: request, greeting and meal](mq03.gif)
 
 The arrival freezes exploration and preserves Caelan's sanctuary station. MQ03 stays
 available until Serene's separate invitation is acknowledged. The visit leads

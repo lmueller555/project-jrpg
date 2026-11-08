@@ -1,5 +1,10 @@
 # Aldric's arrival and revised MQ03
 
+Historical capture of the arrival cinematic and an earlier MQ03 route. The
+current [emergency review](../mq03_emergency/README.md) covers the revised
+post-meal story. Current arrival tooling verifies the cinematic and the first
+three MQ03 conversations, then leaves the emergency to its separate driver.
+
 [Watch the arrival cinematic with music](regent_arrival.mp4) · [Animated preview](regent_arrival.gif)
 
 These are production Game renders and ordinary event-driven quest/cinematic input.

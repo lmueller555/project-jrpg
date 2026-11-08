@@ -1,7 +1,7 @@
 # Game I — Chapter 1: Life in Eldenmere
 
 **Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.\
-**Version:** 1.2 (regional surges and covenant revision)\
+**Version:** 1.3 (Sanctuary responsibility and MQ03 emergency revision)\
 **Parent:** [Act Outline](ACT_OUTLINE.md) · [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
 
 ## Approved chapter structure
@@ -30,7 +30,7 @@ in the journey; it does not assign that loss to Tomas or any named character.
 - **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Aldric, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
 - **The Festival of Light** is the emotional high point of the opening.
-- **Aldric receives a credible, sympathetic introduction**; he must earn the admiration he will later jeopardize.
+- **Aldric receives a credible, sympathetic introduction**, followed by the exposure of his secret Crown crew in MQ03. His real relief work and abuse of trust both shape the player's view of him.
 - **Chapter end:** Serene learns that excavation at Elden Vale Sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
 - **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
 
@@ -54,13 +54,20 @@ His arranged visit brings that relief effort to Eldenmere and a request to
 discuss the protected ridge seam with Serene. The festival gives the visit a
 social setting; the repaired mill does not cause his journey.
 
-Elden Vale Sanctuary is the regional ridge site, separate from Serene’s home in Eldenmere. Its marked
-reserve includes the hillside and buried foundations. Serene's public plan and
-old injury account justify caution without explaining the site's full purpose.
-She shares them openly and commits courtyard repair stone, crew meals and a
-joint surface inspection. Aldric's proposed supervised trial cut remains
-disputed. These events foreshadow aether instability on a limited regional
-scale; they do not move the later catastrophe into the opening chapter.
+Elden Vale Sanctuary is the regional ridge site, separate from Serene's home
+in Eldenmere. It was deliberately built near a natural aether confluence to
+guide the region's dead back to the planet and remember them. Mining would
+disrupt the keepers' critical societal responsibility. Caretakers have heard
+growling inside the cave since the bridge incident.
+
+Aldric secretly sent a Crown crew to establish control and prepare mining
+before seeking Serene's agreement. A survivor interrupts the post-meal
+conversation after something from the cave attacks that crew, exposing
+Aldric's bad faith. Lucan did not know about the deployment and is taken aback.
+Caelan collects Mira and travels with her, Aldric, Lucan and the page to the
+Sanctuary. The new MQ03 route holds at arrival for a later cutscene; the
+miniboss and the end of the quest remain to be designed. These developments
+do not move the Chapter 3 excavation catastrophe into the opening chapter.
 
 ## Mandatory quests — approved sequence and functions
 
@@ -82,35 +89,45 @@ scale; they do not move the later catastrophe into the opening chapter.
 
 **Current staging:** After the mill diagnosis, Mira warns about riverbank monsters and brings her spring-driven bolt launcher and folded workshop bot Rivet. A ridgeback tusker on the northern trail introduces player-controlled party combat and Rivet's autonomous assistance; its damage explains the tree whose broken limb jams the intake. Mira's starting Overclock skill can speed Rivet's ATB. Victory is followed by a linear character exchange, then the established bypass, small spell and cooperative repair. The encounter is mandatory on a new route, with explicit migration for older journeys already beyond the intake.
 
-**Approved next handoff, pending implementation:** After MQ02's conclusion,
-show Aldric's caravan arriving in Eldenmere. The player should witness this
-expected relief visit before meeting the visitors in MQ03. The
-[arrival goal](REGIONAL_SURGES.md#approved-arrival-cutscene-goal) leaves exact
-camera work and runtime persistence for the subsequent implementation.
+**Implemented handoff:** After MQ02's acknowledged homecoming and cup-setting,
+[Aldric's arrival](../../REGENT_ARRIVAL.md) shows his expected relief visit before
+Caelan meets the visitors in MQ03. The cinematic preserves the mill repair and
+rewards and does not itself accept MQ03.
 
 **Emotional result:** Mira and Caelen succeed through complementary strengths rather than one worldview defeating the other.
 
 ### MQ03 — The Regent's Road
 
 **Premise:** Aldric reaches Eldenmere during a relief journey after unusual
-lightning has damaged several communities. Regional repair demand motivates
-his request to examine a stone seam inside Elden Vale Sanctuary’s protected ground.
-Caelan welcomes Aldric and his personal guard Lucan, guides the party directly
-to a meal at Serene’s home, and hears a measured disagreement with Serene over the
-proposed trial cut. The former cart dispute is removed.
+lightning has damaged several communities. Repair demand is real, but he has
+already secretly sent a Crown crew to establish authority over the Sanctuary
+and prepare mining. Caelan welcomes the visitors and accompanies them to a meal
+at Serene's home. The discussion of the Sanctuary's duty to guide the region's
+dead is interrupted by a survivor whose crew was attacked from the cave.
 
-**Purpose:** Establish why Caelen and the villagers admire Aldric; give both government development and religious protection a legitimate argument; introduce the covenant without lore dumping.
+**Purpose:** Build familiarity with Aldric and Lucan before revealing Aldric's
+breach of trust. Make Serene's protection of the Sanctuary an active societal
+responsibility. Give Caelan agency in the emergency and bring Mira into an
+outing that uses her existing engineering skills and equipment.
 
-**Implemented visit:** The [revised MQ03 script](CH01_MQ03.md) introduces
-Lucan, gives Tomas room for mechanical curiosity, establishes Aldric's royal
-relationship and presents the ridge's natural confluence and memorial grove.
-Shared hazard records and Serene's practical contribution support a genuine,
-unresolved disagreement. The direct escort has no legal-investigation task,
-cart release or road-crew stop. No old mentorship or precise personal history
-with Aldric is established. MQ03 authorizes no excavation and leaves the
-trial-cut request unresolved.
+**Implemented continuation:** The [revised MQ03 script](CH01_MQ03.md) preserves
+the greeting and meal, then introduces the growling report, survivor's entrance,
+exposure of the secret deployment, departure, Mira's rejoining and ordinary
+travel to the Sanctuary. Lucan is surprised by the secrecy and turns to the
+people still in danger. Serene remains to care for the survivor with Tomas and
+the driver helping. The five travelers are Aldric, Lucan, the page, Caelan and
+Mira. The page occupies the former clerk role; no prior complicity is assigned.
 
-**Emotional result:** The future antagonist's character feels sincerely admirable in the present.
+The new route ends at a durable arrival checkpoint with MQ03 active. Its
+cutscene, rescue, miniboss and resolution remain later work. The earlier
+private-aftermath completion and immediate MQ04 invitation are superseded for
+new journeys. Existing completed MQ03/MQ04 journeys retain their progress
+without inventing an attack report, new trip or party membership.
+
+**Emotional result:** Caelan has reason to value Aldric's achievements and to
+recognize his deception. Lucan's independent reaction begins separating his
+judgment from his employer's; traveling together does not recruit him into
+the combat party yet.
 
 ### MQ04 — A Light of His Own
 
@@ -141,7 +158,7 @@ trial-cut request unresolved.
 
 **Purpose:** Celebrate community, present faith through comforting everyday practice and make the main relationships emotionally resonant. Include an inciting event that motivates the narrative to move beyond Eldenmere; its exact form remains PROPOSED.
 
-**Proposed staging:** Lanterns, songs, games and local conversations. Liam carries his finished lantern. Tomas shares a desire to see the wider world; Caelan expresses contentment in Eldenmere. Detailed festival activities, dialogue and the first journey outside the village remain OPEN. The formal excavation authorization remains the current planned chapter-closing escalation; the Chapter 3 catastrophe is a separate later event.
+**Proposed staging:** Lanterns, songs, games and local conversations. Liam carries his finished lantern. Tomas shares a desire to see the wider world; Caelan expresses contentment in Eldenmere. Detailed festival activities, dialogue and its inciting event remain OPEN. MQ03 already establishes an emergency journey from the village to Elden Vale Sanctuary. The formal excavation authorization remains the current planned chapter-closing escalation; the Chapter 3 catastrophe is a separate later event.
 
 **Emotional result:** A warm, memorable high point followed by a credible reason to look beyond home.
 
@@ -173,7 +190,8 @@ Her precise knowledge is limited: she does not know the cosmic catastrophe, the 
 - **Serene:** Loving guardian and community caretaker; sincere faith and a plausible reason for preserving limited warnings.
 - **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
 - **Tomas:** **14 years old** at the game opening; Caelan's younger biological brother, restless and inventive; an autonomous person, not simply a future tragedy.
-- **Aldric:** Respected ruler who has tangibly helped the region; his later moral failure should not erase his authentic achievements.
+- **Aldric:** Respected ruler who has tangibly helped the region; MQ03 exposes his deliberate secret deployment and deceptive negotiation. His achievements do not erase that choice, and the choice does not make his earlier relief work fictitious.
+- **Lucan:** Aldric's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and responds to the immediate rescue needs without joining the combat roster yet.
 
 Caelan's age of **18** and Tomas's age of **14** are approved canon; see
 [approved character facts](CHARACTERS.md). Other ages and biography details
@@ -187,7 +205,7 @@ and their introduction windows; their exact recruitment quests remain open.
 
 ## Chapter pacing and prerequisites
 
-- **Mandatory spine:** MQ01 → MQ02 → MQ03 → MQ04 preparations → MQ05 festival → closing scene. MQ04 occurs on the preparation day; MQ05 follows the next day. PR1 ends within MQ04, without advancing time to the festival.
+- **Mandatory spine:** MQ01 → MQ02 → MQ03, including the Sanctuary emergency → MQ04 preparations → MQ05 festival → closing scene. The current new MQ03 implementation stops at Sanctuary arrival; its remaining scenes and eventual handoff must be finished before that route unlocks MQ04. Existing completed journeys preserve their later quest progress. MQ04 remains on the preparation day and MQ05 on the next day unless explicitly revised.
 - **Optional activities:** Become available naturally as the village opens up; ideally remain available through the festival where continuity permits.
 - **Player agency:** Free exploration and low-pressure activities between main sequences; avoid long mandatory exposition.
 - **No catastrophe in Chapter 1:** First a meaningful ordinary life, then Chapter 2 warnings and exploration, then Chapter 3 disaster and departure.
@@ -201,9 +219,9 @@ Mechanisms and magicks must obey conservation of aether. Planetary-return teachi
 ## Still to determine
 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
-2. Determine the introductory gameplay systems and whether any combat is appropriate this early.
-3. Develop later tests of Aldric's leadership after his relief arrival and visit to Serene’s home.
+2. Build the Sanctuary arrival cutscene and the planned cave/miniboss sequence after the implemented MQ03 travel checkpoint.
+3. Resolve the immediate crew emergency and determine MQ03's ending and eventual return to the lantern preparations.
 4. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
-5. Develop the subsequent site investigation without giving Serene forbidden saga knowledge.
+5. Develop the later site investigation and formal-authorization escalation without giving Serene forbidden saga knowledge or erasing MQ03's secret deployment.
 6. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
 7. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

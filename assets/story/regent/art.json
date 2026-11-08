@@ -20,7 +20,7 @@
     },
     {
       "id": "regent_clerk",
-      "name": "Clerk",
+      "name": "Page",
       "position": [
         708,
         1054
@@ -71,6 +71,25 @@
       ],
       "art": "assets/story/regent/actors/lucan/animation.json",
       "facing": "front"
+    },
+    {
+      "id": "regent_survivor",
+      "name": "Crown worker",
+      "position": [
+        384,
+        372
+      ],
+      "probe_size": [
+        8,
+        4
+      ],
+      "draw_anchor": [
+        12,
+        30
+      ],
+      "art": "assets/story/regent_emergency/animation.json",
+      "portrait": "regent_survivor",
+      "facing": "back"
     }
   ],
   "props": [

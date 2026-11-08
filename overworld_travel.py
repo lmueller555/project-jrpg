@@ -175,6 +175,8 @@ class OverworldTravel:
         if checkpoint is not None:
             self.game.world, position, self.game.player.facing = checkpoint
             self.game.player.position.update(position)
+            restored=getattr(self.game.regent_quest,'on_travel_restored',None)
+            if restored is not None:restored()
             self._stop_party()
         self._town_armed = self._region_armed = False
         self._reserve_entry_armed = self._reserve_exit_armed = False
@@ -205,7 +207,11 @@ class OverworldTravel:
             members.append((g.halden_visit.tomas, g.halden_visit._place_tomas))
         if g.mill_quest.active and g.mill_quest._done('meet_mira'):
             members.append((g.mill_quest.mira, g.mill_quest._place_mira))
-        if g.regent_quest.stage in ('met', 'escorting'):
+        if getattr(g.regent_quest,'sanctuary_escort_active',False):
+            members.extend((actor, lambda world, point, actor=actor:
+                            g.regent_quest._place(actor, world, point))
+                           for actor in g.regent_quest.sanctuary_escorts)
+        elif g.regent_quest.stage in ('met', 'escorting'):
             members.extend((actor, lambda world, point, actor=actor:
                             g.regent_quest._place(actor, world, point)) for actor in g.regent_quest.party)
         lantern = g.lantern_quest

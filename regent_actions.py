@@ -14,7 +14,9 @@ class RegentActions:
     DURATIONS = {'caelan_scabbard': .85, 'meal_settle': .8,
                  'pass_bread': 1., 'tomas_eat': 1.45, 'lucan_watch': 1.2,
                  'open_survey': .9, 'clear_plates': .9,
-                 'open_plan': .9, 'open_account': .75}
+                 'open_plan': .9, 'open_account': .75,
+                 'survivor_alarm': 1.15, 'lucan_disbelief': 1.25,
+                 'survivor_aid': 1.35}
 
     def __init__(self, owner):
         self.owner = owner;self.game = owner.game;self.dining = owner.dining
@@ -38,6 +40,8 @@ class RegentActions:
                   'regent_clerk': self.owner.clerk, 'regent_driver': self.owner.driver}
         lucan = getattr(self.owner, 'lucan', None)
         if lucan is not None:result['lucan'] = lucan
+        survivor = getattr(self.owner, 'survivor', None)
+        if survivor is not None:result['regent_survivor'] = survivor
         return result
 
     def _owned_actor(self, actor):
@@ -54,14 +58,16 @@ class RegentActions:
             else:previous[key] = (*previous[key][:2], value)
             setattr(actor, key, value)
 
+    def _release_actor_pose(self, actor):
+        """Release one drawing without disturbing another actor's active beat."""
+        for key, (existed, before, ours) in self._poses.pop(actor, {}).items():
+            if getattr(actor, key, None) is not ours and getattr(actor, key, None) != ours:continue
+            if existed:setattr(actor, key, before)
+            elif hasattr(actor, key):delattr(actor, key)
+
     def release(self):
         """Clear only drawings belonging to this view, leaving other owners alone."""
-        for actor, values in self._poses.items():
-            for key, (existed, before, ours) in values.items():
-                if getattr(actor, key, None) is not ours and getattr(actor, key, None) != ours:continue
-                if existed:setattr(actor, key, before)
-                elif hasattr(actor, key):delattr(actor, key)
-        self._poses.clear()
+        for actor in tuple(self._poses):self._release_actor_pose(actor)
         self.active_cue = None;self.clock = 0.;self._script = None;self._seen = set()
         self._seated = False
 
@@ -128,6 +134,22 @@ class RegentActions:
             if actor is self.owner.serene or actor is self.owner.tomas:
                 actor.story_sprite = actor.idles[direction]
 
+    def _apply_survivor_rest(self):
+        """The injured man stays on the existing bench while the party leaves."""
+        survivor = getattr(self.owner, 'survivor', None)
+        record = self.owner.points.get('survivor_seat')
+        if survivor is None:return
+        resting = getattr(self.owner,'survivor_resting',False)
+        if (not record or not getattr(survivor,'story_visible',False) or not resting
+                or self.owner._world(survivor) is not self.dining
+                or survivor.position.distance_to(record['approach']) > 2):
+            # A safe landing can move the worker around a player occupying the
+            # bench approach. Never keep a prior drawing pinned over that player.
+            self._release_actor_pose(survivor)
+            return
+        self._pose(survivor, self._image(record['image']), record['anchor'],
+                   position=record['position'],sort_y=record['sort_y'])
+
     def update(self, seconds):
         if (not getattr(self.game, '_music_focused', True) or self.game.pause.is_open
                 or self.game.inventory_ui.is_open or self.game.map_open
@@ -139,6 +161,7 @@ class RegentActions:
         if current is None:
             if self._script is not None:self.release()
             self._apply_seating()
+            self._apply_survivor_rest()
             return
         index, line = current;script = self.game.social.script_identifier
         if script != self._script:
@@ -152,6 +175,7 @@ class RegentActions:
         if self.active_cue and self.clock >= self.DURATIONS[self.active_cue]:self._clear_beat()
         self._attention(line)
         self._apply_seating()
+        self._apply_survivor_rest()
         player = self.game.player
         if self.active_cue in ('caelan_scabbard', 'pass_bread', 'clear_plates'):
             direction = 'left' if player.facing == 'left' else 'right'
@@ -169,6 +193,21 @@ class RegentActions:
             elif not record:
                 actor.facing = facing_toward(pygame.Vector2(168, 184)-actor.position)
                 actor.story_sprite = actor.idles[actor.facing]
+        elif self.active_cue == 'survivor_alarm':
+            actor = getattr(self.owner,'survivor',None)
+            if actor is not None and self.owner._world(actor) is self.game.world:
+                self._pose(actor,self._image('assets/story/regent_emergency/poses/alarm_front.png'),
+                           actor.draw_anchor)
+        elif self.active_cue == 'lucan_disbelief':
+            actor = getattr(self.owner,'lucan',None)
+            if actor is not None and self.owner._world(actor) is self.game.world:
+                direction = facing_toward(self.owner.aldric.position-actor.position)
+                actor.facing = direction;actor.moving = False
+                self._pose(actor,actor.idles[direction],actor.draw_anchor)
+        elif self.active_cue == 'survivor_aid' and self._owned_actor(self.owner.serene):
+            self._pose(self.owner.serene,
+                       self._image('assets/story/regent_emergency/poses/serene_aid_left.png'),
+                       (12,30))
 
     def _clear_beat(self):
         script = self._script;seen = self._seen

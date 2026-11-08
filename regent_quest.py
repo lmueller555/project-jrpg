@@ -16,17 +16,21 @@ from npc_following import following_facing, idle_following_facing, reset_followi
 from quests import REGENT_QUEST, MILL_QUEST, LANTERN_QUEST, QuestLog
 from regent_actors import StoryActor
 from regent_actions import RegentActions
+from regent_emergency import RegentEmergency, EMERGENCY_STAGES, MIRA_STAGES
 from social import facing_toward
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/regent/'
-STAGES = ('idle', 'assigned', 'escorting', 'welcome', 'hosted', 'discussion', 'done')
+V2_STAGES = ('idle', 'assigned', 'escorting', 'welcome', 'hosted', 'discussion', 'done')
+STAGES = ('idle', 'assigned', 'escorting', 'welcome', 'hosted',
+          'interruption', 'attack_report', 'departure', 'rejoin_mira',
+          'sanctuary_travel', 'sanctuary_arrival_pending', 'done')
 LEGACY_STAGES = ('idle', 'assigned', 'met', 'dispute', 'releasing', 'escorting',
                  'welcome', 'hosted', 'discussion', 'done')
 LEGACY_ESCORT = frozenset(('met', 'dispute', 'releasing', 'escorting'))
 OBJECTIVES = ('meet_visitors', 'accompany_visit', 'welcome_party', 'speak_serene')
 PREFIX = {'idle': 0, 'assigned': 0, 'escorting': 1, 'welcome': 2,
-          'hosted': 3, 'discussion': 3, 'done': 4}
+          'hosted': 3, **{stage: 3 for stage in EMERGENCY_STAGES}, 'done': 4}
 
 
 def read(name):return json.loads((ROOT/ART/name).read_text())
@@ -65,6 +69,7 @@ class RegentQuest:
         self._prior_dining_blockers = getattr(self.dining, 'task_blockers', lambda: ())
         self.dining.task_blockers = self._dining_blockers
         self.scene_actions = RegentActions(self)
+        self.emergency = RegentEmergency(self)
 
     @property
     def active(self):return self.game.quests.status(REGENT_QUEST) in ('active', 'ready')
@@ -74,22 +79,60 @@ class RegentQuest:
         return (self.game.quests.status(REGENT_QUEST) != 'locked'
                 and (arrival is None or arrival.arrival_complete))
     @property
-    def locks_player(self):return False
-    def to_dict(self):return {'version': 2, 'stage': self.stage}
+    def locks_player(self):
+        return self.stage == 'interruption' and self.game.world is self.dining
+    def to_dict(self):return {'version': 3, 'stage': self.stage}
+
+    @property
+    def sanctuary_party_active(self):return self.stage in MIRA_STAGES
+
+    @property
+    def survivor_resting(self):
+        survivor = self.emergency.survivor
+        return (self.stage in ('departure', 'rejoin_mira', *MIRA_STAGES)
+                and survivor is not None
+                and self._world(survivor) is self.dining
+                and survivor.position.distance_to(self.points.get('survivor_rest', (60,276))) <= 2)
+
+    @property
+    def survivor(self):return self.emergency.survivor
+
+    @property
+    def sanctuary_escort_active(self):
+        return self.stage in ('rejoin_mira', *MIRA_STAGES)
+
+    @property
+    def sanctuary_escorts(self):return (self.aldric, self.lucan, self.clerk)
+
+    @property
+    def travel_members(self):
+        return self.sanctuary_escorts if self.sanctuary_escort_active else tuple(self.party)
+
+    @staticmethod
+    def sanctuary_party_snapshot(record):
+        return (RegentQuest.valid_snapshot(record)
+                and RegentQuest.migrate_snapshot(record)['stage'] in MIRA_STAGES)
 
     @staticmethod
     def valid_snapshot(data):
         if (not isinstance(data, dict) or set(data) != {'version', 'stage'}
                 or type(data['version']) is not int or not isinstance(data['stage'], str)):
             return False
-        stages = LEGACY_STAGES if data['version'] == 1 else STAGES if data['version'] == 2 else ()
+        stages = (LEGACY_STAGES if data['version'] == 1 else
+                  V2_STAGES if data['version'] == 2 else
+                  STAGES if data['version'] == 3 else ())
         return data['stage'] in stages
 
     @staticmethod
     def migrate_snapshot(data):
         if not RegentQuest.valid_snapshot(data):return data
-        return {'version': 2, 'stage': ('escorting' if data['version'] == 1
-                and data['stage'] in LEGACY_ESCORT else data['stage'])}
+        stage = data['stage']
+        if data['version'] == 1 and stage in LEGACY_ESCORT:stage = 'escorting'
+        # Earlier unfinished discussions did not contain the deployment or
+        # attack. Resume before the revised discussion rather than inventing
+        # an acknowledged report. Completed old visits remain completed.
+        if data['version'] < 3 and stage == 'discussion':stage = 'hosted'
+        return {'version': 3, 'stage': stage}
 
     @staticmethod
     def valid_journey(data):
@@ -99,6 +142,7 @@ class RegentQuest:
         quests = QuestLog()
         if not quests.restore(data.get('quests')):return False
         status = quests.status(REGENT_QUEST);stage = record['stage']
+        if stage in MIRA_STAGES and 'party' not in data:return False
         done = quests.states[REGENT_QUEST]['completed_objectives']
         if done != list(OBJECTIVES[:PREFIX[stage]]):return False
         if stage == 'idle':return status in ('locked', 'available')
@@ -106,6 +150,7 @@ class RegentQuest:
         return status == ('completed' if stage == 'done' else 'active')
 
     def _world(self, actor):
+        if actor is self.game.mill_quest.mira:return self.game.mill_quest._mira_world
         return self.game._routine_worlds[actor] if actor in (self.serene, self.tomas) else self._worlds[actor]
 
     def _place(self, actor, world, position):
@@ -158,6 +203,7 @@ class RegentQuest:
         self.paths.clear();self.retries.clear();self.trail.clear();self.last_scene = None
         self._preps_ready = False;self._group_ready = False;self._setup = False
         self._meal_ready = False
+        self.emergency.reset()
         if data:self.stage = self.migrate_snapshot(data)['stage']
         else:
             status = self.game.quests.status(REGENT_QUEST)
@@ -191,6 +237,9 @@ class RegentQuest:
         return self._travel(actor, self.dining, .05) and self._move(actor, desired, .05)
 
     def _setup_stage(self, force=False):
+        if self.stage in EMERGENCY_STAGES:
+            self.emergency.setup(force=force)
+            return
         self._claim()
         serene_point = ('aftermath' if self.stage in ('discussion', 'done') else
                         'serene_meal' if self.stage in ('welcome', 'hosted') else 'serene')
@@ -232,7 +281,10 @@ class RegentQuest:
 
     def _speak(self, kind, callback=None):
         if self.game.social.locked:return False
-        actors = tuple(actor for actor in (*self.party, self.serene, self.tomas)
+        extra = tuple(actor for actor in (self.emergency.survivor,)
+                      if actor is not None and getattr(actor, 'story_visible', False))
+        if kind == 'mira_departure':extra += (self.game.mill_quest.mira,)
+        actors = tuple(actor for actor in (*self.party, self.serene, self.tomas, *extra)
                        if not self._handed_off(actor))
         for actor in actors:
             if self._world(actor) is self.game.world:
@@ -258,6 +310,7 @@ class RegentQuest:
             self.dialogue = None
             for actor in (*self.party, self.serene, self.tomas):
                 if not self._handed_off(actor):actor.end_conversation()
+            if identifier == 'regent_mira_departure':self.game.mill_quest.mira.end_conversation()
 
     def can_speak(self, identifier):
         if identifier in self.actors:return self.actors[identifier].story_visible
@@ -265,6 +318,7 @@ class RegentQuest:
 
     def marker_for(self, identifier):
         if not self.eligible:return NotImplemented
+        if self.stage in EMERGENCY_STAGES:return self.emergency.marker_for(identifier)
         if identifier == 'mother_serene':
             if self._serene_handed_off:return NotImplemented
             return '!' if self.stage == 'idle' else '?' if self.stage == 'discussion' and self._aside_ready else None
@@ -276,6 +330,8 @@ class RegentQuest:
 
     def try_conversation(self, actor):
         if not self.eligible:return None
+        if self.stage in EMERGENCY_STAGES:
+            return self.emergency.try_conversation(actor)
         if self._handed_off(actor):return None
         if (actor in (*self.party, self.serene, self.tomas)
                 and self._world(actor) is not self.game.world):return False
@@ -303,6 +359,7 @@ class RegentQuest:
 
     def _target(self):
         if not self.eligible:return None
+        if self.stage in EMERGENCY_STAGES:return self.emergency.target()
         if self.game.world is self.dining:
             if self.stage == 'idle' and self._preps_ready and self._near(self.points['preparations']):return 'preparations'
             if self.stage == 'welcome' and self._group_ready and self._near(self.points['welcome'], 60):return 'welcome'
@@ -315,8 +372,12 @@ class RegentQuest:
     def interact(self):
         if self.game.social.locked:return False
         target = self._target()
+        if target == 'mira_departure':return self.emergency._start_mira()
         callbacks = {'preparations': self._accept, 'arrival': self._met,
-                     'welcome': self._welcomed, 'discussion': self._discussed, 'aftermath': self._finish}
+                     'welcome': self._welcomed, 'discussion': self._discussed, 'aftermath': self._finish,
+                     'attack_report': self.emergency.reported,
+                     'departure': self.emergency.departed,
+                     'mira_departure': self.emergency.mira_joined}
         return self._speak(target, callbacks[target]) if target is not None else False
 
     def _accept(self):
@@ -335,7 +396,9 @@ class RegentQuest:
 
     def _discussed(self):
         if self.stage != 'hosted':return
-        self._aside_ready = False;self._transition('discussion')
+        self.scene_actions.release()
+        self._aside_ready = False;self._transition('interruption')
+        self.emergency.setup(force=False)
 
     def _finish(self):
         if self.stage != 'discussion':return
@@ -363,6 +426,7 @@ class RegentQuest:
             if hasattr(self.serene, key):delattr(self.serene, key)
 
     def interaction_hint(self):
+        if self.stage in EMERGENCY_STAGES:return self.emergency.interaction_hint()
         if (self.stage == 'discussion' and not self._aside_ready
                 and self.game.world is self.dining and self._near(self.points['aftermath'], 60)):
             return 'Let Aldric step aside before speaking with Serene.'
@@ -373,6 +437,7 @@ class RegentQuest:
 
     def tracker_text(self):
         if not self.eligible:return ''
+        if self.stage in EMERGENCY_STAGES:return self.emergency.tracker_text()
         return {'idle': 'Meet Mother Serene in the dining room at home.',
                 'assigned': 'Meet the visitors by the lower bridge.',
                 'escorting': 'Bring Aldric’s party through the hall at home to the dining room.',
@@ -456,7 +521,7 @@ class RegentQuest:
         if self.last_scene is not self.game.world:
             self.last_scene = self.game.world;self.trail.clear()
         if not self.trail or pygame.Vector2(self.trail[-1]).distance_to(player)>=4:self.trail.append(point(player))
-        for index, actor in enumerate(self.party):
+        for index, actor in enumerate(self.travel_members):
             if not self._travel(actor, self.game.world, seconds):continue
             if actor.position.distance_to(player)<28+index*12:
                 actor.moving = False;self.paths.pop(actor, None)
@@ -528,6 +593,11 @@ class RegentQuest:
 
     def on_enter_scene(self, origin, transition):
         self.trail.clear();self.last_scene = None;self.paths.clear()
+        if self.sanctuary_escort_active:self.emergency.on_enter_scene(origin, transition)
+
+    def on_travel_restored(self):
+        """The regional checkpoint is restored after household story owners."""
+        if self.sanctuary_escort_active:self.emergency.on_travel_restored()
 
     def update(self, seconds):
         if self.game.map_open or self.game.quest_ui.journal_open:return
@@ -537,6 +607,11 @@ class RegentQuest:
         if not self._setup:return
         for actor in (*self.party, self.serene, self.tomas):
             if not self._handed_off(actor):actor.moving = False
+        if self.stage in EMERGENCY_STAGES:
+            self.emergency.update(seconds)
+            self._pose_owned();self._sync_props()
+            self.scene_actions.update(seconds)
+            return
         if not self.dialogue:
             if self.stage == 'escorting':
                 self._follow_party(seconds)

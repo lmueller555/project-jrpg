@@ -196,5 +196,46 @@
       "image": "assets/story/regent/poses/driver_seated.png",
       "sort_y": 246
     }
+  },
+  "survivor_start": [
+    384,
+    372
+  ],
+  "survivor_entry": [
+    216,
+    294
+  ],
+  "survivor_rest": [
+    60,
+    276
+  ],
+  "serene_aid": [
+    96,
+    276
+  ],
+  "tomas_aid": [
+    108,
+    288
+  ],
+  "driver_aid": [
+    144,
+    288
+  ],
+  "survivor_seat": {
+    "position": [
+      60,
+      264
+    ],
+    "approach": [
+      60,
+      276
+    ],
+    "anchor": [
+      12,
+      30
+    ],
+    "facing": "front",
+    "image": "assets/story/regent_emergency/poses/rest_front.png",
+    "sort_y": 282
   }
 }

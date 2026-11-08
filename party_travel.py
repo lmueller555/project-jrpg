@@ -109,6 +109,9 @@ class PartyTravel:
                     or getattr(getattr(game, 'opening', None), 'locks_player', False))
 
     def _owned_by_story(self, identifier):
+        if (identifier == 'lucan' and
+                getattr(getattr(self.game,'regent_quest',None),'sanctuary_escort_active',False)):
+            return True
         actor = getattr(getattr(self.game, 'mill_quest', None), 'mira', None) if identifier == 'mira' else None
         if actor is not None and any(getattr(actor, field, False)
                                      for field in ('story_following', 'quest_mode', 'story_sprite',
@@ -135,6 +138,37 @@ class PartyTravel:
         if self._world is not self.game.world or not self._normal_scale():return ()
         return tuple(self._actors[identifier] for identifier in self._active()
                      if identifier in self._actors and self._actors[identifier].visible)
+
+    def stage_companion(self, identifier, position, *, facing=None):
+        """Publish a story-approved arrival using the existing passive actor.
+
+        The owner supplies a nearby clear landing. A checked route from that
+        landing to the leader seeds ordinary following, so a gathered party is
+        visible immediately after a scene transfer or Continue. No NPC clone,
+        character resources or guessed doorway history is introduced.
+        """
+        active = self._active() if self._normal_scale() else ()
+        if identifier not in active:return False
+        self._sync_authored(active)
+        origin = pygame.Vector2(position)
+        leader = pygame.Vector2(self.game.player.position)
+        if not 12 <= origin.distance_to(leader) <= TELEPORT_DISTANCE:return False
+        if not self.game.world.can_stand(origin):return False
+        segment = self._segment(origin, leader)
+        if segment is None:return False
+        self._start_trail(origin)
+        self._record(leader)
+        actor = self._actors.get(identifier)
+        if actor is None:
+            actor = self._actors[identifier] = self._actor_factory(identifier)
+        actor.position.update(origin)
+        actor.trail_distance = 0.
+        actor.facing = facing or getattr(self.game.player, 'facing', 'front')
+        actor.visible = True
+        actor.moving = False
+        actor.walk_ms = 0.
+        reset_following_facing(actor)
+        return True
 
     def _start_trail(self, position):
         self._world = self.game.world

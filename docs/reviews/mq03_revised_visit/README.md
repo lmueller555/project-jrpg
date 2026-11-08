@@ -1,5 +1,10 @@
 # MQ03 — The revised Regent’s Road
 
+Historical review of the visit before the Sanctuary emergency revision.
+See the [current emergency review](../mq03_emergency/README.md) for the survivor,
+Lucan's surprise, Mira's rejoining and Sanctuary journey. The media below retain
+their original story and source record.
+
 [Watch the complete visit](revised_visit.mp4)
 
 ![Actual gameplay contact sheet](scene_contact.png)

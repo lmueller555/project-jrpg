@@ -230,9 +230,11 @@ its protective purpose and ancient origin are not known to them. See the
 remaining metaphysical questions.
 
 Serene's [local planetary tradition](ELDEN_VALE_FAITH.md) does not center
-gods. Elden Vale Sanctuary combines communal remembrance and keeping a real
-natural aether confluence; this does not define a universal faith or explain
-the site's buried works.
+gods. Elden Vale Sanctuary was deliberately constructed near a real natural
+aether confluence to guide the region's dead back to the planet and remember
+them. Its caretakers carry a critical societal responsibility that mining
+would disrupt. This does not define a universal faith, the exact guidance
+practices or the purpose of the site's buried works.
 
 Greater regions across Auratia have their own sanctuaries at natural aetherial
 confluences. Their surroundings, architecture, customs and custodial arrangements

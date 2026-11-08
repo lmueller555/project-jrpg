@@ -27,9 +27,10 @@ class RevisedVisitTests(unittest.TestCase):
         for stage in ('met', 'dispute', 'releasing'):
             self.assertTrue(RegentQuest.valid_snapshot({'version': 1, 'stage': stage}))
             self.assertFalse(RegentQuest.valid_snapshot({'version': 2, 'stage': stage}))
+            self.assertFalse(RegentQuest.valid_snapshot({'version': 3, 'stage': stage}))
         for record in ({'version': True, 'stage': 'idle'},
                        {'version': 2, 'stage': 'escorting', 'cart_released': True},
-                       {'version': 3, 'stage': 'done'}):
+                       {'version': 4, 'stage': 'done'}):
             self.assertFalse(RegentQuest.valid_snapshot(record))
 
     def test_lucan_has_approved_directional_motion_and_a_matching_dialogue_portrait(self):
@@ -45,23 +46,31 @@ class RevisedVisitTests(unittest.TestCase):
 
     def test_main_dialogue_establishes_guard_royal_role_and_the_whole_reserve(self):
         scenes = self.quest.lines
-        self.assertTrue({'preparations', 'arrival', 'welcome', 'discussion', 'aftermath'} <= set(scenes))
+        self.assertTrue({'preparations', 'arrival', 'welcome', 'discussion',
+                         'attack_report', 'departure', 'mira_departure',
+                         'sanctuary_waiting', 'aftermath'} <= set(scenes))
         self.assertFalse(any('dispute' in key or 'foreman' in key or 'venn' in key for key in scenes))
         arrival = ' '.join(line['text'] for line in scenes['arrival'])
         self.assertIn('Lucan Rooke', arrival)
         self.assertIn('my guard', arrival)
         self.assertIn('early birthday present', arrival.lower())
         discussion = ' '.join(line['text'] for line in scenes['discussion'])
-        self.assertIn('monarch', discussion)
+        self.assertIn('Her Majesty', discussion)
         self.assertIn('brother', discussion)
-        self.assertIn('Aether gathers there naturally', discussion)
-        self.assertIn('remembrance', discussion)
-        self.assertIn('cannot endorse', discussion)
-        self.assertIn('inspect', discussion.lower())
+        self.assertIn('Would that she could, but alas.', discussion)
+        self.assertIn('across Merovar', discussion)
+        self.assertIn('closest untapped deposit', discussion)
+        self.assertIn('guide the region’s dead back to the planet', discussion)
+        self.assertIn('remember', discussion)
+        self.assertIn('disrupt our duty to the dead', discussion)
+        self.assertIn('growling inside the cave', discussion)
+        self.assertIn('Since the incident at the bridge', discussion)
         for line in (line for lines in scenes.values() for line in lines):
             self.assertEqual(line['text'].count('*') % 2, 0, line['text'])
 
-    def test_revised_visit_preserves_player_progress_and_does_not_recruit_the_guard(self):
+    def test_completed_legacy_visit_preserves_progress_and_does_not_recruit_the_guard(self):
+        # The shared helper explicitly restores a completed older visit. New
+        # journeys stop at the later Sanctuary arrival checkpoint instead.
         abilities = self.g.character_abilities.to_dict()
         inventory = self.g.inventory.to_dict()
         self.driver.complete()
@@ -110,9 +119,49 @@ class RevisedVisitTests(unittest.TestCase):
 
     def test_narrative_script_contains_the_exact_runtime_main_dialogue(self):
         script = (ROOT/'docs/narrative/game_01/CH01_MQ03.md').read_text().replace('\\*', '*')
-        for name in ('preparations', 'arrival', 'welcome', 'discussion', 'aftermath'):
-            for line in self.quest.lines[name]:
+        for name, lines in self.quest.lines.items():
+            for line in lines:
                 self.assertIn(line['text'], script, (name, line['text']))
+
+    def test_attack_exposes_aldric_and_lucan_learns_about_the_deployment_here(self):
+        report = self.quest.lines['attack_report']
+        self.assertEqual(report[0]['speaker'], 'regent_survivor')
+        text = ' '.join(line['text'] for line in report)
+        self.assertIn('establish the Crown’s authority', text)
+        self.assertIn('Before I came to Eldenmere', text)
+        surprise = next(line for line in report if line.get('cue') == 'lucan_disbelief')
+        self.assertEqual(surprise['speaker'], 'lucan')
+        self.assertIn("I wasn't told", surprise['text'])
+        surprise_index = report.index(surprise)
+        self.assertTrue(any(line['speaker'] == 'lucan' and 'road to the reserve' in line['text']
+                            for line in report[surprise_index+1:]))
+
+    def test_departure_keeps_care_at_home_and_brings_miras_existing_equipment(self):
+        departure = self.quest.lines['departure']
+        self.assertTrue(any(line.get('cue') == 'survivor_aid' for line in departure))
+        self.assertTrue(any(line['speaker'] == 'tomas' and 'water' in line['text']
+                            for line in departure))
+        self.assertTrue(any(line['speaker'] == 'regent_driver' and 'help' in line['text']
+                            for line in departure))
+        mira = self.quest.lines['mira_departure']
+        self.assertTrue(any(line['speaker'] == 'mira' and 'I’m coming' in line['text']
+                            for line in mira))
+        self.assertTrue(any(line['speaker'] == 'mira' and 'Rivet' in line['text']
+                            for line in mira))
+        current = ' '.join(line['text'] for key in ('discussion', 'attack_report',
+                           'departure', 'mira_departure', 'sanctuary_waiting')
+                           for line in self.quest.lines[key])
+        self.assertNotIn('look at the lanterns', current)
+
+    def test_initial_journal_copy_does_not_reveal_the_secret_operation(self):
+        catalogue = json.loads((ROOT/'assets/quests/eldenmere.json').read_text())
+        definition = next(quest for quest in catalogue['quests'] if quest['id'] == REGENT_QUEST)
+        public_copy = ' '.join([definition['summary'],
+                               *[objective['text'] for objective in definition['objectives']]]).lower()
+        for spoiler in ('secret', 'attack', 'survivor', 'emergency'):
+            self.assertNotIn(spoiler, public_copy)
+        self.assertEqual([objective['id'] for objective in definition['objectives']],
+                         ['meet_visitors', 'accompany_visit', 'welcome_party', 'speak_serene'])
 
 
 if __name__ == '__main__':unittest.main()
