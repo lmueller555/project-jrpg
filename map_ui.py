@@ -371,8 +371,7 @@ class MapUI:
         return self.game.world.data.get('id') in ('elden_vale_sanctuary', 'elden_vale_sanctuary_hall')
 
     def _in_cave(self):
-        return self.game.world.data.get('id') in (
-            'sanctuary_cave_entrance', 'sanctuary_cave_hollow', 'sanctuary_cave_depths')
+        return self.game.world.data.get('id') == 'sanctuary_cave'
 
     def _cave(self):
         if self._cave_map is None:

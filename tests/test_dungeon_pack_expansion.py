@@ -21,7 +21,7 @@ import pygame
 
 from main import Player, camera_for
 from sanctuary_cave_world import SanctuaryCaveWorld
-from tools.capture_dungeon_pack import SOURCES, CATALOG, approved_hashes
+from tools.capture_dungeon_pack import SOURCES, CATALOG
 
 ROOT=Path(__file__).resolve().parents[1]
 MAP=ROOT/'assets/maps/dungeon_pack_review/map.json'
@@ -236,10 +236,20 @@ class DungeonPackExpansionTests(unittest.TestCase):
         self.assertEqual(pygame.image.tobytes(self.render(0),'RGB'),pygame.image.tobytes(self.render(19321),'RGB'))
         world.reduced_motion=False
 
-    def test_retained_review_and_approved_files_remain_intact(self):
-        from tools.capture_dungeon_pack import OUT, check
-        self.assertTrue(approved_hashes());check(OUT)
-        report=json.loads((OUT/'verification.json').read_text())
+    def test_retained_review_preserves_original_sources_and_artifacts(self):
+        from tools.capture_dungeon_pack import OUT
+        from tools.review_archive import check_review_archive
+        report=check_review_archive(
+            OUT, 'ac4259555f804f92ad8e75534d26fc13bb07d32c420f179ee2af5e438bb77ce1',
+            'approved_sha256')
+        self.assertTrue(report['ordinary_movement_only'] and report['no_save_or_settings_files'])
+        self.assertTrue(report['walking_seen'] and report['running_seen'] and report['all_stations_visited'])
+        self.assertTrue(report['reduced_motion_static'] and report['water']['animated'])
+        self.assertGreater(report['pulse']['max_mean'],report['pulse']['min_mean'])
+        self.assertEqual(report['microcrystals']['colors'],['blue','green','orange','purple','red','white'])
+        self.assertLessEqual(report['microcrystals']['max_width'],4)
+        self.assertLessEqual(report['microcrystals']['max_height'],5)
+        self.assertGreater(report['catalog_entries'],0)
         names={record['name'] for record in report['stations']}
         self.assertTrue(set(self.world.data['cave']['review_points'])<=names)
         self.assertLessEqual(report.get('movie_seconds',100),100)

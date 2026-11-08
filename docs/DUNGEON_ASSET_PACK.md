@@ -2,9 +2,9 @@
 
 The expanded pack continues the Sanctuary's warm limestone, pale calcite,
 damp teal and tiny red, blue, green, white, orange and purple microcrystals.
-The additions are held for visual review before merging or applying them to
-the live cave. Previously merged limestone and microcrystal modules remain
-part of the full catalogue.
+The approved additions are merged and used by the
+[continuous Sanctuary cave](SANCTUARY_CAVE.md). The full catalogue also retains
+the base limestone and microcrystal modules.
 
 ## Review the complete library
 
@@ -45,8 +45,9 @@ the guide, Home resets the viewer and Escape closes it.
 The route moves from a rooted earth threshold through dry limestone galleries,
 an alcove and raised shelf to a wet grotto. It uses the production Player,
 World, depth sorting and crystal lighting, without constructing the normal
-Game, loading a journey or writing saves/settings. The live dungeon, quests,
-party and music remain outside this review.
+Game, loading a journey or writing saves/settings. The viewer is an isolated
+asset study; the live continuous dungeon, quests, party and music are handled
+by the normal game.
 
 ## Rebuild and verify
 
@@ -64,11 +65,11 @@ python tools/build_dungeon_pack_catalog.py
 python tools/capture_dungeon_pack.py
 ```
 
-Each builder supports `--check` without writing. Use
-`python tools/capture_dungeon_pack.py --check` to verify the retained gameplay
-review and its source/artifact fingerprints. Capture guards compare approved
-assets with the merged baseline, so additions cannot silently replace the
-existing limestone pack or alter the live scenes.
+Each builder supports `--check` without writing. The retained gameplay review
+records the source and artifact fingerprints from asset approval. Its original
+capture guards compare against that baseline; subsequent live-level changes
+are intentionally outside the archived review. Current live-layout generation
+is documented in [Sanctuary cave](SANCTUARY_CAVE.md).
 
 Pygame and NumPy are runtime dependencies. Building and capturing require Pillow;
 the walkthrough recording additionally requires ffmpeg.

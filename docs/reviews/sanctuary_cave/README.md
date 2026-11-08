@@ -1,5 +1,10 @@
 # Sanctuary cave production review
 
+**Historical review:** these retained captures document the original
+three-section cave. The live game now uses the
+[continuous limestone dungeon](../../SANCTUARY_CAVE.md); this walkthrough does
+not show its current layout.
+
 The screenshots and walkthrough use the production game renderer, ordinary
 movement and **E** interactions. They show the crystal cave's entrance,
 branching galleries, reflecting grotto, keeper recess and final Echo Chamber.
