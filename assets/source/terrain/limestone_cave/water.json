@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.water.24",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "seed": 17394,
+  "pulse_frames": 6,
+  "frame_duration_ms": 140,
+  "reduced_motion_frame": 2,
+  "water_variants": 3,
+  "bank_variants": 2,
+  "stream_variants": 2,
+  "palette": {
+    "shallow": ["#3e6469", "#527977", "#638b82", "#7c9f90"],
+    "deep": ["#27454e", "#33565f", "#416871", "#5a7e83"],
+    "ripple": "#99b9ad",
+    "mineral_crust": "#b4b29a",
+    "wet_rock": "#667f77",
+    "wet_shadow": "#344e4b"
+  },
+  "notes": "Reusable native cave water and limestone banks. Water and reflections animate; all stone, shore silhouettes and water masks remain fixed. Water collision is an authored fixed mask; shallow color does not introduce a new traversal rule. Seepage, cracks, falling drops and ripples are decorative overlays with no additional floor obstacle."
+}

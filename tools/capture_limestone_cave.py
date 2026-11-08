@@ -54,11 +54,18 @@ def source_hashes():
         'tools/build_limestone_cave_assets.py', 'tools/build_limestone_cave_chamber.py',
         'tools/build_wall_gems.py',
         'tools/capture_sanctuary_reserve.py',
+        'assets/terrain/limestone_cave/assets.json',
+        'assets/terrain/limestone_cave/wall_gems/assets.json',
+        'assets/maps/limestone_cave_review/map.json',
+        'assets/source/terrain/limestone_cave/recipe.json',
+        'assets/source/terrain/limestone_cave/wall_gems.json',
+        'assets/source/maps/limestone_cave_review/recipe.json',
     )}
-    for folder in ('assets/source/terrain/limestone_cave', 'assets/terrain/limestone_cave',
-                   'assets/source/maps/limestone_cave_review', 'assets/maps/limestone_cave_review',
-                   'assets/characters/caelan'):
-        paths.update(path for path in (ROOT/folder).rglob('*') if path.is_file())
+    # Follow this chamber's authored dependencies, rather than unrelated new
+    # supplements sharing the limestone folder. The character library remains
+    # explicit because Player selects directional gait frames at runtime.
+    paths.update(path for path in (ROOT/'assets/characters/caelan').rglob('*')
+                 if path.is_file())
     pending = list(paths);seen = set()
     while pending:
         path = pending.pop()
@@ -67,7 +74,8 @@ def source_hashes():
         if path.suffix != '.json':continue
         def collect(value):
             if isinstance(value, dict):
-                for item in value.values():collect(item)
+                # Input, artifact and source hashes use asset paths as keys.
+                for key, item in value.items():collect(key);collect(item)
             elif isinstance(value, list):
                 for item in value:collect(item)
             elif isinstance(value, str) and value.startswith('assets/'):

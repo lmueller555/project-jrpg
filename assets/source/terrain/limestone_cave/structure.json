@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "terrain.sanctuary.limestone.structure.24",
+  "approval_status": "pending_review",
+  "tile_size": 24,
+  "seed": 91127,
+  "base_manifest": "assets/terrain/limestone_cave/assets.json",
+  "base_recipe": "assets/source/terrain/limestone_cave/recipe.json",
+  "directions": ["north", "east", "south", "west"],
+  "heights": [24, 48, 72],
+  "tunnel_widths": {"narrow": 48, "wide": 80},
+  "ledge_height": 24,
+  "shelf_sizes": [[96, 72], [144, 96]],
+  "ramp_size": [72, 96],
+  "ramp_clear_width": 48,
+  "notes": "New native directional structural modules extend approved limestone materials. Ramps and steps are ordinary walkable surfaces, with visual elevation only. Footprints block rock cheeks and bases; walkable_regions describe full-width clear passage ports. Direction names identify the room side or direction a passage leads. All additions remain pending visual review."
+}

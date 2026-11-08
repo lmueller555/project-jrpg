@@ -1,0 +1,1450 @@
+{
+  "version": 1,
+  "id": "dungeon_pack_review",
+  "name": "Sanctuary Dungeon Pack \u2014 Expansion Review",
+  "approval_status": "pending_review",
+  "size_tiles": [
+    48,
+    32
+  ],
+  "tile_size": 24,
+  "seed": 90314,
+  "spawn": [
+    232,
+    645
+  ],
+  "manifests": {
+    "base": "assets/terrain/limestone_cave/assets.json",
+    "gems": "assets/terrain/limestone_cave/wall_gems/assets.json",
+    "structure": "assets/terrain/limestone_cave/structure/assets.json",
+    "water": "assets/terrain/limestone_cave/water/assets.json",
+    "geology": "assets/terrain/limestone_cave/geology/assets.json",
+    "micro": "assets/terrain/limestone_cave/micro_adapters/assets.json"
+  },
+  "rooms": [
+    [
+      [
+        84,
+        625
+      ],
+      [
+        95,
+        533
+      ],
+      [
+        140,
+        474
+      ],
+      [
+        210,
+        470
+      ],
+      [
+        290,
+        492
+      ],
+      [
+        354,
+        550
+      ],
+      [
+        357,
+        640
+      ],
+      [
+        312,
+        692
+      ],
+      [
+        220,
+        715
+      ],
+      [
+        143,
+        689
+      ]
+    ],
+    [
+      [
+        82,
+        458
+      ],
+      [
+        83,
+        361
+      ],
+      [
+        102,
+        280
+      ],
+      [
+        157,
+        227
+      ],
+      [
+        250,
+        197
+      ],
+      [
+        342,
+        215
+      ],
+      [
+        411,
+        266
+      ],
+      [
+        443,
+        337
+      ],
+      [
+        428,
+        412
+      ],
+      [
+        372,
+        470
+      ],
+      [
+        276,
+        490
+      ],
+      [
+        190,
+        482
+      ]
+    ],
+    [
+      [
+        360,
+        330
+      ],
+      [
+        403,
+        268
+      ],
+      [
+        477,
+        234
+      ],
+      [
+        553,
+        241
+      ],
+      [
+        636,
+        274
+      ],
+      [
+        702,
+        324
+      ],
+      [
+        718,
+        402
+      ],
+      [
+        680,
+        465
+      ],
+      [
+        608,
+        499
+      ],
+      [
+        516,
+        510
+      ],
+      [
+        434,
+        468
+      ],
+      [
+        389,
+        409
+      ]
+    ],
+    [
+      [
+        640,
+        408
+      ],
+      [
+        662,
+        332
+      ],
+      [
+        729,
+        283
+      ],
+      [
+        819,
+        254
+      ],
+      [
+        918,
+        242
+      ],
+      [
+        1008,
+        266
+      ],
+      [
+        1081,
+        313
+      ],
+      [
+        1114,
+        392
+      ],
+      [
+        1101,
+        502
+      ],
+      [
+        1062,
+        584
+      ],
+      [
+        973,
+        641
+      ],
+      [
+        870,
+        656
+      ],
+      [
+        770,
+        637
+      ],
+      [
+        685,
+        584
+      ],
+      [
+        643,
+        514
+      ]
+    ],
+    [
+      [
+        616,
+        272
+      ],
+      [
+        706,
+        272
+      ],
+      [
+        716,
+        340
+      ],
+      [
+        616,
+        340
+      ]
+    ]
+  ],
+  "corridors": [
+    {
+      "points": [
+        [
+          310,
+          595
+        ],
+        [
+          455,
+          575
+        ],
+        [
+          620,
+          580
+        ],
+        [
+          745,
+          601
+        ]
+      ],
+      "width": 106
+    }
+  ],
+  "material_patches": [
+    {
+      "material": "silt",
+      "polygon": [
+        [
+          82,
+          535
+        ],
+        [
+          154,
+          475
+        ],
+        [
+          239,
+          469
+        ],
+        [
+          304,
+          523
+        ],
+        [
+          349,
+          596
+        ],
+        [
+          331,
+          681
+        ],
+        [
+          220,
+          719
+        ],
+        [
+          113,
+          679
+        ]
+      ]
+    },
+    {
+      "material": "gravel",
+      "polygon": [
+        [
+          96,
+          293
+        ],
+        [
+          178,
+          241
+        ],
+        [
+          263,
+          247
+        ],
+        [
+          303,
+          287
+        ],
+        [
+          261,
+          335
+        ],
+        [
+          166,
+          349
+        ],
+        [
+          93,
+          329
+        ]
+      ]
+    },
+    {
+      "material": "gravel",
+      "polygon": [
+        [
+          394,
+          445
+        ],
+        [
+          478,
+          453
+        ],
+        [
+          548,
+          490
+        ],
+        [
+          577,
+          586
+        ],
+        [
+          499,
+          623
+        ],
+        [
+          403,
+          585
+        ],
+        [
+          354,
+          521
+        ]
+      ]
+    },
+    {
+      "material": "damp",
+      "polygon": [
+        [
+          689,
+          324
+        ],
+        [
+          775,
+          272
+        ],
+        [
+          909,
+          260
+        ],
+        [
+          1029,
+          296
+        ],
+        [
+          1106,
+          388
+        ],
+        [
+          1100,
+          518
+        ],
+        [
+          1012,
+          610
+        ],
+        [
+          862,
+          656
+        ],
+        [
+          735,
+          611
+        ],
+        [
+          656,
+          507
+        ]
+      ]
+    },
+    {
+      "material": "silt",
+      "polygon": [
+        [
+          902,
+          581
+        ],
+        [
+          988,
+          534
+        ],
+        [
+          1071,
+          549
+        ],
+        [
+          1063,
+          599
+        ],
+        [
+          983,
+          651
+        ],
+        [
+          899,
+          656
+        ],
+        [
+          855,
+          624
+        ]
+      ]
+    }
+  ],
+  "pool_cells": [
+    [
+      33,
+      14
+    ],
+    [
+      34,
+      14
+    ],
+    [
+      35,
+      14
+    ],
+    [
+      36,
+      14
+    ],
+    [
+      37,
+      14
+    ],
+    [
+      38,
+      14
+    ],
+    [
+      32,
+      15
+    ],
+    [
+      33,
+      15
+    ],
+    [
+      34,
+      15
+    ],
+    [
+      35,
+      15
+    ],
+    [
+      36,
+      15
+    ],
+    [
+      37,
+      15
+    ],
+    [
+      38,
+      15
+    ],
+    [
+      39,
+      15
+    ],
+    [
+      31,
+      16
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      33,
+      16
+    ],
+    [
+      34,
+      16
+    ],
+    [
+      35,
+      16
+    ],
+    [
+      36,
+      16
+    ],
+    [
+      37,
+      16
+    ],
+    [
+      38,
+      16
+    ],
+    [
+      39,
+      16
+    ],
+    [
+      40,
+      16
+    ],
+    [
+      31,
+      17
+    ],
+    [
+      32,
+      17
+    ],
+    [
+      33,
+      17
+    ],
+    [
+      34,
+      17
+    ],
+    [
+      35,
+      17
+    ],
+    [
+      36,
+      17
+    ],
+    [
+      37,
+      17
+    ],
+    [
+      38,
+      17
+    ],
+    [
+      39,
+      17
+    ],
+    [
+      40,
+      17
+    ],
+    [
+      31,
+      18
+    ],
+    [
+      32,
+      18
+    ],
+    [
+      33,
+      18
+    ],
+    [
+      34,
+      18
+    ],
+    [
+      35,
+      18
+    ],
+    [
+      36,
+      18
+    ],
+    [
+      37,
+      18
+    ],
+    [
+      38,
+      18
+    ],
+    [
+      39,
+      18
+    ],
+    [
+      40,
+      18
+    ],
+    [
+      31,
+      19
+    ],
+    [
+      32,
+      19
+    ],
+    [
+      33,
+      19
+    ],
+    [
+      34,
+      19
+    ],
+    [
+      35,
+      19
+    ],
+    [
+      36,
+      19
+    ],
+    [
+      37,
+      19
+    ],
+    [
+      38,
+      19
+    ],
+    [
+      39,
+      19
+    ],
+    [
+      40,
+      19
+    ],
+    [
+      32,
+      20
+    ],
+    [
+      33,
+      20
+    ],
+    [
+      34,
+      20
+    ],
+    [
+      35,
+      20
+    ],
+    [
+      36,
+      20
+    ],
+    [
+      37,
+      20
+    ],
+    [
+      38,
+      20
+    ],
+    [
+      39,
+      20
+    ],
+    [
+      33,
+      21
+    ],
+    [
+      34,
+      21
+    ],
+    [
+      35,
+      21
+    ],
+    [
+      36,
+      21
+    ],
+    [
+      37,
+      21
+    ],
+    [
+      38,
+      21
+    ]
+  ],
+  "placements": [
+    {
+      "id": "north_passage",
+      "pack": "structure",
+      "module": "tunnel.north.narrow",
+      "position": [
+        250,
+        224
+      ],
+      "collision": true
+    },
+    {
+      "id": "east_passage",
+      "pack": "structure",
+      "module": "tunnel.east.wide",
+      "position": [
+        1046,
+        358
+      ],
+      "collision": true
+    },
+    {
+      "id": "entrance_passage",
+      "pack": "structure",
+      "module": "tunnel.south.wide",
+      "position": [
+        229,
+        694
+      ],
+      "collision": true
+    },
+    {
+      "id": "west_alcove",
+      "pack": "structure",
+      "module": "alcove.west",
+      "position": [
+        104,
+        391
+      ],
+      "collision": true
+    },
+    {
+      "id": "raised_shelf",
+      "pack": "structure",
+      "module": "shelf.low.1",
+      "position": [
+        540,
+        360
+      ]
+    },
+    {
+      "id": "shelf_ramp",
+      "pack": "structure",
+      "module": "ramp.north",
+      "position": [
+        540,
+        450
+      ]
+    },
+    {
+      "id": "stepped_ledge",
+      "pack": "structure",
+      "module": "shelf.low.0",
+      "position": [
+        666,
+        334
+      ]
+    },
+    {
+      "id": "worn_steps",
+      "pack": "structure",
+      "module": "steps.north",
+      "position": [
+        666,
+        418
+      ]
+    },
+    {
+      "id": "east_side_wall",
+      "pack": "structure",
+      "module": "wall.face.east.h48",
+      "position": [
+        1101,
+        478
+      ],
+      "collision": true
+    },
+    {
+      "id": "rear_wall",
+      "pack": "structure",
+      "module": "wall.face.south.h24",
+      "position": [
+        581,
+        633
+      ],
+      "collision": false
+    },
+    {
+      "id": "threshold_roots",
+      "pack": "geology",
+      "module": "entrance.root.0",
+      "position": [
+        125,
+        560
+      ],
+      "collision": false
+    },
+    {
+      "id": "entrance_moss",
+      "pack": "geology",
+      "module": "entrance.moss.1",
+      "position": [
+        303,
+        548
+      ],
+      "ground": true
+    },
+    {
+      "id": "entrance_leaves",
+      "pack": "geology",
+      "module": "entrance.leaves.0",
+      "position": [
+        185,
+        641
+      ],
+      "ground": true
+    },
+    {
+      "id": "entrance_pebbles",
+      "pack": "geology",
+      "module": "debris.pebbles.1",
+      "position": [
+        282,
+        606
+      ],
+      "ground": true
+    },
+    {
+      "id": "wall_talus",
+      "pack": "geology",
+      "module": "debris.talus.0",
+      "position": [
+        163,
+        292
+      ],
+      "ground": true
+    },
+    {
+      "id": "gallery_rubble",
+      "pack": "geology",
+      "module": "debris.rubble.1",
+      "position": [
+        427,
+        542
+      ],
+      "ground": true
+    },
+    {
+      "id": "fallen_slab",
+      "pack": "geology",
+      "module": "slab.fallen.0",
+      "position": [
+        344,
+        425
+      ]
+    },
+    {
+      "id": "branching_crack",
+      "pack": "geology",
+      "module": "crack.branching.1",
+      "position": [
+        302,
+        356
+      ],
+      "ground": true
+    },
+    {
+      "id": "erosion_channel",
+      "pack": "geology",
+      "module": "erosion.channel.0",
+      "position": [
+        728,
+        584
+      ],
+      "ground": true
+    },
+    {
+      "id": "water_mineral_crust",
+      "pack": "geology",
+      "module": "mineral.crust.2",
+      "position": [
+        1016,
+        519
+      ],
+      "ground": true
+    },
+    {
+      "id": "damp_wall_stain",
+      "pack": "geology",
+      "module": "stain.damp.1",
+      "position": [
+        920,
+        295
+      ],
+      "ground": true
+    },
+    {
+      "id": "hanging_seepage",
+      "pack": "water",
+      "module": "seepage.wall.1",
+      "position": [
+        835,
+        260
+      ],
+      "collision": false
+    },
+    {
+      "id": "falling_trickle",
+      "pack": "water",
+      "module": "trickle.wall.0",
+      "position": [
+        839,
+        330
+      ],
+      "collision": false
+    },
+    {
+      "id": "ceiling_drips",
+      "pack": "water",
+      "module": "drip.falling.0",
+      "position": [
+        953,
+        405
+      ],
+      "collision": false
+    },
+    {
+      "id": "pool_ripples",
+      "pack": "water",
+      "module": "ripple.small.0",
+      "position": [
+        954,
+        427
+      ],
+      "collision": false
+    },
+    {
+      "id": "wet_fracture",
+      "pack": "water",
+      "module": "wet_crack.0",
+      "position": [
+        1015,
+        328
+      ],
+      "collision": false
+    },
+    {
+      "id": "stream_inlet",
+      "pack": "water",
+      "module": "stream.inlet.0",
+      "position": [
+        840,
+        353
+      ],
+      "water_collision": true
+    },
+    {
+      "id": "wall_column",
+      "pack": "base",
+      "module": "formation.broken_column.1",
+      "position": [
+        267,
+        402
+      ]
+    },
+    {
+      "id": "western_stalagmites",
+      "pack": "base",
+      "module": "formation.stalagmites.0",
+      "position": [
+        134,
+        444
+      ]
+    },
+    {
+      "id": "eastern_flowstone",
+      "pack": "base",
+      "module": "formation.flowstone.2",
+      "position": [
+        1044,
+        581
+      ]
+    }
+  ],
+  "microcrystals": [
+    {
+      "id": "dry_red_diagonal",
+      "color": "red",
+      "module": "micro.red.diagonal_left",
+      "position": [
+        185,
+        209
+      ],
+      "light_position": [
+        180,
+        256
+      ]
+    },
+    {
+      "id": "dry_blue_sparse",
+      "color": "blue",
+      "module": "micro.blue.sparse",
+      "position": [
+        290,
+        179
+      ],
+      "light_position": [
+        287,
+        232
+      ]
+    },
+    {
+      "id": "dry_green_corner",
+      "color": "green",
+      "module": "micro.green.corner_outer",
+      "position": [
+        358,
+        212
+      ],
+      "light_position": [
+        356,
+        263
+      ]
+    },
+    {
+      "id": "gallery_white_dense",
+      "color": "white",
+      "module": "micro.white.dense",
+      "position": [
+        478,
+        215
+      ],
+      "light_position": [
+        480,
+        268
+      ]
+    },
+    {
+      "id": "gallery_orange_diagonal",
+      "color": "orange",
+      "module": "micro.orange.diagonal_right",
+      "position": [
+        596,
+        244
+      ],
+      "light_position": [
+        595,
+        305
+      ]
+    },
+    {
+      "id": "grotto_purple_corner",
+      "color": "purple",
+      "module": "micro.purple.corner_inner",
+      "position": [
+        780,
+        244
+      ],
+      "light_position": [
+        776,
+        299
+      ]
+    },
+    {
+      "id": "grotto_blue_vertical",
+      "color": "blue",
+      "module": "micro.blue.vertical",
+      "position": [
+        1109,
+        420
+      ],
+      "light_position": [
+        1072,
+        422
+      ]
+    },
+    {
+      "id": "grotto_green_sparse",
+      "color": "green",
+      "module": "micro.green.sparse",
+      "position": [
+        906,
+        219
+      ],
+      "light_position": [
+        910,
+        281
+      ]
+    },
+    {
+      "id": "grotto_white_diagonal",
+      "color": "white",
+      "module": "micro.white.diagonal_left",
+      "position": [
+        1016,
+        261
+      ],
+      "light_position": [
+        1010,
+        316
+      ]
+    }
+  ],
+  "review_points": {
+    "entrance_roots": [
+      232,
+      645
+    ],
+    "earth_to_stone": [
+      223,
+      523
+    ],
+    "north_tunnel": [
+      250,
+      263
+    ],
+    "dry_passage": [
+      300,
+      316
+    ],
+    "rubble_and_cracks": [
+      316,
+      375
+    ],
+    "wall_alcove": [
+      139,
+      383
+    ],
+    "ramp_lower": [
+      540,
+      440
+    ],
+    "ramp_middle": [
+      540,
+      391
+    ],
+    "raised_shelf": [
+      540,
+      310
+    ],
+    "shelf_return": [
+      540,
+      440
+    ],
+    "worn_steps": [
+      666,
+      402
+    ],
+    "wet_passage": [
+      726,
+      330
+    ],
+    "seepage_and_inlet": [
+      783,
+      314
+    ],
+    "water_bank": [
+      716,
+      450
+    ],
+    "pool_reflections": [
+      871,
+      570
+    ],
+    "east_tunnel": [
+      1013,
+      352
+    ],
+    "vertical_microcrystals": [
+      1065,
+      440
+    ],
+    "weathered_slab": [
+      336,
+      454
+    ],
+    "return_gallery": [
+      540,
+      570
+    ],
+    "pulse": [
+      765,
+      325
+    ],
+    "steps_upper": [
+      666,
+      300
+    ]
+  },
+  "routes": {
+    "main": [
+      [
+        232,
+        645
+      ],
+      [
+        223,
+        523
+      ],
+      [
+        220,
+        445
+      ],
+      [
+        300,
+        316
+      ],
+      [
+        250,
+        263
+      ],
+      [
+        300,
+        316
+      ],
+      [
+        430,
+        370
+      ],
+      [
+        540,
+        440
+      ],
+      [
+        540,
+        391
+      ],
+      [
+        540,
+        310
+      ],
+      [
+        540,
+        440
+      ],
+      [
+        620,
+        442
+      ],
+      [
+        666,
+        402
+      ],
+      [
+        726,
+        330
+      ],
+      [
+        783,
+        314
+      ],
+      [
+        716,
+        450
+      ],
+      [
+        765,
+        578
+      ],
+      [
+        871,
+        570
+      ],
+      [
+        1046,
+        538
+      ],
+      [
+        1013,
+        352
+      ],
+      [
+        1065,
+        440
+      ],
+      [
+        1046,
+        538
+      ],
+      [
+        871,
+        598
+      ],
+      [
+        720,
+        600
+      ],
+      [
+        540,
+        570
+      ],
+      [
+        380,
+        595
+      ],
+      [
+        232,
+        645
+      ]
+    ],
+    "ramp": [
+      [
+        540,
+        440
+      ],
+      [
+        540,
+        391
+      ],
+      [
+        540,
+        348
+      ],
+      [
+        540,
+        310
+      ]
+    ],
+    "steps": [
+      [
+        666,
+        438
+      ],
+      [
+        666,
+        402
+      ],
+      [
+        666,
+        350
+      ],
+      [
+        666,
+        300
+      ]
+    ]
+  },
+  "review_checks": {
+    "solid_points": [
+      {
+        "id": "outer_rock",
+        "position": [
+          20,
+          20
+        ]
+      },
+      {
+        "id": "deep_pool",
+        "position": [
+          864,
+          432
+        ]
+      }
+    ],
+    "ramp_checks": {
+      "lower": [
+        540,
+        440
+      ],
+      "middle": [
+        540,
+        391
+      ],
+      "upper": [
+        540,
+        310
+      ]
+    },
+    "light_station": [
+      475,
+      420
+    ],
+    "depth_cases": []
+  },
+  "landmarks": [
+    {
+      "id": "entrance",
+      "name": "Sanctuary threshold",
+      "position": [
+        232,
+        645
+      ],
+      "description": "Roots and fallen leaves give way to weathered limestone."
+    },
+    {
+      "id": "dry",
+      "name": "Dry gallery",
+      "position": [
+        300,
+        316
+      ],
+      "description": "Directional walls frame gravel, cracks and small deposits of fallen stone."
+    },
+    {
+      "id": "shelf",
+      "name": "Raised shelf",
+      "position": [
+        540,
+        310
+      ],
+      "description": "A worn ramp rises through the open notch in the limestone ledge."
+    },
+    {
+      "id": "grotto",
+      "name": "Reflecting grotto",
+      "position": [
+        871,
+        570
+      ],
+      "description": "Seepage and rippling streams collect in a pool bordered by damp stone."
+    }
+  ]
+}
