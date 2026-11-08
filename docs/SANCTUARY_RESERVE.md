@@ -50,16 +50,18 @@ the confluence without revealing an ancient mechanism.
 
 ## Story boundaries
 
-The cave mouth is an exterior point of interest. A visible keeper rail closes
-the inner opening while leaving the public apron and inspection accessible.
-Its dungeon, enemy encounters,
-miniboss and Caelan's first elemental Edge remain later quest work. It is
-distinct from the historically sealed workers' passage beneath the sanctuary.
+The cave mouth retains its visible keeper rail and public apron. At the apron,
+press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
+Three connected scenes provide branching exploration, one-time treasure and
+pulsing environmental light. Cave exploration does not advance MQ03. Enemy
+encounters, the miniboss and Caelan's first elemental Edge remain later quest
+work. This cave is distinct from the historically sealed workers' passage
+beneath the sanctuary.
 
 [Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
 species for the eastern-ridge caves. Its data and isolated combat adapter are
-available, while encounter placement and the cave dungeon remain future quest
-work. The peaceful reserve and keeper rail retain their current behavior.
+available, while encounter placement remains future quest work. The reserve
+remains peaceful; the keeper rail marks an explicit interaction into the cave.
 
 During the new MQ03 route, a survivor exposes the Crown crew Aldric secretly
 sent ahead to establish authority and prepare mining. Caretakers have heard

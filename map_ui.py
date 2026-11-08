@@ -51,6 +51,7 @@ class MapUI:
         self._mouse_held = False
         self._regional_map = None
         self._reserve_map = None
+        self._cave_map = None
         self.detail_scroll = 0
         self.detail_max_scroll = 0
         self._plan = self._read_plan()
@@ -142,6 +143,9 @@ class MapUI:
         return tuple(self.game.exterior_position)
 
     def reset(self):
+        if self._in_cave():
+            self._cave().reset()
+            return
         if self._in_reserve():
             self._reserve().reset()
             return
@@ -178,6 +182,8 @@ class MapUI:
                    self.building_rects[pair[1]['id']].height)[0]
 
     def handle_event(self, event):
+        if self._in_cave():
+            return self._cave().handle_event(event)
         if self._in_reserve():
             return self._reserve().handle_event(event)
         if getattr(self.game.world, 'is_overworld', False):
@@ -322,6 +328,9 @@ class MapUI:
         painter.rect(INK, (x-1, y-1, 2, 2))
 
     def draw(self, canvas):
+        if self._in_cave():
+            self._cave().draw(canvas)
+            return
         if self._in_reserve():
             self._reserve().draw(canvas)
             return
@@ -360,6 +369,17 @@ class MapUI:
 
     def _in_reserve(self):
         return self.game.world.data.get('id') in ('elden_vale_sanctuary', 'elden_vale_sanctuary_hall')
+
+    def _in_cave(self):
+        return self.game.world.data.get('id') in (
+            'sanctuary_cave_entrance', 'sanctuary_cave_hollow', 'sanctuary_cave_depths')
+
+    def _cave(self):
+        if self._cave_map is None:
+            from sanctuary_cave_map import SanctuaryCaveMapUI
+            self._cave_map = SanctuaryCaveMapUI(self.game)
+        self._cave_map.ensure_scene()
+        return self._cave_map
 
     def _reserve(self):
         if self._reserve_map is None:

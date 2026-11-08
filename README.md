@@ -112,8 +112,13 @@ Its [fantasy asset expansion](docs/SANCTUARY_FANTASY.md) adds a multicolored cry
 ridge, a silver-green memorial tree, carved limestone architecture and a quiet
 reflecting spring at the same native pixel and character scale as Eldenmere.
 The [production review](docs/reviews/sanctuary_fantasy/README.md) shows ordinary
-travel, exploration, landmark depth, hall access and reduced motion. The cave
-keeper rail and intact survey face retain their existing story boundaries.
+travel, exploration, landmark depth, hall access and reduced motion. Press E at
+the cave apron to enter the [Sanctuary crystal cave](docs/SANCTUARY_CAVE.md):
+three connected scenes with optional loops, six persistent treasure caches and
+crystal pulses that illuminate rock, water and characters. M shows the current
+cave section. The [cave review](docs/reviews/sanctuary_cave/README.md) records the
+playable route. MQ03's arrival cutscene, cave enemies and miniboss remain later
+work; exploring the cave does not complete that pending quest.
 
 The [environment quality pass](docs/reviews/elden_vale_polish/README.md) gives the vale distinct farmsteads and crop parcels, orchards, clustered forests, rocky slopes and planted riverbanks. Worn stone roads, cart tracks and woodland paths connect the new scenery, with wildlife, laundry, relief supplies and small resting places adding local character.
 
